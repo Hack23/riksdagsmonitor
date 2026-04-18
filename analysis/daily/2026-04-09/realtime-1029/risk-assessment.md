@@ -11,10 +11,10 @@ graph TD
         L1[LOW: 16 risks]
     end
     C1 --> H1 --> M1 --> L1
-    style C1 fill:#dc3545,color:#ffffff
-    style H1 fill:#fd7e14,color:#ffffff
-    style M1 fill:#ffc107,color:#000000
-    style L1 fill:#28a745,color:#ffffff
+    style C1 fill:#D32F2F,color:#FFFFFF
+    style H1 fill:#FF9800,color:#FFFFFF
+    style M1 fill:#FFC107,color:#000000
+    style L1 fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

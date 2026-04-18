@@ -83,11 +83,11 @@ graph TB
     JuU15 -->|"confirms bloc split"| MOTV
     JuU15 -->|"confirms C opposition"| MOTC
 
-    style HD03246 fill:#dc3545,color:#fff
-    style JuU15 fill:#fd7e14,color:#fff
-    style MOTV fill:#ffc107,color:#000
-    style MOTC fill:#ffc107,color:#000
-    style ROUTINE fill:#28a745,color:#fff
+    style HD03246 fill:#D32F2F,color:#FFFFFF
+    style JuU15 fill:#FF9800,color:#FFFFFF
+    style MOTV fill:#FFC107,color:#000000
+    style MOTC fill:#FFC107,color:#000000
+    style ROUTINE fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

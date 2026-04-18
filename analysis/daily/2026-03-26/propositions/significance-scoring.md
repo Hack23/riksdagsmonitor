@@ -21,10 +21,10 @@ graph LR
     HD03227 --> JuU["JuU — Tier 1 Committee"]
     HD03221 --> SoU["SoU — Tier 2 Committee"]
     
-    style HD03227 fill:#ffc107,color:#000,stroke:#ffc107
-    style HD03221 fill:#ffbe0b,color:#000,stroke:#ffbe0b
-    style JuU fill:#0d6efd,color:#fff
-    style SoU fill:#0d6efd,color:#fff
+    style HD03227 fill:#FFC107,color:#000000,stroke:#FFC107
+    style HD03221 fill:#ffbe0b,color:#000000,stroke:#ffbe0b
+    style JuU fill:#1565C0,color:#FFFFFF
+    style SoU fill:#1565C0,color:#FFFFFF
 ```
 
 ## Detailed Analysis

@@ -59,14 +59,14 @@ graph TD
     subgraph "Selective Impact"
         H["Judiciary"] --> H1["Migration legal"]
     end
-    style A fill:#D32F2F,color:#fff
-    style B fill:#D32F2F,color:#fff
-    style C fill:#D32F2F,color:#fff
-    style D fill:#D32F2F,color:#fff
-    style E fill:#FF9800,color:#000
-    style F fill:#FF9800,color:#000
-    style G fill:#FF9800,color:#000
-    style H fill:#FFC107,color:#000
+    style A fill:#D32F2F,color:#FFFFFF
+    style B fill:#D32F2F,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
+    style D fill:#D32F2F,color:#FFFFFF
+    style E fill:#FF9800,color:#000000
+    style F fill:#FF9800,color:#000000
+    style G fill:#FF9800,color:#000000
+    style H fill:#FFC107,color:#000000
 ```
 
 ## Key Findings

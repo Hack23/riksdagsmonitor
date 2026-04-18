@@ -30,10 +30,10 @@ graph LR
     G --> H["S-MP Bloc Against Chapter 6"]
     A --> I{Link}
     I --> J["mot. 2025/26:4015 (S)"]
-    style A fill:#83c167,color:#000
-    style D fill:#ffbe0b,color:#000
-    style H fill:#ff006e,color:#fff
-    style J fill:#e8590c,color:#fff
+    style A fill:#8BC34A,color:#000000
+    style D fill:#ffbe0b,color:#000000
+    style H fill:#ff006e,color:#FFFFFF
+    style J fill:#F57C00,color:#FFFFFF
 ```
 
 | Metric | Score | Rationale |

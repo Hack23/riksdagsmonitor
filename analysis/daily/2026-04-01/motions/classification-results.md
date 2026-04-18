@@ -24,15 +24,15 @@ graph TD
         CUL["🎭 Culture<br/>1 motion<br/>KrU committee"]
         FOR["🌍 Foreign/Defence<br/>2 motions<br/>UU committee"]
     end
-    style EDU fill:#dc3545,color:#fff
-    style SOC fill:#fd7e14,color:#fff
-    style HSG fill:#ffc107,color:#000
-    style BIZ fill:#ffc107,color:#000
-    style FIN fill:#28a745,color:#fff
-    style ENV fill:#28a745,color:#fff
-    style SOI fill:#28a745,color:#fff
-    style CUL fill:#28a745,color:#fff
-    style FOR fill:#0d6efd,color:#fff
+    style EDU fill:#D32F2F,color:#FFFFFF
+    style SOC fill:#FF9800,color:#FFFFFF
+    style HSG fill:#FFC107,color:#000000
+    style BIZ fill:#FFC107,color:#000000
+    style FIN fill:#4CAF50,color:#FFFFFF
+    style ENV fill:#4CAF50,color:#FFFFFF
+    style SOI fill:#4CAF50,color:#FFFFFF
+    style CUL fill:#4CAF50,color:#FFFFFF
+    style FOR fill:#1565C0,color:#FFFFFF
 ```
 
 ## Party Distribution

@@ -22,10 +22,10 @@ graph TD
         R4["Public Opinion<br/>🟡 MEDIUM (40/100)"]
     end
 
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#ffc107,color:#000
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FFC107,color:#000000
 ```
 
 ## Detailed Risk Analysis

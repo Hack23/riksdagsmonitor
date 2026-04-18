@@ -20,10 +20,10 @@ graph TD
         D["International Credibility"] --> D1["UNRWA suspension<br/>and embassy closures"]
     end
     
-    style A fill:#00d9ff,color:#000
-    style B fill:#ffbe0b,color:#000
-    style C fill:#ff006e,color:#fff
-    style D fill:#4dabf7,color:#000
+    style A fill:#00d9ff,color:#000000
+    style B fill:#ffbe0b,color:#000000
+    style C fill:#ff006e,color:#FFFFFF
+    style D fill:#2196F3,color:#000000
     style A1 fill:#1a1e3d,color:#e0e0e0
     style B1 fill:#1a1e3d,color:#e0e0e0
     style C1 fill:#1a1e3d,color:#e0e0e0

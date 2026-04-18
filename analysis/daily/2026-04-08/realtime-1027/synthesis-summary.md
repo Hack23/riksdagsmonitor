@@ -63,17 +63,17 @@ graph TB
     HD11687 -.->|healthcare policy| HD03219
     HD11693 -.->|transparency theme| HD11694
     
-    style HD11689 fill:#dc3545,stroke:#333,color:#fff
-    style HD11690 fill:#dc3545,stroke:#333,color:#fff
-    style HD11692 fill:#dc3545,stroke:#333,color:#fff
-    style HD11687 fill:#ffc107,stroke:#333,color:#000
-    style HD03219 fill:#ffc107,stroke:#333,color:#000
-    style HD03230 fill:#28a745,stroke:#333,color:#fff
-    style HD11693 fill:#17a2b8,stroke:#333,color:#fff
-    style HD11694 fill:#17a2b8,stroke:#333,color:#fff
-    style HD11688 fill:#6c757d,stroke:#333,color:#fff
-    style HD11691 fill:#6c757d,stroke:#333,color:#fff
-    style HD024070 fill:#6c757d,stroke:#333,color:#fff
+    style HD11689 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style HD11690 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style HD11692 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style HD11687 fill:#FFC107,stroke:#424242,color:#000000
+    style HD03219 fill:#FFC107,stroke:#424242,color:#000000
+    style HD03230 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style HD11693 fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style HD11694 fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style HD11688 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style HD11691 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style HD024070 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
 ```
 
 ---

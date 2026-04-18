@@ -30,12 +30,12 @@ graph TD
         PB["PB — Power Balance<br/>🟢 LOW<br/>SD exercising support role"]
     end
 
-    style NI fill:#28a745,color:#fff
-    style LI fill:#28a745,color:#fff
-    style AC fill:#ffc107,color:#000
-    style TR fill:#28a745,color:#fff
-    style DP fill:#28a745,color:#fff
-    style PB fill:#28a745,color:#fff
+    style NI fill:#4CAF50,color:#FFFFFF
+    style LI fill:#4CAF50,color:#FFFFFF
+    style AC fill:#FFC107,color:#000000
+    style TR fill:#4CAF50,color:#FFFFFF
+    style DP fill:#4CAF50,color:#FFFFFF
+    style PB fill:#4CAF50,color:#FFFFFF
 ```
 
 ---
@@ -66,11 +66,11 @@ graph TD
     Q2 -->|"Ukraine comparison"| OUTCOME
     Q3 -->|"SOU not implemented"| OUTCOME
 
-    style GOAL fill:#dc3545,color:#fff
-    style OUTCOME fill:#ffc107,color:#000
-    style Q1 fill:#fd7e14,color:#fff
-    style Q2 fill:#fd7e14,color:#fff
-    style Q3 fill:#fd7e14,color:#fff
+    style GOAL fill:#D32F2F,color:#FFFFFF
+    style OUTCOME fill:#FFC107,color:#000000
+    style Q1 fill:#FF9800,color:#FFFFFF
+    style Q2 fill:#FF9800,color:#FFFFFF
+    style Q3 fill:#FF9800,color:#FFFFFF
 ```
 
 **Assessment:** SD's Björn Söder and Markus Wiechel execute a coordinated questioning strategy targeting Defense Minister Pål Jonson (M) on three defense readiness gaps simultaneously. This is a standard support party accountability tactic — challenging the coalition partner to deliver on defense priorities. The pattern is consistent with SD's historical emphasis on defense spending and military preparedness.

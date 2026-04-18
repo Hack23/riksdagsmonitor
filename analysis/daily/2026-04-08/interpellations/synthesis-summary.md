@@ -27,12 +27,12 @@ graph TD
         F --> H["Coalition tension indicator"]
         G --> H
     end
-    style A fill:#ffd700,color:#000
-    style B fill:#dc3545,color:#fff
-    style C fill:#0d6efd,color:#fff
-    style D fill:#6f42c1,color:#fff
-    style E fill:#6f42c1,color:#fff
-    style H fill:#fd7e14,color:#fff
+    style A fill:#FFC107,color:#000000
+    style B fill:#D32F2F,color:#FFFFFF
+    style C fill:#1565C0,color:#FFFFFF
+    style D fill:#7B1FA2,color:#FFFFFF
+    style E fill:#7B1FA2,color:#FFFFFF
+    style H fill:#FF9800,color:#FFFFFF
 ```
 
 ## Key Findings

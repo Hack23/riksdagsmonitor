@@ -20,9 +20,9 @@ graph LR
     UFöU3 -->|supplements| P25[Prop. 2025/26:25 NATO 2026]
     FiU48 -.->|tension with| MJU30[MJU30: Climate Goals]
 
-    style FiU48 fill:#ff6b6b,color:#fff
-    style UFöU3 fill:#ffa502,color:#fff
-    style MJU30 fill:#2ed573,color:#fff
+    style FiU48 fill:#EF5350,color:#FFFFFF
+    style UFöU3 fill:#FF9800,color:#FFFFFF
+    style MJU30 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Detailed Cross-References

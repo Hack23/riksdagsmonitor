@@ -22,10 +22,10 @@ graph LR
         R5["🟢 SNAO Criticism<br/>L:2 × I:2 = 4<br/>LOW"]
     end
     
-    style R1 fill:#ff006e,color:#fff
-    style R2 fill:#ffbe0b,color:#000
-    style R3 fill:#ffbe0b,color:#000
-    style R4 fill:#00d9ff,color:#000
+    style R1 fill:#ff006e,color:#FFFFFF
+    style R2 fill:#ffbe0b,color:#000000
+    style R3 fill:#ffbe0b,color:#000000
+    style R4 fill:#00d9ff,color:#000000
     style R5 fill:#1a1e3d,color:#e0e0e0
 ```
 

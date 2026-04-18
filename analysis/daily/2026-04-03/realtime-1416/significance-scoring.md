@@ -25,13 +25,13 @@ graph LR
         L2["SOU 2026:25<br/>Score: 3"]
     end
     
-    style H1 fill:#ff006e,color:#fff
-    style M1 fill:#ffbe0b,color:#000
-    style M2 fill:#ffbe0b,color:#000
-    style M3 fill:#ff8c00,color:#fff
-    style M4 fill:#ffbe0b,color:#000
-    style L1 fill:#00d9ff,color:#000
-    style L2 fill:#00d9ff,color:#000
+    style H1 fill:#ff006e,color:#FFFFFF
+    style M1 fill:#ffbe0b,color:#000000
+    style M2 fill:#ffbe0b,color:#000000
+    style M3 fill:#F57C00,color:#FFFFFF
+    style M4 fill:#ffbe0b,color:#000000
+    style L1 fill:#00d9ff,color:#000000
+    style L2 fill:#00d9ff,color:#000000
 ```
 
 ---

@@ -15,15 +15,15 @@ graph TD
     R4["R4: Human Rights Concerns<br>Foreign Imprisonment<br>L:4 × I:4 = 16"] --> CAT3["CRITICAL"]
     R5["R5: Aid Effectiveness<br>Decline per Riksrevisionen<br>L:3 × I:3 = 9"] --> CAT1
     R6["R6: Student Privacy<br>Erosion via Data Sharing<br>L:3 × I:3 = 9"] --> CAT1
-    style R1 fill:#ffbe0b,color:#000
-    style R2 fill:#ff006e,color:#fff
-    style R3 fill:#ff006e,color:#fff
-    style R4 fill:#e8590c,color:#fff
-    style R5 fill:#ffbe0b,color:#000
-    style R6 fill:#ffbe0b,color:#000
-    style CAT1 fill:#ffbe0b,color:#000
-    style CAT2 fill:#ff006e,color:#fff
-    style CAT3 fill:#e8590c,color:#fff
+    style R1 fill:#ffbe0b,color:#000000
+    style R2 fill:#ff006e,color:#FFFFFF
+    style R3 fill:#ff006e,color:#FFFFFF
+    style R4 fill:#F57C00,color:#FFFFFF
+    style R5 fill:#ffbe0b,color:#000000
+    style R6 fill:#ffbe0b,color:#000000
+    style CAT1 fill:#ffbe0b,color:#000000
+    style CAT2 fill:#ff006e,color:#FFFFFF
+    style CAT3 fill:#F57C00,color:#FFFFFF
 ```
 
 ## Detailed Risk Register

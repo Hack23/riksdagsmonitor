@@ -36,9 +36,9 @@ graph LR
     I -->|"🟠 URGENT"| K["Entry into force<br/>15 July 2026"]
     
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style D fill:#ffbe0b,stroke:#333,color:#000
-    style H fill:#00d9ff,stroke:#333,color:#000
-    style K fill:#ff6b35,stroke:#333,color:#000
+    style D fill:#ffbe0b,stroke:#424242,color:#000000
+    style H fill:#00d9ff,stroke:#424242,color:#000000
+    style K fill:#FF5722,stroke:#424242,color:#000000
 ```
 
 | Field | Value |

@@ -50,10 +50,10 @@ flowchart LR
     S --> C3["Other M/KD/L ministers<br/>3 questions"]
     V["Left Party (V)<br/>2 interpellations"] --> C4["Carlson KD<br/>1 question"]
     V --> C5["Waltersson Grönvall M<br/>1 question"]
-    style S fill:#e8112d,color:#fff
-    style V fill:#da291c,color:#fff
-    style C1 fill:#ffcc00,color:#000
-    style C2 fill:#52bdec,color:#000
+    style S fill:#D32F2F,color:#FFFFFF
+    style V fill:#D32F2F,color:#FFFFFF
+    style C1 fill:#FFC107,color:#000000
+    style C2 fill:#90CAF9,color:#000000
 ```
 
 ## Implications

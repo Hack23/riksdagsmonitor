@@ -29,17 +29,17 @@ graph TD
         P --> P1["Procedural items<br/>Routine parliamentary"]
         P --> P2["Press releases<br/>Regional visits"]
     end
-    style R fill:#dc3545,stroke:#333,color:#fff
-    style S fill:#ffc107,stroke:#333,color:#000
-    style P fill:#28a745,stroke:#333,color:#fff
-    style R1 fill:#dc3545,stroke:#333,color:#fff
-    style R2 fill:#dc3545,stroke:#333,color:#fff
-    style R3 fill:#dc3545,stroke:#333,color:#fff
-    style S1 fill:#ffc107,stroke:#333,color:#000
-    style S2 fill:#ffc107,stroke:#333,color:#000
-    style S3 fill:#ffc107,stroke:#333,color:#000
-    style P1 fill:#28a745,stroke:#333,color:#fff
-    style P2 fill:#28a745,stroke:#333,color:#fff
+    style R fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style S fill:#FFC107,stroke:#424242,color:#000000
+    style P fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style R1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R2 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R3 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style S1 fill:#FFC107,stroke:#424242,color:#000000
+    style S2 fill:#FFC107,stroke:#424242,color:#000000
+    style S3 fill:#FFC107,stroke:#424242,color:#000000
+    style P1 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style P2 fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ## 📋 Classification Summary

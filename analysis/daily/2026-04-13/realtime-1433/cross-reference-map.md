@@ -23,16 +23,16 @@ graph TD
         NATO -.-> VP
         VMOT -.-> |"prop 2025/26:229"| SFU["Earlier SfU reports"]
     end
-    style VP fill:#dc3545,stroke:#333,color:#fff
-    style VÄB fill:#fd7e14,stroke:#333,color:#fff
-    style EXTRA fill:#fd7e14,stroke:#333,color:#fff
-    style ÅR fill:#17a2b8,stroke:#333,color:#fff
-    style RR fill:#17a2b8,stroke:#333,color:#fff
-    style SK fill:#6c757d,stroke:#333,color:#fff
-    style NATO fill:#ffc107,stroke:#333,color:#000
-    style FIU fill:#6c757d,stroke:#333,color:#fff
-    style VMOT fill:#ffc107,stroke:#333,color:#000
-    style SFU fill:#6c757d,stroke:#333,color:#fff
+    style VP fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style VÄB fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style EXTRA fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style ÅR fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style RR fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style SK fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style NATO fill:#FFC107,stroke:#424242,color:#000000
+    style FIU fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style VMOT fill:#FFC107,stroke:#424242,color:#000000
+    style SFU fill:#9E9E9E,stroke:#424242,color:#FFFFFF
 ```
 
 ## Key Relationships

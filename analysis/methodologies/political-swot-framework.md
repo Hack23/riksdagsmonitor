@@ -298,12 +298,12 @@ graph TD
     SW -->|"undermines"| GS
     OT -->|"constrains"| OS
 
-    style GS fill:#28a745,color:#fff
-    style GW fill:#fd7e14,color:#fff
-    style OS fill:#28a745,color:#fff
-    style OT fill:#dc3545,color:#fff
-    style SS fill:#28a745,color:#fff
-    style SW fill:#fd7e14,color:#fff
+    style GS fill:#4CAF50,color:#FFFFFF
+    style GW fill:#FF9800,color:#FFFFFF
+    style OS fill:#4CAF50,color:#FFFFFF
+    style OT fill:#D32F2F,color:#FFFFFF
+    style SS fill:#4CAF50,color:#FFFFFF
+    style SW fill:#FF9800,color:#FFFFFF
 ```
 
 ### Interference Matrix
@@ -336,10 +336,10 @@ graph TD
     ST["ST Strategies<br/>(Strengths × Threats)<br/><em>Use strengths to counter threats</em>"]
     WT["WT Strategies<br/>(Weaknesses × Threats)<br/><em>Defensive: minimise vulnerabilities</em>"]
 
-    style SO fill:#28a745,color:#fff
-    style WO fill:#0d6efd,color:#fff
-    style ST fill:#ffc107,color:#000
-    style WT fill:#dc3545,color:#fff
+    style SO fill:#4CAF50,color:#FFFFFF
+    style WO fill:#1565C0,color:#FFFFFF
+    style ST fill:#FFC107,color:#000000
+    style WT fill:#D32F2F,color:#FFFFFF
 ```
 
 | TOWS Cell | Political Context | Example |
@@ -368,14 +368,37 @@ Use SWOT combinations to construct **plausible political futures** (scenarios), 
 ### Example Scenario Matrix
 
 ```mermaid
+%%{init: {
+  "theme": "neutral",
+  "themeVariables": {
+    "quadrant1Fill": "#D32F2F",
+    "quadrant2Fill": "#FFC107",
+    "quadrant3Fill": "#4CAF50",
+    "quadrant4Fill": "#FF9800",
+    "quadrantTitleFill": "#FFFFFF",
+    "quadrantPointFill": "#FFFFFF",
+    "quadrantPointTextFill": "#000000",
+    "quadrantXAxisTextFill": "#000000",
+    "quadrantYAxisTextFill": "#000000"
+  },
+  "quadrantChart": {
+    "chartWidth": 700,
+    "chartHeight": 700,
+    "pointLabelFontSize": 12,
+    "titleFontSize": 18,
+    "quadrantLabelFontSize": 14,
+    "xAxisLabelFontSize": 14,
+    "yAxisLabelFontSize": 14
+  }
+}}%%
 quadrantChart
-    title Political Scenario Space (30-day horizon)
-    x-axis "SD Budget Support" --> "SD Budget Withdrawal"
-    y-axis "KU Investigation Contained" --> "KU Investigation Escalates"
-    quadrant-1 "🔴 CRISIS:<br/>Coalition collapse"
-    quadrant-2 "🟡 PRESSURE:<br/>Managed transition"
-    quadrant-3 "🟢 STATUS QUO:<br/>Stable governance"
-    quadrant-4 "🟠 STRESS TEST:<br/>Weakened but surviving"
+    title 🎯 Political Scenario Space (30-day horizon)
+    x-axis SD Budget Support --> SD Budget Withdrawal
+    y-axis KU Investigation Contained --> KU Investigation Escalates
+    quadrant-1 🔴 CRISIS — Coalition collapse
+    quadrant-2 🟡 PRESSURE — Managed transition
+    quadrant-3 🟢 STATUS QUO — Stable governance
+    quadrant-4 🟠 STRESS TEST — Weakened but surviving
 ```
 
 | Scenario | SD Budget Support | KU Outcome | Probability | Key Trigger |
@@ -392,20 +415,43 @@ quadrantChart
 Position key stakeholders by their **power** (ability to influence outcomes) and **interest** (stake in specific issues) to identify who matters most:
 
 ```mermaid
+%%{init: {
+  "theme": "dark",
+  "themeVariables": {
+    "quadrant1Fill": "#1565C0",
+    "quadrant2Fill": "#2E7D32",
+    "quadrant3Fill": "#FF9800",
+    "quadrant4Fill": "#D32F2F",
+    "quadrantTitleFill": "#FFFFFF",
+    "quadrantPointFill": "#FFFFFF",
+    "quadrantPointTextFill": "#FFFFFF",
+    "quadrantXAxisTextFill": "#FFFFFF",
+    "quadrantYAxisTextFill": "#FFFFFF"
+  },
+  "quadrantChart": {
+    "chartWidth": 700,
+    "chartHeight": 700,
+    "pointLabelFontSize": 14,
+    "titleFontSize": 20,
+    "quadrantLabelFontSize": 16,
+    "xAxisLabelFontSize": 14,
+    "yAxisLabelFontSize": 14
+  }
+}}%%
 quadrantChart
-    title Stakeholder Power-Interest Map
-    x-axis "Low Interest" --> "High Interest"
-    y-axis "Low Power" --> "High Power"
-    quadrant-1 "Manage Closely"
-    quadrant-2 "Keep Satisfied"
-    quadrant-3 "Monitor"
-    quadrant-4 "Keep Informed"
-    "Statsminister": [0.8, 0.9]
-    "SD Leadership": [0.7, 0.75]
-    "S Opposition": [0.65, 0.6]
-    "Media (SVT)": [0.5, 0.5]
-    "EU Commission": [0.3, 0.65]
-    "General Public": [0.7, 0.2]
+    title 🤝 Stakeholder Power-Interest Map
+    x-axis Low Interest --> High Interest
+    y-axis Low Power --> High Power
+    quadrant-1 MANAGE CLOSELY
+    quadrant-2 KEEP SATISFIED
+    quadrant-3 MONITOR
+    quadrant-4 KEEP INFORMED
+    "👨‍💼 Statsminister": [0.80, 0.90]
+    "🏛️ SD Leadership": [0.70, 0.75]
+    "🏛️ S Opposition": [0.65, 0.60]
+    "📺 Media (SVT)": [0.50, 0.50]
+    "🇪🇺 EU Commission": [0.30, 0.65]
+    "👥 General Public": [0.70, 0.20]
 ```
 
 | Quadrant | Strategy | Stakeholders |
@@ -559,16 +605,16 @@ flowchart TD
     INT --> PW["🤝 Policy window:<br/>Shared Opportunity<br/>+ EP cross-group consensus"]
     INT --> SR["🚨 System-level risk:<br/>Shared Threat<br/>+ EU compliance gap"]
 
-    style GOV fill:#1a5276,color:#fff,stroke:#2980b9
-    style OPP fill:#922b21,color:#fff,stroke:#e74c3c
-    style RIK fill:#1b4f72,color:#fff,stroke:#2e86c1
-    style EPMEP fill:#1a5276,color:#fff,stroke:#3498db
-    style EPGRP fill:#154360,color:#fff,stroke:#5dade2
-    style XSWOT fill:#0b5345,color:#fff,stroke:#1abc9c
-    style CT fill:#f39c12,color:#000,stroke:#e67e22
-    style PR fill:#e74c3c,color:#fff,stroke:#c0392b
-    style PW fill:#27ae60,color:#fff,stroke:#2ecc71
-    style SR fill:#8e44ad,color:#fff,stroke:#9b59b6
+    style GOV fill:#1565C0,color:#FFFFFF,stroke:#1565C0
+    style OPP fill:#B71C1C,color:#FFFFFF,stroke:#D32F2F
+    style RIK fill:#0D47A1,color:#FFFFFF,stroke:#1565C0
+    style EPMEP fill:#1565C0,color:#FFFFFF,stroke:#2196F3
+    style EPGRP fill:#0D47A1,color:#FFFFFF,stroke:#2196F3
+    style XSWOT fill:#1B5E20,color:#FFFFFF,stroke:#00897B
+    style CT fill:#FF9800,color:#000000,stroke:#FF9800
+    style PR fill:#D32F2F,color:#FFFFFF,stroke:#D32F2F
+    style PW fill:#4CAF50,color:#FFFFFF,stroke:#4CAF50
+    style SR fill:#7B1FA2,color:#FFFFFF,stroke:#7B1FA2
 ```
 
 ### Cross-Parliament Intersection Rules
@@ -626,18 +672,18 @@ flowchart TD
 
     REJ --> REWORK["🔄 Rework: Gather evidence<br/>via MCP tools or<br/>discard entry"]
 
-    style A fill:#2c3e50,color:#fff,stroke:#34495e
-    style B fill:#8e44ad,color:#fff,stroke:#9b59b6
-    style C fill:#2980b9,color:#fff,stroke:#3498db
-    style D fill:#27ae60,color:#fff,stroke:#2ecc71
-    style E fill:#2980b9,color:#fff,stroke:#3498db
-    style F fill:#0b5345,color:#fff,stroke:#1abc9c
-    style G fill:#f39c12,color:#000,stroke:#e67e22
-    style H fill:#f39c12,color:#000,stroke:#e67e22
-    style I fill:#e67e22,color:#fff,stroke:#d35400
-    style PUB fill:#27ae60,color:#fff,stroke:#2ecc71
-    style REJ fill:#e74c3c,color:#fff,stroke:#c0392b
-    style REWORK fill:#95a5a6,color:#000,stroke:#7f8c8d
+    style A fill:#455A64,color:#FFFFFF,stroke:#455A64
+    style B fill:#7B1FA2,color:#FFFFFF,stroke:#7B1FA2
+    style C fill:#1565C0,color:#FFFFFF,stroke:#2196F3
+    style D fill:#4CAF50,color:#FFFFFF,stroke:#4CAF50
+    style E fill:#1565C0,color:#FFFFFF,stroke:#2196F3
+    style F fill:#1B5E20,color:#FFFFFF,stroke:#00897B
+    style G fill:#FF9800,color:#000000,stroke:#FF9800
+    style H fill:#FF9800,color:#000000,stroke:#FF9800
+    style I fill:#FF9800,color:#FFFFFF,stroke:#F57C00
+    style PUB fill:#4CAF50,color:#FFFFFF,stroke:#4CAF50
+    style REJ fill:#D32F2F,color:#FFFFFF,stroke:#D32F2F
+    style REWORK fill:#9E9E9E,color:#000000,stroke:#9E9E9E
 ```
 
 ### ⛔ Anti-Pattern Warning
@@ -699,10 +745,10 @@ graph LR
     O -->|"Captured successfully"| S
     T -->|"Materialized"| W
 
-    style S fill:#28a745,color:#fff
-    style W fill:#dc3545,color:#fff
-    style O fill:#0d6efd,color:#fff
-    style T fill:#ffc107,color:#000
+    style S fill:#4CAF50,color:#FFFFFF
+    style W fill:#D32F2F,color:#FFFFFF
+    style O fill:#1565C0,color:#FFFFFF
+    style T fill:#FFC107,color:#000000
 ```
 
 #### Migration Examples

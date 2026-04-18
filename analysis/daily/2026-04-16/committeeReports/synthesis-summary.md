@@ -40,9 +40,9 @@ flowchart LR
         P234["Prop 234\nPort Operations"]
     end
     subgraph Committee["Committee Reports"]
-        style SfU22 fill:#ff6b6b,color:#fff
-        style TU21 fill:#ffd93d,color:#000
-        style TU17 fill:#ffd93d,color:#000
+        style SfU22 fill:#EF5350,color:#FFFFFF
+        style TU21 fill:#FFC107,color:#000000
+        style TU17 fill:#FFC107,color:#000000
         TU21["TU21\nState e-ID\n7/10"]
         TU17["TU17\nAnti-Fraud\n6/10"]
         SfU22["SfU22\nInhibition\n8/10"]

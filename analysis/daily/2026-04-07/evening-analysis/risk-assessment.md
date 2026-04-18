@@ -19,11 +19,11 @@ graph TD
         R4["Housing<br/>Gridlock<br/>L:2 × I:2 = 4"]
         R5["Foreign Policy<br/>Alignment<br/>L:1 × I:3 = 3"]
     end
-    style R1 fill:#fd7e14,color:#fff
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#28a745,color:#fff
+    style R1 fill:#FF9800,color:#FFFFFF
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Risk Matrix

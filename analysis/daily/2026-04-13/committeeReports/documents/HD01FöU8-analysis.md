@@ -25,10 +25,10 @@ graph TD
     A --> E["Voluntary Defence<br/>Organizations"]
     B --> F["NATO Force<br/>Requirements"]
     C --> F
-    style A fill:#00d9ff,color:#000
-    style F fill:#ff006e,color:#fff
-    style B fill:#ffbe0b,color:#000
-    style C fill:#ffbe0b,color:#000
+    style A fill:#00d9ff,color:#000000
+    style F fill:#ff006e,color:#FFFFFF
+    style B fill:#ffbe0b,color:#000000
+    style C fill:#ffbe0b,color:#000000
 ```
 
 | Dimension | Score (0-10) | Rationale |

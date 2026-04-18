@@ -21,10 +21,10 @@ graph TD
         F["🔍 Riksrevisionen<br/>Skr. 2025/26:241<br/>⭐ 5/10"] --> A
     end
     
-    style A fill:#ff006e,color:#fff
-    style B fill:#ffbe0b,color:#000
-    style C fill:#ffbe0b,color:#000
-    style D fill:#00d9ff,color:#000
+    style A fill:#ff006e,color:#FFFFFF
+    style B fill:#ffbe0b,color:#000000
+    style C fill:#ffbe0b,color:#000000
+    style D fill:#00d9ff,color:#000000
     style E fill:#1a1e3d,color:#e0e0e0
     style F fill:#1a1e3d,color:#e0e0e0
 ```

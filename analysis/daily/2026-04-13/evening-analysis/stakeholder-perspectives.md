@@ -25,14 +25,14 @@ graph TD
         JUD["⚖️ JUDICIARY<br/>Impact: +2/5<br/>Expanded accountability,<br/>gang crime penalties"]
         MED["📰 MEDIA/PUBLIC OPINION<br/>Impact: +3/5<br/>High news value, coordinated<br/>package creates narrative"]
     end
-    style CIT fill:#28a745,color:#fff
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#dc3545,color:#fff
-    style BIZ fill:#0d6efd,color:#fff
-    style CIV fill:#ffc107,color:#000
-    style INT fill:#0d6efd,color:#fff
-    style JUD fill:#0d6efd,color:#fff
-    style MED fill:#28a745,color:#fff
+    style CIT fill:#4CAF50,color:#FFFFFF
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#D32F2F,color:#FFFFFF
+    style BIZ fill:#1565C0,color:#FFFFFF
+    style CIV fill:#FFC107,color:#000000
+    style INT fill:#1565C0,color:#FFFFFF
+    style JUD fill:#1565C0,color:#FFFFFF
+    style MED fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Detailed Stakeholder Assessment

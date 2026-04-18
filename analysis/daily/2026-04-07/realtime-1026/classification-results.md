@@ -27,14 +27,14 @@ graph LR
     D3 --> DOM3["Migration"]
     D4 --> DOM4["Foreign Policy"]
 
-    style D1 fill:#fd7e14,stroke:#ca6510,color:#fff
-    style D2 fill:#ffc107,stroke:#e0a800,color:#000
-    style D3 fill:#ffc107,stroke:#e0a800,color:#000
-    style D4 fill:#28a745,stroke:#1e7e34,color:#fff
-    style DOM1 fill:#dc3545,stroke:#b02a37,color:#fff
-    style DOM2 fill:#6f42c1,stroke:#5a32a3,color:#fff
-    style DOM3 fill:#fd7e14,stroke:#ca6510,color:#fff
-    style DOM4 fill:#0d6efd,stroke:#0a58ca,color:#fff
+    style D1 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style D2 fill:#FFC107,stroke:#FFA000,color:#000000
+    style D3 fill:#FFC107,stroke:#FFA000,color:#000000
+    style D4 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style DOM1 fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
+    style DOM2 fill:#7B1FA2,stroke:#4A148C,color:#FFFFFF
+    style DOM3 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style DOM4 fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
 ```
 
 ---

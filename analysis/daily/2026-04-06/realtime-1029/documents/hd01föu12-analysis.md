@@ -35,9 +35,9 @@ graph LR
     A --> I{Urgency}
     I -->|"🔵 ELEVATED"| L[Monitoring — scheduled debate Apr 14]
     
-    style D fill:#ffc107,color:#000
-    style H fill:#0d6efd,color:#fff
-    style L fill:#0d6efd,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#1565C0,color:#FFFFFF
+    style L fill:#1565C0,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -83,12 +83,12 @@ graph TD
         R6["🟡 External / International<br/>L:3 × I:2 = 6"]
     end
     
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#28a745,color:#fff
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#28a745,color:#fff
-    style R6 fill:#ffc107,color:#000
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#4CAF50,color:#FFFFFF
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#FFC107,color:#000000
 ```
 
 | Risk Type | L | I | Score | Assessment |

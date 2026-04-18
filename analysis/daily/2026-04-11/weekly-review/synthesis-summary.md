@@ -53,29 +53,29 @@ graph TD
             R4["🟠 Election Impact: MEDIUM-HIGH"]
         end
     end
-    style P1 fill:#dc3545,color:#fff
-    style P2 fill:#dc3545,color:#fff
-    style P3 fill:#ff6b35,color:#fff
-    style P4 fill:#ff6b35,color:#fff
-    style P5 fill:#ff6b35,color:#fff
-    style P6 fill:#ffc107,color:#000
-    style P7 fill:#28a745,color:#fff
-    style P8 fill:#28a745,color:#fff
-    style P9 fill:#ffc107,color:#000
-    style P10 fill:#ffc107,color:#000
-    style B1 fill:#ff6b35,color:#fff
-    style B2 fill:#ff6b35,color:#fff
-    style B3 fill:#ff6b35,color:#fff
-    style B4 fill:#ff6b35,color:#fff
-    style B5 fill:#ff6b35,color:#fff
-    style B6 fill:#ffc107,color:#000
-    style B7 fill:#ffc107,color:#000
-    style B8 fill:#ffc107,color:#000
-    style C1 fill:#dc3545,color:#fff
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#28a745,color:#fff
-    style R4 fill:#ff6b35,color:#fff
+    style P1 fill:#D32F2F,color:#FFFFFF
+    style P2 fill:#D32F2F,color:#FFFFFF
+    style P3 fill:#FF5722,color:#FFFFFF
+    style P4 fill:#FF5722,color:#FFFFFF
+    style P5 fill:#FF5722,color:#FFFFFF
+    style P6 fill:#FFC107,color:#000000
+    style P7 fill:#4CAF50,color:#FFFFFF
+    style P8 fill:#4CAF50,color:#FFFFFF
+    style P9 fill:#FFC107,color:#000000
+    style P10 fill:#FFC107,color:#000000
+    style B1 fill:#FF5722,color:#FFFFFF
+    style B2 fill:#FF5722,color:#FFFFFF
+    style B3 fill:#FF5722,color:#FFFFFF
+    style B4 fill:#FF5722,color:#FFFFFF
+    style B5 fill:#FF5722,color:#FFFFFF
+    style B6 fill:#FFC107,color:#000000
+    style B7 fill:#FFC107,color:#000000
+    style B8 fill:#FFC107,color:#000000
+    style C1 fill:#D32F2F,color:#FFFFFF
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#4CAF50,color:#FFFFFF
+    style R4 fill:#FF5722,color:#FFFFFF
 ```
 
 ## Summary

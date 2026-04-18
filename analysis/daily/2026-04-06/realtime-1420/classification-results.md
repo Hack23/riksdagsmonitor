@@ -32,9 +32,9 @@ graph TD
         end
     end
 
-    style SEN fill:#ffc107,stroke:#333,color:#000
-    style TYP fill:#17a2b8,stroke:#333,color:#fff
-    style DOM fill:#00d9ff,stroke:#333,color:#000
+    style SEN fill:#FFC107,stroke:#424242,color:#000000
+    style TYP fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style DOM fill:#00d9ff,stroke:#424242,color:#000000
 ```
 
 ---

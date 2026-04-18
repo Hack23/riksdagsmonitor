@@ -31,13 +31,13 @@ graph TB
     SIG --> BET
     SIG --> FRA
 
-    style SIG fill:#fd7e14,color:#fff
-    style RISK fill:#ffc107,color:#000
-    style CONF fill:#28a745,color:#fff
-    style PROP fill:#dc3545,color:#fff
-    style MOT fill:#6f42c1,color:#fff
-    style BET fill:#0d6efd,color:#fff
-    style FRA fill:#20c997,color:#fff
+    style SIG fill:#FF9800,color:#FFFFFF
+    style RISK fill:#FFC107,color:#000000
+    style CONF fill:#4CAF50,color:#FFFFFF
+    style PROP fill:#D32F2F,color:#FFFFFF
+    style MOT fill:#7B1FA2,color:#FFFFFF
+    style BET fill:#1565C0,color:#FFFFFF
+    style FRA fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

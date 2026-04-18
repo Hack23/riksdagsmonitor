@@ -54,10 +54,10 @@ graph TD
         T6["T6: Arms export scrutiny<br/>HD03228"]
     end
 
-    style S fill:#28a745,color:#fff
-    style W fill:#ffc107,color:#000
-    style O fill:#0d6efd,color:#fff
-    style T fill:#dc3545,color:#fff
+    style S fill:#4CAF50,color:#FFFFFF
+    style W fill:#FFC107,color:#000000
+    style O fill:#1565C0,color:#FFFFFF
+    style T fill:#D32F2F,color:#FFFFFF
 ```
 
 ---

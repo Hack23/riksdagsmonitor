@@ -25,10 +25,10 @@ graph LR
     D --> E["Cross-Cutting Fiscal Policy"]
     A --> F{"Urgency"}
     F -->|"🟠 URGENT"| G["Budget cycle deadline"]
-    style A fill:#0A66C2,stroke:#fff,color:#fff
-    style C fill:#ffc107,stroke:#333,color:#000
-    style E fill:#17a2b8,stroke:#333,color:#fff
-    style G fill:#fd7e14,stroke:#333,color:#fff
+    style A fill:#1565C0,stroke:#FFFFFF,color:#FFFFFF
+    style C fill:#FFC107,stroke:#424242,color:#000000
+    style E fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style G fill:#FF9800,stroke:#424242,color:#FFFFFF
 ```
 
 ## 📈 SWOT Analysis

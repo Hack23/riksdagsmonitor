@@ -23,14 +23,14 @@ graph LR
         JUD[Judiciary: Quality concerns]
     end
 
-    style CIT fill:#2ed573,color:#fff
-    style BIZ fill:#2ed573,color:#fff
-    style INT fill:#2ed573,color:#fff
-    style GOV fill:#ffa502,color:#fff
-    style OPP fill:#ffa502,color:#fff
-    style MED fill:#ffa502,color:#fff
-    style CIV fill:#ff4757,color:#fff
-    style JUD fill:#ff4757,color:#fff
+    style CIT fill:#4CAF50,color:#FFFFFF
+    style BIZ fill:#4CAF50,color:#FFFFFF
+    style INT fill:#4CAF50,color:#FFFFFF
+    style GOV fill:#FF9800,color:#FFFFFF
+    style OPP fill:#FF9800,color:#FFFFFF
+    style MED fill:#FF9800,color:#FFFFFF
+    style CIV fill:#EF5350,color:#FFFFFF
+    style JUD fill:#EF5350,color:#FFFFFF
 ```
 
 ## Detailed Perspectives

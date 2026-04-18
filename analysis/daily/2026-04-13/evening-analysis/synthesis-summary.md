@@ -46,20 +46,20 @@ graph TD
             E3["📊 SD: Internal coalition<br/>accountability push"]
         end
     end
-    style S1 fill:#dc3545,stroke:#333,color:#fff
-    style S2 fill:#ffc107,stroke:#333,color:#000
-    style S3 fill:#28a745,stroke:#333,color:#fff
-    style R1 fill:#dc3545,stroke:#333,color:#fff
-    style R2 fill:#fd7e14,stroke:#333,color:#fff
-    style R3 fill:#ffc107,stroke:#333,color:#000
-    style SIG1 fill:#dc3545,stroke:#333,color:#fff
-    style SIG2 fill:#dc3545,stroke:#333,color:#fff
-    style SIG3 fill:#dc3545,stroke:#333,color:#fff
-    style SIG4 fill:#fd7e14,stroke:#333,color:#fff
-    style SIG5 fill:#fd7e14,stroke:#333,color:#fff
-    style E1 fill:#0d6efd,stroke:#333,color:#fff
-    style E2 fill:#6f42c1,stroke:#333,color:#fff
-    style E3 fill:#ffc107,stroke:#333,color:#000
+    style S1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style S2 fill:#FFC107,stroke:#424242,color:#000000
+    style S3 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style R1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R2 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style R3 fill:#FFC107,stroke:#424242,color:#000000
+    style SIG1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style SIG2 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style SIG3 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style SIG4 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style SIG5 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style E1 fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style E2 fill:#7B1FA2,stroke:#424242,color:#FFFFFF
+    style E3 fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ## 🔑 Top Findings (Cross-Type Synthesis)

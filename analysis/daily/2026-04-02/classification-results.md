@@ -28,15 +28,15 @@ graph TD
 
     IPL --> I1["HD10428<br/>Emergency Airport<br/>🟢 Sensitivity: LOW"]
 
-    style B2 fill:#dc3545,color:#fff
-    style F3 fill:#dc3545,color:#fff
-    style F6 fill:#dc3545,color:#fff
-    style B1 fill:#fd7e14,color:#fff
-    style F2 fill:#fd7e14,color:#fff
-    style F4 fill:#fd7e14,color:#fff
-    style F1 fill:#28a745,color:#fff
-    style F5 fill:#28a745,color:#fff
-    style I1 fill:#28a745,color:#fff
+    style B2 fill:#D32F2F,color:#FFFFFF
+    style F3 fill:#D32F2F,color:#FFFFFF
+    style F6 fill:#D32F2F,color:#FFFFFF
+    style B1 fill:#FF9800,color:#FFFFFF
+    style F2 fill:#FF9800,color:#FFFFFF
+    style F4 fill:#FF9800,color:#FFFFFF
+    style F1 fill:#4CAF50,color:#FFFFFF
+    style F5 fill:#4CAF50,color:#FFFFFF
+    style I1 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Per-Document Classification Table

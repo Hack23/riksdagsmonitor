@@ -23,18 +23,18 @@ graph TD
     MIG --> P229["Prop 229<br/>New Reception Act"]
     MIG --> P215["Prop 215<br/>Settlement Act"]
     
-    style GOV fill:#00d9ff,stroke:#333,color:#000
-    style DEF fill:#ff006e,stroke:#333,color:#fff
-    style JUST fill:#ffbe0b,stroke:#333,color:#000
-    style MIG fill:#ff8c00,stroke:#333,color:#000
-    style FOU12 fill:#ff4444,stroke:#333,color:#fff
-    style P235 fill:#ff4444,stroke:#333,color:#fff
-    style P228 fill:#ff4444,stroke:#333,color:#fff
-    style JUU15 fill:#ffbe0b,stroke:#333,color:#000
-    style P214 fill:#ff6666,stroke:#333,color:#fff
-    style P227 fill:#ffcc44,stroke:#333,color:#000
-    style P229 fill:#ffaa44,stroke:#333,color:#000
-    style P215 fill:#ffaa44,stroke:#333,color:#000
+    style GOV fill:#00d9ff,stroke:#424242,color:#000000
+    style DEF fill:#ff006e,stroke:#424242,color:#FFFFFF
+    style JUST fill:#ffbe0b,stroke:#424242,color:#000000
+    style MIG fill:#F57C00,stroke:#424242,color:#000000
+    style FOU12 fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style P235 fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style P228 fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style JUU15 fill:#ffbe0b,stroke:#424242,color:#000000
+    style P214 fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style P227 fill:#ffcc44,stroke:#424242,color:#000000
+    style P229 fill:#FFA726,stroke:#424242,color:#000000
+    style P215 fill:#FFA726,stroke:#424242,color:#000000
 ```
 
 ## Key Findings

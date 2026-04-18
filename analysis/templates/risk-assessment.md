@@ -106,15 +106,15 @@ graph TD
     R4 -.-> TL
     R5 -.-> TL
 
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#28a745,color:#fff
-    style TC fill:#dc3545,color:#fff
-    style TH fill:#fd7e14,color:#fff
-    style TM fill:#ffc107,color:#000
-    style TL fill:#28a745,color:#fff
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style TC fill:#D32F2F,color:#FFFFFF
+    style TH fill:#FF9800,color:#FFFFFF
+    style TM fill:#FFC107,color:#000000
+    style TL fill:#4CAF50,color:#FFFFFF
 ```
 
 ```
@@ -280,10 +280,10 @@ flowchart TD
     FIRST --> SECOND_A["⚠️ 2ND ORDER (A):<br/>[REQUIRED: Follow-on effect]<br/>Score: [L×I]"]
     FIRST --> SECOND_B["⚠️ 2ND ORDER (B):<br/>[OPTIONAL: Alternative path]<br/>Score: [L×I]"]
 
-    style TRIGGER fill:#dc3545,color:#fff
-    style FIRST fill:#fd7e14,color:#fff
-    style SECOND_A fill:#ffc107,color:#000
-    style SECOND_B fill:#ffc107,color:#000
+    style TRIGGER fill:#D32F2F,color:#FFFFFF
+    style FIRST fill:#FF9800,color:#FFFFFF
+    style SECOND_A fill:#FFC107,color:#000000
+    style SECOND_B fill:#FFC107,color:#000000
 ```
 
 | Chain Stage | Risk Event | L | I | Score | Circuit Breaker |
@@ -382,11 +382,11 @@ graph LR
     BUD -->|"[mechanism]"| COA
     EXT -->|"[mechanism]"| POL
 
-    style COA fill:#dc3545,color:#fff
-    style POL fill:#fd7e14,color:#fff
-    style BUD fill:#ffc107,color:#000
-    style ELE fill:#28a745,color:#fff
-    style EXT fill:#0d6efd,color:#fff
+    style COA fill:#D32F2F,color:#FFFFFF
+    style POL fill:#FF9800,color:#FFFFFF
+    style BUD fill:#FFC107,color:#000000
+    style ELE fill:#4CAF50,color:#FFFFFF
+    style EXT fill:#1565C0,color:#FFFFFF
 ```
 
 > **AI Instructions:** Replace `[mechanism]` edge labels with actual causal descriptions (e.g., "SD withdrawal collapses budget majority"). Color each node by its current risk tier using the standard palette.

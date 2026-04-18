@@ -20,9 +20,9 @@ graph LR
     MJU30["MJU30: Climate Goals"] --> NU18["NU18: Renewables"]
     SoU16["SoU16: Healthcare Org"] --> SoU17["SoU17: Healthcare Priority"]
     AU11["AU11: Equality"] --> AU12["AU12: Work Environment"]
-    style UU6 fill:#ff006e,color:#fff
-    style SfU16 fill:#ff006e,color:#fff
-    style MJU30 fill:#ffbe0b,color:#000
+    style UU6 fill:#ff006e,color:#FFFFFF
+    style SfU16 fill:#ff006e,color:#FFFFFF
+    style MJU30 fill:#ffbe0b,color:#000000
 ```
 
 ## Cluster Analysis

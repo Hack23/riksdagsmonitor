@@ -29,9 +29,9 @@ graph LR
     T3 --> E3
     T4 --> E4
 
-    classDef high fill:#dc3545,color:#fff
-    classDef medium fill:#ffc107,color:#000
-    classDef low fill:#28a745,color:#fff
+    classDef high fill:#D32F2F,color:#FFFFFF
+    classDef medium fill:#FFC107,color:#000000
+    classDef low fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Threat Assessment Table

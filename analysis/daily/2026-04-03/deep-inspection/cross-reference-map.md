@@ -22,11 +22,11 @@ graph TD
         HD03214 --> REFORM
     end
 
-    style HD03214 fill:#00d9ff,stroke:#333,color:#000
-    style HD03228 fill:#0d6efd,stroke:#333,color:#fff
-    style NIS2 fill:#ffbe0b,stroke:#333,color:#000
-    style NATO_CDP fill:#28a745,stroke:#333,color:#fff
-    style REFORM fill:#ff006e,stroke:#333,color:#fff
+    style HD03214 fill:#00d9ff,stroke:#424242,color:#000000
+    style HD03228 fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style NIS2 fill:#ffbe0b,stroke:#424242,color:#000000
+    style NATO_CDP fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style REFORM fill:#ff006e,stroke:#424242,color:#FFFFFF
 ```
 
 ---

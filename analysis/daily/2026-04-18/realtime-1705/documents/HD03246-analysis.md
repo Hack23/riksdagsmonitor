@@ -24,10 +24,10 @@ graph TD
     O["🎯 OPPORTUNITIES\n• Can be paired with social investment (S might support)\n• International best practice adaptation possible\n• Reduces gang recruitment pipeline if effective"]:::opportunity
     T["🚨 THREATS\n• Constitutional challenges (ECHR juvenile rights)\n• Implementation capacity (youth detention shortage)\n• Potential for increased recidivism if rehabilitation neglected"]:::threat
     
-    style S fill:#1a472a,color:#fff
-    style W fill:#7b2d00,color:#fff
-    style O fill:#1a3a5c,color:#fff
-    style T fill:#4a0e0e,color:#fff
+    style S fill:#1B5E20,color:#FFFFFF
+    style W fill:#E65100,color:#FFFFFF
+    style O fill:#0D47A1,color:#FFFFFF
+    style T fill:#B71C1C,color:#FFFFFF
 ```
 
 | Dimension | Evidence | Confidence | Impact |

@@ -35,13 +35,13 @@ graph LR
     A --> E{Political Dynamics}
     E --> F[S Regional Champion]
     E --> G[KD Rural Credibility Test]
-    style A fill:#28a745,stroke:#333,color:#fff
-    style B fill:#0d6efd,stroke:#333,color:#fff
-    style E fill:#0d6efd,stroke:#333,color:#fff
-    style C fill:#fd7e14,stroke:#333,color:#000
-    style D fill:#6c757d,stroke:#333,color:#fff
-    style F fill:#0d6efd,stroke:#333,color:#fff
-    style G fill:#fd7e14,stroke:#333,color:#000
+    style A fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style B fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style E fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style C fill:#FF9800,stroke:#424242,color:#000000
+    style D fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style F fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style G fill:#FF9800,stroke:#424242,color:#000000
 ```
 
 | Attribute | Value |

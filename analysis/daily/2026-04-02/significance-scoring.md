@@ -18,11 +18,11 @@ graph LR
         C --- D["International Relevance<br/>7/10"]
         D --- E["Precedent Setting<br/>6/10"]
     end
-    style A fill:#fd7e14,color:#fff
-    style B fill:#dc3545,color:#fff
-    style C fill:#ffc107,color:#000
-    style D fill:#fd7e14,color:#fff
-    style E fill:#ffc107,color:#000
+    style A fill:#FF9800,color:#FFFFFF
+    style B fill:#D32F2F,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FFC107,color:#000000
 ```
 
 | Dimension | Score | Rationale |

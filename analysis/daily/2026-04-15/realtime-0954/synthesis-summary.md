@@ -56,10 +56,10 @@ graph LR
         D["Govt Activity<br/>Score: 5"] --> H["Cyber + Fraud<br/>+ Budget"]
     end
 
-    style A fill:#ff6b6b,color:#fff
-    style B fill:#4ecdc4,color:#fff
-    style C fill:#45b7d1,color:#fff
-    style D fill:#96ceb4,color:#fff
+    style A fill:#EF5350,color:#FFFFFF
+    style B fill:#0097A7,color:#FFFFFF
+    style C fill:#45b7d1,color:#FFFFFF
+    style D fill:#A5D6A7,color:#FFFFFF
 ```
 
 **Overall Significance**: MEDIUM (combined score 5-6/10)

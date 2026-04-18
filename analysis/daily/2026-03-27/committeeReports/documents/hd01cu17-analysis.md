@@ -40,9 +40,9 @@ graph LR
     A --> I{Urgency}
     I -->|"⚪ ROUTINE"| M["Standard committee<br/>motion processing"]
 
-    style E fill:#28a745,color:#fff
-    style H fill:#fd7e14,color:#fff
-    style M fill:#6c757d,color:#fff
+    style E fill:#4CAF50,color:#FFFFFF
+    style H fill:#FF9800,color:#FFFFFF
+    style M fill:#9E9E9E,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -102,14 +102,14 @@ graph TD
     R5 -.-> T4
     R6 -.-> T4
 
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#28a745,color:#fff
-    style R3 fill:#28a745,color:#fff
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#28a745,color:#fff
-    style R6 fill:#28a745,color:#fff
-    style T3 fill:#ffc107,color:#000
-    style T4 fill:#28a745,color:#fff
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#4CAF50,color:#FFFFFF
+    style R3 fill:#4CAF50,color:#FFFFFF
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#4CAF50,color:#FFFFFF
+    style T3 fill:#FFC107,color:#000000
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Type | Likelihood (1–5) | Impact (1–5) | Score | Assessment |

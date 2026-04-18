@@ -44,10 +44,10 @@ graph TD
     MP_A --> GOV
     GOV --> AGR
     GOV --> CIT
-    style MP_A fill:#28a745,stroke:#155724,color:#fff
-    style GOV fill:#17a2b8,stroke:#0c5460,color:#fff
-    style AGR fill:#ffc107,stroke:#856404,color:#000
-    style CIT fill:#28a745,stroke:#155724,color:#fff
+    style MP_A fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style GOV fill:#0097A7,stroke:#006064,color:#FFFFFF
+    style AGR fill:#FFC107,stroke:#F57C00,color:#000000
+    style CIT fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 ## Risk Assessment

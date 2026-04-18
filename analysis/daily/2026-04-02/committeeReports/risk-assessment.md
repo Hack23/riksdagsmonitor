@@ -25,10 +25,10 @@ graph LR
     R4 -->|"amplifies all risks"| R1
     R4 -->|"amplifies"| R2
 
-    classDef high fill:#5c1a1a,stroke:#ff006e,color:#e0e0e0,stroke-width:3px
-    classDef moderate fill:#5c3d1a,stroke:#ffbe0b,color:#e0e0e0,stroke-width:2px
-    classDef low fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
-    classDef action fill:#0a0e27,stroke:#00ff88,color:#00ff88,stroke-width:2px
+    classDef high fill:#B71C1C,stroke:#ff006e,color:#e0e0e0,stroke-width:3px
+    classDef moderate fill:#5D4037,stroke:#ffbe0b,color:#e0e0e0,stroke-width:2px
+    classDef low fill:#0D47A1,stroke:#00d9ff,color:#e0e0e0
+    classDef action fill:#0a0e27,stroke:#4CAF50,color:#4CAF50,stroke-width:2px
 ```
 
 ## Detailed Analysis

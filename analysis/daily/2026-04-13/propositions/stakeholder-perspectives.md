@@ -25,13 +25,13 @@ flowchart LR
         I["Environment<br/>🔴 Negative"]
     end
     
-    style A fill:#28a745,color:#fff
-    style B fill:#28a745,color:#fff
-    style C fill:#ffc107,color:#000
-    style D fill:#dc3545,color:#fff
-    style E fill:#dc3545,color:#fff
-    style G fill:#28a745,color:#fff
-    style I fill:#dc3545,color:#fff
+    style A fill:#4CAF50,color:#FFFFFF
+    style B fill:#4CAF50,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#D32F2F,color:#FFFFFF
+    style E fill:#D32F2F,color:#FFFFFF
+    style G fill:#4CAF50,color:#FFFFFF
+    style I fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Detailed Stakeholder Analysis

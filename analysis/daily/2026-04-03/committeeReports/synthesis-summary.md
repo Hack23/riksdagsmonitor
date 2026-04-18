@@ -33,12 +33,12 @@ graph TD
         end
     end
 
-    style SEN1 fill:#28a745,color:#fff
-    style SEN2 fill:#ffc107,color:#000
-    style RSK1 fill:#ffc107,color:#000
-    style RSK2 fill:#fd7e14,color:#fff
-    style SIG1 fill:#007bff,color:#fff
-    style SIG2 fill:#dc3545,color:#fff
+    style SEN1 fill:#4CAF50,color:#FFFFFF
+    style SEN2 fill:#FFC107,color:#000000
+    style RSK1 fill:#FFC107,color:#000000
+    style RSK2 fill:#FF9800,color:#FFFFFF
+    style SIG1 fill:#1565C0,color:#FFFFFF
+    style SIG2 fill:#D32F2F,color:#FFFFFF
 ```
 
 ---
@@ -95,10 +95,10 @@ graph LR
     D --> E
     E --> F["Electoral risk<br/>2026"]
 
-    style A fill:#fd7e14,color:#fff
-    style C fill:#ffc107,color:#000
-    style E fill:#dc3545,color:#fff
-    style F fill:#dc3545,color:#fff
+    style A fill:#FF9800,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style E fill:#D32F2F,color:#FFFFFF
+    style F fill:#D32F2F,color:#FFFFFF
 ```
 
 ---

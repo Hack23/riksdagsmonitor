@@ -28,12 +28,12 @@ graph LR
     COMP --> GATE
     GATE -->|"Yes"| PUB
     GATE -->|"No"| MON
-    style INPUT fill:#1a1e3d,color:#fff
-    style DIM fill:#0d6efd,color:#fff
-    style COMP fill:#6f42c1,color:#fff
-    style GATE fill:#ffc107,color:#000
-    style PUB fill:#28a745,color:#fff
-    style MON fill:#6c757d,color:#fff
+    style INPUT fill:#1a1e3d,color:#FFFFFF
+    style DIM fill:#1565C0,color:#FFFFFF
+    style COMP fill:#7B1FA2,color:#FFFFFF
+    style GATE fill:#FFC107,color:#000000
+    style PUB fill:#4CAF50,color:#FFFFFF
+    style MON fill:#9E9E9E,color:#FFFFFF
 ```
 
 ## 📊 5-Dimension Scoring Table

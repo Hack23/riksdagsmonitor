@@ -32,9 +32,9 @@ graph LR
     I -->|"🟠 URGENT"| K["Minister response<br/>due 2026-04-24"]
     
     style A fill:#1a1e3d,color:#e0e0e0
-    style D fill:#FFD700,color:#000000
+    style D fill:#FFC107,color:#000000
     style H fill:#00d9ff,color:#000000
-    style K fill:#FF6B35,color:#000000
+    style K fill:#FF5722,color:#000000
 ```
 
 | Dimension | Assessment | Evidence |

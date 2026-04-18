@@ -21,14 +21,14 @@ graph TD
         MED["📰 Media<br/>Security package coverage 📰<br/>Multi-front story day 📰"]
     end
 
-    style CIT fill:#0d6efd,color:#fff
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#dc3545,color:#fff
-    style BUS fill:#ffc107,color:#000
-    style CIV fill:#6f42c1,color:#fff
-    style INT fill:#0dcaf0,color:#000
-    style JUD fill:#fd7e14,color:#fff
-    style MED fill:#6c757d,color:#fff
+    style CIT fill:#1565C0,color:#FFFFFF
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#D32F2F,color:#FFFFFF
+    style BUS fill:#FFC107,color:#000000
+    style CIV fill:#7B1FA2,color:#FFFFFF
+    style INT fill:#2196F3,color:#000000
+    style JUD fill:#FF9800,color:#FFFFFF
+    style MED fill:#9E9E9E,color:#FFFFFF
 ```
 
 ## Detailed Stakeholder Assessment

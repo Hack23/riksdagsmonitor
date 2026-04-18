@@ -51,23 +51,23 @@ graph TD
             MED2["🟡 DEVELOPING: SD internal tension<br/>Interpellation story building"]
         end
     end
-    style CIT1 fill:#28a745,stroke:#333,color:#fff
-    style CIT2 fill:#dc3545,stroke:#333,color:#fff
-    style CIT3 fill:#ffc107,stroke:#333,color:#000
-    style GOV1 fill:#28a745,stroke:#333,color:#fff
-    style GOV2 fill:#ffc107,stroke:#333,color:#000
-    style OPP1 fill:#28a745,stroke:#333,color:#fff
-    style OPP2 fill:#28a745,stroke:#333,color:#fff
-    style BIZ1 fill:#28a745,stroke:#333,color:#fff
-    style BIZ2 fill:#ffc107,stroke:#333,color:#000
-    style CIV1 fill:#ffc107,stroke:#333,color:#000
-    style CIV2 fill:#28a745,stroke:#333,color:#fff
-    style INT1 fill:#28a745,stroke:#333,color:#fff
-    style INT2 fill:#fd7e14,stroke:#333,color:#fff
-    style JUD1 fill:#ffc107,stroke:#333,color:#000
-    style JUD2 fill:#28a745,stroke:#333,color:#fff
-    style MED1 fill:#28a745,stroke:#333,color:#fff
-    style MED2 fill:#ffc107,stroke:#333,color:#000
+    style CIT1 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style CIT2 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style CIT3 fill:#FFC107,stroke:#424242,color:#000000
+    style GOV1 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style GOV2 fill:#FFC107,stroke:#424242,color:#000000
+    style OPP1 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style OPP2 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style BIZ1 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style BIZ2 fill:#FFC107,stroke:#424242,color:#000000
+    style CIV1 fill:#FFC107,stroke:#424242,color:#000000
+    style CIV2 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style INT1 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style INT2 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style JUD1 fill:#FFC107,stroke:#424242,color:#000000
+    style JUD2 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style MED1 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style MED2 fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ## 📋 Impact Summary Matrix

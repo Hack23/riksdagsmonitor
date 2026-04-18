@@ -39,13 +39,13 @@ flowchart TD
     V --> INTL["🌍 International<br/>1 motion: HD024003"]
     
     style GOV fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style V fill:#b71c1c,stroke:#ff006e,color:#fff
-    style EDU fill:#1b5e20,stroke:#00d9ff,color:#fff
-    style HOUSING fill:#e65100,stroke:#ffbe0b,color:#fff
-    style DEF fill:#0d47a1,stroke:#00d9ff,color:#fff
-    style FIN fill:#4a148c,stroke:#ff006e,color:#fff
-    style JUST fill:#880e4f,stroke:#ff006e,color:#fff
-    style INTL fill:#006064,stroke:#00d9ff,color:#fff
+    style V fill:#B71C1C,stroke:#ff006e,color:#FFFFFF
+    style EDU fill:#1B5E20,stroke:#00d9ff,color:#FFFFFF
+    style HOUSING fill:#E65100,stroke:#ffbe0b,color:#FFFFFF
+    style DEF fill:#0D47A1,stroke:#00d9ff,color:#FFFFFF
+    style FIN fill:#4A148C,stroke:#ff006e,color:#FFFFFF
+    style JUST fill:#880E4F,stroke:#ff006e,color:#FFFFFF
+    style INTL fill:#006064,stroke:#00d9ff,color:#FFFFFF
 ```
 
 ## Top Documents by Significance

@@ -23,9 +23,9 @@ graph LR
     A[Composite: 7.3/10] --> B{Score ≥ 7?}
     B -->|Yes| C[✅ PUBLISH]
     B -->|No| D[📋 Analysis Only]
-    style A fill:#0d6efd,color:#fff
-    style C fill:#28a745,color:#fff
-    style D fill:#ffc107,color:#000
+    style A fill:#1565C0,color:#FFFFFF
+    style C fill:#4CAF50,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
 ```
 
 ## 📂 MCP Data Files Used

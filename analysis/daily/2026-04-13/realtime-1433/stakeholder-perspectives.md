@@ -16,14 +16,14 @@ graph TD
         MED["📰 Media/Public Opinion"]
         CIV["🤝 Civil Society<br/>Asylum NGOs, Climate orgs"]
     end
-    style GOV fill:#0A66C2,stroke:#fff,color:#fff
-    style OPP fill:#dc3545,stroke:#333,color:#fff
-    style CIT fill:#28a745,stroke:#333,color:#fff
-    style BIZ fill:#ffc107,stroke:#333,color:#000
-    style INT fill:#17a2b8,stroke:#333,color:#fff
-    style JUD fill:#6f42c1,stroke:#333,color:#fff
-    style MED fill:#fd7e14,stroke:#333,color:#fff
-    style CIV fill:#e83e8c,stroke:#333,color:#fff
+    style GOV fill:#1565C0,stroke:#FFFFFF,color:#FFFFFF
+    style OPP fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style CIT fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style BIZ fill:#FFC107,stroke:#424242,color:#000000
+    style INT fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style JUD fill:#7B1FA2,stroke:#424242,color:#FFFFFF
+    style MED fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style CIV fill:#e83e8c,stroke:#424242,color:#FFFFFF
 ```
 
 | Stakeholder | Primary Impact | Key dok_ids | Position | Confidence |

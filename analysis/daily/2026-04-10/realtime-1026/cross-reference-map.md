@@ -35,12 +35,12 @@ graph TD
     HD11698 -.->|same author same day| HD11701
     HD11697 -.->|same party S| HD11700
 
-    style HD11696 fill:#0d6efd,color:#fff
-    style HD11698 fill:#0d6efd,color:#fff
-    style HD11701 fill:#ffc107,color:#000
-    style HD11697 fill:#dc3545,color:#fff
-    style HD11700 fill:#dc3545,color:#fff
-    style HD11699 fill:#28a745,color:#fff
+    style HD11696 fill:#1565C0,color:#FFFFFF
+    style HD11698 fill:#1565C0,color:#FFFFFF
+    style HD11701 fill:#FFC107,color:#000000
+    style HD11697 fill:#D32F2F,color:#FFFFFF
+    style HD11700 fill:#D32F2F,color:#FFFFFF
+    style HD11699 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Identified Clusters

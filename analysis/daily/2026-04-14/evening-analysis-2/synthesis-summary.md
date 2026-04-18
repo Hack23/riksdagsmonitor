@@ -75,11 +75,11 @@ graph TD
     REDAR -->|Ip 421 422| BRITZ
     LUHR -->|Ip 404| BRITZ
 
-    style VB fill:#ff006e,color:#fff
-    style EB fill:#ff006e,color:#fff
-    style FIU fill:#ff6b6b,color:#fff
-    style NATO fill:#ffa502,color:#fff
-    style BRITZ fill:#5352ed,color:#fff
+    style VB fill:#ff006e,color:#FFFFFF
+    style EB fill:#ff006e,color:#FFFFFF
+    style FIU fill:#EF5350,color:#FFFFFF
+    style NATO fill:#FF9800,color:#FFFFFF
+    style BRITZ fill:#7B1FA2,color:#FFFFFF
 ```
 
 ## SWOT Analysis — All 8 Mandatory Stakeholder Groups

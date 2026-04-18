@@ -28,13 +28,13 @@ graph TD
         R6["Police shortage<br/>admission via HD03237"]
         R7["Tonnage tax niche<br/>criticism"]
     end
-    style R1 fill:#ff6b6b,color:#fff
-    style R2 fill:#ff6b6b,color:#fff
-    style R3 fill:#ffd93d,color:#000
-    style R4 fill:#ffd93d,color:#000
-    style R5 fill:#ffd93d,color:#000
-    style R6 fill:#6bcb77,color:#fff
-    style R7 fill:#6bcb77,color:#fff
+    style R1 fill:#EF5350,color:#FFFFFF
+    style R2 fill:#EF5350,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#FFC107,color:#000000
+    style R6 fill:#81C784,color:#FFFFFF
+    style R7 fill:#81C784,color:#FFFFFF
 ```
 
 ## Detailed Risk Assessment

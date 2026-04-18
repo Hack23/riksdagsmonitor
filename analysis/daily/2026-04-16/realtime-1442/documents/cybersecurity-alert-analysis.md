@@ -27,10 +27,10 @@ graph TD
     G --> H["Defense & Security / Civil Defence"]
     A --> I{"Urgency"}
     I -->|"🔴 CRITICAL"| J["Immediate — ongoing threat"]
-    style A fill:#ff006e,color:#fff
-    style C fill:#ff0000,color:#fff
+    style A fill:#ff006e,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
     style H fill:#00d9ff,color:#0a0e27
-    style J fill:#ff0000,color:#fff
+    style J fill:#D32F2F,color:#FFFFFF
 ```
 
 ## 🔬 SWOT Analysis

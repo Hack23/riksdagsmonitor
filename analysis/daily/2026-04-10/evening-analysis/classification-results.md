@@ -22,10 +22,10 @@ graph TD
     F -->|"Yes: skr. 226, Prop 216"| G["🟢 PUBLIC<br/>Healthcare + Aid"]
     F -->|"No"| H["🟢 PUBLIC<br/>Routine parliamentary"]
 
-    style C fill:#ffc107,color:#000
-    style E fill:#ffc107,color:#000
-    style G fill:#28a745,color:#fff
-    style H fill:#28a745,color:#fff
+    style C fill:#FFC107,color:#000000
+    style E fill:#FFC107,color:#000000
+    style G fill:#4CAF50,color:#FFFFFF
+    style H fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Per-Document Classification

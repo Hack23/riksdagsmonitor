@@ -55,13 +55,13 @@ graph TD
     D --> G[Opportunity: Influence SfU negotiations]
     E --> H[Risk: Complex messaging to voters]
     
-    style A fill:#c0392b,color:#fff
-    style C fill:#c0392b,color:#fff
-    style D fill:#f39c12,color:#fff
-    style E fill:#27ae60,color:#fff
-    style F fill:#e74c3c,color:#fff
-    style G fill:#2ecc71,color:#fff
-    style H fill:#f39c12,color:#fff
+    style A fill:#D32F2F,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#4CAF50,color:#FFFFFF
+    style F fill:#D32F2F,color:#FFFFFF
+    style G fill:#4CAF50,color:#FFFFFF
+    style H fill:#FF9800,color:#FFFFFF
 ```
 
 ## Threat Mitigation Recommendations

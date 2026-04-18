@@ -69,10 +69,10 @@ flowchart TD
     G -->|"Yes"| H["Enhanced Civil<br/>Defense Posture"]
     G -->|"No"| I["Partial<br/>Implementation"]
     
-    style A fill:#00d9ff,stroke:#333,color:#000
-    style F fill:#00ff88,stroke:#333,color:#000
-    style H fill:#00ff88,stroke:#333,color:#000
-    style I fill:#ffbe0b,stroke:#333,color:#000
+    style A fill:#00d9ff,stroke:#424242,color:#000000
+    style F fill:#4CAF50,stroke:#424242,color:#000000
+    style H fill:#4CAF50,stroke:#424242,color:#000000
+    style I fill:#ffbe0b,stroke:#424242,color:#000000
 ```
 
 ## ⚠️ Risk Assessment

@@ -33,15 +33,15 @@ graph TD
             SIG3["🟡 MEDIUM: NATO HD01UFöU3"]
         end
     end
-    style S1 fill:#ffc107,stroke:#333,color:#000
-    style S2 fill:#dc3545,stroke:#333,color:#fff
-    style S3 fill:#28a745,stroke:#333,color:#fff
-    style R1 fill:#dc3545,stroke:#333,color:#fff
-    style R2 fill:#fd7e14,stroke:#333,color:#fff
-    style R3 fill:#ffc107,stroke:#333,color:#000
-    style SIG1 fill:#dc3545,stroke:#333,color:#fff
-    style SIG2 fill:#fd7e14,stroke:#333,color:#fff
-    style SIG3 fill:#ffc107,stroke:#333,color:#000
+    style S1 fill:#FFC107,stroke:#424242,color:#000000
+    style S2 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style S3 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style R1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R2 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style R3 fill:#FFC107,stroke:#424242,color:#000000
+    style SIG1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style SIG2 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style SIG3 fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ## 🔑 Key Findings (Ranked by Significance)
@@ -87,18 +87,18 @@ graph TD
             T3["Migration policy backlash<br/>EU human rights scrutiny"]
         end
     end
-    style STR1 fill:#28a745,stroke:#333,color:#fff
-    style STR2 fill:#28a745,stroke:#333,color:#fff
-    style STR3 fill:#28a745,stroke:#333,color:#fff
-    style W1 fill:#ffc107,stroke:#333,color:#000
-    style W2 fill:#ffc107,stroke:#333,color:#000
-    style W3 fill:#ffc107,stroke:#333,color:#000
-    style O1 fill:#17a2b8,stroke:#333,color:#fff
-    style O2 fill:#17a2b8,stroke:#333,color:#fff
-    style O3 fill:#17a2b8,stroke:#333,color:#fff
-    style T1 fill:#dc3545,stroke:#333,color:#fff
-    style T2 fill:#dc3545,stroke:#333,color:#fff
-    style T3 fill:#dc3545,stroke:#333,color:#fff
+    style STR1 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style STR2 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style STR3 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style W1 fill:#FFC107,stroke:#424242,color:#000000
+    style W2 fill:#FFC107,stroke:#424242,color:#000000
+    style W3 fill:#FFC107,stroke:#424242,color:#000000
+    style O1 fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style O2 fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style O3 fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style T1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style T2 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style T3 fill:#D32F2F,stroke:#424242,color:#FFFFFF
 ```
 
 ## 🔮 Forward Intelligence

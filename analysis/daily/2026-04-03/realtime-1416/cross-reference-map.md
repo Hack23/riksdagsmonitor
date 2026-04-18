@@ -39,17 +39,17 @@ graph TB
     P235 -->|"Tidö delivery"| P227
     P235 -->|"Criminal law"| P213
     
-    style GUTE fill:#ff006e,color:#fff
-    style FOU12 fill:#ffbe0b,color:#000
-    style P214 fill:#00d9ff,color:#000
-    style P228 fill:#00d9ff,color:#000
-    style P235 fill:#ff8c00,color:#fff
-    style JUU15 fill:#ff8c00,color:#fff
-    style P227 fill:#ffbe0b,color:#000
-    style P213 fill:#ffbe0b,color:#000
-    style USA fill:#00d9ff,color:#000
-    style ELSTOD fill:#00d9ff,color:#000
-    style SOU25 fill:#00d9ff,color:#000
+    style GUTE fill:#ff006e,color:#FFFFFF
+    style FOU12 fill:#ffbe0b,color:#000000
+    style P214 fill:#00d9ff,color:#000000
+    style P228 fill:#00d9ff,color:#000000
+    style P235 fill:#F57C00,color:#FFFFFF
+    style JUU15 fill:#F57C00,color:#FFFFFF
+    style P227 fill:#ffbe0b,color:#000000
+    style P213 fill:#ffbe0b,color:#000000
+    style USA fill:#00d9ff,color:#000000
+    style ELSTOD fill:#00d9ff,color:#000000
+    style SOU25 fill:#00d9ff,color:#000000
 ```
 
 ---

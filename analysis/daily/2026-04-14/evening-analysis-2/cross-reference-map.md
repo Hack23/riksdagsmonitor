@@ -32,11 +32,11 @@ graph LR
         IP402[Ip 402 Gron omstallning] --- P240
     end
 
-    style P100 fill:#ff006e,color:#fff
-    style P236 fill:#ff006e,color:#fff
-    style FIU48 fill:#ff6b6b,color:#fff
-    style P240 fill:#00d9ff,color:#000
-    style UFOU3 fill:#ffa502,color:#fff
+    style P100 fill:#ff006e,color:#FFFFFF
+    style P236 fill:#ff006e,color:#FFFFFF
+    style FIU48 fill:#EF5350,color:#FFFFFF
+    style P240 fill:#00d9ff,color:#000000
+    style UFOU3 fill:#FF9800,color:#FFFFFF
 ```
 
 ## Key Cross-References

@@ -21,11 +21,11 @@ graph TD
         D4["HD03216"] --> |"🟢 PUBLIC"| S4["Health/Municipal Gov"]
         D5["HD03114"] --> |"🟢 PUBLIC"| S5["Defence/Foreign Trade"]
     end
-    style D1 fill:#dc3545,color:#fff
-    style D2 fill:#ff6b35,color:#fff
-    style D3 fill:#ff6b35,color:#fff
-    style D4 fill:#ffc107,color:#000
-    style D5 fill:#ffc107,color:#000
+    style D1 fill:#D32F2F,color:#FFFFFF
+    style D2 fill:#FF5722,color:#FFFFFF
+    style D3 fill:#FF5722,color:#FFFFFF
+    style D4 fill:#FFC107,color:#000000
+    style D5 fill:#FFC107,color:#000000
 ```
 
 ## Detailed Classification

@@ -55,12 +55,12 @@ graph TD
     MS -->|"deadline"| D1["🔴 April 24, 2026"]
     JF -->|"deadline"| D1
     
-    style SD fill:#DDDF00,stroke:#333,color:#000
-    style MS fill:#6CA6CD,stroke:#333,color:#fff
-    style JF fill:#6CA6CD,stroke:#333,color:#fff
-    style D1 fill:#FF5722,stroke:#333,color:#fff
-    style IP1 fill:#FFD700,stroke:#333,color:#000
-    style IP2 fill:#FFD700,stroke:#333,color:#000
+    style SD fill:#FFC107,stroke:#424242,color:#000000
+    style MS fill:#90CAF9,stroke:#424242,color:#FFFFFF
+    style JF fill:#90CAF9,stroke:#424242,color:#FFFFFF
+    style D1 fill:#FF5722,stroke:#424242,color:#FFFFFF
+    style IP1 fill:#FFC107,stroke:#424242,color:#000000
+    style IP2 fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ## Implications

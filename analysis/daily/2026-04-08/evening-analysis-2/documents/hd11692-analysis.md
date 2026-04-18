@@ -21,9 +21,9 @@ graph LR
     A["HD11692<br/>Written Question"] --> B["Committee<br/>Processing"]
     B --> C["Government<br/>Response"]
 
-    style A fill:#ffc107,color:#000
-    style B fill:#0d6efd,color:#fff
-    style C fill:#28a745,color:#fff
+    style A fill:#FFC107,color:#000000
+    style B fill:#1565C0,color:#FFFFFF
+    style C fill:#4CAF50,color:#FFFFFF
 ```
 
 ## SWOT Analysis

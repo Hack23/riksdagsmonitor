@@ -27,13 +27,13 @@ graph LR
     D5 --> CS
     CS --> PD["Publication Decision:<br/>✅ PUBLISH (evening analysis)"]
 
-    style D1 fill:#ffc107,color:#000
-    style D2 fill:#ffc107,color:#000
-    style D3 fill:#ffc107,color:#000
-    style D4 fill:#ffc107,color:#000
-    style D5 fill:#0d6efd,color:#fff
-    style CS fill:#fd7e14,color:#fff
-    style PD fill:#28a745,color:#fff
+    style D1 fill:#FFC107,color:#000000
+    style D2 fill:#FFC107,color:#000000
+    style D3 fill:#FFC107,color:#000000
+    style D4 fill:#FFC107,color:#000000
+    style D5 fill:#1565C0,color:#FFFFFF
+    style CS fill:#FF9800,color:#FFFFFF
+    style PD fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Dimension Details

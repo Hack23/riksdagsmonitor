@@ -28,15 +28,15 @@ graph TD
             HD03114["HD03114 Export Control Skr"]
         end
     end
-    style HD10430 fill:#fd7e14,stroke:#873b00,color:#fff
-    style HD11684 fill:#ffc107,stroke:#856404,color:#000
-    style HD11685 fill:#ffc107,stroke:#856404,color:#000
-    style HD11686 fill:#28a745,stroke:#155724,color:#fff
-    style HD10429 fill:#ffc107,stroke:#856404,color:#000
-    style HD024067 fill:#28a745,stroke:#155724,color:#fff
-    style HD024068 fill:#28a745,stroke:#155724,color:#fff
-    style HD024069 fill:#28a745,stroke:#155724,color:#fff
-    style HD03114 fill:#17a2b8,stroke:#0c5460,color:#fff
+    style HD10430 fill:#FF9800,stroke:#E65100,color:#FFFFFF
+    style HD11684 fill:#FFC107,stroke:#F57C00,color:#000000
+    style HD11685 fill:#FFC107,stroke:#F57C00,color:#000000
+    style HD11686 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style HD10429 fill:#FFC107,stroke:#F57C00,color:#000000
+    style HD024067 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style HD024068 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style HD024069 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style HD03114 fill:#0097A7,stroke:#006064,color:#FFFFFF
 ```
 
 ## Cross-Reference Table

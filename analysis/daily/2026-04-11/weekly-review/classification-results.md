@@ -79,12 +79,12 @@ graph TD
     W --> FA
 
     style W fill:#0a0e27,color:#00d9ff,stroke:#00d9ff,stroke-width:2px
-    style SEC fill:#2d1117,color:#ff6b6b,stroke:#dc3545,stroke-width:2px
-    style CJ fill:#2d1117,color:#ff6b6b,stroke:#dc3545,stroke-width:2px
-    style MIG fill:#2d1f11,color:#ffbe0b,stroke:#ff6b35,stroke-width:2px
-    style HC fill:#1f2d11,color:#ffc107,stroke:#ffc107
-    style CE fill:#1f2d11,color:#ffc107,stroke:#ffc107
-    style FA fill:#2d1f11,color:#ffbe0b,stroke:#ff6b35,stroke-width:2px
+    style SEC fill:#B71C1C,color:#EF5350,stroke:#D32F2F,stroke-width:2px
+    style CJ fill:#B71C1C,color:#EF5350,stroke:#D32F2F,stroke-width:2px
+    style MIG fill:#5D4037,color:#ffbe0b,stroke:#FF5722,stroke-width:2px
+    style HC fill:#1B5E20,color:#FFC107,stroke:#FFC107
+    style CE fill:#1B5E20,color:#FFC107,stroke:#FFC107
+    style FA fill:#5D4037,color:#ffbe0b,stroke:#FF5722,stroke-width:2px
 ```
 
 ---

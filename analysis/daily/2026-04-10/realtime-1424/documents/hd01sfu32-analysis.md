@@ -32,9 +32,9 @@ graph LR
     G --> H["Migration MIG / Security SEC"]
     A --> I{{Urgency}}
     I -->|ELEVATED| L["Committee report — vote pending"]
-    style D fill:#ffc107,color:#000
-    style H fill:#0d6efd,color:#fff
-    style L fill:#0d6efd,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#1565C0,color:#FFFFFF
+    style L fill:#1565C0,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -107,14 +107,14 @@ graph TD
     R3 -.-> TM
     R4 -.-> TM
     R5 -.-> TL
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#28a745,color:#fff
-    style TH fill:#fd7e14,color:#fff
-    style TM fill:#ffc107,color:#000
-    style TL fill:#28a745,color:#fff
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style TH fill:#FF9800,color:#FFFFFF
+    style TM fill:#FFC107,color:#000000
+    style TL fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Type | Likelihood (1-5) | Impact (1-5) | Score | Assessment |
@@ -141,12 +141,12 @@ graph LR
         DP["Democratic Process Sev:1"]
         PB["Power Balance Sev:3"]
     end
-    style NI fill:#6f42c1,color:#fff
-    style LI fill:#28a745,color:#fff
-    style AC fill:#fd7e14,color:#fff
-    style TR fill:#ffc107,color:#000
-    style DP fill:#28a745,color:#fff
-    style PB fill:#fd7e14,color:#fff
+    style NI fill:#7B1FA2,color:#FFFFFF
+    style LI fill:#4CAF50,color:#FFFFFF
+    style AC fill:#FF9800,color:#FFFFFF
+    style TR fill:#FFC107,color:#000000
+    style DP fill:#4CAF50,color:#FFFFFF
+    style PB fill:#FF9800,color:#FFFFFF
 ```
 
 | Threat Category | Applicable? | Threat Description | Severity (1-5) | Evidence |
@@ -185,13 +185,13 @@ graph TD
     DOC --> ECO
     DOC --> INT
     DOC --> MED
-    style DOC fill:#0d6efd,color:#fff
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#dc3545,color:#fff
-    style CIT fill:#6f42c1,color:#fff
-    style ECO fill:#fd7e14,color:#fff
-    style INT fill:#0d6efd,color:#fff
-    style MED fill:#ffc107,color:#000
+    style DOC fill:#1565C0,color:#FFFFFF
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#D32F2F,color:#FFFFFF
+    style CIT fill:#7B1FA2,color:#FFFFFF
+    style ECO fill:#FF9800,color:#FFFFFF
+    style INT fill:#1565C0,color:#FFFFFF
+    style MED fill:#FFC107,color:#000000
 ```
 
 | Stakeholder | Impact Level | Key Assessment | Confidence |

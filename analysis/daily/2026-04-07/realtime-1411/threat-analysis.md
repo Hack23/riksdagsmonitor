@@ -28,11 +28,11 @@ graph TD
         SD --> V2
         MP --> V3
     end
-    style SD fill:#ffc107,stroke:#856404,color:#000
-    style MP fill:#28a745,stroke:#155724,color:#fff
-    style V1 fill:#fd7e14,stroke:#873b00,color:#fff
-    style V2 fill:#ffc107,stroke:#856404,color:#000
-    style V3 fill:#28a745,stroke:#155724,color:#fff
+    style SD fill:#FFC107,stroke:#F57C00,color:#000000
+    style MP fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style V1 fill:#FF9800,stroke:#E65100,color:#FFFFFF
+    style V2 fill:#FFC107,stroke:#F57C00,color:#000000
+    style V3 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 ## Threat Classification

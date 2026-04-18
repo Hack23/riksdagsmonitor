@@ -21,9 +21,9 @@ graph TD
         R6["Social Dumping Escalation<br/>L:2 × I:3 = 6<br/>🟢 LOW"]:::low
     end
 
-    classDef high fill:#dc3545,color:#fff
-    classDef medium fill:#ffc107,color:#000
-    classDef low fill:#28a745,color:#fff
+    classDef high fill:#D32F2F,color:#FFFFFF
+    classDef medium fill:#FFC107,color:#000000
+    classDef low fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Risk Matrix

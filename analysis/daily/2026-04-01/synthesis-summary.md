@@ -50,11 +50,11 @@ graph TD
     THR --> DEC
     SIG --> DEC
 
-    style CLS fill:#ffc107,stroke:#333,stroke-width:2px,color:#000
-    style RSK fill:#fd7e14,stroke:#333,stroke-width:2px,color:#fff
-    style THR fill:#ffc107,stroke:#333,stroke-width:2px,color:#000
-    style SIG fill:#dc3545,stroke:#333,stroke-width:2px,color:#fff
-    style BRK fill:#dc3545,color:#fff
+    style CLS fill:#FFC107,stroke:#424242,stroke-width:2px,color:#000000
+    style RSK fill:#FF9800,stroke:#424242,stroke-width:2px,color:#FFFFFF
+    style THR fill:#FFC107,stroke:#424242,stroke-width:2px,color:#000000
+    style SIG fill:#D32F2F,stroke:#424242,stroke-width:2px,color:#FFFFFF
+    style BRK fill:#D32F2F,color:#FFFFFF
 ```
 
 ---
@@ -84,10 +84,10 @@ graph LR
         GT["🔴 Threats: 5 entries<br/>Top: Legal challenges,<br/>pre-election opposition framing"]
     end
 
-    style GS fill:#28a745,color:#fff
-    style GW fill:#ffc107,color:#000
-    style GO fill:#0d6efd,color:#fff
-    style GT fill:#dc3545,color:#fff
+    style GS fill:#4CAF50,color:#FFFFFF
+    style GW fill:#FFC107,color:#000000
+    style GO fill:#1565C0,color:#FFFFFF
+    style GT fill:#D32F2F,color:#FFFFFF
 ```
 
 ### Cross-Document Patterns

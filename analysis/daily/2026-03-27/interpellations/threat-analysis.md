@@ -24,12 +24,12 @@ graph TD
         T5["Denial of Service<br/>(Democratic Access)<br/>LOW"]
         T6["Elevation of Privilege<br/>(Power Concentration)<br/>LOW"]
     end
-    style T1 fill:#28a745,color:#fff,stroke:#155724
-    style T2 fill:#28a745,color:#fff,stroke:#155724
-    style T3 fill:#ffc107,color:#000,stroke:#856404
-    style T4 fill:#ffc107,color:#000,stroke:#856404
-    style T5 fill:#28a745,color:#fff,stroke:#155724
-    style T6 fill:#28a745,color:#fff,stroke:#155724
+    style T1 fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
+    style T2 fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
+    style T3 fill:#FFC107,color:#000000,stroke:#F57C00
+    style T4 fill:#FFC107,color:#000000,stroke:#F57C00
+    style T5 fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
+    style T6 fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
 ```
 
 ## Detailed Threat Assessment

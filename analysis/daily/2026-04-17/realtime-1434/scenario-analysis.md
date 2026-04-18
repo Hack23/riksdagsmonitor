@@ -45,19 +45,19 @@ flowchart TD
     E1 --> WILD2["⚡ WILDCARD — Russian hybrid<br/>event reshapes campaign<br/>P = 0.10"]
     L2 --> MIX["🟠 MIXED<br/>Passes with intermediate test;<br/>long-tail interpretive drift<br/>P = 0.05"]
 
-    style T0 fill:#ffc107,color:#000
-    style L1 fill:#28a745,color:#fff
-    style L2 fill:#ffc107,color:#000
-    style L3 fill:#dc3545,color:#fff
-    style E1 fill:#0d6efd,color:#fff
-    style E2 fill:#6f42c1,color:#fff
-    style E3 fill:#dc3545,color:#fff
-    style BASE fill:#28a745,color:#fff
-    style BULL fill:#0d6efd,color:#fff
-    style BEAR fill:#dc3545,color:#fff
-    style WILD1 fill:#fd7e14,color:#fff
-    style WILD2 fill:#fd7e14,color:#fff
-    style MIX fill:#ffc107,color:#000
+    style T0 fill:#FFC107,color:#000000
+    style L1 fill:#4CAF50,color:#FFFFFF
+    style L2 fill:#FFC107,color:#000000
+    style L3 fill:#D32F2F,color:#FFFFFF
+    style E1 fill:#1565C0,color:#FFFFFF
+    style E2 fill:#7B1FA2,color:#FFFFFF
+    style E3 fill:#D32F2F,color:#FFFFFF
+    style BASE fill:#4CAF50,color:#FFFFFF
+    style BULL fill:#1565C0,color:#FFFFFF
+    style BEAR fill:#D32F2F,color:#FFFFFF
+    style WILD1 fill:#FF9800,color:#FFFFFF
+    style WILD2 fill:#FF9800,color:#FFFFFF
+    style MIX fill:#FFC107,color:#000000
 ```
 
 > Probabilities are **analyst priors** expressed in a zero-sum tree. They will be Bayesian-updated as Lagrådet and polling signals arrive.

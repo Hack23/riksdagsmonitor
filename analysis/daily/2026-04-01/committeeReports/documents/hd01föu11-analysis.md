@@ -66,12 +66,12 @@ flowchart LR
     D --> E[Shelved<br/>No binding action]:::shelved
     E -.-> F[Budget Bill 2027?<br/>Potential allocation]:::future
     
-    classDef audit fill:#4ecdc4,stroke:#333,color:#000
-    classDef gov fill:#45b7d1,stroke:#333,color:#000
-    classDef committee fill:#96ceb4,stroke:#333,color:#000
-    classDef decision fill:#ffeaa7,stroke:#333,color:#000
-    classDef shelved fill:#dfe6e9,stroke:#333,color:#000
-    classDef future fill:#fd79a8,stroke:#333,color:#fff
+    classDef audit fill:#0097A7,stroke:#424242,color:#000000
+    classDef gov fill:#45b7d1,stroke:#424242,color:#000000
+    classDef committee fill:#A5D6A7,stroke:#424242,color:#000000
+    classDef decision fill:#ffeaa7,stroke:#424242,color:#000000
+    classDef shelved fill:#dfe6e9,stroke:#424242,color:#000000
+    classDef future fill:#fd79a8,stroke:#424242,color:#FFFFFF
 ```
 
 ---

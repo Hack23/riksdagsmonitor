@@ -26,14 +26,14 @@ graph TD
         MED["📺 Media<br/>MEDIUM impact<br/>Arms exports + free speech"]
     end
 
-    style CIT fill:#ffc107,stroke:#e0a800,color:#000
-    style GOV fill:#dc3545,stroke:#b02a37,color:#fff
-    style OPP fill:#ffc107,stroke:#e0a800,color:#000
-    style BUS fill:#dc3545,stroke:#b02a37,color:#fff
-    style INT fill:#dc3545,stroke:#b02a37,color:#fff
-    style CIV fill:#ffc107,stroke:#e0a800,color:#000
-    style JUD fill:#ffc107,stroke:#e0a800,color:#000
-    style MED fill:#ffc107,stroke:#e0a800,color:#000
+    style CIT fill:#FFC107,stroke:#FFA000,color:#000000
+    style GOV fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
+    style OPP fill:#FFC107,stroke:#FFA000,color:#000000
+    style BUS fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
+    style INT fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
+    style CIV fill:#FFC107,stroke:#FFA000,color:#000000
+    style JUD fill:#FFC107,stroke:#FFA000,color:#000000
+    style MED fill:#FFC107,stroke:#FFA000,color:#000000
 ```
 
 ---

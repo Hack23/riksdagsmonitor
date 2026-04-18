@@ -22,10 +22,10 @@ graph TD
     R2 -->|"Peace movement scrutiny"| SCRUTINY["Arms export debate"]
     R3 -->|"Cross-party support likely"| PASS["High passage probability"]
     R4 -->|"Non-controversial"| ROUTINE["Standard processing"]
-    style R1 fill:#ffd93d,color:#000
-    style R2 fill:#6bcb77,color:#000
-    style R3 fill:#6bcb77,color:#000
-    style R4 fill:#6bcb77,color:#000
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#81C784,color:#000000
+    style R3 fill:#81C784,color:#000000
+    style R4 fill:#81C784,color:#000000
 ```
 
 ## Detailed Analysis

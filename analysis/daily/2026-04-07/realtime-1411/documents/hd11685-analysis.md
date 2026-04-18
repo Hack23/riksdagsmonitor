@@ -39,9 +39,9 @@ graph TD
     end
     SD_W2 --> M_FM
     M_FM --> INTL_R
-    style SD_W2 fill:#ffc107,stroke:#856404,color:#000
-    style M_FM fill:#17a2b8,stroke:#0c5460,color:#fff
-    style INTL_R fill:#28a745,stroke:#155724,color:#fff
+    style SD_W2 fill:#FFC107,stroke:#F57C00,color:#000000
+    style M_FM fill:#0097A7,stroke:#006064,color:#FFFFFF
+    style INTL_R fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 ## Risk Assessment

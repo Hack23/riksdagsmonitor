@@ -30,9 +30,9 @@ graph LR
         F5["📉 Low newsworthiness<br/>per-document: -1"]
     end
 
-    style F1 fill:#dc3545,color:#fff
-    style F2 fill:#fd7e14,color:#fff
-    style F3 fill:#ffc107,color:#000
-    style F4 fill:#0d6efd,color:#fff
-    style F5 fill:#6c757d,color:#fff
+    style F1 fill:#D32F2F,color:#FFFFFF
+    style F2 fill:#FF9800,color:#FFFFFF
+    style F3 fill:#FFC107,color:#000000
+    style F4 fill:#1565C0,color:#FFFFFF
+    style F5 fill:#9E9E9E,color:#FFFFFF
 ```

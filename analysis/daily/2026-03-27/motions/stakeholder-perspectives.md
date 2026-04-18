@@ -26,12 +26,12 @@ graph TD
         INT["🌍 International<br/>Impact: LOW<br/>Domestic policy focus"]
     end
 
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#ffc107,color:#000
-    style CIT fill:#ffc107,color:#000
-    style ECO fill:#ffc107,color:#000
-    style MED fill:#ffc107,color:#000
-    style INT fill:#28a745,color:#fff
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#FFC107,color:#000000
+    style CIT fill:#FFC107,color:#000000
+    style ECO fill:#FFC107,color:#000000
+    style MED fill:#FFC107,color:#000000
+    style INT fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Detailed Stakeholder Analysis

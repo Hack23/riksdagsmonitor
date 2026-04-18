@@ -67,10 +67,10 @@ flowchart TD
     F -->|"Success"| G["Enhanced National<br/>Cyber Resilience"]
     F -->|"Friction"| H["Bureaucratic<br/>Delays"]
     
-    style A fill:#00d9ff,stroke:#333,color:#000
-    style E fill:#00ff88,stroke:#333,color:#000
-    style G fill:#00ff88,stroke:#333,color:#000
-    style H fill:#ffbe0b,stroke:#333,color:#000
+    style A fill:#00d9ff,stroke:#424242,color:#000000
+    style E fill:#4CAF50,stroke:#424242,color:#000000
+    style G fill:#4CAF50,stroke:#424242,color:#000000
+    style H fill:#ffbe0b,stroke:#424242,color:#000000
 ```
 
 ## ⚠️ Risk Assessment

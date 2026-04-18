@@ -33,11 +33,11 @@ graph TD
     FP --> F3["HD11683 — Syria minorities<br/>🟢 LOW"]
     INF --> I1["HD11678 — Noise cameras<br/>🟢 LOW"]
 
-    style DEF fill:#0d6efd,color:#fff
-    style JUS fill:#6f42c1,color:#fff
-    style ENV fill:#28a745,color:#fff
-    style FP fill:#fd7e14,color:#fff
-    style INF fill:#6c757d,color:#fff
+    style DEF fill:#1565C0,color:#FFFFFF
+    style JUS fill:#7B1FA2,color:#FFFFFF
+    style ENV fill:#4CAF50,color:#FFFFFF
+    style FP fill:#FF9800,color:#FFFFFF
+    style INF fill:#9E9E9E,color:#FFFFFF
 ```
 
 ---

@@ -21,10 +21,10 @@ graph TD
         T3["🟡 Transparency Gap<br/>Severity: MEDIUM"] --> T3a["Aggregate data may<br/>obscure specifics"]
         T4["🟢 Geopolitical Risk<br/>Severity: LOW"] --> T4a["NATO framework provides<br/>alignment stability"]
     end
-    style T1 fill:#ffc107,color:#000
-    style T2 fill:#28a745,color:#fff
-    style T3 fill:#ffc107,color:#000
-    style T4 fill:#28a745,color:#fff
+    style T1 fill:#FFC107,color:#000000
+    style T2 fill:#4CAF50,color:#FFFFFF
+    style T3 fill:#FFC107,color:#000000
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Summary

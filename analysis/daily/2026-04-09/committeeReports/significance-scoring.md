@@ -29,7 +29,7 @@
 ## Significance Distribution
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1565C0', 'primaryTextColor': '#ffffff'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1565C0', 'primaryTextColor': '#FFFFFF'}}}%%
 pie title Document Significance Distribution (2026-04-09)
     "Critical (≥8)" : 2
     "High (6-7)" : 3

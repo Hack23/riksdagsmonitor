@@ -25,9 +25,9 @@ graph TD
     D -->|"Supports"| E["EU Green Transition"]
     A -->|"Package"| F["Prop 240: Elsystemet"]
     A -->|"Requires"| G["Prop 238: Miljöprövning"]
-    style A fill:#6bcb77,color:#fff
-    style B fill:#ffd93d,color:#000
-    style D fill:#4d96ff,color:#fff
+    style A fill:#81C784,color:#FFFFFF
+    style B fill:#FFC107,color:#000000
+    style D fill:#2196F3,color:#FFFFFF
 ```
 
 ## 6-Lens Analysis

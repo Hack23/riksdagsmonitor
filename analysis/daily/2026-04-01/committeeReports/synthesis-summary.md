@@ -53,13 +53,13 @@ flowchart TD
     D --> H[S, V, C, MP, SD, KD<br/>⚠️ Coalition dissent]:::warning
     E --> I[Cross-party consensus]:::consensus
     
-    classDef date fill:#2c3e50,stroke:#333,color:#fff
-    classDef critical fill:#e74c3c,stroke:#333,color:#fff
-    classDef high fill:#e67e22,stroke:#333,color:#fff
-    classDef low fill:#27ae60,stroke:#333,color:#fff
-    classDef opposition fill:#9b59b6,stroke:#333,color:#fff
-    classDef warning fill:#f39c12,stroke:#333,color:#000
-    classDef consensus fill:#2ecc71,stroke:#333,color:#fff
+    classDef date fill:#455A64,stroke:#424242,color:#FFFFFF
+    classDef critical fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    classDef high fill:#FF9800,stroke:#424242,color:#FFFFFF
+    classDef low fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    classDef opposition fill:#7B1FA2,stroke:#424242,color:#FFFFFF
+    classDef warning fill:#FF9800,stroke:#424242,color:#000000
+    classDef consensus fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ---

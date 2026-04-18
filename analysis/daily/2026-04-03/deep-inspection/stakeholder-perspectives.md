@@ -21,13 +21,13 @@ graph TD
         A --> J["🟡 Judiciary/Constitutional<br/>MEDIUM Impact"]
     end
 
-    style A fill:#00d9ff,stroke:#333,color:#000
-    style C fill:#28a745,stroke:#333,color:#fff
-    style G fill:#28a745,stroke:#333,color:#fff
-    style O fill:#28a745,stroke:#333,color:#fff
-    style B fill:#ff6b35,stroke:#333,color:#fff
-    style I fill:#ff6b35,stroke:#333,color:#fff
-    style J fill:#ffbe0b,stroke:#333,color:#000
+    style A fill:#00d9ff,stroke:#424242,color:#000000
+    style C fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style G fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style O fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style B fill:#FF5722,stroke:#424242,color:#FFFFFF
+    style I fill:#FF5722,stroke:#424242,color:#FFFFFF
+    style J fill:#ffbe0b,stroke:#424242,color:#000000
 ```
 
 ---

@@ -68,18 +68,18 @@ graph TD
         T3["T3: Healthcare<br/>implementation failure"]
     end
     
-    style S1 fill:#22c55e,stroke:#333,color:#000
-    style S2 fill:#22c55e,stroke:#333,color:#000
-    style S3 fill:#22c55e,stroke:#333,color:#000
-    style S4 fill:#22c55e,stroke:#333,color:#000
-    style W1 fill:#f59e0b,stroke:#333,color:#000
-    style W2 fill:#f59e0b,stroke:#333,color:#000
-    style W3 fill:#f59e0b,stroke:#333,color:#000
-    style O1 fill:#3b82f6,stroke:#333,color:#fff
-    style O2 fill:#3b82f6,stroke:#333,color:#fff
-    style T1 fill:#ef4444,stroke:#333,color:#fff
-    style T2 fill:#ef4444,stroke:#333,color:#fff
-    style T3 fill:#ef4444,stroke:#333,color:#fff
+    style S1 fill:#4CAF50,stroke:#424242,color:#000000
+    style S2 fill:#4CAF50,stroke:#424242,color:#000000
+    style S3 fill:#4CAF50,stroke:#424242,color:#000000
+    style S4 fill:#4CAF50,stroke:#424242,color:#000000
+    style W1 fill:#FF9800,stroke:#424242,color:#000000
+    style W2 fill:#FF9800,stroke:#424242,color:#000000
+    style W3 fill:#FF9800,stroke:#424242,color:#000000
+    style O1 fill:#2196F3,stroke:#424242,color:#FFFFFF
+    style O2 fill:#2196F3,stroke:#424242,color:#FFFFFF
+    style T1 fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style T2 fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style T3 fill:#EF5350,stroke:#424242,color:#FFFFFF
 ```
 
 ## TOWS Strategic Options

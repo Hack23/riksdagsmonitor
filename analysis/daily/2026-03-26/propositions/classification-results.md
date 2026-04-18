@@ -23,14 +23,14 @@ graph LR
         HD03221 --> U2["⚪ ROUTINE<br/>Standard processing"]
     end
     
-    style HD03227 fill:#ffc107,color:#000
-    style HD03221 fill:#28a745,color:#fff
-    style S1 fill:#ffc107,color:#000
-    style S2 fill:#28a745,color:#fff
-    style D1 fill:#0d6efd,color:#fff
-    style D2 fill:#0d6efd,color:#fff
-    style U1 fill:#0d6efd,color:#fff
-    style U2 fill:#6c757d,color:#fff
+    style HD03227 fill:#FFC107,color:#000000
+    style HD03221 fill:#4CAF50,color:#FFFFFF
+    style S1 fill:#FFC107,color:#000000
+    style S2 fill:#4CAF50,color:#FFFFFF
+    style D1 fill:#1565C0,color:#FFFFFF
+    style D2 fill:#1565C0,color:#FFFFFF
+    style U1 fill:#1565C0,color:#FFFFFF
+    style U2 fill:#9E9E9E,color:#FFFFFF
 ```
 
 ## Detailed Analysis

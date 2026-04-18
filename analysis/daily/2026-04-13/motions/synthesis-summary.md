@@ -62,32 +62,32 @@ graph TB
     subgraph "Cluster 1: Competition Policy"
         S1["mot. 4015 (S)"] --> P203["prop. 2025/26:203"]
         MP1["mot. 4057 (MP)"] --> P203
-        style S1 fill:#e8590c,color:#fff
-        style MP1 fill:#83c167,color:#000
-        style P203 fill:#ffbe0b,color:#000
+        style S1 fill:#F57C00,color:#FFFFFF
+        style MP1 fill:#8BC34A,color:#000000
+        style P203 fill:#ffbe0b,color:#000000
     end
     subgraph "Cluster 2: Sida Audit"
         C1["mot. 4070 (C)"] --> SKR226["skr. 2025/26:226"]
         V1["mot. 4071 (V)"] --> SKR226
         MP2["mot. 4072 (MP)"] --> SKR226
-        style C1 fill:#009933,color:#fff
-        style V1 fill:#da291c,color:#fff
-        style MP2 fill:#83c167,color:#000
-        style SKR226 fill:#ffbe0b,color:#000
+        style C1 fill:#2E7D32,color:#FFFFFF
+        style V1 fill:#D32F2F,color:#FFFFFF
+        style MP2 fill:#8BC34A,color:#000000
+        style SKR226 fill:#ffbe0b,color:#000000
     end
     subgraph "Cluster 3: Youth Crime"
         V2["mot. 4073 (V)"] --> P227["prop. 2025/26:227"]
         MP3["mot. 4074 (MP)"] --> P227
-        style V2 fill:#da291c,color:#fff
-        style MP3 fill:#83c167,color:#000
-        style P227 fill:#ffbe0b,color:#000
+        style V2 fill:#D32F2F,color:#FFFFFF
+        style MP3 fill:#8BC34A,color:#000000
+        style P227 fill:#ffbe0b,color:#000000
     end
     subgraph "Cluster 4: Copyright"
         SD1["mot. 4007 (SD)"] --> P184["prop. 2025/26:184"]
         C2["mot. 4037 (C)"] --> P184
-        style SD1 fill:#dddd00,color:#000
-        style C2 fill:#009933,color:#fff
-        style P184 fill:#ffbe0b,color:#000
+        style SD1 fill:#FFC107,color:#000000
+        style C2 fill:#2E7D32,color:#FFFFFF
+        style P184 fill:#ffbe0b,color:#000000
     end
 ```
 

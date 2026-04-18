@@ -15,15 +15,15 @@ graph TD
         C1["HD01FiU48 — FiU bet<br/>🟡 SENSITIVE | Fiscal"]
         M1["HD024076 — V Motion<br/>🟡 SENSITIVE | Migration"]
     end
-    style P1 fill:#ffc107,stroke:#333,color:#000
-    style P2 fill:#ffc107,stroke:#333,color:#000
-    style P3 fill:#ffc107,stroke:#333,color:#000
-    style P4 fill:#28a745,stroke:#333,color:#fff
-    style P5 fill:#28a745,stroke:#333,color:#fff
-    style P6 fill:#28a745,stroke:#333,color:#fff
-    style N1 fill:#dc3545,stroke:#333,color:#fff
-    style C1 fill:#ffc107,stroke:#333,color:#000
-    style M1 fill:#ffc107,stroke:#333,color:#000
+    style P1 fill:#FFC107,stroke:#424242,color:#000000
+    style P2 fill:#FFC107,stroke:#424242,color:#000000
+    style P3 fill:#FFC107,stroke:#424242,color:#000000
+    style P4 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style P5 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style P6 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style N1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style C1 fill:#FFC107,stroke:#424242,color:#000000
+    style M1 fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 | dok_id | Type | Domain | Sensitivity | Urgency |

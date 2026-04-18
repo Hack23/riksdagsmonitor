@@ -34,10 +34,10 @@ graph TB
             T3["Foreign policy criticism<br/>Opposition targets human rights record"]
         end
     end
-    style S fill:#28a745,color:#fff
-    style W fill:#dc3545,color:#fff
-    style O fill:#0d6efd,color:#fff
-    style T fill:#fd7e14,color:#fff
+    style S fill:#4CAF50,color:#FFFFFF
+    style W fill:#D32F2F,color:#FFFFFF
+    style O fill:#1565C0,color:#FFFFFF
+    style T fill:#FF9800,color:#FFFFFF
 ```
 
 ## Detailed Evidence Tables

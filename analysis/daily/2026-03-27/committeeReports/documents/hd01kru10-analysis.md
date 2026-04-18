@@ -40,9 +40,9 @@ graph LR
     A --> I{Urgency}
     I -->|"⚪ ROUTINE"| M["Standard EU document<br/>processing"]
 
-    style E fill:#28a745,color:#fff
-    style H fill:#6f42c1,color:#fff
-    style M fill:#6c757d,color:#fff
+    style E fill:#4CAF50,color:#FFFFFF
+    style H fill:#7B1FA2,color:#FFFFFF
+    style M fill:#9E9E9E,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -101,13 +101,13 @@ graph TD
     R5 -.-> T4
     R6 -.-> T4
 
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#28a745,color:#fff
-    style R3 fill:#28a745,color:#fff
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#28a745,color:#fff
-    style R6 fill:#ffc107,color:#000
-    style T4 fill:#28a745,color:#fff
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#4CAF50,color:#FFFFFF
+    style R3 fill:#4CAF50,color:#FFFFFF
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#FFC107,color:#000000
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Type | Likelihood (1–5) | Impact (1–5) | Score | Assessment |

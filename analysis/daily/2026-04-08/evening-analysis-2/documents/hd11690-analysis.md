@@ -23,10 +23,10 @@ graph TD
     B --> D["Reserve Police<br/>HD11692 Question"]
     A --> E["NATO FM Meeting<br/>Sweden Host May 2026"]
 
-    style A fill:#6f42c1,color:#fff
-    style C fill:#ffc107,color:#000
-    style D fill:#ffc107,color:#000
-    style E fill:#28a745,color:#fff
+    style A fill:#7B1FA2,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#FFC107,color:#000000
+    style E fill:#4CAF50,color:#FFFFFF
 ```
 
 ## SWOT Analysis

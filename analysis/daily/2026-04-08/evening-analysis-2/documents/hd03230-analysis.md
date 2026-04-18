@@ -26,11 +26,11 @@ graph TD
     D --> F["Opposition: May argue<br/>weakens protection"]
     D --> G["Rural landowners:<br/>Positive reception"]
 
-    style A fill:#6f42c1,color:#fff
-    style D fill:#0d6efd,color:#fff
-    style E fill:#28a745,color:#fff
-    style F fill:#dc3545,color:#fff
-    style G fill:#ffc107,color:#000
+    style A fill:#7B1FA2,color:#FFFFFF
+    style D fill:#1565C0,color:#FFFFFF
+    style E fill:#4CAF50,color:#FFFFFF
+    style F fill:#D32F2F,color:#FFFFFF
+    style G fill:#FFC107,color:#000000
 ```
 
 ## SWOT Analysis

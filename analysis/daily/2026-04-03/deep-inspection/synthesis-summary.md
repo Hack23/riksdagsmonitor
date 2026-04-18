@@ -37,11 +37,11 @@ graph TD
         end
     end
 
-    style SEN fill:#ffbe0b,stroke:#333,color:#000
-    style RSK fill:#28a745,stroke:#333,color:#fff
-    style THR fill:#ffbe0b,stroke:#333,color:#000
-    style SIG fill:#ff6b35,stroke:#333,color:#fff
-    style STK fill:#ff6b35,stroke:#333,color:#fff
+    style SEN fill:#ffbe0b,stroke:#424242,color:#000000
+    style RSK fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style THR fill:#ffbe0b,stroke:#424242,color:#000000
+    style SIG fill:#FF5722,stroke:#424242,color:#FFFFFF
+    style STK fill:#FF5722,stroke:#424242,color:#FFFFFF
 ```
 
 ---

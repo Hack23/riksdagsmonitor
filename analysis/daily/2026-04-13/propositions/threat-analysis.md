@@ -35,12 +35,12 @@ flowchart TD
     
     C --> C1["🔴 Fuel Tax Cut Climate Impact<br/>(HD03236)"]
     
-    style A1 fill:#28a745,color:#fff
-    style A2 fill:#28a745,color:#fff
-    style A3 fill:#28a745,color:#fff
-    style B1 fill:#ffc107,color:#000
-    style B2 fill:#ffc107,color:#000
-    style C1 fill:#dc3545,color:#fff
+    style A1 fill:#4CAF50,color:#FFFFFF
+    style A2 fill:#4CAF50,color:#FFFFFF
+    style A3 fill:#4CAF50,color:#FFFFFF
+    style B1 fill:#FFC107,color:#000000
+    style B2 fill:#FFC107,color:#000000
+    style C1 fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Overall Threat Level: LOW-MODERATE

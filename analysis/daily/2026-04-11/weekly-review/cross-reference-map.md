@@ -19,7 +19,7 @@
 ```mermaid
 graph TD
     subgraph SEC["🛡️ Security & Defense Cluster"]
-        style SEC fill:#1a0a0a,color:#ff6b6b,stroke:#dc3545,stroke-width:2px
+        style SEC fill:#212121,color:#EF5350,stroke:#D32F2F,stroke-width:2px
         HD03220["HD03220<br/>NATO Finland<br/>Forward Presence<br/>⭐ 8/10"]
         HD01FOU12["HD01FöU12<br/>Shelter Law<br/>Civilian Protection<br/>⭐ 8/10"]
         HD01UU6["HD01UU6<br/>Security Policy<br/>51 motions<br/>⭐ 8/10"]
@@ -30,7 +30,7 @@ graph TD
     end
 
     subgraph CJ["⚖️ Criminal Justice Cluster"]
-        style CJ fill:#1a0a1a,color:#ff6bff,stroke:#ff006e,stroke-width:2px
+        style CJ fill:#212121,color:#ff6bff,stroke:#ff006e,stroke-width:2px
         HD03235["HD03235<br/>Deportation<br/>Rules Reform<br/>🔴 9/10"]
         HD03218["HD03218<br/>Network Crime<br/>Doubled Penalties<br/>⭐ 8/10"]
         HD03217["HD03217<br/>Official<br/>Accountability<br/>⭐ 7/10"]
@@ -38,7 +38,7 @@ graph TD
     end
 
     subgraph MIG["🌍 Migration Enforcement Cluster"]
-        style MIG fill:#0a1a1a,color:#00d9ff,stroke:#00d9ff,stroke-width:2px
+        style MIG fill:#212121,color:#00d9ff,stroke:#00d9ff,stroke-width:2px
         HD01SFU31["HD01SfU31<br/>Enforcement<br/>Av-/utvisning"]
         HD01SFU36["HD01SfU36<br/>Reception<br/>Mottagande"]
         HD01SFU32["HD01SfU32<br/>Temporary<br/>Restrictions"]
@@ -47,14 +47,14 @@ graph TD
     end
 
     subgraph CE["🌱 Climate & Energy Cluster"]
-        style CE fill:#0a1a0a,color:#28a745,stroke:#28a745,stroke-width:2px
+        style CE fill:#212121,color:#4CAF50,stroke:#4CAF50,stroke-width:2px
         HD01MJU30["HD01MJU30<br/>Climate Targets<br/>Recalibration"]
         HD01NU18["HD01NU18<br/>Renewable Energy<br/>Permitting"]
         HD03230["HD03230<br/>Hydropower<br/>Exemptions"]
     end
 
     subgraph HC["🏥 Healthcare Cluster"]
-        style HC fill:#1a1a0a,color:#ffbe0b,stroke:#ffbe0b,stroke-width:2px
+        style HC fill:#212121,color:#ffbe0b,stroke:#ffbe0b,stroke-width:2px
         HD03216["HD03216<br/>Municipal HC<br/>Competency"]
         HD01SOU16["HD01SoU16<br/>HC Organization<br/>176 motions"]
         HD01SOU17["HD01SoU17<br/>HC Priorities<br/>172 motions"]
@@ -88,11 +88,11 @@ graph TD
     HD03216 -->|"structural reform<br/>complement"| HD01SOU16
     HD01SOU16 -->|"priorities implementation"| HD01SOU17
 
-    style HD03235 fill:#dc3545,color:#fff,stroke:#fff,stroke-width:3px
-    style HD03220 fill:#ff6b35,color:#fff
-    style HD03218 fill:#ff6b35,color:#fff
-    style HD01FOU12 fill:#ff6b35,color:#fff
-    style HD01UU6 fill:#ff6b35,color:#fff
+    style HD03235 fill:#D32F2F,color:#FFFFFF,stroke:#FFFFFF,stroke-width:3px
+    style HD03220 fill:#FF5722,color:#FFFFFF
+    style HD03218 fill:#FF5722,color:#FFFFFF
+    style HD01FOU12 fill:#FF5722,color:#FFFFFF
+    style HD01UU6 fill:#FF5722,color:#FFFFFF
 ```
 
 ---

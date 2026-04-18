@@ -22,9 +22,9 @@ graph LR
     A --> F{"Urgency"}
     F -->|"🔵 ELEVATED"| G["Legislative deadline for EU compliance"]
     
-    style C fill:#28a745,color:#fff
-    style E fill:#ffc107,color:#000
-    style G fill:#0d6efd,color:#fff
+    style C fill:#4CAF50,color:#FFFFFF
+    style E fill:#FFC107,color:#000000
+    style G fill:#1565C0,color:#FFFFFF
 ```
 
 | Field | Assessment |

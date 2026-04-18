@@ -81,13 +81,13 @@ graph LR
     I -->|"🔵 ELEVATED"| L[Monitoring — this week]
     I -->|"⚪ ROUTINE"| M[Standard processing]
     
-    style C fill:#dc3545,color:#fff
-    style D fill:#ffc107,color:#000
-    style E fill:#28a745,color:#fff
-    style J fill:#dc3545,color:#fff
-    style K fill:#fd7e14,color:#fff
-    style L fill:#0d6efd,color:#fff
-    style M fill:#6c757d,color:#fff
+    style C fill:#D32F2F,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style E fill:#4CAF50,color:#FFFFFF
+    style J fill:#D32F2F,color:#FFFFFF
+    style K fill:#FF9800,color:#FFFFFF
+    style L fill:#1565C0,color:#FFFFFF
+    style M fill:#9E9E9E,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -107,17 +107,40 @@ graph LR
 ### Quadrant Overview
 
 ```mermaid
+%%{init: {
+  "theme": "neutral",
+  "themeVariables": {
+    "quadrant1Fill": "#FF9800",
+    "quadrant2Fill": "#2E7D32",
+    "quadrant3Fill": "#D32F2F",
+    "quadrant4Fill": "#1565C0",
+    "quadrantTitleFill": "#FFFFFF",
+    "quadrantPointFill": "#FFFFFF",
+    "quadrantPointTextFill": "#000000",
+    "quadrantXAxisTextFill": "#000000",
+    "quadrantYAxisTextFill": "#000000"
+  },
+  "quadrantChart": {
+    "chartWidth": 700,
+    "chartHeight": 700,
+    "pointLabelFontSize": 12,
+    "titleFontSize": 18,
+    "quadrantLabelFontSize": 14,
+    "xAxisLabelFontSize": 14,
+    "yAxisLabelFontSize": 14
+  }
+}}%%
 quadrantChart
-    title Political Impact Assessment
+    title 🎯 Political Impact Assessment
     x-axis Government --> Opposition
     y-axis Risk --> Opportunity
-    quadrant-1 Opposition Opportunities
-    quadrant-2 Government Opportunities
-    quadrant-3 Government Risks
-    quadrant-4 Opposition Risks
-    
-    "[REQUIRED: key finding 1]": [0.3, 0.7]
-    "[REQUIRED: key finding 2]": [0.7, 0.3]
+    quadrant-1 🚀 Opposition Opportunities
+    quadrant-2 ✅ Government Opportunities
+    quadrant-3 🔴 Government Risks
+    quadrant-4 ⚠️ Opposition Risks
+
+    "💡 [REQUIRED: key finding 1]": [0.30, 0.70]
+    "⚡ [REQUIRED: key finding 2]": [0.70, 0.30]
 ```
 
 ### Government Coalition Impact
@@ -167,16 +190,16 @@ graph TD
     R5 -.-> T4
     R6 -.-> T4
     
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#fd7e14,color:#fff
-    style R5 fill:#28a745,color:#fff
-    style R6 fill:#28a745,color:#fff
-    style T1 fill:#dc3545,color:#fff
-    style T2 fill:#fd7e14,color:#fff
-    style T3 fill:#ffc107,color:#000
-    style T4 fill:#28a745,color:#fff
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FF9800,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#4CAF50,color:#FFFFFF
+    style T1 fill:#D32F2F,color:#FFFFFF
+    style T2 fill:#FF9800,color:#FFFFFF
+    style T3 fill:#FFC107,color:#000000
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 > **Scoring Reference:** Risk Score = Likelihood × Impact (product, not sum). Both are scored 1–5, giving a range of 1–25. Score tiers: 1–4 🟢 Low, 5–9 🟡 Medium, 10–14 🟠 High, 15–25 🔴 Critical. See [political-risk-methodology.md](../methodologies/political-risk-methodology.md) for calibration examples.
@@ -223,12 +246,12 @@ graph LR
     DP --> DP1["[If applicable: specific threat]"]
     PB --> PB1["[If applicable: specific threat]"]
     
-    style NI fill:#6f42c1,color:#fff
-    style LI fill:#dc3545,color:#fff
-    style AC fill:#fd7e14,color:#fff
-    style TR fill:#ffc107,color:#000
-    style DP fill:#28a745,color:#fff
-    style PB fill:#0d6efd,color:#fff
+    style NI fill:#7B1FA2,color:#FFFFFF
+    style LI fill:#D32F2F,color:#FFFFFF
+    style AC fill:#FF9800,color:#FFFFFF
+    style TR fill:#FFC107,color:#000000
+    style DP fill:#4CAF50,color:#FFFFFF
+    style PB fill:#1565C0,color:#FFFFFF
 ```
 
 | Threat Category | Applicable? | Threat Description | Severity (1–5) | Evidence |
@@ -274,13 +297,13 @@ graph TD
     DOC --> INT
     DOC --> MED
     
-    style DOC fill:#0d6efd,color:#fff
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#dc3545,color:#fff
-    style CIT fill:#6f42c1,color:#fff
-    style ECO fill:#fd7e14,color:#fff
-    style INT fill:#0d6efd,color:#fff
-    style MED fill:#ffc107,color:#000
+    style DOC fill:#1565C0,color:#FFFFFF
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#D32F2F,color:#FFFFFF
+    style CIT fill:#7B1FA2,color:#FFFFFF
+    style ECO fill:#FF9800,color:#FFFFFF
+    style INT fill:#1565C0,color:#FFFFFF
+    style MED fill:#FFC107,color:#000000
 ```
 
 | Stakeholder | Impact Level | Key Assessment | Confidence |

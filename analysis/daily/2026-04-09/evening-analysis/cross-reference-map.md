@@ -31,17 +31,17 @@ graph LR
     P218 -.->|"Youth dimension"| M74
     M73 -.->|"Same bill target"| M74
     SfU16 -.->|"Integration link"| P218
-    style P220 fill:#dc3545,color:#fff
-    style P218 fill:#fd7e14,color:#fff
-    style P217 fill:#fd7e14,color:#fff
-    style UU6 fill:#0d6efd,color:#fff
-    style SfU16 fill:#0d6efd,color:#fff
-    style TU15 fill:#6c757d,color:#fff
-    style FöU8 fill:#6c757d,color:#fff
-    style UbU31 fill:#6c757d,color:#fff
-    style CU23 fill:#6c757d,color:#fff
-    style M73 fill:#ffc107,color:#000
-    style M74 fill:#ffc107,color:#000
+    style P220 fill:#D32F2F,color:#FFFFFF
+    style P218 fill:#FF9800,color:#FFFFFF
+    style P217 fill:#FF9800,color:#FFFFFF
+    style UU6 fill:#1565C0,color:#FFFFFF
+    style SfU16 fill:#1565C0,color:#FFFFFF
+    style TU15 fill:#9E9E9E,color:#FFFFFF
+    style FöU8 fill:#9E9E9E,color:#FFFFFF
+    style UbU31 fill:#9E9E9E,color:#FFFFFF
+    style CU23 fill:#9E9E9E,color:#FFFFFF
+    style M73 fill:#FFC107,color:#000000
+    style M74 fill:#FFC107,color:#000000
 ```
 
 ## 📊 Reference Links

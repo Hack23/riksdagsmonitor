@@ -25,13 +25,13 @@ graph TD
     E["HD024073<br/>V Motion Against"] -.->|opposes| A
     F["HD024074<br/>MP Motion Against"] -.->|opposes| A
     G["Prop 2025/26:227<br/>Youth Crime Investigation"] -.->|related| A
-    style A fill:#fd7e14,color:#fff
-    style B fill:#6c757d,color:#fff
-    style C fill:#dc3545,color:#fff
-    style D fill:#ffc107,color:#000
-    style E fill:#28a745,color:#fff
-    style F fill:#28a745,color:#fff
-    style G fill:#0d6efd,color:#fff
+    style A fill:#FF9800,color:#FFFFFF
+    style B fill:#9E9E9E,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style E fill:#4CAF50,color:#FFFFFF
+    style F fill:#4CAF50,color:#FFFFFF
+    style G fill:#1565C0,color:#FFFFFF
 ```
 
 ## SWOT Analysis

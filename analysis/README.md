@@ -137,9 +137,9 @@ flowchart LR
     B -->|"Yes — from SAME workflow"| D["✅ Update/append<br/>to own files only"]
     B -->|"Yes — from DIFFERENT workflow"| E["🚫 NEVER touch<br/>other workflow's files"]
 
-    style C fill:#28a745,color:#fff
-    style D fill:#ffc107,color:#000
-    style E fill:#dc3545,color:#fff
+    style C fill:#4CAF50,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style E fill:#D32F2F,color:#FFFFFF
 ```
 
 ### Rule 3: AI Performs ALL Analysis — Never Scripted Content
@@ -187,15 +187,15 @@ flowchart TD
     Gate -->|"✅ Yes"| Analyze["🤖 Per-File Analysis\n+ Article Generation"]
     Gate -->|"❌ No"| Noop["📝 noop\nwith analysis summary"]
 
-    style Start fill:#0d6efd,stroke:#0a58ca,color:#fff
-    style Health fill:#6c757d,stroke:#565e64,color:#fff
-    style Feeds fill:#198754,stroke:#146c43,color:#fff
-    style Advisory fill:#20c997,stroke:#1aa179,color:#fff
-    style Analytics fill:#6f42c1,stroke:#59359a,color:#fff
-    style Gate fill:#ffc107,stroke:#cc9a06,color:#000
-    style Analyze fill:#fd7e14,stroke:#ca6510,color:#fff
-    style Noop fill:#adb5bd,stroke:#6c757d,color:#000
-    style Abort fill:#dc3545,stroke:#b02a37,color:#fff
+    style Start fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
+    style Health fill:#9E9E9E,stroke:#616161,color:#FFFFFF
+    style Feeds fill:#2E7D32,stroke:#2E7D32,color:#FFFFFF
+    style Advisory fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style Analytics fill:#7B1FA2,stroke:#4A148C,color:#FFFFFF
+    style Gate fill:#FFC107,stroke:#FFA000,color:#000000
+    style Analyze fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style Noop fill:#BDBDBD,stroke:#9E9E9E,color:#000000
+    style Abort fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
 ```
 
 **Key rules:**
@@ -233,12 +233,12 @@ flowchart LR
 
     RD --> DL --> AI --> QG --> GEN --> TR
 
-    style RD fill:#003399,stroke:#002266,color:#fff
-    style DL fill:#0d6efd,stroke:#0a58ca,color:#fff
-    style AI fill:#6f42c1,stroke:#59359a,color:#fff
-    style QG fill:#198754,stroke:#146c43,color:#fff
-    style GEN fill:#fd7e14,stroke:#ca6510,color:#fff
-    style TR fill:#dc3545,stroke:#b02a37,color:#fff
+    style RD fill:#0D47A1,stroke:#0D47A1,color:#FFFFFF
+    style DL fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
+    style AI fill:#7B1FA2,stroke:#4A148C,color:#FFFFFF
+    style QG fill:#2E7D32,stroke:#2E7D32,color:#FFFFFF
+    style GEN fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style TR fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
 ```
 
 Analysis artifacts are **genuine intelligence products** — not summaries or reformatted data — that enable:
@@ -310,29 +310,29 @@ graph TB
     AI -->|"analysis artifacts"| QG
     QG -->|"approved"| ART & DASH
 
-    style RD fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
-    style REG fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
-    style CIA fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
-    style MCP fill:#6610f2,color:#fff,stroke:#520dc2,stroke-width:2px
-    style PRE fill:#6610f2,color:#fff,stroke:#520dc2,stroke-width:2px
-    style GUIDE fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
-    style AI fill:#198754,color:#fff,stroke:#146c43,stroke-width:3px
-    style QG fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
-    style ART fill:#ffc107,color:#000,stroke:#cc9a06,stroke-width:2px
-    style DASH fill:#ffc107,color:#000,stroke:#cc9a06,stroke-width:2px
-    style M1 fill:#e9ecef,color:#212529,stroke:#adb5bd
-    style M2 fill:#e9ecef,color:#212529,stroke:#adb5bd
-    style M3 fill:#e9ecef,color:#212529,stroke:#adb5bd
-    style M4 fill:#e9ecef,color:#212529,stroke:#adb5bd
-    style M5 fill:#e9ecef,color:#212529,stroke:#adb5bd
-    style T1 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
-    style T2 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
-    style T3 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
-    style T4 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
-    style T5 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
-    style T6 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
-    style T7 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
-    style T8 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
+    style RD fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style REG fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style CIA fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style MCP fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style PRE fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style GUIDE fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
+    style AI fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:3px
+    style QG fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
+    style ART fill:#FFC107,color:#000000,stroke:#FFA000,stroke-width:2px
+    style DASH fill:#FFC107,color:#000000,stroke:#FFA000,stroke-width:2px
+    style M1 fill:#EEEEEE,color:#212121,stroke:#BDBDBD
+    style M2 fill:#EEEEEE,color:#212121,stroke:#BDBDBD
+    style M3 fill:#EEEEEE,color:#212121,stroke:#BDBDBD
+    style M4 fill:#EEEEEE,color:#212121,stroke:#BDBDBD
+    style M5 fill:#EEEEEE,color:#212121,stroke:#BDBDBD
+    style T1 fill:#BBDEFB,color:#0D47A1,stroke:#90CAF9
+    style T2 fill:#BBDEFB,color:#0D47A1,stroke:#90CAF9
+    style T3 fill:#BBDEFB,color:#0D47A1,stroke:#90CAF9
+    style T4 fill:#BBDEFB,color:#0D47A1,stroke:#90CAF9
+    style T5 fill:#BBDEFB,color:#0D47A1,stroke:#90CAF9
+    style T6 fill:#BBDEFB,color:#0D47A1,stroke:#90CAF9
+    style T7 fill:#BBDEFB,color:#0D47A1,stroke:#90CAF9
+    style T8 fill:#BBDEFB,color:#0D47A1,stroke:#90CAF9
 ```
 
 ---
@@ -460,16 +460,16 @@ graph TB
     WR -->|"weekly patterns"| MR
     WA -->|"calendar preview"| MA
 
-    style CR fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
-    style PR fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
-    style MO fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
-    style IP fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
-    style EV fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
-    style RT fill:#d63384,color:#fff,stroke:#ab296a,stroke-width:2px
-    style WR fill:#20c997,color:#000,stroke:#1aa179,stroke-width:2px
-    style WA fill:#0dcaf0,color:#000,stroke:#0aa2c0,stroke-width:2px
-    style MR fill:#e91e63,color:#fff,stroke:#c2185b,stroke-width:2px
-    style MA fill:#ff5722,color:#fff,stroke:#e64a19,stroke-width:2px
+    style CR fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:2px
+    style PR fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style MO fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
+    style IP fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
+    style EV fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style RT fill:#C2185B,color:#FFFFFF,stroke:#880E4F,stroke-width:2px
+    style WR fill:#4CAF50,color:#000000,stroke:#2E7D32,stroke-width:2px
+    style WA fill:#2196F3,color:#000000,stroke:#0097A7,stroke-width:2px
+    style MR fill:#E91E63,color:#FFFFFF,stroke:#C2185B,stroke-width:2px
+    style MA fill:#FF5722,color:#FFFFFF,stroke:#e64a19,stroke-width:2px
 ```
 
 ### Per-Workflow Unique Analytics
@@ -780,10 +780,10 @@ flowchart LR
     D --> E["💾 {id}-analysis.md<br/>in workflow's folder"]
     E --> F["📊 AI composes<br/>daily synthesis"]
 
-    style A fill:#0d6efd,color:#fff
-    style C fill:#6f42c1,color:#fff
-    style D fill:#28a745,color:#fff
-    style F fill:#6f42c1,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style C fill:#7B1FA2,color:#FFFFFF
+    style D fill:#4CAF50,color:#FFFFFF
+    style F fill:#7B1FA2,color:#FFFFFF
 ```
 
 | Step | Action | Responsible | Tool / Reference |
@@ -871,12 +871,12 @@ graph LR
     W1 -->|"4-week roll-up"| M1
     W2 -->|"monthly forecast"| M2
 
-    style D1 fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
-    style D2 fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
-    style W1 fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
-    style W2 fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
-    style M1 fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
-    style M2 fill:#d63384,color:#fff,stroke:#ab296a,stroke-width:2px
+    style D1 fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style D2 fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style W1 fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
+    style W2 fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style M1 fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
+    style M2 fill:#C2185B,color:#FFFFFF,stroke:#880E4F,stroke-width:2px
 ```
 
 ---

@@ -103,14 +103,14 @@ graph TD
         end
     end
 
-    style GS1 fill:#28a745,color:#fff
-    style GS2 fill:#28a745,color:#fff
-    style GW1 fill:#dc3545,color:#fff
-    style GW2 fill:#dc3545,color:#fff
-    style GO1 fill:#007bff,color:#fff
-    style GO2 fill:#007bff,color:#fff
-    style GT1 fill:#fd7e14,color:#fff
-    style GT2 fill:#ffc107,color:#000
+    style GS1 fill:#4CAF50,color:#FFFFFF
+    style GS2 fill:#4CAF50,color:#FFFFFF
+    style GW1 fill:#D32F2F,color:#FFFFFF
+    style GW2 fill:#D32F2F,color:#FFFFFF
+    style GO1 fill:#1565C0,color:#FFFFFF
+    style GO2 fill:#1565C0,color:#FFFFFF
+    style GT1 fill:#FF9800,color:#FFFFFF
+    style GT2 fill:#FFC107,color:#000000
 ```
 
 ---

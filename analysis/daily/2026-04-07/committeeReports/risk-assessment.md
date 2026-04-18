@@ -29,7 +29,7 @@ graph LR
         R5["🟡 FöU12 Defence<br>L:2 × I:4 = 8"]
         R6["🟢 CU17 Consumer<br>L:3 × I:2 = 6"]
     end
-    style R1 fill:#ff006e,color:#fff
+    style R1 fill:#ff006e,color:#FFFFFF
     style R2 fill:#ffbe0b,color:#0a0e27
     style R3 fill:#ffbe0b,color:#0a0e27
     style R4 fill:#ffbe0b,color:#0a0e27

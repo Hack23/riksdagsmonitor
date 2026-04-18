@@ -31,12 +31,12 @@ graph TD
         PB["Power Balance<br/>Severity: 2/5 Minor"]
     end
 
-    style NI fill:#ffc107,stroke:#333,color:#000
-    style LI fill:#28a745,stroke:#333,color:#fff
-    style AC fill:#ffc107,stroke:#333,color:#000
-    style TR fill:#28a745,stroke:#333,color:#fff
-    style DP fill:#28a745,stroke:#333,color:#fff
-    style PB fill:#ffc107,stroke:#333,color:#000
+    style NI fill:#FFC107,stroke:#424242,color:#000000
+    style LI fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style AC fill:#FFC107,stroke:#424242,color:#000000
+    style TR fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style DP fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style PB fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 | Category | Severity | Evidence | Assessment |
@@ -65,14 +65,14 @@ graph TD
     B --> B1["Government appears<br/>evasive if responses delayed"]
     B --> B2["Pre-election narrative:<br/>weak foreign policy"]
 
-    style ROOT fill:#dc3545,stroke:#333,color:#fff
-    style A fill:#fd7e14,stroke:#333,color:#000
-    style B fill:#fd7e14,stroke:#333,color:#000
-    style A1 fill:#ffc107,stroke:#333,color:#000
-    style A2 fill:#ffc107,stroke:#333,color:#000
-    style A3 fill:#ffc107,stroke:#333,color:#000
-    style B1 fill:#dc3545,stroke:#333,color:#fff
-    style B2 fill:#dc3545,stroke:#333,color:#fff
+    style ROOT fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style A fill:#FF9800,stroke:#424242,color:#000000
+    style B fill:#FF9800,stroke:#424242,color:#000000
+    style A1 fill:#FFC107,stroke:#424242,color:#000000
+    style A2 fill:#FFC107,stroke:#424242,color:#000000
+    style A3 fill:#FFC107,stroke:#424242,color:#000000
+    style B1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style B2 fill:#D32F2F,stroke:#424242,color:#FFFFFF
 ```
 
 ---

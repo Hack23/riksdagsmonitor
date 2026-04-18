@@ -28,11 +28,11 @@ graph TD
     R --> T
     T --> SIG
     SIG --> D
-    style S fill:#fd7e14,color:#fff
-    style R fill:#fd7e14,color:#fff
-    style T fill:#ffc107,color:#000
-    style SIG fill:#dc3545,color:#fff
-    style D fill:#28a745,color:#fff
+    style S fill:#FF9800,color:#FFFFFF
+    style R fill:#FF9800,color:#FFFFFF
+    style T fill:#FFC107,color:#000000
+    style SIG fill:#D32F2F,color:#FFFFFF
+    style D fill:#4CAF50,color:#FFFFFF
 ```
 
 ## 📋 Top Documents by Significance
@@ -86,10 +86,10 @@ graph LR
     R1 -->|"delays"| R4
     R3 -->|"amplifies"| R2
     R2 -->|"opposition narrative"| R3
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#fd7e14,color:#fff
-    style R4 fill:#ffc107,color:#000
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FF9800,color:#FFFFFF
+    style R4 fill:#FFC107,color:#000000
 ```
 
 | Risk ID | Description | L | I | Score | Tier | Trend | Source |

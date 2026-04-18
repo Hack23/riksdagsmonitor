@@ -34,9 +34,9 @@ graph LR
     A --> I{Urgency}
     I -->|"🟠 URGENT"| K["JuU committee deliberation — weeks"]
 
-    style D fill:#ffc107,color:#000
-    style H fill:#dc3545,color:#fff
-    style K fill:#fd7e14,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#D32F2F,color:#FFFFFF
+    style K fill:#FF9800,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -82,11 +82,11 @@ graph TD
         R5["🟡 Democratic Process<br/>L:2 × I:3 = 6"]
     end
 
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#fd7e14,color:#fff
-    style R5 fill:#ffc107,color:#000
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FF9800,color:#FFFFFF
+    style R5 fill:#FFC107,color:#000000
 ```
 
 | Risk Type | Likelihood (1–5) | Impact (1–5) | Score | Assessment |
@@ -117,10 +117,10 @@ graph LR
     LI --> LI1["Monitor — proportionality concerns raised by V and MP"]
     DP --> DP1["Low — proper proposition process with counter-motions"]
 
-    style NI fill:#ffc107,color:#000
-    style LI fill:#ffc107,color:#000
-    style DP fill:#28a745,color:#fff
-    style PB fill:#28a745,color:#fff
+    style NI fill:#FFC107,color:#000000
+    style LI fill:#FFC107,color:#000000
+    style DP fill:#4CAF50,color:#FFFFFF
+    style PB fill:#4CAF50,color:#FFFFFF
 ```
 
 | Threat Category | Applicable? | Threat Description | Severity (1–5) | Evidence |

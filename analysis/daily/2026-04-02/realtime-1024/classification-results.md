@@ -16,10 +16,10 @@ graph TD
         D["HD01JuU15<br/>Criminal Justice — Public Safety"]
     end
     
-    style A fill:#ff4444,stroke:#333,color:#fff
-    style B fill:#ff4444,stroke:#333,color:#fff
-    style C fill:#ffbe0b,stroke:#333,color:#000
-    style D fill:#ffbe0b,stroke:#333,color:#000
+    style A fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style B fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style C fill:#ffbe0b,stroke:#424242,color:#000000
+    style D fill:#ffbe0b,stroke:#424242,color:#000000
 ```
 
 | dok_id | Sensitivity | Domain | Temperature | Urgency |

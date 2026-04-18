@@ -46,10 +46,10 @@ graph TD
     SD_P --> KD_M
     MEDIA --> SD_P
     KD_M --> MUSLIM
-    style SD_P fill:#ffc107,stroke:#856404,color:#000
-    style KD_M fill:#fd7e14,stroke:#873b00,color:#fff
-    style MUSLIM fill:#dc3545,stroke:#721c24,color:#fff
-    style MEDIA fill:#17a2b8,stroke:#0c5460,color:#fff
+    style SD_P fill:#FFC107,stroke:#F57C00,color:#000000
+    style KD_M fill:#FF9800,stroke:#E65100,color:#FFFFFF
+    style MUSLIM fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
+    style MEDIA fill:#0097A7,stroke:#006064,color:#FFFFFF
 ```
 
 ## Risk Assessment

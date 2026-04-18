@@ -19,10 +19,10 @@ graph TD
         CU18 --> NU15["NU15<br/>Business Regulation"]
     end
 
-    style CU18 fill:#fd7e14,color:#fff
-    style CU17 fill:#0d6efd,color:#fff
-    style JuU16 fill:#0d6efd,color:#fff
-    style KU31 fill:#ffc107,color:#000
+    style CU18 fill:#FF9800,color:#FFFFFF
+    style CU17 fill:#1565C0,color:#FFFFFF
+    style JuU16 fill:#1565C0,color:#FFFFFF
+    style KU31 fill:#FFC107,color:#000000
 ```
 
 ## 📊 Cross-Reference Table

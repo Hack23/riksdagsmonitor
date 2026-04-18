@@ -25,12 +25,12 @@ graph TD
     NI --> S2["Severity: HIGH<br/>Defense export controls require vigilance"]
     DP --> S3["Severity: LOW<br/>Healthy parliamentary activism"]
 
-    style AC fill:#ffc107,stroke:#e0a800,color:#000
-    style NI fill:#fd7e14,stroke:#ca6510,color:#fff
-    style DP fill:#28a745,stroke:#1e7e34,color:#fff
-    style S1 fill:#ffc107,stroke:#e0a800,color:#000
-    style S2 fill:#fd7e14,stroke:#ca6510,color:#fff
-    style S3 fill:#28a745,stroke:#1e7e34,color:#fff
+    style AC fill:#FFC107,stroke:#FFA000,color:#000000
+    style NI fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style DP fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style S1 fill:#FFC107,stroke:#FFA000,color:#000000
+    style S2 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style S3 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 ---

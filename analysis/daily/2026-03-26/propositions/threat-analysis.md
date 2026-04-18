@@ -23,14 +23,14 @@ graph TD
     T2 --> MIT2["🛡️ Mitigation: Proportionality<br/>assessment in JuU"]
     T3 --> MIT3["🛡️ Mitigation: Local authority<br/>enforcement powers retained"]
     
-    style HD03227 fill:#ffc107,color:#000
-    style HD03221 fill:#28a745,color:#fff
-    style T1 fill:#fd7e14,color:#fff
-    style T2 fill:#fd7e14,color:#fff
-    style T3 fill:#ffc107,color:#000
-    style MIT1 fill:#0d6efd,color:#fff
-    style MIT2 fill:#0d6efd,color:#fff
-    style MIT3 fill:#0d6efd,color:#fff
+    style HD03227 fill:#FFC107,color:#000000
+    style HD03221 fill:#4CAF50,color:#FFFFFF
+    style T1 fill:#FF9800,color:#FFFFFF
+    style T2 fill:#FF9800,color:#FFFFFF
+    style T3 fill:#FFC107,color:#000000
+    style MIT1 fill:#1565C0,color:#FFFFFF
+    style MIT2 fill:#1565C0,color:#FFFFFF
+    style MIT3 fill:#1565C0,color:#FFFFFF
 ```
 
 ## Threat Categories Applied

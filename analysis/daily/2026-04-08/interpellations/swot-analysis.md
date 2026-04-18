@@ -96,14 +96,14 @@ graph TD
         JUD["⚖️ Judiciary<br/>HIGH constitutional test"]
         MED["📰 Media<br/>HIGH accountability driver"]
     end
-    style CIT fill:#28a745,color:#fff
-    style GOV fill:#fd7e14,color:#fff
-    style OPP fill:#0d6efd,color:#fff
-    style BIZ fill:#6c757d,color:#fff
-    style CIV fill:#28a745,color:#fff
-    style INT fill:#ffc107,color:#000
-    style JUD fill:#dc3545,color:#fff
-    style MED fill:#28a745,color:#fff
+    style CIT fill:#4CAF50,color:#FFFFFF
+    style GOV fill:#FF9800,color:#FFFFFF
+    style OPP fill:#1565C0,color:#FFFFFF
+    style BIZ fill:#9E9E9E,color:#FFFFFF
+    style CIV fill:#4CAF50,color:#FFFFFF
+    style INT fill:#FFC107,color:#000000
+    style JUD fill:#D32F2F,color:#FFFFFF
+    style MED fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Data Quality Notes

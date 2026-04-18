@@ -16,8 +16,8 @@ graph LR
     HD10425 --> HD10419["HD10419<br/>Motorvägsbron Södertälje"]
     HD10425 --> HD10417["HD10417<br/>Södra stambanan"]
 
-    style HD10424 fill:#ffc107,color:#000
-    style HD10425 fill:#fd7e14,color:#fff
+    style HD10424 fill:#FFC107,color:#000000
+    style HD10425 fill:#FF9800,color:#FFFFFF
 ```
 
 | Source | Target | Relationship |

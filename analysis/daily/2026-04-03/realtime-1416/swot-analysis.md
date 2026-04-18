@@ -94,18 +94,18 @@ graph TB
         T3["T3: ECHR challenge<br/>Prop 235"]
     end
     
-    style S1 fill:#00d9ff,color:#000
-    style S2 fill:#00d9ff,color:#000
-    style S3 fill:#00d9ff,color:#000
-    style W1 fill:#ffbe0b,color:#000
-    style W2 fill:#ffbe0b,color:#000
-    style W3 fill:#ffbe0b,color:#000
-    style O1 fill:#00ff88,color:#000
-    style O2 fill:#00ff88,color:#000
-    style O3 fill:#00ff88,color:#000
-    style T1 fill:#ff006e,color:#fff
-    style T2 fill:#ff006e,color:#fff
-    style T3 fill:#ff006e,color:#fff
+    style S1 fill:#00d9ff,color:#000000
+    style S2 fill:#00d9ff,color:#000000
+    style S3 fill:#00d9ff,color:#000000
+    style W1 fill:#ffbe0b,color:#000000
+    style W2 fill:#ffbe0b,color:#000000
+    style W3 fill:#ffbe0b,color:#000000
+    style O1 fill:#4CAF50,color:#000000
+    style O2 fill:#4CAF50,color:#000000
+    style O3 fill:#4CAF50,color:#000000
+    style T1 fill:#ff006e,color:#FFFFFF
+    style T2 fill:#ff006e,color:#FFFFFF
+    style T3 fill:#ff006e,color:#FFFFFF
 ```
 
 ---

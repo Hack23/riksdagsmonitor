@@ -43,15 +43,15 @@ graph TD
         T2["T2: International scrutiny<br/>Arms exports HD03228"]
     end
 
-    style S1 fill:#28a745,color:#fff
-    style S2 fill:#28a745,color:#fff
-    style S3 fill:#28a745,color:#fff
-    style W1 fill:#ffc107,color:#000
-    style W2 fill:#ffc107,color:#000
-    style O1 fill:#0d6efd,color:#fff
-    style O2 fill:#0d6efd,color:#fff
-    style T1 fill:#dc3545,color:#fff
-    style T2 fill:#dc3545,color:#fff
+    style S1 fill:#4CAF50,color:#FFFFFF
+    style S2 fill:#4CAF50,color:#FFFFFF
+    style S3 fill:#4CAF50,color:#FFFFFF
+    style W1 fill:#FFC107,color:#000000
+    style W2 fill:#FFC107,color:#000000
+    style O1 fill:#1565C0,color:#FFFFFF
+    style O2 fill:#1565C0,color:#FFFFFF
+    style T1 fill:#D32F2F,color:#FFFFFF
+    style T2 fill:#D32F2F,color:#FFFFFF
 ```
 
 ---

@@ -33,10 +33,10 @@ graph TD
         end
     end
 
-    style CLS fill:#28a745,color:#fff
-    style RSK fill:#ffc107,color:#000
-    style THR fill:#28a745,color:#fff
-    style SIG fill:#ffc107,color:#000
+    style CLS fill:#4CAF50,color:#FFFFFF
+    style RSK fill:#FFC107,color:#000000
+    style THR fill:#4CAF50,color:#FFFFFF
+    style SIG fill:#FFC107,color:#000000
 ```
 
 ## 📋 Document Summary Table

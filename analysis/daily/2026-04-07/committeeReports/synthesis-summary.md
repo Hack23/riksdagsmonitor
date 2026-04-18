@@ -31,10 +31,10 @@ flowchart TD
         B --> N["NU (Industry): NU17"]
     end
     style A fill:#00d9ff,color:#0a0e27
-    style C fill:#ff006e,color:#fff
-    style D fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#FFFFFF
+    style D fill:#ff006e,color:#FFFFFF
     style E fill:#ffbe0b,color:#0a0e27
-    style J fill:#ff006e,color:#fff
+    style J fill:#ff006e,color:#FFFFFF
 ```
 
 ## Key Findings

@@ -59,11 +59,11 @@ graph TD
     H -->|Government Majority| I["Proposition Likely Passes"]
     H -->|If Opposition Unites| J["Possible Defeat"]
     
-    style A fill:#4CAF50,color:#fff
-    style B fill:#f44336,color:#fff
-    style C fill:#FF9800,color:#fff
-    style I fill:#4CAF50,color:#fff
-    style J fill:#f44336,color:#fff
+    style A fill:#4CAF50,color:#FFFFFF
+    style B fill:#D32F2F,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style I fill:#4CAF50,color:#FFFFFF
+    style J fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Cross-Document References

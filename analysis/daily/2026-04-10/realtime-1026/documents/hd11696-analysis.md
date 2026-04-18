@@ -33,9 +33,9 @@ graph LR
     G --> H[Foreign Affairs (FOR)]
     A --> I{{Urgency}}
     I -->|ROUTINE| M[ROUTINE processing]
-    style E fill:#28a745,color:#fff
-    style H fill:#0d6efd,color:#fff
-    style M fill:#6c757d,color:#fff
+    style E fill:#4CAF50,color:#FFFFFF
+    style H fill:#1565C0,color:#FFFFFF
+    style M fill:#9E9E9E,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -69,8 +69,8 @@ graph TD
         R1[Coalition Stability L1 x I1 = 1]
         R5[External International L2 x I3 = 6]
     end
-    style R1 fill:#28a745,color:#fff
-    style R5 fill:#ffc107,color:#000
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#FFC107,color:#000000
 ```
 
 | Risk Type | L | I | Score | Assessment |

@@ -41,14 +41,14 @@ graph TD
     ET2 --> IN2
     IT1 --> IT2
     
-    style ET1 fill:#ff006e,color:#fff
-    style ET2 fill:#ffbe0b,color:#000
-    style ET3 fill:#ffbe0b,color:#000
-    style IT1 fill:#ffbe0b,color:#000
-    style IT2 fill:#00d9ff,color:#000
-    style IT3 fill:#ffbe0b,color:#000
-    style IN1 fill:#ffbe0b,color:#000
-    style IN2 fill:#ffbe0b,color:#000
+    style ET1 fill:#ff006e,color:#FFFFFF
+    style ET2 fill:#ffbe0b,color:#000000
+    style ET3 fill:#ffbe0b,color:#000000
+    style IT1 fill:#ffbe0b,color:#000000
+    style IT2 fill:#00d9ff,color:#000000
+    style IT3 fill:#ffbe0b,color:#000000
+    style IN1 fill:#ffbe0b,color:#000000
+    style IN2 fill:#ffbe0b,color:#000000
 ```
 
 ---

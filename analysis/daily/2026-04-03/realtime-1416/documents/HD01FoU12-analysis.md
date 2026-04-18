@@ -40,10 +40,10 @@ graph LR
     A --> I{"Urgency"}
     I -->|"🟠 URGENT"| K["Heightened security situation<br/>NATO commitments"]
     
-    style A fill:#00d9ff,color:#000
-    style D fill:#ffbe0b,color:#000
-    style H fill:#00d9ff,color:#000
-    style K fill:#ff8c00,color:#fff
+    style A fill:#00d9ff,color:#000000
+    style D fill:#ffbe0b,color:#000000
+    style H fill:#00d9ff,color:#000000
+    style K fill:#F57C00,color:#FFFFFF
 ```
 
 ---
@@ -88,10 +88,10 @@ graph TD
     R1["R1: Municipal Implementation Gap<br/>L:3 × I:4 = 12"] --> M1["Central government guidance<br/>and earmarked funding"]
     R2["R2: Public Preparedness Fatigue<br/>L:2 × I:3 = 6"] --> M2["MSB communication<br/>campaign coordination"]
     
-    style R1 fill:#ff006e,color:#fff
-    style R2 fill:#ffbe0b,color:#000
-    style M1 fill:#00d9ff,color:#000
-    style M2 fill:#00d9ff,color:#000
+    style R1 fill:#ff006e,color:#FFFFFF
+    style R2 fill:#ffbe0b,color:#000000
+    style M1 fill:#00d9ff,color:#000000
+    style M2 fill:#00d9ff,color:#000000
 ```
 
 | Risk ID | Risk | Likelihood (1-5) | Impact (1-5) | Score | Mitigation |

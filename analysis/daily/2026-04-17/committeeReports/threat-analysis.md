@@ -6,11 +6,11 @@
 
 ```mermaid
 graph TD
-    style T1 fill:#c0392b,color:#fff
-    style T2 fill:#e74c3c,color:#fff
-    style T3 fill:#e67e22,color:#fff
-    style T4 fill:#f39c12,color:#fff
-    style T5 fill:#3498db,color:#fff
+    style T1 fill:#D32F2F,color:#FFFFFF
+    style T2 fill:#D32F2F,color:#FFFFFF
+    style T3 fill:#FF9800,color:#FFFFFF
+    style T4 fill:#FF9800,color:#FFFFFF
+    style T5 fill:#2196F3,color:#FFFFFF
 
     T1[🔴 T-01: ECHR Violation Risk<br/>SfU31 Detention Framework<br/>Severity: CRITICAL]
     T2[🔴 T-02: Climate Policy Reversal<br/>FiU48 + MJU20 combined<br/>Severity: HIGH]

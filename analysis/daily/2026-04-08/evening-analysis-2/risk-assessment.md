@@ -22,12 +22,12 @@ graph TD
         R6["R6: Fiscal<br/>L=2 × I=2 = 4<br/>Spring budget risks"]
     end
 
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#28a745,color:#fff
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#28a745,color:#fff
-    style R6 fill:#28a745,color:#fff
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#4CAF50,color:#FFFFFF
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Detailed Risk Assessment

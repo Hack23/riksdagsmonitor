@@ -36,15 +36,15 @@ graph LR
     EU -->|"ECHR review"| GOV
     GOV -->|"NATO deployment"| NATO_S
     GOV -->|"welfare reform"| CIVIL
-    style GOV fill:#28a745,color:#fff
-    style SD fill:#28a745,color:#fff
-    style S_PARTY fill:#dc3545,color:#fff
-    style V_PARTY fill:#dc3545,color:#fff
-    style MP_PARTY fill:#ffc107,color:#000
-    style EU fill:#ffc107,color:#000
-    style NATO_S fill:#28a745,color:#fff
-    style CIVIL fill:#dc3545,color:#fff
-    style MEDIA fill:#ffc107,color:#000
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style SD fill:#4CAF50,color:#FFFFFF
+    style S_PARTY fill:#D32F2F,color:#FFFFFF
+    style V_PARTY fill:#D32F2F,color:#FFFFFF
+    style MP_PARTY fill:#FFC107,color:#000000
+    style EU fill:#FFC107,color:#000000
+    style NATO_S fill:#4CAF50,color:#FFFFFF
+    style CIVIL fill:#D32F2F,color:#FFFFFF
+    style MEDIA fill:#FFC107,color:#000000
 ```
 
 ## Detailed Perspectives

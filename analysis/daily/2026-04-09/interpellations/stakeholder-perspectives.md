@@ -29,14 +29,14 @@ graph TD
         BIZ["💼 Business<br/>Indirect stability effects"]
     end
     
-    style CIT fill:#D32F2F,color:#ffffff
-    style GOV fill:#D32F2F,color:#ffffff
-    style JUD fill:#D32F2F,color:#ffffff
-    style MED fill:#D32F2F,color:#ffffff
+    style CIT fill:#D32F2F,color:#FFFFFF
+    style GOV fill:#D32F2F,color:#FFFFFF
+    style JUD fill:#D32F2F,color:#FFFFFF
+    style MED fill:#D32F2F,color:#FFFFFF
     style OPP fill:#FF9800,color:#000000
     style INT fill:#FF9800,color:#000000
     style CIV fill:#FF9800,color:#000000
-    style BIZ fill:#2E7D32,color:#ffffff
+    style BIZ fill:#2E7D32,color:#FFFFFF
 ```
 
 ## Detailed Analysis per Stakeholder Group

@@ -32,18 +32,18 @@ graph TD
         T2["Democratic strain signal<br/>131 housing + 122 criminal<br/>motions rejected"]
         T3["Social cohesion pressure<br/>Immigration reception reform<br/>Polarization risk"]
     end
-    style S1 fill:#28a745,color:#fff
-    style S2 fill:#28a745,color:#fff
-    style S3 fill:#28a745,color:#fff
-    style W1 fill:#dc3545,color:#fff
-    style W2 fill:#dc3545,color:#fff
-    style W3 fill:#dc3545,color:#fff
-    style O1 fill:#0d6efd,color:#fff
-    style O2 fill:#0d6efd,color:#fff
-    style O3 fill:#0d6efd,color:#fff
-    style T1 fill:#ffc107,color:#000
-    style T2 fill:#ffc107,color:#000
-    style T3 fill:#ffc107,color:#000
+    style S1 fill:#4CAF50,color:#FFFFFF
+    style S2 fill:#4CAF50,color:#FFFFFF
+    style S3 fill:#4CAF50,color:#FFFFFF
+    style W1 fill:#D32F2F,color:#FFFFFF
+    style W2 fill:#D32F2F,color:#FFFFFF
+    style W3 fill:#D32F2F,color:#FFFFFF
+    style O1 fill:#1565C0,color:#FFFFFF
+    style O2 fill:#1565C0,color:#FFFFFF
+    style O3 fill:#1565C0,color:#FFFFFF
+    style T1 fill:#FFC107,color:#000000
+    style T2 fill:#FFC107,color:#000000
+    style T3 fill:#FFC107,color:#000000
 ```
 
 ## Detailed SWOT with Evidence

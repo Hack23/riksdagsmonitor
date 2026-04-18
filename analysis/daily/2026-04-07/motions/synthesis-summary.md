@@ -31,7 +31,7 @@ flowchart TD
     E --> M["Prop. 206: Food chain fraud control"]
 
     style A fill:#00d9ff,color:#0a0e27
-    style C fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#FFFFFF
     style D fill:#ffbe0b,color:#0a0e27
     style E fill:#ffbe0b,color:#0a0e27
     style F fill:#ffbe0b,color:#0a0e27

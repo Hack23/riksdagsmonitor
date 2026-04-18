@@ -36,13 +36,13 @@ graph TD
     C --> J["EU directive<br/>implementation<br/>6 reservations"]
     C --> K["Climate targets<br/>debate June 2026"]
     
-    style B fill:#dc3545,color:#fff
-    style C fill:#ffc107,color:#000
-    style D fill:#0d6efd,color:#fff
-    style E fill:#6f42c1,color:#fff
-    style H fill:#dc3545,color:#fff
-    style I fill:#dc3545,color:#fff
-    style J fill:#ffc107,color:#000
+    style B fill:#D32F2F,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#1565C0,color:#FFFFFF
+    style E fill:#7B1FA2,color:#FFFFFF
+    style H fill:#D32F2F,color:#FFFFFF
+    style I fill:#D32F2F,color:#FFFFFF
+    style J fill:#FFC107,color:#000000
 ```
 
 ## Top Documents by Significance

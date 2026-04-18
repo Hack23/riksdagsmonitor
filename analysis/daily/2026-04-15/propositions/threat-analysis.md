@@ -39,10 +39,10 @@ graph TB
     TV2 --> T1
     TV3 --> T1
     TV1 --> T3
-    style TV1 fill:#ff6b6b,color:#fff
-    style TV2 fill:#ffa726,color:#fff
-    style TV3 fill:#ff6b6b,color:#fff
-    style TV4 fill:#ffa726,color:#fff
+    style TV1 fill:#EF5350,color:#FFFFFF
+    style TV2 fill:#FF9800,color:#FFFFFF
+    style TV3 fill:#EF5350,color:#FFFFFF
+    style TV4 fill:#FF9800,color:#FFFFFF
 ```
 
 ## Detailed Analysis

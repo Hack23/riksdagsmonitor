@@ -31,13 +31,13 @@ graph TD
         E1 --> D
     end
 
-    style E1 fill:#ffc107,color:#000
-    style E2 fill:#28a745,color:#fff
-    style E3 fill:#28a745,color:#fff
-    style E4 fill:#28a745,color:#fff
-    style E5 fill:#28a745,color:#fff
-    style E6 fill:#fd7e14,color:#fff
-    style D fill:#0d6efd,color:#fff
+    style E1 fill:#FFC107,color:#000000
+    style E2 fill:#4CAF50,color:#FFFFFF
+    style E3 fill:#4CAF50,color:#FFFFFF
+    style E4 fill:#4CAF50,color:#FFFFFF
+    style E5 fill:#4CAF50,color:#FFFFFF
+    style E6 fill:#FF9800,color:#FFFFFF
+    style D fill:#1565C0,color:#FFFFFF
 ```
 
 ### Detailed Scoring Matrix

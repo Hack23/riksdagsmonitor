@@ -68,10 +68,10 @@ flowchart LR
     E -->|"No"| G["Implementation<br/>Gap"]
     G --> H["Political<br/>Criticism"]
     
-    style A fill:#00d9ff,stroke:#333,color:#000
-    style F fill:#00ff88,stroke:#333,color:#000
-    style G fill:#ff006e,stroke:#333,color:#000
-    style H fill:#ffbe0b,stroke:#333,color:#000
+    style A fill:#00d9ff,stroke:#424242,color:#000000
+    style F fill:#4CAF50,stroke:#424242,color:#000000
+    style G fill:#ff006e,stroke:#424242,color:#000000
+    style H fill:#ffbe0b,stroke:#424242,color:#000000
 ```
 
 ## ⚠️ Risk Assessment

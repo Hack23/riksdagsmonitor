@@ -34,17 +34,17 @@ graph LR
         HD11694["HD11694<br/>Förtroendeuppdrag"]
     end
 
-    style SKR226 fill:#6f42c1,color:#fff
-    style HD024070 fill:#ffc107,color:#000
-    style HD024071 fill:#dc3545,color:#fff
-    style HD024072 fill:#28a745,color:#fff
-    style HD01NU18 fill:#0d6efd,color:#fff
-    style HD03230 fill:#0d6efd,color:#fff
-    style HD11690 fill:#fd7e14,color:#fff
-    style HD11692 fill:#fd7e14,color:#fff
-    style HD11693 fill:#ffc107,color:#000
-    style HD11694 fill:#ffc107,color:#000
-    style HD11689 fill:#28a745,color:#fff
+    style SKR226 fill:#7B1FA2,color:#FFFFFF
+    style HD024070 fill:#FFC107,color:#000000
+    style HD024071 fill:#D32F2F,color:#FFFFFF
+    style HD024072 fill:#4CAF50,color:#FFFFFF
+    style HD01NU18 fill:#1565C0,color:#FFFFFF
+    style HD03230 fill:#1565C0,color:#FFFFFF
+    style HD11690 fill:#FF9800,color:#FFFFFF
+    style HD11692 fill:#FF9800,color:#FFFFFF
+    style HD11693 fill:#FFC107,color:#000000
+    style HD11694 fill:#FFC107,color:#000000
+    style HD11689 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Key Cross-References

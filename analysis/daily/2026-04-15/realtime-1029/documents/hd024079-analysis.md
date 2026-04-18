@@ -51,12 +51,12 @@ graph LR
     D --> G["Target: Segregation Prevention"]
     E --> H["Target: Time-Limited Housing"]
     
-    style A fill:#4CAF50,color:#fff
-    style B fill:#FF9800,color:#fff
-    style E fill:#f44336,color:#fff
-    style F fill:#9C27B0,color:#fff
-    style G fill:#9C27B0,color:#fff
-    style H fill:#f44336,color:#fff
+    style A fill:#4CAF50,color:#FFFFFF
+    style B fill:#FF9800,color:#FFFFFF
+    style E fill:#D32F2F,color:#FFFFFF
+    style F fill:#9C27B0,color:#FFFFFF
+    style G fill:#9C27B0,color:#FFFFFF
+    style H fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Cross-Document References

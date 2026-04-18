@@ -40,9 +40,9 @@ graph TD
     end
     SD_W --> M_F
     M_F --> SYRIAN
-    style SD_W fill:#ffc107,stroke:#856404,color:#000
-    style M_F fill:#17a2b8,stroke:#0c5460,color:#fff
-    style SYRIAN fill:#dc3545,stroke:#721c24,color:#fff
+    style SD_W fill:#FFC107,stroke:#F57C00,color:#000000
+    style M_F fill:#0097A7,stroke:#006064,color:#FFFFFF
+    style SYRIAN fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
 ```
 
 ## Risk Assessment

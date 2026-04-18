@@ -41,21 +41,21 @@ graph TD
         end
     end
 
-    style S1 fill:#28a745,color:#fff
-    style S2 fill:#28a745,color:#fff
-    style S3 fill:#28a745,color:#fff
-    style S4 fill:#28a745,color:#fff
-    style W1 fill:#ffc107,color:#000
-    style W2 fill:#ffc107,color:#000
-    style W3 fill:#ffc107,color:#000
-    style W4 fill:#ffc107,color:#000
-    style O1 fill:#0d6efd,color:#fff
-    style O2 fill:#0d6efd,color:#fff
-    style O3 fill:#0d6efd,color:#fff
-    style T1 fill:#dc3545,color:#fff
-    style T2 fill:#fd7e14,color:#fff
-    style T3 fill:#fd7e14,color:#fff
-    style T4 fill:#fd7e14,color:#fff
+    style S1 fill:#4CAF50,color:#FFFFFF
+    style S2 fill:#4CAF50,color:#FFFFFF
+    style S3 fill:#4CAF50,color:#FFFFFF
+    style S4 fill:#4CAF50,color:#FFFFFF
+    style W1 fill:#FFC107,color:#000000
+    style W2 fill:#FFC107,color:#000000
+    style W3 fill:#FFC107,color:#000000
+    style W4 fill:#FFC107,color:#000000
+    style O1 fill:#1565C0,color:#FFFFFF
+    style O2 fill:#1565C0,color:#FFFFFF
+    style O3 fill:#1565C0,color:#FFFFFF
+    style T1 fill:#D32F2F,color:#FFFFFF
+    style T2 fill:#FF9800,color:#FFFFFF
+    style T3 fill:#FF9800,color:#FFFFFF
+    style T4 fill:#FF9800,color:#FFFFFF
 ```
 
 ---

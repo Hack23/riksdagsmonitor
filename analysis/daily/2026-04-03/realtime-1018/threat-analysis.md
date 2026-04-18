@@ -29,12 +29,12 @@ graph TD
     NI -->|"Deportation debate<br/>polarization risk"| AC
     PB -->|"SD influence on<br/>coalition agenda"| LI
 
-    style NI fill:#ffc107,color:#000
-    style LI fill:#28a745,color:#fff
-    style AC fill:#ffc107,color:#000
-    style TR fill:#28a745,color:#fff
-    style DP fill:#28a745,color:#fff
-    style PB fill:#ffc107,color:#000
+    style NI fill:#FFC107,color:#000000
+    style LI fill:#4CAF50,color:#FFFFFF
+    style AC fill:#FFC107,color:#000000
+    style TR fill:#4CAF50,color:#FFFFFF
+    style DP fill:#4CAF50,color:#FFFFFF
+    style PB fill:#FFC107,color:#000000
 ```
 
 | Category | Threat Level | Primary Driver | Evidence |
@@ -69,15 +69,15 @@ graph TD
 
     C --> D["Democratic deficit:<br/>non-governing party<br/>sets legislative priorities"]
 
-    style ROOT fill:#dc3545,color:#fff
-    style A fill:#fd7e14,color:#fff
-    style B fill:#fd7e14,color:#fff
-    style C fill:#ffc107,color:#000
-    style D fill:#dc3545,color:#fff
-    style A1 fill:#ffc107,color:#000
-    style A2 fill:#ffc107,color:#000
-    style B1 fill:#ffc107,color:#000
-    style B2 fill:#ffc107,color:#000
+    style ROOT fill:#D32F2F,color:#FFFFFF
+    style A fill:#FF9800,color:#FFFFFF
+    style B fill:#FF9800,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#D32F2F,color:#FFFFFF
+    style A1 fill:#FFC107,color:#000000
+    style A2 fill:#FFC107,color:#000000
+    style B1 fill:#FFC107,color:#000000
+    style B2 fill:#FFC107,color:#000000
 ```
 
 ---

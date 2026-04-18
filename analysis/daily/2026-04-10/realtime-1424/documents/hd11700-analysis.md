@@ -33,10 +33,10 @@ graph TD
     A -->|asks| Q
     Q -->|addressed to| M
     Q -->|policy area| P
-    style Q fill:#0d6efd,color:#fff
-    style A fill:#28a745,color:#fff
-    style M fill:#ffc107,color:#000
-    style P fill:#6f42c1,color:#fff
+    style Q fill:#1565C0,color:#FFFFFF
+    style A fill:#4CAF50,color:#FFFFFF
+    style M fill:#FFC107,color:#000000
+    style P fill:#7B1FA2,color:#FFFFFF
 ```
 
 The question from Jonathan Svensson (S) targets Johan Britz (L) on Arbetsformedlingen service accessibility. This is a routine parliamentary oversight question with limited immediate policy impact but contributes to political accountability.

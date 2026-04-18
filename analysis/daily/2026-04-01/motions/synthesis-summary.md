@@ -38,14 +38,14 @@ graph TD
     MCP --> OTH
     EDU --> STD
     SOC --> STD
-    style EDU fill:#dc3545,color:#fff
-    style SOC fill:#fd7e14,color:#fff
-    style HSG fill:#ffc107,color:#000
-    style BIZ fill:#ffc107,color:#000
-    style FIN fill:#28a745,color:#fff
-    style ENV fill:#28a745,color:#fff
-    style OTH fill:#28a745,color:#fff
-    style STD fill:#0d6efd,color:#fff
+    style EDU fill:#D32F2F,color:#FFFFFF
+    style SOC fill:#FF9800,color:#FFFFFF
+    style HSG fill:#FFC107,color:#000000
+    style BIZ fill:#FFC107,color:#000000
+    style FIN fill:#4CAF50,color:#FFFFFF
+    style ENV fill:#4CAF50,color:#FFFFFF
+    style OTH fill:#4CAF50,color:#FFFFFF
+    style STD fill:#1565C0,color:#FFFFFF
 ```
 
 ## 🏆 Top Findings by Significance
@@ -80,14 +80,14 @@ graph LR
     end
     S1 -.->|exploits| W1
     T1 -.->|amplifies| W2
-    style S1 fill:#28a745,color:#fff
-    style S2 fill:#28a745,color:#fff
-    style W1 fill:#dc3545,color:#fff
-    style W2 fill:#dc3545,color:#fff
-    style O1 fill:#0d6efd,color:#fff
-    style O2 fill:#0d6efd,color:#fff
-    style T1 fill:#fd7e14,color:#fff
-    style T2 fill:#fd7e14,color:#fff
+    style S1 fill:#4CAF50,color:#FFFFFF
+    style S2 fill:#4CAF50,color:#FFFFFF
+    style W1 fill:#D32F2F,color:#FFFFFF
+    style W2 fill:#D32F2F,color:#FFFFFF
+    style O1 fill:#1565C0,color:#FFFFFF
+    style O2 fill:#1565C0,color:#FFFFFF
+    style T1 fill:#FF9800,color:#FFFFFF
+    style T2 fill:#FF9800,color:#FFFFFF
 ```
 
 | Quadrant | Count | Highest-Impact Entry | Evidence |

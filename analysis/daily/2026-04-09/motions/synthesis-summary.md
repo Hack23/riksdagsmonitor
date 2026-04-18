@@ -50,10 +50,10 @@ flowchart TD
     E --> F{Government Response}
     F -->|Accept| G[Policy reform]
     F -->|Reject| H[Opposition uses for<br>election platform 2026]
-    style A fill:#1565C0,color:#ffffff
-    style B fill:#2E7D32,color:#ffffff
-    style C fill:#D32F2F,color:#ffffff
-    style D fill:#2E7D32,color:#ffffff
+    style A fill:#1565C0,color:#FFFFFF
+    style B fill:#2E7D32,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
+    style D fill:#2E7D32,color:#FFFFFF
     style E fill:#FF9800,color:#000000
     style F fill:#FF9800,color:#000000
 ```

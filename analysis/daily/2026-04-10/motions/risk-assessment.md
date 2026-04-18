@@ -28,12 +28,12 @@ graph TD
             R6["R6: Nordic cooperation drift\nL:1 x I:2 = 2"]
         end
     end
-    style R1 fill:#fd7e14,stroke:#333,color:#fff
-    style R2 fill:#ffc107,stroke:#333,color:#000
-    style R3 fill:#fd7e14,stroke:#333,color:#fff
-    style R4 fill:#ffc107,stroke:#333,color:#000
-    style R5 fill:#28a745,stroke:#333,color:#fff
-    style R6 fill:#28a745,stroke:#333,color:#fff
+    style R1 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style R2 fill:#FFC107,stroke:#424242,color:#000000
+    style R3 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style R4 fill:#FFC107,stroke:#424242,color:#000000
+    style R5 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style R6 fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ## Summary

@@ -40,14 +40,14 @@ graph TD
         R1 --> S1
     end
     style D1 fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
-    style C1 fill:#28a745,color:#fff
-    style C2 fill:#ffc107,color:#000
-    style C3 fill:#28a745,color:#fff
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#28a745,color:#fff
-    style S1 fill:#ffc107,color:#000
-    style S2 fill:#00d9ff,color:#000
+    style C1 fill:#4CAF50,color:#FFFFFF
+    style C2 fill:#FFC107,color:#000000
+    style C3 fill:#4CAF50,color:#FFFFFF
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#4CAF50,color:#FFFFFF
+    style S1 fill:#FFC107,color:#000000
+    style S2 fill:#00d9ff,color:#000000
 ```
 
 ---

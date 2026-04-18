@@ -76,12 +76,12 @@ graph TD
     XPTY --> COMP
     COMP --> DEC
 
-    style BRK fill:#dc3545,color:#fff
-    style PRI fill:#fd7e14,color:#fff
-    style PUB2 fill:#28a745,color:#fff
-    style MON fill:#ffc107,color:#000
-    style ARC fill:#6c757d,color:#fff
-    style COMP fill:#0d6efd,color:#fff
+    style BRK fill:#D32F2F,color:#FFFFFF
+    style PRI fill:#FF9800,color:#FFFFFF
+    style PUB2 fill:#4CAF50,color:#FFFFFF
+    style MON fill:#FFC107,color:#000000
+    style ARC fill:#9E9E9E,color:#FFFFFF
+    style COMP fill:#1565C0,color:#FFFFFF
 ```
 
 Score each dimension from **0 to 10**. See calibration examples below.

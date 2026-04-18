@@ -25,10 +25,10 @@ graph TD
     T2 --> T2a["Full rejection<br/>of Prop. 216<br/>Rare parliamentary action"]
     T3 --> T3a["HD024080 + HD024079<br/>Challenge Tidö migration"]
 
-    style T0 fill:#ffc107,color:#000
-    style T1 fill:#fd7e14,color:#fff
-    style T2 fill:#dc3545,color:#fff
-    style T3 fill:#fd7e14,color:#fff
+    style T0 fill:#FFC107,color:#000000
+    style T1 fill:#FF9800,color:#FFFFFF
+    style T2 fill:#D32F2F,color:#FFFFFF
+    style T3 fill:#FF9800,color:#FFFFFF
 ```
 
 ## Detailed Threat Assessment

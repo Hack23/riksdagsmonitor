@@ -33,14 +33,14 @@ graph TD
             MP["Media/Opinion<br/>Security Framing"]
         end
     end
-    style C fill:#0A66C2,stroke:#333,color:#fff
-    style GC fill:#28a745,stroke:#333,color:#fff
-    style BI fill:#28a745,stroke:#333,color:#fff
-    style OB fill:#ffc107,stroke:#333,color:#000
-    style CS fill:#dc3545,stroke:#333,color:#fff
-    style JC fill:#ffc107,stroke:#333,color:#000
-    style IE fill:#0A66C2,stroke:#333,color:#fff
-    style MP fill:#fd7e14,stroke:#333,color:#fff
+    style C fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style GC fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style BI fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style OB fill:#FFC107,stroke:#424242,color:#000000
+    style CS fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style JC fill:#FFC107,stroke:#424242,color:#000000
+    style IE fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style MP fill:#FF9800,stroke:#424242,color:#FFFFFF
 ```
 
 ---

@@ -57,9 +57,9 @@ pie title Priority Distribution
 
 ```mermaid
 flowchart LR
-    classDef p1 fill:#e74c3c,stroke:#c0392b,color:#fff
-    classDef p2 fill:#f39c12,stroke:#e67e22,color:#fff
-    classDef p3 fill:#3498db,stroke:#2980b9,color:#fff
+    classDef p1 fill:#D32F2F,stroke:#D32F2F,color:#FFFFFF
+    classDef p2 fill:#FF9800,stroke:#FF9800,color:#FFFFFF
+    classDef p3 fill:#2196F3,stroke:#1565C0,color:#FFFFFF
 
     P1["P1 — Critical"]:::p1
     P2["P2 — Important"]:::p2

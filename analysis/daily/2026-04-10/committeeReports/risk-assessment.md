@@ -31,12 +31,12 @@ graph TD
         R5["R5: Rural depopulation LxI=3x2=6 MEDIUM"]
         R6["R6: Research gaps LxI=1x2=2 LOW"]
     end
-    style R1 fill:#FF9800,color:#000
-    style R2 fill:#FF9800,color:#000
-    style R3 fill:#FF9800,color:#000
-    style R4 fill:#4CAF50,color:#fff
-    style R5 fill:#FF9800,color:#000
-    style R6 fill:#4CAF50,color:#fff
+    style R1 fill:#FF9800,color:#000000
+    style R2 fill:#FF9800,color:#000000
+    style R3 fill:#FF9800,color:#000000
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#FF9800,color:#000000
+    style R6 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Cascading Risk Analysis

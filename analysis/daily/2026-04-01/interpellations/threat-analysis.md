@@ -37,10 +37,10 @@ flowchart TD
     C --> H[Risk: MEDIUM 12/25]
     D --> I[Risk: MEDIUM 12/25]
     E --> J[Risk: LOW-MED 9/25]
-    style G fill:#ff4444,color:#fff
-    style H fill:#ffaa00,color:#000
-    style I fill:#ffaa00,color:#000
-    style J fill:#ffdd44,color:#000
+    style G fill:#EF5350,color:#FFFFFF
+    style H fill:#FFA000,color:#000000
+    style I fill:#FFA000,color:#000000
+    style J fill:#ffdd44,color:#000000
 ```
 
 ## Overall Assessment

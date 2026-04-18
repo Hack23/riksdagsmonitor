@@ -36,9 +36,9 @@ graph LR
     A --> I{Urgency}
     I -->|"⚪ ROUTINE"| M[Standard question]
     
-    style D fill:#ffc107,color:#000
-    style H fill:#0d6efd,color:#fff
-    style M fill:#6c757d,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#1565C0,color:#FFFFFF
+    style M fill:#9E9E9E,color:#FFFFFF
 ```
 
 | Field | Assessment |

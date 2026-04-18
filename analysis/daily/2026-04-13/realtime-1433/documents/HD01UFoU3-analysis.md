@@ -25,10 +25,10 @@ graph LR
     D --> E["Defence & Security Policy"]
     A --> F{"Urgency"}
     F -->|"🟠 URGENT"| G["Active military deployment"]
-    style A fill:#0A66C2,stroke:#fff,color:#fff
-    style C fill:#dc3545,stroke:#333,color:#fff
-    style E fill:#dc3545,stroke:#333,color:#fff
-    style G fill:#fd7e14,stroke:#333,color:#fff
+    style A fill:#1565C0,stroke:#FFFFFF,color:#FFFFFF
+    style C fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style E fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style G fill:#FF9800,stroke:#424242,color:#FFFFFF
 ```
 
 ## 📈 SWOT Analysis

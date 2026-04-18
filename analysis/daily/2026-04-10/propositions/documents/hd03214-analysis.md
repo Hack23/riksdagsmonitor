@@ -37,9 +37,9 @@ graph LR
     I -->|"🟠 URGENT"| K["Active threat environment<br/>NIS2 compliance deadline"]
     
     style A fill:#1a1e3d,color:#e0e0e0
-    style D fill:#ffc107,color:#000
-    style H fill:#00d9ff,color:#000
-    style K fill:#ff6b35,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#00d9ff,color:#000000
+    style K fill:#FF5722,color:#FFFFFF
 ```
 
 | Dimension | Assessment | Rationale |
@@ -128,9 +128,9 @@ graph TD
         R2["🟡 Implementation Risk<br/>Risk: MEDIUM (3/5)<br/>Impact: HIGH (4/5)"] --> M2["Complex inter-agency<br/>coordination required"]
         R3["🟡 Privacy Controversy<br/>Risk: MEDIUM (3/5)<br/>Impact: MEDIUM (3/5)"] --> M3["Civil liberties scrutiny<br/>may delay passage"]
     end
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
 ```
 
 | Risk Factor | Likelihood (1-5) | Impact (1-5) | Score | Mitigation |

@@ -52,11 +52,11 @@ flowchart TD
     I --> J["Fiscal Deficit<br/>Widens"]
     J --> K["EU Fiscal<br/>Scrutiny"]
     
-    style A fill:#dc3545,color:#fff
-    style G fill:#dc3545,color:#fff
-    style B fill:#ffc107,color:#000
-    style H fill:#ffc107,color:#000
-    style K fill:#dc3545,color:#fff
+    style A fill:#D32F2F,color:#FFFFFF
+    style G fill:#D32F2F,color:#FFFFFF
+    style B fill:#FFC107,color:#000000
+    style H fill:#FFC107,color:#000000
+    style K fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Overall Risk Level: MODERATE-HIGH

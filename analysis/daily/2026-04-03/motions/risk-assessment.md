@@ -64,11 +64,11 @@ flowchart LR
     B --> C["2nd Order:<br/>Coalition credibility<br/>weakened"]
     B --> D["2nd Order:<br/>Education reform<br/>delayed 6+ months"]
     E["Circuit Breaker:<br/>Government accepts<br/>committee amendments"] -.-> B
-    style A fill:#dc3545,color:#fff
-    style B fill:#fd7e14,color:#fff
-    style C fill:#ffc107,color:#000
-    style D fill:#ffc107,color:#000
-    style E fill:#28a745,color:#fff
+    style A fill:#D32F2F,color:#FFFFFF
+    style B fill:#FF9800,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#FFC107,color:#000000
+    style E fill:#4CAF50,color:#FFFFFF
 ```
 
 ## 🌐 Section 6: Risk Interconnection Map

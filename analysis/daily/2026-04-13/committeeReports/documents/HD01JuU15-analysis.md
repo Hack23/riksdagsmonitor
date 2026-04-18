@@ -18,7 +18,7 @@ graph LR
     A["HD01JuU15<br/>Criminal Justice<br/>~80 motions"] --> B{"Government position"}
     B --> C["Ongoing expansion<br/>sufficient"]
     B --> D["Trygghetsberedningen<br/>under review"]
-    style A fill:#4488ff,color:#fff
+    style A fill:#2196F3,color:#FFFFFF
 ```
 
 | Dimension | Score (0-10) | Rationale |

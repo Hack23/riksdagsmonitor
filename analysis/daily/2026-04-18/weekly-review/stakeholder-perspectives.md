@@ -219,12 +219,12 @@ graph TD
     MED --> KU
     MED --> JUU
     
-    style GOV fill:#0d6efd,color:#fff
-    style OPP fill:#dc3545,color:#fff
-    style CIV fill:#ffc107,color:#000
-    style INT fill:#28a745,color:#fff
-    style IND fill:#6f42c1,color:#fff
-    style MED fill:#fd7e14,color:#fff
+    style GOV fill:#1565C0,color:#FFFFFF
+    style OPP fill:#D32F2F,color:#FFFFFF
+    style CIV fill:#FFC107,color:#000000
+    style INT fill:#4CAF50,color:#FFFFFF
+    style IND fill:#7B1FA2,color:#FFFFFF
+    style MED fill:#FF9800,color:#FFFFFF
 ```
 
 ---

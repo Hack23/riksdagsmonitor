@@ -33,11 +33,11 @@ graph TD
     UU6 -.-> FOU12
     MJU30 -.-> NU18
     
-    style FOU12 fill:#dc3545,color:#fff
-    style UU6 fill:#dc3545,color:#fff
-    style NU18 fill:#ffc107,color:#000
-    style MJU30 fill:#ffc107,color:#000
-    style AU11 fill:#6f42c1,color:#fff
+    style FOU12 fill:#D32F2F,color:#FFFFFF
+    style UU6 fill:#D32F2F,color:#FFFFFF
+    style NU18 fill:#FFC107,color:#000000
+    style MJU30 fill:#FFC107,color:#000000
+    style AU11 fill:#7B1FA2,color:#FFFFFF
 ```
 
 ## Key Linkages

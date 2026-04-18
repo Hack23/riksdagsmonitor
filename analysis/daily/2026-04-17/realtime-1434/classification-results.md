@@ -33,11 +33,11 @@ flowchart TD
     Q4 -->|YES| P2b["🟡 P2 — Important<br/>(CU27)"]
     Q4 -->|NO| P3["🟢 P3 — Routine"]
 
-    style P0 fill:#dc3545,color:#fff
-    style P1 fill:#fd7e14,color:#fff
-    style P2 fill:#ffc107,color:#000
-    style P2b fill:#ffc107,color:#000
-    style P3 fill:#28a745,color:#fff
+    style P0 fill:#D32F2F,color:#FFFFFF
+    style P1 fill:#FF9800,color:#FFFFFF
+    style P2 fill:#FFC107,color:#000000
+    style P2b fill:#FFC107,color:#000000
+    style P3 fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

@@ -25,10 +25,10 @@ graph LR
     D --> E["Foreign & Security Policy"]
     A --> F{"Urgency"}
     F -->|"🔵 ELEVATED"| G["NATO integration<br/>this parliamentary session"]
-    style A fill:#00d9ff,color:#000
-    style C fill:#ffbe0b,color:#000
-    style E fill:#00d9ff,color:#000
-    style G fill:#4488ff,color:#fff
+    style A fill:#00d9ff,color:#000000
+    style C fill:#ffbe0b,color:#000000
+    style E fill:#00d9ff,color:#000000
+    style G fill:#2196F3,color:#FFFFFF
 ```
 
 | Dimension | Score (0-10) | Rationale |

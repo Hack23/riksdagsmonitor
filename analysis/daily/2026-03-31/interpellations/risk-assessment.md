@@ -21,12 +21,12 @@ graph TD
         R6["🟡 External / International<br/>Avg: L:2 × I:2.5 = 6.5"]
     end
 
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#dc3545,color:#fff
-    style R3 fill:#fd7e14,color:#fff
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#ffc107,color:#000
-    style R6 fill:#ffc107,color:#000
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#D32F2F,color:#FFFFFF
+    style R3 fill:#FF9800,color:#FFFFFF
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#FFC107,color:#000000
+    style R6 fill:#FFC107,color:#000000
 ```
 
 | Risk Type | Likelihood | Impact | Score | Driver |

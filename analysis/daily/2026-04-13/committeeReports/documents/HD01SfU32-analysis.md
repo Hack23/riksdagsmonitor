@@ -18,9 +18,9 @@ graph LR
     A["HD01SfU32<br/>Returns Enforcement"] --> B["SfU31<br/>Detention"]
     A --> C["SfU36<br/>Conduct"]
     A --> D["SfU16<br/>Migration broad"]
-    style A fill:#ff006e,color:#fff
-    style B fill:#ffbe0b,color:#000
-    style C fill:#ffbe0b,color:#000
+    style A fill:#ff006e,color:#FFFFFF
+    style B fill:#ffbe0b,color:#000000
+    style C fill:#ffbe0b,color:#000000
 ```
 
 | Dimension | Score (0-10) | Rationale |

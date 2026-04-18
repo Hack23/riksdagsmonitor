@@ -15,11 +15,11 @@ graph LR
     MJU19 ---|"V+MP reservations"| MJU20
     MJU20 ---|"V+C+MP alliance"| P242
     P244["HD03244<br/>Interoperability"] ---|"Both today's propositions"| P242
-    style MJU19 fill:#28a745,color:#fff
-    style MJU20 fill:#ffc107,color:#000
-    style P242 fill:#0d6efd,color:#fff
-    style SKU23 fill:#28a745,color:#fff
-    style P244 fill:#0d6efd,color:#fff
+    style MJU19 fill:#4CAF50,color:#FFFFFF
+    style MJU20 fill:#FFC107,color:#000000
+    style P242 fill:#1565C0,color:#FFFFFF
+    style SKU23 fill:#4CAF50,color:#FFFFFF
+    style P244 fill:#1565C0,color:#FFFFFF
 ```
 
 ## Key Linkages

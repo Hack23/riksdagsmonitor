@@ -40,11 +40,11 @@ graph TD
         DEC -->|"Cluster significant"| MON["Analysis Only PR"]
     end
 
-    style CLS fill:#ffc107,color:#000
-    style RSK fill:#ffc107,color:#000
-    style THR fill:#fd7e14,color:#fff
-    style SIG fill:#ffc107,color:#000
-    style MON fill:#28a745,color:#fff
+    style CLS fill:#FFC107,color:#000000
+    style RSK fill:#FFC107,color:#000000
+    style THR fill:#FF9800,color:#FFFFFF
+    style SIG fill:#FFC107,color:#000000
+    style MON fill:#4CAF50,color:#FFFFFF
 ```
 
 ---
@@ -82,9 +82,9 @@ graph TD
         MED["MEDIUM 4-6: 4 documents — SfU cluster + climate"]
         LOW["LOW 1-3: 7 documents — written questions + motion"]
     end
-    style HIGH fill:#dc3545,color:#fff
-    style MED fill:#ffc107,color:#000
-    style LOW fill:#28a745,color:#fff
+    style HIGH fill:#D32F2F,color:#FFFFFF
+    style MED fill:#FFC107,color:#000000
+    style LOW fill:#4CAF50,color:#FFFFFF
 ```
 
 | Tier | Count | Documents |

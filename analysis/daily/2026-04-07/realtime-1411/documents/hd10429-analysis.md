@@ -42,10 +42,10 @@ graph TD
     SD_F --> M_S
     M_S --> MEDIA_S
     M_S --> CITIZEN
-    style SD_F fill:#ffc107,stroke:#856404,color:#000
-    style M_S fill:#17a2b8,stroke:#0c5460,color:#fff
-    style MEDIA_S fill:#28a745,stroke:#155724,color:#fff
-    style CITIZEN fill:#28a745,stroke:#155724,color:#fff
+    style SD_F fill:#FFC107,stroke:#F57C00,color:#000000
+    style M_S fill:#0097A7,stroke:#006064,color:#FFFFFF
+    style MEDIA_S fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style CITIZEN fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 ## Risk Assessment

@@ -35,9 +35,9 @@ graph LR
     A --> I{Urgency}
     I -->|"🔵 ELEVATED"| L["Active committee<br/>report — vote pending"]
 
-    style E fill:#28a745,color:#fff
-    style H fill:#fd7e14,color:#fff
-    style L fill:#0d6efd,color:#fff
+    style E fill:#4CAF50,color:#FFFFFF
+    style H fill:#FF9800,color:#FFFFFF
+    style L fill:#1565C0,color:#FFFFFF
 ```
 
 | Dimension | Classification | Rationale |

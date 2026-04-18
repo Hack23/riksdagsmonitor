@@ -35,11 +35,11 @@ graph LR
     A --> K{Urgency}
     K -->|"🟠 URGENT"| L["Active interpellation<br/>Minister must respond within 2 weeks"]
 
-    style A fill:#0d6efd,stroke:#0a58ca,color:#fff
-    style C fill:#ffc107,stroke:#e0a800,color:#000
-    style H fill:#dc3545,stroke:#b02a37,color:#fff
-    style I fill:#fd7e14,stroke:#ca6510,color:#fff
-    style L fill:#fd7e14,stroke:#ca6510,color:#fff
+    style A fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
+    style C fill:#FFC107,stroke:#FFA000,color:#000000
+    style H fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
+    style I fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style L fill:#FF9800,stroke:#F57C00,color:#FFFFFF
 ```
 
 | Classification | Value | Rationale |

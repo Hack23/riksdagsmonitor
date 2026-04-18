@@ -30,10 +30,10 @@ graph LR
         T4["Policy Delivery<br/>Delayed reform<br/>LOW"]
     end
 
-    style T1 fill:#28a745,color:#fff
-    style T2 fill:#ffc107,color:#000
-    style T3 fill:#ffc107,color:#000
-    style T4 fill:#28a745,color:#fff
+    style T1 fill:#4CAF50,color:#FFFFFF
+    style T2 fill:#FFC107,color:#000000
+    style T3 fill:#FFC107,color:#000000
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

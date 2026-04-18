@@ -23,9 +23,9 @@ graph TD
     E --> G["Election 2026<br/>Voter Priorities"]
     F --> G
     
-    style A fill:#fd7e14,color:#fff
-    style C fill:#ffc107,color:#000
-    style G fill:#dc3545,color:#fff
+    style A fill:#FF9800,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style G fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Key Findings

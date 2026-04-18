@@ -66,14 +66,14 @@ graph TD
         D --> G["ECHR Art. 8<br/>Challenge Risk"]
         E --> H["Election 2026<br/>Crime Narrative"]
     end
-    style A fill:#dc3545,stroke:#333,color:#fff
-    style B fill:#0A66C2,stroke:#333,color:#fff
-    style C fill:#28a745,stroke:#333,color:#fff
-    style D fill:#ffc107,stroke:#333,color:#000
-    style E fill:#28a745,stroke:#333,color:#fff
-    style F fill:#fd7e14,stroke:#333,color:#fff
-    style G fill:#dc3545,stroke:#333,color:#fff
-    style H fill:#0A66C2,stroke:#333,color:#fff
+    style A fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style B fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style C fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style D fill:#FFC107,stroke:#424242,color:#000000
+    style E fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style F fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style G fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style H fill:#1565C0,stroke:#424242,color:#FFFFFF
 ```
 
 ---

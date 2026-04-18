@@ -29,14 +29,14 @@ graph TD
     C --> C1["ECHR migration challenge"]
     D --> D1["Defence personnel shortfall"]
     E --> E1["Regional transport inequality"]
-    style B fill:#FF9800,color:#000
-    style C fill:#FF9800,color:#000
-    style D fill:#FF9800,color:#000
-    style E fill:#4CAF50,color:#fff
-    style B1 fill:#FFC107,color:#000
-    style C1 fill:#FFC107,color:#000
-    style D1 fill:#FFC107,color:#000
-    style E1 fill:#81C784,color:#000
+    style B fill:#FF9800,color:#000000
+    style C fill:#FF9800,color:#000000
+    style D fill:#FF9800,color:#000000
+    style E fill:#4CAF50,color:#FFFFFF
+    style B1 fill:#FFC107,color:#000000
+    style C1 fill:#FFC107,color:#000000
+    style D1 fill:#FFC107,color:#000000
+    style E1 fill:#81C784,color:#000000
 ```
 
 ## Key Findings

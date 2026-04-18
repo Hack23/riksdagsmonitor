@@ -25,13 +25,13 @@ graph TB
         S2["🦠 SOU 2026:25<br/>PUBLIC / ELEVATED<br/>Infectious Disease"]
     end
     
-    style D1 fill:#ff006e,color:#fff
-    style D2 fill:#ffbe0b,color:#000
-    style D3 fill:#00d9ff,color:#000
-    style C1 fill:#ff8c00,color:#fff
-    style C2 fill:#ffbe0b,color:#000
-    style S1 fill:#00d9ff,color:#000
-    style S2 fill:#00d9ff,color:#000
+    style D1 fill:#ff006e,color:#FFFFFF
+    style D2 fill:#ffbe0b,color:#000000
+    style D3 fill:#00d9ff,color:#000000
+    style C1 fill:#F57C00,color:#FFFFFF
+    style C2 fill:#ffbe0b,color:#000000
+    style S1 fill:#00d9ff,color:#000000
+    style S2 fill:#00d9ff,color:#000000
 ```
 
 ---

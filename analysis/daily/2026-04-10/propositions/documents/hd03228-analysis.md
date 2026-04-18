@@ -38,9 +38,9 @@ graph LR
     I -->|"🟠 URGENT"| K["NATO interoperability<br/>alignment needed"]
     
     style A fill:#1a1e3d,color:#e0e0e0
-    style D fill:#ffc107,color:#000
-    style H fill:#00d9ff,color:#000
-    style K fill:#ff6b35,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#00d9ff,color:#000000
+    style K fill:#FF5722,color:#FFFFFF
 ```
 
 | Dimension | Assessment | Rationale |
@@ -130,9 +130,9 @@ graph TD
         R2["🟡 Parliamentary Division<br/>Risk: MEDIUM (3/5)<br/>Impact: MEDIUM (3/5)"] --> M2["V/MP opposition,<br/>possible S amendments"]
         R3["🟢 Industry Implementation<br/>Risk: LOW (2/5)<br/>Impact: LOW (2/5)"] --> M3["Industry prepared and<br/>supportive of reform"]
     end
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#28a745,color:#fff
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Factor | Likelihood (1-5) | Impact (1-5) | Score | Mitigation |

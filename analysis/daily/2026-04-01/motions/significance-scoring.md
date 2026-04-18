@@ -19,10 +19,10 @@ graph LR
         MED["🟡 MEDIUM (4–5)<br/>15 documents"]
         LOW["🟢 LOW (1–3)<br/>25 documents"]
     end
-    style HIGH fill:#dc3545,color:#fff
-    style ELEV fill:#fd7e14,color:#fff
-    style MED fill:#ffc107,color:#000
-    style LOW fill:#28a745,color:#fff
+    style HIGH fill:#D32F2F,color:#FFFFFF
+    style ELEV fill:#FF9800,color:#FFFFFF
+    style MED fill:#FFC107,color:#000000
+    style LOW fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Top 10 Documents by Significance

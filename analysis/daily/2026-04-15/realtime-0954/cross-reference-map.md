@@ -35,14 +35,14 @@ graph TD
         B3["CU23<br/>Rural housing"] -.->|"Housing theme"| M3
     end
 
-    style M1 fill:#dc3545,color:#fff
-    style M2 fill:#dc3545,color:#fff
-    style M3 fill:#dc3545,color:#fff
-    style M4 fill:#dc3545,color:#fff
-    style P1 fill:#0d6efd,color:#fff
-    style P2 fill:#0d6efd,color:#fff
-    style P3 fill:#0d6efd,color:#fff
-    style P4 fill:#0d6efd,color:#fff
+    style M1 fill:#D32F2F,color:#FFFFFF
+    style M2 fill:#D32F2F,color:#FFFFFF
+    style M3 fill:#D32F2F,color:#FFFFFF
+    style M4 fill:#D32F2F,color:#FFFFFF
+    style P1 fill:#1565C0,color:#FFFFFF
+    style P2 fill:#1565C0,color:#FFFFFF
+    style P3 fill:#1565C0,color:#FFFFFF
+    style P4 fill:#1565C0,color:#FFFFFF
 ```
 
 ## Relationship Table

@@ -99,17 +99,17 @@ graph LR
         OT1["V rejection risks<br/>appearing obstructionist"]
     end
 
-    style GS1 fill:#28a745,color:#fff
-    style OS1 fill:#28a745,color:#fff
-    style OS2 fill:#28a745,color:#fff
-    style GW1 fill:#fd7e14,color:#fff
-    style OW1 fill:#fd7e14,color:#fff
-    style OW2 fill:#fd7e14,color:#fff
-    style GO1 fill:#0d6efd,color:#fff
-    style OO1 fill:#0d6efd,color:#fff
-    style OO2 fill:#0d6efd,color:#fff
-    style GT1 fill:#dc3545,color:#fff
-    style OT1 fill:#dc3545,color:#fff
+    style GS1 fill:#4CAF50,color:#FFFFFF
+    style OS1 fill:#4CAF50,color:#FFFFFF
+    style OS2 fill:#4CAF50,color:#FFFFFF
+    style GW1 fill:#FF9800,color:#FFFFFF
+    style OW1 fill:#FF9800,color:#FFFFFF
+    style OW2 fill:#FF9800,color:#FFFFFF
+    style GO1 fill:#1565C0,color:#FFFFFF
+    style OO1 fill:#1565C0,color:#FFFFFF
+    style OO2 fill:#1565C0,color:#FFFFFF
+    style GT1 fill:#D32F2F,color:#FFFFFF
+    style OT1 fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Strategic Implications

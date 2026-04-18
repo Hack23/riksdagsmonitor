@@ -66,14 +66,14 @@ graph TD
         B --> G["Investment<br/>Needs"]
         C --> H["Capacity<br/>Variations"]
     end
-    style A fill:#0A66C2,stroke:#333,color:#fff
-    style B fill:#ffc107,stroke:#333,color:#000
-    style C fill:#fd7e14,stroke:#333,color:#fff
-    style D fill:#28a745,stroke:#333,color:#fff
-    style E fill:#0A66C2,stroke:#333,color:#fff
-    style F fill:#0A66C2,stroke:#333,color:#fff
-    style G fill:#dc3545,stroke:#333,color:#fff
-    style H fill:#ffc107,stroke:#333,color:#000
+    style A fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style B fill:#FFC107,stroke:#424242,color:#000000
+    style C fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style D fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style E fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style F fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style G fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style H fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ---

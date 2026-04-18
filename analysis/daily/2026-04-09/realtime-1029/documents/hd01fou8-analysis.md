@@ -31,9 +31,9 @@ graph LR
     A[HD01FoU8] --> B[Sensitivity: SENSITIVE]
     A --> C[Domain: Defence DEF]
     A --> D[Urgency: ELEVATED]
-    style B fill:#ffc107,color:#000000
-    style C fill:#0d6efd,color:#ffffff
-    style D fill:#0d6efd,color:#ffffff
+    style B fill:#FFC107,color:#000000
+    style C fill:#1565C0,color:#FFFFFF
+    style D fill:#1565C0,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -80,12 +80,12 @@ graph TD
         R5[Democratic Process L1 x I1 = 1 LOW]
         R6[External International L3 x I4 = 12 HIGH]
     end
-    style R1 fill:#28a745,color:#ffffff
-    style R2 fill:#dc3545,color:#ffffff
-    style R3 fill:#ffc107,color:#000000
-    style R4 fill:#28a745,color:#ffffff
-    style R5 fill:#28a745,color:#ffffff
-    style R6 fill:#fd7e14,color:#ffffff
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#D32F2F,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#FF9800,color:#FFFFFF
 ```
 
 | Risk Type | Likelihood (1-5) | Impact (1-5) | Score | Assessment |

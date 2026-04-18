@@ -31,12 +31,12 @@ graph TD
         R5["R5: Criminal justice opposition<br/>L:1 × I:3 = 3"]
         R6["R6: NATO policy challenge<br/>L:1 × I:4 = 4"]
     end
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#28a745,color:#fff
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#28a745,color:#fff
-    style R6 fill:#28a745,color:#fff
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#4CAF50,color:#FFFFFF
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Detailed Risk Scoring

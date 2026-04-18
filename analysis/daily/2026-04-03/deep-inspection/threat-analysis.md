@@ -28,12 +28,12 @@ graph TD
         G --> G1["State-actor cyber campaigns<br/>Severity: 4/5"]
     end
 
-    style A fill:#00d9ff,stroke:#333,color:#000
-    style G1 fill:#dc3545,stroke:#333,color:#fff
-    style C1 fill:#ffbe0b,stroke:#333,color:#000
-    style C2 fill:#ffbe0b,stroke:#333,color:#000
-    style B1 fill:#28a745,stroke:#333,color:#fff
-    style F1 fill:#28a745,stroke:#333,color:#fff
+    style A fill:#00d9ff,stroke:#424242,color:#000000
+    style G1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style C1 fill:#ffbe0b,stroke:#424242,color:#000000
+    style C2 fill:#ffbe0b,stroke:#424242,color:#000000
+    style B1 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style F1 fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ---

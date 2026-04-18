@@ -239,27 +239,27 @@ graph TD
     Sa -.defensive.- Ru
     Ms -.resilience.- Civ
 
-    style PM fill:#0d6efd,color:#fff
-    style FM fill:#0d6efd,color:#fff
-    style JM fill:#0d6efd,color:#fff
-    style FiM fill:#0d6efd,color:#fff
-    style CA fill:#0d6efd,color:#fff
-    style KD fill:#6f42c1,color:#fff
-    style L fill:#6f42c1,color:#fff
-    style SD fill:#6f42c1,color:#fff
-    style S fill:#dc3545,color:#fff
-    style V fill:#dc3545,color:#fff
-    style MP fill:#dc3545,color:#fff
-    style C fill:#dc3545,color:#fff
-    style Zel fill:#28a745,color:#fff
-    style CoE fill:#28a745,color:#fff
-    style UN fill:#28a745,color:#fff
-    style EU fill:#28a745,color:#fff
-    style Nato fill:#28a745,color:#fff
-    style Ru fill:#000,color:#dc3545
-    style Sa fill:#fd7e14,color:#fff
-    style Ms fill:#fd7e14,color:#fff
-    style Mu fill:#fd7e14,color:#fff
+    style PM fill:#1565C0,color:#FFFFFF
+    style FM fill:#1565C0,color:#FFFFFF
+    style JM fill:#1565C0,color:#FFFFFF
+    style FiM fill:#1565C0,color:#FFFFFF
+    style CA fill:#1565C0,color:#FFFFFF
+    style KD fill:#7B1FA2,color:#FFFFFF
+    style L fill:#7B1FA2,color:#FFFFFF
+    style SD fill:#7B1FA2,color:#FFFFFF
+    style S fill:#D32F2F,color:#FFFFFF
+    style V fill:#D32F2F,color:#FFFFFF
+    style MP fill:#D32F2F,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
+    style Zel fill:#4CAF50,color:#FFFFFF
+    style CoE fill:#4CAF50,color:#FFFFFF
+    style UN fill:#4CAF50,color:#FFFFFF
+    style EU fill:#4CAF50,color:#FFFFFF
+    style Nato fill:#4CAF50,color:#FFFFFF
+    style Ru fill:#000000,color:#D32F2F
+    style Sa fill:#FF9800,color:#FFFFFF
+    style Ms fill:#FF9800,color:#FFFFFF
+    style Mu fill:#FF9800,color:#FFFFFF
 ```
 
 ---
@@ -285,15 +285,15 @@ flowchart TD
     LEFT -->|"V/MP block P=0.85"| FAIL2["🔴 FAIL"]
     LEFT -->|"S triangulates P=0.15"| REVISE2["🟠 Revise + pass"]
 
-    style T fill:#ffc107,color:#000
-    style PASS1 fill:#28a745,color:#fff
-    style PASS2 fill:#28a745,color:#fff
-    style PASS3 fill:#fd7e14,color:#fff
-    style PASS4 fill:#28a745,color:#fff
-    style REVISE fill:#0d6efd,color:#fff
-    style REVISE2 fill:#fd7e14,color:#fff
-    style FAIL1 fill:#dc3545,color:#fff
-    style FAIL2 fill:#dc3545,color:#fff
+    style T fill:#FFC107,color:#000000
+    style PASS1 fill:#4CAF50,color:#FFFFFF
+    style PASS2 fill:#4CAF50,color:#FFFFFF
+    style PASS3 fill:#FF9800,color:#FFFFFF
+    style PASS4 fill:#4CAF50,color:#FFFFFF
+    style REVISE fill:#1565C0,color:#FFFFFF
+    style REVISE2 fill:#FF9800,color:#FFFFFF
+    style FAIL1 fill:#D32F2F,color:#FFFFFF
+    style FAIL2 fill:#D32F2F,color:#FFFFFF
 ```
 
 **Rolled-up probabilities** `[HIGH]`:

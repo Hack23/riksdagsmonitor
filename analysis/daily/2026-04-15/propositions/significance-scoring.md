@@ -19,7 +19,7 @@ graph LR
     C --> D[Implementation Impact]
     D --> E[Cross-Party Dynamics]
     E --> F[Final Score 0-10]
-    style F fill:#4caf50,color:#fff
+    style F fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Detailed Analysis

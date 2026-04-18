@@ -18,7 +18,7 @@ flowchart LR
         B --> C[Reputation Risk<br>MEDIUM risk 45/100]
         C --> D[Election Impact<br>MEDIUM risk 40/100]
     end
-    style A fill:#2E7D32,color:#ffffff
+    style A fill:#2E7D32,color:#FFFFFF
     style B fill:#FF9800,color:#000000
     style C fill:#FF9800,color:#000000
     style D fill:#FF9800,color:#000000

@@ -40,10 +40,10 @@ graph TB
     POLICE -->|"Operational support"| GOV
     CHILDREN -->|"Legal challenge"| S_P
     
-    style GOV fill:#0d6efd,color:#fff
-    style SD_S fill:#0d6efd,color:#fff
-    style S_P fill:#dc3545,color:#fff
-    style PROP246 fill:#6f42c1,color:#fff
+    style GOV fill:#1565C0,color:#FFFFFF
+    style SD_S fill:#1565C0,color:#FFFFFF
+    style S_P fill:#D32F2F,color:#FFFFFF
+    style PROP246 fill:#7B1FA2,color:#FFFFFF
 ```
 
 ---

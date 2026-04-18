@@ -27,12 +27,12 @@ graph TD
         E["Elevation of Privilege<br/>No constitutional concerns<br/>🟢 NONE"]
     end
 
-    style S fill:#28a745,color:#fff
-    style T fill:#28a745,color:#fff
-    style R fill:#28a745,color:#fff
-    style I fill:#28a745,color:#fff
-    style D fill:#28a745,color:#fff
-    style E fill:#28a745,color:#fff
+    style S fill:#4CAF50,color:#FFFFFF
+    style T fill:#4CAF50,color:#FFFFFF
+    style R fill:#4CAF50,color:#FFFFFF
+    style I fill:#4CAF50,color:#FFFFFF
+    style D fill:#4CAF50,color:#FFFFFF
+    style E fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Threat Register

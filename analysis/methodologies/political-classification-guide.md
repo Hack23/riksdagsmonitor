@@ -51,9 +51,9 @@ graph TD
     E --> H[Requires careful framing<br/>and attribution]
     F --> I[Freely publishable<br/>in standard workflow]
     
-    style C fill:#ffebee,stroke:#f44336
-    style E fill:#fffde7,stroke:#ffc107
-    style F fill:#e8f5e9,stroke:#4caf50
+    style C fill:#FFEBEE,stroke:#D32F2F
+    style E fill:#FFFDE7,stroke:#FFC107
+    style F fill:#E8F5E9,stroke:#4CAF50
 ```
 
 ### 🟢 PUBLIC
@@ -294,7 +294,7 @@ graph LR
     PTI --> P4["👥 Public Salience<br/>(0-20)"]
     PTI --> P5["⏰ Temporal Pressure<br/>(0-20)"]
 
-    style PTI fill:#dc3545,color:#fff
+    style PTI fill:#D32F2F,color:#FFFFFF
 ```
 
 | Temperature Component | Score Range | Assessment Criteria |
@@ -429,14 +429,14 @@ graph TD
 
     ENRICH --> CLASSIFY["Apply classification<br/>methodology"]
 
-    style BET fill:#ffebee,stroke:#f44336
-    style PROP fill:#ffebee,stroke:#f44336
-    style MOT fill:#fffde7,stroke:#ffc107
-    style INTER fill:#fffde7,stroke:#ffc107
-    style FRAG fill:#e8f5e9,stroke:#4caf50
-    style VOT fill:#fffde7,stroke:#ffc107
-    style ANF fill:#e8f5e9,stroke:#4caf50
-    style CLASSIFY fill:#e3f2fd,stroke:#2196f3
+    style BET fill:#FFEBEE,stroke:#D32F2F
+    style PROP fill:#FFEBEE,stroke:#D32F2F
+    style MOT fill:#FFFDE7,stroke:#FFC107
+    style INTER fill:#FFFDE7,stroke:#FFC107
+    style FRAG fill:#E8F5E9,stroke:#4CAF50
+    style VOT fill:#FFFDE7,stroke:#FFC107
+    style ANF fill:#E8F5E9,stroke:#4CAF50
+    style CLASSIFY fill:#E3F2FD,stroke:#2196F3
 ```
 
 ---
@@ -457,13 +457,13 @@ graph TD
     E --> H["📝 Apply attribution rules<br/>from political-style-guide.md"]
     F --> I["✅ Classify and publish<br/>via standard pipeline"]
 
-    style A fill:#e3f2fd,stroke:#2196f3
-    style C fill:#ffebee,stroke:#f44336,color:#b71c1c
-    style E fill:#fffde7,stroke:#ffc107,color:#f57f17
-    style F fill:#e8f5e9,stroke:#4caf50,color:#1b5e20
-    style G fill:#ffcdd2,stroke:#e57373
-    style H fill:#fff9c4,stroke:#ffd54f
-    style I fill:#c8e6c9,stroke:#81c784
+    style A fill:#E3F2FD,stroke:#2196F3
+    style C fill:#FFEBEE,stroke:#D32F2F,color:#B71C1C
+    style E fill:#FFFDE7,stroke:#FFC107,color:#F57C00
+    style F fill:#E8F5E9,stroke:#4CAF50,color:#1B5E20
+    style G fill:#FFCDD2,stroke:#EF5350
+    style H fill:#FFF9C4,stroke:#FFD54F
+    style I fill:#C8E6C9,stroke:#81C784
 ```
 
 ---
@@ -531,9 +531,9 @@ flowchart LR
     CHECK -->|"Yes"| HIGH["✅ Domain assigned<br/>Confidence: HIGH"]
     CHECK -->|"No / missing"| FALLBACK["🔍 Keyword heuristics<br/>Confidence: LOW"]
 
-    style DOC fill:#e3f2fd,stroke:#2196f3
-    style HIGH fill:#c8e6c9,stroke:#4caf50
-    style FALLBACK fill:#fff9c4,stroke:#ffd54f
+    style DOC fill:#E3F2FD,stroke:#2196F3
+    style HIGH fill:#C8E6C9,stroke:#4CAF50
+    style FALLBACK fill:#FFF9C4,stroke:#FFD54F
 ```
 
 **Rule:** Committee-code classification is always **PRIMARY** (HIGH confidence). Keyword-based domain detection is **FALLBACK** only (LOW confidence). When both are present, the committee-code result takes precedence.

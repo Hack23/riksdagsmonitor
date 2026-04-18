@@ -36,9 +36,9 @@ graph LR
     I -->|"🔵 ELEVATED"| L["Monitoring — this week<br/>Chamber debate pending"]
 
     style A fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
-    style E fill:#28a745,color:#fff
+    style E fill:#4CAF50,color:#FFFFFF
     style H fill:#00d9ff,color:#0a0e27
-    style L fill:#007bff,color:#fff
+    style L fill:#1565C0,color:#FFFFFF
 ```
 
 | Dimension | Value | Rationale |
@@ -101,10 +101,10 @@ graph TD
         R4["R4: Workplace safety<br/>union pressure<br/>L:2 × I:2 = 4"]
     end
 
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#28a745,color:#fff
-    style R4 fill:#28a745,color:#fff
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#4CAF50,color:#FFFFFF
+    style R4 fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

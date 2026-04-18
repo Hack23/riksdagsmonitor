@@ -34,9 +34,9 @@ graph LR
     I -->|"⚪ ROUTINE"| M["Standard processing"]
     
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style E fill:#28a745,stroke:#333,color:#fff
-    style H fill:#28a745,stroke:#333,color:#fff
-    style M fill:#6c757d,stroke:#333,color:#fff
+    style E fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style H fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style M fill:#9E9E9E,stroke:#424242,color:#FFFFFF
 ```
 
 ---

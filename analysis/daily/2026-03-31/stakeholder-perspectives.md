@@ -16,27 +16,27 @@ graph LR
     subgraph "👥 Stakeholder Impact — 2026-03-31"
         subgraph "🏛️ Government"
             GOV["HIGH impact<br/>Migration reform delivery<br/>Coalition programme execution"]
-            style GOV fill:#dc3545,color:#fff
+            style GOV fill:#D32F2F,color:#FFFFFF
         end
         subgraph "⚖️ Opposition"
             OPP["MEDIUM impact<br/>Counter-motion opportunities<br/>Migration debate platform"]
-            style OPP fill:#ffc107,color:#000
+            style OPP fill:#FFC107,color:#000000
         end
         subgraph "👥 Citizens"
             CIT["HIGH impact<br/>Asylum seeker reception<br/>Consumer credit protection<br/>Victim compensation rights"]
-            style CIT fill:#dc3545,color:#fff
+            style CIT fill:#D32F2F,color:#FFFFFF
         end
         subgraph "💰 Economic"
             ECO["LOW-MEDIUM impact<br/>Consumer credit industry<br/>Housing market effects"]
-            style ECO fill:#28a745,color:#fff
+            style ECO fill:#4CAF50,color:#FFFFFF
         end
         subgraph "🌍 International"
             INT["LOW-MEDIUM impact<br/>EU migration pact alignment<br/>EU consumer directive compliance"]
-            style INT fill:#28a745,color:#fff
+            style INT fill:#4CAF50,color:#FFFFFF
         end
         subgraph "📰 Media"
             MED["MEDIUM impact<br/>Migration debate coverage<br/>Law-and-order narrative"]
-            style MED fill:#ffc107,color:#000
+            style MED fill:#FFC107,color:#000000
         end
     end
 ```

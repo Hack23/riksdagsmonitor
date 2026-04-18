@@ -18,11 +18,11 @@ graph TD
     D1 --> D2
     D2 --> D3
     D3 --> D4
-    style D1 fill:#0d6efd,color:#ffffff
-    style D2 fill:#ffc107,color:#000000
-    style D3 fill:#ffc107,color:#000000
-    style D4 fill:#28a745,color:#ffffff
-    style D5 fill:#0d6efd,color:#ffffff
+    style D1 fill:#1565C0,color:#FFFFFF
+    style D2 fill:#FFC107,color:#000000
+    style D3 fill:#FFC107,color:#000000
+    style D4 fill:#4CAF50,color:#FFFFFF
+    style D5 fill:#1565C0,color:#FFFFFF
 ```
 
 ---
@@ -70,9 +70,9 @@ graph LR
     end
     GOV --> RISK
     OPP --> RISK
-    style GOV fill:#28a745,color:#ffffff
-    style OPP fill:#ffc107,color:#000000
-    style RISK fill:#ffc107,color:#000000
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#FFC107,color:#000000
+    style RISK fill:#FFC107,color:#000000
 ```
 
 ---

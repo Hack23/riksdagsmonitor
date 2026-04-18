@@ -37,16 +37,16 @@ graph LR
     I --> J["Alliance Positioning"]
     I --> K["Nordic Defence"]
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style B fill:#dc3545,stroke:#333,color:#fff
-    style C fill:#0d6efd,stroke:#333,color:#fff
-    style D fill:#fd7e14,stroke:#333,color:#000
-    style E fill:#dc3545,stroke:#333,color:#fff
-    style F fill:#28a745,stroke:#333,color:#fff
-    style G fill:#28a745,stroke:#333,color:#fff
-    style H fill:#ffc107,stroke:#333,color:#000
-    style I fill:#6f42c1,stroke:#333,color:#fff
-    style J fill:#0d6efd,stroke:#333,color:#fff
-    style K fill:#0d6efd,stroke:#333,color:#fff
+    style B fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style C fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style D fill:#FF9800,stroke:#424242,color:#000000
+    style E fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style F fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style G fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style H fill:#FFC107,stroke:#424242,color:#000000
+    style I fill:#7B1FA2,stroke:#424242,color:#FFFFFF
+    style J fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style K fill:#1565C0,stroke:#424242,color:#FFFFFF
 ```
 
 ---
@@ -91,9 +91,9 @@ graph TD
     R1["Russian Military Threat<br/>Likelihood: 3 | Impact: 5<br/>Score: 15/25"]
     R2["Hybrid Threat Escalation<br/>Likelihood: 4 | Impact: 4<br/>Score: 16/25"]
     R3["Defense Procurement Delays<br/>Likelihood: 3 | Impact: 3<br/>Score: 9/25"]
-    style R1 fill:#dc3545,stroke:#333,color:#fff
-    style R2 fill:#dc3545,stroke:#333,color:#fff
-    style R3 fill:#ffc107,stroke:#333,color:#000
+    style R1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R2 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R3 fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ---

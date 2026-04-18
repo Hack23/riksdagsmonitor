@@ -49,10 +49,10 @@ flowchart TD
     C --> H["📊 Output: Diamond relationship<br/>mapping adversary-capability-infrastructure-victim"]
     E --> J["📊 Output: Actor profile<br/>with intent/capability/opportunity assessment"]
 
-    style A fill:#dc3545,color:#fff
-    style B fill:#fd7e14,color:#fff
-    style C fill:#6f42c1,color:#fff
-    style E fill:#ffc107,color:#000
+    style A fill:#D32F2F,color:#FFFFFF
+    style B fill:#FF9800,color:#FFFFFF
+    style C fill:#7B1FA2,color:#FFFFFF
+    style E fill:#FFC107,color:#000000
 ```
 
 | Framework | Best For | Depth | Political Intelligence Value |
@@ -91,19 +91,19 @@ graph TD
     C --> C2["C2: SD joins opposition<br/>or abstains"]
     C --> C3["C3: Vote passes<br/>≥175 Nej votes"]
 
-    style ROOT fill:#dc3545,color:#fff
-    style A fill:#fd7e14,color:#fff
-    style B fill:#fd7e14,color:#fff
-    style C fill:#fd7e14,color:#fff
-    style A1 fill:#ffc107,color:#000
-    style A2 fill:#ffc107,color:#000
-    style A3 fill:#ffc107,color:#000
-    style B1 fill:#ffc107,color:#000
-    style B2 fill:#ffc107,color:#000
-    style B3 fill:#ffc107,color:#000
-    style C1 fill:#ffc107,color:#000
-    style C2 fill:#ffc107,color:#000
-    style C3 fill:#ffc107,color:#000
+    style ROOT fill:#D32F2F,color:#FFFFFF
+    style A fill:#FF9800,color:#FFFFFF
+    style B fill:#FF9800,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style A1 fill:#FFC107,color:#000000
+    style A2 fill:#FFC107,color:#000000
+    style A3 fill:#FFC107,color:#000000
+    style B1 fill:#FFC107,color:#000000
+    style B2 fill:#FFC107,color:#000000
+    style B3 fill:#FFC107,color:#000000
+    style C1 fill:#FFC107,color:#000000
+    style C2 fill:#FFC107,color:#000000
+    style C3 fill:#FFC107,color:#000000
 ```
 
 ### Attack Tree Construction Protocol
@@ -151,13 +151,13 @@ flowchart LR
 
     R --> W --> D --> X --> I --> C --> A
 
-    style R fill:#28a745,color:#fff
-    style W fill:#ffc107,color:#000
-    style D fill:#fd7e14,color:#fff
-    style X fill:#fd7e14,color:#fff
-    style I fill:#dc3545,color:#fff
-    style C fill:#dc3545,color:#fff
-    style A fill:#6f42c1,color:#fff
+    style R fill:#4CAF50,color:#FFFFFF
+    style W fill:#FFC107,color:#000000
+    style D fill:#FF9800,color:#FFFFFF
+    style X fill:#FF9800,color:#FFFFFF
+    style I fill:#D32F2F,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
+    style A fill:#7B1FA2,color:#FFFFFF
 ```
 
 ### Kill Chain Stage Details
@@ -200,10 +200,10 @@ graph TD
     CAP --> VIC
     INF --> VIC
 
-    style ADV fill:#dc3545,color:#fff
-    style CAP fill:#fd7e14,color:#fff
-    style INF fill:#ffc107,color:#000
-    style VIC fill:#0d6efd,color:#fff
+    style ADV fill:#D32F2F,color:#FFFFFF
+    style CAP fill:#FF9800,color:#FFFFFF
+    style INF fill:#FFC107,color:#000000
+    style VIC fill:#1565C0,color:#FFFFFF
 ```
 
 ### Diamond Model Analysis Table
@@ -251,12 +251,12 @@ graph LR
     P5 --> D5["Detect via: quorum patterns, filibuster duration"]
     P6 --> D6["Detect via: constitutional boundary tests"]
 
-    style P1 fill:#e3f2fd
-    style P2 fill:#fce4ec
-    style P3 fill:#fff3e0
-    style P4 fill:#f3e5f5
-    style P5 fill:#e8f5e9
-    style P6 fill:#fff8e1
+    style P1 fill:#E3F2FD
+    style P2 fill:#FCE4EC
+    style P3 fill:#FFF3E0
+    style P4 fill:#F3E5F5
+    style P5 fill:#E8F5E9
+    style P6 fill:#FFF8E1
 ```
 
 ### Threat Category Definitions
@@ -356,10 +356,10 @@ graph TD
     E --> I[Counter: Editorial standards,<br/>primary source citation]
     F --> J[Counter: Verification before<br/>publication workflow]
     
-    style C fill:#ffebee
-    style D fill:#fff3e0
-    style E fill:#e8eaf6
-    style F fill:#fce4ec
+    style C fill:#FFEBEE
+    style D fill:#FFF3E0
+    style E fill:#E8EAF6
+    style F fill:#FCE4EC
 ```
 
 ### Verification Protocol for Disputed Claims
@@ -772,8 +772,8 @@ graph TD
     C --> THREAT
     O --> THREAT
 
-    style ACTOR fill:#dc3545,color:#fff
-    style THREAT fill:#ffc107,color:#000
+    style ACTOR fill:#D32F2F,color:#FFFFFF
+    style THREAT fill:#FFC107,color:#000000
 ```
 
 ### Swedish Political Threat Actor Taxonomy
@@ -818,8 +818,8 @@ flowchart TD
     DM --> AP["👤 Actor Profile<br/>Assess intent, capability,<br/>opportunity"]
     AP --> OUTPUT["📊 Integrated Threat Assessment<br/>with all frameworks combined"]
 
-    style START fill:#0d6efd,color:#fff
-    style OUTPUT fill:#28a745,color:#fff
+    style START fill:#1565C0,color:#FFFFFF
+    style OUTPUT fill:#4CAF50,color:#FFFFFF
 ```
 
 ### Integration Table
@@ -876,9 +876,9 @@ flowchart LR
     R -->|"Risk scores inform<br/>Threat prioritization"| T
     S -->|"SWOT Threats feed<br/>Attack Tree targets"| T
 
-    style T fill:#e74c3c,color:#fff
-    style R fill:#f39c12,color:#000
-    style S fill:#3498db,color:#fff
+    style T fill:#D32F2F,color:#FFFFFF
+    style R fill:#FF9800,color:#000000
+    style S fill:#2196F3,color:#FFFFFF
 ```
 
 #### Severity → Risk Alignment
@@ -967,12 +967,12 @@ graph TD
     R1 -->|"Score ≥15 → HIGH priority"| SW1
     R2 -->|"Score <10 → standard"| SW2
 
-    style T1 fill:#dc3545,color:#fff
-    style T2 fill:#ffc107,color:#000
-    style R1 fill:#fd7e14,color:#fff
-    style R2 fill:#28a745,color:#fff
-    style SW1 fill:#dc3545,color:#fff
-    style SW2 fill:#ffc107,color:#000
+    style T1 fill:#D32F2F,color:#FFFFFF
+    style T2 fill:#FFC107,color:#000000
+    style R1 fill:#FF9800,color:#FFFFFF
+    style R2 fill:#4CAF50,color:#FFFFFF
+    style SW1 fill:#D32F2F,color:#FFFFFF
+    style SW2 fill:#FFC107,color:#000000
 ```
 
 ### Anti-Pattern: Disconnected Analyses

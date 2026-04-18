@@ -28,12 +28,12 @@ graph TD
     E -->|"EU directive"| I["EU Compliance"]:::eu
     F -->|"Benefits reform"| H
 
-    classDef security fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
-    classDef justice fill:#3d1a5c,stroke:#ff006e,color:#e0e0e0
-    classDef health fill:#1a5c3d,stroke:#00ff88,color:#e0e0e0
-    classDef labor fill:#5c3d1a,stroke:#ffbe0b,color:#e0e0e0
-    classDef trade fill:#2d4a1a,stroke:#88ff00,color:#e0e0e0
-    classDef social fill:#4a1a2d,stroke:#ff8800,color:#e0e0e0
+    classDef security fill:#0D47A1,stroke:#00d9ff,color:#e0e0e0
+    classDef justice fill:#4A148C,stroke:#ff006e,color:#e0e0e0
+    classDef health fill:#1B5E20,stroke:#4CAF50,color:#e0e0e0
+    classDef labor fill:#5D4037,stroke:#ffbe0b,color:#e0e0e0
+    classDef trade fill:#2d4a1a,stroke:#8BC34A,color:#e0e0e0
+    classDef social fill:#880E4F,stroke:#F57C00,color:#e0e0e0
     classDef highlight fill:#0a0e27,stroke:#00d9ff,color:#00d9ff,stroke-width:3px
     classDef opposition fill:#0a0e27,stroke:#ff006e,color:#ff006e,stroke-width:3px
     classDef eu fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b,stroke-width:2px

@@ -34,16 +34,16 @@ graph LR
     SCOPE -->|"🇸🇪 NATIONAL"| NAT["JuU15 + motions"]
     SCOPE -->|"🏘️ LOCAL"| LOC["Municipal service impact"]
 
-    style RES fill:#dc3545,color:#fff
-    style SEN fill:#ffc107,color:#000
-    style PUB fill:#28a745,color:#fff
-    style CRIT fill:#dc3545,color:#fff
-    style URGE fill:#fd7e14,color:#fff
-    style ELEV fill:#0d6efd,color:#fff
-    style ROUT fill:#6c757d,color:#fff
-    style INT fill:#fd7e14,color:#fff
-    style NAT fill:#0d6efd,color:#fff
-    style LOC fill:#28a745,color:#fff
+    style RES fill:#D32F2F,color:#FFFFFF
+    style SEN fill:#FFC107,color:#000000
+    style PUB fill:#4CAF50,color:#FFFFFF
+    style CRIT fill:#D32F2F,color:#FFFFFF
+    style URGE fill:#FF9800,color:#FFFFFF
+    style ELEV fill:#1565C0,color:#FFFFFF
+    style ROUT fill:#9E9E9E,color:#FFFFFF
+    style INT fill:#FF9800,color:#FFFFFF
+    style NAT fill:#1565C0,color:#FFFFFF
+    style LOC fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

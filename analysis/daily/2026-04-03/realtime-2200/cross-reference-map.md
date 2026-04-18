@@ -20,12 +20,12 @@ flowchart TD
     E["HD03235<br/>Stricter Deportation"] ---|"Criminal justice cluster"| F["JuU15<br/>Prison Reform"]
     E ---|"Government agenda"| A
     
-    style A fill:#00d9ff,stroke:#333,color:#000
-    style B fill:#00d9ff,stroke:#333,color:#000
-    style C fill:#00d9ff,stroke:#333,color:#000
-    style D fill:#00d9ff,stroke:#333,color:#000
-    style E fill:#ff006e,stroke:#333,color:#000
-    style F fill:#ff006e,stroke:#333,color:#000
+    style A fill:#00d9ff,stroke:#424242,color:#000000
+    style B fill:#00d9ff,stroke:#424242,color:#000000
+    style C fill:#00d9ff,stroke:#424242,color:#000000
+    style D fill:#00d9ff,stroke:#424242,color:#000000
+    style E fill:#ff006e,stroke:#424242,color:#000000
+    style F fill:#ff006e,stroke:#424242,color:#000000
 ```
 
 ## 🔗 Cross-Reference Matrix

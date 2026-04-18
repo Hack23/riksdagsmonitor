@@ -37,11 +37,11 @@ graph TD
     R3 -.-> TL
     R4 -.-> TL
     R5 -.-> TL
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#28a745,color:#fff
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#28a745,color:#fff
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#4CAF50,color:#FFFFFF
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## 5-Dimension Risk Scoring
@@ -63,11 +63,11 @@ flowchart TD
     C -->|Yes| D["Propositions pass<br/>with coalition + SD majority"]
     C -->|No| E["Coalition majority at risk<br/>on specific clauses"]
     E --> F["Government may amend<br/>to secure L/SD support"]
-    style A fill:#ffc107,color:#000
-    style C fill:#fd7e14,color:#fff
-    style D fill:#28a745,color:#fff
-    style E fill:#dc3545,color:#fff
-    style F fill:#ffc107,color:#000
+    style A fill:#FFC107,color:#000000
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#4CAF50,color:#FFFFFF
+    style E fill:#D32F2F,color:#FFFFFF
+    style F fill:#FFC107,color:#000000
 ```
 
 ## Key Findings

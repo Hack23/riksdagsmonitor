@@ -34,8 +34,8 @@ flowchart TD
     KU38 --> PARL
     KU38 --> CONST
     
-    style MJU30 fill:#00d9ff,color:#000
-    style KU38 fill:#ffbe0b,color:#000
+    style MJU30 fill:#00d9ff,color:#000000
+    style KU38 fill:#ffbe0b,color:#000000
 ```
 
 ## Detailed Classification

@@ -52,15 +52,15 @@ graph TD
     KU31 --> T3
     KrU10 --> T4
 
-    style KU31 fill:#ffc107,color:#000
-    style CU18 fill:#fd7e14,color:#fff
-    style JuU16 fill:#0d6efd,color:#fff
-    style CU17 fill:#0d6efd,color:#fff
-    style KrU10 fill:#28a745,color:#fff
-    style T1 fill:#dc3545,color:#fff
-    style T2 fill:#ffc107,color:#000
-    style T3 fill:#fd7e14,color:#fff
-    style T4 fill:#28a745,color:#fff
+    style KU31 fill:#FFC107,color:#000000
+    style CU18 fill:#FF9800,color:#FFFFFF
+    style JuU16 fill:#1565C0,color:#FFFFFF
+    style CU17 fill:#1565C0,color:#FFFFFF
+    style KrU10 fill:#4CAF50,color:#FFFFFF
+    style T1 fill:#D32F2F,color:#FFFFFF
+    style T2 fill:#FFC107,color:#000000
+    style T3 fill:#FF9800,color:#FFFFFF
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

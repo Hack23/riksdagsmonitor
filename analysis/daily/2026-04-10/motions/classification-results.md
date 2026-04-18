@@ -35,11 +35,11 @@ graph TD
             U3["⚪ ROUTINE: 9"]
         end
     end
-    style S1 fill:#ffbe0b,stroke:#333,color:#000
-    style S2 fill:#28a745,stroke:#333,color:#fff
-    style U1 fill:#fd7e14,stroke:#333,color:#fff
-    style U2 fill:#0d6efd,stroke:#333,color:#fff
-    style U3 fill:#6c757d,stroke:#333,color:#fff
+    style S1 fill:#ffbe0b,stroke:#424242,color:#000000
+    style S2 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style U1 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style U2 fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style U3 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
 ```
 
 ## Detailed Classification

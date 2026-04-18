@@ -44,12 +44,12 @@ graph LR
     PRE --> AI
     AI --> ANA
 
-    style MCP fill:#0d6efd,color:#fff
-    style WR fill:#28a745,color:#fff
-    style POP fill:#ffc107,color:#000
-    style PRE fill:#ffc107,color:#000
-    style AI fill:#6f42c1,color:#fff
-    style ANA fill:#28a745,color:#fff
+    style MCP fill:#1565C0,color:#FFFFFF
+    style WR fill:#4CAF50,color:#FFFFFF
+    style POP fill:#FFC107,color:#000000
+    style PRE fill:#FFC107,color:#000000
+    style AI fill:#7B1FA2,color:#FFFFFF
+    style ANA fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Quality Assessment

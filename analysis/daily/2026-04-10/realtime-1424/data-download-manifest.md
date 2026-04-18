@@ -34,14 +34,14 @@ graph LR
     MOT --> SEL
     BET --> SEL
     FRG --> SEL
-    style PROP fill:#0d6efd,color:#fff
-    style MOT fill:#28a745,color:#fff
-    style BET fill:#ffc107,color:#000
-    style VOT fill:#6c757d,color:#fff
-    style ANF fill:#6f42c1,color:#fff
-    style FRG fill:#fd7e14,color:#fff
-    style INT fill:#dc3545,color:#fff
-    style SEL fill:#28a745,color:#fff
+    style PROP fill:#1565C0,color:#FFFFFF
+    style MOT fill:#4CAF50,color:#FFFFFF
+    style BET fill:#FFC107,color:#000000
+    style VOT fill:#9E9E9E,color:#FFFFFF
+    style ANF fill:#7B1FA2,color:#FFFFFF
+    style FRG fill:#FF9800,color:#FFFFFF
+    style INT fill:#D32F2F,color:#FFFFFF
+    style SEL fill:#4CAF50,color:#FFFFFF
 ```
 
 - **propositions**: 50 documents

@@ -60,25 +60,25 @@ flowchart TD
     L3 --> WILD1["⚡ WILDCARD — Strasbourg Rule 39<br/>Migration policy paralysis<br/>P = 0.06"]
     S3 --> WILD2["⚡ WILDCARD — SiS crisis<br/>Government loses 'law and order' narrative<br/>P = 0.06"]
 
-    style T0 fill:#ffc107,color:#000
-    style F1 fill:#28a745,color:#fff
-    style F2 fill:#ffc107,color:#000
-    style F3 fill:#dc3545,color:#fff
-    style L1 fill:#28a745,color:#fff
-    style L2 fill:#ffc107,color:#000
-    style L3 fill:#dc3545,color:#fff
-    style S1 fill:#28a745,color:#fff
-    style S2 fill:#ffc107,color:#000
-    style S3 fill:#dc3545,color:#fff
-    style E1 fill:#0d6efd,color:#fff
-    style E2 fill:#6f42c1,color:#fff
-    style E3 fill:#dc3545,color:#fff
-    style BASE fill:#28a745,color:#fff
-    style BULL fill:#0d6efd,color:#fff
-    style MIX fill:#fd7e14,color:#fff
-    style BEAR fill:#dc3545,color:#fff
-    style WILD1 fill:#6f42c1,color:#fff
-    style WILD2 fill:#6f42c1,color:#fff
+    style T0 fill:#FFC107,color:#000000
+    style F1 fill:#4CAF50,color:#FFFFFF
+    style F2 fill:#FFC107,color:#000000
+    style F3 fill:#D32F2F,color:#FFFFFF
+    style L1 fill:#4CAF50,color:#FFFFFF
+    style L2 fill:#FFC107,color:#000000
+    style L3 fill:#D32F2F,color:#FFFFFF
+    style S1 fill:#4CAF50,color:#FFFFFF
+    style S2 fill:#FFC107,color:#000000
+    style S3 fill:#D32F2F,color:#FFFFFF
+    style E1 fill:#1565C0,color:#FFFFFF
+    style E2 fill:#7B1FA2,color:#FFFFFF
+    style E3 fill:#D32F2F,color:#FFFFFF
+    style BASE fill:#4CAF50,color:#FFFFFF
+    style BULL fill:#1565C0,color:#FFFFFF
+    style MIX fill:#FF9800,color:#FFFFFF
+    style BEAR fill:#D32F2F,color:#FFFFFF
+    style WILD1 fill:#7B1FA2,color:#FFFFFF
+    style WILD2 fill:#7B1FA2,color:#FFFFFF
 ```
 
 > Priors sum to ≈ 1.00. Probabilities will be Bayesian-updated as Lagrådet yttrande, Riksrevisionen response, SCB labour stats, SiS bulletins, and polling signals arrive.

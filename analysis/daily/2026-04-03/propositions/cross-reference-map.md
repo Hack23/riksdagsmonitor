@@ -42,17 +42,17 @@ graph TD
     HD214 -->|"committee"| FOU
     HD228 -->|"committee"| UU
     HD235 -->|"committee"| JUU
-    style HD214 fill:#0d6efd,color:#fff
-    style HD228 fill:#0d6efd,color:#fff
-    style HD235 fill:#dc3545,color:#fff
-    style TIDO fill:#6f42c1,color:#fff
-    style NATO fill:#28a745,color:#fff
-    style FOU fill:#6c757d,color:#fff
-    style JUU fill:#6c757d,color:#fff
-    style UU fill:#6c757d,color:#fff
-    style BOHLIN fill:#fd7e14,color:#fff
-    style DOUSA fill:#fd7e14,color:#fff
-    style FORSSELL fill:#fd7e14,color:#fff
+    style HD214 fill:#1565C0,color:#FFFFFF
+    style HD228 fill:#1565C0,color:#FFFFFF
+    style HD235 fill:#D32F2F,color:#FFFFFF
+    style TIDO fill:#7B1FA2,color:#FFFFFF
+    style NATO fill:#4CAF50,color:#FFFFFF
+    style FOU fill:#9E9E9E,color:#FFFFFF
+    style JUU fill:#9E9E9E,color:#FFFFFF
+    style UU fill:#9E9E9E,color:#FFFFFF
+    style BOHLIN fill:#FF9800,color:#FFFFFF
+    style DOUSA fill:#FF9800,color:#FFFFFF
+    style FORSSELL fill:#FF9800,color:#FFFFFF
 ```
 
 ## 📋 Cross-Reference Register

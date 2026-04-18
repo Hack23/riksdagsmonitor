@@ -18,11 +18,11 @@ graph TD
         SEC["Security (SEC)<br/>FöU6 SIGINT<br/>🟡 MEDIUM Priority"]
     end
 
-    style DEF fill:#dc3545,color:#fff
-    style MIG fill:#dc3545,color:#fff
-    style HEA fill:#ffc107,color:#000
-    style JUS fill:#ffc107,color:#000
-    style SEC fill:#ffc107,color:#000
+    style DEF fill:#D32F2F,color:#FFFFFF
+    style MIG fill:#D32F2F,color:#FFFFFF
+    style HEA fill:#FFC107,color:#000000
+    style JUS fill:#FFC107,color:#000000
+    style SEC fill:#FFC107,color:#000000
 ```
 
 ## Classification Matrix

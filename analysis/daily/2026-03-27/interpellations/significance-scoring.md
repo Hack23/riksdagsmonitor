@@ -28,9 +28,9 @@ graph LR
         HD10422["HD10422<br/>Labour Market<br/>Score: 5/10"]
         HD10421["HD10421<br/>Integration Finance<br/>Score: 5/10"]
     end
-    style HD10420 fill:#fd7e14,color:#fff,stroke:#c35a00
-    style HD10422 fill:#ffc107,color:#000,stroke:#856404
-    style HD10421 fill:#ffc107,color:#000,stroke:#856404
+    style HD10420 fill:#FF9800,color:#FFFFFF,stroke:#F57C00
+    style HD10422 fill:#FFC107,color:#000000,stroke:#F57C00
+    style HD10421 fill:#FFC107,color:#000000,stroke:#F57C00
 ```
 
 | Factor | HD10420 | HD10422 | HD10421 |

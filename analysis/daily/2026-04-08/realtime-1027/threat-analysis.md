@@ -25,17 +25,17 @@ graph TD
     D --> D3["EV premium access<br/>HD11688"]
     
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style B fill:#dc3545,stroke:#333,color:#fff
-    style C fill:#ffc107,stroke:#333,color:#000
-    style D fill:#fd7e14,stroke:#333,color:#fff
-    style B1 fill:#6c757d,stroke:#333,color:#fff
-    style B2 fill:#6c757d,stroke:#333,color:#fff
-    style C1 fill:#6c757d,stroke:#333,color:#fff
-    style C2 fill:#6c757d,stroke:#333,color:#fff
-    style C3 fill:#6c757d,stroke:#333,color:#fff
-    style D1 fill:#6c757d,stroke:#333,color:#fff
-    style D2 fill:#6c757d,stroke:#333,color:#fff
-    style D3 fill:#6c757d,stroke:#333,color:#fff
+    style B fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style C fill:#FFC107,stroke:#424242,color:#000000
+    style D fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style B1 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style B2 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style C1 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style C2 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style C3 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style D1 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style D2 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style D3 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
 ```
 
 ## Primary Threats

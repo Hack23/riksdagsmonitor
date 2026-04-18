@@ -31,11 +31,11 @@ graph TD
     R1 --> R5
     R2 --> R4
 
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#fd7e14,color:#fff
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#FF9800,color:#FFFFFF
 ```
 
 ### Risk Register
@@ -63,10 +63,10 @@ graph TD
 
     CHECK -->|"PASS"| SUCCESS["Government Claims<br/>Policy Delivery Win"]
 
-    style TRIGGER fill:#fd7e14,color:#fff
-    style GAP fill:#dc3545,color:#fff
-    style SUCCESS fill:#28a745,color:#fff
-    style OPPOSITION fill:#dc3545,color:#fff
+    style TRIGGER fill:#FF9800,color:#FFFFFF
+    style GAP fill:#D32F2F,color:#FFFFFF
+    style SUCCESS fill:#4CAF50,color:#FFFFFF
+    style OPPOSITION fill:#D32F2F,color:#FFFFFF
 ```
 
 ---

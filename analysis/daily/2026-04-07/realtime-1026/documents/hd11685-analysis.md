@@ -35,11 +35,11 @@ graph LR
     A --> K{Urgency}
     K -->|"⚪ ROUTINE"| L["Standard question procedure"]
 
-    style A fill:#0d6efd,stroke:#0a58ca,color:#fff
-    style C fill:#28a745,stroke:#1e7e34,color:#fff
-    style H fill:#fd7e14,stroke:#ca6510,color:#fff
-    style I fill:#ffc107,stroke:#e0a800,color:#000
-    style L fill:#6c757d,stroke:#545b62,color:#fff
+    style A fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
+    style C fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style H fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style I fill:#FFC107,stroke:#FFA000,color:#000000
+    style L fill:#9E9E9E,stroke:#616161,color:#FFFFFF
 ```
 
 | Classification | Value | Rationale |

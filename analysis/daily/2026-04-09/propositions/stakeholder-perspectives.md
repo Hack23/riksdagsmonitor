@@ -27,13 +27,13 @@ graph TD
     E --> E1["❌ NEGATIVE<br/>Precedent may reduce<br/>species protection will"]
     F --> F1["✅ POSITIVE<br/>Reduced legal<br/>uncertainty"]
     G --> G1["✅ POSITIVE<br/>Clear legislative<br/>framework"]
-    style B1 fill:#28a745,color:#fff
-    style C1 fill:#dc3545,color:#fff
-    style C2 fill:#ffc107,color:#000
-    style D1 fill:#28a745,color:#fff
-    style E1 fill:#dc3545,color:#fff
-    style F1 fill:#28a745,color:#fff
-    style G1 fill:#28a745,color:#fff
+    style B1 fill:#4CAF50,color:#FFFFFF
+    style C1 fill:#D32F2F,color:#FFFFFF
+    style C2 fill:#FFC107,color:#000000
+    style D1 fill:#4CAF50,color:#FFFFFF
+    style E1 fill:#D32F2F,color:#FFFFFF
+    style F1 fill:#4CAF50,color:#FFFFFF
+    style G1 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Detailed Analysis — HD03230 (Species Protection Compensation)

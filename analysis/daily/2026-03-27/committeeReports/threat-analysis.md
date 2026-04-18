@@ -33,13 +33,13 @@ graph LR
 
     R --> R1["KU31: Government acknowledges<br/>insufficient efforts but<br/>commits only to 'long-term work'"]
 
-    style S fill:#28a745,color:#fff
-    style T fill:#28a745,color:#fff
-    style R fill:#ffc107,color:#000
-    style I fill:#28a745,color:#fff
-    style D fill:#28a745,color:#fff
-    style E fill:#28a745,color:#fff
-    style R1 fill:#ffc107,color:#000
+    style S fill:#4CAF50,color:#FFFFFF
+    style T fill:#4CAF50,color:#FFFFFF
+    style R fill:#FFC107,color:#000000
+    style I fill:#4CAF50,color:#FFFFFF
+    style D fill:#4CAF50,color:#FFFFFF
+    style E fill:#4CAF50,color:#FFFFFF
+    style R1 fill:#FFC107,color:#000000
 ```
 
 ## 📊 STRIDE Assessment Table

@@ -5,14 +5,14 @@
 
 ```mermaid
 graph TD
-    style GOV fill:#2980b9,color:#fff
-    style OPP fill:#c0392b,color:#fff
-    style CIT fill:#27ae60,color:#fff
-    style BIZ fill:#f39c12,color:#fff
-    style CSO fill:#8e44ad,color:#fff
-    style INT fill:#16a085,color:#fff
-    style JUD fill:#7f8c8d,color:#fff
-    style MED fill:#e74c3c,color:#fff
+    style GOV fill:#1565C0,color:#FFFFFF
+    style OPP fill:#D32F2F,color:#FFFFFF
+    style CIT fill:#4CAF50,color:#FFFFFF
+    style BIZ fill:#FF9800,color:#FFFFFF
+    style CSO fill:#7B1FA2,color:#FFFFFF
+    style INT fill:#0097A7,color:#FFFFFF
+    style JUD fill:#9E9E9E,color:#FFFFFF
+    style MED fill:#D32F2F,color:#FFFFFF
 
     GOV[🏛️ Government Coalition<br/>M-SD-KD-L] -->|DRIVE| FiU48[FiU48 Fuel Relief]
     GOV -->|DRIVE| SfU_PKG[SfU Enforcement Pack]

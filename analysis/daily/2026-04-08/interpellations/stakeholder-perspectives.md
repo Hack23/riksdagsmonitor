@@ -45,12 +45,12 @@ graph TD
         F --> I[Citizens: Rights at stake]
         F --> J[Judiciary: Constitutional test]
     end
-    style A fill:#ff006e,color:#fff
-    style F fill:#ffbe0b,color:#000
+    style A fill:#ff006e,color:#FFFFFF
+    style F fill:#ffbe0b,color:#000000
     style G fill:#1a1e3d,color:#e0e0e0
-    style H fill:#00d9ff,color:#000
-    style I fill:#ff006e,color:#fff
-    style J fill:#ff006e,color:#fff
+    style H fill:#00d9ff,color:#000000
+    style I fill:#ff006e,color:#FFFFFF
+    style J fill:#ff006e,color:#FFFFFF
 ```
 
 ## Data Quality Notes

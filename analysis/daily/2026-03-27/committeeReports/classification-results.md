@@ -17,11 +17,11 @@ graph TD
         D5["HD01KrU10<br/>🟢 PUBLIC<br/>Culture/EU"]
     end
 
-    style D1 fill:#ffc107,color:#000
-    style D2 fill:#ffc107,color:#000
-    style D3 fill:#28a745,color:#fff
-    style D4 fill:#28a745,color:#fff
-    style D5 fill:#28a745,color:#fff
+    style D1 fill:#FFC107,color:#000000
+    style D2 fill:#FFC107,color:#000000
+    style D3 fill:#4CAF50,color:#FFFFFF
+    style D4 fill:#4CAF50,color:#FFFFFF
+    style D5 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## 📊 Classification Table

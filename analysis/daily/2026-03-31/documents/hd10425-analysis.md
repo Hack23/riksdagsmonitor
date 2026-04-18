@@ -38,16 +38,16 @@ graph LR
     A --> H{Political Dynamics}
     H --> I[S Fiscal Responsibility]
     H --> J[Gov Defence Credibility]
-    style A fill:#ffc107,stroke:#333,color:#000
-    style B fill:#dc3545,stroke:#333,color:#fff
-    style E fill:#fd7e14,stroke:#333,color:#000
-    style H fill:#0d6efd,stroke:#333,color:#fff
-    style C fill:#dc3545,stroke:#333,color:#fff
-    style D fill:#fd7e14,stroke:#333,color:#000
-    style F fill:#dc3545,stroke:#333,color:#fff
-    style G fill:#fd7e14,stroke:#333,color:#000
-    style I fill:#0d6efd,stroke:#333,color:#fff
-    style J fill:#fd7e14,stroke:#333,color:#000
+    style A fill:#FFC107,stroke:#424242,color:#000000
+    style B fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style E fill:#FF9800,stroke:#424242,color:#000000
+    style H fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style C fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style D fill:#FF9800,stroke:#424242,color:#000000
+    style F fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style G fill:#FF9800,stroke:#424242,color:#000000
+    style I fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style J fill:#FF9800,stroke:#424242,color:#000000
 ```
 
 | Attribute | Value |

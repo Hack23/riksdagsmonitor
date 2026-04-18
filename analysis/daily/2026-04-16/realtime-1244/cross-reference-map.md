@@ -36,10 +36,10 @@ graph TD
     HD024093["📝 HD024093<br/>C: Cybersecurity (Prop 214)"] -.-> OPPOSITION
     HD024094["📝 HD024094<br/>C: Healthcare (Prop 216)"] -.-> OPPOSITION
     
-    style HD03246 fill:#dc3545,color:#fff
-    style JuU15 fill:#fd7e14,color:#fff
-    style DEBATE fill:#6f42c1,color:#fff
-    style OPPOSITION fill:#0d6efd,color:#fff
+    style HD03246 fill:#D32F2F,color:#FFFFFF
+    style JuU15 fill:#FF9800,color:#FFFFFF
+    style DEBATE fill:#7B1FA2,color:#FFFFFF
+    style OPPOSITION fill:#1565C0,color:#FFFFFF
 ```
 
 ---

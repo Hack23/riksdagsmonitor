@@ -32,11 +32,11 @@ graph TD
     HD03237 -->|"justice reforms"| HD03233
     HD03245 -->|"social security"| HD03237
     HD01TU21 -->|"digital anti-fraud"| HD01TU17
-    style HD03240 fill:#ff6b6b,color:#fff
-    style HD03237 fill:#ffd93d,color:#000
-    style HD03245 fill:#ffd93d,color:#000
-    style HD03239 fill:#6bcb77,color:#fff
-    style HD03238 fill:#6bcb77,color:#fff
+    style HD03240 fill:#EF5350,color:#FFFFFF
+    style HD03237 fill:#FFC107,color:#000000
+    style HD03245 fill:#FFC107,color:#000000
+    style HD03239 fill:#81C784,color:#FFFFFF
+    style HD03238 fill:#81C784,color:#FFFFFF
 ```
 
 ## Key Cross-References

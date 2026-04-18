@@ -42,10 +42,10 @@ graph TD
     MP --> GOV
     GOV --> HUNT
     MP --> ENV
-    style MP fill:#28a745,stroke:#155724,color:#fff
-    style GOV fill:#17a2b8,stroke:#0c5460,color:#fff
-    style HUNT fill:#ffc107,stroke:#856404,color:#000
-    style ENV fill:#28a745,stroke:#155724,color:#fff
+    style MP fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style GOV fill:#0097A7,stroke:#006064,color:#FFFFFF
+    style HUNT fill:#FFC107,stroke:#F57C00,color:#000000
+    style ENV fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 ## Risk Assessment

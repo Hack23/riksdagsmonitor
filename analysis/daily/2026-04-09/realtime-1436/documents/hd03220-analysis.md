@@ -34,9 +34,9 @@ graph LR
     A --> I{Urgency}
     I -->|"🟠 URGENT"| K["Formal Riksdag debate required — weeks"]
 
-    style D fill:#ffc107,color:#000
-    style H fill:#0d6efd,color:#fff
-    style K fill:#fd7e14,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#1565C0,color:#FFFFFF
+    style K fill:#FF9800,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -101,12 +101,12 @@ graph TD
         R6["🟡 External / International<br/>L:3 × I:3 = 9"]
     end
 
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#28a745,color:#fff
-    style R6 fill:#ffc107,color:#000
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#FFC107,color:#000000
 ```
 
 | Risk Type | Likelihood (1–5) | Impact (1–5) | Score | Assessment |
@@ -144,12 +144,12 @@ graph LR
     TR --> TR1["Monitor — deployment details may be classified"]
     PB --> PB1["Low — standard proposition process used"]
 
-    style NI fill:#6f42c1,color:#fff
-    style LI fill:#28a745,color:#fff
-    style AC fill:#28a745,color:#fff
-    style TR fill:#ffc107,color:#000
-    style DP fill:#28a745,color:#fff
-    style PB fill:#28a745,color:#fff
+    style NI fill:#7B1FA2,color:#FFFFFF
+    style LI fill:#4CAF50,color:#FFFFFF
+    style AC fill:#4CAF50,color:#FFFFFF
+    style TR fill:#FFC107,color:#000000
+    style DP fill:#4CAF50,color:#FFFFFF
+    style PB fill:#4CAF50,color:#FFFFFF
 ```
 
 | Threat Category | Applicable? | Threat Description | Severity (1–5) | Evidence |
@@ -186,11 +186,11 @@ graph TD
     DOC --> CIT
     DOC --> ECO
 
-    style DOC fill:#0d6efd,color:#fff
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#fd7e14,color:#fff
-    style CIT fill:#6f42c1,color:#fff
-    style ECO fill:#ffc107,color:#000
+    style DOC fill:#1565C0,color:#FFFFFF
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#FF9800,color:#FFFFFF
+    style CIT fill:#7B1FA2,color:#FFFFFF
+    style ECO fill:#FFC107,color:#000000
 ```
 
 | Stakeholder | Impact Level | Key Assessment | Confidence |

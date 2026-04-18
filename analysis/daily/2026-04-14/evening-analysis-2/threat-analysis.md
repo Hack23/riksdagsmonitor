@@ -28,9 +28,9 @@ graph TD
     T7 --> T9
     T8 --> T9
 
-    style T1 fill:#ff6b35,color:#fff
-    style T7 fill:#ff0000,color:#fff
-    style T8 fill:#ff0000,color:#fff
+    style T1 fill:#FF5722,color:#FFFFFF
+    style T7 fill:#D32F2F,color:#FFFFFF
+    style T8 fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Threat Details

@@ -38,18 +38,18 @@ graph TD
             T3["T3: SD-government alignment limits breakout"]
         end
     end
-    style S1 fill:#28a745,stroke:#333,color:#fff
-    style S2 fill:#28a745,stroke:#333,color:#fff
-    style S3 fill:#28a745,stroke:#333,color:#fff
-    style W1 fill:#dc3545,stroke:#333,color:#fff
-    style W2 fill:#dc3545,stroke:#333,color:#fff
-    style W3 fill:#ffc107,stroke:#333,color:#000
-    style O1 fill:#17a2b8,stroke:#333,color:#fff
-    style O2 fill:#17a2b8,stroke:#333,color:#fff
-    style O3 fill:#17a2b8,stroke:#333,color:#fff
-    style T1 fill:#fd7e14,stroke:#333,color:#fff
-    style T2 fill:#fd7e14,stroke:#333,color:#fff
-    style T3 fill:#ffc107,stroke:#333,color:#000
+    style S1 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style S2 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style S3 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style W1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style W2 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style W3 fill:#FFC107,stroke:#424242,color:#000000
+    style O1 fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style O2 fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style O3 fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style T1 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style T2 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style T3 fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ## Government Coalition SWOT

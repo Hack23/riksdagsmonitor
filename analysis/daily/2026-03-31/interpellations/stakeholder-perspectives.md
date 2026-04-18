@@ -20,12 +20,12 @@ graph TD
         MED["📰 Media<br/>Impact: HIGH<br/>Quotable soundbites<br/>& pattern story"]
     end
 
-    style GOV fill:#dc3545,color:#fff
-    style OPP fill:#28a745,color:#fff
-    style CIT fill:#0d6efd,color:#fff
-    style BUS fill:#fd7e14,color:#fff
-    style INTL fill:#ffc107,color:#000
-    style MED fill:#6610f2,color:#fff
+    style GOV fill:#D32F2F,color:#FFFFFF
+    style OPP fill:#4CAF50,color:#FFFFFF
+    style CIT fill:#1565C0,color:#FFFFFF
+    style BUS fill:#FF9800,color:#FFFFFF
+    style INTL fill:#FFC107,color:#000000
+    style MED fill:#7B1FA2,color:#FFFFFF
 ```
 
 | Stakeholder | Impact | Key Finding |

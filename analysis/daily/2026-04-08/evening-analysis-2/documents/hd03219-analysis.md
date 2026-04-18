@@ -25,11 +25,11 @@ graph TD
     D --> E["Riksdag<br/>Decision"]
     B --> F["Opposition<br/>Scrutiny"]
 
-    style A fill:#dc3545,color:#fff
-    style B fill:#fd7e14,color:#fff
-    style C fill:#ffc107,color:#000
-    style D fill:#0d6efd,color:#fff
-    style F fill:#6f42c1,color:#fff
+    style A fill:#D32F2F,color:#FFFFFF
+    style B fill:#FF9800,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#1565C0,color:#FFFFFF
+    style F fill:#7B1FA2,color:#FFFFFF
 ```
 
 ## SWOT Analysis

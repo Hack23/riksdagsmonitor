@@ -31,10 +31,10 @@ graph LR
     A --> I{"Urgency"}
     I -->|"🔵 ELEVATED"| L["Monitoring — this week"]
     
-    style A fill:#00d9ff,color:#000
-    style D fill:#ffc107,color:#000
-    style H fill:#00d9ff,color:#000
-    style L fill:#17a2b8,color:#fff
+    style A fill:#00d9ff,color:#000000
+    style D fill:#FFC107,color:#000000
+    style H fill:#00d9ff,color:#000000
+    style L fill:#0097A7,color:#FFFFFF
 ```
 
 | Field | Value |

@@ -49,12 +49,12 @@ graph TD
     THR --> DEC
     SIG --> DEC
 
-    style CLS fill:#ffc107,stroke:#333,color:#000
-    style RSK fill:#28a745,stroke:#333,color:#fff
-    style THR fill:#28a745,stroke:#333,color:#fff
-    style SIG fill:#fd7e14,stroke:#333,color:#000
+    style CLS fill:#FFC107,stroke:#424242,color:#000000
+    style RSK fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style THR fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style SIG fill:#FF9800,stroke:#424242,color:#000000
     style DEC fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style MON fill:#17a2b8,stroke:#333,color:#fff
+    style MON fill:#0097A7,stroke:#424242,color:#FFFFFF
 ```
 
 ---

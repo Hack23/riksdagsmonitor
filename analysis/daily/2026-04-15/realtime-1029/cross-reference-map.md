@@ -39,17 +39,17 @@ graph TD
     Q1 -.->|"migration pressure"| M79
     Q2 -.->|"security pressure"| P1
     
-    style M78 fill:#E91E63,color:#fff
-    style M79 fill:#E91E63,color:#fff
-    style M80 fill:#E91E63,color:#fff
-    style M81 fill:#E91E63,color:#fff
-    style P1 fill:#2196F3,color:#fff
-    style P2 fill:#2196F3,color:#fff
-    style P3 fill:#2196F3,color:#fff
-    style P4 fill:#2196F3,color:#fff
-    style Q1 fill:#FF9800,color:#fff
-    style Q2 fill:#FF9800,color:#fff
-    style Q3 fill:#FF9800,color:#fff
+    style M78 fill:#E91E63,color:#FFFFFF
+    style M79 fill:#E91E63,color:#FFFFFF
+    style M80 fill:#E91E63,color:#FFFFFF
+    style M81 fill:#E91E63,color:#FFFFFF
+    style P1 fill:#2196F3,color:#FFFFFF
+    style P2 fill:#2196F3,color:#FFFFFF
+    style P3 fill:#2196F3,color:#FFFFFF
+    style P4 fill:#2196F3,color:#FFFFFF
+    style Q1 fill:#FF9800,color:#FFFFFF
+    style Q2 fill:#FF9800,color:#FFFFFF
+    style Q3 fill:#FF9800,color:#FFFFFF
 ```
 
 ## Linkage Table

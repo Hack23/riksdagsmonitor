@@ -22,8 +22,8 @@ graph TD
     T2 --> |"Risk: Reduced scrutiny time"| D2["⚖️ Legislative Oversight"]
     T3 --> |"Risk: Hidden policy deals"| D3["🔍 Transparency"]
     
-    style T1 fill:#ffbe0b,color:#000
-    style T2 fill:#00d9ff,color:#000
+    style T1 fill:#ffbe0b,color:#000000
+    style T2 fill:#00d9ff,color:#000000
     style T3 fill:#1a1e3d,color:#e0e0e0
 ```
 

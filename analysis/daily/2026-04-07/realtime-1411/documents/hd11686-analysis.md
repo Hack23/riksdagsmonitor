@@ -42,10 +42,10 @@ graph TD
     SD_S --> L_M
     L_M --> UNIV
     UNIV --> ACAD
-    style SD_S fill:#ffc107,stroke:#856404,color:#000
-    style L_M fill:#17a2b8,stroke:#0c5460,color:#fff
-    style UNIV fill:#28a745,stroke:#155724,color:#fff
-    style ACAD fill:#28a745,stroke:#155724,color:#fff
+    style SD_S fill:#FFC107,stroke:#F57C00,color:#000000
+    style L_M fill:#0097A7,stroke:#006064,color:#FFFFFF
+    style UNIV fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style ACAD fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 ## Risk Assessment

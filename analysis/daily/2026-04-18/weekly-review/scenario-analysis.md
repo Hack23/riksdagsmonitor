@@ -147,10 +147,10 @@ flowchart TD
     SHIFT --> CIV["Civil-society resilience demand ↑"]
     CONS --> SD_UP["SD electoral position strengthens"]
     
-    style W1 fill:#dc3545,color:#fff
-    style SHIFT fill:#fd7e14,color:#fff
-    style GOV_UP fill:#28a745,color:#fff
-    style SD_UP fill:#fd7e14,color:#fff
+    style W1 fill:#D32F2F,color:#FFFFFF
+    style SHIFT fill:#FF9800,color:#FFFFFF
+    style GOV_UP fill:#4CAF50,color:#FFFFFF
+    style SD_UP fill:#FF9800,color:#FFFFFF
 ```
 
 ### Implications for Base Scenarios
@@ -181,10 +181,10 @@ flowchart TD
     AMEND --> SD_FRICTION["SD friction over migration concessions"]
     SD_FRICTION --> R4["R4 coalition fracture risk ↑"]
     
-    style W2 fill:#fd7e14,color:#fff
-    style LEGAL fill:#dc3545,color:#fff
-    style S_UP fill:#dc3545,color:#fff
-    style R4 fill:#dc3545,color:#fff
+    style W2 fill:#FF9800,color:#FFFFFF
+    style LEGAL fill:#D32F2F,color:#FFFFFF
+    style S_UP fill:#D32F2F,color:#FFFFFF
+    style R4 fill:#D32F2F,color:#FFFFFF
 ```
 
 ### Implications for Base Scenarios

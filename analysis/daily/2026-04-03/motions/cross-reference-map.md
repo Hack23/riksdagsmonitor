@@ -28,10 +28,10 @@ flowchart TB
     P194 --- P195
     P195 --- P197
     P210 --- P201
-    style P193 fill:#dc3545,color:#fff
-    style P197 fill:#dc3545,color:#fff
-    style P187 fill:#fd7e14,color:#fff
-    style P210 fill:#ffc107,color:#000
+    style P193 fill:#D32F2F,color:#FFFFFF
+    style P197 fill:#D32F2F,color:#FFFFFF
+    style P187 fill:#FF9800,color:#FFFFFF
+    style P210 fill:#FFC107,color:#000000
 ```
 
 ## Key Cross-References

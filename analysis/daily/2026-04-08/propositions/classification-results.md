@@ -38,9 +38,9 @@ pie title Document Sensitivity Distribution
 
 ```mermaid
 flowchart TD
-    classDef defence fill:#e74c3c,stroke:#c0392b,color:#fff
-    classDef trade fill:#f39c12,stroke:#e67e22,color:#fff
-    classDef routine fill:#3498db,stroke:#2980b9,color:#fff
+    classDef defence fill:#D32F2F,stroke:#D32F2F,color:#FFFFFF
+    classDef trade fill:#FF9800,stroke:#FF9800,color:#FFFFFF
+    classDef routine fill:#2196F3,stroke:#1565C0,color:#FFFFFF
 
     HD03114["HD03114<br/>Strategisk exportkontroll 2025<br/>Skr. 2025/26:114"]:::defence
     UU["UU — Utrikesutskottet"]:::trade

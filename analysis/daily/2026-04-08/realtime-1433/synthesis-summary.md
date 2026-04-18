@@ -50,11 +50,11 @@ graph TD
     THR --> DEC
     SIG --> DEC
 
-    style CLS fill:#28a745,color:#fff
-    style RSK fill:#ffc107,color:#000
-    style THR fill:#ffc107,color:#000
-    style SIG fill:#ffc107,color:#000
-    style MON fill:#6c757d,color:#fff
+    style CLS fill:#4CAF50,color:#FFFFFF
+    style RSK fill:#FFC107,color:#000000
+    style THR fill:#FFC107,color:#000000
+    style SIG fill:#FFC107,color:#000000
+    style MON fill:#9E9E9E,color:#FFFFFF
 ```
 
 ---
@@ -98,10 +98,10 @@ graph LR
     GW -.->|"amplifies"| GT
     GO -.->|"mitigates"| GW
 
-    style GS fill:#28a745,color:#fff
-    style GW fill:#fd7e14,color:#fff
-    style GO fill:#0d6efd,color:#fff
-    style GT fill:#dc3545,color:#fff
+    style GS fill:#4CAF50,color:#FFFFFF
+    style GW fill:#FF9800,color:#FFFFFF
+    style GO fill:#1565C0,color:#FFFFFF
+    style GT fill:#D32F2F,color:#FFFFFF
 ```
 
 | Quadrant | Count | Highest-Impact Entry | Evidence |

@@ -129,20 +129,20 @@ flowchart TD
     R5["R5<br/>Climate brand erosion"] --> MP_RISE["MP attentive-voter mobilisation"]
     MP_RISE --> R4
 
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#fd7e14,color:#fff
-    style R4 fill:#fd7e14,color:#fff
-    style R5 fill:#ffc107,color:#000
-    style R6 fill:#fd7e14,color:#fff
-    style R8 fill:#28a745,color:#fff
-    style CASCADE1 fill:#6f42c1,color:#fff
-    style CAMP fill:#6f42c1,color:#fff
-    style CAMP2 fill:#6f42c1,color:#fff
-    style RSF fill:#6f42c1,color:#fff
-    style COURT fill:#6f42c1,color:#fff
-    style NORM fill:#6f42c1,color:#fff
-    style MP_RISE fill:#6f42c1,color:#fff
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FF9800,color:#FFFFFF
+    style R4 fill:#FF9800,color:#FFFFFF
+    style R5 fill:#FFC107,color:#000000
+    style R6 fill:#FF9800,color:#FFFFFF
+    style R8 fill:#4CAF50,color:#FFFFFF
+    style CASCADE1 fill:#7B1FA2,color:#FFFFFF
+    style CAMP fill:#7B1FA2,color:#FFFFFF
+    style CAMP2 fill:#7B1FA2,color:#FFFFFF
+    style RSF fill:#7B1FA2,color:#FFFFFF
+    style COURT fill:#7B1FA2,color:#FFFFFF
+    style NORM fill:#7B1FA2,color:#FFFFFF
+    style MP_RISE fill:#7B1FA2,color:#FFFFFF
 ```
 
 ---

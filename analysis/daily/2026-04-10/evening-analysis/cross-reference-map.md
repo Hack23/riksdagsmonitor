@@ -44,15 +44,15 @@ graph TD
         M74["MP mot. 4074<br/>Youth HD024074"]
     end
 
-    style P235 fill:#dc3545,color:#fff
-    style P214 fill:#0d6efd,color:#fff
-    style P228 fill:#0d6efd,color:#fff
-    style SfU31 fill:#fd7e14,color:#fff
-    style SfU32 fill:#fd7e14,color:#fff
-    style SfU36 fill:#fd7e14,color:#fff
-    style M70 fill:#ffc107,color:#000
-    style M71 fill:#ffc107,color:#000
-    style M72 fill:#ffc107,color:#000
+    style P235 fill:#D32F2F,color:#FFFFFF
+    style P214 fill:#1565C0,color:#FFFFFF
+    style P228 fill:#1565C0,color:#FFFFFF
+    style SfU31 fill:#FF9800,color:#FFFFFF
+    style SfU32 fill:#FF9800,color:#FFFFFF
+    style SfU36 fill:#FF9800,color:#FFFFFF
+    style M70 fill:#FFC107,color:#000000
+    style M71 fill:#FFC107,color:#000000
+    style M72 fill:#FFC107,color:#000000
 ```
 
 ## Cross-Reference Clusters

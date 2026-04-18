@@ -68,11 +68,11 @@ flowchart TD
     SD -->|"Mosque hate speech<br/>frs 2025/26:430"| Forssmed["Forssmed (KD)<br/>Social"]:::blue
     C -->|"LGBTQI global rights<br/>frs 2025/26:431"| Dousa["Dousa (M)<br/>Aid & Trade"]:::blue
 
-    classDef red fill:#ff6b6b,stroke:#333,color:#000
-    classDef yellow fill:#ffd93d,stroke:#333,color:#000
-    classDef green fill:#6bcb77,stroke:#333,color:#000
-    classDef blue fill:#4d96ff,stroke:#333,color:#fff
-    classDef orange fill:#ff9f43,stroke:#333,color:#000
+    classDef red fill:#EF5350,stroke:#424242,color:#000000
+    classDef yellow fill:#FFC107,stroke:#424242,color:#000000
+    classDef green fill:#81C784,stroke:#424242,color:#000000
+    classDef blue fill:#2196F3,stroke:#424242,color:#FFFFFF
+    classDef orange fill:#ff9f43,stroke:#424242,color:#000000
 ```
 
 ## Election 2026 Implications

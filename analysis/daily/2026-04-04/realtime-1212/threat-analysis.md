@@ -30,12 +30,12 @@ graph TD
             PT2["Opposition<br/>Ethics Critique"]
         end
     end
-    style ET1 fill:#dc3545,stroke:#333,color:#fff
-    style ET2 fill:#ffc107,stroke:#333,color:#000
-    style IT1 fill:#dc3545,stroke:#333,color:#fff
-    style IT2 fill:#fd7e14,stroke:#333,color:#fff
-    style PT1 fill:#ffc107,stroke:#333,color:#000
-    style PT2 fill:#28a745,stroke:#333,color:#fff
+    style ET1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style ET2 fill:#FFC107,stroke:#424242,color:#000000
+    style IT1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style IT2 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style PT1 fill:#FFC107,stroke:#424242,color:#000000
+    style PT2 fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ---

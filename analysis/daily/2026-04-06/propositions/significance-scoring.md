@@ -23,10 +23,10 @@ graph LR
     HD03228 --> UU["UU Committee"]
     HD03214 --> FoU["FöU Committee"]
     HD03216 --> SoU["SoU Committee"]
-    style HD03235 fill:#ff6b6b,color:#000
-    style HD03228 fill:#ffd93d,color:#000
-    style HD03214 fill:#ffd93d,color:#000
-    style HD03216 fill:#6bcb77,color:#000
+    style HD03235 fill:#EF5350,color:#000000
+    style HD03228 fill:#FFC107,color:#000000
+    style HD03214 fill:#FFC107,color:#000000
+    style HD03216 fill:#81C784,color:#000000
 ```
 
 ## Detailed Analysis

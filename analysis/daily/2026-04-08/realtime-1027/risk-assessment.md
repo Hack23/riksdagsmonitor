@@ -18,11 +18,11 @@ graph TB
         R5["R5: Aid credibility erosion<br/>L:2 I:2 Score:4"]
     end
     
-    style R1 fill:#dc3545,stroke:#333,color:#fff
-    style R2 fill:#ffc107,stroke:#333,color:#000
-    style R3 fill:#ffc107,stroke:#333,color:#000
-    style R4 fill:#28a745,stroke:#333,color:#fff
-    style R5 fill:#28a745,stroke:#333,color:#fff
+    style R1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R2 fill:#FFC107,stroke:#424242,color:#000000
+    style R3 fill:#FFC107,stroke:#424242,color:#000000
+    style R4 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style R5 fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ## Detailed Risk Register

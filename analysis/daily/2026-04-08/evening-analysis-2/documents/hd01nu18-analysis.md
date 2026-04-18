@@ -24,11 +24,11 @@ graph LR
     C --> D["Riksdag<br/>Vote"]
     D --> E["Implementation<br/>in Swedish Law"]
 
-    style A fill:#6f42c1,color:#fff
-    style B fill:#0d6efd,color:#fff
-    style C fill:#ffc107,color:#000
-    style D fill:#28a745,color:#fff
-    style E fill:#28a745,color:#fff
+    style A fill:#7B1FA2,color:#FFFFFF
+    style B fill:#1565C0,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#4CAF50,color:#FFFFFF
+    style E fill:#4CAF50,color:#FFFFFF
 ```
 
 ## SWOT Analysis

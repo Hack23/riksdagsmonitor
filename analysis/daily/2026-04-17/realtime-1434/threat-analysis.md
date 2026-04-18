@@ -42,11 +42,11 @@ graph TD
     A3 --> A3a
     A3 --> A3b
 
-    style GOAL fill:#dc3545,color:#fff
-    style A1 fill:#fd7e14,color:#fff
-    style A2 fill:#fd7e14,color:#fff
-    style A3 fill:#fd7e14,color:#fff
-    style A4 fill:#ffc107,color:#000
+    style GOAL fill:#D32F2F,color:#FFFFFF
+    style A1 fill:#FF9800,color:#FFFFFF
+    style A2 fill:#FF9800,color:#FFFFFF
+    style A3 fill:#FF9800,color:#FFFFFF
+    style A4 fill:#FFC107,color:#000000
 ```
 
 ---
@@ -146,13 +146,13 @@ flowchart LR
 
     RE --> WE --> DE --> EX --> IN --> CC --> AC
 
-    style RE fill:#0d6efd,color:#fff
-    style WE fill:#6f42c1,color:#fff
-    style DE fill:#fd7e14,color:#fff
-    style EX fill:#dc3545,color:#fff
-    style IN fill:#dc3545,color:#fff
-    style CC fill:#dc3545,color:#fff
-    style AC fill:#dc3545,color:#fff
+    style RE fill:#1565C0,color:#FFFFFF
+    style WE fill:#7B1FA2,color:#FFFFFF
+    style DE fill:#FF9800,color:#FFFFFF
+    style EX fill:#D32F2F,color:#FFFFFF
+    style IN fill:#D32F2F,color:#FFFFFF
+    style CC fill:#D32F2F,color:#FFFFFF
+    style AC fill:#D32F2F,color:#FFFFFF
 ```
 
 ### Kill-Chain Specific Indicators (for SÄPO / MSB)
@@ -186,10 +186,10 @@ graph TD
     INF -->|targets| VIC
     ADV -->|directs at| VIC
 
-    style ADV fill:#dc3545,color:#fff
-    style CAP fill:#fd7e14,color:#fff
-    style INF fill:#6f42c1,color:#fff
-    style VIC fill:#0d6efd,color:#fff
+    style ADV fill:#D32F2F,color:#FFFFFF
+    style CAP fill:#FF9800,color:#FFFFFF
+    style INF fill:#7B1FA2,color:#FFFFFF
+    style VIC fill:#1565C0,color:#FFFFFF
 ```
 
 **Confidence**: HIGH — mapping consistent with SÄPO annual assessments (2023–25) and FOI / Nordic-Baltic intelligence-sharing findings.

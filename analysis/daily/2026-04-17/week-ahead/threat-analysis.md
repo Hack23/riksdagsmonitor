@@ -31,11 +31,11 @@ graph TD
     E --> E2[KU platform amplifying opposition research]
     E --> E3[Media framing: government vs vulnerable citizens]
 
-    style B1 fill:#ff4444,color:#fff
-    style B2 fill:#ff4444,color:#fff
-    style C1 fill:#ff8800,color:#fff
-    style E1 fill:#ff8800,color:#fff
-    style E3 fill:#ff8800,color:#fff
+    style B1 fill:#EF5350,color:#FFFFFF
+    style B2 fill:#EF5350,color:#FFFFFF
+    style C1 fill:#F57C00,color:#FFFFFF
+    style E1 fill:#F57C00,color:#FFFFFF
+    style E3 fill:#F57C00,color:#FFFFFF
 ```
 
 ---

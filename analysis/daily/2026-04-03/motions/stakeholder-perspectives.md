@@ -20,14 +20,14 @@ flowchart LR
         JUD["⚖️ Judiciary/Constitutional<br/>Impact: LOW"]
         MED["📰 Media/Public Opinion<br/>Impact: MEDIUM"]
     end
-    style CIT fill:#dc3545,color:#fff
-    style GOV fill:#fd7e14,color:#fff
-    style OPP fill:#dc3545,color:#fff
-    style BIZ fill:#28a745,color:#fff
-    style CIV fill:#ffc107,color:#000
-    style INT fill:#28a745,color:#fff
-    style JUD fill:#28a745,color:#fff
-    style MED fill:#ffc107,color:#000
+    style CIT fill:#D32F2F,color:#FFFFFF
+    style GOV fill:#FF9800,color:#FFFFFF
+    style OPP fill:#D32F2F,color:#FFFFFF
+    style BIZ fill:#4CAF50,color:#FFFFFF
+    style CIV fill:#FFC107,color:#000000
+    style INT fill:#4CAF50,color:#FFFFFF
+    style JUD fill:#4CAF50,color:#FFFFFF
+    style MED fill:#FFC107,color:#000000
 ```
 
 ### 1. Citizens

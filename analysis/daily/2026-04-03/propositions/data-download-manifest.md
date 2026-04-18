@@ -31,13 +31,13 @@ graph LR
     DOC2 --> ANALYSIS
     DOC3 --> ANALYSIS
     ANALYSIS --> OUTPUT
-    style MCP fill:#0d6efd,color:#fff
-    style PROP fill:#6f42c1,color:#fff
-    style DOC1 fill:#28a745,color:#fff
-    style DOC2 fill:#28a745,color:#fff
-    style DOC3 fill:#28a745,color:#fff
-    style ANALYSIS fill:#fd7e14,color:#fff
-    style OUTPUT fill:#dc3545,color:#fff
+    style MCP fill:#1565C0,color:#FFFFFF
+    style PROP fill:#7B1FA2,color:#FFFFFF
+    style DOC1 fill:#4CAF50,color:#FFFFFF
+    style DOC2 fill:#4CAF50,color:#FFFFFF
+    style DOC3 fill:#4CAF50,color:#FFFFFF
+    style ANALYSIS fill:#FF9800,color:#FFFFFF
+    style OUTPUT fill:#D32F2F,color:#FFFFFF
 ```
 
 ## 📋 Data Sources Used

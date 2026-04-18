@@ -71,12 +71,12 @@ flowchart TD
     B & C & E --> F[Progressive Bloc<br/>Joint: R12,R13,R18]:::joint
     B & D --> G[S-C Cooperation<br/>Joint: R7]:::joint
     
-    classDef committee fill:#e17055,stroke:#333,color:#fff
-    classDef sParty fill:#e74c3c,stroke:#333,color:#fff
-    classDef vParty fill:#e74c3c,stroke:#333,color:#fff
-    classDef cParty fill:#27ae60,stroke:#333,color:#fff
-    classDef mpParty fill:#2ecc71,stroke:#333,color:#fff
-    classDef joint fill:#f39c12,stroke:#333,color:#000
+    classDef committee fill:#FF5722,stroke:#424242,color:#FFFFFF
+    classDef sParty fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    classDef vParty fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    classDef cParty fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    classDef mpParty fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    classDef joint fill:#FF9800,stroke:#424242,color:#000000
 ```
 
 ---

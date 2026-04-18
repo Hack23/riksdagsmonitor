@@ -23,11 +23,11 @@ graph TD
     B --> C["Riksdag Vote"]
     A --> D["SOU 2024 Inquiry<br/>Foundation"]
     A --> E["Public Trust<br/>Accountability signal"]
-    style A fill:#fd7e14,color:#fff
-    style B fill:#6c757d,color:#fff
-    style C fill:#ffc107,color:#000
-    style D fill:#0d6efd,color:#fff
-    style E fill:#28a745,color:#fff
+    style A fill:#FF9800,color:#FFFFFF
+    style B fill:#9E9E9E,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#1565C0,color:#FFFFFF
+    style E fill:#4CAF50,color:#FFFFFF
 ```
 
 ## SWOT Analysis

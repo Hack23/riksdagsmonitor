@@ -50,13 +50,13 @@ graph TD
             ELEC["Election 2026 Impact: MEDIUM"]
         end
     end
-    style MP fill:#28a745,color:#fff
-    style V fill:#dc3545,color:#fff
-    style S fill:#fd7e14,color:#fff
-    style C fill:#ffc107,color:#000
-    style COAL fill:#28a745,color:#fff
-    style OPPO fill:#ffc107,color:#000
-    style ELEC fill:#ffc107,color:#000
+    style MP fill:#4CAF50,color:#FFFFFF
+    style V fill:#D32F2F,color:#FFFFFF
+    style S fill:#FF9800,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style COAL fill:#4CAF50,color:#FFFFFF
+    style OPPO fill:#FFC107,color:#000000
+    style ELEC fill:#FFC107,color:#000000
 ```
 
 ## Summary

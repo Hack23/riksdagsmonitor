@@ -74,11 +74,11 @@ graph LR
     FOU12 -->|"emergency response"| FOU11
     FOU12 -->|"supply preparedness"| HD205
 
-    style FOU12 fill:#dc3545,color:#fff
-    style HD214 fill:#0d6efd,color:#fff
-    style HD228 fill:#28a745,color:#fff
-    style FOU11 fill:#fd7e14,color:#fff
-    style HD205 fill:#ffc107,color:#000
+    style FOU12 fill:#D32F2F,color:#FFFFFF
+    style HD214 fill:#1565C0,color:#FFFFFF
+    style HD228 fill:#4CAF50,color:#FFFFFF
+    style FOU11 fill:#FF9800,color:#FFFFFF
+    style HD205 fill:#FFC107,color:#000000
 ```
 
 ---

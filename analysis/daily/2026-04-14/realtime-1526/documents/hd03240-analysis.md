@@ -25,11 +25,11 @@ graph TD
     A -->|"Enables"| E["Electrification<br/>& Green Transition"]
     A -->|"Linked to"| F["Prop 239: Vindkraft"]
     A -->|"Requires"| G["Prop 238: Miljöprövning"]
-    style A fill:#ff6b6b,color:#fff
-    style B fill:#4d96ff,color:#fff
-    style E fill:#6bcb77,color:#fff
-    style F fill:#ffd93d,color:#000
-    style G fill:#ffd93d,color:#000
+    style A fill:#EF5350,color:#FFFFFF
+    style B fill:#2196F3,color:#FFFFFF
+    style E fill:#81C784,color:#FFFFFF
+    style F fill:#FFC107,color:#000000
+    style G fill:#FFC107,color:#000000
 ```
 
 ## 6-Lens Analysis

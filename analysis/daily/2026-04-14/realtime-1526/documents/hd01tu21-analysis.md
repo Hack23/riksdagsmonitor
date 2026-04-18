@@ -23,10 +23,10 @@ graph TD
     A -->|"Supports"| D["Digital Government<br/>Services"]
     A -->|"Counters"| E["Fraud Prevention"]
     A -->|"Links to"| F["Bet TU17: Anti-fraud"]
-    style A fill:#4d96ff,color:#fff
-    style B fill:#ff6b6b,color:#fff
-    style C fill:#6bcb77,color:#fff
-    style D fill:#6bcb77,color:#fff
+    style A fill:#2196F3,color:#FFFFFF
+    style B fill:#EF5350,color:#FFFFFF
+    style C fill:#81C784,color:#FFFFFF
+    style D fill:#81C784,color:#FFFFFF
 ```
 
 ## 6-Lens Analysis

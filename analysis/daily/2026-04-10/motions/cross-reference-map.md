@@ -50,11 +50,11 @@ graph TD
     HD024014["S: mot. 4014"] --> P177
     HD024039["C: mot. 4039"] --> S90
 
-    style P227 fill:#dc3545,stroke:#333,color:#fff
-    style S226 fill:#fd7e14,stroke:#333,color:#fff
-    style P207 fill:#ffc107,stroke:#333,color:#000
-    style P188 fill:#28a745,stroke:#333,color:#fff
-    style P184 fill:#6c757d,stroke:#333,color:#fff
+    style P227 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style S226 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style P207 fill:#FFC107,stroke:#424242,color:#000000
+    style P188 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style P184 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
 ```
 
 ## Cross-Party Clusters

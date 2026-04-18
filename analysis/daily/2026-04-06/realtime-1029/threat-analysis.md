@@ -27,12 +27,12 @@ graph LR
 
     AC --> AC1["Shelter renovation + prison expansion<br/>commitments require monitoring"]
 
-    style NI fill:#28a745,color:#fff
-    style LI fill:#28a745,color:#fff
-    style AC fill:#ffc107,color:#000
-    style TR fill:#28a745,color:#fff
-    style DP fill:#28a745,color:#fff
-    style PB fill:#28a745,color:#fff
+    style NI fill:#4CAF50,color:#FFFFFF
+    style LI fill:#4CAF50,color:#FFFFFF
+    style AC fill:#FFC107,color:#000000
+    style TR fill:#4CAF50,color:#FFFFFF
+    style DP fill:#4CAF50,color:#FFFFFF
+    style PB fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

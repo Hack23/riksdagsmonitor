@@ -21,17 +21,17 @@
 ```mermaid
 flowchart TD
     subgraph Legislative["Legislative Threats"]
-        style LT1 fill:#ff4444,color:#fff
+        style LT1 fill:#EF5350,color:#FFFFFF
         LT1["SfU22: Constitutional\nChallenge Risk"]
         LT2["TU21: EU Deadline\nPressure"]
     end
     subgraph Implementation["Implementation Threats"]
-        style IT1 fill:#ffaa00,color:#000
+        style IT1 fill:#FFA000,color:#000000
         IT1["e-ID Technical\nBuild-out"]
         IT2["Telecom Operator\nCompliance"]
     end
     subgraph Political["Political Threats"]
-        style PT1 fill:#ff6b6b,color:#fff
+        style PT1 fill:#EF5350,color:#FFFFFF
         PT1["Immigration\nPolarization"]
         PT2["Opposition\nLegal Challenge"]
     end

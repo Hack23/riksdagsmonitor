@@ -32,12 +32,12 @@ graph LR
     DP --> DP1[Normal written question process]
     PB --> PB1[No power concentration risk]
 
-    style NI fill:#28a745,color:#fff
-    style LI fill:#28a745,color:#fff
-    style AC fill:#28a745,color:#fff
-    style TR fill:#28a745,color:#fff
-    style DP fill:#28a745,color:#fff
-    style PB fill:#28a745,color:#fff
+    style NI fill:#4CAF50,color:#FFFFFF
+    style LI fill:#4CAF50,color:#FFFFFF
+    style AC fill:#4CAF50,color:#FFFFFF
+    style TR fill:#4CAF50,color:#FFFFFF
+    style DP fill:#4CAF50,color:#FFFFFF
+    style PB fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Threat Assessment

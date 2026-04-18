@@ -20,12 +20,12 @@ graph TD
     R4 -->|amplifies| R2
     R3 -->|compounds| R1
 
-    style R1 fill:#ff0000,color:#fff
-    style R2 fill:#ff6b35,color:#fff
-    style R3 fill:#ff6b35,color:#fff
-    style R4 fill:#ff6b35,color:#fff
-    style R5 fill:#ffd93d,color:#000
-    style R6 fill:#ffd93d,color:#000
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FF5722,color:#FFFFFF
+    style R3 fill:#FF5722,color:#FFFFFF
+    style R4 fill:#FF5722,color:#FFFFFF
+    style R5 fill:#FFC107,color:#000000
+    style R6 fill:#FFC107,color:#000000
 ```
 
 ## Detailed Risk Analysis

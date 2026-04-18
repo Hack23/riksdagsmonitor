@@ -170,16 +170,16 @@ graph TB
     T1 --> T2 & T3 & T4 & T5 & T6 & T7
     T2 & T3 & T4 & T5 & T6 & T7 --> T8
 
-    style RAW fill:#6c757d,color:#fff,stroke:#495057,stroke-width:2px
-    style META fill:#6c757d,color:#fff,stroke:#495057,stroke-width:2px
-    style T1 fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:3px
-    style T2 fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
-    style T3 fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
-    style T4 fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
-    style T5 fill:#d63384,color:#fff,stroke:#ab296a,stroke-width:2px
-    style T6 fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
-    style T7 fill:#0dcaf0,color:#000,stroke:#0aa2c0,stroke-width:2px
-    style T8 fill:#ffc107,color:#000,stroke:#cc9a06,stroke-width:3px
+    style RAW fill:#9E9E9E,color:#FFFFFF,stroke:#616161,stroke-width:2px
+    style META fill:#9E9E9E,color:#FFFFFF,stroke:#616161,stroke-width:2px
+    style T1 fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:3px
+    style T2 fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:2px
+    style T3 fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
+    style T4 fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
+    style T5 fill:#C2185B,color:#FFFFFF,stroke:#880E4F,stroke-width:2px
+    style T6 fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style T7 fill:#2196F3,color:#000000,stroke:#0097A7,stroke-width:2px
+    style T8 fill:#FFC107,color:#000000,stroke:#FFA000,stroke-width:3px
 ```
 
 ---
@@ -214,15 +214,15 @@ graph LR
     PFI -->|"per-document analysis"| SYN
     SYN -->|"editorial direction"| ART["📰 Article<br/>Generator"]
 
-    style CLS fill:#6f42c1,color:#fff,stroke:#59359a
-    style RSK fill:#dc3545,color:#fff,stroke:#bd2130
-    style THR fill:#343a40,color:#fff,stroke:#23272b
-    style SWT fill:#0d6efd,color:#fff,stroke:#0a58ca
-    style STK fill:#20c997,color:#fff,stroke:#199d76
-    style SIG fill:#ffc107,color:#000,stroke:#d39e00
-    style PFI fill:#28a745,color:#fff,stroke:#1e7e34
-    style SYN fill:#fd7e14,color:#fff,stroke:#c96009
-    style ART fill:#003399,color:#fff,stroke:#002266
+    style CLS fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C
+    style RSK fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
+    style THR fill:#424242,color:#FFFFFF,stroke:#212121
+    style SWT fill:#1565C0,color:#FFFFFF,stroke:#0D47A1
+    style STK fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
+    style SIG fill:#FFC107,color:#000000,stroke:#FFA000
+    style PFI fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
+    style SYN fill:#FF9800,color:#FFFFFF,stroke:#F57C00
+    style ART fill:#0D47A1,color:#FFFFFF,stroke:#0D47A1
 ```
 
 ---
@@ -263,14 +263,14 @@ flowchart LR
     DOC --> STAKE_S["👥 Stakeholders"]
     DOC --> SIG_S["📈 Significance"]
 
-    style DOC fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
-    style EXEC fill:#198754,color:#fff,stroke:#146c43
-    style CLASS_S fill:#fd7e14,color:#fff,stroke:#ca6510
-    style SWOT_S fill:#ffc107,color:#000,stroke:#cc9a06
-    style THREAT_S fill:#dc3545,color:#fff,stroke:#b02a37
-    style RISK_S fill:#d63384,color:#fff,stroke:#ab296a
-    style STAKE_S fill:#0dcaf0,color:#000,stroke:#0aa2c0
-    style SIG_S fill:#6f42c1,color:#fff,stroke:#59359a
+    style DOC fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style EXEC fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32
+    style CLASS_S fill:#FF9800,color:#FFFFFF,stroke:#F57C00
+    style SWOT_S fill:#FFC107,color:#000000,stroke:#FFA000
+    style THREAT_S fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
+    style RISK_S fill:#C2185B,color:#FFFFFF,stroke:#880E4F
+    style STAKE_S fill:#2196F3,color:#000000,stroke:#0097A7
+    style SIG_S fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C
 ```
 
 ---
@@ -314,10 +314,10 @@ graph LR
 
     L --> M --> H --> C
 
-    style L fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
-    style M fill:#ffc107,color:#000,stroke:#cc9a06,stroke-width:2px
-    style H fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
-    style C fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
+    style L fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:2px
+    style M fill:#FFC107,color:#000000,stroke:#FFA000,stroke-width:2px
+    style H fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
+    style C fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
 ```
 
 ---
@@ -366,14 +366,14 @@ graph TD
         AT & KC & DM & AP --> DEEP["✅ Actionable<br/>intelligence"]
     end
 
-    style STRIDE fill:#dc3545,color:#fff,stroke:#b02a37
-    style STRIDE_OUT fill:#dc3545,color:#fff,stroke:#b02a37
-    style MULTI fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
-    style AT fill:#0d6efd,color:#fff,stroke:#0a58ca
-    style KC fill:#fd7e14,color:#fff,stroke:#ca6510
-    style DM fill:#6f42c1,color:#fff,stroke:#59359a
-    style AP fill:#d63384,color:#fff,stroke:#ab296a
-    style DEEP fill:#198754,color:#fff,stroke:#146c43
+    style STRIDE fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
+    style STRIDE_OUT fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
+    style MULTI fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:2px
+    style AT fill:#1565C0,color:#FFFFFF,stroke:#0D47A1
+    style KC fill:#FF9800,color:#FFFFFF,stroke:#F57C00
+    style DM fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C
+    style AP fill:#C2185B,color:#FFFFFF,stroke:#880E4F
+    style DEEP fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32
 ```
 
 ---
@@ -437,17 +437,17 @@ flowchart TB
     A1 & A2 & A3 & AN --> XREF & PATTERN & CONFLICT
     XREF & PATTERN & CONFLICT --> EXEC_S & FIND & RISK_O & OUTLOOK
 
-    style A1 fill:#0d6efd,color:#fff,stroke:#0a58ca
-    style A2 fill:#0d6efd,color:#fff,stroke:#0a58ca
-    style A3 fill:#0d6efd,color:#fff,stroke:#0a58ca
-    style AN fill:#0d6efd,color:#fff,stroke:#0a58ca
-    style XREF fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
-    style PATTERN fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
-    style CONFLICT fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
-    style EXEC_S fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
-    style FIND fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
-    style RISK_O fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
-    style OUTLOOK fill:#ffc107,color:#000,stroke:#cc9a06,stroke-width:2px
+    style A1 fill:#1565C0,color:#FFFFFF,stroke:#0D47A1
+    style A2 fill:#1565C0,color:#FFFFFF,stroke:#0D47A1
+    style A3 fill:#1565C0,color:#FFFFFF,stroke:#0D47A1
+    style AN fill:#1565C0,color:#FFFFFF,stroke:#0D47A1
+    style XREF fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style PATTERN fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style CONFLICT fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style EXEC_S fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:2px
+    style FIND fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:2px
+    style RISK_O fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
+    style OUTLOOK fill:#FFC107,color:#000000,stroke:#FFA000,stroke-width:2px
 ```
 
 ---
@@ -571,18 +571,18 @@ graph TB
         IP_T3["👥 Stakeholder<br/><b>Focus: minister responses</b>"]
     end
 
-    style CR_T1 fill:#198754,color:#fff,stroke:#146c43
-    style CR_T2 fill:#198754,color:#fff,stroke:#146c43
-    style CR_T3 fill:#198754,color:#fff,stroke:#146c43
-    style PR_T1 fill:#0d6efd,color:#fff,stroke:#0a58ca
-    style PR_T2 fill:#0d6efd,color:#fff,stroke:#0a58ca
-    style PR_T3 fill:#0d6efd,color:#fff,stroke:#0a58ca
-    style MO_T1 fill:#fd7e14,color:#fff,stroke:#ca6510
-    style MO_T2 fill:#fd7e14,color:#fff,stroke:#ca6510
-    style MO_T3 fill:#fd7e14,color:#fff,stroke:#ca6510
-    style IP_T1 fill:#dc3545,color:#fff,stroke:#b02a37
-    style IP_T2 fill:#dc3545,color:#fff,stroke:#b02a37
-    style IP_T3 fill:#dc3545,color:#fff,stroke:#b02a37
+    style CR_T1 fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32
+    style CR_T2 fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32
+    style CR_T3 fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32
+    style PR_T1 fill:#1565C0,color:#FFFFFF,stroke:#0D47A1
+    style PR_T2 fill:#1565C0,color:#FFFFFF,stroke:#0D47A1
+    style PR_T3 fill:#1565C0,color:#FFFFFF,stroke:#0D47A1
+    style MO_T1 fill:#FF9800,color:#FFFFFF,stroke:#F57C00
+    style MO_T2 fill:#FF9800,color:#FFFFFF,stroke:#F57C00
+    style MO_T3 fill:#FF9800,color:#FFFFFF,stroke:#F57C00
+    style IP_T1 fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
+    style IP_T2 fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
+    style IP_T3 fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
 ```
 
 ### Unique Template Sections by Article Type
@@ -644,10 +644,10 @@ flowchart TD
     D --> AI["🤖 AI cross-article synthesis\nanalysis/daily/YYYY-MM-DD/synthesis-summary.md"]
     AI --> W
 
-    style D fill:#198754,stroke:#146c43,color:#fff
-    style W fill:#0d6efd,stroke:#0a58ca,color:#fff
-    style M fill:#6f42c1,stroke:#59359a,color:#fff
-    style AI fill:#fd7e14,stroke:#ca6510,color:#fff
+    style D fill:#2E7D32,stroke:#2E7D32,color:#FFFFFF
+    style W fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
+    style M fill:#7B1FA2,stroke:#4A148C,color:#FFFFFF
+    style AI fill:#FF9800,stroke:#F57C00,color:#FFFFFF
 ```
 
 | Scope | Format | Example | Cadence |

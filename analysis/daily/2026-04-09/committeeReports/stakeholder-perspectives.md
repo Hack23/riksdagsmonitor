@@ -19,7 +19,7 @@
 ## Stakeholder Impact Diagram
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'quadrant1Fill': '#1565C0', 'quadrant2Fill': '#2E7D32', 'quadrant3Fill': '#FF9800', 'quadrant4Fill': '#D32F2F', 'quadrant1TextFill': '#ffffff', 'quadrant2TextFill': '#ffffff', 'quadrant3TextFill': '#ffffff', 'quadrant4TextFill': '#ffffff', 'quadrantPointFill': '#ffffff', 'quadrantPointTextFill': '#000000'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'quadrant1Fill': '#1565C0', 'quadrant2Fill': '#2E7D32', 'quadrant3Fill': '#FF9800', 'quadrant4Fill': '#D32F2F', 'quadrant1TextFill': '#FFFFFF', 'quadrant2TextFill': '#FFFFFF', 'quadrant3TextFill': '#FFFFFF', 'quadrant4TextFill': '#FFFFFF', 'quadrantPointFill': '#FFFFFF', 'quadrantPointTextFill': '#000000'}}}%%
 quadrantChart
     title Stakeholder Impact vs Influence on Committee Reports
     x-axis Low Influence --> High Influence

@@ -21,10 +21,10 @@ graph TD
     T3 --> E3["Minority language protection<br/>deemed insufficient (KU31)"]
     T4 --> E4["Climate targets postponed<br/>to June (MJU30)"]
     
-    style T1 fill:#fd7e14,color:#fff
-    style T2 fill:#28a745,color:#fff
-    style T3 fill:#fd7e14,color:#fff
-    style T4 fill:#28a745,color:#fff
+    style T1 fill:#FF9800,color:#FFFFFF
+    style T2 fill:#4CAF50,color:#FFFFFF
+    style T3 fill:#FF9800,color:#FFFFFF
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Threat Register

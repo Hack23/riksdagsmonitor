@@ -40,10 +40,10 @@ graph LR
     A --> I{"Urgency"}
     I -->|"🔵 ELEVATED"| L["Active policy area<br/>Multiple related proposals"]
     
-    style A fill:#ff006e,color:#fff
-    style E fill:#00d9ff,color:#000
-    style H fill:#00d9ff,color:#000
-    style L fill:#00d9ff,color:#000
+    style A fill:#ff006e,color:#FFFFFF
+    style E fill:#00d9ff,color:#000000
+    style H fill:#00d9ff,color:#000000
+    style L fill:#00d9ff,color:#000000
 ```
 
 ---
@@ -85,10 +85,10 @@ graph TD
     R1["R1: Prison Capacity Crisis<br/>L:4 × I:4 = 16"] --> M1["Emergency capacity<br/>expansion funding"]
     R2["R2: Rehabilitation Underfunding<br/>L:3 × I:3 = 9"] --> M2["Earmarked budget<br/>for Kriminalvården"]
     
-    style R1 fill:#ff006e,color:#fff
-    style R2 fill:#ffbe0b,color:#000
-    style M1 fill:#00d9ff,color:#000
-    style M2 fill:#00d9ff,color:#000
+    style R1 fill:#ff006e,color:#FFFFFF
+    style R2 fill:#ffbe0b,color:#000000
+    style M1 fill:#00d9ff,color:#000000
+    style M2 fill:#00d9ff,color:#000000
 ```
 
 | Risk ID | Risk | Likelihood (1-5) | Impact (1-5) | Score | Mitigation |

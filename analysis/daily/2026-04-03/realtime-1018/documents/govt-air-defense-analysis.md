@@ -35,9 +35,9 @@ graph LR
     A --> I{Urgency}
     I -->|"🟠 URGENT"| K["Major procurement<br/>announcement"]
 
-    style C fill:#dc3545,color:#fff
-    style H fill:#dc3545,color:#fff
-    style K fill:#fd7e14,color:#fff
+    style C fill:#D32F2F,color:#FFFFFF
+    style H fill:#D32F2F,color:#FFFFFF
+    style K fill:#FF9800,color:#FFFFFF
 ```
 
 | Dimension | Classification | Rationale |

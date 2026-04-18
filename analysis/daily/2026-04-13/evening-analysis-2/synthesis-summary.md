@@ -45,18 +45,18 @@ graph TD
             E3["🟡 SD coalition stress test<br/>HD10429 + HD10430 accountability push"]
         end
     end
-    style S1 fill:#dc3545,stroke:#333,color:#fff
-    style S2 fill:#ffc107,stroke:#333,color:#000
-    style S3 fill:#28a745,stroke:#333,color:#fff
-    style R1 fill:#dc3545,stroke:#333,color:#fff
-    style R2 fill:#fd7e14,stroke:#333,color:#fff
-    style R3 fill:#ffc107,stroke:#333,color:#000
-    style CA1 fill:#0d6efd,stroke:#333,color:#fff
-    style CA2 fill:#0d6efd,stroke:#333,color:#fff
-    style CA3 fill:#ffc107,stroke:#333,color:#000
-    style E1 fill:#dc3545,stroke:#333,color:#fff
-    style E2 fill:#fd7e14,stroke:#333,color:#fff
-    style E3 fill:#ffc107,stroke:#333,color:#000
+    style S1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style S2 fill:#FFC107,stroke:#424242,color:#000000
+    style S3 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style R1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R2 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style R3 fill:#FFC107,stroke:#424242,color:#000000
+    style CA1 fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style CA2 fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style CA3 fill:#FFC107,stroke:#424242,color:#000000
+    style E1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style E2 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style E3 fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ## 🔑 Top Findings (Cross-Type Synthesis — Updated 18:30 UTC)

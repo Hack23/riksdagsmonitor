@@ -42,11 +42,11 @@ graph TD
     RSK --> THR
     SIG --> STK
 
-    style SEN fill:#ffc107,color:#000
-    style RSK fill:#ffc107,color:#000
-    style THR fill:#ffc107,color:#000
-    style SIG fill:#fd7e14,color:#fff
-    style STK fill:#fd7e14,color:#fff
+    style SEN fill:#FFC107,color:#000000
+    style RSK fill:#FFC107,color:#000000
+    style THR fill:#FFC107,color:#000000
+    style SIG fill:#FF9800,color:#FFFFFF
+    style STK fill:#FF9800,color:#FFFFFF
 ```
 
 ---
@@ -77,10 +77,10 @@ graph LR
         C --> D["Implementation<br/>Gap Visible"]
     end
 
-    style A fill:#28a745,color:#fff
-    style B fill:#ffc107,color:#000
-    style C fill:#dc3545,color:#fff
-    style D fill:#dc3545,color:#fff
+    style A fill:#4CAF50,color:#FFFFFF
+    style B fill:#FFC107,color:#000000
+    style C fill:#D32F2F,color:#FFFFFF
+    style D fill:#D32F2F,color:#FFFFFF
 ```
 
 The juxtaposition of HD03235 (stricter deportation rules) and HD01JuU15 (prison system capacity crisis) reveals a **policy-implementation gap**: the government is legislating tougher enforcement while the system to enforce it is already at breaking point.
@@ -110,12 +110,12 @@ graph TD
     R3 -->|"combined with"| R6
     R6 -->|"escalates to"| R7["R7: Electoral Damage<br/>(latent)"]
 
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#ffc107,color:#000
-    style R6 fill:#28a745,color:#fff
-    style R7 fill:#dc3545,color:#fff
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FFC107,color:#000000
+    style R6 fill:#4CAF50,color:#FFFFFF
+    style R7 fill:#D32F2F,color:#FFFFFF
 ```
 
 ---

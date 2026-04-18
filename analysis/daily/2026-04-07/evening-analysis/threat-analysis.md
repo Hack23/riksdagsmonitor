@@ -17,14 +17,14 @@ graph TD
         T3["Foreign Policy<br/>Severity: 2/5"] --> T3a["Export control<br/>geopolitics"]
         T4["Social Cohesion<br/>Severity: 3/5"] --> T4a["Mosque debate<br/>polarisation"]
     end
-    style T1 fill:#ffc107,color:#000
-    style T2 fill:#28a745,color:#fff
-    style T3 fill:#28a745,color:#fff
-    style T4 fill:#ffc107,color:#000
-    style T1a fill:#ffc107,color:#000
-    style T2a fill:#28a745,color:#fff
-    style T3a fill:#28a745,color:#fff
-    style T4a fill:#ffc107,color:#000
+    style T1 fill:#FFC107,color:#000000
+    style T2 fill:#4CAF50,color:#FFFFFF
+    style T3 fill:#4CAF50,color:#FFFFFF
+    style T4 fill:#FFC107,color:#000000
+    style T1a fill:#FFC107,color:#000000
+    style T2a fill:#4CAF50,color:#FFFFFF
+    style T3a fill:#4CAF50,color:#FFFFFF
+    style T4a fill:#FFC107,color:#000000
 ```
 
 ## Threat Categories

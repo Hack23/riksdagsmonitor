@@ -29,9 +29,9 @@ flowchart LR
     MJU30 --> STD
     KU38 --> STD
     
-    style MJU30 fill:#ffbe0b,color:#000
-    style KU38 fill:#ffbe0b,color:#000
-    style STD fill:#00d9ff,color:#000
+    style MJU30 fill:#ffbe0b,color:#000000
+    style KU38 fill:#ffbe0b,color:#000000
+    style STD fill:#00d9ff,color:#000000
 ```
 
 ## Detailed Scoring

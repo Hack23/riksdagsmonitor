@@ -31,9 +31,9 @@ graph LR
     A[HD01TU15] --> B[Sensitivity: PUBLIC]
     A --> C[Domain: Infrastructure INF]
     A --> D[Urgency: ROUTINE]
-    style B fill:#28a745,color:#ffffff
-    style C fill:#0d6efd,color:#ffffff
-    style D fill:#6c757d,color:#ffffff
+    style B fill:#4CAF50,color:#FFFFFF
+    style C fill:#1565C0,color:#FFFFFF
+    style D fill:#9E9E9E,color:#FFFFFF
 ```
 
 | Field | Assessment |

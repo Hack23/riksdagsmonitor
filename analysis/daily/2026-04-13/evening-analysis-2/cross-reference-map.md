@@ -31,16 +31,16 @@ graph LR
         MOT4015 -->|"S-MP bloc"| MOT4057
         SfU16 -->|"Tidö cluster"| MJU30
     end
-    style HD03100 fill:#dc3545,stroke:#333,color:#fff
-    style HD03236 fill:#dc3545,stroke:#333,color:#fff
-    style HD0399 fill:#dc3545,stroke:#333,color:#fff
-    style MJU30 fill:#fd7e14,stroke:#333,color:#fff
-    style SfU16 fill:#fd7e14,stroke:#333,color:#fff
-    style HD10429 fill:#ffc107,stroke:#333,color:#000
-    style HD10430 fill:#ffc107,stroke:#333,color:#000
-    style NU17 fill:#0d6efd,stroke:#333,color:#fff
-    style MOT4015 fill:#0d6efd,stroke:#333,color:#fff
-    style MOT4057 fill:#0d6efd,stroke:#333,color:#fff
+    style HD03100 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style HD03236 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style HD0399 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style MJU30 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style SfU16 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style HD10429 fill:#FFC107,stroke:#424242,color:#000000
+    style HD10430 fill:#FFC107,stroke:#424242,color:#000000
+    style NU17 fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style MOT4015 fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style MOT4057 fill:#1565C0,stroke:#424242,color:#FFFFFF
 ```
 
 ## 📋 Key Cross-Reference Pairs

@@ -25,10 +25,10 @@ graph TD
         SR["Social Risk<br/>Cash exclusion debate<br/>🟡 MEDIUM"]
     end
 
-    style CR fill:#28a745,color:#fff
-    style LR fill:#28a745,color:#fff
-    style PR fill:#ffc107,color:#000
-    style SR fill:#ffc107,color:#000
+    style CR fill:#4CAF50,color:#FFFFFF
+    style LR fill:#4CAF50,color:#FFFFFF
+    style PR fill:#FFC107,color:#000000
+    style SR fill:#FFC107,color:#000000
 ```
 
 ## 5×5 Risk Matrix

@@ -19,11 +19,11 @@ These three betänkanden form the **Tidö Agreement's final migration enforcemen
 
 ```mermaid
 graph TD
-    style TIDO fill:#c0392b,color:#fff
-    style SfU32 fill:#e74c3c,color:#fff
-    style SfU31 fill:#e67e22,color:#fff
-    style SfU36 fill:#d35400,color:#fff
-    style OUTCOME fill:#7f8c8d,color:#fff
+    style TIDO fill:#D32F2F,color:#FFFFFF
+    style SfU32 fill:#D32F2F,color:#FFFFFF
+    style SfU31 fill:#FF9800,color:#FFFFFF
+    style SfU36 fill:#F57C00,color:#FFFFFF
+    style OUTCOME fill:#9E9E9E,color:#FFFFFF
 
     TIDO[Tidö Agreement 2022<br/>Migration Chapter] --> SfU32
     TIDO --> SfU31

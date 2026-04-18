@@ -54,12 +54,12 @@ flowchart TD
     KU38 --> PARL
     KU38 --> CONST
     
-    style MJU30 fill:#00d9ff,color:#000
-    style KU38 fill:#ffbe0b,color:#000
-    style ENV fill:#00ff88,color:#000
-    style EU fill:#00ff88,color:#000
-    style PARL fill:#ff006e,color:#fff
-    style CONST fill:#ff006e,color:#fff
+    style MJU30 fill:#00d9ff,color:#000000
+    style KU38 fill:#ffbe0b,color:#000000
+    style ENV fill:#4CAF50,color:#000000
+    style EU fill:#4CAF50,color:#000000
+    style PARL fill:#ff006e,color:#FFFFFF
+    style CONST fill:#ff006e,color:#FFFFFF
 ```
 
 ## Key Findings
@@ -127,19 +127,19 @@ graph TD
         direction TB
         subgraph "🔒 Sensitivity"
             CLS["Sensitivity<br/>PUBLIC"]
-            style CLS fill:#28a745,color:#fff
+            style CLS fill:#4CAF50,color:#FFFFFF
         end
         subgraph "⚖️ Risk"
             RSK["Overall Risk<br/>MEDIUM<br/>Top: Migration policy<br/>opposition challenge"]
-            style RSK fill:#ffc107,color:#000
+            style RSK fill:#FFC107,color:#000000
         end
         subgraph "🎭 Threat"
             THR["Threat Level<br/>LOW<br/>Normal legislative cycle"]
-            style THR fill:#28a745,color:#fff
+            style THR fill:#4CAF50,color:#FFFFFF
         end
         subgraph "📈 Significance"
             SIG["Top Significance<br/>6/10<br/>Standard Article"]
-            style SIG fill:#ffc107,color:#000
+            style SIG fill:#FFC107,color:#000000
         end
     end
 
@@ -174,9 +174,9 @@ graph LR
     AU --> MIG
     CU --> CP
     CU --> VO
-    style MIG fill:#fd7e14,color:#fff
-    style CP fill:#28a745,color:#fff
-    style VO fill:#28a745,color:#fff
+    style MIG fill:#FF9800,color:#FFFFFF
+    style CP fill:#4CAF50,color:#FFFFFF
+    style VO fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Key Findings
@@ -273,11 +273,11 @@ graph TD
     THR --> DEC
     SIG --> DEC
 
-    style CLS fill:#ffc107,stroke:#333,stroke-width:2px,color:#000
-    style RSK fill:#fd7e14,stroke:#333,stroke-width:2px,color:#fff
-    style THR fill:#ffc107,stroke:#333,stroke-width:2px,color:#000
-    style SIG fill:#dc3545,stroke:#333,stroke-width:2px,color:#fff
-    style BRK fill:#dc3545,color:#fff
+    style CLS fill:#FFC107,stroke:#424242,stroke-width:2px,color:#000000
+    style RSK fill:#FF9800,stroke:#424242,stroke-width:2px,color:#FFFFFF
+    style THR fill:#FFC107,stroke:#424242,stroke-width:2px,color:#000000
+    style SIG fill:#D32F2F,stroke:#424242,stroke-width:2px,color:#FFFFFF
+    style BRK fill:#D32F2F,color:#FFFFFF
 ```
 
 ---
@@ -307,10 +307,10 @@ graph LR
         GT["🔴 Threats: 5 entries<br/>Top: Legal challenges,<br/>pre-election opposition framing"]
     end
 
-    style GS fill:#28a745,color:#fff
-    style GW fill:#ffc107,color:#000
-    style GO fill:#0d6efd,color:#fff
-    style GT fill:#dc3545,color:#fff
+    style GS fill:#4CAF50,color:#FFFFFF
+    style GW fill:#FFC107,color:#000000
+    style GO fill:#1565C0,color:#FFFFFF
+    style GT fill:#D32F2F,color:#FFFFFF
 ```
 
 ### Cross-Document Patterns
@@ -376,14 +376,14 @@ graph LR
         J --> M["HD03228: Military Export"]
         J --> N["HD03216: Municipal Health"]
     end
-    style A fill:#0d6efd,color:#fff
-    style D fill:#28a745,color:#fff
-    style H fill:#ffc107,color:#000
-    style J fill:#dc3545,color:#fff
-    style B fill:#0d6efd,color:#fff
-    style C fill:#0d6efd,color:#fff
-    style K fill:#dc3545,color:#fff
-    style L fill:#fd7e14,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style D fill:#4CAF50,color:#FFFFFF
+    style H fill:#FFC107,color:#000000
+    style J fill:#D32F2F,color:#FFFFFF
+    style B fill:#1565C0,color:#FFFFFF
+    style C fill:#1565C0,color:#FFFFFF
+    style K fill:#D32F2F,color:#FFFFFF
+    style L fill:#FF9800,color:#FFFFFF
 ```
 
 ## Top Findings
@@ -483,12 +483,12 @@ graph TD
         end
     end
 
-    style SEN1 fill:#28a745,color:#fff
-    style SEN2 fill:#ffc107,color:#000
-    style RSK1 fill:#ffc107,color:#000
-    style RSK2 fill:#fd7e14,color:#fff
-    style SIG1 fill:#007bff,color:#fff
-    style SIG2 fill:#dc3545,color:#fff
+    style SEN1 fill:#4CAF50,color:#FFFFFF
+    style SEN2 fill:#FFC107,color:#000000
+    style RSK1 fill:#FFC107,color:#000000
+    style RSK2 fill:#FF9800,color:#FFFFFF
+    style SIG1 fill:#1565C0,color:#FFFFFF
+    style SIG2 fill:#D32F2F,color:#FFFFFF
 ```
 
 ---
@@ -545,10 +545,10 @@ graph LR
     D --> E
     E --> F["Electoral risk<br/>2026"]
 
-    style A fill:#fd7e14,color:#fff
-    style C fill:#ffc107,color:#000
-    style E fill:#dc3545,color:#fff
-    style F fill:#dc3545,color:#fff
+    style A fill:#FF9800,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style E fill:#D32F2F,color:#FFFFFF
+    style F fill:#D32F2F,color:#FFFFFF
 ```
 
 ---
@@ -624,9 +624,9 @@ flowchart LR
     CWG --> Social
     Other --> Foreign
 
-    classDef kd fill:#1a73e8,color:#fff
-    classDef m fill:#003f87,color:#fff
-    classDef other fill:#666,color:#fff
+    classDef kd fill:#1565C0,color:#FFFFFF
+    classDef m fill:#0D47A1,color:#FFFFFF
+    classDef other fill:#616161,color:#FFFFFF
 ```
 
 ## Key Findings
@@ -717,11 +717,11 @@ flowchart LR
     end
     A --> B & C & D & E & F
     B & C & D & E & F --> G
-    style B fill:#dc3545,color:#fff
-    style C fill:#fd7e14,color:#fff
-    style D fill:#ffc107,color:#000
-    style E fill:#28a745,color:#fff
-    style F fill:#17a2b8,color:#fff
+    style B fill:#D32F2F,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style E fill:#4CAF50,color:#FFFFFF
+    style F fill:#0097A7,color:#FFFFFF
 ```
 
 ## 🏆 Top Findings by Significance
@@ -857,11 +857,11 @@ graph TD
     R --> T
     T --> SIG
     SIG --> D
-    style S fill:#fd7e14,color:#fff
-    style R fill:#fd7e14,color:#fff
-    style T fill:#ffc107,color:#000
-    style SIG fill:#dc3545,color:#fff
-    style D fill:#28a745,color:#fff
+    style S fill:#FF9800,color:#FFFFFF
+    style R fill:#FF9800,color:#FFFFFF
+    style T fill:#FFC107,color:#000000
+    style SIG fill:#D32F2F,color:#FFFFFF
+    style D fill:#4CAF50,color:#FFFFFF
 ```
 
 ## 📋 Top Documents by Significance
@@ -915,10 +915,10 @@ graph LR
     R1 -->|"delays"| R4
     R3 -->|"amplifies"| R2
     R2 -->|"opposition narrative"| R3
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#fd7e14,color:#fff
-    style R4 fill:#ffc107,color:#000
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FF9800,color:#FFFFFF
+    style R4 fill:#FFC107,color:#000000
 ```
 
 | Risk ID | Description | L | I | Score | Tier | Trend | Source |

@@ -48,8 +48,8 @@ graph TD
     
     HD10429 -.->|"thematic link:<br/>religious expression"| HD10430
     
-    style HD10429 fill:#FF5722,stroke:#333,color:#fff
-    style HD10430 fill:#FFC107,stroke:#333,color:#000
+    style HD10429 fill:#FF5722,stroke:#424242,color:#FFFFFF
+    style HD10430 fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ## Key Findings

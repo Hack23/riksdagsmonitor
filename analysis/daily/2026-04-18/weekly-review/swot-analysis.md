@@ -199,20 +199,20 @@ graph TD
     MP --> ENERGY
     C --> ENERGY
 
-    style GOV fill:#0d6efd,color:#fff
-    style SD fill:#fd7e14,color:#fff
-    style S fill:#dc3545,color:#fff
-    style V fill:#6f42c1,color:#fff
-    style MP fill:#28a745,color:#fff
-    style C fill:#20c997,color:#fff
-    style UKRAINE fill:#28a745,color:#fff
-    style NATO_eFP fill:#28a745,color:#fff
-    style JUU15 fill:#dc3545,color:#fff
-    style KU33 fill:#fd7e14,color:#fff
-    style KU32 fill:#28a745,color:#fff
-    style MIGR fill:#dc3545,color:#fff
-    style BUDGET fill:#fd7e14,color:#fff
-    style ENERGY fill:#28a745,color:#fff
+    style GOV fill:#1565C0,color:#FFFFFF
+    style SD fill:#FF9800,color:#FFFFFF
+    style S fill:#D32F2F,color:#FFFFFF
+    style V fill:#7B1FA2,color:#FFFFFF
+    style MP fill:#4CAF50,color:#FFFFFF
+    style C fill:#4CAF50,color:#FFFFFF
+    style UKRAINE fill:#4CAF50,color:#FFFFFF
+    style NATO_eFP fill:#4CAF50,color:#FFFFFF
+    style JUU15 fill:#D32F2F,color:#FFFFFF
+    style KU33 fill:#FF9800,color:#FFFFFF
+    style KU32 fill:#4CAF50,color:#FFFFFF
+    style MIGR fill:#D32F2F,color:#FFFFFF
+    style BUDGET fill:#FF9800,color:#FFFFFF
+    style ENERGY fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

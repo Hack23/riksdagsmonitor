@@ -59,13 +59,13 @@ graph TD
     SKU23 -.->|"Energy policy"| M4092
     P231 -.->|"Companion"| P232
     
-    style P246 fill:#dc3545,color:#fff
-    style P231 fill:#fd7e14,color:#fff
-    style P232 fill:#fd7e14,color:#fff
-    style SKU23 fill:#fd7e14,color:#fff
-    style M4090 fill:#cc0000,color:#fff
-    style M4091 fill:#cc0000,color:#fff
-    style M4092 fill:#cc0000,color:#fff
+    style P246 fill:#D32F2F,color:#FFFFFF
+    style P231 fill:#FF9800,color:#FFFFFF
+    style P232 fill:#FF9800,color:#FFFFFF
+    style SKU23 fill:#FF9800,color:#FFFFFF
+    style M4090 fill:#D32F2F,color:#FFFFFF
+    style M4091 fill:#D32F2F,color:#FFFFFF
+    style M4092 fill:#D32F2F,color:#FFFFFF
 ```
 
 ---

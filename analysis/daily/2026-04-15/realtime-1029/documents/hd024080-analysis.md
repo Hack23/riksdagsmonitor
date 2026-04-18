@@ -56,11 +56,11 @@ graph TD
         I["S Motion 4079 - Settlement"]
     end
     
-    style A fill:#4CAF50,color:#fff
-    style B fill:#FF9800,color:#fff
-    style C fill:#f44336,color:#fff
-    style F fill:#E91E63,color:#fff
-    style G fill:#9C27B0,color:#fff
+    style A fill:#4CAF50,color:#FFFFFF
+    style B fill:#FF9800,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
+    style F fill:#E91E63,color:#FFFFFF
+    style G fill:#9C27B0,color:#FFFFFF
 ```
 
 ## Cross-Document References

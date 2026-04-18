@@ -70,7 +70,7 @@ graph TD
     style TIDO fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
     style OPP fill:#1a1e3d,color:#ff006e,stroke:#ff006e
     style INST fill:#1a1e3d,color:#e0e0e0,stroke:#e0e0e0
-    style INTL fill:#1a1e3d,color:#7b68ee,stroke:#7b68ee
+    style INTL fill:#1a1e3d,color:#7B1FA2,stroke:#7B1FA2
 ```
 
 ---

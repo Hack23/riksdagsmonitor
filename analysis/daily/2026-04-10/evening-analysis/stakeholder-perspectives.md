@@ -26,14 +26,14 @@ graph TD
         MED["📰 Media/Public Opinion<br/>Impact: HIGH<br/>Migration + KU = high salience"]
     end
 
-    style CIT fill:#ffc107,color:#000
-    style GOV fill:#dc3545,color:#fff
-    style OPP fill:#dc3545,color:#fff
-    style BIZ fill:#ffc107,color:#000
-    style CIV fill:#fd7e14,color:#fff
-    style INT fill:#ffc107,color:#000
-    style JUD fill:#dc3545,color:#fff
-    style MED fill:#dc3545,color:#fff
+    style CIT fill:#FFC107,color:#000000
+    style GOV fill:#D32F2F,color:#FFFFFF
+    style OPP fill:#D32F2F,color:#FFFFFF
+    style BIZ fill:#FFC107,color:#000000
+    style CIV fill:#FF9800,color:#FFFFFF
+    style INT fill:#FFC107,color:#000000
+    style JUD fill:#D32F2F,color:#FFFFFF
+    style MED fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Impact Summary Matrix

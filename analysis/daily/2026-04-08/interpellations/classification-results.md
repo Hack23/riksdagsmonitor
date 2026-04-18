@@ -23,8 +23,8 @@ graph LR
         HD10429["HD10429<br/>Constitutional Law<br/>⚖️ SENSITIVE<br/>7/10"] 
         HD10430["HD10430<br/>Social Affairs<br/>⚠️ SENSITIVE<br/>6/10"]
     end
-    style HD10429 fill:#0d6efd,color:#fff
-    style HD10430 fill:#dc3545,color:#fff
+    style HD10429 fill:#1565C0,color:#FFFFFF
+    style HD10430 fill:#D32F2F,color:#FFFFFF
 ```
 
 Both interpellations are classified SENSITIVE due to their constitutional implications (HD10429) and potential for social polarisation (HD10430). Neither reaches RESTRICTED level as they operate within normal parliamentary accountability mechanisms.

@@ -317,10 +317,10 @@ graph LR
         B3 --> B4["No merge conflicts<br/>each file = independent"]
     end
     
-    style A3 fill:#dc3545,color:#fff
-    style A4 fill:#dc3545,color:#fff
-    style B3 fill:#28a745,color:#fff
-    style B4 fill:#28a745,color:#fff
+    style A3 fill:#D32F2F,color:#FFFFFF
+    style A4 fill:#D32F2F,color:#FFFFFF
+    style B3 fill:#4CAF50,color:#FFFFFF
+    style B4 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Dimension | Per-Day (Old) | Per-File (New) |
@@ -376,9 +376,9 @@ flowchart TD
     H --> I["📊 Quality Self-Assessment<br/>Evidence density check"]
     I --> J["💾 Write {id}.analysis.md<br/>alongside data file"]
     
-    style A fill:#0d6efd,color:#fff
-    style J fill:#28a745,color:#fff
-    style I fill:#ffc107,color:#000
+    style A fill:#1565C0,color:#FFFFFF
+    style J fill:#4CAF50,color:#FFFFFF
+    style I fill:#FFC107,color:#000000
 ```
 
 ### Step 4: Apply Template
@@ -524,12 +524,12 @@ Focus areas:
 2. **Executive Summary** — 3–5 sentence intelligence-level summary
 3. **Mermaid Diagrams** — At least 1, using color-coded styles:
    ```
-   style NodeName fill:#dc3545,color:#fff   /* Red — critical/threat */
-   style NodeName fill:#fd7e14,color:#fff   /* Orange — high risk */
-   style NodeName fill:#ffc107,color:#000   /* Yellow — medium */
-   style NodeName fill:#28a745,color:#fff   /* Green — strength/low risk */
-   style NodeName fill:#0d6efd,color:#fff   /* Blue — informational */
-   style NodeName fill:#6f42c1,color:#fff   /* Purple — special category */
+   style NodeName fill:#D32F2F,color:#FFFFFF   /* Red — critical/threat */
+   style NodeName fill:#FF9800,color:#FFFFFF   /* Orange — high risk */
+   style NodeName fill:#FFC107,color:#000000   /* Yellow — medium */
+   style NodeName fill:#4CAF50,color:#FFFFFF   /* Green — strength/low risk */
+   style NodeName fill:#1565C0,color:#FFFFFF   /* Blue — informational */
+   style NodeName fill:#7B1FA2,color:#FFFFFF   /* Purple — special category */
    ```
 4. **Evidence Tables** — Structured tables with Confidence and Impact columns
 5. **Emoji Section Headers** — Consistent with existing templates (💪 ⚠️ 🚀 🔴 🎭 👥 🔮)
@@ -540,18 +540,18 @@ Focus areas:
 
 ```mermaid
 graph LR
-    A["🔴 CRITICAL<br/>#dc3545"] --> B["🟠 HIGH<br/>#fd7e14"]
-    B --> C["🟡 MEDIUM<br/>#ffc107"]
-    C --> D["🟢 LOW<br/>#28a745"]
-    D --> E["🔵 INFO<br/>#0d6efd"]
-    E --> F["🟣 SPECIAL<br/>#6f42c1"]
+    A["🔴 CRITICAL<br/>#D32F2F"] --> B["🟠 HIGH<br/>#FF9800"]
+    B --> C["🟡 MEDIUM<br/>#FFC107"]
+    C --> D["🟢 LOW<br/>#4CAF50"]
+    D --> E["🔵 INFO<br/>#1565C0"]
+    E --> F["🟣 SPECIAL<br/>#7B1FA2"]
     
-    style A fill:#dc3545,color:#fff
-    style B fill:#fd7e14,color:#fff
-    style C fill:#ffc107,color:#000
-    style D fill:#28a745,color:#fff
-    style E fill:#0d6efd,color:#fff
-    style F fill:#6f42c1,color:#fff
+    style A fill:#D32F2F,color:#FFFFFF
+    style B fill:#FF9800,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#4CAF50,color:#FFFFFF
+    style E fill:#1565C0,color:#FFFFFF
+    style F fill:#7B1FA2,color:#FFFFFF
 ```
 
 ---
@@ -596,9 +596,9 @@ graph TD
     
     ANALYSIS --> OUTPUT["💾 {id}.analysis.md<br/>Publication-quality intelligence"]
     
-    style FILE fill:#0d6efd,color:#fff
-    style ANALYSIS fill:#6f42c1,color:#fff
-    style OUTPUT fill:#28a745,color:#fff
+    style FILE fill:#1565C0,color:#FFFFFF
+    style ANALYSIS fill:#7B1FA2,color:#FFFFFF
+    style OUTPUT fill:#4CAF50,color:#FFFFFF
 ```
 
 ### Synthesis Composition
@@ -621,8 +621,8 @@ flowchart LR
     R3 --> OUT
     R4 --> OUT
     
-    style SYN fill:#6f42c1,color:#fff
-    style OUT fill:#28a745,color:#fff
+    style SYN fill:#7B1FA2,color:#FFFFFF
+    style OUT fill:#4CAF50,color:#FFFFFF
 ```
 
 Steps:
@@ -715,41 +715,48 @@ The government's position is strengthened. [MEDIUM confidence]
 ## 📊 SWOT Quadrant Mapping
 
 ​```mermaid
-graph TD
-    subgraph "📊 Political SWOT Landscape — 2026-03-30"
-        direction TB
-        subgraph "✅ Strengths (Internal Positive)"
-            S1N["💪 S1: Coalition majority holds (AU10)"]
-            S2N["💪 S2: 20+ propositions in March"]
-        end
-        subgraph "⚠️ Weaknesses (Internal Negative)"
-            W1N["⚡ W1: MP defection from M"]
-            W2N["⚡ W2: KU scrutiny of Carlson (KD)"]
-        end
-        subgraph "🚀 Opportunities (External Positive)"
-            O1N["🌟 O1: Criminal justice messaging"]
-        end
-        subgraph "🔴 Threats (External Negative)"
-            T1N["☁️ T1: KU exposes security failures"]
-            T2N["☁️ T2: Northvolt fiscal scrutiny"]
-        end
-    end
-
-    S1N -.->|"exploits"| O1N
-    W2N -.->|"amplifies"| T1N
-    T2N -.->|"targets"| W2N
-
-    style S1N fill:#28a745,color:#fff
-    style S2N fill:#28a745,color:#fff
-    style W1N fill:#fd7e14,color:#fff
-    style W2N fill:#fd7e14,color:#fff
-    style O1N fill:#0d6efd,color:#fff
-    style T1N fill:#dc3545,color:#fff
-    style T2N fill:#dc3545,color:#fff
+%%{init: {
+  "theme": "neutral",
+  "themeVariables": {
+    "quadrant1Fill": "#2E7D32",
+    "quadrant2Fill": "#D32F2F",
+    "quadrant3Fill": "#1565C0",
+    "quadrant4Fill": "#FF9800",
+    "quadrantTitleFill": "#FFFFFF",
+    "quadrantPointFill": "#FFFFFF",
+    "quadrantPointTextFill": "#000000",
+    "quadrantXAxisTextFill": "#000000",
+    "quadrantYAxisTextFill": "#000000"
+  },
+  "quadrantChart": {
+    "chartWidth": 700,
+    "chartHeight": 700,
+    "pointLabelFontSize": 12,
+    "titleFontSize": 20,
+    "quadrantLabelFontSize": 16,
+    "xAxisLabelFontSize": 14,
+    "yAxisLabelFontSize": 14
+  }
+}}%%
+quadrantChart
+    title 🎯 POLITICAL SWOT QUADRANT MAPPING — 2026-03-30
+    x-axis Internal Factors --> External Factors
+    y-axis Threats --> Opportunities
+    quadrant-1 STRENGTHS
+    quadrant-2 WEAKNESSES
+    quadrant-3 OPPORTUNITIES
+    quadrant-4 THREATS
+    "💪 S1: Coalition majority holds (AU10)": [0.20, 0.85]
+    "💪 S2: 20+ propositions in March": [0.30, 0.75]
+    "⚡ W1: MP defection from M": [0.25, 0.20]
+    "⚡ W2: KU scrutiny of Carlson (KD)": [0.20, 0.30]
+    "🌟 O1: Criminal justice messaging": [0.80, 0.80]
+    "☁️ T1: KU exposes security failures": [0.85, 0.20]
+    "☁️ T2: Northvolt fiscal scrutiny": [0.75, 0.30]
 ​```
 ```
 
-**Why this passes:** Template structure with SWOT Context metadata table. Evidence tables with `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact`, `Entry Date` columns. Color-coded Mermaid SWOT Quadrant Mapping with `style` directives. Specific dok_id citations. All claims labeled with confidence. Human-readable markdown.
+**Why this passes:** Template structure with SWOT Context metadata table. Evidence tables with `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact`, `Entry Date` columns. Standardised Mermaid `quadrantChart` SWOT visualisation aligned with the [ISMS Style Guide SWOT palette](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md#stakeholder-mapping-quadrant-format) (Strengths `#2E7D32` · Weaknesses `#D32F2F` · Opportunities `#1565C0` · Threats `#FF9800`). Specific dok_id citations. All claims labeled with confidence. Human-readable markdown.
 
 ---
 
@@ -795,14 +802,14 @@ graph TD
     KAL -->|"schedules"| ANF
     VOT -->|"reveals splits on"| PROP
 
-    style BET fill:#0d6efd,color:#fff
-    style PROP fill:#6f42c1,color:#fff
-    style MOT fill:#28a745,color:#fff
-    style IP fill:#fd7e14,color:#fff
-    style FR fill:#ffc107,color:#000
-    style VOT fill:#dc3545,color:#fff
-    style ANF fill:#28a745,color:#fff
-    style KAL fill:#0d6efd,color:#fff
+    style BET fill:#1565C0,color:#FFFFFF
+    style PROP fill:#7B1FA2,color:#FFFFFF
+    style MOT fill:#4CAF50,color:#FFFFFF
+    style IP fill:#FF9800,color:#FFFFFF
+    style FR fill:#FFC107,color:#000000
+    style VOT fill:#D32F2F,color:#FFFFFF
+    style ANF fill:#4CAF50,color:#FFFFFF
+    style KAL fill:#1565C0,color:#FFFFFF
 ```
 
 > **Example:** When analyzing a betänkande from JuU (Justitieutskottet), cross-reference `search_voteringar` for the vote outcome, `search_anforanden` for committee debate speeches, and `get_propositioner` for the originating government bill.
@@ -850,18 +857,18 @@ graph TD
     L1 --> L1B
     L1 --> L1C
 
-    style L3 fill:#dc3545,color:#fff
-    style L2 fill:#fd7e14,color:#fff
-    style L1 fill:#28a745,color:#fff
-    style L3A fill:#dc3545,color:#fff
-    style L3B fill:#dc3545,color:#fff
-    style L3C fill:#dc3545,color:#fff
-    style L2A fill:#fd7e14,color:#fff
-    style L2B fill:#fd7e14,color:#fff
-    style L2C fill:#fd7e14,color:#fff
-    style L1A fill:#28a745,color:#fff
-    style L1B fill:#28a745,color:#fff
-    style L1C fill:#28a745,color:#fff
+    style L3 fill:#D32F2F,color:#FFFFFF
+    style L2 fill:#FF9800,color:#FFFFFF
+    style L1 fill:#4CAF50,color:#FFFFFF
+    style L3A fill:#D32F2F,color:#FFFFFF
+    style L3B fill:#D32F2F,color:#FFFFFF
+    style L3C fill:#D32F2F,color:#FFFFFF
+    style L2A fill:#FF9800,color:#FFFFFF
+    style L2B fill:#FF9800,color:#FFFFFF
+    style L2C fill:#FF9800,color:#FFFFFF
+    style L1A fill:#4CAF50,color:#FFFFFF
+    style L1B fill:#4CAF50,color:#FFFFFF
+    style L1C fill:#4CAF50,color:#FFFFFF
 ```
 
 ### 📏 Depth Level Requirements
@@ -965,10 +972,10 @@ graph LR
     GOV -->|"passed via<br/>procedural rules"| RESULT["📋 Budget Adopted"]
     SWI -->|"enabled passage<br/>by not voting Nej"| RESULT
 
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#dc3545,color:#fff
-    style SWI fill:#ffc107,color:#000
-    style RESULT fill:#0d6efd,color:#fff
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#D32F2F,color:#FFFFFF
+    style SWI fill:#FFC107,color:#000000
+    style RESULT fill:#1565C0,color:#FFFFFF
 ```
 
 **Why it passes:** Vote table with party-level granularity, confidence-labeled key finding, Mermaid diagram showing coalition dynamics with color coding, specific seat counts.
@@ -1018,7 +1025,7 @@ Before committing any analysis file, verify it passes ALL four quality dimension
 | # | Check | Blocking | Details |
 |---|-------|:--------:|---------|
 | SQ-1 | Hack23 header block present | 🔴 | Logo, title, badges (Owner, Version, Date, Classification) |
-| SQ-2 | ≥ 1 Mermaid diagram with `style` directives | 🔴 | Color-coded per convention (#dc3545, #fd7e14, #ffc107, #28a745, #0d6efd, #6f42c1) |
+| SQ-2 | ≥ 1 Mermaid diagram with `style` directives | 🔴 | Color-coded per convention (#D32F2F, #FF9800, #FFC107, #4CAF50, #1565C0, #7B1FA2) |
 | SQ-3 | ≥ 1 structured evidence table | 🔴 | Must include `Evidence (dok_id)`, `Confidence`, `Impact` columns |
 | SQ-4 | No placeholder text remaining | 🔴 | Zero instances of `[REQUIRED]`, `[OPTIONAL]`, `TODO`, `TBD`, `placeholder` |
 | SQ-5 | Template section structure followed | 🟡 | Sections match the applicable template from `analysis/templates/` |
@@ -1150,16 +1157,16 @@ flowchart TD
     I --> J["✅ Step 7: Validate & Commit"]
     G --> J
 
-    style A fill:#0d6efd,color:#fff
-    style B fill:#6610f2,color:#fff
-    style C fill:#6f42c1,color:#fff
-    style D fill:#ffc107,color:#000
-    style E fill:#dc3545,color:#fff
-    style F fill:#28a745,color:#fff
-    style G fill:#6c757d,color:#fff
-    style H fill:#fd7e14,color:#fff
-    style I fill:#20c997,color:#fff
-    style J fill:#28a745,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style B fill:#7B1FA2,color:#FFFFFF
+    style C fill:#7B1FA2,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style E fill:#D32F2F,color:#FFFFFF
+    style F fill:#4CAF50,color:#FFFFFF
+    style G fill:#9E9E9E,color:#FFFFFF
+    style H fill:#FF9800,color:#FFFFFF
+    style I fill:#4CAF50,color:#FFFFFF
+    style J fill:#4CAF50,color:#FFFFFF
 ```
 
 #### What This Means in Practice
@@ -1370,14 +1377,14 @@ graph TD
     RC4 --> I3
     RC4 --> I4
 
-    style RC1 fill:#dc3545,color:#fff
-    style RC2 fill:#dc3545,color:#fff
-    style RC3 fill:#dc3545,color:#fff
-    style RC4 fill:#dc3545,color:#fff
-    style I1 fill:#fd7e14,color:#fff
-    style I2 fill:#fd7e14,color:#fff
-    style I3 fill:#fd7e14,color:#fff
-    style I4 fill:#ffc107,color:#000
+    style RC1 fill:#D32F2F,color:#FFFFFF
+    style RC2 fill:#D32F2F,color:#FFFFFF
+    style RC3 fill:#D32F2F,color:#FFFFFF
+    style RC4 fill:#D32F2F,color:#FFFFFF
+    style I1 fill:#FF9800,color:#FFFFFF
+    style I2 fill:#FF9800,color:#FFFFFF
+    style I3 fill:#FF9800,color:#FFFFFF
+    style I4 fill:#FFC107,color:#000000
 ```
 
 ### News Article Quality Issues (2026-04-03)
@@ -1590,7 +1597,7 @@ For this article's documents, generate visualization data in JSON format:
      "data": {
        "labels": ["S", "M", "SD", "V", "C", "MP", "L", "KD"],
        "datasets": [
-         { "label": "Ja",     "data": [0, 68, 0, 0, 0, 0, 16, 19], "backgroundColor": "#83cf39" },
+         { "label": "Ja",     "data": [0, 68, 0, 0, 0, 0, 16, 19], "backgroundColor": "#8BC34A" },
          { "label": "Nej",    "data": [107, 0, 0, 24, 24, 18, 0, 0], "backgroundColor": "#ff006e" },
          { "label": "Avstår", "data": [0, 0, 73, 0, 0, 0, 0, 0], "backgroundColor": "#ffbe0b" }
        ]
@@ -1618,7 +1625,7 @@ For this article's documents, generate visualization data in JSON format:
              { "x": 3, "y": 4 },
              { "x": 2, "y": 5 }
            ],
-           "backgroundColor": ["#dc3545", "#fd7e14"],
+           "backgroundColor": ["#D32F2F", "#FF9800"],
            "pointRadius": 10
          }
        ]
@@ -1730,9 +1737,9 @@ flowchart LR
     F --> G["✅ Step 4: Quality Self-Check<br/>Against rubric (min 7.0/10)"]
     G --> H["🌐 Step 5: Translate<br/>All 14 languages"]
     
-    style C fill:#28a745,color:#fff
-    style D fill:#0d6efd,color:#fff
-    style G fill:#ffc107,color:#000
+    style C fill:#4CAF50,color:#FFFFFF
+    style D fill:#1565C0,color:#FFFFFF
+    style G fill:#FFC107,color:#000000
 ```
 
 **NEW Step 3a — Read Analysis Before Writing Article:**
@@ -1897,10 +1904,10 @@ flowchart TD
     DIRECT -->|"Still 0 documents"| CARRY["📊 Carry-Forward Protocol"]
     CARRY --> OUTPUT["📝 Minimum Output"]
 
-    style START fill:#dc3545,color:#fff
-    style ANALYZE fill:#28a745,color:#fff
-    style CARRY fill:#ffc107,color:#000
-    style OUTPUT fill:#0d6efd,color:#fff
+    style START fill:#D32F2F,color:#FFFFFF
+    style ANALYZE fill:#4CAF50,color:#FFFFFF
+    style CARRY fill:#FFC107,color:#000000
+    style OUTPUT fill:#1565C0,color:#FFFFFF
 ```
 
 ### Step 1: Lookback Strategy (Automated)
@@ -2097,11 +2104,11 @@ Every per-file analysis and synthesis summary MUST assess:
 
 | Level | Label | Criteria | Evidence Threshold | Color Code |
 |-------|-------|----------|--------------------|:----------:|
-| ⬛ 1 | **VERY LOW** | Speculation only, single unverified source | 0–1 sources, no corroboration | `#6c757d` |
-| 🟥 2 | **LOW** | Circumstantial evidence, indirect indicators | 2 sources, indirect evidence | `#dc3545` |
-| 🟧 3 | **MEDIUM** | Multiple independent sources, moderate corroboration | 3+ sources, moderate agreement | `#fd7e14` |
-| 🟩 4 | **HIGH** | Official records, documented data, direct evidence | Official docs, voting records, committee reports | `#28a745` |
-| 🟦 5 | **VERY HIGH** | Verified data + independent corroboration + expert consensus | Multiple official sources, cross-validated | `#0d6efd` |
+| ⬛ 1 | **VERY LOW** | Speculation only, single unverified source | 0–1 sources, no corroboration | `#9E9E9E` |
+| 🟥 2 | **LOW** | Circumstantial evidence, indirect indicators | 2 sources, indirect evidence | `#D32F2F` |
+| 🟧 3 | **MEDIUM** | Multiple independent sources, moderate corroboration | 3+ sources, moderate agreement | `#FF9800` |
+| 🟩 4 | **HIGH** | Official records, documented data, direct evidence | Official docs, voting records, committee reports | `#4CAF50` |
+| 🟦 5 | **VERY HIGH** | Verified data + independent corroboration + expert consensus | Multiple official sources, cross-validated | `#1565C0` |
 
 ### Confidence Level Application Rules
 
@@ -2136,12 +2143,12 @@ Each analysis type MUST include the specified Mermaid diagram type:
 ### Mermaid Color Standards
 
 ```
-🔴 CRITICAL/SEVERE/RESTRICTED: fill:#dc3545,color:#fff
-🟠 HIGH/URGENT: fill:#fd7e14,color:#fff
-🟡 MEDIUM/ELEVATED: fill:#ffc107,color:#000
-🟢 LOW/ROUTINE/PUBLIC: fill:#28a745,color:#fff
-🔵 INFORMATION/ELEVATED: fill:#0d6efd,color:#fff
-⚪ NEUTRAL/PLACEHOLDER: fill:#6c757d,color:#fff
+🔴 CRITICAL/SEVERE/RESTRICTED: fill:#D32F2F,color:#FFFFFF
+🟠 HIGH/URGENT: fill:#FF9800,color:#FFFFFF
+🟡 MEDIUM/ELEVATED: fill:#FFC107,color:#000000
+🟢 LOW/ROUTINE/PUBLIC: fill:#4CAF50,color:#FFFFFF
+🔵 INFORMATION/ELEVATED: fill:#1565C0,color:#FFFFFF
+⚪ NEUTRAL/PLACEHOLDER: fill:#9E9E9E,color:#FFFFFF
 ```
 
 ---

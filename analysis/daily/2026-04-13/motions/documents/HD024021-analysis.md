@@ -30,10 +30,10 @@ graph LR
     A --> E{Policy Target}
     E --> F["prop. 2025/26:198"]
     E --> G["Entrepreneurial Education Outsourcing"]
-    style A fill:#e8590c,color:#fff
-    style C fill:#00d9ff,color:#000
-    style D fill:#ff006e,color:#fff
-    style F fill:#ffbe0b,color:#000
+    style A fill:#F57C00,color:#FFFFFF
+    style C fill:#00d9ff,color:#000000
+    style D fill:#ff006e,color:#FFFFFF
+    style F fill:#ffbe0b,color:#000000
 ```
 
 | Metric | Score | Rationale |

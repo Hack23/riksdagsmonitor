@@ -32,14 +32,14 @@ graph TD
     H --> L
     J --> L
 
-    style A fill:#0d6efd,color:#fff
-    style B fill:#28a745,color:#fff
-    style C fill:#ffc107,color:#000
-    style F fill:#ffc107,color:#000
-    style G fill:#dc3545,color:#fff
-    style I fill:#6f42c1,color:#fff
-    style K fill:#28a745,color:#fff
-    style L fill:#fd7e14,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style B fill:#4CAF50,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style F fill:#FFC107,color:#000000
+    style G fill:#D32F2F,color:#FFFFFF
+    style I fill:#7B1FA2,color:#FFFFFF
+    style K fill:#4CAF50,color:#FFFFFF
+    style L fill:#FF9800,color:#FFFFFF
 ```
 
 ## Top Findings

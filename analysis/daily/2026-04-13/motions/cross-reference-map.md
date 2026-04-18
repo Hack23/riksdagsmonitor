@@ -55,9 +55,9 @@ graph LR
     V["V (2 motions)"] --> P226 & P227
     C["C (3 motions)"] --> P226 & P184
     SD["SD (1 motion)"] --> P184
-    style S1 fill:#e8590c,color:#fff
-    style MP fill:#83c167,color:#000
-    style V fill:#da291c,color:#fff
-    style C fill:#009933,color:#fff
-    style SD fill:#dddd00,color:#000
+    style S1 fill:#F57C00,color:#FFFFFF
+    style MP fill:#8BC34A,color:#000000
+    style V fill:#D32F2F,color:#FFFFFF
+    style C fill:#2E7D32,color:#FFFFFF
+    style SD fill:#FFC107,color:#000000
 ```

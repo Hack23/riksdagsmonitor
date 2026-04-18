@@ -26,14 +26,14 @@ graph TD
         S8["🏭 Business<br/>Impact: LOW<br/>Tonnage tax reform"]
     end
 
-    style S1 fill:#0d6efd,color:#fff
-    style S2 fill:#dc3545,color:#fff
-    style S3 fill:#28a745,color:#fff
-    style S4 fill:#ffc107,color:#000
-    style S5 fill:#6c757d,color:#fff
-    style S6 fill:#6c757d,color:#fff
-    style S7 fill:#fd7e14,color:#fff
-    style S8 fill:#6c757d,color:#fff
+    style S1 fill:#1565C0,color:#FFFFFF
+    style S2 fill:#D32F2F,color:#FFFFFF
+    style S3 fill:#4CAF50,color:#FFFFFF
+    style S4 fill:#FFC107,color:#000000
+    style S5 fill:#9E9E9E,color:#FFFFFF
+    style S6 fill:#9E9E9E,color:#FFFFFF
+    style S7 fill:#FF9800,color:#FFFFFF
+    style S8 fill:#9E9E9E,color:#FFFFFF
 ```
 
 ## Detailed Analysis by Stakeholder Group

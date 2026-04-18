@@ -42,14 +42,14 @@ graph LR
     Q79 <-->|"Int'l norms"| Q80
     Q81 <-->|"Environmental policy"| Q82
 
-    style FöU12 fill:#0d6efd,color:#fff
-    style JuU15 fill:#6f42c1,color:#fff
-    style IP428 fill:#0d6efd,color:#fff
-    style Q79 fill:#fd7e14,color:#fff
-    style Q80 fill:#fd7e14,color:#fff
-    style Q83 fill:#fd7e14,color:#fff
-    style Q81 fill:#28a745,color:#fff
-    style Q82 fill:#28a745,color:#fff
+    style FöU12 fill:#1565C0,color:#FFFFFF
+    style JuU15 fill:#7B1FA2,color:#FFFFFF
+    style IP428 fill:#1565C0,color:#FFFFFF
+    style Q79 fill:#FF9800,color:#FFFFFF
+    style Q80 fill:#FF9800,color:#FFFFFF
+    style Q83 fill:#FF9800,color:#FFFFFF
+    style Q81 fill:#4CAF50,color:#FFFFFF
+    style Q82 fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

@@ -18,10 +18,10 @@ graph TD
         DP["Democratic Process<br/>96% motion rejection<br/>🟡 MODERATE"]
     end
 
-    style NI fill:#ffc107,color:#000
-    style LI fill:#28a745,color:#fff
-    style AC fill:#ffc107,color:#000
-    style DP fill:#ffc107,color:#000
+    style NI fill:#FFC107,color:#000000
+    style LI fill:#4CAF50,color:#FFFFFF
+    style AC fill:#FFC107,color:#000000
+    style DP fill:#FFC107,color:#000000
 ```
 
 ## Threat Register

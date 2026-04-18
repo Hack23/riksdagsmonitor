@@ -21,9 +21,9 @@ graph TD
         R2["Police Accountability<br/>Risk: MEDIUM<br/>Likelihood: 3/5 Impact: 4/5"]
         R3["Coalition Stability<br/>Risk: LOW<br/>Likelihood: 2/5 Impact: 3/5"]
     end
-    style R1 fill:#ffc107,color:#000,stroke:#856404
-    style R2 fill:#ffc107,color:#000,stroke:#856404
-    style R3 fill:#28a745,color:#fff,stroke:#155724
+    style R1 fill:#FFC107,color:#000000,stroke:#F57C00
+    style R2 fill:#FFC107,color:#000000,stroke:#F57C00
+    style R3 fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
 ```
 
 ## 🔢 Risk Matrix (5x5 Likelihood x Impact)

@@ -26,10 +26,10 @@ graph TD
         end
     end
 
-    style S fill:#28a745,stroke:#1e7e34,color:#fff
-    style W fill:#ffc107,stroke:#e0a800,color:#000
-    style O fill:#0d6efd,stroke:#0a58ca,color:#fff
-    style T fill:#dc3545,stroke:#b02a37,color:#fff
+    style S fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style W fill:#FFC107,stroke:#FFA000,color:#000000
+    style O fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
+    style T fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
 ```
 
 ---

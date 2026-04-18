@@ -23,10 +23,10 @@ graph TD
     C --> C1["Environmental<br/>protection erosion<br/>🟡 MODERATE"]
     C --> C2["Fiscal<br/>uncertainty<br/>🟡 MODERATE"]
     D --> D1["Implementation<br/>delay risk<br/>🟡 LOW-MODERATE"]
-    style B1 fill:#28a745,color:#fff
-    style C1 fill:#ffc107,color:#000
-    style C2 fill:#ffc107,color:#000
-    style D1 fill:#ffc107,color:#000
+    style B1 fill:#4CAF50,color:#FFFFFF
+    style C1 fill:#FFC107,color:#000000
+    style C2 fill:#FFC107,color:#000000
+    style D1 fill:#FFC107,color:#000000
 ```
 
 ## Detailed Threat Assessment

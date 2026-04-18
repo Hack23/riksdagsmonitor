@@ -118,7 +118,7 @@ graph TD
 
     style MCP fill:#0a0e27,color:#00d9ff,stroke:#00d9ff,stroke-width:2px
     style VAL fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
-    style OUT fill:#1a1e3d,color:#28a745,stroke:#28a745
+    style OUT fill:#1a1e3d,color:#4CAF50,stroke:#4CAF50
     style ART fill:#1a1e3d,color:#ff006e,stroke:#ff006e
 ```
 

@@ -17,10 +17,10 @@ graph TD
     B -->|No| D{"Affects<br/>Individuals?"}
     D -->|Yes| E["🟡 RESTRICTED<br/>HD01JuU15 Criminal Care<br/>HD11680 Israel Death Penalty"]
     D -->|No| F["🟢 PUBLIC<br/>HD11683, HD11682<br/>HD11679, HD11678, HD10428"]
-    style A fill:#0d6efd,color:#fff
-    style C fill:#dc3545,color:#fff
-    style E fill:#ffc107,color:#000
-    style F fill:#28a745,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
+    style E fill:#FFC107,color:#000000
+    style F fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Per-Document Classification

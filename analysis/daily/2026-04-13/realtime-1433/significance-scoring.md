@@ -15,15 +15,15 @@ graph LR
         HD0398["HD0398: 3/10<br/>⚪ LOW"]
         FiU48["HD01FiU48: 3/10<br/>⚪ LOW"]
     end
-    style HD03100 fill:#dc3545,stroke:#333,color:#fff
-    style HD03236 fill:#fd7e14,stroke:#333,color:#fff
-    style HD0399 fill:#fd7e14,stroke:#333,color:#fff
-    style UFoU3 fill:#ffc107,stroke:#333,color:#000
-    style HD024076 fill:#ffc107,stroke:#333,color:#000
-    style HD03101 fill:#17a2b8,stroke:#333,color:#fff
-    style HD03241 fill:#17a2b8,stroke:#333,color:#fff
-    style HD0398 fill:#6c757d,stroke:#333,color:#fff
-    style FiU48 fill:#6c757d,stroke:#333,color:#fff
+    style HD03100 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style HD03236 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style HD0399 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style UFoU3 fill:#FFC107,stroke:#424242,color:#000000
+    style HD024076 fill:#FFC107,stroke:#424242,color:#000000
+    style HD03101 fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style HD03241 fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style HD0398 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style FiU48 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
 ```
 
 | Rank | dok_id | Score | Level | Scoring Rationale |

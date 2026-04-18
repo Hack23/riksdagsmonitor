@@ -98,9 +98,9 @@ graph LR
         C["🟡 Parliamentary Scrutiny<br/>Risk: MEDIUM (3/5)<br/>Impact: MEDIUM (3/5)"] --> D["UU committee hearings<br/>may generate debate"]
         E["🟡 Public Opinion<br/>Risk: MEDIUM (3/5)<br/>Impact: LOW (2/5)"] --> F["Arms export controversy<br/>potential in media"]
     end
-    style A fill:#28a745,color:#fff
-    style C fill:#ffc107,color:#000
-    style E fill:#ffc107,color:#000
+    style A fill:#4CAF50,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style E fill:#FFC107,color:#000000
 ```
 
 | Risk Factor | Likelihood (1-5) | Impact (1-5) | Score | Mitigation |

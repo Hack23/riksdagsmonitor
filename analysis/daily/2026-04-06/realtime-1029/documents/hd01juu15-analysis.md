@@ -35,9 +35,9 @@ graph LR
     A --> I{Urgency}
     I -->|"🔵 ELEVATED"| L[Monitoring — core policy area]
     
-    style D fill:#ffc107,color:#000
-    style H fill:#0d6efd,color:#fff
-    style L fill:#0d6efd,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#1565C0,color:#FFFFFF
+    style L fill:#1565C0,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -82,11 +82,11 @@ graph TD
         R5["🟢 Democratic Process<br/>L:1 × I:1 = 1"]
     end
     
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#28a745,color:#fff
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Type | L | I | Score | Assessment |

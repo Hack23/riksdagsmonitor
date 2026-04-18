@@ -20,12 +20,12 @@ graph TD
         CIVIL["Civil Society<br>Religious freedom"]
         INTL["International/EU<br>NATO export alignment"]
     end
-    style CIT fill:#28a745,stroke:#155724,color:#fff
-    style GOV fill:#ffc107,stroke:#856404,color:#000
-    style OPP fill:#28a745,stroke:#155724,color:#fff
-    style BIZ fill:#28a745,stroke:#155724,color:#fff
-    style CIVIL fill:#ffc107,stroke:#856404,color:#000
-    style INTL fill:#28a745,stroke:#155724,color:#fff
+    style CIT fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style GOV fill:#FFC107,stroke:#F57C00,color:#000000
+    style OPP fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style BIZ fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style CIVIL fill:#FFC107,stroke:#F57C00,color:#000000
+    style INTL fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 ## Perspective Analysis
