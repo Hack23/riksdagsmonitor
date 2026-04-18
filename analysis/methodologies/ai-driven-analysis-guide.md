@@ -20,7 +20,7 @@
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **v5.1 changes (2026-04-18)**: Added Rules 6 (Reference-Grade Depth Tiers L1/L2/L2+/L3), 7 (Reference-Exemplar Self-Audit), 8 (International Comparative Benchmarking). Canonical reference exemplar: `analysis/daily/2026-04-17/realtime-1434/` (16 files, all tradecraft dimensions).
+> **v5.1 changes (2026-04-18)**: Added Rules 6 (Reference-Grade Depth Tiers L1/L2/L2+/L3), 7 (Reference-Exemplar Self-Audit), 8 (International Comparative Benchmarking). Canonical reference exemplar: `analysis/daily/2026-04-17/realtime-1434/` (18 markdown files total: 14 top-level files plus 4 per-document analyses; covers all tradecraft dimensions).
 
 ---
 
@@ -208,7 +208,7 @@ Every analysis file MUST demonstrate:
 | **`comparative-international.md`** | **Any P0/P1 document present** |
 | **`methodology-reflection.md`** | **Reference-exemplar runs only** |
 
-**Canonical reference-exemplar file set**: realtime-1434 has **16 files** (6 reference-grade + 4 per-document + 6 core analysis).
+**Canonical reference-exemplar file set**: realtime-1434 has **18 markdown files** — 14 top-level files (9 core analysis + 5 reference-grade extensions) plus 4 per-document analyses.
 
 ---
 

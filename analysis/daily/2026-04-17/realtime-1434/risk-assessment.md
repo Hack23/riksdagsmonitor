@@ -29,8 +29,9 @@ quadrantChart
     R6-Reparations-Fatigue: [0.50, 0.45]
     R7-Press-Freedom-Index-Drop: [0.45, 0.55]
     R8-Russia-Asset-Retaliation: [0.45, 0.45]
-    R9-Property-Register-IT: [0.35, 0.70]
+    R9-Property-Register-Cyber: [0.35, 0.70]
     R10-SD-Ukraine-Reversal: [0.25, 0.75]
+    R11-Register-IT-Delivery-Delay: [0.55, 0.70]
 ```
 
 ---
@@ -49,7 +50,8 @@ quadrantChart
 | **R8** | Russia seizes assets of Swedish firms in retaliation | Ukraine | 3 | 3 | **9** | MEDIUM | 🟡 MANAGE | Kommerskollegium, EU sanctions policy |
 | **R9** | Lantmäteriet register (HD01CU28) IT procurement delayed or suffers data-security breach | Housing | 2 | 4 | **8** | MEDIUM | 🟢 TOLERATE | Lantmäteriet, MSB, Finansdepartementet |
 | **R10** | SD reverses Ukraine support in 2026 campaign (populist realignment) | Ukraine | 1-2 | 4 | **7** | LOW | 🟢 TOLERATE | Coalition monitoring, cross-party statesmanship |
-| **R11** | KU32 accessibility implementation cost exceeds impact assessment → business pushback | Constitutional | 2 | 2 | **4** | LOW | 🟢 TOLERATE | MPRT, Näringsdepartementet |
+| **R11** | Lantmäteriet register (HD01CU28) IT delivery delay or procurement slippage → 2027 rollout misses statutory deadline | Housing | 3 | 4 | **12** | MEDIUM | 🟠 ACTIVE | Lantmäteriet, Finansdepartementet, MSB |
+| **R12** | KU32 accessibility implementation cost exceeds impact assessment → business pushback | Constitutional | 2 | 2 | **4** | LOW | 🟢 TOLERATE | MPRT, Näringsdepartementet |
 
 ---
 
@@ -117,11 +119,18 @@ quadrantChart
 ## 📉 Risk Trend — 7-Day
 
 ```mermaid
+---
+config:
+    themeVariables:
+        xyChart:
+            plotColorPalette: "#dc3545"
+---
 xychart-beta
     title "Composite Political Risk — April 10-17, 2026"
     x-axis ["Apr 10", "Apr 11", "Apr 12", "Apr 13", "Apr 14", "Apr 15", "Apr 16", "Apr 17"]
     y-axis "Risk (0-10)" 0 --> 10
     line [4, 4, 5, 7, 6, 5, 7, 8]
+%% Line color: fill:#dc3545 (red) via plotColorPalette theme variable
 ```
 
 **Readings**:

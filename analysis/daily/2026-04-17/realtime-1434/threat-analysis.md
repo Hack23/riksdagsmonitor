@@ -112,8 +112,8 @@ quadrantChart
     title Threat Severity — Realtime 1434
     x-axis Low Impact --> High Impact
     y-axis Low Likelihood --> High Likelihood
-    quadrant-1 Monitor
-    quadrant-2 Mitigate Priority
+    quadrant-1 Mitigate Priority
+    quadrant-2 Monitor
     quadrant-3 Ignore
     quadrant-4 Manage
     T1-KU33-Narrow: [0.80, 0.55]

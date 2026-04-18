@@ -33,24 +33,36 @@ test -s analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md \
 ```bash
 # 🔴 MANDATORY GATE — run BEFORE generating article HTML content
 # Fails the run if analysis files are not present or not read.
+#
+# AWF-COMPLIANT: uses find -exec + temp files + `read`/redirection instead of
+# $(...) command substitution. Safe to paste into a runtime `bash` tool call.
 
 ANALYSIS_BASE="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
+ANALYSIS_LIST_FILE="/tmp/analysis-files-$$.txt"
+ANALYSIS_COUNT_FILE="/tmp/analysis-count-$$.txt"
+trap 'rm -f "$ANALYSIS_LIST_FILE" "$ANALYSIS_COUNT_FILE"' EXIT
+
 if [ ! -d "$ANALYSIS_BASE" ]; then
   echo "🔴 ABORT: $ANALYSIS_BASE does not exist — analysis must be produced BEFORE article"
   exit 1
 fi
 
-ANALYSIS_FILES=$(find "$ANALYSIS_BASE" -maxdepth 2 -name "*.md" | sort)
-ANALYSIS_COUNT=$(echo "$ANALYSIS_FILES" | grep -c . || echo 0)
+: > "$ANALYSIS_LIST_FILE"
+: > "$ANALYSIS_COUNT_FILE"
+
+find "$ANALYSIS_BASE" -maxdepth 2 -type f -name "*.md" | sort > "$ANALYSIS_LIST_FILE"
+grep -c . "$ANALYSIS_LIST_FILE" > "$ANALYSIS_COUNT_FILE" || echo "0" > "$ANALYSIS_COUNT_FILE"
+read -r ANALYSIS_COUNT < "$ANALYSIS_COUNT_FILE"
+
 if [ "$ANALYSIS_COUNT" -lt 9 ]; then
   echo "🔴 ABORT: Only $ANALYSIS_COUNT analysis files found — need ≥ 9 core files (see v5.1 Rule 6)"
   exit 1
 fi
 
 echo "=== READING ALL $ANALYSIS_COUNT ANALYSIS FILES BEFORE WRITING ARTICLE ==="
-echo "$ANALYSIS_FILES" | while read -r f; do
+while read -r f; do
   [ -f "$f" ] && wc -l "$f"
-done
+done < "$ANALYSIS_LIST_FILE"
 
 # Checklist the agent MUST complete before emitting article HTML:
 #   ✅ synthesis-summary.md         — lead story decision + DIW weighting
@@ -1147,11 +1159,27 @@ if [ ! -f "$SIG_FILE" ]; then
   echo "🔴 FAIL: significance-scoring.md missing — cannot verify lead-story"
   LEAD_FAIL=1
 else
-  # Extract all documents with weighted score ≥ 7.0 (format: "| HD03231 | ... | 8.55 |" etc.)
-  HIGH_DOCS=$(grep -oE 'HD[0-9A-Z]+' "$SIG_FILE" | sort -u)
+  # Extract all documents with weighted score ≥ 7.0 from the scoring table
+  # (Prior version grabbed ALL HD-ids regardless of score — fixed to actually filter by DIW.)
+  HIGH_DOCS=$(
+    awk -F'|' '
+      /^\|/ {
+        score = $NF
+        gsub(/^[[:space:]]+|[[:space:]]+$/, "", score)
+        # Strip markdown emphasis/backticks around the score cell
+        gsub(/[*`]/, "", score)
+        if (score ~ /^[0-9]+([.][0-9]+)?$/ && score + 0 >= 7.0) {
+          row = $0
+          if (match(row, /HD[0-9A-Z]+/)) {
+            print substr(row, RSTART, RLENGTH)
+          }
+        }
+      }
+    ' "$SIG_FILE" | sort -u
+  )
   # Extract top-ranked finding (first HD* in a row that includes "LEAD" or highest score)
   LEAD_DOC=$(grep -iE 'lead|#1|top.ranked' "$SIG_FILE" | grep -oE 'HD[0-9A-Z]+' | head -1)
-  [ -z "$LEAD_DOC" ] && LEAD_DOC=$(echo "$HIGH_DOCS" | head -1)
+  [ -z "$LEAD_DOC" ] && [ -n "$HIGH_DOCS" ] && LEAD_DOC=$(printf '%s\n' "$HIGH_DOCS" | head -1)
 
   for ARTICLE in news/$ARTICLE_DATE-*-en.html news/$ARTICLE_DATE-*-sv.html; do
     [ ! -f "$ARTICLE" ] && continue

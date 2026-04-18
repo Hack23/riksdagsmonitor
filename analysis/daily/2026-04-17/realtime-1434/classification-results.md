@@ -16,8 +16,8 @@
 | **HD01KU32** | Constitutional Law / Media / Accessibility | **P0 — Constitutional** | Betänkande | KU | Public | National + durable | Pre-election | **YES (TF + YGL)** | **L3 Intelligence** |
 | **HD03231** | Foreign Policy / International Criminal Law / Ukraine | P1 — Critical | Proposition | UU | Public-interest high | International | H1 2026 | No | **L2 Strategic** |
 | **HD03232** | Foreign Policy / Reparations / Ukraine | P1 — Critical | Proposition | UU | Public-interest high | International | H1 2026 | No | **L2 Strategic** |
-| HD01CU28 | Housing Policy / Financial Markets / AML | P2 — Important | Betänkande | CU | Public | Sector | 2027 | No | **L1 Surface** |
-| HD01CU27 | Property Law / AML / Organised Crime | P2 — Important | Betänkande | CU | Public | Sector | H2 2026 | No | **L1 Surface** |
+| HD01CU28 | Housing Policy / Financial Markets / AML | P2 — Important | Betänkande | CU | Public | Sector | 2027 | No | **L2 Strategic** |
+| HD01CU27 | Property Law / AML / Organised Crime | P2 — Important | Betänkande | CU | Public | Sector | H2 2026 | No | **L2 Strategic** |
 
 ### Sensitivity Decision Tree (Mermaid)
 
