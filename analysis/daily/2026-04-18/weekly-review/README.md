@@ -11,7 +11,7 @@
 | **Documents in Pipeline** | 11 dok files persisted + economic-data.json + ≈150 documents tagged in weekly catalog |
 | **Lead Decision** | Spring Fiscal Trilogy (HD03100 + HD0399 + HD03236) — DIW-weighted **10.0** · with KU33 (constitutional press-freedom narrowing, weighted **9.80**) as binding co-prominent thread |
 | **Classification** | Public · Time-to-read for full package ≈ 60 min · Executive brief ≤ 4 min |
-| **Author** | News Journalist agent (Copilot Sonnet 4.x) under James Pether Sörling editorial responsibility |
+| **Author** | News Journalist agent (Copilot, claude-opus-4.7) under James Pether Sörling editorial responsibility |
 
 ---
 
@@ -121,8 +121,8 @@ The reference exemplar against which this package was benchmarked: [`analysis/da
 | Trigger | Action | Owner |
 |---------|--------|-------|
 | Lagrådet yttrande on KU32/KU33 published | Bayesian-update R2 in `risk-assessment.md`; refresh `scenario-analysis.md` priors | Analyst on duty |
-| Riksdag chamber vote on JuU17 (Extra budget, scheduled 2026-04-22) | Refresh `synthesis-summary.md` §Vote Tracker | Analyst on duty |
-| KU annual granskning hearings open (2026-04-27) | Risk-assessment R8 update | Analyst on duty |
+| Riksdag chamber vote on HD03236 / FiU48 (Extra budget, scheduled 2026-04-22) | Refresh `synthesis-summary.md` §Vote Tracker | Analyst on duty |
+| KU annual granskning hearings open (2026-04-27) | Risk-assessment R2 + R4 update (parliamentary accountability + coalition discipline) | Analyst on duty |
 | Sep 2026 election results | Full package re-review; scenario tree collapses to one branch | Methodology owner |
 | Quarterly methodology sweep (next 2026-07-18) | Review whether new doctrine has shifted DIW weights | CEO + methodology owner |
 

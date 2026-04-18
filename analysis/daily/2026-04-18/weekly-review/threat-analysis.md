@@ -305,7 +305,7 @@ graph TD
 ## 📎 Cross-References
 
 - [`risk-assessment.md`](risk-assessment.md) §R1 + §R2 + §R3 = same threats viewed as risk register
-- [`scenario-analysis.md`](scenario-analysis.md) §Wildcards = T1 + T6 escalation paths
+- [`scenario-analysis.md`](scenario-analysis.md) §Wildcards = T1 + T3 escalation paths (W1 → T1 Russian hybrid; W2 → T3 ECHR strike-down)
 - [`comparative-international.md`](comparative-international.md) §Diplomatic-Response calibrates T1 magnitude (Finland, Estonia, Lithuania precedents)
 - [`stakeholder-perspectives.md`](stakeholder-perspectives.md) maps actors most likely to respond to each threat
 

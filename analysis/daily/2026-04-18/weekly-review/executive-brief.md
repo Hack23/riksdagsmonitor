@@ -27,7 +27,7 @@
 |----------|---------------|--------------:|
 | **Editorial lead selection** for Week-16 print + digital | [`significance-scoring.md`](significance-scoring.md) §Five-Dimension Scoring — Spring Fiscal Trilogy weighted **10.0** ⇒ lead; KU33 weighted **9.80** ⇒ co-prominent | Immediate |
 | **Press-freedom NGO + foreign-policy commentariat engagement posture** | [`risk-assessment.md`](risk-assessment.md) R2 + R6 · [`swot-analysis.md`](swot-analysis.md) S4 × T1 TOWS | Before Lagrådet yttrande (Q2 2026) |
-| **Russia-posture + ECHR-litigation threat monitoring** | [`threat-analysis.md`](threat-analysis.md) T1 + T6 · [`risk-assessment.md`](risk-assessment.md) R1 + R3 | Continuous; heightened post-2026-04-22 |
+| **Russia-posture + ECHR-litigation threat monitoring** | [`threat-analysis.md`](threat-analysis.md) T1 + T3 · [`risk-assessment.md`](risk-assessment.md) R1 + R3 | Continuous; heightened post-2026-04-22 |
 
 ---
 
@@ -40,7 +40,7 @@
 5. **Migration tightening triple** (SfU22 + Prop 235 + Prop 229) is met by **coordinated V + C + MP counter-motions** structured as ECHR-litigation predicate. Strasbourg case in preparation for H2 2026 / 2027. `[HIGH]`
 6. **HD01UFöU3** = first operational NATO output: 1,200 troops to Finland under eFP. Sweden moves from accession (March 2024) to operational integration. Försvarsmakten Bn-task-group deployment expected 2026-Q3. `[VERY HIGH]`
 7. **Cross-cluster rhetorical tension**: government championing Nuremberg-style accountability abroad (HD03231) while narrowing TF at home (HD01KU33) — opposition will frame as *"Sweden defends press freedom abroad while compressing it at home"*. Latent T2 threat. `[HIGH]`
-8. **Coverage-completeness rule met**: all 11 documents with weighted significance ≥ 7 receive dedicated H3 sections in the published article. `[HIGH]`
+8. **Coverage-completeness rule met**: all 14 documents with weighted significance ≥ 7.0 receive dedicated H3 sections in the published article (per `significance-scoring.md` coverage gate). `[HIGH]`
 
 ---
 

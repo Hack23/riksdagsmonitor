@@ -54,7 +54,7 @@ The M+KD+L government, supported in Riksdag by SD, is re-confirmed after Sep 202
 ### Implications
 
 - ✅ Fiscal trilogy executes; KU33 ratifies; tribunal operationalises; NATO Bn-task-group deploys
-- ✅ Election message: "økonomin tryggare, brotten färre, försvaret starkare"
+- ✅ Election message: "ekonomin tryggare, brotten färre, försvaret starkare"
 - ⚠️ Climate-credibility erosion continues; W4/T6 manifests
 - ⚠️ Continued L-party identity strain on migration trio
 

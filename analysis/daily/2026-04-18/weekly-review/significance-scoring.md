@@ -153,10 +153,10 @@ flowchart TD
 | Weighted Score Band | Count | Documents |
 |--------------------|:-----:|-----------|
 | 9.5 – 10.0 | 2 | HD03100 (10.0), HD01KU33 (9.8) |
-| 8.5 – 9.4 | 5 | HD0399 (9.0), HD03236 (9.0), HD03246 (9.0), HD01KU32 (8.75), HD03231 (8.55), HD01SfU22 (8.55) |
-| 7.0 – 8.4 | 7 | HD03232, HD01UFöU3, Prop 235, Prop 229, HD03240, HD03245 |
-| 5.5 – 6.9 | 7 | HD03237, HD01CU27, HD03244, HD03242, HD03239, HD01CU28 |
-| 4.0 – 5.4 | 5 | HD03233, HD024098, HD01CU22, HD01CU42, HD10438, HD11719 |
+| 8.5 – 9.4 | 6 | HD0399 (9.0), HD03236 (9.0), HD03246 (9.0), HD01KU32 (8.75), HD03231 (8.55), HD01SfU22 (8.55) |
+| 7.0 – 8.4 | 6 | HD03232, HD01UFöU3, Prop 235, Prop 229, HD03240, HD03245 |
+| 5.5 – 6.9 | 6 | HD03237, HD01CU27, HD03244, HD03242, HD03239, HD01CU28 |
+| 4.0 – 5.4 | 6 | HD03233, HD024098, HD01CU22, HD01CU42, HD10438, HD11719 |
 | < 4.0 | 2 | HD10437, HD11718 |
 
 **Average weighted significance**: 6.85 / 10 (across 28 scored items). 14 documents above the 7.0 mandatory-H3 gate. **Average rank places Week 16 in the top 5 % of legislatively-loaded weeks since 2010** (parliamentary-week baseline mean ≈ 3.8). `[HIGH]`
