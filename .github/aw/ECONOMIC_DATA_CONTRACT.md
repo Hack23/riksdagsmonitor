@@ -276,6 +276,22 @@ commits violations:
 5. Commentary below `minCommentaryWords`.
 6. Missing footer attribution "Data by World Bank / SCB".
 
+### Contract effective date
+
+The validator only enforces the contract on articles published **on or
+after `CONTRACT_EFFECTIVE_DATE`** (`2026-04-18`, the first full day the
+v1.0 contract + loader + validator were authoritative). Articles dated
+earlier are skipped — they legitimately predate the schema and cannot
+be retroactively populated with real World Bank / SCB data without
+re-running MCP queries against a historical snapshot.
+
+The cut-off also prevents the daily audit
+(`.github/workflows/economic-context-audit.yml`) from re-surfacing the
+same pre-contract articles every day for the 7-day lookback window
+after a rollout. To bump the cut-off, update
+`CONTRACT_EFFECTIVE_DATE` in `scripts/validate-economic-context.ts` and
+mirror the change in the version history below.
+
 ---
 
 ## Risks & mitigations
@@ -293,3 +309,7 @@ commits violations:
 
 - **1.0 (2026-04-17)** — Initial contract following the April 17
   committee-reports placeholder incident.
+- **1.0.1 (2026-04-18)** — Added `CONTRACT_EFFECTIVE_DATE = 2026-04-18`
+  exemption to the validator so the daily audit stops re-reporting
+  pre-contract articles for 7 days after every rollout. No change to
+  the schema or enforcement for new articles.
