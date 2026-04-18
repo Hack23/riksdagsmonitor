@@ -710,9 +710,13 @@ Verify MCP first: `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERV
 2. **Meta descriptions** (150-160 chars): summarize key intelligence. ❌ BANNED: starting with "Analysis of N documents"
 3. **Add analysis references** HTML block (class="analysis-references") before footer, linking to `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` files. **🔴 MANDATORY — run deterministic injector BEFORE manual verify**:
 ```bash
-# Auto-discovers all .md files in the realtime-HHMM folder (including reference-grade
+# Discovers all eligible .md files in the realtime-HHMM folder (including reference-grade
 # extensions: README, executive-brief, scenario-analysis, comparative-international,
-# methodology-reflection) and injects localized links into EN + SV articles.
+# methodology-reflection) and repairs/inserts localized links into EN + SV articles.
+# NOTE: `--rewrite` fixes missing or broken analysis-reference sections; it does not
+# force-refresh an already valid-but-incomplete section to include newly added files.
+# If this run added more analysis files after a valid section was created, use the
+# script's full-regeneration mode if available, or remove the existing block and rerun.
 npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite
 ```
 Then verify:

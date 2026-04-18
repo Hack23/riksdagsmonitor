@@ -7,7 +7,7 @@
 | **Completed** | 2026-04-17T14:40:00Z |
 | **Data Freshness** | < 1 minute at query time — FRESH |
 
-> **v5.0 note**: "Selected?" column reflects **post-DIW** publication decision. See `significance-scoring.md` for weighting rationale.
+> **v5.1 note**: "Selected?" column reflects **post-DIW** publication decision. See `significance-scoring.md` for weighting rationale.
 
 ---
 
