@@ -70,7 +70,7 @@ The composite raw score is the rounded mean of five dimensions per `political-cl
 | 22 | HD024098 | Motion mot Extra ändringsbudget (counter-budget) | Mot / FiU | 04-17 | 5 | 1.05 | **5.25** | 🟧 M | Counter-narrative reference |
 | 23 | HD01CU22 | Ställföreträdarskap att lita på | Bet / CU | 04-17 | 4 | 1.00 | **4.00** | 🟧 M | Brief reference |
 | 24 | HD01CU42 | Riksrevisionen om dödsbon | Bet / CU | 04-17 | 4 | 1.00 | **4.00** | 🟧 M | Brief reference |
-| 25 | HD10437 | Lönetransparensdirektivet (EU) | EU-rapport | 04-17 | 4 | 0.95 | **3.80** | 🟧 M | Brief reference |
+| 25 | HD10437 | Lönetransparensdirektivet (interp) | Interp | 04-17 | 4 | 1.00 | **4.00** | 🟧 M | Brief reference |
 | 26 | HD10438 | Nedläggning av kvinnojourer (interp) | Interp | 04-17 | 4 | 1.00 | **4.00** | 🟧 M | Cross-link to HD03245 |
 | 27 | HD11718 | Statlig närvaro sydöstra Skåne (interp) | Interp | 04-17 | 3 | 1.00 | **3.00** | 🟧 M | Brief reference |
 | 28 | HD11719 | Skattekrav mot kvinnor i tvångsprostitution (interp) | Interp | 04-17 | 4 | 1.00 | **4.00** | 🟧 M | Brief reference |

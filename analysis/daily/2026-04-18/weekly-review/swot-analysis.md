@@ -16,7 +16,7 @@
 
 | # | Strength | Evidence (dok_id) | Confidence |
 |---|----------|-------------------|:----------:|
-| **S1** | **Tidö working majority operationally validated** — JuU15 vote 145–142, pure bloc, zero defections | JuU15 voteringsregister 2026-04-15; HD03246 | 🟦 VERY HIGH |
+| **S1** | **Tidö working majority operationally validated** — JuU15 vote 145–142, pure bloc, zero defections | JuU15 voteringsregister 2026-04-15 (chamber vote date per voteringsprotokoll; PR description's 2026-04-16 reflects publication date); HD03246 | 🟦 VERY HIGH |
 | **S2** | **Comprehensive legislative agenda execution** — fiscal trilogy + criminal-justice + migration + foreign-policy + energy delivered in single week | HD03100/0399/236; HD03246; SfU22; HD03231; HD03240 | 🟦 VERY HIGH |
 | **S3** | **NATO operational integration** — first major Försvarsmakten deployment under eFP (1,200 troops to Finland); shifts from accession to operational posture | HD01UFöU3; UFöU committee record; Försvarsmakten timeline | 🟦 VERY HIGH |
 | **S4** | **Cross-party Ukraine consensus** — tribunal + reparations propositions enjoy near-universal support (~349 MPs); pre-empts SD/domestic opposition via Nuremberg framing | HD03231; HD03232; FM Stenergard verbatim 2026-04-16 | 🟦 VERY HIGH |

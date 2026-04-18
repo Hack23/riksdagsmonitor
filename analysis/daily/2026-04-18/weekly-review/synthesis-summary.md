@@ -74,7 +74,7 @@ graph TD
         Prop229["Prop 229<br/>Reception law"]
     end
     subgraph CL6["🛡️ Cluster 6 — NATO Operationalisation + Energy + Housing"]
-        HD01UFoU3["HD01UFöU3<br/>NATO eFP Finland<br/>1,200 troops"]
+        HD01UFöU3["HD01UFöU3<br/>NATO eFP Finland<br/>1,200 troops"]
         HD03240["HD03240<br/>Electricity System Act"]
         HD03239["HD03239<br/>Wind power municipal"]
         HD01CU28["HD01CU28<br/>Bostadsrättsregister"]
@@ -97,7 +97,7 @@ graph TD
     TF1766 --> HD01KU32
     HD01KU33 -.2nd reading.-> ELECT
     HD01KU32 -.2nd reading.-> ELECT
-    NATO_MAR24 --> HD01UFoU3
+    NATO_MAR24 --> HD01UFöU3
     NATO_MAR24 --> HD03231
     HAGUE_DEC25 --> HD03232
     HD03231 -.companion.-> HD03232
@@ -117,7 +117,7 @@ graph TD
     style HD03231 fill:#fd7e14,color:#fff
     style HD03232 fill:#ffc107,color:#000
     style HD01SfU22 fill:#fd7e14,color:#fff
-    style HD01UFoU3 fill:#ffc107,color:#000
+    style HD01UFöU3 fill:#ffc107,color:#000
     style HD03240 fill:#ffc107,color:#000
     style HD03239 fill:#ffc107,color:#000
     style HD01CU28 fill:#28a745,color:#fff
@@ -166,6 +166,8 @@ graph TD
 ---
 
 ## 🔑 Key Political Intelligence Findings
+
+> **Note on fuel-tax figures**: This dossier consistently cites **82 öre per litre** as the **statutory excise-duty (energiskatt) reduction** in HD03236 (the Extra ändringsbudget tax-component cut). The PR description's "SEK 2.50 per litre" figure refers to the broader **pump-price effect estimate** including VAT pass-through and prior 2025 indexation reversals as projected by the Finansdepartementet pump-price model. The two figures measure different things; analyses across this package use the statutory tax-component figure (82 öre) for direct comparability with HD03236 fiscal arithmetic.
 
 | # | Finding | Evidence (dok_id / source) | Confidence | Democratic Impact | Election 2026 Salience |
 |---|---------|----------------------------|:----------:|:-----------------:|:----------------------:|

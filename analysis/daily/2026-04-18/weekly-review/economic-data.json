@@ -5,6 +5,11 @@
   "weekLabel": "2026-W16",
   "weekPeriod": "2026-04-11 to 2026-04-17",
   "policyDomains": ["fiscal policy", "labor market", "energy", "criminal justice", "migration"],
+  "dataAvailability": {
+    "gdpAvailableThroughYear": 2024,
+    "unemploymentAvailableThroughYear": 2025,
+    "notes": "World Bank GDP series (NY.GDP.MKTP.KD.ZG) is published with a one-year lag; 2025 GDP value is not yet available and is recorded as null in chart series for explicit downstream handling. Unemployment (SL.UEM.TOTL.ZS) has 2025 value available."
+  },
   "dataPoints": [
     { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2024", "value": 0.82 },
     { "countryCode": "DNK", "countryName": "Denmark", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2024", "value": 3.478 },

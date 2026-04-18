@@ -23,7 +23,7 @@
 | `hd01ku32.json` | HD01KU32 | Tillgänglighetskrav för vissa medier | Bet | KU | 2026-04-17 | `get_betankanden` | 2026-04-18T05:22Z | 🔴 **CO-PROMINENT (L3)** |
 | `hd01ku33.json` | HD01KU33 | Insyn i handlingar som inhämtas genom beslag och kopiering vid husrannsakan | Bet | KU | 2026-04-17 | `get_betankanden` | 2026-04-18T05:22Z | 🔴 **CO-LEAD (L3)** |
 | `hd024098.json` | HD024098 | Motion mot Extra ändringsbudget 2025/26:236 | Mot | FiU | 2026-04-17 | `search_dokument` (typ=mot, rm=2025/26) | 2026-04-18T05:23Z | 🟠 Counter-narrative reference (L2) |
-| `hd10437.json` | HD10437 | Lönetransparensdirektivet (EU rapport) | EU-rapport | — | 2026-04-17 | `search_dokument` (typ=eun) | 2026-04-18T05:24Z | 🟢 Brief reference |
+| `hd10437.json` | HD10437 | Lönetransparensdirektivet (interpellation) | Interp | — | 2026-04-17 | `search_dokument` (typ=ip) | 2026-04-18T05:24Z | 🟢 Brief reference |
 | `hd10438.json` | HD10438 | Nedläggning av kvinnojourer | Interpellation | — | 2026-04-17 | `get_interpellationer` | 2026-04-18T05:24Z | 🟠 Cross-link to HD03245 |
 | `hd11718.json` | HD11718 | Statlig närvaro i sydöstra Skåne | Interpellation | — | 2026-04-17 | `get_interpellationer` | 2026-04-18T05:24Z | 🟢 Brief reference |
 | `hd11719.json` | HD11719 | Skattekrav mot kvinnor i tvångsprostitution | Interpellation | — | 2026-04-17 | `get_interpellationer` | 2026-04-18T05:24Z | 🟢 Brief reference |
