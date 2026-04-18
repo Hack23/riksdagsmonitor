@@ -60,6 +60,31 @@ export interface CoverageRule {
   requiresD3?: boolean;
 }
 
+/**
+ * Date (ISO `YYYY-MM-DD`) on which the Economic Data Contract v1.0 became
+ * authoritative. Articles published before this date legitimately had no
+ * way to comply — the contract, schema, loader, and validator all landed
+ * on 2026-04-17 (see `.github/aw/ECONOMIC_DATA_CONTRACT.md` § "Version
+ * history"), so the first *full* day under the contract is 2026-04-18.
+ *
+ * The validator and the daily audit discovery use this constant to skip
+ * pre-contract articles, which would otherwise keep generating the same
+ * ~80 violations in the daily audit until they age out of the 7-day
+ * lookback window (see `.github/workflows/economic-context-audit.yml`).
+ *
+ * Keep in sync with the contract's version-history entry.
+ */
+export const CONTRACT_EFFECTIVE_DATE = '2026-04-18';
+
+/**
+ * Returns true when `date` (YYYY-MM-DD) is on or after
+ * `CONTRACT_EFFECTIVE_DATE`. Uses literal string comparison — safe for
+ * ISO-8601 `YYYY-MM-DD` which is lexicographically sortable.
+ */
+export function isUnderContract(date: string): boolean {
+  return date >= CONTRACT_EFFECTIVE_DATE;
+}
+
 export const COVERAGE_MATRIX: Readonly<Record<string, CoverageRule>> = {
   'committee-reports':  { minCharts: 2, minCommentaryWords: 60,  allowSkip: false },
   'propositions':       { minCharts: 2, minCommentaryWords: 60,  allowSkip: false },
@@ -176,6 +201,13 @@ export function validateArticle(filePath: string, rootDir: string = process.cwd(
   const { date, articleType } = parsed;
   const rule = COVERAGE_MATRIX[articleType];
   if (!rule) return violations; // article type not covered by the contract
+
+  // Pre-contract articles are exempt — the contract / schema / validator
+  // only became authoritative on CONTRACT_EFFECTIVE_DATE. Enforcing on
+  // older articles would be a retroactive rule change we cannot satisfy
+  // without re-running the World Bank / SCB MCP queries for history, and
+  // it keeps the daily audit noisy for a week after every rollout.
+  if (!isUnderContract(date)) return violations;
 
   let html: string;
   try {
@@ -373,6 +405,13 @@ function discoverArticleFiles(opts: { date?: string; type?: string }, rootDir: s
     .filter((f) => (explicitDate
       ? f.startsWith(`${explicitDate}-`)
       : genericDatePrefix.test(f)))
+    // Skip pre-contract articles so they neither show up as "✅" noise
+    // nor trigger violations the agent cannot retroactively fix. See
+    // CONTRACT_EFFECTIVE_DATE above.
+    .filter((f) => {
+      const m = f.match(/^(\d{4}-\d{2}-\d{2})-/);
+      return m ? isUnderContract(m[1]) : true;
+    })
     .filter((f) => {
       if (!opts.type) return true;
       const parsed = parseArticleFilename(path.join(newsDir, f));
