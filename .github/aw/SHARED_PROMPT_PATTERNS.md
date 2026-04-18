@@ -2,6 +2,80 @@
 
 > **Internal reference document** — Not a live workflow. Copy-paste these standardised blocks into every `news-*.md` workflow to ensure consistency.
 
+## ⭐ Canonical Reference-Grade Exemplar (MANDATORY READING FOR ALL WORKFLOWS)
+
+> 🔴 **Every workflow that produces an article MUST meet the quality bar set by this exemplar.**
+
+| Artefact | Path | Notes |
+|----------|------|-------|
+| **Governing methodology** | [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md) | v5.1 — Rules 6 (depth tiers L1/L2/L2+/L3), 7 (self-audit matrix), 8 (international benchmarking) |
+| **Canonical dossier (18 files)** | `analysis/daily/2026-04-17/realtime-1434/` | Gold-standard reference — all 14 registry files + 4 per-document analyses |
+| **Canonical articles** | `news/2026-04-17-breaking-1434-{en,sv}.html` | Full 19-link reference section, grouped into 5 subgroups, bilingual localization |
+| **Reference registry** | [`scripts/analysis-references.ts`](../../scripts/analysis-references.ts) | `KNOWN_ANALYSIS_FILES` (14 entries, 14-language labels) + `scanAnalysisFiles()` per-doc enumeration |
+
+**Before writing any article, the agent MUST confirm (via bash):**
+
+```bash
+# Canonical exemplar exists and is not truncated
+test -s analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md \
+  && test -s news/2026-04-17-breaking-1434-en.html \
+  || echo "⚠️ Canonical exemplar missing — consult SHARED_PROMPT_PATTERNS.md"
+```
+
+**Article quality is benchmarked against this exemplar** — if your output is shallower, shorter than ~400 words per major section, lacks confidence labels, omits cross-document synthesis, or misses the grouped analysis-references section with all files linked, it FAILS quality gate.
+
+---
+
+## 🔴 UNIVERSAL PRE-ARTICLE GATE — "Read ALL Analysis Before Writing Any Article"
+
+> 🚨 **ABSOLUTE RULE — applies to all 12 workflows**: No article of any type may be written until the agent has **read every analysis file** produced for that run. This guarantees every claim in the article maps to a finding in the dossier, and prevents the "shallow first draft" anti-pattern.
+
+```bash
+# 🔴 MANDATORY GATE — run BEFORE generating article HTML content
+# Fails the run if analysis files are not present or not read.
+
+ANALYSIS_BASE="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
+if [ ! -d "$ANALYSIS_BASE" ]; then
+  echo "🔴 ABORT: $ANALYSIS_BASE does not exist — analysis must be produced BEFORE article"
+  exit 1
+fi
+
+ANALYSIS_FILES=$(find "$ANALYSIS_BASE" -maxdepth 2 -name "*.md" | sort)
+ANALYSIS_COUNT=$(echo "$ANALYSIS_FILES" | grep -c . || echo 0)
+if [ "$ANALYSIS_COUNT" -lt 9 ]; then
+  echo "🔴 ABORT: Only $ANALYSIS_COUNT analysis files found — need ≥ 9 core files (see v5.1 Rule 6)"
+  exit 1
+fi
+
+echo "=== READING ALL $ANALYSIS_COUNT ANALYSIS FILES BEFORE WRITING ARTICLE ==="
+echo "$ANALYSIS_FILES" | while read -r f; do
+  [ -f "$f" ] && wc -l "$f"
+done
+
+# Checklist the agent MUST complete before emitting article HTML:
+#   ✅ synthesis-summary.md         — lead story decision + DIW weighting
+#   ✅ swot-analysis.md             — cluster strengths/weaknesses + TOWS interference
+#   ✅ risk-assessment.md           — top 5 ranked risks + posterior probabilities
+#   ✅ threat-analysis.md           — Attack Tree / Kill Chain / Diamond / MITRE-TTPs
+#   ✅ stakeholder-perspectives.md  — named actors + influence network + briefing cards
+#   ✅ significance-scoring.md      — weighted ranks + sensitivity analysis
+#   ✅ classification-results.md    — priority tiers + retention + access
+#   ✅ cross-reference-map.md       — prior-run forward chain + continuity contracts
+#   ✅ data-download-manifest.md    — provenance chain-of-custody
+#   ✅ Reference-grade extensions (if present): README, executive-brief,
+#      scenario-analysis, comparative-international, methodology-reflection
+#   ✅ documents/*.md               — per-document analyses (one per dok_id)
+```
+
+**Evidence of reading**: The agent MUST, in its chain of thought, explicitly reference **at minimum 3 distinct claims from 3 distinct analysis files** when writing each major article section (lede, What Is Happening, Why It Matters, Winners & Losers, Key Takeaways). Articles that paraphrase only the synthesis-summary are REJECTED.
+
+**Reference-grade exemplar anchoring**: When the run produces reference-grade extensions (README, executive-brief, scenario-analysis, comparative-international, methodology-reflection), the article MUST additionally cite:
+- At least one concrete scenario probability from `scenario-analysis.md` (e.g., "Base case P=0.42")
+- At least one international comparator from `comparative-international.md`
+- The one-page BLUF from `executive-brief.md` in the lede or Key Takeaways
+
+---
+
 ## 🌐 Hack23 Ecosystem Context
 
 Riksdagsmonitor is part of the **Hack23** platform for democratic transparency and political intelligence. When generating articles and analysis, link to and reference these resources:

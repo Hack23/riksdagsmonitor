@@ -708,7 +708,14 @@ Verify MCP first: `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERV
 
 1. **Titles**: `[Active Verb] + [Specific Actor] + [Concrete Action]`. ❌ BANNED: "Breaking News: Latest Updates"
 2. **Meta descriptions** (150-160 chars): summarize key intelligence. ❌ BANNED: starting with "Analysis of N documents"
-3. **Add analysis references** HTML block (class="analysis-references") before footer, linking to `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` files. **Verify**:
+3. **Add analysis references** HTML block (class="analysis-references") before footer, linking to `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` files. **🔴 MANDATORY — run deterministic injector BEFORE manual verify**:
+```bash
+# Auto-discovers all .md files in the realtime-HHMM folder (including reference-grade
+# extensions: README, executive-brief, scenario-analysis, comparative-international,
+# methodology-reflection) and injects localized links into EN + SV articles.
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite
+```
+Then verify:
 ```bash
 for FILE in news/$ARTICLE_DATE-*breaking*-*.html news/$ARTICLE_DATE-*realtime*-*.html; do
   [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE" && echo "🔴 MISSING: $FILE"

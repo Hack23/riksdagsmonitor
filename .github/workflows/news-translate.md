@@ -434,6 +434,14 @@ When translating, preserve ALL analysis depth. Translate content but NEVER remov
 
 > 🔴 **NON-NEGOTIABLE: Preserve the "📊 Analysis & Sources" section** (`class="analysis-references"`) during translation. This section links to analysis files on GitHub and MUST appear in every translated article. Translate the section title and intro text to the target language, but keep all GitHub URLs unchanged. If the source article is missing the analysis-references section, add it using the template from SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES.
 
+> **🛡️ Safety net — ALWAYS run after translations**: The deterministic injector will auto-fix any translated article that lost the section or has broken/outdated links (e.g. new reference-grade analysis files added after the source article was generated):
+>
+> ```bash
+> # Runs in idempotent --rewrite mode: replaces existing sections only if they
+> # contain broken links; injects the section if missing. Safe to run anytime.
+> npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite
+> ```
+
 ## Required Skills
 
 **Do NOT load skill files during translation** — they consume tokens and time. You already know how to translate. Only load a skill file if you encounter a specific unknown term:

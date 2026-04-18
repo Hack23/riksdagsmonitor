@@ -43,7 +43,7 @@ The 24 hours between 2026-04-16 14:00 UTC and 2026-04-17 14:34 UTC produced the 
 | Dok ID | Title (short) | Type | Committee | Date | Raw / Weighted | Depth Level |
 |--------|--------------|------|-----------|------|:---:|:-----------:|
 | HD01KU33 | Search/Seizure Digital Materials (constitutional) | Bet | KU | 2026-04-17 | 7 / **9.8** | 🔴 L3 Intelligence |
-| HD01KU32 | Media Accessibility (constitutional) | Bet | KU | 2026-04-17 | 7 / **8.75** | 🔴 L3 Intelligence |
+| HD01KU32 | Media Accessibility (constitutional) | Bet | KU | 2026-04-17 | 6.6 / **8.25** | 🔴 L3 Intelligence |
 | HD03231 | Ukraine Aggression Tribunal | Prop | UU (receiving) | 2026-04-16 | 9 / 8.55 | 🟠 L2 Strategic |
 | HD03232 | Ukraine Compensation Commission | Prop | UU (receiving) | 2026-04-16 | 8 / 7.60 | 🟠 L2 Strategic |
 | HD01CU28 | National Condominium Register | Bet | CU | 2026-04-17 | 6 | 🟢 L1 Surface |
