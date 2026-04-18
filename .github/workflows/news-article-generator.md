@@ -334,7 +334,7 @@ bash({ command: "..." }) // ← WRONG: missing description
 3. Safe output tools are **always in your tool list**. NEVER search for them via bash.
 4. **NEVER** write your own MCP HTTP/JSON-RPC client. Use the scripts or direct tool calls only.
 5. Exiting without calling a safe output tool = workflow failure.
-6. **NEVER** call `safeoutputs___noop` because articles already exist — the full deep political analysis phase (15-20 minutes) MUST always run. Analysis is the primary output.
+6. **🚨 FULL ANALYSIS BEFORE ANY ARTICLE (BLOCKING)**: The complete deep political analysis phase following [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md) (Rule 0 two-pass iteration + Rules 6–8 depth tiers, 15 min Pass 1 + 7 min Pass 2 minimum) **MUST** be complete **BEFORE** creating or updating any article HTML. Articles **MUST** be (re)generated/updated from the improved Pass 2 analysis — never from Pass 1 stubs, never from scripts alone, never skipping Pass 2. Do **NOT** call `safeoutputs___noop` because articles already exist — the full analysis phase MUST always run. Analysis is the primary output. Violations = REJECTED PR (see PR #1705 comment audit, 2026-04-18).
 
 ## 🧠 Repo Memory
 
