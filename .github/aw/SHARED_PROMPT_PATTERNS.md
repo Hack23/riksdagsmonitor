@@ -2776,6 +2776,8 @@ If `DATA_JSON_COUNT=0`: **the agent MUST diagnose script failures (read error lo
 > - `fulltext_available` — boolean indicating if full text was returned
 > - **Legacy fields** (`fullText`, `html`, `summary`, `notis`) are NOT returned by the current MCP server
 
+> ⚠️ **NEVER paste the raw `text` field into article HTML.** The `text` payload begins with a dump of metadata tokens (e.g. `5287561 HD03242 2025/26 242 prop prop prop Proposition 2025/26:242 … html-ec prop-RIM <uuid>`) followed by embedded CSS rule blocks (`body {margin-top: 0px;…} #page_1 {position:relative; overflow: hidden;…}`). When the AI agent copies this directly into a `<span lang="sv">…</span>` inside a `<div class="document-entry">`, readers see the CSS as visible text. **Always extract the narrative passage** (via `extractKeyPassage` / `generateDocumentIntelligenceAnalysis` — both now auto-strip the Riksdag dump prefix and embedded CSS), or summarise the document in your own words. **Never** place raw `text` (or the first N chars of it) between `<span lang="sv">` tags. See the 2026-04-18 weekly-review incident for the failure mode.
+
 **Before ANY per-document analysis**, verify data depth:
 
 1. **Check each document JSON** in `analysis/daily/{date}/{type}/documents/*.json`:
