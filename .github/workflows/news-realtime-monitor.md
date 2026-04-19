@@ -491,7 +491,23 @@ Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-m
 
 ### 🔴 MANDATORY: Batch Analysis Enrichment
 
-If `synthesis-summary.md` reports "0 documents analyzed" but per-doc analyses exist in `documents/`, aggregate findings into all 9 batch files. If NO per-doc analyses exist, use MCP tools directly to create meaningful analysis. See `ai-driven-analysis-guide.md` §"Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)". **NEVER commit batch files reporting "0 documents analyzed".** After enrichment, run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist (synthesis-summary.md, swot-analysis.md, risk-assessment.md, threat-analysis.md, classification-results.md, significance-scoring.md, stakeholder-perspectives.md, cross-reference-map.md, data-download-manifest.md). Create any missing artifacts manually.
+If `synthesis-summary.md` reports "0 documents analyzed" but per-doc analyses exist in `documents/`, aggregate findings into all 9 batch files. If NO per-doc analyses exist, use MCP tools directly to create meaningful analysis. See `ai-driven-analysis-guide.md` §"Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)". **NEVER commit batch files reporting "0 documents analyzed".** After enrichment, run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 core files exist (synthesis-summary.md, swot-analysis.md, risk-assessment.md, threat-analysis.md, classification-results.md, significance-scoring.md, stakeholder-perspectives.md, cross-reference-map.md, data-download-manifest.md). Create any missing artifacts manually.
+
+### 🏆 MANDATORY: 14-Artifact Reference-Grade Gate (Tier-C — added 2026-04-19 per PR review comment #4275964218)
+
+`news-realtime-monitor` is a **Tier-C reference-grade workflow** — every breaking run is the flagship editorial surface of Riksdagsmonitor and is consumed externally by editors, analysts, and press. After the 9-Artifact Completeness Gate passes, additionally run the **14-Artifact Reference-Grade Gate** from `SHARED_PROMPT_PATTERNS.md` §"14 REQUIRED Artifacts for AGGREGATION Workflows + news-realtime-monitor". This gate requires 5 additional Tier-C files in `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/`:
+
+- **`README.md`** (≥ 3000 bytes) — Package index · reading orders by audience · file index table · lead-story at-a-glance · upstream-run relationship table
+- **`executive-brief.md`** (≥ 3500 bytes) — BLUF ≤ 300 words · 3 decisions this brief supports · 8-bullet "60-second read" · named actors (≥ 5 ministers/party leaders with dok_id citations) · 14-day forward vote calendar · top-5 risks · analyst confidence meter
+- **`scenario-analysis.md`** (≥ 4000 bytes) — 3 base scenarios with probability bands (30-day + 90-day + post-election where applicable) · 2 wildcards with impact assessment · ACH (Analysis of Competing Hypotheses) grid · monitoring-trigger calendar mapped to scenario shifts · cross-reference to upstream scenario work
+- **`comparative-international.md`** (≥ 4000 bytes) — **≥ 5 jurisdictions** benchmarked per cluster · Nordic baseline (SE vs DK, NO, FI) · EU benchmark (DE, NL, plus cluster-relevant) · explicit call-outs where Sweden **innovates**, **follows**, **diverges** · data-source citations (World Bank, RSF, OECD, Eurostat)
+- **`methodology-reflection.md`** (≥ 4000 bytes) — Methodology application matrix · **Upstream Watchpoint Reconciliation** (every forward indicator from the last 2 days of sibling realtime-monitor runs explicitly carried forward or retired with reason) · uncertainty hot-spots · known limitations · Pass-1→Pass-2 improvement evidence · recommendations for doctrine codification
+
+**Reference exemplars**:
+- [`analysis/daily/2026-04-17/realtime-1434/`](../../analysis/daily/2026-04-17/realtime-1434/) — 14-file reference package
+- [`analysis/daily/2026-04-19/realtime-1219/`](../../analysis/daily/2026-04-19/realtime-1219/) — 14-file reference package with full Tier-C extensions
+
+Failing the 14-artifact gate is BLOCKING — create any missing Tier-C file before article generation. See `SHARED_PROMPT_PATTERNS.md` §"14-Artifact Completeness Gate for Tier-C Workflows" for the full bash script.
 
 ### 🚨 MANDATORY: Commit Data AND Analysis
 

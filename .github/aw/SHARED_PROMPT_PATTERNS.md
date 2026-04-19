@@ -237,19 +237,25 @@ fi
 
 ---
 
-## 🏆 14 REQUIRED Artifacts for AGGREGATION Workflows — Reference-Grade Tier-C
+## 🏆 14 REQUIRED Artifacts for AGGREGATION Workflows + `news-realtime-monitor` — Reference-Grade Tier-C
 
-> 🔴 **NON-NEGOTIABLE (Added 2026-04-19, PR review comment #4275832065)**: The following 5 **aggregation** workflows MUST produce **5 additional Tier-C reference-grade artifacts** on top of the 9 core artifacts above, bringing their minimum total to **14 artifacts** per run:
+> 🔴 **NON-NEGOTIABLE (Added 2026-04-19, PR review comment #4275832065 · Extended 2026-04-19 PR review comment #4275964218)**: The following **6 workflows** MUST produce **5 additional Tier-C reference-grade artifacts** on top of the 9 core artifacts above, bringing their minimum total to **14 artifacts** per run:
 >
+> **Aggregation workflows (original Tier-C scope):**
 > - `news-week-ahead.md` — `analysis/daily/$DATE/week-ahead/`
 > - `news-month-ahead.md` — `analysis/daily/$DATE/month-ahead/`
 > - `news-evening-analysis.md` — `analysis/daily/$DATE/evening-analysis/`
 > - `news-weekly-review.md` — `analysis/daily/$DATE/weekly-review/`
 > - `news-monthly-review.md` — `analysis/daily/$DATE/monthly-review/`
 >
-> **Reference exemplar**: [`analysis/daily/2026-04-18/weekly-review/`](../../analysis/daily/2026-04-18/weekly-review/) (14-file reference-grade package). A second exemplar for the month-ahead aggregation type exists at [`analysis/daily/2026-04-19/month-ahead/`](../../analysis/daily/2026-04-19/month-ahead/).
+> **Breaking-news workflow (extended Tier-C scope — added 2026-04-19):**
+> - `news-realtime-monitor.md` — `analysis/daily/$DATE/realtime-$HHMM/`
 >
-> **Rationale**: Aggregation workflows synthesise multiple days or document types into decision-maker briefs. They require decision-maker entry points (`README.md`, `executive-brief.md`), probabilistic forward-looking analysis (`scenario-analysis.md`), cross-jurisdictional benchmarking (`comparative-international.md`), and a methodology self-audit + upstream-watchpoint reconciliation (`methodology-reflection.md`). Non-aggregation workflows (propositions, motions, committee-reports, interpellations, realtime-monitor) remain at the 9-artifact gate — they are per-document-type, not aggregation.
+> **Reference exemplars**:
+> - Aggregation: [`analysis/daily/2026-04-18/weekly-review/`](../../analysis/daily/2026-04-18/weekly-review/), [`analysis/daily/2026-04-19/month-ahead/`](../../analysis/daily/2026-04-19/month-ahead/)
+> - Realtime: [`analysis/daily/2026-04-17/realtime-1434/`](../../analysis/daily/2026-04-17/realtime-1434/), [`analysis/daily/2026-04-19/realtime-1219/`](../../analysis/daily/2026-04-19/realtime-1219/)
+>
+> **Rationale**: Aggregation workflows synthesise multiple days or document types into decision-maker briefs. `news-realtime-monitor` is the **flagship editorial surface** of Riksdagsmonitor — every breaking run is consumed externally by editors, analysts, and press and must therefore carry the same decision-maker entry points (`README.md`, `executive-brief.md`), probabilistic forward-looking analysis (`scenario-analysis.md`), cross-jurisdictional benchmarking (`comparative-international.md`), and methodology self-audit + upstream-watchpoint reconciliation (`methodology-reflection.md`) as a weekly review. Per-document-type workflows (propositions, motions, committee-reports, interpellations) remain at the 9-artifact gate — they are narrower-scope and serve as upstream evidence feeding into the 14-artifact Tier-C runs.
 
 | # | Tier-C File | Minimum Size | What It Must Contain |
 |---|-------------|-------------|---------------------|
@@ -257,23 +263,28 @@ fi
 | 11 | `executive-brief.md` | 3500 bytes | BLUF (Bottom Line Up Front) ≤ 300 words · 3 decisions this brief supports · 8-bullet "60-second read" · named actors (≥ 5 ministers/party leaders with dok_id citations) · forward vote calendar · top-5 risks · confidence meter |
 | 12 | `scenario-analysis.md` | 4000 bytes | 3 base scenarios with probability bands (30-day + 90-day + post-election where applicable) · 2 wildcards with impact assessment · ACH (Analysis of Competing Hypotheses) grid · monitoring-trigger calendar mapped to scenario shifts · cross-reference to upstream scenario work |
 | 13 | `comparative-international.md` | 4000 bytes | **≥ 5 jurisdictions** benchmarked per cluster · Nordic baseline (SE vs DK, NO, FI) · EU benchmark (DE, NL, plus cluster-relevant) · explicit call-outs where Sweden **innovates**, **follows**, **diverges** · data-source citations (World Bank, RSF, OECD, Eurostat) |
-| 14 | `methodology-reflection.md` | 4000 bytes | Methodology application matrix · **Upstream Watchpoint Reconciliation** (every forward indicator from the last 5 days of sibling runs explicitly carried forward or retired with reason) · uncertainty hot-spots · known limitations · Pass-1→Pass-2 improvement evidence · recommendations for doctrine codification |
+| 14 | `methodology-reflection.md` | 4000 bytes | Methodology application matrix · **Upstream Watchpoint Reconciliation** (every forward indicator from sibling runs within the workflow-specific lookback window defined below explicitly carried forward or retired with reason) · uncertainty hot-spots · known limitations · Pass-1→Pass-2 improvement evidence · recommendations for doctrine codification |
 
-**14-Artifact Completeness Gate for Aggregation Workflows (run BEFORE article generation):**
+**14-Artifact Completeness Gate for Tier-C Workflows (aggregation + realtime-monitor — run BEFORE article generation):**
 
 ```bash
-# Only run this gate for aggregation workflow subfolders
+# Run this gate for aggregation workflow subfolders AND for realtime-monitor subfolders
 AGGREGATION_TYPES="week-ahead month-ahead evening-analysis weekly-review monthly-review"
-IS_AGGREGATION=0
+IS_TIER_C=0
+# Aggregation matches: exact subfolder equality
 for T in $AGGREGATION_TYPES; do
   if [ "$ANALYSIS_SUBFOLDER" = "$T" ]; then
-    IS_AGGREGATION=1
+    IS_TIER_C=1
     break
   fi
 done
+# Realtime-monitor matches: subfolder begins with "realtime-" (e.g. realtime-1219)
+case "$ANALYSIS_SUBFOLDER" in
+  realtime-*) IS_TIER_C=1 ;;
+esac
 
-if [ "$IS_AGGREGATION" = "1" ]; then
-  echo "=== 🏆 14-Artifact Reference-Grade Gate (aggregation workflow) ==="
+if [ "$IS_TIER_C" = "1" ]; then
+  echo "=== 🏆 14-Artifact Reference-Grade Gate (Tier-C workflow) ==="
   TIER_C_MISSING=0
   declare -A TIER_C_SIZES=(
     ["README.md"]=3000
@@ -285,7 +296,7 @@ if [ "$IS_AGGREGATION" = "1" ]; then
   for REQUIRED_FILE in README.md executive-brief.md scenario-analysis.md comparative-international.md methodology-reflection.md; do
     MIN_SIZE=${TIER_C_SIZES[$REQUIRED_FILE]}
     if [ ! -f "$ANALYSIS_DIR/$REQUIRED_FILE" ]; then
-      echo "🔴 MISSING Tier-C: $REQUIRED_FILE — aggregation workflow MUST CREATE"
+      echo "🔴 MISSING Tier-C: $REQUIRED_FILE — Tier-C workflow MUST CREATE"
       TIER_C_MISSING=$((TIER_C_MISSING + 1))
     else
       FSIZE=$(wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE")
@@ -300,8 +311,10 @@ if [ "$IS_AGGREGATION" = "1" ]; then
   if [ "$TIER_C_MISSING" -gt 0 ]; then
     echo "🚨🚨🚨 14-ARTIFACT REFERENCE-GRADE GATE FAILED 🚨🚨🚨"
     echo "❌ $TIER_C_MISSING Tier-C artefacts missing or too small"
-    echo "Aggregation workflows MUST produce all 14 artefacts before article generation."
-    echo "Reference exemplars: analysis/daily/2026-04-18/weekly-review/ and analysis/daily/2026-04-19/month-ahead/"
+    echo "Tier-C workflows (aggregation + realtime-monitor) MUST produce all 14 artefacts before article generation."
+    echo "Reference exemplars:"
+    echo "  Aggregation: analysis/daily/2026-04-18/weekly-review/, analysis/daily/2026-04-19/month-ahead/"
+    echo "  Realtime-monitor: analysis/daily/2026-04-17/realtime-1434/, analysis/daily/2026-04-19/realtime-1219/"
     exit 1
   fi
 fi
@@ -309,14 +322,15 @@ fi
 
 ---
 
-## 🔁 RECENT DAILY KNOWLEDGE-BASE SYNTHESIS — Mandatory for Aggregation Workflows
+## 🔁 RECENT DAILY KNOWLEDGE-BASE SYNTHESIS — Mandatory for Tier-C Workflows
 
-> 🔴 **NON-NEGOTIABLE (Added 2026-04-19)**: Aggregation workflows (week-ahead, month-ahead, evening-analysis, weekly-review, monthly-review) MUST ingest and reconcile forward-looking intelligence from **recent sibling daily runs** before producing their own package. This establishes a **continuity-of-intelligence contract**: no forward indicator issued in the recent past is silently dropped.
+> 🔴 **NON-NEGOTIABLE (Added 2026-04-19 · Extended 2026-04-19 for realtime-monitor)**: Tier-C workflows (aggregation workflows + `news-realtime-monitor`) MUST ingest and reconcile forward-looking intelligence from **recent sibling daily runs** before producing their own package. This establishes a **continuity-of-intelligence contract**: no forward indicator issued in the recent past is silently dropped.
 
-### Lookback Windows by Aggregation Type
+### Lookback Windows by Tier-C Workflow
 
 | Workflow | Sibling Lookback Window (days) | Minimum Sibling Runs to Ingest |
 |----------|:------------------------------:|:------------------------------:|
+| `news-realtime-monitor` | 2 days | Last 2 days of `realtime-*` + `evening-analysis` if present |
 | `news-evening-analysis` | 3 days | 3 `realtime-*` + prior `evening-analysis` |
 | `news-week-ahead` | 7 days | Last 7 daily folders + last `weekly-review` |
 | `news-weekly-review` | 7 days | Last 7 daily folders + prior `weekly-review` |
