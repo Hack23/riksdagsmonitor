@@ -88,7 +88,7 @@
     {
       "type": "nordic-radar",
       "title": "Nordic Security Investment Profile (2024)",
-      "indicators": ["GDP_PER_CAPITA", "DEFENCE_SPENDING"],
+      "indicators": ["GDP_PER_CAPITA", "DEFENCE_SPENDING_GDP"],
       "countries": ["SE", "NO", "FI", "DK"],
       "narrative": "Sweden is now a full Nordic security partner — military (NATO) and legal (tribunal) dimensions"
     }

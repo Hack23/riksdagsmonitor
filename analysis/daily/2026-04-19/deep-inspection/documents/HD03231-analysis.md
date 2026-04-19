@@ -21,7 +21,7 @@ Prop. 2025/26:231 proposes Sweden's founding membership in the Special Tribunal 
 2. Permanently elevates its threat posture against Russian hybrid operations
 3. Signals the most significant Swedish foreign policy commitment in the post-NATO-accession period
 
-The proposition received a **unanimous UU committee recommendation** and is projected to pass by ≈349/349 votes in first reading.
+The proposition is expected to receive broad — likely unanimous — UU committee backing (committee stage projected May–June 2026) and is projected to pass by ≈349/349 votes in first reading.
 
 ---
 
