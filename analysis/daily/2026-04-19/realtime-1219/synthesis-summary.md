@@ -31,7 +31,7 @@ graph LR
 | 1 | **Riksdag to vote on constitutional amendment (KU33) removing seized digital materials from offentlighetsprincipen** — first reading scheduled for 2026-04-22; second reading required post-September 2026 election | HD01KU33 | DIW 8.48 | HIGH |
 | 2 | **Sweden joins both Ukraine Special Tribunal (for Aggression) AND Compensation Commission** — twin propositions (HD03231/HD03232) submitted to Riksdag 2026-04-16, coinciding with King Carl Gustaf + FM Malmer Stenergard's Kyiv visit | HD03231, HD03232 | DIW 8.33 | HIGH |
 | 3 | **Second grundlag amendment (KU32)** in same riksmöte — accessibility requirements for media; establishes pattern of constitutional modification as routine legislative tool | HD01KU32 | DIW 7.98 | HIGH |
-| 4 | **National housing rights register approved** (CU28) — Riksdag to approve national bostadsrättsregister modernizing mortgage market; part of broader anti-financial-crime package | HD01CU28 | DIW 5.93 | HIGH |
+| 4 | **National housing rights register approved** (CU28) — Riksdag to approve national bostadsrättsregister modernizing mortgage market; part of broader anti-financial-crime package. Tracked as context; DIW 5.93 is below the ≥7.0 article-section threshold so not featured in the breaking-news articles (per article-coverage gate). | HD01CU28 | DIW 5.93 | HIGH |
 
 ## Lead Story Decision
 

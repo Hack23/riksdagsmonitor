@@ -38,7 +38,7 @@ Citizens face two countervailing developments:
 
 **Named actors**: Individual Swedish citizens represented by TU (Tidningarnas Telegrambyrå) editorial interest; organized through media unions.
 
-### 2. Government Coalition (M, SD, L, KD, C)
+### 2. Government parties (M, KD, L) + support party (SD)
 
 **Impact**: HIGH (8/10) | **Stance**: SUPPORTIVE
 
