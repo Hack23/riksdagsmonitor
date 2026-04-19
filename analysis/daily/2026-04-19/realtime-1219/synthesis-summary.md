@@ -28,14 +28,14 @@ graph LR
 
 | # | Finding | dok_id | Significance | Confidence |
 |---|---------|--------|-------------|-----------|
-| 1 | **Riksdag adopts constitutional amendment (KU33) removing seized digital materials from offentlighetsprincipen** — first reading passed; second reading required post-September 2026 election | HD01KU33 | DIW 8.48 | HIGH |
+| 1 | **Riksdag to vote on constitutional amendment (KU33) removing seized digital materials from offentlighetsprincipen** — first reading scheduled for 2026-04-22; second reading required post-September 2026 election | HD01KU33 | DIW 8.48 | HIGH |
 | 2 | **Sweden joins both Ukraine Special Tribunal (for Aggression) AND Compensation Commission** — twin propositions (HD03231/HD03232) submitted to Riksdag 2026-04-16, coinciding with King Carl Gustaf + FM Malmer Stenergard's Kyiv visit | HD03231, HD03232 | DIW 8.33 | HIGH |
 | 3 | **Second grundlag amendment (KU32)** in same riksmöte — accessibility requirements for media; establishes pattern of constitutional modification as routine legislative tool | HD01KU32 | DIW 7.98 | HIGH |
 | 4 | **National housing rights register approved** (CU28) — Riksdag to approve national bostadsrättsregister modernizing mortgage market; part of broader anti-financial-crime package | HD01CU28 | DIW 5.93 | HIGH |
 
 ## Lead Story Decision
 
-**PRIMARY LEAD**: KU33 — Sweden's Constitutional Revision Committee passes first reading of an amendment to Tryckfrihetsförordningen removing police-seized digital materials from public record status. This is the highest DIW-scored item (8.48) because of the 30% democratic infrastructure weighting — a constitutional change takes decades to reverse and directly affects press freedom and government accountability.
+**PRIMARY LEAD**: KU33 — Sweden's Constitutional Revision Committee has advanced an amendment to Tryckfrihetsförordningen removing police-seized digital materials from public record status, with the first-reading vote scheduled for 2026-04-22. This is the highest DIW-scored item (8.48) because of the 30% democratic infrastructure weighting — a constitutional change takes decades to reverse and directly affects press freedom and government accountability.
 
 **CO-LEAD**: Ukraine Package — Sweden's simultaneous accession to the Special Tribunal for Aggression AND the International Compensation Commission for Ukraine, concurrent with the King's diplomatic Kyiv visit (2026-04-17), represents a historic commitment to Ukraine accountability that deserves equal prominence due to extraordinary news value.
 
