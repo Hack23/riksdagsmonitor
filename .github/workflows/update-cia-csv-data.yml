@@ -1,0 +1,257 @@
+name: Update CIA CSV Data
+
+# Refreshes every tracked CSV under data/cia/ and cia-data/ from the upstream
+# CIA sample-data published at:
+#   https://github.com/Hack23/cia/tree/master/service.data.impl/sample-data
+#
+# Runs nightly and on manual dispatch. When upstream content changes, the
+# workflow opens a pull request with the updated CSVs (no force pushes to main).
+
+on:
+  schedule:
+    # Daily at 02:30 UTC (~03:30 CET / 04:30 CEST), after upstream extraction
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Upstream Hack23/cia git ref (branch, tag, or SHA) to download from'
+        required: false
+        type: string
+        default: 'master'
+
+permissions:
+  contents: read
+
+jobs:
+  refresh-csv:
+    name: Refresh CIA CSV sample data
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      UPSTREAM_REF: ${{ github.event.inputs.ref || 'master' }}
+      UPSTREAM_BASE: https://raw.githubusercontent.com/Hack23/cia
+      UPSTREAM_PATH: service.data.impl/sample-data
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@6c3c2f2c1c457b00c10c4848d6f5491db3b629df # v2.18.0
+        with:
+          egress-policy: audit
+          allowed-endpoints: >
+            api.github.com:443
+            github.com:443
+            raw.githubusercontent.com:443
+            objects.githubusercontent.com:443
+            codeload.github.com:443
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: Refresh CSV files from upstream
+        id: refresh
+        run: |
+          set -euo pipefail
+
+          BASE_URL="${UPSTREAM_BASE}/${UPSTREAM_REF}/${UPSTREAM_PATH}"
+          echo "📥 Source: ${BASE_URL}"
+
+          # Collect all CSVs we currently track under the two CIA data trees.
+          # Each local file is refreshed from upstream by basename match.
+          mapfile -t LOCAL_CSVS < <(
+            find data/cia cia-data -type f -name '*.csv' 2>/dev/null | sort -u
+          )
+
+          total=${#LOCAL_CSVS[@]}
+          updated=0
+          unchanged=0
+          missing=0
+          skipped=0
+          failed=0
+
+          # Files that are local-only (no upstream equivalent) and must be preserved
+          # without overwriting from the upstream sample-data tree.
+          declare -a SKIP_PATTERNS=(
+            'data/cia/ministry/sample_influence.csv'
+            'data/cia/ministry/sample_decision_impact.csv'
+            'data/cia/ministry/sample_risk_levels.csv'
+            'data/cia/ministry/sample_productivity.csv'
+            'cia-data/election/election_forecast.csv'
+            'cia-data/election/coalition_scenarios.csv'
+          )
+
+          is_skipped() {
+            local path="$1"
+            for pat in "${SKIP_PATTERNS[@]}"; do
+              if [ "$path" = "$pat" ]; then
+                return 0
+              fi
+            done
+            return 1
+          }
+
+          tmpdir="$(mktemp -d)"
+          trap 'rm -rf "$tmpdir"' EXIT
+
+          : > "$tmpdir/updated.txt"
+          : > "$tmpdir/missing.txt"
+          : > "$tmpdir/failed.txt"
+
+          for local_path in "${LOCAL_CSVS[@]}"; do
+            base="$(basename "$local_path")"
+
+            if is_skipped "$local_path"; then
+              echo "  ⏭  skip   $local_path (local-only sample, no upstream)"
+              skipped=$((skipped + 1))
+              continue
+            fi
+
+            url="${BASE_URL}/${base}"
+            tmpfile="$tmpdir/$base"
+
+            http_code="$(curl --silent --show-error --location --retry 3 \
+              --max-time 60 --output "$tmpfile" --write-out '%{http_code}' \
+              "$url" || echo '000')"
+
+            case "$http_code" in
+              200)
+                if [ ! -s "$tmpfile" ]; then
+                  echo "  ⚠️  empty  $local_path  ($url)"
+                  failed=$((failed + 1))
+                  echo "$local_path" >> "$tmpdir/failed.txt"
+                  continue
+                fi
+                if cmp --silent "$tmpfile" "$local_path"; then
+                  unchanged=$((unchanged + 1))
+                else
+                  mkdir -p "$(dirname "$local_path")"
+                  mv "$tmpfile" "$local_path"
+                  updated=$((updated + 1))
+                  echo "$local_path" >> "$tmpdir/updated.txt"
+                  echo "  ✅ update $local_path"
+                fi
+                ;;
+              404)
+                echo "  ❔ miss   $local_path (no upstream $base)"
+                missing=$((missing + 1))
+                echo "$local_path" >> "$tmpdir/missing.txt"
+                ;;
+              *)
+                echo "  ❌ http=$http_code $local_path ($url)"
+                failed=$((failed + 1))
+                echo "$local_path" >> "$tmpdir/failed.txt"
+                ;;
+            esac
+          done
+
+          {
+            echo "total=$total"
+            echo "updated=$updated"
+            echo "unchanged=$unchanged"
+            echo "missing=$missing"
+            echo "skipped=$skipped"
+            echo "failed=$failed"
+          } >> "$GITHUB_OUTPUT"
+
+          {
+            echo "## 📊 CIA CSV Refresh Summary"
+            echo ""
+            echo "| Metric | Count |"
+            echo "| --- | ---: |"
+            echo "| Total tracked CSVs | $total |"
+            echo "| ✅ Updated | $updated |"
+            echo "| 🟰 Unchanged | $unchanged |"
+            echo "| ❔ Missing upstream (404) | $missing |"
+            echo "| ⏭ Skipped (local-only) | $skipped |"
+            echo "| ❌ Failed downloads | $failed |"
+            echo ""
+            echo "- Upstream ref: \`${UPSTREAM_REF}\`"
+            echo "- Source: ${BASE_URL}"
+
+            if [ "$updated" -gt 0 ]; then
+              echo ""
+              echo "### Updated files"
+              echo ""
+              sed 's/^/- /' "$tmpdir/updated.txt"
+            fi
+            if [ "$missing" -gt 0 ]; then
+              echo ""
+              echo "### Missing upstream"
+              echo ""
+              sed 's/^/- /' "$tmpdir/missing.txt"
+            fi
+            if [ "$failed" -gt 0 ]; then
+              echo ""
+              echo "### Failed downloads"
+              echo ""
+              sed 's/^/- /' "$tmpdir/failed.txt"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "$failed" -gt 0 ]; then
+            echo "::error::$failed CSV downloads failed; see job summary"
+            exit 1
+          fi
+
+      - name: Detect git changes
+        id: diff
+        run: |
+          set -e
+          if [ -n "$(git status --porcelain data/cia cia-data)" ]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            echo "📝 Changes detected"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            echo "✅ No changes detected"
+          fi
+
+      - name: Create pull request with refreshed CSVs
+        if: steps.diff.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          add-paths: |
+            data/cia/**
+            cia-data/**
+          commit-message: |
+            data(cia): refresh CSV sample data from Hack23/cia@${{ env.UPSTREAM_REF }}
+
+            Updated ${{ steps.refresh.outputs.updated }} of
+            ${{ steps.refresh.outputs.total }} tracked CSVs.
+          branch: data/cia-csv-refresh
+          delete-branch: true
+          title: '📊 Refresh CIA CSV sample data (${{ steps.refresh.outputs.updated }} files)'
+          body: |
+            ## 📊 Automated CIA CSV refresh
+
+            Pulled the latest `service.data.impl/sample-data/*.csv` from
+            [`Hack23/cia@${{ env.UPSTREAM_REF }}`](https://github.com/Hack23/cia/tree/${{ env.UPSTREAM_REF }}/service.data.impl/sample-data).
+
+            ### Summary
+            | Metric | Count |
+            | --- | ---: |
+            | Total tracked CSVs | ${{ steps.refresh.outputs.total }} |
+            | ✅ Updated | ${{ steps.refresh.outputs.updated }} |
+            | 🟰 Unchanged | ${{ steps.refresh.outputs.unchanged }} |
+            | ❔ Missing upstream (404) | ${{ steps.refresh.outputs.missing }} |
+            | ⏭ Skipped (local-only) | ${{ steps.refresh.outputs.skipped }} |
+            | ❌ Failed downloads | ${{ steps.refresh.outputs.failed }} |
+
+            ### Source of truth
+            - Authoritative manifest: [`extraction_summary_report.csv`](https://github.com/Hack23/cia/blob/${{ env.UPSTREAM_REF }}/service.data.impl/sample-data/extraction_summary_report.csv)
+            - Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            ### Review checklist
+            - [ ] Diff looks reasonable (no schema regressions)
+            - [ ] Dashboards still render with the refreshed data
+            - [ ] No unexpected file removals
+
+            > Generated by `.github/workflows/update-cia-csv-data.yml`.
+          labels: |
+            automated-pipeline
+            data-update
+            cia-intelligence
