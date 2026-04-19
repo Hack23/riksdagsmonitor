@@ -745,10 +745,18 @@ EN/SV only: all headings, meta, content in correct language; no untranslated `da
 >
 > Banned phrasings (the multi-dim quality score flags these): "The political landscape remains fluid…", "Touches on X policy…", pure indicator definitions.
 >
-> **Sankey / flow diagram** (required for `weekly-review` and `monthly-review`): `scripts/generate-news-enhanced/generators.ts` now auto-appends a `class="sankey-section"` SVG via `buildArticleVisualizationSections` whenever ≥2 distinct document-type flows exist. The AI writer does not need to emit Sankey HTML directly — just confirm the generated HTML contains `class="sankey-section"` before opening the PR:
+> **Sankey / flow diagram** (required for `weekly-review`): `scripts/generate-news-enhanced/generators.ts` calls `buildArticleVisualizationSections` with `alwaysEmit: true` for this article type, so `class="sankey-section"` is auto-appended whenever the week has at least **one** document — even when every document collapses into a single doc-type bucket. The only case where no Sankey is emitted is an empty week (`docs.length === 0`); in that edge case the visualization builder returns an empty section list. The AI writer does not need to emit Sankey HTML directly — just verify the generated HTML contains `class="sankey-section"` before opening the PR:
 > ```bash
-> grep -l 'class="sankey-section"' news/$ARTICLE_DATE-weekly-review-*.html || {
->   echo "❌ Sankey section missing — the validator will block the PR"; exit 1; }
+> if grep -l 'class="sankey-section"' news/$ARTICLE_DATE-weekly-review-*.html; then
+>   echo "✅ Sankey section present"
+> else
+>   doc_count=$(jq '[.docs // []] | first | length' analysis/daily/$ARTICLE_DATE/weekly-review/economic-data.json 2>/dev/null || echo 0)
+>   if [ "$doc_count" = "0" ]; then
+>     echo "ℹ️ Sankey section not emitted — the week has 0 documents (validator allows this)"
+>   else
+>     echo "❌ Sankey section missing — the validator will block the PR"; exit 1
+>   fi
+> fi
 > ```
 >
 > Full rules: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) §"Writing the AI commentary — workflow Step 3d".

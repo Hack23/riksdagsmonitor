@@ -197,12 +197,6 @@ const ENRICHMENT_LABELS: Record<string, Record<Language, string>> = {
     fr: 'Impact faible', es: 'Bajo impacto', nl: 'Lage impact',
     ar: 'تأثير منخفض', he: 'השפעה נמוכה', ja: '影響小', ko: '낮은 영향', zh: '低影响',
   },
-  reviewPeriod: {
-    en: 'Review Period', sv: 'Översiktsperiod', da: 'Oversigtsperiode',
-    no: 'Oversiktsperiode', fi: 'Katsauskausi', de: 'Berichtszeitraum',
-    fr: "Période d'analyse", es: 'Período de revisión', nl: 'Overzichtsperiode',
-    ar: 'فترة المراجعة', he: 'תקופת הסקירה', ja: 'レビュー期間', ko: '검토 기간', zh: '回顾期',
-  },
 };
 
 /** Stakeholder perspective labels per language */
@@ -534,27 +528,29 @@ function buildLegislativeSankeyNodesAndFlows(
 /** Options accepted by {@link buildLegislativeSankeySection}. */
 interface BuildLegislativeSankeyOptions {
   /**
-   * Minimum number of document-type flows required to emit a Sankey. For
-   * the deep-inspection path this is 2 (keep the historical "uninformative
-   * single-flow" guard). For review article types the validator requires
-   * an unconditional Sankey, so callers pass `alwaysEmit: true` which
-   * forces emission — with a single-flow placeholder when fewer than two
-   * distinct doc-types exist.
+   * When true (review article types), emit the Sankey even when only a
+   * single doc-type flow can be derived. Deep-inspection leaves this
+   * `undefined` and keeps the legacy "uninformative single-flow" guard.
+   *
+   * Because {@link bucketDocsForSankey} funnels any unknown raw type into
+   * the `other` bucket, `docs.length > 0` always yields at least one flow
+   * — so `alwaysEmit: true` effectively means "emit whenever `docs.length
+   * >= 1`", and no extra placeholder is needed.
    */
   alwaysEmit?: boolean;
 }
 
 /**
  * Build a legislative-flow Sankey TemplateSection from a set of documents.
- * Returns null when fewer than two non-trivial flows can be derived **and**
- * `alwaysEmit` is not set, letting callers decide whether to append the
- * section.
+ * Returns null when `docs` is empty, or when fewer than two non-trivial
+ * flows can be derived **and** `alwaysEmit` is not set (letting callers
+ * decide whether to append a single-flow section).
  *
- * When `alwaysEmit` is true and the bucketed flows collapse to zero or one
- * distinct document-type, the Sankey is emitted with a minimal placeholder
- * `Review Period → Documents` flow so the validator (which mandates a
- * Sankey for `weekly-review` / `monthly-review`) never blocks a PR on
- * weeks/months that happen to contain only one doc-type.
+ * {@link bucketDocsForSankey} guarantees every non-empty `docs` yields at
+ * least one flow (unknown raw types fall into the `other` bucket), so
+ * `alwaysEmit: true` is sufficient for the validator's `requiresD3: true`
+ * review article types — the Sankey never silently disappears for weeks /
+ * months that happen to contain only one doc-type.
  */
 function buildLegislativeSankeySection(
   docs: RawDocument[],
@@ -566,28 +562,7 @@ function buildLegislativeSankeySection(
 
   const { nodes, flows } = buildLegislativeSankeyNodesAndFlows(docs, lang);
 
-  if (flows.length < 2) {
-    if (!opts.alwaysEmit) return null;
-    // Placeholder one-flow Sankey so review articles always ship a
-    // `class="sankey-section"` element. Uses the localized "documents"
-    // label shared with the deep-inspection generator.
-    if (flows.length === 0) {
-      const reviewLabel = ENRICHMENT_LABELS.reviewPeriod?.[lang]
-        ?? ENRICHMENT_LABELS.reviewPeriod?.en
-        ?? 'Review Period';
-      const documentsLabel = deepLabel('documents', lang);
-      nodes.push(
-        { id: 'review',    label: reviewLabel,    color: 'blue' },
-        { id: 'documents', label: documentsLabel, color: 'purple' },
-      );
-      flows.push({
-        source: 'review',
-        target: 'documents',
-        value: Math.max(docs.length, 1),
-        label: `${docs.length}`,
-      });
-    }
-  }
+  if (flows.length < 2 && !opts.alwaysEmit) return null;
 
   // Only override the localized defaults emitted by `generateSankeySection`
   // when a topic is supplied (topic text is content-specific and is
@@ -609,15 +584,20 @@ function buildLegislativeSankeySection(
 }
 
 /**
- * Build SWOT, dashboard, and economic TemplateSections for standard article
- * types (not deep-inspection, which has its own richer builder).
+ * Build SWOT, dashboard, Sankey, and economic TemplateSections for
+ * standard article types (not deep-inspection, which has its own richer
+ * builder).
  *
  * Produces 1–4 sections depending on available data:
- *  - SWOT stakeholder analysis (always, when docs.length >= 2)
+ *  - SWOT stakeholder analysis (when docs.length >= 2)
  *  - Chart.js dashboard with document type breakdown (when docs.length >= 3)
  *  - Legislative-flow Sankey (when `articleType` requires D3 in the economic
- *    data contract — `weekly-review`, `monthly-review` — and >=2 flows exist)
- *  - Economic dashboard (when policyDomains match World Bank indicators)
+ *    data contract — `weekly-review`, `monthly-review`; these article types
+ *    pass `alwaysEmit: true` so a Sankey is produced whenever `docs.length
+ *    >= 1`, even when only a single doc-type flow can be derived)
+ *  - Economic dashboard (when policyDomains match World Bank indicators —
+ *    emits when `docs.length >= 1` and either an `economic-data.json`
+ *    artefact is present or domains can be detected from the documents)
  *
  * Each section is safe to append to `generateArticleHTML({ sections })`.
  */
@@ -628,20 +608,30 @@ export function buildArticleVisualizationSections(
   context?: { date?: string; articleType?: string },
 ): TemplateSection[] {
   const sections: TemplateSection[] = [];
-  if (docs.length < 2) return sections;
+  // Nothing to visualize at all when no documents are present.
+  if (docs.length === 0) return sections;
 
-  try {
-    // ── 1. SWOT stakeholder analysis ──────────────────────────────────────
-    const stakeholders = buildAISwotStakeholders(docs, topic ?? '', lang);
-    if (stakeholders.length > 0) {
-      const swotSection = generateStakeholderSwotSection({ stakeholders, lang });
-      sections.push(swotSection);
-    }
-  } catch { /* graceful degradation */ }
+  // SWOT and the multi-chart dashboard need a minimum sample size to be
+  // meaningful, but the Sankey (review types) and economic dashboard are
+  // driven by the economic-data contract and must still emit for sparse
+  // weeks/months with as few as one document.
+  const enoughForSwot = docs.length >= 2;
+  const enoughForDashboard = docs.length >= 3;
 
-  try {
-    // ── 2. Chart.js dashboard (doc-type breakdown + AI analysis) ──────────
-    if (docs.length >= 3) {
+  if (enoughForSwot) {
+    try {
+      // ── 1. SWOT stakeholder analysis ────────────────────────────────────
+      const stakeholders = buildAISwotStakeholders(docs, topic ?? '', lang);
+      if (stakeholders.length > 0) {
+        const swotSection = generateStakeholderSwotSection({ stakeholders, lang });
+        sections.push(swotSection);
+      }
+    } catch { /* graceful degradation */ }
+  }
+
+  if (enoughForDashboard) {
+    try {
+      // ── 2. Chart.js dashboard (doc-type breakdown + AI analysis) ────────
       const dashboardAnalysis = analyzeDashboardData(docs, topic ?? '', lang);
       if (dashboardAnalysis.charts.length > 0 || dashboardAnalysis.tables.length > 0) {
         const dashboardSection = generateDashboardSection({
@@ -655,16 +645,17 @@ export function buildArticleVisualizationSections(
         });
         sections.push(dashboardSection);
       }
-    }
-  } catch { /* graceful degradation */ }
+    } catch { /* graceful degradation */ }
+  }
 
   try {
     // ── 2b. Legislative-flow Sankey for retrospective reviews ─────────────
     // The economic-data contract marks `weekly-review` and `monthly-review`
     // as `requiresD3: true`, so emit an inline SVG Sankey whenever the
-    // article belongs to one of those types and enough distinct flows
-    // exist. Deep-inspection has its own richer Sankey inside
-    // `buildDeepInspectionSections` so we skip it here to avoid duplicates.
+    // article belongs to one of those types — regardless of whether the
+    // week/month collapsed to a single doc-type. Deep-inspection has its
+    // own richer Sankey inside `buildDeepInspectionSections`, so we skip
+    // it here to avoid duplicates.
     if (
       context?.articleType &&
       REVIEW_ARTICLE_TYPES_REQUIRING_SANKEY.has(context.articleType)
