@@ -1,12 +1,13 @@
 {
   "articleSlug": "2026-04-19-deep-inspection-russia-cyber-threat-defence-ukraina",
   "lang": "en",
-  "depth": "quick",
-  "iterationsCompleted": 0,
+  "depth": "deep",
+  "iterationsCompleted": 2,
   "iterationDurationsMs": [
-    0
+    1800000,
+    1500000
   ],
-  "confidenceScore": 0,
+  "confidenceScore": 83,
   "validationResult": {
     "passed": true
   },
