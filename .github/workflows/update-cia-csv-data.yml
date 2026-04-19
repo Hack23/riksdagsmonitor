@@ -76,10 +76,15 @@ jobs:
           # Files that are local-only (no upstream equivalent) and must be preserved
           # without overwriting from the upstream sample-data tree.
           declare -a SKIP_PATTERNS=(
+            # Local hand-curated mini-samples used by dashboard demos; their
+            # schemas (name,ministry,influence / impact / riskScore / quarter)
+            # do not exist in upstream service.data.impl/sample-data.
             'data/cia/ministry/sample_influence.csv'
             'data/cia/ministry/sample_decision_impact.csv'
             'data/cia/ministry/sample_risk_levels.csv'
             'data/cia/ministry/sample_productivity.csv'
+            # Locally-generated forecast products (election scenarios) that
+            # are not published in the upstream CIA sample-data tree.
             'cia-data/election/election_forecast.csv'
             'cia-data/election/coalition_scenarios.csv'
           )
