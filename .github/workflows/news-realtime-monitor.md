@@ -493,7 +493,7 @@ Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-m
 
 If `synthesis-summary.md` reports "0 documents analyzed" but per-doc analyses exist in `documents/`, aggregate findings into all 9 batch files. If NO per-doc analyses exist, use MCP tools directly to create meaningful analysis. See `ai-driven-analysis-guide.md` §"Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)". **NEVER commit batch files reporting "0 documents analyzed".** After enrichment, run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 core files exist (synthesis-summary.md, swot-analysis.md, risk-assessment.md, threat-analysis.md, classification-results.md, significance-scoring.md, stakeholder-perspectives.md, cross-reference-map.md, data-download-manifest.md). Create any missing artifacts manually.
 
-### 🏆 MANDATORY: 14-Artifact Reference-Grade Gate (Tier-C — added 2026-04-19 per PR review comment #4275964218)
+### 🏆 MANDATORY: 14-Artifact Reference-Grade Gate (Tier-C — added 2026-04-19)
 
 `news-realtime-monitor` is a **Tier-C reference-grade workflow** — every breaking run is the flagship editorial surface of Riksdagsmonitor and is consumed externally by editors, analysts, and press. After the 9-Artifact Completeness Gate passes, additionally run the **14-Artifact Reference-Grade Gate** from `SHARED_PROMPT_PATTERNS.md` §"14 REQUIRED Artifacts for AGGREGATION Workflows + news-realtime-monitor". This gate requires 5 additional Tier-C files in `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/`:
 

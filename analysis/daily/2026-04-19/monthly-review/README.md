@@ -72,8 +72,8 @@ Economic backdrop: Sweden 0.82 % GDP growth 2024 (DK 3.48 %, NO 2.10 %, FI 0.42 
 | 1 | [`synthesis-summary.md`](synthesis-summary.md) | Monthly synthesis · timeline · party rankings · Election-2026 lens | 3500 b | ≥ 7 800 b |
 | 2 | [`swot-analysis.md`](swot-analysis.md) | 8-stakeholder SWOT + TOWS quadrant chart | 3500 b | ≥ 9 300 b |
 | 3 | [`risk-assessment.md`](risk-assessment.md) | 10-risk register + heat map | 3000 b | ≥ 4 100 b |
-| 4 | [`threat-analysis.md`](threat-analysis.md) | TH-01..TH-05 matrix with confidence | 2500 b | ≥ 4 200 b |
-| 5 | [`classification-results.md`](classification-results.md) | CIA triad + document classification | 2000 b | ≥ 3 400 b |
+| 4 | [`threat-analysis.md`](threat-analysis.md) | Political Threat Taxonomy · Attack Tree · Kill Chain · Diamond Model · ICO actor profile (template v3.3) | 2500 b | ≥ 16 500 b |
+| 5 | [`classification-results.md`](classification-results.md) | **CIA-triad** (C/I/A) · compliance mapping (GDPR · EU AI Act · ISO 27001 · NIST CSF · CIS v8.1) · policy-domain classification | 2000 b | ≥ 6 100 b |
 | 6 | [`significance-scoring.md`](significance-scoring.md) | 5-dimension scoring + top-17 | 2000 b | ≥ 2 400 b |
 | 7 | [`stakeholder-perspectives.md`](stakeholder-perspectives.md) | 8-stakeholder view with dok_id evidence | 3000 b | ≥ 8 100 b |
 | 8 | [`cross-reference-map.md`](cross-reference-map.md) | Document-dependency graph | 2000 b | ≥ 3 600 b |

@@ -239,7 +239,7 @@ fi
 
 ## 🏆 14 REQUIRED Artifacts for AGGREGATION Workflows + `news-realtime-monitor` — Reference-Grade Tier-C
 
-> 🔴 **NON-NEGOTIABLE (Added 2026-04-19, PR review comment #4275832065 · Extended 2026-04-19 PR review comment #4275964218)**: The following **6 workflows** MUST produce **5 additional Tier-C reference-grade artifacts** on top of the 9 core artifacts above, bringing their minimum total to **14 artifacts** per run:
+> 🔴 **NON-NEGOTIABLE (Added 2026-04-19 · Extended 2026-04-19 for realtime-monitor)**: The following **6 workflows** MUST produce **5 additional Tier-C reference-grade artifacts** on top of the 9 core artifacts above, bringing their minimum total to **14 artifacts** per run:
 >
 > **Aggregation workflows (original Tier-C scope):**
 > - `news-week-ahead.md` — `analysis/daily/$DATE/week-ahead/`
@@ -267,9 +267,11 @@ fi
 
 ### 🔬 Period-Scope Multipliers — MUST APPLY to Tier-C Aggregation Workflows
 
-> 🔴 **Added 2026-04-19 (PR review comment #4276280079 — "monthly review must be best-in-class reference example")**: Aggregation workflows cover different time horizons. A monthly-review synthesising 30 days MUST NOT produce artifacts at the same depth as a breaking-news realtime-monitor covering a single event. The minimum sizes in the Tier-C table above are the **baseline for 7-day aggregation workflows** (`weekly-review`, `week-ahead`). Scale as follows:
+> 🔴 **Added 2026-04-19**: Aggregation workflows cover different time horizons. A monthly-review synthesising 30 days MUST NOT produce artifacts at the same depth as a breaking-news realtime-monitor covering a single event. The minimum sizes in the Tier-C table above are the **baseline for 7-day aggregation workflows** (`weekly-review`, `week-ahead`). Scale as follows:
 
-| Workflow | Period covered | Size Multiplier (applied to both 9-core and 5-Tier-C minimums) | Rationale |
+> 📌 **Scope of this multiplier**: The period-scope multiplier applies **ONLY to the 5 Tier-C reference-grade artefacts** (`README.md`, `executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`, `methodology-reflection.md`). The **9 core artefacts** (`synthesis-summary.md` through `data-download-manifest.md`) keep their fixed daily-scope minimums from the 9-Artifact Completeness Gate above, because those baselines are already calibrated for single-day analysis and scale naturally with the larger document counts of aggregation windows. If a workflow's Tier-C package is scaled up, its 9-core package will grow organically with ingested document volume without needing a second multiplier layer.
+
+| Workflow | Period covered | Tier-C Size Multiplier | Rationale |
 |----------|:--------------:|:---------------------------:|-----------|
 | `news-realtime-monitor` | single event | **0.8×** | Single-event briefs may trim historical context |
 | `news-evening-analysis` | 1 day | **0.9×** | Daily scope; must still carry full framework |
