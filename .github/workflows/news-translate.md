@@ -310,7 +310,7 @@ You are the **Translation Agent** for Riksdagsmonitor. Your primary job is to tr
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 
-> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "Bash Tool Call Format". Key rule: every `bash` call MUST have both `command` AND `description` parameters. Example: `bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })`. Calls missing either field fail with `Multiple validation errors: - "command": Required - "description": Required`.. Calls missing either field fail with `Multiple validation errors: - "command": Required - "description": Required`.
+> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "Bash Tool Call Format". Key rule: every `bash` call MUST have both `command` AND `description` parameters. Example: `bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })`. Calls missing either field fail with `Multiple validation errors: - "command": Required - "description": Required`.
 
 ## 🔴 CRITICAL: Iterative Translation Quality (v5.0)
 
