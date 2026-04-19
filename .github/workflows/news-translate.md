@@ -328,7 +328,7 @@ When performing analysis-improvement work, keep changes tightly scoped and stage
 
 **The #1 cause of lost work was misunderstanding how `safeoutputs___create_pull_request` actually works.** The tool captures the patch from your **current commits at the moment you call it**. Any files you create or commit *after* that call on the same branch are **NOT** added to the PR — they are **silently lost** when the ephemeral agent workspace is discarded. Multiple commits to the same local branch after the first call do **NOT** update the PR.
 
-> 🚨 **PRODUCTION INCIDENT (2026-04-19, PR #1835)**: The agent translated 7 languages (`da`, `no`, `de`, `fi`, `fr`, `es`, `nl`) for `2026-04-18-breaking-1705`. After committing 4 languages at minute 21, it called `safeoutputs___create_pull_request` — patch frozen. It then translated `fr`, `es`, `nl` on the same branch believing "they'll be included in the PR". **They were not.** Only 4/7 translations reached `main`; 3 complete translations were discarded.
+> 🚨 **PRODUCTION INCIDENT (2026-04-19, PR #1835)**: The agent translated 7 languages (`da`, `nb`, `de`, `fi`, `fr`, `es`, `nl`) for `2026-04-18-breaking-1705`. After committing 4 languages at minute 21, it called `safeoutputs___create_pull_request` — patch frozen. It then translated `fr`, `es`, `nl` on the same branch believing "they'll be included in the PR". **They were not.** Only 4/7 translations reached `main`; 3 complete translations were discarded.
 >
 > 🚨 **PRODUCTION INCIDENT (2026-04-14)**: The agent delayed `safeoutputs___create_pull_request` until minute ~50. The safeoutputs MCP session had expired ("session not found"). All 10 translations were lost.
 
@@ -355,10 +355,12 @@ The workflow is configured with **`create-pull-request.max: 5`** — you may ope
 After `safeoutputs___create_pull_request` succeeds for a batch, switch off the PR branch before writing the next batch so new files don't accidentally stack onto the frozen patch:
 
 ```bash
-# After safeoutputs___create_pull_request succeeds for batch N
+# After safeoutputs___create_pull_request succeeds for batch N.
+# Fail LOUDLY if we cannot return to main — staying on the PR branch would
+# re-create the 'stacking onto frozen patch' failure mode this section exists to prevent.
 git status --short news/
-# Switch back to main so the next batch starts from a clean base
-git checkout main 2>/dev/null || git checkout -
+git checkout main || { echo "ERROR: failed to switch back to main; aborting before next batch." >&2; exit 1; }
+[ "$(git branch --show-current)" = "main" ] || { echo "ERROR: repository is not on main after checkout; aborting before next batch." >&2; exit 1; }
 # Now translate the next 3–4 languages and commit on a new (unnamed) set of changes.
 # The next safeoutputs___create_pull_request call will create a fresh branch automatically.
 ```
@@ -443,7 +445,7 @@ Process translations in this order:
 
 **Do NOT put everything into one PR.** Opening a new PR for each 3–4 language batch is the only way to avoid losing work — `create-pull-request.max: 5` in the frontmatter supports this.
 
-**Counting rule**: Before each `safeoutputs___create_pull_request` call, count the files staged in the *current* batch. Aim for 3–4 files per PR. Never let a single PR exceed 4 translated files (safe-output patch size: 4 KB headroom).
+**Counting rule**: Before each `safeoutputs___create_pull_request` call, count the files staged in the *current* batch. Aim for 3–4 files per PR. Never let a single PR exceed 4 translated files — this keeps each PR small enough to review, well within the `max-patch-size: 4096` (KB, i.e. 4 MB) safe-output limit (a typical translated article is ~40 KB, so 4 files ≈ 160 KB ≪ 4 MB), and leaves time to open the next PR before the safeoutputs session expires.
 
 ## OPTIONAL MCP Health Check
 
@@ -776,8 +778,11 @@ safeoutputs___create_pull_request({
 
 ```bash
 # Return to main so batch N+1 starts from a clean base.
+# Fail LOUDLY if we can't — silently ignoring this would let the next commits stack
+# onto the already-frozen PR branch and be lost (the exact bug that caused PR #1835).
 # safeoutputs___create_pull_request will create a fresh branch for the next batch automatically.
-git checkout main 2>/dev/null || true
+git checkout main || { echo "ERROR: failed to switch back to main; aborting before next batch." >&2; exit 1; }
+[ "$(git branch --show-current)" = "main" ] || { echo "ERROR: repository is not on main after checkout; aborting before next batch." >&2; exit 1; }
 git status --short
 # Now repeat Step 3 (translate) + Step 4 (validate) + Step 5 (commit + safeoutputs) for the next 3–4 languages.
 ```
