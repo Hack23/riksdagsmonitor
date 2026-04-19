@@ -5,7 +5,7 @@
 | **SYN-ID** | SYN-2026-04-19-DI |
 | **Run** | news-article-generator deep-inspection |
 | **Analysis Date** | 2026-04-19 18:18 UTC |
-| **Produced By** | news-article-generator (Claude Sonnet 4.6) |
+| **Produced By** | news-article-generator (Copilot Opus 4.7 — per workflow `engine.model` in [`news-article-generator.md`](../../../../.github/workflows/news-article-generator.md)) |
 | **Methodologies Applied** | ai-driven-analysis-guide v5.1, political-swot-framework, political-risk-methodology, political-threat-framework, STRIDE, Kill-Chain Adaptation |
 | **Primary Documents** | HD03231 (Prop. 2025/26:231 — Ukraine Aggression Tribunal) |
 | **Reference Analyses** | analysis/daily/2026-04-17/realtime-1434/ (gold-standard dossier) |

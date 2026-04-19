@@ -317,13 +317,15 @@ fi
 - ❌ Generic phrases without dok_id evidence ("significant bill", "major opposition move", "electoral implications") — every claim MUST cite a document ID or data source
 - ❌ Mermaid diagram in Pass 1 removed by Pass 2 "cleanup" — Pass 2 MUST ONLY ADD, NEVER REMOVE content
 
-**14-Artifact Completeness Gate for Tier-C Workflows (aggregation + realtime-monitor — run BEFORE article generation):**
+**14-Artifact Completeness Gate for Tier-C Workflows (aggregation + realtime-monitor + deep-inspection — run BEFORE article generation):**
+
+> 🔴 **Extended 2026-04-19 to include `deep-inspection`** — deep-inspection is the flagship single-document editorial surface and carries reference-grade expectations equivalent to aggregation and realtime-monitor runs. Reference exemplar: [`analysis/daily/2026-04-19/deep-inspection/`](../../analysis/daily/2026-04-19/deep-inspection/) — see [`methodology-reflection.md`](../../analysis/daily/2026-04-19/deep-inspection/methodology-reflection.md) §S1 for rationale.
 
 ```bash
-# Run this gate for aggregation workflow subfolders AND for realtime-monitor subfolders
-AGGREGATION_TYPES="week-ahead month-ahead evening-analysis weekly-review monthly-review"
+# Run this gate for aggregation workflow subfolders, realtime-monitor subfolders, AND deep-inspection
+AGGREGATION_TYPES="week-ahead month-ahead evening-analysis weekly-review monthly-review deep-inspection"
 IS_TIER_C=0
-# Aggregation matches: exact subfolder equality
+# Aggregation + deep-inspection matches: exact subfolder equality
 for T in $AGGREGATION_TYPES; do
   if [ "$ANALYSIS_SUBFOLDER" = "$T" ]; then
     IS_TIER_C=1
@@ -345,6 +347,7 @@ if [ "$IS_TIER_C" = "1" ]; then
     evening-analysis*)    MULT_NUM=9;  MULT_DEN=10 ;;  # 0.9×
     week-ahead*)          MULT_NUM=10; MULT_DEN=10 ;;  # 1.0× baseline
     weekly-review*)       MULT_NUM=10; MULT_DEN=10 ;;  # 1.0× baseline
+    deep-inspection*)     MULT_NUM=10; MULT_DEN=10 ;;  # 1.0× baseline (single-document primary focus)
     month-ahead*)         MULT_NUM=13; MULT_DEN=10 ;;  # 1.3×
     monthly-review*)      MULT_NUM=15; MULT_DEN=10 ;;  # 1.5×
     *)                    MULT_NUM=10; MULT_DEN=10 ;;  # fallback baseline
@@ -377,11 +380,12 @@ if [ "$IS_TIER_C" = "1" ]; then
   if [ "$TIER_C_MISSING" -gt 0 ]; then
     echo "🚨🚨🚨 14-ARTIFACT REFERENCE-GRADE GATE FAILED 🚨🚨🚨"
     echo "❌ $TIER_C_MISSING Tier-C artefacts missing or too small for the period-scope multiplier"
-    echo "Tier-C workflows (aggregation + realtime-monitor) MUST produce all 14 artefacts before article generation."
+    echo "Tier-C workflows (aggregation + realtime-monitor + deep-inspection) MUST produce all 14 artefacts before article generation."
     echo "Reference exemplars:"
     echo "  Aggregation (7-day baseline):  analysis/daily/2026-04-18/weekly-review/, analysis/daily/2026-04-19/month-ahead/"
     echo "  Aggregation (30-day 1.5×):     analysis/daily/2026-04-19/monthly-review/"
     echo "  Realtime-monitor (0.8×):       analysis/daily/2026-04-17/realtime-1434/, analysis/daily/2026-04-19/realtime-1219/"
+    echo "  Deep-inspection (1.0×):        analysis/daily/2026-04-19/deep-inspection/"
     exit 1
   fi
 fi
@@ -391,7 +395,7 @@ fi
 
 ## 🔁 RECENT DAILY KNOWLEDGE-BASE SYNTHESIS — Mandatory for Tier-C Workflows
 
-> 🔴 **NON-NEGOTIABLE (Added 2026-04-19 · Extended 2026-04-19 for realtime-monitor)**: Tier-C workflows (aggregation workflows + `news-realtime-monitor`) MUST ingest and reconcile forward-looking intelligence from **recent sibling daily runs** before producing their own package. This establishes a **continuity-of-intelligence contract**: no forward indicator issued in the recent past is silently dropped.
+> 🔴 **NON-NEGOTIABLE (Added 2026-04-19 · Extended 2026-04-19 for realtime-monitor · Extended 2026-04-19 for deep-inspection)**: Tier-C workflows (aggregation workflows + `news-realtime-monitor` + `deep-inspection`) MUST ingest and reconcile forward-looking intelligence from **recent sibling daily runs** before producing their own package. This establishes a **continuity-of-intelligence contract**: no forward indicator issued in the recent past is silently dropped.
 
 ### Lookback Windows by Tier-C Workflow
 
@@ -403,6 +407,7 @@ fi
 | `news-weekly-review` | 7 days | Last 7 daily folders + prior `weekly-review` |
 | `news-month-ahead` | 14 days | Last 14 daily folders + last `weekly-review` + last `week-ahead` |
 | `news-monthly-review` | 30 days | Last 30 daily folders + all weekly-reviews + last `monthly-review` |
+| `news-article-generator` (deep-inspection article_types) | 7 days | ≥ 1 realtime-* that first surfaced the primary dok_id **OR** the most recent `weekly-review`, plus the most recent `month-ahead`/`monthly-review` if present |
 
 ### Mandatory Ingestion Protocol
 
