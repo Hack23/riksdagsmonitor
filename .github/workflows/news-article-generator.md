@@ -461,6 +461,8 @@ Tools with date params: `get_calendar_events` (from/tom — **authoritative for 
 
 After creating ALL analysis files, run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist.
 
+> 🔴 **Deep-inspection is Tier-C reference-grade (extended 2026-04-19)**: When `article_types` includes `deep-inspection`, the subfolder is `deep-inspection` and the **14-Artifact Reference-Grade Gate** in `SHARED_PROMPT_PATTERNS.md` (period-scope multiplier 1.0×) applies on top of the 9-core gate. Deep-inspection runs MUST produce all 14 artifacts (9 core + `README.md`, `executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`, `methodology-reflection.md`). Reference exemplar: [`analysis/daily/2026-04-19/deep-inspection/`](../../analysis/daily/2026-04-19/deep-inspection/). Deep-inspection also requires **sibling-run cross-referencing**: cite ≥ 1 realtime-* run from the prior 7 days that first surfaced the primary `dok_id`, plus the most recent `weekly-review` and (if present) `month-ahead`/`monthly-review` in `data-download-manifest.md §Reference Analyses`.
+
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 if [ -z "$ARTICLE_DATE" ]; then
