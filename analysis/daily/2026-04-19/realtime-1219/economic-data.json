@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "articleType": "realtime-monitor",
+  "date": "2026-04-19",
+  "policyDomains": ["constitutional law", "international accountability", "press freedom", "Ukraine policy", "housing market"],
+  "dataPoints": [
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2024", "value": 0.82 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2023", "value": -0.204 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "indicatorName": "Inflation (%)", "date": "2024", "value": 2.836 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "indicatorName": "Inflation (%)", "date": "2023", "value": 8.549 }
+  ],
+  "commentary": "Sweden's economic recovery — GDP rebounding to 0.82% in 2024 after a -0.20% contraction in 2023, and inflation cooling to 2.84% from its 8.55% peak — provides a narrowing but real fiscal window for the Ukraine accountability commitments advanced in HD03231 and HD03232. Finance Minister Svantesson's spring budget (HD03100) projects continued modest growth, but the open-ended cost profile of the International Compensation Commission adds budget risk that SD legislators are watching closely. The constitutional amendment KU33, which narrows offentlighetsprincipen for seized materials, carries no direct fiscal cost — its significance is entirely in the democratic infrastructure domain — but the coincidence of fiscal tightening and constitutional restriction signals a government optimizing for law enforcement effectiveness over transparency.",
+  "source": {
+    "worldBank": ["NY.GDP.MKTP.KD.ZG", "FP.CPI.TOTL.ZG"],
+    "scb": []
+  }
+}
