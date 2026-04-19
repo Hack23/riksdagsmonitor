@@ -410,13 +410,194 @@ export function buildAnalysisEnrichmentSections(
 // ---------------------------------------------------------------------------
 
 /**
- * Build SWOT, dashboard, and economic TemplateSections for standard article
- * types (not deep-inspection, which has its own richer builder).
+ * Article types that MUST carry an inline Sankey flow diagram to satisfy the
+ * economic-data contract (`scripts/validate-economic-context.ts` →
+ * `COVERAGE_MATRIX[*].requiresD3`). Kept here (and not imported) because
+ * the generator ships in `dist/lib/` while the validator lives in
+ * `scripts/`, and we only need the article-type identifiers.
+ */
+const REVIEW_ARTICLE_TYPES_REQUIRING_SANKEY: ReadonlySet<string> = new Set([
+  'weekly-review',
+  'monthly-review',
+]);
+
+/** Mapping from doc-type bucket key to Sankey node color / source actor. */
+const SANKEY_DOC_TYPE_SPEC: ReadonlyArray<{
+  /** Bucket key as produced by {@link effectiveType}. */
+  bucket: string;
+  /** Node id in the Sankey. */
+  nodeId: string;
+  /** Doc-type code passed to {@link docTypeLabel} for localization. */
+  localizeKey: string;
+  /** Semantic node color. */
+  color: SankeyNode['color'];
+  /** Originating actor node id. */
+  source: 'gov' | 'opp' | 'pvt';
+}> = [
+  { bucket: 'prop',   nodeId: 'prop',   localizeKey: 'prop',   color: 'orange', source: 'gov' },
+  { bucket: 'bet',    nodeId: 'bet',    localizeKey: 'bet',    color: 'blue',   source: 'opp' },
+  { bucket: 'mot',    nodeId: 'mot',    localizeKey: 'mot',    color: 'yellow', source: 'opp' },
+  { bucket: 'sfs',    nodeId: 'sfs',    localizeKey: 'sfs',    color: 'green',  source: 'gov' },
+  { bucket: 'skr',    nodeId: 'skr',    localizeKey: 'skr',    color: 'green',  source: 'gov' },
+  // EU bucket aggregates 'fpm' + 'eu' raw types; use 'fpm' for localization
+  // (DOC_TYPE_DISPLAY has a localized entry for 'fpm' — EU-facing docs).
+  { bucket: 'eu',     nodeId: 'eu',     localizeKey: 'fpm',    color: 'blue',   source: 'gov' },
+  { bucket: 'pressm', nodeId: 'pressm', localizeKey: 'pressm', color: 'orange', source: 'gov' },
+  { bucket: 'ext',    nodeId: 'ext',    localizeKey: 'ext',    color: 'purple', source: 'pvt' },
+  { bucket: 'other',  nodeId: 'other',  localizeKey: 'other',  color: 'purple', source: 'pvt' },
+];
+
+/** Raw bucket keys that are merged into the aggregate `eu` bucket. */
+const SANKEY_EU_RAW_TYPES = ['fpm', 'eu'] as const;
+
+/**
+ * Bucket a set of documents by {@link effectiveType} and collapse EU-related
+ * raw types (`fpm`, `eu`) into a single `eu` bucket. Every raw type not
+ * explicitly classified (i.e. not in the known bucket list) falls into
+ * `other`. Exposed to both the review and deep-inspection Sankey builders
+ * so we have exactly one source of truth for actor → doc-type semantics.
+ */
+function bucketDocsForSankey(docs: RawDocument[]): Map<string, RawDocument[]> {
+  const buckets = new Map<string, RawDocument[]>();
+  const push = (key: string, d: RawDocument): void => {
+    let arr = buckets.get(key);
+    if (!arr) { arr = []; buckets.set(key, arr); }
+    arr.push(d);
+  };
+
+  const known = new Set(SANKEY_DOC_TYPE_SPEC.map(s => s.bucket));
+  for (const d of docs) {
+    const raw = effectiveType(d);
+    const collapsed = (SANKEY_EU_RAW_TYPES as readonly string[]).includes(raw)
+      ? 'eu'
+      : raw;
+    if (known.has(collapsed)) push(collapsed, d);
+    else push('other', d);
+  }
+  return buckets;
+}
+
+/**
+ * Build the shared Sankey node / flow arrays for a set of documents. The
+ * nodes/flows honour actor semantics used by both the review-article and
+ * deep-inspection generators: government coalition initiates propositions,
+ * laws, government communications, EU positions, and press releases; the
+ * opposition initiates committee reports and motions; private sector /
+ * external actors carry external references and uncategorised documents.
  *
- * Produces 1–3 sections depending on available data:
- *  - SWOT stakeholder analysis (always, when docs.length >= 2)
+ * All doc-type node labels are localized via {@link docTypeLabel}. The
+ * stakeholder node labels fall back to English when a language is missing
+ * from {@link AI_STAKEHOLDER_NAMES}.
+ */
+function buildLegislativeSankeyNodesAndFlows(
+  docs: RawDocument[],
+  lang: Language,
+): { nodes: SankeyNode[]; flows: SankeyFlow[] } {
+  const buckets = bucketDocsForSankey(docs);
+
+  const govName     = AI_STAKEHOLDER_NAMES['government-coalition'][lang] ?? AI_STAKEHOLDER_NAMES['government-coalition'].en;
+  const oppName     = AI_STAKEHOLDER_NAMES['opposition'][lang]           ?? AI_STAKEHOLDER_NAMES['opposition'].en;
+  const privateName = AI_STAKEHOLDER_NAMES['private-sector'][lang]       ?? AI_STAKEHOLDER_NAMES['private-sector'].en;
+
+  const nodes: SankeyNode[] = [
+    { id: 'gov', label: govName,     color: 'cyan' },
+    { id: 'opp', label: oppName,     color: 'magenta' },
+    { id: 'pvt', label: privateName, color: 'purple' },
+  ];
+  const flows: SankeyFlow[] = [];
+
+  for (const spec of SANKEY_DOC_TYPE_SPEC) {
+    const bucketDocs = buckets.get(spec.bucket) ?? [];
+    if (bucketDocs.length === 0) continue;
+    nodes.push({
+      id: spec.nodeId,
+      label: docTypeLabel(spec.localizeKey, lang, bucketDocs.length),
+      color: spec.color,
+    });
+    flows.push({
+      source: spec.source,
+      target: spec.nodeId,
+      value: bucketDocs.length,
+      label: `${bucketDocs.length}`,
+    });
+  }
+
+  return { nodes, flows };
+}
+
+/** Options accepted by {@link buildLegislativeSankeySection}. */
+interface BuildLegislativeSankeyOptions {
+  /**
+   * When true (review article types), emit the Sankey even when only a
+   * single doc-type flow can be derived. Deep-inspection leaves this
+   * `undefined` and keeps the legacy "uninformative single-flow" guard.
+   *
+   * Because {@link bucketDocsForSankey} funnels any unknown raw type into
+   * the `other` bucket, `docs.length > 0` always yields at least one flow
+   * — so `alwaysEmit: true` effectively means "emit whenever `docs.length
+   * >= 1`", and no extra placeholder is needed.
+   */
+  alwaysEmit?: boolean;
+}
+
+/**
+ * Build a legislative-flow Sankey TemplateSection from a set of documents.
+ * Returns null when `docs` is empty, or when fewer than two non-trivial
+ * flows can be derived **and** `alwaysEmit` is not set (letting callers
+ * decide whether to append a single-flow section).
+ *
+ * {@link bucketDocsForSankey} guarantees every non-empty `docs` yields at
+ * least one flow (unknown raw types fall into the `other` bucket), so
+ * `alwaysEmit: true` is sufficient for the validator's `requiresD3: true`
+ * review article types — the Sankey never silently disappears for weeks /
+ * months that happen to contain only one doc-type.
+ */
+function buildLegislativeSankeySection(
+  docs: RawDocument[],
+  topic: string | null,
+  lang: Language,
+  opts: BuildLegislativeSankeyOptions = {},
+): TemplateSection | null {
+  if (docs.length === 0) return null;
+
+  const { nodes, flows } = buildLegislativeSankeyNodesAndFlows(docs, lang);
+
+  if (flows.length < 2 && !opts.alwaysEmit) return null;
+
+  // Only override the localized defaults emitted by `generateSankeySection`
+  // when a topic is supplied (topic text is content-specific and is
+  // typically English) or when the article is English. For every other
+  // language, fall through to the generator's `SECTION_TITLES[lang]` so
+  // the Sankey heading renders in the target language.
+  const shouldOverrideCopy = lang === 'en' || Boolean(topic);
+  return generateSankeySection({
+    nodes,
+    flows,
+    lang,
+    ...(shouldOverrideCopy
+      ? {
+          title: topic ? `Legislative Flow — ${topic}` : 'Legislative Flow',
+          summary: `Flow of ${docs.length} parliamentary documents from initiating actors to document types`,
+        }
+      : {}),
+  });
+}
+
+/**
+ * Build SWOT, dashboard, Sankey, and economic TemplateSections for
+ * standard article types (not deep-inspection, which has its own richer
+ * builder).
+ *
+ * Produces 1–4 sections depending on available data:
+ *  - SWOT stakeholder analysis (when docs.length >= 2)
  *  - Chart.js dashboard with document type breakdown (when docs.length >= 3)
- *  - Economic dashboard (when policyDomains match World Bank indicators)
+ *  - Legislative-flow Sankey (when `articleType` requires D3 in the economic
+ *    data contract — `weekly-review`, `monthly-review`; these article types
+ *    pass `alwaysEmit: true` so a Sankey is produced whenever `docs.length
+ *    >= 1`, even when only a single doc-type flow can be derived)
+ *  - Economic dashboard (when policyDomains match World Bank indicators —
+ *    emits when `docs.length >= 1` and either an `economic-data.json`
+ *    artefact is present or domains can be detected from the documents)
  *
  * Each section is safe to append to `generateArticleHTML({ sections })`.
  */
@@ -427,20 +608,30 @@ export function buildArticleVisualizationSections(
   context?: { date?: string; articleType?: string },
 ): TemplateSection[] {
   const sections: TemplateSection[] = [];
-  if (docs.length < 2) return sections;
+  // Nothing to visualize at all when no documents are present.
+  if (docs.length === 0) return sections;
 
-  try {
-    // ── 1. SWOT stakeholder analysis ──────────────────────────────────────
-    const stakeholders = buildAISwotStakeholders(docs, topic ?? '', lang);
-    if (stakeholders.length > 0) {
-      const swotSection = generateStakeholderSwotSection({ stakeholders, lang });
-      sections.push(swotSection);
-    }
-  } catch { /* graceful degradation */ }
+  // SWOT and the multi-chart dashboard need a minimum sample size to be
+  // meaningful, but the Sankey (review types) and economic dashboard are
+  // driven by the economic-data contract and must still emit for sparse
+  // weeks/months with as few as one document.
+  const enoughForSwot = docs.length >= 2;
+  const enoughForDashboard = docs.length >= 3;
 
-  try {
-    // ── 2. Chart.js dashboard (doc-type breakdown + AI analysis) ──────────
-    if (docs.length >= 3) {
+  if (enoughForSwot) {
+    try {
+      // ── 1. SWOT stakeholder analysis ────────────────────────────────────
+      const stakeholders = buildAISwotStakeholders(docs, topic ?? '', lang);
+      if (stakeholders.length > 0) {
+        const swotSection = generateStakeholderSwotSection({ stakeholders, lang });
+        sections.push(swotSection);
+      }
+    } catch { /* graceful degradation */ }
+  }
+
+  if (enoughForDashboard) {
+    try {
+      // ── 2. Chart.js dashboard (doc-type breakdown + AI analysis) ────────
       const dashboardAnalysis = analyzeDashboardData(docs, topic ?? '', lang);
       if (dashboardAnalysis.charts.length > 0 || dashboardAnalysis.tables.length > 0) {
         const dashboardSection = generateDashboardSection({
@@ -454,6 +645,23 @@ export function buildArticleVisualizationSections(
         });
         sections.push(dashboardSection);
       }
+    } catch { /* graceful degradation */ }
+  }
+
+  try {
+    // ── 2b. Legislative-flow Sankey for retrospective reviews ─────────────
+    // The economic-data contract marks `weekly-review` and `monthly-review`
+    // as `requiresD3: true`, so emit an inline SVG Sankey whenever the
+    // article belongs to one of those types — regardless of whether the
+    // week/month collapsed to a single doc-type. Deep-inspection has its
+    // own richer Sankey inside `buildDeepInspectionSections`, so we skip
+    // it here to avoid duplicates.
+    if (
+      context?.articleType &&
+      REVIEW_ARTICLE_TYPES_REQUIRING_SANKEY.has(context.articleType)
+    ) {
+      const sankeySection = buildLegislativeSankeySection(docs, topic, lang, { alwaysEmit: true });
+      if (sankeySection) sections.push(sankeySection);
     }
   } catch { /* graceful degradation */ }
 
@@ -1969,29 +2177,10 @@ function buildDeepInspectionSections(
 ): TemplateSection[] {
   if (docs.length === 0) return [];
 
-  // Single-pass classification: bucket docs by effectiveType() to avoid N×filter passes.
-  // EU docs use both 'fpm' and 'eu' raw types; effectiveType() preserves the raw value,
-  // so we merge both into the euDocs bucket below.
-  const buckets = new Map<string, RawDocument[]>();
-  for (const d of docs) {
-    const t = effectiveType(d);
-    let arr = buckets.get(t);
-    if (!arr) { arr = []; buckets.set(t, arr); }
-    arr.push(d);
-  }
-  const propDocs   = buckets.get('prop')   ?? [];
-  const betDocs    = buckets.get('bet')    ?? [];
-  const motDocs    = buckets.get('mot')    ?? [];
-  const skrDocs    = buckets.get('skr')    ?? [];
-  const sfsDocs    = buckets.get('sfs')    ?? [];
-  const euDocs     = [...(buckets.get('fpm') ?? []), ...(buckets.get('eu') ?? [])];
-  const pressmDocs = buckets.get('pressm') ?? [];
-  const extDocs    = buckets.get('ext')    ?? [];
-  // classifiedTypes must mirror every bucket key consumed above (including both EU keys)
-  const classifiedTypes = new Set(['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext']);
-  const otherDocs  = [...buckets.entries()]
-    .filter(([k]) => !classifiedTypes.has(k))
-    .flatMap(([, v]) => v);
+  // The deep-inspection Sankey is delegated to
+  // `buildLegislativeSankeySection`, which shares bucket + node/flow
+  // construction with the review-article path (see `SANKEY_DOC_TYPE_SPEC`
+  // and `buildLegislativeSankeyNodesAndFlows`). No bucketing happens here.
 
   // ── 6-stakeholder SWOT ───────────────────────────────────────────────────
   const stakeholders = buildAISwotStakeholders(docs, topic ?? '', lang);
@@ -2000,11 +2189,6 @@ function buildDeepInspectionSections(
     ? `Analysis exclusively focused on: ${topic} — ${docs.length} parliamentary documents examined`
     : `Multi-stakeholder analysis of ${docs.length} parliamentary documents`;
   const swotSection = generateStakeholderSwotSection({ stakeholders, lang, strategicContext });
-
-  // ── Localised names for mindmap/sankey labels
-  const govName     = AI_STAKEHOLDER_NAMES['government-coalition'][lang] ?? AI_STAKEHOLDER_NAMES['government-coalition'].en;
-  const oppName     = AI_STAKEHOLDER_NAMES['opposition'][lang]           ?? AI_STAKEHOLDER_NAMES['opposition'].en;
-  const privateName = AI_STAKEHOLDER_NAMES['private-sector'][lang]       ?? AI_STAKEHOLDER_NAMES['private-sector'].en;
 
   // ── Multi-chart dashboard ─────────────────────────────────────────────────
   // Produces 3 chart types (radar, scatter, bar) with accessible data tables.
@@ -2079,6 +2263,7 @@ function buildDeepInspectionSections(
   );
 
   // ── Sankey: party/doc-type flow → legislative outcome ─────────────────────
+  // Shared with the review-article builder via `buildLegislativeSankeySection`.
   // The sankey uses three primary legislative actor groups as source nodes:
   //   - government: initiates propositions, laws, gov. communications, press releases,
   //     and EU position papers (fpm) — these originate from government ministries
@@ -2087,61 +2272,10 @@ function buildDeepInspectionSections(
   //     and other document types
   // Additional SWOT stakeholders (civil society, citizens, etc.) are
   // analysis perspectives rather than document-originating actors.
-  const sankeyNodes: SankeyNode[] = [
-    { id: 'gov', label: govName,           color: 'cyan' },
-    { id: 'opp', label: oppName,           color: 'magenta' },
-    { id: 'pvt', label: privateName,       color: 'purple' },
-  ];
-
-  // Add document type nodes and target outcome nodes
-  const sankeyFlows: SankeyFlow[] = [];
-  if (propDocs.length > 0) {
-    sankeyNodes.push({ id: 'prop', label: 'Propositions', color: 'orange' });
-    sankeyFlows.push({ source: 'gov', target: 'prop', value: propDocs.length, label: `${propDocs.length}` });
-  }
-  if (betDocs.length > 0) {
-    sankeyNodes.push({ id: 'bet', label: 'Committee Reports', color: 'blue' });
-    sankeyFlows.push({ source: 'opp', target: 'bet', value: betDocs.length, label: `${betDocs.length}` });
-  }
-  if (motDocs.length > 0) {
-    sankeyNodes.push({ id: 'mot', label: 'Motions', color: 'yellow' });
-    sankeyFlows.push({ source: 'opp', target: 'mot', value: motDocs.length, label: `${motDocs.length}` });
-  }
-  if (sfsDocs.length > 0) {
-    sankeyNodes.push({ id: 'sfs', label: 'Laws (SFS)', color: 'green' });
-    sankeyFlows.push({ source: 'gov', target: 'sfs', value: sfsDocs.length, label: `${sfsDocs.length}` });
-  }
-  if (skrDocs.length > 0) {
-    sankeyNodes.push({ id: 'skr', label: deepLabel('govCommunications', lang), color: 'green' });
-    sankeyFlows.push({ source: 'gov', target: 'skr', value: skrDocs.length, label: `${skrDocs.length}` });
-  }
-  if (euDocs.length > 0) {
-    sankeyNodes.push({ id: 'eu', label: 'EU Positions', color: 'blue' });
-    sankeyFlows.push({ source: 'gov', target: 'eu', value: euDocs.length, label: `${euDocs.length}` });
-  }
-  if (pressmDocs.length > 0) {
-    sankeyNodes.push({ id: 'pressm', label: 'Press Releases', color: 'orange' });
-    sankeyFlows.push({ source: 'gov', target: 'pressm', value: pressmDocs.length, label: `${pressmDocs.length}` });
-  }
-  if (extDocs.length > 0) {
-    sankeyNodes.push({ id: 'ext', label: 'External / Reference', color: 'purple' });
-    sankeyFlows.push({ source: 'pvt', target: 'ext', value: extDocs.length, label: `${extDocs.length}` });
-  }
-  if (otherDocs.length > 0) {
-    sankeyNodes.push({ id: 'other', label: 'Other Docs', color: 'purple' });
-    sankeyFlows.push({ source: 'pvt', target: 'other', value: otherDocs.length, label: `${otherDocs.length}` });
-  }
-
-  // Only include Sankey when there is more than one non-trivial flow (otherwise uninformative)
-  const sankeySection: TemplateSection | null = sankeyFlows.length >= 2
-    ? generateSankeySection({
-        nodes: sankeyNodes,
-        flows: sankeyFlows,
-        lang,
-        title: topic ? `Legislative Flow — ${topic}` : 'Legislative Flow',
-        summary: `Flow of ${docs.length} parliamentary documents from initiating actors to document types`,
-      })
-    : null;
+  // Deep-inspection keeps the legacy "require at least 2 flows" guard so
+  // single-doc-type articles don't show an uninformative Sankey (the
+  // review-article call site opts into `alwaysEmit: true`).
+  const sankeySection: TemplateSection | null = buildLegislativeSankeySection(docs, topic, lang);
 
   // ── World Bank / Economic Dashboard ──────────────────────────────────────
   // Prefer the agentic-workflow-supplied `economic-data.json` artefact so
