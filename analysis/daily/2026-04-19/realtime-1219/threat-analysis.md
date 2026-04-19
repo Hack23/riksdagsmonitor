@@ -1,9 +1,9 @@
 # Threat Analysis — Realtime Monitor 2026-04-19 (1219)
 
-**THR-ID**: THR-20260419-1219  
-**Date**: 2026-04-19  
-**Analyst**: James Pether Sörling  
-**Version**: 2.0 (Pass 2 enriched)  
+**THR-ID**: THR-20260419-1219
+**Date**: 2026-04-19
+**Analyst**: James Pether Sörling
+**Version**: 3.0 (Pass 3 — reference-grade extension: Attack Tree, Diamond Model, STRIDE pass, MITRE-TTP)
 **Confidence**: MEDIUM-HIGH
 
 ## Threat Taxonomy
@@ -107,3 +107,93 @@ The combination of KU32 and KU33 in the same riksmöte represents a pattern of i
 HD03232 commits Sweden to the Convention establishing the International Compensation Commission for Ukraine. The Commission's operating model and Swedish contribution level are not yet specified in the proposition. If Sweden's contribution is proportional to GDP (as is common in international treaty financing), the annual cost could reach SEK 500m-2bn — material against the backdrop of the Spring Supplementary Budget (HD0399) showing tight fiscal space.
 
 **Forward Scenario**: The Compensation Commission begins operations 2026-2027. Russia refuses to participate. The Commission pursues Russian frozen assets held in European jurisdictions. Sweden as a member state of the treaty has obligations to support enforcement — potentially creating tensions with trade and financial sector.
+
+---
+
+## 🌲 Attack Tree — KU33 Transparency Degradation Chain
+
+```mermaid
+graph TD
+    ROOT[ATTACK GOAL:<br/>Permanently narrow offentlighetsprincipen<br/>via grundlag]
+    ROOT --> A1[Step 1: Frame as<br/>proportionate reform]
+    ROOT --> A2[Step 2: Secure<br/>first-reading majority]
+    ROOT --> A3[Step 3: Survive<br/>Lagrådet review]
+    ROOT --> A4[Step 4: Win<br/>September 2026 election]
+    ROOT --> A5[Step 5: Pass<br/>second reading]
+
+    A1 --> A11[Cite law-enforcement necessity]
+    A1 --> A12[Invoke comparative DE/FI/DK]
+    A1 --> A13[Limit scope to seizure only]
+
+    A2 --> A21[Tidö coalition whip]
+    A2 --> A22[SD bilateral side-deal]
+
+    A3 --> A31[Emphasize 'formellt tillförd' trigger]
+    A3 --> A32[Minimize ECHR risk in memorandum]
+
+    A4 --> A41[Tidö bloc wins majority]
+    A4 --> A42[S-led minority negotiates continuity]
+
+    A5 --> A51[Same text confirmed]
+    A5 --> A52[Modified text via joint motion]
+
+    style ROOT fill:#c0392b,color:#fff
+    style A4 fill:#e67e22,color:#fff
+    style A5 fill:#e67e22,color:#fff
+```
+
+**Defender leverage points** (opposition / civil society):
+- A3 — force explicit "shall be formally documented" language in Lagrådet yttrande
+- A4 — mobilise press-freedom as electoral issue
+- A5 — negotiate modified text post-election (Scenario C pathway)
+
+## 💎 Diamond Model — Russian Hybrid Interference Against HD03231
+
+| Vertex | Content |
+|--------|---------|
+| **Adversary** | Russian state + affiliated proxies (GRU Unit 29155, FSB CIO, RT/Sputnik, commercial IO vendors) |
+| **Infrastructure** | Baltic-proximate server farms; coordinated inauthentic accounts on X/Telegram/VK; cryptocurrency-funded ad buys |
+| **Capability** | T1583 (Acquire Infrastructure), T1566 (Phishing), T1071 (Application Layer C2), T1491 (Defacement), T1588 (Obtain Capabilities), T1498 (Network Denial of Service) |
+| **Victim** | Swedish MFA / UD personnel working on HD03231 · Riksdag infrastructure (riksdagen.se chamber-vote endpoints) · Swedish-language public-discourse space on HD03231 |
+| **Socio-political meta** | Weaponising the KU33-vs-Ukraine "hypocrisy" framing; amplifying SD cost objections; targeting Magdalena Andersson posture ambiguity |
+| **Technology meta** | AI-generated deepfake content capacity rising; LLM-driven content farms |
+| **Event pivot** | 2026-04-22 first-reading vote; Q2 2026 chamber vote on HD03231 |
+
+## 🔐 STRIDE Pass — Sweden's Ukraine-Tribunal Engagement Surface
+
+| STRIDE | Threat | Target | Severity |
+|--------|--------|--------|:--------:|
+| **S**poofing | Fake Swedish diplomatic cables to Kyiv during King's visit | UD comms infrastructure | HIGH |
+| **T**ampering | Altered riksdagen.se votum records post-chamber vote | Riksdag IT | MEDIUM |
+| **R**epudiation | Non-attributable "civil-society" campaigns questioning tribunal | Swedish public sphere | MEDIUM |
+| **I**nformation disclosure | KU33 creates info-gap; adversary exploits lack of public oversight | Offentlighetsprincipen carve-out | MEDIUM |
+| **D**enial of Service | DDoS against riksdagen.se during 2026-04-22 and HD03231 vote | Riksdag public-facing systems | MEDIUM |
+| **E**levation of privilege | Phishing-enabled access to UD personnel working on tribunal | UD endpoints | HIGH |
+
+## 🎯 MITRE-TTP Mapping (adapted to political-threat context)
+
+| TTP | Technique | Expected use against SE post-HD03231 |
+|-----|-----------|-------------------------------------|
+| T1583.001 | Acquire Infrastructure: Domains | Typosquat domains targeting UD + Riksdag |
+| T1566.002 | Phishing: Spearphishing Link | Target UD tribunal team |
+| T1598 | Phishing for Information | Harvest UD personnel credentials |
+| T1588.006 | Obtain Capabilities: Vulnerabilities | Pre-positioned exploit capability against Riksdag IT |
+| T1498.001 | Network Denial of Service: Direct | Chamber-vote-day DDoS |
+| T1491.002 | Defacement: External | riksdagen.se compromise attempt |
+| T1583.002 | Acquire Infrastructure: DNS Server | Content manipulation for Swedish-language Ukraine coverage |
+| T1189 | Drive-by Compromise | Target Swedish journalist community covering KU33 |
+
+## 📊 Threat-Indicator Library (consolidated across §§ 1-6)
+
+| Indicator | Status | Trigger | Owner | Deadline |
+|-----------|--------|---------|-------|----------|
+| KU33 chamber vote | Scheduled 2026-04-22 | Ja-vote minority fails → amendment passes | KU | 2026-04-22 |
+| KU32 chamber vote | Scheduled 2026-04-22 | Same window | KU | 2026-04-22 |
+| Lagrådet yttrande on KU33 | Pending | Language on "formellt tillförd" | Lagrådet | Pre-vote |
+| HD03231 UU referral | Expected late April | Committee chair appointment | UU | ≤ 2026-05-15 |
+| HD03232 UU referral | Expected late April | SD cost reservation filing | UU | ≤ 2026-05-15 |
+| Election outcome | September 2026 | Opposition bloc wins → KU33 risks rejection | Voters | 2026-09 |
+| Second KU33 reading | January 2027 | Requires same wording post-election | New Riksdag | 2027-01 |
+| ECHR timeline | Not yet filed | Filing → formal ECHR review | Journalists union | TBD |
+| SÄPO threat-level bulletins | Continuous | Any public adjustment mentioning tribunal | SÄPO | Continuous |
+| SOM poll Tidö bloc | Monthly | Bloc < 44% or > 50% triggers Bayesian update | SOM Institute | Monthly |

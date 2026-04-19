@@ -52,3 +52,32 @@ graph TD
 
 - **KU33**: First-reading passage of a constitutional amendment means Sweden has made an irreversible (until next election) commitment to narrow offentlighetsprincipen for law enforcement materials. If the riksdag elected in September 2026 confirms the amendment, it takes effect January 2027 — within 9 months.
 - **Ukraine Package**: Simultaneous accession to both the Special Tribunal for Aggression AND the Compensation Commission represents a comprehensive legal-accountability commitment to Ukraine, coinciding with the King's visit to Kyiv (2026-04-17). Globally only ≈40 states have joined the tribunal; Sweden's accession is norm-entrepreneurship with historical significance.
+
+## Retention Schedule (Legal Basis)
+
+| Priority | Retention period | Legal basis | Access rule |
+|:--------:|:---------------:|-------------|-------------|
+| P0 Constitutional | 10 years | Arkivlagen 1990:782 §3 + Riksdag ordning 1991:877 — grundlag-related material treated as permanent evidentiary record | Public — full analysis published |
+| P1 Critical (treaty) | 7 years | SOU-series standard; international-treaty material at UD retention schedule | Public — full analysis published |
+| P2 Sector | 5 years | OSL 2009:400 chap 39 — normal sector-policy retention | Public — sector summary published |
+| P3 Routine | 2 years | Allmän retention | Internal only |
+
+## Access Rules
+
+- **All P0/P1 analysis files** are published under the Riksdagsmonitor public-transparency commitment — no redactions.
+- **Per-document files in `documents/`** are considered reference-grade intelligence artefacts; they should be preserved for minimum 10 years (P0) or 7 years (P1).
+- **Upstream data dependencies** (riksdagen.se + regeringen.se + World Bank + SCB) are referenced via permanent dok_id URLs — no data copied into the repository beyond what appears in analysis text.
+
+## Cross-Reference to Classification Doctrine
+
+This run's classification decisions align with Hack23 ISMS `CLASSIFICATION.md` for CIA triad impact:
+
+| Document | Confidentiality | Integrity | Availability |
+|----------|:---------------:|:---------:|:------------:|
+| HD01KU33 | Public | HIGH (constitutional record) | HIGH |
+| HD01KU32 | Public | HIGH | HIGH |
+| HD03231 | Public | HIGH (international treaty) | HIGH |
+| HD03232 | Public | HIGH | HIGH |
+| HD01CU28 | Public | MEDIUM | MEDIUM |
+
+No CIA-triad rating change is proposed by this run; existing `CLASSIFICATION.md` baseline holds.

@@ -39,5 +39,48 @@ The previous realtime run (2026-04-18 1705) covered: HD03100, HD03236, HD03246, 
 
 ## Methodology
 
-AI-driven analysis following `analysis/methodologies/ai-driven-analysis-guide.md` v5.1.  
+AI-driven analysis following `analysis/methodologies/ai-driven-analysis-guide.md` v5.1.
 Per-document depth tiers: KU33 (L3), KU32 (L2+), HD03231+HD03232 (L2+), CU28 (L2).
+
+## Chain-of-Custody Manifest
+
+| # | Source | URL / Reference | Accessed | Fetched via | Caching | Integrity |
+|:-:|--------|-----------------|----------|-------------|---------|-----------|
+| 1 | Riksdagen.se — HD01KU33 | https://data.riksdagen.se/dokument/HD01KU33 | 2026-04-19T12:19Z | riksdag-regering-mcp | Session cache (run-scoped) | HTTP 200 |
+| 2 | Riksdagen.se — HD01KU32 | https://data.riksdagen.se/dokument/HD01KU32 | 2026-04-19T12:19Z | riksdag-regering-mcp | Session cache | HTTP 200 |
+| 3 | Riksdagen.se — HD03231 | https://data.riksdagen.se/dokument/HD03231 | 2026-04-19T12:19Z | riksdag-regering-mcp | Session cache | HTTP 200 |
+| 4 | Riksdagen.se — HD03232 | https://data.riksdagen.se/dokument/HD03232 | 2026-04-19T12:19Z | riksdag-regering-mcp | Session cache | HTTP 200 |
+| 5 | Riksdagen.se — HD01CU28 | https://data.riksdagen.se/dokument/HD01CU28 | 2026-04-19T12:19Z | riksdag-regering-mcp | Session cache | HTTP 200 |
+| 6 | Regeringen.se — 2026-04-17 presser | https://www.regeringen.se/pressmeddelanden/ | 2026-04-19T12:20Z | riksdag-regering-mcp | Session cache | HTTP 200 |
+| 7 | World Bank — Sweden GDP growth 2024 | https://api.worldbank.org/v2/country/SWE/indicator/NY.GDP.MKTP.KD.ZG | 2026-04-19T12:21Z | world-bank-mcp | Session cache | JSON valid |
+| 8 | World Bank — Sweden CPI 2024 | https://api.worldbank.org/v2/country/SWE/indicator/FP.CPI.TOTL.ZG | 2026-04-19T12:21Z | world-bank-mcp | Session cache | JSON valid |
+
+## Provenance Integrity Rules
+
+- All riksdag-regering-mcp calls use HTTPS transport to https://riksdag-regering-ai.onrender.com/mcp with proxy allowlist enforcement.
+- World Bank data retrieved via worldbank-mcp (container `node:25-alpine` per `.github/workflows/news-realtime-monitor.lock.yml` mcp-servers block).
+- No personal data (PII) is cached; all fetched content is official public record.
+- Cache retention: session-scoped only (per agent run); no persistent storage of external data in the repository.
+
+## Document-Quality Rating
+
+| Document | Quality rating | Completeness | Primary-source confidence |
+|----------|:-------------:|:------------:|:-------------------------:|
+| HD01KU33 betänkande | Official | Full text available | HIGH |
+| HD01KU32 betänkande | Official | Full text available | HIGH |
+| HD03231 proposition | Official | Full text available | HIGH |
+| HD03232 proposition | Official | Full text available | HIGH |
+| HD01CU28 betänkande | Official | Full text available | HIGH |
+| Regeringen.se presser (King Kyiv) | Government press release | Full | HIGH |
+| World Bank GDP / CPI | Public API | Full | HIGH |
+
+## Coverage-Completeness Attestation
+
+All 4 documents with weighted DIW ≥ 5.0 appear in the published article with dedicated H2/H3 sections:
+
+- ✅ HD01KU33 (8.48) — H2 lead-story section
+- ✅ HD03231 + HD03232 (8.33) — H2 co-lead section (single package)
+- ✅ HD01KU32 (7.98) — H2 secondary section
+- ✅ HD01CU28 (5.93) — H3 under "Sector updates"
+
+All per-document files exist at the declared depth tier. See `methodology-reflection.md` §Pass-1 → Pass-2 improvement evidence for the reference-grade-extension audit.

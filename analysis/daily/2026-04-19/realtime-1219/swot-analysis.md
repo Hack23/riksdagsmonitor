@@ -1,9 +1,9 @@
 # SWOT Analysis — Realtime Monitor 2026-04-19 (1219)
 
-**SWT-ID**: SWT-20260419-1219  
-**Date**: 2026-04-19  
-**Analyst**: James Pether Sörling  
-**Version**: 2.0 (Pass 2 enriched with TOWS + Mermaid)
+**SWT-ID**: SWT-20260419-1219
+**Date**: 2026-04-19
+**Analyst**: James Pether Sörling
+**Version**: 3.0 (Pass 3 — reference-grade extension: full TOWS matrix, cluster-specific quadrants, Mermaid mindmap retained)
 
 ## SWOT Quadrant Mapping
 
@@ -93,3 +93,60 @@ mindmap
 **W1×O1 (Weakness-Opportunity interference)**: If KU33 attracts Council of Europe criticism, it could undermine Sweden's Ukraine norm-leadership narrative, turning an asset into a liability.
 
 **O3×T3 (Opportunity-Threat interaction)**: Housing market modernization creates opportunity for anti-corruption, but Ukraine compensation funding uncertainty creates fiscal pressure that could divert resources from other reforms.
+
+## Full TOWS Interference Matrix
+
+The TOWS matrix reads *Internal × External* interactions to derive strategic postures:
+
+|                 | **Opportunities (O)** | **Threats (T)** |
+|-----------------|-----------------------|-----------------|
+| **Strengths (S)** | **SO — Maxi-Maxi (leverage)** | **ST — Maxi-Mini (defend)** |
+|                 | S2 × O1: Royal Kyiv visit + tribunal accession = EU rule-of-law leadership premium | S1 × T1: Grundlag two-reading design is itself the defence against election-driven reversal |
+|                 | S3 × O2: Cross-party Ukraine consensus + housing modernization = coherent law-and-order narrative | S2 × T2: Ukraine norm-entrepreneurship creates reputational shield against KU33 criticism |
+| **Weaknesses (W)** | **WO — Mini-Maxi (fix)** | **WT — Mini-Mini (retreat)** |
+|                 | W1 × O1: Offentlighetsprincipen narrowing *undermines* rule-of-law leadership → fix via strict Lagrådet language | W1 × T1: KU33 narrowing + ECHR challenge = reputational double-hit; prepare defence memorandum |
+|                 | W3 × O3: Minority-government dependency *fits* housing-reform MoU logic — structured consultative reform | W3 × T2: SD cost resistance on HD03232 + tight fiscal space = budget-deal fragility |
+
+### Cluster-Specific Quadrants
+
+**Cluster A — KU33 (seizure transparency)**
+
+| Quadrant | Entry | Confidence |
+|----------|-------|:----------:|
+| S | Proportionality-framed to survive Lagrådet | MEDIUM |
+| W | Unique constitutional-amendment path (vs DE/FI/DK statutory) | HIGH |
+| W | "Formellt tillförd bevisning" trigger ambiguity | HIGH |
+| O | International benchmarking justifies convergence (DE §406e, FI JulkL §24) | HIGH |
+| T | ECHR Art 10 proportionality challenge | MEDIUM |
+| T | Opposition exploits as press-freedom narrative | HIGH |
+
+**Cluster B — Ukraine package (HD03231 + HD03232)**
+
+| Quadrant | Entry | Confidence |
+|----------|-------|:----------:|
+| S | Cross-party consensus (all 8 parties) | HIGH |
+| S | Royal diplomatic reinforcement via King's Kyiv visit | HIGH |
+| W | SD cost resistance on HD03232 | MEDIUM |
+| W | Swedish administrative contribution not yet quantified | MEDIUM |
+| O | Sweden as EU rule-of-law norm-entrepreneur | HIGH |
+| O | Russian frozen-asset mobilisation legal foundation | HIGH |
+| T | Russian hybrid information operations | HIGH |
+| T | US administration withdrawal from coordination | LOW-MEDIUM |
+
+**Cluster C — KU32 (accessibility)**
+
+| Quadrant | Entry | Confidence |
+|----------|-------|:----------:|
+| S | EU compliance trajectory (EAA 2025) | HIGH |
+| S | 1.2m Swedes with disabilities gain enforceable rights | HIGH |
+| W | 18-month compliance gap vs. 28 Jun 2025 EAA deadline | MEDIUM |
+| O | Constitutional anchor for future accessibility legislation | MEDIUM |
+| T | Normalises grundlag-as-legislative-tool pattern | MEDIUM |
+
+## Cross-Reference to Stakeholder Influence
+
+SWOT entries mapped to influence network in [`stakeholder-perspectives.md`](stakeholder-perspectives.md) §Influence Network. Key coupling:
+
+- **W1 × Opposition bloc** (S, V, MP) — KU33 civil-liberties critique is the structural opposition leverage
+- **S2 × H.M. King + FM Malmer Stenergard** — royal diplomatic signal is the Ukraine-package keystone
+- **T2 × SD Åkesson** — SD cost posture is the Ukraine-package single point of failure

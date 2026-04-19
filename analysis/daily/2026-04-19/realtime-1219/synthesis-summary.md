@@ -1,10 +1,11 @@
 # Synthesis Summary — Realtime Monitor 2026-04-19 (1219)
 
-**SYN-ID**: SYN-20260419-1219  
-**Date**: 2026-04-19  
-**Analyst**: James Pether Sörling  
-**Version**: 2.0 (Pass 2 — fully enriched)  
-**Confidence**: HIGH
+**SYN-ID**: SYN-20260419-1219
+**Date**: 2026-04-19
+**Analyst**: James Pether Sörling
+**Version**: 3.0 (Pass 3 — reference-grade extension: red-team box, analyst-confidence meter, ACH anchor)
+**Confidence**: HIGH on lead selection · MEDIUM on post-election outcomes
+**Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1 + DIW v1.0
 
 ## Intelligence Dashboard
 
@@ -72,3 +73,44 @@ graph LR
 ## Economic Context
 
 Sweden's GDP grew 0.82% in 2024 (recovering from -0.20% contraction in 2023), while inflation fell to 2.84% (from 8.55% in 2023). This improving but fragile macroeconomic position shapes the fiscal feasibility of Ukraine compensation contributions. Finance Minister Svantesson's Vårproposition (HD03100) projects continued modest growth, but the fiscal space for open-ended international commitments is constrained — a tension between Ukraine ambition and economic prudence that runs through HD03232.
+
+## 🛡️ Red-Team / Devil's Advocate Box
+
+> *What would a steelman critique of this synthesis say?*
+
+**Red-team position on the lead-story ranking**: The DIW weighting gives KU33 (8.48) a 0.15-point edge over the Ukraine package (8.33). But this is within the epistemic error band of the DIW instrument itself (±0.20). Under a weight perturbation where Democratic Infrastructure falls from 0.30 to 0.25 and Cross-party rises from 0.10 to 0.15, the Ukraine package overtakes KU33. **Verdict retained** — KU33 remains the robust lead under 4 of 5 plausible weight permutations; the co-lead treatment explicitly handles the remaining case.
+
+**Red-team position on the rhetorical tension**: The "domestic retrenchment vs international accountability" framing assumes these are in tension. An alternative framing: the two packages are **coherent** — both assert state prerogative over information (law-enforcement investigation integrity domestically; international-law enforcement integrity abroad). Under this framing there is no contradiction, only consistent state-capacity assertion. **Verdict retained but surfaced** — the tension framing is the *opposition's* expected rhetorical move, not the government's; article acknowledges both framings.
+
+**Red-team position on Scenario C (bear)**: We assign Scenario C only 0.20 probability despite meaningful Lagrådet and SD cost-risk. An alternative analysis giving Scenario C 0.30 would require either (a) polling showing Tidö bloc < 44% in May, or (b) an early SD public red-line on HD03232. Neither has materialised as of 2026-04-19. **Verdict**: Scenario C probability will be raised to 0.30 if either trigger fires.
+
+## 🎯 Key Uncertainties (ACH-informed)
+
+Linked from [`scenario-analysis.md`](scenario-analysis.md) §ACH:
+
+1. **Will "formellt tillförd bevisning" be read strictly or discretionarily?** Strict ⇒ narrow reform; discretionary ⇒ systemic chilling. This single interpretive question dominates KU33 downstream impact. Lagrådet yttrande is the decisive early signal. `[Confidence: MEDIUM; will update on Lagrådet publication]`
+2. **Will the Tidö coalition retain majority in September 2026?** Current combined polling ≈ 48%. Probability the coalition retains working majority ≈ 0.35. This is the dominant uncertainty for KU33 second reading. `[MEDIUM]`
+3. **Will HD03232 Swedish contribution be administrative-only or include reparation underwriting?** Proposition text is silent on Swedish liability if Russian assets held in Swedish jurisdiction are mobilised. `[LOW-MEDIUM]`
+4. **Will SD hold or defect on HD03232?** SD's cost-transparency demand is the most likely fracture point; no public red line yet. `[MEDIUM]`
+5. **Will Russian hybrid response escalate after HD03231 chamber vote?** Baseline rising post-NATO accession (2024); tribunal accession adds target signature. `[MEDIUM on direction / LOW on magnitude]`
+
+## 🧭 Analyst-Confidence Meter
+
+| Dimension | Confidence | Delta from 1434 |
+|-----------|:----------:|:---------------:|
+| Lead-story selection (DIW) | **HIGH** | → |
+| Coverage completeness | **HIGH** | → |
+| First-reading vote projection | **HIGH** | → |
+| Second-reading vote projection | **MEDIUM** | → |
+| "Formellt tillförd" interpretation | **MEDIUM** | → |
+| HD03232 contribution sizing | **LOW-MEDIUM** | new |
+| Russian hybrid response magnitude | **MEDIUM** | → |
+| US tribunal posture | **LOW** | → |
+
+## 🔗 Cross-File Navigation
+
+- For the one-page decision brief: [`executive-brief.md`](executive-brief.md)
+- For scenario probabilities and ACH grid: [`scenario-analysis.md`](scenario-analysis.md)
+- For international comparator panel: [`comparative-international.md`](comparative-international.md)
+- For methodology self-audit: [`methodology-reflection.md`](methodology-reflection.md)
+- For per-document deep-dive: [`documents/HD01KU33-analysis.md`](documents/HD01KU33-analysis.md) (LEAD, L3)

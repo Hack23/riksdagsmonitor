@@ -125,3 +125,96 @@ Citizens face two countervailing developments:
 **Social media**: KU33 unlikely to break through to mass audience unless media frame it as "press freedom restriction." Ukraine tribunal has higher virality due to royal diplomatic dimension.
 
 **Public polling context**: Latest Riksdagen confidence polling (early April 2026) shows Tidö coalition at approximately 48% combined — still below 50% majority, making the autumn election highly competitive. Ukraine policy enjoys cross-party public support (~68% in most recent SOM Institute data).
+
+---
+
+## 🕸️ Influence Network
+
+```mermaid
+graph TD
+    PM[Ulf Kristersson<br/>PM · M] --> FM[Maria Malmer Stenergard<br/>FM · M]
+    PM --> JM[Gunnar Strömmer<br/>Justitieminister · M]
+    PM --> FinM[Elisabeth Svantesson<br/>Finansminister · M]
+    PM -.coalition.-> SD[Jimmy Åkesson<br/>SD party leader]
+    PM -.coalition.-> L[Johan Pehrson<br/>L party leader]
+    PM -.coalition.-> KD[Ebba Busch<br/>KD party leader]
+
+    FM --> KING[H.M. King Carl Gustaf<br/>Head of State]
+    KING -.2026-04-17 Kyiv visit.-> ZEL[Volodymyr Zelensky<br/>Ukraine]
+
+    JM --> KU33[HD01KU33 betänkande]
+    JM -.enforcement agenda.-> POL[Åklagarmyndigheten · Polisen]
+    FM --> HD231[HD03231 Tribunal]
+    FM --> HD232[HD03232 Commission]
+    FinM --> HD232
+
+    KUchair[Ann-Sofie Alm<br/>KU chair · M] --> KU33
+    KUchair --> KU32[HD01KU32 betänkande]
+
+    OPP_S[Magdalena Andersson<br/>S party leader] -.oppose-> KU33
+    OPP_S -.support.-> HD231
+    OPP_V[Nooshi Dadgostar<br/>V party leader] -.strongly oppose.-> KU33
+    OPP_MP[Daniel Helldén<br/>MP språkrör] -.oppose.-> KU33
+
+    LAG[Lagrådet] -.pre-vote yttrande.-> KU33
+    JO[Erik Nymansson JO] -.post-impl monitoring.-> KU33
+
+    SJF[SJF Journalists Union] -.campaign.-> KU33
+    TU[TU · Utgivarna] -.campaign.-> KU33
+    RSF[RSF-SE] -.campaign.-> KU33
+
+    CoE[Council of Europe<br/>Venice Commission] -.monitors Art 10.-> KU33
+    CoE -.hosts secretariat.-> HD231
+    EC[EU Commission] -.monitors EAA compliance.-> KU32
+
+    style PM fill:#4a90e2,color:#fff
+    style FM fill:#4a90e2,color:#fff
+    style KU33 fill:#c0392b,color:#fff
+    style HD231 fill:#e67e22,color:#fff
+    style HD232 fill:#e67e22,color:#fff
+    style SJF fill:#f1c40f,color:#000
+    style OPP_S fill:#95a5a6,color:#fff
+```
+
+**Network density observations**:
+- **PM Kristersson is the hub node** — connected to both the KU33 domestic agenda (via JM Strömmer) and the Ukraine agenda (via FM Malmer Stenergard).
+- **King + FM + Zelensky triangle** forms the royal-diplomatic signalling structure unique to this run.
+- **Civil-society coalition** (SJF + TU + Utgivarna + RSF-SE) is a coordinated campaign network specific to KU33.
+- **Lagrådet → KU33** is the single most consequential pre-vote edge in the network.
+
+## 🌳 Tidö Coalition Fracture-Probability Tree
+
+```mermaid
+graph TD
+    ROOT[Tidö Coalition Stability] --> Q1{HD03232 costs<br/>published?}
+    Q1 -->|Yes, capped| P1[P breach = 0.10]
+    Q1 -->|Yes, uncapped| P2[P breach = 0.45]
+    Q1 -->|No, ambiguous| P3[P breach = 0.25]
+    P2 --> Q2{SD public<br/>red line?}
+    Q2 -->|Yes| F1[FRACTURE<br/>P = 0.70]
+    Q2 -->|No| Q3{SD internal<br/>dissent?}
+    Q3 -->|Visible| F2[FRACTURE RISK<br/>P = 0.35]
+    Q3 -->|Contained| F3[HOLD<br/>P = 0.15]
+
+    style F1 fill:#c0392b,color:#fff
+    style F2 fill:#e67e22,color:#fff
+    style F3 fill:#2ecc71,color:#fff
+```
+
+**Leading indicators to monitor**:
+- SD parliamentary-group public statement after UU committee hearing
+- Åkesson column / SR Ekot interview referencing HD03232
+- Budget-deal negotiating posture on 2026 Vårändringsbudget
+
+## 📋 Briefing Cards (≤ 3 sentences per group)
+
+| Group | 3-Sentence Briefing |
+|-------|---------------------|
+| **Citizens (pro-access)** | Your right to access seized-material records is being narrowed by KU33. The amendment cannot take effect until post-election second reading in 2027. Contact your MP before 2026-04-22 chamber vote. |
+| **Government coalition** | KU33 advances law-enforcement integrity; HD03231/232 delivers Ukraine-accountability legacy. King's Kyiv visit provides diplomatic signal. SD cost-resistance on HD03232 is the coalition vulnerability. |
+| **S opposition** | KU33 gives you a civil-liberties argument without Ukraine-aid trade-off. Second-reading veto requires post-election majority. Messaging complexity — narrow "not anti-Ukraine" framing. |
+| **V + MP opposition** | Grundlag-protection is your established brand. Coordinate with press-freedom coalition. Raise environmental-inspection access concern for MP. |
+| **Media companies** | KU33 removes an investigative-journalism access channel. KU32 adds digital-accessibility compliance cost. Lagrådet yttrande is your earliest intervention window. |
+| **Civil society (press freedom)** | File coordinated remissvar. Prepare ECHR complaint draft. Engage Venice Commission through CoE channels. |
+| **International EU / CoE** | Watch Venice Commission engagement on KU33 Art 10 proportionality. HD03231 accession closes ICC jurisdictional gap on Russia aggression. |
+| **Media & public opinion** | Frame the rhetorical tension (domestic narrowing vs international accountability). Royal Kyiv visit is the broadcast-friendly entry point for Ukraine; KU33 is the technical-constitutional narrative. |
