@@ -2177,16 +2177,10 @@ function buildDeepInspectionSections(
 ): TemplateSection[] {
   if (docs.length === 0) return [];
 
-  // Single-pass classification: bucket docs by effectiveType() to avoid N×filter passes.
-  // EU docs use both 'fpm' and 'eu' raw types; effectiveType() preserves the raw value,
-  // so we merge both into the euDocs bucket below.
-  // Single-pass classification: bucket docs by effectiveType() to detect
-  // whether the deep-inspection Sankey is worth rendering. The actual
-  // Sankey nodes/flows are built by `buildLegislativeSankeySection`
-  // which re-buckets internally using the shared helper.
-  // (Previously this function duplicated the bucket + node/flow logic;
-  // that duplication is gone — kept the counts local for the
-  // `classifiedTypes` comment and future debugging only.)
+  // The deep-inspection Sankey is delegated to
+  // `buildLegislativeSankeySection`, which shares bucket + node/flow
+  // construction with the review-article path (see `SANKEY_DOC_TYPE_SPEC`
+  // and `buildLegislativeSankeyNodesAndFlows`). No bucketing happens here.
 
   // ── 6-stakeholder SWOT ───────────────────────────────────────────────────
   const stakeholders = buildAISwotStakeholders(docs, topic ?? '', lang);

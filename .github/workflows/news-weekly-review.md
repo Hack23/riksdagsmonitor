@@ -750,7 +750,7 @@ EN/SV only: all headings, meta, content in correct language; no untranslated `da
 > if grep -l 'class="sankey-section"' news/$ARTICLE_DATE-weekly-review-*.html; then
 >   echo "✅ Sankey section present"
 > else
->   doc_count=$(jq '[.docs // []] | first | length' analysis/daily/$ARTICLE_DATE/weekly-review/economic-data.json 2>/dev/null || echo 0)
+>   doc_count=$(find "analysis/daily/$ARTICLE_DATE/weekly-review/documents" -maxdepth 1 -name '*.json' 2>/dev/null | wc -l)
 >   if [ "$doc_count" = "0" ]; then
 >     echo "ℹ️ Sankey section not emitted — the week has 0 documents (validator allows this)"
 >   else
