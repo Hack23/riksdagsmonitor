@@ -410,7 +410,7 @@ news/translate/{YYYY-MM-DD}/{article-type}
 
 ## ⏱️ Time Budget (55 minutes of work, hard stop at 55)
 
-The budget is now organised around **3 rolling PR batches**, not one monolithic PR. This is the direct fix for PR #1835 where 3 completed translations (`fr`, `es`, `nl`) were lost because they were committed *after* the single `safeoutputs___create_pull_request` call had frozen the patch.
+The budget is now organised around **typically 2–3 rolling PR batches (up to 5 allowed by `create-pull-request.max: 5`)**, not one monolithic PR. This is the direct fix for PR #1835 where 3 completed translations (`fr`, `es`, `nl`) were lost because they were committed *after* the single `safeoutputs___create_pull_request` call had frozen the patch. If time allows and the workload spans multiple articles/types, open additional batch PRs up to the 5-per-run safe-outputs cap.
 
 | Phase | Minutes | Action |
 |-------|---------|--------|
@@ -849,7 +849,7 @@ npx tsx scripts/validate-news-translations.ts
 | Time running out (current batch ≥18 min) | Stop adding languages → validate → commit → `safeoutputs___create_pull_request` with what you have, then start the next batch on `main` |
 | HTMLHint errors | Fix with `edit` tool or run `npx tsx scripts/article-quality-enhancer.ts --fix` |
 | safeoutputs "session not found" | Session expired — all uncreated PR intents are LOST. **Prevention: call `safeoutputs___create_pull_request` for the first batch by minute 22.** Later batches must also be called promptly (never more than 15 minutes between successive calls). |
-| Committed files on a branch that already has a PR | Those files are lost — the patch was frozen at the first `safeoutputs___create_pull_request` call. Switch to `main`, re-create the translations fresh, and call `safeoutputs___create_pull_request` again for a new PR. |
+| Committed files on a branch that already has a PR | Not included in the existing PR — the patch was frozen at the first `safeoutputs___create_pull_request` call. Switch to `main` and create a new batch PR containing only the new translations; if the files still exist in the workspace (or on the previous branch), re-apply/cherry-pick or recommit them onto `main` so you don't need to re-translate from scratch. Then call `safeoutputs___create_pull_request` again for the new batch. |
 
 ## 🎯 Execution Summary
 
