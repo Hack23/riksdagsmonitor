@@ -373,9 +373,9 @@
 
  <script src="../js/lib/chart.umd.4.4.1.js"></script>
  <script>
- (function(){
+ document.addEventListener("DOMContentLoaded", function(){
    var ctx = document.getElementById("economicChart");
-   if(!ctx) return;
+   if(!ctx || typeof Chart === "undefined") return;
    new Chart(ctx, {
      type: "bar",
      data: {
@@ -391,7 +391,7 @@
        scales: {y: {beginAtZero: false}}
      }
    });
- })();
+ });
  </script>
 
 </body>
