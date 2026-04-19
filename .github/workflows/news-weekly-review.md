@@ -150,17 +150,26 @@ steps:
       if [ "$WARM" = "false" ]; then
         echo "⚠️ MCP server did not respond after 6 attempts — agent will retry via in-prompt health gate"
       fi
-      echo "🔄 Starting background keep-alive pinger (every 30s, max 15 min)..."
-      KEEP_ALIVE_END=$(($(date +%s) + 900))
-      while [ "$(date +%s)" -lt "$KEEP_ALIVE_END" ]; do
-        curl -sf --max-time 10 -X POST \
-          -H "Content-Type: application/json" \
-          -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
-          "$MCP_URL" -o /dev/null 2>/dev/null || true
-        sleep 30
-      done &
+      echo "🔄 Starting background keep-alive pinger (every 30s, max 55 min — covers full 60-min workflow through safe-output PR creation)..."
+      KEEP_ALIVE_START=$(date +%s)
+      KEEP_ALIVE_END=$((KEEP_ALIVE_START + 3300))
+      export MCP_URL KEEP_ALIVE_END
+      nohup bash -c '
+        while :; do
+          NOW=$(date +%s)
+          if [ "$NOW" -ge "$KEEP_ALIVE_END" ]; then
+            break
+          fi
+          curl -sf --max-time 10 -X POST \
+            -H "Content-Type: application/json" \
+            -d "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/list\",\"params\":{}}" \
+            "$MCP_URL" -o /dev/null 2>/dev/null || true
+          sleep 30
+        done
+      ' </dev/null >/tmp/mcp-keepalive.log 2>&1 &
       KEEP_ALIVE_PID=$!
-      echo "Keep-alive PID: $KEEP_ALIVE_PID (auto-exits after 15 min)"
+      disown "$KEEP_ALIVE_PID" 2>/dev/null || true
+      echo "Keep-alive PID: $KEEP_ALIVE_PID (auto-exits after 55 min; log: /tmp/mcp-keepalive.log)"
 
   - name: Pre-flight external endpoint reachability check (runs before MCP Gateway)
     run: |
@@ -269,7 +278,7 @@ read START_TIME < /tmp/start_time.txt
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 
-> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "Bash Tool Call Format". Key rule: every `bash` call MUST have both `command` AND `description` parameters. Example: `bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })`
+> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "Bash Tool Call Format". Key rule: every `bash` call MUST have both `command` AND `description` parameters. Example: `bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })`. Calls missing either field fail with `Multiple validation errors: - "command": Required - "description": Required`.
 
 ## 🛡️ AWF Shell Safety
 
