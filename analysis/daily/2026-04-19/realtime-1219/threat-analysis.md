@@ -43,7 +43,7 @@ graph LR
 **KU33 — Offentlighetsprincipen Narrowing Pattern**  
 *Severity*: HIGH | *Confidence*: HIGH | *Attribution*: Government (Kristersson/KU majority)
 
-The KU33 betänkande proposes to remove seized digital materials from "allmän handling" status. While the stated rationale is protecting ongoing criminal investigations, the structural effect is to exempt an entire category of government-held information from the public record. This is the second grundlag carve-out in the 2025/26 riksmöte (KU32 being the first, though KU32 narrows media accessibility obligations — a different vector).
+The KU33 betänkande proposes to remove seized digital materials from "allmän handling" status. While the stated rationale is protecting ongoing criminal investigations, the structural effect is to exempt an entire category of government-held information from the public record. This is the second grundlag carve-out in the 2025/26 riksmöte (KU32 being the first, though KU32 expands media accessibility obligations — a different vector).
 
 **Kill Chain Analysis — KU33 Transparency Degradation**:
 1. *Reconnaissance*: Law enforcement expresses need for investigation secrecy
