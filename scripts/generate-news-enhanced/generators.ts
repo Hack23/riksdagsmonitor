@@ -410,12 +410,123 @@ export function buildAnalysisEnrichmentSections(
 // ---------------------------------------------------------------------------
 
 /**
+ * Article types that MUST carry an inline Sankey flow diagram to satisfy the
+ * economic-data contract (`scripts/validate-economic-context.ts` →
+ * `COVERAGE_MATRIX[*].requiresD3`). Kept here (and not imported) because
+ * the generator ships in `dist/lib/` while the validator lives in
+ * `scripts/`, and we only need the article-type identifiers.
+ */
+const REVIEW_ARTICLE_TYPES_REQUIRING_SANKEY: ReadonlySet<string> = new Set([
+  'weekly-review',
+  'monthly-review',
+]);
+
+/**
+ * Build a legislative-flow Sankey TemplateSection from a set of documents.
+ * Returns null when fewer than two non-trivial flows can be derived, so
+ * callers can decide whether to append the section.
+ *
+ * Shares the actor → document-type semantics used by the deep-inspection
+ * Sankey: government coalition initiates propositions / laws / gov.
+ * communications / EU positions / press releases; opposition initiates
+ * committee reports and motions; private sector / external actors carry
+ * external references and other document types.
+ */
+function buildLegislativeSankeySection(
+  docs: RawDocument[],
+  topic: string | null,
+  lang: Language,
+): TemplateSection | null {
+  if (docs.length < 2) return null;
+
+  const buckets = new Map<string, RawDocument[]>();
+  for (const d of docs) {
+    const t = effectiveType(d);
+    let arr = buckets.get(t);
+    if (!arr) { arr = []; buckets.set(t, arr); }
+    arr.push(d);
+  }
+  const propDocs   = buckets.get('prop')   ?? [];
+  const betDocs    = buckets.get('bet')    ?? [];
+  const motDocs    = buckets.get('mot')    ?? [];
+  const skrDocs    = buckets.get('skr')    ?? [];
+  const sfsDocs    = buckets.get('sfs')    ?? [];
+  const euDocs     = [...(buckets.get('fpm') ?? []), ...(buckets.get('eu') ?? [])];
+  const pressmDocs = buckets.get('pressm') ?? [];
+  const extDocs    = buckets.get('ext')    ?? [];
+  const classifiedTypes = new Set(['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext']);
+  const otherDocs  = [...buckets.entries()]
+    .filter(([k]) => !classifiedTypes.has(k))
+    .flatMap(([, v]) => v);
+
+  const govName     = AI_STAKEHOLDER_NAMES['government-coalition'][lang] ?? AI_STAKEHOLDER_NAMES['government-coalition'].en;
+  const oppName     = AI_STAKEHOLDER_NAMES['opposition'][lang]           ?? AI_STAKEHOLDER_NAMES['opposition'].en;
+  const privateName = AI_STAKEHOLDER_NAMES['private-sector'][lang]       ?? AI_STAKEHOLDER_NAMES['private-sector'].en;
+
+  const sankeyNodes: SankeyNode[] = [
+    { id: 'gov', label: govName,     color: 'cyan' },
+    { id: 'opp', label: oppName,     color: 'magenta' },
+    { id: 'pvt', label: privateName, color: 'purple' },
+  ];
+
+  const sankeyFlows: SankeyFlow[] = [];
+  if (propDocs.length > 0) {
+    sankeyNodes.push({ id: 'prop', label: 'Propositions', color: 'orange' });
+    sankeyFlows.push({ source: 'gov', target: 'prop', value: propDocs.length, label: `${propDocs.length}` });
+  }
+  if (betDocs.length > 0) {
+    sankeyNodes.push({ id: 'bet', label: 'Committee Reports', color: 'blue' });
+    sankeyFlows.push({ source: 'opp', target: 'bet', value: betDocs.length, label: `${betDocs.length}` });
+  }
+  if (motDocs.length > 0) {
+    sankeyNodes.push({ id: 'mot', label: 'Motions', color: 'yellow' });
+    sankeyFlows.push({ source: 'opp', target: 'mot', value: motDocs.length, label: `${motDocs.length}` });
+  }
+  if (sfsDocs.length > 0) {
+    sankeyNodes.push({ id: 'sfs', label: 'Laws (SFS)', color: 'green' });
+    sankeyFlows.push({ source: 'gov', target: 'sfs', value: sfsDocs.length, label: `${sfsDocs.length}` });
+  }
+  if (skrDocs.length > 0) {
+    sankeyNodes.push({ id: 'skr', label: deepLabel('govCommunications', lang), color: 'green' });
+    sankeyFlows.push({ source: 'gov', target: 'skr', value: skrDocs.length, label: `${skrDocs.length}` });
+  }
+  if (euDocs.length > 0) {
+    sankeyNodes.push({ id: 'eu', label: 'EU Positions', color: 'blue' });
+    sankeyFlows.push({ source: 'gov', target: 'eu', value: euDocs.length, label: `${euDocs.length}` });
+  }
+  if (pressmDocs.length > 0) {
+    sankeyNodes.push({ id: 'pressm', label: 'Press Releases', color: 'orange' });
+    sankeyFlows.push({ source: 'gov', target: 'pressm', value: pressmDocs.length, label: `${pressmDocs.length}` });
+  }
+  if (extDocs.length > 0) {
+    sankeyNodes.push({ id: 'ext', label: 'External / Reference', color: 'purple' });
+    sankeyFlows.push({ source: 'pvt', target: 'ext', value: extDocs.length, label: `${extDocs.length}` });
+  }
+  if (otherDocs.length > 0) {
+    sankeyNodes.push({ id: 'other', label: 'Other Docs', color: 'purple' });
+    sankeyFlows.push({ source: 'pvt', target: 'other', value: otherDocs.length, label: `${otherDocs.length}` });
+  }
+
+  if (sankeyFlows.length < 2) return null;
+
+  return generateSankeySection({
+    nodes: sankeyNodes,
+    flows: sankeyFlows,
+    lang,
+    title: topic ? `Legislative Flow — ${topic}` : 'Legislative Flow',
+    summary: `Flow of ${docs.length} parliamentary documents from initiating actors to document types`,
+  });
+}
+
+/**
  * Build SWOT, dashboard, and economic TemplateSections for standard article
  * types (not deep-inspection, which has its own richer builder).
  *
- * Produces 1–3 sections depending on available data:
+ * Produces 1–4 sections depending on available data:
  *  - SWOT stakeholder analysis (always, when docs.length >= 2)
  *  - Chart.js dashboard with document type breakdown (when docs.length >= 3)
+ *  - Legislative-flow Sankey (when `articleType` requires D3 in the economic
+ *    data contract — `weekly-review`, `monthly-review` — and >=2 flows exist)
  *  - Economic dashboard (when policyDomains match World Bank indicators)
  *
  * Each section is safe to append to `generateArticleHTML({ sections })`.
@@ -454,6 +565,22 @@ export function buildArticleVisualizationSections(
         });
         sections.push(dashboardSection);
       }
+    }
+  } catch { /* graceful degradation */ }
+
+  try {
+    // ── 2b. Legislative-flow Sankey for retrospective reviews ─────────────
+    // The economic-data contract marks `weekly-review` and `monthly-review`
+    // as `requiresD3: true`, so emit an inline SVG Sankey whenever the
+    // article belongs to one of those types and enough distinct flows
+    // exist. Deep-inspection has its own richer Sankey inside
+    // `buildDeepInspectionSections` so we skip it here to avoid duplicates.
+    if (
+      context?.articleType &&
+      REVIEW_ARTICLE_TYPES_REQUIRING_SANKEY.has(context.articleType)
+    ) {
+      const sankeySection = buildLegislativeSankeySection(docs, topic, lang);
+      if (sankeySection) sections.push(sankeySection);
     }
   } catch { /* graceful degradation */ }
 

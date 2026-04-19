@@ -737,12 +737,18 @@ EN/SV only: all headings, meta, content in correct language; no untranslated `da
 
 ## Step 3d: Economic Commentary (MANDATORY)
 
-> After Step 3c and **before** calling `safeoutputs.create_pull_request`, re-open `economic-data.json` and replace the placeholder `commentary` string with a 2–4 sentence paragraph that:
-> - cites **2–3 concrete numeric values** from `dataPoints`;
-> - ties the numbers to the day's political developments (not definitions of indicators);
+> After Step 3c and **before** calling `safeoutputs.create_pull_request`, re-open `economic-data.json` and replace the placeholder `commentary` string with a **4–6 sentence paragraph of ≥150 words** (enforced by `scripts/validate-economic-context.ts` — `weekly-review` = 150, `monthly-review` = 200) that:
+> - cites **≥3 concrete numeric values** from `dataPoints` (e.g. Nordic GDP comparison + Swedish unemployment trajectory);
+> - ties the numbers to the week's political developments (not definitions of indicators);
 > - is written in plain English (translations are produced downstream by `news-translate`);
 > - meets the minimum word count in the coverage matrix for this article type.
 >
 > Banned phrasings (the multi-dim quality score flags these): "The political landscape remains fluid…", "Touches on X policy…", pure indicator definitions.
+>
+> **Sankey / flow diagram** (required for `weekly-review` and `monthly-review`): `scripts/generate-news-enhanced/generators.ts` now auto-appends a `class="sankey-section"` SVG via `buildArticleVisualizationSections` whenever ≥2 distinct document-type flows exist. The AI writer does not need to emit Sankey HTML directly — just confirm the generated HTML contains `class="sankey-section"` before opening the PR:
+> ```bash
+> grep -l 'class="sankey-section"' news/$ARTICLE_DATE-weekly-review-*.html || {
+>   echo "❌ Sankey section missing — the validator will block the PR"; exit 1; }
+> ```
 >
 > Full rules: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) §"Writing the AI commentary — workflow Step 3d".
