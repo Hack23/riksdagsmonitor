@@ -122,6 +122,7 @@ safe-outputs:
     labels: [agentic-news, translation]
     draft: false
     expires: 14d
+    max: 5
   add-comment: {}
 
 steps:
@@ -306,16 +307,16 @@ You are the **Translation Agent** for Riksdagsmonitor. Your primary job is to tr
 > 3. **SPEND THE FULL TIME** — use at least 45 of the 60 allocated minutes doing real work
 > 4. **NEVER complete early** — if translations are done, use remaining time to improve quality of existing translations
 
-**🎯 Performance target: 5–10 translated files per run.** Each run should produce multiple translations across multiple article types. If you produce fewer than 5 files, you are underperforming — use the `create` tool to write complete files in single calls, not the `edit` tool for incremental changes.
+**🎯 Performance target: 8–12 translated files per run, split across 2–3 PRs.** Each run should produce multiple translations across multiple article types. Use rolling batches: 3–4 languages per PR, multiple PRs per run (see RULE 1). If you produce fewer than 8 files, you are underperforming — use the `create` tool to write complete files in single calls, not the `edit` tool for incremental changes.
 
 You must also follow the shared **No Workflow Run Wasted** rule used by all agentic workflows in this repository: if translation work is blocked, exhausted, or completed early, use the remaining time to review and improve existing analysis artifacts related to the same article set. This means tightening clarity, consistency, structure, factual grounding, metadata quality, or cross-language alignment in already-existing analysis content, without inventing new coverage or changing EN/SV ownership rules.
 
 Apply this as a **cascading fallback** — you MUST always find work to do and maximize output:
-- **First priority**: find and complete ALL pending translations for today's date (unless today is deferred by pre-flight). Translate as many article types as time allows — do not stop after one type.
-- **Second priority**: if today is fully translated or deferred, scan the last 30 days for EN articles missing translations. Start with the most recent date and translate as many as time allows.
-- **Third priority**: if ALL articles from the last 30 days have 100% translations, improve existing translation quality — fix English leakage, improve phrasing, correct political terminology, ensure natural fluency.
+- **First priority**: find and complete ALL pending translations for today's date (unless today is deferred by pre-flight). Translate as many article types as time allows — do not stop after one type, and do not stop after one PR (you may open up to 5 PRs per run — see RULE 1).
+- **Second priority**: if today is fully translated or deferred, scan the last 30 days for EN articles missing translations. Start with the most recent date and translate as many as time allows, opening a new PR for each 3–4 language batch.
+- **Third priority**: if ALL articles from the last 30 days have 100% translations, improve existing translation quality — fix English leakage, improve phrasing, correct political terminology, ensure natural fluency. Open a dedicated "quality improvements" PR for these edits.
 - **Do not let analysis-improvement work delay safe output creation**. If the run is approaching the deadline, stop additional edits and finalize a safe output immediately.
-- **NEVER produce fewer than 5 translated files** unless there are literally no articles to translate (all 30 days fully done). If you are producing fewer than 5, you are being too slow — speed up by writing complete files in single tool calls.
+- **NEVER produce fewer than 8 translated files** unless there are literally no articles to translate (all 30 days fully done). If you are producing fewer than 8, you are being too slow — speed up by writing complete files in single tool calls, and split work across multiple PRs instead of serialising everything into one.
 
 When performing analysis-improvement work, keep changes tightly scoped and stage conservatively so the safe-outputs payload remains manageable:
 - Prefer the smallest coherent set of files that delivers value.
@@ -323,18 +324,44 @@ When performing analysis-improvement work, keep changes tightly scoped and stage
 - Keep the total staged file count within a safe, reviewable limit; if both translation files and analysis-artifact improvements exist, prioritize completed translations first and only include a small number of directly related analysis files that still fit comfortably within safe-outputs constraints.
 - If adding analysis-improvement edits would risk exceeding safe-output limits, exclude those extra files and emit a safe output for the translation work already completed.
 
-## 🚨 RULE 1: Call `safeoutputs___create_pull_request` As Early As Possible
+## 🚨 RULE 1: `safeoutputs___create_pull_request` Freezes the Patch — Use Rolling Batches
 
-**The #1 cause of lost work is delaying the safe output call.** The safeoutputs MCP session has a finite lifetime. If you wait too long, the session expires ("session not found") and ALL your locally committed work is LOST forever.
+**The #1 cause of lost work was misunderstanding how `safeoutputs___create_pull_request` actually works.** The tool captures the patch from your **current commits at the moment you call it**. Any files you create or commit *after* that call on the same branch are **NOT** added to the PR — they are **silently lost** when the ephemeral agent workspace is discarded. Multiple commits to the same local branch after the first call do **NOT** update the PR.
 
-> 🚨 **PRODUCTION INCIDENT**: On 2026-04-14, 10 translated files were committed locally but the agent delayed `safeoutputs___create_pull_request` until minute ~50. The safeoutputs session had expired. Every retry returned "session not found". The `detection` and `safe_outputs` jobs were SKIPPED. All 10 files were lost.
+> 🚨 **PRODUCTION INCIDENT (2026-04-19, PR #1835)**: The agent translated 7 languages (`da`, `no`, `de`, `fi`, `fr`, `es`, `nl`) for `2026-04-18-breaking-1705`. After committing 4 languages at minute 21, it called `safeoutputs___create_pull_request` — patch frozen. It then translated `fr`, `es`, `nl` on the same branch believing "they'll be included in the PR". **They were not.** Only 4/7 translations reached `main`; 3 complete translations were discarded.
+>
+> 🚨 **PRODUCTION INCIDENT (2026-04-14)**: The agent delayed `safeoutputs___create_pull_request` until minute ~50. The safeoutputs MCP session had expired ("session not found"). All 10 translations were lost.
 
-**The fix is simple: call `safeoutputs___create_pull_request` the moment you have ANY committed translation files.** Do not accumulate a huge batch and create the PR at the end. Create the PR EARLY.
+These two incidents bound the strategy: **call early, then batch again.**
+
+### The Correct Pattern: Rolling Batches — One PR Per 4-Language Batch
+
+The workflow is configured with **`create-pull-request.max: 5`** — you may open up to **5 pull requests per run**. Each PR must be a self-contained batch of 2–4 completed translation files.
+
+1. **Batch 1** (~minutes 4–18): Translate 3–4 languages (`da`, `nb`, `fi`, `de`) → stage + commit → `safeoutputs___create_pull_request` **by minute 22**
+2. **Batch 2** (~minutes 22–35): Translate next 3–4 languages (`fr`, `es`, `nl`, `ar`) **on a new branch** → stage + commit → `safeoutputs___create_pull_request` again
+3. **Batch 3** (~minutes 35–48): Translate remaining languages (`he`, `ja`, `ko`, `zh`) **on a new branch** → stage + commit → `safeoutputs___create_pull_request` a third time
+4. **Batch 4+**: If time remains and more articles need translation, repeat for the next article
+
+> ✅ Each `safeoutputs___create_pull_request` call creates a **separate PR** on a **separate branch**. The tool handles branch creation automatically — just make sure each batch is a fresh local commit graph (delete or switch away from the previous branch before staging the next batch).
 
 ### Timing Rules
-- **Target**: Call `safeoutputs___create_pull_request` by **minute 25**
-- **Absolute maximum**: Never later than **minute 35**
-- **3 translations in a PR >> 10 translations lost to session timeout**
+- **First PR**: Call `safeoutputs___create_pull_request` by **minute 22** (must happen within the safeoutputs MCP session lifetime — do not wait past minute 35)
+- **Subsequent PRs**: Call every 10–12 minutes after each new batch is committed
+- **Hard stop at minute 55**: Stop all translation work and flush the final batch as a PR — never leave uncommitted files behind
+
+### Moving to the Next Batch (no lost work)
+
+After `safeoutputs___create_pull_request` succeeds for a batch, switch off the PR branch before writing the next batch so new files don't accidentally stack onto the frozen patch:
+
+```bash
+# After safeoutputs___create_pull_request succeeds for batch N
+git status --short news/
+# Switch back to main so the next batch starts from a clean base
+git checkout main 2>/dev/null || git checkout -
+# Now translate the next 3–4 languages and commit on a new (unnamed) set of changes.
+# The next safeoutputs___create_pull_request call will create a fresh branch automatically.
+```
 
 ### When to noop
 - **NEVER** call `safeoutputs___noop` after creating any translation files — noop means "I did nothing" and discards all your work
@@ -379,30 +406,44 @@ news/translate/{YYYY-MM-DD}/{article-type}
 ```
 > `safeoutputs___create_pull_request` handles branch creation automatically.
 
-## ⏱️ Time Budget (45 minutes)
+## ⏱️ Time Budget (55 minutes of work, hard stop at 55)
+
+The budget is now organised around **3 rolling PR batches**, not one monolithic PR. This is the direct fix for PR #1835 where 3 completed translations (`fr`, `es`, `nl`) were lost because they were committed *after* the single `safeoutputs___create_pull_request` call had frozen the patch.
 
 | Phase | Minutes | Action |
 |-------|---------|--------|
-| Setup | 0–2 | Determine date, scan for work. If nothing to translate → `safeoutputs___noop` immediately |
-| Translate | 2–20 | AI translates articles (one article type, all languages) |
-| Validate + PR | 20–25 | Stage, commit, call `safeoutputs___create_pull_request` **IMMEDIATELY** |
-| Bonus (if time) | 25–35 | Only if PR created successfully: translate more, commit, but note these won't be in the PR |
-| Hard stop | 35+ | 🚨 **HARD DEADLINE** — If no safe output yet, IMMEDIATELY stage+commit whatever exists and call `safeoutputs___create_pull_request`. If truly ZERO files exist, call `safeoutputs___noop`. |
+| Setup | 0–3 | Determine date, scan for work. If literally nothing to translate → `safeoutputs___noop` immediately |
+| Batch 1 translate | 3–18 | AI translates 3–4 languages (e.g. `da`, `nb`, `fi`, `de`) for one article |
+| Batch 1 PR | 18–22 | Stage, commit, call `safeoutputs___create_pull_request` for batch 1 (**must happen by minute 22**) |
+| Batch 2 translate | 22–35 | `git checkout main`, translate next 3–4 languages (`fr`, `es`, `nl`, `ar`) |
+| Batch 2 PR | 35–38 | Stage, commit, call `safeoutputs___create_pull_request` for batch 2 |
+| Batch 3 translate | 38–50 | `git checkout main`, translate remaining languages (`he`, `ja`, `ko`, `zh`) |
+| Batch 3 PR | 50–53 | Stage, commit, call `safeoutputs___create_pull_request` for batch 3 |
+| Hard stop | 55 | 🚨 **HARD DEADLINE** — flush whatever is committed as a final PR. Never leave uncommitted translations behind. |
 
-> 🚨 **WHY MINUTE 25?** The safeoutputs MCP session has a finite lifetime. Successful translation runs create PRs at minute ~25 (session alive). The failed run tried at minute ~50 (session dead, all work lost). Calling early gives maximum safety margin.
+> 🚨 **WHY BATCH AT MINUTE 22?** The safeoutputs MCP session has a finite lifetime (~35 min observed). Successful runs create their first PR by minute 22 so the session is still alive. The failed 2026-04-14 run tried at minute 50 (session dead, all work lost). Calling early gives maximum safety margin and leaves the full remainder of the 60-minute job for additional batches.
+>
+> 🚨 **WHY 3 PRS INSTEAD OF 1?** Because `safeoutputs___create_pull_request` **freezes the patch at call time** — any commits after the call are discarded. The only way to ship more than one batch is to call the tool multiple times (up to `create-pull-request.max: 5`). PR #1835 lost 3 translations by assuming same-branch commits would be picked up; they were not.
 
-### Batch Strategy — Maximize Translations Per Run
+### Batch Strategy — Rolling PRs, Maximize Translations Per Run
 
-**Target: 5–10 translated files per run.** Each translated file = 1 article × 1 language.
+**Target: 8–12 translated files per run, split across 2–3 PRs.** Each translated file = 1 article × 1 language.
 
-Process articles in this order:
+The core rule: **one PR per 3–4 language batch**, because `safeoutputs___create_pull_request` freezes the patch at call time (see RULE 1).
+
+Process translations in this order:
 1. **Group by article type** — translate ALL languages for one article type before moving to the next
-2. **Within a type** — translate languages in this order: da, nb, fi, de, fr, es, nl (fast European languages first), then ar, he (RTL), then ja, ko, zh (CJK — these take longest)
-3. **Time guard per file**: If a single translation takes more than 4 minutes, something is wrong — skip to the next language
+2. **Within a type, split languages into 3 rolling batches of 4** so each can ship as its own PR before the safeoutputs session expires:
+   - **Batch 1 — Fast European**: `da`, `nb`, `fi`, `de` (Nordic + German; ~4 × 4 min = ~16 min)
+   - **Batch 2 — Romance + RTL**: `fr`, `es`, `nl`, `ar` (adds one RTL to the batch; ~4 × 4 min = ~16 min)
+   - **Batch 3 — RTL + CJK**: `he`, `ja`, `ko`, `zh` (the slowest languages; ~4 × 4 min = ~16 min)
+3. **Time guard per file**: If a single translation takes more than 5 minutes, something is wrong — skip to the next language
 
-**Do NOT limit to 1 article type per run.** Process as many types as time allows. After completing all languages for one article type, check the elapsed time. If <18 minutes have passed, start the next article type. If ≥18 minutes, proceed to validation and PR creation.
+**Do NOT limit to 1 article type per run.** Process as many types as time allows. If one article's 3 batches finish before minute 50, start the next article and repeat.
 
-**Counting rule**: Before calling safe output, count your translated files. If fewer than 5, explain why in the PR body (e.g., "all today's articles already translated, working on backlog").
+**Do NOT put everything into one PR.** Opening a new PR for each 3–4 language batch is the only way to avoid losing work — `create-pull-request.max: 5` in the frontmatter supports this.
+
+**Counting rule**: Before each `safeoutputs___create_pull_request` call, count the files staged in the *current* batch. Aim for 3–4 files per PR. Never let a single PR exceed 4 translated files (safe-output patch size: 4 KB headroom).
 
 ## OPTIONAL MCP Health Check
 
@@ -647,15 +688,15 @@ create({
 
 6. **Use CONTENT_LABELS** from `scripts/data-transformers/constants/content-labels-part1.ts` and `content-labels-part2.ts` for standard section headings.
 
-**Speed targets:**
-- European languages (da, nb, fi, de, fr, es, nl): ~2 minutes each
-- RTL languages (ar, he): ~2-3 minutes each
-- CJK languages (ja, ko, zh): ~3 minutes each
-- **Total for 12 languages of 1 article type: ~25-30 minutes**
+**Speed targets (realistic for Claude Opus 4.7 on 400–500 line HTML):**
+- European languages (da, nb, fi, de, fr, es, nl): ~3–4 minutes each
+- RTL languages (ar, he): ~4 minutes each
+- CJK languages (ja, ko, zh): ~4–5 minutes each
+- **Total for 4 languages in one batch: ~15–18 minutes** (matches the rolling-batch time budget)
 
-**Time guard**: Check elapsed time after each language. If >40 minutes total, finish current language and skip to validation. Partial translations are better than a timeout.
+**Time guard**: Check elapsed time after each language. If the current batch has already taken >18 minutes, stop adding languages, commit what you have, and create the PR immediately. A 2-language batch that ships is worth more than a 4-language batch that times out.
 
-**After completing all languages for one article type**, check elapsed time. If <35 minutes, start the next article type (read its EN source and continue translating).
+**After creating a PR for a batch**: `git checkout main` to detach from the PR branch, then start the next batch. `safeoutputs___create_pull_request` will auto-create a fresh branch for the new batch.
 
 ### Step 4: Validate
 
@@ -685,21 +726,23 @@ fi
 
 If validation reports issues, fix them with the `edit` tool before proceeding.
 
-### Step 5: Commit & Create PR
+### Step 5: Commit & Create PR (Once Per Batch)
 
 > **🚀 HOW SAFE PR CREATION WORKS — READ THIS FIRST**
 >
-> The `safeoutputs___create_pull_request` tool records your intent. A separate `safe_outputs` job (after the agent job ends) actually creates the branch, pushes commits, and opens the PR. If the safeoutputs MCP session expires before you call the tool, the intent is never recorded and the `safe_outputs` job is **SKIPPED** — all work is lost.
+> The `safeoutputs___create_pull_request` tool records your intent and **captures the current git patch as a snapshot**. A separate `safe_outputs` job (after the agent job ends) creates the branch, pushes the snapshot, and opens the PR. The snapshot is frozen at call time — **commits made afterwards on the same local branch are NOT added to the PR** (this is what caused PR #1835 to lose 3 translations). If the safeoutputs MCP session expires before any call, the intent is never recorded and the `safe_outputs` job is **SKIPPED** — all work is lost.
 >
-> **Exact steps:**
-> 1. Write translated HTML files to `news/` using `create` tool (one complete file per call)
-> 2. Stage and commit locally — stage only the NEW translation files you just created
+> **Exact steps — repeat for each batch:**
+> 1. Write 3–4 translated HTML files for the current batch to `news/` using `create` tool (one complete file per call)
+> 2. Stage and commit locally — stage only the NEW translation files from the current batch
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels` **IMMEDIATELY — do not delay**
+> 4. **Only after step 3 succeeds**: `git checkout main` and start the next batch (`create-pull-request.max: 5` allows up to 5 PRs per run)
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, or use GitHub API to create PRs.
 > **❌ DO NOT** call `safeoutputs___noop` if ANY translation files were created — this discards all work.
 > **❌ DO NOT** delay the `safeoutputs___create_pull_request` call — call it the moment your commit is ready.
-> **❌ DO NOT** translate more files after calling `safeoutputs___create_pull_request` — they won't be included.
+> **❌ DO NOT** continue adding translation files to the same branch after calling `safeoutputs___create_pull_request` — the snapshot is frozen and those files will be lost. Check out `main` first, then start a fresh batch.
+> **✅ DO** call `safeoutputs___create_pull_request` multiple times per run (up to 5), once per completed batch — this is the **expected** pattern for rolling batches.
 
 **Safety check** — remove any accidentally created EN/SV files before committing:
 ```bash
@@ -723,10 +766,20 @@ git commit -m "chore: translate articles $COMMIT_DATE"
 Then **immediately** call as a direct tool call. If `/tmp/validation_flags.txt` contains `HTMLHINT_FAILED=true`, add `needs-review` to the labels:
 ```
 safeoutputs___create_pull_request({
-  "title": "🌐 Article Translations - {date} ({count} files)",
-  "body": "## Summary\n\nTranslated {article_type} articles into {count} languages.\n\n### Translations\n- Source: EN\n- Languages: {lang_list}\n- Files: {count}\n- Method: AI translation (create tool)\n\n### Quality\n- Section headings: ✅ Translated\n- Body paragraphs: ✅ Translated\n- English leakage: ✅ None\n- HTMLHint: {htmlhint_status}\n\n### Source\n- Workflow: `news-translate`",
+  "title": "🌐 Article Translations - {date} batch {n} ({count} files)",
+  "body": "## Summary\n\nTranslated {article_type} articles into {count} languages (batch {n} of up to 3).\n\n### Translations\n- Source: EN\n- Languages (this batch): {lang_list}\n- Files: {count}\n- Method: AI translation (create tool)\n\n### Quality\n- Section headings: ✅ Translated\n- Body paragraphs: ✅ Translated\n- English leakage: ✅ None\n- HTMLHint: {htmlhint_status}\n\n### Source\n- Workflow: `news-translate`\n- Follow-up: batches {n+1}+ will ship as separate PRs",
   "labels": ["agentic-news", "translation"]   // add "needs-review" if HTMLHINT_FAILED=true
 })
+```
+
+**After the PR call returns `success`, switch off the PR branch before writing the next batch** — otherwise the next commits will stack onto the already-frozen patch and be lost on branch cleanup:
+
+```bash
+# Return to main so batch N+1 starts from a clean base.
+# safeoutputs___create_pull_request will create a fresh branch for the next batch automatically.
+git checkout main 2>/dev/null || true
+git status --short
+# Now repeat Step 3 (translate) + Step 4 (validate) + Step 5 (commit + safeoutputs) for the next 3–4 languages.
 ```
 
 ## 🌐 MANDATORY Translation Quality Rules (Single Source of Truth)
@@ -788,20 +841,24 @@ npx tsx scripts/validate-news-translations.ts
 | All articles fully translated | Improve quality of existing translations (fix English leakage, improve phrasing) |
 | No EN articles in entire news/ dir | Call `safeoutputs___noop` — the ONLY valid reason to noop |
 | EN/SV files staged | `git checkout -- news/*-en.html news/*-sv.html` before commit |
-| Time running out (≥18 min) | Stop translating → validate → commit → `safeoutputs___create_pull_request` with partial work |
+| Time running out (current batch ≥18 min) | Stop adding languages → validate → commit → `safeoutputs___create_pull_request` with what you have, then start the next batch on `main` |
 | HTMLHint errors | Fix with `edit` tool or run `npx tsx scripts/article-quality-enhancer.ts --fix` |
-| safeoutputs "session not found" | Session expired — ALL work is LOST. **Prevention: call `safeoutputs___create_pull_request` by minute 25.** |
+| safeoutputs "session not found" | Session expired — all uncreated PR intents are LOST. **Prevention: call `safeoutputs___create_pull_request` for the first batch by minute 22.** Later batches must also be called promptly (never more than 15 minutes between successive calls). |
+| Committed files on a branch that already has a PR | Those files are lost — the patch was frozen at the first `safeoutputs___create_pull_request` call. Switch to `main`, re-create the translations fresh, and call `safeoutputs___create_pull_request` again for a new PR. |
 
 ## 🎯 Execution Summary
 
 1. **Discover** — determine date, scan for work using cascading fallback (today → older dates → improve existing). If nothing to translate → `safeoutputs___noop` within first 5 minutes
 2. **Read** — read each EN source article with `view` tool (once per article, translate to all languages before moving on)
-3. **Translate** — for each language: write complete translated HTML with `create` tool in a single call (NEVER use `cp`+`edit` or scripts)
+3. **Translate (batch 1)** — for each of the first 3–4 target languages: write complete translated HTML with `create` tool in a single call (NEVER use `cp`+`edit` or scripts)
 4. **Validate** — run `validate-file-ownership.ts translation` + `validate-news-translations.ts` + HTMLHint on new files only
-5. **PR** — stage new files with `git status --short`, commit, `safeoutputs___create_pull_request` **IMMEDIATELY by minute 25**
+5. **PR 1** — stage new files with `git status --short`, commit, `safeoutputs___create_pull_request` **by minute 22**
+6. **Checkout main & repeat** — `git checkout main`, translate the next 3–4 languages (batch 2), validate, stage, commit, `safeoutputs___create_pull_request` (PR 2)
+7. **Third batch** — repeat for remaining languages or next article until minute 53
+8. **Hard stop** — at minute 55, stop everything and make sure the last batch is committed and has a `safeoutputs___create_pull_request` call
 
 **NEVER call safeoutputs___noop after creating any translation files.**
 
-**Never exceed 25 minutes without calling `safeoutputs___create_pull_request`. Absolute maximum: minute 35.**
+**Never exceed 22 minutes without calling the first `safeoutputs___create_pull_request`. Absolute maximum: minute 35 for the first call. Use up to `create-pull-request.max: 5` PRs per run.**
 
-**Time management**: If 18+ minutes have elapsed, stop translating and proceed to validation and PR creation. 3 translations in a PR beats 10 translations lost to session timeout.
+**Time management**: If a batch is taking >18 minutes, stop adding languages, commit what you have, and ship it as a PR. A 2-language PR is worth infinitely more than a 4-language batch that never shipped.
