@@ -765,12 +765,12 @@ read -r COMMIT_DATE < /tmp/commit_date.txt
 git commit -m "chore: translate articles $COMMIT_DATE"
 ```
 
-Then **immediately** call as a direct tool call. If `/tmp/validation_flags.txt` contains `HTMLHINT_FAILED=true`, add `needs-review` to the labels:
+Then **immediately** call as a direct tool call. Substitute every `{placeholder}` with a real value before sending — the tool call is parsed as strict JSON, so comments, trailing commas, and arithmetic expressions are **not** allowed. If `/tmp/validation_flags.txt` contains `HTMLHINT_FAILED=true`, append `"needs-review"` to the `labels` array (do **not** leave a comment in the JSON):
 ```
 safeoutputs___create_pull_request({
   "title": "🌐 Article Translations - {date} batch {n} ({count} files)",
-  "body": "## Summary\n\nTranslated {article_type} articles into {count} languages (batch {n} of up to 3).\n\n### Translations\n- Source: EN\n- Languages (this batch): {lang_list}\n- Files: {count}\n- Method: AI translation (create tool)\n\n### Quality\n- Section headings: ✅ Translated\n- Body paragraphs: ✅ Translated\n- English leakage: ✅ None\n- HTMLHint: {htmlhint_status}\n\n### Source\n- Workflow: `news-translate`\n- Follow-up: batches {n+1}+ will ship as separate PRs",
-  "labels": ["agentic-news", "translation"]   // add "needs-review" if HTMLHINT_FAILED=true
+  "body": "## Summary\n\nTranslated {article_type} articles into {count} languages (batch {n} of up to 3).\n\n### Translations\n- Source: EN\n- Languages (this batch): {lang_list}\n- Files: {count}\n- Method: AI translation (create tool)\n\n### Quality\n- Section headings: ✅ Translated\n- Body paragraphs: ✅ Translated\n- English leakage: ✅ None\n- HTMLHint: {htmlhint_status}\n\n### Source\n- Workflow: `news-translate`\n- Follow-up: subsequent batches will ship as separate PRs",
+  "labels": ["agentic-news", "translation"]
 })
 ```
 
