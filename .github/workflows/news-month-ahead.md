@@ -471,6 +471,8 @@ get_calendar_events({ from: today, tom: nextMonth, limit: 200 })
 
 Run the **14-Artifact Completeness Gate** (aggregation workflow) from `SHARED_PROMPT_PATTERNS.md` §"14 REQUIRED Artifacts for AGGREGATION Workflows — Reference-Grade Tier-C" to verify ALL 14 files exist: the 9 core (synthesis-summary.md, swot-analysis.md, risk-assessment.md, threat-analysis.md, classification-results.md, significance-scoring.md, stakeholder-perspectives.md, cross-reference-map.md, data-download-manifest.md) PLUS the 5 Tier-C reference-grade files (README.md, executive-brief.md, scenario-analysis.md, comparative-international.md, methodology-reflection.md).
 
+> 📐 **Period-scope multiplier: 1.3×** — `month-ahead` covers 30 days forward. Scaled Tier-C minimums: README ≥ 3 900 B · executive-brief ≥ 4 550 B · scenario-analysis ≥ 5 200 B · comparative-international ≥ 5 200 B · methodology-reflection ≥ 5 200 B. See `SHARED_PROMPT_PATTERNS.md` §"Period-Scope Multipliers". Reference exemplar: [`analysis/daily/2026-04-19/month-ahead/`](../../analysis/daily/2026-04-19/month-ahead/).
+
 ```bash
 date -u +%Y-%m-%d > /tmp/today.txt
 read ARTICLE_DATE < /tmp/today.txt

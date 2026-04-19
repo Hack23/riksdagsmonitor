@@ -584,16 +584,21 @@ for REQUIRED_FILE in synthesis-summary.md swot-analysis.md risk-assessment.md th
   fi
 done
 # 5 Tier-C reference-grade artefacts (aggregation requirement)
-declare -A TIER_C_MIN=( ["README.md"]=3000 ["executive-brief.md"]=3500 ["scenario-analysis.md"]=4000 ["comparative-international.md"]=4000 ["methodology-reflection.md"]=4000 )
+# Compute evening-analysis thresholds from the shared period-scope sizing model
+# (see SHARED_PROMPT_PATTERNS.md §Period-Scope Multipliers) instead of hard-coding derived values.
+PERIOD_SCOPE_MULT_NUM=9   # 0.9× for evening-analysis
+PERIOD_SCOPE_MULT_DEN=10
+declare -A BASE_TIER_C_MIN=( ["README.md"]=3000 ["executive-brief.md"]=3500 ["scenario-analysis.md"]=4000 ["comparative-international.md"]=4000 ["methodology-reflection.md"]=4000 )
 for REQUIRED_FILE in README.md executive-brief.md scenario-analysis.md comparative-international.md methodology-reflection.md; do
-  MIN=${TIER_C_MIN[$REQUIRED_FILE]}
+  BASE_MIN=${BASE_TIER_C_MIN[$REQUIRED_FILE]}
+  MIN=$(( BASE_MIN * PERIOD_SCOPE_MULT_NUM / PERIOD_SCOPE_MULT_DEN ))
   if [ ! -f "$ANALYSIS_DIR/$REQUIRED_FILE" ]; then
     echo "🔴 MISSING Tier-C: $REQUIRED_FILE — aggregation workflow MUST CREATE"
     MISSING=$((MISSING + 1))
   else
     FSIZE=$(wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE")
     if [ "$FSIZE" -lt "$MIN" ]; then
-      echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE < $MIN) — MUST ENRICH"
+      echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE < $MIN — base $BASE_MIN × ${PERIOD_SCOPE_MULT_NUM}/${PERIOD_SCOPE_MULT_DEN}) — MUST ENRICH"
       MISSING=$((MISSING + 1))
     else
       echo "✅ OK Tier-C: $REQUIRED_FILE ($FSIZE bytes)"

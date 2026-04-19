@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "articleType": "monthly-review",
+  "date": "2026-04-19",
+  "policyDomains": ["fiscal policy", "labor market", "energy", "environment", "defense spending"],
+  "dataPoints": [
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2024", "value": 0.82 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2023", "value": -0.204 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2022", "value": 1.255 },
+    { "countryCode": "DNK", "countryName": "Denmark", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2024", "value": 3.478 },
+    { "countryCode": "NOR", "countryName": "Norway", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2024", "value": 2.097 },
+    { "countryCode": "FIN", "countryName": "Finland", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2024", "value": 0.416 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate", "date": "2025", "value": 8.694 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate", "date": "2024", "value": 8.4 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate", "date": "2023", "value": 7.611 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "indicatorName": "Inflation Rate", "date": "2024", "value": 2.836 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "indicatorName": "Inflation Rate", "date": "2023", "value": 8.549 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.PCAP.CD", "indicatorName": "GDP Per Capita USD", "date": "2024", "value": 57117.488 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.PCAP.CD", "indicatorName": "GDP Per Capita USD", "date": "2023", "value": 54950.283 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SP.POP.TOTL", "indicatorName": "Population", "date": "2024", "value": 10569709 }
+  ],
+  "commentary": "Sweden's economy entered April 2026 in a fragile recovery, with GDP growth at just 0.82% in 2024 — a significant improvement from the -0.20% contraction of 2023 but dramatically lagging Denmark's 3.48% and Norway's 2.10%. The government's extra change budget (HD03236) cutting fuel taxes and providing energy price support directly addresses household cost pressures that have accumulated since the inflation surge of 2023 (8.55%), when the country experienced its highest price growth since the 1990s. Unemployment reached 8.7% in 2025, the highest in five years and substantially above the Nordic average, creating structural pressure that the spring budget must navigate carefully. GDP per capita rose to USD 57,117 in 2024, up from USD 54,950 in 2023, suggesting the per-capita income base remains solid even as aggregate growth disappoints. The fiscal decision to cut fuel taxes and introduce energy support in the extra budget represents an electoral calculation: with five months until the September 2026 Riksdag election, the government is prioritising visible household relief over fiscal consolidation. The spring economic proposition (HD03100) frames a broader recovery narrative, but without addressing the structural employment gap — particularly among young and long-term unemployed — the 8.7% unemployment figure is likely to persist as a campaign vulnerability for the coalition through the summer.",
+  "source": {
+    "worldBank": ["NY.GDP.MKTP.KD.ZG", "SL.UEM.TOTL.ZS", "FP.CPI.TOTL.ZG", "NY.GDP.PCAP.CD", "SP.POP.TOTL"],
+    "scb": []
+  }
+}

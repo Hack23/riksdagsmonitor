@@ -239,7 +239,7 @@ fi
 
 ## 🏆 14 REQUIRED Artifacts for AGGREGATION Workflows + `news-realtime-monitor` — Reference-Grade Tier-C
 
-> 🔴 **NON-NEGOTIABLE (Added 2026-04-19, PR review comment #4275832065 · Extended 2026-04-19 PR review comment #4275964218)**: The following **6 workflows** MUST produce **5 additional Tier-C reference-grade artifacts** on top of the 9 core artifacts above, bringing their minimum total to **14 artifacts** per run:
+> 🔴 **NON-NEGOTIABLE (Added 2026-04-19 · Extended 2026-04-19 for realtime-monitor)**: The following **6 workflows** MUST produce **5 additional Tier-C reference-grade artifacts** on top of the 9 core artifacts above, bringing their minimum total to **14 artifacts** per run:
 >
 > **Aggregation workflows (original Tier-C scope):**
 > - `news-week-ahead.md` — `analysis/daily/$DATE/week-ahead/`
@@ -265,6 +265,58 @@ fi
 | 13 | `comparative-international.md` | 4000 bytes | **≥ 5 jurisdictions** benchmarked per cluster · Nordic baseline (SE vs DK, NO, FI) · EU benchmark (DE, NL, plus cluster-relevant) · explicit call-outs where Sweden **innovates**, **follows**, **diverges** · data-source citations (World Bank, RSF, OECD, Eurostat) |
 | 14 | `methodology-reflection.md` | 4000 bytes | Methodology application matrix · **Upstream Watchpoint Reconciliation** (every forward indicator from sibling runs within the workflow-specific lookback window defined below explicitly carried forward or retired with reason) · uncertainty hot-spots · known limitations · Pass-1→Pass-2 improvement evidence · recommendations for doctrine codification |
 
+### 🔬 Period-Scope Multipliers — MUST APPLY to Tier-C Aggregation Workflows
+
+> 🔴 **Added 2026-04-19**: Aggregation workflows cover different time horizons. A monthly-review synthesising 30 days MUST NOT produce artifacts at the same depth as a breaking-news realtime-monitor covering a single event. The minimum sizes in the Tier-C table above are the **baseline for 7-day aggregation workflows** (`weekly-review`, `week-ahead`). Scale as follows:
+
+> 📌 **Scope of this multiplier**: The period-scope multiplier applies **ONLY to the 5 Tier-C reference-grade artefacts** (`README.md`, `executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`, `methodology-reflection.md`). The **9 core artefacts** (`synthesis-summary.md` through `data-download-manifest.md`) keep their fixed daily-scope minimums from the 9-Artifact Completeness Gate above, because those baselines are already calibrated for single-day analysis and scale naturally with the larger document counts of aggregation windows. If a workflow's Tier-C package is scaled up, its 9-core package will grow organically with ingested document volume without needing a second multiplier layer.
+
+| Workflow | Period covered | Tier-C Size Multiplier | Rationale |
+|----------|:--------------:|:---------------------------:|-----------|
+| `news-realtime-monitor` | single event | **0.8×** | Single-event briefs may trim historical context |
+| `news-evening-analysis` | 1 day | **0.9×** | Daily scope; must still carry full framework |
+| `news-week-ahead` | 7 days forward | **1.0×** (baseline) | Reference exemplar baseline |
+| `news-weekly-review` | 7 days retrospective | **1.0×** (baseline) | Reference exemplar baseline |
+| `news-month-ahead` | 30 days forward | **1.3×** | 4× period ≠ 4× bytes; diminishing returns |
+| `news-monthly-review` | 30 days retrospective | **1.5×** | Retrospective must evidence EVERY prior weekly-review's forward indicators |
+
+**Concrete byte thresholds for monthly-review** (baseline × 1.5):
+
+| Artifact | Weekly baseline | Monthly-review minimum |
+|----------|:---------------:|:----------------------:|
+| `synthesis-summary.md` | 2 000 B | **3 000 B** |
+| `swot-analysis.md` | 1 500 B | **2 250 B** |
+| `risk-assessment.md` | 1 000 B | **1 500 B** |
+| `threat-analysis.md` | 1 000 B | **1 500 B** |
+| `classification-results.md` | 800 B | **1 200 B** |
+| `significance-scoring.md` | 800 B | **1 200 B** |
+| `stakeholder-perspectives.md` | 1 000 B | **1 500 B** |
+| `cross-reference-map.md` | 500 B | **750 B** |
+| `data-download-manifest.md` | 300 B | **450 B** |
+| `README.md` | 3 000 B | **4 500 B** |
+| `executive-brief.md` | 3 500 B | **5 250 B** |
+| `scenario-analysis.md` | 4 000 B | **6 000 B** |
+| `comparative-international.md` | 4 000 B | **6 000 B** |
+| `methodology-reflection.md` | 4 000 B | **6 000 B** |
+
+> **Target state**: monthly-review total package size ≥ **1.5×** the most recent `weekly-review` exemplar. A monthly-review regressing below this threshold is **REJECTED** and MUST be re-enriched before article generation.
+
+**Reference exemplar for monthly-review**: [`analysis/daily/2026-04-19/monthly-review/`](../../analysis/daily/2026-04-19/monthly-review/) — 14 artifacts, total ≈ 115 KB, all Tier-C files ≥ 10 KB, upstream watchpoint reconciliation covering 16 sibling watchpoints from 30 days + weekly-review + month-ahead.
+
+### 🔍 Depth Anti-Patterns (REJECTED)
+
+- ❌ Monthly-review total package < most-recent weekly-review total package
+- ❌ `synthesis-summary.md` without party-activity matrix covering ALL 8 Riksdag parties
+- ❌ `scenario-analysis.md` without ACH grid (evidence × hypothesis matrix)
+- ❌ `comparative-international.md` with < 5 jurisdictions benchmarked per cluster
+- ❌ `comparative-international.md` without explicit "Sweden innovates / follows / diverges" scorecard
+- ❌ `executive-brief.md` without named-actors table (≥ 5 ministers/party leaders with dok_id evidence)
+- ❌ `executive-brief.md` without 90-day forward vote calendar
+- ❌ `methodology-reflection.md` without **Upstream Watchpoint Reconciliation** table (zero silent drops rule)
+- ❌ Any Tier-C file without at least one cross-reference link to an upstream sibling run
+- ❌ Generic phrases without dok_id evidence ("significant bill", "major opposition move", "electoral implications") — every claim MUST cite a document ID or data source
+- ❌ Mermaid diagram in Pass 1 removed by Pass 2 "cleanup" — Pass 2 MUST ONLY ADD, NEVER REMOVE content
+
 **14-Artifact Completeness Gate for Tier-C Workflows (aggregation + realtime-monitor — run BEFORE article generation):**
 
 ```bash
@@ -286,7 +338,20 @@ esac
 if [ "$IS_TIER_C" = "1" ]; then
   echo "=== 🏆 14-Artifact Reference-Grade Gate (Tier-C workflow) ==="
   TIER_C_MISSING=0
-  declare -A TIER_C_SIZES=(
+
+  # Period-scope multiplier — see "Period-Scope Multipliers" section above
+  case "$ANALYSIS_SUBFOLDER" in
+    realtime-*)           MULT_NUM=8;  MULT_DEN=10 ;;  # 0.8×
+    evening-analysis*)    MULT_NUM=9;  MULT_DEN=10 ;;  # 0.9×
+    week-ahead*)          MULT_NUM=10; MULT_DEN=10 ;;  # 1.0× baseline
+    weekly-review*)       MULT_NUM=10; MULT_DEN=10 ;;  # 1.0× baseline
+    month-ahead*)         MULT_NUM=13; MULT_DEN=10 ;;  # 1.3×
+    monthly-review*)      MULT_NUM=15; MULT_DEN=10 ;;  # 1.5×
+    *)                    MULT_NUM=10; MULT_DEN=10 ;;  # fallback baseline
+  esac
+  echo "📐 Period-scope multiplier for '$ANALYSIS_SUBFOLDER': ${MULT_NUM}/${MULT_DEN}"
+
+  declare -A TIER_C_BASE_SIZES=(
     ["README.md"]=3000
     ["executive-brief.md"]=3500
     ["scenario-analysis.md"]=4000
@@ -294,27 +359,29 @@ if [ "$IS_TIER_C" = "1" ]; then
     ["methodology-reflection.md"]=4000
   )
   for REQUIRED_FILE in README.md executive-brief.md scenario-analysis.md comparative-international.md methodology-reflection.md; do
-    MIN_SIZE=${TIER_C_SIZES[$REQUIRED_FILE]}
+    BASE_SIZE=${TIER_C_BASE_SIZES[$REQUIRED_FILE]}
+    MIN_SIZE=$(( BASE_SIZE * MULT_NUM / MULT_DEN ))
     if [ ! -f "$ANALYSIS_DIR/$REQUIRED_FILE" ]; then
       echo "🔴 MISSING Tier-C: $REQUIRED_FILE — Tier-C workflow MUST CREATE"
       TIER_C_MISSING=$((TIER_C_MISSING + 1))
     else
       FSIZE=$(wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE")
       if [ "$FSIZE" -lt "$MIN_SIZE" ]; then
-        echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE bytes < $MIN_SIZE) — MUST ENRICH"
+        echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE bytes < $MIN_SIZE scaled minimum — base $BASE_SIZE × ${MULT_NUM}/${MULT_DEN}) — MUST ENRICH"
         TIER_C_MISSING=$((TIER_C_MISSING + 1))
       else
-        echo "✅ OK Tier-C: $REQUIRED_FILE ($FSIZE bytes ≥ $MIN_SIZE)"
+        echo "✅ OK Tier-C: $REQUIRED_FILE ($FSIZE bytes ≥ $MIN_SIZE scaled minimum)"
       fi
     fi
   done
   if [ "$TIER_C_MISSING" -gt 0 ]; then
     echo "🚨🚨🚨 14-ARTIFACT REFERENCE-GRADE GATE FAILED 🚨🚨🚨"
-    echo "❌ $TIER_C_MISSING Tier-C artefacts missing or too small"
+    echo "❌ $TIER_C_MISSING Tier-C artefacts missing or too small for the period-scope multiplier"
     echo "Tier-C workflows (aggregation + realtime-monitor) MUST produce all 14 artefacts before article generation."
     echo "Reference exemplars:"
-    echo "  Aggregation: analysis/daily/2026-04-18/weekly-review/, analysis/daily/2026-04-19/month-ahead/"
-    echo "  Realtime-monitor: analysis/daily/2026-04-17/realtime-1434/, analysis/daily/2026-04-19/realtime-1219/"
+    echo "  Aggregation (7-day baseline):  analysis/daily/2026-04-18/weekly-review/, analysis/daily/2026-04-19/month-ahead/"
+    echo "  Aggregation (30-day 1.5×):     analysis/daily/2026-04-19/monthly-review/"
+    echo "  Realtime-monitor (0.8×):       analysis/daily/2026-04-17/realtime-1434/, analysis/daily/2026-04-19/realtime-1219/"
     exit 1
   fi
 fi
