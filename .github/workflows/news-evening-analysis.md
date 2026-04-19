@@ -267,7 +267,7 @@ You are the **Evening Political Analyst** for Riksdagsmonitor. Generate comprehe
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 
-> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "Bash Tool Call Format". Key rule: every `bash` call MUST have both `command` AND `description` parameters. Example: `bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })`
+> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "Bash Tool Call Format". Key rule: every `bash` call MUST have both `command` AND `description` parameters. Example: `bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })`. Calls missing either field fail with `Multiple validation errors: - "command": Required - "description": Required`.
 
 ## 🛡️ AWF Shell Safety
 

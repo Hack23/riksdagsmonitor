@@ -110,6 +110,91 @@ Articles MAY include links to these sites when contextually relevant (e.g., link
 
 ---
 
+## 🧰 Bash Tool Call Format — MANDATORY for EVERY `bash` Tool Call
+
+> 🔴 **The `bash` tool schema requires BOTH `command` AND `description`. Calls missing either field fail with:**
+>
+> ```
+> └ Multiple validation errors:
+>     - "command": Required
+>     - "description": Required
+> ```
+>
+> These failures surface in the agentic workflow logs and block MCP/script execution, which in turn blocks analysis artifact creation and safe-output PR creation. Every `bash` invocation the agent makes MUST supply both fields — no exceptions.
+
+### Required shape
+
+```
+bash({
+  command:     "<the shell command to run — a single string>",
+  description: "<one short human-readable sentence, limited to ~100 chars>"
+})
+```
+
+### Rules
+
+1. **Both fields are required on every call** — never omit `description`, never omit `command`.
+2. **`command` is a single string**, not an array, not an object. Multi-step commands use `&&`, `;`, or newlines inside the same string.
+3. **`description` is a short human-readable label** (≤ 100 chars, present tense) describing what the command does. Do NOT paste the command itself.
+4. **Never pass only positional arguments** — always use named fields in the object literal.
+5. **When reading files** created by scripts or `find -exec`, supply a description like `"List analysis artifacts for 2026-04-19"` rather than leaving it blank.
+6. **When the shell command is long**, keep `description` short. Long `command`, short `description` is the correct shape.
+7. **The AWF Shell Safety rules (next section) still apply** to the `command` string — no `$(...)`, no `${VAR}` braces, no `${VAR:-default}`.
+
+### ✅ Correct examples
+
+```
+bash({
+  command: "date -u '+%Y-%m-%d'",
+  description: "Get current UTC date"
+})
+
+bash({
+  command: "find analysis/daily/2026-04-19 -name '*.md' -exec wc -c {} \\;",
+  description: "List analysis file sizes"
+})
+
+bash({
+  command: "npx tsx scripts/generate-news-enhanced.ts --types=propositions --languages=en,sv --skip-existing",
+  description: "Generate propositions articles for EN and SV"
+})
+
+bash({
+  command: "source scripts/mcp-setup.sh && npx tsx scripts/download-parliamentary-data.ts --types=propositions --date=2026-04-19",
+  description: "Download today's parliamentary propositions data"
+})
+
+bash({
+  command: "git add analysis/daily/2026-04-19 news/2026-04-19-*.html && git status --short",
+  description: "Stage today's analysis and article files"
+})
+```
+
+### ❌ INCORRECT patterns (these trigger the validation errors)
+
+```
+# ❌ Missing description
+bash({ command: "date -u '+%Y-%m-%d'" })
+
+# ❌ Missing command (agent passed a sentence as description only)
+bash({ description: "Check the current date" })
+
+# ❌ Passed as a positional string instead of named fields
+bash("date -u '+%Y-%m-%d'")
+
+# ❌ Passed command as an array of tokens — it must be a single string
+bash({ command: ["date", "-u", "+%Y-%m-%d"], description: "Get date" })
+
+# ❌ Empty description
+bash({ command: "ls analysis/daily/2026-04-19", description: "" })
+```
+
+### Self-check before EVERY bash call
+
+Ask yourself: *"Did I provide `command` AND `description`? Is `command` a single string? Is `description` short and human-readable?"* If any answer is no, fix the call **before** submitting it.
+
+---
+
 ## 🛡️ AWF Shell Safety — Mandatory for ALL Agent-Generated Bash Commands
 
 > **The Agent Workflow Firewall (AWF) blocks dangerous shell expansion patterns.** When you generate bash commands at runtime, you **MUST** follow these rules. Fenced bash blocks in init steps run as normal bash and are not affected — but any command YOU write via the `bash` tool IS subject to AWF filtering.
