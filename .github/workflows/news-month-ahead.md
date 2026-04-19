@@ -462,12 +462,14 @@ get_calendar_events({ from: today, tom: nextMonth, limit: 200 })
 
 ### Step 2.5: Run Pre-Article Analysis Pipeline
 
-**CRITICAL: Download data first, then AI creates ALL 9 analysis artifacts.** `download-parliamentary-data.ts` downloads raw data ONLY — it performs NO analysis. The AI agent MUST:
+**CRITICAL: Download data first, then AI creates ALL 14 analysis artifacts (9 core + 5 Tier-C reference-grade).** `download-parliamentary-data.ts` downloads raw data ONLY — it performs NO analysis. The AI agent MUST:
 1. Read `analysis/methodologies/ai-driven-analysis-guide.md` fully
 2. Read ALL 8 templates in `analysis/templates/`
-3. Create ALL 9 analysis files in `analysis/daily/YYYY-MM-DD/` using evidence from the downloaded data
+3. **STEP 0 — Upstream Watchpoint Ingestion (MANDATORY, per `SHARED_PROMPT_PATTERNS.md` §"Recent Daily Knowledge-Base Synthesis")**: ingest forward indicators from the last **14 days** of sibling daily runs + the last `weekly-review` + the last `week-ahead`. Build the Watchpoint Reconciliation table (no silent drops).
+4. Create ALL **14** analysis files in `analysis/daily/YYYY-MM-DD/month-ahead/` using evidence from the downloaded data AND the ingested upstream watchpoints
+5. Reference exemplar: [`analysis/daily/2026-04-19/month-ahead/`](../../analysis/daily/2026-04-19/month-ahead/) — **the reference-grade month-ahead package** (14-file Tier-C package with full upstream reconciliation and Nordic comparative benchmarking)
 
-Run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist (synthesis-summary.md, swot-analysis.md, risk-assessment.md, threat-analysis.md, classification-results.md, significance-scoring.md, stakeholder-perspectives.md, cross-reference-map.md, data-download-manifest.md).
+Run the **14-Artifact Completeness Gate** (aggregation workflow) from `SHARED_PROMPT_PATTERNS.md` §"14 REQUIRED Artifacts for AGGREGATION Workflows — Reference-Grade Tier-C" to verify ALL 14 files exist: the 9 core (synthesis-summary.md, swot-analysis.md, risk-assessment.md, threat-analysis.md, classification-results.md, significance-scoring.md, stakeholder-perspectives.md, cross-reference-map.md, data-download-manifest.md) PLUS the 5 Tier-C reference-grade files (README.md, executive-brief.md, scenario-analysis.md, comparative-international.md, methodology-reflection.md).
 
 ```bash
 date -u +%Y-%m-%d > /tmp/today.txt

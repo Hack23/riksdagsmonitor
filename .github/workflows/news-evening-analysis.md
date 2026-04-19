@@ -545,10 +545,29 @@ Follow `SHARED_PROMPT_PATTERNS.md` §"Per-File AI Analysis Block" and §"MANDATO
 | 8 | `cross-reference-map.md` | Cross-reference template | XRF-ID, Document relationship graph, links between propositions/motions/committee reports/press releases |
 | 9 | `data-download-manifest.md` | Manifest template | Documents Analyzed count, data sources, download timestamps, completeness status |
 
+#### 🏆 B4b. ADDITIONAL 5 Tier-C Reference-Grade Artefacts (Aggregation Requirement)
+
+> 🔴 **NON-NEGOTIABLE (Added 2026-04-19)**: Evening-analysis is an **aggregation workflow** — it synthesises the full day's document flow for decision-makers. Per `SHARED_PROMPT_PATTERNS.md` §"14 REQUIRED Artifacts for AGGREGATION Workflows — Reference-Grade Tier-C", evening-analysis MUST produce the 9 core artefacts above PLUS these 5 additional Tier-C files (total **14**):
+
+| # | Tier-C File | What It Must Contain |
+|---|-------------|---------------------|
+| 10 | `README.md` | Package index · reading orders by audience · file index · lead-story at-a-glance · upstream-run relationship table |
+| 11 | `executive-brief.md` | BLUF ≤ 300 words · 3 decisions supported · 8-bullet "60-second" read · named actors (≥ 5 ministers/party leaders) · next-day watch points · top-5 risks · confidence meter |
+| 12 | `scenario-analysis.md` | 3 base scenarios (tomorrow / 7-day / 30-day horizons) + 2 wildcards · ACH grid · trigger calendar |
+| 13 | `comparative-international.md` | ≥ 5 jurisdictions benchmarked across the day's top clusters (Nordic + EU + cluster-relevant) |
+| 14 | `methodology-reflection.md` | Methodology application matrix · **Upstream Watchpoint Reconciliation** (last 3 days of `realtime-*` + prior `evening-analysis`) · uncertainty hot-spots · Pass-1→Pass-2 improvement evidence |
+
+**Step 0 — Upstream Watchpoint Ingestion (MANDATORY)** per `SHARED_PROMPT_PATTERNS.md` §"Recent Daily Knowledge-Base Synthesis":
+- Ingest forward indicators from the last **3 days** of `realtime-*` sibling runs + the prior `evening-analysis`
+- Build the Watchpoint Reconciliation table in `methodology-reflection.md` (no silent drops)
+
+**Reference exemplars**: [`analysis/daily/2026-04-18/weekly-review/`](../../analysis/daily/2026-04-18/weekly-review/) and [`analysis/daily/2026-04-19/month-ahead/`](../../analysis/daily/2026-04-19/month-ahead/)
+
 **Verification — run BEFORE proceeding to article generation:**
 ```bash
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/evening-analysis"
 MISSING=0
+# 9 core artefacts (min 500 bytes each)
 for REQUIRED_FILE in synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md classification-results.md significance-scoring.md stakeholder-perspectives.md cross-reference-map.md data-download-manifest.md; do
   if [ ! -f "$ANALYSIS_DIR/$REQUIRED_FILE" ]; then
     echo "🔴 MISSING REQUIRED: $REQUIRED_FILE — MUST CREATE NOW"
@@ -564,8 +583,25 @@ for REQUIRED_FILE in synthesis-summary.md swot-analysis.md risk-assessment.md th
     fi
   fi
 done
+# 5 Tier-C reference-grade artefacts (aggregation requirement)
+declare -A TIER_C_MIN=( ["README.md"]=3000 ["executive-brief.md"]=3500 ["scenario-analysis.md"]=4000 ["comparative-international.md"]=4000 ["methodology-reflection.md"]=4000 )
+for REQUIRED_FILE in README.md executive-brief.md scenario-analysis.md comparative-international.md methodology-reflection.md; do
+  MIN=${TIER_C_MIN[$REQUIRED_FILE]}
+  if [ ! -f "$ANALYSIS_DIR/$REQUIRED_FILE" ]; then
+    echo "🔴 MISSING Tier-C: $REQUIRED_FILE — aggregation workflow MUST CREATE"
+    MISSING=$((MISSING + 1))
+  else
+    FSIZE=$(wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE")
+    if [ "$FSIZE" -lt "$MIN" ]; then
+      echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE < $MIN) — MUST ENRICH"
+      MISSING=$((MISSING + 1))
+    else
+      echo "✅ OK Tier-C: $REQUIRED_FILE ($FSIZE bytes)"
+    fi
+  fi
+done
 if [ "$MISSING" -gt 0 ]; then
-  echo "🚨 $MISSING of 9 required artifacts missing or too small — DO NOT proceed to article generation"
+  echo "🚨 $MISSING of 14 required artifacts missing or too small — DO NOT proceed to article generation"
   echo "Go back and create/enrich the missing files following their templates."
 fi
 ```

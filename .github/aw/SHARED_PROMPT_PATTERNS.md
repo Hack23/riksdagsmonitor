@@ -237,6 +237,137 @@ fi
 
 ---
 
+## 🏆 14 REQUIRED Artifacts for AGGREGATION Workflows — Reference-Grade Tier-C
+
+> 🔴 **NON-NEGOTIABLE (Added 2026-04-19, PR review comment #4275832065)**: The following 5 **aggregation** workflows MUST produce **5 additional Tier-C reference-grade artifacts** on top of the 9 core artifacts above, bringing their minimum total to **14 artifacts** per run:
+>
+> - `news-week-ahead.md` — `analysis/daily/$DATE/week-ahead/`
+> - `news-month-ahead.md` — `analysis/daily/$DATE/month-ahead/`
+> - `news-evening-analysis.md` — `analysis/daily/$DATE/evening-analysis/`
+> - `news-weekly-review.md` — `analysis/daily/$DATE/weekly-review/`
+> - `news-monthly-review.md` — `analysis/daily/$DATE/monthly-review/`
+>
+> **Reference exemplar**: [`analysis/daily/2026-04-18/weekly-review/`](../../analysis/daily/2026-04-18/weekly-review/) (14-file reference-grade package). A second exemplar for the month-ahead aggregation type exists at [`analysis/daily/2026-04-19/month-ahead/`](../../analysis/daily/2026-04-19/month-ahead/).
+>
+> **Rationale**: Aggregation workflows synthesise multiple days or document types into decision-maker briefs. They require decision-maker entry points (`README.md`, `executive-brief.md`), probabilistic forward-looking analysis (`scenario-analysis.md`), cross-jurisdictional benchmarking (`comparative-international.md`), and a methodology self-audit + upstream-watchpoint reconciliation (`methodology-reflection.md`). Non-aggregation workflows (propositions, motions, committee-reports, interpellations, realtime-monitor) remain at the 9-artifact gate — they are per-document-type, not aggregation.
+
+| # | Tier-C File | Minimum Size | What It Must Contain |
+|---|-------------|-------------|---------------------|
+| 10 | `README.md` | 3000 bytes | Package index · reading orders by audience · file index table · lead-story at-a-glance · upstream-run relationship table |
+| 11 | `executive-brief.md` | 3500 bytes | BLUF (Bottom Line Up Front) ≤ 300 words · 3 decisions this brief supports · 8-bullet "60-second read" · named actors (≥ 5 ministers/party leaders with dok_id citations) · forward vote calendar · top-5 risks · confidence meter |
+| 12 | `scenario-analysis.md` | 4000 bytes | 3 base scenarios with probability bands (30-day + 90-day + post-election where applicable) · 2 wildcards with impact assessment · ACH (Analysis of Competing Hypotheses) grid · monitoring-trigger calendar mapped to scenario shifts · cross-reference to upstream scenario work |
+| 13 | `comparative-international.md` | 4000 bytes | **≥ 5 jurisdictions** benchmarked per cluster · Nordic baseline (SE vs DK, NO, FI) · EU benchmark (DE, NL, plus cluster-relevant) · explicit call-outs where Sweden **innovates**, **follows**, **diverges** · data-source citations (World Bank, RSF, OECD, Eurostat) |
+| 14 | `methodology-reflection.md` | 4000 bytes | Methodology application matrix · **Upstream Watchpoint Reconciliation** (every forward indicator from the last 5 days of sibling runs explicitly carried forward or retired with reason) · uncertainty hot-spots · known limitations · Pass-1→Pass-2 improvement evidence · recommendations for doctrine codification |
+
+**14-Artifact Completeness Gate for Aggregation Workflows (run BEFORE article generation):**
+
+```bash
+# Only run this gate for aggregation workflow subfolders
+AGGREGATION_TYPES="week-ahead month-ahead evening-analysis weekly-review monthly-review"
+IS_AGGREGATION=0
+for T in $AGGREGATION_TYPES; do
+  if [ "$ANALYSIS_SUBFOLDER" = "$T" ]; then
+    IS_AGGREGATION=1
+    break
+  fi
+done
+
+if [ "$IS_AGGREGATION" = "1" ]; then
+  echo "=== 🏆 14-Artifact Reference-Grade Gate (aggregation workflow) ==="
+  TIER_C_MISSING=0
+  declare -A TIER_C_SIZES=(
+    ["README.md"]=3000
+    ["executive-brief.md"]=3500
+    ["scenario-analysis.md"]=4000
+    ["comparative-international.md"]=4000
+    ["methodology-reflection.md"]=4000
+  )
+  for REQUIRED_FILE in README.md executive-brief.md scenario-analysis.md comparative-international.md methodology-reflection.md; do
+    MIN_SIZE=${TIER_C_SIZES[$REQUIRED_FILE]}
+    if [ ! -f "$ANALYSIS_DIR/$REQUIRED_FILE" ]; then
+      echo "🔴 MISSING Tier-C: $REQUIRED_FILE — aggregation workflow MUST CREATE"
+      TIER_C_MISSING=$((TIER_C_MISSING + 1))
+    else
+      FSIZE=$(wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE")
+      if [ "$FSIZE" -lt "$MIN_SIZE" ]; then
+        echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE bytes < $MIN_SIZE) — MUST ENRICH"
+        TIER_C_MISSING=$((TIER_C_MISSING + 1))
+      else
+        echo "✅ OK Tier-C: $REQUIRED_FILE ($FSIZE bytes ≥ $MIN_SIZE)"
+      fi
+    fi
+  done
+  if [ "$TIER_C_MISSING" -gt 0 ]; then
+    echo "🚨🚨🚨 14-ARTIFACT REFERENCE-GRADE GATE FAILED 🚨🚨🚨"
+    echo "❌ $TIER_C_MISSING Tier-C artefacts missing or too small"
+    echo "Aggregation workflows MUST produce all 14 artefacts before article generation."
+    echo "Reference exemplars: analysis/daily/2026-04-18/weekly-review/ and analysis/daily/2026-04-19/month-ahead/"
+    exit 1
+  fi
+fi
+```
+
+---
+
+## 🔁 RECENT DAILY KNOWLEDGE-BASE SYNTHESIS — Mandatory for Aggregation Workflows
+
+> 🔴 **NON-NEGOTIABLE (Added 2026-04-19)**: Aggregation workflows (week-ahead, month-ahead, evening-analysis, weekly-review, monthly-review) MUST ingest and reconcile forward-looking intelligence from **recent sibling daily runs** before producing their own package. This establishes a **continuity-of-intelligence contract**: no forward indicator issued in the recent past is silently dropped.
+
+### Lookback Windows by Aggregation Type
+
+| Workflow | Sibling Lookback Window (days) | Minimum Sibling Runs to Ingest |
+|----------|:------------------------------:|:------------------------------:|
+| `news-evening-analysis` | 3 days | 3 `realtime-*` + prior `evening-analysis` |
+| `news-week-ahead` | 7 days | Last 7 daily folders + last `weekly-review` |
+| `news-weekly-review` | 7 days | Last 7 daily folders + prior `weekly-review` |
+| `news-month-ahead` | 14 days | Last 14 daily folders + last `weekly-review` + last `week-ahead` |
+| `news-monthly-review` | 30 days | Last 30 daily folders + all weekly-reviews + last `monthly-review` |
+
+### Mandatory Ingestion Protocol
+
+For every sibling run in the lookback window:
+
+1. **Read** `synthesis-summary.md` §Forward Indicators (or equivalent Forward Watch Points / 90-Day Calendar section)
+2. **Read** `significance-scoring.md` §Top-Ranked items
+3. **Read** the cluster-specific deep-dive files where available (`scenario-analysis.md`, `comparative-international.md`, `risk-assessment.md`)
+4. **Build** a Watchpoint Reconciliation table in the current run's `methodology-reflection.md` with columns: Source · Watchpoint · Disposition (**Carried forward** / **Retired** / **Carried with reduced priority**)
+5. Every disposition MUST have an explicit one-line reason (or a pointer to the file where the watchpoint is continued)
+
+### Hard Rules
+
+- **No silent drops**: If a forward indicator from a sibling run is not addressed, it MUST be explicitly retired with a reason (e.g., "outside current horizon", "superseded by event X").
+- **Cross-reference**: Every Tier-C file MUST include a "Cross-Reference to Upstream" section pointing at the specific sibling `.md` files.
+- **Probability alignment**: Scenario probabilities MUST align to (or explicitly justify departures from) the most recent `weekly-review/scenario-analysis.md` or `monthly-review/scenario-analysis.md` in the lookback window.
+
+### Example: Month-Ahead Ingestion Template
+
+Paste this into the month-ahead workflow prompt:
+
+```text
+STEP 0 — Upstream Watchpoint Ingestion (MANDATORY, before any analysis):
+
+1. List last 14 days of sibling runs:
+   find analysis/daily -maxdepth 2 -type d -newer analysis/daily/$(date -d "14 days ago" +%Y-%m-%d) | sort
+
+2. Read every synthesis-summary.md §Forward Indicators in those folders:
+   for f in $(find analysis/daily -name synthesis-summary.md -newer $CUTOFF); do
+     echo "=== $f ==="
+     sed -n '/Forward/,/^## /p' "$f"
+   done
+
+3. Read last weekly-review/scenario-analysis.md and last week-ahead/synthesis-summary.md IN FULL.
+
+4. Build the Watchpoint Reconciliation table in methodology-reflection.md §Upstream Watchpoint Reconciliation.
+
+5. Align probability bands in scenario-analysis.md to last weekly-review scenario-analysis.md.
+
+ONLY AFTER step 5 completes may the current-run analysis proceed.
+```
+
+**Reference-grade exemplar**: [`analysis/daily/2026-04-19/month-ahead/methodology-reflection.md`](../../analysis/daily/2026-04-19/month-ahead/methodology-reflection.md) §Upstream Watchpoint Reconciliation (audits 16 upstream watchpoints across 7 sibling runs).
+
+---
+
 ## 🔒 ARTICLE TYPE ISOLATION — Absolute Enforcement
 
 > **NON-NEGOTIABLE**: Different article types MUST NEVER overwrite, merge, or conflict with each other's analysis artifacts. Each workflow owns its article type exclusively.
