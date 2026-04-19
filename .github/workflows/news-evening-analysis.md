@@ -584,7 +584,8 @@ for REQUIRED_FILE in synthesis-summary.md swot-analysis.md risk-assessment.md th
   fi
 done
 # 5 Tier-C reference-grade artefacts (aggregation requirement)
-declare -A TIER_C_MIN=( ["README.md"]=3000 ["executive-brief.md"]=3500 ["scenario-analysis.md"]=4000 ["comparative-international.md"]=4000 ["methodology-reflection.md"]=4000 )
+# Period-scope multiplier 0.9× applied to evening-analysis (see SHARED_PROMPT_PATTERNS.md §Period-Scope Multipliers)
+declare -A TIER_C_MIN=( ["README.md"]=2700 ["executive-brief.md"]=3150 ["scenario-analysis.md"]=3600 ["comparative-international.md"]=3600 ["methodology-reflection.md"]=3600 )
 for REQUIRED_FILE in README.md executive-brief.md scenario-analysis.md comparative-international.md methodology-reflection.md; do
   MIN=${TIER_C_MIN[$REQUIRED_FILE]}
   if [ ! -f "$ANALYSIS_DIR/$REQUIRED_FILE" ]; then
