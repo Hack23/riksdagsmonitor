@@ -67,15 +67,32 @@
 
 ---
 
-## ✅ Analysis Artifacts Generated
+## ✅ Analysis Artifacts Generated (Reference-Exemplar File Set)
 
-- [x] classification-results.md
-- [x] significance-scoring.md
-- [x] swot-analysis.md
-- [x] risk-assessment.md
-- [x] threat-analysis.md
-- [x] stakeholder-perspectives.md
-- [x] cross-reference-map.md
-- [x] data-download-manifest.md
-- [ ] synthesis-summary.md (next step)
-- [ ] economic-data.json (next step)
+### Top-level synthesis & navigation
+- [x] `README.md` — folder index, DIW-ranked reading order
+- [x] `executive-brief.md` — 1-page decision-maker BLUF + 14-day watch window
+- [x] `synthesis-summary.md` — master synthesis (BLUF, ACH, Red-Team, cross-cluster interference, analyst-confidence meter)
+
+### Specialist-audience artifacts
+- [x] `scenario-analysis.md` — ACH 3 hypotheses + 4-scenario tree + Bayesian priors + Red-Team critique
+- [x] `comparative-international.md` — 4 policy axes × 8+ peer jurisdictions (Nordic + DE/NL/FR + RSF/V-Dem + EU law)
+- [x] `methodology-reflection.md` — reference-exemplar self-audit + Rule 1–10 compliance matrix
+
+### Analytic pillars (all L2 or better)
+- [x] `classification-results.md` — 21 motions taxonomy + L-tier assignment
+- [x] `significance-scoring.md` — Raw + DIW-weighted scoring + sensitivity analysis
+- [x] `swot-analysis.md` — 4-cluster SWOT + **TOWS interference matrix** (4 critical WT vulnerabilities)
+- [x] `risk-assessment.md` — 15 risks with L×I + ALARP + Bayesian priors + risk-interconnection graph
+- [x] `threat-analysis.md` — 6 threats + Attack-Tree + Kill-Chain + Diamond Model + STRIDE-adapted
+- [x] `stakeholder-perspectives.md` — 8 groups + 37-actor registry + influence network + fracture-probability tree
+- [x] `cross-reference-map.md` — proposition → motion matrix + party coordination network
+
+### Cluster-level deep dives (per-document L2+)
+- [x] `documents/reception-law-cluster-analysis.md` — LEAD 4-party cluster L2+
+- [x] `documents/deportation-cluster-analysis.md` — co-LEAD 3-party triangulation L2+
+- [x] `documents/fuel-tax-cluster-analysis.md` — climate-fiscal cluster L2
+- [x] `documents/arms-export-cluster-analysis.md` — post-NATO cluster L2
+
+### Data
+- [x] `economic-data.json` — World Bank Sweden macroeconomic context
