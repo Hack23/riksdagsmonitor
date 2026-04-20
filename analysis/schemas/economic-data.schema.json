@@ -2,15 +2,16 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://riksdagsmonitor.com/schemas/economic-data.schema.json",
   "title": "Article economic-data.json",
-  "description": "Per-article artefact produced by agentic workflows during the pre-article analysis phase. Bridges World Bank / SCB MCP tool output into the Chart.js-powered 'Economic Context' dashboard emitted by `scripts/data-transformers/content-generators/economic-dashboard-section.ts`. Written to `analysis/daily/YYYY-MM-DD/{analysisSubfolder}/economic-data.json`.",
+  "description": "Per-article artefact produced by agentic workflows during the pre-article analysis phase. Bridges World Bank / IMF / SCB MCP tool output into the Chart.js-powered 'Economic Context' dashboard emitted by `scripts/data-transformers/content-generators/economic-dashboard-section.ts`. Written to `analysis/daily/YYYY-MM-DD/{analysisSubfolder}/economic-data.json`. Schema v2.0 (additive): adds `source.imf[]` and optional `provider`, `projection`, `projectionVintage` fields on each data point. Schema v1 artefacts (`source` with only `worldBank` and `scb`) remain valid.",
   "type": "object",
   "additionalProperties": false,
   "required": ["policyDomains", "dataPoints", "commentary", "source"],
   "properties": {
     "version": {
       "type": "string",
-      "description": "Contract version — currently '1.0'.",
-      "default": "1.0"
+      "description": "Contract version — '1.0' (WB + SCB only) or '2.0' (adds IMF + provider/projection fields). Schema accepts both; the validator enforces the version floor.",
+      "enum": ["1.0", "2.0"],
+      "default": "2.0"
     },
     "articleType": {
       "type": "string",
@@ -54,18 +55,23 @@
     "source": {
       "type": "object",
       "additionalProperties": false,
+      "description": "Attribution sources the workflow actually queried. For schema v1 back-compat, `worldBank` and `scb` are always present (may be empty). For schema v2.0+, `imf` is also accepted. At least one of the three arrays MUST be non-empty unless `skip: true`.",
       "required": ["worldBank", "scb"],
-      "description": "Attribution sources the workflow actually queried.",
       "properties": {
         "worldBank": {
           "type": "array",
           "items": { "type": "string" },
-          "description": "World Bank indicator IDs (e.g. 'NY.GDP.MKTP.KD.ZG')."
+          "description": "World Bank indicator IDs (e.g. 'NY.GDP.MKTP.KD.ZG'). Kept for governance (WGI), environment, long-horizon social/education series where IMF does not provide coverage."
         },
         "scb": {
           "type": "array",
           "items": { "type": "string" },
-          "description": "SCB table IDs (e.g. 'TAB1291')."
+          "description": "SCB table IDs (e.g. 'TAB1291'). Swedish primary source — unchanged."
+        },
+        "imf": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "IMF database/indicator citation strings (e.g. 'WEO:NGDP_RPCH', 'FM:GGXWDG_NGDP', 'IFS:FIMM_PA'). Populated by the `imf` MCP server or the native `scripts/imf-client.ts` for macro/fiscal/monetary indicators from `data.imf.org` (SDMX 3.0)."
         }
       }
     },
@@ -87,7 +93,7 @@
       "properties": {
         "countryCode": {
           "type": "string",
-          "description": "ISO-3 country code (e.g. 'SWE', 'DNK', 'NOR', 'FIN', 'DEU').",
+          "description": "ISO-3 country code (e.g. 'SWE', 'DNK', 'NOR', 'FIN', 'DEU'). IMF area codes (e.g. '111' for USA in GFS) MUST be resolved to ISO-3 before writing.",
           "minLength": 2
         },
         "countryName": {
@@ -96,15 +102,29 @@
         },
         "indicatorId": {
           "type": "string",
-          "description": "World Bank indicator ID (e.g. 'NY.GDP.MKTP.KD.ZG')."
+          "description": "Provider-native indicator ID. World Bank example: 'NY.GDP.MKTP.KD.ZG'. IMF example: 'NGDP_RPCH' (WEO) or 'GGXWDG_NGDP' (FM). SCB example: 'TAB1291'."
         },
         "date": {
           "type": "string",
-          "description": "Year or date string (e.g. '2024', '2024-Q1')."
+          "description": "Year or date string (e.g. '2024', '2024-Q1', '2026-03')."
         },
         "value": {
           "type": "number",
           "description": "Numeric value of the indicator for the country/date."
+        },
+        "provider": {
+          "type": "string",
+          "enum": ["worldBank", "imf", "scb"],
+          "description": "Schema v2.0+ — which authoritative source produced this data point. Required for IMF data points; defaults to 'worldBank' when omitted for back-compat with v1 artefacts."
+        },
+        "projection": {
+          "type": "boolean",
+          "description": "Schema v2.0+ — true when the value is a forecast (IMF WEO / Fiscal Monitor projections typically extend to T+5). Article commentary may cite projected values only when this flag is true AND the article type is on the look-ahead allow-list (week-ahead, month-ahead, weekly-review, monthly-review).",
+          "default": false
+        },
+        "projectionVintage": {
+          "type": "string",
+          "description": "Schema v2.0+ — vintage tag of the projection release (e.g. 'WEO-2026-04', 'FM-2026-04'). Required when `projection: true`. Enables the audit to surface stale vintages."
         }
       }
     }

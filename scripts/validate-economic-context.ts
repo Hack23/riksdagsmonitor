@@ -146,11 +146,15 @@ export function countChartCanvases(html: string): number {
 }
 
 /**
- * Check whether the HTML contains a footer attribution link to World
- * Bank / SCB. Matches common phrasings across the 14 languages.
+ * Check whether the HTML contains a footer attribution link to IMF /
+ * World Bank / SCB. Matches common phrasings across the 14 languages.
+ *
+ * Schema v2 (2026-04-20+): accepts "IMF" / "International Monetary Fund"
+ * as a primary-source marker alongside the existing World Bank / SCB
+ * patterns.
  */
 export function hasAttribution(html: string): boolean {
-  return /World Bank|världsbanken|verdensbank|weltbank|banco mundial|banque mondiale|wereldbank|البنك الدولي|הבנק העולמי|世界銀行|세계은행|世界银行|SCB|Statistics Sweden|Statistiska centralbyrån/i.test(html);
+  return /IMF|International Monetary Fund|Internationella valutafonden|Internationaler Währungsfonds|Fondo Monetario Internacional|Fonds monétaire international|Internationaal Monetair Fonds|صندوق النقد الدولي|קרן המטבע הבינלאומית|国際通貨基金|국제통화기금|国际货币基金组织|World Bank|världsbanken|verdensbank|weltbank|banco mundial|banque mondiale|wereldbank|البنك الدولي|הבנק העולמי|世界銀行|세계은행|世界银行|SCB|Statistics Sweden|Statistiska centralbyrån/i.test(html);
 }
 
 // ---------------------------------------------------------------------------
@@ -256,7 +260,7 @@ export function validateArticle(filePath: string, rootDir: string = process.cwd(
     violations.push({
       articleFile: filePath,
       articleType,
-      reason: 'HTML contains economic-dashboard-placeholder — agentic workflow did not supply live World Bank data',
+      reason: 'HTML contains economic-dashboard-placeholder — agentic workflow did not supply live IMF / World Bank / SCB data',
     });
   }
 
@@ -303,7 +307,7 @@ export function validateArticle(filePath: string, rootDir: string = process.cwd(
       violations.push({
         articleFile: filePath,
         articleType,
-        reason: 'economic-data.json has empty dataPoints[] (workflow fetched no World Bank data)',
+        reason: 'economic-data.json has empty dataPoints[] (workflow fetched no IMF / World Bank / SCB data)',
       });
     }
     const words = countWords(ctx.commentary);
@@ -314,29 +318,29 @@ export function validateArticle(filePath: string, rootDir: string = process.cwd(
         reason: `AI commentary too short — ${words} words, expected ≥${rule.minCommentaryWords}`,
       });
     }
-    if (ctx.source.worldBank.length === 0 && ctx.source.scb.length === 0) {
+    if (ctx.source.worldBank.length === 0 && ctx.source.scb.length === 0 && ctx.source.imf.length === 0) {
       violations.push({
         articleFile: filePath,
         articleType,
-        reason: 'economic-data.json lacks source attribution (World Bank + SCB empty)',
+        reason: 'economic-data.json lacks source attribution (World Bank + IMF + SCB all empty)',
       });
     }
   }
 
   // Check 4: footer attribution link. The renderer does not yet emit
-  // a deterministic "Data by World Bank / SCB" footer string for every
-  // template, so accept structured attribution from
+  // a deterministic "Data by IMF / World Bank / SCB" footer string for
+  // every template, so accept structured attribution from
   // `economic-data.json.source` as a fallback source of truth. This
   // prevents false failures for articles that ship valid economic
   // data and charts but whose footer copy has not been migrated.
   const hasStructuredAttribution = Boolean(
-    ctx && (ctx.source.worldBank.length > 0 || ctx.source.scb.length > 0),
+    ctx && (ctx.source.worldBank.length > 0 || ctx.source.scb.length > 0 || ctx.source.imf.length > 0),
   );
   if (!hasAttribution(html) && !hasStructuredAttribution) {
     violations.push({
       articleFile: filePath,
       articleType,
-      reason: 'Missing "Data by World Bank / SCB" footer attribution (no structured source in economic-data.json either)',
+      reason: 'Missing "Data by IMF / World Bank / SCB" footer attribution (no structured source in economic-data.json either)',
     });
   }
 
