@@ -69,9 +69,11 @@ export function svSpan(escapedText: string, _lang: Language | string): string {
     const lang = String(_lang);
     if (lang !== 'sv' && lang !== 'en') {
       throw new Error(
-        `svSpan() called for lang=${lang} — AI translation required upstream; ` +
-        `see SHARED_PROMPT_PATTERNS §Title & Summary Translation and ` +
-        `analysis/agentic-workflow-quality-plan §P0-1.`
+        `svSpan() called for lang=${lang} — AI translation required upstream. ` +
+        `Target-language articles must have titles and summaries translated by ` +
+        `the AI (see the aggregation-workflow prompts and news-translate.md) ` +
+        `before reaching article generators; see ` +
+        `analysis/agentic-workflow-quality-plan §P0-1/P0-2.`
       );
     }
   }

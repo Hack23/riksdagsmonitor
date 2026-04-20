@@ -27,7 +27,10 @@ describe('cleanSummaryForDisplay', () => {
     const cleaned = cleanSummaryForDisplay(dump);
     expect(cleaned).not.toMatch(/^\d{6,}\s+HD/);
     expect(cleaned).not.toMatch(/prop prop prop/);
-    expect(cleaned).toContain('Proposition 2025/26:232 om en ny lag');
+    // Explicit expected-output assertion: after stripping the dok-id prefix
+    // and collapsing the `prop prop prop` stutter (§P0-4 rule 5), only the
+    // human-readable title remains.
+    expect(cleaned).toBe('Proposition 2025/26:232 om en ny lag');
   });
 
   it('strips CSS rule fragments inline in summary text', () => {

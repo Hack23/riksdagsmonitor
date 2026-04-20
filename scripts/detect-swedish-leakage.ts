@@ -499,8 +499,14 @@ export function findLargeSwedishSpans(html: string): ReadonlyArray<LargeSwedishS
     ) {
       const blockEnd = findMatchingTaggedBlockEnd(html, i, parsed.tagName);
       if (blockEnd !== -1) {
-        // `blockEnd` is the index of the final `>` of the closing tag; the
-        // closing tag itself is `</tagName>` (length = tagName.length + 3).
+        // Offset math: `parsed.tagEnd` = index of the `>` that closes the
+        // opening tag; the block's inner text therefore starts at
+        // `parsed.tagEnd + 1`. `blockEnd` = index of the `>` that closes the
+        // closing tag (`</tagName>`, which is `tagName.length + 3` chars long
+        // for the `<`, `/`, and `>`). So the first index of the closing tag
+        // itself is `blockEnd - closingTagLen + 1`, and `slice(start, end)`
+        // excludes that index — which is exactly what we want (inner content
+        // only, no closing tag).
         const closingTagLen = parsed.tagName.length + 3;
         const inner = html.slice(parsed.tagEnd + 1, blockEnd - closingTagLen + 1);
         // Inner may contain child HTML; strip tags to get plain words only.

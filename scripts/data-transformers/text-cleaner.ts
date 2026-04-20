@@ -62,8 +62,13 @@ export function cleanSummaryForDisplay(text: string | null | undefined): string 
   // 5. Collapse same-word stutters repeated ≥ 3 times ("Proposition Proposition
   //    Proposition Utr…" → "Proposition Utr…"). Guards against replacing
   //    legitimate prose — we only collapse when the word repeats back-to-back
-  //    three or more times (Unicode letters only; punctuation not allowed
-  //    inside the token to avoid crossing sentence boundaries).
+  //    three or more times. The token class uses Unicode property escapes:
+  //      - `\p{L}` matches any Unicode letter (covers Swedish å/ä/ö and
+  //        Latin-script accents)
+  //      - `\p{M}` matches combining marks (accents that live in separate
+  //        code points from their base letter, e.g. NFD-normalised input)
+  //    Punctuation and digits are excluded so the match never crosses a
+  //    sentence boundary or hyphenated number.
   s = s.replace(
     /\b([\p{L}][\p{L}\p{M}]{1,40})(?:\s+\1\b){2,}/giu,
     '$1'
