@@ -12,6 +12,7 @@
  * @see https://www.scb.se/en/services/open-data-api/api-for-the-statistical-database/
  */
 
+import { existsSync, readFileSync } from 'fs';
 import type { SCBIndicator } from './data-transformers/types.js';
 
 // ---------------------------------------------------------------------------
@@ -57,7 +58,44 @@ export interface SCBDomainConfig {
 // Constants
 // ---------------------------------------------------------------------------
 
-const DEFAULT_SERVER_URL = process.env['SCB_MCP_SERVER_URL'] ?? 'https://scb-mcp.onrender.com/mcp';
+/** AWF MCP gateway route for the SCB MCP server. Port 80 is fixed by the
+ * `ghcr.io/github/gh-aw-mcpg` container (`MCP_GATEWAY_PORT=80` in the
+ * compiled workflow lock file). Matches `scripts/mcp-setup.sh`. */
+const AWF_SCB_GATEWAY_URL = 'http://host.docker.internal:80/mcp/scb';
+const DIRECT_SCB_SERVER_URL = 'https://scb-mcp.onrender.com/mcp';
+
+/**
+ * Resolve the SCB MCP server URL.
+ * Priority:
+ *   1. `SCB_MCP_SERVER_URL` env var (explicit override — e.g. from `mcp-setup.sh`).
+ *   2. AWF sandbox auto-detection (GH_AW_MCP_CONFIG or MCP_GATEWAY_API_KEY) → gateway route.
+ *   3. Direct onrender HTTPS endpoint (local dev fallback).
+ *
+ * Gateway routing is mandatory inside the AWF sandbox because the api-proxy
+ * TLS MITM produces `EPROTO SSL wrong version number` on direct HTTPS.
+ */
+function getDefaultScbServerUrl(): string {
+  const explicit = process.env['SCB_MCP_SERVER_URL'];
+  if (explicit) return explicit;
+  if (process.env['MCP_GATEWAY_API_KEY']) return AWF_SCB_GATEWAY_URL;
+  const configPath = process.env['GH_AW_MCP_CONFIG'] ?? '/home/runner/.copilot/mcp-config.json';
+  try {
+    if (existsSync(configPath)) {
+      const raw = JSON.parse(readFileSync(configPath, 'utf8')) as Record<string, unknown>;
+      const gateway = raw['gateway'] as Record<string, unknown> | undefined;
+      if (gateway?.['apiKey']) return AWF_SCB_GATEWAY_URL;
+      const mcpServers = raw['mcpServers'] as Record<string, unknown> | undefined;
+      const scb = mcpServers?.['scb'] as Record<string, unknown> | undefined;
+      const headers = scb?.['headers'] as Record<string, unknown> | undefined;
+      if (headers?.['Authorization']) return AWF_SCB_GATEWAY_URL;
+    }
+  } catch {
+    // Best-effort — fall through to direct URL.
+  }
+  return DIRECT_SCB_SERVER_URL;
+}
+
+const DEFAULT_SERVER_URL = getDefaultScbServerUrl();
 const DEFAULT_TIMEOUT = 15_000;
 const DEFAULT_MAX_RETRIES = 2;
 

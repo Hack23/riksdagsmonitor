@@ -28,8 +28,62 @@ import { annotateDocumentTypes } from './document-types.js';
 // Constants
 // ---------------------------------------------------------------------------
 
-const DEFAULT_MCP_SERVER_URL: string =
-  process.env['MCP_SERVER_URL'] ?? 'https://riksdag-regering-ai.onrender.com/mcp';
+/**
+ * MCP gateway URL used inside the GitHub Agentic Workflows (AWF) sandbox.
+ * Mirrors the value exported by `scripts/mcp-setup.sh`. Port 80 is fixed by
+ * the `ghcr.io/github/gh-aw-mcpg` container (see `MCP_GATEWAY_PORT=80` in
+ * the compiled `news-*.lock.yml` workflow files).
+ */
+const AWF_MCP_GATEWAY_URL = 'http://host.docker.internal:80/mcp/riksdag-regering';
+const DIRECT_MCP_SERVER_URL = 'https://riksdag-regering-ai.onrender.com/mcp';
+
+/**
+ * Detect whether the current process runs inside the AWF sandbox with the
+ * MCP gateway active. Heuristic matches `scripts/mcp-setup.sh`:
+ *   - `MCP_GATEWAY_API_KEY` env var present, OR
+ *   - `gateway.apiKey` present in `mcp-config.json`, OR
+ *   - `mcpServers['riksdag-regering'].headers.Authorization` present in
+ *     `mcp-config.json` (populated by the gateway bootstrap).
+ *
+ * When true, the client must route through `host.docker.internal:80` rather
+ * than the direct onrender HTTPS URL. The AWF api-proxy performs TLS MITM
+ * on outbound HTTPS which produces `EPROTO SSL wrong version number` when
+ * Node.js hits onrender.com directly, so gateway routing is mandatory inside
+ * the sandbox even when `scripts/mcp-setup.sh` was not sourced first.
+ */
+function isAwfGatewayActive(): boolean {
+  if (process.env['MCP_GATEWAY_API_KEY']) return true;
+  const configPath = process.env['GH_AW_MCP_CONFIG'] ?? '/home/runner/.copilot/mcp-config.json';
+  try {
+    if (!fs.existsSync(configPath)) return false;
+    const raw = JSON.parse(fs.readFileSync(configPath, 'utf8')) as Record<string, unknown>;
+    const gateway = raw['gateway'] as Record<string, unknown> | undefined;
+    if (gateway?.['apiKey']) return true;
+    const mcpServers = raw['mcpServers'] as Record<string, unknown> | undefined;
+    const rrServer = mcpServers?.['riksdag-regering'] as Record<string, unknown> | undefined;
+    const headers = rrServer?.['headers'] as Record<string, unknown> | undefined;
+    if (headers?.['Authorization']) return true;
+  } catch {
+    // Config read is best-effort — absence of config is not an error.
+  }
+  return false;
+}
+
+/**
+ * Resolve the default MCP server URL.
+ * Priority:
+ *   1. `MCP_SERVER_URL` env var (explicit override — e.g. from `mcp-setup.sh`).
+ *   2. AWF sandbox auto-detection → gateway URL on `host.docker.internal:80`.
+ *   3. Direct onrender HTTPS endpoint (local dev / CI outside AWF sandbox).
+ */
+function getDefaultMcpServerUrl(): string {
+  const explicit = process.env['MCP_SERVER_URL'];
+  if (explicit) return explicit;
+  if (isAwfGatewayActive()) return AWF_MCP_GATEWAY_URL;
+  return DIRECT_MCP_SERVER_URL;
+}
+
+const DEFAULT_MCP_SERVER_URL: string = getDefaultMcpServerUrl();
 const DEFAULT_MAX_RETRIES = 3;
 const RETRY_DELAY = 2000;
 /** Timeout in milliseconds for fetching external URLs (GitHub, etc.) */

@@ -588,6 +588,14 @@ get_motioner({ rm: <calculated riksmöte>, limit: 20 })
 
 Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `download-parliamentary-data.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder → run `catalog-downloaded-data.ts --pending-only`. See `SHARED_PROMPT_PATTERNS.md` §"Data Lookback Fallback Strategy" for full bash implementation.
 
+> 🔴 **CRITICAL — MCP gateway sourcing**: Every bash block that invokes `download-parliamentary-data.ts`, `generate-news-enhanced.ts`, `mcp-query-cli.ts`, or any other script that reaches the riksdag-regering / SCB / World Bank MCP servers **MUST** prepend `source scripts/mcp-setup.sh &&`. Without sourcing, the scripts fall back to the direct `https://riksdag-regering-ai.onrender.com/mcp` URL; the AWF api-proxy TLS MITM then returns `EPROTO SSL wrong version number` and the pipeline returns 0 documents. Defence-in-depth is now also implemented in `scripts/mcp-client/client.ts` (auto-detects the gateway via `GH_AW_MCP_CONFIG` / `MCP_GATEWAY_API_KEY`) but the explicit source remains required — it extracts the gateway auth token the client needs to authenticate.
+
+```bash
+# Pattern to reuse for EVERY MCP-bound script invocation in this workflow:
+source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"
+npx tsx scripts/download-parliamentary-data.ts --date "$ARTICLE_DATE" --limit 50 --doc-type motions
+```
+
 ### 🔄 Data Lookback Fallback
 
 > 🚨 **CRITICAL RULE**: Never produce empty/stub analysis. If no data for today, look back to find unanalyzed data.
