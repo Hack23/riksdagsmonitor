@@ -100,16 +100,7 @@ mindmap
 ```mermaid
 graph TB
     subgraph "📋 Legislative Pipeline — Committee Reports 2026-04-20"
-        subgraph "Stage 1: Government Proposition"
-            P1["Prop 2025/26:XXX<br/>(KU33 underlying prop)"]
-            P2["Prop 2025/26:XXX<br/>(KU32 underlying prop)"]
-            P3["Prop 2025/26:XXX<br/>(CU27 underlying prop)"]
-            P4["Prop 2025/26:XXX<br/>(CU28 underlying prop)"]
-            P5["Prop 2025/26:XXX<br/>(CU22 underlying prop)"]
-            P6["Riksrevisionen report<br/>(CU42 source)"]
-        end
-        
-        subgraph "Stage 2: Committee Report (Current)"
+        subgraph "Stage 1: Committee Report (Current)"
             B1["HD01KU33 Betänkande<br/>Vilande first reading ✅"]
             B2["HD01KU32 Betänkande<br/>Vilande first reading ✅"]
             B3["HD01CU27 Betänkande<br/>Adopted ✅"]
@@ -117,8 +108,8 @@ graph TB
             B5["HD01CU22 Betänkande<br/>Adopted ✅"]
             B6["HD01CU42 Betänkande<br/>SOU referral ✅"]
         end
-        
-        subgraph "Stage 3: Chamber Decision"
+
+        subgraph "Stage 2: Chamber Decision"
             V1{{"🗳️ 2026 Election<br/>Sept 14"}}
             V2["Second reading<br/>(if Tidö wins)"]
             E1["Effective July 1, 2026"]
@@ -126,19 +117,12 @@ graph TB
             E3["Authority Q1-Q2 2027"]
             S1["SOU investigation"]
         end
-        
-        P1 --> B1
-        P2 --> B2
-        P3 --> B3
-        P4 --> B4
-        P5 --> B5
-        P6 --> B6
-        
+
         B1 --> V1
         B2 --> V1
         V1 -->|"Coalition wins"| V2
         V1 -->|"S-bloc wins"| X["❌ Blocked"]
-        
+
         B3 --> E1
         B4 --> E2
         B5 --> E3
@@ -153,6 +137,8 @@ graph TB
     style E3 fill:#4CAF50,color:#FFFFFF
     style S1 fill:#9E9E9E,color:#FFFFFF
 ```
+
+> **Note on proposition-stage nodes:** The underlying government propositions that preceded these betänkanden are not included as separate nodes because the specific proposition IDs (`Prop 2025/26:NN`) are not reliably linked from the betänkande payloads retrieved via `get_dokument_innehall`. Upstream proposition provenance is captured in each per-document analysis where the source was identified, and in the `data-download-manifest.md` MCP call trail.
 
 ---
 

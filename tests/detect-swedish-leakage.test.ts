@@ -337,5 +337,16 @@ describe('Swedish Leakage Detector', () => {
       expect(terms).toContain('utskottet');
       expect(terms).toContain('propositionen');
     });
+
+    it('should strip custom-element (hyphenated) tags with lang="sv"', () => {
+      // Custom elements have hyphenated tag names (e.g. <my-quote>).
+      const html =
+        '<p>Article intro.</p>' +
+        '<my-quote lang="sv">riksdagen antog propositionen och utskottet</my-quote>' +
+        '<p>Article continues.</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      expect(report.leakedTerms).toEqual([]);
+      expect(report.score).toBe(0);
+    });
   });
 });

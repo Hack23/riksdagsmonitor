@@ -255,7 +255,7 @@ function parseTagAt(html: string, startIndex: number): ParsedTag | null {
 
   const isClosing = inner.startsWith('/');
   const nameSource = isClosing ? inner.slice(1).trimStart() : inner;
-  const nameMatch = /^([a-zA-Z][a-zA-Z0-9]*)/.exec(nameSource);
+  const nameMatch = /^([a-zA-Z][a-zA-Z0-9:-]*)/.exec(nameSource);
   const tagName = nameMatch ? nameMatch[1].toLowerCase() : null;
   const isSelfClosing = !isClosing && /\/\s*>$/.test(rawTag);
 
