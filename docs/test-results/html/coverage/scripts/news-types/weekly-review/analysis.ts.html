@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.32% </span>
+                <span class="strong">98.05% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>92/103</span>
+                <span class='fraction'>101/103</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">78.4% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>66/88</span>
+                <span class='fraction'>69/88</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.17% </span>
+                <span class="strong">97.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>82/93</span>
+                <span class='fraction'>91/93</span>
             </div>
         
             
@@ -635,18 +635,18 @@
 <span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">29x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">29x</span>
@@ -970,19 +970,19 @@ export function generateCoalitionDynamicsSection(
 &nbsp;
   html += `      &lt;/ul&gt;\n`;
 &nbsp;
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (stress.anomalies.length &gt; 0) {
-<span class="cstat-no" title="statement not covered" >    html += `      &lt;ul&gt;\n`;</span>
-<span class="cstat-no" title="statement not covered" >    for (const anomaly of stress.anomalies.slice(0, 3)) {</span>
-      const severityRaw = <span class="cstat-no" title="statement not covered" >anomaly.severity;</span>
-      const severityNormalized = <span class="cstat-no" title="statement not covered" >severityRaw.toLowerCase();</span>
-      const isValidSeverity = <span class="cstat-no" title="statement not covered" >VALID_SEVERITIES.has(severityNormalized);</span>
-<span class="cstat-no" title="statement not covered" >      if (!isValidSeverity) {</span>
+  if (stress.anomalies.length &gt; 0) {
+    html += `      &lt;ul&gt;\n`;
+    for (const anomaly of stress.anomalies.slice(0, 3)) {
+      const severityRaw = anomaly.severity;
+      const severityNormalized = severityRaw.toLowerCase();
+      const isValidSeverity = VALID_SEVERITIES.has(severityNormalized);
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (!isValidSeverity) {
 <span class="cstat-no" title="statement not covered" >        console.warn(`WeeklyReview: Unexpected anomaly severity '${severityRaw}', falling back to 'low'.`);</span>
       }
-      const severityClass = <span class="cstat-no" title="statement not covered" >isValidSeverity ? severityNormalized : 'low';</span>
-<span class="cstat-no" title="statement not covered" >      html += `        &lt;li class="anomaly-flag severity-${severityClass}"&gt;${escapeHtml(anomaly.description)}&lt;/li&gt;\n`;</span>
+      const severityClass = isValidSeverity ? severityNormalized : <span class="branch-1 cbranch-no" title="branch not covered" >'low';</span>
+      html += `        &lt;li class="anomaly-flag severity-${severityClass}"&gt;${escapeHtml(anomaly.description)}&lt;/li&gt;\n`;
     }
-<span class="cstat-no" title="statement not covered" >    html += `      &lt;/ul&gt;\n`;</span>
+    html += `      &lt;/ul&gt;\n`;
   }
 &nbsp;
   html += `    &lt;/div&gt;\n`;
@@ -1078,7 +1078,7 @@ export function generateWeeklyActivitySection(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-19T17:18:42.289Z
+                at 2026-04-20T17:04:05.395Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
