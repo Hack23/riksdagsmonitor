@@ -93,9 +93,16 @@ jobs:
             "https://api.github.com/repos/${UPSTREAM_REPO}/git/trees/${UPSTREAM_REF}?recursive=1" \
             -o "$tree_json"
 
+          # The GitHub "get a tree" endpoint returns truncated=true when the
+          # tree exceeds ~100k entries or 7MB. The upstream Hack23/cia tree is
+          # currently well under those limits (<10k entries), so a single
+          # recursive call is sufficient. If the repo ever grows past the
+          # threshold, this step fails fast rather than silently producing an
+          # incomplete index — at which point the workflow should be updated
+          # to fall back to per-subdirectory tree fetches.
           truncated="$(jq -r '.truncated' "$tree_json")"
           if [ "$truncated" = "true" ]; then
-            echo "::error::GitHub tree response is truncated; cannot build a complete index"
+            echo "::error::GitHub tree response is truncated; upstream repo has grown past the single-call limit. Update the workflow to paginate sub-trees."
             exit 1
           fi
 
@@ -343,12 +350,12 @@ jobs:
         id: diff
         run: |
           set -e
-          paths='data/cia cia-data/production-stats.json cia-data/*.csv cia-data/*/*.csv index.html index_*.html'
-          # shellcheck disable=SC2086
-          if [ -n "$(git status --porcelain -- $paths)" ]; then
+          # Paths touched by this workflow: CSV trees + stats JSON + injected HTML
+          paths=(data/cia cia-data/production-stats.json cia-data/*.csv cia-data/*/*.csv index.html index_*.html)
+          if [ -n "$(git status --porcelain -- "${paths[@]}")" ]; then
             echo "has_changes=true" >> "$GITHUB_OUTPUT"
             echo "📝 Changes detected"
-            git status --porcelain -- $paths | head -30
+            git status --porcelain -- "${paths[@]}" | head -30
           else
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
             echo "✅ No changes detected"
