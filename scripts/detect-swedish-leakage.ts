@@ -228,10 +228,11 @@ function stripLangTaggedBlocks(html: string, langCode: string): string {
     `<([a-zA-Z][a-zA-Z0-9]*)(?=\\s)[^>]*\\blang\\s*=\\s*["']${safeLang}["'][^>]*>([\\s\\S]*?)<\\/\\1\\s*>`,
     'gi'
   );
-  return html.replace(re, (_match, _tagName, inner) => {
-    // Preserve newline count so line numbers remain accurate.
-    const newlines = (inner.match(/\n/g) ?? []).length;
-    return ' ' + '\n'.repeat(newlines) + ' ';
+  return html.replace(re, (match) => {
+    // Preserve all newline positions from the entire matched block, including
+    // line breaks that may appear in the opening or closing tags, so downstream
+    // line numbering stays stable.
+    return match.replace(/[^\n]/g, ' ');
   });
 }
 
@@ -328,7 +329,10 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
   // Strip elements explicitly tagged as Swedish content (e.g. `<span lang="sv">...</span>`).
   // Text inside a `lang="sv"` element is deliberately quoted Swedish source material
   // (e.g. verbatim summaries from riksdagen.se) and MUST NOT count as translation leakage
-  // in a non-Swedish article. Replacement preserves '\n' so reported line numbers stay accurate.
+  // in a non-Swedish article. This call is only reached for non-Swedish targets because
+  // `targetLang === 'sv'` short-circuits with an empty report above, so legitimate Swedish
+  // text in Swedish articles is never removed. Replacement preserves '\n' so reported line
+  // numbers stay accurate.
   cleaned = stripLangTaggedBlocks(cleaned, 'sv');
 
   const lines = cleaned.split('\n');
@@ -396,7 +400,7 @@ const SHARED_WORDS: Partial<Record<Language, ReadonlySet<string>>> = {
   fr: new Set([]),
   es: new Set([]),
   fi: new Set([]),
-  // English shares a small set of these short common forms with Swedish (e.g. "under", "kan"
+  // English shares a very small set of these short common forms with Swedish (e.g. "under"
   // can appear legitimately in technical or proper-noun contexts). Keep this set narrow
   // and limited to tokens that are genuinely ambiguous in English prose.
   en: new Set(['under']),
