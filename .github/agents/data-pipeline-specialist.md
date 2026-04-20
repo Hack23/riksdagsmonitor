@@ -337,7 +337,7 @@ Repo-level agents do **not** declare `mcp-servers:` — MCP is configured once i
 | `github` (Insiders HTTP) | Full toolset incl. `assign_copilot_to_issue`, `create_pull_request_with_copilot`, `get_copilot_job_status`, issues, PRs, projects, actions, security alerts, discussions |
 | `riksdag-regering` (HTTP) | 32+ tools for Swedish Parliament/Government open data |
 | `scb` / `world-bank` (local) | Statistics Sweden PxWeb v2 and World Bank indicators (WB narrowed to governance/environment/social residue in v2.0 contract) |
-| `imf` (local, `c-cf/imf-data-mcp` via `uvx`) | IMF SDMX 3.0 — WEO/IFS/BOP/FM/GFS/DOTS. Primary macro/fiscal/monetary source with projections; batch multi-country calls, respect 10 req/5 s rate limit, cache under `analysis/data/imf/`. See `analysis/imf/README.md` + Economic Data Contract v2.0. |
+| `imf` (TypeScript client: `scripts/imf-client.ts` + `scripts/imf-fetch.ts`, no MCP) | IMF Datamapper (WEO) + SDMX 3.0 passthrough (IFS/BOP/FM/GFS/DOTS). Primary macro/fiscal/monetary source with projections; invoke via `bash` (`tsx scripts/imf-fetch.ts compare|weo|sdmx …`), prefer the `compare` subcommand for multi-country batches, respect 10 req/5 s rate limit (client retries 3× on 429), cache via `--persist`/`persistIMFData()` under `analysis/data/imf/{indicator}/{country}.json`. See `analysis/imf/README.md` + Economic Data Contract v2.0. |
 | `filesystem` / `memory` / `sequential-thinking` / `playwright` | Local helpers (scoped FS, persistent memory, structured reasoning, headless browser) |
 
 MCP config changes are **Normal Changes** needing CEO approval per the [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) curator-agent governance section.

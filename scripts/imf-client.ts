@@ -10,11 +10,9 @@
  *    `world-bank-client.ts` pattern.
  *
  * 2. **SDMX 3.0** (`https://api.imf.org/external/sdmx/3.0`) — full IMF
- *    catalogue (IFS, BOP, GFS_COFOG, FM, MFS_*, FSIC, DOTS, PCPS). This
- *    module implements a narrow surface that targets the IFS / Fiscal
- *    Monitor indicators needed for Riksdagsmonitor articles; agents
- *    needing wider coverage should go through the `imf-data-mcp` server
- *    (c-cf/imf-data-mcp) which wraps the full `imfp` Python catalogue.
+ *    catalogue (IFS, BOP, GFS_COFOG, FM, MFS_*, FSIC, DOTS, PCPS). The
+ *    `sdmxFetch()` method is a thin passthrough for callers that need
+ *    broader coverage than the Datamapper WEO surface.
  *
  * The client mirrors the safety posture of `world-bank-client.ts`:
  *  - deterministic timeouts
@@ -29,7 +27,6 @@
  * @author Hack23 AB
  * @license Apache-2.0
  * @see https://data.imf.org/api/documentation
- * @see https://github.com/c-cf/imf-data-mcp
  */
 
 import { toDatamapperCode } from './imf-codes.js';
@@ -90,8 +87,8 @@ const DEFAULT_WEO_VINTAGE = 'WEO-2026-04';
 /**
  * Canonical IMF indicator IDs used by Riksdagsmonitor articles. Each
  * entry is addressable via the Datamapper (`/{indicatorId}`) — the
- * WEO subset — or SDMX (database = 'WEO', indicator = code) via the
- * `imf-data-mcp` server.
+ * WEO subset — or SDMX 3.0 via `ImfClient.sdmxFetch()` (database='WEO',
+ * indicator=code).
  */
 export const IMF_WEO_INDICATORS = {
   /** Real GDP growth, annual % change — headline macro indicator. */
@@ -157,8 +154,11 @@ interface DatamapperResponse {
  *    set, ideal for Nordic comparisons
  *  - `getLatestWeoIndicator(iso3, weoCode)` — most recent data point
  *
- * The SDMX 3.0 path is exposed via `sdmxFetch()` for advanced use; most
- * article workflows should go through `imf-data-mcp` for SDMX queries.
+ * The SDMX 3.0 path is exposed via `sdmxFetch()` for advanced use
+ * (IFS / BOP / FM / GFS / DOTS / MFS / FSIC / PCPS). Agentic article
+ * workflows invoke this client through the `scripts/imf-fetch.ts` CLI
+ * via the `bash` tool (commands: `weo`, `compare`, `sdmx`,
+ * `list-indicators`).
  */
 export class ImfClient {
   readonly datamapperBaseURL: string;

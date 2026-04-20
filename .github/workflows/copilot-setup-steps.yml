@@ -47,18 +47,9 @@ jobs:
         run: |
           echo "🔧 Setting up environment..."
 
-          # Install system dependencies for Web rendering + IMF MCP runtime
+          # System dependencies for Web rendering.
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            graphviz python3 python3-pip pipx
-
-          # Install `uv` (Python packager used by c-cf/imf-data-mcp).
-          # Pinned to the official astral-sh release channel; firewall
-          # allowlist scopes network to pypi.org + files.pythonhosted.org.
-          if ! command -v uv >/dev/null 2>&1; then
-            python3 -m pip install --user --upgrade uv || \
-              curl -LsSf https://astral.sh/uv/install.sh | sh
-          fi
+          sudo apt-get install -y --no-install-recommends graphviz
           echo "✅ environment setup complete"
  
       # JavaScript/TypeScript setup
@@ -89,19 +80,6 @@ jobs:
           # Install PxWeb MCP server for SCB (Statistics Sweden) data
           npm install -g @jarib/pxweb-mcp@2.0.0
 
-          # Pre-warm IMF MCP server (c-cf/imf-data-mcp, Python/uvx).
-          # `uvx` caches the environment on first run; we invoke --help
-          # to pre-populate the cache and surface install errors here
-          # rather than inside the agent.
-          if command -v uv >/dev/null 2>&1; then
-            uv --version || true
-            (uvx --from "git+https://github.com/c-cf/imf-data-mcp@main" imf-data-mcp --help 2>&1 | head -20) \
-              && echo "✅ imf-data-mcp pre-warmed" \
-              || echo "⚠️ imf-data-mcp pre-warm failed — MCP will cold-start at first use"
-          else
-            echo "⚠️ uv not installed — imf-data-mcp will fail to start"
-          fi
-
           echo "✅ Node.js MCP server packages installed globally"
 
       # Verify all MCP server installations
@@ -128,9 +106,6 @@ jobs:
           echo "Checking @jarib/pxweb-mcp..."
           which pxweb-mcp && echo "✅ pxweb-mcp (SCB) found" || echo "❌ pxweb-mcp NOT found"
 
-          echo "Checking uv (IMF MCP runtime)..."
-          which uv && uv --version && echo "✅ uv found" || echo "❌ uv NOT found — IMF MCP will fail"
-
           echo ""
           echo "=== HTTP MCP Servers ==="
           echo "📍 GitHub MCP Server: Using HTTP endpoint (https://api.githubcopilot.com/mcp/insiders)"
@@ -138,5 +113,6 @@ jobs:
           echo "=== Local stdio MCP Servers ==="
           echo "📍 World Bank MCP Server: worldbank-mcp (stdio)"
           echo "📍 SCB MCP Server: @jarib/pxweb-mcp --url https://api.scb.se/OV0104/v2beta (stdio)"
-          echo "📍 IMF MCP Server: uvx c-cf/imf-data-mcp (stdio, Python)"
+          echo "=== TypeScript clients (invoked via tsx, no MCP) ==="
+          echo "📍 IMF: scripts/imf-client.ts + scripts/imf-fetch.ts — direct HTTPS to data.imf.org / www.imf.org"
           echo "✅ MCP server verification complete"

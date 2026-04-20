@@ -443,7 +443,7 @@ describe('data-persistence', () => {
       const metaPath = resultPath.replace('.json', '.meta.json');
       expect(fs.existsSync(metaPath)).toBe(true);
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-      expect(meta.mcpTool).toBe('imf-data-mcp');
+      expect(meta.mcpTool).toBe('imf-ts-client');
       expect(meta.indicator).toBe('NGDP_RPCH');
       expect(meta.country).toBe('SWE');
       expect(meta.database).toBe('WEO');

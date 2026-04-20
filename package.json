@@ -197,19 +197,6 @@
     "node": ">=25"
   },
   "x-external-mcp": {
-    "_comment": "SBOM-style manifest for MCP servers managed outside of npm dependencies (Python, Docker, HTTP). Tracked here so supply-chain reviews, Open_Source_Policy.md audits, and Change_Management.md tickets have a single source of truth.",
-    "imf-data-mcp": {
-      "source": "git+https://github.com/c-cf/imf-data-mcp",
-      "ref": "main",
-      "pinningStatus": "unpinned",
-      "pinningTarget": "commit-sha",
-      "runtime": "python>=3.11 via uv/uvx",
-      "license": "Apache-2.0",
-      "purpose": "Agentic IMF SDMX 3.0 access (WEO, IFS, BOP, FM, GFS) for news workflows",
-      "introducedIn": "Economic Data Contract v2.0 (2026-04)",
-      "rateLimit": "10 req / 5 s (upstream IMF constraint)",
-      "networkEgress": ["data.imf.org", "api.imf.org", "www.imf.org", "pypi.org", "files.pythonhosted.org"],
-      "docs": ["analysis/imf/README.md", "docs/adr/0001-adopt-imf-data-alongside-world-bank.md", ".github/aw/ECONOMIC_DATA_CONTRACT.md"]
-    }
+    "_comment": "SBOM-style manifest for MCP servers managed outside of npm dependencies (Python, Docker, HTTP). Tracked here so supply-chain reviews, Open_Source_Policy.md audits, and Change_Management.md tickets have a single source of truth. Currently EMPTY: IMF access was migrated from c-cf/imf-data-mcp (Python/uvx) to the repository's pure-TypeScript client scripts/imf-client.ts (invoked via scripts/imf-fetch.ts from the bash tool in agentic workflows) — it is now fully covered by the npm SBOM."
   }
 }

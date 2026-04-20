@@ -17,17 +17,6 @@
       "args": ["-y", "worldbank-mcp@1.0.1"],
       "tools": ["*"]
     },
-    "imf": {
-      "type": "local",
-      "command": "uvx",
-      "args": [
-        "--from",
-        "git+https://github.com/c-cf/imf-data-mcp@main",
-        "imf-data-mcp"
-      ],
-      "tools": ["*"],
-      "x-pinning-note": "Pin --from to a specific commit SHA before production rollout per Open_Source_Policy.md. Tracked in ECONOMIC_DATA_CONTRACT.md v2.0 §Risks and THREAT_MODEL.md."
-    },
     "github": {
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/insiders",

@@ -1825,21 +1825,24 @@ AI agents MUST use these to enrich articles.
    - Example: Defense proposition → look in `military` domain (committees: FöU) → mostly WB (MS.MIL.*)
    - Example: Budget debate → `nationalAccounts` + `governmentFinance` (FiU, SkU) → **IMF-first** (`WEO:NGDP_RPCH`, `WEO:GGXWDG_NGDP`, `FM:GGXONLB_NGDP`)
 
-3. **Fetch data via MCP**, provider-first:
+3. **Fetch data via MCP (WB / SCB) or the TypeScript CLI (IMF)**, provider-first:
 
-   **IMF (via `imf-data-mcp` MCP server)** — use the 4-call discovery flow and batch multi-country in one `imf_fetch_data`:
+   **IMF (via `scripts/imf-fetch.ts`, pure-TypeScript — no Python MCP)** — invoked from the `bash` tool. Use the `compare` subcommand to batch multi-country in one call:
+   ```bash
+   # Sweden + Nordic + DE peer comparison, cached under analysis/data/imf/
+   tsx scripts/imf-fetch.ts compare \
+     --indicator NGDP_RPCH --countries SWE,DNK,NOR,FIN,DEU --persist
+
+   # Full time series (history + WEO-tagged projections) for one country
+   tsx scripts/imf-fetch.ts weo \
+     --country SWE --indicator GGXWDG_NGDP --years 15 --persist
+
+   # Low-level SDMX 3.0 passthrough for IFS / BOP / FM / GFS / DOTS
+   tsx scripts/imf-fetch.ts sdmx \
+     --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01" \
+     --indicator PCPI_IX --country SWE --persist
    ```
-   imf_list_databases()
-   imf_search_databases(query="fiscal")
-   imf_get_parameter_defs(database_id="WEO")
-   imf_get_parameter_codes(database_id="WEO", parameter_id="COUNTRY")
-   imf_fetch_data(database_id="WEO",
-                  parameters={"COUNTRY":"SE,DK,NO,FI,DE",
-                              "INDICATOR":"NGDP_RPCH,GGXWDG_NGDP,PCPIPCH,LUR",
-                              "FREQ":"A"},
-                  start_period="2015", end_period="2031")
-   ```
-   **Rate-limit discipline**: IMF ≈ 10 req / 5 s. Batch countries + indicators into a single call; sleep 1 s between `imf_fetch_data` calls; retry 3× on 429 with 1 s → 2 s → 4 s back-off.
+   **Rate-limit discipline**: IMF ≈ 10 req / 5 s. Prefer `compare` (one batched call); sleep 1 s between invocations; the client retries 3× on 429 with 1 s → 2 s → 4 s back-off automatically.
 
    **World Bank (residual)**:
    ```

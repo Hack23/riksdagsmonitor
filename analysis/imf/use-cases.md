@@ -11,18 +11,15 @@
 **Event**: Regeringen submits SoU-2025/26:12 proposing corporate-tax
 changes. FiU must weigh fiscal space.
 
-**Query** (via `imf-data-mcp`):
+**Query** (via `tsx scripts/imf-fetch.ts`):
 
-```
-imf_fetch_data(
-  database_id="WEO",
-  parameters={
-    "COUNTRY": "SE,DK,NO,FI,DE",
-    "INDICATOR": "GGXWDG_NGDP,GGR_NGDP,NGDP_RPCH",
-    "FREQ": "A"
-  },
-  start_period="2020", end_period="2031"
-)
+```bash
+tsx scripts/imf-fetch.ts compare \
+  --indicator GGXWDG_NGDP --countries SWE,DNK,NOR,FIN,DEU --persist
+tsx scripts/imf-fetch.ts compare \
+  --indicator GGR_NGDP    --countries SWE,DNK,NOR,FIN,DEU --persist
+tsx scripts/imf-fetch.ts weo \
+  --country SWE --indicator NGDP_RPCH --years 12 --persist
 ```
 
 **Commentary** (for a `propositions` article):
@@ -57,10 +54,10 @@ hearing with Riksbanken.
 
 **Query**:
 
-```
-imf_fetch_data(database_id="WEO",
-               parameters={"COUNTRY":"SE","INDICATOR":"PCPIPCH,LUR,NGDP_RPCH","FREQ":"A"},
-               start_period="2020", end_period="2031")
+```bash
+tsx scripts/imf-fetch.ts weo --country SWE --indicator PCPIPCH --years 12 --persist
+tsx scripts/imf-fetch.ts weo --country SWE --indicator LUR       --years 12 --persist
+tsx scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH --years 12 --persist
 ```
 
 **Commentary** (week-ahead, projections permitted):
@@ -80,12 +77,11 @@ Nordic peers.
 
 **Query**:
 
-```
-imf_fetch_data(database_id="WEO",
-               parameters={"COUNTRY":"SE,DK,NO,FI,DE",
-                           "INDICATOR":"GGXCNL_NGDP,GGXWDG_NGDP",
-                           "FREQ":"A"},
-               start_period="2023", end_period="2028")
+```bash
+tsx scripts/imf-fetch.ts compare \
+  --indicator GGXCNL_NGDP --countries SWE,DNK,NOR,FIN,DEU --persist
+tsx scripts/imf-fetch.ts compare \
+  --indicator GGXWDG_NGDP --countries SWE,DNK,NOR,FIN,DEU --persist
 ```
 
 **Commentary**:

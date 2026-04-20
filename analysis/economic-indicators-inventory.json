@@ -6,7 +6,7 @@
   "schemaCutover": "2026-05-31",
   "providers": {
     "imf": {
-      "primary": "c-cf/imf-data-mcp (stdio, Python uvx) + direct REST (Datamapper + SDMX 3.0)",
+      "primary": "scripts/imf-client.ts (pure-TypeScript, no MCP) exposed to agentic workflows via scripts/imf-fetch.ts CLI + direct REST (Datamapper JSON + SDMX 3.0)",
       "databases": ["WEO", "FM", "IFS", "BOP_AGG", "GFS_COFOG", "MFS_IR", "DOTS", "PCPS"],
       "refreshCadence": {
         "WEO": "April and October (flagship)",
@@ -16,7 +16,7 @@
         "GFS_COFOG": "Annual (T+1)",
         "DOTS": "Monthly"
       },
-      "rateLimit": "~10 req / 5 s; batch multi-country in one imf_fetch_data; retry 3× on 429 with 1s→2s→4s back-off",
+      "rateLimit": "~10 req / 5 s; prefer 'tsx scripts/imf-fetch.ts compare' for multi-country batches; client retries 3× on 429 with 1s→2s→4s back-off",
       "projectionHorizon": "WEO T+5 (currently 2031), FM T+5"
     },
     "worldBank": {

@@ -29,11 +29,13 @@ The IMF fills both gaps:
 
 ## Adoption strategy (hybrid)
 
-- **Agentic workflows** (LLM-driven article authoring) → use the
-  `imf` MCP server (`c-cf/imf-data-mcp`, stdio, Python/`uvx`) for
-  discovery and fetch. This mirrors the pattern of `scb` and
-  `riksdag-regering`.
-- **Build-time scripts** → use `scripts/imf-client.ts` for
+- **Agentic workflows** (LLM-driven article authoring) → invoke the
+  `scripts/imf-fetch.ts` CLI via the `bash` tool (`tsx scripts/imf-fetch.ts
+  weo|compare|sdmx|list-indicators …`). The CLI is a thin wrapper over
+  `scripts/imf-client.ts` — a pure-TypeScript client — so there is **no
+  Python / `uvx` runtime** and **no third-party MCP server** on the
+  critical path.
+- **Build-time scripts** → import `scripts/imf-client.ts` directly for
   deterministic TypeScript fetches. Primary transport is the IMF
   **Datamapper** JSON endpoint (WEO indicators, no auth). Targeted
   SDMX 3.0 is available via `ImfClient.sdmxFetch()` for IFS/BOP/FM.
@@ -51,13 +53,14 @@ See the architecture decision record:
 | File | Purpose |
 |---|---|
 | `scripts/imf-client.ts` | TypeScript REST client (Datamapper + SDMX 3.0 passthrough). 429/5xx back-off, projection detection. |
+| `scripts/imf-fetch.ts` | Thin CLI wrapper over `imf-client.ts` (commands: `weo`, `compare`, `sdmx`, `list-indicators`). Used by agentic workflows via the `bash` tool. |
 | `scripts/imf-codes.ts` | ISO-3 ↔ IMF AREA code mappings for IFS/GFS/BOP. Fail-loud on unknown codes. |
 | `scripts/imf-context.ts` | Policy-area / committee → IMF WEO+FM indicator mapping. `imfCitation()` helper. |
 | `analysis/economic-indicators-inventory.json` | v4.0 multi-provider inventory (IMF in-line; WB via reference). |
 
-| MCP server | Transport | Tools |
-|---|---|---|
-| `imf` | stdio (Python/`uvx`, `c-cf/imf-data-mcp`) | `imf_list_databases`, `imf_search_databases`, `imf_get_parameter_defs`, `imf_get_parameter_codes`, `imf_fetch_data` |
+No MCP server is required — IMF access is part of the repository's npm
+SBOM, and the only firewall egress needed is to `data.imf.org`,
+`api.imf.org`, and `www.imf.org`.
 
 ---
 
@@ -65,10 +68,13 @@ See the architecture decision record:
 
 IMF advertises **~10 req / 5 s**. The client and agentic workflows MUST:
 
-- Batch multi-country queries in a single `imf_fetch_data` call.
-- Sleep 1 s between `imf_fetch_data` calls.
-- Retry 3× on HTTP 429 with 1 s → 2 s → 4 s back-off.
-- Cache raw responses under `analysis/data/imf/$(date +%Y)/$indicator-$country.json`.
+- Prefer the `compare` subcommand (one batched Datamapper call across
+  several countries) or a single `weo` call returning a full series.
+- Sleep 1 s between separate `imf-fetch.ts` invocations.
+- Rely on the client's built-in 3× retry with 1 s → 2 s → 4 s back-off
+  on HTTP 429 / 5xx.
+- Cache raw responses under `analysis/data/imf/{indicator}/{country}.json`
+  via the `--persist` flag (or `persistIMFData()` for programmatic use).
 - Pre-warm 1 request at workflow start.
 
 ---

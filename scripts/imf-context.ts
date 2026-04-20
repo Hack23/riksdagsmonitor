@@ -13,9 +13,10 @@
  * the four "look-ahead" article types (week-ahead, month-ahead,
  * weekly-review, monthly-review) plus the macro-adjacent daily types
  * (committee-reports, propositions, motions, evening-analysis). For
- * wider discovery, agents should go through the `imf-data-mcp` server
- * and use its `imf_search_databases` → `imf_get_parameter_defs` →
- * `imf_get_parameter_codes` → `imf_fetch_data` flow.
+ * wider discovery, callers should use `ImfClient.sdmxFetch()` (see
+ * `scripts/imf-client.ts`) directly against the SDMX 3.0 endpoint, or
+ * invoke the `scripts/imf-fetch.ts sdmx --path ...` CLI from agentic
+ * workflows.
  *
  * @author Hack23 AB
  * @license Apache-2.0

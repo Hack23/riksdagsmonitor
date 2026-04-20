@@ -52,8 +52,6 @@ network:
     - api.imf.org
     - data.imf.org
     - www.imf.org
-    - pypi.org
-    - files.pythonhosted.org
     - data.riksdagen.se
     - www.riksdagen.se
     - riksdagen.se
@@ -82,13 +80,6 @@ mcp-servers:
     entrypoint: "npx"
     entrypointArgs: ["-y", "worldbank-mcp@1.0.1"]
     allowed: ["*"]
-  imf:
-    # c-cf/imf-data-mcp — Python MCP over SDMX 3.0 (data.imf.org).
-    # Pin --from to a commit SHA before production rollout per Open_Source_Policy.md.
-    container: "python:3.11-slim"
-    entrypoint: "sh"
-    entrypointArgs: ["-c", "pip install --quiet uv && uvx --from git+https://github.com/c-cf/imf-data-mcp@main imf-data-mcp"]
-    allowed: ["*"]
 
 tools:
   startup-timeout: 180
@@ -113,8 +104,6 @@ safe-outputs:
     - api.imf.org
     - data.imf.org
     - www.imf.org
-    - pypi.org
-    - files.pythonhosted.org
     - data.riksdagen.se
     - www.riksdagen.se
     - riksdagen.se

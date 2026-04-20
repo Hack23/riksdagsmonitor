@@ -476,8 +476,10 @@ export function persistWorldBankData(
  * Stored under `analysis/data/imf/{indicator}/{country}.json`, mirroring the
  * World Bank persistence layout. Introduced by the hybrid IMF integration
  * (Economic Data Contract v2.0, 2026-04). Supports all IMF providers:
- * Datamapper (WEO), SDMX 3.0 (IFS/BOP/FM/GFS/DOTS/MFS), and the
- * `c-cf/imf-data-mcp` agentic server.
+ * Datamapper (WEO) and SDMX 3.0 (IFS/BOP/FM/GFS/DOTS/MFS), all accessed
+ * through the pure-TypeScript client `scripts/imf-client.ts` (there is no
+ * Python MCP / `uvx` runtime; agentic workflows invoke the `tsx
+ * scripts/imf-fetch.ts` CLI via the `bash` tool).
  *
  * @param indicator  - IMF indicator code (e.g. 'NGDP_RPCH', 'GGXWDG_NGDP',
  *                     'PCPIPCH', 'LUR', 'FM_EXP_G01_GDP_PT').
@@ -514,7 +516,7 @@ export function persistIMFData(
     path.join(dir, metaFilename),
     JSON.stringify({
       fetchedAt: new Date().toISOString(),
-      mcpTool: 'imf-data-mcp',
+      mcpTool: 'imf-ts-client',
       indicator,
       country,
       ...(options.database ? { database: options.database } : {}),

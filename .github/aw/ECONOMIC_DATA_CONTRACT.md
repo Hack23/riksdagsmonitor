@@ -5,9 +5,10 @@
 > Consumed by `scripts/validate-economic-context.ts` and referenced
 > (by link) from every `news-*.md` agentic workflow.
 
-> **Schema v2.0 (2026-04-20)** — additive. Adds IMF (`c-cf/imf-data-mcp` +
-> direct Datamapper/SDMX) as a first-class primary source for macro,
-> fiscal, monetary, and external-sector indicators. World Bank remains
+> **Schema v2.0 (2026-04-20)** — additive. Adds IMF (accessed via the
+> repo's pure-TypeScript `scripts/imf-client.ts` + `scripts/imf-fetch.ts`
+> CLI, no Python MCP) as a first-class primary source for macro, fiscal,
+> monetary, and external-sector indicators. World Bank remains
 > authoritative for governance (WGI), environment, and long-horizon
 > social/education residue. SCB remains the Swedish primary source.
 > v1 artefacts remain valid; the validator accepts both shapes during
@@ -146,24 +147,38 @@ append-only reference during the migration window.
 
 ### 2. Query IMF (Sweden + Nordic peers) — PRIMARY for macro/fiscal/monetary
 
-Via the `imf` MCP server (`c-cf/imf-data-mcp`). Discovery flow:
+Via the repository's pure-TypeScript client `scripts/imf-client.ts`,
+exposed to agentic workflows through the thin `scripts/imf-fetch.ts`
+CLI. No Python MCP / `uvx` runtime is involved; all IMF traffic goes
+directly to `data.imf.org`, `api.imf.org`, and `www.imf.org` on the
+firewall allowlist.
 
-```
-imf_list_databases()                              # One-shot — cache
-imf_search_databases(query="fiscal")              # Find "FM"
-imf_get_parameter_defs(database_id="WEO")         # Understand dims
-imf_get_parameter_codes(database_id="WEO", parameter_id="COUNTRY")
-imf_fetch_data(database_id="WEO",
-               parameters={"COUNTRY": "SE,DK,NO,FI,DE",
-                           "INDICATOR": "NGDP_RPCH,GGXWDG_NGDP,PCPIPCH,LUR",
-                           "FREQ": "A"},
-               start_period="2015", end_period="2031")
+```bash
+# 1. WEO time series for one country (default 10 years; --persist caches
+#    the JSON under analysis/data/imf/{indicator}/{country}.json with
+#    projectionVintage provenance).
+tsx scripts/imf-fetch.ts weo \
+  --country SWE --indicator NGDP_RPCH --years 15 --persist
+
+# 2. Compare the latest WEO value across Sweden + Nordic peers in one call.
+tsx scripts/imf-fetch.ts compare \
+  --indicator GGXWDG_NGDP \
+  --countries SWE,DNK,NOR,FIN,DEU --persist
+
+# 3. SDMX 3.0 passthrough for IFS / BOP / FM / GFS / DOTS.
+tsx scripts/imf-fetch.ts sdmx \
+  --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01" \
+  --indicator PCPI_IX --country SWE --persist
+
+# 4. Inspect the built-in WEO + FM indicator catalog (no network call).
+tsx scripts/imf-fetch.ts list-indicators
 ```
 
-**Rate-limit discipline** (IMF ~10 req / 5 s): batch all countries and
-all indicators into a single `imf_fetch_data` call when possible; sleep
-1 s between `imf_fetch_data` calls; retry 3× on 429 with exponential
-back-off (1 s → 2 s → 4 s). Pre-warm 1 request at workflow start.
+**Rate-limit discipline** (IMF ~10 req / 5 s): prefer the `compare`
+subcommand (one batched call across countries), insert a 1 s sleep
+between separate `imf-fetch.ts` invocations, and rely on the client's
+built-in 3× retry with exponential back-off (1 s → 2 s → 4 s) for 429 /
+5xx. Pre-warm 1 request at workflow start.
 
 ### 3. Query World Bank (governance / env / social residue)
 
@@ -387,9 +402,12 @@ mirror the change in the version history below.
   exemption to the validator so the daily audit stops re-reporting
   pre-contract articles for 7 days after every rollout. No change to
   the schema or enforcement for new articles.
-- **2.0 (2026-04-20)** — Add IMF (`c-cf/imf-data-mcp` + direct
-  Datamapper / SDMX 3.0) as a first-class primary source. Additive
-  schema changes:
+- **2.0 (2026-04-20)** — Add IMF as a first-class primary source via
+  the repository's pure-TypeScript `scripts/imf-client.ts` +
+  `scripts/imf-fetch.ts` CLI (Datamapper JSON for WEO, SDMX 3.0
+  passthrough for IFS / BOP / FM / GFS / DOTS). **No Python MCP /
+  `uvx`** — IMF access is under the same npm / SBOM governance as
+  `world-bank-client.ts` and `scb-client.ts`. Additive schema changes:
   - `source.imf: string[]` (optional in v1, recommended in v2)
   - `dataPoints[].provider` (`imf` | `worldBank` | `scb`)
   - `dataPoints[].projection` (boolean)

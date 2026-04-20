@@ -49,7 +49,7 @@ Repo agents do **not** configure MCP servers — MCP is defined once in [`.githu
 | **riksdag-regering** (HTTP) | 32+ tools for Swedish Parliament/Government open data |
 | **scb** (local) | Statistics Sweden PxWeb v2 API |
 | **world-bank** (local) | World Bank indicators — governance (WGI), environment, long-horizon social/education residue |
-| **imf** (local, `c-cf/imf-data-mcp`) | IMF SDMX 3.0 — WEO/IFS/BOP/FM/GFS/DOTS with T+5 projections; primary source for fresh macro/fiscal/monetary figures (see `analysis/imf/` + Economic Data Contract v2.0) |
+| **imf** (TypeScript client via `bash` + `tsx scripts/imf-fetch.ts`, no MCP) | IMF Datamapper (WEO) + SDMX 3.0 passthrough (IFS/BOP/FM/GFS/DOTS) with T+5 projections; primary source for fresh macro/fiscal/monetary figures (see `analysis/imf/` + Economic Data Contract v2.0) |
 | **github** (Insiders HTTP) | Full GitHub toolset incl. `assign_copilot_to_issue`, `create_pull_request_with_copilot`, `get_copilot_job_status` |
 | **filesystem / memory / sequential-thinking / playwright** | Local helpers |
 

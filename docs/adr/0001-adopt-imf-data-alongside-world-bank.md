@@ -35,19 +35,24 @@ Three IMF alternatives were evaluated:
 
 ## Decision
 
-**Adopt a hybrid IMF stack** that complements — not replaces — World
-Bank:
+**Adopt a hybrid IMF stack built entirely in TypeScript**, complementing
+— not replacing — World Bank:
 
-1. **Agentic workflows** (LLM article authoring) use the
-   `c-cf/imf-data-mcp` MCP server (stdio, Python/`uvx`) for discovery
-   and fetch. Mirrors the pattern of `scb` and `riksdag-regering`.
-2. **Build-time scripts** use a native TypeScript client
-   (`scripts/imf-client.ts`) against IMF Datamapper for WEO and SDMX
-   3.0 for IFS/BOP/FM/GFS. No Python dependency at build time.
-3. **World Bank** is kept for WGI governance (source=75), environment,
+1. **Single pure-TypeScript client** (`scripts/imf-client.ts`) combines
+   the IMF Datamapper JSON transport for WEO with the SDMX 3.0 transport
+   for IFS / BOP / FM / GFS / DOTS. No Python / `uvx` runtime, no
+   third-party MCP server — the client is a normal npm source file on
+   par with `world-bank-client.ts` and `scb-client.ts`.
+2. **Agentic workflows** (LLM article authoring) call this client
+   through the thin `scripts/imf-fetch.ts` CLI via the `bash` tool
+   (`tsx scripts/imf-fetch.ts weo|compare|sdmx|list-indicators …`).
+   Identical freshness guarantees, no MCP protocol overhead.
+3. **Build-time scripts** import the client directly as a TypeScript
+   module.
+4. **World Bank** is kept for WGI governance (source=75), environment,
    and long-horizon social/education residue where IMF does not
    publish.
-4. **SCB** is unchanged and remains the Swedish primary source.
+5. **SCB** is unchanged and remains the Swedish primary source.
 
 Schema v2 (additive) adds `source.imf[]`,
 `dataPoints[].provider`, `dataPoints[].projection`, and
@@ -68,16 +73,17 @@ the 2026-04-20 → 2026-05-31 grace window.
 - **Cross-country comparability** improved — SNA 2008 / GFSM 2014
   uniformity reduces the "WB northern-Europe bias" criticism.
 - **Editorial neutrality**: IMF is a multilateral primary source.
+- **No new runtime** in the agentic sandbox — IMF access is under the
+  same npm / SBOM governance as every other economic data client.
+  Firewall allowlist is confined to IMF origins (`data.imf.org`,
+  `api.imf.org`, `www.imf.org`); no `pypi.org` / `files.pythonhosted.org`
+  egress.
 
 ### Negative / risks
 
-- **New Python/`uvx` runtime** in the agentic sandbox (supply-chain
-  surface). Mitigated by pinning to a commit SHA, mirrored wheels,
-  SBOM entry, firewall allowlist scoped to `pypi.org` +
-  `files.pythonhosted.org`.
 - **IMF rate limit (~10 req / 5 s)** requires batching and back-off
-  discipline (implemented in `imf-client.ts` and documented in the
-  Economic Data Contract v2.0).
+  discipline (implemented in `imf-client.ts` retry loop and encoded in
+  the `compare` subcommand of `imf-fetch.ts`).
 - **WEO cadence gap** (Apr/Oct only) — mitigated by using higher-
   frequency IMF datasets (IFS, FM interim, DOTS) for monthly article
   types and by tagging `projectionVintage` so stale vintages surface
@@ -96,21 +102,25 @@ the 2026-04-20 → 2026-05-31 grace window.
 - **GDPR** — not engaged: IMF data is fully public aggregate macro;
   no personal data; Art 9 not triggered.
 - **Threat Model** — STRIDE update captures Tampering/Spoofing of IMF
-  responses (mitigated by cached JSON hashing) and DoS via IMF rate
-  limits (mitigated by batching + caching).
+  responses (mitigated by TLS 1.3 + cached JSON schema validation in
+  `imf-client.ts`) and DoS via IMF rate limits (mitigated by the
+  client's built-in 3× back-off plus `compare` batching).
 - **Change Management** — Normal change per `Change_Management.md`;
-  CEO approval required for MCP config (`.github/copilot-mcp.json`,
-  `copilot-setup-steps.yml`).
+  no new MCP server / runtime.
 
 ## Alternatives considered (and rejected)
 
 - **Replace WB entirely with IMF** — rejected. WGI governance,
   environment, and long-horizon social/education are WB exclusives;
   losing them would regress `KU`, `MJU`, `UbU`, `SoU` coverage.
-- **IMF SDMX 3.0 only (no MCP)** — rejected for the agentic path
-  because SDMX payloads are complex and agents benefit from the
-  four-call discovery pattern in `imf-data-mcp`. Kept as the
-  transport for build-time `imf-client.ts`.
+- **Adopt `c-cf/imf-data-mcp` (Python MCP)** — *considered and
+  rejected*. The MCP would have added a Python / `uvx` runtime, a
+  third-party git dependency, and `pypi.org` / `files.pythonhosted.org`
+  on the firewall allowlist — all of which expand supply-chain surface
+  and fall outside the npm SBOM. The `scripts/imf-client.ts` +
+  `scripts/imf-fetch.ts` pair delivers equivalent coverage (Datamapper
+  for WEO, SDMX 3.0 passthrough for everything else) with zero new
+  runtime.
 - **Wait for WB freshness to improve** — rejected. WB's WDI cadence
   is not scheduled to change; the lag is structural.
 
