@@ -54,7 +54,7 @@ graph LR
 - **Justice Minister Gunnar Strömmer (M)**: HD10439 demands response on Stockholm police — must reconcile BRÅ numbers with lived reality
 - **Infrastructure Minister Andreas Carlson (KD)**: Most-targeted minister (6th+ interpellation); HD11722, HD11724 add written-question pressure; KD's election vulnerability
 - **Jämställdhetsminister Nina Larsson (L)**: Still managing fallout from IP437+438 (EU pay directive, women's shelters); L brand at risk
-- **Education Minister Simona Mohammso (M)**: HD11726 — first constitutional knowledge challenge; potentially difficult answer
+- **Education Minister Simona Mohamsson (L)**: HD11726 — first constitutional knowledge challenge; potentially difficult answer
 - **Energy Minister Johan Britz/Romina Pourmokhtari (L)**: HD11720 + HD11725 on climate/environment
 
 ---

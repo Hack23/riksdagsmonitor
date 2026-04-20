@@ -41,7 +41,7 @@ graph LR
     PROP36 -->|S counter-motion| MOT82
     PROP36 -->|MP counter-motion| MOT98
     FR11725 -->|C+S aligned| MJU21
-    IP439 -->|Government answer: | PROP37
+    IP439 -->|Government answer| PROP37
     IP439 -->|Follows pattern from| IP436
     KU42 -->|Constitutional scrutiny context| KU33
     KU42 -->|Constitutional scrutiny context| KU32

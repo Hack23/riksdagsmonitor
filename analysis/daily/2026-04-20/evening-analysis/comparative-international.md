@@ -16,7 +16,7 @@ Today's Swedish parliamentary activity — Riksrevisionen agricultural climate f
 **Relevance**: HD01MJU21 agricultural climate findings
 
 Denmark is the most direct comparator for Sweden's agricultural climate challenge. In 2021, Denmark adopted the world's first comprehensive **agricultural climate plan**, including:
-- A NOK 15 billion fund for agricultural green transition (2021–2030)
+- A DKK 15 billion fund for agricultural green transition (2021–2030)
 - Mandatory methane reduction targets for dairy and beef farmers
 - Municipal-level agricultural emissions monitoring system
 

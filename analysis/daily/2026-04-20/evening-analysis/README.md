@@ -10,7 +10,7 @@
 |--|--|
 | **Date** | 2026-04-20 (Monday, week 17) |
 | **Riksmöte** | 2025/26 |
-| **Documents analyzed** | 14 (2 committee, 1 interpellation, 8 frågor, 3 supporting) |
+| **Documents analyzed** | 14 (3 committee, 1 interpellation, 8 frågor, 3 supporting) |
 | **Significance peak** | HD01MJU21 — Riksrevisionen agricultural climate ★★★★★ |
 | **Election 2026 impact** | HIGH — Climate credibility gap + police accountability compound |
 | **Analysis depth** | deep (v5.0 compliant) |
