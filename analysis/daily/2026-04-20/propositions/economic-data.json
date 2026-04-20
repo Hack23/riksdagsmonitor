@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "articleType": "propositions",
+  "date": "2026-04-20",
+  "policyDomains": ["fiscal policy", "energy transition", "labor market", "defense"],
+  "dataPoints": [
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2024", "value": 0.82 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2023", "value": -0.204 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2022", "value": 1.255 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2021", "value": 5.226 },
+    { "countryCode": "DNK", "countryName": "Denmark", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2024", "value": 3.478 },
+    { "countryCode": "DNK", "countryName": "Denmark", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2023", "value": 0.605 },
+    { "countryCode": "NOR", "countryName": "Norway", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2024", "value": 2.097 },
+    { "countryCode": "NOR", "countryName": "Norway", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2023", "value": 0.072 },
+    { "countryCode": "FIN", "countryName": "Finland", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2024", "value": 0.416 },
+    { "countryCode": "FIN", "countryName": "Finland", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2023", "value": -0.939 },
+    { "countryCode": "DEU", "countryName": "Germany", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2024", "value": -0.2 }
+  ],
+  "commentary": "Sweden's 2024 GDP growth of +0.82% severely underperforms Nordic peers Denmark (+3.48%) and Norway (+2.10%), providing the fiscal backdrop against which Finance Minister Svantesson's Spring Economic Bill (Prop. 2025/26:100) must prove its growth projections credible. Sweden entered technical recession in 2023 with GDP contracting by 0.20%, making the 2025/26 spring budget package a critical attempt to restore economic momentum. The extra amendment budget (HD03236) cutting fuel taxes and providing energy price support represents targeted household relief worth several billion SEK, designed to stimulate consumption and counteract the purchasing power erosion that has suppressed domestic demand since 2022.",
+  "source": {
+    "worldBank": ["NY.GDP.MKTP.KD.ZG"],
+    "scb": [],
+    "riksdag": ["HD03100", "HD0399", "HD03236"]
+  }
+}
