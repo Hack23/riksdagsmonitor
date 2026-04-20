@@ -1799,15 +1799,16 @@ Embed each chart on the target `<canvas>` element using a `data-chart-config` at
 > 🔴 **v5.0 — MANDATORY ECONOMIC DATA**: The AI agent MUST fetch and include World Bank and/or SCB data to contextualize political developments. Articles about budget/finance → include GDP, debt, deficit data. Defense → military spending. Healthcare → health expenditure. Education → spending per pupil. Use Chart.js chart containers for data visualization. An article without quantitative economic evidence is INCOMPLETE.
 
 ````markdown
-### World Bank Indicator Reference for AI Agents
+### Economic Indicator Reference for AI Agents (IMF / World Bank / SCB)
 
-> **SINGLE SOURCE OF TRUTH**: `analysis/worldbank/indicators-inventory.json`
-> This JSON file is the canonical machine-readable inventory of ALL indicators. Both AI agents and TypeScript modules load from this same file. To discover indicators, **`view analysis/worldbank/indicators-inventory.json`** — do NOT reference TypeScript source code.
+> **SINGLE SOURCE OF TRUTH**: `analysis/economic-indicators-inventory.json` (v4.0, multi-provider)
+> Legacy: `analysis/worldbank/indicators-inventory.json` — retained append-only during migration.
+> This JSON is the canonical machine-readable inventory of ALL indicators from **IMF**, **World Bank**, and **SCB**. Both AI agents and TypeScript modules load from the same file. To discover indicators, **`view analysis/economic-indicators-inventory.json`** — do NOT reference TypeScript source code.
 
-The World Bank integration provides **144 indicators** across 17 Riksdag-relevant domains:
-- **19 indicators** via MCP tools (get-economic-data, get-social-data, get-education-data, get-health-data)
-- **125 indicators** via REST API (build-time scripts fetch automatically)
-- **6 WGI governance indicators** via REST API with source=75 (auto-detected)
+The multi-provider catalogue provides:
+- **IMF (primary for macro / fiscal / monetary / external sector)** — WEO headline indicators (`NGDP_RPCH`, `PCPIPCH`, `LUR`, `GGXWDG_NGDP`, `GGR_NGDP`, `GGX_NGDP`, `BCA_NGDPD`, `TX_RPCH`, `NGDPDPC`, `LP`) + Fiscal Monitor (`GGXONLB_NGDP`). Projections extend to T+5 via the April/October WEO cycle.
+- **World Bank (governance / env / social residue)** — 144 indicators kept for WGI governance (source=75: CC.EST, RL.EST, VA.EST, GE.EST, RQ.EST, PV.EST), environment (CO2, forest area, renewables), and long-horizon social/education series (SE.*, SH.*, SP.*) where IMF does not publish.
+- **SCB (Swedish primary source)** — unchanged.
 
 AI agents MUST use these to enrich articles.
 
@@ -1815,16 +1816,35 @@ AI agents MUST use these to enrich articles.
 
 > **MANDATORY FIRST STEP**: Before writing any article, discover relevant indicators using this protocol.
 
-1. **Read the inventory**: `view analysis/worldbank/indicators-inventory.json`
-   - Each indicator has: `id`, `key`, `name`, `unit`, `description`, `policyAreas`, `committees`
+1. **Read the inventory**: `view analysis/economic-indicators-inventory.json`
+   - Each indicator has: `id`, `key`, `name`, `unit`, `description`, `policyAreas`, `committees`, and `provider` (`imf` | `worldBank` | `scb`)
+   - IMF entries additionally carry `imfDatabase`, `imfIndicatorCode`, `imfDimensionFilters`, `projectionHorizon`
    - Indicators with `mcpTool` field can be fetched via MCP tools
-   - The JSON is organized by domain (nationalAccounts, labor, military, governance, etc.)
 
 2. **Match to article topic**: Find indicators where `policyAreas` or `committees` match the article's subject
-   - Example: Defense proposition → look in `military` domain (committees: FöU)
-   - Example: Budget debate → look in `nationalAccounts` + `governmentFinance` domains (committees: FiU, SkU)
+   - Example: Defense proposition → look in `military` domain (committees: FöU) → mostly WB (MS.MIL.*)
+   - Example: Budget debate → `nationalAccounts` + `governmentFinance` (FiU, SkU) → **IMF-first** (`WEO:NGDP_RPCH`, `WEO:GGXWDG_NGDP`, `FM:GGXONLB_NGDP`)
 
-3. **Fetch data via MCP** for indicators that have `mcpTool` field:
+3. **Fetch data via MCP (WB / SCB) or the TypeScript CLI (IMF)**, provider-first:
+
+   **IMF (via `scripts/imf-fetch.ts`, pure-TypeScript — no Python MCP)** — invoked from the `bash` tool. Use the `compare` subcommand to batch multi-country in one call:
+   ```bash
+   # Sweden + Nordic + DE peer comparison, cached under analysis/data/imf/
+   tsx scripts/imf-fetch.ts compare \
+     --indicator NGDP_RPCH --countries SWE,DNK,NOR,FIN,DEU --persist
+
+   # Full time series (history + WEO-tagged projections) for one country
+   tsx scripts/imf-fetch.ts weo \
+     --country SWE --indicator GGXWDG_NGDP --years 15 --persist
+
+   # Low-level SDMX 3.0 passthrough for IFS / BOP / FM / GFS / DOTS
+   tsx scripts/imf-fetch.ts sdmx \
+     --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01" \
+     --indicator PCPI_IX --country SWE --persist
+   ```
+   **Rate-limit discipline**: IMF ≈ 10 req / 5 s. Prefer `compare` (one batched call); sleep 1 s between invocations; the client retries 3× on 429 with 1 s → 2 s → 4 s back-off automatically.
+
+   **World Bank (residual)**:
    ```
    get-economic-data(countryCode="SE", indicator="GDP_GROWTH", years=10)
    get-social-data(countryCode="SE", indicator="LIFE_EXPECTANCY", years=10)

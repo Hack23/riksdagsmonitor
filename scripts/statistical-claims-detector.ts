@@ -38,6 +38,12 @@ export interface StatisticalClaim {
   readonly worldBankIndicator?: string;
   /** SCB table ID for cross-reference (if applicable) */
   readonly scbTableId?: string;
+  /**
+   * IMF indicator code (WEO/FM/IFS) for cross-reference (if applicable).
+   * Added in schema v2 (2026-04). Examples: `NGDP_RPCH`, `PCPIPCH`, `LUR`,
+   * `GGXWDG_NGDP`, `BCA_NGDPD`, `FM_EXP_G01_GDP_PT`.
+   */
+  readonly imfIndicator?: string;
 }
 
 /** Result of fact-checking a statistical claim */
@@ -88,6 +94,8 @@ interface ClaimPattern {
   readonly verificationSource: 'world-bank' | 'scb' | 'both';
   readonly worldBankIndicator?: string;
   readonly scbTableId?: string;
+  /** IMF indicator code (WEO/FM/IFS) — added in schema v2 (2026-04). */
+  readonly imfIndicator?: string;
 }
 
 /**
@@ -102,6 +110,7 @@ const CLAIM_PATTERNS: readonly ClaimPattern[] = [
     verificationSource: 'both',
     worldBankIndicator: 'SL.UEM.TOTL.ZS',
     scbTableId: 'TAB5765',
+    imfIndicator: 'LUR',
   },
   {
     pattern: /unemployment\s+(?:rate\s+)?(?:is|stands?\s+at|(?:has\s+)?(?:fallen|risen|dropped)\s+to)\s+(\d+[,.]?\d*)\s*(?:percent|%)/gi,
@@ -109,6 +118,7 @@ const CLAIM_PATTERNS: readonly ClaimPattern[] = [
     verificationSource: 'both',
     worldBankIndicator: 'SL.UEM.TOTL.ZS',
     scbTableId: 'TAB5765',
+    imfIndicator: 'LUR',
   },
   // GDP claims
   {
@@ -117,6 +127,7 @@ const CLAIM_PATTERNS: readonly ClaimPattern[] = [
     verificationSource: 'both',
     worldBankIndicator: 'NY.GDP.MKTP.KD.ZG',
     scbTableId: 'TAB5802',
+    imfIndicator: 'NGDP_RPCH',
   },
   {
     pattern: /GDP\s+(?:growth\s+)?(?:grew|expanded|contracted|shrank)\s+(?:by\s+)?(\d+[,.]?\d*)\s*(?:percent|%)/gi,
@@ -124,6 +135,7 @@ const CLAIM_PATTERNS: readonly ClaimPattern[] = [
     verificationSource: 'both',
     worldBankIndicator: 'NY.GDP.MKTP.KD.ZG',
     scbTableId: 'TAB5802',
+    imfIndicator: 'NGDP_RPCH',
   },
   // Inflation claims
   {
@@ -131,12 +143,14 @@ const CLAIM_PATTERNS: readonly ClaimPattern[] = [
     topic: 'inflation',
     verificationSource: 'both',
     worldBankIndicator: 'FP.CPI.TOTL.ZG',
+    imfIndicator: 'PCPIPCH',
   },
   {
     pattern: /inflation\s+(?:rate\s+)?(?:is|stands?\s+at|(?:has\s+)?(?:fallen|risen)\s+to)\s+(\d+[,.]?\d*)\s*(?:percent|%)/gi,
     topic: 'inflation',
     verificationSource: 'both',
     worldBankIndicator: 'FP.CPI.TOTL.ZG',
+    imfIndicator: 'PCPIPCH',
   },
   // Migration claims
   {
@@ -164,12 +178,17 @@ const CLAIM_PATTERNS: readonly ClaimPattern[] = [
     topic: 'defence',
     verificationSource: 'both',
     worldBankIndicator: 'MS.MIL.XPND.GD.ZS',
+    // IMF Fiscal Monitor expenditure indicator (citation reference only — full
+    // defence series currently resolved via `GFS_COFOG` function 02 at query
+    // time; see `.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.0 committee matrix).
+    imfIndicator: 'FM_EXP_G01_GDP_PT',
   },
   {
     pattern: /(?:military|defence|defense)\s+spending\s+(?:is|stands?\s+at)\s+(\d+[,.]?\d*)\s*(?:percent|%)\s*(?:of\s+GDP)?/gi,
     topic: 'defence',
     verificationSource: 'both',
     worldBankIndicator: 'MS.MIL.XPND.GD.ZS',
+    imfIndicator: 'FM_EXP_G01_GDP_PT',
   },
   // Education spending claims
   {
@@ -348,6 +367,7 @@ export function detectStatisticalClaims(
         verificationSource: claimPattern.verificationSource,
         worldBankIndicator: claimPattern.worldBankIndicator,
         scbTableId: claimPattern.scbTableId,
+        imfIndicator: claimPattern.imfIndicator,
       });
     }
   }

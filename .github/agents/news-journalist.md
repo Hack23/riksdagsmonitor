@@ -18,7 +18,7 @@ tools: ["*"]
 
 ## 🔴 AI FIRST Quality Principle
 
-> **Never accept first-pass quality. Minimum 2 complete iterations for every article. After Pass 1, read ALL output back and improve: strengthen lede with named actors, deepen "Why It Matters" (no boilerplate), add evidence (dok_id, vote counts, named MPs), broaden perspectives (6+ stakeholder groups), add economic context (SCB, World Bank), verify forward indicators (dates, triggers, decision-makers). Spend ALL allocated time — shallow reporting is rejected.**
+> **Never accept first-pass quality. Minimum 2 complete iterations for every article. After Pass 1, read ALL output back and improve: strengthen lede with named actors, deepen "Why It Matters" (no boilerplate), add evidence (dok_id, vote counts, named MPs), broaden perspectives (6+ stakeholder groups), add economic context (SCB, IMF — WEO/FM projections where relevant — World Bank for governance/environment residue), verify forward indicators (dates, triggers, decision-makers). Spend ALL allocated time — shallow reporting is rejected.**
 
 ---
 

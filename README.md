@@ -367,7 +367,8 @@ Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
 - **[Swedish Parliament (Riksdagen)](http://data.riksdagen.se/)** - Votes, documents, committee work, MP information
 - **[Swedish Election Authority](http://www.val.se/)** - Election results, voter turnout, electoral statistics
 - **[Swedish Financial Management Authority](https://www.esv.se/psidata/)** - Government budget and spending data
-- **[World Bank Open Data](http://data.worldbank.org/)** - Country-level indicators for comparative analysis
+- **[World Bank Open Data](http://data.worldbank.org/)** - Governance (WGI), environment, and long-horizon social/education indicators
+- **[IMF Public Data](https://data.imf.org/)** - Macro, fiscal, monetary, and external-sector indicators (WEO, Fiscal Monitor, IFS) with T+5 projections — primary source for fresh macro/fiscal figures and forward-looking commentary (see `analysis/imf/README.md` and `docs/adr/0001-adopt-imf-data-alongside-world-bank.md`)
 
 ## 🏗️ Technical Architecture
 
