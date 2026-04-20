@@ -210,6 +210,159 @@ function stripTagBlocks(html: string, tagNames: ReadonlyArray<string>, preserveN
   return resultParts.join('');
 }
 
+/**
+ * Locate the closing `>` of an HTML tag starting at `startIndex`, correctly skipping
+ * quoted attribute values so that `>` inside `"..."` or `'...'` is not treated as the tag end.
+ * Returns -1 when no closing `>` is found.
+ */
+function findTagEnd(html: string, startIndex: number): number {
+  let quote: '"' | "'" | null = null;
+  for (let i = startIndex + 1; i < html.length; i++) {
+    const ch = html[i];
+    if (quote !== null) {
+      if (ch === quote) quote = null;
+      continue;
+    }
+    if (ch === '"' || ch === "'") {
+      quote = ch;
+      continue;
+    }
+    if (ch === '>') return i;
+  }
+  return -1;
+}
+
+interface ParsedTag {
+  tagEnd: number;
+  tagName: string | null;
+  isClosing: boolean;
+  isSelfClosing: boolean;
+  rawTag: string;
+}
+
+/** Parse the tag starting at `startIndex`; returns null if no `<` is at that position. */
+function parseTagAt(html: string, startIndex: number): ParsedTag | null {
+  if (html[startIndex] !== '<') return null;
+  const tagEnd = findTagEnd(html, startIndex);
+  if (tagEnd === -1) return null;
+
+  const rawTag = html.slice(startIndex, tagEnd + 1);
+  const inner = rawTag.slice(1, -1).trim();
+  // Skip comments, DOCTYPE, and processing instructions.
+  if (inner.length === 0 || inner.startsWith('!') || inner.startsWith('?')) {
+    return { tagEnd, tagName: null, isClosing: false, isSelfClosing: false, rawTag };
+  }
+
+  const isClosing = inner.startsWith('/');
+  const nameSource = isClosing ? inner.slice(1).trimStart() : inner;
+  const nameMatch = /^([a-zA-Z][a-zA-Z0-9:-]*)/.exec(nameSource);
+  const tagName = nameMatch ? nameMatch[1].toLowerCase() : null;
+  const isSelfClosing = !isClosing && /\/\s*>$/.test(rawTag);
+
+  return { tagEnd, tagName, isClosing, isSelfClosing, rawTag };
+}
+
+/** Extract the value of the `lang` attribute from a raw tag string, or null if absent. */
+function getLangAttributeValue(rawTag: string): string | null {
+  // Require `lang` to be a standalone attribute name — preceded by `<` (tag-start) or
+  // whitespace — so attributes like `data-lang` or `xml:lang` are not mistakenly treated
+  // as `lang`.
+  const m = /(?:<|\s)lang\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+))/i.exec(rawTag);
+  return m?.[1] ?? m?.[2] ?? m?.[3] ?? null;
+}
+
+/**
+ * Check whether a `lang` attribute value matches the given language code,
+ * supporting BCP-47 subtags (e.g. `sv-SE` matches `sv`, `sv-FI` matches `sv`).
+ */
+function langMatches(langValue: string | null, langCode: string): boolean {
+  if (!langValue || !langCode) return false;
+  const v = langValue.toLowerCase();
+  const c = langCode.toLowerCase();
+  return v === c || v.startsWith(`${c}-`);
+}
+
+/**
+ * Find the index of the matching closing tag for the element opened at `openingTagStart`.
+ * Uses depth tracking to correctly handle nested elements with the same tag name.
+ * Returns the index of the final `>` of the closing tag, or -1 when not found.
+ */
+function findMatchingTaggedBlockEnd(html: string, openingTagStart: number, tagName: string): number {
+  const opening = parseTagAt(html, openingTagStart);
+  if (!opening) return -1;
+
+  let depth = 1;
+  let i = opening.tagEnd + 1;
+  while (i < html.length) {
+    if (html[i] !== '<') { i++; continue; }
+    const parsed = parseTagAt(html, i);
+    if (!parsed) break;
+
+    if (parsed.tagName === tagName) {
+      if (parsed.isClosing) {
+        depth--;
+        if (depth === 0) return parsed.tagEnd;
+      } else if (!parsed.isSelfClosing) {
+        depth++;
+      }
+    }
+    i = parsed.tagEnd + 1;
+  }
+  return -1;
+}
+
+/**
+ * Strip the inner contents of any HTML element whose `lang` attribute matches `langCode`
+ * (including BCP-47 subtags — `lang="sv-SE"` matches `langCode="sv"`). Uses an index-based
+ * tag scanner with depth tracking so nested elements of the same tag name are handled
+ * correctly, and quoted attribute values containing `>` do not break parsing.
+ *
+ * The full matched block is replaced with whitespace while `\n` characters are preserved
+ * so downstream line numbering stays stable.
+ *
+ * This enables `detectSwedishLeakage` to correctly ignore deliberately quoted Swedish source
+ * material (e.g. verbatim summaries) embedded inside `<span lang="sv">...</span>` wrappers.
+ */
+function stripLangTaggedBlocks(html: string, langCode: string): string {
+  const safeLang = langCode.replace(/[^a-zA-Z0-9-]/g, '').toLowerCase();
+  if (safeLang.length === 0) return html;
+
+  const chars = html.split('');
+
+  let i = 0;
+  while (i < html.length) {
+    if (html[i] !== '<') { i++; continue; }
+
+    const parsed = parseTagAt(html, i);
+    if (!parsed) {
+      // Malformed markup (stray `<` in text, etc.) — skip this character and keep
+      // scanning so later lang-tagged blocks are still stripped.
+      i++;
+      continue;
+    }
+
+    if (
+      !parsed.isClosing &&
+      !parsed.isSelfClosing &&
+      parsed.tagName !== null &&
+      langMatches(getLangAttributeValue(parsed.rawTag), safeLang)
+    ) {
+      const blockEnd = findMatchingTaggedBlockEnd(html, i, parsed.tagName);
+      if (blockEnd !== -1) {
+        for (let j = i; j <= blockEnd; j++) {
+          if (chars[j] !== '\n') chars[j] = ' ';
+        }
+        i = blockEnd + 1;
+        continue;
+      }
+    }
+
+    i = parsed.tagEnd + 1;
+  }
+
+  return chars.join('');
+}
+
 /** Remove all remaining HTML tags using an index-based state machine. */
 function stripAllTags(html: string): string {
   const chunks: string[] = [];
@@ -298,7 +451,16 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
 
   // Strip script/style blocks on the full HTML first so multi-line blocks are
   // removed correctly. Preserve newline count so reported line numbers remain accurate.
-  const cleaned = stripTagBlocks(html, ['script', 'style'], true);
+  let cleaned = stripTagBlocks(html, ['script', 'style'], true);
+
+  // Strip elements explicitly tagged as Swedish content (e.g. `<span lang="sv">...</span>`).
+  // Text inside a `lang="sv"` element is deliberately quoted Swedish source material
+  // (e.g. verbatim summaries from riksdagen.se) and MUST NOT count as translation leakage
+  // in a non-Swedish article. This call is only reached for non-Swedish targets because
+  // `targetLang === 'sv'` short-circuits with an empty report above, so legitimate Swedish
+  // text in Swedish articles is never removed. Replacement preserves '\n' so reported line
+  // numbers stay accurate.
+  cleaned = stripLangTaggedBlocks(cleaned, 'sv');
 
   const lines = cleaned.split('\n');
   const leaked: LeakedTerm[] = [];
@@ -365,7 +527,10 @@ const SHARED_WORDS: Partial<Record<Language, ReadonlySet<string>>> = {
   fr: new Set([]),
   es: new Set([]),
   fi: new Set([]),
-  en: new Set([]),
+  // English shares a very small set of these short common forms with Swedish (e.g. "under"
+  // can appear legitimately in technical or proper-noun contexts). Keep this set narrow
+  // and limited to tokens that are genuinely ambiguous in English prose.
+  en: new Set(['under']),
   ar: new Set([]),
   he: new Set([]),
   ja: new Set([]),
@@ -388,6 +553,13 @@ function isSharedWord(word: string, targetLang: Language): boolean {
  * Includes inflected forms to match the expanded SWEDISH_PARLIAMENTARY_TERMS set.
  */
 const SHARED_PARLIAMENTARY_TERMS: Partial<Record<Language, ReadonlySet<string>>> = {
+  // English political writing about Sweden uses "Riksdag" (and inflections) verbatim —
+  // it has no common English equivalent. Other parliamentary terms (proposition, motion,
+  // interpellation, anförande, statsråd, regering) should still be translated and are
+  // intentionally NOT shared here, consistent with the translation quality gate tests.
+  en: new Set([
+    'riksdag', 'riksdagen', 'riksdagens',
+  ]),
   // Norwegian uses many of the same parliamentary terms as Swedish
   no: new Set([
     'proposition', 'propositionen', 'propositioner', 'propositionerna',

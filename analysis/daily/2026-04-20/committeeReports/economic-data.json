@@ -1,0 +1,63 @@
+{
+  "version": "1.0",
+  "articleType": "committee-reports",
+  "date": "2026-04-20",
+  "policyDomains": [
+    "housing policy",
+    "constitutional law",
+    "civil law",
+    "social welfare"
+  ],
+  "dataPoints": [
+    {
+      "countryCode": "SWE",
+      "countryName": "Sweden",
+      "indicatorId": "NY.GDP.MKTP.KD.ZG",
+      "date": "2024",
+      "value": 0.82
+    },
+    {
+      "countryCode": "DNK",
+      "countryName": "Denmark",
+      "indicatorId": "NY.GDP.MKTP.KD.ZG",
+      "date": "2024",
+      "value": 3.478
+    },
+    {
+      "countryCode": "FIN",
+      "countryName": "Finland",
+      "indicatorId": "NY.GDP.MKTP.KD.ZG",
+      "date": "2024",
+      "value": 0.416
+    },
+    {
+      "countryCode": "NOR",
+      "countryName": "Norway",
+      "indicatorId": "NY.GDP.MKTP.KD.ZG",
+      "date": "2024",
+      "value": 2.097
+    },
+    {
+      "countryCode": "SWE",
+      "countryName": "Sweden",
+      "indicatorId": "NY.GDP.PCAP.CD",
+      "date": "2024",
+      "value": 57117.49
+    },
+    {
+      "countryCode": "SWE",
+      "countryName": "Sweden",
+      "indicatorId": "NY.GDP.MKTP.KD.ZG",
+      "date": "2023",
+      "value": -0.204
+    }
+  ],
+  "commentary": "Sweden's 2024 GDP growth of 0.82% — recovering from a -0.2% contraction in 2023 — provides modest economic tailwinds for the housing market reforms voted in this batch of committee reports. Sweden's rate lags Denmark's 3.5% growth and Norway's 2.1%, underscoring why policy reforms targeting the housing sector carry particular electoral weight: in a slow-growth economy, property wealth represents a disproportionate share of household balance sheets, making anti-fraud housing legislation and market transparency measures politically salient ahead of the September 2026 election.",
+  "source": {
+    "worldBank": [
+      "NY.GDP.MKTP.KD.ZG",
+      "NY.GDP.PCAP.CD"
+    ],
+    "scb": []
+  }
+}
