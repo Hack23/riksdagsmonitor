@@ -367,6 +367,132 @@ describe('MCPClient', () => {
     });
   });
 
+  describe('default server URL resolution (AWF gateway auto-detect)', () => {
+    it('should use MCP_SERVER_URL env var when explicitly set', async () => {
+      const origUrl = process.env['MCP_SERVER_URL'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      process.env['MCP_SERVER_URL'] = 'http://custom.example/mcp/r';
+      delete process.env['MCP_GATEWAY_API_KEY'];
+      delete process.env['GH_AW_MCP_CONFIG'];
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        expect(getDefaultClient().baseURL).toBe('http://custom.example/mcp/r');
+      } finally {
+        if (origUrl !== undefined) process.env['MCP_SERVER_URL'] = origUrl;
+        else delete process.env['MCP_SERVER_URL'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        else delete process.env['MCP_GATEWAY_API_KEY'];
+        await vi.resetModules();
+      }
+    });
+
+    it('should auto-route to gateway URL when MCP_GATEWAY_API_KEY is set and MCP_SERVER_URL is absent', async () => {
+      const origUrl = process.env['MCP_SERVER_URL'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+      delete process.env['MCP_SERVER_URL'];
+      process.env['MCP_GATEWAY_API_KEY'] = 'gw-key-active';
+      delete process.env['GH_AW_MCP_CONFIG'];
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        expect(getDefaultClient().baseURL).toBe('http://host.docker.internal:80/mcp/riksdag-regering');
+      } finally {
+        if (origUrl !== undefined) process.env['MCP_SERVER_URL'] = origUrl;
+        else delete process.env['MCP_SERVER_URL'];
+        if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        else delete process.env['MCP_GATEWAY_API_KEY'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        await vi.resetModules();
+      }
+    });
+
+    it('should auto-route to gateway URL when mcp-config.json has gateway.apiKey (AWF sandbox)', async () => {
+      const origUrl = process.env['MCP_SERVER_URL'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+      delete process.env['MCP_SERVER_URL'];
+      delete process.env['MCP_GATEWAY_API_KEY'];
+      const tmpDir = '/tmp/mcp-url-autodetect-' + Date.now();
+      const fs = await import('fs');
+      fs.mkdirSync(tmpDir, { recursive: true });
+      const configPath = `${tmpDir}/mcp-config.json`;
+      fs.writeFileSync(configPath, JSON.stringify({ gateway: { apiKey: 'k', port: 80, domain: 'host.docker.internal' } }));
+      process.env['GH_AW_MCP_CONFIG'] = configPath;
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        expect(getDefaultClient().baseURL).toBe('http://host.docker.internal:80/mcp/riksdag-regering');
+      } finally {
+        if (origUrl !== undefined) process.env['MCP_SERVER_URL'] = origUrl;
+        else delete process.env['MCP_SERVER_URL'];
+        if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        else delete process.env['MCP_GATEWAY_API_KEY'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        fs.rmSync(tmpDir, { recursive: true, force: true });
+        await vi.resetModules();
+      }
+    });
+
+    it('should auto-route to gateway URL when mcp-config.json has mcpServers riksdag-regering headers Authorization', async () => {
+      const origUrl = process.env['MCP_SERVER_URL'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+      delete process.env['MCP_SERVER_URL'];
+      delete process.env['MCP_GATEWAY_API_KEY'];
+      const tmpDir = '/tmp/mcp-url-rewrite-' + Date.now();
+      const fs = await import('fs');
+      fs.mkdirSync(tmpDir, { recursive: true });
+      const configPath = `${tmpDir}/mcp-config.json`;
+      fs.writeFileSync(configPath, JSON.stringify({
+        mcpServers: { 'riksdag-regering': { headers: { Authorization: 'abc' } } }
+      }));
+      process.env['GH_AW_MCP_CONFIG'] = configPath;
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        expect(getDefaultClient().baseURL).toBe('http://host.docker.internal:80/mcp/riksdag-regering');
+      } finally {
+        if (origUrl !== undefined) process.env['MCP_SERVER_URL'] = origUrl;
+        else delete process.env['MCP_SERVER_URL'];
+        if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        else delete process.env['MCP_GATEWAY_API_KEY'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        fs.rmSync(tmpDir, { recursive: true, force: true });
+        await vi.resetModules();
+      }
+    });
+
+    it('should fall back to direct onrender URL when no gateway indicators are present', async () => {
+      const origUrl = process.env['MCP_SERVER_URL'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+      delete process.env['MCP_SERVER_URL'];
+      delete process.env['MCP_GATEWAY_API_KEY'];
+      process.env['GH_AW_MCP_CONFIG'] = '/tmp/nonexistent-' + Date.now() + '.json';
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        expect(getDefaultClient().baseURL).toBe('https://riksdag-regering-ai.onrender.com/mcp');
+      } finally {
+        if (origUrl !== undefined) process.env['MCP_SERVER_URL'] = origUrl;
+        else delete process.env['MCP_SERVER_URL'];
+        if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        else delete process.env['MCP_GATEWAY_API_KEY'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        await vi.resetModules();
+      }
+    });
+  });
+
   describe('request', () => {
     it('should make successful HTTP request with JSON-RPC 2.0', async () => {
       const mockJsonRpcResponse = { 
