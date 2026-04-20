@@ -477,6 +477,12 @@ fi
 # With --limit 50, documents/ alone can contain 100+ files (50 JSON + 50 analysis.md).
 git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.md 2>/dev/null || true
 git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.json 2>/dev/null || true
+# 🚨 HARD UNSTAGE: NEVER commit analysis/data/ — it is an MCP response cache populated by
+# download-parliamentary-data.ts (6 doc types × ~40 files = 240+ files). It must stay local.
+# Committing it caused E003 "received 258 files" in news-motions run 24653843681 (PR #1867).
+# Only news-realtime-monitor stages analysis/data/ intentionally; this workflow never should.
+# 🚫 DO NOT run `git add analysis/data/...` anywhere in this workflow.
+git reset HEAD -- analysis/data/ 2>/dev/null || true
 # Enforce safe-outputs 100-file PR limit (AWF-safe: no $(...) — write to temp file + read back)
 git diff --cached --name-only > /tmp/staged_files.txt
 awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
