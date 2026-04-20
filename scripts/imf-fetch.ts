@@ -82,7 +82,7 @@ function parseArgs(argv: readonly string[]): ParsedArgs {
   return { command, flags, booleans };
 }
 
-function require_(flags: ReadonlyMap<string, string>, key: string): string {
+function requireFlag(flags: ReadonlyMap<string, string>, key: string): string {
   const v = flags.get(key);
   if (!v) {
     process.stderr.write(`imf-fetch: missing required flag --${key}\n`);
@@ -96,8 +96,8 @@ function require_(flags: ReadonlyMap<string, string>, key: string): string {
 // ---------------------------------------------------------------------------
 
 async function runWeo(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<string>): Promise<void> {
-  const country = require_(flags, 'country').toUpperCase();
-  const indicator = require_(flags, 'indicator');
+  const country = requireFlag(flags, 'country').toUpperCase();
+  const indicator = requireFlag(flags, 'indicator');
   const years = Number.parseInt(flags.get('years') ?? '10', 10);
   if (!Number.isInteger(years) || years < 1) {
     process.stderr.write(`imf-fetch: --years must be a positive integer, got ${flags.get('years')}\n`);
@@ -119,8 +119,8 @@ async function runWeo(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<
 }
 
 async function runCompare(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<string>): Promise<void> {
-  const countriesRaw = require_(flags, 'countries');
-  const indicator = require_(flags, 'indicator');
+  const countriesRaw = requireFlag(flags, 'countries');
+  const indicator = requireFlag(flags, 'indicator');
   const countries = countriesRaw.split(',').map((c) => c.trim().toUpperCase()).filter(Boolean);
   if (countries.length === 0) {
     process.stderr.write('imf-fetch: --countries is empty\n');
@@ -147,7 +147,7 @@ async function runCompare(flags: ReadonlyMap<string, string>, booleans: Readonly
 }
 
 async function runSdmx(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<string>): Promise<void> {
-  const pathWithQuery = require_(flags, 'path');
+  const pathWithQuery = requireFlag(flags, 'path');
   const client = new ImfClient();
   const raw = await client.sdmxFetch(pathWithQuery);
   process.stdout.write(`${JSON.stringify(raw, null, 2)}\n`);

@@ -71,7 +71,7 @@
         "imf": {
           "type": "array",
           "items": { "type": "string" },
-          "description": "IMF database/indicator citation strings (e.g. 'WEO:NGDP_RPCH', 'FM:GGXWDG_NGDP', 'IFS:FIMM_PA'). Populated by the `imf` MCP server or the native `scripts/imf-client.ts` for macro/fiscal/monetary indicators from `data.imf.org` (SDMX 3.0)."
+          "description": "IMF database/indicator citation strings (e.g. 'WEO:NGDP_RPCH', 'FM:GGXWDG_NGDP', 'IFS:FIMM_PA'). Populated by the repository's pure-TypeScript `scripts/imf-client.ts` (imported by build-time scripts and invoked from agentic workflows via the `scripts/imf-fetch.ts` CLI) for macro/fiscal/monetary indicators from `data.imf.org` (Datamapper JSON + SDMX 3.0). No Python MCP."
         }
       }
     },
