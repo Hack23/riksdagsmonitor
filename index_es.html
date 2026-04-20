@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
 <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" href="styles.css">
 <link rel="canonical" href="https://riksdagsmonitor.com/index_es.html">
 <link rel="manifest" href="site.webmanifest">
 <meta name="description" content="Riksdagsmonitor: plataforma de inteligencia de las elecciones suecas 2026. Monitoreo en tiempo real de 349 diputados en 8 partidos, predicciones de coalición, 45 reglas de riesgo y más de 50 años de datos parlamentarios de la plataforma OSINT de Citizen Intelligence Agency (CIA).">
@@ -1272,7 +1272,8 @@ Niveles de rendimiento (ntile_party_tier: 1-4)
   <span aria-hidden="true">↑</span>
 </button>
 
-    <script src="/js/theme-toggle.js" defer></script>
+    <script src="js/back-to-top.js" defer></script>
+<script src="js/theme-toggle.js" defer></script>
     <!-- Main application entry point -->
     <script type="module" src="/src/browser/main.ts"></script>
 </body>

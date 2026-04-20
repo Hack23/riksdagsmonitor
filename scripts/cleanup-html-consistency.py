@@ -42,7 +42,7 @@ from bs4 import BeautifulSoup, Comment, NavigableString, Tag
 # Constants
 # ---------------------------------------------------------------------------
 
-NORMALIZATION_MARKER = "v6"
+NORMALIZATION_MARKER = "v7"
 
 # Language metadata shared with article-template/constants.ts
 LANG_META: dict[str, tuple[str, str, str]] = {
@@ -147,9 +147,12 @@ def build_language_switcher(base_slug: str, current_lang: str,
         active_cls = " active" if code == current_lang else ""
         aria_current = ' aria-current="page"' if code == current_lang else ""
         href = f"{base_slug}-{code}.html"
+        # lang="bcp47" tells screen-readers to use the correct voice for the
+        # native language name (e.g. "العربية", "中文"), independent of the
+        # page's outer <html lang>. hreflang is SEO-only.
         links.append(
             f'    <a href="{href}" class="lang-link{active_cls}"'
-            f' hreflang="{hreflang}"{aria_current}>{flag} {name}</a>'
+            f' hreflang="{hreflang}" lang="{hreflang}"{aria_current}>{flag} {name}</a>'
         )
     inner = "\n".join(links)
     return (
@@ -290,9 +293,42 @@ _INLINE_STYLE_FOOTER_RE = re.compile(
     re.DOTALL | re.IGNORECASE,
 )
 
+# Root-page fixes (PR-A): absolute /js/theme-toggle.js → relative js/theme-toggle.js
+# (root-page relative path — no "../" prefix because root pages sit at repo root).
+_ABS_THEME_TOGGLE_RE = re.compile(
+    r'(<script\b[^>]*\bsrc=["\'])/(js/theme-toggle\.js)(["\'])',
+    re.IGNORECASE,
+)
 
-def _apply_regex_fixes(html: str, *, is_news: bool) -> str:
-    """Apply all regex-level fixes to raw HTML text."""
+# Obsolete HTML5 `type="text/css"` on <link rel="stylesheet"> — harmless
+# but noisy and inconsistent. Strip it (HTML5 makes it the default).
+_OBSOLETE_CSS_TYPE_RE = re.compile(
+    r'(<link\b[^>]*\brel=["\']stylesheet["\'][^>]*)\s+type=["\']text/css["\']',
+    re.IGNORECASE,
+)
+
+# Inject lang="bcp47" on language-switcher <a> tags that are missing it
+# (companion to hreflang). Matches both article (../js/) and root pages
+# (../index_xx.html or index_xx.html).
+_LANG_LINK_MISSING_LANG_RE = re.compile(
+    r'(<a\b[^>]*\bhreflang=["\'])([^"\']+)(["\'](?![^<]*\blang=["\']))',
+    re.IGNORECASE,
+)
+
+
+def _apply_regex_fixes(html: str, *, is_news: bool, js_prefix: str = "../") -> str:
+    """Apply all regex-level fixes to raw HTML text.
+
+    Args:
+        html:       raw HTML source
+        is_news:    True for news articles (adds language-switcher prep);
+                    False for root/dashboard/politician-dashboard pages.
+        js_prefix:  Path prefix for local <script src=…> references.
+                    "../" for pages in a subdirectory (news/, dashboard/),
+                    ""    for root-level pages (index*.html, politician-dashboard*.html).
+                    Only honoured when is_news=False — news articles are
+                    hard-coded to "../js/" by the other regexes.
+    """
 
     # A. Fix back-to-top.ts → ../js/back-to-top.js
     html = _BACK_TO_TOP_TS_RE.sub(
@@ -310,6 +346,25 @@ def _apply_regex_fixes(html: str, *, is_news: bool) -> str:
     # D. Fix absolute /js/lib/ → relative ../js/lib/
     html = _ABS_JS_LIB_RE.sub(r'src="../\1"', html)
 
+    # D2. Root/dashboard-only: /js/theme-toggle.js → <prefix>js/theme-toggle.js
+    # Root pages sit at repo root (prefix=""), dashboard/ at one level below
+    # (prefix="../").
+    if not is_news:
+        html = _ABS_THEME_TOGGLE_RE.sub(
+            lambda m: f'{m.group(1)}{js_prefix}{m.group(2)}{m.group(3)}',
+            html,
+        )
+
+    # D3. Strip obsolete `type="text/css"` from <link rel="stylesheet">.
+    # HTML5 makes `type="text/css"` the default; the attribute is tolerated
+    # but adds noise and makes diffs inconsistent across the corpus.
+    html = _OBSOLETE_CSS_TYPE_RE.sub(r'\1', html)
+
+    # D4. Inject lang="bcp47" on language-switcher <a> tags that only have
+    # hreflang="bcp47". This helps screen-readers pronounce the native
+    # language name (e.g. "العربية") using the correct voice.
+    html = _LANG_LINK_MISSING_LANG_RE.sub(r'\1\2\3 lang="\2"', html)
+
     # E. Add defer to theme-toggle.js if missing
     def _add_defer_to_theme_toggle(m: re.Match[str]) -> str:
         full_tag = m.group(0)
@@ -319,6 +374,29 @@ def _apply_regex_fixes(html: str, *, is_news: bool) -> str:
     html = _THEME_TOGGLE_NO_DEFER_RE.sub(_add_defer_to_theme_toggle, html)
 
     if not is_news:
+        # Root/dashboard/politician-dashboard pages: ensure back-to-top.js
+        # is loaded. Button markup already exists (`<button id="back-to-top">`)
+        # but the script was never loaded on these page types, leaving the
+        # button dead. Inject before theme-toggle.js (if present) so both
+        # land together, else before </body>.
+        if "back-to-top.js" not in html:
+            inject = f'<script src="{js_prefix}js/back-to-top.js" defer></script>'
+            if "theme-toggle.js" in html:
+                html = re.sub(
+                    r'(<script\b[^>]*\bsrc=["\'][^"\']*theme-toggle\.js["\'][^>]*>)',
+                    inject + r'\n\1',
+                    html,
+                    count=1,
+                    flags=re.IGNORECASE,
+                )
+            else:
+                html = re.sub(
+                    r'(</body>)',
+                    inject + r'\n\1',
+                    html,
+                    count=1,
+                    flags=re.IGNORECASE,
+                )
         return html
 
     # E2. Ensure back-to-top.js is present
@@ -546,9 +624,18 @@ def normalize_news_article(
 # Root-page fix (index*.html, dashboard/*.html, politician-dashboard*.html)
 # ---------------------------------------------------------------------------
 
-def normalize_root_page(html: str) -> tuple[str, list[str]]:
-    """Apply only script-ref fixes to root/dashboard pages."""
-    new_html = _apply_regex_fixes(html, is_news=False)
+def normalize_root_page(html: str, filepath: Path) -> tuple[str, list[str]]:
+    """Apply script-ref + a11y fixes to root/dashboard/politician-dashboard pages.
+
+    Dashboard pages live in `dashboard/` so they need `../js/` prefix;
+    root-level pages (index*.html, politician-dashboard*.html) need
+    plain `js/`.
+    """
+    # Determine js prefix from depth relative to repo root.
+    # dashboard/index_sv.html → parent name "dashboard" → "../"
+    # index_sv.html            → parent is repo root       → ""
+    js_prefix = "../" if filepath.parent.name == "dashboard" else ""
+    new_html = _apply_regex_fixes(html, is_news=False, js_prefix=js_prefix)
     changes: list[str] = []
     if new_html != html:
         changes.append("script-refs")
@@ -616,7 +703,7 @@ def main() -> None:
     for filepath in root_files:
         total += 1
         html = filepath.read_text(encoding="utf-8")
-        new_html, changes = normalize_root_page(html)
+        new_html, changes = normalize_root_page(html, filepath)
         if new_html != html:
             filepath.write_text(new_html, encoding="utf-8")
             fixed_root += 1

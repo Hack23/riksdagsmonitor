@@ -20,7 +20,7 @@ import { LANGUAGES, AVAILABLE_IN_TRANSLATIONS, LANGUAGE_FLAGS } from './constant
 import {
   generateLanguageSwitcherNav,
 } from './helpers.js';
-import { PKG_VERSION } from '../shared/version.js';
+import { THEME_INIT_SCRIPT_TAG } from '../shared/theme-init.js';
 import { generateSiteFooter } from '../article-template.js';
 
 export function generateIndexHTML(
@@ -194,8 +194,9 @@ ${generateHreflangTags()}
   <link rel="stylesheet" href="../styles.css">
   ${generateRTLStyles(lang.rtl)}
   
-  <!-- Anti-flash: apply saved theme before first paint -->
-  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
+  <!-- Anti-flash: apply saved theme before first paint. Inlined from
+       js/theme-init.js via scripts/shared/theme-init.ts (single source of truth). -->
+  ${THEME_INIT_SCRIPT_TAG}
 </head>
 <body class="news-page">
   <header class="header-section">

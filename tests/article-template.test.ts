@@ -843,7 +843,20 @@ describe('Article Template', () => {
       // Only the active language should have aria-current
       const matches = html.match(/aria-current="page"/g);
       expect(matches).toHaveLength(1);
-      expect(html).toContain('hreflang="de" aria-current="page"');
+      // hreflang and lang attributes are emitted before aria-current
+      expect(html).toContain('hreflang="de" lang="de" aria-current="page"');
+    });
+
+    it('should add lang="bcp47" to every language link for screen-reader pronunciation', () => {
+      const html = generateArticleLanguageSwitcher('2026-02-10-test', 'en');
+      // Every <a class="lang-link"> must carry both hreflang and lang
+      const linkCount = (html.match(/class="lang-link/g) ?? []).length;
+      const langCount = (html.match(/\blang="[a-z]{2}"/g) ?? []).length;
+      expect(langCount).toBeGreaterThanOrEqual(linkCount);
+      // BCP-47: Norwegian is advertised as nb (not no)
+      expect(html).toContain('hreflang="nb" lang="nb"');
+      // Arabic should carry lang="ar" so SR switches voice for "العربية"
+      expect(html).toMatch(/lang="ar"[^>]*>🇸🇦 العربية/);
     });
 
     it('should use localized aria-label for nav element', () => {

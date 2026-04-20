@@ -43,7 +43,11 @@ export function generateLanguageSwitcherNav(currentLang: string): string {
     const flag: string = LANGUAGE_FLAGS[code] || '🌐';
     const filename: string = code === 'en' ? 'index.html' : `index_${code}.html`;
     const activeClass: string = code === currentLang ? ' active' : '';
-    return `  <a href="${filename}" class="lang-link${activeClass}" hreflang="${code}">${flag} ${data.name}</a>`;
+    // Norwegian files use filename suffix 'no' but must be advertised as 'nb' per BCP-47.
+    const bcp47: string = code === 'no' ? 'nb' : code;
+    // `lang=` ensures screen-readers pronounce the native language name
+    // using the correct voice, independent of the page's <html lang>.
+    return `  <a href="${filename}" class="lang-link${activeClass}" hreflang="${bcp47}" lang="${bcp47}">${flag} ${data.name}</a>`;
   }).join('\n');
   return `<nav class="language-switcher" role="navigation" aria-label="Language selection">\n${links}\n</nav>`;
 }

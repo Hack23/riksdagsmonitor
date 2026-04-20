@@ -29,10 +29,26 @@
 (function () {
   'use strict';
 
+  // Defence-in-depth: reject any data-chart-config whose stringified form
+  // contains a function-literal token. Chart.js configs are pure data
+  // (produced server-side by the TypeScript static-site generator from
+  // typed `DashboardChartConfig` objects) and must never contain
+  // executable strings. This guard keeps us safe if a future generator
+  // regression (or a malicious edit) ever attempts to smuggle code via
+  // JSON attributes — even though `JSON.parse` itself is safe, we refuse
+  // to hand anything suspicious to Chart.js.
+  var FUNC_LITERAL_RE = /\bfunction\s*\(/;
+
   /** Safely parse the JSON blob held by the data-chart-config attribute. */
   function parseConfig(el) {
     var raw = el.getAttribute('data-chart-config');
     if (!raw) return null;
+    if (FUNC_LITERAL_RE.test(raw)) {
+      if (typeof console !== 'undefined' && console.warn) {
+        console.warn('[chart-init] Rejecting data-chart-config containing function literal on', el);
+      }
+      return null;
+    }
     try {
       return JSON.parse(raw);
     } catch (err) {
@@ -41,6 +57,43 @@
       }
       return null;
     }
+  }
+
+  /**
+   * Apply user preferences to a Chart.js config just before instantiation.
+   *
+   * - Honours `prefers-reduced-motion: reduce` by disabling all animations
+   *   (Chart.js animates bars/lines by default, which can trigger vestibular
+   *   issues for motion-sensitive users).
+   *
+   * The original config object is mutated in place; since each config is
+   * parsed from its own attribute, mutation is safe and avoids an extra
+   * deep-clone allocation on every canvas.
+   */
+  function applyUserPreferences(config) {
+    if (!config || typeof config !== 'object') return config;
+    var reduceMotion = false;
+    try {
+      reduceMotion = !!(
+        typeof window !== 'undefined' &&
+        window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      );
+    } catch (_e) {
+      reduceMotion = false;
+    }
+    if (reduceMotion) {
+      config.options = config.options || {};
+      // Disable animation on initial render and on update (hover/tooltips).
+      config.options.animation = false;
+      if (typeof config.options.animations === 'object' && config.options.animations !== null) {
+        config.options.animations = {};
+      }
+      if (typeof config.options.transitions === 'object' && config.options.transitions !== null) {
+        config.options.transitions = {};
+      }
+    }
+    return config;
   }
 
   /**
@@ -79,6 +132,7 @@
 
       var cfg = parseConfig(canvas);
       if (!cfg) continue;
+      cfg = applyUserPreferences(cfg);
 
       try {
         new Chart(canvas.getContext('2d'), cfg);

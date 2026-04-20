@@ -16,6 +16,7 @@ import type { ClassificationLevel } from '../analysis-reader.js';
 import { SITE_TAGLINE, OG_LOCALE_MAP, TYPE_LABELS, ALL_LANG_CODES } from './constants.js';
 import { getStyleClass } from './registry.js';
 import { ARTICLE_TYPE_NAMES } from './types.js';
+import { THEME_INIT_SCRIPT_TAG } from '../shared/theme-init.js';
 import {
   getBreadcrumbName,
   getFooterLabel,
@@ -32,6 +33,7 @@ import {
   generateSiteHeader,
   hreflangCode,
 } from './helpers.js';
+
 
 // ---------------------------------------------------------------------------
 // SEO / Structured Data helpers
@@ -311,8 +313,9 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
   <!-- Main stylesheet — includes all article styles + component/theme imports -->
   <link rel="stylesheet" href="../styles.css">
   
-  <!-- Anti-flash: apply saved theme before first paint -->
-  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
+  <!-- Anti-flash: apply saved theme before first paint. Inlined from
+       js/theme-init.js via scripts/shared/theme-init.ts (single source of truth). -->
+  ${THEME_INIT_SCRIPT_TAG}
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">

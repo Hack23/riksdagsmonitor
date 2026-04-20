@@ -229,7 +229,12 @@ export function generateArticleLanguageSwitcher(baseSlug: string, currentLang: L
     const display = LANG_DISPLAY[l];
     const active: string = l === currentLang ? ' active' : '';
     const ariaCurrent: string = l === currentLang ? ' aria-current="page"' : '';
-    return `    <a href="${baseSlug}-${l}.html" class="lang-link${active}" hreflang="${hreflangCode(l)}"${ariaCurrent}>${display.flag} ${display.name}</a>`;
+    const bcp47: string = hreflangCode(l);
+    // `lang=` on the anchor ensures screen-readers pronounce the native
+    // language name (e.g. "العربية", "中文") using the correct voice,
+    // independent of the page's outer <html lang>.  `hreflang` is for SEO
+    // and does not affect pronunciation.
+    return `    <a href="${baseSlug}-${l}.html" class="lang-link${active}" hreflang="${bcp47}" lang="${bcp47}"${ariaCurrent}>${display.flag} ${display.name}</a>`;
   }).join('\n');
   const ariaLabel: string = LANG_SWITCHER_ARIA_LABELS[currentLang as Language] || LANG_SWITCHER_ARIA_LABELS.en;
   return `  <nav class="language-switcher" role="navigation" aria-label="${ariaLabel}">\n${links}\n  </nav>`;
@@ -471,7 +476,8 @@ ${ALL_LANG_CODES.map(l => {
   const display = LANG_DISPLAY[l];
   const ariaLabel = LANG_ARIA_LABELS[l];
   const href: string = l === 'en' ? '../index.html' : `../index_${l}.html`;
-  return `        <a href="${href}" title="${display.name}" aria-label="${ariaLabel}"><span aria-hidden="true">${display.flag}</span> ${l.toUpperCase()}</a>`;
+  const bcp47: string = hreflangCode(l);
+  return `        <a href="${href}" title="${display.name}" aria-label="${ariaLabel}" lang="${bcp47}"><span aria-hidden="true">${display.flag}</span> ${l.toUpperCase()}</a>`;
 }).join('\n')}
       </div>
     </div>

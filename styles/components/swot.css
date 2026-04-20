@@ -351,3 +351,90 @@ html[data-theme="light"] .news-article .stakeholder-swot-card {
   border-color: #ddd;
 }
 
+
+/* ==================================================
+   SWOT Radar chart (Chart.js) — responsive + a11y fallback
+   ================================================== */
+
+/*
+ * The SWOT radar is a Chart.js canvas (injected via data-chart-config).
+ * On narrow viewports (<480px) the four quadrant labels overlap and the
+ * chart becomes unreadable, so we hide the canvas and reveal the
+ * server-rendered <table> below it.  The quadrant grid (2×2 → 1×4 on
+ * narrow screens) continues to carry the qualitative information.
+ */
+.news-article .swot-radar-wrapper {
+  max-width: 520px;
+  margin: 1.5rem auto 0;
+}
+
+.news-article .swot-radar {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 420px;
+}
+
+/*
+ * The fallback table is marked `.sr-only` by default so sighted users see
+ * only the radar.  When the radar is hidden (narrow viewports, print,
+ * or reduced-motion users whose browsers block the canvas paint), we
+ * promote the table to a visible element so the data is never lost.
+ */
+.news-article .swot-radar-fallback.sr-only {
+  /* sr-only is a shared utility in styles.css — nothing more needed here. */
+}
+
+@media (max-width: 480px) {
+  .news-article .swot-radar-wrapper {
+    display: none;
+  }
+  /* Promote the fallback table to visible on narrow screens. */
+  .news-article .swot-radar-fallback.sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    clip: auto;
+    clip-path: none;
+    overflow: visible;
+    margin: 1rem 0;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: var(--border-radius-sm, 6px);
+    background: var(--badge-bg, #f0f4f8);
+    font-size: 0.9rem;
+    border-collapse: collapse;
+    white-space: normal;
+  }
+  .news-article .swot-radar-fallback.sr-only caption {
+    font-weight: 600;
+    text-align: start;
+    padding: 0.25rem 0 0.5rem;
+  }
+  .news-article .swot-radar-fallback.sr-only th,
+  .news-article .swot-radar-fallback.sr-only td {
+    padding: 0.35rem 0.6rem;
+    text-align: start;
+    border-top: 1px solid var(--border-color, #e6e6e6);
+  }
+  .news-article .swot-radar-fallback.sr-only thead th {
+    border-top: 0;
+    font-weight: 700;
+  }
+}
+
+/*
+ * Print stylesheet: the canvas won't paint (no JS), so always show the
+ * fallback table instead.  Same rule set as narrow viewport.
+ */
+@media print {
+  .news-article .swot-radar-wrapper { display: none; }
+  .news-article .swot-radar-fallback.sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    clip: auto;
+    clip-path: none;
+    overflow: visible;
+    margin: 1rem 0;
+  }
+}
