@@ -211,29 +211,148 @@ function stripTagBlocks(html: string, tagNames: ReadonlyArray<string>, preserveN
 }
 
 /**
- * Strip the inner contents of any HTML element carrying `lang="{langCode}"` (or `lang='{langCode}'`).
- * Replaces the inner text with whitespace while preserving '\n' characters so that line
- * numbering downstream remains stable. Uses a regex with a back-reference to the opening tag
- * name to handle arbitrary element types (span, p, div, blockquote, etc.).
+ * Locate the closing `>` of an HTML tag starting at `startIndex`, correctly skipping
+ * quoted attribute values so that `>` inside `"..."` or `'...'` is not treated as the tag end.
+ * Returns -1 when no closing `>` is found.
+ */
+function findTagEnd(html: string, startIndex: number): number {
+  let quote: '"' | "'" | null = null;
+  for (let i = startIndex + 1; i < html.length; i++) {
+    const ch = html[i];
+    if (quote !== null) {
+      if (ch === quote) quote = null;
+      continue;
+    }
+    if (ch === '"' || ch === "'") {
+      quote = ch;
+      continue;
+    }
+    if (ch === '>') return i;
+  }
+  return -1;
+}
+
+interface ParsedTag {
+  tagEnd: number;
+  tagName: string | null;
+  isClosing: boolean;
+  isSelfClosing: boolean;
+  rawTag: string;
+}
+
+/** Parse the tag starting at `startIndex`; returns null if no `<` is at that position. */
+function parseTagAt(html: string, startIndex: number): ParsedTag | null {
+  if (html[startIndex] !== '<') return null;
+  const tagEnd = findTagEnd(html, startIndex);
+  if (tagEnd === -1) return null;
+
+  const rawTag = html.slice(startIndex, tagEnd + 1);
+  const inner = rawTag.slice(1, -1).trim();
+  // Skip comments, DOCTYPE, and processing instructions.
+  if (inner.length === 0 || inner.startsWith('!') || inner.startsWith('?')) {
+    return { tagEnd, tagName: null, isClosing: false, isSelfClosing: false, rawTag };
+  }
+
+  const isClosing = inner.startsWith('/');
+  const nameSource = isClosing ? inner.slice(1).trimStart() : inner;
+  const nameMatch = /^([a-zA-Z][a-zA-Z0-9]*)/.exec(nameSource);
+  const tagName = nameMatch ? nameMatch[1].toLowerCase() : null;
+  const isSelfClosing = !isClosing && /\/\s*>$/.test(rawTag);
+
+  return { tagEnd, tagName, isClosing, isSelfClosing, rawTag };
+}
+
+/** Extract the value of the `lang` attribute from a raw tag string, or null if absent. */
+function getLangAttributeValue(rawTag: string): string | null {
+  const m = /\blang\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+))/i.exec(rawTag);
+  return m?.[1] ?? m?.[2] ?? m?.[3] ?? null;
+}
+
+/**
+ * Check whether a `lang` attribute value matches the given language code,
+ * supporting BCP-47 subtags (e.g. `sv-SE` matches `sv`, `sv-FI` matches `sv`).
+ */
+function langMatches(langValue: string | null, langCode: string): boolean {
+  if (!langValue || !langCode) return false;
+  const v = langValue.toLowerCase();
+  const c = langCode.toLowerCase();
+  return v === c || v.startsWith(`${c}-`);
+}
+
+/**
+ * Find the index of the matching closing tag for the element opened at `openingTagStart`.
+ * Uses depth tracking to correctly handle nested elements with the same tag name.
+ * Returns the index of the final `>` of the closing tag, or -1 when not found.
+ */
+function findMatchingTaggedBlockEnd(html: string, openingTagStart: number, tagName: string): number {
+  const opening = parseTagAt(html, openingTagStart);
+  if (!opening) return -1;
+
+  let depth = 1;
+  let i = opening.tagEnd + 1;
+  while (i < html.length) {
+    if (html[i] !== '<') { i++; continue; }
+    const parsed = parseTagAt(html, i);
+    if (!parsed) break;
+
+    if (parsed.tagName === tagName) {
+      if (parsed.isClosing) {
+        depth--;
+        if (depth === 0) return parsed.tagEnd;
+      } else if (!parsed.isSelfClosing) {
+        depth++;
+      }
+    }
+    i = parsed.tagEnd + 1;
+  }
+  return -1;
+}
+
+/**
+ * Strip the inner contents of any HTML element whose `lang` attribute matches `langCode`
+ * (including BCP-47 subtags — `lang="sv-SE"` matches `langCode="sv"`). Uses an index-based
+ * tag scanner with depth tracking so nested elements of the same tag name are handled
+ * correctly, and quoted attribute values containing `>` do not break parsing.
+ *
+ * The full matched block is replaced with whitespace while `\n` characters are preserved
+ * so downstream line numbering stays stable.
  *
  * This enables `detectSwedishLeakage` to correctly ignore deliberately quoted Swedish source
  * material (e.g. verbatim summaries) embedded inside `<span lang="sv">...</span>` wrappers.
  */
 function stripLangTaggedBlocks(html: string, langCode: string): string {
-  const safeLang = langCode.replace(/[^a-zA-Z-]/g, '');
+  const safeLang = langCode.replace(/[^a-zA-Z0-9-]/g, '').toLowerCase();
   if (safeLang.length === 0) return html;
-  // Match <TAG ...lang="XX"...>...</TAG> with the closing tag matching the opening tag name.
-  // Non-greedy inner match; multi-line enabled implicitly via [\s\S] character class.
-  const re = new RegExp(
-    `<([a-zA-Z][a-zA-Z0-9]*)(?=\\s)[^>]*\\blang\\s*=\\s*["']${safeLang}["'][^>]*>([\\s\\S]*?)<\\/\\1\\s*>`,
-    'gi'
-  );
-  return html.replace(re, (match) => {
-    // Preserve all newline positions from the entire matched block, including
-    // line breaks that may appear in the opening or closing tags, so downstream
-    // line numbering stays stable.
-    return match.replace(/[^\n]/g, ' ');
-  });
+
+  const chars = html.split('');
+
+  let i = 0;
+  while (i < html.length) {
+    if (html[i] !== '<') { i++; continue; }
+
+    const parsed = parseTagAt(html, i);
+    if (!parsed) break;
+
+    if (
+      !parsed.isClosing &&
+      !parsed.isSelfClosing &&
+      parsed.tagName !== null &&
+      langMatches(getLangAttributeValue(parsed.rawTag), safeLang)
+    ) {
+      const blockEnd = findMatchingTaggedBlockEnd(html, i, parsed.tagName);
+      if (blockEnd !== -1) {
+        for (let j = i; j <= blockEnd; j++) {
+          if (chars[j] !== '\n') chars[j] = ' ';
+        }
+        i = blockEnd + 1;
+        continue;
+      }
+    }
+
+    i = parsed.tagEnd + 1;
+  }
+
+  return chars.join('');
 }
 
 /** Remove all remaining HTML tags using an index-based state machine. */
