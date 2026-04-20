@@ -226,7 +226,7 @@ graph TB
     end
 
     subgraph "📊 Data Pipeline"
-        DATA1["📊 Update CIA CSV Data<br/><i>Nightly 02:30 UTC + manual</i>"]
+        DATA1["📊 Update CIA CSV Data<br/><i>Nightly 03:30 UTC + manual</i>"]
     end
 
     subgraph "📰 Agentic News (12 workflows)"
@@ -354,7 +354,7 @@ flowchart TB
 
     subgraph "📊 CIA Data Pipeline"
         direction TB
-        Schedule1[⏰ Nightly 02:30 UTC] --> CIACsv[📊 Update CIA CSV Data]
+        Schedule1[⏰ Nightly 03:30 UTC] --> CIACsv[📊 Update CIA CSV Data]
         ManualTrig[🖱 Manual dispatch] --> CIACsv
         CIACsv --> CIAPR[🔁 Open PR on changes]
     end
@@ -661,7 +661,7 @@ flowchart TD
 ```mermaid
 flowchart TD
     subgraph "⏰ Triggers"
-        Nightly[📅 Nightly 02:30 UTC] --> Refresh[📊 Update CIA CSV Data]
+        Nightly[📅 Nightly 03:30 UTC] --> Refresh[📊 Update CIA CSV Data]
         Manual[🖱 Manual dispatch<br/><i>optional ref input</i>] --> Refresh
     end
 
@@ -685,7 +685,7 @@ flowchart TD
 ```
 
 **Workflows:**
-- **📊 Update CIA CSV Data** (`update-cia-csv-data.yml`): Nightly at 02:30 UTC and on manual dispatch.
+- **📊 Update CIA CSV Data** (`update-cia-csv-data.yml`): Nightly at 03:30 UTC and on manual dispatch.
   - **Source of truth for *what* to refresh** = the set of CSVs already tracked in this repository under `data/cia/**` and `cia-data/**`. The workflow never introduces new files.
   - **Source of truth for *where* each CSV lives upstream** = a `basename → upstream-path` index built once per run from the GitHub Tree API (`/repos/Hack23/cia/git/trees/<ref>?recursive=1`). This correctly resolves sub-folder CSVs (e.g. `distinct_values/vote_data_party.csv`, `framework-validation/**`, `risk-rule-tests/**`) — the upstream layout is **not** flat. A `<stem>_sample.csv` alias is tried as a fallback for the handful of locally-renamed canonical files (`view_riksdagen_committee_decisions.csv` → upstream `view_riksdagen_committee_decisions_sample.csv`, etc.).
   - **Stats refresh** — after the CSV step, the workflow runs `npx tsx scripts/load-cia-stats.ts` to regenerate `cia-data/production-stats.json` from upstream [`extraction_summary_report.csv`](https://github.com/Hack23/cia/blob/master/service.data.impl/sample-data/extraction_summary_report.csv), then `npx tsx scripts/update-stats-from-cia.ts` to inject the refreshed counts into all 14 `index*.html` language variants.
@@ -916,7 +916,7 @@ flowchart LR
 
 | # | Workflow | File | Trigger | Purpose |
 | --- | --- | --- | --- | --- |
-| 3.1 | 📊 Update CIA CSV Data | `update-cia-csv-data.yml` | Nightly 02:30 UTC, manual dispatch | Refresh every already-tracked `data/cia/**` and `cia-data/**` CSV from upstream `Hack23/cia` sample-data (recursive basename→path index handles sub-folders), refresh `production-stats.json`, inject counts into all 14 `index*.html`; auto-PR on changes |
+| 3.1 | 📊 Update CIA CSV Data | `update-cia-csv-data.yml` | Nightly 03:30 UTC, manual dispatch | Refresh every already-tracked `data/cia/**` and `cia-data/**` CSV from upstream `Hack23/cia` sample-data (recursive basename→path index handles sub-folders), refresh `production-stats.json`, inject counts into all 14 `index*.html`; auto-PR on changes |
 
 ### 🚀 Release & Deployment (3 workflows)
 

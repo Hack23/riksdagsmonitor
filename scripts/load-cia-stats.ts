@@ -308,6 +308,14 @@ function extractStatistics(data: CSVRow[]): StatsData {
 
 /**
  * Check if cached data is fresh.
+ *
+ * Freshness keys off **JSON-embedded metadata** rather than filesystem mtime,
+ * so CI runners (which see a freshly-checked-out file with a brand-new mtime)
+ * don't incorrectly treat a stale committed cache as fresh. Additionally, the
+ * cache is invalidated if its `source_url` doesn't match the URL this process
+ * is configured to fetch — this is what lets the `update-cia-csv-data`
+ * workflow's `CIA_EXTRACTION_SUMMARY_URL` override actually cause a refresh
+ * when pinned to a specific SHA.
  */
 function getCachedData(cacheFile: string, maxAgeHours: number): StatsData | null {
   try {
@@ -315,15 +323,33 @@ function getCachedData(cacheFile: string, maxAgeHours: number): StatsData | null
       return null;
     }
 
-    const fileStats = fs.statSync(cacheFile);
-    const ageHours = (Date.now() - fileStats.mtimeMs) / (1000 * 60 * 60);
+    const data = JSON.parse(fs.readFileSync(cacheFile, 'utf8')) as StatsData;
+
+    // Invalidate if the cached file was generated against a different upstream
+    // URL (e.g. caller set CIA_EXTRACTION_SUMMARY_URL to pin a specific SHA).
+    const cachedSourceUrl = data?.metadata?.source_url;
+    if (cachedSourceUrl && cachedSourceUrl !== CSV_URL) {
+      console.log(
+        `Cache source_url mismatch (cached=${cachedSourceUrl}, expected=${CSV_URL}) — forcing refresh`
+      );
+      return null;
+    }
+
+    // Prefer `metadata.generated_at` for age — it's embedded in the JSON and
+    // survives `git checkout`/`npm ci`/`actions/checkout`, unlike `mtime`.
+    // Fall back to mtime only when the metadata timestamp is missing.
+    const generatedAt = data?.metadata?.generated_at;
+    const generatedMs = generatedAt ? Date.parse(generatedAt) : NaN;
+    const referenceMs = Number.isFinite(generatedMs)
+      ? generatedMs
+      : fs.statSync(cacheFile).mtimeMs;
+    const ageHours = (Date.now() - referenceMs) / (1000 * 60 * 60);
 
     if (ageHours > maxAgeHours) {
       console.log(`Cache expired (${ageHours.toFixed(1)} hours old, max ${maxAgeHours} hours)`);
       return null;
     }
 
-    const data = JSON.parse(fs.readFileSync(cacheFile, 'utf8')) as StatsData;
     console.log(`Using cached data (${ageHours.toFixed(1)} hours old)`);
     return data;
   } catch (err: unknown) {
