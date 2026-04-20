@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-20T07:24:43.978Z",
+  "timestamp": "2026-04-20T15:48:47.531Z",
   "types": [
-    "interpellations"
+    "motions"
   ],
   "languagesGenerated": [
     "en",
@@ -12,12 +12,12 @@
     "sv"
   ],
   "batchSize": "all",
-  "skipExisting": true,
+  "skipExisting": false,
   "generated": 2,
   "errors": 0,
   "articles": [
-    "2026-04-20-interpellation-debates-en.html",
-    "2026-04-20-interpellation-debates-sv.html"
+    "2026-04-20-opposition-motions-en.html",
+    "2026-04-20-opposition-motions-sv.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
