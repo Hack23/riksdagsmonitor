@@ -94,7 +94,7 @@ export const REQUIRED_SECTIONS: ReadonlyArray<RegExp> = [
   /^##[^\n]{0,30}\b(?:Known Limitations|Limitations(?:\s+and Caveats)?)\b/mi,
   // Pass-1 → Pass-2 Improvement Evidence — synonyms: "AI-FIRST Iteration Log",
   // "What Would Strengthen Future Runs".
-  /^##[^\n]{0,30}(?:Pass[-\s]?1\s*[→–\-]+\s*Pass[-\s]?2|AI[-\s]?FIRST Iteration Log|What Would Strengthen(?:\s+Future Runs)?)\b/mi,
+  /^##[^\n]{0,30}(?:Pass[-\s]?1\s*[→–-]+\s*Pass[-\s]?2|AI[-\s]?FIRST Iteration Log|What Would Strengthen(?:\s+Future Runs)?)\b/mi,
   // Recommendations for Doctrine Codification — synonyms: "Recommendations
   // for Codification", "Recommended Upstream Changes", "Lessons for Future".
   /^##[^\n]{0,30}(?:Recommendations for(?:\s+Doctrine)?\s+Codification|Recommended Upstream Changes|Lessons for Future\b[^\n]*)\b/mi,

@@ -774,6 +774,86 @@ fi
 echo ""
 
 # ============================================================================
+# Check 17c (§P1-5): methodology-reflection.md contract validation
+# ----------------------------------------------------------------------------
+# Every `analysis/daily/*/**/methodology-reflection.md` must satisfy the
+# Tier-C §methodology-reflection contract documented in SHARED_PROMPT_PATTERNS.md
+# Row 14 — required sections, byte-floor, confidence labels, sibling cross-
+# reference (Tier-C only), and Upstream Watchpoint Reconciliation table
+# (Tier-C only). Validator: scripts/validate-methodology-reflection.ts
+# ============================================================================
+echo "📋 Check 17c: methodology-reflection.md contract (§P1-5)"
+
+METHOD_REFL_FAILS=0
+if command -v npx >/dev/null 2>&1 && [ -f scripts/validate-methodology-reflection.ts ]; then
+  # Collect every methodology-reflection.md under analysis/daily/ (nullglob-safe).
+  METHOD_FILES=()
+  while IFS= read -r -d '' f; do
+    METHOD_FILES+=("$f")
+  done < <(find analysis/daily -maxdepth 4 -name "methodology-reflection.md" -type f -print0 2>/dev/null)
+
+  if [ "${#METHOD_FILES[@]}" -gt 0 ]; then
+    if ! METHOD_OUTPUT=$(npx tsx scripts/validate-methodology-reflection.ts "${METHOD_FILES[@]}" 2>&1); then
+      # Surface only the failure lines to keep CI log signal-to-noise high.
+      printf '%s\n' "$METHOD_OUTPUT" | grep -E '^❌|^   🔴' || true
+      METHOD_REFL_FAILS=$(printf '%s\n' "$METHOD_OUTPUT" | grep -c '^❌' || true)
+      ERRORS=$((ERRORS + METHOD_REFL_FAILS))
+    fi
+  fi
+fi
+
+if [ "${METHOD_REFL_FAILS:-0}" -eq 0 ]; then
+  echo -e "${GREEN}✅ methodology-reflection.md contract satisfied${NC}"
+else
+  echo -e "${RED}❌ ${METHOD_REFL_FAILS} methodology-reflection.md file(s) failed §P1-5 contract${NC}"
+fi
+echo ""
+
+# ============================================================================
+# Check 17d (§P2-1): MCP Reliability Table in Tier-C data-download-manifest.md
+# ----------------------------------------------------------------------------
+# Every Tier-C data-download-manifest.md must include the canonical MCP
+# Reliability Table (server · tool · calls · successes · retries · failures ·
+# notes). Validator: scripts/validate-mcp-reliability.ts
+#
+# Scope: only Tier-C subfolders (week-ahead, weekly-review, month-ahead,
+# monthly-review, evening-analysis, deep-inspection, realtime-*). Doc-type
+# leaf folders (propositions, motions, …) are out of scope.
+# ============================================================================
+echo "📋 Check 17d: MCP Reliability Table in Tier-C manifests (§P2-1)"
+
+MCP_REL_FAILS=0
+if command -v npx >/dev/null 2>&1 && [ -f scripts/validate-mcp-reliability.ts ]; then
+  MANIFEST_FILES=()
+  while IFS= read -r -d '' f; do
+    parent_dir=$(basename "$(dirname "$f")")
+    case "$parent_dir" in
+      week-ahead|weekly-review|month-ahead|monthly-review|evening-analysis|deep-inspection|realtime-*)
+        MANIFEST_FILES+=("$f")
+        ;;
+    esac
+  done < <(find analysis/daily -maxdepth 4 -name "data-download-manifest.md" -type f -print0 2>/dev/null)
+
+  if [ "${#MANIFEST_FILES[@]}" -gt 0 ]; then
+    if ! MCP_OUTPUT=$(npx tsx scripts/validate-mcp-reliability.ts "${MANIFEST_FILES[@]}" 2>&1); then
+      printf '%s\n' "$MCP_OUTPUT" | grep -E '^❌|^   🔴' || true
+      MCP_REL_FAILS=$(printf '%s\n' "$MCP_OUTPUT" | grep -c '^❌' || true)
+      # §P2-1 is a new contract — surface as a WARNING during the rollout
+      # window until existing exemplars are back-filled in a follow-up PR.
+      # Switch to `ERRORS=$((ERRORS + MCP_REL_FAILS))` once back-fill lands.
+      WARNINGS=$((WARNINGS + MCP_REL_FAILS))
+    fi
+  fi
+fi
+
+if [ "${MCP_REL_FAILS:-0}" -eq 0 ]; then
+  echo -e "${GREEN}✅ MCP Reliability Table present in every Tier-C manifest${NC}"
+else
+  echo -e "${YELLOW}⚠️ ${MCP_REL_FAILS} Tier-C manifest(s) missing/invalid MCP Reliability Table (§P2-1 rollout warning)${NC}"
+fi
+echo ""
+
+# ============================================================================
 # Check 18: Duplicate significance text detection
 # Extracts "Why It Matters" / "What This Means" paragraphs (the <p> immediately
 # following those headings) and flags articles where >50% are identical —

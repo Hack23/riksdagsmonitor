@@ -57,7 +57,11 @@ export function cleanSummaryForDisplay(text: string | null | undefined): string 
   //    guarantees linear-time matching. Delegates the heavy CSS work to
   //    {@link stripRiksdagRawDump}, but catches residual single rules like
   //    `.p436{text-align:center}` that leak into summary fields directly.
-  s = s.replace(/\.[a-z_][a-z0-9_-]{0,80}\{[^{}]{0,400}\}/gi, ' ');
+  //    The `\s*` between selector and `{` handles both the compact shape
+  //    (`.p436{…}`) produced by Riksdag's HTML-to-text extractor and the
+  //    expanded shape (`.page { margin: 0; }`) occasionally present when the
+  //    upstream HTML was pretty-printed.
+  s = s.replace(/\.[a-z_][a-z0-9_-]{0,80}\s*\{[^{}]{0,400}\}/gi, ' ');
 
   // 5. Collapse same-word stutters repeated ≥ 3 times ("Proposition Proposition
   //    Proposition Utr…" → "Proposition Utr…"). Guards against replacing
@@ -90,7 +94,7 @@ export function looksLikeRawDump(text: string | null | undefined): boolean {
   const s = String(text);
   return (
     /^\s*\d{6,}\s+HD\S+\s+\d{4}\/\d{2}\s/.test(s) ||
-    /\.[a-z_][a-z0-9_-]{0,80}\{[^{}]{0,400}\}/i.test(s) ||
+    /\.[a-z_][a-z0-9_-]{0,80}\s*\{[^{}]{0,400}\}/i.test(s) ||
     /#(?:page|id)_\d+\b/i.test(s)
   );
 }

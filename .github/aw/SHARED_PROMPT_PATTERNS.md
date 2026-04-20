@@ -420,6 +420,33 @@ fi
 
 **Reference exemplar for monthly-review**: [`analysis/daily/2026-04-19/monthly-review/`](../../analysis/daily/2026-04-19/monthly-review/) — 14 artifacts, total ≈ 115 KB, all Tier-C files ≥ 10 KB, upstream watchpoint reconciliation covering 16 sibling watchpoints from 30 days + weekly-review + month-ahead.
 
+### 📡 Canonical MCP Reliability Table — MANDATORY in every Tier-C `data-download-manifest.md`
+
+> 🔴 **Added 2026-04-20 (§P2-1)**: Every Tier-C `data-download-manifest.md` MUST include a `## MCP Reliability` section with a canonical row-per-call table. The weekly aggregator job (`analysis/mcp-reliability/WEEK-NN-report.md`, deferred to a follow-up PR) `awk`-parses these tables across all Tier-C runs to compute per-server success-rate trends — so the column order and types are fixed.
+
+**Exact canonical shape** (column order is order-sensitive; header names are case-insensitive):
+
+```markdown
+## MCP Reliability
+
+| MCP Server | Tool | Calls | Successes | Retries | Failures | Notes |
+|------------|------|:-----:|:---------:|:-------:|:--------:|-------|
+| riksdag-regering | search_dokument | 12 | 12 | 0 | 0 | — |
+| riksdag-regering | get_anforande | 8 | 7 | 1 | 0 | 1 × 429 rate-limit |
+| scb | query_table | 3 | 3 | 0 | 0 | — |
+```
+
+**Rules** (enforced by `scripts/validate-mcp-reliability.ts`):
+
+1. Section heading is `## MCP Reliability` (emoji prefix allowed).
+2. Exactly 7 canonical columns in order — extra columns warn but do not fail.
+3. Every numeric cell (Calls / Successes / Retries / Failures) is a non-negative integer.
+4. Per-row arithmetic consistency: `Successes + Failures ≤ Calls` (pending-outcome case `< Calls` is allowed).
+5. At least one row references `riksdag-regering` (the required server for any Riksdag analysis).
+6. `Notes` is free-text; use `—` for the empty state. Record the actual failure cause when `Failures > 0` (e.g. "429 rate-limit", "504 gateway", "schema validation").
+
+Reference exemplar: [`analysis/daily/2026-04-19/month-ahead/data-download-manifest.md`](../../analysis/daily/2026-04-19/month-ahead/data-download-manifest.md) — this exemplar predates the canonical table and will be back-filled in a subsequent PR; new runs MUST include it from day one.
+
 ### 🔍 Depth Anti-Patterns (REJECTED)
 
 - ❌ Monthly-review total package < most-recent weekly-review total package
@@ -429,6 +456,7 @@ fi
 - ❌ `comparative-international.md` without explicit "Sweden innovates / follows / diverges" scorecard
 - ❌ `executive-brief.md` without named-actors table (≥ 5 ministers/party leaders with dok_id evidence)
 - ❌ `executive-brief.md` without 90-day forward vote calendar
+- ❌ `data-download-manifest.md` (Tier-C) without the canonical `## MCP Reliability` table — **§P2-1** hard-fail; run `scripts/validate-mcp-reliability.ts` to verify
 - ❌ `methodology-reflection.md` without **Upstream Watchpoint Reconciliation** table (zero silent drops rule)
 - ❌ Any Tier-C file without at least one cross-reference link to an upstream sibling run
 - ❌ Generic phrases without dok_id evidence ("significant bill", "major opposition move", "electoral implications") — every claim MUST cite a document ID or data source
