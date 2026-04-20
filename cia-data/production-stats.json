@@ -1,49 +1,49 @@
 {
   "metadata": {
-    "source_url": "https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/extraction_summary_report.csv",
-    "last_updated": "2026-02-09 03:42:53.763705",
-    "extraction_time": "2026-02-09 03:42:53.763705",
-    "generated_at": "2026-02-13T17:10:30.545Z",
+    "source_url": "https://raw.githubusercontent.com/Hack23/cia/ec7fd39dc3ae1e2221ea0871388d072db0e9b239/service.data.impl/sample-data/extraction_summary_report.csv",
+    "last_updated": "2026-04-20 00:22:07.168517",
+    "extraction_time": "2026-04-20 00:22:07.168517",
+    "generated_at": "2026-04-20T00:47:54.508Z",
     "version": "1.2.0"
   },
   "counts": {
     "total_persons": 2494,
-    "total_votes": 3529786,
-    "total_documents": 109259,
-    "total_committee_documents": 8740,
-    "total_rule_violations": 2308,
-    "total_against_proposals": 55016,
-    "total_committee_proposals": 58175,
-    "total_document_activities": 374158,
+    "total_votes": 3716922,
+    "total_documents": 109480,
+    "total_committee_documents": 8840,
+    "total_rule_violations": 2317,
+    "total_against_proposals": 56244,
+    "total_committee_proposals": 59070,
+    "total_document_activities": 393991,
     "total_political_parties": 40,
-    "total_assignments": 31411,
-    "total_document_attachments": 155141,
+    "total_assignments": 31443,
+    "total_document_attachments": 162525,
     "total_riksdag_parties": 12,
     "total_governments": 20,
-    "total_government_proposals": 5738,
-    "total_government_roles": 76,
-    "total_government_role_members": 500,
-    "total_member_proposals": 94633,
-    "total_committee_decisions": 58231,
-    "total_committee_member_proposals": 94072,
-    "total_committee_role_members": 19072,
+    "total_government_proposals": 5876,
+    "total_government_roles": 77,
+    "total_government_role_members": 501,
+    "total_member_proposals": 94829,
+    "total_committee_decisions": 59550,
+    "total_committee_member_proposals": 94246,
+    "total_committee_role_members": 19104,
     "total_committee_roles": 153,
     "total_party_members": 2433,
     "total_party_role_members": 301,
     "total_party_summary": 13,
-    "total_politician_documents": 279153,
-    "total_ballot_politician_summaries": 3529786,
-    "total_document_content": 299703
+    "total_politician_documents": 280522,
+    "total_ballot_politician_summaries": 3728716,
+    "total_document_content": 301216
   },
   "tables": {
     "success": [
       {
         "name": "against_proposal_container",
-        "count": 5357
+        "count": 5433
       },
       {
         "name": "against_proposal_data",
-        "count": 55016
+        "count": 56244
       },
       {
         "name": "agency",
@@ -51,7 +51,7 @@
       },
       {
         "name": "application_action_event",
-        "count": 459
+        "count": 788
       },
       {
         "name": "application_configuration",
@@ -59,27 +59,27 @@
       },
       {
         "name": "application_session",
-        "count": 189
+        "count": 363
       },
       {
         "name": "assignment_data",
-        "count": 31411
+        "count": 31443
       },
       {
         "name": "committee_document_data",
-        "count": 8740
+        "count": 8840
       },
       {
         "name": "committee_proposal_component_0",
-        "count": 8740
+        "count": 8840
       },
       {
         "name": "committee_proposal_container",
-        "count": 7959
+        "count": 8054
       },
       {
         "name": "committee_proposal_data",
-        "count": 58175
+        "count": 59070
       },
       {
         "name": "country_element",
@@ -87,7 +87,7 @@
       },
       {
         "name": "databasechangelog",
-        "count": 626
+        "count": 654
       },
       {
         "name": "databasechangeloglock",
@@ -99,67 +99,67 @@
       },
       {
         "name": "document_activity_container",
-        "count": 108283
+        "count": 108504
       },
       {
         "name": "document_activity_data",
-        "count": 374158
+        "count": 393991
       },
       {
         "name": "document_attachment",
-        "count": 155141
+        "count": 162525
       },
       {
         "name": "document_attachment_container",
-        "count": 88762
+        "count": 88884
       },
       {
         "name": "document_content_data",
-        "count": 299703
+        "count": 301216
       },
       {
         "name": "document_data",
-        "count": 109259
+        "count": 109480
       },
       {
         "name": "document_detail_container",
-        "count": 108079
+        "count": 108208
       },
       {
         "name": "document_detail_data",
-        "count": 363145
+        "count": 374532
       },
       {
         "name": "document_element",
-        "count": 313442
+        "count": 316424
       },
       {
         "name": "document_person_reference_co_0",
-        "count": 96512
+        "count": 96633
       },
       {
         "name": "document_person_reference_da_0",
-        "count": 266406
+        "count": 266809
       },
       {
         "name": "document_proposal_container",
-        "count": 98069
+        "count": 98175
       },
       {
         "name": "document_proposal_data",
-        "count": 98069
+        "count": 98175
       },
       {
         "name": "document_reference_container",
-        "count": 56052
+        "count": 56178
       },
       {
         "name": "document_reference_data",
-        "count": 259731
+        "count": 267856
       },
       {
         "name": "document_status_container",
-        "count": 109259
+        "count": 109480
       },
       {
         "name": "encrypted_value",
@@ -171,23 +171,23 @@
       },
       {
         "name": "indicator_element",
-        "count": 30443
+        "count": 30608
       },
       {
         "name": "jv_commit",
-        "count": 4994641
+        "count": 5357852
       },
       {
         "name": "jv_commit_property",
-        "count": 4994641
+        "count": 5351779
       },
       {
         "name": "jv_global_id",
-        "count": 12100696
+        "count": 12580623
       },
       {
         "name": "jv_snapshot",
-        "count": 12193270
+        "count": 12709453
       },
       {
         "name": "language_data",
@@ -231,7 +231,7 @@
       },
       {
         "name": "rule_violation",
-        "count": 2308
+        "count": 2317
       },
       {
         "name": "sweden_political_party",
@@ -243,19 +243,19 @@
       },
       {
         "name": "topics",
-        "count": 30443
+        "count": 30608
       },
       {
         "name": "user_account",
-        "count": 11
+        "count": 21
       },
       {
         "name": "vote_data",
-        "count": 3529786
+        "count": 3716922
       },
       {
         "name": "world_bank_data",
-        "count": 587154
+        "count": 591906
       }
     ],
     "empty": [
