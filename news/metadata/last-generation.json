@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-19T12:28:36.171Z",
+  "timestamp": "2026-04-20T04:53:26.601Z",
   "types": [
-    "breaking"
+    "committee-reports"
   ],
   "languagesGenerated": [
     "en",
@@ -12,10 +12,13 @@
     "sv"
   ],
   "batchSize": "all",
-  "skipExisting": false,
-  "generated": 0,
+  "skipExisting": true,
+  "generated": 2,
   "errors": 0,
-  "articles": [],
+  "articles": [
+    "2026-04-20-committee-reports-en.html",
+    "2026-04-20-committee-reports-sv.html"
+  ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }
