@@ -11,13 +11,22 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--18-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-03-31 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-03-31
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-04-20  
+**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+> **🆕 What changed since last review (v1.2 → v1.3, 2026-04-20):**
+> - Confirmed runtime alignment with **Node.js ≥25** (`engines.node` in `package.json`); Node 26 LTS upgrade window now the imminent transition target.
+> - Locked current EOL/support horizons for the toolchain powering Riksdagsmonitor `v0.8.48`: **TypeScript 6.x**, **Vite 8.x**, **Vitest 4.x**, **ESLint 10.x**, **Cypress 15.x**, **Playwright 1.59.x**, **typedoc 0.28.x**, **happy-dom 20.x**, **knip 6.x**, **ajv 8.x**, **htmlhint 1.9.x**.
+> - Peer-dependency runtime surface (optional to consumers of the npm package): **Chart.js ^4**, **chartjs-plugin-annotation ^3**, **D3 ^7**, **papaparse ^5**.
+> - Added **npm package deprecation policy**: public API contract lives in exported subpaths `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`. Breaking changes require a major SemVer bump, a 2-release deprecation window with `@deprecated` JSDoc, and a migration note in `RELEASE_PROCESS.md`.
+> - Confirmed **SLSA provenance** (`npm publish --provenance`) attestations accompany every published version and are verifiable via `npm provenance verify`.
+> - Aligned with [Hack23 ISMS-PUBLIC Open_Source_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) and [Secure_Development_Policy §6 "Dependency Management"](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md).
 
 ---
 

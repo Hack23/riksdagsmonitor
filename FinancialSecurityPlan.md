@@ -11,13 +11,21 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--12-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-12 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-03-12
+**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-04-20
+
+> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
+> - Refreshed **dual-deployment cost model** for the current architecture: AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) for production; GitHub Pages (`hack23.github.io`) as $0 DR tier; public `riksdagsmonitor` npm package hosted on the npm registry at $0 to Hack23 (provenance attestations included).
+> - Expected monthly infrastructure cost remains **<$500/day financial impact** and typically **well under $50/month steady-state** for the static-site footprint (CloudFront + S3 + Route53 + minimal Lambda@Edge if used).
+> - Security-investment analysis: **$0 incremental cost** — all tooling (GitHub Advanced Security, CodeQL, Dependabot, OpenSSF Scorecard, OpenSSF Best Practices #12069, `step-security/harden-runner`, secret scanning) is included with public-repository GitHub, plus free tiers of SAST/SCA via Actions.
+> - Confirmed **OIDC-only AWS access** (no long-lived access keys held by the org) — reduces credential-compromise insurance exposure and operational toil.
+> - Financial impact classification reconfirmed at **Low (<$500/day)** per [CLASSIFICATION](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md).
+> - Aligned with ISO 27001:2022 A.5.30 (ICT readiness), NIST CSF 2.0 GV.OV (oversight), CIS Controls v8.1 #1 (asset inventory & cost), EU CRA Annex I §(3)(c) (availability).
 
 ---
 

@@ -11,14 +11,22 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--19-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-03-19 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-19
+**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-20 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
+> - Refreshed CRA self-assessment for Riksdagsmonitor `v0.8.48` including the **newly-added public `riksdagsmonitor` npm package distribution channel** (subpath exports `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`, SLSA provenance via `npm publish --provenance`).
+> - Reaffirmed **vulnerability-handling SLAs**: **Critical 24h / High 7d / Medium 30d / Low 90d**, aligned with [Vulnerability_Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) and CRA Annex I §(3)(k).
+> - Mapped current control surface to **CRA Annex I essential requirements**: secure by design (SRI, CSP, HSTS, strict TypeScript), secure by default (no optional insecure modes), authentication & access control (OIDC-only for CI/CD, no end-user accounts on the static site), confidentiality & integrity (SRI + schema validation), availability (dual-region + GitHub Pages DR), minimisation of attack surfaces (static content), auditability (CloudTrail, GitHub audit log, Actions logs), security update mechanism (GitHub releases + `npm update`), known-vulnerability handling (Dependabot + CodeQL + OpenSSF Scorecard), SBOM (generated at release time).
+> - Confirmed **CE-conformity documentation path**: public SECURITY_ARCHITECTURE.md, THREAT_MODEL.md, BCPPlan.md, WORKFLOWS.md, DATA_MODEL.md, and this file form the CRA technical file.
+> - Added **agentic / LLM-component assessment**: agentic workflows are part of the product's security surface; controls listed in SECURITY_ARCHITECTURE.md §Agentic, policy rooted in [AI_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) and [OWASP_LLM_Security_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md).
+> - Compliance anchors: EU CRA (Regulation (EU) 2024/2847), ISO 27001:2022 A.8.8/A.8.28/A.8.29, NIST CSF 2.0 ID.RA/PR.PS/DE.CM/RS.MI, NIS2 Art. 21, GDPR Art. 32.
 
 ---
 

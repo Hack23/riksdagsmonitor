@@ -6,19 +6,27 @@
 
 <p align="center">
   <strong>🏛️ Comprehensive Political Data Architecture for Democratic Transparency</strong><br>
-  <em>🗄️ 50+ Years Historical Data · 19 CIA Products · 14-Language Support</em>
+  <em>🗄️ 50+ Years Historical Data · 15 CIA Data Subsystems · 14-Language Support</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--15-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-15 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-02-15  
+**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-04-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
+> - **Factual correction:** the `cia-data/` tree currently materialises **15 subsystems** (not 19 "products"): `anomaly`, `coalition`, `committee`, `distribution`, `election`, `election-cycle`, `ministry`, `parties`, `party`, `percentile`, `politician`, `pre-election`, `risk`, `seasonal`, `voting`. All headline counts, ToC entries, and inventory tables have been reconciled with the filesystem.
+> - Added documentation of the **npm-package data contract**: typed subpath exports `./cia/*`, `./dashboards/*`, `./shared/*`, `./ui/*` in `package.json` expose TypeScript `.d.ts` surfaces generated from `schemas/` via `generate-types-from-cia-schemas`.
+> - Documented schema governance scripts under `scripts/`: `sync-cia-schemas`, `validate-against-cia-schemas`, `check-cia-schema-updates`, `generate-types-from-cia-schemas` (all Node 25 native TypeScript modules).
+> - Added news-corpus footprint: **2,669 files** under `news/` across 14 languages (EN, SV, DA, NB, DE, ES, FI, FR, HE RTL, AR RTL, JA, KO, NL, ZH). News metadata extracted by `extract-news-metadata` feeds `generate-rss`, `generate-sitemap`, `generate-sitemap-html`, and `generate-news-indexes`.
+> - Validation stack locked: **ajv 8.18.0** (JSON Schema), happy-dom 20.9.0 (DOM test), Vitest 4.1.4 (unit), Cypress 15.14.0 (E2E). All validations invoked in `prebuild` / CI.
+> - Aligned with [Secure_Development_Policy §7 "Data Integrity"](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md), [CLASSIFICATION](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md), ISO 27001:2022 A.5.33/A.8.12, NIST CSF 2.0 PR.DS-1/PR.DS-6/ID.AM-3, CIS Controls v8.1 #3, GDPR Art. 5/32.
 
 ---
 
@@ -52,7 +60,7 @@ This document defines the data model for the Riksdagsmonitor platform, documenti
 
 ## Executive Summary
 
-Riksdagsmonitor maintains a comprehensive data architecture integrating 50+ years of Swedish Parliament data (1971-2026) with 19 intelligence products from the CIA platform. This document defines all data entities, relationships, schemas, pipelines, and integration patterns following Hack23 AB's ISMS standards (ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1).
+Riksdagsmonitor maintains a comprehensive data architecture integrating 50+ years of Swedish Parliament data (1971-2026) with **15 data subsystems** from the CIA platform, surfaced through the `cia-data/` tree in this repository and re-exported as typed subpaths (`./cia/*`, `./dashboards/*`, `./shared/*`, `./ui/*`) in the public `riksdagsmonitor` npm package (SLSA provenance attested). This document defines all data entities, relationships, schemas, pipelines, and integration patterns following Hack23 AB's ISMS standards (ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, GDPR, NIS2).
 
 **Key Statistics:**
 - **2,494 Politicians** (349 current MPs)
@@ -62,13 +70,13 @@ Riksdagsmonitor maintains a comprehensive data architecture integrating 50+ year
 - **15 Committees** with complete assignment tracking
 - **20 Governments** with 76 roles and 500 role members
 - **14 Languages** with full multi-language support
-- **19 CIA Products** with 50+ CSV data files
+- **15 CIA Data Subsystems** materialised under `cia-data/` (anomaly, coalition, committee, distribution, election, election-cycle, ministry, parties, party, percentile, politician, pre-election, risk, seasonal, voting) with 50+ CSV data files
 
 
 ## Table of Contents
 
 1. [Political Entities & Data Dictionary](#1-political-entities--data-dictionary)
-2. [CIA Data Products (19 Products)](#2-cia-data-products-19-products)
+2. [CIA Data Subsystems (15 Subsystems)](#2-cia-data-products-19-products)
 3. [Entity-Relationship Diagrams](#3-entity-relationship-diagrams)
 4. [Data Sources](#4-data-sources)
 5. [Data Schemas & Validation](#5-data-schemas--validation)
@@ -366,7 +374,9 @@ Riksdagsmonitor maintains a comprehensive data architecture integrating 50+ year
 
 ---
 
-## 2. CIA Data Products (19 Products)
+## 2. CIA Data Subsystems (15 Subsystems)
+
+> **Note (v1.1, 2026-04-20):** The prior framing of "19 Products" has been retired. The current repository materialises **15 subsystems** under `cia-data/`, each backed by one or more CSV extracts and (where applicable) a JSON Schema under `schemas/`. The subsystem list below is the canonical, filesystem-verified inventory.
 
 ### 2.1 Intelligence Dashboards (4 Products)
 

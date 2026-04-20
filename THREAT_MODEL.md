@@ -11,14 +11,32 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--15-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-15 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-15  
+**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
+> - Full **STRIDE pass** re-executed over the current architecture of Riksdagsmonitor `v0.8.48`:
+>   - **Spoofing:** GitHub OIDC federation to AWS (no long-lived keys); npm provenance attestations; MCP server TLS + token-scoped auth.
+>   - **Tampering:** SRI on all static assets via `vite-plugin-sri-gen@1.3.2`; Git signed commits; immutable S3 object versioning + CloudFront origin signing; schema-validated CIA data ingestion (`validate-against-cia-schemas`); translation integrity via `validate-translations`.
+>   - **Repudiation:** GitHub audit log + CloudTrail; signed releases; SLSA L3 provenance on npm; Actions run logs retained.
+>   - **Information Disclosure:** Public classification by design, but secrets scanning, CodeQL, Dependabot alerts, and `step-security/harden-runner` guard against accidental exfiltration from build runners.
+>   - **Denial of Service:** CloudFront absorbs L3/L7 volumetrics; WAF rate-limiting; dual-region failover; GitHub Pages DR tier; npm package remains available independently of web tier.
+>   - **Elevation of Privilege:** Least-privilege `permissions:` on every workflow; PR-gated merges; five-layer safe-output validation for agentic workflows; reviewer approval for every agentic-generated PR.
+> - **New threat category — Agentic / LLM-specific:**
+>   - Prompt injection via upstream political-content sources → mitigated by MCP-side input sanitisation, system-prompt hardening, and safe-outputs schema validation.
+>   - Tool-call exfiltration attempts → mitigated by Squid proxy + iptables egress allow-list.
+>   - Model-generated misinformation → mitigated by human-review gate (layer 4 of safe-outputs), source citation enforcement, and the AI FIRST quality principle.
+>   - Covered by [OWASP LLM Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md) and [AI_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md).
+> - **New threat category — Supply-chain on MCP servers:** SBOM checks for `@jarib/pxweb-mcp`, `worldbank-mcp`, and the hosted `riksdag-regering` endpoint; version pinning; OpenSSF Scorecard on dependencies where available.
+> - **Data poisoning on CIA upstream repo:** schema validation + diff review gates on every `update-cia-csv-data.yml` auto-PR.
+> - MITRE ATT&CK references integrated: T1195 (Supply Chain Compromise), T1566 (Phishing — N/A no users), T1078 (Valid Accounts — OIDC-only mitigates), T1486 (Data Encrypted for Impact — immutable backups mitigate), plus ATLAS AML.T0051 (LLM Prompt Injection) and AML.T0053 (LLM Plugin Compromise).
+> - Compliance mapping: ISO 27001:2022 Annex A.5.7/A.8.8/A.8.28, NIST CSF 2.0 ID.RA/DE.AE/RS.AN, CIS Controls v8.1 #16/#18, NIS2 Art. 21, EU CRA Annex I §(3).
 
 ---
 

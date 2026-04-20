@@ -11,14 +11,26 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--20-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-28 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-20  
+**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+> **🆕 What changed since last review (v2.0 → v2.1, 2026-04-20):**
+> - 📦 Release `v0.8.48` published on **npm as `riksdagsmonitor`** with `provenance:true` (SLSA attestations). Public subpath exports: `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`.
+> - 🧠 Runtime baseline tightened to **Node.js ≥25**; toolchain bumped to TypeScript 6.0.3, Vite 8.0.9, Vitest 4.1.4, ESLint 10.2.1, Cypress 15.14.0 (optional), Playwright 1.59.1, typedoc 0.28.19, happy-dom 20.9.0, knip 6.5.0, ajv 8.18.0.
+> - 🗂️ CIA data now spans **15 subsystems** under `cia-data/` (anomaly, coalition, committee, distribution, election, election-cycle, ministry, parties, party, percentile, politician, pre-election, risk, seasonal, voting). Prior "19 products" framing has been retired in favour of subsystem count.
+> - 🌍 Content footprint: **14 languages** (EN, SV, DA, NB (`_no`), DE, ES, FI, FR, HE RTL, AR RTL, JA, KO, NL, ZH) • **2,669 files** under `news/`.
+> - 🤖 GitHub Actions surface: **45 files** total (21 standard `.yml`, 12 agentic `.md` sources, 12 compiled `.lock.yml` siblings). Twelve agentic news workflows orchestrated via the five-layer safe-output security model and egress firewall (Squid + iptables).
+> - 🧩 Copilot ecosystem: **24 custom agents** under `.github/agents/`, **92 skills** under `.github/skills/`, **8 MCP servers** (`riksdag-regering`, `scb`, `world-bank`, `github` insiders, `filesystem`, `memory`, `sequential-thinking`, `playwright`) wired via `.github/copilot-mcp.json`.
+> - ☁️ Production distribution: AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) via OIDC-only deploy; GitHub Pages (`hack23.github.io`) as DR fallback.
+> - 🛡️ Integrity: SRI enabled via `vite-plugin-sri-gen@1.3.2`; all Actions SHA-pinned; `step-security/harden-runner` across workflows; CodeQL, Dependabot, dependency-review, Scorecards, Secret Scanning, OpenSSF Best Practices #12069 active.
+> - 🏷️ Classification confirmed: **Public / Integrity High / Availability High**, RTO 1–4h, RPO 4–24h, Financial Impact Low (<$500/day).
+> - 🔗 Authoritative ISMS root: [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC) — Information_Security_Policy, Secure_Development_Policy, CLASSIFICATION, Threat_Modeling, Change_Management, Vulnerability_Management, Open_Source_Policy, AI_Policy, Access_Control_Policy, Cryptography_Policy, Incident_Response_Plan, Security_Metrics, STYLE_GUIDE.
 
 ---
 

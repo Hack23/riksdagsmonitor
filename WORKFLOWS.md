@@ -11,13 +11,22 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-9.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Updated-2026--03--27-success?style=for-the-badge" alt="Last Updated"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-7.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Updated-2026--04--20-success?style=for-the-badge" alt="Last Updated"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 7.0 | **📅 Last Updated:** 2026-03-27 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-27
+**📋 Document Owner:** CEO | **📄 Version:** 7.1 | **📅 Last Updated:** 2026-04-20 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20
+**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+> **🆕 What changed since last review (v7.0 → v7.1, 2026-04-20):**
+> - **Factual correction:** total workflow-file count under `.github/workflows/` is **45** (not 48). The breakdown is **21 standard `.yml` workflows + 12 agentic Markdown sources (`.md`) + 12 compiled `.lock.yml` siblings**. All inventory tables and narrative text below have been re-conciled with `ls .github/workflows/`.
+> - Added previously unlisted workflows: **`agentics-maintenance.yml`** (agent platform hygiene, scheduled maintenance of agentic environment) and **`economic-context-audit.yml`** (periodic audit of economic-context data joins used by news agentic workflows).
+> - Realigned categorisation: `compile-agentic-workflows.yml` is a standard `.yml` **build tool**, not an agentic workflow — moved into the "Automation & Tooling" category.
+> - Reconfirmed that the **five-layer safe-output security model** and **egress firewall (Squid proxy + iptables allow-list)** wrap every `news-*` agentic workflow, per [gh-aw-safe-outputs](.github/skills/gh-aw-safe-outputs/) and [gh-aw-firewall](.github/skills/gh-aw-firewall/) skills.
+> - All `uses:` references remain SHA-pinned; `step-security/harden-runner` is applied across all workflows; deployment uses **AWS OIDC only** (no long-lived secrets) via `id-token: write`.
+> - Added explicit ISMS control mapping to [Secure_Development_Policy §10](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md), ISO 27001:2022 Annex A.5.30/A.8.8/A.8.28/A.8.30, NIST CSF 2.0 GV.SC/PR.PS/DE.CM/RS.AN, CIS Controls v8.1 #4/#16, and [AI_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) for agentic workloads.
 
 ---
 
@@ -888,7 +897,9 @@ flowchart LR
 
 ---
 
-## 🔧 Complete Workflow Inventory (48 Files)
+## 🔧 Complete Workflow Inventory (45 Files — 21 standard `.yml` + 12 agentic `.md` + 12 compiled `.lock.yml`)
+
+> **Verification:** `ls .github/workflows/` yields 45 entries. This matches 21 standard workflow files + 12 agentic Markdown sources + 12 corresponding compiled lock files. Badges and PR checks are driven by the 21 standard `.yml` plus the 12 compiled `.lock.yml` (GitHub Actions only executes the compiled artifacts).
 
 ### 🔐 Security & Compliance (5 workflows)
 
@@ -926,7 +937,9 @@ flowchart LR
 | 4.2 | ☁️ Deploy to S3 | `deploy-s3.yml` | Push to main | AWS S3/CloudFront |
 | 4.3 | 🔆 Lighthouse CI | `lighthouse-ci.yml` | Push/PR, weekly | Performance audit |
 
-### 🤖 Agentic Workflows (12 workflows × 2 files each + 1 compiler = 25 files)
+### 🤖 Agentic Workflows (12 workflows × 2 files each = 24 files)
+
+> Each agentic workflow is authored as a Markdown source (`.md`) and **compiled** to a hardened GitHub Actions workflow (`.lock.yml`) via `compile-agentic-workflows.yml`. Only the `.lock.yml` executes on the runner; the `.md` is the source of truth, reviewed in PRs. Both files are SHA-pinned, run behind the Squid/iptables egress firewall, and route all write-side effects through the five-layer **safe-outputs** validator (sanitisation → schema-validate → policy-check → human-review → merge).
 
 | # | Workflow | Source | Lock | Purpose |
 | --- | --- | --- | --- | --- |
@@ -941,8 +954,20 @@ flowchart LR
 | 5.9 | 📅 News Month Ahead | `news-month-ahead.md` | `news-month-ahead.lock.yml` | Upcoming month preview |
 | 5.10 | 🏛️ News Propositions | `news-propositions.md` | `news-propositions.lock.yml` | Government proposition coverage |
 | 5.11 | ❓ News Interpellations | `news-interpellations.md` | `news-interpellations.lock.yml` | Interpellation debate tracking |
-| 5.12 | 🌍 News Translate | `news-translate.md` | `news-translate.lock.yml` | Multi-language translation |
-| 5.13 | 🔧 Compile Agentic Workflows | `compile-agentic-workflows.yml` | — | Compile .md → .lock.yml |
+| 5.12 | 🌍 News Translate | `news-translate.md` | `news-translate.lock.yml` | Multi-language translation across 14 locales |
+
+### 🛠️ Automation & Tooling (2 workflows)
+
+| # | Workflow | File | Trigger | Purpose |
+| --- | --- | --- | --- | --- |
+| 5.13 | 🔧 Compile Agentic Workflows | `compile-agentic-workflows.yml` | Push/PR touching `news-*.md`, manual | Compile `.md` sources → `.lock.yml` via `gh-aw` compiler; enforces firewall + safe-outputs + SHA-pinning policy |
+| 5.14 | 🧹 Agentics Maintenance | `agentics-maintenance.yml` | Scheduled + manual | Scheduled hygiene of agentic environment: stale branch cleanup, secret rotation hooks, runtime-cache eviction, agent-config validation |
+
+### 📊 Data Integrity Audit (1 workflow)
+
+| # | Workflow | File | Trigger | Purpose |
+| --- | --- | --- | --- | --- |
+| 6.0 | 📈 Economic Context Audit | `economic-context-audit.yml` | Scheduled | Periodic audit of macroeconomic joins (SCB + World Bank data) used by news agentic workflows to avoid stale/incorrect economic framing in generated articles |
 
 ### 📡 Monitoring & Infrastructure (2 workflows)
 

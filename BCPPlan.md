@@ -11,14 +11,22 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--08-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-10 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-10  
+**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
 **📌 Classification:** Public
+
+> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
+> - Reaffirmed **RTO 1–4h / RPO 4–24h** in line with the Public / Integrity High / Availability High classification for Riksdagsmonitor `v0.8.48`.
+> - Documented **multi-region AWS failover** (us-east-1 primary → eu-west-1 replica via S3 cross-region replication and CloudFront origin failover) and **GitHub Pages (`hack23.github.io`) as tertiary DR** — cost of DR tier 3 is $0.
+> - Added RCA section template aligned with **Data-Poisoning incident playbook** (schema-validation drift, agentic safe-output bypass attempt, CIA source repo compromise) — mapped to [Incident_Response_Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md) and [Threat_Modeling](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md).
+> - Single-person-company adaptations explicitly recorded: CEO is sole incident commander; on-call via GitHub Mobile notifications + email; key-person risk mitigated by full automation, provenance attestations, and public ISMS transparency.
+> - Added **npm package BC**: even if the web tier is unavailable, the published `riksdagsmonitor` npm package remains downloadable from the public npm registry and mirrored on `unpkg` / `jsDelivr`.
+> - Compliance mapping: ISO 27001:2022 A.5.29/A.5.30, NIST CSF 2.0 RC.RP/RC.CO/RC.IM, CIS Controls v8.1 #11, NIS2 Art. 21(2)(c), EU CRA Annex I §(3)(c).
 
 ---
 

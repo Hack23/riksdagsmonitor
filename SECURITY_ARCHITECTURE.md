@@ -11,15 +11,28 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--20-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
   <a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-20 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-02-20  
+**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-04-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+> **🆕 What changed since last review (v2.0 → v2.1, 2026-04-20):**
+> - Refreshed **defense-in-depth layer inventory** for Riksdagsmonitor `v0.8.48`:
+>   - **Edge:** AWS CloudFront + WAF, TLS 1.3 preferred (1.2 min), HSTS, dual-region (us-east-1 primary, eu-west-1 replica).
+>   - **Content Integrity:** Subresource Integrity via `vite-plugin-sri-gen@1.3.2`, strict Content-Security-Policy, immutable content hashing.
+>   - **Code:** CodeQL (javascript-typescript), ESLint 10.2.1, htmlhint 1.9.2, TypeScript 6.0.3 strict mode, secret scanning, knip 6.5.0 dead-code detection.
+>   - **Supply chain:** Dependabot, `actions/dependency-review-action`, OpenSSF Scorecard, **npm publish with `--provenance` (SLSA attestations)**, SHA-pinning on every `uses:` reference.
+>   - **Pipeline:** `step-security/harden-runner` with egress audit, AWS OIDC (no long-lived keys), least-privilege `permissions:` per workflow, SLSA Build L3 via GitHub-hosted runners.
+>   - **Agentic workloads (new category):** 12 agentic news workflows wrapped in the **five-layer safe-outputs** validator (sanitisation → schema-validate → policy-check → human-review → merge) behind a **Squid proxy + iptables egress firewall** (allow-list only to riksdagen.se, regeringen.se, scb.se, worldbank.org, github.com, MCP endpoints).
+> - Added **MCP security posture**: 8 MCP servers defined in `.github/copilot-mcp.json` — `riksdag-regering` (HTTPS `riksdag-regering-ai.onrender.com/mcp`), `scb` (local `@jarib/pxweb-mcp@2.0.0` → `api.scb.se/OV0104/v2beta`), `world-bank` (local `worldbank-mcp@1.0.1`), `github` (HTTPS `api.githubcopilot.com/mcp/insiders`), `filesystem`, `memory`, `sequential-thinking`, `playwright` (headless).
+> - Added **24 Copilot agents** (`.github/agents/`) and **92 skills** (`.github/skills/`) under security review; each agent's tool allow-list is explicit and audited.
+> - OpenSSF Best Practices project #12069 confirmed active; Scorecard badge present.
+> - Compliance mapping reconfirmed: ISO 27001:2022 Annex A.5/A.8 (full), NIST CSF 2.0 GV/ID/PR/DE/RS/RC, CIS Controls v8.1 (#1–#18 applicable subset), GDPR Art. 32, NIS2 Art. 21, EU CRA Annex I.
 
 ---
 
