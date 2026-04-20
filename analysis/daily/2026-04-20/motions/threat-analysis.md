@@ -16,7 +16,7 @@
 
 The April 14–17 opposition-motions wave does not represent a constitutional or security threat — it constitutes **healthy democratic opposition exercising accountability functions**. The threat dimensions below are **strategic threats to narrative control** (who wins the 2026 campaign), **governance threats to policy coherence** (climate-fiscal contradiction), and **institutional-integrity threats** (disinformation, coordinated inauthentic behaviour around immigration narratives).
 
-**Five substantive threat lines** merit monitoring, mapped across four complementary frameworks:
+**Six substantive threat lines** merit monitoring, mapped across four complementary frameworks:
 
 1. **T1 Electoral Polarisation** [MEDIUM] — opposition framing becomes effective, fragments political centre
 2. **T2 Climate-Fiscal Contradiction** [MEDIUM] — government exposed on coherence

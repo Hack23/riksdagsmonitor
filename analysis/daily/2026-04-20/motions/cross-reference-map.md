@@ -13,12 +13,13 @@
 | prop. 2025/26:229 | En ny mottagandelag | HD024076, HD024080, HD024087, HD024089 | V, S, MP, C | SfU |
 | prop. 2025/26:235 | Skärpta regler om utvisning på grund av brott | HD024090, HD024095, HD024097 | V, C, MP | SfU |
 | prop. 2025/26:215 | Tidsbegränsat boende för vissa nyanlända invandrare | HD024077, HD024079, HD024086 | V, S, MP | AU |
-| prop. 2025/26:236 | Extra ändringsbudget – Sänkt skatt på drivmedel | HD024082, HD024092, HD024098 | S, V, MP | FiU |
+| prop. 2025/26:236 | Extra ändringsbudget – Sänkt skatt på drivmedel | HD024082, HD024098 | S, MP | FiU |
 | prop. 2025/26:222 | Ersättningsregler med brottsoffret i fokus | HD024078, HD024084, HD024085 | S, V, MP | CU |
 | prop. 2025/26:216 | Stärkt medicinsk kompetens i kommunal hälso- och sjukvård | HD024081, HD024083, HD024094 | S, V, C | SoU |
 | prop. 2025/26:228 | Ett modernt och anpassat regelverk för krigsmateriel | HD024091, HD024096 | V, MP | UU |
 | prop. 2025/26:223 | En ny konsumentkreditlag | HD024088 | C | CU |
-| skr. 2025/26:226 | Riksrevisionens rapport om Sidas humanitära bistånd | HD024070, HD024072 | C, MP | UU |
+
+> **Scope note**: The table above is restricted to the canonical 21-motion April 14–17 opposition set filed against government propositions. Related parliamentary items (e.g., skr. 2025/26:226 on Sida humanitarian aid and its follow-on motions HD024070 / HD024072) fall outside this dossier's scope and are tracked in a separate skrivelse analysis.
 
 ---
 
@@ -72,18 +73,17 @@ graph LR
     subgraph ThreeParties["3 Opposition Parties"]
         P235[prop. 2025/26:235<br/>Deportation<br/>V+C+MP]
         P215[prop. 2025/26:215<br/>Housing<br/>V+S+MP]
-        P236[prop. 2025/26:236<br/>Fuel Tax<br/>S+V+MP]
         P222[prop. 2025/26:222<br/>Crime Victims<br/>S+V+MP]
         P216[prop. 2025/26:216<br/>Healthcare<br/>S+V+C]
     end
 
     subgraph TwoParties["2 Opposition Parties"]
         P228[prop. 2025/26:228<br/>Arms Export<br/>V+MP]
+        P236[prop. 2025/26:236<br/>Fuel Tax<br/>S+MP]
     end
 
     subgraph OneParty["Single Party"]
         P223[prop. 2025/26:223<br/>Consumer Credit<br/>C only]
-        SKR226[skr. 2025/26:226<br/>Sida Aid Report<br/>MP+C on skrivelse]
     end
 
     style AllFour fill:#ff4757,color:#fff

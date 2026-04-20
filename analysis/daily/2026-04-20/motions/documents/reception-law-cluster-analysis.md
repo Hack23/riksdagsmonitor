@@ -29,7 +29,7 @@ Proposition 2025/26:229 (*En ny mottagandelag*) is the Tidö government's flagsh
 
 The four counter-motions each attack a **different weak point** of this law while keeping a unified headline ("wrong reform, wrong time"). That is what makes the coordination analytically significant: it is not an echo chamber; it is a **deliberate division of labour** in which each party occupies the rhetorical space closest to its voter base. The result is maximum electoral coverage without intraparty cannibalisation.
 
-> **Analyst framing `[HIGH]`**: This is a *coalition-rehearsal* motion cluster. The parties are testing whether a common opposition front can hold on the dominant 2026 campaign issue without fracturing on substantive policy differences (V's total rejection vs. C's proportionality test). If the front holds through chamber vote (expected June 2026), post-election coalition maths change materially.
+> **Analyst framing `[HIGH]`**: This is primarily a *campaign-narrative construction* cluster. The parties are building a broad, electorally legible anti-Tidö story on the dominant 2026 migration issue while preserving differentiated messages for their own voter coalitions (V's total rejection vs. C's proportionality test). A secondary hypothesis is that the cluster also functions as a limited *coalition-rehearsal* exercise: if the common line holds through chamber vote (expected June 2026), it modestly strengthens the case that a shared opposition front can be sustained after the election. Readers should treat coalition-rehearsal as contingent inference, not as the dominant operational logic.
 
 ---
 

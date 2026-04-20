@@ -60,7 +60,7 @@ The EU Pact (Regulation 2024/1347 Asylum Procedures + 2024/1348 Reception Condit
 | 🇳🇴 Norway | Administrative with UNE review | Mixed | Moderate | 4 |
 | 🇩🇰 Denmark | Statutory — Udlændingeloven §26 | Statutory | Moderate — more restrictive than ECHR minimums | 5 (highest Nordic) |
 | 🇨🇭 Switzerland | Statutory — AuG Art. 63 with criterion catalogue | Statutory | Strong | 2 |
-| 🇬🇧 United Kingdom | Statutory — Immigration Act 2014 s.117C (structured proportionality) | Statutory | Contested — frequent adverse | 7 (pre-Brexit figure; post-Brexit UK no longer under ECtHR jurisdiction for new violations) |
+| 🇬🇧 United Kingdom | Statutory — Immigration Act 2014 s.117C (structured proportionality) | Statutory | Contested — frequent adverse | 7 (pre-Brexit figure; UK remains under ECtHR jurisdiction post-Brexit, so this baseline is still analytically applicable) |
 
 > **Comparative insight `[HIGH]`**: The **statutory proportionality test is the modal European approach**. Germany, Netherlands, Denmark, Switzerland, UK, and Belgium all codify deportation-proportionality criteria in legislation, not administrative guidance. **C's HD024095 therefore converges with the European statutory mainstream** — framing it as a leftist or liberal outlier would be factually incorrect. It is a rule-of-law convergence proposal.
 

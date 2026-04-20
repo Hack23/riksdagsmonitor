@@ -3,12 +3,12 @@
 | Field | Value |
 |-------|-------|
 | **Cluster ID** | FUEL-CLUSTER-2026-04-15-17 |
-| **Member motions** | HD024082 (S), HD024098 (MP) (HD024092 listed in cross-reference map but absent from filing index — see §Data caveat) |
+| **Member motions** | HD024082 (S), HD024098 (MP) |
 | **Target proposition** | prop. 2025/26:236 — *Extra ändringsbudget: Sänkt skatt på drivmedel* |
 | **Committee** | Finansutskottet (FiU) |
 | **Filing dates** | 2026-04-15 (S) · 2026-04-17 (MP) |
-| **Raw Significance** | 8/10 (climate-fiscal contradiction) |
-| **DIW Weighted Significance** | **8.20** (×1.03 — climate-infrastructure dimension raises weighting) |
+| **Raw Significance** | 8.3/10 (climate-fiscal contradiction) |
+| **DIW Weighted Significance** | **8.20** (8.3 ×0.99 — fiscal/climate axis retains near-full weight; per canonical DIW v1.0 table in `significance-scoring.md`) |
 | **Depth Tier** | **L2** (P2 — sectoral policy) |
 | **Role in dossier** | 🥉 **SECONDARY** story with electoral-narrative importance |
 
@@ -36,7 +36,7 @@ These two frames are **substitutable, not competitive**: a reader who rejects th
 | **HD024082** | **S** | Mikael Damberg | Fiscal responsibility — "ineffective spending; return with better proposal" | Distributional — "tax cut disproportionately benefits higher incomes with larger vehicles" | Centre-left; suburban S voters |
 | **HD024098** | **MP** | Janine Alm Ericson | Climate coherence — "increases emissions; violates Paris and Climate Act trajectory" | Intergenerational — "shifts costs to future taxpayers via climate penalty" | Urban-green MP voters; young voters |
 
-**Data caveat `[MEDIUM]`**: The cross-reference map (`cross-reference-map.md`) lists HD024092 as a V motion on prop. 2025/26:236. However, the data-download-manifest and classification-results list only HD024082 (S) and HD024098 (MP) for fuel tax. This analysis conservatively treats the cluster as two-party; if HD024092 is confirmed as a V counter-motion in subsequent MCP fetches, it would elevate the cluster to a triple-party opposition and the DIW weighting to ≈ 8.55.
+**Data note `[HIGH]`**: An earlier draft of this dossier's `cross-reference-map.md` listed HD024092 as a third fuel-tax counter-motion. That reference was reconciled against the canonical filing index in `classification-results.md` and `data-download-manifest.md` (both of which list only HD024082 and HD024098), and removed. The cluster is definitively two-party (S + MP); arguments in this analysis that depend on cluster size are written to the two-party baseline.
 
 ---
 

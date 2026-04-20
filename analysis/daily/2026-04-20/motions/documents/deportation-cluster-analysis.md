@@ -8,7 +8,7 @@
 | **Committee** | Socialförsäkringsutskottet (SfU) |
 | **Filing dates** | All 2026-04-16 (same-day triple filing) |
 | **Raw Significance** | 9/10 (triple-party opposition, constitutional proportionality stakes) |
-| **DIW Weighted Significance** | **8.70** (×0.97 — rights/constitutional dimension raises weighting) |
+| **DIW Weighted Significance** | **8.80** (9.0 ×0.98 — electoral-definitional axis per canonical DIW v1.0 table in `significance-scoring.md`) |
 | **Depth Tier** | **L2+** (P1 policy with ECHR/proportionality stakes) |
 | **Role in dossier** | 🥈 **CO-LEAD** story |
 | **Confidence on lead framing** | 🟩 HIGH |
@@ -120,7 +120,7 @@ The government will argue that prop. 2025/26:235 is compatible with ECHR Article
 |-----------|--------|----------|------|
 | **Lagrådet yttrande on 2025/26:235** | Any reference to "proportionalitet" or "systematiska upprepade" | Q2 2026 | DR5 |
 | **S follow-on motion** | S files motion on follow-on deportation legislation | 2026–2027 | DR2 |
-| **C leader interview on HD024095** | Lööf / Paarup-Petersen media appearance | Weekly from April 2026 | DR4 |
+| **C leader interview on HD024095** | C party leader / Paarup-Petersen media appearance | Weekly from April 2026 | DR4 |
 | **SD ad campaign** | Content analysis of SD social ads for "V defends criminals" framing | Ongoing | DR3 |
 | **Administrative Court case filings** | Volume of deportation-order challenges post-adoption | Monthly 2027+ | DR1, DR6 |
 

@@ -182,7 +182,7 @@ When the dossier covers multiple policy clusters (here: immigration, climate/fis
 "S, V, MP, and C simultaneously file counter-motions to three immigration propositions amid Sweden's 8.69% unemployment, with fuel tax and arms export also contested in 21-motion opposition wave."
 
 **Meta Description (SV)**:
-"S, V, MP och C lämnar samordnade motioner mot tre invandringspropositoner medan Socialdemokraterna också utmanar bränsleskattebedrägerierna inför 2026 års val."
+"S, V, MP och C lämnar samordnade motioner mot tre invandringspropositioner medan Socialdemokraterna också utmanar regeringens sänkning av bränsleskatten inför 2026 års val."
 
 ---
 

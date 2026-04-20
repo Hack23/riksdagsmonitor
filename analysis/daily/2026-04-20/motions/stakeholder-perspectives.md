@@ -62,7 +62,7 @@ This analysis provides deep stakeholder perspective assessments for the 21 oppos
 - HD024087 frames reception law as EU compliance issue — international legitimacy argument
 
 **Centerpartiet (C)** — 4 motions (HD024088/89/94/95):
-- Annie Lööf's C is the most strategically positioned — constructive on healthcare (HD024094), moderate on deportation (HD024095), protective on consumer finance (HD024088)
+- Centerpartiet is the most strategically positioned — constructive on healthcare (HD024094), moderate on deportation (HD024095), protective on consumer finance (HD024088)
 - C's unique position on deportation (partial acceptance with proportionality requirements) is the most legally sophisticated opposition motion
 
 **Confidence**: 🟩 HIGH
