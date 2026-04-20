@@ -1,12 +1,12 @@
 {
-  "2026-04-20-government-propositions-en.html": {
-    "filename": "2026-04-20-government-propositions-en.html",
+  "2026-04-20-interpellation-debates-en.html": {
+    "filename": "2026-04-20-interpellation-debates-en.html",
     "lang": "en",
-    "articleType": "propositions",
-    "score": 91,
+    "articleType": "interpellations",
+    "score": 75,
     "passed": true,
     "multidimensional": {
-      "overallScore": 91,
+      "overallScore": 75,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
@@ -15,20 +15,20 @@
         "analyticalDepth": 80,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
-        "languageQuality": 100
+        "languageQuality": 0
       },
       "issueCount": 3
     },
-    "timestamp": "2026-04-20T06:30:25.342Z"
+    "timestamp": "2026-04-20T07:24:47.319Z"
   },
-  "2026-04-20-government-propositions-sv.html": {
-    "filename": "2026-04-20-government-propositions-sv.html",
+  "2026-04-20-interpellation-debates-sv.html": {
+    "filename": "2026-04-20-interpellation-debates-sv.html",
     "lang": "sv",
-    "articleType": "propositions",
-    "score": 91,
+    "articleType": "interpellations",
+    "score": 90,
     "passed": true,
     "multidimensional": {
-      "overallScore": 91,
+      "overallScore": 90,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
@@ -41,6 +41,6 @@
       },
       "issueCount": 2
     },
-    "timestamp": "2026-04-20T06:30:25.348Z"
+    "timestamp": "2026-04-20T07:24:47.328Z"
   }
 }
