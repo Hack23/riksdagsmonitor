@@ -36,20 +36,20 @@ function buildCompleteArticle(slug: string): string {
 <head><title>Test</title></head>
 <body>
   <nav class="language-switcher" role="navigation" aria-label="Language versions">
-    <a href="${slug}-en.html" class="lang-link active" hreflang="en" aria-current="page">🇬🇧 English</a>
-    <a href="${slug}-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
-    <a href="${slug}-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
-    <a href="${slug}-no.html" class="lang-link" hreflang="nb">🇳🇴 Norsk</a>
-    <a href="${slug}-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
-    <a href="${slug}-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
-    <a href="${slug}-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
-    <a href="${slug}-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
-    <a href="${slug}-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
-    <a href="${slug}-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
-    <a href="${slug}-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
-    <a href="${slug}-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
-    <a href="${slug}-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
-    <a href="${slug}-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
+    <a href="${slug}-en.html" class="lang-link active" hreflang="en" lang="en" aria-current="page">🇬🇧 English</a>
+    <a href="${slug}-sv.html" class="lang-link" hreflang="sv" lang="sv">🇸🇪 Svenska</a>
+    <a href="${slug}-da.html" class="lang-link" hreflang="da" lang="da">🇩🇰 Dansk</a>
+    <a href="${slug}-no.html" class="lang-link" hreflang="nb" lang="nb">🇳🇴 Norsk</a>
+    <a href="${slug}-fi.html" class="lang-link" hreflang="fi" lang="fi">🇫🇮 Suomi</a>
+    <a href="${slug}-de.html" class="lang-link" hreflang="de" lang="de">🇩🇪 Deutsch</a>
+    <a href="${slug}-fr.html" class="lang-link" hreflang="fr" lang="fr">🇫🇷 Français</a>
+    <a href="${slug}-es.html" class="lang-link" hreflang="es" lang="es">🇪🇸 Español</a>
+    <a href="${slug}-nl.html" class="lang-link" hreflang="nl" lang="nl">🇳🇱 Nederlands</a>
+    <a href="${slug}-ar.html" class="lang-link" hreflang="ar" lang="ar">🇸🇦 العربية</a>
+    <a href="${slug}-he.html" class="lang-link" hreflang="he" lang="he">🇮🇱 עברית</a>
+    <a href="${slug}-ja.html" class="lang-link" hreflang="ja" lang="ja">🇯🇵 日本語</a>
+    <a href="${slug}-ko.html" class="lang-link" hreflang="ko" lang="ko">🇰🇷 한국어</a>
+    <a href="${slug}-zh.html" class="lang-link" hreflang="zh" lang="zh">🇨🇳 中文</a>
   </nav>
 <div class="article-top-nav">
   <a href="index.html" class="back-to-news">

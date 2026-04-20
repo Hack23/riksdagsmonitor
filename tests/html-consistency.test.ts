@@ -149,3 +149,67 @@ describe('HTML corpus — all articles have normalization marker', () => {
     expect(missing.map(a => a.file)).toHaveLength(0);
   });
 });
+
+// ─── Root + dashboard + politician-dashboard pages ──────────────────────────
+
+describe('HTML corpus — root/dashboard pages load back-to-top.js', () => {
+  function readRootPages(): Array<{ file: string; html: string; prefix: string }> {
+    const rootDir = REPO_ROOT;
+    const dashboardDir = join(REPO_ROOT, 'dashboard');
+    const rootLangFiles = readdirSync(rootDir)
+      .filter(f => (/^index(_[a-z]{2})?\.html$/.test(f) || /^politician-dashboard(_[a-z]{2})?\.html$/.test(f)))
+      .map(f => ({ file: join(rootDir, f), html: readFileSync(join(rootDir, f), 'utf-8'), prefix: '' }));
+    const dashFiles = readdirSync(dashboardDir)
+      .filter(f => /^index(_[a-z]{2})?\.html$/.test(f))
+      .map(f => ({ file: join(dashboardDir, f), html: readFileSync(join(dashboardDir, f), 'utf-8'), prefix: '../' }));
+    return [...rootLangFiles, ...dashFiles];
+  }
+
+  const rootPages = readRootPages();
+
+  it('root and dashboard pages exist', () => {
+    expect(rootPages.length).toBeGreaterThan(0);
+  });
+
+  it('every root/dashboard page loads back-to-top.js with defer', () => {
+    // Note: dashboard/politician-dashboard pages may not author the
+    // <button id="back-to-top"> markup; js/back-to-top.js auto-injects
+    // it when missing (progressive enhancement).  The assertion we
+    // care about is that the script is loaded at all.
+    const missing = rootPages.filter(p => !/src=["'][^"']*back-to-top\.js["'][^>]*\bdefer\b/.test(p.html));
+    expect(missing.map(p => p.file)).toHaveLength(0);
+  });
+
+  it('every root/dashboard page uses relative theme-toggle.js (no absolute /js/)', () => {
+    const bad = rootPages.filter(p => /src=["']\/js\/theme-toggle\.js["']/.test(p.html));
+    expect(bad.map(p => p.file)).toHaveLength(0);
+  });
+
+  it('every root/dashboard page loads theme-toggle.js with defer', () => {
+    const missing = rootPages.filter(p => !/src=["'][^"']*theme-toggle\.js["'][^>]*\bdefer\b/.test(p.html));
+    expect(missing.map(p => p.file)).toHaveLength(0);
+  });
+});
+
+// ─── Language switcher accessibility (all page types) ───────────────────────
+
+describe('HTML corpus — language switcher a11y (hreflang + lang)', () => {
+  it('every lang-link anchor carries both hreflang and lang', () => {
+    // Sample a handful of articles for speed; the normalizer processed the
+    // whole corpus so a sample is representative.
+    const sample = articles.slice(0, 25);
+    const mismatches: string[] = [];
+    for (const a of sample) {
+      // Find <a class="lang-link"…> tags that have hreflang but no lang
+      const linkTags = a.html.match(/<a\b[^>]*\bclass=["'][^"']*\blang-link\b[^"']*["'][^>]*>/g) ?? [];
+      for (const tag of linkTags) {
+        const hasHref = /\bhreflang=/.test(tag);
+        const hasLang = /\blang=["']/.test(tag);
+        if (hasHref && !hasLang) {
+          mismatches.push(`${a.file}: ${tag}`);
+        }
+      }
+    }
+    expect(mismatches).toHaveLength(0);
+  });
+});

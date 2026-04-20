@@ -72,7 +72,7 @@
    */
   function applyUserPreferences(config) {
     if (!config || typeof config !== 'object') return config;
-    var reduceMotion = false;
+    var reduceMotion;
     try {
       reduceMotion = !!(
         typeof window !== 'undefined' &&

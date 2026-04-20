@@ -274,3 +274,59 @@ describe('Back to Top Button', () => {
     });
   });
 });
+
+// ─── IIFE auto-inject behaviour ─────────────────────────────────────────────
+
+describe('Back to Top Button — progressive-enhancement auto-inject', () => {
+  beforeEach(() => {
+    document.body.innerHTML = '';
+    vi.resetModules();
+  });
+  afterEach(() => {
+    document.body.innerHTML = '';
+    vi.restoreAllMocks();
+  });
+
+  it('injects the button when the authored markup is missing', async () => {
+    // Confirm the DOM is empty first.
+    expect(document.getElementById('back-to-top')).toBeNull();
+
+    // Load the real module — the IIFE will run against happy-dom.
+    const { readFileSync } = await import('fs');
+    const { join, dirname } = await import('path');
+    const { fileURLToPath } = await import('url');
+    const here = dirname(fileURLToPath(import.meta.url));
+    const src = readFileSync(join(here, '../js/back-to-top.js'), 'utf8');
+    new Function(src)();
+
+    const btn = document.getElementById('back-to-top');
+    expect(btn).not.toBeNull();
+    expect(btn.tagName.toLowerCase()).toBe('button');
+    expect(btn.classList.contains('back-to-top')).toBe(true);
+    expect(btn.getAttribute('aria-label')).toBe('Back to top');
+    expect(btn.getAttribute('type')).toBe('button');
+  });
+
+  it('reuses the authored button when markup is already present', async () => {
+    document.body.innerHTML = `
+      <button id="back-to-top" class="back-to-top custom-authored" aria-label="Top">
+        ↑
+      </button>
+    `;
+    const authored = document.getElementById('back-to-top');
+
+    const { readFileSync } = await import('fs');
+    const { join, dirname } = await import('path');
+    const { fileURLToPath } = await import('url');
+    const here = dirname(fileURLToPath(import.meta.url));
+    const src = readFileSync(join(here, '../js/back-to-top.js'), 'utf8');
+    new Function(src)();
+
+    // No duplicate buttons should have been injected.
+    const all = document.querySelectorAll('#back-to-top');
+    expect(all).toHaveLength(1);
+    // Authored attributes preserved (aria-label="Top", not overwritten with "Back to top").
+    expect(authored.getAttribute('aria-label')).toBe('Top');
+    expect(authored.classList.contains('custom-authored')).toBe(true);
+  });
+});
