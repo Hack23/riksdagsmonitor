@@ -31,8 +31,8 @@
  *   2 — bad CLI arguments
  */
 
-import { ImfClient, IMF_WEO_INDICATORS, IMF_FM_INDICATORS } from './imf-client.ts';
-import { persistIMFData } from './parliamentary-data/data-persistence.ts';
+import { ImfClient, IMF_WEO_INDICATORS, IMF_FM_INDICATORS } from './imf-client.js';
+import { persistIMFData } from './parliamentary-data/data-persistence.js';
 
 // ---------------------------------------------------------------------------
 // CLI argument parsing
@@ -153,9 +153,13 @@ async function runSdmx(flags: ReadonlyMap<string, string>, booleans: ReadonlySet
   process.stdout.write(`${JSON.stringify(raw, null, 2)}\n`);
 
   if (booleans.has('persist')) {
-    // Derive a reasonable cache key from --indicator / --country when given;
-    // otherwise fall back to hashing the SDMX path so caches collide cleanly
-    // on re-runs with identical queries.
+    // Derive a reasonable cache key: prefer explicit --indicator / --country
+    // flags; otherwise fall back to the second-to-last SDMX path segment
+    // (typically the dataflow ID, e.g. ".../IMF.STA,CPI,4.0.0/M.SE.PCPI_IX"
+    // → "IMF.STA,CPI,4.0.0"). This is a pragmatic heuristic — not a hash —
+    // so different SDMX queries that share a dataflow will share a cache
+    // slot. Pass `--indicator` / `--country` explicitly when collision-free
+    // caching matters.
     const indicator = flags.get('indicator') ?? pathWithQuery.split('/').slice(-2)[0] ?? 'sdmx';
     const country = flags.get('country') ?? 'all';
     persistIMFData(indicator, country, raw, {

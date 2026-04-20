@@ -154,7 +154,7 @@ export function countChartCanvases(html: string): number {
  * patterns.
  */
 export function hasAttribution(html: string): boolean {
-  return /IMF|International Monetary Fund|Internationella valutafonden|Internationaler Währungsfonds|Fondo Monetario Internacional|Fonds monétaire international|Internationaal Monetair Fonds|صندوق النقد الدولي|קרן המטבע הבינלאומית|国際通貨基金|국제통화기금|国际货币基金组织|World Bank|världsbanken|verdensbank|weltbank|banco mundial|banque mondiale|wereldbank|البنك الدولي|הבנק העולמי|世界銀行|세계은행|世界银行|SCB|Statistics Sweden|Statistiska centralbyrån/i.test(html);
+  return /\bIMF\b|International Monetary Fund|Internationella valutafonden|Internationaler Währungsfonds|Fondo Monetario Internacional|Fonds monétaire international|Internationaal Monetair Fonds|صندوق النقد الدولي|קרן המטבע הבינלאומית|国際通貨基金|국제통화기금|国际货币基金组织|World Bank|världsbanken|verdensbank|weltbank|banco mundial|banque mondiale|wereldbank|البنك الدولي|הבנק העולמי|世界銀行|세계은행|世界银行|\bSCB\b|Statistics Sweden|Statistiska centralbyrån/i.test(html);
 }
 
 // ---------------------------------------------------------------------------

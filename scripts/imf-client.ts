@@ -306,8 +306,18 @@ export class ImfClient {
       });
 
       if (response.status === 429 && attempt < this.maxRetries) {
-        // Respect IMF advertised rate limit (~10 req / 5 s).
-        const delay = 1_000 * (attempt + 1) + 1_000;
+        // Respect IMF advertised rate limit (~10 req / 5 s) with an
+        // exponential back-off: 1 s → 2 s → 4 s (matches THREAT_MODEL.md
+        // TB-6a). Honour a `Retry-After` header (delta-seconds) when the
+        // server supplies one, capped at 30 s to avoid pathological waits.
+        const retryAfter = response.headers.get('retry-after');
+        let delay = 1_000 * 2 ** attempt;
+        if (retryAfter) {
+          const retryAfterSec = Number.parseInt(retryAfter, 10);
+          if (Number.isFinite(retryAfterSec) && retryAfterSec > 0) {
+            delay = Math.min(retryAfterSec * 1_000, 30_000);
+          }
+        }
         clearTimeout(timeoutId);
         await new Promise((resolve) => setTimeout(resolve, delay));
         return this.fetchWithRetry(url, attempt + 1, extraHeaders);
@@ -320,7 +330,8 @@ export class ImfClient {
       return await response.json();
     } catch (error) {
       if (attempt < this.maxRetries) {
-        const delay = 1_000 * (attempt + 1);
+        // Network / abort path: same exponential schedule (1 s → 2 s → 4 s).
+        const delay = 1_000 * 2 ** attempt;
         await new Promise((resolve) => setTimeout(resolve, delay));
         return this.fetchWithRetry(url, attempt + 1, extraHeaders);
       }

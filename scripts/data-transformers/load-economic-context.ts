@@ -4,7 +4,8 @@
  * produced by agentic workflows during the pre-article analysis phase.
  *
  * The loader bridges the data produced by workflow agents (which call
- * World Bank / IMF / SCB MCP tools) and the HTML renderer in
+ * the World Bank / SCB MCP tools and the in-repo IMF TypeScript client
+ * via `tsx scripts/imf-fetch.ts`) and the HTML renderer in
  * `content-generators/economic-dashboard-section.ts`. When the JSON file
  * exists and contains `dataPoints` with at least one entry, the renderer
  * emits real `data-chart-config` Chart.js canvases; when it is missing or
@@ -37,10 +38,27 @@ import type { EconomicDataPoint } from './content-generators/economic-dashboard-
 import { ARTICLE_TYPE_TO_ANALYSIS_SUBFOLDER } from '../analysis-references.js';
 
 /**
- * Attribution source list written by the agentic workflow when fetching
- * economic context. All three sub-fields MAY be empty arrays but `worldBank`
- * and `scb` MUST be present for schema v1 back-compat; `imf` is optional
- * in v1 artefacts and recommended for v2+.
+ * Attribution source list as it appears in the on-disk
+ * `economic-data.json` artefact. `imf` is optional for schema v1
+ * back-compat; schema v2+ writers should emit it (the loader always
+ * normalises it to an array in {@link EconomicContextSource}).
+ */
+export interface EconomicContextSourceFile {
+  /** World Bank indicator IDs actually queried (e.g. `NY.GDP.MKTP.KD.ZG`). */
+  worldBank: string[];
+  /** SCB table IDs actually queried (e.g. `TAB1291`). */
+  scb: string[];
+  /**
+   * IMF citation strings actually queried (e.g. `WEO:NGDP_RPCH`,
+   * `FM:GGXWDG_NGDP`). Absent in schema v1 artefacts.
+   */
+  imf?: string[];
+}
+
+/**
+ * Attribution source list as surfaced by {@link loadEconomicContext}.
+ * The loader always populates `imf` (empty array for v1 artefacts) so
+ * downstream consumers never need to null-check.
  */
 export interface EconomicContextSource {
   /** World Bank indicator IDs actually queried (e.g. `NY.GDP.MKTP.KD.ZG`). */
@@ -49,8 +67,8 @@ export interface EconomicContextSource {
   scb: string[];
   /**
    * IMF citation strings actually queried (e.g. `WEO:NGDP_RPCH`,
-   * `FM:GGXWDG_NGDP`). Present when schema version ≥ 2.0. Always
-   * populated as an array by the loader — may be empty on v1 files.
+   * `FM:GGXWDG_NGDP`). Always populated as an array by the loader —
+   * may be empty on v1 files.
    */
   imf: string[];
 }
@@ -95,7 +113,7 @@ export interface EconomicContextFile {
    */
   commentary: string;
   /** Attribution sources for the footer / compliance gate. */
-  source: EconomicContextSource;
+  source: EconomicContextSourceFile;
   /**
    * Explicit opt-out for pure-process article types (e.g. realtime
    * monitor stories about parliamentary procedure). When `true`,
@@ -288,10 +306,8 @@ export function loadEconomicContext(
   if (!isEconomicContextFile(parsed)) return null;
   const file = parsed;
 
-  // Source object — fill `imf` with an empty array for v1 back-compat.
-  const imfSources = Array.isArray((file.source as unknown as { imf?: unknown }).imf)
-    ? [...((file.source as unknown as { imf: string[] }).imf)]
-    : [];
+  // Source object — always populate `imf` as an array (empty on v1 back-compat).
+  const imfSources = file.source.imf ? [...file.source.imf] : [];
 
   // Enriched data points — default missing provider/projection for v1.
   const enrichedDataPoints: EnrichedEconomicDataPoint[] = file.dataPoints.map((dp) => {
