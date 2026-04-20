@@ -30,6 +30,7 @@ import {
   findLargeSwedishSpans,
   LARGE_SV_SPAN_WORD_THRESHOLD,
 } from '../scripts/detect-swedish-leakage.js';
+import type { Language } from '../scripts/types/language.js';
 
 // ---------------------------------------------------------------------------
 // Golden fixtures
@@ -54,7 +55,7 @@ interface GoldenFixture {
    */
   readonly mustSurviveClean?: ReadonlyArray<string | RegExp>;
   /** For large-sv-span: target language under test. */
-  readonly articleLang?: string;
+  readonly articleLang?: Language;
 }
 
 /**
@@ -205,10 +206,11 @@ describe('Golden leak fixtures (§P3-4 regression guard)', () => {
       it(`${fx.name} — detectSwedishLeakage surfaces it (or correctly doesn't) for articleLang=${fx.articleLang}`, () => {
         const report = detectSwedishLeakage(fx.input, fx.articleLang ?? 'en');
         const expectHit = !fx.name.startsWith('GF-07');
+        const spans = report.largeSwedishSpans ?? [];
         if (expectHit) {
-          expect(report.largeSwedishSpans.length).toBeGreaterThanOrEqual(1);
+          expect(spans.length).toBeGreaterThanOrEqual(1);
         } else {
-          expect(report.largeSwedishSpans.length).toBe(0);
+          expect(spans.length).toBe(0);
         }
       });
     }
