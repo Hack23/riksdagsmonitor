@@ -57,7 +57,7 @@ This document provides comprehensive documentation of the CI/CD workflows implem
 
 The project has been migrated from JavaScript to **TypeScript** (31 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 25's native type-stripping for scripts.
 
-**Total Workflow Files: 47** (23 standard YAML + 12 agentic `.md` sources + 12 compiled `.lock.yml`). Each agentic workflow consists of a source `.md` file and its compiled `.lock.yml` counterpart, yielding **35 distinct workflows** (23 standard + 12 agentic).
+**Total Workflow Files: 45** (21 standard YAML + 12 agentic `.md` sources + 12 compiled `.lock.yml`). Each agentic workflow consists of a source `.md` file and its compiled `.lock.yml` counterpart, yielding **33 distinct workflows** (21 standard + 12 agentic).
 **Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
 
 ## 🔐 ISMS Policy Alignment
@@ -200,7 +200,7 @@ flowchart TD
 
 ## 🔄 Workflow Overview
 
-The Riksdagsmonitor project uses **48 workflow files** (23 standard `.yml` + 12 agentic `.lock.yml` + 13 agentic `.md` sources) organized into 5 functional categories:
+The Riksdagsmonitor project uses **45 workflow files** (21 standard `.yml` + 12 agentic `.lock.yml` + 12 agentic `.md` sources) organized into 5 functional categories:
 
 ```mermaid
 graph TB
@@ -226,11 +226,7 @@ graph TB
     end
 
     subgraph "📊 Data Pipeline"
-        DATA1["📥 CIA Data Pipeline<br/><i>Daily fetch</i>"]
-        DATA2["📈 Update CIA Stats<br/><i>Daily 02:00</i>"]
-        DATA3["🔄 Sync CIA Schemas"]
-        DATA4["✅ Validate CIA Data"]
-        DATA5["🔍 Check Schema Updates"]
+        DATA1["📊 Update CIA CSV Data<br/><i>Nightly 03:30 UTC + manual</i>"]
     end
 
     subgraph "📰 Agentic News (12 workflows)"
@@ -307,33 +303,29 @@ graph TB
 
 ### CIA Data Pipeline Workflows
 
-15. **📊 CIA Data Pipeline** (`.github/workflows/data-pipeline.yml`) — Fetch and validate CIA exports
-16. **🔄 Check CIA Schema Updates** (`.github/workflows/check-cia-schema-updates.yml`) — Weekly schema drift detection
-17. **📥 Sync CIA Schemas** (`.github/workflows/sync-cia-schemas.yml`) — Schema synchronization from upstream
-18. **📈 Update CIA Stats** (`.github/workflows/update-cia-stats.yml`) — Daily production statistics
-19. **✅ Validate CIA Data** (`.github/workflows/validate-cia-data.yml`) — JSON schema validation
+15. **📊 Update CIA CSV Data** (`.github/workflows/update-cia-csv-data.yml`) — Nightly + manual refresh of every already-tracked `data/cia/**` and `cia-data/**` CSV from upstream `Hack23/cia` `service.data.impl/sample-data/` (recursive basename→path index, handles sub-folders); also refreshes `cia-data/production-stats.json` and injects counts into `index*.html`; opens a single PR when anything changes
 
 ### Automation & Infrastructure Workflows
 
-20. **🏷️ Setup Labels** (`.github/workflows/setup-labels.yml`) — Repository label management
-21. **🏷️ PR Labeler** (`.github/workflows/labeler.yml`) — Automated PR labeling
-22. **🔧 Compile Agentic Workflows** (`.github/workflows/compile-agentic-workflows.yml`) — Compile .md → .lock.yml
-23. **🤖 Copilot Setup Steps** (`.github/workflows/copilot-setup-steps.yml`) — GitHub Copilot environment
+16. **🏷️ Setup Labels** (`.github/workflows/setup-labels.yml`) — Repository label management
+17. **🏷️ PR Labeler** (`.github/workflows/labeler.yml`) — Automated PR labeling
+18. **🔧 Compile Agentic Workflows** (`.github/workflows/compile-agentic-workflows.yml`) — Compile .md → .lock.yml
+19. **🤖 Copilot Setup Steps** (`.github/workflows/copilot-setup-steps.yml`) — GitHub Copilot environment
 
 ### 🤖 Agentic News Workflows (12 workflows: each has a `.md` source + `.lock.yml` compiled output)
 
-24. **📰 News Article Generator** — Daily news generation
-25. **🌅 News Evening Analysis** — Evening analysis reports
-26. **📡 News Realtime Monitor** — Real-time political monitoring
-27. **📋 News Motions** — Parliamentary motion tracking
-28. **📊 News Committee Reports** — Committee report coverage
-29. **📰 News Weekly Review** — Weekly political summary
-30. **📆 News Monthly Review** — Monthly political review
-31. **🔮 News Week Ahead** — Upcoming week preview
-32. **📅 News Month Ahead** — Upcoming month preview
-33. **🏛️ News Propositions** — Government proposition coverage
-34. **❓ News Interpellations** — Interpellation debate tracking
-35. **🌍 News Translate** — Multi-language article translation
+20. **📰 News Article Generator** — Daily news generation
+21. **🌅 News Evening Analysis** — Evening analysis reports
+22. **📡 News Realtime Monitor** — Real-time political monitoring
+23. **📋 News Motions** — Parliamentary motion tracking
+24. **📊 News Committee Reports** — Committee report coverage
+25. **📰 News Weekly Review** — Weekly political summary
+26. **📆 News Monthly Review** — Monthly political review
+27. **🔮 News Week Ahead** — Upcoming week preview
+28. **📅 News Month Ahead** — Upcoming month preview
+29. **🏛️ News Propositions** — Government proposition coverage
+30. **❓ News Interpellations** — Interpellation debate tracking
+31. **🌍 News Translate** — Multi-language article translation
 
 ### Workflow Relationships
 
@@ -362,10 +354,9 @@ flowchart TB
 
     subgraph "📊 CIA Data Pipeline"
         direction TB
-        Schedule1[⏰ Daily Schedule] --> CIAStats[📈 Update CIA Stats]
-        Schedule2[⏰ Weekly Schedule] --> SchemaCheck[🔄 Schema Updates]
-        CIAStats --> DataValidation[✅ Validate CIA Data]
-        SchemaCheck --> SchemaSync[📥 Sync Schemas]
+        Schedule1[⏰ Nightly 03:30 UTC] --> CIACsv[📊 Update CIA CSV Data]
+        ManualTrig[🖱 Manual dispatch] --> CIACsv
+        CIACsv --> CIAPR[🔁 Open PR on changes]
     end
 
     subgraph "🚀 Continuous Deployment"
@@ -669,41 +660,37 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    subgraph "⏰ Scheduled Triggers"
-        Daily[📅 Daily 03:00 CET] --> Stats[📈 Update CIA Stats]
-        Weekly[📅 Weekly Monday] --> SchemaCheck[🔍 Check Schema Updates]
+    subgraph "⏰ Triggers"
+        Nightly[📅 Nightly 03:30 UTC] --> Refresh[📊 Update CIA CSV Data]
+        Manual[🖱 Manual dispatch<br/><i>optional ref input</i>] --> Refresh
     end
 
-    subgraph "📊 Data Pipeline"
-        Stats --> FetchData[📥 Fetch CIA Exports]
-        FetchData --> Validate[✅ Schema Validation]
-        Validate --> Transform[🔄 Transform Data]
-        Transform --> Commit[💾 Commit Changes]
-    end
-
-    subgraph "🔧 Schema Management"
-        SchemaCheck --> Drift{Schema Drift?}
-        Drift -->|Yes| SyncSchemas[📥 Sync Schemas]
-        Drift -->|No| NoAction[✅ No Changes]
-        SyncSchemas --> AutoPR[🔄 Auto-Create PR]
+    subgraph "📊 CSV + Stats Refresh"
+        Refresh --> TreeIdx[📚 Build basename→path index<br/>GitHub Tree API, recursive]
+        TreeIdx --> Download[📥 Download only already-tracked<br/>data/cia/** + cia-data/** CSVs]
+        Download --> Stats[📈 load-cia-stats.ts →<br/>production-stats.json]
+        Stats --> Inject[🖊 update-stats-from-cia.ts →<br/>inject counts into 14× index*.html]
+        Inject --> Diff{Any changes?}
+        Diff -->|No| NoOp[✅ No-op summary]
+        Diff -->|Yes| AutoPR[🔁 Open single PR<br/>CSVs + stats + HTML]
     end
 
     classDef schedule fill:#ffecb3,stroke:#f57f17,stroke-width:1.5px,color:black
     classDef pipeline fill:#c8e6c9,stroke:#2e7d32,stroke-width:1.5px,color:black
-    classDef schema fill:#d1c4e9,stroke:#4a148c,stroke-width:1.5px,color:black
     classDef decision fill:#f39c12,stroke:#e67e22,stroke-width:2px,color:black
 
-    class Daily,Weekly schedule
-    class Stats,FetchData,Validate,Transform,Commit pipeline
-    class SchemaCheck,Drift,SyncSchemas,NoAction,AutoPR schema
+    class Nightly,Manual schedule
+    class Refresh,TreeIdx,Download,Stats,Inject,AutoPR,NoOp pipeline
+    class Diff decision
 ```
 
 **Workflows:**
-- **📈 Update CIA Stats** (`update-cia-stats.yml`): Daily at 03:00 CET — Uses Node 25 native TypeScript (`node scripts/load-cia-stats.ts`)
-- **📊 Data Pipeline** (`data-pipeline.yml`): Manual dispatch — Fetch & validate CIA exports
-- **🔄 Check Schema Updates** (`check-cia-schema-updates.yml`): Weekly — Detect upstream schema changes
-- **📥 Sync Schemas** (`sync-cia-schemas.yml`): Manual/push — Sync schemas from CIA repo
-- **✅ Validate CIA Data** (`validate-cia-data.yml`): Daily/push/PR — JSON schema validation
+- **📊 Update CIA CSV Data** (`update-cia-csv-data.yml`): Nightly at 03:30 UTC and on manual dispatch.
+  - **Source of truth for *what* to refresh** = the set of CSVs already tracked in this repository under `data/cia/**` and `cia-data/**`. The workflow never introduces new files.
+  - **Source of truth for *where* each CSV lives upstream** = a `basename → upstream-path` index built once per run from the GitHub Tree API (`/repos/Hack23/cia/git/trees/<ref>?recursive=1`). This correctly resolves sub-folder CSVs (e.g. `distinct_values/vote_data_party.csv`, `framework-validation/**`, `risk-rule-tests/**`) — the upstream layout is **not** flat. A `<stem>_sample.csv` alias is tried as a fallback for the handful of locally-renamed canonical files (`view_riksdagen_committee_decisions.csv` → upstream `view_riksdagen_committee_decisions_sample.csv`, etc.).
+  - **Stats refresh** — after the CSV step, the workflow runs `npx tsx scripts/load-cia-stats.ts` to regenerate `cia-data/production-stats.json` from upstream [`extraction_summary_report.csv`](https://github.com/Hack23/cia/blob/master/service.data.impl/sample-data/extraction_summary_report.csv), then `npx tsx scripts/update-stats-from-cia.ts` to inject the refreshed counts into all 14 `index*.html` language variants.
+  - **PR output** — a single automated pull request is opened via `peter-evans/create-pull-request` whenever CSV content, `production-stats.json`, or `index*.html` change. Byte-level `cmp` ensures commits are produced only on real diffs.
+  - **Skipped paths** — locally-curated files with no upstream equivalent are never overwritten: `data/cia/ministry/sample_{influence,decision_impact,risk_levels,productivity}.csv` and `cia-data/election/{election_forecast,coalition_scenarios}.csv`.
 
 ---
 
@@ -925,15 +912,11 @@ flowchart LR
 | 2.6 | 🏠 Test Homepage | `test-homepage.yml` | Push/PR (src/browser) | Homepage Cypress E2E |
 | 2.7 | 📰 Test News | `test-news.yml` | Push/PR (news) | News pages Cypress E2E |
 
-### 📊 CIA Data Pipeline (5 workflows)
+### 📊 CIA Data Pipeline (1 workflow)
 
 | # | Workflow | File | Trigger | Purpose |
 | --- | --- | --- | --- | --- |
-| 3.1 | 📊 CIA Data Pipeline | `data-pipeline.yml` | Manual dispatch | Fetch & validate CIA exports |
-| 3.2 | 🔄 Check CIA Schema Updates | `check-cia-schema-updates.yml` | Weekly schedule | Detect upstream schema changes |
-| 3.3 | 📥 Sync CIA Schemas | `sync-cia-schemas.yml` | Manual dispatch, push | Sync schemas from CIA repo |
-| 3.4 | 📈 Update CIA Stats | `update-cia-stats.yml` | Daily 03:00 CET, manual | Fetch production statistics |
-| 3.5 | ✅ Validate CIA Data | `validate-cia-data.yml` | Daily, push/PR, manual | JSON schema validation |
+| 3.1 | 📊 Update CIA CSV Data | `update-cia-csv-data.yml` | Nightly 03:30 UTC, manual dispatch | Refresh every already-tracked `data/cia/**` and `cia-data/**` CSV from upstream `Hack23/cia` sample-data (recursive basename→path index handles sub-folders), refresh `production-stats.json`, inject counts into all 14 `index*.html`; auto-PR on changes |
 
 ### 🚀 Release & Deployment (3 workflows)
 
@@ -1029,12 +1012,12 @@ flowchart TB
 
 | Control | Workflow(s) | Implementation |
 | --- | --- | --- |
-| A.5.33 — Protection of records | update-cia-stats | Git audit trail, source attribution |
+| A.5.33 — Protection of records | update-cia-csv-data | Git audit trail, source attribution, automated PR review |
 | A.5.36 — Conformity with policies | scorecards | OpenSSF automated compliance |
 | A.5.37 — Documented procedures | All | Workflow YAML as executable documentation |
-| A.8.3 — Information lifecycle | update-cia-stats, data-pipeline | Automated daily updates, retention |
+| A.8.3 — Information lifecycle | update-cia-csv-data | Nightly upstream refresh, change-detection, PR-gated commits |
 | A.8.8 — Vulnerability management | codeql, dependency-review | Automated scanning |
-| A.8.10 — Information deletion | data-pipeline | Cache archival (keep 7 days) |
+| A.8.10 — Information deletion | update-cia-csv-data | Branch auto-delete after PR merge |
 | A.8.19 — Security in use | All | HTTPS-only, SRI, CSP |
 | A.8.24 — Secret scanning | GitHub native | Automated secret detection |
 | A.8.31 — Separation of environments | release | Staging → production pipeline |
@@ -1047,7 +1030,7 @@ flowchart TB
 | **GV** (Govern) | setup-labels, ISMS documentation | Policy enforcement through automation |
 | **ID** (Identify) | scorecards, dependency-review | Asset and vulnerability identification |
 | **PR** (Protect) | codeql, harden-runner, SHA pinning | Security controls implementation |
-| **DE** (Detect) | uptime-monitor, validate-cia-data | Continuous monitoring and detection |
+| **DE** (Detect) | uptime-monitor, update-cia-csv-data | Continuous monitoring and upstream change detection |
 | **RS** (Respond) | Incident auto-creation on outage | Automated incident response |
 | **RC** (Recover) | Auto-close incidents on recovery | Automated recovery verification |
 
@@ -1056,8 +1039,8 @@ flowchart TB
 | Control | Workflow(s) | Implementation |
 | --- | --- | --- |
 | 2.2 — Software inventory | release (SBOM) | Automated SBOM generation |
-| 3.1 — Data inventory | data-pipeline metadata | CIA data cataloging |
-| 3.14 — Data integrity | validate-cia-data | Schema validation checks |
+| 3.1 — Data inventory | update-cia-csv-data | Explicit tracked-file discovery + recursive upstream index |
+| 3.14 — Data integrity | update-cia-csv-data | Byte-level diff vs upstream + PR review gate |
 | 16.2 — Software security | scorecards | Supply chain assessment |
 | 16.4 — Dependency security | dependency-review | Vulnerability scanning |
 | 16.6 — Application security | codeql | Static analysis |

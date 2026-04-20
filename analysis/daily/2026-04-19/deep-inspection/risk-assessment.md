@@ -13,7 +13,7 @@
 
 ## 🎯 Risk Register — Priority Matrix
 
-| Risk ID | Risk Description | Domain | Probability (1-5) | Impact (1-5) | Score | Level | Action | Confidence |
+| Risk ID | Risk Description | Domain | Probability (1-5) | Impact (1-5) | Score | Risk Level | Action | Confidence |
 |:---:|----------------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **R1** | Russian hybrid warfare (cyber + disinfo + sabotage) targeting Sweden as tribunal founding member | Russia/Security | 4 | 5 | **20** | CRITICAL | 🔴 MITIGATE | HIGH |
 | **R2** | US non-cooperation with tribunal — evidentiary and enforcement gap | Institutional | 4 | 4 | **16** | HIGH | 🔴 MITIGATE | HIGH |
