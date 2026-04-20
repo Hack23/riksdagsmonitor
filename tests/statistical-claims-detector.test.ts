@@ -119,6 +119,24 @@ describe('detectStatisticalClaims', () => {
     expect(claims[0].verificationSource).toBe('both');
     expect(claims[0].worldBankIndicator).toBe('SL.UEM.TOTL.ZS');
     expect(claims[0].scbTableId).toBe('TAB5765');
+    expect(claims[0].imfIndicator).toBe('LUR');
+  });
+
+  it('should propagate IMF indicator codes for macro topics', () => {
+    const gdp = detectStatisticalClaims('BNP växer med 2.1 procent.');
+    expect(gdp[0].imfIndicator).toBe('NGDP_RPCH');
+
+    const inflation = detectStatisticalClaims('Inflationen ligger på 2.4 procent.');
+    expect(inflation[0].imfIndicator).toBe('PCPIPCH');
+
+    const defence = detectStatisticalClaims('Försvarsutgifterna uppgår till 2.0 procent av BNP.');
+    expect(defence[0].imfIndicator).toBe('FM_EXP_G01_GDP_PT');
+  });
+
+  it('should leave imfIndicator undefined for SCB-only or generic patterns', () => {
+    const migration = detectStatisticalClaims('Invandringen ligger på 80000 personer.');
+    // Migration is SCB-only; no IMF counterpart is declared on that pattern.
+    expect(migration[0]?.imfIndicator).toBeUndefined();
   });
 
   it('should detect unit from context', () => {

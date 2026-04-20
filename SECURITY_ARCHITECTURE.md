@@ -488,6 +488,7 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 - **Contents:** Complete dependency inventory with versions and licenses
 - **Attestation:** SBOM also cryptographically signed (`actions/attest-sbom@v3.0.0`)
 - **Purpose:** Vulnerability tracking, license compliance, supply chain transparency
+- **External MCP supplement:** `package.json` `x-external-mcp` field records MCP servers outside the npm graph (Python, Docker, HTTP). Currently tracks `c-cf/imf-data-mcp` (Apache-2.0, Python/`uvx`) introduced by Economic Data Contract v2.0 for agentic IMF SDMX access — pinning target: commit-SHA, see `THREAT_MODEL.md` TB-6a and `docs/adr/0001-adopt-imf-data-alongside-world-bank.md`.
 
 **Release Pipeline Security (3-job workflow):**
 

@@ -27,7 +27,7 @@
     "scb": {
       "primary": "scb MCP (pxweb-mcp) + api.scb.se/OV0104/v2beta",
       "useFor": ["Sweden-specific ground truth", "regional data", "monthly frequency"],
-      "language": "sv or en (NEVER no — HTTP 400)"
+      "language": "sv or en (NEVER `nb`/`no` — HTTP 400; per project BCP-47 migration, the legacy `no` tag is equally invalid for SCB)"
     }
   },
   "providerSelection": {

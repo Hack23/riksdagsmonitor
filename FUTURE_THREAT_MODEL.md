@@ -70,6 +70,7 @@ Aligned with [Hack23 AB Threat Modeling Policy](https://github.com/Hack23/ISMS-P
 | **Automated Translation Pipeline** | Source language spoofing | Translation output manipulation | Translation attribution denial | Source text leakage | Translation queue exhaustion | LLM model access escalation | **HIGH** |
 | **Enhanced Dashboards (5 new)** | Data source spoofing for charts | Chart data injection/manipulation | Dashboard interaction denial | Data aggregation leakage | Large dataset rendering DoS | Dashboard admin escalation | **MEDIUM** |
 | **EU Parliament Cross-Reference** | EP MCP Server spoofing | Cross-reference data tampering | Data linkage denial | EU political data leakage | API rate limiting/timeout | Cross-system privilege escalation | **MEDIUM** |
+| **IMF Data Integration (`c-cf/imf-data-mcp`)** | Upstream repo / PyPI dep compromise | IMF JSON response tampering in transit or at rest | Stale / mis-vintaged WEO projections cited as current | Aggregate public-only; negligible | IMF rate-limit (10 req / 5 s) trips workflow | Python/`uvx` runtime expanding trust surface | **MEDIUM** |
 
 ### **🔐 Future Crown Jewel Analysis**
 
