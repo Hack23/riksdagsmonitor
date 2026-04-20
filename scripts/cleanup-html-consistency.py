@@ -42,7 +42,7 @@ from bs4 import BeautifulSoup, Comment, NavigableString, Tag
 # Constants
 # ---------------------------------------------------------------------------
 
-NORMALIZATION_MARKER = "v7"
+NORMALIZATION_MARKER = "v9"
 
 # Language metadata shared with article-template/constants.ts
 LANG_META: dict[str, tuple[str, str, str]] = {
@@ -236,16 +236,21 @@ _FLOATING_THEME_BTN_RE = re.compile(
 _STYLE_IN_BODY_RE = re.compile(r"<style\b[^>]*>.*?</style>", re.DOTALL | re.IGNORECASE)
 
 # Fix broken script references
+# NOTE: the trailing `(?:\s*</script>)?` is critical — some sources ship the
+# bad script as `<script src="…/back-to-top.ts"></script>` (paired tag) and
+# some as `<script src="…/back-to-top.ts" />` (self-closing). Consuming the
+# closing tag when present prevents a stray `</script>` from being left
+# behind after substitution.
 _BACK_TO_TOP_TS_RE = re.compile(
-    r'<script\b[^>]*\bsrc=["\'](?:\.\./)?scripts/back-to-top\.ts["\'][^>]*/?>',
+    r'<script\b[^>]*\bsrc=["\'](?:\.\./)?scripts/back-to-top\.ts["\'][^>]*/?>(?:\s*</script>)?',
     re.IGNORECASE,
 )
 _BACK_TO_TOP_WRONG_RE = re.compile(
-    r'<script\b[^>]*\bsrc=["\'](?:\.\./)?scripts/back-to-top\.js["\'][^>]*/?>',
+    r'<script\b[^>]*\bsrc=["\'](?:\.\./)?scripts/back-to-top\.js["\'][^>]*/?>(?:\s*</script>)?',
     re.IGNORECASE,
 )
 _NEWS_ARTICLE_JS_RE = re.compile(
-    r'<script\b[^>]*\bsrc=["\'][^"\']*news-article\.js["\'][^>]*/?>',
+    r'<script\b[^>]*\bsrc=["\'][^"\']*news-article\.js["\'][^>]*/?>(?:\s*</script>)?',
     re.IGNORECASE,
 )
 # Absolute /js/lib/ → relative ../js/lib/
@@ -310,10 +315,36 @@ _OBSOLETE_CSS_TYPE_RE = re.compile(
 # Inject lang="bcp47" on language-switcher <a> tags that are missing it
 # (companion to hreflang). Matches both article (../js/) and root pages
 # (../index_xx.html or index_xx.html).
-_LANG_LINK_MISSING_LANG_RE = re.compile(
-    r'(<a\b[^>]*\bhreflang=["\'])([^"\']+)(["\'](?![^<]*\blang=["\']))',
+#
+# The negative lookahead consumes up to the next `<` to guard against both
+# the case where `lang=` appears BEFORE `hreflang=` on the same tag and
+# AFTER it. Regex alone cannot do a look-both-ways check, so we instead
+# match the ENTIRE opening <a> tag and transform only if it has no
+# lang= attribute. See `_inject_lang_on_switcher_anchors()`.
+_SWITCHER_ANCHOR_RE = re.compile(
+    r'<a\b([^>]*\bhreflang=["\']([^"\']+)["\'][^>]*)>',
     re.IGNORECASE,
 )
+
+
+def _inject_lang_on_switcher_anchors(html: str) -> str:
+    """Add ``lang="bcp47"`` to any ``<a>`` tag carrying ``hreflang=``
+    (assumed to be a language-switcher link) that does not already
+    have a ``lang=`` attribute anywhere in its opening tag.
+
+    This helps screen-readers pronounce native-script language names
+    (e.g. ``العربية``, ``中文``) in the correct voice rather than the
+    surrounding page's ``<html lang>`` voice.
+    """
+    def _replace(match: re.Match[str]) -> str:
+        attrs = match.group(1)
+        hreflang_val = match.group(2)
+        # If this tag already has a lang= attribute, leave it alone.
+        if re.search(r'\blang=["\']', attrs):
+            return match.group(0)
+        return f'<a{attrs} lang="{hreflang_val}">'
+
+    return _SWITCHER_ANCHOR_RE.sub(_replace, html)
 
 
 def _apply_regex_fixes(html: str, *, is_news: bool, js_prefix: str = "../") -> str:
@@ -363,7 +394,7 @@ def _apply_regex_fixes(html: str, *, is_news: bool, js_prefix: str = "../") -> s
     # D4. Inject lang="bcp47" on language-switcher <a> tags that only have
     # hreflang="bcp47". This helps screen-readers pronounce the native
     # language name (e.g. "العربية") using the correct voice.
-    html = _LANG_LINK_MISSING_LANG_RE.sub(r'\1\2\3 lang="\2"', html)
+    html = _inject_lang_on_switcher_anchors(html)
 
     # E. Add defer to theme-toggle.js if missing
     def _add_defer_to_theme_toggle(m: re.Match[str]) -> str:
@@ -455,6 +486,47 @@ def _apply_regex_fixes(html: str, *, is_news: bool, js_prefix: str = "../") -> s
         html,
         flags=re.IGNORECASE,
     )
+
+    # ── HTML hygiene passes (idempotent; fix bugs introduced by earlier
+    # normalization runs that shipped to the corpus):
+    #
+    #   H1. Collapse `</script></script>` (stray double-close left behind
+    #       by an earlier regex that substituted `<script src="…">` with
+    #       `<script …></script>` but didn't consume the original `</script>`).
+    #
+    #   H2. Normalise `role='xxx'` → `role="xxx"` on `<footer>`/`<header>`/
+    #       `<nav>` landmark elements (HTMLHint `attr-value-double-quotes`).
+    #
+    #   H3. Deduplicate `lang="..."` attributes inside language-switcher
+    #       `<a>` tags (authored markup sometimes emits `lang=` before
+    #       `hreflang=`; an earlier version of the lang-injection pass
+    #       added a second `lang=` AFTER `hreflang=`).
+    # ─────────────────────────────────────────────────────────────────────
+    html = re.sub(r'</script>\s*</script>', '</script>', html)
+    # H1b. Stray unpaired `</script>` that appears directly after `</footer>`
+    # and immediately before another `<script>` tag (byproduct of an older
+    # normalization pass that removed the opening <script …> but left the
+    # closing tag orphaned).
+    html = re.sub(r'(</footer>\s*)</script>(\s*<script\b)', r'\1\2', html, flags=re.IGNORECASE)
+    html = re.sub(
+        r"(<(?:footer|header|nav|section|main|aside|article)\b[^>]*?\brole=)'([^']+)'",
+        r'\1"\2"',
+        html,
+        flags=re.IGNORECASE,
+    )
+
+    def _dedup_lang_in_anchor(m: re.Match[str]) -> str:
+        tag = m.group(0)
+        # Find all lang="..." occurrences; keep the first, remove the rest.
+        lang_matches = list(re.finditer(r'\s+lang=["\'][^"\']*["\']', tag))
+        if len(lang_matches) <= 1:
+            return tag
+        # Remove every match after the first (walk in reverse to preserve offsets).
+        for dup in reversed(lang_matches[1:]):
+            tag = tag[:dup.start()] + tag[dup.end():]
+        return tag
+
+    html = re.sub(r'<a\b[^>]*\blang=["\'][^"\']*["\'][^>]*>', _dedup_lang_in_anchor, html, flags=re.IGNORECASE)
 
     return html
 
@@ -603,11 +675,17 @@ def normalize_news_article(
             changes.append("site-footer-role-added")
 
     # ── Mark normalized ──────────────────────────────────────────────────
-    # Replace an existing v1/v2 marker OR add the marker to a clean <body>
-    if re.search(r'data-rm-normalized="v[1-5]"', html):
-        html = re.sub(
-            r'data-rm-normalized="v[1-5]"',
-            f'data-rm-normalized="{NORMALIZATION_MARKER}"',
+    # Replace an existing marker OR add the marker to a clean <body>.
+    #
+    # We look for ANY prior version of the marker (including duplicates that
+    # may have been introduced by an earlier bug where the regex only matched
+    # v1–v5 while the current version had already moved past v5). The cleanup
+    # replaces the entire run of one-or-more adjacent `data-rm-normalized="vN"`
+    # attributes with a single fresh marker.
+    dup_re = re.compile(r'(?:\s+data-rm-normalized="v\d+")+')
+    if dup_re.search(html):
+        html = dup_re.sub(
+            f' data-rm-normalized="{NORMALIZATION_MARKER}"',
             html,
         )
     else:

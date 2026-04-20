@@ -106,7 +106,10 @@ describe('HTML corpus — every news article has a full site footer', () => {
   it('site footer appears after </article>', () => {
     const bad = articles.filter(a => {
       const articleClose = a.html.lastIndexOf('</article>');
-      const footerIdx    = a.html.indexOf('role="contentinfo"');
+      // Use lastIndexOf — some articles contain a nested inner article-footer
+      // with role="contentinfo" as well; the guarantee we enforce is that
+      // the SITE footer (last occurrence) sits after </article>.
+      const footerIdx    = a.html.lastIndexOf('role="contentinfo"');
       return footerIdx === -1 || footerIdx < articleClose;
     });
     expect(bad.map(a => a.file)).toHaveLength(0);
