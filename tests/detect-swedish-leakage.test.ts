@@ -348,5 +348,25 @@ describe('Swedish Leakage Detector', () => {
       expect(report.leakedTerms).toEqual([]);
       expect(report.score).toBe(0);
     });
+
+    it('should not treat data-lang="sv" as a real lang attribute', () => {
+      // `data-lang` is a custom data attribute, not the standard HTML `lang`.
+      // Swedish inside such an element must still be detected as leakage.
+      const html = '<p data-lang="sv">utskottet antog propositionen</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).toContain('utskottet');
+      expect(terms).toContain('propositionen');
+    });
+
+    it('should keep scanning after a stray "<" in text content', () => {
+      // A stray `<` (e.g. from "<" in prose) should not abort the strip pass —
+      // the later lang="sv" block must still be suppressed.
+      const html =
+        '<p>Value is 5 < 10 when counting seats.</p>' +
+        '<span lang="sv">riksdagen antog propositionen</span>';
+      const report = detectSwedishLeakage(html, 'en');
+      expect(report.leakedTerms).toEqual([]);
+    });
   });
 });

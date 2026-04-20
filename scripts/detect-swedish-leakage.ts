@@ -264,7 +264,10 @@ function parseTagAt(html: string, startIndex: number): ParsedTag | null {
 
 /** Extract the value of the `lang` attribute from a raw tag string, or null if absent. */
 function getLangAttributeValue(rawTag: string): string | null {
-  const m = /\blang\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+))/i.exec(rawTag);
+  // Require `lang` to be a standalone attribute name — preceded by `<` (tag-start) or
+  // whitespace — so attributes like `data-lang` or `xml:lang` are not mistakenly treated
+  // as `lang`.
+  const m = /(?:<|\s)lang\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+))/i.exec(rawTag);
   return m?.[1] ?? m?.[2] ?? m?.[3] ?? null;
 }
 
@@ -331,7 +334,12 @@ function stripLangTaggedBlocks(html: string, langCode: string): string {
     if (html[i] !== '<') { i++; continue; }
 
     const parsed = parseTagAt(html, i);
-    if (!parsed) break;
+    if (!parsed) {
+      // Malformed markup (stray `<` in text, etc.) — skip this character and keep
+      // scanning so later lang-tagged blocks are still stripped.
+      i++;
+      continue;
+    }
 
     if (
       !parsed.isClosing &&
