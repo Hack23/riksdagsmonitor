@@ -82,16 +82,27 @@
   <meta name="article:quality-score" content="71">
   <meta name="article:quality-version" content="v2">
 </head>
-<body>
-<a href="#main-content" class="skip-link">메인 콘텐츠로 건너뛰기</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="다크 테마로 전환"
-        title="다크 테마로 전환"
-        data-label-dark="라이트 테마로 전환"
-        data-label-light="다크 테마로 전환">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="주 탐색">
+    <a href="../index_ko.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_ko.html">홈</a></li>
+      <li><a href="index_ko.html" aria-current="page">뉴스</a></li>
+      <li><a href="../dashboard/index_ko.html">대시보드</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="어두운 테마로 전환"
+            title="어두운 테마로 전환"
+            data-label-dark="밝은 테마로 전환"
+            data-label-light="어두운 테마로 전환">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
   <nav class="language-switcher" role="navigation" aria-label="언어 버전">
     <a href="2026-04-19-deep-inspection-russia-cyber-threat-defence-ukraina-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-04-19-deep-inspection-russia-cyber-threat-defence-ukraina-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
@@ -108,6 +119,7 @@
     <a href="2026-04-19-deep-inspection-russia-cyber-threat-defence-ukraina-ko.html" class="lang-link active" hreflang="ko" aria-current="page">🇰🇷 한국어</a>
     <a href="2026-04-19-deep-inspection-russia-cyber-threat-defence-ukraina-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+<a href="#main-content" class="skip-link">메인 콘텐츠로 건너뛰기</a>
 
 <div class="article-top-nav">
   <a href="index.html" class="back-to-news">← 뉴스 목록으로 돌아가기</a>
@@ -328,6 +340,7 @@
   </div>
 </footer>
 
-<script src="../js/news-article.js" defer></script>
+</script>
+<script src="../js/back-to-top.js" defer></script>
 </body>
 </html>

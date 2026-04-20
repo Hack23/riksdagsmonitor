@@ -101,16 +101,27 @@
   }
   </script>
 </head>
-<body>
-<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="Zum dunklen Thema wechseln"
-        title="Zum dunklen Thema wechseln"
-        data-label-dark="Zum hellen Thema wechseln"
-        data-label-light="Zum dunklen Thema wechseln">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="Hauptnavigation">
+    <a href="../index_de.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_de.html">Startseite</a></li>
+      <li><a href="index_de.html" aria-current="page">Nachrichten</a></li>
+      <li><a href="../dashboard/index_de.html">Dashboard</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Zum dunklen Design wechseln"
+            title="Zum dunklen Design wechseln"
+            data-label-dark="Zum hellen Design wechseln"
+            data-label-light="Zum dunklen Design wechseln">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
   <nav class="language-switcher" role="navigation" aria-label="Sprachversionen">
     <a href="2026-04-11-weekly-review-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-04-11-weekly-review-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
@@ -127,6 +138,7 @@
     <a href="2026-04-11-weekly-review-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-04-11-weekly-review-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
 <div class="article-top-nav">
   <a href="index.html" class="back-to-news">← Zurück zu den Nachrichten</a>
@@ -477,7 +489,7 @@
   </div>
 </footer>
 
-<script type="module" src="../scripts/back-to-top.ts"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/back-to-top.js" defer></script></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

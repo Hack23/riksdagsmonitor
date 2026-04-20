@@ -4,7 +4,7 @@
  */
 
 import { describe, it, expect, afterEach, vi } from 'vitest';
-import { generateArticleHTML, generateArticleLanguageSwitcher, generateSiteFooter, fixHtmlNesting, stripSwedishBoilerplate } from '../scripts/article-template.js';
+import { generateArticleHTML, generateArticleLanguageSwitcher, generateSiteFooter, generateSiteHeader, fixHtmlNesting, stripSwedishBoilerplate } from '../scripts/article-template.js';
 import articleTemplateDefault from '../scripts/article-template.js';
 import type { Language } from '../scripts/types/language.js';
 import type { ClassificationLevel, RiskLevel, ConfidenceLabel } from '../scripts/analysis-reader.js';
@@ -1239,6 +1239,94 @@ describe('Article Template', () => {
     it('omits analysis references section when not provided', () => {
       const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
       expect(html).not.toContain('analysis-references');
+    });
+  });
+
+  describe('HTML structure hardening (post-cleanup guardrails)', () => {
+    it('must NOT reference back-to-top.ts (raw TypeScript)', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).not.toContain('back-to-top.ts');
+      expect(html).not.toContain('scripts/back-to-top');
+    });
+
+    it('must include back-to-top.js with defer', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).toContain('src="../js/back-to-top.js"');
+      expect(html).toMatch(/src="\.\.\/js\/back-to-top\.js"[^>]*defer/);
+    });
+
+    it('must NOT reference non-existent news-article.js', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).not.toContain('news-article.js');
+    });
+
+    it('must include site header with role="banner"', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).toContain('<header role="banner">');
+    });
+
+    it('site header must contain the nav landmark', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).toContain('role="navigation"');
+    });
+
+    it('site header must be before the language switcher', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      const headerIdx = html.indexOf('<header role="banner">');
+      const switcherIdx = html.indexOf('language-switcher');
+      expect(headerIdx).toBeGreaterThan(-1);
+      expect(switcherIdx).toBeGreaterThan(-1);
+      expect(headerIdx).toBeLessThan(switcherIdx);
+    });
+
+    it('must include full site footer with role="contentinfo"', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).toContain('role="contentinfo"');
+    });
+
+    it('site footer must appear after </article>', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      const articleCloseIdx = html.lastIndexOf('</article>');
+      const footerIdx = html.indexOf('role="contentinfo"');
+      expect(articleCloseIdx).toBeGreaterThan(-1);
+      expect(footerIdx).toBeGreaterThan(-1);
+      expect(footerIdx).toBeGreaterThan(articleCloseIdx);
+    });
+
+    it('must NOT embed <style> blocks in body', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      // Find the <body> boundary and check for <style> after it
+      const bodyStart = html.indexOf('<body');
+      const bodyContent = html.slice(bodyStart);
+      expect(bodyContent).not.toMatch(/<style[\s>]/i);
+    });
+
+    it('must use relative path ../js/lib/ not absolute /js/lib/ for chart', () => {
+      const data = {
+        ...mockArticleData,
+        sections: [{
+          id: 'chart',
+          className: 'chart-section',
+          html: '<canvas data-chart-config=\'{"type":"bar"}\'></canvas>',
+        }],
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).not.toContain('src="/js/lib/');
+      expect(html).toContain('src="../js/lib/');
+    });
+
+    it('generateSiteHeader emits localized nav labels for Swedish', () => {
+      const html = generateSiteHeader('sv');
+      expect(html).toContain('<header role="banner">');
+      expect(html).toContain('Hem');
+      expect(html).toContain('Nyheter');
+      expect(html).toContain('Instrumentpanel');
+    });
+
+    it('generateSiteHeader emits Arabic nav with correct RTL-friendly content', () => {
+      const html = generateSiteHeader('ar');
+      expect(html).toContain('<header role="banner">');
+      expect(html).toContain('الرئيسية');
     });
   });
 });

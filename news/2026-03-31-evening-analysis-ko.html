@@ -109,14 +109,32 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
 </head>
-<body>
-  <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-pressed="false" aria-label="다크 테마로 전환" title="다크 테마로 전환" data-label-dark="라이트 테마로 전환" data-label-light="다크 테마로 전환"><span class="theme-icon" aria-hidden="true">&#x1F319;</span></button>
-  <a href="#main-content" class="skip-link">콘텐츠로 건너뛰기</a>
-  <nav class="language-switcher" role="navigation" aria-label="Language">
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="주 탐색">
+    <a href="../index_ko.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_ko.html">홈</a></li>
+      <li><a href="index_ko.html" aria-current="page">뉴스</a></li>
+      <li><a href="../dashboard/index_ko.html">대시보드</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="어두운 테마로 전환"
+            title="어두운 테마로 전환"
+            data-label-dark="밝은 테마로 전환"
+            data-label-light="어두운 테마로 전환">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
+  <nav class="language-switcher" role="navigation" aria-label="언어 버전">
     <a href="2026-03-31-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-03-31-evening-analysis-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
     <a href="2026-03-31-evening-analysis-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
-    <a href="2026-03-31-evening-analysis-no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
+    <a href="2026-03-31-evening-analysis-no.html" class="lang-link" hreflang="nb">🇳🇴 Norsk</a>
     <a href="2026-03-31-evening-analysis-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
     <a href="2026-03-31-evening-analysis-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
     <a href="2026-03-31-evening-analysis-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
@@ -128,6 +146,7 @@
     <a href="2026-03-31-evening-analysis-ko.html" class="lang-link active" hreflang="ko" aria-current="page">🇰🇷 한국어</a>
     <a href="2026-03-31-evening-analysis-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+  <a href="#main-content" class="skip-link">콘텐츠로 건너뛰기</a>
   <div class="article-top-nav">
     <a href="index.html" class="back-to-news">← 뉴스로 돌아가기</a>
   </div>
@@ -214,10 +233,11 @@
       </div>
     </footer>
   </article>
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <p>&copy; 2026 <a href="https://hack23.com">Hack23 AB</a> &mdash; <a href="https://riksdagsmonitor.com">Riksdagsmonitor</a></p>
     <p>Political intelligence powered by open data from <a href="https://data.riksdagen.se" rel="noopener noreferrer">data.riksdagen.se</a></p>
   </footer>
-  <script src="../js/theme-toggle.js" defer></script>
+  <script src="../js/back-to-top.js" defer></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

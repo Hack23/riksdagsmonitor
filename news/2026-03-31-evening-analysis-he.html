@@ -109,14 +109,32 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
 </head>
-<body>
-  <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-pressed="false" aria-label="עבור לערכת נושא כהה" title="עבור לערכת נושא כהה" data-label-dark="עבור לערכת נושא בהירה" data-label-light="עבור לערכת נושא כהה"><span class="theme-icon" aria-hidden="true">&#x1F319;</span></button>
-  <a href="#main-content" class="skip-link">דלג לתוכן</a>
-  <nav class="language-switcher" role="navigation" aria-label="Language">
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="ניווט ראשי">
+    <a href="../index_he.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_he.html">בית</a></li>
+      <li><a href="index_he.html" aria-current="page">חדשות</a></li>
+      <li><a href="../dashboard/index_he.html">לוח מחוונים</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="עבור למצב כהה"
+            title="עבור למצב כהה"
+            data-label-dark="עבור למצב בהיר"
+            data-label-light="עבור למצב כהה">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
+  <nav class="language-switcher" role="navigation" aria-label="גרסאות שפה">
     <a href="2026-03-31-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-03-31-evening-analysis-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
     <a href="2026-03-31-evening-analysis-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
-    <a href="2026-03-31-evening-analysis-no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
+    <a href="2026-03-31-evening-analysis-no.html" class="lang-link" hreflang="nb">🇳🇴 Norsk</a>
     <a href="2026-03-31-evening-analysis-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
     <a href="2026-03-31-evening-analysis-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
     <a href="2026-03-31-evening-analysis-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
@@ -128,6 +146,7 @@
     <a href="2026-03-31-evening-analysis-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-03-31-evening-analysis-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+  <a href="#main-content" class="skip-link">דלג לתוכן</a>
   <div class="article-top-nav">
     <a href="index.html" class="back-to-news">← חזרה לחדשות</a>
   </div>
@@ -214,10 +233,11 @@
       </div>
     </footer>
   </article>
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <p>&copy; 2026 <a href="https://hack23.com">Hack23 AB</a> &mdash; <a href="https://riksdagsmonitor.com">Riksdagsmonitor</a></p>
     <p>Political intelligence powered by open data from <a href="https://data.riksdagen.se" rel="noopener noreferrer">data.riksdagen.se</a></p>
   </footer>
-  <script src="../js/theme-toggle.js" defer></script>
+  <script src="../js/back-to-top.js" defer></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

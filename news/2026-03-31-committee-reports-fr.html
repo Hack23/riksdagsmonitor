@@ -220,24 +220,35 @@
   
   <meta name="quality-score" content="56">
 </head>
-<body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="Switch to dark theme"
-        title="Switch to dark theme"
-        data-label-dark="Switch to light theme"
-        data-label-light="Switch to dark theme">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
-  <nav class="language-switcher" role="navigation" aria-label="Language versions">
-    <a href="2026-03-31-committee-reports-en.html" class="lang-link active" hreflang="en" aria-current="page">🇬🇧 English</a>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="Navigation principale">
+    <a href="../index_fr.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_fr.html">Accueil</a></li>
+      <li><a href="index_fr.html" aria-current="page">Actualités</a></li>
+      <li><a href="../dashboard/index_fr.html">Tableau de bord</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Basculer vers le thème sombre"
+            title="Basculer vers le thème sombre"
+            data-label-dark="Basculer vers le thème clair"
+            data-label-light="Basculer vers le thème sombre">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
+  <nav class="language-switcher" role="navigation" aria-label="Versions linguistiques">
+    <a href="2026-03-31-committee-reports-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-03-31-committee-reports-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
     <a href="2026-03-31-committee-reports-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
     <a href="2026-03-31-committee-reports-no.html" class="lang-link" hreflang="nb">🇳🇴 Norsk</a>
     <a href="2026-03-31-committee-reports-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
     <a href="2026-03-31-committee-reports-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
-    <a href="2026-03-31-committee-reports-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
+    <a href="2026-03-31-committee-reports-fr.html" class="lang-link active" hreflang="fr" aria-current="page">🇫🇷 Français</a>
     <a href="2026-03-31-committee-reports-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
     <a href="2026-03-31-committee-reports-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
     <a href="2026-03-31-committee-reports-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
@@ -246,6 +257,7 @@
     <a href="2026-03-31-committee-reports-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-03-31-committee-reports-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <div class="article-top-nav">
   <a href="index.html" class="back-to-news">
@@ -871,7 +883,7 @@
   </div>
 </footer>
 
-<script type="module" src="../scripts/back-to-top.ts"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/back-to-top.js" defer></script></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

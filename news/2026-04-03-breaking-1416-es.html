@@ -66,7 +66,7 @@
   <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/news/2026-04-03-breaking-1416-zh.html">
 
   <link rel="stylesheet" href="../styles.css">
-  <link rel="icon" type="image/png" href="../riksdagsmonitor-logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 
   <!-- Schema.org NoticiasArticle structured data -->
   <script type="application/ld+json">
@@ -88,7 +88,7 @@
       "url": "https://riksdagsmonitor.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://riksdagsmonitor.com/riksdagsmonitor-logo.png"
+        "url": "https://riksdagsmonitor.com/images/android-chrome-512x512.png"
       }
     },
     "mainEntityOfPage": "https://riksdagsmonitor.com/news/2026-04-03-breaking-1416-es.html",
@@ -101,17 +101,36 @@
   }
   </script>
 </head>
-<body>
-
-  <nav class="language-switcher" role="navigation" aria-label="Language versions">
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="Navegación principal">
+    <a href="../index_es.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_es.html">Inicio</a></li>
+      <li><a href="index_es.html" aria-current="page">Noticias</a></li>
+      <li><a href="../dashboard/index_es.html">Panel</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Cambiar al tema oscuro"
+            title="Cambiar al tema oscuro"
+            data-label-dark="Cambiar al tema claro"
+            data-label-light="Cambiar al tema oscuro">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
+  <nav class="language-switcher" role="navigation" aria-label="Versiones de idioma">
     <a href="2026-04-03-breaking-1416-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-04-03-breaking-1416-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
     <a href="2026-04-03-breaking-1416-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
-    <a href="2026-04-03-breaking-1416-no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
+    <a href="2026-04-03-breaking-1416-no.html" class="lang-link" hreflang="nb">🇳🇴 Norsk</a>
     <a href="2026-04-03-breaking-1416-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
     <a href="2026-04-03-breaking-1416-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
     <a href="2026-04-03-breaking-1416-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
-    <a href="2026-04-03-breaking-1416-es.html" class="lang-link active" aria-current="page" hreflang="es">🇪🇸 Español</a>
+    <a href="2026-04-03-breaking-1416-es.html" class="lang-link active" hreflang="es" aria-current="page">🇪🇸 Español</a>
     <a href="2026-04-03-breaking-1416-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
     <a href="2026-04-03-breaking-1416-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
     <a href="2026-04-03-breaking-1416-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
@@ -281,5 +300,6 @@
   </div>
 </footer>
 
+<script src="../js/back-to-top.js" defer></script>
 </body>
 </html>

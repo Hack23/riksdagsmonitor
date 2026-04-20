@@ -80,14 +80,27 @@
   <meta name="quality-score" content="71">
   <meta name="article-quality-score" content="71">
 </head>
-<body>
-<a href="#main-content" class="skip-link">Aller au contenu principal</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button" aria-pressed="false"
-        aria-label="Basculer vers le thème sombre"
-        data-label-dark="Basculer vers le thème clair"
-        data-label-light="Basculer vers le thème sombre">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="Navigation principale">
+    <a href="../index_fr.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_fr.html">Accueil</a></li>
+      <li><a href="index_fr.html" aria-current="page">Actualités</a></li>
+      <li><a href="../dashboard/index_fr.html">Tableau de bord</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Basculer vers le thème sombre"
+            title="Basculer vers le thème sombre"
+            data-label-dark="Basculer vers le thème clair"
+            data-label-light="Basculer vers le thème sombre">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
   <nav class="language-switcher" role="navigation" aria-label="Versions linguistiques">
     <a href="2026-04-17-committee-reports-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-04-17-committee-reports-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
@@ -104,6 +117,7 @@
     <a href="2026-04-17-committee-reports-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-04-17-committee-reports-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
 <div class="article-top-nav">
   <a href="index.html" class="back-to-news">← Retour aux actualités</a>
@@ -313,6 +327,7 @@
   </div>
 </footer>
 
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/back-to-top.js" defer></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

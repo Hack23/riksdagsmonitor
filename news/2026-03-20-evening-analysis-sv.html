@@ -82,15 +82,32 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
 </head>
-<body>
-  <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
-  <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-pressed="false" aria-label="Byt till mörkt tema" title="Byt till mörkt tema" data-label-dark="Byt till ljust tema" data-label-light="Byt till mörkt tema">
-    <span class="theme-icon" aria-hidden="true">&#x1F319;</span>
-  </button>
-  <nav class="language-switcher" role="navigation" aria-label="Språkversioner">
-    <a href="2026-03-20-evening-analysis-en.html" class="lang-link" hreflang="en"><span aria-hidden="true">&#x1F1EC;&#x1F1E7;</span> English</a>
-    <a href="2026-03-20-evening-analysis-sv.html" class="lang-link active" hreflang="sv" aria-current="page"><span aria-hidden="true">&#x1F1F8;&#x1F1EA;</span> Svenska</a>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="Huvudnavigation">
+    <a href="../index_sv.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_sv.html">Hem</a></li>
+      <li><a href="index_sv.html" aria-current="page">Nyheter</a></li>
+      <li><a href="../dashboard/index_sv.html">Instrumentpanel</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Byt till mörkt tema"
+            title="Byt till mörkt tema"
+            data-label-dark="Byt till ljust tema"
+            data-label-light="Byt till mörkt tema">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
   </nav>
+</header>
+  <nav class="language-switcher" role="navigation" aria-label="Språkversioner">
+    <a href="2026-03-20-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
+    <a href="2026-03-20-evening-analysis-sv.html" class="lang-link active" hreflang="sv" aria-current="page">🇸🇪 Svenska</a>
+  </nav>
+  <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
   <div class="article-top-nav">
     <a href="index_sv.html" class="back-to-news">&larr; Tillbaka till nyheter</a>
   </div>
@@ -148,7 +165,7 @@
       </div>
     </div>
   </article>
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="footer-grid">
       <div class="footer-section">
         <h3>Riksdagsmonitor</h3>
@@ -209,6 +226,6 @@
     </div>
   </footer>
   <script src="../js/back-to-top.js"></script>
-  <script src="../js/theme-toggle.js"></script>
+  <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

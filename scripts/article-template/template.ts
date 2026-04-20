@@ -29,6 +29,7 @@ import {
   generateFaqSection,
   generateArticleLanguageSwitcher,
   generateSiteFooter,
+  generateSiteHeader,
   hreflangCode,
 } from './helpers.js';
 
@@ -466,14 +467,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
 </head>
 <body>
 <a href="#main-content" class="skip-link">${getFooterLabel(lang, 'skipToContent')}</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="${getFooterLabel(lang, 'themeToDark')}"
-        title="${getFooterLabel(lang, 'themeToDark')}"
-        data-label-dark="${getFooterLabel(lang, 'themeToLight')}"
-        data-label-light="${getFooterLabel(lang, 'themeToDark')}">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+${generateSiteHeader(lang)}
 ${generateArticleLanguageSwitcher(baseSlug, lang)}
 
 <div class="article-top-nav">
@@ -543,8 +537,8 @@ ${analysisReferencesHtml}
 
 ${generateSiteFooter(lang)}
 
-<script type="module" src="../scripts/back-to-top.ts"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/back-to-top.js" defer></script>
+<script src="../js/theme-toggle.js" defer></script>
 ${hasChartConfig ? `<script src="../js/lib/chart.umd.4.4.1.js"></script>` : ''}
 ${hasChartConfig && hasAnnotation ? `<script src="../js/lib/chartjs-plugin-annotation.3.0.1.min.js"></script>` : ''}
 ${hasChartConfig ? `<script src="../js/chart-init.js"></script>` : ''}

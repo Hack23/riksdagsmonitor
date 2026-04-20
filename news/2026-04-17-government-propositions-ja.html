@@ -69,11 +69,27 @@
   </script>
   <meta name="quality-score" content="71">
 </head>
-<body>
-<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button" aria-pressed="false" aria-label="ダークテーマに切り替え" title="ダークテーマに切り替え" data-label-dark="ライトテーマに切り替え" data-label-light="ダークテーマに切り替え">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="メインナビゲーション">
+    <a href="../index_ja.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_ja.html">ホーム</a></li>
+      <li><a href="index_ja.html" aria-current="page">ニュース</a></li>
+      <li><a href="../dashboard/index_ja.html">ダッシュボード</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="ダークテーマに切り替え"
+            title="ダークテーマに切り替え"
+            data-label-dark="ライトテーマに切り替え"
+            data-label-light="ダークテーマに切り替え">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
   <nav class="language-switcher" role="navigation" aria-label="言語バージョン">
     <a href="2026-04-17-government-propositions-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-04-17-government-propositions-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
@@ -90,6 +106,7 @@
     <a href="2026-04-17-government-propositions-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-04-17-government-propositions-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <div class="article-top-nav">
   <a href="index.html" class="back-to-news">← ニュース一覧に戻る</a>
@@ -250,6 +267,7 @@
   </div>
 </footer>
 
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/back-to-top.js" defer></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

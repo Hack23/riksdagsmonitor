@@ -133,15 +133,32 @@
  }
  </script>
 </head>
-<body>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="../index.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html" aria-current="page">News</a></li>
+      <li><a href="../dashboard/index.html">Dashboard</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Switch to dark theme"
+            title="Switch to dark theme"
+            data-label-dark="Switch to light theme"
+            data-label-light="Switch to dark theme">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
+  <nav class="language-switcher" role="navigation" aria-label="Language versions">
+    <a href="2026-04-16-breaking-1442-en.html" class="lang-link active" hreflang="en" aria-current="page">🇬🇧 English</a>
+    <a href="2026-04-16-breaking-1442-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
+  </nav>
 <a href="#main-content" class="skip-to-main">Skip to main content</a>
-<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
- <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
- <nav class="language-switcher" role="navigation" aria-label="Language versions">
- <a href="2026-04-16-breaking-1442-en.html" class="lang-link active" hreflang="en" aria-current="page">🇬🇧 English</a>
- <a href="2026-04-16-breaking-1442-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
- </nav>
 
 <div class="article-top-nav">
  <a href="index.html" class="back-to-news">
@@ -343,5 +360,6 @@
  <script>
  document.addEventListener('DOMContentLoaded',function(){var btn=document.getElementById('theme-toggle');if(!btn)return;var key='riksdagsmonitor-theme';function getTheme(){var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}return t;}function applyTheme(t){document.documentElement.setAttribute('data-theme',t);btn.querySelector('.theme-icon').textContent=t==='dark'?'🌙':'☀️';btn.setAttribute('aria-label',(t==='dark'?'Switch to light':'Switch to dark')+' theme');}btn.addEventListener('click',function(){var current=getTheme();var next=current==='dark'?'light':'dark';try{localStorage.setItem(key,next);}catch(e){}applyTheme(next);});applyTheme(getTheme());});
  </script>
+<script src="../js/back-to-top.js" defer></script>
 </body>
 </html>

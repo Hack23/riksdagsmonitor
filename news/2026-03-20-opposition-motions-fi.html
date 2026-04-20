@@ -200,16 +200,27 @@
   
   <meta name="quality-score" content="75">
 </head>
-<body>
-<a href="#main-content" class="skip-link">Siirry pääsisältöön</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="Vaihda tummaan teemaan"
-        title="Vaihda tummaan teemaan"
-        data-label-dark="Vaihda vaaleaan teemaan"
-        data-label-light="Vaihda tummaan teemaan">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="Päänavigaatio">
+    <a href="../index_fi.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_fi.html">Etusivu</a></li>
+      <li><a href="index_fi.html" aria-current="page">Uutiset</a></li>
+      <li><a href="../dashboard/index_fi.html">Koontinäyttö</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Vaihda tummaan teemaan"
+            title="Vaihda tummaan teemaan"
+            data-label-dark="Vaihda vaaleaan teemaan"
+            data-label-light="Vaihda tummaan teemaan">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
   <nav class="language-switcher" role="navigation" aria-label="Kieliversiot">
     <a href="2026-03-20-opposition-motions-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-03-20-opposition-motions-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
@@ -226,6 +237,7 @@
     <a href="2026-03-20-opposition-motions-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-03-20-opposition-motions-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+<a href="#main-content" class="skip-link">Siirry pääsisältöön</a>
 
 <div class="article-top-nav">
   <a href="index_fi.html" class="back-to-news">
@@ -512,7 +524,7 @@
   </div>
 </footer>
 
-<script type="module" src="../scripts/back-to-top.ts"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/back-to-top.js" defer></script></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

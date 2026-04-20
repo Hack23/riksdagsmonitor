@@ -193,9 +193,27 @@
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 </head>
-<body>
-<button id="theme-toggle" class="theme-toggle-btn" type="button" aria-pressed="false" aria-label="Switch to dark theme" title="Switch to dark theme" data-label-dark="Switch to light theme" data-label-light="Switch to dark theme"><span class="theme-icon" aria-hidden="true">🌙</span></button>
-<a href="#main-content" class="skip-link">Ga naar hoofdinhoud</a>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="Hoofdnavigatie">
+    <a href="../index_nl.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_nl.html">Start</a></li>
+      <li><a href="index_nl.html" aria-current="page">Nieuws</a></li>
+      <li><a href="../dashboard/index_nl.html">Dashboard</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Schakel over naar donkere modus"
+            title="Schakel over naar donkere modus"
+            data-label-dark="Schakel over naar lichte modus"
+            data-label-light="Schakel over naar donkere modus">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
   <nav class="language-switcher" role="navigation" aria-label="Taalversies">
     <a href="2026-03-02-committee-reports-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-03-02-committee-reports-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
@@ -212,6 +230,7 @@
     <a href="2026-03-02-committee-reports-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-03-02-committee-reports-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+<a href="#main-content" class="skip-link">Ga naar hoofdinhoud</a>
 
 <div class="article-top-nav">
   <a href="index_nl.html" class="back-to-news">
@@ -536,7 +555,7 @@
   </div>
 </footer>
 
-<script type="module" src="../scripts/back-to-top.ts"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/back-to-top.js" defer></script></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

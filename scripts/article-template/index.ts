@@ -17,13 +17,13 @@
  */
 
 export { generateArticleHTML } from './template.js';
-export { generateEventCalendar, generateWatchSection, generateWhatHappensNextSection, generateWinnersLosersSection, generateFaqSection, generateArticleLanguageSwitcher, generateSiteFooter, fixHtmlNesting, stripSwedishBoilerplate } from './helpers.js';
+export { generateEventCalendar, generateWatchSection, generateWhatHappensNextSection, generateWinnersLosersSection, generateFaqSection, generateArticleLanguageSwitcher, generateSiteFooter, generateSiteHeader, fixHtmlNesting, stripSwedishBoilerplate } from './helpers.js';
 export { getTemplate, getStyleClass, getAIDirectives, getLayout, listRegisteredTypes } from './registry.js';
 export type { ArticleTemplate, LayoutConfig, AIStyleDirective, ContentTone, ColumnCount, BreadcrumbStyle } from './types.js';
 export { GLOBAL_STYLE_RUBRIC, ARTICLE_TYPE_NAMES } from './types.js';
 
 import { generateArticleHTML } from './template.js';
-import { generateEventCalendar, generateWatchSection, generateWhatHappensNextSection, generateWinnersLosersSection, generateFaqSection, generateArticleLanguageSwitcher, generateSiteFooter } from './helpers.js';
+import { generateEventCalendar, generateWatchSection, generateWhatHappensNextSection, generateWinnersLosersSection, generateFaqSection, generateArticleLanguageSwitcher, generateSiteFooter, generateSiteHeader } from './helpers.js';
 import { getTemplate, getStyleClass, getAIDirectives, getLayout, listRegisteredTypes } from './registry.js';
 
 export default {
@@ -35,6 +35,7 @@ export default {
   generateFaqSection,
   generateArticleLanguageSwitcher,
   generateSiteFooter,
+  generateSiteHeader,
   getTemplate,
   getStyleClass,
   getAIDirectives,

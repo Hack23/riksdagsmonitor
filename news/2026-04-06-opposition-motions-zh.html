@@ -219,16 +219,27 @@
   </script>
   
 </head>
-<body>
-<a href="#main-content" class="skip-link">跳转到主要内容</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="切换到深色主题"
-        title="切换到深色主题"
-        data-label-dark="切换到浅色主题"
-        data-label-light="切换到深色主题">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="主导航">
+    <a href="../index_zh.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_zh.html">首页</a></li>
+      <li><a href="index_zh.html" aria-current="page">新闻</a></li>
+      <li><a href="../dashboard/index_zh.html">仪表板</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="切换到深色主题"
+            title="切换到深色主题"
+            data-label-dark="切换到浅色主题"
+            data-label-light="切换到深色主题">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
   <nav class="language-switcher" role="navigation" aria-label="语言版本">
     <a href="2026-04-06-opposition-motions-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-04-06-opposition-motions-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
@@ -245,6 +256,7 @@
     <a href="2026-04-06-opposition-motions-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-04-06-opposition-motions-zh.html" class="lang-link active" hreflang="zh" aria-current="page">🇨🇳 中文</a>
   </nav>
+<a href="#main-content" class="skip-link">跳转到主要内容</a>
 
 <div class="article-top-nav">
   <a href="index_zh.html" class="back-to-news">
@@ -511,7 +523,7 @@
   </div>
 </footer>
 
-<script type="module" src="../scripts/back-to-top.ts"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/back-to-top.js" defer></script></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

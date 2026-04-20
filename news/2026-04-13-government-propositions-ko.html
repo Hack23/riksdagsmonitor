@@ -225,17 +225,28 @@
   
   
 </head>
-<body>
-<a href="#main-content" class="skip-link">본문으로 건너뛰기</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="Switch to dark theme"
-        title="Switch to dark theme"
-        data-label-dark="Switch to light theme"
-        data-label-light="Switch to dark theme">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
-  <nav class="language-switcher" role="navigation" aria-label="Language versions">
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="주 탐색">
+    <a href="../index_ko.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_ko.html">홈</a></li>
+      <li><a href="index_ko.html" aria-current="page">뉴스</a></li>
+      <li><a href="../dashboard/index_ko.html">대시보드</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="어두운 테마로 전환"
+            title="어두운 테마로 전환"
+            data-label-dark="밝은 테마로 전환"
+            data-label-light="어두운 테마로 전환">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
+  <nav class="language-switcher" role="navigation" aria-label="언어 버전">
     <a href="2026-04-13-government-propositions-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-04-13-government-propositions-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
     <a href="2026-04-13-government-propositions-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
@@ -251,6 +262,7 @@
     <a href="2026-04-13-government-propositions-ko.html" class="lang-link active" hreflang="ko" aria-current="page">🇰🇷 한국어</a>
     <a href="2026-04-13-government-propositions-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+<a href="#main-content" class="skip-link">본문으로 건너뛰기</a>
 
 <div class="article-top-nav">
   <a href="index.html" class="back-to-news">
@@ -773,7 +785,7 @@
   </div>
 </footer>
 
-<script type="module" src="../scripts/back-to-top.ts"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/back-to-top.js" defer></script></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

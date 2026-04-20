@@ -219,16 +219,27 @@
   </script>
   
 </head>
-<body>
-<a href="#main-content" class="skip-link">الانتقال إلى المحتوى الرئيسي</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="التبديل إلى الوضع الداكن"
-        title="التبديل إلى الوضع الداكن"
-        data-label-dark="التبديل إلى الوضع الفاتح"
-        data-label-light="التبديل إلى الوضع الداكن">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="التنقل الرئيسي">
+    <a href="../index_ar.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_ar.html">الرئيسية</a></li>
+      <li><a href="index_ar.html" aria-current="page">الأخبار</a></li>
+      <li><a href="../dashboard/index_ar.html">لوحة التحكم</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="التبديل إلى الوضع الداكن"
+            title="التبديل إلى الوضع الداكن"
+            data-label-dark="التبديل إلى الوضع الفاتح"
+            data-label-light="التبديل إلى الوضع الداكن">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
   <nav class="language-switcher" role="navigation" aria-label="إصدارات اللغة">
     <a href="2026-04-03-interpellation-debates-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-04-03-interpellation-debates-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
@@ -245,6 +256,7 @@
     <a href="2026-04-03-interpellation-debates-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-04-03-interpellation-debates-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+<a href="#main-content" class="skip-link">الانتقال إلى المحتوى الرئيسي</a>
 
 <div class="article-top-nav">
   <a href="index_ar.html" class="back-to-news">
@@ -618,7 +630,7 @@
   </div>
 </footer>
 
-<script type="module" src="../scripts/back-to-top.ts"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/back-to-top.js" defer></script></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

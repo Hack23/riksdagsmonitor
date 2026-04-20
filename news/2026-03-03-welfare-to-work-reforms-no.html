@@ -77,11 +77,28 @@
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 </head>
-<body>
-<button id="theme-toggle" class="theme-toggle-btn" type="button" aria-pressed="false" aria-label="Switch to dark theme" title="Switch to dark theme" data-label-dark="Switch to light theme" data-label-light="Switch to dark theme"><span class="theme-icon" aria-hidden="true">🌙</span></button>
-  <a class="skip-link" href="#main-content">Hopp til hovedinnhold</a>
-
-  <nav class="language-switcher" role="navigation" aria-label="Språkversjoner av siden">
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="Primærnavigasjon">
+    <a href="../index_no.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_no.html">Hjem</a></li>
+      <li><a href="index_no.html" aria-current="page">Nyheter</a></li>
+      <li><a href="../dashboard/index_no.html">Dashbord</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Bytt til mørkt tema"
+            title="Bytt til mørkt tema"
+            data-label-dark="Bytt til lyst tema"
+            data-label-light="Bytt til mørkt tema">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
+  <nav class="language-switcher" role="navigation" aria-label="Språkversjoner">
     <a href="2026-03-03-welfare-to-work-reforms-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-03-03-welfare-to-work-reforms-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
     <a href="2026-03-03-welfare-to-work-reforms-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
@@ -97,6 +114,7 @@
     <a href="2026-03-03-welfare-to-work-reforms-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-03-03-welfare-to-work-reforms-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+  <a class="skip-link" href="#main-content">Hopp til hovedinnhold</a>
 
   <div class="article-top-nav">
     <a href="index_no.html" class="back-to-news">← Tilbake til nyheter</a>
@@ -172,7 +190,7 @@
     </footer>
   </article>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="footer-content">
       <div class="footer-section">
         <h3>Om Riksdagsmonitor</h3>
@@ -213,7 +231,7 @@
     </div>
   </footer>
 
-  <script type="module" src="../scripts/back-to-top.ts"></script>
-<script src="../js/theme-toggle.js"></script>
+  <script src="../js/back-to-top.js" defer></script></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

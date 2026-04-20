@@ -219,16 +219,27 @@
   </script>
   
 </head>
-<body>
-<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="Cambiar al tema oscuro"
-        title="Cambiar al tema oscuro"
-        data-label-dark="Cambiar al tema claro"
-        data-label-light="Cambiar al tema oscuro">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="Navegación principal">
+    <a href="../index_es.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_es.html">Inicio</a></li>
+      <li><a href="index_es.html" aria-current="page">Noticias</a></li>
+      <li><a href="../dashboard/index_es.html">Panel</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Cambiar al tema oscuro"
+            title="Cambiar al tema oscuro"
+            data-label-dark="Cambiar al tema claro"
+            data-label-light="Cambiar al tema oscuro">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
   <nav class="language-switcher" role="navigation" aria-label="Versiones de idioma">
     <a href="2026-04-04-weekly-review-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-04-04-weekly-review-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
@@ -239,12 +250,11 @@
     <a href="2026-04-04-weekly-review-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
     <a href="2026-04-04-weekly-review-es.html" class="lang-link active" hreflang="es" aria-current="page">🇪🇸 Español</a>
     <a href="2026-04-04-weekly-review-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
-    <a href="2026-04-04-weekly-review-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
-    <a href="2026-04-04-weekly-review-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
     <a href="2026-04-04-weekly-review-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
     <a href="2026-04-04-weekly-review-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-04-04-weekly-review-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
 <div class="article-top-nav">
   <a href="index_es.html" class="back-to-news">
@@ -1096,7 +1106,7 @@
   </div>
 </footer>
 
-<script type="module" src="../scripts/back-to-top.ts"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/back-to-top.js" defer></script></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

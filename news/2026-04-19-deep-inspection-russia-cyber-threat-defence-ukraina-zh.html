@@ -82,16 +82,27 @@
   <meta name="article:quality-score" content="71">
   <meta name="article:quality-version" content="v2">
 </head>
-<body>
-<a href="#main-content" class="skip-link">跳至主要内容</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="切换至深色主题"
-        title="切换至深色主题"
-        data-label-dark="切换至浅色主题"
-        data-label-light="切换至深色主题">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="主导航">
+    <a href="../index_zh.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_zh.html">首页</a></li>
+      <li><a href="index_zh.html" aria-current="page">新闻</a></li>
+      <li><a href="../dashboard/index_zh.html">仪表板</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="切换到深色主题"
+            title="切换到深色主题"
+            data-label-dark="切换到浅色主题"
+            data-label-light="切换到深色主题">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
   <nav class="language-switcher" role="navigation" aria-label="语言版本">
     <a href="2026-04-19-deep-inspection-russia-cyber-threat-defence-ukraina-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-04-19-deep-inspection-russia-cyber-threat-defence-ukraina-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
@@ -108,6 +119,7 @@
     <a href="2026-04-19-deep-inspection-russia-cyber-threat-defence-ukraina-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-04-19-deep-inspection-russia-cyber-threat-defence-ukraina-zh.html" class="lang-link active" hreflang="zh" aria-current="page">🇨🇳 中文</a>
   </nav>
+<a href="#main-content" class="skip-link">跳至主要内容</a>
 
 <div class="article-top-nav">
   <a href="index.html" class="back-to-news">← 返回新闻列表</a>
@@ -328,6 +340,7 @@
   </div>
 </footer>
 
-<script src="../js/news-article.js" defer></script>
+</script>
+<script src="../js/back-to-top.js" defer></script>
 </body>
 </html>

@@ -21,6 +21,7 @@ import {
   generateLanguageSwitcherNav,
 } from './helpers.js';
 import { PKG_VERSION } from '../shared/version.js';
+import { generateSiteFooter } from '../article-template.js';
 
 export function generateIndexHTML(
   langKey: string,
@@ -582,14 +583,9 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     </div>
   </section>
   </main>
-  <footer class="news-footer">
-    <a href="../${mainIndex}" aria-label="Riksdagsmonitor Home">
-      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
-    </a>
-    <p>&copy; 2026 Riksdagsmonitor - Swedish Parliament Intelligence | v${escapeHtml(String(PKG_VERSION))}</p>
-    <p class="footer-disclaimer">⚠️ ${escapeHtml(lang.disclaimer)} <a href="https://github.com/Hack23/riksdagsmonitor/issues" target="_blank" rel="noopener noreferrer">${escapeHtml(lang.disclaimerLink)}</a>.</p>
-  </footer>
-  <script src="../js/theme-toggle.js"></script>
+  ${generateSiteFooter(langKey)}
+  <script src="../js/theme-toggle.js" defer></script>
+  <script src="../js/back-to-top.js" defer></script>
 </body>
 </html>`;
 

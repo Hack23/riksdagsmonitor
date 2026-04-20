@@ -93,6 +93,39 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Guard against broken HTML regressions
+        run: |
+          echo "🔍 Checking committed news articles for known bad patterns…"
+          FAIL=0
+
+          # No raw TypeScript script references in articles
+          COUNT=$(grep -rl 'src="[^"]*back-to-top\.ts"' news/ 2>/dev/null | wc -l)
+          if [ "$COUNT" -gt 0 ]; then
+            echo "❌ $COUNT article(s) still reference back-to-top.ts"
+            grep -rl 'src="[^"]*back-to-top\.ts"' news/ | head -5
+            FAIL=1
+          fi
+
+          # No non-existent news-article.js references
+          COUNT=$(grep -rl 'news-article\.js' news/ 2>/dev/null | wc -l)
+          if [ "$COUNT" -gt 0 ]; then
+            echo "❌ $COUNT article(s) still reference news-article.js"
+            FAIL=1
+          fi
+
+          # No absolute /js/lib/ paths
+          COUNT=$(grep -rl 'src="/js/lib/' news/ 2>/dev/null | wc -l)
+          if [ "$COUNT" -gt 0 ]; then
+            echo "❌ $COUNT article(s) use absolute /js/lib/ path"
+            FAIL=1
+          fi
+
+          if [ "$FAIL" -eq 0 ]; then
+            echo "✅ No broken HTML patterns found in news articles."
+          else
+            exit 1
+          fi
+
       - name: Build with Vite
         run: npm run build
 
@@ -120,6 +153,12 @@ jobs:
           fi
 
           echo "✅ Build artifacts verified: 'dist' directory, 'dist/index.html', 'dist/rss.xml', and 'dist/sitemap.xml' exist."
+
+          if [ ! -d "dist/news" ]; then
+            echo "❌ Build verification failed: 'dist/news/' directory is missing."
+            exit 1
+          fi
+          echo "✅ dist/news/ directory present."
 
       - name: Copy documentation to build output
         run: |

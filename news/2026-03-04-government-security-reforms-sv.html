@@ -87,16 +87,27 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 </head>
-<body>
-<a href="#main-content" class="skip-link">Hoppa till huvudinnehåll</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="Byt till mörkt tema"
-        title="Byt till mörkt tema"
-        data-label-dark="Byt till ljust tema"
-        data-label-light="Byt till mörkt tema">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+<body data-rm-normalized="v6">
+<header role="banner">
+  <nav role="navigation" aria-label="Huvudnavigation">
+    <a href="../index_sv.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index_sv.html">Hem</a></li>
+      <li><a href="index_sv.html" aria-current="page">Nyheter</a></li>
+      <li><a href="../dashboard/index_sv.html">Instrumentpanel</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Byt till mörkt tema"
+            title="Byt till mörkt tema"
+            data-label-dark="Byt till ljust tema"
+            data-label-light="Byt till mörkt tema">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
   <nav class="language-switcher" role="navigation" aria-label="Språkversioner">
     <a href="2026-03-04-government-security-reforms-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-03-04-government-security-reforms-sv.html" class="lang-link active" hreflang="sv" aria-current="page">🇸🇪 Svenska</a>
@@ -113,6 +124,7 @@
     <a href="2026-03-04-government-security-reforms-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-03-04-government-security-reforms-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+<a href="#main-content" class="skip-link">Hoppa till huvudinnehåll</a>
 
 <div class="article-top-nav">
   <a href="index_sv.html" class="back-to-news">← Tillbaka till Nyheter</a>
@@ -267,6 +279,6 @@
 
 <button id="back-to-top" class="back-to-top" type="button" aria-label="Tillbaka till toppen">↑</button>
 <script src="../js/back-to-top.js"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>
