@@ -70,7 +70,31 @@
   }
   </script>
 </head>
-<body>
+<body data-rm-normalized="v9">
+<header role="banner">
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="../index.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html" aria-current="page">News</a></li>
+      <li><a href="../dashboard/index.html">Dashboard</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Switch to dark theme"
+            title="Switch to dark theme"
+            data-label-dark="Switch to light theme"
+            data-label-light="Switch to dark theme">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
+  <nav class="language-switcher" role="navigation" aria-label="Language versions">
+    <a href="2026-03-26-breaking-justice-security-legislative-push-en.html" class="lang-link active" hreflang="en" lang="en" aria-current="page">🇬🇧 English</a>
+    <a href="2026-03-26-breaking-justice-security-legislative-push-sv.html" class="lang-link" hreflang="sv" lang="sv">🇸🇪 Svenska</a>
+  </nav>
 <nav class="article-top-nav" aria-label="Main navigation">
   <a href="../index.html" class="nav-home" aria-label="Home">
     <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="nav-logo" width="32" height="32" loading="eager">
@@ -235,7 +259,7 @@
   </div>
 </footer>
 
-<script type="module" src="../scripts/back-to-top.ts"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/back-to-top.js" defer></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

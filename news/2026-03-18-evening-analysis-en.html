@@ -38,16 +38,32 @@
   <link rel="stylesheet" href="../styles.css">
   <script>try{const t=localStorage.getItem("theme");if(t==="light")document.documentElement.classList.add("light-theme")}catch(e){}</script>
 </head>
-<body>
+<body data-rm-normalized="v9">
+<header role="banner">
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="../index.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html" aria-current="page">News</a></li>
+      <li><a href="../dashboard/index.html">Dashboard</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Switch to dark theme"
+            title="Switch to dark theme"
+            data-label-dark="Switch to light theme"
+            data-label-light="Switch to dark theme">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>
+  <nav class="language-switcher" role="navigation" aria-label="Language versions">
+    <a href="2026-03-18-evening-analysis-en.html" class="lang-link active" hreflang="en" lang="en" aria-current="page">🇬🇧 English</a>
+    <a href="2026-03-18-evening-analysis-sv.html" class="lang-link" hreflang="sv" lang="sv">🇸🇪 Svenska</a>
+  </nav>
 <a href="#main-content" class="skip-link">Skip to main content</a>
-<button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Toggle theme">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
-
-<nav class="language-switcher" role="navigation" aria-label="Language versions">
-  <a href="2026-03-18-evening-analysis-en.html" class="lang-link active" hreflang="en" aria-current="page">🇬🇧 English</a>
-  <a href="2026-03-18-evening-analysis-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
-</nav>
 
 <div class="article-top-nav">
   <a href="index.html" class="back-to-news">← Back to News</a>
@@ -205,7 +221,7 @@
 <footer role="contentinfo">
   <div class="footer-content">
     <div class="footer-section">
-      <img src="../riksdagsmonitor-logo.png" alt="Riksdagsmonitor logo" class="footer-logo" width="40" height="40" loading="lazy">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor logo" class="footer-logo" width="40" height="40" loading="lazy">
       <h3>Riksdagsmonitor</h3>
       <p>Political transparency through data</p>
       <div class="footer-stats">
@@ -239,6 +255,6 @@
 </footer>
 
 <script type="module" src="../js/back-to-top.js"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

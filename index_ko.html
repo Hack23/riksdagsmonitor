@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
 <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" href="styles.css">
 <link rel="canonical" href="https://riksdagsmonitor.com/index_ko.html">
 <link rel="manifest" href="site.webmanifest">
 <meta name="description" content="Riksdagsmonitor: 2026 스웨덴 총선 인텔리전스 플랫폼. 8개 정당 349명의 국회의원을 실시간 모니터링하고, 연정 예측, 45개 위험 규칙, Citizen Intelligence Agency(CIA) OSINT 플랫폼의 50년+ 의회 데이터를 제공합니다.">
@@ -1272,7 +1272,8 @@
   <span aria-hidden="true">↑</span>
 </button>
 
-    <script src="/js/theme-toggle.js"></script>
+    <script src="js/back-to-top.js" defer></script>
+<script src="js/theme-toggle.js" defer></script>
     <!-- Main application entry point -->
     <script type="module" src="/src/browser/main.ts"></script>
 </body>

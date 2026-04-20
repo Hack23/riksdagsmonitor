@@ -16,6 +16,7 @@ import type { ClassificationLevel } from '../analysis-reader.js';
 import { SITE_TAGLINE, OG_LOCALE_MAP, TYPE_LABELS, ALL_LANG_CODES } from './constants.js';
 import { getStyleClass } from './registry.js';
 import { ARTICLE_TYPE_NAMES } from './types.js';
+import { THEME_INIT_SCRIPT_TAG } from '../shared/theme-init.js';
 import {
   getBreadcrumbName,
   getFooterLabel,
@@ -29,8 +30,10 @@ import {
   generateFaqSection,
   generateArticleLanguageSwitcher,
   generateSiteFooter,
+  generateSiteHeader,
   hreflangCode,
 } from './helpers.js';
+
 
 // ---------------------------------------------------------------------------
 // SEO / Structured Data helpers
@@ -310,8 +313,9 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
   <!-- Main stylesheet — includes all article styles + component/theme imports -->
   <link rel="stylesheet" href="../styles.css">
   
-  <!-- Anti-flash: apply saved theme before first paint -->
-  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
+  <!-- Anti-flash: apply saved theme before first paint. Inlined from
+       js/theme-init.js via scripts/shared/theme-init.ts (single source of truth). -->
+  ${THEME_INIT_SCRIPT_TAG}
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">
@@ -466,14 +470,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
 </head>
 <body>
 <a href="#main-content" class="skip-link">${getFooterLabel(lang, 'skipToContent')}</a>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="${getFooterLabel(lang, 'themeToDark')}"
-        title="${getFooterLabel(lang, 'themeToDark')}"
-        data-label-dark="${getFooterLabel(lang, 'themeToLight')}"
-        data-label-light="${getFooterLabel(lang, 'themeToDark')}">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+${generateSiteHeader(lang)}
 ${generateArticleLanguageSwitcher(baseSlug, lang)}
 
 <div class="article-top-nav">
@@ -543,8 +540,8 @@ ${analysisReferencesHtml}
 
 ${generateSiteFooter(lang)}
 
-<script type="module" src="../scripts/back-to-top.ts"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/back-to-top.js" defer></script>
+<script src="../js/theme-toggle.js" defer></script>
 ${hasChartConfig ? `<script src="../js/lib/chart.umd.4.4.1.js"></script>` : ''}
 ${hasChartConfig && hasAnnotation ? `<script src="../js/lib/chartjs-plugin-annotation.3.0.1.min.js"></script>` : ''}
 ${hasChartConfig ? `<script src="../js/chart-init.js"></script>` : ''}

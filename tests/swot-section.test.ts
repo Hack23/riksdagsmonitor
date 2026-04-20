@@ -195,5 +195,52 @@ describe('generateSwotSection', () => {
     };
     const section = generateSwotSection({ data, lang: 'en' });
     expect(section.html).not.toContain('swot-radar-wrapper');
+    // When no radar is emitted the a11y fallback table should also be absent
+    // (the quadrant lists already carry the data).
+    expect(section.html).not.toContain('swot-radar-fallback');
+  });
+
+  describe('SWOT radar a11y fallback table', () => {
+    it('emits an sr-only <table> alongside the radar canvas', () => {
+      const section = generateSwotSection({ data: makeSwot(), lang: 'en' });
+      expect(section.html).toContain('<table class="swot-radar-fallback sr-only">');
+      expect(section.html).toContain('<caption>');
+      expect(section.html).toMatch(/<th scope="col">/);
+      expect(section.html).toMatch(/<th scope="row">/);
+    });
+
+    it('fallback table contains one row per quadrant with correct weighted impact score', () => {
+      // Impact weights: high=3, medium=2, low=1
+      // strengths=high(3), weaknesses=medium(2), opportunities=high(3), threats=low(1)
+      const section = generateSwotSection({ data: makeSwot(), lang: 'en' });
+      // Count the number of <tr> inside <tbody>
+      const tbodyMatch = section.html.match(/<tbody>([\s\S]*?)<\/tbody>/);
+      expect(tbodyMatch).not.toBeNull();
+      const rowCount = (tbodyMatch![1].match(/<tr>/g) ?? []).length;
+      expect(rowCount).toBe(4);
+      // Score cells should be present (one per quadrant, integer)
+      expect(section.html).toMatch(/<td>3<\/td>\s*<\/tr>/);  // strengths or opportunities
+    });
+
+    it('fallback table is omitted when radar is omitted', () => {
+      const data: SwotData = {
+        strengths: [{ text: 'Only one', impact: 'high' }],
+        weaknesses: [],
+        opportunities: [],
+        threats: [],
+      };
+      const section = generateSwotSection({ data, lang: 'en' });
+      expect(section.html).not.toContain('swot-radar-fallback');
+    });
+
+    it('radar canvas config never contains a function literal (CSP hygiene)', () => {
+      const section = generateSwotSection({ data: makeSwot(), lang: 'en' });
+      // data-chart-config is JSON-encoded and HTML-escaped; check the raw
+      // attribute for any function-literal token that chart-init.js would
+      // reject as defense-in-depth.
+      const cfgMatch = section.html.match(/data-chart-config="([^"]+)"/);
+      expect(cfgMatch).not.toBeNull();
+      expect(cfgMatch![1]).not.toMatch(/\bfunction\s*\(/);
+    });
   });
 });

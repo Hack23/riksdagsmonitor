@@ -28,6 +28,7 @@ import {
   ALL_LANG_CODES,
   LANG_ARIA_LABELS,
   LANG_SWITCHER_ARIA_LABELS,
+  MAIN_NAV_ARIA_LABELS,
 } from './constants.js';
 import { PKG_VERSION } from '../shared/version.js';
 import { escapeHtml } from '../html-utils.js';
@@ -228,7 +229,12 @@ export function generateArticleLanguageSwitcher(baseSlug: string, currentLang: L
     const display = LANG_DISPLAY[l];
     const active: string = l === currentLang ? ' active' : '';
     const ariaCurrent: string = l === currentLang ? ' aria-current="page"' : '';
-    return `    <a href="${baseSlug}-${l}.html" class="lang-link${active}" hreflang="${hreflangCode(l)}"${ariaCurrent}>${display.flag} ${display.name}</a>`;
+    const bcp47: string = hreflangCode(l);
+    // `lang=` on the anchor ensures screen-readers pronounce the native
+    // language name (e.g. "العربية", "中文") using the correct voice,
+    // independent of the page's outer <html lang>.  `hreflang` is for SEO
+    // and does not affect pronunciation.
+    return `    <a href="${baseSlug}-${l}.html" class="lang-link${active}" hreflang="${bcp47}" lang="${bcp47}"${ariaCurrent}>${display.flag} ${display.name}</a>`;
   }).join('\n');
   const ariaLabel: string = LANG_SWITCHER_ARIA_LABELS[currentLang as Language] || LANG_SWITCHER_ARIA_LABELS.en;
   return `  <nav class="language-switcher" role="navigation" aria-label="${ariaLabel}">\n${links}\n  </nav>`;
@@ -366,6 +372,51 @@ ${pairs}
 }
 
 /**
+ * Generate the canonical site header with primary navigation and theme toggle.
+ *
+ * Produces a `<header role="banner">` containing a `<nav role="navigation">`
+ * with logo, localized nav links (Home / News / Dashboard), and the theme
+ * toggle button.  This header is emitted by `generateArticleHTML` for every
+ * news article and is back-filled into older articles by the normalization
+ * script.
+ *
+ * @param lang - The current article language
+ * @returns HTML header element string
+ */
+export function generateSiteHeader(lang: Language | string): string {
+  const normalizedLang: Language = ALL_LANG_CODES.includes(lang as Language)
+    ? (lang as Language)
+    : 'en';
+  const labels = SITE_FOOTER_LABELS[normalizedLang];
+  const footerLabels = FOOTER_LABELS[normalizedLang];
+  const navAriaLabel: string = MAIN_NAV_ARIA_LABELS[normalizedLang];
+  const homePath: string = normalizedLang === 'en' ? '../index.html' : `../index_${normalizedLang}.html`;
+  const newsPath: string = getNewsIndexFilename(normalizedLang);
+  const dashboardPath: string = normalizedLang === 'en' ? '../dashboard/index.html' : `../dashboard/index_${normalizedLang}.html`;
+
+  return `<header role="banner">
+  <nav role="navigation" aria-label="${navAriaLabel}">
+    <a href="${homePath}" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="${homePath}">${labels.home}</a></li>
+      <li><a href="${newsPath}" aria-current="page">${labels.news}</a></li>
+      <li><a href="${dashboardPath}">${labels.dashboard}</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="${footerLabels.themeToDark}"
+            title="${footerLabels.themeToDark}"
+            data-label-dark="${footerLabels.themeToLight}"
+            data-label-light="${footerLabels.themeToDark}">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+</header>`;
+}
+
+/**
  * Generate the full site footer matching index.html structure.
  *
  * @param lang - The current language
@@ -425,7 +476,8 @@ ${ALL_LANG_CODES.map(l => {
   const display = LANG_DISPLAY[l];
   const ariaLabel = LANG_ARIA_LABELS[l];
   const href: string = l === 'en' ? '../index.html' : `../index_${l}.html`;
-  return `        <a href="${href}" title="${display.name}" aria-label="${ariaLabel}"><span aria-hidden="true">${display.flag}</span> ${l.toUpperCase()}</a>`;
+  const bcp47: string = hreflangCode(l);
+  return `        <a href="${href}" title="${display.name}" aria-label="${ariaLabel}" lang="${bcp47}"><span aria-hidden="true">${display.flag}</span> ${l.toUpperCase()}</a>`;
 }).join('\n')}
       </div>
     </div>

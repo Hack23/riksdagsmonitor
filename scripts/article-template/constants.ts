@@ -294,6 +294,28 @@ export const LANG_DISPLAY: Record<Language, LangDisplay> = {
 export const ALL_LANG_CODES: readonly Language[] = Object.keys(LANG_DISPLAY) as Language[];
 
 /**
+ * Localized aria-label for the primary (site) navigation landmark.
+ * Used on the `<nav role="navigation">` inside the site header so screen
+ * readers announce it in the page's own language.
+ */
+export const MAIN_NAV_ARIA_LABELS: Record<Language, string> = {
+  en: 'Main navigation',
+  sv: 'Huvudnavigation',
+  da: 'Primær navigation',
+  no: 'Primærnavigasjon',
+  fi: 'Päänavigaatio',
+  de: 'Hauptnavigation',
+  fr: 'Navigation principale',
+  es: 'Navegación principal',
+  nl: 'Hoofdnavigatie',
+  ar: 'التنقل الرئيسي',
+  he: 'ניווט ראשי',
+  ja: 'メインナビゲーション',
+  ko: '주 탐색',
+  zh: '主导航',
+};
+
+/**
  * Localized aria-label for the language switcher nav element.
  * Used on the `<nav>` wrapping article language links so screen readers
  * announce the landmark in the page's own language.

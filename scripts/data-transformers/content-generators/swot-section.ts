@@ -128,11 +128,20 @@ export function generateSwotSection(opts: SwotSectionOptions): TemplateSection {
     ? `\n    <div class="swot-radar-wrapper">\n      <canvas class="swot-radar" role="img" aria-label="${escapeHtml(titleText)}" data-chart-config="${escapeHtml(JSON.stringify(radarConfig))}"></canvas>\n    </div>`
     : '';
 
+  // Server-side rendered accessibility table — always present when a radar
+  // is emitted, so screen readers (and users without JavaScript) still get
+  // the numeric impact distribution that the canvas visualises.  The table
+  // is hidden from sighted users by default via the `.sr-only` utility;
+  // it becomes visible when CSS hides the canvas on narrow viewports.
+  const fallbackTable = radarConfig
+    ? renderSwotFallbackTable(data, lbl, titleText)
+    : '';
+
   const html = `<section class="swot-analysis" aria-label="${escapeHtml(titleText)}">
     <h2>${escapeHtml(titleText)}</h2>
 ${subjectLine}    <div class="swot-grid">
 ${grid}
-    </div>${radarBlock}${contextBlock}
+    </div>${radarBlock}${fallbackTable}${contextBlock}
   </section>`;
 
   return {
@@ -152,6 +161,54 @@ const IMPACT_WEIGHTS: Readonly<Record<string, number>> = {
   medium: 2,
   low: 1,
 };
+
+/**
+ * Render a server-side accessibility fallback table matching the radar's
+ * data.  Each quadrant contributes one row summarising item count and
+ * weighted impact score.  The table is emitted with `class="swot-radar-fallback sr-only"`
+ * so it's reachable by assistive technology and becomes visible via CSS
+ * on narrow viewports (where the radar is hidden because labels overlap).
+ */
+function renderSwotFallbackTable(
+  data: SwotData,
+  lbl: (key: string) => string,
+  titleText: string,
+): string {
+  const rows = [
+    { label: lbl('swotStrengths'), entries: data.strengths },
+    { label: lbl('swotWeaknesses'), entries: data.weaknesses },
+    { label: lbl('swotOpportunities'), entries: data.opportunities },
+    { label: lbl('swotThreats'), entries: data.threats },
+  ];
+  const bodyRows = rows.map(r => {
+    const entries = r.entries ?? [];
+    const count = entries.length;
+    const score = entries.reduce((sum, e) => sum + (IMPACT_WEIGHTS[e.impact ?? 'medium'] ?? 2), 0);
+    return `        <tr>
+          <th scope="row">${escapeHtml(r.label)}</th>
+          <td>${count}</td>
+          <td>${score}</td>
+        </tr>`;
+  }).join('\n');
+  // Header labels: localise count/score via the impact label strings where
+  // possible; fall back to English headings when keys are missing.
+  const countHead = lbl('swotItemsCount') || 'Items';
+  const scoreHead = lbl('swotImpactScore') || 'Impact score';
+  const quadrantHead = lbl('swotQuadrant') || 'Quadrant';
+  return `\n    <table class="swot-radar-fallback sr-only">
+      <caption>${escapeHtml(titleText)} — ${escapeHtml(countHead)} / ${escapeHtml(scoreHead)}</caption>
+      <thead>
+        <tr>
+          <th scope="col">${escapeHtml(quadrantHead)}</th>
+          <th scope="col">${escapeHtml(countHead)}</th>
+          <th scope="col">${escapeHtml(scoreHead)}</th>
+        </tr>
+      </thead>
+      <tbody>
+${bodyRows}
+      </tbody>
+    </table>`;
+}
 
 /**
  * Build a Chart.js radar config summarising SWOT impact distribution.

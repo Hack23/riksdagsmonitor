@@ -80,15 +80,32 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
 </head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-pressed="false" aria-label="Switch to dark theme" title="Switch to dark theme" data-label-dark="Switch to light theme" data-label-light="Switch to dark theme">
-    <span class="theme-icon" aria-hidden="true">🌙</span>
-  </button>
-  <nav class="language-switcher" role="navigation" aria-label="Language versions">
-    <a href="2026-03-16-evening-analysis-en.html" class="lang-link active" aria-current="page" hreflang="en"><span aria-hidden="true">🇬🇧</span> English</a>
-    <a href="2026-03-16-evening-analysis-sv.html" class="lang-link" hreflang="sv"><span aria-hidden="true">🇸🇪</span> Svenska</a>
+<body data-rm-normalized="v9">
+<header role="banner">
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="../index.html" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html" aria-current="page">News</a></li>
+      <li><a href="../dashboard/index.html">Dashboard</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button"
+            aria-pressed="false"
+            aria-label="Switch to dark theme"
+            title="Switch to dark theme"
+            data-label-dark="Switch to light theme"
+            data-label-light="Switch to dark theme">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
   </nav>
+</header>
+  <nav class="language-switcher" role="navigation" aria-label="Language versions">
+    <a href="2026-03-16-evening-analysis-en.html" class="lang-link active" hreflang="en" lang="en" aria-current="page">🇬🇧 English</a>
+    <a href="2026-03-16-evening-analysis-sv.html" class="lang-link" hreflang="sv" lang="sv">🇸🇪 Svenska</a>
+  </nav>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="article-top-nav">
     <a href="index.html" class="back-to-news">&larr; Back to News</a>
   </div>
@@ -164,7 +181,7 @@
       </div>
     </footer>
   </article>
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
   <div class="footer-content">
     <div class="footer-section">
       <h3>Riksdagsmonitor</h3>
@@ -225,6 +242,6 @@
   </div>
 </footer>
 <script type="module" src="../js/back-to-top.js"></script>
-<script src="../js/theme-toggle.js"></script>
+<script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>
