@@ -1,0 +1,221 @@
+{
+  "version": "4.0",
+  "description": "Multi-provider economic indicator inventory for Riksdagsmonitor. Single source of truth for IMF + World Bank + SCB indicator discovery. IMF entries are defined in-line below; World Bank entries are imported by reference from analysis/worldbank/indicators-inventory.json (v3.0) for back-compat; SCB tables are defined by scripts/scb-context.ts (committee → TAB mapping).",
+  "lastUpdated": "2026-04-20",
+  "effectiveDate": "2026-04-20",
+  "schemaCutover": "2026-05-31",
+  "providers": {
+    "imf": {
+      "primary": "c-cf/imf-data-mcp (stdio, Python uvx) + direct REST (Datamapper + SDMX 3.0)",
+      "databases": ["WEO", "FM", "IFS", "BOP_AGG", "GFS_COFOG", "MFS_IR", "DOTS", "PCPS"],
+      "refreshCadence": {
+        "WEO": "April and October (flagship)",
+        "FM": "April and October (flagship)",
+        "IFS": "Monthly",
+        "BOP_AGG": "Quarterly",
+        "GFS_COFOG": "Annual (T+1)",
+        "DOTS": "Monthly"
+      },
+      "rateLimit": "~10 req / 5 s; batch multi-country in one imf_fetch_data; retry 3× on 429 with 1s→2s→4s back-off",
+      "projectionHorizon": "WEO T+5 (currently 2031), FM T+5"
+    },
+    "worldBank": {
+      "primary": "worldbank-mcp@1.0.1 + api.worldbank.org/v2",
+      "inventory": "analysis/worldbank/indicators-inventory.json (v3.0, 144 indicators)",
+      "useFor": ["WGI governance (source=75)", "environment (CO2, forests, renewables)", "long-horizon social/education residue"]
+    },
+    "scb": {
+      "primary": "scb MCP (pxweb-mcp) + api.scb.se/OV0104/v2beta",
+      "useFor": ["Sweden-specific ground truth", "regional data", "monthly frequency"],
+      "language": "sv or en (NEVER no — HTTP 400)"
+    }
+  },
+  "providerSelection": {
+    "macro": "imf",
+    "fiscal": "imf",
+    "monetary": "imf",
+    "externalSector": "imf",
+    "governance": "worldBank",
+    "environment": "worldBank",
+    "socialResidue": "worldBank",
+    "swedenPrimary": "scb"
+  },
+  "indicators": [
+    {
+      "id": "NGDP_RPCH",
+      "key": "imfRealGdpGrowth",
+      "provider": "imf",
+      "imfDatabase": "WEO",
+      "imfIndicatorCode": "NGDP_RPCH",
+      "imfDimensionFilters": { "FREQ": "A", "COUNTRY": "SE,DK,NO,FI,DE" },
+      "name": "Real GDP growth (IMF WEO)",
+      "unit": "Annual % change",
+      "description": "Headline macro indicator. Replaces WB NY.GDP.MKTP.KD.ZG for freshness (IMF WEO Apr/Oct cadence + T+5 projections).",
+      "policyAreas": ["fiscal policy", "macro economy", "growth"],
+      "committees": ["FiU", "SkU", "NU"],
+      "projectionHorizon": "T+5",
+      "supersedes": "worldBank:NY.GDP.MKTP.KD.ZG"
+    },
+    {
+      "id": "NGDPDPC",
+      "key": "imfGdpPerCapita",
+      "provider": "imf",
+      "imfDatabase": "WEO",
+      "imfIndicatorCode": "NGDPDPC",
+      "imfDimensionFilters": { "FREQ": "A" },
+      "name": "GDP per capita (IMF WEO)",
+      "unit": "Current USD",
+      "description": "Cross-country peer comparison, current USD.",
+      "policyAreas": ["macro economy", "living standards"],
+      "committees": ["FiU", "AU", "SoU"],
+      "projectionHorizon": "T+5"
+    },
+    {
+      "id": "PCPIPCH",
+      "key": "imfInflationCpi",
+      "provider": "imf",
+      "imfDatabase": "WEO",
+      "imfIndicatorCode": "PCPIPCH",
+      "imfDimensionFilters": { "FREQ": "A" },
+      "name": "Inflation, CPI average (IMF WEO)",
+      "unit": "Annual % change",
+      "description": "Primary monetary-policy reference. Replaces WB FP.CPI.TOTL.ZG for freshness and projections.",
+      "policyAreas": ["monetary policy", "inflation"],
+      "committees": ["FiU"],
+      "projectionHorizon": "T+5",
+      "supersedes": "worldBank:FP.CPI.TOTL.ZG"
+    },
+    {
+      "id": "LUR",
+      "key": "imfUnemploymentRate",
+      "provider": "imf",
+      "imfDatabase": "WEO",
+      "imfIndicatorCode": "LUR",
+      "imfDimensionFilters": { "FREQ": "A" },
+      "name": "Unemployment rate (IMF WEO)",
+      "unit": "% of labor force",
+      "description": "WEO definition; projections extend to T+5.",
+      "policyAreas": ["labor market", "employment"],
+      "committees": ["AU", "SoU"],
+      "projectionHorizon": "T+5",
+      "supersedes": "worldBank:SL.UEM.TOTL.ZS"
+    },
+    {
+      "id": "GGXWDG_NGDP",
+      "key": "imfGeneralGovGrossDebt",
+      "provider": "imf",
+      "imfDatabase": "WEO",
+      "imfIndicatorCode": "GGXWDG_NGDP",
+      "imfDimensionFilters": { "FREQ": "A" },
+      "name": "General government gross debt (IMF WEO)",
+      "unit": "% of GDP",
+      "description": "Debt/GDP on general-government (EDP) basis. Superior to WB GC.DOD.TOTL.GD.ZS for EU policy discussion (follows GFSM 2014).",
+      "policyAreas": ["fiscal policy", "debt", "EU stability and growth pact"],
+      "committees": ["FiU", "SkU"],
+      "projectionHorizon": "T+5",
+      "supersedes": "worldBank:GC.DOD.TOTL.GD.ZS"
+    },
+    {
+      "id": "GGR_NGDP",
+      "key": "imfGeneralGovRevenue",
+      "provider": "imf",
+      "imfDatabase": "WEO",
+      "imfIndicatorCode": "GGR_NGDP",
+      "imfDimensionFilters": { "FREQ": "A" },
+      "name": "General government revenue (IMF WEO)",
+      "unit": "% of GDP",
+      "description": "Tax and non-tax revenue share of GDP; projected to T+5.",
+      "policyAreas": ["fiscal policy", "taxation"],
+      "committees": ["SkU", "FiU"],
+      "projectionHorizon": "T+5"
+    },
+    {
+      "id": "GGX_NGDP",
+      "key": "imfGeneralGovExpenditure",
+      "provider": "imf",
+      "imfDatabase": "WEO",
+      "imfIndicatorCode": "GGX_NGDP",
+      "imfDimensionFilters": { "FREQ": "A" },
+      "name": "General government expenditure (IMF WEO)",
+      "unit": "% of GDP",
+      "description": "Total government spending as % of GDP; projected to T+5.",
+      "policyAreas": ["fiscal policy", "public spending"],
+      "committees": ["FiU"],
+      "projectionHorizon": "T+5"
+    },
+    {
+      "id": "GGXCNL_NGDP",
+      "key": "imfGeneralGovBalance",
+      "provider": "imf",
+      "imfDatabase": "WEO",
+      "imfIndicatorCode": "GGXCNL_NGDP",
+      "imfDimensionFilters": { "FREQ": "A" },
+      "name": "General government net lending/borrowing (IMF WEO)",
+      "unit": "% of GDP",
+      "description": "Headline fiscal balance (surplus +, deficit −); projections to T+5.",
+      "policyAreas": ["fiscal policy", "budget"],
+      "committees": ["FiU", "SkU"],
+      "projectionHorizon": "T+5"
+    },
+    {
+      "id": "GGXONLB_NGDP",
+      "key": "imfPrimaryBalance",
+      "provider": "imf",
+      "imfDatabase": "FM",
+      "imfIndicatorCode": "GGXONLB_NGDP",
+      "imfDimensionFilters": { "FREQ": "A" },
+      "name": "General government primary balance (IMF Fiscal Monitor)",
+      "unit": "% of GDP",
+      "description": "Balance excluding interest payments (FM vintage — debt-sustainability analysis).",
+      "policyAreas": ["fiscal policy", "debt sustainability"],
+      "committees": ["FiU", "SkU"],
+      "projectionHorizon": "T+5"
+    },
+    {
+      "id": "BCA_NGDPD",
+      "key": "imfCurrentAccountBalance",
+      "provider": "imf",
+      "imfDatabase": "WEO",
+      "imfIndicatorCode": "BCA_NGDPD",
+      "imfDimensionFilters": { "FREQ": "A" },
+      "name": "Current account balance (IMF WEO)",
+      "unit": "% of GDP",
+      "description": "Net external position (trade + primary + secondary income).",
+      "policyAreas": ["external sector", "trade"],
+      "committees": ["NU", "UU", "FiU"],
+      "projectionHorizon": "T+5"
+    },
+    {
+      "id": "TX_RPCH",
+      "key": "imfExportsVolumeGrowth",
+      "provider": "imf",
+      "imfDatabase": "WEO",
+      "imfIndicatorCode": "TX_RPCH",
+      "imfDimensionFilters": { "FREQ": "A" },
+      "name": "Exports of goods and services, volume (IMF WEO)",
+      "unit": "Annual % change",
+      "description": "Real exports growth rate; projections to T+5.",
+      "policyAreas": ["trade", "export performance"],
+      "committees": ["NU", "UU"],
+      "projectionHorizon": "T+5"
+    },
+    {
+      "id": "LP",
+      "key": "imfPopulation",
+      "provider": "imf",
+      "imfDatabase": "WEO",
+      "imfIndicatorCode": "LP",
+      "imfDimensionFilters": { "FREQ": "A" },
+      "name": "Population (IMF WEO)",
+      "unit": "Millions",
+      "description": "WEO population definition.",
+      "policyAreas": ["demographics"],
+      "committees": ["SoU", "SfU"],
+      "projectionHorizon": "T+5"
+    }
+  ],
+  "referenced": {
+    "worldBankInventory": "analysis/worldbank/indicators-inventory.json",
+    "scbContext": "scripts/scb-context.ts"
+  }
+}
