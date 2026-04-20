@@ -273,7 +273,7 @@ graph TB
 - [x] **Named actors:** ≥3 politicians (Kristersson, Carlson, Strömmer, Andersson, Dadgostar)
 - [x] **dok_id citations:** All SWOT elements linked to source documents
 - [x] **Cross-references to sibling files:** 4 files linked
-- [x] **No placeholder text:** Zero `[REQUIRED]` markers
+- [x] **No placeholder text:** zero unfilled template markers
 
 ---
 

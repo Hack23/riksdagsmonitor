@@ -288,7 +288,7 @@ Six committee reports (betänkanden) from KU and CU were adopted on 2026-04-17. 
 - [x] **Recommended Action selected:** All 6 documents have action assignments
 - [x] **Confidence Decay assessed:** Classification age calculated (0 days)
 - [x] **MCP Data Provenance:** All 6 source documents listed
-- [x] **No placeholder text remaining:** Zero `[REQUIRED]` markers
+- [x] **No placeholder text remaining:** zero unfilled template markers
 - [x] **Election 2026 Classification Context present:** All 5 dimensions assessed
 - [x] **5-level confidence applied:** Source Quality, Information Completeness, Overall Confidence documented
 - [x] **Named actors cited:** ≥3 politicians (Kristersson, Strömmer, Carlson, Andersson, Karkiainen)

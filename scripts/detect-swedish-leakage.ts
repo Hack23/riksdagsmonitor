@@ -210,6 +210,31 @@ function stripTagBlocks(html: string, tagNames: ReadonlyArray<string>, preserveN
   return resultParts.join('');
 }
 
+/**
+ * Strip the inner contents of any HTML element carrying `lang="{langCode}"` (or `lang='{langCode}'`).
+ * Replaces the inner text with whitespace while preserving '\n' characters so that line
+ * numbering downstream remains stable. Uses a regex with a back-reference to the opening tag
+ * name to handle arbitrary element types (span, p, div, blockquote, etc.).
+ *
+ * This enables `detectSwedishLeakage` to correctly ignore deliberately quoted Swedish source
+ * material (e.g. verbatim summaries) embedded inside `<span lang="sv">...</span>` wrappers.
+ */
+function stripLangTaggedBlocks(html: string, langCode: string): string {
+  const safeLang = langCode.replace(/[^a-zA-Z-]/g, '');
+  if (safeLang.length === 0) return html;
+  // Match <TAG ...lang="XX"...>...</TAG> with the closing tag matching the opening tag name.
+  // Non-greedy inner match; multi-line enabled implicitly via [\s\S] character class.
+  const re = new RegExp(
+    `<([a-zA-Z][a-zA-Z0-9]*)(?=\\s)[^>]*\\blang\\s*=\\s*["']${safeLang}["'][^>]*>([\\s\\S]*?)<\\/\\1\\s*>`,
+    'gi'
+  );
+  return html.replace(re, (_match, _tagName, inner) => {
+    // Preserve newline count so line numbers remain accurate.
+    const newlines = (inner.match(/\n/g) ?? []).length;
+    return ' ' + '\n'.repeat(newlines) + ' ';
+  });
+}
+
 /** Remove all remaining HTML tags using an index-based state machine. */
 function stripAllTags(html: string): string {
   const chunks: string[] = [];
@@ -298,7 +323,13 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
 
   // Strip script/style blocks on the full HTML first so multi-line blocks are
   // removed correctly. Preserve newline count so reported line numbers remain accurate.
-  const cleaned = stripTagBlocks(html, ['script', 'style'], true);
+  let cleaned = stripTagBlocks(html, ['script', 'style'], true);
+
+  // Strip elements explicitly tagged as Swedish content (e.g. `<span lang="sv">...</span>`).
+  // Text inside a `lang="sv"` element is deliberately quoted Swedish source material
+  // (e.g. verbatim summaries from riksdagen.se) and MUST NOT count as translation leakage
+  // in a non-Swedish article. Replacement preserves '\n' so reported line numbers stay accurate.
+  cleaned = stripLangTaggedBlocks(cleaned, 'sv');
 
   const lines = cleaned.split('\n');
   const leaked: LeakedTerm[] = [];
@@ -365,7 +396,10 @@ const SHARED_WORDS: Partial<Record<Language, ReadonlySet<string>>> = {
   fr: new Set([]),
   es: new Set([]),
   fi: new Set([]),
-  en: new Set([]),
+  // English shares a small set of these short common forms with Swedish (e.g. "under", "kan"
+  // can appear legitimately in technical or proper-noun contexts). Keep this set narrow
+  // and limited to tokens that are genuinely ambiguous in English prose.
+  en: new Set(['under']),
   ar: new Set([]),
   he: new Set([]),
   ja: new Set([]),
@@ -388,6 +422,13 @@ function isSharedWord(word: string, targetLang: Language): boolean {
  * Includes inflected forms to match the expanded SWEDISH_PARLIAMENTARY_TERMS set.
  */
 const SHARED_PARLIAMENTARY_TERMS: Partial<Record<Language, ReadonlySet<string>>> = {
+  // English political writing about Sweden uses "Riksdag" (and inflections) verbatim —
+  // it has no common English equivalent. Other parliamentary terms (proposition, motion,
+  // interpellation, anförande, statsråd, regering) should still be translated and are
+  // intentionally NOT shared here, consistent with the translation quality gate tests.
+  en: new Set([
+    'riksdag', 'riksdagen', 'riksdagens',
+  ]),
   // Norwegian uses many of the same parliamentary terms as Swedish
   no: new Set([
     'proposition', 'propositionen', 'propositioner', 'propositionerna',

@@ -329,7 +329,7 @@ graph TD
 - [x] **Mitigation effectiveness:** 6 mitigations assessed
 - [x] **Named actors:** ≥3 politicians named (Kristersson, Strömmer, Busch, Åkesson, Andersson, Pehrson, Karkiainen, Dadgostar)
 - [x] **Cross-references to sibling files:** 4 files linked
-- [x] **No placeholder text:** Zero `[REQUIRED]` markers remaining
+- [x] **No placeholder text:** zero unfilled template markers remaining
 
 ---
 

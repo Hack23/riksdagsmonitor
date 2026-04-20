@@ -209,7 +209,7 @@ graph TD
 - [x] Cross-references to ≥4 sibling files
 - [x] Named actors ≥4 with party affiliations
 - [x] Swedish legal terminology (dödsbon, boutredare, ärvdabalken, utsökningsbalken, SOU)
-- [x] No `[REQUIRED]` placeholders
+- [x] No unfilled template placeholders
 
 ---
 

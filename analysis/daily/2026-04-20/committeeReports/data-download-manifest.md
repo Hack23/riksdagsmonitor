@@ -111,11 +111,14 @@ Result: 6 documents selected
 
 ## 📂 Data File Locations
 
-| Data Type | File Path | Format |
-|-----------|-----------|--------|
-| Raw batch data | `data/committeeReports/2026-04-20-batch.json` | JSON |
-| Per-document data | `data/committeeReports/documents/HD01*.json` | JSON |
-| Enriched content | `data/committeeReports/enriched/HD01*-content.json` | JSON |
+| Data Type | File Path / Provenance Location | Format |
+|-----------|--------------------------------|--------|
+| Per-document raw data (checked in) | `analysis/daily/2026-04-20/committeeReports/documents/hd01cu22.json`, `hd01cu27.json`, `hd01cu28.json`, `hd01cu42.json`, `hd01ku32.json`, `hd01ku33.json` | JSON |
+| Per-document analysis writeups | `analysis/daily/2026-04-20/committeeReports/documents/HD01{CU22,CU27,CU28,CU42,KU32,KU33}-analysis.md` | Markdown |
+| Daily batch metadata | `news/metadata/last-generation.json`, `news/metadata/quality-scores.json` | JSON |
+| Checked-in manifest for this batch | `analysis/daily/2026-04-20/committeeReports/data-download-manifest.md` (this file) | Markdown |
+| Batch-level raw API response | Not retained as a separate file; reproducible from `get_betankanden(rm="2025/26")` MCP call documented in this manifest | JSON (ephemeral) |
+| Enriched document content | Merged into the per-document JSON files above (summary + fullContent fields); reproducible from `get_dokument_innehall(dok_id=...)` MCP calls | JSON |
 
 ---
 
@@ -165,7 +168,7 @@ Result: 6 documents selected
 - [x] **Data Source Verification:** API endpoints and authority
 - [x] **Data Quality Notes:** 4 notes on gaps and methodology
 - [x] **Cross-references to sibling files:** 3 files linked
-- [x] **No placeholder text:** Zero `[REQUIRED]` markers
+- [x] **No placeholder text:** zero unfilled template markers
 
 ---
 

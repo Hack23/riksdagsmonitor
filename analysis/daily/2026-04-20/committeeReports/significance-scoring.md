@@ -234,7 +234,7 @@ pie title Significance Tier Distribution — 2026-04-20 Batch
 - [x] **Publication Decisions table:** Tier-based output requirements
 - [x] **Named actors cited:** ≥3 politicians (Strömmer, Andersson, Carlson, Dadgostar, Liljestrand, Waltersson Grönvall)
 - [x] **Cross-references to sibling files:** 4 files linked
-- [x] **No placeholder text:** Zero `[REQUIRED]` markers
+- [x] **No placeholder text:** zero unfilled template markers
 
 ---
 

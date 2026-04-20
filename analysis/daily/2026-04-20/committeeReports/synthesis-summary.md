@@ -19,10 +19,10 @@
 |-------|-------|
 | **Synthesis ID** | `SYN-2026-04-20-CR001` |
 | **Analysis Date** | 2026-04-20 05:10 UTC |
-| **Documents Analysed** | 6 betänkanden from KU and CU |
+| **Documents Analyzed** | 6 betänkanden from KU and CU |
 | **Analysis Period** | 2026-04-17 (committee decisions, 1 business day lookback) |
 | **Produced By** | `news-committee-reports` agentic workflow |
-| **Overall Confidence** | 🟩HIGH |
+| **Overall Confidence** | HIGH 🟩 |
 | **Riksmöte** | 2025/26 |
 | **Data Quality** | 5/6 documents with full text; 1/6 summary only (HD01CU22) |
 
@@ -295,7 +295,7 @@ flowchart TD
 - [x] **Recommended Headlines:** EN and SV with meta descriptions
 - [x] **Named actors:** ≥3 politicians (Strömmer, Andersson, Karkiainen, Carlson, Dadgostar)
 - [x] **Cross-references to sibling files:** 6 files linked
-- [x] **No placeholder text:** Zero `[REQUIRED]` markers
+- [x] **No placeholder text:** zero unfilled template markers
 
 ---
 

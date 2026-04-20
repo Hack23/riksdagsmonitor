@@ -388,7 +388,7 @@ graph LR
 - [x] **Stakeholder Coalition Map Mermaid:** KU33 coalition visualised
 - [x] **Summary Impact Table:** Net impact per stakeholder
 - [x] **Cross-references to sibling files:** 4 files linked
-- [x] **No placeholder text:** Zero `[REQUIRED]` markers
+- [x] **No placeholder text:** zero unfilled template markers
 
 ---
 

@@ -403,7 +403,7 @@ graph LR
 - [x] **MCP Data Provenance table:** 6 source documents listed
 - [x] **Named actors:** ≥3 politicians named (Kristersson, Andersson, Busch, Strömmer, Carlson, Dadgostar, Pehrson, Karkiainen)
 - [x] **Cross-references to sibling files:** 4 files linked
-- [x] **No placeholder text:** Zero `[REQUIRED]` markers remaining
+- [x] **No placeholder text:** zero unfilled template markers remaining
 
 ---
 

@@ -243,7 +243,7 @@ graph TD
 - [x] Forward indicators ≥4 with triggers
 - [x] Cross-references to ≥3 sibling files
 - [x] Confidence labels on all claims
-- [x] No `[REQUIRED]` or `AI_MUST_REPLACE` placeholders
+- [x] No unfilled template placeholders
 
 ---
 

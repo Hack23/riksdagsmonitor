@@ -317,7 +317,7 @@ timeline
 - [x] **Electoral Timeline Mermaid:** Pre-campaign, campaign, post-election phases
 - [x] **Named actors:** ≥3 per scenario (Kristersson, Busch, Åkesson; Andersson, Dadgostar, Stenevi/Helldén, Demirok)
 - [x] **Cross-references to sibling files:** 4 files linked
-- [x] **No placeholder text:** Zero `[REQUIRED]` markers
+- [x] **No placeholder text:** zero unfilled template markers
 
 ---
 

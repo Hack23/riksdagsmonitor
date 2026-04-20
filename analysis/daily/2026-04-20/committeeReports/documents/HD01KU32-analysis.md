@@ -207,7 +207,7 @@ graph TD
 - [x] Cross-references ≥4 sibling files
 - [x] Named actors ≥4 with party affiliations
 - [x] Swedish legal terminology (grundlag, vilande, TF, YGL, exklusivitetsprincipen)
-- [x] No `[REQUIRED]` placeholders
+- [x] No unfilled template placeholders
 
 ---
 
