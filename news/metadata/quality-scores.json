@@ -3,10 +3,10 @@
     "filename": "2026-04-20-government-propositions-en.html",
     "lang": "en",
     "articleType": "propositions",
-    "score": 100,
+    "score": 91,
     "passed": true,
     "multidimensional": {
-      "overallScore": 75,
+      "overallScore": 91,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
@@ -15,7 +15,7 @@
         "analyticalDepth": 80,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
-        "languageQuality": 0
+        "languageQuality": 100
       },
       "issueCount": 3
     },
@@ -25,10 +25,10 @@
     "filename": "2026-04-20-government-propositions-sv.html",
     "lang": "sv",
     "articleType": "propositions",
-    "score": 100,
+    "score": 91,
     "passed": true,
     "multidimensional": {
-      "overallScore": 90,
+      "overallScore": 91,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
