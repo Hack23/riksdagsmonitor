@@ -31,7 +31,8 @@ import { annotateDocumentTypes } from './document-types.js';
 /**
  * MCP gateway URL used inside the GitHub Agentic Workflows (AWF) sandbox.
  * Mirrors the value exported by `scripts/mcp-setup.sh`. Port 80 is fixed by
- * `ghcr.io/github/gh-aw-mcpg` (see `news-motions.lock.yml` MCP_GATEWAY_PORT=80).
+ * the `ghcr.io/github/gh-aw-mcpg` container (see `MCP_GATEWAY_PORT=80` in
+ * the compiled `news-*.lock.yml` workflow files).
  */
 const AWF_MCP_GATEWAY_URL = 'http://host.docker.internal:80/mcp/riksdag-regering';
 const DIRECT_MCP_SERVER_URL = 'https://riksdag-regering-ai.onrender.com/mcp';

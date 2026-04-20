@@ -58,6 +58,12 @@ export interface SCBDomainConfig {
 // Constants
 // ---------------------------------------------------------------------------
 
+/** AWF MCP gateway route for the SCB MCP server. Port 80 is fixed by the
+ * `ghcr.io/github/gh-aw-mcpg` container (`MCP_GATEWAY_PORT=80` in the
+ * compiled workflow lock file). Matches `scripts/mcp-setup.sh`. */
+const AWF_SCB_GATEWAY_URL = 'http://host.docker.internal:80/mcp/scb';
+const DIRECT_SCB_SERVER_URL = 'https://scb-mcp.onrender.com/mcp';
+
 /**
  * Resolve the SCB MCP server URL.
  * Priority:
@@ -71,22 +77,22 @@ export interface SCBDomainConfig {
 function getDefaultScbServerUrl(): string {
   const explicit = process.env['SCB_MCP_SERVER_URL'];
   if (explicit) return explicit;
-  if (process.env['MCP_GATEWAY_API_KEY']) return 'http://host.docker.internal:80/mcp/scb';
+  if (process.env['MCP_GATEWAY_API_KEY']) return AWF_SCB_GATEWAY_URL;
   const configPath = process.env['GH_AW_MCP_CONFIG'] ?? '/home/runner/.copilot/mcp-config.json';
   try {
     if (existsSync(configPath)) {
       const raw = JSON.parse(readFileSync(configPath, 'utf8')) as Record<string, unknown>;
       const gateway = raw['gateway'] as Record<string, unknown> | undefined;
-      if (gateway?.['apiKey']) return 'http://host.docker.internal:80/mcp/scb';
+      if (gateway?.['apiKey']) return AWF_SCB_GATEWAY_URL;
       const mcpServers = raw['mcpServers'] as Record<string, unknown> | undefined;
       const scb = mcpServers?.['scb'] as Record<string, unknown> | undefined;
       const headers = scb?.['headers'] as Record<string, unknown> | undefined;
-      if (headers?.['Authorization']) return 'http://host.docker.internal:80/mcp/scb';
+      if (headers?.['Authorization']) return AWF_SCB_GATEWAY_URL;
     }
   } catch {
     // Best-effort — fall through to direct URL.
   }
-  return 'https://scb-mcp.onrender.com/mcp';
+  return DIRECT_SCB_SERVER_URL;
 }
 
 const DEFAULT_SERVER_URL = getDefaultScbServerUrl();
