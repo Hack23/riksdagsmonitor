@@ -2667,9 +2667,10 @@ Then call the health gate:
 > 🚨 **UNIVERSAL SAFE OUTPUT RULES — ALL WORKFLOWS MUST FOLLOW:**
 >
 > 1. **Call `safeoutputs___create_pull_request` as EARLY as possible** — the moment you have committed files. The safeoutputs MCP session has a finite lifetime. Successful runs call it by minute ~25. Failed runs that delayed past minute 40 got "session not found" and lost all work.
-> 2. **NEVER call `safeoutputs___noop` when artifacts exist.** Noop means "I did nothing." If you created files, you DID something and MUST create a PR. Partial work in a PR is infinitely better than lost work via noop.
-> 3. **At HARD DEADLINE**: If ANY files were created → `safeoutputs___create_pull_request`. ONLY noop if truly ZERO files were created.
-> 4. **Architecture reminder**: `safeoutputs___create_pull_request` records your intent. A separate `safe_outputs` job executes the PR creation AFTER the agent job ends. If the MCP session expires before you record the intent, the `safe_outputs` job is SKIPPED and all work is lost.
+> 2. **Heartbeat PR to keep the safeoutputs session alive (`max: 2+`)** — the Streamable-HTTP safeoutputs MCP session has a ~30–35 min idle lifetime (observed in PR #1835 and run #24672037751). Every `safeoutputs___create_pull_request` call **resets the session idle timer**. If the workflow sets `create-pull-request.max: 2` or higher, call the tool once at minute ~22–25 as a **heartbeat PR** capturing work-in-progress (partial analysis + first article draft), then call it again at minute 40–45 with the polished final output. Each call creates a separate PR on a separate branch; the final PR supersedes the heartbeat. This pattern was proven in `news-translate` (`max: 5`, zero session expiries across 55-minute runs) and `news-realtime-monitor` (`max: 3`). **Single-PR workflows (`max: 1`) that delay their only call past minute 35 WILL lose all work to session expiry.**
+> 3. **NEVER call `safeoutputs___noop` when artifacts exist.** Noop means "I did nothing." If you created files, you DID something and MUST create a PR. Partial work in a PR is infinitely better than lost work via noop.
+> 4. **At HARD DEADLINE**: If ANY files were created → `safeoutputs___create_pull_request`. ONLY noop if truly ZERO files were created.
+> 5. **Architecture reminder**: `safeoutputs___create_pull_request` records your intent. A separate `safe_outputs` job executes the PR creation AFTER the agent job ends. If the MCP session expires before you record the intent, the `safe_outputs` job is SKIPPED and all work is lost.
 
 ### Layer 3: MCP Gateway Diagnostics (run when tools fail)
 

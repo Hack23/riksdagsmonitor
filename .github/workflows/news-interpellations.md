@@ -119,6 +119,7 @@ safe-outputs:
     labels: [agentic-news, analysis-data]
     draft: false
     expires: 14d
+    max: 2
   add-comment: {}
   dispatch-workflow:
     workflows: [news-translate]

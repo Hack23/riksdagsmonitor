@@ -127,6 +127,7 @@ safe-outputs:
     labels: [agentic-news, analysis-data]
     draft: false
     expires: 14d
+    max: 2
   add-comment: {}
   dispatch-workflow:
     workflows: [news-translate]
@@ -318,6 +319,7 @@ read START_TIME < /tmp/start_time.txt
 | Download | 3–6 | Run `populate-analysis-data.ts` + `download-parliamentary-data.ts` (script-driven data download) | Data files exist |
 | **AI Analysis Pass 1** | **6–21** | **🚨 MANDATORY 15 min minimum**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries. **Create ALL 9 required artifacts.** | 9 artifact files exist |
 | **AI Analysis Pass 2** | **21–28** | **🚨 MANDATORY 7 min minimum**: Read ALL 9 analysis artifacts back completely, improve every section, add missing Mermaid diagrams and evidence tables, replace ALL script stubs with AI analysis. | All 9 files ≥500 bytes |
+| **Heartbeat PR** | **22–25** | 🫀 `git add && git commit` analysis + any drafts so far, then `safeoutputs___create_pull_request` (title `🫀 Heartbeat - Evening Analysis - {date}`). This refreshes the safeoutputs MCP session (which expires after ~30–35 min idle) AND guarantees no work is lost if later phases fail. After the call succeeds, run `git checkout main` so subsequent commits don't stack onto the frozen patch. | Heartbeat PR created |
 | Gates | 28–30 | Run ENFORCED Minimum Time Gate + Enrichment Verification Gate + **9-artifact completeness check** (SHARED_PROMPT_PATTERNS.md). ALL MUST pass. | 0 failures |
 | Generate | 30–36 | Run generation script OR manual synthesis (see Step 3) | HTML files created |
 | **Article Improvement** | **36–40** | 🚨 **Article Improvement Pass**: Read ALL articles back, replace AI_MUST_REPLACE markers, improve content. Run article quality component gate. | 0 AI_MUST_REPLACE markers |
@@ -328,7 +330,7 @@ read START_TIME < /tmp/start_time.txt
 >
 > 🔴 **ANTI-PATTERN (REJECTED)**: Creating only synthesis-summary.md + significance-scoring.md + stakeholder-perspectives.md and skipping the other 6 artifacts. This produces shallow articles missing SWOT tables, risk matrices, threat analysis, and classification data.
 
-**Hard cutoffs**: `>= 35 min` → commit & PR now; `>= 43 min` → STOP ALL WORK, call safe output immediately.
+**Hard cutoffs**: `>= 25 min` and no safeoutputs call yet → 🚨 call `safeoutputs___create_pull_request` as a heartbeat with whatever files exist (do NOT delay — the safeoutputs session expires at ~30–35 min idle); `>= 35 min` → commit & PR now; `>= 43 min` → STOP ALL WORK, call safe output immediately.
 
 ## Required Skills
 

@@ -128,6 +128,7 @@ safe-outputs:
     labels: [agentic-news, analysis-data]
     draft: false
     expires: 14d
+    max: 2
   add-comment: {}
   dispatch-workflow:
     workflows: [news-translate]
@@ -380,6 +381,7 @@ read START_TIME < /tmp/start_time.txt
 | Download | 3–6 | Run data download scripts (MCP data fetch) |
 | **AI Analysis Pass 1** | **6–21** | **🚨 MANDATORY 15 min minimum**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries. |
 | **AI Analysis Pass 2** | **21–28** | **🚨 MANDATORY 7 min minimum**: Read ALL analysis back completely, improve every section, replace ALL script stubs with AI analysis. |
+| **Heartbeat PR** | **22–25** | 🫀 `git add && git commit` analysis + any drafts so far, then `safeoutputs___create_pull_request` (title `🫀 Heartbeat - Article Generator - {date}`). This refreshes the safeoutputs MCP session (which expires after ~30–35 min idle) AND guarantees no work is lost if later phases fail. After the call succeeds, run `git checkout main` so subsequent commits don't stack onto the frozen patch. |
 | Gates | 28–30 | Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass. |
 | Generate | 30–36 | Run `generate-news-enhanced.ts` in batches |
 | **Article Improvement** | **36–40** | 🚨 Read ALL articles back, replace AI_MUST_REPLACE markers, improve content. Run article quality component gate. |
@@ -389,6 +391,7 @@ read START_TIME < /tmp/start_time.txt
 > ⚠️ **Analysis phase is 22 minutes minimum (Pass 1: 15 min + Pass 2: 7 min)** — every analysis file must contain color-coded Mermaid diagrams, structured evidence tables with dok_id citations, and follow template structure exactly. ALL script-generated stubs MUST be replaced with AI-enriched analysis. Run the ENFORCED gates from SHARED_PROMPT_PATTERNS.md before article generation.
 
 **Hard cutoffs** — check elapsed time before each phase:
+- `>= 25 min` and no safeoutputs call yet → 🚨 call `safeoutputs___create_pull_request` as a heartbeat with whatever files exist. Do NOT delay — the safeoutputs session expires at ~30–35 min idle.
 - `>= 35 min` → Stop generating, commit what you have, create PR immediately
 - `>= 43 min` → STOP ALL WORK, call safe output immediately
 
