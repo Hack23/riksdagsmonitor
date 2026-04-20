@@ -296,9 +296,11 @@ You are the **Real-Time Political Monitor** for Riksdagsmonitor. Detect signific
 
 Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-realtime-monitor.json` + `memory/news-generation/covered-documents/{YYYY-MM-DD}.json`. END: update both + `memory/news-generation/translation-status.json`. Skip already-covered dok_ids.
 
-## ⏱️ Time Budget (45 minutes) — ENFORCED Minimum 40 Minutes
+## ⏱️ Time Budget (45 minutes) — PR BY MINUTE 28, MINIMUM 22 MIN ANALYSIS
 
-> 🔴 **SYSTEMIC ISSUE IDENTIFIED (PR #1794 audit, 2026-04-16)**: ALL news workflows were completing in 13-22 minutes of their 45-minute allocation, producing shallow analysis with unenriched script stubs. The agent MUST use at least 40 of the 45 allocated minutes. Completion before 40 minutes = insufficient iteration = REJECTED quality.
+> 🔴 **PRODUCTION INCIDENT (2026-04-20, run 24672037751)**: The agent wrote both EN (3,344 words) and SV (2,774 words) breaking articles, committed locally, then called `safeoutputs___create_pull_request` at **minute ~33**. All four safeoutputs calls (`create_pull_request`, `noop`, `missing_tool`, `report_incomplete`) failed with `session not found` — the safeoutputs MCP session had expired. **All work lost.** Per PR #1768, the safeoutputs MCP session has a finite lifetime (~30–35 min observed). **The first `safeoutputs___create_pull_request` call MUST happen by minute 28** (safety margin) and never later than minute 32. Validation, fix-analysis-references, repo-memory updates, and any further tuning MUST be complete BEFORE the PR call — commits made after `create_pull_request` are frozen out of the snapshot.
+
+> 🔴 **SYSTEMIC ISSUE IDENTIFIED (PR #1794 audit, 2026-04-16)**: Prior news workflows were completing in 13–22 minutes, producing shallow analysis with unenriched script stubs. The agent MUST spend at least **22 minutes on analysis** (15 min Pass 1 + 7 min Pass 2). Completion before 22 minutes of analysis = insufficient iteration = REJECTED quality. This is compatible with the minute-28 PR deadline because analysis runs 6–28, leaving article generation + improvement + commit + PR inside minutes 22–28.
 
 ```bash
 date +%s > /tmp/start_time.txt
@@ -309,16 +311,16 @@ read START_TIME < /tmp/start_time.txt
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up |
 | Download | 3–6 | Run data download scripts (MCP data fetch) |
-| **AI Analysis Pass 1** | **6–21** | **🚨 MANDATORY 15 min minimum**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries. |
-| **AI Analysis Pass 2** | **21–28** | **🚨 MANDATORY 7 min minimum**: Read ALL analysis back, improve every section, add cross-references, replace ALL script stubs. Run enrichment verification gate. |
-| Detect | 28–30 | Run minimum time gate + enrichment verification gate. Query MCP for today's activity. |
-| Generate | 30–36 | Run `generate-news-enhanced.ts` script. |
-| **Article Improvement** | **36–40** | **🚨 MANDATORY**: Read ALL articles back, replace AI_MUST_REPLACE markers, improve content, run article quality gate. |
-| Validate | 40–42 | Run `validate-news-generation.sh` |
-| Commit+PR | 42–45 | `git add && git commit`, then `safeoutputs___create_pull_request` |
+| **AI Analysis Pass 1** | **6–18** | **🚨 MANDATORY 12 min minimum**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries. |
+| **AI Analysis Pass 2** | **18–22** | **🚨 MANDATORY 4 min minimum**: Read ALL analysis back, improve every section, add cross-references, replace ALL script stubs. Run enrichment verification gate. |
+| Generate | 22–24 | Run `generate-news-enhanced.ts` script. |
+| **Article Improvement** | **24–26** | **🚨 MANDATORY**: Read articles back, replace AI_MUST_REPLACE markers, improve content, run article quality gate. |
+| Validate + fix-refs | 26–27 | Run `validate-news-generation.sh` and `fix-analysis-references.ts` — BEFORE commit. |
+| **Commit + PR** | **27–28** | 🚨 **HARD PR TARGET — MINUTE 28**: `git add && git commit`, then `safeoutputs___create_pull_request`. Session lifetime ~30–35 min; missing this target = lost work. |
+| Post-PR cleanup | 28–40 | Update repo-memory (`/tmp/gh-aw/repo-memory/default/*.json`) — these are uploaded as artifacts, NOT part of the PR snapshot, so they can safely run after the PR call. |
+| **HARD DEADLINE** | **32** | 🚨 If `safeoutputs___create_pull_request` has not been called and ANY artifacts/files were created, call it IMMEDIATELY with whatever is committed. ONLY call `safeoutputs___noop` if truly ZERO files were created. Never noop when files exist. |
 
-| **HARD DEADLINE** | **43–45** | 🚨 If no safe output yet: if ANY artifacts/files were created, IMMEDIATELY stage, commit, call `safeoutputs___create_pull_request` with partial work. ONLY call `safeoutputs___noop` if truly ZERO files were created. |
-> ⚠️ **Analysis phase is 15 minutes minimum before article generation, and total analysis+generation+article improvement work is 40 minutes minimum before validation** — this is NOT negotiable. PR #1452 demonstrated that < 10 min produces unacceptable analysis. PR #1794 demonstrated that 15 min total = shallow articles missing SWOT tables, Mermaid diagrams, risk matrices. The AI MUST use the full time allocation.
+> ⚠️ **Analysis phase is 22 minutes minimum (Pass 1: 12 min + Pass 2: 4 min + Generate/Improve: 4 min) — this is NOT negotiable.** PR #1452 demonstrated that < 10 min produces unacceptable analysis. PR #1794 demonstrated that 15 min total = shallow articles missing SWOT tables, Mermaid diagrams, risk matrices. Combined with the minute-28 PR target this still leaves ≥ 22 min for real analytical work.
 
 > 🔴 **MINIMUM TIME ENFORCEMENT**: Before proceeding to article generation, the agent MUST run the Minimum Analysis Time Gate AND the Analysis Enrichment Verification Gate from SHARED_PROMPT_PATTERNS.md. Both gates MUST pass before article generation begins.
 
@@ -339,9 +341,9 @@ read AW_NOW < /tmp/now_time.txt
 ELAPSED=$(( AW_NOW - START_TIME ))
 echo "⏱️ Elapsed: $((ELAPSED / 60))m $((ELAPSED % 60))s"
 ```
-- `>= 35 min` → Stop generating, commit what you have, create PR immediately
-- `>= 40 min` → STOP ALL WORK, call safe output tool (`safeoutputs___noop` or `safeoutputs___create_pull_request`) IMMEDIATELY — do NOT run any more bash commands
-- **CRITICAL**: If you have not called a safe output tool and time is running out, call `safeoutputs___noop` immediately. Failing to call a safe output tool causes a workflow failure.
+- `>= 25 min` and no PR called yet → Stop generating new content, commit whatever articles exist, call `safeoutputs___create_pull_request` immediately
+- `>= 30 min` and no PR called yet → 🚨 **SESSION EXPIRY IMMINENT** — STOP ALL WORK, stage + commit everything, call `safeoutputs___create_pull_request` IMMEDIATELY with whatever files exist. Do NOT run validation or any more bash. Partial work in a PR is infinitely better than `session not found`.
+- **CRITICAL — UNIVERSAL SAFE OUTPUT RULE (from SHARED_PROMPT_PATTERNS.md)**: If ANY files were created/modified → ALWAYS `safeoutputs___create_pull_request`. NEVER `safeoutputs___noop` when artifacts exist. Noop means "I did nothing" and loses everything. Noop is ONLY valid when zero files were produced (MCP unreachable, truly no significant events).
 
 ## Step 1: Date Validation & MANDATORY MCP Health Check
 
@@ -816,6 +818,12 @@ Branch: `news/content/{YYYY-MM-DD}/breaking`. `safeoutputs___create_pull_request
 
 ⚠️ DO NOT use `git push` — the safe output tool handles publishing. Commit locally, then use the tool.
 
+> 🚨 **`safeoutputs___create_pull_request` freezes the patch at call time.** A separate `safe_outputs` job (after the agent job ends) creates the branch and opens the PR. **Commits made after the call are NOT added to the PR** (PR #1835). If the safeoutputs MCP session expires before you call it (~30–35 min lifetime, run 24672037751), the `safe_outputs` job is **SKIPPED** and ALL work is lost. **Mitigations**:
+> 1. Call `safeoutputs___create_pull_request` by **minute 28** — hard deadline minute 32.
+> 2. Run validation, `fix-analysis-references.ts`, and any content fixes BEFORE this commit.
+> 3. Repo-memory updates (`/tmp/gh-aw/repo-memory/default/*.json`) are artifact uploads, not PR content — safe to run after the PR call.
+> 4. If `safeoutputs___create_pull_request` returns `session not found`, every subsequent safeoutputs call will also fail. Prevent it — do not try to recover.
+
 ```bash
 # Stage articles and analysis — scoped to this run's time-stamped folder to prevent overwriting other runs
 [ -f /tmp/hhmm.env ] && . /tmp/hhmm.env
@@ -902,9 +910,10 @@ See `SHARED_PROMPT_PATTERNS.md` §"Standardised Analysis Depth Gate" and §"MAND
 | Timeout | MCP server response exceeds `timeout-minutes` | Reduce query scope or increase timeout |
 | Script timeout | Generation script exceeds 20-minute limit | Proceed with whatever was generated; the `timeout 1200` wrapper kills the script |
 | Stale data | `hoursSinceSync > 48` from `get_sync_status()` | Add disclaimer noting data staleness; proceed with cached data |
-| Time running out | Elapsed >= 35 minutes | IMMEDIATELY call `safeoutputs___noop` or `safeoutputs___create_pull_request` — do NOT start new work |
+| Time running out | Elapsed >= 25 minutes and no safeoutputs call yet | IMMEDIATELY commit any staged/unstaged articles and call `safeoutputs___create_pull_request` — do NOT start new work and do NOT noop if files exist. At >= 30 min the safeoutputs MCP session is about to expire; partial work in a PR beats `session not found`. |
+| safeoutputs `session not found` | Delayed `safeoutputs___create_pull_request` past the ~30–35 min session lifetime (see run 24672037751) | UNRECOVERABLE once it happens. **Prevention: call `safeoutputs___create_pull_request` by minute 28.** If you see this error, all intent calls will fail (`create_pull_request`, `noop`, `missing_tool`, `report_incomplete`). |
 
-⚠️ **CRITICAL SAFETY NET**: Before EVERY bash block and EVERY tool call, mentally check: "Am I running out of time?" If more than 35 minutes have elapsed since workflow start, stop all work and call a safe output tool IMMEDIATELY.
+⚠️ **CRITICAL SAFETY NET**: Before EVERY bash block and EVERY tool call, mentally check: "Am I running out of time?" If more than **25 minutes** have elapsed since workflow start and `safeoutputs___create_pull_request` has not yet been called, stop all work, commit whatever articles exist, and call `safeoutputs___create_pull_request` IMMEDIATELY. Post-PR cleanup (repo-memory, diagnostics) can run in minutes 28–40.
 
 🎯 **Now begin: Check date, warm up MCP with `get_sync_status()`, detect events, generate articles with the script, and call a safe output tool.**
 
