@@ -178,3 +178,227 @@ graph LR
     style GOV fill:#dc3545,color:#fff
     style OPP fill:#007bff,color:#fff
 ```
+
+---
+
+## 🎭 Named-Actors Registry (≥20 actors tracked)
+
+Actors tracked to establish accountability, enable follow-up, and support the influence-network analysis below. Listing is grouped by role category.
+
+### 🏛️ Parliamentary — Opposition (motion signatories)
+
+| # | Actor | Party | Role | Key motion(s) | Confidence |
+|:-:|-------|:-----:|------|---------------|:----------:|
+| 1 | **Magdalena Andersson** | S | Party leader | Cluster sponsor | 🟩 HIGH |
+| 2 | **Ida Karkiainen** | S | Lead signatory HD024080 | Reception privatisation | 🟩 HIGH |
+| 3 | **Ardalan Shekarabi** | S | Lead signatory HD024079 | Time-limited housing | 🟩 HIGH |
+| 4 | **Mikael Damberg** | S | Lead signatory HD024082 | Fuel-tax fiscal framing | 🟩 HIGH |
+| 5 | **Nooshi Dadgostar** | V | Party leader | Cluster sponsor | 🟩 HIGH |
+| 6 | **Tony Haddou** | V | Lead signatory HD024076 | Reception rights frame | 🟩 HIGH |
+| 7 | **Håkan Svenneling** | V | Lead signatory HD024091 | Arms-export rejection | 🟩 HIGH |
+| 8 | **Janine Alm Ericson** | MP | Party leader + HD024098 | Fuel-tax climate frame | 🟩 HIGH |
+| 9 | **Annika Hirvonen** | MP | Lead signatory HD024087 | EU Pact compatibility | 🟩 HIGH |
+| 10 | **Jacob Risberg** | MP | Lead signatory HD024096 | Arms end-user review | 🟩 HIGH |
+| 11 | **Niels Paarup-Petersen** | C | Lead signatory HD024089/95 | Phased amendment + proportionality | 🟩 HIGH |
+| 12 | **Martin Ådahl** | C | Economic-policy spokesperson | HD024088 consumer credit | 🟧 MEDIUM |
+
+### 🏛️ Parliamentary — Government / Tidö coalition
+
+| # | Actor | Party | Role | Key decision point |
+|:-:|-------|:-----:|------|---------------------|
+| 13 | **Ulf Kristersson** | M | Prime Minister | Government-wide messaging discipline |
+| 14 | **Jimmie Åkesson** | SD | Tidö signatory | SD attack-ad strategy owner |
+| 15 | **Ebba Busch** | KD | Deputy PM | Crime-victim / parent-liability tension |
+| 16 | **Johan Pehrson** | L | Tidö party leader | **🔶 Weak link** — rule-of-law sensitivity on proportionality |
+| 17 | **Maria Malmer Stenergard** | M | Migration minister | Reception-law defence + SfU engagement |
+
+### ⚖️ Judiciary / Legal oversight
+
+| # | Actor | Institution | Role |
+|:-:|-------|-------------|------|
+| 18 | **Lagrådet** | Council on Legislation | Yttrande on 2025/26:229 + 2025/26:235 (Q2 2026) — single most consequential pending signal |
+| 19 | **Konstitutionsutskottet (KU)** | Riksdag committee | Potential constitutional review |
+| 20 | **Migrationsöverdomstolen** | Migration Court of Appeal | Post-adoption administrative review venue |
+| 21 | **ECtHR (Strasbourg)** | European Court of Human Rights | 3–5 year pilot-judgment potential on deportation |
+
+### 🌿 Civil-society & NGO network
+
+| # | Actor | Role in this cluster |
+|:-:|-------|----------------------|
+| 22 | **Röda Korset Sverige** | Joint remissvar on prop. 2025/26:229 expected |
+| 23 | **Rädda Barnen** | Child-welfare concerns on private-operator reception |
+| 24 | **Amnesty Sverige** | Critical brief on prop. 2025/26:235 (deportation) |
+| 25 | **Caritas Sverige** | Reception-law humanitarian coalition |
+| 26 | **RFSL** | LGBTQ-asylum deportation concerns |
+| 27 | **Diakonia** | Arms-export human-rights advocacy |
+| 28 | **Svenska Freds- och Skiljedomsföreningen** | Arms-export policy critique |
+
+### 💼 Business / industry
+
+| # | Actor | Sector | Position |
+|:-:|-------|--------|----------|
+| 29 | **Saab AB (Linköping ~15k jobs)** | Defence | Quiet pro-2025/26:228 lobbying; opposes V+MP cluster |
+| 30 | **BAE Systems Sweden (Karlskoga ~8k jobs)** | Defence | Aligned with Saab on export flexibility |
+| 31 | **Transportarbetareförbundet** | Labour union | **🔶 Split risk** — may publicly back government fuel-tax cut |
+| 32 | **Sveriges Kommuner och Regioner (SKR)** | Municipal association | Concerned about reception-law municipal-capacity burden |
+
+### 📊 Expert / oversight bodies
+
+| # | Actor | Role |
+|:-:|-------|------|
+| 33 | **Klimatpolitiska rådet** | Annual Klimatlagen §5 accountability report — key fuel-tax lever |
+| 34 | **MSB (Myndigheten för samhällsskydd)** | Disinformation / CIB monitoring |
+| 35 | **FOI (Totalförsvarets forskningsinstitut)** | Foreign-influence analysis |
+| 36 | **ISP (Inspektionen för strategiska produkter)** | Arms-export authorisation authority |
+| 37 | **Naturvårdsverket** | Climate-trajectory evidence base |
+
+**Actors tracked**: 37 (minimum threshold: 20). ✅
+
+---
+
+## 🕸️ Influence Network (Cluster-Level)
+
+```mermaid
+flowchart LR
+    subgraph OppLeaders["Opposition Leaders"]
+        MA["Magdalena Andersson S"]
+        ND["Nooshi Dadgostar V"]
+        JAE["Janine Alm Ericson MP"]
+        NPP["Niels Paarup-Petersen C"]
+    end
+
+    subgraph Signatories["Cluster Signatories"]
+        IK["Ida Karkiainen HD024080"]
+        TH["Tony Haddou HD024076"]
+        AH["Annika Hirvonen HD024087"]
+        HS["Håkan Svenneling HD024091"]
+        JR["Jacob Risberg HD024096"]
+        MD["Mikael Damberg HD024082"]
+    end
+
+    subgraph GovActors["Tidö + Legal"]
+        UK["Ulf Kristersson M"]
+        JA["Jimmie Åkesson SD"]
+        JP["Johan Pehrson L"]
+        MMS["Maria Malmer Stenergard"]
+        LR["Lagrådet"]
+    end
+
+    subgraph CivSoc["Civil Society"]
+        RK["Röda Korset"]
+        RB["Rädda Barnen"]
+        AM["Amnesty Sverige"]
+        SF["Svenska Freds"]
+    end
+
+    subgraph Industry["Industry"]
+        SAAB["Saab AB"]
+        TA["Transportarb.förb."]
+    end
+
+    MA --> IK
+    MA --> MD
+    ND --> TH
+    ND --> HS
+    JAE --> AH
+    JAE --> JR
+    NPP -.amendment path.-> JP
+
+    IK -->|coordinated filing| LR
+    TH -->|coordinated filing| LR
+    AH -->|coordinated filing| LR
+    HS -->|challenges| SAAB
+    JR -->|challenges| SAAB
+    MD -->|climate frame| AM
+
+    UK --> MMS
+    JA --> UK
+    MMS -->|defends 2025/26:229| LR
+
+    RK -->|supports| IK
+    RK -->|supports| TH
+    RB -->|supports| IK
+    AM -->|supports| HS
+    AM -->|supports| JR
+    SF -->|supports| HS
+    TA -.split risk.-> MD
+
+    style MA fill:#ff6b6b,color:#000
+    style ND fill:#dc3545,color:#fff
+    style JAE fill:#28a745,color:#fff
+    style NPP fill:#007bff,color:#fff
+    style UK fill:#1e3a8a,color:#fff
+    style JA fill:#D32F2F,color:#fff
+    style JP fill:#FFC107,color:#000
+    style LR fill:#9C27B0,color:#fff
+    style RK fill:#E53E3E,color:#fff
+    style AM fill:#FF9800,color:#000
+    style SAAB fill:#607D8B,color:#fff
+    style TA fill:#FFC107,color:#000
+```
+
+> **Influence-network reading `[HIGH]`**: The key **bridging nodes** are (1) Paarup-Petersen's amendment path to Pehrson (L backbench) — the only opposition → Tidö bridge; (2) **Lagrådet** as the single institutional actor with power to change the government's substantive terms; (3) **Transportarbetareförbundet** as the split-risk node that could fragment S's working-class narrative on fuel tax. These three nodes deserve disproportionate monitoring effort.
+
+---
+
+## 🧨 Fracture-Probability Tree
+
+Where can the opposition coalition fracture, and with what probability?
+
+```mermaid
+flowchart TD
+    GOAL["🎯 Opposition coalition holds<br/>through June 2026 chamber votes"]
+
+    F1["F1: C negotiates<br/>proportionality (HD024095)<br/>P = 0.45"]
+    F2["F2: S-silence on deportation<br/>becomes visible as fragmentation<br/>P = 0.30"]
+    F3["F3: V–C positions forced<br/>to same-vote moment<br/>P = 0.35"]
+    F4["F4: MP salience falls<br/>below 4% floor<br/>P = 0.20"]
+    F5["F5: SD attack ads force<br/>V position-revision<br/>P = 0.55"]
+
+    MIT1["M1: amendment-first<br/>SfU vote sequencing (SWOT WO3)"]
+    MIT2["M2: S follow-on deportation<br/>motion 2026-2027"]
+    MIT3["M3: coordinated op-eds<br/>without joint photo"]
+    MIT4["M4: MP pivot to<br/>climate salience (HD024098)"]
+    MIT5["M5: V pairs every rejection<br/>with concrete alternative"]
+
+    GOAL --> F1
+    GOAL --> F2
+    GOAL --> F3
+    GOAL --> F4
+    GOAL --> F5
+
+    F1 --> MIT1
+    F2 --> MIT2
+    F3 --> MIT1
+    F3 --> MIT3
+    F4 --> MIT4
+    F5 --> MIT5
+
+    style GOAL fill:#4CAF50,color:#fff
+    style F1 fill:#FF9800,color:#000
+    style F2 fill:#FFC107,color:#000
+    style F3 fill:#FF9800,color:#000
+    style F4 fill:#FFC107,color:#000
+    style F5 fill:#D32F2F,color:#fff
+    style MIT1 fill:#2196F3,color:#fff
+    style MIT2 fill:#2196F3,color:#fff
+    style MIT3 fill:#2196F3,color:#fff
+    style MIT4 fill:#2196F3,color:#fff
+    style MIT5 fill:#2196F3,color:#fff
+```
+
+> **Highest-probability fracture `[HIGH]`**: **F5** (SD attack ads force V rejectionism revision). Opposition must execute **M5** (V pairs rejection with concrete alternative) as matter of priority. Next-highest: **F1** (C negotiates). Mitigation **M1** (amendment-first sequencing) addresses both F1 and F3 simultaneously — single highest-leverage move.
+
+---
+
+## 📎 Cross-References
+
+- [`synthesis-summary.md`](synthesis-summary.md) §Cross-Cluster Interference — influence patterns
+- [`swot-analysis.md`](swot-analysis.md) §TOWS — stakeholder-informed strategy derivations
+- [`risk-assessment.md`](risk-assessment.md) §R07/R09/R10 — named-actor-linked risks
+- [`threat-analysis.md`](threat-analysis.md) §T6 Diamond Model — threat-actor stakeholders
+- [`documents/`](documents/) — cluster-level actor deep dives
+
+---
+
+**Classification**: Public · **Next Review**: 2026-04-27
