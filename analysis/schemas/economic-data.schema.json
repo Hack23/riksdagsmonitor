@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://riksdagsmonitor.com/schemas/economic-data.schema.json",
   "title": "Article economic-data.json",
-  "description": "Per-article artefact produced by agentic workflows during the pre-article analysis phase. Bridges World Bank / IMF / SCB MCP tool output into the Chart.js-powered 'Economic Context' dashboard emitted by `scripts/data-transformers/content-generators/economic-dashboard-section.ts`. Written to `analysis/daily/YYYY-MM-DD/{analysisSubfolder}/economic-data.json`. Schema v2.0 (additive): adds `source.imf[]` and optional `provider`, `projection`, `projectionVintage` fields on each data point. Schema v1 artefacts (`source` with only `worldBank` and `scb`) remain valid.",
+  "description": "Per-article artefact produced by agentic workflows during the pre-article analysis phase. Bridges World Bank (MCP), SCB (MCP), and IMF (TypeScript client/CLI) outputs into the Chart.js-powered 'Economic Context' dashboard emitted by `scripts/data-transformers/content-generators/economic-dashboard-section.ts`. Written to `analysis/daily/YYYY-MM-DD/{analysisSubfolder}/economic-data.json`. Schema v2.0 (additive): adds `source.imf[]` and optional `provider`, `projection`, `projectionVintage` fields on each data point. Schema v1 artefacts (`source` with only `worldBank` and `scb`) remain valid.",
   "type": "object",
   "additionalProperties": false,
   "required": ["policyDomains", "dataPoints", "commentary", "source"],
