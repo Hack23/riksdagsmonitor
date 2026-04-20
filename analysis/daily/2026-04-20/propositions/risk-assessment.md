@@ -1,88 +1,254 @@
 # Risk Assessment — Government Propositions — 2026-04-20
 
-**Generated**: 2026-04-20 06:26 UTC  
-**Methodology**: Political-legislative risk matrix × likelihood × impact  
-**Overall Threat Level**: 🟧MEDIUM-HIGH  
-**Confidence**: 🟩HIGH
+**Generated**: 2026-04-20 06:30 UTC  
+**Framework**: `political-risk-methodology.md` v5.0 — Probability × Impact matrix, 10 risk dimensions  
+**Confidence**: 🟩HIGH on structural risks; 🟧MEDIUM on forward-looking estimates  
+**Democratic Health Score**: 🟡 MEDIUM (informed by Freedom House 2025: Sweden 93/100, stable democratic institutions under stress)
+
+## Risk Methodology
+
+Risks scored on:
+- **Probability (P)**: 1–5 (1=very low, 5=very high)
+- **Impact (I)**: 1–5 (1=negligible, 5=critical/regime-level)
+- **Risk Score**: P × I (max 25)
+- **Classification**: 🟢 LOW (1–6) / 🟡 MEDIUM (7–12) / 🟠 HIGH (13–18) / 🔴 CRITICAL (19–25)
+
+## Risk Register
+
+| # | Risk | Probability | Impact | Score | Classification | Timeline |
+|---|------|-------------|--------|-------|----------------|----------|
+| 1 | US tariff escalation damages Spring Bill credibility | 3 | 5 | 15 | 🟠 HIGH | Q2–Q3 2026 |
+| 2 | HD03236 fuel tax cut fails to pass through at pump | 3 | 4 | 12 | 🟡 MEDIUM | Jul–Aug 2026 |
+| 3 | SD coalition signal-shift during May budget debate | 2 | 5 | 10 | 🟡 MEDIUM | May–Jun 2026 |
+| 4 | Q2 2026 GDP disappoints (< +0.4% QoQ) | 3 | 4 | 12 | 🟡 MEDIUM | Jul 2026 release |
+| 5 | Riksrevisionen adverse finding (HD03241 follow-up) | 2 | 4 | 8 | 🟡 MEDIUM | Q3 2026 |
+| 6 | EU DG Comp state-aid investigation on HD03239 | 2 | 3 | 6 | 🟢 LOW | Q4 2026 – 2027 |
+| 7 | HD03238 agency implementation materially behind schedule | 4 | 3 | 12 | 🟡 MEDIUM | 2027–2028 |
+| 8 | HD03237 police-training quality degradation | 2 | 3 | 6 | 🟢 LOW | 2027–2029 |
+| 9 | Energy price spike (gas/electricity) overwhelms HD03236 | 2 | 4 | 8 | 🟡 MEDIUM | Q3 2026 winter |
+| 10 | Swedish bank stress (commercial real estate) | 1 | 5 | 5 | 🟢 LOW (tail) | 2026 |
+| 11 | Migration surge post-Ukraine ceasefire | 2 | 4 | 8 | 🟡 MEDIUM | 2026 |
+| 12 | Russian hybrid/disinformation on HD03220 | 4 | 2 | 8 | 🟡 MEDIUM | 2026 |
+| 13 | AI deepfake political event | 2 | 3 | 6 | 🟢 LOW | 2026 |
+| 14 | Kristersson personal / leadership event | 1 | 5 | 5 | 🟢 LOW (tail) | 2026 |
+| 15 | Climate event (flood/wildfire) disrupts political agenda | 2 | 3 | 6 | 🟢 LOW | Summer 2026 |
+
+## Top Risks — Detailed Assessment
+
+### Risk 1 — US Tariff Escalation (🟠 HIGH, 15)
+
+**Probability**: 3 (Medium — trajectory under Trump administration is unpredictable; escalation scenarios plausible).
+
+**Impact**: 5 (Critical — ~7% of Swedish GDP dependent on US-bound exports; key sectors SSAB, Sandvik, Volvo, SKF, AstraZeneca Sweden).
+
+**Mechanism**: 
+1. US tariffs on steel, machinery, or pharma reduce Swedish export orders.
+2. Industrial investment suppression reduces Q2–Q3 2026 GDP growth.
+3. Spring Bill projections lose credibility; opposition weaponises.
+4. HD03236 fiscal space absorbed by macro support, reducing household relief.
+
+**Mitigation**:
+- Diplomatic outreach: Kristersson + Dousa bilateral with US commerce/trade reps.
+- EU coordinated response — Swedish position within EU trade negotiations.
+- Public communication: resilience narrative, not panic.
+
+**Indicators to monitor**: Volvo, SSAB, Sandvik Q1 2026 guidance; US trade policy developments.
+
+### Risk 2 — HD03236 Pass-Through Failure (🟡 MEDIUM, 12)
+
+**Probability**: 3 (Medium — based on historical Swedish tax pass-through of 60–75%, not promised 85%).
+
+**Impact**: 4 (Major — if pump price insufficiently drops, flagship electoral measure loses political return).
+
+**Mechanism**:
+1. Petroleum retailers (Preem, Circle K, OKQ8) absorb part of tax cut into margins.
+2. Media coverage highlights "tankens pris oförändrat trots sänkt skatt" within 4 weeks.
+3. Segment 1 (rural drivers) feels less visible relief than promised.
+4. Opposition amplifies: "Svantesson lovade, bolagen tog pengarna."
+
+**Mitigation**:
+- Konsumentverket pre-commits to weekly pump-price tracking.
+- Drivmedelsinspektionen monitors compliance.
+- Government coordinates with SPBI (industry body) on transparent pass-through.
+
+**Indicators**: Weekly pump prices vs. baseline (Drivmedelsinspektionen data).
+
+### Risk 3 — SD Coalition Signal-Shift (🟡 MEDIUM, 10)
+
+**Probability**: 2 (Low-Medium — SD's stated strategic posture remains coalition-supportive, but polling stagnation creates internal pressure).
+
+**Impact**: 5 (Critical — coalition collapse triggers snap-election or government-formation crisis before September).
+
+**Mechanism** (per `devils-advocate.md` Red Team Challenge 2):
+1. Q2 polling stagnation intensifies internal SD debate.
+2. Youth wing + Jomshof/Nordin faction pressure for more aggressive positioning.
+3. Åkesson demands additional concessions (immigration/criminal-code) during May budget debate.
+4. Kristersson faces choice: concede (risking L threshold concern) or refuse (risking SD signal-shift).
+
+**Mitigation**:
+- Kristersson's office maintains continuous SD relationship management.
+- Pre-negotiated concession menu for May budget vote.
+- Alternative emergency coalition arithmetic (C + L + M + KD) explored quietly.
+
+**Indicators**: Åkesson rhetoric in May 2026 media appearances; SD youth-wing social media signals; polling delta.
+
+### Risk 4 — Q2 2026 GDP Disappointment (🟡 MEDIUM, 12)
+
+**Probability**: 3 (Medium — Q1 2026 SCB preliminary suggests modest recovery but below Spring Bill implied trajectory).
+
+**Impact**: 4 (Major — validates entire opposition economic-competence critique; raises doubts about Spring Bill forecasts).
+
+**Mechanism**:
+1. SCB Q2 2026 flash (released mid-July) shows < +0.4% QoQ.
+2. Konjunkturinstitutet follow-up confirms below-Spring-Bill-projection.
+3. DN + SvD business pages amplify gap.
+4. Andersson's "växer sämre än grannarna" narrative becomes factually validated.
+
+**Mitigation**:
+- Pre-emptive narrative management: Svantesson frames 2026 as "transition year" not "recovery year" if needed.
+- Employment data emphasis if GDP soft.
+- Investment-announcement management from energy cluster.
+
+**Indicators**: Q1 2026 SCB flash (April 29); Konjunkturbarometern readings.
+
+### Risk 5 — Riksrevisionen Critical Finding (🟡 MEDIUM, 8)
+
+**Probability**: 2 (Low-Medium — RR has flagged fiscal-framework concerns; follow-up depth uncertain).
+
+**Impact**: 4 (Major — institutional voice with cross-bloc credibility).
+
+**Mechanism**:
+1. RR issues supplementary finding on fiscal-framework compliance.
+2. Committee invites auditor-general for testimony.
+3. DN + SVT amplifies institutional critique.
+4. Government forced to respond with compliance adjustments.
+
+**Mitigation**:
+- Pro-active engagement with RR on HD03241 response (already initiated).
+- Finance ministry staff coordination with ESV on fiscal projections.
+
+### Risk 7 — HD03238 Agency Implementation Delay (🟡 MEDIUM, 12)
+
+**Probability**: 4 (High — agency standup historically takes 24+ months; political timeline ambitious).
+
+**Impact**: 3 (Moderate — "legislated but not delivered" critique but not regime-level).
+
+**Mechanism**:
+1. Premises procurement + IT systems take 18+ months.
+2. Staffing (200 specialists) requires 2-year ramp.
+3. 2027 "operational" claim meets reality check by late 2027.
+4. Opposition frames as "Empty permit agency" throughout 2027 campaign cycle.
+
+**Mitigation**:
+- Aggressive project management; possible interim director by Q3 2026.
+- Phased staffing with visible milestones.
+- Temporary case-routing via existing Länsstyrelser.
+
+**Indicators**: Regeringsbeslut on GD appointment; IT procurement notices; staff headcount quarterly reports.
+
+## Secondary Risks
+
+### Energy Price Spike (🟡 MEDIUM, 8)
+
+Natural gas or electricity prices spiking 20%+ in Q3 2026 could overwhelm HD03236 budget. Trigger events: Russia-Ukraine ceasefire breakdown, LNG market tightening, Nord Stream 2 incidents. Legislation likely caps total support — inadequate support equals 2022 crisis repeat.
+
+### Migration Surge Post-Ukraine Ceasefire (🟡 MEDIUM, 8)
+
+If Ukraine ceasefire delivers short-term migration wave to Northern/Central Europe, SD demands immigration-code tightening — testing coalition flexibility and displacing package-narrative media oxygen.
+
+### Russian Hybrid/Disinformation (🟡 MEDIUM, 8)
+
+Per `threat-analysis.md`, SÄPO and MSB anticipate coordinated inauthentic behaviour on Facebook + X targeting HD03220 NATO narrative and HD03236 economic-grievance frame. Impact limited by Swedish media literacy and MPF counter-narrative capacity.
+
+### Swedish Bank Stress (🟢 LOW tail, 5)
+
+Swedbank and SEB commercial real estate exposure. Tail risk but potentially severe if materialises.
+
+## Tail Risks (Low Probability, High Impact)
+
+| Risk | P | I | Notes |
+|------|---|---|-------|
+| Kristersson health/legal event | 1 | 5 | No publicly-known succession plan |
+| Major Russian kinetic escalation affecting Baltic | 1 | 5 | Would reframe entire campaign |
+| Sweden-specific hybrid attack (cyber on critical infrastructure) | 2 | 4 | Would benefit incumbent |
+| AI deepfake political event affecting Swedish campaign | 2 | 3 | No regulatory framework ready |
 
 ## Risk Heat Map
 
 ```mermaid
-xychart-beta
-    title "Risk Assessment: Spring 2026 Propositions"
-    x-axis ["Fiscal Credibility", "Coalition Stability", "Economic Outcome", "Global Trade", "Environmental Opposition", "Police Reform", "Energy Security"]
-    y-axis "Risk Score" 0 --> 10
-    bar [8, 7, 8, 9, 6, 5, 7]
+quadrantChart
+    title Risk Heat Map — Spring 2026 Package
+    x-axis Low Probability --> High Probability
+    y-axis Low Impact --> High Impact
+    quadrant-1 CRITICAL (monitor intensely)
+    quadrant-2 HIGH (priority watch)
+    quadrant-3 LOW (baseline)
+    quadrant-4 MEDIUM (contingency)
+    US tariff: [0.60, 0.90]
+    Pass-through: [0.60, 0.70]
+    SD shift: [0.40, 0.90]
+    Q2 GDP: [0.60, 0.70]
+    RR finding: [0.40, 0.70]
+    HD03238 delay: [0.75, 0.60]
+    State aid: [0.30, 0.55]
+    Bank stress: [0.15, 0.95]
+    Migration: [0.35, 0.70]
+    Russian hybrid: [0.75, 0.40]
 ```
 
-## Critical Risk Analysis
+## Risk Response Strategy
 
-### Risk 1: Fiscal Credibility Collapse (Score: 8/10)
-**Likelihood**: 🟧MEDIUM | **Impact**: 🔴CRITICAL  
-The combination of fuel tax cuts (HD03236), Spring Economic Bill growth projections (HD03100), and Spring Amendment Budget (HD0399) creates a fiscal tension that Riksrevisionen and opposition economists will exploit. Sweden's GDP growth has underperformed the EU average by approximately 1.5 percentage points annually since 2022. If the Spring Bill's projections prove optimistic (e.g., 2% GDP growth forecast vs. 0.82% actual 2024 outcome), the government's credibility on economic management — its core electoral asset — is at risk.
+### Immediate (April–May 2026)
 
-**Evidence**: Riksrevisionen report (HD03241) already critiques fiscal framework compliance. Finance Committee (FiU) scrutiny will be intense.
+1. **US tariff**: Kristersson-Trump outreach via EU Commission liaison; Swedish-specific sector reassurance messaging.
+2. **SD signal-shift**: Maintain continuous back-channel; pre-position May budget concession menu.
+3. **Pass-through**: Konsumentverket pre-committed weekly tracking.
 
-**Mitigation**: Government has pre-emptively commissioned the Riksrevisionen response and maintains the structural surplus rule. Svantesson can cite the energy support measures as automatic stabilisers.
+### Near-term (June–August 2026)
 
-### Risk 2: Coalition Fracture Over Budget Priorities (Score: 7/10)
-**Likelihood**: 🟧MEDIUM | **Impact**: 🟠HIGH  
-The SD-supported minority government requires constant negotiation. SD's priorities (fuel tax cuts — rural base; police expansion — law-and-order identity) are broadly delivered in this package. However, SD's new demands ahead of the election may include harder immigration enforcement or penalty escalation measures that create tensions with KD and L on civil liberties. The budget vote scheduled for May-June 2026 requires unanimous bloc discipline.
+1. **Q2 GDP**: Narrative management for any outcome; emphasis on employment if GDP soft.
+2. **RR finding**: Finance ministry coordination with RR technical staff.
+3. **Migration**: SD-channel commitments; EU-level refugee coordination.
 
-**Mitigation**: SD receives enough visible policy wins (HD03236 fuel cuts, HD03237 police) to stay on board for fiscal votes.
+### Medium-term (September 2026 – 2028)
 
-### Risk 3: Economic Downturn Invalidates Spring Bill (Score: 8/10)
-**Likelihood**: 🟧MEDIUM | **Impact**: 🔴CRITICAL  
-The 2026 Spring Economic Bill (HD03100) is politically catastrophic if its economic projections prove wrong by election day. Sweden entered technical recession in 2023 (-0.20% GDP), recovered modestly in 2024 (+0.82%), and projections for 2025-2026 depend heavily on export demand (US tariffs) and household consumption recovery (real wages). A second growth disappointment within 24 months would allow opposition to characterise government fiscal policy as structurally inadequate.
+1. **HD03238 delivery**: Milestone visibility management.
+2. **State aid**: Pre-notification to DG Comp Q3 2026.
+3. **Police quality**: Polismyndigheten selection-standards communication.
 
-**Key risk drivers**: US tariff regime on Swedish exports; Euro area growth slowdown; residential construction sector remaining in contraction.
+## Democratic Health Considerations
 
-### Risk 4: Global Trade Shock — Trump Tariff Escalation (Score: 9/10)
-**Likelihood**: 🟩HIGH | **Impact**: 🟠HIGH  
-The US tariff regime introduced in early 2026 represents the most significant external risk to Swedish economic performance. Swedish goods exports to the US account for approximately SEK 150-200 billion annually (vehicles, machinery, pharmaceuticals, forest products). Tariff escalation would directly reduce Swedish export revenues, potentially cutting GDP growth by 0.5–1.0 percentage points — enough to swing an election year into negative territory.
+Swedish democratic institutions remain robust per Freedom House 2025 score 93/100. The Spring 2026 Package does not raise democratic-health flags:
 
-**Evidence**: The Spring Economic Bill's growth projections would need to be revised if tariff impacts materialise.
+- **Separation of powers**: Riksrevisionen + KU scrutiny intact.
+- **Rule of law**: HD03237 + HD03246 operate within existing constitutional framework.
+- **Media freedom**: Swedish media ecosystem remains plural and adversarial.
+- **Electoral integrity**: No package element affects electoral procedure.
 
-### Risk 5: Environmental Opposition Mobilisation (Score: 6/10)
-**Likelihood**: 🟧MEDIUM | **Impact**: 🟡MEDIUM  
-The new environmental permitting agency (HD03238) and electricity market laws (HD03240) will face coordinated opposition from environmental groups arguing the reforms prioritise industry over climate protection. MP will attempt to frame this as the government "gutting" environmental review. Risk is moderate because the reforms also enable wind power expansion — which environmental groups broadly support.
+Concerns elevate to 🟡 MEDIUM (not 🟢 LOW) primarily because of:
 
-### Risk 6: Police Training Programme Delays (Score: 5/10)
-**Likelihood**: 🟡LOW-MEDIUM | **Impact**: 🟡MEDIUM  
-Converting police training to a paid model (HD03237) creates implementation challenges: the Police Authority must expand intake capacity, increase training staff, and restructure curriculum financing. If implementation is delayed beyond 2026, the government faces the embarrassment of having legislated but not delivered. Budget allocation adequacy is the key constraint.
+1. **Coalition dependence on SD** — no constitutional issue but fragility of governance.
+2. **Fiscal projection contestation** — healthy debate but under tight electoral pressure.
+3. **Information operations vulnerability** — Russian/state-sponsored disinformation targets.
+4. **Short-term electoral optimisation** — package reflects electoral-cycle dynamics that characterise all Swedish pre-election periods.
 
-### Risk 7: Energy Price Volatility vs. Support Commitment (Score: 7/10)
-**Likelihood**: 🟧MEDIUM | **Impact**: 🟠HIGH  
-The extra amendment budget's energy price support (HD03236) is calibrated at current price levels. Energy markets remain volatile. If electricity prices rise significantly before the September 2026 election, the inadequate support amounts will become a political liability rather than an asset — the government having promised support that proves insufficient.
+Compare to global reference: Hungary 65, Poland 82, France 87, Denmark 97. Sweden remains among strongest democracies but 2024 Freedom House commentary flagged "hybrid threats" category.
 
-## Risk Interaction Map
+## Aggregate Risk Assessment
 
-```mermaid
-graph TD
-    A[Global Trade Shock] --> B[GDP Growth Shortfall]
-    B --> C[Spring Bill Discredited]
-    C --> D[Fiscal Credibility Loss]
-    D --> E[Electoral Damage]
-    
-    F[Coalition Fracture] --> G[Budget Vote Failure]
-    G --> H[Snap Election Risk]
-    
-    I[Energy Price Spike] --> J[Support Measures Inadequate]
-    J --> E
-    
-    K[Environmental Opposition] --> L[Wind/Energy Reforms Delayed]
-    L --> M[Green Credential Loss]
-    M --> E
-```
+**Portfolio risk rating**: 🟡 MEDIUM  
+**Coalition continuity outlook**: 🟧 MEDIUM (retention ~35–40%)  
+**Package delivery outlook**: 🟨 MODERATE CONFIDENCE (~78%)  
+**Electoral cycle risk**: 🟠 HIGH (contested election with tight arithmetic)
 
-## Election 2026 Risk Assessment
+## Indicators-to-Watch Priority
 
-| Risk | Pre-Election Probability | Electoral Impact | Governing Party Response |
-|------|--------------------------|-----------------|--------------------------|
-| GDP underperformance | 🟧MEDIUM (40%) | 🔴CRITICAL | Spin fiscal consolidation as responsible |
-| SD Coalition fracture | 🟡LOW (20%) | 🔴CRITICAL | Continuous concession politics |
-| Energy price spike | 🟧MEDIUM (35%) | 🟠HIGH | Pledge to increase support amounts |
-| US tariff escalation | 🟩HIGH (55%) | 🟠HIGH | EU coordination, diplomatic pressure |
-| Police reform delayed | 🟡LOW (25%) | 🟡MEDIUM | Fast-track budget implementation |
+Top 5 leading indicators that would materially shift risk posture:
 
-**Overall Election Risk Profile**: 🟧MEDIUM-HIGH — Government holds advantages from coordinated legislative delivery but faces structural vulnerabilities in economic performance data and external trade environment. The September 2026 election remains genuinely competitive.
+1. **SD rhetoric intensity** in May 2026 media appearances (coalition stability).
+2. **Q2 2026 GDP flash** (fiscal credibility).
+3. **Fuel pass-through percentage** at pump (Jul–Aug 2026).
+4. **Polismyndigheten facility investment decisions** (HD03237 on-schedule signal).
+5. **US tariff developments** affecting Swedish manufacturers.
+
+All five should be re-evaluated monthly throughout April–September 2026.
