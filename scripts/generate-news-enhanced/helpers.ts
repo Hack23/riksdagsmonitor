@@ -374,7 +374,12 @@ export function assessArticleQuality(html: string, lang: string, docIds: readonl
     }
   }
 
-  const passesThreshold: boolean = overallScore >= threshold;
+  // Hard gate: any dimension scoring critically low (<50) vetoes the pass.
+  // This prevents a severely problematic dimension (e.g. languageQuality=0 from Swedish
+  // leakage in an English article) from silently slipping through when other dimensions
+  // compensate in the weighted average. See https://github.com/Hack23/riksdagsmonitor/pull/1858
+  const criticalDimensions = Object.entries(dimensions).filter(([, dim]) => dim.score < 50);
+  const passesThreshold: boolean = overallScore >= threshold && criticalDimensions.length === 0;
 
   return {
     overallScore,
