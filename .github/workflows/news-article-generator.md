@@ -380,8 +380,9 @@ read START_TIME < /tmp/start_time.txt
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up, check recent generation |
 | Download | 3–6 | Run data download scripts (MCP data fetch) |
 | **AI Analysis Pass 1** | **6–21** | **🚨 MANDATORY 15 min minimum**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries. |
-| **AI Analysis Pass 2** | **21–28** | **🚨 MANDATORY 7 min minimum**: Read ALL analysis back completely, improve every section, replace ALL script stubs with AI analysis. |
+| **AI Analysis Pass 2 (Part A)** | **21–22** | Begin reading ALL analysis artifacts back and identify improvement targets. |
 | **Heartbeat PR** | **22–25** | 🫀 `git add && git commit` analysis + any drafts so far, then `safeoutputs___create_pull_request` (title `🫀 Heartbeat - Article Generator - {date}`). This refreshes the safeoutputs MCP session (which expires after ~30–35 min idle) AND guarantees no work is lost if later phases fail. After the call succeeds, run `git checkout main` so subsequent commits don't stack onto the frozen patch. |
+| **AI Analysis Pass 2 (Part B)** | **25–28** | **Complete improvements (6 min improvement work total across Parts A+B)**: improve every section, replace ALL script stubs with AI analysis. |
 | Gates | 28–30 | Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass. |
 | Generate | 30–36 | Run `generate-news-enhanced.ts` in batches |
 | **Article Improvement** | **36–40** | 🚨 Read ALL articles back, replace AI_MUST_REPLACE markers, improve content. Run article quality component gate. |

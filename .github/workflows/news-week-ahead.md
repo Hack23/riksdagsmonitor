@@ -283,8 +283,9 @@ read START_TIME < /tmp/start_time.txt
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–5**: Run download-parliamentary-data pipeline (download data)
 - **Minutes 5–20**: 🚨 **AI Analysis Pass 1 (15 min minimum)**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries.
-- **Minutes 20–27**: 🚨 **AI Analysis Pass 2 (7 min minimum)**: Read ALL analysis back completely, improve every section, replace ALL script stubs with AI analysis. Run enrichment verification gate.
+- **Minutes 20–22**: 🚨 **AI Analysis Pass 2 (Part A, start)**: Begin reading ALL analysis back and identify improvement targets.
 - **Minutes 22–25**: 🫀 **Heartbeat PR** — `git add && git commit` analysis artifacts so far, then `safeoutputs___create_pull_request` (title `🫀 Heartbeat - Week Ahead - {date}`). Refreshes the safeoutputs MCP session (idle timeout ~30–35 min) AND preserves work if later phases fail. Run `git checkout main` after the call so subsequent commits don't stack onto the frozen patch.
+- **Minutes 25–27**: 🚨 **AI Analysis Pass 2 (Part B, complete — 5 min improvement work total across Parts A+B)**: Improve every section, replace ALL script stubs with AI analysis. Run enrichment verification gate.
 - **Minutes 27–29**: Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass.
 - **Minutes 29–35**: Generate articles for all 14 languages
 - **Minutes 35–40**: 🚨 **Article Improvement Pass**: Read ALL articles back, replace AI_MUST_REPLACE markers, improve content. Run article quality component gate.

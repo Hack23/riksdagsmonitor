@@ -71,9 +71,10 @@ TOTAL_READ_BYTES=0
 TOTAL_ONDISK_BYTES=0
 while read -r f; do
   if [ -f "$f" ]; then
-    # AWF-safe: no $(...) command substitution — use tempfile + read redirection.
+    # AWF-safe: no $(...) command substitution — use tempfile + read redirection, then clean up.
     wc -c < "$f" | tr -d ' ' > /tmp/fsize-$$.txt
     read FSIZE < /tmp/fsize-$$.txt
+    rm -f /tmp/fsize-$$.txt
     TOTAL_ONDISK_BYTES=$((TOTAL_ONDISK_BYTES + FSIZE))
     echo "--- BEGIN ANALYSIS FILE: $f (size: $FSIZE bytes) ---"
     if [ "$FSIZE" -gt "$MAX_FILE_BYTES" ]; then
@@ -515,9 +516,10 @@ if [ "$IS_TIER_C" = "1" ]; then
       echo "🔴 MISSING Tier-C: $REQUIRED_FILE — Tier-C workflow MUST CREATE"
       TIER_C_MISSING=$((TIER_C_MISSING + 1))
     else
-      # AWF-safe: no $(...) command substitution — use tempfile + read redirection.
+      # AWF-safe: no $(...) command substitution — use tempfile + read redirection, then clean up.
       wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE" | tr -d ' ' > /tmp/fsize-$$.txt
       read FSIZE < /tmp/fsize-$$.txt
+      rm -f /tmp/fsize-$$.txt
       if [ "$FSIZE" -lt "$MIN_SIZE" ]; then
         echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE bytes < $MIN_SIZE scaled minimum — base $BASE_SIZE × $MULT_NUM/$MULT_DEN) — MUST ENRICH"
         TIER_C_MISSING=$((TIER_C_MISSING + 1))

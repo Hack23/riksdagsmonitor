@@ -318,8 +318,9 @@ read START_TIME < /tmp/start_time.txt
 | Setup | 0–3 | Date check, `get_sync_status()`, determine day type | MCP responds |
 | Download | 3–6 | Run `populate-analysis-data.ts` + `download-parliamentary-data.ts` (script-driven data download) | Data files exist |
 | **AI Analysis Pass 1** | **6–21** | **🚨 MANDATORY 15 min minimum**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries. **Create ALL 9 required artifacts.** | 9 artifact files exist |
-| **AI Analysis Pass 2** | **21–28** | **🚨 MANDATORY 7 min minimum**: Read ALL 9 analysis artifacts back completely, improve every section, add missing Mermaid diagrams and evidence tables, replace ALL script stubs with AI analysis. | All 9 files ≥500 bytes |
+| **AI Analysis Pass 2 (Part A)** | **21–22** | Begin reading ALL 9 analysis artifacts back and identify improvement targets. | Files opened for review |
 | **Heartbeat PR** | **22–25** | 🫀 `git add && git commit` analysis + any drafts so far, then `safeoutputs___create_pull_request` (title `🫀 Heartbeat - Evening Analysis - {date}`). This refreshes the safeoutputs MCP session (which expires after ~30–35 min idle) AND guarantees no work is lost if later phases fail. After the call succeeds, run `git checkout main` so subsequent commits don't stack onto the frozen patch. | Heartbeat PR created |
+| **AI Analysis Pass 2 (Part B)** | **25–28** | **Complete improvements (6 min improvement work total across Parts A+B)**: improve every section, add missing Mermaid diagrams and evidence tables, replace ALL script stubs with AI analysis. | All 9 files ≥500 bytes |
 | Gates | 28–30 | Run ENFORCED Minimum Time Gate + Enrichment Verification Gate + **9-artifact completeness check** (SHARED_PROMPT_PATTERNS.md). ALL MUST pass. | 0 failures |
 | Generate | 30–36 | Run generation script OR manual synthesis (see Step 3) | HTML files created |
 | **Article Improvement** | **36–40** | 🚨 **Article Improvement Pass**: Read ALL articles back, replace AI_MUST_REPLACE markers, improve content. Run article quality component gate. | 0 AI_MUST_REPLACE markers |
@@ -613,9 +614,10 @@ for REQUIRED_FILE in README.md executive-brief.md scenario-analysis.md comparati
     echo "🔴 MISSING Tier-C: $REQUIRED_FILE — aggregation workflow MUST CREATE"
     MISSING=$((MISSING + 1))
   else
-    # AWF-safe: no $(...) command substitution — use tempfile + read redirection.
+    # AWF-safe: no $(...) command substitution — use tempfile + read redirection, then clean up.
     wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE" | tr -d ' ' > /tmp/fsize-$$.txt
     read FSIZE < /tmp/fsize-$$.txt
+    rm -f /tmp/fsize-$$.txt
     if [ "$FSIZE" -lt "$MIN" ]; then
       echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE < $MIN — base $BASE_MIN × $PERIOD_SCOPE_MULT_NUM/$PERIOD_SCOPE_MULT_DEN) — MUST ENRICH"
       MISSING=$((MISSING + 1))
