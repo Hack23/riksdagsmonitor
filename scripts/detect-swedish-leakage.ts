@@ -116,7 +116,44 @@ export interface LeakageReport {
   readonly leakedTerms: ReadonlyArray<LeakedTerm>;
   /** Total number of Swedish token occurrences detected across all leaked terms. */
   readonly score: number;
+  /**
+   * Large `<span lang="sv">` blocks (≥ {@link LARGE_SV_SPAN_WORD_THRESHOLD}
+   * Swedish words) found in a non-SV article. Populated by
+   * {@link detectSwedishLeakage} since §P0-3 of the agentic-workflow quality
+   * plan: these are *always* a hard-fail regardless of the dictionary-score
+   * bucket, because they indicate untranslated Swedish source material
+   * reaching a target-language reader.
+   *
+   * Empty for SV articles and for non-SV articles with no large untranslated
+   * blocks.
+   */
+  readonly largeSwedishSpans?: ReadonlyArray<LargeSwedishSpan>;
 }
+
+/**
+ * Details of a large `<span lang="sv">` block detected in a non-SV article.
+ * A block is "large" when it contains at least {@link LARGE_SV_SPAN_WORD_THRESHOLD}
+ * words of recognisable Swedish text.
+ */
+export interface LargeSwedishSpan {
+  /** 1-based line number where the opening tag starts. */
+  readonly line: number;
+  /** Total word count inside the span (after whitespace normalisation). */
+  readonly wordCount: number;
+  /** Excerpt of the Swedish content (first ~120 chars, whitespace-collapsed). */
+  readonly excerpt: string;
+}
+
+/**
+ * Word-count threshold above which a `<span lang="sv">` in a non-SV article
+ * is treated as an automatic hard-fail (§P0-3).
+ *
+ * Eight words is large enough to catch untranslated titles and summary
+ * dumps (e.g. `"accessibilityskrav för vissa medier"` plus a short clause)
+ * while leaving space for legitimate short proper-noun quotations like
+ * committee names or ministry titles that are < 8 words long.
+ */
+export const LARGE_SV_SPAN_WORD_THRESHOLD = 8;
 
 // ---------------------------------------------------------------------------
 // HTML stripping helper
@@ -437,6 +474,61 @@ export function stripHtml(html: string, options: StripHtmlOptions = {}): string 
 // ---------------------------------------------------------------------------
 
 /**
+ * Find every `<span lang="sv">...</span>` block in the HTML and return those
+ * whose inner-text word-count meets or exceeds the "large" threshold
+ * (§P0-3 hard-fail bucket). Used only for non-SV articles — callers must
+ * short-circuit for SV articles before invoking this helper.
+ *
+ * Depth-aware: handles nested spans correctly so a `<span lang="sv">` that
+ * contains an inner `<span>` is treated as a single block.
+ */
+export function findLargeSwedishSpans(html: string): ReadonlyArray<LargeSwedishSpan> {
+  const results: LargeSwedishSpan[] = [];
+
+  let i = 0;
+  while (i < html.length) {
+    if (html[i] !== '<') { i++; continue; }
+    const parsed = parseTagAt(html, i);
+    if (!parsed) { i++; continue; }
+
+    if (
+      !parsed.isClosing &&
+      !parsed.isSelfClosing &&
+      parsed.tagName !== null &&
+      langMatches(getLangAttributeValue(parsed.rawTag), 'sv')
+    ) {
+      const blockEnd = findMatchingTaggedBlockEnd(html, i, parsed.tagName);
+      if (blockEnd !== -1) {
+        // Offset math: `parsed.tagEnd` = index of the `>` that closes the
+        // opening tag; the block's inner text therefore starts at
+        // `parsed.tagEnd + 1`. `blockEnd` = index of the `>` that closes the
+        // closing tag (`</tagName>`, which is `tagName.length + 3` chars long
+        // for the `<`, `/`, and `>`). So the first index of the closing tag
+        // itself is `blockEnd - closingTagLen + 1`, and `slice(start, end)`
+        // excludes that index — which is exactly what we want (inner content
+        // only, no closing tag).
+        const closingTagLen = parsed.tagName.length + 3;
+        const inner = html.slice(parsed.tagEnd + 1, blockEnd - closingTagLen + 1);
+        // Inner may contain child HTML; strip tags to get plain words only.
+        const plain = stripHtml(inner, { skipBlockStripping: true });
+        const words = plain.split(/\s+/).filter(Boolean);
+        if (words.length >= LARGE_SV_SPAN_WORD_THRESHOLD) {
+          // 1-based line number of the opening tag.
+          const line = html.slice(0, i).split('\n').length;
+          const excerpt = plain.length > 120 ? plain.slice(0, 117) + '...' : plain;
+          results.push({ line, wordCount: words.length, excerpt });
+        }
+        i = blockEnd + 1;
+        continue;
+      }
+    }
+    i = parsed.tagEnd + 1;
+  }
+
+  return results;
+}
+
+/**
  * Detect Swedish leakage in HTML content intended for a non-Swedish audience.
  *
  * @param html       - Full article HTML
@@ -446,8 +538,13 @@ export function stripHtml(html: string, options: StripHtmlOptions = {}): string 
 export function detectSwedishLeakage(html: string, targetLang: Language): LeakageReport {
   // Swedish articles are expected to contain Swedish text.
   if (targetLang === 'sv') {
-    return { leakedTerms: [], score: 0 };
+    return { leakedTerms: [], score: 0, largeSwedishSpans: [] };
   }
+
+  // §P0-3: Identify `<span lang="sv">` blocks ≥ 8 Swedish words BEFORE we
+  // strip them, so callers can hard-fail on untranslated source-material
+  // dumps even when the dictionary-score bucket is under threshold.
+  const largeSwedishSpans = findLargeSwedishSpans(html);
 
   // Strip script/style blocks on the full HTML first so multi-line blocks are
   // removed correctly. Preserve newline count so reported line numbers remain accurate.
@@ -507,7 +604,7 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
   // Score: total number of Swedish token occurrences detected across all leaked terms
   const totalOccurrences = Array.from(counts.values()).reduce((sum, value) => sum + value, 0);
 
-  return { leakedTerms: leaked, score: totalOccurrences };
+  return { leakedTerms: leaked, score: totalOccurrences, largeSwedishSpans };
 }
 
 // ---------------------------------------------------------------------------
@@ -636,6 +733,24 @@ async function main(): Promise<void> {
     for (const file of langFiles) {
       const html = readFileSync(join(dir, file), 'utf-8');
       const report = detectSwedishLeakage(html, langCode);
+
+      // §P0-3 HARD-FAIL BUCKET: any non-SV article containing a <span lang="sv">
+      // block with ≥ LARGE_SV_SPAN_WORD_THRESHOLD Swedish words is an automatic
+      // failure, independent of the dictionary-score threshold. This closes the
+      // loophole where untranslated titles/summaries hid inside lang="sv"
+      // wrappers and were excluded from the score.
+      const largeSpans = report.largeSwedishSpans ?? [];
+      if (largeSpans.length > 0) {
+        console.error(
+          `❌ ${file}: ${largeSpans.length} large <span lang="sv"> block(s) ` +
+          `(≥ ${LARGE_SV_SPAN_WORD_THRESHOLD} Swedish words) — HARD FAIL (§P0-3)`
+        );
+        for (const span of largeSpans.slice(0, 5)) {
+          console.error(`   Line ${span.line}: ${span.wordCount} words — "${span.excerpt}"`);
+        }
+        totalFailures++;
+        continue; // do not double-count as score failure
+      }
 
       if (report.score >= threshold) {
         console.error(`❌ ${file}: ${report.score} Swedish tokens detected (threshold: ${threshold})`);

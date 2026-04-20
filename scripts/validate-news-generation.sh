@@ -665,6 +665,24 @@ for article in news/*-en.html; do
           break
         fi
       done
+      # §P2-3: regex-based banned-title bucket. Catches the boilerplate
+      # headline shapes seen across 2026-04-20 aggregation articles:
+      #   - "Latest …"
+      #   - "Analysis of What Happened …"
+      #   - "Riksdag <Word> <Word>: What Happened, Timeline …"
+      if echo "$TITLE_TEXT" | grep -qE '^(Latest |Analysis of What Happened|Riksdag [A-Z][a-z]+ [A-Z][a-z]+: What Happened, Timeline)'; then
+        echo -e "${RED}❌ Banned generic title shape '$TITLE_TEXT' in $BASENAME — AI agent must write a newsworthy headline (§P2-3)${NC}"
+        BANNED_TITLES=$((BANNED_TITLES + 1))
+        ERRORS=$((ERRORS + 1))
+      fi
+      # §P2-4: meta-description as intelligence summary. Reject the
+      # "Analysis of <topic> across N documents" boilerplate.
+      META_DESC=$(sed -n 's|.*<meta[^>]*name="description"[^>]*content="\([^"]*\)".*|\1|p' "$article" 2>/dev/null | head -n 1) || true
+      if [ -n "$META_DESC" ] && echo "$META_DESC" | grep -qE '^Analysis of .+ across [0-9]+ documents'; then
+        echo -e "${RED}❌ Banned generic meta description '$META_DESC' in $BASENAME — AI agent must write a specific intelligence summary (§P2-4)${NC}"
+        BANNED_TITLES=$((BANNED_TITLES + 1))
+        ERRORS=$((ERRORS + 1))
+      fi
     fi
   fi
 done
@@ -717,6 +735,125 @@ if [ $SWEDISH_LEAKS -eq 0 ]; then
 else
   echo -e "${YELLOW}⚠️ $SWEDISH_LEAKS Swedish boilerplate occurrence(s) found in non-Swedish articles${NC}"
   WARNINGS=$((WARNINGS + 1))
+fi
+echo ""
+
+# ============================================================================
+# Check 17b (§P0-3 HARD-FAIL): Large <span lang="sv"> blocks in non-SV articles
+# ----------------------------------------------------------------------------
+# Any non-SV article containing a `<span lang="sv">` with ≥ 8 Swedish words is
+# an automatic hard-fail regardless of dictionary-score thresholds. This closes
+# the loophole where untranslated titles/summaries hid inside lang="sv"
+# wrappers and were excluded from the leakage score. See
+# analysis/agentic-workflow-quality-plan §P0-3 for rationale.
+# ============================================================================
+echo "📋 Check 17b: No large <span lang=\"sv\"> blocks in non-Swedish articles (§P0-3 hard-fail)"
+
+LARGE_SV_SPAN_HARD_FAILS=0
+if command -v npx >/dev/null 2>&1 && [ -f scripts/detect-swedish-leakage.ts ]; then
+  # The detector's CLI now exits non-zero on large-span hard-fails. Run it
+  # against the news/ directory and surface the output as errors.
+  if ! SV_SPAN_OUTPUT=$(npx tsx scripts/detect-swedish-leakage.ts --dir news/ --threshold 1000000 2>&1); then
+    # Extract just the HARD FAIL lines so we don't drown CI with score warnings.
+    HARD_FAIL_LINES=$(printf '%s\n' "$SV_SPAN_OUTPUT" | grep -E 'HARD FAIL|^   Line [0-9]+: [0-9]+ words' || true)
+    if [ -n "$HARD_FAIL_LINES" ]; then
+      printf '%s\n' "$HARD_FAIL_LINES" | while IFS= read -r line; do
+        echo -e "${RED}${line}${NC}"
+      done
+      LARGE_SV_SPAN_HARD_FAILS=$(printf '%s\n' "$HARD_FAIL_LINES" | grep -c 'HARD FAIL' || true)
+      ERRORS=$((ERRORS + LARGE_SV_SPAN_HARD_FAILS))
+    fi
+  fi
+fi
+
+if [ "${LARGE_SV_SPAN_HARD_FAILS:-0}" -eq 0 ]; then
+  echo -e "${GREEN}✅ No large <span lang=\"sv\"> blocks in non-Swedish articles${NC}"
+else
+  echo -e "${RED}❌ ${LARGE_SV_SPAN_HARD_FAILS} file(s) contain large untranslated <span lang=\"sv\"> blocks (§P0-3 hard-fail)${NC}"
+fi
+echo ""
+
+# ============================================================================
+# Check 17c (§P1-5): methodology-reflection.md contract validation
+# ----------------------------------------------------------------------------
+# Every `analysis/daily/*/**/methodology-reflection.md` must satisfy the
+# Tier-C §methodology-reflection contract documented in SHARED_PROMPT_PATTERNS.md
+# Row 14 — required sections, byte-floor, confidence labels, sibling cross-
+# reference (Tier-C only), and Upstream Watchpoint Reconciliation table
+# (Tier-C only). Validator: scripts/validate-methodology-reflection.ts
+# ============================================================================
+echo "📋 Check 17c: methodology-reflection.md contract (§P1-5)"
+
+METHOD_REFL_FAILS=0
+if command -v npx >/dev/null 2>&1 && [ -f scripts/validate-methodology-reflection.ts ]; then
+  # Collect every methodology-reflection.md under analysis/daily/ (nullglob-safe).
+  METHOD_FILES=()
+  while IFS= read -r -d '' f; do
+    METHOD_FILES+=("$f")
+  done < <(find analysis/daily -maxdepth 4 -name "methodology-reflection.md" -type f -print0 2>/dev/null)
+
+  if [ "${#METHOD_FILES[@]}" -gt 0 ]; then
+    if ! METHOD_OUTPUT=$(npx tsx scripts/validate-methodology-reflection.ts "${METHOD_FILES[@]}" 2>&1); then
+      # Surface only the failure lines to keep CI log signal-to-noise high.
+      printf '%s\n' "$METHOD_OUTPUT" | grep -E '^❌|^   🔴' || true
+      METHOD_REFL_FAILS=$(printf '%s\n' "$METHOD_OUTPUT" | grep -c '^❌' || true)
+      ERRORS=$((ERRORS + METHOD_REFL_FAILS))
+    fi
+  fi
+fi
+
+if [ "${METHOD_REFL_FAILS:-0}" -eq 0 ]; then
+  echo -e "${GREEN}✅ methodology-reflection.md contract satisfied${NC}"
+else
+  echo -e "${RED}❌ ${METHOD_REFL_FAILS} methodology-reflection.md file(s) failed §P1-5 contract${NC}"
+fi
+echo ""
+
+# ============================================================================
+# Check 17d (§P2-1): MCP Reliability Table in Tier-C data-download-manifest.md
+# ----------------------------------------------------------------------------
+# Every Tier-C data-download-manifest.md must include the canonical MCP
+# Reliability Table (server · tool · calls · successes · retries · failures ·
+# notes). Validator: scripts/validate-mcp-reliability.ts
+#
+# Scope: only Tier-C subfolders (week-ahead, weekly-review, month-ahead,
+# monthly-review, evening-analysis, deep-inspection, realtime-*). Doc-type
+# leaf folders (propositions, motions, …) are out of scope.
+# ============================================================================
+echo "📋 Check 17d: MCP Reliability Table in Tier-C manifests (§P2-1)"
+
+MCP_REL_FAILS=0
+if command -v npx >/dev/null 2>&1 && [ -f scripts/validate-mcp-reliability.ts ]; then
+  MANIFEST_FILES=()
+  # NOTE: The Tier-C folder list below MUST stay in sync with `isTierCFolder()`
+  # in scripts/validate-methodology-reflection.ts. When adding a new Tier-C
+  # workflow, update both locations. A future PR may consolidate these into
+  # a single shared constant (tracked in the §P2 roadmap).
+  while IFS= read -r -d '' f; do
+    parent_dir=$(basename "$(dirname "$f")")
+    case "$parent_dir" in
+      week-ahead|weekly-review|month-ahead|monthly-review|evening-analysis|deep-inspection|realtime-*)
+        MANIFEST_FILES+=("$f")
+        ;;
+    esac
+  done < <(find analysis/daily -maxdepth 4 -name "data-download-manifest.md" -type f -print0 2>/dev/null)
+
+  if [ "${#MANIFEST_FILES[@]}" -gt 0 ]; then
+    if ! MCP_OUTPUT=$(npx tsx scripts/validate-mcp-reliability.ts "${MANIFEST_FILES[@]}" 2>&1); then
+      printf '%s\n' "$MCP_OUTPUT" | grep -E '^❌|^   🔴' || true
+      MCP_REL_FAILS=$(printf '%s\n' "$MCP_OUTPUT" | grep -c '^❌' || true)
+      # §P2-1 is a new contract — surface as a WARNING during the rollout
+      # window until existing exemplars are back-filled in a follow-up PR.
+      # Switch to `ERRORS=$((ERRORS + MCP_REL_FAILS))` once back-fill lands.
+      WARNINGS=$((WARNINGS + MCP_REL_FAILS))
+    fi
+  fi
+fi
+
+if [ "${MCP_REL_FAILS:-0}" -eq 0 ]; then
+  echo -e "${GREEN}✅ MCP Reliability Table present in every Tier-C manifest${NC}"
+else
+  echo -e "${YELLOW}⚠️ ${MCP_REL_FAILS} Tier-C manifest(s) missing/invalid MCP Reliability Table (§P2-1 rollout warning)${NC}"
 fi
 echo ""
 
