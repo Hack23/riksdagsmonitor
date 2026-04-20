@@ -289,5 +289,84 @@ describe('Swedish Leakage Detector', () => {
       expect(terms).toContain('arbetsmarknadsdepartementet');
       expect(terms).toContain('näringsdepartementet');
     });
+
+    it('should ignore Swedish text inside lang="sv" blocks when scanning an English article', () => {
+      const html = '<p>The committee report states: <span lang="sv">riksdagen antog propositionen</span>.</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      expect(report.leakedTerms).toEqual([]);
+      expect(report.score).toBe(0);
+    });
+
+    it('should ignore Swedish text inside lang="sv-SE" (BCP-47 subtag) blocks', () => {
+      const html = '<p>Quote: <blockquote lang="sv-SE">riksdagen antog propositionen och utskottet.</blockquote></p>';
+      const report = detectSwedishLeakage(html, 'en');
+      expect(report.leakedTerms).toEqual([]);
+      expect(report.score).toBe(0);
+    });
+
+    it('should handle nested same-name elements inside a lang="sv" block', () => {
+      // Outer <div lang="sv"> contains nested <div>s; the stack-based scanner must not
+      // stop at the first </div> but continue to the matching closing tag.
+      const html =
+        '<div lang="sv"><div>propositionen</div><div>riksdagen antog utskottet</div></div>' +
+        '<p>English text follows.</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      expect(report.leakedTerms).toEqual([]);
+      expect(report.score).toBe(0);
+    });
+
+    it('should preserve line numbers when stripping lang="sv" blocks spanning multiple lines', () => {
+      const html =
+        '<p>Line 1 content</p>\n' +
+        '<p>Line 2 content</p>\n' +
+        '<span\nlang="sv">\nriksdagen\n</span>\n' +
+        '<p>propositionen on line 7</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      // The Swedish tokens inside the lang="sv" block are suppressed; the one in the plain
+      // <p> on line 7 is detected and reported at its true line number.
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).toContain('propositionen');
+      const proposition = report.leakedTerms.find((t) => t.term === 'propositionen');
+      expect(proposition?.line).toBe(7);
+    });
+
+    it('should still scan text inside elements whose lang attribute is NOT sv', () => {
+      const html = '<p lang="en">utskottet antog propositionen</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).toContain('utskottet');
+      expect(terms).toContain('propositionen');
+    });
+
+    it('should strip custom-element (hyphenated) tags with lang="sv"', () => {
+      // Custom elements have hyphenated tag names (e.g. <my-quote>).
+      const html =
+        '<p>Article intro.</p>' +
+        '<my-quote lang="sv">riksdagen antog propositionen och utskottet</my-quote>' +
+        '<p>Article continues.</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      expect(report.leakedTerms).toEqual([]);
+      expect(report.score).toBe(0);
+    });
+
+    it('should not treat data-lang="sv" as a real lang attribute', () => {
+      // `data-lang` is a custom data attribute, not the standard HTML `lang`.
+      // Swedish inside such an element must still be detected as leakage.
+      const html = '<p data-lang="sv">utskottet antog propositionen</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).toContain('utskottet');
+      expect(terms).toContain('propositionen');
+    });
+
+    it('should keep scanning after a stray "<" in text content', () => {
+      // A stray `<` (e.g. from "<" in prose) should not abort the strip pass —
+      // the later lang="sv" block must still be suppressed.
+      const html =
+        '<p>Value is 5 < 10 when counting seats.</p>' +
+        '<span lang="sv">riksdagen antog propositionen</span>';
+      const report = detectSwedishLeakage(html, 'en');
+      expect(report.leakedTerms).toEqual([]);
+    });
   });
 });
