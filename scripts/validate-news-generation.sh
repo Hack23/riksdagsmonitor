@@ -665,6 +665,24 @@ for article in news/*-en.html; do
           break
         fi
       done
+      # §P2-3: regex-based banned-title bucket. Catches the boilerplate
+      # headline shapes seen across 2026-04-20 aggregation articles:
+      #   - "Latest …"
+      #   - "Analysis of What Happened …"
+      #   - "Riksdag <Word> <Word>: What Happened, Timeline …"
+      if echo "$TITLE_TEXT" | grep -qE '^(Latest |Analysis of What Happened|Riksdag [A-Z][a-z]+ [A-Z][a-z]+: What Happened, Timeline)'; then
+        echo -e "${RED}❌ Banned generic title shape '$TITLE_TEXT' in $BASENAME — AI agent must write a newsworthy headline (§P2-3)${NC}"
+        BANNED_TITLES=$((BANNED_TITLES + 1))
+        ERRORS=$((ERRORS + 1))
+      fi
+      # §P2-4: meta-description as intelligence summary. Reject the
+      # "Analysis of <topic> across N documents" boilerplate.
+      META_DESC=$(sed -n 's|.*<meta[^>]*name="description"[^>]*content="\([^"]*\)".*|\1|p' "$article" 2>/dev/null | head -n 1) || true
+      if [ -n "$META_DESC" ] && echo "$META_DESC" | grep -qE '^Analysis of .+ across [0-9]+ documents'; then
+        echo -e "${RED}❌ Banned generic meta description '$META_DESC' in $BASENAME — AI agent must write a specific intelligence summary (§P2-4)${NC}"
+        BANNED_TITLES=$((BANNED_TITLES + 1))
+        ERRORS=$((ERRORS + 1))
+      fi
     fi
   fi
 done
@@ -717,6 +735,41 @@ if [ $SWEDISH_LEAKS -eq 0 ]; then
 else
   echo -e "${YELLOW}⚠️ $SWEDISH_LEAKS Swedish boilerplate occurrence(s) found in non-Swedish articles${NC}"
   WARNINGS=$((WARNINGS + 1))
+fi
+echo ""
+
+# ============================================================================
+# Check 17b (§P0-3 HARD-FAIL): Large <span lang="sv"> blocks in non-SV articles
+# ----------------------------------------------------------------------------
+# Any non-SV article containing a `<span lang="sv">` with ≥ 8 Swedish words is
+# an automatic hard-fail regardless of dictionary-score thresholds. This closes
+# the loophole where untranslated titles/summaries hid inside lang="sv"
+# wrappers and were excluded from the leakage score. See
+# analysis/agentic-workflow-quality-plan §P0-3 for rationale.
+# ============================================================================
+echo "📋 Check 17b: No large <span lang=\"sv\"> blocks in non-Swedish articles (§P0-3 hard-fail)"
+
+LARGE_SV_SPAN_HARD_FAILS=0
+if command -v npx >/dev/null 2>&1 && [ -f scripts/detect-swedish-leakage.ts ]; then
+  # The detector's CLI now exits non-zero on large-span hard-fails. Run it
+  # against the news/ directory and surface the output as errors.
+  if ! SV_SPAN_OUTPUT=$(npx tsx scripts/detect-swedish-leakage.ts --dir news/ --threshold 1000000 2>&1); then
+    # Extract just the HARD FAIL lines so we don't drown CI with score warnings.
+    HARD_FAIL_LINES=$(printf '%s\n' "$SV_SPAN_OUTPUT" | grep -E 'HARD FAIL|^   Line [0-9]+: [0-9]+ words' || true)
+    if [ -n "$HARD_FAIL_LINES" ]; then
+      printf '%s\n' "$HARD_FAIL_LINES" | while IFS= read -r line; do
+        echo -e "${RED}${line}${NC}"
+      done
+      LARGE_SV_SPAN_HARD_FAILS=$(printf '%s\n' "$HARD_FAIL_LINES" | grep -c 'HARD FAIL' || true)
+      ERRORS=$((ERRORS + LARGE_SV_SPAN_HARD_FAILS))
+    fi
+  fi
+fi
+
+if [ "${LARGE_SV_SPAN_HARD_FAILS:-0}" -eq 0 ]; then
+  echo -e "${GREEN}✅ No large <span lang=\"sv\"> blocks in non-Swedish articles${NC}"
+else
+  echo -e "${RED}❌ ${LARGE_SV_SPAN_HARD_FAILS} file(s) contain large untranslated <span lang=\"sv\"> blocks (§P0-3 hard-fail)${NC}"
 fi
 echo ""
 

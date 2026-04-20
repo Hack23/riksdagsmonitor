@@ -13,6 +13,7 @@ import type { Language } from '../types/language.js';
 import type { ContentLabelSet, CommitteeName } from '../types/content.js';
 import { LOCALE_MAP, COMMITTEE_NAMES, CONTENT_LABELS } from './constants.js';
 import type { RawCalendarEvent, RawDocument, CIAContext } from './types.js';
+import { cleanSummaryForDisplay } from './text-cleaner.js';
 
 /**
  * Sanitize a URL for safe use in href attributes.
@@ -50,10 +51,33 @@ export function sanitizeUrl(url: string | undefined | null): string {
  * @param escapedText - Already HTML-escaped text content
  * @param _lang       - Target article language (kept only for backward
  *                      compatibility; currently not used by this function)
+ *
+ * ## Opt-in strict mode
+ *
+ * When the environment variable `SVSPAN_STRICT=1` is set, this function
+ * throws when called for a non-Swedish, non-English target language. This
+ * forces the architectural split described in
+ * `analysis/agentic-workflow-quality-plan §P0-1`: scripts must never emit
+ * untranslated Swedish into a target-language article — AI translation of
+ * titles/summaries must happen upstream. Strict mode is opt-in so that
+ * existing test suites continue to pass unchanged; agentic workflows will
+ * enable it via their `runtimes.env` block once the upstream translation
+ * contract (see `news-translate.md`) is in place.
  */
 export function svSpan(escapedText: string, _lang: Language | string): string {
-  // NOTE: `_lang` is intentionally unused and retained solely so existing
-  // call sites do not need to be updated; all spans are marked as Swedish.
+  if (process.env.SVSPAN_STRICT === '1') {
+    const lang = String(_lang);
+    if (lang !== 'sv' && lang !== 'en') {
+      throw new Error(
+        `svSpan() called for lang=${lang} — AI translation required upstream; ` +
+        `see SHARED_PROMPT_PATTERNS §Title & Summary Translation and ` +
+        `analysis/agentic-workflow-quality-plan §P0-1.`
+      );
+    }
+  }
+  // NOTE: `_lang` is intentionally unused in non-strict mode and retained
+  // solely so existing call sites do not need to be updated; all spans are
+  // marked as Swedish.
   return `<span data-translate="true" lang="sv">${escapedText}</span>`;
 }
 
@@ -230,9 +254,12 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
     // Skip person-profile data (e.g. "Tjänstgörande riksdagsledamot...", "Avliden 2011-09-20...")
     if (!isPersonProfileText(raw)) {
       if (raw.includes('Motion till riksdagen') || raw.includes('Förslag till riksdagsbeslut')) {
-        return cleanMotionText(raw);
+        // Apply prose-hygiene filter on top of the motion-specific cleaner to
+        // strip any residual dok-id prefix, `#page_N` anchors, `&nbsp;` noise,
+        // or CSS rule fragments (§P0-4).
+        return cleanSummaryForDisplay(cleanMotionText(raw));
       }
-      return raw;
+      return cleanSummaryForDisplay(raw);
     }
   }
 
@@ -240,7 +267,12 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
   if (doc.summary || doc.notis) {
     const text = doc.summary || doc.notis || '';
     if (!isPersonProfileText(text)) {
-      return text;
+      // §P0-4: run the prose-hygiene filter so CSS rule fragments, dok-id
+      // metadata prefixes, `#page_N` anchors, and `&nbsp;` noise never reach
+      // article HTML. Upstream {@link stripRiksdagRawDump} handles the big-block
+      // cases in extracted document text; this catches residual noise in
+      // summary/notis fields that bypass `extractKeyPassage`.
+      return cleanSummaryForDisplay(text);
     }
   }
 

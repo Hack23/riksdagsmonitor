@@ -8,17 +8,38 @@
  * Falls back gracefully when analysis files are absent — backward compatible
  * with article generators that do not yet consume pre-computed analysis.
  *
+ * ## ⚠️ Scoped deprecation (§P0-6 of the agentic-workflow quality plan)
+ *
+ * The structural parsers in this module (SWOT, threat, significance, risk,
+ * stakeholder-perspective extractors) **must not** be used to summarise or
+ * pre-digest the analysis body for article prose. The user-level rule is:
+ *
+ * > "Analysis in md files should not ever be parsed. AI must read it all
+ * > as context."
+ *
+ * Instead, agentic workflows print every analysis file in full through the
+ * `UNIVERSAL PRE-ARTICLE GATE` in `.github/aw/SHARED_PROMPT_PATTERNS.md`,
+ * and the AI reads the full prose directly. The *only* remaining permitted
+ * use of this module is `deriveArticleClassificationMeta()` and the
+ * `readLatestAnalysis()` front-matter derivation, which extract a tiny
+ * classification tuple (label + confidence) for article HTML metadata.
+ *
+ * New article-body content generators MUST read analysis files with a
+ * plain `readFile()` and pass the markdown untouched to the AI — they MUST
+ * NOT import the typed parsers from this module. A follow-up PR will add
+ * lint rules to enforce this; for now this JSDoc notice is the contract.
+ *
  * @example
  * ```typescript
- * import { readDailyAnalysis } from './analysis-reader.js';
+ * // Permitted use — metadata only
+ * import { deriveArticleClassificationMeta } from './analysis-reader.js';
  *
- * const analysis = await readDailyAnalysis('2026-03-26');
- * if (analysis.hasAnalysis) {
- *   const { classification, riskAssessment, significance } = analysis;
- *   // Enrich article generation with pre-computed intelligence
- * }
+ * // DEPRECATED for article-body generation — read the file as prose instead:
+ * // import { readFile } from 'node:fs/promises';
+ * // const prose = await readFile(`analysis/daily/${date}/.../file.md`, 'utf-8');
  * ```
  *
+ * @see analysis/agentic-workflow-quality-plan §P0-5 / §P0-6
  * @author Hack23 AB
  * @license Apache-2.0
  */

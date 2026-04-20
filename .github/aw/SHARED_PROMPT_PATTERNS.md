@@ -60,15 +60,47 @@ if [ "$ANALYSIS_COUNT" -lt 9 ]; then
 fi
 
 echo "=== READING ALL $ANALYSIS_COUNT ANALYSIS FILES BEFORE WRITING ARTICLE ==="
-# Emit bounded content (first 80 lines) for each file so the agent genuinely
-# consumes the material — not just a line-count gate.
+# §P0-5: Print the ENTIRE content of each analysis file (no sed truncation).
+# Per the plan: "Analysis in md files should not ever be parsed. AI must read
+# it all as context." A per-file size cap (150 KB) guards against pathological
+# runaway files — real analysis files are 5–25 KB. After emission, assert
+# total bytes read ≥ sum of on-disk sizes so a truncation bug cannot silently
+# downgrade the context window.
+MAX_FILE_BYTES=153600   # 150 KB per file
+TOTAL_READ_BYTES=0
+TOTAL_ONDISK_BYTES=0
 while read -r f; do
   if [ -f "$f" ]; then
-    echo "--- BEGIN ANALYSIS FILE: $f (first 80 lines) ---"
-    sed -n '1,80p' "$f"
+    FSIZE=$(wc -c < "$f" | tr -d ' ')
+    TOTAL_ONDISK_BYTES=$((TOTAL_ONDISK_BYTES + FSIZE))
+    echo "--- BEGIN ANALYSIS FILE: $f (size: ${FSIZE} bytes) ---"
+    if [ "$FSIZE" -gt "$MAX_FILE_BYTES" ]; then
+      # Extremely rare — emit the full file but warn.
+      echo "⚠️  File exceeds ${MAX_FILE_BYTES}-byte soft cap; emitting in full regardless (§P0-5)."
+    fi
+    cat "$f"
+    TOTAL_READ_BYTES=$((TOTAL_READ_BYTES + FSIZE))
+    echo ""
     echo "--- END ANALYSIS FILE: $f ---"
   fi
 done < "$ANALYSIS_LIST_FILE"
+
+echo "=== FULL-READ ASSERTION ==="
+echo "Bytes on disk:   $TOTAL_ONDISK_BYTES"
+echo "Bytes emitted:   $TOTAL_READ_BYTES"
+if [ "$TOTAL_READ_BYTES" -lt "$TOTAL_ONDISK_BYTES" ]; then
+  echo "🔴 ABORT: truncated read — emitted $TOTAL_READ_BYTES of $TOTAL_ONDISK_BYTES bytes (§P0-5 violation)"
+  exit 1
+fi
+echo "✅ Full-read assertion passed — every analysis file emitted in full."
+echo ""
+echo "🔴 AI INSTRUCTION: This content is your FULL CONTEXT for article writing."
+echo "   Do NOT run additional markdown parsers. The AI reads prose directly;"
+echo "   scripts do NOT extract structure from analysis files (§P0-5/P0-6 of"
+echo "   the agentic-workflow quality plan). Any structural classification"
+echo "   metadata required for article front-matter is derived by"
+echo "   scripts/analysis-reader.ts — which is scoped to metadata only and"
+echo "   MUST NOT be used to summarise or pre-digest the analysis body."
 
 # Checklist the agent MUST complete before emitting article HTML:
 #   ✅ synthesis-summary.md         — lead story decision + DIW weighting

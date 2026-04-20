@@ -369,4 +369,70 @@ describe('Swedish Leakage Detector', () => {
       expect(report.leakedTerms).toEqual([]);
     });
   });
+
+  // ---- §P0-3 HARD-FAIL: large <span lang="sv"> blocks in non-SV articles ----
+
+  describe('Large <span lang="sv"> hard-fail bucket (§P0-3)', () => {
+    it('reports empty largeSwedishSpans for SV articles', () => {
+      const html = '<html lang="sv"><body><span lang="sv">en lång svensk mening om propositionen som regeringen lämnat</span></body></html>';
+      const report = detectSwedishLeakage(html, 'sv');
+      expect(report.largeSwedishSpans).toEqual([]);
+    });
+
+    it('reports empty largeSwedishSpans for non-SV articles with NO large sv spans', () => {
+      const html = '<html lang="en"><body><p>Parliament passed the bill.</p></body></html>';
+      const report = detectSwedishLeakage(html, 'en');
+      expect(report.largeSwedishSpans).toEqual([]);
+    });
+
+    it('ignores short sv spans (< 8 words) — legitimate proper-noun quotes', () => {
+      // 5-word quotation of a Swedish committee name is fine.
+      const html = '<html lang="en"><body><p>The <span lang="sv">Försvarsutskottet betänkande 2025/26:23</span> was tabled.</p></body></html>';
+      const report = detectSwedishLeakage(html, 'en');
+      expect(report.largeSwedishSpans).toEqual([]);
+    });
+
+    it('FLAGS large (≥ 8 word) sv spans in non-SV articles', () => {
+      // 12-word Swedish summary dump — the exact anti-pattern from
+      // 2026-04-20-committee-reports-en.html.
+      const svDump = 'Regeringen föreslår en ny lag om cybersäkerhet och skydd mot hybridhot.';
+      const html = `<html lang="en"><body><p>The report addresses <span lang="sv">${svDump}</span></p></body></html>`;
+      const report = detectSwedishLeakage(html, 'en');
+      expect(report.largeSwedishSpans).toBeDefined();
+      expect(report.largeSwedishSpans!.length).toBe(1);
+      expect(report.largeSwedishSpans![0].wordCount).toBeGreaterThanOrEqual(8);
+      expect(report.largeSwedishSpans![0].excerpt).toContain('Regeringen');
+    });
+
+    it('reports line numbers for each large span', () => {
+      const svDump = 'Regeringen föreslår en ny lag om cybersäkerhet och skydd mot hybridhot.';
+      const html = [
+        '<html lang="en">',
+        '<body>',
+        '<h2>First section</h2>',
+        `<p>The report addresses <span lang="sv">${svDump}</span></p>`,
+        '</body></html>',
+      ].join('\n');
+      const report = detectSwedishLeakage(html, 'en');
+      expect(report.largeSwedishSpans![0].line).toBe(4);
+    });
+
+    it('matches BCP-47 subtags (lang="sv-SE") the same as lang="sv"', () => {
+      const svDump = 'Regeringen föreslår en ny lag om cybersäkerhet och skydd mot hybridhot.';
+      const html = `<html lang="en"><body><p><span lang="sv-SE">${svDump}</span></p></body></html>`;
+      const report = detectSwedishLeakage(html, 'en');
+      expect(report.largeSwedishSpans!.length).toBe(1);
+    });
+
+    it('counts each large span separately', () => {
+      const svDump = 'Regeringen föreslår en ny lag om cybersäkerhet och skydd mot hybridhot.';
+      const html = `<html lang="en"><body>
+        <p><span lang="sv">${svDump}</span></p>
+        <p><span lang="sv">${svDump}</span></p>
+        <p><span lang="sv">${svDump}</span></p>
+      </body></html>`;
+      const report = detectSwedishLeakage(html, 'en');
+      expect(report.largeSwedishSpans!.length).toBe(3);
+    });
+  });
 });
