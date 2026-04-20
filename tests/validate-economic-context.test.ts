@@ -150,7 +150,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
     expect(v.length).toBeGreaterThan(0);
     expect(v.map(x => x.reason).some(r => r.includes('economic-dashboard-placeholder'))).toBe(true);
     expect(v.map(x => x.reason).some(r => r.includes('Missing or malformed'))).toBe(true);
-    expect(v.map(x => x.reason).some(r => r.includes('Data by World Bank'))).toBe(true);
+    expect(v.map(x => x.reason).some(r => r.includes('Data by IMF / World Bank / SCB'))).toBe(true);
   });
 
   it('passes when JSON, charts, commentary, and attribution are all present', () => {

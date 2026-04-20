@@ -195,5 +195,8 @@
   },
   "engines": {
     "node": ">=25"
+  },
+  "x-external-mcp": {
+    "_comment": "SBOM-style manifest for MCP servers managed outside of npm dependencies (Python, Docker, HTTP). Tracked here so supply-chain reviews, Open_Source_Policy.md audits, and Change_Management.md tickets have a single source of truth. Currently EMPTY: IMF access was migrated from c-cf/imf-data-mcp (Python/uvx) to the repository's pure-TypeScript client scripts/imf-client.ts (invoked via scripts/imf-fetch.ts from the bash tool in agentic workflows) — it is now fully covered by the npm SBOM."
   }
 }

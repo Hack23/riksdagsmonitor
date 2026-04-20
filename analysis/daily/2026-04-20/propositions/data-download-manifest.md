@@ -96,7 +96,7 @@
 Both articles have been validated for:
 - ✅ 0 `AI_MUST_REPLACE` markers.
 - ✅ 0 `TODO` placeholders.
-- ✅ 0 "[PLACEHOLDER]" patterns.
+- ✅ 0 bracketed "PLACEHOLDER" patterns.
 - ✅ All section numbers sequential.
 - ✅ All internal anchor links valid.
 - ✅ All external links use `rel="noopener"` where appropriate.
