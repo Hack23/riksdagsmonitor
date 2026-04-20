@@ -479,6 +479,9 @@ Branch: `news/content/{YYYY-MM-DD}/{article-type}` (e.g. `news/content/2026-03-2
 # CRITICAL: Stage ONLY today's new articles (EN/SV), NOT all existing news/
 # Staging news/*motions*.html would include 360+ existing files, many of which
 # may have been modified by auto-fix scripts, causing E003 (>100 files) PR failure.
+# 🚫 DO NOT add `analysis/data/` anywhere — it contains 200+ MCP response cache files
+#    (documents/{motions,interpellations,committeeReports,propositions,questions,speeches}/)
+#    populated by download-parliamentary-data.ts. Only run the `git add` lines shown below.
 git add "news/$ARTICLE_DATE-opposition-motions-en.html" 2>/dev/null || true
 git add "news/$ARTICLE_DATE-opposition-motions-sv.html" 2>/dev/null || true
 git add news/metadata/ 2>/dev/null || true
@@ -490,6 +493,12 @@ fi
 # With --limit 50, documents/ alone can contain 100+ files (50 JSON + 50 analysis.md).
 git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.md 2>/dev/null || true
 git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.json 2>/dev/null || true
+# 🚨 HARD UNSTAGE: NEVER commit analysis/data/ — it is an MCP response cache populated by
+# download-parliamentary-data.ts (6 doc types × ~40 files = 240+ files). It must stay local.
+# Committing it caused E003 "received 258 files" in run 24653843681 (PR #1867). Only
+# news-realtime-monitor stages analysis/data/ intentionally; news-motions never should.
+# 🚫 DO NOT run `git add analysis/data/...` anywhere in this workflow.
+git reset HEAD -- analysis/data/ 2>/dev/null || true
 # Enforce safe-outputs 100-file PR limit (AWF-safe: no $(...) — write to temp file + read back)
 git diff --cached --name-only > /tmp/staged_files.txt
 awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
