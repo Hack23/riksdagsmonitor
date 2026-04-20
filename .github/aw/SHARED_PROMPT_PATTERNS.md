@@ -71,12 +71,14 @@ TOTAL_READ_BYTES=0
 TOTAL_ONDISK_BYTES=0
 while read -r f; do
   if [ -f "$f" ]; then
-    FSIZE=$(wc -c < "$f" | tr -d ' ')
+    # AWF-safe: no $(...) command substitution — use tempfile + read redirection.
+    wc -c < "$f" | tr -d ' ' > /tmp/fsize-$$.txt
+    read FSIZE < /tmp/fsize-$$.txt
     TOTAL_ONDISK_BYTES=$((TOTAL_ONDISK_BYTES + FSIZE))
-    echo "--- BEGIN ANALYSIS FILE: $f (size: ${FSIZE} bytes) ---"
+    echo "--- BEGIN ANALYSIS FILE: $f (size: $FSIZE bytes) ---"
     if [ "$FSIZE" -gt "$MAX_FILE_BYTES" ]; then
       # Extremely rare — emit the full file but warn.
-      echo "⚠️  File exceeds ${MAX_FILE_BYTES}-byte soft cap; emitting in full regardless (§P0-5)."
+      echo "⚠️  File exceeds $MAX_FILE_BYTES-byte soft cap; emitting in full regardless (§P0-5)."
     fi
     cat "$f"
     TOTAL_READ_BYTES=$((TOTAL_READ_BYTES + FSIZE))
@@ -497,7 +499,7 @@ if [ "$IS_TIER_C" = "1" ]; then
     monthly-review*)      MULT_NUM=15; MULT_DEN=10 ;;  # 1.5×
     *)                    MULT_NUM=10; MULT_DEN=10 ;;  # fallback baseline
   esac
-  echo "📐 Period-scope multiplier for '$ANALYSIS_SUBFOLDER': ${MULT_NUM}/${MULT_DEN}"
+  echo "📐 Period-scope multiplier for '$ANALYSIS_SUBFOLDER': $MULT_NUM/$MULT_DEN"
 
   declare -A TIER_C_BASE_SIZES=(
     ["README.md"]=3000
@@ -513,9 +515,11 @@ if [ "$IS_TIER_C" = "1" ]; then
       echo "🔴 MISSING Tier-C: $REQUIRED_FILE — Tier-C workflow MUST CREATE"
       TIER_C_MISSING=$((TIER_C_MISSING + 1))
     else
-      FSIZE=$(wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE")
+      # AWF-safe: no $(...) command substitution — use tempfile + read redirection.
+      wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE" | tr -d ' ' > /tmp/fsize-$$.txt
+      read FSIZE < /tmp/fsize-$$.txt
       if [ "$FSIZE" -lt "$MIN_SIZE" ]; then
-        echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE bytes < $MIN_SIZE scaled minimum — base $BASE_SIZE × ${MULT_NUM}/${MULT_DEN}) — MUST ENRICH"
+        echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE bytes < $MIN_SIZE scaled minimum — base $BASE_SIZE × $MULT_NUM/$MULT_DEN) — MUST ENRICH"
         TIER_C_MISSING=$((TIER_C_MISSING + 1))
       else
         echo "✅ OK Tier-C: $REQUIRED_FILE ($FSIZE bytes ≥ $MIN_SIZE scaled minimum)"
@@ -2932,9 +2936,9 @@ echo "=== 🔍 Analysis Enrichment Verification Gate ==="
 for f in "$ANALYSIS_DIR"/*.md; do
   [ ! -f "$f" ] && continue
   # Skip the factual data-download-manifest.md — its script marker is expected and not a stub
-  FBASE=$(basename "$f")
-  case "$FBASE" in
-    data-download-manifest.md) echo "⏭️  SKIP (factual manifest): $f"; continue ;;
+  # AWF-safe: use `$f` path-pattern tests instead of $(basename "$f")
+  case "$f" in
+    */data-download-manifest.md) echo "⏭️  SKIP (factual manifest): $f"; continue ;;
   esac
   # Match the legacy `pre-article-analysis script` marker present in historical stub files.
   # The current download script writes only the factual `data-download-manifest.md` (skipped above),

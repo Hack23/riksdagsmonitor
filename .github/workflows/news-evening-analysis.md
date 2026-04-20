@@ -611,9 +611,11 @@ for REQUIRED_FILE in README.md executive-brief.md scenario-analysis.md comparati
     echo "🔴 MISSING Tier-C: $REQUIRED_FILE — aggregation workflow MUST CREATE"
     MISSING=$((MISSING + 1))
   else
-    FSIZE=$(wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE")
+    # AWF-safe: no $(...) command substitution — use tempfile + read redirection.
+    wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE" | tr -d ' ' > /tmp/fsize-$$.txt
+    read FSIZE < /tmp/fsize-$$.txt
     if [ "$FSIZE" -lt "$MIN" ]; then
-      echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE < $MIN — base $BASE_MIN × ${PERIOD_SCOPE_MULT_NUM}/${PERIOD_SCOPE_MULT_DEN}) — MUST ENRICH"
+      echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE < $MIN — base $BASE_MIN × $PERIOD_SCOPE_MULT_NUM/$PERIOD_SCOPE_MULT_DEN) — MUST ENRICH"
       MISSING=$((MISSING + 1))
     else
       echo "✅ OK Tier-C: $REQUIRED_FILE ($FSIZE bytes)"

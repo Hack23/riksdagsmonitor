@@ -778,7 +778,9 @@ EN/SV only: all headings, meta, content in correct language; no untranslated `da
 > if grep -l 'class="sankey-section"' news/$ARTICLE_DATE-monthly-review-*.html; then
 >   echo "✅ Sankey section present"
 > else
->   doc_count=$(find "analysis/daily/$ARTICLE_DATE/monthly-review/documents" -maxdepth 1 -name '*.json' 2>/dev/null | wc -l)
+>   # AWF-safe: no $(...) command substitution — use tempfile + read redirection.
+>   find "analysis/daily/$ARTICLE_DATE/monthly-review/documents" -maxdepth 1 -name '*.json' 2>/dev/null | wc -l > /tmp/doc_count.txt
+>   read doc_count < /tmp/doc_count.txt
 >   if [ "$doc_count" = "0" ]; then
 >     echo "ℹ️ Sankey section not emitted — the month has 0 documents (validator allows this)"
 >   else
