@@ -71,12 +71,15 @@ TOTAL_READ_BYTES=0
 TOTAL_ONDISK_BYTES=0
 while read -r f; do
   if [ -f "$f" ]; then
-    FSIZE=$(wc -c < "$f" | tr -d ' ')
+    # AWF-safe: no $(...) command substitution — use tempfile + read redirection, then clean up.
+    wc -c < "$f" | tr -d ' ' > /tmp/fsize-$$.txt
+    read FSIZE < /tmp/fsize-$$.txt
+    rm -f /tmp/fsize-$$.txt
     TOTAL_ONDISK_BYTES=$((TOTAL_ONDISK_BYTES + FSIZE))
-    echo "--- BEGIN ANALYSIS FILE: $f (size: ${FSIZE} bytes) ---"
+    echo "--- BEGIN ANALYSIS FILE: $f (size: $FSIZE bytes) ---"
     if [ "$FSIZE" -gt "$MAX_FILE_BYTES" ]; then
       # Extremely rare — emit the full file but warn.
-      echo "⚠️  File exceeds ${MAX_FILE_BYTES}-byte soft cap; emitting in full regardless (§P0-5)."
+      echo "⚠️  File exceeds $MAX_FILE_BYTES-byte soft cap; emitting in full regardless (§P0-5)."
     fi
     cat "$f"
     TOTAL_READ_BYTES=$((TOTAL_READ_BYTES + FSIZE))
@@ -497,7 +500,7 @@ if [ "$IS_TIER_C" = "1" ]; then
     monthly-review*)      MULT_NUM=15; MULT_DEN=10 ;;  # 1.5×
     *)                    MULT_NUM=10; MULT_DEN=10 ;;  # fallback baseline
   esac
-  echo "📐 Period-scope multiplier for '$ANALYSIS_SUBFOLDER': ${MULT_NUM}/${MULT_DEN}"
+  echo "📐 Period-scope multiplier for '$ANALYSIS_SUBFOLDER': $MULT_NUM/$MULT_DEN"
 
   declare -A TIER_C_BASE_SIZES=(
     ["README.md"]=3000
@@ -513,9 +516,12 @@ if [ "$IS_TIER_C" = "1" ]; then
       echo "🔴 MISSING Tier-C: $REQUIRED_FILE — Tier-C workflow MUST CREATE"
       TIER_C_MISSING=$((TIER_C_MISSING + 1))
     else
-      FSIZE=$(wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE")
+      # AWF-safe: no $(...) command substitution — use tempfile + read redirection, then clean up.
+      wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE" | tr -d ' ' > /tmp/fsize-$$.txt
+      read FSIZE < /tmp/fsize-$$.txt
+      rm -f /tmp/fsize-$$.txt
       if [ "$FSIZE" -lt "$MIN_SIZE" ]; then
-        echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE bytes < $MIN_SIZE scaled minimum — base $BASE_SIZE × ${MULT_NUM}/${MULT_DEN}) — MUST ENRICH"
+        echo "🔴 UNDERSIZED Tier-C: $REQUIRED_FILE ($FSIZE bytes < $MIN_SIZE scaled minimum — base $BASE_SIZE × $MULT_NUM/$MULT_DEN) — MUST ENRICH"
         TIER_C_MISSING=$((TIER_C_MISSING + 1))
       else
         echo "✅ OK Tier-C: $REQUIRED_FILE ($FSIZE bytes ≥ $MIN_SIZE scaled minimum)"
@@ -2663,9 +2669,10 @@ Then call the health gate:
 > 🚨 **UNIVERSAL SAFE OUTPUT RULES — ALL WORKFLOWS MUST FOLLOW:**
 >
 > 1. **Call `safeoutputs___create_pull_request` as EARLY as possible** — the moment you have committed files. The safeoutputs MCP session has a finite lifetime. Successful runs call it by minute ~25. Failed runs that delayed past minute 40 got "session not found" and lost all work.
-> 2. **NEVER call `safeoutputs___noop` when artifacts exist.** Noop means "I did nothing." If you created files, you DID something and MUST create a PR. Partial work in a PR is infinitely better than lost work via noop.
-> 3. **At HARD DEADLINE**: If ANY files were created → `safeoutputs___create_pull_request`. ONLY noop if truly ZERO files were created.
-> 4. **Architecture reminder**: `safeoutputs___create_pull_request` records your intent. A separate `safe_outputs` job executes the PR creation AFTER the agent job ends. If the MCP session expires before you record the intent, the `safe_outputs` job is SKIPPED and all work is lost.
+> 2. **Heartbeat PR to keep the safeoutputs session alive (`max: 2+`)** — the Streamable-HTTP safeoutputs MCP session has a ~30–35 min idle lifetime (observed in PR #1835 and run #24672037751). Every `safeoutputs___create_pull_request` call **resets the session idle timer**. If the workflow sets `create-pull-request.max: 2` or higher, call the tool once at minute ~22–25 as a **heartbeat PR** capturing work-in-progress (partial analysis + first article draft), then call it again at minute 40–45 with the polished final output. Each call creates a separate PR on a separate branch; the final PR supersedes the heartbeat. This pattern was proven in `news-translate` (`max: 5`, zero session expiries across 55-minute runs) and `news-realtime-monitor` (`max: 3`). **Single-PR workflows (`max: 1`) that delay their only call past minute 35 WILL lose all work to session expiry.**
+> 3. **NEVER call `safeoutputs___noop` when artifacts exist.** Noop means "I did nothing." If you created files, you DID something and MUST create a PR. Partial work in a PR is infinitely better than lost work via noop.
+> 4. **At HARD DEADLINE**: If ANY files were created → `safeoutputs___create_pull_request`. ONLY noop if truly ZERO files were created.
+> 5. **Architecture reminder**: `safeoutputs___create_pull_request` records your intent. A separate `safe_outputs` job executes the PR creation AFTER the agent job ends. If the MCP session expires before you record the intent, the `safe_outputs` job is SKIPPED and all work is lost.
 
 ### Layer 3: MCP Gateway Diagnostics (run when tools fail)
 
@@ -2932,9 +2939,9 @@ echo "=== 🔍 Analysis Enrichment Verification Gate ==="
 for f in "$ANALYSIS_DIR"/*.md; do
   [ ! -f "$f" ] && continue
   # Skip the factual data-download-manifest.md — its script marker is expected and not a stub
-  FBASE=$(basename "$f")
-  case "$FBASE" in
-    data-download-manifest.md) echo "⏭️  SKIP (factual manifest): $f"; continue ;;
+  # AWF-safe: use `$f` path-pattern tests instead of $(basename "$f")
+  case "$f" in
+    */data-download-manifest.md) echo "⏭️  SKIP (factual manifest): $f"; continue ;;
   esac
   # Match the legacy `pre-article-analysis script` marker present in historical stub files.
   # The current download script writes only the factual `data-download-manifest.md` (skipped above),
