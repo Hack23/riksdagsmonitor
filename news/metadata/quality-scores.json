@@ -1,46 +1,266 @@
 {
-  "2026-04-20-opposition-motions-en.html": {
-    "filename": "2026-04-20-opposition-motions-en.html",
-    "lang": "en",
+  "2026-04-20-opposition-motions-da.html": {
+    "filename": "2026-04-20-opposition-motions-da.html",
+    "lang": "da",
     "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 75,
-      "passesThreshold": false,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 80,
-        "editorialConsistency": 100,
-        "evidenceQuality": 65,
-        "languageQuality": 0
-      },
-      "issueCount": 3
-    },
-    "timestamp": "2026-04-20T15:48:50.009Z"
-  },
-  "2026-04-20-opposition-motions-sv.html": {
-    "filename": "2026-04-20-opposition-motions-sv.html",
-    "lang": "sv",
-    "articleType": "motions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 90,
+      "overallScore": 84,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
+        "stakeholderCoverage": 85,
         "analyticalDepth": 80,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
-        "languageQuality": 100
+        "languageQuality": 75
       },
-      "issueCount": 2
+      "issueCount": 4
     },
-    "timestamp": "2026-04-20T15:48:50.015Z"
+    "timestamp": "2026-04-20T15:49:56.737Z"
+  },
+  "2026-04-20-opposition-motions-no.html": {
+    "filename": "2026-04-20-opposition-motions-no.html",
+    "lang": "no",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 84,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 80,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 75
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-20T15:49:56.757Z"
+  },
+  "2026-04-20-opposition-motions-fi.html": {
+    "filename": "2026-04-20-opposition-motions-fi.html",
+    "lang": "fi",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 84,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 80,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 75
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-20T15:49:56.768Z"
+  },
+  "2026-04-20-opposition-motions-de.html": {
+    "filename": "2026-04-20-opposition-motions-de.html",
+    "lang": "de",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 77,
+      "passesThreshold": false,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 80,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 25
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-20T15:49:56.779Z"
+  },
+  "2026-04-20-opposition-motions-fr.html": {
+    "filename": "2026-04-20-opposition-motions-fr.html",
+    "lang": "fr",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 77,
+      "passesThreshold": false,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 80,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 25
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-20T15:49:56.790Z"
+  },
+  "2026-04-20-opposition-motions-es.html": {
+    "filename": "2026-04-20-opposition-motions-es.html",
+    "lang": "es",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 84,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 80,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 75
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-20T15:49:56.800Z"
+  },
+  "2026-04-20-opposition-motions-nl.html": {
+    "filename": "2026-04-20-opposition-motions-nl.html",
+    "lang": "nl",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 84,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 80,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 75
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-20T15:49:56.812Z"
+  },
+  "2026-04-20-opposition-motions-ar.html": {
+    "filename": "2026-04-20-opposition-motions-ar.html",
+    "lang": "ar",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 84,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 80,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 75
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-20T15:49:56.826Z"
+  },
+  "2026-04-20-opposition-motions-he.html": {
+    "filename": "2026-04-20-opposition-motions-he.html",
+    "lang": "he",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 84,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 80,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 75
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-20T15:49:56.835Z"
+  },
+  "2026-04-20-opposition-motions-ja.html": {
+    "filename": "2026-04-20-opposition-motions-ja.html",
+    "lang": "ja",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 84,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 80,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 75
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-20T15:49:56.845Z"
+  },
+  "2026-04-20-opposition-motions-ko.html": {
+    "filename": "2026-04-20-opposition-motions-ko.html",
+    "lang": "ko",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 84,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 80,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 75
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-20T15:49:56.855Z"
+  },
+  "2026-04-20-opposition-motions-zh.html": {
+    "filename": "2026-04-20-opposition-motions-zh.html",
+    "lang": "zh",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 84,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 80,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 75
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-20T15:49:56.864Z"
   }
 }
