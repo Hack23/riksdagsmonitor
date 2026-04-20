@@ -22,9 +22,11 @@ name: Update CIA CSV Data
 
 on:
   schedule:
-    # Daily at 02:30 UTC (~03:30 CET / 04:30 CEST), safely after the upstream
-    # CIA extraction job which runs at ~02:57 UTC.
-    - cron: '30 2 * * *'
+    # Daily at 03:30 UTC (~04:30 CET / 05:30 CEST), safely after the upstream
+    # CIA extraction job which completes around 02:57 UTC. The 30-minute margin
+    # absorbs upstream runtime variance and ensures we refresh from the latest
+    # extraction rather than the previous day's snapshot.
+    - cron: '30 3 * * *'
   workflow_dispatch:
     inputs:
       ref:
@@ -77,20 +79,54 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build upstream basename → path index
-        id: index
+      - name: Resolve upstream ref → SHA
+        id: resolve
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
 
-          echo "📡 Fetching recursive tree for ${UPSTREAM_REPO}@${UPSTREAM_REF}"
+          # URL-encode the ref so branch names that legitimately contain '/'
+          # (e.g. "feature/foo") survive interpolation into the GitHub API
+          # path. jq is used as a dependency-free URL-encoder.
+          encoded_ref="$(printf '%s' "$UPSTREAM_REF" | jq -rR @uri)"
+          echo "🔎 Resolving ${UPSTREAM_REPO}@${UPSTREAM_REF} (encoded: ${encoded_ref})"
+
+          # Ask the commits endpoint for the fully-resolved SHA. This accepts
+          # branches, tags, and raw SHAs uniformly and returns the tip commit
+          # SHA. All downstream URLs (tree API + raw downloads) use that SHA,
+          # so there's no risk of a mid-run upstream update producing an
+          # inconsistent CSV / stats snapshot, and no further URL-encoding
+          # is required because a SHA is always [0-9a-f].
+          sha="$(curl --silent --show-error --fail --location --retry 3 --max-time 30 \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${UPSTREAM_REPO}/commits/${encoded_ref}" \
+            | jq -r '.sha')"
+
+          if [ -z "$sha" ] || [ "$sha" = "null" ]; then
+            echo "::error::Failed to resolve ${UPSTREAM_REPO}@${UPSTREAM_REF} to a commit SHA"
+            exit 1
+          fi
+          echo "✅ Resolved SHA: ${sha}"
+          echo "sha=${sha}" >> "$GITHUB_OUTPUT"
+
+      - name: Build upstream basename → path index
+        id: index
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          UPSTREAM_SHA: ${{ steps.resolve.outputs.sha }}
+        run: |
+          set -euo pipefail
+
+          echo "📡 Fetching recursive tree for ${UPSTREAM_REPO}@${UPSTREAM_SHA}"
           tree_json="$(mktemp)"
           curl --silent --show-error --fail --location --retry 3 --max-time 60 \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: Bearer ${GH_TOKEN}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            "https://api.github.com/repos/${UPSTREAM_REPO}/git/trees/${UPSTREAM_REF}?recursive=1" \
+            "https://api.github.com/repos/${UPSTREAM_REPO}/git/trees/${UPSTREAM_SHA}?recursive=1" \
             -o "$tree_json"
 
           # The GitHub "get a tree" endpoint returns truncated=true when the
@@ -133,10 +169,14 @@ jobs:
         id: refresh
         env:
           INDEX_FILE: ${{ steps.index.outputs.index_file }}
+          UPSTREAM_SHA: ${{ steps.resolve.outputs.sha }}
         run: |
           set -euo pipefail
 
-          BASE_URL="https://raw.githubusercontent.com/${UPSTREAM_REPO}/${UPSTREAM_REF}/${UPSTREAM_PATH}"
+          # Use the resolved SHA (not the raw ref) so downloads are pinned to
+          # the exact same commit the index was built from, and no URL-encoding
+          # is needed for the raw.githubusercontent.com path.
+          BASE_URL="https://raw.githubusercontent.com/${UPSTREAM_REPO}/${UPSTREAM_SHA}/${UPSTREAM_PATH}"
           echo "📥 Source base URL: ${BASE_URL}"
           echo "📚 Using index: ${INDEX_FILE}"
 
@@ -311,10 +351,18 @@ jobs:
 
       - name: Refresh CIA production statistics
         id: stats
+        env:
+          UPSTREAM_SHA: ${{ steps.resolve.outputs.sha }}
+          # Pin the statistics fetch to the exact same commit SHA the CSV
+          # refresh just used. `scripts/load-cia-stats.ts` respects the
+          # CIA_EXTRACTION_SUMMARY_URL env var as an override of its default
+          # master-branch URL, so the injected counts stay consistent with the
+          # CSV snapshot when the workflow is dispatched with a non-master ref.
+          CIA_EXTRACTION_SUMMARY_URL: https://raw.githubusercontent.com/${{ env.UPSTREAM_REPO }}/${{ steps.resolve.outputs.sha }}/${{ env.UPSTREAM_PATH }}/extraction_summary_report.csv
         run: |
           set -euo pipefail
 
-          echo "📊 Fetching CIA production statistics (extraction_summary_report.csv → production-stats.json)"
+          echo "📊 Fetching CIA production statistics from ${CIA_EXTRACTION_SUMMARY_URL}"
           npx --no-install tsx scripts/load-cia-stats.ts
 
           if [ ! -f "cia-data/production-stats.json" ]; then
@@ -344,6 +392,7 @@ jobs:
             echo "| Total Persons | ${total_persons} |"
             echo "| Total Votes | ${total_votes} |"
             echo "| Last Extraction | ${last_updated} |"
+            echo "| Pinned commit | \`${UPSTREAM_SHA}\` |"
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Detect git changes
@@ -372,8 +421,9 @@ jobs:
             index.html
             index_*.html
           commit-message: |
-            data(cia): refresh CSV sample data + production stats from ${{ env.UPSTREAM_REPO }}@${{ env.UPSTREAM_REF }}
+            data(cia): refresh CSV sample data + production stats from ${{ env.UPSTREAM_REPO }}@${{ steps.resolve.outputs.sha }}
 
+            - Upstream ref: ${{ env.UPSTREAM_REF }} (resolved to ${{ steps.resolve.outputs.sha }})
             - CSV files: updated ${{ steps.refresh.outputs.updated }} / ${{ steps.refresh.outputs.total }} tracked
             - Production stats: ${{ steps.stats.outputs.total_persons }} persons, ${{ steps.stats.outputs.total_votes }} votes
             - Last extraction: ${{ steps.stats.outputs.last_updated }}
@@ -384,8 +434,9 @@ jobs:
             ## 📊 Automated CIA data refresh
 
             Pulled the latest `service.data.impl/sample-data/` CSVs from
-            [`${{ env.UPSTREAM_REPO }}@${{ env.UPSTREAM_REF }}`](https://github.com/${{ env.UPSTREAM_REPO }}/tree/${{ env.UPSTREAM_REF }}/${{ env.UPSTREAM_PATH }})
-            and re-ran the production-statistics pipeline.
+            [`${{ env.UPSTREAM_REPO }}@${{ env.UPSTREAM_REF }}`](https://github.com/${{ env.UPSTREAM_REPO }}/tree/${{ steps.resolve.outputs.sha }}/${{ env.UPSTREAM_PATH }})
+            (resolved to commit [`${{ steps.resolve.outputs.sha }}`](https://github.com/${{ env.UPSTREAM_REPO }}/commit/${{ steps.resolve.outputs.sha }}))
+            and re-ran the production-statistics pipeline against the same commit.
 
             ### CSV refresh
             | Metric | Count |

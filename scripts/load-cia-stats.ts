@@ -26,8 +26,15 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const CSV_URL =
+const DEFAULT_CSV_URL =
   'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/extraction_summary_report.csv';
+/**
+ * Source URL for the extraction_summary_report.csv. Overridable via the
+ * `CIA_EXTRACTION_SUMMARY_URL` environment variable so callers (e.g. the
+ * `update-cia-csv-data` workflow) can pin the statistics refresh to the same
+ * upstream git ref / SHA as the CSV refresh.
+ */
+const CSV_URL = process.env.CIA_EXTRACTION_SUMMARY_URL || DEFAULT_CSV_URL;
 const CACHE_FILE = path.join(__dirname, '..', 'cia-data', 'production-stats.json');
 const CACHE_MAX_AGE_HOURS = 24;
 
