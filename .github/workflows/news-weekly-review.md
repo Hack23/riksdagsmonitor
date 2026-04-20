@@ -119,6 +119,7 @@ safe-outputs:
     labels: [agentic-news, analysis-data]
     draft: false
     expires: 14d
+    max: 2
   add-comment: {}
   dispatch-workflow:
     workflows: [news-translate]
@@ -273,7 +274,9 @@ read START_TIME < /tmp/start_time.txt
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–6**: Run download-parliamentary-data pipeline (download data)
 - **Minutes 6–21**: 🚨 **AI Analysis Pass 1 (15 min minimum)**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries.
-- **Minutes 21–28**: 🚨 **AI Analysis Pass 2 (7 min minimum)**: Read ALL analysis back completely, improve every section, replace ALL script stubs with AI analysis. Run enrichment verification gate.
+- **Minutes 21–22**: 🚨 **AI Analysis Pass 2 (Part A, start)**: Begin reading ALL analysis artifacts back and identify improvement targets.
+- **Minutes 22–25**: 🫀 **Heartbeat PR** — `git add && git commit` analysis artifacts so far, then `safeoutputs___create_pull_request` (title `🫀 Heartbeat - Weekly Review - {date}`). Refreshes the safeoutputs MCP session (idle timeout ~30–35 min) AND preserves work if later phases fail. Run `git checkout main` after the call so subsequent commits don't stack onto the frozen patch.
+- **Minutes 25–28**: 🚨 **AI Analysis Pass 2 (Part B, complete — 6 min improvement work total across Parts A+B)**: Improve every section, replace ALL script stubs with AI analysis. Run enrichment verification gate.
 - **Minutes 28–30**: Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass.
 - **Minutes 30–38**: Generate articles for all 14 languages
 - **Minutes 38–42**: 🚨 **Article Improvement Pass**: Read ALL articles back, replace AI_MUST_REPLACE markers, improve content. Run article quality component gate.
@@ -769,7 +772,11 @@ EN/SV only: all headings, meta, content in correct language; no untranslated `da
 > if grep -l 'class="sankey-section"' news/$ARTICLE_DATE-weekly-review-*.html; then
 >   echo "✅ Sankey section present"
 > else
->   doc_count=$(find "analysis/daily/$ARTICLE_DATE/weekly-review/documents" -maxdepth 1 -name '*.json' 2>/dev/null | wc -l)
+>   # AWF-safe: no $(...) command substitution — use per-process temp file + read redirection, then clean up.
+>   doc_count_tmp="/tmp/doc_count.$$"
+>   find "analysis/daily/$ARTICLE_DATE/weekly-review/documents" -maxdepth 1 -name '*.json' 2>/dev/null | wc -l > "$doc_count_tmp"
+>   read doc_count < "$doc_count_tmp"
+>   rm -f "$doc_count_tmp"
 >   if [ "$doc_count" = "0" ]; then
 >     echo "ℹ️ Sankey section not emitted — the week has 0 documents (validator allows this)"
 >   else

@@ -379,7 +379,12 @@ After `safeoutputs___create_pull_request` succeeds for a batch, switch off the P
 # re-create the 'stacking onto frozen patch' failure mode this section exists to prevent.
 git status --short news/
 git checkout main || { echo "ERROR: failed to switch back to main; aborting before next batch." >&2; exit 1; }
-[ "$(git branch --show-current)" = "main" ] || { echo "ERROR: repository is not on main after checkout; aborting before next batch." >&2; exit 1; }
+# AWF-safe: no $(...) command substitution — capture branch via per-process tempfile + read, then clean up.
+CURRENT_BRANCH_FILE="/tmp/current-branch-$$.txt"
+git branch --show-current > "$CURRENT_BRANCH_FILE"
+read CURRENT_BRANCH < "$CURRENT_BRANCH_FILE"
+rm -f "$CURRENT_BRANCH_FILE"
+[ "$CURRENT_BRANCH" = "main" ] || { echo "ERROR: repository is not on main after checkout; aborting before next batch." >&2; exit 1; }
 # Now translate the next 3–4 languages and commit on a new (unnamed) set of changes.
 # The next safeoutputs___create_pull_request call will create a fresh branch automatically.
 ```
@@ -801,7 +806,12 @@ safeoutputs___create_pull_request({
 # onto the already-frozen PR branch and be lost (the exact bug that caused PR #1835).
 # safeoutputs___create_pull_request will create a fresh branch for the next batch automatically.
 git checkout main || { echo "ERROR: failed to switch back to main; aborting before next batch." >&2; exit 1; }
-[ "$(git branch --show-current)" = "main" ] || { echo "ERROR: repository is not on main after checkout; aborting before next batch." >&2; exit 1; }
+# AWF-safe: no $(...) command substitution — capture branch via per-process tempfile + read, then clean up.
+CURRENT_BRANCH_FILE="/tmp/current-branch-$$.txt"
+git branch --show-current > "$CURRENT_BRANCH_FILE"
+read CURRENT_BRANCH < "$CURRENT_BRANCH_FILE"
+rm -f "$CURRENT_BRANCH_FILE"
+[ "$CURRENT_BRANCH" = "main" ] || { echo "ERROR: repository is not on main after checkout; aborting before next batch." >&2; exit 1; }
 git status --short
 # Now repeat Step 3 (translate) + Step 4 (validate) + Step 5 (commit + safeoutputs) for the next 3–4 languages.
 ```
