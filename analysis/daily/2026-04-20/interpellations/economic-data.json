@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "articleType": "interpellations",
+  "date": "2026-04-20",
+  "policyDomains": ["gender equality", "labor market", "fiscal policy", "housing", "healthcare"],
+  "dataPoints": [
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2024", "value": 0.82 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2023", "value": -0.204 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate", "date": "2025", "value": 8.694 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate", "date": "2024", "value": 8.4 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate", "date": "2023", "value": 7.611 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "indicatorName": "Inflation Rate", "date": "2024", "value": 2.836 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "indicatorName": "Inflation Rate", "date": "2023", "value": 8.549 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.PCAP.CD", "indicatorName": "GDP Per Capita (USD)", "date": "2024", "value": 57117.488 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.PCAP.CD", "indicatorName": "GDP Per Capita (USD)", "date": "2023", "value": 54950.283 }
+  ],
+  "commentary": "Sweden's economic context reinforces the urgency of the April 2026 interpellation wave: unemployment has risen to 8.694% in 2025 (up from 7.6% in 2023), directly validating S's labor market criticisms in frs 2025/26:422–423. GDP growth of just 0.82% in 2024 — following a contraction year in 2023 (-0.2%) — weakens the government's ability to defend against Svantesson's tax legitimacy challenge in frs 2025/26:433, where the opposition argues that a stagnating economy co-exists with Sweden's world-leading billionaire density. The cooling inflation (2.836% in 2024 vs 8.5% in 2023) provides some relief, but structural issues in housing and social services remain: Stockholm's planned 11,091 housing starts in 2026 (down ~900 from 2025) illustrate how economic headwinds translate directly into the concrete accountability metrics targeted by Carlson's interpellations.",
+  "source": {
+    "worldBank": ["NY.GDP.MKTP.KD.ZG", "SL.UEM.TOTL.ZS", "FP.CPI.TOTL.ZG", "NY.GDP.PCAP.CD"],
+    "scb": [],
+    "riksdag": ["HD10437", "HD10438", "HD10434", "HD10433", "HD10435"]
+  }
+}
