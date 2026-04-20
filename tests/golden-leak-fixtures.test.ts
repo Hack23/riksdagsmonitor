@@ -42,8 +42,17 @@ interface GoldenFixture {
   readonly kind: GoldenKind;
   readonly description: string;
   readonly input: string;
-  /** For raw-dump-prose: what must NOT appear in the cleaned output. */
+  /**
+   * For `raw-dump-prose` fixtures: patterns that MUST NOT appear in the
+   * cleaned output (leak markers successfully stripped).
+   */
   readonly forbiddenAfterClean?: ReadonlyArray<string | RegExp>;
+  /**
+   * For `stutter` fixtures: patterns that MUST still be present after
+   * cleaning (legitimate prose preserved). Keeping a separate field makes
+   * the positive/negative semantic explicit per fixture kind.
+   */
+  readonly mustSurviveClean?: ReadonlyArray<string | RegExp>;
   /** For large-sv-span: target language under test. */
   readonly articleLang?: string;
 }
@@ -133,7 +142,7 @@ const GOLDEN_FIXTURES: ReadonlyArray<GoldenFixture> = [
     description:
       'The cleaner must only collapse ≥ 3-repeat stutters. Legitimate doubled words (e.g., "that that is") must pass through.',
     input: 'She said that that is the problem we need to solve.',
-    forbiddenAfterClean: [/\bthat\s+is\s+the/], // text must still read "that is the"
+    mustSurviveClean: [/\bthat\s+is\s+the/], // text must still read "that is the"
   },
 ];
 
@@ -209,9 +218,10 @@ describe('Golden leak fixtures (§P3-4 regression guard)', () => {
     for (const fx of stutters) {
       it(`${fx.name} — ${fx.description}`, () => {
         const cleaned = cleanSummaryForDisplay(fx.input);
-        // The forbidden regex here is the text that MUST STILL BE PRESENT;
-        // the assertion inverts the usual semantic.
-        for (const mustSurvive of fx.forbiddenAfterClean ?? []) {
+        // Assert every required positive pattern survives cleaning — this
+        // is the dedicated `mustSurviveClean` field, no more semantic
+        // overload with `forbiddenAfterClean`.
+        for (const mustSurvive of fx.mustSurviveClean ?? []) {
           if (typeof mustSurvive === 'string') {
             expect(cleaned, fx.name).toContain(mustSurvive);
           } else {

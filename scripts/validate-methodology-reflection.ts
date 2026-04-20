@@ -283,6 +283,11 @@ export async function validateMethodologyReflection(filePath: string): Promise<V
   // Reconciliation is section-present-but-content-missing.
   if (tierC) {
     // Extract the section body until the next `## ` heading or EOF.
+    // The `(?=^##\s|$(?![\s\S]))` lookahead matches either the start of the
+    // next H2 heading or the absolute end of the input. `$(?![\s\S])` is
+    // the "no more characters after this point" anchor — equivalent to
+    // `\z` in regex flavors that support it; the RegExp engine in V8 does
+    // not, hence this explicit form.
     const watchpointSectionMatch = /^##[^\n]{0,30}\bUpstream Watchpoint Reconciliation\b[\s\S]*?(?=^##\s|$(?![\s\S]))/mi.exec(content);
     if (watchpointSectionMatch) {
       const body = watchpointSectionMatch[0];

@@ -170,7 +170,19 @@ export function parseMCPTable(sectionBody: string): {
     if (cells.length < 7) continue;
 
     const toInt = (v: string): number => {
-      const n = parseInt(v.replace(/[^0-9-]/g, ''), 10);
+      // Strip every non-digit character (including hyphens) before parsing so
+      // malformed strings like `'5-3'` or `'--5'` cannot be coerced into
+      // negative numbers. The spec requires non-negative integers, so we
+      // reject every non-digit outright rather than parsing and checking
+      // the sign afterwards.
+      const digitsOnly = v.replace(/[^0-9]/g, '');
+      if (digitsOnly === '' || digitsOnly !== v.trim()) {
+        // Empty after stripping, or the stripped version differs from the
+        // original (meaning the cell contained non-digit noise) → flag as
+        // NaN so the caller surfaces a `non-numeric-cell` violation.
+        return NaN;
+      }
+      const n = parseInt(digitsOnly, 10);
       return Number.isFinite(n) ? n : NaN;
     };
 

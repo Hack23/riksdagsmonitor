@@ -218,14 +218,17 @@ describe('validateMethodologyReflection — byte-floor rule', () => {
     expect(report.ok).toBe(false);
   });
 
-  it('applies the 1.3× multiplier for month-ahead', async () => {
-    const file = await writeFixture('2026-01-01/month-ahead-tiny/methodology-reflection.md', 'x');
-    const report = await validateMethodologyReflection(file);
-    expect(report.minBytes).toBe(Math.round(BASELINE_MIN_BYTES * 1.0)); // unknown → 1.0 default
-    // Now a real month-ahead folder:
-    const file2 = await writeFixture('2026-01-01/month-ahead/methodology-reflection.md', 'x');
-    const report2 = await validateMethodologyReflection(file2);
-    expect(report2.minBytes).toBe(Math.round(BASELINE_MIN_BYTES * PERIOD_SCOPE_MULTIPLIERS['month-ahead']));
+  it('applies the 1.3× multiplier for month-ahead folders', async () => {
+    // Non-standard folder name → falls back to the 1.0× default multiplier.
+    // This line is the explicit control for the default-multiplier path.
+    const defaultFile = await writeFixture('2026-01-01/month-ahead-tiny/methodology-reflection.md', 'x');
+    const defaultReport = await validateMethodologyReflection(defaultFile);
+    expect(defaultReport.minBytes, 'non-standard folder name must default to 1.0× multiplier').toBe(Math.round(BASELINE_MIN_BYTES * 1.0));
+
+    // Exact-match Tier-C folder → 1.3× month-ahead multiplier.
+    const monthAheadFile = await writeFixture('2026-01-01/month-ahead/methodology-reflection.md', 'x');
+    const monthAheadReport = await validateMethodologyReflection(monthAheadFile);
+    expect(monthAheadReport.minBytes).toBe(Math.round(BASELINE_MIN_BYTES * PERIOD_SCOPE_MULTIPLIERS['month-ahead']));
   });
 
   it('applies the 1.5× multiplier for monthly-review', async () => {

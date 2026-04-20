@@ -825,6 +825,10 @@ echo "📋 Check 17d: MCP Reliability Table in Tier-C manifests (§P2-1)"
 MCP_REL_FAILS=0
 if command -v npx >/dev/null 2>&1 && [ -f scripts/validate-mcp-reliability.ts ]; then
   MANIFEST_FILES=()
+  # NOTE: The Tier-C folder list below MUST stay in sync with `isTierCFolder()`
+  # in scripts/validate-methodology-reflection.ts. When adding a new Tier-C
+  # workflow, update both locations. A future PR may consolidate these into
+  # a single shared constant (tracked in the §P2 roadmap).
   while IFS= read -r -d '' f; do
     parent_dir=$(basename "$(dirname "$f")")
     case "$parent_dir" in
