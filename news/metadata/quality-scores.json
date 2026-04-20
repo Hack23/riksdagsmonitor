@@ -1,34 +1,34 @@
 {
-  "2026-04-20-committee-reports-en.html": {
-    "filename": "2026-04-20-committee-reports-en.html",
+  "2026-04-20-government-propositions-en.html": {
+    "filename": "2026-04-20-government-propositions-en.html",
     "lang": "en",
-    "articleType": "committee-reports",
-    "score": 100,
+    "articleType": "propositions",
+    "score": 91,
     "passed": true,
     "multidimensional": {
-      "overallScore": 86,
+      "overallScore": 91,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 70,
+        "stakeholderCoverage": 100,
         "analyticalDepth": 80,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 3
     },
-    "timestamp": "2026-04-20T04:53:29.681Z"
+    "timestamp": "2026-04-20T06:30:25.342Z"
   },
-  "2026-04-20-committee-reports-sv.html": {
-    "filename": "2026-04-20-committee-reports-sv.html",
+  "2026-04-20-government-propositions-sv.html": {
+    "filename": "2026-04-20-government-propositions-sv.html",
     "lang": "sv",
-    "articleType": "committee-reports",
-    "score": 100,
+    "articleType": "propositions",
+    "score": 91,
     "passed": true,
     "multidimensional": {
-      "overallScore": 90,
+      "overallScore": 91,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
@@ -41,6 +41,6 @@
       },
       "issueCount": 2
     },
-    "timestamp": "2026-04-20T04:53:29.686Z"
+    "timestamp": "2026-04-20T06:30:25.348Z"
   }
 }
