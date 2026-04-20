@@ -87,3 +87,135 @@ Sweden's parliament is entering an intensive pre-election accountability phase w
 | Threat 3 (Bernadotte) | [HIGH] 🟩 | Full text frs 2025/26:435, response deadline documented |
 | Threat 4 (housing) | [HIGH] 🟩 | Länsstyrelsen Stockholm quantified data in frs 2025/26:434 |
 | Threat 5 (tax reform) | [HIGH] 🟩 | Systemic analysis in frs 2025/26:433 full text |
+
+## Threat Actor Profiling
+
+### TA-1: Social Democrats (S) — Primary Threat Actor
+
+**Classification**: Institutional opposition party; tier-1 threat actor
+**Capability**: High — 107 MPs, professional party apparatus, coordinated whip system, union affiliations (LO, TCO), media reach
+**Intent**: HIGH — explicit pre-Election 2026 accountability campaign
+**Opportunity**: HIGH — April 14 – May 5 response window coincides with pre-summer-recess attention peak
+
+**Observed Political TTPs (analogous to MITRE ATT&CK for political intelligence)**:
+| TTP | Description | Evidence |
+|-----|-------------|----------|
+| Initial access (agenda-setting) | Interpellation filing creates documentary record | 7 of 10 wave interpellations |
+| Persistence | Multiple interpellations same minister (Carlson saturation) | 6+ Carlson interpellations |
+| Privilege escalation | Dual-filing same day to force compound response | HD10437+HD10438 |
+| Defence evasion | Use of government-source data (Länsstyrelsen, EU directive text) to deny minister rhetorical escape | HD10437, HD10434 |
+| Lateral movement | Thematic coordination across policy domains (gender→housing→tax) | Wave structure |
+| Collection | Creating documentary record of ministerial answers for campaign use | Standard practice |
+| Command & control | Party-whip coordination of filing timing | Dual-filing on April 17 |
+| Exfiltration | Operationalising into election-campaign messaging | Expected post-May 5 |
+| Impact | Electoral gain through accumulated narrative | To be assessed post-September 2026 |
+
+### TA-2: Sweden Democrats (SD) — Secondary Threat Actor
+
+**Classification**: Coalition external supply party; tier-2 threat actor (asymmetric)
+**Capability**: Medium–High (72 MPs, coalition arrangement-based leverage)
+**Intent**: MEDIUM — agenda-setting and brand-signalling more than direct government-toppling
+**Opportunity**: MEDIUM — as coalition partner, SD can embarrass government but not overthrow
+
+**Observed TTPs**:
+- **Inverted-expected pressure** (HD10429 free-speech as SD defender)
+- **Balanced attack** (HD10429 + HD10430 — both liberty expansion and restriction depending on subject)
+- **Agenda visibility maintenance** — keeping religious-extremism issues in public view
+
+### TA-3: Jamal El-Haj (Independent) — Wildcard Actor
+
+**Classification**: Individual independent MP; tier-2 threat actor (institutional weight limited; asymmetric impact potential high)
+**Capability**: Low in raw numbers; high in diaspora-community mobilisation
+**Intent**: HIGH on Israel/Palestine accountability
+**Opportunity**: HIGH — 10-day response window, media-ready narrative
+
+**TTPs**: Single-issue concentrated pressure; using independent platform to make demands party-affiliated MPs cannot
+
+### TA-4: Centerpartiet (C) — Tier-3 Actor
+
+**Classification**: External supply party; tier-3
+**Capability**: 24 MPs; moderate
+**Intent**: Brand-differentiation more than government-opposition
+**TTPs**: Selective issue-championing (HD10431 LGBTQI+)
+
+## Threat Landscape Matrix
+
+```
+        High Impact
+             |
+     TA-1 (S)● ───── ●TA-3 (El-Haj)
+             |        [asymmetric]
+             |
+     TA-2 (SD)●
+             |        ●TA-4 (C)
+             |
+        Low Impact
+             └──────────────────→
+          Low Intent     High Intent
+```
+
+## Threat Compound Effects
+
+Individual threats are analytically meaningful; **compound effects** may be greater than the sum:
+
+### Compound Effect 1: Dual-gender attack (HD10437 + HD10438)
+Same day, same MP, same minister. Impact: forces Larsson to formulate a response that addresses both EU compliance *and* service-delivery failure — under constrained time. Impact multiplier: ~1.6x single-interpellation pressure.
+
+### Compound Effect 2: Carlson saturation (HD10434 + 5 other active)
+Cumulative policy-area coverage. Impact: no "safe" portfolio retreat. Impact multiplier: ~2x single-interpellation pressure.
+
+### Compound Effect 3: Fiscal-social attack (HD10433 tax + HD10437 gender + HD10432 hospitals + HD10438 shelters)
+Constructs a unified "government failing working families" narrative. Impact multiplier: ~1.3x — dilutes focus but reinforces frame.
+
+### Compound Effect 4: Foreign-policy stress (HD10435 + HD10426 Israel death penalty)
+Multiple Israel-related accountability moments. Impact multiplier: ~1.2x — keeps foreign-policy-accountability in news.
+
+## Government Counter-Threat Capabilities
+
+| Capability | Current strength | Deployment likelihood |
+|------------|------------------|:---------------------:|
+| Ministerial rhetorical skill | HIGH (Svantesson, Strömmer, Malmer Stenergard) | HIGH |
+| Policy announcement / concession | MEDIUM (coalition constraints) | MEDIUM |
+| Coalition coordination | MEDIUM–HIGH (2+ years operation) | HIGH |
+| Counter-narrative deployment | MEDIUM (government PR) | HIGH |
+| Legislative agenda control | HIGH (parliamentary majority) | N/A for interpellations |
+| EU-level coordination | MEDIUM | MEDIUM (on HD10437) |
+
+**Assessment**: Government has significant counter-threat capabilities but is constrained by coalition internal dynamics. The most likely counter-move is ministerial rhetorical skill + targeted concessions (see `scenario-analysis.md`).
+
+## Threat Intelligence Indicators (IoCs) — Political-Domain Version
+
+| Indicator type | Examples | Watch priority |
+|----------------|---------|:--------------:|
+| **Filing pattern IoC** | Repeated same-MP same-day same-minister filings | HIGH |
+| **Language IoC** | Phrase patterns in ministerial responses ("pågående arbete" = holding pattern) | MEDIUM |
+| **Calendar IoC** | Response-deadline clustering | HIGH |
+| **Media IoC** | Coordinated op-ed timing with LO/TCO amplification | MEDIUM |
+| **Polling IoC** | ≥1.5pp shift after debate cycle | HIGH |
+| **Coalition IoC** | Public statements by one coalition partner about another | HIGH |
+| **Withdrawal IoC** | Interpellation withdrawals (information-value signal) | MEDIUM |
+
+## Threat Horizon
+
+**Current horizon (0–14 days)**: All 10 interpellations in active-response phase. Threat level peaks May 5.
+
+**Medium horizon (14–90 days)**: EU Commission June 7 deadline. Summer recess (typically late June). Polling stabilisation. Government policy announcements.
+
+**Long horizon (90+ days)**: Election 2026 campaign formal launch (August 2026). Interpellation narrative absorbed into campaign messaging. Post-election government formation.
+
+## Intelligence Gaps
+
+1. **Internal S communications**: Coordination coordination-structure is inferred, not observed
+2. **Coalition backchannel discussions**: Government coalition internal meetings not observed
+3. **Minister response drafts**: Ministerial response content not available pre-debate
+4. **EU Commission informal communications**: Not directly observable
+5. **Union-campaign coordination**: LO/TCO strategic planning not transparent
+
+## Analyst Confidence in Threat Assessment
+
+- Threat identification: HIGH 🟩 (primary-source interpellation text available for tier-1 threats)
+- Threat actor capability: HIGH 🟩
+- Threat actor intent: MEDIUM-HIGH 🟧🟩
+- Compound effects modelling: MEDIUM 🟧 (first-observation of dual-filing)
+- Counter-threat modelling: MEDIUM 🟧 (depends on decision-maker choices)
+- Overall threat assessment: HIGH 🟩

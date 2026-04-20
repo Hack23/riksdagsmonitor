@@ -51,3 +51,82 @@
 | Sweden GDP growth (2024) | 0.82% | ↓ Low | Economic weakness fuels tax reform urgency (HD10433) |
 | Sweden housing starts (Stockholm 2026) | ~11,091 | ↓ -900 | Confirms HD10434 data — Carlson's failure quantified |
 | Sweden inflation (2024) | 2.836% | ↓ Cooling | Cost of living stabilizing but structural issues remain |
+
+## Risk Treatment Options (for Government)
+
+| Risk ID | Mitigate | Transfer | Avoid | Accept |
+|---------|----------|----------|-------|--------|
+| R001 EU directive | Announce interim measures; introduce emergency legislation | Not transferable (Sweden is obligated party) | Would require EU derogation; not available | Ministerial choice with ~6 months of S narrative exploitation |
+| R002 Shelters | Emergency funding package (SEK 50–150m); *länsstyrelser* administered | Partial transfer to *regioner* | Not politically feasible | Ministerial choice with severe reputational cost |
+| R003 Bernadotte | Narrow historical acknowledgement statement | — | Would require refusing to respond (not allowed) | Low-cost if framed carefully |
+| R004 Carlson housing | Construction-loan guarantee expansion; PBL revision | To Boverket / regional planners | Not feasible given data exposure | High political cost |
+| R005 Tax | Targeted review announcement (e.g., 3:12 committee) | — | Defensible but exposes ideology | Moderate political cost |
+| R006 Hospitals | State co-investment mechanism | To regions (current) | — | Structural; hard to neutralise in short term |
+| R007 Coordination signal | Coalition strategic communications | — | — | Requires active coalition coherence |
+
+## Key Risk Indicators (KRIs)
+
+Leading indicators to monitor between now and the summer recess:
+
+| KRI | Trigger threshold | Monitored via |
+|-----|-------------------|---------------|
+| KRI-1: Novus S-polling ≥32% | Crossed | Novus, Sifo, Demoskop weekly |
+| KRI-2: L-polling below 4% threshold | L <4.0% sustained 3 weeks | Polling aggregators |
+| KRI-3: EU Commission letter on Sweden transposition | Any correspondence | Commission DG EMPL releases |
+| KRI-4: Additional kvinnojour closures announced | Any new closure in media | Civil-society monitoring |
+| KRI-5: Carlson public approval | Below 30% sustained 4 weeks | Demoskop ministerial ratings |
+| KRI-6: SD public criticism of coalition partners | Any Åkesson / Jomshof public statement | Social media + press |
+| KRI-7: Coalition internal-meeting cadence | Fewer than weekly | Regeringskansliet kalender |
+| KRI-8: S motion of no confidence discussion | Any credible leak | Parliamentary journalists |
+
+## Escalation Triggers
+
+**Tier 1 (government must respond within 24h)**:
+- EU Commission formal notice on Pay Transparency Directive
+- Any minister public contradiction of another
+- Confidence-motion discussion in any committee
+
+**Tier 2 (government must respond within 72h)**:
+- Polling shift ≥2pp
+- Kvinnojour emergency closure with public appeal to government
+- Foreign Ministry difficulty with Israel on Bernadotte framing
+
+**Tier 3 (government must plan response within 2 weeks)**:
+- Accumulated chamber-debate ministerial difficulties
+- Trade union public pressure
+- Opposition committee-hearing requests
+
+## Risk Register Evolution
+
+This risk register replaces the previous interpellation-wave register (2026-04-13) and is the active register until the next wave analysis. Key changes:
+- R001 elevated from score 15 (previous) to 20 (this update) following full-text analysis of HD10437
+- R004 Carlson elevated from score 12 to 16 following 6th-interpellation saturation signal
+- R010 (withdrawn-space) added as new low-severity register entry for tracking
+
+## Residual Risk Assessment
+
+Even with optimal government risk-treatment, residual risks remain:
+- HD10437: Transposition after June 7 is still transposition failure; residual political cost ≥3/5 severity
+- HD10435: Any response to Bernadotte demands that does not include apology will be criticised; residual ≥2/5
+- HD10434: Even with a construction package, 2026 numbers are already set; residual ≥3/5
+
+**Overall residual risk posture**: 🟧 ELEVATED. The interpellation wave has raised the session risk baseline and will not fully dissipate even with strong government responses.
+
+## Risk Ownership and Accountability Chain
+
+| Risk | Primary owner | Secondary owner | Executive accountability |
+|------|---------------|-----------------|-------------------------|
+| R001 EU directive | Larsson (L) | Strömmer (M) | PM Kristersson |
+| R002 Shelters | Larsson (L) | Forssmed (KD) | PM Kristersson |
+| R003 Bernadotte | Malmer Stenergard (M) | — | PM Kristersson |
+| R004 Housing | Carlson (KD) | Svantesson (M) | PM Kristersson |
+| R005 Tax | Svantesson (M) | Carlson (KD) | PM Kristersson |
+| R006 Hospitals | Lann (KD) | Svantesson (M) | PM Kristersson |
+| R007 Coordination | Regeringskansliet strategic communications | All ministers | PM Kristersson |
+
+## Review Cadence
+
+- Daily monitoring of KRIs during April 29 – May 5 window
+- Weekly review during May 6 – June 7
+- Post-June 7 debrief (EU directive deadline)
+- Quarterly review until Election 2026
