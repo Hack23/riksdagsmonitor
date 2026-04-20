@@ -8,6 +8,14 @@
 # the one needed to open a maintenance issue. Follows the project
 # workflow security standards (least privilege, step-security/harden-runner,
 # SHA-pinned actions — see .github/aw/SHARED_PROMPT_PATTERNS.md).
+#
+# Schema v2 cutover (2026-04-20 → 2026-05-31, grace window):
+# The validator currently accepts BOTH v1 artefacts (source.worldBank /
+# source.scb only; "Data by World Bank / SCB" footer) and v2 artefacts
+# (source.imf[] + dataPoints[].provider/projection; "Data by IMF /
+# World Bank / SCB" footer). After 2026-05-31 the v1 back-compat paths
+# may be tightened. See .github/aw/ECONOMIC_DATA_CONTRACT.md v2.0
+# version history and docs/adr/0001-adopt-imf-data-alongside-world-bank.md.
 
 name: Economic Context Daily Audit
 

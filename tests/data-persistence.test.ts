@@ -26,6 +26,7 @@ import {
   persistMPs,
   persistMCPResponse,
   persistWorldBankData,
+  persistIMFData,
   persistSCBData,
   getDataRoot,
 } from '../scripts/parliamentary-data/data-persistence.js';
@@ -421,6 +422,45 @@ describe('data-persistence', () => {
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
       expect(meta.indicator).toBe('NY.GDP.MKTP.CD');
       expect(meta.country).toBe('SWE');
+    });
+  });
+
+  describe('persistIMFData', () => {
+    it('stores IMF data under imf/{indicator}/{country}.json with sidecar', () => {
+      const resultPath = persistIMFData(
+        'NGDP_RPCH',
+        'SWE',
+        [{ period: '2026', value: 2.1, projection: true }],
+        {
+          database: 'WEO',
+          projectionVintage: 'WEO-2026-04',
+          dataRoot: tmpDir,
+        },
+      );
+      expect(fs.existsSync(resultPath)).toBe(true);
+      expect(resultPath).toContain(path.join('imf', 'ngdp-rpch', 'swe.json'));
+
+      const metaPath = resultPath.replace('.json', '.meta.json');
+      expect(fs.existsSync(metaPath)).toBe(true);
+      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      expect(meta.mcpTool).toBe('imf-ts-client');
+      expect(meta.indicator).toBe('NGDP_RPCH');
+      expect(meta.country).toBe('SWE');
+      expect(meta.database).toBe('WEO');
+      expect(meta.projectionVintage).toBe('WEO-2026-04');
+    });
+
+    it('omits optional provenance fields when not supplied', () => {
+      const resultPath = persistIMFData(
+        'PCPIPCH',
+        'DEU',
+        { data: [] },
+        { dataRoot: tmpDir },
+      );
+      const metaPath = resultPath.replace('.json', '.meta.json');
+      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      expect(meta.database).toBeUndefined();
+      expect(meta.projectionVintage).toBeUndefined();
     });
   });
 

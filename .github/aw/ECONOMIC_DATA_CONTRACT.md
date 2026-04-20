@@ -1,9 +1,18 @@
-# Economic Data Contract — Agentic Workflows (v1.0)
+# Economic Data Contract — Agentic Workflows (v2.0)
 
-> **Single source of truth** for live World Bank / SCB data, Chart.js
+> **Single source of truth** for live IMF / World Bank / SCB data, Chart.js
 > visualisations, and AI commentary in every news article.
 > Consumed by `scripts/validate-economic-context.ts` and referenced
 > (by link) from every `news-*.md` agentic workflow.
+
+> **Schema v2.0 (2026-04-20)** — additive. Adds IMF (accessed via the
+> repo's pure-TypeScript `scripts/imf-client.ts` + `scripts/imf-fetch.ts`
+> CLI, no Python MCP) as a first-class primary source for macro, fiscal,
+> monetary, and external-sector indicators. World Bank remains
+> authoritative for governance (WGI), environment, and long-horizon
+> social/education residue. SCB remains the Swedish primary source.
+> v1 artefacts remain valid; the validator accepts both shapes during
+> the 2026-04-20 → 2026-05-31 grace window.
 
 ---
 
@@ -51,22 +60,28 @@ where `{analysisSubfolder}` maps from the kebab article-type slug via
 
 **Schema**: `analysis/schemas/economic-data.schema.json`.
 
-**Shape**:
+**Shape** (v2.0 — additive over v1):
 
 ```jsonc
 {
-  "version": "1.0",
+  "version": "2.0",
   "articleType": "committee-reports",
-  "date": "2026-04-17",
+  "date": "2026-04-20",
   "policyDomains": ["fiscal policy", "labor market"],
   "dataPoints": [
-    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2024", "value": 0.82 },
-    { "countryCode": "DNK", "countryName": "Denmark", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2024", "value": 1.75 }
+    // IMF (WEO projections permitted for look-ahead article types)
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "NGDP_RPCH",    "date": "2025", "value": 1.9,  "provider": "imf", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "GGXWDG_NGDP",  "date": "2027", "value": 32.4, "provider": "imf", "projection": true,  "projectionVintage": "WEO-2026-04" },
+    // World Bank (governance / environment / social residue)
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "CC.EST",       "date": "2023", "value": 2.1,  "provider": "worldBank", "projection": false },
+    // SCB (Swedish primary source)
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "TAB1291",      "date": "2025-02", "value": 405.2, "provider": "scb", "projection": false }
   ],
-  "commentary": "Sweden's 0.82% 2024 GDP growth lags Denmark (1.75%) and Norway (1.1%), framing the committee's fiscal debate against a prolonged slowdown. Health expenditure at 11.2% of GDP (2022, top 3 Nordic) keeps SoU-2024/25:1 in focus.",
+  "commentary": "IMF projects Sweden's general government gross debt at 32.4 % of GDP in 2027 (WEO Apr-2026, GGXWDG_NGDP), giving SkU-2025/26:12 fiscal headroom absent in 2022 (38 %). Control-of-corruption remains strong at 2.1 (WGI 2023).",
   "source": {
-    "worldBank": ["NY.GDP.MKTP.KD.ZG", "FP.CPI.TOTL.ZG", "SL.UEM.TOTL.ZS"],
-    "scb": ["TAB1291"]
+    "worldBank": ["CC.EST"],
+    "scb": ["TAB1291"],
+    "imf": ["WEO:NGDP_RPCH", "WEO:GGXWDG_NGDP"]
   }
 }
 ```
@@ -78,65 +93,103 @@ where `{analysisSubfolder}` maps from the kebab article-type slug via
 - `commentary` MUST cite 2–3 concrete numeric values that appear in
   `dataPoints` (the validator enforces only a word count; the human
   review + multi-dim quality score enforces the citation).
-- `source.worldBank` / `source.scb` MUST list the IDs actually queried.
+- At least one of `source.worldBank` / `source.scb` / `source.imf` MUST
+  be non-empty (previously only `worldBank`/`scb` counted).
+- When any `dataPoint.projection === true`, it MUST carry a
+  `projectionVintage` tag (e.g. `"WEO-2026-04"`, `"FM-2026-04"`).
+  Projection values MAY only be cited in article commentary for the
+  **look-ahead allow-list**: `week-ahead`, `month-ahead`,
+  `weekly-review`, `monthly-review`. Daily types (`committee-reports`,
+  `propositions`, `motions`, `interpellations`, `evening-analysis`)
+  MAY include projection values in `dataPoints` for context but MUST
+  NOT quote them as definitive forward-looking claims in commentary.
 - File MUST validate against
   `analysis/schemas/economic-data.schema.json`.
+
+### v1 back-compat
+
+A v1 artefact (no `source.imf[]`, no `provider`/`projection` on data
+points) is still accepted. The loader fills defaults
+(`provider: "worldBank"`, `projection: false`). New workflows SHOULD
+emit v2.
 
 ---
 
 ## MCP tool contract
 
 Step 2.6 of every `news-*.md` workflow MUST perform these MCP calls
-**before** writing `economic-data.json`:
+**before** writing `economic-data.json`. The order of provider
+preference is:
+
+1. **IMF** — macro (GDP, inflation, unemployment), fiscal (debt, deficit,
+   revenue, expenditure), monetary, external sector. WEO projections
+   extend to T+5 and MUST be used for look-ahead article types.
+2. **SCB** — Swedish-specific ground truth that IMF does not carry
+   (household consumption patterns, regional data, high-frequency
+   monthly tables).
+3. **World Bank** — governance (WGI: CC.EST, RL.EST, VA.EST, GE.EST,
+   RQ.EST, PV.EST), environment (CO2, forest area, renewables), and
+   long-horizon social/education indicators IMF does not cover.
 
 ### 1. Map documents → policy domains → indicators
 
 ```
-view analysis/worldbank/indicators-inventory.json
+view analysis/economic-indicators-inventory.json
 ```
 
-Select every indicator that has a `mcpTool` field and whose
-`committees`/`policyAreas` match the day's source documents. Prioritise
-the committee-specific matrix in `SHARED_PROMPT_PATTERNS.md` §"World
-Bank Indicator Reference".
+Each indicator entry carries a `provider` field (`imf` | `worldBank` |
+`scb`), plus IMF-specific fields (`imfDatabase`, `imfIndicatorCode`,
+`imfDimensionFilters`, `projectionHorizon`) when the primary provider
+is IMF. Select every indicator whose `committees` / `policyAreas`
+match the day's source documents. The legacy inventory at
+`analysis/worldbank/indicators-inventory.json` is retained as an
+append-only reference during the migration window.
 
-### 2. Query World Bank (Sweden + Nordic peers)
+### 2. Query IMF (Sweden + Nordic peers) — PRIMARY for macro/fiscal/monetary
 
-Required calls, retried 3× on failure (see Risks):
+Via the repository's pure-TypeScript client `scripts/imf-client.ts`,
+exposed to agentic workflows through the thin `scripts/imf-fetch.ts`
+CLI. No Python MCP / `uvx` runtime is involved; all IMF traffic goes
+directly to `data.imf.org`, `api.imf.org`, and `www.imf.org` on the
+firewall allowlist.
+
+```bash
+# 1. WEO time series for one country (default 10 years; --persist caches
+#    the JSON under analysis/data/imf/{indicator}/{country}.json with
+#    projectionVintage provenance).
+tsx scripts/imf-fetch.ts weo \
+  --country SWE --indicator NGDP_RPCH --years 15 --persist
+
+# 2. Compare the latest WEO value across Sweden + Nordic peers in one call.
+tsx scripts/imf-fetch.ts compare \
+  --indicator GGXWDG_NGDP \
+  --countries SWE,DNK,NOR,FIN,DEU --persist
+
+# 3. SDMX 3.0 passthrough for IFS / BOP / FM / GFS / DOTS.
+tsx scripts/imf-fetch.ts sdmx \
+  --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01" \
+  --indicator PCPI_IX --country SWE --persist
+
+# 4. Inspect the built-in WEO + FM indicator catalog (no network call).
+tsx scripts/imf-fetch.ts list-indicators
+```
+
+**Rate-limit discipline** (IMF ~10 req / 5 s): prefer the `compare`
+subcommand (one batched call across countries), insert a 1 s sleep
+between separate `imf-fetch.ts` invocations, and rely on the client's
+built-in 3× retry with exponential back-off (1 s → 2 s → 4 s) for 429 /
+5xx. Pre-warm 1 request at workflow start.
+
+### 3. Query World Bank (governance / env / social residue)
 
 ```
-# Sweden — full 10-year series for the primary domains
-get-economic-data(countryCode="SE", indicator="GDP_GROWTH",       years=10)
-get-economic-data(countryCode="SE", indicator="INFLATION",        years=10)
-get-economic-data(countryCode="SE", indicator="UNEMPLOYMENT",     years=10)
-
-# Nordic + Germany comparison — top 3 domain indicators, 5-year series
-for country in [DK, NO, FI, DE]:
-  get-economic-data(countryCode=country, indicator=<top-3>, years=5)
-
-# Domain-specific extras (only when article touches the domain)
-get-health-data(countryCode="SE",     indicator="HEALTH_EXPENDITURE", years=5)
-get-education-data(countryCode="SE",  indicator="EDUCATION_EXPENDITURE", years=5)
-get-social-data(countryCode="SE",     indicator="POPULATION",        years=10)
+# Kept for indicators IMF does not cover
+get-economic-data(countryCode="SE", indicator="CC.EST", years=5)        # Control of Corruption (WGI, source=75)
+get-economic-data(countryCode="SE", indicator="EN.ATM.CO2E.PC", years=10) # CO2 emissions
+get-social-data(countryCode="SE",   indicator="POPULATION",  years=10)
 ```
 
-Committee → minimum indicator mapping (shortened — full matrix in the
-inventory JSON):
-
-| Committee | MUST query                                                      |
-|-----------|-----------------------------------------------------------------|
-| FiU       | GDP_GROWTH, INFLATION, GDP_PER_CAPITA, GOVERNMENT_DEBT          |
-| AU        | UNEMPLOYMENT, LABOR_FORCE, YOUTH_UNEMPLOYMENT                   |
-| SkU       | TAX_REVENUE, GDP_GROWTH                                         |
-| SoU       | HEALTH_EXPENDITURE, PHYSICIANS, HOSPITAL_BEDS, LIFE_EXPECTANCY  |
-| UbU       | EDUCATION_EXPENDITURE, LITERACY_RATE, SCHOOL_ENROLLMENT         |
-| FöU       | MILITARY_EXPENDITURE, MILITARY_EXPENDITURE_GDP                  |
-| MJU       | CO2_EMISSIONS, RENEWABLE_ENERGY, FOREST_AREA                    |
-| JuU       | HOMICIDE_RATE, PRISON_POPULATION                                |
-| CU        | HOUSING_EXPENDITURE, MORTGAGE_RATE                              |
-| TU        | TRANSPORT_INFRASTRUCTURE_SPENDING                               |
-
-### 3. Query SCB (Statistics Sweden)
+### 4. Query SCB (Statistics Sweden)
 
 ```
 # CRITICAL: language MUST be "sv" or "en". NEVER "no" — SCB returns
@@ -150,7 +203,22 @@ search_tables(query="<committee-topic>", language="en")
 query_table(table_id="<TAB>", value_codes={"Tid": "top(10)", ...})
 ```
 
-### 4. (High-level reviews only) D3 coalition-flow dataset
+### Committee → primary provider & indicator matrix (v2)
+
+| Committee | Primary provider(s) | MUST query (provider:code)                                                                    |
+|-----------|---------------------|-----------------------------------------------------------------------------------------------|
+| FiU       | IMF + WB            | `imf:WEO:NGDP_RPCH`, `imf:WEO:PCPIPCH`, `imf:WEO:NGDPDPC`, `imf:WEO:GGXWDG_NGDP`              |
+| SkU       | IMF + WB            | `imf:WEO:GGR_NGDP`, `imf:WEO:GGX_NGDP`, `imf:WEO:GGXCNL_NGDP`, `imf:FM:GGXONLB_NGDP`          |
+| AU        | IMF + WB            | `imf:WEO:LUR`, `wb:SL.UEM.1524.ZS`, `wb:SL.TLF.CACT.ZS`                                       |
+| NU / UU   | IMF                 | `imf:WEO:BCA_NGDPD`, `imf:WEO:TX_RPCH`                                                        |
+| SoU       | WB                  | `wb:SH.XPD.CHEX.GD.ZS`, `wb:SH.MED.PHYS.ZS`, `wb:SH.MED.BEDS.ZS`, `wb:SP.DYN.LE00.IN`         |
+| UbU       | WB                  | `wb:SE.XPD.TOTL.GD.ZS`, `wb:SE.ADT.LITR.ZS`, `wb:SE.PRM.ENRR`                                 |
+| FöU       | WB                  | `wb:MS.MIL.XPND.GD.ZS`, `wb:MS.MIL.XPND.CD`                                                   |
+| MJU       | WB                  | `wb:EN.ATM.CO2E.PC`, `wb:EG.FEC.RNEW.ZS`, `wb:AG.LND.FRST.ZS`                                 |
+| KU        | WB                  | `wb:CC.EST`, `wb:RL.EST`, `wb:VA.EST` (WGI, source=75)                                        |
+| JuU       | WB                  | `wb:VC.IHR.PSRC.P5`, `wb:CC.EST`                                                              |
+
+### 5. (High-level reviews only) D3 coalition-flow dataset
 
 Article types: `week-ahead`, `month-ahead`, `weekly-review`,
 `monthly-review`. In addition to `economic-data.json`, produce a
@@ -236,9 +304,12 @@ cat > "$ANALYSIS_DIR/economic-data.json" <<EOF
 EOF
 ```
 
-Cache raw MCP responses under
-`analysis/data/worldbank/$(date +%Y)/$indicator-$country.json` so
-subsequent article types in the same daily run reuse data (rate-limit
+Cache raw MCP responses alongside the legacy WB path:
+- IMF:        `analysis/data/imf/$(date +%Y)/$indicator-$country.json`
+- World Bank: `analysis/data/worldbank/$(date +%Y)/$indicator-$country.json`
+- SCB:        `analysis/data/scb/$(date +%Y)/$table.json`
+
+Reuse across article types in the same daily run (rate-limit
 mitigation).
 
 ---
@@ -259,6 +330,22 @@ Banned phrasings (all detected by `multi-dim quality score`):
 - "Touches on X policy…"
 - "Analysis of N documents…"
 - Pure definitions of indicators (e.g. "GDP is the total output of…").
+- Un-sourced forecasts — phrases like "Sweden will…" / "The economy is
+  expected to…" without a cited IMF WEO or Fiscal Monitor value from
+  `dataPoints` where `projection: true`. Use the explicit form "IMF
+  projects Sweden's debt/GDP at 32.4 % in 2027 (WEO Apr-2026,
+  GGXWDG_NGDP)" instead.
+
+### Projections — allowed usage
+
+From schema v2 onwards, `dataPoint.projection === true` values may be
+cited in commentary **only** for these article types:
+
+- `week-ahead`, `month-ahead` — explicit forward-looking narrative
+- `weekly-review`, `monthly-review` — retrospective + 6-12 month outlook
+
+Any projection citation MUST include the `projectionVintage` tag
+(e.g. `(WEO-2026-04)`) to make stale vintages visible to the audit.
 
 ---
 
@@ -274,7 +361,9 @@ commits violations:
 3. Missing / empty / malformed `economic-data.json`.
 4. `dataPoints` empty (without a valid `skip: true`).
 5. Commentary below `minCommentaryWords`.
-6. Missing footer attribution "Data by World Bank / SCB".
+6. Missing footer attribution "Data by IMF / World Bank / SCB"
+   (historical variants "Data by World Bank / SCB" still accepted
+   during the v1→v2 grace window).
 
 ### Contract effective date
 
@@ -313,3 +402,23 @@ mirror the change in the version history below.
   exemption to the validator so the daily audit stops re-reporting
   pre-contract articles for 7 days after every rollout. No change to
   the schema or enforcement for new articles.
+- **2.0 (2026-04-20)** — Add IMF as a first-class primary source via
+  the repository's pure-TypeScript `scripts/imf-client.ts` +
+  `scripts/imf-fetch.ts` CLI (Datamapper JSON for WEO, SDMX 3.0
+  passthrough for IFS / BOP / FM / GFS / DOTS). **No Python MCP /
+  `uvx`** — IMF access is under the same npm / SBOM governance as
+  `world-bank-client.ts` and `scb-client.ts`. Additive schema changes:
+  - `source.imf: string[]` (optional in v1, recommended in v2)
+  - `dataPoints[].provider` (`imf` | `worldBank` | `scb`)
+  - `dataPoints[].projection` (boolean)
+  - `dataPoints[].projectionVintage` (string; required when
+    `projection: true`)
+  Validator now accepts IMF in the footer attribution and treats any
+  non-empty `source.{imf,worldBank,scb}` as satisfying citation.
+  Projections are allowed in commentary for look-ahead article types
+  (`week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`)
+  only, and MUST carry the `projectionVintage` tag. Un-sourced
+  forecast phrasing added to the banned list. World Bank remains
+  authoritative for WGI governance, environment, and long-horizon
+  social/education residue; SCB unchanged. v1 artefacts remain valid
+  through the 2026-04-20 → 2026-05-31 grace window.

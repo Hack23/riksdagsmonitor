@@ -47,11 +47,9 @@ jobs:
         run: |
           echo "🔧 Setting up environment..."
 
-          # Install system dependencies for Web rendering
+          # System dependencies for Web rendering.
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            graphviz python3
-                    
+          sudo apt-get install -y --no-install-recommends graphviz
           echo "✅ environment setup complete"
  
       # JavaScript/TypeScript setup
@@ -81,7 +79,7 @@ jobs:
           
           # Install PxWeb MCP server for SCB (Statistics Sweden) data
           npm install -g @jarib/pxweb-mcp@2.0.0
-          
+
           echo "✅ Node.js MCP server packages installed globally"
 
       # Verify all MCP server installations
@@ -107,7 +105,7 @@ jobs:
           
           echo "Checking @jarib/pxweb-mcp..."
           which pxweb-mcp && echo "✅ pxweb-mcp (SCB) found" || echo "❌ pxweb-mcp NOT found"
-                    
+
           echo ""
           echo "=== HTTP MCP Servers ==="
           echo "📍 GitHub MCP Server: Using HTTP endpoint (https://api.githubcopilot.com/mcp/insiders)"
@@ -115,4 +113,6 @@ jobs:
           echo "=== Local stdio MCP Servers ==="
           echo "📍 World Bank MCP Server: worldbank-mcp (stdio)"
           echo "📍 SCB MCP Server: @jarib/pxweb-mcp --url https://api.scb.se/OV0104/v2beta (stdio)"
+          echo "=== TypeScript clients (invoked via tsx, no MCP) ==="
+          echo "📍 IMF: scripts/imf-client.ts + scripts/imf-fetch.ts — direct HTTPS to data.imf.org / www.imf.org"
           echo "✅ MCP server verification complete"

@@ -56,6 +56,9 @@ network:
     - riksdag-regering-ai.onrender.com
     - api.scb.se
     - api.worldbank.org
+    - api.imf.org
+    - data.imf.org
+    - www.imf.org
     - data.riksdagen.se
     - www.riksdagen.se
     - riksdagen.se
@@ -106,6 +109,9 @@ safe-outputs:
     - riksdag-regering-ai.onrender.com
     - api.scb.se
     - api.worldbank.org
+    - api.imf.org
+    - data.imf.org
+    - www.imf.org
     - data.riksdagen.se
     - www.riksdagen.se
     - riksdagen.se

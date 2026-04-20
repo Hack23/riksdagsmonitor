@@ -488,6 +488,7 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 - **Contents:** Complete dependency inventory with versions and licenses
 - **Attestation:** SBOM also cryptographically signed (`actions/attest-sbom@v3.0.0`)
 - **Purpose:** Vulnerability tracking, license compliance, supply chain transparency
+- **External MCP supplement:** `package.json` `x-external-mcp` field records MCP servers outside the npm graph (Python, Docker, HTTP). It is currently empty — all economic-data clients (World Bank, SCB, IMF) ship as npm TypeScript (`scripts/world-bank-client.ts`, `scripts/scb-client.ts`, `scripts/imf-client.ts`) and are fully covered by the standard SPDX SBOM; see `THREAT_MODEL.md` TB-6a for the IMF client's threat model.
 
 **Release Pipeline Security (3-job workflow):**
 
