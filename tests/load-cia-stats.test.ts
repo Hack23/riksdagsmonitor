@@ -199,8 +199,8 @@ describe('Load CIA Stats Script', () => {
   });
 
   describe('GitHub Actions Integration', () => {
-    it('should be referenced in update-cia-stats workflow', () => {
-      const workflowPath = path.join(process.cwd(), '.github', 'workflows', 'update-cia-stats.yml');
+    it('should be referenced in update-cia-csv-data workflow', () => {
+      const workflowPath = path.join(process.cwd(), '.github', 'workflows', 'update-cia-csv-data.yml');
       if (fs.existsSync(workflowPath)) {
         const content = fs.readFileSync(workflowPath, 'utf-8');
         expect(content).toContain('load-cia-stats');
@@ -211,7 +211,7 @@ describe('Load CIA Stats Script', () => {
     });
 
     it('should have scheduled workflow for daily updates', () => {
-      const workflowPath = path.join(process.cwd(), '.github', 'workflows', 'update-cia-stats.yml');
+      const workflowPath = path.join(process.cwd(), '.github', 'workflows', 'update-cia-csv-data.yml');
       if (fs.existsSync(workflowPath)) {
         const content = fs.readFileSync(workflowPath, 'utf-8');
         expect(content).toContain('cron');

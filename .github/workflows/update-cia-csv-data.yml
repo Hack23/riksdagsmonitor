@@ -1,15 +1,29 @@
 name: Update CIA CSV Data
 
-# Refreshes every tracked CSV under data/cia/ and cia-data/ from the upstream
-# CIA sample-data published at:
+# Refreshes every CSV already tracked under data/cia/** and cia-data/** from the
+# upstream Hack23/cia sample-data tree:
 #   https://github.com/Hack23/cia/tree/master/service.data.impl/sample-data
 #
-# Runs nightly and on manual dispatch. When upstream content changes, the
-# workflow opens a pull request with the updated CSVs (no force pushes to main).
+# Upstream layout is NOT flat — root-level files coexist with sub-folders
+# (distinct_values/, framework-validation/, risk-rule-tests/). The workflow
+# therefore builds a basename→upstream-path index via the GitHub Tree API
+# (recursive) before downloading, so every tracked local CSV is resolved to
+# its correct upstream path regardless of sub-folder.
+#
+# The workflow is intentionally update-only: it never pulls in CSV files that
+# are not already tracked in this repository.
+#
+# After the CSV refresh it runs the production-stats pipeline
+# (scripts/load-cia-stats.ts + scripts/update-stats-from-cia.ts) so the
+# homepage statistics (index*.html) stay in sync with
+# cia-data/production-stats.json derived from extraction_summary_report.csv.
+#
+# When either stage produces changes, a single pull request is opened.
 
 on:
   schedule:
-    # Daily at 02:30 UTC (~03:30 CET / 04:30 CEST), after upstream extraction
+    # Daily at 02:30 UTC (~03:30 CET / 04:30 CEST), safely after the upstream
+    # CIA extraction job which runs at ~02:57 UTC.
     - cron: '30 2 * * *'
   workflow_dispatch:
     inputs:
@@ -23,15 +37,15 @@ permissions:
   contents: read
 
 jobs:
-  refresh-csv:
-    name: Refresh CIA CSV sample data
+  refresh:
+    name: Refresh CIA CSV data and production stats
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
     env:
       UPSTREAM_REF: ${{ github.event.inputs.ref || 'master' }}
-      UPSTREAM_BASE: https://raw.githubusercontent.com/Hack23/cia
+      UPSTREAM_REPO: Hack23/cia
       UPSTREAM_PATH: service.data.impl/sample-data
 
     steps:
@@ -45,6 +59,8 @@ jobs:
             raw.githubusercontent.com:443
             objects.githubusercontent.com:443
             codeload.github.com:443
+            registry.npmjs.org:443
+            nodejs.org:443
 
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -52,16 +68,73 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 1
 
-      - name: Refresh CSV files from upstream
-        id: refresh
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version: '25'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build upstream basename → path index
+        id: index
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
 
-          BASE_URL="${UPSTREAM_BASE}/${UPSTREAM_REF}/${UPSTREAM_PATH}"
-          echo "📥 Source: ${BASE_URL}"
+          echo "📡 Fetching recursive tree for ${UPSTREAM_REPO}@${UPSTREAM_REF}"
+          tree_json="$(mktemp)"
+          curl --silent --show-error --fail --location --retry 3 --max-time 60 \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${UPSTREAM_REPO}/git/trees/${UPSTREAM_REF}?recursive=1" \
+            -o "$tree_json"
 
-          # Collect all CSVs we currently track under the two CIA data trees.
-          # Each local file is refreshed from upstream by basename match.
+          truncated="$(jq -r '.truncated' "$tree_json")"
+          if [ "$truncated" = "true" ]; then
+            echo "::error::GitHub tree response is truncated; cannot build a complete index"
+            exit 1
+          fi
+
+          # index.tsv: <basename>\t<upstream-relative-path> (duplicate basenames rejected)
+          index_file="${RUNNER_TEMP:-/tmp}/cia_sample_data_index.tsv"
+          jq -r --arg prefix "${UPSTREAM_PATH}/" '
+            .tree[]
+            | select(.type == "blob")
+            | select(.path | startswith($prefix))
+            | select(.path | endswith(".csv"))
+            | .path | ltrimstr($prefix)
+          ' "$tree_json" | awk -F/ '{ print $NF "\t" $0 }' | sort > "$index_file"
+
+          total_csvs="$(wc -l < "$index_file")"
+          dup_count="$(cut -f1 "$index_file" | sort | uniq -d | wc -l)"
+          if [ "$dup_count" -gt 0 ]; then
+            echo "::error::Upstream contains ${dup_count} duplicate CSV basenames; basename-based lookup is ambiguous:"
+            cut -f1 "$index_file" | sort | uniq -d
+            exit 1
+          fi
+
+          echo "📚 Upstream index: ${total_csvs} CSVs (no duplicate basenames)"
+          echo "index_file=$index_file" >> "$GITHUB_OUTPUT"
+          echo "total_upstream=$total_csvs" >> "$GITHUB_OUTPUT"
+          rm -f "$tree_json"
+
+      - name: Refresh tracked CSV files from upstream
+        id: refresh
+        env:
+          INDEX_FILE: ${{ steps.index.outputs.index_file }}
+        run: |
+          set -euo pipefail
+
+          BASE_URL="https://raw.githubusercontent.com/${UPSTREAM_REPO}/${UPSTREAM_REF}/${UPSTREAM_PATH}"
+          echo "📥 Source base URL: ${BASE_URL}"
+          echo "📚 Using index: ${INDEX_FILE}"
+
+          # Only touch CSVs that are ALREADY tracked in the repository under
+          # data/cia/** or cia-data/**. We never introduce new files.
           mapfile -t LOCAL_CSVS < <(
             find data/cia cia-data -type f -name '*.csv' 2>/dev/null | sort -u
           )
@@ -73,8 +146,8 @@ jobs:
           skipped=0
           failed=0
 
-          # Files that are local-only (no upstream equivalent) and must be preserved
-          # without overwriting from the upstream sample-data tree.
+          # Locally-curated files with no upstream equivalent; these must not be
+          # overwritten by the upstream sample-data tree.
           declare -a SKIP_PATTERNS=(
             # Local hand-curated mini-samples used by dashboard demos; their
             # schemas (name,ministry,influence / impact / riskScore / quarter)
@@ -99,9 +172,28 @@ jobs:
             return 1
           }
 
+          # Resolve a local basename to its upstream-relative path. Falls back
+          # to the "<stem>_sample.csv" alias, which the repo uses for a few
+          # locally-renamed canonical files (e.g. view_riksdagen_committee_decisions.csv).
+          resolve_upstream_path() {
+            local base="$1"
+            local hit
+            hit="$(awk -v b="$base" -F'\t' '$1==b {print $2; exit}' "$INDEX_FILE")"
+            if [ -n "$hit" ]; then
+              printf '%s' "$hit"
+              return 0
+            fi
+            local alias="${base%.csv}_sample.csv"
+            hit="$(awk -v b="$alias" -F'\t' '$1==b {print $2; exit}' "$INDEX_FILE")"
+            if [ -n "$hit" ]; then
+              printf '%s' "$hit"
+              return 0
+            fi
+            return 1
+          }
+
           tmpdir="$(mktemp -d)"
           trap 'rm -rf "$tmpdir"' EXIT
-
           : > "$tmpdir/updated.txt"
           : > "$tmpdir/missing.txt"
           : > "$tmpdir/failed.txt"
@@ -115,7 +207,14 @@ jobs:
               continue
             fi
 
-            url="${BASE_URL}/${base}"
+            if ! upstream_rel="$(resolve_upstream_path "$base")"; then
+              echo "  ❔ miss   $local_path (no upstream basename match)"
+              missing=$((missing + 1))
+              echo "$local_path" >> "$tmpdir/missing.txt"
+              continue
+            fi
+
+            url="${BASE_URL}/${upstream_rel}"
             tmpfile="$tmpdir/$base"
 
             http_code="$(curl --silent --show-error --location --retry 3 \
@@ -136,12 +235,12 @@ jobs:
                   mkdir -p "$(dirname "$local_path")"
                   mv "$tmpfile" "$local_path"
                   updated=$((updated + 1))
-                  echo "$local_path" >> "$tmpdir/updated.txt"
-                  echo "  ✅ update $local_path"
+                  echo "$local_path  <- ${upstream_rel}" >> "$tmpdir/updated.txt"
+                  echo "  ✅ update $local_path  <- ${upstream_rel}"
                 fi
                 ;;
               404)
-                echo "  ❔ miss   $local_path (no upstream $base)"
+                echo "  ❔ miss   $local_path (404 at ${upstream_rel})"
                 missing=$((missing + 1))
                 echo "$local_path" >> "$tmpdir/missing.txt"
                 ;;
@@ -170,12 +269,13 @@ jobs:
             echo "| Total tracked CSVs | $total |"
             echo "| ✅ Updated | $updated |"
             echo "| 🟰 Unchanged | $unchanged |"
-            echo "| ❔ Missing upstream (404) | $missing |"
+            echo "| ❔ Missing upstream | $missing |"
             echo "| ⏭ Skipped (local-only) | $skipped |"
             echo "| ❌ Failed downloads | $failed |"
             echo ""
             echo "- Upstream ref: \`${UPSTREAM_REF}\`"
-            echo "- Source: ${BASE_URL}"
+            echo "- Source base: ${BASE_URL}"
+            echo "- Upstream index size: ${{ steps.index.outputs.total_upstream }} CSVs"
 
             if [ "$updated" -gt 0 ]; then
               echo ""
@@ -202,19 +302,59 @@ jobs:
             exit 1
           fi
 
+      - name: Refresh CIA production statistics
+        id: stats
+        run: |
+          set -euo pipefail
+
+          echo "📊 Fetching CIA production statistics (extraction_summary_report.csv → production-stats.json)"
+          npx --no-install tsx scripts/load-cia-stats.ts
+
+          if [ ! -f "cia-data/production-stats.json" ]; then
+            echo "::error::cia-data/production-stats.json was not produced"
+            exit 1
+          fi
+
+          total_persons="$(jq -r '.counts.total_persons' cia-data/production-stats.json)"
+          total_votes="$(jq -r '.counts.total_votes' cia-data/production-stats.json)"
+          last_updated="$(jq -r '.metadata.last_updated' cia-data/production-stats.json)"
+
+          {
+            echo "total_persons=$total_persons"
+            echo "total_votes=$total_votes"
+            echo "last_updated=$last_updated"
+          } >> "$GITHUB_OUTPUT"
+
+          echo "🖊  Injecting statistics into index*.html (14 language variants)"
+          npx --no-install tsx scripts/update-stats-from-cia.ts
+
+          {
+            echo ""
+            echo "## 📈 Production Statistics Refresh"
+            echo ""
+            echo "| Metric | Value |"
+            echo "| --- | ---: |"
+            echo "| Total Persons | ${total_persons} |"
+            echo "| Total Votes | ${total_votes} |"
+            echo "| Last Extraction | ${last_updated} |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Detect git changes
         id: diff
         run: |
           set -e
-          if [ -n "$(git status --porcelain data/cia cia-data)" ]; then
+          paths='data/cia cia-data/production-stats.json cia-data/*.csv cia-data/*/*.csv index.html index_*.html'
+          # shellcheck disable=SC2086
+          if [ -n "$(git status --porcelain -- $paths)" ]; then
             echo "has_changes=true" >> "$GITHUB_OUTPUT"
             echo "📝 Changes detected"
+            git status --porcelain -- $paths | head -30
           else
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
             echo "✅ No changes detected"
           fi
 
-      - name: Create pull request with refreshed CSVs
+      - name: Create pull request with refreshed data
         if: steps.diff.outputs.has_changes == 'true'
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
@@ -222,41 +362,69 @@ jobs:
           add-paths: |
             data/cia/**
             cia-data/**
+            index.html
+            index_*.html
           commit-message: |
-            data(cia): refresh CSV sample data from Hack23/cia@${{ env.UPSTREAM_REF }}
+            data(cia): refresh CSV sample data + production stats from ${{ env.UPSTREAM_REPO }}@${{ env.UPSTREAM_REF }}
 
-            Updated ${{ steps.refresh.outputs.updated }} of
-            ${{ steps.refresh.outputs.total }} tracked CSVs.
+            - CSV files: updated ${{ steps.refresh.outputs.updated }} / ${{ steps.refresh.outputs.total }} tracked
+            - Production stats: ${{ steps.stats.outputs.total_persons }} persons, ${{ steps.stats.outputs.total_votes }} votes
+            - Last extraction: ${{ steps.stats.outputs.last_updated }}
           branch: data/cia-csv-refresh
           delete-branch: true
-          title: '📊 Refresh CIA CSV sample data (${{ steps.refresh.outputs.updated }} files)'
+          title: '📊 Refresh CIA data (${{ steps.refresh.outputs.updated }} CSVs + production stats)'
           body: |
-            ## 📊 Automated CIA CSV refresh
+            ## 📊 Automated CIA data refresh
 
-            Pulled the latest `service.data.impl/sample-data/*.csv` from
-            [`Hack23/cia@${{ env.UPSTREAM_REF }}`](https://github.com/Hack23/cia/tree/${{ env.UPSTREAM_REF }}/service.data.impl/sample-data).
+            Pulled the latest `service.data.impl/sample-data/` CSVs from
+            [`${{ env.UPSTREAM_REPO }}@${{ env.UPSTREAM_REF }}`](https://github.com/${{ env.UPSTREAM_REPO }}/tree/${{ env.UPSTREAM_REF }}/${{ env.UPSTREAM_PATH }})
+            and re-ran the production-statistics pipeline.
 
-            ### Summary
+            ### CSV refresh
             | Metric | Count |
             | --- | ---: |
             | Total tracked CSVs | ${{ steps.refresh.outputs.total }} |
             | ✅ Updated | ${{ steps.refresh.outputs.updated }} |
             | 🟰 Unchanged | ${{ steps.refresh.outputs.unchanged }} |
-            | ❔ Missing upstream (404) | ${{ steps.refresh.outputs.missing }} |
+            | ❔ Missing upstream | ${{ steps.refresh.outputs.missing }} |
             | ⏭ Skipped (local-only) | ${{ steps.refresh.outputs.skipped }} |
             | ❌ Failed downloads | ${{ steps.refresh.outputs.failed }} |
 
-            ### Source of truth
-            - Authoritative manifest: [`extraction_summary_report.csv`](https://github.com/Hack23/cia/blob/${{ env.UPSTREAM_REF }}/service.data.impl/sample-data/extraction_summary_report.csv)
-            - Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            ### Production statistics
+            - Total persons: **${{ steps.stats.outputs.total_persons }}**
+            - Total votes: **${{ steps.stats.outputs.total_votes }}**
+            - Last extraction: **${{ steps.stats.outputs.last_updated }}**
+
+            ### How resolution works
+            The workflow never introduces new files — it only refreshes CSVs
+            already tracked under `data/cia/**` and `cia-data/**`. Upstream paths
+            are resolved through a recursive `basename → upstream-path` index
+            built from the GitHub Tree API, so files living in
+            sub-folders (`distinct_values/`, `framework-validation/`,
+            `risk-rule-tests/`) are located correctly even though local paths
+            are organised differently. An `<stem>_sample.csv` alias is applied
+            for the handful of locally-renamed canonical files.
 
             ### Review checklist
-            - [ ] Diff looks reasonable (no schema regressions)
+            - [ ] CSV diffs look reasonable (no schema regressions)
+            - [ ] `production-stats.json` counts move monotonically or within reason
             - [ ] Dashboards still render with the refreshed data
-            - [ ] No unexpected file removals
+            - [ ] No unexpected file additions or removals
 
             > Generated by `.github/workflows/update-cia-csv-data.yml`.
           labels: |
             automated-pipeline
             data-update
             cia-intelligence
+
+# ISMS Compliance
+# - ISO 27001:2022 A.5.33 Protection of records — Git audit trail + PR review gate
+# - ISO 27001:2022 A.8.3  Information lifecycle management — nightly refresh + change detection
+# - ISO 27001:2022 A.8.10 Information deletion — auto-delete PR branch after merge
+# - ISO 27001:2022 A.8.19 Security in use — HTTPS-only downloads, SHA-pinned actions
+# - NIST CSF 2.0 PR.DS-5 Data integrity — byte-level cmp vs upstream
+# - NIST CSF 2.0 DE.CM-1 Network monitoring — step-security/harden-runner egress audit
+# - CIS Controls v8.1 3.1  Data inventory — explicit local-file discovery
+# - CIS Controls v8.1 3.14 Data integrity validation — diff + PR review before merge
+# - GDPR Article 6(1)(e) — public interest processing (democratic transparency)
+# - Swedish Offentlighetsprincipen — public access to government information

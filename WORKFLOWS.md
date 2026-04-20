@@ -303,7 +303,7 @@ graph TB
 
 ### CIA Data Pipeline Workflows
 
-15. **📊 Update CIA CSV Data** (`.github/workflows/update-cia-csv-data.yml`) — Nightly + manual refresh of every tracked `data/cia/**` and `cia-data/**` CSV from upstream `Hack23/cia` `service.data.impl/sample-data/`; opens a PR when changes are detected
+15. **📊 Update CIA CSV Data** (`.github/workflows/update-cia-csv-data.yml`) — Nightly + manual refresh of every already-tracked `data/cia/**` and `cia-data/**` CSV from upstream `Hack23/cia` `service.data.impl/sample-data/` (recursive basename→path index, handles sub-folders); also refreshes `cia-data/production-stats.json` and injects counts into `index*.html`; opens a single PR when anything changes
 
 ### Automation & Infrastructure Workflows
 
@@ -665,11 +665,14 @@ flowchart TD
         Manual[🖱 Manual dispatch<br/><i>optional ref input</i>] --> Refresh
     end
 
-    subgraph "📊 CSV Refresh"
-        Refresh --> Download[📥 Download every tracked CSV<br/>from Hack23/cia sample-data]
-        Download --> Diff{Any changes?}
+    subgraph "📊 CSV + Stats Refresh"
+        Refresh --> TreeIdx[📚 Build basename→path index<br/>GitHub Tree API, recursive]
+        TreeIdx --> Download[📥 Download only already-tracked<br/>data/cia/** + cia-data/** CSVs]
+        Download --> Stats[📈 load-cia-stats.ts →<br/>production-stats.json]
+        Stats --> Inject[🖊 update-stats-from-cia.ts →<br/>inject counts into 14× index*.html]
+        Inject --> Diff{Any changes?}
         Diff -->|No| NoOp[✅ No-op summary]
-        Diff -->|Yes| AutoPR[🔁 Open PR with refreshed CSVs]
+        Diff -->|Yes| AutoPR[🔁 Open single PR<br/>CSVs + stats + HTML]
     end
 
     classDef schedule fill:#ffecb3,stroke:#f57f17,stroke-width:1.5px,color:black
@@ -677,12 +680,17 @@ flowchart TD
     classDef decision fill:#f39c12,stroke:#e67e22,stroke-width:2px,color:black
 
     class Nightly,Manual schedule
-    class Refresh,Download,AutoPR,NoOp pipeline
+    class Refresh,TreeIdx,Download,Stats,Inject,AutoPR,NoOp pipeline
     class Diff decision
 ```
 
 **Workflows:**
-- **📊 Update CIA CSV Data** (`update-cia-csv-data.yml`): Nightly at 02:30 UTC and on manual dispatch — refreshes every tracked `data/cia/**` and `cia-data/**` CSV from the upstream `Hack23/cia` `service.data.impl/sample-data/` tree (using [`extraction_summary_report.csv`](https://github.com/Hack23/cia/blob/master/service.data.impl/sample-data/extraction_summary_report.csv) as the source-of-truth manifest) and opens an automated pull request whenever upstream content changes. Locally-curated sample files (`data/cia/ministry/sample_*.csv`, `cia-data/election/election_forecast.csv`, `cia-data/election/coalition_scenarios.csv`) are explicitly skipped.
+- **📊 Update CIA CSV Data** (`update-cia-csv-data.yml`): Nightly at 02:30 UTC and on manual dispatch.
+  - **Source of truth for *what* to refresh** = the set of CSVs already tracked in this repository under `data/cia/**` and `cia-data/**`. The workflow never introduces new files.
+  - **Source of truth for *where* each CSV lives upstream** = a `basename → upstream-path` index built once per run from the GitHub Tree API (`/repos/Hack23/cia/git/trees/<ref>?recursive=1`). This correctly resolves sub-folder CSVs (e.g. `distinct_values/vote_data_party.csv`, `framework-validation/**`, `risk-rule-tests/**`) — the upstream layout is **not** flat. A `<stem>_sample.csv` alias is tried as a fallback for the handful of locally-renamed canonical files (`view_riksdagen_committee_decisions.csv` → upstream `view_riksdagen_committee_decisions_sample.csv`, etc.).
+  - **Stats refresh** — after the CSV step, the workflow runs `npx tsx scripts/load-cia-stats.ts` to regenerate `cia-data/production-stats.json` from upstream [`extraction_summary_report.csv`](https://github.com/Hack23/cia/blob/master/service.data.impl/sample-data/extraction_summary_report.csv), then `npx tsx scripts/update-stats-from-cia.ts` to inject the refreshed counts into all 14 `index*.html` language variants.
+  - **PR output** — a single automated pull request is opened via `peter-evans/create-pull-request` whenever CSV content, `production-stats.json`, or `index*.html` change. Byte-level `cmp` ensures commits are produced only on real diffs.
+  - **Skipped paths** — locally-curated files with no upstream equivalent are never overwritten: `data/cia/ministry/sample_{influence,decision_impact,risk_levels,productivity}.csv` and `cia-data/election/{election_forecast,coalition_scenarios}.csv`.
 
 ---
 
@@ -908,7 +916,7 @@ flowchart LR
 
 | # | Workflow | File | Trigger | Purpose |
 | --- | --- | --- | --- | --- |
-| 3.1 | 📊 Update CIA CSV Data | `update-cia-csv-data.yml` | Nightly 02:30 UTC, manual dispatch | Refresh every tracked `data/cia/**` and `cia-data/**` CSV from upstream `Hack23/cia` sample-data; auto-PR on changes |
+| 3.1 | 📊 Update CIA CSV Data | `update-cia-csv-data.yml` | Nightly 02:30 UTC, manual dispatch | Refresh every already-tracked `data/cia/**` and `cia-data/**` CSV from upstream `Hack23/cia` sample-data (recursive basename→path index handles sub-folders), refresh `production-stats.json`, inject counts into all 14 `index*.html`; auto-PR on changes |
 
 ### 🚀 Release & Deployment (3 workflows)
 
@@ -1031,7 +1039,7 @@ flowchart TB
 | Control | Workflow(s) | Implementation |
 | --- | --- | --- |
 | 2.2 — Software inventory | release (SBOM) | Automated SBOM generation |
-| 3.1 — Data inventory | update-cia-csv-data | CIA CSV catalog (manifest from `extraction_summary_report.csv`) |
+| 3.1 — Data inventory | update-cia-csv-data | Explicit tracked-file discovery + recursive upstream index |
 | 3.14 — Data integrity | update-cia-csv-data | Byte-level diff vs upstream + PR review gate |
 | 16.2 — Software security | scorecards | Supply chain assessment |
 | 16.4 — Dependency security | dependency-review | Vulnerability scanning |
