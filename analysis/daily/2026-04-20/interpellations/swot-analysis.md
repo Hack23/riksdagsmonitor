@@ -26,7 +26,7 @@
 | **S** | HD10436 withdrawn — suggests space industry issue resolved bilaterally | frs 2025/26:436 status: "Återtagen" | [HIGH] 🟩 | +5/10 | 2026-04-16 |
 | **W** | EU Pay Transparency Directive implementation proposal WITHDRAWN by government | frs 2025/26:437 HD10437 — government withdrew proposal | [HIGH] 🟩 | -9/10 | 2026-04-17 |
 | **W** | Andreas Carlson (KD) is parliament's most-targeted minister — 6+ interpellations on infrastructure | HD10434, HD10428, HD10425, HD10424, HD10418, HD10417 | [HIGH] 🟩 | -8/10 | 2026-04-20 |
-| **W** | Nina Larsson (L) simultaneously targeted on two gender equality failures | frs 2025/26:437 + frs 2025/26:438 same day | [HIGH] �� | -7/10 | 2026-04-17 |
+| **W** | Nina Larsson (L) simultaneously targeted on two gender equality failures | frs 2025/26:437 + frs 2025/26:438 same day | [HIGH] 🟩 | -7/10 | 2026-04-17 |
 | **O** | Moderate responses can reframe interpellations as routine scrutiny | Standard parliamentary process | [LOW] 🟥 | +3/10 | 2026-04-20 |
 | **T** | Response to HD10435 (Bernadotte) requires diplomatic precision vs Israel | frs 2025/26:435 deadline April 30, 2026 | [HIGH] 🟩 | -8/10 | 2026-04-16 |
 

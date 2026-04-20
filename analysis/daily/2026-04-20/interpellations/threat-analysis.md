@@ -23,7 +23,7 @@ Sweden's parliament is entering an intensive pre-election accountability phase w
 
 **Severity**: 🔴 CRITICAL  
 **Probability**: 🟩 HIGH — Government's own withdrawal of proposal is documented evidence  
-**Timeline**: Response due May 5, 2026; EU transposition deadline passed/imminent
+**Timeline**: Response due May 5, 2026; EU transposition deadline June 7, 2026 (48 days away as of analysis date)
 
 ---
 
@@ -82,7 +82,7 @@ Sweden's parliament is entering an intensive pre-election accountability phase w
 
 | Threat | Confidence Level | Evidence Source |
 |--------|----------------|----------------|
-| Threat 1 (EU directive) | [HIGH] �� | Government's own withdrawal of proposal (documented in frs 2025/26:437) |
+| Threat 1 (EU directive) | [HIGH] 🟩 | Government's own withdrawal of proposal (documented in frs 2025/26:437) |
 | Threat 2 (women's shelters) | [HIGH] 🟩 | "Faktum" stated in frs 2025/26:438 full text |
 | Threat 3 (Bernadotte) | [HIGH] 🟩 | Full text frs 2025/26:435, response deadline documented |
 | Threat 4 (housing) | [HIGH] 🟩 | Länsstyrelsen Stockholm quantified data in frs 2025/26:434 |
@@ -205,7 +205,7 @@ Multiple Israel-related accountability moments. Impact multiplier: ~1.2x — kee
 
 ## Intelligence Gaps
 
-1. **Internal S communications**: Coordination coordination-structure is inferred, not observed
+1. **Internal S communications**: Coordination structure is inferred, not observed
 2. **Coalition backchannel discussions**: Government coalition internal meetings not observed
 3. **Minister response drafts**: Ministerial response content not available pre-debate
 4. **EU Commission informal communications**: Not directly observable

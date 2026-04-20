@@ -5,7 +5,7 @@
 
 ## Purpose
 
-This directory is the **canonical reference analysis** for the `news-interpellations` agentic workflow. It covers the batch of 15 interpellations filed in the Riksdag between April 7–17, 2026 (core focus: 10 interpellations filed April 14–17 under `dok_id` HD10429–HD10438). It is intended to demonstrate best-in-class political-intelligence analysis depth expected for all future interpellation runs.
+This directory is the **canonical reference analysis** for the `news-interpellations` agentic workflow. The broader April 7–17, 2026 filing period saw approximately **15 interpellations** move through the Riksdag (including interpellations already addressed in prior daily runs and some administratively-closed items); this analysis directory focuses on the **10 interpellations in scope for 2026-04-20**: the newly filed / newly significant set `HD10429–HD10438` (which includes one withdrawal, HD10436). All artifacts in this directory operate on this 10-document scope unless explicitly noted. It is intended to demonstrate best-in-class political-intelligence analysis depth expected for all future interpellation runs.
 
 ## Intelligence Headlines (BLUF)
 
