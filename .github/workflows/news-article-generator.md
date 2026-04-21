@@ -996,6 +996,19 @@ git ls-files --others --exclude-standard -- "news/*.html" 2>/dev/null | xargs -r
 git add news/metadata/ 2>/dev/null || true
 git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" || true
 git add analysis/weekly/ || true
+# 🛡️ Defensive filter: unstage any news/ files that do NOT match $ARTICLE_DATE. The diff-
+# based staging above includes every modified news/*.html regardless of date — if an earlier
+# script touched historical articles this would blow through the safe-outputs 100-file PR
+# limit (E003). See news-realtime-monitor run 24719881413 (received 602 files).
+git diff --cached --name-only > /tmp/staged_files.txt
+awk -v today="$ARTICLE_DATE" '$0 ~ "^news/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]" && $0 !~ today {print}' /tmp/staged_files.txt > /tmp/historical_news.txt
+if [ -s /tmp/historical_news.txt ]; then
+  HIST_COUNT=0
+  awk 'END{print NR}' /tmp/historical_news.txt > /tmp/hist_count.txt
+  read HIST_COUNT < /tmp/hist_count.txt 2>/dev/null || true
+  echo "⚠️ Unstaging $HIST_COUNT historical news/ files that do not match $ARTICLE_DATE"
+  xargs -a /tmp/historical_news.txt git reset HEAD -- 2>/dev/null || true
+fi
 # Enforce safe-outputs 100-file PR limit
 git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
 read STAGED_COUNT < /tmp/staged_count.txt
