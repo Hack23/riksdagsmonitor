@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-6.3-0A66C2?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-6.4-0A66C2?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--21-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 6.3 | **📅 Last Updated:** 2026-04-21 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 6.4 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -63,7 +63,7 @@ Every step is mandatory. Steps 3–7 run inside a single workflow folder at `ana
 | Order | File | What it gives you |
 |:-----:|------|-------------------|
 | 1 | This guide (`ai-driven-analysis-guide.md`) | The 7-step protocol and output matrix |
-| 2 | [`political-style-guide.md`](political-style-guide.md) | **Tradecraft anchors**: F3EAD cycle, PIR/EEI catalog, Admiralty Code, ICD 203 mapping, WEP + ODNI confidence, SATs, Collection Management Matrix |
+| 2 | [`political-style-guide.md`](political-style-guide.md) | **Tradecraft anchors**: F3EAD cycle, PIR/EEI catalog, Admiralty Code (+ **Source Diversity Rule**), ICD 203 mapping, WEP + ODNI confidence, SATs, Collection Management Matrix (incl. IMF) |
 | 3 | [`per-document-methodology.md`](per-document-methodology.md) | 📒 How to produce every `{dok_id}-analysis.md` and cluster file |
 | 4 | [`structural-metadata-methodology.md`](structural-metadata-methodology.md) | 📗 How to produce manifest + cross-reference map |
 | 5 | [`synthesis-methodology.md`](synthesis-methodology.md) | 📘 How to produce the 5 Family A synthesis outputs |
@@ -178,7 +178,7 @@ Score your own output against this rubric before commit:
 
 | Dimension | Weight | Minimum Pass | What to Check |
 |-----------|:------:|:------------:|---------------|
-| 📎 **Evidence** | 25% | 7.0 | Every claim cites `dok_id`, vote count, named actor, or primary URL; **Admiralty Code** annotation on every evidence row |
+| 📎 **Evidence** | 25% | 7.0 | Every claim cites `dok_id`, vote count, named actor, or primary URL; **Admiralty Code** annotation on every evidence row; **Source Diversity Rule** met (P0/P1: ≥3 sources; single-source flagged) |
 | 📐 **Depth** | 25% | 7.0 | Depth tier met; frameworks applied; forward indicators present; **WEP language** for probability claims |
 | 📋 **Structural** | 20% | 7.0 | Templates followed; Mermaid color-coded; metadata + document-control blocks; **F3EAD stage** declared |
 | 🎯 **Actionable** | 15% | 6.0 | Dated triggers, thresholds, explicit "what to watch next"; **PIR/EEI tags** on findings |
@@ -196,6 +196,7 @@ Read every file you produced in Steps 3–5. For each one, **improve every secti
 - Replace generic verbs with specific ones ("rose" → "rose from 34% to 42% in the April SIFO poll").
 - Promote every `[MEDIUM]` finding that now has stronger evidence to `[HIGH]`, and demote any overclaim.
 - **Verify every Admiralty annotation** — upgrade any `[C3]` that now has corroboration to `[B2]`.
+- **Check Source Diversity Rule** — confirm P0/P1 claims have ≥3 sources; flag any single-source claims with `[unconfirmed]`.
 - Add one more named actor (MP, minister, official) to every stakeholder and SWOT entry.
 - Add one more dok_id or vote-record citation to every evidence column that has < 2 citations.
 - **Tag every key finding to a PIR/EEI** from the catalog in `political-style-guide.md`.
@@ -573,7 +574,8 @@ Every security-relevant control in Family A maps to **ISO 27001:2022**, **NIST C
 
 **Document Control**
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`
-- **Version:** 6.3 — tradecraft anchors integration
+- **Version:** 6.4 — source diversity rule integration (political-style-guide.md v3.1)
+- **Key changes in v6.4:** Updated Step 1 reading list to reference **Source Diversity Rule** in political-style-guide.md v3.1 (multi-source corroboration by claim priority, conflict resolution, worked scenario); added Source Diversity check to Quality Gate Evidence dimension (P0/P1: ≥3 sources required); added source diversity verification to Pass-2 rewrite checklist; added IMF collection tools to referenced Collection Management Matrix.
 - **Key changes in v6.3:** Integrated F3EAD intelligence cycle stage labels into all 7 steps (Step 2=FIND/FIX, Step 3=FINISH, Step 4=EXPLOIT/ANALYZE, Step 5=ANALYZE, Step 7=DISSEMINATE); added SAT(s) Applied column to Family C+D file table; added Admiralty Code and WEP requirements to quality gate rubric; added ICD 203 compliance as hard pass/fail gate; updated Step 7 Pass-2 rewrite checklist with PIR/EEI tagging and Admiralty verification; reordered reading list to put `political-style-guide.md` (tradecraft anchors) at #2 after this guide.
 - **Key changes in v6.2:** Elevated Families C + D to always-produced core (no more trigger language); marked `methodology-reflection.md` as ⭐ VITAL run-audit gate with explicit quality-gate enforcement; added filename-variant mapping table (`historical-baseline`↔`historical-parallels`, `election-2026-implications`↔`election-2026-analysis`, `international-comparative`↔`comparative-international`); added depth-tier calibration table (L1/L2/L2+/L3) showing how files adapt without changing the output set; Output Matrix now marks all 6 workflow rows as "✅ All" for every family; Step 5 rewritten as "always produced — 12 files" with per-file behaviour on light-event vs P0-dense days; every downstream methodology cross-ref updated.
 - **Key changes in v6.1:** Added links to five new Family production methodologies (synthesis, structural-metadata, strategic-extensions, electoral-domain, per-document).
