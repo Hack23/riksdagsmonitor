@@ -5,7 +5,7 @@
 **Committee**: Finansutskottet (FiU)  
 **Date**: 2026-04-21  
 **Riksmöte**: 2025/26  
-**Significance Score**: 22/25 (TOP STORY)  
+**Significance Score**: 22/25 (TOP STORY — co-leads with HD01SfU22)  
 **Analyst Confidence**: 🟦VERY HIGH  
 **Analysis Timestamp**: 2026-04-21 14:45 UTC
 
@@ -87,15 +87,17 @@ The 4.1 billion SEK total cost in election year represents approximately 0.04% o
 
 **Interest rate context**: Sweden's Riksbank cut rates to ~2.5% in early 2026 after peak inflation subsided. The government can justify temporary stimulus given improved inflation conditions.
 
+**Economic data (World Bank verified)**: Swedish inflation peaked at 8.5% in 2023 (FP.CPI.TOTL.ZG) before falling to 2.8% in 2024 — household energy cost burden remains politically salient even as headline inflation normalized. GDP growth recovered to 0.82% in 2024 (from -0.20% in 2023), providing fiscal headroom for temporary stimulus. Total 4.1B SEK cost ≈ 0.04% of Swedish GDP (603.7B USD in 2024).
+
 ### Lens 5: Stakeholder Impact Dimension
 
 | Stakeholder | Impact | Assessment |
 |-------------|--------|------------|
-| Private car owners | +33 SEK/month savings (petrol) | 🟩 HIGH benefit |
+| Private car owners (5.7M) | +33 SEK/month savings (petrol) | 🟩 HIGH benefit |
 | Truck/diesel operators | +200-400 SEK/tank savings | 🟩 HIGH benefit |
 | LRF farmers | Fuel cost reduction for agriculture | 🟩 MEDIUM benefit |
-| Fossil fuel retailers | Volume increase expected | 🟩 MEDIUM benefit |
-| Climate NGOs | Carbon price dilution | 🔴 HIGH concern |
+| Fossil fuel retailers (Circle K, Preem, ST1) | Volume increase expected | 🟩 MEDIUM benefit |
+| Climate NGOs (Naturskyddsföreningen, WWF) | Carbon price dilution | 🔴 HIGH concern |
 | S/MP/V opposition | Electoral disadvantage | 🔴 HIGH concern |
 | State budget | -4.1B SEK 2026 | 🟧 MEDIUM risk |
 | EV drivers (SkU23 context) | Fuel competitors benefited not them | 🟧 MEDIUM concern |
@@ -124,6 +126,8 @@ The 4.1 billion SEK total cost in election year represents approximately 0.04% o
 | May 1 - Sept 30 2026 period | FiU48 report | 🟦VERY HIGH |
 | EU energy tax directive minimum | Context analysis | 🟩HIGH |
 | 5.7M licensed drivers in Sweden | Transportstyrelsen statistics | 🟩HIGH |
+| Swedish inflation 8.5% (2023), 2.8% (2024) | World Bank FP.CPI.TOTL.ZG | 🟦VERY HIGH |
+| GDP growth 0.82% (2024) | World Bank NY.GDP.MKTP.KD.ZG | 🟦VERY HIGH |
 
 ---
 

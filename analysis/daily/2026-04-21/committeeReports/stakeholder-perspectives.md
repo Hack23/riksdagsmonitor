@@ -1,10 +1,11 @@
 # Stakeholder Perspectives — Committee Reports 2026-04-21
 
-**Date**: 2026-04-21 | **Framework**: 8-Group Political Intelligence Model | **Analyst**: news-committee-reports
+**Date**: 2026-04-21 | **Framework**: 8-Group Political Intelligence Model | **Analyst**: news-committee-reports  
+**Updated**: 14:52 UTC — HD01FiU48 (extra ändringsbudget) added as primary document for all 8 groups
 
 ## Overview
 
-Seven committee reports analyzed across 8 mandatory stakeholder groups. Primary focus on HD01SfU22 (migration enforcement) as highest-significance document, with secondary perspectives on TU21 (e-ID) and MJU21 (agriculture climate).
+Fourteen committee reports analyzed across 8 mandatory stakeholder groups. Primary focus on **HD01FiU48** (fuel tax cut + energy price relief, 4.1B SEK) as the most broadly impactful document, **HD01SfU22** (migration enforcement) for political significance, with secondary perspectives on KU32/KU33 (constitutional amendments), TU21 (e-ID), and MJU21 (agriculture climate).
 
 ---
 
@@ -91,3 +92,56 @@ Seven committee reports analyzed across 8 mandatory stakeholder groups. Primary 
 **TU21**: Tech media (Breakit, Computer Sweden) positive. General press frames as digital equity story.
 
 **MJU21**: Agricultural publications (Land, ATL) monitoring; environmental media (Miljöaktuellt) supportive of accountability.
+
+---
+
+## HD01FiU48 — Extra Ändringsbudget: Supplementary Analysis Across 8 Groups
+
+### 1. Citizens (FiU48)
+All 5.7 million Swedish licensed drivers benefit from the 82 öre/liter petrol reduction. Rural and suburban households — disproportionately car-dependent — gain the most. Elderly households and those with gas heating benefit from el- och gasprisstöd. Transit users and urban apartment renters see minimal direct benefit. **Net verdict**: High positive reception across a broad voter base, though climate-conscious citizens (primarily MP/V voters) may view the measure negatively.
+
+### 2. Government Coalition (FiU48)
+**M (Moderaterna)**: Embraces fiscal conservatism caveat — supports as temporary, emergency measure; highlights EU compliance angle (directive minimum)
+**SD (Sverigedemokraterna)**: Champions as "government that delivers for ordinary Swedes" — rural drivers are core SD demographic  
+**KD (Kristdemokraterna)**: Frames as family protection — heating costs and commuter costs both benefit family households  
+**L (Liberalerna)**: Most cautious — monitors carbon pricing implications; may emphasize "temporary" framing  
+**Coalition unity**: VERY HIGH on FiU48 — one of strongest cross-party coalition moments since 2022 energy crisis
+
+### 3. Opposition Bloc (FiU48)
+**S (Socialdemokraterna)**: Split — working-class drivers benefit, but S climate credibility threatened by supporting fossil fuel price cuts. Expected: accept without enthusiasm, criticize "election-year populism"  
+**V (Vänsterpartiet)**: Will oppose — frames as fossil fuel subsidy; demands that savings be redirected to public transport  
+**MP (Miljöpartiet)**: Will strongly oppose — EU minimum fossil fuel tax is antithema to climate policy  
+**C (Centerpartiet)**: Will welcome privately (rural voter base heavily car-dependent) but may maintain public silence on climate grounds  
+**Opposition fragmentation**: FiU48 splits the opposition, with V/MP opposing and C likely neutral/positive
+
+### 4. Business/Industry (FiU48)
+**Transport sector (haulage, logistics)**: Significant direct savings on diesel — 319 SEK/m³ cut reduces operating costs for every Swedish haulage company. Estimates: 1.5-2% reduction in per-km fuel costs for heavy goods vehicles  
+**Agriculture (LRF)**: Combined benefit from FiU48 (fuel costs) and SkU23 (EV charging) — agriculture uses both diesel machinery and increasingly electric alternatives  
+**Retail fuel (Circle K, Preem, ST1, OKQ8)**: Volume increase expected as price elasticity triggers additional fill-up frequency  
+**EV sector**: Paradoxically disadvantaged — ICE vehicles made relatively more competitive vs. electric  
+**Energy providers**: El- och gasprisstöd creates one-time balance sheet item; minimal operational impact
+
+### 5. Civil Society (FiU48)
+**Naturskyddsföreningen, WWF, Greenpeace**: Will run "fossil fuel subsidy" campaign framing; pressure government on climate targets  
+**Konsumentverket**: Monitors whether petrol stations pass through full savings (price transparency obligation)  
+**Consumer organizations**: Support — cost-of-living relief visible and immediate  
+**Disability organizations**: Energy support benefits households relying on electric equipment (mobility aids, medical devices)
+
+### 6. International/EU (FiU48)
+**European Commission**: Will note Sweden temporarily reducing fossil fuel taxes toward directive minimum — no formal infringement since Sweden remains at or above ETD floor. However, Commission Energy Transition DG may express concern about signal  
+**Nordic partners (DK, NO, FI)**: Norway exempt (non-EU). Denmark and Finland have higher fuel taxes — no competitive harmonization pressure  
+**IPCC/Climate bodies**: Sweden reducing its carbon price signal contradicts Paris Agreement ambition language  
+**NATO partners**: No direct implications for defense posture
+
+### 7. Judiciary/Constitutional (FiU48)
+**Riksdagen (legislative review)**: FiU mechanism legally uncontroversial; Finance Committee finds "special reasons" requirement met  
+**Swedish courts**: No constitutional challenge expected — extraordinary budget is standard legislative tool  
+**Skattemyndigheten (Tax Authority)**: Administrative implementation straightforward — existing systems handle tax rate changes  
+**EU Court of Justice**: Compliance with Energy Taxation Directive minimum levels — no violation
+
+### 8. Media/Public Opinion (FiU48)
+**Aftonbladet, Expressen**: Will run prominent "How much you save" price comparison graphics — positive coverage for government  
+**Dagens Nyheter, Svenska Dagbladet**: "Election-year populism" analytical angle; expert quotes on climate consequences  
+**SVT/SR**: Balanced — consumer benefit story + climate policy concern  
+**Miljöaktuellt, ETC**: Strong critical coverage on carbon pricing regression  
+**International media (FT, Politico Europe)**: "Sweden cuts fuel taxes before election" story fits European right-populism narrative
