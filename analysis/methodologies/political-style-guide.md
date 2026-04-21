@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-3.1-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 3.1 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -288,11 +288,155 @@ Every evidence column in every template requires Admiralty annotation:
 | Coalition may fracture | Unnamed Tidö source (DN) | **[D4]** | 🟥 LOW |
 ```
 
-### Source Diversity Requirement
+### Source Diversity Rule (Formalized)
 
-- **P0/P1 claims** require ≥3 primary sources (MCP-sourced Riksdag/Regeringen documents `[A–B]`) + ≥1 secondary source (SCB/World Bank/OSINT)
-- **Single-source claims** must be labeled `[unconfirmed]` with Admiralty code `[C3]` or lower
-- **Anonymous sources** (`[E5]`) are permitted only with explicit `[unconfirmed — anonymous source]` tag and LOW confidence ceiling
+Intelligence-grade analysis requires multi-source corroboration to mitigate single-point-of-failure risk and reduce confirmation bias. Apply this rule systematically:
+
+#### Primary Rule: Multi-Source Corroboration by Claim Priority
+
+| Claim Priority | Minimum Sources | Source Mix | Admiralty Floor | Swedish Political Example |
+|:-------------:|:---------------:|------------|:---------------:|---------------------------|
+| **P0 (CRITICAL)** | ≥4 | ≥3 primary `[A–B]` + ≥1 secondary `[A–B]` | `[A1]` or `[B2]` | **Grundlag amendment vote:** "RF Chapter 1 §1 amendment passed 233–116 (votering GZ123RF01 `[A1]`), confirmed in KU betänkande 2026/27:KU5 `[A1]`, Moderate party floor leader anförande `[B2]`, and constitutional-law expert Iain Cameron (Uppsala University) analysis `[B2]`)" |
+| **P1 (HIGH)** | ≥3 | ≥2 primary `[A–B]` + ≥1 secondary `[B–C]` | `[B2]` | **Coalition fracture risk:** "L party signals 4% threshold risk per SIFO March 2026 poll at 4.1% ±0.8% `[B2]`, party congress emergency resolution on SD cooperation `[B2]`, and SvD editorial noting internal divisions `[C3]`" |
+| **P2 (MEDIUM)** | ≥2 | ≥1 primary `[A–C]` + ≥1 secondary or 2 primary | `[C3]` | **Budget passage likelihood:** "FiU48 defence amendment likely to pass per FiU minutes 2026-04-15 showing 7–5 committee vote `[B2]` and unnamed coalition whip estimate to DN of 175+ floor votes `[D4]` `[unconfirmed]`" |
+| **P3 (LOW)** | ≥1 | Single source permitted if flagged | `[C3]` or lower | **Speculative coalition dynamics:** "Unnamed Tidö negotiator reports L leadership divided on family reunification §3 (Expressen 2026-04-19 `[E5]` `[unconfirmed — anonymous source]`)" |
+
+#### Single-Source Policy
+
+**Prohibited:**
+- ❌ P0/P1 claims with only one source
+- ❌ Constitutional assessments (PIR-2) from single expert opinion
+- ❌ Election forecasts from single poll without historical context
+
+**Permitted (with explicit labeling):**
+- ✅ **Breaking news** — single official source `[A1]` with `[developing — single source]` tag; must be followed by multi-source confirmation within 24h
+- ✅ **Exclusive documents** — single dok_id `[A1]` if no other source has covered it; label `[exclusive — single document]`
+- ✅ **Expert opinion** — single named expert `[C3]` if framed as "one perspective" not "consensus view"
+- ✅ **Anonymous tips** — single source `[E5]` labeled `[unconfirmed — anonymous source]` with LOW confidence ceiling
+
+#### Corroboration Standards: How to Validate Across Sources
+
+**Independent corroboration** requires sources that:
+1. **Different collection paths** — not derived from same upstream source (e.g., TT wire story republished by DN is ONE source, not two)
+2. **Different methods** — MCP document retrieval + human interview counts as two; two MCP queries of same API endpoint = one
+3. **Temporal spread** — evidence from ≥2 different dates strengthens corroboration (avoids snapshot bias)
+
+**Corroboration checklist:**
+```markdown
+Evidence E1: FiU48 passed committee 7–5 [A1] (2026-04-18)
+Evidence E2: SD floor support confirmed [B2] (2026-04-19) ← Different date, different actor
+Evidence E3: Coalition whip expects 175+ votes [C3] (2026-04-20) ← Different source type
+Status: ✅ CORROBORATED (3 independent sources, 3-day spread)
+```
+
+#### Conflict Resolution: When Sources Contradict
+
+**When sources provide conflicting evidence:**
+
+1. **Assess reliability differential** — If `[A1]` contradicts `[D4]`, trust `[A1]` unless extraordinary circumstances
+2. **Check temporal sequence** — Later source may supersede earlier (e.g., official vote count `[A1]` trumps preliminary coalition estimate `[C3]`)
+3. **Explicit acknowledgment** — Document the conflict in analysis:
+   > "FiU48 vote margin remains uncertain: coalition whip estimates 175 `[C3]`, but L reservationslista suggests 3 MPs may abstain `[A1]`, which would reduce to 173. We assess the official reservationslista `[A1]` as more reliable than whip estimate."
+4. **Confidence downgrade** — Conflicting evidence triggers MEDIUM→LOW confidence adjustment until resolved
+
+**Conflict resolution ladder:**
+```
+1. Official records (A1) > spokesperson statements (B2) > unnamed sources (D4-E5)
+2. More recent > older (if material change occurred)
+3. Primary actor > third-party observer
+4. Document trail > oral statement
+```
+
+#### Source Attribution Hierarchy: Precedence When Multiple Sources Available
+
+When multiple sources support the same claim, **cite in this order** (highest reliability first):
+
+| Precedence | Source Type | Admiralty | Example Citation |
+|:----------:|-------------|:---------:|------------------|
+| 1 | Official Riksdag document | `[A1]` | Prop. 2025/26:1, p. 45 |
+| 2 | Vote record | `[A1]` | Votering HD01234 |
+| 3 | Committee minutes | `[B2]` | FiU minutes 2026-04-15 |
+| 4 | MP floor statement | `[B2]` | Magdalena Andersson (S) anförande 2026-04-20 |
+| 5 | Official statistics | `[A1]` | SCB partisympati Q1 2026 |
+| 6 | Quality pollster | `[B2]` | SIFO March 2026 |
+| 7 | Party press release | `[C3]` | SD press release 2026-04-18 |
+| 8 | News wire | `[C2]` | TT Nyhetsbyrån |
+| 9 | Newspaper analysis | `[C3]` | DN editorial |
+| 10 | Social media | `[D4]` | MP official account |
+| 11 | Anonymous source | `[E5]` | Unnamed coalition insider |
+
+**Citation format:** Always lead with highest-reliability source, add secondary sources in parentheses:
+> "FiU48 passed 176–173 (votering HD01FiU48 `[A1]`; also reported by TT `[C2]` and confirmed in SD floor statement `[B2]`)."
+
+#### Anonymous Source Policy
+
+Anonymous sources `[E5]` are permitted under strict conditions:
+
+**When permitted:**
+- ✅ Corroboration of public-record claim (anonymous source adds context, not primary evidence)
+- ✅ Whistleblower reporting malfeasance (public interest outweighs attribution)
+- ✅ Coalition negotiation dynamics (no official record available)
+
+**Mandatory labeling:**
+```markdown
+| Evidence | Source | Admiralty | Confidence |
+|----------|--------|:---------:|:----------:|
+| L leadership divided on §3 | Unnamed Tidö source (Expressen 2026-04-19) | **[E5]** | 🟥 LOW `[unconfirmed — anonymous source]` |
+```
+
+**Prohibited:**
+- ❌ Anonymous sources as sole evidence for P0/P1 claims
+- ❌ Multiple anonymous sources without any public corroboration (circular sourcing risk)
+- ❌ Anonymous sources for factual claims that should have document trail (vote counts, dok_id citations)
+
+#### Worked Scenario: Source Diversity in Practice (Coalition Stability Assessment)
+
+**Intelligence Question:** Will the Tidö coalition survive the FiU48 defence-budget vote on 2026-04-22?
+
+**Collection Phase (F3EAD: FIND/FIX):**
+
+| # | Evidence | Source Type | Admiralty | Collection Date | PIR/EEI |
+|:-:|----------|-------------|:---------:|:---------------:|:-------:|
+| E1 | FiU48 committee vote 7–5 (M+KD+L for, S+V+MP+C against) | Committee minutes | `[A1]` | 2026-04-18 | PIR-1/EEI-1.1 |
+| E2 | SD floor-support statement by Richard Jomshof (SD riksdagsledamot) | Anförande HD04567 | `[B2]` | 2026-04-19 | PIR-1/EEI-1.2 |
+| E3 | L reservation filed on §3 (family reunification clause) | FiU48 reservationslista | `[A1]` | 2026-04-18 | PIR-1/EEI-1.3 |
+| E4 | Coalition whip confirms 175+ votes expected | DN interview with M whip | `[C3]` | 2026-04-20 | PIR-1/EEI-1.1 |
+| E5 | L leadership divided, 3 MPs "wavering" on §3 | Unnamed Tidö source to Expressen | `[E5]` | 2026-04-19 | PIR-1/EEI-1.3 |
+
+**Source Diversity Analysis:**
+
+**Claim 1 (P1): "Coalition will pass FiU48 with ≥175 votes"**
+- Source count: 4 (E1, E2, E3, E4)
+- Admiralty spread: `[A1]` × 2, `[B2]` × 1, `[C3]` × 1
+- Temporal spread: 3 days (2026-04-18 to 2026-04-20)
+- Independent paths: Committee record, SD statement, L reservation, whip estimate
+- **Assessment:** ✅ CORROBORATED — meets P1 standard (≥3 sources, ≥2 primary)
+- **Confidence:** 🟩 HIGH
+
+**Claim 2 (P2): "L MPs may abstain on §3, narrowing margin to 173"**
+- Source count: 2 (E3 `[A1]` official reservation, E5 `[E5]` anonymous)
+- Reliability conflict: `[A1]` (official reservation exists) vs. `[E5]` (claims 3 MPs wavering)
+- Corroboration: E3 confirms L discomfort with §3, but does not confirm abstention
+- **Assessment:** ⚠️ PARTIALLY CORROBORATED — E3 supports division, E5 adds specificity
+- **Confidence:** 🟧 MEDIUM (upgraded from LOW due to E3 corroboration)
+- **Labeling:** "L reservation `[A1]` signals §3 discomfort; unnamed source `[E5]` `[unconfirmed]` reports 3 MPs may abstain"
+
+**Conflict Resolution Applied:**
+E4 (whip: 175+ votes) vs. E5 (3 MPs wavering → 173 votes)
+- Reliability: `[C3]` (named whip) vs. `[E5]` (anonymous)
+- Temporal: E4 is more recent (2026-04-20) than E5 (2026-04-19)
+- **Resolution:** Weight E4 higher but acknowledge E5 as uncertainty factor
+- **Final Assessment:** "Coalition **likely [MODERATE confidence]** to pass with 175–176 votes; abstention risk from L §3 reservationslista `[A1]` creates non-negligible scenario of 173-vote outcome"
+
+**Source Attribution Hierarchy Applied:**
+Primary citation: E1 `[A1]` (official committee record)
+Supporting: E2 `[B2]`, E3 `[A1]`, E4 `[C3]`
+Flagged: E5 `[E5]` with explicit `[unconfirmed — anonymous source]` tag
+
+**Key Judgment (ICD 203 Standard #1 — Source Quality Described):**
+> "FiU48 committee passage 7–5 (betänkande FiU48 `[A1]`) and SD floor support confirmation (anförande HD04567 `[B2]`) provide **HIGH confidence** that the coalition will secure ≥175 votes on 2026-04-22. However, L's formal reservation on §3 `[A1]` and unconfirmed reports of internal division `[E5]` introduce a ~25% probability of last-minute abstentions reducing the margin to 173. We assess passage as **very likely [HIGH confidence]**, with narrow-margin risk at **unlikely [MODERATE confidence]**."
+
+---
 
 ---
 
@@ -431,6 +575,8 @@ This matrix maps MCP tools to evidence types and template usage. Use this to pla
 | **scb** | `search_tables` | Statistical metadata | Evidence context | A1 |
 | **world-bank** | `get-economic-data` | WGI, economic indicators | `comparative-international.md` | A1 |
 | **world-bank** | `get-social-data` | Social indicators | `implementation-feasibility.md` | A1 |
+| **imf** (via `bash` + `tsx scripts/imf-fetch.ts`) | WEO projections (T+5) | Fiscal/macro forecasts | `comparative-international.md`, `implementation-feasibility.md` | A1 |
+| **imf** (via `bash` + `tsx scripts/imf-fetch.ts`) | SDMX IFS/BOP/GFS/DOTS | Balance of payments, fiscal indicators | `risk-assessment.md`, `implementation-feasibility.md` | A1 |
 
 ### Collection Plan Template
 
@@ -1432,11 +1578,12 @@ Electoral claims about 2026 require **MEDIUM confidence minimum** (3+ evidence s
 
 | Field | Value |
 |---|---|
-| Version | 3.0.0 |
+| Version | 3.1.0 |
 | Status | Active |
 | Owner | Hack23 AB |
 | Review Cycle | Quarterly |
 | Next Review | 2026-09-01 |
+| Key Changes v3.1 | **Source Diversity Rule formalized** (multi-source corroboration by claim priority, single-source policy, corroboration standards, conflict resolution ladder, source attribution hierarchy, anonymous source policy); **IMF integration added to Collection Management Matrix** (WEO T+5 projections, SDMX IFS/BOP/GFS/DOTS passthrough) per Economic Data Contract v2.0 |
 | Key Changes v3.0 | **Tradecraft Anchors**: F3EAD intelligence cycle with Mermaid diagram; PIR/EEI catalog (7 standing PIRs with EEIs); Admiralty Source Reliability Code (A–F × 1–6) with Riksdag-specific mapping; ICD 203 analytic tradecraft standards mapping with pass/fail gates; Words of Estimative Probability (WEP) + ODNI confidence overlay harmonized with existing 5-level scale; Structured Analytic Techniques (SATs) catalog mapped to templates; Collection Management Matrix mapping MCP tools to evidence types |
 | Key Changes v2.2 | Article Title & SEO Standards (v5.0) — AI-only title generation, banned code-generated patterns; Election 2026 Framing Requirements (electoral context in writing, vocabulary standards, confidence requirements) |
 | Key Changes v2.1 | Bad→Good Rewrite Examples (8 worked examples covering all prohibited pattern categories) |
