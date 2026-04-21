@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "articleType": "realtime-monitor",
+  "date": "2026-04-21",
+  "policyDomains": ["fiscal policy", "energy policy", "consumer welfare"],
+  "dataPoints": [
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2024", "value": 0.82 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2023", "value": -0.204 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "date": "2024", "value": 2.836 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "date": "2023", "value": 8.549 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "date": "2025", "value": 8.694 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "date": "2024", "value": 8.4 },
+    { "countryCode": "DNK", "countryName": "Denmark", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2024", "value": 3.478 }
+  ],
+  "commentary": "Sweden's economy entered a near-recession in 2023 (-0.2% GDP growth) before a weak recovery to 0.82% in 2024 — far below Denmark's 3.5% growth. Inflation collapsed from its 2022-2023 peak of 8.5% to 2.84% in 2024, but unemployment rose to 8.7% by 2025, creating the economic pressure context for FiU48's household relief measures. With energy prices still elevated relative to 2020 baselines and real wages squeezed by two years of high inflation, the Finance Committee's extra budget providing fuel tax cuts and electricity/gas price support addresses genuine household economic stress — though critics argue the fuel tax reduction may undermine Sweden's climate targets precisely when they require the strongest price signals for green transition.",
+  "source": {
+    "worldBank": ["NY.GDP.MKTP.KD.ZG", "FP.CPI.TOTL.ZG", "SL.UEM.TOTL.ZS"],
+    "scb": []
+  }
+}

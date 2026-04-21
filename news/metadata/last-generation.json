@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-21T07:18:12.767Z",
+  "timestamp": "2026-04-21T14:13:35.126Z",
   "types": [
-    "motions"
+    "breaking"
   ],
   "languagesGenerated": [
     "en",
@@ -12,13 +12,10 @@
     "sv"
   ],
   "batchSize": "all",
-  "skipExisting": true,
-  "generated": 2,
+  "skipExisting": false,
+  "generated": 0,
   "errors": 0,
-  "articles": [
-    "2026-04-21-opposition-motions-en.html",
-    "2026-04-21-opposition-motions-sv.html"
-  ],
+  "articles": [],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }
