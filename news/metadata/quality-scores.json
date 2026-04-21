@@ -1,8 +1,8 @@
 {
-  "2026-04-21-interpellation-debates-en.html": {
-    "filename": "2026-04-21-interpellation-debates-en.html",
+  "2026-04-21-government-propositions-en.html": {
+    "filename": "2026-04-21-government-propositions-en.html",
     "lang": "en",
-    "articleType": "interpellations",
+    "articleType": "propositions",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -19,12 +19,12 @@
       },
       "issueCount": 3
     },
-    "timestamp": "2026-04-21T17:03:29.152Z"
+    "timestamp": "2026-04-21T20:18:21.464Z"
   },
-  "2026-04-21-interpellation-debates-sv.html": {
-    "filename": "2026-04-21-interpellation-debates-sv.html",
+  "2026-04-21-government-propositions-sv.html": {
+    "filename": "2026-04-21-government-propositions-sv.html",
     "lang": "sv",
-    "articleType": "interpellations",
+    "articleType": "propositions",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -41,6 +41,6 @@
       },
       "issueCount": 2
     },
-    "timestamp": "2026-04-21T17:03:29.161Z"
+    "timestamp": "2026-04-21T20:18:21.470Z"
   }
 }
