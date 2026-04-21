@@ -25,6 +25,20 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **ANALYZE** — challenge prevailing view through structured contrarian analysis |
+| **PIRs Served** | Serves same PIRs as target assessment; applies adversarial rigor to prevent groupthink |
+| **Admiralty Floor** | **[B2]** for alternative-hypothesis evidence; challenge logic even if evidence is same as main assessment |
+| **WEP + ODNI** | Alternative hypotheses state probability vs. main hypothesis; use **WEP** comparison ("Main: likely 70%; Alternative A: unlikely 25%") |
+| **Source Diversity Floor** | P1 (alternative hypotheses): ≥2 independent evidence sources per hypothesis; re-interpret existing evidence from different angle |
+| **SAT(s) Applied** | **ACH (Analysis of Competing Hypotheses)**, Devil's Advocacy, Red Team Analysis, Key Assumptions Check |
+| **ICD 203 Standards** | 3 (judgments vs assumptions), 4 (alternative analysis — PRIMARY), 7 (explain consistency / change) |
+
+---
+
 ## 📋 Challenge Context
 
 | Field | Value |

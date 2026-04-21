@@ -25,6 +25,20 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **ANALYZE (meta-level)** — quality assurance and process improvement |
+| **PIRs Served** | No direct PIR; ensures all PIR-serving outputs meet tradecraft standards |
+| **Admiralty Floor** | N/A (self-audit references same sources as assessed files) |
+| **WEP + ODNI** | Confidence distribution audit uses existing scale; no new probability claims |
+| **Source Diversity Floor** | **AUDIT TARGET** — this file checks that all other files met Source Diversity Rule (P0: ≥4, P1: ≥3, P2: ≥2); reports violations |
+| **SAT(s) Applied** | Key Assumptions Check (audit own assumptions), Quality of Information Check (source audit) |
+| **ICD 203 Standards** | **ALL 9** (this file audits ICD 203 compliance across the run) |
+
+---
+
 ## 📋 Reflection Context
 
 | Field | Value |
