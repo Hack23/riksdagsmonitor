@@ -55,7 +55,7 @@
     "source": {
       "type": "object",
       "additionalProperties": false,
-      "description": "Attribution sources the workflow actually queried. For schema v1 back-compat, `worldBank` and `scb` are always present (may be empty). For schema v2.0+, `imf` is also accepted. At least one of the three arrays MUST be non-empty unless `skip: true`.",
+      "description": "Attribution sources the workflow actually queried. For schema v1 back-compat, `worldBank` and `scb` are always present (may be empty). For schema v2.0+, `imf`, `other`, and `documents` are also accepted. At least one of the three indicator arrays MUST be non-empty unless `skip: true`.",
       "required": ["worldBank", "scb"],
       "properties": {
         "worldBank": {
@@ -72,6 +72,42 @@
           "type": "array",
           "items": { "type": "string" },
           "description": "IMF database/indicator citation strings (e.g. 'WEO:NGDP_RPCH', 'FM:GGXWDG_NGDP', 'IFS:FIMM_PA'). Populated by the repository's pure-TypeScript `scripts/imf-client.ts` (imported by build-time scripts and invoked from agentic workflows via the `scripts/imf-fetch.ts` CLI) for macro/fiscal/monetary indicators from `data.imf.org` (Datamapper JSON + SDMX 3.0). No Python MCP."
+        },
+        "other": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Schema v2.0+ — free-form provenance tokens for non-quantitative primary sources cited in `commentary` that are not indicator series from worldBank/scb/imf (e.g. 'Riksrevisionen HD01MJU21', 'Government proposition HD03237', '10,000-officer target'). Enables auditors to trace qualitative claims."
+        },
+        "documents": {
+          "type": "array",
+          "description": "Schema v2.0+ — structured document citations backing qualitative claims in `commentary` that are not covered by indicator datasets. Each entry ties a claim to a document type, provider, and a short auditor-facing description.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["claim", "type", "provider", "description"],
+            "properties": {
+              "claim": {
+                "type": "string",
+                "description": "Short phrase identifying the claim from `commentary` that this document supports.",
+                "minLength": 1
+              },
+              "type": {
+                "type": "string",
+                "description": "Document category (e.g. 'official-record', 'budget-estimate', 'analysis').",
+                "minLength": 1
+              },
+              "provider": {
+                "type": "string",
+                "description": "Producing organisation/category (e.g. 'government', 'strategic-communications').",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "description": "Auditor-facing description of the source backing the claim.",
+                "minLength": 1
+              }
+            }
+          }
         }
       }
     },
