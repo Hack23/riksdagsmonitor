@@ -32,17 +32,19 @@ Family C delivers **analytic depth** when the daily event set warrants it. Where
 - **What does this mean at the intelligence level?** (intelligence-assessment)
 - **Was our process sound?** (methodology-reflection)
 
-### Activation triggers
-Produce Family C outputs when **any** of the following holds for the workflow:
+### Core — every run produces all 5
 
-| Trigger | Minimum Family C outputs |
-|---------|--------------------------|
-| ≥1 P0 document (DIW ≥ 8.0) | scenario · devils-advocate · intelligence-assessment · methodology-reflection |
-| ≥3 P1 documents (6.0 ≤ DIW < 8.0) | scenario · devils-advocate · methodology-reflection |
-| Coordinated-activity cluster flagged in Family B | devils-advocate · intelligence-assessment |
-| Major international policy parallel (EU directive, G7 decision) | comparative-international |
-| Pre-election window < 180 days **and** ≥1 P1 | all 5 |
-| Methodology challenge detected (ACH returns high-entropy hypotheses) | methodology-reflection (always) |
+Family C files are **always produced on every workflow run**. They are not trigger-driven. Depth per file adapts to the day's DIW distribution, but the output set is stable: every folder ships `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, and `methodology-reflection.md`.
+
+| File | Behaviour on a light news day | Behaviour on a P0-dense day |
+|------|-------------------------------|-----------------------------|
+| `scenario-analysis.md` | Three scenarios converge on a narrow-band consensus; file documents why branching is low | Three divergent scenarios with probability-weighted indicators |
+| `comparative-international.md` | Compares baseline Swedish position to ≥5 Nordic + EU peers | Peer-country reform response with deep causal analysis |
+| `devils-advocate.md` | ACH on the day's #1 ranked document with ≥3 competing hypotheses | Full ACH on every P0 + red-team hypothesis + Bayesian base-rate check |
+| `intelligence-assessment.md` | 3 Key Judgments tied to PIRs for the next 72 h | 5–7 Key Judgments with confidence + warning indicators + HUMINT/OSINT cross-checks |
+| ⭐ `methodology-reflection.md` | **Vital run-audit gate.** Evidence sufficiency, confidence distribution, source diversity, party-neutrality arithmetic, ≥3 concrete methodology improvements for the next cycle | Same structure; skipping the file breaks the self-correction loop and fails the quality gate |
+
+> ⭐ **`methodology-reflection.md` is vital.** It is the only file that audits the run itself. Treat a missing or stub `methodology-reflection.md` as a broken workflow and revise before commit. The Pass-2 rewrite in the AI-Driven Guide Step 7 reads this file before revising every other file.
 
 ```mermaid
 flowchart LR
@@ -51,14 +53,14 @@ flowchart LR
     classDef ach fill:#FFEBEE,stroke:#D32F2F,color:#B71C1C
     classDef intl fill:#FFF8E1,stroke:#FFC107,color:#3E2723
     classDef intel fill:#F3E5F5,stroke:#7B1FA2,color:#311B92
-    classDef reflect fill:#FFF3E0,stroke:#FF9800,color:#BF360C
+    classDef reflect fill:#FFF3E0,stroke:#FF9800,color:#BF360C,stroke-width:3px
 
     A[Family A<br/>synthesis + impact]:::famA
     C1[scenario-analysis.md<br/>🔮 plausible futures]:::scenario
     C2[comparative-international.md<br/>🌍 EU/Nordic parallels]:::intl
     C3[devils-advocate.md<br/>⚔️ ACH + Red Team]:::ach
     C4[intelligence-assessment.md<br/>🎯 strategic bottom line]:::intel
-    C5[methodology-reflection.md<br/>🔬 analytic audit]:::reflect
+    C5[⭐ methodology-reflection.md<br/>🔬 VITAL run-audit gate]:::reflect
 
     A --> C1
     A --> C2
@@ -354,26 +356,27 @@ Produce a table of parties × claims-about-them × depth-score (words + citation
 
 ```mermaid
 flowchart TD
-    classDef trig fill:#FFEBEE,stroke:#D32F2F,color:#B71C1C
+    classDef trig fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
     classDef step fill:#E8F5E9,stroke:#4CAF50,color:#1B5E20
     classDef gate fill:#FFF8E1,stroke:#FFC107,color:#3E2723
     classDef out fill:#F3E5F5,stroke:#7B1FA2,color:#311B92
+    classDef vital fill:#FFF3E0,stroke:#FF9800,color:#BF360C,stroke-width:3px
 
-    Trig[Trigger check<br/>P0 / ≥3 P1 / coordinated / pre-election]:::trig
+    Trig[Family A + B complete<br/>→ Family C begins]:::trig
 
     S1[Step 1 — Branch paths<br/>→ scenario-analysis.md]:::step
     S2[Step 2 — International framing<br/>→ comparative-international.md]:::step
     S3[Step 3 — ACH + Red Team<br/>→ devils-advocate.md]:::step
     S4[Step 4 — Strategic bottom line<br/>→ intelligence-assessment.md]:::step
-    S5[Step 5 — Analytic audit<br/>→ methodology-reflection.md]:::step
+    S5[⭐ Step 5 — VITAL run-audit<br/>→ methodology-reflection.md]:::vital
 
-    G{Gate — all triggered files<br/>produced + quality-gated?}:::gate
+    G{Gate — all 5 files<br/>produced + quality-gated?}:::gate
 
     O[Family C complete]:::out
 
-    Trig -->|triggered| S1
-    Trig -->|triggered| S2
-    Trig -->|always if Family C active| S3
+    Trig --> S1
+    Trig --> S2
+    Trig --> S3
     S1 --> S4
     S2 --> S4
     S3 --> S4

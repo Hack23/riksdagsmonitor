@@ -20,7 +20,7 @@
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **v6.0 simplification:** This guide replaces the v5.1 reference document. It is the **single entry point** for every agentic workflow. It describes **what to produce** (not what to avoid), gives each output a template, and defines one canonical 7-step protocol. Anti-pattern details, audit history, and deep framework theory remain in the specialised methodology files linked at the bottom.
+> **v6.2 simplification:** Every workflow now produces **every file in every family** (23 core files + per-document set) — no trigger gates, no conditional output. Depth per item adapts by DIW tier, not which files exist. `methodology-reflection.md` is elevated to ⭐ VITAL run-audit status. This guide is the **single entry point** for every agentic workflow, describing **what to produce** with a canonical 7-step protocol. Deep framework theory and extended examples live in the linked Family production methodologies.
 
 ---
 
@@ -66,8 +66,8 @@ Every step is mandatory. Steps 3–7 run inside a single workflow folder at `ana
 | 2 | [`per-document-methodology.md`](per-document-methodology.md) | 📒 How to produce every `{dok_id}-analysis.md` and cluster file |
 | 3 | [`structural-metadata-methodology.md`](structural-metadata-methodology.md) | 📗 How to produce manifest + cross-reference map |
 | 4 | [`synthesis-methodology.md`](synthesis-methodology.md) | 📘 How to produce the 5 Family A synthesis outputs |
-| 5 | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | 📙 How to produce Family C depth products (triggered) |
-| 6 | [`electoral-domain-methodology.md`](electoral-domain-methodology.md) | 📕 How to produce Family D lens products (triggered) |
+| 5 | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | 📙 How to produce Family C depth products (core — every run) |
+| 6 | [`electoral-domain-methodology.md`](electoral-domain-methodology.md) | 📕 How to produce Family D lens products (core — every run) |
 | 7 | [`political-classification-guide.md`](political-classification-guide.md) | 7-dimension document classification |
 | 8 | [`political-swot-framework.md`](political-swot-framework.md) | SWOT, TOWS, cross-SWOT interference |
 | 9 | [`political-risk-methodology.md`](political-risk-methodology.md) | 5×5 L×I matrix, cascading risk chains |
@@ -126,7 +126,7 @@ Use the [`per-file-political-intelligence.md`](../templates/per-file-political-i
 
 ---
 
-### Step 4 — Core Synthesis (Family A, always produced)
+### Step 4 — Core Synthesis (Family A + B, always produced, 11 files)
 
 After per-file analysis, produce the nine **core synthesis files** that every workflow folder ships. Each has a dedicated template:
 
@@ -151,24 +151,24 @@ Plus **two structural files** produced every run:
 
 ---
 
-### Step 5 — Extensions (Family C & D, produced when warranted)
+### Step 5 — Extensions (Family C + D, always produced, 12 files)
 
-Add these **only when the triggers below are met**. They add depth when the day's documents warrant it.
+Every run produces **all five Family C files and all seven Family D files**. They are not trigger-driven — the output set is stable, and depth adapts per item based on DIW tier (see Step 6). Each file has a dedicated template and a section in the Family methodologies.
 
-| File | Trigger to produce | Template |
-|------|-------------------|----------|
-| `scenario-analysis.md` | Any multi-path uncertainty or P0/P1 document | [`scenario-analysis.md`](../templates/scenario-analysis.md) |
-| `comparative-international.md` | Any P0/P1 document (constitutional, foreign-policy, or major reform) | [`comparative-international.md`](../templates/comparative-international.md) |
-| `devils-advocate.md` | Any document with significance ≥ 7.0 on DIW | [`devils-advocate.md`](../templates/devils-advocate.md) |
-| `intelligence-assessment.md` | Interpellations, questions, or debates forming a coordinated pattern | [`intelligence-assessment.md`](../templates/intelligence-assessment.md) |
-| `methodology-reflection.md` | Reference-exemplar runs + weekly/monthly reviews | [`methodology-reflection.md`](../templates/methodology-reflection.md) |
-| `election-2026-analysis.md` | Every workflow during 2025-10 through 2026-09 (pre-election window) | [`election-2026-analysis.md`](../templates/election-2026-analysis.md) |
-| `voter-segmentation.md` | Any fiscal, welfare, migration, or justice measure with visible electoral effect | [`voter-segmentation.md`](../templates/voter-segmentation.md) |
-| `coalition-mathematics.md` | Any contested vote, SD-pivotal scenario, or coalition-arithmetic inflection | [`coalition-mathematics.md`](../templates/coalition-mathematics.md) |
-| `historical-parallels.md` | P0/P1 reform with clear historical precedent (e.g., grundlag change, budget reset) | [`historical-parallels.md`](../templates/historical-parallels.md) |
-| `media-framing-analysis.md` | High-salience story likely to dominate next news cycle | [`media-framing-analysis.md`](../templates/media-framing-analysis.md) |
-| `implementation-feasibility.md` | Any bill with concrete delivery obligations (budget, infrastructure, IT, procurement) | [`implementation-feasibility.md`](../templates/implementation-feasibility.md) |
-| `forward-indicators.md` | Weekly/monthly reviews, or whenever ≥ 3 triggers need centralised tracking | [`forward-indicators.md`](../templates/forward-indicators.md) |
+| File | Always-produced role | Template |
+|------|----------------------|----------|
+| `scenario-analysis.md` | Pluralistic futures (3 scenarios + probabilities summing to 100%); when uncertainty is low, scenarios converge and the file documents the narrow-band consensus | [`scenario-analysis.md`](../templates/scenario-analysis.md) |
+| `comparative-international.md` | Peer-country comparison for every policy area touched (≥5 peers); when no reform is on the table, compares current Swedish baseline to Nordic + EU peers | [`comparative-international.md`](../templates/comparative-international.md) |
+| `devils-advocate.md` | Red-team challenge with ≥3 competing hypotheses via ACH; when evidence is strong, the file documents which hypotheses were rejected and why | [`devils-advocate.md`](../templates/devils-advocate.md) |
+| `intelligence-assessment.md` | 3–7 Key Judgments with confidence + PIRs for next cycle; operates on every run because every day has a priority-intelligence requirement | [`intelligence-assessment.md`](../templates/intelligence-assessment.md) |
+| ⭐ `methodology-reflection.md` | **VITAL run-audit gate.** Evidence sufficiency, confidence distribution, source diversity, party-neutrality arithmetic, three concrete methodology improvements for the next cycle. Skipping it breaks the self-correction loop. | [`methodology-reflection.md`](../templates/methodology-reflection.md) |
+| `election-2026-analysis.md` | Seat-projection deltas + coalition viability for every run through 2026-09; after the election it converts to a permanent "post-2026 government-formation context" file | [`election-2026-analysis.md`](../templates/election-2026-analysis.md) |
+| `voter-segmentation.md` | Demographic / regional / ideological segment impact; when the day's docs are procedural, documents baseline segment positions | [`voter-segmentation.md`](../templates/voter-segmentation.md) |
+| `coalition-mathematics.md` | Current seat map + pivotal votes + Sainte-Laguë scenarios; stable structure regardless of daily contentiousness | [`coalition-mathematics.md`](../templates/coalition-mathematics.md) |
+| `historical-parallels.md` | Named precedent(s) ≤ 40 years with similarity score; when no obvious parallel exists, documents the "no-precedent" finding with reasoning | [`historical-parallels.md`](../templates/historical-parallels.md) |
+| `media-framing-analysis.md` | How each party, press quadrant, and platform frames the day; runs every cycle to build the longitudinal frame record | [`media-framing-analysis.md`](../templates/media-framing-analysis.md) |
+| `implementation-feasibility.md` | Delivery-risk view (budget / IT / regulatory / workforce); when no new bill lands, audits the backlog of in-flight commitments | [`implementation-feasibility.md`](../templates/implementation-feasibility.md) |
+| `forward-indicators.md` | ≥10 indicators across 4 horizons (72h / week / month / election); refreshed every run to maintain the forward-watch list | [`forward-indicators.md`](../templates/forward-indicators.md) |
 
 ---
 
@@ -205,11 +205,11 @@ Read every file you produced in Steps 3–5. For each one, **improve every secti
 
 ## 📂 Output Matrix — Every File, Every Family
 
-Use this matrix to plan which files a given workflow produces. File names are stable across all workflow types.
+Every workflow produces **every file in every family**. No family is trigger-driven. The output set is stable, auditable, and identical across morning, evening, realtime, weekly, and monthly workflows — what varies is depth per item (tier L1 / L2 / L2+ / L3), not which files exist.
 
 ```mermaid
 graph TB
-    subgraph FA["📘 Family A — Core Synthesis (every run)"]
+    subgraph FA["📘 Family A — Core Synthesis (every run · 9 files)"]
         A1[README.md]
         A2[executive-brief.md]
         A3[synthesis-summary.md]
@@ -221,20 +221,20 @@ graph TB
         A9[stakeholder-perspectives.md]
     end
 
-    subgraph FB["📗 Family B — Structural Metadata (every run)"]
+    subgraph FB["📗 Family B — Structural Metadata (every run · 2 files)"]
         B1[data-download-manifest.md]
         B2[cross-reference-map.md]
     end
 
-    subgraph FC["📙 Family C — Strategic Extensions"]
+    subgraph FC["📙 Family C — Strategic Extensions (every run · 5 files)"]
         C1[scenario-analysis.md]
         C2[comparative-international.md]
         C3[devils-advocate.md]
         C4[intelligence-assessment.md]
-        C5[methodology-reflection.md]
+        C5[methodology-reflection.md · ⭐ VITAL]
     end
 
-    subgraph FD["📕 Family D — Electoral & Domain Lenses"]
+    subgraph FD["📕 Family D — Electoral & Domain Lenses (every run · 7 files)"]
         D1[election-2026-analysis.md]
         D2[voter-segmentation.md]
         D3[coalition-mathematics.md]
@@ -244,7 +244,7 @@ graph TB
         D7[forward-indicators.md]
     end
 
-    subgraph FE["📒 Family E — Per-Document"]
+    subgraph FE["📒 Family E — Per-Document (every run · N files)"]
         E1["documents/${dok_id}-analysis.md"]
         E2["documents/${cluster}-cluster-analysis.md"]
     end
@@ -256,14 +256,41 @@ graph TB
     style FE fill:#2E7D32,color:#FFFFFF
 ```
 
+### Every workflow produces every file
+
 | Workflow | Family A | Family B | Family C | Family D | Family E |
 |----------|:--------:|:--------:|:--------:|:--------:|:--------:|
-| Morning per-type (propositions, motions, betänkanden, interpellationer, frågor) | ✅ All 9 | ✅ Both | Triggered | Triggered | ✅ Every doc |
-| Midday week-ahead / month-ahead | ✅ All 9 | ✅ Both | `scenario` + `forward-indicators` | `election-2026` | Summary only |
-| Evening analysis | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ As triggered | ✅ Every doc |
-| Realtime monitor | ✅ All 9 | ✅ Both | Triggered | Triggered | ✅ Every doc |
-| Weekly review | ✅ All 9 | ✅ Both | ✅ All 5 + `methodology-reflection` | ✅ All 7 | Top 20 |
-| Monthly review | ✅ All 9 | ✅ Both | ✅ All 5 + `methodology-reflection` | ✅ All 7 | Top 50 |
+| Morning per-type (propositions, motions, betänkanden, interpellationer, frågor) | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every doc |
+| Midday week-ahead / month-ahead forecasts | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every forecast item |
+| Evening analysis | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every doc |
+| Realtime monitor | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every doc |
+| Weekly review | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | Top 20 |
+| Monthly review | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | Top 50 |
+
+**Depth calibration** — the files are always produced; item-level depth is what adapts:
+
+| Tier | Significance (DIW) | What every mandatory file still contains | Added depth |
+|:----:|:------------------:|-------------------------------------------|-------------|
+| L1 Surface | DIW < 4.0 | Core structure + ≥1 Mermaid + ≥3 evidence citations per section | Short cards |
+| L2 Strategic | 4.0 ≤ DIW < 6.0 | Adds: per-party positions, 5-level confidence per claim | Comparison tables |
+| L2+ Priority | 6.0 ≤ DIW < 8.0 | Adds: dissenting-view section, coalition math | Scenario branching |
+| L3 Intelligence | DIW ≥ 8.0 | Adds: full ACH matrix, red-team hypothesis, historical base rate | Deep dives |
+
+### ⭐ methodology-reflection.md — the vital run-audit file
+
+Of the 23 always-produced files, `methodology-reflection.md` is the **run-audit gate**: it assesses evidence sufficiency, confidence distribution, source diversity, party-neutrality arithmetic, and names three concrete methodology improvements for the next cycle. A workflow that skips this file has no internal self-correction mechanism — treat its absence as a broken run. Quality-gate enforcement details are in [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) Part 5.
+
+### 📛 Filename variants (all map to one template + one methodology section)
+
+| Canonical filename | Accepted alternate filename(s) | Template | Methodology |
+|--------------------|-------------------------------|----------|-------------|
+| `comparative-international.md` | `international-comparative.md` | `templates/comparative-international.md` | strategic-extensions §2 |
+| `historical-parallels.md` | `historical-baseline.md` | `templates/historical-parallels.md` | electoral-domain §4 |
+| `election-2026-analysis.md` | `election-2026-implications.md` | `templates/election-2026-analysis.md` | electoral-domain §1 |
+| `stakeholder-perspectives.md` | (canonical filename on disk — template filename is `stakeholder-impact.md`) | `templates/stakeholder-impact.md` | synthesis §3–§4 |
+| `classification-results.md` | (canonical filename on disk — template filename is `political-classification.md`) | `templates/political-classification.md` | political-classification-guide |
+| `{dok_id}-analysis.md` | any Riksdag `dok_id` (e.g. `HD10432-analysis.md`, `hd03231-analysis.md`) | `templates/per-file-political-intelligence.md` | per-document §1 |
+| `{cluster}-cluster-analysis.md` | any theme slug (e.g. `deportation-cluster-analysis.md`, `fuel-tax-cluster-analysis.md`) | `templates/per-file-political-intelligence.md` (cluster section) | per-document §2 |
 
 ---
 
@@ -542,8 +569,9 @@ Every security-relevant control in Family A maps to **ISO 27001:2022**, **NIST C
 
 **Document Control**
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`
-- **Version:** 6.1 — canonical protocol + Family A–E methodology links
-- **Key changes in v6.1:** Added links to five new Family production methodologies (synthesis, structural-metadata, strategic-extensions, electoral-domain, per-document) that give step-by-step instructions for producing every analysis output file.
-- **Key changes in v6.0:** Rewrote as positive-voice step-by-step guide; collapsed ~2 200 lines of audit history and anti-pattern text into a single 7-step protocol + 5-family output matrix; added canonical Mermaid palette and 5-level confidence scale; linked each analysis file to a dedicated template (Families A–E); added triggers for Family C and D files.
+- **Version:** 6.2 — every-family-core + methodology-reflection vital
+- **Key changes in v6.2:** Elevated Families C + D to always-produced core (no more trigger language); marked `methodology-reflection.md` as ⭐ VITAL run-audit gate with explicit quality-gate enforcement; added filename-variant mapping table (`historical-baseline`↔`historical-parallels`, `election-2026-implications`↔`election-2026-analysis`, `international-comparative`↔`comparative-international`); added depth-tier calibration table (L1/L2/L2+/L3) showing how files adapt without changing the output set; Output Matrix now marks all 6 workflow rows as "✅ All" for every family; Step 5 rewritten as "always produced — 12 files" with per-file behaviour on light-event vs P0-dense days; every downstream methodology cross-ref updated.
+- **Key changes in v6.1:** Added links to five new Family production methodologies (synthesis, structural-metadata, strategic-extensions, electoral-domain, per-document).
+- **Key changes in v6.0:** Rewrote as positive-voice step-by-step guide; collapsed ~2 200 lines of audit history and anti-pattern text into a single 7-step protocol + 5-family output matrix; added canonical Mermaid palette and 5-level confidence scale; linked each analysis file to a dedicated template (Families A–E).
 - **Classification:** Public
 - **Next Review:** 2026-07-21

@@ -190,8 +190,8 @@ graph LR
 | **★ Start** | **[AI-Driven Analysis Guide](ai-driven-analysis-guide.md)** | 7-step protocol, Family A–E output matrix, color-coded Mermaid palette, 5-level confidence scale, DIW weighting, quality gate | Evidence (25%), Depth (25%), Structural (20%), Actionable (15%), Neutrality (15%) | **Always read first** — orchestrates every other methodology and names every output file with its template |
 | **Family A** | **[Synthesis & Scoring Methodology](synthesis-methodology.md)** | Step-by-step production of significance-scoring, synthesis-summary, stakeholder-perspectives, stakeholder-impact, executive-brief | DIW 6-dimension weighting, Confidence (5-level), Winner/loser quantification, 400–600 word brief budget | Every workflow — 5 Family A core files |
 | **Family B** | **[Structural Metadata Methodology](structural-metadata-methodology.md)** | Step-by-step production of data-download-manifest and cross-reference-map with SLA table and relationship taxonomy | Freshness SLA per source, Relationship taxonomy (7 edge types), Coordinated-activity detection | Every workflow — 2 Family B provenance files |
-| **Family C** | **[Strategic Extensions Methodology](strategic-extensions-methodology.md)** | Step-by-step production of scenario-analysis, comparative-international, devils-advocate (ACH), intelligence-assessment, methodology-reflection | Scenario probability ≤ 100%, ACH evidence matrix, Peer-country benchmark, Key Judgments + PIR | Triggered — P0, ≥3 P1, coordinated activity, pre-election |
-| **Family D** | **[Electoral & Domain Methodology](electoral-domain-methodology.md)** | Step-by-step production of election-2026, voter-segmentation, coalition-mathematics, historical-parallels, media-framing, implementation-feasibility, forward-indicators | Sainte-Laguë seat math, SCB segment cuts, Coalition arithmetic, 4-horizon forward indicators | Triggered — pre-election window, redistributive policy, coalition risk, sector events |
+| **Family C** | **[Strategic Extensions Methodology](strategic-extensions-methodology.md)** | Step-by-step production of scenario-analysis, comparative-international, devils-advocate (ACH), intelligence-assessment, ⭐ methodology-reflection (VITAL run-audit) | Scenario probability ≤ 100%, ACH evidence matrix, Peer-country benchmark, Key Judgments + PIR | **Core — every run produces all 5** |
+| **Family D** | **[Electoral & Domain Methodology](electoral-domain-methodology.md)** | Step-by-step production of election-2026, voter-segmentation, coalition-mathematics, historical-parallels, media-framing, implementation-feasibility, forward-indicators | Sainte-Laguë seat math, SCB segment cuts, Coalition arithmetic, 4-horizon forward indicators | **Core — every run produces all 7** |
 | **Family E** | **[Per-Document Methodology](per-document-methodology.md)** | Step-by-step production of `{dok_id}-analysis.md` and `{theme}-cluster-analysis.md` with doctype-specific Mermaid taxonomy | DIW 6-dimension scoring, Cluster decision rule (4 conditions), Citation format canon | Every workflow — one file per document or qualifying cluster |
 | **1** | **[Political Classification Guide](political-classification-guide.md)** | 7-dimension event classification, sensitivity levels, policy domain taxonomy, urgency matrix | Sensitivity (4 levels), Democratic Integrity, Policy Urgency, Economic Impact, Governance Impact, Political Capital, Legislative Impact | Step 3 — every incoming Riksdag document is classified before analysis begins |
 | **2** | **[Political Risk Methodology](political-risk-methodology.md)** | Likelihood × Impact scoring, 8 risk categories, 5×5 matrix, cascading risk analysis | Policy, Legislative, Economic, Social, Security, Diplomatic, Coalition, Constitutional | Step 3–4 — assess political risk using calibrated scoring |
@@ -205,9 +205,9 @@ graph LR
 |:------:|---------|-------------|
 | 📘 **A** — Core Synthesis | 9 always-produced files (executive brief, synthesis, significance, classification, SWOT, risk, threat, stakeholder, folder README) | Every workflow |
 | 📗 **B** — Structural Metadata | 2 always-produced files (data-download manifest, cross-reference map) | Every workflow |
-| 📙 **C** — Strategic Extensions | 5 trigger-produced files (scenario, comparative-international, devil's advocate, intelligence assessment, methodology reflection) | P0/P1, DIW ≥ 7.0, coordinated activity, reviews |
-| 📕 **D** — Electoral & Domain Lenses | 7 trigger-produced files (election-2026, voter-segmentation, coalition-mathematics, historical parallels, media framing, implementation feasibility, forward indicators) | Pre-election window, sector triggers |
-| 📒 **E** — Per-Document | 1 file per document (per-file-political-intelligence), plus optional cluster files | Every workflow |
+| 📙 **C** — Strategic Extensions | 5 always-produced files (scenario, comparative-international, devil's advocate, intelligence assessment, ⭐ methodology-reflection — **vital run-audit**) | Every workflow |
+| 📕 **D** — Electoral & Domain Lenses | 7 always-produced files (election-2026, voter-segmentation, coalition-mathematics, historical parallels, media framing, implementation feasibility, forward indicators) | Every workflow |
+| 📒 **E** — Per-Document | 1 file per document (per-file-political-intelligence), plus cluster files for theme-grouped batches | Every workflow |
 
 ---
 
@@ -250,8 +250,8 @@ graph TB
 
     FAME -->|"feeds"| FAMA
     FAMB -->|"feeds"| FAMA
-    FAMA -->|"triggers"| FAMC
-    FAMA -->|"triggers"| FAMD
+    FAMA -->|"feeds"| FAMC
+    FAMA -->|"feeds"| FAMD
 
     STYLE -->|"standards"| FAMA
     STYLE -->|"standards"| FAMB
@@ -511,19 +511,19 @@ These five methodology documents tell an agentic workflow **exactly how to produ
 
 | Attribute | Value |
 |-----------|-------|
-| **Purpose** | Step-by-step production of depth products for high-significance events |
-| **Covers** | `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, `methodology-reflection.md` |
-| **Key rules** | Scenario probabilities sum to 100% · ACH ≥3 hypotheses · ≥5 peer countries · 3–7 Key Judgments with PIRs · Bias-audit quantification |
-| **Triggers** | P0 (DIW ≥ 8.0), ≥3 P1, coordinated-filing cluster, pre-election < 180 days |
+| **Purpose** | Step-by-step production of 5 always-produced depth products |
+| **Covers** | `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, ⭐ `methodology-reflection.md` (VITAL run-audit gate) |
+| **Key rules** | Scenario probabilities sum to 100% · ACH ≥3 hypotheses · ≥5 peer countries · 3–7 Key Judgments with PIRs · Bias-audit quantification · methodology-reflection names ≥3 concrete improvements |
+| **Cadence** | **Core — every run produces all 5**; depth per file adapts to DIW tier of the day's lead items |
 
 ### 📕 Electoral & Domain Methodology — `electoral-domain-methodology.md` (Family D)
 
 | Attribute | Value |
 |-----------|-------|
-| **Purpose** | Step-by-step production of 7 domain-specific analytical lenses |
+| **Purpose** | Step-by-step production of 7 always-produced domain-specific analytical lenses |
 | **Covers** | `election-2026-analysis.md`, `voter-segmentation.md`, `coalition-mathematics.md`, `historical-parallels.md`, `media-framing-analysis.md`, `implementation-feasibility.md`, `forward-indicators.md` |
-| **Key rules** | Sainte-Laguë modified seat math + 4% threshold · Segment privacy (no sub-1000 cohorts) · Historical parallels ≤40 years with similarity score · ≥10 forward indicators across 4 horizons |
-| **Triggers** | Per-template activation table in the methodology |
+| **Key rules** | Sainte-Laguë modified seat math + 4% threshold · Segment privacy (no sub-1000 cohorts) · Historical parallels ≤40 years with similarity score (or explicit no-precedent finding) · ≥10 forward indicators across 4 horizons |
+| **Cadence** | **Core — every run produces all 7**; substance adapts (baseline context on light days, full scenario depth on P0-dense days) |
 
 ### 📒 Per-Document Methodology — `per-document-methodology.md` (Family E)
 

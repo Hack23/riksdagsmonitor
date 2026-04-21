@@ -24,32 +24,32 @@
 
 ## 🎯 Purpose
 
-Family D supplies **issue-specific analytical lenses** that sharpen a workflow when the event touches an electoral cycle, a particular voter segment, coalition arithmetic, a historical echo, the media environment, a delivery question, or a forward watch-list.
+Family D supplies **issue-specific analytical lenses** that sharpen every workflow across electoral cycles, voter segments, coalition arithmetic, historical echoes, the media environment, delivery questions, and forward watch-lists.
 
-These products are not produced on every run — each has a specific trigger.
+These products are **core — every run produces all 7**. The output set is stable across morning, evening, realtime, weekly, and monthly workflows. What adapts per run is item-level depth (tier L1 → L3) and the substance inside each file — not whether the file exists.
 
-### Activation triggers
+### Core — every run produces all 7
 
-| Template | Produced when |
-|----------|--------------|
-| `election-2026-analysis.md` | Pre-election window ≤ 365 days from the next Riksdag election, **or** the event is election-administration-related |
-| `voter-segmentation.md` | Pre-election window **or** significant redistributive policy **or** demographic-targeted message is detected |
-| `coalition-mathematics.md` | Any government-formation risk, confidence-vote risk, or cross-bloc cooperation pattern |
-| `historical-parallels.md` (variant: `historical-baseline.md`) | Event echoes a named prior event (same actor, same domain, same doctype) within 40 years |
-| `media-framing-analysis.md` | Coordinated-communication activity flagged **or** government flagship announcement **or** narrative shift detected |
-| `implementation-feasibility.md` | Regulation, spending programme, or structural reform with an agency delivery path |
-| `forward-indicators.md` | Any P0 or P1 document, **and** at all week-ahead / month-ahead / year-ahead forecasting runs |
+| Template | Behaviour on a light-event day | Behaviour on a P0-dense day |
+|----------|-------------------------------|-----------------------------|
+| `election-2026-analysis.md` | Seat-projection delta vs. last poll + which parties crossed the 4 % threshold; until 2026-09 it tracks the campaign; post-2026 it tracks the new government-formation context | Full seat projection + coalition viability + campaign-phase alignment of every P0 to the election cycle |
+| `voter-segmentation.md` | Baseline segment positions (5 axes: age, geography, education, income, incumbency) | Per-document segment impact table with ≥5 cohorts and quantified swing estimates |
+| `coalition-mathematics.md` | Current seat map + pivotal-vote reference + confidence-vote arithmetic | Scenario branching: each contested vote run through Sainte-Laguë, pivotal-actor detection, SD-Tidöbloc-opposition matrix |
+| `historical-parallels.md` (variant: `historical-baseline.md`) | Closest baseline precedent ≤ 40 years with similarity score, or explicit "no-precedent" finding | Full parallel with outcome, stakeholder behaviour, and Bayesian base-rate update |
+| `media-framing-analysis.md` | Per-party + per-press-quadrant framing of the day's lead story, plus longitudinal-frame delta | Per-document frame audit with quoted examples and platform-by-platform amplification scores |
+| `implementation-feasibility.md` | Audit of in-flight delivery backlog (IT, budget, regulatory, workforce) when no new bill lands | Full RACI + milestone + risk-register for each new delivery obligation |
+| `forward-indicators.md` | ≥10 indicators across 4 horizons (72 h / week / month / election) refreshed every run | Indicators + thresholds + trigger-to-hypothesis mapping for every P0/P1 |
 
 ```mermaid
 flowchart LR
-    classDef trigger fill:#FFEBEE,stroke:#D32F2F,color:#B71C1C
+    classDef core fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
     classDef electoral fill:#E3F2FD,stroke:#1565C0,color:#0D47A1
     classDef historical fill:#FFF8E1,stroke:#FFC107,color:#3E2723
     classDef media fill:#F3E5F5,stroke:#7B1FA2,color:#311B92
     classDef impl fill:#E8F5E9,stroke:#4CAF50,color:#1B5E20
     classDef fwd fill:#FFF3E0,stroke:#FF9800,color:#BF360C
 
-    T[Family A/B outputs<br/>+ trigger check]:::trigger
+    T[Family A/B complete<br/>→ Family D core run]:::core
 
     D1[election-2026-analysis.md]:::electoral
     D2[voter-segmentation.md]:::electoral
@@ -395,7 +395,7 @@ gantt
 ### Quality gate
 - [ ] ≥10 indicators across all four horizons
 - [ ] Every indicator has an observation method (named source)
-- [ ] Trigger thresholds are concrete (numeric or named event)
+- [ ] Observation thresholds are concrete (numeric or named event)
 - [ ] Null-hypothesis indicators present
 - [ ] Hypothesis mapping links back to devils-advocate.md
 
@@ -405,12 +405,12 @@ gantt
 
 ```mermaid
 flowchart TD
-    classDef check fill:#FFEBEE,stroke:#D32F2F,color:#B71C1C
+    classDef core fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
     classDef step fill:#E8F5E9,stroke:#4CAF50,color:#1B5E20
     classDef gate fill:#FFF8E1,stroke:#FFC107,color:#3E2723
     classDef out fill:#F3E5F5,stroke:#7B1FA2,color:#311B92
 
-    TC[Trigger check per template]:::check
+    TC[Family A + B complete<br/>→ produce all 7 Family D files]:::core
 
     E1[election-2026-analysis]:::step
     E2[voter-segmentation]:::step
@@ -423,13 +423,13 @@ flowchart TD
     G{Quality-gate<br/>per-template}:::gate
     O[Family D complete]:::out
 
-    TC -->|pre-election| E1
-    TC -->|pre-election or redistributive| E2
-    TC -->|government-formation or confidence| E3
-    TC -->|named prior episode| H
-    TC -->|coordinated comms| MF
-    TC -->|regulation / spending| IF
-    TC -->|P0 or P1| FI
+    TC --> E1
+    TC --> E2
+    TC --> E3
+    TC --> H
+    TC --> MF
+    TC --> IF
+    TC --> FI
 
     E1 --> G
     E2 --> G
@@ -446,10 +446,10 @@ flowchart TD
 
 ## ✅ Family-D Completion Checklist
 
-- [ ] Each triggered template is produced (check trigger table above)
+- [ ] All 7 Family D templates produced this run
 - [ ] All 8 parties covered where applicable
 - [ ] Polling, seat-math, and coalition-math use verifiable primary data
-- [ ] Historical parallels have similarity scores and difference callouts
+- [ ] Historical parallels have similarity scores and difference callouts (or an explicit "no-precedent" finding with reasoning)
 - [ ] Media frames covered with equal depth across government/opposition
 - [ ] Implementation feasibility names a delivery agency
 - [ ] Forward indicators include null-hypothesis observations and ≥10 total

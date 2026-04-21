@@ -256,31 +256,31 @@ Templates are grouped by the **output family** defined in [`ai-driven-analysis-g
 | B1 | `data-download-manifest.md` | [data-download-manifest.md](data-download-manifest.md) | Transparent MCP-download inventory + data-depth ceilings |
 | B2 | `cross-reference-map.md` | [cross-reference-map.md](cross-reference-map.md) | Policy clusters + legislative chains + coordinated-activity patterns |
 
-### 📙 Family C — Strategic Extensions (trigger-driven)
+### 📙 Family C — Strategic Extensions (core — every run produces all 5)
 
-> **Methodology:** [strategic-extensions-methodology.md](../methodologies/strategic-extensions-methodology.md) — trigger table + step-by-step production rules (ACH matrix, peer-country grid, Key Judgments, bias audit).
+> **Methodology:** [strategic-extensions-methodology.md](../methodologies/strategic-extensions-methodology.md) — step-by-step production of all 5 always-produced depth products (ACH matrix, peer-country grid, Key Judgments, bias audit, run-audit gate).
 
-| # | File | Template | Trigger |
-|:-:|------|----------|---------|
-| C1 | `scenario-analysis.md` | [scenario-analysis.md](scenario-analysis.md) | Any multi-path uncertainty or P0/P1 document |
-| C2 | `comparative-international.md` | [comparative-international.md](comparative-international.md) | Any P0/P1 document (also known as `international-comparative.md`) |
-| C3 | `devils-advocate.md` | [devils-advocate.md](devils-advocate.md) | Any document with DIW ≥ 7.0 |
-| C4 | `intelligence-assessment.md` | [intelligence-assessment.md](intelligence-assessment.md) | Coordinated interpellation/question/debate pattern |
-| C5 | `methodology-reflection.md` | [methodology-reflection.md](methodology-reflection.md) | Reference-exemplar runs + weekly/monthly reviews |
+| # | File | Template | Role on every run |
+|:-:|------|----------|-------------------|
+| C1 | `scenario-analysis.md` | [scenario-analysis.md](scenario-analysis.md) | 3 scenarios with probabilities summing to 100%; converges to narrow-band on light days |
+| C2 | `comparative-international.md` | [comparative-international.md](comparative-international.md) | Peer-country comparison (≥5 peers); compares baseline when no reform active (variant filename: `international-comparative.md`) |
+| C3 | `devils-advocate.md` | [devils-advocate.md](devils-advocate.md) | ACH red-team with ≥3 competing hypotheses; documents rejected hypotheses when evidence is strong |
+| C4 | `intelligence-assessment.md` | [intelligence-assessment.md](intelligence-assessment.md) | 3–7 Key Judgments + PIRs for the next cycle |
+| C5 | ⭐ `methodology-reflection.md` | [methodology-reflection.md](methodology-reflection.md) | **VITAL run-audit file** — evidence sufficiency + confidence distribution + party-neutrality + ≥3 concrete improvements |
 
-### 📕 Family D — Electoral & Domain Lenses (trigger-driven)
+### 📕 Family D — Electoral & Domain Lenses (core — every run produces all 7)
 
-> **Methodology:** [electoral-domain-methodology.md](../methodologies/electoral-domain-methodology.md) — per-template activation table + step-by-step production rules (Sainte-Laguë seat math, segment privacy threshold, 4-horizon forward indicators).
+> **Methodology:** [electoral-domain-methodology.md](../methodologies/electoral-domain-methodology.md) — step-by-step production of all 7 always-produced domain lenses (Sainte-Laguë seat math, segment privacy threshold, 4-horizon forward indicators, longitudinal frame delta).
 
-| # | File | Template | Trigger |
-|:-:|------|----------|---------|
-| D1 | `election-2026-analysis.md` | [election-2026-analysis.md](election-2026-analysis.md) | Every run 2025-10 → 2026-09 (also `election-2026-implications.md`) |
-| D2 | `voter-segmentation.md` | [voter-segmentation.md](voter-segmentation.md) | Fiscal, welfare, migration or justice with voter effect |
-| D3 | `coalition-mathematics.md` | [coalition-mathematics.md](coalition-mathematics.md) | Contested vote / SD-pivotal scenario / coalition inflection |
-| D4 | `historical-parallels.md` | [historical-parallels.md](historical-parallels.md) | P0/P1 reform with named precedent (also `historical-baseline.md`) |
-| D5 | `media-framing-analysis.md` | [media-framing-analysis.md](media-framing-analysis.md) | High-salience story dominating next cycle |
-| D6 | `implementation-feasibility.md` | [implementation-feasibility.md](implementation-feasibility.md) | Bill with concrete delivery obligations |
-| D7 | `forward-indicators.md` | [forward-indicators.md](forward-indicators.md) | Weekly/monthly reviews or ≥ 3 triggers needing central tracking |
+| # | File | Template | Role on every run |
+|:-:|------|----------|-------------------|
+| D1 | `election-2026-analysis.md` | [election-2026-analysis.md](election-2026-analysis.md) | Seat-projection delta + coalition viability; perpetual Swedish political-context file (variant filename: `election-2026-implications.md`) |
+| D2 | `voter-segmentation.md` | [voter-segmentation.md](voter-segmentation.md) | 5-axis segment impact; documents baseline positions on procedural days |
+| D3 | `coalition-mathematics.md` | [coalition-mathematics.md](coalition-mathematics.md) | Current seat map + pivotal votes + Sainte-Laguë scenarios |
+| D4 | `historical-parallels.md` | [historical-parallels.md](historical-parallels.md) | Named precedent(s) ≤ 40 years with similarity score, or explicit "no-precedent" finding (variant filename: `historical-baseline.md`) |
+| D5 | `media-framing-analysis.md` | [media-framing-analysis.md](media-framing-analysis.md) | Per-party + per-press-quadrant framing + longitudinal-frame delta |
+| D6 | `implementation-feasibility.md` | [implementation-feasibility.md](implementation-feasibility.md) | Delivery-risk view; audits in-flight backlog when no new bill lands |
+| D7 | `forward-indicators.md` | [forward-indicators.md](forward-indicators.md) | ≥10 indicators across 4 horizons (72 h / week / month / election) |
 
 ### 📒 Family E — Per-Document
 
@@ -295,10 +295,10 @@ Templates are grouped by the **output family** defined in [`ai-driven-analysis-g
 
 | Workflow | Family A | Family B | Family C | Family D | Family E |
 |----------|:--------:|:--------:|:--------:|:--------:|:--------:|
-| Morning per-type (propositions, motions, betänkanden, interpellationer, frågor) | ✅ All 9 | ✅ Both | Triggered | Triggered | ✅ Every doc |
-| Midday week/month-ahead | ✅ All 9 | ✅ Both | `scenario` + `forward-indicators` | `election-2026` | Summary only |
-| Evening analysis | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ As triggered | ✅ Every doc |
-| Realtime monitor | ✅ All 9 | ✅ Both | Triggered | Triggered | ✅ Every doc |
+| Morning per-type (propositions, motions, betänkanden, interpellationer, frågor) | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every doc |
+| Midday week/month-ahead | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every forecast item |
+| Evening analysis | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every doc |
+| Realtime monitor | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every doc |
 | Weekly review | ✅ All 9 | ✅ Both | ✅ All 5 + reflection | ✅ All 7 | Top 20 |
 | Monthly review | ✅ All 9 | ✅ Both | ✅ All 5 + reflection | ✅ All 7 | Top 50 |
 

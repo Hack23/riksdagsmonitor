@@ -137,7 +137,7 @@ Produce the **canonical narrative** of the day/week/cycle. Every other Family A 
    - Finding (≤40 words) · Evidence (≥2 `dok_id` or votes) · Confidence label · Dissenting view · Forward indicator
 3. **Pattern table** — coordinated filings, cross-party agreement, government flagship clusters
 4. **Mermaid thematic graph** — color-coded nodes by theme, edges by cross-reference strength
-5. **Links** to: executive-brief.md, stakeholder-perspectives.md, scenario-analysis.md (if triggered), Family E index
+5. **Links** to: executive-brief.md, stakeholder-perspectives.md, scenario-analysis.md (always produced, Family C), Family E index
 6. **Methodology footer** — models used, sources, cutoff time
 
 ### Required Mermaid — thematic graph example
@@ -251,7 +251,7 @@ Translate political positions into **material consequences** for citizens, secto
 3. **Sector heat map** — Mermaid with color-coded impact intensity
 4. **Equity lens** — impact disaggregated by income quintile, region (storstad/glesbygd), age group, gender where data allows
 5. **Mitigations / compensations** — government-offered offsets with `dok_id`
-6. **Links** to implementation-feasibility.md (Family D) when triggered
+6. **Links** to implementation-feasibility.md (Family D, always produced)
 
 ### Required Mermaid — sector heat map
 
@@ -287,7 +287,7 @@ Deliver a **≤90-second read** that gives a decision-maker the day's intelligen
 - synthesis-summary.md (for the canonical narrative)
 - significance-scoring.md (for the ranked items)
 - stakeholder-impact.md (for the consequence line)
-- Family C scenario-analysis.md (if triggered) for futures paragraph
+- Family C scenario-analysis.md (always produced) for futures paragraph
 
 ### Output — required structure (strict 400–600 word budget)
 
@@ -401,7 +401,7 @@ flowchart TD
 ## 📐 Cross-references to other methodology layers
 
 - **Upstream (inputs):** [per-document-methodology.md](./per-document-methodology.md) (Family E) · [structural-metadata-methodology.md](./structural-metadata-methodology.md) (Family B)
-- **Downstream (triggered when thresholds hit):** [strategic-extensions-methodology.md](./strategic-extensions-methodology.md) (Family C) · [electoral-domain-methodology.md](./electoral-domain-methodology.md) (Family D)
+- **Downstream (always produced on every run):** [strategic-extensions-methodology.md](./strategic-extensions-methodology.md) (Family C) · [electoral-domain-methodology.md](./electoral-domain-methodology.md) (Family D)
 - **Style & voice:** [political-style-guide.md](./political-style-guide.md)
 - **Master protocol:** [ai-driven-analysis-guide.md](./ai-driven-analysis-guide.md)
 
