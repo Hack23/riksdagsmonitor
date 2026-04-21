@@ -1,20 +1,30 @@
 /**
  * chart-init.js — generic Chart.js initializer for riksdagsmonitor articles.
  *
- * Scans the DOM for `<canvas data-chart-config="…">` elements, parses the
- * JSON-escaped Chart.js config stored in the `data-chart-config` attribute,
- * and instantiates a `new Chart(ctx, config)` for each one.
+ * Scans the DOM for canvas elements that carry chart configuration and
+ * instantiates a `new Chart(ctx, config)` for each one. Two config
+ * delivery mechanisms are supported:
+ *
+ *  1. `data-chart-config="…"` — JSON-escaped config string in the attribute
+ *     (legacy; produced by the static-site generator for most article types).
+ *  2. `data-chart-config-id="<id>"` — references a sibling
+ *     `<script type="application/json" id="<id>">` element whose text content
+ *     holds the JSON config. This avoids the HTML-escaping noise of large
+ *     JSON blobs in attributes and makes manual review/editing easier.
+ *
+ * Both mechanisms apply the same security guard (function-literal rejection)
+ * and the same `applyUserPreferences` pass before instantiation.
  *
  * This module is loaded automatically by `scripts/article-template/template.ts`
- * when an article contains at least one `data-chart-config` canvas (emitted
- * by `scripts/data-transformers/content-generators/dashboard-section.ts`,
+ * when an article contains at least one chart canvas (emitted by
+ * `scripts/data-transformers/content-generators/dashboard-section.ts`,
  * `economic-dashboard-section.ts`, `swot-section.ts`, etc.).
  *
  * Requires Chart.js 4 to be loaded before this script runs (the template
  * loads `../js/lib/chart.umd.4.4.1.js` immediately prior).
  *
- * Security: `data-chart-config` is produced server-side by the static-site
- * generator from typed `DashboardChartConfig` objects — the content is not
+ * Security: configs are produced server-side by the static-site generator
+ * from typed `DashboardChartConfig` objects — the content is not
  * user-supplied, so JSON.parse is safe. `new Chart()` does not execute
  * arbitrary code from its config.
  *
@@ -54,6 +64,40 @@
     } catch (err) {
       if (typeof console !== 'undefined' && console.warn) {
         console.warn('[chart-init] Invalid data-chart-config JSON on', el, err);
+      }
+      return null;
+    }
+  }
+
+  /**
+   * Safely parse the JSON blob from a `<script type="application/json">`
+   * element referenced by the canvas's `data-chart-config-id` attribute.
+   *
+   * This mechanism avoids embedding large HTML-escaped JSON strings directly
+   * in data-* attributes, making the markup easier to read and review.
+   */
+  function parseConfigById(el) {
+    var id = el.getAttribute('data-chart-config-id');
+    if (!id) return null;
+    var scriptEl = document.getElementById(id);
+    if (!scriptEl) {
+      if (typeof console !== 'undefined' && console.warn) {
+        console.warn('[chart-init] No <script> element found with id "' + id + '" for canvas', el);
+      }
+      return null;
+    }
+    var raw = scriptEl.textContent || scriptEl.innerHTML || '';
+    if (FUNC_LITERAL_RE.test(raw)) {
+      if (typeof console !== 'undefined' && console.warn) {
+        console.warn('[chart-init] Rejecting data-chart-config-id JSON containing function literal on', el);
+      }
+      return null;
+    }
+    try {
+      return JSON.parse(raw);
+    } catch (err) {
+      if (typeof console !== 'undefined' && console.warn) {
+        console.warn('[chart-init] Invalid JSON in script#' + id, err);
       }
       return null;
     }
@@ -124,13 +168,15 @@
 
     registerAnnotationPlugin(Chart);
 
-    var canvases = document.querySelectorAll('canvas[data-chart-config]');
+    var canvases = document.querySelectorAll('canvas[data-chart-config], canvas[data-chart-config-id]');
     for (var i = 0; i < canvases.length; i++) {
       var canvas = canvases[i];
       // Guard against re-initialisation (e.g. hot reload, navigation caches).
       if (canvas.getAttribute('data-chart-initialised') === '1') continue;
 
-      var cfg = parseConfig(canvas);
+      var cfg = canvas.hasAttribute('data-chart-config-id')
+        ? parseConfigById(canvas)
+        : parseConfig(canvas);
       if (!cfg) continue;
       cfg = applyUserPreferences(cfg);
 
