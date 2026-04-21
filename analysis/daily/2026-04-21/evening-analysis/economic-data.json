@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-04-21T00:00:00Z",
+  "source": "World Bank API",
+  "country": "Sweden",
+  "country_code": "SE",
+  "indicators": {
+    "gdp_growth": {
+      "value": 0.82,
+      "year": 2024,
+      "unit": "% annual",
+      "indicator_id": "NY.GDP.MKTP.KD.ZG",
+      "context": "Recovery from -0.20% contraction in 2023; below EU average of ~1.1%"
+    },
+    "inflation": {
+      "value": 2.84,
+      "year": 2024,
+      "unit": "% CPI annual",
+      "indicator_id": "FP.CPI.TOTL.ZG",
+      "context": "Significant fall from 8.55% peak in 2023; approaching Riksbank 2% target"
+    },
+    "unemployment": {
+      "value": 8.69,
+      "year": 2025,
+      "unit": "% labor force",
+      "indicator_id": "SL.UEM.TOTL.ZS",
+      "context": "Elevated vs Nordic peers (Norway 3.9%, Denmark 5.1%); FiU48 energy relief partially addresses cost-of-living pressures on labor market"
+    },
+    "gdp": {
+      "value": 584700000000,
+      "year": 2023,
+      "unit": "USD current",
+      "indicator_id": "NY.GDP.MKTP.CD",
+      "context": "Nominal GDP; FiU48 4.1B SEK cost = ~0.07% of GDP"
+    }
+  },
+  "political_economic_context": {
+    "FiU48_cost_gdp_pct": 0.07,
+    "affected_households": 3000000,
+    "affected_vehicle_owners": 6000000,
+    "fiscal_headroom_assessment": "Limited — fuel cut adds to existing spring 2026 supplementary budget pressure",
+    "pre_election_classification": "POPULIST_RELIEF_MEASURE",
+    "election_date": "2026-09-13",
+    "days_to_election": 145
+  },
+  "sibling_analysis_reference": {
+    "committee_reports": "analysis/daily/2026-04-21/committeeReports/economic-data.json",
+    "interpellations": "analysis/daily/2026-04-21/interpellations/economic-data.json"
+  }
+}
