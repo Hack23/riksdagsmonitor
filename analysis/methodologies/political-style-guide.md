@@ -465,6 +465,53 @@ Confidence levels use the **5-level scale** for evidence quality and the **WEP +
 
 ---
 
+## 📝 Worked Example: Full Tradecraft Application
+
+This section demonstrates how all tradecraft elements combine in a real Swedish political analysis scenario.
+
+### Scenario: Coalition Stability Assessment (PIR-1)
+
+**Context:** FiU48 extra amendment budget tabled 2026-04-18, chamber vote expected 2026-04-22.
+
+#### Evidence Table with Full Tradecraft Annotation
+
+| # | Evidence | Source | Admiralty | EEI Tag | Confidence |
+|:-:|----------|--------|:---------:|:-------:|:----------:|
+| E1 | FiU48 passed committee 7–5 (M+KD+L for, S+V+MP+C against) | Riksdag votering H901FiU48 | **[A1]** | EEI-1.1 | 🟦 VERY HIGH |
+| E2 | SD spokesperson Richard Jomshof (SD) confirmed floor support in anförande 2026-04-19 | Anförande HD04567 | **[B2]** | EEI-1.2 | 🟩 HIGH |
+| E3 | L reservation filed on §3 (family reunification) | FiU48 reservationslista | **[A1]** | EEI-1.2 | 🟦 VERY HIGH |
+| E4 | Coalition whip confirmed 175+ votes expected | DN interview 2026-04-20 | **[C3]** | EEI-1.1 | 🟧 MEDIUM |
+| E5 | Unnamed Tidö source reports "L leadership divided" | Expressen 2026-04-19 | **[D4]** | EEI-1.3 | 🟥 LOW `[unconfirmed]` |
+
+#### Key Judgment (ICD 203 compliant)
+
+> **KJ-1 [PIR-1 — Coalition Stability]:** The Tidö coalition is **very likely [HIGH confidence]** to pass FiU48 in the chamber vote 2026-04-22, based on committee vote pattern `[A1]`, SD floor support confirmation `[B2]`, and coalition whip estimate `[C3]`. However, L's reservation on §3 `[A1]` creates a non-negligible risk (we assess **unlikely [MODERATE confidence]** ~25%) of last-minute abstention or absence that could narrow margins below 175.
+
+> **Analyst Assumption:** L leadership will prioritize coalition cohesion over policy disagreement on family reunification absent a galvanizing external event (media campaign, constituency backlash).
+
+> **Alternative Hypothesis Considered (ACH):** L could withdraw support if DN/SvD editorials criticize the package before 2026-04-22. Evidence against: L leadership statements 2026-04-18 `[B2]` reaffirm coalition commitment despite §3 concerns.
+
+#### F3EAD Stage Mapping
+
+| Stage | Activity | Output |
+|-------|----------|--------|
+| FIND | `search_dokument(doktyp=bet, organ=FiU)` | Candidate list: FiU48, FiU49, FiU50 |
+| FIX | `get_dokument(dok_id=H901FiU48)` | Full document text, reservations, vote protocol |
+| FINISH | 7-dimension classification → CRITICAL sensitivity | `political-classification.md` |
+| EXPLOIT | SWOT (coalition strength), Risk (L fracture) | `swot-analysis.md`, `risk-assessment.md` |
+| ANALYZE | ACH on L behaviour, Key Judgment synthesis | `devils-advocate.md`, `intelligence-assessment.md` |
+| DISSEMINATE | Executive brief for editorial decision | `executive-brief.md` |
+
+#### SAT Application Summary
+
+| SAT | Application |
+|-----|-------------|
+| **ACH** | Three hypotheses tested: (H1) Full coalition support, (H2) L abstention, (H3) L Nej vote |
+| **Key Assumptions Check** | Assumption tested: "L prioritizes coalition cohesion" — validated by 2026-04-18 statements |
+| **Indicators and Signposts** | Indicator set: DN editorial by 2026-04-21 09:00, L press release, MP tweet activity |
+
+---
+
 ## 🚫 Prohibited Patterns
 
 The following writing patterns are prohibited in all Riksdagsmonitor content:
