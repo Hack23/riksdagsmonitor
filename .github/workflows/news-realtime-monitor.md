@@ -842,33 +842,63 @@ Branch: `news/content/{YYYY-MM-DD}/breaking`. `safeoutputs___create_pull_request
 > 6. If `safeoutputs___create_pull_request` returns `session not found` on any call, every subsequent safeoutputs call will also fail — recover is impossible. The rolling-batch pattern is specifically designed to prevent this by exercising the session at least twice.
 
 ```bash
-# Stage articles and analysis — scoped to this run's time-stamped folder to prevent overwriting other runs
+# Stage articles and analysis — DATE-SCOPED to stay within safe-outputs 100-file PR limit.
+# 🚨 PAST INCIDENT (run 24719881413, 2026-04-21): broad globs like
+# `news/*breaking*.html news/*realtime*.html news/*monitor*.html` matched 222+ historical
+# articles across the whole archive. Any prior script that touched those files (Playwright
+# validation, auto-fix, translation pass) caused `git add` to stage 602/604 files →
+# `E003: Cannot create pull request with more than 100 files`. Fix: scope EVERY `git add`
+# to `$ARTICLE_DATE` so only today's new/modified files are included.
 [ -f /tmp/hhmm.env ] && . /tmp/hhmm.env
 if [ -z "$HHMM" ]; then
   date -u +%H%M > /tmp/hhmm_val.txt
   read HHMM < /tmp/hhmm_val.txt
 fi
-# CRITICAL: Stage only this workflow's articles and metadata, NOT all of news/
-git add news/*realtime*.html news/*breaking*.html news/*monitor*.html 2>/dev/null || true
-git add news/metadata/ 2>/dev/null || true
 [ -z "$ARTICLE_DATE" ] && { date -u +%Y-%m-%d > /tmp/today.txt; read ARTICLE_DATE < /tmp/today.txt; }
+# Stage ONLY today's EN + SV realtime/breaking/monitor articles (translations run via news-translate)
+git add "news/$ARTICLE_DATE"-*realtime*-en.html "news/$ARTICLE_DATE"-*realtime*-sv.html 2>/dev/null || true
+git add "news/$ARTICLE_DATE"-*breaking*-en.html "news/$ARTICLE_DATE"-*breaking*-sv.html 2>/dev/null || true
+git add "news/$ARTICLE_DATE"-*monitor*-en.html  "news/$ARTICLE_DATE"-*monitor*-sv.html  2>/dev/null || true
+git add news/metadata/ 2>/dev/null || true
 git add "analysis/daily/$ARTICLE_DATE/realtime-$HHMM/" || true
-git add analysis/weekly/ || true
-git add analysis/data/ || true
-# Enforce safe-outputs 100-file PR limit
-git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
-read STAGED_COUNT < /tmp/staged_count.txt
+# 🚫 DO NOT stage analysis/data/ by default — it is an MCP response cache populated by
+# download-parliamentary-data.ts (6 doc types × ~40 files = 240+). Committing it caused
+# E003 "received 258 files" in news-motions run 24653843681 (PR #1867).
+git reset HEAD -- analysis/data/ 2>/dev/null || true
+# 🚫 DO NOT stage analysis/weekly/ by default — it is a cumulative rollup maintained by
+# the weekly-review workflow. Including it here doubles the file count for no benefit.
+git reset HEAD -- analysis/weekly/ 2>/dev/null || true
+# 🛡️ Defensive filter: unstage any news/ files that do NOT match $ARTICLE_DATE. Catches
+# cases where an earlier bash step accidentally modified historical articles and their
+# paths leaked in via `git add news/metadata/` globbing or similar subtle issues.
+git diff --cached --name-only > /tmp/staged_files.txt
+awk -v today="$ARTICLE_DATE" '$0 ~ "^news/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]" && $0 !~ today {print}' /tmp/staged_files.txt > /tmp/historical_news.txt
+if [ -s /tmp/historical_news.txt ]; then
+  HIST_COUNT=0
+  awk 'END{print NR}' /tmp/historical_news.txt > /tmp/hist_count.txt
+  read HIST_COUNT < /tmp/hist_count.txt 2>/dev/null || true
+  echo "⚠️ Unstaging $HIST_COUNT historical news/ files that do not match $ARTICLE_DATE"
+  xargs -a /tmp/historical_news.txt git reset HEAD -- 2>/dev/null || true
+fi
+# Enforce safe-outputs 100-file PR limit (hard cap: 100; soft threshold: 90)
+git diff --cached --name-only > /tmp/staged_files.txt
+awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+STAGED_COUNT=0
+read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
+echo "📊 Staged file count: $STAGED_COUNT (limit: 100)"
 if [ "$STAGED_COUNT" -gt 90 ]; then
-  echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing bulk data."
-  git reset HEAD -- analysis/data/ 2>/dev/null || true
-  git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
-read STAGED_COUNT < /tmp/staged_count.txt
+  echo "⚠️ $STAGED_COUNT files exceeds safe threshold. Removing analysis/daily documents/ subfolder."
+  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/realtime-$HHMM/documents/" 2>/dev/null || true
+  git diff --cached --name-only > /tmp/staged_files.txt
+  awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 if [ "$STAGED_COUNT" -gt 90 ]; then
-  echo "⚠️ Still $STAGED_COUNT files. Removing weekly analysis."
-  git reset HEAD -- analysis/weekly/ 2>/dev/null || true
-  git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
-read STAGED_COUNT < /tmp/staged_count.txt
+  echo "⚠️ Still $STAGED_COUNT files. Removing news/metadata/."
+  git reset HEAD -- news/metadata/ 2>/dev/null || true
+  git diff --cached --name-only > /tmp/staged_files.txt
+  awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
 git commit -m "🔴 Breaking $HHMM: {headline} - $ARTICLE_DATE"

@@ -996,22 +996,50 @@ Branch: `news/content/{YYYY-MM-DD}/evening-analysis`. `safeoutputs___create_pull
 - ❌ Safe output tools are in your tool list — NEVER search for them via bash
 
 ```bash
-# Stage articles and analysis — scoped to evening-analysis subfolder to prevent overwriting other workflows
-# CRITICAL: Stage only this workflow's articles and metadata, NOT all of news/
-git add news/*evening-analysis*.html news/*evening*.html 2>/dev/null || true
-git add news/metadata/ 2>/dev/null || true
+# Stage articles and analysis — DATE-SCOPED to stay within safe-outputs 100-file PR limit.
+# 🚨 Broad globs like `news/*evening-analysis*.html news/*evening*.html` would match every
+# historical evening-analysis article in the archive. Any prior script that modified those
+# files (Playwright validation, auto-fix, translation pass) would then cause `git add` to
+# stage hundreds of files → E003 (>100 files). Scope EVERY stage to $ARTICLE_DATE.
 [ -z "$ARTICLE_DATE" ] && { date -u +%Y-%m-%d > /tmp/today.txt; read ARTICLE_DATE < /tmp/today.txt; }
 [ -z "$ANALYSIS_SUBFOLDER" ] && ANALYSIS_SUBFOLDER="evening-analysis"
+# Stage ONLY today's EN + SV evening articles (translations run via news-translate)
+git add "news/$ARTICLE_DATE"-*evening-analysis*-en.html "news/$ARTICLE_DATE"-*evening-analysis*-sv.html 2>/dev/null || true
+git add "news/$ARTICLE_DATE"-*evening*-en.html           "news/$ARTICLE_DATE"-*evening*-sv.html           2>/dev/null || true
+git add news/metadata/ 2>/dev/null || true
 git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" || true
-git add analysis/weekly/ || true
+# 🚫 DO NOT stage analysis/data/ — it is an MCP response cache. Committing it caused E003
+# in news-motions run 24653843681 (PR #1867).
+git reset HEAD -- analysis/data/ 2>/dev/null || true
+# 🛡️ Defensive filter: unstage any news/ files that do NOT match $ARTICLE_DATE.
+git diff --cached --name-only > /tmp/staged_files.txt
+awk -v today="$ARTICLE_DATE" '$0 ~ "^news/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]" && $0 !~ today {print}' /tmp/staged_files.txt > /tmp/historical_news.txt
+if [ -s /tmp/historical_news.txt ]; then
+  HIST_COUNT=0
+  awk 'END{print NR}' /tmp/historical_news.txt > /tmp/hist_count.txt
+  read HIST_COUNT < /tmp/hist_count.txt 2>/dev/null || true
+  echo "⚠️ Unstaging $HIST_COUNT historical news/ files that do not match $ARTICLE_DATE"
+  xargs -a /tmp/historical_news.txt git reset HEAD -- 2>/dev/null || true
+fi
 # Enforce safe-outputs 100-file PR limit
-git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
-read STAGED_COUNT < /tmp/staged_count.txt
+git diff --cached --name-only > /tmp/staged_files.txt
+awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+STAGED_COUNT=0
+read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
+echo "📊 Staged file count: $STAGED_COUNT (limit: 100)"
 if [ "$STAGED_COUNT" -gt 90 ]; then
-  echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing weekly analysis."
+  echo "⚠️ $STAGED_COUNT files exceeds safe threshold. Removing weekly analysis."
   git reset HEAD -- analysis/weekly/ 2>/dev/null || true
-  git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
-read STAGED_COUNT < /tmp/staged_count.txt
+  git diff --cached --name-only > /tmp/staged_files.txt
+  awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
+fi
+if [ "$STAGED_COUNT" -gt 90 ]; then
+  echo "⚠️ Still $STAGED_COUNT files. Removing news/metadata/."
+  git reset HEAD -- news/metadata/ 2>/dev/null || true
+  git diff --cached --name-only > /tmp/staged_files.txt
+  awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
 git commit -m "🌆 Evening Analysis - $ARTICLE_DATE"
