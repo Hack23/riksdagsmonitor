@@ -3,7 +3,7 @@
     "filename": "2026-04-21-committee-reports-en.html",
     "lang": "en",
     "articleType": "committee-reports",
-    "score": 100,
+    "htmlLintScore": 100,
     "passed": false,
     "multidimensional": {
       "overallScore": 79,
@@ -25,7 +25,7 @@
     "filename": "2026-04-21-committee-reports-sv.html",
     "lang": "sv",
     "articleType": "committee-reports",
-    "score": 100,
+    "htmlLintScore": 100,
     "passed": true,
     "multidimensional": {
       "overallScore": 90,
