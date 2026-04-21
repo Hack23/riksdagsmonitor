@@ -1,12 +1,12 @@
 {
-  "2026-04-21-committee-reports-en.html": {
-    "filename": "2026-04-21-committee-reports-en.html",
+  "2026-04-21-interpellation-debates-en.html": {
+    "filename": "2026-04-21-interpellation-debates-en.html",
     "lang": "en",
-    "articleType": "committee-reports",
-    "htmlLintScore": 100,
-    "passed": false,
+    "articleType": "interpellations",
+    "score": 100,
+    "passed": true,
     "multidimensional": {
-      "overallScore": 79,
+      "overallScore": 75,
       "passesThreshold": false,
       "assessmentPasses": 2,
       "dimensions": {
@@ -15,17 +15,17 @@
         "analyticalDepth": 80,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
-        "languageQuality": 25
+        "languageQuality": 0
       },
       "issueCount": 3
     },
-    "timestamp": "2026-04-21T15:36:54.781Z"
+    "timestamp": "2026-04-21T17:03:29.152Z"
   },
-  "2026-04-21-committee-reports-sv.html": {
-    "filename": "2026-04-21-committee-reports-sv.html",
+  "2026-04-21-interpellation-debates-sv.html": {
+    "filename": "2026-04-21-interpellation-debates-sv.html",
     "lang": "sv",
-    "articleType": "committee-reports",
-    "htmlLintScore": 100,
+    "articleType": "interpellations",
+    "score": 100,
     "passed": true,
     "multidimensional": {
       "overallScore": 90,
@@ -41,6 +41,6 @@
       },
       "issueCount": 2
     },
-    "timestamp": "2026-04-21T15:36:54.791Z"
+    "timestamp": "2026-04-21T17:03:29.161Z"
   }
 }
