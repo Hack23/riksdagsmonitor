@@ -11,14 +11,27 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+---
+
+## 🔄 Tradecraft Anchors
+
+| Element | Value | Reference |
+|---------|-------|-----------|
+| **F3EAD Stage** | **EXPLOIT** | SWOT extracts strategic intelligence value from classified documents |
+| **PIRs Served** | SWOT entries map to PIRs: Strengths/Opportunities for government → PIR-1, PIR-5; Threats to democratic process → PIR-7; Electoral vulnerabilities → PIR-6 | See [`political-style-guide.md` §PIR/EEI Catalog](political-style-guide.md#-priority-intelligence-requirements-pir--essential-elements-of-information-eei) |
+| **Admiralty Floor** | Every SWOT entry requires ≥[B2] evidence; entries at [C3] or lower must be flagged `⚠️ low confidence` | See [`political-style-guide.md` §Admiralty Code](political-style-guide.md#-admiralty-source-reliability-code-nato-stanag-2022) |
+| **WEP Requirement** | Scenario Generation uses WEP probabilities; TOWS strategic options use WEP for likelihood of success | See [`political-style-guide.md` §WEP + ODNI](political-style-guide.md#-words-of-estimative-probability-wep--odni-confidence-overlay) |
+| **ICD 203 Gate** | Standard 4 (alternative analysis via Cross-SWOT), 6 (logical argumentation), 9 (visual information) | See [`political-style-guide.md` §ICD 203](political-style-guide.md#-icd-203-analytic-tradecraft-standards-mapping) |
+| **SAT(s)** | Brainstorming (entry generation), Key Assumptions Check (SWOT validation) | See [`political-style-guide.md` §SATs](political-style-guide.md#-structured-analytic-techniques-sats-catalog) |
 
 ---
 

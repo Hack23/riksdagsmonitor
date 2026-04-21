@@ -11,14 +11,27 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-3.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-3.3-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.2 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 3.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+---
+
+## 🔄 Tradecraft Anchors
+
+| Element | Value | Reference |
+|---------|-------|-----------|
+| **F3EAD Stage** | **EXPLOIT → ANALYZE** | Threat analysis extracts adversarial intelligence and feeds scenario/intelligence products |
+| **PIRs Served** | Narrative Integrity threats → PIR-7; Legislative Integrity threats → PIR-2; Democratic Process threats → PIR-6, PIR-7; Power Balance threats → PIR-1 | See [`political-style-guide.md` §PIR/EEI Catalog](political-style-guide.md#-priority-intelligence-requirements-pir--essential-elements-of-information-eei) |
+| **Admiralty Floor** | Threat claims require ≥[B2] evidence; actor attribution requires ≥[A1] or multiple [B2] sources | See [`political-style-guide.md` §Admiralty Code](political-style-guide.md#-admiralty-source-reliability-code-nato-stanag-2022) |
+| **WEP Requirement** | Attack-tree probability branches use WEP; Kill-chain phase progression uses WEP for likelihood of advancement | See [`political-style-guide.md` §WEP + ODNI](political-style-guide.md#-words-of-estimative-probability-wep--odni-confidence-overlay) |
+| **ICD 203 Gate** | Standard 2 (uncertainties), 4 (alternative analysis — competing threat hypotheses), 9 (visual information — attack trees) | See [`political-style-guide.md` §ICD 203](political-style-guide.md#-icd-203-analytic-tradecraft-standards-mapping) |
+| **SAT(s)** | Red Team Analysis (adversary perspective), ACH (competing threat hypotheses), Indicators and Signposts (threat warning indicators) | See [`political-style-guide.md` §SATs](political-style-guide.md#-structured-analytic-techniques-sats-catalog) |
 
 ---
 

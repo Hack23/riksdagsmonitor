@@ -11,14 +11,27 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--21-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-21 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+---
+
+## 🔄 Tradecraft Anchors
+
+| Element | Value | Reference |
+|---------|-------|-----------|
+| **F3EAD Stage** | **FIND → FIX** | This methodology covers collection and document-identity establishment |
+| **PIRs Served** | All PIRs — manifest establishes the evidence foundation for every PIR | See [`political-style-guide.md` §PIR/EEI Catalog](political-style-guide.md#-priority-intelligence-requirements-pir--essential-elements-of-information-eei) |
+| **Admiralty Floor** | Data sources recorded with Admiralty code per Collection Management Matrix | See [`political-style-guide.md` §Collection Management Matrix](political-style-guide.md#%EF%B8%8F-collection-management-matrix) |
+| **WEP Requirement** | N/A — structural metadata, no probability claims | — |
+| **ICD 203 Gate** | Standard 1 (properly describe quality and reliability of underlying sources) | See [`political-style-guide.md` §ICD 203](political-style-guide.md#-icd-203-analytic-tradecraft-standards-mapping) |
+| **SAT(s)** | Quality of Information Check | See [`political-style-guide.md` §SATs](political-style-guide.md#-structured-analytic-techniques-sats-catalog) |
 
 ---
 
