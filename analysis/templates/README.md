@@ -227,18 +227,70 @@ graph LR
 
 ---
 
-## 📑 Master Template Catalog
+## 📑 Master Template Catalog — Family A–E
 
-| # | Template | Purpose | Key Sections | MCP Data Sources | Output Format | Priority |
-|:-:|----------|---------|-------------|------------------|---------------|:--------:|
-| 1 | [🏷️ Political Classification](political-classification.md) | 7-dimension event classification | Sensitivity Level, Policy Domain, Urgency Level, Classification Dimensions, **Confidence Decay Rule** | `search_dokument`, `get_calendar_events`, `get_betankanden` | Metadata table + checkbox dimensions + Mermaid | 🔴 HIGH |
-| 2 | [⚠️ Risk Assessment](risk-assessment.md) | Quantified risk using 5×5 L×I matrix across 5 main dimensions | Risk Context, Risk Register, Heat Map, Mitigation, **Risk Trend (↑↓→)**, **Previous Assessment Comparison**, **Risk Interconnection Mermaid** | `search_voteringar`, `get_betankanden`, `get_propositioner` | Risk register + L×I heat map Mermaid + trends | 🔴 HIGH |
-| 3 | [🎭 Threat Analysis](threat-analysis.md) | Multi-framework political threat assessment | 6 Threat Dimensions, Diamond Model, Attack Trees, Kill Chain, **Threat Evolution Timeline**, **Cross-Methodology Linkage** | `search_voteringar`, `search_anforanden`, `get_interpellationer` | Dimension tables + severity Mermaid | 🔴 HIGH |
-| 4 | [💼 SWOT Analysis](swot-analysis.md) | Evidence-based SWOT with TOWS + Cross-SWOT | SWOT Context, Quadrants, Strategic Implications, **SWOT Delta (New/Changed/Removed)**, **Temporal Window** | `get_betankanden`, `search_voteringar`, `get_propositioner` | 4-quadrant tables + Mermaid chart | 🟡 MEDIUM |
-| 5 | [👥 Stakeholder Impact](stakeholder-impact.md) | Multi-lens stakeholder impact assessment | 8 Stakeholder Groups, Impact Matrix, **Position Change Tracking**, **Power-Interest Grid** | `search_ledamoter`, `get_betankanden`, `search_anforanden` | Stakeholder tables + Mermaid diagram | 🟡 MEDIUM |
-| 6 | [📈 Significance Scoring](significance-scoring.md) | 5-dimension composite score (1–10) | 5 Scoring Dimensions, Composite Score, Decision, **Relative Scoring (same-type comparison)** | `search_dokument`, `get_calendar_events` | Scoring table + publish decision | 🔴 HIGH |
-| 7 | [🧩 Synthesis Summary](synthesis-summary.md) | Daily intelligence synthesis | Headlines, SWOT, Risk, Threat, **Mandatory Forward Indicators**, **Aggregate Risk Level with Trend** | All MCP tools (aggregated) | Dashboard + Mermaid overview | 🔴 HIGH |
-| 8 | [🔍 Per-File Intelligence](per-file-political-intelligence.md) | Deep per-document AI analysis (**most used**) | Executive Summary, Classification, SWOT, Risk, Threat, Stakeholder, Significance, **Same-Day Cross-Reference**, **Hack23 Ecosystem Cross-Reference** | Depends on document type | Comprehensive `{dok_id}-analysis.md` in `analysis/daily/.../documents/` | 🔴 CRITICAL |
+Templates are grouped by the **output family** defined in [`ai-driven-analysis-guide.md`](../methodologies/ai-driven-analysis-guide.md#-output-matrix--every-file-every-family). Each family corresponds to a distinct role in the 7-step analysis protocol. Every analysis workflow uses the same catalog.
+
+### 📘 Family A — Core Synthesis (every run produces all 9)
+
+| # | File | Template | Purpose |
+|:-:|------|----------|---------|
+| A1 | `README.md` (folder index) | [folder README](#folder-readme-template) | Index + links for each workflow folder |
+| A2 | `executive-brief.md` | [executive-brief.md](executive-brief.md) | BLUF, 3 decisions, 60-second read, confidence-labeled |
+| A3 | `synthesis-summary.md` | [synthesis-summary.md](synthesis-summary.md) | Integrated intelligence picture + article decision |
+| A4 | `significance-scoring.md` | [significance-scoring.md](significance-scoring.md) | DIW-weighted ranking, 6 dimensions |
+| A5 | `classification-results.md` | [political-classification.md](political-classification.md) | 7-dimension classification across documents |
+| A6 | `swot-analysis.md` | [swot-analysis.md](swot-analysis.md) | Stakeholder SWOT + TOWS + cross-SWOT |
+| A7 | `risk-assessment.md` | [risk-assessment.md](risk-assessment.md) | 5×5 L×I matrix + cascading chains |
+| A8 | `threat-analysis.md` | [threat-analysis.md](threat-analysis.md) | Political threat taxonomy + attack tree |
+| A9 | `stakeholder-perspectives.md` | [stakeholder-impact.md](stakeholder-impact.md) | 6-lens stakeholder impact matrix |
+
+### 📗 Family B — Structural Metadata (every run produces all 2)
+
+| # | File | Template | Purpose |
+|:-:|------|----------|---------|
+| B1 | `data-download-manifest.md` | [data-download-manifest.md](data-download-manifest.md) | Transparent MCP-download inventory + data-depth ceilings |
+| B2 | `cross-reference-map.md` | [cross-reference-map.md](cross-reference-map.md) | Policy clusters + legislative chains + coordinated-activity patterns |
+
+### 📙 Family C — Strategic Extensions (trigger-driven)
+
+| # | File | Template | Trigger |
+|:-:|------|----------|---------|
+| C1 | `scenario-analysis.md` | [scenario-analysis.md](scenario-analysis.md) | Any multi-path uncertainty or P0/P1 document |
+| C2 | `comparative-international.md` | [comparative-international.md](comparative-international.md) | Any P0/P1 document (also known as `international-comparative.md`) |
+| C3 | `devils-advocate.md` | [devils-advocate.md](devils-advocate.md) | Any document with DIW ≥ 7.0 |
+| C4 | `intelligence-assessment.md` | [intelligence-assessment.md](intelligence-assessment.md) | Coordinated interpellation/question/debate pattern |
+| C5 | `methodology-reflection.md` | [methodology-reflection.md](methodology-reflection.md) | Reference-exemplar runs + weekly/monthly reviews |
+
+### 📕 Family D — Electoral & Domain Lenses (trigger-driven)
+
+| # | File | Template | Trigger |
+|:-:|------|----------|---------|
+| D1 | `election-2026-analysis.md` | [election-2026-analysis.md](election-2026-analysis.md) | Every run 2025-10 → 2026-09 (also `election-2026-implications.md`) |
+| D2 | `voter-segmentation.md` | [voter-segmentation.md](voter-segmentation.md) | Fiscal, welfare, migration or justice with voter effect |
+| D3 | `coalition-mathematics.md` | [coalition-mathematics.md](coalition-mathematics.md) | Contested vote / SD-pivotal scenario / coalition inflection |
+| D4 | `historical-parallels.md` | [historical-parallels.md](historical-parallels.md) | P0/P1 reform with named precedent (also `historical-baseline.md`) |
+| D5 | `media-framing-analysis.md` | [media-framing-analysis.md](media-framing-analysis.md) | High-salience story dominating next cycle |
+| D6 | `implementation-feasibility.md` | [implementation-feasibility.md](implementation-feasibility.md) | Bill with concrete delivery obligations |
+| D7 | `forward-indicators.md` | [forward-indicators.md](forward-indicators.md) | Weekly/monthly reviews or ≥ 3 triggers needing central tracking |
+
+### 📒 Family E — Per-Document
+
+| # | File | Template | Purpose |
+|:-:|------|----------|---------|
+| E1 | `documents/${dok_id}-analysis.md` | [per-file-political-intelligence.md](per-file-political-intelligence.md) | Deep per-document analysis (tiers L1–L3) |
+| E2 | `documents/${cluster}-cluster-analysis.md` | [per-file-political-intelligence.md § Cluster](per-file-political-intelligence.md) | Cluster-level synthesis for grouped documents |
+
+### Workflow → Family Map
+
+| Workflow | Family A | Family B | Family C | Family D | Family E |
+|----------|:--------:|:--------:|:--------:|:--------:|:--------:|
+| Morning per-type (propositions, motions, betänkanden, interpellationer, frågor) | ✅ All 9 | ✅ Both | Triggered | Triggered | ✅ Every doc |
+| Midday week/month-ahead | ✅ All 9 | ✅ Both | `scenario` + `forward-indicators` | `election-2026` | Summary only |
+| Evening analysis | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ As triggered | ✅ Every doc |
+| Realtime monitor | ✅ All 9 | ✅ Both | Triggered | Triggered | ✅ Every doc |
+| Weekly review | ✅ All 9 | ✅ Both | ✅ All 5 + reflection | ✅ All 7 | Top 20 |
+| Monthly review | ✅ All 9 | ✅ Both | ✅ All 5 + reflection | ✅ All 7 | Top 50 |
 
 ---
 

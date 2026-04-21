@@ -183,14 +183,26 @@ graph LR
 
 ## 📋 Methodology Summary Table
 
+> **🎯 Start here:** the **[AI-Driven Analysis Guide](ai-driven-analysis-guide.md)** is the single, canonical entry point for every agentic workflow. It defines the 7-step protocol and the Family A–E output matrix that every methodology below feeds into.
+
 | Priority | Document | Key Content | Dimensions / Frameworks | When to Apply |
 |----------|----------|-------------|-------------------------|---------------|
-| **1** | **[Political Classification Guide](political-classification-guide.md)** | 7-dimension event classification, sensitivity levels, policy domain taxonomy, urgency matrix | Sensitivity (4 levels), Democratic Integrity, Policy Urgency, Economic Impact, Governance Impact, Political Capital, Legislative Impact | **First** — every incoming Riksdag document must be classified before any analysis begins |
-| **2** | **[Political Risk Methodology](political-risk-methodology.md)** | Likelihood × Impact scoring, 8 risk categories, 5×5 matrix, cascading risk analysis | Policy, Legislative, Economic, Social, Security, Diplomatic, Coalition, Constitutional | **Second** — after classification, assess political risk using calibrated scoring |
-| **3** | **[Political Threat Framework](political-threat-framework.md)** | Multi-framework threat analysis: Political Threat Taxonomy + 3 supporting frameworks | Narrative Integrity, Legislative Integrity, Accountability, Transparency, Democratic Process, Power Balance | **Third** — apply threat analysis using political frameworks (never STRIDE/DREAD/PASTA) |
-| **4** | **[Political SWOT Framework](political-swot-framework.md)** | Evidence-based SWOT, confidence levels, 180-day decay, group-to-landscape aggregation | Strengths, Weaknesses, Opportunities, Threats — each with confidence (HIGH/MEDIUM/LOW) | **Fourth** — synthesize classification + risk + threat into strategic SWOT assessment |
-| **5** | **[Political Style Guide](political-style-guide.md)** | Writing standards, 3 depth levels, evidence density requirements, anti-patterns | Level 1 Surface (200–500 words), Level 2 Strategic (800–2,000 words), Level 3 Intelligence (2,000–5,000 words) | **Fifth** — apply writing standards when drafting the analysis document |
-| **6** | **[AI-Driven Analysis Guide](ai-driven-analysis-guide.md)** | Per-file AI protocol, quality gates, weighted scoring (7.0/10 minimum), conflict resolution | Evidence (25%), Depth (25%), Structural (20%), Actionable (15%), Neutrality (15%) | **Always** — orchestrates the entire pipeline; AI agents must read this first |
+| **★ Start** | **[AI-Driven Analysis Guide](ai-driven-analysis-guide.md)** | 7-step protocol, Family A–E output matrix, color-coded Mermaid palette, 5-level confidence scale, DIW weighting, quality gate | Evidence (25%), Depth (25%), Structural (20%), Actionable (15%), Neutrality (15%) | **Always read first** — orchestrates every other methodology and names every output file with its template |
+| **1** | **[Political Classification Guide](political-classification-guide.md)** | 7-dimension event classification, sensitivity levels, policy domain taxonomy, urgency matrix | Sensitivity (4 levels), Democratic Integrity, Policy Urgency, Economic Impact, Governance Impact, Political Capital, Legislative Impact | Step 3 — every incoming Riksdag document is classified before analysis begins |
+| **2** | **[Political Risk Methodology](political-risk-methodology.md)** | Likelihood × Impact scoring, 8 risk categories, 5×5 matrix, cascading risk analysis | Policy, Legislative, Economic, Social, Security, Diplomatic, Coalition, Constitutional | Step 3–4 — assess political risk using calibrated scoring |
+| **3** | **[Political Threat Framework](political-threat-framework.md)** | Multi-framework threat analysis: Political Threat Taxonomy + Diamond Model + Attack Trees + Kill Chain | Narrative Integrity, Legislative Integrity, Accountability, Transparency, Democratic Process, Power Balance | Step 4 — apply threat analysis using political frameworks |
+| **4** | **[Political SWOT Framework](political-swot-framework.md)** | Evidence-based SWOT with TOWS + cross-SWOT; confidence levels; 180-day decay; group-to-landscape aggregation | Strengths, Weaknesses, Opportunities, Threats — each with confidence (VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW) | Step 4 — synthesize classification + risk + threat into strategic SWOT assessment |
+| **5** | **[Political Style Guide](political-style-guide.md)** | Writing standards, 4 depth tiers, evidence density requirements, Mermaid + evidence-table conventions | L1 Surface (200–500 words), L2 Strategic (800–2 000 words), L2+ Priority (1 500–3 000 words), L3 Intelligence (2 500–5 000 words) | Continuous — applied when drafting every analysis file |
+
+### Family A–E output matrix (authoritative definition lives in the [AI-Driven Analysis Guide](ai-driven-analysis-guide.md#-output-matrix--every-file-every-family))
+
+| Family | Purpose | Produced by |
+|:------:|---------|-------------|
+| 📘 **A** — Core Synthesis | 9 always-produced files (executive brief, synthesis, significance, classification, SWOT, risk, threat, stakeholder, folder README) | Every workflow |
+| 📗 **B** — Structural Metadata | 2 always-produced files (data-download manifest, cross-reference map) | Every workflow |
+| 📙 **C** — Strategic Extensions | 5 trigger-produced files (scenario, comparative-international, devil's advocate, intelligence assessment, methodology reflection) | P0/P1, DIW ≥ 7.0, coordinated activity, reviews |
+| 📕 **D** — Electoral & Domain Lenses | 7 trigger-produced files (election-2026, voter-segmentation, coalition-mathematics, historical parallels, media framing, implementation feasibility, forward indicators) | Pre-election window, sector triggers |
+| 📒 **E** — Per-Document | 1 file per document (per-file-political-intelligence), plus optional cluster files | Every workflow |
 
 ---
 
@@ -642,22 +654,22 @@ flowchart TD
 
 ---
 
-## 🚫 Anti-Patterns — What NOT To Do
+## ✅ Required Practices — What Every Analysis Delivers
 
-The following practices are **explicitly prohibited** across all methodologies:
+Every methodology produces output that satisfies these ten positive standards. Each row states the practice, why it raises quality, and where the protocol enforces it.
 
-| Anti-Pattern | Why It Fails | Correct Approach |
-|-------------|-------------|------------------|
-| **Using STRIDE, DREAD, or PASTA** | These are software security threat models, not political intelligence frameworks | Use Political Threat Taxonomy (6 dimensions), Attack Trees, Kill Chain, Diamond Model, Actor Profiling |
-| **Boilerplate summaries** | Generic text adds no analytical value; wastes reader attention | Every paragraph must contain at least one Riksdag data citation or concrete analytical insight |
-| **Claims without confidence levels** | Ungraded assertions cannot be evaluated for reliability | Assign HIGH / MEDIUM / LOW confidence with source justification |
-| **Tables-only analysis** | Data without narrative interpretation is not analysis | Tables must be accompanied by explanatory prose interpreting the data |
-| **Opinion without evidence** | Subjective assertions undermine analytical credibility | All opinions must cite verifiable Riksdag/Regeringen MCP data sources |
-| **Hardcoded Mermaid values** | Static diagrams become stale and misleading | Use data-driven values sourced from MCP tool results |
-| **Shallow classification** | Single-dimension classification misses complexity | Apply all 7 classification dimensions; score each independently |
-| **Stale SWOT entries** | Entries older than 180 days without re-verification are unreliable | Enforce 180-day decay rule; re-verify or remove expired entries |
-| **Missing stakeholder analysis** | Analysis without impact assessment has no actionable value | Identify affected parties, opposition blocs, committees, and citizens |
-| **Ignoring multi-language requirements** | Analysis must serve 14-language platform | Structure content for translation; avoid idioms and culture-specific references |
+| Practice | Why it raises quality | Where enforced |
+|---------|----------------------|----------------|
+| **Use the Political Threat Taxonomy** (6 dimensions: authoritarian tendencies, corruption, institutional capture, information manipulation, violence/intimidation, external interference) | Political intelligence needs a political model, not a software one | [`political-threat-framework.md`](political-threat-framework.md) |
+| **Every paragraph cites evidence** — one Riksdag data citation, vote count, named actor, or primary URL per paragraph | Evidence density is the single strongest predictor of downstream credibility | [`ai-driven-analysis-guide.md` Step 4 & Quality Gate](ai-driven-analysis-guide.md#step-6--quality-gate-self-audit-blocking) |
+| **Assign a 5-level confidence label** (VERY LOW / LOW / MEDIUM / HIGH / VERY HIGH) to every analytical claim | Confidence makes claims evaluable and reversible | [`ai-driven-analysis-guide.md` § 5-Level Confidence Scale](ai-driven-analysis-guide.md#-5-level-confidence-scale) |
+| **Pair tables with narrative interpretation** — a short prose paragraph above or below every data table | Narrative converts data into intelligence | All templates |
+| **Source every opinion from MCP data** — link to `search_voteringar`, `get_betankanden`, SCB, World Bank, or IMF queries | Opinions sourced to authoritative data defend against accusations of bias | Templates + `political-style-guide.md` |
+| **Populate Mermaid values from MCP tool output** — vote counts, poll figures, SEK sums, years | Data-driven diagrams stay current automatically | `ai-driven-analysis-guide.md` § Color-Coded Mermaid |
+| **Apply all 7 classification dimensions** for every P0/P1 document — each dimension scored independently | Multi-dimensional classification catches complex documents | [`political-classification-guide.md`](political-classification-guide.md) |
+| **Re-verify SWOT entries within 180 days** — each entry carries its last-verified date | 180-day freshness prevents stale narratives | `political-swot-framework.md` decay rule |
+| **Include stakeholder impact** — affected parties, opposition blocs, committees, citizen groups | Actionable intelligence names who is affected and how | Family A `stakeholder-perspectives.md` |
+| **Structure content for 14-language translation** — complete sentences, defined terms, no idioms | The platform serves 14 audiences; clear source text translates cleanly | `political-style-guide.md` + `language-expertise` skill |
 
 ---
 
