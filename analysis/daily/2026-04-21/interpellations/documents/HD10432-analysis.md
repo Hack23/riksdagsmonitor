@@ -4,7 +4,7 @@
 **frs ID**: frs 2025/26:432
 **Title**: Statligt säkerställande av investeringar i vårdbyggnader (State guarantee of investments in healthcare buildings)
 **Filed**: 2026-04-15
-**Filed by**: (S) opposition
+**Filed by**: Robert Olesen (S)
 **Target Minister**: Elisabet Lann (KD) — Sjukvårdsminister
 **Response Deadline**: 2026-04-29 window
 **Status**: Skickad

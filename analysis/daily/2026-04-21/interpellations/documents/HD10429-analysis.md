@@ -4,7 +4,7 @@
 **frs ID**: frs 2025/26:429
 **Title**: Skyddet för yttrandefriheten i förhållande till proposition 2025/26:133 (Freedom of expression in relation to government bill 2025/26:133)
 **Filed**: 2026-04-07
-**Filed by**: (SD) Sverigedemokraterna
+**Filed by**: Rashid Farivar (SD)
 **Target Minister**: Gunnar Strömmer (M) — Justitieminister
 **Response Deadline**: 2026-05-04
 **Status**: Skickad

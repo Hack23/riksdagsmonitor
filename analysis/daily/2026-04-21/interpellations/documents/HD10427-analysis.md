@@ -4,7 +4,7 @@
 **frs ID**: frs 2025/26:427
 **Title**: Postnord och statens ägarpolicy och bolagsstyrningsmodell (PostNord and state ownership policy and corporate governance model)
 **Filed**: 2026-04-01
-**Filed by**: (S) opposition
+**Filed by**: Isak From (S)
 **Target Minister**: Elisabeth Svantesson (M) — Finansminister (owner ministry for PostNord)
 **Response Deadline**: 2026-05-04 window
 **Status**: Skickad

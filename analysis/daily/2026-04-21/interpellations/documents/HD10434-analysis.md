@@ -4,7 +4,7 @@
 **frs ID**: frs 2025/26:434
 **Title**: Bostadsbyggandet i Stockholmsregionen (Housing construction in the Stockholm region)
 **Filed**: 2026-04-15
-**Filed by**: (S) opposition
+**Filed by**: Leif Nysmed (S)
 **Target Minister**: Andreas Carlson (KD) — Infrastruktur- och bostadsminister
 **Response Deadline**: 2026-04-29
 **Status**: Skickad

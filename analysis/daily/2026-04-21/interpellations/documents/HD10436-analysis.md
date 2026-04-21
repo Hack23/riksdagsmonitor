@@ -4,7 +4,7 @@
 **frs ID**: frs 2025/26:436
 **Title**: Åtgärder för att stärka den svenska rymdbranschen (Measures to strengthen the Swedish space industry)
 **Filed**: 2026-04-16
-**Filed by**: (S) opposition
+**Filed by**: Mats Wiking (S)
 **Target Minister**: Lotta Edholm (L) — Skolminister, ansvarig för rymdfrågor (space policy portfolio within Utbildningsdepartementet)
 **Response Deadline**: 2026-05-04 window
 **Status**: Skickad

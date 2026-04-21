@@ -4,7 +4,7 @@
 **frs ID**: frs 2025/26:431
 **Title**: Internationellt arbete för hbtqi-personers mänskliga rättigheter (International work for LGBTQI+ human rights)
 **Filed**: 2026-04-14
-**Filed by**: (C) Centerpartiet
+**Filed by**: Anna Lasses (C)
 **Target Minister**: Benjamin Dousa (M) — Bistånds- och utrikeshandelsminister
 **Response Deadline**: 2026-05-04
 **Status**: Skickad

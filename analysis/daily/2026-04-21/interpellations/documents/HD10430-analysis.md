@@ -4,7 +4,7 @@
 **frs ID**: frs 2025/26:430
 **Title**: Moskéer som sprider hat och hot (Mosques spreading hate and threats)
 **Filed**: 2026-04-07
-**Filed by**: (SD) Sverigedemokraterna
+**Filed by**: Richard Jomshof (SD)
 **Target Minister**: Jakob Forssmed (KD) — Socialminister (civil society / SST)
 **Response Deadline**: 2026-05-04
 **Status**: Skickad

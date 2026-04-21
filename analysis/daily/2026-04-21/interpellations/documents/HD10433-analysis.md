@@ -4,7 +4,7 @@
 **frs ID**: frs 2025/26:433
 **Title**: En bred skatteöversyn (A broad tax review)
 **Filed**: 2026-04-15
-**Filed by**: (S) opposition
+**Filed by**: Ida Ekeroth Clausson (S)
 **Target Minister**: Elisabeth Svantesson (M) — Finansminister
 **Response Deadline**: 2026-04-29 window
 **Status**: Skickad
@@ -15,7 +15,7 @@ High politico-economic significance. S has publicly advocated a Skatteöversyn (
 
 ## Summary
 
-Kallifatides (S) asks Svantesson (a) whether the government will initiate a broad tax review covering income tax, capital taxation, property/wealth taxation, corporate tax, VAT and environmental taxes, (b) whether the government acknowledges the "skattetryckets sammansättning" (composition of the tax burden) has drifted since the 1990 reform in ways that weaken both efficiency and legitimacy, and (c) what barriers (coalition politics, Tidö-avtalet constraints, timetable) the government sees.
+Ida Ekeroth Clausson (S) asks Svantesson (a) whether the government will initiate a broad tax review covering income tax, capital taxation, property/wealth taxation, corporate tax, VAT and environmental taxes, (b) whether the government acknowledges the "skattetryckets sammansättning" (composition of the tax burden) has drifted since the 1990 reform in ways that weaken both efficiency and legitimacy, and (c) what barriers (coalition politics, Tidö-avtalet constraints, timetable) the government sees.
 
 ## Key Evidence
 

@@ -4,7 +4,7 @@
 **frs ID**: frs 2025/26:428
 **Title**: Beredskapsflygplats Scandinavian Mountain Airport (Emergency airport designation for Scandinavian Mountain Airport)
 **Filed**: 2026-04-02
-**Filed by**: (S) opposition
+**Filed by**: Peter Hultqvist (S)
 **Target Minister**: Andreas Carlson (KD) — Infrastruktur- och bostadsminister
 **Response Deadline**: 2026-04-29
 **Status**: Skickad

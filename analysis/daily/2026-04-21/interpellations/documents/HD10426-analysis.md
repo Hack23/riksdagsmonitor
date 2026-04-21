@@ -4,7 +4,7 @@
 **frs ID**: frs 2025/26:426
 **Title**: Israels nyligen antagna lagar om dödsstraff (Israel's recently adopted death penalty laws)
 **Filed**: 2026-04-01
-**Filed by**: (S) opposition
+**Filed by**: Azra Muranovic (S)
 **Target Minister**: Maria Malmer Stenergard (M) — Utrikesminister
 **Response Deadline**: 2026-05-04 window
 **Status**: Skickad
