@@ -32,6 +32,8 @@
 | **F3EAD Stage** | **ANALYZE** — coalition viability assessment |
 | **PIRs Served** | **PIR-1** (Coalition Stability) |
 | **Admiralty Floor** | Polling data requires **[B2]** (named pollster, date, sample size); seat projections require **[B2]** methodological source |
+| **WEP + ODNI** | Seat-projection outcomes use **WEP** (likely/unlikely/roughly even); confidence based on polling sample + historical accuracy → typically **MODERATE** |
+| **Source Diversity Floor** | P1 (coalition viability claims): ≥3 sources (≥2 polls + ≥1 expert model); single poll labeled `[unconfirmed — single source]` |
 | **SAT(s) Applied** | Morphological Analysis (seat combinations), What If? (threshold scenarios) |
 | **ICD 203 Standards** | 2 (uncertainties — margin of error), 6 (logical argumentation — arithmetic), 9 (visual information) |
 

@@ -32,6 +32,8 @@
 | **F3EAD Stage** | **DISSEMINATE** — finished intelligence product for decision-makers |
 | **PIRs Served** | `[REQUIRED: List which PIRs this brief addresses, e.g., PIR-1, PIR-5]` |
 | **Admiralty Floor** | **[B2]** — all evidence in this brief must reach ≥[B2] reliability |
+| **WEP + ODNI** | Key judgments use **WEP** (almost certain / very likely / likely); confidence level reflects evidence quality (**HIGH** for multi-source dok_id corroboration) |
+| **Source Diversity Floor** | P0/P1 claims in BLUF: ≥3 sources minimum; single-source claims prohibited in executive brief |
 | **SAT(s) Applied** | Key Assumptions Check (validation), Brainstorming (decision options) |
 | **ICD 203 Standards** | 5 (customer relevance), 6 (logical argumentation), 9 (visual information) |
 

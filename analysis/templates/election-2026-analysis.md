@@ -32,6 +32,8 @@
 | **F3EAD Stage** | **ANALYZE → DISSEMINATE** — electoral intelligence product |
 | **PIRs Served** | **PIR-6** (Election Integrity), **PIR-1** (Coalition Stability) |
 | **Admiralty Floor** | Polling data requires **[B2]** (named pollster, date, MoE); seat projections require **[B2]** |
+| **WEP + ODNI** | Electoral outcome scenarios use **WEP** (likely/very likely for coalition continuity; roughly even for bloc shift); confidence **MODERATE** (polling inherent uncertainty) |
+| **Source Diversity Floor** | P0 (election outcome claims): ≥4 sources (≥3 polls + ≥1 historical model); single poll labeled `[unconfirmed — single source]` |
 | **SAT(s) Applied** | Morphological Analysis (bloc combinations), Indicators and Signposts (campaign milestones) |
 | **ICD 203 Standards** | 2 (uncertainties — polling MoE), 5 (customer relevance — electoral calendar), 9 (visual information) |
 
