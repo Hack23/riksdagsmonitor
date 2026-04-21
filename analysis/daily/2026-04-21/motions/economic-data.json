@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "articleType": "motions",
+  "date": "2026-04-21",
+  "policyDomains": ["immigration policy", "fiscal policy", "climate policy", "defense export", "healthcare", "justice"],
+  "dataPoints": [
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (annual %)", "date": "2024", "value": 0.82 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (annual %)", "date": "2023", "value": -0.204 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (annual %)", "date": "2022", "value": 1.255 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (annual %)", "date": "2021", "value": 5.226 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment rate (%)", "date": "2025", "value": 8.694 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment rate (%)", "date": "2024", "value": 8.4 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment rate (%)", "date": "2023", "value": 7.611 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment rate (%)", "date": "2022", "value": 7.417 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment rate (%)", "date": "2021", "value": 8.803 }
+  ],
+  "commentary": "Sweden's economic backdrop critically shapes the political salience of these opposition motions. With unemployment rising to 8.69% in 2025 — up from 8.4% in 2024 and 7.6% in 2023 — the governing coalition's argument that immigration policy must be tightened to protect public services and labour market access has growing empirical support among voters concerned about resource competition. Meanwhile, Sweden's GDP growth of only 0.82% in 2024, following a contraction of -0.2% in 2023, means the government's fuel tax cut (opposed by S and MP) cannot be justified as fiscal stimulus for a recovering economy — weakening the government's economic credibility on climate. The opposition's dual strategy — humanitarian on immigration, fiscal discipline on climate — maps onto these economic anxieties: Socialdemokraterna frames integration as long-term economic investment (HD024079), while Miljöpartiet frames the fuel tax cut as an expensive deviation from Sweden's climate commitments at precisely the moment when economic recovery should enable a green transition.",
+  "source": {
+    "worldBank": ["NY.GDP.MKTP.KD.ZG", "SL.UEM.TOTL.ZS"],
+    "scb": [],
+    "riksdagMotions": ["HD024076", "HD024077", "HD024079", "HD024080", "HD024081", "HD024082", "HD024083", "HD024084", "HD024085", "HD024086", "HD024087", "HD024088", "HD024089", "HD024090", "HD024091", "HD024094", "HD024095", "HD024096", "HD024097", "HD024098"]
+  }
+}
