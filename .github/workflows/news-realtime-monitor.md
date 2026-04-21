@@ -305,7 +305,11 @@ Uses `memory/news-generation` branch. START: read `memory/news-generation/last-r
 
 ## ⏱️ Time Budget (45 minutes) — ROLLING PRs KEEP THE SESSION ALIVE
 
-> 🔴 **PRODUCTION INCIDENT (2026-04-20, run 24672037751)**: The agent wrote both EN (3,344 words) and SV (2,774 words) breaking articles, committed locally, then called `safeoutputs___create_pull_request` at **minute ~33**. All four safeoutputs calls (`create_pull_request`, `noop`, `missing_tool`, `report_incomplete`) failed with `session not found` — the safeoutputs MCP session had expired from idle. **All work lost.**
+> 🔴 **PRODUCTION INCIDENT (2026-04-21, run 24722758908, repeat of 2026-04-20 run 24672037751)**: The agent ran Pass 1 analysis by minute 12, then spent minutes 12→34 **rewriting** EN (3,784 words) and SV (2,823 words) breaking articles from scratch locally. At minute 34 it called `safeoutputs___create_pull_request` → **`Error: session not found`**. All 8+ subsequent safeoutputs calls (noop, missing_tool, report_incomplete, push_repo_memory) also failed. **All work lost — same outcome as the 2026-04-20 incident.**
+>
+> **Root cause**: "PR #1 at minute 22–25 with initial articles" is **physically impossible** — writing publication-quality EN + SV articles (6,000+ words combined, zero `AI_MUST_REPLACE` markers) from scratch takes 8–15 minutes, blowing the safeoutputs session idle timer (~30–35 min from MCP Gateway start). Even when the agent recognized the deadline at minute 24, finishing the articles took another 10 minutes.
+>
+> **FIX (this PR)**: Split PR #1 from article content. PR #1 is now an **analysis-only Heartbeat PR at minute 13–18** matching the proven pattern from `news-committee-reports`, `news-motions`, `news-propositions`, `news-interpellations`, `news-month-ahead`, `news-monthly-review`, `news-week-ahead`, `news-weekly-review`, `news-article-generator`, `news-evening-analysis`. Article writing happens between PR #1 and PR #2.
 
 > 🟢 **SESSION KEEP-ALIVE STRATEGY (this workflow, `create-pull-request.max: 3`)**: Every `safeoutputs___create_pull_request` call **refreshes the Streamable HTTP MCP session idle timer**. Instead of rushing all work into a single monolithic PR before minute 28, the agent now opens up to **3 rolling PRs** — each call keeps the session alive and captures an additional batch of work. This is the same pattern PR #1768 proved successful for `news-translate.md` (where it went from "all work lost at minute 50" to "5 batch PRs over 55 minutes, zero session expiries"). See `SHARED_PROMPT_PATTERNS.md` §"Universal Safe Output Rules".
 
@@ -320,17 +324,17 @@ read START_TIME < /tmp/start_time.txt
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up |
 | Download | 3–6 | Run data download scripts (MCP data fetch) |
-| **AI Analysis Pass 1** | **6–18** | **🚨 MANDATORY 12 min minimum**: Read methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries. |
-| Generate (initial) | 18–22 | Run `generate-news-enhanced.ts`; write a first real pass of the EN + SV articles (lead-story aligned; zero markers). |
-| **PR #1 — heartbeat + initial batch** | **22–25** | 🚨 **HARD MIN: by minute 25.** `git add && git commit`, then `safeoutputs___create_pull_request` (title `🔴 Breaking $HHMM: {headline} - {date}` — initial batch). This keeps the session alive AND guarantees no work is lost if later phases fail. After the call succeeds, run `git checkout main` to avoid appending to a frozen patch. |
-| **AI Analysis Pass 2** | **25–32** | **🚨 MANDATORY 7 min minimum**: Read ALL analysis back, improve every section, add cross-references, replace remaining script stubs. Run enrichment verification gate. |
-| **Article Improvement** | **32–38** | **🚨 MANDATORY**: Read articles back, expand evidence citations, deepen SWOT/risk tables, replace any residual placeholders, run article quality gate. |
-| Validate + fix-refs | 38–40 | Run `validate-news-generation.sh` and `fix-analysis-references.ts`. |
-| **PR #2 — improvements batch** | **40–43** | Commit the improved articles + enriched analysis on a fresh branch (`git checkout main` first!), then `safeoutputs___create_pull_request` again (title `🔴 Breaking $HHMM (improved): {headline} - {date}`). This second call also refreshes the session. |
-| Post-PR cleanup | 43–45 | Update repo-memory (`/tmp/gh-aw/repo-memory/default/*.json`) — artifact uploads, NOT PR content, so they run after the final PR call. Optional PR #3 if additional articles exist. |
+| **AI Analysis Pass 1** | **6–13** | **🚨 MANDATORY 7 min minimum for first heartbeat**: Read methodology guides, create per-file analysis stubs for EVERY document with initial Mermaid diagrams, evidence tables, SWOT entries. Full depth iteration continues AFTER the heartbeat PR is safely called. |
+| **🫀 PR #1 — Analysis-only Heartbeat** | **13–18** | 🚨 **HARD MIN: by minute 18.** Commit whatever analysis artifacts exist in `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` (even partial Pass 1 stubs). **Do NOT write articles yet.** Title: `🫀 Heartbeat - Realtime Monitor - {date} {HHMM}`. Labels: `["analysis-only", "realtime-monitor", "heartbeat"]`. This call refreshes the safeoutputs MCP session (~30–35 min idle lifetime) AND preserves Pass 1 analysis work. After the call succeeds, run `git checkout main` to avoid appending to a frozen patch. |
+| **AI Analysis Pass 2** | **18–25** | **🚨 MANDATORY 7 min minimum**: Read ALL analysis back, improve every section, add cross-references, replace remaining script stubs. Run enrichment verification gate. |
+| Generate + Write articles | 25–35 | Run `generate-news-enhanced.ts`; write the full EN + SV articles (lead-story aligned; zero `AI_MUST_REPLACE` markers). Article writing takes 8–12 minutes — this is now SAFE because PR #1 already refreshed the session. |
+| Validate + fix-refs | 35–38 | Run `validate-news-generation.sh` and `fix-analysis-references.ts`. |
+| **PR #2 — Full articles batch** | **38–43** | Commit finalized EN + SV articles + enriched analysis on a fresh branch (`git checkout main` first!), then `safeoutputs___create_pull_request` (title `🔴 Breaking $HHMM: {headline} - {date}`). This second call also refreshes the session idle timer. |
+| **PR #3 — Improvements (optional)** | **43–45** | If additional HIGH/MEDIUM events discovered OR article improvement round available, commit + PR again on a fresh branch. |
+| Post-PR cleanup | 43–45 | Update repo-memory (`/tmp/gh-aw/repo-memory/default/*.json`) — artifact uploads, NOT PR content, so they run after the final PR call. |
 | **HARD DEADLINE** | **43** | 🚨 Never exit without at least one `safeoutputs___create_pull_request` call if ANY files were created. ONLY call `safeoutputs___noop` if truly ZERO files were created. Never noop when files exist. |
 
-> ⚠️ **Why rolling PRs answer "keep the session alive":** the safeoutputs MCP Streamable HTTP session dies from idle (~30–35 min observed). A single PR call at minute 42 is past expiry. Two PR calls at minutes 22 and 42 each re-exercise the session, keeping it healthy. PR #1 is the **safety net** (guarantees work is captured); PR #2 is the **quality upgrade** (captures Pass 2 improvements). This is exactly how `news-translate.md` uses `max: 5` — see its §"RULE 1: `safeoutputs___create_pull_request` Freezes the Patch — Use Rolling Batches".
+> ⚠️ **Why analysis-only heartbeat answers "keep the session alive":** the safeoutputs MCP Streamable HTTP session dies from idle (~30–35 min observed). Run 24722758908 proved that article writing routinely takes 10+ minutes — attempting to include articles in PR #1 forces a 10+ minute idle window that kills the session. PR #1 = analysis-only = can be committed in <60 seconds because the files already exist on disk from Pass 1. PR #2 = full articles, which the session now survives because PR #1 refreshed the idle timer at minute ~15. This is exactly how the other 11 news workflows work successfully (`news-committee-reports` minute 13–15, `news-motions`/`news-propositions`/`news-interpellations` minute 22–25 with analysis-only heartbeats).
 
 > ⚠️ **Analysis phase is 22 minutes minimum (Pass 1: 12 min + Pass 2: 7 min + Improvement: 3 min or more) — this is NOT negotiable.** PR #1452 demonstrated that < 10 min produces unacceptable analysis. PR #1794 demonstrated that 15 min total = shallow articles missing SWOT tables, Mermaid diagrams, risk matrices. With rolling PRs, Pass 2 + Improvement run AFTER PR #1 is safely committed — so quality iteration no longer risks losing everything.
 
@@ -353,9 +357,9 @@ read AW_NOW < /tmp/now_time.txt
 ELAPSED=$(( AW_NOW - START_TIME ))
 echo "⏱️ Elapsed: $((ELAPSED / 60))m $((ELAPSED % 60))s"
 ```
-- `>= 22 min` and no PR #1 called yet → commit initial articles and call `safeoutputs___create_pull_request` immediately (this is the session-heartbeat moment)
-- `>= 28 min` and no PR #1 called yet → 🚨 **SESSION EXPIRY IMMINENT** — STOP ALL WORK, stage + commit everything, call `safeoutputs___create_pull_request` with whatever exists. Partial work in a PR is infinitely better than `session not found`.
-- `>= 43 min` → call final `safeoutputs___create_pull_request` for any improved/additional batch, then stop.
+- `>= 13 min` and PR #1 (analysis heartbeat) not yet called → 🫀 IMMEDIATELY commit whatever analysis artifacts exist in `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` and call `safeoutputs___create_pull_request` with title `🫀 Heartbeat - Realtime Monitor - {date} {HHMM}`. Do NOT wait for articles.
+- `>= 18 min` and PR #1 not called yet → 🚨 **SESSION EXPIRY RISK** — STOP ALL analysis work, stage + commit whatever exists, call `safeoutputs___create_pull_request`. Analysis-only heartbeat is infinitely better than `session not found`.
+- `>= 43 min` → call final `safeoutputs___create_pull_request` for the full-articles batch (PR #2) or any improvements (PR #3), then stop.
 - **CRITICAL — UNIVERSAL SAFE OUTPUT RULE (from SHARED_PROMPT_PATTERNS.md)**: If ANY files were created/modified → ALWAYS `safeoutputs___create_pull_request`. NEVER `safeoutputs___noop` when artifacts exist. Noop means "I did nothing" and loses everything. Noop is ONLY valid when zero files were produced (MCP unreachable, truly no significant events).
 
 ## Step 1: Date Validation & MANDATORY MCP Health Check
@@ -833,13 +837,13 @@ Branch: `news/content/{YYYY-MM-DD}/breaking`. `safeoutputs___create_pull_request
 
 > 🚨 **`safeoutputs___create_pull_request` freezes the patch at call time AND refreshes the MCP session.** A separate `safe_outputs` job (after the agent job ends) creates the branch and opens each PR. **Commits made after a given call are NOT added to that PR** (PR #1835). But because this workflow now has `create-pull-request.max: 3`, you can call the tool up to **3 times per run** — each call captures a new batch AND refreshes the Streamable HTTP MCP session idle timer. This is how we "keep the session alive" over the full 45-minute window.
 >
-> **Required pattern:**
-> 1. **PR #1 (minute 22–25 — MANDATORY first call, session heartbeat #1)**: initial EN + SV articles + Pass 1 analysis. Title: `🔴 Breaking $HHMM: {headline} - $ARTICLE_DATE`.
+> **Required pattern (fixed after run 24722758908):**
+> 1. **🫀 PR #1 — Analysis-only Heartbeat (minute 13–18 — MANDATORY first call, session heartbeat #1)**: Commit analysis artifacts from Pass 1 only. **Do NOT write articles first.** Title: `🫀 Heartbeat - Realtime Monitor - $ARTICLE_DATE $HHMM`. Labels: `["analysis-only", "realtime-monitor", "heartbeat"]`. This refreshes the safeoutputs MCP session idle timer.
 > 2. After PR #1 succeeds, run `git checkout main` (or any branch other than the PR branch) before editing further files. Commits stacked onto the same branch after the call are silently discarded from the frozen patch (see PR #1835).
-> 3. **PR #2 (minute 40–43 — session heartbeat #2)**: Pass 2 improvements + enriched analysis + fixed references. Title: `🔴 Breaking $HHMM (improved): {headline} - $ARTICLE_DATE`.
+> 3. **PR #2 — Full Articles (minute 38–43 — session heartbeat #2)**: Full EN + SV articles with AI-written content + Pass 2 enriched analysis + fixed references. Title: `🔴 Breaking $HHMM: {headline} - $ARTICLE_DATE`.
 > 4. **PR #3 (optional, if additional HIGH/MEDIUM events discovered later in the run)**: extra article(s) on a new branch.
 > 5. Repo-memory updates (`/tmp/gh-aw/repo-memory/default/*.json`) are artifact uploads, not PR content — safe to run after the final PR call.
-> 6. If `safeoutputs___create_pull_request` returns `session not found` on any call, every subsequent safeoutputs call will also fail — recover is impossible. The rolling-batch pattern is specifically designed to prevent this by exercising the session at least twice.
+> 6. If `safeoutputs___create_pull_request` returns `session not found` on any call, every subsequent safeoutputs call will also fail — recovery is impossible. The analysis-heartbeat pattern prevents this by exercising the session at minute 13–18, well within the ~30–35 min idle lifetime. **NEVER delay PR #1 past minute 18 waiting for article content — articles go in PR #2.**
 
 ```bash
 # Stage articles and analysis — DATE-SCOPED to stay within safe-outputs 100-file PR limit.
@@ -957,10 +961,10 @@ See `SHARED_PROMPT_PATTERNS.md` §"Standardised Analysis Depth Gate" and §"MAND
 | Timeout | MCP server response exceeds `timeout-minutes` | Reduce query scope or increase timeout |
 | Script timeout | Generation script exceeds 20-minute limit | Proceed with whatever was generated; the `timeout 1200` wrapper kills the script |
 | Stale data | `hoursSinceSync > 48` from `get_sync_status()` | Add disclaimer noting data staleness; proceed with cached data |
-| Time running out | Elapsed >= 22 minutes and no safeoutputs call yet | IMMEDIATELY commit any staged/unstaged articles and call `safeoutputs___create_pull_request` (PR #1, session heartbeat). Then `git checkout main` and continue improving for PR #2. Do NOT noop if files exist. |
-| safeoutputs `session not found` | Delayed the **first** `safeoutputs___create_pull_request` past the ~30–35 min session lifetime (see run 24672037751). Once the session dies, ALL subsequent intent calls fail. | UNRECOVERABLE once it happens. **Prevention: call `safeoutputs___create_pull_request` by minute 25 (PR #1) and again by minute 43 (PR #2). Each call refreshes the session idle timer.** `create-pull-request.max: 3` is configured specifically to enable this keep-alive pattern. |
+| Time running out | Elapsed >= 13 minutes and no safeoutputs call yet | IMMEDIATELY commit whatever analysis artifacts exist in `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` and call `safeoutputs___create_pull_request` (PR #1 analysis-only Heartbeat, title `🫀 Heartbeat - Realtime Monitor - {date} {HHMM}`). Then `git checkout main` and continue Pass 2 + articles for PR #2. Do NOT wait for articles. Do NOT noop if files exist. |
+| safeoutputs `session not found` | Delayed the **first** `safeoutputs___create_pull_request` past the ~30–35 min session lifetime (see run 24672037751 and **run 24722758908, 2026-04-21** where article-writing blocked PR #1 for 22 min). Once the session dies, ALL subsequent intent calls fail. | UNRECOVERABLE once it happens. **Prevention: call analysis-only Heartbeat PR #1 by minute 18 (BEFORE writing articles), then PR #2 with full articles by minute 43.** Each call refreshes the session idle timer. `create-pull-request.max: 3` is configured specifically to enable this keep-alive pattern. |
 
-⚠️ **CRITICAL SAFETY NET**: Before EVERY bash block and EVERY tool call, mentally check: "Have I called `safeoutputs___create_pull_request` yet?" If more than **22 minutes** have elapsed and PR #1 has not been created, stop all work, commit whatever articles exist, and call `safeoutputs___create_pull_request` IMMEDIATELY — this both captures work AND keeps the MCP session alive for PR #2 at minute 40–43.
+⚠️ **CRITICAL SAFETY NET**: Before EVERY bash block and EVERY tool call, mentally check: "Have I called `safeoutputs___create_pull_request` yet?" If more than **13 minutes** have elapsed and PR #1 (analysis-only Heartbeat) has not been created, stop all analysis work, commit whatever analysis artifacts exist (NO articles required), and call `safeoutputs___create_pull_request` IMMEDIATELY — this both captures work AND keeps the MCP session alive for PR #2 (full articles) at minute 38–43.
 
 🎯 **Now begin: Check date, warm up MCP with `get_sync_status()`, detect events, generate articles with the script, and call a safe output tool.**
 
