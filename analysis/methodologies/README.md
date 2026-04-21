@@ -188,6 +188,11 @@ graph LR
 | Priority | Document | Key Content | Dimensions / Frameworks | When to Apply |
 |----------|----------|-------------|-------------------------|---------------|
 | **★ Start** | **[AI-Driven Analysis Guide](ai-driven-analysis-guide.md)** | 7-step protocol, Family A–E output matrix, color-coded Mermaid palette, 5-level confidence scale, DIW weighting, quality gate | Evidence (25%), Depth (25%), Structural (20%), Actionable (15%), Neutrality (15%) | **Always read first** — orchestrates every other methodology and names every output file with its template |
+| **Family A** | **[Synthesis & Scoring Methodology](synthesis-methodology.md)** | Step-by-step production of significance-scoring, synthesis-summary, stakeholder-perspectives, stakeholder-impact, executive-brief | DIW 6-dimension weighting, Confidence (5-level), Winner/loser quantification, 400–600 word brief budget | Every workflow — 5 Family A core files |
+| **Family B** | **[Structural Metadata Methodology](structural-metadata-methodology.md)** | Step-by-step production of data-download-manifest and cross-reference-map with SLA table and relationship taxonomy | Freshness SLA per source, Relationship taxonomy (7 edge types), Coordinated-activity detection | Every workflow — 2 Family B provenance files |
+| **Family C** | **[Strategic Extensions Methodology](strategic-extensions-methodology.md)** | Step-by-step production of scenario-analysis, comparative-international, devils-advocate (ACH), intelligence-assessment, methodology-reflection | Scenario probability ≤ 100%, ACH evidence matrix, Peer-country benchmark, Key Judgments + PIR | Triggered — P0, ≥3 P1, coordinated activity, pre-election |
+| **Family D** | **[Electoral & Domain Methodology](electoral-domain-methodology.md)** | Step-by-step production of election-2026, voter-segmentation, coalition-mathematics, historical-parallels, media-framing, implementation-feasibility, forward-indicators | Sainte-Laguë seat math, SCB segment cuts, Coalition arithmetic, 4-horizon forward indicators | Triggered — pre-election window, redistributive policy, coalition risk, sector events |
+| **Family E** | **[Per-Document Methodology](per-document-methodology.md)** | Step-by-step production of `{dok_id}-analysis.md` and `{theme}-cluster-analysis.md` with doctype-specific Mermaid taxonomy | DIW 6-dimension scoring, Cluster decision rule (4 conditions), Citation format canon | Every workflow — one file per document or qualifying cluster |
 | **1** | **[Political Classification Guide](political-classification-guide.md)** | 7-dimension event classification, sensitivity levels, policy domain taxonomy, urgency matrix | Sensitivity (4 levels), Democratic Integrity, Policy Urgency, Economic Impact, Governance Impact, Political Capital, Legislative Impact | Step 3 — every incoming Riksdag document is classified before analysis begins |
 | **2** | **[Political Risk Methodology](political-risk-methodology.md)** | Likelihood × Impact scoring, 8 risk categories, 5×5 matrix, cascading risk analysis | Policy, Legislative, Economic, Social, Security, Diplomatic, Coalition, Constitutional | Step 3–4 — assess political risk using calibrated scoring |
 | **3** | **[Political Threat Framework](political-threat-framework.md)** | Multi-framework threat analysis: Political Threat Taxonomy + Diamond Model + Attack Trees + Kill Chain | Narrative Integrity, Legislative Integrity, Accountability, Transparency, Democratic Process, Power Balance | Step 4 — apply threat analysis using political frameworks |
@@ -211,8 +216,16 @@ graph LR
 ```mermaid
 graph TB
     subgraph "🏛️ Core Analysis Engine"
-        GUIDE["🤖 AI-Driven Analysis Guide<br/><i>Master Protocol</i>"]
+        GUIDE["🤖 AI-Driven Analysis Guide<br/><i>Master Protocol · entry point</i>"]
         STYLE["✍️ Political Style Guide<br/><i>Writing Standards</i>"]
+    end
+
+    subgraph "🗂️ Family Production Methodologies"
+        FAMA["📘 Synthesis & Scoring<br/><i>Family A — 5 files</i>"]
+        FAMB["📗 Structural Metadata<br/><i>Family B — 2 files</i>"]
+        FAMC["📙 Strategic Extensions<br/><i>Family C — 5 files</i>"]
+        FAMD["📕 Electoral & Domain<br/><i>Family D — 7 files</i>"]
+        FAME["📒 Per-Document<br/><i>Family E — N files</i>"]
     end
 
     subgraph "🔬 Analytical Frameworks"
@@ -229,14 +242,29 @@ graph TB
         ISMS4["📖 ISMS Threat Modeling"]
     end
 
-    GUIDE -->|"governs"| CLASS
-    GUIDE -->|"governs"| RISK
-    GUIDE -->|"governs"| SWOT
-    GUIDE -->|"governs"| THREAT
-    STYLE -->|"standards"| CLASS
-    STYLE -->|"standards"| RISK
-    STYLE -->|"standards"| SWOT
-    STYLE -->|"standards"| THREAT
+    GUIDE -->|"orchestrates"| FAMA
+    GUIDE -->|"orchestrates"| FAMB
+    GUIDE -->|"orchestrates"| FAMC
+    GUIDE -->|"orchestrates"| FAMD
+    GUIDE -->|"orchestrates"| FAME
+
+    FAME -->|"feeds"| FAMA
+    FAMB -->|"feeds"| FAMA
+    FAMA -->|"triggers"| FAMC
+    FAMA -->|"triggers"| FAMD
+
+    STYLE -->|"standards"| FAMA
+    STYLE -->|"standards"| FAMB
+    STYLE -->|"standards"| FAMC
+    STYLE -->|"standards"| FAMD
+    STYLE -->|"standards"| FAME
+
+    CLASS -->|"invoked in"| FAME
+    RISK -->|"invoked in"| FAMA
+    RISK -->|"invoked in"| FAMC
+    SWOT -->|"invoked in"| FAMA
+    THREAT -->|"invoked in"| FAMA
+
     ISMS1 -.->|"adapted from"| CLASS
     ISMS2 -.->|"adapted from"| RISK
     ISMS3 -.->|"adapted from"| STYLE
@@ -244,6 +272,11 @@ graph TB
 
     style GUIDE fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
     style STYLE fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style FAMA fill:#4CAF50,color:#FFFFFF,stroke:#1B5E20,stroke-width:2px
+    style FAMB fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style FAMC fill:#FF9800,color:#FFFFFF,stroke:#E65100,stroke-width:2px
+    style FAMD fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
+    style FAME fill:#FFC107,color:#3E2723,stroke:#F57F17,stroke-width:2px
     style CLASS fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:2px
     style RISK fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
     style SWOT fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
@@ -449,6 +482,57 @@ graph TB
 | **Scope** | Article tone, evidence citation standards, Mermaid diagram requirements, confidence labeling |
 | **Key Standards** | Evidence tables (not prose) · dok_id citations · Color-coded diagrams · Swedish political terminology |
 | **Version** | 2.0 |
+
+---
+
+## 🗂️ Family Production Methodologies — one per Family A–E
+
+These five methodology documents tell an agentic workflow **exactly how to produce each output file**, with step-by-step protocols, color-coded Mermaid, evidence rules, quality gates, and template bindings.
+
+### 📘 Synthesis & Scoring Methodology — `synthesis-methodology.md` (Family A)
+
+| Attribute | Value |
+|-----------|-------|
+| **Purpose** | Step-by-step production of the 5 Family A core synthesis outputs |
+| **Covers** | `significance-scoring.md`, `synthesis-summary.md`, `stakeholder-perspectives.md`, `stakeholder-impact.md`, `executive-brief.md` |
+| **Key rules** | DIW 6-dimension formula · Tier mapping (P0/P1/P2/P3) · 400–600 word executive-brief budget · Quantified winners/losers · Equity-lens cuts |
+| **Gates** | Per-output checklist; evidence-reconciliation gate between significance-scoring and per-doc Family E |
+
+### 📗 Structural Metadata Methodology — `structural-metadata-methodology.md` (Family B)
+
+| Attribute | Value |
+|-----------|-------|
+| **Purpose** | Step-by-step production of provenance ledger + relational graph |
+| **Covers** | `data-download-manifest.md`, `cross-reference-map.md` |
+| **Key rules** | Freshness SLA per source (Riksdag ≤24h, SCB ≤90d, World Bank ≤24mo) · 7-edge relationship taxonomy · Coordinated-activity detection rule |
+| **Gates** | Manifest reconciles with Family E doc count; every edge has dok_id pair |
+
+### 📙 Strategic Extensions Methodology — `strategic-extensions-methodology.md` (Family C)
+
+| Attribute | Value |
+|-----------|-------|
+| **Purpose** | Step-by-step production of depth products for high-significance events |
+| **Covers** | `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, `methodology-reflection.md` |
+| **Key rules** | Scenario probabilities sum to 100% · ACH ≥3 hypotheses · ≥5 peer countries · 3–7 Key Judgments with PIRs · Bias-audit quantification |
+| **Triggers** | P0 (DIW ≥ 8.0), ≥3 P1, coordinated-filing cluster, pre-election < 180 days |
+
+### 📕 Electoral & Domain Methodology — `electoral-domain-methodology.md` (Family D)
+
+| Attribute | Value |
+|-----------|-------|
+| **Purpose** | Step-by-step production of 7 domain-specific analytical lenses |
+| **Covers** | `election-2026-analysis.md`, `voter-segmentation.md`, `coalition-mathematics.md`, `historical-parallels.md`, `media-framing-analysis.md`, `implementation-feasibility.md`, `forward-indicators.md` |
+| **Key rules** | Sainte-Laguë modified seat math + 4% threshold · Segment privacy (no sub-1000 cohorts) · Historical parallels ≤40 years with similarity score · ≥10 forward indicators across 4 horizons |
+| **Triggers** | Per-template activation table in the methodology |
+
+### 📒 Per-Document Methodology — `per-document-methodology.md` (Family E)
+
+| Attribute | Value |
+|-----------|-------|
+| **Purpose** | Step-by-step production of atomic per-document and cluster analyses |
+| **Covers** | `{dok_id}-analysis.md`, `{theme}-cluster-analysis.md` (both use template `per-file-political-intelligence.md`) |
+| **Key rules** | DIW 6-dimension scoring · Doctype-specific Mermaid taxonomy (prop→flowchart, mot→network, bet→flowchart, ip→timeline, SOU/Ds→flowchart, skr→flowchart) · Cluster 4-condition decision rule · Citation canon |
+| **Gates** | Every dok_id in manifest has a Family E file; cluster files preserve per-dok_id differential notes |
 
 ---
 

@@ -233,6 +233,8 @@ Templates are grouped by the **output family** defined in [`ai-driven-analysis-g
 
 ### 📘 Family A — Core Synthesis (every run produces all 9)
 
+> **Methodology:** [synthesis-methodology.md](../methodologies/synthesis-methodology.md) defines step-by-step production of A2, A3, A4, A9. Classification (A5) uses [political-classification-guide.md](../methodologies/political-classification-guide.md). SWOT (A6) uses [political-swot-framework.md](../methodologies/political-swot-framework.md). Risk (A7) uses [political-risk-methodology.md](../methodologies/political-risk-methodology.md). Threat (A8) uses [political-threat-framework.md](../methodologies/political-threat-framework.md).
+
 | # | File | Template | Purpose |
 |:-:|------|----------|---------|
 | A1 | `README.md` (folder index) | [folder README](#folder-readme-template) | Index + links for each workflow folder |
@@ -247,12 +249,16 @@ Templates are grouped by the **output family** defined in [`ai-driven-analysis-g
 
 ### 📗 Family B — Structural Metadata (every run produces all 2)
 
+> **Methodology:** [structural-metadata-methodology.md](../methodologies/structural-metadata-methodology.md) — step-by-step production of the provenance ledger + relational graph, with SLA table and 7-edge relationship taxonomy.
+
 | # | File | Template | Purpose |
 |:-:|------|----------|---------|
 | B1 | `data-download-manifest.md` | [data-download-manifest.md](data-download-manifest.md) | Transparent MCP-download inventory + data-depth ceilings |
 | B2 | `cross-reference-map.md` | [cross-reference-map.md](cross-reference-map.md) | Policy clusters + legislative chains + coordinated-activity patterns |
 
 ### 📙 Family C — Strategic Extensions (trigger-driven)
+
+> **Methodology:** [strategic-extensions-methodology.md](../methodologies/strategic-extensions-methodology.md) — trigger table + step-by-step production rules (ACH matrix, peer-country grid, Key Judgments, bias audit).
 
 | # | File | Template | Trigger |
 |:-:|------|----------|---------|
@@ -263,6 +269,8 @@ Templates are grouped by the **output family** defined in [`ai-driven-analysis-g
 | C5 | `methodology-reflection.md` | [methodology-reflection.md](methodology-reflection.md) | Reference-exemplar runs + weekly/monthly reviews |
 
 ### 📕 Family D — Electoral & Domain Lenses (trigger-driven)
+
+> **Methodology:** [electoral-domain-methodology.md](../methodologies/electoral-domain-methodology.md) — per-template activation table + step-by-step production rules (Sainte-Laguë seat math, segment privacy threshold, 4-horizon forward indicators).
 
 | # | File | Template | Trigger |
 |:-:|------|----------|---------|
@@ -275,6 +283,8 @@ Templates are grouped by the **output family** defined in [`ai-driven-analysis-g
 | D7 | `forward-indicators.md` | [forward-indicators.md](forward-indicators.md) | Weekly/monthly reviews or ≥ 3 triggers needing central tracking |
 
 ### 📒 Family E — Per-Document
+
+> **Methodology:** [per-document-methodology.md](../methodologies/per-document-methodology.md) — step-by-step production of `{dok_id}-analysis.md` + cluster files, with doctype-specific Mermaid taxonomy and 4-condition clustering rule.
 
 | # | File | Template | Purpose |
 |:-:|------|----------|---------|

@@ -63,14 +63,19 @@ Every step is mandatory. Steps 3–7 run inside a single workflow folder at `ana
 | Order | File | What it gives you |
 |:-----:|------|-------------------|
 | 1 | This guide (`ai-driven-analysis-guide.md`) | The 7-step protocol and output matrix |
-| 2 | [`political-classification-guide.md`](political-classification-guide.md) | 7-dimension document classification |
-| 3 | [`political-swot-framework.md`](political-swot-framework.md) | SWOT, TOWS, cross-SWOT interference |
-| 4 | [`political-risk-methodology.md`](political-risk-methodology.md) | 5×5 L×I matrix, cascading risk chains |
-| 5 | [`political-threat-framework.md`](political-threat-framework.md) | Attack trees, kill chain, threat taxonomy |
-| 6 | [`political-style-guide.md`](political-style-guide.md) | Writing voice, attribution, Mermaid standards |
-| 7 | All templates in [`../templates/`](../templates/) | Output structure for every `.md` family |
+| 2 | [`per-document-methodology.md`](per-document-methodology.md) | 📒 How to produce every `{dok_id}-analysis.md` and cluster file |
+| 3 | [`structural-metadata-methodology.md`](structural-metadata-methodology.md) | 📗 How to produce manifest + cross-reference map |
+| 4 | [`synthesis-methodology.md`](synthesis-methodology.md) | 📘 How to produce the 5 Family A synthesis outputs |
+| 5 | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | 📙 How to produce Family C depth products (triggered) |
+| 6 | [`electoral-domain-methodology.md`](electoral-domain-methodology.md) | 📕 How to produce Family D lens products (triggered) |
+| 7 | [`political-classification-guide.md`](political-classification-guide.md) | 7-dimension document classification |
+| 8 | [`political-swot-framework.md`](political-swot-framework.md) | SWOT, TOWS, cross-SWOT interference |
+| 9 | [`political-risk-methodology.md`](political-risk-methodology.md) | 5×5 L×I matrix, cascading risk chains |
+| 10 | [`political-threat-framework.md`](political-threat-framework.md) | Attack trees, kill chain, threat taxonomy |
+| 11 | [`political-style-guide.md`](political-style-guide.md) | Writing voice, attribution, Mermaid standards |
+| 12 | All templates in [`../templates/`](../templates/) | Output structure for every `.md` family |
 
-**Commit the read list into memory**: cite the methodology section you used whenever you make a call — e.g. *"Classification per political-classification-guide.md §Political Temperature"*.
+**Commit the read list into memory**: cite the methodology section you used whenever you make a call — e.g. *"Classification per political-classification-guide.md §Political Temperature"* or *"DIW tier assigned per synthesis-methodology.md Part 1"*.
 
 ---
 
@@ -505,6 +510,18 @@ Every security-relevant control in Family A maps to **ISO 27001:2022**, **NIST C
 
 ## 📚 Related Documents
 
+### Family production methodologies — one per Family A–E (step-by-step "how to produce each output")
+
+| Document | Covers (template family) |
+|----------|--------------------------|
+| [`synthesis-methodology.md`](synthesis-methodology.md) | 📘 Family A — significance-scoring, synthesis-summary, stakeholder-perspectives, stakeholder-impact, executive-brief |
+| [`structural-metadata-methodology.md`](structural-metadata-methodology.md) | 📗 Family B — data-download-manifest, cross-reference-map |
+| [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | 📙 Family C — scenario-analysis, comparative-international, devils-advocate, intelligence-assessment, methodology-reflection |
+| [`electoral-domain-methodology.md`](electoral-domain-methodology.md) | 📕 Family D — election-2026, voter-segmentation, coalition-mathematics, historical-parallels, media-framing, implementation-feasibility, forward-indicators |
+| [`per-document-methodology.md`](per-document-methodology.md) | 📒 Family E — `{dok_id}-analysis.md` and `{theme}-cluster-analysis.md` |
+
+### Analytical frameworks (invoked inside the family methodologies)
+
 | Document | Purpose |
 |----------|---------|
 | [`political-classification-guide.md`](political-classification-guide.md) | 7-dimension classification taxonomy |
@@ -512,7 +529,12 @@ Every security-relevant control in Family A maps to **ISO 27001:2022**, **NIST C
 | [`political-risk-methodology.md`](political-risk-methodology.md) | Likelihood × Impact + cascading risk chains |
 | [`political-threat-framework.md`](political-threat-framework.md) | Attack trees + kill chain + threat taxonomy |
 | [`political-style-guide.md`](political-style-guide.md) | Writing voice, attribution, evidence density |
-| [`../templates/`](../templates/) | One template per output file (25 templates) |
+
+### Templates and platform exemplars
+
+| Document | Purpose |
+|----------|---------|
+| [`../templates/`](../templates/) | One template per output file (24 templates, covers all Families A–E) |
 | [`../../SWOT.md`](../../SWOT.md) | Formatting exemplar (platform SWOT) |
 | [`../../THREAT_MODEL.md`](../../THREAT_MODEL.md) | Formatting exemplar (platform threat model) |
 
@@ -520,7 +542,8 @@ Every security-relevant control in Family A maps to **ISO 27001:2022**, **NIST C
 
 **Document Control**
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`
-- **Version:** 6.0 — simplified canonical protocol
+- **Version:** 6.1 — canonical protocol + Family A–E methodology links
+- **Key changes in v6.1:** Added links to five new Family production methodologies (synthesis, structural-metadata, strategic-extensions, electoral-domain, per-document) that give step-by-step instructions for producing every analysis output file.
 - **Key changes in v6.0:** Rewrote as positive-voice step-by-step guide; collapsed ~2 200 lines of audit history and anti-pattern text into a single 7-step protocol + 5-family output matrix; added canonical Mermaid palette and 5-level confidence scale; linked each analysis file to a dedicated template (Families A–E); added triggers for Family C and D files.
 - **Classification:** Public
 - **Next Review:** 2026-07-21
