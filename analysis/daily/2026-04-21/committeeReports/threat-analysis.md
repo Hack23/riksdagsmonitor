@@ -29,13 +29,13 @@ graph LR
     NI --> NI1["FiU48 reframed as 'climate-denial subsidy'<br/>Severity 3 · MCP: HD01FiU48 motivering"]
     LI --> LI1["SfU22 inhibition regime vs ECHR P4 Art.2 / Art.5<br/>Severity 4 · MCP: HD01SfU22 §4 geographic restriction"]
     AC --> AC1["FiU48 bypasses Klimatpolitiska rådets §5 accountability<br/>Severity 3 · MCP: Skr. 2025/26:95 (MJU20 audit)"]
-    TR --> TR1["KU33 transparency mandate — positive movement<br/>Severity 1 (improves transparency)"]
+    TR --> TR1["KU33 restricts public access to digitally seized materials<br/>Severity 3 · MCP: HD01KU33 §TF-ändring (negative transparency movement)"]
     DP --> DP1["KU32/KU33 pre-commit next Riksdag via *vilande*<br/>Severity 3 · MCP: HD01KU32, HD01KU33"]
     PB --> PB1["Coalition 1-seat majority ratifies generational constitutional change<br/>Severity 3 · MCP: seat config 176/173"]
     style NI1 fill:#FF9800,color:#000
     style LI1 fill:#D32F2F,color:#FFF
     style AC1 fill:#FF9800,color:#000
-    style TR1 fill:#4CAF50,color:#FFF
+    style TR1 fill:#FF9800,color:#000
     style DP1 fill:#FF9800,color:#000
     style PB1 fill:#FF9800,color:#000
 ```
@@ -47,11 +47,11 @@ graph LR
 | 🎭 **Narrative Integrity** | 3/5 | FiU48 pre-election framing as "cost-of-living relief" vs analyst reading as "pre-election fiscal populism" | ↑ rising |
 | 📝 **Legislative Integrity** | 4/5 | SfU22 creates no-status cohort with geographic restrictions — contra German *Duldung* ECtHR precedent, Danish *udrejsecenter* (Akhtar v. Denmark 2023) | ↑ rising |
 | 🚫 **Accountability** | 3/5 | FiU48 enacted without Klimatpolitiska rådet ex-ante assessment; FiU48 cuts precede MJU20 audit conclusions | → steady |
-| 🔇 **Transparency** | 1/5 | KU33 *strengthens* transparency (digital-seizure disclosure obligations). Positive movement — lowest threat dimension. | ↓ improving |
+| 🔇 **Transparency** | 3/5 | KU33 *restricts* transparency — digitally seized materials (e.g., mirror-imaged hard drives from police searches) no longer automatically constitute *allmänna handlingar* under TF. Narrows public-records access; targets a prior ambiguity exploited in high-profile investigations. | ↑ rising |
 | ⛔ **Democratic Process** | 3/5 | Dual *vilande* grundlagsändringar pre-commit post-election Riksdag under RF 2:15 | ↑ rising |
 | 👑 **Power Balance** | 3/5 | 1-seat coalition majority (176/349) advances generational changes (grundlag + SfU22 structural) | → steady |
 
-**Aggregate**: 17/30 = **HIGH** threat level. The principal pressure points are **legislative integrity** (SfU22 ECHR exposure) and **democratic process** (*vilande* lock-in).
+**Aggregate**: 19/30 = **HIGH** threat level. The principal pressure points are **legislative integrity** (SfU22 ECHR exposure), **democratic process** (*vilande* lock-in), and **transparency** (KU33 narrows public-records access).
 
 ---
 
@@ -177,7 +177,7 @@ graph TB
 ### T3 — Dual *Vilande* Post-Election Failure (Severity 3)
 
 **Taxonomy**: Democratic Process.
-**Mechanism**: RF 2:15 *vilande* mechanism requires identical wording in next Riksdag. KU33 (digital-seizure transparency) has ≤50% re-affirmation probability in BEAR scenarios (see [`coalition-mathematics.md`](coalition-mathematics.md) §*Vilande* Math). Failure to re-affirm triggers three-year waiting period before re-proposal.
+**Mechanism**: RF 2:15 *vilande* mechanism requires identical wording in next Riksdag. KU33 (digital-seizure *access restriction* via TF-amendment) has ≤50% re-affirmation probability in BEAR scenarios (see [`coalition-mathematics.md`](coalition-mathematics.md) §*Vilande* Math) — an S-led government could view the restriction as an undue narrowing of public-records access and decline to re-propose. Failure to re-affirm triggers three-year waiting period before re-proposal.
 **Disruption**: None during this parliament; probability depends on 14 Sept election outcome.
 **Evidence**: HD01KU32, HD01KU33 *vilande* status confirmed in betänkandetexts.
 

@@ -110,7 +110,7 @@ See [`risk-assessment.md`](risk-assessment.md) for full ISO 31000 register.
 - [`significance-scoring.md`](significance-scoring.md) — 5-dimension matrix across 15 documents
 - [`swot-analysis.md`](swot-analysis.md) — Coalition-level SWOT
 - [`risk-assessment.md`](risk-assessment.md) — ISO 31000 risk register
-- [`threat-analysis.md`](threat-analysis.md) — STRIDE + political threat + attack-tree
+- [`threat-analysis.md`](threat-analysis.md) — Political Threat Taxonomy + Attack Trees + Kill Chain + Diamond Model + ICO
 - [`stakeholder-perspectives.md`](stakeholder-perspectives.md) — 8-group political intelligence
 - [`election-2026-implications.md`](election-2026-implications.md) — Campaign-phase analysis
 - [`coalition-mathematics.md`](coalition-mathematics.md) — Vote-margin modelling for this batch
