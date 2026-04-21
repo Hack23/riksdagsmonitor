@@ -23,8 +23,12 @@
 | 13 | HD10427 | PostNord ownership policy | 5.7 | State corporate governance; PostNord operational failures |
 | 14 | HD10436 | Space industry measures | 5.3 | Technology policy; space defense dual-use concerns |
 
+| 15 | HD10442 | Finance Minister false statements on eating disorder care | 9.3 | Court judgment (67M SEK, 2026-04-01) exposes Svantesson's Riksdag statement as false; perfect accountability trap |
+| 16 | HD10440 | Occupational physician training crisis | 7.8 | Institutional vacuum since 2007; majority of doctors over 65; mandatory safety checks at risk |
+| 17 | HD10441 | Legal certainty in justice system | 6.4 | Non-partisan challenge by independent MP Widding on lawyers-judging-lawyers self-policing |
+
 ## Top 3 Findings (For Article Lede)
 
-1. **[HIGH]** Police shortage crisis in Stockholm: BRÅ confirms 10,000-officer goal met nationally, yet Stockholm — home to 25% of Sweden's population and 50% of its vulnerable housing areas — is the ONLY region where police density is DECLINING relative to population growth, with ~1,000 officers missing compared to peer regions
-2. **[HIGH]** EU Pay Transparency Directive compliance deadline: Sweden faces EU infringement proceedings if Pay Transparency Directive is not transposed by June 7, 2026 — a 47-day window — while S files a second simultaneous interpellation on women's shelter closures targeting the same minister
-3. **[HIGH]** Andreas Carlson (KD) under sustained parliamentary assault: 9 interpellations targeting the Infrastructure and Housing Minister in the current parliamentary session, spanning rail, road, housing, airports, and defense infrastructure costs — the highest interpellation burden of any cabinet minister
+1. **[VERY HIGH]** Finance Minister caught in court-proven lie: Stockholm Tingsrätt (2026-04-01) ruling that Region Stockholm won 67 million SEK from a private healthcare company directly contradicts Elisabeth Svantesson's Riksdag claim (2025-09-22) that Stockholm was "closing eating disorder clinics." Access to eating disorder treatment improved from 38% (2022, M-led region) to 94% (2025)
+2. **[HIGH]** Police shortage crisis in Stockholm: BRÅ confirms 10,000-officer goal met nationally, yet Stockholm is the ONLY region where police density is DECLINING, with ~1,000 officers missing
+3. **[HIGH]** EU Pay Transparency Directive: 47-day window before EU infringement proceedings against Nina Larsson — simultaneously under fire on women's shelter closures
