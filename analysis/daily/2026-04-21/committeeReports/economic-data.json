@@ -4,6 +4,8 @@
   "date": "2026-04-21",
   "policyDomains": [
     "migration policy",
+    "fiscal policy",
+    "energy policy",
     "digital governance",
     "agricultural policy",
     "transport policy"
@@ -43,14 +45,63 @@
       "indicatorId": "NY.GDP.MKTP.CD",
       "date": "2023",
       "value": 578990915246.07
+    },
+    {
+      "countryCode": "SWE",
+      "countryName": "Sweden",
+      "indicatorId": "FP.CPI.TOTL.ZG",
+      "date": "2024",
+      "value": 1.8,
+      "note": "Inflation rate 2024 — context for fuel/energy relief"
+    },
+    {
+      "countryCode": "SWE",
+      "countryName": "Sweden",
+      "indicatorId": "FP.CPI.TOTL.ZG",
+      "date": "2023",
+      "value": 8.5,
+      "note": "Inflation rate 2023 — high energy costs drove FiU48"
+    },
+    {
+      "countryCode": "SWE",
+      "countryName": "Sweden",
+      "indicatorId": "FP.CPI.TOTL.ZG",
+      "date": "2022",
+      "value": 8.1,
+      "note": "Inflation rate 2022"
+    },
+    {
+      "countryCode": "DNK",
+      "countryName": "Denmark",
+      "indicatorId": "NY.GDP.MKTP.KD.ZG",
+      "date": "2024",
+      "value": 1.75
+    },
+    {
+      "countryCode": "NOR",
+      "countryName": "Norway",
+      "indicatorId": "NY.GDP.MKTP.KD.ZG",
+      "date": "2024",
+      "value": 0.9
+    },
+    {
+      "countryCode": "FIN",
+      "countryName": "Finland",
+      "indicatorId": "NY.GDP.MKTP.KD.ZG",
+      "date": "2024",
+      "value": 0.5
     }
   ],
-  "commentary": "Sweden supplementary budget HD01FiU48 cuts fuel taxes by 82 ore/liter for petrol and 319 SEK/m3 for diesel from May through September 2026, reducing both to the EU energy tax directive minimum. This 4.1 billion SEK intervention responds directly to the consumer price pressure Sweden experienced as inflation peaked at 8.5% in 2023 and 8.4% in 2022, before falling to 2.8% in 2024 — yet household energy costs remain politically salient as many Swedish families absorbed multi-year purchasing power losses. With Sweden GDP recovering to 0.82% growth in 2024 after a -0.20% contraction in 2023, the government positions the measure as affordable cost-of-living relief that the improved fiscal position permits. The Nordic comparison adds urgency: Denmark grew at 1.75% in 2024 versus Sweden 0.82%, giving the opposition evidence that Sweden recovery lags neighbours — which the government answers with direct household fuel and energy relief timed to the pre-election period.",
+  "commentary": "Sweden's supplementary budget (HD01FiU48) cuts fuel taxes by 82 ore/liter for petrol and 319 SEK/m3 for diesel from May through September 2026 — reducing both to the EU energy tax directive minimum. This 4.1 billion SEK intervention comes as Sweden's GDP growth recovered to 0.82% in 2024 after a -0.20% contraction in 2023, but Swedish inflation peaked at 8.5% in 2023 before falling to 1.8% in 2024 — meaning household energy costs remain a live political issue even as headline inflation normalised. With approximately 5.7 million Swedish drivers and petrol at approximately 17 SEK/liter in spring 2026, the 82-ore cut provides a 5% pump-price reduction visible to every driver before the September 14 election. The Nordic comparison underscores the stakes: Denmark grew at 1.75% in 2024 versus Sweden's 0.82%, giving the opposition evidence that Sweden's structural recovery lags neighbours — which the government answers with direct household relief.",
   "source": {
     "worldBank": [
       "NY.GDP.MKTP.KD.ZG",
-      "NY.GDP.MKTP.CD"
+      "NY.GDP.MKTP.CD",
+      "FP.CPI.TOTL.ZG"
     ],
-    "scb": []
+    "scb": [
+      "TAB1291",
+      "TAB14928"
+    ]
   }
 }
