@@ -24,6 +24,9 @@
 | HD10428 | Emergency airport Scandinavian Mountain Airport | Beredskapsflygplats Scandinavian Mountain Airport | S | Andreas Carlson (KD) | 2026-04-02 | frs 2025/26:428 |
 | HD10427 | PostNord and state ownership policy | Postnord och statens ägarpolicy och bolagsstyrningsmodell | S | Elisabeth Svantesson (M) | 2026-04-01 | frs 2025/26:427 |
 | HD10426 | Israel's recently adopted death penalty laws | Israels nyligen antagna lagar om dödsstraff | S | Maria Malmer Stenergard (M) | 2026-04-01 | frs 2025/26:426 |
+| HD10440 | Occupational physician training crisis | Utbildningen för företagsläkare | S | Johan Britz (L) | 2026-04-21 | frs 2025/26:440 |
+| HD10441 | Legal certainty in the justice system | Rättssäkerheten inom rättsväsendet | - | Gunnar Strömmer (M) | 2026-04-21 | frs 2025/26:441 |
+| HD10442 | Finance Minister's false statements on eating disorder care | Uttalanden om ätstörningsvården i Region Stockholm | S | Elisabeth Svantesson (M) | 2026-04-21 | frs 2025/26:442 |
 
 ## MCP Sync Status
 - Status: live
