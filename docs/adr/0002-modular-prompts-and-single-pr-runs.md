@@ -103,3 +103,20 @@ Eight core modules + one Tier-C extension + a `README.md`:
 - `.github/skills/gh-aw-workflow-authoring/SKILL.md` — authoring pattern with a link to `.github/prompts/`
 - `analysis/methodologies/ai-driven-analysis-guide.md` — authoritative DIW methodology (unchanged)
 - `analysis/templates/` — authoritative artifact templates (unchanged)
+- gh-aw packaging-imports guide: <https://github.github.com/gh-aw/guides/packaging-imports/>
+- gh-aw Copilot agent files reference: <https://github.github.com/gh-aw/reference/copilot-custom-agents/>
+
+## Addendum — 2026-04-21 correctness pass
+
+A follow-up deep review fixed defects that slipped through the initial
+migration:
+
+| # | Defect | Fix |
+|---|--------|-----|
+| 1 | `01-bash-and-shell-safety.md` told the agent to avoid `${VAR}` and `${VAR:-default}` (standard parameter expansion) and to work around `$(…)` via temp files. AWF inspects network egress, not shell syntax; `$(…)` is used throughout our own workflow `steps:`. | Rewrote module 01: quote expansions, use `set -Eeuo pipefail`, UTF-8 locale, keep secrets out of log-visible substitutions. Removed the factually wrong table rows. |
+| 2 | `scripts/validate-analysis-gate.ts`, `scripts/validate-tier-c-gate.ts`, `scripts/inject-analysis-references.ts` and `scripts/validate-translation.ts` are referenced from prompts / workflow bodies but do not exist in the repo. | Module 05 and the Tier-C extension now carry inline bash gate scripts that implement the documented checks directly; module 06 points at the hand-written analysis-references footer; news-translate.md's validator reference is corrected to the existing `scripts/validate-news-translations.ts`. |
+| 3 | The `dok_id` evidence requirement was restated with slight variations in modules 00, 04, 05, 06. The "never fabricate" rule was in 00 and 02. The `safeoutputs___noop` policy was in 00, 02, 07. | Canonical statement lives in exactly one module; the others cross-reference it (e.g. "gate enforcement lives in `05-analysis-gate.md` check 4"). |
+| 4 | Module 02's tool-naming table listed `filesystem`, `memory`, `sequential-thinking`, `playwright` as available helpers, but news workflows do not declare those under `mcp-servers:`; they exist only on the local Copilot channel (`.github/copilot-mcp.json`). | Replaced the table with a per-surface view (what the news workflow actually sees vs what the local Copilot sees) and added the `repo-memory`, `bash`, `safeoutputs` rows that were previously implicit. |
+| 5 | `.github/prompts/README.md` did not explain why we use plain imports instead of a single Copilot Agent File. gh-aw docs cap Copilot Agent Files at **one per workflow**, which is incompatible with our 8-module split. | Added a "Why multiple prompt imports" section describing the two import styles, the one-per-workflow cap, and the coexistence with `.github/agents/*.md` persona files used by `assign_copilot_to_issue`. |
+
+All 12 workflows still compile clean (`gh aw compile`: 0 errors, 0 warnings); all four CI invariants still hold.

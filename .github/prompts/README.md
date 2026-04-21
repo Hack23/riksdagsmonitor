@@ -58,6 +58,19 @@ flowchart LR
   style I fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
 ```
 
+## Why multiple prompt imports (not a single Copilot Agent File)
+
+gh-aw supports [two distinct import styles](https://github.github.com/gh-aw/guides/packaging-imports/):
+
+| Style | Source | Per-workflow cap | Frontmatter shape | Use for |
+|-------|--------|------------------|-------------------|---------|
+| **Plain imports** | Any `.md` outside `.github/agents/` | unlimited | plain Markdown (no special frontmatter required) | Shared rule modules — this directory. |
+| **Copilot Agent File** | `.github/agents/<name>.md` | **exactly one** per workflow | `name`, `description`, `tools`, `mcp-servers` | Per-issue delegation via `assign_copilot_to_issue`, or a single specialised persona for one workflow. |
+
+News workflows need eight bounded-context modules (role, shell, MCP, download, analysis, gate, article, commit) plus an optional Tier-C extension. The "one agent file per workflow" limit makes that infeasible as a single agent file, so we use plain imports. The 24 files under `.github/agents/` remain the persona catalogue for `assign_copilot_to_issue` and for any future workflow that genuinely needs a single reusable persona per run.
+
+If a workflow ever needs a *single* reusable persona (e.g. a pure code-review workflow), that workflow may import one agent file from `.github/agents/` **in addition to** any plain prompt imports — gh-aw allows mixing the two styles.
+
 ## Authoring rules for new / edited modules
 
 | Rule | Enforced by |

@@ -11,44 +11,47 @@ bash({
 })
 ```
 
-Rules:
-
 | # | Rule |
 |---|------|
 | 1 | `command` is a single string (never an array of tokens). |
 | 2 | `description` is a short non-empty sentence. |
 | 3 | Missing either field → tool-call validation error → fix and retry. |
-| 4 | Use `mode: "sync"` by default; increase `initial_wait` (e.g. 120 s) for builds, MCP warm-ups, and analysis pipelines. |
-| 5 | Chain dependent commands with `&&` inside one `command` string to avoid lost context. |
+| 4 | Use `mode: "sync"` by default; raise `initial_wait` (e.g. 120 s) for builds, MCP warm-ups, and analysis pipelines. |
+| 5 | Chain dependent commands with `&&` inside one `command` string; separate sessions do not share state unless you pass the same `shellId`. |
 
-## AWF shell safety
+## Shell hygiene
 
-The agentic workflow firewall rewrites commands. Write commands that do not depend on command substitution, brace expansion, or process substitution.
+| Do | Avoid |
+|----|-------|
+| Quote every expansion: `"$VAR"`, `"${ARR[@]}"` | Bare `$VAR` adjacent to other text — splitting / glob surprises |
+| Use `${VAR:-default}` for defaults | Multi-line `if [ -z "$VAR" ]; then VAR=…; fi` for a simple fallback |
+| `set -Eeuo pipefail` at the top of any multi-step inline script | Ignoring non-zero exits |
+| `LC_ALL=C.UTF-8 LANG=C.UTF-8` when the step writes Swedish text | Leaving the default C locale, which may corrupt `ö`, `ä`, `å` |
+| `$(cmd)` for command substitution | Deprecated backticks `` `cmd` `` |
+| Explicit redirection (`> /tmp/out 2> /tmp/err`) | Leaving stderr on the runner log unintentionally |
 
-| Use | Instead of |
-|-----|------------|
-| `$VAR` | `${VAR}` |
-| `find DIR -name '*.md' -exec cat {} +` | `for f in "$DIR"/*.md; do cat "$f"; done` with `$(...)` |
-| Write intermediate result to a temp file, then `read VAR < /tmp/file` | `VAR=$(command)` |
-| `if [ -z "$VAR" ]; then VAR=default; fi` | `${VAR:-default}` |
-| `printf '%s\n' "$VAR"` | `echo "$VAR"` when the value may contain `-e`, `-n`, backslashes |
+Parameter expansion (`${VAR}`, `${VAR:-x}`, `${VAR##*/}`, …) and command substitution (`$(cmd)`) are **safe** under the agentic-workflow firewall — the firewall inspects outbound network egress, not shell syntax. Process substitution `<(…)` is best avoided because some runners disable `/dev/fd`.
+
+## Secret safety
+
+- Never pass secrets through `$(…)` into a log-visible command — echoing `curl -H "Authorization: $(…)"` will leak if the step is rerun in debug.
+- Use env blocks (`env:` on the step) or `${{ secrets.FOO }}` directly; the runner masks secret values in output.
 
 ## Temporary files
 
 - Use `/tmp/<descriptive-name>-$$` (PID suffix) for per-step temp files.
-- Delete them before the run ends.
-- Never write temp files under the repo path — they will be staged by `git add`.
+- Delete them before the run ends (or rely on the runner wipe).
+- Never write temp files under the repo working tree — they will be picked up by `git add` and leak into the PR.
 
 ## UTF-8
 
-- All created files must be native UTF-8; never substitute HTML entities for Swedish characters.
-- Set `LC_ALL=C.UTF-8 LANG=C.UTF-8` at the top of any bash step that manipulates text files.
+- All committed files must be native UTF-8 (`ö`, `ä`, `å`). Never substitute HTML entities (`&ouml;`) for Swedish characters.
+- Set `LC_ALL=C.UTF-8 LANG=C.UTF-8` on any bash step that edits markdown or HTML.
 
-## Self-check
+## Self-check (before issuing a `bash` call)
 
-Before issuing a `bash` call, verify:
-
-1. Both `command` and `description` fields are present and non-empty.
-2. No `$(...)`, `${VAR}`, or `<(...)` tokens in the command string.
-3. Any file path is absolute or clearly rooted at `$GITHUB_WORKSPACE` / the current working directory.
-4. Output redirection (`>`, `| tee`) writes to `/tmp/`, not the repo root.
+1. Both `command` and `description` are present and non-empty.
+2. Every variable expansion that might contain whitespace or `*` is double-quoted.
+3. No backticks, no `<(…)` process substitution.
+4. Any file path is absolute or clearly rooted at `$GITHUB_WORKSPACE`.
+5. Output redirection (`>`, `| tee`) writes to `/tmp/`, not the repo root.

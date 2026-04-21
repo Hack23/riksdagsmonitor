@@ -319,7 +319,7 @@ Translation is a pure-derivative workflow:
 ## Rules specific to this workflow
 
 - No original analysis. Never produce files under `analysis/daily/`.
-- Validate every translation against the source with `scripts/validate-translation.ts` before commit.
+- Validate every translation against the source with `scripts/validate-news-translations.ts` before commit.
 - Keep the PR under the safe-outputs 100-file cap. If more translations are pending than fit in one PR, translate the highest-priority batch and leave the rest for the next scheduled run.
 - Skip any language whose translation already exists and is non-empty unless `force` is explicitly requested.
 

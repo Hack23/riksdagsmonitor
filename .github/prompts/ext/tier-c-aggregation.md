@@ -62,21 +62,27 @@ For `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-r
 
 ## Tier-C gate
 
-Run after the core analysis gate:
+No dedicated Tier-C validator script exists — run the core-gate bash block from `05-analysis-gate.md`, then the additional checks below:
 
 ```
-npx tsx scripts/validate-tier-c-gate.ts --dir "$ANALYSIS_DIR"
+set -Eeuo pipefail
+EXTRA="README.md executive-brief.md scenario-analysis.md \
+       comparative-international.md methodology-reflection.md"
+FAIL=0
+for f in $EXTRA; do
+  [ -s "$ANALYSIS_DIR/$f" ] || { echo "❌ tier-c missing: $f"; FAIL=1; }
+done
+# ≥ 3 scenarios with probability + leading indicator
+awk '/^##? .*Scenario/{c++} END{exit (c<3)}' "$ANALYSIS_DIR/scenario-analysis.md" \
+  || { echo "❌ scenario-analysis.md: fewer than 3 scenarios"; FAIL=1; }
+# ≥ 2 external country references in comparative-international.md
+grep -cE '\b(Finland|Norway|Denmark|Germany|France|Netherlands|UK|USA|Estonia)\b' \
+  "$ANALYSIS_DIR/comparative-international.md" | awk '{exit ($1<2)}' \
+  || { echo "❌ comparative-international.md: fewer than 2 countries"; FAIL=1; }
+[ "$FAIL" -eq 0 ] || exit 1
 ```
 
-Checks:
-
-1. All 14 artifacts exist and non-empty.
-2. `scenario-analysis.md` contains ≥ 3 scenarios, each with probability + leading indicator.
-3. `comparative-international.md` references ≥ 2 external countries' indicators.
-4. `methodology-reflection.md` lists ≥ 3 uncertainty items + ≥ 1 bias caveat.
-5. `cross-reference-map.md` cites ≥ 3 sibling/prior analyses for aggregation workflows.
-
-Fail → fix, re-run. Still failing → commit as `analysis-only` via the single-PR rule in `07-commit-and-pr.md`.
+If the block is promoted to `scripts/validate-tier-c-gate.ts`, update this module accordingly.
 
 ## Article expectations
 

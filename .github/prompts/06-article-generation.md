@@ -29,11 +29,11 @@ Articles derive from analysis. Scripts produce HTML scaffolding; the AI writes e
    | Strategic context | `risk-assessment.md` + `threat-analysis.md` |
    | Economic context | `economic-data.json` + commentary paragraph |
    | SEO title / meta description | `synthesis-summary.md` §"AI-Recommended Article Metadata" |
-   | Analysis references block | Auto-injected by `scripts/inject-analysis-references.ts` (verify after) |
+   | Analysis references block | Hand-written footer linking to the 9 analysis files on GitHub (see "Mandatory sections" below) |
 
 3. **Replace every `AI_MUST_REPLACE` marker** with evidence-cited analysis. The gate in step 7 enforces zero markers.
 
-4. **Article Pass 2**: read every generated article HTML back in full. Improve: tighten lede, strengthen quotes, expand stakeholder coverage, replace boilerplate sentences, verify every `dok_id` reference resolves. Minimum 8 minutes.
+4. **Article Pass 2** — AI-FIRST principle applies (see `00-base-contract.md` rule 5). Read every generated article HTML back in full. Improve: tighten lede, strengthen quotes, expand stakeholder coverage, replace boilerplate sentences, verify every `dok_id` reference resolves. Minimum 8 minutes.
 
 ## Mandatory sections (per article)
 

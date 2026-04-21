@@ -53,14 +53,7 @@ Pass 2 is mandatory. Completing earlier is a quality failure.
 
 ## Evidence standard
 
-Every analytical claim must cite at least one of:
-
-- A real `dok_id` (e.g. `H901FiU1`) resolvable via `get_dokument`.
-- Named MP / minister / party with role.
-- Vote counts from `get_voteringar`.
-- A primary-source URL (riksdagen.se, regeringen.se, scb.se, worldbank.org).
-
-Generic phrasing without evidence is a Pass-2 improvement target.
+Every analytical claim must cite at least one of: a real `dok_id` (e.g. `H901FiU1`) resolvable via `get_dokument`; a named MP / minister / party with role; vote counts from `get_voteringar`; or a primary-source URL (riksdagen.se, regeringen.se, scb.se, worldbank.org, data.imf.org). Generic phrasing without evidence is a Pass-2 improvement target. Gate enforcement lives in `05-analysis-gate.md` check 4.
 
 ## Economic context
 

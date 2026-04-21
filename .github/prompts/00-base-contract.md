@@ -37,8 +37,8 @@ No step may be skipped, reordered, or executed in parallel with its successor.
 ## Output contract
 
 - Commit real files on disk under `analysis/daily/` and/or `news/`.
-- End the run with exactly one safe output call — see module `07-commit-and-pr.md`.
-- Never fabricate data. If MCP is unreachable and nothing was produced, call `safeoutputs___noop` once and exit.
+- End the run with exactly one safe output call (see `07-commit-and-pr.md` for the single-PR / no-op policy).
+- Never fabricate data. If MCP is unreachable and nothing was produced, the no-op exit rule in `07-commit-and-pr.md` applies.
 
 ## Language & formatting
 

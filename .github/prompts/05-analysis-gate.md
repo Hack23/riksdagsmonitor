@@ -17,17 +17,29 @@ This is the **only** gate separating analysis from article generation. If it fai
 5. **Mermaid diagrams** — every daily synthesis file contains ≥ 1 Mermaid diagram with colour-coded `style` directives.
 6. **Pass-2 done** — agent has read each core artifact back after creation and committed improvements. (Enforced by file mtime diff: final file mtime > creation time + 3 min, OR two git-history snapshots on disk.)
 
-## Reference script
+## Implementation
 
-Implemented in [`scripts/validate-analysis-gate.ts`](../../scripts/validate-analysis-gate.ts) (to be added if missing; otherwise inline bash equivalent is acceptable). Invocation:
+No dedicated validator script exists yet — run the six checks above as an inline bash gate. Canonical shape:
 
 ```
-npx tsx scripts/validate-analysis-gate.ts \
-  --dir "$ANALYSIS_DIR" \
-  --manifest "$ANALYSIS_DIR/data-download-manifest.md"
+set -Eeuo pipefail
+REQ="synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md \
+     stakeholder-perspectives.md significance-scoring.md classification-results.md \
+     cross-reference-map.md data-download-manifest.md"
+FAIL=0
+for f in $REQ; do
+  [ -s "$ANALYSIS_DIR/$f" ] || { echo "❌ missing/empty: $f"; FAIL=1; }
+done
+grep -rIn -e 'AI_MUST_REPLACE' -e '\[REQUIRED\]' -e 'TODO:' -e 'Lorem ipsum' "$ANALYSIS_DIR" \
+  && FAIL=1
+grep -lE 'H[0-9]{3}[A-Za-z]{2,}[0-9]+' "$ANALYSIS_DIR/swot-analysis.md" >/dev/null \
+  || { echo "❌ swot-analysis.md: no dok_id citation"; FAIL=1; }
+grep -lE '^```mermaid' "$ANALYSIS_DIR/synthesis-summary.md" >/dev/null \
+  || { echo "❌ synthesis-summary.md: missing Mermaid block"; FAIL=1; }
+[ "$FAIL" -eq 0 ] || exit 1
 ```
 
-Exit code 0 = pass, non-zero = fail with per-check report.
+Exit code 0 = pass, non-zero = fail with per-check report. If a future run needs reuse, factor the block into `scripts/validate-analysis-gate.ts` and update this module.
 
 ## Outcome
 
