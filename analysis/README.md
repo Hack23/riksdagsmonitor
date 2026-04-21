@@ -155,7 +155,7 @@ flowchart LR
 
 **The AI agent reads all 6 methodology guides, reads all 8 templates, reads the actual data, and produces genuine analytical content based on evidence found in the documents.**
 
-**Fallback mechanism:** If AI analysis fails or produces unusable output (detected by the quality gate bash check in `SHARED_PROMPT_PATTERNS.md`), the workflow should:
+**Fallback mechanism:** If AI analysis fails or produces unusable output (detected by the quality gate bash check in `.github/prompts/` (see the README for the module catalogue)), the workflow should:
 1. Commit a minimal `data-download-manifest.md` documenting what was downloaded
 2. Flag the analysis as `pending` for the next workflow run
 3. Never commit placeholder or stub content that masquerades as genuine analysis

@@ -946,6 +946,8 @@ imports:
   - code-style-rules.md
 ```
 
+Paths are resolved **relative to the workflow file**. At compile time `gh aw compile` rewrites each import as a `{{#runtime-import <path>}}` directive in the generated `.lock.yml`, which is then inlined into the prompt at run-time. Imports are the preferred way to factor shared rules out of individual workflows — see this repo's `.github/prompts/README.md` for a bounded-context example with 8 modules + a Tier-C extension.
+
 ### Labels (Organization)
 
 ```yaml

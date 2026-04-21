@@ -168,7 +168,7 @@ Every analysis file MUST demonstrate:
 
 **Rhetorical-Tension Rule**: When the top-ranked findings carry opposing political valences, the article MUST surface the tension in a dedicated subsection. Silence on the tension is itself a coverage failure.
 
-**Enforcement**: `SHARED_PROMPT_PATTERNS.md` → "Lead-Story & Coverage-Completeness Gate" is a blocking check. Articles failing the gate cannot be committed.
+**Enforcement**: `.github/prompts/` (see the README for the module catalogue) → "Lead-Story & Coverage-Completeness Gate" is a blocking check. Articles failing the gate cannot be committed.
 
 ---
 
@@ -256,7 +256,7 @@ Every agentic workflow MUST spend **at least 15 minutes** on analysis. This incl
 
 ### 🔍 Quality Gate (Blocking)
 
-Before committing, run the quality gate bash check from `SHARED_PROMPT_PATTERNS.md` Step 5b. If the check fails, go back and improve analysis files until it passes. Do NOT commit failing analysis.
+Before committing, run the quality gate bash check from `.github/prompts/` (see the README for the module catalogue) Step 5b. If the check fails, go back and improve analysis files until it passes. Do NOT commit failing analysis.
 
 ---
 
@@ -2181,7 +2181,7 @@ Every synthesis-level analysis MUST include a historical comparison with:
 | [political-style-guide.md](political-style-guide.md) | Writing and formatting standards |
 | [SWOT.md](../../SWOT.md) | **Formatting exemplar** (platform SWOT) |
 | [THREAT_MODEL.md](../../THREAT_MODEL.md) | **Formatting exemplar** (platform threat model) |
-| [SHARED_PROMPT_PATTERNS.md](../../.github/workflows/SHARED_PROMPT_PATTERNS.md) | **Shared news workflow prompts** — quality enforcement |
+| [.github/prompts/ (see README)](../../.github/workflows/.github/prompts/ (see README)) | **Shared news workflow prompts** — quality enforcement |
 
 ---
 

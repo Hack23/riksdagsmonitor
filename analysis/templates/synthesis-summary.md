@@ -361,7 +361,7 @@ graph LR
 
 ## ✅ Quality Self-Check Checklist
 
-> **Pre-commit validation — every item MUST be checked before finalising this synthesis. Derived from SHARED_PROMPT_PATTERNS.md §Quality Self-Check Protocol.**
+> **Pre-commit validation — every item MUST be checked before finalising this synthesis. Derived from .github/prompts/ (see README) §Quality Self-Check Protocol.**
 
 - [ ] **Synthesis Context complete:** All metadata fields filled (ID, date, documents analyzed, period, producer, confidence)
 - [ ] **Intelligence Dashboard rendered:** Mermaid diagram has actual values (no grey placeholder nodes remaining)

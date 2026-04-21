@@ -102,7 +102,12 @@ timeout-minutes: 10     # Execution timeout
 concurrency:            # Concurrency control
   group: ${{ github.ref }}
   cancel-in-progress: true
+imports:                # Reusable prompt modules (resolved relative to workflow file)
+  - ../prompts/00-base-contract.md
+  - ../prompts/07-commit-and-pr.md
 ```
+
+**Factoring shared rules** — prefer `imports:` over inlining large prompt blocks. In this repo see `.github/prompts/` for a bounded-context example: 8 core modules + 1 Tier-C extension, each ≤ 300 lines, with a dependency matrix in the `README.md`. Workflow `.md` files stay ≤ 200 lines of body and contain only workflow-unique business rules.
 
 ## 🛠️ Tools Configuration
 
