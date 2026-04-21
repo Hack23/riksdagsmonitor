@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "articleType": "propositions",
+  "date": "2026-04-21",
+  "policyDomains": ["criminal justice", "international law", "forestry", "digital governance", "maritime policy"],
+  "dataPoints": [
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2024", "value": 0.82 },
+    { "countryCode": "DNK", "countryName": "Denmark", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2024", "value": 3.478 },
+    { "countryCode": "NOR", "countryName": "Norway", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2024", "value": 2.097 },
+    { "countryCode": "FIN", "countryName": "Finland", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2024", "value": 0.416 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2025", "value": 8.694 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2024", "value": 8.4 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "indicatorName": "Inflation Rate (%)", "date": "2024", "value": 2.836 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "indicatorName": "Inflation Rate (%)", "date": "2023", "value": 8.549 }
+  ],
+  "commentary": "Sweden's modest GDP growth of 0.82% in 2024 — lagging Denmark's 3.48% and Norway's 2.10% — provides the economic backdrop against which the Kristersson government's spring 2026 legislative package must be assessed. With unemployment at 8.69% in 2025 and inflation finally cooling to 2.84% after the 2023 peak of 8.55%, the government faces pressure to demonstrate fiscal competence through targeted reforms. The criminal justice package (double sentences, youth offenders) signals prioritization of public safety over economic stimulus, while the interoperability proposition (HD03244) targets long-term public sector productivity gains that could help close Sweden's Nordic growth gap. The forestry framework (HD03242) directly affects Sweden's SEK 150 billion forest sector — a critical export earner whose competitiveness requires regulatory certainty that the Tidö coalition is now delivering.",
+  "source": {
+    "worldBank": ["NY.GDP.MKTP.KD.ZG", "SL.UEM.TOTL.ZS", "FP.CPI.TOTL.ZG"],
+    "scb": []
+  }
+}
