@@ -306,17 +306,17 @@ read START_TIME < /tmp/start_time.txt
 
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–6**: Run download-parliamentary-data pipeline (download data)
-- **Minutes 6–13**: 🚨 **AI Analysis Pass 1 (Part A — 7 min)**: Start per-file analysis for the highest-significance documents first (synthesis-summary.md + top 3 dok_ids' analyses + risk-assessment.md stub) so the Heartbeat PR at minute 15 has real content, not empty stubs.
+- **Minutes 6–13**: 🚨 **AI Analysis Pass 1 (Part A — 7 min)**: Start per-file analysis for the highest-significance documents first (synthesis-summary.md + top 3 dok_ids' analyses + an initial risk-assessment.md draft) so the Heartbeat PR at minute 15 has real content. These initial drafts will be completed in Part B and deepened in Pass 2 — no `AI_MUST_REPLACE` markers or template stubs may remain by the final PR.
 - **Minutes 13–15**: 🫀 **MANDATORY EARLY Heartbeat PR** — `git add` whatever analysis artifacts exist in `analysis/daily/$ARTICLE_DATE/committeeReports/` (even partial), `git commit -m "wip: committee-reports heartbeat {date}"`, then **`safeoutputs___create_pull_request`** with title `🫀 Heartbeat - Committee Reports - {date}` and **`draft: true`**. Run `git checkout main` after the call so subsequent commits don't stack onto the frozen patch. This **resets the safeoutputs session idle timer** (~30–35 min window) AND preserves work if later phases fail. **NON-NEGOTIABLE: if you reach minute 18 without a successful heartbeat PR, stop all other work and call it immediately.**
-- **Minutes 15–22**: 🚨 **AI Analysis Pass 1 (Part B — 7 min)**: Complete per-file analysis for EVERY remaining document with Mermaid diagrams, evidence tables, SWOT entries (total Pass 1 ≥ 14 min).
-- **Minutes 22–28**: 🚨 **AI Analysis Pass 2 (6 min)**: Read ALL analysis artifacts back, improve every section, replace ALL script stubs with AI analysis. Run enrichment verification gate.
-- **Minutes 28–30**: Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass.
-- **Minutes 30–36**: Generate articles for core languages (EN, SV) using `npx tsx scripts/generate-news-enhanced.ts`. **Do NOT** post-edit the generated HTML with `python3`/heredoc/`sed` — see Article Generation Safety.
-- **Minutes 36–40**: 🚨 **Article Improvement Pass**: Read ALL articles back, replace AI_MUST_REPLACE markers, improve content. Run article quality component gate.
-- **Minutes 40–43**: Validate, commit, create **FINAL (non-draft)** PR with `safeoutputs___create_pull_request`. This is your second and last PR call (`max: 2`).
-- **Minutes 43–45**: 🚨 **HARD DEADLINE** — If the final PR call fails with `session not found`, the heartbeat PR from minute 15 already preserves partial work. Do NOT call `safeoutputs___noop` in that case — the heartbeat PR is your output.
+- **Minutes 15–23**: 🚨 **AI Analysis Pass 1 (Part B — 8 min)**: Complete per-file analysis for EVERY remaining document with Mermaid diagrams, evidence tables, SWOT entries. **Total Pass 1 = 15 min (7 + 8)** — meets the `deep` depth tier minimum.
+- **Minutes 23–30**: 🚨 **AI Analysis Pass 2 (7 min)**: Read ALL analysis artifacts back, improve every section, replace ALL script stubs and `AI_MUST_REPLACE` markers with AI analysis. Run enrichment verification gate. **Total analysis phase = 22 min (Pass 1: 15 + Pass 2: 7).**
+- **Minutes 30–32**: Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass.
+- **Minutes 32–38**: Generate articles for core languages (EN, SV) using `npx tsx scripts/generate-news-enhanced.ts`. **Do NOT** post-edit the generated HTML with `python3`/heredoc/`sed` — see Article Generation Safety.
+- **Minutes 38–42**: 🚨 **Article Improvement Pass**: Read ALL articles back, replace AI_MUST_REPLACE markers, improve content. Run article quality component gate.
+- **Minutes 42–44**: Validate, commit, create **FINAL (non-draft)** PR with `safeoutputs___create_pull_request`. This is your second and last PR call (`max: 2`).
+- **Minutes 44–45**: 🚨 **HARD DEADLINE** — If the final PR call fails with `session not found`, the heartbeat PR from minute 15 already preserves partial work. Do NOT call `safeoutputs___noop` in that case — the heartbeat PR is your output.
 
-> ⚠️ **Analysis phase is 22 minutes minimum (Pass 1: 15 min + Pass 2: 7 min)** — every analysis file must contain color-coded Mermaid diagrams, structured evidence tables with dok_id citations, and follow template structure exactly. ALL script-generated stubs MUST be replaced with AI-enriched analysis. Run the ENFORCED gates from SHARED_PROMPT_PATTERNS.md before proceeding to article generation.
+> ⚠️ **Analysis phase is 22 minutes minimum (Pass 1: 15 min = 7 Part A + 8 Part B; Pass 2: 7 min)** — every analysis file must contain color-coded Mermaid diagrams, structured evidence tables with dok_id citations, and follow template structure exactly. ALL script-generated stubs and `AI_MUST_REPLACE` markers MUST be replaced with AI-enriched analysis before the final PR. Run the ENFORCED gates from SHARED_PROMPT_PATTERNS.md before proceeding to article generation.
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 
