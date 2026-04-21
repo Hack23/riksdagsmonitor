@@ -115,7 +115,7 @@ graph LR
 |-------|:------:|----------|
 | Staff available at Skatteverket | 🟠 | Existing hiring freeze |
 | Skill mix (policy + IT + call-centre) | 🟠 | Call-centre surge capacity limited |
-| Contractor routes | 🟡 | Ramningsavtal available but slow |
+| Contractor routes | 🟡 | *Ramavtal* (framework agreements) available but slow |
 | Training needs | 🟢 | Minimal |
 
 ### 🗓️ Timeline feasibility — 3/5

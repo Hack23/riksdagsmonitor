@@ -100,7 +100,7 @@ flowchart TD
 ```
 
 ### Pathway A — Continuation Coalition (M-KD-L + SD, confidence)
-- **Seats:** M 68 + KD 15 + L (0–13) + SD 64 = **147 to 160** → **below 175**
+- **Seats:** M 68 + KD 15 + L (0–13, threshold-dependent) + SD 64 = **147 to 160** → **below 175**
 - **Viability:** requires L to survive threshold and unity held
 - **Probability:** 40 %
 - **Blocker:** L below threshold or SD withdrawal

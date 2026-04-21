@@ -58,10 +58,10 @@ timeline
 
 | # | Year | Episode | Government | Measure | Pre-election effect | Post-measure outcome | Structural similarity (1–10) |
 |:-:|:----:|---------|------------|---------|----------------------|---------------------|:----------------------------:|
-| HP-1 | 2010 | Reinfeldt step-5 jobbskatteavdrag | M-led Alliance | Income-tax cut worth ~0.8 % GDP | +1.1 pp incumbent SIFO | Alliance re-elected, reduced majority | 8 |
+| HP-1 | 2010 | Reinfeldt step-5 jobbskatteavdrag (earned-income tax credit) | M-led Alliance | Income-tax cut worth ~0.8 % GDP | +1.1 pp incumbent SIFO | Alliance re-elected, reduced majority | 8 |
 | HP-2 | 2018 | Löfven welfare package | S-MP-led | Transfer boost for pensioners and families | +0.6 pp incumbent | Coalition lost, formed after 4-month hung parliament | 6 |
 | HP-3 | 2022 | Andersson energy-rebate | S-led | Retroactive energy-cost support | +0.4 pp incumbent | Coalition lost narrowly | 7 |
-| HP-4 | 2006 | Reinfeldt jobbskatteavdrag intro | M-led Alliance | Income-tax cut | +2.3 pp incumbent | Alliance won decisively | 6 |
+| HP-4 | 2006 | Reinfeldt jobbskatteavdrag (earned-income tax credit) introduction | M-led Alliance | Income-tax cut | +2.3 pp incumbent | Alliance won decisively | 6 |
 
 ---
 

@@ -68,7 +68,7 @@ graph TB
 
 | # | Segment | Size | Direction | Magnitude (1–5) | Volatility | Current bloc lean | Source |
 |:-:|---------|:----:|:---------:|:---------------:|:----------:|:----------------:|--------|
-| S1 | Rural drivers (non-metro + private car primary) | 1.2 M | ➕ incumbent | 4 | Medium | Mixed | SCB Befolkning 2025; Vehicle register |
+| S1 | Rural drivers (non-metro + private car primary) | 1.2 M | ➕ incumbent | 4 | Medium | Mixed | SCB Befolkning 2025; Transportstyrelsen vehicle register |
 | S2 | Suburban homeowners with heating costs | 1.8 M | ➕ incumbent | 3 | Low | M/KD lean | SCB Boende 2025 |
 | S3 | Urban renters | 2.1 M | ➖ opposition | 2 | High | S/V lean | SCB Boende 2025 |
 | S4 | Young / first-time voters | 0.9 M | ➖ opposition | 3 | High | MP/V lean | SCB Åldersstatistik 2025 |

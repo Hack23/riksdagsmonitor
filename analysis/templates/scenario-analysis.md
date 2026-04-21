@@ -43,17 +43,17 @@
 
 ```mermaid
 quadrantChart
-    title Scenario Probability × Impact
+    title Scenario Probability × Impact (y-coordinate ≈ probability; x-coordinate ≈ relative impact)
     x-axis Low Impact --> High Impact
     y-axis Low Probability --> High Probability
     quadrant-1 Plan For
     quadrant-2 Prepare Resilience
     quadrant-3 Monitor
     quadrant-4 Consider Opportunistically
-    "🟢 Base: Coalition holds, 40%": [0.55, 0.55]
-    "🟡 Upside: Opposition wins cleanly, 25%": [0.75, 0.25]
-    "🟠 Downside: Hung result, 25%": [0.80, 0.30]
-    "🔴 Wildcard: Mid-cycle crisis, 10%": [0.90, 0.10]
+    "🟢 Base: Coalition holds (40%)": [0.55, 0.55]
+    "🟡 Upside: Opposition wins cleanly (25%)": [0.75, 0.25]
+    "🟠 Downside: Hung result (25%)": [0.80, 0.30]
+    "🔴 Wildcard: Mid-cycle crisis (10%)": [0.90, 0.10]
 ```
 
 ---
