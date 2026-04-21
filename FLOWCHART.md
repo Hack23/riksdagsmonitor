@@ -11,18 +11,21 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
+> - 📈 Added **IMF** to the agentic news-pipeline fan-out as a third primary economic data source alongside SCB and World Bank, per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). IMF is reached via the **IMF TypeScript client `scripts/imf-client.ts` invoked through the bash tool** — *pure-TS, no MCP* — so the MCP server count is unchanged.
+>
 > **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
 > - Flowcharts re-aligned with the current build pipeline: `prebuild` chain is **`generate-news-indexes` → `extract-news-metadata` → `generate-sitemap-html` → `generate-rss` → `generate-sitemap`**; `postbuild` copies `rss.xml`, `sitemap.xml`, and `cia-data/` into `dist/`. Library build is a two-pass `tsc -p tsconfig.lib.json && tsc -p tsconfig.npm-scripts.json`.
-> - Added agentic news pipeline flow: trigger → MCP tool calls (riksdag-regering / scb / world-bank) → draft → **five-layer safe-output validation** → reviewer PR → merge → rebuild & deploy.
+> - Added agentic news pipeline flow: trigger → MCP tool calls (riksdag-regering / scb / world-bank) + **IMF TypeScript client (bash tool, no MCP)** → draft → **five-layer safe-output validation** → reviewer PR → merge → rebuild & deploy.
 > - CIA data pipeline flow updated for the **15 subsystems** (anomaly, coalition, committee, distribution, election, election-cycle, ministry, parties, party, percentile, politician, pre-election, risk, seasonal, voting) and schema-validation scripts (`sync-cia-schemas`, `validate-against-cia-schemas`, `check-cia-schema-updates`, `generate-types-from-cia-schemas`).
 > - Translation validation flow reflects **14-language** coverage including RTL (HE, AR) — driven by `validate-translations` under `translation-validation.yml` in CI.
 > - Deploy-to-S3 flow clarified as **OIDC-only** (no long-lived AWS keys): GitHub → `sts:AssumeRoleWithWebIdentity` → `GithubWorkFlowRole` → S3 sync (us-east-1 primary, eu-west-1 replica) → CloudFront invalidation.
@@ -437,11 +440,17 @@ flowchart TD
     TOOL_LIST --> FETCH_BET[Fetch Committee Betankanden]
     TOOL_LIST --> FETCH_ANFOR[Fetch Anforanden Speeches]
     TOOL_LIST --> FETCH_VOT[Fetch Voteringar Voting Records]
+    WORKFLOW --> SCB_FETCH[scb-mcp: Fetch SCB statistical context<br/>optional — graceful fallback]
+    WORKFLOW --> WB_FETCH[world-bank-mcp: Fetch WGI governance + long-horizon indicators<br/>optional — graceful fallback]
+    WORKFLOW --> IMF_FETCH[imf-ts-client via bash: WEO / Fiscal Monitor / IFS<br/>pure-TS, no MCP — optional, graceful fallback]
     FETCH_PROPS --> RAW_DATA[Raw Data Aggregation]
     FETCH_MOT --> RAW_DATA
     FETCH_BET --> RAW_DATA
     FETCH_ANFOR --> RAW_DATA
     FETCH_VOT --> RAW_DATA
+    SCB_FETCH --> RAW_DATA
+    WB_FETCH --> RAW_DATA
+    IMF_FETCH --> RAW_DATA
     RAW_DATA --> DATA_CHECK{Sufficient Data?}
     DATA_CHECK -->|Less than 5 docs| SKIP[Skip Generation Log]
     DATA_CHECK -->|5+ docs| TRANSFORM[Data Transformation Layer]

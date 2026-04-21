@@ -11,15 +11,18 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
 **📌 Classification:** Public
 
+> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
+> - 📈 **IMF** added as a third primary economic data source (alongside SCB and World Bank) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). **BIA impact:** IMF is an *optional enrichment* — IMF unavailability (DNS, TLS, rate-limit, upstream outage at `data.imf.org` / `api.imf.org` / `www.imf.org`) **does not block core site availability** and does not affect the stated RTO (1–4h) or RPO (4–24h). Degraded state: forward-looking articles (`week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`) fall back to the most recent cached snapshot under `analysis/data/imf/{indicator}/{country}.json` (with `.meta.json` `projectionVintage`), or omit the macro/fiscal projection section entirely. **Data-poisoning RCA scope extended** to include upstream IMF vintage confusion and IMF cache tampering — mitigations via `DatamapperResponse` schema validation, `projectionVintage` sidecar enforcement (Economic Data Contract v2.0), and integrity checks in `scripts/imf-client.ts`.
+>
 > **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
 > - Reaffirmed **RTO 1–4h / RPO 4–24h** in line with the Public / Integrity High / Availability High classification for Riksdagsmonitor `v0.8.48`.
 > - Documented **multi-region AWS failover** (us-east-1 primary → eu-west-1 replica via S3 cross-region replication and CloudFront origin failover) and **GitHub Pages (`hack23.github.io`) as tertiary DR** — cost of DR tier 3 is $0.
@@ -639,6 +642,7 @@ curl -s https://riksdagsmonitor.com/ | sha256sum
 |--------|-----------------|----------|
 | GitHub Actions MCP job failure | Workflow notification email | HIGH |
 | riksdag.se API returning 5xx errors | Pipeline error log | HIGH |
+| IMF upstream unavailable (data.imf.org / api.imf.org 5xx, DNS, or TLS error) | `scripts/imf-client.ts` retry-exhausted log | LOW (optional enrichment — graceful fallback to cached `analysis/data/imf/` snapshots) |
 | API timeout after 30s | MCP client timeout log | MEDIUM |
 | Data staleness alert (>48h) | Automated staleness checker | MEDIUM |
 | Amazon Bedrock API unavailable | GitHub Actions job failure | HIGH |

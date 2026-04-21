@@ -11,15 +11,18 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-7.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-7.2-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Updated-2026--04--20-success?style=for-the-badge" alt="Last Updated"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 7.1 | **📅 Last Updated:** 2026-04-20 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 7.2 | **📅 Last Updated:** 2026-04-20 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v7.1 → v7.2, 2026-04-20):**
+> - 📈 **IMF** added as a third primary economic-data source for agentic news workflows (alongside SCB MCP and World Bank MCP) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). IMF is consumed via the **pure-TypeScript client `scripts/imf-client.ts`** invoked by workflows through the `bash` tool — **intentionally not an MCP server** (no Python/uvx, SBOM-covered via npm). Egress allowlist extended with `data.imf.org`, `api.imf.org`, `www.imf.org` (Squid + iptables). The count of **MCP servers is unchanged**. Forward-looking workflows (`news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`) now use IMF WEO/Fiscal Monitor projections as the primary source for look-ahead framing.
+>
 > **🆕 What changed since last review (v7.0 → v7.1, 2026-04-20):**
 > - **Factual correction:** total workflow-file count under `.github/workflows/` is **45** (not 48). The breakdown is **21 standard `.yml` workflows + 12 agentic Markdown sources (`.md`) + 12 compiled `.lock.yml` siblings**. All inventory tables and narrative text below have been re-conciled with `ls .github/workflows/`.
 > - Added previously unlisted workflows: **`agentics-maintenance.yml`** (agent platform hygiene, scheduled maintenance of agentic environment) and **`economic-context-audit.yml`** (periodic audit of economic-context data joins used by news agentic workflows).
@@ -769,6 +772,7 @@ graph TB
         CAL["get_calendar_events<br/><i>Parliamentary calendar</i>"]
         SCB["SCB MCP<br/><i>Statistics Sweden</i>"]
         WB["World Bank MCP<br/><i>International data</i>"]
+        IMF["IMF TypeScript client<br/><i>WEO + Fiscal Monitor + IFS<br/>pure-TS, not MCP</i>"]
     end
 
     subgraph "📰 Agentic Workflows"
@@ -787,6 +791,12 @@ graph TB
     ANF --> WF_CR
     PROP --> WF_CR
     SCB --> WF_CR
+    WB --> WF_EV
+    WB --> WF_WR
+    IMF --> WF_EV
+    IMF --> WF_WR
+    IMF --> WF_WA
+    IMF --> WF_CR
     PROP --> WF_PR
     DOKFT --> WF_PR
     ANF --> WF_PR
@@ -828,6 +838,7 @@ graph TB
     style CAL fill:#0dcaf0,color:#000
     style SCB fill:#ffc107,color:#000
     style WB fill:#ff9800,color:#000
+    style IMF fill:#00897b,color:#fff,stroke:#004d40,stroke-width:2px
     style WF_CR fill:#198754,color:#fff,stroke-width:2px
     style WF_PR fill:#0d6efd,color:#fff,stroke-width:2px
     style WF_MO fill:#fd7e14,color:#fff,stroke-width:2px
@@ -846,10 +857,10 @@ graph TB
 | 4 | **Interpellations** | Mon–Fri 07:00 UTC | `get_interpellationer`, `search_anforanden`, `search_dokument_fulltext`, `get_calendar_events` | Ministerial accountability scoring (response rate/timeliness), evasion detection, question framing analysis, party oversight strategy mapping |
 | 5 | **Realtime Monitor** | Mon–Fri 10:00+14:00, Weekends 12:00 | `search_dokument`, `get_calendar_events`, `search_voteringar`, `search_anforanden`, `get_betankanden` | Breaking event detection, urgency classification, real-time political temperature spikes |
 | 6 | **Evening Analysis** | Mon–Fri 18:00, Sat 16:00 | `search_voteringar`, `search_anforanden`, `get_betankanden`, `get_calendar_events` | Daily parliamentary pulse, party discipline metrics, coalition cohesion scoring, debate intensity index |
-| 7 | **Weekly Review** | Sat 09:00 UTC | `search_dokument`, `search_anforanden`, `get_betankanden`, `get_propositioner`, `get_motioner`, `search_voteringar` | Week-over-week trend detection, cross-document-type pattern identification, legislative throughput metrics |
-| 8 | **Week Ahead** | Fri 07:00 UTC | `get_calendar_events`, `search_dokument`, `search_anforanden`, `get_fragor`, `get_interpellationer` | Prospective calendar analysis, scheduled debate preview, expected vote outcomes |
-| 9 | **Monthly Review** | 28th 10:00 UTC | `search_dokument`, `search_anforanden`, `get_betankanden`, `get_propositioner`, `get_motioner`, `search_voteringar` | Monthly legislative throughput, party productivity rankings, government vs opposition scorecard |
-| 10 | **Month Ahead** | 1st 08:00 UTC | `get_calendar_events`, `search_dokument`, `get_betankanden`, `get_propositioner`, `get_motioner` | Strategic political calendar, legislative pipeline forecast, major policy decision timeline |
+| 7 | **Weekly Review** | Sat 09:00 UTC | `search_dokument`, `search_anforanden`, `get_betankanden`, `get_propositioner`, `get_motioner`, `search_voteringar` | Week-over-week trend detection, cross-document-type pattern identification, legislative throughput metrics; **IMF WEO / Fiscal Monitor projections enrich the weekly macroeconomic framing** |
+| 8 | **Week Ahead** | Fri 07:00 UTC | `get_calendar_events`, `search_dokument`, `search_anforanden`, `get_fragor`, `get_interpellationer` | Prospective calendar analysis, scheduled debate preview, expected vote outcomes; **IMF projections (T+5 horizon) are the primary source for forward-looking economic commentary** |
+| 9 | **Monthly Review** | 28th 10:00 UTC | `search_dokument`, `search_anforanden`, `get_betankanden`, `get_propositioner`, `get_motioner`, `search_voteringar` | Monthly legislative throughput, party productivity rankings, government vs opposition scorecard; **IMF IFS monthly series + WEO vintages used for fiscal/monetary context** |
+| 10 | **Month Ahead** | 1st 08:00 UTC | `get_calendar_events`, `search_dokument`, `get_betankanden`, `get_propositioner`, `get_motioner` | Strategic political calendar, legislative pipeline forecast, major policy decision timeline; **IMF WEO / Fiscal Monitor projection vintage (`projectionVintage` pinned per article) anchors medium-term outlook** |
 | 11 | **Article Generator** | Manual only | Per-type (configurable) | Manual backfill/regeneration for any article type |
 | 12 | **Translate** | Mon–Fri 11:00+17:00, Weekends 14:00 | N/A (text processing) | 14-language translation quality with cultural adaptation |
 
@@ -967,7 +978,7 @@ flowchart LR
 
 | # | Workflow | File | Trigger | Purpose |
 | --- | --- | --- | --- | --- |
-| 6.0 | 📈 Economic Context Audit | `economic-context-audit.yml` | Scheduled | Periodic audit of macroeconomic joins (SCB + World Bank data) used by news agentic workflows to avoid stale/incorrect economic framing in generated articles |
+| 6.0 | 📈 Economic Context Audit | `economic-context-audit.yml` | Scheduled | Periodic audit of macroeconomic joins (SCB + World Bank + **IMF** data) used by news agentic workflows to avoid stale/incorrect economic framing in generated articles. IMF ingestion (via pure-TS `scripts/imf-client.ts`, *not* MCP) is validated for `projectionVintage` freshness and schema conformance against Economic Data Contract v2.0. |
 
 ### 📡 Monitoring & Infrastructure (2 workflows)
 

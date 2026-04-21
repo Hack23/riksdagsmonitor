@@ -11,15 +11,18 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-20 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-04-20 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v1.2 → v1.3, 2026-04-20):**
+> - 📈 **IMF Open Data added as a primary upstream economic data source** (sibling to SCB and World Bank) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). CRA essential-requirement impact: (a) **SBOM (Annex I Part II § 1)** — IMF is consumed via the pure-TypeScript client `scripts/imf-client.ts` (no Python / uvx / third-party MCP), so it is **fully covered by the existing npm SBOM** with no out-of-band supplement needed; `package.json` `x-external-mcp` stays empty. (b) **Confidentiality & integrity (Annex I § 1.3)** — TLS/HTTPS in transit to `data.imf.org`, `api.imf.org`, `www.imf.org`; `DatamapperResponse` schema validation with finite-numeric and year parse-guards; tamper-evident cache sidecars (`.meta.json`) under `analysis/data/imf/`. (c) **Vulnerability / incident handling (Annex I § 2)** — upstream IMF outage or data-poisoning is treated as a data-quality incident (graceful fallback to cached snapshots; RCA path defined in [BCPPlan.md](BCPPlan.md)).
+>
 > **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
 > - Refreshed CRA self-assessment for Riksdagsmonitor `v0.8.48` including the **newly-added public `riksdagsmonitor` npm package distribution channel** (subpath exports `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`, SLSA provenance via `npm publish --provenance`).
 > - Reaffirmed **vulnerability-handling SLAs**: **Critical 24h / High 7d / Medium 30d / Low 90d**, aligned with [Vulnerability_Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) and CRA Annex I §(3)(k).
@@ -116,6 +119,9 @@ The following Hack23 AB projects demonstrate completed CRA assessments:
 **📋 Data Sources Evidence:**
 - **🏛️ Swedish Parliament:** [data.riksdagen.se](http://data.riksdagen.se/) — Parliamentary members, committees, documents, votes
 - **🗳️ Election Authority:** [val.se](http://www.val.se/) — Election data, parties, voting results
+- **📊 SCB (Statistics Sweden):** [scb.se](https://www.scb.se/) — PxWebAPI 2.0 (scb-mcp) — official Swedish statistics (economy, labour, population, education, environment)
+- **🌍 World Bank Open Data:** [data.worldbank.org](http://data.worldbank.org/) — WGI governance, environment, long-horizon social/education (world-bank-mcp)
+- **🌐 IMF Open Data:** [data.imf.org](https://data.imf.org/) — macro/fiscal/monetary/external-sector freshness + T+5 projections (WEO, Fiscal Monitor, IFS, GFS_COFOG); consumed via pure-TypeScript client `scripts/imf-client.ts` (Datamapper JSON + SDMX 3.0) — *not an MCP server*, SBOM-covered via npm (ADR 0001)
 - **🕵️ CIA Platform:** [Citizen Intelligence Agency](https://github.com/Hack23/cia) — 19 intelligence products, risk assessments, analytics
 
 ---

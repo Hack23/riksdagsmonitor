@@ -11,15 +11,18 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.4-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 1.4 | **📅 Last Updated:** 2026-04-20 (UTC)  
 **🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-04-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v1.3 → v1.4, 2026-04-20):**
+> - 📈 **IMF data integration** added per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md) (alongside SCB and World Bank). **EOL risk assessment: LOW.** IMF is consumed via the **pure-TypeScript client `scripts/imf-client.ts`** (no runtime dependency on any external MCP package, no Python / uvx / third-party container). Upstream protocols are both stable and long-lived: **SDMX 3.0** (ISO 17369 international standard, backward-compatible versioning) and the **IMF Datamapper JSON v1** public endpoint (`www.imf.org/external/datamapper/api/v1`). No new third-party npm dependencies were introduced — the client uses only the existing Node.js `fetch` stdlib and existing dev/test tooling, so IMF adds **no new EOL pressure** beyond what is already tracked for Node.js, TypeScript, and Vitest. If either transport is ever deprecated by the IMF, the client pattern mirrors `scripts/world-bank-client.ts` and can be repointed without affecting the downstream data contract (Economic Data Contract v2.0).
+>
 > **🆕 What changed since last review (v1.2 → v1.3, 2026-04-20):**
 > - Confirmed runtime alignment with **Node.js ≥25** (`engines.node` in `package.json`); Node 26 LTS upgrade window now the imminent transition target.
 > - Locked current EOL/support horizons for the toolchain powering Riksdagsmonitor `v0.8.48`: **TypeScript 6.x**, **Vite 8.x**, **Vitest 4.x**, **ESLint 10.x**, **Cypress 15.x**, **Playwright 1.59.x**, **typedoc 0.28.x**, **happy-dom 20.x**, **knip 6.x**, **ajv 8.x**, **htmlhint 1.9.x**.

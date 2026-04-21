@@ -16,10 +16,13 @@
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
 **🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-04-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
+> - 📈 **IMF Open Data added as a primary external data source** (§4.1.5 below) alongside SCB and World Bank, per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md) (accepted 2026-04-20). **Economic Data Contract v2.0** (effective 2026-04-20; v1 grace → 2026-05-31) extends the economic data-point schema with additive fields: `source.imf[]`, `dataPoints[].provider`, `dataPoints[].projection` (boolean), `dataPoints[].projectionVintage` (e.g., `"WEO-2026-04"`). Pure-TypeScript client `scripts/imf-client.ts` (no MCP — SBOM-covered via npm). Cache: `analysis/data/imf/{indicator}/{country}.json` + `.meta.json`.
+>
 > **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
 > - **Factual correction:** the `cia-data/` tree currently materialises **15 subsystems** (not 19 "products"): `anomaly`, `coalition`, `committee`, `distribution`, `election`, `election-cycle`, `ministry`, `parties`, `party`, `percentile`, `politician`, `pre-election`, `risk`, `seasonal`, `voting`. All headline counts, ToC entries, and inventory tables have been reconciled with the filesystem.
 > - Added documentation of the **npm-package data contract**: typed subpath exports `./cia/*`, `./dashboards/*`, `./shared/*`, `./ui/*` in `package.json` expose TypeScript `.d.ts` surfaces generated from `schemas/` via `generate-types-from-cia-schemas`.
@@ -1292,7 +1295,48 @@ erDiagram
 
 ---
 
-#### 4.1.5 CIA Platform (Citizen Intelligence Agency)
+#### 4.1.5 IMF Open Data (International Monetary Fund)
+
+**URL**: https://data.imf.org/ (documentation) • `www.imf.org/external/datamapper/api/v1` (Datamapper JSON) • `api.imf.org/external/sdmx/3.0` (SDMX 3.0)  
+**Type**: REST (Datamapper JSON v1) + SDMX 3.0  
+**Authentication**: None (public data)  
+**Data Classification**: Public (same as SCB / World Bank)  
+**Data Coverage**: 1980-present (macro); annual + quarterly + monthly depending on dataset; projections to ~2031
+
+**Data Products**:
+- **WEO (World Economic Outlook)** — NGDP_RPCH (real GDP growth), PCPIPCH (CPI inflation), LUR (unemployment), GGXWDG_NGDP (gross debt / GDP), BCA_NGDPD (current account / GDP), …
+- **Fiscal Monitor (FM)** — fiscal balance, primary balance, expenditure composition
+- **IFS (International Financial Statistics)** — monetary, FX, balance-of-payments series
+- **MFS (Monetary & Financial Statistics)** — policy rate, money-market rates
+- **GFS_COFOG** — committee-aligned government spending by function
+- **DOTS (Direction of Trade Statistics)** — bilateral trade flows
+- ~155 SDMX databases in total
+
+**Update Frequency**:
+- WEO: April and October each year (projections refreshed at each vintage)
+- Fiscal Monitor: April and October
+- IFS: monthly
+- MFS: monthly
+- Projections published at T+5 years per vintage
+
+**Data Format**: JSON (Datamapper), SDMX 3.0 JSON / XML  
+**Reliability**: ~99.5% availability; international-organization standard
+
+**Integration Method**: **Pure-TypeScript client** `scripts/imf-client.ts` (sibling of `scripts/world-bank-client.ts` and `scripts/scb-client.ts`) — *not* an MCP server (ADR 0001 rationale: npm-SBOM coverage, no Python / uvx / third-party MCP). Invoked by agentic workflows via the `bash` tool and imported directly by build-time scripts.
+
+**Schema/Validation**: `DatamapperResponse` shape in `imf-client.ts` (numeric-finite check, year parse-guard); SDMX 3.0 schema validation for structural metadata.
+
+**Caching**: `analysis/data/imf/{indicator}/{country}.json` + sidecar `.meta.json` (`mcpTool: imf-ts-client`, `projectionVintage: "WEO-2026-04"`, fetch timestamp).
+
+**Rate-limit handling**: ~10 req / 5 s, 3× exponential back-off (1s → 2s → 4s), multi-country batching via Datamapper `compare`.
+
+**Allowlisted egress hosts**: `data.imf.org`, `api.imf.org`, `www.imf.org`.
+
+**Supporting docs (referenced, not duplicated)**: `analysis/imf/README.md`, `analysis/imf/indicator-policy-mapping.md`, `analysis/imf/use-cases.md`, `docs/adr/0001-adopt-imf-data-alongside-world-bank.md`, `.github/aw/ECONOMIC_DATA_CONTRACT.md`.
+
+---
+
+#### 4.1.6 CIA Platform (Citizen Intelligence Agency)
 
 **URL**: https://www.hack23.com/cia  
 **Type**: Java/Spring Boot application (backend data processing)  
@@ -1321,6 +1365,7 @@ erDiagram
 | **Election Authority** | Open Data | 1911-present | Post-election | 99.9% | Manual + CIA import |
 | **Financial Authority** | PSI Portal | 2000-present | Annual/Quarterly | 99.9% | Manual + CIA import |
 | **World Bank** | REST API | 1960-present | Annual | 99.5% | CIA API client |
+| **IMF Open Data** | REST (Datamapper JSON v1) + SDMX 3.0 | 1980-present (macro); projections to ~2031 | WEO Apr/Oct, FM Apr/Oct, IFS/MFS monthly | ~99.5% | Pure-TypeScript client `scripts/imf-client.ts` (no MCP) |
 | **CIA Platform** | Backend App | Aggregated | Daily (03:00 CET) | 99% | CSV export |
 
 ---
@@ -1580,6 +1625,7 @@ graph TB
         Election[Election Authority<br/>val.se]
         Finance[Financial Authority<br/>esv.se]
         WorldBank[World Bank<br/>data.worldbank.org]
+        IMF[IMF<br/>data.imf.org / api.imf.org<br/>WEO + SDMX 3.0]
     end
     
     subgraph "CIA Platform (Backend)"
@@ -1605,6 +1651,7 @@ graph TB
     Election -->|CSV Download| ETL
     Finance -->|CSV Download| ETL
     WorldBank -->|REST API| ETL
+    IMF -->|Datamapper JSON + SDMX 3.0<br/>pure-TS client, no MCP| ETL
     
     ETL --> DB
     DB --> Analytics
@@ -2300,6 +2347,7 @@ graph TB
         Election[Election Authority<br/>val.se<br/>Electoral results]
         Finance[Financial Authority<br/>esv.se<br/>Budget data]
         WorldBank[World Bank<br/>data.worldbank.org<br/>Country indicators]
+        IMF[IMF<br/>data.imf.org / api.imf.org<br/>WEO + Fiscal Monitor + IFS<br/>macro/fiscal + T+5 projections]
     end
     
     subgraph "Riksdagsmonitor System"
@@ -2321,6 +2369,7 @@ graph TB
     Election -->|CSV Data| CIA
     Finance -->|CSV Data| CIA
     WorldBank -->|REST API| CIA
+    IMF -->|Pure-TS client<br/>Datamapper JSON + SDMX 3.0<br/>no MCP| CIA
     
     CIA -->|CSV Exports| System
     CIA -->|Daily Statistics| System
@@ -2334,6 +2383,7 @@ graph TB
     style Election fill:#ff9800,color:#000000
     style Finance fill:#ff9800,color:#000000
     style WorldBank fill:#ff9800,color:#000000
+    style IMF fill:#00897b,color:#ffffff
     style CIA fill:#9c27b0,color:#ffffff
     style System fill:#4caf50,color:#000000
     style Analyst fill:#2196f3,color:#ffffff

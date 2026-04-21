@@ -11,14 +11,17 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
 **🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-04-20
 
+> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
+> - 📈 **IMF** added as a third primary economic-data source alongside SCB and World Bank per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). **Cost impact: $0 incremental spend** — IMF public endpoints (`data.imf.org`, `api.imf.org`, `www.imf.org`) require no API key, no subscription, and the existing ~10 req/5s rate limit is tolerated by the client's 3× back-off. No new managed services, no new container hosting (IMF is a **pure-TypeScript client** under `scripts/imf-client.ts`, not an MCP server — no additional Render/Fly/container cost). SBOM coverage is provided by the existing npm package-lock.json, so no additional SBOM tooling is needed. Egress minute usage on GitHub Actions runners is negligible (< 1 s per fetch).
+>
 > **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
 > - Refreshed **dual-deployment cost model** for the current architecture: AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) for production; GitHub Pages (`hack23.github.io`) as $0 DR tier; public `riksdagsmonitor` npm package hosted on the npm registry at $0 to Hack23 (provenance attestations included).
 > - Expected monthly infrastructure cost remains **<$500/day financial impact** and typically **well under $50/month steady-state** for the static-site footprint (CloudFront + S3 + Route53 + minimal Lambda@Edge if used).
