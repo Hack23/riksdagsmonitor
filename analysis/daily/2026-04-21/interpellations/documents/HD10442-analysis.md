@@ -51,7 +51,7 @@ This is the most politically explosive interpellation of the day. Markus Kallifa
 | Dimension | Assessment | Confidence |
 |-----------|-----------|-----------|
 | Electoral Impact | VERY HIGH — documented false statements by Finance Minister on healthcare | 🟦 VERY HIGH |
-| Coalition Defense | No viable defense that avoids admitting misleading Riksdag statements | �� LOW (for coalition) |
+| Coalition Defense | No viable defense that avoids admitting misleading Riksdag statements | 🟨 LOW (for coalition) |
 | Voter Salience | Eating disorders, healthcare, political honesty = triple voter concern | 🟦 VERY HIGH |
 | Campaign Vulnerability | S will use court ruling + 38% → 94% access data in campaign advertising | 🟦 VERY HIGH |
 | Policy Legacy | Stockholm Region reorganization vindicated by court; M's false narrative documented | 🟦 VERY HIGH |
