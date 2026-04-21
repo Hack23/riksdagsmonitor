@@ -1,96 +1,28 @@
 {
-  "version": "1.0",
-  "generatedAt": "2026-04-19T18:38:00Z",
-  "articleDate": "2026-04-19",
+  "version": "2.0",
   "articleType": "deep-inspection",
-  "documentId": "HD03231",
-  "focusTopic": "russia, cyber threat, defence, Ukraina",
+  "date": "2026-04-19",
   "policyDomains": ["defence", "foreign policy", "international law", "security"],
-  "dataSources": ["World Bank", "SCB"],
-  "countryCode": "SE",
-  "comparatorCountries": ["NO", "FI", "DK"],
-  "commentary": "Sweden's founding membership in the Ukraine Aggression Tribunal represents a significant strategic commitment with direct security and economic implications. GDP growth recovered modestly in 2024 (0.82%) after the 2023 contraction, providing fiscal stability for tribunal dues. Defence spending has been the fastest-growing budget line (≥2.0% GDP target reached 2024). The cost of tribunal membership (SEK 30-80M/year) is marginal relative to total defence/foreign policy appropriations.",
   "dataPoints": [
-    {
-      "indicator": "GDP_GROWTH",
-      "label": "GDP Growth (% annual)",
-      "unit": "%",
-      "values": [
-        { "year": 2024, "value": 0.82, "source": "World Bank" },
-        { "year": 2023, "value": -0.204, "source": "World Bank" },
-        { "year": 2022, "value": 1.255, "source": "World Bank" },
-        { "year": 2021, "value": 6.068, "source": "World Bank" },
-        { "year": 2020, "value": -2.177, "source": "World Bank" }
-      ],
-      "context": "Post-Ukraine-war economic volatility; recovery in 2024 provides fiscal stability for tribunal commitments",
-      "policyRelevance": "Tribunal dues (SEK 30-80M/year) are manageable within current fiscal trajectory"
-    },
-    {
-      "indicator": "GDP",
-      "label": "GDP (current USD billions)",
-      "unit": "USD B",
-      "values": [
-        { "year": 2024, "value": 603.7, "source": "World Bank" },
-        { "year": 2023, "value": 585.9, "source": "World Bank" },
-        { "year": 2022, "value": 587.3, "source": "World Bank" }
-      ],
-      "context": "Sweden is a mid-sized European economy; tribunal membership cost is <0.01% of GDP",
-      "policyRelevance": "Scale argument: founding membership in a historic institution costs less than 0.01% of GDP"
-    },
-    {
-      "indicator": "GDP_PER_CAPITA",
-      "label": "GDP per capita (current USD)",
-      "unit": "USD",
-      "values": [
-        { "year": 2024, "value": 57117, "source": "World Bank" },
-        { "year": 2023, "value": 56291, "source": "World Bank" },
-        { "year": 2022, "value": 55985, "source": "World Bank" }
-      ],
-      "context": "High-income economy; peer comparison with Norway, Finland, Denmark relevant for burden-sharing",
-      "policyRelevance": "Sweden's high per-capita income supports its assessed dues under EPA cost-sharing formula"
-    },
-    {
-      "indicator": "INFLATION",
-      "label": "Inflation (CPI % annual)",
-      "unit": "%",
-      "values": [
-        { "year": 2024, "value": 2.836, "source": "World Bank" },
-        { "year": 2023, "value": 8.549, "source": "World Bank" },
-        { "year": 2022, "value": 8.369, "source": "World Bank" },
-        { "year": 2021, "value": 2.162, "source": "World Bank" }
-      ],
-      "context": "Inflation peaked 2022-23 (energy/food shock post-Ukraine invasion); returning to target 2024",
-      "policyRelevance": "Inflation normalization reduces cost-of-living political pressures that Russian disinformation exploits ('Ukraine costs Sweden money')"
-    },
-    {
-      "indicator": "DEFENCE_SPENDING_GDP",
-      "label": "Defence Spending (% GDP, estimated)",
-      "unit": "%",
-      "values": [
-        { "year": 2024, "value": 2.0, "note": "Target reached; NATO commitment" },
-        { "year": 2023, "value": 1.7, "note": "Pre-target" },
-        { "year": 2022, "value": 1.3, "note": "Pre-NATO-accession" }
-      ],
-      "context": "Sweden reached NATO 2% target in 2024; now a credible defence partner; tribunal is legal complement to military alliance",
-      "policyRelevance": "2% defence spending + tribunal founding membership = Sweden's 'two-track' security architecture",
-      "dataSource": "SIPRI / Swedish Defence Bill estimates (not World Bank)",
-      "isSipri": true
-    }
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2024", "value": 0.82, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2023", "value": -0.204, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2022", "value": 1.255, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2021", "value": 5.226, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2020", "value": -1.934, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.CD", "indicatorName": "GDP (current USD)", "date": "2024", "value": 603700000000, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.PCAP.CD", "indicatorName": "GDP Per Capita USD", "date": "2024", "value": 57117.488, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.PCAP.CD", "indicatorName": "GDP Per Capita USD", "date": "2023", "value": 54950.283, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "indicatorName": "Inflation Rate", "date": "2024", "value": 2.836, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "indicatorName": "Inflation Rate", "date": "2023", "value": 8.549, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "indicatorName": "Inflation Rate", "date": "2022", "value": 8.369, "provider": "worldBank", "projection": false },
+    { "countryCode": "NOR", "countryName": "Norway", "indicatorId": "NY.GDP.PCAP.CD", "indicatorName": "GDP Per Capita USD", "date": "2024", "value": 88660.0, "provider": "worldBank", "projection": false },
+    { "countryCode": "DNK", "countryName": "Denmark", "indicatorId": "NY.GDP.PCAP.CD", "indicatorName": "GDP Per Capita USD", "date": "2024", "value": 69290.0, "provider": "worldBank", "projection": false },
+    { "countryCode": "FIN", "countryName": "Finland", "indicatorId": "NY.GDP.PCAP.CD", "indicatorName": "GDP Per Capita USD", "date": "2024", "value": 55872.0, "provider": "worldBank", "projection": false }
   ],
-  "chartSuggestions": [
-    {
-      "type": "economic-trend",
-      "title": "Sweden GDP Growth vs Inflation (2019-2024)",
-      "indicators": ["GDP_GROWTH", "INFLATION"],
-      "countries": ["SE"],
-      "narrative": "Economic recovery in 2024 provides fiscal stability for tribunal membership commitment"
-    },
-    {
-      "type": "nordic-radar",
-      "title": "Nordic Security Investment Profile (2024)",
-      "indicators": ["GDP_PER_CAPITA", "DEFENCE_SPENDING_GDP"],
-      "countries": ["SE", "NO", "FI", "DK"],
-      "narrative": "Sweden is now a full Nordic security partner — military (NATO) and legal (tribunal) dimensions"
-    }
-  ]
+  "commentary": "Sweden's founding membership in the Ukraine Aggression Tribunal lands on a recovering but fragile fiscal base: GDP growth returned to 0.82% in 2024 after the 2023 contraction (-0.20%), following the post-invasion pattern of 1.26% in 2022 and the 5.23% rebound year of 2021. With nominal GDP near USD 604 billion, the SEK 30–80 million annual tribunal contribution amounts to well under 0.01% of national output — a scale argument the government can deploy against cost-framing disinformation. Inflation, which surged to 8.37% (2022) and 8.55% (2023) during the Ukraine-war energy shock, normalised to 2.84% in 2024, easing the cost-of-living pressures Russian influence operations exploit with \"Ukraine costs Sweden money\" narratives. Sweden's USD 57,117 GDP per capita in 2024 places it between Finland (USD 55,872) and Denmark (USD 69,290) — well inside the Nordic high-income band that underwrites an equitable burden-sharing formula for founding-member tribunal dues alongside Norway's USD 88,660.",
+  "source": {
+    "worldBank": ["NY.GDP.MKTP.KD.ZG", "NY.GDP.MKTP.CD", "NY.GDP.PCAP.CD", "FP.CPI.TOTL.ZG"],
+    "scb": [],
+    "imf": []
+  }
 }
