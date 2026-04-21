@@ -15,7 +15,6 @@
 | Data download | 3–6 min | ~5 min (populate-analysis-data timeout, fallback to download-parliamentary-data) | ✅ Adapted successfully |
 | AI Analysis Pass 1 | 6–21 min | ~14 min (7 core artifacts) | 🟡 Compressed by context compaction |
 | AI Analysis Pass 2 | 21–28 min | ~22 min (7 additional artifacts) | ✅ Full second pass |
-| Article generation | 30–36 min | TBD | In progress |
 
 ### Analysis Depth: `deep`
 
