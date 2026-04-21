@@ -25,6 +25,29 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **ANALYZE → DISSEMINATE** — finished intelligence product |
+| **PIRs Served** | `[REQUIRED: Open with the PIRs this assessment addresses]` |
+| **Admiralty Floor** | **[A1]** for Key Judgments (multiple sources); **[B2]** for supporting evidence |
+| **SAT(s) Applied** | ACH (competing hypotheses), Key Assumptions Check, Indicators and Signposts |
+| **ICD 203 Standards** | 1 (source quality), 2 (uncertainties), 3 (judgments vs assumptions), 4 (alternative analysis) |
+
+---
+
+## 🎯 PIRs Addressed
+
+> **[REQUIRED]** — List the Priority Intelligence Requirements this assessment informs. Reference the canonical PIR catalog in [`political-style-guide.md`](../methodologies/political-style-guide.md#-priority-intelligence-requirements-pir--essential-elements-of-information-eei).
+
+| PIR Code | PIR Question | How This Assessment Addresses It |
+|----------|-------------|----------------------------------|
+| PIR-1 | Coalition Stability | `[Describe how findings relate to coalition dynamics]` |
+| PIR-7 | Democratic Norms | `[Describe how findings relate to transparency/accountability]` |
+
+---
+
 ## 📋 Assessment Context
 
 | Field | Value |

@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.3-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.2 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 4.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -119,6 +119,52 @@ These analysis templates implement structured intelligence production mandated b
 | **NIST CSF** | 2.0 | ID.RA, ID.RM | Risk identification and management via risk-assessment template |
 | **CIS Controls** | v8.1 | 17.1 | Threat intelligence production via threat-analysis template |
 | **EU CRA** | 2024 | Art. 10, Art. 11 | Transparency and vulnerability disclosure via stakeholder-impact template |
+
+---
+
+## 🔄 Tradecraft Requirements (v4.2)
+
+Every template produced by Riksdagsmonitor workflows must comply with the tradecraft standards defined in [`political-style-guide.md`](../methodologies/political-style-guide.md):
+
+### Standard Header Block
+
+Every template file includes a tradecraft header that workflow AI agents complete:
+
+```markdown
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | `[Stage: FIND / FIX / FINISH / EXPLOIT / ANALYZE / DISSEMINATE]` |
+| **PIRs Served** | `[List: PIR-1, PIR-5, etc.]` |
+| **Admiralty Floor** | `[Minimum: A1 / B2 / C3]` |
+| **SAT(s) Applied** | `[List: ACH, Red Team, etc.]` |
+| **ICD 203 Standards** | `[List: 1, 2, 4, etc.]` |
+```
+
+### Evidence Column Requirements
+
+Every evidence table gains an **Admiralty** column with `[A–F][1–6]` annotation:
+
+```markdown
+| Evidence | Source | Admiralty | Confidence |
+|----------|--------|:---------:|:----------:|
+| FiU48 passed 176–173 | Riksdag votering H901FiU48 | **[A1]** | 🟦 VERY HIGH |
+| SD budget support conditional | Party congress resolution | **[B2]** | 🟩 HIGH |
+```
+
+### Probability Language
+
+All forward-looking claims use **Words of Estimative Probability (WEP)**:
+- **Almost certain** (~95%) · **Very likely** (~85%) · **Likely** (~70%) · **Roughly even** (~50%) · **Unlikely** (~30%) · **Very unlikely** (~15%) · **Remote** (~5%)
+
+### PIR Tagging
+
+Key findings in `intelligence-assessment.md`, `executive-brief.md`, and `synthesis-summary.md` tag to the PIR they inform (e.g., `[PIR-1: Coalition Stability]`).
+
+### ICD 203 Compliance
+
+Every `methodology-reflection.md` includes an ICD 203 compliance checklist verifying all 9 analytic tradecraft standards are met.
 
 ---
 

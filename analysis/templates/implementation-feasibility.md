@@ -25,6 +25,18 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **ANALYZE** — delivery risk assessment |
+| **PIRs Served** | **PIR-5** (Fiscal Trajectory — budget feasibility), **PIR-7** (Democratic Norms — accountability for delivery) |
+| **Admiralty Floor** | Ministry statements require **[B2]**; budget figures require **[A1]** (official appropriation documents) |
+| **SAT(s) Applied** | Premortem Analysis (assume failure and explain why), Key Assumptions Check (delivery assumptions) |
+| **ICD 203 Standards** | 2 (uncertainties — delivery risks), 5 (customer relevance — implementation milestones), 6 (logical argumentation) |
+
+---
+
 ## 📋 Feasibility Context
 
 | Field | Value |

@@ -25,6 +25,18 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **ANALYZE** — coalition viability assessment |
+| **PIRs Served** | **PIR-1** (Coalition Stability) |
+| **Admiralty Floor** | Polling data requires **[B2]** (named pollster, date, sample size); seat projections require **[B2]** methodological source |
+| **SAT(s) Applied** | Morphological Analysis (seat combinations), What If? (threshold scenarios) |
+| **ICD 203 Standards** | 2 (uncertainties — margin of error), 6 (logical argumentation — arithmetic), 9 (visual information) |
+
+---
+
 ## 📋 Coalition Context
 
 | Field | Value |

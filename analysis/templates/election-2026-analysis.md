@@ -25,6 +25,18 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **ANALYZE → DISSEMINATE** — electoral intelligence product |
+| **PIRs Served** | **PIR-6** (Election Integrity), **PIR-1** (Coalition Stability) |
+| **Admiralty Floor** | Polling data requires **[B2]** (named pollster, date, MoE); seat projections require **[B2]** |
+| **SAT(s) Applied** | Morphological Analysis (bloc combinations), Indicators and Signposts (campaign milestones) |
+| **ICD 203 Standards** | 2 (uncertainties — polling MoE), 5 (customer relevance — electoral calendar), 9 (visual information) |
+
+---
+
 ## 📋 Electoral Context
 
 | Field | Value |

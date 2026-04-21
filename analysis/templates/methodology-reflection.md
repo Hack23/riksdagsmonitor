@@ -133,6 +133,26 @@ flowchart LR
 
 ---
 
+## 📋 ICD 203 Analytic Tradecraft Compliance Audit
+
+> **[REQUIRED]** — Every `methodology-reflection.md` must include this ICD 203 compliance checklist. All 9 standards must pass for the workflow to be considered compliant.
+
+| ICD 203 Standard | Status | Evidence |
+|------------------|:------:|----------|
+| **1. Source quality described** | ✅ | All evidence tables have Admiralty codes `[A–F][1–6]` |
+| **2. Uncertainty expressed** | ✅ | WEP + ODNI confidence overlay used for all forward-looking claims |
+| **3. Judgments vs assumptions distinguished** | ✅ | Assumptions section in `intelligence-assessment.md` |
+| **4. Alternative analysis incorporated** | ✅ | ACH matrix in `devils-advocate.md` with ≥3 hypotheses |
+| **5. Customer relevance demonstrated** | ✅ | 3 decisions named in `executive-brief.md` |
+| **6. Logical argumentation used** | ✅ | Evidence chains traced in all synthesis files |
+| **7. Consistency explained** | ✅ | Changelog in document control blocks |
+| **8. Accurate judgments made** | ✅ | Quality gate score 8.01/10 |
+| **9. Visual information incorporated** | ✅ | 19 Mermaid diagrams across workflow |
+
+**ICD 203 Compliance Status:** `✅ COMPLIANT` / `❌ NON-COMPLIANT`
+
+---
+
 ## 🏆 Exemplar Assessment
 
 | Criterion | Met? | Notes |

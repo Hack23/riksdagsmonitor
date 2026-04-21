@@ -25,6 +25,18 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **ANALYZE** — electoral impact assessment |
+| **PIRs Served** | **PIR-6** (Election Integrity — segment-level turnout dynamics) |
+| **Admiralty Floor** | SCB demographic data requires **[A1]**; inferred segment impact requires **[B2]** with methodology |
+| **SAT(s) Applied** | Outside-In Thinking (start from voter perspective), Morphological Analysis (segment × policy combinations) |
+| **ICD 203 Standards** | 1 (source quality — SCB data), 2 (uncertainties — polling MoE), 9 (visual information — segment map) |
+
+---
+
 ## 📋 Segmentation Context
 
 | Field | Value |

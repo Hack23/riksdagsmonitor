@@ -25,6 +25,18 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **DISSEMINATE** — finished intelligence product for decision-makers |
+| **PIRs Served** | `[REQUIRED: List which PIRs this brief addresses, e.g., PIR-1, PIR-5]` |
+| **Admiralty Floor** | **[B2]** — all evidence in this brief must reach ≥[B2] reliability |
+| **SAT(s) Applied** | Key Assumptions Check (validation), Brainstorming (decision options) |
+| **ICD 203 Standards** | 5 (customer relevance), 6 (logical argumentation), 9 (visual information) |
+
+---
+
 ## 📋 Brief Context
 
 | Field | Value |
@@ -35,6 +47,7 @@
 | **Documents covered** | `N` |
 | **Overall Confidence** | `🟦 VERY HIGH / 🟩 HIGH / 🟧 MEDIUM / 🟥 LOW / ⬛ VERY LOW` |
 | **Publication recommendation** | `PUBLISH / ANALYSIS-ONLY / SKIP` |
+| **PIR Relevance** | `[REQUIRED: Primary PIR(s) addressed by this brief]` |
 
 ---
 
@@ -97,10 +110,10 @@ graph LR
     style CONS fill:#1565C0,color:#FFFFFF
 ```
 
-| Risk | L | I | Score | Trigger | Source |
-|------|:-:|:-:|:-----:|---------|--------|
-| Coalition fracture on fuel-tax package | 3 | 5 | 15 | Any coalition-party `Avstår` on FiU48 chamber vote | `risk-assessment.md` R1 |
-| EU Commission Green-Deal scrutiny | 4 | 3 | 12 | EU Commissioner statement within 14 d | `risk-assessment.md` R2 |
+| Risk | L | I | Score | Trigger | Source | Admiralty |
+|------|:-:|:-:|:-----:|---------|--------|:---------:|
+| Coalition fracture on fuel-tax package | 3 | 5 | 15 | Any coalition-party `Avstår` on FiU48 chamber vote | `risk-assessment.md` R1 | **[A1]** |
+| EU Commission Green-Deal scrutiny | 4 | 3 | 12 | EU Commissioner statement within 14 d | `risk-assessment.md` R2 | **[B2]** |
 
 ---
 

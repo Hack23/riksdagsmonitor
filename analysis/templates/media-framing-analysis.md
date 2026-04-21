@@ -25,6 +25,18 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **ANALYZE** — media environment assessment |
+| **PIRs Served** | **PIR-6** (Election Integrity — narrative manipulation detection), **PIR-7** (Democratic Norms — media pluralism) |
+| **Admiralty Floor** | Quality press (DN, SvD, SVT) requires **[C2]**; tabloid/social media requires **[D4]** with `[unconfirmed]` flag |
+| **SAT(s) Applied** | Outside-In Thinking (start from media perspective), Indicators and Signposts (narrative momentum indicators) |
+| **ICD 203 Standards** | 1 (source quality — media outlet reliability), 2 (uncertainties — frame attribution), 9 (visual information — frame map) |
+
+---
+
 ## 📋 Framing Context
 
 | Field | Value |
