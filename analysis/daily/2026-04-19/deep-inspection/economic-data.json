@@ -23,6 +23,26 @@
   "source": {
     "worldBank": ["NY.GDP.MKTP.KD.ZG", "NY.GDP.MKTP.CD", "NY.GDP.PCAP.CD", "FP.CPI.TOTL.ZG"],
     "scb": [],
-    "imf": []
+    "imf": [],
+    "documents": [
+      {
+        "claim": "Sweden's founding membership in the Ukraine Aggression Tribunal",
+        "type": "official-record",
+        "provider": "government",
+        "description": "Official government or multilateral record covering Sweden's status as a founding member/supporting state of the tribunal initiative."
+      },
+      {
+        "claim": "SEK 30–80 million annual tribunal contribution",
+        "type": "budget-estimate",
+        "provider": "government",
+        "description": "Budget, ministry, or explanatory memorandum source supporting the annual contribution range cited in the commentary."
+      },
+      {
+        "claim": "Russian influence operations exploit 'Ukraine costs Sweden money' narratives",
+        "type": "analysis",
+        "provider": "strategic-communications",
+        "description": "Analytical or official source documenting the cost-framing/disinformation narrative referenced in the commentary."
+      }
+    ]
   }
 }

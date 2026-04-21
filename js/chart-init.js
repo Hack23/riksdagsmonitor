@@ -174,7 +174,7 @@
       // Guard against re-initialisation (e.g. hot reload, navigation caches).
       if (canvas.getAttribute('data-chart-initialised') === '1') continue;
 
-      var cfg = canvas.hasAttribute('data-chart-config-id')
+      var cfg = canvas.getAttribute('data-chart-config-id')
         ? parseConfigById(canvas)
         : parseConfig(canvas);
       if (!cfg) continue;
