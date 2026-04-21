@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
@@ -79,7 +79,7 @@ Riksdagsmonitor maintains a comprehensive data architecture integrating 50+ year
 ## Table of Contents
 
 1. [Political Entities & Data Dictionary](#1-political-entities--data-dictionary)
-2. [CIA Data Subsystems (15 Subsystems)](#2-cia-data-products-19-products)
+2. [CIA Data Subsystems (15 Subsystems)](#2-cia-data-subsystems-15-subsystems)
 3. [Entity-Relationship Diagrams](#3-entity-relationship-diagrams)
 4. [Data Sources](#4-data-sources)
 5. [Data Schemas & Validation](#5-data-schemas--validation)
