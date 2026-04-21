@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "articleType": "interpellations",
+  "date": "2026-04-21",
+  "policyDomains": ["labor market", "gender equality", "public safety", "housing", "fiscal policy"],
+  "dataPoints": [
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2024", "value": 0.82 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2023", "value": -0.204 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2022", "value": 1.255 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2025", "value": 8.694 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2024", "value": 8.4 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2023", "value": 7.611 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2022", "value": 7.417 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SP.DYN.LE00.IN", "indicatorName": "Life Expectancy (years)", "date": "2024", "value": 84.063 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SP.DYN.LE00.IN", "indicatorName": "Life Expectancy (years)", "date": "2023", "value": 83.31 }
+  ],
+  "commentary": "Sweden's economy grew by just 0.82% in 2024 after a contraction of 0.2% in 2023, providing economic context for opposition interpellations demanding broader fiscal reform (frs 2025/26:433). Unemployment rose to 8.7% in 2025, up from 6.8% in 2019, directly pressuring the government's labor market and integration policy — the subject of multiple interpellations targeting both Finance Minister Svantesson and Labour Minister Britz (frs 2025/26:422). Against this backdrop of sluggish economic recovery and rising joblessness, opposition demands for EU Pay Transparency Directive transposition (frs 2025/26:437) and tax system reform carry heightened urgency as Sweden heads into the September 2026 election.",
+  "source": {
+    "worldBank": ["NY.GDP.MKTP.KD.ZG", "SL.UEM.TOTL.ZS", "SP.DYN.LE00.IN"],
+    "scb": []
+  }
+}
