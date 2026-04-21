@@ -779,7 +779,7 @@ fi
 > ```bash
 > source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"
 > ```
-> Expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering`  
+> Expected output: `MCP_SERVER_URL=http://host.docker.internal:8080/mcp/riksdag-regering` (port `8080` for gh-aw v0.69+ — was `80` for legacy gh-aw <0.69; resolved dynamically from `mcp-config.json` gateway.port)  
 > If the value is blank or "unset", `mcp-setup.sh` failed to read the gateway key — check `GH_AW_MCP_CONFIG`. If set correctly, retry the full script command.
 
 For **non-deep-inspection** article types only, if the script fails, generate articles manually ONE language at a time:

@@ -1034,7 +1034,7 @@ safeoutputs___create_pull_request({
 
 | Scenario | Cause | Fix |
 |----------|-------|-----|
-| Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"` — source and npx MUST be chained with `&&` on one line; expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering` |
+| Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"` — source and npx MUST be chained with `&&` on one line; expected output: `MCP_SERVER_URL=http://host.docker.internal:8080/mcp/riksdag-regering` (port resolved dynamically — `8080` for gh-aw v0.69+, `80` for legacy gh-aw <0.69) |
 | Empty results | No parliamentary activity for the queried date range | Check if analysis artifacts exist in `analysis/daily/` — if yes, commit them and create analysis-only PR; if no, call `safeoutputs___noop` |
 | Timeout | MCP server response exceeds `timeout-minutes` | Commit any analysis artifacts produced so far, then call safe output |
 | Stale data | `hoursSinceSync > 48` from `get_sync_status()` | Add disclaimer noting data staleness; proceed with cached data |

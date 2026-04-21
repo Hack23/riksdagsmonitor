@@ -394,13 +394,16 @@ describe('MCPClient', () => {
       const origUrl = process.env['MCP_SERVER_URL'];
       const origGw = process.env['MCP_GATEWAY_API_KEY'];
       const origConfig = process.env['GH_AW_MCP_CONFIG'];
+      const origPort = process.env['MCP_GATEWAY_PORT'];
       delete process.env['MCP_SERVER_URL'];
       process.env['MCP_GATEWAY_API_KEY'] = 'gw-key-active';
       delete process.env['GH_AW_MCP_CONFIG'];
+      delete process.env['MCP_GATEWAY_PORT'];
       try {
         await vi.resetModules();
         const { getDefaultClient } = await import('../scripts/mcp-client.js');
-        expect(getDefaultClient().baseURL).toBe('http://host.docker.internal:80/mcp/riksdag-regering');
+        // No config + no MCP_GATEWAY_PORT env → defaults to gh-aw v0.69+ port 8080
+        expect(getDefaultClient().baseURL).toBe('http://host.docker.internal:8080/mcp/riksdag-regering');
       } finally {
         if (origUrl !== undefined) process.env['MCP_SERVER_URL'] = origUrl;
         else delete process.env['MCP_SERVER_URL'];
@@ -408,6 +411,34 @@ describe('MCPClient', () => {
         else delete process.env['MCP_GATEWAY_API_KEY'];
         if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
         else delete process.env['GH_AW_MCP_CONFIG'];
+        if (origPort !== undefined) process.env['MCP_GATEWAY_PORT'] = origPort;
+        else delete process.env['MCP_GATEWAY_PORT'];
+        await vi.resetModules();
+      }
+    });
+
+    it('should honour MCP_GATEWAY_PORT env var when present', async () => {
+      const origUrl = process.env['MCP_SERVER_URL'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+      const origPort = process.env['MCP_GATEWAY_PORT'];
+      delete process.env['MCP_SERVER_URL'];
+      delete process.env['GH_AW_MCP_CONFIG'];
+      process.env['MCP_GATEWAY_API_KEY'] = 'gw-key-active';
+      process.env['MCP_GATEWAY_PORT'] = '8080';
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        expect(getDefaultClient().baseURL).toBe('http://host.docker.internal:8080/mcp/riksdag-regering');
+      } finally {
+        if (origUrl !== undefined) process.env['MCP_SERVER_URL'] = origUrl;
+        else delete process.env['MCP_SERVER_URL'];
+        if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        else delete process.env['MCP_GATEWAY_API_KEY'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        if (origPort !== undefined) process.env['MCP_GATEWAY_PORT'] = origPort;
+        else delete process.env['MCP_GATEWAY_PORT'];
         await vi.resetModules();
       }
     });
@@ -416,8 +447,10 @@ describe('MCPClient', () => {
       const origUrl = process.env['MCP_SERVER_URL'];
       const origGw = process.env['MCP_GATEWAY_API_KEY'];
       const origConfig = process.env['GH_AW_MCP_CONFIG'];
+      const origPort = process.env['MCP_GATEWAY_PORT'];
       delete process.env['MCP_SERVER_URL'];
       delete process.env['MCP_GATEWAY_API_KEY'];
+      delete process.env['MCP_GATEWAY_PORT'];
       const tmpDir = '/tmp/mcp-url-autodetect-' + Date.now();
       const fs = await import('fs');
       fs.mkdirSync(tmpDir, { recursive: true });
@@ -427,6 +460,7 @@ describe('MCPClient', () => {
       try {
         await vi.resetModules();
         const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        // Config explicitly sets port 80 (legacy gh-aw <0.69)
         expect(getDefaultClient().baseURL).toBe('http://host.docker.internal:80/mcp/riksdag-regering');
       } finally {
         if (origUrl !== undefined) process.env['MCP_SERVER_URL'] = origUrl;
@@ -435,6 +469,8 @@ describe('MCPClient', () => {
         else delete process.env['MCP_GATEWAY_API_KEY'];
         if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
         else delete process.env['GH_AW_MCP_CONFIG'];
+        if (origPort !== undefined) process.env['MCP_GATEWAY_PORT'] = origPort;
+        else delete process.env['MCP_GATEWAY_PORT'];
         fs.rmSync(tmpDir, { recursive: true, force: true });
         await vi.resetModules();
       }
@@ -444,8 +480,10 @@ describe('MCPClient', () => {
       const origUrl = process.env['MCP_SERVER_URL'];
       const origGw = process.env['MCP_GATEWAY_API_KEY'];
       const origConfig = process.env['GH_AW_MCP_CONFIG'];
+      const origPort = process.env['MCP_GATEWAY_PORT'];
       delete process.env['MCP_SERVER_URL'];
       delete process.env['MCP_GATEWAY_API_KEY'];
+      delete process.env['MCP_GATEWAY_PORT'];
       const tmpDir = '/tmp/mcp-url-rewrite-' + Date.now();
       const fs = await import('fs');
       fs.mkdirSync(tmpDir, { recursive: true });
@@ -457,7 +495,8 @@ describe('MCPClient', () => {
       try {
         await vi.resetModules();
         const { getDefaultClient } = await import('../scripts/mcp-client.js');
-        expect(getDefaultClient().baseURL).toBe('http://host.docker.internal:80/mcp/riksdag-regering');
+        // Config has no gateway.port → defaults to gh-aw v0.69+ port 8080
+        expect(getDefaultClient().baseURL).toBe('http://host.docker.internal:8080/mcp/riksdag-regering');
       } finally {
         if (origUrl !== undefined) process.env['MCP_SERVER_URL'] = origUrl;
         else delete process.env['MCP_SERVER_URL'];
@@ -465,6 +504,42 @@ describe('MCPClient', () => {
         else delete process.env['MCP_GATEWAY_API_KEY'];
         if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
         else delete process.env['GH_AW_MCP_CONFIG'];
+        if (origPort !== undefined) process.env['MCP_GATEWAY_PORT'] = origPort;
+        else delete process.env['MCP_GATEWAY_PORT'];
+        fs.rmSync(tmpDir, { recursive: true, force: true });
+        await vi.resetModules();
+      }
+    });
+
+    it('should pick up gateway.port from mcp-config.json (gh-aw v0.69+ uses 8080)', async () => {
+      const origUrl = process.env['MCP_SERVER_URL'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+      const origPort = process.env['MCP_GATEWAY_PORT'];
+      delete process.env['MCP_SERVER_URL'];
+      delete process.env['MCP_GATEWAY_API_KEY'];
+      delete process.env['MCP_GATEWAY_PORT'];
+      const tmpDir = '/tmp/mcp-url-port-' + Date.now();
+      const fs = await import('fs');
+      fs.mkdirSync(tmpDir, { recursive: true });
+      const configPath = `${tmpDir}/mcp-config.json`;
+      fs.writeFileSync(configPath, JSON.stringify({
+        gateway: { apiKey: 'k', port: 8080, domain: 'host.docker.internal' }
+      }));
+      process.env['GH_AW_MCP_CONFIG'] = configPath;
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        expect(getDefaultClient().baseURL).toBe('http://host.docker.internal:8080/mcp/riksdag-regering');
+      } finally {
+        if (origUrl !== undefined) process.env['MCP_SERVER_URL'] = origUrl;
+        else delete process.env['MCP_SERVER_URL'];
+        if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        else delete process.env['MCP_GATEWAY_API_KEY'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        if (origPort !== undefined) process.env['MCP_GATEWAY_PORT'] = origPort;
+        else delete process.env['MCP_GATEWAY_PORT'];
         fs.rmSync(tmpDir, { recursive: true, force: true });
         await vi.resetModules();
       }

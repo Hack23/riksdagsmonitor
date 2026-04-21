@@ -8,7 +8,8 @@
  * Root cause from PR #1711: the "Network and MCP diagnostics" step ran
  * as a pre-flight check BEFORE the MCP Gateway was started by gh-aw.
  * It tested direct HTTPS to external endpoints (which passed), but the
- * agent actually routes through the MCP Gateway at host.docker.internal:80
+ * agent actually routes through the MCP Gateway at host.docker.internal
+ * (port 80 in gh-aw <0.69, port 8080 in gh-aw >=0.69; resolved dynamically
  * (started later). The gateway returned 0 tools, causing analysis-only
  * fallback — despite diagnostics showing all green.
  *
@@ -68,8 +69,9 @@ const REQUIRED_MCP_DOMAINS: readonly string[] = [
 /** Canonical MCP server URL for riksdag-regering */
 const RIKSDAG_MCP_URL = 'https://riksdag-regering-ai.onrender.com/mcp';
 
-/** MCP gateway URL used inside AWF sandbox (via mcp-setup.sh) */
-const MCP_GATEWAY_URL = 'http://host.docker.internal:80/mcp/riksdag-regering';
+/** MCP gateway URL pattern used inside AWF sandbox (port resolved dynamically
+ * by mcp-setup.sh — gh-aw <0.69 used 80, gh-aw >=0.69 uses 8080). */
+const MCP_GATEWAY_URL_PATTERN = /http:\/\/\$\{MCP_GATEWAY_DOMAIN\}:\$\{MCP_GATEWAY_PORT\}\/mcp\/riksdag-regering/;
 
 /** SCB MCP server URL */
 const SCB_MCP_URL = 'https://scb-mcp.onrender.com/mcp';
@@ -297,10 +299,13 @@ describe('Network Diagnostics Configuration', () => {
       const setupPath = path.join(SCRIPTS_DIR, 'mcp-setup.sh');
       const content = fs.readFileSync(setupPath, 'utf-8');
 
-      expect(content).toContain(MCP_GATEWAY_URL);
+      expect(content).toMatch(MCP_GATEWAY_URL_PATTERN);
       expect(content).toContain('MCP_SERVER_URL');
       expect(content).toContain('MCP_AUTH_TOKEN');
       expect(content).toContain('MCP_CLIENT_TIMEOUT_MS');
+      // Gateway port must be resolved dynamically (env > config > 8080 default)
+      expect(content).toContain('MCP_GATEWAY_PORT');
+      expect(content).toContain('MCP_GATEWAY_DOMAIN');
     });
   });
 

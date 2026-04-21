@@ -58,11 +58,61 @@ export interface SCBDomainConfig {
 // Constants
 // ---------------------------------------------------------------------------
 
-/** AWF MCP gateway route for the SCB MCP server. Port 80 is fixed by the
- * `ghcr.io/github/gh-aw-mcpg` container (`MCP_GATEWAY_PORT=80` in the
- * compiled workflow lock file). Matches `scripts/mcp-setup.sh`. */
-const AWF_SCB_GATEWAY_URL = 'http://host.docker.internal:80/mcp/scb';
+/** Default AWF MCP gateway port. The `ghcr.io/github/gh-aw-mcpg` container
+ * exports `MCP_GATEWAY_PORT` in the compiled workflow lock file. Was `80`
+ * in gh-aw <0.69 and is `8080` in gh-aw >=0.69. Always resolve dynamically
+ * from `mcp-config.json`/env when possible. Mirrors `scripts/mcp-client/client.ts`. */
+const DEFAULT_SCB_GATEWAY_PORT = 8080;
+const DEFAULT_SCB_GATEWAY_DOMAIN = 'host.docker.internal';
 const DIRECT_SCB_SERVER_URL = 'https://scb-mcp.onrender.com/mcp';
+
+/** Resolve the AWF gateway port (env > config > default 8080). */
+function resolveScbGatewayPort(): number {
+  const envPort = process.env['MCP_GATEWAY_PORT'];
+  if (envPort) {
+    const parsed = Number.parseInt(envPort, 10);
+    if (Number.isFinite(parsed) && parsed > 0) return parsed;
+  }
+  const configPath = process.env['GH_AW_MCP_CONFIG'] ?? '/home/runner/.copilot/mcp-config.json';
+  try {
+    if (existsSync(configPath)) {
+      const raw = JSON.parse(readFileSync(configPath, 'utf8')) as Record<string, unknown>;
+      const gateway = raw['gateway'] as Record<string, unknown> | undefined;
+      const port = gateway?.['port'];
+      if (typeof port === 'number' && port > 0) return port;
+      if (typeof port === 'string') {
+        const parsed = Number.parseInt(port, 10);
+        if (Number.isFinite(parsed) && parsed > 0) return parsed;
+      }
+    }
+  } catch {
+    // Best-effort — fall through to default
+  }
+  return DEFAULT_SCB_GATEWAY_PORT;
+}
+
+/** Resolve the AWF gateway domain (env > config > default host.docker.internal). */
+function resolveScbGatewayDomain(): string {
+  const envDomain = process.env['MCP_GATEWAY_DOMAIN'];
+  if (envDomain) return envDomain;
+  const configPath = process.env['GH_AW_MCP_CONFIG'] ?? '/home/runner/.copilot/mcp-config.json';
+  try {
+    if (existsSync(configPath)) {
+      const raw = JSON.parse(readFileSync(configPath, 'utf8')) as Record<string, unknown>;
+      const gateway = raw['gateway'] as Record<string, unknown> | undefined;
+      const domain = gateway?.['domain'];
+      if (typeof domain === 'string' && domain.length > 0) return domain;
+    }
+  } catch {
+    // Best-effort — fall through to default
+  }
+  return DEFAULT_SCB_GATEWAY_DOMAIN;
+}
+
+/** Build the AWF gateway URL for the SCB MCP server (port-agnostic). */
+function buildScbGatewayUrl(): string {
+  return `http://${resolveScbGatewayDomain()}:${resolveScbGatewayPort()}/mcp/scb`;
+}
 
 /**
  * Resolve the SCB MCP server URL.
@@ -77,17 +127,17 @@ const DIRECT_SCB_SERVER_URL = 'https://scb-mcp.onrender.com/mcp';
 function getDefaultScbServerUrl(): string {
   const explicit = process.env['SCB_MCP_SERVER_URL'];
   if (explicit) return explicit;
-  if (process.env['MCP_GATEWAY_API_KEY']) return AWF_SCB_GATEWAY_URL;
+  if (process.env['MCP_GATEWAY_API_KEY']) return buildScbGatewayUrl();
   const configPath = process.env['GH_AW_MCP_CONFIG'] ?? '/home/runner/.copilot/mcp-config.json';
   try {
     if (existsSync(configPath)) {
       const raw = JSON.parse(readFileSync(configPath, 'utf8')) as Record<string, unknown>;
       const gateway = raw['gateway'] as Record<string, unknown> | undefined;
-      if (gateway?.['apiKey']) return AWF_SCB_GATEWAY_URL;
+      if (gateway?.['apiKey']) return buildScbGatewayUrl();
       const mcpServers = raw['mcpServers'] as Record<string, unknown> | undefined;
       const scb = mcpServers?.['scb'] as Record<string, unknown> | undefined;
       const headers = scb?.['headers'] as Record<string, unknown> | undefined;
-      if (headers?.['Authorization']) return AWF_SCB_GATEWAY_URL;
+      if (headers?.['Authorization']) return buildScbGatewayUrl();
     }
   } catch {
     // Best-effort — fall through to direct URL.

@@ -468,7 +468,7 @@ fi
 > Fix scripts or fall back to direct MCP tool calls. Never proceed without data.
 
 1. **Read error log**: `cat /tmp/pipeline-output.log | tail -30`
-2. **Check MCP setup**: `echo "MCP_SERVER_URL=$MCP_SERVER_URL"` — must be `http://host.docker.internal:80/mcp/riksdag-regering`
+2. **Check MCP setup**: `echo "MCP_SERVER_URL=$MCP_SERVER_URL"` — must be `http://host.docker.internal:8080/mcp/riksdag-regering` (port `8080` for gh-aw v0.69+, `80` for legacy gh-aw <0.69)
 3. **Fix script issues**: read source with `view`, fix with `edit`, re-run
 4. **If script fix fails**: use direct MCP tools (`search_dokument`, `get_propositioner`, etc.), save to `analysis/data/documents/{type}/`
 
@@ -691,7 +691,7 @@ fi
 
 ### Fallback: Manual Generation (ONLY if script fails with error AND no articles created)
 
-Verify MCP first: `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"` (expect `http://host.docker.internal:80/mcp/riksdag-regering`). If the script genuinely fails, generate HTML manually using `printf` appends (never heredoc) to `news/YYYY-MM-DD-breaking-HHMM-{lang}.html`. Check elapsed time: if >= 38 min, skip and call noop.
+Verify MCP first: `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"` (expect `http://host.docker.internal:8080/mcp/riksdag-regering` for gh-aw v0.69+, or `:80` for legacy gh-aw <0.69 — port resolved dynamically). If the script genuinely fails, generate HTML manually using `printf` appends (never heredoc) to `news/YYYY-MM-DD-breaking-HHMM-{lang}.html`. Check elapsed time: if >= 38 min, skip and call noop.
 
 > 🔴 **CRITICAL — Correct HTML Template for Fallback Articles**:
 > 
@@ -921,7 +921,7 @@ See `SHARED_PROMPT_PATTERNS.md` §"Standardised Analysis Depth Gate" and §"MAND
 
 | Scenario | Cause | Fix |
 |----------|-------|-----|
-| Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"` — source and npx MUST be chained with `&&` on one line; expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering` |
+| Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"` — source and npx MUST be chained with `&&` on one line; expected output: `MCP_SERVER_URL=http://host.docker.internal:8080/mcp/riksdag-regering` (port `8080` for gh-aw v0.69+, `80` for legacy) |
 | Empty results | No significant events detected in monitoring window | Check if analysis artifacts exist — if yes, commit them and create analysis-only PR; if no, call `safeoutputs___noop` |
 | Calendar API error | Riksdag calendar API returns HTML instead of JSON (known intermittent issue) | Use `search_dokument` with date params as fallback; flag error in noop message; do NOT treat as "no events" — evaluate all other sources |
 | Timeout | MCP server response exceeds `timeout-minutes` | Reduce query scope or increase timeout |

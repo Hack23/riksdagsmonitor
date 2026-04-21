@@ -2465,9 +2465,10 @@ npx tsx scripts/validate-cross-references.ts news/*-{type}-*.html
 │  AWF Sandbox (Docker container)                                  │
 │                                                                  │
 │  ┌─────────────┐    ┌────────────────────────────────────────┐  │
-│  │  AI Agent    │───▶│  MCP Gateway (gh-aw-mcpg v0.2.17)    │  │
-│  │  (Copilot)   │    │  http://host.docker.internal:80/mcp/  │  │
-│  └─────────────┘    └──────┬──────────┬──────────┬───────────┘  │
+│  │  AI Agent    │───▶│  MCP Gateway (gh-aw-mcpg v0.2.26+)   │  │
+│  │  (Copilot)   │    │  http://host.docker.internal:$PORT/  │  │
+│  └─────────────┘    │  (PORT=8080 in gh-aw v0.69+, was 80)  │  │
+│                     └──────┬──────────┬──────────┬──────────┘  │
 │                            │          │          │               │
 │                   ┌────────▼──┐ ┌─────▼────┐ ┌──▼──────────┐   │
 │                   │ riksdag-  │ │   scb    │ │ world-bank  │   │
@@ -2549,9 +2550,12 @@ TypeScript scripts (e.g., `generate-news-enhanced.ts`) access the riksdag-regeri
 
 ```bash
 source scripts/mcp-setup.sh
-# Sets: MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering
-# Sets: SCB_MCP_SERVER_URL=http://host.docker.internal:80/mcp/scb
-# Sets: WORLD_BANK_MCP_SERVER_URL=http://host.docker.internal:80/mcp/world-bank
+# Sets: MCP_GATEWAY_PORT=8080  (resolved from mcp-config.json gateway.port,
+#                               or MCP_GATEWAY_PORT env, default 8080 for gh-aw v0.69+)
+# Sets: MCP_GATEWAY_DOMAIN=host.docker.internal
+# Sets: MCP_SERVER_URL=http://host.docker.internal:8080/mcp/riksdag-regering
+# Sets: SCB_MCP_SERVER_URL=http://host.docker.internal:8080/mcp/scb
+# Sets: WORLD_BANK_MCP_SERVER_URL=http://host.docker.internal:8080/mcp/world-bank
 # Sets: MCP_AUTH_TOKEN=<gateway API key extracted from mcp-config.json>
 # Sets: MCP_CLIENT_TIMEOUT_MS=90000
 
@@ -2559,7 +2563,7 @@ npx tsx scripts/generate-news-enhanced.ts --types=propositions --languages="en,s
 ```
 
 The `mcp-setup.sh` script:
-1. Routes through the MCP gateway at `http://host.docker.internal:80/mcp/<server-name>`
+1. Routes through the MCP gateway at `http://$MCP_GATEWAY_DOMAIN:$MCP_GATEWAY_PORT/mcp/<server-name>` (port resolved dynamically — port `8080` for gh-aw v0.69+, port `80` for legacy gh-aw <0.69)
 2. Extracts the gateway API key from `/home/runner/.copilot/mcp-config.json`
 3. Sets a 90-second timeout for cold-start tolerance
 4. Configures gateway URLs for all three MCP data servers (riksdag, SCB, World Bank)
