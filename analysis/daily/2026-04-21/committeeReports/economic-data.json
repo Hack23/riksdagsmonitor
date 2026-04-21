@@ -2,17 +2,55 @@
   "version": "1.0",
   "articleType": "committee-reports",
   "date": "2026-04-21",
-  "policyDomains": ["migration policy", "digital governance", "agricultural policy", "transport policy"],
-  "dataPoints": [
-    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2024", "value": 0.82 },
-    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2023", "value": -0.204 },
-    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2022", "value": 1.255 },
-    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.CD", "date": "2024", "value": 603715224265.798 },
-    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.CD", "date": "2023", "value": 578990915246.07 }
+  "policyDomains": [
+    "migration policy",
+    "digital governance",
+    "agricultural policy",
+    "transport policy"
   ],
-  "commentary": "Sweden's GDP growth of 0.82% in 2024 — following a -0.2% contraction in 2023 — provides the economic context for the government's migration enforcement tightening via SfU22: fiscal pressure on welfare costs incentivizes reducing the population of individuals in enforcement limbo. At the same time, Sweden's $603.7B GDP creates capacity to invest in the state e-ID infrastructure (TU21) required for eIDAS2 EU compliance, while the agricultural sector's contribution to Sweden's economic base underlines why MJU21's climate conditions remain politically sensitive for rural constituencies.",
+  "dataPoints": [
+    {
+      "countryCode": "SWE",
+      "countryName": "Sweden",
+      "indicatorId": "NY.GDP.MKTP.KD.ZG",
+      "date": "2024",
+      "value": 0.82
+    },
+    {
+      "countryCode": "SWE",
+      "countryName": "Sweden",
+      "indicatorId": "NY.GDP.MKTP.KD.ZG",
+      "date": "2023",
+      "value": -0.204
+    },
+    {
+      "countryCode": "SWE",
+      "countryName": "Sweden",
+      "indicatorId": "NY.GDP.MKTP.KD.ZG",
+      "date": "2022",
+      "value": 1.255
+    },
+    {
+      "countryCode": "SWE",
+      "countryName": "Sweden",
+      "indicatorId": "NY.GDP.MKTP.CD",
+      "date": "2024",
+      "value": 603715224265.798
+    },
+    {
+      "countryCode": "SWE",
+      "countryName": "Sweden",
+      "indicatorId": "NY.GDP.MKTP.CD",
+      "date": "2023",
+      "value": 578990915246.07
+    }
+  ],
+  "commentary": "Sweden supplementary budget HD01FiU48 cuts fuel taxes by 82 ore/liter for petrol and 319 SEK/m3 for diesel from May through September 2026, reducing both to the EU energy tax directive minimum. This 4.1 billion SEK intervention responds directly to the consumer price pressure Sweden experienced as inflation peaked at 8.5% in 2023 and 8.4% in 2022, before falling to 2.8% in 2024 — yet household energy costs remain politically salient as many Swedish families absorbed multi-year purchasing power losses. With Sweden GDP recovering to 0.82% growth in 2024 after a -0.20% contraction in 2023, the government positions the measure as affordable cost-of-living relief that the improved fiscal position permits. The Nordic comparison adds urgency: Denmark grew at 1.75% in 2024 versus Sweden 0.82%, giving the opposition evidence that Sweden recovery lags neighbours — which the government answers with direct household fuel and energy relief timed to the pre-election period.",
   "source": {
-    "worldBank": ["NY.GDP.MKTP.KD.ZG", "NY.GDP.MKTP.CD"],
+    "worldBank": [
+      "NY.GDP.MKTP.KD.ZG",
+      "NY.GDP.MKTP.CD"
+    ],
     "scb": []
   }
 }
