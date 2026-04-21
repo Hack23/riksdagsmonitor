@@ -20,7 +20,7 @@ On 2026-04-21 the Riksdag's committees adopted a **14-report package** that oper
 
 1. **FiU48 is simultaneously an election relief measure AND an EU compliance correction.** Cutting petrol tax by 82 öre/liter and diesel by 319 SEK/m³ brings Sweden to the **EU Energy Tax Directive 2003/96/EC floor** — the lowest rate permitted by Brussels. The 4.1B SEK cost is absorbed as a supplementary budget and expires 30 September 2026 — **14 days after the election**. If the government is re-elected it will face pressure to extend; if the opposition wins it inherits a sunset clause that is politically costly to let lapse.
 
-2. **The *vilande* constitutional trap is a pre-committed handover.** KU32 (accessibility requirements for press-freedom-protected media) and KU33 (digital seizure transparency) require identical wording to pass the **post-election Riksdag**. This means a new S+V+MP+C coalition cannot simply reverse them — it must either affirm, amend with identical wording both sides, or let them lapse under §15 of Regeringsformen Ch. 2. **This is the single most consequential procedural lock-in of the 2025/26 session.**
+2. **The *vilande* constitutional trap is a pre-committed handover.** KU32 (accessibility requirements for press-freedom-protected media) and KU33 (digital-seizure access restriction under Tryckfrihetsförordningen) require identical wording to pass the **post-election Riksdag**. This means a new S+V+MP+C coalition cannot simply reverse them — it must either affirm, amend with identical wording both sides, or let them lapse under Regeringsformen 8:14. **This is the single most consequential procedural lock-in of the 2025/26 session.**
 
 3. **SfU22 creates the ECHR stress test of the Tidöavtal.** Inhibition (*uppskjuten verkställighet*) replaces temporary residence permits for aliens facing enforcement barriers — producing a cohort with **no residence status but cannot be removed**, subject to geographic restrictions and mandatory check-ins. FARR is expected to file a test case at Migrationsöverdomstolen within 90 days of the 1 June 2026 implementation (P=0.80). Protocol 4 Art. 2 (freedom of movement) and ECHR Art. 5 (liberty) are the primary attack surfaces.
 
@@ -87,7 +87,7 @@ See [`risk-assessment.md`](risk-assessment.md) for full ISO 31000 register.
 | Frame | Backed by | Confidence |
 |-------|-----------|:----------:|
 | "Sweden cuts fuel tax to EU minimum — the floor Brussels allows — 14 days before election" | FiU48 bill text + EU 2003/96/EC Annex I | 🟩 HIGH |
-| "Constitutional amendments pre-commit the next Riksdag" | KU32/KU33 *vilande* status + RF 2:15 | 🟩 HIGH |
+| "Constitutional amendments pre-commit the next Riksdag" | KU32/KU33 *vilande* status + RF 8:14 | 🟩 HIGH |
 | "First ECHR stress test of Tidöavtal flagship: migration inhibition vs Protocol 4 Art. 2" | [`threat-analysis.md`](threat-analysis.md) §T1 | 🟩 HIGH |
 | "4.1B SEK supplementary budget delivered three weeks before campaign acceleration — fastest fiscal-political cycle since 2014" | [`historical-baseline.md`](historical-baseline.md) §1 | 🟩 HIGH |
 | "State e-ID challenges BankID's de facto monopoly — €200M+ identity-verification market reallocation" | [`stakeholder-perspectives.md`](stakeholder-perspectives.md) §5 | 🟩 HIGH |

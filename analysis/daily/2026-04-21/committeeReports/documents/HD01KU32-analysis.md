@@ -21,7 +21,7 @@
 
 ## 🎯 Executive Summary
 
-HD01KU32 adopts as *vilande* under Regeringsformen 2:15 a grundlagsändring extending digital-accessibility obligations to press-freedom-protected media (TF- and YGL-registered publications). Its consequence is that the next Riksdag — chosen 14 September 2026 — must pass **identical wording** for the amendment to take effect (expected 1 January 2028). Cross-party support is broad; disability-rights organisations and all four opposition parties endorse the policy direction. The threat surface is not political opposition but procedural continuity: if even minor textual amendments are required after the election, the three-year cooling-off period restarts. **[HIGH]**
+HD01KU32 adopts as *vilande* under Regeringsformen 8:14 a grundlagsändring extending digital-accessibility obligations to press-freedom-protected media (TF- and YGL-registered publications). Its consequence is that the next Riksdag — chosen 14 September 2026 — must pass **identical wording** for the amendment to take effect (expected 1 January 2028). Cross-party support is broad; disability-rights organisations and all four opposition parties endorse the policy direction. The threat surface is not political opposition but procedural continuity: if even minor textual amendments are required after the election, the three-year cooling-off period restarts. **[HIGH]**
 
 ---
 
@@ -138,7 +138,7 @@ Low-probability threat scenario overall.
 
 ## 🔁 Same-Day Cross-Reference
 
-- **HD01KU33** (dual *vilande*): Shared RF 2:15 procedural vehicle and post-election timing; see [`cross-reference-map.md`](../cross-reference-map.md) §3
+- **HD01KU33** (dual *vilande*): Shared RF 8:14 procedural vehicle and post-election timing; see [`cross-reference-map.md`](../cross-reference-map.md) §3
 - **HD01KU42** (utgiftsområden): Constitutional-budget structure; same committee
 - **HD01TU21** (state e-ID): Digital-inclusion horizontal linkage
 

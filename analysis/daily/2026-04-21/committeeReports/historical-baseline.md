@@ -99,7 +99,7 @@ Historical re-affirmation outcomes for *vilande* amendments passing to the next 
 | **Composite** | **57** | **48** | **8** | **84%** |
 
 KU32 (media accessibility) fits the "politically consensual" class with expected ≥90% re-affirmation.
-KU33 (digital-seizure transparency) fits the "politically-charged" class with expected 70–85% re-affirmation.
+KU33 (digital-seizure access restriction) fits the "politically-charged" class with expected 70–85% re-affirmation.
 
 ---
 

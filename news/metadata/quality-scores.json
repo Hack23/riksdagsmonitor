@@ -4,7 +4,7 @@
     "lang": "en",
     "articleType": "committee-reports",
     "score": 100,
-    "passed": true,
+    "passed": false,
     "multidimensional": {
       "overallScore": 79,
       "passesThreshold": false,

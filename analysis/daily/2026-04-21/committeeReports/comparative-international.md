@@ -48,13 +48,13 @@ Sweden's 2026-04-21 committee package contains four internationally comparable p
 
 | Country | Two-Riksdag / two-Parliament rule | Post-election reaffirmation rate | Notable failures |
 |---------|-----------------------------------|:---------------------------------:|------------------|
-| 🇸🇪 Sweden | *Vilande* under RF 2:15 | ~85% (since 1974) | 1999 EU monetary article lapsed |
+| 🇸🇪 Sweden | *Vilande* under RF 8:14 | ~85% (since 1974) | 1999 EU monetary article lapsed |
 | 🇫🇮 Finland | Kiireellinen/normaali järjestys | ~78% | Several lapses in 1990s |
 | 🇳🇴 Norway | Section 121 — two-Storting rule | ~75% | 1983 referendum amendment lapsed |
 | 🇩🇰 Denmark | §88 — two-Folketing + referendum | Rare — structurally cold | §20 EU amendments sometimes fail |
 | 🇮🇸 Iceland | *Stjórnskipunarákvæði* — two-Althingi | ~70% | 2013 constitution draft lapsed |
 
-**Finding**: Sweden's ~85% *vilande* reaffirmation rate is **high by Nordic standards** — stemming from Sweden's more consensus-oriented constitutional culture and the fact that *vilande* amendments are typically cross-party from the outset. KU32 (accessibility) fits this pattern; KU33 (digital seizure transparency) is **more politically charged** and closer to the type of amendment that historically has the 15% failure rate. The dual-adoption pattern is uncommon — most Nordic *vilande* are handled one at a time — but is formally valid.
+**Finding**: Sweden's ~85% *vilande* reaffirmation rate is **high by Nordic standards** — stemming from Sweden's more consensus-oriented constitutional culture and the fact that *vilande* amendments are typically cross-party from the outset. KU32 (accessibility) fits this pattern; KU33 (digital-seizure access restriction) is **more politically charged** — because it narrows *offentlighetsprincipen* for mirrored digital evidence — and closer to the type of amendment that historically has the 15% failure rate. The dual-adoption pattern is uncommon — most Nordic *vilande* are handled one at a time — but is formally valid.
 
 ---
 

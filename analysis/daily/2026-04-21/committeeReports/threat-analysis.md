@@ -48,7 +48,7 @@ graph LR
 | 📝 **Legislative Integrity** | 4/5 | SfU22 creates no-status cohort with geographic restrictions — contra German *Duldung* ECtHR precedent, Danish *udrejsecenter* (Akhtar v. Denmark 2023) | ↑ rising |
 | 🚫 **Accountability** | 3/5 | FiU48 enacted without Klimatpolitiska rådet ex-ante assessment; FiU48 cuts precede MJU20 audit conclusions | → steady |
 | 🔇 **Transparency** | 3/5 | KU33 *restricts* transparency — digitally seized materials (e.g., mirror-imaged hard drives from police searches) no longer automatically constitute *allmänna handlingar* under TF. Narrows public-records access; targets a prior ambiguity exploited in high-profile investigations. | ↑ rising |
-| ⛔ **Democratic Process** | 3/5 | Dual *vilande* grundlagsändringar pre-commit post-election Riksdag under RF 2:15 | ↑ rising |
+| ⛔ **Democratic Process** | 3/5 | Dual *vilande* grundlagsändringar pre-commit post-election Riksdag under RF 8:14 | ↑ rising |
 | 👑 **Power Balance** | 3/5 | 1-seat coalition majority (176/349) advances generational changes (grundlag + SfU22 structural) | → steady |
 
 **Aggregate**: 19/30 = **HIGH** threat level. The principal pressure points are **legislative integrity** (SfU22 ECHR exposure), **democratic process** (*vilande* lock-in), and **transparency** (KU33 narrows public-records access).
@@ -177,7 +177,7 @@ graph TB
 ### T3 — Dual *Vilande* Post-Election Failure (Severity 3)
 
 **Taxonomy**: Democratic Process.
-**Mechanism**: RF 2:15 *vilande* mechanism requires identical wording in next Riksdag. KU33 (digital-seizure *access restriction* via TF-amendment) has ≤50% re-affirmation probability in BEAR scenarios (see [`coalition-mathematics.md`](coalition-mathematics.md) §*Vilande* Math) — an S-led government could view the restriction as an undue narrowing of public-records access and decline to re-propose. Failure to re-affirm triggers three-year waiting period before re-proposal.
+**Mechanism**: RF 8:14 *vilande* mechanism requires identical wording in next Riksdag. KU33 (digital-seizure *access restriction* via TF-amendment) has ≤50% re-affirmation probability in BEAR scenarios (see [`coalition-mathematics.md`](coalition-mathematics.md) §*Vilande* Math) — an S-led government could view the restriction as an undue narrowing of public-records access and decline to re-propose. Failure to re-affirm triggers three-year waiting period before re-proposal.
 **Disruption**: None during this parliament; probability depends on 14 Sept election outcome.
 **Evidence**: HD01KU32, HD01KU33 *vilande* status confirmed in betänkandetexts.
 

@@ -66,7 +66,7 @@ Deputy-speaker's tie-break invoked; coalition retains on tie-break in Swedish pa
 
 ## 🧮 *Vilande* Constitutional Math (KU32, KU33)
 
-Regeringsformen 2:15 requires *identical wording* passed by two Riksdags with an election between. **The next Riksdag is unknown** — the math depends on the September 2026 election outcome.
+Regeringsformen 8:14 requires *identical wording* passed by two Riksdags with an election between. **The next Riksdag is unknown** — the math depends on the September 2026 election outcome.
 
 | Post-election scenario | KU32 re-affirm prob. | KU33 re-affirm prob. |
 |-----------------------|:---------------------:|:---------------------:|
@@ -76,7 +76,7 @@ Regeringsformen 2:15 requires *identical wording* passed by two Riksdags with an
 | S+V+MP+C majority | 0.50 | 0.25 |
 | Inconclusive → technical PM | 0.70 | 0.45 |
 
-**KU33 (digital seizure transparency) is the more fragile**: it imposes proactive transparency obligations on prosecutors which an S-led government might deem operationally burdensome. KU32 (media accessibility) has broad disability-rights cross-party support and is significantly safer.
+**KU33 (digital-seizure access restriction) is the more fragile**: it is framed here as *restricting* public access to digitally seized materials (a TF-amendment narrowing the *allmän handling* scope for mirror-imaged storage) — a transparency-narrowing move. An S-led government may view the restriction as too broad an override of *offentlighetsprincipen* and decline to re-propose in identical wording. KU32 (media accessibility) has broad disability-rights cross-party support and is significantly safer.
 
 ---
 
