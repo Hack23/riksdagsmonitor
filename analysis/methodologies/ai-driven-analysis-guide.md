@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-6.0-0A66C2?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-6.3-0A66C2?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--21-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 6.0 | **📅 Last Updated:** 2026-04-21 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 6.3 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -63,23 +63,23 @@ Every step is mandatory. Steps 3–7 run inside a single workflow folder at `ana
 | Order | File | What it gives you |
 |:-----:|------|-------------------|
 | 1 | This guide (`ai-driven-analysis-guide.md`) | The 7-step protocol and output matrix |
-| 2 | [`per-document-methodology.md`](per-document-methodology.md) | 📒 How to produce every `{dok_id}-analysis.md` and cluster file |
-| 3 | [`structural-metadata-methodology.md`](structural-metadata-methodology.md) | 📗 How to produce manifest + cross-reference map |
-| 4 | [`synthesis-methodology.md`](synthesis-methodology.md) | 📘 How to produce the 5 Family A synthesis outputs |
-| 5 | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | 📙 How to produce Family C depth products (core — every run) |
-| 6 | [`electoral-domain-methodology.md`](electoral-domain-methodology.md) | 📕 How to produce Family D lens products (core — every run) |
-| 7 | [`political-classification-guide.md`](political-classification-guide.md) | 7-dimension document classification |
-| 8 | [`political-swot-framework.md`](political-swot-framework.md) | SWOT, TOWS, cross-SWOT interference |
-| 9 | [`political-risk-methodology.md`](political-risk-methodology.md) | 5×5 L×I matrix, cascading risk chains |
-| 10 | [`political-threat-framework.md`](political-threat-framework.md) | Attack trees, kill chain, threat taxonomy |
-| 11 | [`political-style-guide.md`](political-style-guide.md) | Writing voice, attribution, Mermaid standards |
+| 2 | [`political-style-guide.md`](political-style-guide.md) | **Tradecraft anchors**: F3EAD cycle, PIR/EEI catalog, Admiralty Code, ICD 203 mapping, WEP + ODNI confidence, SATs, Collection Management Matrix |
+| 3 | [`per-document-methodology.md`](per-document-methodology.md) | 📒 How to produce every `{dok_id}-analysis.md` and cluster file |
+| 4 | [`structural-metadata-methodology.md`](structural-metadata-methodology.md) | 📗 How to produce manifest + cross-reference map |
+| 5 | [`synthesis-methodology.md`](synthesis-methodology.md) | 📘 How to produce the 5 Family A synthesis outputs |
+| 6 | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | 📙 How to produce Family C depth products (core — every run) |
+| 7 | [`electoral-domain-methodology.md`](electoral-domain-methodology.md) | 📕 How to produce Family D lens products (core — every run) |
+| 8 | [`political-classification-guide.md`](political-classification-guide.md) | 7-dimension document classification |
+| 9 | [`political-swot-framework.md`](political-swot-framework.md) | SWOT, TOWS, cross-SWOT interference |
+| 10 | [`political-risk-methodology.md`](political-risk-methodology.md) | 5×5 L×I matrix, cascading risk chains |
+| 11 | [`political-threat-framework.md`](political-threat-framework.md) | Attack trees, kill chain, threat taxonomy |
 | 12 | All templates in [`../templates/`](../templates/) | Output structure for every `.md` family |
 
-**Commit the read list into memory**: cite the methodology section you used whenever you make a call — e.g. *"Classification per political-classification-guide.md §Political Temperature"* or *"DIW tier assigned per synthesis-methodology.md Part 1"*.
+**Commit the read list into memory**: cite the methodology section you used whenever you make a call — e.g. *"Classification per political-classification-guide.md §Political Temperature"* or *"DIW tier assigned per synthesis-methodology.md Part 1"* or *"Admiralty [B2] per political-style-guide.md §Admiralty Source Reliability Code"*.
 
 ---
 
-### Step 2 — Download MCP Data
+### Step 2 — Download MCP Data (F3EAD: FIND → FIX)
 
 Scripts run the download. Example:
 
@@ -96,7 +96,7 @@ If the date yields 0 documents, apply the **Empty-Day Protocol** (§ Empty-Day H
 
 ---
 
-### Step 3 — Per-File Analysis
+### Step 3 — Per-File Analysis (F3EAD: FINISH)
 
 For every document in the manifest, write one file at:
 
@@ -115,18 +115,18 @@ Use the [`per-file-political-intelligence.md`](../templates/per-file-political-i
 
 **Every per-file analysis contains:**
 
-- Document identity table (dok_id, type, committee, sponsor, **Data Depth**, depth tier)
+- Document identity table (dok_id, type, committee, sponsor, **Data Depth**, depth tier, **Admiralty Code**)
 - Classification results (7 dimensions per `political-classification-guide.md`)
-- SWOT table with ≥ 2 entries per quadrant, each evidence-backed
+- SWOT table with ≥ 2 entries per quadrant, each evidence-backed with **Admiralty annotation `[A–F][1–6]`**
 - Risk table (L×I per `political-risk-methodology.md`) for L2 and above
 - Stakeholder-impact rows for L2 and above
 - Forward indicators with dated triggers
 - ≥ 1 color-coded Mermaid diagram
-- Confidence label on every claim (see **5-Level Confidence Scale** below)
+- Confidence label on every claim using **5-Level Scale** and **WEP language** for probability
 
 ---
 
-### Step 4 — Core Synthesis (Family A + B, always produced, 11 files)
+### Step 4 — Core Synthesis (F3EAD: EXPLOIT → ANALYZE)
 
 After per-file analysis, produce the nine **core synthesis files** that every workflow folder ships. Each has a dedicated template:
 
@@ -151,24 +151,24 @@ Plus **two structural files** produced every run:
 
 ---
 
-### Step 5 — Extensions (Family C + D, always produced, 12 files)
+### Step 5 — Extensions (F3EAD: ANALYZE continued)
 
 Every run produces **all five Family C files and all seven Family D files**. They are not trigger-driven — the output set is stable, and depth adapts per item based on DIW tier (see Step 6). Each file has a dedicated template and a section in the Family methodologies.
 
-| File | Always-produced role | Template |
-|------|----------------------|----------|
-| `scenario-analysis.md` | Pluralistic futures (3 scenarios + probabilities summing to 100%); when uncertainty is low, scenarios converge and the file documents the narrow-band consensus | [`scenario-analysis.md`](../templates/scenario-analysis.md) |
-| `comparative-international.md` | Peer-country comparison for every policy area touched (≥5 peers); when no reform is on the table, compares current Swedish baseline to Nordic + EU peers | [`comparative-international.md`](../templates/comparative-international.md) |
-| `devils-advocate.md` | Red-team challenge with ≥3 competing hypotheses via ACH; when evidence is strong, the file documents which hypotheses were rejected and why | [`devils-advocate.md`](../templates/devils-advocate.md) |
-| `intelligence-assessment.md` | 3–7 Key Judgments with confidence + PIRs for next cycle; operates on every run because every day has a priority-intelligence requirement | [`intelligence-assessment.md`](../templates/intelligence-assessment.md) |
-| ⭐ `methodology-reflection.md` | **VITAL run-audit gate.** Evidence sufficiency, confidence distribution, source diversity, party-neutrality arithmetic, three concrete methodology improvements for the next cycle. Skipping it breaks the self-correction loop. | [`methodology-reflection.md`](../templates/methodology-reflection.md) |
-| `election-2026-analysis.md` | Seat-projection deltas + coalition viability for every run through 2026-09; after the election it converts to a permanent "post-2026 government-formation context" file | [`election-2026-analysis.md`](../templates/election-2026-analysis.md) |
-| `voter-segmentation.md` | Demographic / regional / ideological segment impact; when the day's docs are procedural, documents baseline segment positions | [`voter-segmentation.md`](../templates/voter-segmentation.md) |
-| `coalition-mathematics.md` | Current seat map + pivotal votes + Sainte-Laguë scenarios; stable structure regardless of daily contentiousness | [`coalition-mathematics.md`](../templates/coalition-mathematics.md) |
-| `historical-parallels.md` | Named precedent(s) ≤ 40 years with similarity score; when no obvious parallel exists, documents the "no-precedent" finding with reasoning | [`historical-parallels.md`](../templates/historical-parallels.md) |
-| `media-framing-analysis.md` | How each party, press quadrant, and platform frames the day; runs every cycle to build the longitudinal frame record | [`media-framing-analysis.md`](../templates/media-framing-analysis.md) |
-| `implementation-feasibility.md` | Delivery-risk view (budget / IT / regulatory / workforce); when no new bill lands, audits the backlog of in-flight commitments | [`implementation-feasibility.md`](../templates/implementation-feasibility.md) |
-| `forward-indicators.md` | ≥10 indicators across 4 horizons (72h / week / month / election); refreshed every run to maintain the forward-watch list | [`forward-indicators.md`](../templates/forward-indicators.md) |
+| File | Always-produced role | Template | SAT(s) Applied |
+|------|----------------------|----------|----------------|
+| `scenario-analysis.md` | Pluralistic futures (3 scenarios + probabilities summing to 100%); when uncertainty is low, scenarios converge and the file documents the narrow-band consensus | [`scenario-analysis.md`](../templates/scenario-analysis.md) | What If?, Morphological |
+| `comparative-international.md` | Peer-country comparison for every policy area touched (≥5 peers); when no reform is on the table, compares current Swedish baseline to Nordic + EU peers | [`comparative-international.md`](../templates/comparative-international.md) | Outside-In Thinking |
+| `devils-advocate.md` | Red-team challenge with ≥3 competing hypotheses via ACH; when evidence is strong, the file documents which hypotheses were rejected and why | [`devils-advocate.md`](../templates/devils-advocate.md) | ACH, Red Team, Devil's Advocacy |
+| `intelligence-assessment.md` | 3–7 Key Judgments with confidence + PIRs for next cycle; operates on every run because every day has a priority-intelligence requirement | [`intelligence-assessment.md`](../templates/intelligence-assessment.md) | Key Assumptions Check |
+| ⭐ `methodology-reflection.md` | **VITAL run-audit gate.** Evidence sufficiency, confidence distribution, source diversity, party-neutrality arithmetic, **ICD 203 compliance audit**, three concrete methodology improvements for the next cycle. Skipping it breaks the self-correction loop. | [`methodology-reflection.md`](../templates/methodology-reflection.md) | Key Assumptions Check, Quality of Information Check |
+| `election-2026-analysis.md` | Seat-projection deltas + coalition viability for every run through 2026-09; after the election it converts to a permanent "post-2026 government-formation context" file | [`election-2026-analysis.md`](../templates/election-2026-analysis.md) | Morphological |
+| `voter-segmentation.md` | Demographic / regional / ideological segment impact; when the day's docs are procedural, documents baseline segment positions | [`voter-segmentation.md`](../templates/voter-segmentation.md) | Outside-In Thinking |
+| `coalition-mathematics.md` | Current seat map + pivotal votes + Sainte-Laguë scenarios; stable structure regardless of daily contentiousness | [`coalition-mathematics.md`](../templates/coalition-mathematics.md) | Morphological |
+| `historical-parallels.md` | Named precedent(s) ≤ 40 years with similarity score; when no obvious parallel exists, documents the "no-precedent" finding with reasoning | [`historical-parallels.md`](../templates/historical-parallels.md) | Outside-In Thinking |
+| `media-framing-analysis.md` | How each party, press quadrant, and platform frames the day; runs every cycle to build the longitudinal frame record | [`media-framing-analysis.md`](../templates/media-framing-analysis.md) | Outside-In Thinking |
+| `implementation-feasibility.md` | Delivery-risk view (budget / IT / regulatory / workforce); when no new bill lands, audits the backlog of in-flight commitments | [`implementation-feasibility.md`](../templates/implementation-feasibility.md) | Premortem Analysis |
+| `forward-indicators.md` | ≥10 indicators across 4 horizons (72h / week / month / election); refreshed every run to maintain the forward-watch list | [`forward-indicators.md`](../templates/forward-indicators.md) | Indicators and Signposts |
 
 ---
 
@@ -178,26 +178,30 @@ Score your own output against this rubric before commit:
 
 | Dimension | Weight | Minimum Pass | What to Check |
 |-----------|:------:|:------------:|---------------|
-| 📎 **Evidence** | 25% | 7.0 | Every claim cites `dok_id`, vote count, named actor, or primary URL |
-| 📐 **Depth** | 25% | 7.0 | Depth tier met; frameworks applied; forward indicators present |
-| 📋 **Structural** | 20% | 7.0 | Templates followed; Mermaid color-coded; metadata + document-control blocks |
-| 🎯 **Actionable** | 15% | 6.0 | Dated triggers, thresholds, explicit "what to watch next" |
+| 📎 **Evidence** | 25% | 7.0 | Every claim cites `dok_id`, vote count, named actor, or primary URL; **Admiralty Code** annotation on every evidence row |
+| 📐 **Depth** | 25% | 7.0 | Depth tier met; frameworks applied; forward indicators present; **WEP language** for probability claims |
+| 📋 **Structural** | 20% | 7.0 | Templates followed; Mermaid color-coded; metadata + document-control blocks; **F3EAD stage** declared |
+| 🎯 **Actionable** | 15% | 6.0 | Dated triggers, thresholds, explicit "what to watch next"; **PIR/EEI tags** on findings |
 | ⚖️ **Neutrality** | 15% | 6.0 | Balanced coverage of government and opposition; every assessment labeled |
+| 📐 **ICD 203 Compliance** | — | Pass | All 9 ICD 203 standards met (audit in `methodology-reflection.md`) |
 
-**Composite ≥ 7.0 required to commit.** Any single dimension below its floor triggers revision regardless of composite score. Full rubric and examples live in [`political-style-guide.md`](political-style-guide.md).
+**Composite ≥ 7.0 required to commit.** Any single dimension below its floor triggers revision regardless of composite score. **ICD 203 compliance is a hard pass/fail gate.** Full rubric and examples live in [`political-style-guide.md`](political-style-guide.md).
 
 ---
 
-### Step 7 — Pass-2 Rewrite
+### Step 7 — Pass-2 Rewrite (F3EAD: DISSEMINATE)
 
 Read every file you produced in Steps 3–5. For each one, **improve every section**:
 
 - Replace generic verbs with specific ones ("rose" → "rose from 34% to 42% in the April SIFO poll").
 - Promote every `[MEDIUM]` finding that now has stronger evidence to `[HIGH]`, and demote any overclaim.
+- **Verify every Admiralty annotation** — upgrade any `[C3]` that now has corroboration to `[B2]`.
 - Add one more named actor (MP, minister, official) to every stakeholder and SWOT entry.
 - Add one more dok_id or vote-record citation to every evidence column that has < 2 citations.
+- **Tag every key finding to a PIR/EEI** from the catalog in `political-style-guide.md`.
 - Re-rank the significance scoring if the rewrite reveals a stronger lead.
 - Rewrite the lede of `synthesis-summary.md` so it leads with the #1 DIW-ranked finding — not the document count.
+- **Complete the ICD 203 compliance checklist** in `methodology-reflection.md`.
 
 **Time budget rule**: Pass 1 uses ≤ 60 % of workflow time; Pass 2 uses ≥ 25 %; Quality gate the remainder. Workflows completing in < 45 minutes of a 60-minute allocation indicate the pass-2 rewrite was skipped.
 
@@ -569,9 +573,11 @@ Every security-relevant control in Family A maps to **ISO 27001:2022**, **NIST C
 
 **Document Control**
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`
-- **Version:** 6.2 — every-family-core + methodology-reflection vital
+- **Version:** 6.3 — tradecraft anchors integration
+- **Key changes in v6.3:** Integrated F3EAD intelligence cycle stage labels into all 7 steps (Step 2=FIND/FIX, Step 3=FINISH, Step 4=EXPLOIT/ANALYZE, Step 5=ANALYZE, Step 7=DISSEMINATE); added SAT(s) Applied column to Family C+D file table; added Admiralty Code and WEP requirements to quality gate rubric; added ICD 203 compliance as hard pass/fail gate; updated Step 7 Pass-2 rewrite checklist with PIR/EEI tagging and Admiralty verification; reordered reading list to put `political-style-guide.md` (tradecraft anchors) at #2 after this guide.
 - **Key changes in v6.2:** Elevated Families C + D to always-produced core (no more trigger language); marked `methodology-reflection.md` as ⭐ VITAL run-audit gate with explicit quality-gate enforcement; added filename-variant mapping table (`historical-baseline`↔`historical-parallels`, `election-2026-implications`↔`election-2026-analysis`, `international-comparative`↔`comparative-international`); added depth-tier calibration table (L1/L2/L2+/L3) showing how files adapt without changing the output set; Output Matrix now marks all 6 workflow rows as "✅ All" for every family; Step 5 rewritten as "always produced — 12 files" with per-file behaviour on light-event vs P0-dense days; every downstream methodology cross-ref updated.
 - **Key changes in v6.1:** Added links to five new Family production methodologies (synthesis, structural-metadata, strategic-extensions, electoral-domain, per-document).
 - **Key changes in v6.0:** Rewrote as positive-voice step-by-step guide; collapsed ~2 200 lines of audit history and anti-pattern text into a single 7-step protocol + 5-family output matrix; added canonical Mermaid palette and 5-level confidence scale; linked each analysis file to a dedicated template (Families A–E).
 - **Classification:** Public
 - **Next Review:** 2026-07-21
+- **Tradecraft Standards:** F3EAD (NATO), PIR/EEI, Admiralty Code (STANAG 2022), ICD 203, WEP + ODNI Confidence
