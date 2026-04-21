@@ -11,15 +11,31 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--20-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
   <a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-20 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-02-20  
+**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-04-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+> **🆕 What changed since last review (v2.1 → v2.2, 2026-04-20):**
+> - 📈 **IMF added as a third primary external economic data provider** (alongside SCB MCP and World Bank MCP) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md) — see the **External Data Providers** table and **Egress Allowlist** section below. IMF is consumed via the **pure-TypeScript client `scripts/imf-client.ts`** (Datamapper JSON + SDMX 3.0) — *not* an MCP server; **8 MCP servers** count is unchanged. Allowlisted egress hosts extended with `data.imf.org`, `api.imf.org`, `www.imf.org`. Upstream-integrity controls: `DatamapperResponse` schema validation (shape + finite-numeric + year parse-guard), `.meta.json` tamper-evident sidecars under `analysis/data/imf/{indicator}/{country}.json` (recording `mcpTool: imf-ts-client`, `projectionVintage`, fetch timestamp). Cross-reference: [THREAT_MODEL.md TB-6a](THREAT_MODEL.md).
+>
+> **🆕 What changed since last review (v2.0 → v2.1, 2026-04-20):**
+> - Refreshed **defense-in-depth layer inventory** for Riksdagsmonitor `v0.8.48`:
+>   - **Edge:** AWS CloudFront + WAF, TLS 1.3 preferred (1.2 min), HSTS, dual-region (us-east-1 primary, eu-west-1 replica).
+>   - **Content Integrity:** Subresource Integrity via `vite-plugin-sri-gen@1.3.2`, strict Content-Security-Policy, immutable content hashing.
+>   - **Code:** CodeQL (javascript-typescript), ESLint 10.2.1, htmlhint 1.9.2, TypeScript 6.0.3 strict mode, secret scanning, knip 6.5.0 dead-code detection.
+>   - **Supply chain:** Dependabot, `actions/dependency-review-action`, OpenSSF Scorecard, **npm publish with `--provenance` (SLSA attestations)**, SHA-pinning on every `uses:` reference.
+>   - **Pipeline:** `step-security/harden-runner` with egress audit, AWS OIDC (no long-lived keys), least-privilege `permissions:` per workflow, SLSA Build L3 via GitHub-hosted runners.
+>   - **Agentic workloads (new category):** 12 agentic news workflows wrapped in the **five-layer safe-outputs** validator (sanitisation → schema-validate → policy-check → human-review → merge) behind a **Squid proxy + iptables egress firewall** (allow-list only to riksdagen.se, regeringen.se, scb.se, worldbank.org, **data.imf.org, api.imf.org, www.imf.org**, github.com, MCP endpoints).
+> - Added **MCP security posture**: 8 MCP servers defined in `.github/copilot-mcp.json` — `riksdag-regering` (HTTPS `riksdag-regering-ai.onrender.com/mcp`), `scb` (local `@jarib/pxweb-mcp@2.0.0` → `api.scb.se/OV0104/v2beta`), `world-bank` (local `worldbank-mcp@1.0.1`), `github` (HTTPS `api.githubcopilot.com/mcp/insiders`), `filesystem`, `memory`, `sequential-thinking`, `playwright` (headless).
+> - Added **24 Copilot agents** (`.github/agents/`) and **92 skills** (`.github/skills/`) under security review; each agent's tool allow-list is explicit and audited.
+> - OpenSSF Best Practices project #12069 confirmed active; Scorecard badge present.
+> - Compliance mapping reconfirmed: ISO 27001:2022 Annex A.5/A.8 (full), NIST CSF 2.0 GV/ID/PR/DE/RS/RC, CIS Controls v8.1 (#1–#18 applicable subset), GDPR Art. 32, NIS2 Art. 21, EU CRA Annex I.
 
 ---
 
@@ -489,6 +505,17 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 - **Attestation:** SBOM also cryptographically signed (`actions/attest-sbom@v3.0.0`)
 - **Purpose:** Vulnerability tracking, license compliance, supply chain transparency
 - **External MCP supplement:** `package.json` `x-external-mcp` field records MCP servers outside the npm graph (Python, Docker, HTTP). It is currently empty — all economic-data clients (World Bank, SCB, IMF) ship as npm TypeScript (`scripts/world-bank-client.ts`, `scripts/scb-client.ts`, `scripts/imf-client.ts`) and are fully covered by the standard SPDX SBOM; see `THREAT_MODEL.md` TB-6a for the IMF client's threat model.
+
+**External Data Providers (parity across the three primary economic sources):**
+
+| Provider | Integration | Transport / Hosts | Classification | Controls |
+|----------|-------------|-------------------|----------------|----------|
+| **SCB (Statistics Sweden)** | `scb-mcp` (local `@jarib/pxweb-mcp@2.0.0`) | HTTPS (TLS 1.3) → `api.scb.se/OV0104/v2beta` | Public | Egress allowlist; MCP tool allow-list; graceful fallback; no auth |
+| **World Bank** | `world-bank-mcp` (local `worldbank-mcp@1.0.1`) + `scripts/world-bank-client.ts` | HTTPS (TLS 1.3) → `data.worldbank.org`, `api.worldbank.org` | Public | Egress allowlist; npm SBOM coverage; response schema validation; no auth |
+| **IMF** *(new — ADR 0001)* | **Pure-TypeScript client** `scripts/imf-client.ts` (*not* MCP) | HTTPS (TLS 1.3) → `data.imf.org`, `api.imf.org`, `www.imf.org` (Datamapper JSON + SDMX 3.0) | Public | Egress allowlist; npm SBOM coverage; `DatamapperResponse` schema + finite-numeric + year parse-guard validation; `.meta.json` tamper-evident cache sidecars under `analysis/data/imf/`; 3× exponential back-off for rate-limit; graceful fallback; no auth |
+
+All three providers share: GitHub-runner root CA trust anchors, public-data classification, no API key, and optional-enrichment semantics (failure never blocks article generation or site availability).
+
 
 **Release Pipeline Security (3-job workflow):**
 
@@ -1505,6 +1532,9 @@ The authoritative configuration is maintained in [`.github/dependabot.yml`](.git
       api.github.com:443
       raw.githubusercontent.com:443
       registry.npmjs.org:443
+      data.imf.org:443
+      api.imf.org:443
+      www.imf.org:443
 ```
 
 ### **Security Automation Metrics**

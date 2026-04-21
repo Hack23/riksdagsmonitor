@@ -11,14 +11,22 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--20-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-02-20 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-20  
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+> **🆕 What changed since last review (v1.2 → v1.3, 2026-04-20):**
+> - 📈 Added **🌐 IMF** branch under Data Integration alongside World Bank (WEO, Fiscal Monitor, IFS, SDMX 3.0, T+5 projections, pure-TypeScript client `scripts/imf-client.ts` — *not an MCP server*, per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md)).
+>
+> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
+> - Mindmaps expanded to explicitly enumerate the **15 CIA data subsystems** (anomaly, coalition, committee, distribution, election, election-cycle, ministry, parties, party, percentile, politician, pre-election, risk, seasonal, voting), **12 agentic news workflows**, **24 Copilot agents**, **92 skills**, **8 MCP servers**, **14 languages**, and the **dual distribution model** (static site + `riksdagsmonitor` npm package with SLSA provenance).
+> - Added mindmap branch for toolchain: Node.js ≥25, TypeScript 6.0.3, Vite 8.0.9, Vitest 4.1.4, ESLint 10.2.1, Cypress 15.14.0, Playwright 1.59.1, typedoc 0.28.19.
+> - Added mindmap branch for compliance frameworks anchored to ISMS-PUBLIC: ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, GDPR, NIS2, EU CRA, OpenSSF Best Practices #12069, OpenSSF Scorecard.
 
 ---
 
@@ -204,6 +212,14 @@ mindmap
       Economic Data
       Development Metrics
       Comparative Analysis
+    🌐 IMF
+      WEO (NGDP_RPCH, PCPIPCH, LUR, GGXWDG_NGDP, BCA_NGDPD)
+      Fiscal Monitor
+      IFS (monthly monetary/FX/BOP)
+      GFS_COFOG (committee-aligned spending)
+      SDMX 3.0 + Datamapper JSON
+      T+5 Projections (2031 horizon)
+      Pure-TS client (scripts/imf-client.ts, no MCP)
 ```
 
 ---

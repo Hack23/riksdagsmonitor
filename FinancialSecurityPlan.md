@@ -11,13 +11,24 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--12-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-12 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-03-12
+**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-04-20
+
+> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
+> - 📈 **IMF** added as a third primary economic-data source alongside SCB and World Bank per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). **Cost impact: $0 incremental spend** — IMF public endpoints (`data.imf.org`, `api.imf.org`, `www.imf.org`) require no API key, no subscription, and the existing ~10 req/5s rate limit is tolerated by the client's 3× back-off. No new managed services, no new container hosting (IMF is a **pure-TypeScript client** under `scripts/imf-client.ts`, not an MCP server — no additional Render/Fly/container cost). SBOM coverage is provided by the existing npm package-lock.json, so no additional SBOM tooling is needed. Egress minute usage on GitHub Actions runners is negligible (< 1 s per fetch).
+>
+> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
+> - Refreshed **dual-deployment cost model** for the current architecture: AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) for production; GitHub Pages (`hack23.github.io`) as $0 DR tier; public `riksdagsmonitor` npm package hosted on the npm registry at $0 to Hack23 (provenance attestations included).
+> - Expected monthly infrastructure cost remains **<$500/day financial impact** and typically **well under $50/month steady-state** for the static-site footprint (CloudFront + S3 + Route53 + minimal Lambda@Edge if used).
+> - Security-investment analysis: **$0 incremental cost** — all tooling (GitHub Advanced Security, CodeQL, Dependabot, OpenSSF Scorecard, OpenSSF Best Practices #12069, `step-security/harden-runner`, secret scanning) is included with public-repository GitHub, plus free tiers of SAST/SCA via Actions.
+> - Confirmed **OIDC-only AWS access** (no long-lived access keys held by the org) — reduces credential-compromise insurance exposure and operational toil.
+> - Financial impact classification reconfirmed at **Low (<$500/day)** per [CLASSIFICATION](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md).
+> - Aligned with ISO 27001:2022 A.5.30 (ICT readiness), NIST CSF 2.0 GV.OV (oversight), CIS Controls v8.1 #1 (asset inventory & cost), EU CRA Annex I §(3)(c) (availability).
 
 ---
 

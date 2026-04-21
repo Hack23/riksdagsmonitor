@@ -11,14 +11,21 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--15-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-15 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-15  
+**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
+> - Refreshed lifecycle state machines for: (a) **news articles** (draft → safe-output validation → translator fan-out across 14 languages → merged → published → superseded/retired); (b) **agentic workflow runs** (queued → running → safe-output-validation → reviewer-PR → merged/rolled-back); (c) **CIA data refresh** (scheduled → download → schema-validate → diff → auto-PR → merge → deploy); (d) **release pipeline** (tag → build → provenance-attest → npm publish → S3 sync → CloudFront invalidation); (e) **translation states** across 14 locales including RTL (HE, AR).
+> - Added state diagrams for **npm package lifecycle** (unpublished → published-with-provenance → deprecated → security-advisory → superseded) aligned with `End-of-Life-Strategy.md`.
+> - Added **incident state machine**: detected → triaged → contained → eradicated → recovered → post-mortem, mapped to [Incident_Response_Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md).
+> - Anchored to current toolchain: Node.js ≥25, TypeScript 6.0.3, Vite 8.0.9, Vitest 4.1.4, Cypress 15.14.0 (optional), Playwright 1.59.1.
+> - Compliance mapping: ISO 27001:2022 A.5.24/A.5.26, NIST CSF 2.0 RS.AN/RS.MI/RC.RP, CIS Controls v8.1 #17, NIS2 Art. 21, EU CRA Annex I §2.
 
 ---
 

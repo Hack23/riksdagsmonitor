@@ -722,6 +722,11 @@ gh attestation verify riksdagsmonitor-v1.0.0.zip -R Hack23/riksdagsmonitor
 - **riksdag-regering-mcp** - 32 political data tools (Parliament, Government, MPs, votes)
 - **cia-data-integration** ✨ **NEW** - CIA export consumption, validation, caching strategies
 
+*Economic-Data Integrations (three primary sources, parity-treated):*
+- **scb-mcp** (`@jarib/pxweb-mcp@2.0.0`) — official Swedish statistics via PxWebAPI 2.0 (1,200+ tables)
+- **world-bank-mcp** (`worldbank-mcp@1.0.1`) + `scripts/world-bank-client.ts` — WGI governance, environment, long-horizon social/education
+- **IMF TypeScript client** (`scripts/imf-client.ts`) ✨ **NEW** — WEO, Fiscal Monitor, IFS, GFS_COFOG via Datamapper JSON + SDMX 3.0; macro/fiscal freshness + T+5 projections. **Intentionally not an MCP server** — pure-TS, fully covered by the npm SBOM (ADR 0001); `package.json` `x-external-mcp` stays empty, so the **8 MCP servers** count is unchanged.
+
 ### External Documentation
 - [CIA Platform Documentation](https://hack23.github.io/cia/)
 - [CIA JSON Export Specifications](https://github.com/Hack23/cia/tree/master/json-export-specs/visualizations)

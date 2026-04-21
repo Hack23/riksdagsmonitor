@@ -11,14 +11,35 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--15-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-15 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-15  
+**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
+> - 📈 **IMF elevated to a primary external economic data source** (parity with SCB and World Bank) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). Existing row **TB-6a** covers the `imf-ts-client` data flow in detail; this revision additionally: (a) adds IMF to the **Critical Assets** inventory under "Parliamentary Data / Economic Context", (b) notes two IMF-specific residual risks — **projection-vintage confusion** (WEO vintage drift: an old WEO dataset cited as current; mitigated by `projectionVintage` sidecar + Economic Data Contract v2.0 field) and **cache poisoning of `analysis/data/imf/`** (mitigated by `.meta.json` integrity sidecars, SBOM-covered schema validation, and Git-tracked diffs under PR review), and (c) adds an **"IMF upstream / transport adversary"** row to the Threat Agent Classification Framework (low likelihood; controls already enumerated in TB-6a).
+>
+> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
+> - Full **STRIDE pass** re-executed over the current architecture of Riksdagsmonitor `v0.8.48`:
+>   - **Spoofing:** GitHub OIDC federation to AWS (no long-lived keys); npm provenance attestations; MCP server TLS + token-scoped auth.
+>   - **Tampering:** SRI on all static assets via `vite-plugin-sri-gen@1.3.2`; Git signed commits; immutable S3 object versioning + CloudFront origin signing; schema-validated CIA data ingestion (`validate-against-cia-schemas`); translation integrity via `validate-translations`.
+>   - **Repudiation:** GitHub audit log + CloudTrail; signed releases; SLSA L3 provenance on npm; Actions run logs retained.
+>   - **Information Disclosure:** Public classification by design, but secrets scanning, CodeQL, Dependabot alerts, and `step-security/harden-runner` guard against accidental exfiltration from build runners.
+>   - **Denial of Service:** CloudFront absorbs L3/L7 volumetrics; WAF rate-limiting; dual-region failover; GitHub Pages DR tier; npm package remains available independently of web tier.
+>   - **Elevation of Privilege:** Least-privilege `permissions:` on every workflow; PR-gated merges; five-layer safe-output validation for agentic workflows; reviewer approval for every agentic-generated PR.
+> - **New threat category — Agentic / LLM-specific:**
+>   - Prompt injection via upstream political-content sources → mitigated by MCP-side input sanitisation, system-prompt hardening, and safe-outputs schema validation.
+>   - Tool-call exfiltration attempts → mitigated by Squid proxy + iptables egress allow-list.
+>   - Model-generated misinformation → mitigated by human-review gate (layer 4 of safe-outputs), source citation enforcement, and the AI FIRST quality principle.
+>   - Covered by [OWASP LLM Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md) and [AI_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md).
+> - **New threat category — Supply-chain on MCP servers:** SBOM checks for `@jarib/pxweb-mcp`, `worldbank-mcp`, and the hosted `riksdag-regering` endpoint; version pinning; OpenSSF Scorecard on dependencies where available.
+> - **Data poisoning on CIA upstream repo:** schema validation + diff review gates on every `update-cia-csv-data.yml` auto-PR.
+> - MITRE ATT&CK references integrated: T1195 (Supply Chain Compromise), T1566 (Phishing — N/A no users), T1078 (Valid Accounts — OIDC-only mitigates), T1486 (Data Encrypted for Impact — immutable backups mitigate), plus ATLAS AML.T0051 (LLM Prompt Injection) and AML.T0053 (LLM Plugin Compromise).
+> - Compliance mapping: ISO 27001:2022 Annex A.5.7/A.8.8/A.8.28, NIST CSF 2.0 ID.RA/DE.AE/RS.AN, CIS Controls v8.1 #16/#18, NIS2 Art. 21, EU CRA Annex I §(3).
 
 ---
 
@@ -181,6 +202,7 @@ Following [Hack23 AB Asset-Centric Threat Modeling](https://github.com/Hack23/IS
 |----------------|--------------------------------------|-----------------|-------------|----------------|----------------------|
 | **📊 Dashboard Integrity** | Political data accuracy drives user trust; manipulation undermines democratic transparency mission | Content manipulation, XSS injection, data tampering | CSP headers, SRI hashes, Git immutability, dual deployment (AWS+GitHub) | [![Trust Enhancement](https://img.shields.io/badge/Value-Trust_Enhancement-darkgreen?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $30,000 |
 | **🗳️ Parliamentary Data** | Swedish Riksdag voting records, committee reports, parliamentary documents—core mission asset | Data falsification, integrity compromise, hallucination | CIA platform validation, riksdag-regering-mcp verification, daily pipeline updates, version control | [![Competitive Advantage](https://img.shields.io/badge/Value-Competitive_Advantage-gold?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $40,000 |
+| **📈 External Economic Context (SCB + World Bank + IMF)** | Three-source economic data foundation for policy analysis and news enrichment: SCB MCP (official Swedish statistics), World Bank MCP (governance/environment/long-horizon social), **IMF pure-TS client** (WEO/Fiscal Monitor/IFS + T+5 projections) | Upstream outage, DNS/TLS MITM, stale WEO vintage, cache poisoning of `analysis/data/imf/`, rate-limit saturation | Egress allowlist (scb.se, worldbank.org, data.imf.org, api.imf.org, www.imf.org); `DatamapperResponse` schema validation in `scripts/imf-client.ts`; `.meta.json` tamper-evident sidecars recording `projectionVintage`; graceful fallback (optional-enrichment semantics); npm SBOM coverage (no external MCP package) — see **TB-6a** | [![Innovation Enablement](https://img.shields.io/badge/Value-Innovation_Enablement-lightblue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $10,000 |
 | **🧠 Source Code & Algorithms** | Dashboard visualization logic, Chart.js/D3.js integrations, AI workflow orchestration | IP theft, malicious injection, supply chain attacks | Private repo access controls, dependency scanning (Dependabot + CodeQL), GPG commit signing | [![Operational Excellence](https://img.shields.io/badge/Value-Operational_Excellence-blue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $15,000 |
 | **🌐 Riksdagsmonitor Brand** | Market reputation, stakeholder trust, search engine positioning | Domain hijacking, phishing, brand impersonation, SEO poisoning | Domain monitoring, HTTPS enforcement, DNSSEC, HSTS preload, trademark registration | [![Risk Reduction](https://img.shields.io/badge/Value-Risk_Reduction-green?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $20,000 |
 | **☁️ Infrastructure Config** | AWS CloudFront, S3, Route 53 security baseline; GitHub Actions secrets | Infrastructure compromise, misconfiguration, credential exposure | IAM least privilege, OIDC (no long-lived keys), AWS Config rules, secret scanning | [![Security Excellence](https://img.shields.io/badge/Value-Security_Excellence-purple?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $25,000 |
@@ -1232,6 +1254,7 @@ Following [Hack23 Threat Modeling Policy § 4.1](https://github.com/Hack23/ISMS-
 | **📢 Hacktivist** | BEGINNER-INTERMEDIATE | Political statement, publicity, protest | Low-Medium (crowdfunded) | **HIGH** - Political platform makes attractive target for ideological groups | Website defacement, DDoS attacks, domain squatting, social media impersonation |
 | **👤 Malicious Insider** | INTERMEDIATE | Revenge, sabotage, ideology | Low (individual contributor) | **VERY LOW** - Small contributor base, strong vetting | Backdoor injection, subtle data manipulation, IP theft |
 | **🧑‍💻 Script Kiddie** | BEGINNER | Learning, curiosity, bragging rights | Very Low (public tools) | **LOW** - Limited attack surface for automated tools | Basic DDoS (botnets), public exploit attempts, GitHub spam |
+| **🌐 IMF Upstream / Transport Adversary** | BEGINNER-INTERMEDIATE | Data distortion, vintage-drift injection, rate-limit disruption | Low (requires DNS/BGP/TLS position, or compromise of `data.imf.org` / `api.imf.org` / `www.imf.org`) | **VERY LOW** - Public data, no auth surface, egress is TLS-pinned to GitHub-runner root-CA trust anchors; client-side controls already mitigate most scenarios | DNS hijack or TLS MITM against IMF origins; WEO vintage confusion (stale WEO cited as current); cache poisoning of `analysis/data/imf/`; rate-limit saturation (~10 req/5 s). **Mitigations already catalogued in TB-6a**: TLS 1.3, response schema validation (`DatamapperResponse` shape + finite-numeric + year parse-guard), `.meta.json` `projectionVintage` sidecar (Economic Data Contract v2.0), 3× exponential back-off (1s→2s→4s), multi-country Datamapper `compare` batching, graceful fallback to cached snapshot, SBOM-covered pure-TS client (no external MCP surface). |
 
 ### **Detailed Threat Agent Profiles**
 

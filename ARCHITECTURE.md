@@ -11,14 +11,29 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--20-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-28 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-20  
+**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+> **🆕 What changed since last review (v2.1 → v2.2, 2026-04-20):**
+> - 📈 **IMF added as third primary economic-data source** (alongside SCB and World Bank) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md) (accepted 2026-04-20) and **Economic Data Contract v2.0**. IMF is consumed via the **pure-TypeScript** client `scripts/imf-client.ts` (Datamapper JSON + SDMX 3.0 transports); it is **intentionally not an MCP server** — no Python/uvx, fully covered by the npm SBOM, so the **8 MCP servers** count is unchanged. Allowlisted hosts: `data.imf.org`, `api.imf.org`, `www.imf.org`. Cache under `analysis/data/imf/{indicator}/{country}.json` with `.meta.json` sidecars.
+>
+> **🆕 What changed since last review (v2.0 → v2.1, 2026-04-20):**
+> - 📦 Release `v0.8.48` published on **npm as `riksdagsmonitor`** with `provenance:true` (SLSA attestations). Public subpath exports: `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`.
+> - 🧠 Runtime baseline tightened to **Node.js ≥25**; toolchain bumped to TypeScript 6.0.3, Vite 8.0.9, Vitest 4.1.4, ESLint 10.2.1, Cypress 15.14.0 (optional), Playwright 1.59.1, typedoc 0.28.19, happy-dom 20.9.0, knip 6.5.0, ajv 8.18.0.
+> - 🗂️ CIA data now spans **15 subsystems** under `cia-data/` (anomaly, coalition, committee, distribution, election, election-cycle, ministry, parties, party, percentile, politician, pre-election, risk, seasonal, voting). Prior "19 products" framing has been retired in favour of subsystem count.
+> - 🌍 Content footprint: **14 languages** (EN, SV, DA, NB (`_no`), DE, ES, FI, FR, HE RTL, AR RTL, JA, KO, NL, ZH) • **2,669 files** under `news/`.
+> - 🤖 GitHub Actions surface: **45 files** total (21 standard `.yml`, 12 agentic `.md` sources, 12 compiled `.lock.yml` siblings). Twelve agentic news workflows orchestrated via the five-layer safe-output security model and egress firewall (Squid + iptables).
+> - 🧩 Copilot ecosystem: **24 custom agents** under `.github/agents/`, **92 skills** under `.github/skills/`, **8 MCP servers** (`riksdag-regering`, `scb`, `world-bank`, `github` insiders, `filesystem`, `memory`, `sequential-thinking`, `playwright`) wired via `.github/copilot-mcp.json`.
+> - ☁️ Production distribution: AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) via OIDC-only deploy; GitHub Pages (`hack23.github.io`) as DR fallback.
+> - 🛡️ Integrity: SRI enabled via `vite-plugin-sri-gen@1.3.2`; all Actions SHA-pinned; `step-security/harden-runner` across workflows; CodeQL, Dependabot, dependency-review, Scorecards, Secret Scanning, OpenSSF Best Practices #12069 active.
+> - 🏷️ Classification confirmed: **Public / Integrity High / Availability High**, RTO 1–4h, RPO 4–24h, Financial Impact Low (<$500/day).
+> - 🔗 Authoritative ISMS root: [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC) — Information_Security_Policy, Secure_Development_Policy, CLASSIFICATION, Threat_Modeling, Change_Management, Vulnerability_Management, Open_Source_Policy, AI_Policy, Access_Control_Policy, Cryptography_Policy, Incident_Response_Plan, Security_Metrics, STYLE_GUIDE.
 
 ---
 
@@ -432,6 +447,7 @@ sequenceDiagram
     participant NewsGen as generate-daily-news.js
     participant MCP as riksdag-regering-mcp
     participant SCB as scb-mcp
+    participant IMF as imf-ts-client
     participant State as workflow-state.json
     participant Git as Git Repository
     participant CI as GitHub Actions CI/CD
@@ -455,6 +471,10 @@ sequenceDiagram
     NewsGen->>SCB: Query 5: Statistical context (optional)
     SCB-->>NewsGen: Economic indicators (unemployment, GDP, etc.)
     Note over NewsGen,SCB: SCB enrichment is optional — failures do not block article generation
+    
+    NewsGen->>IMF: Query 6: Macro/fiscal freshness + projections (optional)
+    IMF-->>NewsGen: WEO / Fiscal Monitor / IFS (2025 finals + projections to 2031)
+    Note over NewsGen,IMF: IMF via pure-TS `scripts/imf-client.ts` invoked by the bash tool (no MCP);<br/>optional enrichment — graceful fallback to cached `analysis/data/imf/` on failure
     
     NewsGen->>NewsGen: Analyze data + Generate 5 editorial pillars
     Note over NewsGen: 1. Lead Story (400-800 words)<br/>2. Parliamentary Pulse (200-400 words)<br/>3. Government Watch (200-300 words)<br/>4. Opposition Dynamics (200-300 words)<br/>5. Looking Ahead (100-200 words)
@@ -763,6 +783,7 @@ graph LR
 | **Election Authority** | Election Results, Statistics | Post-election | CIA Platform → External Links | LOW |
 | **Financial Authority** | Budget, Government Spending | Monthly | CIA Platform → External Links | LOW |
 | **World Bank** | Country Indicators, Economic Data | Quarterly | CIA Platform → External Links | LOW |
+| **IMF (International Monetary Fund)** | WEO, Fiscal Monitor, IFS, MFS, GFS_COFOG — macro, fiscal, monetary, external-sector indicators + T+5 projections | WEO (Apr/Oct), Fiscal Monitor (Apr/Oct), IFS monthly, MFS monthly | **Pure-TypeScript client** `scripts/imf-client.ts` (Datamapper JSON + SDMX 3.0) — *not an MCP server*, invoked by agentic workflows via bash | LOW |
 | **riksdag-regering-mcp** | Aggregated Political Data | On-demand | MCP Server (32 tools) | LOW |
 | **SCB (Statistics Sweden)** | 1,200+ statistical tables (economy, labour, population, education, environment) | Varies (monthly–quarterly) | MCP Server (scb-mcp, PxWebAPI 2.0) | LOW |
 
@@ -1560,15 +1581,21 @@ graph TB
         PW[Playwright MCP<br/>Local: @playwright/mcp<br/>Browser automation]
     end
     
+    subgraph "TypeScript Clients (no MCP)"
+        IMF[imf-ts-client<br/>scripts/imf-client.ts<br/>HTTPS: data.imf.org / api.imf.org / www.imf.org<br/>WEO + Fiscal Monitor + SDMX 3.0]
+    end
+    
     subgraph "Data Sources"
         Riksdag[Riksdagen API<br/>data.riksdagen.se<br/>98.5% data completeness]
         Regering[Regeringen<br/>via g0v.se<br/>Government documents]
         SCBData[Statistics Sweden<br/>scb.se<br/>1,200+ statistical tables]
+        IMFData[IMF Open Data<br/>data.imf.org<br/>WEO, Fiscal Monitor, IFS, ~155 SDMX databases]
     end
     
     Agent --> Skills
     Agent --> RR
     Agent --> SCB
+    Agent --> IMF
     Agent --> GH
     Agent --> FS
     Agent --> Mem
@@ -1577,10 +1604,12 @@ graph TB
     RR --> Riksdag
     RR --> Regering
     SCB --> SCBData
+    IMF --> IMFData
     
     style Agent fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
     style Skills fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#000000
     style RR fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    style IMF fill:#00897b,stroke:#004d40,stroke-width:2px,color:#ffffff
     style GH fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
 ```
 
@@ -1646,7 +1675,7 @@ graph TB
 | Capability | Without MCP | With MCP |
 |------------|-------------|----------|
 | **Data Access** | Manual API calls to Riksdagen API | Automated via 32 specialized tools |
-| **Statistical Context** | No official statistics integration | SCB MCP: 1,200+ tables (economy, labour, population) |
+| **Statistical Context** | No official statistics integration | SCB MCP: 1,200+ tables (economy, labour, population); World Bank MCP: WGI governance + long-horizon social/education; IMF TypeScript client: WEO, Fiscal Monitor, IFS + T+5 projections |
 | **Analysis** | Generic AI prompts | Domain-specific intelligence-operative agent |
 | **Expertise** | Basic knowledge | 18 strategic skills (political science, OSINT, Swedish politics) |
 | **Efficiency** | Multi-step manual workflows | Integrated single-step operations |
@@ -1723,6 +1752,55 @@ graph TB
 - **No authentication required** — Public API access, no API keys
 - **No PII** — Aggregate statistics only, no individual-level data
 
+#### IMF Economic Context (TypeScript client, *not* an MCP server)
+
+**Purpose:** Primary source for **macro, fiscal, monetary, and external-sector freshness + T+5 projections** to complement SCB (Swedish primary source, unchanged) and World Bank (WGI governance, environment, long-horizon social/education). Added per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md) (accepted 2026-04-20) and **Economic Data Contract v2.0** (effective 2026-04-20; v1 grace window → 2026-05-31). The April 2026 WEO fills World Bank's 12–24-month macro lag and unlocks forward-looking article types (`week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`).
+
+**Why not an MCP server?** ADR 0001 adopts a pure-TypeScript client so the IMF integration is fully covered by the repository's npm SBOM, avoids Python / uvx / third-party MCP supply-chain surface, and keeps `package.json` `x-external-mcp` empty. The count of **8 MCP servers** is therefore unchanged.
+
+**Implementation (sibling pattern to `scripts/world-bank-client.ts` and `scripts/scb-client.ts`):**
+
+| Script | Role |
+|--------|------|
+| `scripts/imf-client.ts` | Typed HTTP client (Datamapper + SDMX 3.0), retry / back-off, response schema validation |
+| `scripts/imf-fetch.ts` | CLI wrapper: `tsx scripts/imf-fetch.ts weo\|compare\|sdmx\|list-indicators …` (invoked by agentic workflows via bash) |
+| `scripts/imf-codes.ts` | IMF indicator / country / policy-domain code tables |
+| `scripts/imf-context.ts` | Article-context helpers (mapping policy domains → IMF indicator sets) |
+
+**Transports & allowlisted egress hosts:**
+
+| Transport | Host | Datasets |
+|-----------|------|----------|
+| IMF Datamapper JSON v1 | `www.imf.org/external/datamapper/api/v1` | WEO (NGDP_RPCH, PCPIPCH, LUR, GGXWDG_NGDP, BCA_NGDPD, …) |
+| IMF SDMX 3.0 | `api.imf.org/external/sdmx/3.0` | IFS, BOP, FM (Fiscal Monitor), GFS_COFOG, DOTS — ~155 databases |
+| Documentation | `data.imf.org` | Allowlisted for metadata and schema lookups |
+
+**Policy-domain mapping (parallel to the SCB table above):**
+
+| Policy Domain | IMF Dataset | Example Indicators |
+|---------------|-------------|--------------------|
+| Fiscal Policy | WEO / Fiscal Monitor / GFS_COFOG | GGXWDG_NGDP (debt/GDP), GGXCNL_NGDP (fiscal balance), committee-aligned COFOG spending |
+| Monetary Policy | IFS / MFS | Policy rate, money-market rates, FX reference |
+| External Sector | WEO / BOP / DOTS | BCA_NGDPD (current account/GDP), trade flows |
+| Macro Outlook | WEO | NGDP_RPCH (real GDP growth), PCPIPCH (CPI), LUR (unemployment) — finals + projections to 2031 |
+
+**Integration Pattern:**
+- **Optional enrichment** — like SCB, article generation never blocks on IMF failures
+- All IMF client calls wrapped in try/catch with **graceful fallback** to cached snapshots under `analysis/data/imf/{indicator}/{country}.json`
+- Rate-limit handling: ~10 req / 5 s, 3× exponential back-off (1s → 2s → 4s), multi-country batching via Datamapper `compare`
+- Domain-to-indicator mapping in `scripts/imf-codes.ts` and `scripts/imf-context.ts`
+- Each cache entry has a sidecar `.meta.json` recording `mcpTool: imf-ts-client` (nominal, for contract symmetry), `projectionVintage`, and fetch timestamp for tamper/ageing detection
+
+**Security Considerations:**
+- **TLS/HTTPS only** — TLS 1.3 preferred, GitHub-runner root CA trust anchors
+- **Public data sources only** — IMF Open Data (no API key required), same Public classification as SCB / World Bank
+- **SBOM coverage** — pure TypeScript, covered by the npm SBOM; no out-of-npm supplement
+- **Response schema validation** — `DatamapperResponse` shape, numeric finite checks, year parse-guard
+- **No PII** — aggregate national indicators only
+- See **[THREAT_MODEL.md § TB-6a](THREAT_MODEL.md)** for IMF upstream / transport threat analysis and **[SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md)** for egress-firewall details
+
+**Supporting documentation (already in the repo — referenced, not duplicated):** `analysis/imf/README.md`, `analysis/imf/indicator-policy-mapping.md`, `analysis/imf/use-cases.md`, `docs/adr/0001-adopt-imf-data-alongside-world-bank.md`, `.github/aw/ECONOMIC_DATA_CONTRACT.md`.
+
 ---
 
 ## 📚 Related Documents
@@ -1764,14 +1842,14 @@ graph TB
 | Field | Value |
 |-------|-------|
 | **Document ID** | ARCH-001 |
-| **Version** | 2.1 |
+| **Version** | 2.2 |
 | **Classification** | Public |
 | **Owner** | CEO, Hack23 AB |
 | **Repository** | https://github.com/Hack23/riksdagsmonitor |
 | **Path** | /ARCHITECTURE.md |
 | **Format** | Markdown with Mermaid C4 Diagrams |
-| **Last Updated** | 2026-03-19 (UTC) |
-| **Next Review** | 2026-06-19 |
+| **Last Updated** | 2026-04-20 (UTC) |
+| **Next Review** | 2026-07-20 |
 | **Review Cycle** | Quarterly |
 
 <p align="center">
