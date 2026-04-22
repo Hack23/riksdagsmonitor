@@ -174,36 +174,67 @@ Every `methodology-reflection.md` includes an ICD 203 compliance checklist verif
 
 ## 🤖 Artifact → workflow → gate check mapping
 
-The 12 agentic news workflows in `.github/workflows/news-*.md` render these templates into concrete artifacts under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. Authoring contract: [`.github/prompts/README.md`](../../.github/prompts/README.md).
+The 12 agentic news workflows in `.github/workflows/news-*.md` render these templates into concrete artifacts under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. Authoring contract: [`.github/prompts/README.md`](../../.github/prompts/README.md). Tradecraft canon: [`../methodologies/osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md).
 
-**9 core artifacts** (every news workflow):
+**23 always-produced artifacts per run** (every news workflow — single-type + Tier-C):
+
+### 📘 Family A — Core Synthesis (9 artifacts)
 
 | Template | Produced artifact | Enforced by `05-analysis-gate.md` |
 |----------|-------------------|-----------------------------------|
-| [`synthesis-summary.md`](synthesis-summary.md) | `synthesis-summary.md` (lead story + DIW ranking + ≥ 1 Mermaid diagram) | Check 1 (presence), Check 5 (Mermaid) |
-| [`swot-analysis.md`](swot-analysis.md) | `swot-analysis.md` with TOWS matrix | Check 1, Check 4 (evidence) |
-| [`risk-assessment.md`](risk-assessment.md) | `risk-assessment.md` (top 5 risks, likelihood × impact) | Check 1 |
-| [`threat-analysis.md`](threat-analysis.md) | `threat-analysis.md` (attack tree + MITRE-style TTP) | Check 1 |
-| [`stakeholder-impact.md`](stakeholder-impact.md) | `stakeholder-perspectives.md` (named actors + influence network) | Check 1 |
-| [`significance-scoring.md`](significance-scoring.md) | `significance-scoring.md` (DIW scores + sensitivity) | Check 1, Check 4 (evidence per ranked item / table row / Mermaid node) |
+| — (index, hand-written) | `README.md` (run index) | Check 1 (presence) |
+| [`synthesis-summary.md`](synthesis-summary.md) | `synthesis-summary.md` (lead story + DIW ranking + ≥ 1 Mermaid) | Check 1 + 5 (Mermaid) |
+| [`executive-brief.md`](executive-brief.md) | `executive-brief.md` (BLUF + 3 decisions supported + 400–600 words) | Check 1 + 7 (BLUF / Decisions) |
+| [`significance-scoring.md`](significance-scoring.md) | `significance-scoring.md` (DIW scores + sensitivity) | Check 1 + 4 (evidence per ranked item) |
 | [`political-classification.md`](political-classification.md) | `classification-results.md` (priority tiers, retention) | Check 1 |
-| [`cross-reference-map.md`](cross-reference-map.md) | `cross-reference-map.md` (continuity contracts) | Check 1 |
-| [`data-download-manifest.md`](data-download-manifest.md) | `data-download-manifest.md` (pre-computed by download step) | Check 1 |
-| [`per-file-political-intelligence.md`](per-file-political-intelligence.md) | `documents/{dok_id}-analysis.md` (one per document) | Check 2 (per-doc coverage) |
+| [`swot-analysis.md`](swot-analysis.md) | `swot-analysis.md` with TOWS matrix | Check 1 + 4 (evidence) |
+| [`risk-assessment.md`](risk-assessment.md) | `risk-assessment.md` (top 5 risks, L × I, cascading) | Check 1 |
+| [`threat-analysis.md`](threat-analysis.md) | `threat-analysis.md` (Political Threat Taxonomy + attack trees) | Check 1 |
+| [`stakeholder-impact.md`](stakeholder-impact.md) | `stakeholder-perspectives.md` (named actors + influence network) | Check 1 |
 
-**5 additional Tier-C artifacts** (aggregation / reference-grade workflows — see [`ext/tier-c-aggregation.md`](../../.github/prompts/ext/tier-c-aggregation.md)):
+### 📗 Family B — Structural Metadata (2 artifacts)
 
 | Template | Produced artifact | Enforced by |
 |----------|-------------------|-------------|
-| — (run index, hand-written) | `README.md` | Tier-C gate block |
-| [`executive-brief.md`](executive-brief.md) | `executive-brief.md` (2-page decision-maker brief) | Tier-C gate block |
-| [`scenario-analysis.md`](scenario-analysis.md) | `scenario-analysis.md` (≥ 3 scenarios with posteriors) | Tier-C gate (scenario count ≥ 3) |
-| [`comparative-international.md`](comparative-international.md) | `comparative-international.md` (cross-country via WB/IMF/SCB) | Tier-C gate (≥ 2 countries referenced) |
-| [`methodology-reflection.md`](methodology-reflection.md) | `methodology-reflection.md` (what worked, biases, uncertainty log) | Tier-C gate block |
+| [`data-download-manifest.md`](data-download-manifest.md) | `data-download-manifest.md` (pre-computed by download step, collection transparency) | Check 1 |
+| [`cross-reference-map.md`](cross-reference-map.md) | `cross-reference-map.md` (continuity contracts, sibling folders) | Check 1 |
 
-**Supporting templates** (consumed ad-hoc by the artifacts above — not directly gated):
+### 📙 Family C — Strategic Extensions (5 artifacts, F3EAD Exploit → Analyze)
 
-- [`coalition-mathematics.md`](coalition-mathematics.md), [`devils-advocate.md`](devils-advocate.md), [`election-2026-analysis.md`](election-2026-analysis.md), [`forward-indicators.md`](forward-indicators.md), [`historical-parallels.md`](historical-parallels.md), [`implementation-feasibility.md`](implementation-feasibility.md), [`intelligence-assessment.md`](intelligence-assessment.md), [`media-framing-analysis.md`](media-framing-analysis.md), [`voter-segmentation.md`](voter-segmentation.md).
+| Template | Produced artifact | Enforced by |
+|----------|-------------------|-------------|
+| [`intelligence-assessment.md`](intelligence-assessment.md) | `intelligence-assessment.md` (≥ 3 Key Judgments + PIRs) | Check 7 (≥ 3 KJ + PIR) |
+| [`scenario-analysis.md`](scenario-analysis.md) | `scenario-analysis.md` (≥ 3 scenarios with posteriors + indicators) | Check 7 (≥ 3 scenarios) |
+| [`devils-advocate.md`](devils-advocate.md) | `devils-advocate.md` (≥ 3 ACH hypotheses, KAC, Red Team) | Check 7 (≥ 3 ACH hypotheses) |
+| [`comparative-international.md`](comparative-international.md) | `comparative-international.md` (≥ 2 peer-country rows via WB / IMF / SCB) | Check 7 (≥ 2 comparators) |
+| [`methodology-reflection.md`](methodology-reflection.md) | `methodology-reflection.md` (ICD 203 audit, ≥ 10 SATs, DIW reconciliation, PIR retirement log) | Check 7 (ICD 203 audit present) |
+
+### 📕 Family D — Electoral & Domain Lenses (7 artifacts, F3EAD Analyze continued)
+
+| Template | Produced artifact | Enforced by |
+|----------|-------------------|-------------|
+| [`election-2026-analysis.md`](election-2026-analysis.md) | `election-2026-analysis.md` (seat deltas, campaign implications) | Check 8 |
+| [`voter-segmentation.md`](voter-segmentation.md) | `voter-segmentation.md` (SCB segment cuts) | Check 8 |
+| [`coalition-mathematics.md`](coalition-mathematics.md) | `coalition-mathematics.md` (Sainte-Laguë seat table) | Check 8 (seat-count table) |
+| [`historical-parallels.md`](historical-parallels.md) | `historical-parallels.md` (≥ 2 historical episodes) | Check 8 |
+| [`media-framing-analysis.md`](media-framing-analysis.md) | `media-framing-analysis.md` (framing vectors × parties) | Check 8 |
+| [`implementation-feasibility.md`](implementation-feasibility.md) | `implementation-feasibility.md` (actor-capacity + timeline) | Check 8 |
+| [`forward-indicators.md`](forward-indicators.md) | `forward-indicators.md` (≥ 10 dated indicators across 4 horizons) | Check 8 (≥ 10 dated indicators) |
+
+### 📒 Family E — Per-Document (N artifacts)
+
+| Template | Produced artifact | Enforced by |
+|----------|-------------------|-------------|
+| [`per-file-political-intelligence.md`](per-file-political-intelligence.md) | `documents/{dok_id}-analysis.md` (one per input document) | Check 2 (per-doc coverage) |
+
+**Tier-C additive contract** (aggregation workflows: `news-evening-analysis`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`, `news-realtime-monitor`, `news-article-generator`) — no extra files beyond the 23 above; instead:
+
+- **Period-scope multipliers** on DIW scoring and section depth.
+- **Cross-type sibling citations** recorded in `cross-reference-map.md §Sibling folders`.
+- **Prior-cycle PIR ingestion** in `intelligence-assessment.md §Carried-forward PIRs` (see [`../methodologies/osint-tradecraft-standards.md#7️⃣-pir-handoff--cross-cycle-continuity`](../methodologies/osint-tradecraft-standards.md#7️⃣-pir-handoff--cross-cycle-continuity)).
+- **1500-word article floor** for the generated news article.
+
+Enforced by the Tier-C additive gate in [`ext/tier-c-aggregation.md`](../../.github/prompts/ext/tier-c-aggregation.md).
 
 **Upstream gh-aw documentation** (link-out only): <https://github.github.com/gh-aw/llms-small.txt> · <https://github.github.com/gh-aw/llms-full.txt> · <https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt>
 

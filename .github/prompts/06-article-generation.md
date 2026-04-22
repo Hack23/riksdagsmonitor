@@ -13,8 +13,8 @@ Before any article section is drafted, the writer MUST have opened and read **ev
 
 | Workflow class | Required artifacts | Gate checks that enforce citation |
 |----------------|---------------------|------------------------------------|
-| Single-type (`news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations`) | 9 core artifacts — see `04-analysis-pipeline.md` §"9 required core artifacts" | `05-analysis-gate.md` **check 1** (artifact presence), **check 2** (per-document coverage — one `{dok_id}-analysis.md` per manifest entry), **check 4** (evidence cites `dok_id` / primary-source URL host, covering SWOT quadrants **and** significance-scoring ranked items / tables / Mermaid nodes) |
-| Tier-C aggregation (`news-evening-analysis`, `news-weekly-review`, `news-monthly-review`, `news-week-ahead`, `news-month-ahead`, `news-realtime-monitor`, `news-article-generator` deep-inspection) | 14 artifacts = 9 core + 5 Tier-C (`README.md`, `executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`, `methodology-reflection.md`) — see `ext/tier-c-aggregation.md` §"14 required artifacts" | All single-type checks **plus** the Tier-C gate block (scenario count ≥ 3, ≥ 2 international comparisons) |
+| All workflows (single-type + Tier-C) | **23 artifacts** — Family A (9) + B (2) + C (5) + D (7) per `04-analysis-pipeline.md` §"23 required artifacts" | `05-analysis-gate.md` **check 1** (all 23 present), **check 2** (per-document coverage — one `{dok_id}-analysis.md` per manifest entry), **check 4** (evidence cites `dok_id` / primary-source URL), **check 5** (Mermaid + colour-coded style on all synthesis files), **check 7** (Family C structure — BLUF, ≥ 3 Key Judgments, ≥ 3 scenarios, ≥ 3 ACH hypotheses, ICD 203 audit, ≥ 2 comparators), **check 8** (Family D structure — ≥ 10 forward indicators, coalition seat table) |
+| Tier-C aggregation (`news-evening-analysis`, `news-weekly-review`, `news-monthly-review`, `news-week-ahead`, `news-month-ahead`, `news-realtime-monitor`, `news-article-generator` deep-inspection) | Same 23 artifacts **plus** Tier-C depth multipliers and cross-type synthesis — see `ext/tier-c-aggregation.md` | All single-type checks **plus** Tier-C sibling-citation check (cross-type citations in `cross-reference-map.md`) |
 
 If any required artifact is missing or empty, do **not** proceed to step 1 below — return to `04-analysis-pipeline.md` and produce it.
 
@@ -40,7 +40,7 @@ If any required artifact is missing or empty, do **not** proceed to step 1 below
    | Strategic context | `risk-assessment.md` + `threat-analysis.md` |
    | Economic context | `economic-data.json` + commentary paragraph |
    | SEO title / meta description | `synthesis-summary.md` §"AI-Recommended Article Metadata" |
-   | Analysis references block | Hand-written footer linking to the 9 analysis files on GitHub (see "Mandatory sections" below) |
+   | Analysis references block | Hand-written footer linking to the 23 analysis files on GitHub — at minimum: `executive-brief.md`, `synthesis-summary.md`, `intelligence-assessment.md`, `scenario-analysis.md`, `risk-assessment.md`, `forward-indicators.md` (see "Mandatory sections" below) |
 
 3. **Replace every `AI_MUST_REPLACE` marker** with evidence-cited analysis. `05-analysis-gate.md` **check 3** (no stubs) enforces zero markers before article generation proceeds.
 
@@ -55,7 +55,7 @@ If any required artifact is missing or empty, do **not** proceed to step 1 below
 - Winners & losers with named actors.
 - Strategic context with explicit risk or threat reference.
 - Election 2026 lens paragraph (every article, even single-type).
-- Analysis & sources block linking to the 9 analysis files on GitHub.
+- Analysis & sources block linking to the 23 analysis files on GitHub (Families A+B+C+D), with direct callouts to `executive-brief.md`, `intelligence-assessment.md`, and `scenario-analysis.md`.
 
 ## Banned patterns (zero tolerance)
 

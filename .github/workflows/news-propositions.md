@@ -233,26 +233,26 @@ Generates deep political intelligence articles on Swedish government proposition
 
 ## Time budget
 
-**Run 1 — Analysis mode** (no prior analysis found, ~43 min):
+**Run 1 — Analysis mode** (no prior analysis found, ~50 min — produces all 23 artifacts):
 
 | Minutes | Phase | Module |
 |---------|-------|--------|
 | 0–2 | MCP pre-warm + pre-flight analysis check | 02 / 03 |
 | 2–7 | Download data + catalogue | 03 |
-| 7–27 | Analysis Pass 1 (methodology read + per-doc analyses + 9 artifacts) | 04 |
-| 27–38 | Analysis Pass 2 (read-back + improvements) | 04 |
-| 38–40 | Analysis Gate | 05 |
-| 40–43 | Stage analysis, commit, **ONE** `safeoutputs___create_pull_request` (analysis-only) | 07 |
+| 7–32 | Analysis Pass 1 (methodology read + per-doc analyses + **all 23 artifacts**: Family A 9 + B 2 + C 5 + D 7) | 04 |
+| 32–45 | Analysis Pass 2 (read-back + improvements on all 22 text files) | 04 |
+| 45–47 | Analysis Gate (checks 1–8) | 05 |
+| 47–50 | Stage analysis, commit, **ONE** `safeoutputs___create_pull_request` (analysis-only) | 07 |
 
-**Run 2 — Article mode** (analysis exists on disk, ~25 min):
+**Run 2 — Article mode** (analysis exists on disk, ~28 min):
 
 | Minutes | Phase | Module |
 |---------|-------|--------|
 | 0–2 | MCP pre-warm + pre-flight check (SKIP_ANALYSIS=true) | 02 / 03 |
-| 2–5 | Read all 9 analysis artifacts into context | 06 |
-| 5–18 | Article Pass 1 + Pass 2 (EN, SV) | 06 |
-| 18–22 | Visual + link validation | 06 |
-| 22–25 | Stage articles, commit, **ONE** `safeoutputs___create_pull_request` | 07 |
+| 2–7 | Read all 23 analysis artifacts into context (Families A+B+C+D) | 06 |
+| 7–20 | Article Pass 1 + Pass 2 (EN, SV) | 06 |
+| 20–24 | Visual + link validation | 06 |
+| 24–28 | Stage articles, commit, **ONE** `safeoutputs___create_pull_request` | 07 |
 
 Trim scope before quality. Never open a second PR within a run — there is no second PR.
 
@@ -265,7 +265,7 @@ Trim scope before quality. Never open a second PR within a run — there is no s
 
 ## Run-mode selection
 
-At the start of every run, the pre-flight check in `03-data-download.md` detects whether `analysis/daily/$ARTICLE_DATE/propositions/` already contains all 9 required artifacts:
+At the start of every run, the pre-flight check in `03-data-download.md` detects whether `analysis/daily/$ARTICLE_DATE/propositions/` already contains all **23 required artifacts** (Families A+B+C+D):
 
 - **No analysis found** → Analysis mode: download data, run Pass 1 + Pass 2 + Gate, commit analysis artifacts, open `analysis-only` PR, stop.
 - **Analysis found** → Article mode: read existing analysis, generate articles, commit articles, open articles PR + dispatch `news-translate`.

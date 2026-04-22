@@ -23,8 +23,8 @@ This directory is the **single source of truth** for how GitHub Agentic Workflow
 - **Analysis artifact contract** (the "deep political analysis" product that every news workflow must produce *before* writing a single article sentence):
   - Methodology → [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md)
   - Templates → [`analysis/templates/`](../../analysis/templates/) (one file per artifact)
-  - **9 core artifacts** (single-type workflow, produced in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`): `synthesis-summary.md`, `swot-analysis.md`, `risk-assessment.md`, `threat-analysis.md`, `stakeholder-perspectives.md`, `significance-scoring.md`, `classification-results.md`, `cross-reference-map.md`, `data-download-manifest.md` — full definitions in [`04-analysis-pipeline.md`](04-analysis-pipeline.md).
-  - **14 artifacts** for Tier-C aggregation (9 core + `README.md`, `executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`, `methodology-reflection.md`) — full definitions in [`ext/tier-c-aggregation.md`](ext/tier-c-aggregation.md).
+  - **23 required artifacts** (every workflow, produced in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`): Family A Core Synthesis — `README.md`, `executive-brief.md`, `synthesis-summary.md`, `significance-scoring.md`, `classification-results.md`, `swot-analysis.md`, `risk-assessment.md`, `threat-analysis.md`, `stakeholder-perspectives.md`; Family B Structural Metadata — `data-download-manifest.md`, `cross-reference-map.md`; Family C Strategic Extensions (F3EAD Exploit→Analyze) — `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, `methodology-reflection.md` ⭐; Family D Electoral & Domain Lenses — `election-2026-analysis.md`, `voter-segmentation.md`, `coalition-mathematics.md`, `historical-parallels.md`, `media-framing-analysis.md`, `implementation-feasibility.md`, `forward-indicators.md`. Plus Family E per-document `documents/{dok_id}-analysis.md`. Full definitions in [`04-analysis-pipeline.md`](04-analysis-pipeline.md).
+  - **Tier-C aggregation** produces the same 23 artifacts plus depth multipliers, cross-type sibling-folder citations, prior-cycle PIR ingestion, and a 1 500-word article floor — see [`ext/tier-c-aggregation.md`](ext/tier-c-aggregation.md).
 - **Single blocking gate**: [`05-analysis-gate.md`](05-analysis-gate.md) is the only enforcer. No article may be touched until the gate passes.
 - **AI-FIRST rule** (from [`00-base-contract.md`](00-base-contract.md) §Non-negotiable rules #5): minimum 2 complete iterations — Pass 1 creates every artifact, Pass 2 reads Pass 1 back in full and improves every section.
 
@@ -36,11 +36,11 @@ This directory is the **single source of truth** for how GitHub Agentic Workflow
 | [`01-bash-and-shell-safety.md`](01-bash-and-shell-safety.md) | Bash tool call format, AWF-safe shell patterns, UTF-8 | All news workflows + translate |
 | [`02-mcp-access.md`](02-mcp-access.md) | MCP server inventory, tool naming, in-prompt health gate | All news workflows + translate |
 | [`03-data-download.md`](03-data-download.md) | Download pipeline, subfolder naming, lookback fallback, manifest | All content workflows |
-| [`04-analysis-pipeline.md`](04-analysis-pipeline.md) | Methodologies, templates, 9 core artifacts, Pass 1 / Pass 2 | All content workflows |
-| [`05-analysis-gate.md`](05-analysis-gate.md) | Single blocking gate before any article is touched | All content workflows |
+| [`04-analysis-pipeline.md`](04-analysis-pipeline.md) | Methodologies, templates, **23 required artifacts** (Families A+B+C+D), Pass 1 / Pass 2 | All content workflows |
+| [`05-analysis-gate.md`](05-analysis-gate.md) | Single blocking gate before any article is touched (checks 1–8 across all 23 artifacts) | All content workflows |
 | [`06-article-generation.md`](06-article-generation.md) | Article sections, banned patterns, visualisation, translations | All content workflows |
 | [`07-commit-and-pr.md`](07-commit-and-pr.md) | Stage → commit → exactly one `create_pull_request` | All news workflows + translate |
-| [`ext/tier-c-aggregation.md`](ext/tier-c-aggregation.md) | 14-artifact gate, period multipliers, cross-type synthesis | Aggregation & reference-grade workflows |
+| [`ext/tier-c-aggregation.md`](ext/tier-c-aggregation.md) | Tier-C additive rules: period multipliers, cross-type sibling synthesis, prior-cycle PIR ingestion, article floor | Aggregation & reference-grade workflows |
 
 ## Dependency matrix
 
@@ -118,6 +118,6 @@ The monolithic `.github/aw/SHARED_PROMPT_PATTERNS.md` was deleted when these mod
 - [`.github/skills/README.md`](../skills/README.md) — 91 skills by functional category
 - [`.github/workflows/README.md`](../workflows/README.md) — 45 workflow files (21 `.yml` + 12 `.md` + 12 `.lock.yml`)
 - [`analysis/README.md`](../../analysis/README.md) — on-disk artifact layout (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`)
-- [`analysis/methodologies/README.md`](../../analysis/methodologies/README.md) — 11 methodology modules
+- [`analysis/methodologies/README.md`](../../analysis/methodologies/README.md) — 12 methodology modules (AI guide · 4 domain frameworks · 5 Family production methodologies · style guide · **OSINT / INTOP tradecraft standards** canon)
 - [`analysis/templates/README.md`](../../analysis/templates/README.md) — 23 canonical output templates
 - [`WORKFLOWS.md`](../../WORKFLOWS.md) — complete CI/CD + agentic workflow reference

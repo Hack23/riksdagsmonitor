@@ -223,41 +223,41 @@ engine:
 
 # 📊 Weekly Review
 
-Retrospective 7-day political intelligence review synthesising every article-type from the past week. Tier-C reference-grade output (14 artifacts). Core languages EN, SV.
+Retrospective 7-day political intelligence review synthesising every article-type from the past week. Tier-C reference-grade output (all 23 artifacts + cross-type synthesis). Core languages EN, SV.
 
 ## Tier-C (reference-grade) requirements
 
-This workflow imports `../prompts/ext/tier-c-aggregation.md`. Produce **all 14 artifacts** (9 core + 5 Tier-C) and cross-reference sibling analyses. See the extension for the full rules.
+This workflow imports `../prompts/ext/tier-c-aggregation.md`. Produce **all 23 artifacts** (Family A 9 + B 2 + C 5 + D 7) per `04-analysis-pipeline.md`, apply the Tier-C period-scope multiplier, and cross-reference sibling per-type analyses in `cross-reference-map.md`. See the extension for the full rules.
 
 ## What this workflow does
 
 - **Article type**: `weekly-review`
 - **Analysis subfolder**: `analysis/daily/$ARTICLE_DATE/weekly-review/`
 - **Core languages produced**: `en`, `sv` (remaining 12 languages dispatched to `news-translate`)
-- **Two-run model**: Run 1 produces an `analysis-only` PR (14 artifacts); Run 2 (next scheduled run, same day) detects existing analysis and produces an articles PR.
+- **Two-run model**: Run 1 produces an `analysis-only` PR (all 23 artifacts); Run 2 (next scheduled run, same day) detects existing analysis and produces an articles PR.
 
 ## Time budget
 
-**Run 1 — Analysis mode** (no prior analysis found, ~45 min):
+**Run 1 — Analysis mode** (no prior analysis found, ~50 min — produces all 23 artifacts + Tier-C cross-type synthesis):
 
 | Minutes | Phase | Module |
 |---------|-------|--------|
 | 0–2 | MCP pre-warm + pre-flight analysis check | 02 / 03 |
 | 2–7 | Download data + catalogue | 03 |
-| 7–27 | Analysis Pass 1 (methodology read + per-doc analyses + 14 artifacts incl. 5 Tier-C) | 04 / ext |
-| 27–38 | Analysis Pass 2 (read-back + improvements) | 04 |
-| 38–41 | Analysis Gate (Tier-C extended gate) | 05 |
-| 41–45 | Stage analysis, commit, **ONE** `safeoutputs___create_pull_request` (analysis-only) | 07 |
+| 7–32 | Analysis Pass 1 (methodology read + per-doc analyses + **all 23 artifacts**: Family A 9 + B 2 + C 5 + D 7) | 04 / ext |
+| 32–45 | Analysis Pass 2 (read-back + improvements on all 22 text files) | 04 |
+| 45–47 | Analysis Gate (core checks 1–8 + Tier-C additive block) | 05 / ext |
+| 47–50 | Stage analysis, commit, **ONE** `safeoutputs___create_pull_request` (analysis-only) | 07 |
 
-**Run 2 — Article mode** (analysis exists on disk, ~25 min):
+**Run 2 — Article mode** (analysis exists on disk, ~28 min):
 
 | Minutes | Phase | Module |
 |---------|-------|--------|
 | 0–2 | MCP pre-warm + pre-flight check (SKIP_ANALYSIS=true) | 02 / 03 |
-| 2–5 | Read all 14 analysis artifacts into context | 06 |
-| 5–18 | Article Pass 1 + Pass 2 (EN, SV) | 06 |
-| 18–22 | Visual + link validation | 06 |
-| 22–25 | Stage articles, commit, **ONE** `safeoutputs___create_pull_request` | 07 |
+| 2–7 | Read all 23 analysis artifacts into context (Families A+B+C+D) | 06 |
+| 7–20 | Article Pass 1 + Pass 2 (EN, SV) | 06 |
+| 20–24 | Visual + link validation | 06 |
+| 24–28 | Stage articles, commit, **ONE** `safeoutputs___create_pull_request` | 07 |
 
 Trim scope before quality. Never open a second PR within a run — there is no second PR.
 
@@ -270,9 +270,9 @@ Trim scope before quality. Never open a second PR within a run — there is no s
 
 ## Run-mode selection
 
-At the start of every run, the pre-flight check in `03-data-download.md` detects whether `analysis/daily/$ARTICLE_DATE/weekly-review/` already contains all 9 core artifacts:
+At the start of every run, the pre-flight check in `03-data-download.md` detects whether `analysis/daily/$ARTICLE_DATE/weekly-review/` already contains all **23 required artifacts** (Families A+B+C+D):
 
-- **No analysis found** → Analysis mode: download data, run Pass 1 + Pass 2 + Tier-C Gate (14 artifacts), commit analysis artifacts, open `analysis-only` PR, stop.
+- **No analysis found** → Analysis mode: download data, run Pass 1 + Pass 2 + Analysis Gate (all 23 artifacts + Tier-C additive block), commit analysis artifacts, open `analysis-only` PR, stop.
 - **Analysis found** → Article mode: read existing analysis, generate articles, commit articles, open articles PR + dispatch `news-translate`.
 
 Repeated runs for the same `$ARTICLE_DATE` always use the same analysis folder when `force_generation=false`. Analysis is the primary product — a run never produces nothing.
