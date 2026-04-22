@@ -25,6 +25,20 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Field | Value |
+|-------|-------|
+| **F3EAD stage** | `Exploit / Analyze` (structural comparison deepens interpretation of current measure) |
+| **PIRs** | `matches the PIR of the subject measure (e.g., grundlag-risk, fiscal-trajectory, coalition-stability)` |
+| **Admiralty floor** | `A1 for current-measure anchor dok_id; B2–C3 acceptable for historical precedents from archival sources` |
+| **SATs used** | `Outside-In Thinking; Structured Analogies; Key Assumptions Check; Devil's Advocacy` |
+| **ICD 203 standards applied** | `sources, alternative analysis, consistency/change, argumentation` |
+
+> See [`political-style-guide.md`](../methodologies/political-style-guide.md) for canonical F3EAD / PIR catalog / Admiralty Code / ICD 203 / WEP / SATs definitions.
+
+---
+
 ## 📋 Parallel Context
 
 | Field | Value |

@@ -25,6 +25,20 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Field | Value |
+|-------|-------|
+| **F3EAD stage** | `Analyze / Disseminate` (forward-looking watchlist drives next collection cycle) |
+| **PIRs** | `every indicator ties to one or more standing PIRs — name them per indicator` |
+| **Admiralty floor** | `A1 for measurable MCP-sourced thresholds; B2 acceptable for derived composite indicators` |
+| **SATs used** | `Indicators & Signposts; Key Assumptions Check; Outside-In Thinking` |
+| **ICD 203 standards applied** | `uncertainty, alternative analysis, consistency/change, customer relevance` |
+
+> See [`political-style-guide.md`](../methodologies/political-style-guide.md) for canonical F3EAD / PIR catalog / Admiralty Code / ICD 203 / WEP / SATs definitions.
+
+---
+
 ## 📋 Watchlist Context
 
 | Field | Value |

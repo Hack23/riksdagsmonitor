@@ -25,6 +25,20 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Field | Value |
+|-------|-------|
+| **F3EAD stage** | `Exploit` (connecting documents into patterns for downstream Analyze) |
+| **PIRs** | `coalition-stability, democratic-norms — cross-document relationships reveal coordination` |
+| **Admiralty floor** | `A1 for primary dok_id links; B2 acceptable for inferred narrative linkages` |
+| **SATs used** | `Analysis of Competing Hypotheses; Link Analysis; Pattern Recognition` |
+| **ICD 203 standards applied** | `sources, argumentation, visual information` |
+
+> See [`political-style-guide.md`](../methodologies/political-style-guide.md) for canonical F3EAD / PIR catalog / Admiralty Code / ICD 203 / WEP / SATs definitions.
+
+---
+
 ## 📋 Context
 
 | Field | Value |

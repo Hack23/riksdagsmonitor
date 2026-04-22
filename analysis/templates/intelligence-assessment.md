@@ -96,14 +96,14 @@ graph LR
 
 ## 🗂️ Evidence Register
 
-| # | Evidence | Source | Confidence | Pattern contribution |
-|:-:|----------|--------|:----------:|---------------------|
-| E1 | HD11679 filed 2026-04-18 by Anna Karin (S) | `get_interpellationer` | 🟦 VERY HIGH | Same-day filing cluster |
-| E2 | HD11680 filed 2026-04-18 by Peter M (S) | `get_interpellationer` | 🟦 VERY HIGH | Same-day filing cluster |
-| E3 | HD11683 filed 2026-04-18 by Olle K (S) | `get_interpellationer` | 🟦 VERY HIGH | Same-day filing cluster |
-| E4 | Identical 3-paragraph structure across E1–E3 | Document text analysis | 🟩 HIGH | Structural coordination |
-| E5 | All three authors attended same S party-group meeting 2026-04-17 | Riksdag calendar | 🟧 MEDIUM | Opportunity to coordinate |
-| E6 | Shared framing keywords ("trovärdighet", "inkonsistens") | Full-text match | 🟩 HIGH | Narrative coordination |
+| # | Evidence | Source | Admiralty | Confidence | Pattern contribution |
+|:-:|----------|--------|:---------:|:----------:|---------------------|
+| E1 | HD11679 filed 2026-04-18 by Anna Karin (S) | `get_interpellationer` | **[A1]** | 🟦 VERY HIGH | Same-day filing cluster |
+| E2 | HD11680 filed 2026-04-18 by Peter M (S) | `get_interpellationer` | **[A1]** | 🟦 VERY HIGH | Same-day filing cluster |
+| E3 | HD11683 filed 2026-04-18 by Olle K (S) | `get_interpellationer` | **[A1]** | 🟦 VERY HIGH | Same-day filing cluster |
+| E4 | Identical 3-paragraph structure across E1–E3 | Document text analysis | **[B2]** | 🟩 HIGH | Structural coordination |
+| E5 | All three authors attended same S party-group meeting 2026-04-17 | Riksdag calendar | **[B2]** | 🟧 MEDIUM | Opportunity to coordinate |
+| E6 | Shared framing keywords ("trovärdighet", "inkonsistens") | Full-text match | **[B2]** | 🟩 HIGH | Narrative coordination |
 
 ---
 

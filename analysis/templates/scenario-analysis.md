@@ -25,6 +25,20 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Field | Value |
+|-------|-------|
+| **F3EAD stage** | `Analyze / Disseminate` |
+| **PIRs** | `list the priority intelligence requirements this scenario set answers` |
+| **Admiralty floor** | `B2 for trigger conditions; A1 for anchor evidence from primary MCP sources` |
+| **SATs used** | `Alternative Futures Analysis; Key Assumptions Check; Indicators & Signposts; Premortem` |
+| **ICD 203 standards applied** | `uncertainty, alternative analysis, confidence, argumentation, customer relevance` |
+
+> See [`political-style-guide.md`](../methodologies/political-style-guide.md) for canonical F3EAD / PIR catalog / Admiralty Code / ICD 203 / WEP / SATs definitions.
+
+---
+
 ## 📋 Scenario Context
 
 | Field | Value |

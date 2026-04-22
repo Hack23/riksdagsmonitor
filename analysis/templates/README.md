@@ -122,7 +122,7 @@ These analysis templates implement structured intelligence production mandated b
 
 ---
 
-## 🔄 Tradecraft Requirements (v4.2)
+## 🔄 Tradecraft Requirements (v4.3)
 
 Every template produced by Riksdagsmonitor workflows must comply with the tradecraft standards defined in [`political-style-guide.md`](../methodologies/political-style-guide.md):
 

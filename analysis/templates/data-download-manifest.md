@@ -25,6 +25,20 @@
 
 ---
 
+## 🔄 Tradecraft Context
+
+| Field | Value |
+|-------|-------|
+| **F3EAD stage** | `Find / Fix` (provenance record of collection) |
+| **PIRs** | `applies to all standing PIRs — this artifact grounds their evidence base` |
+| **Admiralty floor** | `A1 for every row (primary MCP pulls); downstream templates inherit this floor` |
+| **SATs used** | `Quality of Information Check; Source Triangulation` |
+| **ICD 203 standards applied** | `sources, uncertainty, objectivity` |
+
+> See [`political-style-guide.md`](../methodologies/political-style-guide.md) for canonical F3EAD / PIR catalog / Admiralty Code / ICD 203 / WEP / SATs definitions.
+
+---
+
 ## 📋 Manifest Context
 
 | Field | Value |

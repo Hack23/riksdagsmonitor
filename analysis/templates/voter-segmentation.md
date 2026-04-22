@@ -106,7 +106,7 @@ graph TB
 | **Campaign narrative that lands** | "Your government delivered affordable driving" |
 | **Counter-narrative (opposition)** | "Regressive cut; urban renters pay via missed climate investment" |
 | **Volatility** | Medium — segment shifted to SD 2018, returned partially 2022 |
-| **Turnout likelihood** | 81 % (above national 2022 average 84 %) |
+| **Turnout likelihood** | 81 % (below national 2022 average 84 %) |
 
 ---
 
