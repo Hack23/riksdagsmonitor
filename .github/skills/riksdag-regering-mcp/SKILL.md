@@ -129,7 +129,7 @@ get_calendar_events({ from: "2026-04-01", tom: "2026-04-30" }) // Calendar event
 
 > **⚠️ Tool names use underscores** (e.g., `get_sync_status`, NOT `get-sync-status`).
 > The gateway at `http://host.docker.internal:$MCP_GATEWAY_PORT/mcp/riksdag-regering` (port `8080` for gh-aw v0.69+, port `80` for legacy gh-aw <0.69 — resolved dynamically by `mcp-setup.sh`) handles routing.
-> See `SHARED_PROMPT_PATTERNS.md` → "MCP Architecture & Tool Reference" for full tool list.
+> See [`.github/prompts/02-mcp-access.md`](../../prompts/02-mcp-access.md) for MCP server access, direct tool invocation, and tool-naming conventions (and the [`.github/prompts/README.md`](../../prompts/README.md) for the full module catalogue).
 
 ## Examples (TypeScript)
 
@@ -561,3 +561,14 @@ riksdag-regering-mcp
 **Version**: 1.0  
 **Last Updated**: 2026-02-06  
 **Maintained by**: Hack23 AB
+
+
+---
+
+## 🔗 Integration with agentic workflows & analysis artifacts
+
+This skill is consumed by the 12 agentic news workflows in `.github/workflows/news-*.md`. The authoritative contract lives in [`.github/prompts/README.md`](../../prompts/README.md); this skill supplies domain expertise on top of that contract.
+
+- **Analysis product** → [`ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + every template in [`analysis/templates/`](../../../analysis/templates/).
+- **Required before any article**: 9 core artifacts (14 for Tier-C) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`; [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) is the single blocking gate.
+- **gh-aw v0.69.3** docs: [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).

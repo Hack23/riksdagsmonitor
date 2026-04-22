@@ -644,88 +644,33 @@ gh attestation verify riksdagsmonitor-v1.0.0.zip -R Hack23/riksdagsmonitor
 - [🏷️ Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) — CIA triad, RTO/RPO, business impact
 
 ### GitHub Copilot Integration
-- [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks (14 agents)
-- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance (87 skills)
-- [`.github/agents/`](.github/agents/) - Agent configuration files
-- [`.github/skills/`](.github/skills/) - Skill libraries
 
-**Available Agents (14)**:
-- **security-architect** - Security architecture and ISMS compliance
-- **documentation-architect** - C4 models and technical documentation
-- **quality-engineer** - HTML/CSS validation and accessibility
-- **frontend-specialist** - Static site development and responsive design
-- **isms-compliance-manager** - ISO 27001/NIST CSF/CIS Controls compliance
-- **deployment-specialist** - GitHub Actions and CI/CD automation
-- **intelligence-operative** - Political intelligence analysis, OSINT, Swedish politics expertise, riksdag-regering-mcp (32 tools)
-- **task-agent** - Product excellence, quality assurance, Playwright testing, issue management
-- **ui-enhancement-specialist** - Static HTML/CSS, responsive design, 14-language support, WCAG 2.1 AA
-- **data-pipeline-specialist** - CIA data consumption, ETL workflows, caching strategies, data validation
-- **data-visualization-specialist** - Chart.js/D3.js, interactive dashboards, CIA intelligence visualizations
-- **content-generator** - Automated news generation, intelligence reports, multi-language content
-- **devops-engineer** - CI/CD pipelines, GitHub Actions security, infrastructure automation, monitoring
-- **news-journalist** - Political journalism, editorial standards, multi-language news coverage
+Riksdagsmonitor uses **GitHub Copilot personas, skills, and agentic workflows** as first-class automation. The directory READMEs are the single source of truth; [`AGENTS.md`](AGENTS.md) and [`SKILLS.md`](SKILLS.md) are the long-form reference catalogs.
 
-**Available Skills (87)**:
+- [`.github/agents/README.md`](.github/agents/README.md) — **24 agent files** (14 persona agents + 9 workflow-specialist `.agent.md` + shared `developer.instructions.md`)
+- [`.github/skills/README.md`](.github/skills/README.md) — **91 skills** grouped by 12 functional categories
+- [`.github/prompts/README.md`](.github/prompts/README.md) — 8 bounded-context prompt modules + Tier-C extension, imported by every agentic news workflow
+- [`.github/workflows/README.md`](.github/workflows/README.md) — 45 workflow files (standard + agentic)
+- [AGENTS.md](AGENTS.md) — canonical persona catalog with skill-mapping tables and invocation examples
+- [SKILLS.md](SKILLS.md) — canonical skill catalog with agent-skill mappings
 
-*Core Infrastructure (7):*
-- **hack23-isms-compliance** - ISMS framework requirements
-- **security-by-design** - Security best practices
-- **static-site-security** - Static website security
-- **ci-cd-security** - GitHub Actions security hardening
-- **documentation-standards** - Documentation guidelines
-- **html-accessibility** - WCAG 2.1 AA compliance
-- **multi-language-localization** - Internationalization best practices
+**14 Persona Agents** (assignable via `assign_copilot_to_issue`):
 
-*Political Intelligence (11):*
-- **political-science-analysis** - Comparative politics and policy analysis frameworks
-- **osint-methodologies** - Open-source intelligence collection and verification
-- **intelligence-analysis-techniques** - Structured analytic techniques (ACH, SWOT)
-- **swedish-political-system** - Riksdag structure, 8 parties, electoral system
-- **electoral-analysis** - Election forecasting and coalition prediction
-- **behavioral-analysis** - Political psychology and leadership analysis
-- **strategic-communication-analysis** - Narrative analysis and media monitoring
-- **legislative-monitoring** - Voting patterns and parliamentary oversight
-- **risk-assessment-frameworks** - Political risk and corruption indicators
-- **data-science-for-intelligence** - Statistical analysis and visualization
-- **gdpr-compliance** - GDPR compliance for political data processing
+- **security-architect** · **documentation-architect** · **quality-engineer** · **frontend-specialist** · **isms-compliance-manager** · **deployment-specialist** · **devops-engineer** · **intelligence-operative** · **news-journalist** · **content-generator** · **data-pipeline-specialist** · **data-visualization-specialist** · **task-agent** · **ui-enhancement-specialist**
 
-*ISMS & Security (6):*
-- **cis-controls** - CIS Controls v8.1 for static sites
-- **iso-27001-controls** - ISO 27001:2022 Annex A controls
-- **nist-csf-mapping** - NIST CSF 2.0 framework mapping
-- **threat-modeling** - STRIDE threat analysis
-- **secure-code-review** - HTML/CSS/JS security review
-- **security-documentation** - ISMS documentation standards
+**9 Workflow-Specialist Agents** (`.agent.md`, invoked by name from workflows): `agentic-workflows` · `ci-cleaner` · `contribution-checker` · `create-safe-output-type` · `custom-engine-implementation` · `grumpy-reviewer` · `interactive-agent-designer` · `technical-doc-writer` · `w3c-specification-writer`
 
-*Development & Operations (11):* ⬆️ **EXPANDED**
-- **c4-architecture-documentation** - C4 model and Mermaid diagrams
-- **github-actions-workflows** - CI/CD patterns and security
-- **code-quality-checks** - HTMLHint, CSSLint, linkinator, axe-core
-- **secrets-management** - GitHub secrets and PAT management
-- **data-pipeline-engineering** ✨ **NEW** - ETL workflows, automated data fetching
-- **automated-content-generation** ✨ **NEW** - News generation, intelligence reports
-- **performance-optimization** ✨ **NEW** - Core Web Vitals, bundle size, caching
-- **api-integration** ✨ **NEW** - REST/GraphQL clients, rate limiting
-- **github-agentic-workflows** ✨ **NEW** - AI-powered repository automation, MCP tools, safe outputs
+**Available Skills (91)** — see [`.github/skills/README.md`](.github/skills/README.md) for the complete catalog across:
 
-*UI/UX & Design (4):* ⬆️ **EXPANDED**
-- **responsive-design** - Mobile-first, CSS Grid/Flexbox, breakpoints (320px-1440px+)
-- **design-system-management** - Cyberpunk theme, CSS variables, component library
-- **political-data-visualization** - CSS-only charts, heat maps, dashboards
-- **advanced-data-visualization** ✨ **NEW** - Chart.js/D3.js, interactive dashboards
-
-*Testing & Quality Assurance (2):* ✨ **NEW**
-- **playwright-testing** - Browser automation, visual regression, accessibility audits
-- **issue-management** - GitHub issue creation, labeling, agent assignment
-
-*Data Integration (2):* ⬆️ **EXPANDED**
-- **riksdag-regering-mcp** - 32 political data tools (Parliament, Government, MPs, votes)
-- **cia-data-integration** ✨ **NEW** - CIA export consumption, validation, caching strategies
+- 🛡️ Core Infrastructure & Governance (9) · 🕵️ Political Intelligence (11) · 🔐 ISMS & Security (14)
+- ⚙️ Development & Operations (14) · 🧪 Testing & QA (2) · 🎨 UI/UX & Design (8)
+- 📡 Data Integration (6) · 📰 Journalism & Media (5) · 🏛️ Government, Regulatory & Economics (7)
+- 🗣️ Language & Localization (1) · 🤖 GitHub Agentic Workflows (13) · 📋 Copilot Patterns (1)
 
 *Economic-Data Integrations (three primary sources, parity-treated):*
 - **scb-mcp** (`@jarib/pxweb-mcp@2.0.0`) — official Swedish statistics via PxWebAPI 2.0 (1,200+ tables)
 - **world-bank-mcp** (`worldbank-mcp@1.0.1`) + `scripts/world-bank-client.ts` — WGI governance, environment, long-horizon social/education
-- **IMF TypeScript client** (`scripts/imf-client.ts`) ✨ **NEW** — WEO, Fiscal Monitor, IFS, GFS_COFOG via Datamapper JSON + SDMX 3.0; macro/fiscal freshness + T+5 projections. **Intentionally not an MCP server** — pure-TS, fully covered by the npm SBOM (ADR 0001); `package.json` `x-external-mcp` stays empty, so the **8 MCP servers** count is unchanged.
+- **IMF TypeScript client** (`scripts/imf-client.ts`) — WEO, Fiscal Monitor, IFS, GFS_COFOG via Datamapper JSON + SDMX 3.0; macro/fiscal freshness + T+5 projections. **Intentionally not an MCP server** — pure-TS, fully covered by the npm SBOM (ADR 0001).
 
 ### External Documentation
 - [CIA Platform Documentation](https://hack23.github.io/cia/)
@@ -735,13 +680,66 @@ gh attestation verify riksdagsmonitor-v1.0.0.zip -R Hack23/riksdagsmonitor
 - [Hack23 Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
 - [Hack23 Blog](https://hack23.com/blog.html)
 
+## 🔬 Political Intelligence Analysis & News Creation
+
+Riksdagsmonitor is built around two tightly-coupled product lines: **deep political intelligence analysis** and **autonomous news article creation**. Every news article is backed by a reproducible analysis artifact trail on disk.
+
+### End-to-end pipeline
+
+```mermaid
+flowchart LR
+  A[📥 MCP + CIA + SCB + IMF<br/>data download] --> B[📐 Apply methodology<br/>analysis/methodologies]
+  B --> C[📋 Populate templates<br/>analysis/templates]
+  C --> D[📂 Write 9 or 14 artifacts<br/>analysis/daily/$DATE/$SUBFOLDER]
+  D --> E{🚦 Analysis Gate<br/>prompts/05}
+  E -- pass --> F[📰 Generate article<br/>prompts/06]
+  E -- fail --> C
+  F --> G[🌐 Translate into<br/>remaining 12 languages]
+  G --> H[🔀 One PR per article type<br/>prompts/07]
+  style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  style E fill:#dc3545,stroke:#b02a37,color:#fff
+  style H fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+```
+
+### Vital documents
+
+| Area | Document | What you'll find |
+|------|----------|------------------|
+| **Analysis framework** | [`analysis/README.md`](analysis/README.md) | Artifact taxonomy, 9-artifact / 14-artifact contract, daily-output layout |
+| **Methodology library** | [`analysis/methodologies/README.md`](analysis/methodologies/README.md) | 11 methodology documents (AI-driven guide, per-document protocol, risk/SWOT/threat frameworks, synthesis, electoral, classification, style) |
+| **Template library** | [`analysis/templates/README.md`](analysis/templates/README.md) | 23 templates — 8 core single-type (T1–T8) + 15 extended/Tier-C (scenario, executive-brief, coalition-mathematics, election-2026, historical-parallels, comparative-international, devil's advocate, etc.) |
+| **News-generation contract** | [`.github/prompts/README.md`](.github/prompts/README.md) | 8 bounded-context prompt modules + Tier-C extension; single blocking analysis gate |
+| **Workflow orchestration** | [`.github/workflows/README.md`](.github/workflows/README.md) + [`WORKFLOWS.md`](WORKFLOWS.md) §Stage 6.1 | How each `news-*.md` source compiles to a hardened `.lock.yml` with SHA-pinned actions, egress firewall, and five-layer safe-outputs |
+| **Specialist personas** | [`.github/agents/README.md`](.github/agents/README.md) | `intelligence-operative`, `news-journalist`, `content-generator` — and 11 more |
+| **Rules that guide the agents** | [`.github/skills/README.md`](.github/skills/README.md) | 11 political-intelligence skills + 5 journalism skills + 14 ISMS/security skills |
+
+### Data sources used during analysis
+
+- **Riksdagen & Regeringen** via `riksdag-regering-mcp` (32 tools): MPs, votes, documents, speeches, committees, government docs
+- **Statistics Sweden (SCB)** via `@jarib/pxweb-mcp@2.0.0` (1 200+ PxWeb tables)
+- **World Bank Open Data** via `worldbank-mcp@1.0.1` + `scripts/world-bank-client.ts` (WGI governance, environment, education)
+- **IMF** via `scripts/imf-client.ts` (pure-TS, WEO + Fiscal Monitor + IFS + GFS_COFOG, T+5 projections)
+- **CIA platform** (Hack23) — 19 visualisation products consumed nightly via `update-cia-csv-data.yml`
+
+---
+
 ## 🤖 AI-Disrupted News Generation
 
-> *"While traditional newsrooms debate whether AI will replace journalists, Riksdagsmonitor already runs a fully autonomous political intelligence newsroom — 10 agentic workflows, 14 languages, zero human editors, and a publication schedule that would bankrupt any legacy outlet trying to keep up."*
+> *"While traditional newsrooms debate whether AI will replace journalists, Riksdagsmonitor already runs a fully autonomous political intelligence newsroom — 12 agentic workflows, 14 languages, zero human editors, and a publication schedule that would bankrupt any legacy outlet trying to keep up."*
 
-Riksdagsmonitor's **agentic news generation pipeline** is the world's first fully AI-driven political intelligence newsroom for parliamentary monitoring. Powered by Claude Opus (currently 4.6) via GitHub Copilot Coding Agent, our 10 specialized workflows (9 scheduled + 1 on-demand) autonomously produce deep political analysis — not shallow summaries, but structured intelligence products with source verification, multi-party balance, and GDPR-compliant OSINT methodology.
+Riksdagsmonitor's **agentic news generation pipeline** is the world's first fully AI-driven political intelligence newsroom for parliamentary monitoring. Powered by Claude Opus (currently 4.7) via GitHub Copilot Coding Agent, our **12 specialized workflows** (11 scheduled + 1 on-demand, plus 1 dedicated translation workflow) autonomously produce deep political analysis — not shallow summaries, but structured intelligence products with source verification, multi-party balance, and GDPR-compliant OSINT methodology.
 
-### 📰 Autonomous Publication Schedule
+> 📚 **Directory-level catalogs** (single sources of truth):
+> - [`.github/workflows/README.md`](.github/workflows/README.md) — 45 workflow files (21 standard `.yml` + 12 agentic `.md` sources + 12 compiled `.lock.yml`)
+> - [`.github/prompts/README.md`](.github/prompts/README.md) — 8 bounded-context prompt modules + `ext/tier-c-aggregation.md`, imported by every news workflow
+> - [`.github/agents/README.md`](.github/agents/README.md) — 24 Copilot agent files (14 personas + 9 workflow-specialists + 1 shared developer-instructions)
+> - [`.github/skills/README.md`](.github/skills/README.md) — 91 skills grouped by 12 functional categories
+> - [`analysis/README.md`](analysis/README.md) — on-disk artifact layout (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) with 9-artifact / 14-artifact contracts
+> - [`analysis/methodologies/README.md`](analysis/methodologies/README.md) — 11 methodology documents
+> - [`analysis/templates/README.md`](analysis/templates/README.md) — 23 canonical output templates (8 core single-type + 15 extended / Tier-C)
+> - [`WORKFLOWS.md`](WORKFLOWS.md) — canonical end-to-end reference (v7.2, includes Stage 6.1 *Agentic Workflow Structure & Prompt Imports*)
+
+### Autonomous Publication Schedule
 
 Every day, the platform's AI operatives awaken on cron schedules, query the Swedish Parliament's open data via **32 MCP tools**, cross-reference government sources, and generate publication-ready intelligence articles in **14 languages** — including RTL support for Arabic and Hebrew.
 
@@ -750,15 +748,17 @@ Every day, the platform's AI operatives awaken on cron schedules, query the Swed
 | 🌅 04:00 | **Committee Reports** | Utskottsbetänkanden analysis, voting breakdowns | Mon–Fri |
 | 🌅 05:00 | **Propositions** | Government bills, legislative impact assessment | Mon–Fri |
 | ☀️ 06:00 | **Motions** | Opposition proposals, party strategy decoding | Mon–Fri |
-| ☀️ 07:00 | **Week Ahead** | Parliamentary calendar preview, agenda intelligence | Friday |
-| ☀️ 08:00 | **Month Ahead** | Strategic outlook, coalition forecasting | 1st of month |
+| ❓ 07:00 | **Interpellations** | Ministerial accountability, evasion detection | Mon–Fri |
+| 🔮 07:00 | **Week Ahead** | Parliamentary calendar preview, agenda intelligence | Friday |
+| 📅 08:00 | **Month Ahead** | Strategic outlook, coalition forecasting | 1st of month |
 | 🔍 10:00 & 14:00 (Mon–Fri); 12:00 (Sat/Sun) | **Realtime Monitor** | Breaking political developments, flash analysis | Mon–Fri (×2) + weekends |
+| 🌍 11:00 & 17:00 (Mon–Fri); 14:00 (Sat/Sun) | **Translate** | 12 additional languages from EN/SV cores | Daily |
 | 🌆 18:00 (16:00 Sat) | **Evening Analysis** | Deep-dive intelligence synthesis | Mon–Sat |
 | 📊 09:00 | **Weekly Review** | Week-in-review scorecard, party performance | Saturday |
 | 📈 10:00 | **Monthly Review** | Comprehensive monthly intelligence assessment | 28th of month |
-| 🔧 Manual | **Article Generator** | On-demand article generation | On-demand |
+| 🔧 Manual | **Article Generator** | On-demand article generation / backfill | On-demand |
 
-> _All times are **UTC** (GitHub Actions cron). For local time, convert to CET/CEST. Authoritative schedules defined in `.github/workflows/news-*.lock.yml` workflows._
+> _All times are **UTC** (GitHub Actions cron). For local time, convert to CET/CEST. Authoritative schedules defined in `.github/workflows/news-*.lock.yml` workflows — see [`.github/workflows/README.md`](.github/workflows/README.md) for the complete inventory._
 
 > **Result**: Dozens of articles per week across 14 languages — delivering **hundreds of localized intelligence products each month**, generated autonomously with zero editorial intervention.
 
@@ -789,7 +789,7 @@ timeline
     title Riksdagsmonitor Evolution — 2026 to 2037
     section Phase 3 — Foundation (2026)
         Q1-Q2 : TypeScript migration ✅
-               : 10 agentic news workflows ✅
+               : 12 agentic news workflows ✅
                : 34 GitHub Actions workflows + 10 agent prompt files
                : Dual deployment (S3 + GitHub Pages)
         Q3-Q4 : CIA data pipeline integration
@@ -838,7 +838,7 @@ timeline
 graph LR
     subgraph SGCompleted["✅ Completed"]
         style SGCompleted fill:#006400,stroke:#00d9ff,color:#e0e0e0
-        A[TypeScript Migration<br/>31 modules] --> B[Agentic News Gen<br/>10 workflows]
+        A[TypeScript Migration<br/>31 modules] --> B[Agentic News Gen<br/>12 workflows]
         B --> C[14 Languages<br/>RTL support]
         C --> D[Dual Deploy<br/>S3 + GitHub Pages]
     end
@@ -858,7 +858,7 @@ graph LR
 | Capability | Status | Details |
 |:-----------|:------:|:--------|
 | TypeScript migration | ✅ Done | 31 modules, 2890 Vitest tests |
-| Agentic news generation | ✅ Live | 10 workflows (9 scheduled + 1 on-demand), 14 languages |
+| Agentic news generation | ✅ Live | 12 workflows (11 scheduled + 1 on-demand), 14 languages |
 | 14-language support | ✅ Live | Including Arabic/Hebrew RTL |
 | CIA data integration | 🔄 Active | 19 visualization products |
 | Predictive dashboards | 📋 Planned | Chart.js/D3.js interactive displays |

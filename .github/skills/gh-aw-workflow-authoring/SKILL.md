@@ -102,7 +102,12 @@ timeout-minutes: 10     # Execution timeout
 concurrency:            # Concurrency control
   group: ${{ github.ref }}
   cancel-in-progress: true
+imports:                # Reusable prompt modules (resolved relative to workflow file)
+  - ../prompts/00-base-contract.md
+  - ../prompts/07-commit-and-pr.md
 ```
+
+**Factoring shared rules** — prefer `imports:` over inlining large prompt blocks. In this repo see `.github/prompts/` for a bounded-context example: 8 core modules + 1 Tier-C extension, each ≤ 300 lines, with a dependency matrix in the `README.md`. Workflow `.md` files stay ≤ 200 lines of body and contain only workflow-unique business rules.
 
 ## 🛠️ Tools Configuration
 
@@ -1045,3 +1050,16 @@ tools:
 **Version**: 2.0.0  
 **Last Updated**: 2026-04-02  
 **Maintained by**: Hack23 AB
+
+
+---
+
+## 🔗 Integration with Riksdagsmonitor agentic workflows
+
+This gh-aw skill is applied by the 12 agentic news workflows in `.github/workflows/news-*.md`. Their domain contract (analysis-artifact product, gate, article contract) lives in:
+
+- [`.github/prompts/README.md`](../../prompts/README.md) — module catalogue, import rules, AI-FIRST 2-pass rule.
+- [`analysis/methodologies/ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + [`analysis/templates/`](../../../analysis/templates/) — 9 core / 14 Tier-C artifacts.
+- [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) — the single blocking gate before any article content is written.
+
+**Upstream gh-aw docs** (v0.69.3): [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [source repo](https://github.com/github/gh-aw) · [GitHub CLI manual](https://cli.github.com/manual/).

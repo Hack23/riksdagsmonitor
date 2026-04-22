@@ -946,6 +946,8 @@ imports:
   - code-style-rules.md
 ```
 
+Paths are resolved **relative to the workflow file**. At compile time `gh aw compile` rewrites each import as a `{{#runtime-import <path>}}` directive in the generated `.lock.yml`, which is then inlined into the prompt at run-time. Imports are the preferred way to factor shared rules out of individual workflows — see this repo's `.github/prompts/README.md` for a bounded-context example with 8 modules + a Tier-C extension.
+
 ### Labels (Organization)
 
 ```yaml
@@ -1813,3 +1815,16 @@ See [`Hack23/riksdagsmonitor`](https://github.com/Hack23/riksdagsmonitor):
 
 **Last Updated**: 2026-02-15  
 **Maintained by**: Hack23 AB
+
+
+---
+
+## 🔗 Integration with Riksdagsmonitor agentic workflows
+
+This gh-aw skill is applied by the 12 agentic news workflows in `.github/workflows/news-*.md`. Their domain contract (analysis-artifact product, gate, article contract) lives in:
+
+- [`.github/prompts/README.md`](../../prompts/README.md) — module catalogue, import rules, AI-FIRST 2-pass rule.
+- [`analysis/methodologies/ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + [`analysis/templates/`](../../../analysis/templates/) — 9 core / 14 Tier-C artifacts.
+- [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) — the single blocking gate before any article content is written.
+
+**Upstream gh-aw docs** (v0.69.3): [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [source repo](https://github.com/github/gh-aw) · [GitHub CLI manual](https://cli.github.com/manual/).

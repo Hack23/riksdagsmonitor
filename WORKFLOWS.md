@@ -866,6 +866,179 @@ graph TB
 
 ---
 
+### 🧩 Stage 6.1: Agentic Workflow Structure & Prompt Imports
+
+Every `news-*.md` source in `.github/workflows/` is a **gh-aw workflow** — a Markdown file whose YAML frontmatter compiles down, via `gh aw compile`, to a hardened GitHub Actions `.lock.yml`. A workflow is made up of three layers:
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│  news-<type>.md                                                         │
+│  ├── Frontmatter (name, triggers, runtimes, network, tools, mcp-servers)│
+│  ├── imports:                                                           │
+│  │    ├── prompts/00-base-contract.md      ← role, ethics, AI-FIRST     │
+│  │    ├── prompts/01-bash-and-shell-safety.md                           │
+│  │    ├── prompts/02-mcp-access.md         ← MCP inventory + health     │
+│  │    ├── prompts/03-data-download.md      ← download pipeline          │
+│  │    ├── prompts/04-analysis-pipeline.md  ← 9 core artifacts, Pass 1+2 │
+│  │    ├── prompts/05-analysis-gate.md      ← BLOCKING artifact gate     │
+│  │    ├── prompts/06-article-generation.md ← sections, banned patterns  │
+│  │    └── prompts/07-commit-and-pr.md      ← stage → commit → PR        │
+│  ├── (Tier-C only) imports: prompts/ext/tier-c-aggregation.md ← 14 artifacts │
+│  └── Body = per-type instructions (e.g. "generate propositions article")│
+└─────────────────────────────────────────────────────────────────────────┘
+                                │
+                                │  gh aw compile
+                                ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│  news-<type>.lock.yml    (the only file GitHub Actions executes)        │
+│  ├── SHA-pinned actions (100%)                                          │
+│  ├── step-security/harden-runner with egress audit                      │
+│  ├── Squid proxy + iptables firewall over network.allowed:              │
+│  ├── Five-layer safe-outputs validator                                  │
+│  └── MCP servers wired: riksdag-regering, scb, world-bank               │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Import order is a contract
+
+The import order is **not arbitrary** — each module builds on the previous one, and [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) is a single blocking gate that refuses to let the agent draft a single article sentence until **9 of 9 core artifacts** (single-type) or **14 of 14 artifacts** (Tier-C aggregation) are on disk in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` for both Pass 1 and Pass 2.
+
+| Import # | Module | Responsibility | What fails fast if missing |
+|---------:|--------|----------------|----------------------------|
+| 1 | `00-base-contract.md` | Role, editorial ethics, GDPR, ISMS, AI-FIRST 2-pass minimum | Ethics drift, privacy leaks, shallow output |
+| 2 | `01-bash-and-shell-safety.md` | UTF-8 shell patterns, no `eval`, no shell-expansion exploits | Command injection, encoding corruption |
+| 3 | `02-mcp-access.md` | MCP server inventory + health probe | Wrong tool called, missing data source |
+| 4 | `03-data-download.md` | Download manifest, source attribution, caching | Unsourced claims |
+| 5 | `04-analysis-pipeline.md` | 9 core artifacts, methodology → template bindings, Pass 1 + Pass 2 | Shallow analysis, template mismatch |
+| 6 | **`05-analysis-gate.md`** | **Blocks article generation until artifacts are complete** | *Any article written before gate passes → workflow failure* |
+| 7 | `06-article-generation.md` | Article sections, banned hype patterns, visualisation, translations | Boilerplate content, missing charts |
+| 8 | `07-commit-and-pr.md` | Stage → commit → exactly one `create_pull_request` call | Orphan commits, duplicate PRs |
+| 9 (Tier-C only) | `ext/tier-c-aggregation.md` | 14-artifact aggregation gate, period multipliers | Aggregation without base artifacts |
+
+#### Dependency graph
+
+```mermaid
+flowchart TB
+  subgraph WF["news-&lt;type&gt;.md (workflow source)"]
+    FM[Frontmatter<br/>triggers · runtimes · network · mcp-servers]
+    BODY[Body<br/>per-type analysis instructions]
+  end
+
+  subgraph PROMPTS[".github/prompts/ (shared bounded contexts)"]
+    P00[00-base-contract]
+    P01[01-bash-and-shell-safety]
+    P02[02-mcp-access]
+    P03[03-data-download]
+    P04[04-analysis-pipeline]
+    P05[05-analysis-gate ⚠️ blocking]
+    P06[06-article-generation]
+    P07[07-commit-and-pr]
+    PEXT[ext/tier-c-aggregation]
+  end
+
+  subgraph METH["analysis/methodologies/"]
+    M1[ai-driven-analysis-guide]
+    M2[per-document-methodology]
+    M3[political-risk-methodology]
+    M4[political-swot-framework]
+    M5[political-threat-framework]
+    M6[synthesis-methodology]
+  end
+
+  subgraph TPL["analysis/templates/ (23 output templates)"]
+    T1[per-file-political-intelligence]
+    T2[risk-assessment]
+    T3[swot-analysis]
+    T4[threat-analysis]
+    T5[stakeholder-impact]
+    T6[scenario-analysis]
+    T7[significance-scoring]
+    T8[executive-brief]
+    T9[cross-reference-map]
+    T10[synthesis-summary]
+    T11[devils-advocate]
+    T12[methodology-reflection]
+    T13[… + 11 more]
+  end
+
+  FM --> P00 --> P01 --> P02 --> P03 --> P04 --> P05 --> P06 --> P07
+  P04 -.binds.-> METH
+  P04 -.binds.-> TPL
+  P05 -.verifies.-> TPL
+  BODY --> PEXT
+  PEXT -. Tier-C only .-> P05
+
+  style P05 fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:3px
+  style PEXT fill:#fd7e14,color:#fff,stroke:#ca6510
+```
+
+#### Single-type vs. Tier-C artifact contract
+
+| Contract | Applies to | Required artifacts | Source |
+|----------|-----------|-------------------:|--------|
+| **Single-type** (9 artifacts) | `news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations`, `news-article-generator` (per call) | **9** | [`prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) |
+| **Tier-C aggregation** (14 artifacts) | `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review` | **14** | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) |
+| **Translation** (N/A) | `news-translate` | N/A (post-hoc) | Direct text pipeline |
+
+All artifacts are written under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` — see [`analysis/README.md`](analysis/README.md) for the on-disk layout and [`analysis/templates/README.md`](analysis/templates/README.md) for the 23 canonical templates.
+
+#### MCP server wiring (identical across all 12 agentic workflows)
+
+```yaml
+mcp-servers:
+  riksdag-regering:                           # HTTP (hosted)
+    url: https://riksdag-regering-ai.onrender.com/mcp
+    allowed: ["*"]
+  scb:                                         # Container (per-run)
+    container: "node:25-alpine"
+    entrypoint: "npx"
+    entrypointArgs: ["-y", "@jarib/pxweb-mcp@2.0.0",
+                     "--url", "https://api.scb.se/OV0104/v2beta"]
+    allowed: ["*"]
+  world-bank:                                  # Container (per-run)
+    container: "node:25-alpine"
+    entrypoint: "npx"
+    entrypointArgs: ["-y", "worldbank-mcp@1.0.1"]
+    allowed: ["*"]
+```
+
+In addition, every workflow activates the gh-aw-provided `github` (all toolsets), `agentic-workflows`, `bash`, `playwright`, and `repo-memory` tools. IMF ingestion is **not** an MCP server — it is pulled by `scripts/imf-client.ts` (pure-TS Datamapper JSON + SDMX 3.0 client), fully covered by the npm SBOM, so the total MCP server count remains **8** (3 shared here + 5 repo-level in `.github/copilot-mcp.json`).
+
+#### Network egress allow-list (applies to every agentic workflow)
+
+```yaml
+network:
+  allowed:
+    - node                              # npm registry ecosystem
+    - github                            # GitHub API
+    - defaults                          # Curated dev domains
+    - riksdag-regering-ai.onrender.com  # Riksdag MCP
+    - api.scb.se                        # Statistics Sweden
+    - api.worldbank.org                 # World Bank
+    - api.imf.org                       # IMF (for imf-client.ts)
+    - data.riksdagen.se                 # Riksdag open data
+    - riksdagen.se / www.riksdagen.se   # Riksdag website
+    - regeringen.se / www.regeringen.se # Government website
+    - hack23.com / www.hack23.com       # Hack23 platform
+    - riksdagsmonitor.com               # This platform
+    - raw.githubusercontent.com         # Raw GitHub content
+    - hack23.github.io                  # GitHub Pages DR
+```
+
+Any outbound connection not matching this allow-list is dropped at the Squid proxy / iptables layer.
+
+#### Compilation lifecycle
+
+1. Author edits `news-<type>.md`.
+2. PR triggers [`compile-agentic-workflows.yml`](.github/workflows/compile-agentic-workflows.yml).
+3. That workflow runs `gh aw compile` to regenerate the sibling `.lock.yml`.
+4. Reviewer inspects the `.md` *source of truth* and confirms the `.lock.yml` diff.
+5. Once merged, the next cron/dispatch runs the `.lock.yml` under the hardened runner.
+
+> **Rule:** never edit a `.lock.yml` by hand — the next compilation pass will overwrite it. All review feedback must target the `.md` source and the prompt modules it imports.
+
+---
+
 ### 📡 Stage 7: Monitoring & Infrastructure
 
 ```mermaid
@@ -1148,7 +1321,7 @@ flowchart TB
 - [CRA-ASSESSMENT.md](CRA-ASSESSMENT.md) — EU Cyber Resilience Act conformity
 - [FUTURE_WORKFLOWS.md](FUTURE_WORKFLOWS.md) — Future workflow projections
 - [AGENTS.md](AGENTS.md) — Custom agent reference (14 agents)
-- [SKILLS.md](SKILLS.md) — Skill definitions (87 skills)
+- [SKILLS.md](SKILLS.md) — Skill definitions (91 skills)
 
 ### External Tools
 - [step-security/harden-runner](https://github.com/step-security/harden-runner) — Workflow security
@@ -1158,6 +1331,6 @@ flowchart TB
 
 ---
 
-**📋 Document Owner:** CEO | **📄 Version:** 7.0 | **📅 Last Updated:** 2026-03-27 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-27
+**📋 Document Owner:** CEO | **📄 Version:** 7.2 | **📅 Last Updated:** 2026-04-20 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20
 **🏢 Classification:** Public | **🏛️ Owner:** Hack23 AB (Org.nr 5595347807)

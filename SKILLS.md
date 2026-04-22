@@ -4,6 +4,9 @@
 
 Agent skills are strategic, high-level principles and best practices that guide Copilot agents in performing their tasks. Skills are automatically loaded when relevant to the current context, providing agents with specialized knowledge without cluttering the main prompt.
 
+> **Directory-level catalog:** [`.github/skills/README.md`](.github/skills/README.md) — compact 91-skill catalog grouped by 12 functional categories.
+> **Companion docs:** [`AGENTS.md`](AGENTS.md) · [`.github/agents/README.md`](.github/agents/README.md) · [`.github/prompts/README.md`](.github/prompts/README.md) · [`.github/workflows/README.md`](.github/workflows/README.md)
+
 ## What Are Skills?
 
 Skills are structured instruction sets stored in `.github/skills/` that teach agents:
@@ -18,7 +21,7 @@ Skills are:
 - ✅ **Reusable**: Apply across multiple tasks
 - ✅ **Context-Aware**: Load only when relevant
 
-## Available Skills (87 Total) ✨ **UPDATED 2026-02-20**
+## Available Skills (91 Total) ✨ **UPDATED 2026-04-22**
 
 ### Core Infrastructure (9 skills) ⬆️ **EXPANDED**
 1. hack23-isms-compliance
@@ -89,49 +92,53 @@ Skills are:
 56. playwright-testing
 57. issue-management
 
-### Data Integration (4 skills) ⬆️ **EXPANDED**
+### Data Integration (6 skills) ⬆️ **EXPANDED**
 58. riksdag-regering-mcp
 59. cia-data-integration
 60. **mcp-server-development** ✨ **NEW** (2026-02-20) - MCP server patterns and transport protocols
 61. **european-parliament-api** ✨ **NEW** (2026-02-20) - EU Parliament Open Data integration
+62. **mcp-gateway-configuration** ✨ **NEW** (2026-04-22) - MCP gateway setup, routing, access control
+63. **mcp-gateway-security** ✨ **NEW** (2026-04-22) - Token management, request validation, audit logging
 
-### Business & Marketing (2 skills)
-62. marketing
-63. business-development
+### Business & Marketing (3 skills)
+64. marketing
+65. business-development
+66. **business-model-canvas** ✨ **NEW** (2026-04-22) - Business Model Canvas for open-source sustainability
 
 ### Language & Localization (1 skill)
-64. language-expertise
+67. language-expertise
 
 ### GitHub Agentic Workflows (12 skills)
-65. gh-aw-authentication-credentials
-66. gh-aw-containerization
-67. gh-aw-continuous-ai-patterns
-68. gh-aw-firewall
-69. gh-aw-github-actions-integration
-70. gh-aw-logging-monitoring
-71. gh-aw-mcp-configuration
-72. gh-aw-mcp-gateway
-73. gh-aw-safe-outputs
-74. gh-aw-security-architecture
-75. gh-aw-tools-ecosystem
-76. gh-aw-workflow-authoring
+68. gh-aw-authentication-credentials
+69. gh-aw-containerization
+70. gh-aw-continuous-ai-patterns
+71. gh-aw-firewall
+72. gh-aw-github-actions-integration
+73. gh-aw-logging-monitoring
+74. gh-aw-mcp-configuration
+75. gh-aw-mcp-gateway
+76. gh-aw-safe-outputs
+77. gh-aw-security-architecture
+78. gh-aw-tools-ecosystem
+79. gh-aw-workflow-authoring
 
 ### Journalism & Media (4 skills)
-77. editorial-standards
-78. investigative-journalism
-79. prospective-news-coverage
-80. comparative-politics-reporting
+80. editorial-standards
+81. investigative-journalism
+82. prospective-news-coverage
+83. comparative-politics-reporting
 
 ### Secure Development (3 skills)
-81. secure-development-lifecycle
-82. secure-development-policy
-83. compliance-checklist
+84. secure-development-lifecycle
+85. secure-development-policy
+86. compliance-checklist
 
-### Government & Regulatory (4 skills)
-84. global-government-analysis
-85. myndigheter-monitoring
-86. regulatory-affairs
-87. economic-policy-analysis
+### Government & Regulatory (5 skills) ⬆️ **EXPANDED**
+87. global-government-analysis
+88. myndigheter-monitoring
+89. regulatory-affairs
+90. economic-policy-analysis
+91. **seo-best-practices** ✨ **NEW** (2026-04-22) - Canonical URLs, sitemap, robots.txt, technical SEO
 
 ---
 
@@ -1632,7 +1639,7 @@ Many tasks benefit from combining multiple skills:
 
 ---
 
-**Last Updated**: 2026-02-20  
-**Total Skills**: 87  
-**New Skills (2026-02-20)**: 18 skills added from Hack23 repos (security, development, governance, platform, design)  
+**Last Updated**: 2026-04-22  
+**Total Skills**: 91  
+**New Skills (2026-02-20 → 2026-04-22)**: 18 skills added from Hack23 repos (security, development, governance, platform, design); +4 since 2026-02-20 (`seo-best-practices`, `global-government-analysis`, `investigative-journalism`, `myndigheter-monitoring` per catalog reconciliation)  
 **Maintained by**: Hack23 AB

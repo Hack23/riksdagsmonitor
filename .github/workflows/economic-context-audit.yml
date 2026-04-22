@@ -7,7 +7,7 @@
 # Scope: single hardened workflow — no MCP calls, no write tokens except
 # the one needed to open a maintenance issue. Follows the project
 # workflow security standards (least privilege, step-security/harden-runner,
-# SHA-pinned actions — see .github/aw/SHARED_PROMPT_PATTERNS.md).
+# SHA-pinned actions). See `.github/prompts/README.md` and ISMS CI/CD security guidance.
 #
 # Schema v2 cutover (2026-04-20 → 2026-05-31, grace window):
 # The validator currently accepts BOTH v1 artefacts (source.worldBank /

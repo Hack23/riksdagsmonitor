@@ -4,7 +4,10 @@
 
 This repository includes custom GitHub Copilot agents specialized for different aspects of the riksdagsmonitor project. Each agent has deep expertise in its domain and can be invoked to assist with specific tasks.
 
-## Available Agents (14 Total)
+> **Directory-level catalog:** [`.github/agents/README.md`](.github/agents/README.md) — summarises all **24 agent files** (14 persona agents + 9 workflow-specialist `.agent.md` + shared `developer.instructions.md`). This document is the long-form reference with invocation examples and per-agent skill mappings.
+> **Companion docs:** [`SKILLS.md`](SKILLS.md) · [`.github/skills/README.md`](.github/skills/README.md) · [`.github/prompts/README.md`](.github/prompts/README.md) · [`.github/workflows/README.md`](.github/workflows/README.md)
+
+## Available Agents (14 Personas)
 
 ### 1. Security Architect (`security-architect`)
 **Expertise**: Security architecture, ISMS compliance, threat modeling, ISO 27001/NIST CSF/CIS Controls
@@ -779,7 +782,7 @@ custom_instructions: `
 ```
 
 ### 3. Leverage Skills
-Agents automatically load relevant skills from `.github/skills/` (87 total skills across 12 categories):
+Agents automatically load relevant skills from `.github/skills/` (91 total skills across 12 categories):
 
 **Core Infrastructure (9)**:
 - `hack23-isms-compliance`, `security-by-design`, `static-site-security`

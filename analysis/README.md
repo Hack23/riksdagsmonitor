@@ -85,7 +85,7 @@
     <tr>
       <td><strong><a href="templates/README.md">Analysis Templates</a></strong></td>
       <td>📋 Templates</td>
-      <td>8 structured analysis output templates</td>
+      <td>23 structured analysis output templates (8 core single-type + 15 extended / Tier-C)</td>
       <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/README.md">View Source</a></td>
     </tr>
   </tbody>
@@ -153,9 +153,9 @@ flowchart LR
 | Validate output format (quality gate) | Fill template sections with generated content |
 | Move/rename files | Produce "placeholder" analysis that looks real |
 
-**The AI agent reads all 6 methodology guides, reads all 8 templates, reads the actual data, and produces genuine analytical content based on evidence found in the documents.**
+**The AI agent reads the 6 core methodology guides (of 11 total) and the 8 core output templates (of 23 total), reads the actual data, and produces genuine analytical content based on evidence found in the documents.** The remaining 5 methodology files (electoral-domain, political-style-guide, strategic-extensions, structural-metadata, ai-driven-analysis-guide) provide domain-specific and meta-methodology context; the remaining 15 templates cover Tier-C aggregation (scenario-analysis, executive-brief, coalition-mathematics, election-2026-analysis, historical-parallels, comparative-international, devils-advocate, forward-indicators, implementation-feasibility, intelligence-assessment, media-framing-analysis, methodology-reflection, voter-segmentation, data-download-manifest, cross-reference-map).
 
-**Fallback mechanism:** If AI analysis fails or produces unusable output (detected by the quality gate bash check in `SHARED_PROMPT_PATTERNS.md`), the workflow should:
+**Fallback mechanism:** If AI analysis fails or produces unusable output (detected by the quality gate bash check in `.github/prompts/` — see the README for the module catalogue), the workflow should:
 1. Commit a minimal `data-download-manifest.md` documenting what was downloaded
 2. Flag the analysis as `pending` for the next workflow run
 3. Never commit placeholder or stub content that masquerades as genuine analysis
@@ -244,7 +244,7 @@ flowchart LR
 Analysis artifacts are **genuine intelligence products** — not summaries or reformatted data — that enable:
 
 - 🔄 **Workflow composition**: Upstream agents deposit analysis; downstream agents consume it
-- 📐 **Consistent methodology**: 6 frameworks + 8 templates enforce analytical rigor
+- 📐 **Consistent methodology**: 6 core frameworks (of 11 methodology files) + 8 core templates (of 23 total output templates) enforce analytical rigor
 - 📊 **Full data analysis**: Every downloaded MCP file receives per-file deep analysis
 - 🧠 **Reusable intelligence**: Cross-workflow pattern sharing and knowledge accumulation
 - 🎯 **Quality assurance**: Minimum 7.0/10 quality gate before article generation
@@ -278,7 +278,7 @@ graph TB
         M5["✍️ Style"]
     end
 
-    subgraph "📋 Template Library (8 Templates)"
+    subgraph "📋 Template Library (8 Core Single-Type Templates + 15 Extended for Tier-C)"
         T1["🔍 Per-File Intel"]
         T2["🏷️ Classification"]
         T3["⚠️ Risk"]

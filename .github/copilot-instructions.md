@@ -11,9 +11,9 @@
 **Organization**: Hack23 AB
 **ISMS**: [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
 **Version**: 0.8.17
-**Agents**: 24 custom agents in `.github/agents/`
-**Skills**: 87+ skills in `.github/skills/` (including 12 gh-aw skills)
-**Workflows**: 35 GitHub Actions (23 standard + 12 agentic `.lock.yml`)
+**Agents**: 24 agent files (14 persona + 9 workflow-specialist + 1 developer-instructions) in `.github/agents/`
+**Skills**: 91 skills in `.github/skills/` (including 13 gh-aw skills)
+**Workflows**: 45 workflow files (21 standard `.yml` + 12 agentic `.md` sources + 12 compiled `.lock.yml`)
 **MCP Servers**: 8 configured (riksdag-regering, scb, world-bank, github, filesystem, memory, sequential-thinking, playwright)
 
 ## 🎯 Core Rules
@@ -34,7 +34,7 @@
 
 ### 4. Use Available Agents and Skills
 - 24 agents covering security, docs, quality, frontend, ISMS, deployment, devops, intelligence, news, content, data pipeline, data visualization, task management, UI enhancement, and gh-aw workflows
-- 87+ skills auto-load from `.github/skills/`
+- 91 skills auto-load from `.github/skills/`
 
 ### 5. 🔴 AI FIRST Quality Principle — Iterative Improvement Required
 > **ALL analysis and content generation MUST follow the AI FIRST principle: never accept first-pass quality.**
@@ -112,13 +112,22 @@ Map every security-relevant control to **ISO 27001:2022 Annex A**, **NIST CSF 2.
 
 ## 🤖 GitHub Agentic Workflows
 
-This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw v0.68.1) for AI-powered news generation. 12 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
+This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw v0.69.3, pinned via `gh-aw-actions/setup-cli@v0.69.3`) for AI-powered news generation. 12 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
 
 1. **Read-only tokens** — Agent gets only read permissions
 2. **Zero secrets in agent** — Write tokens isolated in separate jobs
 3. **Containerized + firewall** — Squid proxy domain allowlists, iptables
 4. **Safe outputs** — Structured artifacts with hard limits and validation
 5. **Threat detection** — AI scan blocks prompt injection and malicious code
+
+### Authoritative contract & analysis-artifact product
+
+The full workflow contract is split into bounded-context prompt modules under [`.github/prompts/`](prompts/) — see [`.github/prompts/README.md`](prompts/README.md) for the module catalogue. Every agent, skill, and workflow author must treat that directory as the **single source of truth** for how news workflows run.
+
+- **Analysis product** (the "deep political analysis" that must precede every article): authored per [`analysis/methodologies/ai-driven-analysis-guide.md`](../analysis/methodologies/ai-driven-analysis-guide.md) using the templates in [`analysis/templates/`](../analysis/templates/).
+- **Hard rule**: every news workflow MUST produce all **9 core artifacts** (single-type) or **14 artifacts** (Tier-C aggregation) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` before any article sentence is written. [`.github/prompts/05-analysis-gate.md`](prompts/05-analysis-gate.md) is the single blocking gate.
+- **AI-FIRST**: minimum 2 complete iterations (Pass 1 creates, Pass 2 reads back and improves) — see §"5. 🔴 AI FIRST Quality Principle" above.
+- **Upstream gh-aw documentation**: [abridged (llms-small.txt)](https://github.github.com/gh-aw/llms-small.txt) · [complete (llms-full.txt)](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [source repo](https://github.com/github/gh-aw) · [GitHub CLI manual](https://cli.github.com/manual/).
 
 ### Agentic Workflow Schedule
 - **Morning**: Propositions, committee reports, motions, interpellations

@@ -181,7 +181,7 @@ Before any draft is shared for Gate 2 review, verify:
 3. **Coverage completeness** — Every document with DIW-weighted score ≥ 7.0 receives a dedicated H3 section in article body. No silent omissions.
 4. **Rhetorical tension** — When top-ranked findings carry opposing political valences (e.g., norm entrepreneurship abroad + norm compression at home), an explicit "Rhetorical Cross-Cluster Tension" or equivalent subsection addresses the contradiction.
 
-Failure protocol: if any of 1–4 is not satisfied, the draft is returned to the writing agent with the specific missing element identified. **Doctrine**: `analysis/methodologies/ai-driven-analysis-guide.md` §"Rule 5: Democratic-Impact Weighting (DIW)". **Enforcement**: `SHARED_PROMPT_PATTERNS.md` §"🔴 MANDATORY: Lead-Story & Coverage-Completeness Gate".
+Failure protocol: if any of 1–4 is not satisfied, the draft is returned to the writing agent with the specific missing element identified. **Doctrine**: `analysis/methodologies/ai-driven-analysis-guide.md` §"Rule 5: Democratic-Impact Weighting (DIW) — Lead-Story & Coverage Discipline". **Enforcement**: this is an **editorial / human-review gate**, not a fully automated analysis-gate check. The analysis gate (`.github/prompts/05-analysis-gate.md`) provides partial automation — check 1 (artifact presence of `significance-scoring.md` which drives lead selection) and check 2 (per-document coverage ensuring every manifest `dok_id` has an analysis file a DIW-weighted finding can reference) — but lead-story choice, lede discipline, and article coverage completeness are not machine-enforced here and must be verified by a reviewer before publication.
 
 ## Error Correction Protocol
 
@@ -228,3 +228,14 @@ Failure protocol: if any of 1–4 is not satisfied, the draft is returned to the
 ---
 
 **Use this skill when**: Writing political news articles, editing submissions for quality and style, fact-checking claims before publication, training journalists on editorial standards, or establishing quality assurance processes for news operations.
+
+
+---
+
+## 🔗 Integration with agentic workflows & analysis artifacts
+
+This skill is consumed by the 12 agentic news workflows in `.github/workflows/news-*.md`. The authoritative contract lives in [`.github/prompts/README.md`](../../prompts/README.md); this skill supplies domain expertise on top of that contract.
+
+- **Analysis product** → [`ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + every template in [`analysis/templates/`](../../../analysis/templates/).
+- **Required before any article**: 9 core artifacts (14 for Tier-C) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`; [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) is the single blocking gate.
+- **gh-aw v0.69.3** docs: [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).

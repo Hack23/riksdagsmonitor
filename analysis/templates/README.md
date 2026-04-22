@@ -172,6 +172,43 @@ Every `methodology-reflection.md` includes an ICD 203 compliance checklist verif
 
 ---
 
+## 🤖 Artifact → workflow → gate check mapping
+
+The 12 agentic news workflows in `.github/workflows/news-*.md` render these templates into concrete artifacts under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. Authoring contract: [`.github/prompts/README.md`](../../.github/prompts/README.md).
+
+**9 core artifacts** (every news workflow):
+
+| Template | Produced artifact | Enforced by `05-analysis-gate.md` |
+|----------|-------------------|-----------------------------------|
+| [`synthesis-summary.md`](synthesis-summary.md) | `synthesis-summary.md` (lead story + DIW ranking + ≥ 1 Mermaid diagram) | Check 1 (presence), Check 5 (Mermaid) |
+| [`swot-analysis.md`](swot-analysis.md) | `swot-analysis.md` with TOWS matrix | Check 1, Check 4 (evidence) |
+| [`risk-assessment.md`](risk-assessment.md) | `risk-assessment.md` (top 5 risks, likelihood × impact) | Check 1 |
+| [`threat-analysis.md`](threat-analysis.md) | `threat-analysis.md` (attack tree + MITRE-style TTP) | Check 1 |
+| [`stakeholder-impact.md`](stakeholder-impact.md) | `stakeholder-perspectives.md` (named actors + influence network) | Check 1 |
+| [`significance-scoring.md`](significance-scoring.md) | `significance-scoring.md` (DIW scores + sensitivity) | Check 1, Check 4 (evidence per ranked item / table row / Mermaid node) |
+| [`political-classification.md`](political-classification.md) | `classification-results.md` (priority tiers, retention) | Check 1 |
+| [`cross-reference-map.md`](cross-reference-map.md) | `cross-reference-map.md` (continuity contracts) | Check 1 |
+| [`data-download-manifest.md`](data-download-manifest.md) | `data-download-manifest.md` (pre-computed by download step) | Check 1 |
+| [`per-file-political-intelligence.md`](per-file-political-intelligence.md) | `documents/{dok_id}-analysis.md` (one per document) | Check 2 (per-doc coverage) |
+
+**5 additional Tier-C artifacts** (aggregation / reference-grade workflows — see [`ext/tier-c-aggregation.md`](../../.github/prompts/ext/tier-c-aggregation.md)):
+
+| Template | Produced artifact | Enforced by |
+|----------|-------------------|-------------|
+| — (run index, hand-written) | `README.md` | Tier-C gate block |
+| [`executive-brief.md`](executive-brief.md) | `executive-brief.md` (2-page decision-maker brief) | Tier-C gate block |
+| [`scenario-analysis.md`](scenario-analysis.md) | `scenario-analysis.md` (≥ 3 scenarios with posteriors) | Tier-C gate (scenario count ≥ 3) |
+| [`comparative-international.md`](comparative-international.md) | `comparative-international.md` (cross-country via WB/IMF/SCB) | Tier-C gate (≥ 2 countries referenced) |
+| [`methodology-reflection.md`](methodology-reflection.md) | `methodology-reflection.md` (what worked, biases, uncertainty log) | Tier-C gate block |
+
+**Supporting templates** (consumed ad-hoc by the artifacts above — not directly gated):
+
+- [`coalition-mathematics.md`](coalition-mathematics.md), [`devils-advocate.md`](devils-advocate.md), [`election-2026-analysis.md`](election-2026-analysis.md), [`forward-indicators.md`](forward-indicators.md), [`historical-parallels.md`](historical-parallels.md), [`implementation-feasibility.md`](implementation-feasibility.md), [`intelligence-assessment.md`](intelligence-assessment.md), [`media-framing-analysis.md`](media-framing-analysis.md), [`voter-segmentation.md`](voter-segmentation.md).
+
+**Upstream gh-aw documentation** (link-out only): <https://github.github.com/gh-aw/llms-small.txt> · <https://github.github.com/gh-aw/llms-full.txt> · <https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt>
+
+---
+
 ## 🎯 Purpose
 
 This directory contains a **structured catalog of analysis templates** that defines the exact output format for every political intelligence artifact produced by Riksdagsmonitor's AI agents. Templates ensure consistency, completeness, and quality across all analysis types — from per-file document intelligence to full synthesis summaries.
@@ -607,6 +644,8 @@ sequenceDiagram
 ---
 
 ## 🆕 v2.3 Common Improvements (All Templates)
+
+> **Scope note:** "All 8 templates" below refers to the original Family A core templates (A2–A9). Families B–E templates (added in v3.0+) inherit these improvements where applicable. See [Master Template Catalog](#-master-template-catalog--family-ae) for the complete 23-template inventory.
 
 All 8 templates were updated in v2.3 (2026-06-01) with the following cross-cutting improvements:
 

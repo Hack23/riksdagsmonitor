@@ -84,5 +84,5 @@ IMF advertises **~10 req / 5 s**. The client and agentic workflows MUST:
 - `analysis/imf/indicator-policy-mapping.md` — which IMF indicators feed which committees
 - `analysis/imf/use-cases.md` — canonical article examples
 - `.github/aw/ECONOMIC_DATA_CONTRACT.md` — v2.0 contract (data artefact shape, validator gates)
-- `.github/aw/SHARED_PROMPT_PATTERNS.md` — "Economic Indicator Reference"
+- [`.github/prompts/README.md`](../../.github/prompts/README.md) — shared news-workflow prompt library, including the "Economic Indicator Reference"
 - `docs/adr/0001-adopt-imf-data-alongside-world-bank.md` — architecture decision

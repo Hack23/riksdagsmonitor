@@ -91,7 +91,7 @@
     <tr>
       <td><strong><a href="../templates/README.md">Analysis Templates</a></strong></td>
       <td>📋 Templates</td>
-      <td>8 structured analysis output templates</td>
+      <td>23 structured analysis output templates (8 core single-type + 15 extended / Tier-C)</td>
       <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/README.md">View Source</a></td>
     </tr>
   </tbody>
@@ -108,6 +108,32 @@
 | **[Classification Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Classification_Policy.md)** | Data classification scheme and handling requirements | Classification guide aligns sensitivity levels with ISMS classification tiers |
 | **[Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)** | Secure coding standards and SDLC security gates | Style guide and quality gates enforce structured, reviewable analytical output |
 | **[Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md)** | Open source contribution and licensing governance | All methodology documents published under project license for transparency |
+
+---
+
+## 🤖 How agentic workflows consume these methodologies
+
+The 12 agentic news workflows in `.github/workflows/news-*.md` are the **primary consumer** of these methodologies. The authoritative workflow contract lives in [`.github/prompts/`](../../.github/prompts/) — see [`.github/prompts/README.md`](../../.github/prompts/README.md) for the full module catalogue.
+
+| Methodology | Read in Pass 1 (mandatory) | Read in Pass 2 (improvement) | Enforced by |
+|-------------|---------------------------|------------------------------|-------------|
+| [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md) | ✅ role, DIW weighting, pass structure | — | `05-analysis-gate.md` check 1 (artifact presence) |
+| [`per-document-methodology.md`](per-document-methodology.md) | ✅ one `{dok_id}-analysis.md` per document | — | `05-analysis-gate.md` check 2 (per-doc coverage) |
+| [`political-classification-guide.md`](political-classification-guide.md) | ✅ produces `classification-results.md` | — | `05-analysis-gate.md` check 1 |
+| [`political-swot-framework.md`](political-swot-framework.md) | ✅ produces `swot-analysis.md` + TOWS matrix | ✅ tighten evidence tables | `05-analysis-gate.md` check 4 (evidence) |
+| [`political-risk-methodology.md`](political-risk-methodology.md) | ✅ produces `risk-assessment.md` | ✅ sensitivity & posterior probabilities | `05-analysis-gate.md` check 1 |
+| [`political-threat-framework.md`](political-threat-framework.md) | ✅ produces `threat-analysis.md` | ✅ kill-chain depth | `05-analysis-gate.md` check 1 |
+| [`political-style-guide.md`](political-style-guide.md) | — | ✅ tone, neutrality, evidence citations | Article Pass-2 review |
+| [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | ✅ for Tier-C only (`executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`) | ✅ scenario probabilities | `ext/tier-c-aggregation.md` Tier-C gate |
+| [`structural-metadata-methodology.md`](structural-metadata-methodology.md) | ✅ cross-reference continuity contracts | — | `05-analysis-gate.md` check 1 (artifact presence) |
+| [`synthesis-methodology.md`](synthesis-methodology.md) | ✅ produces `synthesis-summary.md` with DIW-weighted ranking | ✅ lead-story justification | `05-analysis-gate.md` checks 1 + 5 (Mermaid) |
+| [`electoral-domain-methodology.md`](electoral-domain-methodology.md) | ✅ Election 2026 lens paragraph | — | Article-generation mandatory section |
+
+**Upstream gh-aw documentation** (link-out only — these methodologies own the political-analysis content; gh-aw owns the workflow runtime):
+
+- Abridged: <https://github.github.com/gh-aw/llms-small.txt>
+- Complete: <https://github.github.com/gh-aw/llms-full.txt>
+- Agentic-workflows blog series: <https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt>
 
 ---
 
