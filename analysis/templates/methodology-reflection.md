@@ -54,6 +54,8 @@
 
 ## 🧭 7-Step Protocol Compliance
 
+> ⚠️ **Illustrative example below — replace every status marker, count, and note with run-specific findings before publishing.** The completion marks, file counts, and missed-file names shown here are drawn from a worked example and must not be shipped as pre-audited results.
+
 ```mermaid
 flowchart LR
     S1["1️⃣ Prepare"] --> S2["2️⃣ Download"] --> S3["3️⃣ Per-File"] --> S4["4️⃣ Core Synthesis"] --> S5["5️⃣ Extensions"] --> S6["6️⃣ Quality Gate"] --> S7["7️⃣ Pass-2"]
@@ -80,6 +82,8 @@ flowchart LR
 ---
 
 ## 🏁 Quality-Gate Scorecard
+
+> ⚠️ **Illustrative example below — replace every numeric score and evidence note with run-specific values before publishing.** The scores, weighted totals, and evidence summaries shown here are drawn from a worked example and must not be shipped as real metrics.
 
 | Dimension | Weight | Score (/10) | Weighted | Evidence |
 |-----------|:------:|:-----------:|:--------:|----------|

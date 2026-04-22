@@ -86,6 +86,8 @@ graph TB
 
 ## 📊 Cross-Jurisdictional Comparison Matrix
 
+> ⚠️ **Illustrative example below — replace every policy name, fiscal figure, CPI effect, and source with run-specific, verified values before publishing.** The numbers in this matrix are drawn from a worked example and must not be copied verbatim as evidence-based claims.
+
 | Dimension | 🇸🇪 Sweden (subject) | 🇩🇰 Denmark | 🇳🇴 Norway | 🇫🇮 Finland | 🇩🇪 Germany | 🇫🇷 France |
 |-----------|:-------------------:|:----------:|:----------:|:-----------:|:-----------:|:----------:|
 | **Policy name** | HD03236 Fuel + Energy | Aftaler 2024 | Strømstøtte 2023 | Sähkötuki 2023 | Strompreisbremse 2023 | Bouclier tarifaire 2022 |

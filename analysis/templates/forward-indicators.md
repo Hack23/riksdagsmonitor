@@ -53,6 +53,8 @@
 
 ## 🧭 Indicator Dashboard
 
+> ⚠️ **Illustrative example below — the Gantt milestones, indicator IDs, thresholds, and deadlines are drawn from a worked 2026 scenario.** Replace every milestone, date, indicator, threshold, and owner with run-specific values before publishing. Do not treat this example as an actual monitoring commitment.
+
 ```mermaid
 gantt
     title Forward-indicator timeline

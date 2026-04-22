@@ -41,14 +41,16 @@
 
 ## 📋 Segmentation Context
 
+> ⚠️ **Illustrative example below — replace every value with run-specific data before publishing.** The numbers, taxonomy version, universe size, and confidence are drawn from a worked example and are *not* authoritative facts.
+
 | Field | Value |
 |-------|-------|
 | **Segmentation ID** | `VSG-YYYY-MM-DD-NNN` |
 | **Generated** | `YYYY-MM-DD HH:MM UTC` |
 | **Measure(s) under analysis** | `dok_ids` |
-| **Segmentation taxonomy** | `SCB-Demographic v2 + Political-Behaviour v1` |
-| **Universe (eligible voters 2026)** | `~7.7 M` |
-| **Overall Confidence** | `🟩 HIGH` |
+| **Segmentation taxonomy** | `SCB-Demographic v2 + Political-Behaviour v1` *(example)* |
+| **Universe (eligible voters 2026)** | `~7.7 M` *(example; verify against latest SCB)* |
+| **Overall Confidence** | `🟧 MODERATE (default; adjust to 🟩/🟦 only with evidence)` |
 
 ---
 

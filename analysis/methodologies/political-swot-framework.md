@@ -26,7 +26,7 @@
 
 | Element | Value | Reference |
 |---------|-------|-----------|
-| **F3EAD Stage** | **EXPLOIT** | SWOT extracts strategic intelligence value from classified documents |
+| **F3EAD Stage** | **EXPLOIT** | SWOT extracts strategic intelligence value from public parliamentary/government documents and official statistics |
 | **PIRs Served** | SWOT entries map to PIRs: Strengths/Opportunities for government → PIR-1, PIR-5; Threats to democratic process → PIR-7; Electoral vulnerabilities → PIR-6 | See [`political-style-guide.md` §PIR/EEI Catalog](political-style-guide.md#-priority-intelligence-requirements-pir--essential-elements-of-information-eei) |
 | **Admiralty Floor** | Every SWOT entry requires ≥[B2] evidence; entries at [C3] or lower must be flagged `⚠️ low confidence` | See [`political-style-guide.md` §Admiralty Code](political-style-guide.md#-admiralty-source-reliability-code-nato-stanag-2022) |
 | **WEP Requirement** | Scenario Generation uses WEP probabilities; TOWS strategic options use WEP for likelihood of success | See [`political-style-guide.md` §WEP + ODNI](political-style-guide.md#-words-of-estimative-probability-wep--odni-confidence-overlay) |

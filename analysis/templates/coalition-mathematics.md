@@ -48,7 +48,7 @@
 | **Baseline poll** | `SIFO YYYY-MM (+ Novus, Demoskop)` |
 | **Seats needed for majority** | `175 of 349` |
 | **4% threshold at ~80% turnout** | `~370 000 votes` |
-| **Overall Confidence** | `🟩 HIGH` |
+| **Overall Confidence** | `🟧 MODERATE (default for polling/seat projections; adjust upward only if evidence supports)` |
 
 ---
 
