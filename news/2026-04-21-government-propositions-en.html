@@ -507,6 +507,18 @@
 </div>
   </div>
 
+<div id="economic-dashboard" class="economic-dashboard-section"><section class="article-dashboard" aria-label="Economic Context">
+    <h2>Economic Context</h2>
+    <p class="dashboard-summary">Sweden&rsquo;s modest GDP growth of 0.82% in 2024 &mdash; far below Denmark (3.48%) and Norway (2.10%) &mdash; shapes the fiscal constraints around this legislative package. Unemployment remains elevated at 8.69% in 2025 while inflation has normalized from 8.55% (2023) to 2.84% (2024), creating pressure for reforms that combine security signaling, administrative productivity, and targeted economic support ahead of the 2026 election.</p>
+    <div class="dashboard-chart-wrapper">
+      <canvas id="econ-2026-04-21-propositions-gdp" role="img" aria-label="GDP Growth Comparison 2024" data-chart-config="{&quot;type&quot;:&quot;bar&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Sweden&quot;,&quot;Denmark&quot;,&quot;Norway&quot;,&quot;Finland&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;GDP Growth (% annual, 2024)&quot;,&quot;data&quot;:[0.82,3.478,2.097,0.416],&quot;backgroundColor&quot;:[&quot;#00d9ff&quot;,&quot;#ff006e&quot;,&quot;#ffbe0b&quot;,&quot;#83cf39&quot;],&quot;borderColor&quot;:[&quot;#00b8d4&quot;,&quot;#d4004e&quot;,&quot;#d4a00b&quot;,&quot;#6daf2d&quot;],&quot;borderWidth&quot;:1}]},&quot;options&quot;:{&quot;responsive&quot;:true,&quot;maintainAspectRatio&quot;:true}}"></canvas>
+    </div>
+    <div class="dashboard-chart-wrapper">
+      <canvas id="econ-2026-04-21-propositions-macro" role="img" aria-label="Sweden Inflation and Unemployment" data-chart-config="{&quot;type&quot;:&quot;bar&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Unemployment 2024&quot;,&quot;Unemployment 2025&quot;,&quot;Inflation 2023&quot;,&quot;Inflation 2024&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Percent&quot;,&quot;data&quot;:[8.4,8.694,8.549,2.836],&quot;backgroundColor&quot;:[&quot;#ff006e&quot;,&quot;#ffbe0b&quot;,&quot;#00d9ff&quot;,&quot;#83cf39&quot;],&quot;borderColor&quot;:[&quot;#d4004e&quot;,&quot;#d4a00b&quot;,&quot;#00b8d4&quot;,&quot;#6daf2d&quot;],&quot;borderWidth&quot;:1}]},&quot;options&quot;:{&quot;responsive&quot;:true,&quot;maintainAspectRatio&quot;:true}}"></canvas>
+    </div>
+    <p class="dashboard-attribution">Data by IMF / World Bank / SCB — World Bank indicators NY.GDP.MKTP.KD.ZG, SL.UEM.TOTL.ZS, FP.CPI.TOTL.ZG.</p>
+  </section></div>
+
 
 
   
@@ -617,6 +629,8 @@
 
 <script src="../js/back-to-top.js" defer></script>
 <script src="../js/theme-toggle.js" defer></script>
+<script src="../js/lib/chart.umd.4.4.1.js" defer></script>
+<script src="../js/chart-init.js" defer></script>
 
 
 

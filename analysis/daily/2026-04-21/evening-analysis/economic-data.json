@@ -1,49 +1,23 @@
 {
-  "generated_at": "2026-04-21T00:00:00Z",
-  "source": "World Bank API",
-  "country": "Sweden",
-  "country_code": "SE",
-  "indicators": {
-    "gdp_growth": {
-      "value": 0.82,
-      "year": 2024,
-      "unit": "% annual",
-      "indicator_id": "NY.GDP.MKTP.KD.ZG",
-      "context": "Recovery from -0.20% contraction in 2023; below EU average of ~1.1%"
-    },
-    "inflation": {
-      "value": 2.84,
-      "year": 2024,
-      "unit": "% CPI annual",
-      "indicator_id": "FP.CPI.TOTL.ZG",
-      "context": "Significant fall from 8.55% peak in 2023; approaching Riksbank 2% target"
-    },
-    "unemployment": {
-      "value": 8.69,
-      "year": 2025,
-      "unit": "% labor force",
-      "indicator_id": "SL.UEM.TOTL.ZS",
-      "context": "Elevated vs Nordic peers (Norway 3.9%, Denmark 5.1%); FiU48 energy relief partially addresses cost-of-living pressures on labor market"
-    },
-    "gdp": {
-      "value": 584700000000,
-      "year": 2023,
-      "unit": "USD current",
-      "indicator_id": "NY.GDP.MKTP.CD",
-      "context": "Nominal GDP; FiU48 4.1B SEK cost = ~0.07% of GDP"
-    }
-  },
-  "political_economic_context": {
-    "FiU48_cost_gdp_pct": 0.07,
-    "affected_households": 3000000,
-    "affected_vehicle_owners": 6000000,
-    "fiscal_headroom_assessment": "Limited — fuel cut adds to existing spring 2026 supplementary budget pressure",
-    "pre_election_classification": "POPULIST_RELIEF_MEASURE",
-    "election_date": "2026-09-13",
-    "days_to_election": 145
-  },
-  "sibling_analysis_reference": {
-    "committee_reports": "analysis/daily/2026-04-21/committeeReports/economic-data.json",
-    "interpellations": "analysis/daily/2026-04-21/interpellations/economic-data.json"
+  "version": "2.0",
+  "articleType": "evening-analysis",
+  "date": "2026-04-21",
+  "policyDomains": ["fiscal policy", "energy policy", "labor market", "climate transition", "eu governance"],
+  "dataPoints": [
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2024", "value": 0.82, "provider": "worldBank", "projection": false },
+    { "countryCode": "DNK", "countryName": "Denmark", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2024", "value": 3.478, "provider": "worldBank", "projection": false },
+    { "countryCode": "NOR", "countryName": "Norway", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2024", "value": 2.097, "provider": "worldBank", "projection": false },
+    { "countryCode": "FIN", "countryName": "Finland", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth Rate", "date": "2024", "value": 0.416, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate", "date": "2025", "value": 8.694, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate", "date": "2024", "value": 8.4, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate", "date": "2023", "value": 7.611, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "indicatorName": "Inflation Rate", "date": "2024", "value": 2.836, "provider": "worldBank", "projection": false },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "FP.CPI.TOTL.ZG", "indicatorName": "Inflation Rate", "date": "2023", "value": 8.549, "provider": "worldBank", "projection": false }
+  ],
+  "commentary": "Sweden's growth remains weak at 0.82% in 2024 versus Denmark (3.48%) and Norway (2.10%), limiting fiscal room even as election pressure intensifies. Unemployment climbed from 7.61% in 2023 to 8.69% in 2025, underscoring labor-market fragility behind the FiU48 relief narrative. Inflation fell sharply from 8.55% in 2023 to 2.84% in 2024, reducing acute price shocks but leaving households with a durable cost-level burden ahead of the September 2026 vote.",
+  "source": {
+    "worldBank": ["NY.GDP.MKTP.KD.ZG", "SL.UEM.TOTL.ZS", "FP.CPI.TOTL.ZG"],
+    "scb": [],
+    "imf": []
   }
 }
