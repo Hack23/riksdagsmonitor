@@ -856,8 +856,8 @@ graph TB
 - [ARCHITECTURE.md](ARCHITECTURE.md) — System architecture
 - [FUTURE_ARCHITECTURE.md](FUTURE_ARCHITECTURE.md) — Architecture roadmap
 - [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) — Security evolution
-- [AGENTS.md](AGENTS.md) — Custom agent reference (14 agents)
-- [SKILLS.md](SKILLS.md) — Skill definitions (87 skills)
+- [AGENTS.md](AGENTS.md) — Custom agent reference (14 persona agents + 9 workflow-specialist `.agent.md` + `developer.instructions.md` = 24 files)
+- [SKILLS.md](SKILLS.md) — Skill definitions (91 skills)
 - [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC) — ISMS policies
 - [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) — Development security standards
 

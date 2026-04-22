@@ -782,7 +782,7 @@ custom_instructions: `
 ```
 
 ### 3. Leverage Skills
-Agents automatically load relevant skills from `.github/skills/` (87 total skills across 12 categories):
+Agents automatically load relevant skills from `.github/skills/` (91 total skills across 12 categories):
 
 **Core Infrastructure (9)**:
 - `hack23-isms-compliance`, `security-by-design`, `static-site-security`

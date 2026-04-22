@@ -789,7 +789,7 @@ timeline
     title Riksdagsmonitor Evolution — 2026 to 2037
     section Phase 3 — Foundation (2026)
         Q1-Q2 : TypeScript migration ✅
-               : 10 agentic news workflows ✅
+               : 12 agentic news workflows ✅
                : 34 GitHub Actions workflows + 10 agent prompt files
                : Dual deployment (S3 + GitHub Pages)
         Q3-Q4 : CIA data pipeline integration
@@ -838,7 +838,7 @@ timeline
 graph LR
     subgraph SGCompleted["✅ Completed"]
         style SGCompleted fill:#006400,stroke:#00d9ff,color:#e0e0e0
-        A[TypeScript Migration<br/>31 modules] --> B[Agentic News Gen<br/>10 workflows]
+        A[TypeScript Migration<br/>31 modules] --> B[Agentic News Gen<br/>12 workflows]
         B --> C[14 Languages<br/>RTL support]
         C --> D[Dual Deploy<br/>S3 + GitHub Pages]
     end

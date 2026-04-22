@@ -645,6 +645,8 @@ sequenceDiagram
 
 ## 🆕 v2.3 Common Improvements (All Templates)
 
+> **Scope note:** "All 8 templates" below refers to the original Family A core templates (A2–A9). Families B–E templates (added in v3.0+) inherit these improvements where applicable. See [Master Template Catalog](#-master-template-catalog--family-ae) for the complete 23-template inventory.
+
 All 8 templates were updated in v2.3 (2026-06-01) with the following cross-cutting improvements:
 
 ### 🗳️ Election 2026 Implications Section

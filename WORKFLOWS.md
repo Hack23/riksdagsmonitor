@@ -1321,7 +1321,7 @@ flowchart TB
 - [CRA-ASSESSMENT.md](CRA-ASSESSMENT.md) — EU Cyber Resilience Act conformity
 - [FUTURE_WORKFLOWS.md](FUTURE_WORKFLOWS.md) — Future workflow projections
 - [AGENTS.md](AGENTS.md) — Custom agent reference (14 agents)
-- [SKILLS.md](SKILLS.md) — Skill definitions (87 skills)
+- [SKILLS.md](SKILLS.md) — Skill definitions (91 skills)
 
 ### External Tools
 - [step-security/harden-runner](https://github.com/step-security/harden-runner) — Workflow security

@@ -11,9 +11,9 @@
 **Organization**: Hack23 AB
 **ISMS**: [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
 **Version**: 0.8.17
-**Agents**: 24 custom agents in `.github/agents/`
-**Skills**: 87+ skills in `.github/skills/` (including 12 gh-aw skills)
-**Workflows**: 35 GitHub Actions (23 standard + 12 agentic `.lock.yml`)
+**Agents**: 24 agent files (14 persona + 9 workflow-specialist + 1 developer-instructions) in `.github/agents/`
+**Skills**: 91 skills in `.github/skills/` (including 13 gh-aw skills)
+**Workflows**: 45 workflow files (21 standard `.yml` + 12 agentic `.md` sources + 12 compiled `.lock.yml`)
 **MCP Servers**: 8 configured (riksdag-regering, scb, world-bank, github, filesystem, memory, sequential-thinking, playwright)
 
 ## 🎯 Core Rules
@@ -34,7 +34,7 @@
 
 ### 4. Use Available Agents and Skills
 - 24 agents covering security, docs, quality, frontend, ISMS, deployment, devops, intelligence, news, content, data pipeline, data visualization, task management, UI enhancement, and gh-aw workflows
-- 87+ skills auto-load from `.github/skills/`
+- 91 skills auto-load from `.github/skills/`
 
 ### 5. 🔴 AI FIRST Quality Principle — Iterative Improvement Required
 > **ALL analysis and content generation MUST follow the AI FIRST principle: never accept first-pass quality.**
