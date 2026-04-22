@@ -67,7 +67,7 @@ Each checkpoint is mandatory. Skipping them forfeits the only cross-run safety n
 
 Run this bash block at the end of every phase (pass the phase label as `$1`):
 
-```
+```bash
 set -Eeuo pipefail
 : "${GH_AW_MEMORY_DIR:=/tmp/gh-aw/repo-memory/default}"
 : "${ARTICLE_DATE:?ARTICLE_DATE required for checkpoint}"
