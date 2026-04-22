@@ -111,3 +111,13 @@ See [`.github/skills/github-agentic-workflows/SKILL.md`](../skills/github-agenti
 ## History
 
 The monolithic `.github/aw/SHARED_PROMPT_PATTERNS.md` was deleted when these modules went live. Every rule from the old file was either migrated into one of the modules above, merged with an equivalent rule, or deleted as audit history / duplicated content / tutorial from a skill file.
+
+## Related directory READMEs
+
+- [`.github/agents/README.md`](../agents/README.md) — 24 agent files (14 persona + 9 workflow-specialist + 1 developer-instructions)
+- [`.github/skills/README.md`](../skills/README.md) — 91 skills by functional category
+- [`.github/workflows/README.md`](../workflows/README.md) — 45 workflow files (21 `.yml` + 12 `.md` + 12 `.lock.yml`)
+- [`analysis/README.md`](../../analysis/README.md) — on-disk artifact layout (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`)
+- [`analysis/methodologies/README.md`](../../analysis/methodologies/README.md) — 11 methodology modules
+- [`analysis/templates/README.md`](../../analysis/templates/README.md) — 23 canonical output templates
+- [`WORKFLOWS.md`](../../WORKFLOWS.md) — complete CI/CD + agentic workflow reference

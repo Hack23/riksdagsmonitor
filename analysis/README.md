@@ -85,7 +85,7 @@
     <tr>
       <td><strong><a href="templates/README.md">Analysis Templates</a></strong></td>
       <td>📋 Templates</td>
-      <td>8 structured analysis output templates</td>
+      <td>23 structured analysis output templates (8 core single-type + 15 extended / Tier-C)</td>
       <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/README.md">View Source</a></td>
     </tr>
   </tbody>
@@ -278,7 +278,7 @@ graph TB
         M5["✍️ Style"]
     end
 
-    subgraph "📋 Template Library (8 Templates)"
+    subgraph "📋 Template Library (8 Core Single-Type Templates + 15 Extended for Tier-C)"
         T1["🔍 Per-File Intel"]
         T2["🏷️ Classification"]
         T3["⚠️ Risk"]

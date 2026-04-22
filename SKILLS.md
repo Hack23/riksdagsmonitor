@@ -4,6 +4,9 @@
 
 Agent skills are strategic, high-level principles and best practices that guide Copilot agents in performing their tasks. Skills are automatically loaded when relevant to the current context, providing agents with specialized knowledge without cluttering the main prompt.
 
+> **Directory-level catalog:** [`.github/skills/README.md`](.github/skills/README.md) — compact 91-skill catalog grouped by 12 functional categories.
+> **Companion docs:** [`AGENTS.md`](AGENTS.md) · [`.github/agents/README.md`](.github/agents/README.md) · [`.github/prompts/README.md`](.github/prompts/README.md) · [`.github/workflows/README.md`](.github/workflows/README.md)
+
 ## What Are Skills?
 
 Skills are structured instruction sets stored in `.github/skills/` that teach agents:
