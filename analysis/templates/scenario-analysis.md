@@ -82,7 +82,7 @@ quadrantChart
 | Field | Value |
 |-------|-------|
 | **Name** | Base — Coalition holds with SD confidence & supply |
-| **Probability** | 40 % (WEP: "roughly even" — confidence 🟩 HIGH) |
+| **Probability** | 40 % (confidence 🟩 HIGH) |
 | **Headline** | Kristersson government retains office with modified mandate |
 | **Trigger conditions** | Coalition + SD sustain ≥ 47 % polling through August 2026; no crisis event |
 | **Early warning signals** | (a) cost-of-living package lands within voter segments 1 & 2 by July; (b) no major KU scandal; (c) SD keeps confidence posture |
@@ -94,7 +94,7 @@ quadrantChart
 | Field | Value |
 |-------|-------|
 | **Name** | Upside — S-led opposition wins outright |
-| **Probability** | 25 % (WEP: "unlikely / roughly even with Scenario C" — confidence 🟧 MEDIUM) |
+| **Probability** | 25 % (WEP: "unlikely" — confidence 🟧 MEDIUM); roughly level with Scenario C |
 | **Headline** | Social Democrats return with C + MP partners |
 | **Trigger conditions** | Opposition block polls ≥ 52 % by Aug 2026; ULA (unemployment-linked affordability) narrative dominates |
 | **Early warning signals** | (a) Q2 2026 SIFO gap ≥ 6 points; (b) SCB AKU June unemployment > 8.6 %; (c) EU-Commission rebuke on fuel-tax cut |
@@ -106,7 +106,7 @@ quadrantChart
 | Field | Value |
 |-------|-------|
 | **Name** | Downside — Hung parliament / protracted formation |
-| **Probability** | 25 % (WEP: "unlikely / roughly even with Scenario B" — confidence 🟧 MEDIUM) |
+| **Probability** | 25 % (WEP: "unlikely" — confidence 🟧 MEDIUM); roughly level with Scenario B |
 | **Headline** | No bloc reaches 175 seats; multi-week government formation |
 | **Trigger conditions** | No bloc > 48 % in final polls; SD shifts position during campaign |
 | **Early warning signals** | (a) fragmented polling by late July; (b) leadership challenges in smaller parties; (c) late-campaign defections |
@@ -118,7 +118,7 @@ quadrantChart
 | Field | Value |
 |-------|-------|
 | **Name** | Wildcard — Mid-cycle crisis (scandal / external shock / health event) |
-| **Probability** | 10 % (WEP: "remote / highly unlikely" — confidence 🟥 LOW) |
+| **Probability** | 10 % (WEP: "very unlikely" — confidence 🟥 LOW) |
 | **Headline** | External event reshapes the race |
 | **Trigger conditions** | One of: major KU reprimand, Riksbank crisis action, NATO escalation, public-health emergency |
 | **Early warning signals** | (a) unusual opinion-poll volatility; (b) government-agency resignations; (c) regional escalations |

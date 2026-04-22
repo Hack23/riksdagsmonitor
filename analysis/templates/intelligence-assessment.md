@@ -32,7 +32,7 @@
 | **F3EAD Stage** | **ANALYZE → DISSEMINATE** — finished intelligence product |
 | **PIRs Served** | `[REQUIRED: Open with the PIRs this assessment addresses]` |
 | **Admiralty Floor** | **[A1]** for Key Judgments (multiple sources); **[B2]** for supporting evidence |
-| **WEP + ODNI** | **MANDATORY** — every Key Judgment uses WEP (almost certain/very likely/likely/unlikely) + ODNI confidence (HIGH/MODERATE/LOW); no generic "possible" or "could" |
+| **WEP + ODNI** | **MANDATORY** — every Key Judgment uses canonical WEP terminology (**almost certain / very likely / likely / roughly even / unlikely / very unlikely / remote**) + ODNI confidence (HIGH/MODERATE/LOW); no generic "possible" or "could". Follow the canonical wording in [`political-style-guide.md`](../methodologies/political-style-guide.md). |
 | **Source Diversity Floor** | P0 (Key Judgments): ≥4 sources; P1 (supporting evidence): ≥3 sources; single-source claims prohibited |
 | **SAT(s) Applied** | ACH (competing hypotheses), Key Assumptions Check, Indicators and Signposts |
 | **ICD 203 Standards** | 1 (source quality), 2 (uncertainties), 3 (judgments vs assumptions), 4 (alternative analysis) |
