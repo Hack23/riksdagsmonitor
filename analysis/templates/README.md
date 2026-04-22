@@ -158,6 +158,10 @@ Every evidence table gains an **Admiralty** column with `[A–F][1–6]` annotat
 All forward-looking claims use **Words of Estimative Probability (WEP)**:
 - **Almost certain** (~95%) · **Very likely** (~85%) · **Likely** (~70%) · **Roughly even** (~50%) · **Unlikely** (~30%) · **Very unlikely** (~15%) · **Remote** (~5%)
 
+### Source Diversity Rule
+
+Every P0/P1 claim requires **≥3 primary sources** (MCP-sourced Riksdag/Regering documents) **+ ≥1 secondary source** (SCB, World Bank, IMF, press, OSINT). Single-source claims must be labeled `[unconfirmed]`. See the **Source Diversity Rule** + **Collection Management Matrix** (MCP tool → evidence → template) in [`political-style-guide.md`](../methodologies/political-style-guide.md).
+
 ### PIR Tagging
 
 Key findings in `intelligence-assessment.md`, `executive-brief.md`, and `synthesis-summary.md` tag to the PIR they inform (e.g., `[PIR-1: Coalition Stability]`).

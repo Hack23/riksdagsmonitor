@@ -185,7 +185,7 @@ graph LR
 
 > **🎯 Start here:** the **[AI-Driven Analysis Guide](ai-driven-analysis-guide.md)** is the single, canonical entry point for every agentic workflow. It defines the 7-step protocol and the Family A–E output matrix that every methodology below feeds into.
 
-> **🔄 Tradecraft anchors (v4.2):** Every methodology now includes a **Tradecraft Anchors** block referencing the doctrinal standards in [`political-style-guide.md`](political-style-guide.md): **F3EAD** intelligence cycle stage, **PIR/EEI** mapping, **Admiralty Code** floor, **WEP + ODNI** confidence requirements, **ICD 203** gate, and **SAT(s)** applied. See the style guide for canonical definitions.
+> **🔄 Tradecraft anchors (v4.2):** Every methodology now includes a **Tradecraft Anchors** block referencing the doctrinal standards in [`political-style-guide.md`](political-style-guide.md): **F3EAD** intelligence cycle stage, **PIR/EEI** mapping, **Admiralty Code** floor, **WEP + ODNI** confidence requirements, **ICD 203** gate, **SAT(s)** applied, **Collection Management Matrix** (MCP tool → evidence → template), and **Source Diversity Rule** (≥3 primary + ≥1 secondary per P0/P1 claim; single-source = `[unconfirmed]`). See the style guide for canonical definitions.
 
 | Priority | Document | Key Content | F3EAD Stage | Dimensions / Frameworks | When to Apply |
 |----------|----------|-------------|:-----------:|-------------------------|---------------|
