@@ -69,3 +69,5 @@ Always produce `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/data-download-manifest.m
 ## Next step
 
 On success, proceed to `04-analysis-pipeline.md`. Never start analysis while `data-download-manifest.md` is missing or empty.
+
+After the manifest is written, run the **phase checkpoint** from `00-base-contract.md` with label `phase-03-download` so the download provenance is persisted to repo memory before any analysis begins.

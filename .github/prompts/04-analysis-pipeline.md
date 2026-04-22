@@ -66,7 +66,9 @@ For each article with charts, produce accompanying JSON under `analysis/daily/$A
 
 ## Next step
 
-On completion, proceed to `05-analysis-gate.md`. Do not start article generation until the gate passes.
+Proceed to `05-analysis-gate.md`. Do not start article generation until the gate passes.
+
+After completing Pass 1 (before Pass 2), run the **phase checkpoint** from `00-base-contract.md` with label `phase-04-pass1`. After completing Pass 2 (before the gate), run it again with label `phase-04-pass2`. This guarantees both iterations survive even if the gate, article, or commit phase later fails.
 
 ## External references
 

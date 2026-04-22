@@ -89,6 +89,12 @@ Call `safeoutputs___noop({"message": "<reason>"})` **only** if:
 
 In every other case, commit whatever exists and call `create_pull_request` once.
 
+## Final checkpoint — before the PR call
+
+Immediately before calling `safeoutputs___create_pull_request`, run the **phase checkpoint** from `00-base-contract.md` with label `phase-07-final`. This snapshots the final authoritative analysis + article state to repo memory, so even if the PR call, the safe-outputs runner, or the post-job push fails, the last good state survives on the `memory/news-generation` branch.
+
+For `news-translate`, run the checkpoint with label `phase-translate-<lang>` after each per-language batch succeeds (before the final PR call), so individual language translations are preserved even if later languages fail.
+
 ## Deadline enforcement
 
 If the run exceeds 40 minutes with no safe-output call yet:
