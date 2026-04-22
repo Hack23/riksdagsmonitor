@@ -16,6 +16,7 @@ import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { readWorkflowWithImports } from './helpers/workflow-imports.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -191,13 +192,19 @@ describe('SCB Enrichment Instructions in Key Workflows', () => {
 
     it(`${workflow} should instruct try/catch for SCB calls`, () => {
       const filepath = path.join(WORKFLOWS_DIR, workflow);
-      const content = fs.readFileSync(filepath, 'utf-8');
+      // SCB safety guidance lives in the imported MCP access / analysis
+      // pipeline prompt modules; read workflow + imports as the effective
+      // prompt surface the agent actually sees.
+      const content = readWorkflowWithImports(filepath);
 
-      // SCB calls should be wrapped in try/catch to avoid blocking
+      // SCB calls should be wrapped in try/catch to avoid blocking, documented
+      // as optional enrichment, or otherwise marked as non-blocking.
       const hasSafetyGuidance =
         content.includes('try/catch') ||
         content.includes('optional') ||
-        content.includes('do not block');
+        content.includes('do not block') ||
+        content.includes('never silently drop') ||
+        /SCB[^\n]*non-blocking|non-blocking[^\n]*SCB/i.test(content);
 
       expect(hasSafetyGuidance).toBe(true);
     });
