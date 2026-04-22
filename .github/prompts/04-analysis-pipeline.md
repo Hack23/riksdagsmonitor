@@ -36,6 +36,8 @@ Plus `documents/` subfolder with **one `{dok_id}-analysis.md` file per `dok_id`*
 
 ## Execution order
 
+> **Fast-path**: If `SKIP_ANALYSIS=true` (set by `03-data-download.md §Pre-flight`), skip all steps 1–5 below and proceed directly to `06-article-generation.md`. The full analysis already exists on disk from a prior run — do not re-run downloads, Pass 1, Pass 2, or the gate.
+
 1. **Read all 6 methodologies first** (one tool call per file, do not skip).
 2. **Read all 8 templates first.**
 3. **Pass 1 — Create** all 9 artifacts + every per-document file. Minimum 15 minutes of real work.

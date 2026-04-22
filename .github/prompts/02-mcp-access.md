@@ -4,7 +4,7 @@ Authoritative per-workflow surface: the `mcp-servers:` + `tools:` blocks in that
 
 ## Servers & tool naming
 
-News workflows declare three data MCP servers + the built-in `github` toolset (via `tools.github.toolsets: [all]`) + `bash` + `agentic-workflows` + `repo-memory`.
+News workflows declare three data MCP servers + the built-in `github` toolset (via `tools.github.toolsets: [all]`) + `bash` + `agentic-workflows`.
 
 | Server | Transport | Declared in | Tool-name style | Example tools |
 |--------|-----------|-------------|-----------------|---------------|
@@ -12,7 +12,6 @@ News workflows declare three data MCP servers + the built-in `github` toolset (v
 | `scb` | container (`@jarib/pxweb-mcp`) | workflow `mcp-servers:` | `snake_case` | `search_tables`, `get_table_info`, `query_table` |
 | `world-bank` | container (`worldbank-mcp`) | workflow `mcp-servers:` | `kebab-case` | `get-economic-data`, `get-country-info`, `search-indicators` |
 | `github` | HTTP (Copilot MCP) | workflow `tools.github` | standard | full GitHub MCP toolset |
-| `repo-memory` | local helper | workflow `tools.repo-memory` | standard | persistent cross-run memory on `memory/news-generation` |
 | `bash` | local helper | workflow `tools.bash` | standard | shell execution |
 | `safeoutputs` | runner | always available | `snake_case` | `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___dispatch_workflow` |
 
@@ -42,4 +41,4 @@ Run once at workflow start, then proceed — do not loop forever.
 
 ## Pre-warm step (CI job, not prompt)
 
-Every news workflow declares a **single** `curl`-based pre-warm step with ≤ 6 retries, ≤ 20 s apart. With `curl --max-time 30`, the worst-case runtime can exceed 4 minutes, so this is a best-effort pre-warm rather than a hard ≤ 2 minute guarantee. If a strict 2 minute cap is required, the workflow's `curl` timeout and/or retry policy must be reduced accordingly. No background pingers. The `safeoutputs` session is kept alive by completing work inside its ~30-minute idle window, not by opening interim PRs.
+Every news workflow declares a **single** `curl`-based pre-warm step with ≤ 6 retries, ≤ 20 s apart. With `curl --max-time 30`, the worst-case runtime can exceed 4 minutes, so this is a best-effort pre-warm rather than a hard ≤ 2 minute guarantee. If a strict 2 minute cap is required, the workflow's `curl` timeout and/or retry policy must be reduced accordingly. No background pingers. MCP session longevity is maintained via `sandbox.mcp.keepalive-interval: 300`.

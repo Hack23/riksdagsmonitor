@@ -43,12 +43,21 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 60
+timeout-minutes: 55
 
 concurrency:
   group: gh-aw-news-translate-${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}
   job-discriminator: ${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}
   cancel-in-progress: true
+
+features:
+  mcp-gateway: true
+
+sandbox:
+  agent: awf
+  mcp:
+    port: 8080
+    keepalive-interval: 300 # 5m ping to keep MCP connections alive; Copilot API token expires ~60min so PR must be created within 25min of agent start
 
 runtimes:
   node:
@@ -101,12 +110,6 @@ tools:
       - all
   agentic-workflows: true
   bash: true
-  repo-memory:
-    branch-name: memory/news-generation
-    allowed-extensions: [".md", ".json"]
-    max-file-size: 51200
-    max-file-count: 50
-    max-patch-size: 51200
 
 safe-outputs:
   report-failure-as-issue: false
@@ -323,14 +326,14 @@ Translation is a pure-derivative workflow:
 - Keep the PR under the safe-outputs 100-file cap. If more translations are pending than fit in one PR, translate the highest-priority batch and leave the rest for the next scheduled run.
 - Skip any language whose translation already exists and is non-empty unless `force` is explicitly requested.
 
-## Time budget (60 min)
+## Time budget (~40 min)
 
 | Minutes | Phase |
 |---------|-------|
 | 0–2 | MCP pre-warm + date resolution |
-| 2–8 | Scan untranslated articles; build work list |
-| 8–52 | Translate + validate in priority order (highest-value types first) |
-| 52–58 | Final validation, stage, commit |
-| 58–60 | **One** `safeoutputs___create_pull_request` call |
+| 2–6 | Scan untranslated articles; build work list |
+| 6–36 | Translate + validate in priority order (highest-value types first) |
+| 36–39 | Final validation, stage, commit |
+| 39–41 | **One** `safeoutputs___create_pull_request` call |
 
 All non-workflow-specific rules are in the imported modules — do not restate them here.

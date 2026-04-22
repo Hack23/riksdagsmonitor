@@ -10,6 +10,17 @@
 
 Workflows declare `safe-outputs.create-pull-request.max: 1`. Attempting a second call is a workflow error.
 
+## Two-run PR strategy
+
+| Run mode | What to commit | PR title prefix | Labels | After PR |
+|----------|---------------|-----------------|--------|----------|
+| **Analysis mode** (`SKIP_ANALYSIS=false`) | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.md` + `*.json` (never `pass1/`) | `📊 Analysis — ` | `analysis-only` + article-type | **Stop.** Do NOT generate articles. The next scheduled run will detect the analysis and enter Article mode automatically. |
+| **Article mode** (`SKIP_ANALYSIS=true`) | `news/$YYYY/$MM/$DD/$SLUG.{en,sv}.html` + chart JSON | `📰 ` | `agentic-news` + article-type | Dispatch `news-translate` for 12 remaining languages. |
+
+In **Analysis mode**: commit analysis artifacts, create the `analysis-only` PR, then exit. Zero articles are generated in this run. The analysis stays in the `$ANALYSIS_DIR` folder; the next run of this workflow for the same `$ARTICLE_DATE` will find it and proceed directly to articles.
+
+In **Article mode**: generate articles from existing analysis, commit, and create the articles PR.
+
 ## Stage → commit → PR
 
 1. **Stage scoped files only.** Never stage the whole repo.
@@ -20,8 +31,6 @@ Workflows declare `safe-outputs.create-pull-request.max: 1`. Attempting a second
    | Visualisation data | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.json` |
    | Articles (core languages) | `news/$YYYY/$MM/$DD/$SLUG.{en,sv}.html` |
    | Translations (news-translate only) | `news/$YYYY/$MM/$DD/$SLUG.<lang>.html` |
-
-   Repo-memory persistence is handled separately by `tools.repo-memory` and pushed to the `memory/news-generation` branch by the safe-outputs runner job. **Do not** create, stage, or commit any `memory/news-generation/*.json` files in the content PR — there is no `memory/` directory in the working tree of `main`.
 
    Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/` wholesale — it often contains 100+ files. Stage only `documents/*.md` **if** your `documents/` stays under the safe-outputs 100-file cap; otherwise stage only summary files. Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/pass1/` — it is a local gate-evidence snapshot (see `04-analysis-pipeline.md`), not a deliverable.
 
@@ -89,19 +98,22 @@ Call `safeoutputs___noop({"message": "<reason>"})` **only** if:
 
 In every other case, commit whatever exists and call `create_pull_request` once.
 
-## Final checkpoint — before the PR call
-
-Immediately before calling `safeoutputs___create_pull_request`, run the **phase checkpoint** from `00-base-contract.md` with label `phase-07-final`. This snapshots the final authoritative analysis + article state to repo memory, so even if the PR call, the safe-outputs runner, or the post-job push fails, the last good state survives on the `memory/news-generation` branch.
-
-For `news-translate`, run the checkpoint with label `phase-translate-<lang>` after each per-language batch succeeds (before the final PR call), so individual language translations are preserved even if later languages fail.
-
 ## Deadline enforcement
 
-If the run exceeds 40 minutes with no safe-output call yet:
+> **Root cause**: The Copilot API session is bound to the `github.token` baked in at step start. That token expires at approximately **60 minutes** and is never refreshed mid-run (gh-aw issue #24920). Every tool call and inference request fails silently after that point — the agent appears to run but makes no progress and the PR is never created. Setup steps consume ~5 minutes, so the agent has at most **~55 minutes** of usable session time, and safe-outputs publishing needs several minutes on top.
+
+The target PR-creation window depends on which mode the run is in (see `03-data-download.md §Pre-flight`):
+
+| Mode | Target PR window | Hard deadline |
+|------|------------------|---------------|
+| Run 1 — Analysis | 40–45 min after agent start | **48 min** |
+| Run 2 — Articles | 20–25 min after agent start | **30 min** |
+
+**If the run exceeds its hard deadline with no safe-output call yet:**
 
 1. Stop analysis / article work immediately.
-2. Stage whatever exists on disk.
-3. Commit.
+2. Stage whatever exists on disk (analysis artifacts and/or partial articles).
+3. Commit with message including `[early-pr]` to signal partial content.
 4. Call `safeoutputs___create_pull_request` with label `analysis-only` if articles are incomplete.
 
-Do not attempt to "save" work via a second PR — there is no second PR.
+Do not attempt to "save" work via a second PR — there is no second PR. Creating the PR early is always better than losing all work to a token expiry. The hard deadlines above leave ~7 minutes of margin on the 55-minute `timeout-minutes` cap for staging and safe-outputs publishing before the ~60-minute Copilot API token expiry.
