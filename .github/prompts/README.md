@@ -9,6 +9,25 @@ This directory holds the **bounded-context prompt modules** imported by every ne
 - **No duplication** — modules link to the canonical methodology, template, and MCP config files rather than copy them.
 - **No audit history** — rules only, no dated run IDs, PR numbers, or version tags.
 
+## Integration points (authoritative)
+
+This directory is the **single source of truth** for how GitHub Agentic Workflows (gh-aw) produce news articles in this repo. Agents, skills, and copilot instructions MUST link back here rather than restate the rules.
+
+- **gh-aw runtime**: `gh-aw-actions/setup-cli@v0.69.3` (see any `news-*.lock.yml` for the pinned action).
+- **Upstream documentation** — link-out only, never copy content:
+  - Abridged: <https://github.github.com/gh-aw/llms-small.txt>
+  - Complete: <https://github.github.com/gh-aw/llms-full.txt>
+  - Agentic-workflows blog series: <https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt>
+  - Source repo: <https://github.com/github/gh-aw>
+  - GitHub CLI: <https://cli.github.com/manual/>
+- **Analysis artifact contract** (the "deep political analysis" product that every news workflow must produce *before* writing a single article sentence):
+  - Methodology → [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md)
+  - Templates → [`analysis/templates/`](../../analysis/templates/) (one file per artifact)
+  - **9 core artifacts** (single-type workflow, produced in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`): `synthesis-summary.md`, `swot-analysis.md`, `risk-assessment.md`, `threat-analysis.md`, `stakeholder-perspectives.md`, `significance-scoring.md`, `classification-results.md`, `cross-reference-map.md`, `data-download-manifest.md` — full definitions in [`04-analysis-pipeline.md`](04-analysis-pipeline.md).
+  - **14 artifacts** for Tier-C aggregation (9 core + `README.md`, `executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`, `methodology-reflection.md`) — full definitions in [`ext/tier-c-aggregation.md`](ext/tier-c-aggregation.md).
+- **Single blocking gate**: [`05-analysis-gate.md`](05-analysis-gate.md) is the only enforcer. No article may be touched until the gate passes.
+- **AI-FIRST rule** (from [`00-base-contract.md`](00-base-contract.md) §Non-negotiable rules #5): minimum 2 complete iterations — Pass 1 creates every artifact, Pass 2 reads Pass 1 back in full and improves every section.
+
 ## Module catalogue
 
 | File | Responsibility | Consumed by |
