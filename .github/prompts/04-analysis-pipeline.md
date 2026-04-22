@@ -67,3 +67,9 @@ For each article with charts, produce accompanying JSON under `analysis/daily/$A
 ## Next step
 
 On completion, proceed to `05-analysis-gate.md`. Do not start article generation until the gate passes.
+
+## External references
+
+- gh-aw runtime (v0.69.3): [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [source](https://github.com/github/gh-aw)
+- Methodology entry point: [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md)
+- Artifact ↔ gate-check mapping: [`analysis/templates/README.md`](../../analysis/templates/README.md) §"Artifact → workflow → gate check mapping"

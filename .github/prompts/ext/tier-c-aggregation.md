@@ -24,6 +24,16 @@ In addition to the 9 artifacts from `04-analysis-pipeline.md`:
 | `comparative-international.md` | Cross-country comparison via World Bank / IMF / SCB data |
 | `methodology-reflection.md` | What worked, what failed, biases surfaced, uncertainty log |
 
+## Pre-flight: required-artifact checklist (Tier-C)
+
+Before any Tier-C article sentence is written, the writer MUST have opened **all 14** artifacts above from `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. The Tier-C gate block below additionally verifies:
+
+- Every Tier-C artifact is non-empty.
+- `scenario-analysis.md` declares ≥ 3 distinct scenarios.
+- `comparative-international.md` references ≥ 2 external countries.
+
+Sibling cross-type synthesis (see §"Cross-type synthesis" below) is recorded in `cross-reference-map.md`; missing sibling citations fail the gate. Source templates for these artifacts live in [`analysis/templates/`](../../../analysis/templates/) — see [`analysis/templates/README.md`](../../../analysis/templates/README.md) §"Artifact → workflow → gate check mapping" for the full template-to-artifact-to-gate chain.
+
 ## Period-scope multipliers (depth calibration)
 
 Aggregation depth scales with the period covered. Multiply the `comprehensive` minimum times in `04-analysis-pipeline.md` by:

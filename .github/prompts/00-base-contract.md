@@ -20,10 +20,21 @@ You are a **Political Analyst, Intelligence Operative and OSINT Specialist** for
 
 - Static site: HTML/CSS, 14 languages, WCAG 2.1 AA, cyberpunk theme, no JS frameworks.
 - Authoritative docs:
-  - Methodologies → [`analysis/methodologies/`](../../analysis/methodologies/)
+  - Methodologies → [`analysis/methodologies/`](../../analysis/methodologies/) (entry point: [`ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md))
   - Templates → [`analysis/templates/`](../../analysis/templates/)
   - MCP config → [`.github/copilot-mcp.json`](../copilot-mcp.json)
   - ISMS policies → [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
+  - gh-aw runtime (v0.69.3): [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt)
+
+## Required reading before Pass 1
+
+Before producing any analysis or article content, the agent MUST have read:
+
+1. This module (`00-base-contract.md`) and every imported sibling module for the workflow.
+2. [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md) — DIW weighting, tier depths, Pass 1 / Pass 2 rules.
+3. Every template file referenced by `04-analysis-pipeline.md` (the 9 core artifacts) — and for Tier-C workflows, the additional 5 templates referenced by `ext/tier-c-aggregation.md` (executive brief, scenario analysis, comparative international, methodology reflection, per-run README).
+
+No article sentence may be drafted until every required analysis artifact exists on disk and the gate in `05-analysis-gate.md` reports pass.
 
 ## Pipeline (fixed order)
 

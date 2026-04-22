@@ -7,6 +7,17 @@ Articles derive from analysis. Scripts produce HTML scaffolding; the AI writes e
 - Module `05-analysis-gate.md` has passed.
 - Every core analysis artifact has been read back in full in this run.
 
+## Pre-flight: required analysis artifacts
+
+Before any article section is drafted, the writer MUST have opened and read **every** artifact below from `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`:
+
+| Workflow class | Required artifacts | Gate checks that enforce citation |
+|----------------|---------------------|------------------------------------|
+| Single-type (`news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations`) | 9 core artifacts — see `04-analysis-pipeline.md` §"9 required core artifacts" | `05-analysis-gate.md` **check 2** (article-sections-resolve-to-artifacts), **check 4** (evidence cites `dok_id` / vote counts / named actors / primary-source URLs), **check 6** (significance-scoring coverage) |
+| Tier-C aggregation (`news-evening-analysis`, `news-weekly-review`, `news-monthly-review`, `news-week-ahead`, `news-month-ahead`, `news-realtime-monitor`, `news-article-generator` deep-inspection) | 14 artifacts = 9 core + 5 Tier-C (`README.md`, `executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`, `methodology-reflection.md`) — see `ext/tier-c-aggregation.md` §"14 required artifacts" | All single-type checks **plus** the Tier-C gate block (scenario count ≥ 3, ≥ 2 international comparisons) |
+
+If any required artifact is missing or empty, do **not** proceed to step 1 below — return to `04-analysis-pipeline.md` and produce it.
+
 ## Generation steps
 
 1. **Invoke the script** (HTML scaffold only):
