@@ -38,9 +38,9 @@ The execution sandbox **rejects** commands containing any of the following patte
 
 | Banned pattern | Why it's blocked | Safe equivalent |
 |----------------|------------------|-----------------|
-| `${var@P}` / `${var@Q}` / `${var@E}` / `${var@A}` / `${var@a}` | Parameter transformation re-evaluates the variable's contents as shell syntax — a known prompt-injection vector. | Expand the target explicitly: `printf '%s' "$var"`, or a plain `"$var"` substitution. |
+| `${var@P}` / `${var@Q}` / `${var@E}` / `${var@A}` / `${var@a}` | These parameter transformations can produce shell-reparsable fragments or syntax-bearing representations, which can smuggle attacker-controlled content into later parsing steps — a known prompt-injection vector. | Expand the target explicitly: `printf '%s' "$var"`, or a plain `"$var"` substitution. |
 | `${!var}` | Indirect expansion uses `$var`'s *value* as another variable name — lets an attacker-controlled string pick which variable is read. | Use an associative array: `declare -A MAP; MAP[foo]=bar; echo "${MAP[$key]}"`. |
-| Nested `$(…$(…)…)` | Builds a command string dynamically from inner results — the classic staged injection shape. | Split into two lines with a temporary variable: `inner=$(cmd1); outer=$(cmd2 "$inner")`. |
+| Nested `$(…$(…)…)` | Builds a command string dynamically from inner results — the classic staged injection shape. | Split into two lines with a temporary variable: `inner=$(cmd2); outer=$(cmd1 "$inner")`. |
 | Chained builder assignments that progressively construct a command substitution (`a=foo; b="$a"bar; c=$($b)`) | Same staged-injection shape, just spread across multiple statements. | Construct commands as arrays, invoke via `"${cmd[@]}"`; never re-parse a string as a command. |
 | `eval` on variable contents (or eval-like constructs such as `bash -c "$var"`, `source /dev/stdin <<<"$var"`) | Direct arbitrary-code execution from data. | Never required for our workflows — refuse and rewrite using arrays, `case`, or explicit branches. |
 

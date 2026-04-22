@@ -57,15 +57,15 @@ Valuable analysis must never be lost. After each pipeline phase completes, snaps
 | 04 Analysis Pass 1 | `phase-04-pass1` | `$ANALYSIS_DIR` top-level artifacts |
 | 04 Analysis Pass 2 | `phase-04-pass2` | `$ANALYSIS_DIR` top-level artifacts |
 | 05 Gate pass | `phase-05-gate` | `$ANALYSIS_DIR` top-level artifacts |
-| 06 Article generated | `phase-06-article` | `$ANALYSIS_DIR` + today's `news/$YYYY/$MM/$DD/*.html` |
-| 07 Immediately before `create_pull_request` | `phase-07-final` | `$ANALYSIS_DIR` + articles |
-| `news-translate` per batch | `phase-translate-<lang>` | Translated `news/$YYYY/$MM/$DD/*.html` |
+| 06 Article generated | `phase-06-article` | `$ANALYSIS_DIR` + today's `news/${ARTICLE_DATE}-*.html` |
+| 07 Immediately before `create_pull_request` | `phase-07-final` | `$ANALYSIS_DIR` + articles from `news/${ARTICLE_DATE}-*.html` |
+| `news-translate` per batch | `phase-translate-<lang>` | Translated `news/${ARTICLE_DATE}-*.html` |
 
 Each checkpoint is mandatory. Skipping them forfeits the only cross-run safety net for analysis work.
 
 ### Reusable snippet
 
-Run this bash block at the end of every phase (pass the phase label as `$1`):
+Run this bash block at the end of every phase (pass the phase label as `$1`). Article HTML is written directly under the flat `news/` directory, so checkpoint copies must use `news/${ARTICLE_DATE}-*.html` rather than `news/$YYYY/$MM/$DD/*.html`:
 
 ```bash
 set -Eeuo pipefail
@@ -81,10 +81,9 @@ if [ -d "$ANALYSIS_DIR" ]; then
   find "$ANALYSIS_DIR" -maxdepth 1 -type f \( -name '*.md' -o -name '*.json' \) \
     -exec cp -f {} "$DEST"/ \; 2>/dev/null || true
 fi
-# Snapshot today's produced article HTML (if any exists at this phase).
-YYYY="${ARTICLE_DATE:0:4}"; MM="${ARTICLE_DATE:5:2}"; DD="${ARTICLE_DATE:8:2}"
-if [ -d "news/$YYYY/$MM/$DD" ]; then
-  find "news/$YYYY/$MM/$DD" -maxdepth 1 -type f -name '*.html' \
+# Snapshot today's produced article HTML from the flat news/ directory (if any exists at this phase).
+if [ -d "news" ]; then
+  find "news" -maxdepth 1 -type f -name "${ARTICLE_DATE}-*.html" \
     -exec cp -f {} "$DEST"/ \; 2>/dev/null || true
 fi
 COUNT="$(find "$DEST" -maxdepth 1 -type f 2>/dev/null | wc -l | tr -d ' ')"
