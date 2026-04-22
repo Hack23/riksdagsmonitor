@@ -173,7 +173,7 @@
     "htmlhint": "1.9.2",
     "js-yaml": "4.1.1",
     "json-schema-to-typescript": "15.0.4",
-    "knip": "6.6.0",
+    "knip": "6.6.1",
     "papaparse": "5.5.3",
     "playwright": "1.59.1",
     "start-server-and-test": "3.0.2",
