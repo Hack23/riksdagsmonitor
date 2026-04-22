@@ -48,7 +48,7 @@ permissions:
   discussions: read
   security-events: read
   
-timeout-minutes: 90
+timeout-minutes: 55
 
 concurrency:
   group: gh-aw-news-evening-analysis-${{ inputs.article_date || 'today' }}
@@ -61,7 +61,7 @@ sandbox:
   agent: awf
   mcp:
     port: 8080
-    keepalive-interval: 300 # 5m ping to avoid MCP idle session expiry in 90m runs
+    keepalive-interval: 300 # 5m ping to keep MCP connections alive; Copilot API token expires ~60min so PR must be created within 25min of agent start
 
 runtimes:
   node:

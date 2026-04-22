@@ -47,7 +47,13 @@ No step may be skipped, reordered, or executed in parallel with its successor.
 
 ## Session keepalive requirement
 
-To reduce MCP HTTP session expiry risk during long-running phases, workflows set `sandbox.mcp.keepalive-interval: 300` (5 minutes). Do not add per-phase checkpoint PRs or repo-memory push steps.
+> ⚠️ **Critical**: The Copilot API creates a server-side session when the agent starts. That session is bound to the `github.token` baked in at step start — it is **never refreshed** mid-run. The session expires at approximately **60 minutes** (gh-aw issue #24920). After expiry, all tool calls and inference requests fail silently. The workflow appears to run but makes zero progress, and **the PR is never created**.
+
+To mitigate MCP idle-connection drops, workflows set `sandbox.mcp.keepalive-interval: 300` (5-minute ping). This keeps MCP connections alive but does **not** refresh the Copilot API token.
+
+**The only reliable mitigation is to call `safeoutputs___create_pull_request` within 25 minutes of agent start** — before the token nears expiry. See `07-commit-and-pr.md §Deadline enforcement` for the mandatory early-PR procedure.
+
+Do not add per-phase checkpoint PRs or repo-memory push steps.
 
 ## Output contract
 
