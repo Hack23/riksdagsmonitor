@@ -20,7 +20,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const WORKFLOWS_DIR = path.join(__dirname, '..', '.github', 'workflows');
-const AW_DIR = path.join(__dirname, '..', '.github', 'aw');
 const PROMPTS_DIR = path.join(__dirname, '..', '.github', 'prompts');
 
 /** All article types that should have dedicated workflows */
@@ -688,22 +687,6 @@ describe('Unified Required Skills', () => {
   const ALL_NEWS_WORKFLOWS = [
     ...CONTENT_GENERATION_WORKFLOWS,
     ...TRANSLATION_WORKFLOWS,
-  ];
-
-  const REQUIRED_SKILLS = [
-    'editorial-standards/SKILL.md',
-    'swedish-political-system/SKILL.md',
-    'legislative-monitoring/SKILL.md',
-    'riksdag-regering-mcp/SKILL.md',
-    'language-expertise/SKILL.md',
-    'gh-aw-safe-outputs/SKILL.md',
-  ];
-
-  /** Translation workflows only need these skills (no editorial-standards, legislative-monitoring, riksdag-regering-mcp) */
-  const TRANSLATION_REQUIRED_SKILLS = [
-    'swedish-political-system/SKILL.md',
-    'language-expertise/SKILL.md',
-    'gh-aw-safe-outputs/SKILL.md',
   ];
 
   it.skip('all content-generation workflows should reference the 6 required skills (LEGACY)', () => {

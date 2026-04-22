@@ -25,7 +25,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const WORKFLOWS_DIR = path.join(__dirname, '..', '.github', 'workflows');
-const AW_DIR = path.join(__dirname, '..', '.github', 'aw');
 const PROMPTS_DIR = path.join(__dirname, '..', '.github', 'prompts');
 
 // Workflows to validate
