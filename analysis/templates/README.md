@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.3-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.2 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 4.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -122,9 +122,59 @@ These analysis templates implement structured intelligence production mandated b
 
 ---
 
+## 🔄 Tradecraft Requirements (v4.3)
+
+Every template produced by Riksdagsmonitor workflows must comply with the tradecraft standards defined in [`political-style-guide.md`](../methodologies/political-style-guide.md):
+
+### Standard Header Block
+
+Every template file includes a tradecraft header that workflow AI agents complete:
+
+```markdown
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | `[Stage: FIND / FIX / FINISH / EXPLOIT / ANALYZE / DISSEMINATE]` |
+| **PIRs Served** | `[List: PIR-1, PIR-5, etc.]` |
+| **Admiralty Floor** | `[Minimum: A1 / B2 / C3]` |
+| **SAT(s) Applied** | `[List: ACH, Red Team, etc.]` |
+| **ICD 203 Standards** | `[List: 1, 2, 4, etc.]` |
+```
+
+### Evidence Column Requirements
+
+Every evidence table gains an **Admiralty** column with `[A–F][1–6]` annotation:
+
+```markdown
+| Evidence | Source | Admiralty | Confidence |
+|----------|--------|:---------:|:----------:|
+| FiU48 passed 176–173 | Riksdag votering H901FiU48 | **[A1]** | 🟦 VERY HIGH |
+| SD budget support conditional | Party congress resolution | **[B2]** | 🟩 HIGH |
+```
+
+### Probability Language
+
+All forward-looking claims use **Words of Estimative Probability (WEP)**:
+- **Almost certain** (~95%) · **Very likely** (~85%) · **Likely** (~70%) · **Roughly even** (~50%) · **Unlikely** (~30%) · **Very unlikely** (~15%) · **Remote** (~5%)
+
+### Source Diversity Rule
+
+Every P0/P1 claim requires **≥3 primary sources** (MCP-sourced Riksdag/Regering documents) **+ ≥1 secondary source** (SCB, World Bank, IMF, press, OSINT). Single-source claims must be labeled `[unconfirmed]`. See the **Source Diversity Rule** + **Collection Management Matrix** (MCP tool → evidence → template) in [`political-style-guide.md`](../methodologies/political-style-guide.md).
+
+### PIR Tagging
+
+Key findings in `intelligence-assessment.md`, `executive-brief.md`, and `synthesis-summary.md` tag to the PIR they inform (e.g., `[PIR-1: Coalition Stability]`).
+
+### ICD 203 Compliance
+
+Every `methodology-reflection.md` includes an ICD 203 compliance checklist verifying all 9 analytic tradecraft standards are met.
+
+---
+
 ## 🎯 Purpose
 
-This directory contains **8 structured analysis templates** that define the exact output format for every political intelligence artifact produced by Riksdagsmonitor's AI agents. Templates ensure consistency, completeness, and quality across all analysis types — from per-file document intelligence to full synthesis summaries.
+This directory contains a **structured catalog of analysis templates** that defines the exact output format for every political intelligence artifact produced by Riksdagsmonitor's AI agents. Templates ensure consistency, completeness, and quality across all analysis types — from per-file document intelligence to full synthesis summaries.
 
 > **Critical Rule:** AI agents MUST follow these templates. Templates define structure and required sections — the AI fills them with genuine, evidence-based analysis. Templates must NEVER be copied verbatim with placeholder text.
 
@@ -227,18 +277,80 @@ graph LR
 
 ---
 
-## 📑 Master Template Catalog
+## 📑 Master Template Catalog — Family A–E
 
-| # | Template | Purpose | Key Sections | MCP Data Sources | Output Format | Priority |
-|:-:|----------|---------|-------------|------------------|---------------|:--------:|
-| 1 | [🏷️ Political Classification](political-classification.md) | 7-dimension event classification | Sensitivity Level, Policy Domain, Urgency Level, Classification Dimensions, **Confidence Decay Rule** | `search_dokument`, `get_calendar_events`, `get_betankanden` | Metadata table + checkbox dimensions + Mermaid | 🔴 HIGH |
-| 2 | [⚠️ Risk Assessment](risk-assessment.md) | Quantified risk using 5×5 L×I matrix across 5 main dimensions | Risk Context, Risk Register, Heat Map, Mitigation, **Risk Trend (↑↓→)**, **Previous Assessment Comparison**, **Risk Interconnection Mermaid** | `search_voteringar`, `get_betankanden`, `get_propositioner` | Risk register + L×I heat map Mermaid + trends | 🔴 HIGH |
-| 3 | [🎭 Threat Analysis](threat-analysis.md) | Multi-framework political threat assessment | 6 Threat Dimensions, Diamond Model, Attack Trees, Kill Chain, **Threat Evolution Timeline**, **Cross-Methodology Linkage** | `search_voteringar`, `search_anforanden`, `get_interpellationer` | Dimension tables + severity Mermaid | 🔴 HIGH |
-| 4 | [💼 SWOT Analysis](swot-analysis.md) | Evidence-based SWOT with TOWS + Cross-SWOT | SWOT Context, Quadrants, Strategic Implications, **SWOT Delta (New/Changed/Removed)**, **Temporal Window** | `get_betankanden`, `search_voteringar`, `get_propositioner` | 4-quadrant tables + Mermaid chart | 🟡 MEDIUM |
-| 5 | [👥 Stakeholder Impact](stakeholder-impact.md) | Multi-lens stakeholder impact assessment | 8 Stakeholder Groups, Impact Matrix, **Position Change Tracking**, **Power-Interest Grid** | `search_ledamoter`, `get_betankanden`, `search_anforanden` | Stakeholder tables + Mermaid diagram | 🟡 MEDIUM |
-| 6 | [📈 Significance Scoring](significance-scoring.md) | 5-dimension composite score (1–10) | 5 Scoring Dimensions, Composite Score, Decision, **Relative Scoring (same-type comparison)** | `search_dokument`, `get_calendar_events` | Scoring table + publish decision | 🔴 HIGH |
-| 7 | [🧩 Synthesis Summary](synthesis-summary.md) | Daily intelligence synthesis | Headlines, SWOT, Risk, Threat, **Mandatory Forward Indicators**, **Aggregate Risk Level with Trend** | All MCP tools (aggregated) | Dashboard + Mermaid overview | 🔴 HIGH |
-| 8 | [🔍 Per-File Intelligence](per-file-political-intelligence.md) | Deep per-document AI analysis (**most used**) | Executive Summary, Classification, SWOT, Risk, Threat, Stakeholder, Significance, **Same-Day Cross-Reference**, **Hack23 Ecosystem Cross-Reference** | Depends on document type | Comprehensive `{dok_id}-analysis.md` in `analysis/daily/.../documents/` | 🔴 CRITICAL |
+Templates are grouped by the **output family** defined in [`ai-driven-analysis-guide.md`](../methodologies/ai-driven-analysis-guide.md#-output-matrix--every-file-every-family). Each family corresponds to a distinct role in the 7-step analysis protocol. Every analysis workflow uses the same catalog.
+
+### 📘 Family A — Core Synthesis (every run produces all 9)
+
+> **Methodology:** [synthesis-methodology.md](../methodologies/synthesis-methodology.md) defines step-by-step production of A2, A3, A4, A9. Classification (A5) uses [political-classification-guide.md](../methodologies/political-classification-guide.md). SWOT (A6) uses [political-swot-framework.md](../methodologies/political-swot-framework.md). Risk (A7) uses [political-risk-methodology.md](../methodologies/political-risk-methodology.md). Threat (A8) uses [political-threat-framework.md](../methodologies/political-threat-framework.md).
+
+| # | File | Template | Purpose |
+|:-:|------|----------|---------|
+| A1 | `README.md` (folder index) | [folder README](#folder-readme-template) | Index + links for each workflow folder |
+| A2 | `executive-brief.md` | [executive-brief.md](executive-brief.md) | BLUF, 3 decisions, 60-second read, confidence-labeled |
+| A3 | `synthesis-summary.md` | [synthesis-summary.md](synthesis-summary.md) | Integrated intelligence picture + article decision |
+| A4 | `significance-scoring.md` | [significance-scoring.md](significance-scoring.md) | DIW-weighted ranking, 6 dimensions |
+| A5 | `classification-results.md` | [political-classification.md](political-classification.md) | 7-dimension classification across documents |
+| A6 | `swot-analysis.md` | [swot-analysis.md](swot-analysis.md) | Stakeholder SWOT + TOWS + cross-SWOT |
+| A7 | `risk-assessment.md` | [risk-assessment.md](risk-assessment.md) | 5×5 L×I matrix + cascading chains |
+| A8 | `threat-analysis.md` | [threat-analysis.md](threat-analysis.md) | Political threat taxonomy + attack tree |
+| A9 | `stakeholder-perspectives.md` | [stakeholder-impact.md](stakeholder-impact.md) | 6-lens stakeholder impact matrix |
+
+### 📗 Family B — Structural Metadata (every run produces all 2)
+
+> **Methodology:** [structural-metadata-methodology.md](../methodologies/structural-metadata-methodology.md) — step-by-step production of the provenance ledger + relational graph, with SLA table and 7-edge relationship taxonomy.
+
+| # | File | Template | Purpose |
+|:-:|------|----------|---------|
+| B1 | `data-download-manifest.md` | [data-download-manifest.md](data-download-manifest.md) | Transparent MCP-download inventory + data-depth ceilings |
+| B2 | `cross-reference-map.md` | [cross-reference-map.md](cross-reference-map.md) | Policy clusters + legislative chains + coordinated-activity patterns |
+
+### 📙 Family C — Strategic Extensions (core — every run produces all 5)
+
+> **Methodology:** [strategic-extensions-methodology.md](../methodologies/strategic-extensions-methodology.md) — step-by-step production of all 5 always-produced depth products (ACH matrix, peer-country grid, Key Judgments, bias audit, run-audit gate).
+
+| # | File | Template | Role on every run |
+|:-:|------|----------|-------------------|
+| C1 | `scenario-analysis.md` | [scenario-analysis.md](scenario-analysis.md) | 4 scenarios with probabilities summing to 100%; converges to narrow-band on light days |
+| C2 | `comparative-international.md` | [comparative-international.md](comparative-international.md) | Peer-country comparison (≥5 peers); compares baseline when no reform active (variant filename: `international-comparative.md`) |
+| C3 | `devils-advocate.md` | [devils-advocate.md](devils-advocate.md) | ACH red-team with ≥3 competing hypotheses; documents rejected hypotheses when evidence is strong |
+| C4 | `intelligence-assessment.md` | [intelligence-assessment.md](intelligence-assessment.md) | 3–7 Key Judgments + PIRs for the next cycle |
+| C5 | ⭐ `methodology-reflection.md` | [methodology-reflection.md](methodology-reflection.md) | **VITAL run-audit file** — evidence sufficiency + confidence distribution + party-neutrality + ≥3 concrete improvements |
+
+### 📕 Family D — Electoral & Domain Lenses (core — every run produces all 7)
+
+> **Methodology:** [electoral-domain-methodology.md](../methodologies/electoral-domain-methodology.md) — step-by-step production of all 7 always-produced domain lenses (Sainte-Laguë seat math, segment privacy threshold, 4-horizon forward indicators, longitudinal frame delta).
+
+| # | File | Template | Role on every run |
+|:-:|------|----------|-------------------|
+| D1 | `election-2026-analysis.md` | [election-2026-analysis.md](election-2026-analysis.md) | Seat-projection delta + coalition viability; perpetual Swedish political-context file (variant filename: `election-2026-implications.md`) |
+| D2 | `voter-segmentation.md` | [voter-segmentation.md](voter-segmentation.md) | 5-axis segment impact; documents baseline positions on procedural days |
+| D3 | `coalition-mathematics.md` | [coalition-mathematics.md](coalition-mathematics.md) | Current seat map + pivotal votes + Sainte-Laguë scenarios |
+| D4 | `historical-parallels.md` | [historical-parallels.md](historical-parallels.md) | Named precedent(s) ≤ 40 years with similarity score, or explicit "no-precedent" finding (variant filename: `historical-baseline.md`) |
+| D5 | `media-framing-analysis.md` | [media-framing-analysis.md](media-framing-analysis.md) | Per-party + per-press-quadrant framing + longitudinal-frame delta |
+| D6 | `implementation-feasibility.md` | [implementation-feasibility.md](implementation-feasibility.md) | Delivery-risk view; audits in-flight backlog when no new bill lands |
+| D7 | `forward-indicators.md` | [forward-indicators.md](forward-indicators.md) | ≥10 indicators across 4 horizons (72 h / week / month / election) |
+
+### 📒 Family E — Per-Document
+
+> **Methodology:** [per-document-methodology.md](../methodologies/per-document-methodology.md) — step-by-step production of `{dok_id}-analysis.md` + cluster files, with doctype-specific Mermaid taxonomy and 4-condition clustering rule.
+
+| # | File | Template | Purpose |
+|:-:|------|----------|---------|
+| E1 | `documents/${dok_id}-analysis.md` | [per-file-political-intelligence.md](per-file-political-intelligence.md) | Deep per-document analysis (tiers L1–L3) |
+| E2 | `documents/${cluster}-cluster-analysis.md` | [per-file-political-intelligence.md § Cluster](per-file-political-intelligence.md) | Cluster-level synthesis for grouped documents |
+
+### Workflow → Family Map
+
+| Workflow | Family A | Family B | Family C | Family D | Family E |
+|----------|:--------:|:--------:|:--------:|:--------:|:--------:|
+| Morning per-type (propositions, motions, betänkanden, interpellationer, frågor) | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every doc |
+| Midday week/month-ahead | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every forecast item |
+| Evening analysis | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every doc |
+| Realtime monitor | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every doc |
+| Weekly review | ✅ All 9 | ✅ Both | ✅ All 5 + reflection | ✅ All 7 | Top 20 |
+| Monthly review | ✅ All 9 | ✅ Both | ✅ All 5 + reflection | ✅ All 7 | Top 50 |
 
 ---
 

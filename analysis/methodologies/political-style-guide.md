@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-3.1-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 3.1 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -150,18 +150,511 @@ All factual claims about parliamentary actions **must** cite a `dok_id`:
 
 ---
 
-## 🎯 Confidence Level Notation
+## 🔄 F3EAD Intelligence Cycle
 
-Confidence levels must be explicitly stated when making analytical claims:
+The **F3EAD cycle** (Find – Fix – Finish – Exploit – Analyze – Disseminate) is the doctrinal backbone of all Riksdagsmonitor intelligence production. Every workflow maps to F3EAD stages:
 
-| Level | Notation | When to Use |
-|-------|----------|-------------|
-| **HIGH** | `[HIGH confidence]` or 🟢 | Multiple corroborating primary sources; official documents |
-| **MEDIUM** | `[MEDIUM confidence]` or 🟡 | Single primary source or multiple secondary sources |
-| **LOW** | `[LOW confidence]` or 🔴 | Single unverified source or inference from indirect evidence |
+```mermaid
+flowchart LR
+    F1["🔍 FIND<br/>MCP search queries<br/>identify targets"]
+    F2["📌 FIX<br/>Document retrieval<br/>establish identity"]
+    F3["✅ FINISH<br/>Classification +<br/>significance scoring"]
+    F4["⛏️ EXPLOIT<br/>SWOT · Risk · Threat<br/>extract intel value"]
+    F5["🧠 ANALYZE<br/>Synthesis · ACH<br/>intelligence assessment"]
+    F6["📤 DISSEMINATE<br/>Executive brief<br/>news article"]
 
-**Example:**  
-> "SD is likely [MEDIUM confidence] to oppose the proposed healthcare reform if the final text retains the family reunification provisions, based on SD's stated position in anförande 2026-02-14 (single source)."
+    F1 --> F2 --> F3 --> F4 --> F5 --> F6
+    F6 -.->|"feedback loop"| F1
+
+    style F1 fill:#1565C0,color:#FFFFFF
+    style F2 fill:#7B1FA2,color:#FFFFFF
+    style F3 fill:#2E7D32,color:#FFFFFF
+    style F4 fill:#FF9800,color:#FFFFFF
+    style F5 fill:#C2185B,color:#FFFFFF
+    style F6 fill:#4CAF50,color:#FFFFFF
+```
+
+*Alt-text: F3EAD cycle flowchart showing six sequential stages (Find, Fix, Finish, Exploit, Analyze, Disseminate) with a feedback loop from Disseminate back to Find. Each stage maps to Riksdagsmonitor workflow steps.*
+
+| F3EAD Stage | Riksdagsmonitor Mapping | Output Files |
+|-------------|------------------------|--------------|
+| **FIND** | MCP `search_dokument`, `search_voteringar`, `search_anforanden` | Query logs, candidate list |
+| **FIX** | `get_dokument`, `get_ledamot`, document download | `data-download-manifest.md` |
+| **FINISH** | 7-dimension classification, DIW scoring | `political-classification.md`, `significance-scoring.md` |
+| **EXPLOIT** | SWOT, Risk, Threat frameworks | `swot-analysis.md`, `risk-assessment.md`, `threat-analysis.md` |
+| **ANALYZE** | Synthesis, ACH, scenario | `synthesis-summary.md`, `devils-advocate.md`, `intelligence-assessment.md` |
+| **DISSEMINATE** | Executive brief, article generation | `executive-brief.md`, news HTML |
+
+Every methodology file declares which F3EAD stage(s) it serves. Every template header includes the F3EAD stage.
+
+---
+
+## 🎯 Priority Intelligence Requirements (PIR) & Essential Elements of Information (EEI)
+
+### Standing PIRs for Swedish Parliamentary Intelligence
+
+PIRs are the intelligence questions that guide collection and analysis. Every workflow run declares which PIRs it serves; every piece of evidence tags to an EEI.
+
+| PIR Code | Priority Intelligence Requirement | EEIs (Essential Elements) |
+|----------|----------------------------------|---------------------------|
+| **PIR-1** | **Coalition Stability** — Will the Tidö coalition maintain its Riksdag majority through the current riksmöte? | EEI-1.1: Vote margins on contested betänkanden <br> EEI-1.2: Public statements indicating party-line deviation <br> EEI-1.3: Coalition agreement renegotiation signals |
+| **PIR-2** | **Grundlag Risk** — Are there constitutional amendments or grundlag challenges under consideration? | EEI-2.1: RF/TF/SO/YGL/TO amendment motions filed <br> EEI-2.2: KU scrutiny reports with constitutional implications <br> EEI-2.3: Expert committee (SOU) recommendations on constitutional reform |
+| **PIR-3** | **Migration Policy** — What is the trajectory of migration and integration policy? | EEI-3.1: MiG (Migration Agency) directive changes <br> EEI-3.2: Interpellations and motions on asylum, deportation, family reunification <br> EEI-3.3: EU asylum-procedure synchronization |
+| **PIR-4** | **Defence Posture** — How is Sweden's NATO integration and defence spending evolving? | EEI-4.1: Defence budget propositions (FöU) <br> EEI-4.2: NATO interoperability legislation <br> EEI-4.3: MUST/FRA oversight documents |
+| **PIR-5** | **Fiscal Trajectory** — What is the government's fiscal stance and budget outlook? | EEI-5.1: Budget proposition (FiU) amendments <br> EEI-5.2: Fiscal policy council (FPR) assessments <br> EEI-5.3: Tax and expenditure reforms |
+| **PIR-6** | **Election Integrity** — Are there threats to the September 2026 election process? | EEI-6.1: Valmyndigheten (Election Authority) guidance <br> EEI-6.2: Foreign influence reports (SÄPO, MSB) <br> EEI-6.3: Electoral law amendments |
+| **PIR-7** | **Democratic Norms** — Are there erosions to transparency, accountability, or rule of law? | EEI-7.1: JO (Parliamentary Ombudsman) critical decisions <br> EEI-7.2: KU constitutional scrutiny <br> EEI-7.3: Access-to-information rulings |
+
+### PIR Usage in Analysis Files
+
+- **`intelligence-assessment.md`** — Opens with "PIRs served: PIR-1, PIR-5" and structures Key Judgments by PIR
+- **`executive-brief.md`** — Includes "PIR relevance" row in context table
+- **`synthesis-summary.md`** — Tags each finding to the PIR it informs
+- **Evidence tables** — Every row includes an `EEI Tag` column (e.g., `EEI-1.2`)
+
+---
+
+## 📊 Admiralty Source Reliability Code (NATO STANAG 2022)
+
+### Reliability × Credibility Matrix
+
+All evidence claims carry an Admiralty Code annotation `[A–F][1–6]` indicating source reliability (A–F) and information credibility (1–6).
+
+```mermaid
+graph TD
+    subgraph "Source Reliability (A–F)"
+        A["A — Completely Reliable<br/>No doubt about authenticity"]
+        B["B — Usually Reliable<br/>Minor doubts"]
+        C["C — Fairly Reliable<br/>Doubts, but has been reliable before"]
+        D["D — Not Usually Reliable<br/>Significant doubts"]
+        E["E — Unreliable<br/>Lacks authenticity"]
+        F["F — Cannot Be Judged<br/>No basis for evaluation"]
+    end
+
+    subgraph "Information Credibility (1–6)"
+        I1["1 — Confirmed<br/>Confirmed by other independent sources"]
+        I2["2 — Probably True<br/>Likely but not confirmed"]
+        I3["3 — Possibly True<br/>Reasonable but other explanations exist"]
+        I4["4 — Doubtful<br/>More likely untrue than true"]
+        I5["5 — Improbable<br/>Unlikely to be true"]
+        I6["6 — Cannot Be Judged<br/>No basis for evaluation"]
+    end
+
+    style A fill:#2E7D32,color:#FFFFFF
+    style B fill:#4CAF50,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#D32F2F,color:#FFFFFF
+    style F fill:#9E9E9E,color:#FFFFFF
+    style I1 fill:#2E7D32,color:#FFFFFF
+    style I2 fill:#4CAF50,color:#FFFFFF
+    style I3 fill:#FFC107,color:#000000
+    style I4 fill:#FF9800,color:#FFFFFF
+    style I5 fill:#D32F2F,color:#FFFFFF
+    style I6 fill:#9E9E9E,color:#FFFFFF
+```
+
+*Alt-text: Two-panel diagram showing source reliability scale (A–F) and information credibility scale (1–6), color-coded from green (high) through yellow/orange to red (low) and grey (cannot judge).*
+
+### Riksdag-Specific Admiralty Code Mapping
+
+| Source Type | Reliability | Typical Credibility | Example |
+|-------------|:-----------:|:-------------------:|---------|
+| **Riksdag.se primary document** (proposition, betänkande) | **A** | 1–2 | Prop. 2025/26:1 (budget) `[A1]` |
+| **Regeringen.se official document** | **A** | 1–2 | Government directive `[A1]` |
+| **Riksdag committee minutes** | **B** | 2 | FiU minutes 2026-03-15 `[B2]` |
+| **Official vote record** (`search_voteringar`) | **A** | 1 | Vote tally HD01234 `[A1]` |
+| **MP anförande** (speech in plenary) | **B** | 2–3 | Magdalena Andersson (S) anförande 2026-03-20 `[B2]` |
+| **Party press release** | **C** | 3 | SD press release 2026-03-18 `[C3]` |
+| **News wire (TT, Reuters)** | **C** | 2–3 | TT Nyhetsbyrån report `[C2]` |
+| **Quality newspaper** (DN, SvD, GP) | **C** | 3 | DN analysis piece `[C3]` |
+| **Tabloid** (Aftonbladet, Expressen) | **D** | 3–4 | Aftonbladet exclusive `[D3]` |
+| **Social media (X/Twitter, Facebook)** | **D–E** | 4–5 | MP tweet `[D4]` |
+| **Anonymous source** | **E** | 5 | Unnamed coalition source `[E5]` |
+| **SCB official statistics** | **A** | 1 | SCB partisympati Q1 2026 `[A1]` |
+| **World Bank / IMF data** | **A** | 1 | World Bank WGI 2025 `[A1]` |
+| **Pollster (SIFO, Novus, Demoskop)** | **B** | 2 | SIFO March 2026 `[B2]` |
+
+### Admiralty Annotation Format
+
+Every evidence column in every template requires Admiralty annotation:
+
+```markdown
+| Evidence | Source | Admiralty | Confidence |
+|----------|--------|:---------:|:----------:|
+| FiU48 passed 176–173 | Riksdag votering H901FiU48 | **[A1]** | 🟦 VERY HIGH |
+| SD will support budget | Party congress resolution | **[B2]** | 🟩 HIGH |
+| L threshold risk elevated | SIFO March 2026, L at 4.1% | **[B2]** | 🟩 HIGH |
+| Coalition may fracture | Unnamed Tidö source (DN) | **[D4]** | 🟥 LOW |
+```
+
+### Source Diversity Rule (Formalized)
+
+Intelligence-grade analysis requires multi-source corroboration to mitigate single-point-of-failure risk and reduce confirmation bias. Apply this rule systematically:
+
+#### Primary Rule: Multi-Source Corroboration by Claim Priority
+
+| Claim Priority | Minimum Sources | Source Mix | Admiralty Floor | Swedish Political Example |
+|:-------------:|:---------------:|------------|:---------------:|---------------------------|
+| **P0 (CRITICAL)** | ≥4 | ≥3 primary `[A–B]` + ≥1 secondary `[A–B]` | `[A1]` or `[B2]` | **Grundlag amendment vote:** "RF Chapter 1 §1 amendment passed 233–116 (votering GZ123RF01 `[A1]`), confirmed in KU betänkande 2026/27:KU5 `[A1]`, Moderate party floor leader anförande `[B2]`, and constitutional-law expert Iain Cameron (Uppsala University) analysis `[B2]`)" |
+| **P1 (HIGH)** | ≥3 | ≥2 primary `[A–B]` + ≥1 secondary `[B–C]` | `[B2]` | **Coalition fracture risk:** "L party signals 4% threshold risk per SIFO March 2026 poll at 4.1% ±0.8% `[B2]`, party congress emergency resolution on SD cooperation `[B2]`, and SvD editorial noting internal divisions `[C3]`" |
+| **P2 (MEDIUM)** | ≥2 | ≥1 primary `[A–C]` + ≥1 secondary or 2 primary | `[C3]` | **Budget passage likelihood:** "FiU48 defence amendment likely to pass per FiU minutes 2026-04-15 showing 7–5 committee vote `[B2]` and unnamed coalition whip estimate to DN of 175+ floor votes `[D4]` `[unconfirmed]`" |
+| **P3 (LOW)** | ≥1 | Single source permitted if flagged | `[C3]` or lower | **Speculative coalition dynamics:** "Unnamed Tidö negotiator reports L leadership divided on family reunification §3 (Expressen 2026-04-19 `[E5]` `[unconfirmed — anonymous source]`)" |
+
+#### Single-Source Policy
+
+**Prohibited:**
+- ❌ P0/P1 claims with only one source
+- ❌ Constitutional assessments (PIR-2) from single expert opinion
+- ❌ Election forecasts from single poll without historical context
+
+**Permitted (with explicit labeling):**
+- ✅ **Breaking news** — single official source `[A1]` with `[developing — single source]` tag; must be followed by multi-source confirmation within 24h
+- ✅ **Exclusive documents** — single dok_id `[A1]` if no other source has covered it; label `[exclusive — single document]`
+- ✅ **Expert opinion** — single named expert `[C3]` if framed as "one perspective" not "consensus view"
+- ✅ **Anonymous tips** — single source `[E5]` labeled `[unconfirmed — anonymous source]` with LOW confidence ceiling
+
+#### Corroboration Standards: How to Validate Across Sources
+
+**Independent corroboration** requires sources that:
+1. **Different collection paths** — not derived from same upstream source (e.g., TT wire story republished by DN is ONE source, not two)
+2. **Different methods** — MCP document retrieval + human interview counts as two; two MCP queries of same API endpoint = one
+3. **Temporal spread** — evidence from ≥2 different dates strengthens corroboration (avoids snapshot bias)
+
+**Corroboration checklist:**
+```markdown
+Evidence E1: FiU48 passed committee 7–5 [A1] (2026-04-18)
+Evidence E2: SD floor support confirmed [B2] (2026-04-19) ← Different date, different actor
+Evidence E3: Coalition whip expects 175+ votes [C3] (2026-04-20) ← Different source type
+Status: ✅ CORROBORATED (3 independent sources, 3-day spread)
+```
+
+#### Conflict Resolution: When Sources Contradict
+
+**When sources provide conflicting evidence:**
+
+1. **Assess reliability differential** — If `[A1]` contradicts `[D4]`, trust `[A1]` unless extraordinary circumstances
+2. **Check temporal sequence** — Later source may supersede earlier (e.g., official vote count `[A1]` trumps preliminary coalition estimate `[C3]`)
+3. **Explicit acknowledgment** — Document the conflict in analysis:
+   > "FiU48 vote margin remains uncertain: coalition whip estimates 175 `[C3]`, but L reservationslista suggests 3 MPs may abstain `[A1]`, which would reduce to 173. We assess the official reservationslista `[A1]` as more reliable than whip estimate."
+4. **Confidence downgrade** — Conflicting evidence triggers MEDIUM→LOW confidence adjustment until resolved
+
+**Conflict resolution ladder:**
+```
+1. Official records (A1) > spokesperson statements (B2) > unnamed sources (D4-E5)
+2. More recent > older (if material change occurred)
+3. Primary actor > third-party observer
+4. Document trail > oral statement
+```
+
+#### Source Attribution Hierarchy: Precedence When Multiple Sources Available
+
+When multiple sources support the same claim, **cite in this order** (highest reliability first):
+
+| Precedence | Source Type | Admiralty | Example Citation |
+|:----------:|-------------|:---------:|------------------|
+| 1 | Official Riksdag document | `[A1]` | Prop. 2025/26:1, p. 45 |
+| 2 | Vote record | `[A1]` | Votering HD01234 |
+| 3 | Committee minutes | `[B2]` | FiU minutes 2026-04-15 |
+| 4 | MP floor statement | `[B2]` | Magdalena Andersson (S) anförande 2026-04-20 |
+| 5 | Official statistics | `[A1]` | SCB partisympati Q1 2026 |
+| 6 | Quality pollster | `[B2]` | SIFO March 2026 |
+| 7 | Party press release | `[C3]` | SD press release 2026-04-18 |
+| 8 | News wire | `[C2]` | TT Nyhetsbyrån |
+| 9 | Newspaper analysis | `[C3]` | DN editorial |
+| 10 | Social media | `[D4]` | MP official account |
+| 11 | Anonymous source | `[E5]` | Unnamed coalition insider |
+
+**Citation format:** Always lead with highest-reliability source, add secondary sources in parentheses:
+> "FiU48 passed 176–173 (votering HD01FiU48 `[A1]`; also reported by TT `[C2]` and confirmed in SD floor statement `[B2]`)."
+
+#### Anonymous Source Policy
+
+Anonymous sources `[E5]` are permitted under strict conditions:
+
+**When permitted:**
+- ✅ Corroboration of public-record claim (anonymous source adds context, not primary evidence)
+- ✅ Whistleblower reporting malfeasance (public interest outweighs attribution)
+- ✅ Coalition negotiation dynamics (no official record available)
+
+**Mandatory labeling:**
+```markdown
+| Evidence | Source | Admiralty | Confidence |
+|----------|--------|:---------:|:----------:|
+| L leadership divided on §3 | Unnamed Tidö source (Expressen 2026-04-19) | **[E5]** | 🟥 LOW `[unconfirmed — anonymous source]` |
+```
+
+**Prohibited:**
+- ❌ Anonymous sources as sole evidence for P0/P1 claims
+- ❌ Multiple anonymous sources without any public corroboration (circular sourcing risk)
+- ❌ Anonymous sources for factual claims that should have document trail (vote counts, dok_id citations)
+
+#### Worked Scenario: Source Diversity in Practice (Coalition Stability Assessment)
+
+**Intelligence Question:** Will the Tidö coalition survive the FiU48 defence-budget vote on 2026-04-22?
+
+**Collection Phase (F3EAD: FIND/FIX):**
+
+| # | Evidence | Source Type | Admiralty | Collection Date | PIR/EEI |
+|:-:|----------|-------------|:---------:|:---------------:|:-------:|
+| E1 | FiU48 committee vote 7–5 (M+KD+L for, S+V+MP+C against) | Committee minutes | `[A1]` | 2026-04-18 | PIR-1/EEI-1.1 |
+| E2 | SD floor-support statement by Richard Jomshof (SD riksdagsledamot) | Anförande HD04567 | `[B2]` | 2026-04-19 | PIR-1/EEI-1.2 |
+| E3 | L reservation filed on §3 (family reunification clause) | FiU48 reservationslista | `[A1]` | 2026-04-18 | PIR-1/EEI-1.3 |
+| E4 | Coalition whip confirms 175+ votes expected | DN interview with M whip | `[C3]` | 2026-04-20 | PIR-1/EEI-1.1 |
+| E5 | L leadership divided, 3 MPs "wavering" on §3 | Unnamed Tidö source to Expressen | `[E5]` | 2026-04-19 | PIR-1/EEI-1.3 |
+
+**Source Diversity Analysis:**
+
+**Claim 1 (P1): "Coalition will pass FiU48 with ≥175 votes"**
+- Source count: 4 (E1, E2, E3, E4)
+- Admiralty spread: `[A1]` × 2, `[B2]` × 1, `[C3]` × 1
+- Temporal spread: 3 days (2026-04-18 to 2026-04-20)
+- Independent paths: Committee record, SD statement, L reservation, whip estimate
+- **Assessment:** ✅ CORROBORATED — meets P1 standard (≥3 sources, ≥2 primary)
+- **Confidence:** 🟩 HIGH
+
+**Claim 2 (P2): "L MPs may abstain on §3, narrowing margin to 173"**
+- Source count: 2 (E3 `[A1]` official reservation, E5 `[E5]` anonymous)
+- Reliability conflict: `[A1]` (official reservation exists) vs. `[E5]` (claims 3 MPs wavering)
+- Corroboration: E3 confirms L discomfort with §3, but does not confirm abstention
+- **Assessment:** ⚠️ PARTIALLY CORROBORATED — E3 supports division, E5 adds specificity
+- **Confidence:** 🟧 MEDIUM (upgraded from LOW due to E3 corroboration)
+- **Labeling:** "L reservation `[A1]` signals §3 discomfort; unnamed source `[E5]` `[unconfirmed]` reports 3 MPs may abstain"
+
+**Conflict Resolution Applied:**
+E4 (whip: 175+ votes) vs. E5 (3 MPs wavering → 173 votes)
+- Reliability: `[C3]` (named whip) vs. `[E5]` (anonymous)
+- Temporal: E4 is more recent (2026-04-20) than E5 (2026-04-19)
+- **Resolution:** Weight E4 higher but acknowledge E5 as uncertainty factor
+- **Final Assessment:** "Coalition **likely [MODERATE confidence]** to pass with 175–176 votes; abstention risk from L §3 reservationslista `[A1]` creates non-negligible scenario of 173-vote outcome"
+
+**Source Attribution Hierarchy Applied:**
+Primary citation: E1 `[A1]` (official committee record)
+Supporting: E2 `[B2]`, E3 `[A1]`, E4 `[C3]`
+Flagged: E5 `[E5]` with explicit `[unconfirmed — anonymous source]` tag
+
+**Key Judgment (ICD 203 Standard #1 — Source Quality Described):**
+> "FiU48 committee passage 7–5 (betänkande FiU48 `[A1]`) and SD floor support confirmation (anförande HD04567 `[B2]`) provide **HIGH confidence** that the coalition will secure ≥175 votes on 2026-04-22. However, L's formal reservation on §3 `[A1]` and unconfirmed reports of internal division `[E5]` introduce a ~25% probability of last-minute abstentions reducing the margin to 173. We assess passage as **very likely [HIGH confidence]**, with narrow-margin risk at **unlikely [MODERATE confidence]**."
+
+---
+
+---
+
+## 📐 ICD 203 Analytic Tradecraft Standards Mapping
+
+Riksdagsmonitor analysis maps to all 9 **ICD 203** (US Intelligence Community Directive 203: "Analytic Standards") criteria. Every template includes an ICD 203 compliance gate.
+
+| ICD 203 Standard | Requirement | Riksdagsmonitor Implementation | Pass/Fail Gate |
+|------------------|-------------|--------------------------------|----------------|
+| **1. Properly describe quality and reliability of underlying sources** | Explicitly assess source quality | Admiralty Code `[A–F][1–6]` annotation on every evidence row | Every evidence table has Admiralty column |
+| **2. Properly express and explain uncertainties** | Quantify and explain uncertainty | WEP probability language + ODNI confidence overlay | Every forward-looking claim uses WEP |
+| **3. Properly distinguish between intelligence judgments and analysts' assumptions** | Separate judgment from assumption | "Key Judgment" vs. "Analyst Assumption" sections in `intelligence-assessment.md` | Assumptions declared in separate block |
+| **4. Incorporate alternative analysis** | Consider competing hypotheses | ACH matrix in `devils-advocate.md`; Red-Team section | ≥3 hypotheses evaluated |
+| **5. Demonstrate customer relevance and address implications** | Show actionable value | "Decisions This Brief Supports" in `executive-brief.md`; Forward Indicators | Every brief names ≥3 decisions |
+| **6. Use clear and logical argumentation** | Logical chain from evidence to conclusion | Evidence → Inference → Conclusion structure in every analysis | No conclusion without evidence chain |
+| **7. Explain change in or consistency of analytic judgments** | Track analytical evolution | `methodology-reflection.md` tracks confidence changes; changelog in document control | Every file has document-control footer |
+| **8. Make accurate judgments and assessments** | Quality assurance | Pass-2 rewrite; Quality Gate ≥7.0/10 | Composite score logged |
+| **9. Incorporate visual information effectively** | Use diagrams to clarify | ≥1 color-coded Mermaid per file; ≥2 for synthesis | Mermaid count validated |
+
+### ICD 203 Compliance Checklist (include in `methodology-reflection.md`)
+
+```markdown
+## ICD 203 Compliance Audit
+
+| Standard | Status | Evidence |
+|----------|:------:|----------|
+| 1. Source quality described | ✅ | All evidence tables have Admiralty codes |
+| 2. Uncertainty expressed | ✅ | WEP + ODNI overlay used throughout |
+| 3. Judgments vs. assumptions | ✅ | Assumptions section in intel-assessment |
+| 4. Alternative analysis | ✅ | ACH matrix in devils-advocate.md |
+| 5. Customer relevance | ✅ | 3 decisions named in executive-brief |
+| 6. Logical argumentation | ✅ | Evidence chains traced |
+| 7. Consistency explained | ✅ | Changelog in document control |
+| 8. Accurate judgments | ✅ | Quality gate 8.2/10 |
+| 9. Visual information | ✅ | 14 Mermaid diagrams |
+```
+
+---
+
+## 🎯 Words of Estimative Probability (WEP) + ODNI Confidence Overlay
+
+### Harmonised Probability Scale
+
+This scale aligns with NATO, ODNI, and UK JIC estimative standards. **Every forward-looking claim uses this vocabulary.**
+
+| WEP Term | Probability Range | Emoji | When to Use |
+|----------|:-----------------:|:-----:|-------------|
+| **Almost certain** | ~95% (93–99%) | 🟦 | Outcome virtually guaranteed; blocking events highly improbable |
+| **Very likely** | ~85% (80–90%) | 🟩 | Strong evidence; few plausible alternatives |
+| **Likely** | ~70% (63–80%) | 🟩 | Preponderance of evidence; some alternatives |
+| **Roughly even** | ~50% (45–55%) | 🟨 | Genuine uncertainty; multiple plausible paths |
+| **Unlikely** | ~30% (20–37%) | 🟧 | Evidence leans against; alternatives more likely |
+| **Very unlikely** | ~15% (10–20%) | 🟥 | Strong evidence against; few supporting indicators |
+| **Remote** | ~5% (1–7%) | ⬛ | Near-impossible without extraordinary events |
+
+### ODNI Confidence Overlay
+
+Separately from probability, every judgment carries an **ODNI-style confidence assessment** based on evidence quality:
+
+| Confidence Level | Definition | Admiralty Floor | When to Use |
+|------------------|------------|:---------------:|-------------|
+| **HIGH** | Well-corroborated by multiple high-quality sources; strong analytic logic | `[A1]` or `[A2]` + ≥2 `[B2]` | Official documents + vote records + cross-validation |
+| **MODERATE** | Generally corroborated but with caveats; reasonable analytic logic | `[B2]` + ≥1 `[C3]` | Mix of official and secondary sources |
+| **LOW** | Fragmented, limited, or contradictory sources; significant uncertainty | `[C3]` or lower | Single source, anonymous, or contested |
+
+### Combined Notation
+
+Use both probability and confidence in every forward-looking claim:
+
+> "We assess it is **very likely [HIGH confidence]** that the Tidö coalition will pass the defence budget by 2026-06-30, based on Tidöavtalet commitments `[A1]`, three supporting committee votes `[A1]`, and SD leadership statements `[B2]`."
+
+> "It is **unlikely [MODERATE confidence]** that L will exit the coalition before September 2026, based on party congress resolution `[B2]` and polling trends `[B2]`, though internal dissent reports `[D4]` introduce uncertainty."
+
+### Mapping to Existing 5-Level Scale
+
+The existing Riksdagsmonitor 5-level confidence scale maps as follows:
+
+| Existing Scale | WEP Probability | ODNI Confidence | Admiralty Floor |
+|----------------|:---------------:|:---------------:|:---------------:|
+| 🟦 VERY HIGH | — | HIGH | `[A1]` |
+| 🟩 HIGH | — | HIGH | `[A1–B2]` |
+| 🟧 MEDIUM | — | MODERATE | `[B2–C3]` |
+| 🟥 LOW | — | LOW | `[C3–D4]` |
+| ⬛ VERY LOW | — | LOW | `[D4–E5]` |
+
+The 5-level scale is a **confidence** scale (evidence quality), not a **probability** scale. Use WEP for probability, 5-level for confidence.
+
+---
+
+## 🧠 Structured Analytic Techniques (SATs) Catalog
+
+Every analytical technique used in Riksdagsmonitor maps to the Heuer/Pherson SAT catalog. Each Family C+D template declares which SAT(s) it implements.
+
+| SAT | Definition | Template(s) Using It | When to Apply |
+|-----|------------|---------------------|---------------|
+| **Analysis of Competing Hypotheses (ACH)** | Systematic evaluation of multiple hypotheses against evidence | `devils-advocate.md` | Every P0/P1 with competing interpretations |
+| **Key Assumptions Check** | Identify and challenge unstated assumptions | `methodology-reflection.md` | Every run — audit own assumptions |
+| **Quality of Information Check** | Assess source reliability and coverage | `methodology-reflection.md`, all evidence tables | Every evidence claim |
+| **Indicators and Signposts** | Pre-identify observable events that would confirm/refute | `forward-indicators.md` | Every forward-looking analysis |
+| **What If? Analysis** | Explore alternative scenarios | `scenario-analysis.md` | Every workflow — ≥3 scenarios |
+| **High-Impact/Low-Probability Analysis** | Identify wildcard events | `risk-assessment.md` (wildcard quadrant) | When DIW ≥ 7.0 |
+| **Red Team Analysis** | Adopt adversary's perspective | `devils-advocate.md` | P0 events with clear adversarial actor |
+| **Devil's Advocacy** | Argue against prevailing view | `devils-advocate.md` | Every run — challenge consensus |
+| **Premortem Analysis** | Assume failure and explain why | `implementation-feasibility.md` | Major legislation implementation |
+| **Outside-In Thinking** | Start from external context | `comparative-international.md` | Cross-border policy comparisons |
+| **Brainstorming** | Generate options without critique | Per-document analysis (threat scenarios) | Early-stage hypothesis generation |
+| **Morphological Analysis** | Systematic combination of variables | `scenario-analysis.md` | Complex multi-factor scenarios |
+
+### SAT Declaration in Templates
+
+Every Family C/D template header includes:
+
+```markdown
+| **SAT(s) Applied** | Analysis of Competing Hypotheses (ACH), Devil's Advocacy |
+```
+
+---
+
+## 🗂️ Collection Management Matrix
+
+This matrix maps MCP tools to evidence types and template usage. Use this to plan collection before analysis.
+
+| MCP Server | MCP Tool | Evidence Type | Primary Templates | Admiralty Floor |
+|------------|----------|---------------|-------------------|:---------------:|
+| **riksdag-regering** | `get_propositioner` | Government bills | `synthesis-summary.md`, `risk-assessment.md` | A1 |
+| **riksdag-regering** | `get_betankanden` | Committee reports | `political-classification.md`, `threat-analysis.md` | A1 |
+| **riksdag-regering** | `get_motioner` | MP motions | `stakeholder-impact.md`, `coalition-mathematics.md` | A1 |
+| **riksdag-regering** | `get_interpellationer` | Interpellations | `intelligence-assessment.md`, `threat-analysis.md` | A1 |
+| **riksdag-regering** | `get_fragor` | Written questions | `significance-scoring.md` | A1 |
+| **riksdag-regering** | `search_voteringar` | Vote records | `swot-analysis.md`, `coalition-mathematics.md` | A1 |
+| **riksdag-regering** | `search_anforanden` | MP speeches | `media-framing-analysis.md`, `stakeholder-impact.md` | B2 |
+| **riksdag-regering** | `get_ledamot` | MP profiles | Actor analysis sections | A1 |
+| **riksdag-regering** | `get_calendar_events` | Parliamentary calendar | `forward-indicators.md` | A1 |
+| **riksdag-regering** | `search_regering` | Government documents | `comparative-international.md` | A1 |
+| **scb** | `query_table` | Swedish statistics | `voter-segmentation.md`, `election-2026-analysis.md` | A1 |
+| **scb** | `search_tables` | Statistical metadata | Evidence context | A1 |
+| **world-bank** | `get-economic-data` | WGI, economic indicators | `comparative-international.md` | A1 |
+| **world-bank** | `get-social-data` | Social indicators | `implementation-feasibility.md` | A1 |
+| **imf** (via `bash` + `tsx scripts/imf-fetch.ts`) | WEO projections (T+5) | Fiscal/macro forecasts | `comparative-international.md`, `implementation-feasibility.md` | A1 |
+| **imf** (via `bash` + `tsx scripts/imf-fetch.ts`) | SDMX IFS/BOP/GFS/DOTS | Balance of payments, fiscal indicators | `risk-assessment.md`, `implementation-feasibility.md` | A1 |
+
+### Collection Plan Template
+
+Every `data-download-manifest.md` includes a collection plan:
+
+```markdown
+## Collection Plan
+
+| PIR Served | EEI | MCP Tool | Query Parameters | Expected Admiralty |
+|------------|-----|----------|------------------|:------------------:|
+| PIR-1 | EEI-1.1 | `search_voteringar` | `rm=2025/26, bet=FiU*` | A1 |
+| PIR-5 | EEI-5.1 | `get_betankanden` | `organ=FiU` | A1 |
+| PIR-4 | EEI-4.1 | `get_propositioner` | `organ=FöU` | A1 |
+```
+
+---
+
+## 🎯 Confidence Level Notation (Refined)
+
+Confidence levels use the **5-level scale** for evidence quality and the **WEP + ODNI overlay** for probability and analytic confidence:
+
+| Level | Notation | Admiralty Floor | When to Use |
+|-------|----------|:---------------:|-------------|
+| 🟦 **VERY HIGH** | `[VERY HIGH]` | `[A1]` | Multiple official sources, cross-validated, expert consensus |
+| 🟩 **HIGH** | `[HIGH]` | `[A1–B2]` | Official documents; multiple corroborating primary sources |
+| 🟧 **MEDIUM** | `[MEDIUM]` | `[B2–C3]` | Single primary source or multiple secondary sources |
+| 🟥 **LOW** | `[LOW]` | `[C3–D4]` | Single unverified source; inference from indirect evidence |
+| ⬛ **VERY LOW** | `[VERY LOW]` | `[D4–E5]` | Speculation; pattern hypothesis without corroboration |
+
+**Combined Example:**  
+> "SD is **very likely [HIGH confidence]** to oppose the proposed healthcare reform if the final text retains the family reunification provisions, based on SD's stated position in anförande 2026-02-14 `[B2]` and three prior identical votes `[A1]`."
+
+---
+
+## 📝 Worked Example: Full Tradecraft Application
+
+This section demonstrates how all tradecraft elements combine in a real Swedish political analysis scenario.
+
+### Scenario: Coalition Stability Assessment (PIR-1)
+
+**Context:** FiU48 extra amendment budget tabled 2026-04-18, chamber vote expected 2026-04-22.
+
+#### Evidence Table with Full Tradecraft Annotation
+
+| # | Evidence | Source | Admiralty | EEI Tag | Confidence |
+|:-:|----------|--------|:---------:|:-------:|:----------:|
+| E1 | FiU48 passed committee 7–5 (M+KD+L for, S+V+MP+C against) | Riksdag votering H901FiU48 | **[A1]** | EEI-1.1 | 🟦 VERY HIGH |
+| E2 | SD spokesperson Richard Jomshof (SD) confirmed floor support in anförande 2026-04-19 | Anförande HD04567 | **[B2]** | EEI-1.2 | 🟩 HIGH |
+| E3 | L reservation filed on §3 (family reunification) | FiU48 reservationslista | **[A1]** | EEI-1.2 | 🟦 VERY HIGH |
+| E4 | Coalition whip confirmed 175+ votes expected | DN interview 2026-04-20 | **[C3]** | EEI-1.1 | 🟧 MEDIUM |
+| E5 | Unnamed Tidö source reports "L leadership divided" | Expressen 2026-04-19 | **[D4]** | EEI-1.3 | 🟥 LOW `[unconfirmed]` |
+
+#### Key Judgment (ICD 203 compliant)
+
+> **KJ-1 [PIR-1 — Coalition Stability]:** The Tidö coalition is **very likely [HIGH confidence]** to pass FiU48 in the chamber vote 2026-04-22, based on committee vote pattern `[A1]`, SD floor support confirmation `[B2]`, and coalition whip estimate `[C3]`. However, L's reservation on §3 `[A1]` creates a non-negligible risk (we assess **unlikely [MODERATE confidence]** ~25%) of last-minute abstention or absence that could narrow margins below 175.
+
+> **Analyst Assumption:** L leadership will prioritize coalition cohesion over policy disagreement on family reunification absent a galvanizing external event (media campaign, constituency backlash).
+
+> **Alternative Hypothesis Considered (ACH):** L could withdraw support if DN/SvD editorials criticize the package before 2026-04-22. Evidence against: L leadership statements 2026-04-18 `[B2]` reaffirm coalition commitment despite §3 concerns.
+
+#### F3EAD Stage Mapping
+
+| Stage | Activity | Output |
+|-------|----------|--------|
+| FIND | `search_dokument(doktyp=bet, organ=FiU)` | Candidate list: FiU48, FiU49, FiU50 |
+| FIX | `get_dokument(dok_id=H901FiU48)` | Full document text, reservations, vote protocol |
+| FINISH | 7-dimension classification → CRITICAL sensitivity | `political-classification.md` |
+| EXPLOIT | SWOT (coalition strength), Risk (L fracture) | `swot-analysis.md`, `risk-assessment.md` |
+| ANALYZE | ACH on L behaviour, Key Judgment synthesis | `devils-advocate.md`, `intelligence-assessment.md` |
+| DISSEMINATE | Executive brief for editorial decision | `executive-brief.md` |
+
+#### SAT Application Summary
+
+| SAT | Application |
+|-----|-------------|
+| **ACH** | Three hypotheses tested: (H1) Full coalition support, (H2) L abstention, (H3) L Nej vote |
+| **Key Assumptions Check** | Assumption tested: "L prioritizes coalition cohesion" — validated by 2026-04-18 statements |
+| **Indicators and Signposts** | Indicator set: DN editorial by 2026-04-21 09:00, L press release, MP tweet activity |
 
 ---
 
@@ -1085,13 +1578,15 @@ Electoral claims about 2026 require **MEDIUM confidence minimum** (3+ evidence s
 
 | Field | Value |
 |---|---|
-| Version | 2.2.0 |
+| Version | 3.1.0 |
 | Status | Active |
 | Owner | Hack23 AB |
 | Review Cycle | Quarterly |
 | Next Review | 2026-09-01 |
+| Key Changes v3.1 | **Source Diversity Rule formalized** (multi-source corroboration by claim priority, single-source policy, corroboration standards, conflict resolution ladder, source attribution hierarchy, anonymous source policy); **IMF integration added to Collection Management Matrix** (WEO T+5 projections, SDMX IFS/BOP/GFS/DOTS passthrough) per Economic Data Contract v2.0 |
+| Key Changes v3.0 | **Tradecraft Anchors**: F3EAD intelligence cycle with Mermaid diagram; PIR/EEI catalog (7 standing PIRs with EEIs); Admiralty Source Reliability Code (A–F × 1–6) with Riksdag-specific mapping; ICD 203 analytic tradecraft standards mapping with pass/fail gates; Words of Estimative Probability (WEP) + ODNI confidence overlay harmonized with existing 5-level scale; Structured Analytic Techniques (SATs) catalog mapped to templates; Collection Management Matrix mapping MCP tools to evidence types |
 | Key Changes v2.2 | Article Title & SEO Standards (v5.0) — AI-only title generation, banned code-generated patterns; Election 2026 Framing Requirements (electoral context in writing, vocabulary standards, confidence requirements) |
 | Key Changes v2.1 | Bad→Good Rewrite Examples (8 worked examples covering all prohibited pattern categories) |
 | Key Changes v2.0 | Intelligence depth standards, evidence density requirements, analytical depth indicators |
 | Related | `scripts/prompts/v2/political-analysis.md`, `scripts/analysis-reader.ts` |
-| ISMS Reference | Secure_Development_Policy.md §4.2 |
+| ISMS Reference | Secure_Development_Policy.md §4.2, ICD 203, NATO STANAG 2022 |

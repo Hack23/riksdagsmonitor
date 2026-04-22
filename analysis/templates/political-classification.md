@@ -23,6 +23,19 @@
 
 > **🚨 Anti-Pattern Warning:** Classification without Political Temperature Index, Strategic Significance score, or Coalition Impact Vector is incomplete. Every classification MUST include the three advanced dimensions from [political-classification-guide.md](../methodologies/political-classification-guide.md) v2.0. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
 
+---
+
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **FINISH** — document classification is the first analytical step |
+| **PIRs Served** | Classification outputs feed PIR prioritization — high Democratic Integrity → PIR-7; high Coalition Impact → PIR-1 |
+| **Admiralty Floor** | Primary document is **[A1]**; contextual claims require **[B2]** |
+| **WEP + ODNI** | Classification judgments avoid probability language (objective dimensions); contextual interpretation uses **WEP** if forward-looking |
+| **Source Diversity Floor** | Classification based on single dok_id **[A1]**; multi-document clusters require ≥2 documents per classification claim |
+| **SAT(s) Applied** | Quality of Information Check (classification accuracy) |
+| **ICD 203 Standards** | 1 (source quality), 8 (accurate judgments) |
 
 ---
 
