@@ -74,7 +74,7 @@ flowchart LR
 | 3 Per-file | ✅ | N analyses in `documents/`, all with ≥ 1 Mermaid | — |
 | 4 Core synthesis | ✅ | All 9 Family A files + 2 Family B files | — |
 | 5 Extensions | 🟡 | Only 3 of 5 triggered files produced | Missed `comparative-international` despite P0 doc |
-| 6 Quality gate | ✅ | Composite score 7.8 | — |
+| 6 Quality gate | ✅ | Composite score 8.01 | — |
 | 7 Pass-2 rewrite | 🟡 | 8 of 11 files measurably rewritten | Synthesis + SWOT still Pass-1 |
 
 ---

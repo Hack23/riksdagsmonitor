@@ -174,7 +174,7 @@ Every `methodology-reflection.md` includes an ICD 203 compliance checklist verif
 
 ## 🎯 Purpose
 
-This directory contains **8 structured analysis templates** that define the exact output format for every political intelligence artifact produced by Riksdagsmonitor's AI agents. Templates ensure consistency, completeness, and quality across all analysis types — from per-file document intelligence to full synthesis summaries.
+This directory contains a **structured catalog of analysis templates** that defines the exact output format for every political intelligence artifact produced by Riksdagsmonitor's AI agents. Templates ensure consistency, completeness, and quality across all analysis types — from per-file document intelligence to full synthesis summaries.
 
 > **Critical Rule:** AI agents MUST follow these templates. Templates define structure and required sections — the AI fills them with genuine, evidence-based analysis. Templates must NEVER be copied verbatim with placeholder text.
 
@@ -312,7 +312,7 @@ Templates are grouped by the **output family** defined in [`ai-driven-analysis-g
 
 | # | File | Template | Role on every run |
 |:-:|------|----------|-------------------|
-| C1 | `scenario-analysis.md` | [scenario-analysis.md](scenario-analysis.md) | 3 scenarios with probabilities summing to 100%; converges to narrow-band on light days |
+| C1 | `scenario-analysis.md` | [scenario-analysis.md](scenario-analysis.md) | 4 scenarios with probabilities summing to 100%; converges to narrow-band on light days |
 | C2 | `comparative-international.md` | [comparative-international.md](comparative-international.md) | Peer-country comparison (≥5 peers); compares baseline when no reform active (variant filename: `international-comparative.md`) |
 | C3 | `devils-advocate.md` | [devils-advocate.md](devils-advocate.md) | ACH red-team with ≥3 competing hypotheses; documents rejected hypotheses when evidence is strong |
 | C4 | `intelligence-assessment.md` | [intelligence-assessment.md](intelligence-assessment.md) | 3–7 Key Judgments + PIRs for the next cycle |

@@ -64,9 +64,9 @@ quadrantChart
     quadrant-2 Prepare Resilience
     quadrant-3 Monitor
     quadrant-4 Consider Opportunistically
-    "🟢 Base: Coalition holds (40%)": [0.55, 0.55]
+    "🟢 Base: Coalition holds (40%)": [0.55, 0.40]
     "🟡 Upside: Opposition wins cleanly (25%)": [0.75, 0.25]
-    "🟠 Downside: Hung result (25%)": [0.80, 0.30]
+    "🟠 Downside: Hung result (25%)": [0.80, 0.25]
     "🔴 Wildcard: Mid-cycle crisis (10%)": [0.90, 0.10]
 ```
 
