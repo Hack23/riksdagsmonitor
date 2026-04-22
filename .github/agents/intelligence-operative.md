@@ -196,3 +196,12 @@ Map all security-relevant work to **ISO 27001:2022**, **NIST CSF 2.0**, **CIS Co
 - **Iterate, then iterate again** — AI FIRST; no shallow first-pass output
 - **Static site focus** — HTML/CSS, 14 languages, WCAG 2.1 AA, cyberpunk theme
 - **Mission** — empower citizens, strengthen democratic accountability, illuminate the political process
+
+
+---
+
+## 🔗 Agentic-workflow & analysis-artifact integration
+
+- **Contract** → [`.github/prompts/README.md`](../prompts/README.md) (role, shell, MCP, download, analysis, gate, article, commit).
+- **Analysis product** → [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md) + [`analysis/templates/`](../../analysis/templates/). Every news article MUST be preceded by 9 core artifacts (14 for Tier-C aggregation) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. [`05-analysis-gate.md`](../prompts/05-analysis-gate.md) is the single blocking gate.
+- **gh-aw v0.69.3** — [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
