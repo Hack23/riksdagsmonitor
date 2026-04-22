@@ -1277,7 +1277,7 @@ describe('Workflow timeout limits', () => {
     'news-translate.md',
   ];
 
-  it('no workflow should exceed 60-minute timeout', () => {
+  it('no workflow should exceed 90-minute timeout', () => {
     for (const workflowFile of ALL_NEWS_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       if (!fs.existsSync(filepath)) continue;
@@ -1288,8 +1288,8 @@ describe('Workflow timeout limits', () => {
         const timeout = parseInt(timeoutMatch[1]!, 10);
         expect(
           timeout,
-          `Workflow ${workflowFile} has timeout-minutes: ${timeout} which exceeds 60 minutes`
-        ).toBeLessThanOrEqual(60);
+          `Workflow ${workflowFile} has timeout-minutes: ${timeout} which exceeds 90 minutes`
+        ).toBeLessThanOrEqual(90);
       }
     }
   });

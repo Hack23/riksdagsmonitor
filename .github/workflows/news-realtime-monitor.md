@@ -64,7 +64,7 @@ sandbox:
   agent: awf
   mcp:
     port: 8080
-    keepalive-interval: 300
+    keepalive-interval: 300 # 5m ping to avoid MCP idle session expiry in 90m runs
 
 runtimes:
   node:
