@@ -277,6 +277,6 @@ At the start of every run, the pre-flight check in `03-data-download.md` detects
 - **No analysis found** → Analysis mode: download data, run Pass 1 + Pass 2 + Tier-C Gate (14 artifacts), commit analysis artifacts, open `analysis-only` PR, stop.
 - **Analysis found** → Article mode: read existing analysis, generate articles, commit articles, open articles PR + dispatch `news-translate`.
 
-Repeated runs for the same `$ARTICLE_DATE` always use the same analysis folder. Analysis is the primary product — a run never produces nothing.
+Repeated runs for the same `$ARTICLE_DATE` always use the same analysis folder when `force_generation=false`. Analysis is the primary product — a run never produces nothing.
 
 All other rules (bash format, AWF shell safety, MCP access, download pipeline, analysis methodology & gate, article generation, commit & PR policy) live in the imported modules.

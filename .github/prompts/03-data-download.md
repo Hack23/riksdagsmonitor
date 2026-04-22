@@ -6,16 +6,29 @@ Run this check as the **first action** after MCP pre-warm, before any download:
 
 ```bash
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$SUBFOLDER"
+
+# 9 core artifacts required by every workflow
 REQ=(synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md \
      stakeholder-perspectives.md significance-scoring.md classification-results.md \
      cross-reference-map.md data-download-manifest.md)
+
+# Tier-C workflows require 5 additional artifacts (evening-analysis, week-ahead,
+# month-ahead, weekly-review, monthly-review, realtime-*, deep-inspection).
+# See ext/tier-c-aggregation.md for the full list.
+case "$SUBFOLDER" in
+  evening-analysis|week-ahead|month-ahead|weekly-review|monthly-review|deep-inspection|realtime-*)
+    REQ+=(README.md executive-brief.md scenario-analysis.md \
+          comparative-international.md methodology-reflection.md)
+    ;;
+esac
+
 SKIP_ANALYSIS=false
 ALL_PRESENT=true
 for f in "${REQ[@]}"; do
   [ -s "$ANALYSIS_DIR/$f" ] || { ALL_PRESENT=false; break; }
 done
 [ "$ALL_PRESENT" = "true" ] && SKIP_ANALYSIS=true
-echo "SKIP_ANALYSIS=$SKIP_ANALYSIS  (analysis folder present: $ALL_PRESENT)"
+echo "SKIP_ANALYSIS=$SKIP_ANALYSIS  (required artifacts present: $ALL_PRESENT, count: ${#REQ[@]})"
 ```
 
 | `SKIP_ANALYSIS` | Mode | Next step |
@@ -23,7 +36,7 @@ echo "SKIP_ANALYSIS=$SKIP_ANALYSIS  (analysis folder present: $ALL_PRESENT)"
 | `false` | **Analysis mode** | Continue with download pipeline below → `04-analysis-pipeline.md` → analysis-only PR (see `07-commit-and-pr.md`). Do **not** generate articles in this run. |
 | `true` | **Article mode** | Skip the entire download pipeline and `04-analysis-pipeline.md`. Proceed directly to `06-article-generation.md`. Optionally re-query the API and compare against `data-download-manifest.md`; add only genuinely new `dok_id` entries found since the analysis ran. |
 
-> **Folder reuse rule**: the same `$ANALYSIS_DIR` is always reused across runs for the same `$ARTICLE_DATE` + `$SUBFOLDER`. Never create `propositions-2`, `propositions-3`, etc. for the same date unless `force_generation=true`.
+> **Folder reuse rule**: the same `$ANALYSIS_DIR` is always reused across runs for the same `$ARTICLE_DATE` + `$SUBFOLDER` when `force_generation=false`. The legacy auto-suffix behaviour (`propositions-2`, `propositions-3`, …) is retained **only** as an explicit escape hatch when `force_generation=true`, so that a forced rerun on a merged day can produce a fresh parallel analysis without trampling the existing one.
 
 ## Goal
 
@@ -45,7 +58,7 @@ Populate `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` with raw Riksdag/Regering da
 | news-realtime-monitor | `realtime-$HHMM` |
 | news-article-generator (`deep-inspection`) | `deep-inspection` |
 
-If the base subfolder already contains `synthesis-summary.md` from a prior merged run **and** `force_generation=false`, auto-suffix: `propositions-2`, `propositions-3`, …
+If `force_generation=true` is supplied on a day whose base subfolder already contains `synthesis-summary.md` from a prior merged run, auto-suffix the subfolder (`propositions-2`, `propositions-3`, …) so the forced rerun does not overwrite the merged analysis. Under the default `force_generation=false`, the same base subfolder is reused across runs — see §Pre-flight above.
 
 ## Download pipeline
 

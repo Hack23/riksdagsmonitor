@@ -102,11 +102,18 @@ In every other case, commit whatever exists and call `create_pull_request` once.
 
 > **Root cause**: The Copilot API session is bound to the `github.token` baked in at step start. That token expires at approximately **60 minutes** and is never refreshed mid-run (gh-aw issue #24920). Every tool call and inference request fails silently after that point — the agent appears to run but makes no progress and the PR is never created. Setup steps consume ~5 minutes, so the agent has at most **~55 minutes** of usable session time, and safe-outputs publishing needs several minutes on top.
 
-**If the run exceeds 25 minutes with no safe-output call yet:**
+The target PR-creation window depends on which mode the run is in (see `03-data-download.md §Pre-flight`):
+
+| Mode | Target PR window | Hard deadline |
+|------|------------------|---------------|
+| Run 1 — Analysis | 40–45 min after agent start | **48 min** |
+| Run 2 — Articles | 20–25 min after agent start | **30 min** |
+
+**If the run exceeds its hard deadline with no safe-output call yet:**
 
 1. Stop analysis / article work immediately.
 2. Stage whatever exists on disk (analysis artifacts and/or partial articles).
 3. Commit with message including `[early-pr]` to signal partial content.
 4. Call `safeoutputs___create_pull_request` with label `analysis-only` if articles are incomplete.
 
-Do not attempt to "save" work via a second PR — there is no second PR. Creating the PR early is always better than losing all work to a token expiry.
+Do not attempt to "save" work via a second PR — there is no second PR. Creating the PR early is always better than losing all work to a token expiry. The hard deadlines above leave ~7 minutes of margin on the 55-minute `timeout-minutes` cap for staging and safe-outputs publishing before the ~60-minute Copilot API token expiry.
