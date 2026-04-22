@@ -1,5 +1,5 @@
 {
-  "version": "0.8.48",
+  "version": "0.8.51",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.9.2 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -343,8 +343,8 @@
       }
     },
     "@vitest/coverage-v8": {
-      "version": "4.1.4",
-      "resolved": "https://registry.npmjs.org/@vitest/coverage-v8/-/coverage-v8-4.1.4.tgz",
+      "version": "4.1.5",
+      "resolved": "https://registry.npmjs.org/@vitest/coverage-v8/-/coverage-v8-4.1.5.tgz",
       "overridden": false,
       "dependencies": {
         "@bcoe/v8-coverage": {
@@ -354,12 +354,12 @@
         },
         "@vitest/browser": {},
         "@vitest/utils": {
-          "version": "4.1.4",
-          "resolved": "https://registry.npmjs.org/@vitest/utils/-/utils-4.1.4.tgz",
+          "version": "4.1.5",
+          "resolved": "https://registry.npmjs.org/@vitest/utils/-/utils-4.1.5.tgz",
           "overridden": false,
           "dependencies": {
             "@vitest/pretty-format": {
-              "version": "4.1.4"
+              "version": "4.1.5"
             },
             "convert-source-map": {
               "version": "2.0.0",
@@ -513,17 +513,17 @@
           "overridden": false
         },
         "vitest": {
-          "version": "4.1.4"
+          "version": "4.1.5"
         }
       }
     },
     "@vitest/ui": {
-      "version": "4.1.4",
-      "resolved": "https://registry.npmjs.org/@vitest/ui/-/ui-4.1.4.tgz",
+      "version": "4.1.5",
+      "resolved": "https://registry.npmjs.org/@vitest/ui/-/ui-4.1.5.tgz",
       "overridden": false,
       "dependencies": {
         "@vitest/utils": {
-          "version": "4.1.4"
+          "version": "4.1.5"
         },
         "fflate": {
           "version": "0.8.2",
@@ -568,14 +568,7 @@
           "overridden": false,
           "dependencies": {
             "fdir": {
-              "version": "6.5.0",
-              "resolved": "https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz",
-              "overridden": false,
-              "dependencies": {
-                "picomatch": {
-                  "version": "4.0.4"
-                }
-              }
+              "version": "6.5.0"
             },
             "picomatch": {
               "version": "4.0.4"
@@ -586,7 +579,7 @@
           "version": "3.1.0"
         },
         "vitest": {
-          "version": "4.1.4"
+          "version": "4.1.5"
         }
       }
     },
@@ -650,8 +643,8 @@
       }
     },
     "cypress": {
-      "version": "15.14.0",
-      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.14.0.tgz",
+      "version": "15.14.1",
+      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.14.1.tgz",
       "overridden": false,
       "dependencies": {
         "@cypress/request": {
@@ -2822,50 +2815,17 @@
       }
     },
     "knip": {
-      "version": "6.5.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.5.0.tgz",
+      "version": "6.6.1",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.6.1.tgz",
       "overridden": false,
       "dependencies": {
-        "@nodelib/fs.walk": {
-          "version": "1.2.8",
-          "resolved": "https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz",
+        "fdir": {
+          "version": "6.5.0",
+          "resolved": "https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz",
           "overridden": false,
           "dependencies": {
-            "@nodelib/fs.scandir": {
-              "version": "2.1.5",
-              "resolved": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz",
-              "overridden": false,
-              "dependencies": {
-                "@nodelib/fs.stat": {
-                  "version": "2.0.5",
-                  "resolved": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.5.tgz",
-                  "overridden": false
-                },
-                "run-parallel": {
-                  "version": "1.2.0",
-                  "resolved": "https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz",
-                  "overridden": false,
-                  "dependencies": {
-                    "queue-microtask": {
-                      "version": "1.2.3",
-                      "resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
-                      "overridden": false
-                    }
-                  }
-                }
-              }
-            },
-            "fastq": {
-              "version": "1.20.1",
-              "resolved": "https://registry.npmjs.org/fastq/-/fastq-1.20.1.tgz",
-              "overridden": false,
-              "dependencies": {
-                "reusify": {
-                  "version": "1.1.0",
-                  "resolved": "https://registry.npmjs.org/reusify/-/reusify-1.1.0.tgz",
-                  "overridden": false
-                }
-              }
+            "picomatch": {
+              "version": "4.0.4"
             }
           }
         },
@@ -2980,11 +2940,6 @@
             "@oxc-resolver/binding-win32-ia32-msvc": {},
             "@oxc-resolver/binding-win32-x64-msvc": {}
           }
-        },
-        "picocolors": {
-          "version": "1.1.1",
-          "resolved": "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz",
-          "overridden": false
         },
         "picomatch": {
           "version": "4.0.4",
@@ -3690,7 +3645,9 @@
               "overridden": false
             },
             "picocolors": {
-              "version": "1.1.1"
+              "version": "1.1.1",
+              "resolved": "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz",
+              "overridden": false
             },
             "source-map-js": {
               "version": "1.2.1"
@@ -3752,8 +3709,8 @@
       }
     },
     "vitest": {
-      "version": "4.1.4",
-      "resolved": "https://registry.npmjs.org/vitest/-/vitest-4.1.4.tgz",
+      "version": "4.1.5",
+      "resolved": "https://registry.npmjs.org/vitest/-/vitest-4.1.5.tgz",
       "overridden": false,
       "dependencies": {
         "@edge-runtime/vm": {},
@@ -3766,11 +3723,11 @@
         "@vitest/browser-webdriverio": {},
         "@vitest/coverage-istanbul": {},
         "@vitest/coverage-v8": {
-          "version": "4.1.4"
+          "version": "4.1.5"
         },
         "@vitest/expect": {
-          "version": "4.1.4",
-          "resolved": "https://registry.npmjs.org/@vitest/expect/-/expect-4.1.4.tgz",
+          "version": "4.1.5",
+          "resolved": "https://registry.npmjs.org/@vitest/expect/-/expect-4.1.5.tgz",
           "overridden": false,
           "dependencies": {
             "@standard-schema/spec": {
@@ -3796,10 +3753,10 @@
               }
             },
             "@vitest/spy": {
-              "version": "4.1.4"
+              "version": "4.1.5"
             },
             "@vitest/utils": {
-              "version": "4.1.4"
+              "version": "4.1.5"
             },
             "chai": {
               "version": "6.2.2",
@@ -3812,12 +3769,12 @@
           }
         },
         "@vitest/mocker": {
-          "version": "4.1.4",
-          "resolved": "https://registry.npmjs.org/@vitest/mocker/-/mocker-4.1.4.tgz",
+          "version": "4.1.5",
+          "resolved": "https://registry.npmjs.org/@vitest/mocker/-/mocker-4.1.5.tgz",
           "overridden": false,
           "dependencies": {
             "@vitest/spy": {
-              "version": "4.1.4"
+              "version": "4.1.5"
             },
             "estree-walker": {
               "version": "3.0.3"
@@ -3832,8 +3789,8 @@
           }
         },
         "@vitest/pretty-format": {
-          "version": "4.1.4",
-          "resolved": "https://registry.npmjs.org/@vitest/pretty-format/-/pretty-format-4.1.4.tgz",
+          "version": "4.1.5",
+          "resolved": "https://registry.npmjs.org/@vitest/pretty-format/-/pretty-format-4.1.5.tgz",
           "overridden": false,
           "dependencies": {
             "tinyrainbow": {
@@ -3842,12 +3799,12 @@
           }
         },
         "@vitest/runner": {
-          "version": "4.1.4",
-          "resolved": "https://registry.npmjs.org/@vitest/runner/-/runner-4.1.4.tgz",
+          "version": "4.1.5",
+          "resolved": "https://registry.npmjs.org/@vitest/runner/-/runner-4.1.5.tgz",
           "overridden": false,
           "dependencies": {
             "@vitest/utils": {
-              "version": "4.1.4"
+              "version": "4.1.5"
             },
             "pathe": {
               "version": "2.0.3"
@@ -3855,15 +3812,15 @@
           }
         },
         "@vitest/snapshot": {
-          "version": "4.1.4",
-          "resolved": "https://registry.npmjs.org/@vitest/snapshot/-/snapshot-4.1.4.tgz",
+          "version": "4.1.5",
+          "resolved": "https://registry.npmjs.org/@vitest/snapshot/-/snapshot-4.1.5.tgz",
           "overridden": false,
           "dependencies": {
             "@vitest/pretty-format": {
-              "version": "4.1.4"
+              "version": "4.1.5"
             },
             "@vitest/utils": {
-              "version": "4.1.4"
+              "version": "4.1.5"
             },
             "magic-string": {
               "version": "0.30.21"
@@ -3874,15 +3831,15 @@
           }
         },
         "@vitest/spy": {
-          "version": "4.1.4",
-          "resolved": "https://registry.npmjs.org/@vitest/spy/-/spy-4.1.4.tgz",
+          "version": "4.1.5",
+          "resolved": "https://registry.npmjs.org/@vitest/spy/-/spy-4.1.5.tgz",
           "overridden": false
         },
         "@vitest/ui": {
-          "version": "4.1.4"
+          "version": "4.1.5"
         },
         "@vitest/utils": {
-          "version": "4.1.4"
+          "version": "4.1.5"
         },
         "es-module-lexer": {
           "version": "2.0.0",
