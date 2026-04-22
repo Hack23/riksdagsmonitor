@@ -162,6 +162,24 @@ Every workflow in this directory implements defence-in-depth — see [`WORKFLOWS
 
 ---
 
+## 🧯 Recovery for expired/long-running news sessions
+
+When a news run ends early (for example, session expiry or runner interruption), analysis is still produced in two places:
+
+1. **Working tree output during the run**: `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`
+2. **Repo-memory safety snapshots**: `$GH_AW_MEMORY_DIR/$ARTICLE_DATE/$SUBFOLDER/phase-*` pushed by the post-job to branch `memory/news-generation`
+
+If a run fails after analysis but before a PR is created:
+
+1. Download the `repo-memory-default` artifact from the failed run (GitHub UI, or `gh run download <run-id> -n repo-memory-default`).
+2. Inspect `phase-05-gate` and `phase-07-final` under `$ARTICLE_DATE/$SUBFOLDER/` for the latest complete analysis files.
+3. Restore those files into `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` in a new branch.
+4. Commit restored analysis and create a single PR (analysis-only if article HTML is incomplete), following [`.github/prompts/07-commit-and-pr.md`](../prompts/07-commit-and-pr.md).
+
+The phase checkpoint contract in [`.github/prompts/00-base-contract.md`](../prompts/00-base-contract.md) enforces size/file-count-safe snapshots so `push_repo_memory` remains reliable across long runs.
+
+---
+
 ## 🧭 Where to go next
 
 | I want to… | Read |

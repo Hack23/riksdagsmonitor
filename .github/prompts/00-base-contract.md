@@ -57,15 +57,15 @@ Valuable analysis must never be lost. After each pipeline phase completes, snaps
 | 04 Analysis Pass 1 | `phase-04-pass1` | `$ANALYSIS_DIR` top-level artifacts |
 | 04 Analysis Pass 2 | `phase-04-pass2` | `$ANALYSIS_DIR` top-level artifacts |
 | 05 Gate pass | `phase-05-gate` | `$ANALYSIS_DIR` top-level artifacts |
-| 06 Article generated | `phase-06-article` | `$ANALYSIS_DIR` + today's `news/${ARTICLE_DATE}-*.html` |
-| 07 Immediately before `create_pull_request` | `phase-07-final` | `$ANALYSIS_DIR` + articles from `news/${ARTICLE_DATE}-*.html` |
-| `news-translate` per batch | `phase-translate-<lang>` | Translated `news/${ARTICLE_DATE}-*.html` |
+| 06 Article generated | `phase-06-article` | `$ANALYSIS_DIR` + **this-run** article HTML candidates from `news/${ARTICLE_DATE}-*.html` (size/file-count constrained) |
+| 07 Immediately before `create_pull_request` | `phase-07-final` | `$ANALYSIS_DIR` + **this-run** article HTML candidates from `news/${ARTICLE_DATE}-*.html` (size/file-count constrained) |
+| `news-translate` per batch | `phase-translate-<lang>` | **This-run** translated `news/${ARTICLE_DATE}-*.html` candidates (size/file-count constrained) |
 
 Each checkpoint is mandatory. Skipping them forfeits the only cross-run safety net for analysis work.
 
 ### Reusable snippet
 
-Run this bash block at the end of every phase (pass the phase label as `$1`). Article HTML is written directly under the flat `news/` directory, so checkpoint copies must use `news/${ARTICLE_DATE}-*.html` rather than `news/$YYYY/$MM/$DD/*.html`:
+Run this bash block at the end of every phase (pass the phase label as `$1`). Article HTML is written directly under the flat `news/` directory, so checkpoint discovery uses `news/${ARTICLE_DATE}-*.html` rather than `news/$YYYY/$MM/$DD/*.html`. To keep repo-memory pushes reliable, only files changed in the **current run** are eligible, and per-file/count limits are enforced before copy (`GH_AW_MEMORY_MAX_FILE_SIZE`, `GH_AW_MEMORY_MAX_FILE_COUNT`; defaults 51200 bytes / 50 files):
 
 ```bash
 set -Eeuo pipefail
@@ -75,16 +75,38 @@ set -Eeuo pipefail
 PHASE="${1:?phase label required, e.g. phase-04-pass1}"
 ANALYSIS_DIR="${ANALYSIS_DIR:-analysis/daily/$ARTICLE_DATE/$SUBFOLDER}"
 DEST="$GH_AW_MEMORY_DIR/$ARTICLE_DATE/$SUBFOLDER/$PHASE"
+MAX_MEMORY_FILE_SIZE="${GH_AW_MEMORY_MAX_FILE_SIZE:-51200}"
+MAX_MEMORY_FILE_COUNT="${GH_AW_MEMORY_MAX_FILE_COUNT:-50}"
 mkdir -p "$DEST" 2>/dev/null || { echo "[checkpoint] mkdir failed for $DEST — continuing"; exit 0; }
+
+copy_into_checkpoint() {
+  src="$1"
+  [ -f "$src" ] || return 0
+  current_count="$(find "$DEST" -maxdepth 1 -type f 2>/dev/null | wc -l | tr -d ' ')"
+  [ "${current_count:-0}" -lt "$MAX_MEMORY_FILE_COUNT" ] || { echo "[checkpoint] skip (file-count cap reached): $src"; return 0; }
+  size="$(wc -c < "$src" 2>/dev/null | tr -d ' ')"
+  [ "${size:-0}" -le "$MAX_MEMORY_FILE_SIZE" ] || { echo "[checkpoint] skip (too large ${size}B>${MAX_MEMORY_FILE_SIZE}B): $src"; return 0; }
+  cp -f "$src" "$DEST"/ 2>/dev/null || true
+}
+
 # Snapshot top-level analysis artifacts (never documents/ — often 100+ files — and never pass1/).
 if [ -d "$ANALYSIS_DIR" ]; then
-  find "$ANALYSIS_DIR" -maxdepth 1 -type f \( -name '*.md' -o -name '*.json' \) \
-    -exec cp -f {} "$DEST"/ \; 2>/dev/null || true
+  while IFS= read -r -d '' f; do
+    copy_into_checkpoint "$f"
+  done < <(find "$ANALYSIS_DIR" -maxdepth 1 -type f \( -name '*.md' -o -name '*.json' \) -print0 2>/dev/null)
 fi
-# Snapshot today's produced article HTML from the flat news/ directory (if any exists at this phase).
+# Snapshot only this-run article HTML candidates from the flat news/ directory (if any exists at this phase).
 if [ -d "news" ]; then
-  find "news" -maxdepth 1 -type f -name "${ARTICLE_DATE}-*.html" \
-    -exec cp -f {} "$DEST"/ \; 2>/dev/null || true
+  while IFS= read -r path; do
+    [ -n "$path" ] || continue
+    copy_into_checkpoint "$path"
+  done < <(
+    {
+      # AMCR = Added/Modified/Copied/Renamed in this run; prevents sweeping in untouched historical files.
+      git --no-pager diff --name-only --diff-filter=AMCR -- 'news/*.html'
+      git --no-pager ls-files --others --exclude-standard -- 'news/*.html'
+    } | sort -u | grep "^news/${ARTICLE_DATE}-.*\\.html$" || true
+  )
 fi
 COUNT="$(find "$DEST" -maxdepth 1 -type f 2>/dev/null | wc -l | tr -d ' ')"
 echo "[checkpoint] $PHASE → $DEST ($COUNT files)"
@@ -97,8 +119,9 @@ exit 0
 |------|-----------|
 | **Never block on checkpoint failure** — always `exit 0`. | Repo-memory is a safety net, not a gate. |
 | Do **not** copy `$ANALYSIS_DIR/documents/` or `$ANALYSIS_DIR/pass1/`. | `documents/` exceeds the 50-file push cap; `pass1/` is local gate evidence only. |
+| Copy article HTML to repo-memory only when it was created/modified in the current run **and** within the configured file-size cap. | Prevents unrelated or oversized historical article files from breaking `push_repo_memory`. |
 | Do **not** stage or commit anything under `$GH_AW_MEMORY_DIR`. | gh-aw's `push_repo_memory` post-job publishes it; see `07-commit-and-pr.md`. |
-| Prefer small summary `.md` / `.json` files (≤ 50 KB each, ≤ 50 per push). | gh-aw silently drops files exceeding the push caps. |
+| Prefer small summary `.md` / `.json` files (defaults: ≤ 50 KB each, ≤ 50 per push; override via `GH_AW_MEMORY_MAX_FILE_SIZE` / `GH_AW_MEMORY_MAX_FILE_COUNT`). | gh-aw silently drops files exceeding the push caps. |
 | Re-run the snippet at every phase, even if earlier phases already snapshotted — it overwrites with the latest content. | Ensures the final state is always preserved, and earlier snapshots remain on the branch from prior runs. |
 | For `news-translate`, use `SUBFOLDER=batch/<lang-or-batch-id>` so memory paths don't collide with analysis runs. | Keeps the branch organised by article type. |
 
