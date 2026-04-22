@@ -36,14 +36,27 @@ Before producing any analysis or article content, the agent MUST have read:
 
 No article sentence may be drafted until every required analysis artifact exists on disk and the gate in `05-analysis-gate.md` reports pass.
 
-## Pipeline (fixed order)
+## Two-run pipeline (primary model)
 
+Every run selects one of two modes automatically — see `03-data-download.md §Pre-flight`:
+
+**Run 1 — Analysis** (when `$ANALYSIS_DIR` is missing or incomplete):
 ```
-Download → Read methodology → Read templates → Analysis Pass 1 → Analysis Pass 2 →
-Analysis Gate → Article (if applicable) → Stage → Commit → ONE create_pull_request
+MCP pre-warm → Download → Read methodology → Read templates →
+Analysis Pass 1 → Pass 1 snapshot → Analysis Pass 2 → Analysis Gate →
+Stage analysis → Commit → ONE create_pull_request (analysis-only)
 ```
 
-No step may be skipped, reordered, or executed in parallel with its successor.
+**Run 2 — Articles** (when `$ANALYSIS_DIR` already contains all 9 core artifacts):
+```
+MCP pre-warm → Detect existing analysis → Read all artifacts into context →
+Optionally check for new data → Article Pass 1 → Article Pass 2 →
+Stage articles → Commit → ONE create_pull_request (articles)
+```
+
+No step may be skipped within a run. Runs must not overlap for the same `$ARTICLE_DATE` + `$SUBFOLDER`.
+
+Same-day re-runs always use the same `$ANALYSIS_DIR` folder — never create a parallel folder for the same date + type combination unless `force_generation=true`.
 
 ## Session keepalive requirement
 

@@ -326,14 +326,14 @@ Translation is a pure-derivative workflow:
 - Keep the PR under the safe-outputs 100-file cap. If more translations are pending than fit in one PR, translate the highest-priority batch and leave the rest for the next scheduled run.
 - Skip any language whose translation already exists and is non-empty unless `force` is explicitly requested.
 
-## Time budget (60 min)
+## Time budget (~40 min)
 
 | Minutes | Phase |
 |---------|-------|
 | 0–2 | MCP pre-warm + date resolution |
-| 2–8 | Scan untranslated articles; build work list |
-| 8–52 | Translate + validate in priority order (highest-value types first) |
-| 52–58 | Final validation, stage, commit |
-| 58–60 | **One** `safeoutputs___create_pull_request` call |
+| 2–6 | Scan untranslated articles; build work list |
+| 6–36 | Translate + validate in priority order (highest-value types first) |
+| 36–39 | Final validation, stage, commit |
+| 39–41 | **One** `safeoutputs___create_pull_request` call |
 
 All non-workflow-specific rules are in the imported modules — do not restate them here.

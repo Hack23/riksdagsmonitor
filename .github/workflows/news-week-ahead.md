@@ -236,38 +236,47 @@ This workflow imports `../prompts/ext/tier-c-aggregation.md`. Produce **all 14 a
 - **Article type**: `week-ahead`
 - **Analysis subfolder**: `analysis/daily/$ARTICLE_DATE/week-ahead/`
 - **Core languages produced**: `en`, `sv` (remaining 12 languages dispatched to `news-translate`)
-- **One pull request per run** containing analysis + articles + visualisation data.
+- **Two-run model**: Run 1 produces an `analysis-only` PR (14 artifacts); Run 2 (next scheduled run, same day) detects existing analysis and produces an articles PR.
 
-## Time budget (60 min, minimum 45 min of real work)
+## Time budget
+
+**Run 1 — Analysis mode** (no prior analysis found, ~45 min):
 
 | Minutes | Phase | Module |
 |---------|-------|--------|
-| 0–2 | MCP pre-warm + `get_sync_status` | 02 |
-| 2–6 | Download data + catalogue | 03 |
-| 6–25 | Analysis Pass 1 (methodology read + per-doc analyses + 9 artifacts) | 04 |
-| 25–35 | Analysis Pass 2 (read-back + improvements) | 04 |
-| 35–37 | Analysis Gate | 05 |
-| 37–48 | Article Pass 1 + Pass 2 (EN, SV) | 06 |
-| 48–55 | Visual + link validation | 06 |
-| 55–60 | Stage, commit, **ONE** `safeoutputs___create_pull_request` | 07 |
+| 0–2 | MCP pre-warm + pre-flight analysis check | 02 / 03 |
+| 2–7 | Download data + catalogue | 03 |
+| 7–27 | Analysis Pass 1 (methodology read + per-doc analyses + 14 artifacts incl. 5 Tier-C) | 04 / ext |
+| 27–38 | Analysis Pass 2 (read-back + improvements) | 04 |
+| 38–41 | Analysis Gate (Tier-C extended gate) | 05 |
+| 41–45 | Stage analysis, commit, **ONE** `safeoutputs___create_pull_request` (analysis-only) | 07 |
 
-Trim scope before quality. Never open a second PR to "save" partial work — there is no second PR.
+**Run 2 — Article mode** (analysis exists on disk, ~25 min):
+
+| Minutes | Phase | Module |
+|---------|-------|--------|
+| 0–2 | MCP pre-warm + pre-flight check (SKIP_ANALYSIS=true) | 02 / 03 |
+| 2–5 | Read all 14 analysis artifacts into context | 06 |
+| 5–18 | Article Pass 1 + Pass 2 (EN, SV) | 06 |
+| 18–22 | Visual + link validation | 06 |
+| 22–25 | Stage articles, commit, **ONE** `safeoutputs___create_pull_request` | 07 |
+
+Trim scope before quality. Never open a second PR within a run — there is no second PR.
 
 ## Inputs
 
 - `article_date` — override date (defaults to today)
-- `force_generation` — regenerate even if today's article exists (analysis is always refreshed regardless)
+- `force_generation` — regenerate even if today's article exists; also forces analysis re-run
 - `languages` — core content languages (default `en,sv`)
 - `analysis_depth` — `standard` | `deep` (default) | `comprehensive`
 
-## Dedup & analysis-only path
+## Run-mode selection
 
-If articles for `$ARTICLE_DATE` + `week-ahead` already exist **and** `force_generation=false`:
+At the start of every run, the pre-flight check in `03-data-download.md` detects whether `analysis/daily/$ARTICLE_DATE/week-ahead/` already contains all 9 core artifacts:
 
-- Still run the full analysis pipeline (modules 03 → 04 → 05).
-- Commit the analysis.
-- Open the single PR with title `📊 Analysis Only — Week Ahead — $ARTICLE_DATE` and label `analysis-only`.
+- **No analysis found** → Analysis mode: download data, run Pass 1 + Pass 2 + Tier-C Gate (14 artifacts), commit analysis artifacts, open `analysis-only` PR, stop.
+- **Analysis found** → Article mode: read existing analysis, generate articles, commit articles, open articles PR + dispatch `news-translate`.
 
-Analysis is the primary product — a run never "does nothing" just because articles exist.
+Repeated runs for the same `$ARTICLE_DATE` always use the same analysis folder. Analysis is the primary product — a run never produces nothing.
 
 All other rules (bash format, AWF shell safety, MCP access, download pipeline, analysis methodology & gate, article generation, commit & PR policy) live in the imported modules.

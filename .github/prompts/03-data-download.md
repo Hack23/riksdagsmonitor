@@ -1,5 +1,30 @@
 # 03 — Data Download
 
+## Pre-flight: existing analysis check
+
+Run this check as the **first action** after MCP pre-warm, before any download:
+
+```bash
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$SUBFOLDER"
+REQ=(synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md \
+     stakeholder-perspectives.md significance-scoring.md classification-results.md \
+     cross-reference-map.md data-download-manifest.md)
+SKIP_ANALYSIS=false
+ALL_PRESENT=true
+for f in "${REQ[@]}"; do
+  [ -s "$ANALYSIS_DIR/$f" ] || { ALL_PRESENT=false; break; }
+done
+[ "$ALL_PRESENT" = "true" ] && SKIP_ANALYSIS=true
+echo "SKIP_ANALYSIS=$SKIP_ANALYSIS  (analysis folder present: $ALL_PRESENT)"
+```
+
+| `SKIP_ANALYSIS` | Mode | Next step |
+|-----------------|------|-----------|
+| `false` | **Analysis mode** | Continue with download pipeline below → `04-analysis-pipeline.md` → analysis-only PR (see `07-commit-and-pr.md`). Do **not** generate articles in this run. |
+| `true` | **Article mode** | Skip the entire download pipeline and `04-analysis-pipeline.md`. Proceed directly to `06-article-generation.md`. Optionally re-query the API and compare against `data-download-manifest.md`; add only genuinely new `dok_id` entries found since the analysis ran. |
+
+> **Folder reuse rule**: the same `$ANALYSIS_DIR` is always reused across runs for the same `$ARTICLE_DATE` + `$SUBFOLDER`. Never create `propositions-2`, `propositions-3`, etc. for the same date unless `force_generation=true`.
+
 ## Goal
 
 Populate `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` with raw Riksdag/Regering data and a provenance manifest **before** any analysis starts.

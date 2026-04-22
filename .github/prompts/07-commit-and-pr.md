@@ -10,6 +10,17 @@
 
 Workflows declare `safe-outputs.create-pull-request.max: 1`. Attempting a second call is a workflow error.
 
+## Two-run PR strategy
+
+| Run mode | What to commit | PR title prefix | Labels | After PR |
+|----------|---------------|-----------------|--------|----------|
+| **Analysis mode** (`SKIP_ANALYSIS=false`) | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.md` + `*.json` (never `pass1/`) | `📊 Analysis — ` | `analysis-only` + article-type | **Stop.** Do NOT generate articles. The next scheduled run will detect the analysis and enter Article mode automatically. |
+| **Article mode** (`SKIP_ANALYSIS=true`) | `news/$YYYY/$MM/$DD/$SLUG.{en,sv}.html` + chart JSON | `📰 ` | `agentic-news` + article-type | Dispatch `news-translate` for 12 remaining languages. |
+
+In **Analysis mode**: commit analysis artifacts, create the `analysis-only` PR, then exit. Zero articles are generated in this run. The analysis stays in the `$ANALYSIS_DIR` folder; the next run of this workflow for the same `$ARTICLE_DATE` will find it and proceed directly to articles.
+
+In **Article mode**: generate articles from existing analysis, commit, and create the articles PR.
+
 ## Stage → commit → PR
 
 1. **Stage scoped files only.** Never stage the whole repo.
