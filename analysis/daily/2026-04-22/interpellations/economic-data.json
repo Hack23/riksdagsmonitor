@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "articleType": "interpellations",
+  "date": "2026-04-22",
+  "policyDomains": ["labour-market", "fiscal-policy", "housing"],
+  "dataPoints": [
+    {
+      "indicator": "Sweden Unemployment Rate",
+      "unit": "%",
+      "series": [
+        {"year": 2021, "value": 8.803},
+        {"year": 2022, "value": 7.417},
+        {"year": 2023, "value": 7.611},
+        {"year": 2024, "value": 8.4},
+        {"year": 2025, "value": 8.694}
+      ],
+      "relevance": "Context for employer contribution reduction policy (HD10444)",
+      "source": "World Bank"
+    },
+    {
+      "indicator": "Sweden GDP Growth Rate",
+      "unit": "%",
+      "series": [
+        {"year": 2021, "value": 5.226},
+        {"year": 2022, "value": 1.255},
+        {"year": 2023, "value": -0.204},
+        {"year": 2024, "value": 0.82}
+      ],
+      "relevance": "Weak economic growth amplifies labour market policy effectiveness scrutiny",
+      "source": "World Bank"
+    },
+    {
+      "indicator": "Eating Disorder Care Access Rate (Region Stockholm)",
+      "unit": "%",
+      "series": [
+        {"year": 2022, "label": "Under Moderate governance", "value": 38},
+        {"year": 2025, "label": "Under S/MP governance", "value": 94}
+      ],
+      "relevance": "Directly contradicts Svantesson's September 2025 parliamentary claim (HD10442)",
+      "source": "Region Stockholm via riksdagen.se/HD10442"
+    },
+    {
+      "indicator": "Court Award — Region Stockholm vs Former Care Provider",
+      "unit": "SEK million",
+      "series": [
+        {"year": 2026, "label": "Stockholm District Court ruling Apr 1, 2026", "value": 67}
+      ],
+      "relevance": "Legal vindication of Region Stockholm; contradicts Finance Minister's narrative (HD10442)",
+      "source": "Stockholms tingsrätt via riksdagen.se/HD10442"
+    }
+  ],
+  "commentary": "Sweden's unemployment at 8.7% in 2025 — its highest since 2021 — provides the macroeconomic backdrop against which the April 2026 employer contribution cut's documented failure (HD10444: profit capture rather than hiring) is particularly damaging. The GDP contraction in 2023 (-0.2%) followed by weak 2024 recovery (0.82%) means Sweden has limited fiscal room for experiments that fail to achieve their stated objectives. The Region Stockholm eating disorder care access improvement from 38% (2022) to 94% (2025) is the most quantifiable evidence in this batch — directly falsifying the Finance Minister's September 2025 parliamentary statement, as validated by the Stockholm District Court ruling of April 1, 2026.",
+  "source": {
+    "worldBank": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=SE",
+    "riksdagen": "https://data.riksdagen.se/dokument/HD10442"
+  }
+}
