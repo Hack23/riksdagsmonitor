@@ -10,7 +10,7 @@ Populate `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` with raw Riksdag/Regering da
 |----------|--------------|
 | news-propositions | `propositions` |
 | news-motions | `motions` |
-| news-committee-reports | `committee-reports` |
+| news-committee-reports | `committeeReports` |
 | news-interpellations | `interpellations` |
 | news-week-ahead | `week-ahead` |
 | news-month-ahead | `month-ahead` |

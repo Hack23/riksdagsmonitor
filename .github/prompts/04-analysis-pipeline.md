@@ -32,7 +32,7 @@ Produced in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`:
 | `cross-reference-map.md` | (link to prior-run forward chain) | Continuity contracts with prior analyses |
 | `data-download-manifest.md` | produced in step 03 | Already exists from data-download step |
 
-Plus `documents/` subfolder with **one `.md` per `dok_id`** using [`per-file-political-intelligence.md`](../../analysis/templates/per-file-political-intelligence.md).
+Plus `documents/` subfolder with **one `{dok_id}-analysis.md` file per `dok_id`** using [`per-file-political-intelligence.md`](../../analysis/templates/per-file-political-intelligence.md).
 
 ## Execution order
 

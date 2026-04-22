@@ -226,7 +226,7 @@ Generates deep political intelligence articles on parliamentary committee report
 ## What this workflow does
 
 - **Article type**: `committee-reports`
-- **Analysis subfolder**: `analysis/daily/$ARTICLE_DATE/committee-reports/`
+- **Analysis subfolder**: `analysis/daily/$ARTICLE_DATE/committeeReports/`
 - **Core languages produced**: `en`, `sv` (remaining 12 languages dispatched to `news-translate`)
 - **One pull request per run** containing analysis + articles + visualisation data.
 
