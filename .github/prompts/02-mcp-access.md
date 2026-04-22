@@ -38,4 +38,4 @@ Run once at workflow start, then proceed — do not loop forever.
 
 ## Pre-warm step (CI job, not prompt)
 
-Every news workflow declares a **single** `curl`-based pre-warm step with ≤ 6 retries, ≤ 20 s apart, total ≤ 2 minutes. No background pingers. The `safeoutputs` session is kept alive by completing work inside its ~30-minute idle window, not by opening interim PRs.
+Every news workflow declares a **single** `curl`-based pre-warm step with ≤ 6 retries, ≤ 20 s apart. With `curl --max-time 30`, the worst-case runtime can exceed 4 minutes, so this is a best-effort pre-warm rather than a hard ≤ 2 minute guarantee. If a strict 2 minute cap is required, the workflow's `curl` timeout and/or retry policy must be reduced accordingly. No background pingers. The `safeoutputs` session is kept alive by completing work inside its ~30-minute idle window, not by opening interim PRs.

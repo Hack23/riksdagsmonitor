@@ -181,7 +181,7 @@ Before any draft is shared for Gate 2 review, verify:
 3. **Coverage completeness** — Every document with DIW-weighted score ≥ 7.0 receives a dedicated H3 section in article body. No silent omissions.
 4. **Rhetorical tension** — When top-ranked findings carry opposing political valences (e.g., norm entrepreneurship abroad + norm compression at home), an explicit "Rhetorical Cross-Cluster Tension" or equivalent subsection addresses the contradiction.
 
-Failure protocol: if any of 1–4 is not satisfied, the draft is returned to the writing agent with the specific missing element identified. **Doctrine**: `analysis/methodologies/ai-driven-analysis-guide.md` §"Rule 5: Democratic-Impact Weighting (DIW)". **Enforcement**: `analysis/methodologies/ai-driven-analysis-guide.md` §"Lead-Story & Coverage-Completeness Gate".
+Failure protocol: if any of 1–4 is not satisfied, the draft is returned to the writing agent with the specific missing element identified. **Doctrine**: `analysis/methodologies/ai-driven-analysis-guide.md` §"Rule 5: Democratic-Impact Weighting (DIW) — Lead-Story & Coverage Discipline". **Enforcement**: `.github/prompts/05-analysis-gate.md` checks 2 + 4.
 
 ## Error Correction Protocol
 
