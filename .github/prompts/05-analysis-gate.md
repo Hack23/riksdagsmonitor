@@ -153,7 +153,7 @@ Exit code 0 = pass, non-zero = fail with per-check report. Precondition for chec
 
 ## Outcome
 
-- **Pass** → proceed to `06-article-generation.md`.
+- **Pass** → run the **phase checkpoint** from `00-base-contract.md` with label `phase-05-gate`, then proceed to `06-article-generation.md`.
 - **Fail** → fix flagged files (never delete them), re-run the gate, then proceed.
 - **Unrecoverable fail after fixes** → stage whatever analysis exists, commit with label `analysis-only`, call `safeoutputs___create_pull_request` once (see `07-commit-and-pr.md`). Do **not** generate articles.
 

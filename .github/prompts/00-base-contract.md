@@ -45,6 +45,63 @@ Analysis Gate → Article (if applicable) → Stage → Commit → ONE create_pu
 
 No step may be skipped, reordered, or executed in parallel with its successor.
 
+## Phase checkpoint — persist every phase to repo memory
+
+Valuable analysis must never be lost. After each pipeline phase completes, snapshot its output to the gh-aw repo-memory mount at `$GH_AW_MEMORY_DIR` (runtime default `/tmp/gh-aw/repo-memory/default`). gh-aw pushes that directory to the `memory/news-generation` branch in a **separate post-job** — so checkpoints survive even if the content PR job fails, crashes, or times out.
+
+### Mandatory checkpoint points
+
+| After phase | Phase label | Source(s) |
+|-------------|-------------|-----------|
+| 03 Data download | `phase-03-download` | `$ANALYSIS_DIR` (manifest + fetched data summaries) |
+| 04 Analysis Pass 1 | `phase-04-pass1` | `$ANALYSIS_DIR` top-level artifacts |
+| 04 Analysis Pass 2 | `phase-04-pass2` | `$ANALYSIS_DIR` top-level artifacts |
+| 05 Gate pass | `phase-05-gate` | `$ANALYSIS_DIR` top-level artifacts |
+| 06 Article generated | `phase-06-article` | `$ANALYSIS_DIR` + today's `news/${ARTICLE_DATE}-*.html` |
+| 07 Immediately before `create_pull_request` | `phase-07-final` | `$ANALYSIS_DIR` + articles from `news/${ARTICLE_DATE}-*.html` |
+| `news-translate` per batch | `phase-translate-<lang>` | Translated `news/${ARTICLE_DATE}-*.html` |
+
+Each checkpoint is mandatory. Skipping them forfeits the only cross-run safety net for analysis work.
+
+### Reusable snippet
+
+Run this bash block at the end of every phase (pass the phase label as `$1`). Article HTML is written directly under the flat `news/` directory, so checkpoint copies must use `news/${ARTICLE_DATE}-*.html` rather than `news/$YYYY/$MM/$DD/*.html`:
+
+```bash
+set -Eeuo pipefail
+: "${GH_AW_MEMORY_DIR:=/tmp/gh-aw/repo-memory/default}"
+: "${ARTICLE_DATE:?ARTICLE_DATE required for checkpoint}"
+: "${SUBFOLDER:?SUBFOLDER required for checkpoint (use batch/<lang> for news-translate)}"
+PHASE="${1:?phase label required, e.g. phase-04-pass1}"
+ANALYSIS_DIR="${ANALYSIS_DIR:-analysis/daily/$ARTICLE_DATE/$SUBFOLDER}"
+DEST="$GH_AW_MEMORY_DIR/$ARTICLE_DATE/$SUBFOLDER/$PHASE"
+mkdir -p "$DEST" 2>/dev/null || { echo "[checkpoint] mkdir failed for $DEST — continuing"; exit 0; }
+# Snapshot top-level analysis artifacts (never documents/ — often 100+ files — and never pass1/).
+if [ -d "$ANALYSIS_DIR" ]; then
+  find "$ANALYSIS_DIR" -maxdepth 1 -type f \( -name '*.md' -o -name '*.json' \) \
+    -exec cp -f {} "$DEST"/ \; 2>/dev/null || true
+fi
+# Snapshot today's produced article HTML from the flat news/ directory (if any exists at this phase).
+if [ -d "news" ]; then
+  find "news" -maxdepth 1 -type f -name "${ARTICLE_DATE}-*.html" \
+    -exec cp -f {} "$DEST"/ \; 2>/dev/null || true
+fi
+COUNT="$(find "$DEST" -maxdepth 1 -type f 2>/dev/null | wc -l | tr -d ' ')"
+echo "[checkpoint] $PHASE → $DEST ($COUNT files)"
+exit 0
+```
+
+### Checkpoint rules
+
+| Rule | Rationale |
+|------|-----------|
+| **Never block on checkpoint failure** — always `exit 0`. | Repo-memory is a safety net, not a gate. |
+| Do **not** copy `$ANALYSIS_DIR/documents/` or `$ANALYSIS_DIR/pass1/`. | `documents/` exceeds the 50-file push cap; `pass1/` is local gate evidence only. |
+| Do **not** stage or commit anything under `$GH_AW_MEMORY_DIR`. | gh-aw's `push_repo_memory` post-job publishes it; see `07-commit-and-pr.md`. |
+| Prefer small summary `.md` / `.json` files (≤ 50 KB each, ≤ 50 per push). | gh-aw silently drops files exceeding the push caps. |
+| Re-run the snippet at every phase, even if earlier phases already snapshotted — it overwrites with the latest content. | Ensures the final state is always preserved, and earlier snapshots remain on the branch from prior runs. |
+| For `news-translate`, use `SUBFOLDER=batch/<lang-or-batch-id>` so memory paths don't collide with analysis runs. | Keeps the branch organised by article type. |
+
 ## Output contract
 
 - Commit real files on disk under `analysis/daily/` and/or `news/`.

@@ -84,4 +84,4 @@ Each article ≥ 1000 words, minimum 3 of 5 mandatory analytical sections presen
 
 ## Next step
 
-Stage all analysis + article + visualisation files, then call `07-commit-and-pr.md`.
+Run the **phase checkpoint** from `00-base-contract.md` with label `phase-06-article` to persist the generated articles to repo memory. Then stage all analysis + article + visualisation files, and call `07-commit-and-pr.md`.
