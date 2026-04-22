@@ -101,13 +101,17 @@ jobs:
           echo "🔍 Enforcing create_pull_request.max: 1 on compiled .lock.yml (safe-outputs config)…"
           for lf in .github/workflows/news-*.lock.yml; do
             [ -f "$lf" ] || continue
-            # The compiled safe-outputs config is embedded as JSON in GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG.
-            # Extract every "create_pull_request":{...,"max":N,...} occurrence and confirm N==1.
+            # safe-outputs config appears in two forms in the compiled file:
+            #   (a) a plain-JSON block (e.g. in prompt heredocs): "create_pull_request":{...,"max":N,...}
+            #   (b) the runtime env var GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG, a YAML-quoted string
+            #       that encodes JSON with backslash-escaped quotes: \"create_pull_request\":{...,\"max\":N,...}
+            # Normalise by stripping backslashes so a single grep pattern matches both forms.
             BAD=0
-            OCCURS=$(grep -oE '"create_pull_request"[[:space:]]*:[[:space:]]*\{[^}]*"max"[[:space:]]*:[[:space:]]*[0-9]+' "$lf" | grep -oE '"max"[[:space:]]*:[[:space:]]*[0-9]+' | grep -oE '[0-9]+$' || true)
-            COUNT_ANY=$(grep -cE '"create_pull_request"[[:space:]]*:[[:space:]]*\{' "$lf" || true)
+            NORM=$(tr -d '\\' < "$lf")
+            OCCURS=$(printf '%s' "$NORM" | grep -oE '"create_pull_request"[[:space:]]*:[[:space:]]*\{[^}]*"max"[[:space:]]*:[[:space:]]*[0-9]+' | grep -oE '"max"[[:space:]]*:[[:space:]]*[0-9]+' | grep -oE '[0-9]+$' || true)
+            COUNT_ANY=$(printf '%s' "$NORM" | grep -cE '"create_pull_request"[[:space:]]*:[[:space:]]*\{' || true)
             if [ -z "$OCCURS" ] || [ "$COUNT_ANY" -eq 0 ]; then
-              echo "  ❌ $lf has no create_pull_request config with max"
+              echo "  ❌ $lf has no create_pull_request config with max (checked both plain and backslash-escaped JSON)"
               FAIL=1
               continue
             fi
@@ -118,7 +122,7 @@ jobs:
               echo "  ❌ $lf has create_pull_request.max != 1 (found: $(echo "$OCCURS" | tr '\n' ' '))"
               FAIL=1
             else
-              echo "  ✅ $lf (create_pull_request.max: 1)"
+              echo "  ✅ $lf (create_pull_request.max: 1, $COUNT_ANY occurrence(s))"
             fi
           done
           echo ""

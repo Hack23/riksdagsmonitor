@@ -180,16 +180,16 @@ The 12 agentic news workflows in `.github/workflows/news-*.md` render these temp
 
 | Template | Produced artifact | Enforced by `05-analysis-gate.md` |
 |----------|-------------------|-----------------------------------|
-| [`synthesis-summary.md`](synthesis-summary.md) | `synthesis-summary.md` (lead story + DIW ranking + ≥ 1 Mermaid diagram) | Check 1 (presence), Check 4 (evidence) |
-| [`swot-analysis.md`](swot-analysis.md) | `swot-analysis.md` with TOWS matrix | Check 1, Check 4 |
-| [`risk-assessment.md`](risk-assessment.md) | `risk-assessment.md` (top 5 risks, likelihood × impact) | Check 1, Check 6 (significance scoring) |
+| [`synthesis-summary.md`](synthesis-summary.md) | `synthesis-summary.md` (lead story + DIW ranking + ≥ 1 Mermaid diagram) | Check 1 (presence), Check 5 (Mermaid) |
+| [`swot-analysis.md`](swot-analysis.md) | `swot-analysis.md` with TOWS matrix | Check 1, Check 4 (evidence) |
+| [`risk-assessment.md`](risk-assessment.md) | `risk-assessment.md` (top 5 risks, likelihood × impact) | Check 1 |
 | [`threat-analysis.md`](threat-analysis.md) | `threat-analysis.md` (attack tree + MITRE-style TTP) | Check 1 |
-| [`stakeholder-impact.md`](stakeholder-impact.md) | `stakeholder-perspectives.md` (named actors + influence network) | Check 1, Check 4 |
-| [`significance-scoring.md`](significance-scoring.md) | `significance-scoring.md` (DIW scores + sensitivity) | Check 6 |
+| [`stakeholder-impact.md`](stakeholder-impact.md) | `stakeholder-perspectives.md` (named actors + influence network) | Check 1 |
+| [`significance-scoring.md`](significance-scoring.md) | `significance-scoring.md` (DIW scores + sensitivity) | Check 1, Check 4 (evidence per ranked item / table row / Mermaid node) |
 | [`political-classification.md`](political-classification.md) | `classification-results.md` (priority tiers, retention) | Check 1 |
-| [`cross-reference-map.md`](cross-reference-map.md) | `cross-reference-map.md` (continuity contracts) | Check 5 (cross-refs) |
+| [`cross-reference-map.md`](cross-reference-map.md) | `cross-reference-map.md` (continuity contracts) | Check 1 |
 | [`data-download-manifest.md`](data-download-manifest.md) | `data-download-manifest.md` (pre-computed by download step) | Check 1 |
-| [`per-file-political-intelligence.md`](per-file-political-intelligence.md) | `documents/{dok_id}-analysis.md` (one per document) | Check 3 (per-doc coverage) |
+| [`per-file-political-intelligence.md`](per-file-political-intelligence.md) | `documents/{dok_id}-analysis.md` (one per document) | Check 2 (per-doc coverage) |
 
 **5 additional Tier-C artifacts** (aggregation / reference-grade workflows — see [`ext/tier-c-aggregation.md`](../../.github/prompts/ext/tier-c-aggregation.md)):
 
