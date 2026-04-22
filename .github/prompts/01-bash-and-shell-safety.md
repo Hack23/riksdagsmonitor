@@ -32,6 +32,20 @@ bash({
 
 Parameter expansion (`${VAR}`, `${VAR:-x}`, `${VAR##*/}`, …) and command substitution (`$(cmd)`) are **safe** under the agentic-workflow firewall — the firewall inspects outbound network egress, not shell syntax. Process substitution `<(…)` is best avoided because some runners disable `/dev/fd`.
 
+## Banned expansion patterns (sandbox blocklist)
+
+The execution sandbox **rejects** commands containing any of the following patterns before they run. Rewrite using the safe equivalent instead of trying to work around the block.
+
+| Banned pattern | Why it's blocked | Safe equivalent |
+|----------------|------------------|-----------------|
+| `${var@P}` / `${var@Q}` / `${var@E}` / `${var@A}` / `${var@a}` | Parameter transformation re-evaluates the variable's contents as shell syntax — a known prompt-injection vector. | Expand the target explicitly: `printf '%s' "$var"`, or a plain `"$var"` substitution. |
+| `${!var}` | Indirect expansion uses `$var`'s *value* as another variable name — lets an attacker-controlled string pick which variable is read. | Use an associative array: `declare -A MAP; MAP[foo]=bar; echo "${MAP[$key]}"`. |
+| Nested `$(…$(…)…)` | Builds a command string dynamically from inner results — the classic staged injection shape. | Split into two lines with a temporary variable: `inner=$(cmd1); outer=$(cmd2 "$inner")`. |
+| Chained builder assignments that progressively construct a command substitution (`a=foo; b="$a"bar; c=$($b)`) | Same staged-injection shape, just spread across multiple statements. | Construct commands as arrays, invoke via `"${cmd[@]}"`; never re-parse a string as a command. |
+| `eval` on variable contents (or eval-like constructs such as `bash -c "$var"`, `source /dev/stdin <<<"$var"`) | Direct arbitrary-code execution from data. | Never required for our workflows — refuse and rewrite using arrays, `case`, or explicit branches. |
+
+These rules apply equally to inline bash in prompts AND to bash commands the agent composes at runtime. The sandbox rejects matching commands before they run.
+
 ## Secret safety
 
 - Never pass secrets through `$(…)` into a log-visible command — echoing `curl -H "Authorization: $(…)"` will leak if the step is rerun in debug.
