@@ -1641,5 +1641,5 @@ Many tasks benefit from combining multiple skills:
 
 **Last Updated**: 2026-04-22  
 **Total Skills**: 91  
-**New Skills (2026-02-20 → 2026-04-22)**: 18 skills added from Hack23 repos (security, development, governance, platform, design); +4 since 2026-02-20 (`seo-best-practices`, `global-government-analysis`, `investigative-journalism`, `myndigheter-monitoring` per catalog reconciliation)  
+**New Skills (2026-02-20 → 2026-04-22)**: 18 skills added from Hack23 repos (security, development, governance, platform, design); +4 since 2026-02-20 (`business-model-canvas`, `mcp-gateway-configuration`, `mcp-gateway-security`, `seo-best-practices` per catalog reconciliation)  
 **Maintained by**: Hack23 AB
