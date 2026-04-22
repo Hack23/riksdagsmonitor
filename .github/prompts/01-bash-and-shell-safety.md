@@ -35,7 +35,8 @@ Parameter expansion (`${VAR}`, `${VAR:-x}`, `${VAR##*/}`, …) and command subst
 ## Secret safety
 
 - Never pass secrets through `$(…)` into a log-visible command — echoing `curl -H "Authorization: $(…)"` will leak if the step is rerun in debug.
-- Use env blocks (`env:` on the step) or `${{ secrets.FOO }}` directly; the runner masks secret values in output.
+- Expose secrets through the step's `env:` block (for example `env: { FOO: <GitHub-Actions secrets expression for FOO> }`) rather than inlining a raw secrets expression inside the prompt; the runner masks secret values in output.
+- Note: this prompt file is loaded via `runtime-import`, and the gh-aw validator rejects any literal GitHub Actions expression (the `dollar-brace-brace … brace-brace` syntax) that is not on the safe allow-list — so never embed a raw secrets-expression token in prompt modules, even inside code spans. Keep secret references in the workflow YAML only.
 
 ## Temporary files
 
