@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "articleType": "committee-reports",
+  "date": "2026-04-22",
+  "policyDomains": ["fiscal", "housing", "climate", "welfare", "transport"],
+  "dataPoints": [
+    {
+      "indicator": "GDP_GROWTH",
+      "country": "SE",
+      "year": 2024,
+      "value": 0.82,
+      "unit": "% annual",
+      "source": "World Bank"
+    },
+    {
+      "indicator": "GDP_GROWTH",
+      "country": "SE",
+      "year": 2023,
+      "value": -0.20,
+      "unit": "% annual",
+      "source": "World Bank"
+    },
+    {
+      "indicator": "INFLATION",
+      "country": "SE",
+      "year": 2024,
+      "value": 2.84,
+      "unit": "% CPI",
+      "source": "World Bank"
+    },
+    {
+      "indicator": "BUDGET_IMPACT",
+      "country": "SE",
+      "year": 2026,
+      "value": -4.1,
+      "unit": "billion SEK",
+      "source": "HD01FiU48 riksdagen.se"
+    },
+    {
+      "indicator": "FUEL_TAX_CUT",
+      "country": "SE",
+      "year": 2026,
+      "value": 0.82,
+      "unit": "SEK/litre petrol",
+      "source": "HD01FiU48 riksdagen.se"
+    }
+  ],
+  "commentary": {
+    "fiscal": "HD01FiU48 extra supplementary budget 2026 worsens Sweden's budget balance by 4.1 billion SEK. In a low-growth economic context (GDP 2024: +0.82%, 2023: -0.20%), this is a meaningful deterioration. Inflation at 2.84% (2024) has moderated, which reduces urgency for further household relief.",
+    "housing": "HD01CU27 and HD01CU28 reforms create regulatory compliance costs in the near term but reduce property fraud risk long-term. Sweden's housing market continues to be the #1 household wealth exposure sector.",
+    "climate": "World Bank GDP-per-capita data confirms Sweden at $55,200 USD (2023), consistent with capacity to absorb green transition costs. However, the simultaneous fuel tax cut (HD01FiU48) and climate audit criticism (HD01MJU21) create a credibility gap in Swedish climate policy leadership."
+  },
+  "source": {
+    "worldBank": "World Bank Open Data API — indicators NY.GDP.MKTP.KD.ZG, FP.CPI.TOTL.ZG, NY.GDP.PCAP.CD for Sweden (SE), data as of 2026-04-22",
+    "scb": null,
+    "imf": null,
+    "riksdag": "HD01FiU48 economic impact figures from committee report summary at riksdagen.se"
+  }
+}
