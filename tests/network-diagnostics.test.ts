@@ -29,6 +29,7 @@ import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { readWorkflowWithImports } from './helpers/workflow-imports.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -313,7 +314,9 @@ describe('Network Diagnostics Configuration', () => {
     ALL_NEWS_WORKFLOWS.forEach(workflow => {
       it(`${workflow} should document get_sync_status() health check`, () => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
-        const content = fs.readFileSync(filepath, 'utf-8');
+        // The health-gate rule (call `get_sync_status` up to 3× at workflow
+        // start) lives in the imported `../prompts/02-mcp-access.md` module.
+        const content = readWorkflowWithImports(filepath);
 
         expect(
           content,
@@ -323,7 +326,10 @@ describe('Network Diagnostics Configuration', () => {
 
       it(`${workflow} should have safeoutputs___noop fallback on MCP failure`, () => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
-        const content = fs.readFileSync(filepath, 'utf-8');
+        // The MCP-unreachable no-op policy lives in the imported
+        // `../prompts/07-commit-and-pr.md` module (referenced from
+        // `../prompts/02-mcp-access.md`).
+        const content = readWorkflowWithImports(filepath);
 
         expect(
           content,
@@ -333,7 +339,7 @@ describe('Network Diagnostics Configuration', () => {
 
       it(`${workflow} should use object payload for noop calls`, () => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
-        const content = fs.readFileSync(filepath, 'utf-8');
+        const content = readWorkflowWithImports(filepath);
 
         // Verify noop uses object payload form: safeoutputs___noop({"message": "..."})
         // not bare string: safeoutputs___noop("...")
@@ -430,38 +436,48 @@ describe('Network Diagnostics Configuration', () => {
   });
 
   describe('In-Prompt MCP Gateway Diagnostics (runs after MCP Gateway)', () => {
-    // news-translate.md is a translation-only workflow with a simpler MCP setup;
-    // it doesn't need the full MCP diagnostic blocks that content-generation workflows require
+    // The dedicated "MCP Quick Diagnostic" in-prompt block that existed in
+    // the pre-modularisation architecture is now replaced by the health gate
+    // in `../prompts/02-mcp-access.md` (3× `get_sync_status` at workflow
+    // start, then proceed). The CI `steps:` block handles external DNS /
+    // HTTPS pre-flight checks, and the MCP-unreachable no-op policy lives
+    // in `../prompts/07-commit-and-pr.md`. We therefore verify the effective
+    // prompt exposes the health gate rather than a specific legacy heading.
     const CONTENT_GENERATION_WORKFLOWS = ALL_NEWS_WORKFLOWS.filter(w => w !== 'news-translate.md');
 
     CONTENT_GENERATION_WORKFLOWS.forEach(workflow => {
-      it(`${workflow} should have in-prompt MCP quick diagnostic block`, () => {
+      it(`${workflow} should expose MCP health gate in effective prompt`, () => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
-        const content = fs.readFileSync(filepath, 'utf-8');
+        const content = readWorkflowWithImports(filepath);
 
-        // The agent prompt (after ---) must include MCP diagnostic
-        // that runs AFTER the MCP Gateway is started (unlike pre-flight checks)
+        // Health-gate rule from `../prompts/02-mcp-access.md`:
+        //   1. call `get_sync_status({})`, retry up to 3× 20 s apart,
+        //   2. on third failure, apply the MCP-unreachable no-op policy.
         expect(
           content,
-          `${workflow} missing in-prompt "MCP Quick Diagnostic" block`
-        ).toContain('MCP Quick Diagnostic');
+          `${workflow} missing in-prompt MCP health gate (get_sync_status)`
+        ).toContain('get_sync_status');
+        expect(
+          content,
+          `${workflow} missing MCP-unreachable no-op policy (safeoutputs___noop)`
+        ).toContain('safeoutputs___noop');
       });
 
-      it(`${workflow} should test both direct and gateway MCP in prompt`, () => {
+      it(`${workflow} should test external MCP reachability in frontmatter pre-flight step`, () => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
         const content = fs.readFileSync(filepath, 'utf-8');
+        const fm = extractFrontmatter(content);
 
-        // Must test direct Render.com endpoint
+        // External HTTPS reachability to the MCP server is verified by the
+        // frontmatter pre-flight step, not by an in-prompt diagnostic block.
         expect(
-          content,
-          `${workflow} missing direct MCP server check in prompt`
-        ).toContain('Direct MCP server');
-
-        // Must test gateway routing with UNREACHABLE fallback
+          fm,
+          `${workflow} missing pre-flight external reachability check`
+        ).toContain('Pre-flight external endpoint reachability check');
         expect(
-          content,
-          `${workflow} missing gateway routing check in prompt`
-        ).toContain('UNREACHABLE');
+          fm,
+          `${workflow} pre-flight step should probe the Render MCP endpoint`
+        ).toContain('riksdag-regering-ai.onrender.com');
       });
     });
   });
@@ -471,15 +487,18 @@ describe('Network Diagnostics Configuration', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-article-generator.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
+      // The single `curl`-based pre-warm `steps:` block is canonical
+      // (see `../prompts/02-mcp-access.md` §"Pre-warm step"). We no longer
+      // keep long-running keep-alive pingers — the `safeoutputs` session is
+      // kept alive by completing work inside its ~30-minute idle window.
       expect(content).toContain('Pre-warm MCP server');
       expect(content).toContain('tools/list');
-      expect(content).toContain('keep-alive');
     });
 
     ALL_NEWS_WORKFLOWS.forEach(workflow => {
       it(`${workflow} should reference MCP pre-warm or health check`, () => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
-        const content = fs.readFileSync(filepath, 'utf-8');
+        const content = readWorkflowWithImports(filepath);
 
         const hasPreWarm = content.includes('Pre-warm') || content.includes('pre-warm');
         const hasHealthGate = content.includes('get_sync_status');
@@ -494,30 +513,33 @@ describe('Network Diagnostics Configuration', () => {
   });
 
   describe('Step Ordering Awareness', () => {
-    it('pre-flight steps should be in frontmatter, gateway diagnostics in prompt body', () => {
+    it('pre-flight steps should be in frontmatter, health gate in prompt body', () => {
       // Validates the architectural split:
-      // - Pre-flight checks (frontmatter steps:) run BEFORE MCP Gateway
-      // - In-prompt gateway diagnostics run AFTER MCP Gateway (inside agent)
-      // news-translate.md has a simpler architecture without in-prompt diagnostics
+      // - Pre-flight external reachability checks (frontmatter `steps:`) run
+      //   BEFORE the agent starts, proving DNS + HTTPS to the Render MCP
+      //   endpoint work from the runner.
+      // - The in-prompt MCP health gate (`get_sync_status` + noop fallback)
+      //   runs INSIDE the agent, proving the MCP Gateway routes tool calls
+      //   correctly. That rule lives in `../prompts/02-mcp-access.md`.
       const contentWorkflows = ALL_NEWS_WORKFLOWS.filter(w => w !== 'news-translate.md');
       contentWorkflows.forEach(workflow => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
         const content = fs.readFileSync(filepath, 'utf-8');
         const fm = extractFrontmatter(content);
-        const parts = content.split('---');
-        const body = parts.length >= 3 ? parts.slice(2).join('---') : '';
+        const effective = readWorkflowWithImports(filepath);
 
-        // Pre-flight reachability should be in frontmatter steps
+        // Pre-flight reachability should be in frontmatter steps.
         expect(
           fm,
           `${workflow} missing pre-flight check in frontmatter steps`
         ).toContain('Pre-flight external endpoint reachability');
 
-        // Gateway diagnostics should be in prompt body (runs inside agent)
+        // Health gate should be reachable from the effective prompt surface
+        // (workflow body + imported modules).
         expect(
-          body,
-          `${workflow} missing gateway diagnostics in prompt body`
-        ).toContain('MCP Quick Diagnostic');
+          effective,
+          `${workflow} missing MCP health gate in effective prompt`
+        ).toContain('get_sync_status');
       });
     });
   });
@@ -543,13 +565,17 @@ describe('Network Diagnostics Configuration', () => {
       // into 12 additional languages; it does not generate original analysis.
       if (workflow === 'news-translate.md') return;
 
-      it(`${workflow} should reference stakeholder-perspectives.md`, () => {
+      it(`${workflow} should reference stakeholder-perspectives artifact`, () => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
-        const content = fs.readFileSync(filepath, 'utf-8');
+        // The `stakeholder-perspectives.md` artifact requirement lives in
+        // `../prompts/04-analysis-pipeline.md` / `05-analysis-gate.md` /
+        // `06-article-generation.md` / `07-commit-and-pr.md`, so read the
+        // effective prompt surface.
+        const content = readWorkflowWithImports(filepath);
 
         expect(
           content,
-          `${workflow} missing stakeholder-perspectives.md reference`
+          `${workflow} missing stakeholder-perspectives artifact reference`
         ).toContain('stakeholder-perspectives');
       });
     });
