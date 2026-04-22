@@ -98,6 +98,9 @@ flowchart LR
 
 ## ✏️ Pass-2 Evidence — Before vs After
 
+> [!WARNING]
+> **Illustrative example — replace before publishing.** The table below (and the subsequent Content Metrics, What Worked, What to Improve, and Backlog sections) carries worked-example content — named ministers, dok_ids, before/after ledes, word counts, citation counts, and specific "fix for next run" entries — from a prior reference run. Replace every row with run-specific Pass-2 evidence, metrics, and retrospection before committing this file; do not ship the example values as if they were produced by the current run.
+
 | File | Before Pass-2 (lede snippet) | After Pass-2 (lede snippet) | Improvement |
 |------|------------------------------|-----------------------------|-------------|
 | `synthesis-summary.md` | "The government tabled several propositions today." | "Finance Minister **Elisabeth Svantesson (M)** tabled the 2026 Spring Bill (HD03100) alongside an extra amendment budget (HD0399) and three fiscal support measures." | 🟢 Named actor + dok_ids added |

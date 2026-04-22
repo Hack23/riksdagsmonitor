@@ -74,12 +74,15 @@ quadrantChart
 
 ## 📊 Scenario Set
 
+> [!WARNING]
+> **Illustrative example — replace before publishing.** The quadrant, the four scenarios below, every probability, every named actor/committee/dok_id, every trigger condition, and every early-warning signal are worked-example values from a prior reference run. Replace them with run-specific scenario content (or explicitly reuse and re-justify them) before committing this file.
+
 ### 🟢 Scenario A — Base Case (probability **40 %**)
 
 | Field | Value |
 |-------|-------|
 | **Name** | Base — Coalition holds with SD confidence & supply |
-| **Probability** | 40 % (WEP: "probable / very likely" — confidence 🟩 HIGH) |
+| **Probability** | 40 % (WEP: "roughly even" — confidence 🟩 HIGH) |
 | **Headline** | Kristersson government retains office with modified mandate |
 | **Trigger conditions** | Coalition + SD sustain ≥ 47 % polling through August 2026; no crisis event |
 | **Early warning signals** | (a) cost-of-living package lands within voter segments 1 & 2 by July; (b) no major KU scandal; (c) SD keeps confidence posture |
