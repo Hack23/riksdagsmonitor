@@ -19,7 +19,7 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template instructions:** Produce when a P0/P1 document has clear historical precedent (grundlag change, major budget reset, foreign-policy pivot, crisis response). Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/historical-parallels.md`.
+> **📌 Template instructions:** Produce on every run for the target document and save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/historical-parallels.md`. When clear historical precedent exists (for example, grundlag change, major budget reset, foreign-policy pivot, crisis response), provide the structured precedent comparison below; when no strong precedent exists, still produce this file and record an explicit **no-precedent finding** with the reasoning.
 
 > **✨ What to produce:** A structured comparison of today's measure against at least three named historical episodes, including a structural-similarity score, the observed outcome of each precedent, and explicit tests for where today's situation **diverges** from its precedents.
 
@@ -159,6 +159,6 @@ flowchart LR
 **Document Control**
 - **Template path:** `/analysis/templates/historical-parallels.md`
 - **Also known as:** `historical-baseline.md` (filename variant — content identical)
-- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-family-c--d-produced-when-warranted)
+- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued)
 - **Classification:** Public
 - **Next Review:** 2026-07-21

@@ -19,7 +19,7 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template instructions:** Produce when any document in the run scores ≥ 7.0 on DIW. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/devils-advocate.md`. Pairs with [political-risk-methodology.md](../methodologies/political-risk-methodology.md) and [intelligence-analysis-techniques](../../.github/skills/intelligence-analysis-techniques/SKILL.md).
+> **📌 Template instructions:** Produce on every run. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/devils-advocate.md`. Scope depth by DIW: for lower-DIW runs, provide a concise but explicit challenge to the main assessment; for higher-DIW runs, provide full ACH, multiple alternative hypotheses, assumption audit, counter-evidence, and falsifiable indicators. Pairs with [political-risk-methodology.md](../methodologies/political-risk-methodology.md) and [intelligence-analysis-techniques](../../.github/skills/intelligence-analysis-techniques/SKILL.md).
 
 > **✨ What to produce:** An honest, structured challenge to the main assessment. Apply Analysis of Competing Hypotheses (ACH), surface at least three alternative explanations, audit the assumptions, list falsifiable predictions, and state what evidence would change the judgement.
 
@@ -176,6 +176,6 @@ graph LR
 
 **Document Control**
 - **Template path:** `/analysis/templates/devils-advocate.md`
-- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-family-c--d-produced-when-warranted)
+- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued)
 - **Classification:** Public
 - **Next Review:** 2026-07-21

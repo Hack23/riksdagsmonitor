@@ -19,9 +19,9 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template instructions:** Produce for P0/P1 documents where a cross-jurisdictional frame adds material insight. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/comparative-international.md`. Data draws from `world-bank`, `scb`, `imf`, and OECD public datasets.
+> **📌 Template instructions:** Produce on every run. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/comparative-international.md`. For P0/P1 or other internationally salient developments, provide full cross-jurisdictional analysis; on light-signal days, provide a concise baseline comparison rather than omitting the file. Data draws from `world-bank`, `scb`, `imf`, and OECD public datasets.
 
-> **✨ What to produce:** A comparison of the Swedish measure against at least five comparator jurisdictions (Nordic primary, EU secondary, OECD/historical tertiary) with standardised dimensions: policy goal, instrument design, outcome to date, cost, transferability.
+> **✨ What to produce:** Compare the Swedish measure against at least five comparator jurisdictions (Nordic primary, EU secondary, OECD/historical tertiary) using standardised dimensions: policy goal, instrument design, outcome to date, cost, transferability. On light-signal days, produce a shorter baseline comparator set using the same dimensions in concise form.
 
 ---
 
@@ -176,6 +176,6 @@ graph TB
 **Document Control**
 - **Template path:** `/analysis/templates/comparative-international.md`
 - **Also known as:** `international-comparative.md` (filename variant — content identical)
-- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-family-c--d-produced-when-warranted)
+- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued)
 - **Classification:** Public
 - **Next Review:** 2026-07-21

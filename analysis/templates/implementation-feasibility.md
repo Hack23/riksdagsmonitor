@@ -19,7 +19,7 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template instructions:** Produce when a bill has concrete delivery obligations (budget line, infrastructure, IT system, procurement, workforce change). Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/implementation-feasibility.md`.
+> **📌 Template instructions:** Produce this document on every run. If the current bill has concrete delivery obligations (budget line, infrastructure, IT system, procurement, workforce change), assess that bill directly; otherwise, use this template to audit implementation feasibility for the relevant delivery backlog or previously announced measures. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/implementation-feasibility.md`.
 
 > **✨ What to produce:** A structured feasibility review across six delivery dimensions (Legal, Administrative, Technical, Fiscal, Workforce, Timeline) with evidence and a calibrated overall-feasibility verdict (READY / FEASIBLE / CONSTRAINED / HIGH-RISK / UNLIKELY).
 
@@ -213,6 +213,6 @@ gantt
 
 **Document Control**
 - **Template path:** `/analysis/templates/implementation-feasibility.md`
-- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-family-c--d-produced-when-warranted)
+- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued)
 - **Classification:** Public
 - **Next Review:** 2026-07-21

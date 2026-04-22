@@ -19,7 +19,7 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template instructions:** Produce for weekly and monthly reviews, or whenever a daily run accumulates ≥ 3 forward triggers that need centralised tracking. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/forward-indicators.md` or, for review cycles, at `analysis/weekly/${ISO_WEEK}/forward-indicators.md`.
+> **📌 Template instructions:** Produce on every run as a required deliverable, with at least 10 forward indicators spanning near-, medium-, and longer-horizon triggers. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/forward-indicators.md` or, for review cycles, at `analysis/weekly/${ISO_WEEK}/forward-indicators.md`.
 
 > **✨ What to produce:** A single, authoritative watchlist — each indicator named, dated, threshold-defined, and tied to the downstream analysis it will update. Every indicator must be measurable from public MCP data.
 
@@ -171,6 +171,6 @@ graph LR
 
 **Document Control**
 - **Template path:** `/analysis/templates/forward-indicators.md`
-- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-family-c--d-produced-when-warranted)
+- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued)
 - **Classification:** Public
 - **Next Review:** 2026-07-21

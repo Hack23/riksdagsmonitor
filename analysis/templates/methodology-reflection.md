@@ -19,7 +19,7 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template instructions:** Produce for reference-exemplar runs, weekly reviews, and monthly reviews. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/methodology-reflection.md`. Honest self-audit — this feeds the next methodology update.
+> **📌 Template instructions:** Produce for every run as a required run-audit gate. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/methodology-reflection.md`. Honest self-audit — this feeds the next methodology update and must not be skipped.
 
 > **✨ What to produce:** Proof that the 7-step protocol was followed, the quality-gate score was met, the pass-2 rewrite actually changed sections, and a specific backlog of methodology improvements the next run should adopt.
 
@@ -155,6 +155,9 @@ flowchart LR
 
 > **[REQUIRED]** — Every `methodology-reflection.md` must include this ICD 203 compliance checklist. All 9 standards must pass for the workflow to be considered compliant.
 
+> [!WARNING]
+> **Illustrative example — replace before publishing.** The checklist rows, status markers, and evidence cells below are worked-example values from a prior reference run and must be replaced with run-specific status and evidence before this file is committed. Do not ship pre-filled ✅ markers or an overall `COMPLIANT` verdict without having reassessed every standard for the current run.
+
 | ICD 203 Standard | Status | Evidence |
 |------------------|:------:|----------|
 | **1. Source quality described** | ✅ | All evidence tables have Admiralty codes `[A–F][1–6]` |
@@ -167,7 +170,7 @@ flowchart LR
 | **8. Accurate judgments made** | ✅ | Quality gate score 8.01/10 |
 | **9. Visual information incorporated** | ✅ | 19 Mermaid diagrams across workflow |
 
-**ICD 203 Compliance Status:** `✅ COMPLIANT` / `❌ NON-COMPLIANT`
+**ICD 203 Compliance Status:** `[SELECT: ✅ COMPLIANT / ❌ NON-COMPLIANT]`
 
 ---
 
@@ -179,7 +182,7 @@ flowchart LR
 | All 9 Family A files present | ✅ | — |
 | ≥ 1 Mermaid per file | ✅ | Average 1.7 |
 | Pass-2 rewrite documented | ✅ | See section above |
-| Two or more triggered Family C + D files | ✅ | 3 of 5 C files, 2 of 7 D files |
+| Two or more Family C + D files completed with depth adapted to DIW tier | ✅ | Illustrative example — all Family C (5) and Family D (7) files are always produced; depth adapted by DIW tier per Step 5 contract |
 
 **Verdict: Eligible as reference exemplar for `${DOC_TYPE}` workflow template set.**
 
@@ -187,6 +190,6 @@ flowchart LR
 
 **Document Control**
 - **Template path:** `/analysis/templates/methodology-reflection.md`
-- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-family-c--d-produced-when-warranted)
+- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued)
 - **Classification:** Public
 - **Next Review:** 2026-07-21

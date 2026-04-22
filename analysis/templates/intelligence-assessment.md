@@ -19,9 +19,9 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template instructions:** Produce when interpellations, written questions, debates, or votes show a coordinated pattern pointing to a specific strategy or actor group. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/intelligence-assessment.md`. Uses OSINT methodology and ACH.
+> **📌 Template instructions:** Produce this file on every run, including light-day runs with weak or no confirmed coordination signals. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/intelligence-assessment.md`. When evidence shows a coordinated pattern pointing to a specific strategy or actor group, complete the full intelligence assessment; when it does not, publish a concise low-signal assessment that explicitly states no coordinated pattern met the reporting threshold. Uses OSINT methodology and ACH.
 
-> **✨ What to produce:** A finished intelligence product with BLUF, actor-and-intent analysis, pattern evidence table, forecast, and confidence label. Every pattern claim cites at least three `dok_id`s and names the principal actors with party affiliation.
+> **✨ What to produce:** A finished intelligence product with BLUF, actor-and-intent analysis, pattern evidence table, forecast, and confidence label when coordination indicators are supported by the evidence; otherwise, produce a light-day intelligence note with BLUF, negative finding/threshold statement, brief evidence summary, watch indicators, and confidence label. Every positive pattern claim cites at least three `dok_id`s and names the principal actors with party affiliation.
 
 ---
 
@@ -191,6 +191,6 @@ flowchart TD
 
 **Document Control**
 - **Template path:** `/analysis/templates/intelligence-assessment.md`
-- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-family-c--d-produced-when-warranted)
+- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued)
 - **Classification:** Public
 - **Next Review:** 2026-07-21

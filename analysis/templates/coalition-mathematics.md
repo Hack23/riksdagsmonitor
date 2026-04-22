@@ -19,7 +19,7 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template instructions:** Produce whenever a document carries contested-vote or coalition-arithmetic weight. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/coalition-mathematics.md`. Pair with `voter-segmentation.md` and `scenario-analysis.md`.
+> **📌 Template instructions:** Produce this file for every run. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/coalition-mathematics.md`. Adapt depth to relevance: provide a concise baseline even when coalition arithmetic is low-salience, and expand to full contested-vote / coalition-arithmetic analysis when the document has material government-formation implications. Pair with `voter-segmentation.md` and `scenario-analysis.md`.
 
 > **✨ What to produce:** Current and projected seat distributions, threshold checks for each of the 8 parties, four formation pathways with arithmetic, pivotal-player analysis (Banzhaf / Shapley-Shubik), and the single coalition-breaking signal to watch next.
 
@@ -191,6 +191,6 @@ flowchart TD
 
 **Document Control**
 - **Template path:** `/analysis/templates/coalition-mathematics.md`
-- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-family-c--d-produced-when-warranted)
+- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued)
 - **Classification:** Public
 - **Next Review:** 2026-07-21

@@ -19,7 +19,7 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template instructions:** Produce when a story is high-salience and likely to dominate the next news cycle. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/media-framing-analysis.md`. Uses public media coverage only — no scraping behind paywalls, no social-media private accounts.
+> **📌 Template instructions:** Produce on every run and save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/media-framing-analysis.md` to maintain a longitudinal record of media narratives. On low-salience days, provide a lighter baseline update noting the dominant or emerging frames, whether coverage is diffuse or muted, and any notable changes versus the previous cycle; when a story is high-salience and likely to dominate the next news cycle, expand to the full framing analysis. Uses public media coverage only — no scraping behind paywalls, no social-media private accounts.
 
 > **✨ What to produce:** A named set of frame packages (minimum three), the outlet distribution of each frame, the most-used keywords per frame, the attack and defence lines activated, and the counter-framing the platform should adopt to stay neutral.
 
@@ -31,9 +31,9 @@
 |---------|-------|
 | **F3EAD Stage** | **ANALYZE** — media environment assessment |
 | **PIRs Served** | **PIR-6** (Election Integrity — narrative manipulation detection), **PIR-7** (Democratic Norms — media pluralism) |
-| **Admiralty Floor** | Quality press (DN, SvD, SVT) requires **[C2]**; tabloid/social media requires **[D4]** with `[unconfirmed]` flag |
+| **Admiralty Floor** | Quality newspapers / public-service news (e.g., DN, SvD, SVT) require **[C3]**; news wires require **[C2]**; tabloids require **[D3]**; social media requires **[D4–E5]** with `[unconfirmed]` flag |
 | **WEP + ODNI** | Media-narrative momentum claims use **WEP** (gaining traction/fading); confidence typically **LOW** to **MODERATE** (media is narrative layer, not primary evidence) |
-| **Source Diversity Floor** | P2 (frame-dominance claims): ≥2 media outlets across quality/tabloid spectrum; single-outlet narrative labeled `[unconfirmed — single source]` |
+| **Source Diversity Floor** | P2 (frame-dominance claims): ≥2 media outlets from distinct categories (e.g., quality/public-service + tabloid, or wire + quality/public-service); single-outlet or social-only narrative labeled `[unconfirmed — single source]` |
 | **SAT(s) Applied** | Outside-In Thinking (start from media perspective), Indicators and Signposts (narrative momentum indicators) |
 | **ICD 203 Standards** | 1 (source quality — media outlet reliability), 2 (uncertainties — frame attribution), 9 (visual information — frame map) |
 
@@ -49,7 +49,7 @@
 | **Coverage window** | `2026-04-18 to 2026-04-21` |
 | **Outlets reviewed** | `DN, SvD, Aftonbladet, Expressen, SVT, SR, TV4, Dagens ETC, Kvartal, regional press sample` |
 | **Counts** | `N articles / N broadcast segments / N editorials` |
-| **Overall Confidence** | `🟩 HIGH` |
+| **Overall Confidence** | `🟧 MEDIUM` |
 
 ---
 
@@ -191,6 +191,6 @@ Public media coverage only. Representative sample across national, regional, and
 
 **Document Control**
 - **Template path:** `/analysis/templates/media-framing-analysis.md`
-- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-family-c--d-produced-when-warranted)
+- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued)
 - **Classification:** Public
 - **Next Review:** 2026-07-21

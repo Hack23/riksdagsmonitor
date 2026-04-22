@@ -202,6 +202,6 @@ Cross-reference `coalition-mathematics.md` for full seat-projection arithmetic.
 **Document Control**
 - **Template path:** `/analysis/templates/election-2026-analysis.md`
 - **Also known as:** `election-2026-implications.md` (filename variant — content identical)
-- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-family-c--d-produced-when-warranted)
+- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued)
 - **Classification:** Public
 - **Next Review:** 2026-07-21

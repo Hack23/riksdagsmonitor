@@ -19,7 +19,7 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template instructions:** Produce whenever a measure has a visible electoral effect (fiscal, welfare, migration, justice, climate). Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/voter-segmentation.md`. Segment definitions align with standard SCB demographic clusters plus political-behaviour clusters.
+> **📌 Template instructions:** Produce on every run. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/voter-segmentation.md`. When the measure has a visible electoral effect (fiscal, welfare, migration, justice, climate), provide a full electoral-impact segmentation. On procedural or light-news days, still produce this file with baseline SCB-grounded segment coverage and note that segment movement effects are limited, unclear, or low-confidence. Segment definitions align with standard SCB demographic clusters plus political-behaviour clusters.
 
 > **✨ What to produce:** A rigorous, SCB-grounded segmentation with population size, directional impact, confidence, volatility (turnout / swing), and the campaign narrative most likely to land. Every segment row includes at least one SCB or demographic source citation.
 
@@ -177,6 +177,6 @@ flowchart LR
 
 **Document Control**
 - **Template path:** `/analysis/templates/voter-segmentation.md`
-- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-family-c--d-produced-when-warranted)
+- **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued)
 - **Classification:** Public
 - **Next Review:** 2026-07-21
