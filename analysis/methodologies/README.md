@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.2-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.1 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 4.2 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -183,14 +183,33 @@ graph LR
 
 ## 📋 Methodology Summary Table
 
-| Priority | Document | Key Content | Dimensions / Frameworks | When to Apply |
-|----------|----------|-------------|-------------------------|---------------|
-| **1** | **[Political Classification Guide](political-classification-guide.md)** | 7-dimension event classification, sensitivity levels, policy domain taxonomy, urgency matrix | Sensitivity (4 levels), Democratic Integrity, Policy Urgency, Economic Impact, Governance Impact, Political Capital, Legislative Impact | **First** — every incoming Riksdag document must be classified before any analysis begins |
-| **2** | **[Political Risk Methodology](political-risk-methodology.md)** | Likelihood × Impact scoring, 8 risk categories, 5×5 matrix, cascading risk analysis | Policy, Legislative, Economic, Social, Security, Diplomatic, Coalition, Constitutional | **Second** — after classification, assess political risk using calibrated scoring |
-| **3** | **[Political Threat Framework](political-threat-framework.md)** | Multi-framework threat analysis: Political Threat Taxonomy + 3 supporting frameworks | Narrative Integrity, Legislative Integrity, Accountability, Transparency, Democratic Process, Power Balance | **Third** — apply threat analysis using political frameworks (never STRIDE/DREAD/PASTA) |
-| **4** | **[Political SWOT Framework](political-swot-framework.md)** | Evidence-based SWOT, confidence levels, 180-day decay, group-to-landscape aggregation | Strengths, Weaknesses, Opportunities, Threats — each with confidence (HIGH/MEDIUM/LOW) | **Fourth** — synthesize classification + risk + threat into strategic SWOT assessment |
-| **5** | **[Political Style Guide](political-style-guide.md)** | Writing standards, 3 depth levels, evidence density requirements, anti-patterns | Level 1 Surface (200–500 words), Level 2 Strategic (800–2,000 words), Level 3 Intelligence (2,000–5,000 words) | **Fifth** — apply writing standards when drafting the analysis document |
-| **6** | **[AI-Driven Analysis Guide](ai-driven-analysis-guide.md)** | Per-file AI protocol, quality gates, weighted scoring (7.0/10 minimum), conflict resolution | Evidence (25%), Depth (25%), Structural (20%), Actionable (15%), Neutrality (15%) | **Always** — orchestrates the entire pipeline; AI agents must read this first |
+> **🎯 Start here:** the **[AI-Driven Analysis Guide](ai-driven-analysis-guide.md)** is the single, canonical entry point for every agentic workflow. It defines the 7-step protocol and the Family A–E output matrix that every methodology below feeds into.
+
+> **🔄 Tradecraft anchors (v4.2):** Every methodology now includes a **Tradecraft Anchors** block referencing the doctrinal standards in [`political-style-guide.md`](political-style-guide.md): **F3EAD** intelligence cycle stage, **PIR/EEI** mapping, **Admiralty Code** floor, **WEP + ODNI** confidence requirements, **ICD 203** gate, **SAT(s)** applied, **Collection Management Matrix** (MCP tool → evidence → template), and **Source Diversity Rule** (≥3 primary + ≥1 secondary per P0/P1 claim; single-source = `[unconfirmed]`). See the style guide for canonical definitions.
+
+| Priority | Document | Key Content | F3EAD Stage | Dimensions / Frameworks | When to Apply |
+|----------|----------|-------------|:-----------:|-------------------------|---------------|
+| **★ Start** | **[AI-Driven Analysis Guide](ai-driven-analysis-guide.md)** | 7-step protocol, Family A–E output matrix, color-coded Mermaid palette, 5-level confidence scale, DIW weighting, quality gate | ALL | Evidence (25%), Depth (25%), Structural (20%), Actionable (15%), Neutrality (15%), ICD 203 (pass/fail) | **Always read first** — orchestrates every other methodology and names every output file with its template |
+| **☆ Tradecraft** | **[Political Style Guide](political-style-guide.md)** | **Tradecraft anchors:** F3EAD, PIR/EEI, Admiralty Code, ICD 203, WEP + ODNI, SATs, Collection Management Matrix | ALL | Writing standards, 4 depth tiers, evidence density, Mermaid conventions | **Read second** — defines all tradecraft standards referenced by other methodologies |
+| **Family A** | **[Synthesis & Scoring Methodology](synthesis-methodology.md)** | Step-by-step production of significance-scoring, synthesis-summary, stakeholder-perspectives, stakeholder-impact, executive-brief | ANALYZE→DISSEMINATE | DIW 6-dimension weighting, Confidence (5-level), Winner/loser quantification, 400–600 word brief budget | Every workflow — 5 Family A core files |
+| **Family B** | **[Structural Metadata Methodology](structural-metadata-methodology.md)** | Step-by-step production of data-download-manifest and cross-reference-map with SLA table and relationship taxonomy | FIND→FIX | Freshness SLA per source, Relationship taxonomy (7 edge types), Coordinated-activity detection | Every workflow — 2 Family B provenance files |
+| **Family C** | **[Strategic Extensions Methodology](strategic-extensions-methodology.md)** | Step-by-step production of scenario-analysis, comparative-international, devils-advocate (ACH), intelligence-assessment, ⭐ methodology-reflection (VITAL run-audit) | ANALYZE | Scenario probability ≤ 100%, ACH evidence matrix, Peer-country benchmark, Key Judgments + PIR | **Core — every run produces all 5** |
+| **Family D** | **[Electoral & Domain Methodology](electoral-domain-methodology.md)** | Step-by-step production of election-2026, voter-segmentation, coalition-mathematics, historical-parallels, media-framing, implementation-feasibility, forward-indicators | ANALYZE→DISSEMINATE | Sainte-Laguë seat math, SCB segment cuts, Coalition arithmetic, 4-horizon forward indicators | **Core — every run produces all 7** |
+| **Family E** | **[Per-Document Methodology](per-document-methodology.md)** | Step-by-step production of `{dok_id}-analysis.md` and `{theme}-cluster-analysis.md` with doctype-specific Mermaid taxonomy | FINISH | DIW 6-dimension scoring, Cluster decision rule (4 conditions), Citation format canon | Every workflow — one file per document or qualifying cluster |
+| **1** | **[Political Classification Guide](political-classification-guide.md)** | 7-dimension event classification, sensitivity levels, policy domain taxonomy, urgency matrix | FINISH | Sensitivity (4 levels), Democratic Integrity, Policy Urgency, Economic Impact, Governance Impact, Political Capital, Legislative Impact | Step 3 — every incoming Riksdag document is classified before analysis begins |
+| **2** | **[Political Risk Methodology](political-risk-methodology.md)** | Likelihood × Impact scoring, 8 risk categories, 5×5 matrix, cascading risk analysis | EXPLOIT | Policy, Legislative, Economic, Social, Security, Diplomatic, Coalition, Constitutional | Step 3–4 — assess political risk using calibrated scoring |
+| **3** | **[Political Threat Framework](political-threat-framework.md)** | Multi-framework threat analysis: Political Threat Taxonomy + Diamond Model + Attack Trees + Kill Chain | EXPLOIT→ANALYZE | Narrative Integrity, Legislative Integrity, Accountability, Transparency, Democratic Process, Power Balance | Step 4 — apply threat analysis using political frameworks |
+| **4** | **[Political SWOT Framework](political-swot-framework.md)** | Evidence-based SWOT with TOWS + cross-SWOT; confidence levels; 180-day decay; group-to-landscape aggregation | EXPLOIT | Strengths, Weaknesses, Opportunities, Threats — each with confidence (VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW) | Step 4 — synthesize classification + risk + threat into strategic SWOT assessment |
+
+### Family A–E output matrix (authoritative definition lives in the [AI-Driven Analysis Guide](ai-driven-analysis-guide.md#-output-matrix--every-file-every-family))
+
+| Family | Purpose | Produced by |
+|:------:|---------|-------------|
+| 📘 **A** — Core Synthesis | 9 always-produced files (executive brief, synthesis, significance, classification, SWOT, risk, threat, stakeholder, folder README) | Every workflow |
+| 📗 **B** — Structural Metadata | 2 always-produced files (data-download manifest, cross-reference map) | Every workflow |
+| 📙 **C** — Strategic Extensions | 5 always-produced files (scenario, comparative-international, devil's advocate, intelligence assessment, ⭐ methodology-reflection — **vital run-audit**) | Every workflow |
+| 📕 **D** — Electoral & Domain Lenses | 7 always-produced files (election-2026, voter-segmentation, coalition-mathematics, historical parallels, media framing, implementation feasibility, forward indicators) | Every workflow |
+| 📒 **E** — Per-Document | 1 file per document (per-file-political-intelligence), plus cluster files for theme-grouped batches | Every workflow |
 
 ---
 
@@ -199,8 +218,16 @@ graph LR
 ```mermaid
 graph TB
     subgraph "🏛️ Core Analysis Engine"
-        GUIDE["🤖 AI-Driven Analysis Guide<br/><i>Master Protocol</i>"]
+        GUIDE["🤖 AI-Driven Analysis Guide<br/><i>Master Protocol · entry point</i>"]
         STYLE["✍️ Political Style Guide<br/><i>Writing Standards</i>"]
+    end
+
+    subgraph "🗂️ Family Production Methodologies"
+        FAMA["📘 Synthesis & Scoring<br/><i>Family A — 5 files</i>"]
+        FAMB["📗 Structural Metadata<br/><i>Family B — 2 files</i>"]
+        FAMC["📙 Strategic Extensions<br/><i>Family C — 5 files</i>"]
+        FAMD["📕 Electoral & Domain<br/><i>Family D — 7 files</i>"]
+        FAME["📒 Per-Document<br/><i>Family E — N files</i>"]
     end
 
     subgraph "🔬 Analytical Frameworks"
@@ -217,14 +244,29 @@ graph TB
         ISMS4["📖 ISMS Threat Modeling"]
     end
 
-    GUIDE -->|"governs"| CLASS
-    GUIDE -->|"governs"| RISK
-    GUIDE -->|"governs"| SWOT
-    GUIDE -->|"governs"| THREAT
-    STYLE -->|"standards"| CLASS
-    STYLE -->|"standards"| RISK
-    STYLE -->|"standards"| SWOT
-    STYLE -->|"standards"| THREAT
+    GUIDE -->|"orchestrates"| FAMA
+    GUIDE -->|"orchestrates"| FAMB
+    GUIDE -->|"orchestrates"| FAMC
+    GUIDE -->|"orchestrates"| FAMD
+    GUIDE -->|"orchestrates"| FAME
+
+    FAME -->|"feeds"| FAMA
+    FAMB -->|"feeds"| FAMA
+    FAMA -->|"feeds"| FAMC
+    FAMA -->|"feeds"| FAMD
+
+    STYLE -->|"standards"| FAMA
+    STYLE -->|"standards"| FAMB
+    STYLE -->|"standards"| FAMC
+    STYLE -->|"standards"| FAMD
+    STYLE -->|"standards"| FAME
+
+    CLASS -->|"invoked in"| FAME
+    RISK -->|"invoked in"| FAMA
+    RISK -->|"invoked in"| FAMC
+    SWOT -->|"invoked in"| FAMA
+    THREAT -->|"invoked in"| FAMA
+
     ISMS1 -.->|"adapted from"| CLASS
     ISMS2 -.->|"adapted from"| RISK
     ISMS3 -.->|"adapted from"| STYLE
@@ -232,6 +274,11 @@ graph TB
 
     style GUIDE fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
     style STYLE fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style FAMA fill:#4CAF50,color:#FFFFFF,stroke:#1B5E20,stroke-width:2px
+    style FAMB fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style FAMC fill:#FF9800,color:#FFFFFF,stroke:#E65100,stroke-width:2px
+    style FAMD fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
+    style FAME fill:#FFC107,color:#3E2723,stroke:#F57F17,stroke-width:2px
     style CLASS fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:2px
     style RISK fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
     style SWOT fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
@@ -440,6 +487,57 @@ graph TB
 
 ---
 
+## 🗂️ Family Production Methodologies — one per Family A–E
+
+These five methodology documents tell an agentic workflow **exactly how to produce each output file**, with step-by-step protocols, color-coded Mermaid, evidence rules, quality gates, and template bindings.
+
+### 📘 Synthesis & Scoring Methodology — `synthesis-methodology.md` (Family A)
+
+| Attribute | Value |
+|-----------|-------|
+| **Purpose** | Step-by-step production of the 5 Family A core synthesis outputs |
+| **Covers** | `significance-scoring.md`, `synthesis-summary.md`, `stakeholder-perspectives.md`, `stakeholder-impact.md`, `executive-brief.md` |
+| **Key rules** | DIW 6-dimension formula · Tier mapping (P0/P1/P2/P3) · 400–600 word executive-brief budget · Quantified winners/losers · Equity-lens cuts |
+| **Gates** | Per-output checklist; evidence-reconciliation gate between significance-scoring and per-doc Family E |
+
+### 📗 Structural Metadata Methodology — `structural-metadata-methodology.md` (Family B)
+
+| Attribute | Value |
+|-----------|-------|
+| **Purpose** | Step-by-step production of provenance ledger + relational graph |
+| **Covers** | `data-download-manifest.md`, `cross-reference-map.md` |
+| **Key rules** | Freshness SLA per source (Riksdag ≤24h, SCB ≤90d, World Bank ≤24mo) · 7-edge relationship taxonomy · Coordinated-activity detection rule |
+| **Gates** | Manifest reconciles with Family E doc count; every edge has dok_id pair |
+
+### 📙 Strategic Extensions Methodology — `strategic-extensions-methodology.md` (Family C)
+
+| Attribute | Value |
+|-----------|-------|
+| **Purpose** | Step-by-step production of 5 always-produced depth products |
+| **Covers** | `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, ⭐ `methodology-reflection.md` (VITAL run-audit gate) |
+| **Key rules** | Scenario probabilities sum to 100% · ACH ≥3 hypotheses · ≥5 peer countries · 3–7 Key Judgments with PIRs · Bias-audit quantification · methodology-reflection names ≥3 concrete improvements |
+| **Cadence** | **Core — every run produces all 5**; depth per file adapts to DIW tier of the day's lead items |
+
+### 📕 Electoral & Domain Methodology — `electoral-domain-methodology.md` (Family D)
+
+| Attribute | Value |
+|-----------|-------|
+| **Purpose** | Step-by-step production of 7 always-produced domain-specific analytical lenses |
+| **Covers** | `election-2026-analysis.md`, `voter-segmentation.md`, `coalition-mathematics.md`, `historical-parallels.md`, `media-framing-analysis.md`, `implementation-feasibility.md`, `forward-indicators.md` |
+| **Key rules** | Sainte-Laguë modified seat math + 4% threshold · Segment privacy (no sub-1000 cohorts) · Historical parallels ≤40 years with similarity score (or explicit no-precedent finding) · ≥10 forward indicators across 4 horizons |
+| **Cadence** | **Core — every run produces all 7**; substance adapts (baseline context on light days, full scenario depth on P0-dense days) |
+
+### 📒 Per-Document Methodology — `per-document-methodology.md` (Family E)
+
+| Attribute | Value |
+|-----------|-------|
+| **Purpose** | Step-by-step production of atomic per-document and cluster analyses |
+| **Covers** | `{dok_id}-analysis.md`, `{theme}-cluster-analysis.md` (both use template `per-file-political-intelligence.md`) |
+| **Key rules** | DIW 6-dimension scoring · Doctype-specific Mermaid taxonomy (prop→flowchart, mot→network, bet→flowchart, ip→timeline, SOU/Ds→flowchart, skr→flowchart) · Cluster 4-condition decision rule · Citation canon |
+| **Gates** | Every dok_id in manifest has a Family E file; cluster files preserve per-dok_id differential notes |
+
+---
+
 ## 🔗 ISMS Reference Adaptations
 
 The analysis methodologies are adapted from Hack23's ISO 27001/NIST CSF/CIS Controls ISMS framework. The `reference/` directory contains mapping documents showing how cybersecurity risk concepts translate to political intelligence:
@@ -642,22 +740,22 @@ flowchart TD
 
 ---
 
-## 🚫 Anti-Patterns — What NOT To Do
+## ✅ Required Practices — What Every Analysis Delivers
 
-The following practices are **explicitly prohibited** across all methodologies:
+Every methodology produces output that satisfies these ten positive standards. Each row states the practice, why it raises quality, and where the protocol enforces it.
 
-| Anti-Pattern | Why It Fails | Correct Approach |
-|-------------|-------------|------------------|
-| **Using STRIDE, DREAD, or PASTA** | These are software security threat models, not political intelligence frameworks | Use Political Threat Taxonomy (6 dimensions), Attack Trees, Kill Chain, Diamond Model, Actor Profiling |
-| **Boilerplate summaries** | Generic text adds no analytical value; wastes reader attention | Every paragraph must contain at least one Riksdag data citation or concrete analytical insight |
-| **Claims without confidence levels** | Ungraded assertions cannot be evaluated for reliability | Assign HIGH / MEDIUM / LOW confidence with source justification |
-| **Tables-only analysis** | Data without narrative interpretation is not analysis | Tables must be accompanied by explanatory prose interpreting the data |
-| **Opinion without evidence** | Subjective assertions undermine analytical credibility | All opinions must cite verifiable Riksdag/Regeringen MCP data sources |
-| **Hardcoded Mermaid values** | Static diagrams become stale and misleading | Use data-driven values sourced from MCP tool results |
-| **Shallow classification** | Single-dimension classification misses complexity | Apply all 7 classification dimensions; score each independently |
-| **Stale SWOT entries** | Entries older than 180 days without re-verification are unreliable | Enforce 180-day decay rule; re-verify or remove expired entries |
-| **Missing stakeholder analysis** | Analysis without impact assessment has no actionable value | Identify affected parties, opposition blocs, committees, and citizens |
-| **Ignoring multi-language requirements** | Analysis must serve 14-language platform | Structure content for translation; avoid idioms and culture-specific references |
+| Practice | Why it raises quality | Where enforced |
+|---------|----------------------|----------------|
+| **Use the Political Threat Taxonomy** (6 dimensions: authoritarian tendencies, corruption, institutional capture, information manipulation, violence/intimidation, external interference) | Political intelligence needs a political model, not a software one | [`political-threat-framework.md`](political-threat-framework.md) |
+| **Every paragraph cites evidence** — one Riksdag data citation, vote count, named actor, or primary URL per paragraph | Evidence density is the single strongest predictor of downstream credibility | [`ai-driven-analysis-guide.md` Step 4 & Quality Gate](ai-driven-analysis-guide.md#step-6--quality-gate-self-audit-blocking) |
+| **Assign a 5-level confidence label** (VERY LOW / LOW / MEDIUM / HIGH / VERY HIGH) to every analytical claim | Confidence makes claims evaluable and reversible | [`ai-driven-analysis-guide.md` § 5-Level Confidence Scale](ai-driven-analysis-guide.md#-5-level-confidence-scale) |
+| **Pair tables with narrative interpretation** — a short prose paragraph above or below every data table | Narrative converts data into intelligence | All templates |
+| **Source every opinion from MCP data** — link to `search_voteringar`, `get_betankanden`, SCB, World Bank, or IMF queries | Opinions sourced to authoritative data defend against accusations of bias | Templates + `political-style-guide.md` |
+| **Populate Mermaid values from MCP tool output** — vote counts, poll figures, SEK sums, years | Data-driven diagrams stay current automatically | `ai-driven-analysis-guide.md` § Color-Coded Mermaid |
+| **Apply all 7 classification dimensions** for every P0/P1 document — each dimension scored independently | Multi-dimensional classification catches complex documents | [`political-classification-guide.md`](political-classification-guide.md) |
+| **Re-verify SWOT entries within 180 days** — each entry carries its last-verified date | 180-day freshness prevents stale narratives | `political-swot-framework.md` decay rule |
+| **Include stakeholder impact** — affected parties, opposition blocs, committees, citizen groups | Actionable intelligence names who is affected and how | Family A `stakeholder-perspectives.md` |
+| **Structure content for 14-language translation** — complete sentences, defined terms, no idioms | The platform serves 14 audiences; clear source text translates cleanly | `political-style-guide.md` + `language-expertise` skill |
 
 ---
 
