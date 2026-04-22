@@ -23,6 +23,10 @@ No dedicated validator script exists yet — implement the six checks as an inli
 
 ```
 set -Eeuo pipefail
+: "${ARTICLE_DATE:?ARTICLE_DATE must be set}"
+: "${SUBFOLDER:?SUBFOLDER must be set}"
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$SUBFOLDER"
+[ -d "$ANALYSIS_DIR" ] || { echo "❌ ANALYSIS_DIR does not exist: $ANALYSIS_DIR"; exit 1; }
 REQ=(synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md \
      stakeholder-perspectives.md significance-scoring.md classification-results.md \
      cross-reference-map.md data-download-manifest.md)

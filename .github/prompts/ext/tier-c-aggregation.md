@@ -66,6 +66,9 @@ No dedicated Tier-C validator script exists — run the core-gate bash block fro
 
 ```
 set -Eeuo pipefail
+ANALYSIS_DIR="${ANALYSIS_DIR:-}"
+[ -n "$ANALYSIS_DIR" ] || { echo "❌ ANALYSIS_DIR is not set; run the core-gate block from 05-analysis-gate.md first"; exit 1; }
+[ -d "$ANALYSIS_DIR" ] || { echo "❌ ANALYSIS_DIR does not exist: $ANALYSIS_DIR"; exit 1; }
 EXTRA="README.md executive-brief.md scenario-analysis.md \
        comparative-international.md methodology-reflection.md"
 FAIL=0
