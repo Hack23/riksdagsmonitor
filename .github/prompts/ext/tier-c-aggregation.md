@@ -44,7 +44,7 @@ Aggregation workflows **must** read sibling article-type analyses produced for t
 
 | Aggregation workflow | Sibling folders to read |
 |----------------------|-------------------------|
-| `news-evening-analysis` | Today's `propositions/`, `motions/`, `committee-reports/`, `interpellations/`, any `realtime-*/` |
+| `news-evening-analysis` | Today's `propositions/`, `motions/`, `committeeReports/`, `interpellations/`, any `realtime-*/` |
 | `news-week-ahead` / `news-weekly-review` | Last 7 days of per-type folders |
 | `news-month-ahead` / `news-monthly-review` | Last 30 days of per-type folders |
 | `news-realtime-monitor` | Prior 7 days' `realtime-*/` for continuity chain |

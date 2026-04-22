@@ -78,7 +78,7 @@ jobs:
             fi
           done
           echo ""
-          echo "🔍 Enforcing safe-outputs.create-pull-request.max: 1 on all news workflows…"
+          echo "🔍 Enforcing safe-outputs.create-pull-request.max: 1 on all news workflows (source .md)…"
           for f in .github/workflows/news-*.md; do
             [ -f "$f" ] || continue
             # Extract max value directly under create-pull-request block
@@ -88,12 +88,37 @@ jobs:
               in_block && /^    max:/ {print $2; exit}
             ' "$f")
             if [ -z "$MAX" ]; then
-              echo "  ⚠️  $f has no explicit create-pull-request.max (allowed: safeoutputs default behaves as 1)"
+              echo "  ❌ $f has no explicit create-pull-request.max (must be 1; default may change upstream)"
+              FAIL=1
             elif [ "$MAX" != "1" ]; then
               echo "  ❌ $f has create-pull-request.max: $MAX (must be 1)"
               FAIL=1
             else
               echo "  ✅ $f (max: 1)"
+            fi
+          done
+          echo ""
+          echo "🔍 Enforcing create_pull_request.max: 1 on compiled .lock.yml (safe-outputs config)…"
+          for lf in .github/workflows/news-*.lock.yml; do
+            [ -f "$lf" ] || continue
+            # The compiled safe-outputs config is embedded as JSON in GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG.
+            # Extract every "create_pull_request":{...,"max":N,...} occurrence and confirm N==1.
+            BAD=0
+            OCCURS=$(grep -oE '"create_pull_request"[[:space:]]*:[[:space:]]*\{[^}]*"max"[[:space:]]*:[[:space:]]*[0-9]+' "$lf" | grep -oE '"max"[[:space:]]*:[[:space:]]*[0-9]+' | grep -oE '[0-9]+$' || true)
+            COUNT_ANY=$(grep -cE '"create_pull_request"[[:space:]]*:[[:space:]]*\{' "$lf" || true)
+            if [ -z "$OCCURS" ] || [ "$COUNT_ANY" -eq 0 ]; then
+              echo "  ❌ $lf has no create_pull_request config with max"
+              FAIL=1
+              continue
+            fi
+            while IFS= read -r v; do
+              [ "$v" = "1" ] || BAD=1
+            done <<< "$OCCURS"
+            if [ "$BAD" -eq 1 ]; then
+              echo "  ❌ $lf has create_pull_request.max != 1 (found: $(echo "$OCCURS" | tr '\n' ' '))"
+              FAIL=1
+            else
+              echo "  ✅ $lf (create_pull_request.max: 1)"
             fi
           done
           echo ""

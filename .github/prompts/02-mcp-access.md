@@ -16,7 +16,11 @@ News workflows declare three data MCP servers + the built-in `github` toolset (v
 | `bash` | local helper | workflow `tools.bash` | standard | shell execution |
 | `safeoutputs` | runner | always available | `snake_case` | `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___dispatch_workflow` |
 
-`filesystem`, `memory`, `sequential-thinking`, `playwright` are declared in `.github/copilot-mcp.json` for the **local Copilot / `assign_copilot_to_issue`** channel. They are **not** available to news workflows unless the workflow itself declares them under `mcp-servers:`. Authoritative server inventory: [`.github/copilot-mcp.json`](../copilot-mcp.json) for local; the workflow frontmatter for the actual per-run surface.
+`filesystem`, `memory`, and `sequential-thinking` are declared in [`.github/copilot-mcp.json`](../copilot-mcp.json) for the **local Copilot / `assign_copilot_to_issue`** channel and are **not** available to news workflows unless the workflow itself declares them under `mcp-servers:`.
+
+`playwright` must be treated separately: in news workflows it is available as the built-in workflow tool `tools.playwright` when that workflow declares it under `tools:` (e.g. `news-evening-analysis`, `news-realtime-monitor`). In that case it is **not** an MCP server, so do **not** infer its availability from `mcp-servers:` alone and do **not** skip Playwright/browser validation steps when `tools.playwright` is present in workflow frontmatter.
+
+Authoritative inventory: [`.github/copilot-mcp.json`](../copilot-mcp.json) for the local Copilot MCP surface, and each workflow's `mcp-servers:` plus `tools:` frontmatter for the actual per-run surface.
 
 IMF is **not** an MCP server. Fetch IMF data via the TypeScript client: `npx tsx scripts/imf-fetch.ts …` (see [Economic Data Contract](../aw/ECONOMIC_DATA_CONTRACT.md)).
 
