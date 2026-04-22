@@ -21,8 +21,6 @@ Workflows declare `safe-outputs.create-pull-request.max: 1`. Attempting a second
    | Articles (core languages) | `news/$YYYY/$MM/$DD/$SLUG.{en,sv}.html` |
    | Translations (news-translate only) | `news/$YYYY/$MM/$DD/$SLUG.<lang>.html` |
 
-   Repo-memory persistence is handled separately by `tools.repo-memory` and pushed to the `memory/news-generation` branch by the safe-outputs runner job. **Do not** create, stage, or commit any `memory/news-generation/*.json` files in the content PR — there is no `memory/` directory in the working tree of `main`.
-
    Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/` wholesale — it often contains 100+ files. Stage only `documents/*.md` **if** your `documents/` stays under the safe-outputs 100-file cap; otherwise stage only summary files. Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/pass1/` — it is a local gate-evidence snapshot (see `04-analysis-pipeline.md`), not a deliverable.
 
 2. **100-file guard.** Before calling safeoutputs, count staged files. If the count > 99, unstage everything under `documents/` except `synthesis-summary.md` and re-check.
@@ -88,12 +86,6 @@ Call `safeoutputs___noop({"message": "<reason>"})` **only** if:
 - Hard input error (e.g. invalid `article_date`) **and** no files were created.
 
 In every other case, commit whatever exists and call `create_pull_request` once.
-
-## Final checkpoint — before the PR call
-
-Immediately before calling `safeoutputs___create_pull_request`, run the **phase checkpoint** from `00-base-contract.md` with label `phase-07-final`. This snapshots the final authoritative analysis + article state to repo memory, so even if the PR call, the safe-outputs runner, or the post-job push fails, the last good state survives on the `memory/news-generation` branch.
-
-For `news-translate`, run the checkpoint with label `phase-translate-<lang>` after each per-language batch succeeds (before the final PR call), so individual language translations are preserved even if later languages fail.
 
 ## Deadline enforcement
 

@@ -49,11 +49,20 @@ permissions:
   discussions: read
   security-events: read
   
-timeout-minutes: 60
+timeout-minutes: 90
 
 concurrency:
   group: gh-aw-news-article-generator-${{ inputs.article_types || 'manual' }}
   cancel-in-progress: false
+
+features:
+  mcp-gateway: true
+
+sandbox:
+  agent: awf
+  mcp:
+    port: 8080
+    keepalive-interval: 300
 
 runtimes:
   node:
@@ -107,12 +116,6 @@ tools:
   agentic-workflows: true
   bash: true
   playwright:
-  repo-memory:
-    branch-name: memory/news-generation
-    allowed-extensions: [".md", ".json"]
-    max-file-size: 51200
-    max-file-count: 50
-    max-patch-size: 51200
 
 safe-outputs:
   allowed-domains:
