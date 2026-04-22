@@ -39,7 +39,8 @@ Plus `documents/` subfolder with **one `.md` per `dok_id`** using [`per-file-pol
 1. **Read all 6 methodologies first** (one tool call per file, do not skip).
 2. **Read all 8 templates first.**
 3. **Pass 1 — Create** all 9 artifacts + every per-document file. Minimum 15 minutes of real work.
-4. **Pass 2 — Improve**: read every Pass-1 file back in full and strengthen evidence, diagrams, cross-references, stakeholder coverage, uncertainty disclosure. Minimum 7 minutes.
+4. **Snapshot Pass-1** — copy every Pass-1 file into `$ANALYSIS_DIR/pass1/` before starting Pass 2: `mkdir -p "$ANALYSIS_DIR/pass1" && cp "$ANALYSIS_DIR"/*.md "$ANALYSIS_DIR/pass1/"`. The `pass1/` directory is the fallback evidence the gate uses when mtime windows are too tight. Do **not** stage `pass1/` in the PR (see `07-commit-and-pr.md`).
+5. **Pass 2 — Improve**: read every Pass-1 file back in full and strengthen evidence, diagrams, cross-references, stakeholder coverage, uncertainty disclosure. Minimum 7 minutes.
 
 Pass 2 is mandatory. Completing earlier is a quality failure.
 

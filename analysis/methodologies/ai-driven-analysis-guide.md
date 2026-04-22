@@ -2181,7 +2181,7 @@ Every synthesis-level analysis MUST include a historical comparison with:
 | [political-style-guide.md](political-style-guide.md) | Writing and formatting standards |
 | [SWOT.md](../../SWOT.md) | **Formatting exemplar** (platform SWOT) |
 | [THREAT_MODEL.md](../../THREAT_MODEL.md) | **Formatting exemplar** (platform threat model) |
-| [.github/prompts/ (see README)](../../.github/workflows/.github/prompts/ (see README)) | **Shared news workflow prompts** — quality enforcement |
+| [.github/prompts/README.md](../../.github/prompts/README.md) | **Shared news workflow prompts** — quality enforcement |
 
 ---
 

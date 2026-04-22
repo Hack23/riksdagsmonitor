@@ -80,3 +80,6 @@ news/metadata/locks/*.lock/
 main-page-full.png
 cia-dashboard.png
 builds/
+
+# Pass-1 snapshots used by the analysis gate (see .github/prompts/05-analysis-gate.md)
+analysis/daily/*/*/pass1/

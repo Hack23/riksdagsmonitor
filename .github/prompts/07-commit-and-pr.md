@@ -20,9 +20,10 @@ Workflows declare `safe-outputs.create-pull-request.max: 1`. Attempting a second
    | Visualisation data | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.json` |
    | Articles (core languages) | `news/$YYYY/$MM/$DD/$SLUG.{en,sv}.html` |
    | Translations (news-translate only) | `news/$YYYY/$MM/$DD/$SLUG.<lang>.html` |
-   | Repo-memory | `memory/news-generation/*.json` (branch `memory/news-generation`) |
 
-   Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/` wholesale — it often contains 100+ files. Stage only `documents/*.md` **if** your `documents/` stays under the safe-outputs 100-file cap; otherwise stage only summary files.
+   Repo-memory persistence is handled separately by `tools.repo-memory` and pushed to the `memory/news-generation` branch by the safe-outputs runner job. **Do not** create, stage, or commit any `memory/news-generation/*.json` files in the content PR — there is no `memory/` directory in the working tree of `main`.
+
+   Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/` wholesale — it often contains 100+ files. Stage only `documents/*.md` **if** your `documents/` stays under the safe-outputs 100-file cap; otherwise stage only summary files. Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/pass1/` — it is a local gate-evidence snapshot (see `04-analysis-pipeline.md`), not a deliverable.
 
 2. **100-file guard.** Before calling safeoutputs, count staged files. If the count > 99, unstage everything under `documents/` except `synthesis-summary.md` and re-check.
 
