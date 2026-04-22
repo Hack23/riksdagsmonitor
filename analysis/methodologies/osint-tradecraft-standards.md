@@ -246,15 +246,17 @@ Professional intelligence analysis uses a **calibrated probabilistic vocabulary*
 
 ### 3.1 The Seven Bands
 
+Canonical seven-band vocabulary matches [`political-style-guide.md §Confidence Scale`](political-style-guide.md) — **do not substitute synonyms** (e.g. "probable", "highly probable", "almost no chance") in analytic conclusions.
+
 | Band | English phrase | Swedish equivalent (for SV articles) | Numeric range | Indicative usage |
 |:---:|---|---|:---:|---|
-| **1** | **Almost no chance** / *remote* | *Så gott som utesluten* | 1 – 5 % | "There is almost no chance V will vote to support the government's defence-budget proposition." |
-| **2** | **Very unlikely** / *highly improbable* | *Mycket osannolikt* | 5 – 20 % | "A split within SD over migration policy before the 2026 election is very unlikely given the party's current whip discipline." |
-| **3** | **Unlikely** / *improbable* | *Osannolikt* | 20 – 45 % | "Unilateral Regeringskansliet blocking of an EU-initiated trilogue is unlikely, given Sweden's Council commitments." |
-| **4** | **Roughly even chance** | *Ungefär lika sannolikt som inte* | 45 – 55 % | "There is a roughly even chance that C and L will split over budget priorities in Q3." |
-| **5** | **Likely** / *probable* | *Sannolikt* | 55 – 80 % | "The M–KD compromise on the Wind-Power Revenue Act (HD03239) will likely survive the chamber vote." |
-| **6** | **Very likely** / *highly probable* | *Mycket sannolikt* | 80 – 95 % | "Very likely the budget discharge will pass on first chamber vote." |
-| **7** | **Almost certain** / *nearly certain* | *Så gott som säkert* | 95 – 99 % | "Extra amendment budget FiU48 is almost certain to be adopted this plenary." |
+| **1** | **Remote** | *Så gott som utesluten* | 1 – 7 % | "V voting to support the government's defence-budget proposition is remote." |
+| **2** | **Very unlikely** | *Mycket osannolikt* | 10 – 20 % | "A split within SD over migration policy before the 2026 election is very unlikely given the party's current whip discipline." |
+| **3** | **Unlikely** | *Osannolikt* | 20 – 37 % | "Unilateral Regeringskansliet blocking of an EU-initiated trilogue is unlikely, given Sweden's Council commitments." |
+| **4** | **Roughly even** | *Ungefär lika sannolikt som inte* | 45 – 55 % | "There is a roughly even chance that C and L will split over budget priorities in Q3." |
+| **5** | **Likely** | *Sannolikt* | 63 – 80 % | "The M–KD compromise on the Wind-Power Revenue Act (HD03239) will likely survive the chamber vote." |
+| **6** | **Very likely** | *Mycket sannolikt* | 80 – 90 % | "Very likely the budget discharge will pass on first chamber vote." |
+| **7** | **Almost certain** | *Så gott som säkert* | 93 – 99 % | "Extra amendment budget FiU48 is almost certain to be adopted this plenary." |
 
 ### 3.2 Banned Terms in Analytic Conclusions
 

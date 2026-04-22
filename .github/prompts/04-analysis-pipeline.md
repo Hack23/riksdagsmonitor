@@ -73,7 +73,7 @@ Produced in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. The output set is **stab
 
 > **Fast-path**: If `SKIP_ANALYSIS=true` (set by `03-data-download.md §Pre-flight`), skip all steps 1–5 below and proceed directly to `06-article-generation.md`. The full analysis already exists on disk from a prior run — do not re-run downloads, Pass 1, Pass 2, or the gate.
 
-1. **Read all 10 methodologies first** (one tool call per file; skipping fails the gate via `methodology-reflection.md §evidence` audit).
+1. **Read all relevant methodologies first** (the primary methodology guide plus every supporting framework listed above, including `osint-tradecraft-standards.md`; one tool call per file; skipping fails the gate via `methodology-reflection.md §evidence` audit).
 2. **Read all 23 templates first** — at minimum open each Family A/B/C/D template before writing its artifact.
 3. **Pass 1 — Create** all 23 always-on artifacts + every per-document file. Minimum 20 minutes of real work.
 4. **Snapshot Pass-1** — copy every Pass-1 file into `$ANALYSIS_DIR/pass1/` before starting Pass 2: `mkdir -p "$ANALYSIS_DIR/pass1" && cp "$ANALYSIS_DIR"/*.md "$ANALYSIS_DIR/pass1/"`. The `pass1/` directory is the fallback evidence the gate uses when mtime windows are too tight. Do **not** stage `pass1/` in the PR (see `07-commit-and-pr.md`).

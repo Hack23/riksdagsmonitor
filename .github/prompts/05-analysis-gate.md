@@ -18,10 +18,10 @@ This is the **only** gate separating analysis from article generation. If it fai
 3. **No stubs** — zero occurrences of `AI_MUST_REPLACE`, `[REQUIRED]`, `TODO:`, or `Lorem ipsum` across all artifacts.
 4. **Evidence citations** — `swot-analysis.md` and `significance-scoring.md` contain at least one piece of primary-source evidence per quadrant / ranked item. Accepted evidence patterns: a `dok_id` (e.g. `H901FiU1`, `HD01CU27`) **or** a primary-source URL host (`riksdagen.se`, `regeringen.se`, `scb.se`, `worldbank.org`, `data.imf.org`). Enforced against SWOT `### Strengths/Weaknesses/Opportunities/Threats` sections (bullets + table rows) and significance-scoring bullets **plus** ranking table rows and Mermaid node labels.
 5. **Mermaid diagrams** — every Family A and Family D synthesis file contains ≥ 1 Mermaid diagram with colour-coded `style` directives (or `themeVariables` / `%%{init …}` block).
-6. **Pass-2 done** — agent has read each Family A + C core artifact back after creation and committed improvements. (Enforced by file mtime diff: final file mtime > creation time + 3 min, OR two git-history snapshots on disk.)
+6. **Pass-2 done** — agent has read back each enforced Pass-2 artifact after creation and committed improvements: all Family A, B, C, and D artifacts except `data-download-manifest.md`. (Enforced by file mtime diff: final file mtime > creation time + 3 min, OR two git-history snapshots on disk.)
 7. **Family C structure checks** (extension-quality gate):
    - `executive-brief.md` contains a `## 🎯 BLUF` section **and** a `## 🧭 3 Decisions` (or `Decisions This Brief Supports`) section.
-   - `intelligence-assessment.md` declares **≥ 3 Key Judgments** with confidence labels (`HIGH`, `MEDIUM`, `LOW`, `VERY HIGH`, `VERY LOW`) and references at least one PIR.
+   - `intelligence-assessment.md` declares **≥ 3 Key Judgments** (enforced structurally by `Key Judgment` / `KJ-*` header count ≥ 3) each carrying at least one confidence label (`VERY HIGH`, `HIGH`, `MEDIUM`, `LOW`, `VERY LOW`) — the confidence-label presence is audited by the implementation's `grep -cE '(VERY HIGH|HIGH|MEDIUM|LOW|VERY LOW)'` check on the same file — and the file references at least one PIR.
    - `scenario-analysis.md` declares **≥ 3 distinct scenarios** (headers matching `Scenario` count ≥ 3).
    - `comparative-international.md` declares a comparator set or **≥ 2 comparator rows** (structural check, see Tier-C gate).
    - `devils-advocate.md` declares **≥ 3 competing hypotheses** (headers matching `Hypothesis`/`H1`/`H2`/`H3` count ≥ 3, ACH-style).
@@ -53,7 +53,9 @@ FAMILY_D=(election-2026-analysis.md voter-segmentation.md coalition-mathematics.
 REQ=("${FAMILY_A[@]}" "${FAMILY_B[@]}" "${FAMILY_C[@]}" "${FAMILY_D[@]}")
 SYNTHESIS=(synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md \
            stakeholder-perspectives.md significance-scoring.md classification-results.md \
-           cross-reference-map.md executive-brief.md coalition-mathematics.md \
+           cross-reference-map.md executive-brief.md election-2026-analysis.md \
+           voter-segmentation.md coalition-mathematics.md historical-parallels.md \
+           media-framing-analysis.md implementation-feasibility.md \
            forward-indicators.md)
 DOK_RE='[Hh][A-Za-z0-9]{3,}[0-9]+'
 EVIDENCE_RE='[Hh][A-Za-z0-9]{3,}[0-9]+|riksdagen\.se|regeringen\.se|scb\.se|worldbank\.org|data\.imf\.org'
@@ -173,6 +175,8 @@ fi
 if [ -s "$ANALYSIS_DIR/intelligence-assessment.md" ]; then
   KJ=$(grep -cE '(Key[[:space:]]+Judgment|KJ-?[0-9]+)' "$ANALYSIS_DIR/intelligence-assessment.md" || true)
   [ "${KJ:-0}" -ge 3 ] || { echo "❌ intelligence-assessment.md: fewer than 3 Key Judgments (found ${KJ:-0})"; FAIL=1; }
+  CONF=$(grep -cE '(VERY[[:space:]]+HIGH|VERY[[:space:]]+LOW|\bHIGH\b|\bMEDIUM\b|\bLOW\b)' "$ANALYSIS_DIR/intelligence-assessment.md" || true)
+  [ "${CONF:-0}" -ge 3 ] || { echo "❌ intelligence-assessment.md: fewer than 3 confidence labels (VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW) — found ${CONF:-0}"; FAIL=1; }
   grep -qE 'PIR' "$ANALYSIS_DIR/intelligence-assessment.md" \
     || { echo "❌ intelligence-assessment.md: no PIR reference"; FAIL=1; }
 fi

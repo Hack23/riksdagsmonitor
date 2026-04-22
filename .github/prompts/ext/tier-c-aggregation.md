@@ -70,7 +70,7 @@ FAIL=0
 
 # Tier-C additive check 1 — cross-reference-map.md cites ≥ 1 sibling folder under analysis/daily/
 if [ -s "$ANALYSIS_DIR/cross-reference-map.md" ]; then
-  grep -qE 'analysis/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/[A-Za-z_-]+' "$ANALYSIS_DIR/cross-reference-map.md" \
+  grep -qE 'analysis/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/[A-Za-z0-9_-]+' "$ANALYSIS_DIR/cross-reference-map.md" \
     || { echo "❌ tier-c: cross-reference-map.md missing sibling-folder citations (expected analysis/daily/<date>/<type>)"; FAIL=1; }
 fi
 
