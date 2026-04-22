@@ -13,7 +13,7 @@ This is the **only** gate separating analysis from article generation. If it fai
    `synthesis-summary.md`, `swot-analysis.md`, `risk-assessment.md`, `threat-analysis.md`, `stakeholder-perspectives.md`, `significance-scoring.md`, `classification-results.md`, `cross-reference-map.md`, `data-download-manifest.md`.
 2. **Per-document coverage** — `$ANALYSIS_DIR/documents/` contains one `.md` per `dok_id` listed in `data-download-manifest.md` (metadata-only documents are tagged, not skipped).
 3. **No stubs** — zero occurrences of `AI_MUST_REPLACE`, `[REQUIRED]`, `TODO:`, or `Lorem ipsum` across all artifacts.
-4. **Evidence citations** — `swot-analysis.md` and `significance-scoring.md` contain at least one `dok_id` reference per quadrant / ranked item.
+4. **Evidence citations** — `swot-analysis.md` and `significance-scoring.md` contain at least one piece of primary-source evidence per quadrant / ranked item. Accepted evidence patterns (matches the standard in `04-analysis-pipeline.md` §Evidence standard): a `dok_id` (e.g. `H901FiU1`, `HD01CU27`) **or** a primary-source URL host (`riksdagen.se`, `regeringen.se`, `scb.se`, `worldbank.org`, `data.imf.org`). Named-actor / vote-count evidence without one of the above still counts as a Pass-2 target for human review but is not machine-enforced here. Enforced against SWOT `### Strengths/Weaknesses/Opportunities/Threats` sections (bullets + table rows) and significance-scoring bullets **plus** ranking table rows and Mermaid node labels.
 5. **Mermaid diagrams** — every daily synthesis file contains ≥ 1 Mermaid diagram with colour-coded `style` directives.
 6. **Pass-2 done** — agent has read each core artifact back after creation and committed improvements. (Enforced by file mtime diff: final file mtime > creation time + 3 min, OR two git-history snapshots on disk.)
 
@@ -34,6 +34,9 @@ SYNTHESIS=(synthesis-summary.md swot-analysis.md risk-assessment.md threat-analy
            stakeholder-perspectives.md significance-scoring.md classification-results.md \
            cross-reference-map.md)
 DOK_RE='[Hh][A-Za-z0-9]{3,}[0-9]+'
+# Check 4 evidence pattern — accepts dok_id OR primary-source URL host
+# (per 04-analysis-pipeline.md §Evidence standard).
+EVIDENCE_RE='[Hh][A-Za-z0-9]{3,}[0-9]+|riksdagen\.se|regeringen\.se|scb\.se|worldbank\.org|data\.imf\.org'
 FAIL=0
 
 # Check 1 — artifact existence
@@ -61,13 +64,13 @@ fi
 grep -rIn -e 'AI_MUST_REPLACE' -e '\[REQUIRED\]' -e 'TODO:' -e 'Lorem ipsum' "$ANALYSIS_DIR" \
   && { echo "❌ stub placeholders detected"; FAIL=1; }
 
-# Check 4 — evidence citations per quadrant / ranked item
-awk -v re="$DOK_RE" '
+# Check 4 — evidence citations per quadrant / ranked item (dok_id OR primary-source URL)
+awk -v re="$EVIDENCE_RE" '
   function reset_table() { trow=0 }
   /^###[[:space:]]+.*(Strengths|Weaknesses|Opportunities|Threats)\b/ { sec=$0; reset_table(); next }
   /^#{1,6}[[:space:]]+/ { sec=""; reset_table(); next }
   sec != "" && /^[[:space:]]*[-*][[:space:]]+/ && $0 !~ re {
-    printf "❌ swot-analysis.md %s: bullet missing dok_id: %s\n", sec, $0; bad=1; next
+    printf "❌ swot-analysis.md %s: bullet missing evidence (dok_id or primary-source URL): %s\n", sec, $0; bad=1; next
   }
   sec != "" && /^[[:space:]]*\|/ {
     # skip table separator rows like |---|---|
@@ -75,16 +78,39 @@ awk -v re="$DOK_RE" '
     trow++
     if (trow == 1) next          # header row
     if ($0 !~ re) {
-      printf "❌ swot-analysis.md %s: table row missing dok_id: %s\n", sec, $0; bad=1
+      printf "❌ swot-analysis.md %s: table row missing evidence (dok_id or primary-source URL): %s\n", sec, $0; bad=1
     }
     next
   }
   sec != "" && /^[[:space:]]*$/ { reset_table(); next }
   END { exit bad+0 }
 ' "$ANALYSIS_DIR/swot-analysis.md" || FAIL=1
-awk -v re="$DOK_RE" '
-  /^[[:space:]]*([0-9]+\.[[:space:]]+|[-*][[:space:]]+)/ && $0 !~ re {
-    printf "❌ significance-scoring.md ranked item missing dok_id: %s\n", $0; bad=1
+awk -v re="$EVIDENCE_RE" '
+  function reset_table() { trow=0 }
+  /^```mermaid[[:space:]]*$/ { in_mermaid=1; reset_table(); next }
+  in_mermaid && /^```[[:space:]]*$/ { in_mermaid=0; next }
+  !in_mermaid && /^[[:space:]]*([0-9]+\.[[:space:]]+|[-*][[:space:]]+)/ && $0 !~ re {
+    printf "❌ significance-scoring.md ranked item missing evidence (dok_id or primary-source URL): %s\n", $0; bad=1; next
+  }
+  !in_mermaid && /^[[:space:]]*\|/ {
+    # skip table separator rows like |---|---|
+    if ($0 ~ /^[[:space:]|:\-]+$/) next
+    trow++
+    if (trow == 1) next          # header row
+    if ($0 !~ re) {
+      printf "❌ significance-scoring.md ranking table row missing evidence (dok_id or primary-source URL): %s\n", $0; bad=1
+    }
+    next
+  }
+  !in_mermaid && /^[[:space:]]*$/ { reset_table(); next }
+  in_mermaid {
+    # Skip Mermaid structural / configuration lines; validate likely node-label lines.
+    if ($0 ~ /^[[:space:]]*(%%|style\b|classDef\b|class\b|linkStyle\b|subgraph\b|end\b|graph\b|flowchart\b|quadrantChart\b|mindmap\b|timeline\b|journey\b|gantt\b|pie\b|xychart-beta\b|sequenceDiagram\b|stateDiagram(-v2)?\b|erDiagram\b|sankey-beta\b|gitGraph\b|requirementDiagram\b|block-beta\b)/) next
+    # A node-label line typically has bracketed/parenthesised/braced text, e.g. A[Label] or B(Label) or C{Label}.
+    if ($0 ~ /[\[\(\{][^][(){}]+[\]\)\}]/ && $0 !~ re) {
+      printf "❌ significance-scoring.md Mermaid ranked item missing evidence (dok_id or primary-source URL): %s\n", $0; bad=1
+    }
+    next
   }
   END { exit bad+0 }
 ' "$ANALYSIS_DIR/significance-scoring.md" || FAIL=1
