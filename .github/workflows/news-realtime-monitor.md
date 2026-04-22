@@ -61,9 +61,7 @@ features:
   mcp-gateway: true
 
 sandbox:
-  agent: awf
   mcp:
-    port: 8080
     keepalive-interval: 300 # 5m ping to keep MCP connections alive; Copilot API token expires ~60min so PR must be created within 25min of agent start
 
 runtimes:
