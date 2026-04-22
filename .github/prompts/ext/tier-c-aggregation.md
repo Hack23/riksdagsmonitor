@@ -10,33 +10,19 @@ Import this **in addition to** the 8 core modules for aggregation / reference-gr
 - `news-realtime-monitor`
 - `news-article-generator` when `article_types` contains `deep-inspection`
 
-These are the flagship editorial surfaces of Riksdagsmonitor. The Tier-C rules are additive, not replacements.
+These are the flagship editorial surfaces of Riksdagsmonitor. Tier-C rules are **additive**, not replacements — all 23 Family A/B/C/D artifacts from `04-analysis-pipeline.md` are already mandatory for every workflow. Tier-C adds depth multipliers, cross-type synthesis, sibling-citation requirements and a higher article-output floor.
 
-## 14 required artifacts (9 core + 5 Tier-C)
+## Artifact count — identical to single-type workflows
 
-In addition to the 9 artifacts from `04-analysis-pipeline.md`:
+All aggregation workflows produce the same **23 always-on artifacts** (Family A 9 + Family B 2 + Family C 5 + Family D 7) defined in [`04-analysis-pipeline.md`](../04-analysis-pipeline.md#23-required-artifacts-every-workflow-every-run). No extra files are added at the Tier-C level. What changes is:
 
-| File | Purpose |
-|------|---------|
-| `README.md` | Per-run index + navigation for editors |
-| `executive-brief.md` | 2-page decision-maker brief, lead findings + implications |
-| `scenario-analysis.md` | ≥ 3 alternative scenarios with posterior probabilities |
-| `comparative-international.md` | Cross-country comparison via World Bank / IMF / SCB data |
-| `methodology-reflection.md` | What worked, what failed, biases surfaced, uncertainty log |
-
-## Pre-flight: required-artifact checklist (Tier-C)
-
-Before any Tier-C article sentence is written, the writer MUST have opened **all 14** artifacts above from `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. The Tier-C gate block below additionally verifies:
-
-- Every Tier-C artifact is non-empty.
-- `scenario-analysis.md` declares ≥ 3 distinct scenarios.
-- `comparative-international.md` references ≥ 2 external countries.
-
-Sibling cross-type synthesis (see §"Cross-type synthesis" below) is recorded in `cross-reference-map.md`; missing sibling citations fail the gate. Source templates for these artifacts live in [`analysis/templates/`](../../../analysis/templates/) — see [`analysis/templates/README.md`](../../../analysis/templates/README.md) §"Artifact → workflow → gate check mapping" for the full template-to-artifact-to-gate chain.
+- **Depth** — each artifact is expanded under the period-scope multiplier below.
+- **Cross-type synthesis** — aggregation workflows must read sibling per-type folders and cite them in `cross-reference-map.md`.
+- **Article floor** — Tier-C articles require ≥ 1 500 words vs 1 000 for single-type.
 
 ## Period-scope multipliers (depth calibration)
 
-Aggregation depth scales with the period covered. Multiply the `comprehensive` minimum times in `04-analysis-pipeline.md` by:
+Aggregation depth scales with the period covered. Multiply the `comprehensive` minimum times in `04-analysis-pipeline.md` §Depth calibration by:
 
 | Workflow | Multiplier | Rationale |
 |----------|-----------|-----------|
@@ -46,11 +32,11 @@ Aggregation depth scales with the period covered. Multiply the `comprehensive` m
 | `news-month-ahead` / `news-monthly-review` | 1.5× | 30-day window; longitudinal patterns required. |
 | `news-article-generator` (deep-inspection) | 1.0× | Single-topic deep dive. |
 
-All 14 artifacts remain mandatory regardless of multiplier.
+All 23 artifacts remain mandatory regardless of multiplier. The multiplier extends per-item body length and framework richness (e.g. month-ahead `coalition-mathematics.md` carries five party-coalition Sainte-Laguë variants vs one for realtime).
 
 ## Cross-type synthesis (aggregation only)
 
-Aggregation workflows **must** read sibling article-type analyses produced for the same period and cite them explicitly:
+Aggregation workflows **must** read sibling article-type analyses produced for the same period and cite them explicitly in `cross-reference-map.md §Sibling folders`:
 
 | Aggregation workflow | Sibling folders to read |
 |----------------------|-------------------------|
@@ -59,66 +45,54 @@ Aggregation workflows **must** read sibling article-type analyses produced for t
 | `news-month-ahead` / `news-monthly-review` | Last 30 days of per-type folders |
 | `news-realtime-monitor` | Prior 7 days' `realtime-*/` for continuity chain |
 
-Cross-references go into `cross-reference-map.md`. Missing cross-type citations fail the gate.
+Cross-references go into `cross-reference-map.md` with one entry per sibling folder read. Missing cross-type citations fail the gate.
 
 ## Recent-daily synthesis ingestion
 
 For `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review` and `news-realtime-monitor`, before Pass 1 analysis:
 
-1. Read every `synthesis-summary.md` from the lookback window.
-2. Extract unique `dok_id` references and stakeholder names.
+1. Read every `synthesis-summary.md` **and** `intelligence-assessment.md` from the lookback window.
+2. Extract unique `dok_id` references, stakeholder names, and open PIRs.
 3. Record the ingestion list in `data-download-manifest.md §Reference Analyses`.
-4. Use the extracted entities as input to Pass 1 SWOT, risk, and stakeholder files.
+4. Use the extracted entities as input to Pass 1 SWOT, risk, stakeholder, scenario, and forward-indicators files.
+5. Propagate every unresolved PIR from prior-cycle `intelligence-assessment.md` into the current-cycle version.
 
-## Tier-C gate
+## Tier-C additive gate
 
-No dedicated Tier-C validator script exists — run the core-gate bash block from `05-analysis-gate.md`, then the additional checks below:
+The 23-artifact gate in `05-analysis-gate.md` already runs on every workflow. Tier-C adds the following **additive** check block — run it **after** the core gate passes:
 
 ```
 set -Eeuo pipefail
 ANALYSIS_DIR="${ANALYSIS_DIR:-}"
 [ -n "$ANALYSIS_DIR" ] || { echo "❌ ANALYSIS_DIR is not set; run the core-gate block from 05-analysis-gate.md first"; exit 1; }
 [ -d "$ANALYSIS_DIR" ] || { echo "❌ ANALYSIS_DIR does not exist: $ANALYSIS_DIR"; exit 1; }
-EXTRA="README.md executive-brief.md scenario-analysis.md \
-       comparative-international.md methodology-reflection.md"
 FAIL=0
-for f in $EXTRA; do
-  [ -s "$ANALYSIS_DIR/$f" ] || { echo "❌ tier-c missing: $f"; FAIL=1; }
-done
-# ≥ 3 scenarios with probability + leading indicator
-awk '/^##? .*Scenario/{c++} END{exit (c<3)}' "$ANALYSIS_DIR/scenario-analysis.md" \
-  || { echo "❌ scenario-analysis.md: fewer than 3 scenarios"; FAIL=1; }
-# comparative-international.md must define a comparator set or include ≥ 2 comparator rows
-# (structural check — avoids hardcoding a country allowlist that rejects valid comparators
-# like "United States", "United Kingdom", "EU", or other jurisdictions the template permits)
-awk '
-  BEGIN { comparator_set=0; comparator_rows=0 }
-  /^[[:space:]]*\*{0,2}Comparator set\*{0,2}[[:space:]]*:/ {
-    value = $0
-    sub(/^[^:]*:[[:space:]]*/, "", value)
-    if (value !~ /^[[:space:]]*$/ && value !~ /^[[:space:]]*[-–—]+[[:space:]]*$/) {
-      comparator_set = 1
-    }
-  }
-  /^\|/ {
-    if ($0 !~ /^\|[[:space:]:-]+(\|[[:space:]:-]+)+\|?[[:space:]]*$/ && $0 !~ /^\|[[:space:]]*(Jurisdiction|Comparator|Country)[[:space:]]*\|/) {
-      comparator_rows++
-    }
-  }
-  END { exit !(comparator_set || comparator_rows >= 2) }
-' "$ANALYSIS_DIR/comparative-international.md" \
-  || { echo "❌ comparative-international.md: missing comparator set or fewer than 2 comparator rows"; FAIL=1; }
+
+# Tier-C additive check 1 — cross-reference-map.md cites ≥ 1 sibling folder under analysis/daily/
+if [ -s "$ANALYSIS_DIR/cross-reference-map.md" ]; then
+  grep -qE 'analysis/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/[A-Za-z_-]+' "$ANALYSIS_DIR/cross-reference-map.md" \
+    || { echo "❌ tier-c: cross-reference-map.md missing sibling-folder citations (expected analysis/daily/<date>/<type>)"; FAIL=1; }
+fi
+
+# Tier-C additive check 2 — intelligence-assessment.md ingests prior-cycle PIRs (Tier-C only)
+if [ -s "$ANALYSIS_DIR/intelligence-assessment.md" ]; then
+  grep -qE '(Prior[- ]cycle|Carried[- ]forward|Previous[- ]PIR|Open[[:space:]]+PIR)' "$ANALYSIS_DIR/intelligence-assessment.md" \
+    || { echo "❌ tier-c: intelligence-assessment.md missing prior-cycle PIR ingestion section"; FAIL=1; }
+fi
+
 [ "$FAIL" -eq 0 ] || exit 1
 ```
 
-If the block is promoted to `scripts/validate-tier-c-gate.ts`, update this module accordingly.
+The core structural checks (scenario count ≥ 3, comparator rows ≥ 2, Key Judgments ≥ 3, ACH hypotheses ≥ 3, forward indicators ≥ 10, ICD 203 audit, BLUF section) are enforced by `05-analysis-gate.md` checks 7–8 and apply to **every** workflow. If the Tier-C additive block is promoted to `scripts/validate-tier-c-gate.ts`, update this module accordingly.
 
 ## Article expectations
 
 Tier-C articles are the editorial flagship. Floor:
 
-- ≥ 1500 words (vs 1000 for single-type).
+- ≥ 1 500 words (vs 1 000 for single-type).
 - All 5 mandatory analytical sections present (vs 3 of 5).
 - ≥ 5 `dok_id` references.
 - ≥ 2 charts (economic + political).
 - Executive brief linked from the article.
+- Scenario table (from `scenario-analysis.md`) embedded in the article.
+- Forward-watch block (from `forward-indicators.md` top 3 triggers) embedded in the article.
