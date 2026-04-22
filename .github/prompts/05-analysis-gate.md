@@ -89,11 +89,18 @@ awk -v re="$DOK_RE" '
   END { exit bad+0 }
 ' "$ANALYSIS_DIR/significance-scoring.md" || FAIL=1
 
-# Check 5 — Mermaid + colour-coded style directives in every synthesis file
+# Check 5 — Mermaid + colour-coded config (explicit `style …` directive OR
+# Mermaid init-block `themeVariables` — the SWOT template uses `quadrantChart`
+# with `themeVariables` instead of literal `style` lines; either satisfies
+# the "colour-coded" requirement).
 for f in "${SYNTHESIS[@]}"; do
   p="$ANALYSIS_DIR/$f"; [ -s "$p" ] || continue
   grep -qE '^```mermaid' "$p" || { echo "❌ $f: missing Mermaid block"; FAIL=1; }
-  grep -qE '^[[:space:]]*style[[:space:]]+' "$p" || { echo "❌ $f: missing Mermaid style directive"; FAIL=1; }
+  if ! grep -qE '^[[:space:]]*style[[:space:]]+' "$p" \
+     && ! grep -qE 'themeVariables|%%\{[[:space:]]*init' "$p"; then
+    echo "❌ $f: missing Mermaid colour-coded config (no 'style …' directive and no 'themeVariables' / '%%{init …}' block)"
+    FAIL=1
+  fi
 done
 
 # Check 6 — Pass-2 evidence (mtime ≥ birth + 180s, OR differing pass1 snapshot on disk)

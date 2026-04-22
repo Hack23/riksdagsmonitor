@@ -47,7 +47,7 @@ Eight core modules + one Tier-C extension + a `README.md`:
 
 - All 12 news workflows declare `imports:` in frontmatter; `gh aw compile` resolves them into `{{#runtime-import …}}` directives in the generated `.lock.yml`.
 - `safe-outputs.create-pull-request.max: 1` on every news workflow (was 2 / 3 / 5).
-- Background keep-alive pinger removed; MCP pre-warm kept at ≤ 2 minutes (≤ 6 retries, 20 s apart).
+- Background keep-alive pinger removed; MCP pre-warm is a single best-effort `curl` step (≤ 6 retries, 20 s apart, `curl --max-time 30`) — worst-case runtime can exceed 4 minutes, see `.github/prompts/02-mcp-access.md` §"Pre-warm step". If a strict cap is required, tighten the `curl` timeout and retry parameters.
 - Workflow bodies reduced to ≤ 50 lines each (schedule + inputs + time budget + dedup path).
 - `news-translate` imports only the four modules it needs (base contract, bash/shell, MCP, commit & PR) and issues exactly one PR batching every language produced in the run.
 
@@ -83,7 +83,7 @@ Eight core modules + one Tier-C extension + a `README.md`:
 
 | Risk | Mitigation |
 |------|------------|
-| MCP session expiry without heartbeat | Tight time budgets + scope-trim policy + ≤ 2 min pre-warm; deadline rule in `07-commit-and-pr.md` forces commit + PR by minute ~55. |
+| MCP session expiry without heartbeat | Tight time budgets + scope-trim policy + best-effort MCP pre-warm (worst-case > 4 min, see `.github/prompts/02-mcp-access.md`); deadline rule in `07-commit-and-pr.md` forces commit + PR by minute ~55. |
 | `imports:` resolution differences across gh-aw versions | `compile-agentic-workflows.yml` pins gh-aw via `GH_AW_VERSION="v0.69.3"`. |
 | Hidden rules in the 4,350-line file dropped accidentally | Phase A migrated every H2/H3 explicitly; review is backed by the CI module-size/banned-string check. |
 | `news-translate` capacity | If 12 languages exceed the 60-minute budget, translation is split across multiple scheduled runs (already cron'd twice daily + weekend catch-up) rather than across multiple PRs in one run. |
