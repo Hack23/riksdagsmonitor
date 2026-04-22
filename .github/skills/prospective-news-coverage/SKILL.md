@@ -276,3 +276,14 @@ with committee members (3 MPs, anonymous)*
 ---
 
 **Use this skill when**: Planning news coverage, writing "week ahead" previews, analyzing upcoming committee meetings, forecasting political developments, or helping readers understand what's coming next in Swedish politics.
+
+
+---
+
+## 🔗 Integration with agentic workflows & analysis artifacts
+
+This skill is consumed by the 12 agentic news workflows in `.github/workflows/news-*.md`. The authoritative contract lives in [`.github/prompts/README.md`](../../prompts/README.md); this skill supplies domain expertise on top of that contract.
+
+- **Analysis product** → [`ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + every template in [`analysis/templates/`](../../../analysis/templates/).
+- **Required before any article**: 9 core artifacts (14 for Tier-C) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`; [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) is the single blocking gate.
+- **gh-aw v0.69.3** docs: [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
