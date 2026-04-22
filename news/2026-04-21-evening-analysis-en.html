@@ -167,6 +167,28 @@
 </ul>
 </section>
 
+<div id="economic-dashboard" class="economic-dashboard-section"><section class="article-dashboard" aria-label="Economic Context">
+    <h2>Economic Context</h2>
+    <p class="dashboard-summary">Sweden&rsquo;s macro backdrop remains fragile: GDP growth recovered only to 0.82% in 2024 after a -0.20% contraction in 2023, while unemployment rose to 8.69% in 2025. This explains why FiU48&rsquo;s SEK 4.1 billion fuel-tax and energy-relief package is politically central 145 days before the election. Inflation has normalized from 8.55% (2023) to 2.84% (2024), easing the acute cost shock, but households still face a higher cumulative price level and weak labor-market momentum.</p>
+    <div class="dashboard-chart-wrapper">
+      <canvas id="econ-2026-04-21-gdp-growth" role="img" aria-label="Nordic GDP Growth (2024)" data-chart-config="{&quot;type&quot;:&quot;bar&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Sweden&quot;,&quot;Denmark&quot;,&quot;Norway&quot;,&quot;Finland&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;GDP Growth (% annual, 2024)&quot;,&quot;data&quot;:[0.82,3.478,2.097,0.416],&quot;backgroundColor&quot;:[&quot;#00d9ff&quot;,&quot;#ff006e&quot;,&quot;#ffbe0b&quot;,&quot;#83cf39&quot;],&quot;borderColor&quot;:[&quot;#00b8d4&quot;,&quot;#d4004e&quot;,&quot;#d4a00b&quot;,&quot;#6daf2d&quot;],&quot;borderWidth&quot;:1}]},&quot;options&quot;:{&quot;responsive&quot;:true,&quot;maintainAspectRatio&quot;:true}}"></canvas>
+    </div>
+    <div class="dashboard-chart-wrapper">
+      <canvas id="econ-2026-04-21-unemployment-trend" role="img" aria-label="Sweden Unemployment Trend 2023-2025" data-chart-config="{&quot;type&quot;:&quot;line&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;2023&quot;,&quot;2024&quot;,&quot;2025&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Sweden Unemployment Rate (% labor force)&quot;,&quot;data&quot;:[7.611,8.4,8.694],&quot;backgroundColor&quot;:&quot;rgba(0, 217, 255, 0.2)&quot;,&quot;borderColor&quot;:&quot;#00d9ff&quot;,&quot;borderWidth&quot;:2,&quot;tension&quot;:0.3,&quot;pointRadius&quot;:4,&quot;pointHoverRadius&quot;:6,&quot;fill&quot;:true}]},&quot;options&quot;:{&quot;responsive&quot;:true,&quot;maintainAspectRatio&quot;:true}}"></canvas>
+    </div>
+    <table class="dashboard-table">
+      <caption>GDP Growth (2024) — % annual</caption>
+      <thead><tr><th scope="col">Country</th><th scope="col">GDP Growth</th><th scope="col">Unit</th></tr></thead>
+      <tbody>
+        <tr><td>Sweden</td><td>0.82</td><td>% annual</td></tr>
+        <tr><td>Denmark</td><td>3.48</td><td>% annual</td></tr>
+        <tr><td>Norway</td><td>2.10</td><td>% annual</td></tr>
+        <tr><td>Finland</td><td>0.42</td><td>% annual</td></tr>
+      </tbody>
+    </table>
+    <p class="dashboard-attribution">Data by IMF / World Bank / SCB — World Bank indicators NY.GDP.MKTP.KD.ZG, SL.UEM.TOTL.ZS, FP.CPI.TOTL.ZG.</p>
+  </section></div>
+
 </div>
 </article>
 </main>
@@ -192,5 +214,7 @@
 <p><a href="../index.html">Home</a> | <a href="../news/">News Index</a></p>
 </footer>
 <script src="../js/back-to-top.js" defer></script>
+<script src="../js/lib/chart.umd.4.4.1.js" defer></script>
+<script src="../js/chart-init.js" defer></script>
 </body>
 </html>
