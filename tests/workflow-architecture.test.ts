@@ -689,24 +689,6 @@ describe('Unified Required Skills', () => {
     ...TRANSLATION_WORKFLOWS,
   ];
 
-  it.skip('all content-generation workflows should reference the 6 required skills (LEGACY)', () => {
-    // LEGACY: The pre-modularisation architecture listed skill files inline
-    // in every workflow's "Required Skills" block. In the modular
-    // architecture, skills are org-level context auto-loaded by Copilot —
-    // the workflow body no longer enumerates them. The authoritative skill
-    // catalog is `.github/skills/README.md` and `SKILLS.md`. Kept skipped
-    // to preserve history of the contract.
-    expect.fail('Skills are no longer listed in workflows; see SKILLS.md');
-  });
-
-  it.skip('translation workflows should reference translation-relevant skills (LEGACY)', () => {
-    expect.fail('Skills are no longer listed in workflows; see SKILLS.md');
-  });
-
-  it.skip('all content-generation workflows should list skills in the same order (LEGACY)', () => {
-    expect.fail('Skills are no longer listed in workflows; see SKILLS.md');
-  });
-
   it('all news workflows should have standardised analysis depth table or reference', () => {
     // Analysis-depth guidance now lives in `../prompts/04-analysis-pipeline.md`
     // (Pass 1 / Pass 2) and in each workflow's `analysis_depth` dispatch
@@ -740,22 +722,6 @@ describe('Playwright Validation in Content Workflows', () => {
       `Playwright validator should exist at ${PLAYWRIGHT_VALIDATOR_PATH}`
     ).toBe(true);
   });
-
-  it.skip('all content workflows should have Playwright validation step (LEGACY)', () => {
-    // LEGACY: Pre-modular workflows invoked `npx tsx scripts/validate-articles-playwright.ts`
-    // as an inline bash step. The modular architecture moves article-quality
-    // validation into the agent's analysis pipeline (Pass 2 re-read in
-    // `../prompts/04-analysis-pipeline.md`). The script is kept for manual
-    // and CI invocation but is no longer wired into every workflow body.
-    expect.fail('Playwright validation is no longer invoked from workflow bodies');
-  });
-
-  it.skip('all content workflows should have cross-reference validation step (LEGACY)', () => {
-    // LEGACY: `scripts/validate-cross-references.ts` is no longer invoked
-    // from workflow bodies; cross-reference integrity is enforced by the
-    // agent gate in `../prompts/05-analysis-gate.md`.
-    expect.fail('Cross-reference validation is no longer invoked from workflow bodies');
-  });
 });
 
 describe('Deduplication Check in Content Workflows', () => {
@@ -774,12 +740,6 @@ describe('Deduplication Check in Content Workflows', () => {
         `Workflow ${workflowFile} should support dedup via ARTICLE_DATE + (force_generation|already exist|dedup)`
       ).toBe(true);
     }
-  });
-
-  it.skip('all content workflows should have standardised deduplication bash snippet (LEGACY)', () => {
-    // LEGACY: inline `EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}*)` bash
-    // pattern was removed when dedup moved into safeoutputs branch naming.
-    expect.fail('Inline EXISTING= bash snippet is no longer required');
   });
 
   it('all content workflows should derive ARTICLE_DATE from workflow dispatch input', () => {
@@ -833,13 +793,6 @@ describe('Interpellations Minister-Response Cross-Reference', () => {
     ).toBe(true);
   });
 
-  it.skip('should reference search_anforanden for minister response lookup (LEGACY)', () => {
-    // LEGACY: specific MCP tool guidance for minister responses is no
-    // longer per-workflow; agents pick from the canonical tool surface in
-    // `../prompts/02-mcp-access.md` (search_dokument + get_voteringar +
-    // get_dokument_innehall).
-    expect.fail('Per-workflow search_anforanden reference is no longer required');
-  });
 });
 
 describe('Shared Prompt Patterns Reference', () => {
@@ -859,13 +812,6 @@ describe('Shared Prompt Patterns Reference', () => {
         `Prompt module ${mod} should exist`
       ).toBe(true);
     }
-  });
-
-  it.skip('SHARED_PROMPT_PATTERNS.md should list all 6 required skills (LEGACY)', () => {
-    // LEGACY: See comment above. The `.github/aw/SHARED_PROMPT_PATTERNS.md`
-    // document was retired in favour of bounded-context prompts + the
-    // org-level skill catalogue (SKILLS.md).
-    expect.fail('SHARED_PROMPT_PATTERNS.md was replaced by .github/prompts/');
   });
 });
 
@@ -928,18 +874,6 @@ describe('Analysis Depth Input', () => {
     }
   });
 
-  it.skip('should reference political-analysis.md in all content workflows (LEGACY)', () => {
-    expect.fail('political-analysis.md was consolidated into prompts/04-analysis-pipeline.md');
-  });
-
-  it.skip('should reference stakeholder-perspectives.md in all content workflows (LEGACY)', () => {
-    // LEGACY: the old `scripts/prompts/v2/stakeholder-perspectives.md` rule
-    // set was replaced by the `stakeholder-perspectives.md` *artifact* the
-    // agent must produce under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`
-    // (defined in `../prompts/04-analysis-pipeline.md`).
-    expect.fail('stakeholder-perspectives.md is now an artifact, not a prompt reference');
-  });
-
   it('should enforce the analysis gate in all content workflows', () => {
     // Replaces the `class="analysis-references"` verification — the gate
     // now lives in `../prompts/05-analysis-gate.md` and is imported by
@@ -959,10 +893,6 @@ describe('Analysis Depth Input', () => {
         `Workflow ${workflowFile} must import the analysis-gate prompt module`
       ).toBe(true);
     }
-  });
-
-  it.skip('all content workflows should run fix-analysis-references.ts before validation (LEGACY)', () => {
-    expect.fail('fix-analysis-references.ts is no longer wired into workflow bodies');
   });
 
   it('all content workflows should mandate reading analysis files before article generation', () => {
@@ -1098,12 +1028,6 @@ describe('Iterative Analysis Protocol', () => {
     }
   });
 
-  it.skip('should have minimum quality score 7/10 in analytical workflows (LEGACY)', () => {
-    // LEGACY: numeric quality-score gates were replaced by the AI-FIRST
-    // Pass 1 / Pass 2 contract in `../prompts/00-base-contract.md`. A
-    // single floor number is no longer the enforcement mechanism.
-    expect.fail('7/10 numeric quality gate replaced by AI-FIRST Pass 1/Pass 2');
-  });
 });
 
 describe('Interpellations Generator', () => {
@@ -1303,32 +1227,9 @@ describe('Script-Based Article Generation Safety', () => {
     }
   });
 
-  it.skip('script-based workflows should require generate-news-enhanced.ts (LEGACY)', () => {
-    // LEGACY: `scripts/generate-news-enhanced.ts` is retained on disk for
-    // manual invocation but is no longer wired from workflow bodies. Article
-    // generation is now an agent-native activity guided by prompt modules.
-    expect.fail('generate-news-enhanced.ts is no longer invoked from workflow bodies');
-  });
 });
 
 describe('File Ownership Contract', () => {
-  it.skip('all content workflows should have file ownership contract section (LEGACY)', () => {
-    // LEGACY: the "File Ownership Contract" inline section was absorbed
-    // into `../prompts/07-commit-and-pr.md` (branch naming ensures one
-    // content PR per (date, type) without manual contract enforcement)
-    // and `../prompts/05-analysis-gate.md` (analysis must exist before
-    // article files are touched).
-    expect.fail('File Ownership Contract absorbed into prompts/05 + prompts/07');
-  });
-
-  it.skip('content workflows should reference validate-file-ownership.ts with runnable invocation (LEGACY)', () => {
-    expect.fail('validate-file-ownership.ts is no longer invoked from workflow bodies');
-  });
-
-  it.skip('translation workflow should reference validate-file-ownership.ts with runnable translation invocation (LEGACY)', () => {
-    expect.fail('validate-file-ownership.ts is no longer invoked from workflow bodies');
-  });
-
   it('translation workflow should guard against racing in-flight content PRs', () => {
     // The "Content-PR Dependency Check" header is gone but the *behaviour*
     // remains: translation workflow checks for open content PRs before
