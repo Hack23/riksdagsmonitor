@@ -124,10 +124,11 @@ The 12 agentic news workflows in `.github/workflows/news-*.md` are the **primary
 | [`political-risk-methodology.md`](political-risk-methodology.md) | ✅ produces `risk-assessment.md` | ✅ sensitivity & posterior probabilities | `05-analysis-gate.md` check 1 |
 | [`political-threat-framework.md`](political-threat-framework.md) | ✅ produces `threat-analysis.md` | ✅ kill-chain depth | `05-analysis-gate.md` check 1 |
 | [`political-style-guide.md`](political-style-guide.md) | — | ✅ tone, neutrality, evidence citations | Article Pass-2 review |
-| [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | ✅ for Tier-C only (`executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`) | ✅ scenario probabilities | `ext/tier-c-aggregation.md` Tier-C gate |
+| [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | ✅ every run, all 5 Family C artifacts (`executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, `methodology-reflection.md`) | ✅ scenario probabilities, ICD 203 audit | `05-analysis-gate.md` checks 1 + 7 (Family C structure) |
 | [`structural-metadata-methodology.md`](structural-metadata-methodology.md) | ✅ cross-reference continuity contracts | — | `05-analysis-gate.md` check 1 (artifact presence) |
 | [`synthesis-methodology.md`](synthesis-methodology.md) | ✅ produces `synthesis-summary.md` with DIW-weighted ranking | ✅ lead-story justification | `05-analysis-gate.md` checks 1 + 5 (Mermaid) |
 | [`electoral-domain-methodology.md`](electoral-domain-methodology.md) | ✅ Election 2026 lens paragraph | — | Article-generation mandatory section |
+| [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md) | ✅ ICD 203 + Admiralty + WEP + SAT catalog + OSINT ethics + DIW alignment + PIR handoff | ✅ ICD 203 audit, SAT attestation (≥10), DIW–Admiralty reconciliation | `05-analysis-gate.md` checks 4 (evidence), 5 (Mermaid), 7 (Family C structure), 8 (Family D horizons) |
 
 **Upstream gh-aw documentation** (link-out only — these methodologies own the political-analysis content; gh-aw owns the workflow runtime):
 
@@ -217,6 +218,7 @@ graph LR
 |----------|----------|-------------|:-----------:|-------------------------|---------------|
 | **★ Start** | **[AI-Driven Analysis Guide](ai-driven-analysis-guide.md)** | 7-step protocol, Family A–E output matrix, color-coded Mermaid palette, 5-level confidence scale, DIW weighting, quality gate | ALL | Evidence (25%), Depth (25%), Structural (20%), Actionable (15%), Neutrality (15%), ICD 203 (pass/fail) | **Always read first** — orchestrates every other methodology and names every output file with its template |
 | **☆ Tradecraft** | **[Political Style Guide](political-style-guide.md)** | **Tradecraft anchors:** F3EAD, PIR/EEI, Admiralty Code, ICD 203, WEP + ODNI, SATs, Collection Management Matrix | ALL | Writing standards, 4 depth tiers, evidence density, Mermaid conventions | **Read second** — defines all tradecraft standards referenced by other methodologies |
+| **🕵️ Tradecraft Canon** | **[OSINT / INTOP Tradecraft Standards](osint-tradecraft-standards.md)** | ICD 203 (9 standards) · Admiralty Code (6×6 → 5-level confidence) · WEP / Kent Scale (7 bands, EN+SV) · SAT catalog (10 core + 5 supporting) · OSINT ethics (GDPR Art. 9) · DIW–Admiralty reconciliation · PIR handoff | ALL | Source grading, estimative vocabulary, technique attestation, ethics & scope, DIW alignment, cross-cycle continuity | **Read alongside style guide** — canonical reference for every evidence citation, confidence marker, and `methodology-reflection.md §ICD 203 audit` |
 | **Family A** | **[Synthesis & Scoring Methodology](synthesis-methodology.md)** | Step-by-step production of significance-scoring, synthesis-summary, stakeholder-perspectives, stakeholder-impact, executive-brief | ANALYZE→DISSEMINATE | DIW 6-dimension weighting, Confidence (5-level), Winner/loser quantification, 400–600 word brief budget | Every workflow — 5 Family A core files |
 | **Family B** | **[Structural Metadata Methodology](structural-metadata-methodology.md)** | Step-by-step production of data-download-manifest and cross-reference-map with SLA table and relationship taxonomy | FIND→FIX | Freshness SLA per source, Relationship taxonomy (7 edge types), Coordinated-activity detection | Every workflow — 2 Family B provenance files |
 | **Family C** | **[Strategic Extensions Methodology](strategic-extensions-methodology.md)** | Step-by-step production of scenario-analysis, comparative-international, devils-advocate (ACH), intelligence-assessment, ⭐ methodology-reflection (VITAL run-audit) | ANALYZE | Scenario probability ≤ 100%, ACH evidence matrix, Peer-country benchmark, Key Judgments + PIR | **Core — every run produces all 5** |
@@ -510,6 +512,20 @@ graph TB
 | **Scope** | Article tone, evidence citation standards, Mermaid diagram requirements, confidence labeling |
 | **Key Standards** | Evidence tables (not prose) · dok_id citations · Color-coded diagrams · Swedish political terminology |
 | **Version** | 2.0 |
+
+---
+
+### 🕵️ OSINT / INTOP Tradecraft Standards — `osint-tradecraft-standards.md`
+
+| Attribute | Value |
+|-----------|-------|
+| **Purpose** | Single canonical reference for professional intelligence tradecraft applied across every artifact in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. Anchors the source-grading, estimative-vocabulary, technique-attestation, DIW–Admiralty reconciliation, and PIR-handoff practices already referenced in prose by every other methodology. |
+| **Scope** | Every analytical artifact (Family A–E) + every article generated from those artifacts. Mandatory reading during Pass 1. |
+| **Seven Pillars** | §1 ICD 203 (9 ODNI analytic standards) · §2 Admiralty Code (6×6 matrix → 5-level confidence) · §3 WEP / Kent Scale (7 bands, EN + SV phrasing, 4 horizons) · §4 SAT Catalog (10 core + 5 supporting) · §5 OSINT Ethics & Scope (GDPR Art. 9, Offentlighetsprincipen) · §6 DIW Weighting Alignment (Admiralty floors per DIW tier) · §7 PIR Handoff (standing Riksdag PIR-1–7 + Tier-C continuity contract) |
+| **Key Concepts** | Source grade `[A-F][1-6]` · 🟦/🟩/🟧/🟥/⬛ confidence · WEP bands (`almost no chance` → `almost certain`, each with Swedish equivalent) · SAT attestation in `methodology-reflection.md` (≥ 10 techniques) · Source Diversity Rule (≥ 3 primary + ≥ 1 secondary per P0/P1 claim) · Standing PIR catalogue (coalition stability, opposition cohesion, position drift, Election 2026 pathway, institutional risk, economic transmission, foreign-policy alignment) |
+| **Enforced by** | `05-analysis-gate.md` checks 4 (evidence), 5 (Mermaid), 7 (Family C structure — ACH ≥ 3 hypotheses, ICD 203 audit), 8 (Family D structure — ≥ 10 dated forward indicators across 4 horizons). Tier-C additive gate (`ext/tier-c-aggregation.md`) enforces §7 PIR handoff. |
+| **Cross-References** | Cited in prose by `political-style-guide.md`, `ai-driven-analysis-guide.md`, `synthesis-methodology.md`, `strategic-extensions-methodology.md`, `electoral-domain-methodology.md`. Cited by the template `methodology-reflection.md` and by `04-analysis-pipeline.md` supporting-frameworks list. |
+| **Version** | 1.0 |
 
 ---
 

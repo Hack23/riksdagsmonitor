@@ -118,6 +118,6 @@ The monolithic `.github/aw/SHARED_PROMPT_PATTERNS.md` was deleted when these mod
 - [`.github/skills/README.md`](../skills/README.md) — 91 skills by functional category
 - [`.github/workflows/README.md`](../workflows/README.md) — 45 workflow files (21 `.yml` + 12 `.md` + 12 `.lock.yml`)
 - [`analysis/README.md`](../../analysis/README.md) — on-disk artifact layout (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`)
-- [`analysis/methodologies/README.md`](../../analysis/methodologies/README.md) — 11 methodology modules
+- [`analysis/methodologies/README.md`](../../analysis/methodologies/README.md) — 12 methodology modules (AI guide · 4 domain frameworks · 5 Family production methodologies · style guide · **OSINT / INTOP tradecraft standards** canon)
 - [`analysis/templates/README.md`](../../analysis/templates/README.md) — 23 canonical output templates
 - [`WORKFLOWS.md`](../../WORKFLOWS.md) — complete CI/CD + agentic workflow reference
