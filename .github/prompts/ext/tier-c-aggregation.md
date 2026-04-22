@@ -88,10 +88,26 @@ done
 # ≥ 3 scenarios with probability + leading indicator
 awk '/^##? .*Scenario/{c++} END{exit (c<3)}' "$ANALYSIS_DIR/scenario-analysis.md" \
   || { echo "❌ scenario-analysis.md: fewer than 3 scenarios"; FAIL=1; }
-# ≥ 2 external country references in comparative-international.md
-grep -cE '\b(Finland|Norway|Denmark|Germany|France|Netherlands|UK|USA|Estonia)\b' \
-  "$ANALYSIS_DIR/comparative-international.md" | awk '{exit ($1<2)}' \
-  || { echo "❌ comparative-international.md: fewer than 2 countries"; FAIL=1; }
+# comparative-international.md must define a comparator set or include ≥ 2 comparator rows
+# (structural check — avoids hardcoding a country allowlist that rejects valid comparators
+# like "United States", "United Kingdom", "EU", or other jurisdictions the template permits)
+awk '
+  BEGIN { comparator_set=0; comparator_rows=0 }
+  /^[[:space:]]*\*{0,2}Comparator set\*{0,2}[[:space:]]*:/ {
+    value = $0
+    sub(/^[^:]*:[[:space:]]*/, "", value)
+    if (value !~ /^[[:space:]]*$/ && value !~ /^[[:space:]]*[-–—]+[[:space:]]*$/) {
+      comparator_set = 1
+    }
+  }
+  /^\|/ {
+    if ($0 !~ /^\|[[:space:]:-]+(\|[[:space:]:-]+)+\|?[[:space:]]*$/ && $0 !~ /^\|[[:space:]]*(Jurisdiction|Comparator|Country)[[:space:]]*\|/) {
+      comparator_rows++
+    }
+  }
+  END { exit !(comparator_set || comparator_rows >= 2) }
+' "$ANALYSIS_DIR/comparative-international.md" \
+  || { echo "❌ comparative-international.md: missing comparator set or fewer than 2 comparator rows"; FAIL=1; }
 [ "$FAIL" -eq 0 ] || exit 1
 ```
 

@@ -130,7 +130,13 @@ for f in "${SYNTHESIS[@]}"; do
 done
 
 # Check 6 — Pass-2 evidence (mtime ≥ birth + 180s, OR differing pass1 snapshot on disk)
-for f in "${REQ[@]}"; do
+# `data-download-manifest.md` is produced by the download step and may legitimately
+# be unchanged during Pass 2, so it's excluded here (its Pass-2 correctness is
+# covered by check 2's per-document coverage against its dok_id list).
+PASS2_REQ=(synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md \
+           stakeholder-perspectives.md significance-scoring.md classification-results.md \
+           cross-reference-map.md)
+for f in "${PASS2_REQ[@]}"; do
   p="$ANALYSIS_DIR/$f"; [ -s "$p" ] || continue
   ok=0
   B=$(stat -c %W "$p" 2>/dev/null || echo 0)
