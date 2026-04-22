@@ -168,7 +168,7 @@ Every analysis file MUST demonstrate:
 
 **Rhetorical-Tension Rule**: When the top-ranked findings carry opposing political valences, the article MUST surface the tension in a dedicated subsection. Silence on the tension is itself a coverage failure.
 
-**Enforcement**: `.github/prompts/` (see the README for the module catalogue) → "Lead-Story & Coverage-Completeness Gate" is a blocking check. Articles failing the gate cannot be committed.
+**Enforcement**: The blocking check is implemented as the Lead-Story / Coverage-Completeness portion of the [analysis gate in `.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) (Checks 2 "Per-document coverage" + 4 "Evidence citations"). Articles failing the gate cannot be committed.
 
 ---
 
@@ -256,7 +256,7 @@ Every agentic workflow MUST spend **at least 15 minutes** on analysis. This incl
 
 ### 🔍 Quality Gate (Blocking)
 
-Before committing, run the quality gate bash check from `.github/prompts/` (see the README for the module catalogue) Step 5b. If the check fails, go back and improve analysis files until it passes. Do NOT commit failing analysis.
+Before committing, run the quality-gate bash block from [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) ("Canonical shape" gate — checks 1–6). If the check fails, go back and improve analysis files until it passes. Do NOT commit failing analysis.
 
 ---
 

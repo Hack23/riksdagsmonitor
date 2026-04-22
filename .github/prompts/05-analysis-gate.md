@@ -33,7 +33,7 @@ REQ=(synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md
 SYNTHESIS=(synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md \
            stakeholder-perspectives.md significance-scoring.md classification-results.md \
            cross-reference-map.md)
-DOK_RE='H[0-9]{3}[A-Za-z]{2,}[0-9]+'
+DOK_RE='[Hh][A-Za-z0-9]{3,}[0-9]+'
 FAIL=0
 
 # Check 1 — artifact existence
@@ -46,7 +46,14 @@ if [ -s "$ANALYSIS_DIR/data-download-manifest.md" ]; then
   mapfile -t DOKS < <(grep -oE "$DOK_RE" "$ANALYSIS_DIR/data-download-manifest.md" | sort -u)
   [ "${#DOKS[@]}" -gt 0 ] || { echo "❌ manifest has no dok_id entries"; FAIL=1; }
   for d in "${DOKS[@]}"; do
-    [ -s "$ANALYSIS_DIR/documents/$d.md" ] || { echo "❌ documents/$d.md missing"; FAIL=1; }
+    d_lc="${d,,}"
+    if [ ! -s "$ANALYSIS_DIR/documents/${d}.md" ] \
+       && [ ! -s "$ANALYSIS_DIR/documents/${d}-analysis.md" ] \
+       && [ ! -s "$ANALYSIS_DIR/documents/${d_lc}.md" ] \
+       && [ ! -s "$ANALYSIS_DIR/documents/${d_lc}-analysis.md" ]; then
+      echo "❌ documents/${d}.md or documents/${d}-analysis.md missing (any case)"
+      FAIL=1
+    fi
   done
 fi
 
@@ -56,10 +63,23 @@ grep -rIn -e 'AI_MUST_REPLACE' -e '\[REQUIRED\]' -e 'TODO:' -e 'Lorem ipsum' "$A
 
 # Check 4 — evidence citations per quadrant / ranked item
 awk -v re="$DOK_RE" '
-  /^##[[:space:]]+(Strengths|Weaknesses|Opportunities|Threats)\b/ { sec=$0; next }
+  function reset_table() { trow=0 }
+  /^###[[:space:]]+.*(Strengths|Weaknesses|Opportunities|Threats)\b/ { sec=$0; reset_table(); next }
+  /^#{1,6}[[:space:]]+/ { sec=""; reset_table(); next }
   sec != "" && /^[[:space:]]*[-*][[:space:]]+/ && $0 !~ re {
-    printf "❌ swot-analysis.md %s: bullet missing dok_id: %s\n", sec, $0; bad=1
+    printf "❌ swot-analysis.md %s: bullet missing dok_id: %s\n", sec, $0; bad=1; next
   }
+  sec != "" && /^[[:space:]]*\|/ {
+    # skip table separator rows like |---|---|
+    if ($0 ~ /^[[:space:]|:\-]+$/) next
+    trow++
+    if (trow == 1) next          # header row
+    if ($0 !~ re) {
+      printf "❌ swot-analysis.md %s: table row missing dok_id: %s\n", sec, $0; bad=1
+    }
+    next
+  }
+  sec != "" && /^[[:space:]]*$/ { reset_table(); next }
   END { exit bad+0 }
 ' "$ANALYSIS_DIR/swot-analysis.md" || FAIL=1
 awk -v re="$DOK_RE" '

@@ -129,7 +129,7 @@ get_calendar_events({ from: "2026-04-01", tom: "2026-04-30" }) // Calendar event
 
 > **⚠️ Tool names use underscores** (e.g., `get_sync_status`, NOT `get-sync-status`).
 > The gateway at `http://host.docker.internal:$MCP_GATEWAY_PORT/mcp/riksdag-regering` (port `8080` for gh-aw v0.69+, port `80` for legacy gh-aw <0.69 — resolved dynamically by `mcp-setup.sh`) handles routing.
-> See `.github/prompts/` (see the README for the module catalogue) → "MCP Architecture & Tool Reference" for full tool list.
+> See [`.github/prompts/02-mcp-access.md`](../../prompts/02-mcp-access.md) for MCP server access, direct tool invocation, and tool-naming conventions (and the [`.github/prompts/README.md`](../../prompts/README.md) for the full module catalogue).
 
 ## Examples (TypeScript)
 

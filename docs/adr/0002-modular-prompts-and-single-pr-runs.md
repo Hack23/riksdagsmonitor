@@ -84,7 +84,7 @@ Eight core modules + one Tier-C extension + a `README.md`:
 | Risk | Mitigation |
 |------|------------|
 | MCP session expiry without heartbeat | Tight time budgets + scope-trim policy + ≤ 2 min pre-warm; deadline rule in `07-commit-and-pr.md` forces commit + PR by minute ~55. |
-| `imports:` resolution differences across gh-aw versions | `compile-agentic-workflows.yml` pins gh-aw via `GH_AW_VERSION="v0.69.2"`. |
+| `imports:` resolution differences across gh-aw versions | `compile-agentic-workflows.yml` pins gh-aw via `GH_AW_VERSION="v0.69.3"`. |
 | Hidden rules in the 4,350-line file dropped accidentally | Phase A migrated every H2/H3 explicitly; review is backed by the CI module-size/banned-string check. |
 | `news-translate` capacity | If 12 languages exceed the 60-minute budget, translation is split across multiple scheduled runs (already cron'd twice daily + weekend catch-up) rather than across multiple PRs in one run. |
 
