@@ -35,7 +35,7 @@
     ],
     "diwScoreRequired": [
       "significance-scoring.md",
-      "per-file-political-intelligence.md"
+      "documents/{dok_id}-analysis.md"
     ],
     "partyNeutralityArithmeticRequired": [
       "synthesis-summary.md",

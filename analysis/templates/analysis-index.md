@@ -84,8 +84,6 @@ Annotate each node ✅ / ⚠️ / ❌ based on actual execution.
 | 9 | A | `stakeholder-perspectives.md` | `stakeholder-perspectives.md` | `[#]` | `[floor]` | `[…]` |
 | 10 | B | `data-download-manifest.md` | `data-download-manifest.md` | `[#]` | `[floor]` | `[…]` |
 | 11 | B | `cross-reference-map.md` | `cross-reference-map.md` | `[#]` | `[floor]` | `[…]` |
-
-> **Notes on the 23-artifact core** — `cross-reference-map.md` is a single artifact; Tier-C adds sibling-folder citations *inside* the same file (do **not** create a second file). Per-document analyses live under `documents/{dok_id}-analysis.md` (Family E template, validated by gate Check 2) and are **not** counted in this 23-row core inventory.
 | 12 | C | `scenario-analysis.md` | `scenario-analysis.md` | `[#]` | `[floor]` | `[…]` |
 | 13 | C | `comparative-international.md` | `comparative-international.md` | `[#]` | `[floor]` | `[…]` |
 | 14 | C | `devils-advocate.md` | `devils-advocate.md` | `[#]` | `[floor]` | `[…]` |
@@ -100,6 +98,8 @@ Annotate each node ✅ / ⚠️ / ❌ based on actual execution.
 | 23 | D | `forward-indicators.md` | `forward-indicators.md` | `[#]` | `[floor]` | `[…]` |
 
 Floors from [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json).
+
+> **Notes on the 23-artifact core** — `cross-reference-map.md` is a single artifact; Tier-C adds sibling-folder citations *inside* the same file (do **not** create a second file). Per-document analyses live under `documents/{dok_id}-analysis.md` (Family E template, validated by gate Check 2) and are **not** counted in this 23-row core inventory.
 
 ---
 

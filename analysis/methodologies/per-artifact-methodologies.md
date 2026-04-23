@@ -87,13 +87,6 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 
 ## Family A — Core Synthesis
 
-### per-file-analysis
-
-**Inputs** — `get_dokument`, `search_dokument`; paired `dok_id` entry in `data-download-manifest.md`; DIW tier from `significance-scoring.md` Pass 1.  
-**Analytic moves** — (1) Read full document text; (2) classify along 7 dimensions per [`political-classification-guide.md`](political-classification-guide.md); (3) extract 3–7 named actors, ≥ 2 stakeholder lenses; (4) tag PIR/EEI; (5) apply depth per tier (L1 / L2 / L2+ / L3).  
-**Evidence rules** — every claim cites `dok_id` + paragraph marker; Admiralty grade per external citation; WEP band on forecast sentences; no generic phrases ("*this may*", "*could lead to*") without a WEP band.  
-**Anti-patterns** — summarising the document's own abstract; single-source claims without `[unconfirmed]` flag; skipping stakeholder identification on L2+ items.
-
 ### synthesis-summary ⭐
 
 **Inputs** — all Family A peers (`significance-scoring`, `classification-results`, `swot`, `risk`, `threat`, `stakeholder-perspectives`) + `cross-reference-map`.  
@@ -253,6 +246,19 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 **Analytic moves** — (1) ≥ 10 dated indicators across 4 horizons (72 h / week / month / election); (2) leading / coincident / lagging tag; (3) threshold that would move the KJ.  
 **Evidence rules** — each indicator dated + sourced.  
 **Anti-patterns** — indicators without thresholds; all indicators lagging.
+
+---
+
+## Family E — Per-Document (separate template; not part of the 23 core set)
+
+### per-file-analysis
+
+Per-document analyses are produced under `documents/{dok_id}-analysis.md`, one file per downloaded Riksdag document. They are validated separately by gate Check 2 (Family-E per-document check) and are **not** counted in the 23-row core inventory.
+
+**Inputs** — `get_dokument`, `search_dokument`; paired `dok_id` entry in `data-download-manifest.md`; DIW tier from `significance-scoring.md` Pass 1.  
+**Analytic moves** — (1) Read full document text; (2) classify along 7 dimensions per [`political-classification-guide.md`](political-classification-guide.md); (3) extract 3–7 named actors, ≥ 2 stakeholder lenses; (4) tag PIR/EEI; (5) apply depth per tier (L1 / L2 / L2+ / L3).  
+**Evidence rules** — every claim cites `dok_id` + paragraph marker; Admiralty grade per external citation; WEP band on forecast sentences; no generic phrases ("*this may*", "*could lead to*") without a WEP band.  
+**Anti-patterns** — summarising the document's own abstract; single-source claims without `[unconfirmed]` flag; skipping stakeholder identification on L2+ items.
 
 ---
 

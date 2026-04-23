@@ -88,7 +88,7 @@ Audit against the 11 core principles of [`ai-driven-analysis-guide.md`](../metho
 | 1 | Read all methodologies before writing | `[…]` | `[one tool call per file logged]` |
 | 2 | Read all 23 templates before writing | `[…]` | `[…]` |
 | 3 | Pass 1 produces all 23 artifacts | `[…]` | `[manifest of files created]` |
-| 4 | Pass-1 snapshot copied to `pass1/` | `[…]` | `[ls pass1/`] |
+| 4 | Pass-1 snapshot copied to `pass1/` | `[…]` | `[ls pass1/ output]` |
 | 5 | Pass 2 improves every artifact | `[…]` | `[diff summary from cross-run-diff if same-type]` |
 | 6 | Evidence standard (dok_id / vote / named actor / URL + Admiralty) | `[…]` | `[spot-check table below]` |
 | 7 | WEP + horizon on every forecast | `[…]` | `[sample]` |

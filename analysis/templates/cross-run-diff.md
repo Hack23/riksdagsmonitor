@@ -49,7 +49,7 @@
 |--------|:-----------:|
 | Weighted quality score | `[#/10]` |
 | Reliability score (MCP) | `[#]` |
-| Coverage (core artifacts) | `[#]/21` |
+| Coverage (core artifacts) | `[#]/23` |
 | P0 claims | `[#]` |
 | Admiralty A-rated sources | `[#]` |
 
