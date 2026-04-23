@@ -6,6 +6,7 @@ This is the **only** gate separating analysis from article generation. If it fai
 
 - `$ANALYSIS_DIR = analysis/daily/$ARTICLE_DATE/$SUBFOLDER`
 - 23 required artifacts (Families A + B + C + D from `04-analysis-pipeline.md`) + per-document Family E.
+- Authoritative reference — [`analysis/methodologies/artifact-catalog.md`](../../analysis/methodologies/artifact-catalog.md) (single source of truth for every artifact), [`analysis/methodologies/per-artifact-methodologies.md`](../../analysis/methodologies/per-artifact-methodologies.md) (per-artifact Inputs / Analytic-moves / Evidence-rules / Anti-patterns), [`analysis/methodologies/reference-quality-thresholds.json`](../../analysis/methodologies/reference-quality-thresholds.json) (per-article-type line floors + tradecraft signals).
 
 ## Checks (all must pass)
 
@@ -232,3 +233,34 @@ Exit code 0 = pass, non-zero = fail with per-check report. Precondition for chec
 ## Deduplication note
 
 If today's article HTML already exists under `news/` **and** `force_generation=false`, skip article generation but still run analysis and still commit. The PR label is `analysis-only`. There is still exactly one PR call.
+
+## Supplementary checks
+
+Non-blocking for `standard` / `deep` runs; **blocking for `comprehensive` / Tier-C aggregation runs**. These checks consume the 7 operational supplementary artifacts defined in [`analysis/templates/README.md §Operational Supplementary`](../../analysis/templates/README.md) and catalogued in [`analysis/methodologies/artifact-catalog.md §Operational Supplementary`](../../analysis/methodologies/artifact-catalog.md#-operational-supplementary-artifacts-7).
+
+| S# | File | Blocking when | Methodology §link |
+|:--:|------|---------------|-------------------|
+| S1 | `analysis-index.md` | `comprehensive` | [`per-artifact-methodologies.md#analysis-index`](../../analysis/methodologies/per-artifact-methodologies.md#analysis-index) |
+| S2 | `reference-analysis-quality.md` | `comprehensive` | [`per-artifact-methodologies.md#reference-analysis-quality`](../../analysis/methodologies/per-artifact-methodologies.md#reference-analysis-quality) |
+| S3 | `mcp-reliability-audit.md` | `comprehensive`, or any run with ≥ 1 MCP endpoint failure | [`per-artifact-methodologies.md#mcp-reliability-audit`](../../analysis/methodologies/per-artifact-methodologies.md#mcp-reliability-audit) |
+| S4 | `workflow-audit.md` | `comprehensive` | [`per-artifact-methodologies.md#workflow-audit`](../../analysis/methodologies/per-artifact-methodologies.md#workflow-audit) |
+| S5 | `cross-run-diff.md` | any article type with ≥ 2 production runs | [`per-artifact-methodologies.md#cross-run-diff`](../../analysis/methodologies/per-artifact-methodologies.md#cross-run-diff) |
+| S6 | `cross-session-intelligence.md` | `weekly-review`, `monthly-review`, quarterly aggregation | [`per-artifact-methodologies.md#cross-session-intelligence`](../../analysis/methodologies/per-artifact-methodologies.md#cross-session-intelligence) |
+| S7 | `session-baseline.md` | `weekly-review`, `monthly-review`, any aggregation workflow | [`per-artifact-methodologies.md#session-baseline`](../../analysis/methodologies/per-artifact-methodologies.md#session-baseline) |
+
+Inline bash probe — append to the main block after `FAIL=0` bookkeeping completes, only when `ARTICLE_TYPE` matches a blocking condition:
+
+```bash
+# Check 9 — supplementary artifacts (blocking only for comprehensive / Tier-C)
+if [[ "${ARTICLE_TYPE:-}" =~ ^(comprehensive|weekly-review|monthly-review)$ ]]; then
+  SUPP=(analysis-index.md reference-analysis-quality.md mcp-reliability-audit.md workflow-audit.md)
+  [[ "${ARTICLE_TYPE}" =~ ^(weekly-review|monthly-review)$ ]] && SUPP+=(cross-session-intelligence.md session-baseline.md)
+  for f in "${SUPP[@]}"; do
+    [ -s "$ANALYSIS_DIR/$f" ] || { echo "❌ supplementary missing for $ARTICLE_TYPE: $f"; FAIL=1; }
+  done
+fi
+```
+
+Depth floors for S1–S7 are configured under `thresholds.breaking.*` / per-type sections in [`reference-quality-thresholds.json`](../../analysis/methodologies/reference-quality-thresholds.json); when a floor is absent the `defaults.supplementaryFloor` (120 lines) applies.
+
+**Pass-2 quality audit consumption** — when `reference-analysis-quality.md` is present, the gate reads its `§5 Overall Benchmark Judgement` total. A total below **7.0/10** is treated as a Pass-2-incomplete signal; the agent MUST run another Pass-2 iteration before re-invoking this gate.

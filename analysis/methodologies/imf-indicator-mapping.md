@@ -93,7 +93,7 @@ IMF WEO forecasts carry a **vintage tag** (April vs October). When forecasts are
 
 ## 6. Economic Data Contract
 
-Chart.js specifications for any chart fed by IMF data live in [`../aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md). Follow the contract exactly — `economic-data.json` under the run folder is the source of truth the static site consumes.
+Chart.js specifications for any chart fed by IMF data live in [`../../.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md). Follow the contract exactly — `economic-data.json` under the run folder is the source of truth the static site consumes.
 
 ---
 

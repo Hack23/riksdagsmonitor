@@ -409,6 +409,25 @@ Templates are grouped by the **output family** defined in [`ai-driven-analysis-g
 | E1 | `documents/${dok_id}-analysis.md` | [per-file-political-intelligence.md](per-file-political-intelligence.md) | Deep per-document analysis (tiers L1–L3) |
 | E2 | `documents/${cluster}-cluster-analysis.md` | [per-file-political-intelligence.md § Cluster](per-file-political-intelligence.md) | Cluster-level synthesis for grouped documents |
 
+### 🛰️ Operational Supplementary — Not Counted in the 23 (Added v2.4, 2026-04-23)
+
+> **Purpose** — Enrichment artifacts that strengthen the AI-FIRST quality loop, cross-run memory, and MCP health auditability. **Recommended** for every `deep` run; **mandatory** for every `comprehensive` (Tier-C aggregation) run. Absence of these artifacts does **not** fail the gate for non-Tier-C runs, but each is consumed by [`.github/prompts/05-analysis-gate.md §Supplementary checks`](../../.github/prompts/05-analysis-gate.md#supplementary-checks) when present.
+>
+> **Methodology index** — [`per-artifact-methodologies.md`](../methodologies/per-artifact-methodologies.md) §§ analysis-index · reference-analysis-quality · mcp-reliability-audit · workflow-audit · cross-run-diff · cross-session-intelligence · session-baseline.
+> **Catalog row** — [`artifact-catalog.md §Operational Supplementary`](../methodologies/artifact-catalog.md#-operational-supplementary-artifacts-7).
+
+| # | File | Template | Purpose | Typical article types |
+|:-:|------|----------|---------|----------------------|
+| S1 | `analysis-index.md` | [analysis-index.md](analysis-index.md) | Read-me-first run navigator: artifact inventory, MCP summary, recommended reading order, gate outcome | All `deep` + `comprehensive` |
+| S2 | `reference-analysis-quality.md` | [reference-analysis-quality.md](reference-analysis-quality.md) | Per-run self-score vs reference benchmark + Pass-2 action list — operationalises the AI-FIRST principle | All `comprehensive` |
+| S3 | `mcp-reliability-audit.md` | [mcp-reliability-audit.md](mcp-reliability-audit.md) | Endpoint-by-endpoint health record for `riksdag-regering` / `scb` / `world-bank` / IMF with latency, freshness, failure incidents, cache usage | All `comprehensive`; any `deep` run with MCP degradation |
+| S4 | `workflow-audit.md` | [workflow-audit.md](workflow-audit.md) | Prompt-module-by-module self-audit of the 7-module pipeline; 11-principle compliance table | All `comprehensive` |
+| S5 | `cross-run-diff.md` | [cross-run-diff.md](cross-run-diff.md) | Bayesian delta vs prior run of the **same** article type — posterior WEP bands, scenario-probability shifts, risk-register deltas | Any article type with ≥ 2 runs |
+| S6 | `cross-session-intelligence.md` | [cross-session-intelligence.md](cross-session-intelligence.md) | **Session-over-session** narrative (week / month / quarter aggregation) — momentum, crystallisation moments, vote-discipline time-series | `weekly-review`, `monthly-review`, `motions` (quarterly) |
+| S7 | `session-baseline.md` | [session-baseline.md](session-baseline.md) | Calendar + adopted-texts + voterings roster for the period — data-dense reference every narrative artifact points back to | `weekly-review`, `monthly-review`, `propositions`, `motions` (aggregation) |
+
+Line floors for S1–S7 are configured in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json) and apply to `comprehensive` runs.
+
 ### Workflow → Family Map
 
 | Workflow | Family A | Family B | Family C | Family D | Family E |
