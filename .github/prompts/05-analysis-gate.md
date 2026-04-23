@@ -6,6 +6,7 @@ This is the **only** gate separating analysis from article generation. If it fai
 
 - `$ANALYSIS_DIR = analysis/daily/$ARTICLE_DATE/$SUBFOLDER`
 - 23 required artifacts (Families A + B + C + D from `04-analysis-pipeline.md`) + per-document Family E.
+- Authoritative reference — [`analysis/methodologies/artifact-catalog.md`](../../analysis/methodologies/artifact-catalog.md) (single source of truth for every artifact), [`analysis/methodologies/per-artifact-methodologies.md`](../../analysis/methodologies/per-artifact-methodologies.md) (per-artifact Inputs / Analytic-moves / Evidence-rules / Anti-patterns), [`analysis/methodologies/reference-quality-thresholds.json`](../../analysis/methodologies/reference-quality-thresholds.json) (per-article-type line floors + tradecraft signals).
 
 ## Checks (all must pass)
 
@@ -16,7 +17,7 @@ This is the **only** gate separating analysis from article generation. If it fai
    - **Family D (7)** — `election-2026-analysis.md`, `voter-segmentation.md`, `coalition-mathematics.md`, `historical-parallels.md`, `media-framing-analysis.md`, `implementation-feasibility.md`, `forward-indicators.md`.
 2. **Per-document coverage (Family E)** — `$ANALYSIS_DIR/documents/` contains one `.md` per `dok_id` listed in `data-download-manifest.md` (metadata-only documents are tagged, not skipped).
 3. **No stubs** — zero occurrences of `AI_MUST_REPLACE`, `[REQUIRED]`, `TODO:`, or `Lorem ipsum` across all artifacts.
-4. **Evidence citations** — `swot-analysis.md` and `significance-scoring.md` contain at least one piece of primary-source evidence per quadrant / ranked item. Accepted evidence patterns: a `dok_id` (e.g. `H901FiU1`, `HD01CU27`) **or** a primary-source URL host (`riksdagen.se`, `regeringen.se`, `scb.se`, `worldbank.org`, `data.imf.org`). Enforced against SWOT `### Strengths/Weaknesses/Opportunities/Threats` sections (bullets + table rows) and significance-scoring bullets **plus** ranking table rows and Mermaid node labels.
+4. **Evidence citations** — `swot-analysis.md` and `significance-scoring.md` contain at least one piece of primary-source evidence per quadrant / ranked item. Accepted evidence patterns: a `dok_id` (e.g. `H901FiU1`, `HD01CU27`) **or** a primary-source URL host (`riksdagen.se`, `regeringen.se`, `scb.se`, `worldbank.org`, `api.imf.org`, `data.imf.org`, `www.imf.org`). Enforced against SWOT `### Strengths/Weaknesses/Opportunities/Threats` sections (bullets + table rows) and significance-scoring bullets **plus** ranking table rows and Mermaid node labels.
 5. **Mermaid diagrams** — every Family A and Family D synthesis file contains ≥ 1 Mermaid diagram with colour-coded `style` directives (or `themeVariables` / `%%{init …}` block).
 6. **Pass-2 done** — agent has read back each enforced Pass-2 artifact after creation and committed improvements: all Family A, B, C, and D artifacts except `data-download-manifest.md`. (Enforced by file mtime diff: final file mtime > creation time + 3 min, OR two git-history snapshots on disk.)
 7. **Family C structure checks** (extension-quality gate):
@@ -58,7 +59,7 @@ SYNTHESIS=(synthesis-summary.md swot-analysis.md risk-assessment.md threat-analy
            media-framing-analysis.md implementation-feasibility.md \
            forward-indicators.md)
 DOK_RE='[Hh][A-Za-z0-9]{3,}[0-9]+'
-EVIDENCE_RE='[Hh][A-Za-z0-9]{3,}[0-9]+|riksdagen\.se|regeringen\.se|scb\.se|worldbank\.org|data\.imf\.org'
+EVIDENCE_RE='[Hh][A-Za-z0-9]{3,}[0-9]+|riksdagen\.se|regeringen\.se|scb\.se|worldbank\.org|api\.imf\.org|data\.imf\.org|www\.imf\.org'
 FAIL=0
 
 # Check 1 — artifact existence (all 23)
@@ -232,3 +233,46 @@ Exit code 0 = pass, non-zero = fail with per-check report. Precondition for chec
 ## Deduplication note
 
 If today's article HTML already exists under `news/` **and** `force_generation=false`, skip article generation but still run analysis and still commit. The PR label is `analysis-only`. There is still exactly one PR call.
+
+## Supplementary checks
+
+Non-blocking for `standard` / `deep` runs; **blocking for `comprehensive` / Tier-C aggregation runs**. These checks consume the 7 operational supplementary artifacts defined in [`analysis/templates/README.md §Operational Supplementary`](../../analysis/templates/README.md) and catalogued in [`analysis/methodologies/artifact-catalog.md §Operational Supplementary`](../../analysis/methodologies/artifact-catalog.md#-operational-supplementary-artifacts-7).
+
+| S# | File | Blocking when | Methodology §link |
+|:--:|------|---------------|-------------------|
+| S1 | `analysis-index.md` | `comprehensive` | [`per-artifact-methodologies.md#analysis-index`](../../analysis/methodologies/per-artifact-methodologies.md#analysis-index) |
+| S2 | `reference-analysis-quality.md` | `comprehensive` | [`per-artifact-methodologies.md#reference-analysis-quality`](../../analysis/methodologies/per-artifact-methodologies.md#reference-analysis-quality) |
+| S3 | `mcp-reliability-audit.md` | `comprehensive`, or any run with ≥ 1 MCP endpoint failure | [`per-artifact-methodologies.md#mcp-reliability-audit`](../../analysis/methodologies/per-artifact-methodologies.md#mcp-reliability-audit) |
+| S4 | `workflow-audit.md` | `comprehensive` | [`per-artifact-methodologies.md#workflow-audit`](../../analysis/methodologies/per-artifact-methodologies.md#workflow-audit) |
+| S5 | `cross-run-diff.md` | any article type with ≥ 2 production runs | [`per-artifact-methodologies.md#cross-run-diff`](../../analysis/methodologies/per-artifact-methodologies.md#cross-run-diff) |
+| S6 | `cross-session-intelligence.md` | `weekly-review`, `monthly-review` (the aggregation article types the probe detects) | [`per-artifact-methodologies.md#cross-session-intelligence`](../../analysis/methodologies/per-artifact-methodologies.md#cross-session-intelligence) |
+| S7 | `session-baseline.md` | `weekly-review`, `monthly-review` (the aggregation article types the probe detects) | [`per-artifact-methodologies.md#session-baseline`](../../analysis/methodologies/per-artifact-methodologies.md#session-baseline) |
+
+Inline bash probe — append to the main block after `FAIL=0` bookkeeping completes. Supplementary artifacts have **three independent blocking triggers**, not a single tier-only rule: **aggregation article types** (`weekly-review`, `monthly-review`) require the aggregation artifacts; any run whose **tier** is `comprehensive` (the Tier-C run mode) requires the Tier-C supplementary set; and `cross-run-diff.md` is blocking whenever the workflow has **≥ 2 production runs** of the same article type, including `standard` and `deep` runs. `ARTICLE_TYPE` encodes the workflow family; `ANALYSIS_TIER` (when set) encodes the depth tier (`standard` | `deep` | `comprehensive`); `ANALYSIS_RUN_COUNT` (when set) is the numeric count of runs for the same article-generation cycle (if unset or non-numeric, treated as `1`).
+
+```bash
+# Check 9 — supplementary artifacts (blocking for aggregation types, any Tier-C run, and S5 when run-count >= 2)
+IS_AGGREGATION=0
+IS_TIER_C=0
+IS_MULTI_RUN=0
+RUN_COUNT=1
+[[ "${ARTICLE_TYPE:-}" =~ ^(weekly-review|monthly-review)$ ]] && IS_AGGREGATION=1
+[[ "${ANALYSIS_TIER:-standard}" == "comprehensive" ]] && IS_TIER_C=1
+[[ "${ANALYSIS_RUN_COUNT:-}" =~ ^[0-9]+$ ]] && RUN_COUNT="${ANALYSIS_RUN_COUNT}"
+(( RUN_COUNT >= 2 )) && IS_MULTI_RUN=1
+if (( IS_AGGREGATION == 1 || IS_TIER_C == 1 || IS_MULTI_RUN == 1 )); then
+  SUPP=()
+  if (( IS_AGGREGATION == 1 || IS_TIER_C == 1 )); then
+    SUPP+=(analysis-index.md reference-analysis-quality.md mcp-reliability-audit.md workflow-audit.md)
+  fi
+  (( IS_AGGREGATION == 1 )) && SUPP+=(cross-session-intelligence.md session-baseline.md)
+  (( IS_MULTI_RUN == 1 )) && SUPP+=(cross-run-diff.md)
+  for f in "${SUPP[@]}"; do
+    [ -s "$ANALYSIS_DIR/$f" ] || { echo "❌ supplementary missing (agg=$IS_AGGREGATION tier-c=$IS_TIER_C multi-run=$IS_MULTI_RUN): $f"; FAIL=1; }
+  done
+fi
+```
+
+Depth floors for S1–S7 are configured under `thresholds.breaking.*` / per-type sections in [`reference-quality-thresholds.json`](../../analysis/methodologies/reference-quality-thresholds.json); when a floor is absent the `defaults.supplementaryFloor` (120 lines) applies.
+
+**Pass-2 quality audit — recommendation, not enforced in the bash probe** — the bash check above does **not** parse `reference-analysis-quality.md §5`. When the artifact is produced, agents SHOULD re-read its `§5 Overall Benchmark Judgement` total and trigger another Pass-2 iteration if the score is below **7.0/10** before invoking this gate. This is a non-enforced self-discipline rule (no blocking logic); an enforced numeric-floor check would require adding a YAML/JSON score block to the template and a dedicated parser, which is deferred to a follow-up change.

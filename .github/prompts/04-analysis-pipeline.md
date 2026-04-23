@@ -4,9 +4,37 @@ Analysis is the **primary product**. Articles are derived from analysis. Never w
 
 Authoritative methodology & templates:
 
+- **Read-me-first** → [`analysis/methodologies/artifact-catalog.md`](../../analysis/methodologies/artifact-catalog.md) (single source of truth for every artifact — family, template, depth floor, Mermaid type, MCP data source, gate check) and [`analysis/methodologies/per-artifact-methodologies.md`](../../analysis/methodologies/per-artifact-methodologies.md) (Inputs / Analytic-moves / Evidence-rules / Anti-patterns per artifact). Open these before any framework-specific methodology.
 - Methodology → [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md) (DIW weighting, tier depths, Pass 1/Pass 2 rules, F3EAD mapping)
+- Indicator maps → [`worldbank-indicator-mapping.md`](../../analysis/methodologies/worldbank-indicator-mapping.md) (non-economic: social, health, education, environment, defence, agriculture, innovation, governance) + [`imf-indicator-mapping.md`](../../analysis/methodologies/imf-indicator-mapping.md) (**authoritative** for all economic / fiscal / trade / monetary context with vintage-tagged WEO forecasts)
+- Depth floors → [`reference-quality-thresholds.json`](../../analysis/methodologies/reference-quality-thresholds.json) (per-article-type × per-artifact line floors + tradecraft signals consumed by Pass-2 self-audit)
 - Supporting frameworks → [`political-classification-guide.md`](../../analysis/methodologies/political-classification-guide.md), [`political-swot-framework.md`](../../analysis/methodologies/political-swot-framework.md), [`political-risk-methodology.md`](../../analysis/methodologies/political-risk-methodology.md), [`political-threat-framework.md`](../../analysis/methodologies/political-threat-framework.md), [`synthesis-methodology.md`](../../analysis/methodologies/synthesis-methodology.md), [`strategic-extensions-methodology.md`](../../analysis/methodologies/strategic-extensions-methodology.md), [`electoral-domain-methodology.md`](../../analysis/methodologies/electoral-domain-methodology.md), [`structural-metadata-methodology.md`](../../analysis/methodologies/structural-metadata-methodology.md), [`per-document-methodology.md`](../../analysis/methodologies/per-document-methodology.md), [`political-style-guide.md`](../../analysis/methodologies/political-style-guide.md), [`osint-tradecraft-standards.md`](../../analysis/methodologies/osint-tradecraft-standards.md) — **tradecraft canon: ICD 203 + Admiralty + WEP + SAT catalog + OSINT ethics + DIW alignment + PIR handoff**
-- Templates → [`analysis/templates/*.md`](../../analysis/templates/) (one file per artifact — 23 always-on + per-document)
+- Templates → [`analysis/templates/*.md`](../../analysis/templates/) (one file per artifact — 23 always-on + per-document + 7 operational supplementary)
+
+**Operational supplementary artifacts** — 7 enrichment templates that strengthen the AI-FIRST quality loop, cross-run memory, and MCP health auditability. **Recommended** for every `deep` run; **mandatory** for every `comprehensive` / Tier-C aggregation run; enforced by [`05-analysis-gate.md §Supplementary checks`](05-analysis-gate.md):
+
+| Template | When to produce | Feeds |
+|----------|-----------------|-------|
+| [`analysis-index.md`](../../analysis/templates/analysis-index.md) | always for `deep`/`comprehensive` | downstream reviewers |
+| [`reference-analysis-quality.md`](../../analysis/templates/reference-analysis-quality.md) | `comprehensive`; operationalises AI-FIRST | Pass-2 self-audit |
+| [`mcp-reliability-audit.md`](../../analysis/templates/mcp-reliability-audit.md) | `comprehensive` or any MCP degradation | incident follow-up |
+| [`workflow-audit.md`](../../analysis/templates/workflow-audit.md) | `comprehensive` | 11-principle compliance |
+| [`cross-run-diff.md`](../../analysis/templates/cross-run-diff.md) | any article type with ≥ 2 runs | Bayesian update |
+| [`cross-session-intelligence.md`](../../analysis/templates/cross-session-intelligence.md) | `weekly-review`, `monthly-review`, quarterly | session narrative |
+| [`session-baseline.md`](../../analysis/templates/session-baseline.md) | any aggregation workflow | calendar + roster fact layer |
+
+These are **not counted in the 23 mandatory artifacts** — the 23-artifact contract is unchanged.
+
+**Analytical supplementary artifacts** — 4 optional deep-dive templates mapped to frameworks explicitly listed in the intelligence-operative agent's "Core Expertise" that previously had no template. **Never blocking** in `05-analysis-gate.md` and **never replace** a core artifact. Produce when the trigger condition applies; otherwise skip. See [`analytical-supplementary-methodology.md`](../../analysis/methodologies/analytical-supplementary-methodology.md) for composition rules and per-template analytic moves.
+
+| Template | Produce when | Pairs with |
+|----------|--------------|-----------|
+| [`pestle-analysis.md`](../../analysis/templates/pestle-analysis.md) | event crosses ≥ 2 PESTLE dimensions | `swot-analysis.md`, `risk-assessment.md`, `scenario-analysis.md` |
+| [`political-stride-assessment.md`](../../analysis/templates/political-stride-assessment.md) | election-adjacent / integrity incident / disinfo / critical-infra vote | `threat-analysis.md`, `risk-assessment.md` Institutional/Corruption |
+| [`wildcards-blackswans.md`](../../analysis/templates/wildcards-blackswans.md) | long-horizon forecasting (`monthly-review`, election year) | `scenario-analysis.md`, `forward-indicators.md` |
+| [`quantitative-swot.md`](../../analysis/templates/quantitative-swot.md) | decision memo needing scored ranking | `swot-analysis.md`, `significance-scoring.md`, `executive-brief.md` |
+
+These are **not counted in the 23 mandatory artifacts** and **not counted in the 7 operational supplementary** — the contract is unchanged. Agents ignoring them still produce valid output.
 
 ## Role boundary
 

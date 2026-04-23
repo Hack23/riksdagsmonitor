@@ -409,6 +409,41 @@ Templates are grouped by the **output family** defined in [`ai-driven-analysis-g
 | E1 | `documents/${dok_id}-analysis.md` | [per-file-political-intelligence.md](per-file-political-intelligence.md) | Deep per-document analysis (tiers L1–L3) |
 | E2 | `documents/${cluster}-cluster-analysis.md` | [per-file-political-intelligence.md § Cluster](per-file-political-intelligence.md) | Cluster-level synthesis for grouped documents |
 
+### 🛰️ Operational Supplementary — Not Counted in the 23 (Added v2.4, 2026-04-23)
+
+> **Purpose** — Enrichment artifacts that strengthen the AI-FIRST quality loop, cross-run memory, and MCP health auditability. **Recommended** for every `deep` run; **mandatory** for every `comprehensive` (Tier-C aggregation) run. For non-Tier-C runs these artifacts are generally non-blocking; **exception:** `cross-run-diff.md` (S5) is gate-required whenever `ANALYSIS_RUN_COUNT >= 2` (same article type), including `standard` and `deep` runs. Each artifact is consumed by [`.github/prompts/05-analysis-gate.md §Supplementary checks`](../../.github/prompts/05-analysis-gate.md#supplementary-checks) when present.
+>
+> **Methodology index** — [`per-artifact-methodologies.md`](../methodologies/per-artifact-methodologies.md) §§ analysis-index · reference-analysis-quality · mcp-reliability-audit · workflow-audit · cross-run-diff · cross-session-intelligence · session-baseline.
+> **Catalog row** — [`artifact-catalog.md §Operational Supplementary`](../methodologies/artifact-catalog.md#-operational-supplementary-artifacts-7).
+
+| # | File | Template | Purpose | Typical article types |
+|:-:|------|----------|---------|----------------------|
+| S1 | `analysis-index.md` | [analysis-index.md](analysis-index.md) | Read-me-first run navigator: artifact inventory, MCP summary, recommended reading order, gate outcome | All `deep` + `comprehensive` |
+| S2 | `reference-analysis-quality.md` | [reference-analysis-quality.md](reference-analysis-quality.md) | Per-run self-score vs reference benchmark + Pass-2 action list — operationalises the AI-FIRST principle | All `comprehensive` |
+| S3 | `mcp-reliability-audit.md` | [mcp-reliability-audit.md](mcp-reliability-audit.md) | Endpoint-by-endpoint health record for `riksdag-regering` / `scb` / `world-bank` / IMF with latency, freshness, failure incidents, cache usage | All `comprehensive`; any `deep` run with MCP degradation |
+| S4 | `workflow-audit.md` | [workflow-audit.md](workflow-audit.md) | Prompt-module-by-module self-audit of the 7-module pipeline; 11-principle compliance table | All `comprehensive` |
+| S5 | `cross-run-diff.md` | [cross-run-diff.md](cross-run-diff.md) | Bayesian delta vs prior run of the **same** article type — posterior WEP bands, scenario-probability shifts, risk-register deltas | Any article type with ≥ 2 runs |
+| S6 | `cross-session-intelligence.md` | [cross-session-intelligence.md](cross-session-intelligence.md) | **Session-over-session** narrative (week / month / quarter aggregation) — momentum, crystallisation moments, vote-discipline time-series | `weekly-review`, `monthly-review`, `motions` (quarterly) |
+| S7 | `session-baseline.md` | [session-baseline.md](session-baseline.md) | Calendar + adopted-texts + voterings roster for the period — data-dense reference every narrative artifact points back to | `weekly-review`, `monthly-review`, `propositions`, `motions` (aggregation) |
+
+Line floors for S1–S7 are configured in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json) and apply to `comprehensive` runs.
+
+### 🔭 Analytical Supplementary — Optional Deep-Dive (Added v2.5, 2026-04-23)
+
+> **Purpose** — Optional deep-dive analytical templates mapped to frameworks explicitly listed in the intelligence-operative agent's "Core Expertise" and "Analytical Frameworks" sections. **Never replace** a core artifact and **never blocking** in `05-analysis-gate.md`. Pair with and cite the canonical artifact they extend.
+>
+> **Methodology** — [`analytical-supplementary-methodology.md`](../methodologies/analytical-supplementary-methodology.md) (composition rules, evidence rules, per-template analytic moves).
+> **Catalog row** — [`artifact-catalog.md §Analytical Supplementary`](../methodologies/artifact-catalog.md#-analytical-supplementary-artifacts-4).
+
+| # | File | Template | Purpose | Trigger |
+|:-:|------|----------|---------|---------|
+| AS1 | `pestle-analysis.md` | [pestle-analysis.md](pestle-analysis.md) | Macro-environment scan (Political/Economic/Social/Technological/Legal/Environmental) with IMF-vintage economic rows, ≥ 3 cross-dimension interactions, key judgement per dimension | event crosses ≥ 2 PESTLE dimensions |
+| AS2 | `political-stride-assessment.md` | [political-stride-assessment.md](political-stride-assessment.md) | STRIDE applied to political/electoral/institutional surfaces — 6 dimension tables, ≥ 2 Mermaid attack trees, MITRE-style TTP map, ISMS control map (ISO 27001 · NIST CSF 2.0 · CIS v8.1) | election-adjacent · integrity incident · disinfo spike · critical-infra vote |
+| AS3 | `wildcards-blackswans.md` | [wildcards-blackswans.md](wildcards-blackswans.md) | Tail of `scenario-analysis.md` — wildcard register (≥ 8), black-swan candidates (≥ 3) with plausible causal chains, cascading consequence trees, resilience assessment | long-horizon forecasting (`monthly-review`, election-year aggregation) |
+| AS4 | `quantitative-swot.md` | [quantitative-swot.md](quantitative-swot.md) | Numerical SWOT scoring using same DIW weight vector as `significance-scoring.md`; TOWS matrix with scored action rankings; sensitivity analysis | decision memo requiring scored ranking |
+
+Line floors for AS1–AS4 live in `reference-quality-thresholds.json § thresholds.analyticalSupplementary`; apply **only when the template is produced**. Non-production is never a gate failure.
+
 ### Workflow → Family Map
 
 | Workflow | Family A | Family B | Family C | Family D | Family E |

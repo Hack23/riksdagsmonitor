@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.3-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.2 | **📅 Last Updated:** 2026-06-01 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
+**📋 Document Owner:** CEO | **📄 Version:** 4.3 | **📅 Last Updated:** 2026-04-23 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-23  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -320,6 +320,35 @@ graph TB
 ---
 
 ## 📖 Methodology Catalog
+
+### 🗂️ Reference & Meta Methodologies (v4.3 — Added 2026-04-23)
+
+| Document | Purpose | Consumers |
+|----------|---------|-----------|
+| [`artifact-catalog.md`](artifact-catalog.md) | **Single source of truth** for every markdown artifact produced by a news workflow (23 core + 7 supplementary + N per-document). One row per artifact naming methodology, template, line floor, Mermaid type, MCP data source and gate check. | All agents, `.github/prompts/04-analysis-pipeline.md`, `05-analysis-gate.md` |
+| [`per-artifact-methodologies.md`](per-artifact-methodologies.md) | Per-artifact **Inputs / Analytic-moves / Evidence-rules / Anti-patterns** reference. One §section per artifact — read only the sections needed for the current run. | All agents writing artifacts |
+| [`worldbank-indicator-mapping.md`](worldbank-indicator-mapping.md) | Article-type → non-economic World Bank indicator codes (social, health, education, environment, defence, agriculture, innovation, governance). Wave-2 WB↔IMF split. | `comparative-international.md`, `voter-segmentation.md`, `implementation-feasibility.md`, `session-baseline.md` |
+| [`imf-indicator-mapping.md`](imf-indicator-mapping.md) | Article-type → IMF WEO/IFS/BOP/FM/GFS codes — **authoritative source** for all economic context (macro / fiscal / trade / monetary / exchange rates). Vintage-tagged forecasts, T+5. | Every artifact with economic-context obligations |
+| [`reference-quality-thresholds.json`](reference-quality-thresholds.json) | Per-article-type × per-artifact **minimum line-count floors** enforced by [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) Check 3. Additive tradecraft signals (WEP / Admiralty / ICD 203 / SATs / DIW / neutrality) consumed by Pass-2 self-audit. | Gate, `reference-analysis-quality.md`, Pass-2 validators |
+
+These five files are the **meta-layer** — read them before opening any framework-specific methodology. They define *what* is produced, *how* it is measured, and *where* the data comes from.
+
+### 🔭 Analytical Supplementary Methodology (v1.1 — Added 2026-04-23)
+
+| Document | Purpose | Templates governed |
+|----------|---------|--------------------|
+| [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md) | Rules for **optional deep-dive analytical templates** that augment the 23 core artifacts with specialised lenses. Non-blocking in `05-analysis-gate.md`. Defines composition rules (DIW weight vector, evidence citations, Forward-Indicator feed, TTP mapping) and per-template analytic moves. | `pestle-analysis.md` · `political-stride-assessment.md` · `wildcards-blackswans.md` · `quantitative-swot.md` |
+
+**When to produce:**
+
+- **PESTLE** — event crosses ≥ 2 macro dimensions (policy with economic spill-over, tech regulation with EU exposure, etc.)
+- **STRIDE-political** — election-adjacent events, integrity incidents, disinformation spikes, critical-infrastructure votes
+- **Wildcards & Black-Swans** — long-horizon forecasting (`monthly-review`, election-year aggregation)
+- **Quantitative SWOT** — decision-oriented memos requiring scored ranking (coalition negotiations, party strategy)
+
+These templates **never replace** a core artifact — they always pair with and cite the canonical artifact they extend.
+
+---
 
 ### 🤖 AI-Driven Analysis Guide — `ai-driven-analysis-guide.md`
 
