@@ -72,7 +72,7 @@ Every STRIDE row with likelihood × impact ≥ 12 **MUST** appear in the canonic
 - Economic rows **MUST** use IMF WEO vintages per [`imf-indicator-mapping.md`](imf-indicator-mapping.md).
 - Social/environmental rows use SCB / World Bank per [`worldbank-indicator-mapping.md`](worldbank-indicator-mapping.md).
 - Cross-dimension interactions (≥ 3) with direction + magnitude + magnitude rationale.
-- PIR feed-back row per active PIR.
+- PIR feedback row per active PIR.
 - Key judgement per dimension (1–3 sentences, WEP-tagged).
 
 ### STRIDE-political
@@ -82,7 +82,7 @@ Every STRIDE row with likelihood × impact ≥ 12 **MUST** appear in the canonic
 - ≥ 2 Mermaid attack trees (goal → vectors → sub-vectors, colour-coded).
 - MITRE-style TTP mapping table with tactic, political-adaptation technique, cross-link to `threat-analysis.md`.
 - Recommended controls mapped to **ISO 27001:2022** + **NIST CSF 2.0** + **CIS Controls v8.1**.
-- PIR feed-back row per active PIR.
+- PIR feedback row per active PIR.
 
 ### Wildcards & Black-Swans
 

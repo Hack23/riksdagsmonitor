@@ -26,7 +26,9 @@
 
 | Artifact (run-relative) | Floor | Actual | Δ | Status |
 |-------------------------|:-----:|:------:|:-:|:------:|
-| `synthesis-summary.md` | `[#]` | `[#]` | `[±#]` | `[✅/⚠️/❌]` |
+| `README.md` | `[#]` | `[#]` | `[±#]` | `[✅/⚠️/❌]` |
+| `executive-brief.md` | `[#]` | `[#]` | `[±#]` | `[…]` |
+| `synthesis-summary.md` | `[#]` | `[#]` | `[±#]` | `[…]` |
 | `significance-scoring.md` | `[#]` | `[#]` | `[±#]` | `[…]` |
 | `classification-results.md` | `[#]` | `[#]` | `[±#]` | `[…]` |
 | `swot-analysis.md` | `[#]` | `[#]` | `[±#]` | `[…]` |
@@ -48,7 +50,7 @@
 | `implementation-feasibility.md` | `[#]` | `[#]` | `[±#]` | `[…]` |
 | `forward-indicators.md` | `[#]` | `[#]` | `[±#]` | `[…]` |
 
-**Core coverage** — `[#]` / 21 at or above floor (target: 21/21). Floors from [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json).
+**Core coverage** — `[#]` / 23 at or above floor (target: 23/23). Authoritative contract: [`artifact-catalog.md`](../methodologies/artifact-catalog.md) + [`.github/prompts/04-analysis-pipeline.md`](../../.github/prompts/04-analysis-pipeline.md) (Family A/B/C/D = 9+2+5+7 = 23). Floors from [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json).
 
 ### Supplementary (if present)
 

@@ -72,7 +72,7 @@ flowchart LR
 | Information-integrity resilience | | | | media-framing + STRIDE |
 | External alliance depth | | | | NATO / EU / Nordic |
 
-## 🎯 PIR feed-back
+## 🎯 PIR feedback
 
 | PIR | Addressed by wildcard(s) | Gap | Action |
 |-----|--------------------------|-----|--------|

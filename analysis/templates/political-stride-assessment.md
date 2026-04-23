@@ -101,7 +101,7 @@ graph TD
 | Exfiltration | Dark-web posting | | |
 | Impact | Drop vote share / coalition collapse | | |
 
-## 🎯 PIR feed-back
+## 🎯 PIR feedback
 
 | PIR | Covered dimension(s) | Gap | Action |
 |-----|--------------------|-----|--------|

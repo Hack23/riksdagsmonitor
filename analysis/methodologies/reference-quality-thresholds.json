@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1",
   "effectiveDate": "2026-04-23",
   "description": "Per-artifact minimum line-count floors used to enforce Rule 22 (Per-Artifact Depth Floors) of analysis/methodologies/ai-driven-analysis-guide.md for Riksdagsmonitor agentic news workflows. Values are calibrated to the DIW Output Matrix and the Riksdag 23-artifact catalog (see artifact-catalog.md). A file below its threshold MUST trigger a Pass-2 rewrite; it MUST NOT be shipped with a '[truncated]' or 'AI_MUST_REPLACE' note. When an articleType entry is absent the gate falls back to the default floor. When a per-artifact entry is present the effective floor is max(perArtifact, default), so the default can only raise, never lower, a configured floor.",
   "tradecraftQualitySignals": {

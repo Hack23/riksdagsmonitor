@@ -110,7 +110,7 @@
 | | | | | |
 | | | | | |
 
-## 🎯 PIR feed-back
+## 🎯 PIR feedback
 
 | PIR | Addressed by dimension(s) | Gap | Action |
 |-----|--------------------------|-----|--------|

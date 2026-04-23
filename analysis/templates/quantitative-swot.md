@@ -104,7 +104,7 @@ xychart-beta
   bar [3.2, 2.1, 1.8, 2.5, 1.4, -2.0, -1.2, -2.8, -1.9]
 ```
 
-## 🎯 PIR feed-back
+## 🎯 PIR feedback
 
 | PIR | Top-3 items addressing | Gap | Action |
 |-----|-----------------------|-----|--------|

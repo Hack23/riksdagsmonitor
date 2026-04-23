@@ -312,14 +312,14 @@ Optional deep-dive templates. Full production rules in [`analytical-supplementar
 ### pestle-analysis
 
 **Inputs** — scoped event / bill / decision, horizon, primary sources (riksdagen.se, regeringen.se, scb.se, IMF WEO vintage per [`imf-indicator-mapping.md`](imf-indicator-mapping.md), WB codes per [`worldbank-indicator-mapping.md`](worldbank-indicator-mapping.md), EUR-Lex for EU instruments).  
-**Analytic moves** — (1) scope declaration (trigger, horizon, unit, sources); (2) 6 dimension tables (P/E/S/T/L/Env) each with ≥ 4 rows covering factor, current state, direction, evidence, impact, WEP; (3) economic rows tagged with IMF vintage; (4) ≥ 3 cross-dimension interactions (direction + magnitude + rationale); (5) key judgement per dimension (WEP-tagged); (6) PIR feed-back row.  
+**Analytic moves** — (1) scope declaration (trigger, horizon, unit, sources); (2) 6 dimension tables (P/E/S/T/L/Env) each with ≥ 4 rows covering factor, current state, direction, evidence, impact, WEP; (3) economic rows tagged with IMF vintage; (4) ≥ 3 cross-dimension interactions (direction + magnitude + rationale); (5) key judgement per dimension (WEP-tagged); (6) PIR feedback row.  
 **Evidence rules** — every row cites a `dok_id` or primary-source host; economic rows cite IMF indicator code + vintage; WB rows cite indicator code.  
 **Anti-patterns** — dimension rows without evidence; skipping the cross-dimension interaction table (the value add); mixing vintages across economic rows; stating "trend" without a dated reference point.
 
 ### political-stride-assessment
 
 **Inputs** — scoped entity (party / committee / agency / electoral component), trust boundary, adversary model, relevant `threat-analysis.md` kill-chain and `risk-assessment.md` Institutional/Corruption rows.  
-**Analytic moves** — (1) scope + adversary-model declaration; (2) 6 dimension tables (Spoofing / Tampering / Repudiation / Information-disclosure / Denial / Elevation) with ≥ 3 rows each carrying vector, target, L, I, existing mitigation, residual risk, evidence; (3) ≥ 2 Mermaid colour-coded attack trees; (4) MITRE-style TTP mapping table with political adaptations; (5) control mapping to ISO 27001 · NIST CSF 2.0 · CIS Controls v8.1; (6) PIR feed-back.  
+**Analytic moves** — (1) scope + adversary-model declaration; (2) 6 dimension tables (Spoofing / Tampering / Repudiation / Information-disclosure / Denial / Elevation) with ≥ 3 rows each carrying vector, target, L, I, existing mitigation, residual risk, evidence; (3) ≥ 2 Mermaid colour-coded attack trees; (4) MITRE-style TTP mapping table with political adaptations; (5) control mapping to ISO 27001 · NIST CSF 2.0 · CIS Controls v8.1; (6) PIR feedback.  
 **Evidence rules** — every STRIDE row cites evidence (incident log, historical parallel, named actor, `dok_id`); every L × I ≥ 12 row also appears in `threat-analysis.md` TTPs.  
 **Anti-patterns** — applying STRIDE verbatim without political adaptation; missing residual-risk column; no Mermaid attack tree; omitting the ISMS control map.
 

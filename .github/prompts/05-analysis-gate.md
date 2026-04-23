@@ -248,15 +248,19 @@ Non-blocking for `standard` / `deep` runs; **blocking for `comprehensive` / Tier
 | S6 | `cross-session-intelligence.md` | `weekly-review`, `monthly-review`, quarterly aggregation | [`per-artifact-methodologies.md#cross-session-intelligence`](../../analysis/methodologies/per-artifact-methodologies.md#cross-session-intelligence) |
 | S7 | `session-baseline.md` | `weekly-review`, `monthly-review`, any aggregation workflow | [`per-artifact-methodologies.md#session-baseline`](../../analysis/methodologies/per-artifact-methodologies.md#session-baseline) |
 
-Inline bash probe — append to the main block after `FAIL=0` bookkeeping completes, only when `ARTICLE_TYPE` matches a blocking condition:
+Inline bash probe — append to the main block after `FAIL=0` bookkeeping completes. The gate blocks on **aggregation article types** (`weekly-review`, `monthly-review`) and on any run whose **tier** is `comprehensive` (the Tier-C run mode), regardless of article type. `ARTICLE_TYPE` encodes the workflow family; `ANALYSIS_TIER` (when set by the workflow) encodes the depth tier (`standard` | `deep` | `comprehensive`).
 
 ```bash
-# Check 9 — supplementary artifacts (blocking only for comprehensive / Tier-C)
-if [[ "${ARTICLE_TYPE:-}" =~ ^(comprehensive|weekly-review|monthly-review)$ ]]; then
+# Check 9 — supplementary artifacts (blocking for aggregation types AND any Tier-C run)
+IS_AGGREGATION=0
+IS_TIER_C=0
+[[ "${ARTICLE_TYPE:-}" =~ ^(weekly-review|monthly-review)$ ]] && IS_AGGREGATION=1
+[[ "${ANALYSIS_TIER:-standard}" == "comprehensive" ]] && IS_TIER_C=1
+if (( IS_AGGREGATION == 1 || IS_TIER_C == 1 )); then
   SUPP=(analysis-index.md reference-analysis-quality.md mcp-reliability-audit.md workflow-audit.md)
-  [[ "${ARTICLE_TYPE}" =~ ^(weekly-review|monthly-review)$ ]] && SUPP+=(cross-session-intelligence.md session-baseline.md)
+  (( IS_AGGREGATION == 1 )) && SUPP+=(cross-session-intelligence.md session-baseline.md)
   for f in "${SUPP[@]}"; do
-    [ -s "$ANALYSIS_DIR/$f" ] || { echo "❌ supplementary missing for $ARTICLE_TYPE: $f"; FAIL=1; }
+    [ -s "$ANALYSIS_DIR/$f" ] || { echo "❌ supplementary missing (agg=$IS_AGGREGATION tier-c=$IS_TIER_C): $f"; FAIL=1; }
   done
 fi
 ```

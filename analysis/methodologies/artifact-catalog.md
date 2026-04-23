@@ -89,9 +89,9 @@ flowchart LR
 
 | # | Canonical filename | Methodology §link | Template | Line floor (breaking) | Mermaid | Primary MCP tool |
 |:-:|--------------------|-------------------|----------|:---------------------:|---------|------------------|
-| 1 | `per-file-analysis.md` (N files) | [`per-document-methodology.md`](per-document-methodology.md) | [`per-file-political-intelligence.md`](../templates/per-file-political-intelligence.md) | 80 | flowchart | `get_dokument`, `search_dokument` |
-| 2 | `synthesis-summary.md` | [`synthesis-methodology.md`](synthesis-methodology.md) | [`synthesis-summary.md`](../templates/synthesis-summary.md) | 205 | mindmap | `search_dokument` + all |
-| 3 | `cross-reference-map.md` | [`synthesis-methodology.md`](synthesis-methodology.md) | [`cross-reference-map.md`](../templates/cross-reference-map.md) | 110 | graph LR | `search_dokument` (sibling folders) |
+| 1 | `README.md` | [`synthesis-methodology.md`](synthesis-methodology.md) | [`templates/README.md § Folder README`](../templates/README.md) | 40 | — | run-internal |
+| 2 | `executive-brief.md` | [`synthesis-methodology.md`](synthesis-methodology.md#executive-brief) | [`executive-brief.md`](../templates/executive-brief.md) | 90 | flowchart | `search_dokument` + all |
+| 3 | `synthesis-summary.md` | [`synthesis-methodology.md`](synthesis-methodology.md) | [`synthesis-summary.md`](../templates/synthesis-summary.md) | 205 | mindmap | `search_dokument` + all |
 | 4 | `significance-scoring.md` | [`synthesis-methodology.md`](synthesis-methodology.md#-diw-weighting) | [`significance-scoring.md`](../templates/significance-scoring.md) | 150 | flowchart rank | `search_dokument`, `search_anforanden` |
 | 5 | `classification-results.md` | [`political-classification-guide.md`](political-classification-guide.md) | [`political-classification.md`](../templates/political-classification.md) | 140 | flowchart | `get_dokument` |
 | 6 | `swot-analysis.md` | [`political-swot-framework.md`](political-swot-framework.md) | [`swot-analysis.md`](../templates/swot-analysis.md) | 160 | quadrantChart | `get_voteringar`, `search_anforanden` |
@@ -108,7 +108,7 @@ flowchart LR
 | # | Canonical filename | Methodology §link | Template | Line floor | Mermaid | Primary source |
 |:-:|--------------------|-------------------|----------|:---------:|---------|----------------|
 | 10 | `data-download-manifest.md` | [`structural-metadata-methodology.md`](structural-metadata-methodology.md) | [`data-download-manifest.md`](../templates/data-download-manifest.md) | 60 | pie / bar | scripts in `03-data-download.md` |
-| 11 | `cross-reference-map.md` (Tier-C) | [`structural-metadata-methodology.md`](structural-metadata-methodology.md#tier-c-extensions) | [`cross-reference-map.md`](../templates/cross-reference-map.md) | 110 | graph LR | sibling folders under `$ARTICLE_DATE` |
+| 11 | `cross-reference-map.md` | [`structural-metadata-methodology.md`](structural-metadata-methodology.md#tier-c-extensions) | [`cross-reference-map.md`](../templates/cross-reference-map.md) | 110 | graph LR | sibling folders under `$ARTICLE_DATE` |
 
 Family B is scaffolded by scripts (no analytical prose) — agents only annotate confidence and data-depth tags.
 
