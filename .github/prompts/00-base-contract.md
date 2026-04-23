@@ -65,7 +65,7 @@ Same-day re-runs always use the same `$ANALYSIS_DIR` folder — never create a p
 
 To mitigate MCP idle-connection drops, workflows set `sandbox.mcp.keepalive-interval: 300` (5-minute ping). This keeps MCP connections alive but does **not** refresh the Copilot API token.
 
-**The reliable mitigation is to ensure `safeoutputs___create_pull_request` is called well before the session approaches expiry.** Plan the run so the PR is created before the agent passes ~45 minutes of work — that leaves ~10 minutes of safety margin on the 55-minute `timeout-minutes` cap and ~15 minutes on the ~60-minute token window for staging and safe-outputs publishing. See `07-commit-and-pr.md §Deadline enforcement` for the mandatory PR-timing procedure.
+**The reliable mitigation is to ensure `safeoutputs___create_pull_request` is called well before the session approaches expiry.** A second, shorter-firing clock — the Safe Outputs HTTP MCP idle session (~25–30 min observed) — now drives the operative deadline. Plan the run so the PR is created **within 22–27 minutes** (hard deadline **30 minutes**) of agent start. See `07-commit-and-pr.md §Deadline enforcement` for the authoritative PR-timing procedure, including the full two-timer explanation; that section supersedes any older ~45-minute guidance that predated the 23-artifact pipeline.
 
 Do not add per-phase checkpoint PRs or repo-memory push steps.
 

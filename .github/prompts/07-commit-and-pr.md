@@ -108,9 +108,11 @@ Two independent timers can kill a run silently. Plan for the **shorter** of the 
 
 ### Keeping the Safe Outputs MCP session warm
 
-Every `safeoutputs___*` tool is terminal (each runs at most once per workflow; additional calls produce workflow errors), so as of **April 2026** there is no cheap "ping" call you can issue against the safeoutputs MCP from the agent side. **The only reliable mitigation is to reach `safeoutputs___create_pull_request` before Timer B fires.** Plan Pass 1 + gate + commit to finish well inside the 30-minute hard deadline below. If a future gh-aw release publishes a safe, non-terminal touch path (e.g. a `tools/list` endpoint on the local safeoutputs HTTP server), update this section with the concrete command and its observed effect.
+Do **not** use safe outputs as a keepalive strategy. In this workflow, `safeoutputs___create_pull_request` is limited to a single successful end-of-run call, and `safeoutputs___noop` is likewise reserved for the final "no files produced" outcome, so neither can be safely spent to keep the Safe Outputs MCP session alive. Some other `safeoutputs___*` tools (e.g. `report_incomplete`, `missing_tool`, `missing_data`) may allow more than one call in compiled workflows, but they are not a documented or reliable heartbeat path for this prompt. **The only reliable mitigation is to reach `safeoutputs___create_pull_request` before Timer B fires.** Plan Pass 1 + gate + commit to finish well inside the 30-minute hard deadline below. If a future gh-aw release publishes a safe touch path for the local safeoutputs HTTP server (for example, an explicitly supported status or `tools/list` endpoint with verified keepalive behaviour), update this section with the concrete command and its observed effect.
 
 ### PR-creation windows
+
+> **Authoritative override:** For PR timing and hard deadlines, this section supersedes any older guidance imported from `.github/prompts/00-base-contract.md` that suggests creating the PR at around **45 minutes**. The operative deadline for both runs is **30 minutes**, with Run 1 targeting **22–27 minutes** and Run 2 targeting **20–25 minutes**.
 
 | Mode | Target PR window | Hard deadline | Floor for Pass 2 |
 |------|------------------|---------------|------------------|
