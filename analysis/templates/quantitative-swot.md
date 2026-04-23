@@ -40,7 +40,7 @@ Strengths & Opportunities use `+I`. Weaknesses & Threats use `-I` (resulting sco
 
 | ID | Item | Evidence (dok_id / URL) | I | C | L | T | dRel | iNov | wMom | sReach | Score | WEP† |
 |----|------|------------------------|---|---|---|---|------|------|------|--------|-------|------|
-| S1 | | | +4 | 0.80 | 0.70 | 0.9 | 0.9 | 0.5 | 0.6 | 0.8 | | likely |
+| S1 | | | +4 | 0.85 | 0.70 | 0.9 | 0.9 | 0.5 | 0.6 | 0.8 | | Very likely |
 | S2 | | | | | | | | | | | | |
 | S3 | | | | | | | | | | | | |
 
@@ -50,7 +50,7 @@ Strengths & Opportunities use `+I`. Weaknesses & Threats use `-I` (resulting sco
 
 | ID | Item | Evidence | I (negative) | C | L | T | dRel | iNov | wMom | sReach | Score | WEP† |
 |----|------|----------|--------------|---|---|---|------|------|------|--------|-------|------|
-| W1 | | | -3 | 0.85 | 0.60 | 0.7 | 0.9 | 0.4 | 0.5 | 0.7 | | likely |
+| W1 | | | -3 | 0.85 | 0.60 | 0.7 | 0.9 | 0.4 | 0.5 | 0.7 | | Very likely |
 | W2 | | | | | | | | | | | | |
 | W3 | | | | | | | | | | | | |
 

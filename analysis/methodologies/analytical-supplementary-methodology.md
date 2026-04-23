@@ -87,7 +87,7 @@ Every STRIDE row with likelihood × impact ≥ 12 **MUST** appear in the canonic
 ### Wildcards & Black-Swans
 
 - Horizon + domain filter declaration.
-- ICD-203-aligned definitions (wildcard = WEP `unlikely` … `very unlikely` ≈ 5–20 %; black-swan = outside current priors < 5 % with plausible causal chain).
+- ICD-203-aligned definitions (wildcard = low-probability / high-impact event in the WEP `Unlikely` to `Remote` range, ≈ 5–37 % per [`political-style-guide.md`](political-style-guide.md#-words-of-estimative-probability-wep--odni-confidence-overlay); black-swan = extreme-tail event outside current priors, typically < 5 %, with a plausible causal chain once surfaced).
 - Wildcard register ≥ 8 events across domains (political / economic / security / social / technological / environmental / cross / external).
 - Black-swan candidates ≥ 3 with "why under-weighted" + ≤ 4-step plausible causal chain.
 - ≥ 2 Mermaid cascading consequence trees (event → 1st → 2nd → 3rd-order → mitigation lever, colour-coded).

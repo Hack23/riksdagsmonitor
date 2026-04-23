@@ -24,8 +24,8 @@
 
 ## 🔑 Definitions (ICD 203-aligned)
 
-- **Wildcard** — plausible low-probability event (WEP `unlikely` to `very unlikely`, ≈ 5–20 %) with material impact on the political system.
-- **Black-swan (in Taleb sense)** — an event outside the current model's probability distribution, recognisable only in hindsight. We document **candidate black-swans** — events our current priors would rate "almost impossible" (< 5 %) but where a plausible causal chain exists.
+- **Wildcard** — plausible low-probability event (WEP `Unlikely` to `Remote`, ≈ 5–37 %, per [`political-style-guide.md`](../methodologies/political-style-guide.md#-words-of-estimative-probability-wep--odni-confidence-overlay)) with material impact on the political system.
+- **Black-swan (in Taleb sense)** — an event outside the current model's probability distribution, recognisable only in hindsight. We document **candidate black-swans** — extreme-tail events our current priors would rate `Remote` or lower (typically < 5 %) but where a plausible causal chain exists.
 
 ---
 
@@ -33,7 +33,7 @@
 
 | ID | Event | Domain | Prior WEP | Trigger indicator | Lead time | Impact vector(s) | Counter-measures already in place |
 |----|-------|--------|-----------|-------------------|-----------|------------------|-----------------------------------|
-| W1 | | Political | unlikely (≈ 15 %) | | | coalition / fiscal | |
+| W1 | | Political | Very unlikely (≈ 15 %) | | | coalition / fiscal | |
 | W2 | | Economic | | | | | |
 | W3 | | Security | | | | | |
 | W4 | | Social | | | | | |

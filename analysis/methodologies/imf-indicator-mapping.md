@@ -12,7 +12,7 @@
 - IMF aggregate codes `EU`, `EA`, `G7`, `G20` are accepted by the IMF API whereas WB's `EUU`, `EMU` are rejected by the IMF endpoint.
 - IMF provides a single `"IMF, World Economic Outlook, April 2026"` provenance line with no vintage patching.
 
-**Enforcement** — the economic-context gate check in [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) accepts WB **or** IMF evidence; IMF citations alone are sufficient to pass.
+**Enforcement** — the evidence-host regex in [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) Check 4 accepts **any** of `api.imf.org`, `data.imf.org`, or `www.imf.org` as a primary-source URL host alongside `worldbank.org`; IMF citations alone are sufficient to pass.
 
 ---
 

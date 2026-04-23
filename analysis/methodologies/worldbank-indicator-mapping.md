@@ -6,7 +6,7 @@
 
 **Wave-2 scope (April 2026)** — World Bank is the **authoritative source** for social / demographics / health / education / environment / defence / agriculture / innovation / governance indicators only. All **economic / monetary / fiscal / trade** context (GDP, inflation, unemployment, FDI, fiscal balance, debt, monetary, exchange rates) is sourced from IMF — see [`imf-indicator-mapping.md`](imf-indicator-mapping.md) and [`analysis/imf/`](../imf/). Legacy WB economic codes below remain valid for pre-Wave-2 articles, but **new articles must use the IMF counterpart**.
 
-**Enforcement** — the gate check in [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) accepts **either** WB **or** IMF evidence for the economic-context dimension; for non-economic dimensions only WB is accepted.
+**Enforcement** — the gate check in [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) Check 4 currently verifies that `swot-analysis.md` and `significance-scoring.md` include primary-source evidence (a `dok_id` or an allowed primary-source URL host — `riksdagen.se`, `regeringen.se`, `scb.se`, `worldbank.org`, `api.imf.org`, `data.imf.org`, `www.imf.org`). It does **not** currently enforce a separate economic-context dimension or validate WB-only vs IMF-only sourcing by dimension; treat the Wave-2 source split above as **methodology guidance** unless and until the gate is expanded.
 
 ---
 

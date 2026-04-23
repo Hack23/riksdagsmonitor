@@ -17,7 +17,7 @@ This is the **only** gate separating analysis from article generation. If it fai
    - **Family D (7)** — `election-2026-analysis.md`, `voter-segmentation.md`, `coalition-mathematics.md`, `historical-parallels.md`, `media-framing-analysis.md`, `implementation-feasibility.md`, `forward-indicators.md`.
 2. **Per-document coverage (Family E)** — `$ANALYSIS_DIR/documents/` contains one `.md` per `dok_id` listed in `data-download-manifest.md` (metadata-only documents are tagged, not skipped).
 3. **No stubs** — zero occurrences of `AI_MUST_REPLACE`, `[REQUIRED]`, `TODO:`, or `Lorem ipsum` across all artifacts.
-4. **Evidence citations** — `swot-analysis.md` and `significance-scoring.md` contain at least one piece of primary-source evidence per quadrant / ranked item. Accepted evidence patterns: a `dok_id` (e.g. `H901FiU1`, `HD01CU27`) **or** a primary-source URL host (`riksdagen.se`, `regeringen.se`, `scb.se`, `worldbank.org`, `data.imf.org`). Enforced against SWOT `### Strengths/Weaknesses/Opportunities/Threats` sections (bullets + table rows) and significance-scoring bullets **plus** ranking table rows and Mermaid node labels.
+4. **Evidence citations** — `swot-analysis.md` and `significance-scoring.md` contain at least one piece of primary-source evidence per quadrant / ranked item. Accepted evidence patterns: a `dok_id` (e.g. `H901FiU1`, `HD01CU27`) **or** a primary-source URL host (`riksdagen.se`, `regeringen.se`, `scb.se`, `worldbank.org`, `api.imf.org`, `data.imf.org`, `www.imf.org`). Enforced against SWOT `### Strengths/Weaknesses/Opportunities/Threats` sections (bullets + table rows) and significance-scoring bullets **plus** ranking table rows and Mermaid node labels.
 5. **Mermaid diagrams** — every Family A and Family D synthesis file contains ≥ 1 Mermaid diagram with colour-coded `style` directives (or `themeVariables` / `%%{init …}` block).
 6. **Pass-2 done** — agent has read back each enforced Pass-2 artifact after creation and committed improvements: all Family A, B, C, and D artifacts except `data-download-manifest.md`. (Enforced by file mtime diff: final file mtime > creation time + 3 min, OR two git-history snapshots on disk.)
 7. **Family C structure checks** (extension-quality gate):
@@ -59,7 +59,7 @@ SYNTHESIS=(synthesis-summary.md swot-analysis.md risk-assessment.md threat-analy
            media-framing-analysis.md implementation-feasibility.md \
            forward-indicators.md)
 DOK_RE='[Hh][A-Za-z0-9]{3,}[0-9]+'
-EVIDENCE_RE='[Hh][A-Za-z0-9]{3,}[0-9]+|riksdagen\.se|regeringen\.se|scb\.se|worldbank\.org|data\.imf\.org'
+EVIDENCE_RE='[Hh][A-Za-z0-9]{3,}[0-9]+|riksdagen\.se|regeringen\.se|scb\.se|worldbank\.org|api\.imf\.org|data\.imf\.org|www\.imf\.org'
 FAIL=0
 
 # Check 1 — artifact existence (all 23)
@@ -245,8 +245,8 @@ Non-blocking for `standard` / `deep` runs; **blocking for `comprehensive` / Tier
 | S3 | `mcp-reliability-audit.md` | `comprehensive`, or any run with ≥ 1 MCP endpoint failure | [`per-artifact-methodologies.md#mcp-reliability-audit`](../../analysis/methodologies/per-artifact-methodologies.md#mcp-reliability-audit) |
 | S4 | `workflow-audit.md` | `comprehensive` | [`per-artifact-methodologies.md#workflow-audit`](../../analysis/methodologies/per-artifact-methodologies.md#workflow-audit) |
 | S5 | `cross-run-diff.md` | any article type with ≥ 2 production runs | [`per-artifact-methodologies.md#cross-run-diff`](../../analysis/methodologies/per-artifact-methodologies.md#cross-run-diff) |
-| S6 | `cross-session-intelligence.md` | `weekly-review`, `monthly-review`, quarterly aggregation | [`per-artifact-methodologies.md#cross-session-intelligence`](../../analysis/methodologies/per-artifact-methodologies.md#cross-session-intelligence) |
-| S7 | `session-baseline.md` | `weekly-review`, `monthly-review`, any aggregation workflow | [`per-artifact-methodologies.md#session-baseline`](../../analysis/methodologies/per-artifact-methodologies.md#session-baseline) |
+| S6 | `cross-session-intelligence.md` | `weekly-review`, `monthly-review` (the aggregation article types the probe detects) | [`per-artifact-methodologies.md#cross-session-intelligence`](../../analysis/methodologies/per-artifact-methodologies.md#cross-session-intelligence) |
+| S7 | `session-baseline.md` | `weekly-review`, `monthly-review` (the aggregation article types the probe detects) | [`per-artifact-methodologies.md#session-baseline`](../../analysis/methodologies/per-artifact-methodologies.md#session-baseline) |
 
 Inline bash probe — append to the main block after `FAIL=0` bookkeeping completes. The gate blocks on **aggregation article types** (`weekly-review`, `monthly-review`), on any run whose **tier** is `comprehensive` (the Tier-C run mode), and on `cross-run-diff.md` when the workflow has **≥ 2 production runs** of the same article type. `ARTICLE_TYPE` encodes the workflow family; `ANALYSIS_TIER` (when set) encodes the depth tier (`standard` | `deep` | `comprehensive`); `ANALYSIS_RUN_COUNT` (when set) is the numeric count of runs for the same article-generation cycle (if unset or non-numeric, treated as `1`).
 
