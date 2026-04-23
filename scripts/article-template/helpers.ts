@@ -430,6 +430,8 @@ export function generateSiteFooter(lang: Language | string): string {
   const homePath: string = normalizedLang === 'en' ? '../index.html' : `../index_${normalizedLang}.html`;
   const newsPath: string = getNewsIndexFilename(normalizedLang);
   const dashboardPath: string = normalizedLang === 'en' ? '../dashboard/index.html' : `../dashboard/index_${normalizedLang}.html`;
+  const sitemapPath: string = normalizedLang === 'en' ? '../sitemap.html' : `../sitemap_${normalizedLang}.html`;
+  const piPath: string = normalizedLang === 'en' ? '../political-intelligence.html' : `../political-intelligence_${normalizedLang}.html`;
 
   return `<footer role="contentinfo">
   <div class="footer-content">
@@ -452,6 +454,8 @@ export function generateSiteFooter(lang: Language | string): string {
         <li><a href="${homePath}">${labels.home}</a></li>
         <li><a href="${newsPath}">${labels.news}</a></li>
         <li><a href="${dashboardPath}">${labels.dashboard}</a></li>
+        <li><a href="${piPath}"><span aria-hidden="true">🧠</span> ${labels.politicalIntelligence}</a></li>
+        <li><a href="${sitemapPath}"><span aria-hidden="true">🗺️</span> ${labels.sitemap}</a></li>
         <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">${labels.ciaplatform}</a></li>
         <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
         <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>

@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteligencia política — Riksdagsmonitor</title>
+    <meta name="description" content="Índice completo de los activos de inteligencia política de Riksdagsmonitor: metodologías, plantillas de análisis y artefactos diarios que cubren el Parlamento y el Gobierno suecos.">
+    <meta name="keywords" content="inteligencia política, Riksdagsmonitor, OSINT, metodologías de análisis, plantillas de análisis, Parlamento sueco, análisis político, marco de inteligencia">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="James Pether Sörling, CISSP, CISM">
+    <meta name="theme-color" content="#0a0e27">
+    <meta name="color-scheme" content="dark light">
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Hreflang + canonical -->
+    <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/political-intelligence.html">
+    <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/political-intelligence_sv.html">
+    <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/political-intelligence_da.html">
+    <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/political-intelligence_no.html">
+    <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/political-intelligence_fi.html">
+    <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/political-intelligence_de.html">
+    <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/political-intelligence_fr.html">
+    <link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/political-intelligence_es.html">
+    <link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/political-intelligence_nl.html">
+    <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/political-intelligence_ar.html">
+    <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/political-intelligence_he.html">
+    <link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/political-intelligence_ja.html">
+    <link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/political-intelligence_ko.html">
+    <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/political-intelligence_zh.html">
+    <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/political-intelligence.html">
+    <link rel="canonical" href="https://riksdagsmonitor.com/political-intelligence_es.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Riksdagsmonitor">
+    <meta property="og:title" content="Inteligencia política — Riksdagsmonitor">
+    <meta property="og:description" content="Índice completo de los activos de inteligencia política de Riksdagsmonitor: metodologías, plantillas de análisis y artefactos diarios que cubren el Parlamento y el Gobierno suecos.">
+    <meta property="og:url" content="https://riksdagsmonitor.com/political-intelligence_es.html">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Riksdagsmonitor Inteligencia política">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@riksdagsmonitor">
+    <meta name="twitter:title" content="Inteligencia política — Riksdagsmonitor">
+    <meta name="twitter:description" content="Índice completo de los activos de inteligencia política de Riksdagsmonitor: metodologías, plantillas de análisis y artefactos diarios que cubren el Parlamento y el Gobierno suecos.">
+    <meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <style>
+        .pi-container { max-width: 1280px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+        .pi-hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-bottom: 2.5rem;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(255, 0, 110, 0.06));
+            border: 1px solid rgba(0, 217, 255, 0.25);
+            border-radius: 12px;
+        }
+        .pi-hero h1 {
+            font-family: var(--font-heading, 'Orbitron', sans-serif);
+            color: var(--primary-cyan, #00d9ff);
+            font-size: clamp(2rem, 4.5vw, 3.25rem);
+            margin: 0 0 0.5rem;
+            letter-spacing: 0.02em;
+        }
+        .pi-hero p.pi-subtitle {
+            color: var(--primary-yellow, #ffbe0b);
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin: 0.25rem 0 1rem;
+            font-weight: 500;
+        }
+        .pi-hero p.pi-intro {
+            color: var(--light-text, #e0e0e0);
+            max-width: 900px;
+            margin: 1rem auto 0;
+            line-height: 1.7;
+        }
+        .pi-stats { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+        .pi-stat {
+            background: rgba(0, 217, 255, 0.08);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            padding: 0.75rem 1.25rem;
+            border-radius: 999px;
+            color: var(--light-text, #e0e0e0);
+            font-size: 0.95rem;
+        }
+        .pi-stat strong { color: var(--primary-cyan, #00d9ff); font-size: 1.15rem; margin-right: 0.35rem; }
+        .toc-nav {
+            background: var(--mid-bg, #1a1e3d);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-cyan, #00d9ff);
+        }
+        .toc-nav h2 {
+            font-family: var(--font-heading, 'Orbitron', sans-serif);
+            color: var(--primary-cyan, #00d9ff);
+            font-size: 1.1rem;
+            margin: 0 0 0.75rem;
+        }
+        .toc-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem; }
+        .toc-list a { color: var(--primary-cyan, #00d9ff); text-decoration: none; padding: 0.35rem 0; display: inline-block; }
+        .toc-list a:hover, .toc-list a:focus { text-decoration: underline; }
+
+        .pi-section { margin-bottom: 3.5rem; }
+        .pi-section-header {
+            display: flex; align-items: baseline; justify-content: space-between;
+            flex-wrap: wrap; gap: 1rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-magenta, #ff006e);
+        }
+        .pi-section-header h2 {
+            font-family: var(--font-heading, 'Orbitron', sans-serif);
+            color: var(--primary-magenta, #ff006e);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin: 0;
+        }
+        .pi-section-header .pi-section-link a {
+            color: var(--primary-cyan, #00d9ff);
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+        .pi-section-header .pi-section-link a:hover { text-decoration: underline; }
+        .pi-section-desc { color: var(--muted-text, #a0a3bd); max-width: 900px; line-height: 1.6; margin: 0.5rem 0 1.5rem; }
+
+        .pi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
+        .pi-card {
+            background: var(--card-bg, rgba(26, 30, 61, 0.5));
+            border: 1px solid rgba(0, 217, 255, 0.18);
+            border-radius: 10px;
+            padding: 1.25rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .pi-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0, 217, 255, 0.15); border-color: rgba(0, 217, 255, 0.45); }
+        .pi-card-icon { font-size: 2rem; line-height: 1; margin-bottom: 0.5rem; }
+        .pi-card-title { margin: 0 0 0.5rem; font-family: var(--font-heading, 'Orbitron', sans-serif); font-size: 1.05rem; }
+        .pi-card-title a { color: var(--primary-cyan, #00d9ff); text-decoration: none; }
+        .pi-card-title a:hover, .pi-card-title a:focus { text-decoration: underline; }
+        .pi-card-desc { color: var(--light-text, #e0e0e0); line-height: 1.55; margin: 0 0 0.75rem; font-size: 0.95rem; }
+        .pi-card-meta { margin: 0 0 0.5rem; }
+        .pi-card-file { font-family: var(--font-mono, 'Courier New', monospace); font-size: 0.8rem; color: var(--primary-yellow, #ffbe0b); background: rgba(255, 190, 11, 0.08); border: 1px solid rgba(255, 190, 11, 0.25); border-radius: 4px; padding: 0.1rem 0.4rem; }
+        .pi-card-link a { color: var(--primary-cyan, #00d9ff); font-size: 0.9rem; text-decoration: none; }
+        .pi-card-link a:hover { text-decoration: underline; }
+
+        .pi-day { background: var(--card-bg, rgba(26, 30, 61, 0.5)); border: 1px solid rgba(0, 217, 255, 0.18); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+        .pi-day-header { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.75rem; }
+        .pi-day-header h3 { margin: 0; font-family: var(--font-heading, 'Orbitron', sans-serif); color: var(--primary-cyan, #00d9ff); font-size: 1.2rem; }
+        .pi-day-total { background: rgba(255, 0, 110, 0.12); border: 1px solid rgba(255, 0, 110, 0.35); color: var(--primary-magenta, #ff006e); padding: 0.15rem 0.6rem; border-radius: 999px; font-size: 0.85rem; }
+        .pi-day-github { margin-left: auto; color: var(--primary-cyan, #00d9ff); text-decoration: none; font-size: 0.9rem; }
+        .pi-day-github:hover { text-decoration: underline; }
+
+        .pi-streams { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.75rem; }
+        .pi-stream a {
+            display: flex; align-items: center; gap: 0.5rem; color: var(--primary-cyan, #00d9ff); text-decoration: none;
+            background: rgba(0, 217, 255, 0.05); padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid rgba(0, 217, 255, 0.15);
+        }
+        .pi-stream a:hover, .pi-stream a:focus { background: rgba(0, 217, 255, 0.12); border-color: rgba(0, 217, 255, 0.4); }
+        .pi-stream-icon { font-size: 1.1rem; }
+        .pi-stream-name { flex: 1; font-weight: 600; }
+        .pi-stream-count { background: rgba(0, 217, 255, 0.18); color: var(--primary-cyan, #00d9ff); padding: 0.1rem 0.5rem; border-radius: 999px; font-size: 0.8rem; }
+        .pi-stream-desc { margin: 0.25rem 0 0; font-size: 0.8rem; color: var(--muted-text, #a0a3bd); line-height: 1.5; }
+
+        .pi-older-toggle { display: block; width: 100%; text-align: left; background: transparent; border: 1px dashed rgba(0, 217, 255, 0.3); color: var(--primary-cyan, #00d9ff); padding: 0.75rem 1rem; border-radius: 8px; cursor: pointer; font-size: 1rem; margin-top: 0.5rem; }
+        .pi-older-toggle:hover, .pi-older-toggle:focus { background: rgba(0, 217, 255, 0.06); }
+        .pi-older-content[hidden] { display: none; }
+
+        .pi-other-langs { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 2rem; }
+        .pi-other-langs a { padding: 0.5rem 0.8rem; border: 1px solid rgba(0, 217, 255, 0.3); border-radius: 999px; color: var(--primary-cyan, #00d9ff); text-decoration: none; font-size: 0.9rem; }
+        .pi-other-langs a:hover, .pi-other-langs a:focus { background: rgba(0, 217, 255, 0.08); text-decoration: underline; }
+
+        @media (max-width: 640px) {
+            .pi-container { padding: 1rem 0.5rem 3rem; }
+            .pi-hero { padding: 2rem 0.75rem; }
+            .pi-grid { grid-template-columns: 1fr; }
+            .pi-streams { grid-template-columns: 1fr; }
+        }
+
+        [dir="rtl"] .pi-day-github { margin-left: 0; margin-right: auto; }
+        [dir="rtl"] .toc-nav { border-left: none; border-right: 4px solid var(--primary-cyan, #00d9ff); }
+    </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Inteligencia política — Riksdagsmonitor",
+  "description": "Índice completo de los activos de inteligencia política de Riksdagsmonitor: metodologías, plantillas de análisis y artefactos diarios que cubren el Parlamento y el Gobierno suecos.",
+  "inLanguage": "es",
+  "url": "https://riksdagsmonitor.com/political-intelligence_es.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Riksdagsmonitor",
+    "url": "https://riksdagsmonitor.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hack23 AB",
+    "url": "https://www.hack23.com"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Swedish Parliament political intelligence"
+  },
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "name": "Metodologías",
+      "url": "https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/methodologies"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Plantillas de análisis",
+      "url": "https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/templates"
+    },
+    {
+      "@type": "Dataset",
+      "name": "Artefactos de análisis diarios",
+      "url": "https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily"
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://riksdagsmonitor.com/index_es.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Inteligencia política",
+      "item": "https://riksdagsmonitor.com/political-intelligence_es.html"
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="pi-container">
+        <header class="pi-hero">
+            <a href="/index_es.html" aria-label="Riksdagsmonitor Home">
+                <img src="/images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" style="display:block;max-width:100px;height:auto;margin:0 auto 0.75rem" width="100" height="100" loading="eager">
+            </a>
+            <h1><span aria-hidden="true">🧠</span> Inteligencia política</h1>
+            <p class="pi-subtitle">Metodologías, plantillas y la producción analítica diaria completa de Riksdagsmonitor</p>
+            <p class="pi-intro">Riksdagsmonitor produce inteligencia política basada en evidencia sobre el Parlamento y el Gobierno sueco bajo un marco analítico disciplinado. Este índice expone toda la biblioteca de metodologías, las plantillas de análisis reutilizables y cada artefacto de inteligencia diario — todos enlazados a GitHub para una trazabilidad completa.</p>
+            <div class="pi-stats" role="list">
+                <span class="pi-stat" role="listitem"><strong>19</strong> Metodologías</span>
+                <span class="pi-stat" role="listitem"><strong>35</strong> Plantillas de análisis</span>
+                <span class="pi-stat" role="listitem"><strong>28</strong> Artefactos de análisis diarios</span>
+                <span class="pi-stat" role="listitem"><strong>2986</strong> artefactos</span>
+            </div>
+        </header>
+
+        <nav class="toc-nav" aria-label="Navegación rápida">
+            <h2>Navegación rápida</h2>
+            <ul class="toc-list">
+                <li><a href="#methodologies"><span aria-hidden="true">📚</span> Metodologías</a></li>
+                <li><a href="#templates"><span aria-hidden="true">📋</span> Plantillas de análisis</a></li>
+                <li><a href="#daily"><span aria-hidden="true">📅</span> Artefactos de análisis diarios</a></li>
+                <li><a href="/sitemap_es.html"><span aria-hidden="true">🗺️</span> Mapa del sitio</a></li>
+            </ul>
+        </nav>
+
+        <main id="main-content">
+            <section id="methodologies" class="pi-section">
+                <div class="pi-section-header">
+                    <h2><span aria-hidden="true">📚</span> Metodologías</h2>
+                    <span class="pi-section-link"><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/methodologies" target="_blank" rel="noopener noreferrer">Explorar el directorio completo en GitHub <span aria-hidden="true">↗</span></a></span>
+                </div>
+                <p class="pi-section-desc">Marcos canónicos que rigen cada análisis producido en la plataforma — desde protocolos impulsados por IA y puntuación de riesgo político hasta estándares de amenaza, SWOT y calidad de referencia.</p>
+                <div class="pi-grid">
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🤖</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md" target="_blank" rel="noopener noreferrer">Ai Driven Analysis Guide</a></h3>
+          <p class="pi-card-desc">The single canonical protocol every agentic workflow follows — step-by-step analysis with positive voice, color-coded Mermaid, and deep political intelligence.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">ai-driven-analysis-guide.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📐</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/analytical-supplementary-methodology.md" target="_blank" rel="noopener noreferrer">Analytical Supplementary Methodology</a></h3>
+          <p class="pi-card-desc">Supplementary analytical techniques layered on top of core methodologies for edge cases and specialised inquiries.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">analytical-supplementary-methodology.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/analytical-supplementary-methodology.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📚</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/artifact-catalog.md" target="_blank" rel="noopener noreferrer">Artifact Catalog</a></h3>
+          <p class="pi-card-desc">Catalog of every analytical artifact the platform can produce, with scope, inputs, and expected deliverables.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">artifact-catalog.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/artifact-catalog.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🗳️</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/electoral-domain-methodology.md" target="_blank" rel="noopener noreferrer">Electoral Domain Methodology</a></h3>
+          <p class="pi-card-desc">Forecasting, coalition math, and voter-segmentation framework specialised for Swedish elections.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">electoral-domain-methodology.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/electoral-domain-methodology.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🌐</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/imf-indicator-mapping.md" target="_blank" rel="noopener noreferrer">Imf Indicator Mapping</a></h3>
+          <p class="pi-card-desc">Mapping of IMF macroeconomic indicators into Riksdagsmonitor&#039;s political-economy analysis.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">imf-indicator-mapping.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/imf-indicator-mapping.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🕵️</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/osint-tradecraft-standards.md" target="_blank" rel="noopener noreferrer">Osint Tradecraft Standards</a></h3>
+          <p class="pi-card-desc">OSINT tradecraft standards: source evaluation, attribution, verification, and GDPR-compliant collection.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">osint-tradecraft-standards.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/osint-tradecraft-standards.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🧩</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md" target="_blank" rel="noopener noreferrer">Per Artifact Methodologies</a></h3>
+          <p class="pi-card-desc">Per-artifact methodology notes bridging generic frameworks with artifact-specific analytical rigor.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">per-artifact-methodologies.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📄</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-document-methodology.md" target="_blank" rel="noopener noreferrer">Per Document Methodology</a></h3>
+          <p class="pi-card-desc">Document-level methodology guidance for annotating, scoring, and contextualising parliamentary documents.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">per-document-methodology.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-document-methodology.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🏷️</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-classification-guide.md" target="_blank" rel="noopener noreferrer">Political Classification Guide</a></h3>
+          <p class="pi-card-desc">Classification taxonomy for political content: actors, stances, risk surfaces, and information-security classification.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">political-classification-guide.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-classification-guide.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">⚠️</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-risk-methodology.md" target="_blank" rel="noopener noreferrer">Political Risk Methodology</a></h3>
+          <p class="pi-card-desc">Comprehensive political-risk scoring methodology integrating coalition stability, policy volatility, and narrative risks.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">political-risk-methodology.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-risk-methodology.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🎨</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-style-guide.md" target="_blank" rel="noopener noreferrer">Political Style Guide</a></h3>
+          <p class="pi-card-desc">Editorial and political style guide — tone, balance, attribution, and multi-language considerations.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">political-style-guide.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-style-guide.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🧮</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-swot-framework.md" target="_blank" rel="noopener noreferrer">Political Swot Framework</a></h3>
+          <p class="pi-card-desc">SWOT framework adapted for political actors, coalitions, and policy positions.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">political-swot-framework.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-swot-framework.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🛡️</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-threat-framework.md" target="_blank" rel="noopener noreferrer">Political Threat Framework</a></h3>
+          <p class="pi-card-desc">Threat modelling framework for political actors and decision-making processes, including adversary mapping.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">political-threat-framework.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-threat-framework.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📘</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/README.md" target="_blank" rel="noopener noreferrer">README</a></h3>
+          <p class="pi-card-desc">Overview and entry-point for the full methodology library.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">README.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/README.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📊</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/reference-quality-thresholds.json" target="_blank" rel="noopener noreferrer">Reference Quality Thresholds</a></h3>
+          <p class="pi-card-desc">Quantitative thresholds used to evaluate reference-source quality across every analysis.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">reference-quality-thresholds.json</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/reference-quality-thresholds.json" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🚀</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/strategic-extensions-methodology.md" target="_blank" rel="noopener noreferrer">Strategic Extensions Methodology</a></h3>
+          <p class="pi-card-desc">Strategic extensions to core methodologies — scenario planning, wildcard analysis, and long-horizon forecasting.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">strategic-extensions-methodology.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/strategic-extensions-methodology.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🧬</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/structural-metadata-methodology.md" target="_blank" rel="noopener noreferrer">Structural Metadata Methodology</a></h3>
+          <p class="pi-card-desc">Structural metadata extraction methodology for every parliamentary document type.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">structural-metadata-methodology.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/structural-metadata-methodology.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🧠</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/synthesis-methodology.md" target="_blank" rel="noopener noreferrer">Synthesis Methodology</a></h3>
+          <p class="pi-card-desc">Synthesis methodology used to combine multiple artifacts into cohesive intelligence products.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">synthesis-methodology.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/synthesis-methodology.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🌍</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/worldbank-indicator-mapping.md" target="_blank" rel="noopener noreferrer">Worldbank Indicator Mapping</a></h3>
+          <p class="pi-card-desc">Mapping of World Bank development indicators into political-economic analysis.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">worldbank-indicator-mapping.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/worldbank-indicator-mapping.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+                </div>
+            </section>
+
+            <section id="templates" class="pi-section">
+                <div class="pi-section-header">
+                    <h2><span aria-hidden="true">📋</span> Plantillas de análisis</h2>
+                    <span class="pi-section-link"><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/templates" target="_blank" rel="noopener noreferrer">Explorar el directorio completo en GitHub <span aria-hidden="true">↗</span></a></span>
+                </div>
+                <p class="pi-section-desc">Plantillas de salida estructuradas utilizadas por cada flujo de trabajo agéntico para garantizar productos de inteligencia consistentes, ricos en Mermaid y etiquetados de confianza.</p>
+                <div class="pi-grid">
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📇</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/analysis-index.md" target="_blank" rel="noopener noreferrer">Analysis Index</a></h3>
+          <p class="pi-card-desc">Master index template linking every artifact produced during a given workflow run.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">analysis-index.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/analysis-index.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🧮</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/coalition-mathematics.md" target="_blank" rel="noopener noreferrer">Coalition Mathematics</a></h3>
+          <p class="pi-card-desc">Coalition-math template: seat arithmetic, blocking minorities, and majority feasibility scenarios.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">coalition-mathematics.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/coalition-mathematics.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🌐</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/comparative-international.md" target="_blank" rel="noopener noreferrer">Comparative International</a></h3>
+          <p class="pi-card-desc">Comparative international template contextualising Swedish developments against peer democracies.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">comparative-international.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/comparative-international.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🔗</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/cross-reference-map.md" target="_blank" rel="noopener noreferrer">Cross Reference Map</a></h3>
+          <p class="pi-card-desc">Cross-reference map linking every claim to its supporting sources and analytical dependencies.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">cross-reference-map.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/cross-reference-map.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🔁</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/cross-run-diff.md" target="_blank" rel="noopener noreferrer">Cross Run Diff</a></h3>
+          <p class="pi-card-desc">Diff template comparing analyses across runs, exposing new signals, reversals, and drift.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">cross-run-diff.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/cross-run-diff.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🧵</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/cross-session-intelligence.md" target="_blank" rel="noopener noreferrer">Cross Session Intelligence</a></h3>
+          <p class="pi-card-desc">Cross-session intelligence template synthesising learning across consecutive workflow runs.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">cross-session-intelligence.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/cross-session-intelligence.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📥</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/data-download-manifest.md" target="_blank" rel="noopener noreferrer">Data Download Manifest</a></h3>
+          <p class="pi-card-desc">Manifest template documenting every dataset downloaded for an analysis, including hashes and provenance.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">data-download-manifest.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/data-download-manifest.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">😈</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/devils-advocate.md" target="_blank" rel="noopener noreferrer">Devils Advocate</a></h3>
+          <p class="pi-card-desc">Devil&#039;s-advocate template stress-testing conclusions with the strongest counter-arguments.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">devils-advocate.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/devils-advocate.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🗳️</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/election-2026-analysis.md" target="_blank" rel="noopener noreferrer">Election 2026 Analysis</a></h3>
+          <p class="pi-card-desc">Structured template specialised for the Swedish 2026 election cycle.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">election-2026-analysis.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/election-2026-analysis.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📋</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md" target="_blank" rel="noopener noreferrer">Executive Brief</a></h3>
+          <p class="pi-card-desc">Executive-brief template — the top-line intelligence summary for senior decision-makers.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">executive-brief.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🔭</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/forward-indicators.md" target="_blank" rel="noopener noreferrer">Forward Indicators</a></h3>
+          <p class="pi-card-desc">Forward-indicator template listing the signals worth monitoring over the coming days and weeks.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">forward-indicators.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/forward-indicators.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📜</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/historical-parallels.md" target="_blank" rel="noopener noreferrer">Historical Parallels</a></h3>
+          <p class="pi-card-desc">Historical-parallels template drawing on 50+ years of parliamentary data.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">historical-parallels.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/historical-parallels.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🛠️</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/implementation-feasibility.md" target="_blank" rel="noopener noreferrer">Implementation Feasibility</a></h3>
+          <p class="pi-card-desc">Implementation-feasibility template assessing whether proposed policies can realistically be delivered.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">implementation-feasibility.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/implementation-feasibility.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🎯</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/intelligence-assessment.md" target="_blank" rel="noopener noreferrer">Intelligence Assessment</a></h3>
+          <p class="pi-card-desc">Full intelligence-assessment template covering judgements, confidence, gaps, and dissenting views.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">intelligence-assessment.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/intelligence-assessment.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🔒</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/mcp-reliability-audit.md" target="_blank" rel="noopener noreferrer">Mcp Reliability Audit</a></h3>
+          <p class="pi-card-desc">MCP reliability audit template documenting every MCP tool invocation and its verification status.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">mcp-reliability-audit.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/mcp-reliability-audit.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📺</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/media-framing-analysis.md" target="_blank" rel="noopener noreferrer">Media Framing Analysis</a></h3>
+          <p class="pi-card-desc">Media-framing analysis template mapping how narratives spread across outlets and languages.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">media-framing-analysis.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/media-framing-analysis.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🪞</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/methodology-reflection.md" target="_blank" rel="noopener noreferrer">Methodology Reflection</a></h3>
+          <p class="pi-card-desc">Methodology-reflection template capturing lessons learned for continuous improvement.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">methodology-reflection.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/methodology-reflection.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🧾</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/per-file-political-intelligence.md" target="_blank" rel="noopener noreferrer">Per File Political Intelligence</a></h3>
+          <p class="pi-card-desc">Per-file political-intelligence template used to annotate individual parliamentary documents.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">per-file-political-intelligence.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/per-file-political-intelligence.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🌳</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/pestle-analysis.md" target="_blank" rel="noopener noreferrer">Pestle Analysis</a></h3>
+          <p class="pi-card-desc">PESTLE analysis template: Political, Economic, Social, Technological, Legal, Environmental factors.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">pestle-analysis.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/pestle-analysis.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🏷️</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/political-classification.md" target="_blank" rel="noopener noreferrer">Political Classification</a></h3>
+          <p class="pi-card-desc">Political-classification template applying the classification taxonomy to the current artifact.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">political-classification.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/political-classification.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🛡️</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/political-stride-assessment.md" target="_blank" rel="noopener noreferrer">Political Stride Assessment</a></h3>
+          <p class="pi-card-desc">STRIDE-inspired political-threat assessment template.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">political-stride-assessment.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/political-stride-assessment.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📊</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/quantitative-swot.md" target="_blank" rel="noopener noreferrer">Quantitative Swot</a></h3>
+          <p class="pi-card-desc">Quantitative SWOT template converting SWOT items into scored, comparable dimensions.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">quantitative-swot.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/quantitative-swot.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📘</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/README.md" target="_blank" rel="noopener noreferrer">README</a></h3>
+          <p class="pi-card-desc">Overview and entry-point for the full template library.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">README.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/README.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">⭐</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/reference-analysis-quality.md" target="_blank" rel="noopener noreferrer">Reference Analysis Quality</a></h3>
+          <p class="pi-card-desc">Reference-quality template scoring sources against the platform&#039;s thresholds.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">reference-analysis-quality.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/reference-analysis-quality.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">⚠️</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/risk-assessment.md" target="_blank" rel="noopener noreferrer">Risk Assessment</a></h3>
+          <p class="pi-card-desc">Risk-assessment template enumerating risk vectors, likelihood, impact, and mitigations.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">risk-assessment.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/risk-assessment.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🎲</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/scenario-analysis.md" target="_blank" rel="noopener noreferrer">Scenario Analysis</a></h3>
+          <p class="pi-card-desc">Scenario-analysis template projecting alternative futures with probabilities and drivers.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">scenario-analysis.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/scenario-analysis.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📍</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/session-baseline.md" target="_blank" rel="noopener noreferrer">Session Baseline</a></h3>
+          <p class="pi-card-desc">Session-baseline template capturing the starting state for a workflow run.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">session-baseline.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/session-baseline.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🏆</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/significance-scoring.md" target="_blank" rel="noopener noreferrer">Significance Scoring</a></h3>
+          <p class="pi-card-desc">Significance-scoring template ranking artifacts by political and societal importance.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">significance-scoring.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/significance-scoring.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">👥</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/stakeholder-impact.md" target="_blank" rel="noopener noreferrer">Stakeholder Impact</a></h3>
+          <p class="pi-card-desc">Stakeholder-impact template mapping affected groups and expected consequences.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">stakeholder-impact.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/stakeholder-impact.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">📈</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/swot-analysis.md" target="_blank" rel="noopener noreferrer">Swot Analysis</a></h3>
+          <p class="pi-card-desc">Classic SWOT-analysis template customised for political actors and policies.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">swot-analysis.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/swot-analysis.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🧠</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/synthesis-summary.md" target="_blank" rel="noopener noreferrer">Synthesis Summary</a></h3>
+          <p class="pi-card-desc">Synthesis-summary template consolidating multiple artifacts into a single intelligence product.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">synthesis-summary.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/synthesis-summary.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🛡️</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/threat-analysis.md" target="_blank" rel="noopener noreferrer">Threat Analysis</a></h3>
+          <p class="pi-card-desc">Threat-analysis template identifying adversaries, TTPs, and political-threat surfaces.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">threat-analysis.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/threat-analysis.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">👥</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/voter-segmentation.md" target="_blank" rel="noopener noreferrer">Voter Segmentation</a></h3>
+          <p class="pi-card-desc">Voter-segmentation template modelling constituencies, demographics, and behavioural clusters.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">voter-segmentation.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/voter-segmentation.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🦢</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/wildcards-blackswans.md" target="_blank" rel="noopener noreferrer">Wildcards Blackswans</a></h3>
+          <p class="pi-card-desc">Wildcards &amp; black-swans template capturing low-probability, high-impact events.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">wildcards-blackswans.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/wildcards-blackswans.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article class="pi-card">
+          <div class="pi-card-icon" aria-hidden="true">🔍</div>
+          <h3 class="pi-card-title"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/workflow-audit.md" target="_blank" rel="noopener noreferrer">Workflow Audit</a></h3>
+          <p class="pi-card-desc">Workflow-audit template documenting every step, tool call, and artifact of a run.</p>
+          <p class="pi-card-meta"><code class="pi-card-file">workflow-audit.md</code></p>
+          <p class="pi-card-link"><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/workflow-audit.md" target="_blank" rel="noopener noreferrer">Abrir en GitHub <span aria-hidden="true">↗</span></a></p>
+        </article>
+                </div>
+            </section>
+
+            <section id="daily" class="pi-section">
+                <div class="pi-section-header">
+                    <h2><span aria-hidden="true">📅</span> Artefactos de análisis diarios</h2>
+                    <span class="pi-section-link"><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily" target="_blank" rel="noopener noreferrer">Explorar todos los días de análisis en GitHub <span aria-hidden="true">↗</span></a></span>
+                </div>
+                <p class="pi-section-desc">Cada artefacto publicado bajo analysis/daily/, agrupado por fecha y flujo de contenido (proposiciones, mociones, interpelaciones, informes de comité, análisis vespertinos, capturas en tiempo real, inspecciones profundas, etc.).</p>
+
+                <h3 style="font-family: var(--font-heading, 'Orbitron', sans-serif); color: var(--primary-yellow, #ffbe0b); font-size: 1.1rem; margin-top: 1.5rem;">Días de análisis más recientes</h3>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-23">2026-04-23</time></h3>
+          <span class="pi-day-total" aria-label="136 artefactos">136 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-23" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-23)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-23/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="33 artefactos">33</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-23/month-ahead" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📆</span>
+                <span class="pi-stream-name">Month Ahead</span>
+                <span class="pi-stream-count" aria-label="35 artefactos">35</span>
+              </a>
+              <p class="pi-stream-desc">Month-ahead forward-looking intelligence covering scheduled activity.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-23/monthly-review" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📊</span>
+                <span class="pi-stream-name">Monthly Review</span>
+                <span class="pi-stream-count" aria-label="31 artefactos">31</span>
+              </a>
+              <p class="pi-stream-desc">Monthly review synthesising the month&#039;s political and legislative developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-23/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="37 artefactos">37</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-22">2026-04-22</time></h3>
+          <span class="pi-day-total" aria-label="176 artefactos">176 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-22" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-22)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-22/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="26 artefactos">26</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-22/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="45 artefactos">45</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-22/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="16 artefactos">16</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-22/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="37 artefactos">37</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-22/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="24 artefactos">24</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-22/realtime-2338" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 2338</span>
+                <span class="pi-stream-count" aria-label="28 artefactos">28</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-21">2026-04-21</time></h3>
+          <span class="pi-day-total" aria-label="134 artefactos">134 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-21" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-21)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-21/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="32 artefactos">32</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-21/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="23 artefactos">23</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-21/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="27 artefactos">27</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-21/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="21 artefactos">21</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-21/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="16 artefactos">16</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-21/realtime-1353" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1353</span>
+                <span class="pi-stream-count" aria-label="15 artefactos">15</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-20">2026-04-20</time></h3>
+          <span class="pi-day-total" aria-label="127 artefactos">127 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-20" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-20)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-20/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="24 artefactos">24</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-20/documents" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📦</span>
+                <span class="pi-stream-name">Documents</span>
+                <span class="pi-stream-count" aria-label="24 artefactos">24</span>
+              </a>
+              <p class="pi-stream-desc">Analytical content stream: Documents.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-20/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="15 artefactos">15</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-20/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="26 artefactos">26</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-20/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="21 artefactos">21</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-20/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-19">2026-04-19</time></h3>
+          <span class="pi-day-total" aria-label="76 artefactos">76 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-19" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-19)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-19/deep-inspection" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🔬</span>
+                <span class="pi-stream-name">Deep Inspection</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Deep inspection — long-form structured analysis of a focused topic.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-19/month-ahead" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📆</span>
+                <span class="pi-stream-name">Month Ahead</span>
+                <span class="pi-stream-count" aria-label="15 artefactos">15</span>
+              </a>
+              <p class="pi-stream-desc">Month-ahead forward-looking intelligence covering scheduled activity.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-19/monthly-review" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📊</span>
+                <span class="pi-stream-name">Monthly Review</span>
+                <span class="pi-stream-count" aria-label="26 artefactos">26</span>
+              </a>
+              <p class="pi-stream-desc">Monthly review synthesising the month&#039;s political and legislative developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-19/realtime-1219" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1219</span>
+                <span class="pi-stream-count" aria-label="18 artefactos">18</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-18">2026-04-18</time></h3>
+          <span class="pi-day-total" aria-label="44 artefactos">44 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-18" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-18)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-18/realtime-1705" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1705</span>
+                <span class="pi-stream-count" aria-label="18 artefactos">18</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-18/weekly-review" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🗓️</span>
+                <span class="pi-stream-name">Weekly Review</span>
+                <span class="pi-stream-count" aria-label="26 artefactos">26</span>
+              </a>
+              <p class="pi-stream-desc">Weekly review synthesising the week&#039;s political and legislative developments.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-17">2026-04-17</time></h3>
+          <span class="pi-day-total" aria-label="141 artefactos">141 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-17" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-17)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-17/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="12 artefactos">12</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-17/documents" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📦</span>
+                <span class="pi-stream-name">Documents</span>
+                <span class="pi-stream-count" aria-label="7 artefactos">7</span>
+              </a>
+              <p class="pi-stream-desc">Analytical content stream: Documents.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-17/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="28 artefactos">28</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-17/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="11 artefactos">11</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-17/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-17/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="19 artefactos">19</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-17/realtime-1434" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1434</span>
+                <span class="pi-stream-count" aria-label="19 artefactos">19</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-17/week-ahead" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📅</span>
+                <span class="pi-stream-name">Week Ahead</span>
+                <span class="pi-stream-count" aria-label="28 artefactos">28</span>
+              </a>
+              <p class="pi-stream-desc">Week-ahead prospective coverage of scheduled parliamentary activity.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-16">2026-04-16</time></h3>
+          <span class="pi-day-total" aria-label="186 artefactos">186 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-16" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-16)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-16/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="15 artefactos">15</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-16/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-16/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="12 artefactos">12</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-16/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="21 artefactos">21</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-16/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="25 artefactos">25</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-16/realtime-1037" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1037</span>
+                <span class="pi-stream-count" aria-label="41 artefactos">41</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-16/realtime-1244" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1244</span>
+                <span class="pi-stream-count" aria-label="55 artefactos">55</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-16/realtime-1442" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1442</span>
+                <span class="pi-stream-count" aria-label="8 artefactos">8</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-15">2026-04-15</time></h3>
+          <span class="pi-day-total" aria-label="114 artefactos">114 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-15" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-15)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-15/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="15 artefactos">15</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-15/deep-inspection" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🔬</span>
+                <span class="pi-stream-name">Deep Inspection</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Deep inspection — long-form structured analysis of a focused topic.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-15/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="12 artefactos">12</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-15/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="11 artefactos">11</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-15/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="25 artefactos">25</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-15/realtime-0954" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 0954</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-15/realtime-1029" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1029</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-14">2026-04-14</time></h3>
+          <span class="pi-day-total" aria-label="194 artefactos">194 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-14" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-14)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-14/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="15 artefactos">15</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-14/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="43 artefactos">43</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-14/evening-analysis-2" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis 2</span>
+                <span class="pi-stream-count" aria-label="43 artefactos">43</span>
+              </a>
+              <p class="pi-stream-desc">Analytical content stream: Evening Analysis 2.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-14/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="24 artefactos">24</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-14/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="11 artefactos">11</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-14/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="15 artefactos">15</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-14/realtime-1526" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1526</span>
+                <span class="pi-stream-count" aria-label="43 artefactos">43</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-13">2026-04-13</time></h3>
+          <span class="pi-day-total" aria-label="196 artefactos">196 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-13" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-13)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-13/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="49 artefactos">49</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-13/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="8 artefactos">8</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-13/evening-analysis-2" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis 2</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Analytical content stream: Evening Analysis 2.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-13/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-13/month-ahead" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📆</span>
+                <span class="pi-stream-name">Month Ahead</span>
+                <span class="pi-stream-count" aria-label="33 artefactos">33</span>
+              </a>
+              <p class="pi-stream-desc">Month-ahead forward-looking intelligence covering scheduled activity.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-13/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="33 artefactos">33</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-13/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="29 artefactos">29</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-13/realtime-1433" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1433</span>
+                <span class="pi-stream-count" aria-label="18 artefactos">18</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-12">2026-04-12</time></h3>
+          <span class="pi-day-total" aria-label="9 artefactos">9 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-12" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-12)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-12/monthly-review" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📊</span>
+                <span class="pi-stream-name">Monthly Review</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Monthly review synthesising the month&#039;s political and legislative developments.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-11">2026-04-11</time></h3>
+          <span class="pi-day-total" aria-label="18 artefactos">18 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-11" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-11)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-11/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-11/weekly-review" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🗓️</span>
+                <span class="pi-stream-name">Weekly Review</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Weekly review synthesising the week&#039;s political and legislative developments.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-10">2026-04-10</time></h3>
+          <span class="pi-day-total" aria-label="157 artefactos">157 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-10" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-10)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-10/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="21 artefactos">21</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-10/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-10/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="47 artefactos">47</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-10/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="19 artefactos">19</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-10/realtime-1026" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1026</span>
+                <span class="pi-stream-count" aria-label="21 artefactos">21</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-10/realtime-1424" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1424</span>
+                <span class="pi-stream-count" aria-label="31 artefactos">31</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-10/week-ahead" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📅</span>
+                <span class="pi-stream-name">Week Ahead</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Week-ahead prospective coverage of scheduled parliamentary activity.</p>
+            </li>
+        </ul>
+      </article>
+
+                <button type="button" class="pi-older-toggle" aria-expanded="false" aria-controls="pi-older-days" onclick="(function(b){var el=document.getElementById('pi-older-days');var exp=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',(!exp).toString());if(exp){el.setAttribute('hidden','');}else{el.removeAttribute('hidden');}})(this)">
+                    <span aria-hidden="true">🕰️</span> Días de análisis anteriores (14) — Mostrar más
+                </button>
+                <div id="pi-older-days" class="pi-older-content" hidden>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-09">2026-04-09</time></h3>
+          <span class="pi-day-total" aria-label="136 artefactos">136 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-09" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-09)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-09/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="11 artefactos">11</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-09/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="33 artefactos">33</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-09/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="13 artefactos">13</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-09/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="15 artefactos">15</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-09/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="13 artefactos">13</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-09/realtime-1029" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1029</span>
+                <span class="pi-stream-count" aria-label="19 artefactos">19</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-09/realtime-1436" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1436</span>
+                <span class="pi-stream-count" aria-label="32 artefactos">32</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-08">2026-04-08</time></h3>
+          <span class="pi-day-total" aria-label="223 artefactos">223 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-08" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-08)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-08/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="13 artefactos">13</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-08/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="37 artefactos">37</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-08/evening-analysis-2" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis 2</span>
+                <span class="pi-stream-count" aria-label="37 artefactos">37</span>
+              </a>
+              <p class="pi-stream-desc">Analytical content stream: Evening Analysis 2.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-08/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="13 artefactos">13</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-08/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="11 artefactos">11</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-08/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="11 artefactos">11</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-08/realtime-1027" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1027</span>
+                <span class="pi-stream-count" aria-label="31 artefactos">31</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-08/realtime-1146" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1146</span>
+                <span class="pi-stream-count" aria-label="33 artefactos">33</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-08/realtime-1433" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1433</span>
+                <span class="pi-stream-count" aria-label="37 artefactos">37</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-07">2026-04-07</time></h3>
+          <span class="pi-day-total" aria-label="120 artefactos">120 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-07" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-07)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-07/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="13 artefactos">13</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-07/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="27 artefactos">27</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-07/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="11 artefactos">11</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-07/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-07/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-07/realtime-1026" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1026</span>
+                <span class="pi-stream-count" aria-label="16 artefactos">16</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-07/realtime-1411" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1411</span>
+                <span class="pi-stream-count" aria-label="27 artefactos">27</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-06">2026-04-06</time></h3>
+          <span class="pi-day-total" aria-label="131 artefactos">131 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-06" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-06)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-06/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="13 artefactos">13</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-06/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="27 artefactos">27</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-06/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="11 artefactos">11</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-06/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-06/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-06/realtime-1029" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1029</span>
+                <span class="pi-stream-count" aria-label="27 artefactos">27</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-06/realtime-1420" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1420</span>
+                <span class="pi-stream-count" aria-label="27 artefactos">27</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-05">2026-04-05</time></h3>
+          <span class="pi-day-total" aria-label="18 artefactos">18 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-05" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-05)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-05/realtime-1212" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1212</span>
+                <span class="pi-stream-count" aria-label="18 artefactos">18</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-04">2026-04-04</time></h3>
+          <span class="pi-day-total" aria-label="28 artefactos">28 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-04" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-04)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-04/realtime-1212" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1212</span>
+                <span class="pi-stream-count" aria-label="19 artefactos">19</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-04/weekly-review" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🗓️</span>
+                <span class="pi-stream-name">Weekly Review</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Weekly review synthesising the week&#039;s political and legislative developments.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-03">2026-04-03</time></h3>
+          <span class="pi-day-total" aria-label="130 artefactos">130 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-03" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-03)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-03/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="13 artefactos">13</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-03/deep-inspection" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🔬</span>
+                <span class="pi-stream-name">Deep Inspection</span>
+                <span class="pi-stream-count" aria-label="11 artefactos">11</span>
+              </a>
+              <p class="pi-stream-desc">Deep inspection — long-form structured analysis of a focused topic.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-03/evening-analysis" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🌙</span>
+                <span class="pi-stream-name">Evening Analysis</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Evening analysis synthesising the day&#039;s parliamentary and government developments.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-03/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="11 artefactos">11</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-03/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-03/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-03/realtime-1018" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1018</span>
+                <span class="pi-stream-count" aria-label="21 artefactos">21</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-03/realtime-1416" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1416</span>
+                <span class="pi-stream-count" aria-label="19 artefactos">19</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-03/realtime-2200" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 2200</span>
+                <span class="pi-stream-count" aria-label="19 artefactos">19</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-03/week-ahead" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📅</span>
+                <span class="pi-stream-name">Week Ahead</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Week-ahead prospective coverage of scheduled parliamentary activity.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-02">2026-04-02</time></h3>
+          <span class="pi-day-total" aria-label="77 artefactos">77 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-02" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-02)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-02/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-02/documents" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📦</span>
+                <span class="pi-stream-name">Documents</span>
+                <span class="pi-stream-count" aria-label="18 artefactos">18</span>
+              </a>
+              <p class="pi-stream-desc">Analytical content stream: Documents.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-02/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="11 artefactos">11</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-02/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-02/realtime-1024" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1024</span>
+                <span class="pi-stream-count" aria-label="16 artefactos">16</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-02/realtime-1428" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">⏱️</span>
+                <span class="pi-stream-name">Realtime 1428</span>
+                <span class="pi-stream-count" aria-label="14 artefactos">14</span>
+              </a>
+              <p class="pi-stream-desc">Realtime snapshot capturing the parliamentary and government state at a specific time.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-04-01">2026-04-01</time></h3>
+          <span class="pi-day-total" aria-label="130 artefactos">130 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-01" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-04-01)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-01/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-01/documents" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📦</span>
+                <span class="pi-stream-name">Documents</span>
+                <span class="pi-stream-count" aria-label="78 artefactos">78</span>
+              </a>
+              <p class="pi-stream-desc">Analytical content stream: Documents.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-01/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-01/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="9 artefactos">9</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-01/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-03-31">2026-03-31</time></h3>
+          <span class="pi-day-total" aria-label="156 artefactos">156 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-31" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-03-31)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-31/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-31/documents" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📦</span>
+                <span class="pi-stream-name">Documents</span>
+                <span class="pi-stream-count" aria-label="74 artefactos">74</span>
+              </a>
+              <p class="pi-stream-desc">Analytical content stream: Documents.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-31/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="13 artefactos">13</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-31/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="35 artefactos">35</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-31/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-03-30">2026-03-30</time></h3>
+          <span class="pi-day-total" aria-label="61 artefactos">61 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-30" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-03-30)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-30/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="13 artefactos">13</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-30/documents" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📦</span>
+                <span class="pi-stream-name">Documents</span>
+                <span class="pi-stream-count" aria-label="48 artefactos">48</span>
+              </a>
+              <p class="pi-stream-desc">Analytical content stream: Documents.</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-03-28">2026-03-28</time></h3>
+          <span class="pi-day-total" aria-label="0 artefactos">0 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-28" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-03-28)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-03-27">2026-03-27</time></h3>
+          <span class="pi-day-total" aria-label="51 artefactos">51 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-27" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-03-27)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-27/committeeReports" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">🏛️</span>
+                <span class="pi-stream-name">CommitteeReports</span>
+                <span class="pi-stream-count" aria-label="19 artefactos">19</span>
+              </a>
+              <p class="pi-stream-desc">Parliamentary committee reports (betänkanden) and recommendations.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-27/interpellations" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">❓</span>
+                <span class="pi-stream-name">Interpellations</span>
+                <span class="pi-stream-count" aria-label="15 artefactos">15</span>
+              </a>
+              <p class="pi-stream-desc">Interpellations — formal ministerial questions and responses.</p>
+            </li>
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-27/motions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">✍️</span>
+                <span class="pi-stream-name">Motions</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Member motions (bills and proposals introduced by MPs).</p>
+            </li>
+        </ul>
+      </article>
+
+      <article class="pi-day">
+        <header class="pi-day-header">
+          <h3><time datetime="2026-03-26">2026-03-26</time></h3>
+          <span class="pi-day-total" aria-label="17 artefactos">17 artefactos</span>
+          <a class="pi-day-github" href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-26" target="_blank" rel="noopener noreferrer" aria-label="Abrir en GitHub (2026-03-26)">
+            <span aria-hidden="true">🔗</span> Abrir en GitHub
+          </a>
+        </header>
+        <ul class="pi-streams">
+
+            <li class="pi-stream">
+              <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-03-26/propositions" target="_blank" rel="noopener noreferrer">
+                <span class="pi-stream-icon" aria-hidden="true">📜</span>
+                <span class="pi-stream-name">Propositions</span>
+                <span class="pi-stream-count" aria-label="17 artefactos">17</span>
+              </a>
+              <p class="pi-stream-desc">Government propositions (bills tabled by the Cabinet).</p>
+            </li>
+        </ul>
+      </article>
+                </div>
+            </section>
+        </main>
+
+        <nav class="pi-other-langs" aria-label="Other languages">
+        <a href="political-intelligence.html" lang="en" title="English"><span aria-hidden="true">🇬🇧</span> English</a>
+        <a href="political-intelligence_sv.html" lang="sv" title="Svenska"><span aria-hidden="true">🇸🇪</span> Svenska</a>
+        <a href="political-intelligence_da.html" lang="da" title="Dansk"><span aria-hidden="true">🇩🇰</span> Dansk</a>
+        <a href="political-intelligence_no.html" lang="nb" title="Norsk"><span aria-hidden="true">🇳🇴</span> Norsk</a>
+        <a href="political-intelligence_fi.html" lang="fi" title="Suomi"><span aria-hidden="true">🇫🇮</span> Suomi</a>
+        <a href="political-intelligence_de.html" lang="de" title="Deutsch"><span aria-hidden="true">🇩🇪</span> Deutsch</a>
+        <a href="political-intelligence_fr.html" lang="fr" title="Français"><span aria-hidden="true">🇫🇷</span> Français</a>
+        <a href="political-intelligence_nl.html" lang="nl" title="Nederlands"><span aria-hidden="true">🇳🇱</span> Nederlands</a>
+        <a href="political-intelligence_ar.html" lang="ar" title="العربية"><span aria-hidden="true">🇸🇦</span> العربية</a>
+        <a href="political-intelligence_he.html" lang="he" title="עברית"><span aria-hidden="true">🇮🇱</span> עברית</a>
+        <a href="political-intelligence_ja.html" lang="ja" title="日本語"><span aria-hidden="true">🇯🇵</span> 日本語</a>
+        <a href="political-intelligence_ko.html" lang="ko" title="한국어"><span aria-hidden="true">🇰🇷</span> 한국어</a>
+        <a href="political-intelligence_zh.html" lang="zh" title="中文"><span aria-hidden="true">🇨🇳</span> 中文</a>
+        </nav>
+
+        <footer style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--primary-cyan, #00d9ff); color: var(--muted-text, #a0a3bd);">
+            <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary-cyan, #00d9ff);">Hack23 AB</a> |
+            <a href="/index_es.html" style="color: var(--primary-cyan, #00d9ff);">Inicio</a> ·
+            <a href="/sitemap_es.html" style="color: var(--primary-cyan, #00d9ff);">Mapa del sitio</a></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -406,6 +406,24 @@ function generateSitemap(): string {
     xml += generateUrlEntry(file, lastmod, 'monthly', priority);
   });
 
+  // Political Intelligence pages (primary English + 13 language variants)
+  const piAlternates = [
+    ...LANGUAGES.map((lang) => ({
+      lang: lang === 'no' ? 'nb' : lang,
+      href: lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${lang}.html`,
+    })),
+    { lang: 'x-default', href: 'political-intelligence.html' },
+  ];
+  const piEnMtime = getFileModTime(path.join(ROOT_DIR, 'political-intelligence.html'));
+  xml += generateUrlEntry('political-intelligence.html', piEnMtime, 'daily', '0.85', piAlternates);
+
+  for (const lang of LANGUAGES) {
+    if (lang === 'en') continue;
+    const file = `political-intelligence_${lang}.html`;
+    const lastmod = getFileModTime(path.join(ROOT_DIR, file));
+    xml += generateUrlEntry(file, lastmod, 'daily', '0.7');
+  }
+
   // News index pages
   const newsLangFiles = [
     'index.html', 'index_sv.html', 'index_da.html', 'index_no.html', 'index_fi.html',
