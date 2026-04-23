@@ -2,6 +2,7 @@
 ## analysis/daily/2026-04-22/committeeReports/threat-analysis.md
 **Date:** 2026-04-22 | **Riksmöte:** 2025/26 | **Methodology:** political-threat-framework.md
 **Classification:** Public | **Analyst:** James Pether Sörling
+**Overall Threat Level:** Elevated | **Confidence:** [B2]
 
 ---
 
