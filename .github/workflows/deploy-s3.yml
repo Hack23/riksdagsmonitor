@@ -166,7 +166,23 @@ jobs:
             fi
           done
 
-          echo "✅ Build artifacts verified: 'dist' directory, 'dist/index.html', 'dist/rss.xml', 'dist/sitemap.xml', and HTML sitemaps exist."
+          # Political Intelligence pages (added by PR #1962) must ship to S3.
+          # They are explicit Vite inputs — a missing one means the Vite
+          # rollupOptions.input list has drifted out of sync with the
+          # generator in scripts/generate-political-intelligence.ts.
+          if [ ! -f "dist/political-intelligence.html" ]; then
+            echo "❌ Build verification failed: 'dist/political-intelligence.html' is missing."
+            echo "   Ensure all 14 political-intelligence* entries are listed in vite.config.js rollupOptions.input."
+            exit 1
+          fi
+          for loc in political-intelligence_sv.html political-intelligence_ar.html; do
+            if [ ! -f "dist/$loc" ]; then
+              echo "❌ Build verification failed: 'dist/$loc' is missing."
+              exit 1
+            fi
+          done
+
+          echo "✅ Build artifacts verified: 'dist' directory, 'dist/index.html', 'dist/rss.xml', 'dist/sitemap.xml', HTML sitemaps, and political-intelligence pages exist."
 
           if [ ! -d "dist/news" ]; then
             echo "❌ Build verification failed: 'dist/news/' directory is missing."
