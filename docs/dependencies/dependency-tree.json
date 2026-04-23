@@ -1,5 +1,5 @@
 {
-  "version": "0.8.52",
+  "version": "0.8.53",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.9.2 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -2815,8 +2815,8 @@
       }
     },
     "knip": {
-      "version": "6.6.1",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.6.1.tgz",
+      "version": "6.6.2",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.6.2.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -2867,8 +2867,8 @@
           "version": "1.2.8"
         },
         "oxc-parser": {
-          "version": "0.126.0",
-          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.126.0.tgz",
+          "version": "0.127.0",
+          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.127.0.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-parser/binding-android-arm-eabi": {},
@@ -2885,13 +2885,13 @@
             "@oxc-parser/binding-linux-riscv64-musl": {},
             "@oxc-parser/binding-linux-s390x-gnu": {},
             "@oxc-parser/binding-linux-x64-gnu": {
-              "version": "0.126.0",
-              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.126.0.tgz",
+              "version": "0.127.0",
+              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.127.0.tgz",
               "overridden": false
             },
             "@oxc-parser/binding-linux-x64-musl": {
-              "version": "0.126.0",
-              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-musl/-/binding-linux-x64-musl-0.126.0.tgz",
+              "version": "0.127.0",
+              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-musl/-/binding-linux-x64-musl-0.127.0.tgz",
               "overridden": false
             },
             "@oxc-parser/binding-openharmony-arm64": {},
@@ -2900,8 +2900,8 @@
             "@oxc-parser/binding-win32-ia32-msvc": {},
             "@oxc-parser/binding-win32-x64-msvc": {},
             "@oxc-project/types": {
-              "version": "0.126.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.126.0.tgz",
+              "version": "0.127.0",
+              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.127.0.tgz",
               "overridden": false
             }
           }
@@ -2960,8 +2960,8 @@
           "version": "0.2.16"
         },
         "unbash": {
-          "version": "2.2.0",
-          "resolved": "https://registry.npmjs.org/unbash/-/unbash-2.2.0.tgz",
+          "version": "3.0.0",
+          "resolved": "https://registry.npmjs.org/unbash/-/unbash-3.0.0.tgz",
           "overridden": false
         },
         "yaml": {
@@ -3660,9 +3660,7 @@
           "overridden": false,
           "dependencies": {
             "@oxc-project/types": {
-              "version": "0.127.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.127.0.tgz",
-              "overridden": false
+              "version": "0.127.0"
             },
             "@rolldown/binding-android-arm64": {},
             "@rolldown/binding-darwin-arm64": {},
