@@ -1,5 +1,5 @@
 {
-  "version": "0.8.51",
+  "version": "0.8.52",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.9.2 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -3579,13 +3579,13 @@
           }
         },
         "vite": {
-          "version": "8.0.9"
+          "version": "8.0.10"
         }
       }
     },
     "vite": {
-      "version": "8.0.9",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-8.0.9.tgz",
+      "version": "8.0.10",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.0.10.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -3655,12 +3655,14 @@
           }
         },
         "rolldown": {
-          "version": "1.0.0-rc.16",
-          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.0.0-rc.16.tgz",
+          "version": "1.0.0-rc.17",
+          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.0.0-rc.17.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-project/types": {
-              "version": "0.126.0"
+              "version": "0.127.0",
+              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.127.0.tgz",
+              "overridden": false
             },
             "@rolldown/binding-android-arm64": {},
             "@rolldown/binding-darwin-arm64": {},
@@ -3672,13 +3674,13 @@
             "@rolldown/binding-linux-ppc64-gnu": {},
             "@rolldown/binding-linux-s390x-gnu": {},
             "@rolldown/binding-linux-x64-gnu": {
-              "version": "1.0.0-rc.16",
-              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.0.0-rc.16.tgz",
+              "version": "1.0.0-rc.17",
+              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.0.0-rc.17.tgz",
               "overridden": false
             },
             "@rolldown/binding-linux-x64-musl": {
-              "version": "1.0.0-rc.16",
-              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.0.0-rc.16.tgz",
+              "version": "1.0.0-rc.17",
+              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.0.0-rc.17.tgz",
               "overridden": false
             },
             "@rolldown/binding-openharmony-arm64": {},
@@ -3686,8 +3688,8 @@
             "@rolldown/binding-win32-arm64-msvc": {},
             "@rolldown/binding-win32-x64-msvc": {},
             "@rolldown/pluginutils": {
-              "version": "1.0.0-rc.16",
-              "resolved": "https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.0-rc.16.tgz",
+              "version": "1.0.0-rc.17",
+              "resolved": "https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.0-rc.17.tgz",
               "overridden": false
             }
           }
@@ -3784,7 +3786,7 @@
             },
             "msw": {},
             "vite": {
-              "version": "8.0.9"
+              "version": "8.0.10"
             }
           }
         },
@@ -3896,7 +3898,7 @@
           "version": "3.1.0"
         },
         "vite": {
-          "version": "8.0.9"
+          "version": "8.0.10"
         },
         "why-is-node-running": {
           "version": "2.3.0",
