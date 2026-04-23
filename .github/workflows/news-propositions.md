@@ -233,9 +233,9 @@ Generates deep political intelligence articles on Swedish government proposition
 
 ## Time budget
 
-> 🔴 **CRITICAL — safeoutputs MCP idle timeout (~30 min)**: The `safeoutputs` MCP server runs a Streamable-HTTP session that expires after **~30–35 minutes of idle time** (confirmed in run [24820030825](https://github.com/Hack23/riksdagsmonitor/actions/runs/24820030825) where all `create_pull_request` calls at minute ~32 failed with `session not found`, losing 37 files of completed analysis work). `sandbox.mcp.keepalive-interval: 300` keeps TCP connections alive but does **NOT** refresh the server-side session. **Your first and only `safeoutputs___*` call MUST happen before minute 28 of agent time.** This is a harder deadline than the ~60-minute Copilot-API token window described in `00-base-contract.md §Session keepalive requirement` and overrides the generic 48-min deadline in `07-commit-and-pr.md §Deadline enforcement` for this workflow.
+> 🔴 **CRITICAL — safeoutputs MCP idle timeout (~30 min)**: The `safeoutputs` MCP server runs a Streamable-HTTP session that expires after **~30–35 minutes of idle time** (confirmed in run [24820030825](https://github.com/Hack23/riksdagsmonitor/actions/runs/24820030825) where all `create_pull_request` calls at minute ~32 failed with `session not found`, losing 37 files of completed analysis work). `sandbox.mcp.keepalive-interval: 300` keeps TCP connections alive but does **NOT** refresh the server-side session. **Your first and only `safeoutputs___*` call MUST happen by minute 28 at the latest.** This is a harder deadline than the ~60-minute Copilot-API token window described in `00-base-contract.md §Session keepalive requirement` and overrides the generic 48-min deadline in `07-commit-and-pr.md §Deadline enforcement` for this workflow.
 >
-> **AI-FIRST within the compressed budget**: Pass 2 is still mandatory (AI FIRST principle, §"5. 🔴 AI FIRST Quality Principle" in repo custom instructions). Under the tightened ~28-min Run 1 budget, prefer **scope compression over iteration skipping** — reduce the number of per-document analyses if needed, but always perform a full read-back-and-improve Pass 2 on whatever artifacts exist. For scheduled runs treat `analysis_depth` as `standard` in practice even if the input defaults to `deep`; reserve `deep`/`comprehensive` for manual `workflow_dispatch` backfills where a human can monitor for a longer-session environment. A partial analysis with genuine iteration is always strictly better than a broader analysis that never reaches GitHub.
+> **AI-FIRST within the compressed budget**: Pass 2 is still mandatory (AI FIRST principle, §"5. 🔴 AI FIRST Quality Principle" in repo custom instructions). Under the tightened ~28-min Run 1 budget, prefer **scope compression over iteration skipping** — reduce the **download/manifest scope** if needed (for example, fewer `dok_id` entries in `data-download-manifest.md`), but maintain **1:1 per-document coverage** for every `dok_id` that remains in the manifest (required by `05-analysis-gate.md` check 2) and always perform a full read-back-and-improve Pass 2 on whatever artifacts exist. For scheduled runs treat `analysis_depth` as `standard` in practice even if the input defaults to `deep`; reserve `deep`/`comprehensive` for manual `workflow_dispatch` backfills where a human can monitor for a longer-session environment. A smaller manifest with complete per-document coverage and genuine iteration is always strictly better than a broader manifest that cannot clear the Analysis Gate or never reaches GitHub.
 
 **Run 1 — Analysis mode** (no prior analysis found, ~28 min — produces all 23 artifacts):
 
@@ -248,7 +248,7 @@ Generates deep political intelligence articles on Swedish government proposition
 | 24–25 | Analysis Gate (checks 1–8) | 05 |
 | 25–28 | Stage analysis, commit, **ONE** `safeoutputs___create_pull_request` (analysis-only) — **HARD DEADLINE minute 28** | 07 |
 
-**Run 2 — Article mode** (analysis exists on disk, ~26 min):
+**Run 2 — Article mode** (analysis exists on disk, ~28 min):
 
 | Minutes | Phase | Module |
 |---------|-------|--------|
@@ -256,9 +256,9 @@ Generates deep political intelligence articles on Swedish government proposition
 | 2–6 | Read all 23 analysis artifacts into context (Families A+B+C+D) | 06 |
 | 6–18 | Article Pass 1 + Pass 2 (EN, SV) | 06 |
 | 18–22 | Visual + link validation | 06 |
-| 22–26 | Stage articles, commit, **ONE** `safeoutputs___create_pull_request` — **HARD DEADLINE minute 28** | 07 |
+| 22–28 | Stage articles, commit, **ONE** `safeoutputs___create_pull_request` — **HARD DEADLINE minute 28** | 07 |
 
-Trim scope before quality. Never open a second PR within a run — there is no second PR. **If you reach minute 25 without staging, stop all remaining analysis/article work, commit whatever exists on disk (include `[early-pr]` in the commit message), and call `create_pull_request` immediately** — a partial-but-delivered PR is infinitely better than losing all work to a `session not found` error.
+Trim scope before quality. Never open a second PR within a run — there is no second PR. **If you reach minute 25 without staging, stop all remaining analysis/article work, commit whatever exists on disk (include `[early-pr]` in the commit message), and call `safeoutputs___create_pull_request` immediately** — a partial-but-delivered PR is infinitely better than losing all work to a `session not found` error.
 
 ## Inputs
 
