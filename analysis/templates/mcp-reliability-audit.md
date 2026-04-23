@@ -1,0 +1,158 @@
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
+# 🛰️ MCP Reliability Audit Template — Endpoint Health & Data Freshness
+
+> **📌 Template Instructions** — Copy to `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/mcp-reliability-audit.md`. Endpoint-by-endpoint record of MCP server availability and data freshness during the run. See [`per-artifact-methodologies.md §mcp-reliability-audit`](../methodologies/per-artifact-methodologies.md#mcp-reliability-audit).
+
+> **🎯 Purpose** — Comprehensive MCP server health assessment. Tracks which endpoints succeeded, which failed, which were degraded, and what workarounds were applied. First-class operational artifact — if a downstream reader doubts an analytical claim, this is the file that proves the underlying data call actually returned fresh truth.
+
+---
+
+## 📋 Document Metadata
+
+| Field | Value |
+|-------|-------|
+| **Report ID** | `[REQUIRED: MCP-YYYY-MM-DD-runNN]` |
+| **Run Date** | `[REQUIRED: YYYY-MM-DD]` |
+| **Endpoints Attempted** | `[REQUIRED: #]` |
+| **Endpoints Succeeded** | `[REQUIRED: #]` |
+| **Reliability Score (0-100)** | `[REQUIRED: (succeeded / attempted) × 100]` |
+| **Overall Status** | `[REQUIRED: ✅ Full / ⚠️ Degraded / 🔴 Unavailable]` |
+| **Fallback Activated** | `[REQUIRED: yes / no — if yes, which]` |
+
+---
+
+## 1️⃣ Endpoint Scoreboard
+
+```mermaid
+%%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","lineColor":"#90CAF9","secondaryColor":"#2E7D32","tertiaryColor":"#FF9800","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
+flowchart LR
+    RR[riksdag-regering] --> RR1[search_ledamoter]
+    RR --> RR2[search_dokument]
+    RR --> RR3[search_anforanden]
+    RR --> RR4[search_voteringar]
+    RR --> RR5[get_calendar_events]
+    SCB[scb] --> SCB1[table query]
+    WB[world-bank] --> WB1[get-social-data]
+    WB --> WB2[get-health-data]
+    IMF[IMF] --> IMF1[scripts/imf-fetch.ts]
+
+    classDef ok fill:#2E7D32,color:#ffffff
+    classDef deg fill:#FF9800,color:#000000
+    classDef fail fill:#D32F2F,color:#ffffff
+```
+
+Annotate each leaf node ✅ / ⚠️ / ❌ based on the table below.
+
+---
+
+## 2️⃣ `riksdag-regering` MCP (HTTP — primary)
+
+| Tool | Calls | Succeeded | Failed | Mean latency | Max latency | Notes |
+|------|:-----:|:---------:|:------:|:------------:|:-----------:|-------|
+| `search_ledamoter` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `get_ledamot` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `search_dokument` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `get_dokument` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `search_anforanden` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `search_voteringar` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `get_voteringar` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `get_calendar_events` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `get_betankanden` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `get_propositioner` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `get_motioner` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `get_fragor` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `get_interpellationer` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `search_regering` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+| `get_regering_document` | `[#]` | `[#]` | `[#]` | `[ms]` | `[ms]` | — |
+
+**Data freshness** — latest `dok_id` timestamp observed: `[REQUIRED: YYYY-MM-DDTHH:MM:SSZ]`. Expected lag from publication ≤ 60 min — `[✅/⚠️/❌]`.
+
+---
+
+## 3️⃣ `scb` MCP (PxWeb v2 — local container)
+
+| Call | Table | Succeeded | Latency | Notes |
+|------|-------|:---------:|:-------:|-------|
+| `[REQUIRED]` | `[table ID]` | `[✅/❌]` | `[ms]` | `[…]` |
+
+---
+
+## 4️⃣ `world-bank` MCP (local container)
+
+| Tool / code | Indicator | Country | Year range | Succeeded | Notes |
+|-------------|-----------|:-------:|:----------:|:---------:|-------|
+| `get-social-data` | `[SP.POP.TOTL]` | `SWE` | `[2019-2024]` | `[✅/❌]` | — |
+
+Wave-2 reminder — economic codes should **not** be fetched here; use IMF.
+
+---
+
+## 5️⃣ IMF (`tsx scripts/imf-fetch.ts` — CLI, no MCP)
+
+| Invocation | Dataflow / series | Country | Vintage | Succeeded | Notes |
+|------------|-------------------|:-------:|:-------:|:---------:|-------|
+| `[REQUIRED]` | `WEO/NGDP_RPCH` | `SWE` | `WEO April 2026` | `[✅/❌]` | — |
+
+---
+
+## 6️⃣ `github` MCP (Insiders HTTP — used only in module 07)
+
+| Call | Result | Notes |
+|------|:------:|-------|
+| `assign_copilot_to_issue` | `[✅/❌]` | — |
+| `create_pull_request_with_copilot` | `[✅/❌]` | — |
+
+---
+
+## 7️⃣ Failure Analysis
+
+For each failed or degraded call, document:
+
+### Incident 1 — `[endpoint name]`
+
+**Time** — `[YYYY-MM-DDTHH:MM:SSZ]`  
+**Error** — `[HTTP status / timeout / parse error / empty payload]`  
+**Retry attempts** — `[#]`  
+**Workaround** — `[cache / SKIP_ANALYSIS / alternative MCP / manual]`  
+**Impact on analysis** — `[which artifact, which claim, which confidence downgrade]`  
+**Follow-up** — `[issue link or "none, transient"]`
+
+(Repeat for each incident.)
+
+---
+
+## 8️⃣ Cache Usage
+
+| Artifact | Used cache? | Cache age | Reason |
+|----------|:-----------:|:---------:|--------|
+| `[REQUIRED]` | `[y/n]` | `[h]` | `[live MCP down / rate limit / cold start]` |
+
+Cache policy — see [`.github/prompts/03-data-download.md §Pre-flight`](../../.github/prompts/03-data-download.md). Any Pass-2 run using cache age > 24 h must downgrade affected artifacts to 🟡 confidence.
+
+---
+
+## 9️⃣ Known Issues Carried Forward
+
+- `[REQUIRED]` 1-line description + tracking ID / URL / "none".
+
+---
+
+## 🔟 Reliability Trend (rolling 7-run window)
+
+| Run | Date | Reliability Score | Notes |
+|-----|------|:-----------------:|-------|
+| `[run-7]` | `[date]` | `[#]` | — |
+| … | … | … | — |
+| **This run** | `[date]` | `[#]` | — |
+
+Trend diagnosis — `[improving / stable / degrading]`.
+
+---
+
+## 🔗 Cross-References
+
+- Methodology: [`../methodologies/per-artifact-methodologies.md#mcp-reliability-audit`](../methodologies/per-artifact-methodologies.md#mcp-reliability-audit)
+- MCP access: [`../../.github/prompts/02-mcp-access.md`](../../.github/prompts/02-mcp-access.md)
+- MCP configuration: [`../../.github/copilot-mcp.json`](../../.github/copilot-mcp.json)
