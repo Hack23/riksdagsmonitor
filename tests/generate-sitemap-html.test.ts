@@ -14,8 +14,8 @@ const rootDir: string = path.join(__dirname, '..');
 
 /** Shape of the generate-sitemap-html module */
 interface GenerateSitemapHtmlModule {
-  readonly generateSitemapHtml: (lang: string, articlesByLang: Map<string, Array<{ file: string; title: string; description: string; lang: string; baseSlug: string }>>) => string;
-  readonly getArticlesByLanguage: () => Map<string, Array<{ file: string; title: string; description: string; lang: string; baseSlug: string }>>;
+  readonly generateSitemapHtml: (lang: string, articlesByLang: Map<string, Array<{ file: string; title: string; description: string; lang: string; baseSlug: string; date: string }>>) => string;
+  readonly getArticlesByLanguage: () => Map<string, Array<{ file: string; title: string; description: string; lang: string; baseSlug: string; date: string }>>;
   readonly escapeHtml: (text: string) => string;
   readonly LANGUAGE_META: Record<string, { name: string; nativeName: string; dir: string; hreflang: string }>;
 }
@@ -103,6 +103,55 @@ describe('Sitemap HTML Generation', () => {
       expect(firstArticle).toBeDefined();
       expect(firstArticle!.title).toBeTruthy();
       expect(firstArticle!.title.length).toBeGreaterThan(5);
+    });
+
+    it('should populate an ISO date (YYYY-MM-DD) parsed from the filename', () => {
+      const articlesByLang = module.getArticlesByLanguage();
+      const enArticles = articlesByLang.get('en') || [];
+      const datedArticles = enArticles.filter((a) => a.date);
+      expect(datedArticles.length).toBeGreaterThan(0);
+      datedArticles.forEach((article) => {
+        expect(article.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+        expect(article.file.startsWith(article.date)).toBe(true);
+      });
+    });
+
+    it('should return articles sorted by date descending (newest first)', () => {
+      const articlesByLang = module.getArticlesByLanguage();
+      for (const lang of ['en', 'sv']) {
+        const articles = (articlesByLang.get(lang) || []).filter((a) => a.date);
+        expect(articles.length, `${lang} should have dated articles`).toBeGreaterThan(1);
+        for (let i = 1; i < articles.length; i++) {
+          // Previous article date must be greater than or equal to current.
+          expect(
+            articles[i - 1]!.date >= articles[i]!.date,
+            `${lang}: ${articles[i - 1]!.file} must not be older than ${articles[i]!.file}`,
+          ).toBe(true);
+        }
+      }
+    });
+  });
+
+  describe('all-pages contract', () => {
+    it('should list every English article in the generated HTML (no artificial cap)', () => {
+      const articlesByLang = module.getArticlesByLanguage();
+      const enArticles = articlesByLang.get('en') || [];
+      const html = module.generateSitemapHtml('en', articlesByLang);
+      // Count the number of article list links produced for the news section.
+      const matches = html.match(/href="news\/[^"]+-en\.html"/g) || [];
+      // Every article for the target language must be rendered. Allow the
+      // news-index link on top of the article count.
+      expect(matches.length).toBeGreaterThanOrEqual(enArticles.length);
+    });
+
+    it('should render articles in chronological (desc) order in the HTML', () => {
+      const articlesByLang = module.getArticlesByLanguage();
+      const html = module.generateSitemapHtml('en', articlesByLang);
+      const dates = Array.from(html.matchAll(/datetime="(\d{4}-\d{2}-\d{2})"/g)).map((m) => m[1]!);
+      expect(dates.length).toBeGreaterThan(1);
+      for (let i = 1; i < dates.length; i++) {
+        expect(dates[i - 1]! >= dates[i]!).toBe(true);
+      }
     });
   });
 

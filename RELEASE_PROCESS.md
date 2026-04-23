@@ -50,7 +50,7 @@ The release workflow consists of 3 jobs:
 8. Generate dependency tree
 9. Copy test reports to docs/
 10. Create documentation index (docs/index.html)
-11. Update sitemap.xml
+11. Update sitemap.xml and regenerate localized sitemap HTML pages (`sitemap.html` + 13 `sitemap_<lang>.html` variants, all news articles date-sorted)
 12. Deploy documentation to GitHub Pages
 
 **Duration**: ~10-15 minutes

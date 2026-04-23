@@ -268,7 +268,8 @@ graph TD
     
     subgraph "Configuration"
         CNAME[CNAME<br/>Component: DNS Config<br/>riksdagsmonitor.com]
-        Sitemap[sitemap.xml<br/>Component: SEO Config<br/>14 language pages]
+        Sitemap[sitemap.xml<br/>Component: SEO Config<br/>XML sitemap with 14-language hreflang]
+        SitemapHtml[sitemap.html + sitemap_&lt;lang&gt;.html<br/>Component: Human-readable Sitemap<br/>14 localized pages, all articles date-sorted]
         Robots[robots.txt<br/>Component: Crawler Config<br/>SEO directives]
     end
     
@@ -751,7 +752,7 @@ graph LR
         JS[JavaScript<br/>Dashboard scripts<br/>Chart.js, D3.js, Papa Parse]
         Data[Data Files<br/>CSV files<br/>Committee, coalition, election data]
         Images[Images<br/>Logos, icons<br/>SVG + PNG]
-        Config[Configuration<br/>sitemap.xml, robots.txt, CNAME]
+        Config[Configuration<br/>sitemap.xml, sitemap*.html, rss.xml, robots.txt, CNAME]
     end
     
     subgraph "Storage"

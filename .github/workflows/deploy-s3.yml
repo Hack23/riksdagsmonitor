@@ -152,7 +152,21 @@ jobs:
             exit 1
           fi
 
-          echo "✅ Build artifacts verified: 'dist' directory, 'dist/index.html', 'dist/rss.xml', and 'dist/sitemap.xml' exist."
+          if [ ! -f "dist/sitemap.html" ]; then
+            echo "❌ Build verification failed: 'dist/sitemap.html' is missing."
+            exit 1
+          fi
+
+          # Spot-check a representative subset of localized HTML sitemaps
+          # (Swedish — primary non-English audience, Arabic — RTL coverage).
+          for loc in sitemap_sv.html sitemap_ar.html; do
+            if [ ! -f "dist/$loc" ]; then
+              echo "❌ Build verification failed: 'dist/$loc' is missing."
+              exit 1
+            fi
+          done
+
+          echo "✅ Build artifacts verified: 'dist' directory, 'dist/index.html', 'dist/rss.xml', 'dist/sitemap.xml', and HTML sitemaps exist."
 
           if [ ! -d "dist/news" ]; then
             echo "❌ Build verification failed: 'dist/news/' directory is missing."

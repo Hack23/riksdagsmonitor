@@ -16,7 +16,7 @@ For implementation details, refer to the canonical documentation in the reposito
 
 - **Architecture**: See `ARCHITECTURE.md` for system design and news subsystem
 - **Workflows**: See `.github/workflows/` and workflow documentation for automation details
-- **Scripts**: See `scripts/generate-news.js` and `scripts/generate-sitemap.js` for implementation
+- **Scripts**: See `scripts/generate-sitemap.ts` (XML sitemap) and `scripts/generate-sitemap-html.ts` (human-readable HTML sitemap, 14 languages, all articles sorted by publication date) for implementation
 
 This README is intentionally minimal to maintain a single source of truth and reduce documentation drift.
 

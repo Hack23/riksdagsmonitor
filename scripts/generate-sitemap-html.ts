@@ -389,6 +389,18 @@ interface ArticleInfo {
   description: string;
   lang: Language;
   baseSlug: string;
+  /** Extracted publication date (YYYY-MM-DD) parsed from filename prefix, empty string if absent. */
+  date: string;
+}
+
+/**
+ * Extract a leading ISO date (YYYY-MM-DD) from a news article filename.
+ * Returns an empty string when the filename does not start with a date,
+ * which keeps those articles at the bottom of date-sorted lists.
+ */
+function extractArticleDate(fileName: string): string {
+  const match = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-/);
+  return match ? `${match[1]}-${match[2]}-${match[3]}` : '';
 }
 
 // ---------------------------------------------------------------------------
@@ -414,37 +426,70 @@ function extractArticleMeta(filePath: string): { title: string; description: str
 
 /**
  * Scan news articles and group by language.
+ *
+ * Articles are sorted by their filename date prefix (YYYY-MM-DD) in descending
+ * order so the most recent articles appear first on the sitemap. The news
+ * directory is walked recursively so articles under date-partitioned
+ * subdirectories (e.g. `news/2026/02/2026-02-13-article-en.html`) are
+ * also included.
  */
 function getArticlesByLanguage(): Map<Language, ArticleInfo[]> {
   const articlesByLang = new Map<Language, ArticleInfo[]>();
 
   if (!fs.existsSync(NEWS_DIR)) return articlesByLang;
 
-  const files = fs
-    .readdirSync(NEWS_DIR)
-    .filter((file) => file.endsWith('.html') && file !== 'index.html' && !file.startsWith('index_'))
-    .sort()
-    .reverse(); // Most recent first
+  function scanDir(dir: string): void {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        // Skip lock/metadata directories that don't contain articles.
+        if (entry.name === 'metadata' || entry.name.startsWith('.')) continue;
+        scanDir(fullPath);
+      } else if (
+        entry.isFile() &&
+        entry.name.endsWith('.html') &&
+        entry.name !== 'index.html' &&
+        !entry.name.startsWith('index_')
+      ) {
+        const match = entry.name.match(/^(.+?)-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
+        if (!match) continue;
 
-  for (const file of files) {
-    const match = file.match(/^(.+?)-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
-    if (match) {
-      const baseSlug = match[1]!;
-      const lang = match[2]! as Language;
-      const filePath = path.join(NEWS_DIR, file);
-      const meta = extractArticleMeta(filePath);
+        const baseSlug = match[1]!;
+        const lang = match[2]! as Language;
+        const meta = extractArticleMeta(fullPath);
 
-      if (!articlesByLang.has(lang)) {
-        articlesByLang.set(lang, []);
+        // Preserve subdirectory prefix (relative to NEWS_DIR) in the
+        // emitted href so links like `news/2026/02/…` keep working.
+        const relDir = path.relative(NEWS_DIR, dir).split(path.sep).join('/');
+        const hrefFile = relDir ? `${relDir}/${entry.name}` : entry.name;
+
+        if (!articlesByLang.has(lang)) {
+          articlesByLang.set(lang, []);
+        }
+        articlesByLang.get(lang)!.push({
+          file: hrefFile,
+          title: meta.title,
+          description: meta.description,
+          lang,
+          baseSlug,
+          date: extractArticleDate(entry.name),
+        });
       }
-      articlesByLang.get(lang)!.push({
-        file,
-        title: meta.title,
-        description: meta.description,
-        lang,
-        baseSlug,
-      });
     }
+  }
+
+  scanDir(NEWS_DIR);
+
+  // Sort each language's articles by publication date (desc), then by
+  // filename (desc) as a deterministic tiebreaker when dates match or are
+  // missing. This guarantees "newest articles on top" regardless of slug
+  // alphabetisation.
+  for (const [, list] of articlesByLang) {
+    list.sort((a, b) => {
+      if (a.date !== b.date) return b.date.localeCompare(a.date);
+      return b.file.localeCompare(a.file);
+    });
   }
 
   return articlesByLang;
@@ -488,8 +533,10 @@ function generateSitemapHtml(lang: Language, articlesByLang: Map<Language, Artic
   const newsIndexFile = isEnglish ? 'news/index.html' : `news/index_${lang}.html`;
 
   const articles = articlesByLang.get(lang) || [];
-  // Limit to 50 most recent articles for readability
-  const recentArticles = articles.slice(0, 50);
+  // Include every article for the target language — the problem statement
+  // explicitly calls for "links to all pages". Articles are already sorted
+  // by publication date (desc) in getArticlesByLanguage().
+  const recentArticles = articles;
 
   const docsSections = getDocsSections();
 
@@ -532,12 +579,19 @@ function generateSitemapHtml(lang: Language, articlesByLang: Map<Language, Artic
                     </li>`;
   }).filter(Boolean).join('\n');
 
-  // Build news article list
+  // Build news article list — includes every article for this language,
+  // sorted by publication date (desc). Each entry exposes the date as a
+  // semantic <time datetime="…"> element for machine parsing and visual
+  // confirmation that newest articles are listed first.
   const articleListHtml = recentArticles.map((article) => {
     const escapedTitle = escapeHtml(article.title);
     const escapedDesc = escapeHtml(article.description);
+    const dateHtml = article.date
+      ? `<time class="sitemap-article-date" datetime="${article.date}">${article.date}</time>`
+      : '';
     return `                    <li>
                         <a href="news/${escapeHtml(article.file)}">${escapedTitle}</a>
+                        ${dateHtml}
                         ${escapedDesc ? `<p class="sitemap-description">${escapedDesc}</p>` : ''}
                     </li>`;
   }).join('\n');
@@ -723,6 +777,19 @@ ${hreflangTags}
             color: var(--muted-text);
             font-size: 0.9375rem;
             line-height: 1.6;
+        }
+        
+        .sitemap-article-date {
+            display: inline-block;
+            font-family: var(--font-mono, 'Courier New', monospace);
+            font-size: 0.8125rem;
+            color: var(--primary-yellow);
+            background: rgba(255, 190, 11, 0.08);
+            border: 1px solid rgba(255, 190, 11, 0.25);
+            border-radius: 4px;
+            padding: 0.125rem 0.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
         }
         
         .language-grid {
