@@ -233,28 +233,32 @@ Generates deep political intelligence articles on Swedish government proposition
 
 ## Time budget
 
-**Run 1 — Analysis mode** (no prior analysis found, ~50 min — produces all 23 artifacts):
+> 🔴 **CRITICAL — safeoutputs MCP idle timeout (~30 min)**: The `safeoutputs` MCP server runs a Streamable-HTTP session that expires after **~30–35 minutes of idle time** (confirmed in run [24820030825](https://github.com/Hack23/riksdagsmonitor/actions/runs/24820030825) where all `create_pull_request` calls at minute ~32 failed with `session not found`, losing 37 files of completed analysis work). `sandbox.mcp.keepalive-interval: 300` keeps TCP connections alive but does **NOT** refresh the server-side session. **Your first and only `safeoutputs___*` call MUST happen by minute 28 at the latest.** This is a harder deadline than the ~60-minute Copilot-API token window described in `00-base-contract.md §Session keepalive requirement` and overrides the generic 48-min deadline in `07-commit-and-pr.md §Deadline enforcement` for this workflow.
+>
+> **AI-FIRST within the compressed budget**: Pass 2 is still mandatory (AI FIRST principle, §"5. 🔴 AI FIRST Quality Principle" in repo custom instructions). Under the tightened ~28-min Run 1 budget, prefer **scope compression over iteration skipping** — reduce the **download/manifest scope** if needed (for example, fewer `dok_id` entries in `data-download-manifest.md`), but maintain **1:1 per-document coverage** for every `dok_id` that remains in the manifest (required by `05-analysis-gate.md` check 2) and always perform a full read-back-and-improve Pass 2 on whatever artifacts exist. For scheduled runs treat `analysis_depth` as `standard` in practice even if the input defaults to `deep`; reserve `deep`/`comprehensive` for manual `workflow_dispatch` backfills where a human can monitor for a longer-session environment. A smaller manifest with complete per-document coverage and genuine iteration is always strictly better than a broader manifest that cannot clear the Analysis Gate or never reaches GitHub.
+
+**Run 1 — Analysis mode** (no prior analysis found, ~28 min — produces all 23 artifacts):
 
 | Minutes | Phase | Module |
 |---------|-------|--------|
 | 0–2 | MCP pre-warm + pre-flight analysis check | 02 / 03 |
-| 2–7 | Download data + catalogue | 03 |
-| 7–32 | Analysis Pass 1 (methodology read + per-doc analyses + **all 23 artifacts**: Family A 9 + B 2 + C 5 + D 7) | 04 |
-| 32–45 | Analysis Pass 2 (read-back + improvements on all 22 text files) | 04 |
-| 45–47 | Analysis Gate (checks 1–8) | 05 |
-| 47–50 | Stage analysis, commit, **ONE** `safeoutputs___create_pull_request` (analysis-only) | 07 |
+| 2–6 | Download data + catalogue | 03 |
+| 6–18 | Analysis Pass 1 (methodology read + per-doc analyses + **all 23 artifacts**: Family A 9 + B 2 + C 5 + D 7) | 04 |
+| 18–24 | Analysis Pass 2 (read-back + improvements on all 22 text files) | 04 |
+| 24–25 | Analysis Gate (checks 1–8) | 05 |
+| 25–28 | Stage analysis, commit, **ONE** `safeoutputs___create_pull_request` (analysis-only) — **HARD DEADLINE minute 28** | 07 |
 
 **Run 2 — Article mode** (analysis exists on disk, ~28 min):
 
 | Minutes | Phase | Module |
 |---------|-------|--------|
 | 0–2 | MCP pre-warm + pre-flight check (SKIP_ANALYSIS=true) | 02 / 03 |
-| 2–7 | Read all 23 analysis artifacts into context (Families A+B+C+D) | 06 |
-| 7–20 | Article Pass 1 + Pass 2 (EN, SV) | 06 |
-| 20–24 | Visual + link validation | 06 |
-| 24–28 | Stage articles, commit, **ONE** `safeoutputs___create_pull_request` | 07 |
+| 2–6 | Read all 23 analysis artifacts into context (Families A+B+C+D) | 06 |
+| 6–18 | Article Pass 1 + Pass 2 (EN, SV) | 06 |
+| 18–22 | Visual + link validation | 06 |
+| 22–28 | Stage articles, commit, **ONE** `safeoutputs___create_pull_request` — **HARD DEADLINE minute 28** | 07 |
 
-Trim scope before quality. Never open a second PR within a run — there is no second PR.
+Trim scope before quality. Never open a second PR within a run — there is no second PR. **If you reach minute 25 without staging, stop all remaining analysis/article work, commit whatever exists on disk (include `[early-pr]` in the commit message), and call `safeoutputs___create_pull_request` immediately** — a partial-but-delivered PR is infinitely better than losing all work to a `session not found` error.
 
 ## Inputs
 
