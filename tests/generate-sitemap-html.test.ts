@@ -125,7 +125,7 @@ describe('Sitemap HTML Generation', () => {
           // Previous article date must be greater than or equal to current.
           expect(
             articles[i - 1]!.date >= articles[i]!.date,
-            `${lang}: ${articles[i - 1]!.file} must not be older than ${articles[i]!.file}`,
+            `${lang}: ${articles[i - 1]!.file} (${articles[i - 1]!.date}) should be newer than or equal to ${articles[i]!.file} (${articles[i]!.date})`,
           ).toBe(true);
         }
       }
@@ -150,7 +150,10 @@ describe('Sitemap HTML Generation', () => {
       const dates = Array.from(html.matchAll(/datetime="(\d{4}-\d{2}-\d{2})"/g)).map((m) => m[1]!);
       expect(dates.length).toBeGreaterThan(1);
       for (let i = 1; i < dates.length; i++) {
-        expect(dates[i - 1]! >= dates[i]!).toBe(true);
+        expect(
+          dates[i - 1]! >= dates[i]!,
+          `Rendered <time> elements must be in descending order; ${dates[i - 1]} appeared before ${dates[i]}`,
+        ).toBe(true);
       }
     });
   });

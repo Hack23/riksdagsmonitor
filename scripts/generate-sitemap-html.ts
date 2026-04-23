@@ -399,8 +399,8 @@ interface ArticleInfo {
  * which keeps those articles at the bottom of date-sorted lists.
  */
 function extractArticleDate(fileName: string): string {
-  const match = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-/);
-  return match ? `${match[1]}-${match[2]}-${match[3]}` : '';
+  const match = fileName.match(/^(\d{4}-\d{2}-\d{2})-/);
+  return match ? match[1]! : '';
 }
 
 // ---------------------------------------------------------------------------
