@@ -333,6 +333,21 @@ graph TB
 
 These five files are the **meta-layer** — read them before opening any framework-specific methodology. They define *what* is produced, *how* it is measured, and *where* the data comes from.
 
+### 🔭 Analytical Supplementary Methodology (v1.1 — Added 2026-04-23)
+
+| Document | Purpose | Templates governed |
+|----------|---------|--------------------|
+| [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md) | Rules for **optional deep-dive analytical templates** that augment the 23 core artifacts with specialised lenses. Non-blocking in `05-analysis-gate.md`. Defines composition rules (DIW weight vector, evidence citations, Forward-Indicator feed, TTP mapping) and per-template analytic moves. | `pestle-analysis.md` · `political-stride-assessment.md` · `wildcards-blackswans.md` · `quantitative-swot.md` |
+
+**When to produce:**
+
+- **PESTLE** — event crosses ≥ 2 macro dimensions (policy with economic spill-over, tech regulation with EU exposure, etc.)
+- **STRIDE-political** — election-adjacent events, integrity incidents, disinformation spikes, critical-infrastructure votes
+- **Wildcards & Black-Swans** — long-horizon forecasting (`monthly-review`, election-year aggregation)
+- **Quantitative SWOT** — decision-oriented memos requiring scored ranking (coalition negotiations, party strategy)
+
+These templates **never replace** a core artifact — they always pair with and cite the canonical artifact they extend.
+
 ---
 
 ### 🤖 AI-Driven Analysis Guide — `ai-driven-analysis-guide.md`

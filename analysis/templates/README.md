@@ -428,6 +428,22 @@ Templates are grouped by the **output family** defined in [`ai-driven-analysis-g
 
 Line floors for S1–S7 are configured in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json) and apply to `comprehensive` runs.
 
+### 🔭 Analytical Supplementary — Optional Deep-Dive (Added v2.5, 2026-04-23)
+
+> **Purpose** — Optional deep-dive analytical templates mapped to frameworks explicitly listed in the intelligence-operative agent's "Core Expertise" and "Analytical Frameworks" sections. **Never replace** a core artifact and **never blocking** in `05-analysis-gate.md`. Pair with and cite the canonical artifact they extend.
+>
+> **Methodology** — [`analytical-supplementary-methodology.md`](../methodologies/analytical-supplementary-methodology.md) (composition rules, evidence rules, per-template analytic moves).
+> **Catalog row** — [`artifact-catalog.md §Analytical Supplementary`](../methodologies/artifact-catalog.md#-analytical-supplementary-artifacts-4).
+
+| # | File | Template | Purpose | Trigger |
+|:-:|------|----------|---------|---------|
+| AS1 | `pestle-analysis.md` | [pestle-analysis.md](pestle-analysis.md) | Macro-environment scan (Political/Economic/Social/Technological/Legal/Environmental) with IMF-vintage economic rows, ≥ 3 cross-dimension interactions, key judgement per dimension | event crosses ≥ 2 PESTLE dimensions |
+| AS2 | `political-stride-assessment.md` | [political-stride-assessment.md](political-stride-assessment.md) | STRIDE applied to political/electoral/institutional surfaces — 6 dimension tables, ≥ 2 Mermaid attack trees, MITRE-style TTP map, ISMS control map (ISO 27001 · NIST CSF 2.0 · CIS v8.1) | election-adjacent · integrity incident · disinfo spike · critical-infra vote |
+| AS3 | `wildcards-blackswans.md` | [wildcards-blackswans.md](wildcards-blackswans.md) | Tail of `scenario-analysis.md` — wildcard register (≥ 8), black-swan candidates (≥ 3) with plausible causal chains, cascading consequence trees, resilience assessment | long-horizon forecasting (`monthly-review`, election-year aggregation) |
+| AS4 | `quantitative-swot.md` | [quantitative-swot.md](quantitative-swot.md) | Numerical SWOT scoring using same DIW weight vector as `significance-scoring.md`; TOWS matrix with scored action rankings; sensitivity analysis | decision memo requiring scored ranking |
+
+Line floors for AS1–AS4 live in `reference-quality-thresholds.json § thresholds.analyticalSupplementary`; apply **only when the template is produced**. Non-production is never a gate failure.
+
 ### Workflow → Family Map
 
 | Workflow | Family A | Family B | Family C | Family D | Family E |

@@ -173,6 +173,49 @@
       "cross-run-diff.md": 180,
       "comparative-international.md": 180,
       "methodology-reflection.md": 235
+    },
+    "analyticalSupplementary": {
+      "_comment": "Analytical supplementary templates — never blocking. Floors apply only when the template is produced. Sister-methodology: analytical-supplementary-methodology.md.",
+      "pestle-analysis.md": {
+        "standard": 100,
+        "deep": 150,
+        "comprehensive": 220,
+        "rowFloor": {
+          "dimensionTables": 4,
+          "crossInteractions": 3
+        }
+      },
+      "political-stride-assessment.md": {
+        "standard": 110,
+        "deep": 160,
+        "comprehensive": 240,
+        "rowFloor": {
+          "stridePerDimension": 3,
+          "attackTrees": 2,
+          "ttpRows": 5
+        }
+      },
+      "wildcards-blackswans.md": {
+        "standard": 110,
+        "deep": 160,
+        "comprehensive": 240,
+        "rowFloor": {
+          "wildcards": 8,
+          "blackSwans": 3,
+          "consequenceTrees": 2,
+          "resilienceDimensions": 5
+        }
+      },
+      "quantitative-swot.md": {
+        "standard": 110,
+        "deep": 160,
+        "comprehensive": 240,
+        "rowFloor": {
+          "perQuadrant": 3,
+          "sensitivityRuns": 3,
+          "towsActionsPerQuadrant": 1
+        }
+      }
     }
   },
   "tierCMultipliers": {
@@ -189,5 +232,12 @@
       "Supplementary artifacts (S1–S7) use defaults.supplementaryFloor unless listed explicitly per articleType."
     ],
     "waivers": "Thresholds may be waived only by the CEO (document owner) via a merged PR updating this file. Ad-hoc waivers in commit messages are rejected."
+  },
+  "meta": {
+    "version": "1.1",
+    "lastUpdated": "2026-04-23",
+    "changelog": [
+      "v1.1 (2026-04-23) — Added analyticalSupplementary section (pestle-analysis · political-stride-assessment · wildcards-blackswans · quantitative-swot); non-blocking."
+    ]
   }
 }

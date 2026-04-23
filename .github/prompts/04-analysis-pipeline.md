@@ -25,6 +25,17 @@ Authoritative methodology & templates:
 
 These are **not counted in the 23 mandatory artifacts** — the 23-artifact contract is unchanged.
 
+**Analytical supplementary artifacts** — 4 optional deep-dive templates mapped to frameworks explicitly listed in the intelligence-operative agent's "Core Expertise" that previously had no template. **Never blocking** in `05-analysis-gate.md` and **never replace** a core artifact. Produce when the trigger condition applies; otherwise skip. See [`analytical-supplementary-methodology.md`](../../analysis/methodologies/analytical-supplementary-methodology.md) for composition rules and per-template analytic moves.
+
+| Template | Produce when | Pairs with |
+|----------|--------------|-----------|
+| [`pestle-analysis.md`](../../analysis/templates/pestle-analysis.md) | event crosses ≥ 2 PESTLE dimensions | `swot-analysis.md`, `risk-assessment.md`, `scenario-analysis.md` |
+| [`political-stride-assessment.md`](../../analysis/templates/political-stride-assessment.md) | election-adjacent / integrity incident / disinfo / critical-infra vote | `threat-analysis.md`, `risk-assessment.md` Institutional/Corruption |
+| [`wildcards-blackswans.md`](../../analysis/templates/wildcards-blackswans.md) | long-horizon forecasting (`monthly-review`, election year) | `scenario-analysis.md`, `forward-indicators.md` |
+| [`quantitative-swot.md`](../../analysis/templates/quantitative-swot.md) | decision memo needing scored ranking | `swot-analysis.md`, `significance-scoring.md`, `executive-brief.md` |
+
+These are **not counted in the 23 mandatory artifacts** and **not counted in the 7 operational supplementary** — the contract is unchanged. Agents ignoring them still produce valid output.
+
 ## Role boundary
 
 | Scripts do | AI does |

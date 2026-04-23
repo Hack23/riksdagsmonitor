@@ -174,6 +174,19 @@ These artifacts **are not counted in the 23-artifact mandatory set** but strengt
 
 ---
 
+## 🔭 Analytical Supplementary Artifacts (4)
+
+Optional deep-dive templates mapped to analytical frameworks explicitly listed in the intelligence-operative agent's Core Expertise but previously untemplated. **Never replace** a core artifact and **never blocking** in `05-analysis-gate.md`. Full production rules: [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md).
+
+| # | Canonical filename | Methodology §link | Template | Line floor (standard / deep / comp) | Trigger |
+|:-:|--------------------|-------------------|----------|:----------------------------------:|---------|
+| AS1 | `pestle-analysis.md` | [`analytical-supplementary-methodology.md#pestle`](analytical-supplementary-methodology.md#pestle) | [`pestle-analysis.md`](../templates/pestle-analysis.md) | 100 / 150 / 220 | event crosses ≥ 2 PESTLE dimensions |
+| AS2 | `political-stride-assessment.md` | [`analytical-supplementary-methodology.md#stride-political`](analytical-supplementary-methodology.md#stride-political) | [`political-stride-assessment.md`](../templates/political-stride-assessment.md) | 110 / 160 / 240 | election-adjacent · integrity incident · disinfo spike · critical-infra vote |
+| AS3 | `wildcards-blackswans.md` | [`analytical-supplementary-methodology.md#wildcards--black-swans`](analytical-supplementary-methodology.md#wildcards--black-swans) | [`wildcards-blackswans.md`](../templates/wildcards-blackswans.md) | 110 / 160 / 240 | long-horizon forecasting (`monthly-review`, election-year aggregation) |
+| AS4 | `quantitative-swot.md` | [`analytical-supplementary-methodology.md#quantitative-swot`](analytical-supplementary-methodology.md#quantitative-swot) | [`quantitative-swot.md`](../templates/quantitative-swot.md) | 110 / 160 / 240 | decision memo requiring scored ranking |
+
+---
+
 ## 🧠 MCP Data Source Inventory
 
 | Server | Transport | Key tools | Feeds artifacts |
@@ -202,6 +215,7 @@ See [`.github/copilot-mcp.json`](../../.github/copilot-mcp.json) for the canonic
 | Check 7 — Party-neutrality arithmetic | 2, 6, 7, 9, 17–23 |
 | Check 8 — `methodology-reflection.md` ICD 203 audit | 16 (⭐) |
 | Check 9 — Supplementary (Tier-C only) | S1–S7 |
+| Check 10 — Analytical Supplementary (never blocking) | AS1–AS4 when present: cell-evidence, Mermaid, ≥ N rows per rubric |
 
 ---
 
@@ -213,4 +227,5 @@ See [`.github/copilot-mcp.json`](../../.github/copilot-mcp.json) for the canonic
 
 ## 📜 Changelog
 
+- **v1.1 (2026-04-23)** — Added Analytical Supplementary Artifacts (4): `pestle-analysis.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `quantitative-swot.md`. Linked to new [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md). Non-blocking.
 - **v1.0 (2026-04-23)** — Initial Riksdagsmonitor catalog extracted and adapted from EU Parliament Monitor `artifact-catalog.md` v1.0. 23 core artifacts + 7 supplementary + N per-document; aligned with [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md) v4.2.

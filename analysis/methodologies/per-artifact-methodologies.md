@@ -305,6 +305,40 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 
 ---
 
+## Analytical Supplementary
+
+Optional deep-dive templates. Full production rules in [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md). Non-blocking in `05-analysis-gate.md`.
+
+### pestle-analysis
+
+**Inputs** — scoped event / bill / decision, horizon, primary sources (riksdagen.se, regeringen.se, scb.se, IMF WEO vintage per [`imf-indicator-mapping.md`](imf-indicator-mapping.md), WB codes per [`worldbank-indicator-mapping.md`](worldbank-indicator-mapping.md), EUR-Lex for EU instruments).  
+**Analytic moves** — (1) scope declaration (trigger, horizon, unit, sources); (2) 6 dimension tables (P/E/S/T/L/Env) each with ≥ 4 rows covering factor, current state, direction, evidence, impact, WEP; (3) economic rows tagged with IMF vintage; (4) ≥ 3 cross-dimension interactions (direction + magnitude + rationale); (5) key judgement per dimension (WEP-tagged); (6) PIR feed-back row.  
+**Evidence rules** — every row cites a `dok_id` or primary-source host; economic rows cite IMF indicator code + vintage; WB rows cite indicator code.  
+**Anti-patterns** — dimension rows without evidence; skipping the cross-dimension interaction table (the value add); mixing vintages across economic rows; stating "trend" without a dated reference point.
+
+### political-stride-assessment
+
+**Inputs** — scoped entity (party / committee / agency / electoral component), trust boundary, adversary model, relevant `threat-analysis.md` kill-chain and `risk-assessment.md` Institutional/Corruption rows.  
+**Analytic moves** — (1) scope + adversary-model declaration; (2) 6 dimension tables (Spoofing / Tampering / Repudiation / Information-disclosure / Denial / Elevation) with ≥ 3 rows each carrying vector, target, L, I, existing mitigation, residual risk, evidence; (3) ≥ 2 Mermaid colour-coded attack trees; (4) MITRE-style TTP mapping table with political adaptations; (5) control mapping to ISO 27001 · NIST CSF 2.0 · CIS Controls v8.1; (6) PIR feed-back.  
+**Evidence rules** — every STRIDE row cites evidence (incident log, historical parallel, named actor, `dok_id`); every L × I ≥ 12 row also appears in `threat-analysis.md` TTPs.  
+**Anti-patterns** — applying STRIDE verbatim without political adaptation; missing residual-risk column; no Mermaid attack tree; omitting the ISMS control map.
+
+### wildcards--black-swans
+
+**Inputs** — `scenario-analysis.md` anchor, historical-parallels register, long-horizon elicitation, external-shock indicators (IMF risk outlook, NATO briefs, MSB reports).  
+**Analytic moves** — (1) horizon + domain filter; (2) ICD-203-aligned definitions (wildcard ≈ 5–20 %, black-swan < 5 % with plausible chain); (3) wildcard register ≥ 8 events across domains with trigger indicator + lead time + impact vectors + existing counter-measures; (4) ≥ 3 black-swan candidates each with "why under-weighted" + ≤ 4-step plausible causal chain; (5) ≥ 2 Mermaid colour-coded cascading consequence trees; (6) early-warning indicator table feeding `forward-indicators.md`; (7) resilience assessment across 5 dimensions (institutional / fiscal / coalition / info-integrity / alliance).  
+**Evidence rules** — every wildcard row cites a historical analogue OR expert source; every early-warning indicator includes data source + threshold; resilience rows cite fiscal buffer via IMF GGXWDG_NGDP.  
+**Anti-patterns** — treating the register as doomsaying without causal chains; no early-warning indicators (the actionable column); confusing high-probability risks with wildcards; omitting resilience assessment.
+
+### quantitative-swot
+
+**Inputs** — `swot-analysis.md` narrative content, `significance-scoring.md` weight vector (`w_D=0.35, w_I=0.25, w_W=0.20, w_S=0.20`).  
+**Analytic moves** — (1) scope + perspective declaration; (2) scoring rubric documentation (`I ∈ [-5,+5]`, `C ∈ [0.2,0.95]` WEP-mapped, `L ∈ [0.1,1.0]`, `T ∈ [0.3,1.0]`); (3) 4 scored tables (S / W / O / T) with ≥ 3 evidence-citing items each; (4) composite metrics (net position, SW-balance, OT-balance, high-confidence share); (5) TOWS 2 × 2 with ≥ 1 action per quadrant citing item IDs; (6) ≥ 3 sensitivity analyses; (7) Mermaid `xychart-beta` composite-score bar chart.  
+**Evidence rules** — every scored item cites evidence matching `swot-analysis.md`; confidence `C` must correspond to declared WEP band; top-3 composite items appear in `executive-brief.md § 3 Decisions`.  
+**Anti-patterns** — inventing items not in narrative SWOT; picking scores to justify a pre-decided ranking; omitting sensitivity analysis; TOWS quadrants without item-ID citations.
+
+---
+
 ## 🔗 Related Documentation
 
 - [`artifact-catalog.md`](artifact-catalog.md) — single row per artifact (this file's companion index)
@@ -317,4 +351,5 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 
 ## 📜 Changelog
 
+- **v1.1 (2026-04-23)** — Added Analytical Supplementary section (pestle-analysis · political-stride-assessment · wildcards--black-swans · quantitative-swot) aligned with [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md).
 - **v1.0 (2026-04-23)** — Initial Riksdagsmonitor per-artifact methodology reference; adapted from EU Parliament Monitor `per-artifact-methodologies.md` v1.0 to the Riksdag 23-artifact catalog.
