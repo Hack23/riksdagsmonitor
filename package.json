@@ -48,7 +48,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "prebuild": "npx tsx scripts/generate-news-indexes/index.ts && npx tsx scripts/extract-news-metadata.ts && npx tsx scripts/generate-sitemap-html.ts && npx tsx scripts/generate-rss.ts && npx tsx scripts/generate-sitemap.ts",
+    "prebuild": "npx tsx scripts/generate-news-indexes/index.ts && npx tsx scripts/extract-news-metadata.ts && npx tsx scripts/generate-sitemap-html.ts && npx tsx scripts/generate-political-intelligence.ts && npx tsx scripts/generate-rss.ts && npx tsx scripts/generate-sitemap.ts",
     "build": "vite build",
     "build:lib": "tsc -p tsconfig.lib.json && tsc -p tsconfig.npm-scripts.json",
     "postbuild": "cp rss.xml dist/rss.xml && cp sitemap.xml dist/sitemap.xml && cp -r cia-data dist/cia-data",
@@ -74,6 +74,7 @@
     "generate-news-indexes": "node scripts/generate-news-indexes.ts",
     "generate-sitemap": "node scripts/generate-sitemap.ts",
     "generate-sitemap-html": "npx tsx scripts/generate-sitemap-html.ts",
+    "generate-political-intelligence": "npx tsx scripts/generate-political-intelligence.ts",
     "generate-rss": "npx tsx scripts/generate-rss.ts",
     "htmlhint": "sh -c 'htmlhint *.html; set -- news/*.html; if [ -e \"$1\" ]; then htmlhint \"$@\"; else echo \"No news/*.html files to lint\"; fi'",
     "lint": "eslint .",

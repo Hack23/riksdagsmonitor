@@ -947,6 +947,10 @@ ${dashboardLinks}
                         <a href="${newsIndexFile}">${escapeHtml(t.newsIndex)} - ${escapeHtml(meta.nativeName)}</a>
                         <p class="sitemap-description">${escapeHtml(t.newsDesc)}</p>
                     </li>
+                    <li>
+                        <a href="${lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${lang}.html`}">🧠 Political Intelligence - ${escapeHtml(meta.nativeName)}</a>
+                        <p class="sitemap-description">Methodologies, analysis templates, and every daily intelligence artifact (linked to GitHub for full auditability).</p>
+                    </li>
                 </ul>
                 ${recentArticles.length > 0 ? `
                 <h3>${escapeHtml(t.recentArticles)}</h3>
