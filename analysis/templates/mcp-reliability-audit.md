@@ -7,6 +7,12 @@
 
 > **🎯 Purpose** — Comprehensive MCP server health assessment. Tracks which endpoints succeeded, which failed, which were degraded, and what workarounds were applied. First-class operational artifact — if a downstream reader doubts an analytical claim, this is the file that proves the underlying data call actually returned fresh truth.
 
+## 🔄 Tradecraft Context
+
+- **Why this artifact exists** — Documents MCP/server reliability during the run so analytical conclusions can be traced back to verified data access; distinguishes fresh primary-source retrieval, degraded retrieval, and fallback/manual substitution; creates an auditable record of outages, latency, stale data, and workaround decisions that may affect confidence.
+- **How to use during the run** — Update immediately after meaningful MCP/API access attempts, not retrospectively from memory. Record both successes and failures (partial responses, stale payloads, timeout behaviour, retries). When fallbacks are used, name the fallback source and link the affected downstream artifacts.
+- **Minimum tradecraft standard** — Every endpoint relied upon for analysis must appear here with enough detail for another operator to reproduce or challenge the evidence chain. Reliability judgements must be evidence-based (timestamps, error modes, freshness signals, operational impact). If significant degradation occurred, downstream analysis must explicitly reduce confidence or scope claims accordingly.
+
 ---
 
 ## 📋 Document Metadata

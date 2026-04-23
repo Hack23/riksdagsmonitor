@@ -248,23 +248,31 @@ Non-blocking for `standard` / `deep` runs; **blocking for `comprehensive` / Tier
 | S6 | `cross-session-intelligence.md` | `weekly-review`, `monthly-review`, quarterly aggregation | [`per-artifact-methodologies.md#cross-session-intelligence`](../../analysis/methodologies/per-artifact-methodologies.md#cross-session-intelligence) |
 | S7 | `session-baseline.md` | `weekly-review`, `monthly-review`, any aggregation workflow | [`per-artifact-methodologies.md#session-baseline`](../../analysis/methodologies/per-artifact-methodologies.md#session-baseline) |
 
-Inline bash probe — append to the main block after `FAIL=0` bookkeeping completes. The gate blocks on **aggregation article types** (`weekly-review`, `monthly-review`) and on any run whose **tier** is `comprehensive` (the Tier-C run mode), regardless of article type. `ARTICLE_TYPE` encodes the workflow family; `ANALYSIS_TIER` (when set by the workflow) encodes the depth tier (`standard` | `deep` | `comprehensive`).
+Inline bash probe — append to the main block after `FAIL=0` bookkeeping completes. The gate blocks on **aggregation article types** (`weekly-review`, `monthly-review`), on any run whose **tier** is `comprehensive` (the Tier-C run mode), and on `cross-run-diff.md` when the workflow has **≥ 2 production runs** of the same article type. `ARTICLE_TYPE` encodes the workflow family; `ANALYSIS_TIER` (when set) encodes the depth tier (`standard` | `deep` | `comprehensive`); `ANALYSIS_RUN_COUNT` (when set) is the numeric count of runs for the same article-generation cycle (if unset or non-numeric, treated as `1`).
 
 ```bash
-# Check 9 — supplementary artifacts (blocking for aggregation types AND any Tier-C run)
+# Check 9 — supplementary artifacts (blocking for aggregation types, any Tier-C run, and S5 when run-count >= 2)
 IS_AGGREGATION=0
 IS_TIER_C=0
+IS_MULTI_RUN=0
+RUN_COUNT=1
 [[ "${ARTICLE_TYPE:-}" =~ ^(weekly-review|monthly-review)$ ]] && IS_AGGREGATION=1
 [[ "${ANALYSIS_TIER:-standard}" == "comprehensive" ]] && IS_TIER_C=1
-if (( IS_AGGREGATION == 1 || IS_TIER_C == 1 )); then
-  SUPP=(analysis-index.md reference-analysis-quality.md mcp-reliability-audit.md workflow-audit.md)
+[[ "${ANALYSIS_RUN_COUNT:-}" =~ ^[0-9]+$ ]] && RUN_COUNT="${ANALYSIS_RUN_COUNT}"
+(( RUN_COUNT >= 2 )) && IS_MULTI_RUN=1
+if (( IS_AGGREGATION == 1 || IS_TIER_C == 1 || IS_MULTI_RUN == 1 )); then
+  SUPP=()
+  if (( IS_AGGREGATION == 1 || IS_TIER_C == 1 )); then
+    SUPP+=(analysis-index.md reference-analysis-quality.md mcp-reliability-audit.md workflow-audit.md)
+  fi
   (( IS_AGGREGATION == 1 )) && SUPP+=(cross-session-intelligence.md session-baseline.md)
+  (( IS_MULTI_RUN == 1 )) && SUPP+=(cross-run-diff.md)
   for f in "${SUPP[@]}"; do
-    [ -s "$ANALYSIS_DIR/$f" ] || { echo "❌ supplementary missing (agg=$IS_AGGREGATION tier-c=$IS_TIER_C): $f"; FAIL=1; }
+    [ -s "$ANALYSIS_DIR/$f" ] || { echo "❌ supplementary missing (agg=$IS_AGGREGATION tier-c=$IS_TIER_C multi-run=$IS_MULTI_RUN): $f"; FAIL=1; }
   done
 fi
 ```
 
 Depth floors for S1–S7 are configured under `thresholds.breaking.*` / per-type sections in [`reference-quality-thresholds.json`](../../analysis/methodologies/reference-quality-thresholds.json); when a floor is absent the `defaults.supplementaryFloor` (120 lines) applies.
 
-**Pass-2 quality audit consumption** — when `reference-analysis-quality.md` is present, the gate reads its `§5 Overall Benchmark Judgement` total. A total below **7.0/10** is treated as a Pass-2-incomplete signal; the agent MUST run another Pass-2 iteration before re-invoking this gate.
+**Pass-2 quality audit — recommendation, not enforced in the bash probe** — the bash check above does **not** parse `reference-analysis-quality.md §5`. When the artifact is produced, agents SHOULD re-read its `§5 Overall Benchmark Judgement` total and trigger another Pass-2 iteration if the score is below **7.0/10** before invoking this gate. This is a non-enforced self-discipline rule (no blocking logic); an enforced numeric-floor check would require adding a YAML/JSON score block to the template and a dedicated parser, which is deferred to a follow-up change.

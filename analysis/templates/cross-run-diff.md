@@ -7,6 +7,14 @@
 
 > **🎯 Purpose** — Track evolution of political assessment across runs. For each prior-run finding, apply Bayesian update based on new evidence to produce a posterior assessment with an explicit WEP band shift.
 
+## 🔄 Tradecraft Context
+
+- **Artifact role** — Compares the current run against the immediately previous run of the **same article type** to identify material changes in evidence, assessment, and confidence.
+- **When to use** — Required for every non-initial run. If this is the first ever run for the article type, mark this artifact `N/A` and state that no prior baseline exists.
+- **Primary inputs** — Current-run core artifacts, prior-run core artifacts, prior `synthesis-summary.md`, prior `reference-analysis-quality.md`, and any newly surfaced source evidence that materially changes the posterior judgement.
+- **Analytical standard** — Use explicit Bayesian-style updating: identify what changed, explain whether each change strengthens, weakens, or leaves unchanged the prior assessment, and record any resulting WEP band movement with concise justification.
+- **Output requirement** — Focus only on deltas that matter for editorial judgement, risk framing, or confidence. Do not restate unchanged background unless needed to explain a shift.
+
 ---
 
 ## 📋 Document Metadata

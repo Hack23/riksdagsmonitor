@@ -1,9 +1,20 @@
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
 # Quantitative SWOT — {{ARTICLE_TYPE}} · {{ARTICLE_DATE}}
 
 > **Analytical supplementary (optional).** Numerical extension of [`swot-analysis.md`](swot-analysis.md). Produce when decision-makers need a scored ranking (e.g., coalition negotiation prep, party strategy memo, election forecasting). Applies **DIW weighting × confidence × leverage** to every SWOT item. Pairs with `significance-scoring.md` (same weight vector) and `executive-brief.md` (top-3 surfacing).
 >
 > **Methodology** → [`analysis/methodologies/analytical-supplementary-methodology.md § Quantitative SWOT`](../methodologies/analytical-supplementary-methodology.md#quantitative-swot).
 > **Not counted in the 23 core artifacts.** Non-blocking in `05-analysis-gate.md`.
+
+## 🔄 Tradecraft Context
+
+- **Artifact class** — Analytical supplementary (optional, never blocking)
+- **Use when** — Decision-makers need a numerically ranked SWOT (coalition negotiation prep, party strategy memo, election forecasting)
+- **Pairs with** — `swot-analysis.md` (qualitative source), `significance-scoring.md` (shared DIW weight vector), `executive-brief.md` (top-3 surfacing)
+- **Methodology** — [`analytical-supplementary-methodology.md § Quantitative SWOT`](../methodologies/analytical-supplementary-methodology.md#quantitative-swot)
+- **Workflow status** — Not counted in the 23 core artifacts; non-blocking in [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md)
 
 ## 📋 Scope & scoring rubric
 

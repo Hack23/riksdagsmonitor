@@ -7,6 +7,14 @@
 
 > **🎯 Purpose** — Comprehensive directory of every artifact in this run with recommended reading order for the article generator, downstream reviewers and the next same-type run. Answers: *"what exists in this run and what should I read first?"*
 
+## 🔄 Tradecraft Context
+
+- **Workflow role** — Final navigation layer for the run; produced at the end of Pass 2 after all required artifacts are complete, reviewed and internally consistent.
+- **Primary users** — Article generator, human reviewers, later same-type runs, and audit/compliance readers needing a single entry point into the full analysis set.
+- **Why it matters** — Reduces retrieval errors, makes reading order explicit, surfaces degraded or missing artifacts, and provides the canonical map of what evidence existed before any article text was written.
+- **Tradecraft rule** — Do not introduce new claims here. Summarise and link the run's completed artifacts; point readers to the authoritative source artifact for each major finding.
+- **AI-FIRST requirement** — Complete only after both passes finish: Pass 1 creates the artifact set; Pass 2 re-reads, improves, validates consistency, then assembles this index as the read-me-first navigator.
+
 ---
 
 ## 📋 Document Metadata
@@ -65,9 +73,9 @@ Annotate each node ✅ / ⚠️ / ❌ based on actual execution.
 
 | # | Family | Canonical filename | On-disk path | Lines | Floor | Status |
 |:-:|:------:|--------------------|--------------|:-----:|:-----:|:------:|
-| 1 | A | `per-file-analysis` (N) | `documents/*.md` | `[#]` | DIW tier | `[✅/⚠️/❌]` |
-| 2 | A | `synthesis-summary.md` | `synthesis-summary.md` | `[#]` | `[floor]` | `[…]` |
-| 3 | A | `cross-reference-map.md` | `cross-reference-map.md` | `[#]` | `[floor]` | `[…]` |
+| 1 | A | `README.md` | `README.md` | `[#]` | `[floor]` | `[✅/⚠️/❌]` |
+| 2 | A | `executive-brief.md` | `executive-brief.md` | `[#]` | `[floor]` | `[…]` |
+| 3 | A | `synthesis-summary.md` | `synthesis-summary.md` | `[#]` | `[floor]` | `[…]` |
 | 4 | A | `significance-scoring.md` | `significance-scoring.md` | `[#]` | `[floor]` | `[…]` |
 | 5 | A | `classification-results.md` | `classification-results.md` | `[#]` | `[floor]` | `[…]` |
 | 6 | A | `swot-analysis.md` | `swot-analysis.md` | `[#]` | `[floor]` | `[…]` |
@@ -75,7 +83,9 @@ Annotate each node ✅ / ⚠️ / ❌ based on actual execution.
 | 8 | A | `threat-analysis.md` | `threat-analysis.md` | `[#]` | `[floor]` | `[…]` |
 | 9 | A | `stakeholder-perspectives.md` | `stakeholder-perspectives.md` | `[#]` | `[floor]` | `[…]` |
 | 10 | B | `data-download-manifest.md` | `data-download-manifest.md` | `[#]` | `[floor]` | `[…]` |
-| 11 | B | `cross-reference-map.md` (Tier-C) | `cross-reference-map.md` | `[#]` | `[floor]` | `[…]` |
+| 11 | B | `cross-reference-map.md` | `cross-reference-map.md` | `[#]` | `[floor]` | `[…]` |
+
+> **Notes on the 23-artifact core** — `cross-reference-map.md` is a single artifact; Tier-C adds sibling-folder citations *inside* the same file (do **not** create a second file). Per-document analyses live under `documents/{dok_id}-analysis.md` (Family E template, validated by gate Check 2) and are **not** counted in this 23-row core inventory.
 | 12 | C | `scenario-analysis.md` | `scenario-analysis.md` | `[#]` | `[floor]` | `[…]` |
 | 13 | C | `comparative-international.md` | `comparative-international.md` | `[#]` | `[floor]` | `[…]` |
 | 14 | C | `devils-advocate.md` | `devils-advocate.md` | `[#]` | `[floor]` | `[…]` |

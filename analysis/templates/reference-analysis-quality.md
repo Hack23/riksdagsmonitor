@@ -7,6 +7,14 @@
 
 > **🎯 Purpose** — Mandatory quality audit (for `comprehensive` / Tier-C runs; recommended otherwise). Compares current run to the gold-standard reference and emits a concrete Pass-2 action list. This is the single artifact that operationalises the AI-FIRST principle.
 
+## 🔄 Tradecraft Context
+
+- **Workflow stage** — Complete after Pass 1 artifact production and before final article drafting or Pass 2 sign-off.
+- **Primary use** — Measure the current run against the repository reference benchmark and identify concrete improvement work required to meet AI-FIRST quality expectations.
+- **Analyst task** — Use evidence from the current run only; compare depth, completeness, specificity, cross-referencing, and actionability against the benchmark defined in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json).
+- **Output requirement** — Record clear benchmark gaps, explain why they matter, and produce a prioritised Pass-2 remediation list that can be executed immediately.
+- **Quality rule** — Do not mark the run as benchmark-met unless the artifact set demonstrates comparable analytical depth and operational usefulness to the reference run.
+
 ---
 
 ## 📋 Document Metadata
@@ -113,7 +121,7 @@ Tolerance — ± 15 pp of seat share. Failure → mandatory Pass-2 rewrite of of
 
 | Gate | Weight | Score (0–10) | Weighted |
 |------|:------:|:------------:|:--------:|
-| Coverage (21/21 core) | 0.25 | `[#]` | `[#]` |
+| Coverage (23/23 core) | 0.25 | `[#]` | `[#]` |
 | Depth floors met | 0.20 | `[#]` | `[#]` |
 | Tradecraft signals | 0.20 | `[#]` | `[#]` |
 | Evidence quality | 0.15 | `[#]` | `[#]` |

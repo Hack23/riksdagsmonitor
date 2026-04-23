@@ -7,6 +7,13 @@
 
 > **🎯 Purpose** — The comprehensive, structured fact layer of *which Riksdag plenary sittings and committee sessions took place during the period, how long they sat, and which texts they adopted*. Distinct from [`historical-parallels.md`](historical-parallels.md) (metric trending). This is the **calendar + roster** — data-dense, low-prose — that every other artifact in the run points back to.
 
+## 🔄 Tradecraft Context
+
+- Use this artifact to establish the factual session baseline for the covered period before drawing analytical conclusions in other artifacts.
+- Keep content source-grounded, structured, and low-inference: prioritise dates, durations, adopted texts, counts, chairing/session metadata over narrative prose.
+- Where multiple sittings or committee sessions occurred, record each discretely so downstream artifacts can cite this file as the canonical calendar/roster reference.
+- If source material is incomplete or ambiguous, note the gap explicitly rather than inferring missing details.
+
 ---
 
 ## 📋 Run Context

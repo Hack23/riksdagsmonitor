@@ -14,12 +14,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--23-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-23 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-23 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-31  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -40,10 +40,10 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 
 ## 📑 Index
 
-### Family A — Core Synthesis
-- [§ per-file-analysis](#per-file-analysis) (Family E template, but Family-A logic)
+### Family A — Core Synthesis (9)
+- [§ README](#readme)
+- [§ executive-brief](#executive-brief)
 - [§ synthesis-summary](#synthesis-summary) ⭐
-- [§ cross-reference-map](#cross-reference-map)
 - [§ significance-scoring](#significance-scoring)
 - [§ classification-results](#classification-results)
 - [§ swot-analysis](#swot-analysis)
@@ -51,8 +51,12 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 - [§ threat-analysis](#threat-analysis)
 - [§ stakeholder-perspectives](#stakeholder-perspectives)
 
-### Family B — Structural Metadata
+### Family B — Structural Metadata (2)
 - [§ data-download-manifest](#data-download-manifest)
+- [§ cross-reference-map](#cross-reference-map)
+
+### Family E — Per-Document (N, separate template)
+- [§ per-file-analysis](#per-file-analysis) — produced under `documents/{dok_id}-analysis.md`; validated separately by gate Check 2, not part of the 23 core set
 
 ### Family C — Strategic Extensions
 - [§ scenario-analysis](#scenario-analysis)

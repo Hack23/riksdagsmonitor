@@ -7,6 +7,12 @@
 
 > **🎯 Purpose** — Transparent record of workflow execution: which phases ran, which MCP tools were called, which rules of [`ai-driven-analysis-guide.md`](../methodologies/ai-driven-analysis-guide.md) were satisfied, and where the run fell short. Combined with [`reference-analysis-quality.md`](reference-analysis-quality.md) it is the two-artifact pair that answers "was this a good run?".
 
+## 🔄 Tradecraft Context
+
+This artifact is produced at the end of **Pass 2** to verify that the workflow followed the repository's full analysis contract before article publication. It documents **actual execution**, not intentions: prompt modules run, MCP/tool usage, validation gates reached, deviations from standard procedure, and whether the required **AI FIRST** second-pass improvement was genuinely completed.
+
+Use this template as an evidence-backed self-audit of tradecraft quality. Record where the run met the required methodology, where shortcuts or skips occurred, and what risks those deviations introduce for analytical completeness, reproducibility, or policy compliance. If fast paths, partial runs, or fallback behaviours were used, state them explicitly and assess their impact.
+
 ---
 
 ## 📋 Document Metadata

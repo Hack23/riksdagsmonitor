@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--23-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
@@ -150,7 +150,7 @@ One file per `dok_id` in `data-download-manifest.md`, written under `documents/{
 
 - Cluster files — `{cluster}-cluster-analysis.md` collapse related low-weight items (e.g. 12 procedural committee notices → one cluster analysis).
 - Methodology: [`per-document-methodology.md`](per-document-methodology.md).
-- Per-file floor is adaptive: `max(DIW tier floor, --min-lines)`. See [`reference-quality-thresholds.json`](reference-quality-thresholds.json) §`perDocumentFloors`.
+- Per-file floor is adaptive: `max(DIW tier floor, --min-lines)`. See [`reference-quality-thresholds.json`](reference-quality-thresholds.json) §`defaults.perDocumentFloorByTier`.
 
 ---
 

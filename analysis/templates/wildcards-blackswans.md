@@ -1,9 +1,20 @@
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
 # Wildcards & Black-Swan Events — {{ARTICLE_TYPE}} · {{ARTICLE_DATE}}
 
 > **Analytical supplementary (optional).** Captures low-probability / high-impact events that sit **outside** the 3–5 main scenarios in `scenario-analysis.md`. Useful for long-horizon forecasting (`monthly-review`), election-year aggregations, and any topic where cascading consequences are plausible. Pairs with `scenario-analysis.md` (adds tail), `risk-assessment.md` (extends posterior tail), and `forward-indicators.md` (early-warning triggers).
 >
 > **Methodology** → [`analysis/methodologies/analytical-supplementary-methodology.md § Wildcards & Black-Swans`](../methodologies/analytical-supplementary-methodology.md#wildcards--black-swans).
 > **Not counted in the 23 core artifacts.** Non-blocking in `05-analysis-gate.md`.
+
+## 🔄 Tradecraft Context
+
+- **Artifact class** — Analytical supplementary (optional, never blocking)
+- **Use when** — Long-horizon forecasting (`monthly-review`), election-year aggregations, or any topic where cascading consequences of tail events are plausible
+- **Pairs with** — `scenario-analysis.md` (adds tail beyond 3–5 main scenarios), `risk-assessment.md` (extends posterior tail), `forward-indicators.md` (early-warning triggers)
+- **Methodology** — [`analytical-supplementary-methodology.md § Wildcards & Black-Swans`](../methodologies/analytical-supplementary-methodology.md#wildcards--black-swans)
+- **Workflow status** — Not counted in the 23 core artifacts; non-blocking in [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md)
 
 ## 📋 Scope
 

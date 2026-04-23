@@ -1,9 +1,20 @@
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
 # Political STRIDE Assessment — {{ARTICLE_TYPE}} · {{ARTICLE_DATE}}
 
 > **Analytical supplementary (optional).** STRIDE adapted to **political, electoral and institutional** threat surfaces. Produce for election-adjacent events, integrity incidents, disinformation spikes, critical-infrastructure votes, or any scoped entity where the adversary model matters. Pairs with `threat-analysis.md` (kill chain / MITRE mapping) and `risk-assessment.md` (Institutional + Corruption dimensions).
 >
 > **Methodology** → [`analysis/methodologies/analytical-supplementary-methodology.md § STRIDE-political`](../methodologies/analytical-supplementary-methodology.md#stride-political).
 > **Not counted in the 23 core artifacts.** Non-blocking in `05-analysis-gate.md`.
+
+## 🔄 Tradecraft Context
+
+- **Artifact class** — Analytical supplementary (optional, never blocking)
+- **Use when** — Election-adjacent events, integrity incidents, disinformation spikes, critical-infrastructure votes, or any scoped entity where the adversary model matters
+- **Pairs with** — `threat-analysis.md` (kill chain / MITRE mapping), `risk-assessment.md` (Institutional + Corruption dimensions)
+- **Methodology** — [`analytical-supplementary-methodology.md § STRIDE-political`](../methodologies/analytical-supplementary-methodology.md#stride-political)
+- **Workflow status** — Not counted in the 23 core artifacts; non-blocking in [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md)
 
 ## 📋 Scope declaration
 

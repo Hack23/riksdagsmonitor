@@ -1,9 +1,20 @@
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
 # PESTLE Analysis — {{ARTICLE_TYPE}} · {{ARTICLE_DATE}}
 
 > **Analytical supplementary (optional).** Produce when a bill, scandal, budget cycle, election-adjacent event, or external shock crosses **two or more** PESTLE dimensions. Pairs with `swot-analysis.md` (external factors → Opportunities/Threats), `risk-assessment.md` (External dimension rows), and `scenario-analysis.md` (driver framework).
 >
 > **Methodology** → [`analysis/methodologies/analytical-supplementary-methodology.md § PESTLE`](../methodologies/analytical-supplementary-methodology.md#pestle).
 > **Not counted in the 23 core artifacts.** Non-blocking in `05-analysis-gate.md`.
+
+## 🔄 Tradecraft Context
+
+- **Artifact class** — Analytical supplementary (optional, never blocking)
+- **Use when** — A bill, scandal, budget cycle, election-adjacent event, or external shock crosses **two or more** PESTLE dimensions
+- **Pairs with** — `swot-analysis.md` (external factors → Opportunities/Threats), `risk-assessment.md` (External dimension rows), and `scenario-analysis.md` (driver framework)
+- **Methodology** — [`analytical-supplementary-methodology.md § PESTLE`](../methodologies/analytical-supplementary-methodology.md#pestle)
+- **Workflow status** — Not counted in the 23 core artifacts; non-blocking in [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md)
 
 ## 📋 Scope declaration
 
