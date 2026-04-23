@@ -3,6 +3,7 @@
 **Analyst**: James Pether Sörling
 **Framework**: political-threat-framework.md (Political Threat Taxonomy, attack tree)
 **Date**: 2026-04-22 | **Riksmöte**: 2025/26
+**Overall Threat Level**: Elevated | **Confidence**: [B2]
 
 ---
 

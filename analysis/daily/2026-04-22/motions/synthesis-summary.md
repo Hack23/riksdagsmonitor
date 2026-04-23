@@ -13,7 +13,7 @@
 
 **Primary story**: Three opposition blocs (S, V, MP) simultaneously filed counter-motions rejecting the government's fuel tax cut in the extra amendment budget (prop. 2025/26:236), exposing the coalition's climate-fiscal credibility gap and creating a Finance Committee battleground ahead of the June 2026 budget vote. The concurrent opposition motions on deportation tightening (prop. 2025/26:235) from V, MP, and C further signal a fractured parliamentary landscape on migration — despite the Tidö bloc's formal majority.
 
-**Why this is the lead**: Five of the 20 retrieved motions target a single proposition (236), representing an unprecedented cross-party alignment of S+V+MP on opposing the fuel tax cut. This is significant because the Social Democrats (S) as the largest opposition party explicitly breaking with a climate-hostile fiscal measure creates a clear pre-election dividing line for 2026. Admiralty [B2] — confirmed by three separate motion texts from riksdagen.se with distinct party authors.
+**Why this is the lead**: Five of the 20 retrieved motions target a single proposition (236), representing an unprecedented cross-party alignment of S+V+MP on opposing the fuel tax cut. This creates a clear pre-election dividing line for 2026 because the Social Democrats (S), as the largest opposition party, explicitly break with a climate-hostile fiscal measure. Admiralty [B2] — confirmed by three separate motion texts from riksdagen.se with distinct party authors.
 
 ---
 
