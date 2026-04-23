@@ -411,7 +411,7 @@ Templates are grouped by the **output family** defined in [`ai-driven-analysis-g
 
 ### 🛰️ Operational Supplementary — Not Counted in the 23 (Added v2.4, 2026-04-23)
 
-> **Purpose** — Enrichment artifacts that strengthen the AI-FIRST quality loop, cross-run memory, and MCP health auditability. **Recommended** for every `deep` run; **mandatory** for every `comprehensive` (Tier-C aggregation) run. Absence of these artifacts does **not** fail the gate for non-Tier-C runs, but each is consumed by [`.github/prompts/05-analysis-gate.md §Supplementary checks`](../../.github/prompts/05-analysis-gate.md#supplementary-checks) when present.
+> **Purpose** — Enrichment artifacts that strengthen the AI-FIRST quality loop, cross-run memory, and MCP health auditability. **Recommended** for every `deep` run; **mandatory** for every `comprehensive` (Tier-C aggregation) run. For non-Tier-C runs these artifacts are generally non-blocking; **exception:** `cross-run-diff.md` (S5) is gate-required whenever `ANALYSIS_RUN_COUNT >= 2` (same article type), including `standard` and `deep` runs. Each artifact is consumed by [`.github/prompts/05-analysis-gate.md §Supplementary checks`](../../.github/prompts/05-analysis-gate.md#supplementary-checks) when present.
 >
 > **Methodology index** — [`per-artifact-methodologies.md`](../methodologies/per-artifact-methodologies.md) §§ analysis-index · reference-analysis-quality · mcp-reliability-audit · workflow-audit · cross-run-diff · cross-session-intelligence · session-baseline.
 > **Catalog row** — [`artifact-catalog.md §Operational Supplementary`](../methodologies/artifact-catalog.md#-operational-supplementary-artifacts-7).

@@ -1,6 +1,6 @@
 # Analytical Supplementary Methodology
 
-**Version:** v1.0 · **Effective date:** 2026-04-23 · **Owner:** Intelligence Operative role · **Review cycle:** Quarterly
+**Version:** v1.1 · **Effective date:** 2026-04-23 · **Owner:** Intelligence Operative role · **Review cycle:** Quarterly
 
 > **Scope.** Governs the **Analytical Supplementary** family of optional deep-dive templates that can be produced alongside the 23 mandatory artifacts. These templates are **never** required by [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) and **never** replace a core artifact — they **augment** the core set with specialised analytic lenses when a run's scope warrants it.
 >

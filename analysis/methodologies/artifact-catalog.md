@@ -160,7 +160,8 @@ These artifacts **are not counted in the 23-artifact mandatory set** but strengt
 
 - **Recommended** for every `deep` run.
 - **Mandatory** for every `comprehensive` (Tier-C aggregation) run.
-- Enforced by [`05-analysis-gate.md` §Supplementary checks](../../.github/prompts/05-analysis-gate.md#supplementary-checks) when present; absence does **not** fail the gate for non-Tier-C runs.
+- Enforced by [`05-analysis-gate.md` §Supplementary checks](../../.github/prompts/05-analysis-gate.md#supplementary-checks) when present; for non-Tier-C runs, absence generally does **not** fail the gate.
+- **Exception:** `S5` / `cross-run-diff.md` becomes gate-required whenever `ANALYSIS_RUN_COUNT >= 2` (same article type), including `standard` and `deep` runs — the gate treats multi-run comparison as a required supplementary check independent of tier.
 
 | # | Canonical filename | Methodology §link | Template | Line floor | Purpose |
 |:-:|--------------------|-------------------|----------|:---------:|---------|
