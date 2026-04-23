@@ -3,6 +3,7 @@
 **Analyst**: James Pether Sörling  
 **Framework**: political-threat-framework.md (STRIDE, attack tree, TTP mapping)  
 **Date**: 2026-04-22  
+**Overall Threat Level**: Elevated | **Confidence**: [B3]
 
 ## Threat Landscape Overview
 
