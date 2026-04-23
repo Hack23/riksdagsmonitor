@@ -1,0 +1,41 @@
+{
+  "version": "1.0",
+  "articleType": "monthly-review",
+  "date": "2026-04-23",
+  "policyDomains": ["fiscal", "energy", "labour", "social"],
+  "dataPoints": [
+    {
+      "indicator": "GDP_GROWTH",
+      "value": 0.82,
+      "unit": "percent",
+      "year": 2024,
+      "source": "World Bank NY.GDP.MKTP.KD.ZG"
+    },
+    {
+      "indicator": "UNEMPLOYMENT",
+      "value": 8.69,
+      "unit": "percent",
+      "year": 2025,
+      "source": "World Bank SL.UEM.TOTL.ZS"
+    },
+    {
+      "indicator": "INFLATION",
+      "value": 2.84,
+      "unit": "percent",
+      "year": 2024,
+      "source": "World Bank FP.CPI.TOTL.ZG"
+    }
+  ],
+  "commentary": "Sweden's macroeconomic baseline is stable entering the September 2026 election. GDP growth 0.82% (2024), unemployment 8.69% (2025), inflation 2.84% (2024). The HD01FiU48 fuel tax relief (82 öre/litre May–September 2026) provides household relief. The government's fiscal narrative is supported by HD03100 spring economic bill. Opposition risk: healthcare spending gaps highlighted by 77 committee reservations.",
+  "source": {
+    "worldBank": {
+      "country": "SE",
+      "indicators": ["NY.GDP.MKTP.KD.ZG", "SL.UEM.TOTL.ZS", "FP.CPI.TOTL.ZG"],
+      "retrieved": "2026-04-23"
+    },
+    "scb": {
+      "tables": [],
+      "retrieved": "2026-04-23"
+    }
+  }
+}
