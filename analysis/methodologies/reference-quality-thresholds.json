@@ -1,0 +1,193 @@
+{
+  "version": "1.0.0",
+  "effectiveDate": "2026-04-23",
+  "description": "Per-artifact minimum line-count floors used to enforce Rule 22 (Per-Artifact Depth Floors) of analysis/methodologies/ai-driven-analysis-guide.md for Riksdagsmonitor agentic news workflows. Values are calibrated to the DIW Output Matrix and the Riksdag 23-artifact catalog (see artifact-catalog.md). A file below its threshold MUST trigger a Pass-2 rewrite; it MUST NOT be shipped with a '[truncated]' or 'AI_MUST_REPLACE' note. When an articleType entry is absent the gate falls back to the default floor. When a per-artifact entry is present the effective floor is max(perArtifact, default), so the default can only raise, never lower, a configured floor.",
+  "tradecraftQualitySignals": {
+    "note": "ADDITIVE quality signals — NOT enforced by the line-count validator. They represent content-quality expectations that the Pass-2 self-audit in methodology-reflection.md must check. Every probabilistic artifact MUST also comply with osint-tradecraft-standards.md: (1) WEP band + time horizon on every headline judgement, (2) Admiralty grade on every external source, (3) confidence-in-evidence tracked separately from WEP probability, (4) >= 10 SATs applied per run (attested in methodology-reflection.md §Evidence audit). Non-compliant artifacts trigger a Pass-2 rewrite even if the line-count floor is met.",
+    "wepBandRequired": [
+      "synthesis-summary.md",
+      "scenario-analysis.md",
+      "threat-analysis.md",
+      "risk-assessment.md",
+      "intelligence-assessment.md",
+      "forward-indicators.md",
+      "cross-run-diff.md",
+      "cross-session-intelligence.md"
+    ],
+    "admiraltyGradeRequired": [
+      "synthesis-summary.md",
+      "scenario-analysis.md",
+      "threat-analysis.md",
+      "risk-assessment.md",
+      "intelligence-assessment.md",
+      "devils-advocate.md",
+      "comparative-international.md",
+      "cross-run-diff.md"
+    ],
+    "icd203BlufRequired": [
+      "synthesis-summary.md",
+      "intelligence-assessment.md",
+      "methodology-reflection.md"
+    ],
+    "satDocumentationRequired": [
+      "methodology-reflection.md",
+      "devils-advocate.md"
+    ],
+    "diwScoreRequired": [
+      "significance-scoring.md",
+      "per-file-political-intelligence.md"
+    ],
+    "partyNeutralityArithmeticRequired": [
+      "synthesis-summary.md",
+      "swot-analysis.md",
+      "risk-assessment.md",
+      "stakeholder-perspectives.md",
+      "media-framing-analysis.md",
+      "voter-segmentation.md",
+      "coalition-mathematics.md"
+    ]
+  },
+  "referenceBenchmark": {
+    "description": "Gold-standard reference run used to calibrate depth floors. Re-selected quarterly from the highest-scoring production run of the preceding quarter as measured by reference-analysis-quality.md.",
+    "runDir": "analysis/daily/[TBD-reference-benchmark]/",
+    "runId": "[TBD]",
+    "date": "2026-Q2-benchmark-pending",
+    "nextCalibration": "2026-07-31"
+  },
+  "toleranceRule": "All floors derived from the benchmark are rounded down to the nearest 5 lines with a 10% tolerance applied, to tolerate minor variation while still rejecting thin output.",
+  "defaults": {
+    "description": "Fallback floors applied when an articleType or perArtifact entry is absent.",
+    "coreArtifactFloor": 120,
+    "perDocumentFloorByTier": {
+      "L1_surface": 40,
+      "L2_strategic": 80,
+      "L2_plus_priority": 140,
+      "L3_intelligence_grade": 220
+    },
+    "clusterFloor": 100,
+    "supplementaryFloor": 120
+  },
+  "thresholds": {
+    "breaking": {
+      "synthesis-summary.md": 205,
+      "cross-reference-map.md": 110,
+      "significance-scoring.md": 150,
+      "classification-results.md": 140,
+      "swot-analysis.md": 160,
+      "risk-assessment.md": 180,
+      "threat-analysis.md": 180,
+      "stakeholder-perspectives.md": 220,
+      "data-download-manifest.md": 60,
+      "scenario-analysis.md": 180,
+      "comparative-international.md": 150,
+      "devils-advocate.md": 160,
+      "intelligence-assessment.md": 160,
+      "methodology-reflection.md": 200,
+      "election-2026-analysis.md": 150,
+      "voter-segmentation.md": 140,
+      "coalition-mathematics.md": 135,
+      "historical-parallels.md": 130,
+      "media-framing-analysis.md": 140,
+      "implementation-feasibility.md": 140,
+      "forward-indicators.md": 150,
+      "analysis-index.md": 120,
+      "reference-analysis-quality.md": 120,
+      "mcp-reliability-audit.md": 150,
+      "workflow-audit.md": 120,
+      "cross-run-diff.md": 130,
+      "cross-session-intelligence.md": 140,
+      "session-baseline.md": 140
+    },
+    "evening-analysis": {
+      "synthesis-summary.md": 220,
+      "risk-assessment.md": 200,
+      "threat-analysis.md": 200,
+      "stakeholder-perspectives.md": 240,
+      "forward-indicators.md": 170,
+      "methodology-reflection.md": 210
+    },
+    "realtime-monitor": {
+      "synthesis-summary.md": 170,
+      "risk-assessment.md": 150,
+      "threat-analysis.md": 150,
+      "stakeholder-perspectives.md": 190,
+      "forward-indicators.md": 140,
+      "methodology-reflection.md": 180
+    },
+    "propositions": {
+      "synthesis-summary.md": 230,
+      "classification-results.md": 160,
+      "swot-analysis.md": 180,
+      "risk-assessment.md": 210,
+      "implementation-feasibility.md": 170,
+      "stakeholder-perspectives.md": 250,
+      "methodology-reflection.md": 215
+    },
+    "motions": {
+      "synthesis-summary.md": 220,
+      "significance-scoring.md": 170,
+      "classification-results.md": 155,
+      "swot-analysis.md": 175,
+      "stakeholder-perspectives.md": 240,
+      "comparative-international.md": 160,
+      "methodology-reflection.md": 210
+    },
+    "committee-reports": {
+      "synthesis-summary.md": 215,
+      "swot-analysis.md": 170,
+      "risk-assessment.md": 195,
+      "implementation-feasibility.md": 165,
+      "stakeholder-perspectives.md": 235,
+      "methodology-reflection.md": 205
+    },
+    "interpellations": {
+      "synthesis-summary.md": 205,
+      "swot-analysis.md": 160,
+      "threat-analysis.md": 180,
+      "stakeholder-perspectives.md": 220,
+      "media-framing-analysis.md": 160,
+      "methodology-reflection.md": 200
+    },
+    "week-ahead": {
+      "synthesis-summary.md": 200,
+      "forward-indicators.md": 170,
+      "methodology-reflection.md": 195
+    },
+    "month-ahead": {
+      "synthesis-summary.md": 230,
+      "forward-indicators.md": 200,
+      "scenario-analysis.md": 200,
+      "methodology-reflection.md": 215
+    },
+    "weekly-review": {
+      "synthesis-summary.md": 240,
+      "cross-session-intelligence.md": 180,
+      "session-baseline.md": 170,
+      "cross-run-diff.md": 160,
+      "methodology-reflection.md": 220
+    },
+    "monthly-review": {
+      "synthesis-summary.md": 260,
+      "cross-session-intelligence.md": 220,
+      "session-baseline.md": 200,
+      "cross-run-diff.md": 180,
+      "comparative-international.md": 180,
+      "methodology-reflection.md": 235
+    }
+  },
+  "tierCMultipliers": {
+    "description": "Tier-C aggregation workflows apply these period-scope multipliers on top of the base thresholds. See ext/tier-c-aggregation.md.",
+    "week-aggregation": 1.15,
+    "month-aggregation": 1.35,
+    "quarter-aggregation": 1.6
+  },
+  "enforcement": {
+    "gateChecks": [
+      "Check 3 in .github/prompts/05-analysis-gate.md consumes thresholds[articleType][artifact] with fallback to defaults.coreArtifactFloor.",
+      "A file below floor MUST be returned to Pass 2 via the phase-04-pass2 checkpoint.",
+      "Family-E per-document files use defaults.perDocumentFloorByTier keyed by the file's DIW tier tag in significance-scoring.md.",
+      "Supplementary artifacts (S1–S7) use defaults.supplementaryFloor unless listed explicitly per articleType."
+    ],
+    "waivers": "Thresholds may be waived only by the CEO (document owner) via a merged PR updating this file. Ad-hoc waivers in commit messages are rejected."
+  }
+}
