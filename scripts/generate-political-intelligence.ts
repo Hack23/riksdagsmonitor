@@ -77,6 +77,24 @@ interface PiTranslations {
   readonly olderDays: string;
   readonly showMore: string;
   readonly backToTop: string;
+  /** Label for the expandable artifact listing under each stream. */
+  readonly expandArtifacts: string;
+  /** Accessible label e.g. "N artifacts in stream" */
+  readonly artifactsLabel: string;
+  /** Link label for opening the documents/ subfolder */
+  readonly documentsFolder: string;
+  /** Short generic description for per-document analysis artifacts (e.g. hd01au11-analysis.md). */
+  readonly documentAnalysisDesc: string;
+  /** Short generic description for per-document raw JSON artifacts. */
+  readonly documentJsonDesc: string;
+  /** Generic word "Analysis" used in generated artifact titles. */
+  readonly analysisWord: string;
+  /** Generic word "Data" used in generated artifact titles (for .json artifacts). */
+  readonly dataWord: string;
+  /** Other-language switcher heading. */
+  readonly otherLanguages: string;
+  /** Skip-link anchor label. */
+  readonly skipToMain: string;
 }
 
 const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
@@ -104,6 +122,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: 'Earlier analysis days',
     showMore: 'Show more',
     backToTop: 'Back to top',
+    expandArtifacts: 'Show individual artifacts',
+    artifactsLabel: 'artifacts in this stream',
+    documentsFolder: 'Source documents',
+    documentAnalysisDesc: 'Per-document intelligence analysis with structured metadata and Mermaid visualisations.',
+    documentJsonDesc: 'Structured JSON payload extracted from the source parliamentary document.',
+    analysisWord: 'Analysis',
+    dataWord: 'Data',
+    otherLanguages: 'Read this page in another language',
+    skipToMain: 'Skip to main content',
   },
   sv: {
     title: 'Politisk underrättelse',
@@ -129,6 +156,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: 'Tidigare analysdagar',
     showMore: 'Visa fler',
     backToTop: 'Tillbaka till toppen',
+    expandArtifacts: 'Visa enskilda artefakter',
+    artifactsLabel: 'artefakter i strömmen',
+    documentsFolder: 'Källdokument',
+    documentAnalysisDesc: 'Underrättelseanalys per dokument med strukturerad metadata och Mermaid-visualiseringar.',
+    documentJsonDesc: 'Strukturerad JSON-fil extraherad från det ursprungliga riksdagsdokumentet.',
+    analysisWord: 'Analys',
+    dataWord: 'Data',
+    otherLanguages: 'Läs sidan på ett annat språk',
+    skipToMain: 'Hoppa till huvudinnehållet',
   },
   da: {
     title: 'Politisk efterretning',
@@ -154,6 +190,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: 'Ældre analysedage',
     showMore: 'Vis mere',
     backToTop: 'Tilbage til toppen',
+    expandArtifacts: 'Vis enkelte artefakter',
+    artifactsLabel: 'artefakter i strømmen',
+    documentsFolder: 'Kildedokumenter',
+    documentAnalysisDesc: 'Efterretningsanalyse per dokument med struktureret metadata og Mermaid-visualiseringer.',
+    documentJsonDesc: 'Struktureret JSON-payload udtrukket fra det originale parlamentariske dokument.',
+    analysisWord: 'Analyse',
+    dataWord: 'Data',
+    otherLanguages: 'Læs siden på et andet sprog',
+    skipToMain: 'Spring til hovedindholdet',
   },
   no: {
     title: 'Politisk etterretning',
@@ -179,6 +224,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: 'Eldre analysedager',
     showMore: 'Vis flere',
     backToTop: 'Tilbake til toppen',
+    expandArtifacts: 'Vis enkelte artefakter',
+    artifactsLabel: 'artefakter i strømmen',
+    documentsFolder: 'Kildedokumenter',
+    documentAnalysisDesc: 'Etterretningsanalyse per dokument med strukturert metadata og Mermaid-visualiseringer.',
+    documentJsonDesc: 'Strukturert JSON-nyttelast trukket ut fra det opprinnelige parlamentsdokumentet.',
+    analysisWord: 'Analyse',
+    dataWord: 'Data',
+    otherLanguages: 'Les siden på et annet språk',
+    skipToMain: 'Hopp til hovedinnholdet',
   },
   fi: {
     title: 'Poliittinen tiedustelu',
@@ -204,6 +258,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: 'Vanhemmat analyysipäivät',
     showMore: 'Näytä lisää',
     backToTop: 'Takaisin ylös',
+    expandArtifacts: 'Näytä yksittäiset artefaktit',
+    artifactsLabel: 'artefaktit tässä virrassa',
+    documentsFolder: 'Lähdeasiakirjat',
+    documentAnalysisDesc: 'Asiakirjakohtainen tiedusteluanalyysi strukturoidulla metatiedolla ja Mermaid-visualisoinneilla.',
+    documentJsonDesc: 'Strukturoitu JSON-data, joka on poimittu alkuperäisestä parlamentin asiakirjasta.',
+    analysisWord: 'Analyysi',
+    dataWord: 'Data',
+    otherLanguages: 'Lue tämä sivu toisella kielellä',
+    skipToMain: 'Siirry pääsisältöön',
   },
   de: {
     title: 'Politische Intelligenz',
@@ -229,6 +292,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: 'Ältere Analyse-Tage',
     showMore: 'Mehr anzeigen',
     backToTop: 'Nach oben',
+    expandArtifacts: 'Einzelne Artefakte anzeigen',
+    artifactsLabel: 'Artefakte in diesem Strom',
+    documentsFolder: 'Quelldokumente',
+    documentAnalysisDesc: 'Dokumentweise Intelligenzanalyse mit strukturierten Metadaten und Mermaid-Visualisierungen.',
+    documentJsonDesc: 'Strukturierte JSON-Nutzlast, extrahiert aus dem ursprünglichen Parlamentsdokument.',
+    analysisWord: 'Analyse',
+    dataWord: 'Daten',
+    otherLanguages: 'Diese Seite in einer anderen Sprache lesen',
+    skipToMain: 'Zum Hauptinhalt springen',
   },
   fr: {
     title: 'Intelligence politique',
@@ -254,6 +326,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: 'Jours d\'analyse antérieurs',
     showMore: 'Afficher plus',
     backToTop: 'Retour en haut',
+    expandArtifacts: 'Afficher les artefacts individuels',
+    artifactsLabel: 'artefacts dans ce flux',
+    documentsFolder: 'Documents sources',
+    documentAnalysisDesc: 'Analyse de renseignement par document avec métadonnées structurées et visualisations Mermaid.',
+    documentJsonDesc: 'Charge utile JSON structurée extraite du document parlementaire source.',
+    analysisWord: 'Analyse',
+    dataWord: 'Données',
+    otherLanguages: 'Lire cette page dans une autre langue',
+    skipToMain: 'Aller au contenu principal',
   },
   es: {
     title: 'Inteligencia política',
@@ -279,6 +360,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: 'Días de análisis anteriores',
     showMore: 'Mostrar más',
     backToTop: 'Volver arriba',
+    expandArtifacts: 'Mostrar artefactos individuales',
+    artifactsLabel: 'artefactos en este flujo',
+    documentsFolder: 'Documentos fuente',
+    documentAnalysisDesc: 'Análisis de inteligencia por documento con metadatos estructurados y visualizaciones Mermaid.',
+    documentJsonDesc: 'Carga JSON estructurada extraída del documento parlamentario original.',
+    analysisWord: 'Análisis',
+    dataWord: 'Datos',
+    otherLanguages: 'Leer esta página en otro idioma',
+    skipToMain: 'Saltar al contenido principal',
   },
   nl: {
     title: 'Politieke inlichtingen',
@@ -304,6 +394,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: 'Oudere analysedagen',
     showMore: 'Meer tonen',
     backToTop: 'Naar boven',
+    expandArtifacts: 'Individuele artefacten tonen',
+    artifactsLabel: 'artefacten in deze stroom',
+    documentsFolder: 'Brondocumenten',
+    documentAnalysisDesc: 'Inlichtingenanalyse per document met gestructureerde metadata en Mermaid-visualisaties.',
+    documentJsonDesc: 'Gestructureerde JSON-payload geëxtraheerd uit het oorspronkelijke parlementaire document.',
+    analysisWord: 'Analyse',
+    dataWord: 'Data',
+    otherLanguages: 'Lees deze pagina in een andere taal',
+    skipToMain: 'Ga naar hoofdinhoud',
   },
   ar: {
     title: 'الاستخبارات السياسية',
@@ -329,6 +428,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: 'أيام تحليل سابقة',
     showMore: 'عرض المزيد',
     backToTop: 'العودة إلى الأعلى',
+    expandArtifacts: 'عرض كل القطع الفردية',
+    artifactsLabel: 'قطع في هذا التيار',
+    documentsFolder: 'الوثائق المصدرية',
+    documentAnalysisDesc: 'تحليل استخباراتي لكل وثيقة مع بيانات وصفية منظمة ومخططات Mermaid.',
+    documentJsonDesc: 'حمولة JSON منظمة مستخرجة من الوثيقة البرلمانية الأصلية.',
+    analysisWord: 'تحليل',
+    dataWord: 'بيانات',
+    otherLanguages: 'اقرأ هذه الصفحة بلغة أخرى',
+    skipToMain: 'انتقل إلى المحتوى الرئيسي',
   },
   he: {
     title: 'מודיעין פוליטי',
@@ -354,6 +462,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: 'ימי ניתוח ישנים יותר',
     showMore: 'הצג עוד',
     backToTop: 'חזור למעלה',
+    expandArtifacts: 'הצג ארטיפקטים בודדים',
+    artifactsLabel: 'ארטיפקטים בזרם',
+    documentsFolder: 'מסמכי מקור',
+    documentAnalysisDesc: 'ניתוח מודיעיני לכל מסמך עם מטא-נתונים מובנים ותרשימי Mermaid.',
+    documentJsonDesc: 'מטען JSON מובנה שנשלף ממסמך הפרלמנט המקורי.',
+    analysisWord: 'ניתוח',
+    dataWord: 'נתונים',
+    otherLanguages: 'קרא דף זה בשפה אחרת',
+    skipToMain: 'דלג לתוכן הראשי',
   },
   ja: {
     title: '政治インテリジェンス',
@@ -379,6 +496,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: '過去の分析日',
     showMore: 'さらに表示',
     backToTop: 'トップへ戻る',
+    expandArtifacts: '個別の成果物を表示',
+    artifactsLabel: 'このストリームの成果物',
+    documentsFolder: 'ソース文書',
+    documentAnalysisDesc: '構造化メタデータと Mermaid 可視化を含む文書単位のインテリジェンス分析。',
+    documentJsonDesc: '元の議会文書から抽出された構造化 JSON ペイロード。',
+    analysisWord: '分析',
+    dataWord: 'データ',
+    otherLanguages: 'このページを他の言語で読む',
+    skipToMain: 'メインコンテンツへスキップ',
   },
   ko: {
     title: '정치 인텔리전스',
@@ -404,6 +530,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: '이전 분석 일자',
     showMore: '더 보기',
     backToTop: '맨 위로',
+    expandArtifacts: '개별 산출물 표시',
+    artifactsLabel: '이 스트림의 산출물',
+    documentsFolder: '원본 문서',
+    documentAnalysisDesc: '구조화된 메타데이터와 Mermaid 시각화를 포함한 문서별 인텔리전스 분석.',
+    documentJsonDesc: '원본 의회 문서에서 추출한 구조화된 JSON 페이로드.',
+    analysisWord: '분석',
+    dataWord: '데이터',
+    otherLanguages: '이 페이지를 다른 언어로 읽기',
+    skipToMain: '본문으로 건너뛰기',
   },
   zh: {
     title: '政治情报',
@@ -429,6 +564,15 @@ const PI_TRANSLATIONS: Record<Language, PiTranslations> = {
     olderDays: '较早的分析日期',
     showMore: '显示更多',
     backToTop: '返回顶部',
+    expandArtifacts: '显示单个产出物',
+    artifactsLabel: '该流中的产出物',
+    documentsFolder: '源文档',
+    documentAnalysisDesc: '逐文档情报分析，附带结构化元数据和 Mermaid 可视化。',
+    documentJsonDesc: '从议会原始文档中提取的结构化 JSON 负载。',
+    analysisWord: '分析',
+    dataWord: '数据',
+    otherLanguages: '以其他语言阅读本页',
+    skipToMain: '跳至主要内容',
   },
 };
 
@@ -440,8 +584,11 @@ interface CatalogEntry {
   readonly file: string;
   readonly title: string;
   readonly icon: string;
+  /** English description used as canonical fallback when a language lacks a translation. */
   readonly description: string;
   readonly githubUrl: string;
+  /** Which library this entry belongs to (methodology vs template); drives i18n lookup. */
+  readonly library: 'methodologies' | 'templates';
 }
 
 /** Curated icons and English high-level descriptions keyed by filename. */
@@ -521,6 +668,971 @@ const STREAM_META: Record<string, { icon: string; description: string }> = {
   'breaking-news': { icon: '🚨', description: 'Breaking-news intelligence products generated in response to significant events.' },
 };
 
+// ---------------------------------------------------------------------------
+// Per-language description overlays — every stream, methodology, template, and
+// artifact filename has a concise localised description for all 14 supported
+// languages. Helpers fall back to English when a specific key/lang is missing.
+// ---------------------------------------------------------------------------
+
+/** Per-language display name for each known stream slug. */
+const STREAM_NAME_I18N: Record<string, Record<Language, string>> = {
+  propositions: {
+    en: 'Propositions', sv: 'Propositioner', da: 'Propositioner', no: 'Proposisjoner', fi: 'Propositiot',
+    de: 'Propositionen', fr: 'Propositions', es: 'Proposiciones', nl: 'Proposities',
+    ar: 'المقترحات الحكومية', he: 'הצעות חוק ממשלתיות', ja: '政府法案', ko: '정부 제안', zh: '政府法案',
+  },
+  motions: {
+    en: 'Motions', sv: 'Motioner', da: 'Motioner', no: 'Motsjoner', fi: 'Aloitteet',
+    de: 'Motionen', fr: 'Motions', es: 'Mociones', nl: 'Moties',
+    ar: 'عرائض برلمانية', he: 'הצעות חוק פרטיות', ja: '動議', ko: '의안', zh: '动议',
+  },
+  interpellations: {
+    en: 'Interpellations', sv: 'Interpellationer', da: 'Interpellationer', no: 'Interpellasjoner', fi: 'Interpellaatiot',
+    de: 'Interpellationen', fr: 'Interpellations', es: 'Interpelaciones', nl: 'Interpellaties',
+    ar: 'استجوابات وزارية', he: 'שאילתות', ja: '質問主意書', ko: '질의', zh: '质询',
+  },
+  committeeReports: {
+    en: 'Committee Reports', sv: 'Betänkanden', da: 'Udvalgsrapporter', no: 'Komitérapporter', fi: 'Valiokuntaraportit',
+    de: 'Ausschussberichte', fr: 'Rapports de commission', es: 'Informes de comité', nl: 'Commissierapporten',
+    ar: 'تقارير اللجان', he: 'דוחות ועדה', ja: '委員会報告', ko: '위원회 보고서', zh: '委员会报告',
+  },
+  'committee-reports': {
+    en: 'Committee Reports', sv: 'Betänkanden', da: 'Udvalgsrapporter', no: 'Komitérapporter', fi: 'Valiokuntaraportit',
+    de: 'Ausschussberichte', fr: 'Rapports de commission', es: 'Informes de comité', nl: 'Commissierapporten',
+    ar: 'تقارير اللجان', he: 'דוחות ועדה', ja: '委員会報告', ko: '위원회 보고서', zh: '委员会报告',
+  },
+  'evening-analysis': {
+    en: 'Evening Analysis', sv: 'Kvällsanalys', da: 'Aftenanalyse', no: 'Kveldsanalyse', fi: 'Ilta-analyysi',
+    de: 'Abendanalyse', fr: 'Analyse du soir', es: 'Análisis vespertino', nl: 'Avondanalyse',
+    ar: 'تحليل مسائي', he: 'ניתוח ערב', ja: '夜間分析', ko: '저녁 분석', zh: '晚间分析',
+  },
+  'deep-inspection': {
+    en: 'Deep Inspection', sv: 'Djupgranskning', da: 'Dybdeinspektion', no: 'Dybdegranskning', fi: 'Syvätarkastelu',
+    de: 'Tiefeninspektion', fr: 'Inspection approfondie', es: 'Inspección profunda', nl: 'Diepte-inspectie',
+    ar: 'فحص معمق', he: 'בדיקה מעמיקה', ja: '詳細調査', ko: '심층 조사', zh: '深度检查',
+  },
+  'week-ahead': {
+    en: 'Week Ahead', sv: 'Veckan framåt', da: 'Ugen forude', no: 'Uken fremover', fi: 'Tuleva viikko',
+    de: 'Kommende Woche', fr: 'Semaine à venir', es: 'Semana próxima', nl: 'Komende week',
+    ar: 'الأسبوع القادم', he: 'השבוע הקרוב', ja: '今後一週間', ko: '다음 주', zh: '未来一周',
+  },
+  'month-ahead': {
+    en: 'Month Ahead', sv: 'Månaden framåt', da: 'Måneden forude', no: 'Måneden fremover', fi: 'Tuleva kuukausi',
+    de: 'Kommender Monat', fr: 'Mois à venir', es: 'Mes próximo', nl: 'Komende maand',
+    ar: 'الشهر القادم', he: 'החודש הקרוב', ja: '今後一か月', ko: '다음 달', zh: '未来一月',
+  },
+  'weekly-review': {
+    en: 'Weekly Review', sv: 'Veckoöversikt', da: 'Ugeoversigt', no: 'Ukesoppsummering', fi: 'Viikkokatsaus',
+    de: 'Wochenrückblick', fr: 'Revue hebdomadaire', es: 'Resumen semanal', nl: 'Weekoverzicht',
+    ar: 'المراجعة الأسبوعية', he: 'סקירה שבועית', ja: '週次レビュー', ko: '주간 리뷰', zh: '每周综述',
+  },
+  'monthly-review': {
+    en: 'Monthly Review', sv: 'Månadsöversikt', da: 'Månedsoversigt', no: 'Månedsoppsummering', fi: 'Kuukausikatsaus',
+    de: 'Monatsrückblick', fr: 'Revue mensuelle', es: 'Resumen mensual', nl: 'Maandoverzicht',
+    ar: 'المراجعة الشهرية', he: 'סקירה חודשית', ja: '月次レビュー', ko: '월간 리뷰', zh: '每月综述',
+  },
+  'breaking-news': {
+    en: 'Breaking News', sv: 'Senaste nytt', da: 'Breaking news', no: 'Siste nytt', fi: 'Uutisvirta',
+    de: 'Eilmeldungen', fr: 'Actualité urgente', es: 'Noticias de última hora', nl: 'Laatste nieuws',
+    ar: 'أخبار عاجلة', he: 'חדשות בוערות', ja: '速報', ko: '속보', zh: '突发新闻',
+  },
+  documents: {
+    en: 'Documents', sv: 'Dokument', da: 'Dokumenter', no: 'Dokumenter', fi: 'Asiakirjat',
+    de: 'Dokumente', fr: 'Documents', es: 'Documentos', nl: 'Documenten',
+    ar: 'الوثائق', he: 'מסמכים', ja: '文書', ko: '문서', zh: '文档',
+  },
+};
+
+/** Per-language description for each known stream slug. */
+const STREAM_DESC_I18N: Record<string, Record<Language, string>> = {
+  propositions: {
+    en: 'Government propositions (bills tabled by the Cabinet).',
+    sv: 'Regeringens propositioner (lagförslag från regeringen).',
+    da: 'Regeringens propositioner (lovforslag fra kabinettet).',
+    no: 'Regjeringens proposisjoner (lovforslag fra regjeringen).',
+    fi: 'Hallituksen esitykset (hallituksen lakiehdotukset).',
+    de: 'Regierungsvorlagen (vom Kabinett eingebrachte Gesetzentwürfe).',
+    fr: 'Propositions gouvernementales (projets de loi déposés par le gouvernement).',
+    es: 'Proposiciones del Gobierno (proyectos de ley presentados por el Gabinete).',
+    nl: 'Regeringsvoorstellen (wetsvoorstellen ingediend door het Kabinet).',
+    ar: 'مقترحات حكومية (مشاريع قوانين مقدمة من مجلس الوزراء).',
+    he: 'הצעות חוק ממשלתיות (הצעות שהונחו על־ידי הקבינט).',
+    ja: '政府提出法案（内閣が提出する法律案）。',
+    ko: '정부 제안 법안(내각이 제출한 법률안).',
+    zh: '政府法案（内阁提交的法案）。',
+  },
+  motions: {
+    en: 'Member motions (bills and proposals introduced by MPs).',
+    sv: 'Motioner (förslag från enskilda riksdagsledamöter).',
+    da: 'Motioner (lovforslag indbragt af folketingsmedlemmer).',
+    no: 'Motsjoner (forslag fra enkelte stortingsrepresentanter).',
+    fi: 'Kansanedustajien aloitteet (edustajien lakialoitteet ja ehdotukset).',
+    de: 'Anträge von Abgeordneten (von Parlamentariern eingebrachte Gesetzentwürfe und Vorschläge).',
+    fr: 'Motions parlementaires (projets et propositions déposés par les députés).',
+    es: 'Mociones de miembros (proyectos y propuestas presentados por los parlamentarios).',
+    nl: 'Moties van leden (wetsvoorstellen en voorstellen ingediend door Kamerleden).',
+    ar: 'عرائض النواب (مشاريع قوانين ومقترحات يقدمها أعضاء البرلمان).',
+    he: 'הצעות חוק פרטיות של חברי פרלמנט.',
+    ja: '議員発議の動議（議員が提出する法案・提案）。',
+    ko: '의원 발의 의안(의원이 제출한 법안 및 제안).',
+    zh: '议员动议（国会议员提出的法案和提案）。',
+  },
+  interpellations: {
+    en: 'Interpellations — formal ministerial questions and responses.',
+    sv: 'Interpellationer — formella ministerfrågor och svar.',
+    da: 'Interpellationer — formelle ministerspørgsmål og svar.',
+    no: 'Interpellasjoner — formelle statsrådsspørsmål og svar.',
+    fi: 'Interpellaatiot — ministeriöille esitettyjä muodollisia kysymyksiä ja vastauksia.',
+    de: 'Interpellationen — formelle Anfragen an Minister und deren Antworten.',
+    fr: 'Interpellations — questions ministérielles formelles et réponses.',
+    es: 'Interpelaciones: preguntas ministeriales formales y sus respuestas.',
+    nl: 'Interpellaties — formele ministeriële vragen en antwoorden.',
+    ar: 'استجوابات — أسئلة وزارية رسمية وإجاباتها.',
+    he: 'שאילתות — שאלות רשמיות לשרים ותשובותיהם.',
+    ja: '質問主意書 — 閣僚に対する正式な質問と回答。',
+    ko: '질의 — 장관에 대한 공식 질문과 답변.',
+    zh: '质询 — 向部长提出的正式问题及其答复。',
+  },
+  committeeReports: {
+    en: 'Parliamentary committee reports (betänkanden) and recommendations.',
+    sv: 'Riksdagens utskottsbetänkanden och rekommendationer.',
+    da: 'Udvalgsbetænkninger og anbefalinger fra Folketingets udvalg.',
+    no: 'Komitébetenkninger og tilrådninger fra Stortingets komiteer.',
+    fi: 'Eduskunnan valiokuntien mietinnöt ja suositukset.',
+    de: 'Berichte und Empfehlungen der Parlamentsausschüsse (betänkanden).',
+    fr: 'Rapports des commissions parlementaires (betänkanden) et recommandations.',
+    es: 'Informes y recomendaciones de las comisiones parlamentarias (betänkanden).',
+    nl: 'Rapporten en aanbevelingen van parlementaire commissies (betänkanden).',
+    ar: 'تقارير لجان البرلمان السويدي (بيتينكانديْن) وتوصياتها.',
+    he: 'דוחות והמלצות של ועדות הפרלמנט (betänkanden).',
+    ja: '国会委員会報告（betänkanden）と勧告。',
+    ko: '의회 위원회 보고서(betänkanden)와 권고.',
+    zh: '议会委员会报告（betänkanden）及建议。',
+  },
+  'committee-reports': {
+    en: 'Parliamentary committee reports (betänkanden) and recommendations.',
+    sv: 'Riksdagens utskottsbetänkanden och rekommendationer.',
+    da: 'Udvalgsbetænkninger og anbefalinger fra Folketingets udvalg.',
+    no: 'Komitébetenkninger og tilrådninger fra Stortingets komiteer.',
+    fi: 'Eduskunnan valiokuntien mietinnöt ja suositukset.',
+    de: 'Berichte und Empfehlungen der Parlamentsausschüsse (betänkanden).',
+    fr: 'Rapports des commissions parlementaires (betänkanden) et recommandations.',
+    es: 'Informes y recomendaciones de las comisiones parlamentarias (betänkanden).',
+    nl: 'Rapporten en aanbevelingen van parlementaire commissies (betänkanden).',
+    ar: 'تقارير لجان البرلمان السويدي (بيتينكانديْن) وتوصياتها.',
+    he: 'דוחות והמלצות של ועדות הפרלמנט (betänkanden).',
+    ja: '国会委員会報告（betänkanden）と勧告。',
+    ko: '의회 위원회 보고서(betänkanden)와 권고.',
+    zh: '议会委员会报告（betänkanden）及建议。',
+  },
+  'evening-analysis': {
+    en: 'Evening analysis synthesising the day\'s parliamentary and government developments.',
+    sv: 'Kvällsanalys som sammanfattar dagens händelser i riksdag och regering.',
+    da: 'Aftenanalyse der samler dagens parlaments- og regeringsudvikling.',
+    no: 'Kveldsanalyse som oppsummerer dagens hendelser i parlament og regjering.',
+    fi: 'Ilta-analyysi, joka kokoaa päivän parlamentti- ja hallituskehityksen.',
+    de: 'Abendanalyse, die die parlamentarischen und Regierungsereignisse des Tages zusammenfasst.',
+    fr: 'Analyse du soir synthétisant les développements parlementaires et gouvernementaux du jour.',
+    es: 'Análisis vespertino que sintetiza los acontecimientos parlamentarios y gubernamentales del día.',
+    nl: 'Avondanalyse die de parlementaire en regeringsontwikkelingen van de dag samenvat.',
+    ar: 'تحليل مسائي يُجمِل تطورات البرلمان والحكومة خلال اليوم.',
+    he: 'ניתוח ערב המסכם את התפתחויות הפרלמנט והממשלה מהיום.',
+    ja: '議会と政府のその日の動向をまとめる夜間分析。',
+    ko: '당일 의회 및 정부 상황을 종합한 저녁 분석.',
+    zh: '汇总当日议会和政府动态的晚间分析。',
+  },
+  'deep-inspection': {
+    en: 'Deep inspection — long-form structured analysis of a focused topic.',
+    sv: 'Djupgranskning — utförlig strukturerad analys av ett fokuserat ämne.',
+    da: 'Dybdeinspektion — lang, struktureret analyse af et fokuseret emne.',
+    no: 'Dybdegranskning — lang strukturert analyse av et fokusert emne.',
+    fi: 'Syvätarkastelu — pitkä, jäsennelty analyysi rajatusta aiheesta.',
+    de: 'Tiefeninspektion — strukturierte Langform-Analyse zu einem fokussierten Thema.',
+    fr: 'Inspection approfondie — analyse structurée et longue sur un sujet ciblé.',
+    es: 'Inspección profunda: análisis estructurado y extenso sobre un tema concreto.',
+    nl: 'Diepte-inspectie — lange, gestructureerde analyse van een specifiek onderwerp.',
+    ar: 'فحص معمق — تحليل منظم ومفصل لموضوع محدد.',
+    he: 'בדיקה מעמיקה — ניתוח מובנה וארוך על נושא ממוקד.',
+    ja: '特定のテーマに焦点を当てた長編の構造化分析（詳細調査）。',
+    ko: '특정 주제에 초점을 맞춘 장문의 구조화 분석(심층 조사).',
+    zh: '针对特定主题的长篇结构化分析（深度检查）。',
+  },
+  'week-ahead': {
+    en: 'Week-ahead prospective coverage of scheduled parliamentary activity.',
+    sv: 'Prospektiv bevakning för kommande vecka i riksdagen.',
+    da: 'Fremadrettet dækning af den kommende uges parlamentariske aktivitet.',
+    no: 'Framskuende dekning av neste ukes parlamentariske aktivitet.',
+    fi: 'Tulevan viikon eduskuntatoiminnan ennakkokatsaus.',
+    de: 'Vorausschauende Berichterstattung zur parlamentarischen Tagesordnung der kommenden Woche.',
+    fr: 'Couverture prospective de l\'activité parlementaire prévue pour la semaine à venir.',
+    es: 'Cobertura prospectiva de la actividad parlamentaria prevista para la semana próxima.',
+    nl: 'Vooruitblik op de parlementaire agenda van de komende week.',
+    ar: 'تغطية استشرافية لأنشطة البرلمان في الأسبوع القادم.',
+    he: 'סקירה צופה פני עתיד של פעילות הפרלמנט בשבוע הקרוב.',
+    ja: '翌週に予定されている議会活動の先行分析。',
+    ko: '다음 주 의회 활동에 대한 사전 분석.',
+    zh: '对未来一周议会活动的前瞻报道。',
+  },
+  'month-ahead': {
+    en: 'Month-ahead forward-looking intelligence covering scheduled activity.',
+    sv: 'Framåtblickande underrättelser för kommande månad.',
+    da: 'Fremadrettet efterretning for den kommende måned.',
+    no: 'Framskuende etterretning for neste måneds planlagte aktivitet.',
+    fi: 'Tulevan kuukauden ennakoiva tiedustelukatsaus.',
+    de: 'Vorausschauende Intelligenz zur geplanten Tätigkeit im kommenden Monat.',
+    fr: 'Renseignement prospectif couvrant l\'activité planifiée du mois à venir.',
+    es: 'Inteligencia prospectiva sobre la actividad programada del próximo mes.',
+    nl: 'Vooruitkijkende inlichtingen voor de geplande activiteit van de komende maand.',
+    ar: 'استخبارات استشرافية تغطي النشاط المخطط للشهر القادم.',
+    he: 'מודיעין צופה פני עתיד לפעילות המתוכננת בחודש הקרוב.',
+    ja: '翌月の予定活動に関する先読みインテリジェンス。',
+    ko: '다음 달 예정 활동을 다루는 사전 인텔리전스.',
+    zh: '覆盖未来一月预定活动的前瞻性情报。',
+  },
+  'weekly-review': {
+    en: 'Weekly review synthesising the week\'s political and legislative developments.',
+    sv: 'Veckoöversikt som sammanfattar veckans politiska och lagstiftningsmässiga händelser.',
+    da: 'Ugeoversigt der samler ugens politiske og lovgivningsmæssige udvikling.',
+    no: 'Ukeoppsummering som samler ukens politiske og lovgivende utvikling.',
+    fi: 'Viikkokatsaus, joka kokoaa viikon poliittiset ja lainsäädännölliset tapahtumat.',
+    de: 'Wochenrückblick, der die politischen und legislativen Entwicklungen der Woche zusammenfasst.',
+    fr: 'Revue hebdomadaire synthétisant les développements politiques et législatifs de la semaine.',
+    es: 'Resumen semanal que sintetiza los desarrollos políticos y legislativos de la semana.',
+    nl: 'Weekoverzicht dat de politieke en wetgevende ontwikkelingen van de week samenvat.',
+    ar: 'مراجعة أسبوعية تُجمل التطورات السياسية والتشريعية للأسبوع.',
+    he: 'סקירה שבועית המסכמת את ההתפתחויות הפוליטיות והחקיקתיות מהשבוע.',
+    ja: '週の政治・立法動向をまとめる週次レビュー。',
+    ko: '한 주의 정치·입법 동향을 종합한 주간 리뷰.',
+    zh: '汇总本周政治与立法动态的每周综述。',
+  },
+  'monthly-review': {
+    en: 'Monthly review synthesising the month\'s political and legislative developments.',
+    sv: 'Månadsöversikt som sammanfattar månadens politiska och lagstiftningsmässiga händelser.',
+    da: 'Månedsoversigt der samler månedens politiske og lovgivningsmæssige udvikling.',
+    no: 'Månedsoppsummering som samler månedens politiske og lovgivende utvikling.',
+    fi: 'Kuukausikatsaus, joka kokoaa kuukauden poliittiset ja lainsäädännölliset tapahtumat.',
+    de: 'Monatsrückblick, der die politischen und legislativen Entwicklungen des Monats zusammenfasst.',
+    fr: 'Revue mensuelle synthétisant les développements politiques et législatifs du mois.',
+    es: 'Resumen mensual que sintetiza los desarrollos políticos y legislativos del mes.',
+    nl: 'Maandoverzicht dat de politieke en wetgevende ontwikkelingen van de maand samenvat.',
+    ar: 'مراجعة شهرية تُجمل التطورات السياسية والتشريعية للشهر.',
+    he: 'סקירה חודשית המסכמת את ההתפתחויות הפוליטיות והחקיקתיות מהחודש.',
+    ja: '月の政治・立法動向をまとめる月次レビュー。',
+    ko: '한 달의 정치·입법 동향을 종합한 월간 리뷰.',
+    zh: '汇总本月政治与立法动态的每月综述。',
+  },
+  'breaking-news': {
+    en: 'Breaking-news intelligence products generated in response to significant events.',
+    sv: 'Underrättelseprodukter som produceras direkt vid betydande händelser.',
+    da: 'Efterretningsprodukter genereret som reaktion på væsentlige begivenheder.',
+    no: 'Etterretningsprodukter laget som svar på betydelige hendelser.',
+    fi: 'Merkittäviin tapahtumiin reagoivat uutisluokan tiedustelutuotteet.',
+    de: 'Intelligenzprodukte, die als Reaktion auf bedeutende Ereignisse erstellt werden.',
+    fr: 'Produits de renseignement générés en réponse à des événements majeurs.',
+    es: 'Productos de inteligencia generados en respuesta a eventos significativos.',
+    nl: 'Inlichtingenproducten die als reactie op belangrijke gebeurtenissen worden gegenereerd.',
+    ar: 'منتجات استخباراتية عاجلة تُنتج استجابةً لأحداث بارزة.',
+    he: 'מוצרי מודיעין הנוצרים בתגובה לאירועים משמעותיים.',
+    ja: '重要な出来事に応じて生成される速報インテリジェンス製品。',
+    ko: '중요한 사건에 대응하여 생성되는 속보 인텔리전스 제품.',
+    zh: '针对重大事件即时产出的突发新闻情报产品。',
+  },
+  documents: {
+    en: 'Raw source documents and supporting materials for this stream.',
+    sv: 'Källdokument och stödmaterial som ligger till grund för strömmen.',
+    da: 'Kildedokumenter og støttemateriale til denne strøm.',
+    no: 'Kildedokumenter og støttemateriale for denne strømmen.',
+    fi: 'Tämän virran lähdeasiakirjat ja tukimateriaalit.',
+    de: 'Quelldokumente und Hintergrundmaterial für diesen Strom.',
+    fr: 'Documents sources et éléments d\'appui pour ce flux.',
+    es: 'Documentos fuente y materiales de apoyo de este flujo.',
+    nl: 'Brondocumenten en ondersteunend materiaal voor deze stroom.',
+    ar: 'الوثائق المصدرية والمواد الداعمة لهذا التيار.',
+    he: 'מסמכי מקור וחומרי עזר לזרם זה.',
+    ja: 'このストリームの原資料および補足資料。',
+    ko: '이 스트림의 원본 문서 및 보조 자료.',
+    zh: '本流的原始文档和支持材料。',
+  },
+};
+
+/** Per-language realtime description template. */
+const REALTIME_DESC_I18N: Record<Language, string> = {
+  en: 'Realtime snapshot capturing the parliamentary and government state at a specific time.',
+  sv: 'Realtidssnapshot som fångar riksdagens och regeringens tillstånd vid en specifik tid.',
+  da: 'Realtidsoptagelse der fanger parlamentets og regeringens tilstand på et bestemt tidspunkt.',
+  no: 'Sanntidssnapshot som fanger parlamentets og regjeringens tilstand på et gitt tidspunkt.',
+  fi: 'Reaaliaikainen tilannekuva, joka tallentaa parlamentin ja hallituksen tilan tietyllä hetkellä.',
+  de: 'Echtzeit-Snapshot, der den parlamentarischen und Regierungszustand zu einem bestimmten Zeitpunkt festhält.',
+  fr: 'Capture en temps réel de l\'état du parlement et du gouvernement à un moment donné.',
+  es: 'Instantánea en tiempo real que captura el estado del parlamento y del Gobierno en un momento concreto.',
+  nl: 'Realtime snapshot die de staat van parlement en regering op een specifiek moment vastlegt.',
+  ar: 'لقطة في الزمن الحقيقي ترصد حالة البرلمان والحكومة في وقت محدد.',
+  he: 'תמונת זמן אמת הלוכדת את מצב הפרלמנט והממשלה ברגע מסוים.',
+  ja: 'ある時点における議会と政府の状態を捉えたリアルタイム・スナップショット。',
+  ko: '특정 시점의 의회 및 정부 상태를 포착한 실시간 스냅샷.',
+  zh: '捕捉某一时刻议会和政府状态的实时快照。',
+};
+
+/** Generic fallback for unknown streams, keyed by language. The "%s" placeholder
+ *  is replaced by the prettified stream name. */
+const STREAM_GENERIC_DESC_I18N: Record<Language, string> = {
+  en: 'Analytical content stream: %s.',
+  sv: 'Analytisk innehållsström: %s.',
+  da: 'Analytisk indholdsstrøm: %s.',
+  no: 'Analytisk innholdsstrøm: %s.',
+  fi: 'Analyyttinen sisältövirta: %s.',
+  de: 'Analytischer Inhaltsstrom: %s.',
+  fr: 'Flux de contenu analytique : %s.',
+  es: 'Flujo de contenido analítico: %s.',
+  nl: 'Analytische inhoudsstroom: %s.',
+  ar: 'تيار محتوى تحليلي: %s.',
+  he: 'זרם תוכן אנליטי: %s.',
+  ja: '分析コンテンツストリーム: %s。',
+  ko: '분석 콘텐츠 스트림: %s.',
+  zh: '分析内容流：%s。',
+};
+
+// ---------------------------------------------------------------------------
+// Localised descriptions for every methodology file, template file and
+// recurring artifact filename. Entries fall back to the English META
+// description when a specific key/lang combination is missing.
+// ---------------------------------------------------------------------------
+
+type LangMap = Record<Language, string>;
+
+/** Concise localised descriptions for every methodology file. */
+const METHODOLOGY_DESC_I18N: Record<string, LangMap> = {
+  'ai-driven-analysis-guide.md': {
+    en: 'The canonical AI-driven analysis protocol used by every agentic workflow, with positive voice and colour-coded Mermaid diagrams.',
+    sv: 'Den kanoniska AI-drivna analysprotokollet som alla agentiska arbetsflöden följer, med positivt tonläge och färgkodade Mermaid-diagram.',
+    da: 'Den kanoniske AI-drevne analyseprotokol, som alle agentiske arbejdsgange følger, med positivt tonefald og farvekodede Mermaid-diagrammer.',
+    no: 'Den kanoniske AI-drevne analyseprotokollen som alle agentiske arbeidsflyter følger, med positiv tone og fargekodede Mermaid-diagrammer.',
+    fi: 'Kanoninen tekoälyohjattu analyysiprotokolla, jota jokainen agenttinen työnkulku noudattaa — myönteinen sävy ja väri koodatut Mermaid-kaaviot.',
+    de: 'Das kanonische KI-gesteuerte Analyseprotokoll, dem jeder agentische Workflow folgt — positive Tonlage und farbcodierte Mermaid-Diagramme.',
+    fr: 'Le protocole canonique d\'analyse pilotée par IA suivi par chaque workflow agentique, avec voix positive et diagrammes Mermaid codés par couleur.',
+    es: 'El protocolo canónico de análisis impulsado por IA que sigue cada flujo de trabajo agéntico, con voz positiva y diagramas Mermaid codificados por color.',
+    nl: 'Het canonieke AI-gedreven analyseprotocol dat elke agentische workflow volgt, met positieve toon en kleurgecodeerde Mermaid-diagrammen.',
+    ar: 'بروتوكول التحليل الكنسي المدفوع بالذكاء الاصطناعي الذي تتبعه كل سير عمل وكيلي، بنبرة إيجابية ومخططات Mermaid مرمزة بالألوان.',
+    he: 'הפרוטוקול הקנוני לניתוח מבוסס בינה מלאכותית שכל זרימת עבודה אג\'נטית עוקבת אחריו, בטון חיובי ותרשימי Mermaid מקודדים בצבע.',
+    ja: 'すべてのエージェント型ワークフローが従う、肯定的な語調と色分け Mermaid 図を用いた正典的な AI 駆動分析プロトコル。',
+    ko: '긍정적 어조와 색상 코드 Mermaid 다이어그램을 사용하여 모든 에이전트 워크플로가 따르는 표준 AI 기반 분석 프로토콜.',
+    zh: '所有代理式工作流都遵循的权威 AI 驱动分析协议，采用积极语气和彩色编码的 Mermaid 图表。',
+  },
+  'analytical-supplementary-methodology.md': {
+    en: 'Supplementary analytical techniques layered on top of core methodologies for edge cases and specialised inquiries.',
+    sv: 'Kompletterande analytiska tekniker som läggs ovanpå kärnmetodikerna för specialfall och specialiserade frågor.',
+    da: 'Supplerende analytiske teknikker ovenpå kernemetodikerne til grænsetilfælde og specialiserede undersøgelser.',
+    no: 'Supplerende analytiske teknikker som legges oppå kjernemetodikkene for grensetilfeller og spesialiserte undersøkelser.',
+    fi: 'Ydinmetodologioiden päälle rakennetut täydentävät analyyttiset tekniikat erityistapauksiin ja erikoistuneisiin tutkimuksiin.',
+    de: 'Ergänzende Analysetechniken, die auf den Kernmethodologien aufbauen — für Grenzfälle und spezialisierte Untersuchungen.',
+    fr: 'Techniques analytiques complémentaires superposées aux méthodologies principales pour les cas particuliers et les enquêtes spécialisées.',
+    es: 'Técnicas analíticas complementarias superpuestas a las metodologías principales para casos límite y consultas especializadas.',
+    nl: 'Aanvullende analytische technieken bovenop de kernmethodologieën voor randgevallen en gespecialiseerde onderzoeken.',
+    ar: 'تقنيات تحليلية تكميلية فوق المنهجيات الأساسية للحالات الخاصة والاستفسارات المتخصصة.',
+    he: 'טכניקות אנליטיות משלימות מעל המתודולוגיות המרכזיות עבור מקרי קצה וחקירות מיוחדות.',
+    ja: 'コア方法論の上に重ねる、エッジケースや専門的調査向けの補助的分析技法。',
+    ko: '핵심 방법론 위에 적용되는 보조 분석 기법으로, 예외 사례 및 전문 조사용.',
+    zh: '叠加在核心方法论之上的补充分析技术，用于特殊案例和专业查询。',
+  },
+  'artifact-catalog.md': {
+    en: 'Catalog of every analytical artifact the platform can produce, with scope, inputs and expected deliverables.',
+    sv: 'Katalog över varje analytisk artefakt plattformen kan producera — omfattning, indata och förväntade leveranser.',
+    da: 'Katalog over alle analytiske artefakter platformen kan producere, med omfang, input og forventede leverancer.',
+    no: 'Katalog over alle analytiske artefakter plattformen kan produsere — omfang, input og forventede leveranser.',
+    fi: 'Luettelo kaikista analyyttisistä artefakteista, joita alusta voi tuottaa — laajuus, syötteet ja odotetut tulokset.',
+    de: 'Katalog aller analytischen Artefakte, die die Plattform erzeugen kann — Umfang, Eingaben und erwartete Ergebnisse.',
+    fr: 'Catalogue de chaque artefact analytique que la plateforme peut produire, avec périmètre, entrées et livrables attendus.',
+    es: 'Catálogo de cada artefacto analítico que la plataforma puede producir, con alcance, entradas y entregables esperados.',
+    nl: 'Catalogus van elk analytisch artefact dat het platform kan produceren — reikwijdte, invoer en verwachte opleveringen.',
+    ar: 'كتالوج لكل قطعة تحليلية يمكن للمنصة إنتاجها، مع النطاق والمدخلات والمخرجات المتوقعة.',
+    he: 'קטלוג של כל ארטיפקט אנליטי שהפלטפורמה יכולה לייצר — היקף, קלטים ותוצרים צפויים.',
+    ja: 'プラットフォームが生成できるすべての分析成果物のカタログ（範囲・入力・期待される成果物）。',
+    ko: '플랫폼이 생성할 수 있는 모든 분석 산출물의 목록(범위·입력·예상 결과물).',
+    zh: '平台能够生成的所有分析产出物的目录，包括范围、输入和预期交付物。',
+  },
+  'electoral-domain-methodology.md': {
+    en: 'Forecasting, coalition math and voter-segmentation framework specialised for Swedish elections.',
+    sv: 'Ramverk för prognoser, koalitionsmatematik och väljarsegmentering specialiserat för svenska val.',
+    da: 'Rammeværk for valgprognoser, koalitionsmatematik og vælgersegmentering specialiseret til svenske valg.',
+    no: 'Rammeverk for valgprognoser, koalisjonsmatematikk og velgersegmentering spesialisert for svenske valg.',
+    fi: 'Ennustamisen, koalitiomatematiikan ja äänestäjäsegmentoinnin viitekehys Ruotsin vaaleille.',
+    de: 'Rahmenwerk für Prognosen, Koalitionsmathematik und Wählersegmentierung, spezialisiert auf schwedische Wahlen.',
+    fr: 'Cadre de prévision, mathématiques de coalition et segmentation des électeurs spécialisé pour les élections suédoises.',
+    es: 'Marco de pronósticos, matemáticas de coalición y segmentación de votantes especializado para elecciones suecas.',
+    nl: 'Kader voor prognoses, coalitiewiskunde en kiezerssegmentatie, gespecialiseerd voor Zweedse verkiezingen.',
+    ar: 'إطار للتنبؤ وحسابات التحالفات وتجزئة الناخبين متخصص للانتخابات السويدية.',
+    he: 'מסגרת לתחזיות, חישובי קואליציה ופילוח בוחרים המותאמת לבחירות בשוודיה.',
+    ja: 'スウェーデンの選挙に特化した予測・連立数学・有権者セグメンテーションのフレームワーク。',
+    ko: '스웨덴 선거에 특화된 예측·연정 수학·유권자 세분화 프레임워크.',
+    zh: '专为瑞典选举设计的预测、联盟数学与选民分群框架。',
+  },
+  'imf-indicator-mapping.md': {
+    en: 'Mapping of IMF macroeconomic indicators into Riksdagsmonitor\'s political-economy analysis.',
+    sv: 'Mappning av IMF:s makroekonomiska indikatorer in i Riksdagsmonitors politiskt-ekonomiska analys.',
+    da: 'Kortlægning af IMF\'s makroøkonomiske indikatorer ind i Riksdagsmonitors politisk-økonomiske analyse.',
+    no: 'Kartlegging av IMFs makroøkonomiske indikatorer inn i Riksdagsmonitors politisk-økonomiske analyse.',
+    fi: 'IMF:n makrotaloudellisten indikaattoreiden kartoitus Riksdagsmonitorin poliittis-taloudelliseen analyysiin.',
+    de: 'Zuordnung der makroökonomischen IWF-Indikatoren zur politisch-ökonomischen Analyse von Riksdagsmonitor.',
+    fr: 'Correspondance des indicateurs macroéconomiques du FMI avec l\'analyse d\'économie politique de Riksdagsmonitor.',
+    es: 'Correspondencia de los indicadores macroeconómicos del FMI con el análisis de economía política de Riksdagsmonitor.',
+    nl: 'Toewijzing van IMF-macro-economische indicatoren aan de politiek-economische analyse van Riksdagsmonitor.',
+    ar: 'ربط مؤشرات صندوق النقد الدولي الاقتصادية الكلية بتحليل الاقتصاد السياسي لدى Riksdagsmonitor.',
+    he: 'מיפוי אינדיקטורים מאקרו־כלכליים של קרן המטבע הבינלאומית לניתוח הכלכלה הפוליטית של Riksdagsmonitor.',
+    ja: 'IMF マクロ経済指標を Riksdagsmonitor の政治経済分析にマッピング。',
+    ko: 'IMF 거시경제 지표를 Riksdagsmonitor의 정치·경제 분석으로 매핑.',
+    zh: '将 IMF 宏观经济指标映射到 Riksdagsmonitor 的政治经济分析中。',
+  },
+  'osint-tradecraft-standards.md': {
+    en: 'OSINT tradecraft standards: source evaluation, attribution, verification and GDPR-compliant collection.',
+    sv: 'OSINT-standarder: källutvärdering, attribuering, verifiering och GDPR-efterlevande insamling.',
+    da: 'OSINT-standarder: kildeevaluering, attribution, verifikation og GDPR-kompatibel indsamling.',
+    no: 'OSINT-standarder: kildeevaluering, attribusjon, verifisering og GDPR-kompatibel innsamling.',
+    fi: 'OSINT-ammattistandardit: lähdearviointi, attribuointi, todentaminen ja GDPR-yhteensopiva kerääminen.',
+    de: 'OSINT-Handwerksstandards: Quellenbewertung, Attribution, Verifikation und DSGVO-konforme Erhebung.',
+    fr: 'Normes de renseignement OSINT : évaluation des sources, attribution, vérification et collecte conforme au RGPD.',
+    es: 'Estándares de tradecraft OSINT: evaluación de fuentes, atribución, verificación y recolección conforme al RGPD.',
+    nl: 'OSINT-vakstandaarden: bronbeoordeling, attributie, verificatie en AVG-conforme verzameling.',
+    ar: 'معايير حِرفة OSINT: تقييم المصادر، الإسناد، التحقق، والجمع المتوافق مع GDPR.',
+    he: 'תקני מלאכת OSINT: הערכת מקורות, ייחוס, אימות ואיסוף התואם ל-GDPR.',
+    ja: 'OSINT トレードクラフト基準：情報源評価、帰属、検証、GDPR 準拠の収集。',
+    ko: 'OSINT 전문 기법 표준: 출처 평가·귀속·검증·GDPR 준수 수집.',
+    zh: 'OSINT 专业标准：信息源评估、归因、验证以及符合 GDPR 的收集。',
+  },
+  'per-artifact-methodologies.md': {
+    en: 'Per-artifact methodology notes bridging generic frameworks with artifact-specific analytical rigor.',
+    sv: 'Metodnoteringar per artefakt som kopplar generiska ramverk med artefaktspecifik analytisk stringens.',
+    da: 'Metodenoter per artefakt der forbinder generiske rammer med artefaktspecifik analytisk stringens.',
+    no: 'Metodenotat per artefakt som kobler generiske rammer med artefaktspesifikk analytisk stringens.',
+    fi: 'Artefakti- kohtaiset metodimuistiinpanot, jotka yhdistävät yleiset viitekehykset artefakti-kohtaiseen analyyttiseen tarkkuuteen.',
+    de: 'Methodennotizen pro Artefakt, die generische Rahmen mit artefaktspezifischer analytischer Strenge verbinden.',
+    fr: 'Notes méthodologiques par artefact reliant les cadres génériques à la rigueur analytique propre à chaque artefact.',
+    es: 'Notas metodológicas por artefacto que conectan marcos genéricos con el rigor analítico específico del artefacto.',
+    nl: 'Methodische notities per artefact die generieke kaders verbinden met artefact-specifieke analytische rigor.',
+    ar: 'ملاحظات منهجية لكل قطعة تربط الأطر العامة بالدقة التحليلية الخاصة بالقطعة.',
+    he: 'הערות מתודולוגיות לכל ארטיפקט המקשרות בין מסגרות גנריות לקפדנות אנליטית ייעודית.',
+    ja: '一般的な枠組みと成果物ごとの分析的厳密性を橋渡しする、成果物別の方法論ノート。',
+    ko: '일반 프레임워크와 산출물별 분석적 엄밀성을 연결하는 산출물별 방법론 노트.',
+    zh: '将通用框架与逐产物分析严谨性连接的逐产物方法论笔记。',
+  },
+  'per-document-methodology.md': {
+    en: 'Document-level methodology guidance for annotating, scoring and contextualising parliamentary documents.',
+    sv: 'Dokumentnivåmetodik för att annotera, poängsätta och kontextualisera riksdagsdokument.',
+    da: 'Metodevejledning på dokumentniveau til annotering, scoring og kontekstualisering af parlamentsdokumenter.',
+    no: 'Metodeveiledning på dokumentnivå for annotering, scoring og kontekstualisering av parlamentsdokumenter.',
+    fi: 'Asiakirjatason metodiikkaohje parlamenttiasiakirjojen merkintää, pisteytystä ja kontekstointia varten.',
+    de: 'Methodische Leitlinien auf Dokumentenebene für Annotation, Scoring und Kontextualisierung parlamentarischer Dokumente.',
+    fr: 'Guide méthodologique au niveau du document pour annoter, noter et contextualiser les documents parlementaires.',
+    es: 'Guía metodológica a nivel de documento para anotar, puntuar y contextualizar documentos parlamentarios.',
+    nl: 'Methodische richtlijn op documentniveau voor annoteren, scoren en contextualiseren van parlementaire documenten.',
+    ar: 'إرشادات منهجية على مستوى الوثيقة لتعليق الوثائق البرلمانية وتقييمها ووضعها في السياق.',
+    he: 'הנחיות מתודולוגיות ברמת המסמך לתיוג, ניקוד והקשרה של מסמכים פרלמנטריים.',
+    ja: '議会文書の注釈付け・スコアリング・文脈化のための文書単位の方法論ガイダンス。',
+    ko: '의회 문서의 주석·채점·맥락화를 위한 문서 수준 방법론 지침.',
+    zh: '针对议会文件进行标注、评分和语境化的文档级方法论指导。',
+  },
+  'political-classification-guide.md': {
+    en: 'Classification taxonomy for political content: actors, stances, risk surfaces and information-security classification.',
+    sv: 'Klassificeringstaxonomi för politiskt innehåll: aktörer, positioner, riskytor och informationssäkerhetsklassificering.',
+    da: 'Klassifikationstaksonomi for politisk indhold: aktører, holdninger, risikoflader og informationssikkerhedsklassifikation.',
+    no: 'Klassifiseringstaksonomi for politisk innhold: aktører, posisjoner, risikoflater og informasjonssikkerhetsklassifisering.',
+    fi: 'Poliittisen sisällön luokittelutaksonomia: toimijat, kannat, riskipinnat ja tietoturvaluokittelu.',
+    de: 'Klassifikationstaxonomie für politische Inhalte: Akteure, Positionen, Risikoflächen und Informationssicherheits-Klassifikation.',
+    fr: 'Taxonomie de classification pour le contenu politique : acteurs, positions, surfaces de risque et classification de sécurité de l\'information.',
+    es: 'Taxonomía de clasificación para contenido político: actores, posturas, superficies de riesgo y clasificación de seguridad de la información.',
+    nl: 'Classificatietaxonomie voor politieke inhoud: actoren, standpunten, risicovlakken en informatiebeveiligingsclassificatie.',
+    ar: 'تصنيف تصنيفي للمحتوى السياسي: الفاعلون، المواقف، أسطح المخاطر، وتصنيف أمن المعلومات.',
+    he: 'טקסונומיית סיווג לתוכן פוליטי: שחקנים, עמדות, משטחי סיכון וסיווג אבטחת מידע.',
+    ja: '政治コンテンツの分類タクソノミー：アクター、立場、リスク面、情報セキュリティ分類。',
+    ko: '정치 콘텐츠 분류 체계: 행위자·입장·위험 면·정보보안 분류.',
+    zh: '政治内容的分类体系：行为者、立场、风险面及信息安全分类。',
+  },
+  'political-risk-methodology.md': {
+    en: 'Comprehensive political-risk scoring methodology integrating coalition stability, policy volatility and narrative risks.',
+    sv: 'Heltäckande metodik för politisk riskpoäng som integrerar koalitionsstabilitet, policyvolatilitet och narrativa risker.',
+    da: 'Omfattende metodik for politisk risikoscoring der integrerer koalitionsstabilitet, politikvolatilitet og narrative risici.',
+    no: 'Omfattende metodikk for politisk risikoscoring som integrerer koalisjonsstabilitet, politikkvolatilitet og narrative risikoer.',
+    fi: 'Kattava poliittisen riskin pisteytysmenetelmä, joka yhdistää koalitiovakauden, politiikan volatiliteetin ja narratiiviset riskit.',
+    de: 'Umfassende Methodik für politisches Risiko-Scoring, integriert Koalitionsstabilität, Politikvolatilität und narrative Risiken.',
+    fr: 'Méthodologie complète de notation du risque politique intégrant la stabilité des coalitions, la volatilité des politiques et les risques narratifs.',
+    es: 'Metodología integral de puntuación de riesgo político que integra estabilidad de coaliciones, volatilidad de políticas y riesgos narrativos.',
+    nl: 'Omvattende methodologie voor politieke risicoscoring met coalitie-stabiliteit, beleidsvolatiliteit en narratieve risico\'s.',
+    ar: 'منهجية شاملة لتقييم المخاطر السياسية تدمج استقرار التحالفات وتقلب السياسات والمخاطر السردية.',
+    he: 'מתודולוגיית ניקוד מקיפה לסיכון פוליטי המשלבת יציבות קואליציה, תנודתיות מדיניות וסיכונים נרטיביים.',
+    ja: '連立の安定性、政策ボラティリティ、ナラティブリスクを統合した包括的政治リスクスコアリング方法論。',
+    ko: '연정 안정성·정책 변동성·서사적 위험을 통합한 포괄적 정치 위험 점수 방법론.',
+    zh: '整合联盟稳定性、政策波动性与叙事风险的综合性政治风险评分方法论。',
+  },
+  'political-style-guide.md': {
+    en: 'Editorial and political style guide — tone, balance, attribution and multi-language considerations.',
+    sv: 'Redaktionell och politisk stilguide — ton, balans, attribuering och flerspråkiga överväganden.',
+    da: 'Redaktionel og politisk stilguide — tone, balance, attribution og flersprogede hensyn.',
+    no: 'Redaksjonell og politisk stilguide — tone, balanse, attribusjon og flerspråklige hensyn.',
+    fi: 'Toimituksellinen ja poliittinen tyyliopas — sävy, tasapaino, attribuointi ja monikielisyyskysymykset.',
+    de: 'Redaktioneller und politischer Styleguide — Tonlage, Ausgewogenheit, Attribution und Mehrsprachigkeit.',
+    fr: 'Guide de style éditorial et politique — ton, équilibre, attribution et considérations multilingues.',
+    es: 'Guía de estilo editorial y política: tono, equilibrio, atribución y consideraciones multilingües.',
+    nl: 'Redactionele en politieke stijlgids — toon, balans, attributie en meertalige overwegingen.',
+    ar: 'دليل الأسلوب التحريري والسياسي — النبرة والتوازن والإسناد واعتبارات تعدد اللغات.',
+    he: 'מדריך סגנון עריכתי ופוליטי — טון, איזון, ייחוס ושיקולים רב-לשוניים.',
+    ja: '編集・政治スタイルガイド — 語調、バランス、帰属、多言語対応。',
+    ko: '편집·정치 스타일 가이드 — 어조·균형·귀속·다국어 고려.',
+    zh: '编辑与政治风格指南 — 语气、平衡、归因及多语种考虑。',
+  },
+  'political-swot-framework.md': {
+    en: 'SWOT framework adapted for political actors, coalitions and policy positions.',
+    sv: 'SWOT-ramverk anpassat för politiska aktörer, koalitioner och policypositioner.',
+    da: 'SWOT-rammeværk tilpasset politiske aktører, koalitioner og politiske holdninger.',
+    no: 'SWOT-rammeverk tilpasset politiske aktører, koalisjoner og politiske posisjoner.',
+    fi: 'SWOT-viitekehys sovellettuna poliittisille toimijoille, koalitioille ja politiikan kannoille.',
+    de: 'SWOT-Rahmenwerk, angepasst an politische Akteure, Koalitionen und politische Positionen.',
+    fr: 'Cadre SWOT adapté aux acteurs politiques, aux coalitions et aux positions politiques.',
+    es: 'Marco SWOT adaptado a actores políticos, coaliciones y posiciones políticas.',
+    nl: 'SWOT-kader aangepast voor politieke actoren, coalities en beleidsposities.',
+    ar: 'إطار SWOT مُكيَّف مع الفاعلين السياسيين والتحالفات والمواقف السياسية.',
+    he: 'מסגרת SWOT המותאמת לשחקנים פוליטיים, קואליציות ועמדות מדיניות.',
+    ja: '政治的アクター・連立・政策立場向けに適応された SWOT フレームワーク。',
+    ko: '정치 행위자·연정·정책 입장에 맞게 조정된 SWOT 프레임워크.',
+    zh: '针对政治行为者、联盟与政策立场调整的 SWOT 框架。',
+  },
+  'political-threat-framework.md': {
+    en: 'Threat-modelling framework for political actors and decision-making processes, including adversary mapping.',
+    sv: 'Ramverk för hotmodellering av politiska aktörer och beslutsprocesser, inklusive motståndarkartläggning.',
+    da: 'Rammeværk til trusselsmodellering af politiske aktører og beslutningsprocesser, inklusive modstanderkortlægning.',
+    no: 'Rammeverk for trusselmodellering av politiske aktører og beslutningsprosesser, inkludert motstanderkartlegging.',
+    fi: 'Poliittisten toimijoiden ja päätöksentekoprosessien uhkamallinnuksen viitekehys, mukaan lukien vastustajien kartoitus.',
+    de: 'Rahmenwerk zur Bedrohungsmodellierung politischer Akteure und Entscheidungsprozesse, inklusive Gegner-Mapping.',
+    fr: 'Cadre de modélisation des menaces pour les acteurs politiques et les processus décisionnels, incluant la cartographie des adversaires.',
+    es: 'Marco de modelado de amenazas para actores políticos y procesos de toma de decisiones, incluyendo mapeo de adversarios.',
+    nl: 'Kader voor dreigingsmodellering van politieke actoren en besluitvormingsprocessen, inclusief tegenstander-mapping.',
+    ar: 'إطار لنمذجة التهديدات للفاعلين السياسيين وعمليات صنع القرار، بما في ذلك رسم خرائط الخصوم.',
+    he: 'מסגרת לדוגמנות איומים לשחקנים פוליטיים ותהליכי קבלת החלטות, כולל מיפוי יריבים.',
+    ja: 'アドバーサリー・マッピングを含む、政治的アクターと意思決定プロセスの脅威モデリング枠組み。',
+    ko: '적대자 매핑을 포함하는 정치 행위자 및 의사결정 과정의 위협 모델링 프레임워크.',
+    zh: '面向政治行为者与决策过程的威胁建模框架，包括对手映射。',
+  },
+  'reference-quality-thresholds.json': {
+    en: 'Quantitative thresholds used to evaluate reference-source quality across every analysis.',
+    sv: 'Kvantitativa tröskelvärden som används för att bedöma referenskällors kvalitet i varje analys.',
+    da: 'Kvantitative tærskler brugt til at vurdere referencekilders kvalitet på tværs af hver analyse.',
+    no: 'Kvantitative terskler brukt til å vurdere referansekilders kvalitet på tvers av hver analyse.',
+    fi: 'Kvantitatiiviset kynnysarvot, joilla arvioidaan viitelähteiden laatua jokaisessa analyysissa.',
+    de: 'Quantitative Schwellenwerte zur Bewertung der Qualität von Referenzquellen in jeder Analyse.',
+    fr: 'Seuils quantitatifs utilisés pour évaluer la qualité des sources de référence dans chaque analyse.',
+    es: 'Umbrales cuantitativos para evaluar la calidad de las fuentes de referencia en cada análisis.',
+    nl: 'Kwantitatieve drempels om de kwaliteit van referentiebronnen in elke analyse te beoordelen.',
+    ar: 'حدود كمية تستخدم لتقييم جودة المصادر المرجعية عبر كل تحليل.',
+    he: 'ספי כימות להערכת איכות מקורות ייחוס בכל ניתוח.',
+    ja: '全分析における参照元の品質を評価するための定量しきい値。',
+    ko: '모든 분석에서 참조 출처 품질을 평가하는 데 사용되는 정량적 임계값.',
+    zh: '用于评估每次分析中参考来源质量的定量阈值。',
+  },
+  'strategic-extensions-methodology.md': {
+    en: 'Strategic extensions to core methodologies — scenario planning, wildcard analysis and long-horizon forecasting.',
+    sv: 'Strategiska utökningar av kärnmetodikerna — scenarioplanering, wildcard-analys och långsiktiga prognoser.',
+    da: 'Strategiske udvidelser af kernemetodikkerne — scenarieplanlægning, wildcard-analyse og langtidsprognoser.',
+    no: 'Strategiske utvidelser av kjernemetodikkene — scenarieplanlegging, wildcard-analyse og langhorisontprognoser.',
+    fi: 'Strategiset laajennukset ydinmetodologioihin — skenaariosuunnittelu, villit kortit ja pitkän aikavälin ennusteet.',
+    de: 'Strategische Erweiterungen zu den Kernmethodologien — Szenarienplanung, Wildcard-Analyse und Langfristprognosen.',
+    fr: 'Extensions stratégiques des méthodologies centrales — planification de scénarios, analyse de signaux faibles et prévision à long terme.',
+    es: 'Extensiones estratégicas a las metodologías principales — planificación de escenarios, análisis de comodines y pronóstico a largo plazo.',
+    nl: 'Strategische uitbreidingen op de kernmethodologieën — scenarioplanning, wildcard-analyse en langetermijnprognose.',
+    ar: 'امتدادات استراتيجية للمنهجيات الأساسية — تخطيط السيناريوهات وتحليل الأحداث الشاذة والتنبؤ بعيد المدى.',
+    he: 'הרחבות אסטרטגיות למתודולוגיות המרכזיות — תכנון תרחישים, ניתוח פרוע ותחזיות לטווח ארוך.',
+    ja: 'コア方法論への戦略的拡張 — シナリオ計画、ワイルドカード分析、長期予測。',
+    ko: '핵심 방법론에 대한 전략적 확장 — 시나리오 계획·와일드카드 분석·장기 예측.',
+    zh: '核心方法论的战略性扩展——情景规划、黑天鹅分析与长远预测。',
+  },
+  'structural-metadata-methodology.md': {
+    en: 'Structural metadata extraction methodology for every parliamentary document type.',
+    sv: 'Metodik för extrahering av strukturell metadata för varje typ av riksdagsdokument.',
+    da: 'Metodik til udtræk af strukturel metadata for hver type parlamentsdokument.',
+    no: 'Metodikk for utvinning av strukturell metadata for hver type parlamentsdokument.',
+    fi: 'Rakenteellisen metatiedon uuttaamisen menetelmä jokaista parlamenttiasiakirjatyyppiä varten.',
+    de: 'Methodik zur Extraktion struktureller Metadaten für jeden Typ parlamentarischer Dokumente.',
+    fr: 'Méthodologie d\'extraction des métadonnées structurelles pour chaque type de document parlementaire.',
+    es: 'Metodología de extracción de metadatos estructurales para cada tipo de documento parlamentario.',
+    nl: 'Methodologie voor extractie van structurele metadata voor elk type parlementair document.',
+    ar: 'منهجية استخراج البيانات الوصفية الهيكلية لكل نوع من الوثائق البرلمانية.',
+    he: 'מתודולוגיה לחילוץ מטא־נתונים מבניים עבור כל סוג של מסמך פרלמנטרי.',
+    ja: 'すべての議会文書タイプに対する構造的メタデータ抽出方法論。',
+    ko: '모든 의회 문서 유형에 대한 구조적 메타데이터 추출 방법론.',
+    zh: '针对每一类议会文件的结构化元数据提取方法论。',
+  },
+  'synthesis-methodology.md': {
+    en: 'Synthesis methodology used to combine multiple artifacts into cohesive intelligence products.',
+    sv: 'Syntesmetodik som används för att kombinera flera artefakter till sammanhängande underrättelseprodukter.',
+    da: 'Syntesemetodik brugt til at kombinere flere artefakter til sammenhængende efterretningsprodukter.',
+    no: 'Syntesemetodikk brukt for å kombinere flere artefakter til sammenhengende etterretningsprodukter.',
+    fi: 'Synteesimetodologia, jolla yhdistetään useita artefakteja johdonmukaisiksi tiedustelutuotteiksi.',
+    de: 'Synthesemethodik zur Kombination mehrerer Artefakte zu kohärenten Intelligenzprodukten.',
+    fr: 'Méthodologie de synthèse utilisée pour combiner plusieurs artefacts en produits de renseignement cohérents.',
+    es: 'Metodología de síntesis para combinar múltiples artefactos en productos de inteligencia coherentes.',
+    nl: 'Synthesemethodologie om meerdere artefacten te combineren tot samenhangende inlichtingenproducten.',
+    ar: 'منهجية التوليف المستخدمة لدمج عدة قطع في منتجات استخباراتية متماسكة.',
+    he: 'מתודולוגיית סינתזה לשילוב ארטיפקטים רבים למוצרי מודיעין קוהרנטיים.',
+    ja: '複数の成果物を一貫したインテリジェンス製品に統合する統合方法論。',
+    ko: '여러 산출물을 일관된 인텔리전스 제품으로 결합하는 통합 방법론.',
+    zh: '将多份产物合并为连贯情报产品的综合方法论。',
+  },
+  'worldbank-indicator-mapping.md': {
+    en: 'Mapping of World Bank development indicators into political-economic analysis.',
+    sv: 'Mappning av Världsbankens utvecklingsindikatorer in i politisk-ekonomisk analys.',
+    da: 'Kortlægning af Verdensbankens udviklingsindikatorer ind i politisk-økonomisk analyse.',
+    no: 'Kartlegging av Verdensbankens utviklingsindikatorer inn i politisk-økonomisk analyse.',
+    fi: 'Maailmanpankin kehitysindikaattoreiden kartoitus poliittis-taloudelliseen analyysiin.',
+    de: 'Zuordnung der Weltbank-Entwicklungsindikatoren zur politisch-ökonomischen Analyse.',
+    fr: 'Correspondance des indicateurs de développement de la Banque mondiale avec l\'analyse politico-économique.',
+    es: 'Correspondencia de los indicadores de desarrollo del Banco Mundial con el análisis político-económico.',
+    nl: 'Toewijzing van ontwikkelingsindicatoren van de Wereldbank aan politiek-economische analyse.',
+    ar: 'ربط مؤشرات التنمية للبنك الدولي بالتحليل السياسي-الاقتصادي.',
+    he: 'מיפוי אינדיקטורי פיתוח של הבנק העולמי לניתוח פוליטי־כלכלי.',
+    ja: '世界銀行の開発指標を政治経済分析にマッピング。',
+    ko: '세계은행 개발 지표를 정치·경제 분석으로 매핑.',
+    zh: '将世界银行发展指标映射到政治经济分析中。',
+  },
+  'README.md': {
+    en: 'Overview and entry-point for the full methodology library.',
+    sv: 'Översikt och ingångspunkt till hela metodbiblioteket.',
+    da: 'Oversigt og indgang til hele metodologibiblioteket.',
+    no: 'Oversikt og inngangspunkt til hele metodikkbiblioteket.',
+    fi: 'Yleiskatsaus ja sisääntulopiste koko metodologiakirjastoon.',
+    de: 'Überblick und Einstiegspunkt für die gesamte Methodologie-Bibliothek.',
+    fr: 'Aperçu et point d\'entrée de l\'ensemble de la bibliothèque méthodologique.',
+    es: 'Resumen y punto de entrada de toda la biblioteca de metodologías.',
+    nl: 'Overzicht en toegangspunt voor de volledige methodologie-bibliotheek.',
+    ar: 'نظرة عامة ونقطة دخول إلى مكتبة المنهجيات الكاملة.',
+    he: 'סקירה ונקודת כניסה לספריית המתודולוגיות המלאה.',
+    ja: '方法論ライブラリ全体の概観とエントリーポイント。',
+    ko: '전체 방법론 라이브러리의 개요 및 진입점.',
+    zh: '完整方法论库的概览与入口。',
+  },
+};
+
+/** Per-language label + brief description pattern for every template / artifact
+ *  file. Templates share a translated "kind" prefix (%k) followed by the
+ *  artifact-specific localised label (%t). Filenames unknown to the system fall
+ *  back to a fully localised generic phrase constructed from this pattern. */
+const TEMPLATE_DESC_I18N: Record<string, LangMap> = {
+  'executive-brief.md': {
+    en: 'Executive brief: concise 2-page decision-maker summary with top findings and recommendations.',
+    sv: 'Chefsbriefing: koncis 2-sidig beslutsfattarsammanfattning med främsta fynd och rekommendationer.',
+    da: 'Ledelsesbriefing: kortfattet 2-sidet sammenfatning for beslutningstagere med topfund og anbefalinger.',
+    no: 'Ledelsesbrief: kortfattet 2-siders beslutningstakersammendrag med hovedfunn og anbefalinger.',
+    fi: 'Johdon lyhyt katsaus: tiivis 2-sivuinen päätöksentekijöille suunnattu yhteenveto keskeisistä havainnoista ja suosituksista.',
+    de: 'Executive Brief: prägnante 2-seitige Entscheiderzusammenfassung mit Kernerkenntnissen und Empfehlungen.',
+    fr: 'Note de direction : synthèse concise de 2 pages pour décideurs avec constats clés et recommandations.',
+    es: 'Resumen ejecutivo: síntesis concisa de 2 páginas para responsables con principales hallazgos y recomendaciones.',
+    nl: 'Executive brief: beknopte 2-pagina samenvatting voor besluitvormers met hoofdbevindingen en aanbevelingen.',
+    ar: 'ملخص تنفيذي: موجز مؤلف من صفحتين لصنّاع القرار يتضمن أهم النتائج والتوصيات.',
+    he: 'תקציר מנהלים: סיכום תמציתי של 2 עמודים למקבלי החלטות עם ממצאים מרכזיים והמלצות.',
+    ja: 'エグゼクティブ・ブリーフ：主要な発見と提言を含む意思決定者向けの簡潔な 2 ページ要約。',
+    ko: '임원 브리핑: 주요 발견과 권고를 담은 2페이지 분량의 의사결정자용 간결 요약.',
+    zh: '执行摘要：面向决策者的简明 2 页摘要，涵盖主要发现与建议。',
+  },
+  'risk-assessment.md': {
+    en: 'Risk assessment: enumerated risks with likelihood, impact, mitigations and monitoring indicators.',
+    sv: 'Riskbedömning: listade risker med sannolikhet, konsekvens, åtgärder och övervakningsindikatorer.',
+    da: 'Risikovurdering: opremsede risici med sandsynlighed, konsekvens, afbødning og overvågningsindikatorer.',
+    no: 'Risikovurdering: opplistede risikoer med sannsynlighet, konsekvens, tiltak og overvåkingsindikatorer.',
+    fi: 'Riskiarvio: luetellut riskit todennäköisyydellä, vaikutuksella, lieventämistoimilla ja seurantamittareilla.',
+    de: 'Risikobewertung: aufgelistete Risiken mit Wahrscheinlichkeit, Auswirkung, Gegenmaßnahmen und Überwachungsindikatoren.',
+    fr: 'Évaluation des risques : risques énumérés avec probabilité, impact, mesures d\'atténuation et indicateurs de suivi.',
+    es: 'Evaluación de riesgos: riesgos enumerados con probabilidad, impacto, mitigaciones e indicadores de seguimiento.',
+    nl: 'Risicobeoordeling: opgesomde risico\'s met waarschijnlijkheid, impact, mitigaties en monitoringindicatoren.',
+    ar: 'تقييم المخاطر: مخاطر محصورة مع الاحتمال والتأثير وإجراءات التخفيف ومؤشرات الرصد.',
+    he: 'הערכת סיכונים: רשימת סיכונים עם הסתברות, השפעה, הקלות ומדדי ניטור.',
+    ja: 'リスク評価：確率・影響・緩和策・監視指標を伴う列挙型リスク一覧。',
+    ko: '위험 평가: 가능성·영향·완화·모니터링 지표를 갖춘 위험 목록.',
+    zh: '风险评估：列出风险及其可能性、影响、缓解措施与监测指标。',
+  },
+  'swot-analysis.md': {
+    en: 'SWOT analysis: strengths, weaknesses, opportunities and threats mapped to actors or positions.',
+    sv: 'SWOT-analys: styrkor, svagheter, möjligheter och hot kopplade till aktörer eller positioner.',
+    da: 'SWOT-analyse: styrker, svagheder, muligheder og trusler knyttet til aktører eller holdninger.',
+    no: 'SWOT-analyse: styrker, svakheter, muligheter og trusler knyttet til aktører eller posisjoner.',
+    fi: 'SWOT-analyysi: vahvuudet, heikkoudet, mahdollisuudet ja uhat toimijoille tai kannoille kartoitettuna.',
+    de: 'SWOT-Analyse: Stärken, Schwächen, Chancen und Risiken, zugeordnet zu Akteuren oder Positionen.',
+    fr: 'Analyse SWOT : forces, faiblesses, opportunités et menaces associées aux acteurs ou aux positions.',
+    es: 'Análisis SWOT: fortalezas, debilidades, oportunidades y amenazas asociadas a actores o posiciones.',
+    nl: 'SWOT-analyse: sterktes, zwaktes, kansen en bedreigingen gekoppeld aan actoren of standpunten.',
+    ar: 'تحليل SWOT: نقاط القوة والضعف والفرص والتهديدات المرتبطة بالفاعلين أو المواقف.',
+    he: 'ניתוח SWOT: חוזקות, חולשות, הזדמנויות ואיומים ממופים לשחקנים או עמדות.',
+    ja: 'SWOT 分析：アクターまたは立場に紐づく強み・弱み・機会・脅威。',
+    ko: 'SWOT 분석: 행위자 또는 입장에 연결된 강점·약점·기회·위협.',
+    zh: 'SWOT 分析：将优势、劣势、机会与威胁映射到行为者或立场。',
+  },
+  'stakeholder-map.md': {
+    en: 'Stakeholder map: actors, interests, influence and alignment across the covered issue.',
+    sv: 'Intressentkarta: aktörer, intressen, inflytande och samsyn kring den aktuella frågan.',
+    da: 'Interessentkort: aktører, interesser, indflydelse og samstemmighed omkring emnet.',
+    no: 'Interessentkart: aktører, interesser, innflytelse og samstemmighet rundt saken.',
+    fi: 'Sidosryhmäkartta: toimijat, intressit, vaikutusvalta ja asemointi käsiteltävässä kysymyksessä.',
+    de: 'Stakeholder-Karte: Akteure, Interessen, Einfluss und Ausrichtung zum behandelten Thema.',
+    fr: 'Carte des parties prenantes : acteurs, intérêts, influence et alignements sur le sujet traité.',
+    es: 'Mapa de partes interesadas: actores, intereses, influencia y alineamiento respecto al tema tratado.',
+    nl: 'Stakeholderkaart: actoren, belangen, invloed en positionering rond het behandelde onderwerp.',
+    ar: 'خريطة الأطراف المعنية: الفاعلون والمصالح والنفوذ والاصطفاف بشأن الموضوع.',
+    he: 'מפת בעלי עניין: שחקנים, אינטרסים, השפעה והתיישרות סביב הנושא.',
+    ja: 'ステークホルダー・マップ：対象イシューに関わるアクター、利害、影響力、同盟関係。',
+    ko: '이해관계자 지도: 해당 이슈를 둘러싼 행위자·이해·영향력·정합성.',
+    zh: '利益相关者地图：围绕所涉议题的行为者、利益、影响力与立场对齐。',
+  },
+  'threat-analysis.md': {
+    en: 'Threat analysis: adversary mapping, attack surfaces and defence priorities.',
+    sv: 'Hotanalys: motståndarkartläggning, angreppsytor och försvarsprioriteringar.',
+    da: 'Trusselsanalyse: modstanderkortlægning, angrebsflader og forsvarsprioriteter.',
+    no: 'Trusselanalyse: motstanderkartlegging, angrepsflater og forsvarsprioriteringer.',
+    fi: 'Uhka-analyysi: vastustajien kartoitus, hyökkäyspinnat ja puolustusprioriteetit.',
+    de: 'Bedrohungsanalyse: Gegner-Mapping, Angriffsflächen und Verteidigungsprioritäten.',
+    fr: 'Analyse des menaces : cartographie des adversaires, surfaces d\'attaque et priorités de défense.',
+    es: 'Análisis de amenazas: mapeo de adversarios, superficies de ataque y prioridades de defensa.',
+    nl: 'Dreigingsanalyse: tegenstander-mapping, aanvalsvlakken en verdedigingsprioriteiten.',
+    ar: 'تحليل التهديدات: رسم خرائط الخصوم وأسطح الهجوم وأولويات الدفاع.',
+    he: 'ניתוח איומים: מיפוי יריבים, משטחי תקיפה ועדיפויות הגנה.',
+    ja: '脅威分析：アドバーサリー・マッピング、攻撃面、防御優先順位。',
+    ko: '위협 분석: 적대자 매핑·공격 표면·방어 우선순위.',
+    zh: '威胁分析：对手映射、攻击面与防御优先级。',
+  },
+  'scenario-planning.md': {
+    en: 'Scenario planning: 3-5 plausible futures with drivers, indicators and decision points.',
+    sv: 'Scenarioplanering: 3–5 troliga framtider med drivkrafter, indikatorer och beslutspunkter.',
+    da: 'Scenarieplanlægning: 3-5 plausible fremtider med drivkræfter, indikatorer og beslutningspunkter.',
+    no: 'Scenarieplanlegging: 3-5 sannsynlige fremtider med drivkrefter, indikatorer og beslutningspunkter.',
+    fi: 'Skenaariosuunnittelu: 3–5 uskottavaa tulevaisuutta ajureineen, indikaattoreineen ja päätöspisteineen.',
+    de: 'Szenarienplanung: 3-5 plausible Zukünfte mit Treibern, Indikatoren und Entscheidungspunkten.',
+    fr: 'Planification de scénarios : 3-5 futurs plausibles avec moteurs, indicateurs et points de décision.',
+    es: 'Planificación de escenarios: 3-5 futuros plausibles con impulsores, indicadores y puntos de decisión.',
+    nl: 'Scenarioplanning: 3-5 aannemelijke toekomsten met drivers, indicatoren en beslispunten.',
+    ar: 'تخطيط السيناريوهات: 3-5 سيناريوهات مستقبلية معقولة مع محركات ومؤشرات ونقاط قرار.',
+    he: 'תכנון תרחישים: 3-5 עתידים סבירים עם מניעים, אינדיקטורים ונקודות החלטה.',
+    ja: 'シナリオ・プランニング：駆動要因・指標・意思決定点を伴う 3〜5 の妥当な未来像。',
+    ko: '시나리오 기획: 동인·지표·결정 시점을 갖춘 3~5개의 타당한 미래.',
+    zh: '情景规划：包含驱动因素、指标与决策点的 3–5 种可能未来。',
+  },
+  'behavioral-analysis.md': {
+    en: 'Behavioural analysis: political psychology patterns, incentives and likely responses.',
+    sv: 'Beteendeanalys: politisk-psykologiska mönster, incitament och troliga reaktioner.',
+    da: 'Adfærdsanalyse: politisk-psykologiske mønstre, incitamenter og sandsynlige reaktioner.',
+    no: 'Atferdsanalyse: politisk-psykologiske mønstre, insentiver og sannsynlige reaksjoner.',
+    fi: 'Käyttäytymisanalyysi: poliittis-psykologiset mallit, kannustimet ja todennäköiset reaktiot.',
+    de: 'Verhaltensanalyse: politisch-psychologische Muster, Anreize und wahrscheinliche Reaktionen.',
+    fr: 'Analyse comportementale : schémas psycho-politiques, incitations et réactions probables.',
+    es: 'Análisis conductual: patrones psico-políticos, incentivos y respuestas probables.',
+    nl: 'Gedragsanalyse: politiek-psychologische patronen, prikkels en waarschijnlijke reacties.',
+    ar: 'تحليل سلوكي: أنماط نفسية-سياسية وحوافز وردود أفعال محتملة.',
+    he: 'ניתוח התנהגותי: דפוסי פסיכולוגיה פוליטית, תמריצים ותגובות צפויות.',
+    ja: '行動分析：政治心理パターン、インセンティブ、予想される反応。',
+    ko: '행동 분석: 정치 심리 패턴·유인·예상 반응.',
+    zh: '行为分析：政治心理模式、激励与可能反应。',
+  },
+  'synthesis.md': {
+    en: 'Synthesis: integrated narrative weaving together every artifact into a coherent intelligence product.',
+    sv: 'Syntes: integrerad berättelse som väver samman varje artefakt till en sammanhängande underrättelseprodukt.',
+    da: 'Syntese: integreret fortælling der væver hver artefakt sammen til ét sammenhængende efterretningsprodukt.',
+    no: 'Syntese: integrert fortelling som vever hver artefakt sammen til ett sammenhengende etterretningsprodukt.',
+    fi: 'Synteesi: integroitu kertomus, joka kutoo jokaisen artefaktin johdonmukaiseksi tiedustelutuotteeksi.',
+    de: 'Synthese: integrierte Erzählung, die jedes Artefakt zu einem kohärenten Intelligenzprodukt verwebt.',
+    fr: 'Synthèse : récit intégré tissant chaque artefact en un produit de renseignement cohérent.',
+    es: 'Síntesis: narrativa integrada que teje cada artefacto en un producto de inteligencia coherente.',
+    nl: 'Synthese: geïntegreerd narratief dat elk artefact samenvlecht tot een coherent inlichtingenproduct.',
+    ar: 'توليف: سرد متكامل ينسج كل قطعة في منتج استخباراتي متماسك.',
+    he: 'סינתזה: נרטיב משולב השוזר כל ארטיפקט למוצר מודיעין קוהרנטי.',
+    ja: '統合：すべての成果物を一貫したインテリジェンス製品へ織り上げる統合的ナラティブ。',
+    ko: '종합: 모든 산출물을 일관된 인텔리전스 제품으로 엮는 통합 서사.',
+    zh: '综合：将每份产物编织为连贯情报产品的整合叙事。',
+  },
+  'timeline.md': {
+    en: 'Timeline: chronological narrative of events with dates, actors and causal links.',
+    sv: 'Tidslinje: kronologisk redogörelse av händelser med datum, aktörer och kausala länkar.',
+    da: 'Tidslinje: kronologisk fortælling om begivenheder med datoer, aktører og årsagssammenhænge.',
+    no: 'Tidslinje: kronologisk fortelling om hendelser med datoer, aktører og årsakssammenhenger.',
+    fi: 'Aikajana: tapahtumien kronologinen kuvaus päivämäärineen, toimijoineen ja syy-yhteyksineen.',
+    de: 'Zeitleiste: chronologische Erzählung der Ereignisse mit Daten, Akteuren und Kausalverbindungen.',
+    fr: 'Chronologie : récit chronologique des événements avec dates, acteurs et liens causaux.',
+    es: 'Cronología: narrativa cronológica de eventos con fechas, actores y vínculos causales.',
+    nl: 'Tijdlijn: chronologisch narratief van gebeurtenissen met data, actoren en causale links.',
+    ar: 'الجدول الزمني: سرد زمني للأحداث مع التواريخ والفاعلين والروابط السببية.',
+    he: 'ציר זמן: נרטיב כרונולוגי של אירועים עם תאריכים, שחקנים וקשרים סיבתיים.',
+    ja: 'タイムライン：日付・アクター・因果関係を含む出来事の時系列ナラティブ。',
+    ko: '타임라인: 날짜·행위자·인과관계를 담은 사건의 시계열 서사.',
+    zh: '时间线：包含日期、行为者与因果联系的事件时序叙事。',
+  },
+  'classification-results.json': {
+    en: 'Classification results: structured JSON with CIA/RTO/RPO scoring and information-security labelling.',
+    sv: 'Klassificeringsresultat: strukturerad JSON med CIA/RTO/RPO-poäng och informationssäkerhetsmärkning.',
+    da: 'Klassificeringsresultater: struktureret JSON med CIA/RTO/RPO-scoring og informationssikkerhedsmærkning.',
+    no: 'Klassifiseringsresultater: strukturert JSON med CIA/RTO/RPO-scoring og informasjonssikkerhetsmerking.',
+    fi: 'Luokitustulokset: jäsennelty JSON CIA/RTO/RPO-pisteytyksellä ja tietoturvamerkinnällä.',
+    de: 'Klassifikationsergebnisse: strukturiertes JSON mit CIA/RTO/RPO-Scoring und Informationssicherheits-Kennzeichnung.',
+    fr: 'Résultats de classification : JSON structuré avec notation CIA/RTO/RPO et étiquetage de sécurité de l\'information.',
+    es: 'Resultados de clasificación: JSON estructurado con puntuación CIA/RTO/RPO y etiquetado de seguridad de la información.',
+    nl: 'Classificatieresultaten: gestructureerde JSON met CIA/RTO/RPO-scoring en informatiebeveiligingslabeling.',
+    ar: 'نتائج التصنيف: JSON منظم مع تقييم CIA/RTO/RPO ووسم أمن المعلومات.',
+    he: 'תוצאות סיווג: JSON מובנה עם ניקוד CIA/RTO/RPO וסימון אבטחת מידע.',
+    ja: '分類結果：CIA/RTO/RPO スコアリングと情報セキュリティラベルを含む構造化 JSON。',
+    ko: '분류 결과: CIA/RTO/RPO 점수와 정보보안 라벨링을 담은 구조화 JSON.',
+    zh: '分类结果：包含 CIA/RTO/RPO 评分与信息安全标注的结构化 JSON。',
+  },
+  'economic-data.json': {
+    en: 'Economic data: curated macroeconomic indicators feeding downstream political-economy analyses.',
+    sv: 'Ekonomisk data: kurerade makroekonomiska indikatorer som matar nedströms politisk-ekonomiska analyser.',
+    da: 'Økonomiske data: kuraterede makroøkonomiske indikatorer der fødes ind i nedstrøms politisk-økonomiske analyser.',
+    no: 'Økonomiske data: kuraterte makroøkonomiske indikatorer som mater nedstrøms politisk-økonomiske analyser.',
+    fi: 'Taloustiedot: kuratoidut makrotaloudelliset indikaattorit, jotka syöttävät alavirran poliittis-taloudellisia analyyseja.',
+    de: 'Wirtschaftsdaten: kuratierte makroökonomische Indikatoren für nachgelagerte politisch-ökonomische Analysen.',
+    fr: 'Données économiques : indicateurs macroéconomiques sélectionnés alimentant les analyses d\'économie politique en aval.',
+    es: 'Datos económicos: indicadores macroeconómicos curados que alimentan los análisis de economía política aguas abajo.',
+    nl: 'Economische data: gecureerde macro-economische indicatoren die politieke-economie-analyses stroomafwaarts voeden.',
+    ar: 'بيانات اقتصادية: مؤشرات اقتصاد كلي منسَّقة تُغذي تحليلات الاقتصاد السياسي اللاحقة.',
+    he: 'נתונים כלכליים: אינדיקטורים מאקרו־כלכליים אוצרים המזינים ניתוחי כלכלה פוליטית במורד הזרם.',
+    ja: '経済データ：下流の政治経済分析に供給する選定済みマクロ経済指標。',
+    ko: '경제 데이터: 하류의 정치경제 분석에 공급되는 큐레이션된 거시경제 지표.',
+    zh: '经济数据：为下游政治经济分析提供支撑的精选宏观经济指标。',
+  },
+  'README.md': {
+    en: 'Overview and entry-point for the full template library.',
+    sv: 'Översikt och ingångspunkt till hela mallbiblioteket.',
+    da: 'Oversigt og indgang til hele skabelonbiblioteket.',
+    no: 'Oversikt og inngangspunkt til hele malbiblioteket.',
+    fi: 'Yleiskatsaus ja sisääntulopiste koko mallikirjastoon.',
+    de: 'Überblick und Einstiegspunkt für die gesamte Vorlagen-Bibliothek.',
+    fr: 'Aperçu et point d\'entrée de la bibliothèque complète de modèles.',
+    es: 'Resumen y punto de entrada de toda la biblioteca de plantillas.',
+    nl: 'Overzicht en toegangspunt voor de volledige sjabloonbibliotheek.',
+    ar: 'نظرة عامة ونقطة دخول لمكتبة القوالب الكاملة.',
+    he: 'סקירה ונקודת כניסה לספריית התבניות המלאה.',
+    ja: 'テンプレートライブラリ全体の概観とエントリーポイント。',
+    ko: '전체 템플릿 라이브러리의 개요 및 진입점.',
+    zh: '完整模板库的概览与入口。',
+  },
+};
+
+/** Generic "template in the X library" fallback phrase, localised per language.
+ *  The two placeholders are replaced with the prettified filename and library name. */
+const TEMPLATE_GENERIC_DESC_I18N: Record<Language, string> = {
+  en: '%t — reference template in the %l library.',
+  sv: '%t — referensmall i biblioteket %l.',
+  da: '%t — referenceskabelon i biblioteket %l.',
+  no: '%t — referansemaal i biblioteket %l.',
+  fi: '%t — viitemalli kirjastossa %l.',
+  de: '%t — Referenzvorlage in der Bibliothek %l.',
+  fr: '%t — modèle de référence dans la bibliothèque %l.',
+  es: '%t — plantilla de referencia en la biblioteca %l.',
+  nl: '%t — referentiesjabloon in de bibliotheek %l.',
+  ar: '%t — قالب مرجعي في مكتبة %l.',
+  he: '%t — תבנית ייחוס בספרייה %l.',
+  ja: '%t — %l ライブラリ内の参照テンプレート。',
+  ko: '%t — %l 라이브러리의 참조 템플릿.',
+  zh: '%t — %l 库中的参考模板。',
+};
+
+/** Per-language display title for every artifact filename that appears in daily
+ *  streams. Falls back to the English prettified filename when missing. */
+const ARTIFACT_TITLE_I18N: Record<string, LangMap> = {
+  'executive-brief.md': {
+    en: 'Executive Brief', sv: 'Chefsbriefing', da: 'Ledelsesbriefing', no: 'Ledelsesbrief', fi: 'Johdon lyhyt katsaus',
+    de: 'Executive Brief', fr: 'Note de direction', es: 'Resumen ejecutivo', nl: 'Executive brief',
+    ar: 'ملخص تنفيذي', he: 'תקציר מנהלים', ja: 'エグゼクティブ・ブリーフ', ko: '임원 브리핑', zh: '执行摘要',
+  },
+  'risk-assessment.md': {
+    en: 'Risk Assessment', sv: 'Riskbedömning', da: 'Risikovurdering', no: 'Risikovurdering', fi: 'Riskiarvio',
+    de: 'Risikobewertung', fr: 'Évaluation des risques', es: 'Evaluación de riesgos', nl: 'Risicobeoordeling',
+    ar: 'تقييم المخاطر', he: 'הערכת סיכונים', ja: 'リスク評価', ko: '위험 평가', zh: '风险评估',
+  },
+  'swot-analysis.md': {
+    en: 'SWOT Analysis', sv: 'SWOT-analys', da: 'SWOT-analyse', no: 'SWOT-analyse', fi: 'SWOT-analyysi',
+    de: 'SWOT-Analyse', fr: 'Analyse SWOT', es: 'Análisis SWOT', nl: 'SWOT-analyse',
+    ar: 'تحليل SWOT', he: 'ניתוח SWOT', ja: 'SWOT 分析', ko: 'SWOT 분석', zh: 'SWOT 分析',
+  },
+  'stakeholder-map.md': {
+    en: 'Stakeholder Map', sv: 'Intressentkarta', da: 'Interessentkort', no: 'Interessentkart', fi: 'Sidosryhmäkartta',
+    de: 'Stakeholder-Karte', fr: 'Carte des parties prenantes', es: 'Mapa de partes interesadas', nl: 'Stakeholderkaart',
+    ar: 'خريطة الأطراف المعنية', he: 'מפת בעלי עניין', ja: 'ステークホルダー・マップ', ko: '이해관계자 지도', zh: '利益相关者地图',
+  },
+  'threat-analysis.md': {
+    en: 'Threat Analysis', sv: 'Hotanalys', da: 'Trusselsanalyse', no: 'Trusselanalyse', fi: 'Uhka-analyysi',
+    de: 'Bedrohungsanalyse', fr: 'Analyse des menaces', es: 'Análisis de amenazas', nl: 'Dreigingsanalyse',
+    ar: 'تحليل التهديدات', he: 'ניתוח איומים', ja: '脅威分析', ko: '위협 분석', zh: '威胁分析',
+  },
+  'scenario-planning.md': {
+    en: 'Scenario Planning', sv: 'Scenarioplanering', da: 'Scenarieplanlægning', no: 'Scenarieplanlegging', fi: 'Skenaariosuunnittelu',
+    de: 'Szenarienplanung', fr: 'Planification de scénarios', es: 'Planificación de escenarios', nl: 'Scenarioplanning',
+    ar: 'تخطيط السيناريوهات', he: 'תכנון תרחישים', ja: 'シナリオ・プランニング', ko: '시나리오 기획', zh: '情景规划',
+  },
+  'behavioral-analysis.md': {
+    en: 'Behavioural Analysis', sv: 'Beteendeanalys', da: 'Adfærdsanalyse', no: 'Atferdsanalyse', fi: 'Käyttäytymisanalyysi',
+    de: 'Verhaltensanalyse', fr: 'Analyse comportementale', es: 'Análisis conductual', nl: 'Gedragsanalyse',
+    ar: 'تحليل سلوكي', he: 'ניתוח התנהגותי', ja: '行動分析', ko: '행동 분석', zh: '行为分析',
+  },
+  'synthesis.md': {
+    en: 'Synthesis', sv: 'Syntes', da: 'Syntese', no: 'Syntese', fi: 'Synteesi',
+    de: 'Synthese', fr: 'Synthèse', es: 'Síntesis', nl: 'Synthese',
+    ar: 'توليف', he: 'סינתזה', ja: '統合', ko: '종합', zh: '综合',
+  },
+  'timeline.md': {
+    en: 'Timeline', sv: 'Tidslinje', da: 'Tidslinje', no: 'Tidslinje', fi: 'Aikajana',
+    de: 'Zeitleiste', fr: 'Chronologie', es: 'Cronología', nl: 'Tijdlijn',
+    ar: 'الجدول الزمني', he: 'ציר זמן', ja: 'タイムライン', ko: '타임라인', zh: '时间线',
+  },
+  'classification-results.json': {
+    en: 'Classification Results', sv: 'Klassificeringsresultat', da: 'Klassificeringsresultater', no: 'Klassifiseringsresultater', fi: 'Luokitustulokset',
+    de: 'Klassifikationsergebnisse', fr: 'Résultats de classification', es: 'Resultados de clasificación', nl: 'Classificatieresultaten',
+    ar: 'نتائج التصنيف', he: 'תוצאות סיווג', ja: '分類結果', ko: '분류 결과', zh: '分类结果',
+  },
+  'economic-data.json': {
+    en: 'Economic Data', sv: 'Ekonomisk data', da: 'Økonomiske data', no: 'Økonomiske data', fi: 'Taloustiedot',
+    de: 'Wirtschaftsdaten', fr: 'Données économiques', es: 'Datos económicos', nl: 'Economische data',
+    ar: 'بيانات اقتصادية', he: 'נתונים כלכליים', ja: '経済データ', ko: '경제 데이터', zh: '经济数据',
+  },
+  'README.md': {
+    en: 'README', sv: 'Läs mig', da: 'Læs mig', no: 'Les meg', fi: 'Lue minut',
+    de: 'Lies mich', fr: 'Lisez-moi', es: 'Léame', nl: 'Lees mij',
+    ar: 'اقرأني', he: 'קרא אותי', ja: 'お読みください', ko: '읽어 주세요', zh: '自述文件',
+  },
+};
+
+/** Generic library-display-name phrases, localised per language. */
+const LIBRARY_NAME_I18N: Record<'methodologies' | 'templates', LangMap> = {
+  methodologies: {
+    en: 'methodologies', sv: 'metoder', da: 'metoder', no: 'metoder', fi: 'metodit',
+    de: 'Methoden', fr: 'méthodologies', es: 'metodologías', nl: 'methodologieën',
+    ar: 'منهجيات', he: 'מתודולוגיות', ja: '方法論', ko: '방법론', zh: '方法论',
+  },
+  templates: {
+    en: 'templates', sv: 'mallar', da: 'skabeloner', no: 'maler', fi: 'mallit',
+    de: 'Vorlagen', fr: 'modèles', es: 'plantillas', nl: 'sjablonen',
+    ar: 'قوالب', he: 'תבניות', ja: 'テンプレート', ko: '템플릿', zh: '模板',
+  },
+};
+
+/** Localised display title for an artifact filename. Falls back to English prettify. */
+function artifactTitle(file: string, lang: Language): string {
+  return ARTIFACT_TITLE_I18N[file]?.[lang]
+      ?? ARTIFACT_TITLE_I18N[file]?.en
+      ?? prettifyMarkdownTitle(file);
+}
+
+/** Localised description for a methodology/template/artifact filename. */
+function localisedCatalogDescription(
+  file: string,
+  lang: Language,
+  library: 'methodologies' | 'templates',
+  englishFallback: string,
+): string {
+  const map = library === 'methodologies' ? METHODOLOGY_DESC_I18N : TEMPLATE_DESC_I18N;
+  const hit = map[file]?.[lang];
+  if (hit) return hit;
+  // Generic localised template/methodology fallback: "<title> — reference template in the <library> library."
+  if (library === 'templates') {
+    const pattern = TEMPLATE_GENERIC_DESC_I18N[lang] ?? TEMPLATE_GENERIC_DESC_I18N.en;
+    const title = artifactTitle(file, lang);
+    const libName = LIBRARY_NAME_I18N.templates[lang] ?? LIBRARY_NAME_I18N.templates.en;
+    return pattern.replace('%t', title).replace('%l', libName);
+  }
+  // Methodology: fall back to English canonical description so we never leave blanks.
+  return englishFallback;
+}
+
 function prettifyStream(name: string): string {
   return name
     .replace(/[-_]/g, ' ')
@@ -529,6 +1641,7 @@ function prettifyStream(name: string): string {
 
 function streamIcon(name: string): string {
   if (STREAM_META[name]) return STREAM_META[name].icon;
+  if (name === 'documents') return '📂';
   if (name.startsWith('realtime-')) return '⏱️';
   if (name.startsWith('morning-')) return '🌅';
   if (name.startsWith('midday-')) return '🕛';
@@ -536,10 +1649,27 @@ function streamIcon(name: string): string {
   return '📦';
 }
 
-function streamDescription(name: string): string {
-  if (STREAM_META[name]) return STREAM_META[name].description;
-  if (name.startsWith('realtime-')) return 'Realtime snapshot capturing the parliamentary and government state at a specific time.';
-  return `Analytical content stream: ${prettifyStream(name)}.`;
+/** Localised stream display name (falls back to English prettify). */
+function streamDisplayName(name: string, lang: Language): string {
+  const hit = STREAM_NAME_I18N[name]?.[lang];
+  if (hit) return hit;
+  // Preserve timestamp suffix for realtime-HHMM → "Realtime HH:MM" variants
+  const match = name.match(/^realtime-(\d{2})(\d{2})$/);
+  if (match) {
+    const base = STREAM_NAME_I18N['breaking-news']?.[lang] ?? 'Realtime';
+    // Use English "Realtime" label for clarity across languages
+    return `${lang === 'en' ? 'Realtime' : base.replace(/breaking[-\s]?news?/i, 'Realtime')} ${match[1]}:${match[2]}`;
+  }
+  return prettifyStream(name);
+}
+
+/** Localised stream description. */
+function streamDescription(name: string, lang: Language): string {
+  const hit = STREAM_DESC_I18N[name]?.[lang];
+  if (hit) return hit;
+  if (name.startsWith('realtime-')) return REALTIME_DESC_I18N[lang];
+  const generic = STREAM_GENERIC_DESC_I18N[lang] ?? STREAM_GENERIC_DESC_I18N.en;
+  return generic.replace('%s', streamDisplayName(name, lang));
 }
 
 function prettifyMarkdownTitle(file: string): string {
@@ -564,6 +1694,7 @@ function collectCatalog(
   dir: string,
   relativePrefix: string,
   metaMap: Record<string, { icon: string; description: string }>,
+  library: 'methodologies' | 'templates',
 ): CatalogEntry[] {
   if (!fs.existsSync(dir)) return [];
   const entries: CatalogEntry[] = [];
@@ -579,15 +1710,24 @@ function collectCatalog(
       icon: meta?.icon ?? (name.endsWith('.json') ? '📊' : '📄'),
       description: meta?.description ?? `${prettifyMarkdownTitle(name)} — reference document in the ${relativePrefix.split('/').pop()} library.`,
       githubUrl: buildGithubUrl('blob', `${relativePrefix}/${name}`),
+      library,
     });
   }
   return entries;
+}
+
+interface DailyArtifact {
+  readonly file: string;
+  /** Path relative to analysis/daily (e.g. 2026-04-23/propositions/executive-brief.md). */
+  readonly relative: string;
+  readonly githubUrl: string;
 }
 
 interface DailyStream {
   readonly name: string;
   readonly githubUrl: string;
   readonly artifactCount: number;
+  readonly artifacts: DailyArtifact[];
 }
 
 interface DailyDay {
@@ -610,6 +1750,29 @@ function countArtifactsRecursive(dir: string): number {
   return n;
 }
 
+/** Recursively collect every `.md`/`.json` artifact under a stream folder, sorted by relative path. */
+function collectStreamArtifacts(streamDir: string, streamRelativeBase: string): DailyArtifact[] {
+  if (!fs.existsSync(streamDir)) return [];
+  const out: DailyArtifact[] = [];
+  const walk = (dir: string, relBase: string): void => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+      const full = path.join(dir, e.name);
+      const rel = relBase ? `${relBase}/${e.name}` : e.name;
+      if (e.isDirectory()) {
+        walk(full, rel);
+      } else if (e.isFile() && /\.(md|json)$/i.test(e.name)) {
+        out.push({
+          file: rel,
+          relative: `${streamRelativeBase}/${rel}`,
+          githubUrl: buildGithubUrl('blob', `analysis/daily/${streamRelativeBase}/${rel}`),
+        });
+      }
+    }
+  };
+  walk(streamDir, '');
+  return out.sort((a, b) => a.file.localeCompare(b.file));
+}
+
 function collectDailyDays(): DailyDay[] {
   if (!fs.existsSync(DAILY_DIR)) return [];
   const days: DailyDay[] = [];
@@ -625,11 +1788,16 @@ function collectDailyDays(): DailyDay[] {
       .map((e) => e.name)
       .sort((a, b) => a.localeCompare(b));
 
-    const streams: DailyStream[] = streamNames.map((name) => ({
-      name,
-      githubUrl: buildGithubUrl('tree', `analysis/daily/${date}/${name}`),
-      artifactCount: countArtifactsRecursive(path.join(dateDir, name)),
-    }));
+    const streams: DailyStream[] = streamNames.map((name) => {
+      const streamDir = path.join(dateDir, name);
+      const artifacts = collectStreamArtifacts(streamDir, `${date}/${name}`);
+      return {
+        name,
+        githubUrl: buildGithubUrl('tree', `analysis/daily/${date}/${name}`),
+        artifactCount: artifacts.length || countArtifactsRecursive(streamDir),
+        artifacts,
+      };
+    });
 
     const totalArtifacts = streams.reduce((a, s) => a + s.artifactCount, 0);
 
@@ -652,27 +1820,48 @@ function hreflangCodeOf(lang: Language): string {
   return LANGUAGE_META[lang].hreflang;
 }
 
-function renderCatalogGrid(entries: CatalogEntry[], openLabel: string): string {
-  return entries.map((e) => `
+function renderCatalogGrid(entries: CatalogEntry[], openLabel: string, lang: Language): string {
+  return entries.map((e) => {
+    const desc = localisedCatalogDescription(e.file, lang, e.library, e.description);
+    const title = artifactTitle(e.file, lang) || e.title;
+    return `
         <article class="pi-card">
           <div class="pi-card-icon" aria-hidden="true">${e.icon}</div>
-          <h3 class="pi-card-title"><a href="${e.githubUrl}" target="_blank" rel="noopener noreferrer">${escapeHtml(e.title)}</a></h3>
-          <p class="pi-card-desc">${escapeHtml(e.description)}</p>
+          <h3 class="pi-card-title"><a href="${e.githubUrl}" target="_blank" rel="noopener noreferrer">${escapeHtml(title)}</a></h3>
+          <p class="pi-card-desc">${escapeHtml(desc)}</p>
           <p class="pi-card-meta"><code class="pi-card-file">${escapeHtml(e.file)}</code></p>
           <p class="pi-card-link"><a href="${e.githubUrl}" target="_blank" rel="noopener noreferrer">${escapeHtml(openLabel)} <span aria-hidden="true">↗</span></a></p>
-        </article>`).join('\n');
+        </article>`;
+  }).join('\n');
 }
 
-function renderDailyDay(day: DailyDay, t: PiTranslations): string {
-  const streamsHtml = day.streams.map((s) => `
+function renderDailyDay(day: DailyDay, t: PiTranslations, lang: Language): string {
+  const streamsHtml = day.streams.map((s) => {
+    const displayName = streamDisplayName(s.name, lang);
+    const desc = streamDescription(s.name, lang);
+    const artifactsHtml = s.artifacts.length > 0
+      ? `
+              <details class="pi-stream-artifacts">
+                <summary class="pi-stream-artifacts-summary">
+                  <span class="pi-stream-artifacts-toggle" aria-hidden="true">▸</span>
+                  <span class="pi-stream-artifacts-label">${escapeHtml(t.expandArtifacts)}</span>
+                  <span class="pi-stream-artifacts-count">(${s.artifacts.length})</span>
+                </summary>
+                <ol class="pi-artifact-list" aria-label="${s.artifacts.length} ${escapeHtml(t.artifactsLabel)} — ${escapeHtml(displayName)}">
+${s.artifacts.map((a) => `                  <li class="pi-artifact"><a href="${a.githubUrl}" target="_blank" rel="noopener noreferrer"><span class="pi-artifact-icon" aria-hidden="true">${artifactIcon(a.file)}</span> <span class="pi-artifact-title">${escapeHtml(artifactTitle(artifactBaseName(a.file), lang))}</span> <code class="pi-artifact-file">${escapeHtml(a.file)}</code></a></li>`).join('\n')}
+                </ol>
+              </details>`
+      : '';
+    return `
             <li class="pi-stream">
-              <a href="${s.githubUrl}" target="_blank" rel="noopener noreferrer">
+              <a class="pi-stream-link" href="${s.githubUrl}" target="_blank" rel="noopener noreferrer">
                 <span class="pi-stream-icon" aria-hidden="true">${streamIcon(s.name)}</span>
-                <span class="pi-stream-name">${escapeHtml(prettifyStream(s.name))}</span>
+                <span class="pi-stream-name">${escapeHtml(displayName)}</span>
                 <span class="pi-stream-count" aria-label="${s.artifactCount} ${escapeHtml(t.artifacts)}">${s.artifactCount}</span>
               </a>
-              <p class="pi-stream-desc">${escapeHtml(streamDescription(s.name))}</p>
-            </li>`).join('\n');
+              <p class="pi-stream-desc">${escapeHtml(desc)}</p>${artifactsHtml}
+            </li>`;
+  }).join('\n');
 
   return `
       <article class="pi-day">
@@ -687,6 +1876,23 @@ function renderDailyDay(day: DailyDay, t: PiTranslations): string {
 ${streamsHtml}
         </ul>
       </article>`;
+}
+
+/** Strip nested directory prefix from an artifact relative path so the i18n
+ *  title lookup sees just the filename (e.g. "sub/executive-brief.md" → "executive-brief.md"). */
+function artifactBaseName(file: string): string {
+  const idx = file.lastIndexOf('/');
+  return idx >= 0 ? file.slice(idx + 1) : file;
+}
+
+/** Icon helper for an individual artifact filename. */
+function artifactIcon(file: string): string {
+  const base = artifactBaseName(file);
+  if (TEMPLATE_META[base]?.icon) return TEMPLATE_META[base].icon;
+  if (METHODOLOGY_META[base]?.icon) return METHODOLOGY_META[base].icon;
+  if (/\.json$/i.test(base)) return '📊';
+  if (/readme/i.test(base)) return '📘';
+  return '📄';
 }
 
 function renderHreflangTags(current: Language): string {
@@ -707,8 +1913,8 @@ function generatePoliticalIntelligenceHtml(lang: Language): string {
   const indexFile = isEnglish ? 'index.html' : `index_${lang}.html`;
   const sitemapFile = isEnglish ? 'sitemap.html' : `sitemap_${lang}.html`;
 
-  const methodologies = collectCatalog(METHODOLOGIES_DIR, 'analysis/methodologies', METHODOLOGY_META);
-  const templates = collectCatalog(TEMPLATES_DIR, 'analysis/templates', TEMPLATE_META);
+  const methodologies = collectCatalog(METHODOLOGIES_DIR, 'analysis/methodologies', METHODOLOGY_META, 'methodologies');
+  const templates = collectCatalog(TEMPLATES_DIR, 'analysis/templates', TEMPLATE_META, 'templates');
   const days = collectDailyDays();
   const totalArtifacts = days.reduce((a, d) => a + d.totalArtifacts, 0);
 
@@ -716,10 +1922,10 @@ function generatePoliticalIntelligenceHtml(lang: Language): string {
   const recentDays = days.slice(0, RECENT);
   const olderDays = days.slice(RECENT);
 
-  const methodologyCardsHtml = renderCatalogGrid(methodologies, t.openOnGithub);
-  const templateCardsHtml = renderCatalogGrid(templates, t.openOnGithub);
-  const recentDaysHtml = recentDays.map((d) => renderDailyDay(d, t)).join('\n');
-  const olderDaysHtml = olderDays.map((d) => renderDailyDay(d, t)).join('\n');
+  const methodologyCardsHtml = renderCatalogGrid(methodologies, t.openOnGithub, lang);
+  const templateCardsHtml = renderCatalogGrid(templates, t.openOnGithub, lang);
+  const recentDaysHtml = recentDays.map((d) => renderDailyDay(d, t, lang)).join('\n');
+  const olderDaysHtml = olderDays.map((d) => renderDailyDay(d, t, lang)).join('\n');
 
   const otherLangLinks = LANGUAGES
     .filter((l) => l !== lang)
@@ -730,13 +1936,23 @@ function generatePoliticalIntelligenceHtml(lang: Language): string {
     })
     .join('\n');
 
+  // Latest analysis date — used as `dateModified` for SEO/JSON-LD; falls back
+  // to today when no daily artifacts have been generated yet.
+  const latestDate = days[0]?.date ?? new Date().toISOString().slice(0, 10);
+  const buildIso = new Date().toISOString();
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: `${t.title} — Riksdagsmonitor`,
+    headline: `${t.title} — Riksdagsmonitor`,
     description: t.metaDescription,
+    keywords: t.metaKeywords,
     inLanguage: hreflangCodeOf(lang),
     url: `${BASE_URL}/${selfFile}`,
+    mainEntityOfPage: `${BASE_URL}/${selfFile}`,
+    dateModified: latestDate,
+    dateCreated: '2026-04-01',
     isPartOf: {
       '@type': 'WebSite',
       name: 'Riksdagsmonitor',
@@ -746,29 +1962,52 @@ function generatePoliticalIntelligenceHtml(lang: Language): string {
       '@type': 'Organization',
       name: 'Hack23 AB',
       url: 'https://www.hack23.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${BASE_URL}/images/logo.png`,
+      },
     },
-    about: {
-      '@type': 'Thing',
-      name: 'Swedish Parliament political intelligence',
-    },
+    about: [
+      { '@type': 'Thing', name: 'Swedish Parliament political intelligence' },
+      { '@type': 'Thing', name: 'OSINT methodologies' },
+      { '@type': 'Thing', name: 'Political risk assessment' },
+    ],
     hasPart: [
       {
         '@type': 'CreativeWork',
         name: t.methodologies,
         url: `${GITHUB_TREE}/analysis/methodologies`,
+        description: t.methodologiesDesc,
       },
       {
         '@type': 'CreativeWork',
         name: t.templates,
         url: `${GITHUB_TREE}/analysis/templates`,
+        description: t.templatesDesc,
       },
       {
         '@type': 'Dataset',
         name: t.dailyArtifacts,
         url: `${GITHUB_TREE}/analysis/daily`,
+        description: t.dailyArtifactsDesc,
       },
     ],
   };
+
+  // Detailed `ItemList` of recent days for richer search-engine results.
+  const recentDaysItemList = recentDays.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: t.recentDays,
+    numberOfItems: recentDays.length,
+    itemListOrder: 'https://schema.org/ItemListOrderDescending',
+    itemListElement: recentDays.map((d, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: d.date,
+      url: d.githubUrl,
+    })),
+  } : null;
 
   const breadcrumbLd = {
     '@context': 'https://schema.org',
@@ -787,15 +2026,31 @@ function generatePoliticalIntelligenceHtml(lang: Language): string {
     <title>${escapeHtml(t.title)} — Riksdagsmonitor</title>
     <meta name="description" content="${escapeHtml(t.metaDescription)}">
     <meta name="keywords" content="${escapeHtml(t.metaKeywords)}">
-    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="news_keywords" content="${escapeHtml(t.metaKeywords)}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="James Pether Sörling, CISSP, CISM">
+    <meta name="publisher" content="Hack23 AB">
     <meta name="theme-color" content="#0a0e27">
     <meta name="color-scheme" content="dark light">
+    <meta name="generator" content="riksdagsmonitor:scripts/generate-political-intelligence.ts">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Language" content="${hreflangCodeOf(lang)}">
+
+    <!-- Performance hints: preconnect to outbound link targets -->
+    <link rel="preconnect" href="https://github.com" crossorigin>
+    <link rel="dns-prefetch" href="https://github.com">
+    <link rel="preconnect" href="https://www.hack23.com" crossorigin>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
 
     <!-- Hreflang + canonical -->
 ${renderHreflangTags(lang)}
+
+    <!-- Sitemap + RSS feed -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <link rel="alternate" type="application/rss+xml" title="Riksdagsmonitor news (English)" href="/rss/news.xml">
+    <link rel="alternate" type="application/rss+xml" title="Riksdagsmonitor news (${escapeHtml(meta.nativeName)})" href="/rss/news_${lang}.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -804,17 +2059,28 @@ ${renderHreflangTags(lang)}
     <meta property="og:description" content="${escapeHtml(t.metaDescription)}">
     <meta property="og:url" content="${BASE_URL}/${selfFile}">
     <meta property="og:locale" content="${meta.locale}">
+${LANGUAGES.filter((l) => l !== lang).map((l) => `    <meta property="og:locale:alternate" content="${LANGUAGE_META[l].locale}">`).join('\n')}
     <meta property="og:image" content="${BASE_URL}/images/og-image.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Riksdagsmonitor ${escapeHtml(t.title)}">
+    <meta property="og:updated_time" content="${buildIso}">
+
+    <!-- Article (collection-page) extras -->
+    <meta property="article:publisher" content="https://www.hack23.com">
+    <meta property="article:section" content="${escapeHtml(t.title)}">
+    <meta property="article:modified_time" content="${buildIso}">
+    <meta property="article:published_time" content="${latestDate}T00:00:00Z">
+${(t.metaKeywords ?? '').split(',').slice(0, 8).map((k) => `    <meta property="article:tag" content="${escapeHtml(k.trim())}">`).join('\n')}
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@riksdagsmonitor">
+    <meta name="twitter:creator" content="@hack23ab">
     <meta name="twitter:title" content="${escapeHtml(t.title)} — Riksdagsmonitor">
     <meta name="twitter:description" content="${escapeHtml(t.metaDescription)}">
     <meta name="twitter:image" content="${BASE_URL}/images/og-image.webp">
+    <meta name="twitter:image:alt" content="Riksdagsmonitor ${escapeHtml(t.title)}">
 
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -929,15 +2195,34 @@ ${renderHreflangTags(lang)}
         .pi-day-github:hover { text-decoration: underline; }
 
         .pi-streams { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.75rem; }
-        .pi-stream a {
+        .pi-stream-link {
             display: flex; align-items: center; gap: 0.5rem; color: var(--primary-cyan, #00d9ff); text-decoration: none;
             background: rgba(0, 217, 255, 0.05); padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid rgba(0, 217, 255, 0.15);
         }
-        .pi-stream a:hover, .pi-stream a:focus { background: rgba(0, 217, 255, 0.12); border-color: rgba(0, 217, 255, 0.4); }
+        .pi-stream-link:hover, .pi-stream-link:focus { background: rgba(0, 217, 255, 0.12); border-color: rgba(0, 217, 255, 0.4); }
         .pi-stream-icon { font-size: 1.1rem; }
         .pi-stream-name { flex: 1; font-weight: 600; }
         .pi-stream-count { background: rgba(0, 217, 255, 0.18); color: var(--primary-cyan, #00d9ff); padding: 0.1rem 0.5rem; border-radius: 999px; font-size: 0.8rem; }
         .pi-stream-desc { margin: 0.25rem 0 0; font-size: 0.8rem; color: var(--muted-text, #a0a3bd); line-height: 1.5; }
+
+        .pi-stream-artifacts { margin: 0.4rem 0 0; }
+        .pi-stream-artifacts-summary {
+            list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.3rem;
+            font-size: 0.8rem; color: var(--primary-cyan, #00d9ff); padding: 0.2rem 0.5rem; border-radius: 4px;
+            background: rgba(0, 217, 255, 0.06); border: 1px solid rgba(0, 217, 255, 0.18);
+        }
+        .pi-stream-artifacts-summary::-webkit-details-marker { display: none; }
+        .pi-stream-artifacts-summary:hover, .pi-stream-artifacts-summary:focus { background: rgba(0, 217, 255, 0.14); }
+        .pi-stream-artifacts[open] .pi-stream-artifacts-toggle { transform: rotate(90deg); }
+        .pi-stream-artifacts-toggle { display: inline-block; transition: transform 120ms ease; }
+        .pi-stream-artifacts-count { color: var(--muted-text, #a0a3bd); font-variant-numeric: tabular-nums; }
+        .pi-artifact-list { list-style: decimal inside; margin: 0.5rem 0 0; padding: 0.5rem 0.5rem 0.5rem 1rem; background: rgba(10, 14, 39, 0.4); border-radius: 6px; border: 1px solid rgba(0, 217, 255, 0.12); }
+        .pi-artifact { margin: 0.25rem 0; line-height: 1.5; }
+        .pi-artifact a { display: inline-flex; align-items: baseline; gap: 0.4rem; color: var(--primary-cyan, #00d9ff); text-decoration: none; font-size: 0.85rem; }
+        .pi-artifact a:hover, .pi-artifact a:focus { text-decoration: underline; }
+        .pi-artifact-icon { font-size: 0.95rem; }
+        .pi-artifact-title { font-weight: 500; }
+        .pi-artifact-file { font-family: 'Courier New', monospace; font-size: 0.72rem; color: var(--muted-text, #a0a3bd); background: rgba(0, 217, 255, 0.05); padding: 0.05rem 0.3rem; border-radius: 3px; }
 
         .pi-older-toggle { display: block; width: 100%; text-align: left; background: transparent; border: 1px dashed rgba(0, 217, 255, 0.3); color: var(--primary-cyan, #00d9ff); padding: 0.75rem 1rem; border-radius: 8px; cursor: pointer; font-size: 1rem; margin-top: 0.5rem; }
         .pi-older-toggle:hover, .pi-older-toggle:focus { background: rgba(0, 217, 255, 0.06); }
@@ -963,7 +2248,10 @@ ${JSON.stringify(jsonLd, null, 2)}
     </script>
     <script type="application/ld+json">
 ${JSON.stringify(breadcrumbLd, null, 2)}
-    </script>
+    </script>${recentDaysItemList ? `
+    <script type="application/ld+json">
+${JSON.stringify(recentDaysItemList, null, 2)}
+    </script>` : ''}
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
