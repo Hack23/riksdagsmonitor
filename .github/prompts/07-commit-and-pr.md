@@ -104,7 +104,7 @@ Two independent timers can kill a run silently. Plan for the **shorter** of the 
 
 > **Timer A — Copilot API session (~60 min)**: The Copilot API session is bound to the `github.token` baked in at step start. That token expires at approximately **60 minutes** and is never refreshed mid-run (gh-aw issue #24920). Every tool call and inference request fails silently after that point — the agent appears to run but makes no progress and the PR is never created. Setup steps consume ~5 minutes, so the agent has at most **~55 minutes** of usable session time.
 >
-> **Timer B — Safe Outputs MCP idle session (~25–30 min, observed)**: The local Safe Outputs HTTP MCP tracks a per-agent Streamable HTTP session. If the agent goes **idle toward safeoutputs** for 25+ minutes (e.g. a long Pass 1 that only uses `edit` + `bash`), the session is dropped and every subsequent `safeoutputs___*` call returns `Error POSTing to endpoint: session not found` — including the final `create_pull_request`, `noop`, and `report_incomplete`. The `sandbox.mcp.keepalive-interval: 300` setting does **not** prevent this; that knob keeps the `mcp-gateway` upstream MCPs alive, not the safeoutputs HTTP server. Observed failure: run [`24821837975`](https://github.com/Hack23/riksdagsmonitor/actions/runs/24821837975) — 23 artifacts committed at ~33 min, all three safe-output calls rejected.
+> **Timer B — Safe Outputs MCP idle session (~25–30 min, observed)**: The local Safe Outputs HTTP MCP tracks a per-agent Streamable HTTP session. If the agent goes **idle toward safeoutputs** for 25+ minutes (e.g. a long Pass 1 that only uses `edit` + `bash`), the session is dropped and every subsequent `safeoutputs___*` call returns `Error POSTing to endpoint: session not found` — including the final `safeoutputs___create_pull_request`, `safeoutputs___noop`, and `safeoutputs___report_incomplete`. The `sandbox.mcp.keepalive-interval: 300` setting does **not** prevent this; that knob keeps the `mcp-gateway` upstream MCPs alive, not the safeoutputs HTTP server. Observed failure: run [`24821837975`](https://github.com/Hack23/riksdagsmonitor/actions/runs/24821837975) — 23 artifacts committed at ~33 min, all three safe-output calls rejected.
 
 ### Keeping the Safe Outputs MCP session warm
 
@@ -127,7 +127,7 @@ These windows are tighter than the historical 48-min figure because Timer B fire
 2. **Stage** whatever exists on disk (analysis artifacts and/or partial articles). Do not stage `pass1/`.
 3. **Commit** with message prefixed `[early-pr]` to signal partial content.
 4. **Call** `safeoutputs___create_pull_request` once with label `analysis-only` if Pass 2 is incomplete or articles are missing.
-5. If `create_pull_request` returns `session not found`, do **not** retry — the MCP session is gone. The work is lost for this run; the commit on disk is not persisted because the safe-outputs runner never saw it. Document the incident in the next run's methodology-reflection.
+5. If `safeoutputs___create_pull_request` returns `session not found`, do **not** retry — the MCP session is gone. The work is lost for this run; the commit on disk is not persisted because the safe-outputs runner never saw it. Document the incident in the next run's methodology-reflection.
 
 Do not attempt to "save" work via a second PR — there is no second PR. Creating the PR early is always better than losing all work to a session expiry.
 
