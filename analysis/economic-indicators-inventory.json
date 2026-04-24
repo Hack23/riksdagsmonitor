@@ -1,9 +1,37 @@
 {
-  "version": "4.0",
-  "description": "Multi-provider economic indicator inventory for Riksdagsmonitor. Single source of truth for IMF + World Bank + SCB indicator discovery. IMF entries are defined in-line below; World Bank entries are imported by reference from analysis/worldbank/indicators-inventory.json (v3.0) for back-compat; SCB tables are defined by scripts/scb-context.ts (committee → TAB mapping).",
-  "lastUpdated": "2026-04-20",
+  "version": "4.1",
+  "description": "Multi-provider economic indicator inventory for Riksdagsmonitor. Single source of truth for IMF + World Bank + SCB indicator discovery. IMF is PRIMARY for all economic context (see analysis/imf/indicators-inventory.json v1.0 for the full machine-readable IMF catalogue). World Bank economic codes are DEPRECATED (kept as read-only reference for back-compat); WB remains primary for non-economic residue (WGI governance, environment, social/education participation, defence historicals, crime). SCB tables are defined by scripts/scb-context.ts (committee → TAB mapping).",
+  "lastUpdated": "2026-04-24",
   "effectiveDate": "2026-04-20",
   "schemaCutover": "2026-05-31",
+  "authoritativeSources": {
+    "imfInventory": "analysis/imf/indicators-inventory.json",
+    "imfDataDictionary": "analysis/imf/data-dictionary.md",
+    "imfIntegrationPlaybook": "analysis/imf/agentic-integration.md",
+    "imfCommitteeMatrix": "analysis/imf/indicator-policy-mapping.md",
+    "worldBankInventory": "analysis/worldbank/indicators-inventory.json",
+    "methodology": "analysis/methodologies/imf-indicator-mapping.md",
+    "contract": ".github/aw/ECONOMIC_DATA_CONTRACT.md"
+  },
+  "deprecationPolicy": {
+    "worldBankEconomicCodes": {
+      "status": "deprecated for new articles",
+      "rationale": "World Bank WDI lags 12-24 months and publishes no projections; IMF WEO+FM publish April/October with T+5 projections.",
+      "readOnlyWindow": "Retained read-only for back-compat with pre-2026-04-20 articles; new articles MUST cite IMF replacement.",
+      "supersedes": {
+        "NY.GDP.MKTP.KD.ZG": "imf:WEO:NGDP_RPCH",
+        "NY.GDP.MKTP.CD": "imf:WEO:NGDPD",
+        "NY.GDP.PCAP.CD": "imf:WEO:NGDPDPC",
+        "FP.CPI.TOTL.ZG": "imf:WEO:PCPIPCH",
+        "SL.UEM.TOTL.ZS": "imf:WEO:LUR",
+        "GC.DOD.TOTL.GD.ZS": "imf:WEO:GGXWDG_NGDP",
+        "GC.XPN.TOTL.GD.ZS": "imf:WEO:GGX_NGDP",
+        "GC.REV.XGRT.GD.ZS": "imf:WEO:GGR_NGDP",
+        "BN.CAB.XOKA.GD.ZS": "imf:WEO:BCA_NGDPD",
+        "NE.EXP.GNFS.ZS": "imf:WEO:TX_RPCH"
+      }
+    }
+  },
   "providers": {
     "imf": {
       "primary": "scripts/imf-client.ts (pure-TypeScript, no MCP) exposed to agentic workflows via scripts/imf-fetch.ts CLI + direct REST (Datamapper JSON + SDMX 3.0)",

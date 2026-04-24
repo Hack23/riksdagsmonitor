@@ -81,9 +81,14 @@ flowchart LR
 | `riksdag-regering` | `get_propositioner` | `rm=2025/26, limit=20` | `N` | primary source |
 | `riksdag-regering` | `search_voteringar` | `bet=FiU48, rm=2025/26` | `N` | cross-reference |
 | `riksdag-regering` | `search_anforanden` | `talare=Svantesson, rm=2025/26` | `N` | minister context |
-| `scb` | `query_table` | `table=NR0103, var=Tid=top(5)` | `N` | economic context |
-| `world-bank` | `get_economic_data` | `country=SWE, indicator=GDP_GROWTH` | `N` | comparator |
-| `imf` (scripted) | `tsx scripts/imf-fetch.ts` | `WEO, ISO=SWE, 2020-2030` | `N` | fiscal projections |
+| `scb` | `query_table` | `table=NR0103, var=Tid=top(5)` | `N` | Swedish-specific ground truth |
+| `imf` (scripted, PRIMARY economic) | `tsx scripts/imf-fetch.ts weo` | `country=SWE, indicator=NGDP_RPCH, years=15, vintage=WEO-2026-04` | `N` | macro projections |
+| `imf` (scripted, PRIMARY economic) | `tsx scripts/imf-fetch.ts compare` | `indicator=GGXWDG_NGDP, countries=SWE,DNK,NOR,FIN,DEU` | `N` | Nordic fiscal peer-compare (batched, 1 call) |
+| `imf` (scripted, SDMX) | `tsx scripts/imf-fetch.ts sdmx` | `/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2022-01` | `N` | monthly CPI (`IFS`) |
+| `world-bank` (non-economic ONLY) | `get-economic-data` | `country=SE, indicator=CC.EST` | `N` | WGI governance (`source=75`) |
+| `world-bank` (non-economic ONLY) | `get-economic-data` | `country=SE, indicator=EN.ATM.CO2E.PC` | `N` | environment (CO2) |
+
+> **v2.1 reminder**: WB economic codes (`NY.GDP.*`, `FP.CPI.TOTL.ZG`, `SL.UEM.TOTL.ZS`, `GC.DOD.*`, `GC.XPN.*`, `GC.REV.*`, `BN.CAB.*`, `NE.EXP.*`) are **deprecated** — use their IMF replacement listed in [`analysis/imf/indicators-inventory.json → deprecationPolicy`](../imf/indicators-inventory.json).
 
 ---
 

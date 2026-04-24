@@ -1,11 +1,17 @@
-# Economic Data Contract — Agentic Workflows (v2.0)
+# Economic Data Contract — Agentic Workflows (v2.1)
 
 > **Single source of truth** for live IMF / World Bank / SCB data, Chart.js
 > visualisations, and AI commentary in every news article.
 > Consumed by `scripts/validate-economic-context.ts` and referenced
 > (by link) from every `news-*.md` agentic workflow.
 
-> **Schema v2.0 (2026-04-20)** — additive. Adds IMF (accessed via the
+> **Schema v2.1 (2026-04-24)** — IMF-first. World Bank economic codes are
+> explicitly **deprecated** for new articles (kept as read-only reference for
+> back-compat). Banned-phrasings list extended to catch WB-GDP regressions.
+> Vintage-staleness rule added (6-month threshold). Footer attribution
+> prefers `Data by IMF / SCB` when no WB non-economic data is cited.
+>
+> **Schema v2.0 (2026-04-20)** — additive. Added IMF (accessed via the
 > repo's pure-TypeScript `scripts/imf-client.ts` + `scripts/imf-fetch.ts`
 > CLI, no Python MCP) as a first-class primary source for macro, fiscal,
 > monetary, and external-sector indicators. World Bank remains
@@ -180,12 +186,28 @@ between separate `imf-fetch.ts` invocations, and rely on the client's
 built-in 3× retry with exponential back-off (1 s → 2 s → 4 s) for 429 /
 5xx. Pre-warm 1 request at workflow start.
 
-### 3. Query World Bank (governance / env / social residue)
+### 3. Query World Bank (governance / env / social residue ONLY)
+
+> ⚠️ **v2.1 deprecation** — World Bank is **no longer** a primary source for economic data. Do **not** call `get-economic-data` for `NY.GDP.*`, `FP.CPI.TOTL.ZG`, `SL.UEM.TOTL.ZS`, `GC.DOD.*`, `GC.XPN.*`, `GC.REV.*`, `BN.CAB.*`, `NE.EXP.*` in new articles. These are deprecated in favour of the IMF counterpart listed in `analysis/imf/indicators-inventory.json → deprecationPolicy`. The validator currently accepts WB economic codes during the grace window (2026-04-20 → 2026-05-31); after the grace window, `source.worldBank[]` containing any of these codes will be flagged as a stale citation.
 
 ```
-# Kept for indicators IMF does not cover
-get-economic-data(countryCode="SE", indicator="CC.EST", years=5)        # Control of Corruption (WGI, source=75)
-get-economic-data(countryCode="SE", indicator="EN.ATM.CO2E.PC", years=10) # CO2 emissions
+# Governance / WGI (source=75)
+get-economic-data(countryCode="SE", indicator="CC.EST", years=5)        # Control of Corruption
+get-economic-data(countryCode="SE", indicator="RL.EST", years=5)        # Rule of Law
+get-economic-data(countryCode="SE", indicator="VA.EST", years=5)        # Voice & Accountability
+
+# Environment
+get-economic-data(countryCode="SE", indicator="EN.ATM.CO2E.PC", years=10)  # CO2 emissions per capita
+get-economic-data(countryCode="SE", indicator="EG.FEC.RNEW.ZS", years=10)  # Renewables share
+get-economic-data(countryCode="SE", indicator="AG.LND.FRST.ZS", years=10)  # Forest cover
+
+# Defence historicals (use instead of COFOG 02 when 5+ year trend needed)
+get-economic-data(countryCode="SE", indicator="MS.MIL.XPND.GD.ZS", years=15)
+
+# Education participation
+get-education-data(countryCode="SE", indicator="SCHOOL_ENROLLMENT", years=10)
+
+# Social / demographic context (WB preferred for long-horizon > 15 years)
 get-social-data(countryCode="SE",   indicator="POPULATION",  years=10)
 ```
 
@@ -331,10 +353,21 @@ Banned phrasings (all detected by `multi-dim quality score`):
 - "Analysis of N documents…"
 - Pure definitions of indicators (e.g. "GDP is the total output of…").
 - Un-sourced forecasts — phrases like "Sweden will…" / "The economy is
-  expected to…" without a cited IMF WEO or Fiscal Monitor value from
-  `dataPoints` where `projection: true`. Use the explicit form "IMF
-  projects Sweden's debt/GDP at 32.4 % in 2027 (WEO Apr-2026,
-  GGXWDG_NGDP)" instead.
+  expected to…" / "growth is forecast to…" / "analysts expect…" without a
+  cited IMF WEO or Fiscal Monitor value from `dataPoints` where
+  `projection: true`. Use the explicit form "IMF projects Sweden's
+  debt/GDP at 32.4 % in 2027 (WEO Apr-2026, GGXWDG_NGDP)" instead.
+- **v2.1 — World Bank economic regressions** — any of the following as a
+  primary economic citation in new articles:
+  "World Bank GDP", "WB GDP growth", "World Bank inflation",
+  "World Bank unemployment", "NY.GDP.MKTP.KD.ZG for Sweden" (as primary),
+  "FP.CPI.TOTL.ZG" (as primary), "SL.UEM.TOTL.ZS" (as primary),
+  "GC.DOD.TOTL.GD.ZS" (as primary). These codes MUST be replaced by
+  the IMF counterpart — see
+  [`analysis/imf/indicators-inventory.json → deprecationPolicy`](../../analysis/imf/indicators-inventory.json).
+  Non-economic WB codes (WGI, `EN.*`, `EG.*`, `AG.LND.FRST.ZS`,
+  `MS.MIL.*`, `VC.IHR.PSRC.P5`, `SE.*`, `SH.*`, `SP.*`) remain
+  authoritative and are NOT banned.
 
 ### Projections — allowed usage
 
@@ -346,6 +379,21 @@ cited in commentary **only** for these article types:
 
 Any projection citation MUST include the `projectionVintage` tag
 (e.g. `(WEO-2026-04)`) to make stale vintages visible to the audit.
+
+### Vintage staleness rule (v2.1)
+
+A projection citation whose `projectionVintage` is **more than 6 months
+older** than the article's publication date is flagged as a stale
+vintage in `methodology-reflection.md` with a `[STALE-VINTAGE]` tag:
+
+- Article date 2026-04-24 · vintage `WEO-2026-04` → OK (same cycle).
+- Article date 2026-04-24 · vintage `WEO-2025-10` → OK (< 6 months).
+- Article date 2026-04-24 · vintage `WEO-2025-04` → **[STALE-VINTAGE]** — re-fetch.
+
+On each IMF flagship release (April / October), update `DEFAULT_WEO_VINTAGE`
+in `scripts/imf-client.ts`, `vintageDiscipline.current` in
+`analysis/imf/indicators-inventory.json`, and the banner in
+`analysis/imf/README.md` in the same PR.
 
 ---
 
@@ -422,3 +470,27 @@ mirror the change in the version history below.
   authoritative for WGI governance, environment, and long-horizon
   social/education residue; SCB unchanged. v1 artefacts remain valid
   through the 2026-04-20 → 2026-05-31 grace window.
+- **2.1 (2026-04-24)** — IMF promoted to PRIMARY across **all** economic
+  domains; World Bank economic codes explicitly **deprecated** for new
+  articles. Extensions:
+  - Banned-phrasings list expanded to catch WB economic regressions
+    ("World Bank GDP", "WB GDP growth", "NY.GDP.MKTP.KD.ZG" as primary,
+    "FP.CPI.TOTL.ZG" as primary, "SL.UEM.TOTL.ZS" as primary,
+    "GC.DOD.TOTL.GD.ZS" as primary, "growth is forecast to…",
+    "analysts expect…" without citation).
+  - **Vintage-staleness rule** — projection citations whose vintage is
+    > 6 months older than the article date are flagged `[STALE-VINTAGE]`.
+  - Step 3 renamed to "Query World Bank (governance / env / social
+    residue ONLY)" with explicit deprecation box.
+  - Full catalogue moved to [`analysis/imf/indicators-inventory.json`](../../analysis/imf/indicators-inventory.json)
+    (24 indicators × 10 dataflows × 10 domains, `deprecationPolicy`
+    with per-code `supersedes` mapping, `committeeMatrix` for
+    FiU/SkU/AU/NU/UU/SoU/SfU/FöU/MJU/UbU/KU/JuU/KrU/TU/CU).
+  - Companion docs: [`analysis/imf/README.md`](../../analysis/imf/README.md) ·
+    [`analysis/imf/data-dictionary.md`](../../analysis/imf/data-dictionary.md) (dataflow reference) ·
+    [`analysis/imf/agentic-integration.md`](../../analysis/imf/agentic-integration.md) (7-step playbook) ·
+    [`analysis/imf/indicator-policy-mapping.md`](../../analysis/imf/indicator-policy-mapping.md) (committee matrix).
+  - Footer attribution prefers `Data by IMF / SCB` for IMF-primary
+    articles (add `/ World Bank` only when non-economic WB data is
+    cited). The `World Bank / SCB` legacy form remains accepted during
+    grace window.

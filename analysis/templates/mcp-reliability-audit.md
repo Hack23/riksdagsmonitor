@@ -85,21 +85,30 @@ Annotate each leaf node ✅ / ⚠️ / ❌ based on the table below.
 
 ---
 
-## 4️⃣ `world-bank` MCP (local container)
+## 4️⃣ `world-bank` MCP (local container — non-economic ONLY)
 
 | Tool / code | Indicator | Country | Year range | Succeeded | Notes |
 |-------------|-----------|:-------:|:----------:|:---------:|-------|
 | `get-social-data` | `[SP.POP.TOTL]` | `SWE` | `[2019-2024]` | `[✅/❌]` | — |
+| `get-economic-data` | `[CC.EST]` (WGI governance, `source=75`) | `SWE` | `[2019-2024]` | `[✅/❌]` | non-economic use only |
+| `get-economic-data` | `[EN.ATM.CO2E.PC]` (environment) | `SWE` | `[2014-2024]` | `[✅/❌]` | non-economic use only |
 
-Wave-2 reminder — economic codes should **not** be fetched here; use IMF.
+> **v2.1 reminder** — economic codes (`NY.GDP.*`, `FP.CPI.TOTL.ZG`, `SL.UEM.TOTL.ZS`, `GC.DOD.*`, etc.) are **deprecated** for new articles. If a WB economic call appears in this audit for a new article, flag it as a regression in §7 Failure Analysis and re-run via IMF.
 
 ---
 
-## 5️⃣ IMF (`tsx scripts/imf-fetch.ts` — CLI, no MCP)
+## 5️⃣ IMF (`tsx scripts/imf-fetch.ts` — CLI, no MCP — **PRIMARY economic source**)
 
-| Invocation | Dataflow / series | Country | Vintage | Succeeded | Notes |
-|------------|-------------------|:-------:|:-------:|:---------:|-------|
-| `[REQUIRED]` | `WEO/NGDP_RPCH` | `SWE` | `WEO April 2026` | `[✅/❌]` | — |
+| Invocation | Dataflow / series | Country | Vintage | Succeeded | Rate-limit respected | Notes |
+|------------|-------------------|:-------:|:-------:|:---------:|:--------------------:|-------|
+| `weo --country SWE --indicator NGDP_RPCH --years 15` | `WEO/NGDP_RPCH` | `SWE` | `WEO-2026-04` | `[✅/❌]` | `[✅/❌]` | macro growth |
+| `compare --indicator GGXWDG_NGDP --countries SWE,DNK,NOR,FIN,DEU` | `WEO/GGXWDG_NGDP` | multi | `WEO-2026-04` | `[✅/❌]` | `[✅/❌]` | Nordic peer-compare (1 batched call) |
+| `sdmx --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2022-01"` | `IFS/PCPI_IX` | `SWE` | n/a (historical) | `[✅/❌]` | `[✅/❌]` | monthly CPI |
+| `sdmx --path "/data/IMF.STA,IR,4.0.0/M.SE.FPOLM_PA?startPeriod=2022-01"` | `MFS_IR/FPOLM_PA` | `SWE` | n/a | `[✅/❌]` | `[✅/❌]` | Riksbank policy rate |
+
+**Rate-limit audit**: IMF advertises ~10 req / 5 s. Record any 429 response, the retry back-off (should be 1s→2s→4s), and total IMF calls in this run (target ≤ 10 per article).
+
+**Vintage discipline**: confirm `DEFAULT_WEO_VINTAGE` in `scripts/imf-client.ts` matches `vintageDiscipline.current` in `analysis/imf/indicators-inventory.json`. Flag any mismatch as a P1 incident.
 
 ---
 
