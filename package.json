@@ -96,7 +96,8 @@
     "prepack": "echo 'Prepack: build artifacts should already be generated (see prepublishOnly/CI)'",
     "download-data": "npx tsx scripts/download-parliamentary-data.ts",
     "download-data:today": "npx tsx scripts/download-parliamentary-data.ts --date today",
-    "download-data:weekly": "npx tsx scripts/download-parliamentary-data.ts --aggregate weekly"
+    "download-data:weekly": "npx tsx scripts/download-parliamentary-data.ts --aggregate weekly",
+    "backfill-metadata": "tsx scripts/backfill-article-metadata.ts"
   },
   "repository": {
     "type": "git",
