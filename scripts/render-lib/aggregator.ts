@@ -150,21 +150,61 @@ const PASS_TWO_HEADING_RE =
   /^#{2,6}\s+(?:[^\n#]*?\s)?Pass\s*2\b[^\n]*$/gim;
 
 /**
- * Bold-label admin-byline field names that commonly appear joined by
- * `·` / `—` / `-` / double-space separators at the top of an analysis
- * artifact. A paragraph made *entirely* of such fields is template
- * preamble, not prose — strip it. A paragraph that *starts* with one of
- * these fields but also contains real prose is left untouched.
+ * Admin-byline field names recognised in analysis artifacts. A paragraph
+ * whose fragments are **entirely** composed of these labelled fields is
+ * template preamble, not prose — strip it. Fields are grouped by origin
+ * for maintainability:
  *
- * Expanded 2026-04-24 (per `seo-metadata-contract.md` §5) to also cover
- * the admin fields emitted by executive-brief / realtime templates
- * (`Brief ID`, `Prepared by`, `Prepared at`, `Analyst`, `Distribution`,
- * `Methodology`, `Cycle`, `Admiralty baseline`, `60-second read`,
- * `Reviewed by`, `Reviewer`, `Disseminated`, `Source`, `Dissemination`).
- * `**` wrapping is now optional so unbolded admin lines are also caught.
+ * - **Legacy** — fields emitted by the original analysis templates.
+ * - **Extended 2026-04-24** — fields from executive-brief / realtime
+ *   templates that previously leaked into `<meta description>`; added
+ *   per `seo-metadata-contract.md` §5.
+ *
+ * To add a new field, append it to this list and add a test in
+ * `tests/render-lib.test.ts > ADMIN_FIELD_RE`.
  */
-const ADMIN_FIELD_RE =
-  /^\*{0,2}(?:Author|Run\s*ID|Date|Classification|Confidence|Scope|Admiralty(?:\s*(?:range|baseline))?|Read[-\s]?time|Version|Status|Owner|Last\s*Updated|Generated|Brief\s*ID|Prepared\s*by|Prepared\s*at|Analyst|Distribution|Methodology|Cycle|60[-\s]?second\s*read|Reviewed\s*by|Reviewer|Disseminated|Source|Dissemination)\*{0,2}\s*:/i;
+const ADMIN_FIELD_NAMES: readonly string[] = [
+  // Legacy
+  'Author',
+  'Run\\s*ID',
+  'Date',
+  'Classification',
+  'Confidence',
+  'Scope',
+  'Admiralty(?:\\s*(?:range|baseline))?',
+  'Read[-\\s]?time',
+  'Version',
+  'Status',
+  'Owner',
+  'Last\\s*Updated',
+  'Generated',
+  // Extended 2026-04-24 — see seo-metadata-contract.md §5.
+  'Brief\\s*ID',
+  'Prepared\\s*by',
+  'Prepared\\s*at',
+  'Analyst',
+  'Distribution',
+  'Methodology',
+  'Cycle',
+  '60[-\\s]?second\\s*read',
+  'Reviewed\\s*by',
+  'Reviewer',
+  'Disseminated',
+  'Source',
+  'Dissemination',
+];
+
+/**
+ * Bold-label admin-byline pattern. Matches a fragment that begins with
+ * one of the field names in {@link ADMIN_FIELD_NAMES}, followed by a
+ * colon. `**` wrapping is optional so unbolded admin lines (e.g. read
+ * back from rendered HTML where emphasis has been stripped) are also
+ * caught. Case-insensitive.
+ */
+const ADMIN_FIELD_RE = new RegExp(
+  `^\\*{0,2}(?:${ADMIN_FIELD_NAMES.join('|')})\\*{0,2}\\s*:`,
+  'i',
+);
 
 /**
  * Fragment splitter for admin-byline paragraphs. Splits only on
@@ -320,9 +360,19 @@ const SENTENCE_END_RE = /[.!?…。।]/g;
  * mid-word. Used for `<meta description>` so Google never renders a
  * truncated last token with a trailing ellipsis.
  *
+ * Supports sentence terminators across multiple scripts:
+ * - Latin: `.`, `!`, `?`, `…`
+ * - CJK (Chinese/Japanese): `。`
+ * - Devanagari (Hindi and related Indic scripts): `।`
+ *
  * Implements `seo-metadata-contract.md` §3.1: EN target window
  * 140-200 chars; shorter languages use their own windows but go
  * through the same sentence-preserving logic.
+ *
+ * If the input contains no usable sentence boundary **and** no word
+ * boundary within the window (e.g. a single run of non-space chars),
+ * the result is guaranteed to be non-empty: it is at least `hardMax`
+ * chars plus a trailing `…`, so the caller never receives a bare `…`.
  *
  * @param text    Input prose (markdown emphasis already stripped).
  * @param softMin Soft minimum — prefer truncating at or after this
@@ -336,6 +386,7 @@ function truncateToSentenceBoundary(
   hardMax: number = 200,
 ): string {
   const normalised = text.replace(/\s+/g, ' ').trim();
+  if (normalised.length === 0) return '';
   if (normalised.length <= hardMax) return normalised;
 
   // Find every sentence-end position in the prefix within hardMax.
@@ -355,7 +406,9 @@ function truncateToSentenceBoundary(
 
   // No sentence end in window — fall back to last word boundary
   // before hardMax, appending a true Unicode ellipsis so the cut is
-  // intentional rather than mid-word.
+  // intentional rather than mid-word. The `trim()` on the sliced prefix
+  // followed by the explicit `'…'` guarantees a non-empty result even
+  // when the input is a pathological single-token string.
   const sliced = normalised.slice(0, hardMax);
   const lastSpace = sliced.lastIndexOf(' ');
   if (lastSpace >= softMin) return sliced.slice(0, lastSpace).trim() + '…';

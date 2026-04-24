@@ -1028,8 +1028,9 @@ describe('render-lib — truncateToSentenceBoundary (SEO contract §3c)', () => 
     const s = 'longword '.repeat(30).trim();
     const out = truncateToSentenceBoundary(s);
     expect(out.length).toBeLessThanOrEqual(201); // +1 for ellipsis
-    // Ends with ellipsis, not a split "longwor…"
-    expect(out).toMatch(/longword…?$/);
+    // Ends with an intentional ellipsis (no optional match — the ellipsis
+    // must actually be present), preceded by a complete `longword` token.
+    expect(out).toMatch(/longword…$/);
   });
 
   it('respects custom windows (e.g. CJK 70-120)', () => {
