@@ -217,6 +217,57 @@ data from Riksbank*
 - **Long-term view** - Consider sustainability, not just short-term impacts
 - **Expert diversity** - Include range of economic perspectives
 
+## 🔑 Authoritative data sources (Riksdagsmonitor — 2026-04-24)
+
+> **IMF is PRIMARY for all economic context.** World Bank is retained only for non-economic residue. Follow the provider decision matrix in [`analysis/imf/README.md`](../../../analysis/imf/README.md) § 2 and the full methodology in [`analysis/methodologies/imf-indicator-mapping.md`](../../../analysis/methodologies/imf-indicator-mapping.md) v2.0.
+
+| Claim class | Provider | Access |
+|-------------|----------|--------|
+| Real GDP, inflation, unemployment, fiscal balance, debt/GDP, current account, exports/imports growth | **IMF WEO** | `tsx scripts/imf-fetch.ts weo …` / `compare …` (CLI via `bash`, no MCP) |
+| Primary balance, cyclically-adjusted balance, DSA | **IMF Fiscal Monitor** | same CLI |
+| Monthly CPI, high-frequency rates, Riksbank policy rate | **IMF IFS / MFS_IR** | `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,4.0.0/…"` |
+| Bilateral trade flows | **IMF DOTS** | `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,DOTS,4.0.0/…"` |
+| Commodity benchmarks (oil, metals) | **IMF PCPS** | same |
+| Exchange rates (SEK/USD, SEK/EUR, REER) | **IMF ER** | same |
+| COFOG spending by function (defence, health, education, social protection) | **IMF GFS_COFOG** | same |
+| Swedish-specific KPIF, AKU labour, regional, budget execution | **SCB** (`pxweb-mcp`) | `query_table` |
+| Governance (WGI, `source=75`) — rule of law, control of corruption, voice & accountability | **World Bank** (`worldbank-mcp`) | `get-economic-data` with `CC.EST`, `RL.EST`, `VA.EST`, `GE.EST`, `RQ.EST`, `PV.EST` |
+| Environment — CO₂, renewables, forest cover | **World Bank** | `EN.ATM.CO2E.PC`, `EG.FEC.RNEW.ZS`, `AG.LND.FRST.ZS` |
+| Defence historicals (> 15 year trends) | **World Bank** | `MS.MIL.XPND.GD.ZS` |
+| Education participation | **World Bank** | `SE.PRM.ENRR`, `SE.TER.ENRR` |
+| Crime / homicide | **World Bank** | `VC.IHR.PSRC.P5` |
+
+> ⚠️ **Deprecated (do NOT use as primary)** — `worldbank:NY.GDP.MKTP.KD.ZG`, `worldbank:FP.CPI.TOTL.ZG`, `worldbank:SL.UEM.TOTL.ZS`, `worldbank:GC.DOD.TOTL.GD.ZS`, `worldbank:GC.XPN.TOTL.GD.ZS`, `worldbank:GC.REV.XGRT.GD.ZS`, `worldbank:BN.CAB.XOKA.GD.ZS`, `worldbank:NE.EXP.GNFS.ZS`, `worldbank:NY.GDP.MKTP.CD`, `worldbank:NY.GDP.PCAP.CD`. Replace with their IMF counterpart — full mapping in [`analysis/imf/indicators-inventory.json → deprecationPolicy`](../../../analysis/imf/indicators-inventory.json).
+
+### Vintage discipline (mandatory for projections)
+
+Every WEO / FM projection quote MUST include a vintage tag: `(WEO Apr-2026, GGXWDG_NGDP)`. Current vintage: **`WEO-2026-04`**. Stale-vintage citations (> 6 months old) trigger a warning annotation in `methodology-reflection.md` — see [Economic Data Contract](../../aw/ECONOMIC_DATA_CONTRACT.md) § Vintage staleness rule.
+
+### Canonical recipes
+
+```bash
+# Single-country WEO (15-year series with projections)
+tsx scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH --years 15 --persist
+
+# Nordic peer-compare (1 batched call, not 5)
+tsx scripts/imf-fetch.ts compare --indicator GGXWDG_NGDP \
+  --countries SWE,DNK,NOR,FIN,DEU --persist
+
+# Monthly CPI (IFS)
+tsx scripts/imf-fetch.ts sdmx \
+  --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2022-01" \
+  --indicator PCPI_IX --country SWE --persist
+
+# COFOG health spending (SoU committee)
+tsx scripts/imf-fetch.ts sdmx \
+  --path "/data/IMF.STA,GFS_COFOG,4.0.0/A.144.G.G07._Z._Z._Z._Z.XDC_R_B1GQ?startPeriod=2015" \
+  --indicator G07 --country SWE --persist
+```
+
+Rate-limit discipline: IMF advertises ~10 req / 5 s; prefer `compare` over parallel `weo`; `sleep 1` between invocations; target ≤ 10 IMF calls per article. Full playbook: [`analysis/imf/agentic-integration.md`](../../../analysis/imf/agentic-integration.md).
+
+---
+
 ## References
 
 - [Statistics Sweden (SCB)](https://www.scb.se/)

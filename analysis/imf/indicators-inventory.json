@@ -27,7 +27,7 @@
     "vintage": "Every projection value carries a projectionVintage tag (e.g. 'WEO-2026-04', 'FM-2026-04'). Update DEFAULT_WEO_VINTAGE in scripts/imf-client.ts when the IMF publishes a new flagship release (April / October).",
     "persistence": "Use the --persist flag to cache raw responses under analysis/data/imf/{indicator}/{country}.json. Reuse across article types within the same daily run to minimise API calls."
   },
-  "totalIndicators": 24,
+  "totalIndicators": 30,
   "databases": {
     "WEO": {
       "label": "World Economic Outlook",
@@ -625,6 +625,21 @@
       "BN.CAB.XOKA.GD.ZS",
       "NE.EXP.GNFS.ZS"
     ],
+    "worldBankEconomicCodes": {
+      "status": "deprecated for new articles",
+      "supersedes": {
+        "NY.GDP.MKTP.KD.ZG": "imf:WEO:NGDP_RPCH",
+        "NY.GDP.MKTP.CD": "imf:WEO:NGDPD",
+        "NY.GDP.PCAP.CD": "imf:WEO:NGDPDPC",
+        "FP.CPI.TOTL.ZG": "imf:WEO:PCPIPCH",
+        "SL.UEM.TOTL.ZS": "imf:WEO:LUR",
+        "GC.DOD.TOTL.GD.ZS": "imf:WEO:GGXWDG_NGDP",
+        "GC.XPN.TOTL.GD.ZS": "imf:WEO:GGX_NGDP",
+        "GC.REV.XGRT.GD.ZS": "imf:WEO:GGR_NGDP",
+        "BN.CAB.XOKA.GD.ZS": "imf:WEO:BCA_NGDPD",
+        "NE.EXP.GNFS.ZS": "imf:WEO:TX_RPCH"
+      }
+    },
     "policy": "These World Bank codes are kept as read-only references for historical comparison and back-compat with pre-2026-04-20 articles. New articles MUST use the IMF counterpart listed in each indicator's 'supersedes' field. The validator does not yet block usage — flagged for a follow-up automated lint.",
     "rationale": "WB lags 12–24 months for macro/fiscal and publishes no projections. IMF WEO/FM publish T+5 projections with Apr/Oct cadence and are the canonical reference for EU/Nordic fiscal discussion (GFSM 2014 compliance)."
   },

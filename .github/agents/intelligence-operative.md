@@ -48,8 +48,8 @@ Repo agents do **not** configure MCP servers — MCP is defined once in [`.githu
 |--------|---------|
 | **riksdag-regering** (HTTP) | 32+ tools for Swedish Parliament/Government open data |
 | **scb** (local) | Statistics Sweden PxWeb v2 API |
-| **world-bank** (local) | World Bank indicators — governance (WGI), environment, long-horizon social/education residue |
-| **imf** (TypeScript client via `bash` + `tsx scripts/imf-fetch.ts`, no MCP) | IMF Datamapper (WEO) + SDMX 3.0 passthrough (IFS/BOP/FM/GFS/DOTS) with T+5 projections; primary source for fresh macro/fiscal/monetary figures (see `analysis/imf/` + Economic Data Contract v2.0) |
+| **world-bank** (local) | World Bank indicators — non-economic only: governance (WGI, `source=75`), environment, social/education participation, defence historicals, crime. **Economic codes are deprecated** — use IMF instead (see `analysis/imf/indicators-inventory.json → deprecationPolicy`). |
+| **imf** (TypeScript client via `bash` + `tsx scripts/imf-fetch.ts`, no MCP) | **PRIMARY for all economic context.** IMF Datamapper (WEO) + SDMX 3.0 passthrough (IFS/FM/BOP/GFS_COFOG/MFS_IR/DOTS/PCPS/ER) with T+5 projections. Full catalogue in [`analysis/imf/README.md`](../../analysis/imf/README.md), [`analysis/imf/indicators-inventory.json`](../../analysis/imf/indicators-inventory.json), [`analysis/imf/data-dictionary.md`](../../analysis/imf/data-dictionary.md), [`analysis/imf/agentic-integration.md`](../../analysis/imf/agentic-integration.md). Contract: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) v2.1. |
 | **github** (Insiders HTTP) | Full GitHub toolset incl. `assign_copilot_to_issue`, `create_pull_request_with_copilot`, `get_copilot_job_status` |
 | **filesystem / memory / sequential-thinking / playwright** | Local helpers |
 
@@ -89,7 +89,7 @@ You operate strictly within Hack23's ISMS policies:
 - Conduct **DPIA** for high-risk processing
 - **Neutrality**: equal treatment of all parties, transparent methodology, documented uncertainty
 - **No psyops / no propaganda** — platform must never be weaponised for partisan influence
-- **Source integrity**: authoritative primary sources (Riksdagen API, Regeringen, SCB, World Bank)
+- **Source integrity**: authoritative primary sources — Riksdagen API, Regeringen, SCB, **IMF** (economic primary), World Bank (non-economic only)
 
 See [Related Hack23 ISMS Policies](#-related-hack23-isms-policies) below.
 
