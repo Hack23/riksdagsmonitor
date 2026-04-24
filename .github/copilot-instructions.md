@@ -267,12 +267,13 @@ Quality gates: HTMLHint + linkinator + Dependabot + CodeQL + secret scanning
 **When to call IMF (always, before WB):**
 
 ```bash
-# Macro / fiscal / monetary / external — examples
-tsx scripts/imf-fetch.ts --dataflow WEO --indicator NGDP_RPCH --country SWE --years 5
-tsx scripts/imf-fetch.ts --dataflow FM  --indicator GGXWDG_NGDP --country SWE --years 5
-tsx scripts/imf-fetch.ts --dataflow IFS --indicator PCPI_IX --country SWE --years 2 --frequency M
-tsx scripts/imf-fetch.ts --dataflow DOTS --indicator TXG_FOB_USD --country SWE --partner USA --years 3
-tsx scripts/imf-fetch.ts --dataflow GFS_COFOG --indicator G2 --country SWE --years 5  # 02 Defence (FöU)
+# Macro / fiscal / monetary / external — canonical subcommands
+tsx scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH --years 5
+tsx scripts/imf-fetch.ts compare --indicator GGXWDG_NGDP --countries SWE,DNK,NOR,FIN,DEU
+tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01" --indicator PCPI_IX --country SWE
+tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,DOT,4.0.0/A.SE.TXG_FOB_USD.US?startPeriod=2023" --indicator TXG_FOB_USD --country SWE
+tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,GFS_COFOG,1.0.0/A.SE.G02.XDC?startPeriod=2020" --indicator G02 --country SWE  # COFOG 02 Defence (FöU); use canonical G02 / G07 / G09 / G10
+tsx scripts/imf-fetch.ts list-indicators
 ```
 
 **Provider decision (memorise this):**

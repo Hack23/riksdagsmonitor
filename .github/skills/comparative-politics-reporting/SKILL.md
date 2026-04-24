@@ -406,9 +406,9 @@ IMF data uses **uniform SNA 2008** (national accounts), **GFSM 2014** (fiscal), 
 | Government debt %GDP | WEO + FM | `GGXWDG_NGDP` |
 | Fiscal balance | WEO + FM | `GGXCNL_NGDP` |
 | Current account %GDP | WEO + BOP | `BCA_NGDPD` |
-| Defence spending %GDP | GFS_COFOG 02 | `G2` |
-| Health spending %GDP | GFS_COFOG 07 | `G7` |
-| Education spending %GDP | GFS_COFOG 09 | `G9` |
+| Defence spending %GDP | GFS_COFOG 02 | `G02` |
+| Health spending %GDP | GFS_COFOG 07 | `G07` |
+| Education spending %GDP | GFS_COFOG 09 | `G09` |
 | Social protection %GDP | GFS_COFOG 10 | `G10` |
 
 **Canonical cross-country rule:** Every comparative-politics article comparing Sweden against any other country uses IMF as the primary source for economic comparison. World Bank WGI is the primary source for governance comparison only. See [`analysis/imf/agentic-integration.md`](../../../analysis/imf/agentic-integration.md).
