@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/10</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/10</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -105,16 +105,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -122,7 +122,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @module shared/version
  * @description Centralised package version loader with safe fallback.
@@ -135,16 +135,16 @@ import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 &nbsp;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = <span class="cstat-no" title="statement not covered" >fileURLToPath(import.meta.url);</span>
+const __dirname = <span class="cstat-no" title="statement not covered" >dirname(__filename);</span>
 &nbsp;
-function loadPkgVersion(): string {
-  try {
-    const pkgJsonPath = join(__dirname, '..', '..', 'package.json');
-    const pkgRaw = readFileSync(pkgJsonPath, 'utf-8');
-    const pkg = JSON.parse(pkgRaw) as { version?: string };
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof pkg.version === 'string' &amp;&amp; pkg.version.trim() !== '') {
-      return pkg.version;
+function <span class="fstat-no" title="function not covered" >loadPkgVersion(): string {</span>
+<span class="cstat-no" title="statement not covered" >  try {</span>
+    const pkgJsonPath = <span class="cstat-no" title="statement not covered" >join(__dirname, '..', '..', 'package.json');</span>
+    const pkgRaw = <span class="cstat-no" title="statement not covered" >readFileSync(pkgJsonPath, 'utf-8');</span>
+    const pkg = <span class="cstat-no" title="statement not covered" >JSON.parse(pkgRaw) </span>as { version?: string };
+<span class="cstat-no" title="statement not covered" >    if (typeof pkg.version === 'string' &amp;&amp; pkg.version.trim() !== '') {</span>
+<span class="cstat-no" title="statement not covered" >      return pkg.version;</span>
     }
   } catch {
     // Fallback to a safe default if package.json cannot be read or parsed.
@@ -152,7 +152,7 @@ function loadPkgVersion(): string {
 <span class="cstat-no" title="statement not covered" >  return '0.0.0';</span>
 }
 &nbsp;
-export const PKG_VERSION: string = loadPkgVersion();
+export const PKG_VERSION: string = <span class="cstat-no" title="statement not covered" >loadPkgVersion();</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -160,7 +160,7 @@ export const PKG_VERSION: string = loadPkgVersion();
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-23T23:47:21.181Z
+                at 2026-04-24T18:30:36.558Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
