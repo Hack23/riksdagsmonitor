@@ -955,3 +955,38 @@ Updates: Follow https://github.com/Hack23/riksdagsmonitor/issues
 **📅 Effective Date:** 2026-02-25  
 **⏰ Next Review:** 2026-05-25  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](#) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](#) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](#)
+
+
+---
+
+## 🌐 IMF API Outage — Business Continuity Scenarios
+
+> **Effective:** 2026-04-24 · **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### IMF dependency criticality
+
+| Asset | Criticality | RTO | RPO | Fallback |
+|---|---|---|---|---|
+| IMF Datamapper REST | **STANDARD** | 24h | N/A | Last cached vintage in `analysis/imf/` |
+| IMF SDMX 3.0 endpoint | **STANDARD** | 24h | N/A | Last cached vintage; cross-source SCB for SE-specific |
+| IMF cache (`analysis/imf/` + `analysis/daily/*/economic-data.json`) | **HIGH** | 4h | N/A | Re-fetch from IMF on next workflow run |
+
+### IMF outage scenarios
+
+| Scenario | Trigger | Detection | Response |
+|---|---|---|---|
+| **IMF-BCP-01** IMF API outage <24h | HTTP 5xx persistent | Workflow log + retry budget exhausted | Serve last cached vintage; annotate articles "cache fallback"; auto-recover on resolution |
+| **IMF-BCP-02** IMF API outage >24h | HTTP 5xx persistent ≥24h | `economic-context-audit.yml` daily run fails | Open issue; escalate to editorial; switch to SCB for SE-specific GDP/CPI; pause look-ahead workflows |
+| **IMF-BCP-03** WEO vintage cycle skip | Apr WEO not published | `imf-fetch.ts --healthcheck` reports stale vintage | Annotate articles with last vintage + advisory; do not block publishing |
+| **IMF-BCP-04** IMF Datamapper schema breaking change | CI integration test fails | `tests/imf-client.test.ts` red on schedule | Pin client to last-known-good schema; emergency hotfix per Change Management policy |
+| **IMF-BCP-05** IMF licence change (attribution rule modified) | Notification on imf.org | Manual monitoring quarterly | Update article footer template; backfill existing articles |
+| **IMF-BCP-06** IMF rate-limit tightening | HTTP 429 spike | Rate-limit metric alarm | Reduce concurrency; expand cache TTL; communicate to article authors |
+
+### IMF + multi-provider resilience
+
+The IMF-primary, WB-residue, SCB-Sweden split is itself a BCP control: a single-provider outage degrades but does not break the platform. Look-ahead article workflows degrade gracefully because:
+1. Last cached IMF vintage remains valid for 6 months by contract
+2. SCB national-accounts cover the highest-priority Swedish-specific indicators
+3. WB residue continues to flow for governance/environment/social classes
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

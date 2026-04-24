@@ -3031,3 +3031,58 @@ Riksdagsmonitor's overall security posture as of 2026-02-25:
 
 **🎯 Framework Alignment:**  
 [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Compliant-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+
+---
+
+## 🌐 IMF Integration in the Security Architecture
+
+> **Effective:** 2026-04-24 · **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### IMF trust boundary (current state)
+
+```mermaid
+flowchart LR
+    subgraph Trusted["Trust Boundary — Riksdagsmonitor build/news pipeline"]
+        Worker[News-* workflow worker · Node 25 · tsx scripts/imf-fetch.ts]
+        Cache[(analysis/imf/ + analysis/daily/*/economic-data.json · vintage-tagged · SHA-256 pinned)]
+        Audit[Workflow logs · economic-context-audit.yml]
+    end
+    subgraph Public["Public-Internet · IMF Open APIs (no auth)"]
+        Datamapper[www.imf.org/external/datamapper/api/v1]
+        SDMX[sdmxcentral.imf.org]
+    end
+    Worker -- HTTPS · TLS 1.3 --> Datamapper
+    Worker -- HTTPS · TLS 1.3 --> SDMX
+    Datamapper -. JSON payload .-> Worker
+    SDMX -. SDMX-JSON payload .-> Worker
+    Worker --> Cache
+    Worker --> Audit
+```
+
+### IMF data classification
+
+| Attribute | Value | Authority |
+|---|---|---|
+| Confidentiality | **PUBLIC** | IMF data is public macro statistics |
+| Integrity target | **HIGH** | SHA-256 pin + vintage-label + supersedes-chain |
+| Availability target | **STANDARD** | Degrades to last cached vintage on outage |
+| RTO | **24h** | BCPPlan §IMF |
+| RPO | **N/A** | Read-only public data |
+| GDPR scope | **OUT** | No personal data; DPIA short-circuit |
+| Licence | **Attribution required** | Auto-emitted in article footer |
+
+### IMF-specific security controls
+
+| Control | Implementation | Framework mapping |
+|---|---|---|
+| Egress allow-list | `www.imf.org`, `sdmxcentral.imf.org` only | ISO A.13.1 / NIST PR.AC-5 / CIS 13.4 |
+| Payload integrity | SHA-256 pin per (dataflow, indicator, country, vintage) | ISO A.8.2 / NIST PR.DS-6 / CIS 3.11 |
+| Vintage discipline | Reject >6-month payloads without staleness annotation | ISO A.8.10 / NIST PR.DS-1 / CIS 3.5 |
+| Rate-limit guard | ≤30 req/min; exponential back-off | ISO A.13.1 / NIST PR.AC-4 / CIS 4.7 |
+| Provenance audit | `economicProvenance` block in every article front-matter | ISO A.5.28 / NIST DE.AE-3 / CIS 8.2 |
+| Supply-chain | Scripts in-repo; reviewed; harden-runner egress audit | ISO A.5.21 / NIST PR.IP-2 / CIS 16.11 |
+
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

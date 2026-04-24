@@ -746,3 +746,24 @@ This skill is consumed by the 12 agentic news workflows in `.github/workflows/ne
 - **Analysis product** → [`ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + every template in [`analysis/templates/`](../../../analysis/templates/).
 - **Required before any article**: 9 core artifacts (14 for Tier-C) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`; [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) is the single blocking gate.
 - **gh-aw v0.69.3** docs: [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
+
+
+---
+
+## 🌐 IMF as Primary Source for Economic Conditions Driving Electoral Outcomes
+
+> **Effective:** 2026-04-24
+
+### IMF indicators in electoral models
+
+| Electoral driver | IMF indicator | Why IMF over WB |
+|---|---|---|
+| Real-income growth (incumbent advantage) | IMF WEO `NGDP_RPCH`, `NGDPRPC` | Freshness + projections; WB lags 12–24 months |
+| Unemployment rate (incumbent risk) | IMF WEO `LUR` | Annual + projections; SCB AKU monthly for tactical reads |
+| Inflation (incumbent risk) | IMF WEO `PCPIPCH` + IFS monthly | Annual + projections; SCB KPI monthly |
+| Government debt burden | IMF WEO + FM `GGXWDG_NGDP` | EDP/GFSM 2014 methodology |
+| Fiscal capacity for promises | IMF FM `GGSB_NPGDP` (cyclically-adjusted balance) | Standard fiscal-room measure |
+| Cost-of-living perception | IMF PCPS (commodity benchmarks) | Drivers of headline inflation |
+| Currency strength | IMF ER (SEK exchange rates) | Daily series; standard cross-country |
+
+**Canonical electoral rule:** Every electoral-conditions analysis in Riksdagsmonitor uses IMF projections (T+5) to forecast economic conditions in the election year. World Bank WGI supplements for governance perception. SCB provides Swedish-specific monthly ground truth. See [`analysis/imf/`](../../../analysis/imf/) and [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1.

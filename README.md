@@ -1090,3 +1090,21 @@ CEO, Hack23 AB
 
 *Monitor political activity in Sweden with systematic transparency*
 
+
+
+---
+
+## 🌐 Authoritative Data Sources (Current State)
+
+Riksdagsmonitor uses a **provider-tiered** data architecture, with each provider chosen for its area of strength. As of **2026-04-24**, all four providers are implemented and in production.
+
+| Tier | Provider | Scope | Access |
+|---|---|---|---|
+| **Primary economic** | **IMF** (Datamapper REST + SDMX 3.0) | GDP, growth, unemployment, inflation, fiscal balance, debt, current account, bilateral trade, commodity prices, exchange rates, government spending by COFOG function — including T+5 projections | Pure-TypeScript client `scripts/imf-client.ts` (intentionally non-MCP) |
+| **Parliamentary primary** | **Riksdagen Open Data** | Documents, motions, votes, MPs, speeches | `riksdag-regering` MCP server |
+| **Swedish ground truth** | **SCB** (PxWeb v2) | Swedish monthly labour (AKU), monthly inflation (KPI), regional/municipal, budget execution | `scb` MCP server |
+| **Non-economic residue** | **World Bank** | Governance (WGI), environment, social/education residue, defence-spending depth | `world-bank` MCP server |
+
+**Why this split** — IMF uses uniform SNA 2008 / GFSM 2014 / BPM6 methodology across countries (essential for cross-country comparison), publishes T+5 projections (essential for look-ahead workflows), and has fresher data than World Bank's economic indicators. World Bank remains the canonical source for the classes IMF does not publish (WGI governance, environment).
+
+Authority: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1 · hub: [`analysis/imf/`](analysis/imf/) · agent guide: [`AGENTS.md`](AGENTS.md) §IMF.

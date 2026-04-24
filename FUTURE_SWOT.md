@@ -900,3 +900,47 @@ quadrantChart
 **📅 Effective Date:** 2026-02-25  
 **⏰ Next Review:** 2026-05-25  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+
+---
+
+## 🌐 Evolving the Current IMF Strengths into the Future PESTLE / SWOT
+
+*Baseline: the **already-implemented** IMF strengths/weaknesses/threats are documented in [`SWOT.md`](SWOT.md) §IMF. The rows below describe future-state strengths that **add** to the current baseline (e.g., commercial-provider redundancy, real-time feeds) rather than introducing IMF for the first time.*
+
+> **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### IMF-specific Strengths added by the future state (on top of today's baseline)
+
+| # | Strength | Evidence |
+|---|---|---|
+| S-IMF-1 | Multi-provider economic data (IMF-primary + WB-residue + SCB-Sweden) prevents single-source failure | Three independent egress paths; provider-mix audit telemetry |
+| S-IMF-2 | T+5 projections enable look-ahead article workflows (`week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`) | IMF WEO + FM publish projections WB cannot match |
+| S-IMF-3 | Cross-country peer consistency on SNA 2008 / GFSM 2014 / BPM6 | Nordic peer (SWE/NOR/DNK/FIN) comparisons in a single methodology |
+| S-IMF-4 | Vintage-discipline contract (>6 mo → staleness annotation) prevents silent macro drift | Codified in ECONOMIC_DATA_CONTRACT v2.1 |
+| S-IMF-5 | Free, public, anonymous API — no licence cost, no auth credential management | Reduces operational and supply-chain risk |
+
+### IMF-specific Weaknesses
+
+| # | Weakness | Mitigation |
+|---|---|---|
+| W-IMF-1 | IMF SDMX 3.0 schema can break between WEO cycles (Apr/Oct) | Version-pinned client guard; integration test gate |
+| W-IMF-2 | IMF API rate limits (~30 req/min observed) | Cache-first strategy + exponential back-off |
+| W-IMF-3 | IMF lacks WGI/environment/education residue data | World Bank covers the residue (documented in provider matrix) |
+
+### IMF-specific Opportunities
+
+- Cross-validate IMF SWE figures against SCB national-accounts → editorial trust signal
+- Extend to other Nordic platforms by reusing IMF dataflow registry
+- Publish provenance graph as open data — first political journalism platform to do so
+
+### IMF-specific Threats (PESTLE Economic axis)
+
+- **Political** — IMF Article IV consultation cycle changes affect data release cadence
+- **Economic** — Swedish krona devaluation alters IMF cross-country comparability windows
+- **Technological** — IMF Datamapper deprecation (multi-year roadmap risk) → SDMX 3.0 fallback
+- **Legal** — IMF data licence requires attribution; codified in article footer template
+- **Environmental** — none direct
+- **Social** — none direct (IMF data is anonymous)
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

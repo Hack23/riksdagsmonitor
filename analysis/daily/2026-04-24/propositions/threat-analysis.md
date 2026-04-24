@@ -2,6 +2,8 @@
 
 **Scope**: Non-military, political-process threats to democratic functioning and policy delivery arising from the 23 April 2026 proposition bundle.
 
+**Overall Threat Level**: HIGH · **Severity**: HIGH (TH1, TH2, TH4) / MEDIUM (TH3, TH5) · **Confidence**: HIGH (A2 — primary-source proposition texts HD03252/HD03253/HD03256, FiU referral phase observable).
+
 ## Threat taxonomy mapping
 
 | # | Threat category | Specific threat | Actor | Target | Evidence |

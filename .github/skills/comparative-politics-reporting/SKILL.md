@@ -383,3 +383,32 @@ This skill is consumed by the 12 agentic news workflows in `.github/workflows/ne
 - **Analysis product** → [`ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + every template in [`analysis/templates/`](../../../analysis/templates/).
 - **Required before any article**: 9 core artifacts (14 for Tier-C) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`; [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) is the single blocking gate.
 - **gh-aw v0.69.3** docs: [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
+
+
+---
+
+## 🌐 IMF as Primary Source for Cross-Country Economic Comparisons
+
+> **Effective:** 2026-04-24
+
+### Why IMF for cross-country comparisons
+
+IMF data uses **uniform SNA 2008** (national accounts), **GFSM 2014** (fiscal), and **BPM6** (balance of payments) methodologies across all member countries. This is the only public data source with this methodological consistency at scale, making it the canonical primary source for Nordic peer (SWE / NOR / DNK / FIN) and EU/G7 cross-country comparisons.
+
+### Standard IMF indicators for cross-country reporting
+
+| Comparison | IMF dataflow | Indicator(s) |
+|---|---|---|
+| GDP growth | WEO | `NGDP_RPCH` |
+| GDP per capita (PPP) | WEO | `PPPPC` |
+| Inflation | WEO | `PCPIPCH` |
+| Unemployment | WEO | `LUR` |
+| Government debt %GDP | WEO + FM | `GGXWDG_NGDP` |
+| Fiscal balance | WEO + FM | `GGXCNL_NGDP` |
+| Current account %GDP | WEO + BOP | `BCA_NGDPD` |
+| Defence spending %GDP | GFS_COFOG 02 | `G02` |
+| Health spending %GDP | GFS_COFOG 07 | `G07` |
+| Education spending %GDP | GFS_COFOG 09 | `G09` |
+| Social protection %GDP | GFS_COFOG 10 | `G10` |
+
+**Canonical cross-country rule:** Every comparative-politics article comparing Sweden against any other country uses IMF as the primary source for economic comparison. World Bank WGI is the primary source for governance comparison only. See [`analysis/imf/agentic-integration.md`](../../../analysis/imf/agentic-integration.md).

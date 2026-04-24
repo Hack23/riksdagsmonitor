@@ -241,3 +241,33 @@ Riksdagsmonitor uses a **dual-deployment architecture** with AWS CloudFront + S3
 **📅 Effective Date:** 2026-03-12  
 **⏰ Next Review:** 2027-03-12  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+
+---
+
+## 🌐 IMF Integration — Financial Risk Note
+
+> **Effective:** 2026-04-24 · **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### IMF cost surface
+
+| Item | Cost | Notes |
+|---|---|---|
+| IMF Datamapper REST API | **€0** | Free, public, anonymous; no paid tier |
+| IMF SDMX 3.0 endpoint | **€0** | Free, public, anonymous; no paid tier |
+| IMF data redistribution licence | **€0** | Attribution required — no licence fee |
+| Egress bandwidth (IMF responses) | Negligible | <50 MB/month per workflow on cache-first strategy |
+
+### IMF financial risks
+
+| Risk | Likelihood | Impact | Mitigation |
+|---|---|---|---|
+| IMF introduces a paid tier for high-volume access | LOW | LOW | Cache-first design keeps us under any plausible free-tier ceiling |
+| IMF Datamapper deprecation forces migration to commercial provider (e.g., Refinitiv, Bloomberg) | LOW | HIGH | SDMX 3.0 is the open standard fallback; no commercial provider needed for the open IMF data we use |
+| IMF data licence change requires paid attribution scheme | LOW | LOW | Attribution is current free requirement; downside is operational not financial |
+
+### IMF financial benefit
+
+The IMF-primary, WB-residue, SCB-Sweden split avoids any commercial economic-data subscription that the platform might otherwise need (Bloomberg Terminal Data Feed ~€20K/seat/year, Refinitiv ~€15K/seat/year). Free-tier IMF coverage is the deliberate financial-resilience choice.
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

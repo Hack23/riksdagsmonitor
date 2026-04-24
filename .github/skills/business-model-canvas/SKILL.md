@@ -293,3 +293,22 @@ This skill provides guidance for designing and validating business models for th
 - **Open core**: Maintain open source community while monetizing premium features
 - **Customer success**: Retention is cheaper than acquisition
 - **Sustainable growth**: Profitability enables long-term mission impact
+
+
+---
+
+## 🌐 IMF as Primary Macro-Context Source
+
+> **Effective:** 2026-04-24
+
+When applying the Business Model Canvas to political-platform contexts (Riksdagsmonitor, sister projects), use IMF data as the primary source for macro/market context:
+
+| Canvas block | IMF source for context |
+|---|---|
+| Customer Segments — economic conditions of audience | IMF WEO `NGDP_RPCH`, `LUR` per country |
+| Value Propositions — relevance to fiscal stress | IMF FM `GGXWDG_NGDP`, `GGSB_NPGDP` |
+| Channels — currency / cost-of-living context | IMF ER, PCPS |
+| Cost Structure — vendor cost benchmarks (cross-country) | IMF WEO PPP-converted |
+| Revenue Streams — willingness-to-pay anchored to GDP per capita | IMF WEO `NGDPDPC` |
+
+World Bank governance indicators supplement for institutional-quality dimension. See [`analysis/imf/`](../../../analysis/imf/).

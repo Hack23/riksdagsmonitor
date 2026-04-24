@@ -1457,3 +1457,56 @@ graph TD
 **📅 Effective Date:** 2026-02-24  
 **⏰ Next Review:** 2026-05-24  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+
+---
+
+## 🌐 Evolving the Current IMF Dataflow toward the Future Pipeline
+
+*Baseline: the **already-implemented** IMF dataflow is documented in [`FLOWCHART.md`](FLOWCHART.md) §IMF. The diagram below shows how that baseline evolves with additional gates (vintage age UI badge, provider-mix telemetry) layered on top of today's client.*
+
+> **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+```mermaid
+flowchart LR
+    classDef primary fill:#0a4f8f,color:#fff,stroke:#00d9ff,stroke-width:2px
+    classDef secondary fill:#3a3a3a,color:#ddd,stroke:#888
+    classDef gate fill:#ff006e,color:#fff,stroke:#fff
+
+    Start([news-* workflow trigger]) --> Domain{Identify economic class}
+    Domain -->|Macro · Fiscal · Monetary · External · Trade| IMF[(IMF SDMX 3.0 + Datamapper REST)]:::primary
+    Domain -->|Governance / Environment / Social residue| WB[(World Bank API)]:::secondary
+    Domain -->|Swedish-specific monthly / regional| SCB[(SCB PxWeb v2)]:::secondary
+
+    IMF --> Vintage{Vintage > 6 months?}:::gate
+    Vintage -->|Yes| Annotate[Annotate as stale + downgrade confidence]
+    Vintage -->|No| Cache[Cache: vintage-tagged · SHA-256 pinned]
+    Annotate --> Cache
+    Cache --> Provenance[Emit economicProvenance: {provider:imf, dataflow, indicator, vintage}]
+    WB --> Cache
+    SCB --> Cache
+
+    Provenance --> Compose[Article composition]
+    Compose --> Lint{IMF-first lint}:::gate
+    Lint -->|WB economic citation w/o IMF cross-ref| Reject([Block — open issue])
+    Lint -->|Pass| Publish([Publish article])
+```
+
+### Provider decision matrix
+
+
+| Indicator class | Primary | Secondary | Why |
+|---|---|---|---|
+| Macro (GDP, growth, unemployment, inflation, fiscal balance, debt, current account) | **IMF WEO + Fiscal Monitor** | SCB (Sweden monthly) | Freshness + T+5 projections; SNA 2008 / GFSM 2014 / BPM6 cross-country comparability |
+| Bilateral trade flows | **IMF DOTS** | — | Partner-country dimension, monthly cadence |
+| Monthly inflation, policy rates | **IMF IFS / MFS_IR** | SCB / Riksbank | Standardised cross-country |
+| Government spending by function (defence/health/education/social protection) | **IMF GFS_COFOG** | — | Committee-aligned (FöU/SoU/UbU/SfU) |
+| Commodity prices, exchange rates | **IMF PCPS / ER** | — | Canonical benchmarks |
+| Governance (CC.EST, RL.EST, VA.EST, GE.EST, RQ.EST, PV.EST) | **World Bank WGI** | — | IMF has no equivalent |
+| Environment (CO2, renewables, forest, water) | **World Bank** | — | IMF has no equivalent |
+| Social/education residue (literacy, school participation, gender ratios) | **World Bank** | GFS_COFOG 09 | IMF has no equivalent |
+| Defence spending depth (long historicals) | **World Bank MS.MIL.*** | GFS_COFOG 02 | WB deeper history |
+| Swedish ground truth (monthly labour, regional, budget execution) | **SCB** | — | National statistics authority |
+
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

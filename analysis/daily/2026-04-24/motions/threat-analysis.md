@@ -2,6 +2,8 @@
 
 **Author**: James Pether Sörling · Per [`political-threat-framework.md`](../../../methodologies/political-threat-framework.md)
 
+**Overall Threat Level**: HIGH · **Severity**: HIGH (T-4, T-7) / MEDIUM (T-1, T-2, T-3, T-5) / LOW (T-6) · **Confidence**: MEDIUM (B2 — multi-source motion-wave pattern, plausibility judgements per row).
+
 This analysis adopts the Political Threat Taxonomy — adversarial actors, techniques, and targets that could exploit or undermine the democratic process around this motion wave. **This is NOT political opposition research**; it is threat modelling against democratic legitimacy.
 
 ## Political Threat Taxonomy

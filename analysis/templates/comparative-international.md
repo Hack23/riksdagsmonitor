@@ -31,7 +31,7 @@
 |---------|-------|
 | **F3EAD Stage** | **ANALYZE** — cross-country contextualisation |
 | **PIRs Served** | **PIR-4** (Defence Posture, NATO comparison), **PIR-5** (Fiscal Trajectory, peer benchmarks), **PIR-3** (Migration Policy, EU harmonisation) |
-| **Admiralty Floor** | World Bank/OECD statistics require **[A1]**; country-specific policy documents require **[B2]** |
+| **Admiralty Floor** | IMF WEO/FM, World Bank/OECD statistics require **[A1]**; country-specific policy documents require **[B2]** |
 | **WEP + ODNI** | Cross-country parallels use **WEP** (likely/unlikely) with **MODERATE** confidence; avoid claiming "Sweden will follow X" without Swedish-specific evidence |
 | **Source Diversity Floor** | P1 (policy trajectory claims): ≥3 sources (≥1 Swedish primary + ≥2 peer-country comparables); avoid single-country analogy |
 | **SAT(s) Applied** | Outside-In Thinking (start from external context), What If? (transferability scenarios) |
@@ -125,7 +125,25 @@ graph TB
 
 ---
 
-## 🌍 Governance Benchmarks (World Bank WGI — latest)
+## 📈 Macro / Fiscal Benchmarks (IMF WEO — vintage `WEO-2026-04`)
+
+> Cross-country macro & fiscal context for the comparator set, pulled from the IMF World Economic Outlook (primary source for all economic data). Citations MUST carry the vintage tag — e.g. `(WEO Apr-2026, NGDP_RPCH)`. Fetch via `tsx scripts/imf-fetch.ts compare --indicator <CODE> --countries SWE,DNK,NOR,FIN,DEU,FRA --persist` (one batched call per indicator).
+
+| Indicator (`code`) | Sweden | Denmark | Norway | Finland | Germany | France |
+|--------------------|:------:|:-------:|:------:|:-------:|:-------:|:------:|
+| Real GDP growth, 2025 (`NGDP_RPCH`) | — | — | — | — | — | — |
+| Real GDP growth, 2027 proj (`NGDP_RPCH`) | — | — | — | — | — | — |
+| Inflation CPI, 2025 (`PCPIPCH`) | — | — | — | — | — | — |
+| Unemployment, 2025 (`LUR`) | — | — | — | — | — | — |
+| Gross debt / GDP, 2025 (`GGXWDG_NGDP`) | — | — | — | — | — | — |
+| Fiscal balance / GDP, 2025 (`GGXCNL_NGDP`) | — | — | — | — | — | — |
+| Current account / GDP, 2025 (`BCA_NGDPD`) | — | — | — | — | — | — |
+
+> **Interpretation**: Fill after running the batched `compare` call. Flag Sweden's relative position (top / middle / bottom quartile of comparator set) and note any projection divergence (WEO Apr-2026 vs Oct-2025 if applicable).
+
+---
+
+## 🌍 Governance Benchmarks (World Bank WGI — `source=75`, latest)
 
 | Indicator | Sweden | Denmark | Norway | Finland | Germany | France |
 |-----------|:------:|:-------:|:------:|:-------:|:-------:|:------:|

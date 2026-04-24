@@ -166,3 +166,35 @@ Riksdagsmonitor's security practices are part of Hack23 AB's comprehensive Infor
 **📅 Effective Date:** 2026-02-20  
 **⏰ Next Review:** 2026-05-20  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+
+---
+
+## 🌐 IMF Integration — Security Disclosure Note
+
+> **Effective:** 2026-04-24 · **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### IMF data scope
+
+Riksdagsmonitor consumes **public, anonymous, unauthenticated** macro/fiscal/monetary statistics from the IMF Datamapper REST API (`www.imf.org/external/datamapper/api/v1`) and the IMF SDMX 3.0 endpoint (`sdmxcentral.imf.org`). **No personal data, no credentials, no auth tokens** are exchanged with the IMF. The IMF integration is therefore out of scope for GDPR DPIA but in scope for this security policy as a third-party dependency.
+
+### IMF-specific security posture
+
+| Control | Implementation |
+|---|---|
+| Transport | HTTPS-only · TLS 1.3 · pinned hostnames in egress allow-list |
+| Integrity | SHA-256 payload pin per (dataflow, indicator, country, vintage); supersedes-chain in cache |
+| Vintage discipline | Reject payloads >6 months old without staleness annotation (ECONOMIC_DATA_CONTRACT v2.1) |
+| Rate-limit guard | ≤30 req/min self-imposed; exponential back-off |
+| Supply chain | `scripts/imf-*.ts` reviewed in-repo; no dynamic eval; harden-runner egress audit |
+| Licence | Attribution-required; auto-emitted in article footer template |
+
+### Reporting IMF-related vulnerabilities
+
+If you discover a vulnerability in our IMF integration (e.g., cache integrity bypass, vintage substitution, egress allow-list breakout), follow the standard vulnerability-disclosure flow above. IMF data is public, so confidentiality breaches are not a concern; integrity and availability are the relevant attack surfaces.
+
+### IMF egress allow-list
+
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

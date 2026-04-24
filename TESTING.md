@@ -644,3 +644,46 @@ npm run cypress:run  # Videos saved to cypress/videos/
 **Last Updated**: 2026-02-18  
 **Maintained by**: Hack23 AB  
 **Version**: 1.0
+
+
+---
+
+## 🌐 IMF Integration Testing
+
+> **Effective:** 2026-04-24 · **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### IMF test surface
+
+| Test file | Purpose |
+|---|---|
+| `tests/imf-client.test.ts` | Low-level Datamapper + SDMX client behaviour |
+| `tests/imf-codes.test.ts` | Dataflow / indicator code registry validation |
+| `tests/imf-context.test.ts` | High-level `getImfContext({domain, country, vintage})` shape, cache, vintage handling |
+| `tests/imf-inventory.test.ts` | Schema validation of `analysis/imf/indicators-inventory.json` (13 assertions) |
+| `tests/economic-context-multi-provider.test.ts` | Asserts IMF queried **before** WB for every economic indicator class |
+| `tests/validate-economic-context.test.ts` | Validates the IMF-first contract end-to-end |
+
+### Running IMF tests
+
+```bash
+# Offline (mocked) — fast; runs in CI
+npm test -- imf
+
+# Online smoke (live IMF API) — opt-in only, not in default CI
+IMF_LIVE_SMOKE=1 npm test -- imf-client.live
+```
+
+### IMF test fail-fast principles
+
+1. **Zero skips** — IMF tests never use conditional skip; if IMF mock data is missing, the test fails immediately
+2. **Vintage assertion** — every IMF mock fixture carries an explicit `vintage_label`; tests assert presence
+3. **Provider precedence assertion** — `economic-context-multi-provider.test.ts` asserts IMF appears before WB in fetched economic data
+4. **Schema integrity** — `imf-inventory.test.ts` asserts every indicator in the inventory JSON has dataflow + dimensions + vintage + supersedes pointer
+5. **Banned-phrase lint** — `tests/banned-patterns.test.ts` (where present) asserts that WB economic codes (`NY.GDP.*`, `FP.CPI.*`, `SL.UEM.*`, `GC.DOD.TOTL.*`) are never used as primary citation in article fixtures
+
+### Future testing additions (W12)
+
+- `tests/imf-precedence-contract.test.ts` — synthetic test feeding both IMF + WB GDP series; asserts article cites IMF
+- `tests/imf-vintage-discipline.test.ts` — asserts cache filenames carry vintage tags
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

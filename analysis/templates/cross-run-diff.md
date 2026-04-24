@@ -63,6 +63,16 @@
 
 Minimum — ≥ 3 new evidence rows when days-between ≥ 3; ≥ 1 otherwise. Zero new evidence on a multi-day gap → flag prior run's stability claim.
 
+### 2.1 IMF Vintage Delta
+
+| Indicator | Prior vintage | Current vintage | Prior value (year) | Current value (year) | Δ (pp) | Action |
+|-----------|---------------|-----------------|-------------------|---------------------|:------:|--------|
+| `WEO:NGDP_RPCH` | `WEO-2025-10` | `WEO-2026-04` | `[e.g. 1.8 % (2026)]` | `[e.g. 2.1 % (2026)]` | `+0.3` | `[update / no-op]` |
+| `WEO:GGXWDG_NGDP` | `WEO-2025-10` | `WEO-2026-04` | `[e.g. 32.1 % (2027)]` | `[e.g. 32.4 % (2027)]` | `+0.3` | `[update]` |
+| `WEO:PCPIPCH` | `WEO-2025-10` | `WEO-2026-04` | — | — | — | — |
+
+> **Rule**: any headline indicator whose projection shifted by **> 0.5 pp** across vintages gets a `[VINTAGE-DELTA]` annotation in the article commentary, and prior-run citations are rewritten to the current vintage. Add a sentence in §3 Bayesian Update explaining the methodology shift. Stale-vintage citations (> 6 months old per [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) § Vintage staleness rule) MUST be refreshed before publish.
+
 ---
 
 ## 3️⃣ Bayesian Update — Key Judgments

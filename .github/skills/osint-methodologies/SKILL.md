@@ -696,3 +696,23 @@ This skill is consumed by the 12 agentic news workflows in `.github/workflows/ne
 - **Analysis product** → [`ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + every template in [`analysis/templates/`](../../../analysis/templates/).
 - **Required before any article**: 9 core artifacts (14 for Tier-C) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`; [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) is the single blocking gate.
 - **gh-aw v0.69.3** docs: [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
+
+
+---
+
+## 🌐 IMF as Primary Economic Source (OSINT Source-Evaluation Update)
+
+> **Effective:** 2026-04-24
+
+### Admiralty Code grading for economic sources
+
+| Source | Reliability (A–E) | Credibility (1–6) | Use for |
+|---|---|---|---|
+| **IMF WEO / Fiscal Monitor** | **A** (consistently reliable) | **1** (confirmed by other sources) | **PRIMARY** — macro, fiscal, monetary, external, projections |
+| **IMF IFS / BOP / DOTS / GFS_COFOG / PCPS / ER / MFS** | **A** | **2** (probably true) | **PRIMARY** — high-frequency economic indicators |
+| **SCB (Statistics Sweden)** | **A** | **1** | **PRIMARY** — Swedish-specific ground truth |
+| **Riksbank** | **A** | **1** | Monetary policy supporting source |
+| **World Bank WGI (governance only)** | **A** | **1** | **PRIMARY** for governance (CC.EST, RL.EST, VA.EST, GE.EST, RQ.EST, PV.EST) |
+| **World Bank WDI (economic codes)** | **B** (usually reliable) | **3** (possibly true) | **DEPRECATED for economic** — use IMF; B-rating reflects 12–24 month publication lag |
+
+**Canonical OSINT rule:** IMF is graded A1/A2 for all economic intelligence. World Bank economic codes (NY.GDP.*, FP.CPI.*, SL.UEM.*, GC.DOD.TOTL.*) are downgraded to B3 in our methodology because of the publication-lag and absence of projections — see [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1 and [`analysis/imf/`](../../../analysis/imf/).

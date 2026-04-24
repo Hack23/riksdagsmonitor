@@ -866,3 +866,57 @@ graph TB
 **📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-03-27 (UTC)
 **🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-03-27
 **🏢 Classification:** Public | **🏛️ Owner:** Hack23 AB (Org.nr 5595347807)
+
+
+---
+
+## 🌐 Evolving the Current IMF Workflow Integration toward Future CI/CD
+
+*Baseline: the **already-implemented** per-workflow IMF dataflow is documented in [`WORKFLOWS.md`](WORKFLOWS.md) §IMF. The table below shows how that current integration evolves with additional CI gates (precedence-contract test, provider-mix telemetry alarm) on top of today's pipeline.*
+
+> **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### IMF integration evolving from today's pipeline into the 2027–2030 autonomous-agent workflows
+
+| Workflow stage | IMF dataflow | Cadence | Caching strategy |
+|---|---|---|---|
+| Daily news (`news-*.md`) | WEO + FM + IFS + GFS_COFOG | On-demand per article | Vintage-tagged Aurora cache |
+| Week-ahead forecasting | WEO projections + DOTS | Weekly | 7-day rolling cache |
+| Month-ahead forecasting | WEO + FM + ER | Monthly | 30-day rolling + supersedes-chain |
+| Weekly review | WEO + FM + GFS_COFOG (committee-aligned) | Weekly | Snapshot per Riksdag week |
+| Monthly review | All IMF dataflows | Monthly | Full vintage capture |
+| Real-time monitor | IFS (monthly CPI), MFS_IR (rates), ER (FX) | Hourly | Short-TTL cache |
+| Translation cascade (14 lang) | Inherits article provenance | Per article | No re-fetch (provenance preserved) |
+
+### Future CI gate: IMF-first contract enforcement
+
+```yaml
+# .github/workflows/quality-checks.yml (target additions)
+- name: IMF-first economic citation lint
+  run: tsx scripts/article-quality-enhancer.ts --enforce-imf-first
+
+- name: IMF cache integrity (SHA-256 supersedes-chain)
+  run: tsx scripts/imf-fetch.ts --verify-cache
+
+- name: Provider-mix telemetry (alarm if WB economic share > 5%)
+  run: tsx scripts/catalog-downloaded-data.ts --provider-mix-report
+```
+
+### Provider decision matrix
+
+
+| Indicator class | Primary | Secondary | Why |
+|---|---|---|---|
+| Macro (GDP, growth, unemployment, inflation, fiscal balance, debt, current account) | **IMF WEO + Fiscal Monitor** | SCB (Sweden monthly) | Freshness + T+5 projections; SNA 2008 / GFSM 2014 / BPM6 cross-country comparability |
+| Bilateral trade flows | **IMF DOTS** | — | Partner-country dimension, monthly cadence |
+| Monthly inflation, policy rates | **IMF IFS / MFS_IR** | SCB / Riksbank | Standardised cross-country |
+| Government spending by function (defence/health/education/social protection) | **IMF GFS_COFOG** | — | Committee-aligned (FöU/SoU/UbU/SfU) |
+| Commodity prices, exchange rates | **IMF PCPS / ER** | — | Canonical benchmarks |
+| Governance (CC.EST, RL.EST, VA.EST, GE.EST, RQ.EST, PV.EST) | **World Bank WGI** | — | IMF has no equivalent |
+| Environment (CO2, renewables, forest, water) | **World Bank** | — | IMF has no equivalent |
+| Social/education residue (literacy, school participation, gender ratios) | **World Bank** | GFS_COFOG 09 | IMF has no equivalent |
+| Defence spending depth (long historicals) | **World Bank MS.MIL.*** | GFS_COFOG 02 | WB deeper history |
+| Swedish ground truth (monthly labour, regional, budget execution) | **SCB** | — | National statistics authority |
+
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

@@ -1,12 +1,44 @@
 # World Bank Indicator → Article Type Mapping (Riksdagsmonitor)
 
+> ## ⚠️ Scope notice (effective 2026-04-24)
+>
+> **World Bank is NOT the primary source for economic data** in Riksdagsmonitor articles. All macro / fiscal / monetary / external-sector / trade context is sourced from **IMF** — see [`imf-indicator-mapping.md`](imf-indicator-mapping.md) and [`analysis/imf/`](../imf/).
+>
+> This document covers the **non-economic residue** World Bank retains as primary:
+> - Governance (WGI, `source=75`) — `CC.EST`, `RL.EST`, `VA.EST`, `GE.EST`, `RQ.EST`, `PV.EST`
+> - Environment — `EN.ATM.CO2E.PC`, `EG.FEC.RNEW.ZS`, `AG.LND.FRST.ZS`, `ER.H2O.FWTL.ZS`
+> - Social / demographics — `SP.POP.TOTL`, `SP.DYN.LE00.IN`, `SP.DYN.CBRT.IN`, `IT.NET.USER.ZS`
+> - Health (detail) — `SH.XPD.CHEX.GD.ZS`, `SH.MED.PHYS.ZS`, `SH.MED.BEDS.ZS`, `SH.IMM.MEAS`
+> - Education — `SE.XPD.TOTL.GD.ZS`, `SE.PRM.ENRR`, `SE.TER.ENRR`, `SE.PRM.CMPT.ZS`
+> - Defence historicals — `MS.MIL.XPND.GD.ZS`, `MS.MIL.TOTL.P1`
+> - Agriculture — `AG.PRD.CREL.MT`, `AG.LND.ARBL.ZS`, `NV.AGR.TOTL.ZS`
+> - Innovation — `GB.XPD.RSDV.GD.ZS`, `IP.PAT.RESD`
+> - Crime / justice — `VC.IHR.PSRC.P5`
+>
+> ### 🚫 Deprecated economic codes (do NOT use as primary in new articles)
+>
+> | WB code (deprecated) | IMF replacement (use instead) |
+> |----------------------|-------------------------------|
+> | `NY.GDP.MKTP.KD.ZG` | `WEO:NGDP_RPCH` |
+> | `NY.GDP.MKTP.CD` | `WEO:NGDPD` |
+> | `NY.GDP.PCAP.CD` | `WEO:NGDPDPC` |
+> | `FP.CPI.TOTL.ZG` | `WEO:PCPIPCH` |
+> | `SL.UEM.TOTL.ZS` | `WEO:LUR` (SCB AKU for Swedish-specific) |
+> | `GC.DOD.TOTL.GD.ZS` | `WEO:GGXWDG_NGDP` |
+> | `GC.XPN.TOTL.GD.ZS` | `WEO:GGX_NGDP` |
+> | `GC.REV.XGRT.GD.ZS` | `WEO:GGR_NGDP` |
+> | `BN.CAB.XOKA.GD.ZS` | `WEO:BCA_NGDPD` |
+> | `NE.EXP.GNFS.ZS` | `WEO:TX_RPCH` |
+>
+> These codes remain read-only for back-compat with pre-2026-04-20 articles; new articles MUST use the IMF counterpart. See [`analysis/imf/indicators-inventory.json → deprecationPolicy`](../imf/indicators-inventory.json).
+
+---
+
 **Purpose** — canonical reference that maps Riksdagsmonitor news workflow article types to the most-relevant **non-economic** World Bank Open Data indicators used in `comparative-international.md`, `voter-segmentation.md`, `implementation-feasibility.md` and the `session-baseline.md` domain tables.
 
-**Data access** — via the `world-bank` MCP server (local container) using `get-social-data`, `get-health-data`, `get-education-data`, and the raw-REST passthrough for environment / defence / agriculture / innovation / governance codes. See [`.github/copilot-mcp.json`](../../.github/copilot-mcp.json) and [`.github/prompts/02-mcp-access.md`](../../.github/prompts/02-mcp-access.md).
+**Data access** — via the `world-bank` MCP server (local container, `worldbank-mcp@1.0.1`) using `get-social-data`, `get-health-data`, `get-education-data`, and the raw-REST passthrough for environment / defence / agriculture / innovation / governance codes. See [`.github/copilot-mcp.json`](../../.github/copilot-mcp.json) and [`.github/prompts/02-mcp-access.md`](../../.github/prompts/02-mcp-access.md).
 
-**Wave-2 scope (April 2026)** — World Bank is the **authoritative source** for social / demographics / health / education / environment / defence / agriculture / innovation / governance indicators only. All **economic / monetary / fiscal / trade** context (GDP, inflation, unemployment, FDI, fiscal balance, debt, monetary, exchange rates) is sourced from IMF — see [`imf-indicator-mapping.md`](imf-indicator-mapping.md) and [`analysis/imf/`](../imf/). Legacy WB economic codes below remain valid for pre-Wave-2 articles, but **new articles must use the IMF counterpart**.
-
-**Enforcement** — the gate check in [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) Check 4 currently verifies that `swot-analysis.md` and `significance-scoring.md` include primary-source evidence (a `dok_id` or an allowed primary-source URL host — `riksdagen.se`, `regeringen.se`, `scb.se`, `worldbank.org`, `api.imf.org`, `data.imf.org`, `www.imf.org`). It does **not** currently enforce a separate economic-context dimension or validate WB-only vs IMF-only sourcing by dimension; treat the Wave-2 source split above as **methodology guidance** unless and until the gate is expanded.
+**Enforcement** — the gate check in [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) Check 4 currently verifies primary-source evidence (a `dok_id` or an allowed primary-source URL host — `riksdagen.se`, `regeringen.se`, `scb.se`, `worldbank.org`, `api.imf.org`, `data.imf.org`, `www.imf.org`). It does not yet block WB economic codes in new articles — treat the economic-deprecation list above as **methodology guidance** (advisory), with a follow-up automated lint planned.
 
 ---
 
@@ -83,4 +115,5 @@ Sweden, 2023, WDI via world-bank MCP. Admiralty: B2.
 
 ## 6. Changelog
 
+- **v1.1 (2026-04-24)** — Scope tightened: WB economic codes explicitly deprecated, IMF replacements listed, scope notice added to header. Full IMF integration across methodologies/templates/prompts.
 - **v1.0 (2026-04-23)** — Initial Riksdagsmonitor mapping; adapted from EU Parliament Monitor `worldbank-indicator-mapping.md` Wave-2 scope.

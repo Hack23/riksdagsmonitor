@@ -504,3 +504,53 @@ mindmap
 **📅 Effective Date:** 2026-02-20  
 **⏰ Next Review:** 2026-05-20  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+
+---
+
+## 🌐 IMF Economic-Data Branch (Current State)
+
+> **Status:** ✅ Implemented and in production. IMF is the **primary economic-data source** today; the mindmap below shows the IMF subtree as currently realised. World Bank is the residue-only branch (governance / environment / social). Hub: [`analysis/imf/`](analysis/imf/).
+
+```mermaid
+mindmap
+  root((Economic Data Sources — Current))
+    IMF [PRIMARY · IMPLEMENTED 2026-04]
+      Client
+        scripts/imf-client.ts pure TypeScript
+        scripts/imf-context.ts high-level
+        scripts/imf-fetch.ts CLI
+        scripts/imf-codes.ts registry
+      Dataflows in production
+        WEO NGDP_RPCH PCPIPCH LUR GGXWDG_NGDP BCA_NGDPD
+        Fiscal Monitor cyclically-adjusted balance primary balance EDP debt
+        IFS monthly CPI policy rates reserves
+        BOP current account quarterly
+        DOTS bilateral trade monthly
+        GFS_COFOG 02 Defence 07 Health 09 Education 10 Social protection
+        PCPS commodity benchmarks
+        ER SEK FX daily
+        MFS_IR MFS_PR monetary survey
+      Cache and provenance
+        Vintage-tagged in analysis/daily economic-data.json
+        SHA-256 payload pin
+        economicProvenance block in every article
+      Tests
+        tests/imf-client.test.ts
+        tests/imf-codes.test.ts
+        tests/imf-context.test.ts
+        tests/imf-inventory.test.ts 13 assertions
+        tests/economic-context-multi-provider.test.ts
+    World Bank [RESIDUE ONLY governance environment social]
+      worldbank-mcp MCP server
+      WGI governance CC.EST RL.EST VA.EST GE.EST RQ.EST PV.EST
+      Environment CO2 renewables forest water
+      Social residue literacy participation gender ratios
+      Defence depth MS.MIL historicals
+    SCB [SWEDISH GROUND TRUTH]
+      scb-mcp MCP server PxWeb v2
+      AKU monthly labour
+      KPI monthly inflation
+      Regional municipal
+      Budget execution
+```

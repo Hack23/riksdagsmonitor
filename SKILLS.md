@@ -1647,3 +1647,34 @@ Many tasks benefit from combining multiple skills:
 **Total Skills**: 91  
 **New Skills (2026-02-20 → 2026-04-22)**: 18 skills added from Hack23 repos (security, development, governance, platform, design); +4 since 2026-02-20 (`business-model-canvas`, `mcp-gateway-configuration`, `mcp-gateway-security`, `seo-best-practices` per catalog reconciliation)  
 **Maintained by**: Hack23 AB
+
+
+---
+
+## 🌐 IMF as Primary Economic-Data Canon (Cross-Skill Rule)
+
+> **Effective:** 2026-04-24 · **Owner:** CEO · **Authority:** [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1
+
+**Every skill that touches economic-data analysis (electoral, risk, comparative-politics, OSINT, data-science, economic-policy, intelligence-analysis-techniques) MUST default to IMF as the primary economic-data source.** World Bank citations are reserved for governance, environment and social residue. SCB is the Swedish-specific ground truth layer.
+
+### Authoritative IMF references for skills
+
+[`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### Skills affected (by economic-data dependency)
+
+| Skill | IMF dataflows used | WB residue used | SCB use |
+|---|---|---|---|
+| `economic-policy-analysis` | WEO · FM · IFS · BOP · DOTS · GFS_COFOG | None — full IMF | SCB monthly KPI/AKU |
+| `electoral-analysis` | WEO (growth, unemployment, inflation as electoral conditions) | None | SCB regional |
+| `risk-assessment-frameworks` | WEO + FM (debt, deficit, projections) | WGI governance | SCB budget execution |
+| `comparative-politics-reporting` | WEO + FM (cross-country Nordic peers) | WGI for governance benchmarks | — |
+| `osint-methodologies` | IMF graded **A1/A2** (Admiralty); cite WEO/FM as primary economic sources | WB graded A1 for governance | SCB graded A1 for SE-specific |
+| `data-science-for-intelligence` | IMF for cross-country panels; vintage-discipline as data-quality control | WB for non-economic panels | SCB for SE-specific |
+| `intelligence-analysis-techniques` | IMF projections feed scenario analysis (T+5) | — | — |
+| `legislative-monitoring` | IMF GFS_COFOG for committee-aligned spending (FöU/SoU/UbU/SfU) | — | SCB budget execution |
+| `behavioral-analysis` | IMF macro context as backdrop for political behaviour | — | — |
+| `business-model-canvas` | IMF for market/macro context | — | — |
+| `gh-aw-mcp-configuration` | IMF is **CLI-not-MCP** (intentional) — `tsx scripts/imf-fetch.ts` | `worldbank-mcp` for residue | `scb-mcp` for SE |
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
