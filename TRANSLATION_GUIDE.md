@@ -14,7 +14,7 @@ This guide provides comprehensive translation standards and terminology for the 
 
 ### 📰 News articles are translated out-of-band
 
-News articles are **not** localised by the workflow that generates them. The per-type news workflows (`news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations`, `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`) each produce exactly two rendered files per article:
+News articles are **not** localised by the workflow that generates them. The per-type news workflows (`news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations`, `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`) each run the two-step **aggregate-then-render** pipeline ([`scripts/aggregate-analysis.ts`](scripts/aggregate-analysis.ts) → `analysis/daily/$DATE/$SUB/article.md` → [`scripts/render-articles.ts`](scripts/render-articles.ts) + [`scripts/render-lib/`](scripts/render-lib/)) to emit exactly two rendered files per article:
 
 - `news/$DATE-$SUB-en.html` (English master)
 - `news/$DATE-$SUB-sv.html` (Swedish master)

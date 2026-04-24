@@ -223,21 +223,23 @@ flowchart LR
     subgraph "🔬 Analysis Pipeline"
         DL["📥 Download\nFeed Data"]
         AI["🤖 Per-File\nAI Analysis"]
-        QG["✅ Quality\nGate ≥7.0"]
+        QG["✅ Analysis Gate\n(05-analysis-gate.md)"]
     end
 
-    subgraph "📰 Article Generation"
-        GEN["📝 Generate\nSV/EN Article"]
-        TR["🌐 Translate\n12 Languages"]
+    subgraph "📰 Article Generation (aggregate → render)"
+        AGG["🧩 aggregate-analysis.ts\n→ article.md"]
+        REN["🎨 render-articles.ts + render-lib/\n→ $DATE-$SUB-en/sv.html"]
+        TR["🌐 news-translate\n→ 12 languages"]
     end
 
-    RD --> DL --> AI --> QG --> GEN --> TR
+    RD --> DL --> AI --> QG --> AGG --> REN --> TR
 
     style RD fill:#0D47A1,stroke:#0D47A1,color:#FFFFFF
     style DL fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
     style AI fill:#7B1FA2,stroke:#4A148C,color:#FFFFFF
     style QG fill:#2E7D32,stroke:#2E7D32,color:#FFFFFF
-    style GEN fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style AGG fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style REN fill:#FF9800,stroke:#F57C00,color:#FFFFFF
     style TR fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
 ```
 
@@ -294,11 +296,16 @@ graph TB
     end
 
     subgraph "✅ Quality Assurance"
-        QG["✅ Quality Gate<br/><i>7-check validation</i>"]
+        QG["✅ Analysis Gate<br/><i>05-analysis-gate.md validation</i>"]
+    end
+
+    subgraph "🧩 Article Pipeline (aggregate → render)"
+        AGG["🧩 aggregate-analysis.ts<br/><i>analysis/daily/$DATE/$SUB/*.md → article.md</i>"]
+        REN["🎨 render-articles.ts + render-lib/<br/><i>unified → remark → rehype → sanitise → HTML chrome</i>"]
     end
 
     subgraph "📰 Output"
-        ART["📰 News Articles<br/><i>14 languages</i>"]
+        ART["📰 News Articles<br/><i>en/sv master + 12 translations</i>"]
         DASH["📊 Dashboards<br/><i>Political intelligence</i>"]
     end
 
@@ -308,7 +315,10 @@ graph TB
     GUIDE & M1 & M2 & M3 & M4 & M5 -->|"frameworks"| AI
     T1 & T2 & T3 & T4 & T5 & T6 & T7 & T8 -->|"templates"| AI
     AI -->|"analysis artifacts"| QG
-    QG -->|"approved"| ART & DASH
+    QG -->|"approved"| AGG
+    AGG --> REN
+    REN --> ART
+    AI -->|"data products"| DASH
 
     style RD fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
     style REG fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
@@ -318,6 +328,8 @@ graph TB
     style GUIDE fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
     style AI fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:3px
     style QG fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
+    style AGG fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
+    style REN fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
     style ART fill:#FFC107,color:#000000,stroke:#FFA000,stroke-width:2px
     style DASH fill:#FFC107,color:#000000,stroke:#FFA000,stroke-width:2px
     style M1 fill:#EEEEEE,color:#212121,stroke:#BDBDBD
@@ -334,6 +346,27 @@ graph TB
     style T7 fill:#BBDEFB,color:#0D47A1,stroke:#90CAF9
     style T8 fill:#BBDEFB,color:#0D47A1,stroke:#90CAF9
 ```
+
+---
+
+## 🧩 Article Pipeline — `analysis/` is the article
+
+Articles are **not authored in HTML**. Every rendered `news/$DATE-$SUB-$LANG.html` is a pure projection of the markdown artifacts in this directory, produced by two deterministic CLI scripts:
+
+| Step | Script | Input | Output |
+|------|--------|-------|--------|
+| 1. Aggregate | [`scripts/aggregate-analysis.ts`](../scripts/aggregate-analysis.ts) | `analysis/daily/$DATE/$SUB/*.md` (+ `documents/*-analysis.md`) | `analysis/daily/$DATE/$SUB/article.md` (canonical, front-mattered) |
+| 2. Render | [`scripts/render-articles.ts`](../scripts/render-articles.ts) + [`scripts/render-lib/`](../scripts/render-lib/) | `article.md` (or `article.<lang>.md`) | `news/$DATE-$SUB-$LANG.html` (sanitised, chrome-wrapped) |
+| 3. Translate (EN+SV → 12 extra) | [`news-translate`](../.github/workflows/news-translate.md) | rendered `*-en.html` / `*-sv.html` | sibling `*-$LANG.html` files |
+
+The aggregator enforces a **canonical narrative order** (executive-brief → synthesis → significance → stakeholder → SWOT → risk → threat → per-document intelligence → scenario/forward/comparative/historical → methodology-reflection → data-download-manifest). The renderer uses the `unified → remark-parse → remark-gfm → remark-rehype → rehype-raw → rehype-slug → rehype-autolink-headings → rehype-sanitize → rehype-stringify` pipeline; Mermaid fences survive as `<pre class="mermaid">` and are upgraded to SVG client-side.
+
+**Implications for every analysis author (human or AI):**
+
+- ✅ Every `.md` you write under `analysis/daily/$DATE/$SUB/` ships verbatim (modulo sanitisation) to the published article.
+- ✅ Fix quality by fixing the `.md`, not by editing the rendered HTML (HTML is regenerated on every run).
+- ✅ Relative links in analysis files are auto-rewritten to absolute `github.com/Hack23/riksdagsmonitor/blob/main/…` URLs so every citation stays auditable.
+- 🚫 There is no scaffold, no `AI_MUST_REPLACE` marker, no HTML template to fill — see [`.github/prompts/06-article-generation.md`](../.github/prompts/06-article-generation.md) for the full contract.
 
 ---
 

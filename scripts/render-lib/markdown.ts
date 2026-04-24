@@ -1,0 +1,110 @@
+/**
+ * @module Infrastructure/RenderLib/Markdown
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name Sanitised Markdown → HTML rendering pipeline
+ *
+ * @description
+ * Thin wrapper around the unified → remark → rehype stack that turns
+ * aggregated article markdown into safe HTML. **This module is the
+ * single trust boundary** between AI-generated analysis content and
+ * user-facing HTML. Nothing outside the allow-listed
+ * {@link sanitizeSchema} survives the pipeline.
+ *
+ * ## Pipeline stages
+ * 1. `remark-parse` + `remark-gfm` — parse markdown (incl. GFM tables /
+ *    task lists / strikethrough)
+ * 2. `remark-rehype` with `allowDangerousHtml: true` — preserve the
+ *    `<pre class="mermaid">` wrappers injected before the remark stage
+ * 3. `rehype-raw` — re-parse the preserved raw HTML into the HAST tree
+ * 4. `rehype-slug` — inject stable `id=` attributes on every heading
+ * 5. `rehype-autolink-headings` — append an anchor `<a>` child to every
+ *    heading for deep-linking (uses `behavior: 'append'`)
+ * 6. `rehype-sanitize` — scrub anything not in {@link sanitizeSchema}
+ * 7. `rehype-stringify` — serialise HAST → HTML with
+ *    `allowDangerousHtml: false`
+ *
+ * ## Mermaid handling
+ * A naive markdown render would pass ` ```mermaid ` fences through as
+ * `<pre><code class="language-mermaid">`; the site's client-side mermaid
+ * loader expects `<pre class="mermaid">`. We pre-process the markdown to
+ * swap mermaid fences into `<pre class="mermaid">` *before* the remark
+ * stage, and the sanitiser schema explicitly allows that class.
+ *
+ * Round-4 architecture split: extracted from `render-lib/index.ts` so
+ * that the aggregator can stay free of the remark/rehype dependency
+ * graph (saves ~40 ms import time when tests only need aggregator).
+ *
+ * @author Hack23 AB (Infrastructure Team)
+ * @license Apache-2.0
+ */
+
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkGfm from 'remark-gfm';
+import remarkRehype from 'remark-rehype';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeStringify from 'rehype-stringify';
+
+import { escapeHtml } from '../generate-sitemap-html.js';
+
+/**
+ * Relax the default rehype-sanitize schema so the Mermaid `<pre class="mermaid">`
+ * wrapper and the anchor-link icon injected by rehype-autolink-headings survive
+ * sanitisation. Anything else continues to be scrubbed — no inline `<script>`,
+ * no `javascript:` URLs, no `<iframe>`, no `<style>` tags.
+ */
+export const sanitizeSchema: typeof defaultSchema = {
+  ...defaultSchema,
+  attributes: {
+    ...defaultSchema.attributes,
+    pre: [...(defaultSchema.attributes?.pre ?? []), ['className', 'mermaid']],
+    code: [...(defaultSchema.attributes?.code ?? []), ['className', /^language-/], ['className', 'mermaid']],
+    a: [...(defaultSchema.attributes?.a ?? []), ['className', 'anchor', 'heading-anchor'], 'ariaHidden', 'tabIndex'],
+    span: [...(defaultSchema.attributes?.span ?? []), ['className', 'icon', 'icon-link']],
+    h1: [...(defaultSchema.attributes?.h1 ?? []), 'id'],
+    h2: [...(defaultSchema.attributes?.h2 ?? []), 'id'],
+    h3: [...(defaultSchema.attributes?.h3 ?? []), 'id'],
+    h4: [...(defaultSchema.attributes?.h4 ?? []), 'id'],
+    h5: [...(defaultSchema.attributes?.h5 ?? []), 'id'],
+    h6: [...(defaultSchema.attributes?.h6 ?? []), 'id'],
+  },
+};
+
+/**
+ * Convert the Markdown body to sanitised HTML. Mermaid code fences are
+ * translated to `<pre class="mermaid">` at the remark stage so the
+ * site's client-side mermaid loader (in `js/lib/mermaid-init.js`) can
+ * render them after page load. This avoids a build-time Puppeteer
+ * dependency while still giving readers a rich diagram.
+ */
+export async function renderMarkdownToHtml(markdownBody: string): Promise<string> {
+  // Swap ```mermaid fences for <pre class="mermaid"> blocks before remark
+  // parses the content so that rehype-sanitize keeps them intact.
+  const preProcessed = markdownBody.replace(
+    /```mermaid\n([\s\S]*?)```/g,
+    (_m, diagram: string) => {
+      const escaped = escapeHtml(diagram.trimEnd());
+      return `\n<pre class="mermaid" data-mermaid-source="true">${escaped}</pre>\n`;
+    },
+  );
+
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings, {
+      behavior: 'append',
+      properties: { className: ['anchor'], ariaHidden: 'true', tabIndex: -1 },
+      content: { type: 'text', value: '' },
+    })
+    .use(rehypeSanitize, sanitizeSchema)
+    .use(rehypeStringify, { allowDangerousHtml: false });
+
+  const file = await processor.process(preProcessed);
+  return String(file);
+}

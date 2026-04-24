@@ -1005,8 +1005,10 @@ graph TD
     end
 
     subgraph "scripts/render-articles.ts + scripts/render-lib/"
-        Renderer[Renderer<br/>unified · remark-parse · remark-gfm<br/>· remark-rehype · rehype-raw<br/>· rehype-sanitize · rehype-slug<br/>· rehype-autolink-headings<br/>· rehype-stringify · gray-matter]
-        Chrome[Shared chrome<br/>Header, footer, lang switcher,<br/>JSON-LD NewsArticle shell,<br/>Mermaid + Chart.js init]
+        Renderer[render-lib/markdown.ts<br/>unified · remark-parse · remark-gfm<br/>· remark-rehype · rehype-raw<br/>· rehype-sanitize · rehype-slug<br/>· rehype-autolink-headings<br/>· rehype-stringify]
+        Chrome[render-lib/chrome.ts<br/>Pure string builder:<br/>header · footer · lang switcher<br/>SEO · hreflang × 14]
+        Article[render-lib/article.ts<br/>Orchestrator: parses front-matter,<br/>builds JSON-LD NewsArticle,<br/>composes head+header+body+footer]
+        Constants[render-lib/constants.ts +<br/>render-lib/url-helpers.ts<br/>Zero-dep leaves]
     end
 
     subgraph "Outputs"
@@ -1026,10 +1028,14 @@ graph TD
     Templates --> Aggregator
     Daily --> Aggregator
     Aggregator --> ArticleMd
-    ArticleMd --> Renderer
-    Renderer --> Chrome
-    Chrome --> EnHtml
-    Chrome --> SvHtml
+    ArticleMd --> Article
+    Article --> Renderer
+    Article --> Chrome
+    Constants -.-> Aggregator
+    Constants -.-> Chrome
+    Constants -.-> Article
+    Article --> EnHtml
+    Article --> SvHtml
     EnHtml --> Sitemap
     SvHtml --> Sitemap
     EnHtml --> Rss
@@ -1040,17 +1046,28 @@ graph TD
     style Aggregator fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
     style Renderer fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#000000
     style Chrome fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    style Article fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style Constants fill:#607d8b,stroke:#37474f,stroke-width:2px,color:#ffffff
     style Translate fill:#9e9e9e,stroke:#616161,stroke-width:2px,color:#ffffff
 ```
 
 #### Pipeline Stages
 
-| Stage | Script | Responsibility |
-|-------|--------|----------------|
-| **aggregate** | `scripts/aggregate-analysis.ts` | Concatenate per-day artifacts in canonical narrative order; emit `article.md` |
-| **render** | `scripts/render-articles.ts` | Markdown → sanitised HTML via remark/rehype |
-| **chrome** | `scripts/render-lib/` | Inject SEO chrome, JSON-LD `NewsArticle`, language switcher, Mermaid/Chart runtime |
-| **translate** | `news-translate` workflow (out-of-band) | Produce the 12 non-EN/SV variants from the rendered EN+SV HTML |
+The `scripts/render-lib/` directory was split (Round-4) from a single 960-LOC monolith into **6 focused leaf modules** linked by a thin barrel `index.ts`. Each leaf has a single responsibility and zero circular dependencies. Consumers (`aggregate-analysis.ts`, `render-articles.ts`, tests, `analysis-references.ts`) import from the barrel only — the internal layout can evolve without breaking downstream code.
+
+| Stage | Script / Module | Responsibility |
+|-------|-----------------|----------------|
+| **aggregate** | `scripts/aggregate-analysis.ts` (CLI driver) → `scripts/render-lib/aggregator.ts` | Concatenate per-day artifacts in canonical narrative order; emit `article.md`. Strips leading admin bylines, `## Pass 2 …` self-audit sections, YAML front-matter, duplicated H1s, `Document control` / `End of template` footers. Rewrites relative links to absolute GitHub blob URLs. |
+| **render-md** | `scripts/render-lib/markdown.ts` | Markdown → sanitised HTML via `unified` → `remark-parse` → `remark-gfm` → `remark-rehype` → `rehype-raw` → `rehype-slug` → `rehype-autolink-headings` → `rehype-sanitize` → `rehype-stringify`. The sanitiser schema (`sanitizeSchema`) is the single trust boundary between AI markdown and user HTML. |
+| **chrome** | `scripts/render-lib/chrome.ts` | **Pure string builder** (no I/O, no async): emits `<head>` (SEO + OpenGraph + hreflang for all 14 languages), `<header>` (tagline logo + breadcrumb + dropdown language switcher), `<footer>` (3-column brand/navigate/trust + always-visible secondary language row). |
+| **article** | `scripts/render-lib/article.ts` | Orchestrator: parses front-matter, calls `renderMarkdownToHtml`, builds Schema.org `NewsArticle` JSON-LD, concatenates everything via `buildChrome`. The only module that imports both aggregator and markdown. |
+| **driver** | `scripts/render-articles.ts` (CLI driver) | Walks `analysis/daily/**/article.md`, populates `hreflangAlternates` for **all 14 supported languages** so the chrome language-switcher always lands on a sibling article (not the language homepage), calls `renderArticleHtml` per `(date, subfolder, lang)` tuple. |
+| **constants** | `scripts/render-lib/constants.ts` + `scripts/render-lib/url-helpers.ts` | Zero-dependency leaves: `BASE_URL`, `GITHUB_BLOB`, `GITHUB_TREE`, `ROOT_DIR`, `ANALYSIS_DIR`, `METHODOLOGIES_DIR`, `TEMPLATES_DIR`, `DAILY_DIR`, `LANGUAGES`, plus `buildGithubBlobUrl` / `buildGithubTreeUrl`. Safe to import from the firewall-scanning tools and from tests that only need URL helpers. |
+| **barrel** | `scripts/render-lib/index.ts` | Thin re-export of every public symbol from the leaves above. Downstream code imports from the barrel only. |
+| **translate** | `news-translate` workflow (out-of-band) | Produce the 12 non-EN/SV variants from the rendered EN+SV HTML. |
+
+The 6-module split reduces worst-case import-time cost for tests: tests that only exercise the aggregator can skip the `unified`/`remark`/`rehype` dependency graph (~40 ms saved per test-file cold start). Test coverage is validated both via the barrel (`tests/render-lib.test.ts`, 57 tests) and via direct leaf imports (`tests/render-lib-architecture.test.ts`, 25 tests) — the architecture test file proves no public-API drift exists between the barrel and the leaves.
+
 
 #### Sanitiser Trust Boundary
 
