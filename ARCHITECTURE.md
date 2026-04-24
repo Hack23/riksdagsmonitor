@@ -1047,9 +1047,10 @@ graph TD
 
 | Stage | Script | Responsibility |
 |-------|--------|----------------|
-| **aggregate** | `scripts/aggregate-analysis.ts` | Concatenate per-day artifacts in canonical narrative order; emit `article.md` |
-| **render** | `scripts/render-articles.ts` | Markdown → sanitised HTML via remark/rehype |
-| **chrome** | `scripts/render-lib/` | Inject SEO chrome, JSON-LD `NewsArticle`, language switcher, Mermaid/Chart runtime |
+| **aggregate** | `scripts/aggregate-analysis.ts` | Concatenate per-day artifacts in canonical narrative order; emit `article.md`. Strips leading admin bylines and `## Pass 2 …` self-audit sections. |
+| **render** | `scripts/render-articles.ts` | Markdown → sanitised HTML via remark/rehype. Populates `hreflangAlternates` for **all 14 supported languages** so the chrome language-switcher always lands on a sibling article (not the language homepage). |
+| **chrome** | `scripts/render-lib/index.ts` | Inject SEO chrome, JSON-LD `NewsArticle`, tagline + breadcrumb header, 3-column footer (brand / navigate / trust & compliance), dropdown + inline language switchers, Mermaid/Chart runtime. |
+| **constants** | `scripts/render-lib/constants.ts` | Zero-dependency leaf module: `BASE_URL`, `GITHUB_BLOB`, `GITHUB_TREE`, `ROOT_DIR`, `ANALYSIS_DIR`, `METHODOLOGIES_DIR`, `TEMPLATES_DIR`, `DAILY_DIR`, `LANGUAGES`. Re-exported from `index.ts`. |
 | **translate** | `news-translate` workflow (out-of-band) | Produce the 12 non-EN/SV variants from the rendered EN+SV HTML |
 
 #### Sanitiser Trust Boundary

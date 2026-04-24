@@ -616,6 +616,76 @@ describe('render-lib — buildChrome', () => {
     // Nested path should prefix its homepage links with `../../../`.
     expect(nested.headerHtml).toMatch(/href="\.\.\/\.\.\/\.\.\/index\.html"/);
   });
+
+  it('renders a tagline under the logo on wider viewports', () => {
+    const chrome = buildChrome({
+      lang: 'en', title: 'T', description: 'd',
+      canonicalPath: 'news/x-en.html',
+    });
+    expect(chrome.headerHtml).toContain('class="rm-logo-brand"');
+    expect(chrome.headerHtml).toContain('class="rm-logo-tagline"');
+    expect(chrome.headerHtml).toMatch(/Swedish parliamentary intelligence/);
+  });
+
+  it('renders a breadcrumb row in the sub-navigation and a published-date indicator', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'Executive Brief — Propositions 2026-04-24',
+      description: 'd',
+      canonicalPath: 'news/2026-04-24-propositions-en.html',
+      publishedIso: '2026-04-24T00:00:00Z',
+    });
+    expect(chrome.headerHtml).toContain('class="rm-site-subnav"');
+    expect(chrome.headerHtml).toContain('class="rm-breadcrumb"');
+    expect(chrome.headerHtml).toMatch(/aria-current="page">Executive Brief — Propositions 2026-04-24</);
+    expect(chrome.headerHtml).toContain('class="rm-article-published"');
+    expect(chrome.headerHtml).toContain('datetime="2026-04-24T00:00:00Z"');
+  });
+
+  it('renders a 3-column footer with brand, navigate and trust sections plus RSS link', () => {
+    const chrome = buildChrome({
+      lang: 'en', title: 'T', description: 'd',
+      canonicalPath: 'news/x-en.html',
+    });
+    // 3 columns
+    expect(chrome.footerHtml).toContain('class="rm-footer-col rm-footer-brand"');
+    expect(chrome.footerHtml).toContain('class="rm-footer-col rm-footer-navigate"');
+    expect(chrome.footerHtml).toContain('class="rm-footer-col rm-footer-trust"');
+    // Trust links
+    expect(chrome.footerHtml).toMatch(/SECURITY\.md/);
+    expect(chrome.footerHtml).toMatch(/CRA-ASSESSMENT\.md/);
+    expect(chrome.footerHtml).toMatch(/THREAT_MODEL\.md/);
+    expect(chrome.footerHtml).toMatch(/TRANSLATION_GUIDE\.md/);
+    expect(chrome.footerHtml).toMatch(/CONTRIBUTING\.md/);
+    expect(chrome.footerHtml).toMatch(/ISMS-PUBLIC/);
+    // RSS feed
+    expect(chrome.footerHtml).toContain('rss.xml');
+    expect(chrome.footerHtml).toContain('type="application/rss+xml"');
+    // Last-updated indicator
+    expect(chrome.footerHtml).toContain('class="rm-footer-updated"');
+    expect(chrome.footerHtml).toMatch(/<time datetime="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:/);
+  });
+
+  it('uses a language-specific RSS feed for non-English articles', () => {
+    const sv = buildChrome({
+      lang: 'sv', title: 'T', description: 'd',
+      canonicalPath: 'news/x-sv.html',
+    });
+    expect(sv.footerHtml).toContain('rss_sv.xml');
+  });
+
+  it('renders a secondary always-visible language row in the footer', () => {
+    const chrome = buildChrome({
+      lang: 'en', title: 'T', description: 'd',
+      canonicalPath: 'news/x-en.html',
+    });
+    expect(chrome.footerHtml).toContain('class="rm-footer-langs"');
+    expect(chrome.footerHtml).toContain('aria-label="Switch language"');
+    // 13 other languages in the footer switcher (all except current)
+    const langAttrs = (chrome.footerHtml.match(/class="rm-footer-langs"[\s\S]*?<\/nav>/)?.[0] ?? '')
+      .match(/lang="[a-zA-Z-]+"/g) ?? [];
+    expect(langAttrs).toHaveLength(13);
+  });
 });
 
 // ---------------------------------------------------------------------------

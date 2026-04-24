@@ -713,15 +713,36 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
   const indexFile = opts.lang === 'en' ? 'index.html' : `index_${opts.lang}.html`;
   const sitemapFile = opts.lang === 'en' ? 'sitemap.html' : `sitemap_${opts.lang}.html`;
   const piFile = opts.lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${opts.lang}.html`;
+  const rssHref = opts.rssHref ?? (opts.lang === 'en' ? '/rss.xml' : `/rss_${opts.lang}.xml`);
 
+  // Header dropdown (compact "more languages") — excludes the current
+  // language (which is shown in the summary). When no explicit alternate
+  // is provided for a given lang, fall back to the language homepage —
+  // the article-renderer populates alternates for all 14 languages so
+  // in practice every link here lands on a sibling article.
   const languageSwitcher = LANGUAGES
     .filter((l) => l !== opts.lang)
     .map((l) => {
       const lm = LANGUAGE_META[l];
       const href = opts.hreflangAlternates?.[l] ?? (l === 'en' ? 'index.html' : `index_${l}.html`);
-      return `        <a href="${prefix}${href}" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}"><span aria-hidden="true">${lm.flag}</span> ${lm.nativeName}</a>`;
+      return `          <a href="${prefix}${href}" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}" role="menuitem"><span aria-hidden="true">${lm.flag}</span> ${lm.nativeName}</a>`;
     })
     .join('\n');
+
+  // Footer inline lang-switcher (secondary, always-visible, not inside
+  // <details>) — same hrefs but rendered as a flat row for accessibility.
+  const footerLangRow = LANGUAGES
+    .filter((l) => l !== opts.lang)
+    .map((l) => {
+      const lm = LANGUAGE_META[l];
+      const href = opts.hreflangAlternates?.[l] ?? (l === 'en' ? 'index.html' : `index_${l}.html`);
+      return `          <a href="${prefix}${href}" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}"><span aria-hidden="true">${lm.flag}</span> <span class="rm-lang-code">${lm.hreflang}</span></a>`;
+    })
+    .join('\n');
+
+  const tagline = 'Swedish parliamentary intelligence · Open-source · Apache-2.0';
+  const lastUpdatedIso = opts.modifiedIso ?? new Date().toISOString();
+  const lastUpdatedDisplay = lastUpdatedIso.slice(0, 16).replace('T', ' ') + ' UTC';
 
   const headerHtml = `<body class="rm-article-body">
     <a class="skip-link" href="#main">${escapeHtml('Skip to main content')}</a>
@@ -729,7 +750,10 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
       <div class="rm-site-header-inner">
         <a class="rm-logo" href="${prefix}${indexFile}" aria-label="Riksdagsmonitor ${escapeHtml(t.home)}">
           <span class="rm-logo-glyph" aria-hidden="true">🇸🇪</span>
-          <span class="rm-logo-text">Riksdagsmonitor</span>
+          <span class="rm-logo-text">
+            <span class="rm-logo-brand">Riksdagsmonitor</span>
+            <span class="rm-logo-tagline">${escapeHtml(tagline)}</span>
+          </span>
         </a>
         <nav class="rm-site-nav" aria-label="${escapeHtml(t.mainPlatform)}">
           <a href="${prefix}${indexFile}">${escapeHtml(t.home)}</a>
@@ -738,12 +762,24 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
         </nav>
         <details class="rm-lang-switcher">
           <summary aria-label="${escapeHtml(t.sitemapInOtherLanguages)}">
-            <span aria-hidden="true">${meta.flag}</span> ${meta.nativeName}
+            <span aria-hidden="true">${meta.flag}</span>
+            <span class="rm-lang-current-label">${escapeHtml(meta.nativeName)}</span>
+            <span class="rm-lang-switcher-caret" aria-hidden="true">▾</span>
           </summary>
           <div class="rm-lang-switcher-dropdown" role="menu">
 ${languageSwitcher}
           </div>
         </details>
+      </div>
+      <div class="rm-site-subnav" aria-label="Article context">
+        <nav class="rm-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="${prefix}${indexFile}">${escapeHtml(t.home)}</a></li>
+            <li><a href="${prefix}${piFile}">${escapeHtml('Political Intelligence')}</a></li>
+            <li aria-current="page">${escapeHtml(opts.title)}</li>
+          </ol>
+        </nav>
+        ${opts.publishedIso ? `<time class="rm-article-published" datetime="${opts.publishedIso}">${opts.publishedIso.slice(0, 10)}</time>` : ''}
       </div>
     </header>
 ${opts.breadcrumbHtml ?? ''}
@@ -752,22 +788,47 @@ ${opts.breadcrumbHtml ?? ''}
   const footerHtml = `    </main>
     <footer class="rm-site-footer" role="contentinfo">
       <div class="rm-site-footer-inner">
-        <div class="rm-footer-brand">
-          <strong>Riksdagsmonitor</strong>
+        <section class="rm-footer-col rm-footer-brand" aria-labelledby="rm-ft-about">
+          <h2 id="rm-ft-about" class="rm-footer-heading">Riksdagsmonitor</h2>
           <p>${escapeHtml(meta.translations.mainPlatformDesc)}</p>
-        </div>
-        <nav class="rm-footer-nav" aria-label="${escapeHtml(t.resources)}">
-          <a href="${prefix}${indexFile}">${escapeHtml(t.home)}</a>
-          <a href="${prefix}${piFile}">${escapeHtml('Political Intelligence')}</a>
-          <a href="${prefix}${sitemapFile}">${escapeHtml(t.siteMap)}</a>
-          <a href="${GITHUB_TREE}/analysis" target="_blank" rel="noopener noreferrer">GitHub · analysis/</a>
-          <a href="${GITHUB_TREE}" target="_blank" rel="noopener noreferrer">GitHub · source</a>
-          <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a>
-        </nav>
-        <p class="rm-footer-legal">
-          © ${new Date().getFullYear()} Hack23 AB · Apache-2.0 · Public political data only — GDPR Art 9(2)(e,g).
-        </p>
+          <p class="rm-footer-attribution">
+            Powered by
+            <a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">CIA OSINT Platform</a>
+            · Built by
+            <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a>
+          </p>
+          <p class="rm-footer-updated"><small>Last updated: <time datetime="${lastUpdatedIso}">${escapeHtml(lastUpdatedDisplay)}</time></small></p>
+        </section>
+        <section class="rm-footer-col rm-footer-navigate" aria-labelledby="rm-ft-nav">
+          <h2 id="rm-ft-nav" class="rm-footer-heading">${escapeHtml(t.resources)}</h2>
+          <ul>
+            <li><a href="${prefix}${indexFile}">${escapeHtml(t.home)}</a></li>
+            <li><a href="${prefix}${piFile}">${escapeHtml('Political Intelligence')}</a></li>
+            <li><a href="${prefix}${sitemapFile}">${escapeHtml(t.siteMap)}</a></li>
+            <li><a href="${rssHref}" type="application/rss+xml" rel="alternate"><span aria-hidden="true">📡</span> RSS feed</a></li>
+            <li><a href="${GITHUB_TREE}/analysis" target="_blank" rel="noopener noreferrer">GitHub · analysis/</a></li>
+            <li><a href="${GITHUB_TREE}" target="_blank" rel="noopener noreferrer">GitHub · source</a></li>
+          </ul>
+        </section>
+        <section class="rm-footer-col rm-footer-trust" aria-labelledby="rm-ft-trust">
+          <h2 id="rm-ft-trust" class="rm-footer-heading">Trust &amp; compliance</h2>
+          <ul>
+            <li><a href="${GITHUB_BLOB}/SECURITY.md" target="_blank" rel="noopener noreferrer">Security policy</a></li>
+            <li><a href="${GITHUB_BLOB}/CRA-ASSESSMENT.md" target="_blank" rel="noopener noreferrer">EU CRA assessment</a></li>
+            <li><a href="${GITHUB_BLOB}/THREAT_MODEL.md" target="_blank" rel="noopener noreferrer">Threat model</a></li>
+            <li><a href="${GITHUB_BLOB}/TRANSLATION_GUIDE.md" target="_blank" rel="noopener noreferrer">Translation guide</a></li>
+            <li><a href="${GITHUB_BLOB}/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">Hack23 ISMS policies</a></li>
+          </ul>
+        </section>
       </div>
+      <nav class="rm-footer-langs" aria-label="Switch language">
+        <span class="rm-footer-langs-label" aria-hidden="true">🌐</span>
+${footerLangRow}
+      </nav>
+      <p class="rm-footer-legal">
+        © ${new Date().getFullYear()} Hack23 AB · Apache-2.0 · Public political data only — GDPR Art. 9(2)(e,g). No cookies, no tracking, no advertising.
+      </p>
     </footer>
     <script type="module" src="${prefix}js/lib/mermaid-init.mjs"></script>
     <script type="module" src="${prefix}js/back-to-top.js"></script>

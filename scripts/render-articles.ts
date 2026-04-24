@@ -135,8 +135,17 @@ async function renderOne(
   quiet: boolean,
 ): Promise<number> {
   const markdown = fs.readFileSync(rc.articleMdPath, 'utf8');
+  // Populate hreflang alternates for EVERY supported language — not just
+  // the ones being rendered in this invocation — so the language switcher
+  // in the chrome always points at the sibling article
+  // (`news/{date}-{subfolder}-{lang}.html`) instead of falling back to
+  // the language homepage. Translation of missing languages is handled
+  // by the dedicated `news-translate` agentic workflow; the alternates
+  // URLs stay stable and predictable.
   const hreflangAlternates: Partial<Record<Language, string>> = {};
-  for (const l of langs) hreflangAlternates[l] = canonicalPathFor(rc.date, rc.subfolder, l, rc.date);
+  for (const l of LANGUAGES) {
+    hreflangAlternates[l] = canonicalPathFor(rc.date, rc.subfolder, l, rc.date);
+  }
 
   // Parse the artifact list from the aggregator's generated markdown — fall
   // back to the analysis folder contents if the aggregator didn't store a list.
