@@ -2,6 +2,8 @@
 
 **Frame**: Political-threat taxonomy applied to HD10447 as an opposition accountability instrument. **Method**: [`political-threat-framework.md`](../../../methodologies/political-threat-framework.md) + lightweight MITRE-style TTP mapping for political action.
 
+**Overall Threat Level**: MEDIUM · **Severity**: MEDIUM · **Confidence**: MEDIUM (A2 single-source IP filing, dated 2026-05-07 floor-debate window observable).
+
 > **Scope note**: "Threat" in this political intelligence context means *actions that may degrade the governing coalition's electoral and legislative standing*, not cyber/physical threats. The subject is a legitimate, constitutionally-sanctioned instrument (interpellation). This analysis is descriptive, neutral, and public-source only.
 
 ## Political Threat Taxonomy hits
