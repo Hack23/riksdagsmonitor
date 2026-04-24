@@ -9,12 +9,14 @@ Articles derive from analysis. Scripts produce HTML scaffolding; the AI writes e
 
 ## Pre-flight: required analysis artifacts
 
-Before any article section is drafted, the writer MUST have opened and read **every** artifact below from `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`:
+Before any article section is drafted, the writer MUST have opened and read **every** file committed to `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` — not a fixed list.
 
-| Workflow class | Required artifacts | Gate checks that enforce citation |
-|----------------|---------------------|------------------------------------|
-| All workflows (single-type + Tier-C) | **23 artifacts** — Family A (9) + B (2) + C (5) + D (7) per `04-analysis-pipeline.md` §"23 required artifacts" | `05-analysis-gate.md` **check 1** (all 23 present), **check 2** (per-document coverage — one `{dok_id}-analysis.md` per manifest entry), **check 4** (evidence cites `dok_id` / primary-source URL), **check 5** (Mermaid + colour-coded style on all synthesis files), **check 7** (Family C structure — BLUF, ≥ 3 Key Judgments, ≥ 3 scenarios, ≥ 3 ACH hypotheses, ICD 203 audit, ≥ 2 comparators), **check 8** (Family D structure — ≥ 10 forward indicators, coalition seat table) |
-| Tier-C aggregation (`news-evening-analysis`, `news-weekly-review`, `news-monthly-review`, `news-week-ahead`, `news-month-ahead`, `news-realtime-monitor`, `news-article-generator` deep-inspection) | Same 23 artifacts **plus** Tier-C depth multipliers and cross-type synthesis — see `ext/tier-c-aggregation.md` | All single-type checks **plus** Tier-C sibling-citation check (cross-type citations in `cross-reference-map.md`) |
+| Workflow class | Minimum baseline | What the writer actually reads | Gate checks |
+|----------------|-------------------|--------------------------------|-------------|
+| All workflows (single-type + Tier-C) | **≥ 23 artifacts** — Family A (9) + B (2) + C (5) + D (7) per `04-analysis-pipeline.md` §"23 required artifacts" | **All files** discovered under `$ANALYSIS_DIR/` by the read-back loop in step 2, including any additional `.md`, `.json`, `.csv`, `.yml`, `.txt` artifacts the pipeline produced | `05-analysis-gate.md` **check 1** (baseline present), **check 2** (per-document coverage — one `{dok_id}-analysis.md` per manifest entry), **check 4** (evidence cites `dok_id` / primary-source URL), **check 5** (Mermaid + colour-coded style on all synthesis files), **check 7** (Family C structure — BLUF, ≥ 3 Key Judgments, ≥ 3 scenarios, ≥ 3 ACH hypotheses, ICD 203 audit, ≥ 2 comparators), **check 8** (Family D structure — ≥ 10 forward indicators, coalition seat table) |
+| Tier-C aggregation (`news-evening-analysis`, `news-weekly-review`, `news-monthly-review`, `news-week-ahead`, `news-month-ahead`, `news-realtime-monitor`, `news-article-generator` deep-inspection) | Same baseline **plus** Tier-C depth multipliers, cross-type synthesis, and every `ext/*.md` / sibling file — see `ext/tier-c-aggregation.md` | Same "read everything in the folder" rule — the recursive loop in step 2 picks up `ext/` siblings automatically | All single-type checks **plus** Tier-C sibling-citation check (cross-type citations in `cross-reference-map.md`) |
+
+**The rule is "read everything under `$ANALYSIS_DIR`", NOT "read a fixed 23-file list".** The 23 (or 14 Tier-C) figure is the *minimum* baseline enforced by `05-analysis-gate.md`; real analysis folders routinely contain more (ext modules, JSON snapshots, data-download manifests, per-document memos, language-specific notes). Missing any committed file when drafting the article is a process failure.
 
 If any required artifact is missing or empty, do **not** proceed to step 1 below — return to `04-analysis-pipeline.md` and produce it.
 
@@ -29,22 +31,153 @@ If any required artifact is missing or empty, do **not** proceed to step 1 below
      --languages "$CORE_LANGUAGES"   # always "en,sv" for automated workflows
    ```
 
-2. **Read pre-computed analysis** in full before filling any section. Map article sections → analysis files:
+2. **Read pre-computed analysis — EVERY artifact under `$ANALYSIS_DIR`, in full, before filling any section.** The analysis folder is the *only* knowledge source for article prose; the HTML scaffold and MCP data are scaffolding, not content. Skipping a read forfeits AI-FIRST (`00-base-contract.md` rule 5) and produces the boilerplate-default output observed in past failed runs.
 
-   | Article section | Sourced from |
-   |-----------------|--------------|
-   | Analytical lede | `synthesis-summary.md` (lead story + DIW ranking) |
-   | Per-document "Why it matters" | `documents/<dok_id>-analysis.md` |
-   | Winners & losers | `stakeholder-perspectives.md` |
-   | Key takeaways | `significance-scoring.md` top items |
-   | Strategic context | `risk-assessment.md` + `threat-analysis.md` |
-   | Economic context | `economic-data.json` + commentary paragraph |
-   | SEO title / meta description | `synthesis-summary.md` §"AI-Recommended Article Metadata" |
-   | Analysis references block | Hand-written footer linking to the 23 analysis files on GitHub — at minimum: `executive-brief.md`, `synthesis-summary.md`, `intelligence-assessment.md`, `scenario-analysis.md`, `risk-assessment.md`, `forward-indicators.md` (see "Mandatory sections" below) |
+   > ⚠️ **There is NO fixed artifact count.** The always-on minimum is 23 single-type / 14 Tier-C-aggregation (per `04-analysis-pipeline.md`), but additional artifacts (`ext/*.md`, extra `.md` / `.json` / `.csv` files dropped by workflow-specific pipelines, Tier-C sibling outputs, memo files, etc.) are always in scope. The rule is **"read everything in the folder"**, not "read a fixed list". Any file the prior analysis run committed into `$ANALYSIS_DIR` is evidence and MUST be read.
 
-3. **Replace every `AI_MUST_REPLACE` marker** with evidence-cited analysis. `05-analysis-gate.md` **check 3** (no stubs) enforces zero markers before article generation proceeds.
+   **Discover-and-read-all contract** (applies to every run, including Tier-C, translate, realtime-monitor):
+
+   1. Enumerate every non-empty file under `$ANALYSIS_DIR/` recursively — `.md`, `.json`, `.csv`, `.yml`, `.txt`, and any other extension committed by the analysis pipeline.
+   2. Open each file end-to-end (do not skim, do not truncate) and extract the evidence needed by the article-section map below.
+   3. Emit the read-back evidence log (next code block) into the run log. Missing or empty files abort the run.
+   4. `data-download-manifest.md` is the authoritative `dok_id` allow-list; the article MUST NOT cite any `dok_id` outside this list.
+
+   **Read-back evidence log (required, dynamic — no hard-coded file list).** Produce this log in the run output before drafting any article prose. Each line is the first ≤ 120-char non-empty line of the artifact, proving the file was actually opened. The loop discovers files from the filesystem — adding a new artifact in the pipeline automatically expands the read-back scope with zero prompt changes:
+
+   ```bash
+   ART_DIR="analysis/daily/$ARTICLE_DATE/$SUBFOLDER"
+   [ -d "$ART_DIR" ] || { echo "❌ $ART_DIR missing — run 04-analysis-pipeline.md first"; exit 1; }
+
+   # Recursively enumerate every committed artifact. Include all common analysis
+   # extensions; exclude only scratch / lock / hidden files.
+   mapfile -t ARTIFACTS < <(
+     find "$ART_DIR" -type f \
+       \( -name '*.md' -o -name '*.json' -o -name '*.csv' \
+          -o -name '*.yml' -o -name '*.yaml' -o -name '*.txt' \) \
+       ! -name '.*' ! -name '*.lock' ! -name '*.tmp' \
+       | sort
+   )
+   TOTAL=${#ARTIFACTS[@]}
+   [ "$TOTAL" -ge 23 ] || { echo "❌ Only $TOTAL artifacts under $ART_DIR — minimum 23 (see 04-analysis-pipeline.md)"; exit 1; }
+
+   echo "📖 Read-back evidence log ($(date -u '+%Y-%m-%dT%H:%M:%SZ')) — $TOTAL artifact(s):"
+   READ_COUNT=0
+   EMPTY_COUNT=0
+   for f in "${ARTIFACTS[@]}"; do
+     REL="${f#$ART_DIR/}"
+     if [ -s "$f" ]; then
+       FIRST=$(grep -m1 -v '^[[:space:]]*$' "$f" | head -c 120)
+       echo "  ✅ $REL — $FIRST"
+       READ_COUNT=$((READ_COUNT + 1))
+     else
+       echo "  ❌ $REL EMPTY — abort, return to 04-analysis-pipeline.md"
+       EMPTY_COUNT=$((EMPTY_COUNT + 1))
+     fi
+   done
+   [ "$EMPTY_COUNT" -eq 0 ] || { echo "❌ $EMPTY_COUNT empty artifact(s) — analysis incomplete"; exit 1; }
+   echo "📖 Total artifacts read: $READ_COUNT / $TOTAL"
+
+   # Verify Family A core-synthesis baseline (these nine are always required — see
+   # 04-analysis-pipeline.md). Additional families (B/C/D/E/ext) are discovered by
+   # the loop above; no need to hard-code them here.
+   REQUIRED_CORE=(README.md executive-brief.md synthesis-summary.md significance-scoring.md \
+                  classification-results.md swot-analysis.md risk-assessment.md \
+                  threat-analysis.md stakeholder-perspectives.md data-download-manifest.md)
+   for f in "${REQUIRED_CORE[@]}"; do
+     [ -s "$ART_DIR/$f" ] || { echo "❌ Core artifact $f missing — cannot write article"; exit 1; }
+   done
+   ```
+
+   The log is an auditable record — a run without it is treated as "analysis not read" and the article MUST be rewritten.
+
+   **Section-to-artifact mapping** (guides where to look first; does NOT limit what to read — still read every file):
+
+   - Analytical lede → `synthesis-summary.md` (lead story + DIW ranking)
+   - Per-document "Why it matters" → `documents/<dok_id>-analysis.md`
+   - Winners & losers → `stakeholder-perspectives.md`
+   - Key takeaways → `significance-scoring.md` top items
+   - Strategic context → `risk-assessment.md` + `threat-analysis.md`
+   - SWOT callouts → `swot-analysis.md`
+   - Classification + confidence language → `classification-results.md` + `intelligence-assessment.md`
+   - Scenarios / What to Watch → `scenario-analysis.md` + `forward-indicators.md`
+   - Comparative / historical context → `comparative-international.md` + `historical-parallels.md`
+   - Election 2026 lens (mandatory) → `election-2026-analysis.md` + `coalition-mathematics.md` + `voter-segmentation.md`
+   - Media framing awareness → `media-framing-analysis.md`
+   - Feasibility / implementation → `implementation-feasibility.md`
+   - Counter-argument + limitations → `devils-advocate.md` + `methodology-reflection.md`
+   - Cross-document links → `cross-reference-map.md`
+   - Tier-C sibling synthesis → any `ext/*.md` files
+   - Economic context → `economic-data.json` or any `*.json` / `*.csv` data snapshots committed in the folder
+
+   - Analysis references footer → link to every file in `$ART_DIR/` on GitHub (all discovered artifacts — at minimum `executive-brief.md`, `synthesis-summary.md`, `intelligence-assessment.md`, `scenario-analysis.md`, `risk-assessment.md`, `forward-indicators.md`; see "Mandatory sections" below)
+
+3. **Replace every `AI_MUST_REPLACE` marker** with evidence-cited analysis. Note: `05-analysis-gate.md` **check 3** only scans `$ANALYSIS_DIR` — it does **not** scan generated HTML. The article-side gate in step 5 below is the only mechanism that blocks unresolved markers from reaching the PR, so it is mandatory.
 
 4. **Article Pass 2** — AI-FIRST principle applies (see `00-base-contract.md` rule 5). Read every generated article HTML back in full. Improve: tighten lede, strengthen quotes, expand stakeholder coverage, replace boilerplate sentences, verify every `dok_id` reference resolves. Minimum 8 minutes.
+
+5. **Pre-commit article gate (MANDATORY, hard-blocking).** Before staging any article for commit, run **all three** sub-checks. Any non-zero exit MUST abort — do NOT hand-edit offending text to bypass the gate; return to step 2 and rewrite from analysis.
+
+   **5a. Banned patterns + unresolved markers** (all languages):
+
+   ```bash
+   # Collect today's article HTML across both legacy (news/$DATE-*.html) and
+   # dated-folder (news/$YYYY/$MM/$DD/*.html) layouts.
+   YYYY="${ARTICLE_DATE%%-*}"; REST="${ARTICLE_DATE#*-}"; MM="${REST%%-*}"; DD="${REST#*-}"
+   mapfile -t ARTICLES < <(
+     { ls news/${ARTICLE_DATE}-*.html 2>/dev/null; ls news/${YYYY}/${MM}/${DD}/*.html 2>/dev/null; } \
+     | sort -u
+   )
+   [ "${#ARTICLES[@]}" -gt 0 ] || { echo "❌ No article files found for $ARTICLE_DATE"; exit 1; }
+   npx tsx scripts/check-banned-patterns.ts "${ARTICLES[@]}"
+   GATE_EXIT=$?
+   if [ "$GATE_EXIT" -ne 0 ]; then
+     echo "❌ Article gate 5a failed: $GATE_EXIT file(s) contain unresolved AI_MUST_REPLACE markers or banned patterns"
+     exit 1
+   fi
+   ```
+
+   **5b. Manifest/citation consistency** — every `dok_id` cited in the article must exist in the analysis `documents/` folder:
+
+   ```bash
+   CITED=$(grep -hoE 'H[A-Z0-9]{2}[A-Z]{2,}[0-9]+' "${ARTICLES[@]}" | sort -u)
+   for d in $CITED; do
+     if ! ls "analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/${d}"*.md >/dev/null 2>&1; then
+       echo "❌ Article cites $d but no documents/${d}*.md exists in $SUBFOLDER/"
+       exit 1
+     fi
+   done
+   ```
+
+   **5c. Language purity (HARD block for English articles).** English must contain **zero** untranslated Swedish tokens outside of proper nouns wrapped in `<span lang="sv">…</span>`. Swedish articles likewise must not contain untranslated English prose (English is allowed only in proper-noun spans, code, URLs, and unavoidable technical terms):
+
+   ```bash
+   # 5c.i — English articles: zero Swedish leakage (threshold: 1)
+   mapfile -t EN_ARTICLES < <(printf '%s\n' "${ARTICLES[@]}" | grep -E '(-en\.html|\.en\.html)$' || true)
+   if [ "${#EN_ARTICLES[@]}" -gt 0 ]; then
+     if ! npx tsx scripts/detect-swedish-leakage.ts --dir "$(dirname "${EN_ARTICLES[0]}")" --threshold 1 2>&1 | tee /tmp/sv-leak.log; then
+       # Filter the log to today's articles only — the script scans the whole dir.
+       if grep -E "$(basename "${EN_ARTICLES[0]%-*}")" /tmp/sv-leak.log | grep -q '❌'; then
+         echo "❌ Article gate 5c.i failed: English article contains untranslated Swedish tokens"
+         echo "   Translate the offending lines — do NOT ship Swedish text in EN articles."
+         exit 1
+       fi
+     fi
+   fi
+
+   # 5c.ii — Non-Swedish articles must declare the correct lang attribute on <html>.
+   for a in "${ARTICLES[@]}"; do
+     LANG_CODE=$(basename "$a" | sed -E 's/.*-([a-z]{2})\.html$/\1/; s/.*\.([a-z]{2})\.html$/\1/')
+     DECL=$(grep -oE '<html[^>]*lang="[a-z-]+"' "$a" | head -1 | grep -oE 'lang="[a-z-]+"' | head -1)
+     EXPECTED="lang=\"$LANG_CODE\""
+     [ "$LANG_CODE" = "no" ] && EXPECTED="lang=\"nb\""
+     if [ -n "$DECL" ] && [ "$DECL" != "$EXPECTED" ]; then
+       echo "❌ Article gate 5c.ii failed: $a has $DECL but filename implies $EXPECTED"
+       exit 1
+     fi
+   done
+   ```
+
+   This gate catches the exact failure modes observed in past runs: unresolved `<!-- AI_MUST_REPLACE: ... -->` HTML comments, `by Unknown` author fallbacks, `dok_id`s that have no analysis artifact, and raw Swedish `<p>…</p>` blocks (e.g. verbatim `riksdagen.se` dumps) surviving into English articles.
 
 ## Mandatory sections (per article)
 
@@ -61,11 +194,20 @@ If any required artifact is missing or empty, do **not** proceed to step 1 below
 
 | Pattern | Example |
 |---------|---------|
+| Unresolved scaffold markers | Any `<!-- AI_MUST_REPLACE: * -->` comment in committed HTML. Blocked by step 5a pre-commit gate. |
+| Section-name title leakage | Headlines built by concatenating section names, e.g. "X: What Happened, Timeline & Context, Why This Matters". |
+| Manifest drift | Citing a `dok_id` in the article that has no matching `documents/<dok_id>-analysis.md` artifact. Blocked by step 5b. |
+| Unresolved author fallback | `by Unknown`, `Author: Unknown` — the scaffold's default placeholder, never a valid shipped value. |
+| Raw upstream HTML dump | Pasting raw `<p>…</p>` from `riksdagen.se` into the article body in place of original analysis. |
+| Swedish leakage in EN | Any untranslated Swedish token (`betänkande`, `utskott`, `riksdag(en)`, `regering(en)`, `motion`, `proposition`, Swedish stop words `och/att/är/inte/…`) outside a `<span lang="sv">…</span>` proper-noun wrapper. Blocked by step 5c.i. |
+| English leakage in SV | English sentences in a Swedish article body where a Swedish equivalent exists (exceptions: quoted proper nouns, code, URLs, wrapped `<span lang="en">…</span>`). |
+| Wrong `<html lang>` attribute | EN article declares `lang="sv"` or vice versa. Blocked by step 5c.ii. |
 | Boilerplate filler | "This is an important development that will have significant implications." |
 | Unattributed claims | "Experts say…", "Critics argue…" without named actor. |
 | Title-only summaries | Re-stating the document title as the analysis. |
 | Generic stakeholders | "The opposition", "Voters" without specific parties / groups. |
 | Confidence mismatch | Article claims "high confidence" while analysis files state "low". |
+| Committee-code boilerplate repetition | Same "What This Means" paragraph repeated across every doc in the same committee — guaranteed proof that `documents/<dok_id>-analysis.md` was not read. |
 
 ## Visualisation
 
