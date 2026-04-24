@@ -1,11 +1,11 @@
 ---
-title: "📋 Executive Brief — Riksdag Week 16, 2026"
-description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts</em> </p>"
+title: "Riksdag Week 16, 2026"
+description: "---"
 date: 2026-04-18
 subfolder: weekly-review
 slug: 2026-04-18-weekly-review
 source_folder: analysis/daily/2026-04-18/weekly-review
-generated_at: 2026-04-24T15:27:15.246Z
+generated_at: 2026-04-24T17:58:32.172Z
 language: en
 layout: article
 ---

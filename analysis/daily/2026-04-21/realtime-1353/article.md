@@ -1,11 +1,11 @@
 ---
-title: "Executive Brief — 2026-04-21 realtime-1353"
-description: "Sweden's Riksdag Finance Committee approved an extra budget amendment (FiU48) today cutting fuel taxes and providing electricity/gas price support — directly benefiting ~9M citizens. Simultaneously, the government launched a new wind power revenue-sharing law. Both measures are designed to address h"
+title: "Sweden's Riksdag Finance Committee approved an extra budget amendment"
+description: "Sweden's Riksdag Finance Committee approved an extra budget amendment (FiU48) today cutting fuel taxes and providing electricity/gas price support — directly benefiting ~9M citizens."
 date: 2026-04-21
 subfolder: realtime-1353
 slug: 2026-04-21-realtime-1353
 source_folder: analysis/daily/2026-04-21/realtime-1353
-generated_at: 2026-04-24T15:27:15.294Z
+generated_at: 2026-04-24T17:58:32.219Z
 language: en
 layout: article
 ---

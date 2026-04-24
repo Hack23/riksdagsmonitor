@@ -1,17 +1,20 @@
 ---
-title: "Executive Brief — Monthly Review April 2026"
-description: "---"
+title: "Monthly Review April 2026"
+description: "Sweden's April 2026 parliamentary sprint delivered the Kristersson government's final pre-election legislative package. The month's political signature is a fiscal-electoral pivot: HD01FiU48 (4.1…"
 date: 2026-04-23
 subfolder: monthly-review
 slug: 2026-04-23-monthly-review
 source_folder: analysis/daily/2026-04-23/monthly-review
-generated_at: 2026-04-24T15:27:15.312Z
+generated_at: 2026-04-24T17:58:32.239Z
 language: en
 layout: article
 ---
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/executive-brief.md)_
+
+**Classification**: PUBLIC | **Analyst**: James Pether Sörling | **Date**: 2026-04-23
+**Confidence**: HIGH [A1] | **Days to Election**: ~143
 
 ---
 
@@ -1373,9 +1376,6 @@ graph TD
 ## Voter Segmentation
 
 _Source: [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/voter-segmentation.md)_
-
-**Analyst**: James Pether Sörling | **Date**: 2026-04-23
-**Confidence**: MEDIUM [B2]
 
 ---
 

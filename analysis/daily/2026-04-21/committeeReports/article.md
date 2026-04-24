@@ -1,11 +1,11 @@
 ---
-title: "📋 Executive Brief — Committee Reports (April 21, 2026)"
-description: "---"
+title: "Committee Reports (April 21, 2026)"
+description: "On 2026-04-21 the Riksdag's committees adopted a 14-report package that operationalises a three-pillar electoral bet: fiscal relief (FiU48, 4.1B SEK fuel and energy subsidies), enforcement…"
 date: 2026-04-21
 subfolder: committeeReports
 slug: 2026-04-21-committeeReports
 source_folder: analysis/daily/2026-04-21/committeeReports
-generated_at: 2026-04-24T15:27:15.282Z
+generated_at: 2026-04-24T17:58:32.208Z
 language: en
 layout: article
 ---
@@ -3473,9 +3473,6 @@ graph LR
 ## Historical Baseline
 
 _Source: [`historical-baseline.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/historical-baseline.md)_
-
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports workflow
-**Scope**: Establish baselines for comparable spring committee cycles 2014–2026.
 
 ---
 

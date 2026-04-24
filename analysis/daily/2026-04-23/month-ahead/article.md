@@ -1,11 +1,11 @@
 ---
-title: "Executive Brief — Month Ahead 2026-04-23"
-description: "Classification: Public | Author: James Pether Sörling | Generated: 2026-04-23 Period: 2026-04-23 → 2026-05-31 | Session: Riksmöte 2025/26 (final spring phase)"
+title: "Sweden enters the final five weeks of the 2025/26 parliamentary"
+description: "Sweden enters the final five weeks of the 2025/26 parliamentary session with three interlocking packages dominating the legislative agenda: the 2026 Spring Fiscal Package (HD03100 vårproposition +…"
 date: 2026-04-23
 subfolder: month-ahead
 slug: 2026-04-23-month-ahead
 source_folder: analysis/daily/2026-04-23/month-ahead
-generated_at: 2026-04-24T15:27:15.308Z
+generated_at: 2026-04-24T17:58:32.234Z
 language: en
 layout: article
 ---
@@ -993,6 +993,8 @@ _Source: [`documents/HD0399-analysis.md`](https://github.com/Hack23/riksdagsmoni
 ### cluster\-remaining
 
 _Source: [`documents/cluster-remaining-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/cluster-remaining-analysis.md)_
+
+**Generated**: 2026-04-23 | **Tier**: L2 cluster
 
 ---
 

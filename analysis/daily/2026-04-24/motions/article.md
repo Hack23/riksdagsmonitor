@@ -1,11 +1,11 @@
 ---
-title: "Executive Brief — Opposition Motions — 2026-04-24"
-description: "Between 2026-04-15 and 2026-04-17, the four opposition parties (S, V, MP, C) filed 20 counter-motions against 9 Tidö-government propositions — a coordinated legislative response concentrated in three utskott (FiU/SfU/SoU) and anchored on the drivmedelsbudget (prop 2025/26:236, [HD024082](https://dat"
+title: "Between 2026-04-15 and 2026-04-17, the four opposition parties (S, V,"
+description: "Between 2026-04-15 and 2026-04-17, the four opposition parties (S, V, MP, C) filed 20 counter-motions against 9 Tidö-government propositions — a coordinated legislative response concentrated in three…"
 date: 2026-04-24
 subfolder: motions
 slug: 2026-04-24-motions
 source_folder: analysis/daily/2026-04-24/motions
-generated_at: 2026-04-24T15:27:15.330Z
+generated_at: 2026-04-24T17:58:32.255Z
 language: en
 layout: article
 ---
@@ -76,11 +76,6 @@ flowchart TB
 ## Synthesis Summary
 
 _Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md)_
-
-**Author**: James Pether Sörling
-**Classification**: OPEN · Public sources only (GDPR Art. 9(2)(e))
-**Scope**: 20 opposition motions filed 2026-04-15 to 2026-04-17 against 9 active government propositions
-**Confidence**: HIGH — primary Riksdag open-data source, full party coverage, all `dok_id` verified
 
 ---
 
@@ -162,8 +157,6 @@ Full judgments, uncertainty and drivers → `intelligence-assessment.md`. Forwar
 ## Intelligence Assessment — Key Judgments
 
 _Source: [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md)_
-
-**Author**: James Pether Sörling · ICD 203 compliant
 
 ## Bottom Line Up Front
 
@@ -327,8 +320,6 @@ quadrantChart
 
 _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/stakeholder-perspectives.md)_
 
-**Author**: James Pether Sörling · Per [`templates/stakeholder-impact.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/stakeholder-impact.md)
-
 Six-lens stakeholder analysis. Lenses: **Government coalition**, **Opposition bloc**, **Business/industry**, **Civil society**, **Voters/regional**, **Foreign/EU**.
 
 ## Stakeholder matrix
@@ -426,8 +417,6 @@ flowchart LR
 ## SWOT Analysis
 
 _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/swot-analysis.md)_
-
-**Author**: James Pether Sörling · **Unit of analysis**: opposition bloc posture heading into 2026 election · Per [`political-swot-framework.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-swot-framework.md).
 
 ## Executive SWOT grid
 
@@ -531,8 +520,6 @@ The 9 propositions in one 72-hour motion window dilute media attention per bill 
 
 _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)_
 
-**Author**: James Pether Sörling · **Confidence**: HIGH · Per [`political-risk-methodology.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-risk-methodology.md)
-
 Five-dimension risk register. **L** = Likelihood (1–5), **I** = Impact (1–5), **R** = L × I.
 
 ## Risk register
@@ -617,8 +604,6 @@ Posterior `P(pass | observations) ≈ 0.72`. Distribution: 72% pass substantiall
 ## Threat Analysis
 
 _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/threat-analysis.md)_
-
-**Author**: James Pether Sörling · Per [`political-threat-framework.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-threat-framework.md)
 
 **Overall Threat Level**: HIGH · **Severity**: HIGH (T-4, T-7) / MEDIUM (T-1, T-2, T-3, T-5) / LOW (T-6) · **Confidence**: MEDIUM (B2 — multi-source motion-wave pattern, plausibility judgements per row).
 
@@ -1277,8 +1262,6 @@ MP motion mot prop 236 drivmedelsreduktion — klimat-principiell avslag.
 
 _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/scenario-analysis.md)_
 
-**Author**: James Pether Sörling · Per [`templates/scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/scenario-analysis.md)
-
 Three futures for the 9 Tidö bills (prop 214, 215, 216, 222, 223, 228, 229, 235, 236) given the motion wave. Probabilities sum to 100%.
 
 ## Scenario overview
@@ -1777,8 +1760,6 @@ flowchart LR
 
 _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/comparative-international.md)_
 
-**Author**: James Pether Sörling · Per [`templates/comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/comparative-international.md)
-
 Comparator jurisdictions for the Swedish motion wave. Three comparators: **Denmark**, **Germany**, **United Kingdom**. Purpose: triangulate how equivalent opposition behaviour plays out under different parliamentary systems.
 
 ## Comparators
@@ -2181,8 +2162,6 @@ gantt
 
 _Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/devils-advocate.md)_
 
-**Author**: James Pether Sörling · Per [`templates/devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/devils-advocate.md)
-
 Structured challenge to the lead synthesis. Presents competing hypotheses (ACH — Analysis of Competing Hypotheses). Purpose: ensure the dominant narrative is not adopted by default.
 
 ## Hypothesis ledger
@@ -2283,8 +2262,6 @@ Structured challenge to the lead synthesis. Presents competing hypotheses (ACH �
 ## Classification Results
 
 _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/classification-results.md)_
-
-**Author**: James Pether Sörling · **Confidence**: HIGH · Per [`political-classification-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-classification-guide.md)
 
 Seven-dimension classification per document. Dimensions: **Policy Area**, **Process Stage**, **Partisan Axis**, **Electoral Salience**, **Legal Intensity**, **Fiscal Impact**, **Distributional Effect**.
 
@@ -2483,8 +2460,6 @@ flowchart LR
 ## Methodology Reflection & Limitations
 
 _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/methodology-reflection.md)_
-
-**Author**: James Pether Sörling · Per [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/osint-tradecraft-standards.md)
 
 ## §ICD 203 audit
 

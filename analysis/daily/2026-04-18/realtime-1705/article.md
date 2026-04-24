@@ -1,11 +1,11 @@
 ---
-title: "📋 Executive Brief — Realtime Monitor 1705"
-description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts</em> </p>"
+title: "Realtime Monitor 1705"
+description: "On 2026-04-13 – 16, the Kristersson government tabled a coordinated four-document pre-election sprint: Vårproposition 2026 (HD03100, DIW 9.5) sets the macro frame, an extra supplementary budget…"
 date: 2026-04-18
 subfolder: realtime-1705
 slug: 2026-04-18-realtime-1705
 source_folder: analysis/daily/2026-04-18/realtime-1705
-generated_at: 2026-04-24T15:27:15.242Z
+generated_at: 2026-04-24T17:58:32.168Z
 language: en
 layout: article
 ---

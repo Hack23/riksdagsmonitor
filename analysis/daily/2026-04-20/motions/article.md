@@ -1,11 +1,11 @@
 ---
-title: "📋 Executive Brief — Opposition Motions (April 14–17, 2026)"
-description: "---"
+title: "Opposition Motions (April 14–17, 2026)"
+description: "Between 2026-04-13 and 2026-04-17 Sweden's four major opposition parties (S, V, MP, C) filed 21 coordinated counter-motions against the government's spring legislative package — the most…"
 date: 2026-04-20
 subfolder: motions
 slug: 2026-04-20-motions
 source_folder: analysis/daily/2026-04-20/motions
-generated_at: 2026-04-24T15:27:15.277Z
+generated_at: 2026-04-24T17:58:32.202Z
 language: en
 layout: article
 ---

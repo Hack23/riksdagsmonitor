@@ -1,11 +1,11 @@
 ---
-title: "📋 Executive Brief — Realtime Monitor 1219"
-description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts</em> </p>"
+title: "Realtime Monitor 1219"
+description: "Sweden's Konstitutionsutskottet (KU) on 2026-04-17 advanced a second Tryckfrihetsförordningen (TF) amendment in the same riksmöte — betänkande 2025/26:KU33 — narrowing offentlighetsprincipen by…"
 date: 2026-04-19
 subfolder: realtime-1219
 slug: 2026-04-19-realtime-1219
 source_folder: analysis/daily/2026-04-19/realtime-1219
-generated_at: 2026-04-24T15:27:15.262Z
+generated_at: 2026-04-24T17:58:32.188Z
 language: en
 layout: article
 ---
@@ -2060,12 +2060,6 @@ Trigger a new synthesis for this cluster if any of the following occur within 14
 ## Data Download Manifest
 
 _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/data-download-manifest.md)_
-
-**Run ID**: realtime-1219  
-**Date**: 2026-04-19  
-**Generated**: 2026-04-19T12:19:48Z  
-**Analyst**: James Pether Sörling / Riksdagsmonitor  
-**Source**: riksdag-regering-mcp (live data.riksdagen.se + g0v.se)
 
 ## Documents Analyzed
 

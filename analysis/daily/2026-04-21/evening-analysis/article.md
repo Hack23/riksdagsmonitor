@@ -1,11 +1,11 @@
 ---
-title: "Executive Brief — Evening Analysis 2026-04-21"
-description: "Package: EVE-2026-04-21 | Classification: PUBLIC | Confidence: 🟩HIGH"
+title: "Sweden's parliament entered a decisive pre-election week with three"
+description: "Sweden's parliament entered a decisive pre-election week with three simultaneous high-stakes policy developments. Finance Committee FiU48 — an extraordinary 4.1 billion SEK supplementary budget…"
 date: 2026-04-21
 subfolder: evening-analysis
 slug: 2026-04-21-evening-analysis
 source_folder: analysis/daily/2026-04-21/evening-analysis
-generated_at: 2026-04-24T15:27:15.285Z
+generated_at: 2026-04-24T17:58:32.211Z
 language: en
 layout: article
 ---

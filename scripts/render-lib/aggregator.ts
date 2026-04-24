@@ -352,7 +352,7 @@ function readFirstHeading(markdown: string): string | null {
  * Covers Latin (`.`, `!`, `?`), Chinese/Japanese full stop (`。`),
  * Devanagari danda (`।`), and the Unicode horizontal ellipsis (`…`).
  */
-const SENTENCE_END_RE = /[.!?…。।]/g;
+const SENTENCE_END_RE = /(?:[.!?…](?=\s|$))|[。।]/g;
 
 /**
  * Truncate a string to the longest sentence-terminated prefix whose
@@ -480,10 +480,27 @@ function readFirstParagraph(markdown: string): string | null {
 function cleanArticleTitle(raw: string | null): string | null {
   if (!raw) return null;
   let t = raw.trim();
+  // Strip leading pictograph / emoji / punctuation that sometimes
+  // prefixes boilerplate H1s (e.g. `📋 Executive Brief — …`). Match
+  // any run of non-letter/number/Arabic/CJK characters at the start.
+  t = t.replace(/^[\s\p{Emoji_Presentation}\p{Emoji}\p{Extended_Pictographic}\p{P}\p{S}]+/u, '').trim();
   // Strip boilerplate prefixes (en-dash, em-dash, hyphen) — keep the story.
   t = t.replace(/^(?:Executive\s+Brief|Intelligence\s+Brief|Intelligence\s+Assessment|Realtime\s+Monitor|Riksdag\s+Realtime\s+Monitor|Daily\s+Brief)\s*[—–\-:]\s*/i, '');
   // Strip trailing ISO date (with or without a separator).
   t = t.replace(/\s*[—–\-:]?\s*\d{4}[-/]\d{2}[-/]\d{2}(?:\s+\d{1,2}[:\-.]\d{2}(?:\s*UTC)?)?\s*$/i, '');
+  // Strip any ISO date that remains embedded mid-title (e.g. "Week
+  // Ahead: 2026-02-23 to" → "Week Ahead: to"). We normalise
+  // collapsing whitespace after the strip. This is important for
+  // translated titles where the date is often inlined between two
+  // non-Latin fragments that the trailing-strip can't reach.
+  t = t.replace(/\s*\d{4}[-/]\d{2}[-/]\d{2}(?:\s+\d{1,2}[:\-.]\d{2}(?:\s*UTC)?)?\s*/g, ' ');
+  // Strip trailing connector words left behind when a date was mid-title,
+  // like "… to" / "… – " / "… —" / "… :" / Swedish "… till" / German
+  // "… bis" / French "… à" / Spanish "… a" / Arabic "… إلى" / Japanese
+  // "… から" / Norwegian-Danish "… til" / Finnish "… –". This is a
+  // best-effort clean-up — if the trailing token is not in the list we
+  // leave it alone.
+  t = t.replace(/[\s,;:]*(?:to|till|bis|à|a|إلى|から|til|–|—|-|:)\s*$/iu, '').trim();
   t = t.replace(/\s+/g, ' ').trim();
   if (t.length < 20) return null;
   return t;

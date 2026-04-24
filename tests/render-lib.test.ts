@@ -1122,6 +1122,32 @@ describe('render-lib — cleanArticleTitle (SEO contract §3e)', () => {
     expect(cleanArticleTitle('Realtime Monitor — Swedish defense spending debate 2026-04-22'))
       .toBe('Swedish defense spending debate');
   });
+
+  it('strips leading pictographs / emoji prefixes like `📋 Executive Brief — …`', () => {
+    // Regression: translated Tier-A articles sometimes render the H1
+    // with a `📋` emoji prefix — the old regex anchored strictly on
+    // `^Executive Brief` and failed to fire.
+    expect(cleanArticleTitle('📋 Executive Brief — Riksdag Realtime Monitor 2026-04-17 14:34'))
+      .toBe('Riksdag Realtime Monitor');
+    expect(cleanArticleTitle('🚨 Intelligence Brief — Coalition Mathematics 2026-04-20'))
+      .toBe('Coalition Mathematics');
+  });
+
+  it('strips mid-title ISO date ranges and dangling connectors', () => {
+    // Regression: week-ahead articles emit titles like `Week Ahead: 2026-02-23 to`
+    // in every language variant — the old regex only stripped trailing
+    // dates so the mid-title date + dangling connector survived in
+    // Arabic / German / Japanese etc. Real bad titles end with the
+    // connector word after the date (no trailing prose), which
+    // collapses to under the 20-char floor → `null`, so the rewriter
+    // falls back to `titleFromBluf`.
+    expect(cleanArticleTitle('Week Ahead: 2026-02-23 to')).toBeNull();
+    expect(cleanArticleTitle('Woche Voraus: 2026-02-23 bis')).toBeNull();
+    expect(cleanArticleTitle('الأسبوع القادم: 2026-02-23 إلى')).toBeNull();
+    // But a real follow-on phrase survives with the embedded date gone:
+    expect(cleanArticleTitle('Budget outlook 2026-02-23 through 2026-03-02 in Riksdagen'))
+      .toBe('Budget outlook through in Riksdagen');
+  });
 });
 
 describe('render-lib — titleFromBluf (SEO contract §3e fallback)', () => {
