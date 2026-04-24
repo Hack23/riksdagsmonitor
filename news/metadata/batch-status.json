@@ -4,10 +4,23 @@
     "en",
     "sv"
   ],
-  "remainingLanguages": [],
+  "remainingLanguages": [
+    "da",
+    "nb",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
+  ],
   "allRequestedLanguages": [
     "en",
     "sv"
   ],
-  "timestamp": "2026-04-21T20:18:21.473Z"
+  "timestamp": "2026-04-24T06:34:01.943Z"
 }
