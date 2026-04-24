@@ -772,3 +772,40 @@ Place: Sweden
 **🔓 OSS Alignment:** Conforms with [Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) — governance artifacts, security posture evidence, license compliance
 **🏢 ISMS Integration:** Comprehensive alignment with public ISMS framework for operational excellence
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+
+---
+
+## 🌐 IMF Integration — CRA Third-Party Services Inventory
+
+> **Effective:** 2026-04-24 · **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### IMF in third-party services inventory (CRA Annex V evidence)
+
+| Attribute | Value |
+|---|---|
+| Service name | International Monetary Fund — Public APIs (Datamapper REST + SDMX 3.0) |
+| Vendor | International Monetary Fund (IGO; not a commercial vendor) |
+| Hostnames (egress allow-list) | `www.imf.org`, `sdmxcentral.imf.org` |
+| Authentication | None (anonymous public API) |
+| Data classification consumed | PUBLIC macro/fiscal/monetary/external statistics; **no PII** |
+| Data flow direction | Inbound only (read-only) |
+| Rate limit | ~30 req/min observed; self-imposed ≤30 req/min with back-off |
+| Redundancy | Two endpoints (Datamapper + SDMX) for the same underlying data |
+| Cache | Vintage-tagged in `analysis/imf/` + `analysis/daily/*/economic-data.json` |
+| Integrity | SHA-256 payload pin + supersedes-chain |
+| Vendor security posture | IMF Open Data — published rate limits, public terms, no auth surface |
+| Licence | Attribution required; redistribution permitted with citation |
+| CRA risk class | **Low** (read-only, public, no PII, no credentials) |
+| CRA conformity decision | **Self-assessment Annex V** — no notified body required |
+
+### Why IMF strengthens our CRA posture
+
+- Eliminates a credential-management surface that a commercial economic-data provider would introduce
+- Eliminates a supply-chain dependency on a single commercial vendor
+- Eliminates GDPR DPIA scope (no PII)
+- Provides redundancy via two independent endpoints (Datamapper + SDMX)
+
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

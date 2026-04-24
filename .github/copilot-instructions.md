@@ -196,7 +196,9 @@ network:
     - defaults                         # Curated dev domains
     - riksdag-regering-ai.onrender.com # Riksdag MCP server
     - api.scb.se                       # Statistics Sweden API
-    - api.worldbank.org                # World Bank API
+    - www.imf.org                      # IMF Datamapper REST (PRIMARY economic — WEO/FM)
+    - sdmxcentral.imf.org              # IMF SDMX 3.0 (PRIMARY economic — IFS/BOP/DOTS/GFS/PCPS/ER/MFS)
+    - api.worldbank.org                # World Bank API (governance/environment residue ONLY — economic codes deprecated, use IMF)
     - data.riksdagen.se                # Riksdag open data
     - riksdagen.se                     # Riksdag website
     - www.riksdagen.se                 # Riksdag website
@@ -258,8 +260,33 @@ Quality gates: HTMLHint + linkinator + Dependabot + CodeQL + secret scanning
 - **Use agents/skills** — Leverage specialized expertise
 - **BCP-47** — Norwegian uses `nb` not `no`
 - **No shortcuts** — Real AI work for all phases, never produce shallow output
+- **Economic data: IMF first** — Macro/fiscal/monetary/external/trade ⇒ IMF (WEO, FM, IFS, BOP, DOTS, GFS_COFOG, PCPS, ER, MFS); World Bank reserved for governance/environment/social residue only; SCB for Swedish-specific ground truth. Hub: [`analysis/imf/`](../analysis/imf/) · contract: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](aw/ECONOMIC_DATA_CONTRACT.md) v2.1. Banned phrases + vintage discipline (>6 mo → annotation) enforced.
+
+## 🌐 IMF Quick Reference (Economic Data Canonical Pattern)
+
+**When to call IMF (always, before WB):**
+
+```bash
+# Macro / fiscal / monetary / external — examples
+tsx scripts/imf-fetch.ts --dataflow WEO --indicator NGDP_RPCH --country SWE --years 5
+tsx scripts/imf-fetch.ts --dataflow FM  --indicator GGXWDG_NGDP --country SWE --years 5
+tsx scripts/imf-fetch.ts --dataflow IFS --indicator PCPI_IX --country SWE --years 2 --frequency M
+tsx scripts/imf-fetch.ts --dataflow DOTS --indicator TXG_FOB_USD --country SWE --partner USA --years 3
+tsx scripts/imf-fetch.ts --dataflow GFS_COFOG --indicator G2 --country SWE --years 5  # 02 Defence (FöU)
+```
+
+**Provider decision (memorise this):**
+
+| Need | Use |
+|---|---|
+| GDP, growth, unemployment, inflation, fiscal balance, debt, current account, trade flows, commodity prices, exchange rates, gov spending by function | **IMF** |
+| Governance (CC.EST, RL.EST, VA.EST, GE.EST, RQ.EST, PV.EST), environment, social/education residue, defence depth | **World Bank** |
+| Swedish monthly labour, regional, budget execution | **SCB** |
+| Parliamentary docs, votes, MPs, speeches | **Riksdag MCP** |
+
+**Output discipline:** every economic claim in an article emits an `economicProvenance` block (provider, dataflow, indicator, vintage, retrieved_at). Banned phrases ("the World Bank reports Swedish GDP growth of...", "WB projects...") block CI.
 
 ---
 
-**Last Updated**: 2026-04-16
-**Version**: 3.2
+**Last Updated**: 2026-04-24
+**Version**: 3.3

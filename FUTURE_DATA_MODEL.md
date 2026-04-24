@@ -1733,3 +1733,89 @@ stateDiagram-v2
 **📅 Effective Date:** 2026-02-24  
 **⏰ Next Review:** 2027-02-24  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+
+---
+
+## 🌐 IMF Data Domain (Future Schema)
+
+> **Status:** PRIMARY economic-data domain in the AWS Aurora serverless target.
+> **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### Aurora schema (target state)
+
+```sql
+-- Vintage-stamped IMF cache
+CREATE TABLE imf_cache (
+    dataflow         TEXT NOT NULL,        -- 'WEO' | 'FM' | 'IFS' | 'BOP' | 'DOTS' | 'GFS_COFOG' | 'PCPS' | 'ER' | 'MFS_IR' | 'MFS_PR'
+    indicator        TEXT NOT NULL,        -- 'NGDP_RPCH' | 'PCPIPCH' | 'GGXWDG_NGDP' | ...
+    country          TEXT NOT NULL,        -- ISO-3 (SWE / NOR / DNK / FIN / USA / DEU / ...)
+    vintage_label    TEXT NOT NULL,        -- '2026-04' (Apr WEO) | '2026-10' (Oct WEO) | '2026-Q1' (FM)
+    period_start     DATE NOT NULL,
+    period_end       DATE NOT NULL,
+    value            DOUBLE PRECISION,
+    is_projection    BOOLEAN NOT NULL,
+    methodology      TEXT,                 -- 'SNA 2008' | 'GFSM 2014' | 'BPM6'
+    sha256_payload   CHAR(64) NOT NULL,    -- integrity pin
+    retrieved_at     TIMESTAMPTZ NOT NULL,
+    supersedes       UUID REFERENCES imf_cache(id),
+    PRIMARY KEY (dataflow, indicator, country, vintage_label, period_start)
+);
+CREATE INDEX imf_cache_country_period ON imf_cache(country, period_start);
+CREATE INDEX imf_cache_vintage_freshness ON imf_cache(vintage_label, retrieved_at);
+
+-- Article-claim provenance: every economic claim links back to IMF row
+CREATE TABLE article_economic_provenance (
+    article_id       UUID NOT NULL,
+    claim_id         UUID NOT NULL,
+    provider         TEXT NOT NULL CHECK (provider IN ('imf','worldBank','scb')),
+    dataflow         TEXT,
+    indicator        TEXT,
+    vintage_label    TEXT,
+    cite_text        TEXT NOT NULL,
+    PRIMARY KEY (article_id, claim_id)
+);
+```
+
+### `EconomicDataSource` discriminated union (TypeScript / Aurora target)
+
+```ts
+export type EconomicDataSource =
+  | { provider: "imf"; dataflow: ImfDataflow; indicator: string; vintage: string; isProjection: boolean }
+  | { provider: "scb"; tableId: string; period: string }
+  | { provider: "worldBank"; indicatorCode: string; year: number /* non-economic only */ };
+
+export type ImfDataflow =
+  | "WEO" | "FM" | "IFS" | "BOP" | "DOTS"
+  | "GFS_COFOG" | "PCPS" | "ER" | "MFS_IR" | "MFS_PR";
+```
+
+### Provider decision matrix (data-domain view)
+
+
+| Indicator class | Primary | Secondary | Why |
+|---|---|---|---|
+| Macro (GDP, growth, unemployment, inflation, fiscal balance, debt, current account) | **IMF WEO + Fiscal Monitor** | SCB (Sweden monthly) | Freshness + T+5 projections; SNA 2008 / GFSM 2014 / BPM6 cross-country comparability |
+| Bilateral trade flows | **IMF DOTS** | — | Partner-country dimension, monthly cadence |
+| Monthly inflation, policy rates | **IMF IFS / MFS_IR** | SCB / Riksbank | Standardised cross-country |
+| Government spending by function (defence/health/education/social protection) | **IMF GFS_COFOG** | — | Committee-aligned (FöU/SoU/UbU/SfU) |
+| Commodity prices, exchange rates | **IMF PCPS / ER** | — | Canonical benchmarks |
+| Governance (CC.EST, RL.EST, VA.EST, GE.EST, RQ.EST, PV.EST) | **World Bank WGI** | — | IMF has no equivalent |
+| Environment (CO2, renewables, forest, water) | **World Bank** | — | IMF has no equivalent |
+| Social/education residue (literacy, school participation, gender ratios) | **World Bank** | GFS_COFOG 09 | IMF has no equivalent |
+| Defence spending depth (long historicals) | **World Bank MS.MIL.*** | GFS_COFOG 02 | WB deeper history |
+| Swedish ground truth (monthly labour, regional, budget execution) | **SCB** | — | National statistics authority |
+
+
+### IMF data classification (Aurora row-level)
+
+| Attribute | Value |
+|---|---|
+| Confidentiality | **PUBLIC** (no PII; no licence restriction beyond attribution) |
+| Integrity target | **HIGH** (SHA-256 payload pin + vintage-label key + supersedes pointer) |
+| Availability target | **STANDARD** (≥99.5% — degrades to last cached vintage) |
+| RTO | 24 h (BCPPlan §IMF) |
+| RPO | N/A — read-only public data |
+| Retention | 5 years rolling cache; permanent vintage-label preservation for audit trail |
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

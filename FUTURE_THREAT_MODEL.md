@@ -490,3 +490,36 @@ flowchart LR
 
 **🎯 Framework Alignment:**  
 [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Compliant-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![OWASP](https://img.shields.io/badge/OWASP-LLM_Top_10_Compliant-purple?style=flat-square&logo=owasp&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md) [![EU AI Act](https://img.shields.io/badge/EU_AI_Act-Limited_Risk_Compliant-darkblue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/EU_AI_Act_Compliance.md)
+
+
+---
+
+## 🌐 Future IMF Threat Model (STRIDE expansion)
+
+> **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### STRIDE rows for IMF integration
+
+| ID | Element | STRIDE | Description | Likelihood | Impact | Mitigation |
+|---|---|---|---|---|---|---|
+| **T-IMF-F-01** | IMF cache (Aurora) | **T**ampering | Vintage substitution attack — older WEO vintage swapped for newer label | LOW | HIGH | SHA-256 payload pin + immutable supersedes-chain + CloudTrail audit |
+| **T-IMF-F-02** | IMF egress path | **D**oS | Workflow exhausts IMF rate limit (~30 req/min) → blocks legitimate articles | MEDIUM | MEDIUM | Cache-first; ≤30 req/min self-imposed; exponential back-off; metric alarm |
+| **T-IMF-F-03** | IMF payload | **R**epudiation | Article cites "IMF projects 2.1% growth" without vintage label → unauditable | MEDIUM | MEDIUM | `economicProvenance` row required for every economic claim; `cite_text` mandatory |
+| **T-IMF-F-04** | IMF Datamapper schema | **T**ampering | Upstream schema change between WEO Apr/Oct cycles silently corrupts cache | LOW | HIGH | Version-pinned client guard; CI integration test against IMF sandbox |
+| **T-IMF-F-05** | IMF data licence | **R**epudiation | Article reuses IMF figure without attribution (licence violation) | LOW | MEDIUM | Article footer template auto-emits IMF citation block; lint enforces |
+| **T-IMF-F-06** | IMF cache fallback | **I**nformation disclosure | Stale vintage served to readers as current | LOW | MEDIUM | Vintage-age badge (yellow >3mo, red >6mo); ECONOMIC_DATA_CONTRACT v2.1 banned phrases |
+| **T-IMF-F-07** | IMF + SCB cross-validation | **T**ampering | IMF SWE figure diverges >0.3pp from SCB national-accounts (silent error) | LOW | MEDIUM | Quarterly cross-validation worker opens editorial-review issue |
+| **T-IMF-F-08** | IMF script supply chain | **E**levation | `tsx scripts/imf-fetch.ts` execution path tampered upstream | LOW | HIGH | Script in-repo; reviewed; no dynamic eval; harden-runner egress audit |
+
+### Mapping to MITRE ATT&CK (data-source threats)
+
+| Tactic | Technique | IMF-specific application |
+|---|---|---|
+| TA0006 Credential Access | T1552 Unsecured credentials | N/A — IMF API is unauthenticated; **risk eliminated by design** |
+| TA0007 Discovery | T1083 File and directory discovery | Cache directory permissions (read-only to article workers) |
+| TA0009 Collection | T1530 Cloud storage object | Aurora row-level access controls |
+| TA0040 Impact | T1485 Data destruction | Supersedes-chain prevents destructive overwrite |
+
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

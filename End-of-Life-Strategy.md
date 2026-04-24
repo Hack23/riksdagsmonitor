@@ -444,3 +444,37 @@ The ongoing maintenance strategy aligns with Hack23 AB's [ISMS-PUBLIC framework]
 **📅 Effective Date:** 2026-03-18  
 **⏰ Next Review:** 2027-03-18  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+
+---
+
+## 🌐 IMF Cached Datasets — End-of-Life Preservation
+
+> **Effective:** 2026-04-24 · **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### IMF data preservation at platform sunset
+
+| Asset | Preservation strategy | Rationale |
+|---|---|---|
+| `analysis/imf/indicators-inventory.json` | Archived in final `analysis/` snapshot; mirrored to Internet Archive | Schema documents what we cached |
+| `analysis/imf/data-dictionary.md` | Archived; mirrored | Reproducibility of vintage interpretation |
+| `analysis/imf/agentic-integration.md` | Archived; mirrored | Reproducibility of integration pattern |
+| Vintage-tagged IMF cache (`analysis/daily/*/economic-data.json`) | **Preserved in full** in archival snapshot | Provenance integrity — never delete |
+| `economicProvenance` blocks in articles | Preserved (immutable) | Article-level audit trail |
+| SHA-256 cache pin index | Preserved | Integrity verification post-sunset |
+
+### IMF licence at end-of-life
+
+The IMF data licence (attribution required, redistribution permitted) survives platform sunset. Archived IMF-cached data may be redistributed by successor projects provided the IMF attribution remains intact.
+
+### Successor-project handoff
+
+Future maintainers inheriting Riksdagsmonitor receive:
+1. The vintage-tagged IMF cache (full historical depth at sunset moment)
+2. The `scripts/imf-*.ts` runtime (reusable in any TypeScript context)
+3. The IMF integration playbook (`agentic-integration.md`)
+4. The IMF threat model (`THREAT_MODEL.md` §IMF + `FUTURE_THREAT_MODEL.md` §IMF)
+
+This enables a successor to either continue IMF integration immediately or migrate to a different economic-data provider (with full provenance for the data they inherit).
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

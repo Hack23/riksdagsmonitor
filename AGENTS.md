@@ -916,3 +916,37 @@ All agents follow these standards:
 
 **Last Updated**: 2026-02-20  
 **Maintained by**: Hack23 AB
+
+
+---
+
+## 🌐 IMF as Primary Economic-Data Canon (Cross-Agent Rule)
+
+> **Effective:** 2026-04-24 · **Owner:** CEO · **Authority:** [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1
+
+**Every persona agent that produces, validates, or visualises economic data MUST default to IMF as the primary economic-data source.** This rule supersedes any earlier WB-centric guidance in individual agent files.
+
+### Authoritative IMF hub for agents
+
+[`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### Agent-by-agent IMF responsibility
+
+| Agent | IMF responsibility | Primary IMF dataflow |
+|---|---|---|
+| `intelligence-operative` | Cite IMF projections in scenario analysis (T+5); cross-validate IMF SWE vs SCB | WEO + FM + GFS_COFOG |
+| `news-journalist` | Lead every economic claim with IMF citation; emit `economicProvenance.provider: imf` | WEO + FM + IFS + DOTS |
+| `content-generator` | Render IMF dashboards in automated daily articles; vintage-aware | WEO + FM + IFS |
+| `data-pipeline-specialist` | Own `scripts/imf-context.ts`, `imf-fetch.ts`, `imf-client.ts`, `imf-codes.ts`; vintage cache | All IMF dataflows |
+| `data-visualization-specialist` | IMF dataflow registry as single source of truth for chart axes; vintage badge (yellow >3mo, red >6mo) | WEO + FM + ER + PCPS |
+| `security-architect` | IMF egress allow-list (`www.imf.org`, `sdmxcentral.imf.org`); SHA-256 payload pin; vintage discipline | (security control surface) |
+| `isms-compliance-manager` | IMF data classification: PUBLIC / no PII / GDPR DPIA short-circuit | (compliance evidence) |
+| `documentation-architect` | IMF as first-class C4 container in ARCHITECTURE.md; mirror IMF sequence diagram from `agentic-integration.md` | (architectural surface) |
+| `quality-engineer` | `tests/imf-context.test.ts`, `tests/imf-inventory.test.ts`, `tests/imf-precedence-contract.test.ts` | (test surface) |
+| `devops-engineer` | IMF CLI smoke check in `mcp-setup.sh`; IMF host in `copilot-setup-steps.yml` allow-list | (operational surface) |
+| `deployment-specialist` | IMF egress allow-list in CDN / WAF config | (deployment surface) |
+| `frontend-specialist` | IMF data renders in dashboard HTML/CSS with vintage badge | (UI surface) |
+| `ui-enhancement-specialist` | CSS-only IMF data visualisations (forecast cones for WEO projections) | (UI surface) |
+| `task-agent` | IMF coverage in product analysis matrix; create issues for IMF gaps | (PM surface) |
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

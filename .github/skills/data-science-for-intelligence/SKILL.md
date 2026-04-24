@@ -874,3 +874,30 @@ This skill is consumed by the 12 agentic news workflows in `.github/workflows/ne
 - **Analysis product** → [`ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + every template in [`analysis/templates/`](../../../analysis/templates/).
 - **Required before any article**: 9 core artifacts (14 for Tier-C) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`; [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) is the single blocking gate.
 - **gh-aw v0.69.3** docs: [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
+
+
+---
+
+## 🌐 IMF as Primary Source for Cross-Country Economic Panels
+
+> **Effective:** 2026-04-24
+
+### IMF data quality controls in statistical analysis
+
+| Control | Implementation |
+|---|---|
+| Vintage discipline | Tag every IMF observation with `vintage_label` (e.g., `2026-04` for April WEO); never silently overwrite |
+| Supersedes-chain | When new vintage publishes, link via `supersedes` pointer; preserves audit trail |
+| Methodology consistency | SNA 2008 / GFSM 2014 / BPM6 — uniform across all member countries |
+| Projection-vs-observation flag | `is_projection: true/false` on every WEO/FM observation |
+| Cross-validation against SCB | For Sweden-specific quarterly figures, IMF + SCB compared; >0.3pp delta opens issue |
+
+### Statistical pipelines using IMF data
+
+- **Cross-country panel regressions** — IMF WEO provides balanced panel (190+ countries × 50+ years) on uniform methodology
+- **Time-series forecasting** — IMF WEO + FM projections (T+5) feed scenario analysis; vintage-stamped for backtesting
+- **Bilateral trade network analysis** — IMF DOTS provides directed bilateral flows (monthly) for Swedish trade-partner network
+- **Commodity-price pass-through models** — IMF PCPS provides canonical price benchmarks
+- **Fiscal-multiplier estimation** — IMF GFS_COFOG provides function-level spending decomposition
+
+**Canonical data-science rule:** Every statistical analysis on economic data uses IMF as the primary source; vintage labels preserved through analytical pipeline; provenance recorded in output. See [`analysis/imf/data-dictionary.md`](../../../analysis/imf/data-dictionary.md) and [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1.

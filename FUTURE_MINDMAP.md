@@ -866,3 +866,62 @@ mindmap
 **📅 Effective Date:** 2026-02-25  
 **⏰ Next Review:** 2026-05-25  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+
+---
+
+## 🌐 IMF Branch (Future Data Sources Mindmap)
+
+> **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+```mermaid
+mindmap
+  root((Riksdagsmonitor Data Sources))
+    IMF [PRIMARY ECONOMIC]
+      WEO
+        NGDP_RPCH (real GDP growth, T+5 projections)
+        PCPIPCH (CPI inflation)
+        LUR (unemployment rate)
+        GGXWDG_NGDP (general government debt %GDP)
+        BCA_NGDPD (current account %GDP)
+      Fiscal Monitor (FM)
+        Cyclically-adjusted balance
+        Primary balance
+        EDP-consistent debt
+      IFS
+        Monthly CPI
+        Policy rates
+        Reserves
+      BOP
+        Balance of payments quarterly
+      DOTS
+        Bilateral trade flows monthly
+      GFS_COFOG
+        02 Defence (FöU)
+        07 Health (SoU)
+        09 Education (UbU)
+        10 Social protection (SfU)
+      PCPS
+        Commodity benchmarks
+      ER
+        SEK exchange rates daily
+      MFS_IR / MFS_PR
+        Monetary survey
+    World Bank [NON-ECONOMIC RESIDUE]
+      WGI Governance (CC.EST, RL.EST, VA.EST, GE.EST, RQ.EST, PV.EST)
+      Environment (CO2, renewables, forest)
+      Social residue (education participation)
+      Defence depth (MS.MIL.* historicals)
+    SCB [SWEDISH GROUND TRUTH]
+      AKU monthly labour
+      KPI monthly inflation
+      Regional / municipal
+      Budget execution
+    Riksdag Open Data [PARLIAMENTARY PRIMARY]
+      Documents (mot, prop, bet, skr)
+      Voteringar
+      Anföranden
+      Ledamöter
+```
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

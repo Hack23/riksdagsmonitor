@@ -1813,3 +1813,41 @@ This gh-aw skill is applied by the 12 agentic news workflows in `.github/workflo
 - [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) — the single blocking gate before any article content is written.
 
 **Upstream gh-aw docs** (v0.69.3): [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [source repo](https://github.com/github/gh-aw) · [GitHub CLI manual](https://cli.github.com/manual/).
+
+
+---
+
+## 🌐 IMF Integration is Intentionally Non-MCP (CLI Pattern)
+
+> **Effective:** 2026-04-24
+
+### Why IMF is a CLI, not an MCP server
+
+The IMF integration in Riksdagsmonitor is delivered as a **TypeScript CLI** (`tsx scripts/imf-fetch.ts`), not as an MCP server. This is a conscious architectural decision documented here to prevent future contributors from "fixing" the omission:
+
+1. **No upstream MCP server exists** for IMF data (as of 2026-04-24)
+2. **Two endpoints to unify** — IMF Datamapper REST and IMF SDMX 3.0; CLI wraps both behind one interface
+3. **Vintage discipline requires deterministic logic** — vintage labelling, supersedes-chain, SHA-256 pinning are easier to express in TypeScript than MCP tool descriptors
+4. **Cache is filesystem-native** — `analysis/imf/` + `analysis/daily/*/economic-data.json` are git-tracked artefacts; MCP servers would add an indirection layer
+
+### MCP servers in `.github/copilot-mcp.json`
+
+| Server | Coverage |
+|---|---|
+| `riksdag-regering-mcp` | Swedish parliamentary primary source |
+| `scb-mcp` | Swedish national statistics (PxWeb v2) |
+| `worldbank-mcp` | Governance (WGI), environment, social residue **only** — economic codes deprecated (use IMF CLI) |
+
+### Calling IMF from agentic workflows
+
+```yaml
+# In a news-*.md workflow:
+tools:
+  bash: true              # required for `tsx scripts/imf-fetch.ts ...`
+network:
+  allowed:
+    - www.imf.org           # Datamapper REST
+    - sdmxcentral.imf.org   # SDMX 3.0
+```
+
+See [`analysis/imf/agentic-integration.md`](../../../analysis/imf/agentic-integration.md) for the seven-step integration contract.

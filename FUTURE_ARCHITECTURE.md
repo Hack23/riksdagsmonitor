@@ -1951,3 +1951,72 @@ Riksdagsmonitor's future architecture represents a strategic evolution from a st
 **📅 Effective Date:** 2026-02-24  
 **⏰ Next Review:** 2026-05-20  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![AWS Well-Architected](https://img.shields.io/badge/AWS-Well_Architected-FF9900?style=flat-square&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/architecture/well-architected/)
+
+
+---
+
+## 🌐 IMF Integration in the Future Serverless Architecture
+
+> **Decision:** IMF is the **primary economic-data container** in the AWS-serverless target state. World Bank is retained as a *non-economic* container (governance / environment / social residue). SCB remains the Swedish-specific national-statistics layer.
+>
+> **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### IMF as a first-class C4 container (target state 2027–2030)
+
+```mermaid
+C4Container
+    title IMF in the Future Container View
+    Person(reader, "Reader / Researcher", "Riksdagsmonitor.com")
+    System_Boundary(rm, "Riksdagsmonitor — AWS Serverless") {
+        Container(api, "API Gateway", "REST / WebSocket", "Edge entry")
+        Container(lambda, "Lambda Workers", "Node 25 / TypeScript", "News + analysis pipeline")
+        Container(bedrock, "Amazon Bedrock", "Claude Sonnet · Haiku", "AI analysis")
+        Container(neptune, "Neptune Graph", "Property graph", "Political relationships")
+        Container(aurora, "Aurora Serverless", "PostgreSQL", "Time-series + voting")
+        Container(opensearch, "OpenSearch Vector", "k-NN", "Semantic article search")
+        Container(s3, "S3 + CloudFront", "Static + cache", "Public site")
+    }
+    System_Ext(imf, "IMF Public APIs", "Datamapper REST + SDMX 3.0 — PRIMARY ECONOMIC")
+    System_Ext(wb, "World Bank API", "Governance · environment · social residue")
+    System_Ext(scb, "SCB PxWeb v2", "Swedish ground truth")
+    System_Ext(rd, "Riksdag Open Data", "Parliamentary primary source")
+    Rel(reader, api, "HTTPS")
+    Rel(api, lambda, "Invoke")
+    Rel(lambda, bedrock, "Generate")
+    Rel(lambda, imf, "WEO · FM · IFS · BOP · DOTS · GFS_COFOG · PCPS · ER · MFS")
+    Rel(lambda, wb, "WGI · environment only")
+    Rel(lambda, scb, "PxWeb (SE-specific)")
+    Rel(lambda, rd, "Riksdag API")
+    Rel(lambda, aurora, "Persist")
+    Rel(lambda, neptune, "Graph upsert")
+    Rel(lambda, opensearch, "Embed + index")
+    Rel(lambda, s3, "Publish")
+```
+
+### Provider decision matrix (target state — unchanged from current)
+
+
+| Indicator class | Primary | Secondary | Why |
+|---|---|---|---|
+| Macro (GDP, growth, unemployment, inflation, fiscal balance, debt, current account) | **IMF WEO + Fiscal Monitor** | SCB (Sweden monthly) | Freshness + T+5 projections; SNA 2008 / GFSM 2014 / BPM6 cross-country comparability |
+| Bilateral trade flows | **IMF DOTS** | — | Partner-country dimension, monthly cadence |
+| Monthly inflation, policy rates | **IMF IFS / MFS_IR** | SCB / Riksbank | Standardised cross-country |
+| Government spending by function (defence/health/education/social protection) | **IMF GFS_COFOG** | — | Committee-aligned (FöU/SoU/UbU/SfU) |
+| Commodity prices, exchange rates | **IMF PCPS / ER** | — | Canonical benchmarks |
+| Governance (CC.EST, RL.EST, VA.EST, GE.EST, RQ.EST, PV.EST) | **World Bank WGI** | — | IMF has no equivalent |
+| Environment (CO2, renewables, forest, water) | **World Bank** | — | IMF has no equivalent |
+| Social/education residue (literacy, school participation, gender ratios) | **World Bank** | GFS_COFOG 09 | IMF has no equivalent |
+| Defence spending depth (long historicals) | **World Bank MS.MIL.*** | GFS_COFOG 02 | WB deeper history |
+| Swedish ground truth (monthly labour, regional, budget execution) | **SCB** | — | National statistics authority |
+
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
+
+### Architectural fitness controls
+
+- **IMF cache layer** (Aurora vintage table) — `imf_cache (dataflow, indicator, country, vintage_label, retrieved_at, payload_jsonb, sha256)`. Vintage-tagged keys prevent silent overwrite when WEO Apr→Oct cycle ships.
+- **Vintage-discipline circuit breaker** — Lambda layer rejects any payload whose newest observation is >6 months old without a `staleness_annotated=true` flag. Defends future articles against silent staleness.
+- **IMF + SCB cross-validation worker** — quarterly Lambda compares IMF SWE GDP/CPI vs SCB national-accounts; deltas >0.3 pp open an editorial-review issue.
+- **IMF + WB dual-provider audit** — daily Step Functions workflow `economic-coverage-audit` emits provider-mix telemetry (`imf% / wb% / scb%`) into CloudWatch; alarm if WB economic-citation share rises above 5%.
+
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.

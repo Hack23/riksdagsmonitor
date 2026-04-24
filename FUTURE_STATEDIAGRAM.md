@@ -937,3 +937,47 @@ stateDiagram-v2
 **📅 Effective Date:** 2026-02-25  
 **⏰ Next Review:** 2026-05-25  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+
+---
+
+## 🌐 IMF Cache & Vintage State Machine (Future)
+
+> **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+```mermaid
+stateDiagram-v2
+    [*] --> Empty: imf_cache row absent
+    Empty --> Fetching: news-* worker requests dataflow/indicator/country
+    Fetching --> Fresh: payload ≤6 months old · SHA-256 pinned
+    Fetching --> Stale: payload >6 months old
+    Fetching --> RateLimited: HTTP 429
+    Fetching --> Failed: HTTP 5xx / timeout
+    Fresh --> Used: article cites with full confidence
+    Stale --> Annotated: staleness_annotated=true required
+    Annotated --> Used: article cites with downgraded confidence
+    RateLimited --> Backoff: exponential 2^n seconds
+    Backoff --> Fetching: retry
+    Failed --> CacheFallback: serve last known vintage
+    CacheFallback --> Used: article cites with cache-fallback annotation
+    Used --> [*]
+
+    state Used {
+        [*] --> ProvenanceLogged: article_economic_provenance row inserted
+        ProvenanceLogged --> [*]
+    }
+```
+
+### Vintage transition (WEO Apr → Oct example)
+
+```mermaid
+stateDiagram-v2
+    [*] --> WEO_2026_04: April WEO published
+    WEO_2026_04 --> WEO_2026_10: October WEO published (supersedes)
+    WEO_2026_04 --> Archived: superseded; preserved for audit-trail
+    WEO_2026_10 --> WEO_2027_04: April 2027 WEO publishes
+    WEO_2026_10 --> Archived
+    Archived --> [*]: never deleted (provenance integrity)
+```
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

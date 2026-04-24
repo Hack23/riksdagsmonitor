@@ -2960,3 +2960,35 @@ Riksdagsmonitor-specific security practices for civic transparency platforms.
 
 **🎯 Framework Alignment:**  
 [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Compliant-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![OWASP](https://img.shields.io/badge/OWASP-LLM_Top_10_Compliant-purple?style=flat-square&logo=owasp&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md) [![EU AI Act](https://img.shields.io/badge/EU_AI_Act-Limited_Risk_Compliant-darkblue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/EU_AI_Act_Compliance.md)
+
+
+---
+
+## 🌐 IMF Integration — STRIDE Threats (Current State)
+
+> **Effective:** 2026-04-24 · **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### IMF-specific STRIDE threats
+
+| ID | Element | STRIDE | Description | Likelihood | Impact | Mitigation |
+|---|---|---|---|---|---|---|
+| **T-IMF-01** | IMF cache (filesystem) | **T**ampering | Vintage substitution — older WEO vintage swapped for newer label | LOW | HIGH | Vintage-tagged filenames; SHA-256 pin in cache index; supersedes-chain audit |
+| **T-IMF-02** | IMF egress path | **I**nformation disclosure | None — IMF data is public macro statistics; no PII; no credentials transmitted | N/A | N/A | Risk eliminated by design |
+| **T-IMF-03** | IMF API | **D**oS | Workflow exceeds IMF rate limit (~30 req/min) → blocks article generation | MEDIUM | MEDIUM | Cache-first; self-imposed ≤30 req/min; exponential back-off; documented in `analysis/imf/agentic-integration.md` |
+| **T-IMF-04** | IMF citation in article | **R**epudiation | Article cites "IMF projects X" without vintage label → unauditable claim | MEDIUM | MEDIUM | `economicProvenance` block required in front-matter; ECONOMIC_DATA_CONTRACT v2.1 banned phrases |
+| **T-IMF-05** | `tsx scripts/imf-fetch.ts` | **E**levation of privilege | Supply-chain tampering of IMF fetch script | LOW | HIGH | Script in-repo; reviewed; no dynamic eval; harden-runner egress audit |
+| **T-IMF-06** | IMF data licence | **R**epudiation | Article reuses IMF figure without attribution | LOW | MEDIUM | Article footer template auto-emits IMF citation; lint enforces |
+| **T-IMF-07** | IMF cache fallback | **S**poofing | Stale cached vintage served as current → reader misinformed | LOW | MEDIUM | Vintage-age annotation rule (>6 mo → flagged); ECONOMIC_DATA_CONTRACT v2.1 |
+
+### IMF mitigations cross-reference
+
+All mitigations are codified in:
+- `analysis/imf/data-dictionary.md` — vintage discipline + dataflow quirks
+- `analysis/imf/agentic-integration.md` — seven-step integration contract
+- `.github/aw/ECONOMIC_DATA_CONTRACT.md` — banned phrases + provenance schema
+- `scripts/imf-context.ts` — runtime enforcement
+- `tests/imf-context.test.ts` + `tests/imf-inventory.test.ts` — regression prevention
+
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

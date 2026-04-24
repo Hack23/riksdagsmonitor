@@ -945,3 +945,53 @@ This Future Security Architecture demonstrates Hack23 AB's commitment to **proac
   <img src="https://img.shields.io/badge/NIS2-Ready-purple?style=flat-square" alt="NIS2"/>
   <img src="https://img.shields.io/badge/GDPR-Compliant-red?style=flat-square" alt="GDPR"/>
 </p>
+
+
+---
+
+## 🌐 IMF in the Future Security Architecture
+
+> **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+### Trust boundary (target zero-trust state)
+
+```mermaid
+flowchart LR
+    subgraph Trusted["Trust Boundary — Riksdagsmonitor (AWS GovCloud-like posture)"]
+        Lambda[Lambda Workers · IMF context]
+        Cache[(Aurora · imf_cache · SHA-256 + vintage pin)]
+        Audit[CloudTrail + GuardDuty]
+    end
+    subgraph Public["Public-Internet · IMF Open APIs (no auth)"]
+        Datamapper[www.imf.org/external/datamapper/api/v1]
+        SDMX[sdmxcentral.imf.org]
+    end
+    Lambda -- HTTPS · TLS 1.3 · pinned SHA-256 --> Datamapper
+    Lambda -- HTTPS · TLS 1.3 · pinned SHA-256 --> SDMX
+    Datamapper -. JSON payload .-> Lambda
+    SDMX -. SDMX-JSON payload .-> Lambda
+    Lambda --> Cache
+    Lambda --> Audit
+```
+
+### IMF-specific controls (mapped to target frameworks)
+
+| Control | Implementation | ISO 27001 | NIST CSF 2.0 | CIS v8.1 |
+|---|---|---|---|---|
+| **Egress allow-list** | Squid + iptables limit egress to `www.imf.org`, `sdmxcentral.imf.org` only | A.13.1 | PR.AC-5 | 13.4 |
+| **Payload integrity** | SHA-256 pin per (dataflow, indicator, country, vintage); supersedes-chain | A.8.2 | PR.DS-6 | 3.11 |
+| **Vintage discipline** | Reject payload >6 mo old without staleness annotation | A.8.10 | PR.DS-1 | 3.5 |
+| **Rate-limit guard** | ≤30 req/min self-imposed; exponential back-off; emits metric | A.13.1 | PR.AC-4 | 4.7 |
+| **Provenance audit** | Every article-claim row in `article_economic_provenance` | A.5.28 | DE.AE-3 | 8.2 |
+| **No auth, no PII** | IMF data is anonymous public macro statistics; GDPR DPIA short-circuit | A.5.34 | GV.OV | 14.2 |
+
+### Future BIA addition
+
+| Asset | Confidentiality | Integrity | Availability | RTO | RPO |
+|---|---|---|---|---|---|
+| IMF cache (Aurora) | PUBLIC | HIGH | STANDARD | 24h | N/A |
+| IMF API egress path | PUBLIC | HIGH | STANDARD | 24h (fallback to last cached vintage) | N/A |
+
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).

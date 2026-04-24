@@ -1217,3 +1217,24 @@ This skill is consumed by the 12 agentic news workflows in `.github/workflows/ne
 - **Analysis product** → [`ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + every template in [`analysis/templates/`](../../../analysis/templates/).
 - **Required before any article**: 9 core artifacts (14 for Tier-C) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`; [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) is the single blocking gate.
 - **gh-aw v0.69.3** docs: [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
+
+
+---
+
+## 🌐 IMF as Primary Source for Economic Risk Indicators
+
+> **Effective:** 2026-04-24
+
+### IMF risk-indicator matrix
+
+| Risk dimension | IMF source | Indicator(s) | Threshold of concern |
+|---|---|---|---|
+| Sovereign debt sustainability | IMF WEO + Fiscal Monitor | `GGXWDG_NGDP` (general government debt %GDP), `GGXWDN_NGDP` (net debt) | >60% (Maastricht) / >90% (Rogoff–Reinhart) |
+| Fiscal deficit | IMF WEO + FM | `GGXCNL_NGDP` (overall balance), `GGSB_NPGDP` (cyclically-adjusted) | <-3% (Maastricht), <-1% structural |
+| External vulnerability | IMF WEO + BOP | `BCA_NGDPD` (current account %GDP), reserves coverage | <-4% (warning), <-6% (acute) |
+| Inflation pressure | IMF WEO + IFS | `PCPIPCH` (CPI inflation) | >Riksbank target +200bps |
+| Growth slowdown | IMF WEO | `NGDP_RPCH` (real GDP growth, T+5 projections) | <0% any year in 5-year horizon |
+| Trade exposure | IMF DOTS | Bilateral concentration index | top-3 partner share >50% |
+| Commodity-price exposure | IMF PCPS | Energy/food index volatility | rolling stdev >threshold |
+
+**Canonical risk rule:** Every economic-risk assessment in Riksdagsmonitor uses IMF as the primary source for the risk indicator and IMF projections (T+5) for the forward-looking risk horizon. World Bank governance indicators (WGI) supplement for political-risk dimension. See [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1 and [`analysis/imf/agentic-integration.md`](../../../analysis/imf/agentic-integration.md).
