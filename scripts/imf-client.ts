@@ -84,6 +84,15 @@ const DEFAULT_MAX_RETRIES = 2;
 /** Default vintage. Update in April / October when the WEO re-releases. */
 const DEFAULT_WEO_VINTAGE = 'WEO-2026-04';
 
+/** Base delay (ms) for the exponential back-off used on 429 / 5xx / network errors. */
+const RETRY_BASE_DELAY_MS = 1_000;
+/**
+ * Cap applied to a server-supplied `Retry-After` header so that a
+ * misbehaving origin cannot pin the client in a multi-minute sleep.
+ * Matches THREAT_MODEL.md TB-6a (resource-exhaustion via cooperative back-off).
+ */
+const RETRY_AFTER_CAP_MS = 30_000;
+
 /**
  * Canonical IMF indicator IDs used by Riksdagsmonitor articles. Each
  * entry is addressable via the Datamapper (`/{indicatorId}`) — the
@@ -200,41 +209,40 @@ export class ImfClient {
     const url = `${this.datamapperBaseURL}/${encodeURIComponent(weoCode)}/${encodeURIComponent(code)}`;
     const raw = (await this.fetchWithRetry(url)) as DatamapperResponse;
 
-    const indicatorNode = raw?.values?.[weoCode];
-    if (!indicatorNode) return [];
-    const countryNode = indicatorNode[code];
-    if (!countryNode) return [];
-
-    const currentYear = new Date().getUTCFullYear();
-    const points: ImfDataPoint[] = [];
-    for (const [year, rawValue] of Object.entries(countryNode)) {
-      // Defensive: IMF can emit null / 'n/a' / undefined for missing
-      // observations. `Number(null)` === 0, which would silently inject
-      // a bogus zero into the chart — gate on explicit null/undefined
-      // and then on NaN from string coercion.
-      if (rawValue === null || rawValue === undefined) continue;
-      const numeric = typeof rawValue === 'number' ? rawValue : Number(rawValue);
-      if (!Number.isFinite(numeric)) continue;
-      const yearInt = Number.parseInt(year, 10);
-      if (!Number.isFinite(yearInt)) continue;
-      const isProjection = yearInt > currentYear;
-      const dp: ImfDataPoint = {
-        countryCode: code,
-        countryName: code, // Datamapper does not return the display name; callers overlay this from COUNTRY_NAMES_EN
-        indicatorId: weoCode,
-        indicatorName: weoCode,
-        date: year,
-        value: numeric,
-        projection: isProjection,
-        provider: 'imf',
-        ...(isProjection ? { projectionVintage: this.weoVintage } : {}),
-      };
-      points.push(dp);
-    }
-
-    // Sort by year desc, then truncate to the requested horizon.
-    points.sort((a, b) => Number.parseInt(b.date, 10) - Number.parseInt(a.date, 10));
+    const points = parseDatamapperValues(raw, weoCode, code, this.weoVintage);
     return points.slice(0, years);
+  }
+
+  /**
+   * Fetch several WEO indicators for the **same** country in sequence.
+   * Sequential (not parallel) to respect the IMF rate limit of
+   * ~10 req / 5 s. Failures on individual indicators map to an empty
+   * array for that indicator so a single flaky series does not poison
+   * the whole batch — matches the fail-soft posture of
+   * {@link compareCountriesWeo}.
+   *
+   * Useful for article dashboards that need a full macro+fiscal panel
+   * for Sweden (GDP growth, inflation, unemployment, debt, balance).
+   *
+   * @param iso3 ISO-3 alpha-3 country code
+   * @param weoCodes WEO indicator codes (e.g. ['NGDP_RPCH', 'PCPIPCH', 'LUR'])
+   * @param years How many most-recent years per indicator (default 10)
+   */
+  async getWeoIndicatorsBatch(
+    iso3: string,
+    weoCodes: readonly string[],
+    years = 10,
+  ): Promise<Map<string, readonly ImfDataPoint[]>> {
+    const out = new Map<string, readonly ImfDataPoint[]>();
+    for (const weoCode of weoCodes) {
+      try {
+        const series = await this.getWeoIndicator(iso3, weoCode, years);
+        out.set(weoCode, series);
+      } catch {
+        out.set(weoCode, []);
+      }
+    }
+    return out;
   }
 
   /**
@@ -310,14 +318,7 @@ export class ImfClient {
         // exponential back-off: 1 s → 2 s → 4 s (matches THREAT_MODEL.md
         // TB-6a). Honour a `Retry-After` header (delta-seconds) when the
         // server supplies one, capped at 30 s to avoid pathological waits.
-        const retryAfter = response.headers.get('retry-after');
-        let delay = 1_000 * 2 ** attempt;
-        if (retryAfter) {
-          const retryAfterSec = Number.parseInt(retryAfter, 10);
-          if (Number.isFinite(retryAfterSec) && retryAfterSec > 0) {
-            delay = Math.min(retryAfterSec * 1_000, 30_000);
-          }
-        }
+        const delay = calculateRetryDelay(attempt, response.headers.get('retry-after'));
         clearTimeout(timeoutId);
         await new Promise((resolve) => setTimeout(resolve, delay));
         return this.fetchWithRetry(url, attempt + 1, extraHeaders);
@@ -331,7 +332,7 @@ export class ImfClient {
     } catch (error) {
       if (attempt < this.maxRetries) {
         // Network / abort path: same exponential schedule (1 s → 2 s → 4 s).
-        const delay = 1_000 * 2 ** attempt;
+        const delay = calculateRetryDelay(attempt);
         await new Promise((resolve) => setTimeout(resolve, delay));
         return this.fetchWithRetry(url, attempt + 1, extraHeaders);
       }
@@ -340,6 +341,92 @@ export class ImfClient {
       clearTimeout(timeoutId);
     }
   }
+}
+
+// ---------------------------------------------------------------------------
+// Pure helpers (exported for testability)
+// ---------------------------------------------------------------------------
+
+/**
+ * Compute the retry delay (milliseconds) for a given attempt number.
+ *
+ * Strategy:
+ *  - Base schedule is exponential: 1 s → 2 s → 4 s (attempt 0/1/2).
+ *  - When the server supplies a `Retry-After` header (delta-seconds),
+ *    honour it, capped at {@link RETRY_AFTER_CAP_MS} to avoid pathological
+ *    multi-minute sleeps from a misbehaving origin.
+ *  - Invalid / non-positive `Retry-After` values fall back to the
+ *    exponential schedule.
+ *
+ * Exported to keep the retry math verifiable without spinning up an HTTP stub.
+ */
+export function calculateRetryDelay(
+  attempt: number,
+  retryAfterHeader?: string | null,
+): number {
+  const exponential = RETRY_BASE_DELAY_MS * 2 ** Math.max(0, attempt);
+  if (!retryAfterHeader) return exponential;
+  const retryAfterSec = Number.parseInt(retryAfterHeader, 10);
+  if (!Number.isFinite(retryAfterSec) || retryAfterSec <= 0) return exponential;
+  return Math.min(retryAfterSec * 1_000, RETRY_AFTER_CAP_MS);
+}
+
+/**
+ * Parse a raw Datamapper JSON envelope into canonical {@link ImfDataPoint}
+ * records for one `(indicator, country)` pair.
+ *
+ * Defensive posture:
+ *  - Missing indicator node → `[]`
+ *  - Missing country node → `[]`
+ *  - `null` / `undefined` / non-finite / `'n/a'` values dropped (no silent zeros)
+ *  - Non-numeric year keys dropped
+ *  - Output is sorted descending by year (newest first)
+ *
+ * Pure function: no I/O, no clocks except `new Date()` for projection
+ * detection. Exported so tests can exercise the parser directly without
+ * stubbing `fetch`.
+ */
+export function parseDatamapperValues(
+  raw: DatamapperResponse,
+  weoCode: string,
+  iso3: string,
+  weoVintage: string,
+): ImfDataPoint[] {
+  const indicatorNode = raw?.values?.[weoCode];
+  if (!indicatorNode) return [];
+  const countryNode = indicatorNode[iso3];
+  if (!countryNode) return [];
+
+  const currentYear = new Date().getUTCFullYear();
+  const points: ImfDataPoint[] = [];
+  for (const [year, rawValue] of Object.entries(countryNode)) {
+    // Defensive: IMF can emit null / 'n/a' / undefined for missing
+    // observations. `Number(null)` === 0, which would silently inject
+    // a bogus zero into the chart — gate on explicit null/undefined
+    // and then on NaN from string coercion.
+    if (rawValue === null || rawValue === undefined) continue;
+    const numeric = typeof rawValue === 'number' ? rawValue : Number(rawValue);
+    if (!Number.isFinite(numeric)) continue;
+    const yearInt = Number.parseInt(year, 10);
+    if (!Number.isFinite(yearInt)) continue;
+    const isProjection = yearInt > currentYear;
+    const dp: ImfDataPoint = {
+      countryCode: iso3,
+      countryName: iso3, // Datamapper does not return the display name; callers overlay this from COUNTRY_NAMES_EN
+      indicatorId: weoCode,
+      indicatorName: weoCode,
+      date: year,
+      value: numeric,
+      projection: isProjection,
+      provider: 'imf',
+      ...(isProjection ? { projectionVintage: weoVintage } : {}),
+    };
+    points.push(dp);
+  }
+
+  // Sort by year desc so consumers can slice newest-first.
+  points.sort((a, b) => Number.parseInt(b.date, 10) - Number.parseInt(a.date, 10));
+  return points;
 }
 
 // ---------------------------------------------------------------------------

@@ -10,6 +10,11 @@ import {
   IMF_INDICATORS,
   findImfIndicatorsForDomains,
   findImfIndicatorsForCommittee,
+  findImfIndicatorByCode,
+  findImfIndicatorByCitation,
+  getImfDatabasesInUse,
+  getImfCommitteeMatrix,
+  listImfCitations,
   IMF_NORDIC_PEERS,
   imfCountryNameEn,
   imfCitation,
@@ -116,6 +121,132 @@ describe('imf-context', () => {
       expect(imfCitation('WEO', 'NGDP_RPCH')).toBe('WEO:NGDP_RPCH');
       expect(imfCitation('FM', 'GGXONLB_NGDP')).toBe('FM:GGXONLB_NGDP');
       expect(imfCitation('GFS_COFOG', 'G01_GDP_PT')).toBe('GFS_COFOG:G01_GDP_PT');
+    });
+  });
+
+  describe('findImfIndicatorByCode', () => {
+    it('returns the matching indicator for a known (database, id) pair', () => {
+      const hit = findImfIndicatorByCode('WEO', 'NGDP_RPCH');
+      expect(hit?.indicatorId).toBe('NGDP_RPCH');
+      expect(hit?.database).toBe('WEO');
+      expect(hit?.name).toMatch(/Real GDP growth/i);
+    });
+
+    it('is case-insensitive on both arguments', () => {
+      const mixed = findImfIndicatorByCode('weo' as unknown as 'WEO', 'ngdp_rpch');
+      expect(mixed?.indicatorId).toBe('NGDP_RPCH');
+    });
+
+    it('returns undefined for an unknown indicator id', () => {
+      expect(findImfIndicatorByCode('WEO', 'NOT_A_REAL_CODE')).toBeUndefined();
+    });
+
+    it('returns undefined when database and id do not co-occur', () => {
+      // GGXWDG_NGDP exists in WEO but not in our curated IFS catalogue.
+      expect(findImfIndicatorByCode('IFS', 'GGXWDG_NGDP')).toBeUndefined();
+    });
+
+    it('resolves GFS_COFOG committee-aligned spending indicators', () => {
+      for (const id of ['G02', 'G07', 'G09', 'G10']) {
+        const hit = findImfIndicatorByCode('GFS_COFOG', id);
+        expect(hit?.database).toBe('GFS_COFOG');
+        expect(hit?.indicatorId).toBe(id);
+      }
+    });
+  });
+
+  describe('findImfIndicatorByCitation', () => {
+    it('parses a canonical DATABASE:INDICATOR citation', () => {
+      const hit = findImfIndicatorByCitation('WEO:NGDP_RPCH');
+      expect(hit?.indicatorId).toBe('NGDP_RPCH');
+    });
+
+    it('round-trips imfCitation for every catalogue entry', () => {
+      for (const ind of IMF_INDICATORS) {
+        const citation = imfCitation(ind.database, ind.indicatorId);
+        expect(findImfIndicatorByCitation(citation)).toBe(ind);
+      }
+    });
+
+    it('returns undefined for malformed citations', () => {
+      expect(findImfIndicatorByCitation('no-colon')).toBeUndefined();
+      expect(findImfIndicatorByCitation(':NGDP_RPCH')).toBeUndefined();
+      expect(findImfIndicatorByCitation('WEO:')).toBeUndefined();
+      expect(findImfIndicatorByCitation('')).toBeUndefined();
+    });
+  });
+
+  describe('getImfDatabasesInUse', () => {
+    it('includes the IMF databases actually referenced by the catalogue', () => {
+      const dbs = getImfDatabasesInUse();
+      for (const db of ['WEO', 'FM', 'GFS_COFOG', 'DOTS', 'IFS', 'MFS_IR']) {
+        expect(dbs.has(db as Parameters<typeof imfCitation>[0])).toBe(true);
+      }
+    });
+
+    it('never contains databases absent from IMF_INDICATORS', () => {
+      const dbs = getImfDatabasesInUse();
+      const catalogDbs = new Set(IMF_INDICATORS.map((ind) => ind.database));
+      for (const db of dbs) {
+        expect(catalogDbs.has(db)).toBe(true);
+      }
+    });
+  });
+
+  describe('getImfCommitteeMatrix', () => {
+    it('keys are UPPER-CASE committee codes', () => {
+      const matrix = getImfCommitteeMatrix();
+      for (const key of matrix.keys()) {
+        expect(key).toBe(key.toUpperCase());
+      }
+    });
+
+    it('FIU surfaces the headline macro+fiscal indicator set', () => {
+      const fiu = getImfCommitteeMatrix().get('FIU');
+      expect(fiu).toBeDefined();
+      expect(fiu).toContain('WEO:NGDP_RPCH');
+      expect(fiu).toContain('WEO:GGXWDG_NGDP');
+      expect(fiu).toContain('WEO:PCPIPCH');
+    });
+
+    it('FÖU surfaces COFOG G02 (defence spending)', () => {
+      const fou = getImfCommitteeMatrix().get('FÖU');
+      expect(fou).toBeDefined();
+      expect(fou).toContain('GFS_COFOG:G02');
+    });
+
+    it('each entry is sorted and deduplicated', () => {
+      const matrix = getImfCommitteeMatrix();
+      for (const [, citations] of matrix) {
+        const sorted = [...citations].sort();
+        expect([...citations]).toEqual(sorted);
+        expect(new Set(citations).size).toBe(citations.length);
+      }
+    });
+
+    it('covers every committee referenced by any indicator', () => {
+      const matrix = getImfCommitteeMatrix();
+      const expected = new Set<string>();
+      for (const ind of IMF_INDICATORS) {
+        for (const c of ind.committees) expected.add(c.toUpperCase());
+      }
+      for (const committee of expected) {
+        expect(matrix.has(committee)).toBe(true);
+      }
+    });
+  });
+
+  describe('listImfCitations', () => {
+    it('returns every DATABASE:INDICATOR citation, sorted and frozen', () => {
+      const citations = listImfCitations();
+      expect(citations.length).toBe(IMF_INDICATORS.length);
+      expect([...citations]).toEqual([...citations].sort());
+      expect(Object.isFrozen(citations)).toBe(true);
+    });
+
+    it('citations are unique', () => {
+      const citations = listImfCitations();
+      expect(new Set(citations).size).toBe(citations.length);
     });
   });
 });
