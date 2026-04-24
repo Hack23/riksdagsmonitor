@@ -1,9 +1,9 @@
 {
-  "2026-04-21-government-propositions-en.html": {
-    "filename": "2026-04-21-government-propositions-en.html",
+  "2026-04-24-committee-reports-en.html": {
+    "filename": "2026-04-24-committee-reports-en.html",
     "lang": "en",
-    "articleType": "propositions",
-    "score": 75,
+    "articleType": "committee-reports",
+    "score": 100,
     "passed": true,
     "multidimensional": {
       "overallScore": 75,
@@ -19,13 +19,13 @@
       },
       "issueCount": 3
     },
-    "timestamp": "2026-04-21T20:18:21.464Z"
+    "timestamp": "2026-04-24T05:31:36.726Z"
   },
-  "2026-04-21-government-propositions-sv.html": {
-    "filename": "2026-04-21-government-propositions-sv.html",
+  "2026-04-24-committee-reports-sv.html": {
+    "filename": "2026-04-24-committee-reports-sv.html",
     "lang": "sv",
-    "articleType": "propositions",
-    "score": 90,
+    "articleType": "committee-reports",
+    "score": 100,
     "passed": true,
     "multidimensional": {
       "overallScore": 90,
@@ -41,6 +41,6 @@
       },
       "issueCount": 2
     },
-    "timestamp": "2026-04-21T20:18:21.470Z"
+    "timestamp": "2026-04-24T05:31:36.733Z"
   }
 }
