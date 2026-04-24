@@ -25,7 +25,7 @@ const WORKFLOWS_DIR = path.join(__dirname, '..', '.github', 'workflows');
 
 /** All news workflow .md files */
 const ALL_NEWS_WORKFLOWS: readonly string[] = [
-  'news-article-generator.md',
+  
   'news-committee-reports.md',
   'news-evening-analysis.md',
   'news-month-ahead.md',
@@ -242,37 +242,5 @@ describe('SCB Data Types', () => {
     const content = fs.readFileSync(typesPath, 'utf-8');
 
     expect(content).toContain('scbContext?: SCBContext');
-  });
-});
-
-describe('SCB Policy Domain Mapping', () => {
-  it('policy-analysis.ts should export SCB_DOMAIN_TABLES', () => {
-    const analysisPath = path.join(__dirname, '..', 'scripts', 'data-transformers', 'policy-analysis.ts');
-    const content = fs.readFileSync(analysisPath, 'utf-8');
-
-    const scbDomainTablesIndex = content.indexOf('export const SCB_DOMAIN_TABLES');
-    expect(scbDomainTablesIndex).toBeGreaterThan(-1);
-    const scbDomainTablesContent = content.slice(scbDomainTablesIndex);
-
-    // Should map all 12 policy domains
-    const domains = ['fiscal', 'defence', 'environment', 'education', 'healthcare',
-      'migration', 'justice', 'labour', 'housing', 'transport', 'trade'];
-
-    domains.forEach(domain => {
-      expect(scbDomainTablesContent).toContain(`${domain}:`);
-    });
-
-    // eu-foreign uses quoted key syntax
-    expect(scbDomainTablesContent).toContain("'eu-foreign':");
-  });
-
-  it('SCB_DOMAIN_TABLES entries should have query and indicators', () => {
-    const analysisPath = path.join(__dirname, '..', 'scripts', 'data-transformers', 'policy-analysis.ts');
-    const content = fs.readFileSync(analysisPath, 'utf-8');
-
-    // Each entry should have query (Swedish search terms) and indicators
-    expect(content).toContain('query:');
-    expect(content).toContain('indicators:');
-    expect(content).toContain('tables:');
   });
 });

@@ -1003,6 +1003,10 @@ Skills are:
 - Government oversight
 - Electoral research
 
+## How Skills Feed the News Aggregator
+
+The news-generation pipeline (`scripts/aggregate-analysis.ts` → `scripts/render-articles.ts` → `scripts/render-lib/`) derives every published article from three static inputs — `analysis/methodologies/`, `analysis/templates/`, and the per-day `analysis/daily/$DATE/$SUB/*.md` artifacts — and skills shape all three. During the analysis phase of every per-type news workflow, the agent loads the relevant skills and uses them to author artifacts that the aggregator can consume without modification: **`automated-content-generation`** dictates the section schema each artifact must hit (executive-brief, synthesis, significance, stakeholders, SWOT, scenarios, comparative, intel-assessment, classification); **`editorial-standards`** governs tone, inverted-pyramid structure, attribution, and the rule that every factual claim must cite a specific Riksdag/Regering source; and **`data-pipeline-engineering`** provides the contract for how MCP query results are cached, deduplicated, and inlined into artifacts so the aggregator's SHA-256 manifest remains reproducible. These three skills are therefore **primary** for the aggregator flow — an artifact authored with them drops into `analysis/daily/$DATE/$SUB/` and is published as `news/$DATE-$SUB-{en,sv}.html` on the next CI run with zero manual intervention, no template fill-in, and no post-hoc HTML editing.
+
 ## How Skills Work
 
 ### Automatic Loading

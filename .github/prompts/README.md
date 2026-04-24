@@ -61,10 +61,9 @@ This directory is the **single source of truth** for how GitHub Agentic Workflow
 | `news-weekly-review` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | `news-monthly-review` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | `news-realtime-monitor` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| `news-article-generator` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | `news-translate` | ✅ | ✅ | ✅ | | | | | ✅ | |
 
-## Phase sequence (single-type workflow)
+## Phase sequence (single-run workflow)
 
 ```mermaid
 flowchart LR
@@ -72,15 +71,18 @@ flowchart LR
   B --> C[Analysis Pass 1<br/>module 04]
   C --> D[Analysis Pass 2<br/>module 04]
   D --> E{Analysis Gate<br/>module 05}
-  E -- pass --> F[Article Pass 1 &amp; 2<br/>module 06]
+  E -- pass --> F[Aggregate analysis → article.md<br/>module 06]
   E -- fail --> G[Fix &amp; retry]
   G --> E
-  F --> H[Stage &amp; commit<br/>module 07]
-  H --> I[ONE create_pull_request<br/>module 07]
+  F --> H[Render article.md → HTML en,sv<br/>module 06]
+  H --> I[Stage &amp; commit<br/>module 07]
+  I --> J[ONE create_pull_request<br/>module 07]
   style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
   style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
-  style I fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+  style J fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
 ```
+
+Translations for the remaining twelve languages are produced independently by the `news-translate` workflow.
 
 ## Why multiple prompt imports (not a single Copilot Agent File)
 

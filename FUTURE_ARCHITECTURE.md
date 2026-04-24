@@ -155,11 +155,32 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 
 **Current Characteristics:**
 - 📊 **Static content** - Pre-rendered HTML/CSS for maximum performance
-- ✍️ **Manual updates** - Curated content with human oversight
+- 🤖 **Aggregate-then-render news pipeline** - Agentic workflows author per-type analysis artifacts under `analysis/daily/$DATE/$SUB/`; `scripts/aggregate-analysis.ts` concatenates them into a canonical `article.md` + SHA-256 provenance manifest; `scripts/render-articles.ts` + `scripts/render-lib/` converts markdown to sanitised HTML (`news/$DATE-$SUB-{en,sv}.html`); `news-translate` extends to the remaining 12 languages out-of-band — zero manual HTML editing
 - 🌐 **Client-side data** - CSV parsing in browser for simplicity
 - 📈 **Historical analysis** - 50+ years of political data visualization
 - 🔓 **Open access** - Public website, no login required
 - 📂 **Direct access** - CSV data files available for download
+
+**Current News Pipeline (aggregate-then-render):**
+
+```
+analysis/daily/$DATE/$SUB/*.md          (AI-authored artifacts — 9 per article)
+         │  produced by 10 per-type news workflows
+         ▼
+scripts/aggregate-analysis.ts           (concat + SHA-256 manifest)
+         │
+         ▼
+scripts/render-articles.ts              (markdown → sanitised HTML via rehype)
+  + scripts/render-lib/                 (chrome: JSON-LD NewsArticle, hreflang, CSP)
+         │
+         ▼
+news/$DATE-$SUB-{en,sv}.html            (2 languages per CI run)
+         │  news-translate workflow
+         ▼
+news/$DATE-$SUB-{da,nb,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html   (12 more)
+```
+
+This replaces the previous scaffold-and-fill approach: there are no `<!-- AI_MUST_REPLACE: … -->` markers, no per-type generator classes, and no template placeholders. The pipeline is the **baseline** that the AWS Serverless future state in §2–§7 migrates away from.
 
 ---
 
