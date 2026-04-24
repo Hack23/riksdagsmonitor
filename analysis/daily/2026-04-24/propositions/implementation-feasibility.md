@@ -39,7 +39,7 @@ Reporting only — no implementation risk.
 |---|---|
 | Pending revision of arbetslöshetsförsäkring | Administrative overlap with Försäkringskassan IT workload |
 | FI AI-risk supervisory framework | CRR3 disclosure co-dependencies |
-| Transport planning bill 2026 | Tachograph enforcement enforcement sync |
+| Transport planning bill 2026 | Tachograph enforcement sync |
 
 ## Mermaid — delivery-risk heat map
 

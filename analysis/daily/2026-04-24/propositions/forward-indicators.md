@@ -10,7 +10,7 @@
 
 ## 1-week window (by 2026-05-01)
 
-4. **2026-04-28 to 2026-05-01** — Camera referral decisions (FiU for [HD03253](https://data.riksdagen.se/dokument/HD03253.html), SfU for [HD03252](https://data.riksdagen.se/dokument/HD03252.html), TU for [HD03256](https://data.riksdagen.se/dokument/HD03256.html)).
+4. **2026-04-28 to 2026-05-01** — Committee referral decisions (FiU for [HD03253](https://data.riksdagen.se/dokument/HD03253.html), SfU for [HD03252](https://data.riksdagen.se/dokument/HD03252.html), TU for [HD03256](https://data.riksdagen.se/dokument/HD03256.html)).
 5. **2026-05-01** — Advokatsamfundet position statement on [HD03252](https://data.riksdagen.se/dokument/HD03252.html) proportionality.
 6. **+1 week** — Bankföreningen public comment on CRR3 output-floor ([HD03253](https://data.riksdagen.se/dokument/HD03253.html)).
 

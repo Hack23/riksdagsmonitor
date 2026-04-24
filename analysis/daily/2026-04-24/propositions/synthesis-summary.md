@@ -4,7 +4,7 @@
 
 ## Lead story (decision-grade)
 
-> The Kristersson government's 23 April 2026 proposition bundle bundles **EU-mandated financial regulation** (HD03253 — EU Banking Package) with **Tidö-era criminal-justice operationalisation** (HD03252 — detainee benefit restrictions), positioning both for summer-session enactment. The package signals a government pivoting from "new laws" to "implementation mode" roughly 16 months before the September 2026 Riksdag election.
+> The Kristersson government's 23 April 2026 proposition bundle combines **EU-mandated financial regulation** (HD03253 — EU Banking Package) with **Tidö-era criminal-justice operationalisation** (HD03252 — detainee benefit restrictions), positioning both for summer-session enactment. The package signals a government pivoting from "new laws" to "implementation mode" roughly 16 months before the September 2026 Riksdag election.
 
 ## DIW-weighted ranking
 

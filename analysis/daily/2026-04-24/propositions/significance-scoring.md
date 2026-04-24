@@ -7,7 +7,7 @@
 | Rank | dok_id | D (Decision impact) | I (Information novelty) | W (Wider salience) | **DIW** | Tier | Primary evidence |
 |:-:|---|:-:|:-:|:-:|:-:|---|---|
 | 1 | [HD03253](https://data.riksdagen.se/dokument/HD03253.html) | 4.0 | 3.5 | 4.0 | **3.83** | L2+ Priority | CRR3/CRD6 EU transposition; 4 SIFI exposure; Riksbanken coordination |
-| 2 | [HD03252](https://data.riksdagen.se/dokument/HD03252.html) | 4.0 | 3.0 | 3.5 | **3.50** | L2+ Priority | Sociälförsäkringsbalken 7/102/106 kap. amendments; new säkerhetsförvaring sentence |
+| 2 | [HD03252](https://data.riksdagen.se/dokument/HD03252.html) | 4.0 | 3.0 | 3.5 | **3.50** | L2+ Priority | Socialförsäkringsbalken 7/102/106 kap. amendments; new säkerhetsförvaring sentence |
 | 3 | [HD03256](https://data.riksdagen.se/dokument/HD03256.html) | 3.0 | 2.5 | 3.0 | **2.83** | L2 Strategic | New Lag om åtgärder mot manipulation; expanded polis/bilinspektör search powers |
 | 4 | [HD03104](https://data.riksdagen.se/dokument/HD03104.html) | 2.5 | 2.5 | 2.5 | **2.50** | L2 Strategic | 5-year Riksgälden evaluation per Budgetlagen §5:6; post-pandemic context |
 

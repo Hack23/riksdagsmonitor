@@ -50,7 +50,7 @@
 
 ### Family E — Per-document (4)
 - [documents/HD03104-analysis.md](documents/HD03104-analysis.md) — Utvärdering av statens upplåning och skuldförvaltning 2021–2025
-- [documents/HD03252-analysis.md](documents/HD03252-analysis.md) — En begränsning av rätten till socialförsäkringsförmåner för den som avtjänar fän
+- [documents/HD03252-analysis.md](documents/HD03252-analysis.md) — En begränsning av rätten till socialförsäkringsförmåner för den som avtjänar fängelsestraff
 - [documents/HD03253-analysis.md](documents/HD03253-analysis.md) — EU:s bankpaket
 - [documents/HD03256-analysis.md](documents/HD03256-analysis.md) — Kraftfullare åtgärder mot manipulation och allvarligt missbruk av färdskrivare
 

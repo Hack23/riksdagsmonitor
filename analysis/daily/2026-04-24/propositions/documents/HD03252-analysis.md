@@ -1,5 +1,7 @@
 # Prop. 2025/26:252 — Begränsning av vissa socialförsäkringsförmåner vid kontrollerat boende och säkerhetsförvaring
 
+*Traceability note: This heading is a shortened paraphrase for readability. For authoritative cross-referencing, use the official document title (`titel`) in `documents/hd03252.json` together with dok_id `HD03252`.*
+
 **dok_id**: [HD03252](https://data.riksdagen.se/dokument/HD03252.html)
 **Document type**: Proposition (ordinary law)
 **Ministry**: Justitiedepartementet

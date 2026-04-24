@@ -52,7 +52,7 @@ flowchart LR
 ## Risk summary
 
 - **Tier 1 (systemic)**: Prop. 2025/26:253 transposition delay → EU infringement exposure.
-- **Tier 2 (political)**: Prop. 2025/26:252 — SCOCE-style rights challenge possible.
+- **Tier 2 (political)**: Prop. 2025/26:252 — ECHR/ECtHR-based rights challenge possible.
 - **Tier 3 (operational)**: Prop. 2025/26:256 — enforcement capacity at Polismyndigheten/Transportstyrelsen.
 
 **Evidence base**: 4 primary-source documents (Riksdagen API) + fiscal-framework context. Single-source dependency flagged in [methodology-reflection.md](methodology-reflection.md).

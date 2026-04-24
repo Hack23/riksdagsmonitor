@@ -15,7 +15,7 @@
 | dok_id | Title | Type | Ministry | Committee | Retrieval UTC | Full text |
 |--------|-------|------|----------|-----------|---------------|-----------|
 | [HD03104](https://data.riksdagen.se/dokument/HD03104.html) | Utvärdering av statens upplåning och skuldförvaltning 2021–2025 | Skrivelse (Written Communication) | Finansdepartementet | FiU (Finansutskottet) | 2026-04-24T00:27Z | ✅ 100 KB retrieved |
-| [HD03252](https://data.riksdagen.se/dokument/HD03252.html) | En begränsning av rätten till socialförsäkringsförmåner för den som avtjänar fängelsestraf | Proposition (Government Bill) | Justitiedepartementet | SfU (Socialförsäkringsutskottet) | 2026-04-24T00:27Z | ✅ 100 KB retrieved |
+| [HD03252](https://data.riksdagen.se/dokument/HD03252.html) | En begränsning av rätten till socialförsäkringsförmåner för den som avtjänar fängelsestraff, vistas i kontrollerat boende eller är underkastad säkerhetsförvaring | Proposition (Government Bill) | Justitiedepartementet | SfU (Socialförsäkringsutskottet) | 2026-04-24T00:27Z | ✅ 100 KB retrieved |
 | [HD03253](https://data.riksdagen.se/dokument/HD03253.html) | EU:s bankpaket | Proposition (Government Bill) | Finansdepartementet | FiU (Finansutskottet) | 2026-04-24T00:27Z | ✅ 100 KB retrieved |
 | [HD03256](https://data.riksdagen.se/dokument/HD03256.html) | Kraftfullare åtgärder mot manipulation och allvarligt missbruk av färdskrivare | Proposition (Government Bill) | Landsbygds- och infrastrukturdepartementet | TU (Trafikutskottet) | 2026-04-24T00:27Z | ✅ 100 KB retrieved |
 

@@ -1,4 +1,4 @@
-# Historical Parallels — Prop. 2025/26:252, Prop. 2025/26:253
+# Historical Parallels — Prop. 2025/26:252, Prop. 2025/26:253, HD03256, HD03104
 
 ## Parallel 1 — 2014 Basel III transposition (Lag 2014:968)
 
