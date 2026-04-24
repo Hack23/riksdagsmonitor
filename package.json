@@ -184,7 +184,7 @@
     "typescript": "6.0.3",
     "typescript-eslint": "8.59.0",
     "vite": "8.0.10",
-    "vite-plugin-sri-gen": "1.3.2",
+    "vite-plugin-sri-gen": "1.4.0",
     "vitest": "4.1.5",
     "worldbank-mcp": "1.0.1"
   },
