@@ -29,30 +29,34 @@ What the aggregator does:
 
 **Canonical order** (see `scripts/render-lib/index.ts:AGGREGATION_ORDER`):
 
-1. `executive-brief.md` ← lede / BLUF (title + meta description come from its H1 + first paragraph)
+1. `executive-brief.md` ← lede / BLUF (title + meta description come from its H1 + first real paragraph; admin bylines like `**Author**`/`**Run ID**`/`**Classification**`/`**Confidence**` are stripped before the description is chosen)
 2. `synthesis-summary.md`
-3. `significance-scoring.md`
-4. `stakeholder-perspectives.md`
-5. `swot-analysis.md`
-6. `risk-assessment.md`
-7. `threat-analysis.md`
-8. **Per-document intelligence** — every `documents/*-analysis.md`, one `### {dok_id}` subsection each
-9. `election-2026-analysis.md`
-10. `coalition-mathematics.md`
-11. `voter-segmentation.md`
-12. `scenario-analysis.md`
-13. `forward-indicators.md`
-14. `comparative-international.md`
-15. `historical-parallels.md`
-16. `media-framing-analysis.md`
-17. `implementation-feasibility.md`
-18. `devils-advocate.md`
-19. `intelligence-assessment.md`
+3. `intelligence-assessment.md` ← Key Judgments + PIRs (ICD-203 — placed immediately after the synthesis so readers meet the thesis before the evidence stack)
+4. `significance-scoring.md`
+5. `stakeholder-perspectives.md`
+6. `swot-analysis.md`
+7. `risk-assessment.md`
+8. `threat-analysis.md`
+9. **Per-document intelligence** — every `documents/*-analysis.md`, one `### {dok_id}` subsection each
+10. `scenario-analysis.md`
+11. `forward-indicators.md`
+12. `election-2026-analysis.md`
+13. `coalition-mathematics.md`
+14. `voter-segmentation.md`
+15. `comparative-international.md`
+16. `historical-parallels.md`
+17. `media-framing-analysis.md`
+18. `implementation-feasibility.md`
+19. `devils-advocate.md`
 20. `classification-results.md`
 21. `cross-reference-map.md`
 22. `methodology-reflection.md`
 23. `data-download-manifest.md` (appendix)
 24. Any supplementary `*.md` not listed above (alphabetical)
+
+### AI self-audit "Pass 2" sections are NOT published
+
+Any heading like `## Pass 2 …` / `### Pass 2 refinements` / `## 🔁 Pass 2 addendum` (and anything after it in the same artifact) is **automatically stripped** by `cleanArtifactBody()` — the aggregator treats everything from that heading to end-of-artifact as process metadata and removes it. Keep your Pass-2 notes in the artifact if you want them for the next iteration, but **do not** promote them to numbered `## 1. Key Judgment restated` style — they will not appear on riksdagsmonitor.com either way. Real Pass-2 improvements must land *inside* the original section, not in a trailing appendix.
 
 If a required artifact is missing the aggregator aborts with a non-zero exit code — return to `04-analysis-pipeline.md` and produce the missing file; do **not** hand-edit `article.md`.
 
