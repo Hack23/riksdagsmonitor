@@ -147,7 +147,7 @@ flowchart TB
 |-----------|--------|
 | **Threat Agent** | AI-enabled adversary, insider threat |
 | **Attack Vector** | Coordinate prompt injection across multiple AI workflows to create consistent disinformation |
-| **Target** | news-article-generator + news-evening-analysis + news-realtime-monitor (3+ workflows) |
+| **Target** | News pipeline aggregate+render scripts + multiple per-type workflows (news-evening-analysis, news-realtime-monitor, news-propositions, news-motions, news-committee-reports, news-interpellations, news-week-ahead, news-month-ahead, news-weekly-review, news-monthly-review) consuming the same `analysis/daily/$DATE/$SUB/` artifacts |
 | **Impact** | Consistent AI-generated disinformation across all news outputs, bypassing single-workflow detection |
 | **Likelihood** | Low (requires deep understanding of multiple workflow prompts) |
 | **Risk Score** | **7.8/10 HIGH** |

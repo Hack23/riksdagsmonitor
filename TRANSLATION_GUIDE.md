@@ -12,6 +12,27 @@
 
 This guide provides comprehensive translation standards and terminology for the Riksdagsmonitor platform across all 14 supported languages. It ensures consistency, accuracy, and cultural appropriateness in all language variants.
 
+### 📰 News articles are translated out-of-band
+
+News articles are **not** localised by the workflow that generates them. The per-type news workflows (`news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations`, `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`) each produce exactly two rendered files per article:
+
+- `news/$DATE-$SUB-en.html` (English master)
+- `news/$DATE-$SUB-sv.html` (Swedish master)
+
+The remaining 12 language variants (`da`, `nb`, `fi`, `de`, `fr`, `es`, `nl`, `ar`, `he`, `ja`, `ko`, `zh`) are produced **exclusively** by the standalone [`news-translate`](.github/workflows/news-translate.md) workflow, which:
+
+1. Reads the rendered `*-en.html` and `*-sv.html` artifacts (never the markdown).
+2. Prompts an LLM with the terminology tables in this guide.
+3. Writes sibling `*-$LANG.html` files back into `news/`.
+
+No other workflow — and no other contributor process — writes localised article HTML. This decoupling means:
+
+- Editorial changes to a news article ripple through all 14 languages in a single translation pass.
+- Terminology drift is detectable: a single `news-translate` regression only affects non-EN/SV languages.
+- The 14 top-level `index_*.html` pages and `political-intelligence_*.html` pages remain hand-translated (that workflow is not in scope here).
+
+When translating HTML that has already been rendered, **do not modify** `<pre class="mermaid">` blocks — the Mermaid diagram source is a syntactic DSL that must survive untouched. Translate the adjacent `<figcaption>` and `<details>` fallback blocks instead.
+
 ### Supported Languages (14)
 
 | Language | Code | File | Direction | Status |

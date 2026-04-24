@@ -725,12 +725,43 @@ flowchart LR
 
 ## 🤖 AI-Disrupted News Generation
 
-> *"While traditional newsrooms debate whether AI will replace journalists, Riksdagsmonitor already runs a fully autonomous political intelligence newsroom — 12 agentic workflows, 14 languages, zero human editors, and a publication schedule that would bankrupt any legacy outlet trying to keep up."*
+> *"While traditional newsrooms debate whether AI will replace journalists, Riksdagsmonitor already runs a fully autonomous political intelligence newsroom — 11 agentic workflows, 14 languages, zero human editors, and a publication schedule that would bankrupt any legacy outlet trying to keep up."*
 
-Riksdagsmonitor's **agentic news generation pipeline** is the world's first fully AI-driven political intelligence newsroom for parliamentary monitoring. Powered by Claude Opus (currently 4.7) via GitHub Copilot Coding Agent, our **12 specialized workflows** (11 scheduled + 1 on-demand, plus 1 dedicated translation workflow) autonomously produce deep political analysis — not shallow summaries, but structured intelligence products with source verification, multi-party balance, and GDPR-compliant OSINT methodology.
+Riksdagsmonitor's **agentic news generation pipeline** is the world's first fully AI-driven political intelligence newsroom for parliamentary monitoring. Powered by Claude Opus (currently 4.7) via GitHub Copilot Coding Agent, our **11 specialized workflows** (10 single-run news pipelines + 1 dedicated translation workflow) autonomously produce deep political analysis — not shallow summaries, but structured intelligence products with source verification, multi-party balance, and GDPR-compliant OSINT methodology.
+
+### 🧬 Pipeline at a glance
+
+```mermaid
+flowchart LR
+    A[MCP servers<br/>Riksdag · SCB · World Bank] --> B[Analysis artifacts<br/>analysis/daily/&dollar;DATE/&dollar;SUB/<br/>9 core or 14 Tier-C .md files]
+    M[analysis/methodologies/<br/>analysis/templates/] --> B
+    B --> C[scripts/aggregate-analysis.ts<br/>Concatenate · strip dups · rewrite links · emit manifest]
+    C --> D[article.md<br/>Canonical aggregated markdown]
+    D --> E[scripts/render-articles.ts<br/>+ scripts/render-lib/<br/>unified · remark · rehype · sanitize]
+    E --> F[news/&dollar;DATE-&dollar;SUB-en.html<br/>news/&dollar;DATE-&dollar;SUB-sv.html]
+    F --> G[news-translate workflow<br/>EN+SV → 12 other languages<br/>OUT-OF-BAND]
+    F --> S[sitemap.xml + sitemap.html<br/>rss.xml<br/>political-intelligence_*.html]
+    G --> S
+
+    style C fill:#2196f3,color:#fff
+    style E fill:#4caf50
+    style G fill:#9e9e9e,color:#fff
+```
+
+A new `.md` artifact written anywhere under `analysis/daily/$DATE/$SUB/` is enough to produce a published English + Swedish HTML article on the next CI build — there is no manual scaffolding step, no template fill-in, and no per-type generator class. The news workflows themselves never write localised HTML; that is the sole responsibility of `news-translate`.
+
+### 📐 Anatomy of an article
+
+Every published article is a deterministic projection of three input sources, in this priority:
+
+1. **`analysis/methodologies/`** — the *editorial method* (e.g. STRIDE, devil's-advocate, ACH, comparative-politics framing). These files define **how** an analysis is conducted; they are version-controlled and cited from every article footer.
+2. **`analysis/templates/`** — the *output structure* (executive-brief, synthesis, significance, stakeholders, SWOT, scenarios, comparative, intel-assessment, classification, …). These define **what sections** appear and in **what order**.
+3. **`analysis/daily/$DATE/$SUB/*.md`** — the *evidence* (per-day artifacts produced by the agentic workflow's analysis phase). These provide the **specific facts**, MCP query results, and per-document analyses for one day's coverage.
+
+The aggregator concatenates the day's evidence in template order, the renderer transforms the markdown into sanitised HTML, and the chrome layer wraps it with JSON-LD, navigation, and language switchers. The `Sources of Method` block in every article footer links back to every methodology and template file actually used — provenance is preserved end-to-end.
 
 > 📚 **Directory-level catalogs** (single sources of truth):
-> - [`.github/workflows/README.md`](.github/workflows/README.md) — 45 workflow files (21 standard `.yml` + 12 agentic `.md` sources + 12 compiled `.lock.yml`)
+> - [`.github/workflows/README.md`](.github/workflows/README.md) — 45 workflow files (21 standard `.yml` + 11 agentic `.md` sources + 11 compiled `.lock.yml`)
 > - [`.github/prompts/README.md`](.github/prompts/README.md) — 8 bounded-context prompt modules + `ext/tier-c-aggregation.md`, imported by every news workflow
 > - [`.github/agents/README.md`](.github/agents/README.md) — 24 Copilot agent files (14 personas + 9 workflow-specialists + 1 shared developer-instructions)
 > - [`.github/skills/README.md`](.github/skills/README.md) — 91 skills grouped by 12 functional categories
@@ -756,7 +787,6 @@ Every day, the platform's AI operatives awaken on cron schedules, query the Swed
 | 🌆 18:00 (16:00 Sat) | **Evening Analysis** | Deep-dive intelligence synthesis | Mon–Sat |
 | 📊 09:00 | **Weekly Review** | Week-in-review scorecard, party performance | Saturday |
 | 📈 10:00 | **Monthly Review** | Comprehensive monthly intelligence assessment | 28th of month |
-| 🔧 Manual | **Article Generator** | On-demand article generation / backfill | On-demand |
 
 > _All times are **UTC** (GitHub Actions cron). For local time, convert to CET/CEST. Authoritative schedules defined in `.github/workflows/news-*.lock.yml` workflows — see [`.github/workflows/README.md`](.github/workflows/README.md) for the complete inventory._
 

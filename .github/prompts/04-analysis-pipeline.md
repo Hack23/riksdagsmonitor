@@ -99,7 +99,7 @@ Produced in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. The output set is **stab
 
 ## Execution order
 
-> **Fast-path**: If `SKIP_ANALYSIS=true` (set by `03-data-download.md §Pre-flight`), skip all steps 1–5 below and proceed directly to `06-article-generation.md`. The full analysis already exists on disk from a prior run — do not re-run downloads, Pass 1, Pass 2, or the gate.
+> **Fast-path**: If `SKIP_ANALYSIS=true` (set by `03-data-download.md §Pre-flight`), skip all steps 1–5 below and proceed directly to `06-article-generation.md`. The full analysis already exists on disk from a prior run — do not re-run downloads, Pass 1, Pass 2, or the gate. The aggregate+render step in module 06 is always executed.
 
 1. **Read all relevant methodologies first** (the primary methodology guide plus every supporting framework listed above, including `osint-tradecraft-standards.md`; one tool call per file; skipping fails the gate via `methodology-reflection.md §evidence` audit).
 2. **Read all 23 templates first** — at minimum open each Family A/B/C/D template before writing its artifact.

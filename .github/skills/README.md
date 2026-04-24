@@ -181,6 +181,18 @@ These skills encode the gh-aw framework's upstream rules. They underpin every `.
 
 ---
 
+## 🗞️ How skills feed the news aggregator
+
+The news-generation pipeline (`scripts/aggregate-analysis.ts` → `scripts/render-articles.ts` → `scripts/render-lib/`) derives every published article from three static inputs: `analysis/methodologies/`, `analysis/templates/`, and the per-day artifacts in `analysis/daily/$DATE/$SUB/`. Skills shape how each of those inputs is authored:
+
+| Skill | Role in the pipeline |
+|-------|---------------------|
+| **`automated-content-generation`** | Defines the 9-artifact section schema every per-type analysis run must hit (executive-brief → synthesis → significance → stakeholders → SWOT → scenarios → comparative → intel-assessment → classification). An artifact authored with this skill can be dropped into `analysis/daily/$DATE/$SUB/` and the aggregator will process it without modification. |
+| **`editorial-standards`** | Governs tone (inverted-pyramid structure, AP/Reuters attribution, balanced reporting), source-citation density, and the rule that every factual claim must link to a specific Riksdag/Regering source. Artifacts that violate these rules will fail the analysis gate in `.github/prompts/05-analysis-gate.md`. |
+| **`data-pipeline-engineering`** | Provides the contract for how MCP query results are cached, deduplicated, and inlined into artifacts so the aggregator's SHA-256 manifest remains reproducible: same source data → same `article.md`. |
+
+Because these three skills are **primary** for the aggregator flow, any workflow that produces news artifacts MUST load them. The per-type `.lock.yml` workflows implicitly do so via `tools: ["*"]`; if you author an artifact manually, invoke these skills explicitly.
+
 ## 🔢 Count reconciliation
 
 | Category | Count |

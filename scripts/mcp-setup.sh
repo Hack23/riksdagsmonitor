@@ -5,7 +5,7 @@
 #
 # Usage (in workflow .md bash blocks):
 #   source scripts/mcp-setup.sh
-#   npx tsx scripts/generate-news-enhanced.ts --types=committee-reports ...
+#   npx tsx scripts/aggregate-analysis.ts --date 2026-04-23 --subfolder committee-reports ...
 #
 # Sets: MCP_SERVER_URL, MCP_AUTH_TOKEN, MCP_CLIENT_TIMEOUT_MS,
 #       MCP_GATEWAY_PORT, MCP_GATEWAY_DOMAIN,

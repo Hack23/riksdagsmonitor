@@ -10,38 +10,44 @@
 
 Workflows declare `safe-outputs.create-pull-request.max: 1`. Attempting a second call is a workflow error.
 
-## Two-run PR strategy
+## Single-run PR strategy
 
-| Run mode | What to commit | PR title prefix | Labels | After PR |
-|----------|---------------|-----------------|--------|----------|
-| **Analysis mode** (`SKIP_ANALYSIS=false`) | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.md` + `*.json` (never `pass1/`) | `📊 Analysis — ` | `analysis-only` + article-type | **Stop.** Do NOT generate articles. The next scheduled run will detect the analysis and enter Article mode automatically. |
-| **Article mode** (`SKIP_ANALYSIS=true`) | `news/$YYYY/$MM/$DD/$SLUG.{en,sv}.html` + chart JSON | `📰 ` | `agentic-news` + article-type | Dispatch `news-translate` for 12 remaining languages. |
+Every run performs analysis **and** article generation end-to-end and produces **one** PR:
 
-In **Analysis mode**: commit analysis artifacts, create the `analysis-only` PR, then exit. Zero articles are generated in this run. The analysis stays in the `$ANALYSIS_DIR` folder; the next run of this workflow for the same `$ARTICLE_DATE` will find it and proceed directly to articles.
+| Content | Git path to stage |
+|---------|-------------------|
+| Analysis summaries | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.md` |
+| Visualisation data | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.json` |
+| Aggregated article markdown | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` |
+| Rendered articles (core languages) | `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv}.html` |
 
-In **Article mode**: generate articles from existing analysis, commit, and create the articles PR.
+PR title: `📰 ${Article Type} — $ARTICLE_DATE`.
+PR labels: `agentic-news` + article-type label.
+
+Translations for the remaining twelve languages are produced by the dedicated **`news-translate`** workflow, which runs on a separate schedule and creates its own PR. Per-type workflows must **not** attempt to translate or dispatch translation themselves.
 
 ## Stage → commit → PR
 
-1. **Stage scoped files only.** Never stage the whole repo. Before staging any `news/*.html`, confirm the pre-commit article gate in `06-article-generation.md` **step 5** has exited 0. If it has not been run, run it now and abort the commit on any non-zero exit — do NOT attempt to work around markers by editing them out manually.
+1. **Stage scoped files only.** Never stage the whole repo. Before staging any `news/*.html`, verify the aggregator + renderer pre-commit checks in `06-article-generation.md` §"What the AI still MUST do" pass (executive-brief H1 present, every cited `dok_id` has a `documents/{dok_id}-analysis.md`, rendered HTML files exist for every requested language). Abort the commit on any failure.
 
    | Content | Git path to stage |
    |---------|-------------------|
    | Analysis summaries | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.md` |
    | Visualisation data | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.json` |
-   | Articles (core languages) | `news/$YYYY/$MM/$DD/$SLUG.{en,sv}.html` |
-   | Translations (news-translate only) | `news/$YYYY/$MM/$DD/$SLUG.<lang>.html` |
+   | Aggregated article markdown | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` |
+   | Rendered articles (core languages) | `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv}.html` |
+   | Translations (news-translate only) | `news/$ARTICLE_DATE-$SUBFOLDER-<lang>.html` |
 
    Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/` wholesale — it often contains 100+ files. Stage only `documents/*.md` **if** your `documents/` stays under the safe-outputs 100-file cap; otherwise stage only summary files. Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/pass1/` — it is a local gate-evidence snapshot (see `04-analysis-pipeline.md`), not a deliverable.
 
 2. **100-file guard.** Before calling safeoutputs, count staged files. If the count > 99, unstage everything under `documents/` except `synthesis-summary.md` and re-check.
 
-3. **Commit** once with a descriptive message, e.g. `news(${article_type}): $ARTICLE_DATE — analysis + articles`.
+3. **Commit** once with a descriptive message, e.g. `news(${article_type}): $ARTICLE_DATE — analysis + article`.
 
 4. **Call** `safeoutputs___create_pull_request` exactly once:
-   - Title: `📰 ${Article Type} — $ARTICLE_DATE` (analysis-only runs use `📊 Analysis Only — ${Article Type} — $ARTICLE_DATE`).
+   - Title: `📰 ${Article Type} — $ARTICLE_DATE`.
    - Body: use the PR template below.
-   - Labels: `agentic-news` + article-type label + `analysis-only` when no articles generated.
+   - Labels: `agentic-news` + article-type label.
    - Branch: handled automatically by safeoutputs (`news/content/$ARTICLE_DATE/$ARTICLE_TYPE`).
 
 5. **Do not** `git push`, `git checkout`, or `git checkout -b` after the call. The safe-outputs runner job publishes the PR; subsequent agent commits are not added.
@@ -72,8 +78,9 @@ In **Article mode**: generate articles from existing analysis, commit, and creat
 
 ## Articles
 
-- [x] news/.../$SLUG.en.html
-- [x] news/.../$SLUG.sv.html
+- [x] news/$ARTICLE_DATE-$SUBFOLDER-en.html
+- [x] news/$ARTICLE_DATE-$SUBFOLDER-sv.html
+- [x] analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md (aggregated)
 
 ## Methodology & compliance
 
@@ -86,7 +93,7 @@ In **Article mode**: generate articles from existing analysis, commit, and creat
 
 - Pass 1 analysis: ✅
 - Pass 2 improvement: ✅
-- Article Pass 2: ✅
+- Aggregate + render: ✅
 ```
 
 ## No-op policy
@@ -114,19 +121,18 @@ Do **not** use safe outputs as a keepalive strategy. In this workflow, `safeoutp
 
 > **Authoritative override:** For PR timing and hard deadlines, this section supersedes any older guidance imported from `.github/prompts/00-base-contract.md` that suggests creating the PR at around **45 minutes**. The operative deadline for both runs is **30 minutes**, with Run 1 targeting **22–27 minutes** and Run 2 targeting **20–25 minutes**.
 
-| Mode | Target PR window | Hard deadline | Floor for Pass 2 |
-|------|------------------|---------------|------------------|
-| Run 1 — Analysis | **22–27 min** after agent start | **30 min** | 5 min, skip beyond 25 min |
-| Run 2 — Articles | 20–25 min after agent start | **30 min** | 5 min, skip beyond 25 min |
+| Phase | Target PR window | Hard deadline | Floor for Pass 2 |
+|-------|------------------|---------------|------------------|
+| Analysis + aggregate + render | **22–27 min** after agent start | **30 min** | 5 min, skip beyond 25 min |
 
 These windows are tighter than the historical 48-min figure because Timer B fires first on the 23-artifact pipeline. The 30-min hard deadline leaves ~5 minutes of margin for staging, `git commit`, and the safeoutputs round-trip before Timer B has been observed to fire, and ~25 minutes of margin before Timer A.
 
 ### If the run exceeds its hard deadline with no safe-output call yet
 
 1. **Stop** analysis / article work immediately — no more `edit` tool calls, no more Pass 2 improvements.
-2. **Stage** whatever exists on disk (analysis artifacts and/or partial articles). Do not stage `pass1/`.
+2. **Stage** whatever exists on disk (analysis artifacts and any rendered `news/*.html`). Do not stage `pass1/`.
 3. **Commit** with message prefixed `[early-pr]` to signal partial content.
-4. **Call** `safeoutputs___create_pull_request` once with label `analysis-only` if Pass 2 is incomplete or articles are missing.
+4. **Call** `safeoutputs___create_pull_request` once with label `partial`. A partial analysis is always better than zero output.
 5. If `safeoutputs___create_pull_request` returns `session not found`, do **not** retry — the MCP session is gone. The work is lost for this run; the commit on disk is not persisted because the safe-outputs runner never saw it. Document the incident in the next run's methodology-reflection.
 
 Do not attempt to "save" work via a second PR — there is no second PR. Creating the PR early is always better than losing all work to a session expiry.
@@ -139,7 +145,10 @@ If you are approaching 25 min with Pass 2 in progress, **stop Pass 2 immediately
 cd "$GITHUB_WORKSPACE"
 git add "analysis/daily/$ARTICLE_DATE/$SUBFOLDER/"*.md "analysis/daily/$ARTICLE_DATE/$SUBFOLDER/"*.json 2>/dev/null || true
 git reset HEAD "analysis/daily/$ARTICLE_DATE/$SUBFOLDER/pass1/" 2>/dev/null || true
-git commit -m "[early-pr] analysis($ARTICLE_TYPE): $ARTICLE_DATE — Pass 1 complete, Pass 2 partial"
+# If aggregator + renderer already ran, stage the aggregated article markdown and the HTML too.
+git add "analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md" 2>/dev/null || true
+git add "news/${ARTICLE_DATE}-${SUBFOLDER}-"*.html 2>/dev/null || true
+git commit -m "[early-pr] news($ARTICLE_TYPE): $ARTICLE_DATE — Pass 1 complete, Pass 2 partial"
 ```
 
-Then immediately call `safeoutputs___create_pull_request` with label `analysis-only`. A Pass-1-only analysis-only PR is always better than zero output.
+Then immediately call `safeoutputs___create_pull_request` with label `partial`. A Pass-1-only partial PR is always better than zero output.

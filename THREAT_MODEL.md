@@ -73,10 +73,10 @@ This threat model demonstrates **🛡️ cybersecurity consulting expertise** th
 - ☁️ AWS CloudFront CDN + S3 storage (us-east-1 primary, eu-west-1 replica)
 - 🔀 Route 53 DNS configuration with health checks
 - 🔄 GitHub Pages disaster recovery (automatic failover)
-- 🤖 Three AI agentic workflows using Claude Opus 4.7:
-  - **news-article-generator**: Daily 05:51 UTC
+- 🤖 11 AI agentic workflows using Claude Opus 4.7 (10 single-run news + 1 translate); each runs **analysis → aggregate → render → PR** in one shot. Examples:
   - **news-evening-analysis**: 18:00 UTC Mon-Fri, 16:00 UTC Sat
   - **news-realtime-monitor**: 10:00+14:00 UTC Mon-Fri, 12:00 UTC weekends
+  - **news-translate**: out-of-band fan-out from rendered EN+SV to 12 other languages
 - 🔌 riksdag-regering-mcp server (32 tools for Swedish political data)
 - 🏭 CI/CD security pipeline (GitHub Actions with OIDC)
 - 📦 Dependency management and supply chain (Chart.js, D3.js, Vite, npm, GitHub Actions)
@@ -336,9 +336,10 @@ graph TB
     end
     
     subgraph "⚙️ CI/CD Layer"
-        Workflow1[🗞️ news-article-generator<br/>Daily 05:51 UTC<br/>Claude Opus 4.7]
+        Workflow1[🗞️ news single-run workflows<br/>10 per-type pipelines<br/>analysis→aggregate→render→PR<br/>Claude Opus 4.7]
         Workflow2[🌆 news-evening-analysis<br/>18:00 UTC Mon-Fri<br/>16:00 UTC Sat]
         Workflow3[⚡ news-realtime-monitor<br/>10:00+14:00 UTC Mon-Fri<br/>12:00 UTC weekends]
+        Workflow4[🌍 news-translate<br/>Out-of-band<br/>EN+SV → 12 languages]
         Deploy[🚀 Deployment Workflow<br/>Vite Build<br/>AWS OIDC Deploy]
     end
     
@@ -505,6 +506,13 @@ graph LR
 | **Tampering** | Response manipulation (MITM) | LOW (2) | CRITICAL (10) | 2.0 | HTTPS-only, TLS certificate validation | **LOW** |
 | **Info Disclosure** | Stale/incorrect political data | MEDIUM (3) | HIGH (8) | 2.4 | Freshness validation (<48h), cross-verification | **MEDIUM** |
 | **DoS** | MCP server unavailable | LOW (2) | MEDIUM (5) | 1.0 | Health checks, failsafe mode (skip generation), manual fallback | **LOW** |
+
+#### → Process: Aggregate → Render News Pipeline (`scripts/aggregate-analysis.ts` + `scripts/render-articles.ts`)
+| STRIDE Category | Threat | Likelihood | Impact | Risk Score | Mitigation | Residual Risk |
+|-----------------|--------|-----------|--------|-----------|-----------|--------------|
+| **Tampering** | Aggregated markdown silently diverges from source artifacts (drift, dropped sections, reordered evidence) | MEDIUM (3) | HIGH (7) | 2.1 | Aggregator emits SHA-256 manifest of every consumed `analysis/daily/$DATE/$SUB/*.md`; manifest is embedded in JSON-LD `NewsArticle.citation` and committed alongside `article.md`; renderer refuses to render if manifest is stale | **LOW** |
+| **Info Disclosure** | AI prompt-injection content in analysis artifacts surfaces into HTML (hidden `<script>`, `onclick=` handlers, `javascript:` URIs) | MEDIUM (3) | CRITICAL (9) | 2.7 | `rehype-sanitize` schema with strict allow-list; `<pre class="mermaid">` is the only HTML extension permitted; `mermaid-init.mjs` renders client-side without `eval`; CSP blocks remaining inline script execution | **LOW** |
+| **Repudiation** | Article makes unattributed claims that cannot be traced back to source artifacts | MEDIUM (3) | HIGH (7) | 2.1 | Aggregator emits per-artifact citation block in article footer; every methodology + template used is linked to its GitHub blob URL; `NewsArticle.about` + `NewsArticle.citation` JSON-LD encode the full evidence chain | **LOW** |
 
 ### **📊 Risk Score Summary (STRIDE per Element)**
 

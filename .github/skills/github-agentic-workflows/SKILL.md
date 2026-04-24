@@ -1771,47 +1771,53 @@ function checkFileForUntranslatedContent(filepath) {
 
 **Challenge**: Generate news articles in 14 languages from Swedish-only Riksdag API
 
-**Implementation**:
+**Implementation** (current aggregate+render pipeline):
 
-1. **Generation** (`scripts/generate-news-enhanced.js`):
-   - Creates articles in all languages
-   - Marks Swedish API data with `data-translate="true" lang="sv"`
-   - Translates UI labels/headers but NOT dynamic content
+1. **Aggregation** (`scripts/aggregate-analysis.ts`):
+   - Concatenates the per-day artifacts in `analysis/daily/$DATE/$SUB/`
+   - Strips duplicate H1s and admin footers, rewrites relative links
+   - Writes a single canonical `article.md` per analysis day/subfolder
 
-2. **Translation** (`.github/workflows/news-article-generator.md`):
-   - Step 5 (MANDATORY): LLM reads each file, translates Swedish spans, writes back
-   - Provides examples: `"Bättre förutsättningar..." → "Better conditions..."`
-   - Exit code 1 if any untranslated markers remain
+2. **Render** (`scripts/render-articles.ts` + `scripts/render-lib/`):
+   - `unified` / `remark` / `rehype` markdown → sanitised HTML
+   - Emits `news/$DATE-$SUB-en.html` and `news/$DATE-$SUB-sv.html`
+   - JSON-LD `NewsArticle` cites every source artifact
 
-3. **Validation** (`scripts/validate-news-translations.js`):
+3. **Translation** (`.github/workflows/news-translate.md`):
+   - Standalone agentic workflow that reads the rendered EN+SV HTML
+   - Produces the remaining 12 language variants out-of-band
+   - Never invoked by the per-type news workflows
+
+4. **Validation** (`scripts/validate-news-translations.ts`):
    - Run as CI check: `npm run validate-news`
-   - Scans all non-Swedish articles for markers
+   - Scans all non-Swedish articles for `data-translate` markers and BCP-47 consistency
    - Fails build if untranslated content found
-   - Shows samples to help debug
 
 **Results**:
-- ✅ Zero tolerance for language mixing
-- ✅ Natural, context-aware translations
-- ✅ Automated detection of issues
-- ✅ Clear process for fixing problems
+- ✅ Single source of truth (`analysis/daily/$DATE/$SUB/`)
+- ✅ Zero placeholder markers in output
+- ✅ Mermaid diagrams pass through to HTML for client-side render
+- ✅ Translations decoupled from per-type generation
 
 ### Key Success Factors
 
-1. **Prominent Placement**: Translation requirement at TOP of workflow, not buried
+1. **Single-pass pipeline**: aggregate → render, no scaffold-and-fill
 2. **Blocking Validation**: Exit codes prevent proceeding
-3. **Concrete Examples**: Before/after HTML showing exact transformations
-4. **Clear Process**: Read → Find → Translate → Remove → Write
-5. **Zero Ambiguity**: "DO NOT proceed" language, not "please consider"
+3. **Markdown-first**: Editors work in markdown, renderer enforces sanitisation
+4. **Decoupled translation**: One workflow, all 12 non-EN/SV languages
+5. **Provenance**: Every article footer cites the methodology + template files used
 
 ### Reference Implementation
 
 See [`Hack23/riksdagsmonitor`](https://github.com/Hack23/riksdagsmonitor):
-- `.github/workflows/news-article-generator.md` - Translation instructions
-- `scripts/data-transformers.js` - Marker generation
-- `scripts/validate-news-translations.js` - Validation script
+- `scripts/aggregate-analysis.ts` - Section ordering + manifest emission
+- `scripts/render-articles.ts` + `scripts/render-lib/` - remark/rehype renderer
+- `.github/workflows/news-translate.md` - Translation workflow
+- `scripts/validate-news-translations.ts` - Validation script
 - `TRANSLATION_GUIDE.md` - Terminology reference
 
 ---
+
 
 **Last Updated**: 2026-02-15  
 **Maintained by**: Hack23 AB
