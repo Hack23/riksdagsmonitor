@@ -148,7 +148,7 @@ If any required artifact is missing or empty, do **not** proceed to step 1 below
    done
    ```
 
-   **5c. Language purity (HARD block for English articles).** English must contain **zero** untranslated Swedish tokens outside of proper nouns wrapped in `<span lang="sv">…</span>`. Swedish articles likewise must not contain untranslated English prose (English is allowed only in proper-noun spans, code, URLs, and unavoidable technical terms):
+   **5c. Language purity (HARD block for non-Swedish articles).** A non-Swedish article must contain **zero** untranslated Swedish tokens — including inside `<span lang="sv">…</span>` wrappers, which are themselves banned in non-SV articles. Translate every party name, ministry, agency, statute, document subtitle and descriptive concept to the target language using the canonical equivalents listed under "Banned patterns → Swedish leakage in EN" below. A single first-occurrence parenthetical Swedish gloss in plain text (e.g. "the Swedish Social Insurance Agency (Försäkringskassan)") is the **only** permitted Swedish surface in the article body, and even that must not be wrapped in `<span lang="sv">`. Swedish articles likewise must not contain untranslated English prose (English is allowed only in proper-noun spans, code, URLs, and unavoidable technical terms). The pre-commit gate runs the leakage detector at threshold 1 and additionally rejects any `<span lang="sv">` element found in a non-SV article:
 
    ```bash
    # 5c.i — English articles: zero Swedish leakage (threshold: 1)
@@ -164,14 +164,28 @@ If any required artifact is missing or empty, do **not** proceed to step 1 below
      fi
    fi
 
-   # 5c.ii — Non-Swedish articles must declare the correct lang attribute on <html>.
+   # 5c.ii — Non-Swedish articles must not contain any <span lang="sv"> wrapper.
+   # The wrapper is itself banned (translate the content instead). lang="sv" /
+   # hreflang="sv" attributes on <a> and <link> language-switcher elements are
+   # legitimate and not flagged by this check, which is anchored to <span ...>.
+   for a in "${ARTICLES[@]}"; do
+     LANG_CODE=$(basename "$a" | sed -E 's/.*-([a-z]{2})\.html$/\1/; s/.*\.([a-z]{2})\.html$/\1/')
+     [ "$LANG_CODE" = "sv" ] && continue
+     if grep -nE '<span[^>]+lang="sv"' "$a" >/dev/null; then
+       echo "❌ Article gate 5c.ii failed: $a contains <span lang=\"sv\"> — translate the content; the wrapper is banned in non-SV articles"
+       grep -nE '<span[^>]+lang="sv"' "$a" | head -5
+       exit 1
+     fi
+   done
+
+   # 5c.iii — Non-Swedish articles must declare the correct lang attribute on <html>.
    for a in "${ARTICLES[@]}"; do
      LANG_CODE=$(basename "$a" | sed -E 's/.*-([a-z]{2})\.html$/\1/; s/.*\.([a-z]{2})\.html$/\1/')
      DECL=$(grep -oE '<html[^>]*lang="[a-z-]+"' "$a" | head -1 | grep -oE 'lang="[a-z-]+"' | head -1)
      EXPECTED="lang=\"$LANG_CODE\""
      [ "$LANG_CODE" = "no" ] && EXPECTED="lang=\"nb\""
      if [ -n "$DECL" ] && [ "$DECL" != "$EXPECTED" ]; then
-       echo "❌ Article gate 5c.ii failed: $a has $DECL but filename implies $EXPECTED"
+       echo "❌ Article gate 5c.iii failed: $a has $DECL but filename implies $EXPECTED"
        exit 1
      fi
    done
@@ -199,9 +213,10 @@ If any required artifact is missing or empty, do **not** proceed to step 1 below
 | Manifest drift | Citing a `dok_id` in the article that has no matching `documents/<dok_id>-analysis.md` artifact. Blocked by step 5b. |
 | Unresolved author fallback | `by Unknown`, `Author: Unknown` — the scaffold's default placeholder, never a valid shipped value. |
 | Raw upstream HTML dump | Pasting raw `<p>…</p>` from `riksdagen.se` into the article body in place of original analysis. |
-| Swedish leakage in EN | Any untranslated Swedish token (`betänkande`, `utskott`, `riksdag(en)`, `regering(en)`, `motion`, `proposition`, Swedish stop words `och/att/är/inte/…`) outside a `<span lang="sv">…</span>` proper-noun wrapper. Blocked by step 5c.i. |
+| Swedish leakage in EN (and any non-SV language) | **Zero Swedish text in non-Swedish articles.** This is a hard rule with **no `<span lang="sv">` exception** — wrapping Swedish prose in `<span lang="sv">` does not satisfy the rule and is itself banned. Every Swedish word, including party names, ministry names, agency names, statute titles, document subtitles, and descriptive concepts, **must be translated to the target language**. Use the established English equivalents (`Liberalerna` → "the Liberals (L)", `Moderaterna` → "the Moderates (M)", `Sverigedemokraterna` → "the Sweden Democrats (SD)", `Kristdemokraterna` → "the Christian Democrats (KD)", `Vänsterpartiet` → "the Left Party (V)", `Finansdepartementet` → "Ministry of Finance", `Justitiedepartementet` → "Ministry of Justice", `Polismyndigheten` → "the Swedish Police Authority", `Försäkringskassan` → "the Swedish Social Insurance Agency", `Riksgälden` → "the Swedish National Debt Office", `Finansinspektionen` → "the Swedish Financial Supervisory Authority", `Lagrådet` → "the Council on Legislation", `Riksbanken` → "the Riksbank", `Kriminalvården` → "the Swedish Prison and Probation Service", `Transportstyrelsen` → "the Swedish Transport Agency", `Bankföreningen` → "the Swedish Bankers' Association", `Advokatsamfundet` → "the Swedish Bar Association", `kontrollerat boende` → "controlled housing", `säkerhetsförvaring` → "security detention", `bostadstillägg` → "housing supplement", `aktivitetsersättning` → "activity compensation", `sjukersättning` → "sickness compensation", `betänkande` → "committee report", `utskott` → "committee", `motion` → "member's bill", `proposition` → "government bill", `skrivelse` → "government communication", `yttrande` → "(legal) opinion", `notering` → "noting", `Bilaga` → "Annex", `höstbudget` → "autumn budget", `valkretsar` → "constituencies", `Budgetlag` → "Budget Act", etc.). At most a single first-occurrence parenthetical Swedish gloss in plain text (e.g. "the Swedish Social Insurance Agency (Försäkringskassan)") is permitted to disambiguate the institution; do **not** wrap it in `<span lang="sv">`, do **not** repeat the gloss, and do **not** rely on it as a substitute for translation. Article-body prose, headings, lists, captions, JSON-LD `articleBody`, `alternativeHeadline`, breadcrumb names and analysis citations must all be in the target language. Swedish source URLs (`data.riksdagen.se/…`) and the `lang="sv"` / `hreflang="sv"` attributes on language-switcher links are the only legitimate Swedish tokens. Blocked by step 5c.i. |
 | English leakage in SV | English sentences in a Swedish article body where a Swedish equivalent exists (exceptions: quoted proper nouns, code, URLs, wrapped `<span lang="en">…</span>`). |
-| Wrong `<html lang>` attribute | EN article declares `lang="sv"` or vice versa. Blocked by step 5c.ii. |
+| `<span lang="sv">` in any non-SV article | The wrapper is itself a banned construct in non-Swedish articles — it signals that the writer left Swedish source material untranslated. Translate the content; do not tag-and-leak. |
+| Wrong `<html lang>` attribute | EN article declares `lang="sv"` or vice versa. Blocked by step 5c.iii. |
 | Boilerplate filler | "This is an important development that will have significant implications." |
 | Unattributed claims | "Experts say…", "Critics argue…" without named actor. |
 | Title-only summaries | Re-stating the document title as the analysis. |
