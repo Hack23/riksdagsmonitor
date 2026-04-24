@@ -190,7 +190,7 @@ quadrantChart
 
 ### S4: Modern Static Architecture
 
-**Description:** Secure, scalable static HTML/CSS/JavaScript architecture hosted on GitHub Pages with AWS CloudFront CDN.
+**Description:** Secure, scalable static HTML/CSS/JavaScript architecture hosted on GitHub Pages with AWS CloudFront CDN, and a deterministic **aggregate-then-render** article pipeline that sources every published article directly from committed markdown analysis artifacts.
 
 **Competitive Advantage:**
 - **Zero Server Costs:** Static hosting on GitHub Pages (free) with CloudFront CDN
@@ -198,6 +198,7 @@ quadrantChart
 - **Global Performance:** CloudFront distribution with multi-region S3 replication
 - **99.998% Availability:** AWS SLA-backed infrastructure with automated failover
 - **Build System:** Vite 7 with ES modules, code splitting, tree-shaking
+- **Single-Source-of-Truth Articles:** `scripts/aggregate-analysis.ts` concatenates `analysis/daily/$DATE/$SUB/*.md` into a canonical `article.md`; `scripts/render-articles.ts` + `scripts/render-lib/` emits sanitised HTML via `unified → remark → rehype → rehype-sanitize`. No HTML scaffolding, no `AI_MUST_REPLACE` markers, every claim traceable back to a committed analysis file.
 
 **Evidence:**
 - GitHub Pages primary hosting + AWS CloudFront CDN
@@ -205,6 +206,7 @@ quadrantChart
 - Route 53 DNS with health checks and failover
 - `SECURITY_ARCHITECTURE.md` with comprehensive security controls
 - Zero server maintenance costs (~$50/month AWS costs only)
+- Article pipeline contract: [`.github/prompts/06-article-generation.md`](.github/prompts/06-article-generation.md); implementation: [`scripts/aggregate-analysis.ts`](scripts/aggregate-analysis.ts), [`scripts/render-articles.ts`](scripts/render-articles.ts), [`scripts/render-lib/index.ts`](scripts/render-lib/index.ts)
 
 **Strategic Value:** Sustainable, secure, and scalable architecture with minimal operational overhead suitable for volunteer-driven project.
 
