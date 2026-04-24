@@ -1,11 +1,11 @@
 ---
-title: "📋 Executive Brief — Realtime Monitor 1434"
-description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts</em> </p>"
+title: "Realtime Monitor 1434"
+description: "Sweden's Konstitutionsutskottet advanced two grundlag amendments (HD01KU32 + HD01KU33) on 2026-04-17 — the first substantive narrowing of Tryckfrihetsförordningen (1766) in the digital-evidence…"
 date: 2026-04-17
 subfolder: realtime-1434
 slug: 2026-04-17-realtime-1434
 source_folder: analysis/daily/2026-04-17/realtime-1434
-generated_at: 2026-04-24T15:27:15.238Z
+generated_at: 2026-04-24T17:58:32.164Z
 language: en
 layout: article
 ---

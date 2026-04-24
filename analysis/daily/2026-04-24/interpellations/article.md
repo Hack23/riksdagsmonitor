@@ -1,11 +1,11 @@
 ---
-title: "Executive Brief — Interpellation Debates 2026-04-24"
-description: "A single new interpellation ([HD10447](https://data.riksdagen.se/dokument/HD10447.html), S) was announced today, forcing Energy- och näringsminister Ebba Busch (KD) to defend the 2024 abolition of the high-sick-pay-cost reimbursement by 2026-05-07. The item is low in legislative velocity but strateg"
+title: "Interpellation Debates"
+description: "A single new interpellation ([HD10447](https://data.riksdagen.se/dokument/HD10447.html), S) was announced today, forcing Energy- och näringsminister Ebba Busch (KD) to defend the 2024 abolition of…"
 date: 2026-04-24
 subfolder: interpellations
 slug: 2026-04-24-interpellations
 source_folder: analysis/daily/2026-04-24/interpellations
-generated_at: 2026-04-24T15:27:15.325Z
+generated_at: 2026-04-24T17:58:32.250Z
 language: en
 layout: article
 ---
@@ -348,8 +348,6 @@ flowchart LR
 ## SWOT Analysis
 
 _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/swot-analysis.md)_
-
-**Date**: 2026-04-24 · **Subject**: HD10447 (S opposition re-opens sick-pay reimbursement) · **Frame**: Opposition pressure on the Tidö government five months before the 2026 general election.
 
 ## S / W / O / T
 

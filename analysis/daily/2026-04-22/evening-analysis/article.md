@@ -1,24 +1,17 @@
 ---
-title: "Executive Brief — Evening Analysis 2026-04-22"
-description: "Brief ID: EB-2026-04-22-EVE001 Prepared by: James Pether Sörling Prepared at: 2026-04-22 23:50 UTC Classification: Public — GDPR Art. 9(2)(e) Confidence: HIGH [A1] 60-second read: ✅"
+title: "Sweden's parliament enacted a 4.1 billion SEK emergency energy relief"
+description: "Sweden's parliament enacted a 4.1 billion SEK emergency energy relief package today (HD01FiU48) with an anomalous M+SD+S+KD supermajority — the Social Democrats abandoning their climate…"
 date: 2026-04-22
 subfolder: evening-analysis
 slug: 2026-04-22-evening-analysis
 source_folder: analysis/daily/2026-04-22/evening-analysis
-generated_at: 2026-04-24T15:27:15.297Z
+generated_at: 2026-04-24T17:58:32.223Z
 language: en
 layout: article
 ---
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief.md)_
-
-**Brief ID**: EB-2026-04-22-EVE001
-**Prepared by**: James Pether Sörling
-**Prepared at**: 2026-04-22 23:50 UTC
-**Classification**: Public — GDPR Art. 9(2)(e)
-**Confidence**: HIGH [A1]
-**60-second read**: ✅
 
 ---
 

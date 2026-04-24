@@ -67,6 +67,60 @@ export function generateAvailableLanguages(languages: string[], currentLang: str
 
 
 /**
+ * Extract the JSON-LD `description` field from a NewsArticle blob
+ * embedded in the article HTML. Returns `null` when the script tag is
+ * missing, malformed, or has no description. Used as a tertiary fallback
+ * for `parseArticleMetadata` / `extractArticleMeta`, after `og:description`
+ * and `<meta name="description">`.
+ *
+ * Implements `seo-metadata-contract.md` §3.h.
+ */
+export function extractDescriptionFromJSONLD(html: string): string | null {
+  try {
+    const jsonLdMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/i);
+    if (!jsonLdMatch) return null;
+    const jsonData = JSON.parse(jsonLdMatch[1]!.trim()) as { description?: string };
+    const desc = typeof jsonData.description === 'string' ? jsonData.description.trim() : '';
+    return desc.length > 0 ? desc : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Strip a trailing ` — Riksdagsmonitor` / ` | Riksdagsmonitor` brand
+ * suffix from a title so sitemap / news-index cards render the editorial
+ * headline alone. The brand is re-added by the card template.
+ *
+ * Implements `seo-metadata-contract.md` §3.h.
+ */
+export function stripBrandSuffix(title: string): string {
+  return title.replace(/\s*[—\-|]\s*Riksdagsmonitor\s*$/i, '').trim();
+}
+
+/**
+ * Choose the richest available description from three candidate sources,
+ * preferring whichever is longest but non-empty. Falls back in order:
+ *   1. `og:description` (often the richest, emitted by the aggregator)
+ *   2. `<meta name="description">` (truncated legacy copy)
+ *   3. JSON-LD `description` (last resort)
+ *
+ * Implements `seo-metadata-contract.md` §3.h.
+ */
+export function chooseBestDescription(
+  ogDescription: string | null,
+  metaDescription: string | null,
+  jsonLdDescription: string | null,
+): string {
+  const candidates = [ogDescription, metaDescription, jsonLdDescription]
+    .map((s) => (s ?? '').trim())
+    .filter((s) => s.length > 0);
+  if (candidates.length === 0) return '';
+  candidates.sort((a, b) => b.length - a.length);
+  return candidates[0]!;
+}
+
+/**
  * Parse HTML file to extract article metadata.
  */
 export function parseArticleMetadata(filePath: string): NewsArticleMetadata | null {
@@ -85,11 +139,20 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
 
     // Extract metadata from HTML meta tags
     // Decode HTML entities to UTF-8 to prevent double-escaping in index pages
+    const rawTitle =
+      extractMetaContent(content, 'og:title') ||
+      extractTitle(content) ||
+      'Untitled';
+    const description = chooseBestDescription(
+      extractMetaContent(content, 'og:description'),
+      extractMetaContent(content, 'description'),
+      extractDescriptionFromJSONLD(content),
+    );
     const metadata: NewsArticleMetadata = {
       slug: fileName,
       lang,
-      title: decodeHtmlEntities(extractMetaContent(content, 'og:title') || extractTitle(content) || 'Untitled'),
-      description: decodeHtmlEntities(extractMetaContent(content, 'og:description') || extractMetaContent(content, 'description') || ''),
+      title: stripBrandSuffix(decodeHtmlEntities(rawTitle)),
+      description: decodeHtmlEntities(description),
       date: normalizeDateString(
         extractMetaContent(content, 'article:published_time') ||
         extractMetaContent(content, 'date') ||

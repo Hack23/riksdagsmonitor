@@ -1,22 +1,17 @@
 ---
-title: "Executive Brief — Opposition Motions 2026-04-23"
-description: "Classification: PUBLIC DOMAIN — Parliamentary Records Author: James Pether Sörling Date: 2026-04-23 Confidence: HIGH [B2]"
+title: "Sweden's parliamentary opposition has filed 14 motions in the week of"
+description: "Sweden's parliamentary opposition has filed 14 motions in the week of 13–17 April 2026 challenging the government's extra supplementary budget (prop. 2025/26:236), deportation law reform (prop."
 date: 2026-04-23
 subfolder: motions
 slug: 2026-04-23-motions
 source_folder: analysis/daily/2026-04-23/motions
-generated_at: 2026-04-24T15:27:15.315Z
+generated_at: 2026-04-24T17:58:32.242Z
 language: en
 layout: article
 ---
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief.md)_
-
-**Classification**: PUBLIC DOMAIN — Parliamentary Records  
-**Author**: James Pether Sörling  
-**Date**: 2026-04-23  
-**Confidence**: HIGH [B2]
 
 ---
 
@@ -289,8 +284,6 @@ xychart-beta
 ## Stakeholder Perspectives
 
 _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/stakeholder-perspectives.md)_
-
-**Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: HIGH [B1–B2]
 
 ---
 
@@ -1073,8 +1066,6 @@ The five agency remiss documents are not independently fetched — cited as repo
 
 _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/scenario-analysis.md)_
 
-**Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: MEDIUM [B2–C3]
-
 ---
 
 ## Scenarios for Spring 2026 Parliamentary Outcome
@@ -1129,8 +1120,6 @@ pie title Scenario Probability Distribution — Spring 2026 Legislative Outcome
 ## Forward Indicators
 
 _Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/forward-indicators.md)_
-
-**Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: MEDIUM [B3–C3]
 
 ---
 
@@ -1246,8 +1235,6 @@ gantt
 
 _Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/election-2026-analysis.md)_
 
-**Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: MEDIUM [B2–C3]
-
 ---
 
 ## Seat-Projection Deltas (as of April 2026)
@@ -1314,8 +1301,6 @@ pie title Current Parliament Approximate Seat Distribution
 
 _Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/coalition-mathematics.md)_
 
-**Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: HIGH [A1–B2]
-
 ---
 
 ## 2022 Election Seat Allocation (official, riksdagen.se)
@@ -1380,8 +1365,6 @@ pie title Predicted Vote: prop 2025/26:236 (Fuel Tax)
 
 _Source: [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/voter-segmentation.md)_
 
-**Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: MEDIUM [B2–C3]
-
 ---
 
 ## Target Voter Segments by Party (this week's motions)
@@ -1443,8 +1426,6 @@ quadrantChart
 ## Comparative International
 
 _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/comparative-international.md)_
-
-**Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: MEDIUM [B2–C2]
 
 ---
 
@@ -1513,8 +1494,6 @@ xychart-beta
 
 _Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/historical-parallels.md)_
 
-**Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: MEDIUM [B2–C3]
-
 ---
 
 ## Parallel 1: 2002–2006 — Opposition Fragmentation Before Bloc Politics
@@ -1567,8 +1546,6 @@ timeline
 
 _Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/media-framing-analysis.md)_
 
-**Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: MEDIUM [C2–C3]
-
 ---
 
 ## Primary Frame War: "Relief" vs. "Justice"
@@ -1616,8 +1593,6 @@ On platforms prioritising emotional resonance (Instagram, TikTok), the "800,000 
 ## Implementation Feasibility
 
 _Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/implementation-feasibility.md)_
-
-**Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: HIGH for process / MEDIUM for outcomes [A2–B3]
 
 ---
 
@@ -1667,8 +1642,6 @@ If the opposition's alternative budget were implemented:
 ## Devil's Advocate
 
 _Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/devils-advocate.md)_
-
-**Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: MEDIUM [B2–C3]
 
 ---
 

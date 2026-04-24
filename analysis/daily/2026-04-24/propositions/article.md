@@ -1,11 +1,11 @@
 ---
-title: "Executive Brief — Propositions 2026-04-24 (2026-04-23 batch)"
-description: "On 23 April 2026 the Kristersson government (Tidö coalition — M, KD, L + SD confidence partner) tabled 4 parliamentary documents dominated by two strategic priorities: (1) EU-driven financial regulation with Prop. 2025/26:253 (EU Banking Package, CRR3/CRD6 transposition — Admiralty B2) and (2) Tidö "
+title: "Propositions ( batch)"
+description: "On 23 April 2026 the Kristersson government (Tidö coalition — M, KD, L + SD confidence partner) tabled 4 parliamentary documents dominated by two strategic priorities: (1) EU-driven financial…"
 date: 2026-04-24
 subfolder: propositions
 slug: 2026-04-24-propositions
 source_folder: analysis/daily/2026-04-24/propositions
-generated_at: 2026-04-24T15:27:15.333Z
+generated_at: 2026-04-24T17:58:32.258Z
 language: en
 layout: article
 ---

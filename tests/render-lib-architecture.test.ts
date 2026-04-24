@@ -175,9 +175,12 @@ describe('aggregator.ts (leaf, isolated from markdown/chrome)', () => {
   it('aggregateAnalysis produces a proper AggregationResult shape', () => {
     const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rl-arch-'));
     try {
+      // H1 must be ≥ 20 chars after title-hygiene scrubbing (see
+      // `seo-metadata-contract.md` §2), otherwise `cleanArticleTitle`
+      // returns `null` and the aggregator falls back to `titleFromBluf`.
       fs.writeFileSync(
         path.join(tmp, 'executive-brief.md'),
-        '# Hello\n\nLead paragraph.\n',
+        '# Sweden ratifies landmark policy reform\n\nLead paragraph describing the reform.\n',
         'utf8',
       );
       const input: AggregationInput = {
@@ -187,11 +190,11 @@ describe('aggregator.ts (leaf, isolated from markdown/chrome)', () => {
         subfolder: 'arch-test',
       };
       const result: AggregationResult = aggregateAnalysis(input);
-      expect(result.title).toBe('Hello');
+      expect(result.title).toBe('Sweden ratifies landmark policy reform');
       expect(result.description).toMatch(/Lead paragraph/);
       expect(Array.isArray(result.artifactsUsed)).toBe(true);
       expect(result.artifactsUsed).toContain('executive-brief.md');
-      expect(result.markdown).toMatch(/^---\ntitle: "Hello"/);
+      expect(result.markdown).toMatch(/^---\ntitle: "Sweden ratifies landmark policy reform"/);
     } finally {
       fs.rmSync(tmp, { recursive: true, force: true });
     }

@@ -1,11 +1,11 @@
 ---
-title: "📋 Executive Brief — Deep Inspection HD03231 (Russia · Cyber · Defence · Ukraine)"
-description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, foreign-policy desks, cyber-defence advisors, and senior analysts</em> </p>"
+title: "Deep Inspection HD03231 (Russia · Cyber · Defence · Ukraine)"
+description: "On 2026-04-16 Foreign Minister Maria Malmer Stenergard (M) and PM Ulf Kristersson (M) tabled Proposition 2025/26:231 (HD03231) proposing Sweden's founding membership in the Special Tribunal for the…"
 date: 2026-04-19
 subfolder: deep-inspection
 slug: 2026-04-19-deep-inspection
 source_folder: analysis/daily/2026-04-19/deep-inspection
-generated_at: 2026-04-24T15:27:15.250Z
+generated_at: 2026-04-24T17:58:32.177Z
 language: en
 layout: article
 ---

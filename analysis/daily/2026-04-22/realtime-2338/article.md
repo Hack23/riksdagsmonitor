@@ -1,20 +1,17 @@
 ---
-title: "Executive Brief — Riksdag Realtime Monitor 2026-04-22 23:38"
-description: "Classification: Public | Analyst: James Pether Sörling | Cycle: Realtime-2338 Methodology: ai-driven-analysis-guide.md v6.4 | Admiralty baseline: [A2]"
+title: "Riksdag Realtime Monitor"
+description: "The Swedish Riksdag enters the final pre-election legislative sprint with three simultaneous breaking-news vectors: (1) the Social Democrats have launched a coordinated four-interpellation…"
 date: 2026-04-22
 subfolder: realtime-2338
 slug: 2026-04-22-realtime-2338
 source_folder: analysis/daily/2026-04-22/realtime-2338
-generated_at: 2026-04-24T15:27:15.301Z
+generated_at: 2026-04-24T17:58:32.227Z
 language: en
 layout: article
 ---
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief.md)_
-
-**Classification**: Public | **Analyst**: James Pether Sörling | **Cycle**: Realtime-2338
-**Methodology**: ai-driven-analysis-guide.md v6.4 | **Admiralty baseline**: [A2]
 
 ---
 
@@ -353,9 +350,6 @@ gantt
 
 _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/stakeholder-perspectives.md)_
 
-**Analyst**: James Pether Sörling | **Methodology**: stakeholder-impact.md
-**Classification**: Public | **Cycle**: Realtime-2338
-
 ---
 
 ## 6-Lens Stakeholder Matrix
@@ -570,9 +564,6 @@ quadrantChart
 
 _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/risk-assessment.md)_
 
-**Analyst**: James Pether Sörling | **Methodology**: political-risk-methodology.md
-**Classification**: Public | **Cycle**: Realtime-2338
-
 ---
 
 ## Risk Register (5 Dimensions × 5 Items)
@@ -688,9 +679,6 @@ flowchart TD
 ## Threat Analysis
 
 _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/threat-analysis.md)_
-
-**Analyst**: James Pether Sörling | **Methodology**: political-threat-framework.md
-**Classification**: Public | **Cycle**: Realtime-2338
 
 ---
 
@@ -1032,9 +1020,6 @@ False death declarations in Swedish welfare state registers (folkbokföring, Ska
 
 _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/scenario-analysis.md)_
 
-**Analyst**: James Pether Sörling | **Methodology**: scenario-analysis.md
-**Classification**: Public | **Cycle**: Realtime-2338
-
 ---
 
 ## Scenario Framework
@@ -1109,8 +1094,6 @@ pie title Scenario Probabilities — Realtime 2026-04-22
 ## Forward Indicators
 
 _Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/forward-indicators.md)_
-
-**Analyst**: James Pether Sörling | **Classification**: Public | **Cycle**: Realtime-2338
 
 ---
 
@@ -1242,8 +1225,6 @@ gantt
 
 _Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/election-2026-analysis.md)_
 
-**Analyst**: James Pether Sörling | **Classification**: Public | **Cycle**: Realtime-2338
-
 ---
 
 ## Electoral Context (September 2026)
@@ -1325,8 +1306,6 @@ quadrantChart
 
 _Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/coalition-mathematics.md)_
 
-**Analyst**: James Pether Sörling | **Classification**: Public | **Cycle**: Realtime-2338
-
 ---
 
 ## Current Riksdag Seat Distribution (2022–2026 mandate)
@@ -1401,8 +1380,6 @@ xychart-beta
 
 _Source: [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/voter-segmentation.md)_
 
-**Analyst**: James Pether Sörling | **Classification**: Public | **Cycle**: Realtime-2338
-
 ---
 
 ## Segment Matrix
@@ -1462,8 +1439,6 @@ flowchart TD
 ## Comparative International
 
 _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/comparative-international.md)_
-
-**Analyst**: James Pether Sörling | **Classification**: Public | **Cycle**: Realtime-2338
 
 ---
 
@@ -1530,8 +1505,6 @@ flowchart LR
 ## Historical Parallels
 
 _Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/historical-parallels.md)_
-
-**Analyst**: James Pether Sörling | **Classification**: Public | **Cycle**: Realtime-2338
 
 ---
 
@@ -1611,8 +1584,6 @@ timeline
 
 _Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/media-framing-analysis.md)_
 
-**Analyst**: James Pether Sörling | **Classification**: Public | **Cycle**: Realtime-2338
-
 ---
 
 ## Expected Framing by Political Actor
@@ -1685,8 +1656,6 @@ quadrantChart
 
 _Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/implementation-feasibility.md)_
 
-**Analyst**: James Pether Sörling | **Classification**: Public | **Cycle**: Realtime-2338
-
 ---
 
 ## Feasibility Assessments
@@ -1757,9 +1726,6 @@ gantt
 
 _Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/devils-advocate.md)_
 
-**Analyst**: James Pether Sörling | **Methodology**: ACH (Analysis of Competing Hypotheses)
-**Classification**: Public | **Cycle**: Realtime-2338
-
 ---
 
 ## ACH Matrix
@@ -1817,9 +1783,6 @@ _Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 ## Classification Results
 
 _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/classification-results.md)_
-
-**Analyst**: James Pether Sörling | **Classification**: Public
-**Methodology**: political-classification-guide.md, ai-driven-analysis-guide.md v6.4
 
 ---
 
@@ -1960,8 +1923,6 @@ flowchart LR
 ## Cross-Reference Map
 
 _Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/cross-reference-map.md)_
-
-**Analyst**: James Pether Sörling | **Classification**: Public | **Cycle**: Realtime-2338
 
 ---
 

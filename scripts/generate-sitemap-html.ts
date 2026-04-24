@@ -409,15 +409,44 @@ function extractArticleDate(fileName: string): string {
 
 /**
  * Extract title and description from an HTML file.
+ *
+ * Per `seo-metadata-contract.md` §3.h, prefers the richest available
+ * description: `og:description` → `<meta name="description">` → JSON-LD
+ * `description`, picking whichever is longest. The title is preferred
+ * from `og:title` (with any trailing ` — Riksdagsmonitor` brand suffix
+ * stripped) before falling back to `<title>`.
  */
 function extractArticleMeta(filePath: string): { title: string; description: string } {
   try {
     const content = fs.readFileSync(filePath, 'utf8');
+    const ogTitleMatch = content.match(/<meta\s+property="og:title"\s+content="([^"]+)"/i);
     const titleMatch = content.match(/<title>([^<]+)<\/title>/i);
+    const ogDescMatch = content.match(/<meta\s+property="og:description"\s+content="([^"]+)"/i);
     const descMatch = content.match(/<meta\s+name="description"\s+content="([^"]+)"/i);
+    const jsonLdDesc = (() => {
+      try {
+        const m = content.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/i);
+        if (!m) return null;
+        const parsed = JSON.parse(m[1]!.trim()) as { description?: string };
+        return typeof parsed.description === 'string' && parsed.description.trim().length > 0
+          ? parsed.description.trim()
+          : null;
+      } catch {
+        return null;
+      }
+    })();
+
+    const candidates = [ogDescMatch?.[1]?.trim(), descMatch?.[1]?.trim(), jsonLdDesc]
+      .filter((s): s is string => !!s && s.length > 0)
+      .sort((a, b) => b.length - a.length);
+    const description = candidates[0] ?? '';
+
+    const rawTitle = (ogTitleMatch?.[1] ?? titleMatch?.[1] ?? '').trim();
+    const title = rawTitle.replace(/\s*[—\-|]\s*Riksdagsmonitor\s*$/i, '').trim();
+
     return {
-      title: titleMatch ? titleMatch[1]!.trim() : path.basename(filePath, '.html'),
-      description: descMatch ? descMatch[1]!.trim() : '',
+      title: title.length > 0 ? title : path.basename(filePath, '.html'),
+      description,
     };
   } catch (_error: unknown) {
     return { title: path.basename(filePath, '.html'), description: '' };

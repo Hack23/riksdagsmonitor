@@ -1,19 +1,17 @@
 ---
-title: "Executive Brief — Interpellation Wave, 2026-04-20"
-description: "Classification: Public · Analysis date: 2026-04-20 · Horizon: 2 weeks (April 29 – May 5 response window) · Confidence: HIGH"
+title: "Interpellation Wave,"
+description: "Between April 7 and April 17, 2026, the Swedish Riksdag received approximately 15 interpellations across the period — of which 10 are in scope for this analysis (HD10429–HD10438, including one…"
 date: 2026-04-20
 subfolder: interpellations
 slug: 2026-04-20-interpellations
 source_folder: analysis/daily/2026-04-20/interpellations
-generated_at: 2026-04-24T15:27:15.269Z
+generated_at: 2026-04-24T17:58:32.196Z
 language: en
 layout: article
 ---
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief.md)_
-
-**Classification**: Public · **Analysis date**: 2026-04-20 · **Horizon**: 2 weeks (April 29 – May 5 response window) · **Confidence**: HIGH
 
 ## BLUF (Bottom Line Up Front)
 

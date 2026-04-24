@@ -1,17 +1,19 @@
 ---
-title: "Executive Brief — Evening Analysis 2026-04-20"
-description: "---"
+title: "Monday April 20 marks a significant escalation in Sweden's"
+description: "Monday April 20 marks a significant escalation in Sweden's pre-election parliamentary accountability campaign. The Riksdag's Environment and Agriculture Committee (MJU) published a committee report…"
 date: 2026-04-20
 subfolder: evening-analysis
 slug: 2026-04-20-evening-analysis
 source_folder: analysis/daily/2026-04-20/evening-analysis
-generated_at: 2026-04-24T15:27:15.265Z
+generated_at: 2026-04-24T17:58:32.192Z
 language: en
 layout: article
 ---
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/executive-brief.md)_
+
+**Date**: 2026-04-20 | **Classification**: PUBLIC | **Produced by**: news-evening-analysis
 
 ---
 
@@ -883,6 +885,8 @@ The dominant threat cluster is the **climate accountability compound** (MJU21 + 
 
 _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/scenario-analysis.md)_
 
+**Date**: 2026-04-20 | **Horizon**: Tomorrow / 7-day / 30-day
+
 ---
 
 ## Three Base Scenarios
@@ -1263,6 +1267,8 @@ S is maintaining consistent pressure on Infrastructure Minister Carlson across m
 ## Methodology Reflection & Limitations
 
 _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/methodology-reflection.md)_
+
+**Date**: 2026-04-20 | **Analysis Version**: v5.0 | **Depth**: deep
 
 ---
 

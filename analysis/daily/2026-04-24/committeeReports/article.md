@@ -1,11 +1,11 @@
 ---
-title: "Executive Brief — Committee Reports 2026-04-24"
-description: "Five committee reports tabled 2026-04-23 cluster along the Tidö coalition's three pre-election signature pillars — criminal-justice capacity (HD01CU25), migration enforcement with a research-mobility carve-out (HD01SfU23), and monetary-institutional stewardship (HD01FiU23) — supplemented by two broa"
+title: "Five committee reports tabled 2026-04-23 cluster along the Tidö"
+description: "Five committee reports tabled 2026-04-23 cluster along the Tidö coalition's three pre-election signature pillars — criminal-justice capacity (HD01CU25), migration enforcement with a research-mobility…"
 date: 2026-04-24
 subfolder: committeeReports
 slug: 2026-04-24-committeeReports
 source_folder: analysis/daily/2026-04-24/committeeReports
-generated_at: 2026-04-24T15:27:15.321Z
+generated_at: 2026-04-24T17:58:32.246Z
 language: en
 layout: article
 ---
@@ -75,8 +75,6 @@ flowchart LR
 ## Synthesis Summary
 
 _Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/synthesis-summary.md)_
-
-**Author**: James Pether Sörling   **Confidence**: HIGH   **Admiralty range**: A1–C3
 
 ## Lead story / decision
 

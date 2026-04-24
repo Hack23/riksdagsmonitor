@@ -222,8 +222,13 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
       subfolder: 'widgets',
     });
 
-    // Title preserves the H1.
-    expect(result.title).toBe('Executive Brief — Widgets 2099-01-01');
+    // Title: the H1 `# Executive Brief — Widgets 2099-01-01` is scrubbed by
+    // `cleanArticleTitle()` (strips `Executive Brief — ` prefix and the
+    // trailing ISO date). The remainder `Widgets` is < 20 chars, so the
+    // aggregator falls back to `titleFromBluf()` which synthesises a
+    // headline from the first BLUF sentence — see
+    // `.github/prompts/seo-metadata-contract.md` §2.
+    expect(result.title).toContain('widget committee reported five');
 
     // Description must be the real BLUF, NOT the admin byline.
     expect(result.description).toContain('widget committee reported five actionable findings');
@@ -414,9 +419,12 @@ describe('render-lib — readFirstHeading / readFirstParagraph', () => {
     expect(readFirstParagraph(md)).toContain('real lede paragraph');
   });
 
-  it('truncates description at 300 characters', () => {
+  it('readFirstParagraph returns prose without truncation (truncation is delegated to truncateToSentenceBoundary)', () => {
+    // Long single-paragraph bodies pass through untouched; the aggregator
+    // calls `truncateToSentenceBoundary()` separately per
+    // `seo-metadata-contract.md` §3.1.
     const long = '# T\n\n' + 'a'.repeat(500);
-    expect(readFirstParagraph(long)!.length).toBe(300);
+    expect(readFirstParagraph(long)!.length).toBe(500);
   });
 
   it('returns null when markdown has no suitable paragraph', () => {
@@ -859,5 +867,385 @@ describe('render-lib — aggregateAnalysis edge cases', () => {
     expect(result.markdown.indexOf('pestle content')).toBeLessThan(
       result.markdown.indexOf('zebra content'),
     );
+  });
+});
+
+// ---------------------------------------------------------------------------
+// SEO metadata contract forward-fix — see
+// `.github/prompts/seo-metadata-contract.md` and the plan in PR #1981.
+// ---------------------------------------------------------------------------
+
+const {
+  readBlufParagraph,
+  truncateToSentenceBoundary,
+  cleanArticleTitle,
+  titleFromBluf,
+  ADMIN_FIELD_RE,
+  ADMIN_FRAGMENT_SPLITTER,
+} = __test__;
+
+describe('render-lib — ADMIN_FIELD_RE (SEO contract §3a)', () => {
+  it('matches the legacy admin fields', () => {
+    for (const f of [
+      '**Author**: X',
+      '**Run ID**: 42',
+      '**Date**: 2026-04-24',
+      '**Classification**: PUBLIC',
+      '**Confidence**: HIGH',
+      '**Scope**: all',
+      '**Admiralty range**: A1-F6',
+      '**Read time**: 5m',
+      '**Version**: 1',
+      '**Status**: draft',
+      '**Owner**: CEO',
+      '**Last Updated**: 2026-04-24',
+      '**Generated**: today',
+    ]) {
+      expect(ADMIN_FIELD_RE.test(f)).toBe(true);
+    }
+  });
+
+  it('matches the new contract fields that previously leaked into descriptions', () => {
+    for (const f of [
+      '**Brief ID**: EB-2026-04-22-EVE001',
+      '**Prepared by**: James Pether Sörling',
+      '**Prepared at**: 2026-04-22 23:50 UTC',
+      '**Analyst**: James Pether Sörling',
+      '**Distribution**: Open',
+      '**Methodology**: ai-driven-analysis-guide.md',
+      '**Cycle**: Realtime-2338',
+      '**Admiralty baseline**: [A2]',
+      '**60-second read**: ✅',
+      '**60 second read**: ✅',
+      '**Reviewed by**: Editorial',
+      '**Reviewer**: Editorial',
+      '**Disseminated**: 2026-04-23',
+      '**Source**: Riksdagen',
+      '**Dissemination**: TLP:WHITE',
+    ]) {
+      expect(ADMIN_FIELD_RE.test(f)).toBe(true);
+    }
+  });
+
+  it('matches unbolded admin fields (leak case — description read back from rendered HTML)', () => {
+    expect(ADMIN_FIELD_RE.test('Brief ID: EB-2026-04-22-EVE001')).toBe(true);
+    expect(ADMIN_FIELD_RE.test('Prepared by: James Pether Sörling')).toBe(true);
+    expect(ADMIN_FIELD_RE.test('Classification: Public')).toBe(true);
+  });
+
+  it('does not match real prose that happens to start with similar words', () => {
+    expect(ADMIN_FIELD_RE.test('Sweden approves SEK 4.1bn emergency budget')).toBe(false);
+    expect(ADMIN_FIELD_RE.test('The government presented three propositions')).toBe(false);
+  });
+});
+
+describe('render-lib — ADMIN_FRAGMENT_SPLITTER (SEO contract §3b)', () => {
+  it('splits on structural delimiters (pipe, fullwidth pipe, newline, double-space)', () => {
+    const input = '**Classification**: Public | **Analyst**: JPS';
+    const parts = input.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
+    expect(parts).toHaveLength(2);
+    expect(parts[0]!.trim()).toMatch(/^\*\*Classification\*\*:/);
+    expect(parts[1]!.trim()).toMatch(/^\*\*Analyst\*\*:/);
+  });
+
+  it('does NOT split on em-dash / middle-dot (value-internal punctuation)', () => {
+    // `**Classification**: Public — GDPR Art. 9(2)(e)` is ONE admin field
+    // whose value happens to contain an em-dash — splitting on — would
+    // incorrectly yield a non-admin fragment and let the byline escape.
+    const input = '**Classification**: Public — GDPR Art. 9(2)(e)';
+    const parts = input.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
+    expect(parts).toHaveLength(1);
+    expect(parts[0]).toBe(input);
+  });
+
+  it('handles |-separated admin blocks — whole block is admin, every fragment matches', () => {
+    const block = '**Classification**: Public | **Analyst**: JPS | **Cycle**: Realtime-2338';
+    const parts = block.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
+    expect(parts.length).toBe(3);
+    for (const p of parts) {
+      expect(ADMIN_FIELD_RE.test(p.trim())).toBe(true);
+    }
+  });
+});
+
+describe('render-lib — readFirstParagraph skips |-separated admin blocks (SEO contract §3b)', () => {
+  it('skips a paragraph whose fragments are all admin fields, even when joined by `|`', () => {
+    const md = [
+      '# Executive Brief — Realtime 2026-04-22',
+      '',
+      '**Classification**: Public | **Analyst**: JPS | **Cycle**: Realtime-2338',
+      '',
+      'The real lede paragraph of the brief.',
+    ].join('\n');
+    const p = readFirstParagraph(md);
+    expect(p).toContain('real lede paragraph');
+    expect(p).not.toMatch(/Classification|Analyst|Cycle/);
+  });
+
+  it('skips a multi-line admin block led by an unbolded `Brief ID`', () => {
+    // Reproduces the 2026-04-22-evening-analysis regression in which the
+    // description leaked "Brief ID: EB-… Prepared by: … Prepared at: …
+    // Classification: Public — GDPR Art. 9(2)(e) Confidence: HIGH [A1]".
+    const md = [
+      '# Executive Brief — Evening Analysis',
+      '',
+      'Brief ID: EB-2026-04-22-EVE001',
+      'Prepared by: James Pether Sörling',
+      'Prepared at: 2026-04-22 23:50 UTC',
+      'Classification: Public — GDPR Art. 9(2)(e)',
+      'Confidence: HIGH [A1]',
+      '60-second read: ✅',
+      '',
+      'The real BLUF lead sentence that should become the description.',
+    ].join('\n');
+    const p = readFirstParagraph(md);
+    expect(p).toContain('real BLUF lead sentence');
+    expect(p).not.toMatch(/Brief ID|Prepared by|Classification|Confidence|60-second/);
+  });
+});
+
+describe('render-lib — truncateToSentenceBoundary (SEO contract §3c)', () => {
+  it('returns the input unchanged when it is already within the window', () => {
+    const s = 'Sweden approves emergency budget five months before the September 2026 general election.';
+    expect(truncateToSentenceBoundary(s)).toBe(s);
+  });
+
+  it('truncates at the last sentence boundary within hardMax, not mid-word', () => {
+    const s =
+      'Sweden approves SEK 4.1bn emergency budget five months before the September 2026 election. ' +
+      'The Social Democrats abandoned their climate counter-motion to avoid blame for high fuel costs. ' +
+      'Trailing sentence that will not fit.';
+    const out = truncateToSentenceBoundary(s);
+    expect(out.length).toBeLessThanOrEqual(200);
+    // Should end on a sentence terminator, not mid-word.
+    expect(out).toMatch(/[.!?]$/);
+    // Should include the first sentence in full.
+    expect(out).toContain('Sweden approves SEK 4.1bn emergency budget');
+  });
+
+  it('never cuts mid-word when no sentence boundary is reachable', () => {
+    // 30 repetitions of "longword " → 270 chars, no sentence end.
+    const s = 'longword '.repeat(30).trim();
+    const out = truncateToSentenceBoundary(s);
+    expect(out.length).toBeLessThanOrEqual(201); // +1 for ellipsis
+    // Ends with an intentional ellipsis (no optional match — the ellipsis
+    // must actually be present), preceded by a complete `longword` token.
+    expect(out).toMatch(/longword…$/);
+  });
+
+  it('respects custom windows (e.g. CJK 70-120)', () => {
+    const s =
+      'Sweden approves SEK 4.1bn emergency budget five months before the September 2026 election. Additional context follows here.';
+    const out = truncateToSentenceBoundary(s, 70, 120);
+    expect(out.length).toBeLessThanOrEqual(120);
+    expect(out).toMatch(/[.!?]$/);
+  });
+
+  it('supports CJK full stop `。` as a sentence terminator', () => {
+    const s =
+      '瑞典批准紧急预算。这是在九月大选前五个月通过的。更多文本可能会跟随。后续的一些段落继续内容。' +
+      '更多内容。更多内容。更多内容。更多内容。更多内容。更多内容。';
+    const out = truncateToSentenceBoundary(s, 20, 60);
+    expect(out.length).toBeLessThanOrEqual(60);
+    expect(out).toMatch(/。$/);
+  });
+});
+
+describe('render-lib — readBlufParagraph (SEO contract §3d)', () => {
+  it('returns the first prose paragraph after a `## 🎯 BLUF` heading', () => {
+    const md = [
+      '# Executive Brief — Something',
+      '',
+      '**Classification**: Public',
+      '',
+      '## 🎯 BLUF',
+      '',
+      'Sweden approves SEK 4.1bn emergency budget five months before the September 2026 election.',
+      '',
+      '## Next section',
+      '',
+      'body text',
+    ].join('\n');
+    const bluf = readBlufParagraph(md);
+    expect(bluf).toContain('Sweden approves SEK 4.1bn emergency budget');
+  });
+
+  it('returns null when the brief has no BLUF heading', () => {
+    const md = '# No BLUF\n\nJust a regular paragraph.\n';
+    expect(readBlufParagraph(md)).toBeNull();
+  });
+
+  it('skips admin paragraphs between the BLUF heading and the first prose', () => {
+    const md = [
+      '# EB',
+      '',
+      '## 🎯 BLUF',
+      '',
+      '**Classification**: Public | **Analyst**: JPS',
+      '',
+      'Real BLUF sentence.',
+    ].join('\n');
+    expect(readBlufParagraph(md)).toBe('Real BLUF sentence.');
+  });
+});
+
+describe('render-lib — cleanArticleTitle (SEO contract §3e)', () => {
+  it('strips `Executive Brief — ` prefix and trailing ISO date', () => {
+    expect(cleanArticleTitle('Executive Brief — Government Committee Reports 2026-04-23'))
+      .toBe('Government Committee Reports');
+    expect(cleanArticleTitle('Executive Brief - Opposition Propositions 2026/04/15'))
+      .toBe('Opposition Propositions');
+  });
+
+  it('returns null when the cleaned title is too short to be a real headline', () => {
+    expect(cleanArticleTitle('Executive Brief — EB 2026-04-22')).toBeNull();
+    // "Committee Reports" is 17 chars — below the 20-char floor for a real story.
+    expect(cleanArticleTitle('Executive Brief — Committee Reports 2026-04-23')).toBeNull();
+    expect(cleanArticleTitle('# Hi')).toBeNull();
+    expect(cleanArticleTitle('')).toBeNull();
+    expect(cleanArticleTitle(null)).toBeNull();
+  });
+
+  it('preserves a real editorial headline that already has no boilerplate', () => {
+    const t = 'Sweden approves emergency budget five months before the 2026 election';
+    expect(cleanArticleTitle(t)).toBe(t);
+  });
+
+  it('strips trailing realtime-cycle timestamps like ` 2026-04-22 23:38`', () => {
+    expect(cleanArticleTitle('Executive Brief — Riksdag Realtime Monitor 2026-04-22 23:38'))
+      .toBe('Riksdag Realtime Monitor');
+    // Note: "Riksdag Realtime Monitor" is the subject, `Executive Brief —`
+    // prefix is stripped and the trailing timestamp is removed.
+  });
+
+  it('handles the `Realtime Monitor — ` boilerplate prefix too', () => {
+    expect(cleanArticleTitle('Realtime Monitor — Swedish defense spending debate 2026-04-22'))
+      .toBe('Swedish defense spending debate');
+  });
+
+  it('strips leading pictographs / emoji prefixes like `📋 Executive Brief — …`', () => {
+    // Regression: translated Tier-A articles sometimes render the H1
+    // with a `📋` emoji prefix — the old regex anchored strictly on
+    // `^Executive Brief` and failed to fire.
+    expect(cleanArticleTitle('📋 Executive Brief — Riksdag Realtime Monitor 2026-04-17 14:34'))
+      .toBe('Riksdag Realtime Monitor');
+    expect(cleanArticleTitle('🚨 Intelligence Brief — Coalition Mathematics 2026-04-20'))
+      .toBe('Coalition Mathematics');
+  });
+
+  it('strips mid-title ISO date ranges and dangling connectors', () => {
+    // Regression: week-ahead articles emit titles like `Week Ahead: 2026-02-23 to`
+    // in every language variant — the old regex only stripped trailing
+    // dates so the mid-title date + dangling connector survived in
+    // Arabic / German / Japanese etc. Real bad titles end with the
+    // connector word after the date (no trailing prose), which
+    // collapses to under the 20-char floor → `null`, so the rewriter
+    // falls back to `titleFromBluf`.
+    expect(cleanArticleTitle('Week Ahead: 2026-02-23 to')).toBeNull();
+    expect(cleanArticleTitle('Woche Voraus: 2026-02-23 bis')).toBeNull();
+    expect(cleanArticleTitle('الأسبوع القادم: 2026-02-23 إلى')).toBeNull();
+    // But a real follow-on phrase survives with the embedded date gone:
+    expect(cleanArticleTitle('Budget outlook 2026-02-23 through 2026-03-02 in Riksdagen'))
+      .toBe('Budget outlook through in Riksdagen');
+  });
+});
+
+describe('render-lib — titleFromBluf (SEO contract §3e fallback)', () => {
+  it('synthesises a title from the first BLUF sentence', () => {
+    const bluf = 'Sweden approves SEK 4.1bn emergency budget five months before the September 2026 election. More context follows.';
+    const title = titleFromBluf(bluf);
+    expect(title).not.toBeNull();
+    expect(title!.length).toBeLessThanOrEqual(70);
+    expect(title).toContain('Sweden approves');
+  });
+
+  it('returns null when there is no usable BLUF', () => {
+    expect(titleFromBluf(null)).toBeNull();
+    expect(titleFromBluf('')).toBeNull();
+    expect(titleFromBluf('   ')).toBeNull();
+  });
+
+  it('truncates at word boundary when the first sentence exceeds maxLen', () => {
+    const bluf = 'The Swedish Riksdag approved a comprehensive emergency energy relief package worth SEK four point one billion with a cross-bloc majority including unexpected Social Democratic support despite their counter-motion filed the same week.';
+    const title = titleFromBluf(bluf, 70);
+    expect(title).not.toBeNull();
+    expect(title!.length).toBeLessThanOrEqual(70);
+    // Must end on a complete word — i.e. the char immediately after the
+    // title in the source BLUF is a whitespace (word boundary) or EOL.
+    const nextCharIdx = bluf.indexOf(title!) + title!.length;
+    const nextChar = bluf[nextCharIdx];
+    expect(nextChar === undefined || /\s/.test(nextChar)).toBe(true);
+  });
+});
+
+describe('render-lib — aggregateAnalysis end-to-end contract', () => {
+  it('produces a clean title + description for a realistic executive-brief with boilerplate H1', () => {
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rm-seo-e2e-'));
+    const sub = path.join(tmp, '2026-04-23', 'committeeReports');
+    fs.mkdirSync(sub, { recursive: true });
+    fs.writeFileSync(
+      path.join(sub, 'executive-brief.md'),
+      [
+        '# Executive Brief — Committee Reports 2026-04-23',
+        '',
+        '**Classification**: Public | **Distribution**: Open',
+        '**Analyst**: James Pether Sörling | **Date**: 2026-04-23',
+        '',
+        '## 🎯 BLUF',
+        '',
+        "Sweden's Riksdag approved an emergency SEK 4.1 billion fiscal package on 23 April 2026, cutting fuel taxes five months before the September general election while simultaneously ratifying two dormant constitutional amendments.",
+        '',
+        '## More context',
+        '',
+        'Body.',
+      ].join('\n'),
+    );
+    const result = aggregateAnalysis({
+      subfolderAbsPath: sub,
+      subfolderRepoRelPath: 'analysis/daily/2026-04-23/committeeReports',
+      date: '2026-04-23',
+      subfolder: 'committeeReports',
+    });
+
+    // Title: `Executive Brief — ` stripped, `2026-04-23` stripped. Since
+    // `Committee Reports` (17 chars) is < 20, fall back to BLUF synthesis.
+    expect(result.title).not.toMatch(/Executive Brief/);
+    expect(result.title).not.toMatch(/2026-04-23/);
+    expect(result.title.length).toBeGreaterThan(15);
+
+    // Description: BLUF paragraph, sentence-terminated OR intentionally
+    // ellipsis-truncated, ≤ 200 chars, no admin leakage. Per
+    // `truncateToSentenceBoundary()`: when no sentence end fits in the
+    // window, fall back to a clean word-boundary cut with Unicode `…`.
+    expect(result.description.length).toBeLessThanOrEqual(200);
+    expect(result.description).toMatch(/[.!?…]$/);
+    expect(result.description).not.toMatch(/Classification|Analyst|Distribution/);
+    expect(result.description).toContain("Sweden");
+  });
+
+  it('synthesises a BLUF-based title when the H1 collapses to nothing useful', () => {
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rm-seo-short-'));
+    const sub = path.join(tmp, '2026-04-22', 'evening-analysis');
+    fs.mkdirSync(sub, { recursive: true });
+    fs.writeFileSync(
+      path.join(sub, 'executive-brief.md'),
+      [
+        '# Executive Brief — Evening 2026-04-22',
+        '',
+        '## 🎯 BLUF',
+        '',
+        'Finance Minister Svantesson faces a coordinated three-interpellation accountability offensive from the Social Democrats ahead of the September 2026 election.',
+      ].join('\n'),
+    );
+    const result = aggregateAnalysis({
+      subfolderAbsPath: sub,
+      subfolderRepoRelPath: 'analysis/daily/2026-04-22/evening-analysis',
+      date: '2026-04-22',
+      subfolder: 'evening-analysis',
+    });
+
+    expect(result.title).toContain('Finance Minister Svantesson');
+    expect(result.title.length).toBeLessThanOrEqual(70);
+    expect(result.title).not.toMatch(/Executive Brief|2026-04-22/);
   });
 });
