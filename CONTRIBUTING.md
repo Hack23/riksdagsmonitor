@@ -76,13 +76,33 @@ Work in Progress pull requests are also welcome to get feedback early on.
 |-----------|---------|
 | `*.html` | Multi-language index pages (14 languages) |
 | `styles.css` | Cyberpunk theme design system |
-| `js/` | Dashboard JavaScript modules (Chart.js, D3.js) |
+| `js/` | Dashboard JavaScript modules (Chart.js, D3.js, Mermaid init) |
 | `dashboard/` | Interactive intelligence dashboards |
-| `news/` | Generated political news articles |
-| `scripts/` | Build, generation, and utility scripts |
+| `news/` | Rendered political news articles (`$DATE-$SUB-$LANG.html`) |
+| `analysis/daily/$DATE/$SUB/` | Per-day analysis artifacts consumed by the aggregator |
+| `analysis/methodologies/` | Editorial method files (source of truth for *how* analysis is done) |
+| `analysis/templates/` | Output section templates (source of truth for *what* goes in an article) |
+| `scripts/aggregate-analysis.ts` | Concatenates daily artifacts → canonical `article.md` + manifest |
+| `scripts/render-articles.ts` + `scripts/render-lib/` | Markdown → sanitised HTML (unified / remark / rehype) |
+| `scripts/` | Other build, generation, and utility scripts |
 | `tests/` | Vitest unit tests |
 | `cypress/` | Cypress E2E tests |
 | `cia-data/` | CIA platform data exports |
+
+## 📰 How to add a new news type
+
+The legacy content-generator approach (`generate-news-enhanced`, `article-template`) has been removed. To add a new news type:
+
+1. **Pick a subfolder slug** (e.g. `interpellations-deep`) — this becomes `analysis/daily/$DATE/$SUB/`.
+2. **Register it in the aggregator section-order config** under `analysis/templates/` — this determines narrative flow without touching TypeScript.
+3. **Copy an existing per-type workflow `.md`** from `.github/workflows/news-*.md` (e.g. `news-propositions.md`) and adapt:
+   - analysis phase: the specific MCP queries the new type needs
+   - analysis gate: the per-type 9-artifact or 14-artifact list (see `.github/prompts/05-analysis-gate.md`)
+   - front-matter: schedule, subfolder slug, description
+4. **Compile** with `gh aw compile` to produce the matching `.lock.yml`.
+5. **Never** hand-write localised HTML. The per-type workflow only produces `$DATE-$SUB-en.html` + `$DATE-$SUB-sv.html`; the rest are the sole responsibility of the `news-translate` workflow.
+
+See [WORKFLOWS.md](WORKFLOWS.md) §5 for the full agentic-workflow structure, and [ARCHITECTURE.md](ARCHITECTURE.md) §"News Generation Pipeline Architecture" for the aggregator/renderer contract.
 
 ## ✅ Quality Gates
 
