@@ -295,7 +295,7 @@ stateDiagram-v2
     {
       "slug": "2026-02-15-week-ahead-en.html",
       "timestamp": "2026-02-15T15:25:00Z",
-      "workflow": "news-article-generator",
+      "workflow": "news-week-ahead",
       "title": "Week Ahead in Swedish Parliament",
       "topics": ["parliament", "schedule", "committees"]
     }
@@ -308,10 +308,10 @@ stateDiagram-v2
     }
   },
   "workflows": {
-    "news-article-generator": {
+    "news-week-ahead": {
       "lastRun": "2026-02-15T05:51:00Z",
       "status": "success",
-      "articles": 3
+      "articles": 1
     },
     "news-evening-analysis": {
       "lastRun": "2026-02-14T18:00:00Z",
@@ -1091,9 +1091,9 @@ All state transitions MUST be logged with:
 
 | Workflow | State Diagram | Execution Path |
 |----------|---------------|----------------|
-| **news-article-generator.md** | Article Lifecycle, Agentic Workflow | QUEUED → GENERATING → TRANSLATING → VALIDATING → PR_CREATED |
-| **news-evening-analysis.md** | Article Lifecycle, Agentic Workflow | QUEUED → GENERATING → TRANSLATING → VALIDATING → PR_CREATED |
-| **news-realtime-monitor.md** | Article Lifecycle, Agentic Workflow | QUEUED → GENERATING → TRANSLATING → VALIDATING → PR_CREATED |
+| **news-evening-analysis.md** + 9 other per-type news workflows | Article Lifecycle, Agentic Workflow | QUEUED → ANALYSING → AGGREGATING → RENDERING → VALIDATING → PR_CREATED |
+| **news-translate.md** | Article Lifecycle, Agentic Workflow | QUEUED → READING_RENDERED_HTML → TRANSLATING → VALIDATING → PR_CREATED |
+| **news-realtime-monitor.md** | Article Lifecycle, Agentic Workflow | QUEUED → ANALYSING → AGGREGATING → RENDERING → VALIDATING → PR_CREATED |
 | **quality-checks.yml** | PR Review States, CI/CD Pipeline | CI_RUNNING → CI_PASSED/CI_FAILED |
 | **dependency-review.yml** | CI/CD Pipeline | SCAN → VULNERABLE/PASSED |
 

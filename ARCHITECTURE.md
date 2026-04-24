@@ -977,134 +977,108 @@ graph TB
 | **Consistent analytical depth** | Target ±0.5 on 1.0 scale across languages | Automated quality scoring |
 
 **File Naming Convention:**
-- `news/2026-02-20-evening-analysis.html` (English)
-- `news/2026-02-20-evening-analysis_sv.html` (Swedish)
-- `news/2026-02-20-evening-analysis_da.html` (Danish)
-- ... (12 more language variants)
+- `news/2026-02-20-evening-analysis-en.html` (English)
+- `news/2026-02-20-evening-analysis-sv.html` (Swedish — produced by the same workflow)
+- `news/2026-02-20-evening-analysis-da.html` (Danish — produced by `news-translate`)
+- ... (11 more language variants, all from `news-translate`)
 
 ---
 
-## 🔁 Content Pipeline Architecture
+## 🔁 News Generation Pipeline Architecture
 
-### ContentPipeline Interface (`scripts/pipeline/`)
+### Aggregate → Render Module (`scripts/aggregate-analysis.ts`, `scripts/render-articles.ts`, `scripts/render-lib/`)
 
-The `scripts/pipeline/` module introduces a standardised **fetch → transform → generate → validate → write** lifecycle for all article types, replacing ad-hoc per-type logic with a unified contract.
+The news pipeline is a **single-pass** aggregate-then-render flow. There is no scaffold-and-fill, no template placeholders, and no per-type generator class. Every article is derived 100% from real analysis artifacts under `analysis/daily/$DATE/$SUB/` plus the methodology + template files under `analysis/methodologies/` and `analysis/templates/`.
 
-#### C4 Component Diagram — Pipeline Module
+#### C4 Component Diagram — News Subsystem
 
 ```mermaid
 graph TD
-    subgraph "scripts/pipeline/ Module"
-        Types[types.ts<br/>ContentPipeline interface<br/>PipelineStage, PipelineResult<br/>OrchestratorConfig / Result]
-        Orchestrator[orchestrator.ts<br/>PipelineOrchestrator class<br/>Sequential & parallel execution<br/>Error isolation & aggregation]
-        Validation[validation.ts<br/>validateArticleHTML()<br/>validateArticleBatch()<br/>Post-generation structure checks]
-        Index[index.ts<br/>Barrel re-export<br/>Public API surface]
+    subgraph "Inputs (single source of truth)"
+        Methodologies[analysis/methodologies/<br/>Editorial method files<br/>Static, version-controlled]
+        Templates[analysis/templates/<br/>Section templates<br/>Static, version-controlled]
+        Daily[analysis/daily/$DATE/$SUB/<br/>Per-day analysis artifacts<br/>9 core or 14 Tier-C files]
     end
 
-    subgraph "Article Types (plugins)"
-        NewsTypes[scripts/news-types/<br/>motions, propositions,<br/>committee-reports, etc.<br/>Implement ContentPipeline]
+    subgraph "scripts/aggregate-analysis.ts"
+        Aggregator[Aggregator<br/>Concatenates artifacts in fixed<br/>narrative order; strips dup H1s,<br/>front-matter, admin footers;<br/>rewrites relative links to GitHub blobs]
     end
 
-    subgraph "Template Layer"
-        Template[scripts/article-template/<br/>generateArticleHTML()<br/>Accepts sections[] array<br/>Extensible content blocks]
+    subgraph "scripts/render-articles.ts + scripts/render-lib/"
+        Renderer[Renderer<br/>unified · remark-parse · remark-gfm<br/>· remark-rehype · rehype-raw<br/>· rehype-sanitize · rehype-slug<br/>· rehype-autolink-headings<br/>· rehype-stringify · gray-matter]
+        Chrome[Shared chrome<br/>Header, footer, lang switcher,<br/>JSON-LD NewsArticle shell,<br/>Mermaid + Chart.js init]
     end
 
-    Types --> Orchestrator
-    Types --> NewsTypes
-    Orchestrator --> NewsTypes
-    Orchestrator --> Validation
-    NewsTypes --> Template
-    Index --> Types
-    Index --> Orchestrator
-    Index --> Validation
+    subgraph "Outputs"
+        ArticleMd[article.md<br/>Canonical aggregated markdown]
+        EnHtml[news/$DATE-$SUB-en.html]
+        SvHtml[news/$DATE-$SUB-sv.html]
+        Sitemap[sitemap.xml + sitemap.html]
+        Rss[rss.xml]
+        Pi[political-intelligence_*.html]
+    end
 
-    style Types fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#000000
-    style Orchestrator fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
-    style Validation fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
-    style Index fill:#9e9e9e,stroke:#616161,stroke-width:2px,color:#000000
-    style NewsTypes fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
-    style Template fill:#00bcd4,stroke:#00838f,stroke-width:2px,color:#000000
+    subgraph "Out-of-band"
+        Translate[news-translate workflow<br/>EN+SV → 12 other languages<br/>Decoupled, never invoked here]
+    end
+
+    Methodologies --> Aggregator
+    Templates --> Aggregator
+    Daily --> Aggregator
+    Aggregator --> ArticleMd
+    ArticleMd --> Renderer
+    Renderer --> Chrome
+    Chrome --> EnHtml
+    Chrome --> SvHtml
+    EnHtml --> Sitemap
+    SvHtml --> Sitemap
+    EnHtml --> Rss
+    EnHtml --> Pi
+    EnHtml -.-> Translate
+    SvHtml -.-> Translate
+
+    style Aggregator fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style Renderer fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#000000
+    style Chrome fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    style Translate fill:#9e9e9e,stroke:#616161,stroke-width:2px,color:#ffffff
 ```
 
-#### Pipeline Lifecycle Stages
+#### Pipeline Stages
 
-| Stage | Responsibility | Error Handling |
-|-------|---------------|----------------|
-| **fetch** | Call MCP tools to retrieve raw data | Partial failure → log warning, continue with empty data (graceful degradation) |
-| **transform** | Convert raw data to per-language article payloads | Safe type coercion; missing fields use defaults |
-| **generate** | Render HTML via `generateArticleHTML()` | Template errors throw; caller catches and returns `success=false` |
-| **validate** | Check HTML structure via `validateArticleHTML()` | Validation errors logged as warnings; file still written |
-| **write** | Persist HTML to `news/` directory | Atomic write; dry-run mode skips disk I/O |
+| Stage | Script | Responsibility |
+|-------|--------|----------------|
+| **aggregate** | `scripts/aggregate-analysis.ts` | Concatenate per-day artifacts in canonical narrative order; emit `article.md` |
+| **render** | `scripts/render-articles.ts` | Markdown → sanitised HTML via remark/rehype |
+| **chrome** | `scripts/render-lib/` | Inject SEO chrome, JSON-LD `NewsArticle`, language switcher, Mermaid/Chart runtime |
+| **translate** | `news-translate` workflow (out-of-band) | Produce the 12 non-EN/SV variants from the rendered EN+SV HTML |
 
-#### ContentPipeline Interface
+#### Sanitiser Trust Boundary
 
-```typescript
-interface ContentPipeline {
-  readonly name: string;
-  run(options?: PipelineOptions): Promise<PipelineResult>;
-}
+The renderer's `rehype-sanitize` schema is the single trust boundary between AI-generated analysis markdown and user-facing HTML:
 
-interface PipelineResult extends GenerationResult {
-  durationMs?: number;
-  stageDurations?: Partial<Record<PipelineStage, number>>;
-  warnings?: string[];
-  degraded?: boolean;   // true when fallback/cached data was used
-}
-```
+- **Allow-listed**: standard markdown HTML (`p`, `h1`-`h6`, `ul`, `ol`, `li`, `a[href|title]`, `img[src|alt|title]`, `code`, `pre`, `blockquote`, `table`, `thead`, `tbody`, `tr`, `th`, `td`, `figure`, `figcaption`, `details`, `summary`).
+- **Explicitly allowed extension**: `<pre class="mermaid">…</pre>` survives sanitisation so client-side `mermaid-init.mjs` can render it.
+- **Rejected**: `<script>`, `<iframe>`, `<object>`, `<embed>`, inline event handlers (`onclick=…`), `javascript:` URIs, `data:` URIs except for whitelisted image MIME types.
+- **GitHub-blob link rewriting**: relative links inside aggregated markdown are rewritten to absolute `https://github.com/Hack23/riksdagsmonitor/blob/main/...` URLs so the citation chain survives copy-paste.
 
-#### Graceful Degradation Pattern
+The trust boundary is documented in [`SECURITY_ARCHITECTURE.md`](SECURITY_ARCHITECTURE.md) and the corresponding STRIDE entries live in [`THREAT_MODEL.md`](THREAT_MODEL.md).
 
-All `ContentPipeline` implementations follow the **graceful degradation** contract:
-- MCP query failures are caught per-call with `.catch(() => [])` — an empty array
-- The pipeline continues with whatever data is available
-- A `warnings[]` entry documents the degradation for observability
-- `degraded: true` is set in `PipelineResult` so the orchestrator can surface it
+#### Provenance — Sources of Method
 
-#### Extensible Template Sections
+Each rendered article footer cites:
+1. Every `analysis/daily/$DATE/$SUB/*.md` file consumed (via aggregator manifest)
+2. Every `analysis/methodologies/*.md` referenced
+3. Every `analysis/templates/*.md` used
 
-`ArticleData` now accepts an optional `sections: TemplateSection[]` array:
+The citation chain is encoded in JSON-LD `NewsArticle.about` and `NewsArticle.citation` so search engines and LLMs can traverse the full evidence chain.
 
-```typescript
-interface TemplateSection {
-  id: string;          // HTML element id
-  html: string;        // Pre-rendered HTML block
-  className?: string;  // Wrapper CSS class (default: 'article-section')
-}
-```
+#### What is NOT in this pipeline
 
-New content types (risk indicators, trend charts, pull quotes, data tables) can be injected without modifying the core template — each section is rendered as an isolated `<div>` block after the main content body.
-
-#### Post-Generation HTML Validation
-
-`validateArticleHTML(html, opts)` runs lightweight structural checks before disk write:
-
-| Check | Default | When fails |
-|-------|---------|------------|
-| `<!DOCTYPE html>` present | required | error |
-| `lang` attribute on `<html>` | required | error |
-| At least one `<h1>` | required | error |
-| At least one `<h2>` section | required | error |
-| Sources attribution block | required | error |
-| Word count ≥ 50 | required | error |
-
-#### Pipeline Orchestrator
-
-`PipelineOrchestrator` runs pipelines with full error isolation:
-
-```typescript
-const orchestrator = new PipelineOrchestrator({
-  pipelines: [motionsPipeline, propositionsPipeline, committeeReportsPipeline],
-  parallel: true,          // run concurrently for throughput
-  defaultOptions: { languages: ['en', 'sv'] },
-});
-const result = await orchestrator.run();
-// result.allSucceeded, result.totalFiles, result.warnings, result.durationMs
-```
-
-**Key behaviours:**
-- A failure in one pipeline **never aborts** others (error isolation)
-- `Promise.allSettled` in parallel mode handles unexpected throws
-- `result.warnings[]` aggregates degradation/validation warnings across all pipelines
+- ❌ No scaffold-and-fill (`generate-news-enhanced` removed)
+- ❌ No `<!-- AI_MUST_REPLACE: … -->` markers (validator entry removed)
+- ❌ No `scripts/article-template/`, `scripts/news-types/`, `scripts/pipeline/` (all deleted)
+- ❌ No per-type generator classes — section ordering is configuration in the aggregator
+- ❌ No translation logic in the per-type workflows — that lives only in `news-translate`
 
 ---
 

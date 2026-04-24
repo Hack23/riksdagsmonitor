@@ -266,7 +266,7 @@ quadrantChart
 - `SKILLS.md` (41 specialized skills)
 - `.github/agents/` (agent configuration files)
 - `.github/skills/` (skill libraries)
-- Active agentic workflows: 10 workflows including news-article-generator, news-evening-analysis, news-realtime-monitor, news-motions, news-committee-reports, news-weekly-review, news-monthly-review, news-week-ahead, news-month-ahead, news-propositions
+- Active agentic workflows: 11 workflows in production — 10 single-run news pipelines (news-evening-analysis, news-realtime-monitor, news-motions, news-committee-reports, news-weekly-review, news-monthly-review, news-week-ahead, news-month-ahead, news-propositions, news-interpellations) plus 1 out-of-band translator (news-translate)
 
 **Strategic Value:** Scalable AI-driven development and content generation addressing single-developer constraint.
 
@@ -392,7 +392,7 @@ quadrantChart
 
 **Current State:**
 - **14 Language Files:** Manual maintenance of index_*.html files
-- **News Articles:** 10 agentic workflows (news-article-generator, news-evening-analysis, news-realtime-monitor, news-motions, news-committee-reports, news-weekly-review, news-monthly-review, news-week-ahead, news-month-ahead, news-propositions) in production
+- **News Articles:** 10 single-run agentic workflows (news-evening-analysis, news-realtime-monitor, news-motions, news-committee-reports, news-weekly-review, news-monthly-review, news-week-ahead, news-month-ahead, news-propositions, news-interpellations) each running **analysis → aggregate → render → PR** in one pass; translations decoupled into news-translate
 - **Translation Validation:** Automated checks but human review required
 
 **Efficiency Issues:**
