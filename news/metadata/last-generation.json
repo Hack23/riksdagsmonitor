@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-24T05:31:33.364Z",
+  "timestamp": "2026-04-21T20:18:15.477Z",
   "types": [
-    "committee-reports"
+    "propositions"
   ],
   "languagesGenerated": [
     "en",
@@ -16,8 +16,8 @@
   "generated": 2,
   "errors": 0,
   "articles": [
-    "2026-04-24-committee-reports-en.html",
-    "2026-04-24-committee-reports-sv.html"
+    "2026-04-21-government-propositions-en.html",
+    "2026-04-21-government-propositions-sv.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"

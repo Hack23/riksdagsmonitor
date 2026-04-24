@@ -23,7 +23,7 @@ In **Article mode**: generate articles from existing analysis, commit, and creat
 
 ## Stage → commit → PR
 
-1. **Stage scoped files only.** Never stage the whole repo.
+1. **Stage scoped files only.** Never stage the whole repo. Before staging any `news/*.html`, confirm the pre-commit article gate in `06-article-generation.md` **step 5** has exited 0. If it has not been run, run it now and abort the commit on any non-zero exit — do NOT attempt to work around markers by editing them out manually.
 
    | Content | Git path to stage |
    |---------|-------------------|

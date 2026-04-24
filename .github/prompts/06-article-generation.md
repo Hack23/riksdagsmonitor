@@ -42,9 +42,37 @@ If any required artifact is missing or empty, do **not** proceed to step 1 below
    | SEO title / meta description | `synthesis-summary.md` §"AI-Recommended Article Metadata" |
    | Analysis references block | Hand-written footer linking to the 23 analysis files on GitHub — at minimum: `executive-brief.md`, `synthesis-summary.md`, `intelligence-assessment.md`, `scenario-analysis.md`, `risk-assessment.md`, `forward-indicators.md` (see "Mandatory sections" below) |
 
-3. **Replace every `AI_MUST_REPLACE` marker** with evidence-cited analysis. `05-analysis-gate.md` **check 3** (no stubs) enforces zero markers before article generation proceeds.
+3. **Replace every `AI_MUST_REPLACE` marker** with evidence-cited analysis. Note: `05-analysis-gate.md` **check 3** only scans `$ANALYSIS_DIR` — it does **not** scan generated HTML. The article-side gate in step 5 below is the only mechanism that blocks unresolved markers from reaching the PR, so it is mandatory.
 
 4. **Article Pass 2** — AI-FIRST principle applies (see `00-base-contract.md` rule 5). Read every generated article HTML back in full. Improve: tighten lede, strengthen quotes, expand stakeholder coverage, replace boilerplate sentences, verify every `dok_id` reference resolves. Minimum 8 minutes.
+
+5. **Pre-commit article gate (MANDATORY, hard-blocking).** Before staging any article for commit, run the article-side banned-pattern detector against every generated HTML file:
+
+   ```bash
+   npx tsx scripts/check-banned-patterns.ts news/*committee-reports*$ARTICLE_DATE*.html \
+     news/$YYYY/$MM/$DD/*.html 2>/dev/null
+   GATE_EXIT=$?
+   if [ "$GATE_EXIT" -ne 0 ]; then
+     echo "❌ Article gate failed: $GATE_EXIT file(s) contain unresolved AI_MUST_REPLACE markers or banned patterns"
+     echo "   Return to step 2 (read analysis) and step 3 (replace markers). Do NOT proceed to 07-commit-and-pr.md."
+     exit 1
+   fi
+   ```
+
+   Additionally, verify manifest/citation consistency — every `dok_id` cited in the article must exist as a file in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/`:
+
+   ```bash
+   CITED=$(grep -oE 'H[A-Z0-9]{2}[A-Z]{2,}[0-9]+' news/*$ARTICLE_DATE*.html | awk -F: '{print $2}' | sort -u)
+   for d in $CITED; do
+     if ! ls "analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/${d}"*.md >/dev/null 2>&1; then
+       echo "❌ Article cites $d but no analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/${d}*.md exists"
+       echo "   Either drop $d from the article or extend analysis to cover it. Do NOT proceed."
+       exit 1
+     fi
+   done
+   ```
+
+   This gate catches the exact failure mode observed in past runs: article scaffold shipped with `<!-- AI_MUST_REPLACE: ... -->` HTML comments, `by Unknown` author fallbacks, and `dok_id`s that do not have matching analysis files.
 
 ## Mandatory sections (per article)
 
@@ -61,6 +89,11 @@ If any required artifact is missing or empty, do **not** proceed to step 1 below
 
 | Pattern | Example |
 |---------|---------|
+| Unresolved scaffold markers | Any `<!-- AI_MUST_REPLACE: * -->` comment in committed HTML. Blocked by step 5 pre-commit gate. |
+| Section-name title leakage | Headlines built by concatenating section names, e.g. "X: What Happened, Timeline & Context, Why This Matters". |
+| Manifest drift | Citing a `dok_id` in the article that has no matching `documents/<dok_id>-analysis.md` artifact. Blocked by step 5 manifest check. |
+| Unresolved author fallback | `by Unknown`, `Author: Unknown` — the scaffold's default placeholder, never a valid shipped value. |
+| Raw upstream HTML dump | Pasting raw `<p>…</p>` from `riksdagen.se` into the article body in place of original analysis. |
 | Boilerplate filler | "This is an important development that will have significant implications." |
 | Unattributed claims | "Experts say…", "Critics argue…" without named actor. |
 | Title-only summaries | Re-stating the document title as the analysis. |
