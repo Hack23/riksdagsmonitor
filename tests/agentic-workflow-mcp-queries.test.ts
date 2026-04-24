@@ -30,7 +30,7 @@ const PROMPTS_DIR = path.join(__dirname, '..', '.github', 'prompts');
 // Workflows to validate
 const WORKFLOWS: readonly string[] = [
   'news-evening-analysis.md',
-  'news-article-generator.md',
+  
   'news-realtime-monitor.md'
 ];
 
@@ -337,7 +337,7 @@ describe('Agentic Workflow MCP Query Patterns', () => {
 
     it('all news workflows should not hardcode the parliamentary session year', () => {
       const newsWorkflows = [
-        'news-realtime-monitor.md', 'news-motions.md', 'news-article-generator.md',
+        'news-realtime-monitor.md', 'news-motions.md', 
         'news-evening-analysis.md', 'news-monthly-review.md', 'news-week-ahead.md',
         'news-weekly-review.md', 'news-committee-reports.md', 'news-propositions.md',
         'news-month-ahead.md',
@@ -505,7 +505,7 @@ describe('MCP Tool Date Parameter Support Matrix', () => {
 
 describe('MCP Prompt-Module Anti-Pattern Guards', () => {
   const ANALYTICAL_WORKFLOWS: readonly string[] = [
-    'news-article-generator.md',
+    
     'news-committee-reports.md',
     'news-evening-analysis.md',
     'news-interpellations.md',

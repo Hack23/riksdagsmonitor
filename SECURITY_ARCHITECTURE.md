@@ -445,6 +445,102 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 - NIST CSF 2.0: PR.IP-12 (A vulnerability management plan developed)
 - CIS Controls v8.1: 16.1 (Establish and Maintain a Secure Application Development Process)
 
+### 2.5.1 News Pipeline Sanitisation Chain
+
+The news-generation pipeline (`scripts/aggregate-analysis.ts` → `scripts/render-articles.ts` → `scripts/render-lib/`) produces HTML articles from AI-authored markdown artifacts under `analysis/daily/$DATE/$SUB/`. The AI-authored markdown is an **untrusted input** from the perspective of the renderer; the sanitisation chain is therefore a primary output-encoding control for the platform.
+
+#### Sanitisation chain (input → output trust boundary)
+
+```
+analysis/daily/$DATE/$SUB/*.md          (untrusted AI authored markdown)
+           │
+           ▼
+gray-matter frontmatter extraction       (structural only — no HTML)
+           │
+           ▼
+unified + remark-parse + remark-gfm      (markdown → MDAST)
+           │
+           ▼
+remark-rehype + rehype-raw               (MDAST → HAST; raw HTML islands preserved)
+           │
+           ▼
+rehype-sanitize  ◄─── TRUST BOUNDARY     (allow-list enforcement)
+           │
+           ▼
+rehype-slug + rehype-autolink-headings   (stable anchors for TOC)
+           │
+           ▼
+rehype-stringify                         (HAST → serialised HTML)
+           │
+           ▼
+scripts/render-lib/chrome.ts             (JSON-LD NewsArticle, SEO, lang switcher)
+           │
+           ▼
+news/$DATE-$SUB-{en,sv}.html             (trusted output)
+```
+
+#### `rehype-sanitize` allow-list
+
+The sanitiser is configured with an explicit **allow-list** (schema) rather than a blocklist. Only these elements and attributes survive the boundary:
+
+| Category | Allowed | Rationale |
+|----------|---------|-----------|
+| Block text | `p`, `h1`–`h6`, `blockquote`, `pre`, `hr` | Standard article structure |
+| Inline text | `a[href|title|rel]`, `em`, `strong`, `code`, `del`, `sup`, `sub`, `mark` | Markdown inline semantics |
+| Lists | `ul`, `ol`, `li` | Markdown lists |
+| Tables | `table`, `thead`, `tbody`, `tr`, `th[scope]`, `td`, `caption` | GFM tables (accessibility-aware) |
+| Images | `img[src|alt|title|width|height|loading]` | Referenced from within allow-listed URL schemes only |
+| Figures | `figure`, `figcaption` | Diagram captions and accessible text equivalents |
+| Disclosure | `details`, `summary` | Mermaid diagram source fallback (WCAG 2.1 AA text equivalent) |
+| Extension | **`pre.mermaid`** | Client-side Mermaid rendering — see below |
+
+URL-bearing attributes (`href`, `src`) are filtered to the following schemes: `http:`, `https:`, `mailto:`, plus `data:image/{png,jpeg,gif,webp,svg+xml}` for embedded images only. **Rejected**: `javascript:`, `vbscript:`, non-image `data:`, `file:`, `chrome:`, and all other URI schemes.
+
+**Explicitly rejected elements** (removed without error so AI-authored content cannot escape the sandbox): `script`, `iframe`, `object`, `embed`, `form`, `input`, `button`, `style`, `link`, `meta`, `base`, `applet`, `frame`, `frameset`, and every `on*` event handler attribute.
+
+#### Mermaid client-side rendering trust boundary
+
+Mermaid diagrams are the only HTML extension permitted past the sanitiser. They are handled as follows:
+
+1. **Source** — a ` ```mermaid ` fenced block in the `.md` artifact is passed through by `remark-parse` as a `code` node with `lang: mermaid`.
+2. **Transform** — the renderer emits the node as `<pre class="mermaid">…source…</pre>` so the sanitiser's `pre[class|lang]` rule lets it through.
+3. **Accessibility wrapping** — each Mermaid block is wrapped in `<figure>` with a `<figcaption>` and a `<details>`-wrapped plain-text fallback containing the source (WCAG 2.1 AA text equivalent).
+4. **Render-time** — `scripts/render-lib/chrome.ts` conditionally injects `<script type="module" src="/js/lib/mermaid-init.mjs"></script>` *only* when at least one `<pre class="mermaid">` survived sanitisation.
+5. **Runtime sandboxing** — `mermaid-init.mjs` imports Mermaid via native ESM dynamic `import()` and calls `mermaid.initialize({ startOnLoad: false, securityLevel: 'strict' })`. `securityLevel: 'strict'` disables Mermaid's own click-handler and interaction features, so a malicious Mermaid diagram cannot execute JavaScript even if the DSL is exploited.
+6. **CSP** — the global Content-Security-Policy forbids `'unsafe-eval'`. Mermaid's strict-mode parser does not require `eval`; this has been validated and is documented in the deployment runbook.
+
+The trust boundary is therefore: **AI → markdown → Mermaid DSL → SVG** — never AI → JavaScript.
+
+#### GitHub-blob link rewriting (output-encoding control)
+
+Relative markdown links inside aggregated artifacts (e.g. `[methodology](../methodologies/devils-advocate.md)`) would resolve against `news/` in the published output and 404. The aggregator rewrites every relative `.md`, `.json`, and `.html` link to an absolute `https://github.com/Hack23/riksdagsmonitor/blob/main/…` URL **before** the sanitiser sees them. This is an output-encoding control: it removes a broken-link class *and* pins every citation to a content-addressable GitHub blob URL that serves as the provenance chain.
+
+#### Provenance manifest (tamper detection)
+
+The aggregator emits a `.manifest.json` sibling to each `article.md` listing every source artifact consumed, with a SHA-256 digest:
+
+```json
+{
+  "article": "analysis/daily/2026-04-24/propositions/article.md",
+  "generated_at": "2026-04-24T04:12:31Z",
+  "sources": [
+    { "path": "analysis/daily/2026-04-24/propositions/executive-brief.md", "sha256": "…" },
+    { "path": "analysis/daily/2026-04-24/propositions/synthesis.md",        "sha256": "…" },
+    { "path": "analysis/methodologies/devils-advocate.md",                   "sha256": "…" }
+  ]
+}
+```
+
+The renderer emits the manifest contents into the `NewsArticle.citation[]` JSON-LD block, giving downstream consumers a cryptographic evidence chain: every claim in the HTML can be traced back to a specific SHA-256 of a specific markdown artifact at a specific timestamp.
+
+**Control Mapping:**
+- ISO 27001:2022 **A.8.28** (Secure coding) — allow-list sanitisation, explicit trust boundary, output encoding
+- ISO 27001:2022 **A.8.25** (Secure development life cycle) — sanitiser schema is version-controlled and covered by dedicated unit tests
+- NIST CSF 2.0 **PR.DS-6** (Integrity checking mechanisms) — SHA-256 manifest; drift detection at render time
+- NIST CSF 2.0 **PR.PS-06** (Secure software development practices) — CI gate on sanitisation drops
+- CIS Controls v8.1 **16.10** (Apply Secure Design Principles in Application Architectures) — input validation and output encoding at every trust boundary
+- CIS Controls v8.1 **16.11** (Leverage Vetted Modules or Services) — `unified`/`remark`/`rehype`/`gray-matter` are vetted, pinned, and Dependabot-grouped
+
 ### 2.6 Monitoring & Logging
 
 **Security Monitoring:**

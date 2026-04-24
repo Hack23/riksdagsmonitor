@@ -1,26 +1,16 @@
 /**
  * @module data-transformers
- * @description Public API barrel for the data transformer modules.
- *
- * Implementation split into focused modules under `./data-transformers/`:
- *
- * | Module               | Responsibility                              | Lines |
- * |----------------------|---------------------------------------------|-------|
- * | types.ts             | Shared interfaces (RawDocument, CIAContext…) |  ~90  |
- * | constants.ts         | CONTENT_LABELS, COMMITTEE_NAMES, LOCALE_MAP  | ~1100 |
- * | helpers.ts           | Utility fns (sanitizeUrl, L, date fmt, …)    |  ~360 |
- * | calendar.ts          | Calendar grid + watch-point extraction        |  ~150 |
- * | content-generators.ts| Per-article-type HTML generators              |  ~670 |
- * | policy-analysis.ts   | Policy domain detection & deep analysis       |  ~340 |
- * | document-analysis.ts | Motion grouping, opposition strategy, intel   |  ~260 |
- * | metadata.ts          | SEO, read-time, content-title, sources        |  ~340 |
- * | index.ts             | Public API barrel                             |  ~100 |
+ * @description Public API barrel for the shared data-transformer types
+ * and helpers used by the parliamentary data pipeline and analysis
+ * scripts. The legacy content/metadata/calendar HTML generators have
+ * been removed — article bodies now come from the markdown aggregate +
+ * render pipeline (`scripts/aggregate-analysis.ts` +
+ * `scripts/render-articles.ts`).
  *
  * @author Hack23 AB
  * @license Apache-2.0
  */
 export {
-  // Types
   type RawCalendarEvent,
   type RawDocument,
   type CIAContext,
@@ -28,30 +18,8 @@ export {
   type ArticleContentData,
   type MonthlyMetrics,
 
-  // Constants
-  CONTENT_LABELS,
-
-  // Helpers
   L,
   isPersonProfileText,
   formatDocumentDate,
   filterFreshDocuments,
-
-  // Calendar
-  transformCalendarToEventGrid,
-  extractTopics,
-  extractWatchPoints,
-
-  // Document analysis
-  groupMotionsByProposition,
-  groupPropositionsByCommittee,
-
-  // Content generation
-  generateArticleContent,
-
-  // Metadata
-  generateMetadata,
-  calculateReadTime,
-  generateContentTitle,
-  generateSources,
 } from './data-transformers/index.js';

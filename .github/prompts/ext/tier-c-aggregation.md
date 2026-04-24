@@ -8,7 +8,7 @@ Import this **in addition to** the 8 core modules for aggregation / reference-gr
 - `news-week-ahead`
 - `news-month-ahead`
 - `news-realtime-monitor`
-- `news-article-generator` when `article_types` contains `deep-inspection`
+- Any period-scoped Tier-C workflow: `news-evening-analysis`, `news-weekly-review`, `news-monthly-review`, `news-week-ahead`, `news-month-ahead`, `news-realtime-monitor`
 
 These are the flagship editorial surfaces of Riksdagsmonitor. Tier-C rules are **additive**, not replacements — all 23 Family A/B/C/D artifacts from `04-analysis-pipeline.md` are already mandatory for every workflow. Tier-C adds depth multipliers, cross-type synthesis, sibling-citation requirements and a higher article-output floor.
 
@@ -30,7 +30,6 @@ Aggregation depth scales with the period covered. Multiply the `comprehensive` m
 | `news-evening-analysis` | 1.0× | Standard day-in-review. |
 | `news-week-ahead` / `news-weekly-review` | 1.2× | 5–7 day window synthesis. |
 | `news-month-ahead` / `news-monthly-review` | 1.5× | 30-day window; longitudinal patterns required. |
-| `news-article-generator` (deep-inspection) | 1.0× | Single-topic deep dive. |
 
 All 23 artifacts remain mandatory regardless of multiplier. The multiplier extends per-item body length and framework richness (e.g. month-ahead `coalition-mathematics.md` carries five party-coalition Sainte-Laguë variants vs one for realtime).
 

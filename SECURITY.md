@@ -75,6 +75,20 @@ A vulnerability is a weakness or flaw in the project that can be exploited to co
 - Supply chain vulnerabilities in dependencies
 - Content injection through data pipelines
 
+### In-scope components
+
+The following components are within the disclosure scope and welcome responsible-disclosure reports:
+
+- **Static site** — all HTML/CSS/JS served from `/` and `/dashboard/` and `/news/`.
+- **News generation pipeline**:
+  - `scripts/aggregate-analysis.ts` — concatenates `analysis/daily/$DATE/$SUB/` artifacts into `article.md` + SHA-256 manifest.
+  - `scripts/render-articles.ts` — markdown → sanitised HTML pipeline.
+  - `scripts/render-lib/` — shared chrome (header, footer, language switcher, JSON-LD `NewsArticle` shell) and the `rehype-sanitize` allow-list.
+  - `scripts/validate-news-translations.ts` — translation-completeness validator.
+- **Index generators** — `scripts/generate-sitemap*.ts`, `scripts/generate-rss.ts`, `scripts/generate-news-indexes.ts`, `scripts/generate-political-intelligence.ts`.
+- **Agentic workflows** — 11 workflows in `.github/workflows/news-*.md` + their compiled `.lock.yml` peers, plus the non-agentic CI/CD pipelines in `.github/workflows/`.
+- **MCP configuration** — `.github/copilot-mcp.json` and per-workflow `mcp-servers:` blocks.
+
 ### How to Privately Report a Vulnerability using GitHub
 
 1. On GitHub.com, navigate to the main page of the [riksdagsmonitor repository](https://github.com/Hack23/riksdagsmonitor).

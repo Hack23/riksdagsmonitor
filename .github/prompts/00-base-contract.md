@@ -37,27 +37,20 @@ Before producing any analysis or article content, the agent MUST have read:
 
 No article sentence may be drafted until every required analysis artifact exists on disk and the gate in `05-analysis-gate.md` reports pass.
 
-## Two-run pipeline (primary model)
+## Single-run pipeline
 
-Every run selects one of two modes automatically — see `03-data-download.md §Pre-flight`:
+Every workflow run must perform analysis **and** article generation in one session and produce **one** PR:
 
-**Run 1 — Analysis** (when `$ANALYSIS_DIR` is missing or incomplete):
 ```
 MCP pre-warm → Download → Read methodology → Read templates →
 Analysis Pass 1 → Pass 1 snapshot → Analysis Pass 2 → Analysis Gate →
-Stage analysis → Commit → ONE create_pull_request (analysis-only)
+Aggregate (scripts/aggregate-analysis.ts) → Render HTML (scripts/render-articles.ts) →
+Stage analysis + article.md + news/*.html → Commit → ONE create_pull_request
 ```
 
-**Run 2 — Articles** (when `$ANALYSIS_DIR` already contains all 23 required artifacts and the gate in `05-analysis-gate.md` passes):
-```
-MCP pre-warm → Detect existing analysis → Read all artifacts into context →
-Optionally check for new data → Article Pass 1 → Article Pass 2 →
-Stage articles → Commit → ONE create_pull_request (articles)
-```
-
-No step may be skipped within a run. Runs must not overlap for the same `$ARTICLE_DATE` + `$SUBFOLDER`.
-
-Same-day re-runs always use the same `$ANALYSIS_DIR` folder — never create a parallel folder for the same date + type combination unless `force_generation=true`.
+- The article HTML is a **pure projection** of the analysis `.md` artefacts — 100 % of article prose lives under `analysis/daily/$DATE/$SUB/`. There is no scaffold, no `AI_MUST_REPLACE`, and no separate "article run".
+- Translations to the remaining twelve languages are produced by the dedicated **`news-translate`** workflow, which consumes published en/sv articles and runs independently. Per-type workflows only render `en,sv`.
+- Same-day re-runs always use the same `$ANALYSIS_DIR` folder — never create a parallel folder for the same date + type combination unless `force_generation=true`.
 
 ## Session keepalive requirement
 

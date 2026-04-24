@@ -976,7 +976,7 @@ flowchart TB
 
 | Contract | Applies to | Required artifacts | Source |
 |----------|-----------|-------------------:|--------|
-| **Single-type** (9 artifacts) | `news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations`, `news-article-generator` (per call) | **9** | [`prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) |
+| **Single-type** (9 artifacts) | `news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations` | **9** | [`prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) |
 | **Tier-C aggregation** (14 artifacts) | `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review` | **14** | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) |
 | **Translation** (N/A) | `news-translate` | N/A (post-hoc) | Direct text pipeline |
 
@@ -1121,24 +1121,25 @@ flowchart LR
 | 4.2 | ☁️ Deploy to S3 | `deploy-s3.yml` | Push to main | AWS S3/CloudFront |
 | 4.3 | 🔆 Lighthouse CI | `lighthouse-ci.yml` | Push/PR, weekly | Performance audit |
 
-### 🤖 Agentic Workflows (12 workflows × 2 files each = 24 files)
+### 🤖 Agentic Workflows (11 workflows × 2 files each = 22 files)
 
 > Each agentic workflow is authored as a Markdown source (`.md`) and **compiled** to a hardened GitHub Actions workflow (`.lock.yml`) via `compile-agentic-workflows.yml`. Only the `.lock.yml` executes on the runner; the `.md` is the source of truth, reviewed in PRs. Both files are SHA-pinned, run behind the Squid/iptables egress firewall, and route all write-side effects through the five-layer **safe-outputs** validator (sanitisation → schema-validate → policy-check → human-review → merge).
+>
+> **Pipeline model**: each per-type news workflow runs **analysis → aggregate → render → PR** in a single agentic run. The legacy two-step `news-article-generator` (scaffold + later fill) workflow has been removed; articles are now derived directly from `analysis/daily/$DATE/$SUB/` artifacts via [`scripts/aggregate-analysis.ts`](scripts/aggregate-analysis.ts) → [`scripts/render-articles.ts`](scripts/render-articles.ts). Translations are handled out-of-band by `news-translate` only.
 
 | # | Workflow | Source | Lock | Purpose |
 | --- | --- | --- | --- | --- |
-| 5.1 | 📰 News Article Generator | `news-article-generator.md` | `news-article-generator.lock.yml` | Daily news generation |
-| 5.2 | 🌅 News Evening Analysis | `news-evening-analysis.md` | `news-evening-analysis.lock.yml` | Evening analysis reports |
-| 5.3 | 📡 News Realtime Monitor | `news-realtime-monitor.md` | `news-realtime-monitor.lock.yml` | Real-time political monitoring |
-| 5.4 | 📋 News Motions | `news-motions.md` | `news-motions.lock.yml` | Motion tracking and reporting |
-| 5.5 | 📊 News Committee Reports | `news-committee-reports.md` | `news-committee-reports.lock.yml` | Committee report coverage |
-| 5.6 | 📰 News Weekly Review | `news-weekly-review.md` | `news-weekly-review.lock.yml` | Weekly political summary |
-| 5.7 | 📆 News Monthly Review | `news-monthly-review.md` | `news-monthly-review.lock.yml` | Monthly political review |
-| 5.8 | 🔮 News Week Ahead | `news-week-ahead.md` | `news-week-ahead.lock.yml` | Upcoming week preview |
-| 5.9 | 📅 News Month Ahead | `news-month-ahead.md` | `news-month-ahead.lock.yml` | Upcoming month preview |
-| 5.10 | 🏛️ News Propositions | `news-propositions.md` | `news-propositions.lock.yml` | Government proposition coverage |
-| 5.11 | ❓ News Interpellations | `news-interpellations.md` | `news-interpellations.lock.yml` | Interpellation debate tracking |
-| 5.12 | 🌍 News Translate | `news-translate.md` | `news-translate.lock.yml` | Multi-language translation across 14 locales |
+| 5.1 | 🌅 News Evening Analysis | `news-evening-analysis.md` | `news-evening-analysis.lock.yml` | Tier-C aggregation: end-of-day political analysis |
+| 5.2 | 📡 News Realtime Monitor | `news-realtime-monitor.md` | `news-realtime-monitor.lock.yml` | Tier-C aggregation: real-time political monitoring |
+| 5.3 | 📋 News Motions | `news-motions.md` | `news-motions.lock.yml` | Single-type: motion tracking and reporting |
+| 5.4 | 📊 News Committee Reports | `news-committee-reports.md` | `news-committee-reports.lock.yml` | Single-type: committee report coverage |
+| 5.5 | 📰 News Weekly Review | `news-weekly-review.md` | `news-weekly-review.lock.yml` | Tier-C aggregation: weekly political summary |
+| 5.6 | 📆 News Monthly Review | `news-monthly-review.md` | `news-monthly-review.lock.yml` | Tier-C aggregation: monthly political review |
+| 5.7 | 🔮 News Week Ahead | `news-week-ahead.md` | `news-week-ahead.lock.yml` | Tier-C aggregation: upcoming week preview |
+| 5.8 | 📅 News Month Ahead | `news-month-ahead.md` | `news-month-ahead.lock.yml` | Tier-C aggregation: upcoming month preview |
+| 5.9 | 🏛️ News Propositions | `news-propositions.md` | `news-propositions.lock.yml` | Single-type: government proposition coverage |
+| 5.10 | ❓ News Interpellations | `news-interpellations.md` | `news-interpellations.lock.yml` | Single-type: interpellation debate tracking |
+| 5.11 | 🌍 News Translate | `news-translate.md` | `news-translate.lock.yml` | Out-of-band translation: rendered EN+SV → 12 other languages |
 
 ### 🛠️ Automation & Tooling (2 workflows)
 
