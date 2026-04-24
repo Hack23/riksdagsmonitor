@@ -136,6 +136,16 @@ export function renderChromeHead(opts: ChromeOptions): string {
     .map((b) => `    <script type="application/ld+json">${JSON.stringify(b)}</script>`)
     .join('\n');
 
+  // Title brand discipline (per `seo-metadata-contract.md` §2): append
+  // ` — Riksdagsmonitor` only when the title does not already contain
+  // the brand. Prevents double-branding like
+  // `Riksdagsmonitor report — Riksdagsmonitor`.
+  const brandedTitle = /riksdagsmonitor/i.test(opts.title)
+    ? opts.title
+    : `${opts.title} — Riksdagsmonitor`;
+  const escapedTitle = escapeHtml(opts.title);
+  const escapedBrandedTitle = escapeHtml(brandedTitle);
+
   const alternateLocalesHtml = LANGUAGES
     .filter((l) => l !== opts.lang)
     .map((l) => `    <meta property="og:locale:alternate" content="${LANGUAGE_META[l].locale}">`)
@@ -148,7 +158,7 @@ export function renderChromeHead(opts: ChromeOptions): string {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${escapeHtml(opts.title)} — Riksdagsmonitor</title>
+    <title>${escapedBrandedTitle}</title>
     <meta name="description" content="${escapeHtml(opts.description)}">
     <meta name="keywords" content="${escapeHtml(keywords)}">
     <meta name="news_keywords" content="${escapeHtml(keywords)}">
@@ -175,7 +185,7 @@ ${hreflangHtml}
 
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Riksdagsmonitor">
-    <meta property="og:title" content="${escapeHtml(opts.title)} — Riksdagsmonitor">
+    <meta property="og:title" content="${escapedBrandedTitle}">
     <meta property="og:description" content="${escapeHtml(opts.description)}">
     <meta property="og:url" content="${BASE_URL}/${opts.canonicalPath}">
     <meta property="og:locale" content="${meta.locale}">
@@ -183,7 +193,7 @@ ${alternateLocalesHtml}
     <meta property="og:image" content="${BASE_URL}/images/og-image.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Riksdagsmonitor ${escapeHtml(opts.title)}">
+    <meta property="og:image:alt" content="Riksdagsmonitor ${escapedTitle}">
     <meta property="og:updated_time" content="${modified}">
 
     <meta property="article:publisher" content="https://www.hack23.com">
@@ -194,10 +204,10 @@ ${alternateLocalesHtml}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@riksdagsmonitor">
     <meta name="twitter:creator" content="@hack23ab">
-    <meta name="twitter:title" content="${escapeHtml(opts.title)} — Riksdagsmonitor">
+    <meta name="twitter:title" content="${escapedBrandedTitle}">
     <meta name="twitter:description" content="${escapeHtml(opts.description)}">
     <meta name="twitter:image" content="${BASE_URL}/images/og-image.webp">
-    <meta name="twitter:image:alt" content="Riksdagsmonitor ${escapeHtml(opts.title)}">
+    <meta name="twitter:image:alt" content="Riksdagsmonitor ${escapedTitle}">
 
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
