@@ -37,7 +37,6 @@
 
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 
 import matter from 'gray-matter';
 import { unified } from 'unified';
@@ -52,28 +51,37 @@ import rehypeStringify from 'rehype-stringify';
 
 import type { Language } from '../types/language.js';
 import { LANGUAGE_META, escapeHtml } from '../generate-sitemap-html.js';
+import {
+  BASE_URL,
+  GITHUB_BLOB,
+  GITHUB_TREE,
+  ROOT_DIR,
+  ANALYSIS_DIR,
+  METHODOLOGIES_DIR,
+  TEMPLATES_DIR,
+  DAILY_DIR,
+  LANGUAGES,
+} from './constants.js';
 
 export { LANGUAGE_META, escapeHtml };
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Re-export filesystem + URL constants so every existing consumer that
+// imports them from `./render-lib/index.js` keeps working untouched.
+export {
+  BASE_URL,
+  GITHUB_BLOB,
+  GITHUB_TREE,
+  ROOT_DIR,
+  ANALYSIS_DIR,
+  METHODOLOGIES_DIR,
+  TEMPLATES_DIR,
+  DAILY_DIR,
+  LANGUAGES,
+};
 
 // ---------------------------------------------------------------------------
-// Constants shared across the article pipeline + political-intelligence page.
+// URL helpers — shared across the article pipeline + political-intelligence page.
 // ---------------------------------------------------------------------------
-
-export const BASE_URL = 'https://riksdagsmonitor.com';
-export const GITHUB_BLOB = 'https://github.com/Hack23/riksdagsmonitor/blob/main';
-export const GITHUB_TREE = 'https://github.com/Hack23/riksdagsmonitor/tree/main';
-export const ROOT_DIR = path.join(__dirname, '..', '..');
-export const ANALYSIS_DIR = path.join(ROOT_DIR, 'analysis');
-export const METHODOLOGIES_DIR = path.join(ANALYSIS_DIR, 'methodologies');
-export const TEMPLATES_DIR = path.join(ANALYSIS_DIR, 'templates');
-export const DAILY_DIR = path.join(ANALYSIS_DIR, 'daily');
-
-export const LANGUAGES: readonly Language[] = [
-  'en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh',
-] as const;
 
 export function buildGithubBlobUrl(repoRelativePath: string): string {
   return `${GITHUB_BLOB}/${repoRelativePath.replace(/^\/+/, '')}`;
@@ -256,8 +264,24 @@ function cleanArtifactBody(raw: string): string {
   return body.trim();
 }
 
-// Expose admin-byline and pass-2 regex constants for tests.
-export const __test__ = { PASS_TWO_HEADING_RE, ADMIN_FIELD_RE, stripPassTwoSection, stripLeadingAdminBylines, cleanArtifactBody };
+// Expose admin-byline and pass-2 regex constants and internal helpers for
+// tests. These are NOT part of the stable public API — they exist only to
+// let `tests/render-lib.test.ts` exercise every branch without re-implementing
+// the transforms. Downstream scripts must import the *public* exports
+// (`aggregateAnalysis`, `renderArticleHtml`, …) instead.
+export const __test__ = {
+  PASS_TWO_HEADING_RE,
+  ADMIN_FIELD_RE,
+  stripPassTwoSection,
+  stripLeadingAdminBylines,
+  cleanArtifactBody,
+  rewriteRelativeLinks,
+  prettifyFallbackTitle,
+  readFirstHeading,
+  readFirstParagraph,
+  escapeYaml,
+  escapeInlineMd,
+};
 
 /**
  * Rewrite relative `[label](path.md)` links in the aggregated markdown to

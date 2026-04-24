@@ -15,10 +15,31 @@ import path from 'path';
 import {
   aggregateAnalysis,
   AGGREGATION_ORDER,
+  BASE_URL,
+  GITHUB_BLOB,
+  GITHUB_TREE,
+  LANGUAGES,
+  buildGithubBlobUrl,
+  buildGithubTreeUrl,
+  titleForArtifact,
+  renderMarkdownToHtml,
+  renderChromeHead,
+  buildChrome,
+  renderArticleHtml,
   __test__,
 } from '../scripts/render-lib/index.js';
 
-const { stripPassTwoSection, stripLeadingAdminBylines, cleanArtifactBody } = __test__;
+const {
+  stripPassTwoSection,
+  stripLeadingAdminBylines,
+  cleanArtifactBody,
+  rewriteRelativeLinks,
+  prettifyFallbackTitle,
+  readFirstHeading,
+  readFirstParagraph,
+  escapeYaml,
+  escapeInlineMd,
+} = __test__;
 
 describe('render-lib — cleanArtifactBody', () => {
   it('strips a trailing "## Pass 2 refinements" section', () => {
@@ -245,5 +266,528 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     expect(result.markdown).not.toContain('old swedish');
     expect(result.artifactsUsed).not.toContain('article.md');
     expect(result.artifactsUsed).not.toContain('article.sv.md');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// URL helpers + constants
+// ---------------------------------------------------------------------------
+
+describe('render-lib — constants + URL helpers', () => {
+  it('exports stable BASE_URL / GITHUB_BLOB / GITHUB_TREE', () => {
+    expect(BASE_URL).toBe('https://riksdagsmonitor.com');
+    expect(GITHUB_BLOB).toBe('https://github.com/Hack23/riksdagsmonitor/blob/main');
+    expect(GITHUB_TREE).toBe('https://github.com/Hack23/riksdagsmonitor/tree/main');
+  });
+
+  it('LANGUAGES contains all 14 supported languages with en as x-default first', () => {
+    expect(LANGUAGES).toHaveLength(14);
+    expect(LANGUAGES[0]).toBe('en');
+    expect(LANGUAGES).toContain('sv');
+    expect(LANGUAGES).toContain('ar');
+    expect(LANGUAGES).toContain('he');
+    expect(LANGUAGES).toContain('zh');
+  });
+
+  it('buildGithubBlobUrl strips leading slashes and joins to GITHUB_BLOB', () => {
+    expect(buildGithubBlobUrl('analysis/daily/x/y.md')).toBe(
+      `${GITHUB_BLOB}/analysis/daily/x/y.md`,
+    );
+    expect(buildGithubBlobUrl('/leading/slash.md')).toBe(
+      `${GITHUB_BLOB}/leading/slash.md`,
+    );
+    expect(buildGithubBlobUrl('///triple/slash.md')).toBe(
+      `${GITHUB_BLOB}/triple/slash.md`,
+    );
+  });
+
+  it('buildGithubTreeUrl strips leading slashes and joins to GITHUB_TREE', () => {
+    expect(buildGithubTreeUrl('analysis/daily/2099-01-01/widgets')).toBe(
+      `${GITHUB_TREE}/analysis/daily/2099-01-01/widgets`,
+    );
+    expect(buildGithubTreeUrl('/leading')).toBe(`${GITHUB_TREE}/leading`);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// titleForArtifact + prettifyFallbackTitle
+// ---------------------------------------------------------------------------
+
+describe('render-lib — titleForArtifact', () => {
+  it('returns the curated title for every known canonical artifact', () => {
+    const known = [
+      ['executive-brief.md', 'Executive Brief'],
+      ['synthesis-summary.md', 'Synthesis Summary'],
+      ['intelligence-assessment.md', 'Intelligence Assessment — Key Judgments'],
+      ['risk-assessment.md', 'Risk Assessment'],
+      ['devils-advocate.md', "Devil's Advocate"],
+      ['data-download-manifest.md', 'Data Download Manifest'],
+      ['methodology-reflection.md', 'Methodology Reflection & Limitations'],
+    ] as const;
+    for (const [file, expected] of known) {
+      expect(titleForArtifact(file)).toBe(expected);
+    }
+  });
+
+  it('falls back to prettified title for unknown supplementary artifacts', () => {
+    expect(titleForArtifact('pestle-analysis.md')).toBe('Pestle Analysis');
+    expect(titleForArtifact('wildcards_blackswans.md')).toBe('Wildcards Blackswans');
+    expect(titleForArtifact('ext/foo-bar.md')).toBe('Foo Bar');
+    expect(prettifyFallbackTitle('a-b_c.md')).toBe('A B C');
+  });
+
+  it('handles a bare filename without path', () => {
+    expect(titleForArtifact('scenario-analysis.md')).toBe('Scenario Analysis');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// rewriteRelativeLinks
+// ---------------------------------------------------------------------------
+
+describe('render-lib — rewriteRelativeLinks', () => {
+  const sub = 'analysis/daily/2099-01-01/widgets';
+
+  it('rewrites `./foo.md` to an absolute GitHub blob URL', () => {
+    const out = rewriteRelativeLinks('See [foo](./foo.md).', sub);
+    expect(out).toBe(`See [foo](${GITHUB_BLOB}/${sub}/foo.md).`);
+  });
+
+  it('preserves anchor on a relative link', () => {
+    const out = rewriteRelativeLinks('[x](risk-assessment.md#institutional)', sub);
+    expect(out).toBe(`[x](${GITHUB_BLOB}/${sub}/risk-assessment.md#institutional)`);
+  });
+
+  it('normalises `../` path traversal', () => {
+    const out = rewriteRelativeLinks('[up](../shared/notes.md)', sub);
+    expect(out).toBe(
+      `[up](${GITHUB_BLOB}/analysis/daily/2099-01-01/shared/notes.md)`,
+    );
+  });
+
+  it('leaves absolute http/https URLs untouched', () => {
+    expect(rewriteRelativeLinks('[x](https://example.com/a)', sub)).toBe(
+      '[x](https://example.com/a)',
+    );
+    expect(rewriteRelativeLinks('[y](http://example.org)', sub)).toBe(
+      '[y](http://example.org)',
+    );
+  });
+
+  it('leaves pure anchor links untouched', () => {
+    expect(rewriteRelativeLinks('[top](#heading)', sub)).toBe('[top](#heading)');
+  });
+
+  it('leaves mailto: links untouched', () => {
+    expect(rewriteRelativeLinks('[c](mailto:x@y.z)', sub)).toBe('[c](mailto:x@y.z)');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// readFirstHeading + readFirstParagraph
+// ---------------------------------------------------------------------------
+
+describe('render-lib — readFirstHeading / readFirstParagraph', () => {
+  it('reads the first H1 verbatim from markdown', () => {
+    expect(readFirstHeading('# Title\n\nbody\n')).toBe('Title');
+    expect(readFirstHeading('## Not H1\n\n# Real\n')).toBe('Real');
+    expect(readFirstHeading('no heading here')).toBeNull();
+  });
+
+  it('readFirstParagraph skips H1, admin bylines, tables, code fences, blockquotes', () => {
+    const md = [
+      '# Title',
+      '',
+      '**Author**: J · **Classification**: Public',
+      '',
+      '> block quote',
+      '',
+      '| a | b |',
+      '| - | - |',
+      '',
+      '```',
+      'code',
+      '```',
+      '',
+      'The real lede paragraph.',
+    ].join('\n');
+    expect(readFirstParagraph(md)).toContain('real lede paragraph');
+  });
+
+  it('truncates description at 300 characters', () => {
+    const long = '# T\n\n' + 'a'.repeat(500);
+    expect(readFirstParagraph(long)!.length).toBe(300);
+  });
+
+  it('returns null when markdown has no suitable paragraph', () => {
+    expect(readFirstParagraph('# T\n\n## Only headings\n')).toBeNull();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// escape helpers
+// ---------------------------------------------------------------------------
+
+describe('render-lib — escape helpers', () => {
+  it('escapeYaml escapes quotes, backslashes, and newlines', () => {
+    expect(escapeYaml('a "quoted" b')).toBe('a \\"quoted\\" b');
+    expect(escapeYaml('c\\d')).toBe('c\\\\d');
+    expect(escapeYaml('line1\nline2')).toBe('line1 line2');
+  });
+
+  it('escapeInlineMd escapes every markdown metachar', () => {
+    const out = escapeInlineMd('HD01CU25.ext');
+    // Period must be escaped, alphanumerics preserved.
+    expect(out).toBe('HD01CU25\\.ext');
+    expect(escapeInlineMd('[x](y)')).toBe('\\[x\\]\\(y\\)');
+    expect(escapeInlineMd('a*b_c')).toBe('a\\*b\\_c');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// renderMarkdownToHtml
+// ---------------------------------------------------------------------------
+
+describe('render-lib — renderMarkdownToHtml', () => {
+  it('renders GFM tables to <table>', async () => {
+    const html = await renderMarkdownToHtml('| a | b |\n| - | - |\n| 1 | 2 |\n');
+    expect(html).toContain('<table>');
+    expect(html).toContain('<th>a</th>');
+    expect(html).toContain('<td>1</td>');
+  });
+
+  it('preserves ```mermaid fences as <pre class="mermaid"> blocks verbatim', async () => {
+    const md = '```mermaid\nflowchart LR\nA --> B\n```\n';
+    const html = await renderMarkdownToHtml(md);
+    expect(html).toContain('<pre class="mermaid"');
+    expect(html).toContain('flowchart LR');
+    // Mermaid body must be preserved with an intact arrow so the
+    // client-side mermaid loader (`js/lib/mermaid-init.mjs`) can parse
+    // it; HTML-escaping would break the diagram.
+    expect(html).toMatch(/A --&gt; B|A --&#x3E; B|A --> B/);
+  });
+
+  it('adds id + anchor link to every heading (rehype-slug + autolink-headings)', async () => {
+    const html = await renderMarkdownToHtml('## Hello World\n');
+    // rehype-sanitize prefixes heading ids with `user-content-` to avoid
+    // ID collisions across embedded content.
+    expect(html).toMatch(/<h2 id="(?:user-content-)?hello-world">/);
+    // Autolink-headings appends an <a> pointing at the slugged anchor.
+    expect(html).toContain('href="#hello-world"');
+    expect(html).toContain('aria-hidden="true"');
+  });
+
+  it('sanitises <script> tags out of the rendered HTML', async () => {
+    const html = await renderMarkdownToHtml(
+      'safe <script>alert(1)</script> end\n',
+    );
+    expect(html).not.toContain('<script');
+    expect(html).not.toContain('alert(1)');
+    expect(html).toContain('safe');
+    expect(html).toContain('end');
+  });
+
+  it('sanitises javascript: URLs out of links', async () => {
+    const html = await renderMarkdownToHtml('[click](javascript:alert(1))\n');
+    expect(html).not.toContain('javascript:');
+  });
+
+  it('sanitises <iframe> injections', async () => {
+    const html = await renderMarkdownToHtml(
+      'before\n\n<iframe src="evil"></iframe>\n\nafter\n',
+    );
+    expect(html).not.toContain('<iframe');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// renderChromeHead + buildChrome
+// ---------------------------------------------------------------------------
+
+describe('render-lib — renderChromeHead', () => {
+  it('emits <title>, description, canonical, and hreflang × every supplied locale', () => {
+    const alternates: Record<string, string> = {};
+    for (const l of LANGUAGES) alternates[l] = `news/x-${l}.html`;
+    const head = renderChromeHead({
+      lang: 'en',
+      title: 'Propositions',
+      description: 'Real BLUF.',
+      canonicalPath: 'news/x-en.html',
+      hreflangAlternates: alternates as unknown as Record<(typeof LANGUAGES)[number], string>,
+    });
+    expect(head).toContain('<!DOCTYPE html>');
+    expect(head).toContain('<title>Propositions — Riksdagsmonitor</title>');
+    expect(head).toContain('name="description" content="Real BLUF."');
+    expect(head).toContain(`rel="canonical" href="${BASE_URL}/news/x-en.html"`);
+    expect(head).toContain('rel="alternate" hreflang="en"');
+    expect(head).toContain('rel="alternate" hreflang="sv"');
+    expect(head).toContain('rel="alternate" hreflang="x-default"');
+  });
+
+  it('sets dir="rtl" for Arabic', () => {
+    const head = renderChromeHead({
+      lang: 'ar',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/x-ar.html',
+    });
+    expect(head).toMatch(/<html lang="ar" dir="rtl">/);
+  });
+
+  it('sets dir="ltr" for English', () => {
+    const head = renderChromeHead({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/x-en.html',
+    });
+    expect(head).toMatch(/<html lang="en" dir="ltr">/);
+  });
+
+  it('embeds provided JSON-LD blobs into <head>', () => {
+    const head = renderChromeHead({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/x.html',
+      jsonLd: [{ '@type': 'NewsArticle', headline: 'Hi' }],
+    });
+    expect(head).toContain('<script type="application/ld+json">');
+    expect(head).toContain('"@type":"NewsArticle"');
+    expect(head).toContain('"headline":"Hi"');
+  });
+
+  it('HTML-escapes title and description', () => {
+    const head = renderChromeHead({
+      lang: 'en',
+      title: 'A <bad> "title"',
+      description: 'with <evil> &ampersand',
+      canonicalPath: 'news/x.html',
+    });
+    expect(head).not.toContain('<bad>');
+    expect(head).toContain('&lt;bad&gt;');
+    expect(head).toContain('&quot;title&quot;');
+  });
+});
+
+describe('render-lib — buildChrome', () => {
+  it('emits skip-link, site header, nav, and footer', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/x.html',
+    });
+    expect(chrome.headerHtml).toContain('class="skip-link"');
+    expect(chrome.headerHtml).toContain('class="rm-site-header"');
+    expect(chrome.headerHtml).toContain('class="rm-site-nav"');
+    expect(chrome.headerHtml).toContain('class="rm-lang-switcher"');
+    expect(chrome.footerHtml).toContain('class="rm-site-footer"');
+    expect(chrome.footerHtml).toContain('Apache-2.0');
+    expect(chrome.footerHtml).toContain('GDPR');
+  });
+
+  it('language switcher lists every language EXCEPT the current one', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/x-en.html',
+    });
+    // Should include sv, da, no, …  (13 others)
+    expect(chrome.headerHtml).toMatch(/lang="sv"/);
+    expect(chrome.headerHtml).toMatch(/lang="ar"/);
+    // Current language link should NOT be in the dropdown (it is in the summary)
+    const dropdown = chrome.headerHtml.split('rm-lang-switcher-dropdown')[1] ?? '';
+    expect(dropdown).not.toMatch(/>\s*English\s*</);
+  });
+
+  it('computes the depth-prefix ../ correctly for nested canonical paths', () => {
+    const shallow = buildChrome({
+      lang: 'en', title: 'T', description: 'd',
+      canonicalPath: 'index.html',
+    });
+    const nested = buildChrome({
+      lang: 'en', title: 'T', description: 'd',
+      canonicalPath: 'a/b/c/deep.html',
+    });
+    // Shallow path has no `../` prefix on internal asset references.
+    expect(shallow.headerHtml).toContain('href="index.html"');
+    // Nested path should prefix its homepage links with `../../../`.
+    expect(nested.headerHtml).toMatch(/href="\.\.\/\.\.\/\.\.\/index\.html"/);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// renderArticleHtml — end-to-end
+// ---------------------------------------------------------------------------
+
+describe('render-lib — renderArticleHtml (end-to-end)', () => {
+  const articleMd = [
+    '---',
+    'title: "Propositions 2099-01-01"',
+    'description: "Real BLUF for propositions."',
+    'date: 2099-01-01',
+    'slug: 2099-01-01-propositions',
+    '---',
+    '',
+    '## Executive Brief',
+    '',
+    'The lede paragraph with [a link](https://example.com).',
+    '',
+    '## Risk Assessment',
+    '',
+    'Risk body.',
+    '',
+  ].join('\n');
+
+  it('produces a complete chrome-wrapped article with rm-article wrapper + sources block', async () => {
+    const html = await renderArticleHtml({
+      markdown: articleMd,
+      lang: 'en',
+      canonicalPath: 'news/2099-01-01-propositions-en.html',
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/propositions',
+      artifactsUsed: ['executive-brief.md', 'risk-assessment.md'],
+    });
+    expect(html.startsWith('<!DOCTYPE html>')).toBe(true);
+    expect(html).toContain('<article class="rm-article"');
+    expect(html).toContain('<h1>Propositions 2099-01-01</h1>');
+    expect(html).toContain('class="rm-article-sources"');
+    expect(html).toContain('executive-brief.md');
+    expect(html).toContain('risk-assessment.md');
+    // Sources link must resolve to GitHub blob.
+    expect(html).toContain(
+      `${GITHUB_BLOB}/analysis/daily/2099-01-01/propositions/executive-brief.md`,
+    );
+    // JSON-LD NewsArticle with isBasedOn entries.
+    expect(html).toContain('"@type":"NewsArticle"');
+    expect(html).toContain('"isBasedOn"');
+    // Body preserves real content.
+    expect(html).toContain('The lede paragraph');
+  });
+
+  it('strips <script> injected via aggregated markdown source', async () => {
+    const evil = [
+      '---',
+      'title: "Evil"',
+      'description: "x"',
+      'date: 2099-01-01',
+      '---',
+      '',
+      '## EB',
+      '',
+      '<script>alert("xss")</script>',
+      '',
+      'visible text',
+    ].join('\n');
+    const html = await renderArticleHtml({
+      markdown: evil,
+      lang: 'en',
+      canonicalPath: 'news/x.html',
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/evil',
+      artifactsUsed: [],
+    });
+    expect(html).not.toContain('<script>alert');
+    expect(html).not.toContain('alert("xss")');
+    expect(html).toContain('visible text');
+  });
+
+  it('respects hreflang alternates when provided', async () => {
+    const html = await renderArticleHtml({
+      markdown: articleMd,
+      lang: 'en',
+      canonicalPath: 'news/2099-01-01-propositions-en.html',
+      hreflangAlternates: {
+        en: 'news/2099-01-01-propositions-en.html',
+        sv: 'news/2099-01-01-propositions-sv.html',
+      },
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/propositions',
+      artifactsUsed: ['executive-brief.md'],
+    });
+    expect(html).toContain('hreflang="en"');
+    expect(html).toContain('hreflang="sv"');
+    expect(html).toContain('hreflang="x-default"');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// aggregateAnalysis — edge cases
+// ---------------------------------------------------------------------------
+
+describe('render-lib — aggregateAnalysis edge cases', () => {
+  it('throws a helpful error when executive-brief.md is missing', () => {
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rm-render-edge-'));
+    const sub = path.join(tmp, '2099-01-01', 'empty');
+    fs.mkdirSync(sub, { recursive: true });
+    fs.writeFileSync(path.join(sub, 'risk-assessment.md'), '# R\n\nbody\n');
+    expect(() =>
+      aggregateAnalysis({
+        subfolderAbsPath: sub,
+        subfolderRepoRelPath: 'analysis/daily/2099-01-01/empty',
+        date: '2099-01-01',
+        subfolder: 'empty',
+      }),
+    ).toThrow(/executive-brief\.md/i);
+  });
+
+  it('throws when subfolder does not exist at all', () => {
+    expect(() =>
+      aggregateAnalysis({
+        subfolderAbsPath: '/nonexistent/path/xyz-123',
+        subfolderRepoRelPath: 'analysis/daily/2099-01-01/ghost',
+        date: '2099-01-01',
+        subfolder: 'ghost',
+      }),
+    ).toThrow(/not found/i);
+  });
+
+  it('expands documents/*.md inline as "Per-document intelligence" subsections', () => {
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rm-render-edge-'));
+    const sub = path.join(tmp, '2099-01-01', 'with-docs');
+    const docs = path.join(sub, 'documents');
+    fs.mkdirSync(docs, { recursive: true });
+    fs.writeFileSync(
+      path.join(sub, 'executive-brief.md'),
+      '# EB\n\nLede.\n',
+    );
+    fs.writeFileSync(path.join(docs, 'HD01FOO-analysis.md'), '# Foo\n\nFoo body.\n');
+    fs.writeFileSync(path.join(docs, 'HD01BAR-analysis.md'), '# Bar\n\nBar body.\n');
+    const result = aggregateAnalysis({
+      subfolderAbsPath: sub,
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/with-docs',
+      date: '2099-01-01',
+      subfolder: 'with-docs',
+    });
+    expect(result.markdown).toContain('## Per-document intelligence');
+    // dok_id is emitted as an H3 with escaped markdown metacharacters; since
+    // HD01FOO has no metachars the heading appears verbatim.
+    expect(result.markdown).toContain('### HD01BAR');
+    expect(result.markdown).toContain('### HD01FOO');
+    expect(result.markdown).toContain('Foo body.');
+    expect(result.markdown).toContain('Bar body.');
+    expect(result.artifactsUsed).toContain('documents/HD01FOO-analysis.md');
+    expect(result.artifactsUsed).toContain('documents/HD01BAR-analysis.md');
+  });
+
+  it('appends unknown supplementary *.md after the core order alphabetically', () => {
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rm-render-edge-'));
+    const sub = path.join(tmp, '2099-01-01', 'supp');
+    fs.mkdirSync(sub, { recursive: true });
+    fs.writeFileSync(path.join(sub, 'executive-brief.md'), '# EB\n\nLede.\n');
+    fs.writeFileSync(path.join(sub, 'zebra-appendix.md'), '# Z\n\nzebra content.\n');
+    fs.writeFileSync(path.join(sub, 'pestle-analysis.md'), '# P\n\npestle content.\n');
+    const result = aggregateAnalysis({
+      subfolderAbsPath: sub,
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/supp',
+      date: '2099-01-01',
+      subfolder: 'supp',
+    });
+    // Both unknown artifacts appear.
+    expect(result.markdown).toContain('pestle content');
+    expect(result.markdown).toContain('zebra content');
+    // Pestle before Zebra (alphabetical).
+    expect(result.markdown.indexOf('pestle content')).toBeLessThan(
+      result.markdown.indexOf('zebra content'),
+    );
   });
 });
