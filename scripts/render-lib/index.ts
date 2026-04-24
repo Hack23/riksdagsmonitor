@@ -701,7 +701,15 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
   const fm = parsed.data as Record<string, unknown>;
   const title = String(fm.title ?? 'Political Intelligence');
   const description = String(fm.description ?? 'Riksdagsmonitor political intelligence report.');
-  const date = String(fm.date ?? new Date().toISOString().slice(0, 10));
+  const dateRaw = fm.date;
+  let date: string;
+  if (dateRaw instanceof Date) {
+    date = dateRaw.toISOString().slice(0, 10);
+  } else if (typeof dateRaw === 'string' && /^\d{4}-\d{2}-\d{2}/.test(dateRaw)) {
+    date = dateRaw.slice(0, 10);
+  } else {
+    date = new Date().toISOString().slice(0, 10);
+  }
   const publishedIso = `${date}T00:00:00Z`;
   const modifiedIso = new Date().toISOString();
 
