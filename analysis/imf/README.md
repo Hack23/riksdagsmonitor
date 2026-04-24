@@ -155,13 +155,13 @@ Full supersedes map: see the `deprecationPolicy` section of [`indicators-invento
 | **AU** (Labour) | **IMF + SCB** | `WEO:LUR` + SCB AKU |
 | **NU** (Business/Trade) | **IMF primary** | `WEO:BCA_NGDPD`, `WEO:TX_RPCH`, `DOTS:TXG_FOB_USD` |
 | **UU** (Foreign affairs) | **IMF primary** | `WEO:BCA_NGDPD`, `WEO:TX_RPCH` |
-| **SoU** (Health) | **IMF + WB** | `GFS_COFOG:G07`, `WEO:LP` + `WB:SH.XPD.CHEX.GD.ZS` |
+| **SoU** (Health) | **IMF + WB** | `GFS_COFOG:G07`, `WEO:LP` + `worldBank:SH.XPD.CHEX.GD.ZS` |
 | **SfU** (Social insurance) | **IMF + WB** | `GFS_COFOG:G10`, `WEO:LP`, `WEO:LUR` |
-| **FöU** (Defence) | **IMF + WB** | `GFS_COFOG:G02` + `WB:MS.MIL.XPND.GD.ZS` |
-| **MJU** (Environment) | **WB primary** | `PCPS:POILAPSP` overlay + `WB:EN.ATM.CO2E.PC`, `WB:EG.FEC.RNEW.ZS` |
-| **UbU** (Education) | **IMF + WB** | `GFS_COFOG:G09` + `WB:SE.XPD.TOTL.GD.ZS` |
-| **KU** (Constitution) | **WB only (WGI)** | `WB:CC.EST`, `WB:RL.EST`, `WB:VA.EST` (source=75) |
-| **JuU** (Justice) | **WB only** | `WB:VC.IHR.PSRC.P5`, WGI |
+| **FöU** (Defence) | **IMF + WB** | `GFS_COFOG:G02` + `worldBank:MS.MIL.XPND.GD.ZS` |
+| **MJU** (Environment) | **WB primary** | `PCPS:POILAPSP` overlay + `worldBank:EN.ATM.CO2E.PC`, `worldBank:EG.FEC.RNEW.ZS` |
+| **UbU** (Education) | **IMF + WB** | `GFS_COFOG:G09` + `worldBank:SE.XPD.TOTL.GD.ZS` |
+| **KU** (Constitution) | **WB only (WGI)** | `worldBank:CC.EST`, `worldBank:RL.EST`, `worldBank:VA.EST` (source=75) |
+| **JuU** (Justice) | **WB only** | `worldBank:VC.IHR.PSRC.P5`, WGI |
 
 Full matrix: [`indicator-policy-mapping.md`](indicator-policy-mapping.md), machine-readable: `indicators-inventory.json → committeeMatrix`.
 
