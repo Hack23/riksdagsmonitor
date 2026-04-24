@@ -1,0 +1,647 @@
+{
+  "version": "1.0",
+  "description": "Complete machine-readable inventory of IMF indicators consumed by Riksdagsmonitor. Mirrors the shape of analysis/worldbank/indicators-inventory.json v3.0 so agents and TypeScript modules can discover IMF indicators with the same pattern they already use for World Bank. This file is the SINGLE SOURCE OF TRUTH for IMF indicator discovery and MUST be kept in sync with scripts/imf-client.ts (IMF_WEO_INDICATORS, IMF_FM_INDICATORS) and scripts/imf-context.ts (IMF_INDICATORS).",
+  "lastUpdated": "2026-04-24",
+  "effectiveDate": "2026-04-24",
+  "source": "IMF Datamapper (www.imf.org/external/datamapper/api/v1) + IMF SDMX 3.0 (api.imf.org/external/sdmx/3.0)",
+  "targetCountry": "SWE (Sweden, ISO-3)",
+  "peerSet": ["SWE", "DNK", "NOR", "FIN", "DEU"],
+  "aggregates": {
+    "europeanUnion": "EU",
+    "euroArea": "EURO",
+    "g7": "G7",
+    "g20": "G20",
+    "advancedEconomies": "AE",
+    "world": "WORLD"
+  },
+  "clients": {
+    "cli": "tsx scripts/imf-fetch.ts (commands: weo, compare, sdmx, list-indicators)",
+    "library": "scripts/imf-client.ts (ImfClient class)",
+    "codes": "scripts/imf-codes.ts (ISO3_TO_IMF_AREA for IFS/GFS/BOP numeric area codes)",
+    "context": "scripts/imf-context.ts (policy-area ↔ committee mapping, IMF_NORDIC_PEERS)"
+  },
+  "notes": {
+    "firewallAllowlist": "data.imf.org, api.imf.org, www.imf.org",
+    "noMcp": "IMF is NOT an MCP server. Agentic workflows invoke the TypeScript CLI via the bash tool. This keeps IMF under the same npm/SBOM governance as world-bank-client.ts and scb-client.ts with zero Python/uvx runtime.",
+    "rateLimit": "IMF advertises ~10 req / 5s. Prefer the 'compare' subcommand (single batched call) over parallel 'weo' calls. Client retries 3× on 429/5xx with 1s→2s→4s back-off.",
+    "vintage": "Every projection value carries a projectionVintage tag (e.g. 'WEO-2026-04', 'FM-2026-04'). Update DEFAULT_WEO_VINTAGE in scripts/imf-client.ts when the IMF publishes a new flagship release (April / October).",
+    "persistence": "Use the --persist flag to cache raw responses under analysis/data/imf/{indicator}/{country}.json. Reuse across article types within the same daily run to minimise API calls."
+  },
+  "totalIndicators": 24,
+  "databases": {
+    "WEO": {
+      "label": "World Economic Outlook",
+      "endpoint": "datamapper",
+      "frequency": "Annual",
+      "cadence": "April / October (flagship releases)",
+      "projectionHorizon": "T+5",
+      "coverage": "Macro, fiscal, external sector, demographics. 190+ countries including all Nordic peers.",
+      "codeList": "See IMF_WEO_INDICATORS in scripts/imf-client.ts",
+      "urlPattern": "https://www.imf.org/external/datamapper/api/v1/{indicatorCode}/{iso3}"
+    },
+    "FM": {
+      "label": "Fiscal Monitor",
+      "endpoint": "datamapper",
+      "frequency": "Annual",
+      "cadence": "April / October (flagship releases, aligned with WEO)",
+      "projectionHorizon": "T+5",
+      "coverage": "Deeper fiscal detail than WEO — primary balance, cyclically-adjusted balance, interest payments, debt-sustainability analysis.",
+      "urlPattern": "https://www.imf.org/external/datamapper/api/v1/{indicatorCode}/{iso3}"
+    },
+    "IFS": {
+      "label": "International Financial Statistics",
+      "endpoint": "sdmx",
+      "frequency": "Monthly / Quarterly",
+      "cadence": "Monthly",
+      "coverage": "High-frequency monetary & financial series — policy rates, interest rates, exchange rates, CPI (monthly), money supply, reserves.",
+      "note": "Accessed via ImfClient.sdmxFetch(). Uses IMF 3-digit numeric AREA codes (see scripts/imf-codes.ts)."
+    },
+    "BOP": {
+      "label": "Balance of Payments",
+      "endpoint": "sdmx",
+      "frequency": "Quarterly",
+      "cadence": "Quarterly",
+      "coverage": "Current account, capital account, financial account, reserve assets. Methodology: BPM6.",
+      "note": "BOP_AGG is the aggregate summary; raw BOP has deeper detail."
+    },
+    "GFS_COFOG": {
+      "label": "Government Finance Statistics — Classification of Functions of Government",
+      "endpoint": "sdmx",
+      "frequency": "Annual",
+      "cadence": "T+1 (data for year Y released in year Y+1)",
+      "coverage": "Government expenditure broken down by function (COFOG 01–10): 02 Defence → FöU, 07 Health → SoU, 09 Education → UbU, 10 Social Protection → SfU.",
+      "note": "Best source for committee-aligned spending decomposition."
+    },
+    "MFS_IR": {
+      "label": "Monetary & Financial Statistics — Interest Rates",
+      "endpoint": "sdmx",
+      "frequency": "Monthly",
+      "cadence": "Monthly",
+      "coverage": "Central-bank policy rates, interbank rates, deposit/lending rates."
+    },
+    "DOTS": {
+      "label": "Direction of Trade Statistics",
+      "endpoint": "sdmx",
+      "frequency": "Monthly",
+      "cadence": "Monthly",
+      "coverage": "Bilateral trade flows — exports and imports by partner country. Useful for NU/UU trade-policy coverage."
+    },
+    "PCPS": {
+      "label": "Primary Commodity Prices",
+      "endpoint": "sdmx",
+      "frequency": "Monthly",
+      "cadence": "Monthly",
+      "coverage": "Commodity price indices — energy, metals, food. Feeds inflation-drivers commentary."
+    },
+    "ER": {
+      "label": "Exchange Rates",
+      "endpoint": "sdmx",
+      "frequency": "Daily / Monthly",
+      "cadence": "Daily (representative)",
+      "coverage": "SEK/EUR, SEK/USD, nominal/real effective exchange rates."
+    }
+  },
+  "domains": {
+    "macro": {
+      "label": "Headline macro",
+      "primary": true,
+      "committees": ["FiU", "SkU", "NU"],
+      "supersedesWorldBank": ["NY.GDP.MKTP.CD", "NY.GDP.MKTP.KD.ZG", "NY.GDP.PCAP.CD", "FP.CPI.TOTL.ZG"],
+      "indicators": [
+        {
+          "id": "NGDP_RPCH",
+          "key": "imfRealGdpGrowth",
+          "database": "WEO",
+          "name": "Real GDP growth",
+          "unit": "Annual % change",
+          "description": "Year-over-year change in real GDP. Headline macro indicator. Projected to T+5.",
+          "policyAreas": ["fiscal policy", "macro economy", "growth"],
+          "committees": ["FiU", "SkU", "NU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "supersedes": "worldBank:NY.GDP.MKTP.KD.ZG",
+          "citation": "WEO:NGDP_RPCH",
+          "admiralty": "A1"
+        },
+        {
+          "id": "NGDP",
+          "key": "imfNominalGdpLcu",
+          "database": "WEO",
+          "name": "Nominal GDP (local currency)",
+          "unit": "National currency, billions",
+          "description": "Nominal GDP in domestic currency. Denominator for % of GDP ratios.",
+          "policyAreas": ["macro economy"],
+          "committees": ["FiU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "citation": "WEO:NGDP",
+          "admiralty": "A1"
+        },
+        {
+          "id": "NGDPD",
+          "key": "imfNominalGdpUsd",
+          "database": "WEO",
+          "name": "Nominal GDP (USD)",
+          "unit": "Current USD, billions",
+          "description": "Nominal GDP converted to USD. Useful for cross-country size comparisons.",
+          "policyAreas": ["macro economy"],
+          "committees": ["FiU", "UU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "supersedes": "worldBank:NY.GDP.MKTP.CD",
+          "citation": "WEO:NGDPD",
+          "admiralty": "A1"
+        },
+        {
+          "id": "NGDPDPC",
+          "key": "imfGdpPerCapita",
+          "database": "WEO",
+          "name": "GDP per capita (USD)",
+          "unit": "Current USD",
+          "description": "Nominal GDP per capita. Living-standards comparator.",
+          "policyAreas": ["macro economy", "living standards"],
+          "committees": ["FiU", "AU", "SoU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "supersedes": "worldBank:NY.GDP.PCAP.CD",
+          "citation": "WEO:NGDPDPC",
+          "admiralty": "A1"
+        },
+        {
+          "id": "PPPPC",
+          "key": "imfGdpPerCapitaPpp",
+          "database": "WEO",
+          "name": "GDP per capita (PPP, international $)",
+          "unit": "International dollars (PPP)",
+          "description": "Purchasing-power-parity-adjusted GDP per capita. Preferred for welfare / living-standards comparisons.",
+          "policyAreas": ["macro economy", "living standards"],
+          "committees": ["FiU", "AU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "citation": "WEO:PPPPC",
+          "admiralty": "A1"
+        }
+      ]
+    },
+    "inflation": {
+      "label": "Inflation & prices",
+      "primary": true,
+      "committees": ["FiU"],
+      "supersedesWorldBank": ["FP.CPI.TOTL.ZG"],
+      "indicators": [
+        {
+          "id": "PCPIPCH",
+          "key": "imfInflationCpi",
+          "database": "WEO",
+          "name": "Inflation, CPI average",
+          "unit": "Annual % change",
+          "description": "Average consumer-price inflation, annual. Primary monetary-policy reference. Projected to T+5.",
+          "policyAreas": ["monetary policy", "inflation"],
+          "committees": ["FiU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "supersedes": "worldBank:FP.CPI.TOTL.ZG",
+          "citation": "WEO:PCPIPCH",
+          "admiralty": "A1"
+        },
+        {
+          "id": "PCPIEPCH",
+          "key": "imfInflationCpiEndPeriod",
+          "database": "WEO",
+          "name": "Inflation, CPI end-of-period",
+          "unit": "Annual % change",
+          "description": "Year-end CPI change. Complements average-period PCPIPCH for target-adjacent analysis.",
+          "policyAreas": ["monetary policy", "inflation"],
+          "committees": ["FiU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "citation": "WEO:PCPIEPCH",
+          "admiralty": "A1"
+        }
+      ]
+    },
+    "labor": {
+      "label": "Labour market",
+      "primary": true,
+      "committees": ["AU", "SoU", "SfU"],
+      "supersedesWorldBank": ["SL.UEM.TOTL.ZS"],
+      "indicators": [
+        {
+          "id": "LUR",
+          "key": "imfUnemploymentRate",
+          "database": "WEO",
+          "name": "Unemployment rate",
+          "unit": "% of labour force",
+          "description": "WEO-definition unemployment. Projected to T+5. Methodology may differ slightly from SCB AKU; cite explicitly.",
+          "policyAreas": ["labor market", "employment"],
+          "committees": ["AU", "SoU", "SfU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "supersedes": "worldBank:SL.UEM.TOTL.ZS",
+          "citation": "WEO:LUR",
+          "admiralty": "A2",
+          "caveats": ["WEO LUR may diverge from SCB AKU by 0.1–0.3 pp due to definitional differences. Prefer SCB for Swedish-specific ground truth; use IMF for cross-country comparison."]
+        },
+        {
+          "id": "LE",
+          "key": "imfEmployment",
+          "database": "WEO",
+          "name": "Employment",
+          "unit": "Persons, millions",
+          "description": "Total employed persons (WEO definition).",
+          "policyAreas": ["labor market"],
+          "committees": ["AU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "citation": "WEO:LE",
+          "admiralty": "A2"
+        }
+      ]
+    },
+    "fiscal": {
+      "label": "Fiscal policy — general government",
+      "primary": true,
+      "committees": ["FiU", "SkU"],
+      "supersedesWorldBank": ["GC.DOD.TOTL.GD.ZS", "GC.XPN.TOTL.GD.ZS", "GC.REV.XGRT.GD.ZS"],
+      "indicators": [
+        {
+          "id": "GGXWDG_NGDP",
+          "key": "imfGeneralGovGrossDebt",
+          "database": "WEO",
+          "name": "General government gross debt (% of GDP)",
+          "unit": "% of GDP",
+          "description": "Debt/GDP on general-government (EDP) basis. Superior to WB GC.DOD.TOTL.GD.ZS for EU/Nordic discussion because it follows GFSM 2014. Projected to T+5.",
+          "policyAreas": ["fiscal policy", "debt", "EU stability and growth pact"],
+          "committees": ["FiU", "SkU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "supersedes": "worldBank:GC.DOD.TOTL.GD.ZS",
+          "citation": "WEO:GGXWDG_NGDP",
+          "admiralty": "A1"
+        },
+        {
+          "id": "GGR_NGDP",
+          "key": "imfGeneralGovRevenue",
+          "database": "WEO",
+          "name": "General government revenue (% of GDP)",
+          "unit": "% of GDP",
+          "description": "Tax and non-tax revenue as share of GDP. Projected to T+5.",
+          "policyAreas": ["fiscal policy", "taxation"],
+          "committees": ["SkU", "FiU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "supersedes": "worldBank:GC.REV.XGRT.GD.ZS",
+          "citation": "WEO:GGR_NGDP",
+          "admiralty": "A1"
+        },
+        {
+          "id": "GGX_NGDP",
+          "key": "imfGeneralGovExpenditure",
+          "database": "WEO",
+          "name": "General government expenditure (% of GDP)",
+          "unit": "% of GDP",
+          "description": "Total government spending. Projected to T+5.",
+          "policyAreas": ["fiscal policy", "public spending"],
+          "committees": ["FiU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "supersedes": "worldBank:GC.XPN.TOTL.GD.ZS",
+          "citation": "WEO:GGX_NGDP",
+          "admiralty": "A1"
+        },
+        {
+          "id": "GGXCNL_NGDP",
+          "key": "imfGeneralGovBalance",
+          "database": "WEO",
+          "name": "General government net lending / borrowing (% of GDP)",
+          "unit": "% of GDP",
+          "description": "Headline fiscal balance (surplus +, deficit −). Projected to T+5.",
+          "policyAreas": ["fiscal policy", "budget"],
+          "committees": ["FiU", "SkU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "citation": "WEO:GGXCNL_NGDP",
+          "admiralty": "A1"
+        },
+        {
+          "id": "GGXONLB_NGDP",
+          "key": "imfPrimaryBalance",
+          "database": "FM",
+          "name": "General government primary balance (% of GDP)",
+          "unit": "% of GDP",
+          "description": "Fiscal balance excluding net interest. Key debt-sustainability indicator. FM vintage may differ slightly from WEO.",
+          "policyAreas": ["fiscal policy", "debt sustainability"],
+          "committees": ["FiU", "SkU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "citation": "FM:GGXONLB_NGDP",
+          "admiralty": "A1"
+        },
+        {
+          "id": "GGSB_NPGDP",
+          "key": "imfCyclicallyAdjustedBalance",
+          "database": "FM",
+          "name": "Cyclically-adjusted primary balance (% of potential GDP)",
+          "unit": "% of potential GDP",
+          "description": "Structural fiscal stance — removes business-cycle effects from the primary balance. Preferred metric for assessing discretionary policy.",
+          "policyAreas": ["fiscal policy", "structural balance"],
+          "committees": ["FiU", "SkU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "citation": "FM:GGSB_NPGDP",
+          "admiralty": "A1"
+        }
+      ]
+    },
+    "external": {
+      "label": "External sector & trade",
+      "primary": true,
+      "committees": ["NU", "UU", "FiU"],
+      "supersedesWorldBank": ["BN.CAB.XOKA.GD.ZS", "NE.EXP.GNFS.ZS"],
+      "indicators": [
+        {
+          "id": "BCA_NGDPD",
+          "key": "imfCurrentAccountBalance",
+          "database": "WEO",
+          "name": "Current account balance (% of GDP)",
+          "unit": "% of GDP",
+          "description": "Net external position (trade + primary + secondary income). Projected to T+5.",
+          "policyAreas": ["external sector", "trade"],
+          "committees": ["NU", "UU", "FiU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "supersedes": "worldBank:BN.CAB.XOKA.GD.ZS",
+          "citation": "WEO:BCA_NGDPD",
+          "admiralty": "A1"
+        },
+        {
+          "id": "TX_RPCH",
+          "key": "imfExportsVolumeGrowth",
+          "database": "WEO",
+          "name": "Exports of goods and services, volume",
+          "unit": "Annual % change",
+          "description": "Real exports growth rate. Projected to T+5.",
+          "policyAreas": ["trade", "export performance"],
+          "committees": ["NU", "UU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "citation": "WEO:TX_RPCH",
+          "admiralty": "A1"
+        },
+        {
+          "id": "TM_RPCH",
+          "key": "imfImportsVolumeGrowth",
+          "database": "WEO",
+          "name": "Imports of goods and services, volume",
+          "unit": "Annual % change",
+          "description": "Real imports growth rate. Projected to T+5.",
+          "policyAreas": ["trade"],
+          "committees": ["NU", "UU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "citation": "WEO:TM_RPCH",
+          "admiralty": "A1"
+        }
+      ]
+    },
+    "monetary": {
+      "label": "Monetary & financial (high-frequency)",
+      "primary": true,
+      "committees": ["FiU"],
+      "indicators": [
+        {
+          "id": "PCPI_IX",
+          "key": "imfCpiMonthly",
+          "database": "IFS",
+          "name": "Consumer Price Index (monthly)",
+          "unit": "Index, 2010=100",
+          "description": "Monthly CPI level. Complements annual WEO PCPIPCH with higher frequency.",
+          "policyAreas": ["monetary policy", "inflation"],
+          "committees": ["FiU"],
+          "publishesProjections": false,
+          "citation": "IFS:PCPI_IX",
+          "admiralty": "A1",
+          "sdmxPath": "/data/IMF.STA,CPI,4.0.0/M.{AREA}.PCPI_IX"
+        },
+        {
+          "id": "FPOLM_PA",
+          "key": "imfPolicyRate",
+          "database": "MFS_IR",
+          "name": "Central bank policy rate",
+          "unit": "% per annum",
+          "description": "Riksbankens styrränta / central-bank target rate. Monthly frequency.",
+          "policyAreas": ["monetary policy"],
+          "committees": ["FiU"],
+          "publishesProjections": false,
+          "citation": "MFS_IR:FPOLM_PA",
+          "admiralty": "A1"
+        },
+        {
+          "id": "ENDA_XDC_USD_RATE",
+          "key": "imfSekUsdRate",
+          "database": "ER",
+          "name": "SEK / USD exchange rate (end of period)",
+          "unit": "SEK per USD",
+          "description": "Bilateral nominal exchange rate. Useful for monetary-policy coverage and trade commentary.",
+          "policyAreas": ["monetary policy", "external sector"],
+          "committees": ["FiU", "NU"],
+          "publishesProjections": false,
+          "citation": "ER:ENDA_XDC_USD_RATE",
+          "admiralty": "A1"
+        }
+      ]
+    },
+    "cofog": {
+      "label": "Government spending by function (COFOG)",
+      "primary": true,
+      "committees": ["FöU", "SoU", "UbU", "SfU", "FiU"],
+      "indicators": [
+        {
+          "id": "G02",
+          "key": "imfCofogDefence",
+          "database": "GFS_COFOG",
+          "name": "Defence spending (COFOG 02, % of GDP)",
+          "unit": "% of GDP",
+          "description": "General-government defence expenditure on COFOG function 02. Complements WB MS.MIL.XPND.GD.ZS with EDP-consistent methodology.",
+          "policyAreas": ["defence", "fiscal policy"],
+          "committees": ["FöU", "FiU"],
+          "publishesProjections": false,
+          "citation": "GFS_COFOG:G02",
+          "admiralty": "A1"
+        },
+        {
+          "id": "G07",
+          "key": "imfCofogHealth",
+          "database": "GFS_COFOG",
+          "name": "Health spending (COFOG 07, % of GDP)",
+          "unit": "% of GDP",
+          "description": "General-government health expenditure on COFOG function 07. Complements WB SH.XPD.CHEX.GD.ZS.",
+          "policyAreas": ["health", "fiscal policy"],
+          "committees": ["SoU", "FiU"],
+          "publishesProjections": false,
+          "citation": "GFS_COFOG:G07",
+          "admiralty": "A1"
+        },
+        {
+          "id": "G09",
+          "key": "imfCofogEducation",
+          "database": "GFS_COFOG",
+          "name": "Education spending (COFOG 09, % of GDP)",
+          "unit": "% of GDP",
+          "description": "General-government education expenditure on COFOG function 09. Complements WB SE.XPD.TOTL.GD.ZS.",
+          "policyAreas": ["education", "fiscal policy"],
+          "committees": ["UbU", "FiU"],
+          "publishesProjections": false,
+          "citation": "GFS_COFOG:G09",
+          "admiralty": "A1"
+        },
+        {
+          "id": "G10",
+          "key": "imfCofogSocialProtection",
+          "database": "GFS_COFOG",
+          "name": "Social protection spending (COFOG 10, % of GDP)",
+          "unit": "% of GDP",
+          "description": "General-government social-protection expenditure on COFOG function 10 (pensions, unemployment, family benefits).",
+          "policyAreas": ["social protection", "fiscal policy"],
+          "committees": ["SfU", "SoU", "FiU"],
+          "publishesProjections": false,
+          "citation": "GFS_COFOG:G10",
+          "admiralty": "A1"
+        }
+      ]
+    },
+    "trade": {
+      "label": "Bilateral trade (DOTS)",
+      "primary": true,
+      "committees": ["NU", "UU"],
+      "indicators": [
+        {
+          "id": "TXG_FOB_USD",
+          "key": "imfExportsBilateral",
+          "database": "DOTS",
+          "name": "Exports of goods, FOB (USD) — bilateral",
+          "unit": "USD",
+          "description": "Monthly bilateral merchandise exports to a named partner country. Useful for trade-policy & sanctions coverage.",
+          "policyAreas": ["trade", "foreign policy"],
+          "committees": ["NU", "UU"],
+          "publishesProjections": false,
+          "citation": "DOTS:TXG_FOB_USD",
+          "admiralty": "A1"
+        },
+        {
+          "id": "TMG_CIF_USD",
+          "key": "imfImportsBilateral",
+          "database": "DOTS",
+          "name": "Imports of goods, CIF (USD) — bilateral",
+          "unit": "USD",
+          "description": "Monthly bilateral merchandise imports from a named partner country.",
+          "policyAreas": ["trade"],
+          "committees": ["NU", "UU"],
+          "publishesProjections": false,
+          "citation": "DOTS:TMG_CIF_USD",
+          "admiralty": "A1"
+        }
+      ]
+    },
+    "commodities": {
+      "label": "Primary commodities (PCPS)",
+      "primary": false,
+      "committees": ["NU", "FiU", "MJU"],
+      "indicators": [
+        {
+          "id": "PALLFNF",
+          "key": "imfCommodityAllIndex",
+          "database": "PCPS",
+          "name": "All Commodities price index",
+          "unit": "Index, 2016=100",
+          "description": "IMF all-commodities price index. Inflation-drivers commentary.",
+          "policyAreas": ["inflation", "commodities"],
+          "committees": ["FiU"],
+          "publishesProjections": false,
+          "citation": "PCPS:PALLFNF",
+          "admiralty": "A1"
+        },
+        {
+          "id": "POILAPSP",
+          "key": "imfOilPriceBrent",
+          "database": "PCPS",
+          "name": "Crude oil price (average of Brent, Dubai, WTI)",
+          "unit": "USD per barrel",
+          "description": "Benchmark oil price. Inflation-drivers + MJU energy-policy commentary.",
+          "policyAreas": ["inflation", "energy"],
+          "committees": ["FiU", "MJU", "NU"],
+          "publishesProjections": false,
+          "citation": "PCPS:POILAPSP",
+          "admiralty": "A1"
+        }
+      ]
+    },
+    "demographics": {
+      "label": "Demographics",
+      "primary": true,
+      "committees": ["SoU", "SfU"],
+      "indicators": [
+        {
+          "id": "LP",
+          "key": "imfPopulation",
+          "database": "WEO",
+          "name": "Population",
+          "unit": "Persons, millions",
+          "description": "WEO population definition. Projected to T+5.",
+          "policyAreas": ["demographics"],
+          "committees": ["SoU", "SfU"],
+          "projectionHorizon": "T+5",
+          "publishesProjections": true,
+          "citation": "WEO:LP",
+          "admiralty": "A1"
+        }
+      ]
+    }
+  },
+  "committeeMatrix": {
+    "FiU": { "provider": "IMF (primary)", "mustQuery": ["WEO:NGDP_RPCH", "WEO:PCPIPCH", "WEO:NGDPDPC", "WEO:GGXWDG_NGDP"] },
+    "SkU": { "provider": "IMF (primary)", "mustQuery": ["WEO:GGR_NGDP", "WEO:GGX_NGDP", "WEO:GGXCNL_NGDP", "FM:GGXONLB_NGDP"] },
+    "AU":  { "provider": "IMF + WB", "mustQuery": ["WEO:LUR"], "secondary": ["wb:SL.UEM.1524.ZS", "wb:SL.TLF.CACT.ZS"] },
+    "NU":  { "provider": "IMF (primary)", "mustQuery": ["WEO:BCA_NGDPD", "WEO:TX_RPCH", "WEO:TM_RPCH"] },
+    "UU":  { "provider": "IMF (primary)", "mustQuery": ["WEO:BCA_NGDPD", "WEO:TX_RPCH"] },
+    "SoU": { "provider": "IMF + WB", "mustQuery": ["WEO:LP", "GFS_COFOG:G07"], "secondary": ["wb:SH.XPD.CHEX.GD.ZS", "wb:SH.MED.PHYS.ZS"] },
+    "SfU": { "provider": "IMF + WB", "mustQuery": ["WEO:LP", "GFS_COFOG:G10"] },
+    "FöU": { "provider": "IMF + WB", "mustQuery": ["GFS_COFOG:G02"], "secondary": ["wb:MS.MIL.XPND.GD.ZS"] },
+    "MJU": { "provider": "WB (primary)", "secondary": ["PCPS:POILAPSP"], "note": "Environment indicators are WB exclusive." },
+    "UbU": { "provider": "IMF + WB", "mustQuery": ["GFS_COFOG:G09"], "secondary": ["wb:SE.XPD.TOTL.GD.ZS"] },
+    "KU":  { "provider": "WB (WGI)", "note": "Governance (CC.EST, RL.EST, VA.EST, source=75) is WB exclusive; IMF has no equivalent." },
+    "JuU": { "provider": "WB (primary)", "note": "Crime / rule-of-law metrics are WB exclusive." }
+  },
+  "deprecationPolicy": {
+    "deprecatedWorldBankEconomicCodes": [
+      "NY.GDP.MKTP.CD",
+      "NY.GDP.MKTP.KD.ZG",
+      "NY.GDP.PCAP.CD",
+      "FP.CPI.TOTL.ZG",
+      "SL.UEM.TOTL.ZS",
+      "GC.DOD.TOTL.GD.ZS",
+      "GC.XPN.TOTL.GD.ZS",
+      "GC.REV.XGRT.GD.ZS",
+      "BN.CAB.XOKA.GD.ZS",
+      "NE.EXP.GNFS.ZS"
+    ],
+    "policy": "These World Bank codes are kept as read-only references for historical comparison and back-compat with pre-2026-04-20 articles. New articles MUST use the IMF counterpart listed in each indicator's 'supersedes' field. The validator does not yet block usage — flagged for a follow-up automated lint.",
+    "rationale": "WB lags 12–24 months for macro/fiscal and publishes no projections. IMF WEO/FM publish T+5 projections with Apr/Oct cadence and are the canonical reference for EU/Nordic fiscal discussion (GFSM 2014 compliance)."
+  },
+  "vintageDiscipline": {
+    "current": "WEO-2026-04",
+    "release": {
+      "april": "Late-April (flagship WEO + Fiscal Monitor)",
+      "october": "Mid-October (flagship WEO + Fiscal Monitor)"
+    },
+    "rule": "Every projection citation MUST include the vintage tag in parentheses — e.g. '(WEO Apr-2026, GGXWDG_NGDP)'. Historical citations do not need the tag. Any projection citation older than 6 months gets a warning annotation in methodology-reflection.md.",
+    "cutover": "When a new WEO release is published, update DEFAULT_WEO_VINTAGE in scripts/imf-client.ts and the 'current' field above in the same PR."
+  },
+  "referenced": {
+    "methodology": "analysis/methodologies/imf-indicator-mapping.md",
+    "contract": ".github/aw/ECONOMIC_DATA_CONTRACT.md",
+    "promptAnalysisPipeline": ".github/prompts/04-analysis-pipeline.md",
+    "inventoryMultiProvider": "analysis/economic-indicators-inventory.json",
+    "worldBankResidue": "analysis/worldbank/indicators-inventory.json"
+  }
+}
