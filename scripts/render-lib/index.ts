@@ -27,8 +27,9 @@
  *    `LANGUAGE_META` + `escapeHtml` from `generate-sitemap-html.ts`.
  *
  * All article generation code in this repository MUST go through these
- * three entry points. The old HTML-scaffold / `AI_MUST_REPLACE` pipeline
- * was removed.
+ * three entry points. Articles are derived 100% from real analysis
+ * artifacts under `analysis/daily/$DATE/$SUB/` — there are no template
+ * placeholders or scaffold-and-fill steps in the pipeline.
  *
  * @author Hack23 AB (Infrastructure Team)
  * @license Apache-2.0
