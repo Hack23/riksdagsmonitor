@@ -1168,3 +1168,48 @@ All state transitions MUST be logged with:
 **📅 Effective Date:** 2026-02-15  
 **⏰ Next Review:** 2026-05-15  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+
+---
+
+## 🌐 IMF Cache & Vintage State Machine (Current State)
+
+> **Status:** ✅ Implemented and in production. The IMF cache lives in `analysis/imf/` (canonical hub) and `analysis/daily/*/economic-data.json` (per-article vintage cache). Every cache row is vintage-tagged and SHA-256 pinned. Authority: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1.
+
+### IMF cache row lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Empty: cache key absent
+    Empty --> Fetching: news-* worker requests dataflow/indicator/country
+    Fetching --> Fresh: payload <=6 months old · SHA-256 pinned
+    Fetching --> Stale: payload >6 months old
+    Fetching --> RateLimited: HTTP 429
+    Fetching --> Failed: HTTP 5xx / timeout
+    Fresh --> Used: article cites with full confidence
+    Stale --> Annotated: staleness_annotated=true required
+    Annotated --> Used: article cites with downgraded confidence
+    RateLimited --> Backoff: exponential 2^n seconds
+    Backoff --> Fetching: retry
+    Failed --> CacheFallback: serve last cached vintage
+    CacheFallback --> Used: article cites with cache-fallback annotation
+    Used --> [*]
+```
+
+### WEO vintage transition (April → October cycle, current behaviour)
+
+```mermaid
+stateDiagram-v2
+    [*] --> WEO_2026_04: April WEO published; cached
+    WEO_2026_04 --> WEO_2026_10: October WEO published (supersedes pointer set)
+    WEO_2026_04 --> Archived: superseded; preserved for audit-trail
+    WEO_2026_10 --> WEO_2027_04: April 2027 WEO publishes
+    WEO_2026_10 --> Archived
+    Archived --> [*]: never deleted (provenance integrity)
+```
+
+**Current production guarantees:**
+- Vintage label format `YYYY-MM` enforced by `tests/imf-inventory.test.ts`
+- `supersedes` pointer never overwrites prior vintage row (immutable supersedes-chain)
+- Stale vintages (>6 months) trigger automatic article-level annotation per `scripts/article-quality-enhancer.ts`
+- Cache-fallback path tested by `tests/economic-context-multi-provider.test.ts`

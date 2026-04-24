@@ -494,7 +494,9 @@ flowchart LR
 
 ---
 
-## 🌐 Future IMF Threat Model (STRIDE expansion)
+## 🌐 Evolving the Current IMF Threat Model — Future-State STRIDE Expansion
+
+*Baseline: the **already-implemented** IMF STRIDE coverage (T-IMF-01..07) lives in [`THREAT_MODEL.md`](THREAT_MODEL.md) §IMF. The rows below (T-IMF-F-01..08) add future-state threats that emerge when the runtime migrates to Lambda + Aurora — they extend the baseline rather than replace it.*
 
 > **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
 

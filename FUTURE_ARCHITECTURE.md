@@ -1955,13 +1955,17 @@ Riksdagsmonitor's future architecture represents a strategic evolution from a st
 
 ---
 
-## 🌐 IMF Integration in the Future Serverless Architecture
+## 🌐 Evolving the Existing IMF Integration toward the Future Serverless Architecture
 
-> **Decision:** IMF is the **primary economic-data container** in the AWS-serverless target state. World Bank is retained as a *non-economic* container (governance / environment / social residue). SCB remains the Swedish-specific national-statistics layer.
+> **Baseline (current state):** IMF is **already** the primary economic-data source today via `scripts/imf-client.ts` and the cache in `analysis/imf/` + `analysis/daily/*/economic-data.json` — see [`ARCHITECTURE.md`](ARCHITECTURE.md) §IMF and [`FLOWCHART.md`](FLOWCHART.md) §IMF for the current-state baseline.
+>
+> **Forward evolution:** This section describes how the **already-implemented** IMF integration evolves toward the AWS-serverless future state. World Bank is retained as a *non-economic* container (governance / environment / social residue). SCB remains the Swedish-specific national-statistics layer.
 >
 > **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
 
-### IMF as a first-class C4 container (target state 2027–2030)
+### IMF as a first-class C4 container — evolving the current pure-TS client toward the AWS-serverless target (2027–2030)
+
+*Building on the current `scripts/imf-client.ts` + filesystem cache, the future state migrates IMF integration into Lambda + Aurora while preserving the same vintage-tagged, SHA-256-pinned, supersedes-chain semantics that exist today.*
 
 ```mermaid
 C4Container

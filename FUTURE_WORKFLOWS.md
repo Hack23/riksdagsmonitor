@@ -870,11 +870,13 @@ graph TB
 
 ---
 
-## 🌐 IMF Dataflows in Future CI/CD Workflows
+## 🌐 Evolving the Current IMF Workflow Integration toward Future CI/CD
+
+*Baseline: the **already-implemented** per-workflow IMF dataflow is documented in [`WORKFLOWS.md`](WORKFLOWS.md) §IMF. The table below shows how that current integration evolves with additional CI gates (precedence-contract test, provider-mix telemetry alarm) on top of today's pipeline.*
 
 > **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
 
-### IMF integration in the 2027–2030 autonomous-agent workflows
+### IMF integration evolving from today's pipeline into the 2027–2030 autonomous-agent workflows
 
 | Workflow stage | IMF dataflow | Cadence | Caching strategy |
 |---|---|---|---|

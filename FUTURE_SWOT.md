@@ -904,11 +904,13 @@ quadrantChart
 
 ---
 
-## 🌐 IMF in the Future PESTLE / SWOT
+## 🌐 Evolving the Current IMF Strengths into the Future PESTLE / SWOT
+
+*Baseline: the **already-implemented** IMF strengths/weaknesses/threats are documented in [`SWOT.md`](SWOT.md) §IMF. The rows below describe future-state strengths that **add** to the current baseline (e.g., commercial-provider redundancy, real-time feeds) rather than introducing IMF for the first time.*
 
 > **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
 
-### IMF-specific Strengths (target state)
+### IMF-specific Strengths added by the future state (on top of today's baseline)
 
 | # | Strength | Evidence |
 |---|---|---|

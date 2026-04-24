@@ -941,7 +941,9 @@ stateDiagram-v2
 
 ---
 
-## 🌐 IMF Cache & Vintage State Machine (Future)
+## 🌐 Evolving the Current IMF Cache State Machine toward the Future Aurora-Backed Lifecycle
+
+*Baseline: the **already-implemented** IMF cache lifecycle (vintage-tagged, SHA-256 pinned, supersedes-chain) is documented in [`STATEDIAGRAM.md`](STATEDIAGRAM.md) §IMF. The state diagram below preserves that semantics and adds Aurora-specific transitions (row-level locks, replica lag) as the runtime migrates.*
 
 > **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
 

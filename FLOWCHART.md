@@ -931,3 +931,41 @@ flowchart TD
 **📅 Effective Date:** 2026-02-25  
 **⏰ Next Review:** 2026-05-25  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+
+---
+
+## 🌐 IMF Economic-Data Pipeline (Current State)
+
+> **Status:** ✅ Implemented and in production. IMF is the **primary economic-data source** today, accessed via the pure-TypeScript client `scripts/imf-client.ts` (no MCP server). World Bank handles governance / environment / social residue only; SCB provides Swedish-specific ground truth. Authority: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1 · hub: [`analysis/imf/`](analysis/imf/).
+
+```mermaid
+flowchart LR
+    classDef primary fill:#0a4f8f,color:#fff,stroke:#00d9ff,stroke-width:2px
+    classDef secondary fill:#3a3a3a,color:#ddd,stroke:#888
+    classDef gate fill:#ff006e,color:#fff,stroke:#fff
+
+    Start([news-* workflow trigger]) --> Domain{Identify economic class}
+    Domain -->|Macro / Fiscal / Monetary / External / Trade| IMF[(IMF SDMX 3.0 + Datamapper REST<br/>scripts/imf-client.ts)]:::primary
+    Domain -->|Governance / Environment / Social residue| WB[(World Bank API<br/>worldbank-mcp)]:::secondary
+    Domain -->|Swedish-specific monthly / regional| SCB[(SCB PxWeb v2<br/>scb-mcp)]:::secondary
+
+    IMF --> Vintage{Vintage age > 6 months?}:::gate
+    Vintage -->|Yes| Annotate[Annotate stale + downgrade confidence]
+    Vintage -->|No| Cache[Cache: vintage-tagged · SHA-256 pinned<br/>analysis/daily/*/economic-data.json]
+    Annotate --> Cache
+    Cache --> Provenance[Emit economicProvenance:<br/>provider=imf, dataflow, indicator, vintage]
+    WB --> Cache
+    SCB --> Cache
+
+    Provenance --> Compose[Article composition]
+    Compose --> Lint{IMF-first lint<br/>scripts/article-quality-enhancer.ts}:::gate
+    Lint -->|WB economic citation w/o IMF cross-ref| Reject([Block — open issue])
+    Lint -->|Pass| Publish([Publish article])
+```
+
+**Current production state (2026-04-24):**
+- `scripts/imf-client.ts`, `scripts/imf-context.ts`, `scripts/imf-fetch.ts`, `scripts/imf-codes.ts` — implemented, tested, and called by every news-* workflow
+- 24 indicators across 10 IMF dataflows (WEO / FM / IFS / BOP / DOTS / GFS_COFOG / PCPS / ER / MFS_IR / MFS_PR) catalogued in [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json)
+- Vintage discipline (>6 mo → annotation) enforced by `tests/imf-inventory.test.ts` (13 assertions) and `tests/economic-context-multi-provider.test.ts` (asserts IMF queried before WB)
+- Egress allow-list: `www.imf.org`, `sdmxcentral.imf.org` pinned in every workflow `network:` block

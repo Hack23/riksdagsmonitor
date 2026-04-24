@@ -1461,7 +1461,9 @@ graph TD
 
 ---
 
-## 🌐 IMF Dataflow in the Future Pipeline
+## 🌐 Evolving the Current IMF Dataflow toward the Future Pipeline
+
+*Baseline: the **already-implemented** IMF dataflow is documented in [`FLOWCHART.md`](FLOWCHART.md) §IMF. The diagram below shows how that baseline evolves with additional gates (vintage age UI badge, provider-mix telemetry) layered on top of today's client.*
 
 > **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
 

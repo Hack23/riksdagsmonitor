@@ -949,7 +949,9 @@ This Future Security Architecture demonstrates Hack23 AB's commitment to **proac
 
 ---
 
-## 🌐 IMF in the Future Security Architecture
+## 🌐 Evolving the Current IMF Security Boundary toward the Future Zero-Trust State
+
+*Baseline: the **already-implemented** IMF trust boundary, egress allow-list, and STRIDE coverage are documented in [`SECURITY_ARCHITECTURE.md`](SECURITY_ARCHITECTURE.md) §IMF and [`THREAT_MODEL.md`](THREAT_MODEL.md) §IMF. The diagram below shows how those existing controls evolve when the runtime moves to AWS Lambda + Aurora.*
 
 > **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
 

@@ -870,7 +870,9 @@ mindmap
 
 ---
 
-## 🌐 IMF Branch (Future Data Sources Mindmap)
+## 🌐 Evolving the Current IMF Mindmap toward the Future Data-Sources Surface
+
+*Baseline: the **already-implemented** IMF subtree is documented in [`MINDMAP.md`](MINDMAP.md) §IMF. The mindmap below extends that baseline with future capabilities (commercial-provider redundancy, websocket feeds, cross-validation worker) without removing today's pure-TS client foundation.*
 
 > **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
 

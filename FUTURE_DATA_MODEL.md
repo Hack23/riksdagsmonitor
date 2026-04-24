@@ -1737,9 +1737,11 @@ stateDiagram-v2
 
 ---
 
-## 🌐 IMF Data Domain (Future Schema)
+## 🌐 IMF Data Domain — Evolving from the Current Filesystem Cache to the Future Aurora Schema
 
-> **Status:** PRIMARY economic-data domain in the AWS Aurora serverless target.
+> **Baseline (current state):** IMF is **already** the primary economic-data domain — the current implementation persists vintage-tagged, SHA-256-pinned rows in `analysis/imf/indicators-inventory.json` and `analysis/daily/*/economic-data.json`. See [`DATA_MODEL.md`](DATA_MODEL.md) §IMF for the current-state schema.
+>
+> **Forward evolution:** This section describes how that filesystem cache migrates into Aurora Serverless in the AWS target state, preserving the existing vintage-discipline and supersedes-chain semantics.
 > **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
 
 ### Aurora schema (target state)
