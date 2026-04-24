@@ -130,6 +130,7 @@ xychart-beta
 - [`executive-brief.md`](executive-brief.md) — surfaces top-3 scored items
 - [`risk-assessment.md`](risk-assessment.md) — Threats rows ≥ `|score|` threshold become risk-register entries
 - [`scenario-analysis.md`](scenario-analysis.md) — scenarios tied to WT / SO quadrants
+- [`analysis/imf/README.md`](../imf/README.md) — **IMF economic-data contract** for any economic strength / weakness / opportunity / threat claim. Use `DATABASE:INDICATOR_ID` (`WEO:NGDP_RPCH`, `FM:GGXWDG_NGDP`, `GFS_COFOG:G02`) citations with vintage tags; World Bank economic codes are deprecated (see [`analysis/methodologies/imf-indicator-mapping.md`](../methodologies/imf-indicator-mapping.md) §4)
 
 † WEP = [Words-of-Estimative-Probability](../methodologies/osint-tradecraft-standards.md#wep) confidence band.
 
