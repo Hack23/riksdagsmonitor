@@ -43,7 +43,6 @@ const SCRIPTS_DIR = path.join(__dirname, '..', 'scripts');
 
 /** All 12 news workflow .md files */
 const ALL_NEWS_WORKFLOWS: readonly string[] = [
-  'news-article-generator.md',
   'news-committee-reports.md',
   'news-evening-analysis.md',
   'news-interpellations.md',
@@ -209,7 +208,7 @@ describe('Network Diagnostics Configuration', () => {
       }
     });
 
-    it('all 12 news workflows should exist', () => {
+    it('all 11 news workflows should exist', () => {
       ALL_NEWS_WORKFLOWS.forEach(workflow => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
         expect(fs.existsSync(filepath), `Missing workflow: ${workflow}`).toBe(true);
@@ -413,8 +412,8 @@ describe('Network Diagnostics Configuration', () => {
       });
     });
 
-    it('news-article-generator.md should have canonical diagnostics content', () => {
-      const filepath = path.join(WORKFLOWS_DIR, 'news-article-generator.md');
+    it('news-propositions.md should have canonical diagnostics content', () => {
+      const filepath = path.join(WORKFLOWS_DIR, 'news-propositions.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
       expect(content).toContain('DNS Resolution Tests');
@@ -423,7 +422,7 @@ describe('Network Diagnostics Configuration', () => {
     });
 
     it('diagnostics block should test all required domains', () => {
-      const filepath = path.join(WORKFLOWS_DIR, 'news-article-generator.md');
+      const filepath = path.join(WORKFLOWS_DIR, 'news-propositions.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
       REQUIRED_MCP_DOMAINS.forEach(domain => {
@@ -483,8 +482,8 @@ describe('Network Diagnostics Configuration', () => {
   });
 
   describe('Pre-warm and Keep-alive Patterns', () => {
-    it('news-article-generator.md should have MCP pre-warm step', () => {
-      const filepath = path.join(WORKFLOWS_DIR, 'news-article-generator.md');
+    it('news-propositions.md should have MCP pre-warm step', () => {
+      const filepath = path.join(WORKFLOWS_DIR, 'news-propositions.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
       // The single `curl`-based pre-warm `steps:` block is canonical

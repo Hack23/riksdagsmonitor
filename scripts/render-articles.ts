@@ -41,7 +41,7 @@ import {
 } from './render-lib/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+void __filename;
 
 interface CliOptions {
   readonly date?: string;

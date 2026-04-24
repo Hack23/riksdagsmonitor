@@ -36,10 +36,10 @@ done
 echo "SKIP_ANALYSIS=$SKIP_ANALYSIS  (required artifacts present: $ALL_PRESENT, count: ${#REQ[@]})"
 ```
 
-| `SKIP_ANALYSIS` | Mode | Next step |
-|-----------------|------|-----------|
-| `false` | **Analysis mode** | Continue with download pipeline below → `04-analysis-pipeline.md` → analysis-only PR (see `07-commit-and-pr.md`). Do **not** generate articles in this run. |
-| `true` | **Article mode** | Skip the entire download pipeline and `04-analysis-pipeline.md`. Proceed directly to `06-article-generation.md`. Optionally re-query the API and compare against `data-download-manifest.md`; add only genuinely new `dok_id` entries found since the analysis ran. |
+| `SKIP_ANALYSIS` | Behaviour |
+|-----------------|-----------|
+| `false` | Continue with the full pipeline below → `04-analysis-pipeline.md` → `05-analysis-gate.md` → `06-article-generation.md` (aggregate + render) → `07-commit-and-pr.md`. |
+| `true` | Analysis already exists from a prior run. Re-load it into context, **do not regenerate analysis files**, optionally re-query the API for new `dok_id`s, then go straight to `06-article-generation.md` to aggregate and render. The run still produces exactly one PR. |
 
 > **Folder reuse rule**: the same `$ANALYSIS_DIR` is always reused across runs for the same `$ARTICLE_DATE` + `$SUBFOLDER` when `force_generation=false`. The legacy auto-suffix behaviour (`propositions-2`, `propositions-3`, …) is retained **only** as an explicit escape hatch when `force_generation=true`, so that a forced rerun on a merged day can produce a fresh parallel analysis without trampling the existing one.
 
@@ -61,7 +61,7 @@ Populate `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` with raw Riksdag/Regering da
 | news-monthly-review | `monthly-review` |
 | news-evening-analysis | `evening-analysis` |
 | news-realtime-monitor | `realtime-$HHMM` |
-| news-article-generator (`deep-inspection`) | `deep-inspection` |
+| news-realtime-monitor | `realtime-pulse` |
 
 If `force_generation=true` is supplied on a day whose base subfolder already contains `synthesis-summary.md` from a prior merged run, auto-suffix the subfolder (`propositions-2`, `propositions-3`, …) so the forced rerun does not overwrite the merged analysis. Under the default `force_generation=false`, the same base subfolder is reused across runs — see §Pre-flight above.
 

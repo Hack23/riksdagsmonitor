@@ -224,58 +224,50 @@ engine:
 
 # 🗓️ Month Ahead
 
-Forward-looking 30-day parliamentary calendar + political intelligence brief. Tier-C reference-grade output (all 23 artifacts + cross-type synthesis). Core languages EN, SV.
-
-## Tier-C (reference-grade) requirements
-
-This workflow imports `../prompts/ext/tier-c-aggregation.md`. Produce **all 23 artifacts** (Family A 9 + B 2 + C 5 + D 7) per `04-analysis-pipeline.md`, apply the Tier-C period-scope multiplier, and cross-reference sibling per-type analyses in `cross-reference-map.md`. See the extension for the full rules.
+Generates deep political intelligence analysis **and** the rendered HTML article for forward-looking monthly political intelligence (Tier-C aggregation — reads sibling analyses across the reporting window and applies period multipliers from `ext/tier-c-aggregation.md`) in one single agentic run. Core languages are `en` + `sv`; translations to the remaining twelve languages are produced by the separate `news-translate` workflow.
 
 ## What this workflow does
 
 - **Article type**: `month-ahead`
 - **Analysis subfolder**: `analysis/daily/$ARTICLE_DATE/month-ahead/`
-- **Core languages produced**: `en`, `sv` (remaining 12 languages dispatched to `news-translate`)
-- **Two-run model**: Run 1 produces an `analysis-only` PR (all 23 artifacts); Run 2 (next scheduled run, same day) detects existing analysis and produces an articles PR.
+- **Aggregated markdown**: `analysis/daily/$ARTICLE_DATE/month-ahead/article.md` (produced by `scripts/aggregate-analysis.ts`)
+- **Rendered HTML**: `news/$ARTICLE_DATE-month-ahead-{en,sv}.html` (produced by `scripts/render-articles.ts`)
+- **Single-run model**: one run does download → analysis Pass 1 + 2 → gate → aggregate → render → ONE PR. There is no separate "article run". Translations are handled exclusively by `news-translate`.
 
 ## Time budget
 
-**Run 1 — Analysis mode** (no prior analysis found, ~50 min — produces all 23 artifacts + Tier-C cross-type synthesis):
+> 🔴 **CRITICAL — safeoutputs MCP idle timeout (~30 min)**: The `safeoutputs` MCP server's Streamable-HTTP session expires after **~30–35 minutes of idle time**. **Your first and only `safeoutputs___*` call MUST happen by minute 28 at the latest.** This is a harder deadline than the ~60-minute Copilot-API token window described in `00-base-contract.md §Session keepalive requirement`.
+>
+> **AI-FIRST within the compressed budget**: Pass 2 is still mandatory. Under the tightened ~28-min budget, prefer **scope compression over iteration skipping** — reduce the download/manifest scope if needed, but maintain 1:1 per-document coverage and always perform a full read-back-and-improve Pass 2 on whatever artifacts exist. For scheduled runs treat `analysis_depth` as `standard` in practice; reserve `deep`/`comprehensive` for manual `workflow_dispatch` backfills.
+
+**Single run** (produces all 23 analysis artifacts + aggregated `article.md` + EN/SV HTML, target ~28 min):
 
 | Minutes | Phase | Module |
 |---------|-------|--------|
-| 0–2 | MCP pre-warm + pre-flight analysis check | 02 / 03 |
-| 2–7 | Download data + catalogue | 03 |
-| 7–32 | Analysis Pass 1 (methodology read + per-doc analyses + **all 23 artifacts**: Family A 9 + B 2 + C 5 + D 7) | 04 / ext |
-| 32–45 | Analysis Pass 2 (read-back + improvements on all 22 text files) | 04 |
-| 45–47 | Analysis Gate (core checks 1–8 + Tier-C additive block) | 05 / ext |
-| 47–50 | Stage analysis, commit, **ONE** `safeoutputs___create_pull_request` (analysis-only) | 07 |
+| 0–2 | MCP pre-warm + pre-flight check | 02 / 03 |
+| 2–5 | Download data + catalogue | 03 |
+| 5–15 | Analysis Pass 1 (methodology read + per-doc analyses + **all 23 artifacts**: Family A 9 + B 2 + C 5 + D 7) | 04 |
+| 15–21 | Analysis Pass 2 (read-back + improvements on all 22 text files) | 04 |
+| 21–22 | Analysis Gate (checks 1–8) | 05 |
+| 22–24 | `scripts/aggregate-analysis.ts` (concat → `article.md`) + `scripts/render-articles.ts --lang en,sv` (render HTML) | 06 |
+| 24–28 | Stage analysis + `article.md` + `news/*.html`, commit, **ONE** `safeoutputs___create_pull_request` — **HARD DEADLINE minute 28** | 07 |
 
-**Run 2 — Article mode** (analysis exists on disk, ~28 min):
-
-| Minutes | Phase | Module |
-|---------|-------|--------|
-| 0–2 | MCP pre-warm + pre-flight check (SKIP_ANALYSIS=true) | 02 / 03 |
-| 2–7 | Read all 23 analysis artifacts into context (Families A+B+C+D) | 06 |
-| 7–20 | Article Pass 1 + Pass 2 (EN, SV) | 06 |
-| 20–24 | Visual + link validation | 06 |
-| 24–28 | Stage articles, commit, **ONE** `safeoutputs___create_pull_request` | 07 |
-
-Trim scope before quality. Never open a second PR within a run — there is no second PR.
+Trim scope before quality. Never open a second PR within a run — there is no second PR. **If you reach minute 25 without staging, stop all remaining analysis work, run the aggregator + renderer on whatever artifacts exist, commit, and call `safeoutputs___create_pull_request` immediately** — a partial-but-delivered PR is infinitely better than losing all work to a `session not found` error.
 
 ## Inputs
 
 - `article_date` — override date (defaults to today)
-- `force_generation` — regenerate even if today's article exists; also forces analysis re-run
+- `force_generation` — regenerate even if today's content exists; also forces analysis re-run
 - `languages` — core content languages (default `en,sv`)
 - `analysis_depth` — `standard` | `deep` (default) | `comprehensive`
 
 ## Run-mode selection
 
-At the start of every run, the pre-flight check in `03-data-download.md` detects whether `analysis/daily/$ARTICLE_DATE/month-ahead/` already contains all **23 required artifacts** (Families A+B+C+D):
+At the start of every run, the pre-flight check in `03-data-download.md` detects whether `analysis/daily/$ARTICLE_DATE/month-ahead/` already contains all **23 required artifacts**:
 
-- **No analysis found** → Analysis mode: download data, run Pass 1 + Pass 2 + Analysis Gate (all 23 artifacts + Tier-C additive block), commit analysis artifacts, open `analysis-only` PR, stop.
-- **Analysis found** → Article mode: read existing analysis, generate articles, commit articles, open articles PR + dispatch `news-translate`.
+- **No analysis found** → run the full pipeline (download → Pass 1 → Pass 2 → gate → aggregate → render → PR).
+- **Analysis found** → skip download / Pass 1 / Pass 2 / gate, re-load the analysis into context, run aggregate + render, and open the PR.
 
-Repeated runs for the same `$ARTICLE_DATE` always use the same analysis folder when `force_generation=false`. Analysis is the primary product — a run never produces nothing.
+Repeated runs for the same `$ARTICLE_DATE` always use the same analysis folder when `force_generation=false`.
 
-All other rules (bash format, AWF shell safety, MCP access, download pipeline, analysis methodology & gate, article generation, commit & PR policy) live in the imported modules.
+All other rules (bash format, AWF shell safety, MCP access, download pipeline, analysis methodology & gate, aggregate + render, commit & PR policy) live in the imported modules.

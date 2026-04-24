@@ -21,7 +21,55 @@ import {
   generateLanguageSwitcherNav,
 } from './helpers.js';
 import { THEME_INIT_SCRIPT_TAG } from '../shared/theme-init.js';
-import { generateSiteFooter } from '../article-template.js';
+
+/**
+ * Minimal site footer for news index pages. The richer per-article footer
+ * lives in `scripts/render-lib/index.ts:renderFooter`; index pages only
+ * need a lightweight branded footer with navigation links, app version
+ * and localized disclaimer.
+ */
+function generateSiteFooter(lang: string): string {
+  const isEn = lang === 'en';
+  const home = isEn ? '../index.html' : `../index_${lang}.html`;
+  const sitemap = isEn ? '../sitemap.html' : `../sitemap_${lang}.html`;
+  const pi = isEn ? '../political-intelligence.html' : `../political-intelligence_${lang}.html`;
+  const issues = 'https://github.com/Hack23/riksdagsmonitor/issues';
+  // Inline localized disclaimer — keep strings short; full i18n lives in translations JSONs.
+  const DISCLAIMERS: Record<string, string> = {
+    en: `Ongoing improvements — please <a href="${issues}" rel="noopener external" target="_blank">report any issues on GitHub</a>.`,
+    sv: `Pågående förbättringar — var god <a href="${issues}" rel="noopener external" target="_blank">rapportera eventuella problem på GitHub</a>.`,
+    da: `Løbende forbedringer — <a href="${issues}" rel="noopener external" target="_blank">rapporter problemer på GitHub</a>.`,
+    no: `Løpende forbedringer — <a href="${issues}" rel="noopener external" target="_blank">rapporter problemer på GitHub</a>.`,
+    nb: `Løpende forbedringer — <a href="${issues}" rel="noopener external" target="_blank">rapporter problemer på GitHub</a>.`,
+    fi: `Jatkuvat parannukset — <a href="${issues}" rel="noopener external" target="_blank">ilmoita ongelmista GitHubissa</a>.`,
+    de: `Laufende Verbesserungen — <a href="${issues}" rel="noopener external" target="_blank">Probleme auf GitHub melden</a>.`,
+    fr: `Améliorations en cours — <a href="${issues}" rel="noopener external" target="_blank">signalez tout problème sur GitHub</a>.`,
+    es: `Mejoras en curso — <a href="${issues}" rel="noopener external" target="_blank">informe cualquier problema en GitHub</a>.`,
+    nl: `Doorlopende verbeteringen — <a href="${issues}" rel="noopener external" target="_blank">meld problemen op GitHub</a>.`,
+    ar: `تحسينات مستمرة — <a href="${issues}" rel="noopener external" target="_blank">أبلغ عن أي مشكلات على GitHub</a>.`,
+    he: `שיפורים מתמשכים — <a href="${issues}" rel="noopener external" target="_blank">דווחו על בעיות ב-GitHub</a>.`,
+    ja: `継続的な改善 — <a href="${issues}" rel="noopener external" target="_blank">GitHub で問題を報告してください</a>。`,
+    ko: `지속적인 개선 — <a href="${issues}" rel="noopener external" target="_blank">GitHub 에서 문제를 보고해 주세요</a>.`,
+    zh: `持续改进 — 请<a href="${issues}" rel="noopener external" target="_blank">在 GitHub 上报告任何问题</a>。`,
+  };
+  const disclaimer = DISCLAIMERS[lang] ?? DISCLAIMERS.en!;
+  const version = (process.env.npm_package_version ?? APP_VERSION_FALLBACK).trim();
+  return `<footer role="contentinfo" class="rm-site-footer">
+    <nav aria-label="Footer navigation" class="rm-footer-nav">
+      <a href="${home}">Home</a>
+      <a href="${pi}">Political Intelligence</a>
+      <a href="${sitemap}">Sitemap</a>
+      <a href="https://github.com/Hack23/riksdagsmonitor" rel="noopener external" target="_blank">GitHub</a>
+      <a href="https://www.hack23.com/" rel="noopener external" target="_blank">Hack23</a>
+    </nav>
+    <p class="footer-disclaimer">${disclaimer}</p>
+    <p class="rm-footer-copy">&copy; 2026 Hack23 AB — Apache-2.0 · Public political intelligence (GDPR Art. 9(2)(e,g)) | v${version}</p>
+  </footer>`;
+}
+
+const APP_VERSION_FALLBACK = '0.0.0';
+
+
 
 export function generateIndexHTML(
   langKey: string,
