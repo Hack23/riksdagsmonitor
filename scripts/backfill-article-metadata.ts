@@ -118,14 +118,22 @@ function parseFlags(argv: readonly string[]): CliOptions {
       }
     } else if (arg.startsWith('--lang=')) {
       const raw = arg.slice('--lang='.length).trim();
-      langs = raw
+      const parsed = raw
         .split(',')
         .map((l) => l.trim().toLowerCase())
         .filter(Boolean);
-      for (const l of langs) {
-        if (!isKnownLang(l)) {
-          fail(`Unknown --lang value: ${l}.`);
+      // Treat `--lang=` (no value) as "all languages" — same semantics
+      // as omitting the flag — rather than silently filtering away every
+      // file (which produces a bewildering empty CSV).
+      if (parsed.length === 0) {
+        langs = null;
+      } else {
+        for (const l of parsed) {
+          if (!isKnownLang(l)) {
+            fail(`Unknown --lang value: ${l}.`);
+          }
         }
+        langs = parsed;
       }
     } else if (arg.startsWith('--date-from=')) {
       dateFrom = arg.slice('--date-from='.length).trim();
@@ -183,7 +191,12 @@ function listArticleFiles(newsDir: string): readonly string[] {
 export interface ScanResult {
   readonly rows: readonly ReportRow[];
   readonly totals: {
+    /** Files present in the news/ directory (before any filter). */
     readonly filesScanned: number;
+    /** Files that passed `--lang` / `--date-*` / `--tier` filters and
+     *  contributed to the report. Equal to `filesScanned` when no
+     *  filters are active. */
+    readonly filesMatched: number;
     readonly filesWithViolations: number;
     readonly totalViolations: number;
     readonly tierCounts: Record<Tier, number>;
@@ -195,6 +208,7 @@ export function scan(options: CliOptions): ScanResult {
   const allFiles = listArticleFiles(options.newsDir);
   const rows: ReportRow[] = [];
 
+  let filesMatched = 0;
   let filesWithViolations = 0;
   let totalViolations = 0;
   const tierCounts: Record<Tier, number> = { A: 0, B: 0, C: 0 };
@@ -210,10 +224,11 @@ export function scan(options: CliOptions): ScanResult {
     if (options.dateTo && (fp.date === null || fp.date > options.dateTo)) continue;
 
     const meta = inspectHtmlFile(abs);
-    // Prefer the explicit `<html lang>` over the filename-derived code —
-    // filename is authoritative for the file suffix but a mistyped lang
-    // attribute is a separate class of bug worth surfacing.
-    const lang = meta.lang || fp.lang;
+    // Prefer the explicit `<html lang>` when present; fall back to the
+    // filename suffix if the attribute is missing (the inspector returns
+    // an empty string in that case so we can distinguish "missing" from
+    // "explicitly en"). Final fallback to 'en' keeps windows resolvable.
+    const lang = meta.lang || fp.lang || 'en';
     const contract = checkAgainstContract(
       { title: meta.title, description: meta.metaDescription },
       lang,
@@ -228,6 +243,8 @@ export function scan(options: CliOptions): ScanResult {
       tiersToEmit = classification.tiers.filter((t) => options.tiers!.includes(t));
       if (tiersToEmit.length === 0) continue;
     }
+
+    filesMatched += 1;
 
     // Feed the filtered tier list into rowsForArticle by constructing a
     // shallow copy — keeps the classifier module pure and non-mutated.
@@ -257,6 +274,7 @@ export function scan(options: CliOptions): ScanResult {
     rows,
     totals: {
       filesScanned: allFiles.length,
+      filesMatched,
       filesWithViolations,
       totalViolations,
       tierCounts,
@@ -284,7 +302,8 @@ function main(argv: readonly string[]): number {
 
   if (!options.quiet) {
     process.stderr.write(
-      `backfill-article-metadata: scanned ${result.totals.filesScanned} file(s); ` +
+      `backfill-article-metadata: scanned ${result.totals.filesScanned} file(s), ` +
+        `matched ${result.totals.filesMatched} after filters; ` +
         `${result.totals.filesWithViolations} with violations ` +
         `(total ${result.totals.totalViolations}); ` +
         `tier A=${result.totals.tierCounts.A} ` +

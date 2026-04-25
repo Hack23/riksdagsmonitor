@@ -45,8 +45,13 @@ function fillerOfLength(len: number): string {
 }
 
 describe('contract-checker: windows', () => {
-  it('maps all 14 contract languages', () => {
-    for (const lang of ['en', 'sv', 'da', 'no', 'nb', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh']) {
+  it('maps all 14 contract languages plus the BCP-47 `nb` alias for Norwegian', () => {
+    // 14 distinct languages from the editorial contract + `nb` as a
+    // BCP-47-correct alias for `no` per the project README's Norwegian
+    // migration note.
+    const expected = ['en', 'sv', 'da', 'no', 'nb', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+    expect(expected.length).toBe(15);
+    for (const lang of expected) {
       expect(LANG_WINDOWS[lang as keyof typeof LANG_WINDOWS]).toBeDefined();
     }
   });

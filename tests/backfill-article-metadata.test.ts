@@ -205,8 +205,8 @@ describe('classifier: tier assignment', () => {
     }
   });
 
-  it('isKnownLang accepts all 14 contract languages', () => {
-    for (const lang of ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh']) {
+  it('isKnownLang accepts all 14 contract languages and the BCP-47 `nb` alias', () => {
+    for (const lang of ['en', 'sv', 'da', 'no', 'nb', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh']) {
       expect(isKnownLang(lang)).toBe(true);
     }
   });
@@ -277,9 +277,9 @@ describe('html-inspector: inspectHtmlContent', () => {
     expect(meta.metaDescription).toContain("Sweden's government approved today");
   });
 
-  it('defaults lang to en when <html lang="…"> is missing', () => {
+  it('returns empty lang when <html lang="…"> is missing (CLI applies the fallback)', () => {
     const meta = inspectHtmlContent('<html><head><title>x</title></head></html>');
-    expect(meta.lang).toBe('en');
+    expect(meta.lang).toBe('');
   });
 
   it('survives a malformed JSON-LD block without crashing', () => {
@@ -310,8 +310,32 @@ describe('html-inspector: inspectHtmlContent', () => {
     expect(inspectorTest.htmlDecode('&#x2014;')).toBe('—');
   });
 
+  it('htmlDecode is single-pass (CodeQL js/double-escaping regression)', () => {
+    // `&amp;quot;` must survive as the literal text `&quot;` rather
+    // than being double-decoded to `"`.
+    expect(inspectorTest.htmlDecode('&amp;quot;')).toBe('&quot;');
+    expect(inspectorTest.htmlDecode('&amp;amp;')).toBe('&amp;');
+    expect(inspectorTest.htmlDecode('&amp;#39;')).toBe('&#39;');
+  });
+
   it('stripTags test helper removes inline tags and collapses whitespace', () => {
     expect(inspectorTest.stripTags('<p>hello <b>world</b></p>')).toBe('hello world');
+  });
+
+  it('stripTags handles script/style end tags with whitespace before `>`', () => {
+    // Regression for CodeQL js/bad-tag-filter — `</script >` (space
+    // before the bracket) is valid HTML5 syntax and must be stripped.
+    expect(inspectorTest.stripTags('a<script>evil()</script >b')).toBe('a b');
+    expect(inspectorTest.stripTags('a<style>x{}</style\t>b')).toBe('a b');
+  });
+
+  it('inspectHtmlContent strips a script block whose end tag has whitespace', () => {
+    const html = `<html lang="en"><head><title>t</title></head>
+<body><article><p>before <script>alert(1)</script\n>after</p></article></body></html>`;
+    const meta = inspectHtmlContent(html);
+    expect(meta.bodyPlainText).toContain('before');
+    expect(meta.bodyPlainText).toContain('after');
+    expect(meta.bodyPlainText).not.toContain('alert');
   });
 });
 
@@ -488,6 +512,14 @@ describe('CLI: parseFlags', () => {
 
   it('parses --lang=sv,no', () => {
     expect(parseFlags(['--lang=sv,no']).langs).toEqual(['sv', 'no']);
+  });
+
+  it('treats empty --lang= as "all languages" (langs=null)', () => {
+    // Regression — previously parsed to `[]` which was truthy and
+    // silently filtered every file out of the report.
+    expect(parseFlags(['--lang=']).langs).toBeNull();
+    expect(parseFlags(['--lang= ']).langs).toBeNull();
+    expect(parseFlags(['--lang=,,']).langs).toBeNull();
   });
 
   it('parses --date-from / --date-to', () => {

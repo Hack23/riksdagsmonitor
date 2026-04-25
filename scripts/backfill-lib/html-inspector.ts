@@ -28,7 +28,9 @@ import fs from 'fs';
 export interface ArticleMetadata {
   /** Absolute path of the inspected file. */
   readonly filePath: string;
-  /** `<html lang="…">` value (e.g. `en`, `sv`, `ar`). Defaults to `en`. */
+  /** `<html lang="…">` value (e.g. `en`, `sv`, `ar`). Empty string when
+   *  the attribute is missing — callers fall back to the filename code
+   *  via `meta.lang || fp.lang`. */
   readonly lang: string;
   /** `<title>…</title>` content (HTML-decoded, no trimming beyond trim). */
   readonly title: string;
@@ -71,27 +73,40 @@ const REGEXES = {
   article: /<article\b[^>]*>([\s\S]*?)<\/article>/i,
 } as const;
 
-/** Decode the small subset of HTML entities used by the rendered articles. */
+/** Decode the small subset of HTML entities used by the rendered articles.
+ *  Single-pass so `&amp;quot;` survives as the literal text `&quot;`
+ *  rather than being double-unescaped to `"`. (CodeQL js/double-escaping.) */
 function htmlDecode(s: string): string {
-  return s
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&apos;/g, "'")
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&#(\d+);/g, (_, n: string) => String.fromCodePoint(Number(n)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, n: string) =>
-      String.fromCodePoint(parseInt(n, 16)),
-    );
+  const named: Record<string, string> = {
+    amp: '&',
+    quot: '"',
+    apos: "'",
+    lt: '<',
+    gt: '>',
+    nbsp: ' ',
+  };
+  return s.replace(/&(?:#(\d+)|#x([0-9a-fA-F]+)|([a-zA-Z][a-zA-Z0-9]+)|#39);?/g,
+    (full, dec?: string, hex?: string, name?: string) => {
+      if (dec) return String.fromCodePoint(Number(dec));
+      if (hex) return String.fromCodePoint(parseInt(hex, 16));
+      if (full === '&#39;') return "'";
+      if (name) {
+        const lower = name.toLowerCase();
+        if (Object.prototype.hasOwnProperty.call(named, lower)) {
+          return named[lower] as string;
+        }
+      }
+      return full;
+    });
 }
 
-/** Strip inline HTML tags and collapse whitespace to produce plain prose. */
+/** Strip inline HTML tags and collapse whitespace to produce plain prose.
+ *  Script / style end tags allow whitespace before `>` per the HTML5
+ *  parser; bare `</script>` would otherwise miss `</script >`. */
 function stripTags(fragment: string): string {
   return fragment
-    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, ' ')
     .replace(/<br\s*\/?>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/\s+/g, ' ')
@@ -162,7 +177,7 @@ export function inspectHtmlFile(filePath: string): ArticleMetadata {
  * without writing to disk.
  */
 export function inspectHtmlContent(html: string, filePath: string = ''): ArticleMetadata {
-  const lang = match1(html, REGEXES.htmlLang) || 'en';
+  const lang = match1(html, REGEXES.htmlLang);
   const rawTitle = match1(html, REGEXES.title);
   const metaDescription = match1(html, REGEXES.metaDescription);
   const ogTitle = match1(html, REGEXES.ogTitle);
