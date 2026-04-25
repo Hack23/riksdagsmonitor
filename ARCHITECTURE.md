@@ -1856,3 +1856,54 @@ graph TB
   </a>
 </p>
 
+---
+
+## 🏛️ Statskontoret Integration — Current Architecture
+
+> **Effective:** 2026-04-25 · **Classification:** Public · **Runtime:** Node.js 25 / TypeScript CLI · **MCP status:** intentionally **not** an MCP server.
+
+Statskontoret is now the Swedish public-administration and central-government budget-execution context layer. It complements the existing provider split: IMF remains primary for macro/fiscal projections, SCB remains Swedish official-statistics ground truth, World Bank remains governance/environment/social residue, and Statskontoret supplies agency structure plus budget outturn detail that the other providers do not expose in the same operational form.
+
+### Architectural placement
+
+```mermaid
+flowchart LR
+    Workflow[Agentic news workflow<br/>Node 25] --> CLI[statskontoret-fetch.ts<br/>list-sources · discover · headcount]
+    CLI --> Client[StatskontoretClient<br/>statskontoret-client.ts]
+    Client --> Source[www.statskontoret.se<br/>open data pages]
+    Source --> XLSX[Excel workbooks]
+    Source --> ZIP[CSV ZIP archives]
+    Client --> Parser[XLSX / CSV-ZIP parsers<br/>typed StatskontoretError]
+    Parser --> Derived[Derived artifacts<br/>headcount-by-department]
+    Derived --> Persist[analysis/data/statskontoret/<br/>JSON + .meta.json sidecars]
+    Derived --> Articles[Article and dashboard context]
+```
+
+### Provider responsibility matrix
+
+| Need | Primary provider | Riksdagsmonitor surface |
+|---|---|---|
+| Agency count, department grouping, leadership form and government-body headcount | **Statskontoret Myndighetsförteckning** | `scripts/statskontoret-fetch.ts headcount`, `analysis/statskontoret/` |
+| Annual central-government budget outturn | **Statskontoret Årsutfall** | Download discovery and persisted raw/derived artifacts |
+| Monthly central-government budget execution | **Statskontoret Månadsutfall** | Download discovery for high-frequency budget monitoring |
+| Macro/fiscal projections and cross-country methodology | **IMF WEO/FM/SDMX** | `scripts/imf-*` |
+| Swedish regional/monthly official statistics | **SCB PxWeb** | `scb` MCP |
+| Governance/environment/social residue | **World Bank** | `world-bank` MCP |
+
+### Code and quality surfaces
+
+| Surface | Responsibility |
+|---|---|
+| `scripts/statskontoret-client.ts` | Typed client, source catalogue, download discovery, HTML entity decoding, XLSX parsing, CSV ZIP parsing, numeric normalisation, department headcount aggregation. |
+| `scripts/statskontoret-fetch.ts` | Import-safe CLI wrapper for workflows; exported argument parsing helpers for testability; exit code `2` for CLI contract errors. |
+| `analysis/statskontoret/indicators-inventory.json` | Machine-readable dataset inventory and provider decision matrix. |
+| `analysis/statskontoret/data-dictionary.md` | Field families, freshness discipline, persistence layout. |
+| `tests/statskontoret-*.test.ts` | Inventory consistency, download-link extraction, workbook parsing, CSV ZIP parsing, CLI parsing and parser primitive coverage. |
+
+### Operational characteristics
+
+- **Trust boundary:** one outbound HTTPS boundary to `www.statskontoret.se`; no credentials, no private data, no write-back to the source.
+- **Persistence:** optional `--persist` writes raw or derived payloads to `analysis/data/statskontoret/{dataset}/{artifact}.json` with `.meta.json` provenance sidecars.
+- **Failure mode:** optional enrichment semantics; article generation can fall back to cached artifacts or omit Statskontoret context rather than blocking publication.
+- **Security posture:** Public classification, high-integrity provenance, dependency surface limited to existing npm SBOM (`jszip`) and in-repository TypeScript code.
+

@@ -554,3 +554,52 @@ mindmap
       Regional municipal
       Budget execution
 ```
+
+---
+
+## 🏛️ Statskontoret Integration Branch (Current State)
+
+```mermaid
+mindmap
+  root((Statskontoret Integration))
+    Purpose
+      Swedish agency structure
+      Government-body headcount
+      Central-government budget execution
+    Sources
+      Myndighetsforteckning
+        Annual
+        XLSX
+        Headcount by department
+      Arsutfall
+        Annual
+        XLSX
+        CSV ZIP
+      Manadsutfall
+        Monthly
+        XLSX
+        CSV ZIP
+      Budget time series
+        Long-run state budget context
+    Code
+      statskontoret-client.ts
+        Discovery
+        XLSX parser
+        CSV ZIP parser
+        Typed StatskontoretError
+      statskontoret-fetch.ts
+        list-sources
+        discover
+        headcount
+    Governance
+      Public classification
+      No MCP server
+      No credentials
+      www.statskontoret.se allowlist
+      analysis/statskontoret inventory
+    Tests
+      client tests
+      CLI parsing tests
+      inventory tests
+```
+

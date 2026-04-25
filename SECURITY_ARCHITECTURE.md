@@ -3086,3 +3086,22 @@ flowchart LR
 **Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
 
 **Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
+
+---
+
+## 🏛️ Statskontoret Security Architecture
+
+Statskontoret is a read-only public-data integration using in-repository TypeScript code and the existing npm dependency graph. It is intentionally not configured as an MCP server; workflows invoke `tsx scripts/statskontoret-fetch.ts` via the bash tool.
+
+| Control area | Statskontoret control |
+|---|---|
+| Network egress | Allow only HTTPS to `www.statskontoret.se` for this provider. |
+| Authentication | None required; no tokens or secrets transmitted. |
+| Input validation | Resource classification, URL normalisation, HTML entity decoding, XLSX workbook structure checks, CSV ZIP file filtering. |
+| Integrity | Persisted JSON plus `.meta.json` provenance sidecars with source/dataset/artifact/fetch timestamp. |
+| Availability | 15s client timeout and optional-enrichment fallback to cached artifacts. |
+| Supply chain | Parser code is local TypeScript; ZIP/XLSX parsing uses `jszip` under npm lock/SBOM and advisory review. |
+| Privacy | Public authority and aggregate budget records only; no private-person or credential data. |
+
+Security classification: **PUBLIC / High Integrity / Medium-High Availability**. Mapped controls: ISO 27001 A.5.23 (cloud/service use), A.8.9 (configuration management), A.8.12 (data leakage prevention by design), A.8.20 (network security), NIST CSF 2.0 ID.IM / PR.DS / PR.PS, CIS Controls 4, 8, 12 and 16.
+

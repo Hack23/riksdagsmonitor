@@ -2592,3 +2592,27 @@ This DATA_MODEL.md complements ARCHITECTURE.md:
 **⏰ Next Review:** 2027-02-15  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
 
+---
+
+## 🏛️ Statskontoret Data Model Extension
+
+Statskontoret adds a public Swedish-administration data domain under the economic/public-administration context layer.
+
+### Source entities
+
+| Entity | Key fields | Storage / source |
+|---|---|---|
+| `StatskontoretSourceDefinition` | `key`, `title`, `url`, `cadence`, `coverage`, `primaryUse` | Static catalogue in `scripts/statskontoret-client.ts`; mirrored by `analysis/statskontoret/indicators-inventory.json`. |
+| `StatskontoretDownloadLink` | `source`, `sourcePage`, `url`, `resourceType`, `documentType`, `fileType`, `fileName`, `year`, `month`, `status`, `updatedAt` | Derived from Statskontoret HTML pages by `extractStatskontoretDownloadLinks`. |
+| `StatskontoretWorkbook` / `StatskontoretSheet` | sheet name and row arrays | Parsed locally from XLSX ZIP parts. |
+| `StatskontoretHeadcountRow` | `year`, `department`, `headcount`, `authorityCount` | Derived from Myndighetsförteckning rows. |
+
+### Persisted artifact contract
+
+```text
+analysis/data/statskontoret/{dataset}/{artifact}.json
+analysis/data/statskontoret/{dataset}/{artifact}.meta.json
+```
+
+Sidecar metadata includes `fetchedAt`, `mcpTool: statskontoret-ts-client`, `dataset`, and `artifact`. The provider decision matrix in `analysis/statskontoret/indicators-inventory.json` maps government-body headcount and central-government budget outturn claims to Statskontoret, while macro/fiscal projections remain IMF-first.
+

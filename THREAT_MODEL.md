@@ -3000,3 +3000,27 @@ All mitigations are codified in:
 **Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
 
 **Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
+
+---
+
+## 🏛️ Statskontoret Integration — STRIDE Threats
+
+> **Effective:** 2026-04-25 · **Classification:** Public · **Entry point:** `scripts/statskontoret-fetch.ts` · **Source:** `www.statskontoret.se`.
+
+Statskontoret ingestion introduces a public-data trust boundary for Swedish agency structure and budget outturn files. It is unauthenticated, read-only and optional enrichment, but the integrity of parsed figures matters for political-intelligence claims.
+
+| ID | Asset / flow | STRIDE | Threat | Likelihood | Impact | Mitigations |
+|---|---|---|---|---|---|---|
+| T-STATS-01 | `www.statskontoret.se` page discovery | Spoofing | DNS/TLS interception or lookalike page returns false download links | LOW | MEDIUM | HTTPS-only egress, allow-list `www.statskontoret.se`, source URL recorded in payload and `.meta.json`, PR review of persisted diffs. |
+| T-STATS-02 | Excel / CSV ZIP payload | Tampering | Workbook or archive content modified upstream or in transit | LOW | HIGH | TLS transport, local parser contract checks, typed `StatskontoretError`, persisted raw/derived artifacts with provenance sidecars, reviewer diff inspection. |
+| T-STATS-03 | Headcount aggregation | Information integrity | Header drift maps wrong columns to `År`, `Departement`, `Myndighet`, or `Årsarbetskrafter` | MEDIUM | MEDIUM | Header-family matching documented in `analysis/statskontoret/data-dictionary.md`, unit tests for workbook parsing and Swedish number handling, fallback to no derived output if required fields cannot be resolved. |
+| T-STATS-04 | CLI invocation | Repudiation | Article cites agency headcount or budget outturn without source page/year/status | MEDIUM | MEDIUM | `discover` captures source page, URL, year/month/status and `last-modified`; persisted sidecars include `dataset`, `artifact`, `fetchedAt`, and `mcpTool: statskontoret-ts-client`. |
+| T-STATS-05 | Source availability | Denial of service | Statskontoret page unavailable or workbook fetch times out | MEDIUM | LOW | 15s timeout, optional-enrichment semantics, cache-first reuse of `analysis/data/statskontoret/`, article generation can omit context rather than fail. |
+| T-STATS-06 | XLSX/ZIP parsing dependency | Elevation of privilege | Malicious archive attempts parser/resource abuse | LOW | HIGH | `jszip` pinned in npm lock/SBOM, GitHub Advisory Database reviewed, no dynamic eval, no script execution from workbooks, tests exercise parser edge cases. |
+
+### Residual risk and classification
+
+- **Residual risk:** LOW-MEDIUM integrity risk due to upstream data or workbook-schema drift; handled by provenance, test coverage and human review.
+- **Privacy:** no PII or credentials; public authority and aggregate budget data only.
+- **CIA:** Public / High Integrity / Medium-High Availability for derived article context.
+
