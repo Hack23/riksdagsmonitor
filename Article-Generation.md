@@ -20,7 +20,7 @@
 </p>
 
 **📋 Document Owner:** CEO | **📅 Last Updated:** 2026-04-25 (UTC)  
-**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public  
+**🏢 Owner:** Hack23 AB (Org.nr 559534-7807) | **🏷️ Classification:** Public
 **Primary example:** [`analysis/daily/2026-04-24/interpellations/article.md`](analysis/daily/2026-04-24/interpellations/article.md) → [`news/2026-04-24-interpellations-en.html`](news/2026-04-24-interpellations-en.html) / [`news/2026-04-24-interpellations-sv.html`](news/2026-04-24-interpellations-sv.html)
 
 ---
@@ -51,7 +51,7 @@ Riksdagsmonitor articles are **not hand-written HTML pages**. They are determini
 
 1. **Agentic workflows** in [`.github/workflows/news-*.md`](.github/workflows/) run on schedules or manual dispatch.
 2. The workflow imports bounded prompt modules from [`.github/prompts/`](.github/prompts/README.md).
-3. The AI agent collects public Riksdag/Regering data through the `riksdag-regering` MCP server, Swedish statistics through SCB, governance/environment/social-education residue through World Bank, and economic context through the repository IMF TypeScript client.
+3. The AI agent collects public Riksdag/Regering data through the `riksdag-regering` MCP server, Swedish statistics through SCB, supplementary governance, environmental, social and education indicators through World Bank, and economic context through the repository IMF TypeScript client.
 4. The agent produces a **stable set of 23 core analysis artifacts** plus per-document files under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`.
 5. The **single blocking gate** in [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) must pass before any article is generated.
 6. [`scripts/aggregate-analysis.ts`](scripts/aggregate-analysis.ts) turns the analysis folder into one canonical `article.md`.
@@ -696,7 +696,7 @@ The rendered article chrome supports 14 language alternates:
 | `en` | `en` | English |
 | `sv` | `sv` | Swedish |
 | `da` | `da` | Danish |
-| `no` | `nb` | Norwegian Bokmål (temporary legacy URL suffix during `nb` migration) |
+| `no` | `nb` | Norwegian Bokmål — URLs currently use legacy `no`; hreflang already uses BCP-47 `nb`. |
 | `fi` | `fi` | Finnish |
 | `de` | `de` | German |
 | `fr` | `fr` | French |
@@ -733,7 +733,7 @@ The renderer populates hreflang alternates for all languages even when the sibli
 
 ### Canonical S3 deployment workflow
 
-The canonical repository file is [`.github/workflows/deploy-s3.yml`](.github/workflows/deploy-s3.yml). This is the S3 deployment workflow covered here, including the workflow sometimes described informally as the “S3 deploy” workflow.
+The canonical repository file is [`.github/workflows/deploy-s3.yml`](.github/workflows/deploy-s3.yml). This is the S3 deployment workflow covered here.
 
 ### Build chain
 
@@ -810,7 +810,7 @@ The `deploy` job performs:
 
 The rendered HTML source footer and JSON-LD `isBasedOn` block enumerate `.md` and `.json` files found in the analysis folder.
 
-In current renders this list can include `article.md` itself because the renderer resolves the artifact list from folder contents after aggregation. That self-reference is acceptable here because `article.md` is the canonical Markdown projection that connects the underlying analysis artifacts to the rendered HTML page.
+Because the current artifact-list resolver scans the analysis folder after aggregation, `article.md` can appear alongside the underlying source artifacts. Treat that self-reference as a benign implementation detail: the source footer and JSON-LD still preserve the important provenance chain from rendered HTML back to the canonical Markdown projection and source analysis files.
 
 ### S3 upload and cache strategy
 
