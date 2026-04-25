@@ -75,7 +75,7 @@ describe('Statskontoret workbook parsing', () => {
         År: '2025',
         Myndighet: 'Myndighet B',
         Departementstillhörighet: 'Klimat- och näringslivsdepartementet',
-        Årsarbetskrafter: '4.25',
+        Årsarbetskrafter: '1.234,5',
       },
     ]);
 
@@ -83,7 +83,7 @@ describe('Statskontoret workbook parsing', () => {
       {
         year: 2025,
         department: 'Klimat- och näringslivsdepartementet',
-        headcount: 14.8,
+        headcount: 1245,
         authorityCount: 2,
       },
     ]);
@@ -112,6 +112,9 @@ describe('StatskontoretClient', () => {
 });
 
 async function createWorkbookFixture(): Promise<Uint8Array> {
+  // Minimal XLSX fixture mirroring the Statskontoret assumptions documented in
+  // analysis/statskontoret/data-dictionary.md: a workbook sheet whose header row
+  // contains År, Myndighet, Departement and Årsarbetskrafter.
   const zip = new JSZip();
   zip.file('[Content_Types].xml', '<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"/>');
   zip.file('xl/workbook.xml', `<?xml version="1.0" encoding="UTF-8"?>

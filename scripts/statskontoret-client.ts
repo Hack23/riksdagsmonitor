@@ -406,7 +406,10 @@ function findField(lookup: ReadonlyMap<string, string>, candidates: readonly str
 }
 
 function parseSwedishNumber(value: string): number | undefined {
-  const normalized = value.replace(/\s/g, '').replace(/,/g, '.');
+  const compact = value.replace(/\s/g, '');
+  const normalized = compact.includes(',')
+    ? compact.replace(/\./g, '').replace(',', '.')
+    : compact;
   const parsed = Number.parseFloat(normalized);
   return Number.isFinite(parsed) ? parsed : undefined;
 }
@@ -456,10 +459,7 @@ function normalizeKey(value: string): string {
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '')
-    .replace(/å/g, 'a')
-    .replace(/ä/g, 'a')
-    .replace(/ö/g, 'o');
+    .replace(/[^a-z0-9]+/g, '');
 }
 
 function roundOneDecimal(value: number): number {
@@ -471,8 +471,9 @@ function cellRefToColumnIndex(ref: string): number | undefined {
   if (!letters) return undefined;
   let index = 0;
   for (const char of letters.toUpperCase()) {
-    // Excel columns are base-26 labels: A=1, B=2, ..., Z=26, AA=27.
-    index = index * 26 + (char.charCodeAt(0) - 64);
+    // Excel columns are bijective base-26 labels; keep a one-based accumulator
+    // (A=1, Z=26, AA=27) and convert to a zero-based array index below.
+    index = index * 26 + (char.charCodeAt(0) - 65 + 1);
   }
   return index - 1;
 }
@@ -529,8 +530,8 @@ function decodeEntity(entity: string): string {
     case 'apos': return "'";
     case 'nbsp': return ' ';
     default:
-      if (body.startsWith('#x')) return decodeCodePoint(Number.parseInt(body.slice(2), 16), entity);
-      if (body.startsWith('#')) return decodeCodePoint(Number.parseInt(body.slice(1), 10), entity);
+      if (/^#x[0-9a-f]+$/i.test(body)) return decodeCodePoint(Number.parseInt(body.slice(2), 16), entity);
+      if (/^#\d+$/.test(body)) return decodeCodePoint(Number.parseInt(body.slice(1), 10), entity);
       return entity;
   }
 }

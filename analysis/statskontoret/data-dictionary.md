@@ -22,7 +22,7 @@
 
 ## Freshness discipline
 
-- Myndighetsförteckning: annual refresh; re-run discovery when source page `last-modified` changes.
+- Myndighetsförteckning: annual refresh; re-run discovery when source page `last-modified` changes. The client reads the HTML meta tag `<meta name="last-modified" content="YYYY-MM-DD HH:MM:SS">` (or date-only variants) and copies the value to discovered link provenance.
 - Månadsutfall: monthly refresh after Statskontoret publication.
 - Årsutfall: refresh on preliminary/definitive release changes.
 - Budget time series: annual official-statistics publication.

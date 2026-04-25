@@ -70,6 +70,7 @@ function requireFlag(flags: ReadonlyMap<string, string>, key: string): string {
   if (!value) {
     process.stderr.write(`statskontoret-fetch: missing required flag --${key}\n`);
     process.exit(2);
+    throw new Error(`Missing required flag --${key}`);
   }
   return value;
 }
@@ -78,6 +79,7 @@ function parseSource(value: string): StatskontoretSourceKey {
   if (STATSKONTORET_SOURCES.some((source) => source.key === value)) return value as StatskontoretSourceKey;
   process.stderr.write(`statskontoret-fetch: unknown source ${value}\n`);
   process.exit(2);
+  throw new Error(`Unknown source ${value}`);
 }
 
 async function runDiscover(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<string>): Promise<void> {
