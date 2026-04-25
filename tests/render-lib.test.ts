@@ -499,11 +499,11 @@ describe('render-lib — renderMarkdownToHtml', () => {
 
   it('adds id + anchor link to every heading (rehype-slug + autolink-headings)', async () => {
     const html = await renderMarkdownToHtml('## Hello World\n');
-    // rehype-sanitize prefixes heading ids with `user-content-` to avoid
-    // ID collisions across embedded content.
-    expect(html).toMatch(/<h2 id="(?:user-content-)?hello-world">/);
-    // Autolink-headings appends an <a> pointing at the slugged anchor.
-    expect(html).toContain('href="#hello-world"');
+    // rehype-sanitize prefixes heading ids with `rm-` to avoid
+    // ID collisions across embedded content (DOM-clobbering mitigation).
+    expect(html).toMatch(/<h2 id="rm-hello-world">/);
+    // Autolink-headings appends an <a> pointing at the slugged anchor (also prefixed).
+    expect(html).toContain('href="#rm-hello-world"');
     expect(html).toContain('aria-hidden="true"');
   });
 

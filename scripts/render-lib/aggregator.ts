@@ -67,6 +67,7 @@ import GithubSlugger from 'github-slugger';
 
 import { buildGithubBlobUrl } from './url-helpers.js';
 import { GITHUB_BLOB } from './constants.js';
+import { HEADING_ID_PREFIX } from './markdown.js';
 
 // ---------------------------------------------------------------------------
 // Canonical narrative order + section titles
@@ -195,13 +196,14 @@ const READER_GUIDE_ENTRIES: readonly {
 ];
 
 /**
- * Generate the same heading slug that `rehype-slug` produces downstream.
+ * Generate the same heading anchor that the renderer emits downstream.
  *
  * `rehype-slug` delegates to `github-slugger` (the GitHub heading slug
- * algorithm). Re-implementing the algorithm here would risk divergence
- * on punctuation, Unicode and duplicate-heading suffixes, which would
- * break the Reader Intelligence Guide anchors. Instead we use the same
- * library so the slugs are guaranteed to match.
+ * algorithm), and `rehype-sanitize` then prefixes every emitted ID with
+ * {@link HEADING_ID_PREFIX} as a DOM-clobbering mitigation. We mirror
+ * both steps here so the Reader Intelligence Guide's `#anchor` links
+ * resolve to the rendered IDs across punctuation, Unicode and
+ * duplicate-heading cases.
  *
  * A fresh `GithubSlugger` instance is used per call so the function is
  * stateless — duplicate-heading disambiguation is not relevant for the
@@ -209,7 +211,7 @@ const READER_GUIDE_ENTRIES: readonly {
  * canonical artifact section title.
  */
 function anchorForTitle(title: string): string {
-  return new GithubSlugger().slug(title);
+  return `${HEADING_ID_PREFIX}${new GithubSlugger().slug(title)}`;
 }
 
 function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: boolean): string {
@@ -222,12 +224,12 @@ function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: boolean)
 
   if (hasDocuments) {
     entries.push(
-      '| [Per-document intelligence](#per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |',
+      `| [Per-document intelligence](#${HEADING_ID_PREFIX}per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | \`documents/*-analysis.md\` |`,
     );
   }
 
   entries.push(
-    '| [Audit appendix](#classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |',
+    `| [Audit appendix](#${HEADING_ID_PREFIX}classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |`,
   );
 
   return [
