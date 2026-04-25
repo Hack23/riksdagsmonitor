@@ -390,7 +390,7 @@ The HTML article is a pure projection. If the analysis is weak, the article will
 | File | Responsibility |
 |---|---|
 | [`scripts/aggregate-analysis.ts`](scripts/aggregate-analysis.ts) | CLI wrapper for aggregating one folder or all folders. |
-| [`scripts/render-lib/aggregator.ts`](scripts/render-lib/aggregator.ts) | Deterministic logic for ordering, cleaning, linking and front matter. |
+| [`scripts/render-lib/aggregator.ts`](scripts/render-lib/aggregator.ts) | Deterministic logic for ordering, reader-guide insertion, cleaning, linking and front matter. |
 | [`scripts/render-lib/url-helpers.ts`](scripts/render-lib/url-helpers.ts) | GitHub blob/tree URL construction. |
 | [`scripts/render-lib/constants.ts`](scripts/render-lib/constants.ts) | Shared paths, base URLs and language constants. |
 
@@ -418,27 +418,28 @@ npx tsx scripts/aggregate-analysis.ts --all
 
 > **Note:** `README.md` is required for the 23-artifact analysis gate and repository readability, but it is intentionally not aggregated into the published `article.md`. Existing `article.md` and `article.<lang>.md` files are also excluded from aggregation.
 
-### Canonical narrative order
+### Canonical political-intelligence order
 
 `AGGREGATION_ORDER` in [`scripts/render-lib/aggregator.ts`](scripts/render-lib/aggregator.ts) publishes sections in this order:
 
+0. Generated `Reader Intelligence Guide` — a deterministic navigation layer that surfaces BLUF, Key Judgments, significance, media framing, forward indicators, scenarios, risks and dok_id-level evidence before the technical appendix.
 1. `executive-brief.md`
 2. `synthesis-summary.md`
 3. `intelligence-assessment.md`
 4. `significance-scoring.md`
-5. `stakeholder-perspectives.md`
-6. `swot-analysis.md`
-7. `risk-assessment.md`
-8. `threat-analysis.md`
-9. `documents/*-analysis.md` as `## Per-document intelligence`
-10. `scenario-analysis.md`
-11. `forward-indicators.md`
-12. `election-2026-analysis.md`
-13. `coalition-mathematics.md`
-14. `voter-segmentation.md`
-15. `comparative-international.md`
-16. `historical-parallels.md`
-17. `media-framing-analysis.md`
+5. `media-framing-analysis.md`
+6. `stakeholder-perspectives.md`
+7. `forward-indicators.md`
+8. `scenario-analysis.md`
+9. `risk-assessment.md`
+10. `swot-analysis.md`
+11. `threat-analysis.md`
+12. `documents/*-analysis.md` as `## Per-document intelligence`
+13. `election-2026-analysis.md`
+14. `coalition-mathematics.md`
+15. `voter-segmentation.md`
+16. `comparative-international.md`
+17. `historical-parallels.md`
 18. `implementation-feasibility.md`
 19. `devils-advocate.md`
 20. `classification-results.md`
@@ -452,6 +453,7 @@ npx tsx scripts/aggregate-analysis.ts --all
 The aggregator:
 
 - Requires `executive-brief.md`.
+- Inserts a `Reader Intelligence Guide` before artifact sections so public readers can find high-value analysis such as media framing and forward indicators without scanning every audit artifact.
 - Strips YAML front matter from each artifact.
 - Removes the first H1 from each artifact and injects its own consistent `## Section Title` heading.
 - Removes leading admin bylines such as `Author`, `Run ID`, `Classification`, `Confidence`, `Prepared by`, `Methodology` and similar metadata fields.
@@ -494,6 +496,8 @@ It then emits deterministic sections such as `## Executive Brief`, `## Synthesis
 ```markdown
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/executive-brief.md)_
 ```
+
+The generated first body section is `## Reader Intelligence Guide`, which is intentionally not sourced to a single artifact because it is a deterministic navigation projection of the artifact set.
 
 ---
 
@@ -561,7 +565,7 @@ flowchart TB
     HEADER --> SUBNAV["breadcrumb · published date"]
     BODY --> MAIN["main#main.rm-article-main"]
     MAIN --> ARTICLE["article.rm-article"]
-    ARTICLE --> ARTICLEHEAD["article header<br/>h1 · date · language"]
+    ARTICLE --> ARTICLEHEAD["article header<br/>h1 · dek · date · language · provenance badges"]
     ARTICLE --> CONTENT["rm-article-body<br/>sanitized Markdown HTML"]
     ARTICLE --> SOURCES["rm-article-sources<br/>links to every artifact"]
     BODY --> FOOTER["rm-site-footer<br/>navigation · trust · footer languages"]
@@ -587,7 +591,8 @@ The renderer embeds:
 | Open Graph | `og:type=article`, title, description, URL, locale, image and update timestamp. |
 | Twitter card | Summary large image metadata. |
 | JSON-LD | `NewsArticle` with `isBasedOn` listing every `.md` / `.json` source artifact. |
-| Source footer | Visible `Analysis sources` section linking artifacts to GitHub. |
+| Article dek and provenance badges | Header-level summary and visible public-source / AI-FIRST / traceability badges. |
+| Source footer | Visible `Analysis sources` section linking source artifacts to GitHub, excluding generated `article.md`, translated `article.<lang>.md` and temporary `pass1/` snapshots. |
 
 ---
 
@@ -810,9 +815,7 @@ The `deploy` job performs:
 | `dist/docs/` | deploy workflow copy from `docs/` | ✅ | Documentation output when present. |
 | `dist/cia-data/` | `postbuild` | ✅ | CIA data copied into build output. |
 
-The rendered HTML source footer and JSON-LD `isBasedOn` block enumerate `.md` and `.json` files found in the analysis folder.
-
-Because the current artifact-list resolver scans the analysis folder after aggregation, `article.md` can appear alongside the underlying source artifacts. Treat that self-reference as a benign implementation detail: the source footer and JSON-LD still preserve the important provenance chain from rendered HTML back to the canonical Markdown projection and source analysis files.
+The rendered HTML source footer and JSON-LD `isBasedOn` block enumerate source `.md` and `.json` files found in the analysis folder. Generated `article.md`, translated `article.<lang>.md`, and temporary `pass1/` snapshots are excluded so the provenance list stays reader-relevant.
 
 ### S3 upload and cache strategy
 

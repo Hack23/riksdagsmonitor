@@ -156,16 +156,27 @@ describe('render-lib — helpers', () => {
 });
 
 describe('render-lib — AGGREGATION_ORDER', () => {
-  it('puts intelligence-assessment.md immediately after synthesis-summary.md (ICD-203 flow)', () => {
+  it('puts reader-value lenses before technical and audit appendices', () => {
     const idxSynth = AGGREGATION_ORDER.indexOf('synthesis-summary.md');
     const idxKJ = AGGREGATION_ORDER.indexOf('intelligence-assessment.md');
+    const idxMedia = AGGREGATION_ORDER.indexOf('media-framing-analysis.md');
+    const idxForward = AGGREGATION_ORDER.indexOf('forward-indicators.md');
+    const idxScenario = AGGREGATION_ORDER.indexOf('scenario-analysis.md');
     const idxDevils = AGGREGATION_ORDER.indexOf('devils-advocate.md');
     const idxScoring = AGGREGATION_ORDER.indexOf('significance-scoring.md');
+    const idxClassification = AGGREGATION_ORDER.indexOf('classification-results.md');
     expect(idxSynth).toBeGreaterThanOrEqual(0);
     expect(idxKJ).toBe(idxSynth + 1);
-    // And intelligence-assessment must come well before devils-advocate and
-    // significance-scoring (the old order buried it at position 19).
+    expect(idxScoring).toBe(idxKJ + 1);
+    // Reader-relevant lenses must be surfaced before appendices and
+    // challenge-analysis material so the public article does not bury
+    // media framing / forward indicators.
+    expect(idxMedia).toBe(idxScoring + 1);
+    expect(idxForward).toBeGreaterThan(idxMedia);
+    expect(idxScenario).toBeGreaterThan(idxForward);
     expect(idxKJ).toBeLessThan(idxScoring);
+    expect(idxMedia).toBeLessThan(idxDevils);
+    expect(idxForward).toBeLessThan(idxClassification);
     expect(idxKJ).toBeLessThan(idxDevils);
   });
 
@@ -235,6 +246,8 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     expect(result.description).not.toMatch(/Classification|Run ID|Author/i);
 
     // Aggregated markdown must carry real content but no Pass-2 / no admin byline.
+    expect(result.markdown).toContain('## Reader Intelligence Guide');
+    expect(result.markdown).toContain('Use this guide to read the article as a political-intelligence product');
     expect(result.markdown).toContain('widget committee reported five actionable findings');
     expect(result.markdown).toContain('Real synthesis.');
     expect(result.markdown).toContain('KJ-1 confidence HIGH.');
@@ -243,8 +256,12 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     expect(result.markdown).not.toMatch(/\*\*Run ID\*\*/);
 
     // Section order: synthesis → intelligence-assessment must appear in that order.
+    const guidePos = result.markdown.indexOf('## Reader Intelligence Guide');
+    const execPos = result.markdown.indexOf('## Executive Brief');
     const synthPos = result.markdown.indexOf('## Synthesis Summary');
     const kjPos = result.markdown.indexOf('## Intelligence Assessment');
+    expect(guidePos).toBeGreaterThan(-1);
+    expect(execPos).toBeGreaterThan(guidePos);
     expect(synthPos).toBeGreaterThan(-1);
     expect(kjPos).toBeGreaterThan(synthPos);
   });
@@ -730,6 +747,8 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html.startsWith('<!DOCTYPE html>')).toBe(true);
     expect(html).toContain('<article class="rm-article"');
     expect(html).toContain('<h1>Propositions 2099-01-01</h1>');
+    expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions.</p>');
+    expect(html).toContain('Traceable artifacts');
     expect(html).toContain('class="rm-article-sources"');
     expect(html).toContain('executive-brief.md');
     expect(html).toContain('risk-assessment.md');

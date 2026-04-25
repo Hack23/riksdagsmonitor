@@ -67,19 +67,19 @@ export const AGGREGATION_ORDER: readonly string[] = [
   'synthesis-summary.md',
   'intelligence-assessment.md',
   'significance-scoring.md',
+  'media-framing-analysis.md',
   'stakeholder-perspectives.md',
-  'swot-analysis.md',
+  'forward-indicators.md',
+  'scenario-analysis.md',
   'risk-assessment.md',
+  'swot-analysis.md',
   'threat-analysis.md',
   // documents/* expanded inline here
-  'scenario-analysis.md',
-  'forward-indicators.md',
   'election-2026-analysis.md',
   'coalition-mathematics.md',
   'voter-segmentation.md',
   'comparative-international.md',
   'historical-parallels.md',
-  'media-framing-analysis.md',
   'implementation-feasibility.md',
   'devils-advocate.md',
   'classification-results.md',
@@ -131,6 +131,86 @@ function prettifyFallbackTitle(file: string): string {
 export function titleForArtifact(file: string): string {
   const base = path.basename(file);
   return SECTION_TITLES[base] ?? prettifyFallbackTitle(base);
+}
+
+const READER_GUIDE_ENTRIES: readonly {
+  readonly file: string;
+  readonly label: string;
+  readonly readerValue: string;
+}[] = [
+  {
+    file: 'executive-brief.md',
+    label: 'BLUF and editorial decisions',
+    readerValue: 'fast answer to what happened, why it matters, who is accountable, and the next dated trigger',
+  },
+  {
+    file: 'intelligence-assessment.md',
+    label: 'Key Judgments',
+    readerValue: 'confidence-bearing political-intelligence conclusions and collection gaps',
+  },
+  {
+    file: 'significance-scoring.md',
+    label: 'Significance scoring',
+    readerValue: 'why this story outranks or trails other same-day parliamentary signals',
+  },
+  {
+    file: 'media-framing-analysis.md',
+    label: 'Media framing',
+    readerValue: 'likely narrative frames, amplifiers, counter-frames, and manipulation risks',
+  },
+  {
+    file: 'forward-indicators.md',
+    label: 'Forward indicators',
+    readerValue: 'dated watch items that let readers verify or falsify the assessment later',
+  },
+  {
+    file: 'scenario-analysis.md',
+    label: 'Scenarios',
+    readerValue: 'alternative outcomes with probabilities, triggers, and warning signs',
+  },
+  {
+    file: 'risk-assessment.md',
+    label: 'Risk assessment',
+    readerValue: 'policy, electoral, institutional, communications, and implementation risk register',
+  },
+];
+
+function anchorForTitle(title: string): string {
+  return title
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[^\p{L}\p{N}\s-]/gu, '')
+    .trim()
+    .replace(/\s+/g, '-');
+}
+
+function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: boolean): string {
+  const entries = READER_GUIDE_ENTRIES
+    .filter((entry) => available.has(entry.file))
+    .map((entry) => {
+      const title = titleForArtifact(entry.file);
+      return `| [${entry.label}](#${anchorForTitle(title)}) | ${entry.readerValue} | \`${entry.file}\` |`;
+    });
+
+  if (hasDocuments) {
+    entries.push(
+      '| [Per-document intelligence](#per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |',
+    );
+  }
+
+  entries.push(
+    '| [Audit appendix](#classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |',
+  );
+
+  return [
+    '## Reader Intelligence Guide',
+    '',
+    'Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.',
+    '',
+    '| Reader need | Where to go | Source artifact |',
+    '|---|---|---|',
+    ...entries,
+  ].join('\n');
 }
 
 // ---------------------------------------------------------------------------
@@ -585,6 +665,17 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     cleanArticleTitle(readFirstHeading(briefRaw)) ||
     titleFromBluf(rawBlufParagraph ?? rawFirstParagraph) ||
     `${prettifyFallbackTitle(subfolder)} — ${date}`;
+
+  const rootArtifactSet = new Set(
+    fs.readdirSync(subfolderAbsPath)
+      .filter((f) => /\.md$/i.test(f))
+      .filter((f) => f !== 'README.md')
+      .filter((f) => !/^article(?:\.[a-z-]+)?\.md$/i.test(f)),
+  );
+  const docsDirForGuide = path.join(subfolderAbsPath, 'documents');
+  const hasDocumentAnalyses = fs.existsSync(docsDirForGuide) &&
+    fs.readdirSync(docsDirForGuide).some((f) => /\.md$/i.test(f));
+  sections.push(buildReaderGuide(rootArtifactSet, hasDocumentAnalyses));
 
   // 2. Emit the canonical narrative order, expanding documents/ between
   //    threat-analysis and election-2026-analysis.
