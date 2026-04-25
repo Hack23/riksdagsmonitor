@@ -385,7 +385,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: geolocation=(), microphone=(), camera=()
 ```
 
-**Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js inline styles and large inline dashboard script (946 lines). The `connect-src` directive includes `https://raw.githubusercontent.com` to allow fetching CIA CSV data from the cia repository. Security headers are configured via AWS CloudFront Response Headers Policy for the primary deployment. GitHub Pages disaster recovery inherits default GitHub Pages security headers. Future enhancement: nonce-based CSP for stricter inline script control (roadmap: 2027). Chart.js, D3.js, and chartjs-plugin-annotation are hosted locally on CloudFront (js/lib/) rather than via external CDN, eliminating external script dependencies.
+**Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js inline styles and large inline dashboard script (946 lines). The `connect-src` directive includes `https://raw.githubusercontent.com` to allow fetching CIA CSV data from the cia repository. Security headers are configured via AWS CloudFront Response Headers Policy for the primary deployment. GitHub Pages disaster recovery inherits default GitHub Pages security headers. Future enhancement: nonce-based CSP for stricter inline script control (roadmap: 2027). Chart.js, D3.js, chartjs-plugin-annotation **and Mermaid** are hosted locally on CloudFront (`js/lib/`) rather than via external CDN, eliminating external script dependencies (CI-enforced by [`tests/no-external-cdn.test.ts`](tests/no-external-cdn.test.ts)).
 
 **Control Mapping:**
 - ISO 27001: A.13.1 Network Security Management

@@ -659,7 +659,20 @@ The rendering path is:
 2. [`scripts/render-lib/markdown.ts`](scripts/render-lib/markdown.ts) rewrites them to `<pre class="mermaid">` before Markdown parsing.
 3. `rehype-sanitize` allows the `pre.mermaid` class.
 4. [`scripts/render-lib/chrome.ts`](scripts/render-lib/chrome.ts) includes `js/lib/mermaid-init.mjs`.
-5. [`js/lib/mermaid-init.mjs`](js/lib/mermaid-init.mjs) dynamically imports Mermaid `11.4.1` from jsDelivr, initializes a dark theme and renders all Mermaid blocks after page load.
+5. [`js/lib/mermaid-init.mjs`](js/lib/mermaid-init.mjs) dynamically imports Mermaid `11.4.1` from the **same-origin vendored copy under `js/lib/mermaid/`**, initializes a dark theme and renders all Mermaid blocks after page load.
+
+The Mermaid distribution is vendored at build time:
+
+| Step | Location | What it does |
+|---|---|---|
+| **Pin** | [`package.json`](package.json) `devDependencies` | `mermaid` is pinned (currently `11.4.1`) — supply-chain audited like every other dependency, in the npm SBOM. |
+| **Copy** | [`scripts/copy-vendor-mermaid.ts`](scripts/copy-vendor-mermaid.ts) | Run as the first step of `prebuild` (and `predev`). Copies `node_modules/mermaid/dist/mermaid.esm.min.mjs` and its required `chunks/mermaid.esm.min/*.mjs` into `js/lib/mermaid/` (≈2.6 MB, 64 files). Sourcemaps, type declarations, mocks and other ESM variants are excluded. |
+| **Gitignore** | [`.gitignore`](.gitignore) | `js/lib/mermaid/` is intentionally ignored — the directory is reproducible from the pinned dependency, so we don't commit duplicates of `node_modules` content. |
+| **Bundle** | [`.github/workflows/deploy-s3.yml`](.github/workflows/deploy-s3.yml) | The "Copy JS libraries to build output" step merges the full `js/` tree (including `js/lib/mermaid/`) into `dist/js/` after the Vite build, alongside `chart.umd.4.4.1.js`, `d3.7.9.0.min.js`, etc. |
+| **Deploy** | [`scripts/deploy-s3.sh`](scripts/deploy-s3.sh) | `*.mjs` files are uploaded with `Content-Type: application/javascript` and `Cache-Control: public, max-age=31536000, immutable` — same long-cache treatment as every other vendored asset. |
+| **Guard** | [`tests/no-external-cdn.test.ts`](tests/no-external-cdn.test.ts) | Vitest test that fails CI if any runtime file under `js/` or any rendered article under `news/` references `cdn.jsdelivr.net`, `cdnjs.cloudflare.com`, `unpkg.com`, `esm.sh`, `cdn.skypack.dev`, or `ajax.googleapis.com`. Riksdagsmonitor serves all JavaScript from its own S3/CloudFront origin — no external CDN allowed. |
+
+CSP impact: scripts can be allowed with `script-src 'self'` only — no third-party host needs to be added to the policy. SRI hashes for every Mermaid `.mjs` chunk are produced by `vite-plugin-sri-gen` because the files now live under the build output.
 
 The analysis gate requires color-coded Mermaid through `style` directives or Mermaid `themeVariables` / `%%{init}` blocks.
 
