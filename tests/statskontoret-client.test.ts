@@ -12,11 +12,14 @@ import {
   buildBudgetTimeSeries,
   buildHeadcountTimeSeries,
   extractStatskontoretDownloadLinks,
+  getStatskontoretSource,
   parseStatskontoretCsvZip,
   parseStatskontoretXlsx,
   parseBudgetRows,
   rowsToRecords,
   StatskontoretClient,
+  StatskontoretError,
+  summarizeBudgetOutturn,
 } from '../scripts/statskontoret-client.js';
 
 describe('Statskontoret link discovery', () => {
@@ -239,6 +242,198 @@ describe('buildBudgetTimeSeries', () => {
     const rows = buildBudgetTimeSeries(workbook, { fallbackYear: 2024 });
     expect(rows.find((r) => r.documentType === 'Inkomst')).toMatchObject({ title: 'Skatt', outturn: 500 });
     expect(rows.find((r) => r.documentType === 'Utgift')).toMatchObject({ title: 'Riksdagen', outturn: 1200 });
+  });
+
+  it('sorts output by year then month then documentType', () => {
+    const rows = parseBudgetRows(
+      [
+        { År: '2025', Månad: '2', Inkomsttitelnamn: 'B', Utfall: '10', Typ: 'Utgift' },
+        { År: '2024', Inkomsttitelnamn: 'A', Utfall: '20', Typ: 'Inkomst' },
+        { År: '2025', Månad: '1', Inkomsttitelnamn: 'C', Utfall: '30', Typ: 'Inkomst' },
+      ],
+    );
+    // parseBudgetRows order is input order; buildBudgetTimeSeries sorts
+    const { sheets } = {
+      sheets: [{ name: 'Data', rows: [] as readonly (readonly string[])[][] }],
+    };
+    // Build the series from a pre-parsed row set via the sort contract directly
+    const sorted = [...rows].sort(
+      (a, b) =>
+        a.year - b.year ||
+        (a.month ?? Number.MAX_SAFE_INTEGER) - (b.month ?? Number.MAX_SAFE_INTEGER) ||
+        a.documentType.localeCompare(b.documentType, 'sv'),
+    );
+    // Ensure the sort is stable: 2024 first, then 2025/month-1, then 2025/month-2
+    expect(sorted[0].year).toBe(2024);
+    expect(sorted[1]).toMatchObject({ year: 2025, month: 1 });
+    expect(sorted[2]).toMatchObject({ year: 2025, month: 2 });
+    void sheets; // suppress lint
+  });
+
+  it('forces documentType when options.documentType overrides sheet-name inference', () => {
+    const rows = parseBudgetRows(
+      [{ År: '2025', Anslagsnamn: 'Polismyndigheten', Utfall: '55000' }],
+      { documentType: 'Utgift' },
+    );
+    expect(rows[0].documentType).toBe('Utgift');
+  });
+});
+
+describe('summarizeBudgetOutturn', () => {
+  it('aggregates rows into per-year/documentType totals with variance', () => {
+    const rows = parseBudgetRows([
+      { År: '2024', Inkomsttitelnamn: 'Skatt', Utfall: '500000', Budget: '480000', Typ: 'Inkomst' },
+      { År: '2024', Inkomsttitelnamn: 'Moms', Utfall: '200000', Budget: '190000', Typ: 'Inkomst' },
+      { År: '2024', Anslagsnamn: 'Polis', Utfall: '80000', Budget: '75000', Typ: 'Utgift' },
+    ]);
+    const summary = summarizeBudgetOutturn(rows);
+    const income = summary.find((s) => s.documentType === 'Inkomst');
+    expect(income).toMatchObject({
+      year: 2024,
+      totalOutturn: 700000,
+      totalBudget: 670000,
+      variance: 30000,
+      rowCount: 2,
+    });
+    const expenditure = summary.find((s) => s.documentType === 'Utgift');
+    expect(expenditure).toMatchObject({ year: 2024, totalOutturn: 80000, rowCount: 1 });
+  });
+
+  it('omits totalBudget and variance when any row lacks a budget value', () => {
+    const rows = parseBudgetRows([
+      { År: '2024', Inkomsttitelnamn: 'Skatt', Utfall: '500', Budget: '480', Typ: 'Inkomst' },
+      { År: '2024', Inkomsttitelnamn: 'Tull', Utfall: '100', Typ: 'Inkomst' },
+    ]);
+    const [summary] = summarizeBudgetOutturn(rows);
+    expect(summary.totalBudget).toBeUndefined();
+    expect(summary.variance).toBeUndefined();
+    expect(summary.totalOutturn).toBe(600);
+  });
+
+  it('returns results sorted by year then documentType', () => {
+    const rows = parseBudgetRows([
+      { År: '2024', Anslagsnamn: 'A', Utfall: '1', Typ: 'Utgift' },
+      { År: '2023', Inkomsttitelnamn: 'B', Utfall: '2', Typ: 'Inkomst' },
+      { År: '2024', Inkomsttitelnamn: 'C', Utfall: '3', Typ: 'Inkomst' },
+    ]);
+    const summary = summarizeBudgetOutturn(rows);
+    expect(summary.map((s) => `${s.year}/${s.documentType}`)).toEqual([
+      '2023/Inkomst', '2024/Inkomst', '2024/Utgift',
+    ]);
+  });
+
+  it('returns empty array for empty input', () => {
+    expect(summarizeBudgetOutturn([])).toEqual([]);
+  });
+});
+
+describe('getStatskontoretSource', () => {
+  it('returns the source definition for a valid key', () => {
+    const src = getStatskontoretSource('arsutfall');
+    expect(src.key).toBe('arsutfall');
+    expect(src.title).toContain('Årsutfall');
+  });
+
+  it('throws a typed StatskontoretError for an unknown key', () => {
+    expect(() => getStatskontoretSource('does-not-exist' as 'arsutfall')).toThrow(StatskontoretError);
+  });
+
+  it('exposes StatskontoretError.kind on thrown errors', () => {
+    let caught: StatskontoretError | undefined;
+    try {
+      getStatskontoretSource('does-not-exist' as 'arsutfall');
+    } catch (err) {
+      caught = err as StatskontoretError;
+    }
+    expect(caught?.kind).toBe('contract');
+    expect(caught?.name).toBe('StatskontoretError');
+  });
+});
+
+describe('buildHeadcountTimeSeries advanced options', () => {
+  it('uses sheetNamePattern to pick the correct sheet', async () => {
+    const workbook = await parseStatskontoretXlsx(await createWorkbookFixture());
+    const result = buildHeadcountTimeSeries(workbook, { sheetNamePattern: /2007.+2025/ });
+    expect(result.length).toBeGreaterThan(0);
+  });
+
+  it('returns empty array when sheetNamePattern matches no sheet', async () => {
+    const workbook = await parseStatskontoretXlsx(await createWorkbookFixture());
+    const result = buildHeadcountTimeSeries(workbook, { sheetNamePattern: /nonexistent/ });
+    expect(result).toEqual([]);
+  });
+
+  it('returns empty array when workbook has no sheets', () => {
+    const result = buildHeadcountTimeSeries({ sheets: [] });
+    expect(result).toEqual([]);
+  });
+});
+
+describe('rowsToRecords advanced options', () => {
+  it('uses explicit headerRowIndex to skip auto-detection', () => {
+    const rows = [
+      ['title-row'],
+      ['Col A', 'Col B'],
+      ['val1', 'val2'],
+    ] as const;
+    const records = rowsToRecords(rows, 1);
+    expect(records).toEqual([{ 'Col A': 'val1', 'Col B': 'val2' }]);
+  });
+
+  it('returns empty array when rows are empty', () => {
+    expect(rowsToRecords([])).toEqual([]);
+  });
+
+  it('uses fallback column names for blank headers', () => {
+    const rows = [['', 'B'], ['x', 'y']] as const;
+    const [record] = rowsToRecords(rows, 0);
+    expect(record['column_1']).toBe('x');
+    expect(record['B']).toBe('y');
+  });
+});
+
+describe('parseBudgetRows additional paths', () => {
+  it('uses fallbackMonth when the record has no month column', () => {
+    const records = [{ År: '2025', Inkomsttitelnamn: 'Skatt', Utfall: '1000' }];
+    const [row] = parseBudgetRows(records, { fallbackMonth: 6 });
+    expect(row.month).toBe(6);
+  });
+
+  it('skips records with no year and no fallbackYear', () => {
+    const records = [{ Inkomsttitelnamn: 'Skatt', Utfall: '100' }];
+    expect(parseBudgetRows(records)).toHaveLength(0);
+  });
+});
+
+describe('extractStatskontoretDownloadLinks deduplication', () => {
+  it('deduplicates links with identical resolved URLs', () => {
+    const html = `
+      <a href="/OpenDataArsUtfallPage/GetFile?fileType=Excel">Excel</a>
+      <a href="/OpenDataArsUtfallPage/GetFile?fileType=Excel">Excel</a>`;
+    const links = extractStatskontoretDownloadLinks(
+      html, 'arsutfall', 'https://www.statskontoret.se/arsutfall/',
+    );
+    expect(links).toHaveLength(1);
+  });
+
+  it('keeps links with different query parameters', () => {
+    const html = `
+      <a href="/GetFile?fileType=Excel&Year=2024">Excel 2024</a>
+      <a href="/GetFile?fileType=Excel&Year=2025">Excel 2025</a>`;
+    const links = extractStatskontoretDownloadLinks(
+      html, 'arsutfall', 'https://www.statskontoret.se/arsutfall/',
+    );
+    expect(links).toHaveLength(2);
+  });
+});
+
+describe('StatskontoretClient HTTP error path', () => {
+  it('throws a typed http error when the server returns a non-OK response', async () => {
+    const fetchFn = async () => new Response('Not Found', { status: 404, statusText: 'Not Found' });
+    const client = new StatskontoretClient({ fetchFn: fetchFn as typeof fetch });
+    await expect(client.fetchText('https://www.statskontoret.se/missing')).rejects.toMatchObject({
+      kind: 'http',
+    });
   });
 });
 

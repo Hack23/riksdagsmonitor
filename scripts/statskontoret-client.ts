@@ -111,6 +111,23 @@ export interface StatskontoretBudgetOptions {
 }
 
 /**
+ * Aggregated totals derived from one or more `StatskontoretBudgetRow` rows.
+ *
+ * `totalOutturn` and `totalBudget` are the sums of the individual row amounts
+ * (in MSEK) within the selected grouping.  `variance` is `totalOutturn -
+ * totalBudget`; it is `undefined` when any contributing row had no budget
+ * figure.  `rowCount` records how many source rows were included.
+ */
+export interface StatskontoretBudgetSummary {
+  readonly year: number;
+  readonly documentType: string;
+  readonly totalOutturn: number;
+  readonly totalBudget?: number;
+  readonly variance?: number;
+  readonly rowCount: number;
+}
+
+/**
  * Typed error thrown by the Statskontoret client and parsers.
  *
  * `kind` lets callers distinguish transport, parsing and contract failures
@@ -440,8 +457,10 @@ export function parseBudgetRows(
 
 /**
  * Parse all sheets in a budget-outturn workbook and return a flat array of
- * typed rows.  For single-type workbooks (e.g. a file explicitly downloaded as
- * "Inkomst"), pass `options.documentType` to set the label uniformly.
+ * typed rows sorted by year ascending, then month ascending (NaN last for
+ * annual rows), then documentType alphabetically.  For single-type workbooks
+ * (e.g. a file explicitly downloaded as "Inkomst"), pass
+ * `options.documentType` to set the label uniformly.
  */
 export function buildBudgetTimeSeries(
   workbook: StatskontoretWorkbook,
@@ -457,7 +476,71 @@ export function buildBudgetTimeSeries(
     };
     rows.push(...parseBudgetRows(rowsToRecords(sheet.rows), sheetOptions));
   }
-  return rows;
+  return rows.sort(
+    (a, b) =>
+      a.year - b.year ||
+      (a.month ?? Number.MAX_SAFE_INTEGER) - (b.month ?? Number.MAX_SAFE_INTEGER) ||
+      a.documentType.localeCompare(b.documentType, 'sv'),
+  );
+}
+
+/**
+ * Aggregate `StatskontoretBudgetRow` rows into per-year/documentType totals.
+ *
+ * Rows are grouped by `(year, documentType)`.  `totalBudget` and `variance`
+ * are included only when every row in the group has a `budget` value.
+ *
+ * Returns results sorted by year ascending, then documentType alphabetically.
+ */
+export function summarizeBudgetOutturn(
+  rows: readonly StatskontoretBudgetRow[],
+): StatskontoretBudgetSummary[] {
+  const groups = new Map<string, {
+    year: number;
+    documentType: string;
+    totalOutturn: number;
+    totalBudget: number;
+    allHaveBudget: boolean;
+    rowCount: number;
+  }>();
+
+  for (const row of rows) {
+    const key = `${row.year}\u0000${row.documentType}`;
+    const existing = groups.get(key);
+    if (existing) {
+      existing.totalOutturn = roundOneDecimal(existing.totalOutturn + row.outturn);
+      if (row.budget !== undefined) {
+        existing.totalBudget = roundOneDecimal(existing.totalBudget + row.budget);
+      } else {
+        existing.allHaveBudget = false;
+      }
+      existing.rowCount++;
+    } else {
+      groups.set(key, {
+        year: row.year,
+        documentType: row.documentType,
+        totalOutturn: row.outturn,
+        totalBudget: row.budget ?? 0,
+        allHaveBudget: row.budget !== undefined,
+        rowCount: 1,
+      });
+    }
+  }
+
+  return [...groups.values()]
+    .map((g): StatskontoretBudgetSummary => ({
+      year: g.year,
+      documentType: g.documentType,
+      totalOutturn: g.totalOutturn,
+      ...(g.allHaveBudget ? {
+        totalBudget: g.totalBudget,
+        variance: roundOneDecimal(g.totalOutturn - g.totalBudget),
+      } : {}),
+      rowCount: g.rowCount,
+    }))
+    .sort(
+      (a, b) => a.year - b.year || a.documentType.localeCompare(b.documentType, 'sv'),
+    );
 }
 
 /** Infer 'Inkomst' / 'Utgift' from common Swedish sheet-name patterns. */

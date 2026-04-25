@@ -20,6 +20,34 @@
 | Leadership form | `Ledningsform` | string | Governance/administrative context |
 | Special organs | `Särskilda organ` | string/boolean-like | Institutional context |
 
+## Årsutfall and Månadsutfall budget-outturn fields
+
+These fields apply to `arsutfall`, `manadsutfall` and `budget-time-series` workbooks parsed via `parseBudgetRows` / `buildBudgetTimeSeries`.
+
+| Field | Expected labels (normalised) | Normalisation | Present in |
+|---|---|---|---|
+| Year | `År`, `Ar`, `Year`, `Kalenderår`, `Kalenderar` | integer | All three sources |
+| Month | `Månad`, `Manad`, `Month`, `Månadsperiod` | integer 1–12 | månadsutfall only |
+| Document type | `Dokumenttyp`, `Typ`, `Inkomst_Utgift` | string | All (or inferred from sheet name) |
+| Income title name | `Inkomsttitelnamn`, `Inkomsttitelgruppsnamn` | string | Inkomst rows |
+| Income title code | `Inkomsttitel`, `Inkomsttitelnummer`, `Inkomsttitelnr` | string | Inkomst rows |
+| Appropriation name | `Anslagsnamn`, `Utgiftsomradesnamn`, `Utgiftsomrade` | string | Utgift rows |
+| Appropriation number | `Anslagsnr`, `Anslagsnummer`, `Anslagspost`, `Utgiftsomradesnr` | string | Utgift rows |
+| Outturn amount | `Utfall`, `Utfall MSEK`, `Utfallbelopp`, `Belopp` | Swedish decimal comma → MSEK | All rows |
+| Budget amount | `Budget`, `Budgetvärde`, `Anvisat`, `Ramanslag` | Swedish decimal comma → MSEK | Where available |
+| Agency | `Myndighet`, `Myndighetsnamn` | string | Finest granularity; optional |
+| Status | `Status`, `Preliminär`, `Utfallsstatus` | string | Optional (preliminary/definitive) |
+
+### Sheet-name to document-type inference
+
+When the workbook contains multiple sheets and no explicit `--doc-type` override is given, `buildBudgetTimeSeries` infers the document type from the sheet name:
+
+| Sheet name contains | Inferred `documentType` |
+|---|---|
+| `inkomst` | `Inkomst` |
+| `utgift` or `anslag` | `Utgift` |
+| anything else | no override (field `Typ` etc. from each row used instead) |
+
 ## Freshness discipline
 
 - Myndighetsförteckning: annual refresh; re-run discovery when source page `last-modified` changes. The client reads the HTML meta tag `<meta name="last-modified" content="YYYY-MM-DD HH:MM:SS">` (or date-only variants) and copies the value to discovered link provenance.
@@ -35,3 +63,8 @@ analysis/data/statskontoret/{dataset}/{artifact}.meta.json
 ```
 
 Sidecar metadata contains `fetchedAt`, `mcpTool: statskontoret-ts-client`, `dataset` and `artifact`.
+
+## Key normalisation rules
+
+All column-header matching is case-insensitive and accent-folded (`NFD` normalisation with diacritic removal), so `Årsarbetskrafter`, `arsarbetskrafter` and `ÅRSARBETSKRAFTER` all resolve to the same normalised key `arsarbetskrafter`.  Swedish decimal comma notation (`1.234,5`) is parsed to `1234.5` by `parseStatskontoretSwedishNumber`.
+
