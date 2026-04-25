@@ -30,6 +30,8 @@ describe('imf-context', () => {
       expect(codes.has('WEO:LUR')).toBe(true);
       expect(codes.has('WEO:BCA_NGDPD')).toBe(true);
       expect(codes.has('FM:GGXONLB_NGDP')).toBe(true);
+      expect(codes.has('ER:ENDA_XDC_USD_RATE')).toBe(true);
+      expect(codes.has('PCPS:POILAPSP')).toBe(true);
     });
 
     it('marks every WEO/FM indicator as projection-capable', () => {
@@ -153,7 +155,7 @@ describe('imf-context', () => {
     });
 
     it('returns undefined when database and id do not co-occur', () => {
-      // GGXWDG_NGDP exists in WEO but not in our curated IFS catalogue.
+      // GGXWDG_NGDP exists in WEO but not as a same-code IFS catalogue entry.
       expect(findImfIndicatorByCode('IFS', 'GGXWDG_NGDP')).toBeUndefined();
     });
 
@@ -196,7 +198,7 @@ describe('imf-context', () => {
   describe('getImfDatabasesInUse', () => {
     it('includes the IMF databases actually referenced by the catalogue', () => {
       const dbs = getImfDatabasesInUse();
-      for (const db of ['WEO', 'FM', 'GFS_COFOG', 'DOTS', 'IFS', 'MFS_IR']) {
+      for (const db of ['WEO', 'FM', 'GFS_COFOG', 'DOTS', 'ER', 'PCPS', 'MFS_IR']) {
         expect(dbs.has(db as Parameters<typeof imfCitation>[0])).toBe(true);
       }
     });

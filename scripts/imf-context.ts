@@ -4,7 +4,7 @@
  * `world-bank-context.ts`.
  *
  * Where World Bank data lags 12–24 months, IMF data (WEO April/October
- * cycle; Fiscal Monitor; IFS; GFS_COFOG) leads. The agentic workflows
+ * cycle; Fiscal Monitor; ER; PCPS; GFS_COFOG) leads. The agentic workflows
  * use this module at article-authoring time to pick the correct IMF
  * indicator for each Riksdag committee's policy area and to stamp
  * projections with the right vintage.
@@ -282,7 +282,7 @@ export const IMF_INDICATORS: readonly ImfIndicatorContext[] = Object.freeze([
 
   // --- Exchange rates (FiU/NU) ---
   {
-    database: 'IFS',
+    database: 'ER',
     indicatorId: 'ENDA_XDC_USD_RATE',
     name: 'Exchange rate — SEK per USD (end of period)',
     description:
@@ -295,7 +295,7 @@ export const IMF_INDICATORS: readonly ImfIndicatorContext[] = Object.freeze([
 
   // --- Commodities (MJU — energy, FiU — inflation drivers) ---
   {
-    database: 'IFS',
+    database: 'PCPS',
     indicatorId: 'POILAPSP',
     name: 'Crude oil price index (APSP average)',
     description:

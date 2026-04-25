@@ -67,7 +67,7 @@ See ADR: [`docs/adr/0001-adopt-imf-data-alongside-world-bank.md`](../../docs/adr
 | [`scripts/imf-client.ts`](../../scripts/imf-client.ts) | TypeScript REST client (Datamapper + SDMX 3.0 passthrough). Default retry uses 1 s → 2 s back-off on retryable 429/5xx, network, and abort errors; 4 s+ back-off applies only when `maxRetries` is increased. Also exports pure helpers `calculateRetryDelay()` and `parseDatamapperValues()` for unit-testing without HTTP stubs, and `getWeoIndicatorsBatch()` for multi-indicator same-country fetch with fail-soft isolation. |
 | [`scripts/imf-fetch.ts`](../../scripts/imf-fetch.ts) | Thin CLI wrapper over `imf-client.ts` (commands: `weo`, `compare`, `sdmx`, `list-indicators`). Used by agentic workflows via the `bash` tool. |
 | [`scripts/imf-codes.ts`](../../scripts/imf-codes.ts) | ISO-3 ↔ IMF AREA code mappings for IFS/GFS/BOP. Fail-loud on unknown codes (prevents silent data loss). Exports `listKnownIso3Codes()` for programmatic peer-set discovery. |
-| [`scripts/imf-context.ts`](../../scripts/imf-context.ts) | Policy-area / committee → IMF indicator mapping. Exports `imfCitation()`, `findImfIndicatorByCode()`, `findImfIndicatorByCitation()`, `getImfDatabasesInUse()`, `getImfCommitteeMatrix()`, `listImfCitations()` and the curated `IMF_INDICATORS` catalogue spanning WEO, FM, GFS_COFOG, MFS_IR, DOTS, and IFS. |
+| [`scripts/imf-context.ts`](../../scripts/imf-context.ts) | Policy-area / committee → IMF indicator mapping. Exports `imfCitation()`, `findImfIndicatorByCode()`, `findImfIndicatorByCitation()`, `getImfDatabasesInUse()`, `getImfCommitteeMatrix()`, `listImfCitations()` and the curated `IMF_INDICATORS` catalogue spanning WEO, FM, GFS_COFOG, MFS_IR, DOTS, ER, and PCPS. |
 | [`analysis/imf/indicators-inventory.json`](indicators-inventory.json) | v1.0 comprehensive IMF inventory (24+ indicators, 10 dataflows) — authoritative machine catalogue. |
 | [`analysis/economic-indicators-inventory.json`](../economic-indicators-inventory.json) | v4.1 multi-provider inventory (IMF-first; WB by reference; SCB via `scripts/scb-context.ts`). |
 
@@ -143,7 +143,7 @@ IMF advertises **~10 req / 5 s**. The client and agentic workflows MUST:
 
 - Prefer the `compare` subcommand (one batched Datamapper call across several countries) or a single `weo` call returning a full series.
 - `sleep 1` between separate `imf-fetch.ts` invocations.
-- Rely on the client's built-in 3× retry with 1s→2s→4s back-off on HTTP 429 / 5xx.
+- Rely on the client's built-in retry on HTTP 429 / 5xx: the default back-off sleeps 1s→2s, and 4s+ applies only when `maxRetries` is increased.
 - Cache raw responses under `analysis/data/imf/{indicator}/{country}.json` via the `--persist` flag (or `persistIMFData()` for programmatic use).
 - Pre-warm 1 request at workflow start.
 - Target **≤ 10 IMF calls per article**. > 15 is a workflow-design smell.

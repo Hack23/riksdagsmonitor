@@ -163,7 +163,7 @@ graph TD
 > - Unemployment rate — `WEO:LUR`
 > - Exports volume growth — `WEO:TX_RPCH`
 > - Bilateral goods trade — `DOTS:TXG_FOB_USD` (per partner country)
-> - Exchange rate (SEK/USD) — `IFS:ENDA_XDC_USD_RATE`
+> - Exchange rate (SEK/USD) — `ER:ENDA_XDC_USD_RATE`
 >
 > Use `findImfIndicatorsForCommittee('NU')` (commerce) or `findImfIndicatorsForCommittee('AU')` (labour) in [`scripts/imf-context.ts`](../../scripts/imf-context.ts) for a programmatic peer-set query.
 
