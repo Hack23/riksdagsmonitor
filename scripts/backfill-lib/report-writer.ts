@@ -10,13 +10,13 @@
  * file_path,date,subfolder,lang,tier,field,violation_code,before,after,reason
  * ```
  *
- * Each row represents **one** contract violation. A file with three
- * violations produces three rows. `after` is intentionally blank in
- * PR 2 — PRs 3/4/5 will populate it with the planned post-backfill
- * value when they run. An un-violating file still produces one row per
- * tier it qualifies for, with `field`, `violation_code`, and `before`
- * all blank, so reviewers can audit the tier classification
- * independently of the violation set.
+ * Each row represents one (tier, violation) pair. An article with `T`
+ * qualifying tiers and `V` violations emits `T * V` rows; an article
+ * with `T` tiers and **zero** violations still emits `T` rows (one
+ * tier-only row per tier, with `field` / `violation_code` / `before`
+ * blank) so reviewers can audit the tier assignment for green
+ * articles. `after` is intentionally blank in PR 2 — PRs 3/4/5 will
+ * populate it with the planned post-backfill value when they run.
  *
  * Quoting follows RFC 4180 §2.6: fields containing `,`, `"`, CR or LF
  * are double-quoted, and embedded `"` is doubled to `""`. Line endings

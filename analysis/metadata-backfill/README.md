@@ -18,12 +18,14 @@ and consumed by PRs 3 / 4 / 5.
 ## Regenerating the diff report
 
 ```bash
-# 1. Scan every news/*.html and emit today's CSV.
+# 1. Scan every news/*.html and emit today's CSV (UTC date, matching
+#    the CLI's own `isoToday()` default — `date -u` keeps the filename
+#    stable around midnight).
 npm run backfill-metadata -- --dry-run \
-    --output=analysis/metadata-backfill/diff-report-$(date +%F).csv
+    --output=analysis/metadata-backfill/diff-report-$(date -u +%F).csv
 
 # 2. Commit the file so reviewers can inspect tier classification.
-git add analysis/metadata-backfill/diff-report-$(date +%F).csv
+git add analysis/metadata-backfill/diff-report-$(date -u +%F).csv
 git commit -m "chore(seo): refresh metadata backfill diff report"
 ```
 
@@ -88,7 +90,7 @@ npx tsx scripts/backfill-article-metadata.ts [flags]
 | `--dry-run` | Scan only; emit CSV; exit `0`. **Default behaviour.** |
 | `--check` | Scan only; emit CSV; exit `1` when any article violates the contract. |
 | `--apply` | **Reserved for PRs 3–5.** Fails fast with exit `2` in PR 2. |
-| `--tier=A\|B\|C\|all` | Restrict classification to a tier subset. `all` is the default. |
+| `--tier=A,B,C\|all` | Restrict classification to a tier subset. Accepts a comma-separated list of `A` / `B` / `C` (e.g. `--tier=A,C`), or the literal `all`. `all` is the default. |
 | `--lang=sv,no,de` | Restrict scan to comma-separated language codes. |
 | `--date-from=YYYY-MM-DD` | Lower bound (inclusive) on article date. |
 | `--date-to=YYYY-MM-DD` | Upper bound (inclusive) on article date. |
@@ -135,10 +137,11 @@ environment-dependent input into the violation messages).
 The CSV is ordered deterministically (alphabetical filename → tier
 order → violation index). When two parallel PRs touch the report:
 
-1. **Do not hand-edit the CSV.** Regenerate it:
+1. **Do not hand-edit the CSV.** Regenerate it (UTC date matches the
+   CLI's own `isoToday()` default):
    ```bash
    npm run backfill-metadata -- --dry-run \
-       --output=analysis/metadata-backfill/diff-report-$(date +%F).csv
+       --output=analysis/metadata-backfill/diff-report-$(date -u +%F).csv
    ```
 2. Commit the regenerated file; the merge is resolved by overwrite.
 3. If two PRs carry *different* `diff-report-YYYY-MM-DD.csv`

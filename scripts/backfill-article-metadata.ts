@@ -22,7 +22,7 @@
  * | `--dry-run`         | Scan only; emit CSV; exit 0. Default behaviour.      |
  * | `--check`           | Scan only; emit CSV; exit non-zero on any violation. |
  * | `--apply`           | Reserved for PRs 3-5. Fails with a pointer.          |
- * | `--tier=A\|B\|C\|all` | Restrict classification to a tier subset.          |
+ * | `--tier=A,B,C\|all` | Restrict classification to a tier subset. Accepts a comma-separated list of `A` / `B` / `C`, or the literal `all` (default). |
  * | `--lang=sv,no`      | Restrict scan to comma-separated lang codes.         |
  * | `--date-from=YYYY-MM-DD` | Lower bound (inclusive) on article date.        |
  * | `--date-to=YYYY-MM-DD`   | Upper bound (inclusive) on article date.        |
