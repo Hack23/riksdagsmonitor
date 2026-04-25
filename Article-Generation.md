@@ -412,9 +412,11 @@ npx tsx scripts/aggregate-analysis.ts --all
 
 | Input | Output |
 |---|---|
-| `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.md` | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` |
+| Canonical analysis `.md` files in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` excluding `README.md`, `article.md`, and `article.<lang>.md` | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` |
 | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/*.md` | Included under `## Per-document intelligence` |
-| Supplementary `.md` files | Appended after the canonical sequence |
+| Supplementary `.md` files in the subfolder excluding `README.md`, `article.md`, and `article.<lang>.md` | Appended after the canonical sequence |
+
+> **Note:** `README.md` is required for the 23-artifact analysis gate and repository readability, but it is intentionally not aggregated into the published `article.md`. Existing `article.md` and `article.<lang>.md` files are also excluded from aggregation.
 
 ### Canonical narrative order
 
