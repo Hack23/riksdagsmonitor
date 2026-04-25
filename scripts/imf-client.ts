@@ -158,15 +158,22 @@ export const IMF_FM_INDICATORS = {
 // ---------------------------------------------------------------------------
 
 /** Shape of the IMF Datamapper JSON response (partial). */
-interface DatamapperResponse {
+export interface DatamapperResponse {
   values?: {
-    [indicatorId: string]: {
-      [countryCode: string]: {
-        [year: string]: number | string | null;
-      };
-    };
+    [indicatorId: string]:
+      | {
+          [countryCode: string]:
+            | {
+                [year: string]: number | string | null | undefined;
+              }
+            | undefined;
+        }
+      | undefined;
   };
 }
+
+/** Defensive parser input: Datamapper can return empty or partial envelopes. */
+export type DatamapperEnvelope = Partial<DatamapperResponse> | null | undefined;
 
 class ImfHttpError extends Error {
   readonly retryable: boolean;
@@ -423,7 +430,7 @@ export function calculateRetryDelay(
  * stubbing `fetch`.
  */
 export function parseDatamapperValues(
-  raw: DatamapperResponse,
+  raw: DatamapperEnvelope,
   weoCode: string,
   iso3: string,
   weoVintage: string,

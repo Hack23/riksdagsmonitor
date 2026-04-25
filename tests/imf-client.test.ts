@@ -563,11 +563,18 @@ describe('parseDatamapperValues', () => {
         },
       },
     };
-    const points = parseDatamapperValues(raw as never, 'NGDP_RPCH', 'SWE', VINTAGE);
+    const points = parseDatamapperValues(raw, 'NGDP_RPCH', 'SWE', VINTAGE);
     expect(points.map((p) => p.date)).toEqual(['2024']);
   });
 
-  it('tolerates a completely empty raw envelope', () => {
+  it('tolerates empty or missing raw envelopes', () => {
     expect(parseDatamapperValues({}, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
+    expect(parseDatamapperValues(null, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
+    expect(parseDatamapperValues(undefined, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
+  });
+
+  it('tolerates partial Datamapper envelope nodes', () => {
+    expect(parseDatamapperValues({ values: { NGDP_RPCH: undefined } }, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
+    expect(parseDatamapperValues({ values: { NGDP_RPCH: { SWE: undefined } } }, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
   });
 });
