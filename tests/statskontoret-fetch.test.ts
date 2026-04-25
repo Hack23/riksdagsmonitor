@@ -110,7 +110,8 @@ describe('Statskontoret CLI budget-outturn source guard', () => {
     // The parseStatskontoretSource guard only validates known keys, so this
     // test exercises the runtime guard inside runBudgetOutturn that was added
     // to prevent myndighetsforteckning being used with the budget-outturn command.
-    // We test the CLI argument parsing is valid but the source flag is accepted.
+    // We test that CLI argument parsing succeeds but the source validation passes
+    // at parse time; the actual rejection occurs inside runBudgetOutturn.
     const parsed = parseStatskontoretArgs([
       'budget-outturn', '--source', 'myndighetsforteckning', '--url', 'https://www.statskontoret.se/x.xlsx',
     ]);

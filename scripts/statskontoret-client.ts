@@ -351,7 +351,7 @@ export function aggregateHeadcountByDepartment(
     const headcountValue = parseStatskontoretSwedishNumber(findField(lookup, ['årsarbetskrafter', 'arsarbetskrafter', 'åa', 'aa']) ?? '');
     if (!year || !department || headcountValue === undefined) continue;
     const authority = findField(lookup, ['myndighet', 'myndighetsnamn', 'namn'])?.trim() ?? '';
-    const key = `${year}\u0000${department}`;
+    const key = `${year}::${department}`;
     const current = aggregate.get(key) ?? { headcount: 0, authorities: new Set<string>() };
     current.headcount += headcountValue;
     if (authority) current.authorities.add(authority);
@@ -360,7 +360,7 @@ export function aggregateHeadcountByDepartment(
 
   return [...aggregate.entries()]
     .map(([key, value]) => {
-      const [yearRaw, department] = key.split('\u0000');
+      const [yearRaw, department] = key.split('::');
       return {
         year: Number.parseInt(yearRaw, 10),
         department,
@@ -505,7 +505,7 @@ export function summarizeBudgetOutturn(
   }>();
 
   for (const row of rows) {
-    const key = `${row.year}\u0000${row.documentType}`;
+    const key = `${row.year}::${row.documentType}`;
     const existing = groups.get(key);
     if (existing) {
       existing.totalOutturn = roundOneDecimal(existing.totalOutturn + row.outturn);

@@ -252,11 +252,7 @@ describe('buildBudgetTimeSeries', () => {
         { År: '2025', Månad: '1', Inkomsttitelnamn: 'C', Utfall: '30', Typ: 'Inkomst' },
       ],
     );
-    // parseBudgetRows order is input order; buildBudgetTimeSeries sorts
-    const { sheets } = {
-      sheets: [{ name: 'Data', rows: [] as readonly (readonly string[])[][] }],
-    };
-    // Build the series from a pre-parsed row set via the sort contract directly
+    // Verify the sort contract that buildBudgetTimeSeries applies
     const sorted = [...rows].sort(
       (a, b) =>
         a.year - b.year ||
@@ -267,7 +263,6 @@ describe('buildBudgetTimeSeries', () => {
     expect(sorted[0].year).toBe(2024);
     expect(sorted[1]).toMatchObject({ year: 2025, month: 1 });
     expect(sorted[2]).toMatchObject({ year: 2025, month: 2 });
-    void sheets; // suppress lint
   });
 
   it('forces documentType when options.documentType overrides sheet-name inference', () => {
