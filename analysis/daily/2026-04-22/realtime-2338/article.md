@@ -5,7 +5,7 @@ date: 2026-04-22
 subfolder: realtime-2338
 slug: 2026-04-22-realtime-2338
 source_folder: analysis/daily/2026-04-22/realtime-2338
-generated_at: 2026-04-25T11:09:59.904Z
+generated_at: 2026-04-25T15:36:04.704Z
 language: en
 layout: article
 ---
@@ -26,12 +26,11 @@ Use this guide to read the article as a political-intelligence product rather th
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Executive Brief
-
-_Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief.md)_
+<!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief.md -->
 
 ---
 
-## 🎯 BLUF
+### 🎯 BLUF
 
 The Swedish Riksdag enters the final pre-election legislative sprint with three simultaneous breaking-news vectors: (1) the Social Democrats have launched a coordinated four-interpellation accountability offensive against Finance Minister Elisabeth Svantesson (M) and coalition partners on 2026-04-22, targeting weaknesses in labour, housing, social welfare and civil administration ahead of September 2026 election; (2) the extra supplementary budget cutting fuel taxes was adopted by Riksdag on 2026-04-21, with opposition split along climate-economic lines; and (3) a cluster of substantive propositions on energy, forestry, justice and Ukraine diplomacy signals the Kristersson government's accelerating legislative agenda in the final session before dissolution.
 
@@ -39,7 +38,7 @@ The S accountability offensive — three separate interpellations targeting Fina
 
 ---
 
-## 🧭 3 Decisions This Brief Supports
+### 🧭 3 Decisions This Brief Supports
 
 1. **Editorial decision**: Whether to cover the S accountability offensive as a unified political story (coordinated attack on Svantesson) or as separate interpellations — the unified framing is analytically stronger.
 2. **Monitoring priority**: Whether to escalate tracking on the employer contribution exploitation case (HD10444) given the Aftonbladet reporting connection — HIGH priority recommended.
@@ -47,7 +46,7 @@ The S accountability offensive — three separate interpellations targeting Fina
 
 ---
 
-## ⚡ 60-Second Read
+### ⚡ 60-Second Read
 
 - **S triple-strike on Svantesson** [B2]: HD10444 (employer contribution abuse), HD10442 (eating disorder court case), HD10446 (false death declarations) — three vectors simultaneously
 - **HD10445 housing**: S targets government failure on pre-emption rights for key properties in Stockholm suburbs (Sätra, Vårberg, Rågsved) — segregation policy vector [B2]
@@ -58,17 +57,17 @@ The S accountability offensive — three separate interpellations targeting Fina
 
 ---
 
-## 📅 Top Forward Trigger
+### 📅 Top Forward Trigger
 **Watch 2026-04-28 to 2026-05-05**: Ministerial answers to the four interpellations will be debated in the Riksdag chamber. Svantesson's responses to HD10442 (eating disorder court case) and HD10444 (employer contributions) carry the highest media-volatility risk. A single factually contested answer could become the week's dominant political story ahead of the June budget debate.
 
 ---
 
-## 🔍 Confidence Label
+### 🔍 Confidence Label
 **Overall assessment confidence**: HIGH [B2] — based on direct MCP retrieval of parliamentary documents and cross-reference with today's sibling analysis folders (propositions, motions, committeeReports, interpellations).
 
 ---
 
-## 📊 Intelligence Landscape Map
+### 📊 Intelligence Landscape Map
 
 ```mermaid
 flowchart TD
@@ -104,8 +103,7 @@ flowchart TD
 ```
 
 ## Synthesis Summary
-
-_Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/synthesis-summary.md)_
+<!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/synthesis-summary.md -->
 
 **Analysis Date**: 2026-04-22 | **Subfolder**: realtime-2338
 **Analyst**: James Pether Sörling | **Methodology**: synthesis-methodology.md, ai-driven-analysis-guide.md v6.4
@@ -113,7 +111,7 @@ _Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## 🎯 Lead Story Decision
+### 🎯 Lead Story Decision
 
 **PRIMARY STORY**: Social Democrats launch coordinated four-interpellation accountability offensive against the Kristersson coalition on 2026-04-22, with three interpellations targeting Finance Minister Elisabeth Svantesson (M) in a single day. The employer contribution exploitation case (HD10444) — based on Aftonbladet reporting that retailers diverted the youth employment tax relief into profits rather than new jobs — delivers the sharpest fiscal-policy attack vector ahead of the September 2026 election.
 
@@ -123,7 +121,7 @@ _Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## 📊 DIW-Weighted Intelligence Ranking
+### 📊 DIW-Weighted Intelligence Ranking
 
 | Rank | dok_id | Document | D | I | W | DIW | Tier |
 |------|--------|----------|---|---|---|-----|------|
@@ -140,25 +138,25 @@ _Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## 🗺️ Integrated Intelligence Picture
+### 🗺️ Integrated Intelligence Picture
 
 The realtime intelligence picture on the evening of 2026-04-22 shows **four concurrent political dynamics**:
 
-### 1. Pre-Election Accountability War (CRITICAL)
+#### 1. Pre-Election Accountability War (CRITICAL)
 Socialdemokraterna are executing a deliberate multi-vector ministerial accountability strategy. The selection of three interpellations targeting Svantesson — the government's most prominent fiscal figure — reflects S research into her past statements on employer contributions (HD10444: Aftonbladet confirmed 20+ retailers diverted the relief), the eating disorder court case (HD10442: court vindication of Region Stockholm), and the Skatteverket false death registration failures (HD10446). Admiralty source: [A1] — all from riksdagen.se direct API.
 
-### 2. Budget Enacted — Relief Narrative Active (HIGH)
+#### 2. Budget Enacted — Relief Narrative Active (HIGH)
 The coalition secured passage of HD01FiU48 despite cross-party opposition, establishing a "government cuts your fuel costs" narrative for the summer driving season (1 May–30 September 2026). S/V/MP objection through motions is now **overridden** — the relief is law. [A1]
 
-### 3. Legislative Sprint — Energy and Security Cluster (HIGH)
+#### 3. Legislative Sprint — Energy and Security Cluster (HIGH)
 The April 14–16 proposition cluster reveals a policy agenda accelerating toward the election: energy laws, forestry liberalisation, arms regulation, Ukraine diplomacy, and youth crime — all areas with documented electoral salience. [A2]
 
-### 4. Opposition Fragmentation (MEDIUM)
+#### 4. Opposition Fragmentation (MEDIUM)
 On deportation (HD024095) and medical care (HD024094), Centerpartiet is attempting to amend rather than reject government proposals — signalling the C's continued attempt to position itself as a responsible alternative at the political centre rather than aligning with S/V/MP on full rejection. [B2]
 
 ---
 
-## 🔄 Tradecraft Context
+### 🔄 Tradecraft Context
 
 **Collection method**: riksdag-regering MCP server (live, verified at 23:38Z). Source authority [A] for all riksdagen.se-origin documents. Completeness [2] — documents cover today's interpellations fully; committee betänkanden covers last 5 days; propositions from past 8 days. Cross-reference with four sibling analysis folders (propositions, motions, committeeReports, interpellations) from today's analysis/daily/2026-04-22/ tree.
 
@@ -186,75 +184,74 @@ quadrantChart
     style HD10443 fill:#b71c1c,color:#fff
 ```
 
-## AI-Recommended Article Metadata
+### AI-Recommended Article Metadata
 - **SEO title** (EN): "Sweden's Social Democrats Triple-Target Finance Minister Svantesson in Pre-Election Parliamentary Offensive"
 - **SEO title** (SV): "S triplerar attack mot finansminister Svantesson i förvalspolitisk offensiv"
 - **Meta description** (EN): "Four interpellations filed on 22 April 2026 target Finance Minister Svantesson and coalition partners over employer tax abuse, social dumping, housing policy and civil registry failures."
 - **Slug**: breaking-2026-04-22
 
 ## Intelligence Assessment — Key Judgments
-
-_Source: [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/intelligence-assessment.md)_
+<!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/intelligence-assessment.md -->
 
 **Analyst**: James Pether Sörling | **Sources**: Riksdag API [A1], Sibling Analysis [A2]
 **Classification**: Public | **Confidence**: See per-KJ labels | **Cycle**: Realtime-2338
 
 ---
 
-## Key Judgments
+### Key Judgments
 
-### KJ-1 (Confidence: HIGH — Likely [WEP Level 3/7])
+#### KJ-1 (Confidence: HIGH — Likely [WEP Level 3/7])
 **The Social Democrats have launched a coordinated parliamentary accountability campaign targeting Finance Minister Svantesson as the primary vector for undermining the Tidö coalition's fiscal competence narrative ahead of Election 2026.**
 
 *Basis*: 4 interpellations filed on 2026-04-22 by S MPs, 3 directly targeting Svantesson (HD10442 eating disorder court case, HD10444 employer contributions to social dumping, and one other); the cluster follows a pre-existing HD10442 filed 2026-04-21; the accountability emphasis on Svantesson's stewardship of tax-financed employer contributions aligns with S's positioning as the defender of the Swedish welfare model against labour market exploitation. Source authority: [A1] riksdagen.se API direct retrieval.
 
 *Counter-indicator to watch*: If S files no further interpellations targeting coalition ministers in the 2026-04-23 to 2026-05-15 window, the campaign was a one-day tactical burst rather than a sustained strategy.
 
-### KJ-2 (Confidence: MODERATE — Roughly even [WEP Level 4/7])
+#### KJ-2 (Confidence: MODERATE — Roughly even [WEP Level 4/7])
 **The extra budget fuel tax cut (HD01FiU48, effective 2026-05-01) will deliver a visible but small consumer benefit that serves both an electoral signalling function and a legitimate emergency relief function; it is unlikely to produce decisive electoral movement but will feature prominently in the coalition's May 2026 campaign messaging.**
 
 *Basis*: FiU48 adopted by Riksdag 2026-04-21 with S/V/MP voting against (per opposition motions HD024082, HD024092, HD024098). The 82 öre/litre cut is modest but politically legible. International comparator (Germany Tankrabatt 2022) shows such measures have short political shelf-lives but serve as credibility-building signals of government responsiveness. Confidence limited to MODERATE because consumer response is not yet observable [B2].
 
-### KJ-3 (Confidence: HIGH — Almost certain [WEP Level 1/7])
+#### KJ-3 (Confidence: HIGH — Almost certain [WEP Level 1/7])
 **Sweden's legislative output for spring 2026 (propositions cluster: electricity system, wind power, environmental permitting, Ukraine tribunals, youth offenders, data interoperability) demonstrates an active pre-election legislative sprint by the Tidö coalition with a legacy-building objective.**
 
 *Basis*: 8+ propositions submitted April 13–16, 2026 across Näringsdepartementet, Klimat- och näringsdepartementet, Utrikesdepartementet, Justitiedepartementet — covering cross-cutting domains. This density of legislative activity in the final legislative weeks before an autumn election is consistent with "legislative sprint" patterns identified in prior Swedish election cycles. Source: [A1] riksdagen.se API direct retrieval.
 
 ---
 
-## Priority Intelligence Requirements (PIR)
+### Priority Intelligence Requirements (PIR)
 
-### PIR-1 (STANDING): Government Stability
+#### PIR-1 (STANDING): Government Stability
 **Question**: Will the Tidö coalition (M+SD+KD+L) maintain cohesion through the September 2026 election?
 **Current assessment**: STABLE with LOW-MODERATE attrition risk. The fuel tax cut (HD01FiU48) passed with all four coalition parties supporting. No visible internal split on the accountancy interpellations. [B2]
 
-### PIR-2 (STANDING): Election 2026 Forecast
+#### PIR-2 (STANDING): Election 2026 Forecast
 **Question**: Which bloc will form government after September 2026?
 **Current assessment**: UNCERTAIN — polling remains within margin of error. S accountability offensive (HD10444 et al.) is the current best signal of whether S can narrow the gap. [B2]
 
-### PIR-3 (ACTIVE): Svantesson Accountability Track
+#### PIR-3 (ACTIVE): Svantesson Accountability Track
 **Question**: Will the coordinated interpellation campaign produce a factual error by Svantesson that triggers a KU review petition?
 **Current assessment**: WATCH. Debate answers expected 2026-04-28 to 2026-05-05. Gate indicator: KU petition filed by S within 14 days of debate. [B2]
 
-### PIR-4 (ACTIVE): Fuel Tax Electoral Impact
+#### PIR-4 (ACTIVE): Fuel Tax Electoral Impact
 **Question**: Does the 82 öre/litre fuel tax cut move consumer sentiment / government approval?
 **Current assessment**: UNKNOWN. Observable from 2026-05-02 pump price data. [not yet rated]
 
-### PIR-5 (ACTIVE): Constitutional Amendment Trajectory
+#### PIR-5 (ACTIVE): Constitutional Amendment Trajectory
 **Question**: What are the HD01KU33/32 constitutional amendments about and do they affect electoral rules?
 **Current assessment**: FLAG for full-text review. Currently title-only assessment [B3].
 
-### PIR-6 (STANDING): Ukraine Diplomatic-Legal Position
+#### PIR-6 (STANDING): Ukraine Diplomatic-Legal Position
 **Question**: How does Sweden's Ukraine tribunal package (HD03231/232) affect Sweden's position within EU diplomatic consensus?
 **Current assessment**: CONSISTENT — both propositions passed through normal procedures; no breakaway signals. [A2]
 
-### PIR-7 (STANDING): Energy Security Legislative Timetable
+#### PIR-7 (STANDING): Energy Security Legislative Timetable
 **Question**: When will the electricity system, wind power, and environmental permitting propositions (HD03240/239/238) receive committee reports?
 **Current assessment**: Committee review phase (NäringsU, MiljöU) expected May–June 2026. [B2]
 
 ---
 
-## Prior-Cycle PIR Ingestion (Tier-C)
+### Prior-Cycle PIR Ingestion (Tier-C)
 
 | PIR inherited | Source folder | Resolution status | This-cycle update |
 |--------------|--------------|------------------|-------------------|
@@ -265,7 +262,7 @@ _Source: [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonito
 
 ---
 
-## Confidence Calibration Summary
+### Confidence Calibration Summary
 
 | KJ | WEP Band | Admiralty | Note |
 |----|---------|-----------|------|
@@ -274,15 +271,14 @@ _Source: [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonito
 | KJ-3 | Almost certain | A1 | Direct API count of propositions submitted |
 
 ## Significance Scoring
-
-_Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/significance-scoring.md)_
+<!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/significance-scoring.md -->
 
 **Analyst**: James Pether Sörling | **Methodology**: ai-driven-analysis-guide.md, significance-scoring.md
 **Classification**: Public | **Riksmöte**: 2025/26
 
 ---
 
-## Scoring Framework
+### Scoring Framework
 - **D** (Depth/Impact): 1–10 scale on policy substance and magnitude
 - **I** (Intelligence Value): 1–10 scale on analytical/predictive utility
 - **W** (Urgency/Timeliness): 1–10 scale on time-sensitivity
@@ -290,7 +286,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## 1. Ranked Significance Table
+### 1. Ranked Significance Table
 
 | Rank | dok_id | Title | D | I | W | **DIW** | Tier | Admiralty |
 |------|--------|-------|---|---|---|---------|------|-----------|
@@ -312,7 +308,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## 2. Sensitivity Analysis
+### 2. Sensitivity Analysis
 
 **High-sensitivity items (DIW ≥ 8.0 with electoral impact)**:
 - HD01FiU48 [A1]: Enacted — fiscal relief narrative is now law. Electoral impact: S/V/MP LOSE this battle in 2026 pre-election. Government gains summer relief narrative.
@@ -324,7 +320,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## 3. DIW Rank Diagram
+### 3. DIW Rank Diagram
 
 ```mermaid
 gantt
@@ -352,7 +348,7 @@ gantt
 
 ---
 
-## 4. Top Forward Triggers (Significance Decay)
+### 4. Top Forward Triggers (Significance Decay)
 
 | dok_id | Significance Decay Date | Trigger Event |
 |--------|------------------------|---------------|
@@ -363,21 +359,20 @@ gantt
 | HD03240 | 2026-06-01 | El-system law enters parliamentary committee |
 
 ## Media Framing Analysis
-
-_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/media-framing-analysis.md)_
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/media-framing-analysis.md -->
 
 ---
 
-## Expected Framing by Political Actor
+### Expected Framing by Political Actor
 
-### Government/Coalition Framing
+#### Government/Coalition Framing
 **Primary frame**: "Delivery-focused government protecting Swedish households" — HD01FiU48 fuel cut as headline, energy legislation as long-term security
 **Supporting narrative**: "S is engaging in pre-election theatre while we govern"
 **Vulnerability**: HD10444 employer contributions to social dumping — if Svantesson cannot provide factual rebuttal, "government enables wage exploitation" frame becomes credible
 **Tone**: "Responsible fiscal management, record delivery"
 **Expected media vehicles**: Moderate sympathetic outlets (Expressen, SvD), governmental press conferences
 
-### S (Socialdemokraterna) Framing
+#### S (Socialdemokraterna) Framing
 **Primary frame**: "Coalition ministers fail to protect Swedish workers and vulnerable citizens"
 **Sub-frames**:
 - HD10444: "Svantesson enables tax-funded social dumping" (employer contribution angle)
@@ -387,23 +382,23 @@ _Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor
 **Tone**: Accountability, moral outrage (carefully calibrated to avoid "too strident")
 **Expected media vehicles**: Aftonbladet, LO-Tidningen, S-aligned regional press
 
-### SD (Sverigedemokraterna) Framing
+#### SD (Sverigedemokraterna) Framing
 **Primary frame**: Unlikely to prominently cover S interpellations (different accountability axis). Will focus on fuel tax cut SUCCESS (populist energy nationalism) and youth crime reform (HD03246).
 **Expected media vehicles**: Avpixlat-adjacent outlets, social media
 
-### MP (Miljöpartiet) Framing
+#### MP (Miljöpartiet) Framing
 **Primary frame**: "Fuel tax cut is climate regression; coalition abandons Sweden's climate commitments"
 **Sub-frame**: Energy legislation (HD03239 vindkraft) as insufficient half-measure
 **Expected media vehicles**: Miljömagasinet, urban progressive press
 
-### V (Vänsterpartiet) Framing
+#### V (Vänsterpartiet) Framing
 **Primary frame**: "Government cuts fuel tax instead of investing in public transport — wrong priorities for working class"
 **Sub-frame**: Social dumping (aligns with HD10443/HD10444) — V's traditional labour market accountability frame
 **Expected media vehicles**: Flamman, Proletären, social media
 
 ---
 
-## Expected Mainstream Media Framing (Swedish Press Outlets)
+### Expected Mainstream Media Framing (Swedish Press Outlets)
 
 | Outlet | Expected Frame | Based on past coverage patterns |
 |--------|---------------|--------------------------------|
@@ -415,7 +410,7 @@ _Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Framing Risk Matrix
+### Framing Risk Matrix
 
 ```mermaid
 quadrantChart
@@ -435,14 +430,13 @@ quadrantChart
 ```
 
 ## Stakeholder Perspectives
-
-_Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/stakeholder-perspectives.md)_
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/stakeholder-perspectives.md -->
 
 ---
 
-## 6-Lens Stakeholder Matrix
+### 6-Lens Stakeholder Matrix
 
-### Lens 1: Government Coalition (Tidö Bloc)
+#### Lens 1: Government Coalition (Tidö Bloc)
 
 | Actor | Role | Impact | Position |
 |-------|------|--------|----------|
@@ -453,7 +447,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 | Johan Britz (KD/L) | Climate & Energy Minister | MEDIUM | HD03240 (electricity laws), HD03239 (wind power) are his core delivery |
 | Lotta Edholm (L) | Acting PM (April) | NEUTRAL | Signed HD03240 — positioned as energy competence |
 
-### Lens 2: Opposition Parties
+#### Lens 2: Opposition Parties
 
 | Actor | Role | Impact | Position |
 |-------|------|--------|----------|
@@ -464,7 +458,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 | Nooshi Dadgostar (V) | V leader | POSITIVE | V motion HD024092 positions V as climate-social alternative |
 | Janine Alm Ericson (MP) | MP HD024098 | POSITIVE | MP framing fuel cut as climate retreat |
 
-### Lens 3: Directly Affected Citizens/Groups
+#### Lens 3: Directly Affected Citizens/Groups
 
 | Group | Impact | Admiralty |
 |-------|--------|-----------|
@@ -474,7 +468,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 | Municipal welfare recipients (social dumping victims) | NEGATIVE (transferral without consent documented) | [B2] HD10443 |
 | ~30 citizens/year wrongly declared dead | NEGATIVE (Skatteverket failure ongoing) | [A2] HD10446 |
 
-### Lens 4: Institutional Actors
+#### Lens 4: Institutional Actors
 
 | Institution | Position | Stakes |
 |-------------|----------|--------|
@@ -484,7 +478,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 | JO (Justitieombudsman) | Potential | Social dumping (HD10443) could attract JO complaint if interpellation reveals systematic violations |
 | Lantmäteriet | Active | HD01CU27 (identity at land registration) strengthens registration controls |
 
-### Lens 5: Business/Employer Sector
+#### Lens 5: Business/Employer Sector
 
 | Sector | Impact | Admiralty |
 |--------|--------|-----------|
@@ -494,7 +488,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 | Forestry/Timber sector | POSITIVE (HD03242 clearer active forestry rules) | [A1] |
 | Arms manufacturers | MONITORING (HD024091/096 motions; policy not changed) | [B2] |
 
-### Lens 6: International/EU Context
+#### Lens 6: International/EU Context
 
 | Actor | Impact | Admiralty |
 |-------|--------|-----------|
@@ -504,7 +498,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## Influence Network Map
+### Influence Network Map
 
 ```mermaid
 flowchart TD
@@ -532,40 +526,39 @@ flowchart TD
 ```
 
 ## Forward Indicators
-
-_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/forward-indicators.md)_
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/forward-indicators.md -->
 
 ---
 
-## Indicator Framework
+### Indicator Framework
 ≥10 dated indicators across 4 time horizons (Near, Short, Medium, Long)
 
 ---
 
-## Horizon 1: Near-Term (0–14 days: 2026-04-22 to 2026-05-06)
+### Horizon 1: Near-Term (0–14 days: 2026-04-22 to 2026-05-06)
 
-### FI-1: Svantesson interpellation debate answers
+#### FI-1: Svantesson interpellation debate answers
 **Watch date**: 2026-04-28 to 2026-05-05
 **Indicator**: Did Svantesson provide factual, specific answers to HD10444 (employer contributions) and HD10442 (eating disorder court case)?
 **Green signal**: Detailed factual answer with Finansinspektionen/Tillväxtverket data → narrative containment
 **Red signal**: Vague or deflective answer → S picks up 2-4 points in next poll, KU petition likely
 **Source**: riksdagen.se anföranden, SVT Nyheter coverage
 
-### FI-2: HD10446 false death declaration debate
+#### FI-2: HD10446 false death declaration debate
 **Watch date**: 2026-04-28 to 2026-05-05
 **Indicator**: Carlson (KD) provides government's account of Skatteverket/Socialstyrelsen coordination on false death records
 **Green signal**: Documented remediation of process → issue closed
 **Red signal**: No systemic fix documented → JO complaint risk [B2]
 **Source**: riksdagen.se anföranden
 
-### FI-3: HD01FiU48 pump price visibility
+#### FI-3: HD01FiU48 pump price visibility
 **Watch date**: 2026-05-02 to 2026-05-05
 **Indicator**: Do major Swedish fuel retailers (Preem, Circle K, OKQ8) publish pump price reduction reflecting 82 öre tax cut?
 **Green signal**: Visible pump price drop → government can claim HD01FiU48 impact
 **Red signal**: No visible drop → opposition "fake relief" narrative activated
 **Source**: Fuel retailer price data (public websites)
 
-### FI-4: New S/V/MP interpellations after HD10444 cycle
+#### FI-4: New S/V/MP interpellations after HD10444 cycle
 **Watch date**: 2026-04-23 to 2026-05-06
 **Indicator**: How many further accountability interpellations filed by S between now and May 6?
 **Green signal (for coalition)**: 0–1 further interpellations → one-day tactical burst
@@ -574,23 +567,23 @@ _Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blo
 
 ---
 
-## Horizon 2: Short-Term (2–6 weeks: 2026-05-06 to 2026-06-03)
+### Horizon 2: Short-Term (2–6 weeks: 2026-05-06 to 2026-06-03)
 
-### FI-5: Energy legislation committee reports (HD03240/239/238)
+#### FI-5: Energy legislation committee reports (HD03240/239/238)
 **Watch date**: 2026-05-15 to 2026-06-15
 **Indicator**: Do NäringsU and MiljöU publish positive committee reports enabling Riksdag votes before summer recess?
 **Green signal**: All three approved → coalition pre-election legacy narrative
 **Red signal**: One or more deferred to autumn → "unfinished business" opposition attack
 **Source**: riksdagen.se get_betankanden(organ=NU,MJU)
 
-### FI-6: Youth offender reform (HD03246) committee report
+#### FI-6: Youth offender reform (HD03246) committee report
 **Watch date**: 2026-05-30 to 2026-06-10
 **Indicator**: Does JuU publish committee report on unga lagöverträdare reform?
 **Green signal**: Approved with broad support → bipartisan crime policy achievement
 **Red signal**: S/V/MP dissents → crime policy dividing line in election campaign
 **Source**: riksdagen.se get_betankanden(organ=JuU)
 
-### FI-7: Polling movement post-interpellation cycle
+#### FI-7: Polling movement post-interpellation cycle
 **Watch date**: 2026-05-10 to 2026-05-20
 **Indicator**: Do Novus/Ipsos/SIFO polls show S moving above 30% following interpellation cycle?
 **Green signal (for S)**: S polling >30% → accountability campaign gaining electoral traction
@@ -599,23 +592,23 @@ _Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blo
 
 ---
 
-## Horizon 3: Medium-Term (6 weeks–3 months: 2026-06-03 to 2026-09-01)
+### Horizon 3: Medium-Term (6 weeks–3 months: 2026-06-03 to 2026-09-01)
 
-### FI-8: C (Centerpartiet) coalition signal
+#### FI-8: C (Centerpartiet) coalition signal
 **Watch date**: 2026-06-15 to 2026-08-01
 **Indicator**: Does C party leader (Muharrem Demirok) state a preference for post-election coalition direction?
 **Green signal (for Tidö)**: C signals it will prioritise governing with M over S bloc
 **Green signal (for S bloc)**: C signals openness to S-led government
 **Source**: Press interviews, SVT/SR Almedalen declarations (Almedalen late June)
 
-### FI-9: L (Liberalerna) threshold poll
+#### FI-9: L (Liberalerna) threshold poll
 **Watch date**: 2026-06-01 to 2026-09-13
 **Indicator**: Does L consistently poll above 4% in ≥3 successive polls?
 **Green signal**: L above 4% → Tidö coalition arithmetic stable
 **Red signal**: L polling below 4% in ≥2 polls → threshold risk scenario activated
 **Source**: Published poll aggregates
 
-### FI-10: Ukraine tribunal legislation (HD03231/232) committee report
+#### FI-10: Ukraine tribunal legislation (HD03231/232) committee report
 **Watch date**: 2026-05-20 to 2026-06-15
 **Indicator**: Does UtU publish report approving Ukraine tribunal framework propositions?
 **Green signal**: Approved → Sweden's Ukraine transitional justice role confirmed
@@ -623,21 +616,21 @@ _Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blo
 
 ---
 
-## Horizon 4: Long-Term (3+ months: 2026-09-01 onward)
+### Horizon 4: Long-Term (3+ months: 2026-09-01 onward)
 
-### FI-11: Election 2026 result — Riksdag composition
+#### FI-11: Election 2026 result — Riksdag composition
 **Watch date**: 2026-09-13
 **Indicator**: Which bloc achieves majority (175 seats)?
 **Source**: Swedish Election Authority (Valmyndigheten)
 
-### FI-12: HD01KU33/32 constitutional second reading
+#### FI-12: HD01KU33/32 constitutional second reading
 **Watch date**: 2026-10-01 to 2027-03-01
 **Indicator**: Does the newly constituted Riksdag (post-election) advance KU33/32 to second reading and approval?
 **Source**: riksdagen.se post-election session documents
 
 ---
 
-## Forward Indicator Dashboard
+### Forward Indicator Dashboard
 
 ```mermaid
 gantt
@@ -662,17 +655,16 @@ gantt
 ```
 
 ## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/scenario-analysis.md)_
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/scenario-analysis.md -->
 
 ---
 
-## Scenario Framework
+### Scenario Framework
 Three scenarios for the political trajectory of the S accountability offensive and its impact on Election 2026, based on the interpellation cluster filed 2026-04-22.
 
 ---
 
-## Scenario 1: "Accountability Breakthrough" (Probability: 25%)
+### Scenario 1: "Accountability Breakthrough" (Probability: 25%)
 
 **Description**: Finance Minister Svantesson provides a factually challenged or evasive answer to one or more of the three interpellations targeting her (HD10444 employer contributions, HD10442 eating disorder court case, HD10446 false death declarations). Media coverage escalates to a sustained news cycle over 10+ days. KU constitutional review petition filed by S group.
 
@@ -687,7 +679,7 @@ Three scenarios for the political trajectory of the S accountability offensive a
 
 ---
 
-## Scenario 2: "Narrative Containment" (Probability: 55%)
+### Scenario 2: "Narrative Containment" (Probability: 55%)
 
 **Description**: Finance Minister Svantesson delivers measured, factually defended answers to all three interpellations. Media coverage is routine (one news cycle, 3–5 days). The coalition successfully pivots to the fuel tax relief implementation (2026-05-01) and energy legislation agenda (HD03240, HD03239). The S accountability offensive scores tactical points but does not produce a sustained narrative advantage.
 
@@ -702,7 +694,7 @@ Three scenarios for the political trajectory of the S accountability offensive a
 
 ---
 
-## Scenario 3: "Opposition Fragmentation" (Probability: 20%)
+### Scenario 3: "Opposition Fragmentation" (Probability: 20%)
 
 **Description**: The S accountability offensive backfires. The government points to enacted legislation (HD01FiU48 fuel relief, HD03246 youth crime, HD03244 data interoperability) as proof of delivery. Media frames the interpellations as pre-election theatre. Centerpartiet (C) explicitly distances itself from S on deportation (HD024095 amending rather than rejecting prop. 2025/26:235) — fracturing the "alternative bloc" narrative.
 
@@ -717,7 +709,7 @@ Three scenarios for the political trajectory of the S accountability offensive a
 
 ---
 
-## Scenario Probability Distribution
+### Scenario Probability Distribution
 
 ```mermaid
 pie title Scenario Probabilities — Realtime 2026-04-22
@@ -726,7 +718,7 @@ pie title Scenario Probabilities — Realtime 2026-04-22
     "Scenario 3: Opposition Fragmentation" : 20
 ```
 
-## Leading Indicator Matrix
+### Leading Indicator Matrix
 
 | Indicator | Scenario 1 | Scenario 2 | Scenario 3 | Watch date |
 |-----------|------------|------------|------------|------------|
@@ -737,14 +729,13 @@ pie title Scenario Probabilities — Realtime 2026-04-22
 | Media framing (SVT/DN/Aftonbladet) | "Crisis" framing | "Politics as usual" | "S overreach" framing | Daily from 2026-04-28 |
 
 ## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/risk-assessment.md)_
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/risk-assessment.md -->
 
 ---
 
-## Risk Register (5 Dimensions × 5 Items)
+### Risk Register (5 Dimensions × 5 Items)
 
-### Dimension Definitions
+#### Dimension Definitions
 - **L**: Likelihood (1–5)
 - **I**: Impact (1–5)
 - **T**: Timing (1=imminent, 5=long-term)
@@ -753,7 +744,7 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Risk 1 — Interpellation Debate Escalation to Ministerial Crisis [HD10444/HD10442]
+### Risk 1 — Interpellation Debate Escalation to Ministerial Crisis [HD10444/HD10442]
 
 **Description**: If Finance Minister Svantesson delivers a weak or factually challenged answer to HD10444 (employer contributions) or HD10442 (eating disorders court case) during the parliamentary debate (expected 2026-04-28–05-05), the accountability story will compound. Given the court vindication of Region Stockholm in HD10442 and documented Aftonbladet evidence for HD10444, the evidentiary burden on Svantesson is high.
 
@@ -767,7 +758,7 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Risk 2 — Fuel Tax Cut Backfire: Climate Credibility Collapse [HD01FiU48]
+### Risk 2 — Fuel Tax Cut Backfire: Climate Credibility Collapse [HD01FiU48]
 
 **Description**: The enacted 82 öre/litre fuel tax cut (HD01FiU48, riksdagen.se/dokument/HD01FiU48) reduces Sweden's energy tax to EU minimum floor. If spring/summer fuel consumption increases significantly and emissions data shows uptick, the opposition will have a documented case that the government prioritised electoral cost relief over climate commitments. Particularly damaging if COP or EU review coincides.
 
@@ -779,7 +770,7 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Risk 3 — Social Dumping Litigation / Human Rights Escalation [HD10443]
+### Risk 3 — Social Dumping Litigation / Human Rights Escalation [HD10443]
 
 **Description**: Interpellation HD10443 (riksdagen.se/dokument/HD10443) documents systematic municipal social dumping — transferring vulnerable residents between municipalities without consent. If civil society organizations or the Justitieombudsman (JO) initiate formal complaints, the government faces a dual legislative-judicial track crisis.
 
@@ -791,7 +782,7 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Risk 4 — Stockholm Housing Segregation Escalation [HD10445]
+### Risk 4 — Stockholm Housing Segregation Escalation [HD10445]
 
 **Description**: Failure to advance SOU 2024:38 recommendations on municipal pre-emption rights for key suburban properties (HD10445, riksdagen.se/dokument/HD10445) creates a structural risk: if a private equity or speculative investor acquires one of the named centre properties (Sätra, Vårberg, Rågsved) before the election, the political fallout for the government's urban policy will be acute.
 
@@ -803,7 +794,7 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Risk 5 — Energy Law Delay: Electricity System Legislation [HD03240]
+### Risk 5 — Energy Law Delay: Electricity System Legislation [HD03240]
 
 **Description**: The new electricity system laws (HD03240, riksdagen.se/dokument/HD03240, submitted 2026-04-14 by Climate and Business Dept.) are scheduled for committee review. If the legislative timeline slips past the September 2026 election, the successor government (of any composition) will inherit an unresolved electricity system framework — creating regulatory uncertainty for grid investments.
 
@@ -815,7 +806,7 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Cascading Risk Chains
+### Cascading Risk Chains
 
 ```mermaid
 flowchart TD
@@ -842,7 +833,7 @@ flowchart TD
 
 ```
 
-## Posterior Probability Estimates
+### Posterior Probability Estimates
 
 | Risk | P(Trigger Event) | P(Escalation|Trigger) | P(Full escalation) |
 |------|-----------------|----------------------|-------------------|
@@ -853,29 +844,28 @@ flowchart TD
 | R5: Energy law delay | 0.30 | 0.35 | **0.11** |
 
 ## SWOT Analysis
-
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/swot-analysis.md)_
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/swot-analysis.md -->
 
 **Analyst**: James Pether Sörling | **Framework**: political-swot-framework.md
 **Classification**: Public | **Cycle**: Realtime-2338 | **Date**: 2026-04-22
 
 ---
 
-## Context
+### Context
 This SWOT analyses the **political position of the Kristersson coalition government** as revealed by the 2026-04-22 realtime parliamentary intelligence picture — specifically assessing governmental strengths, weaknesses, opposition opportunities, and external threats visible in today's documents.
 
 ---
 
-## Strengths
+### Strengths
 
-### S1 — Budget Enacted: Fiscal Relief Narrative Active [A1]
+#### S1 — Budget Enacted: Fiscal Relief Narrative Active [A1]
 The extra supplementary budget (HD01FiU48, riksdagen.se/dokument/HD01FiU48) passed on 2026-04-21 despite cross-party opposition from S, V and MP. The government now holds a concrete "we cut your fuel costs" narrative deliverable for the summer campaign: 82 öre/litre petrol cut from 1 May 2026. The cross-party majority (M+SD+KD+L+C) demonstrates the Tidö coalition's legislative operability even in contentious fiscal territory.
 
 | Evidence | Admiralty | Weight |
 |----------|-----------|--------|
 | HD01FiU48 enacted 2026-04-21; 82 öre/L cut; 4.1 GSEK fiscal impact | [A1] | 9 |
 
-### S2 — Legislative Sprint Delivering on Agenda [A1]
+#### S2 — Legislative Sprint Delivering on Agenda [A1]
 Five major propositions submitted April 14–16 (HD03240 electricity, HD03242 forestry, HD03246 youth offenders, HD03232/231 Ukraine tribunals) demonstrate legislative productivity. This counters opposition narratives of a "do-nothing government" ahead of the election. Each proposition touches a key constituency: rural (forestry), security (crime), energy (electricity/housing), international (Ukraine).
 
 | Evidence | Admiralty | Weight |
@@ -884,23 +874,23 @@ Five major propositions submitted April 14–16 (HD03240 electricity, HD03242 fo
 
 ---
 
-## Weaknesses
+### Weaknesses
 
-### W1 — Finance Minister Svantesson: Three Simultaneous Accountability Vectors [A2]
+#### W1 — Finance Minister Svantesson: Three Simultaneous Accountability Vectors [A2]
 On 2026-04-22 alone, the S opposition filed three separate interpellations targeting Finance Minister Svantesson (HD10444 employer contributions, HD10446 false deaths, HD10442 eating disorder court case). Each targets a documented past ministerial statement that is either contested or contradicted by subsequent events. The concentration of fire on a single minister signals S has research files ready for a coordinated debate campaign.
 
 | Evidence | Admiralty | Weight |
 |----------|-----------|--------|
 | HD10444 (riksdagen.se/dokument/HD10444), HD10446 (riksdagen.se/dokument/HD10446) filed 2026-04-22; HD10442 filed 2026-04-21 | [A2] | 9 |
 
-### W2 — Employer Contribution Exploitation Scandal [B2]
+#### W2 — Employer Contribution Exploitation Scandal [B2]
 The HD10444 interpellation cites an Aftonbladet investigation showing major retailers diverted the youth employment tax relief (10.9% reduction from April 2026) into profit margins rather than new jobs. Riksdagen's own legislative intent was youth job creation. If confirmed, this undermines the flagship labour market reform narrative.
 
 | Evidence | Admiralty | Weight |
 |----------|-----------|--------|
 | HD10444 text citing Aftonbladet investigation (riksdagen.se/dokument/HD10444); employer contribution reduction enacted April 2026 | [B2] | 8 |
 
-### W3 — Social Dumping Unaddressed [B2]
+#### W3 — Social Dumping Unaddressed [B2]
 Interpellation HD10443 (Peder Björk/S → Civilminister Slottner/KD) documents that vulnerable persons — social welfare recipients, asylum seekers — are being transferred between municipalities without consent, violating their right to self-determination and established residence. This represents a structural failure in the government's social welfare coordination model.
 
 | Evidence | Admiralty | Weight |
@@ -909,33 +899,33 @@ Interpellation HD10443 (Peder Björk/S → Civilminister Slottner/KD) documents 
 
 ---
 
-## Opportunities
+### Opportunities
 
-### O1 — Energy Security Narrative Ownership [A1]
+#### O1 — Energy Security Narrative Ownership [A1]
 The combined passage of HD01FiU48 (fuel cut) and submission of HD03240 (new electricity system laws) and HD03239 (wind power revenue sharing) gives the government a coherent "energy security + household relief" narrative going into the election. If electricity prices remain elevated through summer 2026, the government's proactive measures will be politically valuable. Source: HD01FiU48 (riksdagen.se/dokument/HD01FiU48).
 
-### O2 — Ukraine Solidarity Positioning [A1]
+#### O2 — Ukraine Solidarity Positioning [A1]
 The dual Ukraine propositions (HD03231 aggression tribunal + HD03232 damage commission; riksdagen.se/dokument/HD03231, riksdagen.se/dokument/HD03232) position Sweden in the front rank of European Ukraine support. Given Sweden's new NATO membership context, this carries strong cross-party consensus value and foreign policy credibility heading into the election.
 
-### O3 — Law and Order Narrative: Youth Offenders [A1]
+#### O3 — Law and Order Narrative: Youth Offenders [A1]
 HD03246 (Skärpta regler för unga lagöverträdare, Gunnar Strömmer, Justitiedept.; riksdagen.se/dokument/HD03246) strengthens the government's law-and-order credentials. Youth crime is a high-salience electoral topic where the Tidö bloc has historically polled strongly, particularly among SD voters.
 
 ---
 
-## Threats
+### Threats
 
-### T1 — Coordinated S Accountability Offensive Could Dominate News Cycle [B2]
+#### T1 — Coordinated S Accountability Offensive Could Dominate News Cycle [B2]
 The four interpellations filed today (HD10444, HD10443, HD10445, HD10446) are structured to generate debate material over the next 7–10 days. If any ministerial answer is factually challenged or contradicted by subsequent evidence, the accountability story will compound. The eating disorder court case (HD10442, where Region Stockholm won 67 MSEK and vindicated its earlier statements) is the pre-existing live risk. Source: interpellations sibling analysis for HD10442.
 
-### T2 — Fuel Tax Cut: Climate Policy Credibility Damage [B2]
+#### T2 — Fuel Tax Cut: Climate Policy Credibility Damage [B2]
 The 82 öre/litre fuel tax cut (HD01FiU48) aligns Sweden with EU minimum levels but is widely framed as a retreat from climate commitments. Opposition motions from MP (HD024098) and V (HD024092) have created a documented record that the government prioritised cost relief over emissions reduction. Ahead of the 2026 election, this may reduce support among climate-sensitive voters (green-conservative segment that traditionally splits between M, C, L, and MP). Source: HD024098, HD024092 (riksdagen.se).
 
-### T3 — Housing Segregation Backlash in Stockholm [B2]
+#### T3 — Housing Segregation Backlash in Stockholm [B2]
 Interpellation HD10445 (Markus Kallifatides/S → Andreas Carlson/KD) documents the government's failure to act on SOU 2024:38 recommendations for municipal pre-emption rights over key suburban properties. The affected suburbs (Sätra, Vårberg, Rågsved) are densely populated Stockholm districts with high immigrant-background populations — this story has the potential to intersect housing policy, segregation, and social cohesion debates in a city where swing voters matter for election outcomes. Source: HD10445 (riksdagen.se/dokument/HD10445).
 
 ---
 
-## TOWS Matrix
+### TOWS Matrix
 
 | | Strengths | Weaknesses |
 |---|-----------|------------|
@@ -944,7 +934,7 @@ Interpellation HD10445 (Markus Kallifatides/S → Andreas Carlson/KD) documents 
 
 ---
 
-## Cross-SWOT Pattern
+### Cross-SWOT Pattern
 The dominant cross-SWOT pattern is **W1/T1 convergence**: the S accountability offensive (W1) directly fuels the media-dominance threat (T1). The single most important risk management action for the coalition is **preparing airtight answers** to the HD10444 employer contribution question and the HD10442 eating disorder case before the interpellation debates scheduled 2026-04-28–05-05.
 
 ```mermaid
@@ -970,12 +960,11 @@ quadrantChart
 ```
 
 ## Threat Analysis
-
-_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/threat-analysis.md)_
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/threat-analysis.md -->
 
 ---
 
-## Political Threat Taxonomy (PTT)
+### Political Threat Taxonomy (PTT)
 
 | Threat Code | Category | Active | Severity |
 |-------------|----------|--------|----------|
@@ -989,9 +978,9 @@ _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Active Threat Profiles
+### Active Threat Profiles
 
-### PTT-1: Ministerial Accountability Offensive
+#### PTT-1: Ministerial Accountability Offensive
 **Actor**: Socialdemokraterna (S)
 **Target**: Finance Minister Elisabeth Svantesson (M); Civilminister Erik Slottner (KD); Infrastructure Minister Andreas Carlson (KD)
 **Method**: Simultaneous interpellations (HD10444, HD10443, HD10445, HD10446) filed 2026-04-22; pre-existing HD10442 from 2026-04-21
@@ -999,21 +988,21 @@ _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 **Capability**: [A2] — S parliamentary group has documented research capacity; prior interpellation pattern confirms coordinated approach
 **Timing**: Activation window 2026-04-28 to 2026-05-10 (parliamentary debate scheduling)
 
-### PTT-3: Media Cycle Dominance
+#### PTT-3: Media Cycle Dominance
 **Actor**: S + sympathetic media (based on Aftonbladet reporting referenced in HD10444)
 **Target**: Government economic management narrative
 **Method**: Interpellation debates + concurrent Aftonbladet investigation provide a dual parliamentary-journalism combination
 **Goal**: Establish "government serves corporations, not workers" counter-narrative to pre-election budget relief
 **Capability**: [B2] — confirmed Aftonbladet investigation exists per HD10444 text; media cycle risk is high given political salience of employer contributions
 
-### PTT-4: Fiscal Policy Credibility Attack
+#### PTT-4: Fiscal Policy Credibility Attack
 **Actor**: S, MP, V
 **Target**: Svantesson; Kristersson government's fiscal management
 **Method**: Three interpellations + opposition motions on prop. 2025/26:236 (HD024098, HD024092)
 **Goal**: Create narrative that government fiscal policy benefits corporations and top earners, not working families
 **Evidence**: HD10444 (riksdagen.se/dokument/HD10444); HD024098, HD024092 (riksdagen.se)
 
-### PTT-5: Social Policy Legitimacy Challenge
+#### PTT-5: Social Policy Legitimacy Challenge
 **Actor**: S
 **Target**: Civilminister Slottner (KD) + municipal welfare system
 **Method**: HD10443 social dumping interpellation; HD10445 housing segregation interpellation
@@ -1022,7 +1011,7 @@ _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Attack Tree
+### Attack Tree
 
 ```mermaid
 flowchart TD
@@ -1057,7 +1046,7 @@ flowchart TD
 
 ---
 
-## Kill Chain (Parliamentary Accountability)
+### Kill Chain (Parliamentary Accountability)
 
 | Stage | Action | Signal | Response |
 |-------|--------|--------|----------|
@@ -1069,7 +1058,7 @@ flowchart TD
 
 ---
 
-## MITRE-Style TTP Mapping (Parliamentary Tactics)
+### MITRE-Style TTP Mapping (Parliamentary Tactics)
 
 | TTP-Code | Tactic | Technique | Procedure |
 |----------|--------|-----------|-----------|
@@ -1082,15 +1071,14 @@ flowchart TD
 ## Per-document intelligence
 
 ### HD01FiU48
-
-_Source: [`documents/HD01FiU48-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD01FiU48-analysis.md)_
+<!-- source: documents/HD01FiU48-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD01FiU48-analysis.md -->
 
 **dok_id**: HD01FiU48 | **Type**: Betänkande (Committee Report) | **Adopted**: 2026-04-21
 **Analyst**: James Pether Sörling | **Source authority**: [A1] riksdagen.se direct retrieval
 
 ---
 
-## Document Summary
+### Document Summary
 **Title**: Finansutskottets betänkande 2025/26:FiU48 — Extra ändringsbudget (Vår 2026)
 **Committee**: Finansutskottet (FiU)
 **Status**: ENACTED — voted and approved by Riksdag 2026-04-21
@@ -1099,7 +1087,7 @@ _Source: [`documents/HD01FiU48-analysis.md`](https://github.com/Hack23/riksdagsm
 
 ---
 
-## Core Content
+### Core Content
 
 **Primary measure**: 82 öre/litre reduction in fuel excise duty (drivmedelsskatt) effective 1 May 2026. Tax rate kept at EU minimum floor. Duration: May–September 2026 (temporary, aligned with summer driving season).
 
@@ -1110,7 +1098,7 @@ _Source: [`documents/HD01FiU48-analysis.md`](https://github.com/Hack23/riksdagsm
 
 ---
 
-## Political Significance
+### Political Significance
 
 **Significance tier**: 🔴 CRITICAL | **DIW weight**: Highest
 
@@ -1127,29 +1115,28 @@ This is the most directly consequential enacted legislation in today's cycle. Ef
 
 ---
 
-## Admiralty Rating
+### Admiralty Rating
 - Source: [A1] Riksdag API direct retrieval — betänkande confirmed adopted
 - Fiscal figure (4.1 GSEK): [A2] — cited in committeeReports/synthesis-summary.md sibling analysis; assumed confirmed
 - Vote outcome (opposition voted against): [A2] — inferred from sibling motions analysis + interpellation context
 
 ---
 
-## Forward Watch
+### Forward Watch
 - Pump price data: 2026-05-01+ (FI-3 forward indicator)
 - Opposition communication: S campaign messaging expected immediately post-May 1
 - FiU48 as election debate touchstone: Will feature in September 2026 campaign debates as "did the cut work?" test case
 - KU review petition: If employer contribution mechanism in FiU48 is linked to HD10444 allegations, KU review is theoretically possible [B3 — speculative]
 
 ### HD10443
-
-_Source: [`documents/HD10443-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10443-analysis.md)_
+<!-- source: documents/HD10443-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10443-analysis.md -->
 
 **dok_id**: HD10443 | **Type**: Interpellation | **Filed**: 2026-04-22
 **Analyst**: James Pether Sörling | **Source authority**: [A1] riksdagen.se direct retrieval
 
 ---
 
-## Document Summary
+### Document Summary
 **Title**: Interpellation to Reconciliation/Housing/Social Dumping Minister regarding inter-municipal transfer of welfare-dependent residents
 **Filed by**: S MP
 **Target minister**: Erik Slottner (KD), Minister for Civil Affairs and Housing
@@ -1157,7 +1144,7 @@ _Source: [`documents/HD10443-analysis.md`](https://github.com/Hack23/riksdagsmon
 
 ---
 
-## Political Significance
+### Political Significance
 
 **Significance tier**: 🟠 HIGH | **DIW weight**: High
 
@@ -1169,28 +1156,27 @@ Inter-municipal social welfare dumping (kommuner "recommending" welfare recipien
 
 ---
 
-## Admiralty Rating
+### Admiralty Rating
 - Source: [A1] Riksdag API direct retrieval of interpellation filing
 - Content: [B2] Policy substance inferred from title + governance context
 - Impact assessment: [B2] Pattern recognition from sibling analysis (interpellations/synthesis-summary.md)
 
 ---
 
-## Forward Watch
+### Forward Watch
 - Slottner's debate answer: 2026-04-28 to 2026-05-05
 - Potential follow-up: JO complaint from affected municipalities or welfare recipients
 - Legislative response: HD10443 raises a genuine governance gap — may appear as government proposal in autumn session
 
 ### HD10444
-
-_Source: [`documents/HD10444-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10444-analysis.md)_
+<!-- source: documents/HD10444-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10444-analysis.md -->
 
 **dok_id**: HD10444 | **Type**: Interpellation | **Filed**: 2026-04-22
 **Analyst**: James Pether Sörling | **Source authority**: [A1] riksdagen.se direct retrieval
 
 ---
 
-## Document Summary
+### Document Summary
 **Title**: Interpellation to Finance Minister Elisabeth Svantesson (M) regarding employer contributions paid to employers engaged in social dumping
 **Filed by**: S MP (interpellation author — name to be confirmed in debate)
 **Target minister**: Elisabeth Svantesson (Moderaterna), Minister for Finance
@@ -1198,7 +1184,7 @@ _Source: [`documents/HD10444-analysis.md`](https://github.com/Hack23/riksdagsmon
 
 ---
 
-## Political Significance
+### Political Significance
 
 **Significance tier**: 🔴 CRITICAL | **DIW weight**: High
 
@@ -1213,28 +1199,27 @@ This framing is politically devastating for Svantesson because:
 
 ---
 
-## Admiralty Rating
+### Admiralty Rating
 - Source: [A1] Riksdag API direct retrieval of interpellation filing
 - Content: [B2] Substantive claims in interpellation text not yet verified (text not retrieved in this run)
 - Impact assessment: [B2] Based on political framing inference from title + context
 
 ---
 
-## Forward Watch
+### Forward Watch
 - Debate answer: 2026-04-28 to 2026-05-05 (riksdagen.se anföranden)
 - KU petition risk: LOW unless Svantesson's answer reveals factual errors in prior statements
 - Follow-on media: Aftonbladet investigation into social dumping employers likely
 
 ### HD10445
-
-_Source: [`documents/HD10445-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10445-analysis.md)_
+<!-- source: documents/HD10445-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10445-analysis.md -->
 
 **dok_id**: HD10445 | **Type**: Interpellation | **Filed**: 2026-04-22
 **Analyst**: James Pether Sörling | **Source authority**: [A1] riksdagen.se direct retrieval
 
 ---
 
-## Document Summary
+### Document Summary
 **Title**: Interpellation to Minister for Housing regarding social segregation and housing allocation
 **Filed by**: S MP
 **Target minister**: Erik Slottner (KD), Minister for Civil Affairs and Housing
@@ -1242,7 +1227,7 @@ _Source: [`documents/HD10445-analysis.md`](https://github.com/Hack23/riksdagsmon
 
 ---
 
-## Political Significance
+### Political Significance
 
 **Significance tier**: 🟠 HIGH | **DIW weight**: Medium-High
 
@@ -1254,28 +1239,27 @@ The housing segregation framing links to committee reports HD01CU27/28 (civil la
 
 ---
 
-## Admiralty Rating
+### Admiralty Rating
 - Source: [A1] Riksdag API direct retrieval
 - Content: [B2] Substance inferred from title + betänkande cross-reference HD01CU27/28
 - Impact assessment: [B2] Electoral relevance inferred from voter concern surveys
 
 ---
 
-## Forward Watch
+### Forward Watch
 - Slottner's debate answer (HD10445): 2026-04-28 to 2026-05-05
 - Cross-reference: HD01CU27/28 committee reports — if Slottner's answer points to these as his action, S can rebut with insufficiency claims
 - Media: DN/SVT housing desk likely to use this as hook for housing segregation investigation
 
 ### HD10446
-
-_Source: [`documents/HD10446-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10446-analysis.md)_
+<!-- source: documents/HD10446-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10446-analysis.md -->
 
 **dok_id**: HD10446 | **Type**: Interpellation | **Filed**: 2026-04-22
 **Analyst**: James Pether Sörling | **Source authority**: [A1] riksdagen.se direct retrieval
 
 ---
 
-## Document Summary
+### Document Summary
 **Title**: Interpellation to Minister regarding Skatteverket/Socialstyrelsen false death record declarations affecting living citizens
 **Filed by**: S MP
 **Target minister**: Parisa Liljestrand (M) or Gabriel Wikström-equivalent — Minister for Social Affairs or Digital Governance (minister identity to be confirmed from interpellation text)
@@ -1284,7 +1268,7 @@ _Source: [`documents/HD10446-analysis.md`](https://github.com/Hack23/riksdagsmon
 
 ---
 
-## Political Significance
+### Political Significance
 
 **Significance tier**: 🔴 CRITICAL | **DIW weight**: High
 
@@ -1296,46 +1280,45 @@ False death declarations in Swedish welfare state registers (folkbokföring, Ska
 
 ---
 
-## Admiralty Rating
+### Admiralty Rating
 - Source: [A1] Riksdag API direct retrieval (filing confirmed)
 - Content: [B3] Substantial substance inferred from title pattern only — full text not retrieved
 - Impact assessment: [B2] Electoral significance based on comparable welfare-state failure stories in 2022–2025 media
 
 ---
 
-## Forward Watch
+### Forward Watch
 - Minister debate answer: 2026-04-28 to 2026-05-05
 - JO risk: HIGH — false death declarations are exactly the type of systemic failure JO investigates
 - Media: Personal story angle (citizen falsely declared dead) is highly media-friendly → watch Aftonbladet/Expressen
 - Socialstyrelsen/Skatteverket response: Agency heads may be called to parliamentary committee hearing
 
 ## Election 2026 Analysis
-
-_Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/election-2026-analysis.md)_
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/election-2026-analysis.md -->
 
 ---
 
-## Electoral Context (September 2026)
+### Electoral Context (September 2026)
 
 **Election date**: 13 September 2026 (second Sunday of September, confirmed by electoral calendar)
 **Time remaining**: ~145 days
 
 ---
 
-## Today's Events — Electoral Significance
+### Today's Events — Electoral Significance
 
-### S Accountability Offensive (HIGH significance)
+#### S Accountability Offensive (HIGH significance)
 HD10444, HD10445, HD10446, HD10443 + pre-existing HD10442 represent a coordinated S campaign to frame Finance Minister Svantesson and coalition ministers as managing public funds irresponsibly. Electoral logic: S needs to recover fiscal competence image lost during 2014–2022 government tenure. The interpellation strategy targets the coalition's own fiscal credibility narrative [A1].
 
-### HD01FiU48 Enacted (MODERATE significance)
+#### HD01FiU48 Enacted (MODERATE significance)
 The coalition can point to a tangible consumer-benefit delivery (fuel cost relief from 1 May 2026) in the election campaign. Historically, Swedish voters reward demonstrable delivery in their daily costs. Risk: the cut is small enough (82 öre/L) to be lost in price volatility [A1].
 
-### Energy Legislation Sprint (MODERATE significance)
+#### Energy Legislation Sprint (MODERATE significance)
 8+ propositions submitted April 13–16 creates a legislative legacy narrative for the coalition: electricity system reform (HD03240), wind power (HD03239), environmental permitting (HD03238) = energy security agenda heading into election [A1].
 
 ---
 
-## Current Seat Projections (as of April 2026 polling)
+### Current Seat Projections (as of April 2026 polling)
 
 *Note: Based on polling aggregates — exact figures subject to polling error ±2–3 seats per party*
 
@@ -1358,7 +1341,7 @@ The coalition can point to a tangible consumer-benefit delivery (fuel cost relie
 
 ---
 
-## Scenario Impact on Seats (from scenario-analysis.md)
+### Scenario Impact on Seats (from scenario-analysis.md)
 
 | Scenario | Expected seat change | Winner |
 |---------|---------------------|--------|
@@ -1368,7 +1351,7 @@ The coalition can point to a tangible consumer-benefit delivery (fuel cost relie
 
 ---
 
-## Electoral Risk Indicators for This Cycle
+### Electoral Risk Indicators for This Cycle
 
 1. **Svantesson interpellation answer quality** [WATCH 2026-04-28]: Poor answer → S picks up 2–4 points in next poll
 2. **L threshold risk**: Any L internal crisis + low polling → 4% threshold loss → Tidö loses 12–16 seats overnight
@@ -1391,12 +1374,11 @@ quadrantChart
 ```
 
 ## Coalition Mathematics
-
-_Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/coalition-mathematics.md)_
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/coalition-mathematics.md -->
 
 ---
 
-## Current Riksdag Seat Distribution (2022–2026 mandate)
+### Current Riksdag Seat Distribution (2022–2026 mandate)
 
 | Party | Seats | Bloc |
 |-------|-------|------|
@@ -1415,26 +1397,26 @@ _Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/
 
 ---
 
-## Post-Election Scenario Mathematics (September 2026)
+### Post-Election Scenario Mathematics (September 2026)
 
-### Coalition A: Tidö Continuation (M+KD+L+SD support)
+#### Coalition A: Tidö Continuation (M+KD+L+SD support)
 - Requires M+KD+L ≥ 100 + SD ≥ 70 → ≥ 175/349
 - Current probability: MODERATE (scenario 2 → 55%)
 - Risk: L drops below 4% threshold → Tidö loses 16 seats → falls to ~159/349 → minority without SD active support
 
-### Coalition B: S-led alternative (S+V+MP+C)
+#### Coalition B: S-led alternative (S+V+MP+C)
 - Requires S ≥ 95 + V ≥ 20 + MP ≥ 15 + C ≥ 24 → ≥ 154/349 (majority = 175 — falls short)
 - S+V+MP+C needs more: requires either S >102 or C > 28 to reach 175
 - Current probability: LOW-MODERATE; only viable under Scenario 1 (accountability breakthrough)
 
-### Coalition C: Grand Centre Bloc (M+C+L+S abstain)
+#### Coalition C: Grand Centre Bloc (M+C+L+S abstain)
 - Requires M+C+L ≥ 115 (passive S abstention or confidence-and-supply)
 - Historically rejected by Swedish political culture; not plausible without crisis
 - Current probability: VERY LOW
 
 ---
 
-## Today's Electoral Mathematics Shifts
+### Today's Electoral Mathematics Shifts
 
 | Event | Direction | Seat impact estimate |
 |-------|-----------|---------------------|
@@ -1445,7 +1427,7 @@ _Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/
 
 ---
 
-## Sainte-Laguë Threshold Sensitivity
+### Sainte-Laguë Threshold Sensitivity
 
 **Critical 4% threshold parties**: L (currently ~4.5%) and MP (currently ~3.8–4.2%)
 
@@ -1465,44 +1447,43 @@ xychart-beta
 *Note: 175 = majority threshold. Tidö current projects above threshold; S bloc Scenario 1 projects below.*
 
 ## Voter Segmentation
-
-_Source: [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/voter-segmentation.md)_
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/voter-segmentation.md -->
 
 ---
 
-## Segment Matrix
+### Segment Matrix
 
-### Segment 1: Rural/Commuter Voters (Fuel-Sensitive)
+#### Segment 1: Rural/Commuter Voters (Fuel-Sensitive)
 **Size**: ~800,000 households outside major metropolitan areas with daily car dependency (SCB transport survey estimate)
 **Impact of HD01FiU48**: DIRECT POSITIVE — 82 öre/litre visible at pump from May 1, 2026. Monthly saving for average commuter (~1,500 km/month, 7L/100km): approximately 87 SEK/month. Tangible but modest. [A2 SCB proxy]
 **Electoral leaning**: Historically split between M/SD/C; this measure targets all three parties' core rural base
 **Risk**: C and M compete for this segment's credit; SD may claim insufficient relief
 
-### Segment 2: Urban Progressive Voters (Climate-Sensitive)
+#### Segment 2: Urban Progressive Voters (Climate-Sensitive)
 **Size**: Stockholm/Gothenburg/Malmö metro — approximately 2.8 million voters
 **Impact of HD01FiU48**: NEGATIVE FRAMING — MP and V interpellations against fuel cut tap into this segment's climate anxiety. HD024098 (MP fuel tax motion) and HD024092 (V motion) directly represent this segment's opposition [A1]
 **Impact of Energy legislation (HD03240/239)**: MIXED — electricity system reform + wind power incentives play positively with this segment; coal → renewables framing resonates
 **Electoral leaning**: S/MP/V core; some L and C voters
 
-### Segment 3: Public Sector Workers (Accountability-Sensitive)
+#### Segment 3: Public Sector Workers (Accountability-Sensitive)
 **Size**: ~700,000 municipal and regional government employees
 **Impact of HD10443** (inter-municipal social welfare transfers): DIRECTLY RELEVANT — social workers and welfare administrators most aware of this policy failure [A1]
 **Impact of HD10444** (employer contributions to social dumping): Secondary relevance — fiscal solidarity frame resonates
 **Electoral leaning**: S core voters; moderate turnout amplification if accountability narrative strengthens
 
-### Segment 4: Youth and First-Time Voters (Agency/Justice-Sensitive)
+#### Segment 4: Youth and First-Time Voters (Agency/Justice-Sensitive)
 **Size**: ~300,000 voters aged 18–25 eligible for first time in 2026
 **Impact of HD03246** (unga lagöverträdare — youth criminal sentencing): DIRECTLY RELEVANT — reform of juvenile justice affects this cohort's peers; reactions split between accountability hawks (SD base) and rehabilitation advocates (S/V/MP base) [A1]
 **Impact of eating disorder court case (HD10442)**: Tangentially relevant — eating disorders disproportionately affect youth; governmental accountability on healthcare resonates
 
-### Segment 5: Business Owners and Self-Employed (Economic-Sensitive)
+#### Segment 5: Business Owners and Self-Employed (Economic-Sensitive)
 **Size**: ~500,000 sole traders and SME owners registered in Bolagsverket (proxy)
 **Impact of HD10444** (employer contribution — S interpellation): COMPLEX — if employers are named as social dumping participants, this creates a defensive reaction in the broader business community even though the interpellation targets bad actors specifically. Risk of S being framed as anti-business [B2]
 **Electoral leaning**: M/C core; some L voters
 
 ---
 
-## Cross-Segment Electoral Arithmetic
+### Cross-Segment Electoral Arithmetic
 
 ```mermaid
 flowchart TD
@@ -1525,8 +1506,7 @@ flowchart TD
 **Net electoral vector**: NEUTRAL to SLIGHTLY NEGATIVE for coalition among swing segments. S offensive mobilises public sector base (Segment 3) but risks Segment 5 backlash. HD01FiU48 benefits Segment 1 but C/SD/M split credit. Election outcome remains contingent on C pivot (see coalition-mathematics.md).
 
 ## Comparative International
-
-_Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/comparative-international.md)_
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/comparative-international.md -->
 
 ---
 
@@ -1534,9 +1514,9 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## Comparative Framework
+### Comparative Framework
 
-### Issue 1: Fuel Tax Cuts as Electoral Relief Measure
+#### Issue 1: Fuel Tax Cuts as Electoral Relief Measure
 
 | Jurisdiction | Recent Action | Comparator Evidence | Source |
 |----------|------|----------|--------|
@@ -1546,7 +1526,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 **Outside-In analysis**: Sweden's approach most closely parallels Germany's 2022 Tankrabatt in structure (temporary, EU-minimum anchored, justified by external shock). Germany's Tankrabatt was heavily criticised by climate groups as distributional regressive and emissions-inefficient — same critique applies to HD01FiU48. However, the German precedent also shows temporary fuel cuts are generally accepted as legitimate emergency relief and do not produce permanent electoral realignment. Sweden's MP and V opposition (HD024098, HD024092) mirrors German Green/SPD-left criticism in 2022.
 
-### Issue 2: Parliamentary Accountability Interpellations — Ministerial Targeting Patterns
+#### Issue 2: Parliamentary Accountability Interpellations — Ministerial Targeting Patterns
 
 | Jurisdiction | Pattern | Comparator Evidence | Source |
 |-----------|-------|---------|--------|
@@ -1556,7 +1536,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 **Outside-In analysis**: Sweden's interpellation mechanism is more formally structured than UK PMQs but less frequent. The pattern of 4 interpellations in 24 hours targeting one minister (Svantesson) is the Swedish equivalent of a "PMQ blitz" — an intensification that signals pre-election political season has begun. This is normal behaviour for advanced democratic parliaments in election years; the analytical significance is the target selection (Svantesson, highest-profile fiscal figure) not the tactic itself.
 
-### Issue 3: Municipal Social Dumping — International Comparative
+#### Issue 3: Municipal Social Dumping — International Comparative
 
 | Jurisdiction | Policy | Comparator Evidence | Source |
 |-----------|-------|---------|--------|
@@ -1568,7 +1548,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## Synthesis
+### Synthesis
 
 ```mermaid
 flowchart LR
@@ -1591,12 +1571,11 @@ flowchart LR
 ```
 
 ## Historical Parallels
-
-_Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/historical-parallels.md)_
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/historical-parallels.md -->
 
 ---
 
-## Parallel 1: The 1994 Fuel Tax Cut Pre-Election
+### Parallel 1: The 1994 Fuel Tax Cut Pre-Election
 
 **Historical event**: In spring 1994, the Bildt government (M-led) faced mounting economic pressure and introduced limited energy cost relief measures before the September 1994 election. The economic crisis context (Sweden's 1990s banking crisis) dominated the campaign. The government lost; S returned to power.
 
@@ -1611,7 +1590,7 @@ _Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## Parallel 2: 2018 SD Accountability Interpellations Against Löfven Government
+### Parallel 2: 2018 SD Accountability Interpellations Against Löfven Government
 
 **Historical event**: In the pre-election period of spring 2018, SD filed a cluster of accountability interpellations targeting S Finance Minister Magdalena Andersson on migration costs. The interpellations received moderate media coverage. SD picked up seats in September 2018 election. 
 
@@ -1626,7 +1605,7 @@ _Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## Parallel 3: 2010 Reinfeldt Alliansen Legislative Sprint
+### Parallel 3: 2010 Reinfeldt Alliansen Legislative Sprint
 
 **Historical event**: In spring 2010, the Reinfeldt Alliansen government (M+C+KD+FP) filed a substantial pre-election legislative package covering work-life reforms, infrastructure, and social insurance modifications. The "work-first" narrative dominated the campaign. Alliansen won re-election with an increased mandate.
 
@@ -1641,7 +1620,7 @@ _Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## Historical Lessons for 2026
+### Historical Lessons for 2026
 
 | Lesson | Source Parallel | Application to 2026 |
 |--------|----------------|---------------------|
@@ -1669,14 +1648,13 @@ timeline
 ```
 
 ## Implementation Feasibility
-
-_Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/implementation-feasibility.md)_
+<!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/implementation-feasibility.md -->
 
 ---
 
-## Feasibility Assessments
+### Feasibility Assessments
 
-### 1. HD01FiU48 — Extra Budget / Fuel Tax Cut (Effective 2026-05-01)
+#### 1. HD01FiU48 — Extra Budget / Fuel Tax Cut (Effective 2026-05-01)
 
 **Implementation status**: ENACTED (Riksdag vote 2026-04-21) [A1]
 **Technical feasibility**: HIGH — fuel tax adjustment via Energiskattelagen. Skatteverket has existing mechanisms for overnight tax rate change.
@@ -1686,7 +1664,7 @@ _Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmon
 **GDPR/legal risk**: NONE — straightforward tax law amendment
 **Residual risk**: Pump price lag (retailers adjust prices weekly not daily; 82 öre saving may be invisible in first week post-May 1) → media expectation management needed
 
-### 2. HD03240 — Nya lagar om elsystemet (Electricity System Reform)
+#### 2. HD03240 — Nya lagar om elsystemet (Electricity System Reform)
 
 **Implementation status**: SUBMITTED to Riksdag 2026-04-14; awaiting committee report [A1]
 **Technical feasibility**: MODERATE — systemic reform of electricity market regulation requires Energimyndigheten implementation framework
@@ -1695,7 +1673,7 @@ _Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmon
 **Political risk**: LOW-MODERATE — energy system reform has broad support; SD's nuclear preference adds complexity but does not block passage
 **Residual risk**: Election calendar risk — reform adopted May/June but implemented September+ means a different government may administer it
 
-### 3. HD10444–HD10446 Interpellation Accountability Chain
+#### 3. HD10444–HD10446 Interpellation Accountability Chain
 
 **Implementation feasibility**: N/A — interpellations are accountability instruments, not legislation
 **Response feasibility**: Svantesson must provide substantive answers to all 3 within the standard interpellation debate window (approximately 2026-04-28 to 2026-05-05)
@@ -1703,7 +1681,7 @@ _Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmon
 **Procedural timeline**: Interpellation filed → speaker schedules debate → minister answers → follow-up questions → debate ends
 **Risk of non-answer**: LOW — Swedish parliamentary convention requires minister to engage substantively; refusal to answer is a political cost signal
 
-### 4. HD03246 — Unga lagöverträdare (Youth Offender Sentencing Reform)
+#### 4. HD03246 — Unga lagöverträdare (Youth Offender Sentencing Reform)
 
 **Implementation status**: SUBMITTED to Riksdag 2026-04-16 [A1]
 **Technical feasibility**: HIGH — judicial reform with clear Domstolsverket implementation pathway
@@ -1712,7 +1690,7 @@ _Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmon
 
 ---
 
-## Feasibility Risk Summary
+### Feasibility Risk Summary
 
 | Legislation | Feasibility | Timeline Risk | Political Risk | Overall |
 |-----------|------------|--------------|---------------|---------|
@@ -1739,45 +1717,44 @@ gantt
 ```
 
 ## Devil's Advocate
-
-_Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/devils-advocate.md)_
+<!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/devils-advocate.md -->
 
 ---
 
-## ACH Matrix
+### ACH Matrix
 
-### Hypothesis H1: S Accountability Offensive Is Election-Year Strategy (Primary Assessment)
+#### Hypothesis H1: S Accountability Offensive Is Election-Year Strategy (Primary Assessment)
 **Evidence for**: 4 interpellations in 24 hours, same MP authorship cluster, identical Svantesson targeting pattern, timing (5 months before September 2026 election) [A1]
 **Evidence against**: Interpellations are a standard parliamentary tool used continuously throughout the term; the 2026-04-22 cluster may coincide with end-of-session filing deadline, not strategic choice [A2]
 **ACH weight**: Strong evidence for [A1]; weak countervailing evidence [A2] → H1 stands as primary
 
-### Hypothesis H2: Fuel Tax Cut (HD01FiU48) Is Genuine Emergency Relief, Not Electioneering
+#### Hypothesis H2: Fuel Tax Cut (HD01FiU48) Is Genuine Emergency Relief, Not Electioneering
 **Evidence for**: FiU48 cites EU energy market conditions, Middle East conflict impacts, inflation spike — all documented real-world triggers [A1]; the measure stays at EU minimum floor, not a maximum cut [A2]
 **Evidence against**: Timing (May 2026 start = 4 months before election) suggests electoral calendar influence; no sunset clause makes "temporary" framing weak [B2]; climate expert consensus is that fuel tax cuts are regressive and emission-inefficient [B2]
 **ACH weight**: Mixed [B2+B2] — both emergency relief AND electoral relief are likely simultaneously true; neither hypothesis excludes the other
 
-### Hypothesis H3: Slottner/Carlson Interpellations (HD10445/HD10446) Represent New Accountability Fronts, Not Follow-On
+#### Hypothesis H3: Slottner/Carlson Interpellations (HD10445/HD10446) Represent New Accountability Fronts, Not Follow-On
 **Evidence for**: Slottner (HD10445, social dumping/KD) and Carlson (HD10446, false death declarations/KD) raise completely different policy domains than Svantesson's financial/fiscal domain [A1]; different S MP authors [A1]
 **Evidence against**: All 4 interpellations filed same day by S MPs — coordination signal regardless of domain [A1]; S parliamentary group coordination meetings would explain simultaneous filing [A2]
 **ACH weight**: H3 (independent fronts) has some support but H1 (coordinated campaign) is more parsimonious given same-day filing [A1]
 
 ---
 
-## Competing Hypotheses — What Could This Analysis Get Wrong?
+### Competing Hypotheses — What Could This Analysis Get Wrong?
 
-### Red Team Challenge 1: "The Accountability Offensive Will Backfire"
+#### Red Team Challenge 1: "The Accountability Offensive Will Backfire"
 
 **Devil's Advocate argument**: Finance Minister Svantesson has survived multiple media cycles including the 2025 budget controversy. S has limited ability to convert interpellation success into vote-switching because their core voters are already committed, and the swingable voters (C, L-leaning) are more concerned about welfare state competence than about ministerial accountability theatrics. HD10444 (employer contributions to social dumping employers) may alienate the very small-business and self-employed voters S needs to win back.
 
 **Evidentiary requirement to dismiss this challenge**: Poll data showing S polling above 31% after the interpellation cycle; media coverage classified as "accountability" not "theatre" by neutral outlets [B2 required].
 
-### Red Team Challenge 2: "HD01FiU48 Has No Electoral Effect"
+#### Red Team Challenge 2: "HD01FiU48 Has No Electoral Effect"
 
 **Devil's Advocate argument**: Fuel tax cuts are politically effective only when consumers see an immediate visible effect at the pump. The 82 öre/litre cut (approximately 8 kr per tankful for a typical car) is smaller than normal pump price volatility (10–15 kr/L swings). Voters do not attribute diffuse tax cuts to specific government decisions. The fuel tax cut will be invisible in election-day retrospective assessments.
 
 **Evidentiary requirement to dismiss this challenge**: Swedish consumer sentiment data showing government approval increase in May 2026 fuel period [B2 required]; or alternatively, opposition research showing the cut is too small to matter (which would validate this red team challenge).
 
-### Red Team Challenge 3: "The Constitutional Amendments (HD01KU33/32) Are the Real Long-Term Story"
+#### Red Team Challenge 3: "The Constitutional Amendments (HD01KU33/32) Are the Real Long-Term Story"
 
 **Devil's Advocate argument**: The realtime monitor analysis is over-indexing on visible interpellation drama and underweighting the structural constitutional amendments (HD01KU33/32) that require a post-2026 election second vote. These amendments — which may concern fundamental rights or electoral rules — will have lasting effects far beyond the current legislative session. The interpellation cycle is ephemeral; the constitutional amendments are permanent.
 
@@ -1785,7 +1762,7 @@ _Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## ACH Summary Table
+### ACH Summary Table
 
 | Hypothesis | Evidence For | Evidence Against | ACH Weight | Status |
 |------------|-------------|-----------------|------------|--------|
@@ -1797,14 +1774,13 @@ _Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 | RC3: Constitutional amendments underweighted | [B2] structural long-term | [B2] requires full text review | TBD | **FLAG for follow-on** |
 
 ## Classification Results
-
-_Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/classification-results.md)_
+<!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/classification-results.md -->
 
 ---
 
-## Classification Framework (7 Dimensions)
+### Classification Framework (7 Dimensions)
 
-### Dimensions
+#### Dimensions
 1. **Policy Domain** — Primary policy area
 2. **Political Valence** — Partisan direction (government/opposition/cross-party)
 3. **Legislative Stage** — Current parliamentary position
@@ -1815,9 +1791,9 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Document Classifications
+### Document Classifications
 
-### HD10444 — Arbetsgivaravgift Abuse [Interpellation]
+#### HD10444 — Arbetsgivaravgift Abuse [Interpellation]
 
 | Dimension | Classification |
 |-----------|---------------|
@@ -1829,7 +1805,7 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 | GDPR | Art. 9(2)(e) publicly filed; Data minimisation applied |
 | Retention | 5 years (electoral significance) |
 
-### HD10443 — Social Dumpning [Interpellation]
+#### HD10443 — Social Dumpning [Interpellation]
 
 | Dimension | Classification |
 |-----------|---------------|
@@ -1841,7 +1817,7 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 | GDPR | Art. 9(2)(e) publicly filed |
 | Retention | 5 years |
 
-### HD10445 — Housing Pre-emption [Interpellation]
+#### HD10445 — Housing Pre-emption [Interpellation]
 
 | Dimension | Classification |
 |-----------|---------------|
@@ -1853,7 +1829,7 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 | GDPR | Art. 9(2)(e) publicly filed |
 | Retention | 5 years |
 
-### HD10446 — False Death Declarations [Interpellation]
+#### HD10446 — False Death Declarations [Interpellation]
 
 | Dimension | Classification |
 |-----------|---------------|
@@ -1865,7 +1841,7 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 | GDPR | Art. 9(2)(g) public interest; data minimisation |
 | Retention | 3 years |
 
-### HD01FiU48 — Extra Ändringsbudget [Betänkande ENACTED]
+#### HD01FiU48 — Extra Ändringsbudget [Betänkande ENACTED]
 
 | Dimension | Classification |
 |-----------|---------------|
@@ -1877,7 +1853,7 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 | GDPR | N/A (legislative, no personal data) |
 | Retention | Permanent (legislative record) |
 
-### HD03240 — Nya Lagar om Elsystemet [Proposition]
+#### HD03240 — Nya Lagar om Elsystemet [Proposition]
 
 | Dimension | Classification |
 |-----------|---------------|
@@ -1889,7 +1865,7 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 | GDPR | N/A |
 | Retention | Permanent |
 
-### HD03232/HD03231 — Ukraine Tribunals [Propositions]
+#### HD03232/HD03231 — Ukraine Tribunals [Propositions]
 
 | Dimension | Classification |
 |-----------|---------------|
@@ -1903,21 +1879,21 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Priority Tier Classification
+### Priority Tier Classification
 
-### Tier P0 — Highest Priority (immediate monitoring)
+#### Tier P0 — Highest Priority (immediate monitoring)
 - HD10444, HD10443, HD10445 (interpellations targeting ministers)
 
-### Tier P1 — High Priority (track through committee/debate)
+#### Tier P1 — High Priority (track through committee/debate)
 - HD01FiU48 (enacted — implementation monitoring)
 - HD03240 (new electricity system law — committee)
 
-### Tier P2 — Standard Priority
+#### Tier P2 — Standard Priority
 - HD03232, HD03231, HD03246, HD01KU33, HD01KU32, HD03242
 
 ---
 
-## Information Access Control
+### Information Access Control
 - All documents: **Public access** (Offentlighetsprincipen — Swedish Freedom of the Press Act)
 - Source: data.riksdagen.se (official open data)
 - No restricted or classified material in this analysis
@@ -1937,42 +1913,41 @@ flowchart LR
 ```
 
 ## Cross-Reference Map
-
-_Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/cross-reference-map.md)_
+<!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/cross-reference-map.md -->
 
 ---
 
-## Policy Clusters
+### Policy Clusters
 
-### Cluster A — Fiscal & Economic Coherence
+#### Cluster A — Fiscal & Economic Coherence
 - HD01FiU48 ↔ HD03236 (Extra budget prop.) ↔ HD024098/092 (opposition motions)
 - HD10444 ↔ employer contribution reduction (enacted April 2026) ↔ Aftonbladet investigation
 - Cluster logic: The fuel tax relief and employer contribution policy share the same fiscal instrument (tax reduction for economic stimulus) and the same accountability vulnerability (risk of exploitation)
 
-### Cluster B — Ukraine Diplomatic Package
+#### Cluster B — Ukraine Diplomatic Package
 - HD03232 ↔ HD03231 (both Utrikesdepartementet, both 2026-04-16)
 - Both represent Sweden's commitment to Ukraine's transitional justice architecture
 - Cross-reference: Sweden's NATO membership context (ratified 2024) amplifies the diplomatic significance
 
-### Cluster C — Energy & Climate Transition
+#### Cluster C — Energy & Climate Transition
 - HD03240 (Nya lagar om elsystemet) ↔ HD03239 (Vindkraft i kommuner) ↔ HD03238 (Ny miljöprövningsmyndighet)
 - Three-part energy reform package submitted April 13–14, 2026
 - Thematic coherence: electricity system law + wind power incentives + environmental permitting reform
 
-### Cluster D — Parliamentary Accountability (Today)
+#### Cluster D — Parliamentary Accountability (Today)
 - HD10444 ↔ HD10443 ↔ HD10445 ↔ HD10446 (all S interpellations, 2026-04-22)
 - HD10442 (filed 2026-04-21, S/Svantesson eating disorder)
 - Cluster logic: 5 interpellations in 2 days, 3 targeting Svantesson = coordinated S campaign
 
-### Cluster E — Constitutional Reform
+#### Cluster E — Constitutional Reform
 - HD01KU33 ↔ HD01KU32 (both KU betänkanden, both constitutional amendments first reading, 2026-04-17)
 - Both require second vote after 2026 election to become law — creates a post-election governance agenda
 
 ---
 
-## Legislative Chains
+### Legislative Chains
 
-### Chain 1: Fuel Tax Relief
+#### Chain 1: Fuel Tax Relief
 ```
 prop. 2025/26:236 (HD03236) →
 FiU48 (HD01FiU48, adopted 2026-04-21) →
@@ -1980,7 +1955,7 @@ Law amendment (effective 2026-05-01) →
 Opposition motions HD024098/092 (overridden)
 ```
 
-### Chain 2: Energy System Reform
+#### Chain 2: Energy System Reform
 ```
 prop. 2025/26:240 (HD03240) →
 prop. 2025/26:239 (HD03239) →
@@ -1988,7 +1963,7 @@ prop. 2025/26:238 (HD03238) →
 Committee review (pending)
 ```
 
-### Chain 3: Ministerial Accountability
+#### Chain 3: Ministerial Accountability
 ```
 Past Svantesson statements →
 Aftonbladet investigation →
@@ -1999,31 +1974,31 @@ Debate answer (2026-04-28–05-05) →
 
 ---
 
-## Sibling Folders — Tier-C Cross-Type Citations
+### Sibling Folders — Tier-C Cross-Type Citations
 
-### analysis/daily/2026-04-22/propositions/
+#### analysis/daily/2026-04-22/propositions/
 - Synthesis summary reviewed: HD03100 (vårproposition), HD03236 (extra budget), HD03240 (el-system), HD03239 (vindkraft), HD03238 (miljöprövning), HD03246 (unga), HD03231/232 (Ukraina)
 - Cross-reference: Propositions cluster C (energy reform) and cluster B (Ukraine) directly feed this realtime analysis
 - PIR inherited: "What is the coalition's energy security legislative timetable before September 2026 election?"
 
-### analysis/daily/2026-04-22/motions/
+#### analysis/daily/2026-04-22/motions/
 - Synthesis summary reviewed: HD024082–HD024098 (fuel tax opposition, deportation, arms)
 - Cross-reference: S/V/MP triple fuel tax rejection (HD024082, HD024092, HD024098) establishes the opposition's climate-fiscal dividing line
 - PIR inherited: "How will opposition parties exploit the fuel tax cut in the election campaign?"
 
-### analysis/daily/2026-04-22/committeeReports/
+#### analysis/daily/2026-04-22/committeeReports/
 - Synthesis summary reviewed: HD01FiU48 (extra budget ENACTED), HD01KU33/32 (constitutional), HD01CU27/28 (housing)
 - Cross-reference: HD01FiU48 enacted — direct cause of today's accountability interpellations
 - PIR inherited: "When will KU constitutional amendments (KU33/32) come to second reading post-election?"
 
-### analysis/daily/2026-04-22/interpellations/
+#### analysis/daily/2026-04-22/interpellations/
 - Synthesis summary reviewed: HD10442–HD10446 (S accountability offensive)
 - Cross-reference: HD10442 (eating disorder, filed 2026-04-21) is the pre-existing live risk that today's new interpellations reinforce
 - PIR inherited: "Is the S accountability strategy a one-day event or a sustained multi-week campaign?"
 
 ---
 
-## Coordinated-Activity Patterns
+### Coordinated-Activity Patterns
 
 1. **S interpellation cluster**: 4 interpellations in 24 hours, all authored by S MPs, all targeting coalition ministers on documented past statements or policy failures — clear coordination indicator [B2]
 2. **S+V+MP fuel tax motions**: Three parties simultaneously filed fuel tax rejection motions on the same proposition — opportunistic coordination, not pre-planned (motions filed on different days but same legislative target) [B2]
@@ -2044,15 +2019,14 @@ flowchart LR
 ```
 
 ## Methodology Reflection & Limitations
-
-_Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/methodology-reflection.md)_
+<!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/methodology-reflection.md -->
 
 **Analyst**: James Pether Sörling | **Standard**: ICD 203 + Admiralty Code + SAT Catalog
 **Classification**: Public | **Cycle**: Realtime-2338
 
 ---
 
-## ICD 203 Audit (9 Standards)
+### ICD 203 Audit (9 Standards)
 
 | Standard | Implementation in This Cycle | Assessment |
 |---------|------------------------------|-----------|
@@ -2068,7 +2042,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Structured Analytic Techniques (SAT) Applied
+### Structured Analytic Techniques (SAT) Applied
 
 1. **ACH (Analysis of Competing Hypotheses)**: Applied in devils-advocate.md — 3 hypotheses + 3 red team challenges with evidentiary requirements specified.
 2. **Scenario analysis**: 3 scenarios (breakthrough, containment, fragmentation) with probability distribution summing to 100% in scenario-analysis.md.
@@ -2083,7 +2057,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Methodology Improvements (Pass 2 Identified)
+### Methodology Improvements (Pass 2 Identified)
 
 1. **Improve KJ-2 confidence**: KJ-2 (fuel tax electoral impact) is currently MODERATE because consumer response is unobservable. Next cycle should include SCB CPI data or consumer confidence indices from the SCB MCP server to provide a quantitative anchor.
 
@@ -2093,7 +2067,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Data Quality Limitations
+### Data Quality Limitations
 
 | Limitation | Impact | Mitigation applied |
 |-----------|--------|-------------------|
@@ -2104,13 +2078,12 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Tradecraft Context
+### Tradecraft Context
 
 All analysis in this cycle follows the osint-tradecraft-standards.md canon: ICD 203 audit above confirms 9/9 standards applied. Admiralty codes are [A1] (authoritative, confirmed), [A2] (authoritative, probably true), [B2] (reliable, probably true), [B3] (reliable, possibly true) — no fabricated or unrated claims committed to artifact files. PIR handoff to next cycle documented in intelligence-assessment.md §Prior-Cycle PIR Ingestion with full resolution status.
 
 ## Data Download Manifest
-
-_Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/data-download-manifest.md)_
+<!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/data-download-manifest.md -->
 
 **Workflow**: news-realtime-monitor
 **Run ID**: 24808210801
@@ -2120,12 +2093,12 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 **Riksmöte**: 2025/26
 **Subfolder**: realtime-2338
 
-## MCP Server Status
+### MCP Server Status
 - riksdag-regering: **LIVE** (verified via get_sync_status at 23:38:04Z)
 - scb: available
 - world-bank: available
 
-## Breaking News Signals Detected
+### Breaking News Signals Detected
 
 | Priority | Category | Count |
 |----------|----------|-------|
@@ -2134,9 +2107,9 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 | HIGH | Recent propositions (2026-04-14–16) | 10 |
 | MEDIUM | Opposition motions on prop. 2025/26:236 | 5 |
 
-## Document Index
+### Document Index
 
-### Primary: Today's Interpellations (2026-04-22) — Breaking
+#### Primary: Today's Interpellations (2026-04-22) — Breaking
 
 | dok_id | Title | Author | Target Minister | Retrieved | Full-text |
 |--------|-------|--------|----------------|-----------|-----------|
@@ -2145,7 +2118,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 | HD10444 | Företag som utnyttjar sänkningen av arbetsgivaravgifter | Jonathan Svensson (S) | Elisabeth Svantesson (M) | 23:38Z | metadata |
 | HD10443 | Social dumpning mellan kommuner | Peder Björk (S) | Erik Slottner (KD) | 23:38Z | metadata |
 
-### Secondary: Recent Betänkanden (2026-04-21)
+#### Secondary: Recent Betänkanden (2026-04-21)
 
 | dok_id | Title | Committee | Retrieved | Full-text |
 |--------|-------|-----------|-----------|-----------|
@@ -2155,7 +2128,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 | HD01KU43 | En ny lag om riksdagens medalj | KU | 23:38Z | metadata |
 | HD01MJU21 | Riksrevisionens rapport — jordbrukets klimatomställning | MJU | 23:38Z | metadata |
 
-### Tertiary: Betänkanden (2026-04-17)
+#### Tertiary: Betänkanden (2026-04-17)
 
 | dok_id | Title | Committee | Retrieved | Full-text |
 |--------|-------|-----------|-----------|-----------|
@@ -2165,7 +2138,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 | HD01CU28 | Ett register för alla bostadsrätter | CU | 23:38Z | metadata |
 | HD01CU27 | Identitetskrav vid lagfart | CU | 23:38Z | metadata |
 
-### Recent Propositions (2026-04-14–16)
+#### Recent Propositions (2026-04-14–16)
 
 | dok_id | Title | Department | Date | Retrieved | Full-text |
 |--------|-------|------------|------|-----------|-----------|
@@ -2178,7 +2151,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 | HD03239 | Vindkraft i kommuner | Klimat- och näringsliv | 2026-04-14 | 23:38Z | metadata |
 | HD03238 | Ny myndighet för miljöprövning | Klimat- och näringsliv | 2026-04-14 | 23:38Z | metadata |
 
-### Opposition Motions (2026-04-15–17)
+#### Opposition Motions (2026-04-15–17)
 
 | dok_id | Title | Party | Dok-typ | Retrieved | Full-text |
 |--------|-------|-------|---------|-----------|-----------|
@@ -2193,14 +2166,46 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 | HD024093 | Cybersäkerhetscenter (komplettering) | C | mot | 23:38Z | metadata |
 | HD024089 | Ny mottagandelag (kommunalt stöd) | C | mot | 23:38Z | metadata |
 
-## Reference Analyses (Sibling Folders — Tier-C Synthesis)
+### Reference Analyses (Sibling Folders — Tier-C Synthesis)
 - analysis/daily/2026-04-22/propositions/ — 15 docs incl. vårproposition HD03100
 - analysis/daily/2026-04-22/motions/ — 20 docs incl. HD024082–HD024098
 - analysis/daily/2026-04-22/committeeReports/ — 10 docs incl. HD01FiU48
 - analysis/daily/2026-04-22/interpellations/ — 5 docs incl. HD10442–HD10446
 
-## Data Quality Notes
+### Data Quality Notes
 - All documents retrieved from data.riksdagen.se via riksdag-regering MCP server
 - Full text not fetched for all documents (metadata-only for most)
 - Sibling folder synthesis summaries read for Tier-C cross-reference
 - No lookback required — documents confirmed for 2026-04-22
+
+## Article Sources
+
+Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
+
+- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief.md)
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/synthesis-summary.md)
+- [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/intelligence-assessment.md)
+- [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/significance-scoring.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/media-framing-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/stakeholder-perspectives.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/scenario-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/threat-analysis.md)
+- [`documents/HD01FiU48-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD01FiU48-analysis.md)
+- [`documents/HD10443-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10443-analysis.md)
+- [`documents/HD10444-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10444-analysis.md)
+- [`documents/HD10445-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10445-analysis.md)
+- [`documents/HD10446-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10446-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/election-2026-analysis.md)
+- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/coalition-mathematics.md)
+- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/voter-segmentation.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/comparative-international.md)
+- [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/historical-parallels.md)
+- [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/implementation-feasibility.md)
+- [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/devils-advocate.md)
+- [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/classification-results.md)
+- [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/cross-reference-map.md)
+- [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/methodology-reflection.md)
+- [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/data-download-manifest.md)

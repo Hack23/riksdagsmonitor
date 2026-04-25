@@ -5,7 +5,7 @@ date: 2026-04-18
 subfolder: realtime-1705
 slug: 2026-04-18-realtime-1705
 source_folder: analysis/daily/2026-04-18/realtime-1705
-generated_at: 2026-04-25T11:09:59.833Z
+generated_at: 2026-04-25T15:36:04.630Z
 language: en
 layout: article
 ---
@@ -23,8 +23,7 @@ Use this guide to read the article as a political-intelligence product rather th
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Executive Brief
-
-_Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/executive-brief.md)_
+<!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/executive-brief.md -->
 
 <p align="center">
   <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts</em>
@@ -39,13 +38,13 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🧭 BLUF (Bottom Line Up Front)
+### 🧭 BLUF (Bottom Line Up Front)
 
 **On 2026-04-13 – 16, the Kristersson government tabled a coordinated four-document pre-election sprint: Vårproposition 2026 (HD03100, DIW 9.5) sets the macro frame, an extra supplementary budget (HD03236, DIW 8.5) delivers fuel-tax cuts and electricity/gas subsidies to cost-of-living voters, Justice Minister Gunnar Strömmer's youth-offender law (HD03246, DIW 7.5) toughens rules for 15–17 year-olds, and the SfU committee's migration-inhibition order (HD01SfU22, DIW 6.5) replaces temporary residence permits for deportation-blocked individuals.** The package lands against a fragile macro backdrop — GDP growth just 0.82 % (2024) after −0.20 % (2023), unemployment at 8.7 % (≈ 450,000 people, 2025), inflation tamed to 2.84 % (2024 vs 8.55 % 2023). The most acute operational risk is the SiS youth-detention capacity crisis (already 100 %+ utilisation); the most acute legal risk is ECHR Article 3/5 exposure on HD01SfU22; the most acute fiscal-credibility risk is three mini-budgets in two months drawing Riksrevisionen commentary. `[HIGH]`
 
 ---
 
-## 🎯 Three Decisions This Brief Supports
+### 🎯 Three Decisions This Brief Supports
 
 | Decision | Evidence Locus | Action Window |
 |----------|---------------|--------------:|
@@ -55,7 +54,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 📐 What Readers Need to Know in 60 Seconds
+### 📐 What Readers Need to Know in 60 Seconds
 
 1. **HD03100 is the #1 story** — Svantesson's vårproposition is the macro umbrella under which HD0399 (amendment budget) and HD03236 (extra budget) are being justified. Unemployment 8.7 % is the government's main attack surface. `[HIGH]`
 2. **HD03236 (fuel + energy relief) is the electoral centrepiece** — ~5.2 million car owners, all ~4.9 million household electricity customers benefit. S/V/MP cannot oppose on distributional grounds without electoral cost. `[HIGH]`
@@ -65,7 +64,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🎭 Named Actors to Watch
+### 🎭 Named Actors to Watch
 
 | Actor | Role | Why They Matter Now |
 |-------|------|--------------------|
@@ -86,7 +85,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🔮 Next 14 Days — What to Watch
+### 🔮 Next 14 Days — What to Watch
 
 | Date / Window | Trigger | Impact |
 |---------------|---------|--------|
@@ -101,7 +100,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## ⚠️ Analyst Confidence — Honest Self-Assessment
+### ⚠️ Analyst Confidence — Honest Self-Assessment
 
 | Dimension | Confidence | Notes |
 |-----------|:----------:|-------|
@@ -115,7 +114,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 📎 Cross-Links
+### 📎 Cross-Links
 
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/README.md) · [Synthesis](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/synthesis-summary.md) · [Significance](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/swot-analysis.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/risk-assessment.md) · [Threat](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/threat-analysis.md) · [Stakeholders](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/stakeholder-perspectives.md) · [Scenarios](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/scenario-analysis.md) · [Comparative](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/comparative-international.md) · [Cross-References](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/cross-reference-map.md) · [Classification](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/classification-results.md)
 
@@ -124,31 +123,30 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 **Classification**: Public · **Next Review**: 2026-04-25
 
 ## Synthesis Summary
-
-_Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/synthesis-summary.md)_
+<!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/synthesis-summary.md -->
 
 **Analysis run:** realtime-1705 | **Coverage:** April 13-18, 2026 | **Documents analyzed:** 4 primary
 
-## Key Findings
+### Key Findings
 
 This monitoring cycle captures a dense legislative period in the final weeks before Sweden's 2026 summer recess, featuring an unusually large cluster of government propositions submitted on April 13-16. The dominant theme is **fiscal expansion meeting crime policy escalation** — the Kristersson government has deployed four simultaneous fiscal instruments (spring proposition, amendment budget, extra budget, tax accounts) alongside two justice reforms, signaling an election-oriented policy sprint.
 
-### Top-Ranked Finding (DIW Score 9.5): Spring Economic Proposition (HD03100)
+#### Top-Ranked Finding (DIW Score 9.5): Spring Economic Proposition (HD03100)
 Sweden's 2026 Vårproposition establishes a fiscal framework in a context of fragile recovery: GDP grew just 0.82% in 2024 after -0.20% in 2023, while unemployment remains at 8.7% (2025). Inflation has been tamed (2.84% in 2024 vs 8.55% in 2023) but the jobs recovery lags. The proposition frames all other fiscal decisions in this cycle.
 
-### Second-Ranked Finding (DIW Score 8.5): Extra Supplementary Budget — Energy/Fuel Relief (HD03236)
+#### Second-Ranked Finding (DIW Score 8.5): Extra Supplementary Budget — Energy/Fuel Relief (HD03236)
 An extraordinary supplementary budget combining fuel tax cuts with electricity and gas price subsidies represents a significant fiscal intervention. This politically motivated measure — coming weeks before the September 2026 Riksdag election campaign — benefits rural/suburban voters with high car dependency. Estimated cost: reduces state fuel excise revenue; offset partially by EU energy support instruments.
 
-### Third-Ranked Finding (DIW Score 7.5): Stricter Youth Crime Law (HD03246)
+#### Third-Ranked Finding (DIW Score 7.5): Stricter Youth Crime Law (HD03246)
 Justice Minister Gunnar Strömmer's proposition to tighten rules for young offenders (ages 15-17) advances the Tidö coalition's core crime agenda. With Sweden's youth gang violence continuing to attract international attention, this measure carries high political salience despite thin evidence of deterrent efficacy.
 
-### Fourth-Ranked Finding (DIW Score 6.5): Migration Inhibition Order System (HD01SfU22)
+#### Fourth-Ranked Finding (DIW Score 6.5): Migration Inhibition Order System (HD01SfU22)
 SfU committee approval of replacing temporary residence permits with inhibition orders for deportation-blocked individuals fundamentally tightens Sweden's migration system. Effective June 2026, this affects an estimated 2,000-4,000 individuals annually and carries significant ECHR litigation risk.
 
-## Cross-Cutting Theme: Election Posturing
+### Cross-Cutting Theme: Election Posturing
 All four major documents advance pre-election positioning: energy subsidies for cost-of-living voters, stricter crime laws for security voters, tighter migration for SD base voters. The spring proposition provides the macro cover for this spending.
 
-## Documents Analyzed
+### Documents Analyzed
 | dok_id | Title | Type | DIW Score |
 |--------|-------|------|-----------|
 | HD03100 | Vårproposition 2026 | prop | 9.5 |
@@ -157,12 +155,11 @@ All four major documents advance pre-election positioning: energy subsidies for 
 | HD01SfU22 | Inhibition av verkställigheten | bet | 6.5 |
 
 ## Significance Scoring
-
-_Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/significance-scoring.md)_
+<!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/significance-scoring.md -->
 
 **Analysis run:** realtime-1705 | **Methodology:** DIW (Democratic Impact Weighting)
 
-## Scoring Matrix
+### Scoring Matrix
 
 | dok_id | Title | Party Breadth | Fiscal | Defense | Crime/Social | Named Minister | Committee | DIW Score | Tier |
 |--------|-------|--------------|--------|---------|-------------|----------------|-----------|-----------|------|
@@ -176,34 +173,33 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 | HD03242 | Aktivt skogsbruk | 4 | 0 | 0 | 0 | Kullgren | MJU | **5.0** | 🟡 MEDIUM |
 | HD01MJU19 | Avfallslagstiftning reform | 4 | 0 | 0 | 0 | — | MJU | **4.5** | 🟡 MEDIUM |
 
-## Lead Story Determination
+### Lead Story Determination
 **#1 DIW-ranked: HD03100 (9.5)** — The Spring Economic Proposition 2026 is the year's defining fiscal document. Article title, meta description, and H1 MUST reference this document first.
 
-## Composite Coverage Decision
+### Composite Coverage Decision
 Generate breaking news article covering:
 1. **PRIMARY**: Spring budget package (HD03100 + HD03236 + HD0399) as unified fiscal story
 2. **SECONDARY**: Youth crime law (HD03246) as social policy layer
 3. **CONTEXT**: Migration inhibition (HD01SfU22) as legislative package supporting evidence
 
-## Article Type: BREAKING (HIGH severity, multi-document cluster)
+### Article Type: BREAKING (HIGH severity, multi-document cluster)
 **Severity Score**: 7+ on all top documents → GENERATE ARTICLE
 
 ## Stakeholder Perspectives
-
-_Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/stakeholder-perspectives.md)_
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/stakeholder-perspectives.md -->
 
 **Analysis run:** realtime-1705 | **Date:** 2026-04-18
 
-## The 8 Mandatory Stakeholder Groups
+### The 8 Mandatory Stakeholder Groups
 
-### 1. Citizens / Swedish Households
+#### 1. Citizens / Swedish Households
 **Impact**: DIRECT AND SIGNIFICANT
 - **Energy/fuel subsidies (HD03236)**: ~5.2 million car owners benefit from lower pump prices; all households benefit from lower electricity/gas costs. Average Swedish household spends ~SEK 28,000/year on energy (2025 estimate).
 - **Unemployment concern (HD03100)**: 8.7% unemployment (2025) = approx. 450,000 Swedes actively seeking work. Spring proposition's labor market chapter critical.
 - **Youth crime (HD03246)**: Parents of young children welcome tougher deterrents; civil liberties advocates express concern.
 - **Migration (HD01SfU22)**: Majority supportive of stricter returns enforcement (SVT/Ipsos polls consistently show ~55-60% backing tough migration measures).
 
-### 2. Government Coalition (M+KD+L+SD)
+#### 2. Government Coalition (M+KD+L+SD)
 **Position**: STRONGLY SUPPORTIVE across all four measures
 - **M**: Owns economic narrative (inflation tamed), crime reform, energy competitiveness
 - **KD**: Values-based support for youth crime reform (family protection), energy affordability
@@ -212,7 +208,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 **Coalition tension indicator**: NONE significant. All four documents advance coalition priorities simultaneously.
 
-### 3. Opposition Bloc (S+V+MP)
+#### 3. Opposition Bloc (S+V+MP)
 **Position**: SPLIT by document, unified in critique framing
 
 - **S (Socialdemokraterna)**: 
@@ -232,7 +228,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
   - Demands fuel tax increase, not cut, to fund public transport
   - Youth crime: rehabilitation-first, punishment-last
 
-### 4. Business & Industry
+#### 4. Business & Industry
 **Position**: BROADLY POSITIVE
 - **Logistics sector**: Fuel tax cuts directly reduce operating costs for Sweden's 30,000+ trucking companies
 - **Energy-intensive industry**: Electricity support extends competitive advantage in European market
@@ -240,7 +236,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 - **Tech sector**: Public administration interoperability (HD03244) opens government data market
 - **Forestry/agriculture**: Active forestry regulation (HD03242) provides long-term planning certainty
 
-### 5. Civil Society & NGOs
+#### 5. Civil Society & NGOs
 **Position**: DIVIDED
 - **Rescue (Swedish Red Cross, Civil Rights Defenders)**: Strongly oppose HD01SfU22 — ECHR compliance concerns
 - **Amnesty Sweden**: Opposes both migration inhibition and mandatory reporting requirements
@@ -248,7 +244,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 - **Environmental organizations (Naturskyddsföreningen)**: Oppose fuel tax cuts (HD03236) as climate regressive
 - **Swedish Trade Union Confederation (LO)**: Support energy subsidies for lower-income workers; concerned about unemployment
 
-### 6. International & EU Context
+#### 6. International & EU Context
 **Position**: MONITORING WITH CONCERN on migration
 - **EU Commission**: Monitoring HD01SfU22 compatibility with EU returns directive
 - **UNHCR**: Expected statement opposing inhibition order system replacing residence permits
@@ -256,14 +252,14 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 - **Nordic neighbors**: Watching Sweden's migration model as template vs. own more liberal frameworks
 - **European Court of Human Rights (Strasbourg)**: Potential future caseload from HD01SfU22 applications
 
-### 7. Judiciary & Constitutional Bodies
+#### 7. Judiciary & Constitutional Bodies
 **Position**: ANALYTICAL/CAUTIONARY
 - **Lagrådet (Law Council)**: Will review HD01SfU22 and HD03246 for constitutional/ECHR compliance
 - **Riksrevisionen**: Has already flagged fiscal framework concerns (HD03241); multiple supplementary budgets will attract scrutiny
 - **Migrationsdomstolarna (Migration Courts)**: Operational burden increase from inhibition order appeals
 - **SiS (youth institutions)**: Warning signs about capacity; HD03246 increases their mandate without resources
 
-### 8. Media & Public Opinion
+#### 8. Media & Public Opinion
 **Position**: HIGH ATTENTION, MIXED FRAMING
 - **Mainstream media (DN, SvD, Aftonbladet, Expressen)**: Cover spring budget as top story; crime reform as Page 2
 - **Energy/fuel cuts**: Strong positive consumer framing in tabloids; criticism in quality press environmental pages
@@ -271,8 +267,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 - **International media**: Sweden's crime wave coverage (NYT, Guardian) provides backdrop for HD03246 coverage
 
 ## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/scenario-analysis.md)_
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/scenario-analysis.md -->
 
 | Field | Value |
 |-------|-------|
@@ -285,7 +280,7 @@ _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## 🧭 Master Scenario Tree
+### 🧭 Master Scenario Tree
 
 ```mermaid
 flowchart TD
@@ -359,9 +354,9 @@ flowchart TD
 
 ---
 
-## 📖 Scenario Narratives
+### 📖 Scenario Narratives
 
-### 🟢 BASE — "Sprint Mostly Delivers" (P = 0.38)
+#### 🟢 BASE — "Sprint Mostly Delivers" (P = 0.38)
 
 **Setup**: Riksrevisionen signals moderate concern but no adverse finding; Lagrådet yttrande flags rights issues on HD03246 (capacity) and HD01SfU22 (judicial review) but does not recommend withdrawal; SiS enters overflow via private contracts; coalition retains majority.
 
@@ -379,7 +374,7 @@ flowchart TD
 
 ---
 
-### 🔵 BULL — "Recovery Story Takes Hold" (P = 0.18)
+#### 🔵 BULL — "Recovery Story Takes Hold" (P = 0.18)
 
 **Setup**: Inflation normalisation accelerates; Riksbank delivers two 25bp cuts in Q2–Q3 2026; unemployment falls below 8.0 % by Q3; US tariff environment moderates; coalition retains majority with an enlarged mandate.
 
@@ -397,7 +392,7 @@ flowchart TD
 
 ---
 
-### 🟠 MIXED — "S-led Minority, Package Re-scoped" (P = 0.22)
+#### 🟠 MIXED — "S-led Minority, Package Re-scoped" (P = 0.22)
 
 **Setup**: Coalition loses majority but no left bloc majority emerges. S forms minority with confidence-and-supply from C and MP. Package is partially unwound on legal-risk dimensions.
 
@@ -415,7 +410,7 @@ flowchart TD
 
 ---
 
-### 🔴 BEAR — "S+V+MP Majority, Rights-First Rebuild" (P = 0.10)
+#### 🔴 BEAR — "S+V+MP Majority, Rights-First Rebuild" (P = 0.10)
 
 **Setup**: Left bloc gains absolute majority. HD01SfU22 repealed within first 180 days; HD03246 refocused on rehabilitation with SiS capital-investment package; HD03236 replaced with targeted energy-subsidy scheme.
 
@@ -433,7 +428,7 @@ flowchart TD
 
 ---
 
-### ⚡ WILDCARD — "Strasbourg Rule 39 Injunction" (P = 0.06)
+#### ⚡ WILDCARD — "Strasbourg Rule 39 Injunction" (P = 0.06)
 
 **Trigger**: ECtHR issues interim measure (Rule 39) against Sweden blocking implementation of geographic-restriction orders in specific cases.
 
@@ -445,7 +440,7 @@ flowchart TD
 
 ---
 
-### ⚡ WILDCARD — "SiS Capacity Crisis Pre-Election" (P = 0.06)
+#### ⚡ WILDCARD — "SiS Capacity Crisis Pre-Election" (P = 0.06)
 
 **Trigger**: A publicly reported SiS capacity-failure incident (e.g., youth transferred to adult facility, escape event, violence incident) within 90 days of election.
 
@@ -457,7 +452,7 @@ flowchart TD
 
 ---
 
-## 📊 Indicator Tripwires (Bayesian Update Rules)
+### 📊 Indicator Tripwires (Bayesian Update Rules)
 
 | Indicator | Fires If | Prior Shift |
 |-----------|----------|-------------|
@@ -473,7 +468,7 @@ flowchart TD
 
 ---
 
-## 🎯 Scenario-Based Decision Recommendations
+### 🎯 Scenario-Based Decision Recommendations
 
 | Role | BASE (0.38) | BULL (0.18) | MIX (0.22) | BEAR (0.10) | WILDCARD (0.12) |
 |------|:-----------:|:-----------:|:----------:|:-----------:|:---------------:|
@@ -484,7 +479,7 @@ flowchart TD
 
 ---
 
-## 🧪 Red-Team Critique
+### 🧪 Red-Team Critique
 
 **What could make this scenario tree wrong?**
 
@@ -495,7 +490,7 @@ flowchart TD
 
 ---
 
-## 📎 Cross-Links
+### 📎 Cross-Links
 
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/README.md) · [Executive Brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/executive-brief.md) · [Synthesis](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/synthesis-summary.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/risk-assessment.md) · [Threat](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/threat-analysis.md) · [Comparative](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/comparative-international.md) · [Stakeholders](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/stakeholder-perspectives.md)
 
@@ -504,12 +499,11 @@ flowchart TD
 **Classification**: Public · **Next Review**: 2026-04-25
 
 ## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/risk-assessment.md)_
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/risk-assessment.md -->
 
 **Analysis run:** realtime-1705 | **Date:** 2026-04-18
 
-## Risk Matrix
+### Risk Matrix
 
 | Risk | Document | Probability | Impact | Severity | Mitigation |
 |------|----------|-------------|--------|----------|------------|
@@ -522,22 +516,21 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 | **Economic recovery stall** (external shocks, tariffs) | HD03100 | MEDIUM (30%) | HIGH | 🔴 HIGH | Contingency fiscal plans |
 | **Political crisis before election** | All | LOW (15%) | VERY HIGH | 🟡 MODERATE | Coalition management |
 
-## Top Risk: Youth Detention Capacity Crisis
+### Top Risk: Youth Detention Capacity Crisis
 Sweden's Statens institutionsstyrelse (SiS) — which runs youth detention facilities — was operating at 100%+ capacity throughout 2025. The Skärpta regler proposition (HD03246) will increase the number of young people eligible for closed detention without a corresponding capital investment in new facilities. This is the most immediate operational risk in this legislative package.
 
-## Top Policy Risk: Migration Inhibition Orders (ECHR)
+### Top Policy Risk: Migration Inhibition Orders (ECHR)
 The replacement of temporary residence permits with inhibition orders for individuals facing deportation (HD01SfU22) creates significant litigation exposure. The European Court of Human Rights has consistently ruled that Article 3 (prohibition of torture/inhuman treatment) creates absolute obligations. Geographic restriction requirements and mandatory reporting could face challenges as conditions incompatible with human dignity if applied to vulnerable populations.
 
-## Fiscal Risk: Spring Budget Coherence
+### Fiscal Risk: Spring Budget Coherence
 Sweden has now submitted three fiscal adjustment instruments within two months: the spring proposition (HD03100), the amendment budget (HD0399), and an extra amendment budget (HD03236). While legally permissible, this frequency of budget adjustments signals fiscal policy uncertainty and may attract commentary from Riksrevisionen (Swedish National Audit Office) regarding adherence to the fiscal framework. Riksrevisionen's own report (HD03241) on the fiscal framework application provides a reference benchmark.
 
 ## SWOT Analysis
-
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/swot-analysis.md)_
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/swot-analysis.md -->
 
 **Analysis run:** realtime-1705 | **Date:** 2026-04-18
 
-## Overall SWOT: Kristersson Government's Spring Policy Sprint
+### Overall SWOT: Kristersson Government's Spring Policy Sprint
 
 ```mermaid
 graph TD
@@ -552,30 +545,30 @@ graph TD
     style T fill:#B71C1C,color:#FFFFFF
 ```
 
-## Evidence Tables
+### Evidence Tables
 
-### Strengths Evidence
+#### Strengths Evidence
 | Finding | dok_id | Evidence | Confidence |
 |---------|--------|----------|------------|
 | Inflation controlled | HD03100 | World Bank: 2.84% (2024) vs 8.55% (2023) | HIGH |
 | Legislative output high | HD03236, HD03246, HD03240 | 4+ propositions in single week | HIGH |
 | Coalition unity | HD03236, HD03246 | Cross-committee approvals | HIGH |
 
-### Weaknesses Evidence
+#### Weaknesses Evidence
 | Finding | dok_id | Evidence | Confidence |
 |---------|--------|----------|------------|
 | Unemployment elevated | HD03100 | World Bank: 8.7% in 2025 | HIGH |
 | Multiple mini-budgets | HD03236, HD0399 | Third supplementary fiscal measure | MEDIUM |
 | Youth crime evidence gap | HD03246 | BRÅ research on deterrence | MEDIUM |
 
-### Threats Evidence
+#### Threats Evidence
 | Finding | dok_id | Evidence | Confidence |
 |---------|--------|----------|------------|
 | Migration legal risk | HD01SfU22 | ECHR Art. 3 absolute bar | HIGH |
 | Youth detention crisis | HD03246 | SiS reports 2025 | MEDIUM |
 | Economic external shock | HD03100 | US tariff environment | MEDIUM |
 
-## Opposition SWOT (S-led bloc perspective)
+### Opposition SWOT (S-led bloc perspective)
 
 | Dimension | Details |
 |-----------|---------|
@@ -585,12 +578,11 @@ graph TD
 | **S Threat** | SD outflanks on crime and migration; hard to differentiate without alienating center voters |
 
 ## Threat Analysis
-
-_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/threat-analysis.md)_
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/threat-analysis.md -->
 
 **Analysis run:** realtime-1705 | **Date:** 2026-04-18
 
-## Overall Threat Level
+### Overall Threat Level
 
 | Indicator | Value |
 |-----------|-------|
@@ -600,32 +592,32 @@ _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 Rationale: Multiple simultaneous high-probability threats (legal challenge to HD01SfU22, SiS capacity crisis) combined with medium-probability systemic risks (electoral backlash, Riksrevisionen criticism, external tariff shock) produce an elevated aggregate threat posture with medium analytic confidence given dependence on external (ECtHR, US trade policy) variables.
 
-## STRIDE Framework Application
+### STRIDE Framework Application
 
-### Spoofing (Identity/Authority Threats)
+#### Spoofing (Identity/Authority Threats)
 - **Migration inhibition system (HD01SfU22)**: Risk of individuals circumventing mandatory reporting requirements by using false identities. The lack of biometric requirement in some procedures creates vulnerability.
 - **Condominium register (HD01CU28)**: New identity requirements for property registration reduce this threat in real estate fraud.
 
-### Tampering (Data Integrity Threats)
+#### Tampering (Data Integrity Threats)
 - **Public administration interoperability (HD03244)**: New data sharing requirements across government increase attack surface. Requires strong cryptographic protections.
 - **Electronic submissions** to Skatteverket: HD01CU28 enables electronic bouppteckning — introduces digital tampering risk.
 
-### Repudiation (Audit Trail Threats)
+#### Repudiation (Audit Trail Threats)
 - **Fuel tax system (HD03236)**: Complex subsidy/rebate systems historically vulnerable to VAT-style fraud. Requires robust audit mechanisms.
 
-### Information Disclosure (Privacy Threats)
+#### Information Disclosure (Privacy Threats)
 - **Migration inhibition orders (HD01SfU22)**: Mandatory reporting and geographic restriction creates new government databases on vulnerable individuals — GDPR risk.
 - **National condominium register (HD01CU28)**: Property and ownership data aggregation — privacy advocates will flag risks.
 
-### Denial of Service (System Availability Threats)
+#### Denial of Service (System Availability Threats)
 - **SiS youth detention (HD03246)**: Already at capacity; new law will increase demand by estimated 15-20% — actual capacity denial risk is HIGH.
 - **Migrationsverket (HD01SfU22)**: New administrative burden without stated resource allocation.
 
-### Elevation of Privilege (Constitutional Threats)
+#### Elevation of Privilege (Constitutional Threats)
 - **Youth crime law (HD03246)**: Granting prosecutors broader discretion for juvenile detention may enable excessive use without sufficient judicial oversight.
 - **Migration inhibition (HD01SfU22)**: Geographic restriction orders issued by Migrationsverket without automatic court review — ECtHR may consider this insufficient procedural protection.
 
-## Political Threat Matrix
+### Political Threat Matrix
 
 | Threat | Actor | Target | Probability | Countermeasure |
 |--------|-------|--------|-------------|----------------|
@@ -638,23 +630,22 @@ Rationale: Multiple simultaneous high-probability threats (legal challenge to HD
 ## Per-document intelligence
 
 ### HD01SfU22
-
-_Source: [`documents/HD01SfU22-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/documents/HD01SfU22-analysis.md)_
+<!-- source: documents/HD01SfU22-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/documents/HD01SfU22-analysis.md -->
 
 **Dok-ID:** HD01SfU22 | **Datum:** 2026-04-14 | **Organ:** SfU (Socialförsäkringsutskottet) | **Typ:** bet
 
-## Executive Summary
+### Executive Summary
 The Social Insurance Committee (SfU) proposed on April 14 that the Riksdag approve a government proposition replacing temporary residence permits for individuals facing deportation barriers with a system of "inhibition" (suspension of enforcement). Under the new regime, people who cannot be deported — because of risk of death, torture, or inhuman treatment in their country of origin — will no longer receive temporary residence permits but will instead have their deportation order suspended. They may also be required to report to Migrationsverket or police and confined to a geographic area.
 
 This is a significant tightening of Sweden's migration policy that fundamentally changes the legal status of approximately 2,000-4,000 individuals annually who fall into this category.
 
-## Analytical Lens 1: Political Context
+### Analytical Lens 1: Political Context
 - **Tidö coalition mandate**: The M+KD+L+SD government has systematically reduced migration pathways since 2022
 - **SD influence**: This reform bears the SD fingerprint of closing all alternative pathways to regular stay
 - **Minister**: Migration Minister Johan Forssell (M) is the political owner
 - **Effective date**: June 1, 2026 — just before the September election
 
-## Analytical Lens 2: SWOT Analysis
+### Analytical Lens 2: SWOT Analysis
 
 ```mermaid
 graph TD
@@ -676,7 +667,7 @@ graph TD
 | **Opportunity**: Coalition cohesion | SD core demand; strengthens Tidö agreement | HIGH | MEDIUM |
 | **Threat**: Litigation risk | European Court cases on similar frameworks | HIGH | MEDIUM |
 
-## Analytical Lens 3: Stakeholder Perspectives
+### Analytical Lens 3: Stakeholder Perspectives
 | Stakeholder | Position | Rationale |
 |-------------|----------|-----------|
 | **SD** | Strongly supportive | Fulfills core immigration tightening agenda |
@@ -688,19 +679,18 @@ graph TD
 | **Migrationsverket** | Mixed | More clarity on status, but new administrative burden |
 | **Affected individuals** | Severely negatively impacted | Loss of legal status, geographic restriction |
 
-## DIW Score: 6.5/10
+### DIW Score: 6.5/10
 Significant migration policy affecting vulnerable population; politically salient ahead of elections; constitutional and human rights dimensions.
 
 ### HD03100
-
-_Source: [`documents/HD03100-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/documents/HD03100-analysis.md)_
+<!-- source: documents/HD03100-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/documents/HD03100-analysis.md -->
 
 **Dok-ID:** HD03100 | **Datum:** 2026-04-13 | **Organ:** Finansdepartementet | **Typ:** prop
 
-## Executive Summary
+### Executive Summary
 The 2026 Spring Economic Proposition (Vårpropositionen) sets the fiscal framework for Sweden's 2026-2029 budget horizon. Presented by Finance Minister Elisabeth Svantesson, it establishes macroeconomic forecasts, spending priorities, and revenue projections that will guide Sweden through a critical pre-election period. With GDP growth recovering to 0.82% in 2024 (from -0.20% in 2023), unemployment at 8.7% in 2025, and inflation cooling to 2.8% in 2024 (from 8.5% in 2023), this proposition charts Sweden's path out of a dual economic contraction and inflation shock.
 
-## Analytical Lens 1: Macroeconomic Context
+### Analytical Lens 1: Macroeconomic Context
 **Key Economic Indicators (World Bank data):**
 - **GDP Growth**: 0.82% (2024), -0.20% (2023), 1.26% (2022) – recovery underway but fragile
 - **Unemployment**: 8.7% (2025), 8.4% (2024) – structurally elevated, concern for S/V opposition
@@ -709,7 +699,7 @@ The 2026 Spring Economic Proposition (Vårpropositionen) sets the fiscal framewo
 
 **Political framing**: Svantesson will argue recovery is on track under coalition management; opposition will counter that 8.7% unemployment is unacceptable and the extra budget (HD03236) undermines fiscal discipline.
 
-## Analytical Lens 2: SWOT Analysis
+### Analytical Lens 2: SWOT Analysis
 
 ```mermaid
 graph TD
@@ -731,7 +721,7 @@ graph TD
 | **Opportunity**: Monetary easing | Riksbank rate cuts if inflation stays low | MEDIUM | HIGH |
 | **Threat**: External shocks | US tariff risks, energy volatility | MEDIUM | HIGH |
 
-## Analytical Lens 3: Stakeholder Impact Matrix
+### Analytical Lens 3: Stakeholder Impact Matrix
 | Stakeholder | Position | Impact |
 |-------------|----------|--------|
 | **S (Social Democrats)** | Critical – argues unemployment too high | Jobs data supports criticism |
@@ -741,25 +731,24 @@ graph TD
 | **Households** | Mixed – lower inflation positive, unemployment negative | 8.7% unemployment = 450,000+ Swedes |
 | **Riksbank** | Monitoring for fiscal discipline | Critical of extra budgets |
 
-## Analytical Lens 4: DIW Score
+### Analytical Lens 4: DIW Score
 **DIW Score: 9.5/10** – Spring Economic Proposition is the single most significant annual fiscal document in Swedish politics. It frames the entire year's political-economic debate and sets parameters for all other budget decisions, including HD03236, HD0399.
 
-## Analytical Lens 5: Cross-References
+### Analytical Lens 5: Cross-References
 - **HD0399** (Vårändringsbudget): Sister document with specific expenditure adjustments
 - **HD03236** (Extra ändringsbudget): Energy/fuel subsidies that modify this framework
 - **HD03241** (Riksrevisionens rapport): Independent audit of fiscal framework compliance
 - **HD03101** (Årsredovisning för staten 2025): Financial accounts showing 2025 actuals
 
 ### HD03236
-
-_Source: [`documents/HD03236-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/documents/HD03236-analysis.md)_
+<!-- source: documents/HD03236-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/documents/HD03236-analysis.md -->
 
 **Dok-ID:** HD03236 | **Datum:** 2026-04-13 | **Organ:** Finansdepartementet | **Typ:** prop
 
-## Executive Summary
+### Executive Summary
 The Kristersson government submitted a supplementary emergency budget (Extra ändringsbudget) for 2026 reducing fuel taxes and introducing electricity/gas price subsidies. Presented by Finance Minister **Elisabeth Svantesson** with Financial Markets Minister **Niklas Wykman** as co-signatory on the revenue-measure components, this is a politically significant fiscal intervention responding to persistent cost-of-living pressures faced by Swedish households. Coming alongside the Spring Economic Proposition (HD03100 — also authored by Svantesson), this package signals the government's willingness to deploy fiscal tools to address energy costs ahead of the 2026 September elections.
 
-## Analytical Lens 1: Political Context & Actors
+### Analytical Lens 1: Political Context & Actors
 **Principal actors:**
 - **Elisabeth Svantesson** (M) – Finance Minister; owner of the full spring fiscal package (HD03100 + HD0399 + HD03236) and lead presenter of this extra ändringsbudget
 - **Niklas Wykman** (M) – Financial Markets Minister; co-signatory on the fuel-excise-reduction provisions (Finansdepartementets skatteavdelning)
@@ -769,7 +758,7 @@ The Kristersson government submitted a supplementary emergency budget (Extra än
 
 **Political motivation:** The Tidö agreement (M+KD+L+SD coalition) faces electoral pressure from high energy costs. This supplementary budget serves dual purposes: (1) immediate consumer relief, (2) electoral signal of fiscal competence ahead of September 2026 elections.
 
-## Analytical Lens 2: SWOT Analysis
+### Analytical Lens 2: SWOT Analysis
 
 ```mermaid
 graph TD
@@ -791,7 +780,7 @@ graph TD
 | **Opportunity**: Election positioning | Polls show cost-of-living as #1 voter concern entering 2026 | HIGH | HIGH |
 | **Threat**: EU coherence | Sweden committed to carbon pricing; tax cut contradicts climate targets | HIGH | MEDIUM |
 
-## Analytical Lens 3: Stakeholder Perspectives
+### Analytical Lens 3: Stakeholder Perspectives
 | Stakeholder | Position | Rationale | Evidence |
 |-------------|----------|-----------|---------|
 | **S (Social Democrats)** | Critical | Will argue it's regressive, helps wealthy car owners more | Opposition doctrine |
@@ -802,7 +791,7 @@ graph TD
 | **Urban commuters** | Moderately supportive | Public transit alternatives exist | Partial dependency |
 | **Industry (logistics)** | Supportive | Lower operating costs for transport sector | Direct impact |
 
-## Analytical Lens 4: Risk Assessment
+### Analytical Lens 4: Risk Assessment
 | Risk | Probability | Impact | Severity |
 |------|-------------|--------|----------|
 | Inflationary signal to market | MEDIUM (30%) | MEDIUM | 🟡 MODERATE |
@@ -810,28 +799,27 @@ graph TD
 | Parliamentary defeat (unlikely with SD support) | LOW (10%) | HIGH | 🟢 LOW |
 | Electoral backlash from green voters | MEDIUM (40%) | MEDIUM | 🟡 MODERATE |
 
-## Analytical Lens 5: Legislative Impact
+### Analytical Lens 5: Legislative Impact
 - **Direct**: Reduces revenue from fuel excise duties; provides credits/subsidies for electricity/gas consumption
 - **Timeline**: Budget changes take effect immediately upon Riksdag approval (Q2 2026)
 - **Constitutional**: Standard budget amendment procedure; requires Finance Committee (FiU) approval
 - **Precedent**: Continues pattern of emergency energy subsidies started in 2022-23 during energy price spike
 
-## Analytical Lens 6: Electoral Implications (2026 Election)
+### Analytical Lens 6: Electoral Implications (2026 Election)
 - **Score: HIGH political salience** – Cost-of-living is Sweden's top electoral issue
 - **Coalition calculus**: SD and M both benefit from this measure; L and KD accept as coalition discipline
 - **Opposition handicap**: S cannot easily oppose consumer relief without appearing out of touch
 - **DIW Score: 8.5/10** – Immediate fiscal impact affecting all Swedish households
 
 ### HD03246
-
-_Source: [`documents/HD03246-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/documents/HD03246-analysis.md)_
+<!-- source: documents/HD03246-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/documents/HD03246-analysis.md -->
 
 **Dok-ID:** HD03246 | **Datum:** 2026-04-16 | **Organ:** Justitiedepartementet | **Typ:** prop
 
-## Executive Summary
+### Executive Summary
 Justice Minister Gunnar Strömmer (M) submitted Proposition 2025/26:246 on April 16, 2026 — introducing stricter rules for young offenders (ages 15-17). This is one of the most significant criminal justice measures of the Tidö coalition, expanding punishment frameworks for juvenile crime in response to Sweden's gang-related youth violence epidemic. The proposition follows the government's comprehensive "Agenda för att stärka rättsstat och bekämpa brottslighet" and comes amid heightened public concern about shootings and gang recruitment of minors.
 
-## Analytical Lens 1: Political Context
+### Analytical Lens 1: Political Context
 **Actor:** Justice Minister Gunnar Strömmer (M) is the political face of this reform.
 **Coalition driver:** Sweden Democrats (SD) and Moderates have jointly pushed for tougher juvenile justice since 2022.
 **Electoral context:** With September 2026 elections approaching, demonstrating crime-fighting credentials is core to coalition messaging.
@@ -842,7 +830,7 @@ Justice Minister Gunnar Strömmer (M) submitted Proposition 2025/26:246 on April
 - Changes to the "ungdomstjänst" (youth service) system to increase deterrence
 - Closer coordination between social services and judiciary for 15-17 year olds
 
-## Analytical Lens 2: SWOT Analysis
+### Analytical Lens 2: SWOT Analysis
 
 ```mermaid
 graph TD
@@ -864,7 +852,7 @@ graph TD
 | **Opportunity**: Crime reduction | Targeted early intervention reduces long-term criminal careers | MEDIUM | HIGH |
 | **Threat**: Capacity deficit | SiS youth facilities at 100%+ capacity in 2025 | HIGH | HIGH |
 
-## Analytical Lens 3: Stakeholder Perspectives
+### Analytical Lens 3: Stakeholder Perspectives
 | Stakeholder | Position | Rationale |
 |-------------|----------|-----------|
 | **SD** | Strongly supportive | Core Tidö agenda item; youth crime central to SD narrative |
@@ -877,12 +865,12 @@ graph TD
 | **Social workers/NGOs** | Opposed | Fear punitive approach worsens outcomes |
 | **Police** | Supportive | More tools for persistent young offenders |
 
-## Analytical Lens 4: International Comparison
+### Analytical Lens 4: International Comparison
 - **Denmark**: Introduced similar youth crime crackdown 2020-21; mixed results — repeat offending unchanged
 - **Norway**: Prioritizes restorative justice; lower youth crime rates than Sweden
 - **UK**: Anti-social behaviour orders (ASBOs) largely failed; lesson for Sweden
 
-## Analytical Lens 5: Risk Assessment
+### Analytical Lens 5: Risk Assessment
 | Risk | Probability | Impact | Severity |
 |------|-------------|--------|----------|
 | SiS capacity breach | HIGH (80%) | HIGH | 🔴 CRITICAL |
@@ -890,12 +878,11 @@ graph TD
 | Increased recidivism | MEDIUM (50%) | HIGH | 🔴 HIGH |
 | Electoral benefit materializes | HIGH (70%) | MEDIUM | 🟡 MODERATE |
 
-## DIW Score: 7.5/10
+### DIW Score: 7.5/10
 Criminal justice reform with direct constitutional (rights) and welfare (children) dimensions, politically salient ahead of elections.
 
 ## Comparative International
-
-_Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/comparative-international.md)_
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/comparative-international.md -->
 
 | Field | Value |
 |-------|-------|
@@ -908,9 +895,9 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 💰 Domain 1 — Fiscal Framework & Supplementary Budgets (HD03100 + HD0399 + HD03236)
+### 💰 Domain 1 — Fiscal Framework & Supplementary Budgets (HD03100 + HD0399 + HD03236)
 
-### Comparator Table
+#### Comparator Table
 
 | Jurisdiction | Supplementary-budget frequency norm | Fiscal anchor | Independent audit body | Relevant 2025–2026 practice |
 |--------------|-------------------------------------|----------------|------------------------|------------------------------|
@@ -921,11 +908,11 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 | 🇩🇪 **Germany** | 0–2/year; high political cost | *Schuldenbremse* (constitutional) | Bundesrechnungshof | 2023–2024 Karlsruhe ruling reshaped supplementary-budget politics |
 | 🇳🇱 **Netherlands** | Budget review twice (Voorjaarsnota + Najaarsnota) | *Trendmatig begrotingsbeleid* | Algemene Rekenkamer | 2025 Voorjaarsnota tightened rather than loosened |
 
-### Sweden-Specific Finding
+#### Sweden-Specific Finding
 
 **HD03100 + HD0399 + HD03236 together push Sweden above the typical Danish/Norwegian pattern and closer to the Finnish pattern of frequent mid-year adjustment. Riksrevisionen's own report on fiscal-framework application (HD03241) is unusual in timing — an active audit commentary coinciding with the government it is auditing.** `[HIGH]`
 
-### Electoral-Cycle Budget Cluster Comparison
+#### Electoral-Cycle Budget Cluster Comparison
 
 | Country | Pre-election "budget cluster" precedent | Outcome |
 |---------|-----------------------------------------|---------|
@@ -938,9 +925,9 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 👮 Domain 2 — Youth Criminal Justice Reform (HD03246)
+### 👮 Domain 2 — Youth Criminal Justice Reform (HD03246)
 
-### Comparator Table — Juvenile-Offender Frameworks (ages 15–17)
+#### Comparator Table — Juvenile-Offender Frameworks (ages 15–17)
 
 | Jurisdiction | Detention age-of-liability floor | Closed detention trend (2020–2025) | Rehabilitation / capacity investment | Recidivism rate (18-month) |
 |--------------|:---:|-----------------------------------|-------------------------------------|:---:|
@@ -952,13 +939,13 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 | 🇳🇱 **Netherlands** | 12 (adapted responsibility) | Stable | "HALT" pre-court diversion | ~32 % |
 | 🇬🇧 UK / England | 10 | ↑ (overcrowding reported) | "Secure schools" programme (2022–) | ~47 % |
 
-### Sweden-Specific Finding
+#### Sweden-Specific Finding
 
 **Sweden's HD03246 moves Sweden closer to the UK/England trajectory (toughening without proportionate capacity investment) and away from the Nordic / Dutch rehabilitation-anchored model (Denmark 2024 expanded capacity first).** `[MEDIUM]`
 
 **BRÅ-analogue research by Netherlands WODC and Norway KRUS consistently finds that deterrence-only reforms without rehabilitation investment increase 18-month recidivism by 3–6 pp. HD03246's implementation design, without paired SiS capital expenditure, matches the failed policy-cluster profile.** `[MEDIUM]`
 
-### Council of Europe / UN-CRC Observations
+#### Council of Europe / UN-CRC Observations
 
 - **UN-CRC Concluding Observations on Sweden (2023)** already flagged juvenile detention overuse. HD03246 will intensify reporting interactions.
 - **CPT (European Committee for the Prevention of Torture)** Sweden report, 2024: SiS overcrowding cited as treatment-integrity risk. HD03246 worsens that vector absent capital response. `[HIGH]`
@@ -966,9 +953,9 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 🛂 Domain 3 — Migration Inhibition / Alternative-Return Schemes (HD01SfU22)
+### 🛂 Domain 3 — Migration Inhibition / Alternative-Return Schemes (HD01SfU22)
 
-### Comparator Table — Alternative Schemes for Deportation-Blocked Individuals
+#### Comparator Table — Alternative Schemes for Deportation-Blocked Individuals
 
 | Jurisdiction | Scheme name | Geographic restriction? | Automatic judicial review? | Reporting obligation? | ECtHR / CJEU case law status |
 |--------------|--------------|:---:|:---:|:---:|-------------------------|
@@ -981,11 +968,11 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 | 🇮🇪 Ireland | *Direct provision* + reporting | Yes | Yes | Yes | Compatible |
 | 🇫🇷 France | *Assignation à résidence* | Yes | Yes (JLD review) | Yes | *K.G. v. France* (2019) — compatible with JLD safeguard |
 
-### Sweden-Specific Finding
+#### Sweden-Specific Finding
 
 **Sweden's HD01SfU22 is the only comparator scheme without mandatory automatic judicial review at the point of inhibition-order issuance. This is the single design feature that converts the scheme from ECtHR-compatible (Denmark, Netherlands, Germany, France) to ECtHR-exposed.** `[HIGH]`
 
-### ECHR / EU Legal Exposure Summary
+#### ECHR / EU Legal Exposure Summary
 
 | Legal instrument | Exposure | Mitigation path |
 |------------------|----------|-----------------|
@@ -999,7 +986,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 📊 Cross-Domain Synthesis
+### 📊 Cross-Domain Synthesis
 
 | Design Choice | Sweden (HD03100/HD03236/HD03246/HD01SfU22) | Closest Nordic Peer | Closest "Failed Policy" Peer | Verdict |
 |---------------|----------------------------------|---------------------|----------------------------|---------|
@@ -1007,7 +994,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 | Youth detention toughening without capacity | HD03246 + static SiS | DK 2024 (toughened WITH capacity) | UK secure schools | Risk-heavy |
 | Migration inhibition without automatic judicial review | HD01SfU22 | DK, NL, DE, FR all have it | None — unique outlier | High-risk |
 
-### Summary Finding
+#### Summary Finding
 
 **Sweden's HD01SfU22 is the single outlier design feature in the package from an international-comparative perspective. The fiscal and youth-justice dimensions follow recognisable peer patterns, but the migration-inhibition scheme diverges from every comparable European scheme by omitting automatic judicial review at issuance.** `[HIGH]`
 
@@ -1015,7 +1002,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 🌡️ Index Positioning (Pre- vs Post-Package, Projected)
+### 🌡️ Index Positioning (Pre- vs Post-Package, Projected)
 
 | Index | 2025 Sweden score | 2026 projection (BASE) | 2026 projection (BEAR) |
 |-------|:------:|:------:|:------:|
@@ -1028,13 +1015,13 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 📎 Cross-Links
+### 📎 Cross-Links
 
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/README.md) · [Executive Brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/executive-brief.md) · [Significance](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/significance-scoring.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/risk-assessment.md) · [Scenarios](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/scenario-analysis.md) · [Threat](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/threat-analysis.md)
 
 ---
 
-## Citation Sources
+### Citation Sources
 
 - **OECD Economic Surveys — Sweden** (2024, 2025)
 - **Riksrevisionen — Fiscal Framework Application Reports** (2024, 2025; HD03241 2026)
@@ -1052,12 +1039,11 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 **Classification**: Public · **Next Review**: 2026-04-25
 
 ## Classification Results
-
-_Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/classification-results.md)_
+<!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/classification-results.md -->
 
 **Analysis run:** realtime-1705 | **Date:** 2026-04-18
 
-## Document Classification Matrix
+### Document Classification Matrix
 
 | dok_id | Title | Policy Area | Political Valence | Ideological Driver | EU Impact |
 |--------|-------|-------------|-------------------|-------------------|-----------|
@@ -1068,28 +1054,27 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 | HD01SfU22 | Migration inhibition | Migration/asylum | Far-Right | SD core agenda | HIGH (EU returns directive) |
 | HD03240 | Elsystemet laws | Energy policy | Center | Energy security, transition | HIGH (EU electricity directive) |
 
-## Governing Coalition Policy Vector
+### Governing Coalition Policy Vector
 The April 2026 legislative cluster represents a **rightward acceleration** in coalition policy as elections approach:
 - **Criminal justice**: Punitive turn on youth crime (HD03246) advances SD/M joint agenda
 - **Migration**: Systematic closure of alternative legal pathways (HD01SfU22) fulfills SD demands
 - **Energy**: Fossil fuel tax relief (HD03236) prioritizes short-term consumer relief over long-term climate targets
 - **Fiscal**: Spring proposition (HD03100) provides macro legitimacy cover for spending measures
 
-## Conflict Lines
+### Conflict Lines
 **Coalition vs. Opposition**: All four measures have clear left-right fault lines.
 **Coalition internal**: L's liberal values create minor tension with HD03246 juvenile rights provisions and HD01SfU22 humanitarian concerns.
 **Sweden vs. EU**: HD03236 (fuel tax cuts) creates tension with EU's carbon pricing agenda; HD01SfU22 faces EU returns directive compatibility questions.
 
-## Historical Classification
+### Historical Classification
 This legislative sprint is analogous to the Reinfeldt government's 2009 fiscal expansion (anti-austerity during financial crisis) in its use of supplementary budget mechanisms — but with a more ideologically homogeneous direction (right-populist rather than centrist crisis management).
 
 ## Cross-Reference Map
-
-_Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/cross-reference-map.md)_
+<!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/cross-reference-map.md -->
 
 **Analysis run:** realtime-1705 | **Date:** 2026-04-18
 
-## Document Dependency Graph
+### Document Dependency Graph
 
 ```mermaid
 graph LR
@@ -1119,18 +1104,18 @@ graph LR
     style G fill:#F57C00,color:#000000
 ```
 
-## Key Interdependencies
+### Key Interdependencies
 
-### Budget Package Cluster (HD03100 → HD0399 → HD03236)
+#### Budget Package Cluster (HD03100 → HD0399 → HD03236)
 These three documents form Sweden's spring fiscal package. HD03100 sets the macro framework, HD0399 adjusts existing budget lines, and HD03236 adds an extraordinary measure (energy relief) outside the regular budget cycle. Together they represent the government's pre-election fiscal platform.
 
-### Energy Policy Cluster (HD03236 + HD03240 + HD03239)
+#### Energy Policy Cluster (HD03236 + HD03240 + HD03239)
 Fuel tax cuts (HD03236), new electricity system laws (HD03240), and wind power revenue sharing (HD03239) form a coherent (if internally tensioned) energy policy agenda: reduce consumer costs in the short-term while building renewable capacity for the long-term.
 
-### Security/Justice Cluster (HD03246 + HD01SfU22)
+#### Security/Justice Cluster (HD03246 + HD01SfU22)
 Youth crime law and migration inhibition orders both belong to the Tidö agreement's security agenda. Both are presented as "firmness" measures and both carry significant implementation risks (SiS capacity, ECHR compliance).
 
-## Previously Covered Documents (April 17 run - NOT duplicated)
+### Previously Covered Documents (April 17 run - NOT duplicated)
 - HD01KU32 (Press freedom TFF amendment)
 - HD01KU33 (Search warrant public records)
 - HD01CU28 (Condominium register)
@@ -1143,14 +1128,13 @@ Youth crime law and migration inhibition orders both belong to the Tidö agreeme
 - HD03232 (Ukraine compensation commission)
 
 ## Data Download Manifest
-
-_Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/data-download-manifest.md)_
+<!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/data-download-manifest.md -->
 
 **Analysis run:** realtime-1705 | **MCP Status:** LIVE | **Generated:** 2026-04-18T17:10Z
 
-## Data Sources Used
+### Data Sources Used
 
-### riksdag-regering-mcp
+#### riksdag-regering-mcp
 - `get_sync_status()` → LIVE (generated_at: 2026-04-18T17:05:22Z)
 - `get_propositioner(rm: "2025/26", limit: 20)` → 272 propositions total, 20 fetched
 - `get_betankanden(rm: "2025/26", limit: 20)` → 20 fetched
@@ -1160,13 +1144,13 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 - `get_dokument_innehall(HD03236)` → snippet only (fulltext_available: true)
 - `get_dokument_innehall(HD03100)` → snippet only (fulltext_available: true)
 
-### World Bank API
+#### World Bank API
 - `get-economic-data(SE, GDP_GROWTH, 10)` → 2016-2024 data fetched ✅
 - `get-economic-data(SE, INFLATION, 5)` → 2021-2024 data fetched ✅
 - `get-economic-data(SE, UNEMPLOYMENT, 5)` → 2021-2025 data fetched ✅
 - `get-economic-data(SE, GDP_PER_CAPITA, 5)` → 2021-2024 data fetched ✅
 
-## Key Statistics Captured
+### Key Statistics Captured
 | Indicator | Latest Value | Year | Source |
 |-----------|-------------|------|--------|
 | GDP Growth | 0.82% | 2024 | World Bank |
@@ -1175,11 +1159,32 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 | GDP per capita | $57,117 | 2024 | World Bank |
 | Riksdag documents (2025/26) | 272 propositions | 2026 | riksdag-regering |
 
-## Documents Analyzed
+### Documents Analyzed
 4 primary documents: HD03100, HD03236, HD03246, HD01SfU22
 Additional context: HD0399, HD03240, HD03239, HD03242, HD03241, HD03101, HD03220
 
-## Data Quality Assessment
+### Data Quality Assessment
 - **Freshness**: Live data as of 2026-04-18T17:05Z — NO STALENESS WARNING
 - **Completeness**: Full metadata + summaries available for all primary documents
 - **Fulltext availability**: Available but not fetched (very large documents) — summaries used
+
+## Article Sources
+
+Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
+
+- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/executive-brief.md)
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/synthesis-summary.md)
+- [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/significance-scoring.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/stakeholder-perspectives.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/scenario-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/threat-analysis.md)
+- [`documents/HD01SfU22-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/documents/HD01SfU22-analysis.md)
+- [`documents/HD03100-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/documents/HD03100-analysis.md)
+- [`documents/HD03236-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/documents/HD03236-analysis.md)
+- [`documents/HD03246-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/documents/HD03246-analysis.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/comparative-international.md)
+- [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/classification-results.md)
+- [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/cross-reference-map.md)
+- [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/data-download-manifest.md)

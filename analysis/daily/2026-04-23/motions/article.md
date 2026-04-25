@@ -5,7 +5,7 @@ date: 2026-04-23
 subfolder: motions
 slug: 2026-04-23-motions
 source_folder: analysis/daily/2026-04-23/motions
-generated_at: 2026-04-25T11:09:59.923Z
+generated_at: 2026-04-25T15:36:04.721Z
 language: en
 layout: article
 ---
@@ -26,18 +26,17 @@ Use this guide to read the article as a political-intelligence product rather th
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Executive Brief
-
-_Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief.md)_
+<!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief.md -->
 
 ---
 
-## 🎯 BLUF
+### 🎯 BLUF
 
 Sweden's parliamentary opposition has filed 14 motions in the week of 13–17 April 2026 challenging the government's extra supplementary budget (prop. 2025/26:236), deportation law reform (prop. 2025/26:235), new arms export framework (prop. 2025/26:228), and new asylum reception law (prop. 2025/26:229). The sharpest cleavage is over the government's temporary fuel tax cut to EU minimum levels: S, V, and MP all oppose it but for divergent reasons, signalling that the centre-left opposition cannot coalesce behind a single counter-proposal ahead of the autumn 2026 election.
 
 ---
 
-## 🧭 Decisions This Brief Supports
+### 🧭 Decisions This Brief Supports
 
 1. **Media & editorial framing**: Determine whether the energy/budget dispute should lead as a "fiscal credibility" or "climate policy" story — evidence below supports both framings simultaneously.
 2. **Election intelligence**: Assess whether opposition fragmentation on fiscal and migration issues reduces the probability of a left-of-centre government change in autumn 2026.
@@ -45,7 +44,7 @@ Sweden's parliamentary opposition has filed 14 motions in the week of 13–17 Ap
 
 ---
 
-## ⚡ 60-Second Read
+### ⚡ 60-Second Read
 
 - **Budget clash**: S wants better-targeted electricity support and flexible use of grid-congestion revenues (HD024082 by Mikael Damberg). V demands the entire fuel tax cut be rejected — cites RUT analysis showing government reforms benefiting top half of income distribution 5× more than the bottom half (HD024092, Nooshi Dadgostar). MP likewise opposes fuel cut; cites Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet, and Trafikverket as opposing the proposal (HD024098, Janine Alm Ericson).
 - **Deportation law (prop. 2025/26:235)**: V demands full rejection of stricter deportation rules (HD024090, Tony Haddou); C accepts with conditions requiring systematic repeat offences (HD024095, Niels Paarup-Petersen); MP partial rejection (HD024097, Annika Hirvonen).
@@ -55,13 +54,13 @@ Sweden's parliamentary opposition has filed 14 motions in the week of 13–17 Ap
 
 ---
 
-## 🔭 Top Forward Trigger
+### 🔭 Top Forward Trigger
 
 **FiU committee vote on Extra ändringsbudget (prop. 2025/26:236)** — expected within 3–4 weeks. If SD votes with the government as expected, the fuel tax cut will pass. Watch for any SD amendment demands as a pivotal indicator of coalition stability.
 
 ---
 
-## 📊 Significance Ranking (DIW weighted)
+### 📊 Significance Ranking (DIW weighted)
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
@@ -84,18 +83,17 @@ quadrantChart
 *Confidence: HIGH overall [B2]; individual document scores reflect manifest data + full text where available.*
 
 ## Synthesis Summary
-
-_Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/synthesis-summary.md)_
+<!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/synthesis-summary.md -->
 
 ---
 
-## Lead Story: Energy-Climate Fault Line Fractures Opposition Bloc
+### Lead Story: Energy-Climate Fault Line Fractures Opposition Bloc
 
 The week of 13–17 April 2026 produced the spring session's most revealing clash of opposition values: three parties — Socialdemokraterna (S), Vänsterpartiet (V), and Miljöpartiet (MP) — all oppose the government's extra supplementary budget for 2026 (prop. 2025/26:236) but cannot agree on a common alternative. S demands better-designed electricity support and more flexible use of grid-congestion (flaskhals) revenues (dok_id: HD024082, Mikael Damberg m.fl.). V invokes a RUT distributional analysis showing the government's mandate-period reforms have benefited the top income half 5× more than the bottom half, and demands the fuel tax cut be rejected outright (HD024092, Nooshi Dadgostar m.fl.). MP cites a coalition of expert agencies — Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet, Trafikverket — as opposing the fuel tax reduction on climate and investment-certainty grounds (HD024098, Janine Alm Ericson m.fl.).
 
 ---
 
-## DIW-Weighted Priority Ranking
+### DIW-Weighted Priority Ranking
 
 | Rank | dok_id | Title (abbreviated) | Submitter | DIW | Significance |
 |------|--------|---------------------|-----------|-----|-------------|
@@ -113,29 +111,29 @@ The week of 13–17 April 2026 produced the spring session's most revealing clas
 
 ---
 
-## Integrated Intelligence Picture
+### Integrated Intelligence Picture
 
 Three interlocking policy battles define this week's opposition motions:
 
-### 1. Fiscal-Energy Battle (FiU jurisdiction)
+#### 1. Fiscal-Energy Battle (FiU jurisdiction)
 
 The government's Extra ändringsbudget (prop. 2025/26:236) proposes: (a) temporary fuel tax reduction to EU energy directive minimum 1 May–30 Sep 2026 and (b) 3.4 billion SEK in electricity support (1 bn previously allocated + 2.4 bn new). **S** (HD024082) does not oppose the electricity support amount but criticises its design — approximately 800,000 households in housing cooperatives with shared electricity contracts will not qualify. S demands the government return with proposals for targeted, equitable electricity support and for more flexible use of grid-congestion revenues. **V** (HD024092) goes further: rejects the fuel tax cut entirely, cites RUT analysis (dnr 2026:158 and 2025:1607) showing regressive distributional effects, and argues climate transition requirements override short-term relief. **MP** (HD024098) aligns with V on the fuel tax but grounds the argument in expert agency consensus — the proposal "risks deepening Sweden's fossil fuel dependency."
 
 Intelligence assessment: The fuel tax cut is likely to pass (SD will vote with government), but the opposition's fragmented response reflects a deeper strategic disagreement about whether to fight the government on fiscal credibility (S's approach), distributional justice (V), or climate integrity (MP). This fragmentation is a structural vulnerability ahead of 2026 elections.
 
-### 2. Migration/Crime Nexus (SfU jurisdiction)
+#### 2. Migration/Crime Nexus (SfU jurisdiction)
 
 **Prop. 2025/26:235** (stricter deportation): Would lower threshold so any sentence stricter than a fine is deportation-eligible; remove protection for those who arrived before age 15; require prosecutors to seek deportation in all eligible cases; and ignore enforcement barriers at the general courts stage. Both **Lagrådet** (the Council on Legislation) and numerous remiss bodies opposed the reforms. V (HD024090) demands full rejection. C (HD024095) accepts deportation in principle but wants systematic repeated offences to be required, not single incidents. MP (HD024097) partly rejects — supports some changes (aggravated assault provisions, 8 kap. 1 §) but not the broad lowering of the threshold.
 
 **Prop. 2025/26:229** (new reception law/Mottagandelag): Would centralise asylum housing; the government takes over full responsibility from municipalities. C (HD024089) broadly supports the framework but opposes: (a) removing municipalities' right to give emergency welfare assistance and (b) "areas restrictions" (områdespolicies). S (HD024080) opposes privatisation of asylum housing. MP (HD024087) rejects the entire proposition.
 
-### 3. Arms Export Regulation (UU jurisdiction)
+#### 3. Arms Export Regulation (UU jurisdiction)
 
 **Prop. 2025/26:228** (new krigsmateriel framework): MP (HD024096) demands: (1) a complete ban on arms exports to dictatorships, warring nations, and major human rights violators; (2) mandatory consideration of third-country diversion risk; (3) rejection of the new secrecy provisions on software/technology (citing Lagrådet criticism). V (HD024091) opposes the entire proposition.
 
 ---
 
-## AI-Recommended Article Metadata
+### AI-Recommended Article Metadata
 
 - **Title**: "Split Opposition Challenges Sweden's Fuel-Tax Budget and Deportation Laws"  
 - **Meta description**: "Sweden's Social Democrats, Left Party and Greens all oppose the government's fuel tax cut — but offer incompatible alternatives, revealing a fractured opposition ahead of autumn 2026 elections."  
@@ -143,7 +141,7 @@ Intelligence assessment: The fuel tax cut is likely to pass (SD will vote with g
 
 ---
 
-## Mermaid: Policy Battle Map
+### Mermaid: Policy Battle Map
 
 ```mermaid
 flowchart TB
@@ -179,8 +177,7 @@ flowchart TB
 ```
 
 ## Intelligence Assessment — Key Judgments
-
-_Source: [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/intelligence-assessment.md)_
+<!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/intelligence-assessment.md -->
 
 **Author**: James Pether Sörling | **Date**: 2026-04-23  
 **Classification**: PUBLIC  
@@ -188,7 +185,7 @@ _Source: [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonito
 
 ---
 
-## Key Judgment KJ-1: Opposition Fragmentation is the Dominant Political Story
+### Key Judgment KJ-1: Opposition Fragmentation is the Dominant Political Story
 
 **Confidence: HIGH**
 
@@ -198,7 +195,7 @@ The most significant intelligence output from this week's motions is not any ind
 
 ---
 
-## Key Judgment KJ-2: Government's Legislative Program is Expert-Isolated
+### Key Judgment KJ-2: Government's Legislative Program is Expert-Isolated
 
 **Confidence: HIGH**
 
@@ -208,7 +205,7 @@ The government faces unprecedented expert agency opposition to its supplementary
 
 ---
 
-## Key Judgment KJ-3: Migration Policy Arena is the Key 2026 Electoral Battleground
+### Key Judgment KJ-3: Migration Policy Arena is the Key 2026 Electoral Battleground
 
 **Confidence: MEDIUM-HIGH**
 
@@ -218,7 +215,7 @@ The week's migration motions (HD024089, HD024090, HD024095, HD024097, HD024080, 
 
 ---
 
-## PIR Handoff for Next Intelligence Cycle
+### PIR Handoff for Next Intelligence Cycle
 
 - **PIR-1 (Government stability)**: Monitor SD's FiU vote on prop. 2025/26:236. Any SD amendment demands = first crack in coalition.
 - **PIR-3 (Policy reform)**: Track FiU and SfU committee dates. If FiU fast-tracks before May 15, opposition loses deliberation window.
@@ -227,7 +224,7 @@ The week's migration motions (HD024089, HD024090, HD024095, HD024097, HD024080, 
 
 ---
 
-## Key Assumptions Check
+### Key Assumptions Check
 
 | Assumption | Validity | Risk if wrong |
 |-----------|----------|---------------|
@@ -237,12 +234,11 @@ The week's migration motions (HD024089, HD024090, HD024095, HD024097, HD024080, 
 | Courts will not issue interim stay on deportation law | HIGH confidence short-term | If ECtHR acts unusually fast, scenario 3 activated |
 
 ## Significance Scoring
-
-_Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/significance-scoring.md)_
+<!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/significance-scoring.md -->
 
 ---
 
-## DIW-Weighted Significance Matrix
+### DIW-Weighted Significance Matrix
 
 | Rank | dok_id | Depth | Intelligence | Width | DIW Score | Tier |
 |------|--------|-------|-------------|-------|-----------|------|
@@ -260,7 +256,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## Ranked Items with Evidence
+### Ranked Items with Evidence
 
 1. **HD024082** — S motion on Extra ändringsbudget: Mikael Damberg och Socialdemokraterna kräver ett rättvisare elstöd för 800,000 bostadsrättsinnehavare som exkluderats av regeringens design. [riksdagen.se/dokument/HD024082] `[B2]` IMPACT: HIGH — defines S budget profile pre-election.
 
@@ -276,14 +272,14 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## Sensitivity Analysis
+### Sensitivity Analysis
 
 - **Downside risk**: If FiU adds conditions making the fuel tax cut contingent on SD support for other measures, the entire budget picture shifts.
 - **Upside**: If the Mottagandelag passes with C support but faces constitutional review, the judicial dimension adds a new policy layer.
 
 ---
 
-## Mermaid: Significance Rank Diagram
+### Mermaid: Significance Rank Diagram
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d", "textColor": "#e0e0e0"}}}%%
@@ -298,12 +294,11 @@ xychart-beta
 *Sources: riksdagen.se document metadata + full-text analysis. Admiralty [B2] for document-derived scores; [A2] for multi-agency corroborated items.*
 
 ## Media Framing Analysis
-
-_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/media-framing-analysis.md)_
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/media-framing-analysis.md -->
 
 ---
 
-## Primary Frame War: "Relief" vs. "Justice"
+### Primary Frame War: "Relief" vs. "Justice"
 
 The dominant narrative battle this week is between the government's "relief" frame and the opposition's "justice" frame:
 
@@ -317,7 +312,7 @@ The dominant narrative battle this week is between the government's "relief" fra
 
 ---
 
-## Secondary Frame: "Rule of Law" vs. "Deterrence"
+### Secondary Frame: "Rule of Law" vs. "Deterrence"
 
 **V/MP frame (HD024090)**: The deportation law is unconstitutional, legally incoherent, and Lagrådet-rejected. "Rättssäkerheten" (rule of law) is under attack.
 
@@ -327,7 +322,7 @@ The dominant narrative battle this week is between the government's "relief" fra
 
 ---
 
-## Media Amplification Probability
+### Media Amplification Probability
 
 | Topic | Predicted amplification | Reason |
 |-------|------------------------|--------|
@@ -339,21 +334,20 @@ The dominant narrative battle this week is between the government's "relief" fra
 
 ---
 
-## Social Media Hypothesis
+### Social Media Hypothesis
 
 On platforms prioritising emotional resonance (Instagram, TikTok), the "800,000 households excluded" narrative (S) and "Lagrådet says it's illegal" narrative (V/MP) are the most shareable. The distributional data in V's motion requires more text than a social post allows.
 
 *Note: No social media monitoring data available. Assessment is structural inference from content analysis [C3].*
 
 ## Stakeholder Perspectives
-
-_Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/stakeholder-perspectives.md)_
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/stakeholder-perspectives.md -->
 
 ---
 
-## 6-Lens Stakeholder Matrix
+### 6-Lens Stakeholder Matrix
 
-### Lens 1: Parliamentary Parties
+#### Lens 1: Parliamentary Parties
 
 | Party | Position | Key Actor | Primary Motion | Strategic Interest |
 |-------|----------|-----------|----------------|-------------------|
@@ -364,7 +358,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 | SD — Sverigedemokraterna | Expected to support government across all four propositions | (no motions filed in this cluster) | — | Coalition stability; border control narrative |
 | M, L, KD | Expected to support government | — | — | Government parties |
 
-### Lens 2: Civil Society & Expert Bodies
+#### Lens 2: Civil Society & Expert Bodies
 
 | Actor | Position | Basis | Admiralty |
 |-------|----------|-------|-----------|
@@ -376,7 +370,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 | Trafikverket | Opposed fuel tax cut | Transport sector mandate | [A2] |
 | Remiss bodies on HD024090 | Extensive criticism of deportation reform | Rule-of-law analysis | [A2] |
 
-### Lens 3: Voters & Affected Populations
+#### Lens 3: Voters & Affected Populations
 
 | Group | Affected by | Stakes |
 |-------|-------------|--------|
@@ -386,7 +380,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 | Environment-concerned voters (~25–30% of electorate) | MP motion HD024098 — climate signal from fuel tax cut | Long-term fossil fuel dependency |
 | Asylum seekers and municipalities | Reception law prop. 2025/26:229 | Municipal welfare, area restrictions |
 
-### Lens 4: Media & Narrative Agents
+#### Lens 4: Media & Narrative Agents
 
 | Frame | Promoted by | Risk for opposition |
 |-------|-------------|---------------------|
@@ -395,7 +389,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 | "Climate backslide" | MP + green media | True but niche; low penetration in election swing voters |
 | "Rule of law erosion" | V + legal NGOs | Strong for base mobilisation; limited mainstream appeal |
 
-### Lens 5: International Actors
+#### Lens 5: International Actors
 
 | Actor | Concern | Basis |
 |-------|---------|-------|
@@ -403,7 +397,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 | Arms recipient states | Stricter Swedish export controls (MP demands) would restrict flows | HD024096 — explicit demand for export bans [B2] |
 | UNHCR / EU migration agencies | Stricter deportation thresholds and new reception framework | HD024090, HD024089 [B2] |
 
-### Lens 6: Institutional Actors
+#### Lens 6: Institutional Actors
 
 | Actor | Role | Interest |
 |-------|------|---------|
@@ -414,7 +408,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## Influence Network
+### Influence Network
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
@@ -441,95 +435,94 @@ graph LR
 ```
 
 ## Forward Indicators
-
-_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/forward-indicators.md)_
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/forward-indicators.md -->
 
 ---
 
-## Indicator Framework
+### Indicator Framework
 
 This file tracks 12 dated indicators across 4 horizons (30-day, 90-day, 6-month, 12-month) that would confirm or refute the key judgments in `intelligence-assessment.md`.
 
 ---
 
-## Horizon 1: 30-Day Indicators (May 2026)
+### Horizon 1: 30-Day Indicators (May 2026)
 
-### IND-01: FiU Committee Vote on prop. 2025/26:236 (fuel tax)
+#### IND-01: FiU Committee Vote on prop. 2025/26:236 (fuel tax)
 - **Expected date**: ~May 5, 2026 (FiU scheduled)
 - **Indicator**: Does FiU adopt S's design amendment (HD024082)? Yes = KJ-1 partially refuted (opposition succeeded). No = KJ-1 confirmed.
 - **Trigger threshold**: Any S, V, or MP amendment adopted by FiU majority
 - **Confidence**: HIGH [A2] that vote will occur; MEDIUM [B2] that government amendments will prevail
 
-### IND-02: Skatteverket Implementation Notice
+#### IND-02: Skatteverket Implementation Notice
 - **Expected date**: ~May 1, 2026 (law comes into force)
 - **Indicator**: Does official implementation guidance include or exclude cooperative housing (*bostadsrättsföreningar*)? Exclusion confirmed = HD024082 validated; political cost to government elevated.
 - **Confidence**: HIGH [A1] that notice will be published
 
-### IND-03: SfU Committee Vote on prop. 2025/26:235 (deportation law)
+#### IND-03: SfU Committee Vote on prop. 2025/26:235 (deportation law)
 - **Expected date**: ~May 12, 2026
 - **Indicator**: Does SfU include any C amendments? C amendment adopted = coalition complexity signal.
 - **Confidence**: HIGH [A1] that vote will occur
 
 ---
 
-## Horizon 2: 90-Day Indicators (June–July 2026)
+### Horizon 2: 90-Day Indicators (June–July 2026)
 
-### IND-04: First Deportation Under New Law
+#### IND-04: First Deportation Under New Law
 - **Expected date**: June–July 2026 (Migrationsverket implementation)
 - **Indicator**: Is the first deportation case published? Does it produce a court challenge?
 - **Confidence**: MEDIUM [B2] that early cases will be filed quickly
 
-### IND-05: MP Poll Result (4% threshold)
+#### IND-05: MP Poll Result (4% threshold)
 - **Expected date**: Any major poll, June–July 2026
 - **Indicator**: MP at/above 4% = electoral calculation shifts. MP below 4% = coalition arithmetic for S+V more difficult.
 - **Confidence**: HIGH [A1] that polls will be published; threshold outcome is MEDIUM [C3]
 
-### IND-06: S+V+MP Joint Election Platform Statement
+#### IND-06: S+V+MP Joint Election Platform Statement
 - **Expected date**: June 2026 (traditional alliance-building period)
 - **Indicator**: A joint platform on energy would refute H1 (fragmentation is strategic differentiation) and confirm H1-alt (genuine coordination).
 - **Confidence**: MEDIUM [B3] that some form of coordination statement emerges; quality uncertain
 
 ---
 
-## Horizon 3: 6-Month Indicators (September–October 2026)
+### Horizon 3: 6-Month Indicators (September–October 2026)
 
-### IND-07: 2026 Election Polling Trend
+#### IND-07: 2026 Election Polling Trend
 - **Expected date**: Ongoing, key snapshot September 2026
 - **Indicator**: If government coalition (M+SD+KD+L) polling above 175 seats → KJ-1 (fragmentation = government advantage) confirmed.
 - **Confidence**: HIGH [A1] that polls will be published
 
-### IND-08: C's Final Alliance Declaration
+#### IND-08: C's Final Alliance Declaration
 - **Expected date**: C autumn congress, September 2026 (est.)
 - **Indicator**: C declares coalition preference. C → left = major political realignment. C → right = status quo confirmed.
 - **Confidence**: MEDIUM [B2] that C will clarify before election campaign
 
-### IND-09: Arms Export Policy Development
+#### IND-09: Arms Export Policy Development
 - **Expected date**: Summer/autumn 2026 (Riksdag follows up HD024096)
 - **Indicator**: Any governmental communication on arms export secrecy provisions (opposed by MP in HD024096). Government concession = small HD024096 victory.
 - **Confidence**: LOW [C3]
 
 ---
 
-## Horizon 4: 12-Month Indicators (Spring 2027)
+### Horizon 4: 12-Month Indicators (Spring 2027)
 
-### IND-10: ECtHR Case Registration
+#### IND-10: ECtHR Case Registration
 - **Expected date**: Autumn 2026–Spring 2027 (cases filed after law implementation)
 - **Indicator**: ECtHR registers case against Sweden under ECHR Art. 8 related to prop. 2025/26:235. Registration = medium-term legal risk elevated (KJ-2 confirmed on legal dimension).
 - **Confidence**: MEDIUM [B2]
 
-### IND-11: Migrationsverket Capacity Report
+#### IND-11: Migrationsverket Capacity Report
 - **Expected date**: Q1 2027 (annual report)
 - **Indicator**: Migrationsverket reports implementation difficulties with new Mottagandelagen. Friction confirmed = C's HD024089 concerns validated.
 - **Confidence**: MEDIUM [B3]
 
-### IND-12: Post-Election Coalition Negotiations
+#### IND-12: Post-Election Coalition Negotiations
 - **Expected date**: September–November 2026 (post-election)
 - **Indicator**: Who negotiates with whom? If S+C talks emerge seriously, KJ-3 (C as pivotal actor) fully confirmed. If Tidö 2.0 forms without modification, KJ-1 (fragmentation cost opposition the election) confirmed.
 - **Confidence**: HIGH [A1] that negotiations will occur
 
 ---
 
-## Indicator Summary Matrix
+### Indicator Summary Matrix
 
 ```mermaid
 %%{init: {"theme": "dark"}}%%
@@ -555,28 +548,27 @@ gantt
 ```
 
 ## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/scenario-analysis.md)_
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/scenario-analysis.md -->
 
 ---
 
-## Scenarios for Spring 2026 Parliamentary Outcome
+### Scenarios for Spring 2026 Parliamentary Outcome
 
-### Scenario 1: Government Wins All Four Propositions (Most Likely)
+#### Scenario 1: Government Wins All Four Propositions (Most Likely)
 **Probability**: 65% [C2]  
 **Narrative**: SD and the four-party government coalition pass prop. 2025/26:235, 236, 228, and 229 intact. Opposition motions (HD024082–098, HD024090–097, HD024096, HD024089–091) are voted down in committee and plenary. The fuel tax cut takes effect 1 May 2026. Deportation rules tighten 1 September 2026.  
 **Why likely**: SD has been reliable since the Tidö agreement; no by-election pressure; C partially supporting migration proposals.  
 **Leading indicator**: Monitor FiU committee vote date (est. late April/early May 2026). If S/V/MP cannot coordinate to delay, Scenario 1 is confirmed.  
 **Impact on opposition**: Deepens fragmentation narrative; V/MP locked into protest stance; S under pressure to differentiate from V.
 
-### Scenario 2: Budget Propositions Modified — C Demands Concessions (Plausible)
+#### Scenario 2: Budget Propositions Modified — C Demands Concessions (Plausible)
 **Probability**: 22% [C3]  
 **Narrative**: C leverages its SfU position to demand changes to the Mottagandelag area-restriction provisions (HD024089) in exchange for abstention on the fuel tax supplementary. Government makes minor concessions. S, V, MP motions still voted down. Electricity support design is tweaked but 800k cooperative households remain partially excluded.  
 **Why plausible**: C has a track record of extracting symbolic wins on migration (see 2023 Tidö addendum). Niels Paarup-Petersen's motion (HD024089) is specifically calibrated to be acceptable as a negotiating position.  
 **Leading indicator**: Any informal contact between C leadership and government whips in the two weeks before FiU vote.  
 **Impact**: Partial vindication for C; S/V/MP still lose but narrative shifts to "C saves municipal welfare."
 
-### Scenario 3: Lagrådet Rejection Creates Constitutional Crisis on Deportation Law (Low probability, High impact)
+#### Scenario 3: Lagrådet Rejection Creates Constitutional Crisis on Deportation Law (Low probability, High impact)
 **Probability**: 13% [D3]  
 **Narrative**: After prop. 2025/26:235 passes, an immediate constitutional challenge is mounted by legal NGOs citing Lagrådet's opinion. The Supreme Court (Högsta domstolen) issues an interim stay on the deportation expansion for those who arrived before age 15. Government embarrassed; V (HD024090, Tony Haddou) vindicated. This delays implementation beyond the September 2026 target and becomes a major election issue.  
 **Why low probability**: Courts rarely issue interim stays on legislation; Lagrådet opinions are advisory, not binding. But the specific removal of childhood-arrival protections is a ECHR Art. 8 (family life) flashpoint.  
@@ -585,7 +577,7 @@ _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## Scenario Probability Summary
+### Scenario Probability Summary
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27"}}}%%
@@ -599,7 +591,7 @@ pie title Scenario Probability Distribution — Spring 2026 Legislative Outcome
 
 ---
 
-## Leading Indicators per Scenario
+### Leading Indicators per Scenario
 
 | Indicator | Triggers | Timeline |
 |-----------|----------|----------|
@@ -610,12 +602,11 @@ pie title Scenario Probability Distribution — Spring 2026 Legislative Outcome
 | SD amendment demand on energy proposition | New Scenario possible | April–May 2026 |
 
 ## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/risk-assessment.md)_
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/risk-assessment.md -->
 
 ---
 
-## 5-Dimension Risk Register
+### 5-Dimension Risk Register
 
 | Risk ID | Description | Likelihood (1–5) | Impact (1–5) | L×I | Trend | Evidence |
 |---------|-------------|-----------------|-------------|-----|-------|----------|
@@ -629,15 +620,15 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Priority Risks (L×I ≥ 10)
+### Priority Risks (L×I ≥ 10)
 
-### R-04 — Opposition Fragmentation [HIGH RISK, L×I = 15]
+#### R-04 — Opposition Fragmentation [HIGH RISK, L×I = 15]
 
 The most severe risk for democratic accountability: when S, V, and MP cannot agree on a budget alternative, the government faces no unified opposition. Evidence: three separate motions (HD024082, HD024092, HD024098) against the same government proposition, each with a different analytical framework and policy demand. This is structurally worse than the 2022–23 budget period when S and V coordinated more frequently.
 
 **Cascading chain**: Fragmentation → no alternative budget → government wins FiU vote → fuel tax implemented → climate agencies increase criticism → media shifts to "government vs experts" framing → opposition fails to capture narrative.
 
-### R-02 + R-03 — Social Policy Double Jeopardy [HIGH RISK, L×I = 12 each]
+#### R-02 + R-03 — Social Policy Double Jeopardy [HIGH RISK, L×I = 12 each]
 
 Two simultaneous social policy risks create a compound exposure: (1) electricity support design flaw disproportionately affects cooperative housing (S: HD024082); (2) deportation law challenged as unconstitutional by Lagrådet with likely court litigation (V: HD024090). Either alone is manageable; together they strain public trust in government competence.
 
@@ -645,7 +636,7 @@ Two simultaneous social policy risks create a compound exposure: (1) electricity
 
 ---
 
-## Mermaid: Risk Heat Map
+### Mermaid: Risk Heat Map
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
@@ -669,38 +660,37 @@ quadrantChart
 *Confidence: MEDIUM [B2–C3]. Risk scores based on parliamentary patterns + primary documents.*
 
 ## SWOT Analysis
-
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/swot-analysis.md)_
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/swot-analysis.md -->
 
 **Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: HIGH [B2]  
 **Framing**: Strengths/Weaknesses of the *opposition bloc's* motion strategy; Opportunities/Threats from *their* political perspective.
 
 ---
 
-## SWOT Matrix
+### SWOT Matrix
 
-### Strengths
+#### Strengths
 
 - **Expert agency backing for climate framing**: MP's HD024098 cites Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet, Statens energimyndighet and Trafikverket as opposing the fuel tax cut — an unusually strong expert consensus. [riksdagen.se/dokument/HD024098] `[A2]`
 - **Lagrådet criticism of deportation law**: V's HD024090 highlights that Lagrådet explicitly advised against prop. 2025/26:235, strengthening the human rights argument. [riksdagen.se/dokument/HD024090] `[A1]`
 - **Distributional evidence for V**: V's HD024092 invokes RUT analysis (dnr 2026:158 + dnr 2025:1607) showing the government's reforms disproportionately benefit top-income deciles. [riksdagen.se/dokument/HD024092] `[A2]`
 - **S credibility on electricity design flaw**: 800,000 households in shared-grid housing cooperatives excluded from S-identified design flaw, giving S a concrete, relatable grievance. [riksdagen.se/dokument/HD024082] `[B1]`
 
-### Weaknesses
+#### Weaknesses
 
 - **Fragmentation undermines narrative unity**: S, V, and MP all oppose the budget supplementary but offer incompatible alternatives (different electricity support models, different rationales). No single motion by multiple parties. [HD024082, HD024092, HD024098 — three separate dok_ids, same proposition, zero joint motion] `[B1]`
 - **C defection on migration**: C (HD024089, HD024095) broadly accepts both the new Mottagandelag and the deportation framework with modifications, breaking centre-left solidarity. [riksdagen.se/dokument/HD024089, HD024095] `[B1]`
 - **No budget alternative quantified**: S (HD024082) demands better electricity support design but does not specify a costed alternative in the motion text. [riksdagen.se/dokument/HD024082] `[B2]`
 - **Arms export motion (HD024096) unlikely to pass**: With SD, M, L, KD backing government arms policy, MP's export ban demand is politically isolated. [riksdagen.se/dokument/HD024096] `[B2]`
 
-### Opportunities
+#### Opportunities
 
 - **Election framing window**: The 2026 election provides a six-month window to build a joint opposition narrative around energy transition + distributional justice — the motion cluster provides raw material. [aggregate assessment, no single dok_id] `[C3]`
 - **Constitutional review potential**: If Mottagandelag area-restrictions violate kommunal självstyre principles, judicial review could embarrass the government. [HD024089 cites constitutional concerns; riksdagen.se/dokument/HD024089] `[C3]`
 - **Agency credibility cascade**: If Konjunkturinstitutet issues a formal advisory against the fuel tax (beyond the remiss stage), it upgrades the opposition's credibility posture. [HD024098 — remiss phase already hostile] `[B3]`
 - **Lagrådet precedent on deportation**: If courts challenge prop. 2025/26:235 implementation (as Lagrådet suggested they might), V's motion record becomes prescient. [HD024090] `[C3]`
 
-### Threats
+#### Threats
 
 - **SD-government bloc solidarity**: SD's reliable coalition support for the government means all three motion clusters will likely be voted down. [structural observation based on riksmöte 2025/26 voting patterns] `[B1]`
 - **Economic relief narrative overrides climate concerns**: Rising energy prices give the government a populist justification; opposition parties risk appearing elitist by opposing fuel price relief. [HD024092, HD024098 acknowledge this framing risk] `[B2]`
@@ -709,7 +699,7 @@ _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/mai
 
 ---
 
-## TOWS Matrix
+### TOWS Matrix
 
 | | Strengths (Expert consensus, Lagrådet) | Weaknesses (Fragmentation, no costed alt.) |
 |---|---|---|
@@ -718,13 +708,13 @@ _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/mai
 
 ---
 
-## Cross-SWOT: Migration vs Energy
+### Cross-SWOT: Migration vs Energy
 
 The opposition's tactical problem: energy opponents (V, MP) and migration opponents (all but C) are the same parties, but their framing strategies diverge. MP emphasises expert consensus; V emphasises distributional justice; S emphasises design quality. A unified "alternative governance" framing would require S to explicitly endorse V's distributional frame — currently politically infeasible.
 
 ---
 
-## Mermaid: SWOT Summary
+### Mermaid: SWOT Summary
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
@@ -749,16 +739,15 @@ quadrantChart
 *Admiralty codes assigned per evidence type: government documents [A1], corroborated reports [A2], single-source official [B1], peer-reviewed public [B2], unconfirmed open-source [C3]*
 
 ## Threat Analysis
-
-_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/threat-analysis.md)_
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/threat-analysis.md -->
 
 ---
 
-## Political Threat Taxonomy
+### Political Threat Taxonomy
 
 Threats assessed against **democratic accountability norms** and **opposition party viability**.
 
-### T-1: Legislative Steamrolling (Primary Threat)
+#### T-1: Legislative Steamrolling (Primary Threat)
 - **Category**: Institutional integrity
 - **Actor**: Tidewater coalition (M, SD, KD, L) + occasional C
 - **Mechanism**: Majority votes all motions down in committee (FiU, SfU, UU) without substantive engagement with expert agency criticism
@@ -766,7 +755,7 @@ Threats assessed against **democratic accountability norms** and **opposition pa
 - **TTP analog**: "Vote dominance" — structural majority used without negotiation
 - **Admiralty**: [A2]
 
-### T-2: Distributional Justice Erosion (Social Threat)
+#### T-2: Distributional Justice Erosion (Social Threat)
 - **Category**: Social cohesion
 - **Actor**: Government fiscal policy
 - **Mechanism**: Successive reforms favoring upper-income deciles; RUT analysis cited in V motion (HD024092) shows 5:1 ratio of benefit to top vs. bottom income halves
@@ -774,7 +763,7 @@ Threats assessed against **democratic accountability norms** and **opposition pa
 - **Kill chain stage**: Policy formulation → implementation → distributional outcome → public trust erosion
 - **Admiralty**: [A2]
 
-### T-3: Constitutional Overreach on Deportation (Rule-of-Law Threat)
+#### T-3: Constitutional Overreach on Deportation (Rule-of-Law Threat)
 - **Category**: Constitutional order
 - **Actor**: Government (prop. 2025/26:235)
 - **Mechanism**: Removing age-based protections for migrants who arrived before 15; removing enforcement-barrier review from general courts; mandatory prosecution of all eligible cases
@@ -782,7 +771,7 @@ Threats assessed against **democratic accountability norms** and **opposition pa
 - **TTP**: "Incremental erosion" of judicial review rights
 - **Admiralty**: [A1]
 
-### T-4: Climate Policy Regression (Environmental Threat)
+#### T-4: Climate Policy Regression (Environmental Threat)
 - **Category**: Long-term governance
 - **Actor**: Government energy policy
 - **Mechanism**: Temporary fuel tax cut undermines carbon pricing signals; 2030 emissions targets at risk
@@ -791,7 +780,7 @@ Threats assessed against **democratic accountability norms** and **opposition pa
 
 ---
 
-## Attack Tree: Democratic Accountability Degradation
+### Attack Tree: Democratic Accountability Degradation
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
@@ -830,7 +819,7 @@ flowchart TD
 
 ---
 
-## MITRE-Style TTP Mapping
+### MITRE-Style TTP Mapping
 
 | TTP ID | Name | Tactic | Technique | Evidence |
 |--------|------|--------|-----------|----------|
@@ -844,8 +833,7 @@ flowchart TD
 ## Per-document intelligence
 
 ### HD024077
-
-_Source: [`documents/HD024077-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024077-analysis.md)_
+<!-- source: documents/HD024077-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024077-analysis.md -->
 
 **dok_id**: HD024077
 **Author**: James Pether Sörling | **Date**: 2026-04-23
@@ -853,27 +841,26 @@ _Source: [`documents/HD024077-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 This document is catalogued in the data-download-manifest but full text was not retrieved in this analysis run. Analysis is based on title, party attribution, and document metadata only.
 
-## Political Significance
+### Political Significance
 
 **DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
 
-## Key Claims
+### Key Claims
 
 Available only from title/metadata — specific claims require full text retrieval.
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching full text via `get_dokument_innehall` with `include_full_text: true`.
 
 **Action required (Run 2)**: Retrieve full text and update this analysis file.
 
 ### HD024079
-
-_Source: [`documents/HD024079-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024079-analysis.md)_
+<!-- source: documents/HD024079-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024079-analysis.md -->
 
 **dok_id**: HD024079
 **Author**: James Pether Sörling | **Date**: 2026-04-23
@@ -881,27 +868,26 @@ _Source: [`documents/HD024079-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 This document is catalogued in the data-download-manifest but full text was not retrieved in this analysis run. Analysis is based on title, party attribution, and document metadata only.
 
-## Political Significance
+### Political Significance
 
 **DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
 
-## Key Claims
+### Key Claims
 
 Available only from title/metadata — specific claims require full text retrieval.
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching full text via `get_dokument_innehall` with `include_full_text: true`.
 
 **Action required (Run 2)**: Retrieve full text and update this analysis file.
 
 ### HD024080
-
-_Source: [`documents/HD024080-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024080-analysis.md)_
+<!-- source: documents/HD024080-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024080-analysis.md -->
 
 **dok_id**: HD024080
 **Author**: James Pether Sörling | **Date**: 2026-04-23
@@ -909,27 +895,26 @@ _Source: [`documents/HD024080-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 This document is catalogued in the data-download-manifest but full text was not retrieved in this analysis run. Analysis is based on title, party attribution, and document metadata only.
 
-## Political Significance
+### Political Significance
 
 **DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
 
-## Key Claims
+### Key Claims
 
 Available only from title/metadata — specific claims require full text retrieval.
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching full text via `get_dokument_innehall` with `include_full_text: true`.
 
 **Action required (Run 2)**: Retrieve full text and update this analysis file.
 
 ### HD024082
-
-_Source: [`documents/HD024082-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024082-analysis.md)_
+<!-- source: documents/HD024082-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024082-analysis.md -->
 
 **dok_id**: HD024082  
 **Author**: James Pether Sörling | **Date**: 2026-04-23  
@@ -939,33 +924,32 @@ _Source: [`documents/HD024082-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 S motion opposing prop. 2025/26:236's supplementary budget. Core argument: the electricity support scheme has a design flaw that excludes approximately 800,000 cooperative housing (*bostadsrätt*) households. S proposes amending the design to include these households, not cancelling the energy support overall.
 
-## Political Significance
+### Political Significance
 
 **DIW**: 8/10. This is the flagship opposition budget motion from the largest opposition party, filed by the former Prime Minister (Damberg). It will attract maximal media attention and define S's pre-election fiscal narrative.
 
-## Key Claims
+### Key Claims
 
 1. 800,000 cooperative housing households are excluded from electricity support by a design flaw.
 2. The design flaw is amendable — does not require rejecting the entire proposition.
 3. S positions itself as the "competent alternative" that would fix, not block, energy support.
 
-## Cross-Reference
+### Cross-Reference
 
 - Links to HD024092 (V: reject entire fuel tax cut), HD024098 (MP: same rejection) — shows S is the moderate among the three opposition actors.
 - Links to `coalition-mathematics.md` — S's amendment (if adopted by FiU) would require government concession.
 - Links to `forward-indicators.md` IND-01 (FiU vote) and IND-02 (Skatteverket implementation notice).
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 The exact number of excluded households (800,000) is S's figure — not independently verified from Skatteverket data. [B2]
 
 ### HD024086
-
-_Source: [`documents/HD024086-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024086-analysis.md)_
+<!-- source: documents/HD024086-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024086-analysis.md -->
 
 **dok_id**: HD024086
 **Author**: James Pether Sörling | **Date**: 2026-04-23
@@ -973,27 +957,26 @@ _Source: [`documents/HD024086-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 This document is catalogued in the data-download-manifest but full text was not retrieved in this analysis run. Analysis is based on title, party attribution, and document metadata only.
 
-## Political Significance
+### Political Significance
 
 **DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
 
-## Key Claims
+### Key Claims
 
 Available only from title/metadata — specific claims require full text retrieval.
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching full text via `get_dokument_innehall` with `include_full_text: true`.
 
 **Action required (Run 2)**: Retrieve full text and update this analysis file.
 
 ### HD024087
-
-_Source: [`documents/HD024087-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024087-analysis.md)_
+<!-- source: documents/HD024087-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024087-analysis.md -->
 
 **dok_id**: HD024087
 **Author**: James Pether Sörling | **Date**: 2026-04-23
@@ -1001,27 +984,26 @@ _Source: [`documents/HD024087-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 This document is catalogued in the data-download-manifest but full text was not retrieved in this analysis run. Analysis is based on title, party attribution, and document metadata only.
 
-## Political Significance
+### Political Significance
 
 **DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
 
-## Key Claims
+### Key Claims
 
 Available only from title/metadata — specific claims require full text retrieval.
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching full text via `get_dokument_innehall` with `include_full_text: true`.
 
 **Action required (Run 2)**: Retrieve full text and update this analysis file.
 
 ### HD024089
-
-_Source: [`documents/HD024089-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024089-analysis.md)_
+<!-- source: documents/HD024089-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024089-analysis.md -->
 
 **dok_id**: HD024089  
 **Author**: James Pether Sörling | **Date**: 2026-04-23  
@@ -1031,34 +1013,33 @@ _Source: [`documents/HD024089-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 C motion on the new reception law (*Mottagandelagen*). C broadly accepts the framework but opposes specific provisions: area restrictions on asylum seekers and the absence of guaranteed emergency welfare rights for municipalities hosting large reception centres.
 
-## Political Significance
+### Political Significance
 
 **DIW**: 7/10. Reveals C's pragmatic liberalism on migration — neither fully supporting the restrictive government framework nor opposing it entirely. This is the key "swing vote" document in the migration cluster.
 
-## Key Claims
+### Key Claims
 
 1. C accepts the Mottagandelagen framework broadly — Sweden needs a new reception framework.
 2. Area restrictions on asylum seekers are disproportionate and should be removed.
 3. Municipalities must have guaranteed emergency welfare rights when hosting reception centres (financial protection for local authorities).
 
-## Cross-Reference
+### Cross-Reference
 
 - Links to HD024095 (C: same conditional acceptance pattern on deportation law)
 - Links to `coalition-mathematics.md` §Mottagandelagen vote prediction
 - Links to `implementation-feasibility.md` — C's municipal welfare demand is noted as unlikely to be accepted
 - Links to `voter-segmentation.md` §C section — rural pragmatic liberal base
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 Whether C will press its amendments to a committee vote or accept the law without amendment is uncertain. [B3]. The financial scale of C's municipal welfare demand is not costed.
 
 ### HD024090
-
-_Source: [`documents/HD024090-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024090-analysis.md)_
+<!-- source: documents/HD024090-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024090-analysis.md -->
 
 **dok_id**: HD024090  
 **Author**: James Pether Sörling | **Date**: 2026-04-23  
@@ -1068,34 +1049,33 @@ _Source: [`documents/HD024090-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 V motion demanding rejection of the deportation law (prop. 2025/26:235) on rule-of-law grounds. V cites Lagrådet's explicit rejection of the proposition as evidence of constitutional deficiency.
 
-## Political Significance
+### Political Significance
 
 **DIW**: 9/10. Highest-stakes motion in the migration cluster. Lagrådet citation gives it maximum institutional legitimacy for rule-of-law argument.
 
-## Key Claims
+### Key Claims
 
 1. Lagrådet explicitly rejected prop. 2025/26:235 as "clearly ill-advised."
 2. The law targets individuals who arrived in Sweden before age 15 — ECHR Art. 8 protection is particularly strong for this group.
 3. V demands the proposition be withdrawn entirely.
 
-## Cross-Reference
+### Cross-Reference
 
 - Links to HD024095 (C: conditional acceptance — weaker stance than V's full rejection)
 - Links to `intelligence-assessment.md` KJ-2 (expert isolation of government's legislative program)
 - Links to `historical-parallels.md` §Lagrådet Rejections
 - Links to `forward-indicators.md` IND-10 (ECtHR case registration)
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 Lagrådet opinion text not independently fetched — cited as reported in V's motion. [B2]. "Clearly ill-advised" quote is V's paraphrase, not the verbatim Lagrådet text.
 
 ### HD024091
-
-_Source: [`documents/HD024091-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024091-analysis.md)_
+<!-- source: documents/HD024091-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024091-analysis.md -->
 
 **dok_id**: HD024091
 **Author**: James Pether Sörling | **Date**: 2026-04-23
@@ -1103,27 +1083,26 @@ _Source: [`documents/HD024091-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 This document is catalogued in the data-download-manifest but full text was not retrieved in this analysis run. Analysis is based on title, party attribution, and document metadata only.
 
-## Political Significance
+### Political Significance
 
 **DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
 
-## Key Claims
+### Key Claims
 
 Available only from title/metadata — specific claims require full text retrieval.
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching full text via `get_dokument_innehall` with `include_full_text: true`.
 
 **Action required (Run 2)**: Retrieve full text and update this analysis file.
 
 ### HD024092
-
-_Source: [`documents/HD024092-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024092-analysis.md)_
+<!-- source: documents/HD024092-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024092-analysis.md -->
 
 **dok_id**: HD024092  
 **Author**: James Pether Sörling | **Date**: 2026-04-23  
@@ -1133,33 +1112,32 @@ _Source: [`documents/HD024092-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 V motion opposing the fuel tax cut element of prop. 2025/26:236. V argues the measure is distributionally regressive, citing RUT analysis (dnr 2026:158) showing that the benefit accrues disproportionately to high-income households (5:1 income-skew ratio).
 
-## Political Significance
+### Political Significance
 
 **DIW**: 7/10. Strong analytical foundation via RUT cite. V is positioning itself as the distributional-justice voice in the opposition.
 
-## Key Claims
+### Key Claims
 
 1. RUT dnr 2026:158 shows the fuel tax cut benefits high-income households 5x more than low-income households.
 2. The measure is economically inefficient and regressive.
 3. V proposes rejecting the fuel tax cut and redirecting funds to targeted household support.
 
-## Cross-Reference
+### Cross-Reference
 
 - Links to HD024098 (MP agrees on rejection; V and MP aligned on outcome, not on alternative)
 - Links to `voter-segmentation.md` §V section — distributional argument targets different voter segment than S
 - Links to `devils-advocate.md` H2 — electoral vs. economic rationale
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 RUT dnr 2026:158 document not independently fetched — cited as reported in V's motion. [B2]. V's proposed alternative (targeted household support) is not costed in the motion.
 
 ### HD024095
-
-_Source: [`documents/HD024095-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024095-analysis.md)_
+<!-- source: documents/HD024095-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024095-analysis.md -->
 
 **dok_id**: HD024095  
 **Author**: James Pether Sörling | **Date**: 2026-04-23  
@@ -1169,34 +1147,33 @@ _Source: [`documents/HD024095-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 C motion on the deportation law. Unlike V (HD024090), C does not demand full rejection — instead accepts the framework conditionally, demanding that deportation orders include adequate procedural safeguards and proportionality assessment.
 
-## Political Significance
+### Political Significance
 
 **DIW**: 7/10. C's conditional acceptance is politically consequential — it means C will likely vote for the law despite reservations, giving the government a margin of safety beyond its bare 176 majority.
 
-## Key Claims
+### Key Claims
 
 1. The deportation framework has legitimacy — Sweden must be able to deport criminals.
 2. Individual cases must receive proportionality assessment (balancing Article 8 ECHR rights).
 3. C does not endorse V/MP's full rejection.
 
-## Cross-Reference
+### Cross-Reference
 
 - Links to HD024090 (V: full rejection — starkly different from C's position)
 - Links to HD024089 (C: parallel conditional-acceptance pattern on Mottagandelag)
 - Links to `coalition-mathematics.md` — C's vote behaviour is the key swing variable
 - Links to `voter-segmentation.md` §C section
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 Whether C's amendment demands will be adopted by SfU committee is uncertain. If adopted (unlikely given government majority), this becomes a signal of coalition complexity. [B3]
 
 ### HD024096
-
-_Source: [`documents/HD024096-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024096-analysis.md)_
+<!-- source: documents/HD024096-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024096-analysis.md -->
 
 **dok_id**: HD024096  
 **Author**: James Pether Sörling | **Date**: 2026-04-23  
@@ -1206,34 +1183,33 @@ _Source: [`documents/HD024096-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 MP motion demanding an arms export ban to dictatorships and opposing new secrecy provisions in the arms export control framework. This motion is separate from the budget and migration clusters.
 
-## Political Significance
+### Political Significance
 
 **DIW**: 4/10. Arms export policy is important but less electorally salient than budget and migration in the current cycle.
 
-## Key Claims (from metadata and title)
+### Key Claims (from metadata and title)
 
 1. MP demands a ban on arms exports to authoritarian states.
 2. MP opposes new secrecy provisions that would reduce parliamentary oversight of arms exports.
 3. This motion continues MP's longstanding foreign policy profile on arms control.
 
-## Cross-Reference
+### Cross-Reference
 
 - Links to `comparative-international.md` — Sweden's arms export policy is under European scrutiny
 - Links to `forward-indicators.md` IND-09 (arms export policy development)
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 Full text not fetched — analysis based on title and metadata only. [C3]. The specific secrecy provisions being opposed are not detailed in available data. This is a significant evidence gap.
 
 **Note**: This document should be upgraded to [B1] in Run 2 if full text is fetched.
 
 ### HD024097
-
-_Source: [`documents/HD024097-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024097-analysis.md)_
+<!-- source: documents/HD024097-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024097-analysis.md -->
 
 **dok_id**: HD024097
 **Author**: James Pether Sörling | **Date**: 2026-04-23
@@ -1241,27 +1217,26 @@ _Source: [`documents/HD024097-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 This document is catalogued in the data-download-manifest but full text was not retrieved in this analysis run. Analysis is based on title, party attribution, and document metadata only.
 
-## Political Significance
+### Political Significance
 
 **DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
 
-## Key Claims
+### Key Claims
 
 Available only from title/metadata — specific claims require full text retrieval.
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching full text via `get_dokument_innehall` with `include_full_text: true`.
 
 **Action required (Run 2)**: Retrieve full text and update this analysis file.
 
 ### HD024098
-
-_Source: [`documents/HD024098-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024098-analysis.md)_
+<!-- source: documents/HD024098-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024098-analysis.md -->
 
 **dok_id**: HD024098  
 **Author**: James Pether Sörling | **Date**: 2026-04-23  
@@ -1271,37 +1246,36 @@ _Source: [`documents/HD024098-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## Summary
+### Summary
 
 MP motion opposing the fuel tax cut, citing five expert agencies: Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet, Statens energimyndighet, and Trafikverket. MP argues the measure undermines climate targets and contradicts expert advice.
 
-## Political Significance
+### Political Significance
 
 **DIW**: 7/10. Five-agency citation gives this motion unusually strong expert legitimacy. MP is positioning as the "expert-aligned" voice.
 
-## Key Claims
+### Key Claims
 
 1. Five named government agencies opposed the measure in remiss.
 2. The fuel tax cut contradicts Sweden's climate commitments and 2030 targets.
 3. MP endorses the V position (reject cut) and adds a climate reinvestment requirement.
 
-## Cross-Reference
+### Cross-Reference
 
 - Links to HD024092 (V: same rejection; MP endorses V's distributional argument and adds climate dimension)
 - Links to `methodology-reflection.md` — agency documents not independently fetched
 - Links to `comparative-international.md` — Norway and Germany have similar expert-vs-government tensions on energy taxation
 
-## Outstanding Uncertainty
+### Outstanding Uncertainty
 
 The five agency remiss documents are not independently fetched — cited as reported in MP's motion. [B2]. MP's threshold risk (currently near 4%) means this motion may be the party's last major pre-election policy statement.
 
 ## Election 2026 Analysis
-
-_Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/election-2026-analysis.md)_
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/election-2026-analysis.md -->
 
 ---
 
-## Seat-Projection Deltas (as of April 2026)
+### Seat-Projection Deltas (as of April 2026)
 
 Based on recent opinion polling patterns (no specific poll cited — structural assessment):
 
@@ -1320,9 +1294,9 @@ Based on recent opinion polling patterns (no specific poll cited — structural 
 
 ---
 
-## Coalition Viability Post-2026
+### Coalition Viability Post-2026
 
-### Current (Tidö) coalition logic
+#### Current (Tidö) coalition logic
 
 The motions confirm the current alignment: M + SD + KD + L govern; C is a partial ally. Opposition (S + V + MP) is fragmented. For a 2026 government change:
 
@@ -1332,7 +1306,7 @@ The motions confirm the current alignment: M + SD + KD + L govern; C is a partia
 
 ---
 
-## This Week's Motion Impact on 2026 Electoral Positioning
+### This Week's Motion Impact on 2026 Electoral Positioning
 
 | Party | Motion impact on 2026 positioning |
 |-------|----------------------------------|
@@ -1344,7 +1318,7 @@ The motions confirm the current alignment: M + SD + KD + L govern; C is a partia
 
 ---
 
-## Mermaid: Coalition Mathematics Snapshot
+### Mermaid: Coalition Mathematics Snapshot
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27"}}}%%
@@ -1362,12 +1336,11 @@ pie title Current Parliament Approximate Seat Distribution
 *Seat counts based on 2022 election results — 349 total seats. Government coalition (M+SD+KD+L) = 176; Opposition (S+V+MP) = 145; C = 24 pivotal. Sources: riksdagen.se official data [A1]*
 
 ## Coalition Mathematics
-
-_Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/coalition-mathematics.md)_
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/coalition-mathematics.md -->
 
 ---
 
-## 2022 Election Seat Allocation (official, riksdagen.se)
+### 2022 Election Seat Allocation (official, riksdagen.se)
 
 | Party | Seats | Bloc |
 |-------|-------|------|
@@ -1389,7 +1362,7 @@ _Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/
 
 ---
 
-## This Week's Motions: Predicted Vote Outcomes
+### This Week's Motions: Predicted Vote Outcomes
 
 | Proposition | Ja (expect) | Nej (expect) | Avstår | Outcome |
 |------------|-------------|--------------|--------|---------|
@@ -1402,7 +1375,7 @@ _Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/
 
 ---
 
-## Governing Majority Sensitivity Analysis
+### Governing Majority Sensitivity Analysis
 
 | Scenario | Government seats | Margin | Stable? |
 |---------|-----------------|--------|---------|
@@ -1415,7 +1388,7 @@ _Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/
 
 ---
 
-## Mermaid: Vote Prediction for prop. 2025/26:236
+### Mermaid: Vote Prediction for prop. 2025/26:236
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "pie1": "#00d9ff", "pie2": "#ff006e", "pie3": "#ffbe0b"}}}%%
@@ -1426,14 +1399,13 @@ pie title Predicted Vote: prop 2025/26:236 (Fuel Tax)
 ```
 
 ## Voter Segmentation
-
-_Source: [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/voter-segmentation.md)_
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/voter-segmentation.md -->
 
 ---
 
-## Target Voter Segments by Party (this week's motions)
+### Target Voter Segments by Party (this week's motions)
 
-### S — Socialdemokraterna (HD024082)
+#### S — Socialdemokraterna (HD024082)
 
 **Primary target**: Cooperative housing residents (*bostadsrättsinnehavare*) — approximately 800,000 households who were excluded from the electricity support scheme by a design flaw in prop. 2025/26:236. These are primarily urban and suburban middle-income households, core S electoral territory that drifted toward M/SD in 2022.
 
@@ -1441,7 +1413,7 @@ _Source: [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blo
 
 ---
 
-### V — Vänsterpartiet (HD024092)
+#### V — Vänsterpartiet (HD024092)
 
 **Primary target**: Low-income workers and renters in car-dependent areas who spend a disproportionate share of income on fuel. V's motion cites RUT analysis (dnr 2026:158) showing that the fuel tax cut skews 5:1 toward higher-income households — the inverse of V's target segment.
 
@@ -1449,7 +1421,7 @@ _Source: [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blo
 
 ---
 
-### MP — Miljöpartiet (HD024098)
+#### MP — Miljöpartiet (HD024098)
 
 **Primary target**: Climate-concerned voters, primarily urban, highly educated, who frame energy pricing as a climate tool. MP's motion's five-agency citation strategy appeals to voters who trust scientific and bureaucratic expertise.
 
@@ -1457,7 +1429,7 @@ _Source: [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blo
 
 ---
 
-### C — Centerpartiet (HD024089, HD024095)
+#### C — Centerpartiet (HD024089, HD024095)
 
 **Primary target**: Rural and small-town voters with pragmatic liberal instincts. C's moderate positioning on migration (accepting the framework, opposing extreme elements) and absence of opposition on energy reflect a rural electorate that is culturally conservative but economically pragmatic.
 
@@ -1465,7 +1437,7 @@ _Source: [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blo
 
 ---
 
-## Segment Map
+### Segment Map
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27"}}}%%
@@ -1488,20 +1460,19 @@ quadrantChart
 *Assessment confidence: MEDIUM [C3]. Quadrant placement is structural inference from motion content, not polling data.*
 
 ## Comparative International
-
-_Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/comparative-international.md)_
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/comparative-international.md -->
 
 ---
 
-## Comparator Set
+### Comparator Set
 - **Primary**: Norway (Nordic welfare state comparator), Germany (EU arms export + energy policy)  
 - **Secondary**: Denmark (migration/reception policy), Netherlands (deportation reform)
 
 ---
 
-## Comparator Analysis
+### Comparator Analysis
 
-### Issue 1: Energy/Fuel Tax Policy
+#### Issue 1: Energy/Fuel Tax Policy
 
 | Dimension | Sweden (2026) | Norway | Germany | Assessment |
 |-----------|--------------|--------|---------|------------|
@@ -1513,7 +1484,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-### Issue 2: Deportation of Foreign Nationals
+#### Issue 2: Deportation of Foreign Nationals
 
 | Dimension | Sweden (prop. 2025/26:235) | Denmark | Netherlands |
 |-----------|---------------------------|---------|-------------|
@@ -1526,7 +1497,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-### Issue 3: Arms Export Regulation
+#### Issue 3: Arms Export Regulation
 
 | Dimension | Sweden (prop. 2025/26:228) | Germany | Netherlands |
 |-----------|---------------------------|---------|-------------|
@@ -1540,7 +1511,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## Mermaid: Policy Position Comparison
+### Mermaid: Policy Position Comparison
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27"}}}%%
@@ -1555,12 +1526,11 @@ xychart-beta
 *Sources: riksdagen.se (primary documents) + ECHR case law (general knowledge baseline). Admiralty [B2].*
 
 ## Historical Parallels
-
-_Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/historical-parallels.md)_
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/historical-parallels.md -->
 
 ---
 
-## Parallel 1: 2002–2006 — Opposition Fragmentation Before Bloc Politics
+### Parallel 1: 2002–2006 — Opposition Fragmentation Before Bloc Politics
 
 **Context**: Before the "Alliansen" coalition was formalized in 2004–2006, the centre-right parties (M, C, L, KD) often filed competing motions on the same government propositions, offering incompatible alternatives. This fragmentation allowed the Social Democratic government to portray the opposition as ungovernable.
 
@@ -1572,7 +1542,7 @@ _Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## Parallel 2: 2014 "Decemberöverenskommelsen" — Managing a Thin Majority
+### Parallel 2: 2014 "Decemberöverenskommelsen" — Managing a Thin Majority
 
 **Context**: In December 2014, after the 2014 election produced no clear majority, the Decemberöverenskommelse (the "December agreement") between the red-green government and the Alliance created a norm that a minority government should be allowed to govern via its own budget.
 
@@ -1582,7 +1552,7 @@ _Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## Parallel 3: Lagrådet Rejections — Historical Pattern
+### Parallel 3: Lagrådet Rejections — Historical Pattern
 
 **Context**: Lagrådet's rejection of prop. 2025/26:235 (deportation law) continues a pattern of Lagrådet expressing serious concern about migration-related legislation. Similar concerns were raised about prop. 2021/22:131 (on residence permits) and prop. 2015/16:174 (temporary asylum restrictions).
 
@@ -1592,7 +1562,7 @@ _Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## Mermaid: Historical Timeline
+### Mermaid: Historical Timeline
 
 ```mermaid
 %%{init: {"theme": "dark"}}%%
@@ -1607,12 +1577,11 @@ timeline
 ```
 
 ## Implementation Feasibility
-
-_Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/implementation-feasibility.md)_
+<!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/implementation-feasibility.md -->
 
 ---
 
-## Feasibility Assessment: prop. 2025/26:236 (Supplementary Budget)
+### Feasibility Assessment: prop. 2025/26:236 (Supplementary Budget)
 
 | Dimension | Assessment | Evidence |
 |-----------|-----------|---------|
@@ -1625,7 +1594,7 @@ _Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmon
 
 ---
 
-## Feasibility Assessment: prop. 2025/26:235 (Deportation Law)
+### Feasibility Assessment: prop. 2025/26:235 (Deportation Law)
 
 | Dimension | Assessment | Evidence |
 |-----------|-----------|---------|
@@ -1636,7 +1605,7 @@ _Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmon
 
 ---
 
-## Feasibility Assessment: Mottagandelagen (new reception law)
+### Feasibility Assessment: Mottagandelagen (new reception law)
 
 | Dimension | Assessment | Evidence |
 |-----------|-----------|---------|
@@ -1646,7 +1615,7 @@ _Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmon
 
 ---
 
-## Opposition's Counterfactual Feasibility
+### Opposition's Counterfactual Feasibility
 
 If the opposition's alternative budget were implemented:
 - **S's design fix (HD024082)**: Technically straightforward — would require extending support mechanism to cooperative housing associations. Net cost: estimated 500 MSEK–1.5 GSEK (not costed in motion — gap noted [C3]).
@@ -1656,14 +1625,13 @@ If the opposition's alternative budget were implemented:
 *Cost assessment confidence: LOW [C3] — no official costing document available for opposition alternatives.*
 
 ## Devil's Advocate
-
-_Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/devils-advocate.md)_
+<!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/devils-advocate.md -->
 
 ---
 
-## ACH Matrix — Competing Hypotheses
+### ACH Matrix — Competing Hypotheses
 
-### Hypothesis H1: Opposition Fragmentation is Strategic, Not Accidental
+#### Hypothesis H1: Opposition Fragmentation is Strategic, Not Accidental
 
 **Claim**: S, V, and MP filed separate budget motions (HD024082, HD024092, HD024098) deliberately to address different voter segments — S targets cooperative housing residents, V targets low-income workers, MP targets climate voters. This is coordinated differentiation, not genuine disagreement.
 
@@ -1681,7 +1649,7 @@ _Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-### Hypothesis H2: Government's Fuel Tax Cut is Primarily Electoral, Not Economic
+#### Hypothesis H2: Government's Fuel Tax Cut is Primarily Electoral, Not Economic
 
 **Claim**: The fuel tax cut (prop. 2025/26:236) has no credible economic rationale (Konjunkturinstitutet says it won't solve household budget pressure effectively) and is primarily designed to generate a pre-election "relief" narrative, with SD and suburban car-dependent voters as the target.
 
@@ -1700,7 +1668,7 @@ _Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-### Hypothesis H3: Lagrådet Rejection of Deportation Law Will Have No Lasting Effect
+#### Hypothesis H3: Lagrådet Rejection of Deportation Law Will Have No Lasting Effect
 
 **Claim**: Despite Lagrådet's explicit rejection of prop. 2025/26:235, the law will pass, be implemented, and face no successful constitutional challenge — Lagrådet opinions are advisory, not binding, and courts rarely strike down parliamentary legislation.
 
@@ -1718,24 +1686,23 @@ _Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Red-Team Challenge
+### Red-Team Challenge
 
 **Weakest point in the opposition's overall strategy**: The opposition's biggest vulnerability is that the government can credibly claim to be "doing something" about energy prices and migration — two of the top 2–3 voter concerns. The opposition offers better design and rule-of-law arguments, but these are process arguments, not outcome arguments. Voters who pay high energy bills do not primarily care about distributional efficiency — they care about relief. The opposition is winning the technocratic argument while losing the emotional one.
 
 ---
 
-## Rejected Alternatives
+### Rejected Alternatives
 
 - **Hypothesis R1: SD will vote against the fuel tax cut** — Rejected. SD's electoral base in car-dependent peripheral Sweden makes opposing a fuel tax cut politically impossible. [B1]
 - **Hypothesis R2: S and V will file a joint motion** — Rejected. The documentary record shows three separate motions with no joint sponsor. The distributional framing (V's RUT citation) and design-quality framing (S) are politically incompatible. [B1]
 
 ## Classification Results
-
-_Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/classification-results.md)_
+<!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/classification-results.md -->
 
 ---
 
-## 7-Dimension Classification
+### 7-Dimension Classification
 
 | Dimension | HD024082 (S) | HD024092 (V) | HD024090 (V) | HD024096 (MP) | HD024089 (C) |
 |-----------|-------------|-------------|-------------|---------------|-------------|
@@ -1749,13 +1716,13 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Document Access Classification
+### Document Access Classification
 
 All documents are publicly available under Offentlighetsprincipen (Swedish freedom of information law). No special handling required. GDPR Art. 9 special categories (political opinion) apply but are publicly made per Art. 9(2)(e).
 
 ---
 
-## Retention Guidelines
+### Retention Guidelines
 
 - Analysis files: Retain for 24 months (electoral cycle documentation)
 - Raw MCP data: 12 months
@@ -1763,7 +1730,7 @@ All documents are publicly available under Offentlighetsprincipen (Swedish freed
 
 ---
 
-## Mermaid: Policy Domain Distribution
+### Mermaid: Policy Domain Distribution
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27"}}}%%
@@ -1778,14 +1745,13 @@ pie title Policy Domain Distribution — 2026-04-23 Motions
 *Based on 14 analysed motions. Sources: riksdagen.se official document metadata [A1]*
 
 ## Cross-Reference Map
-
-_Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/cross-reference-map.md)_
+<!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/cross-reference-map.md -->
 
 ---
 
-## Policy Clusters
+### Policy Clusters
 
-### Cluster 1: Extra Ändringsbudget för 2026 (FiU)
+#### Cluster 1: Extra Ändringsbudget för 2026 (FiU)
 
 - **Primary proposition**: prop. 2025/26:236
 - **Motions**: HD024082 (S), HD024092 (V), HD024098 (MP)
@@ -1793,7 +1759,7 @@ _Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/bl
 - **Linked files**: risk-assessment.md §R-02, swot-analysis.md §Strengths, election-2026-analysis.md §Budget dimension
 - **External cross-references**: RUT analysis dnr 2026:158 (cited in HD024092); 5 agency remiss responses (cited in HD024098)
 
-### Cluster 2: Utvisning på grund av brott (SfU)
+#### Cluster 2: Utvisning på grund av brott (SfU)
 
 - **Primary proposition**: prop. 2025/26:235 / SOU 2025:54
 - **Motions**: HD024090 (V), HD024095 (C), HD024097 (MP)
@@ -1801,7 +1767,7 @@ _Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/bl
 - **Linked files**: threat-analysis.md §T-3, stakeholder-perspectives.md §Civil Society, historical-parallels.md
 - **Cross-reference**: HD024090 cites prop. 2021/22:224 (2022 reform) as context for why another reform is premature
 
-### Cluster 3: Krigsmateriel (UU)
+#### Cluster 3: Krigsmateriel (UU)
 
 - **Primary proposition**: prop. 2025/26:228
 - **Motions**: HD024096 (MP), HD024091 (V)
@@ -1809,7 +1775,7 @@ _Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/bl
 - **Linked files**: comparative-international.md (EU arms export regime comparison), threat-analysis.md §T-3
 - **Cross-reference**: HD024096 cites Lagrådet criticism of secrecy provisions
 
-### Cluster 4: Mottagandelag + Bosättning (SfU / AU)
+#### Cluster 4: Mottagandelag + Bosättning (SfU / AU)
 
 - **Primary propositions**: prop. 2025/26:229 (Mottagandelag), prop. 2025/26:215 (Bosättning)
 - **Motions**: HD024089, HD024087, HD024080 (Mottagandelag); HD024079, HD024077, HD024086 (Bosättning)
@@ -1818,7 +1784,7 @@ _Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/bl
 
 ---
 
-## Coordinated Activity Patterns
+### Coordinated Activity Patterns
 
 - **No joint motions**: Despite opposing the same propositions, S/V/MP filed separate motions against prop. 2025/26:236 — a coordination failure.
 - **C as partial government ally**: C supported the migration reform framework (HD024089) while opposing specific provisions — diverges from typical opposition coalition.
@@ -1826,7 +1792,7 @@ _Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/bl
 
 ---
 
-## Mermaid: Cross-Reference Network
+### Mermaid: Cross-Reference Network
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27"}}}%%
@@ -1854,47 +1820,46 @@ graph LR
 ```
 
 ## Methodology Reflection & Limitations
-
-_Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/methodology-reflection.md)_
+<!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/methodology-reflection.md -->
 
 ---
 
-## § ICD 203 Audit
+### § ICD 203 Audit
 
-### Standard 1: Objectivity
+#### Standard 1: Objectivity
 - Maintained: Analysis covers S, V, MP, C motions with equal depth. No party's arguments are dismissed without evidence.
 - Limitation: Government's counter-arguments are inferred from proposition text, not from direct government motion analysis. This is a structural limitation of the opposition-motions workflow.
 
-### Standard 2: Independence
+#### Standard 2: Independence
 - Maintained: No partisan communication influenced the analysis. Sources are all publicly available via riksdagen.se.
 
-### Standard 3: Timeliness
+#### Standard 3: Timeliness
 - Maintained: Motions dated 2026-04-13–17; analysis produced 2026-04-23. Lag: 6–10 days. Acceptable for strategic analysis; not suitable for breaking news.
 
-### Standard 4: Sourcing and Provenance
+#### Standard 4: Sourcing and Provenance
 - **Strength**: Core claims all cite dok_ids (HD024082, HD024090, HD024092, HD024095, HD024096, HD024098, HD024089). External sources (RUT dnr 2026:158, five agencies) are cited as reported in the motions rather than independently verified.
 - **Gap**: RUT dnr 2026:158 and specific agency remiss documents were not independently fetched. Confidence in those specific figures is therefore [B2] rather than [A1].
 - **Action required (Run 2)**: If agency remiss documents are fetched directly, confidence in distributional claims could be upgraded to [A1–A2].
 
-### Standard 5: Uncertainty
+#### Standard 5: Uncertainty
 - Maintained: Confidence levels applied throughout. WEP language (Likely, Very likely, etc.) used consistently. Coalition scenarios assigned probability bands.
 
-### Standard 6: Consistency
+#### Standard 6: Consistency
 - Maintained: The lead narrative (opposition fragmentation as key story) is consistent across executive-brief, synthesis-summary, intelligence-assessment, and scenario-analysis.
 
-### Standard 7: Completeness
+#### Standard 7: Completeness
 - **Gap**: Arms export motion (HD024096) received less analytical depth than budget and migration motions. Jacob Risberg's full text was not fetched. The secrecy provisions element is underanalysed.
 - **Mitigation**: Arms export was identified as significance rank 4 of 4 clusters — lower priority is analytically justified.
 
-### Standard 8: Accuracy
+#### Standard 8: Accuracy
 - Maintained: Seat counts (349 total, exact per-party figures) sourced from official riksdagen.se election data [A1]. All dok_ids verified against manifest.
 
-### Standard 9: Appropriate Use of Analogies
+#### Standard 9: Appropriate Use of Analogies
 - Historical parallels (2002–2006 opposition fragmentation, Decemberöverenskommelsen, Lagrådet rejection pattern) are structural analogies, not direct precedent. Limitations noted in `historical-parallels.md`.
 
 ---
 
-## SAT Catalog — Structured Analytic Techniques Used
+### SAT Catalog — Structured Analytic Techniques Used
 
 | Technique | Where used | Quality assessment |
 |-----------|-----------|-------------------|
@@ -1914,10 +1879,9 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 ---
 
 ## Data Download Manifest
+<!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/data-download-manifest.md -->
 
-_Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/data-download-manifest.md)_
-
-## Workflow Metadata
+### Workflow Metadata
 - **Workflow**: news-motions
 - **Run date**: 2026-04-23T07:16:27Z
 - **Article date**: 2026-04-23
@@ -1926,7 +1890,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 - **MCP status**: riksdag-regering LIVE (generated_at: 2026-04-23T07:16:36Z)
 - **Analysis subfolder**: analysis/daily/2026-04-23/motions/
 
-## Downloaded Documents
+### Downloaded Documents
 
 | dok_id | Title | Type | Date | Committee | Submitter | Full-text | DIW tier |
 |--------|-------|------|------|-----------|-----------|-----------|----------|
@@ -1945,14 +1909,55 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 | HD024077 | Tidsbegränsat boende för nyanlända | mot | 2026-04-14 | AU | Tony Haddou m.fl. (V) | Metadata | L1 Surface |
 | HD024086 | Tidsbegränsat boende för nyanlända | mot | 2026-04-15 | AU | Leila Ali Elmi m.fl. (MP) | Metadata | L1 Surface |
 
-## Policy Clusters Identified
+### Policy Clusters Identified
 
 1. **Fiscal / Energy cluster**: HD024082, HD024092, HD024098 — Extra ändringsbudget, bränslesskatt, elstöd
 2. **Migration / Crime nexus cluster**: HD024090, HD024095, HD024097 — Utvisning på grund av brott
 3. **Arms exports cluster**: HD024096, HD024091 — Krigsmateriel regulation
 4. **Asylum reception cluster**: HD024089, HD024087, HD024080, HD024079, HD024077, HD024086 — Mottagandelag, bosättning
 
-## MCP Server Notes
+### MCP Server Notes
 - riksdag-regering: All requests successful, no retries required
 - Total motions in 2025/26 riksmöte: 4,098 (as of 2026-04-23)
 - Retrieval timestamp: 2026-04-23T07:18:00Z
+
+## Article Sources
+
+Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
+
+- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief.md)
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/synthesis-summary.md)
+- [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/intelligence-assessment.md)
+- [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/significance-scoring.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/media-framing-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/stakeholder-perspectives.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/scenario-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/threat-analysis.md)
+- [`documents/HD024077-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024077-analysis.md)
+- [`documents/HD024079-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024079-analysis.md)
+- [`documents/HD024080-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024080-analysis.md)
+- [`documents/HD024082-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024082-analysis.md)
+- [`documents/HD024086-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024086-analysis.md)
+- [`documents/HD024087-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024087-analysis.md)
+- [`documents/HD024089-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024089-analysis.md)
+- [`documents/HD024090-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024090-analysis.md)
+- [`documents/HD024091-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024091-analysis.md)
+- [`documents/HD024092-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024092-analysis.md)
+- [`documents/HD024095-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024095-analysis.md)
+- [`documents/HD024096-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024096-analysis.md)
+- [`documents/HD024097-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024097-analysis.md)
+- [`documents/HD024098-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024098-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/election-2026-analysis.md)
+- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/coalition-mathematics.md)
+- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/voter-segmentation.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/comparative-international.md)
+- [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/historical-parallels.md)
+- [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/implementation-feasibility.md)
+- [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/devils-advocate.md)
+- [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/classification-results.md)
+- [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/cross-reference-map.md)
+- [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/methodology-reflection.md)
+- [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/data-download-manifest.md)

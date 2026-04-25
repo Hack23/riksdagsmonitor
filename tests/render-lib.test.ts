@@ -32,6 +32,8 @@ import {
 const {
   stripPassTwoSection,
   stripLeadingAdminBylines,
+  stripSourcePreamble,
+  demoteHeadings,
   cleanArtifactBody,
   rewriteRelativeLinks,
   prettifyFallbackTitle,
@@ -39,6 +41,7 @@ const {
   readFirstParagraph,
   escapeYaml,
   escapeInlineMd,
+  anchorForTitle,
 } = __test__;
 
 describe('render-lib — cleanArtifactBody', () => {
@@ -188,6 +191,112 @@ describe('render-lib — AGGREGATION_ORDER', () => {
       'methodology-reflection.md',
       'data-download-manifest.md',
     ]);
+  });
+});
+
+describe('render-lib — reader-facing HTML quality projections', () => {
+  describe('demoteHeadings', () => {
+    it('demotes every ATX heading by one level so artifact bodies nest under wrapper H2', () => {
+      const input = [
+        '## 🎯 BLUF',
+        '',
+        'lede paragraph',
+        '',
+        '### 60-second read',
+        '',
+        '#### Detail',
+        '',
+        '##### Sub-detail',
+      ].join('\n');
+      expect(demoteHeadings(input)).toBe(
+        [
+          '### 🎯 BLUF',
+          '',
+          'lede paragraph',
+          '',
+          '#### 60-second read',
+          '',
+          '##### Detail',
+          '',
+          '###### Sub-detail',
+        ].join('\n'),
+      );
+    });
+
+    it('caps demotion at H6 — already-deep headings are left alone', () => {
+      const input = '###### Already at H6';
+      expect(demoteHeadings(input)).toBe('###### Already at H6');
+    });
+
+    it('does not touch ATX-looking lines inside fenced code blocks', () => {
+      const input = [
+        '## Real heading',
+        '',
+        '```bash',
+        '## not a heading inside fence',
+        '### also not',
+        '```',
+        '',
+        '### After fence — real heading',
+      ].join('\n');
+      const out = demoteHeadings(input);
+      expect(out).toContain('### Real heading');
+      // The line inside the fence is preserved verbatim.
+      expect(out).toContain('## not a heading inside fence');
+      expect(out).toContain('### also not');
+      expect(out).toContain('#### After fence — real heading');
+    });
+
+    it('leaves H1 alone (defensive — already stripped by upstream H1 regex)', () => {
+      // H1 demotion would conflict with the wrapper-H2 contract; the
+      // first H1 has been stripped by cleanArtifactBody upstream.
+      const input = '# Surviving H1\n\n## sub';
+      const out = demoteHeadings(input);
+      expect(out).toBe('# Surviving H1\n\n### sub');
+    });
+
+    it('ignores `#` characters that are not the start of an ATX heading', () => {
+      const input = 'an inline mention of #hashtag and `## not a heading`';
+      expect(demoteHeadings(input)).toBe(input);
+    });
+  });
+
+  describe('stripSourcePreamble', () => {
+    it('strips a `_Source: \\`file.md\\`_` italic preamble line at the top of an artifact body', () => {
+      const input = [
+        '_Source: [`executive-brief.md`](https://github.com/x/y/blob/main/executive-brief.md)_',
+        '',
+        '## 🎯 BLUF',
+        'real content',
+      ].join('\n');
+      const out = stripSourcePreamble(input);
+      expect(out).not.toContain('_Source:');
+      expect(out).toContain('## 🎯 BLUF');
+      expect(out).toContain('real content');
+    });
+
+    it('strips a bare `_Source: file.md_` italic preamble (no link)', () => {
+      const input = '_Source: synthesis-summary.md_\n\nbody';
+      expect(stripSourcePreamble(input)).toBe('body');
+    });
+
+    it('leaves inline `Source:` mentions inside prose untouched', () => {
+      const input = 'According to the report, "Source: Riksdagen" is the canonical citation.';
+      expect(stripSourcePreamble(input)).toBe(input);
+    });
+  });
+
+  describe('anchorForTitle', () => {
+    it('produces stable rm-prefixed slugs for ASCII titles', () => {
+      expect(anchorForTitle('Executive Brief')).toBe('rm-executive-brief');
+    });
+
+    it('trims leading hyphens that github-slugger emits when a title starts with a stripped character', () => {
+      // emoji 🎯 is stripped by github-slugger → leading hyphen
+      // would yield `rm--bluf` without normalisation.
+      expect(anchorForTitle('🎯 BLUF')).toBe('rm-bluf');
+      expect(anchorForTitle('🎯 60-second read')).toBe('rm-60-second-read');
+    });
   });
 });
 
@@ -527,6 +636,40 @@ describe('render-lib — renderMarkdownToHtml', () => {
       'before\n\n<iframe src="evil"></iframe>\n\nafter\n',
     );
     expect(html).not.toContain('<iframe');
+  });
+
+  it('produces unique heading IDs even when an emoji-prefixed heading shares a base slug with a plain heading (HTMLHint id-unique guard)', async () => {
+    // Reproduces the html-validation CI failure: `### 📜 Sources` and
+    // a later `### Sources` were both slugged to `rm-sources`. The
+    // pre-clean step in `rehypeSlugWithPrefix` must keep the slugger's
+    // duplicate-suffix state consistent so the second heading gets
+    // `rm-sources-1`.
+    const md = [
+      '## Section A',
+      '',
+      '### 📜 Sources',
+      '',
+      'first',
+      '',
+      '## Section B',
+      '',
+      '### Sources',
+      '',
+      'second',
+      '',
+    ].join('\n');
+    const html = await renderMarkdownToHtml(md);
+    expect(html).toContain('id="rm-sources"');
+    expect(html).toContain('id="rm-sources-1"');
+    // Negative: no double-dash slugs may leak through.
+    expect(html).not.toMatch(/id="rm--/);
+  });
+
+  it('produces unique heading IDs across an emoji-prefixed and non-prefixed heading with mixed casing (defensive)', async () => {
+    const md = '### 🔒 Confidence Profile\n\nfoo\n\n### Confidence Profile\n\nbar\n';
+    const html = await renderMarkdownToHtml(md);
+    expect(html).toContain('id="rm-confidence-profile"');
+    expect(html).toContain('id="rm-confidence-profile-1"');
   });
 });
 

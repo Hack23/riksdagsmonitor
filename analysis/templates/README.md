@@ -170,6 +170,37 @@ Key findings in `intelligence-assessment.md`, `executive-brief.md`, and `synthes
 
 Every `methodology-reflection.md` includes an ICD 203 compliance checklist verifying all 9 analytic tradecraft standards are met.
 
+### 📰 Reader-Facing Output Contract (script-enforced)
+
+Tradecraft alone does not produce **publication-quality** articles — strong intelligence content can still render as a flat artifact concatenation if the reader-facing scaffolding is weak. Every aggregated `analysis/daily/$DATE/$SUBFOLDER/article.md` is therefore validated by [`scripts/validate-article.ts`](../../scripts/validate-article.ts) (run via `npm run validate-article` and as part of `npm run validate-all`). The validator fails CI on any of these violations:
+
+| Rule code | What it blocks |
+|---|---|
+| `unresolved-placeholder` | `[REQUIRED:…]`, `AI_MUST_REPLACE`, `<insert …>`, `TBD:`, `FILL IN` strings surviving Pass-2. **Templates carry these markers on disk; if any reach the article, the AI agent skipped a substitution.** |
+| `missing-reader-guide` / `missing-executive-brief` / `missing-bluf` / `missing-sources-appendix` | Required article landmarks. |
+| `bluf-too-short` (< 80 chars) / `bluf-too-long` (> 1200 chars) | Stub or runaway BLUFs. A publishable BLUF needs actor + active verb + object + when + so-what. |
+| `empty-heading-slug` | Any heading whose permissive slug is empty (e.g. emoji-only). Empty `#anchor` would break the Reader Intelligence Guide and SERP deep-links. |
+| `per-doc-missing-dok_id` | Any `### HD…`/`### FiU…` per-document subsection lacking at least one dok_id-style code in its body. Every per-document subsection must trace to a primary-source identifier. |
+
+Authoring guidance:
+
+1. **Never ship a placeholder.** Pass-2 must replace every `[REQUIRED: …]`, `AI_MUST_REPLACE`, `<insert …>`, `TBD:` and `FILL IN` marker with concrete prose. The validator scans the **aggregated** article — there is nowhere to hide.
+2. **BLUF prose, not bullet stub.** The first prose paragraph after `## 🎯 BLUF` is what the aggregator extracts as the article `<meta description>` and as the SERP snippet. Write 1–4 evidence-bearing sentences, ≥ 80 chars, ≤ 1200 chars.
+3. **Heading hierarchy is auto-corrected.** The aggregator demotes every internal `##` to `###`, `###` to `####`, etc. so your template's `## 🎯 BLUF` becomes a properly-nested H3 under the wrapper `## Executive Brief`. **Do not pre-flatten** your template's headings to compensate — author them at the natural depth (BLUF, 60-second read, top forward trigger as `##`; their sub-bullets as `###`/`####`).
+4. **Avoid `_Source: file.md_` italics at the top of the body.** Source attribution is now generated centrally in the Reader Intelligence Guide and the `## Article Sources` appendix. Inline prose mentions like *"primary source: data.riksdagen.se/dokument/HD12345"* are preserved (they're real journalism).
+5. **Avoid emoji-only headings.** A heading like `## 🎯` slugs to an empty string and the validator blocks it. Always pair the emoji with at least one word: `## 🎯 BLUF`, `## 🔮 Top Forward Trigger`.
+6. **Cite dok_id in every per-document analysis.** The aggregator emits one `### HD12345` (or `### FiU17`) per file under `documents/`; the body must mention that identifier (or another riksdagen identifier) at least once for primary-source traceability.
+
+Run the contract locally before commit:
+
+```bash
+# Re-aggregate, then validate every article in the repo:
+npx tsx scripts/aggregate-analysis.ts --all
+npm run validate-article
+```
+
+The aggregator's structural projections (heading demotion, source-preamble stripping, slug normalisation) are unit-tested in [`tests/render-lib.test.ts`](../../tests/render-lib.test.ts); the validator guards the AI-authored contribution that the aggregator concatenates. See [`Article-Generation.md`](../../Article-Generation.md) §"Article minimum-content validator" for the full contract reference.
+
 ---
 
 ## 🤖 Artifact → workflow → gate check mapping

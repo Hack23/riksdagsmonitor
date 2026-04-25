@@ -88,5 +88,14 @@ analysis/daily/*/*/pass1/
 # .github/prompts/seo-metadata-contract.md §6). Intentionally NOT ignored —
 # the dry-run CSV is committed so PRs 3 / 4 / 5 can consume it deterministically
 # and reviewers can inspect tier classification + violation codes in-place.
+# SEO metadata backfill diff reports (see analysis/metadata-backfill/README.md and
+# .github/prompts/seo-metadata-contract.md §6). Intentionally NOT ignored —
+# the dry-run CSV is committed so PRs 3 / 4 / 5 can consume it deterministically
+# and reviewers can inspect tier classification + violation codes in-place.
 !analysis/metadata-backfill/*.csv
 !analysis/metadata-backfill/README.md
+
+# Vendored Mermaid distribution copied from node_modules by
+# scripts/copy-vendor-mermaid.ts during `prebuild`. Reproducible from the
+# pinned `mermaid` devDependency in package.json — do not commit.
+js/lib/mermaid/
