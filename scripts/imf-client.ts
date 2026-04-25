@@ -276,7 +276,7 @@ export class ImfClient {
         const series = await this.getWeoIndicator(iso3, weoCode, years);
         out.set(weoCode, series);
       } catch (error) {
-        if (isTransientFetchError(error) || error instanceof ImfHttpError) {
+        if (isTransientFetchError(error) || (error instanceof ImfHttpError && error.retryable)) {
           this.onBatchIndicatorError?.({ countryCode: iso3, indicatorId: weoCode, error });
           out.set(weoCode, []);
           continue;

@@ -389,7 +389,7 @@ export function findImfIndicatorByCitation(
 ): ImfIndicatorContext | undefined {
   const idx = citation.indexOf(':');
   if (idx <= 0 || idx === citation.length - 1) return undefined;
-  const db = citation.slice(0, idx) as ImfDatabase;
+  const db = citation.slice(0, idx);
   const id = citation.slice(idx + 1);
   return findImfIndicatorByCode(db, id);
 }

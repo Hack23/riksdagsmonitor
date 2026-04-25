@@ -431,6 +431,22 @@ describe('ImfClient', () => {
       );
     });
 
+    it('rethrows non-retryable indicator HTTP errors instead of fail-softing them', async () => {
+      const diagnostics = vi.fn();
+      global.fetch = vi.fn(async () => new Response('missing', { status: 404 })) as unknown as typeof global.fetch;
+
+      const noRetryClient = new ImfClient({
+        maxRetries: 0,
+        timeout: 1_000,
+        onBatchIndicatorError: diagnostics,
+      });
+
+      await expect(noRetryClient.getWeoIndicatorsBatch('SWE', ['BAD_CODE'])).rejects.toThrow(
+        /IMF API error: 404/,
+      );
+      expect(diagnostics).not.toHaveBeenCalled();
+    });
+
     it('fail-softs fetch network TypeErrors but not programmer TypeErrors', async () => {
       global.fetch = vi.fn(async () => {
         throw new TypeError('fetch failed');

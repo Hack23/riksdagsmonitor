@@ -172,6 +172,12 @@ describe('imf-context', () => {
       expect(hit?.indicatorId).toBe('NGDP_RPCH');
     });
 
+    it('normalizes citation database prefixes without unsafe casts', () => {
+      const hit = findImfIndicatorByCitation(' weo : ngdp_rpch ');
+      expect(hit?.database).toBe('WEO');
+      expect(hit?.indicatorId).toBe('NGDP_RPCH');
+    });
+
     it('round-trips imfCitation for every catalogue entry', () => {
       for (const ind of IMF_INDICATORS) {
         const citation = imfCitation(ind.database, ind.indicatorId);
