@@ -137,10 +137,16 @@ ${chrome.headerHtml}
       <article class="rm-article" lang="${LANGUAGE_META[input.lang].hreflang}">
         <header class="rm-article-header">
           <h1>${escapeHtml(title)}</h1>
+          <p class="rm-article-dek">${escapeHtml(description)}</p>
           <p class="rm-article-meta">
             <time datetime="${publishedIso}">${escapeHtml(date)}</time>
             · <span class="rm-article-lang">${LANGUAGE_META[input.lang].flag} ${LANGUAGE_META[input.lang].nativeName}</span>
           </p>
+          <ul class="rm-article-trust-badges" aria-label="${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustAriaLabel)}">
+            <li>${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustPublicSources)}</li>
+            <li>${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustAiFirst)}</li>
+            <li>${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustTraceable)}</li>
+          </ul>
         </header>
         <div class="rm-article-body">
 ${bodyHtml}

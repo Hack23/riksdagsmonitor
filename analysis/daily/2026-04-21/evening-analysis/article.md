@@ -5,10 +5,22 @@ date: 2026-04-21
 subfolder: evening-analysis
 slug: 2026-04-21-evening-analysis
 source_folder: analysis/daily/2026-04-21/evening-analysis
-generated_at: 2026-04-24T18:27:52.228Z
+generated_at: 2026-04-25T10:10:10.955Z
 language: en
 layout: article
 ---
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief.md)_
@@ -446,340 +458,6 @@ graph TD
 
 *Produced by Riksdagsmonitor Evening Analysis v5.0 — Confidence: 🟩HIGH*
 
-## SWOT Analysis
-
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/swot-analysis.md)_
-
-**SWOT-ID**: SWT-2026-04-21-EVE001
-**Analysis Date**: 2026-04-21
-**Riksmöte**: 2025/26
-**Confidence**: 🟩HIGH
-
----
-
-## Quadrant Mapping
-
-```mermaid
-mindmap
-  root((Sweden 2026-04-21<br/>Political SWOT))
-    STRENGTHS
-      ::icon(fa fa-star)
-      FiU48 delivers 4.1B SEK household relief
-        6M vehicle owners benefit from fuel cut
-        3M households get energy support
-      Tidöalliansen 175/349 majority intact
-      Vindkraft law = green transition credibility
-      KU hearings show constitutional accountability functioning
-    WEAKNESSES
-      ::icon(fa fa-warning)
-      FiU48 violates Klimatlagen 2017:720 §5
-        +0.3-0.5 MtCO₂e annual regression
-        Sweden at EU minimum fossil tax floor
-      L party tension on climate vs affordability
-      9 interpellations against Carlson
-        Infrastructure minister accumulation risk
-      Opposition 21-motion coordination not yet answered
-    OPPORTUNITIES
-      ::icon(fa fa-lightbulb)
-      FiU48 + vindkraft dual narrative pre-election
-      KU hearings constrain opposition attacks on Wallström era
-      EU Pay Directive deadline creates negotiated solution path
-      SiS reform shows welfare state responsiveness
-    THREATS
-      ::icon(fa fa-exclamation)
-      EU Commission fossil subsidy scrutiny
-      Nina Larsson EU infringement proceedings June 7
-      Opposition 4-party immigration coordination
-      Gaza flotilla incident escalation
-      Energy price collapse undermines FiU48 justification
-```
-
----
-
-## Full SWOT Matrix
-
-### Strengths (Coalition: Tidöalliansen M+SD+KD+L)
-
-| Strength | Evidence | dok_id | Confidence |
-|----------|---------|--------|-----------|
-| **FiU48 delivers immediate household relief** | 4.1B SEK extra budget: fuel tax cut (82 öre/l petrol, 319 SEK/m³ diesel) + el-/gasprisstöd. ~6M vehicle owners and ~3M households benefit | HD01FiU48 | 🟩HIGH |
-| **Majority intact** | 175/349 Riksdag seats (M+SD+KD+L). No defections reported for FiU48 | RT-1353 synthesis | 🟩HIGH |
-| **Vindkraft law = green credibility** | Step 2 of three-step vindkraftspaket: resident revenue sharing up to 9 turbine-heights. Strategy to convert NIMBY to YIMBY | gov/vindkraft | 🟩HIGH |
-| **Constitutional accountability operational** | KU G16 (Svantesson) + G34 (Wallström) hearings proceed — demonstrates functioning parliamentary oversight | HDC220260421ou1/ou2 | 🟩HIGH |
-| **TU16 simplification** | Removal of mandatory introduction course for B-license practice driving — regulatory simplification message | HD01TU16 | 🟩HIGH |
-
-### Weaknesses (Coalition: Tidöalliansen)
-
-| Weakness | Evidence | dok_id | Confidence |
-|----------|---------|--------|-----------|
-| **Climate law conflict** | FiU48 fuel tax cut adds +0.3-0.5 MtCO₂e/year. Under Klimatlagen 2017:720 §5, government must explain incompatibility. Sweden already ~20% behind 2030 target | HD01FiU48; MP motion HD024098 | 🟩HIGH |
-| **EU fossil minimum floor** | Sweden's fuel tax cut reduces to EU Energy Tax Directive minimum — weakens negotiating position on future EU climate measures | HD01FiU48 | 🟧MEDIUM |
-| **Andreas Carlson infrastructure accumulation** | 9 interpellations against KD Infrastructure Minister covering rail closures, road safety, housing, airports, defense. Creates "minister in crisis" meta-narrative | HD10434 and prior IPs | 🟩HIGH |
-| **L party climate tension** | Liberals historically support green taxation; supporting fossil subsidy is ideological compromise. Risk of "only for the election" framing | RT-1353 scenario B | 🟧MEDIUM |
-
-### Strengths (Opposition: S/V/MP/C)
-
-| Strength | Evidence | dok_id | Confidence |
-|----------|---------|--------|-----------|
-| **21-motion coordinated offensive** | All four major opposition parties filed counter-motions to prop. 2025/26:229 within 72 hours — historically rare multi-party coordination | HD024076-HD024089 | 🟩HIGH |
-| **EU legal deadline weaponization** | June 7, 2026 = deadline for EU Pay Transparency Directive transposition. Sofia Amloh (S) filed HD10437 directly citing deadline — external legal pressure reinforces parliamentary attack | HD10437 (from interpellations analysis) | 🟩HIGH |
-| **Women's welfare dual attack** | Two interpellations against Nina Larsson (L) filed same day: EU Pay Directive + women's shelter closures. "Minister failing women on two fronts" narrative | HD10437, HD10438 | 🟩HIGH |
-| **Systematic accountability documentation** | S filed 11 of 14 most recent interpellations — building a timestamped record of government failures to mobilize in campaign | Interpellations synthesis | 🟩HIGH |
-
-### Weaknesses (Opposition: S/V/MP/C)
-
-| Weakness | Evidence | dok_id | Confidence |
-|----------|---------|--------|-----------|
-| **S silent on FiU48 opposition** | Social Democrats cannot credibly oppose fuel tax relief when households face real energy costs. Economic reality creates affordability vs. climate dilemma | RT-1353; motions synthesis | 🟩HIGH |
-| **S silent on deportation** | Despite filing motions on reception and housing immigration laws, S avoided HD024090/95/97 deportation cluster — revealed strategic weakness on enforcement narrative | Motions synthesis | 🟩HIGH |
-| **"Chaos coalition" risk** | When four opposition parties coordinate too visibly, M+SD frame it as "opposition chaos" — hurts opposition messaging | Motions synthesis | 🟧MEDIUM |
-
-### Opportunities
-
-| Opportunity | Mechanism | Timeline | Confidence |
-|-------------|-----------|----------|-----------|
-| **FiU48 + vindkraft dual narrative** | Government can claim both affordability AND green transition before election. Rare political win-win | 2026-04-22 to election | 🟩HIGH |
-| **KU constrains opposition on Wallström** | G34 hearing of Wallström forces S to defend prior government decisions on foreign policy | 2026-05 est. | 🟧MEDIUM |
-| **SiS reform institutional care** | Government commitment to improving conditions for children in institutional care shows social welfare responsiveness | 2026-04-20 (press release) | 🟧MEDIUM |
-
-### Threats
-
-| Threat | Mechanism | Probability | Severity | Confidence |
-|--------|-----------|------------|---------|-----------|
-| **EU Commission fossil subsidy challenge** | EU Commission may formally query Sweden's fuel tax reduction under fossil subsidy monitoring framework | MEDIUM | HIGH | 🟩HIGH |
-| **Nina Larsson EU infringement (June 7)** | Non-transposition of EU Pay Transparency Directive = formal infringement proceedings. Electoral damage for equality-focused L party | HIGH | HIGH | 🟩HIGH |
-| **4-party immigration coordination signal** | Opposition has demonstrated coordination capacity. Government must respond to 21 motions — response strategy risks | CONFIRMED | MEDIUM | 🟩HIGH |
-| **Gaza flotilla escalation** | Denis Begic question HD11731 — if Swedish citizens in Gaza convoy are harmed, government faces foreign policy emergency | LOW | HIGH | 🟧MEDIUM |
-
----
-
-## Coalition vs Opposition SWOT
-
-```mermaid
-quadrantChart
-    title Coalition vs Opposition Strength Assessment 2026-04-21
-    x-axis "Weak" --> "Strong"
-    y-axis "Low Salience" --> "High Salience"
-    quadrant-1 High Salience / Strong
-    quadrant-2 High Salience / Weak
-    quadrant-3 Low Salience / Weak
-    quadrant-4 Low Salience / Strong
-    "FiU48 Affordability": [0.85, 0.92]
-    "Vindkraft Green Narrative": [0.75, 0.78]
-    "Climate Law Conflict": [0.25, 0.88]
-    "EU Pay Directive Breach": [0.15, 0.82]
-    "Opposition 21-motion Coord": [0.78, 0.85]
-    "Carlson Accumulation Risk": [0.20, 0.72]
-    "S Deportation Silence": [0.22, 0.70]
-    "KU Constitutional Hearings": [0.65, 0.75]
-```
-
-*Produced by Riksdagsmonitor AI Evening Analysis — Confidence: 🟩HIGH*
-
-## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/risk-assessment.md)_
-
-**RSK-ID**: RSK-2026-04-21-EVE001
-**Analysis Date**: 2026-04-21
-**Riksmöte**: 2025/26
-**Confidence**: 🟩HIGH
-
----
-
-## Risk Heat Map
-
-```mermaid
-quadrantChart
-    title Risk Heat Map — Swedish Politics 2026-04-21
-    x-axis "Low Likelihood" --> "High Likelihood"
-    y-axis "Low Impact" --> "High Impact"
-    quadrant-1 High Likelihood / High Impact = CRITICAL
-    quadrant-2 Low Likelihood / High Impact = MONITOR
-    quadrant-3 Low Likelihood / Low Impact = ACCEPT
-    quadrant-4 High Likelihood / Low Impact = MANAGE
-    "R01 EU Commission FiU48": [0.55, 0.85]
-    "R02 L Party Defection": [0.20, 0.88]
-    "R03 KU Svantesson Observation": [0.50, 0.75]
-    "R04 Opposition Chaos Framing": [0.30, 0.55]
-    "R05 EU Pay Directive Breach": [0.80, 0.82]
-    "R06 Gaza Flotilla Incident": [0.35, 0.80]
-    "R07 Energy Price Collapse": [0.20, 0.72]
-    "R08 Climate Credibility Gap": [0.75, 0.70]
-```
-
----
-
-## Detailed Risk Register
-
-| Risk ID | Risk Title | Likelihood (1-5) | Impact (1-5) | L×I Score | Owner | Timeline | Mitigation |
-|---------|-----------|-----------------|-------------|-----------|-------|----------|-----------|
-| **R01** | EU Commission queries Sweden's fuel tax cut under fossil subsidy monitoring | 3 (MEDIUM) | 5 (CRITICAL) | **15** | Svantesson/Government | 2-4 weeks | Pre-draft EU response noting economic emergency justification |
-| **R02** | L party abstention or defection on FiU48 fuel tax clause | 2 (LOW-MEDIUM) | 5 (CRITICAL) | **10** | L party leadership | 2026-04-22/23 | L already announced support; Britz + vindkraft law as counterweight |
-| **R03** | KU G16 produces formal observation on Svantesson fiscal governance | 3 (MEDIUM) | 4 (HIGH) | **12** | Elisabeth Svantesson | 2026-05-05 est. | Transparent documentation preparation for KU submission |
-| **R04** | Government's "chaos coalition" framing succeeds against 4-party coordination | 2 (LOW) | 3 (MEDIUM) | **6** | Opposition (S/V/MP/C) | Campaign 2026 | Opposition maintains strategic messaging discipline (not shared press conference) |
-| **R05** | EU Pay Transparency Directive infringement (non-transposition by June 7) | 4 (HIGH) | 4 (HIGH) | **16** | Nina Larsson (L) | 47 days | Fast-track transposition legislation; may require extraordinary committee session |
-| **R06** | Gaza flotilla incident involving Swedish citizens | 2 (LOW) | 4 (HIGH) | **8** | Malmer Stenergard | 0-30 days | Diplomatic monitoring; consular preparedness |
-| **R07** | Energy prices fall sharply before FiU48 chamber vote | 2 (LOW) | 4 (HIGH) | **8** | External/market | 0-3 days | Unlikely given market fundamentals; monitor Nordpool prices |
-| **R08** | Climate credibility gap becomes dominant campaign narrative | 4 (HIGH) | 3 (MEDIUM) | **12** | Coalition collective | Campaign 2026 | Vindkraft law + three-step green package as counternarrative |
-
----
-
-## Coalition Stability Risk Analysis
-
-```mermaid
-graph TD
-    classDef critical fill:#C62828,color:#fff
-    classDef high fill:#E65100,color:#fff
-    classDef medium fill:#F57F17,color:#333
-    classDef low fill:#2E7D32,color:#fff
-
-    FIU48["FiU48 Chamber Vote<br/>(2026-04-22/23)<br/>175 votes needed"]:::low
-    L_RISK["L Party Vote Risk<br/>Climate vs. Affordability<br/>L×I=10"]:::medium
-    KU_RISK["KU G16 Observation Risk<br/>Svantesson fiscal governance<br/>L×I=12"]:::medium
-    EU_RISK["EU Pay Directive<br/>47-day deadline<br/>L×I=16"]:::critical
-    CLIMATE["Climate Law §5<br/>Incompatibility obligation<br/>L×I=15"]:::critical
-
-    FIU48 -->|"If L splits"| L_RISK
-    FIU48 -->|"If passed"| CLIMATE
-    CLIMATE -->|"EU monitors"| EU_RISK
-    EU_RISK -->|"June 7 trigger"| INFRINGEMENT["EU Infringement<br/>Proceedings"]:::critical
-    KU_RISK -->|"May report"| OBSERVATION["Formal KU Observation<br/>on Svantesson"]:::medium
-```
-
----
-
-## Risk Trends from Previous Analysis
-
-| Risk | Yesterday (2026-04-20) | Today (2026-04-21) | Change |
-|------|----------------------|-------------------|--------|
-| R05 EU Pay Directive | HIGH (48 days) | HIGH (47 days) | ⚠️ Countdown continues |
-| R01 EU Commission | NOT TRACKED | HIGH (new) | 🔴 New risk (FiU48 triggered) |
-| Constitutional scrutiny | LOW | MEDIUM (KU hearings today) | ↑ Elevated |
-| Opposition coordination | MEDIUM | HIGH (21 motions confirmed) | ↑ Elevated |
-
----
-
-## Summary Risk Assessment
-
-**Top 3 Risks requiring immediate monitoring:**
-
-1. **R05 (EU Pay Directive)** — L×I=16, CRITICAL — Nina Larsson has 47 days to transpose or face EU infringement proceedings. Government appears unprepared. HIGH electoral damage potential.
-
-2. **R01 (EU Commission FiU48)** — L×I=15, CRITICAL — Fuel tax cut to EU minimum creates formal obligation under Klimatlagen §5 and may trigger EU fossil subsidy monitoring inquiry. Reputational damage in progress.
-
-3. **R03 (KU G16 Observation)** — L×I=12, HIGH — Finance Minister Svantesson's constitutional hearing today could produce formal observations in the KU annual report affecting campaign credibility.
-
-*Confidence: 🟩HIGH | Produced by Riksdagsmonitor Evening Analysis v5.0*
-
-## Threat Analysis
-
-_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/threat-analysis.md)_
-
-**THR-ID**: THR-2026-04-21-EVE001
-**Analysis Date**: 2026-04-21
-**Riksmöte**: 2025/26
-**Confidence**: 🟩HIGH
-
----
-
-## Threat Taxonomy Network
-
-```mermaid
-graph TD
-    classDef crit fill:#C62828,color:#fff,stroke:#900
-    classDef high fill:#E65100,color:#fff,stroke:#C00
-    classDef med fill:#F57F17,color:#333,stroke:#B00
-    classDef low fill:#2E7D32,color:#fff,stroke:#060
-
-    ROOT["🇸🇪 Swedish Political Threat Landscape<br/>2026-04-21<br/>145 days to election"]
-
-    ROOT --> T1["⚖️ INSTITUTIONAL THREATS"]
-    ROOT --> T2["📜 LEGISLATIVE THREATS"]
-    ROOT --> T3["🌍 EXTERNAL/EU THREATS"]
-    ROOT --> T4["🗳️ ELECTORAL THREATS"]
-    ROOT --> T5["💰 FISCAL THREATS"]
-    ROOT --> T6["🔐 SECURITY THREATS"]
-
-    T1 --> T1A["KU finds Svantesson mismanaged<br/>fiscal documentation<br/>Severity: 4/5 CRITICAL"]:::high
-    T1 --> T1B["Constitutional norm erosion<br/>if KU observations ignored<br/>Severity: 3/5 HIGH"]:::med
-
-    T2 --> T2A["FiU48 passed without<br/>climate impact assessment<br/>Severity: 4/5 CRITICAL"]:::high
-    T2 --> T2B["SfU22 inhibition reform<br/>ECHR compliance risk<br/>Severity: 4/5 CRITICAL"]:::high
-    T2 --> T2C["Opposition 21 motions<br/>unaddressed before summer<br/>Severity: 3/5 HIGH"]:::med
-
-    T3 --> T3A["EU Commission fossil<br/>subsidy monitoring (FiU48)<br/>Severity: 4/5 CRITICAL"]:::high
-    T3 --> T3B["EU Pay Transparency<br/>Directive infringement June 7<br/>Severity: 5/5 EXTREME"]:::crit
-    T3 --> T3C["Gaza flotilla protection<br/>failure — diplomatic crisis<br/>Severity: 3/5 HIGH"]:::med
-
-    T4 --> T4A["Opposition 4-party coordination<br/>immigration campaign architecture<br/>Severity: 4/5 CRITICAL"]:::high
-    T4 --> T4B["S affordability trap<br/>Cannot oppose FiU48 without<br/>appearing anti-household<br/>Severity: 3/5 MEDIUM"]:::med
-
-    T5 --> T5A["FiU48 4.1B SEK fiscal cost<br/>weakens structural budget<br/>Severity: 3/5 HIGH"]:::med
-    T5 --> T5B["Skatteverket office closure<br/>Vetlanda — rural services<br/>Severity: 2/5 LOW"]:::low
-
-    T6 --> T6A["Stockholm police density<br/>declining despite 10k target<br/>(BRÅ March 2026)<br/>Severity: 4/5 CRITICAL"]:::high
-    T6 --> T6B["Judicial self-scrutiny<br/>weakness (Widding HD10441)<br/>Severity: 3/5 HIGH"]:::med
-```
-
----
-
-## Threat Category Details
-
-### Category 1: Institutional Threats
-
-| Threat | Actor | Severity (1-5) | Evidence | Timeline |
-|--------|-------|---------------|---------|---------|
-| KU G16 formal observation on Svantesson | Konstitutionsutskottet | 4 | KU G16 open hearing 2026-04-21 | 2026-05-05 |
-| Constitutional norm erosion via executive overreach | Government | 3 | Background pattern across 2025/26 | Ongoing |
-
-### Category 2: Legislative Threats
-
-| Threat | Actor | Severity (1-5) | Evidence | Timeline |
-|--------|-------|---------------|---------|---------|
-| FiU48 without climate compatibility assessment | Government | 4 | Klimatlagen 2017:720 §5 obligation | 2026-04-22-24 vote |
-| SfU22 ECHR incompatibility | Government | 4 | Inhibition replacing temporary permits | 2026-06-01 |
-| 21 opposition motions unaddressed | Opposition | 3 | HD024076-HD024089 etc. | Committee cycles |
-
-### Category 3: External/EU Threats
-
-| Threat | Actor | Severity (1-5) | Evidence | Timeline |
-|--------|-------|---------------|---------|---------|
-| **EU Pay Transparency infringement** | EU Commission | **5** | June 7, 2026 transposition deadline | 47 days |
-| EU fossil subsidy monitoring FiU48 | EU Commission | 4 | EU Energy Tax Directive minimum breach | 2-4 weeks |
-| Gaza flotilla diplomatic incident | Israel/International | 3 | HD11731 question to Malmer Stenergard | Immediate |
-
-### Category 4: Electoral Threats
-
-| Threat | Actor | Severity (1-5) | Evidence | Timeline |
-|--------|-------|---------------|---------|---------|
-| Opposition 4-party immigration coordination | S/V/MP/C bloc | 4 | 21 motions including 4-party reception law cluster | Campaign 2026 |
-| S affordability credibility trap | Social Democrats | 3 | Cannot oppose FiU48 without appearing anti-household | Ongoing |
-
-### Category 5: Fiscal Threats
-
-| Threat | Actor | Severity (1-5) | Evidence | Timeline |
-|--------|-------|---------------|---------|---------|
-| FiU48 structural deficit impact | Government | 3 | 4.1B SEK in 2026; structural budget impact | 2026 fiscal year |
-| Rural service closures (Skatteverket Vetlanda) | Government | 2 | HD11732 question | Immediate |
-
-### Category 6: Security Threats
-
-| Threat | Actor | Severity (1-5) | Evidence | Timeline |
-|--------|-------|---------------|---------|---------|
-| **Stockholm police density decline** | Government | 4 | BRÅ March 2026: only region with declining density despite 10k target | Ongoing |
-| Judicial self-review system weakness | Rättsväsendet | 3 | HD10441: Widding → Strömmer on jurist-only review process | Structural |
-
----
-
-## Overall Threat Level Assessment
-
-**Confidence Near HIGH** | Overall Threat Level: **HIGH**
-
-The combination of a pending EU infringement deadline (47 days), climate law obligations triggered by FiU48, constitutional hearings on Finance Minister Svantesson, and a historically coordinated 4-party opposition offensive creates the highest threat concentration of the 2025/26 parliamentary session. The government's response to FiU48 must carefully balance immediate affordability narrative with medium-term climate and EU legal obligations.
-
-*Produced by Riksdagsmonitor Evening Analysis v5.0*
-
 ## Scenario Analysis
 
 _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/scenario-analysis.md)_
@@ -938,6 +616,340 @@ xychart-beta
 | W1 (3%) | Hung parliament; S-led minority government most likely outcome |
 
 *Produced by Riksdagsmonitor Evening Analysis v5.0 | 2026-04-21*
+
+## Risk Assessment
+
+_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/risk-assessment.md)_
+
+**RSK-ID**: RSK-2026-04-21-EVE001
+**Analysis Date**: 2026-04-21
+**Riksmöte**: 2025/26
+**Confidence**: 🟩HIGH
+
+---
+
+## Risk Heat Map
+
+```mermaid
+quadrantChart
+    title Risk Heat Map — Swedish Politics 2026-04-21
+    x-axis "Low Likelihood" --> "High Likelihood"
+    y-axis "Low Impact" --> "High Impact"
+    quadrant-1 High Likelihood / High Impact = CRITICAL
+    quadrant-2 Low Likelihood / High Impact = MONITOR
+    quadrant-3 Low Likelihood / Low Impact = ACCEPT
+    quadrant-4 High Likelihood / Low Impact = MANAGE
+    "R01 EU Commission FiU48": [0.55, 0.85]
+    "R02 L Party Defection": [0.20, 0.88]
+    "R03 KU Svantesson Observation": [0.50, 0.75]
+    "R04 Opposition Chaos Framing": [0.30, 0.55]
+    "R05 EU Pay Directive Breach": [0.80, 0.82]
+    "R06 Gaza Flotilla Incident": [0.35, 0.80]
+    "R07 Energy Price Collapse": [0.20, 0.72]
+    "R08 Climate Credibility Gap": [0.75, 0.70]
+```
+
+---
+
+## Detailed Risk Register
+
+| Risk ID | Risk Title | Likelihood (1-5) | Impact (1-5) | L×I Score | Owner | Timeline | Mitigation |
+|---------|-----------|-----------------|-------------|-----------|-------|----------|-----------|
+| **R01** | EU Commission queries Sweden's fuel tax cut under fossil subsidy monitoring | 3 (MEDIUM) | 5 (CRITICAL) | **15** | Svantesson/Government | 2-4 weeks | Pre-draft EU response noting economic emergency justification |
+| **R02** | L party abstention or defection on FiU48 fuel tax clause | 2 (LOW-MEDIUM) | 5 (CRITICAL) | **10** | L party leadership | 2026-04-22/23 | L already announced support; Britz + vindkraft law as counterweight |
+| **R03** | KU G16 produces formal observation on Svantesson fiscal governance | 3 (MEDIUM) | 4 (HIGH) | **12** | Elisabeth Svantesson | 2026-05-05 est. | Transparent documentation preparation for KU submission |
+| **R04** | Government's "chaos coalition" framing succeeds against 4-party coordination | 2 (LOW) | 3 (MEDIUM) | **6** | Opposition (S/V/MP/C) | Campaign 2026 | Opposition maintains strategic messaging discipline (not shared press conference) |
+| **R05** | EU Pay Transparency Directive infringement (non-transposition by June 7) | 4 (HIGH) | 4 (HIGH) | **16** | Nina Larsson (L) | 47 days | Fast-track transposition legislation; may require extraordinary committee session |
+| **R06** | Gaza flotilla incident involving Swedish citizens | 2 (LOW) | 4 (HIGH) | **8** | Malmer Stenergard | 0-30 days | Diplomatic monitoring; consular preparedness |
+| **R07** | Energy prices fall sharply before FiU48 chamber vote | 2 (LOW) | 4 (HIGH) | **8** | External/market | 0-3 days | Unlikely given market fundamentals; monitor Nordpool prices |
+| **R08** | Climate credibility gap becomes dominant campaign narrative | 4 (HIGH) | 3 (MEDIUM) | **12** | Coalition collective | Campaign 2026 | Vindkraft law + three-step green package as counternarrative |
+
+---
+
+## Coalition Stability Risk Analysis
+
+```mermaid
+graph TD
+    classDef critical fill:#C62828,color:#fff
+    classDef high fill:#E65100,color:#fff
+    classDef medium fill:#F57F17,color:#333
+    classDef low fill:#2E7D32,color:#fff
+
+    FIU48["FiU48 Chamber Vote<br/>(2026-04-22/23)<br/>175 votes needed"]:::low
+    L_RISK["L Party Vote Risk<br/>Climate vs. Affordability<br/>L×I=10"]:::medium
+    KU_RISK["KU G16 Observation Risk<br/>Svantesson fiscal governance<br/>L×I=12"]:::medium
+    EU_RISK["EU Pay Directive<br/>47-day deadline<br/>L×I=16"]:::critical
+    CLIMATE["Climate Law §5<br/>Incompatibility obligation<br/>L×I=15"]:::critical
+
+    FIU48 -->|"If L splits"| L_RISK
+    FIU48 -->|"If passed"| CLIMATE
+    CLIMATE -->|"EU monitors"| EU_RISK
+    EU_RISK -->|"June 7 trigger"| INFRINGEMENT["EU Infringement<br/>Proceedings"]:::critical
+    KU_RISK -->|"May report"| OBSERVATION["Formal KU Observation<br/>on Svantesson"]:::medium
+```
+
+---
+
+## Risk Trends from Previous Analysis
+
+| Risk | Yesterday (2026-04-20) | Today (2026-04-21) | Change |
+|------|----------------------|-------------------|--------|
+| R05 EU Pay Directive | HIGH (48 days) | HIGH (47 days) | ⚠️ Countdown continues |
+| R01 EU Commission | NOT TRACKED | HIGH (new) | 🔴 New risk (FiU48 triggered) |
+| Constitutional scrutiny | LOW | MEDIUM (KU hearings today) | ↑ Elevated |
+| Opposition coordination | MEDIUM | HIGH (21 motions confirmed) | ↑ Elevated |
+
+---
+
+## Summary Risk Assessment
+
+**Top 3 Risks requiring immediate monitoring:**
+
+1. **R05 (EU Pay Directive)** — L×I=16, CRITICAL — Nina Larsson has 47 days to transpose or face EU infringement proceedings. Government appears unprepared. HIGH electoral damage potential.
+
+2. **R01 (EU Commission FiU48)** — L×I=15, CRITICAL — Fuel tax cut to EU minimum creates formal obligation under Klimatlagen §5 and may trigger EU fossil subsidy monitoring inquiry. Reputational damage in progress.
+
+3. **R03 (KU G16 Observation)** — L×I=12, HIGH — Finance Minister Svantesson's constitutional hearing today could produce formal observations in the KU annual report affecting campaign credibility.
+
+*Confidence: 🟩HIGH | Produced by Riksdagsmonitor Evening Analysis v5.0*
+
+## SWOT Analysis
+
+_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/swot-analysis.md)_
+
+**SWOT-ID**: SWT-2026-04-21-EVE001
+**Analysis Date**: 2026-04-21
+**Riksmöte**: 2025/26
+**Confidence**: 🟩HIGH
+
+---
+
+## Quadrant Mapping
+
+```mermaid
+mindmap
+  root((Sweden 2026-04-21<br/>Political SWOT))
+    STRENGTHS
+      ::icon(fa fa-star)
+      FiU48 delivers 4.1B SEK household relief
+        6M vehicle owners benefit from fuel cut
+        3M households get energy support
+      Tidöalliansen 175/349 majority intact
+      Vindkraft law = green transition credibility
+      KU hearings show constitutional accountability functioning
+    WEAKNESSES
+      ::icon(fa fa-warning)
+      FiU48 violates Klimatlagen 2017:720 §5
+        +0.3-0.5 MtCO₂e annual regression
+        Sweden at EU minimum fossil tax floor
+      L party tension on climate vs affordability
+      9 interpellations against Carlson
+        Infrastructure minister accumulation risk
+      Opposition 21-motion coordination not yet answered
+    OPPORTUNITIES
+      ::icon(fa fa-lightbulb)
+      FiU48 + vindkraft dual narrative pre-election
+      KU hearings constrain opposition attacks on Wallström era
+      EU Pay Directive deadline creates negotiated solution path
+      SiS reform shows welfare state responsiveness
+    THREATS
+      ::icon(fa fa-exclamation)
+      EU Commission fossil subsidy scrutiny
+      Nina Larsson EU infringement proceedings June 7
+      Opposition 4-party immigration coordination
+      Gaza flotilla incident escalation
+      Energy price collapse undermines FiU48 justification
+```
+
+---
+
+## Full SWOT Matrix
+
+### Strengths (Coalition: Tidöalliansen M+SD+KD+L)
+
+| Strength | Evidence | dok_id | Confidence |
+|----------|---------|--------|-----------|
+| **FiU48 delivers immediate household relief** | 4.1B SEK extra budget: fuel tax cut (82 öre/l petrol, 319 SEK/m³ diesel) + el-/gasprisstöd. ~6M vehicle owners and ~3M households benefit | HD01FiU48 | 🟩HIGH |
+| **Majority intact** | 175/349 Riksdag seats (M+SD+KD+L). No defections reported for FiU48 | RT-1353 synthesis | 🟩HIGH |
+| **Vindkraft law = green credibility** | Step 2 of three-step vindkraftspaket: resident revenue sharing up to 9 turbine-heights. Strategy to convert NIMBY to YIMBY | gov/vindkraft | 🟩HIGH |
+| **Constitutional accountability operational** | KU G16 (Svantesson) + G34 (Wallström) hearings proceed — demonstrates functioning parliamentary oversight | HDC220260421ou1/ou2 | 🟩HIGH |
+| **TU16 simplification** | Removal of mandatory introduction course for B-license practice driving — regulatory simplification message | HD01TU16 | 🟩HIGH |
+
+### Weaknesses (Coalition: Tidöalliansen)
+
+| Weakness | Evidence | dok_id | Confidence |
+|----------|---------|--------|-----------|
+| **Climate law conflict** | FiU48 fuel tax cut adds +0.3-0.5 MtCO₂e/year. Under Klimatlagen 2017:720 §5, government must explain incompatibility. Sweden already ~20% behind 2030 target | HD01FiU48; MP motion HD024098 | 🟩HIGH |
+| **EU fossil minimum floor** | Sweden's fuel tax cut reduces to EU Energy Tax Directive minimum — weakens negotiating position on future EU climate measures | HD01FiU48 | 🟧MEDIUM |
+| **Andreas Carlson infrastructure accumulation** | 9 interpellations against KD Infrastructure Minister covering rail closures, road safety, housing, airports, defense. Creates "minister in crisis" meta-narrative | HD10434 and prior IPs | 🟩HIGH |
+| **L party climate tension** | Liberals historically support green taxation; supporting fossil subsidy is ideological compromise. Risk of "only for the election" framing | RT-1353 scenario B | 🟧MEDIUM |
+
+### Strengths (Opposition: S/V/MP/C)
+
+| Strength | Evidence | dok_id | Confidence |
+|----------|---------|--------|-----------|
+| **21-motion coordinated offensive** | All four major opposition parties filed counter-motions to prop. 2025/26:229 within 72 hours — historically rare multi-party coordination | HD024076-HD024089 | 🟩HIGH |
+| **EU legal deadline weaponization** | June 7, 2026 = deadline for EU Pay Transparency Directive transposition. Sofia Amloh (S) filed HD10437 directly citing deadline — external legal pressure reinforces parliamentary attack | HD10437 (from interpellations analysis) | 🟩HIGH |
+| **Women's welfare dual attack** | Two interpellations against Nina Larsson (L) filed same day: EU Pay Directive + women's shelter closures. "Minister failing women on two fronts" narrative | HD10437, HD10438 | 🟩HIGH |
+| **Systematic accountability documentation** | S filed 11 of 14 most recent interpellations — building a timestamped record of government failures to mobilize in campaign | Interpellations synthesis | 🟩HIGH |
+
+### Weaknesses (Opposition: S/V/MP/C)
+
+| Weakness | Evidence | dok_id | Confidence |
+|----------|---------|--------|-----------|
+| **S silent on FiU48 opposition** | Social Democrats cannot credibly oppose fuel tax relief when households face real energy costs. Economic reality creates affordability vs. climate dilemma | RT-1353; motions synthesis | 🟩HIGH |
+| **S silent on deportation** | Despite filing motions on reception and housing immigration laws, S avoided HD024090/95/97 deportation cluster — revealed strategic weakness on enforcement narrative | Motions synthesis | 🟩HIGH |
+| **"Chaos coalition" risk** | When four opposition parties coordinate too visibly, M+SD frame it as "opposition chaos" — hurts opposition messaging | Motions synthesis | 🟧MEDIUM |
+
+### Opportunities
+
+| Opportunity | Mechanism | Timeline | Confidence |
+|-------------|-----------|----------|-----------|
+| **FiU48 + vindkraft dual narrative** | Government can claim both affordability AND green transition before election. Rare political win-win | 2026-04-22 to election | 🟩HIGH |
+| **KU constrains opposition on Wallström** | G34 hearing of Wallström forces S to defend prior government decisions on foreign policy | 2026-05 est. | 🟧MEDIUM |
+| **SiS reform institutional care** | Government commitment to improving conditions for children in institutional care shows social welfare responsiveness | 2026-04-20 (press release) | 🟧MEDIUM |
+
+### Threats
+
+| Threat | Mechanism | Probability | Severity | Confidence |
+|--------|-----------|------------|---------|-----------|
+| **EU Commission fossil subsidy challenge** | EU Commission may formally query Sweden's fuel tax reduction under fossil subsidy monitoring framework | MEDIUM | HIGH | 🟩HIGH |
+| **Nina Larsson EU infringement (June 7)** | Non-transposition of EU Pay Transparency Directive = formal infringement proceedings. Electoral damage for equality-focused L party | HIGH | HIGH | 🟩HIGH |
+| **4-party immigration coordination signal** | Opposition has demonstrated coordination capacity. Government must respond to 21 motions — response strategy risks | CONFIRMED | MEDIUM | 🟩HIGH |
+| **Gaza flotilla escalation** | Denis Begic question HD11731 — if Swedish citizens in Gaza convoy are harmed, government faces foreign policy emergency | LOW | HIGH | 🟧MEDIUM |
+
+---
+
+## Coalition vs Opposition SWOT
+
+```mermaid
+quadrantChart
+    title Coalition vs Opposition Strength Assessment 2026-04-21
+    x-axis "Weak" --> "Strong"
+    y-axis "Low Salience" --> "High Salience"
+    quadrant-1 High Salience / Strong
+    quadrant-2 High Salience / Weak
+    quadrant-3 Low Salience / Weak
+    quadrant-4 Low Salience / Strong
+    "FiU48 Affordability": [0.85, 0.92]
+    "Vindkraft Green Narrative": [0.75, 0.78]
+    "Climate Law Conflict": [0.25, 0.88]
+    "EU Pay Directive Breach": [0.15, 0.82]
+    "Opposition 21-motion Coord": [0.78, 0.85]
+    "Carlson Accumulation Risk": [0.20, 0.72]
+    "S Deportation Silence": [0.22, 0.70]
+    "KU Constitutional Hearings": [0.65, 0.75]
+```
+
+*Produced by Riksdagsmonitor AI Evening Analysis — Confidence: 🟩HIGH*
+
+## Threat Analysis
+
+_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/threat-analysis.md)_
+
+**THR-ID**: THR-2026-04-21-EVE001
+**Analysis Date**: 2026-04-21
+**Riksmöte**: 2025/26
+**Confidence**: 🟩HIGH
+
+---
+
+## Threat Taxonomy Network
+
+```mermaid
+graph TD
+    classDef crit fill:#C62828,color:#fff,stroke:#900
+    classDef high fill:#E65100,color:#fff,stroke:#C00
+    classDef med fill:#F57F17,color:#333,stroke:#B00
+    classDef low fill:#2E7D32,color:#fff,stroke:#060
+
+    ROOT["🇸🇪 Swedish Political Threat Landscape<br/>2026-04-21<br/>145 days to election"]
+
+    ROOT --> T1["⚖️ INSTITUTIONAL THREATS"]
+    ROOT --> T2["📜 LEGISLATIVE THREATS"]
+    ROOT --> T3["🌍 EXTERNAL/EU THREATS"]
+    ROOT --> T4["🗳️ ELECTORAL THREATS"]
+    ROOT --> T5["💰 FISCAL THREATS"]
+    ROOT --> T6["🔐 SECURITY THREATS"]
+
+    T1 --> T1A["KU finds Svantesson mismanaged<br/>fiscal documentation<br/>Severity: 4/5 CRITICAL"]:::high
+    T1 --> T1B["Constitutional norm erosion<br/>if KU observations ignored<br/>Severity: 3/5 HIGH"]:::med
+
+    T2 --> T2A["FiU48 passed without<br/>climate impact assessment<br/>Severity: 4/5 CRITICAL"]:::high
+    T2 --> T2B["SfU22 inhibition reform<br/>ECHR compliance risk<br/>Severity: 4/5 CRITICAL"]:::high
+    T2 --> T2C["Opposition 21 motions<br/>unaddressed before summer<br/>Severity: 3/5 HIGH"]:::med
+
+    T3 --> T3A["EU Commission fossil<br/>subsidy monitoring (FiU48)<br/>Severity: 4/5 CRITICAL"]:::high
+    T3 --> T3B["EU Pay Transparency<br/>Directive infringement June 7<br/>Severity: 5/5 EXTREME"]:::crit
+    T3 --> T3C["Gaza flotilla protection<br/>failure — diplomatic crisis<br/>Severity: 3/5 HIGH"]:::med
+
+    T4 --> T4A["Opposition 4-party coordination<br/>immigration campaign architecture<br/>Severity: 4/5 CRITICAL"]:::high
+    T4 --> T4B["S affordability trap<br/>Cannot oppose FiU48 without<br/>appearing anti-household<br/>Severity: 3/5 MEDIUM"]:::med
+
+    T5 --> T5A["FiU48 4.1B SEK fiscal cost<br/>weakens structural budget<br/>Severity: 3/5 HIGH"]:::med
+    T5 --> T5B["Skatteverket office closure<br/>Vetlanda — rural services<br/>Severity: 2/5 LOW"]:::low
+
+    T6 --> T6A["Stockholm police density<br/>declining despite 10k target<br/>(BRÅ March 2026)<br/>Severity: 4/5 CRITICAL"]:::high
+    T6 --> T6B["Judicial self-scrutiny<br/>weakness (Widding HD10441)<br/>Severity: 3/5 HIGH"]:::med
+```
+
+---
+
+## Threat Category Details
+
+### Category 1: Institutional Threats
+
+| Threat | Actor | Severity (1-5) | Evidence | Timeline |
+|--------|-------|---------------|---------|---------|
+| KU G16 formal observation on Svantesson | Konstitutionsutskottet | 4 | KU G16 open hearing 2026-04-21 | 2026-05-05 |
+| Constitutional norm erosion via executive overreach | Government | 3 | Background pattern across 2025/26 | Ongoing |
+
+### Category 2: Legislative Threats
+
+| Threat | Actor | Severity (1-5) | Evidence | Timeline |
+|--------|-------|---------------|---------|---------|
+| FiU48 without climate compatibility assessment | Government | 4 | Klimatlagen 2017:720 §5 obligation | 2026-04-22-24 vote |
+| SfU22 ECHR incompatibility | Government | 4 | Inhibition replacing temporary permits | 2026-06-01 |
+| 21 opposition motions unaddressed | Opposition | 3 | HD024076-HD024089 etc. | Committee cycles |
+
+### Category 3: External/EU Threats
+
+| Threat | Actor | Severity (1-5) | Evidence | Timeline |
+|--------|-------|---------------|---------|---------|
+| **EU Pay Transparency infringement** | EU Commission | **5** | June 7, 2026 transposition deadline | 47 days |
+| EU fossil subsidy monitoring FiU48 | EU Commission | 4 | EU Energy Tax Directive minimum breach | 2-4 weeks |
+| Gaza flotilla diplomatic incident | Israel/International | 3 | HD11731 question to Malmer Stenergard | Immediate |
+
+### Category 4: Electoral Threats
+
+| Threat | Actor | Severity (1-5) | Evidence | Timeline |
+|--------|-------|---------------|---------|---------|
+| Opposition 4-party immigration coordination | S/V/MP/C bloc | 4 | 21 motions including 4-party reception law cluster | Campaign 2026 |
+| S affordability credibility trap | Social Democrats | 3 | Cannot oppose FiU48 without appearing anti-household | Ongoing |
+
+### Category 5: Fiscal Threats
+
+| Threat | Actor | Severity (1-5) | Evidence | Timeline |
+|--------|-------|---------------|---------|---------|
+| FiU48 structural deficit impact | Government | 3 | 4.1B SEK in 2026; structural budget impact | 2026 fiscal year |
+| Rural service closures (Skatteverket Vetlanda) | Government | 2 | HD11732 question | Immediate |
+
+### Category 6: Security Threats
+
+| Threat | Actor | Severity (1-5) | Evidence | Timeline |
+|--------|-------|---------------|---------|---------|
+| **Stockholm police density decline** | Government | 4 | BRÅ March 2026: only region with declining density despite 10k target | Ongoing |
+| Judicial self-review system weakness | Rättsväsendet | 3 | HD10441: Widding → Strömmer on jurist-only review process | Structural |
+
+---
+
+## Overall Threat Level Assessment
+
+**Confidence Near HIGH** | Overall Threat Level: **HIGH**
+
+The combination of a pending EU infringement deadline (47 days), climate law obligations triggered by FiU48, constitutional hearings on Finance Minister Svantesson, and a historically coordinated 4-party opposition offensive creates the highest threat concentration of the 2025/26 parliamentary session. The government's response to FiU48 must carefully balance immediate affordability narrative with medium-term climate and EU legal obligations.
+
+*Produced by Riksdagsmonitor Evening Analysis v5.0*
 
 ## Comparative International
 

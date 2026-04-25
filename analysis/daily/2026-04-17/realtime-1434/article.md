@@ -5,10 +5,23 @@ date: 2026-04-17
 subfolder: realtime-1434
 slug: 2026-04-17-realtime-1434
 source_folder: analysis/daily/2026-04-17/realtime-1434
-generated_at: 2026-04-24T18:27:52.173Z
+generated_at: 2026-04-25T10:10:10.913Z
 language: en
 layout: article
 ---
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief.md)_
@@ -856,198 +869,231 @@ flowchart TD
 
 **Classification**: Public · **Next Review**: 2026-04-24
 
-## SWOT Analysis
+## Scenario Analysis
 
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md)_
+_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md)_
 
 | Field | Value |
 |-------|-------|
-| **SWOT-ID** | SWT-2026-04-17-1434 |
-| **Analysis Date** | 2026-04-17 14:34 UTC |
-| **Analysis Scope** | Primary: Constitutional Press-Freedom Reforms (HD01KU32 + HD01KU33). Secondary: Ukraine Accountability Package (HD03231 + HD03232). Tertiary: Housing/AML (HD01CU27 + HD01CU28) |
-| **Reference Period** | 2025/26 Riksmöte |
-| **Produced By** | news-realtime-monitor |
-| **Primary MCP Sources** | `get_betankanden`, `get_propositioner`, `search_regering`, `search_dokument` |
-| **Validity Window** | Valid until 2026-04-24 |
-| **Framework** | political-swot-framework v3.0 (TOWS interference applied) |
+| **SCN-ID** | SCN-2026-04-17-1434 |
+| **Framework** | Alternative-futures analysis (ACH-informed) + Bayesian scenario weighting |
+| **Horizon** | Short (Q2 2026) · Medium (post-2026 election) · Long (2027–2030) |
+| **Methodology** | `analysis/methodologies/political-risk-methodology.md` §Scenario Generation · `political-swot-framework.md` §Scenario-Branching TOWS |
+
+> **Purpose**: Structured alternative-futures reasoning to stress-test the dominant narrative, surface wildcards, and assign prior probabilities analysts can update as forward indicators fire.
 
 ---
 
-## 🏛️ Section 1 — Constitutional Press-Freedom Reforms (PRIMARY SCOPE)
-
-Scope: HD01KU32 (media accessibility amendment to TF + YGL) and HD01KU33 (removal of "allmän handling" status from digital material seized at husrannsakan). First reading only; second reading required post-2026 election for entry into force (proposed 2027-01-01).
-
-### ✅ Strengths — Government & Constitutional Framework Position
-
-| # | Strength Statement | Evidence (dok_id / source) | Confidence | Impact | Entry Date |
-|---|-------------------|----------------------------|:----------:|:------:|:----------:|
-| S1 | KU secured cross-party support for **first reading** of two grundlag amendments — politically rare achievement | KU committee record; HD01KU32, HD01KU33 betänkanden | **HIGH** | **HIGH** | 2026-04-17 |
-| S2 | KU32 discharges a clear **EU legal obligation** (Accessibility Act 2019/882, in force since June 2025) — forecloses infringement-proceeding risk | HD01KU32 betänkande; EAA 2019/882 | **HIGH** | **MEDIUM** | 2026-04-17 |
-| S3 | KU33 solves a **concrete investigative problem** — premature disclosure of seized digital material was compromising ongoing criminal investigations (gäng-/organised-crime cases) | HD01KU33 rationale; police operational experience | **MEDIUM** | **MEDIUM** | 2026-04-17 |
-| S4 | Narrow carve-out design — "allmän handling" status retained when material is formally incorporated as evidence — provides **textual safeguard** | HD01KU33 text | **HIGH** | **MEDIUM** | 2026-04-17 |
-| S5 | Disability-rights framing (KU32) unifies M/KD/L/C/MP/L and neutralises opposition | KU32 committee support pattern | **HIGH** | LOW | 2026-04-17 |
-
-### ⚠️ Weaknesses — Democratic-Infrastructure Risks
-
-| # | Weakness Statement | Evidence | Confidence | Impact | Entry Date |
-|---|-------------------|----------|:----------:|:------:|:----------:|
-| W1 | KU33 is the **first substantive narrowing** of TF's offentlighetsprincip in the digital-evidence sphere — compresses a 260-year-old transparency guarantee (TF 1766) | TF 1766 text; KU33 betänkande comparison; press-freedom literature | **HIGH** | **HIGH** | 2026-04-17 |
-| W2 | Definition of "*formellt tillförd bevisning*" is **interpretively fragile** — a future government interpreting narrowly could systematically shield police operations from insyn | HD01KU33 text; förvaltningsrätt interpretation risk | **MEDIUM** | **HIGH** | 2026-04-17 |
-| W3 | KU32 establishes **precedent** that EU obligations can justify ordinary-law intrusion into grundlag sphere — template for future grundlag compression (digital services, platform regulation) | HD01KU32 structural change; EAA implementation pattern | **MEDIUM** | **MEDIUM** | 2026-04-17 |
-| W4 | Timing places constitutional press-freedom debate **inside 2026 campaign** — politicising grundlag in a way previous amendments were shielded from | 8 kap. 14 § RF two-reading rule; election cycle | **HIGH** | **MEDIUM** | 2026-04-17 |
-| W5 | Lagrådet review still pending at publication — constitutional craftsmanship not yet independently vetted | Lagrådet process | **HIGH** | LOW | 2026-04-17 |
-
-### 🚀 Opportunities — Democratic Upside
-
-| # | Opportunity Statement | Evidence | Confidence | Impact | Entry Date |
-|---|----------------------|----------|:----------:|:------:|:----------:|
-| O1 | Sweden continues to **modernise world's oldest press-freedom framework** — balancing investigative integrity with transparency; could become model for other democracies facing digital-evidence dilemmas | TF 1766 text; comparative press-freedom research | **MEDIUM** | **HIGH** | 2026-04-17 |
-| O2 | KU32 improves real-world accessibility (e-books, streaming, e-commerce) for ~1.5M Swedes with disabilities — **tangible human-rights delivery** | EAA 2019/882 impact assessments | **HIGH** | **MEDIUM** | 2026-04-17 |
-| O3 | Strengthened investigative integrity (KU33) → improved **organised-crime prosecution** outcomes; feeds government's gäng-agenda policy coherence | Gäng-agenda policy framework | **MEDIUM** | **MEDIUM** | 2026-04-17 |
-| O4 | Second-reading moment after election = **democratic stress-test** — new Riksdag's democratic bona fides judged by how it handles KU33 | 8 kap. RF | **MEDIUM** | **MEDIUM** | 2026-04-17 |
-
-### 🔴 Threats — Democratic Downside
-
-| # | Threat Statement | Evidence | Confidence | Impact | Entry Date |
-|---|------------------|----------|:----------:|:------:|:----------:|
-| T1 | **Chilling effect on investigative journalism** — sources may fear material seized at husrannsakan becomes un-inspectable; possible source-protection erosion | SJF, Utgivarna press-freedom doctrine; historical journalist-source patterns | **MEDIUM** | **HIGH** | 2026-04-17 |
-| T2 | **Campaign instrumentalisation** of KU33 by opposition — V, MP, S-left may frame government as press-freedom revisionist; could harden into political polarisation | 2026 valrörelse dynamics | **HIGH** | **MEDIUM** | 2026-04-17 |
-| T3 | **International press-freedom index** erosion signal — Reporters Without Borders and similar indices may downgrade Sweden's score based on TF amendment, weakening soft-power posture (especially vis-à-vis Ukraine-tribunal leadership rhetoric — see Cluster 2 tension) | RSF methodology; comparable index events | **MEDIUM** | **MEDIUM** | 2026-04-17 |
-| T4 | **Slippery-slope** grundlag compression: KU32's EU-obligation template + KU33's investigative-integrity template, combined, could be used to justify further TF/YGL narrowings on digital platforms, AI content moderation, or national-security grounds | Grundlag erosion pattern analysis | **MEDIUM** | **HIGH** | 2026-04-17 |
-| T5 | **Second-reading failure** if post-election Riksdag has V/MP-strengthened left majority — amendments fall, but government loses political capital | Opinion polling; mandate distribution scenarios | **LOW** | **MEDIUM** | 2026-04-17 |
-
----
-
-## 📊 SWOT Quadrant Mapping — Constitutional Reforms (Color-Coded)
+## 🧭 Master Scenario Tree
 
 ```mermaid
-graph TD
-    subgraph SWOT["Political SWOT — Constitutional Press-Freedom Reforms (HD01KU32 + HD01KU33) — LEAD"]
-        direction TB
-        subgraph INT_POS["✅ Strengths — Internal Positive"]
-            S1N["💪 S1 Cross-party KU support<br/>for first reading"]
-            S2N["💪 S2 EU obligation<br/>discharged (KU32)"]
-            S3N["💪 S3 Investigative problem<br/>solved (KU33)"]
-            S4N["💪 S4 Narrow carve-out<br/>(textual safeguard)"]
-        end
-        subgraph INT_NEG["⚠️ Weaknesses — Internal Negative"]
-            W1N["⚡ W1 First TF narrowing<br/>in years (1766 text)"]
-            W2N["⚡ W2 Interpretively fragile<br/>(allmän handling test)"]
-            W3N["⚡ W3 Precedent for future<br/>grundlag compression"]
-            W4N["⚡ W4 Campaign-ised<br/>grundlag (2026 val)"]
-        end
-        subgraph EXT_POS["🚀 Opportunities — External Positive"]
-            O1N["🌟 O1 World's oldest press-<br/>freedom law modernised"]
-            O2N["🌟 O2 1.5M disabled Swedes<br/>accessibility gain (KU32)"]
-            O3N["🌟 O3 Gäng-prosecution<br/>improvement (KU33)"]
-        end
-        subgraph EXT_NEG["🔴 Threats — External Negative"]
-            T1N["☁️ T1 Chilling effect on<br/>investigative journalism"]
-            T2N["☁️ T2 Campaign weaponisation<br/>(V/MP/S-left)"]
-            T3N["☁️ T3 Int'l press-freedom<br/>index downgrade"]
-            T4N["☁️ T4 Slippery-slope grundlag<br/>compression"]
-            T5N["☁️ T5 Second-reading failure<br/>(post-election)"]
-        end
-    end
+flowchart TD
+    T0["🟡 Now<br/>2026-04-17<br/>KU first reading"]
+    L["⚖️ Lagrådet yttrande<br/>Q2 2026"]
+    L1["Strict / prescriptive<br/>P = 0.35"]
+    L2["Intermediate<br/>P = 0.45"]
+    L3["Silent / loose<br/>P = 0.20"]
+    E["🗳️ Election<br/>2026-09-13"]
+    E1["M-KD-L+SD retained majority<br/>P = 0.50"]
+    E2["S-led minority<br/>P = 0.35"]
+    E3["S+V+MP majority<br/>P = 0.15"]
 
-    S1N -.enables.-> O1N
-    S2N -.exploits.-> O2N
-    S3N -.exploits.-> O3N
-    T1N -.amplifies.-> W1N
-    T2N -.amplifies.-> W4N
-    T3N -.targets.-> W1N
-    T4N -.exploits.-> W3N
-    T5N -.triggered by.-> W4N
+    T0 --> L
+    L --> L1
+    L --> L2
+    L --> L3
 
-    style S1N fill:#4CAF50,color:#FFFFFF
-    style S2N fill:#4CAF50,color:#FFFFFF
-    style S3N fill:#4CAF50,color:#FFFFFF
-    style S4N fill:#4CAF50,color:#FFFFFF
-    style W1N fill:#FF9800,color:#FFFFFF
-    style W2N fill:#FF9800,color:#FFFFFF
-    style W3N fill:#FF9800,color:#FFFFFF
-    style W4N fill:#FF9800,color:#FFFFFF
-    style O1N fill:#1565C0,color:#FFFFFF
-    style O2N fill:#1565C0,color:#FFFFFF
-    style O3N fill:#1565C0,color:#FFFFFF
-    style T1N fill:#D32F2F,color:#FFFFFF
-    style T2N fill:#D32F2F,color:#FFFFFF
-    style T3N fill:#D32F2F,color:#FFFFFF
-    style T4N fill:#D32F2F,color:#FFFFFF
-    style T5N fill:#D32F2F,color:#FFFFFF
+    L1 --> E
+    L2 --> E
+    L3 --> E
+
+    E --> E1
+    E --> E2
+    E --> E3
+
+    E1 --> BASE["🟢 BASE<br/>KU33 passes 2nd reading<br/>with narrow/intermediate test<br/>P = 0.42"]
+    E2 --> BULL["🔵 BULL-LITE<br/>KU33 passes with<br/>stricter S-negotiated language<br/>P = 0.20"]
+    E3 --> BEAR["🔴 BEAR<br/>KU33 fails 2nd reading<br/>P = 0.15"]
+    L3 --> WILD1["⚡ WILDCARD — Chilling crisis<br/>press-freedom index downgrade<br/>+ index backlash<br/>P = 0.08"]
+    E1 --> WILD2["⚡ WILDCARD — Russian hybrid<br/>event reshapes campaign<br/>P = 0.10"]
+    L2 --> MIX["🟠 MIXED<br/>Passes with intermediate test;<br/>long-tail interpretive drift<br/>P = 0.05"]
+
+    style T0 fill:#FFC107,color:#000000
+    style L1 fill:#4CAF50,color:#FFFFFF
+    style L2 fill:#FFC107,color:#000000
+    style L3 fill:#D32F2F,color:#FFFFFF
+    style E1 fill:#1565C0,color:#FFFFFF
+    style E2 fill:#7B1FA2,color:#FFFFFF
+    style E3 fill:#D32F2F,color:#FFFFFF
+    style BASE fill:#4CAF50,color:#FFFFFF
+    style BULL fill:#1565C0,color:#FFFFFF
+    style BEAR fill:#D32F2F,color:#FFFFFF
+    style WILD1 fill:#FF9800,color:#FFFFFF
+    style WILD2 fill:#FF9800,color:#FFFFFF
+    style MIX fill:#FFC107,color:#000000
 ```
 
----
-
-## 🔀 TOWS Interference Matrix — Constitutional Cluster
-
-| Interaction | Mechanism | Strategic Implication | Confidence |
-|-------------|-----------|----------------------|:----------:|
-| **S4 × T1** | Narrow carve-out language limits (but does not eliminate) chilling-effect concerns | Press-freedom NGOs should focus remissvar energy on codifying a **strict test** for "formellt tillförd bevisning" before second reading | **HIGH** |
-| **S1 × O4** | Cross-party first-reading coalition demonstrates that constitutional process works — but the test is the second reading | Government should maintain coalition width; avoid partisan capture of KU33 | **HIGH** |
-| **W1 × T3** | Amendment to TF 1766 + high international visibility → RSF-class index risk | UD/Sida should pre-brief press-freedom diplomacy before amendments enter force | **MEDIUM** |
-| **W2 × T4** | Fragile test + precedent-setting EU template = **compound slippery-slope risk** | Lagrådet review should explicitly scope future-use limits; Riksdag record should document legislator intent tightly | **HIGH** |
-| **W4 × T2** | Campaign-ised grundlag invites polarisation — risk of KU33 becoming a partisan wedge rather than a constitutional debate | Cross-party statesmanship is the strategic counter; S/M party-leader statements during campaign will be diagnostic | **MEDIUM** |
-| **S3 × O3** | Investigative-integrity gain feeds gäng-agenda coherence — government can point to **concrete democratic gains** (organised-crime prosecution) to rebut press-freedom criticism | Talking-point discipline for government side in campaign | **MEDIUM** |
-
-> **Cross-SWOT interference finding** `[HIGH]`: The **strategic centre of gravity** of the constitutional package is the interpretation of "*formellt tillförd bevisning*" (S4 / W2). If Lagrådet and Riksdag's legislative history lock in a strict interpretation, KU33 functions as a narrow, proportionate reform and T1/T3/T4 largely dissipate. If the language is left loose, T1+T4 combine into a durable democratic-infrastructure threat. **Recommendation**: press-freedom NGOs and opposition parties should make a **strict interpretive record** the price of second-reading support.
-
-### 🔗 Cross-Cluster Tension — Constitutional × Ukraine
-
-| Tension | Description | Strategic Implication |
-|---------|-------------|----------------------|
-| **Rhetorical coherence** | Government simultaneously championing HD03231 (aggression-tribunal — implicitly valorises press freedom, journalists documenting war crimes) while narrowing TF via HD01KU33 | Opposition parties can **weaponise the inconsistency**: "Sweden defends press freedom abroad while compressing it at home." Government counter: KU33 is narrow and investigation-specific, not a press-freedom retreat. |
+> Probabilities are **analyst priors** expressed in a zero-sum tree. They will be Bayesian-updated as Lagrådet and polling signals arrive.
 
 ---
 
-## 🌍 Section 2 — Ukraine Accountability Package (SECONDARY SCOPE)
+## 📖 Scenario Narratives
 
-### Strengths
+### 🟢 BASE — "Narrow, Proportionate Reform" (P = 0.42)
 
-| # | Statement | Evidence | Confidence | Impact |
-|---|-----------|----------|:---:|:---:|
-| S1 | Sweden **founding member** of first aggression tribunal since Nuremberg (HD03231) | HD03231; Stenergard press release | HIGH | HIGH |
-| S2 | Cross-party Riksdag consensus (all 8 parties historically supported Ukraine measures since 2022) | Ukrainepaket voting record 2022-2025 | HIGH | HIGH |
-| S3 | **No direct Swedish fiscal burden** for reparations — funded from Russian immobilised assets (~EUR 260B; EUR 191B at Euroclear) | HD03232; G7 Ukraine Loan | HIGH | HIGH |
-| S4 | Sweden's post-NATO (March 2024) norm-entrepreneurship credentials reinforced | HD03231; NATO accession context | HIGH | MEDIUM |
+**Setup**: Lagrådet yttrande calibrates the interpretation; government retains majority; S leadership endorses amendment; second reading passes.
 
-### Weaknesses
+**Key signals confirming this scenario:**
+- Lagrådet explicitly scopes "formellt tillförd bevisning" as *intermediate* (incorporation into förundersökningsprotokoll) `[HIGH]`
+- S party-stämma adopts "moderate reform" language
+- RSF Sweden score unchanged
+- Opinion polling: KU33 < 10 % campaign salience
 
-| # | Statement | Evidence | Confidence | Impact |
-|---|-----------|----------|:---:|:---:|
-| W1 | Enforcement depends on non-member cooperation (US, China, Russia not expected to join) | ICC precedent; US historical reluctance | MEDIUM | HIGH |
-| W2 | Reparations timeline may span decades (Iraq UNCC: 31 years, $52B) | UNCC historical record | HIGH | MEDIUM |
-| W3 | Sitting-HoS immunity gap in international law | Rome Statute 2017 amendment limits | MEDIUM | MEDIUM |
+**Consequences:**
+- HD01KU32 + KU33 enter force 2027-01-01
+- Gäng-prosecution tempo improves; measurable investigation-integrity gains within 18 months
+- TF narrative internationally: "Sweden modernises world's oldest press-freedom law responsibly"
+- Press-freedom NGO posture shifts to **monitoring** rather than litigation
+- Cross-cluster rhetorical tension dissipates — government can credibly advocate press freedom abroad while pointing to narrow, investigation-specific scope at home
 
-### Opportunities
-
-| # | Statement | Evidence | Confidence | Impact |
-|---|-----------|----------|:---:|:---:|
-| O1 | Closes Nuremberg gap in modern international criminal law | First aggression tribunal since 1945-46 | HIGH | HIGH |
-| O2 | Reconstruction-governance voice (USD 486B+ damages per World Bank 2024) | HD03232; World Bank RDNA | HIGH | MEDIUM |
-
-### Threats
-
-| # | Statement | Evidence | Confidence | Impact |
-|---|-----------|----------|:---:|:---:|
-| T1 | Russian hybrid warfare intensifies against Sweden as tribunal founder | Nordic sabotage events 2024; "unfriendly state" designation | HIGH | HIGH |
-| T2 | US defection from asset immobilisation undermines enforcement (EUR 191B at Euroclear) | Transatlantic policy volatility | MEDIUM | HIGH |
-| T3 | Tribunal legitimacy erosion if boycotted by key states | ICC 124 states parties, major absences | HIGH | MEDIUM |
+**Confidence**: HIGH — this is the DIW-consistent central projection.
 
 ---
 
-## 🏠 Section 3 — Housing Reforms (TERTIARY SCOPE)
+### 🔵 BULL-LITE — "Cross-Party Constitutional Statesmanship" (P = 0.20)
 
-| Dimension | HD01CU28 (Register) | HD01CU27 (Identity + Ombildning) | Confidence |
-|-----------|---------------------|----------------------------------|:----------:|
-| **Strength** | First unified register for ~2M bostadsrätter — closes decades-old opacity | Closes ombildning ghost-tenant loophole (6-month folkbokförd rule); lagfart AML hardening | HIGH |
-| **Weakness** | 2M-record IT migration by Jan 2027 — Lantmäteriet execution risk | Privacy considerations for centralised personnummer-linked property data | MEDIUM |
-| **Opportunity** | Foundation for digital property market; AML pipeline feed | Direct anti-gäng tool — property as laundering vector | HIGH |
-| **Threat** | Cyber-attack surface on centralised financial data | Mission-creep into surveillance state | MEDIUM |
+**Setup**: S takes leadership, negotiates **stricter interpretive language** into the amendment before second reading. Amendment passes with S+M+KD+L+C joint stamp.
+
+**Key signals:**
+- Andersson party-leader speech frames KU33 as "principled conservatism around Swedish transparency values"
+- Joint KU/Justitieutskottet report narrows carve-out further
+- Press-freedom NGOs publicly endorse the revised language
+
+**Consequences:**
+- **Best-case democratic outcome**: amendment passes with broad, multi-generational legitimacy
+- Constitutional-craftsmanship precedent that **strengthens** rather than compresses grundlag architecture
+- International press-freedom index score unchanged or improved
+
+**Watch**: S-internal dynamics (Tage Erlander / Olof Palme tradition vs law-and-order wing).
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/political-swot-framework.md`
+### 🔴 BEAR — "Second-Reading Collapse" (P = 0.15)
+
+**Setup**: Left bloc gains in Sep 2026 election; V+MP+S-left majority blocks KU33 at second reading.
+
+**Key signals:**
+- V/MP campaign traction; press-freedom campaign NGOs mobilise attentive voters (0.5–1.5 pp shift)
+- S leadership opposes KU33 publicly
+- Lagrådet silent on interpretive test, hardening press-freedom opposition
+- Media editorial lines unify against
+
+**Consequences:**
+- KU amendments fall; government loses significant political capital
+- **Opportunity**: Swedish democracy demonstrates constitutional resilience — positive international framing
+- **Cost**: police / prosecutors lose policy win; gäng-agenda loses KU33 component
+- HD01KU32 may still pass separately (accessibility non-controversial) through ordinary-law pathway
+- Opposition governing in 2026–2030 faces coalition-composition challenges on Ukraine, housing, defence
+
+---
+
+### 🟠 MIXED — "Interpretive Drift" (P = 0.05)
+
+**Setup**: Lagrådet ambivalent; amendment passes; over 5+ years narrow interpretation entrenches in förvaltningsdomstol.
+
+**Key signals:**
+- Förvaltningsrätt rulings systematically favour police discretion
+- NGO litigation fails; JO annual reports flag pattern
+- Gradual international index erosion
+
+**Consequences**: Long-tail democratic-infrastructure harm without acute crisis — the **slow-rot scenario** that's hardest to counter politically.
+
+**Why this scenario matters**: It is the most likely path for S4 × T1 interference to become T4 (systemic chilling).
+
+---
+
+### ⚡ WILDCARD 1 — "Chilling Crisis" (P = 0.08)
+
+**Trigger**: A high-profile case emerges (2026–2028) where investigative journalism was materially blocked by KU33 interpretation.
+
+**Cascade:**
+1. Case becomes international headline (SVT+ FT + The Guardian)
+2. RSF downgrades Sweden by ≥ 3 places
+3. KU launches granskning / independent review
+4. Constitutional reconsideration placed on 2030 election agenda
+5. Riksdag passes **counter-amendment** restoring broader "allmän handling" scope
+
+**Probability reasoning**: Moderate baseline × chilling-effect prior; elevated if Lagrådet leaves language loose.
+
+---
+
+### ⚡ WILDCARD 2 — "Russian Hybrid Escalation Reshapes Campaign" (P = 0.10)
+
+**Trigger**: Major cyber / sabotage / disinformation event attributable to Russia during 2026 campaign — e.g., attack on Swedish government infrastructure, Nordic energy / data cable, or large-scale disinformation op.
+
+**Cascade:**
+1. Campaign agenda shifts decisively to security / defence
+2. KU33 recedes from press-freedom framing; reframed as national-security tool
+3. Second reading passes with broader than expected coalition
+4. Tribunal (HD03231) gains legitimacy as "necessary response"
+5. Sweden advocates expanded NATO hybrid-defence doctrine
+
+**Probability reasoning**: Historical pattern after Sweden's NATO accession + tribunal founding-member status; SÄPO 2024 assessment signals elevated baseline.
+
+---
+
+## 🧮 Scenario Probabilities — Rolled Up
+
+| Outcome | Probability |
+|---------|:---------:|
+| KU33 enters force in any form | **0.67** (Base 0.42 + Bull-Lite 0.20 + Mixed 0.05) |
+| KU33 enters force with strict / narrow-test lock-in | **0.55** (Base 0.42 × strict-interpretation share + Bull-Lite 0.20) |
+| KU33 fails in post-election Riksdag | **0.15** |
+| Press-freedom-index downgrade within 3 years | **0.25** |
+| Russian hybrid event reshapes campaign | **0.10** |
+| Tribunal achieves first case by 2028 | **0.55** |
+| Tribunal stalled or boycotted | **0.30** |
+
+---
+
+## 🎯 Monitoring Indicators (What Flips Priors)
+
+| Indicator | Direction | Prior-Update Magnitude |
+|-----------|:---------:|:---------------------:|
+| Lagrådet yttrande strict | ↑ Base, Bull-Lite | +0.15 combined |
+| Lagrådet silent on interpretation | ↑ Mixed, Wildcard-1 | +0.10 combined |
+| S party-leader pro-KU33 speech | ↑ Base, Bull-Lite | +0.10 |
+| S party-leader anti-KU33 speech | ↑ Bear | +0.10 |
+| RSF/Freedom House downgrade | ↑ Wildcard-1 | +0.05 |
+| Nordic cable / cyber event | ↑ Wildcard-2 | +0.05–0.10 |
+| Opinion polling: press-freedom > 10 % campaign salience | ↑ Bear | +0.05 |
+| US public tribunal endorsement | N/A for KU; ↓ Tribunal-stalled | −0.10 |
+| Ukraine HD03231 commencement date slips > 6 months | ↑ Tribunal-stalled | +0.10 |
+
+---
+
+## 🛠️ Scenario-Driven Editorial & Policy Implications
+
+| Scenario | Editorial Framing Implication | Policy Implication |
+|----------|-------------------------------|-------------------|
+| BASE | Frame as *"narrow, proportionate reform"*; foreground Lagrådet role | Government should pre-publish interpretive guidance |
+| BULL-LITE | Frame as *"constitutional craftsmanship moment"*; credit cross-party S | S/M joint statesmanship opportunity |
+| BEAR | Frame as *"democratic brake working as designed"* | Opposition needs clear alternative investigative-integrity plan |
+| MIXED | Frame as *"interpretive vigilance required"*; JO centrality | NGO litigation fund activation |
+| WILDCARD-1 | Frame as *"chilling crisis"* — accountability lens | Counter-amendment drafting begins |
+| WILDCARD-2 | Frame as *"hybrid war changes calculus"*; national-security lens | SÄPO / MSB doctrinal updates |
+
+---
+
+## 📎 Cross-References
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) §Red-Team Box informs low-probability path consideration
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) §Bayesian Update Rules drive scenario priors
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) §TOWS S4×T1 interference explains Mixed pathway
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) provides Base-scenario benchmarks
+
+---
+
+**Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: Scenario analysis v1.0
 
 ## Risk Assessment
 
@@ -1302,6 +1348,199 @@ graph LR
 ---
 
 **Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/political-risk-methodology.md`
+
+## SWOT Analysis
+
+_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md)_
+
+| Field | Value |
+|-------|-------|
+| **SWOT-ID** | SWT-2026-04-17-1434 |
+| **Analysis Date** | 2026-04-17 14:34 UTC |
+| **Analysis Scope** | Primary: Constitutional Press-Freedom Reforms (HD01KU32 + HD01KU33). Secondary: Ukraine Accountability Package (HD03231 + HD03232). Tertiary: Housing/AML (HD01CU27 + HD01CU28) |
+| **Reference Period** | 2025/26 Riksmöte |
+| **Produced By** | news-realtime-monitor |
+| **Primary MCP Sources** | `get_betankanden`, `get_propositioner`, `search_regering`, `search_dokument` |
+| **Validity Window** | Valid until 2026-04-24 |
+| **Framework** | political-swot-framework v3.0 (TOWS interference applied) |
+
+---
+
+## 🏛️ Section 1 — Constitutional Press-Freedom Reforms (PRIMARY SCOPE)
+
+Scope: HD01KU32 (media accessibility amendment to TF + YGL) and HD01KU33 (removal of "allmän handling" status from digital material seized at husrannsakan). First reading only; second reading required post-2026 election for entry into force (proposed 2027-01-01).
+
+### ✅ Strengths — Government & Constitutional Framework Position
+
+| # | Strength Statement | Evidence (dok_id / source) | Confidence | Impact | Entry Date |
+|---|-------------------|----------------------------|:----------:|:------:|:----------:|
+| S1 | KU secured cross-party support for **first reading** of two grundlag amendments — politically rare achievement | KU committee record; HD01KU32, HD01KU33 betänkanden | **HIGH** | **HIGH** | 2026-04-17 |
+| S2 | KU32 discharges a clear **EU legal obligation** (Accessibility Act 2019/882, in force since June 2025) — forecloses infringement-proceeding risk | HD01KU32 betänkande; EAA 2019/882 | **HIGH** | **MEDIUM** | 2026-04-17 |
+| S3 | KU33 solves a **concrete investigative problem** — premature disclosure of seized digital material was compromising ongoing criminal investigations (gäng-/organised-crime cases) | HD01KU33 rationale; police operational experience | **MEDIUM** | **MEDIUM** | 2026-04-17 |
+| S4 | Narrow carve-out design — "allmän handling" status retained when material is formally incorporated as evidence — provides **textual safeguard** | HD01KU33 text | **HIGH** | **MEDIUM** | 2026-04-17 |
+| S5 | Disability-rights framing (KU32) unifies M/KD/L/C/MP/L and neutralises opposition | KU32 committee support pattern | **HIGH** | LOW | 2026-04-17 |
+
+### ⚠️ Weaknesses — Democratic-Infrastructure Risks
+
+| # | Weakness Statement | Evidence | Confidence | Impact | Entry Date |
+|---|-------------------|----------|:----------:|:------:|:----------:|
+| W1 | KU33 is the **first substantive narrowing** of TF's offentlighetsprincip in the digital-evidence sphere — compresses a 260-year-old transparency guarantee (TF 1766) | TF 1766 text; KU33 betänkande comparison; press-freedom literature | **HIGH** | **HIGH** | 2026-04-17 |
+| W2 | Definition of "*formellt tillförd bevisning*" is **interpretively fragile** — a future government interpreting narrowly could systematically shield police operations from insyn | HD01KU33 text; förvaltningsrätt interpretation risk | **MEDIUM** | **HIGH** | 2026-04-17 |
+| W3 | KU32 establishes **precedent** that EU obligations can justify ordinary-law intrusion into grundlag sphere — template for future grundlag compression (digital services, platform regulation) | HD01KU32 structural change; EAA implementation pattern | **MEDIUM** | **MEDIUM** | 2026-04-17 |
+| W4 | Timing places constitutional press-freedom debate **inside 2026 campaign** — politicising grundlag in a way previous amendments were shielded from | 8 kap. 14 § RF two-reading rule; election cycle | **HIGH** | **MEDIUM** | 2026-04-17 |
+| W5 | Lagrådet review still pending at publication — constitutional craftsmanship not yet independently vetted | Lagrådet process | **HIGH** | LOW | 2026-04-17 |
+
+### 🚀 Opportunities — Democratic Upside
+
+| # | Opportunity Statement | Evidence | Confidence | Impact | Entry Date |
+|---|----------------------|----------|:----------:|:------:|:----------:|
+| O1 | Sweden continues to **modernise world's oldest press-freedom framework** — balancing investigative integrity with transparency; could become model for other democracies facing digital-evidence dilemmas | TF 1766 text; comparative press-freedom research | **MEDIUM** | **HIGH** | 2026-04-17 |
+| O2 | KU32 improves real-world accessibility (e-books, streaming, e-commerce) for ~1.5M Swedes with disabilities — **tangible human-rights delivery** | EAA 2019/882 impact assessments | **HIGH** | **MEDIUM** | 2026-04-17 |
+| O3 | Strengthened investigative integrity (KU33) → improved **organised-crime prosecution** outcomes; feeds government's gäng-agenda policy coherence | Gäng-agenda policy framework | **MEDIUM** | **MEDIUM** | 2026-04-17 |
+| O4 | Second-reading moment after election = **democratic stress-test** — new Riksdag's democratic bona fides judged by how it handles KU33 | 8 kap. RF | **MEDIUM** | **MEDIUM** | 2026-04-17 |
+
+### 🔴 Threats — Democratic Downside
+
+| # | Threat Statement | Evidence | Confidence | Impact | Entry Date |
+|---|------------------|----------|:----------:|:------:|:----------:|
+| T1 | **Chilling effect on investigative journalism** — sources may fear material seized at husrannsakan becomes un-inspectable; possible source-protection erosion | SJF, Utgivarna press-freedom doctrine; historical journalist-source patterns | **MEDIUM** | **HIGH** | 2026-04-17 |
+| T2 | **Campaign instrumentalisation** of KU33 by opposition — V, MP, S-left may frame government as press-freedom revisionist; could harden into political polarisation | 2026 valrörelse dynamics | **HIGH** | **MEDIUM** | 2026-04-17 |
+| T3 | **International press-freedom index** erosion signal — Reporters Without Borders and similar indices may downgrade Sweden's score based on TF amendment, weakening soft-power posture (especially vis-à-vis Ukraine-tribunal leadership rhetoric — see Cluster 2 tension) | RSF methodology; comparable index events | **MEDIUM** | **MEDIUM** | 2026-04-17 |
+| T4 | **Slippery-slope** grundlag compression: KU32's EU-obligation template + KU33's investigative-integrity template, combined, could be used to justify further TF/YGL narrowings on digital platforms, AI content moderation, or national-security grounds | Grundlag erosion pattern analysis | **MEDIUM** | **HIGH** | 2026-04-17 |
+| T5 | **Second-reading failure** if post-election Riksdag has V/MP-strengthened left majority — amendments fall, but government loses political capital | Opinion polling; mandate distribution scenarios | **LOW** | **MEDIUM** | 2026-04-17 |
+
+---
+
+## 📊 SWOT Quadrant Mapping — Constitutional Reforms (Color-Coded)
+
+```mermaid
+graph TD
+    subgraph SWOT["Political SWOT — Constitutional Press-Freedom Reforms (HD01KU32 + HD01KU33) — LEAD"]
+        direction TB
+        subgraph INT_POS["✅ Strengths — Internal Positive"]
+            S1N["💪 S1 Cross-party KU support<br/>for first reading"]
+            S2N["💪 S2 EU obligation<br/>discharged (KU32)"]
+            S3N["💪 S3 Investigative problem<br/>solved (KU33)"]
+            S4N["💪 S4 Narrow carve-out<br/>(textual safeguard)"]
+        end
+        subgraph INT_NEG["⚠️ Weaknesses — Internal Negative"]
+            W1N["⚡ W1 First TF narrowing<br/>in years (1766 text)"]
+            W2N["⚡ W2 Interpretively fragile<br/>(allmän handling test)"]
+            W3N["⚡ W3 Precedent for future<br/>grundlag compression"]
+            W4N["⚡ W4 Campaign-ised<br/>grundlag (2026 val)"]
+        end
+        subgraph EXT_POS["🚀 Opportunities — External Positive"]
+            O1N["🌟 O1 World's oldest press-<br/>freedom law modernised"]
+            O2N["🌟 O2 1.5M disabled Swedes<br/>accessibility gain (KU32)"]
+            O3N["🌟 O3 Gäng-prosecution<br/>improvement (KU33)"]
+        end
+        subgraph EXT_NEG["🔴 Threats — External Negative"]
+            T1N["☁️ T1 Chilling effect on<br/>investigative journalism"]
+            T2N["☁️ T2 Campaign weaponisation<br/>(V/MP/S-left)"]
+            T3N["☁️ T3 Int'l press-freedom<br/>index downgrade"]
+            T4N["☁️ T4 Slippery-slope grundlag<br/>compression"]
+            T5N["☁️ T5 Second-reading failure<br/>(post-election)"]
+        end
+    end
+
+    S1N -.enables.-> O1N
+    S2N -.exploits.-> O2N
+    S3N -.exploits.-> O3N
+    T1N -.amplifies.-> W1N
+    T2N -.amplifies.-> W4N
+    T3N -.targets.-> W1N
+    T4N -.exploits.-> W3N
+    T5N -.triggered by.-> W4N
+
+    style S1N fill:#4CAF50,color:#FFFFFF
+    style S2N fill:#4CAF50,color:#FFFFFF
+    style S3N fill:#4CAF50,color:#FFFFFF
+    style S4N fill:#4CAF50,color:#FFFFFF
+    style W1N fill:#FF9800,color:#FFFFFF
+    style W2N fill:#FF9800,color:#FFFFFF
+    style W3N fill:#FF9800,color:#FFFFFF
+    style W4N fill:#FF9800,color:#FFFFFF
+    style O1N fill:#1565C0,color:#FFFFFF
+    style O2N fill:#1565C0,color:#FFFFFF
+    style O3N fill:#1565C0,color:#FFFFFF
+    style T1N fill:#D32F2F,color:#FFFFFF
+    style T2N fill:#D32F2F,color:#FFFFFF
+    style T3N fill:#D32F2F,color:#FFFFFF
+    style T4N fill:#D32F2F,color:#FFFFFF
+    style T5N fill:#D32F2F,color:#FFFFFF
+```
+
+---
+
+## 🔀 TOWS Interference Matrix — Constitutional Cluster
+
+| Interaction | Mechanism | Strategic Implication | Confidence |
+|-------------|-----------|----------------------|:----------:|
+| **S4 × T1** | Narrow carve-out language limits (but does not eliminate) chilling-effect concerns | Press-freedom NGOs should focus remissvar energy on codifying a **strict test** for "formellt tillförd bevisning" before second reading | **HIGH** |
+| **S1 × O4** | Cross-party first-reading coalition demonstrates that constitutional process works — but the test is the second reading | Government should maintain coalition width; avoid partisan capture of KU33 | **HIGH** |
+| **W1 × T3** | Amendment to TF 1766 + high international visibility → RSF-class index risk | UD/Sida should pre-brief press-freedom diplomacy before amendments enter force | **MEDIUM** |
+| **W2 × T4** | Fragile test + precedent-setting EU template = **compound slippery-slope risk** | Lagrådet review should explicitly scope future-use limits; Riksdag record should document legislator intent tightly | **HIGH** |
+| **W4 × T2** | Campaign-ised grundlag invites polarisation — risk of KU33 becoming a partisan wedge rather than a constitutional debate | Cross-party statesmanship is the strategic counter; S/M party-leader statements during campaign will be diagnostic | **MEDIUM** |
+| **S3 × O3** | Investigative-integrity gain feeds gäng-agenda coherence — government can point to **concrete democratic gains** (organised-crime prosecution) to rebut press-freedom criticism | Talking-point discipline for government side in campaign | **MEDIUM** |
+
+> **Cross-SWOT interference finding** `[HIGH]`: The **strategic centre of gravity** of the constitutional package is the interpretation of "*formellt tillförd bevisning*" (S4 / W2). If Lagrådet and Riksdag's legislative history lock in a strict interpretation, KU33 functions as a narrow, proportionate reform and T1/T3/T4 largely dissipate. If the language is left loose, T1+T4 combine into a durable democratic-infrastructure threat. **Recommendation**: press-freedom NGOs and opposition parties should make a **strict interpretive record** the price of second-reading support.
+
+### 🔗 Cross-Cluster Tension — Constitutional × Ukraine
+
+| Tension | Description | Strategic Implication |
+|---------|-------------|----------------------|
+| **Rhetorical coherence** | Government simultaneously championing HD03231 (aggression-tribunal — implicitly valorises press freedom, journalists documenting war crimes) while narrowing TF via HD01KU33 | Opposition parties can **weaponise the inconsistency**: "Sweden defends press freedom abroad while compressing it at home." Government counter: KU33 is narrow and investigation-specific, not a press-freedom retreat. |
+
+---
+
+## 🌍 Section 2 — Ukraine Accountability Package (SECONDARY SCOPE)
+
+### Strengths
+
+| # | Statement | Evidence | Confidence | Impact |
+|---|-----------|----------|:---:|:---:|
+| S1 | Sweden **founding member** of first aggression tribunal since Nuremberg (HD03231) | HD03231; Stenergard press release | HIGH | HIGH |
+| S2 | Cross-party Riksdag consensus (all 8 parties historically supported Ukraine measures since 2022) | Ukrainepaket voting record 2022-2025 | HIGH | HIGH |
+| S3 | **No direct Swedish fiscal burden** for reparations — funded from Russian immobilised assets (~EUR 260B; EUR 191B at Euroclear) | HD03232; G7 Ukraine Loan | HIGH | HIGH |
+| S4 | Sweden's post-NATO (March 2024) norm-entrepreneurship credentials reinforced | HD03231; NATO accession context | HIGH | MEDIUM |
+
+### Weaknesses
+
+| # | Statement | Evidence | Confidence | Impact |
+|---|-----------|----------|:---:|:---:|
+| W1 | Enforcement depends on non-member cooperation (US, China, Russia not expected to join) | ICC precedent; US historical reluctance | MEDIUM | HIGH |
+| W2 | Reparations timeline may span decades (Iraq UNCC: 31 years, $52B) | UNCC historical record | HIGH | MEDIUM |
+| W3 | Sitting-HoS immunity gap in international law | Rome Statute 2017 amendment limits | MEDIUM | MEDIUM |
+
+### Opportunities
+
+| # | Statement | Evidence | Confidence | Impact |
+|---|-----------|----------|:---:|:---:|
+| O1 | Closes Nuremberg gap in modern international criminal law | First aggression tribunal since 1945-46 | HIGH | HIGH |
+| O2 | Reconstruction-governance voice (USD 486B+ damages per World Bank 2024) | HD03232; World Bank RDNA | HIGH | MEDIUM |
+
+### Threats
+
+| # | Statement | Evidence | Confidence | Impact |
+|---|-----------|----------|:---:|:---:|
+| T1 | Russian hybrid warfare intensifies against Sweden as tribunal founder | Nordic sabotage events 2024; "unfriendly state" designation | HIGH | HIGH |
+| T2 | US defection from asset immobilisation undermines enforcement (EUR 191B at Euroclear) | Transatlantic policy volatility | MEDIUM | HIGH |
+| T3 | Tribunal legitimacy erosion if boycotted by key states | ICC 124 states parties, major absences | HIGH | MEDIUM |
+
+---
+
+## 🏠 Section 3 — Housing Reforms (TERTIARY SCOPE)
+
+| Dimension | HD01CU28 (Register) | HD01CU27 (Identity + Ombildning) | Confidence |
+|-----------|---------------------|----------------------------------|:----------:|
+| **Strength** | First unified register for ~2M bostadsrätter — closes decades-old opacity | Closes ombildning ghost-tenant loophole (6-month folkbokförd rule); lagfart AML hardening | HIGH |
+| **Weakness** | 2M-record IT migration by Jan 2027 — Lantmäteriet execution risk | Privacy considerations for centralised personnummer-linked property data | MEDIUM |
+| **Opportunity** | Foundation for digital property market; AML pipeline feed | Direct anti-gäng tool — property as laundering vector | HIGH |
+| **Threat** | Cyber-attack surface on centralised financial data | Mission-creep into surveillance state | MEDIUM |
+
+---
+
+**Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/political-swot-framework.md`
 
 ## Threat Analysis
 
@@ -2514,232 +2753,6 @@ flowchart TD
 ---
 
 **Classification**: Public · **Depth**: L2+ Strategic · **Next Review**: 2026-04-24
-
-## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md)_
-
-| Field | Value |
-|-------|-------|
-| **SCN-ID** | SCN-2026-04-17-1434 |
-| **Framework** | Alternative-futures analysis (ACH-informed) + Bayesian scenario weighting |
-| **Horizon** | Short (Q2 2026) · Medium (post-2026 election) · Long (2027–2030) |
-| **Methodology** | `analysis/methodologies/political-risk-methodology.md` §Scenario Generation · `political-swot-framework.md` §Scenario-Branching TOWS |
-
-> **Purpose**: Structured alternative-futures reasoning to stress-test the dominant narrative, surface wildcards, and assign prior probabilities analysts can update as forward indicators fire.
-
----
-
-## 🧭 Master Scenario Tree
-
-```mermaid
-flowchart TD
-    T0["🟡 Now<br/>2026-04-17<br/>KU first reading"]
-    L["⚖️ Lagrådet yttrande<br/>Q2 2026"]
-    L1["Strict / prescriptive<br/>P = 0.35"]
-    L2["Intermediate<br/>P = 0.45"]
-    L3["Silent / loose<br/>P = 0.20"]
-    E["🗳️ Election<br/>2026-09-13"]
-    E1["M-KD-L+SD retained majority<br/>P = 0.50"]
-    E2["S-led minority<br/>P = 0.35"]
-    E3["S+V+MP majority<br/>P = 0.15"]
-
-    T0 --> L
-    L --> L1
-    L --> L2
-    L --> L3
-
-    L1 --> E
-    L2 --> E
-    L3 --> E
-
-    E --> E1
-    E --> E2
-    E --> E3
-
-    E1 --> BASE["🟢 BASE<br/>KU33 passes 2nd reading<br/>with narrow/intermediate test<br/>P = 0.42"]
-    E2 --> BULL["🔵 BULL-LITE<br/>KU33 passes with<br/>stricter S-negotiated language<br/>P = 0.20"]
-    E3 --> BEAR["🔴 BEAR<br/>KU33 fails 2nd reading<br/>P = 0.15"]
-    L3 --> WILD1["⚡ WILDCARD — Chilling crisis<br/>press-freedom index downgrade<br/>+ index backlash<br/>P = 0.08"]
-    E1 --> WILD2["⚡ WILDCARD — Russian hybrid<br/>event reshapes campaign<br/>P = 0.10"]
-    L2 --> MIX["🟠 MIXED<br/>Passes with intermediate test;<br/>long-tail interpretive drift<br/>P = 0.05"]
-
-    style T0 fill:#FFC107,color:#000000
-    style L1 fill:#4CAF50,color:#FFFFFF
-    style L2 fill:#FFC107,color:#000000
-    style L3 fill:#D32F2F,color:#FFFFFF
-    style E1 fill:#1565C0,color:#FFFFFF
-    style E2 fill:#7B1FA2,color:#FFFFFF
-    style E3 fill:#D32F2F,color:#FFFFFF
-    style BASE fill:#4CAF50,color:#FFFFFF
-    style BULL fill:#1565C0,color:#FFFFFF
-    style BEAR fill:#D32F2F,color:#FFFFFF
-    style WILD1 fill:#FF9800,color:#FFFFFF
-    style WILD2 fill:#FF9800,color:#FFFFFF
-    style MIX fill:#FFC107,color:#000000
-```
-
-> Probabilities are **analyst priors** expressed in a zero-sum tree. They will be Bayesian-updated as Lagrådet and polling signals arrive.
-
----
-
-## 📖 Scenario Narratives
-
-### 🟢 BASE — "Narrow, Proportionate Reform" (P = 0.42)
-
-**Setup**: Lagrådet yttrande calibrates the interpretation; government retains majority; S leadership endorses amendment; second reading passes.
-
-**Key signals confirming this scenario:**
-- Lagrådet explicitly scopes "formellt tillförd bevisning" as *intermediate* (incorporation into förundersökningsprotokoll) `[HIGH]`
-- S party-stämma adopts "moderate reform" language
-- RSF Sweden score unchanged
-- Opinion polling: KU33 < 10 % campaign salience
-
-**Consequences:**
-- HD01KU32 + KU33 enter force 2027-01-01
-- Gäng-prosecution tempo improves; measurable investigation-integrity gains within 18 months
-- TF narrative internationally: "Sweden modernises world's oldest press-freedom law responsibly"
-- Press-freedom NGO posture shifts to **monitoring** rather than litigation
-- Cross-cluster rhetorical tension dissipates — government can credibly advocate press freedom abroad while pointing to narrow, investigation-specific scope at home
-
-**Confidence**: HIGH — this is the DIW-consistent central projection.
-
----
-
-### 🔵 BULL-LITE — "Cross-Party Constitutional Statesmanship" (P = 0.20)
-
-**Setup**: S takes leadership, negotiates **stricter interpretive language** into the amendment before second reading. Amendment passes with S+M+KD+L+C joint stamp.
-
-**Key signals:**
-- Andersson party-leader speech frames KU33 as "principled conservatism around Swedish transparency values"
-- Joint KU/Justitieutskottet report narrows carve-out further
-- Press-freedom NGOs publicly endorse the revised language
-
-**Consequences:**
-- **Best-case democratic outcome**: amendment passes with broad, multi-generational legitimacy
-- Constitutional-craftsmanship precedent that **strengthens** rather than compresses grundlag architecture
-- International press-freedom index score unchanged or improved
-
-**Watch**: S-internal dynamics (Tage Erlander / Olof Palme tradition vs law-and-order wing).
-
----
-
-### 🔴 BEAR — "Second-Reading Collapse" (P = 0.15)
-
-**Setup**: Left bloc gains in Sep 2026 election; V+MP+S-left majority blocks KU33 at second reading.
-
-**Key signals:**
-- V/MP campaign traction; press-freedom campaign NGOs mobilise attentive voters (0.5–1.5 pp shift)
-- S leadership opposes KU33 publicly
-- Lagrådet silent on interpretive test, hardening press-freedom opposition
-- Media editorial lines unify against
-
-**Consequences:**
-- KU amendments fall; government loses significant political capital
-- **Opportunity**: Swedish democracy demonstrates constitutional resilience — positive international framing
-- **Cost**: police / prosecutors lose policy win; gäng-agenda loses KU33 component
-- HD01KU32 may still pass separately (accessibility non-controversial) through ordinary-law pathway
-- Opposition governing in 2026–2030 faces coalition-composition challenges on Ukraine, housing, defence
-
----
-
-### 🟠 MIXED — "Interpretive Drift" (P = 0.05)
-
-**Setup**: Lagrådet ambivalent; amendment passes; over 5+ years narrow interpretation entrenches in förvaltningsdomstol.
-
-**Key signals:**
-- Förvaltningsrätt rulings systematically favour police discretion
-- NGO litigation fails; JO annual reports flag pattern
-- Gradual international index erosion
-
-**Consequences**: Long-tail democratic-infrastructure harm without acute crisis — the **slow-rot scenario** that's hardest to counter politically.
-
-**Why this scenario matters**: It is the most likely path for S4 × T1 interference to become T4 (systemic chilling).
-
----
-
-### ⚡ WILDCARD 1 — "Chilling Crisis" (P = 0.08)
-
-**Trigger**: A high-profile case emerges (2026–2028) where investigative journalism was materially blocked by KU33 interpretation.
-
-**Cascade:**
-1. Case becomes international headline (SVT+ FT + The Guardian)
-2. RSF downgrades Sweden by ≥ 3 places
-3. KU launches granskning / independent review
-4. Constitutional reconsideration placed on 2030 election agenda
-5. Riksdag passes **counter-amendment** restoring broader "allmän handling" scope
-
-**Probability reasoning**: Moderate baseline × chilling-effect prior; elevated if Lagrådet leaves language loose.
-
----
-
-### ⚡ WILDCARD 2 — "Russian Hybrid Escalation Reshapes Campaign" (P = 0.10)
-
-**Trigger**: Major cyber / sabotage / disinformation event attributable to Russia during 2026 campaign — e.g., attack on Swedish government infrastructure, Nordic energy / data cable, or large-scale disinformation op.
-
-**Cascade:**
-1. Campaign agenda shifts decisively to security / defence
-2. KU33 recedes from press-freedom framing; reframed as national-security tool
-3. Second reading passes with broader than expected coalition
-4. Tribunal (HD03231) gains legitimacy as "necessary response"
-5. Sweden advocates expanded NATO hybrid-defence doctrine
-
-**Probability reasoning**: Historical pattern after Sweden's NATO accession + tribunal founding-member status; SÄPO 2024 assessment signals elevated baseline.
-
----
-
-## 🧮 Scenario Probabilities — Rolled Up
-
-| Outcome | Probability |
-|---------|:---------:|
-| KU33 enters force in any form | **0.67** (Base 0.42 + Bull-Lite 0.20 + Mixed 0.05) |
-| KU33 enters force with strict / narrow-test lock-in | **0.55** (Base 0.42 × strict-interpretation share + Bull-Lite 0.20) |
-| KU33 fails in post-election Riksdag | **0.15** |
-| Press-freedom-index downgrade within 3 years | **0.25** |
-| Russian hybrid event reshapes campaign | **0.10** |
-| Tribunal achieves first case by 2028 | **0.55** |
-| Tribunal stalled or boycotted | **0.30** |
-
----
-
-## 🎯 Monitoring Indicators (What Flips Priors)
-
-| Indicator | Direction | Prior-Update Magnitude |
-|-----------|:---------:|:---------------------:|
-| Lagrådet yttrande strict | ↑ Base, Bull-Lite | +0.15 combined |
-| Lagrådet silent on interpretation | ↑ Mixed, Wildcard-1 | +0.10 combined |
-| S party-leader pro-KU33 speech | ↑ Base, Bull-Lite | +0.10 |
-| S party-leader anti-KU33 speech | ↑ Bear | +0.10 |
-| RSF/Freedom House downgrade | ↑ Wildcard-1 | +0.05 |
-| Nordic cable / cyber event | ↑ Wildcard-2 | +0.05–0.10 |
-| Opinion polling: press-freedom > 10 % campaign salience | ↑ Bear | +0.05 |
-| US public tribunal endorsement | N/A for KU; ↓ Tribunal-stalled | −0.10 |
-| Ukraine HD03231 commencement date slips > 6 months | ↑ Tribunal-stalled | +0.10 |
-
----
-
-## 🛠️ Scenario-Driven Editorial & Policy Implications
-
-| Scenario | Editorial Framing Implication | Policy Implication |
-|----------|-------------------------------|-------------------|
-| BASE | Frame as *"narrow, proportionate reform"*; foreground Lagrådet role | Government should pre-publish interpretive guidance |
-| BULL-LITE | Frame as *"constitutional craftsmanship moment"*; credit cross-party S | S/M joint statesmanship opportunity |
-| BEAR | Frame as *"democratic brake working as designed"* | Opposition needs clear alternative investigative-integrity plan |
-| MIXED | Frame as *"interpretive vigilance required"*; JO centrality | NGO litigation fund activation |
-| WILDCARD-1 | Frame as *"chilling crisis"* — accountability lens | Counter-amendment drafting begins |
-| WILDCARD-2 | Frame as *"hybrid war changes calculus"*; national-security lens | SÄPO / MSB doctrinal updates |
-
----
-
-## 📎 Cross-References
-- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) §Red-Team Box informs low-probability path consideration
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) §Bayesian Update Rules drive scenario priors
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) §TOWS S4×T1 interference explains Mixed pathway
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) provides Base-scenario benchmarks
-
----
-
-**Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: Scenario analysis v1.0
 
 ## Comparative International
 

@@ -5,10 +5,26 @@ date: 2026-04-23
 subfolder: month-ahead
 slug: 2026-04-23-month-ahead
 source_folder: analysis/daily/2026-04-23/month-ahead
-generated_at: 2026-04-24T18:27:52.256Z
+generated_at: 2026-04-25T10:10:10.976Z
 language: en
 layout: article
 ---
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Media framing](#rm-media-framing-analysis) | likely narrative frames, amplifiers, counter-frames, and manipulation risks | `media-framing-analysis.md` |
+| [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief.md)_
@@ -344,6 +360,46 @@ xychart-beta
 - HD03236 retained in ranking with note on already-passed status
 - DIW weights explicitly defined and applied consistently [Methodology per synthesis-methodology.md]
 
+## Media Framing Analysis
+
+_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/media-framing-analysis.md)_
+
+---
+
+## Party Framing Map
+
+| Party | Core narrative frame | Key evidence |
+|-------|---------------------|-------------|
+| M (government) | "Delivery — we promised, we delivered" | HD01FiU48 enacted; three packages in progress |
+| SD | "Not enough — immigration enforcement must be total" | May file reservations if HD03235 deemed insufficient |
+| KD | "Pro-family, pro-safety" | Women's strategy (HD03245); crime package |
+| L | "Energy transition + security" | HD03240, HD03239, HD03220 |
+| S (opposition) | "Government manages crises without structural solutions" | 6+ interpellations on housing, shelters, police |
+| V | "Climate and workers first" | 3 opposing motions: fuel, deportation, arms |
+| MP | "Climate emergency requires reversal of fuel tax" | HD024098; EU Climate Law framing |
+| C | "Moderate reform — not extreme immigration" | HD024095 systematic crime threshold |
+
+---
+
+## Press Framing (Expected)
+
+| Media type | Expected angle | Basis |
+|------------|---------------|-------|
+| Svenska Dagbladet (conservative) | Delivery narrative; coalition stability | Editorial alignment with M/coalition |
+| Dagens Nyheter (liberal) | Mixed — energy transition positive; deportation concerns | Liberal editorial line |
+| Aftonbladet (tabloid/social-dem) | Opposition amplification — shelters, housing | Social Democratic-adjacent |
+| SVT/SR (public) | Balanced — covers all parties; committee hearing focus | PSB mandate |
+
+---
+
+## Media Risk Indicators
+
+1. **Women's shelter story** (HD10438) — high viral potential; human interest angle; negative for government
+2. **Fuel tax cut = climate betrayal** framing — sustained NGO campaign likely through summer
+3. **NATO forward presence** (HD03220) — may generate peace movement/anti-militarism coverage in alternative media
+
+**Admiralty**: [C3] — media framing projections; no actual press coverage reviewed (open-access Swedish press not queried)
+
 ## Stakeholder Perspectives
 
 _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/stakeholder-perspectives.md)_
@@ -475,6 +531,254 @@ graph TD
     style RIKSREV fill:#37474F,color:#FFFFFF
 ```
 
+## Forward Indicators
+
+_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/forward-indicators.md)_
+
+**Author**: James Pether Sörling | **Generated**: 2026-04-23
+**Gate requirement**: ≥10 indicators with date patterns across 4 horizons
+
+---
+
+## Indicator Set
+
+| # | Indicator | Expected date | Horizon | Significance | Admiralty |
+|---|-----------|--------------|---------|-------------|-----------|
+| 1 | FiU publishes hearing schedule for HD0399 (supplementary budget) | 2026-04-28 to 2026-05-05 | H1 (1–2 weeks) | CRITICAL — fiscal timeline | [B2] |
+| 2 | JuU publishes hearing schedule for HD03218 (gang sentences) | 2026-04-28 to 2026-05-10 | H1 | HIGH — Law & Order timeline | [B2] |
+| 3 | C parliamentary group statement on HD03235 (deportation) | 2026-04-25 to 2026-05-01 | H1 | HIGH — coalition stability indicator | [B2] |
+| 4 | SD group press conference on spring package assessment | 2026-05-01 to 2026-05-10 | H2 (2–4 weeks) | HIGH — confidence-and-supply signal | [C2] |
+| 5 | NU committee hearing on HD03240 (electricity law) | 2026-05-01 to 2026-05-15 | H2 | MEDIUM — energy reform timeline | [B2] |
+| 6 | SfU committee report on HD03235 (deportation) published | 2026-05-01 to 2026-05-20 | H2 | HIGH — vote proximity indicator | [B2] |
+| 7 | FiU chamber vote on HD0399 (supplementary budget) | 2026-05-10 to 2026-05-25 | H2 | CRITICAL — fiscal enactment | [B2] |
+| 8 | SCB Q1 2026 GDP flash estimate published | 2026-05-01 to 2026-05-15 | H2 | HIGH — validates fiscal assumptions | [B2] |
+| 9 | MJU committee report on HD03238 (environmental permitting) | 2026-05-10 to 2026-05-25 | H2 | MEDIUM — energy reform | [B2] |
+| 10 | JuU chamber vote on HD03218 (gang sentences) | 2026-05-20 to 2026-06-05 | H3 (4–6 weeks) | HIGH — Law & Order enacted | [B2] |
+| 11 | FöU committee report on HD03220 (NATO Finland) published | 2026-05-15 to 2026-05-30 | H3 | MEDIUM — defence commitment confirmed | [B2] |
+| 12 | Riksmöte 2025/26 formal recess announced | 2026-06-01 to 2026-06-15 | H4 (post-session) | MEDIUM — session closure | [A1] |
+| 13 | SD or government coalition pre-election manifesto announcement | 2026-06-01 to 2026-06-30 | H4 | HIGH — election campaign start | [C3] |
+
+**Indicators by horizon**:
+- H1 (1–2 weeks): 3
+- H2 (2–4 weeks): 6
+- H3 (4–6 weeks): 2
+- H4 (post-session): 2
+
+**Total**: 13 indicators — gate requirement of ≥10 MET ✅
+
+---
+
+## Indicator Dashboard
+
+```mermaid
+gantt
+    title Forward Indicators Timeline
+    dateFormat  YYYY-MM-DD
+    section H1
+    FiU schedules HD0399 hearing       :2026-04-28, 7d
+    JuU schedules HD03218 hearing      :2026-04-28, 12d
+    C statement on HD03235             :2026-04-25, 6d
+    section H2
+    SD spring assessment               :2026-05-01, 10d
+    NU hearing HD03240                 :2026-05-01, 14d
+    SfU report HD03235                 :2026-05-01, 20d
+    FiU vote HD0399                    :2026-05-10, 15d
+    SCB Q1 GDP flash                   :2026-05-01, 14d
+    MJU report HD03238                 :2026-05-10, 15d
+    section H3
+    JuU vote HD03218                   :2026-05-20, 16d
+    FöU report HD03220                 :2026-05-15, 15d
+    section H4
+    Riksmöte recess                    :2026-06-01, 14d
+    Pre-election manifesto             :2026-06-01, 30d
+```
+
+## Scenario Analysis
+
+_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/scenario-analysis.md)_
+
+**Author**: James Pether Sörling | **Generated**: 2026-04-23
+**Framework**: strategic-extensions-methodology.md — F3EAD Exploit→Analyze
+
+---
+
+## Scenario Framing
+
+**Central Question**: What are the dominant alternative futures for Sweden's political landscape by May 31, 2026 (end of spring session)?
+
+**Scope**: 38-day window (2026-04-23 → 2026-05-31)
+**Horizon**: Session-end (H2 immediate)
+
+---
+
+## Scenario Set (3 Alternatives — Mutually Exclusive, Collectively Exhaustive)
+
+| Scenario | Name | WEP Probability | Admiralty |
+|----------|------|-----------------|-----------|
+| S-1 | **Stable Close** — Government completes spring session agenda intact | Likely (60–70%) | [B2] |
+| S-2 | **Legislative Fracture** — One or more major bills defeated or delayed | Unlikely (20–30%) | [C3] |
+| S-3 | **Crisis Pivot** — External shock (economic/security) forces emergency response | Remote (5–15%) | [D4] |
+
+*Note: probabilities sum to 100% within rounding tolerance*
+
+---
+
+## Scenario S-1: Stable Close (Likely — 60%)
+
+**Narrative**: The Tidökoalitionen manages SD support and keeps C/L on key votes. The full Law & Order Package passes JuU; the Energy Transition Package passes NU+MJU. SD accepts HD03235 deportation rules as "adequate first step." C supports HD03235 after amendment to require systematic + repeated crime threshold (per motion HD024095). The vårproposition (HD03100) and supplementary budget (HD0399) pass FiU with government majority. PM Kristersson enters the summer break with three legislative packages delivered.
+
+**Key enabling conditions**:
+- SD confirms support for HD03218, HD03246, HD03235 in chamber
+- C accepts HD03235 amendment rather than opposing outright
+- FiU passes HD0399 before Riksmöte recess
+- No external economic shock degrades fiscal assumptions
+
+**Electoral implication**: Government enters pre-election campaign season from a position of policy delivery; election narrative = "Tidöavtalet delivered."
+
+**Key indicators** (if S-1 is manifesting):
+- SD group spokesperson confirms support in media (by May 10)
+- FiU schedules hearing on HD0399 (by May 5)
+- JuU approves HD03218 committee report (by May 15)
+
+---
+
+## Scenario S-2: Legislative Fracture (Unlikely — 25%)
+
+**Narrative**: C withdraws support for HD03235 over proportionality concerns (motion HD024095 rejected by coalition). V and MP join S in a surprise vote defeating HD03235. Alternatively, HD0399 fails because SD demands amendments on welfare cuts that M rejects. The government is forced into extended committee negotiations, delaying one or more packages past the May 31 session-end.
+
+**Key enabling conditions**:
+- C formally announces opposition to HD03235 (no longer selective — full opposition)
+- S + V + MP + C = 105+24+18+24 = 171 seats (vs coalition 69+19+16+73 = 177 — S2 requires government below 175 effective votes)
+- SD abstains or reduces turnout on fiscal measures
+
+**Electoral implication**: Opposition framing of "government in disarray" strengthens; S polls improve on competence metrics; tactical advantage for S-led bloc.
+
+**Key indicators** (if S-2 is manifesting):
+- C holds press conference criticising HD03235 without reservations (by May 1)
+- SD files formal reservations on HD0399 (by May 1)
+- JuU chair requests extended consultation period (by May 5)
+
+---
+
+## Scenario S-3: Crisis Pivot (Remote — 10%)
+
+**Narrative**: External shock — Russia escalates Baltic Sea military activity following HD03220 deployment in Finland; energy price spike driven by Middle East escalation; or IMF revises Sweden growth outlook sharply negative after Q1 data — forces government to abandon normal spring session schedule. Emergency session called; fiscal framework revised; Riksdag recess cancelled.
+
+**Key enabling conditions**:
+- OPEC+ production cut or Middle East conflict intensification (oil >120 USD/bbl)
+- Russian Baltic Sea incident (e.g., cable sabotage, intercepted aircraft)
+- IMF or Riksbank emergency statement on recession risk
+
+**Electoral implication**: Crisis framing can either benefit government (rally-around) or amplify opposition's "management failure" narrative — outcome depends on government response speed.
+
+**Key indicators** (if S-3 is manifesting):
+- Riksbank extraordinary board meeting called (any date)
+- Swedish military activates HÖJD BEREDSKAP protocols (any date)
+- Riksdag talman issues session extension notice (any date)
+
+---
+
+## Scenario Probability Validation
+
+```mermaid
+pie title Scenario Probability Distribution (% of futures)
+    "S-1 Stable Close" : 65
+    "S-2 Legislative Fracture" : 25
+    "S-3 Crisis Pivot" : 10
+```
+
+**Confidence assessment**: [C2] — Assessed from public parliamentary record; coalition defection risks inferred from motion/interpellation patterns. External shock probability based on geopolitical baseline, not confirmed intelligence.
+
+## Risk Assessment
+
+_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/risk-assessment.md)_
+
+**Author**: James Pether Sörling | **Generated**: 2026-04-23
+**Framework**: 5-dimension × 5-level Likelihood × Impact register per political-risk-methodology.md
+
+---
+
+## Risk Register
+
+| ID | Risk | Domain | L (1–5) | I (1–5) | Score | Tier |
+|----|------|--------|---------|---------|-------|------|
+| R01 | Vårändringsbudget (HD0399) defeated by unified opposition (S+V+MP+C) | Fiscal/Political | 2 | 5 | **10** | HIGH |
+| R02 | Deportation rule (HD03235) challenged in EU Court — Swedish courts apply restrictive interpretation | Legal | 3 | 4 | **12** | HIGH |
+| R03 | Electricity prices remain above 1.50 SEK/kWh through May, amplifying energy reform urgency | Economic/Energy | 3 | 3 | **9** | MEDIUM |
+| R04 | SD demands additional concessions on immigration/crime ahead of budget vote, destabilising coalition | Political | 2 | 4 | **8** | MEDIUM |
+| R05 | Gang crime sentences (HD03218) challenged on proportionality grounds by courts | Legal | 3 | 3 | **9** | MEDIUM |
+| R06 | Environmental permitting authority (HD03238) experiences implementation delays — renewable energy pipeline blocked | Governance | 2 | 4 | **8** | MEDIUM |
+| R07 | Women's shelter closure crisis escalates — government forced to emergency funding before election | Social | 3 | 3 | **9** | MEDIUM |
+| R08 | NATO forward presence in Finland triggers Russian countermeasures or diplomatic incident | Security | 2 | 5 | **10** | HIGH |
+| R09 | Spring fiscal projections revised downward — GDP growth forecast cut, undermining Svantesson narrative | Fiscal | 2 | 4 | **8** | MEDIUM |
+| R10 | Wind power revenue-sharing (HD03239) opposed by municipal governments as insufficient | Governance | 3 | 2 | **6** | LOW |
+
+---
+
+## 5×5 Risk Heat Map
+
+```mermaid
+quadrantChart
+    title Risk Heat Map — Likelihood × Impact (April–May 2026)
+    x-axis Low Impact (1) --> High Impact (5)
+    y-axis Low Likelihood (1) --> High Likelihood (5)
+    quadrant-1 "CRITICAL"
+    quadrant-2 "HIGH"
+    quadrant-3 "LOW"
+    quadrant-4 "MONITOR"
+    R02 Deportation Legal: [0.75, 0.50]
+    R01 Budget Defeat: [1.00, 0.25]
+    R08 NATO Security: [1.00, 0.25]
+    R03 Energy Prices: [0.50, 0.50]
+    R05 Sentencing Court: [0.50, 0.50]
+    R07 Shelter Crisis: [0.50, 0.50]
+    R04 SD Demands: [0.75, 0.25]
+    R06 Permitting Delays: [0.75, 0.25]
+    R09 GDP Revision: [0.75, 0.25]
+    R10 Wind Revenue: [0.25, 0.50]
+
+    style R01 fill:#C62828,color:#FFFFFF
+    style R08 fill:#C62828,color:#FFFFFF
+    style R02 fill:#E65100,color:#FFFFFF
+    style R03 fill:#1565C0,color:#FFFFFF
+    style R05 fill:#1565C0,color:#FFFFFF
+    style R07 fill:#1565C0,color:#FFFFFF
+    style R04 fill:#4CAF50,color:#FFFFFF
+    style R06 fill:#4CAF50,color:#FFFFFF
+    style R09 fill:#4CAF50,color:#FFFFFF
+    style R10 fill:#757575,color:#FFFFFF
+```
+
+---
+
+## Cascading Risk Chains
+
+### Chain 1: Fiscal Dominoes
+**R09** (GDP revision down) → **R01** (budget defeat risk rises) → Opposition exploits fiscal weakness → **R04** (SD demands more) → Coalition credibility crisis ahead of September election
+
+### Chain 2: Law & Order Backlash
+**R02** (deportation court challenge) → EU compliance pressure → **R05** (sentencing proportionality) → Government retreats on headline policy → SD loses confidence in coalition effectiveness
+
+### Chain 3: Energy–Climate Conflict
+**R03** (high energy prices) → Government doubles down on fossil fuel relief → **T3 from SWOT** (climate credibility gap) → EU / international criticism → Election-year reputational damage
+
+---
+
+## Posterior Probability Estimates
+
+| Risk | Prior Probability | Updating Event | Posterior |
+|------|------------------|----------------|-----------|
+| R01 (budget defeat) | 15% | If all three parties S, V, MP confirm joint opposition | 45% |
+| R08 (NATO security) | 10% | If Russia conducts Baltic exercise during Finland deployment | 35% |
+| R02 (deportation legal) | 30% | If UN Human Rights Committee issues advisory | 60% |
+
+---
+
+## Confidence Notes
+
+All risk assessments are based on public parliamentary documents. Likelihood scores reflect political dynamics observable from parliamentary record; they are not probabilistic models.  
+**Admiralty Code**: [B2] — Reliable source, confirmed by multiple independent documents.
+
 ## SWOT Analysis
 
 _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/swot-analysis.md)_
@@ -574,96 +878,6 @@ quadrantChart
     style T1 fill:#E65100,color:#FFFFFF
     style T3 fill:#E65100,color:#FFFFFF
 ```
-
-## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/risk-assessment.md)_
-
-**Author**: James Pether Sörling | **Generated**: 2026-04-23
-**Framework**: 5-dimension × 5-level Likelihood × Impact register per political-risk-methodology.md
-
----
-
-## Risk Register
-
-| ID | Risk | Domain | L (1–5) | I (1–5) | Score | Tier |
-|----|------|--------|---------|---------|-------|------|
-| R01 | Vårändringsbudget (HD0399) defeated by unified opposition (S+V+MP+C) | Fiscal/Political | 2 | 5 | **10** | HIGH |
-| R02 | Deportation rule (HD03235) challenged in EU Court — Swedish courts apply restrictive interpretation | Legal | 3 | 4 | **12** | HIGH |
-| R03 | Electricity prices remain above 1.50 SEK/kWh through May, amplifying energy reform urgency | Economic/Energy | 3 | 3 | **9** | MEDIUM |
-| R04 | SD demands additional concessions on immigration/crime ahead of budget vote, destabilising coalition | Political | 2 | 4 | **8** | MEDIUM |
-| R05 | Gang crime sentences (HD03218) challenged on proportionality grounds by courts | Legal | 3 | 3 | **9** | MEDIUM |
-| R06 | Environmental permitting authority (HD03238) experiences implementation delays — renewable energy pipeline blocked | Governance | 2 | 4 | **8** | MEDIUM |
-| R07 | Women's shelter closure crisis escalates — government forced to emergency funding before election | Social | 3 | 3 | **9** | MEDIUM |
-| R08 | NATO forward presence in Finland triggers Russian countermeasures or diplomatic incident | Security | 2 | 5 | **10** | HIGH |
-| R09 | Spring fiscal projections revised downward — GDP growth forecast cut, undermining Svantesson narrative | Fiscal | 2 | 4 | **8** | MEDIUM |
-| R10 | Wind power revenue-sharing (HD03239) opposed by municipal governments as insufficient | Governance | 3 | 2 | **6** | LOW |
-
----
-
-## 5×5 Risk Heat Map
-
-```mermaid
-quadrantChart
-    title Risk Heat Map — Likelihood × Impact (April–May 2026)
-    x-axis Low Impact (1) --> High Impact (5)
-    y-axis Low Likelihood (1) --> High Likelihood (5)
-    quadrant-1 "CRITICAL"
-    quadrant-2 "HIGH"
-    quadrant-3 "LOW"
-    quadrant-4 "MONITOR"
-    R02 Deportation Legal: [0.75, 0.50]
-    R01 Budget Defeat: [1.00, 0.25]
-    R08 NATO Security: [1.00, 0.25]
-    R03 Energy Prices: [0.50, 0.50]
-    R05 Sentencing Court: [0.50, 0.50]
-    R07 Shelter Crisis: [0.50, 0.50]
-    R04 SD Demands: [0.75, 0.25]
-    R06 Permitting Delays: [0.75, 0.25]
-    R09 GDP Revision: [0.75, 0.25]
-    R10 Wind Revenue: [0.25, 0.50]
-
-    style R01 fill:#C62828,color:#FFFFFF
-    style R08 fill:#C62828,color:#FFFFFF
-    style R02 fill:#E65100,color:#FFFFFF
-    style R03 fill:#1565C0,color:#FFFFFF
-    style R05 fill:#1565C0,color:#FFFFFF
-    style R07 fill:#1565C0,color:#FFFFFF
-    style R04 fill:#4CAF50,color:#FFFFFF
-    style R06 fill:#4CAF50,color:#FFFFFF
-    style R09 fill:#4CAF50,color:#FFFFFF
-    style R10 fill:#757575,color:#FFFFFF
-```
-
----
-
-## Cascading Risk Chains
-
-### Chain 1: Fiscal Dominoes
-**R09** (GDP revision down) → **R01** (budget defeat risk rises) → Opposition exploits fiscal weakness → **R04** (SD demands more) → Coalition credibility crisis ahead of September election
-
-### Chain 2: Law & Order Backlash
-**R02** (deportation court challenge) → EU compliance pressure → **R05** (sentencing proportionality) → Government retreats on headline policy → SD loses confidence in coalition effectiveness
-
-### Chain 3: Energy–Climate Conflict
-**R03** (high energy prices) → Government doubles down on fossil fuel relief → **T3 from SWOT** (climate credibility gap) → EU / international criticism → Election-year reputational damage
-
----
-
-## Posterior Probability Estimates
-
-| Risk | Prior Probability | Updating Event | Posterior |
-|------|------------------|----------------|-----------|
-| R01 (budget defeat) | 15% | If all three parties S, V, MP confirm joint opposition | 45% |
-| R08 (NATO security) | 10% | If Russia conducts Baltic exercise during Finland deployment | 35% |
-| R02 (deportation legal) | 30% | If UN Human Rights Committee issues advisory | 60% |
-
----
-
-## Confidence Notes
-
-All risk assessments are based on public parliamentary documents. Likelihood scores reflect political dynamics observable from parliamentary record; they are not probabilistic models.  
-**Admiralty Code**: [B2] — Reliable source, confirmed by multiple independent documents.
 
 ## Threat Analysis
 
@@ -1051,164 +1265,6 @@ Opposition motions: HD024091 (V — stricter controls), HD024096 (MP — human r
 **Committee**: SkU | **DIW**: 3.0 | **Admiralty**: [A2]
 **BLUF**: Technical tax adjustment; low political salience.
 
-## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/scenario-analysis.md)_
-
-**Author**: James Pether Sörling | **Generated**: 2026-04-23
-**Framework**: strategic-extensions-methodology.md — F3EAD Exploit→Analyze
-
----
-
-## Scenario Framing
-
-**Central Question**: What are the dominant alternative futures for Sweden's political landscape by May 31, 2026 (end of spring session)?
-
-**Scope**: 38-day window (2026-04-23 → 2026-05-31)
-**Horizon**: Session-end (H2 immediate)
-
----
-
-## Scenario Set (3 Alternatives — Mutually Exclusive, Collectively Exhaustive)
-
-| Scenario | Name | WEP Probability | Admiralty |
-|----------|------|-----------------|-----------|
-| S-1 | **Stable Close** — Government completes spring session agenda intact | Likely (60–70%) | [B2] |
-| S-2 | **Legislative Fracture** — One or more major bills defeated or delayed | Unlikely (20–30%) | [C3] |
-| S-3 | **Crisis Pivot** — External shock (economic/security) forces emergency response | Remote (5–15%) | [D4] |
-
-*Note: probabilities sum to 100% within rounding tolerance*
-
----
-
-## Scenario S-1: Stable Close (Likely — 60%)
-
-**Narrative**: The Tidökoalitionen manages SD support and keeps C/L on key votes. The full Law & Order Package passes JuU; the Energy Transition Package passes NU+MJU. SD accepts HD03235 deportation rules as "adequate first step." C supports HD03235 after amendment to require systematic + repeated crime threshold (per motion HD024095). The vårproposition (HD03100) and supplementary budget (HD0399) pass FiU with government majority. PM Kristersson enters the summer break with three legislative packages delivered.
-
-**Key enabling conditions**:
-- SD confirms support for HD03218, HD03246, HD03235 in chamber
-- C accepts HD03235 amendment rather than opposing outright
-- FiU passes HD0399 before Riksmöte recess
-- No external economic shock degrades fiscal assumptions
-
-**Electoral implication**: Government enters pre-election campaign season from a position of policy delivery; election narrative = "Tidöavtalet delivered."
-
-**Key indicators** (if S-1 is manifesting):
-- SD group spokesperson confirms support in media (by May 10)
-- FiU schedules hearing on HD0399 (by May 5)
-- JuU approves HD03218 committee report (by May 15)
-
----
-
-## Scenario S-2: Legislative Fracture (Unlikely — 25%)
-
-**Narrative**: C withdraws support for HD03235 over proportionality concerns (motion HD024095 rejected by coalition). V and MP join S in a surprise vote defeating HD03235. Alternatively, HD0399 fails because SD demands amendments on welfare cuts that M rejects. The government is forced into extended committee negotiations, delaying one or more packages past the May 31 session-end.
-
-**Key enabling conditions**:
-- C formally announces opposition to HD03235 (no longer selective — full opposition)
-- S + V + MP + C = 105+24+18+24 = 171 seats (vs coalition 69+19+16+73 = 177 — S2 requires government below 175 effective votes)
-- SD abstains or reduces turnout on fiscal measures
-
-**Electoral implication**: Opposition framing of "government in disarray" strengthens; S polls improve on competence metrics; tactical advantage for S-led bloc.
-
-**Key indicators** (if S-2 is manifesting):
-- C holds press conference criticising HD03235 without reservations (by May 1)
-- SD files formal reservations on HD0399 (by May 1)
-- JuU chair requests extended consultation period (by May 5)
-
----
-
-## Scenario S-3: Crisis Pivot (Remote — 10%)
-
-**Narrative**: External shock — Russia escalates Baltic Sea military activity following HD03220 deployment in Finland; energy price spike driven by Middle East escalation; or IMF revises Sweden growth outlook sharply negative after Q1 data — forces government to abandon normal spring session schedule. Emergency session called; fiscal framework revised; Riksdag recess cancelled.
-
-**Key enabling conditions**:
-- OPEC+ production cut or Middle East conflict intensification (oil >120 USD/bbl)
-- Russian Baltic Sea incident (e.g., cable sabotage, intercepted aircraft)
-- IMF or Riksbank emergency statement on recession risk
-
-**Electoral implication**: Crisis framing can either benefit government (rally-around) or amplify opposition's "management failure" narrative — outcome depends on government response speed.
-
-**Key indicators** (if S-3 is manifesting):
-- Riksbank extraordinary board meeting called (any date)
-- Swedish military activates HÖJD BEREDSKAP protocols (any date)
-- Riksdag talman issues session extension notice (any date)
-
----
-
-## Scenario Probability Validation
-
-```mermaid
-pie title Scenario Probability Distribution (% of futures)
-    "S-1 Stable Close" : 65
-    "S-2 Legislative Fracture" : 25
-    "S-3 Crisis Pivot" : 10
-```
-
-**Confidence assessment**: [C2] — Assessed from public parliamentary record; coalition defection risks inferred from motion/interpellation patterns. External shock probability based on geopolitical baseline, not confirmed intelligence.
-
-## Forward Indicators
-
-_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/forward-indicators.md)_
-
-**Author**: James Pether Sörling | **Generated**: 2026-04-23
-**Gate requirement**: ≥10 indicators with date patterns across 4 horizons
-
----
-
-## Indicator Set
-
-| # | Indicator | Expected date | Horizon | Significance | Admiralty |
-|---|-----------|--------------|---------|-------------|-----------|
-| 1 | FiU publishes hearing schedule for HD0399 (supplementary budget) | 2026-04-28 to 2026-05-05 | H1 (1–2 weeks) | CRITICAL — fiscal timeline | [B2] |
-| 2 | JuU publishes hearing schedule for HD03218 (gang sentences) | 2026-04-28 to 2026-05-10 | H1 | HIGH — Law & Order timeline | [B2] |
-| 3 | C parliamentary group statement on HD03235 (deportation) | 2026-04-25 to 2026-05-01 | H1 | HIGH — coalition stability indicator | [B2] |
-| 4 | SD group press conference on spring package assessment | 2026-05-01 to 2026-05-10 | H2 (2–4 weeks) | HIGH — confidence-and-supply signal | [C2] |
-| 5 | NU committee hearing on HD03240 (electricity law) | 2026-05-01 to 2026-05-15 | H2 | MEDIUM — energy reform timeline | [B2] |
-| 6 | SfU committee report on HD03235 (deportation) published | 2026-05-01 to 2026-05-20 | H2 | HIGH — vote proximity indicator | [B2] |
-| 7 | FiU chamber vote on HD0399 (supplementary budget) | 2026-05-10 to 2026-05-25 | H2 | CRITICAL — fiscal enactment | [B2] |
-| 8 | SCB Q1 2026 GDP flash estimate published | 2026-05-01 to 2026-05-15 | H2 | HIGH — validates fiscal assumptions | [B2] |
-| 9 | MJU committee report on HD03238 (environmental permitting) | 2026-05-10 to 2026-05-25 | H2 | MEDIUM — energy reform | [B2] |
-| 10 | JuU chamber vote on HD03218 (gang sentences) | 2026-05-20 to 2026-06-05 | H3 (4–6 weeks) | HIGH — Law & Order enacted | [B2] |
-| 11 | FöU committee report on HD03220 (NATO Finland) published | 2026-05-15 to 2026-05-30 | H3 | MEDIUM — defence commitment confirmed | [B2] |
-| 12 | Riksmöte 2025/26 formal recess announced | 2026-06-01 to 2026-06-15 | H4 (post-session) | MEDIUM — session closure | [A1] |
-| 13 | SD or government coalition pre-election manifesto announcement | 2026-06-01 to 2026-06-30 | H4 | HIGH — election campaign start | [C3] |
-
-**Indicators by horizon**:
-- H1 (1–2 weeks): 3
-- H2 (2–4 weeks): 6
-- H3 (4–6 weeks): 2
-- H4 (post-session): 2
-
-**Total**: 13 indicators — gate requirement of ≥10 MET ✅
-
----
-
-## Indicator Dashboard
-
-```mermaid
-gantt
-    title Forward Indicators Timeline
-    dateFormat  YYYY-MM-DD
-    section H1
-    FiU schedules HD0399 hearing       :2026-04-28, 7d
-    JuU schedules HD03218 hearing      :2026-04-28, 12d
-    C statement on HD03235             :2026-04-25, 6d
-    section H2
-    SD spring assessment               :2026-05-01, 10d
-    NU hearing HD03240                 :2026-05-01, 14d
-    SfU report HD03235                 :2026-05-01, 20d
-    FiU vote HD0399                    :2026-05-10, 15d
-    SCB Q1 GDP flash                   :2026-05-01, 14d
-    MJU report HD03238                 :2026-05-10, 15d
-    section H3
-    JuU vote HD03218                   :2026-05-20, 16d
-    FöU report HD03220                 :2026-05-15, 15d
-    section H4
-    Riksmöte recess                    :2026-06-01, 14d
-    Pre-election manifesto             :2026-06-01, 30d
-```
-
 ## Election 2026 Analysis
 
 _Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/election-2026-analysis.md)_
@@ -1511,46 +1567,6 @@ _Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/b
 1. Pre-election "delivery" narratives can secure re-election (Alliansen 2010 precedent suggests yes — won September 2010)
 2. Single party defection in minority parliament was survivable in 2021; 2026 coalition has more buffer
 3. Fuel tax cuts as pre-election "gift" have Norwegian precedent of temporary relief → future reversal = political cost
-
-## Media Framing Analysis
-
-_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/media-framing-analysis.md)_
-
----
-
-## Party Framing Map
-
-| Party | Core narrative frame | Key evidence |
-|-------|---------------------|-------------|
-| M (government) | "Delivery — we promised, we delivered" | HD01FiU48 enacted; three packages in progress |
-| SD | "Not enough — immigration enforcement must be total" | May file reservations if HD03235 deemed insufficient |
-| KD | "Pro-family, pro-safety" | Women's strategy (HD03245); crime package |
-| L | "Energy transition + security" | HD03240, HD03239, HD03220 |
-| S (opposition) | "Government manages crises without structural solutions" | 6+ interpellations on housing, shelters, police |
-| V | "Climate and workers first" | 3 opposing motions: fuel, deportation, arms |
-| MP | "Climate emergency requires reversal of fuel tax" | HD024098; EU Climate Law framing |
-| C | "Moderate reform — not extreme immigration" | HD024095 systematic crime threshold |
-
----
-
-## Press Framing (Expected)
-
-| Media type | Expected angle | Basis |
-|------------|---------------|-------|
-| Svenska Dagbladet (conservative) | Delivery narrative; coalition stability | Editorial alignment with M/coalition |
-| Dagens Nyheter (liberal) | Mixed — energy transition positive; deportation concerns | Liberal editorial line |
-| Aftonbladet (tabloid/social-dem) | Opposition amplification — shelters, housing | Social Democratic-adjacent |
-| SVT/SR (public) | Balanced — covers all parties; committee hearing focus | PSB mandate |
-
----
-
-## Media Risk Indicators
-
-1. **Women's shelter story** (HD10438) — high viral potential; human interest angle; negative for government
-2. **Fuel tax cut = climate betrayal** framing — sustained NGO campaign likely through summer
-3. **NATO forward presence** (HD03220) — may generate peace movement/anti-militarism coverage in alternative media
-
-**Admiralty**: [C3] — media framing projections; no actual press coverage reviewed (open-access Swedish press not queried)
 
 ## Implementation Feasibility
 

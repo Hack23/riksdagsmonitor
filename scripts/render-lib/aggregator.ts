@@ -10,20 +10,38 @@
  * **pure with respect to the filesystem** — given the same set of
  * artifact files on disk, it always produces byte-identical output.
  *
- * ## Narrative order
- * See {@link AGGREGATION_ORDER}. The order is intentionally fixed:
+ * ## Narrative order (reader-intelligence-first projection)
+ * See {@link AGGREGATION_ORDER}. The order is intentionally fixed to surface
+ * high-value political-intelligence lenses before technical audit appendices:
+ *
+ * **Round 0 — generated navigation layer**
+ * 0. `Reader Intelligence Guide` — deterministic navigation table injected
+ *    before any artifact sections
+ *
+ * **Round 1 — BLUF and thesis**
  * 1. `executive-brief.md` (mandatory — supplies title + description)
  * 2. `synthesis-summary.md`
  * 3. `intelligence-assessment.md` — ICD-203 Key Judgments centrepiece
  * 4. `significance-scoring.md`
- * 5. `stakeholder-perspectives.md`
- * 6. `swot-analysis.md`
- * 7. `risk-assessment.md`
- * 8. `threat-analysis.md`
- * 9. `documents/*-analysis.md` — inlined as "Per-document intelligence"
- * 10. `scenario-analysis.md` … `methodology-reflection.md` (see list)
- * 11. any remaining supplementary `*.md` not in the canonical list —
- *     appended alphabetically
+ *
+ * **Round 2 — reader-facing intelligence lenses (most valuable first)**
+ * 5. `media-framing-analysis.md` — narrative contestation, amplifiers, manipulation risk
+ * 6. `stakeholder-perspectives.md`
+ * 7. `forward-indicators.md` — dated watch items for readers to verify/falsify
+ * 8. `scenario-analysis.md`
+ * 9. `risk-assessment.md`
+ * 10. `swot-analysis.md`
+ * 11. `threat-analysis.md`
+ *
+ * **Round 3 — per-document evidence**
+ * 12. `documents/*-analysis.md` — inlined as "Per-document intelligence"
+ *
+ * **Round 4 — electoral and domain lenses**
+ * 13. `election-2026-analysis.md` … `implementation-feasibility.md`
+ *
+ * **Round 5 — challenge and audit appendix**
+ * 15. `devils-advocate.md` … `data-download-manifest.md`
+ * 16. any remaining supplementary `*.md` — appended alphabetically
  *
  * ## Cleaning rules (see {@link cleanArtifactBody})
  * - strip YAML front-matter
@@ -45,9 +63,11 @@ import fs from 'fs';
 import path from 'path';
 
 import matter from 'gray-matter';
+import GithubSlugger from 'github-slugger';
 
 import { buildGithubBlobUrl } from './url-helpers.js';
 import { GITHUB_BLOB } from './constants.js';
+import { HEADING_ID_PREFIX } from './markdown.js';
 
 // ---------------------------------------------------------------------------
 // Canonical narrative order + section titles
@@ -67,19 +87,19 @@ export const AGGREGATION_ORDER: readonly string[] = [
   'synthesis-summary.md',
   'intelligence-assessment.md',
   'significance-scoring.md',
+  'media-framing-analysis.md',
   'stakeholder-perspectives.md',
-  'swot-analysis.md',
+  'forward-indicators.md',
+  'scenario-analysis.md',
   'risk-assessment.md',
+  'swot-analysis.md',
   'threat-analysis.md',
   // documents/* expanded inline here
-  'scenario-analysis.md',
-  'forward-indicators.md',
   'election-2026-analysis.md',
   'coalition-mathematics.md',
   'voter-segmentation.md',
   'comparative-international.md',
   'historical-parallels.md',
-  'media-framing-analysis.md',
   'implementation-feasibility.md',
   'devils-advocate.md',
   'classification-results.md',
@@ -131,6 +151,96 @@ function prettifyFallbackTitle(file: string): string {
 export function titleForArtifact(file: string): string {
   const base = path.basename(file);
   return SECTION_TITLES[base] ?? prettifyFallbackTitle(base);
+}
+
+const READER_GUIDE_ENTRIES: readonly {
+  readonly file: string;
+  readonly label: string;
+  readonly readerValue: string;
+}[] = [
+  {
+    file: 'executive-brief.md',
+    label: 'BLUF and editorial decisions',
+    readerValue: 'fast answer to what happened, why it matters, who is accountable, and the next dated trigger',
+  },
+  {
+    file: 'intelligence-assessment.md',
+    label: 'Key Judgments',
+    readerValue: 'confidence-bearing political-intelligence conclusions and collection gaps',
+  },
+  {
+    file: 'significance-scoring.md',
+    label: 'Significance scoring',
+    readerValue: 'why this story outranks or trails other same-day parliamentary signals',
+  },
+  {
+    file: 'media-framing-analysis.md',
+    label: 'Media framing',
+    readerValue: 'likely narrative frames, amplifiers, counter-frames, and manipulation risks',
+  },
+  {
+    file: 'forward-indicators.md',
+    label: 'Forward indicators',
+    readerValue: 'dated watch items that let readers verify or falsify the assessment later',
+  },
+  {
+    file: 'scenario-analysis.md',
+    label: 'Scenarios',
+    readerValue: 'alternative outcomes with probabilities, triggers, and warning signs',
+  },
+  {
+    file: 'risk-assessment.md',
+    label: 'Risk assessment',
+    readerValue: 'policy, electoral, institutional, communications, and implementation risk register',
+  },
+];
+
+/**
+ * Generate the same heading anchor that the renderer emits downstream.
+ *
+ * `rehype-slug` delegates to `github-slugger` (the GitHub heading slug
+ * algorithm), and `rehype-sanitize` then prefixes every emitted ID with
+ * {@link HEADING_ID_PREFIX} as a DOM-clobbering mitigation. We mirror
+ * both steps here so the Reader Intelligence Guide's `#anchor` links
+ * resolve to the rendered IDs across punctuation, Unicode and
+ * duplicate-heading cases.
+ *
+ * A fresh `GithubSlugger` instance is used per call so the function is
+ * stateless — duplicate-heading disambiguation is not relevant for the
+ * Reader Intelligence Guide because each guide entry maps to a unique
+ * canonical artifact section title.
+ */
+function anchorForTitle(title: string): string {
+  return `${HEADING_ID_PREFIX}${new GithubSlugger().slug(title)}`;
+}
+
+function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: boolean): string {
+  const entries = READER_GUIDE_ENTRIES
+    .filter((entry) => available.has(entry.file))
+    .map((entry) => {
+      const title = titleForArtifact(entry.file);
+      return `| [${entry.label}](#${anchorForTitle(title)}) | ${entry.readerValue} | \`${entry.file}\` |`;
+    });
+
+  if (hasDocuments) {
+    entries.push(
+      `| [Per-document intelligence](#${HEADING_ID_PREFIX}per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | \`documents/*-analysis.md\` |`,
+    );
+  }
+
+  entries.push(
+    `| [Audit appendix](#${HEADING_ID_PREFIX}classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |`,
+  );
+
+  return [
+    '## Reader Intelligence Guide',
+    '',
+    'Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.',
+    '',
+    '| Reader need | What you\'ll get | Source artifact |',
+    '|---|---|---|',
+    ...entries,
+  ].join('\n');
 }
 
 // ---------------------------------------------------------------------------
@@ -415,6 +525,15 @@ function truncateToSentenceBoundary(
   return sliced.trim() + '…';
 }
 
+function markdownInlineToText(markdown: string): string {
+  return markdown
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/[*_`]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 /**
  * Return the first prose paragraph that immediately follows a `## 🎯 BLUF`
  * (or `## BLUF`, case-insensitive) heading in an executive-brief. This is
@@ -442,7 +561,7 @@ function readBlufParagraph(markdown: string): string | null {
     if (/^[>*]\s/.test(p)) continue;
     const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
-    return p.replace(/[*_`]/g, '').replace(/\s+/g, ' ');
+    return markdownInlineToText(p);
   }
   return null;
 }
@@ -459,8 +578,7 @@ function readFirstParagraph(markdown: string): string | null {
     // Structural-only delimiter (see ADMIN_FRAGMENT_SPLITTER JSDoc).
     const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
-    // Strip markdown emphasis for the meta description.
-    return p.replace(/[*_`]/g, '').replace(/\s+/g, ' ');
+    return markdownInlineToText(p);
   }
   return null;
 }
@@ -514,7 +632,7 @@ function cleanArticleTitle(raw: string | null): string | null {
  */
 function titleFromBluf(bluf: string | null, maxLen: number = 70): string | null {
   if (!bluf) return null;
-  const clean = bluf.replace(/[*_`]/g, '').replace(/\s+/g, ' ').trim();
+  const clean = markdownInlineToText(bluf);
   if (!clean) return null;
   // Take the first sentence (bounded by . ! ? 。) — but never exceed maxLen.
   SENTENCE_END_RE.lastIndex = 0;
@@ -585,6 +703,17 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     cleanArticleTitle(readFirstHeading(briefRaw)) ||
     titleFromBluf(rawBlufParagraph ?? rawFirstParagraph) ||
     `${prettifyFallbackTitle(subfolder)} — ${date}`;
+
+  const rootArtifactSet = new Set(
+    fs.readdirSync(subfolderAbsPath)
+      .filter((f) => /\.md$/i.test(f))
+      .filter((f) => f !== 'README.md')
+      .filter((f) => !/^article(?:\.[a-z-]+)?\.md$/i.test(f)),
+  );
+  const docsDirForGuide = path.join(subfolderAbsPath, 'documents');
+  const hasDocumentAnalyses = fs.existsSync(docsDirForGuide) &&
+    fs.readdirSync(docsDirForGuide).some((f) => /\.md$/i.test(f));
+  sections.push(buildReaderGuide(rootArtifactSet, hasDocumentAnalyses));
 
   // 2. Emit the canonical narrative order, expanding documents/ between
   //    threat-analysis and election-2026-analysis.
@@ -700,6 +829,7 @@ export const __test__ = {
   readFirstParagraph,
   readBlufParagraph,
   truncateToSentenceBoundary,
+  markdownInlineToText,
   cleanArticleTitle,
   titleFromBluf,
   escapeYaml,

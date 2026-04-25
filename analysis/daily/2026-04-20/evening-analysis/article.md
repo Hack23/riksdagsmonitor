@@ -5,10 +5,22 @@ date: 2026-04-20
 subfolder: evening-analysis
 slug: 2026-04-20-evening-analysis
 source_folder: analysis/daily/2026-04-20/evening-analysis
-generated_at: 2026-04-24T18:27:52.205Z
+generated_at: 2026-04-25T10:10:10.938Z
 language: en
 layout: article
 ---
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/executive-brief.md)_
@@ -490,128 +502,103 @@ graph LR
 - Police trust: 54% trust police "quite well" or "very well" (SOM 2025) — HD10439 police gap resonates
 - Constitutional awareness: Only 34% of Swedes can name all five fundamental laws (Demoskop 2024) — HD11726 identifies a real gap
 
-## SWOT Analysis
+## Scenario Analysis
 
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/swot-analysis.md)_
+_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/scenario-analysis.md)_
 
-**SWOT ID**: `SWT-2026-04-20-EVE001`
-**Analysis Date**: 2026-04-20 17:33 UTC
-**Scope**: Full-day synthesis — committee reports, interpellations, written questions
+**Date**: 2026-04-20 | **Horizon**: Tomorrow / 7-day / 30-day
 
 ---
 
-## Quadrant Mapping
+## Three Base Scenarios
 
-```mermaid
-mindmap
-  root((Evening Analysis<br/>2026-04-20<br/>SWOT))
-    Strengths
-      Police Goal Achieved
-        BRÅ confirmed 10,000 officers
-        HD03237 paid training addresses future supply
-        Government can claim delivery
-      Budget Transparency
-        KU42 constitutional scrutiny
-        Demonstrates fiscal accountability
-      Legislative Housekeeping
-        KU43 medal law modernisation
-        Cross-party support
-      Security Narrative
-        NATO contributions confirmed (sibling props)
-        Ukraine accountability measures tabled
-    Weaknesses
-      Agricultural Climate Gap
-        Riksrevisionen MJU21 documents failure
-        Sweden behind Nordic peers on farm emissions
-        No immediate remediation plan
-      Stockholm Police Distribution
-        HD10439: quality vs quantity exposed
-        Metropolitan policing gap persists
-      Infrastructure Accountability Deficit
-        Minister Carlson most-targeted (6th+ IP)
-        Trafikverket NGO funding cut (HD11722)
-        Strada database concerns (HD11724)
-      Ministerial Bandwidth
-        8 portfolios challenged in one day
-        S filing pace 50% above average
-    Opportunities
-      Counter-Narrative via Paid Training
-        HD03237 links to HD10439 proactively
-        Turn S's police question into government success
-      Agricultural Action Plan
-        Announce SOU within 30 days
-        Pre-empt Riksrevisionen finding escalation
-      Constitutional Credibility
-        KU42 debate showcases fiscal discipline
-        KU43 shows legislative efficiency
-      Energy Transition
-        HD03239/240 counter climate narrative
-        Municipal wind revenue sharing shows pragmatism
-    Threats
-      Climate Accountability Escalation
-        MJU21 + fuel tax cut (HD03236) = double front
-        Klimatpolitiska rådet likely to comment
-        S/MP/C can cite Riksrevisionen in election
-      Constitutional Trap
-        HD11726: constitutional knowledge question
-        Timed post-vilande amendments (KU33/KU32)
-        Education minister on record before election
-      S Escalation Risk
-        Current interpellation pace → week-3 surge late April
-        8 written questions today suggests momentum
-      Coalition Energy Fracture
-        HD11725 alum shale C+S alignment
-        SD pro-extraction vs C+S vs MP
-        Could expose Tidö coalition environmental limits
-```
+### Scenario A: Government Containment (35% probability)
+**Label**: "Strömmer Responds, Svantesson Pivots"
+**Confidence**: 🟧MEDIUM
+
+**Narrative**: Justice Minister Strömmer issues a strong HD10439 response citing HD03237 (paid training) as the structural answer to Stockholm police distribution gaps. The Climate/Agriculture Ministry announces an agricultural emissions action plan within 14 days of the MJU21 debate. The Education Ministry's HD11726 response references a new constitutional literacy campaign timed to coincide with the election. The government successfully frames the week as "accountable governance responding to legitimate questions."
+
+**Trigger calendar**:
+- T+3 days: Strömmer HD10439 response preview in media
+- T+7 days: Agricultural action plan announcement
+- T+14 days: HD11726 response published
+
+**ACH Assessment**: This scenario requires coordinated ministerial communications — possible given the government's Spring Fiscal package discipline, but the agricultural response timeline is tight.
 
 ---
 
-## Coalition SWOT (Tidö: M-KD-L, supported by SD)
+### Scenario B: S Accountability Gains Traction (50% probability)
+**Label**: "The Double Climate Indictment"
+**Confidence**: 🟩HIGH
 
-### Strengths
-- **Police delivery**: BRÅ confirmed 10,000 officers target met — rare example of government delivering on a precise numerical commitment. Strömmer can invoke this against HD10439 `[VERY HIGH confidence 🟦]`
-- **Energy reform package**: The sibling proposition analysis confirms HD03239/240/238 deliver a coherent industrial policy — positive contrast to the climate-only narrative opposition prefers `[HIGH confidence 🟩]`
-- **NATO credibility**: HD03220 (EFP Finland) and Ukraine accountability measures (HD03231/32) place Sweden firmly in the mainstream European security architecture `[VERY HIGH confidence 🟦]`
-- **Fiscal package**: Three budget propositions (HD03100, HD0399, HD03236) provide election-year economic narrative `[HIGH confidence 🟩]`
+**Narrative**: MJU21 becomes the lead story in DN/SvD on April 21, framed as "Riksrevisionen: Sverige klarar inte jordbrukets klimatomställning." This is combined with reporting that the government simultaneously cut fuel taxes (HD03236), adding emissions. S's Magdalena Andersson holds a press conference citing both Riksrevisionen findings and the motions already filed (HD024082, HD024098). The police interpellation (HD10439) generates secondary coverage on Stockholm-specific policing gaps. The government's response window is 10 days but the media narrative is already set.
 
-### Weaknesses
-- **Agricultural climate**: MJU21/Riksrevisionen creates an official record that cannot be redacted. Agriculture = 14% of domestic GHG; documented insufficiency joins fuel tax cut as climate credibility damage `[HIGH confidence 🟩]`
-- **Stockholm policing**: Quantitative goal vs qualitative/geographic distribution gap — S's framing exposes the limitation of headline-number politics `[MEDIUM confidence 🟧]`
-- **KD infrastructure**: Carlson's portfolio is consistently identified as weakest in coalition; KD cannot afford to lose further seats to M or S `[HIGH confidence 🟩]`
-- **Alum shale position**: SD's presumed support for mineral extraction puts it at odds with C (coalition-adjacent) and S on HD11725 — a microcosm of wider environmental coalition tension `[MEDIUM confidence 🟧]`
+**Trigger calendar**:
+- T+1 day: DN/SvD MJU21 front page
+- T+3 days: S press conference — climate double standard
+- T+7 days: Klimatpolitiska rådet statement
+- T+14 days: Strömmer HD10439 response — government defence
 
-### Opportunities
-- **Agricultural action plan**: A rapid announcement of an SOU or consultation process would transform MJU21 from a liability to a response. Window is April 20–May 10 before Riksdag recess discussions begin `[HIGH confidence 🟩]`
-- **Constitutional leadership**: KU42 debate on budget structure — if the government champions transparent fiscal architecture, it takes the lead narrative away from opposition `[MEDIUM confidence 🟧]`
-- **Police quality follow-up**: Address Stockholm distribution concern proactively in Strömmer's HD10439 response — cite HD03237 as the structural solution `[HIGH confidence 🟩]`
-
-### Threats
-- **Klimatpolitiska rådet escalation**: The council is independent; MJU21 finding likely triggers a council review comment in May–June 2026, amplifying the damage `[MEDIUM-HIGH confidence 🟧]`
-- **HD11726 constitutional trap**: The Education Ministry will have to answer "what is being done to increase constitutional knowledge among citizens?" — any weak answer will be weaponised as the vilande amendments make the constitution a live election issue `[MEDIUM confidence 🟧]`
-- **S filing momentum**: The week-over-week escalation in S's parliamentary activity (motions, interpellations, written questions) is structurally concerning — Riksdag summer recess approaches, each filed question locks in a ministerial record `[HIGH confidence 🟩]`
+**ACH Assessment**: This is the base case. S's filing discipline and the independent Riksrevisionen anchor make it structurally likely.
 
 ---
 
-## Opposition SWOT (S + V + MP + C)
+### Scenario C: Constitutional Accountability Week (15% probability)
+**Label**: "Four Documents, One Theme: Who Controls the State?"
+**Confidence**: 🟥LOW-MEDIUM
 
-### Strengths
-- **Documented government failures**: MJU21 provides an independent audit authority's finding — more durable than political accusations `[VERY HIGH confidence 🟦]`
-- **Coordinated accountability campaign**: S's simultaneous coverage of infrastructure, justice, energy, education, and climate demonstrates portfolio breadth that suggests S is ready to govern `[HIGH confidence 🟩]`
-- **Climate narrative coherence**: Fuel tax cut (HD03236) + agricultural climate failure (MJU21) + MJU25 (forthcoming) = a layered, multi-front climate case `[HIGH confidence 🟩]`
+**Narrative**: The KU42 budget structure debate, the KU33/KU32 vilande amendments, the HD11726 constitutional knowledge question, and the announced KU summons of Finance Minister Svantesson (from realtime memory) combine into a unified "constitutional accountability week" narrative. Media frames the week as "who controls Sweden's constitutional architecture?" HD11726 becomes a viral talking point about the government changing the constitution without citizen education.
 
-### Weaknesses
-- **S silent on deportation** (from motions analysis): S's revealed strategic choice to avoid the security-enforcement immigration narrative limits coalition-building credibility on the right `[HIGH confidence 🟩]`
-- **V+MP electoral risk**: Their arms-export and immigration positions poll poorly with median voter `[MEDIUM confidence 🟧]`
-- **S must own economic failure too**: Sweden's 0.82% GDP growth and 8.69% unemployment happened under conditions S did not fully prevent when in government 2014–2022 `[MEDIUM confidence 🟧]`
+**Trigger calendar**:
+- T+3 days: KU summons Svantesson hearing
+- T+5 days: KU42 plenary debate scheduled
+- T+7 days: HD11726 response triggers constitutional debate
 
-### Opportunities
-- **MJU21 amplification**: Bring Riksrevisionen finding to media at first plenary debate opportunity `[HIGH confidence 🟩]`
-- **HD11726 timing**: Constitutional knowledge debate immediately post-vilande amendments is symbolically perfect for S `[HIGH confidence 🟩]`
+**ACH Assessment**: Requires media and opposition coordination to land the combined narrative. Possible but not structurally pre-determined.
 
-### Threats
-- **Government pays its debts**: If Strömmer, Carlson, and other ministers respond substantively to the written question wave, the accountability saturation tactic loses impact `[MEDIUM confidence 🟧]`
-- **Election fatigue**: Voters may tune out escalating accountability campaigns if not tied to vivid personal stories `[LOW confidence 🟥]`
+---
+
+## Two Wildcards
+
+### Wildcard 1: Klimatpolitiska rådet Rapid Response
+**Probability**: 0.25 | **Impact if realised**: 🔴CRITICAL
+
+The independent climate policy council issues an urgent statement on the MJU21 + fuel tax cut combination within 7 days. This would:
+- Force a formal government response under Klimatlagen §5 (parliamentary notification obligation)
+- Create a legally grounded third-party corroboration of climate credibility concerns
+- Elevate the story from parliamentary-level to constitutional-level accountability
+
+---
+
+### Wildcard 2: KU Summons Reveal Sensitive Budget Documents
+**Probability**: 0.20 | **Impact if realised**: 🟠HIGH
+
+The KU summons of Finance Minister Svantesson (flagged in realtime memory for this week) produces unexpected revelations about budgetary decision-making processes. If Svantesson's testimony on the Spring Economic Bill (HD03100) or the extra amendment budget (HD03236) reveals internal disagreements or rushed decision-making, the climate-fiscal accountability narrative widens.
+
+---
+
+## ACH Grid — Key Hypotheses
+
+| Hypothesis | Scenario A | Scenario B | Scenario C |
+|-----------|:----------:|:----------:|:----------:|
+| H1: Media leads with MJU21 tomorrow | Contradicts | Supports | Neutral |
+| H2: S holds climate press conference by April 23 | Contradicts | Supports | Neutral |
+| H3: Government announces agricultural action plan by May 1 | Supports | Contradicts | Neutral |
+| H4: KU summons produces significant Svantesson testimony | Neutral | Neutral | Supports |
+| H5: Strömmer cites HD03237 in HD10439 response | Supports | Neutral | Neutral |
+
+---
+
+## 30-Day Forward Indicators
+
+| Indicator | Expected Date | Significance |
+|-----------|:------------:|:------------:|
+| MJU21 plenary debate | April 28–May 5 | S/MP/C amplification opportunity |
+| HD10439 Strömmer response | ~April 30 | Government defence of police record |
+| Agricultural climate action plan | May 1–20 | Government damage control |
+| Klimatpolitiska rådet comment | May–June | Independent escalation |
+| S week-3 interpellation surge | April 28–May 5 | New target portfolios likely |
+| EU Commission climate review | May–June | Sweden's CAP compliance assessment |
 
 ## Risk Assessment
 
@@ -760,6 +747,129 @@ graph LR
 **Key Vulnerability**: KD (Andreas Carlson infrastructure portfolio) and L (Nina Larsson gender equality portfolio)
 **Confidence**: 🟩HIGH
 
+## SWOT Analysis
+
+_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/swot-analysis.md)_
+
+**SWOT ID**: `SWT-2026-04-20-EVE001`
+**Analysis Date**: 2026-04-20 17:33 UTC
+**Scope**: Full-day synthesis — committee reports, interpellations, written questions
+
+---
+
+## Quadrant Mapping
+
+```mermaid
+mindmap
+  root((Evening Analysis<br/>2026-04-20<br/>SWOT))
+    Strengths
+      Police Goal Achieved
+        BRÅ confirmed 10,000 officers
+        HD03237 paid training addresses future supply
+        Government can claim delivery
+      Budget Transparency
+        KU42 constitutional scrutiny
+        Demonstrates fiscal accountability
+      Legislative Housekeeping
+        KU43 medal law modernisation
+        Cross-party support
+      Security Narrative
+        NATO contributions confirmed (sibling props)
+        Ukraine accountability measures tabled
+    Weaknesses
+      Agricultural Climate Gap
+        Riksrevisionen MJU21 documents failure
+        Sweden behind Nordic peers on farm emissions
+        No immediate remediation plan
+      Stockholm Police Distribution
+        HD10439: quality vs quantity exposed
+        Metropolitan policing gap persists
+      Infrastructure Accountability Deficit
+        Minister Carlson most-targeted (6th+ IP)
+        Trafikverket NGO funding cut (HD11722)
+        Strada database concerns (HD11724)
+      Ministerial Bandwidth
+        8 portfolios challenged in one day
+        S filing pace 50% above average
+    Opportunities
+      Counter-Narrative via Paid Training
+        HD03237 links to HD10439 proactively
+        Turn S's police question into government success
+      Agricultural Action Plan
+        Announce SOU within 30 days
+        Pre-empt Riksrevisionen finding escalation
+      Constitutional Credibility
+        KU42 debate showcases fiscal discipline
+        KU43 shows legislative efficiency
+      Energy Transition
+        HD03239/240 counter climate narrative
+        Municipal wind revenue sharing shows pragmatism
+    Threats
+      Climate Accountability Escalation
+        MJU21 + fuel tax cut (HD03236) = double front
+        Klimatpolitiska rådet likely to comment
+        S/MP/C can cite Riksrevisionen in election
+      Constitutional Trap
+        HD11726: constitutional knowledge question
+        Timed post-vilande amendments (KU33/KU32)
+        Education minister on record before election
+      S Escalation Risk
+        Current interpellation pace → week-3 surge late April
+        8 written questions today suggests momentum
+      Coalition Energy Fracture
+        HD11725 alum shale C+S alignment
+        SD pro-extraction vs C+S vs MP
+        Could expose Tidö coalition environmental limits
+```
+
+---
+
+## Coalition SWOT (Tidö: M-KD-L, supported by SD)
+
+### Strengths
+- **Police delivery**: BRÅ confirmed 10,000 officers target met — rare example of government delivering on a precise numerical commitment. Strömmer can invoke this against HD10439 `[VERY HIGH confidence 🟦]`
+- **Energy reform package**: The sibling proposition analysis confirms HD03239/240/238 deliver a coherent industrial policy — positive contrast to the climate-only narrative opposition prefers `[HIGH confidence 🟩]`
+- **NATO credibility**: HD03220 (EFP Finland) and Ukraine accountability measures (HD03231/32) place Sweden firmly in the mainstream European security architecture `[VERY HIGH confidence 🟦]`
+- **Fiscal package**: Three budget propositions (HD03100, HD0399, HD03236) provide election-year economic narrative `[HIGH confidence 🟩]`
+
+### Weaknesses
+- **Agricultural climate**: MJU21/Riksrevisionen creates an official record that cannot be redacted. Agriculture = 14% of domestic GHG; documented insufficiency joins fuel tax cut as climate credibility damage `[HIGH confidence 🟩]`
+- **Stockholm policing**: Quantitative goal vs qualitative/geographic distribution gap — S's framing exposes the limitation of headline-number politics `[MEDIUM confidence 🟧]`
+- **KD infrastructure**: Carlson's portfolio is consistently identified as weakest in coalition; KD cannot afford to lose further seats to M or S `[HIGH confidence 🟩]`
+- **Alum shale position**: SD's presumed support for mineral extraction puts it at odds with C (coalition-adjacent) and S on HD11725 — a microcosm of wider environmental coalition tension `[MEDIUM confidence 🟧]`
+
+### Opportunities
+- **Agricultural action plan**: A rapid announcement of an SOU or consultation process would transform MJU21 from a liability to a response. Window is April 20–May 10 before Riksdag recess discussions begin `[HIGH confidence 🟩]`
+- **Constitutional leadership**: KU42 debate on budget structure — if the government champions transparent fiscal architecture, it takes the lead narrative away from opposition `[MEDIUM confidence 🟧]`
+- **Police quality follow-up**: Address Stockholm distribution concern proactively in Strömmer's HD10439 response — cite HD03237 as the structural solution `[HIGH confidence 🟩]`
+
+### Threats
+- **Klimatpolitiska rådet escalation**: The council is independent; MJU21 finding likely triggers a council review comment in May–June 2026, amplifying the damage `[MEDIUM-HIGH confidence 🟧]`
+- **HD11726 constitutional trap**: The Education Ministry will have to answer "what is being done to increase constitutional knowledge among citizens?" — any weak answer will be weaponised as the vilande amendments make the constitution a live election issue `[MEDIUM confidence 🟧]`
+- **S filing momentum**: The week-over-week escalation in S's parliamentary activity (motions, interpellations, written questions) is structurally concerning — Riksdag summer recess approaches, each filed question locks in a ministerial record `[HIGH confidence 🟩]`
+
+---
+
+## Opposition SWOT (S + V + MP + C)
+
+### Strengths
+- **Documented government failures**: MJU21 provides an independent audit authority's finding — more durable than political accusations `[VERY HIGH confidence 🟦]`
+- **Coordinated accountability campaign**: S's simultaneous coverage of infrastructure, justice, energy, education, and climate demonstrates portfolio breadth that suggests S is ready to govern `[HIGH confidence 🟩]`
+- **Climate narrative coherence**: Fuel tax cut (HD03236) + agricultural climate failure (MJU21) + MJU25 (forthcoming) = a layered, multi-front climate case `[HIGH confidence 🟩]`
+
+### Weaknesses
+- **S silent on deportation** (from motions analysis): S's revealed strategic choice to avoid the security-enforcement immigration narrative limits coalition-building credibility on the right `[HIGH confidence 🟩]`
+- **V+MP electoral risk**: Their arms-export and immigration positions poll poorly with median voter `[MEDIUM confidence 🟧]`
+- **S must own economic failure too**: Sweden's 0.82% GDP growth and 8.69% unemployment happened under conditions S did not fully prevent when in government 2014–2022 `[MEDIUM confidence 🟧]`
+
+### Opportunities
+- **MJU21 amplification**: Bring Riksrevisionen finding to media at first plenary debate opportunity `[HIGH confidence 🟩]`
+- **HD11726 timing**: Constitutional knowledge debate immediately post-vilande amendments is symbolically perfect for S `[HIGH confidence 🟩]`
+
+### Threats
+- **Government pays its debts**: If Strömmer, Carlson, and other ministers respond substantively to the written question wave, the accountability saturation tactic loses impact `[MEDIUM confidence 🟧]`
+- **Election fatigue**: Voters may tune out escalating accountability campaigns if not tied to vivid personal stories `[LOW confidence 🟥]`
+
 ## Threat Analysis
 
 _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/threat-analysis.md)_
@@ -880,104 +990,6 @@ graph TD
 **Confidence level**: Threat near MEDIUM-HIGH (2026-04-20 evening)
 
 The dominant threat cluster is the **climate accountability compound** (MJU21 + HD03236 + HD11725) — independently verified, multi-front, and aligned with three opposition parties (S, MP, C). The secondary threat is the **parliamentary saturation campaign** — S's escalating filing pace is structurally asymmetric in that the government must respond to every question while S pays no cost for filing.
-
-## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/scenario-analysis.md)_
-
-**Date**: 2026-04-20 | **Horizon**: Tomorrow / 7-day / 30-day
-
----
-
-## Three Base Scenarios
-
-### Scenario A: Government Containment (35% probability)
-**Label**: "Strömmer Responds, Svantesson Pivots"
-**Confidence**: 🟧MEDIUM
-
-**Narrative**: Justice Minister Strömmer issues a strong HD10439 response citing HD03237 (paid training) as the structural answer to Stockholm police distribution gaps. The Climate/Agriculture Ministry announces an agricultural emissions action plan within 14 days of the MJU21 debate. The Education Ministry's HD11726 response references a new constitutional literacy campaign timed to coincide with the election. The government successfully frames the week as "accountable governance responding to legitimate questions."
-
-**Trigger calendar**:
-- T+3 days: Strömmer HD10439 response preview in media
-- T+7 days: Agricultural action plan announcement
-- T+14 days: HD11726 response published
-
-**ACH Assessment**: This scenario requires coordinated ministerial communications — possible given the government's Spring Fiscal package discipline, but the agricultural response timeline is tight.
-
----
-
-### Scenario B: S Accountability Gains Traction (50% probability)
-**Label**: "The Double Climate Indictment"
-**Confidence**: 🟩HIGH
-
-**Narrative**: MJU21 becomes the lead story in DN/SvD on April 21, framed as "Riksrevisionen: Sverige klarar inte jordbrukets klimatomställning." This is combined with reporting that the government simultaneously cut fuel taxes (HD03236), adding emissions. S's Magdalena Andersson holds a press conference citing both Riksrevisionen findings and the motions already filed (HD024082, HD024098). The police interpellation (HD10439) generates secondary coverage on Stockholm-specific policing gaps. The government's response window is 10 days but the media narrative is already set.
-
-**Trigger calendar**:
-- T+1 day: DN/SvD MJU21 front page
-- T+3 days: S press conference — climate double standard
-- T+7 days: Klimatpolitiska rådet statement
-- T+14 days: Strömmer HD10439 response — government defence
-
-**ACH Assessment**: This is the base case. S's filing discipline and the independent Riksrevisionen anchor make it structurally likely.
-
----
-
-### Scenario C: Constitutional Accountability Week (15% probability)
-**Label**: "Four Documents, One Theme: Who Controls the State?"
-**Confidence**: 🟥LOW-MEDIUM
-
-**Narrative**: The KU42 budget structure debate, the KU33/KU32 vilande amendments, the HD11726 constitutional knowledge question, and the announced KU summons of Finance Minister Svantesson (from realtime memory) combine into a unified "constitutional accountability week" narrative. Media frames the week as "who controls Sweden's constitutional architecture?" HD11726 becomes a viral talking point about the government changing the constitution without citizen education.
-
-**Trigger calendar**:
-- T+3 days: KU summons Svantesson hearing
-- T+5 days: KU42 plenary debate scheduled
-- T+7 days: HD11726 response triggers constitutional debate
-
-**ACH Assessment**: Requires media and opposition coordination to land the combined narrative. Possible but not structurally pre-determined.
-
----
-
-## Two Wildcards
-
-### Wildcard 1: Klimatpolitiska rådet Rapid Response
-**Probability**: 0.25 | **Impact if realised**: 🔴CRITICAL
-
-The independent climate policy council issues an urgent statement on the MJU21 + fuel tax cut combination within 7 days. This would:
-- Force a formal government response under Klimatlagen §5 (parliamentary notification obligation)
-- Create a legally grounded third-party corroboration of climate credibility concerns
-- Elevate the story from parliamentary-level to constitutional-level accountability
-
----
-
-### Wildcard 2: KU Summons Reveal Sensitive Budget Documents
-**Probability**: 0.20 | **Impact if realised**: 🟠HIGH
-
-The KU summons of Finance Minister Svantesson (flagged in realtime memory for this week) produces unexpected revelations about budgetary decision-making processes. If Svantesson's testimony on the Spring Economic Bill (HD03100) or the extra amendment budget (HD03236) reveals internal disagreements or rushed decision-making, the climate-fiscal accountability narrative widens.
-
----
-
-## ACH Grid — Key Hypotheses
-
-| Hypothesis | Scenario A | Scenario B | Scenario C |
-|-----------|:----------:|:----------:|:----------:|
-| H1: Media leads with MJU21 tomorrow | Contradicts | Supports | Neutral |
-| H2: S holds climate press conference by April 23 | Contradicts | Supports | Neutral |
-| H3: Government announces agricultural action plan by May 1 | Supports | Contradicts | Neutral |
-| H4: KU summons produces significant Svantesson testimony | Neutral | Neutral | Supports |
-| H5: Strömmer cites HD03237 in HD10439 response | Supports | Neutral | Neutral |
-
----
-
-## 30-Day Forward Indicators
-
-| Indicator | Expected Date | Significance |
-|-----------|:------------:|:------------:|
-| MJU21 plenary debate | April 28–May 5 | S/MP/C amplification opportunity |
-| HD10439 Strömmer response | ~April 30 | Government defence of police record |
-| Agricultural climate action plan | May 1–20 | Government damage control |
-| Klimatpolitiska rådet comment | May–June | Independent escalation |
-| S week-3 interpellation surge | April 28–May 5 | New target portfolios likely |
-| EU Commission climate review | May–June | Sweden's CAP compliance assessment |
 
 ## Comparative International
 

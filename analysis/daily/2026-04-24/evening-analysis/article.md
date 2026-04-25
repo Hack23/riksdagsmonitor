@@ -5,10 +5,26 @@ date: 2026-04-24
 subfolder: evening-analysis
 slug: 2026-04-24-evening-analysis
 source_folder: analysis/daily/2026-04-24/evening-analysis
-generated_at: 2026-04-24T19:20:36.076Z
+generated_at: 2026-04-25T10:10:10.989Z
 language: en
 layout: article
 ---
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Media framing](#rm-media-framing-analysis) | likely narrative frames, amplifiers, counter-frames, and manipulation risks | `media-framing-analysis.md` |
+| [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief.md)_
@@ -403,6 +419,99 @@ Three factors place today in the **top-5% of reporting-day signal density** for 
 
 _Source: sibling folder significance-scoring.md files + cross-type DIW re-weighting per `analysis/methodologies/ai-driven-analysis-guide.md §DIW Output Matrix`._
 
+## Media Framing Analysis
+
+_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/media-framing-analysis.md)_
+
+**Purpose**: Analyze how today's legislative batch is likely to be framed across major Swedish media categories and what this implies for narrative contestation.
+
+## Expected framing by outlet category
+
+### Public-service (SVT, SR, DN public-facing)
+- **Likely frame**: "Riksdagen behandlade fyra viktiga förslag" — procedurally balanced coverage
+- **Emphasis**: HD03252 and HD01CU25 will receive prominent coverage as most newsworthy
+- **Risk**: Proportionality framing on HD03252 — likely to be cautious/balanced
+
+### Major morning papers (Dagens Nyheter, Svenska Dagbladet)
+- **DN likely frame**: Rights-centric on HD03252; technocratic on HD03253; business-section on banking
+- **SvD likely frame**: Economic-competence framing on HD03253; fiscal-credibility framing on HD03104; business section for banking + SME sick-pay
+- **Divergence**: DN emphasizes rights/governance; SvD emphasizes fiscal/institutional
+
+### Tabloids (Aftonbladet, Expressen)
+- **Aftonbladet likely frame**: "Regeringen försämrar levnadsvillkor för dömda" — rights framing; SME sick-pay as welfare story
+- **Expressen likely frame**: "Tidöavtalet levererar" — coalition-delivery framing; cost-of-living framed as opposition weakness
+- **Divergence**: Sharp — these outlets anchor opposition and coalition narratives respectively
+
+### Business press (Affärsvärlden, Veckans Affärer)
+- **Frame**: HD03253 + HD01FiU23 take center stage; political framing ignored
+- **Emphasis**: Bank RWA impact; Riksbank annual review; Swedish financial-supervisory stance
+
+### Partisan/campaign media (various)
+- **S-aligned framing**: Cost-of-living; SME workers; drivmedel as "regressive"
+- **M/coalition-aligned framing**: Discipline + delivery; EU compliance; capacity expansion
+- **SD-aligned framing**: Migration + rights-restriction victories; the interpellation storm as opposition weakness signals
+
+## Framing contest on HD03252
+
+Critical contested story. Expected framings:
+
+| Outlet | Frame |
+|--------|-------|
+| Government PR | "Stramare regler mot dömda" — tightening rules against convicted |
+| SVT | "Regeringen stramar åt för häktade" — tightening for detainees |
+| DN leder | "Proportionalitetsfråga" |
+| Aftonbladet | "Människovärdets gränser" |
+| Expressen | "Strikt men rättfärdigt" |
+| V/MP aligned | "Människorättsattack" |
+
+**Framing-battle prediction**: 5–10 days of contested framing; dominant national frame will be somewhere between "stramare åtgärder" (neutral-government-leaning) and "proportionalitetsfråga" (neutral-rights-leaning). Aftonbladet and Expressen poles rarely capture majority framing in Swedish public discourse.
+
+## Framing contest on HD03253
+
+Less contested. Technocratic dominance likely:
+- Business press: "CRR3/CRD6 transposition announced" — factual
+- Broadsheets: Technical with policy context
+- Tabloids: Minimal coverage (low newsworthiness)
+- Political framing risk: SD could frame as "EU overreach" — low probability given SD's pro-coalition position today
+
+## Framing contest on HD10447
+
+S's most successful lever. Expected framings:
+- Aftonbladet: "Företag tvingas betala för sjuka anställda" — sympathetic to SME narrative
+- Expressen: "Skatteintäkter vs småföretag" — fiscal-framing
+- DN/SvD business section: Balanced; cost-of-labor framing
+- SVT Aktuellt: Likely features if Busch's response is defensive
+
+**Framing-battle prediction**: S will gain narrative ground if Busch's 2026-05-07 response is pure refusal. If Busch offers any compromise or review, framing neutralizes.
+
+## Narrative dominance matrix
+
+| Narrative | Coalition-favourable | Opposition-favourable |
+|-----------|----------------------|------------------------|
+| "Discipline + delivery" (HD03252/253/256/3104 + SD zero motions) | **HIGH** | LOW |
+| "Cost of living squeeze" (HD10447 + HD024082 cluster) | LOW | **HIGH** |
+| "Rights regime erosion" (HD03252 + HD01SfU23) | LOW | **HIGH** |
+| "Institutional competence" (HD03253 + HD01CU25) | **MEDIUM** | LOW |
+| "Coalition fragility" (L absence signal) | LOW | **MEDIUM** |
+| "Riksbank under threat" (HD01FiU23 latent) | LOW | LOW (dormant) |
+
+Net media-framing advantage over the next 14 days: **narrowly opposition-favourable** on volume (cost-of-living narrative has Segment F pull); **narrowly coalition-favourable** on institutional credibility.
+
+## Framing-to-polling conversion
+
+Historically, a 14-day dominant media frame shifts polling by approximately 0.5–1.5 pp in the favoured party. Today's contested framing batch could produce a **0.5–1.0 pp net shift** toward opposition on cost-of-living, partially offset by **0.3–0.5 pp** coalition shift on institutional credibility. **Net expected shift: 0.0 to +0.5 pp toward opposition** over 14 days.
+
+## Journalism quality and ICD 203 source-evaluation
+
+This analysis is framed-prediction, not primary-observation. Sources:
+- Content analysis from sibling folder media-framing-analysis files
+- Historical base-rate from 2022–2024 Riksdag-coverage patterns
+- Heuristic reasoning on rights/fiscal/institutional framing dynamics
+
+**Admiralty code for framings above**: B2 (reliable source category, but framed prediction, not observation).
+
+_Source: Synthesis of sibling media-framing artifacts + journalism-coverage-pattern base rates._
+
 ## Stakeholder Perspectives
 
 _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/stakeholder-perspectives.md)_
@@ -488,85 +597,235 @@ For each top-5 dok_id, weighted sum of aligned-vs-opposed stakeholders:
 
 _Source: sibling folder stakeholder-perspectives.md + synthesis of industry-briefing precedent._
 
-## SWOT Analysis
+## Forward Indicators
 
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/swot-analysis.md)_
+_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md)_
 
-**Framework**: Kent-SWOT with TOWS matrix per `ai-driven-analysis-guide.md §Step 6`.
-Actor of analysis: **The Tidö coalition government (M-KD-L + SD support party)** as it approaches September 2026 election.
+**Framework**: Four-horizon dated-indicator system per `ai-driven-analysis-guide.md §Step 10`.
+**Horizons**: T+7 days · T+30 days · T+90 days · T+12 months.
+**Indicator types**: Calendar-anchored · Event-triggered · Threshold-triggered.
 
-## Strengths
+## T+7 days (by 2026-05-01)
 
-| # | Strength | Evidence (dok_id) |
-|---|----------|-------------------|
-| S1 | Legislative throughput — 4 propositions on a single day, 9 active bills | HD03252, HD03253, HD03256, HD03104 |
-| S2 | SD coalition discipline intact — zero counter-motions on 9 bills | Motion registry (72h window) |
-| S3 | EU-alignment track record (CRR3/CRD6, tachograph) | HD03253, HD03256 |
-| S4 | Personal PM signature on all four props — concentrates credibility | Signing block on HD03252/253/256/3104 |
-| S5 | Administrative capacity backbone — Kriminalvården Q2 reporting | HD01CU25 |
+| # | Indicator | Trigger | Expected signal | Interpretation if YES | Interpretation if NO |
+|---|-----------|---------|------------------|------------------------|----------------------|
+| F1 | FiU session calendar published | calendar release | HD03253 first hearing date | S1 scenario reinforced | S3 indicator |
+| F2 | DN/SvD editorial on HD03252 | editorial publication | Proportionality framing | Framing contest live | Coalition framing dominant |
+| F3 | Aftonbladet front-page on SME sick-pay | front page | HD10447 narrative amplification | S wedge traction | Wedge contained |
 
-## Weaknesses
+## T+30 days (by 2026-05-24)
 
-| # | Weakness | Evidence (dok_id) |
-|---|----------|-------------------|
-| W1 | L (Liberals) out of lead-minister rotation — signals internal weight loss | Today's 4-bill batch (zero L leads) |
-| W2 | HD03252 proportionality design legally thin — ECHR litigation risk | KJ-5 |
-| W3 | HD03253 transposition timeline tight — missed EU deadline possible | PIR-1 |
-| W4 | Kriminalvården capacity plan unproven against demand curve | CU25 subtext |
-| W5 | No positive agenda on cost-of-living — exposed to S wedge | HD024082 + HD10447 |
+| # | Indicator | Trigger | Expected signal | Interpretation if YES | Interpretation if NO |
+|---|-----------|---------|------------------|------------------------|----------------------|
+| F4 | Minister Busch HD10447 response | 2026-05-07 session | Refusal / compromise / review | Campaign inflection | Routine defense |
+| F5 | JuU first hearing on HD03252 | schedule | Proportionality motion discussed | PIR-4 activation | Routine passage path |
+| F6 | L public comment on HD03252 | media appearance | L position clarity | Coalition reinforced | L flank signal |
+| F7 | Kriminalvården monthly capacity update | end of May publication | Capacity trend | On-track | PIR-5 pre-flag |
+| F8 | FiU schedule HD03253 (PIR-1) | 2026-05-15 deadline | Scheduling event | S1 reinforced | S3 activated |
 
-## Opportunities
+## T+90 days (by 2026-07-23)
 
-| # | Opportunity | Evidence / path |
-|---|-------------|-----------------|
-| O1 | Pre-recess "legacy-set" framing if all 4 bills pass by June | Committee calendar |
-| O2 | Banking-sector credit with orderly CRR3 transposition | HD03253 |
-| O3 | Kriminalvården Q2 "delivery moment" — visible capacity expansion | HD01CU25 |
-| O4 | Quiet co-option of MP's krigsmateriel bill (peel ethical voters) | HD024096 (low-cost signal) |
-| O5 | Economic-credibility narrative via skr debt management | HD03104 |
+| # | Indicator | Trigger | Expected signal | Interpretation if YES | Interpretation if NO |
+|---|-----------|---------|------------------|------------------------|----------------------|
+| F9 | HD03252 floor vote outcome | June 2026 | Coalition discipline on amendments | Sprint narrative succeeds | Fracture emerges |
+| F10 | Q2 Kriminalvården capacity report | 2026-06-23 | Bed-count vs plan | On-plan = S1 | Off-plan = S2 |
+| F11 | Polling shift (YouGov/Novus) | Quarterly | +/- 3pp shift bloc-to-bloc | Scenario discrimination | Status quo |
+| F12 | HD03253 first-reading complete | June/July | Transposition timeline | S1 reinforced | S3 signals |
+| F13 | ECHR filing signal on HD03252 | post-enactment | Filing preliminaries | R2 activated | Latent remains |
+| F14 | SD 30-day motion-filing rate | rolling | Coalition discipline index | < 2 motions = S1 | > 3 motions = signal |
 
-## Threats
+## T+12 months (by 2027-04-24)
 
-| # | Threat | Evidence / trigger |
-|---|--------|---------------------|
-| T1 | ECHR challenge to HD03252 within 18 months | KJ-5 |
-| T2 | Missed EU banking transposition deadline | PIR-1 |
-| T3 | S successful cost-of-living campaign (drivmedel + SME sick-pay) | HD024082, HD10447 |
-| T4 | L-coalition fracture on HD03252 proportionality | PIR-2 |
-| T5 | Riksbank-independence debate re-opening (sleeper) | HD01FiU23 |
-| T6 | Opposition coordination on utvisning/bifurcation | HD024090/95/97, HD01SfU23 |
-| T7 | Late-cycle capacity slippage in Kriminalvården | CU25 operational risk |
+| # | Indicator | Trigger | Expected signal | Interpretation |
+|---|-----------|---------|------------------|-----------------|
+| F15 | September 2026 election outcome | Sep 2026 | Mandatsiffror | Scenario S1/S2/S3/S4 resolution |
+| F16 | EU Commission letter on CRR3 transposition | post-deadline | Regulatory letter | R1 confirmed or avoided |
+| F17 | First ECHR chamber-level filing on HD03252 | Q2-Q3 2027 | Case registration | R2 activated |
+| F18 | Kriminalvården annual capacity report | Q1 2027 | Capacity delivery | Operational promise-keeping |
+| F19 | SME sick-pay legislation under new government? | post-election | Legislative proposal | Post-S1 or post-S2 directly |
+| F20 | Riksbank-independence debate escalation | ongoing | Institutional debate | Black-swan latent |
 
-## TOWS matrix
+## Indicator priority ranking
 
-| | Opportunities | Threats |
-|---|---------------|---------|
-| **Strengths** | **SO — Delivery-credibility sprint**: S1/S4 × O1/O3. Finish 4 bills + CU25 Q2 delivery milestone on the same pre-recess timeline. Yields "We deliver" narrative. | **ST — Proportionality defence**: S1 × T1/T4. Leverage parliamentary majority to add a formal proportionality safeguard to HD03252, pre-empting ECHR challenge and L fracture. |
-| **Weaknesses** | **WO — Positive-agenda gap close**: W5 × O5. Use HD03104 debt-management skr as platform for a pre-recess cost-of-living communication push. Partial, but better than silence. | **WT — Defensive containment**: W1/W3 × T2/T3. Accept that HD03253 may slip to autumn; pre-announce a transposition roadmap. On L, pre-emptively float a minor HD03252 amendment to prevent open fracture. |
+**Tier-1 (decision-forcing, < 30 days)**:
+- F4 (Busch response 2026-05-07)
+- F6 (L position on HD03252)
+- F8 (PIR-1: FiU HD03253 schedule)
 
-## TOWS strategic recommendations (for intelligence consumers, not the coalition)
+**Tier-2 (scenario-discriminating, 30–90 days)**:
+- F9 (HD03252 floor vote)
+- F10 (Kriminalvården Q2)
+- F11 (polling shift)
+- F12 (HD03253 first-reading)
 
-**For parliamentary watchers**:
-- Monitor L's JuU statements on HD03252 for the first-week-of-May proportionality amendment. If L supports amendment, coalition is reinforced; if L opposes, first real fracture of mandate.
-- Monitor FiU calendar on HD03253 — schedule by 2026-05-15 is signal of transposition health.
+**Tier-3 (strategic, >90 days)**:
+- F15 (election outcome)
+- F16-F20 (post-election)
 
-**For financial-stability watchers**:
-- HD03253 + HD01FiU23 together: the coming 60 days will reshape the Swedish prudential-oversight landscape.
-- Monitor RWA communications from Swedish banks post-transposition announcement.
+## Calendar placement
 
-**For civil-liberty watchers**:
-- HD03252 third reading likely June 2026. Litigation-preparation window: June 2026–Aug 2027.
+```mermaid
+gantt
+  dateFormat YYYY-MM-DD
+  title Forward Indicators Timeline
+  section T+7 days
+  FiU calendar publication :done, f1, 2026-04-28, 3d
+  Media framing emergence  :done, f2, 2026-04-25, 6d
+  section T+30 days
+  Busch HD10447 response   :f4, 2026-05-07, 1d
+  JuU first hearing HD03252 :f5, 2026-05-20, 7d
+  FiU HD03253 scheduling (PIR-1) :crit, f8, 2026-05-15, 1d
+  section T+90 days
+  HD03252 floor vote       :f9, 2026-06-10, 1d
+  Kriminalvården Q2 report :f10, 2026-06-23, 1d
+  HD03253 first-reading    :f12, 2026-07-05, 15d
+  Polling update           :f11, 2026-07-15, 7d
+  section T+12 months
+  Election                 :crit, f15, 2026-09-13, 1d
+  ECHR preliminary filing  :f17, 2027-04-01, 90d
+```
 
-**For opposition analysts**:
-- S has chosen its campaign terrain (economy). V has chosen rights. MP has chosen ethics. C has chosen migration-flank differentiation. **Four separate campaign arcs in one reporting day** — a first in this mandate.
+## Indicator-to-PIR mapping
 
-## Net SWOT balance
+| Forward Indicator | Linked PIR |
+|-------------------|------------|
+| F4 | PIR-3 |
+| F5 | PIR-4 |
+| F6 | PIR-2 |
+| F7, F10, F18 | PIR-5 |
+| F8 | PIR-1 |
+| F13, F17 | PIR-2 (and emerging) |
+| F15 | All scenarios |
+| F16 | PIR-1 final resolution |
+| F20 | PIR-7 |
 
-- **Strengths (5) > Weaknesses (5)** but substantively equal — Tidöavtalet delivery is real but fragile.
-- **Opportunities (5) ≈ Threats (7)** — threats narrowly outnumber opportunities.
-- **Net strategic position**: *coalition is delivering on its legacy agenda but accumulating latent risks* — precisely the position a pre-election incumbent adopts when converting political capital to policy durability.
+## Null-indicator watch
 
-_Source: Kent-SWOT synthesis of all sibling SWOT analyses + cross-type strategic framing._
+Three **absence** signals to monitor (dog-that-did-not-bark):
+
+- **SD silence on HD03252**: if SD remains silent through JuU, coalition discipline reinforced
+- **L silence on HD03252**: if L declines public comment for 30 days, coalition internal-management succeeded
+- **MP silence on drivmedel**: if MP joins drivmedel cluster (currently S-led), opposition consolidation sharpened
+
+## Monitoring cadence
+
+- **Daily**: F1-F3 (T+7 watch)
+- **Weekly**: F4-F8 + null-indicators
+- **Bi-weekly**: Polling updates (F11)
+- **Monthly**: F9-F14 comprehensive review
+- **Quarterly**: F15-F20 strategic review
+
+_Source: Synthesis of sibling forward-indicators artifacts; calendar-anchoring per published Riksdag session plan._
+
+## Scenario Analysis
+
+_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md)_
+
+**Framework**: Three-scenario baseline + branching (ICD 203 Standard 9 — alternative analysis)
+**Horizon**: T+30 days (pre-summer-recess) → T+4 months (early election campaign) → T+12 months (post-election)
+**Baseline date**: 2026-04-24
+
+## Scenario set (probabilities sum to 1.00)
+
+### Scenario S1 — "Sprint succeeds, coalition consolidates" (Prob: 0.50)
+
+**Storyline**: All 4 propositions pass committee by mid-June, floor by end-June. HD03253 transposition schedule holds. HD01CU25 Kriminalvården Q2 report shows on-plan capacity. SD maintains zero-motion discipline through summer. L publicly supports HD03252 after a cosmetic proportionality amendment. S's cost-of-living campaign gains traction in July but coalition responds with a pre-recess communication package. The Tidö coalition enters summer recess with a delivery-legacy narrative largely intact.
+
+**Signposts**:
+- FiU schedules HD03253 first hearing by 2026-05-15 (PIR-1)
+- JuU passes HD03252 with proportionality amendment by 2026-06-10 (PIR-4)
+- Q2 Kriminalvården report on-plan ±5% (PIR-5)
+- YouGov/Novus show no ≥ 3pp shift toward S before 2026-08-31
+
+**Falsifiers**: Any of the four signposts fails → downgrade to S2.
+
+### Scenario S2 — "Wedge works, opposition gains ground" (Prob: 0.35)
+
+**Storyline**: S's HD10447 + drivmedel combination gains media traction during May. Minister Busch gives a flat-footed response. Q2 Kriminalvården capacity data disappoints. Polling shifts 3–5pp toward S–V–MP bloc by August. Coalition still holds formally but loses pre-election momentum. HD03252 passes with minor amendment but faces first ECHR filing signal in Q4. HD03253 transposition slips to autumn session.
+
+**Signposts**:
+- Busch's 2026-05-07 HD10447 response rated defensive in major editorials
+- Q2 Kriminalvården capacity off-plan ≥ 10% (PIR-5 trigger)
+- Polling shift ≥ 3pp toward S+V+MP by 2026-08-15
+- First ECHR preliminary filing signal on HD03252 before 2026-12-31
+
+**Falsifiers**: Coalition response to the above blunts wedge → upgrade back to S1 (conditional).
+
+### Scenario S3 — "Institutional stress — EU deadline slips + L fracture" (Prob: 0.12)
+
+**Storyline**: HD03253 FiU schedule slips past 2026-05-15. Summer recess consumed. Autumn session rushed. L publicly dissents on HD03252 proportionality, forcing a coalition crisis-management episode in JuU. SD silence broken by an unexpected counter-signal on detainee benefits. Opposition unity strengthens. Coalition enters election campaign with fractured L flank, late EU-banking transposition, and one ECHR filing.
+
+**Signposts**:
+- FiU fails to schedule HD03253 by 2026-05-15
+- L MP(s) publicly dissent on HD03252 proportionality before 2026-05-31 (PIR-2)
+- SD counter-motion or abstention on HD03252
+- EU Commission sends letter of formal notice on CRR3 transposition
+
+**Falsifiers**: L internal resolution on HD03252 → conditional downgrade.
+
+### Scenario S4 — "Black swan — Riksbank independence flashpoint" (Prob: 0.03)
+
+**Storyline**: HD01FiU23 debate takes an unexpected turn with SD or KD raising a political-oversight proposal. Media frames as "government challenges Riksbank". Markets respond with currency volatility. Opposition pivots to constitutional-defender narrative. Coalition dominates the news cycle for the wrong reason. All other bills become secondary.
+
+**Signposts**:
+- HD01FiU23 debate features any proposal to review Riksbank independence
+- SEK weakens > 2% against EUR on the debate day
+- KU initiates review of Riksbank law
+
+**Falsifiers**: HD01FiU23 passes as routine annual review.
+
+## Scenario tree diagram
+
+```mermaid
+flowchart LR
+  Start["2026-04-24\nBaseline"] --> Dec1{"FiU schedules\nHD03253 by\n2026-05-15?"}
+  Dec1 -- Yes --> Dec2{"L supports\nHD03252 amendment?"}
+  Dec1 -- No --> Dec3{"Autumn slip\nor EU letter?"}
+  Dec2 -- Yes --> Dec4{"S campaign\ntraction Q3?"}
+  Dec2 -- No --> S3["S3\nInstitutional\nstress"]
+  Dec4 -- Low --> S1["S1\nSprint\nsucceeds"]
+  Dec4 -- High --> S2["S2\nWedge works"]
+  Dec3 -- Autumn slip --> S2
+  Dec3 -- EU letter --> S3
+  Start -.->|Unconditional\np=0.03| S4["S4\nBlack swan\nRiksbank"]
+  classDef s1 fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
+  classDef s2 fill:#ffbe0b,stroke:#ffbe0b,color:#0a0e27
+  classDef s3 fill:#ff006e,stroke:#ff006e,color:#fff
+  classDef s4 fill:#6a4c93,stroke:#6a4c93,color:#fff
+  class S1 s1
+  class S2 s2
+  class S3 s3
+  class S4 s4
+```
+
+## Probability rationale
+
+| Scenario | Prior | Evidence pull | Posterior |
+|----------|-------|---------------|-----------|
+| S1 | 0.40 | +SD discipline intact, +PM-signed bills, −L quiet (neutral-to-positive) | 0.50 |
+| S2 | 0.35 | +S concentrated strategy, +drivmedel 3-party convergence | 0.35 |
+| S3 | 0.20 | −only L quiet, no public dissent, +EU deadline tight | 0.12 |
+| S4 | 0.05 | −no current catalyst visible | 0.03 |
+| **Sum** | **1.00** | | **1.00** ✅ |
+
+## Implications by scenario
+
+| Scenario | Implication for coalition | Implication for opposition | Implication for markets | Implication for civil society |
+|----------|---------------------------|-----------------------------|--------------------------|-------------------------------|
+| S1 | Delivery-legacy | Regroup for Q4 | Low volatility | Prep for post-enactment litigation |
+| S2 | Campaign on defense | Momentum, maintain discipline | Moderate SEK, equity volatility | Active press/campaign coordination |
+| S3 | Crisis management | Windfall | High volatility; bank equities weak | Accelerated ECHR prep |
+| S4 | Worst case; crisis | Windfall; constitutional frame | High SEK/bond volatility | Neutral (institutional, not rights) |
+
+## Cross-scenario monitoring plan
+
+**Week of 2026-04-28**: FiU agenda publication (HD03253 scheduling) — binary signal for S1 vs S3.
+**Week of 2026-05-05**: Minister Busch response on HD10447 — signal for S1 vs S2.
+**Week of 2026-05-15**: PIR-1 deadline — binary signal.
+**Week of 2026-06-09**: JuU passage of HD03252 — signal on L flank.
+**Week of 2026-06-23**: Kriminalvården Q2 capacity report — S1 stability signal.
+
+_Source: cross-scenario synthesis of sibling scenario analyses; Bayesian re-weighting of priors based on today's signals._
 
 ## Risk Assessment
 
@@ -647,6 +906,86 @@ L=1      ·     ·     ·     ·     ·
 - **Heat cell concentration**: 2 risks in the (3,4)-(4,4) quadrant — both on HD03252.
 
 _Source: cross-reads of all 4 sibling risk-assessment.md files._
+
+## SWOT Analysis
+
+_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/swot-analysis.md)_
+
+**Framework**: Kent-SWOT with TOWS matrix per `ai-driven-analysis-guide.md §Step 6`.
+Actor of analysis: **The Tidö coalition government (M-KD-L + SD support party)** as it approaches September 2026 election.
+
+## Strengths
+
+| # | Strength | Evidence (dok_id) |
+|---|----------|-------------------|
+| S1 | Legislative throughput — 4 propositions on a single day, 9 active bills | HD03252, HD03253, HD03256, HD03104 |
+| S2 | SD coalition discipline intact — zero counter-motions on 9 bills | Motion registry (72h window) |
+| S3 | EU-alignment track record (CRR3/CRD6, tachograph) | HD03253, HD03256 |
+| S4 | Personal PM signature on all four props — concentrates credibility | Signing block on HD03252/253/256/3104 |
+| S5 | Administrative capacity backbone — Kriminalvården Q2 reporting | HD01CU25 |
+
+## Weaknesses
+
+| # | Weakness | Evidence (dok_id) |
+|---|----------|-------------------|
+| W1 | L (Liberals) out of lead-minister rotation — signals internal weight loss | Today's 4-bill batch (zero L leads) |
+| W2 | HD03252 proportionality design legally thin — ECHR litigation risk | KJ-5 |
+| W3 | HD03253 transposition timeline tight — missed EU deadline possible | PIR-1 |
+| W4 | Kriminalvården capacity plan unproven against demand curve | CU25 subtext |
+| W5 | No positive agenda on cost-of-living — exposed to S wedge | HD024082 + HD10447 |
+
+## Opportunities
+
+| # | Opportunity | Evidence / path |
+|---|-------------|-----------------|
+| O1 | Pre-recess "legacy-set" framing if all 4 bills pass by June | Committee calendar |
+| O2 | Banking-sector credit with orderly CRR3 transposition | HD03253 |
+| O3 | Kriminalvården Q2 "delivery moment" — visible capacity expansion | HD01CU25 |
+| O4 | Quiet co-option of MP's krigsmateriel bill (peel ethical voters) | HD024096 (low-cost signal) |
+| O5 | Economic-credibility narrative via skr debt management | HD03104 |
+
+## Threats
+
+| # | Threat | Evidence / trigger |
+|---|--------|---------------------|
+| T1 | ECHR challenge to HD03252 within 18 months | KJ-5 |
+| T2 | Missed EU banking transposition deadline | PIR-1 |
+| T3 | S successful cost-of-living campaign (drivmedel + SME sick-pay) | HD024082, HD10447 |
+| T4 | L-coalition fracture on HD03252 proportionality | PIR-2 |
+| T5 | Riksbank-independence debate re-opening (sleeper) | HD01FiU23 |
+| T6 | Opposition coordination on utvisning/bifurcation | HD024090/95/97, HD01SfU23 |
+| T7 | Late-cycle capacity slippage in Kriminalvården | CU25 operational risk |
+
+## TOWS matrix
+
+| | Opportunities | Threats |
+|---|---------------|---------|
+| **Strengths** | **SO — Delivery-credibility sprint**: S1/S4 × O1/O3. Finish 4 bills + CU25 Q2 delivery milestone on the same pre-recess timeline. Yields "We deliver" narrative. | **ST — Proportionality defence**: S1 × T1/T4. Leverage parliamentary majority to add a formal proportionality safeguard to HD03252, pre-empting ECHR challenge and L fracture. |
+| **Weaknesses** | **WO — Positive-agenda gap close**: W5 × O5. Use HD03104 debt-management skr as platform for a pre-recess cost-of-living communication push. Partial, but better than silence. | **WT — Defensive containment**: W1/W3 × T2/T3. Accept that HD03253 may slip to autumn; pre-announce a transposition roadmap. On L, pre-emptively float a minor HD03252 amendment to prevent open fracture. |
+
+## TOWS strategic recommendations (for intelligence consumers, not the coalition)
+
+**For parliamentary watchers**:
+- Monitor L's JuU statements on HD03252 for the first-week-of-May proportionality amendment. If L supports amendment, coalition is reinforced; if L opposes, first real fracture of mandate.
+- Monitor FiU calendar on HD03253 — schedule by 2026-05-15 is signal of transposition health.
+
+**For financial-stability watchers**:
+- HD03253 + HD01FiU23 together: the coming 60 days will reshape the Swedish prudential-oversight landscape.
+- Monitor RWA communications from Swedish banks post-transposition announcement.
+
+**For civil-liberty watchers**:
+- HD03252 third reading likely June 2026. Litigation-preparation window: June 2026–Aug 2027.
+
+**For opposition analysts**:
+- S has chosen its campaign terrain (economy). V has chosen rights. MP has chosen ethics. C has chosen migration-flank differentiation. **Four separate campaign arcs in one reporting day** — a first in this mandate.
+
+## Net SWOT balance
+
+- **Strengths (5) > Weaknesses (5)** but substantively equal — Tidöavtalet delivery is real but fragile.
+- **Opportunities (5) ≈ Threats (7)** — threats narrowly outnumber opportunities.
+- **Net strategic position**: *coalition is delivering on its legacy agenda but accumulating latent risks* — precisely the position a pre-election incumbent adopts when converting political capital to policy durability.
+
+_Source: Kent-SWOT synthesis of all sibling SWOT analyses + cross-type strategic framing._
 
 ## Threat Analysis
 
@@ -795,236 +1134,6 @@ See aggregated analysis in:
 - [`../coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md)
 
 Primary sibling folder analyses under `analysis/daily/2026-04-24/` carry the single-type deep treatment.
-
-## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md)_
-
-**Framework**: Three-scenario baseline + branching (ICD 203 Standard 9 — alternative analysis)
-**Horizon**: T+30 days (pre-summer-recess) → T+4 months (early election campaign) → T+12 months (post-election)
-**Baseline date**: 2026-04-24
-
-## Scenario set (probabilities sum to 1.00)
-
-### Scenario S1 — "Sprint succeeds, coalition consolidates" (Prob: 0.50)
-
-**Storyline**: All 4 propositions pass committee by mid-June, floor by end-June. HD03253 transposition schedule holds. HD01CU25 Kriminalvården Q2 report shows on-plan capacity. SD maintains zero-motion discipline through summer. L publicly supports HD03252 after a cosmetic proportionality amendment. S's cost-of-living campaign gains traction in July but coalition responds with a pre-recess communication package. The Tidö coalition enters summer recess with a delivery-legacy narrative largely intact.
-
-**Signposts**:
-- FiU schedules HD03253 first hearing by 2026-05-15 (PIR-1)
-- JuU passes HD03252 with proportionality amendment by 2026-06-10 (PIR-4)
-- Q2 Kriminalvården report on-plan ±5% (PIR-5)
-- YouGov/Novus show no ≥ 3pp shift toward S before 2026-08-31
-
-**Falsifiers**: Any of the four signposts fails → downgrade to S2.
-
-### Scenario S2 — "Wedge works, opposition gains ground" (Prob: 0.35)
-
-**Storyline**: S's HD10447 + drivmedel combination gains media traction during May. Minister Busch gives a flat-footed response. Q2 Kriminalvården capacity data disappoints. Polling shifts 3–5pp toward S–V–MP bloc by August. Coalition still holds formally but loses pre-election momentum. HD03252 passes with minor amendment but faces first ECHR filing signal in Q4. HD03253 transposition slips to autumn session.
-
-**Signposts**:
-- Busch's 2026-05-07 HD10447 response rated defensive in major editorials
-- Q2 Kriminalvården capacity off-plan ≥ 10% (PIR-5 trigger)
-- Polling shift ≥ 3pp toward S+V+MP by 2026-08-15
-- First ECHR preliminary filing signal on HD03252 before 2026-12-31
-
-**Falsifiers**: Coalition response to the above blunts wedge → upgrade back to S1 (conditional).
-
-### Scenario S3 — "Institutional stress — EU deadline slips + L fracture" (Prob: 0.12)
-
-**Storyline**: HD03253 FiU schedule slips past 2026-05-15. Summer recess consumed. Autumn session rushed. L publicly dissents on HD03252 proportionality, forcing a coalition crisis-management episode in JuU. SD silence broken by an unexpected counter-signal on detainee benefits. Opposition unity strengthens. Coalition enters election campaign with fractured L flank, late EU-banking transposition, and one ECHR filing.
-
-**Signposts**:
-- FiU fails to schedule HD03253 by 2026-05-15
-- L MP(s) publicly dissent on HD03252 proportionality before 2026-05-31 (PIR-2)
-- SD counter-motion or abstention on HD03252
-- EU Commission sends letter of formal notice on CRR3 transposition
-
-**Falsifiers**: L internal resolution on HD03252 → conditional downgrade.
-
-### Scenario S4 — "Black swan — Riksbank independence flashpoint" (Prob: 0.03)
-
-**Storyline**: HD01FiU23 debate takes an unexpected turn with SD or KD raising a political-oversight proposal. Media frames as "government challenges Riksbank". Markets respond with currency volatility. Opposition pivots to constitutional-defender narrative. Coalition dominates the news cycle for the wrong reason. All other bills become secondary.
-
-**Signposts**:
-- HD01FiU23 debate features any proposal to review Riksbank independence
-- SEK weakens > 2% against EUR on the debate day
-- KU initiates review of Riksbank law
-
-**Falsifiers**: HD01FiU23 passes as routine annual review.
-
-## Scenario tree diagram
-
-```mermaid
-flowchart LR
-  Start["2026-04-24\nBaseline"] --> Dec1{"FiU schedules\nHD03253 by\n2026-05-15?"}
-  Dec1 -- Yes --> Dec2{"L supports\nHD03252 amendment?"}
-  Dec1 -- No --> Dec3{"Autumn slip\nor EU letter?"}
-  Dec2 -- Yes --> Dec4{"S campaign\ntraction Q3?"}
-  Dec2 -- No --> S3["S3\nInstitutional\nstress"]
-  Dec4 -- Low --> S1["S1\nSprint\nsucceeds"]
-  Dec4 -- High --> S2["S2\nWedge works"]
-  Dec3 -- Autumn slip --> S2
-  Dec3 -- EU letter --> S3
-  Start -.->|Unconditional\np=0.03| S4["S4\nBlack swan\nRiksbank"]
-  classDef s1 fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
-  classDef s2 fill:#ffbe0b,stroke:#ffbe0b,color:#0a0e27
-  classDef s3 fill:#ff006e,stroke:#ff006e,color:#fff
-  classDef s4 fill:#6a4c93,stroke:#6a4c93,color:#fff
-  class S1 s1
-  class S2 s2
-  class S3 s3
-  class S4 s4
-```
-
-## Probability rationale
-
-| Scenario | Prior | Evidence pull | Posterior |
-|----------|-------|---------------|-----------|
-| S1 | 0.40 | +SD discipline intact, +PM-signed bills, −L quiet (neutral-to-positive) | 0.50 |
-| S2 | 0.35 | +S concentrated strategy, +drivmedel 3-party convergence | 0.35 |
-| S3 | 0.20 | −only L quiet, no public dissent, +EU deadline tight | 0.12 |
-| S4 | 0.05 | −no current catalyst visible | 0.03 |
-| **Sum** | **1.00** | | **1.00** ✅ |
-
-## Implications by scenario
-
-| Scenario | Implication for coalition | Implication for opposition | Implication for markets | Implication for civil society |
-|----------|---------------------------|-----------------------------|--------------------------|-------------------------------|
-| S1 | Delivery-legacy | Regroup for Q4 | Low volatility | Prep for post-enactment litigation |
-| S2 | Campaign on defense | Momentum, maintain discipline | Moderate SEK, equity volatility | Active press/campaign coordination |
-| S3 | Crisis management | Windfall | High volatility; bank equities weak | Accelerated ECHR prep |
-| S4 | Worst case; crisis | Windfall; constitutional frame | High SEK/bond volatility | Neutral (institutional, not rights) |
-
-## Cross-scenario monitoring plan
-
-**Week of 2026-04-28**: FiU agenda publication (HD03253 scheduling) — binary signal for S1 vs S3.
-**Week of 2026-05-05**: Minister Busch response on HD10447 — signal for S1 vs S2.
-**Week of 2026-05-15**: PIR-1 deadline — binary signal.
-**Week of 2026-06-09**: JuU passage of HD03252 — signal on L flank.
-**Week of 2026-06-23**: Kriminalvården Q2 capacity report — S1 stability signal.
-
-_Source: cross-scenario synthesis of sibling scenario analyses; Bayesian re-weighting of priors based on today's signals._
-
-## Forward Indicators
-
-_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md)_
-
-**Framework**: Four-horizon dated-indicator system per `ai-driven-analysis-guide.md §Step 10`.
-**Horizons**: T+7 days · T+30 days · T+90 days · T+12 months.
-**Indicator types**: Calendar-anchored · Event-triggered · Threshold-triggered.
-
-## T+7 days (by 2026-05-01)
-
-| # | Indicator | Trigger | Expected signal | Interpretation if YES | Interpretation if NO |
-|---|-----------|---------|------------------|------------------------|----------------------|
-| F1 | FiU session calendar published | calendar release | HD03253 first hearing date | S1 scenario reinforced | S3 indicator |
-| F2 | DN/SvD editorial on HD03252 | editorial publication | Proportionality framing | Framing contest live | Coalition framing dominant |
-| F3 | Aftonbladet front-page on SME sick-pay | front page | HD10447 narrative amplification | S wedge traction | Wedge contained |
-
-## T+30 days (by 2026-05-24)
-
-| # | Indicator | Trigger | Expected signal | Interpretation if YES | Interpretation if NO |
-|---|-----------|---------|------------------|------------------------|----------------------|
-| F4 | Minister Busch HD10447 response | 2026-05-07 session | Refusal / compromise / review | Campaign inflection | Routine defense |
-| F5 | JuU first hearing on HD03252 | schedule | Proportionality motion discussed | PIR-4 activation | Routine passage path |
-| F6 | L public comment on HD03252 | media appearance | L position clarity | Coalition reinforced | L flank signal |
-| F7 | Kriminalvården monthly capacity update | end of May publication | Capacity trend | On-track | PIR-5 pre-flag |
-| F8 | FiU schedule HD03253 (PIR-1) | 2026-05-15 deadline | Scheduling event | S1 reinforced | S3 activated |
-
-## T+90 days (by 2026-07-23)
-
-| # | Indicator | Trigger | Expected signal | Interpretation if YES | Interpretation if NO |
-|---|-----------|---------|------------------|------------------------|----------------------|
-| F9 | HD03252 floor vote outcome | June 2026 | Coalition discipline on amendments | Sprint narrative succeeds | Fracture emerges |
-| F10 | Q2 Kriminalvården capacity report | 2026-06-23 | Bed-count vs plan | On-plan = S1 | Off-plan = S2 |
-| F11 | Polling shift (YouGov/Novus) | Quarterly | +/- 3pp shift bloc-to-bloc | Scenario discrimination | Status quo |
-| F12 | HD03253 first-reading complete | June/July | Transposition timeline | S1 reinforced | S3 signals |
-| F13 | ECHR filing signal on HD03252 | post-enactment | Filing preliminaries | R2 activated | Latent remains |
-| F14 | SD 30-day motion-filing rate | rolling | Coalition discipline index | < 2 motions = S1 | > 3 motions = signal |
-
-## T+12 months (by 2027-04-24)
-
-| # | Indicator | Trigger | Expected signal | Interpretation |
-|---|-----------|---------|------------------|-----------------|
-| F15 | September 2026 election outcome | Sep 2026 | Mandatsiffror | Scenario S1/S2/S3/S4 resolution |
-| F16 | EU Commission letter on CRR3 transposition | post-deadline | Regulatory letter | R1 confirmed or avoided |
-| F17 | First ECHR chamber-level filing on HD03252 | Q2-Q3 2027 | Case registration | R2 activated |
-| F18 | Kriminalvården annual capacity report | Q1 2027 | Capacity delivery | Operational promise-keeping |
-| F19 | SME sick-pay legislation under new government? | post-election | Legislative proposal | Post-S1 or post-S2 directly |
-| F20 | Riksbank-independence debate escalation | ongoing | Institutional debate | Black-swan latent |
-
-## Indicator priority ranking
-
-**Tier-1 (decision-forcing, < 30 days)**:
-- F4 (Busch response 2026-05-07)
-- F6 (L position on HD03252)
-- F8 (PIR-1: FiU HD03253 schedule)
-
-**Tier-2 (scenario-discriminating, 30–90 days)**:
-- F9 (HD03252 floor vote)
-- F10 (Kriminalvården Q2)
-- F11 (polling shift)
-- F12 (HD03253 first-reading)
-
-**Tier-3 (strategic, >90 days)**:
-- F15 (election outcome)
-- F16-F20 (post-election)
-
-## Calendar placement
-
-```mermaid
-gantt
-  dateFormat YYYY-MM-DD
-  title Forward Indicators Timeline
-  section T+7 days
-  FiU calendar publication :done, f1, 2026-04-28, 3d
-  Media framing emergence  :done, f2, 2026-04-25, 6d
-  section T+30 days
-  Busch HD10447 response   :f4, 2026-05-07, 1d
-  JuU first hearing HD03252 :f5, 2026-05-20, 7d
-  FiU HD03253 scheduling (PIR-1) :crit, f8, 2026-05-15, 1d
-  section T+90 days
-  HD03252 floor vote       :f9, 2026-06-10, 1d
-  Kriminalvården Q2 report :f10, 2026-06-23, 1d
-  HD03253 first-reading    :f12, 2026-07-05, 15d
-  Polling update           :f11, 2026-07-15, 7d
-  section T+12 months
-  Election                 :crit, f15, 2026-09-13, 1d
-  ECHR preliminary filing  :f17, 2027-04-01, 90d
-```
-
-## Indicator-to-PIR mapping
-
-| Forward Indicator | Linked PIR |
-|-------------------|------------|
-| F4 | PIR-3 |
-| F5 | PIR-4 |
-| F6 | PIR-2 |
-| F7, F10, F18 | PIR-5 |
-| F8 | PIR-1 |
-| F13, F17 | PIR-2 (and emerging) |
-| F15 | All scenarios |
-| F16 | PIR-1 final resolution |
-| F20 | PIR-7 |
-
-## Null-indicator watch
-
-Three **absence** signals to monitor (dog-that-did-not-bark):
-
-- **SD silence on HD03252**: if SD remains silent through JuU, coalition discipline reinforced
-- **L silence on HD03252**: if L declines public comment for 30 days, coalition internal-management succeeded
-- **MP silence on drivmedel**: if MP joins drivmedel cluster (currently S-led), opposition consolidation sharpened
-
-## Monitoring cadence
-
-- **Daily**: F1-F3 (T+7 watch)
-- **Weekly**: F4-F8 + null-indicators
-- **Bi-weekly**: Polling updates (F11)
-- **Monthly**: F9-F14 comprehensive review
-- **Quarterly**: F15-F20 strategic review
-
-_Source: Synthesis of sibling forward-indicators artifacts; calendar-anchoring per published Riksdag session plan._
 
 ## Election 2026 Analysis
 
@@ -1480,99 +1589,6 @@ _Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/b
 Today's reporting day fits recurrent Swedish + Nordic patterns but with one distinctive feature: the **simultaneous layering of four policy axes** (rights, banking, migration, fiscal) on a single reporting day. In 25 years of post-2000 Nordic pre-election pushes, single-axis concentration is the norm. A four-axis push is a high-stakes gambit: if executed, it creates a legacy; if any axis breaks, it creates cascading doubt.
 
 _Source: Historical synthesis from general Swedish/Nordic parliamentary record; not primary-source queried this cycle._
-
-## Media Framing Analysis
-
-_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/media-framing-analysis.md)_
-
-**Purpose**: Analyze how today's legislative batch is likely to be framed across major Swedish media categories and what this implies for narrative contestation.
-
-## Expected framing by outlet category
-
-### Public-service (SVT, SR, DN public-facing)
-- **Likely frame**: "Riksdagen behandlade fyra viktiga förslag" — procedurally balanced coverage
-- **Emphasis**: HD03252 and HD01CU25 will receive prominent coverage as most newsworthy
-- **Risk**: Proportionality framing on HD03252 — likely to be cautious/balanced
-
-### Major morning papers (Dagens Nyheter, Svenska Dagbladet)
-- **DN likely frame**: Rights-centric on HD03252; technocratic on HD03253; business-section on banking
-- **SvD likely frame**: Economic-competence framing on HD03253; fiscal-credibility framing on HD03104; business section for banking + SME sick-pay
-- **Divergence**: DN emphasizes rights/governance; SvD emphasizes fiscal/institutional
-
-### Tabloids (Aftonbladet, Expressen)
-- **Aftonbladet likely frame**: "Regeringen försämrar levnadsvillkor för dömda" — rights framing; SME sick-pay as welfare story
-- **Expressen likely frame**: "Tidöavtalet levererar" — coalition-delivery framing; cost-of-living framed as opposition weakness
-- **Divergence**: Sharp — these outlets anchor opposition and coalition narratives respectively
-
-### Business press (Affärsvärlden, Veckans Affärer)
-- **Frame**: HD03253 + HD01FiU23 take center stage; political framing ignored
-- **Emphasis**: Bank RWA impact; Riksbank annual review; Swedish financial-supervisory stance
-
-### Partisan/campaign media (various)
-- **S-aligned framing**: Cost-of-living; SME workers; drivmedel as "regressive"
-- **M/coalition-aligned framing**: Discipline + delivery; EU compliance; capacity expansion
-- **SD-aligned framing**: Migration + rights-restriction victories; the interpellation storm as opposition weakness signals
-
-## Framing contest on HD03252
-
-Critical contested story. Expected framings:
-
-| Outlet | Frame |
-|--------|-------|
-| Government PR | "Stramare regler mot dömda" — tightening rules against convicted |
-| SVT | "Regeringen stramar åt för häktade" — tightening for detainees |
-| DN leder | "Proportionalitetsfråga" |
-| Aftonbladet | "Människovärdets gränser" |
-| Expressen | "Strikt men rättfärdigt" |
-| V/MP aligned | "Människorättsattack" |
-
-**Framing-battle prediction**: 5–10 days of contested framing; dominant national frame will be somewhere between "stramare åtgärder" (neutral-government-leaning) and "proportionalitetsfråga" (neutral-rights-leaning). Aftonbladet and Expressen poles rarely capture majority framing in Swedish public discourse.
-
-## Framing contest on HD03253
-
-Less contested. Technocratic dominance likely:
-- Business press: "CRR3/CRD6 transposition announced" — factual
-- Broadsheets: Technical with policy context
-- Tabloids: Minimal coverage (low newsworthiness)
-- Political framing risk: SD could frame as "EU overreach" — low probability given SD's pro-coalition position today
-
-## Framing contest on HD10447
-
-S's most successful lever. Expected framings:
-- Aftonbladet: "Företag tvingas betala för sjuka anställda" — sympathetic to SME narrative
-- Expressen: "Skatteintäkter vs småföretag" — fiscal-framing
-- DN/SvD business section: Balanced; cost-of-labor framing
-- SVT Aktuellt: Likely features if Busch's response is defensive
-
-**Framing-battle prediction**: S will gain narrative ground if Busch's 2026-05-07 response is pure refusal. If Busch offers any compromise or review, framing neutralizes.
-
-## Narrative dominance matrix
-
-| Narrative | Coalition-favourable | Opposition-favourable |
-|-----------|----------------------|------------------------|
-| "Discipline + delivery" (HD03252/253/256/3104 + SD zero motions) | **HIGH** | LOW |
-| "Cost of living squeeze" (HD10447 + HD024082 cluster) | LOW | **HIGH** |
-| "Rights regime erosion" (HD03252 + HD01SfU23) | LOW | **HIGH** |
-| "Institutional competence" (HD03253 + HD01CU25) | **MEDIUM** | LOW |
-| "Coalition fragility" (L absence signal) | LOW | **MEDIUM** |
-| "Riksbank under threat" (HD01FiU23 latent) | LOW | LOW (dormant) |
-
-Net media-framing advantage over the next 14 days: **narrowly opposition-favourable** on volume (cost-of-living narrative has Segment F pull); **narrowly coalition-favourable** on institutional credibility.
-
-## Framing-to-polling conversion
-
-Historically, a 14-day dominant media frame shifts polling by approximately 0.5–1.5 pp in the favoured party. Today's contested framing batch could produce a **0.5–1.0 pp net shift** toward opposition on cost-of-living, partially offset by **0.3–0.5 pp** coalition shift on institutional credibility. **Net expected shift: 0.0 to +0.5 pp toward opposition** over 14 days.
-
-## Journalism quality and ICD 203 source-evaluation
-
-This analysis is framed-prediction, not primary-observation. Sources:
-- Content analysis from sibling folder media-framing-analysis files
-- Historical base-rate from 2022–2024 Riksdag-coverage patterns
-- Heuristic reasoning on rights/fiscal/institutional framing dynamics
-
-**Admiralty code for framings above**: B2 (reliable source category, but framed prediction, not observation).
-
-_Source: Synthesis of sibling media-framing artifacts + journalism-coverage-pattern base rates._
 
 ## Implementation Feasibility
 

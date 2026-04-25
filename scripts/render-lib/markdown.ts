@@ -44,11 +44,54 @@ import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
-import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeStringify from 'rehype-stringify';
+import { visit, SKIP } from 'unist-util-visit';
+import { toString as hastToString } from 'hast-util-to-string';
+import GithubSlugger from 'github-slugger';
+import type { Element, Root } from 'hast';
 
 import { escapeHtml } from '../generate-sitemap-html.js';
+
+/**
+ * Wrap every `<table>` element in a `<div class="rm-table-wrap">` so wide
+ * tables can scroll horizontally without forcing `display: block` on the
+ * `<table>` itself. Keeping the native `display: table` preserves column
+ * sizing and the table semantics that assistive technology relies on.
+ */
+function rehypeWrapTables() {
+  return (tree: Root): void => {
+    visit(tree, 'element', (node: Element, index, parent) => {
+      if (node.tagName !== 'table' || !parent || typeof index !== 'number') {
+        return;
+      }
+      // Skip if already wrapped (idempotent). HAST `className` can be either
+      // a string or string[] depending on whether the wrapper was emitted by
+      // markdown processing (array) or pre-existing raw HTML (string).
+      if (
+        parent.type === 'element' &&
+        (parent as Element).tagName === 'div'
+      ) {
+        const cls = (parent as Element).properties?.className;
+        const hasClass =
+          (Array.isArray(cls) && (cls as string[]).includes('rm-table-wrap')) ||
+          (typeof cls === 'string' && cls.split(/\s+/).includes('rm-table-wrap'));
+        if (hasClass) {
+          return;
+        }
+      }
+      const wrapper: Element = {
+        type: 'element',
+        tagName: 'div',
+        properties: { className: ['rm-table-wrap'] },
+        children: [node],
+      };
+      // Replace the table in the parent's children with the wrapper.
+      (parent.children as unknown as Element[])[index] = wrapper;
+      return [SKIP, index + 1];
+    });
+  };
+}
 
 /**
  * Relax the default rehype-sanitize schema so the Mermaid `<pre class="mermaid">`
@@ -56,14 +99,63 @@ import { escapeHtml } from '../generate-sitemap-html.js';
  * sanitisation. Anything else continues to be scrubbed — no inline `<script>`,
  * no `javascript:` URLs, no `<iframe>`, no `<style>` tags.
  */
+/**
+ * Non-empty `clobberPrefix` for `rehype-sanitize`. We keep DOM-clobbering
+ * mitigation enabled for `name` / aria attributes, and use a stable,
+ * site-specific prefix (`rm-`) for heading element IDs.
+ *
+ * The IDs themselves are pre-prefixed by {@link rehypeSlugWithPrefix} so
+ * that `rehype-autolink-headings` emits `href="#rm-..."` that matches the
+ * final rendered ID. To avoid `rehype-sanitize` double-prefixing those
+ * already-prefixed IDs, we drop `id` from the clobber list — the prefix
+ * is still applied to all IDs (by us, at slug time), but the
+ * mitigation against `name` / aria-attribute clobbering is preserved.
+ */
+export const HEADING_ID_PREFIX = 'rm-';
+
+/**
+ * Custom rehype plugin that mirrors `rehype-slug` but pre-prefixes every
+ * generated heading ID with {@link HEADING_ID_PREFIX}. This is what makes
+ * `rehype-autolink-headings`' `href="#…"` values come out matching the
+ * sanitiser's clobber-prefixed IDs without needing a second post-pass to
+ * rewrite hrefs.
+ *
+ * Uses the same `github-slugger` library that `rehype-slug` uses, so the
+ * Reader Intelligence Guide anchors built by `aggregator.ts#anchorForTitle`
+ * (also via `github-slugger` + the same prefix) are guaranteed to match
+ * across punctuation, Unicode and duplicate-heading suffixes.
+ */
+function rehypeSlugWithPrefix() {
+  return (tree: Root): void => {
+    const slugger = new GithubSlugger();
+    visit(tree, 'element', (node: Element) => {
+      if (!/^h[1-6]$/.test(node.tagName)) return;
+      node.properties = node.properties ?? {};
+      if (typeof node.properties.id === 'string' && node.properties.id.length > 0) {
+        return;
+      }
+      const text = hastToString(node);
+      node.properties.id = `${HEADING_ID_PREFIX}${slugger.slug(text)}`;
+    });
+  };
+}
+
 export const sanitizeSchema: typeof defaultSchema = {
   ...defaultSchema,
+  // Drop `id` from the clobber list — heading IDs are already prefixed by
+  // {@link rehypeSlugWithPrefix} via {@link HEADING_ID_PREFIX}; allowing
+  // sanitize to also prefix would produce `rm-rm-…` and break the
+  // autolink-headings hrefs as well as the Reader Intelligence Guide.
+  // `name` / aria-attribute clobbering protection is preserved.
+  clobber: ['ariaDescribedBy', 'ariaLabelledBy', 'name'],
+  clobberPrefix: HEADING_ID_PREFIX,
   attributes: {
     ...defaultSchema.attributes,
     pre: [...(defaultSchema.attributes?.pre ?? []), ['className', 'mermaid']],
     code: [...(defaultSchema.attributes?.code ?? []), ['className', /^language-/], ['className', 'mermaid']],
     a: [...(defaultSchema.attributes?.a ?? []), ['className', 'anchor', 'heading-anchor'], 'ariaHidden', 'tabIndex'],
     span: [...(defaultSchema.attributes?.span ?? []), ['className', 'icon', 'icon-link']],
+    div: [...(defaultSchema.attributes?.div ?? []), ['className', 'rm-table-wrap']],
     h1: [...(defaultSchema.attributes?.h1 ?? []), 'id'],
     h2: [...(defaultSchema.attributes?.h2 ?? []), 'id'],
     h3: [...(defaultSchema.attributes?.h3 ?? []), 'id'],
@@ -96,12 +188,13 @@ export async function renderMarkdownToHtml(markdownBody: string): Promise<string
     .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
-    .use(rehypeSlug)
+    .use(rehypeSlugWithPrefix)
     .use(rehypeAutolinkHeadings, {
       behavior: 'append',
       properties: { className: ['anchor'], ariaHidden: 'true', tabIndex: -1 },
       content: { type: 'text', value: '' },
     })
+    .use(rehypeWrapTables)
     .use(rehypeSanitize, sanitizeSchema)
     .use(rehypeStringify, { allowDangerousHtml: false });
 

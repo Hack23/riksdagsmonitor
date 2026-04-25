@@ -5,10 +5,23 @@ date: 2026-04-19
 subfolder: realtime-1219
 slug: 2026-04-19-realtime-1219
 source_folder: analysis/daily/2026-04-19/realtime-1219
-generated_at: 2026-04-24T18:27:52.201Z
+generated_at: 2026-04-25T10:10:10.935Z
 language: en
 layout: article
 ---
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/executive-brief.md)_
@@ -555,6 +568,308 @@ graph TD
 | **International EU / CoE** | Watch Venice Commission engagement on KU33 Art 10 proportionality. HD03231 accession closes ICC jurisdictional gap on Russia aggression. |
 | **Media & public opinion** | Frame the rhetorical tension (domestic narrowing vs international accountability). Royal Kyiv visit is the broadcast-friendly entry point for Ukraine; KU33 is the technical-constitutional narrative. |
 
+## Scenario Analysis
+
+_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/scenario-analysis.md)_
+
+**SCN-ID**: SCN-20260419-1219
+**Date**: 2026-04-19
+**Analyst**: James Pether Sörling
+**Version**: 1.0 (Tier-C reference-grade extension)
+**Confidence**: MEDIUM-HIGH on base scenarios; LOW-MEDIUM on wildcards
+**Horizon Bands**: 30 days · 90 days · post-September-2026 election
+
+---
+
+## 🎲 Scenario Landscape Overview
+
+```mermaid
+graph TD
+    Now[2026-04-19 12:19 UTC<br/>State: Both clusters submitted<br/>KU33 + Ukraine package] --> D1[2026-04-22<br/>First Reading Vote]
+    D1 -->|Ja ≥ 175, SD holds| B1[Base Scenario<br/>P = 0.55]
+    D1 -->|Ja ≥ 175, narrow| B2[Bull: Strict Lagrådet<br/>P = 0.20]
+    D1 -->|Minority Ja or SD split| B3[Bear: Procedural drag<br/>P = 0.20]
+    D1 -->|Black-swan event| W1[Wildcards<br/>P = 0.05]
+    B1 --> E1[Sep 2026 Election]
+    B2 --> E1
+    B3 --> E1
+    E1 -->|Tidö retains| S1[KU33 confirmed Jan 2027]
+    E1 -->|S-led minority| S2[KU33 renegotiated]
+    E1 -->|S+V+MP majority| S3[KU33 rejected]
+
+    style B1 fill:#4a90e2,color:#fff
+    style B2 fill:#43a047,color:#fff
+    style B3 fill:#e67e22,color:#fff
+    style W1 fill:#c0392b,color:#fff
+```
+
+Probabilities are point estimates with a ±0.10 epistemic band. They are updated against new Lagrådet, SÄPO, and polling signals per the Bayesian procedure in `risk-assessment.md` §Bayesian Update.
+
+---
+
+## 🧭 Three Base Scenarios
+
+### Scenario A — **Base Case: Orderly Dual-Track Advance** (P = 0.55)
+
+**Narrative**: First reading of KU33 + KU32 passes 2026-04-22 with government majority (M + SD + L + KD holding). Lagrådet yttrande interprets "*formellt tillförd bevisning*" conservatively enough to neutralise the strongest civil-liberties critique. HD03231 and HD03232 are referred to UU in late April, return as a betänkande in May–June, and pass chamber with cross-party Ja (SD attaches a cost-transparency reservation to HD03232). Ukraine tribunal accession completes before summer recess. Campaign season frames KU33 as a civil-liberties vs. law-enforcement trade-off; S position remains ambiguous into August polling.
+
+| Horizon | Milestone | Expected Outcome |
+|---------|-----------|------------------|
+| 30 days (by 2026-05-19) | KU33/KU32 first reading; UU hearing on HD03231/232 | First reading passes; UU hearing constructive |
+| 90 days (by 2026-07-18) | Ukraine propositions voted in chamber; summer recess begins | Broad Ja on both Ukraine propositions |
+| Post-election (Jan 2027) | KU33 second reading in new riksdag | **P(second reading confirms) = 0.55** under this scenario |
+
+**Monitoring triggers that INVALIDATE this scenario**:
+- Lagrådet yttrande uses "may" rather than "must" language on proportionality ⇒ shift to Scenario C
+- SD public statement flagging HD03232 cost red-line ⇒ shift to Scenario C
+- SOM-institute September poll shows Tidö bloc below 44% ⇒ downgrade post-election confirmation probability by 15 points
+
+---
+
+### Scenario B — **Bull Case: Lagrådet Narrows, Ukraine Surges** (P = 0.20)
+
+**Narrative**: Lagrådet yttrande on KU33 imposes a strict, literal reading of "*formellt tillförd bevisning*" — requiring formal documentation of incorporation before the carve-out attaches. This neutralises the SJF/RSF critique and lifts opposition uncertainty. Meanwhile, Ukraine propositions become a unifying national moment after the King's Kyiv visit saturates broadcast cycles. Cross-party support on HD03231 + HD03232 becomes unanimous in chamber. SD formally endorses both on Åkesson's public platform. Sweden positions as a norm-entrepreneur, attracting a follow-up invitation to host a preliminary tribunal preparatory conference.
+
+| Horizon | Milestone | Expected Outcome |
+|---------|-----------|------------------|
+| 30 days | Lagrådet narrow reading; SJF de-escalation | Civil-liberties critique defanged |
+| 90 days | Ukraine propositions pass with ≥ 320 Ja votes | Near-unanimous cross-party Ja |
+| Post-election | KU33 confirmed with some S support | **P(second reading confirms) = 0.75** under this scenario |
+
+**Monitoring triggers that would PROMOTE scenario from base to bull**:
+- Lagrådet publishes KU33 yttrande with explicit "shall be formally documented" language
+- Swedish polls show > 60% support for Ukraine tribunal accession post-King visit
+- Magdalena Andersson makes a public statement supporting KU33 proportionality
+
+---
+
+### Scenario C — **Bear Case: Procedural Drag + SD Defection** (P = 0.20)
+
+**Narrative**: Lagrådet yttrande is silent on the discretionary dimension of "*formellt tillförd bevisning*," amplifying SJF/RSF criticism. Tidö coalition holds first reading vote but with < 180 Ja votes (signalling internal fracture). SD announces a formal reservation on HD03232 cost projections, forcing a UU-committee compromise that inserts a Swedish contribution ceiling. S seizes on the KU33 ambiguity as a pre-election wedge issue. Press-freedom NGO coalition files a preemptive ECHR complaint. September election produces S-led minority government; KU33 second reading is renegotiated with a statutory (not grundlag) fallback.
+
+| Horizon | Milestone | Expected Outcome |
+|---------|-----------|------------------|
+| 30 days | Weak Lagrådet yttrande; SJF escalation | Rising political cost of KU33 |
+| 90 days | UU attaches HD03232 cost ceiling; SD reservation filed | Ukraine package passes but conditioned |
+| Post-election | S-led government renegotiates KU33 grundlag path | **P(second reading confirms original text) = 0.25** under this scenario |
+
+**Monitoring triggers that would PROMOTE scenario to bear**:
+- Lagrådet yttrande raises material proportionality concerns
+- SD public statement: "Swedish taxpayers cannot underwrite open-ended Compensation Commission"
+- Press-freedom NGO coalition public joint statement ≤ 2026-05-01
+- SOM poll shows Tidö bloc ≤ 44% combined in May/June 2026
+
+---
+
+## ⚡ Two Wildcards — Low-Probability / High-Impact
+
+### Wildcard W1 — **Russian hybrid retaliation after HD03231 chamber vote** (P = 0.04 · Impact = HIGH)
+
+Sweden's formal accession to the Special Tribunal for Aggression makes it the newest target of a pattern of Russian hybrid operations previously documented against Baltic and Nordic states (e.g., the 2023 SIS/SÄPO reports on Russian information ops targeting Swedish NATO discourse). Attack vectors documented in `threat-analysis.md` §4 include: (a) coordinated inauthentic behaviour amplifying KU33 "hypocrisy" framing in Swedish-language social media; (b) targeted phishing against UD officials working on tribunal accession; (c) DDoS against riksdagen.se during chamber-vote windows; (d) opportunistic diplomatic expulsion retaliation.
+
+**Leading indicators to promote P from 0.04 → 0.15**:
+- SÄPO public threat-level adjustment within 30 days of HD03231 chamber vote
+- Identified coordinated inauthentic behaviour clusters referencing tribunal accession
+- Russian embassy (or FSB-linked channels) public commentary naming Swedish officials
+
+---
+
+### Wildcard W2 — **US administration withdrawal from tribunal coordination** (P = 0.06 · Impact = MEDIUM)
+
+The US political posture on the Special Tribunal has been ambiguous across recent transitions. A formal withdrawal from tribunal coordination, or a public statement questioning its legitimacy, would be damaging — not because US membership is required, but because it would embolden non-European participating states to disengage and would rhetorically weaken the tribunal's claim to be "the international community's" response. Sweden's accession momentum could be seen as the ceiling rather than the floor of Western commitment.
+
+**Leading indicators to promote P from 0.06 → 0.20**:
+- US senior official public statement questioning tribunal legitimacy
+- US Treasury rejecting Euroclear-coordinated immobilised-asset mobilisation
+- Withdrawal of at least one non-European tribunal participant in the 30-day window
+
+---
+
+## 🔬 ACH — Analysis of Competing Hypotheses
+
+We test the question: **"What is the probability KU33 second reading confirms the grundlag amendment in January 2027?"**
+
+Five hypotheses are weighed against six pieces of evidence (each marked Consistent **C** / Inconsistent **I** / Neutral **N** with the hypothesis).
+
+| Hypothesis | E1: Current Tidö polling ≈ 48% | E2: S historically cautious on law-enforcement opposition | E3: V/MP firm opposition | E4: Offentlighetsprincipen cultural weight | E5: Grundlag two-reading design intent (brake) | E6: Comparable precedent (DE StPO §406e, FI JulkL §24) | **Weighted Score** |
+|-----------|:------------------------------:|:---------------------------------------------:|:----:|:--:|:--:|:--:|---|
+| **H1 — Confirmed original text** | C | C | I | I | I | C | 0 (2C–3I) |
+| **H2 — Confirmed with minor amendments** | C | C | N | I | N | C | **+2 (3C–1I)** ✅ |
+| **H3 — Rejected → statutory fallback** | I | I | C | C | C | I | 0 (3C–3I) |
+| **H4 — Rejected outright** | I | I | C | C | C | I | 0 (3C–3I) |
+| **H5 — Delayed to 2027/28 session** | N | N | N | N | I | N | −1 (0C–1I) |
+
+**Reading**: H2 (confirmed with amendments, most likely renegotiated language on "*formellt tillförd bevisning*") has the highest diagnostic score. H1 and H3 are close alternatives, with H1 advantaged in Scenario B and H3 advantaged in Scenario C. H5 is unlikely because the two-reading deadline is binding.
+
+**Converted base probability**: P(H2) ≈ 0.40 · P(H1) ≈ 0.25 · P(H3) ≈ 0.20 · P(H4) ≈ 0.10 · P(H5) ≈ 0.05.
+Aggregating H1 + H2 + modified confirmations gives the `executive-brief.md` second-reading confirmation forecast of **≈ 0.55**.
+
+---
+
+## 📅 Monitoring Trigger Calendar — Mapped to Scenario Shifts
+
+| Date | Event | Scenario Updated | New Signal |
+|------|-------|------------------|-----------|
+| 2026-04-22 | KU33 + KU32 first reading vote | A/B/C | Ja count; SD abstention pattern |
+| ≤ 2026-05-15 | Lagrådet yttrande on KU33/32 | A → B or A → C | Language on "*formellt tillförd*" |
+| 2026-05 | UU committee hearing HD03231 | A | SD reservation filing |
+| 2026-05 | UU committee hearing HD03232 | A → C on cost objection | SD cost-ceiling demand |
+| 2026-06 (est) | Chamber vote HD03231/232 | A | Cross-party Ja count |
+| 2026-06 to 09 | Monthly SOM polling | Bayesian update on post-election P | Tidö bloc vs. opposition bloc |
+| 2026-09-13 | Swedish general election | Terminal scenario fork | New riksdag composition |
+| 2026-09 → 12 | Government formation | H1/H2/H3 conditional on majority | KU33 coalition arithmetic |
+| 2026-12 or 2027-01 | KU33 second reading | TERMINAL | Confirmed / modified / rejected |
+
+---
+
+## 🔗 Cross-Reference to Upstream Work
+
+- **Scenario continuity** with [`analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md): the grundlag base/bull/bear structure introduced in 1434 is retained; probabilities updated downward for base (−0.05) on the basis of HD03232 cost uncertainty emerging in 1219.
+- **Post-election probability priors** drawn from [`analysis/daily/2026-04-18/weekly-review/scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/scenario-analysis.md) (if present) or the closest weekly-review available; divergences from weekly-review scenarios are justified in `methodology-reflection.md` §Probability-Alignment Audit.
+- **Russia hybrid W1** priors: leverage SÄPO and MUST documented post-NATO-accession hybrid posture; see `threat-analysis.md` §4 for the intelligence base.
+
+---
+
+## ⚠️ Confidence Markers & Known Limitations
+
+1. **Base-case probability (0.55)** has a ±0.10 epistemic band — do not treat as precise.
+2. **Post-election conditional probabilities** depend on poll-to-seat translations that are non-linear near majority boundary (around 175 seats).
+3. **Wildcard probabilities** are order-of-magnitude estimates; the *direction* matters more than the number.
+4. **ACH grid** uses evidence weights of 1.0 per piece; a sensitivity run with weighted evidence (E1 × 1.5 because it is dispositive) does not change the H2 ranking.
+
+---
+
+**Classification**: Public · **Next Review**: 2026-05-01 (after KU33 first reading + Lagrådet yttrande) · **Methodology**: `ai-driven-analysis-guide.md` v5.1 §Rule 6 (L3 tier) + ACH doctrine
+
+## Risk Assessment
+
+_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/risk-assessment.md)_
+
+**RSK-ID**: RSK-20260419-1219
+**Date**: 2026-04-19
+**Analyst**: James Pether Sörling
+**Version**: 3.0 (Pass 3 — reference-grade extension: 10 risks, interconnection graph, ALARP mapping)
+
+## Risk Heat Map
+
+```mermaid
+quadrantChart
+    title Risk Matrix — Parliamentary Activity 2026-04-19
+    x-axis Low Impact --> High Impact
+    y-axis Low Likelihood --> High Likelihood
+    quadrant-1 Monitor
+    quadrant-2 Act Now
+    quadrant-3 Accept
+    quadrant-4 Manage
+    KU33 Post-Election Reversal: [0.70, 0.65]
+    Ukraine Cost Escalation: [0.75, 0.55]
+    SD Support Withdrawal: [0.80, 0.40]
+    KU33 ECHR Challenge: [0.55, 0.50]
+    Housing Registry Delay: [0.40, 0.60]
+    Grundlag Rejection 2027: [0.85, 0.30]
+    Ukraine Tribunal Stalls: [0.60, 0.35]
+```
+
+## Ranked Risk Register
+
+| # | Risk | Likelihood (L) | Impact (I) | L×I | Trend | Mitigation |
+|---|------|---------------|-----------|-----|-------|-----------|
+| 1 | **KU33 confirmed by post-2026 riksdag** — opposition wins September 2026 election and rejects second reading | 0.40 | 0.90 | **0.36** | Rising | Monitor election polls; alert if opposition bloc exceeds 50% |
+| 2 | **Ukraine compensation costs exceed projections** — International Compensation Commission levies exceed SEK 2bn annually | 0.55 | 0.75 | **0.41** | Rising | Track commission establishment milestones; fiscal provisions in spring budget |
+| 3 | **SD withdraws cooperation on Ukraine financing** — SD voter base resistant to open-ended Ukraine financial commitments | 0.45 | 0.80 | **0.36** | Stable | Track SD party statements on Ukraine cost; watch Åkesson statements |
+| 4 | **KU33 challenged under ECHR Art 10 (free expression)** — Swedish journalists union or Reporters Without Borders files complaint | 0.50 | 0.70 | **0.35** | Rising | Monitor Council of Europe response; track JK (Justitiekanslern) guidance |
+| 5 | **Housing register (CU28) delayed** — Industry opposition slows implementation past Jan 2027 | 0.40 | 0.45 | **0.18** | Stable | Monitor Lantmäteriet capacity; track industry consultation |
+| 6 | **Grundlag amendment rejected** — September 2026 election produces majority that refuses second reading | 0.30 | 0.85 | **0.26** | Stable | Electoral arithmetic: requires both S and V to oppose |
+| 7 | **Ukraine Tribunal stalls** — Geopolitical shifts reduce participation; tribunal loses jurisdiction | 0.35 | 0.65 | **0.23** | Stable | Track Council of Europe participation numbers |
+
+## Cascading Risk Analysis
+
+**Primary risk chain**: SD withdrawal (Risk 3) → budget deal collapse → government confidence vote → snap election → KU33 second reading fails (Risk 6) → constitutional amendment abandoned.
+
+**Probability of chain**: P(3) × P(chain given 3) = 0.45 × 0.35 = **0.16 (16%)** — within planning horizon for 2026-2027.
+
+## Bayesian Update
+
+Prior probability (pre-session): Government stability = 0.65  
+New evidence: Multiple propositions passing committee, Ukraine propositions advancing = moderate positive signal  
+Posterior: Government stability = **0.68** (+0.03 update)
+
+Evidence weight: KU committees advancing government proposals without major dissent signals coalition cohesion is holding.
+
+## Risk by Dimension
+
+| Dimension | Top Risk | Score | Time horizon |
+|-----------|---------|-------|-------------|
+| Constitutional | KU33 rejection in 2027 | 7.5/10 | 12-18 months |
+| International | Ukraine cost escalation | 7.0/10 | 24-36 months |
+| Political | SD withdrawal from cooperation | 6.5/10 | 3-9 months |
+| Legal | ECHR challenge to KU33 | 6.0/10 | 6-24 months |
+| Administrative | CU28 implementation delay | 4.5/10 | 12-24 months |
+
+## Expanded Risk Register (10 risks)
+
+The following three additional risks complete the reference-grade register:
+
+| # | Risk | L | I | L×I | Horizon | Mitigation |
+|---|------|:---:|:---:|:---:|--------|------------|
+| 8 | **Lagrådet silent on "formellt tillförd" discretion** — weak yttrande amplifies SJF/RSF critique and hardens opposition position on KU33 | 0.45 | 0.60 | **0.27** | 0-30 days | Monitor Lagrådet publication calendar; prepare amendment draft |
+| 9 | **Russian hybrid interference escalation after HD03231 chamber vote** — coordinated inauthentic behaviour, phishing against UD, DDoS against riksdagen.se | 0.40 | 0.75 | **0.30** | 0-90 days post-vote | SÄPO liaison heightened; CERT-SE vigilance; MSB public-communication preparedness |
+| 10 | **US administration withdraws from tribunal coordination** — public statement questioning Special Tribunal legitimacy; emboldens non-European disengagement | 0.25 | 0.65 | **0.16** | 3-12 months | Diplomatic contingency with DE, FR, UK, NL; NATO/CoE escalation path |
+
+## Risk Interconnection Graph
+
+```mermaid
+graph LR
+    R3[R3 SD Withdrawal] -->|triggers| R1[R1 Election reversal<br/>of KU33]
+    R3 -->|triggers| R2[R2 Ukraine cost escalation<br/>harder to absorb]
+    R8[R8 Weak Lagrådet] -->|amplifies| R4[R4 ECHR challenge<br/>to KU33]
+    R8 -->|amplifies| R1
+    R9[R9 Russian hybrid] -->|drags posture| R10[R10 US withdrawal]
+    R10 -->|weakens| R2
+    R2 -->|if HD03232 passes<br/>with tight budget| R3
+    R6[R6 Grundlag rejected] -->|aligns with| R1
+    R5[R5 Housing delay] -.->|weak link| R3
+
+    style R1 fill:#ff4444,color:#fff
+    style R2 fill:#ff4444,color:#fff
+    style R3 fill:#ff6600,color:#fff
+    style R4 fill:#ff8800,color:#fff
+    style R8 fill:#ffbb00,color:#000
+    style R9 fill:#ffbb00,color:#000
+```
+
+Key interconnection findings:
+
+- **R3 is the systemic-risk hub** — SD cooperation withdrawal cascades into R1 (election reversal), R2 (Ukraine cost absorption), and indirectly R6 (grundlag rejection). Priority mitigation target.
+- **R8 amplifies R4 and R1** — a weak Lagrådet yttrande both raises ECHR challenge probability and hardens opposition second-reading stance.
+- **R2 → R3 feedback loop** — if HD03232 passes with tight fiscal budget, subsequent contribution increases could trigger SD withdrawal.
+
+## ALARP (As Low As Reasonably Practicable) Mapping
+
+| Risk | Current level | Target level | Mitigation cost | Effectiveness | ALARP verdict |
+|------|:-------------:|:------------:|:---------------:|:-------------:|:-------------:|
+| R1 KU33 election reversal | 0.36 | 0.25 | HIGH (coalition politics) | MEDIUM | **Accept** — democratic design, cannot be mitigated away |
+| R2 Ukraine cost escalation | 0.41 | 0.25 | MEDIUM (UU cost ceiling) | HIGH | **Reduce** — attach cost cap in UU betänkande |
+| R3 SD withdrawal | 0.36 | 0.20 | MEDIUM (coalition renegotiation) | MEDIUM | **Reduce** — transparency on HD03232 costs |
+| R4 ECHR challenge | 0.35 | 0.20 | LOW (strict Lagrådet language) | HIGH | **Reduce** — drive narrow "formellt tillförd" reading |
+| R8 Weak Lagrådet | 0.27 | 0.15 | LOW (government submission quality) | HIGH | **Reduce** — prepare responsive memorandum |
+| R9 Russian hybrid | 0.30 | 0.20 | HIGH (hybrid defence investment) | MEDIUM | **Reduce & Accept** — partial |
+| R10 US withdrawal | 0.16 | 0.16 | HIGH (diplomatic capital) | LOW | **Accept** — exogenous |
+
+## Bayesian Forward-Looking Update Rules
+
+Given a new signal at time t, update the posterior probability of each risk:
+
+| Signal | Effect on |
+|--------|-----------|
+| Lagrådet yttrande **strict** on "formellt tillförd" | R4 × 0.5 · R8 × 0.3 · R1 × 0.85 |
+| Lagrådet yttrande **silent / discretionary** | R4 × 1.5 · R8 × 1.8 · R1 × 1.2 |
+| SD red-line on HD03232 costs | R3 × 2.0 · R1 × 1.3 · R2 × 0.7 |
+| SÄPO threat-level increase (hybrid) | R9 × 2.0 |
+| US senior-official statement questioning tribunal | R10 × 2.5 |
+| SOM poll Tidö bloc < 44% | R1 × 1.5 · R3 × 1.3 |
+| SOM poll Tidö bloc > 50% | R1 × 0.6 · R3 × 0.8 |
+
 ## SWOT Analysis
 
 _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/swot-analysis.md)_
@@ -709,135 +1024,6 @@ SWOT entries mapped to influence network in [`stakeholder-perspectives.md`](http
 - **W1 × Opposition bloc** (S, V, MP) — KU33 civil-liberties critique is the structural opposition leverage
 - **S2 × H.M. King + FM Malmer Stenergard** — royal diplomatic signal is the Ukraine-package keystone
 - **T2 × SD Åkesson** — SD cost posture is the Ukraine-package single point of failure
-
-## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/risk-assessment.md)_
-
-**RSK-ID**: RSK-20260419-1219
-**Date**: 2026-04-19
-**Analyst**: James Pether Sörling
-**Version**: 3.0 (Pass 3 — reference-grade extension: 10 risks, interconnection graph, ALARP mapping)
-
-## Risk Heat Map
-
-```mermaid
-quadrantChart
-    title Risk Matrix — Parliamentary Activity 2026-04-19
-    x-axis Low Impact --> High Impact
-    y-axis Low Likelihood --> High Likelihood
-    quadrant-1 Monitor
-    quadrant-2 Act Now
-    quadrant-3 Accept
-    quadrant-4 Manage
-    KU33 Post-Election Reversal: [0.70, 0.65]
-    Ukraine Cost Escalation: [0.75, 0.55]
-    SD Support Withdrawal: [0.80, 0.40]
-    KU33 ECHR Challenge: [0.55, 0.50]
-    Housing Registry Delay: [0.40, 0.60]
-    Grundlag Rejection 2027: [0.85, 0.30]
-    Ukraine Tribunal Stalls: [0.60, 0.35]
-```
-
-## Ranked Risk Register
-
-| # | Risk | Likelihood (L) | Impact (I) | L×I | Trend | Mitigation |
-|---|------|---------------|-----------|-----|-------|-----------|
-| 1 | **KU33 confirmed by post-2026 riksdag** — opposition wins September 2026 election and rejects second reading | 0.40 | 0.90 | **0.36** | Rising | Monitor election polls; alert if opposition bloc exceeds 50% |
-| 2 | **Ukraine compensation costs exceed projections** — International Compensation Commission levies exceed SEK 2bn annually | 0.55 | 0.75 | **0.41** | Rising | Track commission establishment milestones; fiscal provisions in spring budget |
-| 3 | **SD withdraws cooperation on Ukraine financing** — SD voter base resistant to open-ended Ukraine financial commitments | 0.45 | 0.80 | **0.36** | Stable | Track SD party statements on Ukraine cost; watch Åkesson statements |
-| 4 | **KU33 challenged under ECHR Art 10 (free expression)** — Swedish journalists union or Reporters Without Borders files complaint | 0.50 | 0.70 | **0.35** | Rising | Monitor Council of Europe response; track JK (Justitiekanslern) guidance |
-| 5 | **Housing register (CU28) delayed** — Industry opposition slows implementation past Jan 2027 | 0.40 | 0.45 | **0.18** | Stable | Monitor Lantmäteriet capacity; track industry consultation |
-| 6 | **Grundlag amendment rejected** — September 2026 election produces majority that refuses second reading | 0.30 | 0.85 | **0.26** | Stable | Electoral arithmetic: requires both S and V to oppose |
-| 7 | **Ukraine Tribunal stalls** — Geopolitical shifts reduce participation; tribunal loses jurisdiction | 0.35 | 0.65 | **0.23** | Stable | Track Council of Europe participation numbers |
-
-## Cascading Risk Analysis
-
-**Primary risk chain**: SD withdrawal (Risk 3) → budget deal collapse → government confidence vote → snap election → KU33 second reading fails (Risk 6) → constitutional amendment abandoned.
-
-**Probability of chain**: P(3) × P(chain given 3) = 0.45 × 0.35 = **0.16 (16%)** — within planning horizon for 2026-2027.
-
-## Bayesian Update
-
-Prior probability (pre-session): Government stability = 0.65  
-New evidence: Multiple propositions passing committee, Ukraine propositions advancing = moderate positive signal  
-Posterior: Government stability = **0.68** (+0.03 update)
-
-Evidence weight: KU committees advancing government proposals without major dissent signals coalition cohesion is holding.
-
-## Risk by Dimension
-
-| Dimension | Top Risk | Score | Time horizon |
-|-----------|---------|-------|-------------|
-| Constitutional | KU33 rejection in 2027 | 7.5/10 | 12-18 months |
-| International | Ukraine cost escalation | 7.0/10 | 24-36 months |
-| Political | SD withdrawal from cooperation | 6.5/10 | 3-9 months |
-| Legal | ECHR challenge to KU33 | 6.0/10 | 6-24 months |
-| Administrative | CU28 implementation delay | 4.5/10 | 12-24 months |
-
-## Expanded Risk Register (10 risks)
-
-The following three additional risks complete the reference-grade register:
-
-| # | Risk | L | I | L×I | Horizon | Mitigation |
-|---|------|:---:|:---:|:---:|--------|------------|
-| 8 | **Lagrådet silent on "formellt tillförd" discretion** — weak yttrande amplifies SJF/RSF critique and hardens opposition position on KU33 | 0.45 | 0.60 | **0.27** | 0-30 days | Monitor Lagrådet publication calendar; prepare amendment draft |
-| 9 | **Russian hybrid interference escalation after HD03231 chamber vote** — coordinated inauthentic behaviour, phishing against UD, DDoS against riksdagen.se | 0.40 | 0.75 | **0.30** | 0-90 days post-vote | SÄPO liaison heightened; CERT-SE vigilance; MSB public-communication preparedness |
-| 10 | **US administration withdraws from tribunal coordination** — public statement questioning Special Tribunal legitimacy; emboldens non-European disengagement | 0.25 | 0.65 | **0.16** | 3-12 months | Diplomatic contingency with DE, FR, UK, NL; NATO/CoE escalation path |
-
-## Risk Interconnection Graph
-
-```mermaid
-graph LR
-    R3[R3 SD Withdrawal] -->|triggers| R1[R1 Election reversal<br/>of KU33]
-    R3 -->|triggers| R2[R2 Ukraine cost escalation<br/>harder to absorb]
-    R8[R8 Weak Lagrådet] -->|amplifies| R4[R4 ECHR challenge<br/>to KU33]
-    R8 -->|amplifies| R1
-    R9[R9 Russian hybrid] -->|drags posture| R10[R10 US withdrawal]
-    R10 -->|weakens| R2
-    R2 -->|if HD03232 passes<br/>with tight budget| R3
-    R6[R6 Grundlag rejected] -->|aligns with| R1
-    R5[R5 Housing delay] -.->|weak link| R3
-
-    style R1 fill:#ff4444,color:#fff
-    style R2 fill:#ff4444,color:#fff
-    style R3 fill:#ff6600,color:#fff
-    style R4 fill:#ff8800,color:#fff
-    style R8 fill:#ffbb00,color:#000
-    style R9 fill:#ffbb00,color:#000
-```
-
-Key interconnection findings:
-
-- **R3 is the systemic-risk hub** — SD cooperation withdrawal cascades into R1 (election reversal), R2 (Ukraine cost absorption), and indirectly R6 (grundlag rejection). Priority mitigation target.
-- **R8 amplifies R4 and R1** — a weak Lagrådet yttrande both raises ECHR challenge probability and hardens opposition second-reading stance.
-- **R2 → R3 feedback loop** — if HD03232 passes with tight fiscal budget, subsequent contribution increases could trigger SD withdrawal.
-
-## ALARP (As Low As Reasonably Practicable) Mapping
-
-| Risk | Current level | Target level | Mitigation cost | Effectiveness | ALARP verdict |
-|------|:-------------:|:------------:|:---------------:|:-------------:|:-------------:|
-| R1 KU33 election reversal | 0.36 | 0.25 | HIGH (coalition politics) | MEDIUM | **Accept** — democratic design, cannot be mitigated away |
-| R2 Ukraine cost escalation | 0.41 | 0.25 | MEDIUM (UU cost ceiling) | HIGH | **Reduce** — attach cost cap in UU betänkande |
-| R3 SD withdrawal | 0.36 | 0.20 | MEDIUM (coalition renegotiation) | MEDIUM | **Reduce** — transparency on HD03232 costs |
-| R4 ECHR challenge | 0.35 | 0.20 | LOW (strict Lagrådet language) | HIGH | **Reduce** — drive narrow "formellt tillförd" reading |
-| R8 Weak Lagrådet | 0.27 | 0.15 | LOW (government submission quality) | HIGH | **Reduce** — prepare responsive memorandum |
-| R9 Russian hybrid | 0.30 | 0.20 | HIGH (hybrid defence investment) | MEDIUM | **Reduce & Accept** — partial |
-| R10 US withdrawal | 0.16 | 0.16 | HIGH (diplomatic capital) | LOW | **Accept** — exogenous |
-
-## Bayesian Forward-Looking Update Rules
-
-Given a new signal at time t, update the posterior probability of each risk:
-
-| Signal | Effect on |
-|--------|-----------|
-| Lagrådet yttrande **strict** on "formellt tillförd" | R4 × 0.5 · R8 × 0.3 · R1 × 0.85 |
-| Lagrådet yttrande **silent / discretionary** | R4 × 1.5 · R8 × 1.8 · R1 × 1.2 |
-| SD red-line on HD03232 costs | R3 × 2.0 · R1 × 1.3 · R2 × 0.7 |
-| SÄPO threat-level increase (hybrid) | R9 × 2.0 |
-| US senior-official statement questioning tribunal | R10 × 2.5 |
-| SOM poll Tidö bloc < 44% | R1 × 1.5 · R3 × 1.3 |
-| SOM poll Tidö bloc > 50% | R1 × 0.6 · R3 × 0.8 |
 
 ## Threat Analysis
 
@@ -1332,179 +1518,6 @@ This is the second time a sitting Swedish monarch has made a major foreign polic
 | Per Bolund | MP party leader | STRONG SUPPORT | MEDIUM |
 | Andreas Norlén | Riksdag Speaker | Process facilitator | MEDIUM |
 | UU Committee Chair | Committee processing | SUPPORTIVE | HIGH |
-
-## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/scenario-analysis.md)_
-
-**SCN-ID**: SCN-20260419-1219
-**Date**: 2026-04-19
-**Analyst**: James Pether Sörling
-**Version**: 1.0 (Tier-C reference-grade extension)
-**Confidence**: MEDIUM-HIGH on base scenarios; LOW-MEDIUM on wildcards
-**Horizon Bands**: 30 days · 90 days · post-September-2026 election
-
----
-
-## 🎲 Scenario Landscape Overview
-
-```mermaid
-graph TD
-    Now[2026-04-19 12:19 UTC<br/>State: Both clusters submitted<br/>KU33 + Ukraine package] --> D1[2026-04-22<br/>First Reading Vote]
-    D1 -->|Ja ≥ 175, SD holds| B1[Base Scenario<br/>P = 0.55]
-    D1 -->|Ja ≥ 175, narrow| B2[Bull: Strict Lagrådet<br/>P = 0.20]
-    D1 -->|Minority Ja or SD split| B3[Bear: Procedural drag<br/>P = 0.20]
-    D1 -->|Black-swan event| W1[Wildcards<br/>P = 0.05]
-    B1 --> E1[Sep 2026 Election]
-    B2 --> E1
-    B3 --> E1
-    E1 -->|Tidö retains| S1[KU33 confirmed Jan 2027]
-    E1 -->|S-led minority| S2[KU33 renegotiated]
-    E1 -->|S+V+MP majority| S3[KU33 rejected]
-
-    style B1 fill:#4a90e2,color:#fff
-    style B2 fill:#43a047,color:#fff
-    style B3 fill:#e67e22,color:#fff
-    style W1 fill:#c0392b,color:#fff
-```
-
-Probabilities are point estimates with a ±0.10 epistemic band. They are updated against new Lagrådet, SÄPO, and polling signals per the Bayesian procedure in `risk-assessment.md` §Bayesian Update.
-
----
-
-## 🧭 Three Base Scenarios
-
-### Scenario A — **Base Case: Orderly Dual-Track Advance** (P = 0.55)
-
-**Narrative**: First reading of KU33 + KU32 passes 2026-04-22 with government majority (M + SD + L + KD holding). Lagrådet yttrande interprets "*formellt tillförd bevisning*" conservatively enough to neutralise the strongest civil-liberties critique. HD03231 and HD03232 are referred to UU in late April, return as a betänkande in May–June, and pass chamber with cross-party Ja (SD attaches a cost-transparency reservation to HD03232). Ukraine tribunal accession completes before summer recess. Campaign season frames KU33 as a civil-liberties vs. law-enforcement trade-off; S position remains ambiguous into August polling.
-
-| Horizon | Milestone | Expected Outcome |
-|---------|-----------|------------------|
-| 30 days (by 2026-05-19) | KU33/KU32 first reading; UU hearing on HD03231/232 | First reading passes; UU hearing constructive |
-| 90 days (by 2026-07-18) | Ukraine propositions voted in chamber; summer recess begins | Broad Ja on both Ukraine propositions |
-| Post-election (Jan 2027) | KU33 second reading in new riksdag | **P(second reading confirms) = 0.55** under this scenario |
-
-**Monitoring triggers that INVALIDATE this scenario**:
-- Lagrådet yttrande uses "may" rather than "must" language on proportionality ⇒ shift to Scenario C
-- SD public statement flagging HD03232 cost red-line ⇒ shift to Scenario C
-- SOM-institute September poll shows Tidö bloc below 44% ⇒ downgrade post-election confirmation probability by 15 points
-
----
-
-### Scenario B — **Bull Case: Lagrådet Narrows, Ukraine Surges** (P = 0.20)
-
-**Narrative**: Lagrådet yttrande on KU33 imposes a strict, literal reading of "*formellt tillförd bevisning*" — requiring formal documentation of incorporation before the carve-out attaches. This neutralises the SJF/RSF critique and lifts opposition uncertainty. Meanwhile, Ukraine propositions become a unifying national moment after the King's Kyiv visit saturates broadcast cycles. Cross-party support on HD03231 + HD03232 becomes unanimous in chamber. SD formally endorses both on Åkesson's public platform. Sweden positions as a norm-entrepreneur, attracting a follow-up invitation to host a preliminary tribunal preparatory conference.
-
-| Horizon | Milestone | Expected Outcome |
-|---------|-----------|------------------|
-| 30 days | Lagrådet narrow reading; SJF de-escalation | Civil-liberties critique defanged |
-| 90 days | Ukraine propositions pass with ≥ 320 Ja votes | Near-unanimous cross-party Ja |
-| Post-election | KU33 confirmed with some S support | **P(second reading confirms) = 0.75** under this scenario |
-
-**Monitoring triggers that would PROMOTE scenario from base to bull**:
-- Lagrådet publishes KU33 yttrande with explicit "shall be formally documented" language
-- Swedish polls show > 60% support for Ukraine tribunal accession post-King visit
-- Magdalena Andersson makes a public statement supporting KU33 proportionality
-
----
-
-### Scenario C — **Bear Case: Procedural Drag + SD Defection** (P = 0.20)
-
-**Narrative**: Lagrådet yttrande is silent on the discretionary dimension of "*formellt tillförd bevisning*," amplifying SJF/RSF criticism. Tidö coalition holds first reading vote but with < 180 Ja votes (signalling internal fracture). SD announces a formal reservation on HD03232 cost projections, forcing a UU-committee compromise that inserts a Swedish contribution ceiling. S seizes on the KU33 ambiguity as a pre-election wedge issue. Press-freedom NGO coalition files a preemptive ECHR complaint. September election produces S-led minority government; KU33 second reading is renegotiated with a statutory (not grundlag) fallback.
-
-| Horizon | Milestone | Expected Outcome |
-|---------|-----------|------------------|
-| 30 days | Weak Lagrådet yttrande; SJF escalation | Rising political cost of KU33 |
-| 90 days | UU attaches HD03232 cost ceiling; SD reservation filed | Ukraine package passes but conditioned |
-| Post-election | S-led government renegotiates KU33 grundlag path | **P(second reading confirms original text) = 0.25** under this scenario |
-
-**Monitoring triggers that would PROMOTE scenario to bear**:
-- Lagrådet yttrande raises material proportionality concerns
-- SD public statement: "Swedish taxpayers cannot underwrite open-ended Compensation Commission"
-- Press-freedom NGO coalition public joint statement ≤ 2026-05-01
-- SOM poll shows Tidö bloc ≤ 44% combined in May/June 2026
-
----
-
-## ⚡ Two Wildcards — Low-Probability / High-Impact
-
-### Wildcard W1 — **Russian hybrid retaliation after HD03231 chamber vote** (P = 0.04 · Impact = HIGH)
-
-Sweden's formal accession to the Special Tribunal for Aggression makes it the newest target of a pattern of Russian hybrid operations previously documented against Baltic and Nordic states (e.g., the 2023 SIS/SÄPO reports on Russian information ops targeting Swedish NATO discourse). Attack vectors documented in `threat-analysis.md` §4 include: (a) coordinated inauthentic behaviour amplifying KU33 "hypocrisy" framing in Swedish-language social media; (b) targeted phishing against UD officials working on tribunal accession; (c) DDoS against riksdagen.se during chamber-vote windows; (d) opportunistic diplomatic expulsion retaliation.
-
-**Leading indicators to promote P from 0.04 → 0.15**:
-- SÄPO public threat-level adjustment within 30 days of HD03231 chamber vote
-- Identified coordinated inauthentic behaviour clusters referencing tribunal accession
-- Russian embassy (or FSB-linked channels) public commentary naming Swedish officials
-
----
-
-### Wildcard W2 — **US administration withdrawal from tribunal coordination** (P = 0.06 · Impact = MEDIUM)
-
-The US political posture on the Special Tribunal has been ambiguous across recent transitions. A formal withdrawal from tribunal coordination, or a public statement questioning its legitimacy, would be damaging — not because US membership is required, but because it would embolden non-European participating states to disengage and would rhetorically weaken the tribunal's claim to be "the international community's" response. Sweden's accession momentum could be seen as the ceiling rather than the floor of Western commitment.
-
-**Leading indicators to promote P from 0.06 → 0.20**:
-- US senior official public statement questioning tribunal legitimacy
-- US Treasury rejecting Euroclear-coordinated immobilised-asset mobilisation
-- Withdrawal of at least one non-European tribunal participant in the 30-day window
-
----
-
-## 🔬 ACH — Analysis of Competing Hypotheses
-
-We test the question: **"What is the probability KU33 second reading confirms the grundlag amendment in January 2027?"**
-
-Five hypotheses are weighed against six pieces of evidence (each marked Consistent **C** / Inconsistent **I** / Neutral **N** with the hypothesis).
-
-| Hypothesis | E1: Current Tidö polling ≈ 48% | E2: S historically cautious on law-enforcement opposition | E3: V/MP firm opposition | E4: Offentlighetsprincipen cultural weight | E5: Grundlag two-reading design intent (brake) | E6: Comparable precedent (DE StPO §406e, FI JulkL §24) | **Weighted Score** |
-|-----------|:------------------------------:|:---------------------------------------------:|:----:|:--:|:--:|:--:|---|
-| **H1 — Confirmed original text** | C | C | I | I | I | C | 0 (2C–3I) |
-| **H2 — Confirmed with minor amendments** | C | C | N | I | N | C | **+2 (3C–1I)** ✅ |
-| **H3 — Rejected → statutory fallback** | I | I | C | C | C | I | 0 (3C–3I) |
-| **H4 — Rejected outright** | I | I | C | C | C | I | 0 (3C–3I) |
-| **H5 — Delayed to 2027/28 session** | N | N | N | N | I | N | −1 (0C–1I) |
-
-**Reading**: H2 (confirmed with amendments, most likely renegotiated language on "*formellt tillförd bevisning*") has the highest diagnostic score. H1 and H3 are close alternatives, with H1 advantaged in Scenario B and H3 advantaged in Scenario C. H5 is unlikely because the two-reading deadline is binding.
-
-**Converted base probability**: P(H2) ≈ 0.40 · P(H1) ≈ 0.25 · P(H3) ≈ 0.20 · P(H4) ≈ 0.10 · P(H5) ≈ 0.05.
-Aggregating H1 + H2 + modified confirmations gives the `executive-brief.md` second-reading confirmation forecast of **≈ 0.55**.
-
----
-
-## 📅 Monitoring Trigger Calendar — Mapped to Scenario Shifts
-
-| Date | Event | Scenario Updated | New Signal |
-|------|-------|------------------|-----------|
-| 2026-04-22 | KU33 + KU32 first reading vote | A/B/C | Ja count; SD abstention pattern |
-| ≤ 2026-05-15 | Lagrådet yttrande on KU33/32 | A → B or A → C | Language on "*formellt tillförd*" |
-| 2026-05 | UU committee hearing HD03231 | A | SD reservation filing |
-| 2026-05 | UU committee hearing HD03232 | A → C on cost objection | SD cost-ceiling demand |
-| 2026-06 (est) | Chamber vote HD03231/232 | A | Cross-party Ja count |
-| 2026-06 to 09 | Monthly SOM polling | Bayesian update on post-election P | Tidö bloc vs. opposition bloc |
-| 2026-09-13 | Swedish general election | Terminal scenario fork | New riksdag composition |
-| 2026-09 → 12 | Government formation | H1/H2/H3 conditional on majority | KU33 coalition arithmetic |
-| 2026-12 or 2027-01 | KU33 second reading | TERMINAL | Confirmed / modified / rejected |
-
----
-
-## 🔗 Cross-Reference to Upstream Work
-
-- **Scenario continuity** with [`analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md): the grundlag base/bull/bear structure introduced in 1434 is retained; probabilities updated downward for base (−0.05) on the basis of HD03232 cost uncertainty emerging in 1219.
-- **Post-election probability priors** drawn from [`analysis/daily/2026-04-18/weekly-review/scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/scenario-analysis.md) (if present) or the closest weekly-review available; divergences from weekly-review scenarios are justified in `methodology-reflection.md` §Probability-Alignment Audit.
-- **Russia hybrid W1** priors: leverage SÄPO and MUST documented post-NATO-accession hybrid posture; see `threat-analysis.md` §4 for the intelligence base.
-
----
-
-## ⚠️ Confidence Markers & Known Limitations
-
-1. **Base-case probability (0.55)** has a ±0.10 epistemic band — do not treat as precise.
-2. **Post-election conditional probabilities** depend on poll-to-seat translations that are non-linear near majority boundary (around 175 seats).
-3. **Wildcard probabilities** are order-of-magnitude estimates; the *direction* matters more than the number.
-4. **ACH grid** uses evidence weights of 1.0 per piece; a sensitivity run with weighted evidence (E1 × 1.5 because it is dispositive) does not change the H2 ranking.
-
----
-
-**Classification**: Public · **Next Review**: 2026-05-01 (after KU33 first reading + Lagrådet yttrande) · **Methodology**: `ai-driven-analysis-guide.md` v5.1 §Rule 6 (L3 tier) + ACH doctrine
 
 ## Comparative International
 
