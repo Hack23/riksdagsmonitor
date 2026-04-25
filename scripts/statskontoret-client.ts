@@ -1,0 +1,535 @@
+/**
+ * @module Statskontoret/Client
+ * @description TypeScript client for Statskontoret public open-data pages.
+ *
+ * Covers the Statskontoret datasets that complement IMF, SCB and World Bank
+ * context for Riksdagsmonitor: the authority register (myndighetsförteckning),
+ * budget time series, annual budget outturn and monthly budget outturn. Data is
+ * public and unauthenticated. Excel workbooks and CSV ZIP archives are parsed
+ * locally so workflows can persist source data and derived headcount series.
+ *
+ * @author Hack23 AB
+ * @license Apache-2.0
+ */
+
+import JSZip from 'jszip';
+
+export type StatskontoretSourceKey =
+  | 'myndighetsforteckning'
+  | 'budget-time-series'
+  | 'arsutfall'
+  | 'manadsutfall';
+
+export type StatskontoretResourceType = 'excel' | 'csv-zip' | 'zip' | 'document' | 'page' | 'unknown';
+
+export interface StatskontoretSourceDefinition {
+  readonly key: StatskontoretSourceKey;
+  readonly title: string;
+  readonly url: string;
+  readonly cadence: string;
+  readonly coverage: string;
+  readonly primaryUse: string;
+}
+
+export interface StatskontoretDownloadLink {
+  readonly source: StatskontoretSourceKey;
+  readonly sourcePage: string;
+  readonly href: string;
+  readonly url: string;
+  readonly text: string;
+  readonly resourceType: StatskontoretResourceType;
+  readonly documentType?: string;
+  readonly fileType?: string;
+  readonly fileName?: string;
+  readonly year?: number;
+  readonly month?: number;
+  readonly status?: string;
+  readonly updatedAt?: string;
+}
+
+export interface StatskontoretClientConfig {
+  readonly baseURL?: string;
+  readonly timeout?: number;
+  readonly fetchFn?: typeof fetch;
+}
+
+export interface StatskontoretWorkbook {
+  readonly sheets: readonly StatskontoretSheet[];
+}
+
+export interface StatskontoretSheet {
+  readonly name: string;
+  readonly rows: readonly (readonly string[])[];
+}
+
+export interface StatskontoretHeadcountRow {
+  readonly year: number;
+  readonly department: string;
+  readonly headcount: number;
+  readonly authorityCount: number;
+}
+
+export interface StatskontoretHeadcountOptions {
+  readonly sheetNamePattern?: RegExp;
+  readonly fallbackYear?: number;
+}
+
+export const STATSKONTORET_BASE_URL = 'https://www.statskontoret.se';
+
+export const STATSKONTORET_SOURCES: readonly StatskontoretSourceDefinition[] = Object.freeze([
+  {
+    key: 'myndighetsforteckning',
+    title: 'Myndighetsförteckning – öppna data',
+    url: '/analys-och-statistik/oppna-data/myndighetsforteckning/',
+    cadence: 'Annual snapshot; Statskontoret page metadata currently indicates 2026-02-06 update for the 2025 workbook.',
+    coverage: 'Summary statistics, 2007–2025 time series, latest authority list and full 2007–2025 authority register.',
+    primaryUse: 'Government-body headcount, authority count, leadership form and department grouping over time.',
+  },
+  {
+    key: 'budget-time-series',
+    title: 'Tidsserier, statens budget m.m.',
+    url: '/analys-och-statistik/officiell-statistik/tidsserier-statens-budget-m.m',
+    cadence: 'Annual official statistics release.',
+    coverage: 'Final outcomes for central-government revenue, expenditure, balance and related public-finance tables, generally from 1995.',
+    primaryUse: 'Long-run fiscal context for committee and budget-cycle analysis.',
+  },
+  {
+    key: 'arsutfall',
+    title: 'Årsutfall för statens budget – öppna data',
+    url: '/analys-och-statistik/oppna-data/arsutfall/',
+    cadence: 'Annual, with preliminary and definitive releases.',
+    coverage: 'Annual central-government revenue and expenditure outturns based on Hermes reporting and Riksdag/government budget decisions.',
+    primaryUse: 'Yearly budget execution context by appropriation, income title and agency.',
+  },
+  {
+    key: 'manadsutfall',
+    title: 'Månadsutfall för statens budget – öppna data',
+    url: '/analys-och-statistik/oppna-data/manadsutfall/',
+    cadence: 'Monthly.',
+    coverage: 'Monthly central-government revenue and expenditure outcomes from January 2006 onward at low-level agency/account granularity.',
+    primaryUse: 'High-frequency budget execution context and agency-level fiscal monitoring.',
+  },
+]);
+
+const DEFAULT_TIMEOUT = 15_000;
+const FILE_EXTENSION_RE = /\.(xlsx|xls|csv|zip|docx|pdf)(?:$|[?#])/i;
+const HREF_RE = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
+const TAG_RE = /<[^>]+>/g;
+const ENTITY_RE = /&(amp|lt|gt|quot|apos|nbsp|#\d+|#x[0-9a-f]+);/gi;
+
+export class StatskontoretClient {
+  readonly baseURL: string;
+  readonly timeout: number;
+  private readonly fetchFn: typeof fetch;
+
+  constructor(config: StatskontoretClientConfig = {}) {
+    this.baseURL = trimTrailingSlash(config.baseURL ?? STATSKONTORET_BASE_URL);
+    this.timeout = config.timeout ?? DEFAULT_TIMEOUT;
+    this.fetchFn = config.fetchFn ?? fetch;
+  }
+
+  async discoverDownloads(sourceKey: StatskontoretSourceKey): Promise<StatskontoretDownloadLink[]> {
+    const source = getStatskontoretSource(sourceKey);
+    const pageUrl = resolveStatskontoretUrl(source.url, this.baseURL);
+    const html = await this.fetchText(pageUrl);
+    return extractStatskontoretDownloadLinks(html, sourceKey, pageUrl, this.baseURL);
+  }
+
+  async fetchWorkbook(url: string): Promise<StatskontoretWorkbook> {
+    const buffer = await this.fetchArrayBuffer(url);
+    return parseStatskontoretXlsx(buffer);
+  }
+
+  async fetchCsvZip(url: string): Promise<Record<string, string>> {
+    const buffer = await this.fetchArrayBuffer(url);
+    return parseStatskontoretCsvZip(buffer);
+  }
+
+  async fetchText(url: string): Promise<string> {
+    const response = await this.fetchWithTimeout(url);
+    return response.text();
+  }
+
+  async fetchArrayBuffer(url: string): Promise<ArrayBuffer> {
+    const response = await this.fetchWithTimeout(url);
+    return response.arrayBuffer();
+  }
+
+  private async fetchWithTimeout(url: string): Promise<Response> {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), this.timeout);
+    try {
+      const response = await this.fetchFn(resolveStatskontoretUrl(url, this.baseURL), {
+        signal: controller.signal,
+        headers: {
+          Accept: 'text/html,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/zip,text/csv,*/*',
+        },
+      });
+      if (!response.ok) {
+        throw new Error(`Statskontoret API error: ${response.status} ${response.statusText} for ${response.url}`);
+      }
+      return response;
+    } finally {
+      clearTimeout(timeoutId);
+    }
+  }
+}
+
+export function getStatskontoretSource(key: StatskontoretSourceKey): StatskontoretSourceDefinition {
+  const source = STATSKONTORET_SOURCES.find((candidate) => candidate.key === key);
+  if (!source) throw new Error(`Unknown Statskontoret source: ${key}`);
+  return source;
+}
+
+export function extractStatskontoretDownloadLinks(
+  html: string,
+  source: StatskontoretSourceKey,
+  sourcePage: string,
+  baseURL: string = STATSKONTORET_BASE_URL,
+): StatskontoretDownloadLink[] {
+  const links: StatskontoretDownloadLink[] = [];
+  const pageUpdatedAt = extractPageLastModified(html);
+  for (const match of html.matchAll(HREF_RE)) {
+    const href = decodeHtml(match[1] ?? '').trim();
+    const text = normalizeWhitespace(decodeHtml((match[2] ?? '').replace(TAG_RE, ' ')));
+    if (!href) continue;
+    const resourceType = classifyResource(href, text);
+    if (resourceType === 'unknown') continue;
+    const url = resolveStatskontoretUrl(href, baseURL);
+    const parsed = new URL(url);
+    const year = parseOptionalInt(parsed.searchParams.get('Year'));
+    const month = parseOptionalInt(parsed.searchParams.get('month'));
+    links.push({
+      source,
+      sourcePage,
+      href,
+      url,
+      text,
+      resourceType,
+      ...(parsed.searchParams.get('documentType') ? { documentType: parsed.searchParams.get('documentType') ?? undefined } : {}),
+      ...(parsed.searchParams.get('fileType') ? { fileType: parsed.searchParams.get('fileType') ?? undefined } : {}),
+      ...(parsed.searchParams.get('fileName') ? { fileName: parsed.searchParams.get('fileName') ?? undefined } : {}),
+      ...(year !== undefined ? { year } : {}),
+      ...(month !== undefined ? { month } : {}),
+      ...(parsed.searchParams.get('status') ? { status: parsed.searchParams.get('status') ?? undefined } : {}),
+      ...(pageUpdatedAt ? { updatedAt: pageUpdatedAt } : {}),
+    });
+  }
+  return deduplicateLinks(links);
+}
+
+export async function parseStatskontoretXlsx(input: ArrayBuffer | Uint8Array): Promise<StatskontoretWorkbook> {
+  const zip = await JSZip.loadAsync(input);
+  const workbookXml = await readZipText(zip, 'xl/workbook.xml');
+  const workbookRelsXml = await readZipText(zip, 'xl/_rels/workbook.xml.rels');
+  const sharedStringsXml = zip.file('xl/sharedStrings.xml')
+    ? await readZipText(zip, 'xl/sharedStrings.xml')
+    : '';
+  const sharedStrings = parseSharedStrings(sharedStringsXml);
+  const rels = parseWorkbookRelationships(workbookRelsXml);
+  const sheets: StatskontoretSheet[] = [];
+
+  for (const sheet of parseWorkbookSheets(workbookXml)) {
+    const target = rels.get(sheet.relationshipId);
+    if (!target) continue;
+    const sheetPath = target.startsWith('/') ? target.slice(1) : `xl/${target}`;
+    const sheetXml = await readZipText(zip, sheetPath.replace(/\/\.\//g, '/'));
+    sheets.push({ name: sheet.name, rows: parseWorksheetRows(sheetXml, sharedStrings) });
+  }
+
+  return { sheets };
+}
+
+export async function parseStatskontoretCsvZip(input: ArrayBuffer | Uint8Array): Promise<Record<string, string>> {
+  const zip = await JSZip.loadAsync(input);
+  const out: Record<string, string> = {};
+  for (const [name, entry] of Object.entries(zip.files)) {
+    if (entry.dir) continue;
+    if (!/\.csv$/i.test(name)) continue;
+    out[name] = await entry.async('string');
+  }
+  return out;
+}
+
+export function rowsToRecords(rows: readonly (readonly string[])[], headerRowIndex?: number): Record<string, string>[] {
+  const resolvedHeaderIndex = headerRowIndex ?? findLikelyHeaderRow(rows);
+  if (resolvedHeaderIndex < 0) return [];
+  const headers = rows[resolvedHeaderIndex].map((header, index) => header.trim() || `column_${index + 1}`);
+  const records: Record<string, string>[] = [];
+  for (const row of rows.slice(resolvedHeaderIndex + 1)) {
+    const record: Record<string, string> = {};
+    let hasValue = false;
+    for (let i = 0; i < headers.length; i++) {
+      const value = row[i]?.trim() ?? '';
+      if (value) hasValue = true;
+      record[headers[i]] = value;
+    }
+    if (hasValue) records.push(record);
+  }
+  return records;
+}
+
+export function aggregateHeadcountByDepartment(
+  records: readonly Record<string, string>[],
+  fallbackYear?: number,
+): StatskontoretHeadcountRow[] {
+  const aggregate = new Map<string, { headcount: number; authorities: Set<string> }>();
+  for (const record of records) {
+    const lookup = buildRecordLookup(record);
+    const year = parseOptionalInt(findField(lookup, ['år', 'ar', 'year']) ?? '') ?? fallbackYear;
+    const department = findField(lookup, ['departement', 'departementstillhörighet', 'departementstillhorighet'])?.trim();
+    const headcountValue = parseSwedishNumber(findField(lookup, ['årsarbetskrafter', 'arsarbetskrafter', 'åa', 'aa']) ?? '');
+    if (!year || !department || headcountValue === undefined) continue;
+    const authority = findField(lookup, ['myndighet', 'myndighetsnamn', 'namn'])?.trim() ?? '';
+    const key = `${year}\u0000${department}`;
+    const current = aggregate.get(key) ?? { headcount: 0, authorities: new Set<string>() };
+    current.headcount += headcountValue;
+    if (authority) current.authorities.add(authority);
+    aggregate.set(key, current);
+  }
+
+  return [...aggregate.entries()]
+    .map(([key, value]) => {
+      const [yearRaw, department] = key.split('\u0000');
+      return {
+        year: Number.parseInt(yearRaw, 10),
+        department,
+        headcount: roundOneDecimal(value.headcount),
+        authorityCount: value.authorities.size,
+      };
+    })
+    .sort((a, b) => a.year - b.year || a.department.localeCompare(b.department, 'sv'));
+}
+
+export function buildHeadcountTimeSeries(
+  workbook: StatskontoretWorkbook,
+  options: StatskontoretHeadcountOptions = {},
+): StatskontoretHeadcountRow[] {
+  const sheet = options.sheetNamePattern
+    ? workbook.sheets.find((candidate) => options.sheetNamePattern?.test(candidate.name))
+    : workbook.sheets.find((candidate) => /förteckning|forteckning/i.test(candidate.name)) ?? workbook.sheets[0];
+  if (!sheet) return [];
+  return aggregateHeadcountByDepartment(rowsToRecords(sheet.rows), options.fallbackYear);
+}
+
+function parseWorkbookSheets(xml: string): Array<{ name: string; relationshipId: string }> {
+  const sheets: Array<{ name: string; relationshipId: string }> = [];
+  const sheetRe = /<sheet\b([^>]*)\/>/gi;
+  for (const match of xml.matchAll(sheetRe)) {
+    const attrs = parseXmlAttributes(match[1] ?? '');
+    const name = attrs.get('name');
+    const relationshipId = attrs.get('r:id') ?? attrs.get('id');
+    if (name && relationshipId) sheets.push({ name: decodeXml(name), relationshipId });
+  }
+  return sheets;
+}
+
+function parseWorkbookRelationships(xml: string): Map<string, string> {
+  const rels = new Map<string, string>();
+  const relRe = /<Relationship\b([^>]*)\/>/gi;
+  for (const match of xml.matchAll(relRe)) {
+    const attrs = parseXmlAttributes(match[1] ?? '');
+    const id = attrs.get('Id');
+    const target = attrs.get('Target');
+    if (id && target) rels.set(id, target);
+  }
+  return rels;
+}
+
+function parseSharedStrings(xml: string): string[] {
+  if (!xml) return [];
+  const strings: string[] = [];
+  const siRe = /<si\b[^>]*>([\s\S]*?)<\/si>/gi;
+  for (const match of xml.matchAll(siRe)) {
+    strings.push(extractTextNodes(match[1] ?? ''));
+  }
+  return strings;
+}
+
+function parseWorksheetRows(xml: string, sharedStrings: readonly string[]): string[][] {
+  const rows: string[][] = [];
+  const rowRe = /<row\b[^>]*>([\s\S]*?)<\/row>/gi;
+  for (const rowMatch of xml.matchAll(rowRe)) {
+    const row: string[] = [];
+    const cellRe = /<c\b([^>]*)>([\s\S]*?)<\/c>/gi;
+    for (const cellMatch of (rowMatch[1] ?? '').matchAll(cellRe)) {
+      const attrs = parseXmlAttributes(cellMatch[1] ?? '');
+      const ref = attrs.get('r') ?? '';
+      const cellIndex = cellRefToColumnIndex(ref) ?? row.length;
+      row[cellIndex] = parseCellValue(cellMatch[2] ?? '', attrs.get('t'), sharedStrings);
+    }
+    rows.push(row.map((value) => value ?? ''));
+  }
+  return rows;
+}
+
+function parseCellValue(xml: string, type: string | undefined, sharedStrings: readonly string[]): string {
+  if (type === 'inlineStr') return extractTextNodes(xml);
+  const value = firstXmlTagValue(xml, 'v');
+  if (value === undefined) return '';
+  if (type === 's') return sharedStrings[Number.parseInt(value, 10)] ?? '';
+  return decodeXml(value);
+}
+
+function findLikelyHeaderRow(rows: readonly (readonly string[])[]): number {
+  for (let i = 0; i < rows.length; i++) {
+    const normalized = rows[i].map(normalizeKey);
+    const score = [
+      normalized.some((cell) => cell.includes('myndighet')),
+      normalized.some((cell) => cell.includes('departement')),
+      normalized.some((cell) => cell.includes('arsarbetskrafter') || cell === 'aa'),
+      normalized.some((cell) => cell === 'ar' || cell === 'year'),
+    ].filter(Boolean).length;
+    if (score >= 2) return i;
+  }
+  return rows.findIndex((row) => row.filter((cell) => cell.trim()).length >= 2);
+}
+
+function buildRecordLookup(record: Record<string, string>): Map<string, string> {
+  const lookup = new Map<string, string>();
+  for (const [key, value] of Object.entries(record)) {
+    lookup.set(normalizeKey(key), value);
+  }
+  return lookup;
+}
+
+function findField(lookup: ReadonlyMap<string, string>, candidates: readonly string[]): string | undefined {
+  const normalizedCandidates = candidates.map(normalizeKey);
+  for (const candidate of normalizedCandidates) {
+    const exact = lookup.get(candidate);
+    if (exact !== undefined) return exact;
+  }
+  for (const [key, value] of lookup.entries()) {
+    if (normalizedCandidates.some((candidate) => key.includes(candidate))) return value;
+  }
+  return undefined;
+}
+
+function parseSwedishNumber(value: string): number | undefined {
+  const normalized = value.replace(/\s/g, '').replace(',', '.');
+  const parsed = Number.parseFloat(normalized);
+  return Number.isFinite(parsed) ? parsed : undefined;
+}
+
+function parseOptionalInt(value: string | null): number | undefined {
+  if (!value) return undefined;
+  const parsed = Number.parseInt(value, 10);
+  return Number.isFinite(parsed) ? parsed : undefined;
+}
+
+function classifyResource(href: string, text: string): StatskontoretResourceType {
+  const haystack = `${href} ${text}`.toLowerCase();
+  if (haystack.includes('filetype=excel') || /\.xlsx(?:$|[?#])/i.test(href) || /\bexcel\b/i.test(text)) return 'excel';
+  if (haystack.includes('filetype=zip') && /\bcsv\b/i.test(text)) return 'csv-zip';
+  if (/\.zip(?:$|[?#])/i.test(href)) return /\bcsv\b/i.test(text) ? 'csv-zip' : 'zip';
+  if (/\b(csv|zip)\b/i.test(text) && href.includes('GetFile')) return 'csv-zip';
+  if (/\.(docx|pdf)(?:$|[?#])/i.test(href)) return 'document';
+  if (FILE_EXTENSION_RE.test(href) || href.includes('GetFile')) return 'unknown';
+  return 'unknown';
+}
+
+function deduplicateLinks(links: readonly StatskontoretDownloadLink[]): StatskontoretDownloadLink[] {
+  const seen = new Set<string>();
+  const out: StatskontoretDownloadLink[] = [];
+  for (const link of links) {
+    if (seen.has(link.url)) continue;
+    seen.add(link.url);
+    out.push(link);
+  }
+  return out;
+}
+
+function resolveStatskontoretUrl(url: string, baseURL: string): string {
+  return new URL(decodeHtml(url), `${trimTrailingSlash(baseURL)}/`).toString();
+}
+
+function trimTrailingSlash(value: string): string {
+  return value.replace(/\/+$/, '');
+}
+
+function normalizeWhitespace(value: string): string {
+  return value.replace(/\s+/g, ' ').trim();
+}
+
+function normalizeKey(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9åäö]+/g, '')
+    .replace(/å/g, 'a')
+    .replace(/ä/g, 'a')
+    .replace(/ö/g, 'o');
+}
+
+function roundOneDecimal(value: number): number {
+  return Math.round(value * 10) / 10;
+}
+
+function cellRefToColumnIndex(ref: string): number | undefined {
+  const letters = ref.match(/^[A-Z]+/i)?.[0];
+  if (!letters) return undefined;
+  let index = 0;
+  for (const char of letters.toUpperCase()) {
+    index = index * 26 + (char.charCodeAt(0) - 64);
+  }
+  return index - 1;
+}
+
+function parseXmlAttributes(input: string): Map<string, string> {
+  const attrs = new Map<string, string>();
+  const attrRe = /([\w:-]+)=["']([^"']*)["']/g;
+  for (const match of input.matchAll(attrRe)) {
+    attrs.set(match[1], decodeXml(match[2] ?? ''));
+  }
+  return attrs;
+}
+
+function firstXmlTagValue(xml: string, tag: string): string | undefined {
+  const match = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, 'i').exec(xml);
+  return match ? decodeXml(match[1] ?? '') : undefined;
+}
+
+function extractTextNodes(xml: string): string {
+  const parts: string[] = [];
+  const textRe = /<t\b[^>]*>([\s\S]*?)<\/t>/gi;
+  for (const match of xml.matchAll(textRe)) {
+    parts.push(decodeXml(match[1] ?? ''));
+  }
+  return parts.join('');
+}
+
+async function readZipText(zip: JSZip, path: string): Promise<string> {
+  const file = zip.file(path);
+  if (!file) throw new Error(`Statskontoret workbook missing ${path}`);
+  return file.async('string');
+}
+
+function extractPageLastModified(html: string): string | undefined {
+  const match = /<meta\s+name=["']last-modified["']\s+content=["']([^"']+)["']/i.exec(html);
+  return match ? decodeHtml(match[1] ?? '') : undefined;
+}
+
+function decodeHtml(value: string): string {
+  return value.replace(ENTITY_RE, (entity) => decodeEntity(entity));
+}
+
+function decodeXml(value: string): string {
+  return decodeHtml(value);
+}
+
+function decodeEntity(entity: string): string {
+  const body = entity.slice(1, -1).toLowerCase();
+  switch (body) {
+    case 'amp': return '&';
+    case 'lt': return '<';
+    case 'gt': return '>';
+    case 'quot': return '"';
+    case 'apos': return "'";
+    case 'nbsp': return ' ';
+    default:
+      if (body.startsWith('#x')) return String.fromCodePoint(Number.parseInt(body.slice(2), 16));
+      if (body.startsWith('#')) return String.fromCodePoint(Number.parseInt(body.slice(1), 10));
+      return entity;
+  }
+}
