@@ -10,7 +10,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { readFileSync, existsSync, readdirSync, statSync } from 'fs';
+import { readFileSync, existsSync, readdirSync } from 'fs';
 import { resolve, join } from 'path';
 
 const CIA_DATA_DIR = resolve(process.cwd(), 'cia-data');

@@ -30,6 +30,30 @@
 // ========== Type declarations for browser globals ==========
 // d3 and Chart.js are loaded via <script> tags in the HTML; declare them here
 // so that type references like d3.SimulationNodeDatum below resolve in tooling.
+
+/** Minimal Chart.js tooltip callback context (structural subset of chart.js types). */
+interface ChartTooltipContext {
+  readonly parsed: { readonly x: number; readonly y: number; readonly r?: number };
+  readonly dataset: { readonly label?: string; readonly [key: string]: unknown };
+  readonly dataIndex: number;
+  readonly raw?: unknown;
+}
+
+/** Minimal Chart.js dataset shape used by this dashboard's chart configs. */
+interface ChartDatasetSpec {
+  label?: string;
+  data: ReadonlyArray<number | { x: number | string | Date; y: number }>;
+  backgroundColor?: string | readonly string[];
+  borderColor?: string | readonly string[];
+  borderWidth?: number;
+  pointRadius?: number;
+  pointHoverRadius?: number;
+  tension?: number;
+  fill?: boolean;
+  [key: string]: unknown;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- Chart.js global; full chart.js types not available in scripts/ tsconfig.
 declare const Chart: any;
 declare namespace d3 {
   interface SimulationNodeDatum { index?: number; x?: number; y?: number; vx?: number; vy?: number; fx?: number | null; fy?: number | null; }
@@ -499,7 +523,7 @@ interface DataConfig {
     const height: number = 600;
 
     // Create SVG
-    const svg: d3.Selection<SVGSVGElement, unknown, HTMLElement, any> = d3.select('#coalitionNetwork')
+    const svg: d3.Selection<SVGSVGElement, unknown, HTMLElement, unknown> = d3.select('#coalitionNetwork')
       .append('svg')
       .attr('width', width)
       .attr('height', height)
@@ -697,14 +721,14 @@ interface DataConfig {
     const innerWidth: number = width - margin.left - margin.right;
     const innerHeight: number = height - margin.top - margin.bottom;
 
-    const svg: d3.Selection<SVGSVGElement, unknown, HTMLElement, any> = d3.select('#alignmentHeatMap')
+    const svg: d3.Selection<SVGSVGElement, unknown, HTMLElement, unknown> = d3.select('#alignmentHeatMap')
       .append('svg')
       .attr('width', width)
       .attr('height', height)
       .attr('viewBox', `0 0 ${width} ${height}`)
       .attr('style', 'max-width: 100%; height: auto;');
 
-    const g: d3.Selection<SVGGElement, unknown, HTMLElement, any> = svg.append('g')
+    const g: d3.Selection<SVGGElement, unknown, HTMLElement, unknown> = svg.append('g')
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
     const partyIds: string[] = Object.keys(PARTIES);
@@ -800,7 +824,7 @@ interface DataConfig {
     const anomalies: VotingAnomaly[] = dataCache.votingAnomalies || [];
     
     // Prepare data
-    const datasets: any[] = Object.keys(PARTIES).map((partyId: string) => {
+    const datasets: ChartDatasetSpec[] = Object.keys(PARTIES).map((partyId: string) => {
       const partyData: VotingAnomaly[] = anomalies.filter((a: VotingAnomaly) => a.party === partyId);
       
       return {
@@ -830,7 +854,7 @@ interface DataConfig {
           },
           tooltip: {
             callbacks: {
-              label: function(context: any): string {
+              label: function(context: ChartTooltipContext): string {
                 const date: Date = new Date(context.parsed.x);
                 return `${context.dataset.label}: Deviation ${context.parsed.y.toFixed(2)} on ${date.toLocaleDateString()}`;
               }
@@ -879,7 +903,7 @@ interface DataConfig {
     
     const behavioral: BehavioralPatterns = dataCache.behavioralPatterns || {};
     const partyIds: string[] = Object.keys(PARTIES);
-    const data: any = {
+    const data: { labels: string[]; datasets: ChartDatasetSpec[] } = {
       labels: partyIds.map((id: string) => PARTIES[id].name),
       datasets: [{
         label: 'Party Consistency Score (%)',
@@ -908,7 +932,7 @@ interface DataConfig {
           },
           tooltip: {
             callbacks: {
-              label: function(context: any): string {
+              label: function(context: ChartTooltipContext): string {
                 return `Consistency: ${context.parsed.x.toFixed(1)}%`;
               }
             }
@@ -963,7 +987,7 @@ interface DataConfig {
       console.log('📊 Using generated data for decision trends');
     }
 
-    const datasets: any[] = Object.keys(PARTIES).map((partyId: string) => {
+    const datasets: ChartDatasetSpec[] = Object.keys(PARTIES).map((partyId: string) => {
       let data: number[];
       
       if (useRealData && annualVotes[partyId]) {
@@ -1013,7 +1037,7 @@ interface DataConfig {
             mode: 'index',
             intersect: false,
             callbacks: {
-              label: function(context: any): string {
+              label: function(context: ChartTooltipContext): string {
                 return context.dataset.label + ': ' + context.parsed.y.toLocaleString() + ' votes';
               }
             }

@@ -32,9 +32,12 @@ import {
 import { createChart } from '../shared/chart-factory.js';
 
 import { logger } from '../shared/index.js';
-import type { CSVRow } from '../shared/index.js';
+import type { CSVRow, ChartTooltipContext } from '../shared/index.js';
 
-// D3 is loaded as a global <script> for its DOM manipulation / SVG features
+// D3 is loaded as a global <script> for its DOM manipulation / SVG features.
+// Its surface is too broad to retype structurally without forcing @types/d3
+// into the browser tsconfig, so we keep one localised `any` here.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- d3 global; structural typing not viable here.
 const d3 = (globalThis as any).d3;
 
 // ============================================================================
@@ -160,10 +163,10 @@ function getRiskColor(score: number): string {
 
 function parseCSV(text: string): CSVRow[] {
   // Use PapaParse for CSP-compatible CSV parsing (no unsafe-eval needed)
-  const Papa = (globalThis as any).Papa;
+  const Papa = (globalThis as { Papa?: { parse: (text: string, config: { header: boolean; skipEmptyLines: boolean }) => { data: CSVRow[] } } }).Papa;
   if (Papa) {
     const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
-    return parsed.data as CSVRow[];
+    return parsed.data;
   }
   // CSP-safe fallback: simple header-based CSV parser
   const lines = text.trim().split('\n');
@@ -360,7 +363,7 @@ function createHeatMap(data: RiskScore[]): void {
       [0, 0],
       [45 * cellWidth, 349 * cellHeight],
     ])
-    .on('zoom', (event: any) => {
+    .on('zoom', (event: { transform: { x: number; y: number; k: number } }) => {
       g.attr(
         'transform',
         `translate(${margin.left + event.transform.x},${margin.top + event.transform.y}) scale(${event.transform.k})`,
@@ -395,13 +398,13 @@ function createHeatMap(data: RiskScore[]): void {
     .attr('role', 'button')
     .attr('aria-label', (d: RiskScore) => `${d.politician} - ${d.ruleName}: Risk ${d.score.toFixed(2)}`)
     .style('cursor', 'pointer')
-    .on('keydown', function (this: any, event: KeyboardEvent, d: RiskScore) {
+    .on('keydown', function (this: SVGRectElement, event: KeyboardEvent, d: RiskScore) {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
         d3.select(this).dispatch('click', { detail: { d, element: this } });
       }
     })
-    .on('mouseover', function (this: any, _event: MouseEvent, d: RiskScore) {
+    .on('mouseover', function (this: SVGRectElement, _event: MouseEvent, d: RiskScore) {
       tooltip
         .style('visibility', 'visible')
         .html(
@@ -412,17 +415,17 @@ function createHeatMap(data: RiskScore[]): void {
         );
       d3.select(this).attr('stroke', '#000').attr('stroke-width', 2);
     })
-    .on('mousemove', function (this: any, event: MouseEvent) {
+    .on('mousemove', function (this: SVGRectElement, event: MouseEvent) {
       tooltip
         .style('top', `${event.pageY - 10}px`)
         .style('left', `${event.pageX + 10}px`);
     })
-    .on('mouseout', function (this: any) {
+    .on('mouseout', function (this: SVGRectElement) {
       tooltip.style('visibility', 'hidden');
       d3.select(this).attr('stroke', '#fff').attr('stroke-width', 0.5);
     })
-    .on('click', function (this: any, _event: MouseEvent, d: RiskScore) {
-      const triggerElement = this as HTMLElement;
+    .on('click', function (this: SVGRectElement, _event: MouseEvent, d: RiskScore) {
+      const triggerElement = this as unknown as HTMLElement;
       // Show details in an accessible on-page element
       let detailsPanel = d3.select('#risk-details-panel');
       if (detailsPanel.empty()) {
@@ -625,7 +628,7 @@ function createRiskDistributionChart(data: RiskScore[]): void {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            label(context: any) {
+            label(context: ChartTooltipContext) {
               const total = Object.values(buckets).reduce((a, b) => a + b, 0);
               const percentage = ((context.parsed.y / total) * 100).toFixed(1);
               return `${context.parsed.y} violations (${percentage}%)`;
@@ -643,7 +646,7 @@ function createRiskDistributionChart(data: RiskScore[]): void {
         },
       },
     },
-  } as any);
+  } as unknown as Parameters<typeof createChart>[1]);
 }
 
 function createAnomalyDetectionChart(): void {
@@ -743,7 +746,7 @@ function createAnomalyDetectionChart(): void {
         },
         tooltip: {
           callbacks: {
-            label(context: any) {
+            label(context: ChartTooltipContext) {
               return `Deviation: ${context.parsed.y.toFixed(2)}`;
             },
           },
@@ -754,7 +757,7 @@ function createAnomalyDetectionChart(): void {
           type: 'linear',
           title: { display: true, text: 'Date' },
           ticks: {
-            callback(value: any) {
+            callback(value: number | string) {
               const date = new Date(value);
               return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
             },
@@ -766,7 +769,7 @@ function createAnomalyDetectionChart(): void {
         },
       },
     },
-  } as any);
+  } as unknown as Parameters<typeof createChart>[1]);
 }
 
 function createCrisisResilienceChart(): void {
@@ -811,14 +814,14 @@ function createCrisisResilienceChart(): void {
       plugins: {
         tooltip: {
           callbacks: {
-            label(context: any) {
-              return `Resilience: ${context.parsed.r.toFixed(1)}%`;
+            label(context: ChartTooltipContext) {
+              return `Resilience: ${(context.parsed.r ?? 0).toFixed(1)}%`;
             },
           },
         },
       },
     },
-  } as any);
+  } as unknown as Parameters<typeof createChart>[1]);
 }
 
 function createRiskEvolutionChart(): void {
@@ -862,7 +865,7 @@ function createRiskEvolutionChart(): void {
   createChart(canvas, {
     type: 'line',
     data: {
-      labels: years as any,
+      labels: years as unknown as string[],
       datasets,
     },
     options: {
@@ -877,7 +880,7 @@ function createRiskEvolutionChart(): void {
           type: 'linear',
           title: { display: true, text: 'Year' },
           ticks: {
-            callback(value: any) {
+            callback(value: number | string) {
               return new Date(value).getFullYear();
             },
           },
@@ -888,7 +891,7 @@ function createRiskEvolutionChart(): void {
         },
       },
     },
-  } as any);
+  } as unknown as Parameters<typeof createChart>[1]);
 }
 
 // ============================================================================

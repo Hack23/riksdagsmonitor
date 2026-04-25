@@ -27,11 +27,23 @@ import {
   showDataSourceDisclaimer,
 } from '../shared/index.js';
 
-import type { CSVRow } from '../shared/index.js';
+import type { CSVRow, ChartTooltipContext, ChartLike } from '../shared/index.js';
 
-const d3 = (globalThis as any).d3;
-const Chart = (globalThis as any).Chart;
-const Papa = (globalThis as any).Papa;
+// d3 and Chart.js are loaded as <script> globals (not bundled). d3's surface
+// is too broad to retype structurally without forcing @types/d3 into the
+// browser tsconfig, so we keep one localised `any` here (the rest of the
+// file uses concrete types).
+type GlobalShim = Record<string, unknown>;
+const g = globalThis as unknown as GlobalShim;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- d3 global; structural typing not viable here, see comment above.
+const d3 = g['d3'] as any;
+const Chart = g['Chart'] as unknown as new (
+  ctx: CanvasRenderingContext2D | null,
+  config: unknown,
+) => ChartLike;
+const Papa = g['Papa'] as unknown as
+  | { parse: (text: string, config: Record<string, unknown>) => { data: CSVRow[] } }
+  | undefined;
 
 // ============================================================================
 // INTERFACES
@@ -263,8 +275,8 @@ class SeasonalPatternsDataManager {
       const row: CSVRow = {};
       headers.forEach((header, index) => {
         const value = values[index];
-        if (typeof value === 'string' && /^-?\d+(\.\d+)?$/.test(value.trim())) { (row as any)[header] = parseFloat(value); }
-        else { (row as any)[header] = value; }
+        if (typeof value === 'string' && /^-?\d+(\.\d+)?$/.test(value.trim())) { (row as Record<string, unknown>)[header] = parseFloat(value); }
+        else { (row as Record<string, unknown>)[header] = value; }
       });
       data.push(row);
     }
@@ -345,7 +357,7 @@ function stddev(arr: number[]): number { if (arr.length === 0) return 0; const a
 // ============================================================================
 
 class SeasonalPatternsCharts {
-  private chartInstances: Record<string, any> = {};
+  private chartInstances: Record<string, ChartLike> = {};
   private translations: SeasonalTranslations;
   private dataManager: SeasonalPatternsDataManager;
 
@@ -422,7 +434,7 @@ class SeasonalPatternsCharts {
         { label: t.documentZScore, data: sortedData.map(d => Number(d['doc_z_score']) || 0), borderColor: CONFIG.colors.secondary, backgroundColor: CONFIG.colors.secondary + '40', borderWidth: 2, pointRadius: 3, tension: 0.1 },
         { label: t.attendanceZScore, data: sortedData.map(d => Number(d['attendance_z_score']) || 0), borderColor: CONFIG.colors.tertiary, backgroundColor: CONFIG.colors.tertiary + '40', borderWidth: 2, pointRadius: 3, tension: 0.1 }
       ] },
-      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: (context: any) => { let label = context.dataset.label || ''; if (label) label += ': '; label += context.parsed.y.toFixed(2); if (Math.abs(context.parsed.y) >= CONFIG.zScoreThreshold) label += ' 🔴 ' + t.anomaly; return label; } } } }, scales: { x: { title: { display: true, text: t.yearQuarter }, ticks: { maxRotation: 90, minRotation: 45, autoSkip: true, maxTicksLimit: 20 } }, y: { title: { display: true, text: t.zScore }, min: -4, max: 4 } } }
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: (context: ChartTooltipContext) => { let label = context.dataset.label || ''; if (label) label += ': '; label += context.parsed.y.toFixed(2); if (Math.abs(context.parsed.y) >= CONFIG.zScoreThreshold) label += ' 🔴 ' + t.anomaly; return label; } } } }, scales: { x: { title: { display: true, text: t.yearQuarter }, ticks: { maxRotation: 90, minRotation: 45, autoSkip: true, maxTicksLimit: 20 } }, y: { title: { display: true, text: t.zScore }, min: -4, max: 4 } } }
     });
   }
 
@@ -438,7 +450,7 @@ class SeasonalPatternsCharts {
 
     this.chartInstances['comparison'] = new Chart(ctx, {
       type: 'bar', data: { labels: labels.map(q => this.translations.quarters[q] || q), datasets: [{ label: this.translations.charts?.comparison?.title || 'Average Ballots', data: avgBallots, backgroundColor: labels.map(q => CONFIG.quarterColors[q]), borderColor: labels.map(q => CONFIG.quarterColors[q]), borderWidth: 2 }] },
-      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: (context: any) => [`Average: ${context.parsed.y.toFixed(1)} ballots`, `Std Dev: ±${stddevBallots[context.dataIndex].toFixed(1)}`] } } }, scales: { x: { title: { display: true, text: this.translations.chartLabels.quarter } }, y: { title: { display: true, text: this.translations.chartLabels.averageBallots }, beginAtZero: true } } }
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: (context: ChartTooltipContext) => [`Average: ${context.parsed.y.toFixed(1)} ballots`, `Std Dev: ±${stddevBallots[context.dataIndex].toFixed(1)}`] } } }, scales: { x: { title: { display: true, text: this.translations.chartLabels.quarter } }, y: { title: { display: true, text: this.translations.chartLabels.averageBallots }, beginAtZero: true } } }
     });
   }
 
@@ -494,7 +506,7 @@ class SeasonalPatternsCharts {
 
     this.chartInstances['qoq'] = new Chart(ctx, {
       type: 'bar', data: { labels, datasets: [{ label: this.translations.chartLabels.qoqChange, data: changes, backgroundColor: colors, borderColor: colors, borderWidth: 1 }] },
-      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: (context: any) => `Change: ${context.parsed.y.toFixed(2)}%` } } }, scales: { x: { title: { display: true, text: this.translations.chartLabels.yearQuarter }, ticks: { maxRotation: 90, minRotation: 45, autoSkip: true, maxTicksLimit: 20 } }, y: { title: { display: true, text: this.translations.chartLabels.changePercent } } } }
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: (context: ChartTooltipContext) => `Change: ${context.parsed.y.toFixed(2)}%` } } }, scales: { x: { title: { display: true, text: this.translations.chartLabels.yearQuarter }, ticks: { maxRotation: 90, minRotation: 45, autoSkip: true, maxTicksLimit: 20 } }, y: { title: { display: true, text: this.translations.chartLabels.changePercent } } } }
     });
   }
 }
