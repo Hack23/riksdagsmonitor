@@ -548,7 +548,7 @@ function findLikelyHeaderRow(rows: readonly (readonly string[])[]): number {
       normalized.some((cell) =>
         cell.includes('inkomst') || cell.includes('utgift') || cell.includes('anslag'),
       ),
-      normalized.some((cell) => cell === 'ar' || cell.includes('kalenderár') || cell === 'year'),
+      normalized.some((cell) => cell === 'ar' || cell.includes('kalenderar') || cell === 'year'),
       normalized.some((cell) => cell.includes('budget') || cell.includes('belopp')),
     ].filter(Boolean).length;
     if (budgetScore >= 2) return i;

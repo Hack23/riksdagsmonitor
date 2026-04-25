@@ -1,5 +1,5 @@
 {
-    "version": "1.0",
+    "version": "1.1",
     "description": "Machine-readable inventory of Statskontoret open datasets used by Riksdagsmonitor for Swedish government-body and central-government budget context. Complements IMF (primary economic projections), SCB (Swedish official statistics), World Bank (non-economic global context), and Riksdag/Regering data.",
     "lastUpdated": "2026-04-25",
     "effectiveDate": "2026-04-25",
