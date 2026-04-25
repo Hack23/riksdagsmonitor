@@ -13,6 +13,7 @@ import {
   toDatamapperCode,
   toImfAreaCode,
   isKnownIso3,
+  listKnownIso3Codes,
   COUNTRY_NAMES_EN,
 } from '../scripts/imf-codes.js';
 
@@ -94,6 +95,31 @@ describe('imf-codes', () => {
       expect(COUNTRY_NAMES_EN.DEU).toBe('Germany');
       expect(COUNTRY_NAMES_EN.EU).toBe('European Union');
       expect(COUNTRY_NAMES_EN.EURO).toBe('Euro Area');
+    });
+
+    it('covers the expanded Eurozone comparator set (BEL / AUT / IRL)', () => {
+      expect(COUNTRY_NAMES_EN.BEL).toBe('Belgium');
+      expect(COUNTRY_NAMES_EN.AUT).toBe('Austria');
+      expect(COUNTRY_NAMES_EN.IRL).toBe('Ireland');
+    });
+  });
+
+  describe('listKnownIso3Codes', () => {
+    it('returns every ISO-3 code in ISO3_TO_IMF_AREA, sorted', () => {
+      const codes = listKnownIso3Codes();
+      const expected = Object.keys(ISO3_TO_IMF_AREA).sort();
+      expect([...codes]).toEqual(expected);
+    });
+
+    it('includes the Nordic + DE peer set', () => {
+      const codes = listKnownIso3Codes();
+      for (const iso3 of ['SWE', 'DNK', 'NOR', 'FIN', 'DEU']) {
+        expect(codes).toContain(iso3);
+      }
+    });
+
+    it('is frozen (immutable)', () => {
+      expect(Object.isFrozen(listKnownIso3Codes())).toBe(true);
     });
   });
 });

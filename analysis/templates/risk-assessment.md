@@ -201,6 +201,24 @@ Key policies at risk of parliamentary defeat, amendment, or delay:
 - Spring Amending Budget Status: `[OPTIONAL]`
 - Key FiU Dissents: `[OPTIONAL: party name + issue]`
 
+**IMF Macro-Fiscal Anchor (REQUIRED for every budget risk assessment):**
+
+Every budget-risk claim MUST be anchored to an IMF projection with an explicit vintage tag. World Bank economic codes are **deprecated** for budget analysis — see [`analysis/imf/README.md`](../imf/README.md) §8 and [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1.
+
+| IMF indicator | Citation | Use in budget risk |
+|---|---|---|
+| General-gov gross debt (% of GDP) | `WEO:GGXWDG_NGDP` | Debt trajectory vs EU Stability & Growth Pact ceiling |
+| General-gov net lending / borrowing | `WEO:GGXCNL_NGDP` | Deficit/surplus headline |
+| General-gov primary balance | `FM:GGXONLB_NGDP` | Debt-sustainability analysis |
+| General-gov revenue | `WEO:GGR_NGDP` | Tax-base risk, SkU cross-reference |
+| General-gov expenditure | `WEO:GGX_NGDP` | Spending-pressure risk |
+| Real GDP growth | `WEO:NGDP_RPCH` | Denominator sensitivity for all % of GDP ratios |
+| Inflation (CPI) | `WEO:PCPIPCH` | Nominal-anchor assumption |
+
+Citation format: `(WEO Apr-2026, WEO:GGXWDG_NGDP)` — vintage tag mandatory for any projection. Example: *"Budget-implied public debt lands at 33.1 % of GDP in 2027 (WEO Apr-2026, WEO:GGXWDG_NGDP), inside the EU 60 % ceiling but 1.2 pp above the 2024 baseline."*
+
+Programmatic lookup: `findImfIndicatorsForCommittee('FiU')` in [`scripts/imf-context.ts`](../../scripts/imf-context.ts).
+
 ---
 
 ## 🗳️ Electoral Risk Timeline

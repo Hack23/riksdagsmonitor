@@ -4,7 +4,7 @@
  * `world-bank-context.ts`.
  *
  * Where World Bank data lags 12–24 months, IMF data (WEO April/October
- * cycle; Fiscal Monitor; IFS; GFS_COFOG) leads. The agentic workflows
+ * cycle; Fiscal Monitor; ER; PCPS; GFS_COFOG) leads. The agentic workflows
  * use this module at article-authoring time to pick the correct IMF
  * indicator for each Riksdag committee's policy area and to stamp
  * projections with the right vintage.
@@ -30,7 +30,17 @@ import { IMF_WEO_INDICATORS, IMF_FM_INDICATORS } from './imf-client.js';
 // ---------------------------------------------------------------------------
 
 /** Database family an indicator belongs to. */
-export type ImfDatabase = 'WEO' | 'FM' | 'IFS' | 'BOP_AGG' | 'GFS_COFOG' | 'MFS_IR';
+export type ImfDatabase =
+  | 'WEO'
+  | 'FM'
+  | 'IFS'
+  | 'BOP'
+  | 'BOP_AGG'
+  | 'GFS_COFOG'
+  | 'MFS_IR'
+  | 'DOTS'
+  | 'PCPS'
+  | 'ER';
 
 /** An IMF economic indicator mapped to a Swedish policy area. */
 export interface ImfIndicatorContext {
@@ -193,6 +203,108 @@ export const IMF_INDICATORS: readonly ImfIndicatorContext[] = Object.freeze([
     unit: 'Millions',
     publishesProjections: true,
   },
+
+  // --- COFOG — committee-aligned spending decomposition ---
+  // COFOG codes (SDMX: GFS_COFOG database, 3-digit numeric). These are
+  // the four functions Riksdagsmonitor reports align with directly:
+  //   02 Defence         → FöU
+  //   07 Health          → SoU
+  //   09 Education       → UbU
+  //   10 Social Protection → SfU
+  {
+    database: 'GFS_COFOG',
+    indicatorId: 'G02',
+    name: 'Government spending — Defence (COFOG 02)',
+    description:
+      'General-government expenditure on defence as a share of total outlays. Committee-aligned with FöU (Defence).',
+    policyAreas: ['defence', 'public spending'],
+    committees: ['FöU', 'FiU'],
+    unit: 'Currency (flow) or % of total outlays',
+    publishesProjections: false,
+  },
+  {
+    database: 'GFS_COFOG',
+    indicatorId: 'G07',
+    name: 'Government spending — Health (COFOG 07)',
+    description: 'General-government expenditure on health. Committee-aligned with SoU (Health & Welfare).',
+    policyAreas: ['health', 'public spending'],
+    committees: ['SoU', 'FiU'],
+    unit: 'Currency (flow) or % of total outlays',
+    publishesProjections: false,
+  },
+  {
+    database: 'GFS_COFOG',
+    indicatorId: 'G09',
+    name: 'Government spending — Education (COFOG 09)',
+    description: 'General-government expenditure on education. Committee-aligned with UbU (Education).',
+    policyAreas: ['education', 'public spending'],
+    committees: ['UbU', 'FiU'],
+    unit: 'Currency (flow) or % of total outlays',
+    publishesProjections: false,
+  },
+  {
+    database: 'GFS_COFOG',
+    indicatorId: 'G10',
+    name: 'Government spending — Social protection (COFOG 10)',
+    description:
+      'General-government expenditure on social protection. Committee-aligned with SfU (Social Insurance).',
+    policyAreas: ['social protection', 'public spending', 'welfare'],
+    committees: ['SfU', 'FiU'],
+    unit: 'Currency (flow) or % of total outlays',
+    publishesProjections: false,
+  },
+
+  // --- Monetary (FiU — Riksbank oversight) ---
+  {
+    database: 'MFS_IR',
+    indicatorId: 'FPOLM_PA',
+    name: 'Central bank policy rate',
+    description:
+      'Riksbank policy (styrränta) rate, monthly. Primary monetary-policy reference; pairs with WEO:PCPIPCH for the inflation/policy-rate narrative.',
+    policyAreas: ['monetary policy', 'interest rates'],
+    committees: ['FiU'],
+    unit: '% per annum',
+    publishesProjections: false,
+  },
+
+  // --- Trade (NU/UU — bilateral flows) ---
+  {
+    database: 'DOTS',
+    indicatorId: 'TXG_FOB_USD',
+    name: 'Exports of goods, FOB (USD, bilateral)',
+    description:
+      'Bilateral goods exports by partner country. Indispensable for NU trade-policy and UU foreign-affairs coverage where partner-country exposure matters.',
+    policyAreas: ['trade', 'external sector'],
+    committees: ['NU', 'UU'],
+    unit: 'Current USD, millions',
+    publishesProjections: false,
+  },
+
+  // --- Exchange rates (FiU/NU) ---
+  {
+    database: 'ER',
+    indicatorId: 'ENDA_XDC_USD_RATE',
+    name: 'Exchange rate — SEK per USD (end of period)',
+    description:
+      'End-of-period nominal exchange rate vs USD. Pairs with WEO:PCPIPCH and PCPS commodity-price overlays for inflation-drivers commentary.',
+    policyAreas: ['monetary policy', 'exchange rates'],
+    committees: ['FiU', 'NU'],
+    unit: 'SEK per USD',
+    publishesProjections: false,
+  },
+
+  // --- Commodities (MJU — energy, FiU — inflation drivers) ---
+  {
+    database: 'PCPS',
+    indicatorId: 'POILAPSP',
+    name: 'Crude oil price index (APSP average)',
+    description:
+      'IMF Average Petroleum Spot Price index. Key overlay for MJU environment/energy coverage and for FiU inflation-driver commentary.',
+    policyAreas: ['energy', 'inflation', 'environment'],
+    committees: ['MJU', 'FiU'],
+    unit: 'Index, 2016 = 100',
+    publishesProjections: false,
+  },
 ]);
 
 // ---------------------------------------------------------------------------
@@ -242,4 +354,94 @@ export function imfCountryNameEn(iso3: string): string {
  */
 export function imfCitation(database: ImfDatabase, indicatorId: string): string {
   return `${database}:${indicatorId}`;
+}
+
+/**
+ * Direct lookup by canonical `DATABASE:INDICATOR_ID` citation. Returns
+ * `undefined` if the indicator is not in the curated context catalogue
+ * — callers should fall back to {@link findImfIndicatorsForDomains} or
+ * {@link findImfIndicatorsForCommittee} for broader discovery.
+ *
+ * @example
+ * ```ts
+ * const ind = findImfIndicatorByCode('WEO', 'NGDP_RPCH');
+ * // → { database: 'WEO', indicatorId: 'NGDP_RPCH', name: 'Real GDP growth', ... }
+ * ```
+ */
+export function findImfIndicatorByCode(
+  database: string,
+  indicatorId: string,
+): ImfIndicatorContext | undefined {
+  const upperDb = database.trim().toUpperCase();
+  const upperId = indicatorId.trim().toUpperCase();
+  return IMF_INDICATORS.find(
+    (ind) => ind.database === upperDb && ind.indicatorId.toUpperCase() === upperId,
+  );
+}
+
+/**
+ * Parse a `DATABASE:INDICATOR_ID` citation string and look up the
+ * corresponding indicator context. Returns `undefined` for malformed
+ * citations or unknown entries. Symmetric with {@link imfCitation}.
+ */
+export function findImfIndicatorByCitation(
+  citation: string,
+): ImfIndicatorContext | undefined {
+  const idx = citation.indexOf(':');
+  if (idx <= 0 || idx === citation.length - 1) return undefined;
+  const db = citation.slice(0, idx);
+  const id = citation.slice(idx + 1);
+  return findImfIndicatorByCode(db, id);
+}
+
+/**
+ * Enumerate the set of IMF databases actually referenced by the curated
+ * catalogue. Used by workflow introspection tooling to decide which
+ * transport (Datamapper vs SDMX) will be exercised for a given article.
+ */
+export function getImfDatabasesInUse(): ReadonlySet<ImfDatabase> {
+  return new Set(IMF_INDICATORS.map((ind) => ind.database));
+}
+
+/**
+ * Build a committee → indicators matrix (keys UPPERCASE) mirroring the
+ * shape of `analysis/imf/indicators-inventory.json → committeeMatrix`
+ * without loading the JSON inventory. Useful for workflow-level summaries
+ * ("for FiU we will pull: WEO:NGDP_RPCH, WEO:PCPIPCH, …").
+ *
+ * Committees are derived from the curated {@link IMF_INDICATORS} catalogue,
+ * so this matrix is always internally consistent with the code.
+ *
+ * @example
+ * ```ts
+ * const matrix = getImfCommitteeMatrix();
+ * matrix.get('FIU'); // → ['WEO:NGDP_RPCH', 'WEO:PCPIPCH', ...]
+ * ```
+ */
+export function getImfCommitteeMatrix(): ReadonlyMap<string, readonly string[]> {
+  const matrix = new Map<string, Set<string>>();
+  for (const ind of IMF_INDICATORS) {
+    const citation = imfCitation(ind.database, ind.indicatorId);
+    for (const committee of ind.committees) {
+      const key = committee.toUpperCase();
+      if (!matrix.has(key)) matrix.set(key, new Set());
+      matrix.get(key)!.add(citation);
+    }
+  }
+  const out = new Map<string, readonly string[]>();
+  for (const [committee, citations] of matrix) {
+    out.set(committee, Object.freeze([...citations].sort()));
+  }
+  return out;
+}
+
+/**
+ * Enumerate all indicator citations (`DATABASE:INDICATOR_ID`) exposed by
+ * the curated catalogue, sorted alphabetically. Useful for workflow logs
+ * and for cross-checking with `indicators-inventory.json`.
+ */
+export function listImfCitations(): readonly string[] {
+  return Object.freeze(
+    IMF_INDICATORS.map((ind) => imfCitation(ind.database, ind.indicatorId)).sort(),
+  );
 }

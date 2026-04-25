@@ -68,6 +68,9 @@ export const ISO3_TO_IMF_AREA: Readonly<Record<string, string>> = Object.freeze(
   NLD: '138',
   POL: '964',
   ESP: '184',
+  BEL: '124',
+  AUT: '122',
+  IRL: '178',
 });
 
 /**
@@ -114,6 +117,15 @@ export function isKnownIso3(iso3: string): boolean {
   return Object.prototype.hasOwnProperty.call(ISO3_TO_IMF_AREA, iso3.trim().toUpperCase());
 }
 
+/**
+ * Enumerate all ISO-3 codes with a known IMF AREA mapping, sorted
+ * alphabetically. Useful for workflow logs, peer-set expansion, and
+ * cross-checking against `analysis/imf/indicators-inventory.json`.
+ */
+export function listKnownIso3Codes(): readonly string[] {
+  return Object.freeze(Object.keys(ISO3_TO_IMF_AREA).sort());
+}
+
 /** Localised country name map used by the article dashboards. English baseline. */
 export const COUNTRY_NAMES_EN: Readonly<Record<string, string>> = Object.freeze({
   SWE: 'Sweden',
@@ -130,6 +142,9 @@ export const COUNTRY_NAMES_EN: Readonly<Record<string, string>> = Object.freeze(
   NLD: 'Netherlands',
   POL: 'Poland',
   ESP: 'Spain',
+  BEL: 'Belgium',
+  AUT: 'Austria',
+  IRL: 'Ireland',
   EU: 'European Union',
   EURO: 'Euro Area',
 });

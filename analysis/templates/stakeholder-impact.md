@@ -148,10 +148,24 @@ graph TD
 | **Economic Impact Type** | `[REQUIRED: COMPLIANCE COST / MARKET OPPORTUNITY / REGULATORY BURDEN / TAX CHANGE / OTHER]` |
 | **Estimated Financial Impact** | `[OPTIONAL: e.g. "±X BSEK annually per Finansdepartementet estimate"]` |
 | **Evidence Sources** | `[REQUIRED: proposition dok_id, Riksbank ref, or SOU]` |
+| **IMF Macro Anchor** | `[REQUIRED for any macroeconomic claim: citation + vintage, e.g. "WEO:NGDP_RPCH (WEO Apr-2026): real GDP growth 2.1 %"]` |
 | **Confidence Level** | `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` |
 
 **Business Sector Impact Narrative:**  
 `[REQUIRED: 2–3 sentences. Reference scripts/analysis-framework/lenses/economic.ts.]`
+
+> **IMF Economic Provenance (REQUIRED for any macro / fiscal / trade / exchange-rate claim):**
+> Every macro-sensitive statement in this section MUST cite an IMF indicator by its canonical `DATABASE:INDICATOR_ID` citation with a vintage tag. World Bank economic codes are **deprecated** — see [`analysis/imf/README.md`](../imf/README.md) §8 and [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1.
+>
+> Typical business-sector citations:
+> - Real GDP growth — `WEO:NGDP_RPCH`
+> - Inflation (CPI) — `WEO:PCPIPCH`
+> - Unemployment rate — `WEO:LUR`
+> - Exports volume growth — `WEO:TX_RPCH`
+> - Bilateral goods trade — `DOTS:TXG_FOB_USD` (per partner country)
+> - Exchange rate (SEK/USD) — `ER:ENDA_XDC_USD_RATE`
+>
+> Use `findImfIndicatorsForCommittee('NU')` (commerce) or `findImfIndicatorsForCommittee('AU')` (labour) in [`scripts/imf-context.ts`](../../scripts/imf-context.ts) for a programmatic peer-set query.
 
 ---
 

@@ -15,6 +15,8 @@ import {
   getDefaultImfClient,
   IMF_WEO_INDICATORS,
   IMF_FM_INDICATORS,
+  calculateRetryDelay,
+  parseDatamapperValues,
 } from '../scripts/imf-client.js';
 
 describe('ImfClient', () => {
@@ -300,6 +302,34 @@ describe('ImfClient', () => {
       global.fetch = vi.fn(async () => new Response('boom', { status: 500 })) as unknown as typeof global.fetch;
       await expect(client.getWeoIndicator('SWE', 'NGDP_RPCH')).rejects.toThrow(/IMF API error/);
     });
+
+    it('does not retry non-transient 4xx responses', async () => {
+      const spy = vi.fn(async () => new Response('not found', { status: 404 })) as unknown as typeof global.fetch;
+      global.fetch = spy;
+
+      await expect(client.getWeoIndicator('SWE', 'NGDP_RPCH')).rejects.toThrow(/IMF API error/);
+      expect((spy as unknown as { mock: { calls: unknown[][] } }).mock.calls).toHaveLength(1);
+    });
+
+    it('does not retry JSON parse errors from successful responses', async () => {
+      const spy = vi.fn(async () => new Response('not-json', { status: 200 })) as unknown as typeof global.fetch;
+      global.fetch = spy;
+
+      await expect(client.getWeoIndicator('SWE', 'NGDP_RPCH')).rejects.toThrow();
+      expect((spy as unknown as { mock: { calls: unknown[][] } }).mock.calls).toHaveLength(1);
+    });
+
+    it('does not retry non-network TypeError programmer errors', async () => {
+      const spy = vi.fn(async () => {
+        throw new TypeError('Cannot read properties of undefined');
+      }) as unknown as typeof global.fetch;
+      global.fetch = spy;
+
+      await expect(client.getWeoIndicator('SWE', 'NGDP_RPCH')).rejects.toThrow(
+        /Cannot read properties/,
+      );
+      expect((spy as unknown as { mock: { calls: unknown[][] } }).mock.calls).toHaveLength(1);
+    });
   });
 
   describe('sdmxFetch', () => {
@@ -320,5 +350,231 @@ describe('ImfClient', () => {
     it('returns the same instance across calls (singleton)', () => {
       expect(getDefaultImfClient()).toBe(getDefaultImfClient());
     });
+  });
+
+  describe('getWeoIndicatorsBatch', () => {
+    it('issues one Datamapper call per indicator for the same country', async () => {
+      const spy = vi.fn(async (url: string) => {
+        // URL pattern: /{indicator}/{country}
+        const parts = url.split('/');
+        const indicator = parts[parts.length - 2];
+        const country = parts[parts.length - 1];
+        return new Response(
+          JSON.stringify({
+            values: { [indicator]: { [country]: { '2024': 1.23 } } },
+          }),
+          { status: 200 },
+        );
+      }) as unknown as typeof global.fetch;
+      global.fetch = spy;
+
+      const result = await client.getWeoIndicatorsBatch('SWE', [
+        'NGDP_RPCH',
+        'PCPIPCH',
+        'LUR',
+      ]);
+
+      expect(result.size).toBe(3);
+      expect(result.get('NGDP_RPCH')?.[0]?.value).toBe(1.23);
+      expect(result.get('PCPIPCH')?.[0]?.value).toBe(1.23);
+      expect(result.get('LUR')?.[0]?.value).toBe(1.23);
+      expect((spy as unknown as { mock: { calls: unknown[][] } }).mock.calls).toHaveLength(3);
+    });
+
+    it('isolates individual failures — a flaky indicator maps to []', async () => {
+      let call = 0;
+      global.fetch = vi.fn(async () => {
+        call += 1;
+        if (call === 2) {
+          // Second indicator fetch fails permanently.
+          return new Response('boom', { status: 500 });
+        }
+        return new Response(
+          JSON.stringify({
+            values: { NGDP_RPCH: { SWE: { '2024': 2.1 } }, LUR: { SWE: { '2024': 7.5 } } },
+          }),
+          { status: 200 },
+        );
+      }) as unknown as typeof global.fetch;
+
+      const noRetryClient = new ImfClient({ maxRetries: 0, timeout: 1_000 });
+      const result = await noRetryClient.getWeoIndicatorsBatch('SWE', [
+        'NGDP_RPCH',
+        'PCPIPCH',
+        'LUR',
+      ]);
+
+      expect(result.get('NGDP_RPCH')?.length).toBe(1);
+      expect(result.get('PCPIPCH')).toEqual([]);
+      expect(result.get('LUR')?.length).toBe(1);
+    });
+
+    it('emits a diagnostic event when one indicator is fail-softed', async () => {
+      const diagnostics = vi.fn();
+      global.fetch = vi.fn(async () => new Response('boom', { status: 500 })) as unknown as typeof global.fetch;
+
+      const noRetryClient = new ImfClient({
+        maxRetries: 0,
+        timeout: 1_000,
+        onBatchIndicatorError: diagnostics,
+      });
+      const result = await noRetryClient.getWeoIndicatorsBatch('SWE', ['PCPIPCH']);
+
+      expect(result.get('PCPIPCH')).toEqual([]);
+      expect(diagnostics).toHaveBeenCalledOnce();
+      expect(diagnostics).toHaveBeenCalledWith(
+        expect.objectContaining({
+          countryCode: 'SWE',
+          indicatorId: 'PCPIPCH',
+          error: expect.any(Error),
+        }),
+      );
+    });
+
+    it('rethrows non-retryable indicator HTTP errors instead of fail-softing them', async () => {
+      const diagnostics = vi.fn();
+      global.fetch = vi.fn(async () => new Response('missing', { status: 404 })) as unknown as typeof global.fetch;
+
+      const noRetryClient = new ImfClient({
+        maxRetries: 0,
+        timeout: 1_000,
+        onBatchIndicatorError: diagnostics,
+      });
+
+      await expect(noRetryClient.getWeoIndicatorsBatch('SWE', ['BAD_CODE'])).rejects.toThrow(
+        /IMF API error: 404/,
+      );
+      expect(diagnostics).not.toHaveBeenCalled();
+    });
+
+    it('fail-softs fetch network TypeErrors but not programmer TypeErrors', async () => {
+      global.fetch = vi.fn(async () => {
+        throw new TypeError('fetch failed');
+      }) as unknown as typeof global.fetch;
+      const noRetryClient = new ImfClient({ maxRetries: 0, timeout: 1_000 });
+
+      const result = await noRetryClient.getWeoIndicatorsBatch('SWE', ['PCPIPCH']);
+      expect(result.get('PCPIPCH')).toEqual([]);
+
+      global.fetch = vi.fn(async () => {
+        throw new TypeError('Cannot read properties of undefined');
+      }) as unknown as typeof global.fetch;
+      await expect(noRetryClient.getWeoIndicatorsBatch('SWE', ['PCPIPCH'])).rejects.toThrow(
+        /Cannot read properties/,
+      );
+    });
+
+    it('validates years up-front instead of swallowing caller errors', async () => {
+      global.fetch = vi.fn();
+
+      await expect(client.getWeoIndicatorsBatch('SWE', ['NGDP_RPCH'], 0)).rejects.toThrow(
+        /positive integer/,
+      );
+      expect((global.fetch as unknown as { mock: { calls: unknown[][] } }).mock.calls).toHaveLength(0);
+    });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Pure-helper tests (no network)
+// ---------------------------------------------------------------------------
+
+describe('calculateRetryDelay', () => {
+  it('applies exponential back-off: 1s / 2s / 4s', () => {
+    expect(calculateRetryDelay(0)).toBe(1_000);
+    expect(calculateRetryDelay(1)).toBe(2_000);
+    expect(calculateRetryDelay(2)).toBe(4_000);
+  });
+
+  it('honours a positive Retry-After header (delta-seconds)', () => {
+    expect(calculateRetryDelay(0, '5')).toBe(5_000);
+  });
+
+  it('caps Retry-After at 30 s to avoid pathological sleeps', () => {
+    expect(calculateRetryDelay(0, '3600')).toBe(30_000);
+  });
+
+  it('ignores invalid / non-positive Retry-After and falls back to exponential', () => {
+    expect(calculateRetryDelay(1, 'abc')).toBe(2_000);
+    expect(calculateRetryDelay(1, '0')).toBe(2_000);
+    expect(calculateRetryDelay(1, '-5')).toBe(2_000);
+    expect(calculateRetryDelay(1, null)).toBe(2_000);
+    expect(calculateRetryDelay(1, undefined)).toBe(2_000);
+  });
+
+  it('clamps negative attempt numbers to attempt 0', () => {
+    expect(calculateRetryDelay(-3)).toBe(1_000);
+  });
+});
+
+describe('parseDatamapperValues', () => {
+  const VINTAGE = 'WEO-2026-04';
+  const currentYear = new Date().getUTCFullYear();
+
+  it('returns [] when the indicator node is absent', () => {
+    expect(parseDatamapperValues({ values: {} }, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
+  });
+
+  it('returns [] when the country node is absent', () => {
+    const raw = { values: { NGDP_RPCH: { USA: { '2024': 1 } } } };
+    expect(parseDatamapperValues(raw, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
+  });
+
+  it('sorts descending by year', () => {
+    const raw = {
+      values: {
+        NGDP_RPCH: { SWE: { '2021': 1, '2023': 3, '2022': 2 } },
+      },
+    };
+    const points = parseDatamapperValues(raw, 'NGDP_RPCH', 'SWE', VINTAGE);
+    expect(points.map((p) => p.date)).toEqual(['2023', '2022', '2021']);
+  });
+
+  it('stamps projection years with the supplied vintage', () => {
+    const raw = {
+      values: {
+        GGXWDG_NGDP: {
+          SWE: {
+            [String(currentYear - 1)]: 30,
+            [String(currentYear + 2)]: 28,
+          },
+        },
+      },
+    };
+    const points = parseDatamapperValues(raw, 'GGXWDG_NGDP', 'SWE', VINTAGE);
+    const historical = points.find((p) => p.date === String(currentYear - 1));
+    const projection = points.find((p) => p.date === String(currentYear + 2));
+    expect(historical?.projection).toBe(false);
+    expect(historical?.projectionVintage).toBeUndefined();
+    expect(projection?.projection).toBe(true);
+    expect(projection?.projectionVintage).toBe(VINTAGE);
+  });
+
+  it('drops null / "n/a" / NaN values and non-numeric years', () => {
+    const raw = {
+      values: {
+        NGDP_RPCH: {
+          SWE: {
+            '2022': null,
+            '2023': 'n/a',
+            '2024': 2.1,
+            banana: 99, // non-numeric year key
+          },
+        },
+      },
+    };
+    const points = parseDatamapperValues(raw, 'NGDP_RPCH', 'SWE', VINTAGE);
+    expect(points.map((p) => p.date)).toEqual(['2024']);
+  });
+
+  it('tolerates empty or missing raw envelopes', () => {
+    expect(parseDatamapperValues({}, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
+    expect(parseDatamapperValues(null, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
+    expect(parseDatamapperValues(undefined, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
+  });
+
+  it('tolerates partial Datamapper envelope nodes', () => {
+    expect(parseDatamapperValues({ values: { NGDP_RPCH: undefined } }, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
+    expect(parseDatamapperValues({ values: { NGDP_RPCH: { SWE: undefined } } }, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
   });
 });

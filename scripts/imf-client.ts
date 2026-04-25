@@ -71,6 +71,19 @@ export interface ImfClientConfig {
    * April / October when the IMF publishes a new flagship release.
    */
   readonly weoVintage?: string;
+  /**
+   * Optional diagnostic hook invoked when `getWeoIndicatorsBatch()` fail-softs
+   * one indicator to an empty series because the IMF transport/API call failed.
+   * The default is no-op so callers can opt in without polluting JSON stdout.
+   */
+  readonly onBatchIndicatorError?: (event: ImfBatchIndicatorErrorEvent) => void;
+}
+
+/** Diagnostic payload for one fail-softed `getWeoIndicatorsBatch()` item. */
+export interface ImfBatchIndicatorErrorEvent {
+  readonly countryCode: string;
+  readonly indicatorId: string;
+  readonly error: unknown;
 }
 
 // ---------------------------------------------------------------------------
@@ -83,6 +96,21 @@ const DEFAULT_TIMEOUT = 15_000;
 const DEFAULT_MAX_RETRIES = 2;
 /** Default vintage. Update in April / October when the WEO re-releases. */
 const DEFAULT_WEO_VINTAGE = 'WEO-2026-04';
+
+/** Base delay (ms) for the exponential back-off used on 429 / 5xx / network errors. */
+const RETRY_BASE_DELAY_MS = 1_000;
+/**
+ * Cap applied to a server-supplied `Retry-After` header so that a
+ * misbehaving origin cannot pin the client in a multi-minute sleep.
+ * Matches THREAT_MODEL.md TB-6a (resource-exhaustion via cooperative back-off).
+ */
+const RETRY_AFTER_CAP_MS = 30_000;
+const NETWORK_TYPE_ERROR_PATTERNS = [
+  /fetch failed/i,
+  /failed to fetch/i,
+  /network/i,
+  /load failed/i,
+] as const;
 
 /**
  * Canonical IMF indicator IDs used by Riksdagsmonitor articles. Each
@@ -130,14 +158,33 @@ export const IMF_FM_INDICATORS = {
 // ---------------------------------------------------------------------------
 
 /** Shape of the IMF Datamapper JSON response (partial). */
-interface DatamapperResponse {
+export interface DatamapperResponse {
   values?: {
-    [indicatorId: string]: {
-      [countryCode: string]: {
-        [year: string]: number | string | null;
-      };
-    };
+    [indicatorId: string]:
+      | {
+          [countryCode: string]:
+            | {
+                [year: string]: number | string | null | undefined;
+              }
+            | undefined;
+        }
+      | undefined;
   };
+}
+
+/** Defensive parser input: Datamapper can return empty or partial envelopes. */
+export type DatamapperEnvelope = Partial<DatamapperResponse> | null | undefined;
+
+class ImfHttpError extends Error {
+  readonly retryable: boolean;
+  readonly retryAfterHeader?: string | null;
+
+  constructor(response: Response) {
+    super(`IMF API error: ${response.status} ${response.statusText} for ${response.url}`);
+    this.name = 'ImfHttpError';
+    this.retryable = response.status === 429 || response.status >= 500;
+    this.retryAfterHeader = response.headers.get('retry-after');
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -166,6 +213,7 @@ export class ImfClient {
   readonly timeout: number;
   readonly maxRetries: number;
   readonly weoVintage: string;
+  private readonly onBatchIndicatorError?: (event: ImfBatchIndicatorErrorEvent) => void;
 
   constructor(config: ImfClientConfig = {}) {
     this.datamapperBaseURL = config.datamapperBaseURL ?? DEFAULT_DATAMAPPER_BASE_URL;
@@ -173,6 +221,7 @@ export class ImfClient {
     this.timeout = config.timeout ?? DEFAULT_TIMEOUT;
     this.maxRetries = config.maxRetries ?? DEFAULT_MAX_RETRIES;
     this.weoVintage = config.weoVintage ?? DEFAULT_WEO_VINTAGE;
+    this.onBatchIndicatorError = config.onBatchIndicatorError;
   }
 
   /**
@@ -200,41 +249,49 @@ export class ImfClient {
     const url = `${this.datamapperBaseURL}/${encodeURIComponent(weoCode)}/${encodeURIComponent(code)}`;
     const raw = (await this.fetchWithRetry(url)) as DatamapperResponse;
 
-    const indicatorNode = raw?.values?.[weoCode];
-    if (!indicatorNode) return [];
-    const countryNode = indicatorNode[code];
-    if (!countryNode) return [];
+    const points = parseDatamapperValues(raw, weoCode, code, this.weoVintage);
+    return points.slice(0, years);
+  }
 
-    const currentYear = new Date().getUTCFullYear();
-    const points: ImfDataPoint[] = [];
-    for (const [year, rawValue] of Object.entries(countryNode)) {
-      // Defensive: IMF can emit null / 'n/a' / undefined for missing
-      // observations. `Number(null)` === 0, which would silently inject
-      // a bogus zero into the chart — gate on explicit null/undefined
-      // and then on NaN from string coercion.
-      if (rawValue === null || rawValue === undefined) continue;
-      const numeric = typeof rawValue === 'number' ? rawValue : Number(rawValue);
-      if (!Number.isFinite(numeric)) continue;
-      const yearInt = Number.parseInt(year, 10);
-      if (!Number.isFinite(yearInt)) continue;
-      const isProjection = yearInt > currentYear;
-      const dp: ImfDataPoint = {
-        countryCode: code,
-        countryName: code, // Datamapper does not return the display name; callers overlay this from COUNTRY_NAMES_EN
-        indicatorId: weoCode,
-        indicatorName: weoCode,
-        date: year,
-        value: numeric,
-        projection: isProjection,
-        provider: 'imf',
-        ...(isProjection ? { projectionVintage: this.weoVintage } : {}),
-      };
-      points.push(dp);
+  /**
+   * Fetch several WEO indicators for the **same** country in sequence.
+   * Sequential (not parallel) to respect the IMF rate limit of
+   * ~10 req / 5 s. Failures on individual indicators map to an empty
+   * array for that indicator so a single flaky series does not poison
+   * the whole batch — matches the fail-soft posture of
+   * {@link compareCountriesWeo}.
+   *
+   * Useful for article dashboards that need a full macro+fiscal panel
+   * for Sweden (GDP growth, inflation, unemployment, debt, balance).
+   *
+   * @param iso3 ISO-3 alpha-3 country code
+   * @param weoCodes WEO indicator codes (e.g. ['NGDP_RPCH', 'PCPIPCH', 'LUR'])
+   * @param years How many most-recent years per indicator (default 10)
+   */
+  async getWeoIndicatorsBatch(
+    iso3: string,
+    weoCodes: readonly string[],
+    years = 10,
+  ): Promise<Map<string, readonly ImfDataPoint[]>> {
+    if (years < 1 || !Number.isInteger(years)) {
+      throw new Error(`getWeoIndicatorsBatch: 'years' must be a positive integer, got ${years}`);
     }
 
-    // Sort by year desc, then truncate to the requested horizon.
-    points.sort((a, b) => Number.parseInt(b.date, 10) - Number.parseInt(a.date, 10));
-    return points.slice(0, years);
+    const out = new Map<string, readonly ImfDataPoint[]>();
+    for (const weoCode of weoCodes) {
+      try {
+        const series = await this.getWeoIndicator(iso3, weoCode, years);
+        out.set(weoCode, series);
+      } catch (error) {
+        if (isTransientFetchError(error) || (error instanceof ImfHttpError && error.retryable)) {
+          this.onBatchIndicatorError?.({ countryCode: iso3, indicatorId: weoCode, error });
+          out.set(weoCode, []);
+          continue;
+        }
+        throw error;
+      }
+    }
+    return out;
   }
 
   /**
@@ -305,33 +362,20 @@ export class ImfClient {
         headers: { Accept: 'application/json', ...extraHeaders },
       });
 
-      if (response.status === 429 && attempt < this.maxRetries) {
-        // Respect IMF advertised rate limit (~10 req / 5 s) with an
-        // exponential back-off: 1 s → 2 s → 4 s (matches THREAT_MODEL.md
-        // TB-6a). Honour a `Retry-After` header (delta-seconds) when the
-        // server supplies one, capped at 30 s to avoid pathological waits.
-        const retryAfter = response.headers.get('retry-after');
-        let delay = 1_000 * 2 ** attempt;
-        if (retryAfter) {
-          const retryAfterSec = Number.parseInt(retryAfter, 10);
-          if (Number.isFinite(retryAfterSec) && retryAfterSec > 0) {
-            delay = Math.min(retryAfterSec * 1_000, 30_000);
-          }
-        }
-        clearTimeout(timeoutId);
-        await new Promise((resolve) => setTimeout(resolve, delay));
-        return this.fetchWithRetry(url, attempt + 1, extraHeaders);
-      }
-
       if (!response.ok) {
-        throw new Error(`IMF API error: ${response.status} ${response.statusText} for ${url}`);
+        throw new ImfHttpError(response);
       }
 
       return await response.json();
     } catch (error) {
-      if (attempt < this.maxRetries) {
-        // Network / abort path: same exponential schedule (1 s → 2 s → 4 s).
-        const delay = 1_000 * 2 ** attempt;
+      const retryAfterHeader = error instanceof ImfHttpError ? error.retryAfterHeader : undefined;
+      if (attempt < this.maxRetries && isRetryableError(error)) {
+        // Retryable errors use exponential backoff starting at 1 s
+        // (1 s → 2 s → 4 s → … depending on maxRetries).
+        // HTTP 429 additionally honours Retry-After (delta-seconds), capped
+        // at 30 s to avoid pathological waits.
+        const delay = calculateRetryDelay(attempt, retryAfterHeader);
+        clearTimeout(timeoutId);
         await new Promise((resolve) => setTimeout(resolve, delay));
         return this.fetchWithRetry(url, attempt + 1, extraHeaders);
       }
@@ -340,6 +384,107 @@ export class ImfClient {
       clearTimeout(timeoutId);
     }
   }
+}
+
+// ---------------------------------------------------------------------------
+// Pure helpers (exported for testability)
+// ---------------------------------------------------------------------------
+
+/**
+ * Compute the retry delay (milliseconds) for a given attempt number.
+ *
+ * Strategy:
+ *  - Base schedule is exponential: 1 s → 2 s → 4 s (attempt 0/1/2).
+ *  - When the server supplies a `Retry-After` header (delta-seconds),
+ *    honour it, capped at {@link RETRY_AFTER_CAP_MS} to avoid pathological
+ *    multi-minute sleeps from a misbehaving origin.
+ *  - Invalid / non-positive `Retry-After` values fall back to the
+ *    exponential schedule.
+ *
+ * Exported to keep the retry math verifiable without spinning up an HTTP stub.
+ */
+export function calculateRetryDelay(
+  attempt: number,
+  retryAfterHeader?: string | null,
+): number {
+  const exponential = RETRY_BASE_DELAY_MS * 2 ** Math.max(0, attempt);
+  if (!retryAfterHeader) return exponential;
+  const retryAfterSec = Number.parseInt(retryAfterHeader, 10);
+  if (!Number.isFinite(retryAfterSec) || retryAfterSec <= 0) return exponential;
+  return Math.min(retryAfterSec * 1_000, RETRY_AFTER_CAP_MS);
+}
+
+/**
+ * Parse a raw Datamapper JSON envelope into canonical {@link ImfDataPoint}
+ * records for one `(indicator, country)` pair.
+ *
+ * Defensive posture:
+ *  - Missing indicator node → `[]`
+ *  - Missing country node → `[]`
+ *  - `null` / `undefined` / non-finite / `'n/a'` values dropped (no silent zeros)
+ *  - Non-numeric year keys dropped
+ *  - Output is sorted descending by year (newest first)
+ *
+ * Pure function: no I/O, no clocks except `new Date()` for projection
+ * detection. Exported so tests can exercise the parser directly without
+ * stubbing `fetch`.
+ */
+export function parseDatamapperValues(
+  raw: DatamapperEnvelope,
+  weoCode: string,
+  iso3: string,
+  weoVintage: string,
+): ImfDataPoint[] {
+  const indicatorNode = raw?.values?.[weoCode];
+  if (!indicatorNode) return [];
+  const countryNode = indicatorNode[iso3];
+  if (!countryNode) return [];
+
+  const currentYear = new Date().getUTCFullYear();
+  const points: ImfDataPoint[] = [];
+  for (const [year, rawValue] of Object.entries(countryNode)) {
+    // Defensive: IMF can emit null / 'n/a' / undefined for missing
+    // observations. `Number(null)` === 0, which would silently inject
+    // a bogus zero into the chart — gate on explicit null/undefined
+    // and then on NaN from string coercion.
+    if (rawValue === null || rawValue === undefined) continue;
+    const numeric = typeof rawValue === 'number' ? rawValue : Number(rawValue);
+    if (!Number.isFinite(numeric)) continue;
+    const yearInt = Number.parseInt(year, 10);
+    if (!Number.isFinite(yearInt)) continue;
+    const isProjection = yearInt > currentYear;
+    const dp: ImfDataPoint = {
+      countryCode: iso3,
+      countryName: iso3, // Datamapper does not return the display name; callers overlay this from COUNTRY_NAMES_EN
+      indicatorId: weoCode,
+      indicatorName: weoCode,
+      date: year,
+      value: numeric,
+      projection: isProjection,
+      provider: 'imf',
+      ...(isProjection ? { projectionVintage: weoVintage } : {}),
+    };
+    points.push(dp);
+  }
+
+  // Sort by year desc so consumers can slice newest-first.
+  points.sort((a, b) => Number.parseInt(b.date, 10) - Number.parseInt(a.date, 10));
+  return points;
+}
+
+function isRetryableError(error: unknown): boolean {
+  if (error instanceof ImfHttpError) {
+    return error.retryable;
+  }
+  return isTransientFetchError(error);
+}
+
+function isTransientFetchError(error: unknown): boolean {
+  if (error instanceof TypeError) {
+    return NETWORK_TYPE_ERROR_PATTERNS.some((pattern) => pattern.test(error.message));
+  }
+  if (error instanceof Error) return error.name === 'AbortError';
+  return false;
 }
 
 // ---------------------------------------------------------------------------
