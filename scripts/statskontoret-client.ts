@@ -77,6 +77,40 @@ export interface StatskontoretHeadcountOptions {
 }
 
 /**
+ * A single budget-outturn row derived from an årsutfall, månadsutfall or
+ * budget-time-series workbook.  Amounts are in MSEK (millions of Swedish
+ * kronor) as published by Statskontoret.
+ */
+export interface StatskontoretBudgetRow {
+  readonly year: number;
+  /** Present only for månadsutfall (1–12). */
+  readonly month?: number;
+  /** 'Inkomst' | 'Utgift' or the raw documentType string from the download. */
+  readonly documentType: string;
+  /** Human-readable title: income title name or appropriation/expenditure-area name. */
+  readonly title: string;
+  /** Numeric code of the income title or appropriation, when present. */
+  readonly code?: string;
+  /** Outturn amount in MSEK. */
+  readonly outturn: number;
+  /** Budget amount in MSEK; may be absent in older series. */
+  readonly budget?: number;
+  /** Agency or authority name, when present (finest granularity). */
+  readonly agency?: string;
+  /** Preliminary / definitive / forecast status label. */
+  readonly status?: string;
+}
+
+export interface StatskontoretBudgetOptions {
+  /** Override the documentType label (e.g. when fetching a single-type workbook). */
+  readonly documentType?: string;
+  /** Hint for the year when the workbook has no year column (e.g. a single-year file). */
+  readonly fallbackYear?: number;
+  /** Hint for the month when the workbook has no month column. */
+  readonly fallbackMonth?: number;
+}
+
+/**
  * Typed error thrown by the Statskontoret client and parsers.
  *
  * `kind` lets callers distinguish transport, parsing and contract failures
@@ -331,6 +365,109 @@ export function buildHeadcountTimeSeries(
   return aggregateHeadcountByDepartment(rowsToRecords(sheet.rows), options.fallbackYear);
 }
 
+/**
+ * Parse budget-outturn records into typed `StatskontoretBudgetRow` rows.
+ *
+ * Covers both `arsutfall` (annual, no month) and `manadsutfall` (monthly) as
+ * well as the `budget-time-series` XLSX series.  Field names are normalised so
+ * Swedish characters and capitalisation differences are tolerated.
+ */
+export function parseBudgetRows(
+  records: readonly Record<string, string>[],
+  options: StatskontoretBudgetOptions = {},
+): StatskontoretBudgetRow[] {
+  const rows: StatskontoretBudgetRow[] = [];
+  for (const record of records) {
+    const lookup = buildRecordLookup(record);
+    const yearRaw = findField(lookup, ['år', 'ar', 'year', 'kalenderår', 'kalenderar']);
+    const year = parseStatskontoretOptionalInt(yearRaw ?? '') ?? options.fallbackYear;
+    if (!year) continue;
+
+    const monthRaw = findField(lookup, ['månad', 'manad', 'month', 'månadsperiod']);
+    const month = parseStatskontoretOptionalInt(monthRaw ?? '') ?? options.fallbackMonth;
+
+    const docType =
+      options.documentType ??
+      findField(lookup, ['dokumenttyp', 'dokumenttype', 'typ', 'inkomst_utgift', 'inkomstutgift']) ??
+      '';
+
+    const title =
+      // 'Inkomsttitelnamn' is the descriptive name; 'Inkomsttitel' is the numeric code.
+      // Check the name-specific candidates first to avoid shadowing by the code field.
+      findField(lookup, [
+        'inkomsttitelnamn', 'inkomsttitelgruppsnamn',
+        'anslagsnamn', 'utgiftsomradesnamn', 'utgiftsomrade',
+        'titel', 'name', 'namn', 'rubrik',
+      ])?.trim() ?? '';
+
+    const code = findField(lookup, [
+      // 'inkomsttitel' is the numeric income-title code (e.g. 1111, 1211)
+      'inkomsttitel', 'inkomsttitelnummer', 'inkomsttitelnr',
+      'anslagsnr', 'anslagsnummer', 'anslagspost',
+      'utgiftsomradesnr', 'kod', 'code', 'nummer',
+    ])?.trim();
+
+    const outturnRaw = findField(lookup, [
+      'utfall', 'outturn', 'utfallmsek', 'utfallbelopp',
+      'inkomstutfall', 'utgiftsutfall', 'belopp',
+    ]);
+    const outturn = parseStatskontoretSwedishNumber(outturnRaw ?? '');
+    if (outturn === undefined) continue;
+
+    const budgetRaw = findField(lookup, [
+      'budget', 'budgetvarde', 'budgetvärde', 'anvisatbelopp',
+      'anvisat', 'statsbidrag', 'ramanslag',
+    ]);
+    const budget = parseStatskontoretSwedishNumber(budgetRaw ?? '');
+
+    const agency = findField(lookup, ['myndighet', 'myndighetsnamn', 'namn', 'authority'])?.trim();
+    const status = findField(lookup, ['status', 'utfallsstatus', 'preliminar', 'preliminär'])?.trim();
+
+    rows.push({
+      year,
+      ...(month !== undefined ? { month } : {}),
+      documentType: docType,
+      title,
+      ...(code ? { code } : {}),
+      outturn: roundOneDecimal(outturn),
+      ...(budget !== undefined ? { budget: roundOneDecimal(budget) } : {}),
+      ...(agency ? { agency } : {}),
+      ...(status ? { status } : {}),
+    });
+  }
+  return rows;
+}
+
+/**
+ * Parse all sheets in a budget-outturn workbook and return a flat array of
+ * typed rows.  For single-type workbooks (e.g. a file explicitly downloaded as
+ * "Inkomst"), pass `options.documentType` to set the label uniformly.
+ */
+export function buildBudgetTimeSeries(
+  workbook: StatskontoretWorkbook,
+  options: StatskontoretBudgetOptions = {},
+): StatskontoretBudgetRow[] {
+  const rows: StatskontoretBudgetRow[] = [];
+  for (const sheet of workbook.sheets) {
+    // Derive a document-type hint from the sheet name when not forced by options
+    const sheetDocType = options.documentType ?? inferDocTypeFromSheetName(sheet.name);
+    const sheetOptions: StatskontoretBudgetOptions = {
+      ...options,
+      ...(sheetDocType ? { documentType: sheetDocType } : {}),
+    };
+    rows.push(...parseBudgetRows(rowsToRecords(sheet.rows), sheetOptions));
+  }
+  return rows;
+}
+
+/** Infer 'Inkomst' / 'Utgift' from common Swedish sheet-name patterns. */
+function inferDocTypeFromSheetName(name: string): string | undefined {
+  const n = name.toLowerCase();
+  if (n.includes('inkomst')) return 'Inkomst';
+  if (n.includes('utgift') || n.includes('anslag')) return 'Utgift';
+  return undefined;
+}
+
 function parseWorkbookSheets(xml: string): Array<{ name: string; relationshipId: string }> {
   const sheets: Array<{ name: string; relationshipId: string }> = [];
   const sheetRe = /<sheet\b([^>]*)\/>/gi;
@@ -397,13 +534,24 @@ function parseCellValue(xml: string, type: string | undefined, sharedStrings: re
 function findLikelyHeaderRow(rows: readonly (readonly string[])[]): number {
   for (let i = 0; i < rows.length; i++) {
     const normalized = rows[i].map(normalizeKey);
-    const score = [
+    // Headcount (myndighetsförteckning) signals
+    const headcountScore = [
       normalized.some((cell) => cell.includes('myndighet')),
       normalized.some((cell) => cell.includes('departement')),
       normalized.some((cell) => cell.includes('arsarbetskrafter') || cell === 'aa'),
       normalized.some((cell) => cell === 'ar' || cell === 'year'),
     ].filter(Boolean).length;
-    if (score >= 2) return i;
+    if (headcountScore >= 2) return i;
+    // Budget-outturn (årsutfall / månadsutfall / budget-time-series) signals
+    const budgetScore = [
+      normalized.some((cell) => cell.includes('utfall') || cell.includes('outturn')),
+      normalized.some((cell) =>
+        cell.includes('inkomst') || cell.includes('utgift') || cell.includes('anslag'),
+      ),
+      normalized.some((cell) => cell === 'ar' || cell.includes('kalenderár') || cell === 'year'),
+      normalized.some((cell) => cell.includes('budget') || cell.includes('belopp')),
+    ].filter(Boolean).length;
+    if (budgetScore >= 2) return i;
   }
   return rows.findIndex((row) => row.filter((cell) => cell.trim()).length >= 2);
 }

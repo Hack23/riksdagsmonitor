@@ -9,10 +9,12 @@ import { describe, it, expect } from 'vitest';
 import JSZip from 'jszip';
 import {
   aggregateHeadcountByDepartment,
+  buildBudgetTimeSeries,
   buildHeadcountTimeSeries,
   extractStatskontoretDownloadLinks,
   parseStatskontoretCsvZip,
   parseStatskontoretXlsx,
+  parseBudgetRows,
   rowsToRecords,
   StatskontoretClient,
 } from '../scripts/statskontoret-client.js';
@@ -133,6 +135,113 @@ describe('StatskontoretClient', () => {
     expect(workbook.sheets[0].rows[0]).toEqual(['h1', '', 'h3']);
   });
 });
+
+describe('parseBudgetRows', () => {
+  it('parses annual income outturn records (årsutfall Inkomst)', () => {
+    const records = [
+      { År: '2024', Inkomsttitel: '1111', Inkomsttitelnamn: 'Skatt på inkomst', Utfall: '500000', Budget: '480000' },
+      { År: '2024', Inkomsttitel: '1211', Inkomsttitelnamn: 'Mervärdesskatt', Utfall: '750000', Budget: '700000' },
+    ];
+    const rows = parseBudgetRows(records, { documentType: 'Inkomst' });
+    expect(rows).toHaveLength(2);
+    expect(rows[0]).toMatchObject({
+      year: 2024,
+      documentType: 'Inkomst',
+      title: 'Skatt på inkomst',
+      code: '1111',
+      outturn: 500000,
+      budget: 480000,
+    });
+    expect(rows[0].month).toBeUndefined();
+  });
+
+  it('parses annual expenditure outturn records (årsutfall Utgift)', () => {
+    const records = [
+      { År: '2024', Anslagsnamn: 'Riksdagen', Anslagsnr: '1:1', Utfall: '1200', Budget: '1100', Myndighet: 'Riksdagen' },
+    ];
+    const rows = parseBudgetRows(records, { documentType: 'Utgift' });
+    expect(rows[0]).toMatchObject({
+      year: 2024,
+      documentType: 'Utgift',
+      title: 'Riksdagen',
+      code: '1:1',
+      outturn: 1200,
+      budget: 1100,
+      agency: 'Riksdagen',
+    });
+  });
+
+  it('parses monthly outturn records (månadsutfall) with month column', () => {
+    const records = [
+      { År: '2025', Månad: '3', Inkomsttitelnamn: 'Skatter', Utfall: '42000', Typ: 'Inkomst' },
+    ];
+    const rows = parseBudgetRows(records);
+    expect(rows[0]).toMatchObject({ year: 2025, month: 3, documentType: 'Inkomst', outturn: 42000 });
+  });
+
+  it('uses fallback year when the record has no year column', () => {
+    const records = [{ Inkomsttitelnamn: 'Skatt', Utfall: '100' }];
+    const rows = parseBudgetRows(records, { fallbackYear: 2023, documentType: 'Inkomst' });
+    expect(rows[0].year).toBe(2023);
+  });
+
+  it('skips records missing an outturn value', () => {
+    const records = [
+      { År: '2024', Inkomsttitelnamn: 'Titel', Utfall: '' },
+      { År: '2024', Inkomsttitelnamn: 'Titel2', Utfall: '100' },
+    ];
+    expect(parseBudgetRows(records)).toHaveLength(1);
+  });
+
+  it('normalises Swedish decimal commas', () => {
+    const records = [{ År: '2024', Inkomsttitelnamn: 'X', Utfall: '1.234,5' }];
+    expect(parseBudgetRows(records)[0].outturn).toBe(1234.5);
+  });
+});
+
+describe('buildBudgetTimeSeries', () => {
+  it('derives documentType from sheet name and parses all sheets', async () => {
+    const zip = new JSZip();
+    zip.file('[Content_Types].xml', '<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"/>');
+    zip.file('xl/workbook.xml', `<?xml version="1.0" encoding="UTF-8"?>
+      <workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+        <sheets>
+          <sheet name="Inkomst 2024" sheetId="1" r:id="rId1"/>
+          <sheet name="Utgift 2024" sheetId="2" r:id="rId2"/>
+        </sheets>
+      </workbook>`);
+    zip.file('xl/_rels/workbook.xml.rels', `<?xml version="1.0" encoding="UTF-8"?>
+      <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+        <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/>
+        <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet2.xml"/>
+      </Relationships>`);
+    zip.file('xl/sharedStrings.xml', `<?xml version="1.0" encoding="UTF-8"?>
+      <sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+        ${['Inkomsttitelnamn', 'Utfall', 'Skatt', 'Anslagsnamn', 'Utfall', 'Riksdagen'].map((v) => `<si><t>${v}</t></si>`).join('')}
+      </sst>`);
+    // Inkomst sheet
+    zip.file('xl/worksheets/sheet1.xml', `<?xml version="1.0" encoding="UTF-8"?>
+      <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+        <sheetData>
+          <row r="1"><c r="A1" t="s"><v>0</v></c><c r="B1" t="s"><v>1</v></c></row>
+          <row r="2"><c r="A2" t="s"><v>2</v></c><c r="B2"><v>500</v></c></row>
+        </sheetData>
+      </worksheet>`);
+    // Utgift sheet
+    zip.file('xl/worksheets/sheet2.xml', `<?xml version="1.0" encoding="UTF-8"?>
+      <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+        <sheetData>
+          <row r="1"><c r="A1" t="s"><v>3</v></c><c r="B1" t="s"><v>4</v></c></row>
+          <row r="2"><c r="A2" t="s"><v>5</v></c><c r="B2"><v>1200</v></c></row>
+        </sheetData>
+      </worksheet>`);
+    const workbook = await parseStatskontoretXlsx(await zip.generateAsync({ type: 'uint8array' }));
+    const rows = buildBudgetTimeSeries(workbook, { fallbackYear: 2024 });
+    expect(rows.find((r) => r.documentType === 'Inkomst')).toMatchObject({ title: 'Skatt', outturn: 500 });
+    expect(rows.find((r) => r.documentType === 'Utgift')).toMatchObject({ title: 'Riksdagen', outturn: 1200 });
+  });
+});
+
 
 async function createWorkbookFixture(): Promise<Uint8Array> {
   // Minimal XLSX fixture mirroring the Statskontoret assumptions documented in

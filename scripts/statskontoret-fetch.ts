@@ -7,12 +7,14 @@
  *   tsx scripts/statskontoret-fetch.ts list-sources
  *   tsx scripts/statskontoret-fetch.ts discover --source myndighetsforteckning
  *   tsx scripts/statskontoret-fetch.ts headcount --url <xlsx-url> [--persist]
+ *   tsx scripts/statskontoret-fetch.ts budget-outturn --url <xlsx-url> --source arsutfall [--doc-type Inkomst] [--persist]
  */
 
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 import {
+  buildBudgetTimeSeries,
   buildHeadcountTimeSeries,
   getStatskontoretSource,
   STATSKONTORET_SOURCES,
@@ -23,7 +25,7 @@ import {
 import { persistStatskontoretData } from './parliamentary-data/data-persistence.js';
 
 interface ParsedArgs {
-  readonly command: 'list-sources' | 'discover' | 'headcount' | 'help';
+  readonly command: 'list-sources' | 'discover' | 'headcount' | 'budget-outturn' | 'help';
   readonly flags: ReadonlyMap<string, string>;
   readonly booleans: ReadonlySet<string>;
 }
@@ -31,20 +33,24 @@ interface ParsedArgs {
 const HELP = `tsx scripts/statskontoret-fetch.ts <command> [flags]
 
 Commands:
-  list-sources    Print the built-in Statskontoret source catalogue
-  discover        Extract downloadable Excel/CSV-ZIP links from a source page
-  headcount       Fetch an authority-register workbook and aggregate headcount by department/year
-  help            Show this message
+  list-sources      Print the built-in Statskontoret source catalogue
+  discover          Extract downloadable Excel/CSV-ZIP links from a source page
+  headcount         Fetch an authority-register workbook and aggregate headcount by department/year
+  budget-outturn    Fetch a budget-outturn workbook (årsutfall / månadsutfall / tidsserier) and parse rows
+  help              Show this message
 
 Flags:
-  --source <KEY>  Source key: myndighetsforteckning | budget-time-series | arsutfall | manadsutfall
-  --url <URL>     Direct Excel workbook URL for headcount aggregation
-  --persist       Write raw/derived output under analysis/data/statskontoret/
+  --source <KEY>       Source key: myndighetsforteckning | budget-time-series | arsutfall | manadsutfall
+  --url <URL>          Direct Excel workbook URL for headcount / budget-outturn commands
+  --doc-type <TYPE>    Override documentType label for budget-outturn (e.g. Inkomst | Utgift)
+  --persist            Write raw/derived output under analysis/data/statskontoret/
 `;
 
 export function parseStatskontoretArgs(argv: readonly string[]): ParsedArgs {
   const command = (argv[0] ?? 'help') as ParsedArgs['command'];
-  const validCommands: readonly ParsedArgs['command'][] = ['list-sources', 'discover', 'headcount', 'help'];
+  const validCommands: readonly ParsedArgs['command'][] = [
+    'list-sources', 'discover', 'headcount', 'budget-outturn', 'help',
+  ];
   if (!validCommands.includes(command)) {
     throw new StatskontoretError(`unknown command ${command}`, 'cli');
   }
@@ -103,6 +109,29 @@ async function runHeadcount(flags: ReadonlyMap<string, string>, booleans: Readon
   }
 }
 
+async function runBudgetOutturn(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<string>): Promise<void> {
+  const url = requireStatskontoretFlag(flags, 'url');
+  const source = parseStatskontoretSource(requireStatskontoretFlag(flags, 'source'));
+  if (source === 'myndighetsforteckning') {
+    throw new StatskontoretError(
+      'budget-outturn command is for arsutfall | manadsutfall | budget-time-series, not myndighetsforteckning',
+      'cli',
+    );
+  }
+  const docType = flags.get('doc-type');
+  const client = new StatskontoretClient();
+  const workbook = await client.fetchWorkbook(url);
+  const rows = buildBudgetTimeSeries(workbook, { ...(docType ? { documentType: docType } : {}) });
+  const payload = { source, url, ...(docType ? { documentType: docType } : {}), rows };
+  process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
+  if (booleans.has('persist')) {
+    const artifact = docType
+      ? `budget-outturn-${docType.toLowerCase()}`
+      : 'budget-outturn';
+    persistStatskontoretData(source, artifact, payload);
+  }
+}
+
 async function main(): Promise<void> {
   const { command, flags, booleans } = parseStatskontoretArgs(process.argv.slice(2));
   switch (command) {
@@ -114,6 +143,9 @@ async function main(): Promise<void> {
       return;
     case 'headcount':
       await runHeadcount(flags, booleans);
+      return;
+    case 'budget-outturn':
+      await runBudgetOutturn(flags, booleans);
       return;
     case 'help':
     default:

@@ -79,3 +79,28 @@ describe('Statskontoret fetch target guard', () => {
     await expect(client.fetchText('https://evil.example.com/x')).rejects.toThrow(/allowlist/);
   });
 });
+
+describe('Statskontoret CLI budget-outturn command parsing', () => {
+  it('parses budget-outturn command with required flags', () => {
+    const parsed = parseStatskontoretArgs([
+      'budget-outturn', '--source', 'arsutfall', '--url', 'https://www.statskontoret.se/file.xlsx',
+    ]);
+    expect(parsed.command).toBe('budget-outturn');
+    expect(requireStatskontoretFlag(parsed.flags, 'source')).toBe('arsutfall');
+    expect(requireStatskontoretFlag(parsed.flags, 'url')).toBe('https://www.statskontoret.se/file.xlsx');
+  });
+
+  it('parses optional --doc-type flag', () => {
+    const parsed = parseStatskontoretArgs([
+      'budget-outturn', '--source', 'manadsutfall', '--url', 'https://www.statskontoret.se/f.xlsx', '--doc-type', 'Inkomst',
+    ]);
+    expect(parsed.flags.get('doc-type')).toBe('Inkomst');
+  });
+
+  it('parses --persist boolean alongside budget-outturn', () => {
+    const parsed = parseStatskontoretArgs([
+      'budget-outturn', '--source', 'budget-time-series', '--url', 'https://www.statskontoret.se/f.xlsx', '--persist',
+    ]);
+    expect(parsed.booleans.has('persist')).toBe(true);
+  });
+});
