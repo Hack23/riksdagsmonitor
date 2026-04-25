@@ -22,7 +22,7 @@ export type StatskontoretSourceKey =
   | 'arsutfall'
   | 'manadsutfall';
 
-export type StatskontoretResourceType = 'excel' | 'csv-zip' | 'zip' | 'document' | 'page' | 'unknown';
+export type StatskontoretResourceType = 'excel' | 'csv-zip' | 'zip' | 'document' | 'unknown';
 
 export interface StatskontoretSourceDefinition {
   readonly key: StatskontoretSourceKey;
@@ -377,7 +377,11 @@ function parseWorksheetRows(xml: string, sharedStrings: readonly string[]): stri
       const cellIndex = cellRefToColumnIndex(ref) ?? row.length;
       row[cellIndex] = parseCellValue(cellMatch[2] ?? '', attrs.get('t'), sharedStrings);
     }
-    rows.push(row.map((value) => value ?? ''));
+    // Densify the sparse row: cells with explicit refs (e.g. C5) can leave
+    // holes when intermediate columns are absent; `Array.prototype.map` skips
+    // those holes, so downstream `rowsToRecords` would receive misaligned
+    // columns. Iterate every index up to the max set position to fill gaps.
+    rows.push(Array.from({ length: row.length }, (_, i) => row[i] ?? ''));
   }
   return rows;
 }

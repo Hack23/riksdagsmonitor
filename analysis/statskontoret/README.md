@@ -79,7 +79,7 @@ Aggregation rules:
 
 ## 5 · Security and data governance
 
-- **Classification**: Public / High Integrity / High Availability.
+- **Classification**: Public / High Integrity / Medium-High Availability.
 - **Privacy**: Public authority and budget data only; no private-person data.
 - **Integrity**: Source URL, retrieval timestamp, dataset and artifact are persisted in sidecar metadata.
 - **Supply chain**: XLSX/ZIP parsing uses `jszip@3.10.1`; GitHub Advisory Database check completed with no known vulnerabilities for that version.

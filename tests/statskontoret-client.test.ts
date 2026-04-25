@@ -109,6 +109,29 @@ describe('StatskontoretClient', () => {
     const links = await client.discoverDownloads('myndighetsforteckning');
     expect(links[0].url).toBe('https://www.statskontoret.se/file.xlsx');
   });
+
+  it('densifies sparse worksheet rows so column alignment is preserved', async () => {
+    // Worksheet with explicit cell refs that skip column B, leaving a hole at
+    // index 1; densification must fill the gap with '' so headers stay aligned.
+    const zip = new JSZip();
+    zip.file('[Content_Types].xml', '<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"/>');
+    zip.file('xl/workbook.xml', `<?xml version="1.0" encoding="UTF-8"?>
+      <workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+        <sheets><sheet name="Sheet" sheetId="1" r:id="rId1"/></sheets>
+      </workbook>`);
+    zip.file('xl/_rels/workbook.xml.rels', `<?xml version="1.0" encoding="UTF-8"?>
+      <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+        <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/>
+      </Relationships>`);
+    zip.file('xl/worksheets/sheet1.xml', `<?xml version="1.0" encoding="UTF-8"?>
+      <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+        <sheetData>
+          <row r="1"><c r="A1"><v>h1</v></c><c r="C1"><v>h3</v></c></row>
+        </sheetData>
+      </worksheet>`);
+    const workbook = await parseStatskontoretXlsx(await zip.generateAsync({ type: 'uint8array' }));
+    expect(workbook.sheets[0].rows[0]).toEqual(['h1', '', 'h3']);
+  });
 });
 
 async function createWorkbookFixture(): Promise<Uint8Array> {
