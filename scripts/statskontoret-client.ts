@@ -406,7 +406,7 @@ function findField(lookup: ReadonlyMap<string, string>, candidates: readonly str
 }
 
 function parseSwedishNumber(value: string): number | undefined {
-  const normalized = value.replace(/\s/g, '').replace(',', '.');
+  const normalized = value.replace(/\s/g, '').replace(/,/g, '.');
   const parsed = Number.parseFloat(normalized);
   return Number.isFinite(parsed) ? parsed : undefined;
 }
@@ -456,7 +456,7 @@ function normalizeKey(value: string): string {
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9åäö]+/g, '')
+    .replace(/[^a-z0-9]+/g, '')
     .replace(/å/g, 'a')
     .replace(/ä/g, 'a')
     .replace(/ö/g, 'o');
@@ -471,6 +471,7 @@ function cellRefToColumnIndex(ref: string): number | undefined {
   if (!letters) return undefined;
   let index = 0;
   for (const char of letters.toUpperCase()) {
+    // Excel columns are base-26 labels: A=1, B=2, ..., Z=26, AA=27.
     index = index * 26 + (char.charCodeAt(0) - 64);
   }
   return index - 1;
@@ -528,8 +529,17 @@ function decodeEntity(entity: string): string {
     case 'apos': return "'";
     case 'nbsp': return ' ';
     default:
-      if (body.startsWith('#x')) return String.fromCodePoint(Number.parseInt(body.slice(2), 16));
-      if (body.startsWith('#')) return String.fromCodePoint(Number.parseInt(body.slice(1), 10));
+      if (body.startsWith('#x')) return decodeCodePoint(Number.parseInt(body.slice(2), 16), entity);
+      if (body.startsWith('#')) return decodeCodePoint(Number.parseInt(body.slice(1), 10), entity);
       return entity;
+  }
+}
+
+function decodeCodePoint(codePoint: number, fallback: string): string {
+  if (!Number.isFinite(codePoint)) return fallback;
+  try {
+    return String.fromCodePoint(codePoint);
+  } catch {
+    return fallback;
   }
 }

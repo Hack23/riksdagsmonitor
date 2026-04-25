@@ -40,11 +40,19 @@ Flags:
 
 function parseArgs(argv: readonly string[]): ParsedArgs {
   const command = (argv[0] ?? 'help') as ParsedArgs['command'];
+  const validCommands: readonly ParsedArgs['command'][] = ['list-sources', 'discover', 'headcount', 'help'];
+  if (!validCommands.includes(command)) {
+    process.stderr.write(`statskontoret-fetch: unknown command ${command}\n`);
+    process.exit(2);
+  }
   const flags = new Map<string, string>();
   const booleans = new Set<string>();
   for (let i = 1; i < argv.length; i++) {
     const token = argv[i];
-    if (!token.startsWith('--')) continue;
+    if (!token.startsWith('--')) {
+      process.stderr.write(`statskontoret-fetch: unexpected positional argument ${token}\n`);
+      process.exit(2);
+    }
     const key = token.slice(2);
     const next = argv[i + 1];
     if (next !== undefined && !next.startsWith('--')) {
