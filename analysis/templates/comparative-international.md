@@ -19,7 +19,7 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-21 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template instructions:** Produce on every run. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/comparative-international.md`. For P0/P1 or other internationally salient developments, provide full cross-jurisdictional analysis; on light-signal days, provide a concise baseline comparison rather than omitting the file. Data draws from `world-bank`, `scb`, `imf`, and OECD public datasets.
+> **📌 Template instructions:** Produce on every run. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/comparative-international.md`. For P0/P1 or other internationally salient developments, provide full cross-jurisdictional analysis; on light-signal days, provide a concise baseline comparison rather than omitting the file. Data draws from IMF (economic primary), SCB, Statskontoret (Swedish public-management / agency-capacity overlay), World Bank non-economic residue, OECD and peer-country public datasets.
 
 > **✨ What to produce:** Compare the Swedish measure against at least five comparator jurisdictions (Nordic primary, EU secondary, OECD/historical tertiary) using standardised dimensions: policy goal, instrument design, outcome to date, cost, transferability. On light-signal days, produce a shorter baseline comparator set using the same dimensions in concise form.
 
@@ -144,6 +144,8 @@ graph TB
 ---
 
 ## 🌍 Governance Benchmarks (World Bank WGI — `source=75`, latest)
+
+> World Bank is used here only for governance residue. Economic rows above are IMF-first. Add a Statskontoret row/table when the Swedish measure depends on agency capacity, administrative burden or public-sector efficiency.
 
 | Indicator | Sweden | Denmark | Norway | Finland | Germany | France |
 |-----------|:------:|:-------:|:------:|:-------:|:-------:|:------:|

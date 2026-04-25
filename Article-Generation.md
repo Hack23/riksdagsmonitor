@@ -52,7 +52,7 @@ Riksdagsmonitor articles are **not hand-written HTML pages**. They are determini
 
 1. **Agentic workflows** in [`.github/workflows/news-*.md`](.github/workflows/) run on schedules or manual dispatch.
 2. The workflow imports bounded prompt modules from [`.github/prompts/`](.github/prompts/README.md).
-3. The AI agent collects public Riksdag/Regering data through the `riksdag-regering` MCP server, Swedish statistics through SCB, supplementary governance, environmental, social and education indicators through World Bank, and economic context through the repository IMF TypeScript client.
+3. The AI agent collects public Riksdag/Regering data through the `riksdag-regering` MCP server, Swedish statistics through SCB, agency-capacity and public-management evidence from Statskontoret, supplementary governance/environment/social/education indicators through World Bank, and economic context through the repository IMF TypeScript client.
 4. The agent produces a **stable set of 23 core analysis artifacts** plus per-document files under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`.
 5. The **single blocking gate** in [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) must pass before any article is generated.
 6. [`scripts/aggregate-analysis.ts`](scripts/aggregate-analysis.ts) turns the analysis folder into one canonical `article.md`.
@@ -233,11 +233,14 @@ flowchart LR
 |---|---|---|
 | **Riksdag/Regering MCP** | MPs, documents, speeches, votes, interpellations, propositions, motions, committee reports, government documents | `.github/copilot-mcp.json` + workflow `mcp-servers` |
 | **SCB** | Swedish-specific statistics and demographic context | `@jarib/pxweb-mcp@2.0.0` |
-| **IMF** | Primary economic/fiscal/monetary/external-sector/trade context | `tsx scripts/imf-fetch.ts` + `scripts/imf-client.ts` |
+| **IMF** | Primary economic/fiscal/monetary/external-sector/trade context, with WEO/FM projection vintage discipline and `economic-data.json` provenance | `tsx scripts/imf-fetch.ts` + `scripts/imf-client.ts` |
+| **Statskontoret** | Swedish agency governance, administrative capacity, implementation feasibility, regulatory burden and public-sector efficiency evidence | Public web pages / reports (`www.statskontoret.se`) |
 | **World Bank** | Non-economic residue only: governance, environment, social/education, defence historicals, crime | `worldbank-mcp@1.0.1` |
 | **GitHub** | PR creation and repository metadata | GitHub MCP / safe outputs |
 
 The authoritative IMF-first / World-Bank-residue split is defined in [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md). In short: macroeconomic, fiscal, monetary, external-sector and trade claims are IMF-first; World Bank is reserved for governance, environment and other non-economic residue that IMF does not publish.
+
+Statskontoret is not an MCP server. It is a public-source enrichment layer for agency capacity and implementation feasibility. Workflow allowlists include `www.statskontoret.se` / `statskontoret.se`; source use is recorded in `data-download-manifest.md` and cited in the affected analysis artifacts.
 
 ### Evidence standard
 
@@ -246,7 +249,7 @@ Every analytical claim must tie to at least one of:
 - A real `dok_id` such as `HD10447`.
 - A named MP, minister, party, committee or actor.
 - Vote counts or voting records.
-- A primary-source URL from `riksdagen.se`, `regeringen.se`, `scb.se`, IMF or World Bank non-economic endpoints.
+- A primary-source URL from `riksdagen.se`, `regeringen.se`, `scb.se`, `statskontoret.se`, IMF or World Bank non-economic endpoints.
 
 The sample interpellation article demonstrates this standard:
 

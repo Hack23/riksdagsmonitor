@@ -20,24 +20,25 @@ Maria Nilsson,SD,8.1`;
 describe('parseCSV', () => {
   let savedPapa: unknown;
   let papaExisted: boolean;
+  const g = globalThis as unknown as Record<string, unknown>;
 
   beforeEach(() => {
     papaExisted = 'Papa' in globalThis;
-    savedPapa = (globalThis as any).Papa;
+    savedPapa = g['Papa'];
   });
 
   afterEach(() => {
     if (papaExisted) {
-      (globalThis as any).Papa = savedPapa;
+      g['Papa'] = savedPapa;
     } else {
-      delete (globalThis as any).Papa;
+      delete g['Papa'];
     }
   });
 
   describe('with PapaParse available', () => {
     beforeEach(() => {
       // Provide a mock PapaParse that behaves like the real one
-      (globalThis as any).Papa = {
+      g['Papa'] = {
         parse(text: string, config: { header: boolean; skipEmptyLines: boolean }) {
           const lines = text.trim().split('\n');
           const headers = lines[0]!.split(',');
@@ -70,7 +71,7 @@ describe('parseCSV', () => {
   describe('without PapaParse (CSP-safe fallback)', () => {
     beforeEach(() => {
       // Remove PapaParse to exercise the fallback parser
-      delete (globalThis as any).Papa;
+      delete g['Papa'];
     });
 
     it('should parse CSV with headers using fallback parser', () => {
@@ -104,12 +105,12 @@ describe('parseCSV', () => {
     it('should not use d3.csvParse (CSP-unsafe)', () => {
       // Ensure d3.csvParse is not called even when available
       let d3Called = false;
-      (globalThis as any).d3 = {
+      g['d3'] = {
         csvParse: () => { d3Called = true; return []; },
       };
       parseCSV(SAMPLE_CSV);
       expect(d3Called).toBe(false);
-      delete (globalThis as any).d3;
+      delete g['d3'];
     });
   });
 });

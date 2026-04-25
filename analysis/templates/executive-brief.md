@@ -55,6 +55,8 @@
 
 ## 🎯 BLUF (Bottom Line Up Front)
 
+> **SEO + article handoff:** the first BLUF paragraph becomes `<meta name="description">`. Write one complete 140–200 character sentence first, then add 1–3 supporting sentences if needed. The H1 must be a publishable 55–70 character title with an actor, active news verb, and no literal date. Follow [`.github/prompts/seo-metadata-contract.md`](../../.github/prompts/seo-metadata-contract.md).
+
 > **[2–4 sentences.** Lead with the #1 DIW-ranked finding. Name the principal human actor with party. State the concrete action taken or proposed. Quantify impact. End with confidence label.**]**
 
 Example: *Sweden's Riksdag Finance Committee approved FiU48 today, cutting fuel taxes SEK 0.50–0.80/litre and providing electricity/gas price support to ~3 M households. Paired with the new wind-power revenue-sharing law, the move anchors the government's cost-of-living + green narrative ahead of September 2026. [🟩 HIGH — source: `H901FiU48`, vote record 2026-04-21].*
@@ -77,7 +79,7 @@ Example: *Sweden's Riksdag Finance Committee approved FiU48 today, cutting fuel 
 - 🟠 **[Second development]** — named actor, quantified effect
 - 🟢 **[Positive development or win for coalition]** — include party
 - 🟡 **[Point of tension or ambiguity]** — explain uncertainty in one line
-- 🔵 **[Data or context point]** — SCB/World Bank/IMF figure with year
+- 🔵 **[Data or context point]** — IMF-first macro/fiscal figure with vintage tag, SCB Swedish ground truth, Statskontoret agency-capacity evidence, or WB non-economic residue
 - 🟣 **[Cross-reference]** — link to another dok_id or cluster
 - 🩷 **[Emerging threat or attack surface]** — political-threat-taxonomy dimension
 - ⚪ **[Carry-forward or stale item]** — only if relevant; otherwise omit

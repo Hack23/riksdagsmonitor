@@ -24,7 +24,7 @@
 > - 📈 **IMF** added as a third primary economic-data source for agentic news workflows (alongside SCB MCP and World Bank MCP) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). IMF is consumed via the **pure-TypeScript client `scripts/imf-client.ts`** invoked by workflows through the `bash` tool — **intentionally not an MCP server** (no Python/uvx, SBOM-covered via npm). Egress allowlist extended with `data.imf.org`, `api.imf.org`, `www.imf.org` (Squid + iptables). The count of **MCP servers is unchanged**. Forward-looking workflows (`news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`) now use IMF WEO/Fiscal Monitor projections as the primary source for look-ahead framing.
 >
 > **🆕 What changed since last review (v7.0 → v7.1, 2026-04-20):**
-> - **Factual correction:** total workflow-file count under `.github/workflows/` is **45** (not 48). The breakdown is **21 standard `.yml` workflows + 12 agentic Markdown sources (`.md`) + 12 compiled `.lock.yml` siblings**. All inventory tables and narrative text below have been reconciled with `ls .github/workflows/`.
+> - **Factual correction:** total workflow-file count under `.github/workflows/` is **43** (not 45 or 48). The breakdown is **21 standard `.yml` workflows + 11 agentic Markdown sources (`.md`) + 11 compiled `.lock.yml` siblings**. All inventory tables and narrative text below have been reconciled with `ls .github/workflows/`.
 > - Added previously unlisted workflows: **`agentics-maintenance.yml`** (agent platform hygiene, scheduled maintenance of agentic environment) and **`economic-context-audit.yml`** (periodic audit of economic-context data joins used by news agentic workflows).
 > - Realigned categorisation: `compile-agentic-workflows.yml` is a standard `.yml` **build tool**, not an agentic workflow — moved into the "Automation & Tooling" category.
 > - Reconfirmed that the **five-layer safe-output security model** and **egress firewall (Squid proxy + iptables allow-list)** wrap every `news-*` agentic workflow, per [gh-aw-safe-outputs](.github/skills/gh-aw-safe-outputs/) and [gh-aw-firewall](.github/skills/gh-aw-firewall/) skills.
@@ -69,7 +69,7 @@ This document provides comprehensive documentation of the CI/CD workflows implem
 
 The project has been migrated from JavaScript to **TypeScript** (31 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 25's native type-stripping for scripts.
 
-**Total Workflow Files: 45** (21 standard YAML + 12 agentic `.md` sources + 12 compiled `.lock.yml`). Each agentic workflow consists of a source `.md` file and its compiled `.lock.yml` counterpart, yielding **33 distinct workflows** (21 standard + 12 agentic).
+**Total Workflow Files: 43** (21 standard YAML + 11 agentic `.md` sources + 11 compiled `.lock.yml`). Each agentic workflow consists of a source `.md` file and its compiled `.lock.yml` counterpart, yielding **32 distinct workflows** (21 standard + 11 agentic).
 **Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
 
 ## 🔐 ISMS Policy Alignment
@@ -147,7 +147,7 @@ graph LR
 
 | Stage | Tool/Service | Trigger | Quality Gate | Duration |
 | --- | --- | --- | --- | --- |
-| **🏗️ Build & Test** | Vite, Vitest, Cypress | Push/PR | Tests pass, coverage thresholds enforced (lines 25%, branches 25%) | ~3.4s build, ~15s test |
+| **🏗️ Build & Test** | Vite, Vitest, Cypress | Push/PR | Tests pass, coverage thresholds enforced at the **Hack23 Secure Development Policy floor** (statements ≥80 % / branches ≥70 % / functions ≥70 % / lines ≥80 %; see `vitest.config.js` and TESTING.md for measured baseline) | ~3.4s build, ~63s test |
 | **📦 SCA** | Dependabot, Dependency Review | Daily / PR | No critical vulnerabilities | ~2 min |
 | **🔍 CodeQL** | GitHub CodeQL | PR, Push, Weekly | No critical/high issues | ~10 min |
 | **✅ Quality Gate** | ESLint, HTMLHint, linkinator | Every commit | Zero errors, valid HTML | ~3 min |
@@ -212,7 +212,7 @@ flowchart TD
 
 ## 🔄 Workflow Overview
 
-The Riksdagsmonitor project uses **45 workflow files** (21 standard `.yml` + 12 agentic `.lock.yml` + 12 agentic `.md` sources) organized into 5 functional categories:
+The Riksdagsmonitor project uses **43 workflow files** (21 standard `.yml` + 11 agentic `.lock.yml` + 11 agentic `.md` sources) organized into 5 functional categories:
 
 ```mermaid
 graph TB
@@ -982,7 +982,7 @@ flowchart TB
 
 All artifacts are written under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` — see [`analysis/README.md`](analysis/README.md) for the on-disk layout and [`analysis/templates/README.md`](analysis/templates/README.md) for the 23 canonical templates.
 
-#### MCP server wiring (identical across all 12 agentic workflows)
+#### MCP server wiring (identical across all 11 agentic workflows)
 
 ```yaml
 mcp-servers:
@@ -1081,9 +1081,9 @@ flowchart LR
 
 ---
 
-## 🔧 Complete Workflow Inventory (45 Files — 21 standard `.yml` + 12 agentic `.md` + 12 compiled `.lock.yml`)
+## 🔧 Complete Workflow Inventory (43 Files — 21 standard `.yml` + 11 agentic `.md` + 11 compiled `.lock.yml`)
 
-> **Verification:** `ls .github/workflows/` yields 45 entries. This matches 21 standard workflow files + 12 agentic Markdown sources + 12 corresponding compiled lock files. Badges and PR checks are driven by the 21 standard `.yml` plus the 12 compiled `.lock.yml` (GitHub Actions only executes the compiled artifacts).
+> **Verification:** `ls .github/workflows/` yields 43 workflow files (44 entries including the directory README.md). This matches 21 standard workflow files + 11 agentic Markdown sources + 12 corresponding compiled lock files. Badges and PR checks are driven by the 21 standard `.yml` plus the 11 compiled `.lock.yml` (GitHub Actions only executes the compiled artifacts).
 
 ### 🔐 Security & Compliance (5 workflows)
 

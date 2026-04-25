@@ -1,6 +1,6 @@
 # 06 — Article Generation (aggregate + render)
 
-Articles are **100 % rendered from the analysis artifacts** produced in module `04-analysis-pipeline.md`. No AI-written HTML. No scaffold. No `AI_MUST_REPLACE` markers. The analysis folder is the article — the renderer just turns it into a chrome-wrapped HTML page.
+Articles are **100 % rendered from the analysis artifacts** produced in module `04-analysis-pipeline.md`. No AI-written HTML. No scaffold. No `AI_MUST_REPLACE` markers. The analysis folder is the article — the renderer just turns it into a chrome-wrapped HTML page. Read [`Article-Generation.md`](../../Article-Generation.md) as the end-to-end architecture and UI/UX export map for this phase.
 
 ## Preconditions
 
@@ -123,13 +123,15 @@ All of those checks were artefacts of the old scaffold pipeline. With the aggreg
 
 The renderer embeds:
 
-- `<title>` = aggregated article title (H1 of `executive-brief.md`).
-- `<meta name="description">` = first paragraph of `executive-brief.md` (≤ 300 chars).
+- `<title>` = aggregated article title (H1 of `executive-brief.md`), rewritten to satisfy [`seo-metadata-contract.md`](seo-metadata-contract.md): 55–70 characters, actor-first, active news verb, no literal date, no boilerplate.
+- `<meta name="description">` = first BLUF paragraph of `executive-brief.md`, rewritten to satisfy [`seo-metadata-contract.md`](seo-metadata-contract.md): 140–200 characters, one complete sentence, concrete actor/number/instrument, no admin metadata.
 - `<link rel="canonical">` + `<link rel="alternate" hreflang="…">` × all requested languages + `x-default`.
 - Open Graph (`og:type=article`), Twitter summary card.
 - JSON-LD `NewsArticle` with `isBasedOn` listing every source `.md` / `.json` artifact on GitHub — the article is self-documenting.
 - Cyberpunk site header with skip-link, nav (Home, Political Intelligence, Sitemap), and language switcher.
 - Footer with: brand, navigation, direct link to `analysis/daily/` and the repo root on GitHub, Apache-2.0 + GDPR Art 9(2)(e,g) notice, client-side Mermaid loader (`js/lib/mermaid-init.mjs`).
+
+Before staging, read the generated `article.md` once and verify it reads as a coherent political-intelligence article, not an artifact dump: BLUF first, Key Judgments early, concrete evidence density, IMF-first economic provenance where applicable, Statskontoret agency-capacity evidence where applicable, and source links in every high-impact claim.
 
 ## Translations
 

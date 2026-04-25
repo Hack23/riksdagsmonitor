@@ -195,6 +195,7 @@ Optional deep-dive templates mapped to analytical frameworks explicitly listed i
 | `riksdag-regering` | HTTP | `search_ledamoter`, `get_ledamot`, `search_dokument`, `get_dokument`, `search_anforanden`, `search_voteringar`, `get_voteringar`, `get_calendar_events`, `get_betankanden`, `get_propositioner`, `get_motioner`, `get_fragor`, `get_interpellationer` | 1–11, 14, 17–23, E-files |
 | `scb` | local PxWeb v2 | table-search + query | 13, 17–19, 22, S7 |
 | `world-bank` | local | get-social/health/education/environment | 13, 22, S7 |
+| Statskontoret (`web_fetch`) | public web | agency-capacity reports, public-management evaluations, administrative burden evidence | 7, 9, 13, 22, S1/S3/S7 |
 | IMF (`tsx scripts/imf-fetch.ts`) | CLI | WEO + SDMX 3.0 passthrough | 13, 17, 22, S7 |
 | `github` | HTTP Insiders | full toolset | PR creation (module 07) |
 | `filesystem` / `memory` / `sequential-thinking` / `playwright` | local | helpers | cross-cutting |

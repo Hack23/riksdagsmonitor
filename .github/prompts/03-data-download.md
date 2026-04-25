@@ -90,6 +90,10 @@ Then `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to produce the 
 
 For every downloaded document reference, fetch full text when available (`get_dokument_innehall` with `include_full_text: true` on riksdag-regering). Documents without full text are allowed but must be tagged `metadata-only` in the manifest.
 
+## Statskontoret enrichment
+
+When a document affects an implementing authority, administrative capacity, regulatory burden, governance quality, public-sector efficiency, inspection/audit capacity, or inter-agency coordination, collect at least one relevant public Statskontoret source if available. Use `web_fetch` against `https://www.statskontoret.se/` or `https://statskontoret.se/`, cite the report/page URL, and record it in `data-download-manifest.md` under Cross-Source Enrichment. If no relevant Statskontoret source exists, state `Statskontoret: no directly relevant source found` rather than fabricating agency-capacity evidence.
+
 ## Lookback fallback
 
 If the requested `$ARTICLE_DATE` returns zero documents, loop `DAYS_BACK = 1..7`:
@@ -108,6 +112,7 @@ Always produce `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/data-download-manifest.m
 - Requested date, effective date (after lookback), window used.
 - Per-document table: `dok_id`, title, type, `hangar_id`, committee, retrieval timestamp, full-text status.
 - MCP server availability notes (any retries, partial failures).
+- Non-MCP public sources used for enrichment, especially Statskontoret report/page URLs for implementation and agency-capacity evidence.
 
 ## Next step
 

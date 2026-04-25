@@ -74,6 +74,7 @@ Every step is mandatory. Steps 3–7 run inside a single workflow folder at `ana
 | 10 | [`political-risk-methodology.md`](political-risk-methodology.md) | 5×5 L×I matrix, cascading risk chains |
 | 11 | [`political-threat-framework.md`](political-threat-framework.md) | Attack trees, kill chain, threat taxonomy |
 | 12 | All templates in [`../templates/`](../templates/) | Output structure for every `.md` family |
+| 13 | [`Article-Generation.md`](../../Article-Generation.md) + [`.github/prompts/seo-metadata-contract.md`](../../.github/prompts/seo-metadata-contract.md) | How the analysis becomes `article.md`, HTML, UI/UX export and SEO title/description surfaces |
 
 **Commit the read list into memory**: cite the methodology section you used whenever you make a call — e.g. *"Classification per political-classification-guide.md §Political Temperature"* or *"DIW tier assigned per synthesis-methodology.md Part 1"* or *"Admiralty [B2] per political-style-guide.md §Admiralty Source Reliability Code"*.
 
@@ -191,6 +192,11 @@ Score your own output against this rubric before commit:
 
 ### Step 7 — Pass-2 Rewrite (F3EAD: DISSEMINATE)
 
+#### Article and SEO handoff
+
+Before running `scripts/aggregate-analysis.ts`, ensure `executive-brief.md` has a publishable H1 and BLUF that can become `<title>` and `<meta description>` without repair: actor-first, active verb, no literal date, no admin metadata, 55–70 character title target and 140–200 character one-sentence description target. `synthesis-summary.md §Narrative Direction & Article Decision` should agree with that H1/BLUF so `article.md` reads as one coherent intelligence article.
+
+
 Read every file you produced in Steps 3–5. For each one, **improve every section**:
 
 - Replace generic verbs with specific ones ("rose" → "rose from 34% to 42% in the April SIFO poll").
@@ -200,6 +206,8 @@ Read every file you produced in Steps 3–5. For each one, **improve every secti
 - Add one more named actor (MP, minister, official) to every stakeholder and SWOT entry.
 - Add one more dok_id or vote-record citation to every evidence column that has < 2 citations.
 - **Tag every key finding to a PIR/EEI** from the catalog in `political-style-guide.md`.
+- Add Statskontoret evidence to every implementation-capacity or agency-burden claim where a relevant public report/page exists.
+- Verify every macro/fiscal/monetary/external-sector claim is IMF-first, vintage-tagged when projected, and represented in `economic-data.json` when charted.
 - Re-rank the significance scoring if the rewrite reveals a stronger lead.
 - Rewrite the lede of `synthesis-summary.md` so it leads with the #1 DIW-ranked finding — not the document count.
 - **Complete the ICD 203 compliance checklist** in `methodology-reflection.md`.

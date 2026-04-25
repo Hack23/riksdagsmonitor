@@ -20,15 +20,13 @@
     "src/browser/**/*.ts",
     "scripts/**/*.ts",
     "scripts/**/*.js",
-    "js/**/*.js",
-    "dashboard/**/*.js"
+    "js/**/*.js"
   ],
   "exclude": [
     "node_modules",
     "dist",
     "builds",
     "js/lib",
-    "dashboard/lib",
     "scripts/validate-articles-playwright.ts",
     "scripts/coalition-dashboard.ts",
     "scripts/coalition-dashboard/**",

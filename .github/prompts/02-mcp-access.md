@@ -67,6 +67,7 @@ Rules:
 - **Authoritative inventory**: [`analysis/imf/indicators-inventory.json`](../../analysis/imf/indicators-inventory.json) (machine-readable) · [`analysis/imf/data-dictionary.md`](../../analysis/imf/data-dictionary.md) (dataflow reference) · [`analysis/imf/agentic-integration.md`](../../analysis/imf/agentic-integration.md) (7-step playbook) · [`analysis/imf/indicator-policy-mapping.md`](../../analysis/imf/indicator-policy-mapping.md) (committee matrix).
 - **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) v2.1+.
 - **Firewall egress**: `data.imf.org`, `api.imf.org`, `www.imf.org` (already in every workflow's `network.allowed`).
+- **Statskontoret egress**: `www.statskontoret.se` / `statskontoret.se` are public non-MCP web sources used for agency capacity, state-governance evaluations, implementation feasibility, administrative burden and public-sector efficiency evidence.
 
 ## Health gate (in-prompt)
 
@@ -83,6 +84,7 @@ Run once at workflow start, then proceed — do not loop forever.
 |------|
 | Riksdag tool arguments are documented under [`.github/skills/riksdag-regering-mcp/`](../skills/riksdag-regering-mcp/). |
 | **Economic data is IMF-first**. Only use `get-economic-data` (world-bank MCP) for articles written pre-2026-04-20 or as an explicit legacy fallback — **never** as a primary source in new articles. |
+| **Statskontoret is a public non-MCP source** for Swedish agency governance, administrative capacity, implementation feasibility and public-sector efficiency. Use `web_fetch` / primary URLs where available, cite report title + URL, and record retrieval in `data-download-manifest.md`. |
 | Treat MCP failure mid-run as partial data: continue with what you have, document gaps in `data-download-manifest.md`, never silently drop documents. |
 | Source authority and no-fabrication rule: see `00-base-contract.md` rules 1 + 3. |
 

@@ -233,6 +233,7 @@ Locate today's event within a **named prior episode** (≤40 years back) and lea
 ### Input
 - Riksdag archive (`search_dokument` with historical `rm` parameters)
 - SOU (Statens offentliga utredningar) archive
+- Statskontoret reports when historical implementation, public-management or agency-capacity lessons are relevant
 - Academic political-history references where applicable
 
 ### Output — required structure
@@ -279,7 +280,7 @@ timeline
 Document the **frames** being used by each actor and major media outlet so readers can separate substantive content from strategic communication.
 
 ### Input
-- Official press releases from Regeringskansliet, party press offices
+- Official press releases from Regeringskansliet, Statskontoret where public-management evidence shapes the frame, party press offices
 - Major outlet coverage (DN, SvD, Aftonbladet, Expressen, SR/SVT) — use public coverage only
 - Actor-statement corpus from `search_anforanden`
 
