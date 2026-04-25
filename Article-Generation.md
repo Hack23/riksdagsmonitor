@@ -416,8 +416,6 @@ npx tsx scripts/aggregate-analysis.ts --all
 | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/*.md` | Included under `## Per-document intelligence` |
 | Supplementary `.md` files | Appended after the canonical sequence |
 
-> Historical note: comments in older script headers mention `news/$YYYY/$MM/$DD/$SUB/article.md`, but the current implementation writes the canonical article markdown alongside the source artifacts at `analysis/daily/$DATE/$SUBFOLDER/article.md`.
-
 ### Canonical narrative order
 
 `AGGREGATION_ORDER` in [`scripts/render-lib/aggregator.ts`](scripts/render-lib/aggregator.ts) publishes sections in this order:
@@ -698,7 +696,7 @@ The rendered article chrome supports 14 language alternates:
 | `en` | `en` | English |
 | `sv` | `sv` | Swedish |
 | `da` | `da` | Danish |
-| `no` | `nb` | Norwegian Bokmål (URL keeps legacy `no`) |
+| `no` | `nb` | Norwegian Bokmål (temporary legacy URL suffix during `nb` migration) |
 | `fi` | `fi` | Finnish |
 | `de` | `de` | German |
 | `fr` | `fr` | French |
@@ -710,7 +708,7 @@ The rendered article chrome supports 14 language alternates:
 | `ko` | `ko` | Korean |
 | `zh` | `zh` | Chinese |
 
-Norwegian is in a compatibility migration state: generated HTML uses the BCP-47 `nb` hreflang for Norwegian Bokmål, while existing filenames and URL siblings still use the legacy `_no` / `-no.html` pattern for backwards-compatible site output. New code should keep both surfaces in sync until the wider URL migration is completed.
+Norwegian is in a compatibility migration state, not a permanent language-code design decision: generated HTML uses the BCP-47 `nb` hreflang for Norwegian Bokmål, while existing filenames and URL siblings still use the legacy `_no` / `-no.html` pattern for backwards-compatible site output. New code should keep both surfaces in sync until the wider URL migration is completed.
 
 ### Translation workflow
 
@@ -733,9 +731,9 @@ The renderer populates hreflang alternates for all languages even when the sibli
 
 ## 🚀 Build and S3 Deployment
 
-### Canonical workflow name
+### Canonical S3 deployment workflow
 
-The repository file is named [`.github/workflows/deploy-s3.yml`](.github/workflows/deploy-s3.yml). If someone refers to `s3-deploy.yml`, they are referring to this deployment workflow.
+The canonical repository file is [`.github/workflows/deploy-s3.yml`](.github/workflows/deploy-s3.yml). This is the S3 deployment workflow covered here, including the workflow sometimes described informally as the “S3 deploy” workflow.
 
 ### Build chain
 
