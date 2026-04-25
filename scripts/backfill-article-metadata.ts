@@ -108,10 +108,15 @@ function parseFlags(argv: readonly string[]): CliOptions {
   let quiet = false;
 
   for (const arg of argv) {
-    if (arg === '--dry-run') mode = 'dry-run';
-    else if (arg === '--check') mode = 'check';
-    else if (arg === '--apply') mode = 'apply';
-    else if (arg === '--quiet') quiet = true;
+    if (arg === '--dry-run' || arg === '--check' || arg === '--apply') {
+      const next: Mode = arg === '--dry-run' ? 'dry-run' : arg === '--check' ? 'check' : 'apply';
+      if (mode !== null && mode !== next) {
+        throw new CliUsageError(
+          `Conflicting mode flags: --${mode} and ${arg} are mutually exclusive.`,
+        );
+      }
+      mode = next;
+    } else if (arg === '--quiet') quiet = true;
     else if (arg.startsWith('--tier=')) {
       const raw = arg.slice('--tier='.length).trim();
       if (raw === 'all' || raw === '') tiers = null;

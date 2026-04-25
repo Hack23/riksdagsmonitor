@@ -57,7 +57,7 @@ export interface ArticleMetadata {
 }
 
 const REGEXES = {
-  htmlLang: /<html[^>]*\blang="([^"]+)"/i,
+  htmlTag: /<html\b[^>]*>/i,
   title: /<title[^>]*>([\s\S]*?)<\/title>/i,
   article: /<article\b[^>]*>([\s\S]*?)<\/article>/i,
 } as const;
@@ -145,15 +145,30 @@ function parseAttributes(tag: string): Record<string, string> {
   return attrs;
 }
 
+/** Extract the `lang` attribute from the document's `<html>` tag,
+ *  tolerating single-quoted, double-quoted, and unquoted attribute
+ *  values plus any preceding attributes. Returns `''` when missing so
+ *  callers can apply their own fallback (e.g. filename language). */
+function extractHtmlLang(html: string): string {
+  const m = html.match(REGEXES.htmlTag);
+  if (!m) return '';
+  const attrs = parseAttributes(m[0]);
+  return htmlDecode(attrs.lang ?? '').trim();
+}
+
 /** Extract a string field from the *first* JSON-LD block that contains
  *  it. Uses `JSON.parse` with graceful fall-through — a malformed block
- *  is skipped rather than crashing the whole scan. */
+ *  is skipped rather than crashing the whole scan. The script tag is
+ *  matched permissively so additional attributes, alternate orderings,
+ *  and single-quoted `type` values are all detected. */
 function extractJsonLdField(html: string, field: 'headline' | 'alternativeHeadline' | 'description'): string {
-  const jsonLdScriptRe =
-    /<script\s+type="application\/ld\+json"\s*>([\s\S]*?)<\/script>/gi;
+  const scriptRe = /<script\b([^>]*)>([\s\S]*?)<\/script\b[^>]*>/gi;
   let m: RegExpExecArray | null;
-  while ((m = jsonLdScriptRe.exec(html)) !== null) {
-    const body = m[1] ?? '';
+  while ((m = scriptRe.exec(html)) !== null) {
+    const attrs = parseAttributes(`<script ${m[1] ?? ''}>`);
+    const type = (attrs.type ?? '').toLowerCase();
+    if (type !== 'application/ld+json') continue;
+    const body = m[2] ?? '';
     try {
       const parsed = JSON.parse(body) as unknown;
       const value = readJsonLdField(parsed, field);
@@ -203,8 +218,8 @@ export function inspectHtmlFile(filePath: string): ArticleMetadata {
  * without writing to disk.
  */
 export function inspectHtmlContent(html: string, filePath: string = ''): ArticleMetadata {
-  const lang = match1(html, REGEXES.htmlLang);
-  const rawTitle = match1(html, REGEXES.title);
+  const lang = extractHtmlLang(html);
+  const title = match1(html, REGEXES.title);
   const metaDescription = extractMetaContent(html, 'name', 'description');
   const ogTitle = extractMetaContent(html, 'property', 'og:title');
   const ogDescription = extractMetaContent(html, 'property', 'og:description');
@@ -223,7 +238,7 @@ export function inspectHtmlContent(html: string, filePath: string = ''): Article
   return {
     filePath,
     lang,
-    title: rawTitle,
+    title,
     metaDescription,
     ogTitle,
     ogDescription,

@@ -308,6 +308,24 @@ describe('html-inspector: inspectHtmlContent', () => {
     expect(meta.lang).toBe('');
   });
 
+  it('extracts <html lang> from single-quoted, unquoted, and reordered attributes', () => {
+    expect(inspectHtmlContent("<html lang='sv'><head><title>t</title></head></html>").lang).toBe('sv');
+    expect(inspectHtmlContent('<html lang=de><head><title>t</title></head></html>').lang).toBe('de');
+    expect(inspectHtmlContent('<html dir="ltr" lang="fr"><head><title>t</title></head></html>').lang).toBe('fr');
+  });
+
+  it('extracts JSON-LD with extra/reordered attributes and single quotes', () => {
+    const html1 = `<html lang="en"><head><title>t</title>
+<script defer type="application/ld+json">{"headline":"Reordered"}</script>
+</head></html>`;
+    expect(inspectHtmlContent(html1).jsonLdHeadline).toBe('Reordered');
+
+    const html2 = `<html lang="en"><head><title>t</title>
+<script type='application/ld+json'>{"headline":"Single quoted"}</script>
+</head></html>`;
+    expect(inspectHtmlContent(html2).jsonLdHeadline).toBe('Single quoted');
+  });
+
   it('survives a malformed JSON-LD block without crashing', () => {
     const html = `<html lang="en"><head><title>t</title><script type="application/ld+json">{bad json</script></head></html>`;
     const meta = inspectHtmlContent(html);
@@ -581,6 +599,13 @@ describe('CLI: parseFlags', () => {
   it('throws a typed CLI usage error instead of exiting for bad flags', () => {
     expect(() => parseFlags(['--bad-flag'])).toThrow(cliTest.CliUsageError);
     expect(() => parseFlags(['--date-from=bad-date'])).toThrow(cliTest.CliUsageError);
+  });
+
+  it('throws for conflicting mode flags (--check + --dry-run, --apply + --check)', () => {
+    expect(() => parseFlags(['--check', '--dry-run'])).toThrow(cliTest.CliUsageError);
+    expect(() => parseFlags(['--apply', '--check'])).toThrow(cliTest.CliUsageError);
+    // Repeating the same mode flag is fine.
+    expect(() => parseFlags(['--check', '--check'])).not.toThrow();
   });
 
   it('main maps CLI usage errors to exit code 2', () => {
