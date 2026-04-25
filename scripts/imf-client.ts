@@ -363,7 +363,8 @@ export class ImfClient {
     } catch (error) {
       const retryAfterHeader = error instanceof ImfHttpError ? error.retryAfterHeader : undefined;
       if (attempt < this.maxRetries && isRetryableError(error)) {
-        // Network / abort path: same exponential schedule (1 s → 2 s → 4 s).
+        // Retryable errors use exponential backoff starting at 1 s
+        // (1 s → 2 s → 4 s → … depending on maxRetries).
         // HTTP 429 additionally honours Retry-After (delta-seconds), capped
         // at 30 s to avoid pathological waits.
         const delay = calculateRetryDelay(attempt, retryAfterHeader);
