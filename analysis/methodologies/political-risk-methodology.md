@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -284,7 +284,7 @@ The AI agent **MUST** follow this protocol when performing risk assessment:
    - `search_dokument` with `organ=FiU` — budget committee status
    - `search_dokument` with `organ=KU` — constitutional committee investigations
    - `search_anforanden` — parliamentary debate signals
-   - World Bank / SCB data — economic context for budget and electoral risk
+   - IMF (WEO/FM/IFS) + SCB data — economic context for budget and electoral risk
 3. **Score each risk dimension** using the 5×5 matrix with evidence
 4. **Apply calibration** — compare against the calibration examples above
 5. **Perform cascading risk analysis** — identify risk chains and second-order effects
@@ -366,7 +366,7 @@ Political risk scores should be **updated** as new evidence arrives, not just re
 | Named politician public statement | ±1 | SD leader demands concession |
 | Verified media report with named sources | ±0.5 to ±1 | DN reports coalition talks stalled |
 | Single unnamed source | ±0.5 | "Sources say minister may resign" |
-| Statistical data (SCB, World Bank) | ±0.5 to ±1 | GDP growth data, unemployment change |
+| Statistical data (IMF for macro/fiscal; SCB for Swedish-specific; WB for non-economic residue) | ±0.5 to ±1 | GDP growth data, unemployment change |
 
 ---
 
@@ -404,7 +404,7 @@ graph TD
 | Coalition → Budget | **Strong** | Budget requires coalition majority | `[vote records]` |
 | Coalition → Policy | **Strong** | Policy delivery requires coalition unity | `[committee reports]` |
 | Policy → Electoral | **Medium** | Policy success/failure affects polls | `[polling data]` |
-| External → Budget | **Medium** | EU/economic pressures constrain budget | `[SCB/World Bank data]` |
+| External → Budget | **Medium** | EU/economic pressures constrain budget | `[IMF WEO/FM + SCB data]` |
 | Electoral → Coalition | **Medium** | Election proximity strains coalition | `[calendar, debate rhetoric]` |
 
 **System-Level Risk Assessment:** When ≥3 risk categories score ≥10 (High), the system is in a **fragile state** where any single trigger event could cascade across multiple risk dimensions simultaneously.

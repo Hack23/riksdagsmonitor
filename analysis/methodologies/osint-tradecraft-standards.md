@@ -14,13 +14,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--22-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-04-22 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-25 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-22
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -142,7 +142,7 @@ The [US Office of the Director of National Intelligence](https://www.odni.gov/) 
 | **1** | **Objective** | Analysis reflects evidence, not the analyst's preferences. Party-group affiliations are described in terms of positions taken, not moral judgements. The eight riksdag parties (S, SD, M, V, C, KD, MP, L) receive equal analytical treatment. | Every artifact; specifically `synthesis-summary.md` Executive Finding. |
 | **2** | **Independent of political considerations** | The analysis is the same regardless of which coalition holds the majority. No deference to the government (SD-M-KD-L), opposition (S-MP-V-C), Talmannen, or any individual minister / spokesperson. | `stakeholder-perspectives.md`, `coalition-mathematics.md`, `media-framing-analysis.md`. |
 | **3** | **Timely** | Breaking-news artifacts (`realtime-*/`) publish within the scheduled cadence; morning (propositions / motions / committee-reports / interpellations), midday (week-ahead / month-ahead), evening (evening-analysis) and review (weekly-review / monthly-review) workflows respect their schedule. | All workflows; enforced by the gh-aw schedule triggers. |
-| **4** | **Based on all available sources of intelligence** | Every claim is cross-checked against the `riksdag-regering` MCP feeds available at run-time; SCB for statistics; World Bank / IMF for macroeconomic context; feed failures are logged and a direct-endpoint fallback (`data.riksdagen.se`, `regeringen.se`, `api.scb.se`) attempted. | `data-download-manifest.md`, `comparative-international.md`. |
+| **4** | **Based on all available sources of intelligence** | Every claim is cross-checked against the `riksdag-regering` MCP feeds available at run-time; SCB for statistics; IMF for macroeconomic context (WEO/FM/IFS/BOP/GFS_COFOG/MFS_IR/DOTS/PCPS/ER); World Bank for non-economic residue only (governance WGI, environment, social, defence historicals); feed failures are logged and a direct-endpoint fallback (`data.riksdagen.se`, `regeringen.se`, `api.scb.se`) attempted. | `data-download-manifest.md`, `comparative-international.md`. |
 | **5a** | **Tradecraft — describes quality and credibility of underlying sources** | Every source citation carries an Admiralty grade (see §2). Feed failures and degraded modes are explicit. | `data-download-manifest.md` §"Collection Transparency"; `methodology-reflection.md` §Source Diversity. |
 | **5b** | **Tradecraft — expresses and explains uncertainties** | Every probabilistic claim uses a WEP band (see §3) and carries a 🟦 / 🟩 / 🟧 / 🟥 / ⬛ confidence marker (see [`political-style-guide.md`](political-style-guide.md) §5-Level Confidence Scale). | `synthesis-summary.md`, `scenario-analysis.md`, `risk-assessment.md`, `forward-indicators.md`, `threat-analysis.md`, `intelligence-assessment.md`. |
 | **5c** | **Tradecraft — distinguishes assumptions from judgements** | Structural assumptions (e.g. "Government coalition SD-M-KD-L holds 176 mandate"; "Opposition S-MP-V-C cohesion on budget ≥ 80 %") are named in the Key Assumptions Check (see §4). | `devils-advocate.md` §Key Assumptions Check; `methodology-reflection.md` §Assumptions audit. |
@@ -410,7 +410,7 @@ When §2.6 Source Diversity Rule is violated for an item, its DIW score is cappe
 | **PIR-3** | Party-position drift — is any party's stated position on policy X inconsistent with its 2022 manifesto? | `media-framing-analysis.md` + `historical-parallels.md` | Strategic |
 | **PIR-4** | Election 2026 pathway — what seat-projection deltas emerge from this week's developments? | `election-2026-analysis.md` + `voter-segmentation.md` | Strategic |
 | **PIR-5** | Institutional risk — are there credible signals of procedural or constitutional friction (e.g. Talmannen rulings, konstitutionsutskottet actions)? | `threat-analysis.md` + `implementation-feasibility.md` | Operational + Strategic |
-| **PIR-6** | Economic transmission — how do SCB / World Bank / IMF signals translate into budget-vote pressure? | `comparative-international.md` + economic-context sections | Strategic |
+| **PIR-6** | Economic transmission — how do IMF / SCB signals (with World Bank governance/environment residue) translate into budget-vote pressure? | `comparative-international.md` + economic-context sections | Strategic |
 | **PIR-7** | Foreign-policy alignment — EU Council, NATO, and Nordic-cooperation posture of the current government vs the opposition's stated position. | `comparative-international.md` + `threat-analysis.md` | Strategic + Structural |
 
 Workflows are free to add cycle-specific PIRs beyond PIR-1–7 in their `intelligence-assessment.md`.

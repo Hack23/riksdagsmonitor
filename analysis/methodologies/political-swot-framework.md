@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.5-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.5 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -115,7 +115,7 @@ Opportunities are demonstrated by **legislative proposals**, **committee reports
 | Opportunity Type | MCP Tool | Query Strategy |
 |-----------------|----------|---------------|
 | Pending favourable legislation | `get_motioner` | Coalition party motions, high significance |
-| Positive economic context | World Bank data + `search_dokument` | FiU positive assessments |
+| Positive economic context | IMF WEO/FM data + SCB national accounts + `search_dokument` | FiU positive assessments |
 | Upcoming SOU recommendations | `search_dokument` | `doktyp=sou` recent + `search_regering` |
 | Nordic/EU opportunity | `search_dokument` | `organ=UU` + EU directive implementation |
 | Electoral opportunity | `fetch_report` + `search_voteringar` | Favourable topics + voting patterns |

@@ -2,7 +2,7 @@
 
 > **Authoritative methodology** — canonical reference mapping Riksdagsmonitor news workflow article types to the most-relevant IMF indicators sourced from **WEO**, **Fiscal Monitor**, **IFS**, **BOP**, **GFS_COFOG**, **MFS_IR**, **DOTS**, **PCPS**, and **ER** via the local TypeScript IMF client at `scripts/imf-fetch.ts` (Datamapper JSON base URL `https://www.imf.org/external/datamapper/api/v1`, SDMX 3.0 base URL `https://api.imf.org/external/sdmx/3.0`).
 >
-> **Effective**: 2026-04-24 · **Version**: 2.0 · **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1+
+> **Effective**: 2026-04-25 · **Version**: 2.1 · **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1+
 
 ---
 

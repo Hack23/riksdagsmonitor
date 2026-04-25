@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.5 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `synthesis-summary.md` in the workflow's own folder. This file synthesizes per-file analyses into an integrated intelligence picture. AI reads all per-file analyses and produces genuine synthesis — not a mechanical concatenation of summaries.
@@ -29,6 +29,22 @@
 > 5. Include ≥2 color-coded Mermaid diagrams (intelligence dashboard + one other)
 > 6. Rank documents by significance and explain the ranking rationale
 
+
+---
+
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **ANALYZE → DISSEMINATE** — integrates per-document Family E findings into the run's coherent intelligence picture, identifies cross-document patterns, and lights the path from raw documents to executive-brief BLUF. |
+| **PIRs Served** | Serves **all** standing PIRs that the day's documents touch; the synthesis explicitly lists which of PIR-1..PIR-7 each major finding addresses, and surfaces any PIR with insufficient evidence. |
+| **Admiralty Floor** | **B2** floor on synthesis-level claims; per-document anchor evidence inherits the Admiralty grade from the contributing Family E `{dok_id}-analysis.md`; aggregate confidence ≤ floor of contributing artifact confidences. |
+| **WEP + ODNI** | Pattern statements use **WEP** phrasing for cross-document inferences (`a likely coordinated push`, `about even between two interpretations`); aggregate confidence label is the floor (not average) of contributing-artifact confidences. |
+| **Source Diversity Floor** | The synthesis must integrate **≥3 different MCP sources** (riksdag-regering MCP + at least one of `data.scb.se`, IMF, regeringen.se / `data.regeringen.se`); a synthesis built from a single MCP source is downgraded to ≤ MEDIUM confidence regardless of within-source breadth. |
+| **SAT(s) Applied** | Cross-Impact Analysis (between same-day documents); Pattern Recognition (against the same-type 30-day baseline + same-type cross-run-diff); ACH lite (when ≥2 competing narratives explain the day); Indicators & Signposts (forward triggers extracted to `forward-indicators.md`). |
+| **ICD 203 Standards** | All 9 standards apply — synthesis is the artifact most directly evaluated against ICD 203; in particular 4 (relevance to consumer), 5 (sourcing), 6 (logical argumentation), 7 (uncertainty), 8 (analytic value), 9 (alternative analysis). |
+
+> See [`osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md) for canonical F3EAD / PIR catalogue / Admiralty Code / WEP / SAT / ICD 203 definitions, and [`synthesis-methodology.md`](../methodologies/synthesis-methodology.md) for DIW-weighted ranking, lead-story selection, and aggregate confidence rules.
 
 ---
 
@@ -119,6 +135,30 @@ graph TD
 | 3 | `[REQUIRED]` | `[REQUIRED]` | `[#.#]` | `[tier]` | `[quadrant]` | `[action]` |
 | 4 | `[OPTIONAL]` | `[OPTIONAL]` | `[#.#]` | `[tier]` | `[quadrant]` | `[action]` |
 | 5 | `[OPTIONAL]` | `[OPTIONAL]` | `[#.#]` | `[tier]` | `[quadrant]` | `[action]` |
+
+---
+
+## 📖 Narrative (v3.2 — required)
+
+> **Purpose:** the table above is the analytic ranking; this section is the **prose handoff** to `article.md` for the lead story. Apply [`political-style-guide.md` §"Narrative-Voice Standards"](../methodologies/political-style-guide.md#-narrative-voice-standards-v32--new) — choose one canonical lede pattern, name three people in the first 200 words, follow the sentence-cadence rule, include sensory specificity, close with a counter-narrative paragraph. Pass-2 grades this on the 6-axis narrative rubric.
+
+### Lead-story narrative *(400–700 words)*
+
+**Lede** *(one of: hard-news / tension-contrast / scene-setting / significance-first — pick the form that fits the day's #1 ranked finding)*
+
+> `[REQUIRED]`
+
+**Body** *(2–4 paragraphs)*
+
+> `[REQUIRED — vary sentence length, name ≥ 3 actors with role + party + verb, ≥ 1 concrete sensory detail per 400 words. Tradecraft jargon allowed only with payoff within ≤ 2 sentences.]`
+
+**Counter-narrative** *(60–150 words, signposted)*
+
+> *"There is a contrary read."* `[REQUIRED — named source whose framing differs.]`
+
+### Secondary thread narrative *(200–400 words, optional but recommended for ≥ 3-finding days)*
+
+> `[OPTIONAL — same structure, applied to ranking row #2 if its DIW is within 1.5 of #1.]`
 
 ---
 
@@ -388,11 +428,29 @@ graph LR
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/synthesis-summary.md`  
-- **Version:** 2.3  
-- **Effective Date:** 2026-06-01 (UTC)  
+- **Version:** 2.5  
+- **Effective Date:** 2026-04-25 (UTC)  
 - **Key Changes v2.3:** Added Election 2026 Implications section, Historical Comparison tables, 5-level confidence scale (VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW), updated quality checklist  
 - **Consumed By:** All news article generator workflows  
 - **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment)  
 - **Classification:** Public  
 - **Owner:** Hack23 AB (Org.nr 5595347807)  
 - **Next Review:** 2026-06-30
+
+---
+
+## ✅ Pass-2 Self-Audit Checklist (v4.4 — required)
+
+> **Purpose:** AI-FIRST principle requires a Pass-2 read-back-and-improve. After producing this artifact in Pass 1, re-read it end-to-end and verify each item below. Document any remediation in [`methodology-reflection.md`](methodology-reflection.md) §"Pass-2 audit log". Any unchecked ❌ box at the end of Pass 2 forces a Pass-3 rewrite of the affected section.
+
+- [ ] **Tradecraft anchors honoured** — F3EAD stage matches the artifact's role; PIRs declared in the §Tradecraft Context block are actually addressed in the body; Admiralty grades attached to every external source; WEP band + ODNI confidence on every probabilistic judgement.
+- [ ] **Source diversity floor met** — at least the minimum number of independent MCP sources required by the artifact's tradecraft block are cited; single-source claims are explicitly labelled `[SINGLE-SOURCE — corroboration pending]`.
+- [ ] **Evidence specificity** — every quantified claim cites a `dok_id` (Riksdag), an SCB / IMF dataflow code, or a named external source with date; no "according to data" / "studies show" hand-waves.
+- [ ] **Named-actor discipline** — every political claim names ≥ 1 person (party + role + dated act/quote) or labels the absence (`[diffuse — no named actor]`).
+- [ ] **Counter-narrative present** — at least one explicit competing hypothesis, dissent quote, or framed objection appears in the body; "no opposition recorded" is itself a finding to label, not silence.
+- [ ] **Election 2026 lens applied** — the §"Election 2026 Implications" subsection (or equivalent) addresses electoral salience, coalition pressure, and forward indicators; not boilerplate.
+- [ ] **No illustrative content shipped as fact** — every `[REQUIRED]` placeholder is filled OR removed; every `Example:` block is clearly fenced or removed; no fabricated `dok_id`, vote count, or quote leaks into the final artifact.
+- [ ] **Cross-references resolve** — every `[link](file.md)` in this artifact points to a file that exists in the run folder (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) or to a methodology / template under `analysis/`.
+- [ ] **Mermaid renders** — every fenced ` ```mermaid ` block parses (no missing class definitions, no orphan nodes, no >40-node graphs that overflow viewport on mobile).
+- [ ] **Line-floor check** — artifact length ≥ the per-artifact floor in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json); shorter artifacts trigger Pass-2 rewrite, never a `[truncated]` note.
+

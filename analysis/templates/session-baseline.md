@@ -9,10 +9,12 @@
 
 ## 🔄 Tradecraft Context
 
-- Use this artifact to establish the factual session baseline for the covered period before drawing analytical conclusions in other artifacts.
-- Keep content source-grounded, structured, and low-inference: prioritise dates, durations, adopted texts, counts, chairing/session metadata over narrative prose.
-- Where multiple sittings or committee sessions occurred, record each discretely so downstream artifacts can cite this file as the canonical calendar/roster reference.
-- If source material is incomplete or ambiguous, note the gap explicitly rather than inferring missing details.
+- **F3EAD stage** — Find + Fix: this is the primary evidence-gathering artifact; all other artifacts cite back to it for dates, dok_ids, vote counts, and actor names
+- **Scope discipline** — Record every sitting and committee session in the covered period discretely; do not aggregate across sessions when individual session data is available
+- **Evidence standard** — Source-grounded, structured, and low-inference; prioritise dates, durations, adopted texts, counts, chairing/session metadata over narrative prose
+- **Gap handling** — If source material is incomplete or ambiguous, note the gap explicitly (`[DATA GAP: source returned zero rows]`) rather than inferring missing details; flag in `mcp-reliability-audit.md §Failure analysis`
+- **Cross-reference baseline** — Every `dok_id` cited here must resolve via `get_dokument`; every MP reference must carry an `intressent_id`
+- **MCP tools** — `get_calendar_events`, `search_dokument`, `search_voteringar`, `search_anforanden`, `get_betankanden`, `get_propositioner`, `get_motioner`, `get_fragor`, `get_interpellationer`, `search_regering`
 
 ---
 
@@ -26,10 +28,16 @@
 | **Article Type** | `[REQUIRED]` |
 | **Riksmöte** | `[REQUIRED: e.g. 2025/26]` |
 | **Period Covered** | `[REQUIRED: e.g. Week 17 (20-26 April 2026)]` |
+| **Kammaren sittings** | `[REQUIRED: total # in period]` |
+| **Committee sessions** | `[REQUIRED: total # in period]` |
+| **Antagna betänkanden** | `[REQUIRED: total # in period]` |
+| **Total voteringar** | `[REQUIRED: total # in period]` |
 
 ---
 
 ## 1️⃣ Kammaren (Plenary Sittings)
+
+> Record each sitting separately. Populate from `get_calendar_events` (org=kammaren) and `search_dokument`.
 
 ### Sitting 1 — `[REQUIRED: date]`
 
@@ -38,106 +46,230 @@
 | Datum | `[REQUIRED: YYYY-MM-DD]` |
 | Plats | `Riksdagshuset, Stockholm` |
 | Starttid / sluttid | `[REQUIRED: HH:MM–HH:MM]` |
+| Duration | `[REQUIRED: decimal hours, e.g. 6.5 h]` |
 | Antagna betänkanden | `[REQUIRED: #]` |
 | Voteringar (roll-call) | `[REQUIRED: #]` |
 | Anföranden | `[REQUIRED: #]` |
-| Huvudtema | `[REQUIRED: 1-line]` |
-| Talman (chair) | `[REQUIRED: name]` |
+| Huvudtema | `[REQUIRED: 1-line summary of dominant legislative focus]` |
+| Talman (chair) | `[REQUIRED: name + party]` |
+| Vice talman | `[if relevant]` |
+| Calendar source | `get_calendar_events dok_id or event_id` |
 
-(Repeat §1 block for each sitting in the period.)
+#### Key vote(s) this sitting
+
+| Voteringsnummer | Beteckning | Ämne | Resultat (J–N–A–F) | Party-block pattern | Margin |
+|:---------------:|:----------:|------|:------------------:|---------------------|:------:|
+| `[REQUIRED]` | `[REQUIRED]` | `[1-line]` | `[#–#–#–#]` | `[e.g. Tidö vs S+V+MP+C]` | `[#]` |
+
+*(Repeat §1 block for each sitting in the period; add Sitting 2, Sitting 3, etc.)*
 
 ---
 
 ## 2️⃣ Utskott (Committee) Sessions
 
-| Utskott | Datum | Tid | Dagordning | Antagna betänkanden | Ordförande |
-|---------|:-----:|:---:|------------|:-------------------:|------------|
-| `[REQUIRED: e.g. FiU]` | `[YYYY-MM-DD]` | `[HH:MM]` | `[1-line]` | `[#]` | `[name + intressent_id]` |
+> Populate from `get_calendar_events` (org=UTSK), `get_betankanden`, and direct committee-page queries.
+
+| Utskott | Datum | Tid | Typ (beslutsmöte/sammanträde) | Dagordning | Antagna betänkanden | Ordförande | Party | Source |
+|---------|:-----:|:---:|:-----------------------------:|------------|:-------------------:|------------|:-----:|--------|
+| `[e.g. FiU]` | `[YYYY-MM-DD]` | `[HH:MM]` | `[REQUIRED]` | `[1-line]` | `[#]` | `[name + intressent_id]` | `[party]` | `[get_betankanden dok_id]` |
+
+### Committee composition snapshot (updated when change occurs)
+
+| Utskott | Ordförande (party) | Vice ordförande (party) | Majority block | Minority parties |
+|---------|--------------------|-------------------------|----------------|-----------------|
+| `[FiU]` | `[name (M)]` | `[name (S)]` | `[M+KD+L+SD]` | `[S, V, MP, C]` |
+| `[…]` | | | | |
 
 ---
 
 ## 3️⃣ Adopted Texts Roster
 
-| `dok_id` | Title | Typ | Föredragande / utskott | Voteringsresultat | Länk |
-|----------|-------|:---:|------------------------|:-----------------:|------|
-| `[REQUIRED: e.g. H901FiU1]` | `[REQUIRED]` | `[bet / prop / mot]` | `[MP + intressent_id / utskott]` | `[Ja/Nej/Avstår]` | `[URL on riksdagen.se]` |
+> All rows must resolve via `get_dokument`. Flag any row that fails resolution in §8 Data Quality.
 
-All rows must resolve via `get_dokument` (see [`mcp-reliability-audit.md`](mcp-reliability-audit.md)).
+| `dok_id` | Title | Typ | Föredragande utskott | Voteringsresultat | Majoritet | Länk |
+|----------|-------|:---:|----------------------|:-----------------:|:---------:|------|
+| `[REQUIRED: e.g. H901FiU1]` | `[REQUIRED]` | `[bet / prop / mot / skr]` | `[utskott abbrev]` | `[J/N/A/F counts]` | `[Ja/Nej/bifall/avslag]` | `[riksdagen.se URL]` |
+
+**Period totals:**
+- Betänkanden adopted: `[#]` (unanimous: `[#]`; contested: `[#]`; one-vote margin: `[#]`)
+- Propositioner referred to committee: `[#]`
+- Motioner filed: `[#]`
 
 ---
 
 ## 4️⃣ Votering Summary
 
-### Top 10 by salience
+### Top 10 by salience (sort by margin desc or political significance)
 
-| # | Voteringsnummer | Beteckning | Ämne | Resultat (J–N–A–F) | Party-block pattern |
-|:-:|:---------------:|:----------:|------|:------------------:|---------------------|
-| 1 | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` | `[#–#–#–#]` | `[e.g. Tidö vs S+V+MP+C]` |
+| # | Voteringsnummer | Beteckning | Ämne | Resultat (J–N–A–F) | Margin | Party-block pattern | Pivotal defectors |
+|:-:|:---------------:|:----------:|------|:------------------:|:------:|---------------------|-------------------|
+| 1 | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` | `[#–#–#–#]` | `[#]` | `[Tidö vs opposition]` | `[name + party + intressent_id if any]` |
+| 2 | | | | | | | |
+| 3 | | | | | | | |
 
 ### Discipline matrix (by party)
 
-| Party | Votes cast | Discipline % | Break-aways (MP count) |
-|-------|:----------:|:------------:|:----------------------:|
-| S | `[#]` | `[%]` | `[#]` |
-| M | `[#]` | `[%]` | `[#]` |
-| SD | `[#]` | `[%]` | `[#]` |
-| V | `[#]` | `[%]` | `[#]` |
-| MP | `[#]` | `[%]` | `[#]` |
-| C | `[#]` | `[%]` | `[#]` |
-| L | `[#]` | `[%]` | `[#]` |
-| KD | `[#]` | `[%]` | `[#]` |
+> Source: `search_voteringar` grouped by `parti`. Discipline = (MPs voting with party caucus majority / MPs casting a vote) × 100.
+
+| Party | Seats in kammaren | Votes cast | Discipline % | Break-aways (# MPs) | Break-away names (intressent_id) |
+|-------|:-----------------:|:----------:|:------------:|:-------------------:|----------------------------------|
+| S | 107 | `[#]` | `[%]` | `[#]` | `[names if any]` |
+| M | 68 | `[#]` | `[%]` | `[#]` | `[names if any]` |
+| SD | 73 | `[#]` | `[%]` | `[#]` | `[names if any]` |
+| V | 24 | `[#]` | `[%]` | `[#]` | `[names if any]` |
+| MP | 18 | `[#]` | `[%]` | `[#]` | `[names if any]` |
+| C | 24 | `[#]` | `[%]` | `[#]` | `[names if any]` |
+| L | 16 | `[#]` | `[%]` | `[#]` | `[names if any]` |
+| KD | 19 | `[#]` | `[%]` | `[#]` | `[names if any]` |
+
+**Period average party discipline**: `[overall %]`
+**Most-disciplined party**: `[party, %]`
+**Least-disciplined party**: `[party, %; note if low discipline correlates with specific issue]`
+
+### Coalition arithmetic tracker
+
+| Vote | Coalition votes (J) | Opposition votes (N) | Majority line (175) | Margin | Bloc pattern |
+|------|:-------------------:|:--------------------:|:-------------------:|:------:|:------------|
+| `[top 3 contested votes]` | `[#]` | `[#]` | 175 | `[J - 175]` | `[M+KD+L+SD / S+V+MP+C / split]` |
 
 ---
 
-## 5️⃣ Interpellationer & Frågor
+## 5️⃣ Interpellationer & Skriftliga Frågor
 
-| Typ | Avsändare | Mottagare (minister) | Ämne | Status | Datum |
-|-----|-----------|----------------------|------|:------:|:-----:|
-| `[interpellation / skriftlig fråga]` | `[MP + intressent_id + party]` | `[minister + department]` | `[1-line]` | `[ställd / besvarad / utgår]` | `[YYYY-MM-DD]` |
+> Source: `get_interpellationer` and `get_fragor`. Record all in period; highlight politically significant ones.
+
+| Typ | Nr | Avsändare | Party | Mottagare (minister) | Departement | Ämne | Status | Datum ställd | Datum besvarad |
+|-----|----|-----------|:-----:|----------------------|:-----------:|------|:------:|:------------:|:--------------:|
+| `[interpellation / skriftlig fråga]` | `[YYYY:N]` | `[MP + intressent_id]` | `[party]` | `[minister + titel]` | `[Fi / Ju / UD…]` | `[1-line]` | `[ställd / besvarad / utgår]` | `[YYYY-MM-DD]` | `[YYYY-MM-DD or —]` |
+
+**Period totals** — Interpellationer: `[#]` (besvarade: `[#]`, utgångna: `[#]`). Skriftliga frågor: `[#]` (besvarade: `[#]`).
+
+**Most-active interpellant**: `[name + party + intressent_id]` (`[#]` interpellationer in period).
 
 ---
 
 ## 6️⃣ Regeringens Aktivitet under Perioden
 
-| Datum | Dokumenttyp | Titel | Departement | Länk |
-|:-----:|:-----------:|-------|:-----------:|------|
-| `[REQUIRED]` | `[prop / skr / SOU / Ds / remiss]` | `[REQUIRED]` | `[e.g. Fi / Ju / UD]` | `[regeringen.se URL]` |
+> Source: `search_regering` and `get_regering_document`.
 
-Populated from `search_regering` / `get_regering_document`.
+| Datum | Dokumenttyp | Titel | Departement | Avsändande minister | Länk |
+|:-----:|:-----------:|-------|:-----------:|---------------------|------|
+| `[REQUIRED]` | `[prop / skr / SOU / Ds / remiss / pressmeddelande]` | `[REQUIRED]` | `[e.g. Fi / Ju / UD]` | `[minister name + title]` | `[regeringen.se URL]` |
 
----
-
-## 7️⃣ Data Source Coverage
-
-| Source | Rows contributed | Freshness | Notes |
-|--------|:----------------:|:---------:|-------|
-| `search_dokument` | `[#]` | `[ts]` | — |
-| `get_calendar_events` | `[#]` | `[ts]` | — |
-| `search_voteringar` | `[#]` | `[ts]` | — |
-| `search_anforanden` | `[#]` | `[ts]` | — |
-| `get_betankanden` | `[#]` | `[ts]` | — |
-| `get_propositioner` | `[#]` | `[ts]` | — |
-| `get_motioner` | `[#]` | `[ts]` | — |
-| `get_fragor` / `get_interpellationer` | `[#]` | `[ts]` | — |
-| `search_regering` | `[#]` | `[ts]` | — |
-
-Any source returning zero rows when it shouldn't → flag in `mcp-reliability-audit.md §Failure analysis`.
+**Riksråd (government decisions) of note:**
+| Datum | Ärende | Beslutsdepartement | Significance | URL |
+|:-----:|--------|-------------------|:------------:|-----|
+| `[YYYY-MM-DD]` | `[1-line]` | `[abbrev]` | `[1–5]` | `[URL]` |
 
 ---
 
-## 8️⃣ Data Quality Checklist
+## 7️⃣ EU-Agenda Interface
 
-- [ ] Every `dok_id` in §3 resolves via `get_dokument`.
-- [ ] Every MP reference carries an `intressent_id`.
-- [ ] Every vote row sums correctly (`J + N + A + F = total`).
-- [ ] Every `regeringen.se` URL returns HTTP 200 (spot-check 5 random).
-- [ ] Period totals in §1 equal the sum across sitting blocks (arithmetic check).
-- [ ] No row is an estimate (numeric fields have exact counts).
+> Record any EU-level developments (COM proposals, Council of EU decisions, EP votes, ECOFIN/Eurogroup) that directly interface with the period's Riksdag/Riksdag agenda. This section establishes the EU political context for downstream PESTLE §Legal and §Economic analysis.
+
+| EU event | Date | Institution | Instrument / CELEX | Swedish Riksdag interface | Responsible utskott |
+|----------|:----:|:-----------:|---------------------|--------------------------|:-------------------:|
+| `[e.g. COM proposal published]` | `[YYYY-MM-DD]` | `[COM / EP / Council]` | `[COM(YYYY)N / CELEX]` | `[Riksdag EUN discussion / prop. referral / UU betänkande]` | `[UU / EUN / sector utskott]` |
+
+---
+
+## 8️⃣ Budget Cycle Position
+
+> Locate the current period within the Swedish budget cycle. This informs downstream risk-assessment §Fiscal and scenario-analysis horizon calibration.
+
+| Budget milestone | Date | Status | Responsible actor |
+|-----------------|:----:|:------:|------------------|
+| Vårpropositionen (Spring fiscal bill) | `[YYYY-MM-DD]` | `[planned / submitted / adopted / past]` | Finansdepartementet |
+| Budgetpropositionen (Autumn budget) | `[YYYY-MM-DD]` | `[planned / submitted / adopted / past]` | Finansdepartementet |
+| Rambeslutet (Framework decision) | `[YYYY-MM-DD]` | `[planned / adopted / past]` | Riksdag FiU |
+| Anslagsbeslutet (Appropriation decision) | `[YYYY-MM-DD]` | `[planned / adopted / past]` | Riksdag kammaren |
+| Finanspolitiska rådet annual report | `[YYYY-MM-DD]` | `[published / pending]` | FPR |
+
+**Current fiscal cycle position**: `[describe: e.g. "Post-Vårproposition; pre-Budgetpropositionen; FiU reviewing spring supplement amendments"]`
+
+---
+
+## 9️⃣ Speaker (Anföranden) Statistics
+
+> Source: `search_anforanden` grouped by party and talare.
+
+| Party | # Anföranden | Top speaker | # Speeches | Dominant topic |
+|:-----:|:------------:|-------------|:----------:|----------------|
+| S | `[#]` | `[name + intressent_id]` | `[#]` | `[1-line]` |
+| M | `[#]` | `[name]` | `[#]` | `[1-line]` |
+| SD | `[#]` | `[name]` | `[#]` | `[1-line]` |
+| V | `[#]` | `[name]` | `[#]` | `[1-line]` |
+| MP | `[#]` | `[name]` | `[#]` | `[1-line]` |
+| C | `[#]` | `[name]` | `[#]` | `[1-line]` |
+| L | `[#]` | `[name]` | `[#]` | `[1-line]` |
+| KD | `[#]` | `[name]` | `[#]` | `[1-line]` |
+
+**Government representative anföranden**: `[# speeches by statsråd]`
+**Longest debate**: `[topic, date, total speeches]`
+**Most contested debate**: `[topic, date, # interruptions / repliker]`
+
+---
+
+## 🔟 Data Source Coverage
+
+| Source | MCP tool | Rows contributed | Freshness (last retrieval ts) | Status | Notes |
+|--------|----------|:----------------:|:-----------------------------:|:------:|-------|
+| Plenary calendar | `get_calendar_events` | `[#]` | `[ts]` | `[✅/⚠️/❌]` | — |
+| Document register | `search_dokument` | `[#]` | `[ts]` | `[✅/⚠️/❌]` | — |
+| Vote records | `search_voteringar` | `[#]` | `[ts]` | `[✅/⚠️/❌]` | — |
+| Speech records | `search_anforanden` | `[#]` | `[ts]` | `[✅/⚠️/❌]` | — |
+| Committee reports | `get_betankanden` | `[#]` | `[ts]` | `[✅/⚠️/❌]` | — |
+| Propositions | `get_propositioner` | `[#]` | `[ts]` | `[✅/⚠️/❌]` | — |
+| Motions | `get_motioner` | `[#]` | `[ts]` | `[✅/⚠️/❌]` | — |
+| Written questions | `get_fragor` | `[#]` | `[ts]` | `[✅/⚠️/❌]` | — |
+| Interpellations | `get_interpellationer` | `[#]` | `[ts]` | `[✅/⚠️/❌]` | — |
+| Government docs | `search_regering` | `[#]` | `[ts]` | `[✅/⚠️/❌]` | — |
+
+Any source returning zero rows when it should not → flag in `mcp-reliability-audit.md §Failure analysis` with the exact error and timestamp.
+
+---
+
+## 1️⃣1️⃣ Data Quality Checklist
+
+- [ ] Every `dok_id` in §3 resolves via `get_dokument` without error.
+- [ ] Every MP reference carries a valid `intressent_id` (verified via `get_ledamot`).
+- [ ] Every vote row arithmetic is correct: `J + N + A + F = total present` (spot-check ≥ 5 rows).
+- [ ] Every `regeringen.se` URL returns HTTP 200 (spot-check ≥ 5 random rows from §6).
+- [ ] Period totals in §1 equal the sum across sitting blocks (no double-counting).
+- [ ] No field contains an estimate: all numeric fields are exact counts from source data.
+- [ ] Discipline percentages computed from actual vote data, not estimated.
+- [ ] EU events in §7 cite CELEX or COM number (not just "EU regulation").
+- [ ] Budget cycle position in §8 cites at least one Finansdepartementet or FPR source.
+- [ ] Speaker statistics in §9 sourced from `search_anforanden` not estimated.
 
 ---
 
 ## 🔗 Cross-References
 
 - Methodology: [`../methodologies/per-artifact-methodologies.md#session-baseline`](../methodologies/per-artifact-methodologies.md#session-baseline)
-- Pair with: [`cross-session-intelligence.md`](cross-session-intelligence.md) (narrative) + [`historical-parallels.md`](historical-parallels.md) (trend)
+- Pair with: [`cross-session-intelligence.md`](cross-session-intelligence.md) (narrative) + [`historical-parallels.md`](historical-parallels.md) (trend) + [`coalition-mathematics.md`](coalition-mathematics.md) (vote arithmetic)
+- Operational log: [`mcp-reliability-audit.md`](mcp-reliability-audit.md) (data quality issues flagged here appear there)
 - Source tools: `riksdag-regering` MCP (see [`../../.github/prompts/02-mcp-access.md`](../../.github/prompts/02-mcp-access.md))
+- Budget context: [`analysis/imf/README.md`](../imf/README.md) for IMF fiscal vintage used in §8
+
+---
+
+**Template version:** v2.0 · **Last updated:** 2026-04-25
+
+---
+
+## ✅ Pass-2 Self-Audit Checklist (v4.4 — required)
+
+> **Purpose:** AI-FIRST principle requires a Pass-2 read-back-and-improve. After producing this artifact in Pass 1, re-read it end-to-end and verify each item below. Document any remediation in [`methodology-reflection.md`](methodology-reflection.md) §"Pass-2 audit log". Any unchecked ❌ box at the end of Pass 2 forces a Pass-3 rewrite of the affected section.
+
+- [ ] **Tradecraft anchors honoured** — F3EAD stage matches the artifact's role; PIRs declared in the §Tradecraft Context block are actually addressed in the body; Admiralty grades attached to every external source; WEP band + ODNI confidence on every probabilistic judgement.
+- [ ] **Source diversity floor met** — at least the minimum number of independent MCP sources required by the artifact's tradecraft block are cited; single-source claims are explicitly labelled `[SINGLE-SOURCE — corroboration pending]`.
+- [ ] **Evidence specificity** — every quantified claim cites a `dok_id` (Riksdag), an SCB / IMF dataflow code, or a named external source with date; no "according to data" / "studies show" hand-waves.
+- [ ] **Named-actor discipline** — every political claim names ≥ 1 person (party + role + dated act/quote) or labels the absence (`[diffuse — no named actor]`).
+- [ ] **Counter-narrative present** — at least one explicit competing hypothesis, dissent quote, or framed objection appears in the body; "no opposition recorded" is itself a finding to label, not silence.
+- [ ] **Election 2026 lens applied** — the §"Election 2026 Implications" subsection (or equivalent) addresses electoral salience, coalition pressure, and forward indicators; not boilerplate.
+- [ ] **No illustrative content shipped as fact** — every `[REQUIRED]` placeholder is filled OR removed; every `Example:` block is clearly fenced or removed; no fabricated `dok_id`, vote count, or quote leaks into the final artifact.
+- [ ] **Cross-references resolve** — every `[link](file.md)` in this artifact points to a file that exists in the run folder (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) or to a methodology / template under `analysis/`.
+- [ ] **Mermaid renders** — every fenced ` ```mermaid ` block parses (no missing class definitions, no orphan nodes, no >40-node graphs that overflow viewport on mobile).
+- [ ] **Line-floor check** — artifact length ≥ the per-artifact floor in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json); shorter artifacts trigger Pass-2 rewrite, never a `[truncated]` note.
+

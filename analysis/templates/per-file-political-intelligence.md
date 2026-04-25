@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.5 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** This template is for **per-file** analysis. For each data file downloaded via MCP, the AI agent produces one analysis markdown file stored as `{id}-analysis.md` in the workflow's isolated folder. AI MUST read `analysis/methodologies/ai-driven-analysis-guide.md` (v5.0) before analyzing; consult other methodology guides only when needed for the current analysis step.
@@ -36,6 +36,22 @@
 >
 > **MUST include:** ≥3 evidence points with dok_id, ≥1 color-coded Mermaid diagram (classification tree, risk matrix, stakeholder map, or threat taxonomy — at least one is MANDATORY), multi-framework analysis (SWOT + at least one of: Risk, Attack Tree, Kill Chain), named actors with party affiliations, forward indicators.
 
+
+---
+
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **FIND / FIX / FINISH** — locate the document in the corpus, classify it across 7 dimensions, and produce the atomic per-document intelligence record that Family A synthesis builds on. |
+| **PIRs Served** | `[REQUIRED: list addressed PIRs from PIR-1..PIR-7]` — at minimum PIR-3 (party-position drift) plus the PIR matching the document's policy domain (defence → PIR-7, fiscal → PIR-6, institutional → PIR-5, election-adjacent → PIR-4). |
+| **Admiralty Floor** | **A1** for the dok_id itself (parliamentary primary source); **B2** floor for analytic inferences derived from it; F6 not permitted. |
+| **WEP + ODNI** | Classification claims use deterministic language ("the proposition states X" / "the committee voted Y–Z"); forward-looking implications use **WEP** terms (`likely`, `about even`, `unlikely`) paired with 5-level confidence per [`political-style-guide.md`](../methodologies/political-style-guide.md#-words-of-estimative-probability-wep--odni-confidence-overlay). |
+| **Source Diversity Floor** | ≥1 primary (the document) + ≥1 corroborating secondary source for every P0/P1 implication; single-source implications must carry `[unconfirmed]` and ≤ MEDIUM confidence. |
+| **SAT(s) Applied** | Quality of Information Check; Structured Brainstorming; Key Assumptions Check; Cross-Impact Analysis (against same-day documents). |
+| **ICD 203 Standards** | 1 (objectivity), 2 (independent), 3 (timeliness), 5 (sourcing), 6 (logical argumentation), 7 (uncertainty), 8 (analytic value), 9 (alternative analysis). |
+
+> See [`osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md) for canonical F3EAD / PIR catalogue / Admiralty Code / WEP / SAT / ICD 203 definitions, and [`political-style-guide.md`](../methodologies/political-style-guide.md) for tone, evidence-citation, and confidence-labelling conventions.
 
 ---
 
@@ -60,6 +76,24 @@
 `[REQUIRED: 3–5 sentences capturing the political significance. Intelligence-level analysis — not just what happened, but what it means for power dynamics, coalition stability, and democratic accountability. Include confidence label.]` **[VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW]**
 
 > ⚠️ **Confidence Ceiling Rule**: If `Data Depth` above is `METADATA-ONLY`, confidence MUST be `LOW` or `VERY LOW`. If `SUMMARY`, max is `MEDIUM`. Only `FULL-TEXT` documents may claim `HIGH` or `VERY HIGH`. See `ai-driven-analysis-guide.md` §Data Availability Prerequisites.
+
+---
+
+## 📖 Narrative (v3.2 — required for L2-Strategic+ depth tier)
+
+> **When required:** this subsection is **mandatory** when the document's DIW score places it at L2-Strategic, L2+ Priority, or L3 Intelligence-grade depth. For L1-Surface and clustered low-weight items it is **optional**. Apply [`political-style-guide.md` §"Narrative-Voice Standards"](../methodologies/political-style-guide.md#-narrative-voice-standards-v32--new). The Family A `synthesis-summary.md` and `executive-brief.md` will pull from this subsection when this document is the day's #1 or #2 ranked finding.
+
+**Lede paragraph** *(80–140 words, one canonical lede pattern)*
+
+> `[REQUIRED for ≥ L2 — pick: hard-news / tension-contrast / scene-setting / significance-first.]`
+
+**Body** *(1–2 paragraphs, total 200–400 words)*
+
+> `[REQUIRED for ≥ L2 — name three actors (sponsor / opponent / pivotal third) by word 200 with role + party + verb. Vary sentence cadence. Include ≥ 1 concrete sensory detail (committee room, time, exact phrasing of an interjection, page count of the tabled report). Tradecraft jargon must pay back within 2 sentences.]`
+
+**Counter-narrative** *(40–100 words, signposted)*
+
+> *"There is a contrary read."* `[REQUIRED for ≥ L2 — named source whose framing of these same documents is genuinely different.]`
 
 ---
 
@@ -421,8 +455,8 @@ graph TD
 **Document Control:**  
 - **Template Path:** `/analysis/templates/per-file-political-intelligence.md`  
 - **Output Path:** `analysis/daily/YYYY-MM-DD/{articleType}/documents/{dok_id}-analysis.md`  
-- **Version:** 2.3  
-- **Effective Date:** 2026-06-01 (UTC)  
+- **Version:** 2.5  
+- **Effective Date:** 2026-04-25 (UTC)  
 - **Key Changes v2.3:** Added Election 2026 Implications section, 5-level confidence scale (VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW) replacing binary H/M/L, improved differentiated per-document insights  
 - **Frameworks:** SWOT, Risk, Attack Trees, Kill Chain, Diamond Model, Stakeholder  
 - **Framework References:** [SWOT.md](../../SWOT.md), [THREAT_MODEL.md](../../THREAT_MODEL.md)  
@@ -431,3 +465,21 @@ graph TD
 - **Classification:** Public  
 - **Owner:** Hack23 AB (Org.nr 5595347807)  
 - **Next Review:** 2026-06-30
+
+---
+
+## ✅ Pass-2 Self-Audit Checklist (v4.4 — required)
+
+> **Purpose:** AI-FIRST principle requires a Pass-2 read-back-and-improve. After producing this artifact in Pass 1, re-read it end-to-end and verify each item below. Document any remediation in [`methodology-reflection.md`](methodology-reflection.md) §"Pass-2 audit log". Any unchecked ❌ box at the end of Pass 2 forces a Pass-3 rewrite of the affected section.
+
+- [ ] **Tradecraft anchors honoured** — F3EAD stage matches the artifact's role; PIRs declared in the §Tradecraft Context block are actually addressed in the body; Admiralty grades attached to every external source; WEP band + ODNI confidence on every probabilistic judgement.
+- [ ] **Source diversity floor met** — at least the minimum number of independent MCP sources required by the artifact's tradecraft block are cited; single-source claims are explicitly labelled `[SINGLE-SOURCE — corroboration pending]`.
+- [ ] **Evidence specificity** — every quantified claim cites a `dok_id` (Riksdag), an SCB / IMF dataflow code, or a named external source with date; no "according to data" / "studies show" hand-waves.
+- [ ] **Named-actor discipline** — every political claim names ≥ 1 person (party + role + dated act/quote) or labels the absence (`[diffuse — no named actor]`).
+- [ ] **Counter-narrative present** — at least one explicit competing hypothesis, dissent quote, or framed objection appears in the body; "no opposition recorded" is itself a finding to label, not silence.
+- [ ] **Election 2026 lens applied** — the §"Election 2026 Implications" subsection (or equivalent) addresses electoral salience, coalition pressure, and forward indicators; not boilerplate.
+- [ ] **No illustrative content shipped as fact** — every `[REQUIRED]` placeholder is filled OR removed; every `Example:` block is clearly fenced or removed; no fabricated `dok_id`, vote count, or quote leaks into the final artifact.
+- [ ] **Cross-references resolve** — every `[link](file.md)` in this artifact points to a file that exists in the run folder (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) or to a methodology / template under `analysis/`.
+- [ ] **Mermaid renders** — every fenced ` ```mermaid ` block parses (no missing class definitions, no orphan nodes, no >40-node graphs that overflow viewport on mobile).
+- [ ] **Line-floor check** — artifact length ≥ the per-artifact floor in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json); shorter artifacts trigger Pass-2 rewrite, never a `[truncated]` note.
+

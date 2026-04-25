@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-3.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-3.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.1 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 3.2 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -1574,15 +1574,99 @@ Electoral claims about 2026 require **MEDIUM confidence minimum** (3+ evidence s
 
 ---
 
+## 📖 Narrative-Voice Standards (v3.2 — NEW)
+
+> **Why this section exists:** v3.0–v3.1 of this guide is rigorous on evidence and tradecraft but mostly silent on *prose craft*. The downstream `article.md` artefact has to be **fun to read** — signal-rich political journalism, not an academic pile-up of citations. This section gives the AI explicit rules so a Pass-2 review can grade narrative quality alongside evidence quality. Tradecraft is non-negotiable; this section adds prose discipline on top of it, never instead of it.
+
+### Rule 1: Lede patterns (one of these per article — no exceptions)
+
+A `article.md` (or the lede paragraph of `executive-brief.md` / `synthesis-summary.md`) MUST open with **one** of the four canonical lede patterns. Each pattern carries an evidence requirement so the lede cannot drift into vibes.
+
+| Pattern | When to use | Required evidence | Example opening |
+|---------|-------------|-------------------|-----------------|
+| **Hard-news** | Single high-DIW event today; the story IS what happened | Named actor + named action + dated dok_id in sentence 1 | "Finance minister Elisabeth Svantesson tabled prop. 2025/26:113 on Tuesday, raising the wealth-tax threshold from SEK 1.5M to SEK 5M and inviting the first open intra-coalition fight of the spring." |
+| **Tension/contrast** | Two events that pull against each other create the story | Both events named in the lede with explicit contrast verb | "While the Finance Committee rubber-stamped Svantesson's 2027 framework on Wednesday morning, three centre-right MPs were already drafting the reservation that will headline next week's chamber debate." |
+| **Scene-setting** | Slow-news day demands narrative tension to earn attention | Concrete physical or temporal detail + named actor in motion | "It was 14:07 in committee room L4-23 when KD's Camilla Brodin asked the question that everybody had been told not to ask: who, exactly, is paying for this?" |
+| **Significance-first** | Aggregation period (week-ahead, monthly review) where the *pattern* is the story | One quantified pattern statement + the rolled-up evidence count | "Across 47 motions filed in the first three weeks of April, one pattern dominates: the opposition has stopped attacking the government's energy bill and started attacking its own finance plan." |
+
+**Banned ledes:** "In a significant development …", "Recent activity in the Riksdag suggests …", "Several stakeholders have raised concerns …", "It is important to note that …", "On {date} the Riksdag …" (date-led ledes are dead on arrival).
+
+### Rule 2: Character density — name three people in the first 200 words
+
+Politics is people. By word 200, three **named individuals** must appear with role + party + a verb describing what they did or said. *Why three?* Two read as a duel; three read as a system. The third name often reframes the conflict (e.g., the committee chair who has to broker between the visible duellists).
+
+- ✅ "Svantesson (M) tabled. Pernebo (V) condemned. **But it was Camilla Brodin (KD), chair of FiU's housing-finance sub-committee, who quietly redrew the timeline.**"
+- ❌ "The government tabled the bill. The opposition condemned it."
+
+### Rule 3: Pacing — sentence-cadence rule (short → medium → long)
+
+Within any 5-sentence narrative paragraph, vary sentence length deliberately. A useful target distribution: **one short (<10 words)**, **two medium (10–25 words)**, **two long (25–45 words)**. Long, citation-laden sentences belong in evidence tables, not in prose.
+
+- ✅ "Svantesson did not flinch. Across the chamber, Pernebo (V) had already begun citing the LO-Tankesmedjan brief, and the Speaker had to call her to order twice. By the third interruption, the cameras had stopped framing the Finance Minister and started framing the row of empty seats on the C bench — a piece of stagecraft that did more to telegraph centre-right discomfort than any of the 14 motions filed before noon. (Brodin, KD, would later file three of them.) Six minutes later, the chamber adjourned."
+
+### Rule 4: Sensory specificity — one concrete detail per 400 words
+
+A "concrete detail" is something the reader could photograph or transcribe: the time on the wall clock, the exact phrasing of an interjection, the seating chart position of an absent MP, the number of pages in a tabled report, the weather outside Riksdagshuset on the day of a confidence motion. **One per 400 words minimum** in narrative prose. (Evidence tables do not count toward this quota — those are already concrete.)
+
+This is the single biggest difference between an article that feels alive and one that reads like a committee minute. Without sensory specificity, even quantified analysis sounds like it was generated by a process.
+
+### Rule 5: No-jargon-without-payoff
+
+Tradecraft jargon is allowed (and sometimes mandatory) — Sainte-Laguë, Tidöavtalet, FiU, DIW, Admiralty grade — but every jargon-bearing sentence must **pay back** the reader within ≤ 2 sentences with either (a) a translation, (b) a worked-out implication, or (c) a quoted line that grounds it.
+
+- ❌ "The Sainte-Laguë reallocation pushes M from 67 to 69 seats."
+- ✅ "The Sainte-Laguë reallocation pushes M from 67 to 69 seats — enough to flip three committee chair appointments and, with them, the spring legislative agenda."
+
+### Rule 6: Tension-and-resolution arc
+
+A narrative-driven article (≥ 600 words) should have a **detectable arc**: opening tension → at least two complications → a resolution OR an honest "the resolution is not yet available, here is what to watch." The arc is the reason a reader finishes the piece. Articles that sustain tension across three paragraphs and then dissolve into a bullet list have failed the arc test.
+
+The "honest non-resolution" form is critical for prospective coverage: it is intellectually dishonest to manufacture a tidy ending for a story that is mid-flight. The forward-indicators table at the bottom of the article serves as the resolution proxy.
+
+### Rule 7: Counter-narrative paragraph (the "but" rule)
+
+Every narrative-driven article includes one explicit **counter-narrative paragraph** of 60–150 words that articulates the strongest case *against* the article's central claim, with a named source whose framing of events is genuinely different from the article's. This is not "balance" theatre; it is a tradecraft hedge against confirmation bias and an editorial signal that the writer has done the homework.
+
+The paragraph is signposted with a line like "There is a contrary read." or "Pernebo (V) reads the same numbers differently:" — never a wishy-washy "however" buried mid-paragraph.
+
+### Pass-2 narrative self-audit rubric (binding)
+
+After Pass-1 produces the article and analysis, Pass-2 must score the article on each of the following six axes and document the score in [`methodology-reflection.md`](../templates/methodology-reflection.md) §"Narrative-voice audit". Any axis scoring **< 3** triggers a Pass-2 rewrite of the affected section.
+
+| Axis | What it measures | 1 = ❌ | 3 = 🟧 (acceptable floor) | 5 = ✅ |
+|------|------------------|--------|--------------------------|--------|
+| **Lede grade** | Does sentence 1 follow a canonical lede pattern with required evidence? | Generic / banned lede | Pattern present, evidence thin | Pattern + evidence + pulls reader into sentence 2 |
+| **Scene density** | Concrete-details count per 400 words | 0 details | 1 detail (the floor) | ≥ 2 details, well-placed, not ornamental |
+| **Character density** | Named individuals in first 200 words (role + party + verb) | 0–1 names | 2 names | ≥ 3 names with the third one reframing the conflict |
+| **Surprise quotient** | Does the article tell the reader something they could not have predicted from yesterday's news? | Restates yesterday | One non-obvious connection | ≥ 2 non-obvious findings, ≥ 1 quantified |
+| **Takeaway sharpness** | Can a reader articulate the article's bottom-line in one sentence after one read? | Bottom-line buried | Bottom-line present, needs hunting | Bottom-line in lede + restated as forward-indicator |
+| **Counter-narrative** | Is there a named, sourced "but" paragraph? | Absent | Present but generic | Present, named source, genuinely different framing |
+
+> **Hard floor:** total ≥ 18 / 30 to publish. Any single axis < 3 fails the gate regardless of total.
+
+### Tradecraft is still in the driver's seat
+
+These narrative rules sit **on top of**, not instead of, every rule above:
+- WEP bands and ODNI confidence still attach to every probabilistic judgement.
+- Admiralty grades still attach to every external source.
+- DIW scoring still drives placement and depth.
+- The 5-level confidence scale still labels every claim.
+- ICD 203 audit still runs in `methodology-reflection.md`.
+
+A "fun-to-read" article that drops a WEP band to keep prose flowing has failed both standards. The discipline is to keep tradecraft visible *and* prose alive — and that is what Pass-2 is for.
+
+---
+
 ## Document Control
 
 | Field | Value |
 |---|---|
-| Version | 3.1.0 |
+| Version | 3.2.0 |
 | Status | Active |
 | Owner | Hack23 AB |
 | Review Cycle | Quarterly |
 | Next Review | 2026-09-01 |
+| Key Changes v3.2 | **Narrative-Voice Standards (NEW §)** — 7 rules (lede patterns, character density, sentence-cadence, sensory specificity, no-jargon-without-payoff, tension-resolution arc, counter-narrative paragraph) + Pass-2 narrative self-audit rubric (6 axes, 18/30 floor). Tradecraft remains non-negotiable; narrative rules sit on top of (never instead of) WEP / Admiralty / DIW / ICD 203. |
 | Key Changes v3.1 | **Source Diversity Rule formalized** (multi-source corroboration by claim priority, single-source policy, corroboration standards, conflict resolution ladder, source attribution hierarchy, anonymous source policy); **IMF integration added to Collection Management Matrix** (WEO T+5 projections, SDMX IFS/BOP/GFS/DOTS passthrough) per Economic Data Contract v2.0 |
 | Key Changes v3.0 | **Tradecraft Anchors**: F3EAD intelligence cycle with Mermaid diagram; PIR/EEI catalog (7 standing PIRs with EEIs); Admiralty Source Reliability Code (A–F × 1–6) with Riksdag-specific mapping; ICD 203 analytic tradecraft standards mapping with pass/fail gates; Words of Estimative Probability (WEP) + ODNI confidence overlay harmonized with existing 5-level scale; Structured Analytic Techniques (SATs) catalog mapped to templates; Collection Management Matrix mapping MCP tools to evidence types |
 | Key Changes v2.2 | Article Title & SEO Standards (v5.0) — AI-only title generation, banned code-generated patterns; Election 2026 Framing Requirements (electoral context in writing, vocabulary standards, confidence requirements) |

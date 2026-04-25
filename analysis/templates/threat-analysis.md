@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-3.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-3.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 3.5 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `threat-analysis.md` in the workflow's own folder (never overwrite another workflow's files). Each threat requires evidence citations and multi-framework analysis. See [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md).
@@ -36,6 +36,24 @@
 >
 > **Good example:** [THREAT_MODEL.md](../../THREAT_MODEL.md) — this is the formatting quality standard.
 
+
+---
+
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **EXPLOIT / ANALYZE** — characterises political threats to democratic function across the 6-dimension Political Threat Taxonomy and feeds risk-assessment cascading chains, scenario-analysis tail scenarios, and forward-indicators escalation signals. |
+| **PIRs Served** | PIR-1 (coalition stability), PIR-5 (institutional risk), PIR-7 (foreign-policy alignment); add PIR-4 (Election 2026 pathway) when threats target electoral integrity; PIR-2 (opposition cohesion) when threats target opposition coordination capacity. |
+| **Admiralty Floor** | **B2** floor on every threat row; **A1** required when an entry quotes verbatim primary actor statements (motions, votes, ministerial declarations, public speeches); **F6** ungraded entries are flagged and downgraded; suspected disinformation must be tagged `[low-source-reliability]`. |
+| **WEP + ODNI** | Threat actor **capability**, **intent**, and **opportunity** (ICO) each carry **WEP**-phrased likelihood; threat severity is 1–5 with descriptive consequence narrative; confidence label per row uses 5-level scale. |
+| **Source Diversity Floor** | ≥3 primary + ≥1 secondary source per HIGH threat (severity ≥ 4); HIGH threats with single-source provenance must be downgraded to MEDIUM or flagged `[unconfirmed]`; foreign-actor threats require ≥1 cross-language corroboration where feasible. |
+| **SAT(s) Applied** | Red Team (adversarial perspective); Devil's Advocacy (challenge dominant threat hypothesis); Diamond Model walk-through (adversary–capability–infrastructure–victim); Kill-Chain mapping; ACH (when ≥2 competing threat hypotheses); Premortem (for HIGH-severity rows). |
+| **ICD 203 Standards** | 1 (objectivity), 2 (independent — no political alignment), 5 (sourcing), 6 (logical argumentation — attack-tree decomposition shown), 7 (uncertainty), 9 (alternative analysis — Devil's Advocacy + ACH). |
+
+> ⚠️ **STRIDE is NOT used.** The Political Threat Taxonomy (Narrative Integrity · Legislative Integrity · Accountability · Transparency · Democratic Process · Power Balance) replaces STRIDE for political analysis. STRIDE remains valid only for the platform's software security in `THREAT_MODEL.md`.
+
+> See [`osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md) for canonical Admiralty / WEP / SAT / ICD 203 definitions, and [`political-threat-framework.md`](../methodologies/political-threat-framework.md) for the 6-dimension taxonomy, attack-tree templates, kill-chain stages, and Diamond Model adaptation.
 
 ---
 
@@ -321,7 +339,7 @@ graph TD
 
 ### Threat Category Data Sources
 
-> **AI Instructions:** Map which MCP tools provided evidence for each assessed threat category. This ensures every threat severity score has traceable data provenance aligned with the 6 canonical categories from [methodology-types.ts](../../scripts/analysis-framework/methodology-types.ts).
+> **AI Instructions:** Map which MCP tools provided evidence for each assessed threat category. This ensures every threat severity score has traceable data provenance aligned with the 6 canonical categories from [`political-threat-framework.md`](../methodologies/political-threat-framework.md).
 
 | Threat Category | MCP Detection Tool | Key Parameters | Evidence Items | Detection Signal |
 |:---------------:|-------------------|----------------|:--------------:|-----------------|
@@ -448,8 +466,8 @@ timeline
 **Document Control:**  
 - **Template Path:** `/analysis/templates/threat-analysis.md`  
 - **Framework Reference:** [THREAT_MODEL.md](../../THREAT_MODEL.md), [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md)  
-- **Version:** 3.3  
-- **Effective Date:** 2026-06-01 (UTC)
+- **Version:** 3.4  
+- **Effective Date:** 2026-04-25 (UTC)
 - **Key Changes v3.3:** Added Election 2026 Threat Implications section, 5-level confidence scale reference, updated quality checklist  
 - **Frameworks:** Attack Trees, Kill Chain, Diamond Model, Political Threat Taxonomy, Threat Actor Profiling  
 - **Advanced Sections:** Threat Evolution Timeline, Cross-Methodology Linkage  
@@ -457,3 +475,21 @@ timeline
 - **Classification:** Public  
 - **Owner:** Hack23 AB (Org.nr 5595347807)  
 - **Next Review:** 2026-06-30
+
+---
+
+## ✅ Pass-2 Self-Audit Checklist (v4.4 — required)
+
+> **Purpose:** AI-FIRST principle requires a Pass-2 read-back-and-improve. After producing this artifact in Pass 1, re-read it end-to-end and verify each item below. Document any remediation in [`methodology-reflection.md`](methodology-reflection.md) §"Pass-2 audit log". Any unchecked ❌ box at the end of Pass 2 forces a Pass-3 rewrite of the affected section.
+
+- [ ] **Tradecraft anchors honoured** — F3EAD stage matches the artifact's role; PIRs declared in the §Tradecraft Context block are actually addressed in the body; Admiralty grades attached to every external source; WEP band + ODNI confidence on every probabilistic judgement.
+- [ ] **Source diversity floor met** — at least the minimum number of independent MCP sources required by the artifact's tradecraft block are cited; single-source claims are explicitly labelled `[SINGLE-SOURCE — corroboration pending]`.
+- [ ] **Evidence specificity** — every quantified claim cites a `dok_id` (Riksdag), an SCB / IMF dataflow code, or a named external source with date; no "according to data" / "studies show" hand-waves.
+- [ ] **Named-actor discipline** — every political claim names ≥ 1 person (party + role + dated act/quote) or labels the absence (`[diffuse — no named actor]`).
+- [ ] **Counter-narrative present** — at least one explicit competing hypothesis, dissent quote, or framed objection appears in the body; "no opposition recorded" is itself a finding to label, not silence.
+- [ ] **Election 2026 lens applied** — the §"Election 2026 Implications" subsection (or equivalent) addresses electoral salience, coalition pressure, and forward indicators; not boilerplate.
+- [ ] **No illustrative content shipped as fact** — every `[REQUIRED]` placeholder is filled OR removed; every `Example:` block is clearly fenced or removed; no fabricated `dok_id`, vote count, or quote leaks into the final artifact.
+- [ ] **Cross-references resolve** — every `[link](file.md)` in this artifact points to a file that exists in the run folder (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) or to a methodology / template under `analysis/`.
+- [ ] **Mermaid renders** — every fenced ` ```mermaid ` block parses (no missing class definitions, no orphan nodes, no >40-node graphs that overflow viewport on mobile).
+- [ ] **Line-floor check** — artifact length ≥ the per-artifact floor in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json); shorter artifacts trigger Pass-2 rewrite, never a `[truncated]` note.
+

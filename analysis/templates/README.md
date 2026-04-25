@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
+**📋 Document Owner:** CEO | **📄 Version:** 4.5 | **📅 Last Updated:** 2026-04-25 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-25  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -170,6 +170,22 @@ Key findings in `intelligence-assessment.md`, `executive-brief.md`, and `synthes
 
 Every `methodology-reflection.md` includes an ICD 203 compliance checklist verifying all 9 analytic tradecraft standards are met.
 
+### ✅ Pass-2 Self-Audit Checklist (v4.4 — universal)
+
+Every production template (33 files; excludes the templates index README and `methodology-reflection.md` itself) carries a 10-item Pass-2 Self-Audit Checklist at its end. After Pass 1 produces the artifact, Pass 2 must re-read it end-to-end and verify each item; remediation is logged in `methodology-reflection.md §"Pass-2 audit log"`. Any unchecked ❌ at the end of Pass 2 forces a Pass-3 rewrite of the affected section.
+
+The 10 items: (1) Tradecraft anchors honoured · (2) Source diversity floor met · (3) Evidence specificity (no "according to data" hand-waves) · (4) Named-actor discipline · (5) Counter-narrative present · (6) Election 2026 lens applied · (7) No illustrative content shipped as fact · (8) Cross-references resolve · (9) Mermaid renders · (10) Line-floor check against [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json).
+
+### 📖 Narrative subsection (Family A synthesis templates + L2+ per-file)
+
+Three templates carry a binding §"Narrative" subsection that is the prose handoff to `article.md`:
+
+- [`executive-brief.md`](executive-brief.md) v1.2 — lede paragraph (120–180 words) + body (300–500 words) + counter-narrative (60–150 words).
+- [`synthesis-summary.md`](synthesis-summary.md) v2.5 — lead-story narrative (400–700 words) + optional secondary-thread narrative for ≥ 3-finding days.
+- [`per-file-political-intelligence.md`](per-file-political-intelligence.md) v2.5 — required for ≥ L2-Strategic depth tier; optional for L1-Surface and clustered low-weight items.
+
+All three are graded against the **Pass-2 6-axis narrative rubric** in [`political-style-guide.md` §"Narrative-Voice Standards"](../methodologies/political-style-guide.md#-narrative-voice-standards-v32--new): lede grade · scene density · character density · surprise quotient · takeaway sharpness · counter-narrative. **Hard floor: 18 / 30 to publish; any single axis < 3 fails the gate.**
+
 ### 📰 Reader-Facing Output Contract (script-enforced)
 
 Tradecraft alone does not produce **publication-quality** articles — strong intelligence content can still render as a flat artifact concatenation if the reader-facing scaffolding is weak. Every aggregated `analysis/daily/$DATE/$SUBFOLDER/article.md` is therefore validated by [`scripts/validate-article.ts`](../../scripts/validate-article.ts) (run via `npm run validate-article` and as part of `npm run validate-all`). The validator fails CI on any of these violations:
@@ -257,6 +273,29 @@ The 12 agentic news workflows in `.github/workflows/news-*.md` render these temp
 | Template | Produced artifact | Enforced by |
 |----------|-------------------|-------------|
 | [`per-file-political-intelligence.md`](per-file-political-intelligence.md) | `documents/{dok_id}-analysis.md` (one per input document) | Check 2 (per-doc coverage) |
+
+### 🛰️ Operational Supplementary (7 templates — recommended for `deep`, mandatory for Tier-C)
+
+| Template | Produced artifact | Purpose |
+|----------|-------------------|---------|
+| [`analysis-index.md`](analysis-index.md) | `analysis-index.md` (run navigator) | Read-me-first index; assembled at end of Pass 2 |
+| [`session-baseline.md`](session-baseline.md) | `session-baseline.md` | 30-day same-type baseline for pattern-recognition |
+| [`cross-run-diff.md`](cross-run-diff.md) | `cross-run-diff.md` | **Gate-required when `ANALYSIS_RUN_COUNT ≥ 2`** — same-type day-over-day delta |
+| [`cross-session-intelligence.md`](cross-session-intelligence.md) | `cross-session-intelligence.md` | Cross-Riksdag-session progression (week/month/quarter aggregation) |
+| [`reference-analysis-quality.md`](reference-analysis-quality.md) | `reference-analysis-quality.md` | Threshold audit against `reference-quality-thresholds.json` |
+| [`mcp-reliability-audit.md`](mcp-reliability-audit.md) | `mcp-reliability-audit.md` | MCP tool health snapshot — call counts, failures, fallbacks |
+| [`workflow-audit.md`](workflow-audit.md) | `workflow-audit.md` | End-to-end run audit: timing, cost, gate outcomes |
+
+### 🔭 Analytical Supplementary (4 templates — optional, never blocking)
+
+| Template | Produced artifact | When to use |
+|----------|-------------------|-------------|
+| [`pestle-analysis.md`](pestle-analysis.md) | `pestle-analysis.md` | Event crosses ≥ 2 PESTLE dimensions |
+| [`political-stride-assessment.md`](political-stride-assessment.md) | `political-stride-assessment.md` | Election-adjacent · integrity incident · disinfo spike · critical-infra vote |
+| [`wildcards-blackswans.md`](wildcards-blackswans.md) | `wildcards-blackswans.md` | Long-horizon forecasting (`monthly-review`, election-year aggregation) |
+| [`quantitative-swot.md`](quantitative-swot.md) | `quantitative-swot.md` | Decision memo requiring scored SWOT ranking |
+
+> **Total template files in this directory: 34** = 9 (Family A) + 2 (B) + 5 (C) + 7 (D) + 1 (E reusable) + 7 (operational supplementary) + 4 (analytical supplementary). The `analysis-index.md` template doubles as the Family A folder README scaffold. See [`../methodologies/artifact-catalog.md`](../methodologies/artifact-catalog.md) for the canonical row-per-artifact registry.
 
 **Tier-C additive contract** (aggregation workflows: `news-evening-analysis`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`, `news-realtime-monitor`, `news-article-generator`) — no extra files beyond the 23 above; instead:
 
@@ -740,9 +779,53 @@ sequenceDiagram
 
 ---
 
+## 🆕 v4.5 Template Content Completion (2026-04-25)
+
+Surfaces the Phase 3–4 template content additions. Every change here is binding contract for new artifact generation runs.
+
+### ✅ Pass-2 Self-Audit Checklist — universal (33 templates)
+
+Every production template (excludes only the templates index README and `methodology-reflection.md`, which IS the Pass-2 audit) now carries a **10-item Pass-2 Self-Audit Checklist** at its end. The checklist is binding: any unchecked ❌ at the end of Pass 2 forces a Pass-3 rewrite of the affected section. Items cover tradecraft anchors, source-diversity floor, evidence specificity, named-actor discipline, counter-narrative presence, Election 2026 lens, no illustrative content as fact, cross-reference resolution, Mermaid render check, and line-floor compliance against [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json).
+
+### 📖 Narrative subsection — Family A synthesis + L2+ per-file (3 templates)
+
+- `executive-brief.md` v1.1 → v1.2 — added §"Narrative" with lede + body + counter-narrative slots.
+- `synthesis-summary.md` v2.4 → v2.5 — added §"Narrative" with lead-story narrative (400–700 words) + optional secondary-thread narrative.
+- `per-file-political-intelligence.md` v2.4 → v2.5 — added §"Narrative" required for ≥ L2-Strategic depth tier.
+
+All three are graded against the **Pass-2 6-axis narrative rubric** (lede / scene / character / surprise / takeaway / counter-narrative) in [`political-style-guide.md` §"Narrative-Voice Standards"](../methodologies/political-style-guide.md#-narrative-voice-standards-v32--new) — hard floor 18 / 30 to publish; any single axis < 3 fails.
+
+### 📋 Doctype-variant alignment
+
+Family E template `per-file-political-intelligence.md` is now bound to the **5 extended doctype variants** introduced in `per-document-methodology.md` v1.3: `motion-package`, `fpm` (shadow budget — full delta-envelope analysis), `utskottsbetänkande-variants` (explicit reservation handling), `KU-anmälan` (constitutional scrutiny), `EU-nämnd` (EU consultation). Each variant has a specialised Mermaid shape; the binding doctype-detection algorithm runs before any per-file analysis is written.
+
+### 🔢 Version bumps (33 templates)
+
+All 33 production templates were version-bumped (handles both `**📄 Version:**` major-format and `**Template version:**` footer-format). Library-wide: 277 cross-document `.md` links resolve, 0 broken; 33/33 templates carry Pass-2 Self-Audit Checklists; 35/35 templates carry Tradecraft Context blocks; 3/3 synthesis templates carry Narrative subsections; date-stamps unified at 2026-04-25.
+
+### 🧪 Threshold JSON alignment (`reference-quality-thresholds.json` v1.2 → v1.3)
+
+Legacy template aliases renamed throughout JSON: `classification-results.md` → `political-classification.md`; `stakeholder-perspectives.md` → `stakeholder-impact.md`. `executive-brief.md` line floors added to all 11 article-types. 0 ghost references remaining.
+
+---
+
+## 🆕 v4.4 Library Reconciliation (2026-04-25)
+
+Phase 1 consistency & contract reconciliation pass — paired with [`../methodologies/README.md` §v4.4](../methodologies/README.md#-v44-library-reconciliation-2026-04-25). Highlights for the templates layer:
+
+- **Tradecraft Context block added** to the 7 Family A + E core templates that lacked one (`synthesis-summary.md`, `swot-analysis.md`, `risk-assessment.md`, `threat-analysis.md`, `stakeholder-impact.md`, `significance-scoring.md`, `per-file-political-intelligence.md`) — these now carry F3EAD stage · PIRs served · Admiralty floor · WEP+ODNI · Source Diversity floor · SATs applied · ICD 203 standards on parity with the v1.x Family C/D templates.
+- **Per-family inventory tables** added to the §"Artifact → workflow → gate check mapping" section so readers can see the complete 34-template inventory at a glance (was: tables only enumerated the 23 mandatory core).
+- **Operational supplementary templates** (`analysis-index.md`, `cross-run-diff.md`, `cross-session-intelligence.md`, `mcp-reliability-audit.md`, `reference-analysis-quality.md`, `session-baseline.md`, `workflow-audit.md`) now carry an explicit `Template version: v1.1 · Last updated: 2026-04-25` footer (previously version-less).
+- **Footer-stamp v1.0 templates** (`pestle-analysis.md`, `political-stride-assessment.md`, `quantitative-swot.md`, `wildcards-blackswans.md`) bumped to v1.1 / 2026-04-25.
+- **Family A + E v2.3 templates** bumped to v2.4 (threat-analysis to v3.4) with `Last Updated: 2026-04-25`.
+- **15 v1.0 templates** dated 2026-04-21 bumped to v1.1 / 2026-04-25.
+- **IMF-first language sweep** — `voter-segmentation.md` socio-economic controls now name IMF WEO + WB social/governance (was World Bank-only).
+
+---
+
 ## 🆕 v2.3 Common Improvements (All Templates)
 
-> **Scope note:** "All 8 templates" below refers to the original Family A core templates (A2–A9). Families B–E templates (added in v3.0+) inherit these improvements where applicable. See [Master Template Catalog](#-master-template-catalog--family-ae) for the complete 23-template inventory.
+> **Scope note:** "All 8 templates" below refers to the original Family A core templates (A2–A9). Families B–E templates (added in v3.0+) inherit these improvements where applicable. See [Master Template Catalog](#-master-template-catalog--family-ae) for the complete 34-template inventory (23 mandatory core: Family A 9 + B 2 + C 5 + D 7 — including the Family A folder README scaffolded from `analysis-index.md`; plus the Family E reusable template; plus 4 analytical supplementary; plus 7 operational supplementary).
 
 All 8 templates were updated in v2.3 (2026-06-01) with the following cross-cutting improvements:
 

@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--21-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-21 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-04-25 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -164,16 +164,35 @@ graph LR
     mot3412 -.coordinated.- mot3415
 ```
 
-### Relationship taxonomy (canonical — use these names exactly)
-| Edge type | Meaning | Mermaid style |
-|-----------|---------|---------------|
-| `amends` | New doc modifies a prior binding instrument | solid bold arrow `==>` |
-| `continues` | Follow-up action in ongoing legislative process | solid arrow `-->` |
-| `rebuts` | Opposition filing directly against a government/majority doc | dotted arrow `-..->` |
-| `coordinated-filing` | Two+ docs filed same day by aligned actors on same theme | dashed line `-.coord.-` |
-| `bundle` | Docs released as a package by the same sponsor | solid line `---` with label |
-| `thematic` | Shared policy domain without sponsor coordination | thin arrow `-->` |
-| `committee-routed` | Shared organ path | annotation on node |
+### Relationship taxonomy (canonical — 7 edge types · use these names exactly)
+
+The taxonomy distinguishes **edge types** (atomic relationships between two specific `dok_id`s — what goes on the Mermaid arrow) from **cluster types** (semantic groupings of multiple edges — what `cross-reference-map.md` Section "Cluster Deep-Dive" enumerates). Every Mermaid edge in the cross-reference-map MUST carry exactly one of these 7 edge labels:
+
+| # | Edge type | Meaning | Mermaid style | Detection rule |
+|:-:|-----------|---------|---------------|----------------|
+| 1 | `amends` | New doc modifies a prior binding instrument (statute, regulation, prior proposition) | solid bold arrow `==>` | Explicit "ändrar / upphäver / ersätter" textual reference, **OR** matching SFS-number cross-reference |
+| 2 | `continues` | Follow-up action in an ongoing legislative process (prop → bet → kammarvotering → uppföljning) | solid arrow `-->` | Explicit dok_id cross-reference + same policy chain + monotonic dates ≤ 180 days |
+| 3 | `rebuts` | Opposition or counter-filing directly against a government / majority document | dotted arrow `-..->` | Filed within 30 days of target + opposition sponsor + named target dok_id in motion text |
+| 4 | `coordinated-filing` | Two or more docs filed by aligned actors on the same theme within ±1 day | dashed line `-.coord.-` | Same `rm` + same calendar date (±1) + adjacent policy domain + distinct sponsors from aligned bloc |
+| 5 | `bundle` | Docs released as a package by the **same** sponsor (e.g. budget propositions + supplementary motions) | solid line `---` with label | Same primary sponsor + same calendar date ±0 + explicit "denna proposition tillsammans med …" language or matching package title |
+| 6 | `thematic` | Shared policy domain without sponsor coordination | thin arrow `-->` | Shared classification-results.md taxonomy node + no other rule fires |
+| 7 | `committee-routed` | Shared organ path (utskott or kammarutskottet referral) | annotation on node, edge `--` with `committee` label | Same handling committee in `bet`/`prop` metadata |
+
+#### Edge-type → cluster-type crosswalk (binding)
+
+The 7 atomic edge types map to the 7 semantic cluster types enumerated in [`cross-reference-map.md` §"Relationship Types"](../templates/cross-reference-map.md#-relationship-types--when-to-use-each). **Every cluster row in the template must be supported by ≥1 atomic edge of an admissible type:**
+
+| Cluster type (template) | Admissible edge types (methodology) |
+|-------------------------|-------------------------------------|
+| 📦 Policy cluster | `bundle`, `thematic`, `coordinated-filing` |
+| ⚙️ Legislative chain | `continues`, `amends`, `committee-routed` |
+| ⚔️ Opposition strategy | `rebuts`, `coordinated-filing` |
+| 🧩 Coalition signal | `bundle`, `coordinated-filing`, `committee-routed` |
+| ⏱️ Temporal alignment | `coordinated-filing` (only) |
+| 🌍 External parallel | `thematic` only — paired with `comparative-international.md` peer-country row |
+| 🕰️ Historical parallel | `thematic` only — paired with `historical-parallels.md` precedent row |
+
+A cluster that cannot be decomposed into one of these edge-type combinations is mis-typed; either rename the cluster or split it into separate clusters.
 
 ### Coordinated activity detection
 Apply this rule set when ≥2 documents meet all conditions:

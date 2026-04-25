@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.3 | **📅 Last Updated:** 2026-04-23 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-23  
+**📋 Document Owner:** CEO | **📄 Version:** 4.5 | **📅 Last Updated:** 2026-04-25 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-25  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -91,7 +91,7 @@
     <tr>
       <td><strong><a href="../templates/README.md">Analysis Templates</a></strong></td>
       <td>📋 Templates</td>
-      <td>23 structured analysis output templates (8 core single-type + 15 extended / Tier-C)</td>
+      <td>34 template files producing 23 mandatory core artifacts (Family A 9 + B 2 + C 5 + D 7) + N Family E per-document + 4 analytical supplementary + 7 operational supplementary</td>
       <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/README.md">View Source</a></td>
     </tr>
   </tbody>
@@ -124,7 +124,7 @@ The 12 agentic news workflows in `.github/workflows/news-*.md` are the **primary
 | [`political-risk-methodology.md`](political-risk-methodology.md) | ✅ produces `risk-assessment.md` | ✅ sensitivity & posterior probabilities | `05-analysis-gate.md` check 1 |
 | [`political-threat-framework.md`](political-threat-framework.md) | ✅ produces `threat-analysis.md` | ✅ kill-chain depth | `05-analysis-gate.md` check 1 |
 | [`political-style-guide.md`](political-style-guide.md) | — | ✅ tone, neutrality, evidence citations | Article Pass-2 review |
-| [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | ✅ every run, all 5 Family C artifacts (`executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, `methodology-reflection.md`) | ✅ scenario probabilities, ICD 203 audit | `05-analysis-gate.md` checks 1 + 7 (Family C structure) |
+| [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | ✅ every run, all 5 Family C artifacts (`scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, `methodology-reflection.md`) | ✅ scenario probabilities, ICD 203 audit | `05-analysis-gate.md` checks 1 + 7 (Family C structure) |
 | [`structural-metadata-methodology.md`](structural-metadata-methodology.md) | ✅ cross-reference continuity contracts | — | `05-analysis-gate.md` check 1 (artifact presence) |
 | [`synthesis-methodology.md`](synthesis-methodology.md) | ✅ produces `synthesis-summary.md` with DIW-weighted ranking | ✅ lead-story justification | `05-analysis-gate.md` checks 1 + 5 (Mermaid) |
 | [`electoral-domain-methodology.md`](electoral-domain-methodology.md) | ✅ Election 2026 lens paragraph | — | Article-generation mandatory section |
@@ -325,7 +325,7 @@ graph TB
 
 | Document | Purpose | Consumers |
 |----------|---------|-----------|
-| [`artifact-catalog.md`](artifact-catalog.md) | **Single source of truth** for every markdown artifact produced by a news workflow (23 core + 7 supplementary + N per-document). One row per artifact naming methodology, template, line floor, Mermaid type, MCP data source and gate check. | All agents, `.github/prompts/04-analysis-pipeline.md`, `05-analysis-gate.md` |
+| [`artifact-catalog.md`](artifact-catalog.md) | **Single source of truth** for every markdown artifact produced by a news workflow (23 mandatory core + 4 analytical supplementary + 7 operational supplementary + N per-document = 34 templates). One row per artifact naming methodology, template, line floor, Mermaid type, MCP data source and gate check. | All agents, `.github/prompts/04-analysis-pipeline.md`, `05-analysis-gate.md` |
 | [`per-artifact-methodologies.md`](per-artifact-methodologies.md) | Per-artifact **Inputs / Analytic-moves / Evidence-rules / Anti-patterns** reference. One §section per artifact — read only the sections needed for the current run. | All agents writing artifacts |
 | [`worldbank-indicator-mapping.md`](worldbank-indicator-mapping.md) | Article-type → non-economic World Bank indicator codes (social, health, education, environment, defence, agriculture, innovation, governance). Wave-2 WB↔IMF split. | `comparative-international.md`, `voter-segmentation.md`, `implementation-feasibility.md`, `session-baseline.md` |
 | [`imf-indicator-mapping.md`](imf-indicator-mapping.md) | Article-type → IMF WEO/IFS/BOP/FM/GFS codes — **authoritative source** for all economic context (macro / fiscal / trade / monetary / exchange rates). Vintage-tagged forecasts, T+5. | Every artifact with economic-context obligations |
@@ -337,7 +337,7 @@ These five files are the **meta-layer** — read them before opening any framewo
 
 | Document | Purpose | Templates governed |
 |----------|---------|--------------------|
-| [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md) | Rules for **optional deep-dive analytical templates** that augment the 23 core artifacts with specialised lenses. Non-blocking in `05-analysis-gate.md`. Defines composition rules (DIW weight vector, evidence citations, Forward-Indicator feed, TTP mapping) and per-template analytic moves. | `pestle-analysis.md` · `political-stride-assessment.md` · `wildcards-blackswans.md` · `quantitative-swot.md` |
+| [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md) | Rules for **optional deep-dive analytical templates** that augment the 23 mandatory core artifacts with specialised lenses. Non-blocking in `05-analysis-gate.md`. Defines composition rules (DIW weight vector, evidence citations, Forward-Indicator feed, TTP mapping) and per-template analytic moves. | `pestle-analysis.md` · `political-stride-assessment.md` · `wildcards-blackswans.md` · `quantitative-swot.md` |
 
 **When to produce:**
 
@@ -538,9 +538,10 @@ graph TB
 | Attribute | Value |
 |-----------|-------|
 | **Purpose** | Establishes writing standards for all political intelligence output |
-| **Scope** | Article tone, evidence citation standards, Mermaid diagram requirements, confidence labeling |
+| **Scope** | Article tone, evidence citation standards, Mermaid diagram requirements, confidence labeling, **narrative-voice standards** |
 | **Key Standards** | Evidence tables (not prose) · dok_id citations · Color-coded diagrams · Swedish political terminology |
-| **Version** | 2.0 |
+| **v3.2 additions** | **§"Narrative-Voice Standards" (NEW)** — 7 binding rules: (1) lede patterns (hard-news / tension-contrast / scene-setting / significance-first), (2) character density (≥ 3 named actors in first 200 words), (3) sentence-cadence rule (one short / two medium / two long per 5-sentence paragraph), (4) sensory specificity (≥ 1 concrete detail per 400 words), (5) no-jargon-without-payoff, (6) tension-and-resolution arc, (7) counter-narrative paragraph (the "but" rule). **Pass-2 6-axis narrative self-audit rubric** (lede / scene / character / surprise / takeaway / counter-narrative) with hard 18/30 floor; any single axis < 3 fails the gate. Tradecraft (WEP / Admiralty / DIW / ICD 203) sits on top of, never instead of, narrative rules. |
+| **Version** | 3.2 |
 
 ---
 
@@ -569,6 +570,7 @@ These five methodology documents tell an agentic workflow **exactly how to produ
 | **Purpose** | Step-by-step production of the 5 Family A core synthesis outputs |
 | **Covers** | `significance-scoring.md`, `synthesis-summary.md`, `stakeholder-perspectives.md`, `stakeholder-impact.md`, `executive-brief.md` |
 | **Key rules** | DIW 6-dimension formula · Tier mapping (P0/P1/P2/P3) · 400–600 word executive-brief budget · Quantified winners/losers · Equity-lens cuts |
+| **v1.3 additions** | **Line-by-line DIW worked example** (hypothetical wealth-tax prop, all 6 dimensions scored with rationale) · **Winner/loser quantification rubric** (Identity / Magnitude / Direction / Confidence / Counter-narrative columns + diffuse-impact escape hatch) |
 | **Gates** | Per-output checklist; evidence-reconciliation gate between significance-scoring and per-doc Family E |
 
 ### 📗 Structural Metadata Methodology — `structural-metadata-methodology.md` (Family B)
@@ -578,6 +580,7 @@ These five methodology documents tell an agentic workflow **exactly how to produ
 | **Purpose** | Step-by-step production of provenance ledger + relational graph |
 | **Covers** | `data-download-manifest.md`, `cross-reference-map.md` |
 | **Key rules** | Freshness SLA per source (Riksdag ≤24h, SCB ≤90d, World Bank ≤24mo) · 7-edge relationship taxonomy · Coordinated-activity detection rule |
+| **v1.3 additions** | **All 7 atomic edge types enumerated** with detection rules (`amends`, `responds-to`, `references`, `co-sponsors-with`, `votes-with`, `conflicts-with`, `clusters-with`) · **Edge-type → cluster-type crosswalk** binding `cross-reference-map.md` Mermaid edge labels to cluster taxonomy |
 | **Gates** | Manifest reconciles with Family E doc count; every edge has dok_id pair |
 
 ### 📙 Strategic Extensions Methodology — `strategic-extensions-methodology.md` (Family C)
@@ -587,6 +590,7 @@ These five methodology documents tell an agentic workflow **exactly how to produ
 | **Purpose** | Step-by-step production of 5 always-produced depth products |
 | **Covers** | `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, ⭐ `methodology-reflection.md` (VITAL run-audit gate) |
 | **Key rules** | Scenario probabilities sum to 100% · ACH ≥3 hypotheses · ≥5 peer countries · 3–7 Key Judgments with PIRs · Bias-audit quantification · methodology-reflection names ≥3 concrete improvements |
+| **v1.3 additions** | **"Family C is exactly 5 — not 6" close-out** with explicit placement rationale: `executive-brief.md` is Family A (Strategic Synthesis + Executive Reporting), not Family C; `methodology-reflection.md` is the 5th member and the run-audit gate |
 | **Cadence** | **Core — every run produces all 5**; depth per file adapts to DIW tier of the day's lead items |
 
 ### 📕 Electoral & Domain Methodology — `electoral-domain-methodology.md` (Family D)
@@ -596,6 +600,7 @@ These five methodology documents tell an agentic workflow **exactly how to produ
 | **Purpose** | Step-by-step production of 7 always-produced domain-specific analytical lenses |
 | **Covers** | `election-2026-analysis.md`, `voter-segmentation.md`, `coalition-mathematics.md`, `historical-parallels.md`, `media-framing-analysis.md`, `implementation-feasibility.md`, `forward-indicators.md` |
 | **Key rules** | Sainte-Laguë modified seat math + 4% threshold · Segment privacy (no sub-1000 cohorts) · Historical parallels ≤40 years with similarity score (or explicit no-precedent finding) · ≥10 forward indicators across 4 horizons |
+| **v1.3 additions** | **Sainte-Laguë worked example** (modified divisor 1.4, 11-seat constituency walkthrough, 5 documented gotchas — divisor sequence, threshold interaction, level-out seats, partial-allocation rounding, MP-vacancy ripple) · **Segment privacy threshold rationale** (GDPR Art 4(1) singling-out / linkability / inference + statistical CI math + editorial restraint) |
 | **Cadence** | **Core — every run produces all 7**; substance adapts (baseline context on light days, full scenario depth on P0-dense days) |
 
 ### 📒 Per-Document Methodology — `per-document-methodology.md` (Family E)
@@ -605,6 +610,7 @@ These five methodology documents tell an agentic workflow **exactly how to produ
 | **Purpose** | Step-by-step production of atomic per-document and cluster analyses |
 | **Covers** | `{dok_id}-analysis.md`, `{theme}-cluster-analysis.md` (both use template `per-file-political-intelligence.md`) |
 | **Key rules** | DIW 6-dimension scoring · Doctype-specific Mermaid taxonomy (prop→flowchart, mot→network, bet→flowchart, ip→timeline, SOU/Ds→flowchart, skr→flowchart) · Cluster 4-condition decision rule · Citation canon |
+| **v1.3 additions** | **Extended doctype taxonomy** with 5 variants + binding detection algorithm: `motion-package` (multi-MP coordinated motions), `fpm` (shadow budget — full delta-envelope analysis), `utskottsbetänkande-variants` (explicit reservation handling), `KU-anmälan` (constitutional scrutiny), `EU-nämnd` (EU consultation). Each variant carries specialised Mermaid shapes; a generic `mot` template applied to a `fpm` misses the entire delta analysis. |
 | **Gates** | Every dok_id in manifest has a Family E file; cluster files preserve per-dok_id differential notes |
 
 ---
@@ -937,6 +943,64 @@ flowchart TD
 | **Prompts v2** | AI prompt library for analysis generation | [scripts/prompts/v2/](../../scripts/prompts/v2/) |
 | **WORKFLOWS.md** | CI/CD and agentic workflow documentation | [WORKFLOWS.md](../../WORKFLOWS.md) |
 | **ISMS-PUBLIC** | Hack23 Information Security Management System | [Hack23/ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC) |
+
+---
+
+## 🆕 v4.5 Methodology Content Completion (2026-04-25)
+
+Surfaces the v1.3 / v3.2 methodology content additions made in Phases 2–4 of the library reconciliation. These are catalog-level changes — every methodology entry above now reflects the worked examples, extended taxonomies, and narrative-voice rules introduced in the underlying files.
+
+### 📐 Family methodology v1.3 worked examples + extended taxonomies
+- `synthesis-methodology.md` v1.2 → v1.3 — line-by-line **DIW worked example** (hypothetical wealth-tax prop scored across all 6 dimensions with rationale) + **Winner/loser quantification rubric** (Identity / Magnitude / Direction / Confidence / Counter-narrative columns + diffuse-impact escape hatch).
+- `structural-metadata-methodology.md` v1.2 → v1.3 — all 7 atomic edge types enumerated with detection rules (`amends`, `responds-to`, `references`, `co-sponsors-with`, `votes-with`, `conflicts-with`, `clusters-with`) + edge-type → cluster-type crosswalk binding `cross-reference-map.md` Mermaid edge labels to cluster taxonomy.
+- `strategic-extensions-methodology.md` v1.2 → v1.3 — explicit "Family C is exactly 5 — not 6" close-out with placement rationale: `executive-brief.md` is Family A, not Family C; `methodology-reflection.md` is the 5th member and the run-audit gate.
+- `electoral-domain-methodology.md` v1.2 → v1.3 — full **Sainte-Laguë worked example** (modified divisor 1.4, 11-seat constituency walkthrough, 5 documented gotchas) + segment privacy threshold rationale (GDPR Art 4(1) singling-out / linkability / inference + statistical CI math + editorial restraint).
+- `per-document-methodology.md` v1.2 → v1.3 — extended doctype taxonomy with 5 variants (`motion-package`, `fpm`, `utskottsbetänkande-variants`, `KU-anmälan`, `EU-nämnd`) + binding doctype-detection algorithm. Each variant carries specialised Mermaid shapes; a generic `mot` template applied to a `fpm` misses the entire delta-envelope analysis.
+
+### ✍️ Style-guide narrative-voice extension
+- `political-style-guide.md` v3.1 → v3.2 — added §"Narrative-Voice Standards" with **7 binding rules** (lede patterns, character density, sentence-cadence, sensory specificity, no-jargon-without-payoff, tension-resolution arc, counter-narrative paragraph) + **Pass-2 6-axis narrative self-audit rubric** (lede / scene / character / surprise / takeaway / counter-narrative) with hard 18/30 floor; any single axis < 3 fails the gate. Tradecraft (WEP / Admiralty / DIW / ICD 203) sits on top of, never instead of, narrative rules.
+
+### 🔄 AI-Driven Analysis Guide alignment (`ai-driven-analysis-guide.md` v6.5 → v6.6)
+- Step 3 now cross-references the v1.3 doctype-variant detector + adds Narrative subsection requirement for ≥ L2 per-file artifacts.
+- Step 4 cross-reference-map row links to the 7 atomic edge types in `structural-metadata-methodology.md` v1.3.
+- Step 7 Pass-2 rewrite checklist gains 2 binding items: **Pass-2 Self-Audit Checklist** (10 items) and **Narrative 6-axis rubric** (18/30 floor).
+- DIW section adds worked-example callout to `synthesis-methodology.md` v1.3 + Sainte-Laguë walkthrough in `electoral-domain-methodology.md` v1.3.
+- Quality Gate Checklist gains rows 11–12 (Pass-2 Self-Audit Checklist completion + Narrative 18/30 score).
+
+### 🧪 Cross-doc validation
+- All 277 cross-document `.md` links resolve.
+- `reference-quality-thresholds.json` v1.2 → v1.3 — legacy aliases renamed (`classification-results.md` → `political-classification.md`; `stakeholder-perspectives.md` → `stakeholder-impact.md`); `executive-brief.md` floors added to all 11 article-types; 0 ghost references.
+
+---
+
+## 🆕 v4.4 Library Reconciliation (2026-04-25)
+
+Phase 1 consistency & contract reconciliation pass — surfacing accurate file inventory, IMF-first economic-data canon, and tradecraft-anchor parity across the library. **No new analytical content; mechanical and small structural fixes only.** Pass-2 deep improvements (Phases 2–5) are scheduled as separate sessions per the AI-FIRST 2-pass principle.
+
+### 📊 Inventory reconciliation
+- Methodology files: **17 .md + 1 .json** (was reported as varying counts).
+- Template files: **34 .md** = 23 mandatory core (Family A 9 + B 2 + C 5 + D 7) + 1 Family E reusable + 4 analytical supplementary + 7 operational supplementary. Earlier "23 templates" wording referred to the mandatory artifact count, not the file count — both READMEs now disambiguate.
+- Methodologies map of contents now correctly lists **5** Family C artifacts (was 6 — `executive-brief.md` was wrongly listed in Family C; it is Family A).
+
+### 🌐 IMF-first economic-data canon (per [`ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1)
+- `osint-tradecraft-standards.md` — PIR-6 + Standard #4: IMF lifted to PRIMARY, World Bank reframed as non-economic residue.
+- `political-swot-framework.md` — economic-context evidence row: IMF WEO/FM + SCB national accounts (was World Bank).
+- `ai-driven-analysis-guide.md` — budget/fiscal MCP tool list: IMF added (was WB only).
+- `political-risk-methodology.md` — economic-context inputs, statistical-data row, External→Budget cell: IMF lifted to primary.
+- `voter-segmentation.md` — socio-economic controls now name IMF WEO + WB social/governance.
+
+### 🛡️ Tradecraft anchor parity (Family A + E)
+Tradecraft Context blocks (F3EAD stage · PIRs served · Admiralty floor · WEP+ODNI · Source Diversity floor · SATs · ICD 203 standards) added to the 7 Family A and Family E core templates that lacked them — now present on all single-type templates. Templates bumped accordingly:
+- `synthesis-summary.md` v2.3 → v2.4
+- `swot-analysis.md` v2.3 → v2.4
+- `risk-assessment.md` v2.3 → v2.4
+- `threat-analysis.md` v3.3 → v3.4
+- `stakeholder-impact.md` v2.3 → v2.4
+- `significance-scoring.md` v2.3 → v2.4
+- `per-file-political-intelligence.md` v2.3 → v2.4
+
+### 🔢 Library-wide version refresh
+All 17 methodologies, 34 templates, both READMEs and the JSON thresholds bumped by 0.1 with `Last Updated: 2026-04-25`. Operational supplementary templates that previously lacked a version stamp now carry `Template version: v1.1 · Last updated: 2026-04-25`.
 
 ---
 

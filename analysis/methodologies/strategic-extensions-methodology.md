@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--21-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-21 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-04-25 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -48,6 +48,8 @@ Family C delivers **analytic depth** when the daily event set warrants it. Where
 ### Core — every run produces all 5
 
 Family C files are **always produced on every workflow run**. They are not trigger-driven. Depth per file adapts to the day's DIW distribution, but the output set is stable: every folder ships `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, and `methodology-reflection.md`.
+
+> 🧭 **Family C is exactly 5 files — not 6.** `executive-brief.md` is **Family A** (synthesis layer), not Family C. If a downstream document or README enumerates 6 Family C files including `executive-brief.md`, that document is stale — the canonical inventory is [`artifact-catalog.md` §"Family C — Strategic Extensions (5 artifacts)"](artifact-catalog.md#-family-c--strategic-extensions-5-artifacts--f3ead-analyze-continued). `methodology-reflection.md` belongs to Family C even though its production order (Step 5, after the other four) and its self-audit role make it feel meta — the gate at [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) check 7 enforces this exact 5-file structure.
 
 | File | Behaviour on a light news day | Behaviour on a P0-dense day |
 |------|-------------------------------|-----------------------------|

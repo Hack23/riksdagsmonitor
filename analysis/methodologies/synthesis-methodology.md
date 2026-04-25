@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--21-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-21 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-04-25 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -117,6 +117,37 @@ Democratic-Impact Weight (DIW) is scored 0.0 – 10.0 along six dimensions, each
 | 🗳️ Electoral salience | 1.0 | Pre-election window + top-10 voter-priority issue |
 | 🔀 Coalition pressure | 1.0 | Forces deviation from Tidöavtalet or opposition red line |
 | 📡 Media resonance | 1.0 | Coordinated opposition response or government flagship announcement |
+
+#### Worked example — DIW computation
+
+Suppose `prop. 2025/26:113` raises the wealth-tax threshold from SEK 1.5M to SEK 5.0M. Score each dimension on the 0.0 – 1.0 anchor scale (0.0 = no signal, 0.5 = moderate, 0.8 = clearly material, 1.0 = exemplar):
+
+| Dimension | Score | Why |
+|-----------|:----:|-----|
+| Institutional reach | 0.5 | Tax-code amendment — touches statutory framework but no constitutional change |
+| Rights & freedoms | 0.2 | Distributional, not rights-based |
+| Fiscal magnitude | 0.9 | ~SEK 8 bn / yr ≈ 0.4 % of statsbudget × 5-yr horizon = clearly material |
+| Electoral salience | 0.8 | Pre-election window + #4 voter-priority issue per SCB-Kantar Apr-2026 |
+| Coalition pressure | 0.7 | M/KD/L aligned; SD ambivalent on top quintile carve-out — friction but not a red-line breach |
+| Media resonance | 0.7 | DN, SvD, Aftonbladet leaders Day 0; Ekot Day 0+1 |
+| **Sum** | **3.8** | |
+| **DIW = (3.8 / 6) × 10** | **6.33** | **P1 — High** (triggers scenario + devils-advocate + stakeholder-impact) |
+
+The rationale for each anchor score MUST cite `dok_id` + at least one named actor. Anchor scores must not be back-fitted to a target tier; if you find yourself inflating Coalition pressure to push a P2 into P1, write the explanation honestly and let the score sit. Calibration debt accumulates fast — it is preferable to have a borderline 5.9 documented honestly than a 6.1 that does not survive Pass-2 scrutiny.
+
+#### Winner / loser quantification rubric
+
+Every P0/P1 ranking row MUST narrate **who wins** and **who loses** in concrete, quantifiable terms before any forward-looking implication is drawn. The rubric:
+
+| Axis | Required form | Example |
+|------|---------------|---------|
+| **Identity** | Named actors (party, ministry, committee, sector, demographic), not abstract groups | "M/KD/L coalition + top-decile income earners" not "the right" |
+| **Magnitude** | A unit (SEK, % of voters, # of MPs, # of beneficiaries) and a horizon | "+ SEK 8 bn / yr from 2027 budget for top-decile" |
+| **Direction** | Win / loss / mixed, with sign | "Win for top decile; loss for tax-revenue projection" |
+| **Confidence** | 5-level label backed by evidence reliability, not advocacy | 🟩 HIGH — RUT-utvärdering 2024 + FiU's own modelling |
+| **Counter-narrative** | One named actor's framed dissent | Quote V's Karin Pernebo (2026-04-22) on distributional effect |
+
+A synthesis ranking that names only winners and not losers (or vice versa) **fails the gate**: politics is zero-sum or near-zero-sum on most material questions, and asymmetric narration is itself a tradecraft tell. When the distribution is genuinely diffuse (e.g. an information-policy bill), say so explicitly with the phrase "diffuse-impact — no quantifiable concentrated win/loss" and back it with evidence.
 
 ### Tier mapping
 - **P0 (Critical, DIW ≥ 8.0)** → triggers every Family C + D template
