@@ -147,7 +147,7 @@ graph LR
 
 | Stage | Tool/Service | Trigger | Quality Gate | Duration |
 | --- | --- | --- | --- | --- |
-| **🏗️ Build & Test** | Vite, Vitest, Cypress | Push/PR | Tests pass, coverage thresholds enforced (statements 22% / branches 22% / functions 20% / lines 23%; baseline 2026-04-25, raise as legacy modules gain tests) | ~3.4s build, ~15s test |
+| **🏗️ Build & Test** | Vite, Vitest, Cypress | Push/PR | Tests pass, coverage thresholds enforced at the **Hack23 Secure Development Policy floor** (statements ≥80 % / branches ≥70 % / functions ≥70 % / lines ≥80 %; see `vitest.config.js` and TESTING.md for measured baseline) | ~3.4s build, ~63s test |
 | **📦 SCA** | Dependabot, Dependency Review | Daily / PR | No critical vulnerabilities | ~2 min |
 | **🔍 CodeQL** | GitHub CodeQL | PR, Push, Weekly | No critical/high issues | ~10 min |
 | **✅ Quality Gate** | ESLint, HTMLHint, linkinator | Every commit | Zero errors, valid HTML | ~3 min |
