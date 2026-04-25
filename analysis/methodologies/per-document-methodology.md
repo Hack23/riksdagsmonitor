@@ -16,7 +16,7 @@
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-25 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-04-25 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -106,15 +106,31 @@ Every single-doc file contains, in order:
 
 ### Per-doctype Mermaid taxonomy
 
-| Doctype | Mermaid choice | Purpose |
-|---------|---------------|---------|
-| `prop` (proposition) | Flowchart: filing → committee → vote → outcome | Government flagship path |
-| `mot` (motion) | Graph: sponsor cluster ↔ target proposition | Opposition response structure |
-| `bet` (betänkande) | Flowchart: reviewed docs → committee stance → recommendation | Committee verdict |
-| `ip` (interpellation) | Timeline: question filed → minister reply → follow-up | Oversight exchange |
-| `fr` (skriftlig fråga) | Timeline (shorter) | Quick oversight |
-| `SOU` / `Ds` (utredning) | Flowchart: mandate → method → recommendations | Investigation structure |
-| `skr` (skrivelse) | Flowchart: government decision → reporting obligation | Executive accountability |
+The following doctypes are recognised by `search_dokument`, `get_propositioner`, `get_betankanden`, `get_motioner`, `get_fragor`, and `get_interpellationer`. Use the **canonical Mermaid choice** below; deviate only if the document's own structure makes a different shape clearly more legible (and document the deviation in the file's preamble).
+
+#### Core 7 doctypes (covered ≥ 95 % of typical run volume)
+
+| Doctype | Riksdag definition | Mermaid choice | Purpose |
+|---------|---------------------|---------------|---------|
+| `prop` (proposition) | Government bill — formal proposal from the government to the Riksdag | Flowchart: filing → committee → vote → outcome | Government flagship path |
+| `mot` (motion) | MP-filed motion (single-member, party motion, follow-on motion) | Graph: sponsor cluster ↔ target proposition | Opposition / committee-floor response |
+| `bet` (betänkande) | Committee report on a referred matter | Flowchart: reviewed docs → committee stance → recommendation + vote splits | Committee verdict |
+| `ip` (interpellation) | Long-form oversight question (verbal reply within 2 weeks) | Timeline: question filed → minister reply → follow-up debate | Oversight exchange |
+| `fr` (skriftlig fråga) | Short written question (written reply within 6 working days) | Timeline (shorter) | Quick oversight |
+| `SOU` / `Ds` (utredning) | Government investigation report (SOU = stand-alone, Ds = ministerial-series) | Flowchart: mandate → method → recommendations | Investigation structure |
+| `skr` (skrivelse) | Government communication or report to the Riksdag (informational, no proposal) | Flowchart: government decision → reporting obligation | Executive accountability |
+
+#### Extended 5 doctype variants (added v1.2 — handle these with care)
+
+| Doctype | Riksdag definition | Mermaid choice | When to use |
+|---------|---------------------|---------------|-------------|
+| `motion-package` | Coordinated set of motions filed by the same sponsor cluster on the same day with a shared title prefix or numbering scheme — e.g. an opposition party's full annual budget counter-package, or a "100-punkts-program" | **Cluster Mermaid** — outer subgraph for the package, inner nodes for member motions, edges to common target dok_id(s) | When ≥ 3 motions share sponsor, date (±1), and theme; produce **one** Family E cluster file (per [`per-document-methodology.md` §"Cluster Analysis"](#-part-2--cluster-analysis)) rather than 3+ singleton files. Annotate each member motion with its sequence inside the package. |
+| `fpm` (finansplan-motion / "shadow budget") | Annual opposition counter-budget filed within 14 days of the government's `prop. 1` (budgetpropositionen). Numbering convention `mot. 2025/26:Fi.NNN` with `Fi`-prefix | Flowchart: government `prop. 1` ↔ opposition `fpm` envelope ↔ FiU committee referral ↔ allocation deltas table | Treat as **fpm**, not generic `mot`: the analytic interest is the *delta envelope* (per-utgiftsområde diff) and the macroeconomic-assumption disagreement, not individual line items. Always pair with [`coalition-mathematics.md`](../templates/coalition-mathematics.md) for confidence-vote arithmetic and with [`comparative-international.md`](../templates/comparative-international.md) when the fpm cites peer-country macro frames. |
+| `utskottsbetänkande-variants` (`bet`-with-reservation, `bet`-with-yttrande, `bet`-rambeslut) | A `bet` doctype subspecies: (a) `bet`-with-reservation = committee majority report + ≥1 minority reservation requiring separate analysis; (b) `bet`-with-yttrande = committee yttrande from another committee included; (c) `bet`-rambeslut = framework decision affecting subsequent `bet`s in the same area | Flowchart: majority recommendation → **parallel branch** for each reservation/yttrande → vote splits per branch | Detect via the `bet` text containing "Reservation 1", "Yttrande från [committee]", or "Rambeslut". Each reservation/yttrande receives its **own evidence row** in the Family E file. Do NOT collapse reservations into a single bullet — they are the textual record of intra-committee dissent and are first-class analytical content. |
+| `KU-anmälan` (KU-granskning) | Constitutional Committee scrutiny case: an MP-filed complaint that a minister or the government has acted improperly. Filed under chapter 13 § 1 RF; cumulates into the spring KU-betänkande. | Flowchart: anmälan filed → KU referral → minister hearing → KU verdict (kritik / utan kritik / ej kritik) | Doctype is `bet` from KU's perspective but an anmälan in the underlying record. Mark **`KU-anmälan`** in the doctype field and pair with the named minister as the political subject. KU verdicts are high-significance institutional events even when DIW magnitude is modest — flag them P1 at minimum during the spring window. |
+| `EU-nämnd / EU-överläggning` | Government consultation with the EU Committee before a Council of Ministers position is taken | Flowchart: government brief → committee position → recorded consensus / dissent → minister mandate | Doctype is often metadata-only (`yttr` / `prot` from EU-nämnden) — but the position recorded shapes Sweden's EU-Council vote. Always cite the minister, the Council formation, and any party-bloc dissent. |
+
+> **Doctype detection algorithm (binding):** read the document's metadata first (`doktyp` field from `get_dokument` / `search_dokument`), then run keyword detection on the title + first 200 words to detect variants (`Reservation`, `Finansplan`, `100-punkts`, `KU-granskning`, `EU-nämnden`). Where the metadata says `mot` but the variant detector fires `motion-package` or `fpm`, **the variant takes precedence** for analytical handling — a `fpm` analysed as a generic `mot` misses the entire delta-envelope analysis the artifact exists to produce.
 
 ### Example Mermaid — proposition flowchart
 

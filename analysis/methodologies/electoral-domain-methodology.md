@@ -16,7 +16,7 @@
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-25 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-04-25 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -176,6 +176,16 @@ quadrantChart
 - [ ] Mobilisation index explains movability with evidence
 - [ ] Privacy rule: no segment drawn to <1000 persons to avoid re-identification
 
+#### Segment privacy threshold — rationale (binding)
+
+The **<1000 persons** threshold is not a stylistic preference; it is a derived control rooted in three converging concerns:
+
+1. **GDPR Article 4(1) re-identification risk.** SCB-published microdata is anonymised at the *aggregate* level. A segment drawn to fewer than ~1000 persons in a country of 10.5M can become indirectly re-identifying when crossed with a second variable (e.g., "rural drivers in Norrbotten under 35 with K-bil sport") — the cross-tabulation can collapse to a handful of households. The Article 29 Working Party Opinion 05/2014 on Anonymisation Techniques names *singling-out*, *linkability*, and *inference* as the three risks; sub-1000 micro-cells defeat all three. SCB's own micro-data publication policy follows a related minimum-cell-size principle.
+2. **Statistical confidence.** For a binary outcome (e.g., "voted SD") the 95 % CI half-width at p = 0.5, n = 1000 is ±3.1 pp; at n = 500 it widens to ±4.4 pp; at n = 100 to ±9.8 pp. Below n = 1000 the segment delta is generally **smaller than the confidence interval**, meaning the analysis cannot distinguish signal from sampling noise. Reporting such a segment as a quantitative finding is innumerate.
+3. **Editorial avoidance of small-group stigmatisation.** Segments drawn small enough to be re-identifiable are also drawn small enough to invite the editorial sin of using a single named individual as a stand-in for the whole group. The 1000-person floor enforces narrative restraint — talk about "rural Norrbotten residents under 35" not "Karin from Boden, 28."
+
+**Implementation rule:** when SCB cross-tabs collapse below 1000, **collapse one axis** (e.g., merge two adjacent age bands or two neighbouring counties) until the cell count clears 1000. Document the collapse in the segment definition; never report the sub-1000 cell. If the collapsed segment is still analytically interesting at n ≥ 1000, use it; if not, drop it from the analysis.
+
 ---
 
 ## 🧮 Part 3 — Coalition Mathematics (`coalition-mathematics.md`)
@@ -218,6 +228,34 @@ graph TB
 - [ ] All coalitions summed to exact seat counts
 - [ ] Tolerance-to-defection column filled per coalition
 - [ ] Issue-specific coalitions cite `dok_id` and vote counts from `search_voteringar`
+
+### Worked example — Sainte-Laguë modified seat allocation
+
+Sweden uses the **modified Sainte-Laguë method** with a **4 % national threshold** and a **12 % regional threshold** (a party scoring under 4 % nationally still gets seats from a constituency where it exceeds 12 %). The first divisor for any party is **1.4** (the modification), then 3, 5, 7, 9, … The seat goes to the party with the highest quotient at each round.
+
+Worked example using a hypothetical 11-seat constituency (Stockholm county, simplified to illustrate the algorithm):
+
+| Party | Votes | ÷1.4 (seat 1) | ÷3 (after 1) | ÷5 (after 2) | ÷7 | ÷9 | ÷11 | Final seats |
+|-------|------:|--------------:|-------------:|-------------:|---:|---:|----:|:----------:|
+| S  | 90 000 | **64 286** | 30 000 | 18 000 | 12 857 | 10 000 | 8 182 | 4 |
+| M  | 75 000 | **53 571** | 25 000 | 15 000 | 10 714 | — | — | 3 |
+| SD | 55 000 | **39 286** | 18 333 | 11 000 | — | — | — | 2 |
+| V  | 30 000 | 21 429 | 10 000 | — | — | — | — | 1 |
+| MP | 12 000 | 8 571  | — | — | — | — | — | 1 |
+| L  |  9 000 | 6 429  | — | — | — | — | — | 0 — under 4 %, no regional override |
+
+**Algorithm walk-through:** Round 1: highest quotient (S ÷ 1.4 = 64 286) → S gets seat 1. Round 2: re-divide S by 3 (= 30 000); highest of all current quotients is M ÷ 1.4 = 53 571 → M gets seat 2. Round 3: re-divide M by 3; SD ÷ 1.4 = 39 286 wins → SD gets seat 3. Continue until all 11 seats are awarded.
+
+**Key gotchas the AI must respect:**
+1. **The 1.4 modifier replaces the first division for every party** — not 1.0, not 0.7. Using straight Sainte-Laguë (3-5-7-…) inflates small-party seat counts and is wrong.
+2. **Threshold check happens before allocation:** parties under 4 % nationally are excluded from the divisor table unless they cleared 12 % in this specific constituency.
+3. **Tied quotients** are broken by total vote count (higher wins); document the tie-break rule used in the analysis.
+4. **Constituency seats vs. levelling seats (utjämningsmandat) are separate phases.** Sweden has 310 fixed constituency seats + 39 levelling seats. The first phase distributes 310 by constituency-level Sainte-Laguë; the second phase reassigns 39 to make the national distribution proportional. Always state which phase is being modelled.
+5. **Sources:** seat counts from `search_voteringar` and Valmyndigheten election archives; vote totals from SCB / Valmyndigheten primary CSVs (never approximated).
+
+A coalition-mathematics file that asserts a seat outcome without showing the Sainte-Laguë computation **fails the gate**; copy this table form (or link to a calculator script's output) and adapt the numbers.
+
+### Quality gate (continued)
 - [ ] Cohesion indicators include numeric vote-split percentages
 - [ ] Hypothetical coalitions clearly labelled
 
