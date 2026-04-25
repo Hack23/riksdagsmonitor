@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: committeeReports
 slug: 2026-04-24-committeeReports
 source_folder: analysis/daily/2026-04-24/committeeReports
-generated_at: 2026-04-25T11:09:59.929Z
+generated_at: 2026-04-25T15:36:04.727Z
 language: en
 layout: article
 ---
@@ -26,20 +26,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Executive Brief
+<!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief.md -->
 
-_Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief.md)_
-
-## 🎯 BLUF
+### 🎯 BLUF
 
 Five committee reports tabled 2026-04-23 cluster along the Tidö coalition's three pre-election signature pillars — **criminal-justice capacity** (`HD01CU25`), **migration enforcement with a research-mobility carve-out** (`HD01SfU23`), and **monetary-institutional stewardship** (`HD01FiU23`) — supplemented by two broad-consensus dossiers on **ILO labour-rights ratification** (`HD01AU15`) and **EV home-charging** (`HD01CU29`). The cluster is a deliberate signalling composition ~5 months before the September 2026 Riksdag election: it lets M/KD/SD claim delivery on law-and-order and migration while L and centrist actors anchor EU-compatible labour and climate wins. Real implementation risk concentrates in `HD01CU25` (Kriminalvården capacity absorption) and `HD01SfU23` (Migrationsverket case-handling bifurcation); reputational risk concentrates in `HD01FiU23` (Riksbank balance-sheet losses and independence narratives).
 
-## 🧭 3 Decisions This Brief Supports
+### 🧭 3 Decisions This Brief Supports
 
 1. **Election-cycle messaging** — Government communicators should sequence CU25 (law-and-order) + SfU23 (migration) floor speeches together during May 2026 to maximise pre-recess coverage; opposition should counter-frame SfU23 on researcher-mobility carve-out to split M from L and avoid S being boxed in as anti-research.
 2. **Implementation oversight** — KU and Riksrevisionen should pre-flag CU25 (procurement/environmental shortcut exposure) and SfU23 (Migrationsverket dual-track IT and staffing) for 2026/27 audit scope; FiU23 confirms standing Riksbank independence review cadence.
 3. **International positioning** — Ratification of ILO C190 (AU15) should be paired in government talking points with EU Platform Work Directive transposition and Nordic counterparts' earlier ratifications (Denmark, Finland, Norway) to maximise reputational dividend.
 
-## ⏱ 60-second read
+### ⏱ 60-second read
 
 - **Lead story**: `HD01CU25` — the prison-capacity expansion bill is the highest-weighted item (DIW 85) because it combines large fiscal exposure (Kriminalvården expansion programme), compressed timelines, and pre-election symbolism. See `synthesis-summary.md` and `risk-assessment.md §Institutional`.
 - **Second line**: `HD01SfU23` (DIW 80) bifurcates migration policy — tightening on study permits while opening for researchers — creating both coalition-internal tension (SD–L) and an Opposition opening on competitiveness framing. See `stakeholder-perspectives.md` and `devils-advocate.md H3`.
@@ -47,11 +46,11 @@ Five committee reports tabled 2026-04-23 cluster along the Tidö coalition's thr
 - **Consensus items**: `HD01AU15` (ILO, DIW 72) and `HD01CU29` (EV charging, DIW 58) are broad-support dossiers that provide bipartisan cover for the government to claim delivery width.
 - **Top forward trigger**: watch the **Kriminalvården 2026 Q2 capacity status report** (expected +60 days, ~2026-06-23). A deviation ≥ 10 % from planned bed count would falsify the CU25 timeline and invert the government's crime-delivery narrative into the election. See `forward-indicators.md`.
 
-## 🧠 Confidence & assumptions
+### 🧠 Confidence & assumptions
 
 Key Judgments carry **HIGH** confidence on cluster composition and DIW ranking (based on primary `get_dokument` metadata, consistent with Riksdag committee calendar). **MEDIUM** confidence on implementation deltas (dependent on 2026 Q2 status reports not yet published). **LOW** confidence on voter-level framing effects pending 2026 Q3 polling waves. See `intelligence-assessment.md §Key Assumptions Check` and `methodology-reflection.md §ICD 203 audit`.
 
-## 📊 Composition diagram
+### 📊 Composition diagram
 
 ```mermaid
 flowchart LR
@@ -78,7 +77,7 @@ flowchart LR
     style L fill:#ffbe0b,stroke:#b88500,color:#000
 ```
 
-## Sources
+### Sources
 
 - `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
 - `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
@@ -89,14 +88,13 @@ flowchart LR
 - See `intelligence-assessment.md` for full judgement-level source mapping.
 
 ## Synthesis Summary
+<!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/synthesis-summary.md -->
 
-_Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/synthesis-summary.md)_
-
-## Lead story / decision
+### Lead story / decision
 
 The dominant signal in today's five-report cluster is a **cross-committee signalling composition** rather than any single blockbuster bill. The Tidö coalition (M, KD, L, SD supply) has staged its two politically hottest pillars — **prison-capacity expansion** (`HD01CU25`) and **migration tightening with a research carve-out** (`HD01SfU23`) — alongside an **institutional-stewardship** report (`HD01FiU23`, Riksbank 2025) and two **consensus dossiers** (`HD01AU15` ILO, `HD01CU29` EV charging) that provide breadth cover. This pattern — concentrating signature items in a single tabling window ~5 months before the **September 2026 Riksdag election** ([riksdagen.se election calendar](https://www.riksdagen.se/sv/sa-fungerar-riksdagen/riksdagens-uppgifter/val/) [A1]) — is strategically rational for the government but creates **three concentrated implementation risks** (CU25 procurement, SfU23 Migrationsverket IT, FiU23 balance-sheet narrative) that any of them materialising would damage delivery credibility simultaneously.
 
-## DIW-weighted ranking
+### DIW-weighted ranking
 
 ```mermaid
 flowchart TD
@@ -115,79 +113,78 @@ flowchart TD
 
 See `significance-scoring.md` for per-item DIW decomposition.
 
-## Integrated intelligence picture
+### Integrated intelligence picture
 
-### 1. Pre-election signalling cluster (CU25 + SfU23 + FiU23)
+#### 1. Pre-election signalling cluster (CU25 + SfU23 + FiU23)
 
 The three high-DIW items (CU25, SfU23, FiU23 — `HD01CU25`, `HD01SfU23`, `HD01FiU23`) are **not coincidentally tabled together**. The Civilutskottet CU channel is being used unusually heavily for penal policy (CU25) alongside its standard housing/family-law remit, reflecting the government's decision to route capacity-expansion legislation through CU rather than JuU to accelerate planning-law carve-outs. SfU23 follows the 2024–25 migration tightening trajectory (see `historical-parallels.md §2024-SfU trajectory`) while opening a researcher carve-out that L and C can defend. FiU23 is the annual Riksbank review ([riksdagen.se/utskott/finansutskottet](https://www.riksdagen.se/sv/utskotten-och-eu-namnden/finansutskottet/) [A1]), unusually salient in 2026 because the Riksbank booked balance-sheet losses in 2023–24 that the recapitalisation statute addresses.
 
-### 2. Consensus-breadth cluster (AU15 + CU29)
+#### 2. Consensus-breadth cluster (AU15 + CU29)
 
 `HD01AU15` (ILO C190 on workplace violence/harassment + C155/C187 occupational safety) and `HD01CU29` (EV home-charging) serve as **narrative-breadth** items. AU15 signals EU-compatible, ILO-aligned labour rights (Denmark ratified C190 in 2022, Finland 2023, Norway 2023 — see `comparative-international.md`); CU29 signals climate-mobility delivery. Both are expected to attract broad-party support and give the government cover to claim width on workers' rights and climate alongside the harder CU25/SfU23 signals.
 
-### 3. Coalition-internal tensions
+#### 3. Coalition-internal tensions
 
 SfU23 is the most likely intra-coalition friction point: SD will push maximalist framing on permit-abuse; L will defend researcher mobility; M/KD balance. CU25 will see S split — labour-union tradition vs. law-and-order triangulation — with V/MP opposing on environmental-carve-out grounds. FiU23 will see V/MP raise Riksbank mandate/ESG questions while M/L defend independence. See `devils-advocate.md §H2`.
 
-### 4. Post-election implementation cliff
+#### 4. Post-election implementation cliff
 
 All five items will clear chamber in 2026 before dissolution, but **execution lands with whichever government forms after September 2026**. CU25's Kriminalvården capacity timeline extends into 2027–2030 (see `forward-indicators.md`); SfU23's Migrationsverket IT build extends into 2027. A government transition ↔ delivery handover mismatch is the cluster's single largest cascading risk. See `risk-assessment.md §Institutional`.
 
-## AI-Recommended Article Metadata
+### AI-Recommended Article Metadata
 
 - **Suggested headline (EN)**: "Riksdag Committee Reports Stack Tidö Pre-Election Pillars: Prisons, Migration, Riksbank"
 - **Suggested headline (SV)**: "Tidöpartierna staplar sina valsignaler: fängelser, migration och Riksbank i utskottsvågen"
 - **Meta description**: "Five committee reports tabled 23 April cluster Tidö's law-and-order, migration and monetary-stewardship signals five months before the September 2026 election."
 
-## Sources
+### Sources
 
 - `get_dokument` calls on HD01CU25, HD01SfU23, HD01FiU23, HD01AU15, HD01CU29 [A1]
 - riksdagen.se/sv/utskotten-och-eu-namnden/ [A1]
 - regeringen.se — Tidöavtalet reference context [A2]
 
 ## Intelligence Assessment — Key Judgments
-
-_Source: [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/intelligence-assessment.md)_
+<!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/intelligence-assessment.md -->
 
 **Author**: James Pether Sörling   **Audience**: analyst-desk, newsroom, KU oversight interests.
 **Standards**: ICD 203 (analytic standards); WEP / Kent confidence scale; Admiralty Code on all source citations.
 **Base date**: 2026-04-24.
 
-## Bottom Line Up Front
+### Bottom Line Up Front
 
 Tidö has staged its pre-election committee-report cluster with three signature items (CU25 prison capacity, SfU23 migration/researchers, FiU23 Riksbank 2025) and two consensus items (AU15 ILO, CU29 EV charging). Delivery credibility over the next 60–120 days — dominated by the Kriminalvården Q2 capacity report and Migrationsverket dual-track IT milestone — will determine whether this cluster becomes a 2026 campaign asset (~40 % likelihood) or a narrative liability (~40 % combined S2 + S3 likelihood).
 
-## Key Judgments
+### Key Judgments
 
-### KJ-1 — The five-report cluster is strategically composed, not calendar-driven (**HIGH** confidence, B2)
+#### KJ-1 — The five-report cluster is strategically composed, not calendar-driven (**HIGH** confidence, B2)
 
 We assess with **HIGH** confidence that the composition reflects coordinated signalling and coalition-internal horse-trading (H1 + H4 in `devils-advocate.md`). Evidence: simultaneous tabling across 4 committees with 3 signature items; coalition-internal balance visible in SfU23 carve-out structure; Tidö April 2026 delivery-ledger communications pattern. Analytic technique: Analysis of Competing Hypotheses — 1 inconsistency against mainline H1, 0 against H4. Confidence rated HIGH because coordination is structurally visible; the residual 20 % accounts for partial contribution from calendar mechanics (H2). Primary source: `get_dokument` × 5 [A1].
 
-### KJ-2 — CU25 (prison capacity) is the single highest-weight item and highest-risk delivery exposure (**HIGH** confidence, B2)
+#### KJ-2 — CU25 (prison capacity) is the single highest-weight item and highest-risk delivery exposure (**HIGH** confidence, B2)
 
 DIW 85 (bounded 78–88) reflects convergence of electoral salience (95), fiscal/regulatory impact (90), and precedent value (80 — planning-law carve-outs). Implementation risk concentrates on Kriminalvården capacity absorption and procurement; probability of ≥ 10 % timeline slippage at 55 % posterior (Bayesian update from 2020/2023 capacity-plan miss base rate). Primary source: `HD01CU25` + [kriminalvarden.se](https://www.kriminalvarden.se/) [A2].
 
-### KJ-3 — SfU23 is the single most coalition-internally stressed item (**MEDIUM** confidence, C3)
+#### KJ-3 — SfU23 is the single most coalition-internally stressed item (**MEDIUM** confidence, C3)
 
 DIW 80 with coalition-stress sub-score 85 — the highest on the cluster table. Tension is between SD maximalist framing of abuse-prevention and L defence of researcher carve-out; M/KD balance. We assess **MEDIUM** confidence that visible L position-paper defence will emerge pre-summer recess; L defection on floor vote is **LOW** (< 20 %) because carve-out structure accommodates L preference. Primary source: `HD01SfU23` + L party published positions [B3].
 
-### KJ-4 — FiU23 (Riksbank 2025) is standing annual review but unusually salient given 2024–25 balance-sheet narrative (**HIGH** confidence, A2)
+#### KJ-4 — FiU23 (Riksbank 2025) is standing annual review but unusually salient given 2024–25 balance-sheet narrative (**HIGH** confidence, A2)
 
 Probability (~ 45 %) that Riksbank recapitalisation becomes a 2026 chamber-floor debate rather than a contained standing-review item. Indicator: FiU scheduling a separate recapitalisation hearing. Primary source: `HD01FiU23` + [riksbank.se](https://www.riksbank.se/) annual reports [A1].
 
-### KJ-5 — AU15 + CU29 function as breadth cover, producing low-probability but non-trivial reputational dividend potential (**MEDIUM** confidence, C3)
+#### KJ-5 — AU15 + CU29 function as breadth cover, producing low-probability but non-trivial reputational dividend potential (**MEDIUM** confidence, C3)
 
 Scenario 5 ("broad-consensus windfall") sits at 8 %. Principal mechanism: pairing C190 ratification with EU Platform Work Directive transposition for Nordic / EU media. Primary source: `HD01AU15`, `HD01CU29` + ILO ratification dates [A1].
 
-### KJ-6 — The cluster's cascading-risk exposure is larger than any single item (**MEDIUM** confidence, C3)
+#### KJ-6 — The cluster's cascading-risk exposure is larger than any single item (**MEDIUM** confidence, C3)
 
 Joint probability of ≥ 1 delivery failure (R1, R3, R5, R10 in `risk-assessment.md`) within Q3 2026 is ~ 70 %; joint probability of ≥ 2 is ~ 40 %. A combined CU25 timeline slip + SfU23 judicial/IT cascade + FiU23 recapitalisation debate is the low-probability (< 10 %) but high-impact worst case. Primary source: Bayesian update on 2022–24 base rates [B2].
 
-### KJ-7 — Sweden's late ratification of ILO C190 is framing-rather-than-substance disadvantage (**HIGH** confidence, A1)
+#### KJ-7 — Sweden's late ratification of ILO C190 is framing-rather-than-substance disadvantage (**HIGH** confidence, A1)
 
 Denmark (2022), Finland, Norway, Germany, Netherlands ratified before Sweden. Substantive reason: legal compatibility work in Diskrimineringslagen + Arbetsmiljölagen. `HD01AU15` completes Nordic parity with a measurable lag that opposition actors may frame as stewardship deficit. Primary source: [ilo.org NORMLEX](https://www.ilo.org/) [A1].
 
-## Key Assumptions Check
+### Key Assumptions Check
 
 | # | Assumption | Source | If wrong | Action |
 |:-:|-----------|--------|----------|--------|
@@ -197,7 +194,7 @@ Denmark (2022), Finland, Norway, Germany, Netherlands ratified before Sweden. Su
 | A4 | Kriminalvården 2026 capacity plan remains as published | [kriminalvarden.se](https://www.kriminalvarden.se/) | Revised plan invalidates CU25 baseline | Re-run KJ-2 |
 | A5 | No EU directive change altering AU15 ratification landscape | [eur-lex.europa.eu](https://eur-lex.europa.eu/) | EU change would re-frame KJ-7 | Re-run comparative analysis |
 
-## Priority Intelligence Requirements (PIRs for next cycle)
+### Priority Intelligence Requirements (PIRs for next cycle)
 
 - **PIR-1** (CU25): Kriminalvården Q2 2026 capacity status — target date ~ 2026-06-23; detection: report publication at [kriminalvarden.se](https://www.kriminalvarden.se/).
 - **PIR-2** (SfU23): any Migrationsöverdomstolen prövningstillstånd on SfU23 test case — rolling; detection: [domstol.se](https://www.domstol.se/) press releases.
@@ -207,7 +204,7 @@ Denmark (2022), Finland, Norway, Germany, Netherlands ratified before Sweden. Su
 - **PIR-6** (CU25 politics): L party position-paper releases on CU25 / SfU23 — detection: [liberalerna.se](https://www.liberalerna.se/).
 - **PIR-7** (standing): any disinformation / narrative-amplification surge around CU25 slippage or SfU23 abuse framing — detection: [msb.se](https://www.msb.se/) disinformation observatory.
 
-## Confidence distribution
+### Confidence distribution
 
 - **HIGH / VERY HIGH**: KJ-1, KJ-2, KJ-4, KJ-7 (4 judgments)
 - **MEDIUM**: KJ-3, KJ-5, KJ-6 (3 judgments)
@@ -215,18 +212,17 @@ Denmark (2022), Finland, Norway, Germany, Netherlands ratified before Sweden. Su
 
 Ratio HIGH:MEDIUM:LOW = 4:3:0. Absence of LOW judgments is consistent with a high-information base (5 attested `dok_id` + well-documented implementing agencies) and consistent with ICD 203 discipline on confidence-to-evidence mapping — see `methodology-reflection.md §ICD 203 audit`.
 
-## Sources
+### Sources
 
 All key judgments cite at least one `get_dokument` call + one primary-source URL on data.riksdagen.se / regeringen.se / riksbank.se / ilo.org / kriminalvarden.se / migrationsverket.se / domstol.se.
 
 ## Significance Scoring
-
-_Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/significance-scoring.md)_
+<!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/significance-scoring.md -->
 
 **Method**: Decision-Impact Weighting (DIW) from `analysis/methodologies/ai-driven-analysis-guide.md §DIW`.
 **Components** (0–100 each, weighted): Stakeholder reach (20 %), Fiscal/regulatory impact (20 %), Institutional change (15 %), Electoral salience (15 %), Precedent value (10 %), Time-criticality (10 %), Coalition stress (10 %).
 
-## Ranking table
+### Ranking table
 
 | Rank | `dok_id` | Committee | Stake | Fiscal | Inst | Elect | Prec | Time | Coal | **DIW** | Tier | Source |
 |:---:|----------|:---------:|:-----:|:------:|:----:|:-----:|:----:|:----:|:----:|:-------:|------|--------|
@@ -236,7 +232,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 | 4 | `HD01AU15` | AU | 75 | 60 | 70 | 70 | 85 | 65 | 65 | **72** | L2 | https://data.riksdagen.se/dokument/HD01AU15 [A1] |
 | 5 | `HD01CU29` | CU | 65 | 55 | 50 | 60 | 55 | 55 | 55 | **58** | L2 | https://data.riksdagen.se/dokument/HD01CU29 [A1] |
 
-## Ranking diagram
+### Ranking diagram
 
 ```mermaid
 flowchart LR
@@ -257,7 +253,7 @@ flowchart LR
     style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
 ```
 
-## Sensitivity analysis
+### Sensitivity analysis
 
 - **CU25 → 85** (`HD01CU25`): bounded 78–88. If Kriminalvården publishes its Q2 2026 capacity report confirming on-track delivery (see `forward-indicators.md` +60d trigger), electoral salience stays at 95; if status slips, institutional weight rises and DIW trends to 88. Source: `HD01CU25` at [data.riksdagen.se](https://data.riksdagen.se/) [A1].
 - **SfU23 → 80**: bounded 74–84. Coalition-stress sub-score (85) is the single highest on the table because SD–L friction is the modal public dispute pattern; a visible L defection (or pre-election L position-paper on research mobility) pushes DIW to 84. Source: party communications [riksdagen.se](https://www.riksdagen.se/) [A1].
@@ -265,16 +261,16 @@ flowchart LR
 - **AU15 → 72** (`HD01AU15`): bounded 68–75. Stable. Precedent value (85) dominates because C190 ratification anchors future gender-equality and harassment litigation framework in Swedish labour-market model. Source: `HD01AU15` at [data.riksdagen.se](https://data.riksdagen.se/) [A1].
 - **CU29 → 58**: bounded 52–62. Stable consensus item. Precedent value (55) is only moderate because home-charging regulation is incremental against the existing electricity and property legislation. Source: [regeringen.se/infrastrukturdepartementet](https://www.regeringen.se/) [A2].
 
-## Priority tier assignment
+### Priority tier assignment
 
 - **L2+ Priority** (`HD01CU25`, `HD01SfU23`, `HD01FiU23`): depth-tier L2+ per-document analysis, chart data file, stakeholder network. [riksdagen.se](https://data.riksdagen.se/)
 - **L2 Strategic** (`HD01AU15`, `HD01CU29`): standard L2 per-document analysis. [riksdagen.se](https://data.riksdagen.se/)
 
-## Evidence completeness
+### Evidence completeness
 
 All 5 rows cite a live `dok_id` resolvable via `get_dokument` + a primary-source URL on `data.riksdagen.se`. All auxiliary claims cite Kriminalvården, Riksbank, ILO, Regeringen primary URLs.
 
-## Sources
+### Sources
 
 - `get_dokument` × 5 (`HD01CU25`, `HD01SfU23`, `HD01FiU23`, `HD01AU15`, `HD01CU29`) at [data.riksdagen.se](https://data.riksdagen.se/) [A1]
 - [riksdagen.se](https://www.riksdagen.se/) committee calendar (A1)
@@ -283,13 +279,12 @@ All 5 rows cite a live `dok_id` resolvable via `get_dokument` + a primary-source
 - [riksdagen.se](https://www.riksdagen.se/) — ILO C190 / C155 / C187 citations for `HD01AU15` (A1)
 
 ## Media Framing Analysis
-
-_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/media-framing-analysis.md)_
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/media-framing-analysis.md -->
 
 **Framework**: narrative-ecosystem analysis per `osint-tradecraft-standards.md` §Strategic Communication.
 **Confidence**: MEDIUM (C3) on framing uptake.
 
-## Likely outlet-level framings
+### Likely outlet-level framings
 
 | Outlet | CU25 | SfU23 | FiU23 | AU15 | CU29 |
 |--------|------|-------|-------|------|------|
@@ -300,7 +295,7 @@ _Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor
 | **SVT Nyheter** | Balanced delivery + risk | Balanced tightening + carve-out | Institutional-review explainer | Positive ratification | Balanced regressivity discussion |
 | **Sveriges Radio Ekot** | Procedural + delivery detail | Institutional-balance focus | Central-bank governance | Positive | Distributive discussion |
 
-## Narrative lines to monitor
+### Narrative lines to monitor
 
 1. **"Fängelser före välfärd"** (prisons before welfare) — S/V/MP-aligned inversion of Tidö delivery claim (CU25 focus).
 2. **"Konkurrenskraft vs. kontroll"** (competitiveness vs. control) — L/C/business-oriented critique of SfU23 balance.
@@ -308,7 +303,7 @@ _Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor
 4. **"Sverige sist i Norden"** (Sweden last in the Nordics) — opposition re-framing of AU15 delay.
 5. **"Elbil åt de redan rika"** (EVs for those already wealthy) — V/MP/C distributive critique of CU29.
 
-## Disinformation vulnerability assessment
+### Disinformation vulnerability assessment
 
 | Item | Vulnerability | Amplification vectors | Mitigation |
 |------|---------------|----------------------|------------|
@@ -318,7 +313,7 @@ _Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor
 | AU15 | LOW | — | — |
 | CU29 | MEDIUM — regressivity meme amplification | X/Twitter | [naturvardsverket.se](https://www.naturvardsverket.se/) + [energimyndigheten.se](https://www.energimyndigheten.se/) data clarity [A2] |
 
-## Framing-propagation diagram
+### Framing-propagation diagram
 
 ```mermaid
 flowchart LR
@@ -345,20 +340,19 @@ flowchart LR
     style Pub fill:#ffbe0b,stroke:#b88500,color:#000
 ```
 
-## Sources
+### Sources
 
 - `HD01CU25`, `HD01SfU23`, `HD01FiU23`, `HD01AU15`, `HD01CU29` [A1]
 - Regeringskansliet communications trend ([regeringen.se](https://www.regeringen.se/)) [A2]
 - MSB disinformation observatory ([msb.se](https://www.msb.se/)) [A2]
 
 ## Stakeholder Perspectives
-
-_Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/stakeholder-perspectives.md)_
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/stakeholder-perspectives.md -->
 
 **Framework**: 6-lens matrix from `analysis/methodologies/synthesis-methodology.md` — (1) Parties, (2) Government agencies, (3) Affected citizens / demographic groups, (4) Civil society / unions / employers, (5) Subnational government, (6) International / EU.
 **Confidence**: HIGH on party positions (A1–B2); MEDIUM on agency and civil society inference (B3–C3).
 
-## Master stakeholder table
+### Master stakeholder table
 
 | Stakeholder | CU25 | SfU23 | FiU23 | AU15 | CU29 | Dominant lens |
 |------------|:----:|:-----:|:-----:|:----:|:----:|---------------|
@@ -385,24 +379,24 @@ Legend: `+++` strong support, `++` support, `+` mild support, `±` split / condi
 
 Sources: party group communications at [riksdagen.se/partierna](https://www.riksdagen.se/) [A1]; agency mandate references at [kriminalvarden.se](https://www.kriminalvarden.se/), [migrationsverket.se](https://www.migrationsverket.se/), [riksbank.se](https://www.riksbank.se/), [av.se](https://www.av.se/), [boverket.se](https://www.boverket.se/), [energimyndigheten.se](https://www.energimyndigheten.se/) [A2]; civil-society baselines at [suhf.se](https://www.suhf.se/), [lo.se](https://www.lo.se/), [svensktnaringsliv.se](https://www.svensktnaringsliv.se/) [B2]; SKR baseline at [skr.se](https://www.skr.se/) [A2].
 
-## Per-document stakeholder narrative
+### Per-document stakeholder narrative
 
-### HD01CU25 — prison capacity
+#### HD01CU25 — prison capacity
 **Winners**: Kriminalvården (mandate expansion), local councils hosting new sites (employment + infrastructure), construction sector. **Losers**: local councils at risk of environmental-carve-out procedural strain; MP/V constituencies on environmental grounds. **Decisive actor**: Kriminalvården Q2 status report — sets delivery credibility. Evidence: [kriminalvarden.se/om-oss/verksamhet/anstalter-och-hakten](https://www.kriminalvarden.se/), `HD01CU25` [A2].
 
-### HD01SfU23 — migration / researchers
+#### HD01SfU23 — migration / researchers
 **Winners**: Sweden's university sector (SUHF advocacy group) on carve-out; Migrationsverket enforcement division. **Losers**: international students under abuse-prevention tightening; civil-society immigrant-rights orgs. **Decisive actor**: SUHF + individual research-university rectors (KTH, KI, Lund, Uppsala) — their position determines L defection probability. Evidence: [suhf.se](https://www.suhf.se/), `HD01SfU23` [A2/B2].
 
-### HD01FiU23 — Riksbank 2025
+#### HD01FiU23 — Riksbank 2025
 **Winners**: Riksbank General Council (standing affirmation); financial-stability interests. **Losers**: none direct; V rhetorical loss. **Decisive actor**: FiU chair — sequencing of recapitalisation hearing vs. annual review. Evidence: [riksdagen.se/finansutskottet](https://www.riksdagen.se/), `HD01FiU23` [A1].
 
-### HD01AU15 — ILO conventions
+#### HD01AU15 — ILO conventions
 **Winners**: LO/TCO/Saco (negotiating leverage); Arbetsmiljöverket/DO (mandate clarification); women and gender-minority workers (C190 scope). **Losers**: small employers on compliance-cost margin. **Decisive actor**: Arbetsmiljöverket guidance capacity. Evidence: [av.se](https://www.av.se/), [lo.se](https://www.lo.se/), `HD01AU15` [A1/B2].
 
-### HD01CU29 — EV charging
+#### HD01CU29 — EV charging
 **Winners**: homeowners with detached dwellings (primary subsidy beneficiaries); EV OEMs; Energimyndigheten. **Losers**: tenants in multi-dwelling buildings without assigned parking (design gap); grid-peak cost allocation may fall on non-EV households. **Decisive actor**: Boverket regulatory draft. Evidence: [boverket.se](https://www.boverket.se/), `HD01CU29` [A2].
 
-## Influence network
+### Influence network
 
 ```mermaid
 flowchart LR
@@ -433,19 +427,18 @@ flowchart LR
     style LO fill:#212121,stroke:#000,color:#fff
 ```
 
-## Sources
+### Sources
 
 See master table for per-row citations. All party positions inferred from published 2025–26 party group statements and prior-vote record at [riksdagen.se/voteringar](https://www.riksdagen.se/).
 
 ## Forward Indicators
-
-_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/forward-indicators.md)_
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/forward-indicators.md -->
 
 **Purpose**: leading indicator register for +30 d / +60 d / +90 d / +180 d horizons.
 **Standards**: each indicator has owner, source URL, expected date, and detection signal.
 **Confidence**: HIGH (B2) on sources; MEDIUM (C3) on expected-date predictions.
 
-## Indicator register (≥ 10 dated indicators)
+### Indicator register (≥ 10 dated indicators)
 
 | # | Indicator | Horizon | Expected date | Owner/Source | Signal | PIR link |
 |:-:|-----------|:-------:|:-------------:|--------------|--------|----------|
@@ -465,7 +458,7 @@ _Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blo
 | I14 | Opposition motion filings referencing CU25 / SfU23 | rolling | weekly to 2026-06 | [riksdagen.se](https://www.riksdagen.se/) [A1] | Volume surge → framing intensification | — |
 | I15 | S/V/MP coordinated press-event windows | +30 d → +60 d | 2026-05 → 2026-06 | [socialdemokraterna.se](https://www.socialdemokraterna.se/) [B3] | Coordinated timing → campaign alignment signal | — |
 
-## Horizon-stacked diagram
+### Horizon-stacked diagram
 
 ```mermaid
 flowchart LR
@@ -515,48 +508,47 @@ gantt
     I13 Nordic/EU coverage        :d4, 2026-05-01, 90d
 ```
 
-## Priority score
+### Priority score
 
 - **P0** (report-triggering): I1, I2, I4, I11 — directly drive scenario transitions.
 - **P1** (signal-confirming): I3, I5, I7, I10, I12 — confirm/disconfirm mainline judgments.
 - **P2** (contextual): I6, I8, I9, I13, I14, I15 — frame movement in surrounding narrative space.
 
-## Sources
+### Sources
 
 - All indicator sources cited above [A1–B3]
 - `HD01CU25`, `HD01SfU23`, `HD01FiU23`, `HD01AU15`, `HD01CU29` [A1]
 
 ## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/scenario-analysis.md)_
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/scenario-analysis.md -->
 
 **Framework**: `analysis/methodologies/strategic-extensions-methodology.md` (Alternative futures + leading indicators).
 **Horizon**: baseline 2026-04-24 → Sep 2026 general election → 2027 H1 implementation.
 **Confidence**: MEDIUM overall (C3); HIGH on event set (B2), MEDIUM on probability weighting.
 
-## Scenario set (probabilities sum to 100 %)
+### Scenario set (probabilities sum to 100 %)
 
-### Scenario 1 — "Signature delivery locked in" (p = 40 %)
+#### Scenario 1 — "Signature delivery locked in" (p = 40 %)
 
 CU25 Kriminalvården capacity report (+60 d) confirms on-track delivery; SfU23 transposes cleanly with researcher-carve-out operational by 2026 Q3; FiU23 passes without recapitalisation drama. Tidö enters Sep 2026 election with credible delivery ledger. Leading indicator: **Kriminalvården Q2 capacity status within ± 5 % of plan** ([kriminalvarden.se](https://www.kriminalvarden.se/) [A2], `HD01CU25`).
 
-### Scenario 2 — "Partial inversion on CU25" (p = 25 %)
+#### Scenario 2 — "Partial inversion on CU25" (p = 25 %)
 
 CU25 timeline slips ≥ 10 %; SfU23 and FiU23 land cleanly. Opposition weaponises delivery gap; Tidö still holds net-positive delivery narrative on migration and monetary stewardship. Leading indicator: **Kriminalvården Q2 report reveals > 10 % capacity shortfall OR Riksrevisionen audit flags procurement** ([riksrevisionen.se](https://www.riksrevisionen.se/) [A2]).
 
-### Scenario 3 — "Migration legal cascade" (p = 15 %)
+#### Scenario 3 — "Migration legal cascade" (p = 15 %)
 
 Migrationsöverdomstolen issues adverse proportionality ruling on SfU23 abuse-prevention provisions; Migrationsverket IT build slips ≥ 6 months. SfU23 becomes a liability. Leading indicator: **Domstolsväsendet prövningstillstånd on SfU23 test case OR MV transformation-programme status flagged at Digg** ([domstol.se](https://www.domstol.se/), [digg.se](https://www.digg.se/) [B2], `HD01SfU23`).
 
-### Scenario 4 — "Institutional-credibility crisis" (p = 12 %)
+#### Scenario 4 — "Institutional-credibility crisis" (p = 12 %)
 
 Riksbank recapitalisation becomes 2026 chamber-floor debate triggered by FiU23 review, dragging out into June 2026. V and MP amplify mandate questions; L and C protect independence. Leading indicator: **FiU scheduling a separate recapitalisation hearing OR Riksbank publication of extraordinary balance-sheet communication** ([riksbank.se](https://www.riksbank.se/) [A1], `HD01FiU23`).
 
-### Scenario 5 — "Broad-consensus windfall" (p = 8 %)
+#### Scenario 5 — "Broad-consensus windfall" (p = 8 %)
 
 AU15 ratification + CU29 EV-charging rollout generate unexpectedly large reputational dividends (Nordic + EU media); Tidö leverages into a L-led pre-election consensus pivot. Probability low because these are not campaign-decisive issues. Leading indicator: **Nordic Council coverage of AU15 ratification debate OR major EU climate outlet coverage of CU29 model** ([norden.org](https://www.norden.org/) [B3], `HD01AU15`, `HD01CU29`).
 
-## Scenario likelihood diagram
+### Scenario likelihood diagram
 
 ```mermaid
 pie title Scenario probabilities (Sep 2026 horizon)
@@ -567,7 +559,7 @@ pie title Scenario probabilities (Sep 2026 horizon)
     "S5 Broad-consensus windfall" : 8
 ```
 
-## Branching tree
+### Branching tree
 
 ```mermaid
 flowchart TD
@@ -596,7 +588,7 @@ flowchart TD
     style E5 fill:#212121,stroke:#000,color:#fff
 ```
 
-## Key indicators summary
+### Key indicators summary
 
 | Scenario | Leading indicator | Source | Horizon |
 |----------|-------------------|--------|---------|
@@ -606,19 +598,18 @@ flowchart TD
 | S4 | FiU separate recap hearing scheduled | [riksdagen.se/finansutskottet](https://www.riksdagen.se/) | +30 d to +60 d |
 | S5 | Nordic Council or EU media major AU15 / CU29 coverage | [norden.org](https://www.norden.org/) | +60 d to +180 d |
 
-## Sources
+### Sources
 
 `get_dokument` × 5 at data.riksdagen.se; agency + judicial leading indicators cited above.
 
 ## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/risk-assessment.md)_
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/risk-assessment.md -->
 
 **Framework**: `analysis/methodologies/political-risk-methodology.md` (5 dimensions: Institutional, Operational, Fiscal, Political-reputational, Legal-compliance).
 **Method**: Likelihood (L, 1–5) × Impact (I, 1–5) → Risk score (1–25). Cascading chains + posterior probabilities via Bayesian update where prior data exists.
 **Confidence**: HIGH on top-3 risks (B2); MEDIUM on tail risks (C3).
 
-## Risk register
+### Risk register
 
 | # | Dimension | Risk | Source doc | L | I | Score | Posterior | Evidence |
 |:-:|-----------|------|-----------|:-:|:-:|:-----:|:---------:|----------|
@@ -633,7 +624,7 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 | R9 | Operational | AU15 Arbetsmiljöverket guidance gap creates employer-compliance ambiguity | `HD01AU15` | 3 | 2 | 6 | 45 % | https://data.riksdagen.se/dokument/HD01AU15, [av.se](https://www.av.se/) [B3] |
 | R10 | Institutional | Post-2026 government change disrupts CU25 multi-year delivery commitment | `HD01CU25` | 3 | 4 | 12 | 40 % | https://data.riksdagen.se/dokument/HD01CU25 [B2] |
 
-## Risk heat map
+### Risk heat map
 
 ```mermaid
 quadrantChart
@@ -656,9 +647,9 @@ quadrantChart
     "R10 Post-election handover": [0.55, 0.78]
 ```
 
-## Cascading chains
+### Cascading chains
 
-### Chain A: Delivery-credibility collapse
+#### Chain A: Delivery-credibility collapse
 
 ```mermaid
 flowchart LR
@@ -677,7 +668,7 @@ flowchart LR
 
 Joint probability ≥ 1 R1/R3/R10 event within 2026 Q3: ~ 0.70. If joint ≥ 2 events: ~ 0.40. Source: Bayesian update on 2022–24 base rates — `kriminalvarden.se` annual reports, ESV major-project tracking.
 
-### Chain B: Migration legal–operational cascade
+#### Chain B: Migration legal–operational cascade
 
 ```mermaid
 flowchart LR
@@ -694,27 +685,26 @@ flowchart LR
     style Pol fill:#1565c0,stroke:#0b3a6b,color:#fff
 ```
 
-## Mitigations (recommended)
+### Mitigations (recommended)
 
 1. **R1 / R3 / R10** — Kriminalvården quarterly capacity-status publication cadence, with KU pre-flagging the Q2 2026 status report. Cost: low. Source: `HD01CU25` + Kriminalvården standard reporting.
 2. **R2 / R5** — Pre-enactment Migrationsverket IT architecture review by PTS/Digg; proportionality impact assessment published alongside ordinance. Source: `HD01SfU23`.
 3. **R4** — FiU to schedule Riksbank recapitalisation hearing separately from annual review to separate narratives. Source: `HD01FiU23`.
 
-## Sources
+### Sources
 
 Every row cites `dok_id` + authoritative implementation agency URL (kriminalvarden.se, migrationsverket.se, riksbank.se, ilo.org, ei.se, domstol.se, av.se).
 
 ## SWOT Analysis
-
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/swot-analysis.md)_
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/swot-analysis.md -->
 
 **Framework**: `analysis/methodologies/political-swot-framework.md` + TOWS matrix.
 **Scope**: the 5-report cluster tabled 2026-04-23.
 **Confidence**: HIGH (B2).
 
-## SWOT matrix
+### SWOT matrix
 
-### Strengths
+#### Strengths
 
 | # | Strength | Evidence | Admiralty |
 |:-:|----------|----------|:---------:|
@@ -724,7 +714,7 @@ _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/mai
 | S4 | Researcher carve-out in SfU23 protects competitiveness narrative | `HD01SfU23` carve-out for forskare/doktorander at [data.riksdagen.se/dokument/HD01SfU23](https://data.riksdagen.se/dokument/HD01SfU23) | A1 |
 | S5 | Cross-committee composition demonstrates coalition working throughput | CU+SfU+FiU+AU all tabled same day (5 reports) per [riksdagen.se](https://www.riksdagen.se/) calendar | A1 |
 
-### Weaknesses
+#### Weaknesses
 
 | # | Weakness | Evidence | Admiralty |
 |:-:|----------|----------|:---------:|
@@ -734,7 +724,7 @@ _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/mai
 | W4 | AU15 ratification timing (Sweden among the later ratifiers of C190) is defensive framing | ILO ratifications list at [ilo.org](https://www.ilo.org/); Denmark 2022, Finland 2023 | A1 |
 | W5 | CU29 funding model for home-charging subsidies is underspecified in the report title scope | `HD01CU29` at [data.riksdagen.se/dokument/HD01CU29](https://data.riksdagen.se/dokument/HD01CU29) | A1 |
 
-### Opportunities
+#### Opportunities
 
 | # | Opportunity | Evidence | Admiralty |
 |:-:|-------------|----------|:---------:|
@@ -744,7 +734,7 @@ _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/mai
 | O4 | FiU23 review anchors standing inflation-credibility message pre-election | `HD01FiU23` + [riksbank.se Penningpolitisk rapport](https://www.riksbank.se/) | A1 |
 | O5 | CU25 procurement velocity creates civil-construction jobs in low-population regions | `HD01CU25` + Kriminalvården planned sites at [kriminalvarden.se](https://www.kriminalvarden.se/) | B2 |
 
-### Threats
+#### Threats
 
 | # | Threat | Evidence | Admiralty |
 |:-:|--------|----------|:---------:|
@@ -754,20 +744,20 @@ _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/mai
 | T4 | ILO ratification + transposition creates compliance litigation baseline for employers | `HD01AU15` + Svenskt Näringsliv position papers at [svensktnaringsliv.se](https://www.svensktnaringsliv.se/) | B2 |
 | T5 | CU29 home-charging incentives capture by grid-peak cost allocation creates regressive effect | `HD01CU29` + Energimarknadsinspektionen tariff framework [ei.se](https://www.ei.se/) | C3 |
 
-## TOWS matrix (derived strategies)
+### TOWS matrix (derived strategies)
 
 | | S (internal +) | W (internal -) |
 |---|----------------|----------------|
 | **O (external +)** | **SO**: Pair S1+S3 with O1+O2 — message "delivery + EU-compatible workers' rights + climate" (`HD01AU15`, `HD01CU29`) | **WO**: Use O1 (EU PWD pair) to offset W4 (late ratification) narrative on `HD01AU15` |
 | **T (external -)** | **ST**: Use S2 institutional credibility (`HD01FiU23`) to preempt T3 balance-sheet narrative | **WT**: Pre-publish Kriminalvården Q2 capacity status to defuse W1+T1 combination on `HD01CU25` |
 
-## Cross-SWOT integration (policy clusters)
+### Cross-SWOT integration (policy clusters)
 
 - **Law-and-order delivery cluster** (CU25 ↔ SfU23): S1+S4 combine with T1+T2 — if CU25 timeline slips *and* SfU23 gets judicial pushback, the combined narrative inversion is larger than either alone. Source: `HD01CU25`, `HD01SfU23`.
 - **Institutional-stewardship cluster** (FiU23 ↔ AU15): S2+O4 combine to anchor a pre-election "responsible management" frame; T3 is the counter-frame. Source: `HD01FiU23`, `HD01AU15`.
 - **Climate-mobility cluster** (CU29 only): isolated; O2 creates option to pair with future CU committee agenda. Source: `HD01CU29`.
 
-## Cluster diagram
+### Cluster diagram
 
 ```mermaid
 flowchart TB
@@ -790,21 +780,20 @@ flowchart TB
     style NarrInv fill:#ef6c00,stroke:#8c3a00,color:#fff
 ```
 
-## Sources
+### Sources
 
 All rows cite `dok_id` + primary-source URL. See `cross-reference-map.md` for policy-cluster citations.
 
 ## Threat Analysis
-
-_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/threat-analysis.md)_
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/threat-analysis.md -->
 
 **Framework**: `analysis/methodologies/political-threat-framework.md` — Political Threat Taxonomy with attack tree + kill chain + MITRE-style TTP mapping.
 **Scope**: threats to democratic institutions, policy integrity, and epistemic environment arising from today's 5-report cluster.
 **Confidence**: MEDIUM (C3) — intent signals are indirect; capability signals are well-attested.
 
-## Threat taxonomy (per-category)
+### Threat taxonomy (per-category)
 
-### Institutional threats
+#### Institutional threats
 
 | T# | Threat | Source | Kill-chain stage | Admiralty |
 |:-:|--------|--------|------------------|:---------:|
@@ -812,7 +801,7 @@ _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 | TI-2 | CU25 planning-law carve-outs normalising shortcut procedure for future infra | `HD01CU25` + Miljöbalken 6 kap references ([riksdagen.se/dokument/1998:808](https://www.riksdagen.se/)) | Install (precedent) | B2 |
 | TI-3 | Migrationsöverdomstolen caseload surge degrading appeal-quality on SfU23 | `HD01SfU23` + [domstol.se](https://www.domstol.se/) appeal-handling-time metric | Impact (institutional capacity) | B3 |
 
-### Policy-integrity threats
+#### Policy-integrity threats
 
 | T# | Threat | Source | Kill-chain stage | Admiralty |
 |:-:|--------|--------|------------------|:---------:|
@@ -820,7 +809,7 @@ _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 | TP-2 | CU29 subsidy capture by property-developer lobby re-routing design | `HD01CU29` + public consultation history on energy/property interface ([boverket.se](https://www.boverket.se/)) | Exploit (regulatory-design) | C3 |
 | TP-3 | AU15 employer-compliance guidance thinning under ratification-without-resources dynamic | `HD01AU15` + [av.se](https://www.av.se/) resource trajectory | Impact (enforcement gap) | B3 |
 
-### Epistemic / information threats
+#### Epistemic / information threats
 
 | T# | Threat | Source | Kill-chain stage | Admiralty |
 |:-:|--------|--------|------------------|:---------:|
@@ -828,7 +817,7 @@ _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 | TE-2 | Social-media narrative lock-in on SfU23 "abuse" framing ahead of researcher-carve-out media cycle | `HD01SfU23` + MSB / Diggs reports | Reconnaissance/Amplify | C3 |
 | TE-3 | Polarised framing of ILO C190 as foreign-imposed on Swedish labour model | `HD01AU15` + [ilo.org](https://www.ilo.org/) ratification coverage | Weaponise | D3 |
 
-## Attack tree — CU25 delegitimisation (illustrative)
+### Attack tree — CU25 delegitimisation (illustrative)
 
 ```mermaid
 flowchart TD
@@ -863,7 +852,7 @@ flowchart TD
     style C2 fill:#1565c0,stroke:#0b3a6b,color:#fff
 ```
 
-## Kill chain mapping
+### Kill chain mapping
 
 | Stage | CU25 pathway | SfU23 pathway | FiU23 pathway |
 |-------|--------------|---------------|----------------|
@@ -874,7 +863,7 @@ flowchart TD
 | Install | Precedent on planning-law shortcut | Precedent on proportionality threshold | Precedent on recapitalisation procedure |
 | Impact | Delivery credibility | Appeal capacity + research mobility | Monetary-policy credibility |
 
-## MITRE-style political TTP map
+### MITRE-style political TTP map
 
 | TTP ID | Technique | Instantiation |
 |--------|-----------|---------------|
@@ -885,48 +874,47 @@ flowchart TD
 | PT-IN-005 | Install: precedent anchoring | Planning-law carve-out on `HD01CU25` |
 | PT-IM-006 | Impact: institutional-credibility erosion | Riksbank independence narrative on `HD01FiU23` |
 
-## Threat prioritisation
+### Threat prioritisation
 
 - **P1 (active, monitor)**: TI-1 (Riksbank narrative), TI-2 (CU25 planning precedent), TI-3 (Migration court capacity).
 - **P2 (latent, prepare)**: TP-1 (SfU23 ordinance scope-creep), TE-1 (CU25 disinfo).
 - **P3 (watch)**: TP-2 / TP-3 / TE-2 / TE-3.
 
-## Sources
+### Sources
 
 All threats cited with `dok_id` + primary agency URL. Epistemic threats calibrated against [msb.se](https://www.msb.se/) disinformation baseline (2023–25 reports, B2).
 
 ## Per-document intelligence
 
 ### HD01AU15
-
-_Source: [`documents/HD01AU15-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01AU15-analysis.md)_
+<!-- source: documents/HD01AU15-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01AU15-analysis.md -->
 
 **Committee**: Arbetsmarknadsutskottet (AU)
 **Riksmöte**: 2025/26   **Tabling date**: 2026-04-23 (lookback from 2026-04-24)
 **DIW**: 45
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
-## Summary
+### Summary
 
 Internationell arbetsrätt; ILO C190 trolig huvudfokus. This per-document brief tracks the item through the coordinated 2026-04-24 cluster (see [`../synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/synthesis-summary.md), [`../cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/cross-reference-map.md)).
 
-## Document identifiers
+### Document identifiers
 
 - **`dok_id`**: `HD01AU15`
 - **Primary source**: [data.riksdagen.se/dokument/HD01AU15](https://data.riksdagen.se/dokument/HD01AU15) [A1]
 - **Committee landing**: [riksdagen.se/au](https://www.riksdagen.se/sv/utskotten-och-eu-namnden/) [A1]
 
-## Key content inferred
+### Key content inferred
 
 - Title: "Internationella arbetsorganisationens (ILO) konventioner, protokoll och rekommendationer"
 - Committee discipline: Arbetsmarknadsutskottet standard instrument for this policy area.
 - Expected outcome: adoption with bloc-line voting per `../coalition-mathematics.md`.
 
-## Significance
+### Significance
 
 This report carries **DIW 45** in the cluster ranking — see [`../significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/significance-scoring.md). Rationale: salience × coalition-stress × precedent-value per the DIW framework in `analysis/methodologies/ai-driven-analysis-guide.md`.
 
-## Linked artifacts
+### Linked artifacts
 
 - Cluster overview: [`../README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/README.md)
 - Executive brief: [`../executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief.md)
@@ -938,7 +926,7 @@ This report carries **DIW 45** in the cluster ranking — see [`../significance-
 - Scenarios: [`../scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/scenario-analysis.md)
 - Intelligence assessment: [`../intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/intelligence-assessment.md)
 
-## Document-specific Mermaid
+### Document-specific Mermaid
 
 ```mermaid
 flowchart LR
@@ -951,45 +939,44 @@ flowchart LR
     style E fill:#c62828,stroke:#7f1010,color:#fff
 ```
 
-## Pass-2 note
+### Pass-2 note
 
 Pass 2 revalidated DIW 45 against sensitivity band documented in `../significance-scoring.md` and confirmed the coalition-stress and electoral-salience sub-scores are internally consistent with [`../coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/coalition-mathematics.md) and [`../election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/election-2026-analysis.md).
 
-## Sources
+### Sources
 
 - `get_dokument({"dok_id":"HD01AU15"})` → data.riksdagen.se [A1]
 - Committee context: [riksdagen.se/sv/utskotten-och-eu-namnden](https://www.riksdagen.se/) [A1]
 
 ### HD01CU25
-
-_Source: [`documents/HD01CU25-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01CU25-analysis.md)_
+<!-- source: documents/HD01CU25-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01CU25-analysis.md -->
 
 **Committee**: Civilutskottet (CU)
 **Riksmöte**: 2025/26   **Tabling date**: 2026-04-23 (lookback from 2026-04-24)
 **DIW**: 85
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
-## Summary
+### Summary
 
 +8 500 häktes-/anstaltsplatser över 2026–2030; planlagsundantag. This per-document brief tracks the item through the coordinated 2026-04-24 cluster (see [`../synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/synthesis-summary.md), [`../cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/cross-reference-map.md)).
 
-## Document identifiers
+### Document identifiers
 
 - **`dok_id`**: `HD01CU25`
 - **Primary source**: [data.riksdagen.se/dokument/HD01CU25](https://data.riksdagen.se/dokument/HD01CU25) [A1]
 - **Committee landing**: [riksdagen.se/cu](https://www.riksdagen.se/sv/utskotten-och-eu-namnden/) [A1]
 
-## Key content inferred
+### Key content inferred
 
 - Title: "Kriminalvårdens kapacitet"
 - Committee discipline: Civilutskottet standard instrument for this policy area.
 - Expected outcome: adoption with bloc-line voting per `../coalition-mathematics.md`.
 
-## Significance
+### Significance
 
 This report carries **DIW 85** in the cluster ranking — see [`../significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/significance-scoring.md). Rationale: salience × coalition-stress × precedent-value per the DIW framework in `analysis/methodologies/ai-driven-analysis-guide.md`.
 
-## Linked artifacts
+### Linked artifacts
 
 - Cluster overview: [`../README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/README.md)
 - Executive brief: [`../executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief.md)
@@ -1001,7 +988,7 @@ This report carries **DIW 85** in the cluster ranking — see [`../significance-
 - Scenarios: [`../scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/scenario-analysis.md)
 - Intelligence assessment: [`../intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/intelligence-assessment.md)
 
-## Document-specific Mermaid
+### Document-specific Mermaid
 
 ```mermaid
 flowchart LR
@@ -1014,45 +1001,44 @@ flowchart LR
     style E fill:#c62828,stroke:#7f1010,color:#fff
 ```
 
-## Pass-2 note
+### Pass-2 note
 
 Pass 2 revalidated DIW 85 against sensitivity band documented in `../significance-scoring.md` and confirmed the coalition-stress and electoral-salience sub-scores are internally consistent with [`../coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/coalition-mathematics.md) and [`../election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/election-2026-analysis.md).
 
-## Sources
+### Sources
 
 - `get_dokument({"dok_id":"HD01CU25"})` → data.riksdagen.se [A1]
 - Committee context: [riksdagen.se/sv/utskotten-och-eu-namnden](https://www.riksdagen.se/) [A1]
 
 ### HD01CU29
-
-_Source: [`documents/HD01CU29-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01CU29-analysis.md)_
+<!-- source: documents/HD01CU29-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01CU29-analysis.md -->
 
 **Committee**: Civilutskottet (CU)
 **Riksmöte**: 2025/26   **Tabling date**: 2026-04-23 (lookback from 2026-04-24)
 **DIW**: 50
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
-## Summary
+### Summary
 
 Laddbox/typ-2 subsidieregim; Boverket + Energimyndigheten. This per-document brief tracks the item through the coordinated 2026-04-24 cluster (see [`../synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/synthesis-summary.md), [`../cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/cross-reference-map.md)).
 
-## Document identifiers
+### Document identifiers
 
 - **`dok_id`**: `HD01CU29`
 - **Primary source**: [data.riksdagen.se/dokument/HD01CU29](https://data.riksdagen.se/dokument/HD01CU29) [A1]
 - **Committee landing**: [riksdagen.se/cu](https://www.riksdagen.se/sv/utskotten-och-eu-namnden/) [A1]
 
-## Key content inferred
+### Key content inferred
 
 - Title: "Laddning av elfordon i det egna hemmet"
 - Committee discipline: Civilutskottet standard instrument for this policy area.
 - Expected outcome: adoption with bloc-line voting per `../coalition-mathematics.md`.
 
-## Significance
+### Significance
 
 This report carries **DIW 50** in the cluster ranking — see [`../significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/significance-scoring.md). Rationale: salience × coalition-stress × precedent-value per the DIW framework in `analysis/methodologies/ai-driven-analysis-guide.md`.
 
-## Linked artifacts
+### Linked artifacts
 
 - Cluster overview: [`../README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/README.md)
 - Executive brief: [`../executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief.md)
@@ -1064,7 +1050,7 @@ This report carries **DIW 50** in the cluster ranking — see [`../significance-
 - Scenarios: [`../scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/scenario-analysis.md)
 - Intelligence assessment: [`../intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/intelligence-assessment.md)
 
-## Document-specific Mermaid
+### Document-specific Mermaid
 
 ```mermaid
 flowchart LR
@@ -1077,45 +1063,44 @@ flowchart LR
     style E fill:#c62828,stroke:#7f1010,color:#fff
 ```
 
-## Pass-2 note
+### Pass-2 note
 
 Pass 2 revalidated DIW 50 against sensitivity band documented in `../significance-scoring.md` and confirmed the coalition-stress and electoral-salience sub-scores are internally consistent with [`../coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/coalition-mathematics.md) and [`../election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/election-2026-analysis.md).
 
-## Sources
+### Sources
 
 - `get_dokument({"dok_id":"HD01CU29"})` → data.riksdagen.se [A1]
 - Committee context: [riksdagen.se/sv/utskotten-och-eu-namnden](https://www.riksdagen.se/) [A1]
 
 ### HD01FiU23
-
-_Source: [`documents/HD01FiU23-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01FiU23-analysis.md)_
+<!-- source: documents/HD01FiU23-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01FiU23-analysis.md -->
 
 **Committee**: Finansutskottet (FiU)
 **Riksmöte**: 2025/26   **Tabling date**: 2026-04-23 (lookback from 2026-04-24)
 **DIW**: 65
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
-## Summary
+### Summary
 
 Balansräkning 2024–25, rekapitaliseringsfråga latent. This per-document brief tracks the item through the coordinated 2026-04-24 cluster (see [`../synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/synthesis-summary.md), [`../cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/cross-reference-map.md)).
 
-## Document identifiers
+### Document identifiers
 
 - **`dok_id`**: `HD01FiU23`
 - **Primary source**: [data.riksdagen.se/dokument/HD01FiU23](https://data.riksdagen.se/dokument/HD01FiU23) [A1]
 - **Committee landing**: [riksdagen.se/fiu](https://www.riksdagen.se/sv/utskotten-och-eu-namnden/) [A1]
 
-## Key content inferred
+### Key content inferred
 
 - Title: "Riksbankens verksamhet 2025"
 - Committee discipline: Finansutskottet standard instrument for this policy area.
 - Expected outcome: adoption with bloc-line voting per `../coalition-mathematics.md`.
 
-## Significance
+### Significance
 
 This report carries **DIW 65** in the cluster ranking — see [`../significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/significance-scoring.md). Rationale: salience × coalition-stress × precedent-value per the DIW framework in `analysis/methodologies/ai-driven-analysis-guide.md`.
 
-## Linked artifacts
+### Linked artifacts
 
 - Cluster overview: [`../README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/README.md)
 - Executive brief: [`../executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief.md)
@@ -1127,7 +1112,7 @@ This report carries **DIW 65** in the cluster ranking — see [`../significance-
 - Scenarios: [`../scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/scenario-analysis.md)
 - Intelligence assessment: [`../intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/intelligence-assessment.md)
 
-## Document-specific Mermaid
+### Document-specific Mermaid
 
 ```mermaid
 flowchart LR
@@ -1140,45 +1125,44 @@ flowchart LR
     style E fill:#c62828,stroke:#7f1010,color:#fff
 ```
 
-## Pass-2 note
+### Pass-2 note
 
 Pass 2 revalidated DIW 65 against sensitivity band documented in `../significance-scoring.md` and confirmed the coalition-stress and electoral-salience sub-scores are internally consistent with [`../coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/coalition-mathematics.md) and [`../election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/election-2026-analysis.md).
 
-## Sources
+### Sources
 
 - `get_dokument({"dok_id":"HD01FiU23"})` → data.riksdagen.se [A1]
 - Committee context: [riksdagen.se/sv/utskotten-och-eu-namnden](https://www.riksdagen.se/) [A1]
 
 ### HD01SfU23
-
-_Source: [`documents/HD01SfU23-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01SfU23-analysis.md)_
+<!-- source: documents/HD01SfU23-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01SfU23-analysis.md -->
 
 **Committee**: Socialförsäkringsutskottet (SfU)
 **Riksmöte**: 2025/26   **Tabling date**: 2026-04-23 (lookback from 2026-04-24)
 **DIW**: 80
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
-## Summary
+### Summary
 
 Dubbelspår: skärpning + forskarundantag. This per-document brief tracks the item through the coordinated 2026-04-24 cluster (see [`../synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/synthesis-summary.md), [`../cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/cross-reference-map.md)).
 
-## Document identifiers
+### Document identifiers
 
 - **`dok_id`**: `HD01SfU23`
 - **Primary source**: [data.riksdagen.se/dokument/HD01SfU23](https://data.riksdagen.se/dokument/HD01SfU23) [A1]
 - **Committee landing**: [riksdagen.se/sfu](https://www.riksdagen.se/sv/utskotten-och-eu-namnden/) [A1]
 
-## Key content inferred
+### Key content inferred
 
 - Title: "Migration, arbetskraft och forskare"
 - Committee discipline: Socialförsäkringsutskottet standard instrument for this policy area.
 - Expected outcome: adoption with bloc-line voting per `../coalition-mathematics.md`.
 
-## Significance
+### Significance
 
 This report carries **DIW 80** in the cluster ranking — see [`../significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/significance-scoring.md). Rationale: salience × coalition-stress × precedent-value per the DIW framework in `analysis/methodologies/ai-driven-analysis-guide.md`.
 
-## Linked artifacts
+### Linked artifacts
 
 - Cluster overview: [`../README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/README.md)
 - Executive brief: [`../executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief.md)
@@ -1190,7 +1174,7 @@ This report carries **DIW 80** in the cluster ranking — see [`../significance-
 - Scenarios: [`../scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/scenario-analysis.md)
 - Intelligence assessment: [`../intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/intelligence-assessment.md)
 
-## Document-specific Mermaid
+### Document-specific Mermaid
 
 ```mermaid
 flowchart LR
@@ -1203,23 +1187,22 @@ flowchart LR
     style E fill:#c62828,stroke:#7f1010,color:#fff
 ```
 
-## Pass-2 note
+### Pass-2 note
 
 Pass 2 revalidated DIW 80 against sensitivity band documented in `../significance-scoring.md` and confirmed the coalition-stress and electoral-salience sub-scores are internally consistent with [`../coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/coalition-mathematics.md) and [`../election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/election-2026-analysis.md).
 
-## Sources
+### Sources
 
 - `get_dokument({"dok_id":"HD01SfU23"})` → data.riksdagen.se [A1]
 - Committee context: [riksdagen.se/sv/utskotten-och-eu-namnden](https://www.riksdagen.se/) [A1]
 
 ## Election 2026 Analysis
-
-_Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/election-2026-analysis.md)_
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/election-2026-analysis.md -->
 
 **Horizon**: Sep 2026 general election (~140 days from base date).
 **Confidence**: MEDIUM (C3) on electoral impact inferences; HIGH (B2) on delivery-indicator logic.
 
-## Electoral salience ranking of cluster items
+### Electoral salience ranking of cluster items
 
 | Item | Electoral salience (0-100) | Base for rating | Expected voter segments activated |
 |------|:--------------------------:|-----------------|----------------------------------|
@@ -1229,19 +1212,19 @@ _Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor
 | `HD01AU15` ILO | 35 | Low mass-salient, HR/labour niche | Unionised workers, liberal professional |
 | `HD01CU29` EV home charging | 45 | Moderate suburban-detached-housing salient | M suburban, MP climate, L suburban |
 
-## Likely campaign framings
+### Likely campaign framings
 
-### Tidö framings (pro)
+#### Tidö framings (pro)
 1. **Delivery ledger**: "Vi levererar: 8 500 nya häktes-/anstaltsplatser (CU25), stramare migration med kompetensskydd (SfU23), ansvarsfull ekonomi (FiU23)."
 2. **Breadth**: "Vi ratificerar också internationella arbetsnormer (AU15) och stöttar omställningen (CU29)."
 
-### Opposition framings (contra)
+#### Opposition framings (contra)
 1. **S** — "Tidö misslyckas med välfärd medan man bygger fängelser" (social-priority inversion).
 2. **V** — "Institutionella fundament urholkas" (Riksbank + Riksrevisionen framing).
 3. **MP** — "Klimatomställning underprioriteras jämfört med straffskärpning."
 4. **C** — "Kommunalt självbestämmande undergrävs av CU25-planlagsundantag."
 
-## Potential inflection points
+### Potential inflection points
 
 | Date (approx) | Event | Expected electoral consequence |
 |---------------|-------|-------------------------------|
@@ -1251,12 +1234,12 @@ _Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor
 | 2026-08 | Migration-permit Q2 stats | If abuse-statistic drops: SfU23 asset; else liability |
 | 2026-09 | General election | Outcome |
 
-## Coalition-stress electoral implication
+### Coalition-stress electoral implication
 
 - **SD–L stress** on SfU23 is contained (< 20 % defection probability per KJ-3). L electorate (urban liberal, university towns) responsive to carve-out framing.
 - **M–KD stress** on CU29 subsidy cost is low-grade; KD electorate (suburban family) receptive to distributive framing.
 
-## Expected polling impact
+### Expected polling impact
 
 Based on Bayesian update on 2022–24 committee-report clusters:
 - **If delivery on CU25 + SfU23**: Tidö bloc +1.5 to +3 pp through August 2026.
@@ -1265,7 +1248,7 @@ Based on Bayesian update on 2022–24 committee-report clusters:
 
 Prior distribution P(delivery-on-track) = 0.45; P(CU25-only-slip) = 0.30; P(both-slip) = 0.25.
 
-## Cluster-level electoral impact diagram
+### Cluster-level electoral impact diagram
 
 ```mermaid
 flowchart TD
@@ -1295,20 +1278,19 @@ flowchart TD
     style Sep fill:#ffbe0b,stroke:#b88500,color:#000
 ```
 
-## Sources
+### Sources
 
 - `HD01CU25`, `HD01SfU23`, `HD01FiU23`, `HD01AU15`, `HD01CU29` [A1]
 - [val.se](https://www.val.se/) (election calendar) [A1]
 - Novus/Sifo 2025 Q4 priority rankings ([novus.se](https://novus.se/)) [B2]
 
 ## Coalition Mathematics
-
-_Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/coalition-mathematics.md)_
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/coalition-mathematics.md -->
 
 **Framework**: Current 2022–2026 Riksdag arithmetic applied to cluster-item voting scenarios.
 **Confidence**: HIGH (B2) on seat counts; MEDIUM (C3) on defection probabilities.
 
-## Current Riksdag seat distribution (349 mandat)
+### Current Riksdag seat distribution (349 mandat)
 
 | Parti | Mandat | Block |
 |-------|:------:|-------|
@@ -1325,9 +1307,9 @@ _Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/
 
 Source: [riksdagen.se/ledamoter-och-partier](https://www.riksdagen.se/) [A1].
 
-## Expected floor vote projections
+### Expected floor vote projections
 
-### `HD01CU25` prison capacity — Expected outcome
+#### `HD01CU25` prison capacity — Expected outcome
 
 | Result | S | SD | M | V | C | KD | MP | L | Total |
 |--------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-----:|
@@ -1339,7 +1321,7 @@ Source: [riksdagen.se/ledamoter-och-partier](https://www.riksdagen.se/) [A1].
 
 Outcome: adopted 176-173. Tidö margin 3 seats — no defections tolerable.
 
-### `HD01SfU23` migration/researchers — Expected outcome
+#### `HD01SfU23` migration/researchers — Expected outcome
 
 | Result | S | SD | M | V | C | KD | MP | L | Total |
 |--------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-----:|
@@ -1351,7 +1333,7 @@ Outcome: adopted 176-173. Tidö margin 3 seats — no defections tolerable.
 
 Conditional on L staying: adopted 176-173. If L defects (< 20 % probability per KJ-3): 160-189, defeated.
 
-### `HD01FiU23` Riksbank 2025 — Expected outcome
+#### `HD01FiU23` Riksbank 2025 — Expected outcome
 
 | Result | S | SD | M | V | C | KD | MP | L | Total |
 |--------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-----:|
@@ -1363,7 +1345,7 @@ Conditional on L staying: adopted 176-173. If L defects (< 20 % probability per 
 
 Broad-consensus review — expected adoption 307-42.
 
-### `HD01AU15` ILO ratification — Expected outcome
+#### `HD01AU15` ILO ratification — Expected outcome
 
 | Result | S | SD | M | V | C | KD | MP | L | Total |
 |--------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-----:|
@@ -1375,7 +1357,7 @@ Broad-consensus review — expected adoption 307-42.
 
 Expected adoption 276-73 with SD opposition likely (nationalist frame).
 
-### `HD01CU29` EV home charging — Expected outcome
+#### `HD01CU29` EV home charging — Expected outcome
 
 | Result | S | SD | M | V | C | KD | MP | L | Total |
 |--------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-----:|
@@ -1387,7 +1369,7 @@ Expected adoption 276-73 with SD opposition likely (nationalist frame).
 
 Adopted 176-0; opposition abstains (distributive critique but not full opposition).
 
-## Post-election 2026 scenarios (350 polling + Sifo baseline)
+### Post-election 2026 scenarios (350 polling + Sifo baseline)
 
 | Scenario (Q4 2025) | Tidö Σ | Opposition Σ | Delta from current |
 |--------------------|:------:|:------------:|:------------------:|
@@ -1395,7 +1377,7 @@ Adopted 176-0; opposition abstains (distributive critique but not full oppositio
 | Optimistic-delivery projection | 172-178 | 171-177 | Knife-edge |
 | Pessimistic-slip projection | 158-164 | 185-191 | Opposition majority ≥ 12 |
 
-## Coalition arithmetic diagram
+### Coalition arithmetic diagram
 
 ```mermaid
 flowchart LR
@@ -1431,20 +1413,19 @@ flowchart LR
     style MP fill:#212121,stroke:#000,color:#fff
 ```
 
-## Sources
+### Sources
 
 - [riksdagen.se/ledamoter-och-partier](https://www.riksdagen.se/) seat distribution [A1]
 - `HD01CU25`, `HD01SfU23`, `HD01FiU23`, `HD01AU15`, `HD01CU29` [A1]
 - Q4 2025 polling: Novus, Sifo, Demoskop aggregates [B2]
 
 ## Voter Segmentation
-
-_Source: [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/voter-segmentation.md)_
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/voter-segmentation.md -->
 
 **Segmentation framework**: Swedish voter archetypes (7 segments) × cluster items.
 **Confidence**: MEDIUM (C3) on activation probabilities.
 
-## Segment × item activation matrix
+### Segment × item activation matrix
 
 | Segment | CU25 | SfU23 | FiU23 | AU15 | CU29 | Net activation |
 |---------|:---:|:----:|:----:|:----:|:----:|:--------------:|
@@ -1458,19 +1439,19 @@ _Source: [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blo
 
 Percentages approximate 2025 Q4 electorate structure per SCB [A1] + Novus segmentation ([novus.se](https://novus.se/)) [B2].
 
-## Swing-voter identification
+### Swing-voter identification
 
 Two segments are pivotal for September:
 - **Segment 3 (urban liberal professionals)** — moved between L/C/M/S historically. SfU23 carve-out + AU15 ratification can lock in L vote; CU25 net neutral.
 - **Segment 4 (suburban family voters)** — swing between M/KD and S. CU25 + CU29 combination can reinforce M/KD cohesion; CU29 is a distributional test.
 
-## Activation pathways
+### Activation pathways
 
 1. **Tidö-favourable pathway**: CU25 on-track + SfU23 carve-out operational + CU29 subsidy delivered → activation in segments 1, 4, with partial 3 — net + 1.5 to + 3 pp.
 2. **Opposition-favourable pathway**: CU25 slip + SfU23 legal cascade + welfare-priority inversion framing effective → activation in segments 2, 5, 6 — net + 1 to + 2 pp opposition.
 3. **Institutional-independence pathway**: FiU23 recapitalisation becomes central debate → activation in segments 3, 5 — ambiguous net effect; depends on framing.
 
-## Segment diagram
+### Segment diagram
 
 ```mermaid
 flowchart LR
@@ -1506,21 +1487,20 @@ flowchart LR
     style Sep fill:#212121,stroke:#000,color:#fff
 ```
 
-## Sources
+### Sources
 
 - 2025 Q4 SCB electorate structure ([scb.se](https://www.scb.se/)) [A1]
 - Novus/Sifo segmentation ([novus.se](https://novus.se/)) [B2]
 - `HD01CU25`, `HD01SfU23`, `HD01FiU23`, `HD01AU15`, `HD01CU29` [A1]
 
 ## Comparative International
-
-_Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/comparative-international.md)_
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/comparative-international.md -->
 
 **Framework**: Outside-In analysis with Nordic + EU comparator set.
 **Comparator set**: Denmark (primary Nordic), Finland (primary Nordic), Norway (Nordic non-EU), Germany (EU large-state), Netherlands (EU mid-state).
 **Confidence**: HIGH on ratification dates and formal regimes (A1); MEDIUM on implementation quality inferences (B2).
 
-## Comparator summary table
+### Comparator summary table
 
 | Jurisdiction | ILO C190 ratified | Prison-capacity model | Central-bank recap precedent | Migration-research carve-out | EV home-charging regime |
 |--------------|:-----------------:|-----------------------|------------------------------|------------------------------|--------------------------|
@@ -1531,24 +1511,24 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 | **Germany** | 2022 ([bmas.de](https://www.bmas.de/)) | Federal-state co-investment on Justizvollzug | Bundesbank statutory framework (ECB) | Blaue Karte + research fast-track | KfW home-charging programme ([kfw.de](https://www.kfw.de/)) |
 | **Netherlands** | 2023 ([rijksoverheid.nl](https://www.rijksoverheid.nl/)) | Dienst Justitiële Inrichtingen long-term capacity plan | DNB recap via statutory process ([dnb.nl](https://www.dnb.nl/)) | Kennismigrant visa regime ([ind.nl](https://ind.nl/)) | Subsidieregeling elektrische personenauto's ([rvo.nl](https://www.rvo.nl/)) |
 
-## Outside-In lessons
+### Outside-In lessons
 
-### For `HD01AU15` (ILO ratification)
+#### For `HD01AU15` (ILO ratification)
 Sweden is among the later ratifiers — Denmark 2022, Finland/Norway/Netherlands 2023, Germany 2022. The late-ratification framing is quantitatively supported: of 5 Nordic/EU comparators, 4 ratified C190 before Sweden. Defence: Swedish legal compatibility review ([regeringen.se](https://www.regeringen.se/)) treated C190 as requiring transposition work in Diskrimineringslagen and Arbetsmiljölagen — a substantive rather than symbolic approach. [Source A1 ilo.org]
 
-### For `HD01CU25` (prison capacity)
+#### For `HD01CU25` (prison capacity)
 Denmark's 2021 leased-capacity + Kosovo pilot is the most aggressive Nordic precedent; Finland's 2023 bill is closest in shape to CU25. Comparative risk signal: both neighbours faced procedural legal challenges before construction began — Sweden's planning-law carve-out pathway has to be evaluated against those experiences. [Source A2 om.fi / justitsministeriet.dk]
 
-### For `HD01FiU23` (Riksbank 2025)
+#### For `HD01FiU23` (Riksbank 2025)
 The Nordic / Eurozone central-bank recap framework precedents — Nationalbanken (DK, statutory reserve), Norges Bank (NO, petroleum-fund interaction), Bundesbank/DNB (EU, Eurosystem framework) — show the **procedural separation** between annual review and recapitalisation as standard practice. FiU should sequence accordingly. [Source A1 riksbank.se + comparator central-bank sites]
 
-### For `HD01SfU23` (migration / research)
+#### For `HD01SfU23` (migration / research)
 Denmark, Finland, Norway, Germany, Netherlands all operate researcher fast-tracks. Sweden's SfU23 carve-out brings it into parity. The abuse-prevention framing is the Swedish-specific differentiator — Denmark's NyiDanmark enforcement model is the closest analogue. [Source A2 nyidanmark.dk]
 
-### For `HD01CU29` (EV home-charging)
+#### For `HD01CU29` (EV home-charging)
 Finland's ARA subsidy and Norway's Enova schemes are the most mature Nordic comparators; both show that take-up concentrates in detached-housing demographics without multi-dwelling provisions — the regressivity concern in R7 of `risk-assessment.md` is replicated internationally. [Source A2 enova.no / ara.fi]
 
-## Comparator diagram
+### Comparator diagram
 
 ```mermaid
 flowchart LR
@@ -1572,42 +1552,41 @@ flowchart LR
     style ILO fill:#2e7d32,stroke:#1b4d1f,color:#fff
 ```
 
-## Sources
+### Sources
 
 All ratification dates from ilo.org NORMLEX database [A1]; all comparator agencies cited above.
 
 ## Historical Parallels
-
-_Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/historical-parallels.md)_
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/historical-parallels.md -->
 
 **Framework**: historical-pattern analysis with ≥ 3 prior precedents; Admiralty-coded sources.
 **Confidence**: MEDIUM (C3) on causal analogies.
 
-## Parallel 1 — Pre-election committee-report clustering (2022, 2018, 2014)
+### Parallel 1 — Pre-election committee-report clustering (2022, 2018, 2014)
 
 Incumbent governments have historically front-loaded committee reports in the final spring before September elections. 2018 S+MP government tabled ≥ 5 signature committee reports in April-May; 2014 S-led opposition-constraining cluster in spring 2014; 2022 S government in April 2022. Base rate for pre-election cluster: ~ 80 % of incumbencies. [B2, riksdagen.se/kalender archives]
 
-## Parallel 2 — Kriminalvården capacity plans (2020, 2023)
+### Parallel 2 — Kriminalvården capacity plans (2020, 2023)
 
 Two prior capacity-expansion plans (2020, 2023) — both missed original timelines by ≥ 15 % within 18 months ([kriminalvarden.se](https://www.kriminalvarden.se/) annual reports) [A2]. This is the base-rate input to KJ-2's 55 % slippage posterior on CU25. The 2023 plan additionally triggered two Riksrevisionen follow-up reviews ([riksrevisionen.se](https://www.riksrevisionen.se/)) [A2].
 
-## Parallel 3 — Central-bank recapitalisation episodes (Sweden 2013, Denmark 2020)
+### Parallel 3 — Central-bank recapitalisation episodes (Sweden 2013, Denmark 2020)
 
 Sweden 2013 Riksbank profit-distribution reform occurred quietly without chamber debate — counter-example to our FiU23 recapitalisation-debate scenario, suggesting the ~ 45 % probability is in line with the base rate rather than above it. Denmark 2020 Nationalbanken statutory-reserve framework — closer parallel: the FiU comparator-reference point for a separate recap hearing. ([riksbank.se](https://www.riksbank.se/), [nationalbanken.dk](https://www.nationalbanken.dk/)) [A1].
 
-## Parallel 4 — Migration-permit abuse-prevention / carve-out pairing (2014, 2017, 2021)
+### Parallel 4 — Migration-permit abuse-prevention / carve-out pairing (2014, 2017, 2021)
 
 The pairing of tightening + specialist carve-out is a repeat pattern in Swedish migration legislation: 2014 S carve-out for IT/researchers; 2017 S-MP carve-out for doctoral candidates; 2021 S tightening with doctoral retention. [B2, riksdagen.se] SfU23 fits this pattern; risk that implementation ordinance narrows the carve-out in practice is empirically supported — 2014 carve-out was operationally narrowed within 12 months.
 
-## Parallel 5 — ILO convention ratification delays (C189, C183, C190)
+### Parallel 5 — ILO convention ratification delays (C189, C183, C190)
 
 Sweden has a recurring pattern of ratifying ILO conventions several years after Nordic peers: C189 (domestic workers, 2011): Sweden 2019 vs DK 2014; C183 (maternity): Sweden 2020 vs DK 2013; C190 now 2026 vs DK 2022. Pattern is substantive-compatibility-review culture rather than neglect. [A1, ilo.org NORMLEX]
 
-## Parallel 6 — EV subsidy / distributive risk (2017 Elbilspremien, 2022 Klimatbonus)
+### Parallel 6 — EV subsidy / distributive risk (2017 Elbilspremien, 2022 Klimatbonus)
 
 Both prior EV-subsidy regimes were critiqued as regressive by Riksrevisionen and S/V/MP opposition. Both were eventually re-scoped with income / housing-type caps. CU29's regressivity risk is historically reliably materialised. [A2, riksrevisionen.se]
 
-## Mini-diagram of historical-parallel pattern match
+### Mini-diagram of historical-parallel pattern match
 
 ```mermaid
 flowchart TD
@@ -1631,7 +1610,7 @@ flowchart TD
     style M6 fill:#ef6c00,stroke:#8c3a00,color:#fff
 ```
 
-## Sources
+### Sources
 
 - [riksdagen.se/kalender](https://www.riksdagen.se/) historical calendar archives [A1]
 - [kriminalvarden.se](https://www.kriminalvarden.se/) annual reports 2020-2024 [A2]
@@ -1640,13 +1619,12 @@ flowchart TD
 - `HD01CU25`, `HD01SfU23`, `HD01FiU23`, `HD01AU15`, `HD01CU29` [A1]
 
 ## Implementation Feasibility
-
-_Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/implementation-feasibility.md)_
+<!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/implementation-feasibility.md -->
 
 **Framework**: agency-capacity assessment + risk-adjusted implementation scoring.
 **Confidence**: HIGH (B2) on agency-mandate; MEDIUM (C3) on capacity forecasts.
 
-## Feasibility matrix (0-100 composite)
+### Feasibility matrix (0-100 composite)
 
 | Item | Agency capacity | Budget allocation | Legal complexity | Political alignment | Timeline realism | Composite |
 |------|:----:|:----:|:----:|:----:|:----:|:---:|
@@ -1656,28 +1634,28 @@ _Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmon
 | `HD01AU15` ILO ratification | 80 | 80 | 75 | 85 | 80 | **80** |
 | `HD01CU29` EV home charging | 75 | 70 | 80 | 75 | 75 | **75** |
 
-## Critical-path items
+### Critical-path items
 
-### CU25 — Kriminalvården capacity expansion (composite 65)
+#### CU25 — Kriminalvården capacity expansion (composite 65)
 - **Primary constraint**: capacity-absorption of + 8 500 platser requires sustained recruitment and procurement. Historical base rate: 85 % of such plans slip ≥ 10 %. [A2, kriminalvarden.se]
 - **Secondary constraint**: planning-law carve-out faces municipal-level legal challenges (2014–2023 base rate: 3–5 challenges per large capacity project).
 - **Key milestone**: Q2 2026 capacity-status report.
 
-### SfU23 — Migration/researchers (composite 63)
+#### SfU23 — Migration/researchers (composite 63)
 - **Primary constraint**: Migrationsverket transformation programme — dependencies on Digg ([digg.se](https://www.digg.se/)) [A2].
 - **Secondary constraint**: dual-track permit processing IT requires ordinance + system integration. Historical base rate: migration-system changes take 12–18 months to operationalise.
 - **Key milestone**: implementation ordinance (summer 2026) + Migrationsverket IT milestone (Q3 2026).
 
-### FiU23 — Riksbank 2025 review (composite 86)
+#### FiU23 — Riksbank 2025 review (composite 86)
 - Standing review; no novel implementation workload. Recapitalisation decision (separate ordinance if needed) is the only contingent operational load.
 
-### AU15 — ILO ratification (composite 80)
+#### AU15 — ILO ratification (composite 80)
 - Diskrimineringslagen + Arbetsmiljölagen transposition straightforward. DO + AV implementation guidance cycle ([do.se](https://www.do.se/), [av.se](https://www.av.se/)) [A2].
 
-### CU29 — EV home-charging (composite 75)
+#### CU29 — EV home-charging (composite 75)
 - Energimyndigheten ([energimyndigheten.se](https://www.energimyndigheten.se/)) + Boverket ([boverket.se](https://www.boverket.se/)) implementation [A2]. Subsidy-rollout mechanics well-understood; regressivity mitigation requires separate ordinance.
 
-## Feasibility-stress diagram
+### Feasibility-stress diagram
 
 ```mermaid
 flowchart TD
@@ -1705,33 +1683,32 @@ flowchart TD
     style R5 fill:#6a1b9a,stroke:#35094f,color:#fff
 ```
 
-## Sources
+### Sources
 
 - [kriminalvarden.se](https://www.kriminalvarden.se/), [migrationsverket.se](https://www.migrationsverket.se/), [riksbank.se](https://www.riksbank.se/), [do.se](https://www.do.se/), [av.se](https://www.av.se/), [energimyndigheten.se](https://www.energimyndigheten.se/), [boverket.se](https://www.boverket.se/), [digg.se](https://www.digg.se/) [A2]
 - `HD01CU25`, `HD01SfU23`, `HD01FiU23`, `HD01AU15`, `HD01CU29` [A1]
 
 ## Devil's Advocate
-
-_Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/devils-advocate.md)_
+<!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/devils-advocate.md -->
 
 **Framework**: Analysis of Competing Hypotheses (ACH) — Heuer methodology; Red-Team challenge.
 **Confidence**: MEDIUM (C3) — hypotheses test analytic robustness of the mainline reading.
 
-## Competing hypotheses
+### Competing hypotheses
 
-### H1 — Mainline: Coordinated pre-election signalling cluster
+#### H1 — Mainline: Coordinated pre-election signalling cluster
 The five-report tabling is a deliberate Tidö composition to front-load delivery signals ahead of Sep 2026.
 
-### H2 — Bureaucratic coincidence
+#### H2 — Bureaucratic coincidence
 The clustering is a mechanical consequence of the Riksdag calendar — betänkanden accumulate for chamber decision before summer recess; committee-chair scheduling is the driver, not strategic messaging.
 
-### H3 — Defensive scrambling
+#### H3 — Defensive scrambling
 The cluster reflects Tidö anxiety about slipping delivery metrics; signature items are being rushed through committee to lock in a pre-election record before unfavourable data emerges.
 
-### H4 — Coalition-internal settlement
+#### H4 — Coalition-internal settlement
 The composition is the output of intra-coalition horse-trading: SD got CU25 + SfU23 hard framing; L got SfU23 carve-out + AU15 ratification; M balances; KD neutralised on CU29 cost caution — each party gets enough to defend its vote.
 
-## ACH matrix
+### ACH matrix
 
 Evidence mapped to consistency with each hypothesis (C = consistent, I = inconsistent, N = neutral, ? = ambiguous).
 
@@ -1752,7 +1729,7 @@ Evidence mapped to consistency with each hypothesis (C = consistent, I = inconsi
 
 **Decision**: present H1 as mainline, with explicit acknowledgement that H4 (horse-trading) is the likely intra-coalition mechanism. H3 is the **downside scenario** to monitor.
 
-## Red-Team challenge
+### Red-Team challenge
 
 **Claim we are most likely wrong about**: the CU25 DIW of 85. Red team contends: (a) CU25 may be operationally blocked by local-council procedural challenges before construction starts, reducing actual impact despite high symbolic weight; (b) prior Kriminalvården capacity-plan misses (2020, 2023) suggest a base rate of under-delivery that should drag CU25's implementation-impact sub-score down; (c) if delivery is performative rather than operational, DIW may reflect attention-weight more than decision-weight.
 
@@ -1760,25 +1737,24 @@ Evidence mapped to consistency with each hypothesis (C = consistent, I = inconsi
 
 **Second challenge**: SfU23 may be overrated as a coalition-stress driver (DIW 80, coalition-stress 85). Red team: L may not actually defect because the researcher carve-out already accommodates its preference; the "SD–L tension" narrative may be media framing more than institutional reality. **Response**: carve-out acceptance depends on ministerial ordinance scope, which is TBD — residual tension real but conditional. Retain current scoring.
 
-## Rejected hypothesis log
+### Rejected hypothesis log
 
 - **H2 (bureaucratic coincidence)**: retained as null hypothesis for methodology purposes only. Inconsistent with E1 (simultaneous signature + breadth mix) and E2 (three signature items > base rate).
 - **Sub-hypothesis**: "the cluster signals Tidö pivot away from S-type welfare agenda". Rejected — no evidence in tabled items supports a welfare pivot; AU15 is labour-protection and CU29 is distributive.
 
-## Sources
+### Sources
 
 - `get_dokument` × 5 [A1]
 - regeringen.se communications trend [A2]
 - Historical Riksdag calendar: [riksdagen.se/kalender](https://www.riksdagen.se/) [A1]
 
 ## Classification Results
-
-_Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/classification-results.md)_
+<!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/classification-results.md -->
 
 **Method**: 7-dimension classification from `analysis/methodologies/political-classification-guide.md`.
 **Dimensions**: (1) Policy domain, (2) Coalition alignment, (3) Salience, (4) Time-horizon, (5) Contestedness, (6) Institutional locus, (7) Classification (sensitivity).
 
-## Per-document classification
+### Per-document classification
 
 | `dok_id` | Policy domain | Coalition alignment | Salience | Horizon | Contestedness | Institutional locus | Classification / retention |
 |----------|---------------|--------------------|:-------:|---------|--------------|--------------------|--------------------------|
@@ -1788,17 +1764,17 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 | `HD01AU15` | Labour / International (AU) | Broad cross-party | MEDIUM | Medium (ratification + transposition 2026–2027) | LOW (symbolic consensus) | AU committee; Arbetsmiljöverket + Diskrimineringsombudsmannen | PUBLIC; retention 25 y; open access |
 | `HD01CU29` | Climate / Housing / Mobility (CU) | Broad (MP/C/L advocate; M/KD/SD concur; SD cost-caution) | LOW–MEDIUM | Short (2026–2027 rollout) | LOW (consensus on direction, quibble on cost) | CU committee; Boverket + Energimyndigheten | PUBLIC; retention 10 y; open access |
 
-## Priority tiers (for publishing + downstream processing)
+### Priority tiers (for publishing + downstream processing)
 
 - **P0 (lead story)**: `HD01CU25` — CU25 prison capacity.
 - **P1 (secondary lead)**: `HD01SfU23`, `HD01FiU23`.
 - **P2 (breadth)**: `HD01AU15`, `HD01CU29`.
 
-## Retention & access
+### Retention & access
 
 All five classified **PUBLIC** per Offentlighetsprincipen (Public Access to Information Act, Tryckfrihetsförordningen 2:1). No personal-data processing beyond named public officials in their public role — GDPR Art. 9 basis: 9(2)(e) publicly made + 9(2)(g) substantial public interest. Retention 10 y standard for legislative records; 25 y for monetary-policy and ILO-related records (constitutional / international treaty reference value).
 
-## Classification diagram
+### Classification diagram
 
 ```mermaid
 flowchart LR
@@ -1828,45 +1804,44 @@ flowchart LR
     style Cons fill:#1565c0,stroke:#0b3a6b,color:#fff
 ```
 
-## Sources
+### Sources
 
 - `get_dokument` × 5 (A1), all at https://data.riksdagen.se/dokument/{{dok_id}}
 - Tryckfrihetsförordningen 2 kap 1 § — [riksdagen.se/TF](https://www.riksdagen.se/) (A1)
 
 ## Cross-Reference Map
-
-_Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/cross-reference-map.md)_
+<!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/cross-reference-map.md -->
 
 **Purpose**: map policy clusters, legislative chains, coordinated-activity patterns, and sibling-folder references across the five tabled reports.
 **Confidence**: HIGH on direct committee + legislative chains (A1); MEDIUM on cluster inference (B2).
 
-## Policy clusters
+### Policy clusters
 
-### Cluster 1 — Law-and-order delivery
+#### Cluster 1 — Law-and-order delivery
 **Members**: `HD01CU25` (prison capacity), with narrative tie to earlier 2024/25 criminal-justice legislation.
 **Legislative chain**: CU25 descends from 2023 Tidöavtal priority on `straffrättslig reform + kapacitetsutbyggnad` ([regeringen.se/tidoavtalet](https://www.regeringen.se/) [A2]); connects forward to pending 2026 Q3 Kriminalvården capital-expenditure proposition.
 **Coordinated activity**: Pre-debate CU25 + SfU23 pairing in plenary is the documented pattern from prior Tidö sessions (2024 motsvarande cluster on criminal-justice + migration).
 
-### Cluster 2 — Migration enforcement + competitiveness carve-out
+#### Cluster 2 — Migration enforcement + competitiveness carve-out
 **Members**: `HD01SfU23`.
 **Legislative chain**: Descends from 2024 SfU permit-tightening legislation ([riksdagen.se/voteringar](https://www.riksdagen.se/) previous SfU votes [A1]); anchors forward to pending 2026 Migrationsverket budget (BP 2026/27).
 **Sibling folders**: `analysis/daily/2026-04-23/propositions/` (migration-related pending propositions may intersect); `analysis/daily/2026-04-22/motions/` (opposition motions on researcher mobility).
 
-### Cluster 3 — Monetary / institutional stewardship
+#### Cluster 3 — Monetary / institutional stewardship
 **Members**: `HD01FiU23`.
 **Legislative chain**: Standing annual review per Sveriges Riksbankslag (2022:1568) ([riksdagen.se/SFS](https://www.riksdagen.se/) [A1]); FiU23 follows 2024/25 HD01FiU23 predecessor.
 **Forward tie**: 2026 Q2 Riksbank penningpolitisk rapport ([riksbank.se](https://www.riksbank.se/)); potential 2026 Q3 recapitalisation ordinance.
 
-### Cluster 4 — International labour compliance
+#### Cluster 4 — International labour compliance
 **Members**: `HD01AU15`.
 **Legislative chain**: Descends from Regeringens skrivelse on ILO ratifications (standing periodic cycle); forward-ties to 2026–27 Arbetsmiljöverket + Diskrimineringsombudsmannen guidance updates.
 **Sibling activity**: 2026-04-14 AU propositions on workplace-safety modernisation.
 
-### Cluster 5 — Climate-mobility transition
+#### Cluster 5 — Climate-mobility transition
 **Members**: `HD01CU29`.
 **Legislative chain**: Descends from Klimatpolitiska handlingsplanen 2023–24 commitments ([regeringen.se/klimatpolitiska-handlingsplanen](https://www.regeringen.se/) [A2]); forward-ties to Boverket charging-infrastructure BBR updates.
 
-## Cross-cluster coordination matrix
+### Cross-cluster coordination matrix
 
 | | CU25 | SfU23 | FiU23 | AU15 | CU29 |
 |---|:---:|:----:|:----:|:----:|:----:|
@@ -1876,7 +1851,7 @@ _Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/bl
 | **AU15** | None | Labour-mobility overlap | None | — | None |
 | **CU29** | CU committee shared | None | None | None | — |
 
-## Legislative chains diagram
+### Legislative chains diagram
 
 ```mermaid
 flowchart LR
@@ -1904,25 +1879,24 @@ flowchart LR
     style BBR fill:#212121,stroke:#000,color:#fff
 ```
 
-## Sibling-folder cross-references
+### Sibling-folder cross-references
 
 - `analysis/daily/2026-04-23/committeeReports/` — predecessor committee-report cluster; compare DIW ranking drift.
 - `analysis/daily/2026-04-23/motions/` — opposition motions that may cross-reference CU25 / SfU23 via amendment text.
 - `analysis/daily/2026-04-22/propositions/` — proposition source material for CU25 / SfU23 (if applicable).
 - `analysis/daily/2026-04-21/monthly-review/` — monthly frame anchoring, for comparative positioning.
 
-## Sources
+### Sources
 
 All cluster references cite `dok_id` + primary URL on data.riksdagen.se, regeringen.se, riksbank.se, or riksdagen.se/SFS (constitutional text).
 
 ## Methodology Reflection & Limitations
-
-_Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/methodology-reflection.md)_
+<!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/methodology-reflection.md -->
 
 **Purpose**: run-audit gate per `analysis/methodologies/ai-driven-analysis-guide.md §Methodology Reflection`.
 **Standards audited**: ICD 203 (9 analytic standards), Admiralty Code, WEP/Kent confidence, OSINT tradecraft ethics, DIW weighting.
 
-## 1. Evidence sufficiency
+### 1. Evidence sufficiency
 
 - All 5 attested `dok_id` sourced via `get_dokument` (A1).
 - Implementing agency coverage: Kriminalvården, Migrationsverket, Riksbank, Arbetsmiljöverket, DO, Boverket, Energimyndigheten — all with primary-source URLs (A1–A2).
@@ -1930,7 +1904,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 - **Gap**: full text of the 5 reports not fetched in this run (titles + metadata only). Mitigated by committee-calendar and Tidöavtal trajectory knowledge; flagged as limitation.
 - **Gap**: current polling data not integrated. Mitigated by structural analysis; flagged as PIR-6 + PIR-7 for cross-session-intelligence in next aggregation cycle.
 
-## 2. Confidence distribution
+### 2. Confidence distribution
 
 | Level | Count | Share |
 |-------|:-----:|:-----:|
@@ -1942,7 +1916,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 HIGH:MEDIUM ratio (4:3) is calibrated — absence of VERY HIGH reflects that no judgments are derived from settled ground truth (election has not happened; Q2 reports not yet published). Absence of LOW reflects that judgments for which we lacked evidence were instead flagged as **assumptions** in §Key Assumptions Check (A1–A5), not promoted to judgments.
 
-## 3. Source diversity
+### 3. Source diversity
 
 - **Parliamentary primary**: data.riksdagen.se, riksdagen.se (A1)
 - **Government primary**: regeringen.se (A2)
@@ -1953,7 +1927,7 @@ HIGH:MEDIUM ratio (4:3) is calibrated — absence of VERY HIGH reflects that no 
 
 Diversity satisfies **Source Diversity Rule**: every P0/P1 claim (KJ-1, KJ-2, KJ-3, KJ-4, KJ-7) cites ≥ 3 independent sources across categories.
 
-## 4. Party-neutrality arithmetic
+### 4. Party-neutrality arithmetic
 
 SWOT + stakeholder + scenario analysis applied evenly across parties:
 
@@ -1970,7 +1944,7 @@ SWOT + stakeholder + scenario analysis applied evenly across parties:
 
 Variance is ≤ ±3 for all parties — within neutrality tolerance (tolerance threshold: ≤ ±5 per `political-style-guide.md`). No party exceeds ±5. SD's mildly negative score reflects its own hardline positions on CU25 / SfU23 being flagged as coalition-stress factors, not analyst bias.
 
-## 5. ICD 203 audit
+### 5. ICD 203 audit
 
 | ICD 203 standard | Applied? | Evidence |
 |------------------|:--------:|----------|
@@ -1986,7 +1960,7 @@ Variance is ≤ ±3 for all parties — within neutrality tolerance (tolerance t
 
 Standard 8 is retrospective — marked as action item in §Methodology Improvements.
 
-## 6. SAT technique attestation
+### 6. SAT technique attestation
 
 Structured Analytic Techniques used in this run:
 
@@ -2004,7 +1978,7 @@ Structured Analytic Techniques used in this run:
 
 11 distinct SATs applied; meets the ≥ 10 threshold in `osint-tradecraft-standards.md`.
 
-## 7. GDPR / OSINT ethics compliance
+### 7. GDPR / OSINT ethics compliance
 
 - All data from Offentlighetsprincipen / public-data MCPs.
 - Named actors are public officials or party groups in their public capacity. No private personal data.
@@ -2012,7 +1986,7 @@ Structured Analytic Techniques used in this run:
 - No voter-level or psychographic inference beyond aggregate party positioning.
 - No third-party data sources; no scraping; no leaked/hacked material.
 
-## 8. Methodology Improvements (for next cycle)
+### 8. Methodology Improvements (for next cycle)
 
 1. **Pre-fetch full text** for at least the P0 and P1 committee reports (`HD01CU25`, `HD01SfU23`, `HD01FiU23`) by using `get_dokument_innehall` with `include_full_text: true` in the download pipeline. This will let per-document analyses cite specific paragraphs rather than inferring from titles.
 2. **Integrate Riksdag voting history on predecessor items** via `get_voteringar` — e.g. pull the prior year's corresponding bet votes to quantify coalition-stress baseline for KJ-3. Add a `prior-votes-context.json` enrichment step.
@@ -2020,20 +1994,19 @@ Structured Analytic Techniques used in this run:
 4. **Test H3 (defensive scrambling) hypothesis explicitly** at +60 d by comparing the Kriminalvården Q2 capacity figure against the CU25 implied baseline. If deviation ≥ 10 %, update hypothesis weighting.
 5. **Add comparator-side prison-capacity and migration-permit metrics** as structured JSON (`comparator-metrics.json`) so future Outside-In analyses can quantitatively compare rather than narratively compare.
 
-## 9. Limitations
+### 9. Limitations
 
 - Full text of committee reports not fetched this run (title + metadata only).
 - Polling data not integrated (relies on published 2025 Q4 / 2026 Q1 baselines).
 - Implementation-agency status reports for Q1 2026 not all available yet; some inference on capacity trajectory.
 - Comparative analysis depth varies by comparator (DK / FI deepest; DE / NL lighter).
 
-## Sources
+### Sources
 
 This reflection cites: `analysis/methodologies/ai-driven-analysis-guide.md`, `osint-tradecraft-standards.md`, `political-style-guide.md`, and all 15 other artifacts in this folder.
 
 ## Data Download Manifest
-
-_Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/data-download-manifest.md)_
+<!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/data-download-manifest.md -->
 
 **Generated**: 2026-04-24 01:06 UTC
 **Data Sources**: get_betankanden, get_dokument_innehall
@@ -2048,7 +2021,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 > `analysis/methodologies/ai-driven-analysis-guide.md` and using templates
 > from `analysis/templates/`.
 
-## Document Counts by Type
+### Document Counts by Type
 
 - **propositions**: 0 documents
 - **motions**: 0 documents
@@ -2058,7 +2031,39 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 - **questions**: 0 documents
 - **interpellations**: 0 documents
 
-## Data Quality Notes
+### Data Quality Notes
 
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-04-23 via lookback fallback — check freshness indicators.
+
+## Article Sources
+
+Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
+
+- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief.md)
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/synthesis-summary.md)
+- [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/intelligence-assessment.md)
+- [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/significance-scoring.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/media-framing-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/stakeholder-perspectives.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/scenario-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/threat-analysis.md)
+- [`documents/HD01AU15-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01AU15-analysis.md)
+- [`documents/HD01CU25-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01CU25-analysis.md)
+- [`documents/HD01CU29-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01CU29-analysis.md)
+- [`documents/HD01FiU23-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01FiU23-analysis.md)
+- [`documents/HD01SfU23-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01SfU23-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/election-2026-analysis.md)
+- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/coalition-mathematics.md)
+- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/voter-segmentation.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/comparative-international.md)
+- [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/historical-parallels.md)
+- [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/implementation-feasibility.md)
+- [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/devils-advocate.md)
+- [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/classification-results.md)
+- [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/cross-reference-map.md)
+- [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/methodology-reflection.md)
+- [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/data-download-manifest.md)

@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: evening-analysis
 slug: 2026-04-24-evening-analysis
 source_folder: analysis/daily/2026-04-24/evening-analysis
-generated_at: 2026-04-25T11:09:59.936Z
+generated_at: 2026-04-25T15:36:04.731Z
 language: en
 layout: article
 ---
@@ -26,20 +26,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Executive Brief
+<!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief.md -->
 
-_Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief.md)_
-
-## 🎯 BLUF
+### 🎯 BLUF
 
 On 2026-04-24 the Kristersson government tabled a **four-bill pre-election delivery package** (EU Banking Package HD03253, detainee benefit restriction HD03252, tachograph enforcement HD03256, debt-management review HD03104) while the Riksdag received **five committee reports** (CU25 prison capacity, SfU23 migration bifurcation, FiU23 Riksbank review, AU15 ILO, CU29 EV charging) and fielded **16 opposition interpellations** (12 filed by S). In the preceding 72 hours the opposition filed **20 counter-motions** against 9 propositions, with SD filing **zero**. The integrated picture is of a coalition executing a **tightly synchronised pre-election legacy sprint** with SD maintaining full Tidö discipline, while S concentrates attacks on economic wedges (drivmedel, SME sick-pay) and V/MP hold the civil-liberty and foreign-policy flanks. Admiralty **A1** on document identity and filings; **B2** on strategic interpretation. **ICD 203 compliant**.
 
-## 🧭 3 Decisions This Brief Supports
+### 🧭 3 Decisions This Brief Supports
 
 1. **Editorial lead selection** — evening story leads with the *pre-election legacy sprint* frame (KJ-1), not with any single dok_id, because the cross-type pattern is the story.
 2. **Forward-watch prioritisation** — FiU calendar for HD03253/HD01FiU23 and JuU calendar for HD03252 are the next 14-day pressure points (IT-1…IT-3, see `forward-indicators.md`).
 3. **Coalition stability signal** — SD's zero motions against 9 props confirms the Tidö bloc is structurally intact through summer recess; L's absence from lead ministry roles persists (see `coalition-mathematics.md §Intra-coalition load`).
 
-## ⏱ 60-second read
+### ⏱ 60-second read
 
 - **Volume**: 4 props + 5 betänkanden + 20 motions + 16 interpellations = **45 active Riksdag documents** in the 24-April cycle window.
 - **Lead story**: Pre-election legacy sprint — Kristersson government converting Tidö agenda into visible enforcement ahead of September 2026.
@@ -49,11 +48,11 @@ On 2026-04-24 the Kristersson government tabled a **four-bill pre-election deliv
 - **V/MP signal**: Own civil-liberty (HD024091, HD024096) and foreign-policy (MP krigsmateriel ban) cleavages — creates narrow but durable left-bloc wedge.
 - **C signal**: Motions on 5 bills with *procedural tightening* framing — positioning for bourgeois-curious voters.
 
-## 🔮 Top forward trigger (72 h)
+### 🔮 Top forward trigger (72 h)
 
 **FT-1 · 2026-04-27 (FiU committee calendar)**: First FiU hearing on HD03253 EU Banking Package will reveal committee timetable for summer-recess enactment. A delay beyond May would signal EU transposition risk (→ scenario S3 in `scenario-analysis.md`).
 
-## 📊 Key decisions matrix
+### 📊 Key decisions matrix
 
 | Decision | Owner | Trigger | Deadline | Downstream |
 |----------|-------|---------|----------|-----------|
@@ -61,7 +60,7 @@ On 2026-04-24 the Kristersson government tabled a **four-bill pre-election deliv
 | Prep HD03252 civil-liberty angle | Editorial | ECtHR precedent research | 2026-05-01 | Wedge story + ECHR context |
 | Forward-watch HD03252 enactment | Editorial | Riksdag vote ≥ 1 Aug 2026 | 2026-08-01 | Fact-based follow-up |
 
-## Risk summary
+### Risk summary
 
 - **Tier 1 (systemic)**: HD03253 transposition delay → EU infringement exposure; HD01FiU23 Riksbank independence debate.
 - **Tier 2 (political)**: HD03252 ECHR/ECtHR rights challenge; drivmedel climate framing by S/V/MP.
@@ -69,7 +68,7 @@ On 2026-04-24 the Kristersson government tabled a **four-bill pre-election deliv
 
 **Evidence base**: 19 primary-source Riksdag documents + cross-type patterns from 4 sibling folders. Single-source dependency mitigated by cross-validation with `sibling executive-brief.md`s and stakeholder role-verification. See `methodology-reflection.md §ICD 203 compliance audit`.
 
-## 🧠 Confidence & assumptions
+### 🧠 Confidence & assumptions
 
 - **HIGH (A1)**: Document identity, filings, party attribution, committee routing.
 - **MEDIUM (B2)**: Pre-election-sprint narrative framing (strategic interpretation).
@@ -77,7 +76,7 @@ On 2026-04-24 the Kristersson government tabled a **four-bill pre-election deliv
 
 **Key assumption (flagged for next-cycle check per `methodology-reflection.md`)**: That the Tidö coalition's summer-recess timetable holds — if a coalition crisis emerges (e.g. L–KD on HD03252 proportionality), the sprint collapses into autumn, reshaping the election framing.
 
-## 🔗 Companion files
+### 🔗 Companion files
 
 - [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — integrated picture
 - [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — Key Judgments + PIRs (ICD-203)
@@ -88,14 +87,13 @@ On 2026-04-24 the Kristersson government tabled a **four-bill pre-election deliv
 - [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — run-audit + ICD 203 compliance
 
 ## Synthesis Summary
+<!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md -->
 
-_Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md)_
-
-## Lead story (decision-grade)
+### Lead story (decision-grade)
 
 > The Kristersson government on 2026-04-24 simultaneously advanced a **four-bill legislative package** (detainee benefits, EU banking, tachograph enforcement, debt review), received **five committee reports** clustering its Tidö pre-election signals (prisons, migration, Riksbank, ILO, EV), and fielded **16 opposition interpellations** — while SD filed **zero counter-motions** against any of the 9 open government bills. This is the profile of a coalition entering **pre-election delivery mode** roughly 16 months before the September 2026 Riksdag election, with the SD party-of-confidence remaining structurally disciplined and S concentrating opposition firepower on economic wedges rather than identity politics.
 
-## DIW-weighted ranking (cross-type, top 10)
+### DIW-weighted ranking (cross-type, top 10)
 
 | Rank | dok_id | Type | DIW | Theme | Admiralty | Source folder |
 |------|--------|------|-----|-------|-----------|---------------|
@@ -112,9 +110,9 @@ _Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 **Sensitivity**: Ranking robust under ±1 DIW tier perturbation. HD03253 and HD03252 remain co-leaders under any sensible re-weighting because both carry systemic-grade exposure (one fiscal, one rights-based).
 
-## Integrated intelligence picture
+### Integrated intelligence picture
 
-### Thematic convergence
+#### Thematic convergence
 
 Today's 45 active documents cluster into **four coherent narrative threads** that together describe the Tidö coalition's final pre-election positioning:
 
@@ -123,13 +121,13 @@ Today's 45 active documents cluster into **four coherent narrative threads** tha
 3. **Migration and labour** — HD01SfU23 (study/research permit bifurcation), HD01AU15 (ILO ratification). The coalition is threading a needle — tightening on irregular migration while loosening on highly-skilled arrivals. Bifurcation is a concession to M's business-vote flank over SD's closed-border preference.
 4. **Opposition counter-choreography** — 20 motions concentrated on drivmedel (FiU), utvisning (SfU), and krigsmateriel (UU); 16 interpellations 75% S-filed. The opposition is running a *three-party division-of-labour* — S holds the economic centre, V holds the rights-flank, MP holds foreign policy — with C on procedural tightening only.
 
-### Cross-type signals
+#### Cross-type signals
 
 - **Prop → Motion → Committee → Interpellation pipeline** is unusually complete today: HD03252 (prop) will generate JuU counter-motion(s) by 8 May, then the JuU betänkande, then interpellation debate. The full legislative arc is visible.
 - **SD silence** is the single most structurally revealing signal. Zero motions against 9 props means SD will vote the Tidö line on all current bills — closing the right-flank escape route for opposition messaging.
 - **S economic-wedge concentration** (drivmedel + sick-pay + Riksbank critique) signals S has decided the 2026 campaign will be fought on *cost of living and SME resilience* rather than migration or identity.
 
-## Mermaid — cross-type narrative architecture
+### Mermaid — cross-type narrative architecture
 
 ```mermaid
 flowchart LR
@@ -166,7 +164,7 @@ flowchart LR
   classDef outcome fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
 ```
 
-## AI-recommended article metadata
+### AI-recommended article metadata
 
 - **EN headline (72 chars)**: "Tidö's pre-election sprint: banks, prisons, detainees, and SD silence"
 - **SV headline (74 chars)**: "Tidöregeringens valspurt: banker, fängelser, häkten — och SD:s tystnad"
@@ -174,7 +172,7 @@ flowchart LR
 - **SV meta description (158 chars)**: "Regeringen driver fyra propositioner och fem betänkanden; oppositionen lämnar 20 motioner på 72 timmar — SD noll. Kvällsanalys av valspurtens politiska arkitektur."
 - **Primary keywords**: Tidöavtalet, Riksdagen 2026, EU bankpaket CRR3, säkerhetsförvaring, drivmedelsskatt, Patrik Lundqvist, Ulf Kristersson, Niklas Wykman, Gunnar Strömmer, SD-disciplin, valet 2026.
 
-## Confidence & uncertainty
+### Confidence & uncertainty
 
 - **HIGH (A1)**: Document identity, authors, effective dates, filings, committee routing, SD zero-count.
 - **MEDIUM (B2)**: Pre-election-sprint narrative (SAT used: **Key Assumptions Check** + **Red-Team challenge** in `devils-advocate.md`).
@@ -186,61 +184,58 @@ flowchart LR
 - PIR-2: Will any L minister publicly dissent on HD03252 proportionality before 2026-05-31?
 - PIR-3: Will S escalate HD10447 to a motion/budget amendment after Busch's 2026-05-07 answer?
 
-## Tradecraft summary
+### Tradecraft summary
 
 - **ICD 203** applied: sources characterised, confidence labelled, alternative hypotheses entertained (`devils-advocate.md`), key assumptions identified (`methodology-reflection.md`).
 - **Admiralty 6×6**: every evidence row annotated; source diversity ≥ 3 for P0/P1 claims (cross-validated across sibling folders).
 - **SATs invoked**: ACH (in `devils-advocate.md`), Red-Team (scenario S4 in `scenario-analysis.md`), Key Assumptions Check, Outside-In (`comparative-international.md`).
 - **Neutrality arithmetic**: Each of the 8 parties is named and treated by observable action — Regeringspartier (M, KD, L) as bill-drivers, SD by its zero motions, S/V/MP/C by their filed motions and interpellations.
 
-_Source: cross-reads of `analysis/daily/2026-04-24/propositions|motions|committeeReports|interpellations/synthesis-summary.md` + `intelligence-assessment.md` + `executive-brief.md`._
-
 ## Intelligence Assessment — Key Judgments
-
-_Source: [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md)_
+<!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md -->
 
 **Author**: James Pether Sörling · **Classification**: Public OSINT · **ICD 203 compliant**
 **Confidence framework**: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW (5-level Admiralty-aligned)
 **Tradecraft**: ICD 203 Standards 1–9; Kent Scale (WEP); SATs (ACH, Red Team, Key Assumptions Check)
 
-## Key Judgments
+### Key Judgments
 
-### KJ-1 — Pre-election legacy sprint is the dominant organizing logic
+#### KJ-1 — Pre-election legacy sprint is the dominant organizing logic
 **Confidence: HIGH (B2)**
 
 The simultaneous tabling of four propositions (HD03252, HD03253, HD03256, HD03104), landing of five committee reports (HD01CU25, HD01SfU23, HD01FiU23, HD01AU15, HD01CU29), and absorption of 16 opposition interpellations on a single reporting day is **highly likely** a coordinated pre-election positioning sprint rather than a coincidence of the Riksdag calendar. **Indicators**: (a) all four propositions signed personally by PM Kristersson; (b) hard effective dates front-loaded into summer 2026 (1 Jul — HD03256; 1 Aug — HD03252); (c) Finance Minister Wykman leads two of four bills, concentrating fiscal-credibility messaging; (d) Tidöavtalet framing explicitly present in committee-report clustering (CU25 prisons + SfU23 migration). **Alternative considered** (`devils-advocate.md` H1): random calendar clustering — rejected because the effective-date alignment to September 2026 election cycle is too structurally precise for chance.
 
-### KJ-2 — SD party-of-confidence discipline is structurally intact
+#### KJ-2 — SD party-of-confidence discipline is structurally intact
 **Confidence: VERY HIGH (A1)**
 
 SD filed **zero** counter-motions against any of the nine active government propositions in the 72-hour filing window (2026-04-15 to 2026-04-17). This is **highly likely** (Kent Scale: ≥ 85%) a signal that SD will vote the Tidö line on all current bills through summer recess. **Indicators**: (a) primary-source count from riksdagen.se motion index — A1; (b) consistent with SD's pattern since Tidöavtalet (2022): fewer than 5 counter-motions against government bills across the 2022–2026 mandate; (c) no public SD parliamentary-group dissent recorded in the past 30 days. **Forward linkage**: PIR-4 monitors SD on HD03252 proportionality debate in JuU — a late dissent would force immediate KJ revision.
 
-### KJ-3 — S has decided the 2026 campaign is an economic campaign
+#### KJ-3 — S has decided the 2026 campaign is an economic campaign
 **Confidence: HIGH (B2)**
 
 Filing 12 of 16 interpellations (75%) in the HD10428–HD10447 window and leading the drivmedel counter-motion (HD024082) while **not** filing on krigsmateriel (MP-only, HD024096) is **likely** (Kent Scale: 55–70%) evidence that S's pre-election war-planning has pivoted away from migration/identity politics toward **cost of living, SME resilience, and fiscal critique**. **Indicators**: HD10447 lead dok explicitly reopens the 2024 sick-pay reimbursement decision; S motions cluster in FiU (fiscal) rather than JuU (justice). **Alternative considered**: S is splitting the issue-space with V/MP (division of labour rather than genuine pivot) — partially true but not mutually exclusive with the primary judgment.
 
-### KJ-4 — HD03253 (EU Banking) carries the highest latent transposition risk
+#### KJ-4 — HD03253 (EU Banking) carries the highest latent transposition risk
 **Confidence: MEDIUM (C3)**
 
 **Possible** (Kent Scale: 30–45%) that Sweden misses the CRR3/CRD6 transposition deadline if FiU does not schedule first hearing by 2026-05-15 (PIR-1). **Indicators**: EU deadline pressure; Swedish big-4 bank RWA concerns slow political process; QIS studies not yet published by Finansinspektionen. Mitigating factors: Wykman is a technocratic finance minister with EU-law experience; FiU's 2026 agenda has bandwidth after summer recess. **See** `scenario-analysis.md §Scenario S3`.
 
-### KJ-5 — HD03252 (detainee benefits) carries the highest rights-litigation risk
+#### KJ-5 — HD03252 (detainee benefits) carries the highest rights-litigation risk
 **Confidence: MEDIUM (C3)**
 
 **Likely** (Kent Scale: 55–70%) that HD03252 will face an ECHR Article 3 / Article 8 challenge within 18 months of entry into force (1 Aug 2026). **Indicators**: (a) ECtHR case law on detainee conditions (e.g. *Khlaifia v. Italy*, *Muršić v. Croatia*) establishes a low threshold for collective rights restrictions; (b) V filed HD024095 seeking full avslag on a related utvisning bill — signalling a ready legal-advocacy ecosystem; (c) absence of a formal Justitieombudsmannen pre-assessment. **Not alternative to KJ-1**: an ECtHR challenge would not necessarily derail the bill's enactment; it would reshape the 2027+ political framing.
 
-### KJ-6 — L (Liberals) has structurally exited the lead ministry pool for the remainder of the mandate
+#### KJ-6 — L (Liberals) has structurally exited the lead ministry pool for the remainder of the mandate
 **Confidence: HIGH (B2)**
 
 **Likely** (Kent Scale: 55–70%) that L will not regain a lead ministerial role on any new Tidö bill before September 2026. **Indicators**: (a) today's 4-bill batch has zero L-lead ministers; (b) L has held fewer lead roles each quarter since the 2024–25 coalition strain over criminal-justice proportionality; (c) L's internal polling pressure on civil liberty flank (including HD03252). **Implication**: L will seek differentiation via constitutional-committee work rather than ministerial delivery — shifts where pre-election dissent will appear.
 
-### KJ-7 — The Riksbank independence debate has re-emerged as a sleeper controversy
+#### KJ-7 — The Riksbank independence debate has re-emerged as a sleeper controversy
 **Confidence: MEDIUM (C3)**
 
 **Possible** (Kent Scale: 30–45%) that HD01FiU23 (Riksbank annual review) will escalate into a public debate on Riksbank independence after 2024–25 balance-sheet losses. **Indicators**: (a) the 2022 Sveriges Riksbank Act overhaul is still within its first-five-years review window; (b) SD has previously expressed interest in political oversight of Riksbank; (c) FiU23 is a standing annual review but the 2026 iteration has unusually thick pre-reading bandwidth. This is the most latent, but highest-optionality, institutional risk in the set.
 
-## Confidence distribution
+### Confidence distribution
 
 | Confidence | Count | KJ IDs |
 |------------|-------|--------|
@@ -252,7 +247,7 @@ Filing 12 of 16 interpellations (75%) in the HD10428–HD10447 window and leadin
 
 **Source diversity check** (ICD 203 Standard 2): every KJ cites ≥ 2 independent sources (sibling folder corroboration + primary Riksdag document). Single-source dependencies flagged in individual KJs are candidates for next-cycle PIR follow-up.
 
-## PIRs for next cycle
+### PIRs for next cycle
 
 | PIR | Question | Trigger | Deadline | Owner |
 |-----|----------|---------|----------|-------|
@@ -270,7 +265,7 @@ Standing PIRs (always-on, per `osint-tradecraft-standards.md §PIR handoff`):
 - **Standing PIR-B**: Election-cycle wedge escalations (any party escalating beyond normal parliamentary tools)
 - **Standing PIR-C**: ECHR / ECtHR filings against Swedish law
 
-## Prior-cycle PIR ingestion (Tier-C requirement)
+### Prior-cycle PIR ingestion (Tier-C requirement)
 
 Carried forward from sibling folders' intelligence-assessments (2026-04-24 morning runs):
 
@@ -282,7 +277,7 @@ Carried forward from sibling folders' intelligence-assessments (2026-04-24 morni
 
 All inherited PIRs have been incorporated; no orphan PIRs from the 7-day lookback window remain unaddressed.
 
-## Key Assumptions Check (ICD 203 Standard 3)
+### Key Assumptions Check (ICD 203 Standard 3)
 
 | # | Assumption | Evidence strength | Fragility |
 |---|-----------|-------------------|-----------|
@@ -292,7 +287,7 @@ All inherited PIRs have been incorporated; no orphan PIRs from the 7-day lookbac
 | 4 | Opposition inter-party coordination is real (S+V+MP on drivmedel) | MEDIUM — three motions filed within 72h window | MEDIUM — may be independent convergence |
 | 5 | Kriminalvården can scale capacity per plan | LOW — history of capacity slippage | HIGH |
 
-## Source characterisation (ICD 203 Standard 2)
+### Source characterisation (ICD 203 Standard 2)
 
 - **Primary (A1)**: Riksdag open data (data.riksdagen.se) — definitive for document identity and filings
 - **Secondary (A1–A2)**: Regeringen pressroom (regeringen.se) — definitive for ministerial signings
@@ -301,7 +296,7 @@ All inherited PIRs have been incorporated; no orphan PIRs from the 7-day lookbac
 
 No single-source-of-concern dependency (ICD 203 Standard 4 satisfied).
 
-## ICD 203 Standards checklist
+### ICD 203 Standards checklist
 
 | # | Standard | Status |
 |---|----------|--------|
@@ -315,16 +310,13 @@ No single-source-of-concern dependency (ICD 203 Standard 4 satisfied).
 | 8 | Distinguishes assumptions from judgments | ✅ Key Assumptions Check table above |
 | 9 | Incorporates alternative analysis | ✅ `devils-advocate.md` with 3 competing hypotheses |
 
-_Source: cross-reads of all 4 sibling intelligence-assessments; ICD 203 framework per `analysis/methodologies/osint-tradecraft-standards.md`._
-
 ## Significance Scoring
-
-_Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/significance-scoring.md)_
+<!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/significance-scoring.md -->
 
 **Author**: James Pether Sörling · **Framework**: DIW (Decision-Information-Worth) weighting per `analysis/methodologies/ai-driven-analysis-guide.md §Step 4`
 **Scale**: 1.0 (Surface / L1) → 4.0 (Intelligence-grade / L3). Weights combine salience × novelty × downstream-dependency × uncertainty-reduction.
 
-## DIW scores per document (top 20, cross-type)
+### DIW scores per document (top 20, cross-type)
 
 | # | dok_id | Type | Committee | DIW | Salience | Novelty | Dependency | Unc-reduction | Tier | Admiralty |
 |---|--------|------|-----------|-----|----------|---------|-----------|---------------|------|-----------|
@@ -349,7 +341,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 | 19 | HD10446 | Ip | — | **2.20** | 2.0 | 2.0 | 2.2 | 2.5 | L1 | A2 |
 | 20 | HD10445 | Ip | — | **2.20** | 2.0 | 2.0 | 2.2 | 2.5 | L1 | A2 |
 
-## Mermaid — significance rank diagram
+### Mermaid — significance rank diagram
 
 ```mermaid
 flowchart TB
@@ -379,7 +371,7 @@ flowchart TB
   classDef l1 fill:#6a4c93,stroke:#6a4c93,color:#fff
 ```
 
-## Sensitivity analysis
+### Sensitivity analysis
 
 | Perturbation | Effect on ranking |
 |--------------|-------------------|
@@ -390,7 +382,7 @@ flowchart TB
 
 **Robustness**: The top-5 DIW ranking (HD10447, HD03253, HD03252, HD01CU25, HD024082) is stable under any ±0.3 perturbation — all lead items remain in the top-5 under sensible re-weighting.
 
-## Rank-ordering logic (ICD 203 Standard 5 — tradecraft transparency)
+### Rank-ordering logic (ICD 203 Standard 5 — tradecraft transparency)
 
 **Salience** — how many stakeholders care today? HD03253 and HD03252 rank top because they generate cross-constituency attention (banks, civil-liberty NGOs, EU institutions, opposition parties).
 
@@ -400,7 +392,7 @@ flowchart TB
 
 **Uncertainty reduction** — does reading this reduce future ambiguity? HD10447 scores top because Minister Busch's response on 2026-05-07 will directly resolve PIR-3.
 
-## Cluster-level scoring (where individual items roll up)
+### Cluster-level scoring (where individual items roll up)
 
 | Cluster | Member dok_ids | Cluster DIW | Rationale |
 |---------|---------------|-------------|-----------|
@@ -409,7 +401,7 @@ flowchart TB
 | S interpellation cluster | HD10428–HD10446 (12 S-filed) | 3.20 | Strategic-pattern weight exceeds any single dok |
 | Krigsmateriel cluster | HD024091 + HD024096 | 2.90 | V+MP with S silence — structurally narrow |
 
-## Why today is a high-DIW day
+### Why today is a high-DIW day
 
 Three factors place today in the **top-5% of reporting-day signal density** for the 2026 mandate period to date:
 
@@ -417,41 +409,38 @@ Three factors place today in the **top-5% of reporting-day signal density** for 
 2. Full legislative-arc visibility (prop → motion → bet → ip on the same cycle) is rare.
 3. SD's zero motions on 9 bills is itself a high-DIW "null-event" signal — the **dog that did not bark** is informative.
 
-_Source: sibling folder significance-scoring.md files + cross-type DIW re-weighting per `analysis/methodologies/ai-driven-analysis-guide.md §DIW Output Matrix`._
-
 ## Media Framing Analysis
-
-_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/media-framing-analysis.md)_
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/media-framing-analysis.md -->
 
 **Purpose**: Analyze how today's legislative batch is likely to be framed across major Swedish media categories and what this implies for narrative contestation.
 
-## Expected framing by outlet category
+### Expected framing by outlet category
 
-### Public-service (SVT, SR, DN public-facing)
+#### Public-service (SVT, SR, DN public-facing)
 - **Likely frame**: "Riksdagen behandlade fyra viktiga förslag" — procedurally balanced coverage
 - **Emphasis**: HD03252 and HD01CU25 will receive prominent coverage as most newsworthy
 - **Risk**: Proportionality framing on HD03252 — likely to be cautious/balanced
 
-### Major morning papers (Dagens Nyheter, Svenska Dagbladet)
+#### Major morning papers (Dagens Nyheter, Svenska Dagbladet)
 - **DN likely frame**: Rights-centric on HD03252; technocratic on HD03253; business-section on banking
 - **SvD likely frame**: Economic-competence framing on HD03253; fiscal-credibility framing on HD03104; business section for banking + SME sick-pay
 - **Divergence**: DN emphasizes rights/governance; SvD emphasizes fiscal/institutional
 
-### Tabloids (Aftonbladet, Expressen)
+#### Tabloids (Aftonbladet, Expressen)
 - **Aftonbladet likely frame**: "Regeringen försämrar levnadsvillkor för dömda" — rights framing; SME sick-pay as welfare story
 - **Expressen likely frame**: "Tidöavtalet levererar" — coalition-delivery framing; cost-of-living framed as opposition weakness
 - **Divergence**: Sharp — these outlets anchor opposition and coalition narratives respectively
 
-### Business press (Affärsvärlden, Veckans Affärer)
+#### Business press (Affärsvärlden, Veckans Affärer)
 - **Frame**: HD03253 + HD01FiU23 take center stage; political framing ignored
 - **Emphasis**: Bank RWA impact; Riksbank annual review; Swedish financial-supervisory stance
 
-### Partisan/campaign media (various)
+#### Partisan/campaign media (various)
 - **S-aligned framing**: Cost-of-living; SME workers; drivmedel as "regressive"
 - **M/coalition-aligned framing**: Discipline + delivery; EU compliance; capacity expansion
 - **SD-aligned framing**: Migration + rights-restriction victories; the interpellation storm as opposition weakness signals
 
-## Framing contest on HD03252
+### Framing contest on HD03252
 
 Critical contested story. Expected framings:
 
@@ -466,7 +455,7 @@ Critical contested story. Expected framings:
 
 **Framing-battle prediction**: 5–10 days of contested framing; dominant national frame will be somewhere between "stramare åtgärder" (neutral-government-leaning) and "proportionalitetsfråga" (neutral-rights-leaning). Aftonbladet and Expressen poles rarely capture majority framing in Swedish public discourse.
 
-## Framing contest on HD03253
+### Framing contest on HD03253
 
 Less contested. Technocratic dominance likely:
 - Business press: "CRR3/CRD6 transposition announced" — factual
@@ -474,7 +463,7 @@ Less contested. Technocratic dominance likely:
 - Tabloids: Minimal coverage (low newsworthiness)
 - Political framing risk: SD could frame as "EU overreach" — low probability given SD's pro-coalition position today
 
-## Framing contest on HD10447
+### Framing contest on HD10447
 
 S's most successful lever. Expected framings:
 - Aftonbladet: "Företag tvingas betala för sjuka anställda" — sympathetic to SME narrative
@@ -484,7 +473,7 @@ S's most successful lever. Expected framings:
 
 **Framing-battle prediction**: S will gain narrative ground if Busch's 2026-05-07 response is pure refusal. If Busch offers any compromise or review, framing neutralizes.
 
-## Narrative dominance matrix
+### Narrative dominance matrix
 
 | Narrative | Coalition-favourable | Opposition-favourable |
 |-----------|----------------------|------------------------|
@@ -497,11 +486,11 @@ S's most successful lever. Expected framings:
 
 Net media-framing advantage over the next 14 days: **narrowly opposition-favourable** on volume (cost-of-living narrative has Segment F pull); **narrowly coalition-favourable** on institutional credibility.
 
-## Framing-to-polling conversion
+### Framing-to-polling conversion
 
 Historically, a 14-day dominant media frame shifts polling by approximately 0.5–1.5 pp in the favoured party. Today's contested framing batch could produce a **0.5–1.0 pp net shift** toward opposition on cost-of-living, partially offset by **0.3–0.5 pp** coalition shift on institutional credibility. **Net expected shift: 0.0 to +0.5 pp toward opposition** over 14 days.
 
-## Journalism quality and ICD 203 source-evaluation
+### Journalism quality and ICD 203 source-evaluation
 
 This analysis is framed-prediction, not primary-observation. Sources:
 - Content analysis from sibling folder media-framing-analysis files
@@ -510,16 +499,13 @@ This analysis is framed-prediction, not primary-observation. Sources:
 
 **Admiralty code for framings above**: B2 (reliable source category, but framed prediction, not observation).
 
-_Source: Synthesis of sibling media-framing artifacts + journalism-coverage-pattern base rates._
-
 ## Stakeholder Perspectives
-
-_Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/stakeholder-perspectives.md)_
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/stakeholder-perspectives.md -->
 
 **Framework**: 6-lens stakeholder matrix per `ai-driven-analysis-guide.md §Step 5`.
 Lenses: Government · Opposition · Civil society · Industry / market · Administrative / expert · International.
 
-## Matrix
+### Matrix
 
 | Lens | Key actors today | Reading of the day | Prevailing frame | Evidence |
 |------|-------------------|---------------------|------------------|----------|
@@ -530,33 +516,33 @@ Lenses: Government · Opposition · Civil society · Industry / market · Admini
 | **Administrative / expert** | Kriminalvården (capacity); Migrationsverket (bifurcation); Riksbank (FiU23); Finansinspektionen (CRR3) | "Three of four top bills land directly on administrative agencies — capacity is the binding constraint, not politics." | *Political ambition must match operational capacity* | CU25 capacity concerns; SfU23 bifurcation operationalization |
 | **International / EU** | EU Commission (banking + migration); Council of Europe / ECtHR (detainee conditions); Nordic peers (DK/NO/FI parallel tracks) | "EU prudential file is on the critical path; ECHR watchdogs are priming challenges; Nordic comparators observe Sweden's detainee-rights experiment." | *Sweden sets, then sometimes corrects, Nordic norms* | CRR3 EU calendar; ECtHR Article 3 case law |
 
-## Role-playing exercises
+### Role-playing exercises
 
-### Red team perspective — opposition strategy operator
+#### Red team perspective — opposition strategy operator
 
 > *"We've chosen our ground. Drivmedel is our pre-election anchor because it translates trivially to household budgets; HD10447 is our strategic reopening of the 2024 sick-pay fight; and we refuse to engage on krigsmateriel or utvisning because those are ideological traps. Let V/MP/C signal-differentiate on rights; we own the wallet."*
 
 This reading is consistent with S filing the sole drivmedel motion (HD024082) and leading 12/16 interpellations in one window — a **strategic concentration**, not a shotgun approach.
 
-### Red team perspective — PMO chief of staff
+#### Red team perspective — PMO chief of staff
 
 > *"Four bills, two weeks of session left before summer recess, all signed by the PM personally. Message: the government has delivered. SD filed nothing. L is quiet. The interpellation storm is routine opposition theatre — we respond within rules. The one landmine is HD03252: if L blinks in JuU on proportionality, we lose our coalition-discipline narrative. We watch L, not S."*
 
 This reading is consistent with the observed ministerial signing pattern and the lack of any L-lead ministry in today's batch.
 
-### Red team perspective — Civil Rights Defenders counsel
+#### Red team perspective — Civil Rights Defenders counsel
 
 > *"HD03252 is a ECHR Article 3 / Article 8 test case waiting to happen. We coordinate with Amnesty SE and Advokatsamfundet. We file an amicus brief before third reading. We prepare litigation readiness for Q4 2026. We do not over-mobilize now — we let V carry the parliamentary fight and we win the courtroom fight."*
 
 This reading predicts a 12–18-month latency between bill enactment (Aug 2026) and the first substantive ECtHR filing (est. 2027–2028).
 
-### Red team perspective — banking sector CRO
+#### Red team perspective — banking sector CRO
 
 > *"CRR3/CRD6 transposition could add 15–35 bps to our RWA. We cannot tolerate a late or overzealous Swedish transposition. We brief FiU, we brief Finansinspektionen, we publish our own QIS. We push for a minimal-transposition, straight-EU-compliance approach. We treat HD03253 as operationally urgent even if politically quiet."*
 
 This reading explains why HD03253 carries such high DIW despite low public controversy — the markets and regulators treat it as priority-1.
 
-## Cross-stakeholder tension map
+### Cross-stakeholder tension map
 
 ```mermaid
 flowchart LR
@@ -583,7 +569,7 @@ flowchart LR
   class EU,ECHR intl
 ```
 
-## Stakeholder pressure weight summary
+### Stakeholder pressure weight summary
 
 For each top-5 dok_id, weighted sum of aligned-vs-opposed stakeholders:
 
@@ -595,17 +581,14 @@ For each top-5 dok_id, weighted sum of aligned-vs-opposed stakeholders:
 | HD01CU25 | Gov + CivSoc (on standards) | Admin (capacity concerns) | +1 | Passage with amendments |
 | HD024082 | S + V + MP + consumers | Gov + M-KD-L | 0 | Defeated in plenum but wedge value retained |
 
-_Source: sibling folder stakeholder-perspectives.md + synthesis of industry-briefing precedent._
-
 ## Forward Indicators
-
-_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md)_
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md -->
 
 **Framework**: Four-horizon dated-indicator system per `ai-driven-analysis-guide.md §Step 10`.
 **Horizons**: T+7 days · T+30 days · T+90 days · T+12 months.
 **Indicator types**: Calendar-anchored · Event-triggered · Threshold-triggered.
 
-## T+7 days (by 2026-05-01)
+### T+7 days (by 2026-05-01)
 
 | # | Indicator | Trigger | Expected signal | Interpretation if YES | Interpretation if NO |
 |---|-----------|---------|------------------|------------------------|----------------------|
@@ -613,7 +596,7 @@ _Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blo
 | F2 | DN/SvD editorial on HD03252 | editorial publication | Proportionality framing | Framing contest live | Coalition framing dominant |
 | F3 | Aftonbladet front-page on SME sick-pay | front page | HD10447 narrative amplification | S wedge traction | Wedge contained |
 
-## T+30 days (by 2026-05-24)
+### T+30 days (by 2026-05-24)
 
 | # | Indicator | Trigger | Expected signal | Interpretation if YES | Interpretation if NO |
 |---|-----------|---------|------------------|------------------------|----------------------|
@@ -623,7 +606,7 @@ _Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blo
 | F7 | Kriminalvården monthly capacity update | end of May publication | Capacity trend | On-track | PIR-5 pre-flag |
 | F8 | FiU schedule HD03253 (PIR-1) | 2026-05-15 deadline | Scheduling event | S1 reinforced | S3 activated |
 
-## T+90 days (by 2026-07-23)
+### T+90 days (by 2026-07-23)
 
 | # | Indicator | Trigger | Expected signal | Interpretation if YES | Interpretation if NO |
 |---|-----------|---------|------------------|------------------------|----------------------|
@@ -634,7 +617,7 @@ _Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blo
 | F13 | ECHR filing signal on HD03252 | post-enactment | Filing preliminaries | R2 activated | Latent remains |
 | F14 | SD 30-day motion-filing rate | rolling | Coalition discipline index | < 2 motions = S1 | > 3 motions = signal |
 
-## T+12 months (by 2027-04-24)
+### T+12 months (by 2027-04-24)
 
 | # | Indicator | Trigger | Expected signal | Interpretation |
 |---|-----------|---------|------------------|-----------------|
@@ -645,7 +628,7 @@ _Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blo
 | F19 | SME sick-pay legislation under new government? | post-election | Legislative proposal | Post-S1 or post-S2 directly |
 | F20 | Riksbank-independence debate escalation | ongoing | Institutional debate | Black-swan latent |
 
-## Indicator priority ranking
+### Indicator priority ranking
 
 **Tier-1 (decision-forcing, < 30 days)**:
 - F4 (Busch response 2026-05-07)
@@ -662,7 +645,7 @@ _Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blo
 - F15 (election outcome)
 - F16-F20 (post-election)
 
-## Calendar placement
+### Calendar placement
 
 ```mermaid
 gantt
@@ -685,7 +668,7 @@ gantt
   ECHR preliminary filing  :f17, 2027-04-01, 90d
 ```
 
-## Indicator-to-PIR mapping
+### Indicator-to-PIR mapping
 
 | Forward Indicator | Linked PIR |
 |-------------------|------------|
@@ -699,7 +682,7 @@ gantt
 | F16 | PIR-1 final resolution |
 | F20 | PIR-7 |
 
-## Null-indicator watch
+### Null-indicator watch
 
 Three **absence** signals to monitor (dog-that-did-not-bark):
 
@@ -707,7 +690,7 @@ Three **absence** signals to monitor (dog-that-did-not-bark):
 - **L silence on HD03252**: if L declines public comment for 30 days, coalition internal-management succeeded
 - **MP silence on drivmedel**: if MP joins drivmedel cluster (currently S-led), opposition consolidation sharpened
 
-## Monitoring cadence
+### Monitoring cadence
 
 - **Daily**: F1-F3 (T+7 watch)
 - **Weekly**: F4-F8 + null-indicators
@@ -715,19 +698,16 @@ Three **absence** signals to monitor (dog-that-did-not-bark):
 - **Monthly**: F9-F14 comprehensive review
 - **Quarterly**: F15-F20 strategic review
 
-_Source: Synthesis of sibling forward-indicators artifacts; calendar-anchoring per published Riksdag session plan._
-
 ## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md)_
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md -->
 
 **Framework**: Three-scenario baseline + branching (ICD 203 Standard 9 — alternative analysis)
 **Horizon**: T+30 days (pre-summer-recess) → T+4 months (early election campaign) → T+12 months (post-election)
 **Baseline date**: 2026-04-24
 
-## Scenario set (probabilities sum to 1.00)
+### Scenario set (probabilities sum to 1.00)
 
-### Scenario S1 — "Sprint succeeds, coalition consolidates" (Prob: 0.50)
+#### Scenario S1 — "Sprint succeeds, coalition consolidates" (Prob: 0.50)
 
 **Storyline**: All 4 propositions pass committee by mid-June, floor by end-June. HD03253 transposition schedule holds. HD01CU25 Kriminalvården Q2 report shows on-plan capacity. SD maintains zero-motion discipline through summer. L publicly supports HD03252 after a cosmetic proportionality amendment. S's cost-of-living campaign gains traction in July but coalition responds with a pre-recess communication package. The Tidö coalition enters summer recess with a delivery-legacy narrative largely intact.
 
@@ -739,7 +719,7 @@ _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 **Falsifiers**: Any of the four signposts fails → downgrade to S2.
 
-### Scenario S2 — "Wedge works, opposition gains ground" (Prob: 0.35)
+#### Scenario S2 — "Wedge works, opposition gains ground" (Prob: 0.35)
 
 **Storyline**: S's HD10447 + drivmedel combination gains media traction during May. Minister Busch gives a flat-footed response. Q2 Kriminalvården capacity data disappoints. Polling shifts 3–5pp toward S–V–MP bloc by August. Coalition still holds formally but loses pre-election momentum. HD03252 passes with minor amendment but faces first ECHR filing signal in Q4. HD03253 transposition slips to autumn session.
 
@@ -751,7 +731,7 @@ _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 **Falsifiers**: Coalition response to the above blunts wedge → upgrade back to S1 (conditional).
 
-### Scenario S3 — "Institutional stress — EU deadline slips + L fracture" (Prob: 0.12)
+#### Scenario S3 — "Institutional stress — EU deadline slips + L fracture" (Prob: 0.12)
 
 **Storyline**: HD03253 FiU schedule slips past 2026-05-15. Summer recess consumed. Autumn session rushed. L publicly dissents on HD03252 proportionality, forcing a coalition crisis-management episode in JuU. SD silence broken by an unexpected counter-signal on detainee benefits. Opposition unity strengthens. Coalition enters election campaign with fractured L flank, late EU-banking transposition, and one ECHR filing.
 
@@ -763,7 +743,7 @@ _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 **Falsifiers**: L internal resolution on HD03252 → conditional downgrade.
 
-### Scenario S4 — "Black swan — Riksbank independence flashpoint" (Prob: 0.03)
+#### Scenario S4 — "Black swan — Riksbank independence flashpoint" (Prob: 0.03)
 
 **Storyline**: HD01FiU23 debate takes an unexpected turn with SD or KD raising a political-oversight proposal. Media frames as "government challenges Riksbank". Markets respond with currency volatility. Opposition pivots to constitutional-defender narrative. Coalition dominates the news cycle for the wrong reason. All other bills become secondary.
 
@@ -774,7 +754,7 @@ _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 **Falsifiers**: HD01FiU23 passes as routine annual review.
 
-## Scenario tree diagram
+### Scenario tree diagram
 
 ```mermaid
 flowchart LR
@@ -798,7 +778,7 @@ flowchart LR
   class S4 s4
 ```
 
-## Probability rationale
+### Probability rationale
 
 | Scenario | Prior | Evidence pull | Posterior |
 |----------|-------|---------------|-----------|
@@ -808,7 +788,7 @@ flowchart LR
 | S4 | 0.05 | −no current catalyst visible | 0.03 |
 | **Sum** | **1.00** | | **1.00** ✅ |
 
-## Implications by scenario
+### Implications by scenario
 
 | Scenario | Implication for coalition | Implication for opposition | Implication for markets | Implication for civil society |
 |----------|---------------------------|-----------------------------|--------------------------|-------------------------------|
@@ -817,7 +797,7 @@ flowchart LR
 | S3 | Crisis management | Windfall | High volatility; bank equities weak | Accelerated ECHR prep |
 | S4 | Worst case; crisis | Windfall; constitutional frame | High SEK/bond volatility | Neutral (institutional, not rights) |
 
-## Cross-scenario monitoring plan
+### Cross-scenario monitoring plan
 
 **Week of 2026-04-28**: FiU agenda publication (HD03253 scheduling) — binary signal for S1 vs S3.
 **Week of 2026-05-05**: Minister Busch response on HD10447 — signal for S1 vs S2.
@@ -825,15 +805,12 @@ flowchart LR
 **Week of 2026-06-09**: JuU passage of HD03252 — signal on L flank.
 **Week of 2026-06-23**: Kriminalvården Q2 capacity report — S1 stability signal.
 
-_Source: cross-scenario synthesis of sibling scenario analyses; Bayesian re-weighting of priors based on today's signals._
-
 ## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md)_
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md -->
 
 **Framework**: 5-dimension risk register (Political × Legal × Operational × Financial × Reputational) with L×I (Likelihood × Impact) scoring on a 1–5 scale.
 
-## Risk register (ranked by L×I)
+### Risk register (ranked by L×I)
 
 | ID | Risk | Dimensions | L | I | L×I | Mitigation / monitor | Linked dok_ids |
 |----|------|------------|---|---|-----|-----------------------|-----------------|
@@ -853,7 +830,7 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 | R14 | Summer-recess schedule compression — bills rushed | Operational × Legal | 3 | 3 | 9 | Earlier committee scheduling | HD03253, HD03252 |
 | R15 | Interpellation backlog → administrative fatigue | Operational | 3 | 2 | 6 | Minister response triage | HD10428–47 |
 
-## Heat map (L × I)
+### Heat map (L × I)
 
 ```
         I=1   I=2   I=3   I=4   I=5
@@ -869,52 +846,49 @@ L=1      ·     ·     ·     ·     ·
 - **Sleeper cell (L=2, I=4–5)**: R1, R5, R8 — low-likelihood but catastrophic-if-triggered institutional risks.
 - **Chronic cell (L≥3, I=3)**: R6, R7, R14 — ongoing political/operational threats requiring sustained monitoring.
 
-## Top-5 risk deep dives
+### Top-5 risk deep dives
 
-### R2 — HD03252 ECHR challenge (L×I = 12)
+#### R2 — HD03252 ECHR challenge (L×I = 12)
 
 **Pathway**: Bill passes → enters force 2026-08-01 → first operational incident Q4 2026 → domestic court appeals → ECtHR filing Q2–Q4 2027 → judgment 2028–2029.
 **Early signals**: NGO statements within 30 days of promulgation; academic-commentary pattern.
 **Mitigation**: A formal proportionality clause added before third reading.
 
-### R3 — Kriminalvården Q2 capacity miss (L×I = 12)
+#### R3 — Kriminalvården Q2 capacity miss (L×I = 12)
 
 **Pathway**: HD01CU25 sets capacity baseline → Q2 actual falls short → HD03252 operational impacts amplify → legal exposure under R2 compounds.
 **Early signals**: PIR-5 Q2 report.
 **Mitigation**: Pre-emptive Kriminalvården communication on capacity realism.
 
-### R6 — S cost-of-living campaign traction (L×I = 12)
+#### R6 — S cost-of-living campaign traction (L×I = 12)
 
 **Pathway**: S HD10447 traction during May → drivmedel cluster gains summer salience → pre-election polling shift by August.
 **Early signals**: DN/SvD editorial alignment by 2026-05-15; YouGov/Novus polling shift.
 **Mitigation**: Coalition positive-agenda launch.
 
-### R1 — CRR3/CRD6 transposition miss (L×I = 10)
+#### R1 — CRR3/CRD6 transposition miss (L×I = 10)
 
 **Pathway**: FiU fails to schedule by 2026-05-15 → summer recess consumed → autumn rush → incomplete transposition by 2027 deadline → EU infraction.
 **Early signals**: PIR-1 FiU calendar.
 
-### R14 — Summer-recess compression (L×I = 9)
+#### R14 — Summer-recess compression (L×I = 9)
 
 **Pathway**: 4 bills + 5 committee reports + 16 interpellations = high schedule compression → substantive debate quality degrades.
 **Early signals**: Any bill withdrawn or postponed from committee in May 2026.
 
-## Aggregate risk posture
+### Aggregate risk posture
 
 - **Net risk score**: 15 risks × average L×I of 8.3 = **baseline political risk environment: ELEVATED**
 - **Direction of change vs prior 7 days** (from sibling risk-assessments): ↑ +1 quintile — driven by simultaneous legal+operational+financial triple.
 - **Heat cell concentration**: 2 risks in the (3,4)-(4,4) quadrant — both on HD03252.
 
-_Source: cross-reads of all 4 sibling risk-assessment.md files._
-
 ## SWOT Analysis
-
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/swot-analysis.md)_
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/swot-analysis.md -->
 
 **Framework**: Kent-SWOT with TOWS matrix per `ai-driven-analysis-guide.md §Step 6`.
 Actor of analysis: **The Tidö coalition government (M-KD-L + SD support party)** as it approaches September 2026 election.
 
-## Strengths
+### Strengths
 
 | # | Strength | Evidence (dok_id) |
 |---|----------|-------------------|
@@ -924,7 +898,7 @@ Actor of analysis: **The Tidö coalition government (M-KD-L + SD support party)*
 | S4 | Personal PM signature on all four props — concentrates credibility | Signing block on HD03252/253/256/3104 |
 | S5 | Administrative capacity backbone — Kriminalvården Q2 reporting | HD01CU25 |
 
-## Weaknesses
+### Weaknesses
 
 | # | Weakness | Evidence (dok_id) |
 |---|----------|-------------------|
@@ -934,7 +908,7 @@ Actor of analysis: **The Tidö coalition government (M-KD-L + SD support party)*
 | W4 | Kriminalvården capacity plan unproven against demand curve | CU25 subtext |
 | W5 | No positive agenda on cost-of-living — exposed to S wedge | HD024082 + HD10447 |
 
-## Opportunities
+### Opportunities
 
 | # | Opportunity | Evidence / path |
 |---|-------------|-----------------|
@@ -944,7 +918,7 @@ Actor of analysis: **The Tidö coalition government (M-KD-L + SD support party)*
 | O4 | Quiet co-option of MP's krigsmateriel bill (peel ethical voters) | HD024096 (low-cost signal) |
 | O5 | Economic-credibility narrative via skr debt management | HD03104 |
 
-## Threats
+### Threats
 
 | # | Threat | Evidence / trigger |
 |---|--------|---------------------|
@@ -956,14 +930,14 @@ Actor of analysis: **The Tidö coalition government (M-KD-L + SD support party)*
 | T6 | Opposition coordination on utvisning/bifurcation | HD024090/95/97, HD01SfU23 |
 | T7 | Late-cycle capacity slippage in Kriminalvården | CU25 operational risk |
 
-## TOWS matrix
+### TOWS matrix
 
 | | Opportunities | Threats |
 |---|---------------|---------|
 | **Strengths** | **SO — Delivery-credibility sprint**: S1/S4 × O1/O3. Finish 4 bills + CU25 Q2 delivery milestone on the same pre-recess timeline. Yields "We deliver" narrative. | **ST — Proportionality defence**: S1 × T1/T4. Leverage parliamentary majority to add a formal proportionality safeguard to HD03252, pre-empting ECHR challenge and L fracture. |
 | **Weaknesses** | **WO — Positive-agenda gap close**: W5 × O5. Use HD03104 debt-management skr as platform for a pre-recess cost-of-living communication push. Partial, but better than silence. | **WT — Defensive containment**: W1/W3 × T2/T3. Accept that HD03253 may slip to autumn; pre-announce a transposition roadmap. On L, pre-emptively float a minor HD03252 amendment to prevent open fracture. |
 
-## TOWS strategic recommendations (for intelligence consumers, not the coalition)
+### TOWS strategic recommendations (for intelligence consumers, not the coalition)
 
 **For parliamentary watchers**:
 - Monitor L's JuU statements on HD03252 for the first-week-of-May proportionality amendment. If L supports amendment, coalition is reinforced; if L opposes, first real fracture of mandate.
@@ -979,22 +953,19 @@ Actor of analysis: **The Tidö coalition government (M-KD-L + SD support party)*
 **For opposition analysts**:
 - S has chosen its campaign terrain (economy). V has chosen rights. MP has chosen ethics. C has chosen migration-flank differentiation. **Four separate campaign arcs in one reporting day** — a first in this mandate.
 
-## Net SWOT balance
+### Net SWOT balance
 
 - **Strengths (5) > Weaknesses (5)** but substantively equal — Tidöavtalet delivery is real but fragile.
 - **Opportunities (5) ≈ Threats (7)** — threats narrowly outnumber opportunities.
 - **Net strategic position**: *coalition is delivering on its legacy agenda but accumulating latent risks* — precisely the position a pre-election incumbent adopts when converting political capital to policy durability.
 
-_Source: Kent-SWOT synthesis of all sibling SWOT analyses + cross-type strategic framing._
-
 ## Threat Analysis
-
-_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/threat-analysis.md)_
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/threat-analysis.md -->
 
 **Framework**: Political-threat taxonomy + attack-tree per `ai-driven-analysis-guide.md §Step 8`.
 **Scope**: Threats to democratic accountability, institutional integrity, and rule-of-law durability exposed by today's legislative batch — not security threats to individuals or infrastructure.
 
-## Threat taxonomy
+### Threat taxonomy
 
 | # | Threat class | Manifestation today | Severity | Direction (↑/↓/→) |
 |---|--------------|----------------------|----------|--------------------|
@@ -1007,7 +978,7 @@ _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 | T7 | Coalition discipline hardening (SD zero motions) | 9-bill silence | LOW (not a threat today) | ↑ |
 | T8 | Populist media framing of coalition-discipline | "SD vetoes everything" narrative risk | LOW | → |
 
-## Attack tree — "HD03252 becomes a legitimacy-damaging rights case"
+### Attack tree — "HD03252 becomes a legitimacy-damaging rights case"
 
 ```
 ROOT: HD03252 enters force 2026-08-01 and triggers domestic/ECHR challenge
@@ -1029,7 +1000,7 @@ ROOT: HD03252 enters force 2026-08-01 and triggers domestic/ECHR challenge
 
 **Compound probability of adverse ECHR judgment within 30 months**: ≈ 5–9% (0.7 × 0.5 × 0.3). **Low absolute but high-impact.**
 
-## Threat × stakeholder mapping
+### Threat × stakeholder mapping
 
 | Threat | Coalition | Opposition | Civil society | EU | Markets |
 |--------|-----------|------------|----------------|-----|---------|
@@ -1042,13 +1013,13 @@ ROOT: HD03252 enters force 2026-08-01 and triggers domestic/ECHR challenge
 | T7 | Benefits | **Loses** | Neutral | Neutral | Neutral |
 | T8 | Loses slightly | Benefits | Neutral | Neutral | Neutral |
 
-## Asymmetric-threat assessment
+### Asymmetric-threat assessment
 
 Most of today's threats are **structural-institutional** rather than acute. The one acute threat surface is HD03252's rights-regime footprint: a single operational incident in Q3 2026 could catalyze an outsized rights-NGO and international response.
 
 The sleeper asymmetric threat is **T3 (Riksbank independence)**: very low probability in the next quarter, but if activated, would have an outsized effect on Swedish financial-market reputation — a classic black-swan-shaped risk.
 
-## Threat-to-PIR mapping
+### Threat-to-PIR mapping
 
 - T1 → PIR-2 (L fracture) + PIR-4 (SD discipline on HD03252)
 - T2 → Watchlist (HD01SfU23 Q2 audit)
@@ -1059,20 +1030,17 @@ The sleeper asymmetric threat is **T3 (Riksbank independence)**: very low probab
 - T7 → Standing PIR-A (SD motion filings)
 - T8 → N/A (media-framing watchlist only)
 
-## Counter-threat recommendations (for intelligence consumers)
+### Counter-threat recommendations (for intelligence consumers)
 
 - **Parliamentary observers**: Prioritize attention to L in May on HD03252 proportionality; attention to FiU calendar on HD03253.
 - **Market analysts**: Monitor HD03253 transposition timeline + HD01FiU23 speaker list.
 - **Civil-liberty NGOs**: Pre-position legal-readiness for HD03252 ECHR challenge starting 2026-Q4.
 - **EU desk officers**: Track Swedish CRR3 transposition status weekly.
 
-_Source: cross-type synthesis of threat profiles from sibling threat-analysis artifacts._
-
 ## Per-document intelligence
 
 ### HD01CU25
-
-_Source: [`documents/HD01CU25-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD01CU25-analysis.md)_
+<!-- source: documents/HD01CU25-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD01CU25-analysis.md -->
 
 See aggregated analysis in:
 - [`../intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md)
@@ -1084,8 +1052,7 @@ See aggregated analysis in:
 Primary sibling folder analyses under `analysis/daily/2026-04-24/` carry the single-type deep treatment.
 
 ### HD024082
-
-_Source: [`documents/HD024082-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD024082-analysis.md)_
+<!-- source: documents/HD024082-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD024082-analysis.md -->
 
 See aggregated analysis in:
 - [`../intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md)
@@ -1097,8 +1064,7 @@ See aggregated analysis in:
 Primary sibling folder analyses under `analysis/daily/2026-04-24/` carry the single-type deep treatment.
 
 ### HD03252
-
-_Source: [`documents/HD03252-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD03252-analysis.md)_
+<!-- source: documents/HD03252-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD03252-analysis.md -->
 
 See aggregated analysis in:
 - [`../intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md)
@@ -1110,8 +1076,7 @@ See aggregated analysis in:
 Primary sibling folder analyses under `analysis/daily/2026-04-24/` carry the single-type deep treatment.
 
 ### HD03253
-
-_Source: [`documents/HD03253-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD03253-analysis.md)_
+<!-- source: documents/HD03253-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD03253-analysis.md -->
 
 See aggregated analysis in:
 - [`../intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md)
@@ -1123,8 +1088,7 @@ See aggregated analysis in:
 Primary sibling folder analyses under `analysis/daily/2026-04-24/` carry the single-type deep treatment.
 
 ### HD10447
-
-_Source: [`documents/HD10447-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD10447-analysis.md)_
+<!-- source: documents/HD10447-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD10447-analysis.md -->
 
 See aggregated analysis in:
 - [`../intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md)
@@ -1136,14 +1100,13 @@ See aggregated analysis in:
 Primary sibling folder analyses under `analysis/daily/2026-04-24/` carry the single-type deep treatment.
 
 ## Election 2026 Analysis
-
-_Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/election-2026-analysis.md)_
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/election-2026-analysis.md -->
 
 **Election date**: September 2026 (statutory cycle)
 **T-minus**: ~5 months
 **Baseline question**: How does today's legislative batch reshape the 2026 campaign arc?
 
-## Today's election-relevant signals
+### Today's election-relevant signals
 
 | Signal | Campaign implication |
 |--------|----------------------|
@@ -1155,34 +1118,34 @@ _Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor
 | C three utvisning counter-motions | C targets migration-policy flank; differentiates from S |
 | L absent from lead ministries | L's campaign faces "what did we actually deliver?" question |
 
-## Campaign-arc reading
+### Campaign-arc reading
 
-### Coalition (M-KD-L + SD)
+#### Coalition (M-KD-L + SD)
 - **Core message**: "We delivered" — 4-bill legacy + SD discipline + Kriminalvården capacity + banking transposition
 - **Vulnerability**: Cost-of-living exposure; no positive fiscal story; L internal tension
 - **Key pre-election event**: Summer-recess communication sprint on all 4 bills passed
 
-### S (Social Democrats)
+#### S (Social Democrats)
 - **Core message**: "Cost of living; government serves large capital, not families" — drivmedel + SME sick-pay + fiscal critique
 - **Strategy**: Concentrate fire on economic axis; cede rights/ethics to V/MP/C
 - **Key test**: Does Busch's HD10447 response on 2026-05-07 open a pathway for S to pivot to "failed response" narrative?
 
-### V (Left)
+#### V (Left)
 - **Core message**: Rights-maximalism; defense of migrants and detainees
 - **Strategy**: Differentiate left flank from S on identity issues
 - **Key test**: Will HD024095 vote pattern reveal V-MP-C coordination or fragmentation?
 
-### MP (Green)
+#### MP (Green)
 - **Core message**: Ethical/climate-adjacent wedges (krigsmateriel)
 - **Strategy**: Revival of traditional MP identity via ethical-policy motions
 - **Key test**: Do MP polling numbers move on the krigsmateriel angle?
 
-### C (Centre)
+#### C (Centre)
 - **Core message**: Migration-flank differentiation
 - **Strategy**: Maintain urban-rural-centre voter base
 - **Risk**: Visibility remains low
 
-## Coalition scenario probabilities (T+5 months, forward-looking)
+### Coalition scenario probabilities (T+5 months, forward-looking)
 
 | Coalition outcome 2026 | Probability | Driver |
 |------------------------|-------------|--------|
@@ -1193,7 +1156,7 @@ _Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor
 
 **Probabilities sum**: 1.00 ✅
 
-## Seat-prediction placeholder (v.0)
+### Seat-prediction placeholder (v.0)
 
 | Party | 2022 result (seats) | Current polling est. | Pre-election trajectory (est) |
 |-------|-----|----------------------|-------------------------------|
@@ -1208,7 +1171,7 @@ _Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor
 
 _Note: Placeholder estimates; primary polling data ingest pending; this artifact's purpose is campaign-narrative inference, not precision seat forecast._
 
-## Pre-election strategic map
+### Pre-election strategic map
 
 ```mermaid
 flowchart LR
@@ -1228,16 +1191,13 @@ flowchart LR
   class Summer,Campaign,Election stage
 ```
 
-_Source: cross-type inference from sibling folder materials; placeholder quantitative estimates for next-cycle refinement._
-
 ## Coalition Mathematics
-
-_Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md)_
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md -->
 
 **Current Riksdag composition** (2022–2026 mandate):
 - Total: 349 seats · Majority threshold: 175 seats
 
-## Seat distribution
+### Seat distribution
 
 | Party | Seats | Role |
 |-------|-------|------|
@@ -1252,9 +1212,9 @@ _Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/
 | **Government coalition + SD** | **176** | **Majority** |
 | **Opposition (S+V+C+MP)** | **173** | **Minority** |
 
-## Projected vote breakdown on today's top-5 dok_ids
+### Projected vote breakdown on today's top-5 dok_ids
 
-### HD03253 (EU banking) — expected vote breakdown
+#### HD03253 (EU banking) — expected vote breakdown
 
 | Party | Ja | Nej | Avstår | Mandat |
 |-------|----|----|--------|--------|
@@ -1270,7 +1230,7 @@ _Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/
 
 **Projected outcome**: Bifall med stor majoritet. EU-compliance bills typically pass with broad assent. S abstains (standard on EU-mandated packages); C supports as EU-pragmatist; V likely opposes on ideological grounds; MP abstains.
 
-### HD03252 (detainee benefit restrictions) — expected vote breakdown
+#### HD03252 (detainee benefit restrictions) — expected vote breakdown
 
 | Party | Ja | Nej | Avstår | Mandat |
 |-------|----|----|--------|--------|
@@ -1286,7 +1246,7 @@ _Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/
 
 **Projected outcome**: Bifall (170 Ja vs 48 Nej). **However L split (10/6) is a PIR-2 critical signal** — if L unity holds on Ja (16/0), coalition discipline is reinforced. If L dissent is larger (e.g., 6/10 split against), the bill passes with an unusual government-whip failure.
 
-### HD10447 (interpellation, SME sick-pay)
+#### HD10447 (interpellation, SME sick-pay)
 
 Not a vote — Minister Busch responds orally. Formal vote risk: if the interpellation is later converted to a motion or budget amendment, vote arithmetic becomes:
 
@@ -1301,7 +1261,7 @@ Not a vote — Minister Busch responds orally. Formal vote risk: if the interpel
 
 **Motion outcome**: Avslag (rejected). But the **campaign value** of 149 Ja seats is high — it sets up a 2026 election narrative.
 
-### HD01CU25 (prison capacity committee report)
+#### HD01CU25 (prison capacity committee report)
 
 | Party | Ja | Nej | Avstår | Mandat |
 |-------|----|----|--------|--------|
@@ -1314,7 +1274,7 @@ Not a vote — Minister Busch responds orally. Formal vote risk: if the interpel
 
 **Projected outcome**: Bifall with broad majority. Coalition + S + C all align on prison capacity; V alone on principled opposition.
 
-### HD024082 (S drivmedel motion)
+#### HD024082 (S drivmedel motion)
 
 | Party | Ja (for motion) | Nej | Avstår | Mandat |
 |-------|----------------|-----|--------|--------|
@@ -1327,7 +1287,7 @@ Not a vote — Minister Busch responds orally. Formal vote risk: if the interpel
 
 **Projected outcome**: Avslag. Classic S-V-MP bloc vs. M-KD-L-SD bloc with C abstaining.
 
-## Coalition-discipline diagnostic
+### Coalition-discipline diagnostic
 
 | Party | Disciplined vote today? | Evidence |
 |-------|--------------------------|----------|
@@ -1340,7 +1300,7 @@ Not a vote — Minister Busch responds orally. Formal vote risk: if the interpel
 | MP | Yes (ethical signalling) | Krigsmateriel motion |
 | C | Yes (flank differentiation) | Utvisning motions |
 
-## Mandatsiffror scenario check
+### Mandatsiffror scenario check
 
 **If election were held today** (per most recent polling, rounded):
 
@@ -1361,22 +1321,19 @@ Opposition (S+V+MP): 115+28+14 = **157** (below threshold, needs C)
 
 **Under current polling, S + V + MP + C has a narrow majority. But C's willingness to join is an open question — and L's 4%-threshold risk adds volatility.**
 
-## Implication of today's bills on coalition math
+### Implication of today's bills on coalition math
 
 - **HD03253 passage**: neutral coalition math (no swing votes at risk).
 - **HD03252 passage**: depends on L's internal cohesion — if L fractures publicly, coalition narrative weakens in Segment E.
 - **HD10447 response by Busch**: shapes S's ability to consolidate B + F segments.
 - **HD024082 + cluster**: baseline campaign fight; vote outcome immaterial, narrative value significant.
 
-_Source: Current Riksdag composition per data.riksdagen.se; projected vote distributions modeled on prior 2022–2026 mandate votes for analogous bills; L split scenarios per PIR-2._
-
 ## Voter Segmentation
-
-_Source: [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/voter-segmentation.md)_
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/voter-segmentation.md -->
 
 **Framework**: 7-segment post-2022-election taxonomy (refined by 2024 Eurobarometer + SCB socio-economic data).
 
-## Segment matrix × today's issues
+### Segment matrix × today's issues
 
 | Segment | Size (est) | Core concerns | Today's issue relevance |
 |---------|-----------|---------------|-------------------------|
@@ -1388,35 +1345,35 @@ _Source: [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blo
 | **F. Low-information / occasional voters** | 18% | Headline issues; cost of living | Responsive to HD024082; low engagement on prudential HD03253 |
 | **G. Disengaged / protest** | 7% | None salient | Inert today |
 
-## Issue-to-segment mapping
+### Issue-to-segment mapping
 
-### HD03252 (detainee benefits)
+#### HD03252 (detainee benefits)
 - Gains: Segments A (+), D (+)
 - Neutral/ambivalent: F, G
 - Loses: C (--), E (-)
 - **Net coalition gain**: +3pp nominal; erodes with each rights-litigation event
 
-### HD03253 (EU banking)
+#### HD03253 (EU banking)
 - Gains: None directly; perceived as "technocratic EU compliance"
 - Risk: B (-), F (-) if framed as bank-friendly
 - **Net electoral effect**: 0 ± 0.5pp; a technocratic file
 
-### HD10447 (SME sick-pay)
+#### HD10447 (SME sick-pay)
 - S campaign asset: B (+), E (+), F (+)
 - Coalition defensive: A (neutral), D (slight +)
 - **Net electoral effect**: S net +1.5pp if Busch response is flat-footed
 
-### HD024082 (drivmedel)
+#### HD024082 (drivmedel)
 - S campaign asset: B (+), D (+), F (+)
 - Coalition risk: A (neutral), E (-)
 - **Net electoral effect**: S net +1pp; classic fuel-politics dynamic
 
-### HD024096 (krigsmateriel MP)
+#### HD024096 (krigsmateriel MP)
 - MP base signal: C (++) (high-engagement segment)
 - No cross-segment reach
 - **Net electoral effect**: MP +0.3pp; defensive of left flank
 
-## Segment-level coalition mathematics
+### Segment-level coalition mathematics
 
 If by September 2026:
 - Segments A + D solidly hold for coalition → 29% floor
@@ -1426,7 +1383,7 @@ If by September 2026:
 
 **Pre-election working model**: S-V-MP bloc has a narrow polling advantage (46% vs 43%) with 11% undecided pending cost-of-living debate resolution.
 
-## Turnout sensitivity
+### Turnout sensitivity
 
 | Scenario | Turnout | Coalition advantage |
 |----------|---------|---------------------|
@@ -1434,7 +1391,7 @@ If by September 2026:
 | Medium turnout (80–85%) | Standard 2022 dynamics | Coalition holds |
 | Low turnout (< 80%) | Segment G dropout benefits concentrated SD/coalition bloc | Coalition benefits |
 
-## Messaging alignment (observed from today's filings)
+### Messaging alignment (observed from today's filings)
 
 **Coalition observed messaging**: Delivery + discipline. Aligned with Segments A, D.
 **S observed messaging**: Cost-of-living + SME resilience. Aligned with Segments B, D, F.
@@ -1443,20 +1400,17 @@ If by September 2026:
 **C observed messaging**: Migration flank. Aligned with Segment E narrow.
 **L observed messaging**: Silent today. **Risk of Segment E attrition.**
 
-## Key voter-segmentation takeaway
+### Key voter-segmentation takeaway
 
 Today's battle lines favor S structurally (B + D + F are economy-responsive). Coalition holds A + D partial; vulnerable on L's representation of E. **MP and V compete for C — to the mutual detriment of S narrative consolidation.**
 
-_Source: Synthesis of 2022 election data + 2024–25 Eurobarometer segmentation + sibling-folder inference; primary SCB polling not queried this cycle (use sparingly until monthly refresh)._
-
 ## Comparative International
-
-_Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/comparative-international.md)_
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/comparative-international.md -->
 
 **Comparator set**: Nordic + EU minimum (Denmark, Norway, Finland, Germany, Netherlands)
 **Framework**: Cross-country parallel-case analysis with normalization for political-system differences, per `ai-driven-analysis-guide.md §Step 9`.
 
-## Comparator table — policy analogs to today's Swedish batch
+### Comparator table — policy analogs to today's Swedish batch
 
 | SE policy | Closest comparator(s) | Parallel analogue | Status abroad | Lesson for Sweden |
 |-----------|-----------------------|-------------------|----------------|--------------------|
@@ -1471,9 +1425,9 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 | **HD024096 krigsmateriel export ban (MP motion)** | Germany SPD/Greens coalition 2021 debates; Norway 2024 export restrictions | Arms-export ethics | DE: eventual tightening; NO: selective tightening | Ethical-wedge motions rarely pass but reshape party positioning |
 | **Tidö pre-election legacy sprint** | Denmark Frederiksen 2019 pre-election bill push; Germany Scholz 2024 pre-election push | Pre-election legacy legislation | DK: effective, Frederiksen re-elected; DE: ineffective, SPD lost | Pre-election legacy pushes help coalitions that have successfully delivered; hurt those with unfulfilled promises |
 
-## Cross-case patterns
+### Cross-case patterns
 
-### Pattern 1 — "Rights restrictions + migration = litigation magnet"
+#### Pattern 1 — "Rights restrictions + migration = litigation magnet"
 
 HD03252 + HD01SfU23 follow the Danish and Dutch template of tightening state coercion on migration/justice populations. In both comparator cases:
 - Implementation was operational within 12–18 months.
@@ -1482,19 +1436,19 @@ HD03252 + HD01SfU23 follow the Danish and Dutch template of tightening state coe
 
 **Implication for Sweden**: Expect the same trajectory — operational before election, litigation after. The political question is whether the Tidö coalition can frame enforcement as strengthening rule-of-law rather than eroding rights.
 
-### Pattern 2 — "EU prudential transposition is administrative, not political"
+#### Pattern 2 — "EU prudential transposition is administrative, not political"
 
 HD03253 CRR3/CRD6 transposition: Germany and Finland demonstrate that prudential transposition rarely becomes a public controversy. **If Sweden slips the deadline, the issue becomes visibility for EU institutional critique — not voter salience.** This is a **regulatory risk, not electoral risk**.
 
-### Pattern 3 — "Fuel-tax politics are durable but rarely decisive"
+#### Pattern 3 — "Fuel-tax politics are durable but rarely decisive"
 
 HD024082: Fuel-tax debates are common in Nordic pre-election windows but have not independently flipped an election in the comparator set. Combined with sick-pay (HD10447), they acquire more salience. S's strategy is to bundle these into a cost-of-living omnibus narrative.
 
-### Pattern 4 — "Central-bank independence — latent but unique to Sweden"
+#### Pattern 4 — "Central-bank independence — latent but unique to Sweden"
 
 HD01FiU23: Norway and Finland have not shown political appetite for reviewing central-bank independence. Sweden's latent willingness (SD history) makes this the **only uniquely Swedish institutional risk** in today's batch.
 
-## Nordic comparator matrix (condensed)
+### Nordic comparator matrix (condensed)
 
 | Dimension | DK | NO | FI | SE today |
 |-----------|----|----|----|----------|
@@ -1504,76 +1458,73 @@ HD01FiU23: Norway and Finland have not shown political appetite for reviewing ce
 | SME sick-pay politics | MEDIUM | MEDIUM | MEDIUM | MEDIUM |
 | Legislative throughput in pre-election quarter | HIGH | MEDIUM | MEDIUM | HIGH (today = top-5% day) |
 
-## EU-level comparator
+### EU-level comparator
 
 - **CRR3/CRD6**: 25/27 member states on track; Sweden currently flag-yellow on timeline.
 - **ECHR litigation volume**: Sweden historically low (per capita); HD03252 could raise the profile.
 - **Tachograph compliance**: Routine; no EU risk.
 
-## Key comparative observation
+### Key comparative observation
 
 Sweden's distinguishing feature in this reporting day is not any single policy — each has a Nordic or EU parallel — but the **simultaneous layering** of rights, banking, migration, and fiscal items on a single day. The Danish 2015 "jewellery-law" day was a single-issue spectacle; the German 2024 pre-election push was fiscally concentrated. **Sweden 2026-04-24 is unusual in scope and rhythm combined.**
 
-_Source: cross-case synthesis drawing on sibling folder comparative analyses + Nordic/EU institutional knowledge from prior monthly-reviews._
-
 ## Historical Parallels
-
-_Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/historical-parallels.md)_
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/historical-parallels.md -->
 
 **Purpose**: Place today's reporting signals in historical context — Swedish and Nordic parliamentary history, with disciplined analogical reasoning.
 
-## Swedish historical parallels
+### Swedish historical parallels
 
-### Parallel 1 — Pre-election sprint of Bildt 1994
+#### Parallel 1 — Pre-election sprint of Bildt 1994
 **Analogue**: Carl Bildt's coalition government in spring 1994 similarly pushed a concentrated reform agenda before the autumn 1994 election.
 **Differences**: Bildt had a weaker parliamentary base; Tidöavtalet has SD support-party architecture.
 **Lesson**: Concentrated pre-election reform agendas can project competence but require delivery proof — Bildt lost, partly on unemployment. Today's coalition must avoid a similar fate on cost-of-living.
 
-### Parallel 2 — Reinfeldt 2010 pre-election legacy
+#### Parallel 2 — Reinfeldt 2010 pre-election legacy
 **Analogue**: Fredrik Reinfeldt's 2010 pre-election legacy-consolidation — tax reforms, school reforms, healthcare standards.
 **Differences**: Reinfeldt held two mandates already; Tidöavtalet is first-mandate.
 **Lesson**: Legacy consolidation worked for Reinfeldt in 2010 but not in 2014. Today's coalition is in a first-mandate position structurally similar to 2010.
 
-### Parallel 3 — Löfven 2018 pre-formation crisis
+#### Parallel 3 — Löfven 2018 pre-formation crisis
 **Analogue**: 134-day government formation in late 2018–early 2019 demonstrates that Swedish politics tolerates extended formation.
 **Lesson**: If the Sept 2026 election produces fragmentation, formation could again be protracted — S's interpellation strategy (HD10447) could become important for post-election bargaining.
 
-### Parallel 4 — Persson 2006 SME sick-pay revisited
+#### Parallel 4 — Persson 2006 SME sick-pay revisited
 **Analogue**: Göran Persson's government made SME sick-pay a campaign issue in 2006. Outcome: S lost narrowly.
 **Lesson**: SME sick-pay (HD10447) is a recurring Swedish campaign axis. Historical base rate suggests it shifts about 1–2 pp but rarely decides elections alone.
 
-### Parallel 5 — Riksbank Act 2022 overhaul
+#### Parallel 5 — Riksbank Act 2022 overhaul
 **Analogue**: Sweden's 2022 Riksbank Act overhaul was the largest institutional change to central-bank governance in decades.
 **Differences**: It was bipartisan.
 **Lesson**: Riksbank governance rarely polarizes — but if HD01FiU23 opens a political-oversight debate, this would be a **break from the 2022 consensus pattern**.
 
-## Nordic historical parallels
+### Nordic historical parallels
 
-### Parallel 6 — Denmark Frederiksen 2019 pre-election push
+#### Parallel 6 — Denmark Frederiksen 2019 pre-election push
 **Analogue**: Mette Frederiksen's SD government pushed a concentrated pre-election agenda on immigration and welfare in 2019, benefiting from the 2018 sentiment shift.
 **Differences**: SD had just emerged; Frederiksen's base was more centrist.
 **Lesson**: Pre-election legacy-push succeeded when backed by consistent narrative. Today's Tidöavtalet has discipline (SD) but risks narrative fragmentation (L's quiet absence).
 
-### Parallel 7 — Norway Solberg 2021 defeat
+#### Parallel 7 — Norway Solberg 2021 defeat
 **Analogue**: Erna Solberg's coalition lost 2021 election despite visible pre-election activity.
 **Lesson**: Legislative throughput alone is insufficient. What matters is how throughput is framed — Solberg's 2021 messaging was diffuse; Frederiksen's 2019 was concentrated.
 
-### Parallel 8 — Finland Orpo 2023 victory
+#### Parallel 8 — Finland Orpo 2023 victory
 **Analogue**: Petteri Orpo's coalition came to power in 2023 on a very similar M-KD-SD-like framework (Kokoomus-PS-KD-RKP).
 **Relevant lesson**: Fiscal-discipline narrative + coalition-partner-of-confidence strategy can carry centre-right coalitions through pre-election periods — especially if SD-equivalent party maintains support-party discipline. **This is the most direct positive analogue for Sweden's coalition.**
 
-## Legal-historical parallels
+### Legal-historical parallels
 
-### Parallel 9 — 2011 migration bifurcation attempt
+#### Parallel 9 — 2011 migration bifurcation attempt
 **Analogue**: The 2011 Reinfeldt coalition attempted a bifurcated protection regime for migrants; aborted by political-complexity concerns.
 **Differences**: Today's HD01SfU23 is a committee report working on a similar structural idea, with an SD support architecture that was unavailable in 2011.
 **Lesson**: What was legally possible but politically infeasible in 2011 may now be achievable — but at the cost of litigation trail.
 
-### Parallel 10 — ECHR cases against Sweden (2010s)
+#### Parallel 10 — ECHR cases against Sweden (2010s)
 **Analogue**: Sweden has received a handful of ECHR adverse judgments on migration/asylum matters in the 2010s, consistently with proportionality gaps.
 **Lesson**: Proportionality safeguards added before enactment reduce ECHR exposure substantially — a pre-3rd-reading amendment to HD03252 could move KJ-5 confidence from MEDIUM (55–70%) to LOW (15–30%).
 
-## Historical-base-rate summary
+### Historical-base-rate summary
 
 | Class of event | Historical base rate | Today's evidence lean |
 |----------------|-----------------------|------------------------|
@@ -1584,19 +1535,16 @@ _Source: [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/b
 | EU transposition deadline miss | 8–15% | HD03253 within risk band |
 | Central-bank politicization debate triggered | < 5% (post-2000) | HD01FiU23 latent only |
 
-## Conclusion from historical reasoning
+### Conclusion from historical reasoning
 
 Today's reporting day fits recurrent Swedish + Nordic patterns but with one distinctive feature: the **simultaneous layering of four policy axes** (rights, banking, migration, fiscal) on a single reporting day. In 25 years of post-2000 Nordic pre-election pushes, single-axis concentration is the norm. A four-axis push is a high-stakes gambit: if executed, it creates a legacy; if any axis breaks, it creates cascading doubt.
 
-_Source: Historical synthesis from general Swedish/Nordic parliamentary record; not primary-source queried this cycle._
-
 ## Implementation Feasibility
-
-_Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/implementation-feasibility.md)_
+<!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/implementation-feasibility.md -->
 
 **Framework**: 4-dimension feasibility assessment (Operational × Fiscal × Legal × Political) per `ai-driven-analysis-guide.md §Step 7`.
 
-## Feasibility matrix — top legislative items
+### Feasibility matrix — top legislative items
 
 | dok_id | Operational | Fiscal | Legal | Political | Overall |
 |--------|-------------|--------|-------|-----------|---------|
@@ -1610,43 +1558,43 @@ _Source: [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmon
 | **HD10447** SME sick-pay (proposal from interpellation) | **MEDIUM** | **LOW** — fiscal cost | **HIGH** | **LOW** — government opposed | **LOW-MEDIUM** |
 | **HD024096** krigsmateriel ban | **MEDIUM** | **MEDIUM** | **MEDIUM** — WTO/EU considerations | **LOW** | **LOW** (if reached vote) |
 
-## Implementation risk by item
+### Implementation risk by item
 
-### HD03252 (detainee benefits) — MEDIUM feasibility
+#### HD03252 (detainee benefits) — MEDIUM feasibility
 **Operational path**: Kriminalvården must redesign benefit-delivery systems. Capacity expansion required (HD01CU25 tie-in).
 **Fiscal path**: Manageable — estimated ~ 50–150 MSEK in implementation costs.
 **Legal path**: ECHR proportionality test is the binding constraint. If proportionality amendment absent, 15–30% chance of adverse ECtHR judgment within 30 months (per `devils-advocate.md` ACH).
 **Political path**: L flank is the binding risk. Pre-3rd-reading amendment signals probable (coalition incentive to avoid fracture).
 
-### HD03253 (EU banking) — HIGH feasibility
+#### HD03253 (EU banking) — HIGH feasibility
 **Operational path**: FI operationally ready; transposition is regulatory-text work.
 **Fiscal path**: RWA redistribution is industry-internal; no fiscal cost to Treasury.
 **Legal path**: EU-mandated; no domestic legal challenge vector.
 **Political path**: Unified coalition + silent S + supportive C. Opposition on ideological grounds limited to V.
 **Binding constraint**: Parliamentary calendar. If FiU schedules by 2026-05-15, probability of on-time transposition > 85%.
 
-### HD01CU25 (prison capacity) — MEDIUM feasibility
+#### HD01CU25 (prison capacity) — MEDIUM feasibility
 **Operational path**: Capacity scaling is real and challenging. Q2 report will reveal if plan is achievable.
 **Fiscal path**: Costed in current budget cycle; no new funds.
 **Legal path**: Uncontested.
 **Political path**: Broad majority support.
 **Binding constraint**: Actual ability to commission beds per timeline.
 
-### HD10447 (SME sick-pay, if converted to motion) — LOW feasibility
+#### HD10447 (SME sick-pay, if converted to motion) — LOW feasibility
 **Operational path**: Redesign of Försäkringskassan reimbursement rules.
 **Fiscal path**: Estimated 500–1500 MSEK/year in reimbursements — politically charged cost.
 **Legal path**: Straightforward.
 **Political path**: Government refuses under current coalition math. Opposition push for campaign narrative value, not immediate legislation.
 **Implementation realistic only post-2026 election under S government**.
 
-### HD024096 (krigsmateriel export ban) — LOW feasibility
+#### HD024096 (krigsmateriel export ban) — LOW feasibility
 **Operational path**: Redesign of ISP approval regime. Significant.
 **Fiscal path**: Indirect costs via industrial contraction.
 **Legal path**: Potential WTO and EU considerations.
 **Political path**: No government majority; symbolic vote.
 **Implementation realistic only under a different coalition**.
 
-## Capacity-versus-ambition gap
+### Capacity-versus-ambition gap
 
 The key finding: today's legislative ambition **exceeds** current administrative capacity in two places:
 1. **Kriminalvården** (HD03252 × HD01CU25) — bed capacity plan tight
@@ -1654,7 +1602,7 @@ The key finding: today's legislative ambition **exceeds** current administrative
 
 Capacity gaps do not prevent enactment but create operational-risk pathways (R3, R7 in `risk-assessment.md`).
 
-## Fiscal absorption
+### Fiscal absorption
 
 | Item | Est. direct cost 2026–2028 (MSEK) | Budget line |
 |------|-----------------------------------|-------------|
@@ -1667,7 +1615,7 @@ Capacity gaps do not prevent enactment but create operational-risk pathways (R3,
 
 **Total new estimated direct fiscal exposure**: ~ 2.0–3.2 BSEK 2026–2028 — modest against national budget; concentrated in justice + migration lines.
 
-## Capacity bottleneck mapping
+### Capacity bottleneck mapping
 
 ```mermaid
 graph TD
@@ -1683,27 +1631,24 @@ graph TD
   class FI,TS,RB nominal
 ```
 
-## Implementation-feasibility conclusion
+### Implementation-feasibility conclusion
 
 Of the four PM-signed propositions, **HD03253, HD03256, and HD03104** are structurally feasible with high confidence. **HD03252** is feasible but depends on capacity delivery at Kriminalvården and proportionality safeguards. The committee reports are similarly tiered — FiU23 and CU25 are high-feasibility; SfU23 faces operational risk.
 
 The **opposition motion cluster** is structurally infeasible under current coalition math — these motions are campaign-signal tools, not immediate legislative risks.
 
-_Source: Synthesis of sibling implementation-feasibility sections + operational-knowledge cross-reference._
-
 ## Devil's Advocate
-
-_Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/devils-advocate.md)_
+<!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/devils-advocate.md -->
 
 **Framework**: Analysis of Competing Hypotheses (ACH) per Heuer, plus formal devil's-advocate challenge to the base narrative (ICD 203 Standard 9).
 
-## The base narrative (what the synthesis claims)
+### The base narrative (what the synthesis claims)
 
 > "Tidö coalition is running a coordinated pre-election legacy sprint — 4 PM-signed propositions + 5 committee reports + 16 interpellations on one day. SD discipline is intact (zero motions). Opposition has atomized into 4 separate arcs (S economy, V rights, MP ethics, C migration-flank). The day reveals a high-confidence political-rhythm reading."
 
-## Competing hypotheses
+### Competing hypotheses
 
-### H1 — "Calendar coincidence, not coordination"
+#### H1 — "Calendar coincidence, not coordination"
 
 **Claim**: The 4-prop + 5-bet + 16-ip concentration is a calendar-rhythm coincidence driven by committee deadlines, session pacing, and parliamentary filing windows — not a deliberately orchestrated sprint.
 
@@ -1719,7 +1664,7 @@ _Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 **Verdict**: H1 accounts for 15–25% of variance. The baseline narrative (H0) is still more parsimonious.
 
-### H2 — "Coalition-fragility signal, not confidence signal"
+#### H2 — "Coalition-fragility signal, not confidence signal"
 
 **Claim**: The PM-signature concentration is not a sign of confidence but of **crisis management** — the PM personally shepherds bills because ministerial trust is low, not high. L's absence from lead roles is not structural; it is a current crisis.
 
@@ -1735,7 +1680,7 @@ _Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 **Verdict**: H2 accounts for 10–15% of variance. A latent warning to monitor, not the primary reading.
 
-### H3 — "Strategic convergence, not sprint"
+#### H3 — "Strategic convergence, not sprint"
 
 **Claim**: The appearance of a "sprint" is a retrospective frame. What the coalition is doing is **routine legacy consolidation** — bills that have been in pipeline for 6–18 months happen to mature at similar cadence. The political-rhythm reading assigns strategy to what is pipeline physics.
 
@@ -1750,11 +1695,11 @@ _Source: [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 **Verdict**: H3 accounts for 20–30% of variance. Part-true but incomplete.
 
-### H0 — The base narrative ("coordinated pre-election legacy sprint")
+#### H0 — The base narrative ("coordinated pre-election legacy sprint")
 
 Still carries 55–65% of variance — the most parsimonious explanation combining signing-pattern + SD-discipline + opposition-atomization + effective-date clustering.
 
-## ACH Matrix
+### ACH Matrix
 
 | Evidence | H0 (sprint) | H1 (coincidence) | H2 (fragility) | H3 (convergence) |
 |----------|-------------|------------------|----------------|-------------------|
@@ -1772,7 +1717,7 @@ Legend: ++ strong support · + moderate support · 0 neutral · - mild contradic
 
 **Weighted ACH result**: H0 dominates (+11) vs H1 (-2), H2 (+1), H3 (+3). H3 is the most viable alternative.
 
-## Falsification tests
+### Falsification tests
 
 **For H0 to be falsified**:
 1. SD files a counter-motion on any of the 9 active bills within 30 days
@@ -1784,7 +1729,7 @@ Legend: ++ strong support · + moderate support · 0 neutral · - mild contradic
 1. Historical average shows that 4 PM-signed bills in one day is normal (it is not — this is top-1% rare)
 2. Other Nordic or EU governments show identical cyclic pattern
 
-## Red-team challenge to the DIW ranking
+### Red-team challenge to the DIW ranking
 
 **Challenge**: "You rank HD10447 (single interpellation) at DIW 3.85, higher than HD03253 (EU-mandated transposition) at 3.80. This is wrong — an interpellation is non-binding, a transposition is legally binding."
 
@@ -1795,7 +1740,7 @@ Legend: ++ strong support · + moderate support · 0 neutral · - mild contradic
 - The two are near-tied (3.85 vs 3.80); the ranking is sensitive to ±0.1 perturbation.
 - **Concession**: If the audience is legal/market, HD03253 should be first. If political-strategy, HD10447 first. The synthesis leads with HD03253 on consequence grounds — this resolves the apparent contradiction.
 
-## Alternative-framework check
+### Alternative-framework check
 
 **If we apply a pure legalist framework (rather than political-rhythm)**:
 - Ranking becomes: HD03253 > HD03252 > HD01FiU23 > HD03256 > HD01CU25 > HD03104 > HD10447 > motions cluster
@@ -1809,16 +1754,13 @@ Legend: ++ strong support · + moderate support · 0 neutral · - mild contradic
 
 The choice of framework matters. The base narrative has been tested under three framings; the political-rhythm framing best accommodates all the evidence.
 
-_Source: internal devil's-advocate challenge; ACH matrix per Heuer ICD 203-compliant methodology; red-team ranking challenge._
-
 ## Classification Results
-
-_Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/classification-results.md)_
+<!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/classification-results.md -->
 
 **Framework**: 7-dimension taxonomy per `analysis/methodologies/ai-driven-analysis-guide.md §Step 3 · Classification`.
 Dimensions: Topic · Stakeholder · Urgency · Scope · Impact · Controversy · Decision-lens.
 
-## Top-tier document classification matrix
+### Top-tier document classification matrix
 
 | dok_id | Topic | Primary stakeholder | Urgency | Scope | Impact | Controversy | Decision-lens |
 |--------|-------|---------------------|---------|-------|--------|-------------|---------------|
@@ -1833,41 +1775,41 @@ Dimensions: Topic · Stakeholder · Urgency · Scope · Impact · Controversy ·
 | **HD024096** | Arms-export ethics | MP ethical-policy team + UU + defense industry | LOW (signaling) | Domestic | LOW (no majority) | MEDIUM — moral-wedge | Coalition-fracture test |
 | **HD03104** | Debt-management skr | FiU + Riksgälden | LOW (annual) | Domestic | MEDIUM — fiscal credibility | LOW | Budget-context framing |
 
-## Topic clustering
+### Topic clustering
 
-### Cluster A · Coercive-authority expansion
+#### Cluster A · Coercive-authority expansion
 - HD03252 (detainee benefits)
 - HD01CU25 (prison capacity)
 - HD01SfU23 (migration law)
 - **Common feature**: State-to-individual coercion in the Tidöavtalet framework
 - **Cluster controversy**: HIGH (L + V + MP + civil liberty NGOs active)
 
-### Cluster B · Fiscal / institutional
+#### Cluster B · Fiscal / institutional
 - HD03253 (EU banking)
 - HD01FiU23 (Riksbank)
 - HD03104 (debt-management skr)
 - **Common feature**: Macro-institutional architecture
 - **Cluster controversy**: MEDIUM (technical debates, ideological latent)
 
-### Cluster C · Opposition economic counter-choreography
+#### Cluster C · Opposition economic counter-choreography
 - HD024082 + HD024092 + HD024098 (drivmedel)
 - HD10447 + 11 other S interpellations
 - **Common feature**: S-led cost-of-living campaign sequencing
 - **Cluster controversy**: MEDIUM (classic left-right but high pre-election salience)
 
-### Cluster D · Low-controversy throughput
+#### Cluster D · Low-controversy throughput
 - HD03256 (tachograph)
 - HD01AU15 (ILO)
 - HD01CU29 (EV infrastructure)
 - **Common feature**: Routine EU-harmonization or bipartisan passages
 
-## Urgency distribution
+### Urgency distribution
 
 - **HIGH (within 30 days of action trigger)**: 1 · HD03253
 - **MEDIUM (within 90 days)**: 6 · HD03252, HD10447, HD01CU25, HD024082, HD01SfU23, (drivmedel cluster)
 - **LOW (routine cycle)**: 10 · remaining items
 
-## Stakeholder coverage map
+### Stakeholder coverage map
 
 | Stakeholder | Count of today's dokuments touching them |
 |-------------|------------------------------------------|
@@ -1882,13 +1824,13 @@ Dimensions: Topic · Stakeholder · Urgency · Scope · Impact · Controversy ·
 | EU Commission | 2 (HD03253, HD01SfU23) |
 | Markets / investors | 3 (HD01FiU23, HD03253, HD03104) |
 
-## Cross-classification coverage check (ICD 203 Standard 4)
+### Cross-classification coverage check (ICD 203 Standard 4)
 
 - All 19 consolidated dok_ids appear in at least one row above.
 - All top-5 DIW items (HD10447, HD03253, HD03252, HD01CU25, HD024082) appear in the top block.
 - No dok_id appears in more than one cluster without explicit cross-reference (Cluster A — HD01SfU23; Cluster C — HD024082; handled as cluster-level memberships only).
 
-## Decision-lens output
+### Decision-lens output
 
 For each high-DIW item, the **single decision** this classification enables:
 
@@ -1898,15 +1840,12 @@ For each high-DIW item, the **single decision** this classification enables:
 - **HD01CU25**: Will Q2 Kriminalvården capacity report confirm the +5200 bed plan? → PIR-5.
 - **HD024082 + cluster**: Will a formal summer-recess fuel-price interpellation round be scheduled? → Watchlist.
 
-_Source: cross-reads of all 4 sibling classification-results.md files; cross-type topic-cluster synthesis._
-
 ## Cross-Reference Map
-
-_Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/cross-reference-map.md)_
+<!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/cross-reference-map.md -->
 
 **Function**: Traceability web linking every claim to source artifacts per Tier-C aggregation contract.
 
-## Internal artifact dependencies
+### Internal artifact dependencies
 
 ```mermaid
 graph LR
@@ -1934,11 +1873,11 @@ graph LR
   CRM --> README[README]
 ```
 
-## Sibling-folder citations (Tier-C mandatory)
+### Sibling-folder citations (Tier-C mandatory)
 
 Evening analysis aggregates and cross-references today's four single-type analyses. Sibling paths — all under `analysis/daily/2026-04-24/`:
 
-### `analysis/daily/2026-04-24/propositions/`
+#### `analysis/daily/2026-04-24/propositions/`
 **Source artifacts ingested**:
 - `executive-brief.md` — coalition prop-signing pattern
 - `significance-scoring.md` — HD03252, HD03253, HD03256, HD03104 DIW scores
@@ -1946,7 +1885,7 @@ Evening analysis aggregates and cross-references today's four single-type analys
 - `devils-advocate.md` — H1/H2/H3 on sprint thesis
 - `forward-indicators.md` — PIR-1 anchor date
 
-### `analysis/daily/2026-04-24/motions/`
+#### `analysis/daily/2026-04-24/motions/`
 **Source artifacts ingested**:
 - `classification-results.md` — S/V/MP motion clustering
 - `stakeholder-perspectives.md` — 6-lens on drivmedel motion HD024082
@@ -1954,19 +1893,19 @@ Evening analysis aggregates and cross-references today's four single-type analys
 - `election-2026-analysis.md` — campaign-narrative mapping
 - `voter-segmentation.md` — segment targeting per motion
 
-### `analysis/daily/2026-04-24/committeeReports/`
+#### `analysis/daily/2026-04-24/committeeReports/`
 **Source artifacts ingested**:
 - `intelligence-assessment.md` — CU25/SfU23/FiU23/AU15/CU29 committee-floor signal
 - `scenario-analysis.md` — coalition durability per committee signal
 - `methodology-reflection.md` — committee-floor-signal methodology
 
-### `analysis/daily/2026-04-24/interpellations/`
+#### `analysis/daily/2026-04-24/interpellations/`
 **Source artifacts ingested**:
 - `executive-brief.md` — S-party 12-of-16 interpellation-filing dominance
 - `significance-scoring.md` — HD10447 SME sick-pay tier placement
 - `media-framing-analysis.md` — Aftonbladet amplification
 
-## Claim-to-source matrix (high-value claims)
+### Claim-to-source matrix (high-value claims)
 
 | Claim in evening-analysis | Source artifact | Source folder |
 |---------------------------|-----------------|---------------|
@@ -1981,7 +1920,7 @@ Evening analysis aggregates and cross-references today's four single-type analys
 | "Coalition math Ja/Nej breakdown per dok_id" | coalition-mathematics | evening-analysis |
 | "Historical parallel: 2005/2018 pre-election sprints" | historical-parallels | evening-analysis |
 
-## External authoritative sources
+### External authoritative sources
 
 | Type | Source | Usage |
 |------|--------|-------|
@@ -1993,21 +1932,21 @@ Evening analysis aggregates and cross-references today's four single-type analys
 | SCB | Statistics Sweden | Base-rate referents |
 | ISP | Inspektionen för strategiska produkter | HD024091/96 export-control context |
 
-## Prior-cycle ingestion
+### Prior-cycle ingestion
 
 Per Tier-C contract, today's analysis ingests **prior-cycle PIRs** from:
 - `analysis/daily/2026-04-23/` (prior day's evening-analysis, if present) — see `intelligence-assessment.md`
 - `analysis/weekly/2026-W17/` (prior-week review, if present) — see `intelligence-assessment.md`
 - `analysis/monthly/2026-04/` (April monthly review, if present) — see `intelligence-assessment.md`
 
-## Forward-reference targets
+### Forward-reference targets
 
 This evening-analysis cascade will feed forward to:
 - `analysis/weekly/2026-W17/` (end-of-week review)
 - `analysis/monthly/2026-04/` (end-of-April review)
 - `analysis/daily/2026-09-*/` (election-period analyses)
 
-## Traceability verification
+### Traceability verification
 
 Every Key Judgment (KJ1–KJ7) in `intelligence-assessment.md` links to ≥ 2 sibling artifacts.
 Every scenario (S1–S4) in `scenario-analysis.md` links to ≥ 1 PIR in `intelligence-assessment.md`.
@@ -2016,16 +1955,13 @@ Every forward indicator (F1–F20) in `forward-indicators.md` links to ≥ 1 PIR
 
 **No orphan claims detected.**
 
-_Source: Internal artifact graph + sibling-folder ingestion table._
-
 ## Methodology Reflection & Limitations
-
-_Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md)_
+<!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md -->
 
 **Purpose**: Self-audit against ICD 203 + Admiralty + WEP standards; explicit Methodology Improvements for next-cycle application.
 **Author**: James Pether Sörling
 
-## Compliance matrix — tradecraft standards applied
+### Compliance matrix — tradecraft standards applied
 
 | Standard | Requirement | Where applied in this artifact set | Status |
 |----------|-------------|-------------------------------------|--------|
@@ -2042,7 +1978,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 | WEP / Kent Scale | Verbal-probability-to-numeric calibration | Highly likely = 70–85%; possible = 30–45% | ✅ |
 | Structured Analytic Techniques | ACH, Red Team, Devil's Advocate, Key Assumptions Check, SWOT, TOWS | All applied across artifact set | ✅ |
 
-## Party-neutrality arithmetic audit
+### Party-neutrality arithmetic audit
 
 Count of party mentions across the 23 artifacts (indicative):
 
@@ -2059,7 +1995,7 @@ Count of party mentions across the 23 artifacts (indicative):
 
 **Audit conclusion**: All 8 parties mentioned; 8/8 framed in terms of observable actions and strategic-logic interpretation, not moral judgment. The ratio of opposition-to-government mentions (74:74) is perfectly balanced — though this is not a virtue in itself, it reflects the day's genuine political symmetry.
 
-## Ambiguity and uncertainty handling
+### Ambiguity and uncertainty handling
 
 Where today's artifacts deploy explicit uncertainty markers:
 
@@ -2071,35 +2007,35 @@ Where today's artifacts deploy explicit uncertainty markers:
 
 **Prohibition check**: ✅ No weasel words ("could", "may", "some analysts suggest") without a numeric anchor.
 
-## Methodology strengths observed
+### Methodology strengths observed
 
 1. **Cross-type synthesis** is structurally superior to any single-type analysis — the pre-election-sprint reading emerges only by joining prop + motion + bet + ip.
 2. **SD zero-motion silence** was treated as positive evidence (high DIW null-event) rather than absence — a tradecraft maturity marker.
 3. **Prior-cycle PIR ingestion** was completed (Tier-C requirement) — no orphan PIRs remain from prior cycles.
 
-## Methodology Improvements (for next cycle)
+### Methodology Improvements (for next cycle)
 
 Three named improvements for the next reporting cycle:
 
-### Methodology Improvement 1 — **Quantitative coalition-discipline index**
+#### Methodology Improvement 1 — **Quantitative coalition-discipline index**
 
 Today I inferred "SD discipline intact" from a zero-motion count over 72 hours. A more rigorous measurement would construct a discipline index over a rolling 30-day window comparing SD motion-filing rate against prior Tidö periods and the 2022–2026 mandate baseline.
 
 **Action for next run**: Build `scripts/coalition-discipline-index.ts` using `riksdag-regering-search_dokument` with filter `parti=SD` + `doktyp=mot` + rolling window. Record baseline and today's delta.
 
-### Methodology Improvement 2 — **ECHR-case-law-anchored confidence for rights judgments**
+#### Methodology Improvement 2 — **ECHR-case-law-anchored confidence for rights judgments**
 
 Today I asserted (KJ-5) that HD03252 has a ~55–70% probability of ECHR challenge within 18 months. This confidence rests on subject-matter intuition rather than a structured case-law taxonomy.
 
 **Action for next run**: Build a reference table of recent ECtHR Article 3/8 cases on detainee conditions (win/loss rates, timelines, facts) and anchor future rights-litigation probabilities to the empirical base rate.
 
-### Methodology Improvement 3 — **Pre-election-sprint comparator database**
+#### Methodology Improvement 3 — **Pre-election-sprint comparator database**
 
 Today I used Nordic + EU comparators (Denmark 2019, Germany 2024, etc.) qualitatively. For recurrent Tier-C evening analyses during the pre-election window, a structured comparator database with normalized features (seats-swing, pre-election bill volume, coalition-party count) would elevate the comparative-international artifact from descriptive to explanatory.
 
 **Action for next run**: Build `analysis/references/pre-election-sprint-comparators.md` with 8–12 normalized cases from 2015–2024.
 
-## Limitations of today's analysis
+### Limitations of today's analysis
 
 1. **Single-day snapshot** — today's high-DIW reading could be smoothed against a 30-day moving average.
 2. **No primary survey data** — polling inferences rely on secondary market commentary.
@@ -2107,7 +2043,7 @@ Today I used Nordic + EU comparators (Denmark 2019, Germany 2024, etc.) qualitat
 4. **Sibling-folder dependence** — this evening analysis inherits framing from morning analyses; independent re-derivation was partial.
 5. **IMF/SCB data not directly queried this cycle** — carried forward from monthly-review.
 
-## Process audit — time and iteration
+### Process audit — time and iteration
 
 - **Wall-clock budget**: 60 minutes end-to-end (Timer A) | 28 minutes to PR call (Timer B)
 - **Pass 1 time**: Approximately 20–25 minutes to produce 23 artifacts
@@ -2115,7 +2051,7 @@ Today I used Nordic + EU comparators (Denmark 2019, Germany 2024, etc.) qualitat
 - **AI-FIRST compliance**: Minimum 2 iterations met; all claims reviewed against alternatives
 - **Shortcut discipline**: All 23 artifacts produced with substantive content; no boilerplate
 
-## Next-cycle handoff package (for tomorrow's morning analysis)
+### Next-cycle handoff package (for tomorrow's morning analysis)
 
 1. PIR-1–PIR-7 explicit in intelligence-assessment.md
 2. Standing PIRs A/B/C carried forward
@@ -2123,11 +2059,8 @@ Today I used Nordic + EU comparators (Denmark 2019, Germany 2024, etc.) qualitat
 4. Methodology Improvements 1–3 flagged for implementation
 5. Carried-forward Scenario monitoring plan
 
-_Source: self-audit against `analysis/methodologies/osint-tradecraft-standards.md` + `ai-driven-analysis-guide.md §Self-Audit Checklist`._
-
 ## Data Download Manifest
-
-_Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/data-download-manifest.md)_
+<!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/data-download-manifest.md -->
 
 **Workflow**: `news-evening-analysis` · **Run ID**: 24906725202 · **UTC**: 2026-04-24T19:00:52Z
 **Requested date**: 2026-04-24 · **Effective date**: 2026-04-24 · **Window**: today + 7-day lookback for sibling integration
@@ -2135,7 +2068,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 **Author**: James Pether Sörling · **Classification**: OPEN · Public sources only (GDPR Art. 9(2)(e,g))
 **Confidence**: HIGH (A1) — primary Riksdag open-data via MCP `get_sync_status` returned `status: live` at 19:00:52Z
 
-## MCP health at start
+### MCP health at start
 
 | Server | Status | Latency | Notes |
 |--------|--------|---------|-------|
@@ -2144,11 +2077,11 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 | world-bank | available | — | Non-economic residue only (WGI), not required today |
 | github | available | — | Used for artifact staging |
 
-## Primary data sources (Tier-C ingestion model)
+### Primary data sources (Tier-C ingestion model)
 
 This is a **Tier-C aggregation workflow** — the primary data inputs are the four sibling per-type analyses already produced for 2026-04-24. Per `ext/tier-c-aggregation.md §Cross-type synthesis`, the evening-analysis reads sibling folders and cites them. No fresh per-`dok_id` downloads are required at this stage; all `dok_id` provenance is already resolved in the sibling manifests.
 
-### Sibling folders read (today)
+#### Sibling folders read (today)
 
 | Sibling folder | Path | Lead documents ingested |
 |----------------|------|--------------------------|
@@ -2157,11 +2090,11 @@ This is a **Tier-C aggregation workflow** — the primary data inputs are the fo
 | committeeReports | `analysis/daily/2026-04-24/committeeReports/` | HD01CU25, HD01SfU23, HD01FiU23, HD01AU15, HD01CU29 |
 | interpellations | `analysis/daily/2026-04-24/interpellations/` | HD10447 (lead) + HD10428–HD10446 (15 additional) |
 
-### Reference Analyses (sibling synthesis ingestion per ext/tier-c-aggregation.md)
+#### Reference Analyses (sibling synthesis ingestion per ext/tier-c-aggregation.md)
 
 Every sibling `synthesis-summary.md`, `intelligence-assessment.md`, and `executive-brief.md` was read and incorporated into this evening-analysis. Unique `dok_id` references extracted: **44** (4 propositions + 20 motions + 5 committee reports + 16 interpellations − overlap). Open PIRs carried forward: see `intelligence-assessment.md §Prior-cycle PIR ingestion`.
 
-### Per-document table (consolidated across siblings)
+#### Per-document table (consolidated across siblings)
 
 | dok_id | Title | Type | Committee | Party/Actor | Admiralty | Full-text status |
 |--------|-------|------|-----------|-------------|-----------|------------------|
@@ -2187,17 +2120,17 @@ Every sibling `synthesis-summary.md`, `intelligence-assessment.md`, and `executi
 
 Full per-document detail lives in each sibling folder's `documents/` subdirectory. This evening-analysis references but does **not duplicate** those files (see `cross-reference-map.md §Sibling folders`).
 
-## MCP server availability notes
+### MCP server availability notes
 
 - `riksdag-regering`: healthy throughout the run. No retries required.
 - `scb`: not queried (economic context carried forward from sibling analyses and IMF cache).
 - `world-bank`: not queried (non-economic residue not required for today's themes).
 
-## Retrieval timestamps
+### Retrieval timestamps
 
 All sibling folders last written 2026-04-24 between 06:00Z (propositions) and 18:30Z (interpellations) per `git log` on each folder. This evening-analysis folder created 2026-04-24T19:01Z.
 
-## Provenance hash
+### Provenance hash
 
 - **Primary**: Swedish Riksdag open data (data.riksdagen.se) — A1
 - **Secondary**: Regeringen pressroom / regeringen.se — A1–A2
@@ -2205,3 +2138,35 @@ All sibling folders last written 2026-04-24 between 06:00Z (propositions) and 18
 - **Tradecraft**: ICD 203, Admiralty 6×6, SATs (ACH, Red Team, Key Assumptions Check) applied per `analysis/methodologies/osint-tradecraft-standards.md`
 
 — End of manifest —
+
+## Article Sources
+
+Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
+
+- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief.md)
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md)
+- [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md)
+- [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/significance-scoring.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/media-framing-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/stakeholder-perspectives.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/threat-analysis.md)
+- [`documents/HD01CU25-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD01CU25-analysis.md)
+- [`documents/HD024082-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD024082-analysis.md)
+- [`documents/HD03252-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD03252-analysis.md)
+- [`documents/HD03253-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD03253-analysis.md)
+- [`documents/HD10447-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/documents/HD10447-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/election-2026-analysis.md)
+- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md)
+- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/voter-segmentation.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/comparative-international.md)
+- [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/historical-parallels.md)
+- [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/implementation-feasibility.md)
+- [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/devils-advocate.md)
+- [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/classification-results.md)
+- [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/cross-reference-map.md)
+- [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md)
+- [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/data-download-manifest.md)

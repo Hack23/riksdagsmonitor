@@ -5,7 +5,7 @@ date: 2026-04-20
 subfolder: evening-analysis
 slug: 2026-04-20-evening-analysis
 source_folder: analysis/daily/2026-04-20/evening-analysis
-generated_at: 2026-04-25T11:09:59.864Z
+generated_at: 2026-04-25T15:36:04.660Z
 language: en
 layout: article
 ---
@@ -22,14 +22,13 @@ Use this guide to read the article as a political-intelligence product rather th
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Executive Brief
-
-_Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/executive-brief.md)_
+<!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/executive-brief.md -->
 
 **Date**: 2026-04-20 | **Classification**: PUBLIC | **Produced by**: news-evening-analysis
 
 ---
 
-## BLUF (Bottom Line Up Front — ≤300 words)
+### BLUF (Bottom Line Up Front — ≤300 words)
 
 Monday April 20 marks a significant escalation in Sweden's pre-election parliamentary accountability campaign. The Riksdag's Environment and Agriculture Committee (MJU) published a committee report (HD01MJU21) on the National Audit Office's finding that **Sweden's state efforts for agricultural climate transition are insufficient** — a legally binding finding from an independent constitutional body that joins the government's controversial fuel tax cut (HD03236) to create a two-source, independently verified climate credibility challenge going into the September 13, 2026 election.
 
@@ -41,7 +40,7 @@ The Constitutional Committee (KU) scheduled debates on budget appropriation stru
 
 ---
 
-## 60-Second Read (8 Bullets)
+### 60-Second Read (8 Bullets)
 
 - 🌾 **Riksrevisionen finds Sweden's agricultural climate transition insufficient** (HD01MJU21) — independent finding joins fuel tax cut as two-front climate challenge
 - 👮 **S targets Stockholm police shortage** (HD10439: Vepsä → Strömmer) — BRÅ confirmed numbers but distribution gaps remain in capital
@@ -54,7 +53,7 @@ The Constitutional Committee (KU) scheduled debates on budget appropriation stru
 
 ---
 
-## 3 Decisions Supported
+### 3 Decisions Supported
 
 1. **Government response strategy**: Justice Minister Strömmer should proactively link HD03237 (paid police training) to HD10439's Stockholm concerns in his response — turning S's question into a government implementation story
 2. **Agricultural climate action**: Climate/Agriculture Ministry should announce an agricultural SOU or consultation process within 30 days to transform MJU21 from a liability into a demonstrated response
@@ -62,7 +61,7 @@ The Constitutional Committee (KU) scheduled debates on budget appropriation stru
 
 ---
 
-## Top 5 Risks (Next-Day Focus)
+### Top 5 Risks (Next-Day Focus)
 
 | # | Risk | L×I | Timeline |
 |---|------|:---:|:--------:|
@@ -74,7 +73,7 @@ The Constitutional Committee (KU) scheduled debates on budget appropriation stru
 
 ---
 
-## Named Actors Today
+### Named Actors Today
 
 | Actor | Party/Role | Relevance |
 |-------|-----------|---------|
@@ -89,7 +88,7 @@ The Constitutional Committee (KU) scheduled debates on budget appropriation stru
 
 ---
 
-## Next-Day Watch Points (April 21)
+### Next-Day Watch Points (April 21)
 
 - **KU deliberations**: KU42 and KU43 move toward plenary scheduling
 - **MJU21 media response**: Watch DN/SvD morning editions for Riksrevisionen agricultural climate coverage
@@ -98,8 +97,7 @@ The Constitutional Committee (KU) scheduled debates on budget appropriation stru
 - **EU Summit context**: EU-SUMMIT-20260422 (from realtime memory) — Swedish government positioning on climate/security
 
 ## Synthesis Summary
-
-_Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/synthesis-summary.md)_
+<!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/synthesis-summary.md -->
 
 <p align="center">
   <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="96" height="96">
@@ -114,7 +112,7 @@ _Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## 📋 Synthesis Metadata
+### 📋 Synthesis Metadata
 
 | Field | Value |
 |-------|-------|
@@ -129,7 +127,7 @@ _Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## 📊 Intelligence Dashboard
+### 📊 Intelligence Dashboard
 
 ```mermaid
 graph TD
@@ -156,7 +154,7 @@ graph TD
 
 ---
 
-## 🏆 Top 5 Intelligence Findings
+### 🏆 Top 5 Intelligence Findings
 
 | Rank | Finding | Source | Significance | Confidence | Electoral Impact |
 |:----:|---------|--------|:------------:|:----------:|:----------------:|
@@ -168,7 +166,7 @@ graph TD
 
 ---
 
-## 📈 Document Significance Ranking
+### 📈 Document Significance Ranking
 
 | Rank | Dok ID | Committee | Title | Score | Tier | Key Driver |
 |:----:|--------|:---------:|-------|:-----:|:----:|------------|
@@ -182,51 +180,51 @@ graph TD
 
 ---
 
-## 🔍 Cross-Document Patterns
+### 🔍 Cross-Document Patterns
 
-### Theme 1: S Accountability Offensive — Constitutional Week
+#### Theme 1: S Accountability Offensive — Constitutional Week
 
 **Confidence: 🟩HIGH** — Reading the day's document flow alongside the week's earlier motions and interpellations, a unified picture emerges: the Social Democrats are running a disciplined, coordinated parliamentary accountability campaign. The August calendar shows S's full-session filing rate has accelerated by ~50% since April 14 (interpellation analysis). Monday April 20's 8 written questions span: infrastructure (Minister Carlson, who faces 6th+ interpellation), energy (alum shale, Minister Busch/Britz), justice (Minister Strömmer, also facing new interpellation HD10439), and constitutional education (Minister Mohammso). No portfolio is left unchallenged.
 
 **Electoral logic**: S is exploiting a "records matter" strategy — each written question creates a timestamped parliamentary exchange before the summer recess. Any non-committal or weak ministerial response becomes usable September-campaign material. The constitutional knowledge question (HD11726) is especially strategically timed: one week after two constitutional amendments (KU33/KU32) passed "vilande", demanding constitutional competence answers from the Education Minister while the government champions constitutional reform is a neat rhetorical trap.
 
-### Theme 2: Climate Credibility Gap Widens
+#### Theme 2: Climate Credibility Gap Widens
 
 **Confidence: 🟩HIGH** — MJU21 (Riksrevisionen on agricultural climate) and HD11725 (alum shale municipal veto) together reinforce the opposition's central Spring 2026 climate narrative established in the motions analysis: the government is simultaneously cutting fuel taxes (HD03236, adding +0.3–0.5 MtCO₂e) and now found to have insufficient agricultural climate transition plans. Agriculture represents ~14% of Sweden's domestic GHG emissions; the Riksrevisionen finding adds a third front of climate accountability to fuel taxes and energy policy.
 
-### Theme 3: Police Quality vs. Quantity Tension
+#### Theme 3: Police Quality vs. Quantity Tension
 
 **Confidence: 🟧MEDIUM** — HD10439 targets Justice Minister Strömmer on the BRÅ evaluation of the 10,000 police officer goal. The BRÅ evaluation confirms the numerical target was reached — but S's framing targets Stockholm-specific distribution failures and quality/deployment issues. This is a sophisticated challenge: the government can defend the headline number while S attacks its operational implementation. The argument is rendered more complex because HD03237 (paid police training) — part of today's sibling proposition package — is precisely the government's answer to recruitment constraints. S is attacking a problem the government claims to have already solved.
 
 ---
 
-## 📊 Aggregated SWOT
+### 📊 Aggregated SWOT
 
-### Strengths (Coalition/Government)
+#### Strengths (Coalition/Government)
 - Police 10,000 target met (BRÅ confirmed) — defensible headline number
 - KU42 debate shows constitutional transparency commitment
 - KU43 modernisation demonstrates legislative housekeeping competence
 - Energy reform pipeline (HD03240/39/38) provides forward counter-narrative to climate attacks
 
-### Weaknesses (Coalition/Government)
+#### Weaknesses (Coalition/Government)
 - MJU21/Riksrevisionen finding on agricultural climate is legally on the record — difficult to dismiss
 - Stockholm police distribution gap (HD10439) cannot be erased by numerical targets
 - Minister Carlson (infrastructure) remains most-targeted minister — KD portfolio vulnerability
 - 8 ministerial portfolios challenged in a single day; bandwidth pressure on government responses
 
-### Opportunities (Coalition/Government)
+#### Opportunities (Coalition/Government)
 - KU42 budget structure debate allows government to showcase fiscal responsibility narrative
 - Linking HD03237 (paid police training) proactively to HD10439 concerns would turn S's question into a government success story
 - Agricultural climate: announce SOU or action plan within 30 days to neutralise Riksrevisionen finding
 
-### Threats (Coalition/Government)
+#### Threats (Coalition/Government)
 - S's "constitutional knowledge" question (HD11726) creates a rhetorical trap right as vilande amendments are debated
 - Alum shale veto (HD11725) exposes energy-environment incoherence — C+S aligned against SD
 - S's accelerating filing pace suggests a week-3 interpellation surge likely late April
 
 ---
 
-## ⚠️ Risk Landscape
+### ⚠️ Risk Landscape
 
 | Risk | Likelihood | Impact | L×I | Confidence |
 |------|:----------:|:------:|:---:|:----------:|
@@ -238,7 +236,7 @@ graph TD
 
 ---
 
-## 🔭 Forward Indicators
+### 🔭 Forward Indicators
 
 | Indicator | Trigger | Timeline | Confidence |
 |-----------|---------|---------|:----------:|
@@ -250,7 +248,7 @@ graph TD
 
 ---
 
-## 🗂️ Artifacts Inventory
+### 🗂️ Artifacts Inventory
 
 | # | Artifact | File | Status |
 |---|---------|------|--------|
@@ -270,15 +268,14 @@ graph TD
 | 14 | Methodology Reflection | methodology-reflection.md | ✅ |
 
 ## Significance Scoring
-
-_Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/significance-scoring.md)_
+<!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/significance-scoring.md -->
 
 **SIG ID**: `SIG-2026-04-20-EVE001`
 **Analysis Date**: 2026-04-20 17:37 UTC
 
 ---
 
-## Significance Scoring Framework (5 Dimensions × 5 Points)
+### Significance Scoring Framework (5 Dimensions × 5 Points)
 
 | Dimension | Weight | Description |
 |-----------|:------:|-------------|
@@ -290,9 +287,9 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## Per-Document Scoring
+### Per-Document Scoring
 
-### HD01MJU21 — Riksrevisionens rapport om jordbrukets klimatomställning
+#### HD01MJU21 — Riksrevisionens rapport om jordbrukets klimatomställning
 
 | Dimension | Score (1–5) | Evidence |
 |-----------|:-----------:|---------|
@@ -306,7 +303,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-### HD10439 — Brist på poliser i Stockholm (interpellation)
+#### HD10439 — Brist på poliser i Stockholm (interpellation)
 
 | Dimension | Score (1–5) | Evidence |
 |-----------|:-----------:|---------|
@@ -320,7 +317,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-### HD01KU42 — Indelning i utgiftsområden (committee report)
+#### HD01KU42 — Indelning i utgiftsområden (committee report)
 
 | Dimension | Score (1–5) | Evidence |
 |-----------|:-----------:|---------|
@@ -334,7 +331,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-### HD11726 — Kunskap om grundlagarna (question)
+#### HD11726 — Kunskap om grundlagarna (question)
 
 | Dimension | Score (1–5) | Evidence |
 |-----------|:-----------:|---------|
@@ -348,7 +345,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-### Collective Written Questions (HD11720–11727)
+#### Collective Written Questions (HD11720–11727)
 
 | Dimension | Score (1–5) | Evidence |
 |-----------|:-----------:|---------|
@@ -362,7 +359,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## Overall Evening Analysis Significance Summary
+### Overall Evening Analysis Significance Summary
 
 **Composite Score (weighted)**: 74/100
 **Publication Tier**: TIER-2 (High importance, immediate publication)
@@ -372,15 +369,14 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 **Election 2026 Relevance**: HIGH 🟩 — climate, security, constitutional accountability all live election issues
 
 ## Stakeholder Perspectives
-
-_Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/stakeholder-perspectives.md)_
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/stakeholder-perspectives.md -->
 
 **STA ID**: `STA-2026-04-20-EVE001`
 **Analysis Date**: 2026-04-20 17:38 UTC
 
 ---
 
-## Impact Radar
+### Impact Radar
 
 ```mermaid
 graph LR
@@ -405,9 +401,9 @@ graph LR
 
 ---
 
-## Stakeholder Analysis — All 8 Groups
+### Stakeholder Analysis — All 8 Groups
 
-### 1. Citizens
+#### 1. Citizens
 **Impact Level**: HIGH | **Timeline**: Immediate–Election 2026 | **Confidence**: 🟩HIGH
 
 **Analysis**: Monday's parliamentary activity touches three of the top voter concerns: security (police), environment (agricultural climate), and infrastructure (Carlson's portfolio). The HD10439 Stockholm police interpellation directly affects the 970,000 Stockholm municipality residents who experience the policing gap daily. The MJU21 agricultural climate finding affects both urban consumers (food prices, sustainability expectations) and rural citizens (farming communities). HD11726's constitutional knowledge question affects all 7.7 million eligible voters ahead of the first "constitutional election" in modern Swedish history.
@@ -420,7 +416,7 @@ graph LR
 
 ---
 
-### 2. Government Coalition (M-KD-L, supported by SD)
+#### 2. Government Coalition (M-KD-L, supported by SD)
 **Impact Level**: HIGH (adverse) | **Timeline**: Immediate | **Confidence**: 🟩HIGH
 
 **Actor-specific analysis**:
@@ -434,7 +430,7 @@ graph LR
 
 ---
 
-### 3. Opposition Bloc (S + V + MP + C)
+#### 3. Opposition Bloc (S + V + MP + C)
 **Impact Level**: HIGH (positive) | **Timeline**: Immediate | **Confidence**: 🟩HIGH
 
 **Actor-specific analysis**:
@@ -447,7 +443,7 @@ graph LR
 
 ---
 
-### 4. Business/Industry
+#### 4. Business/Industry
 **Impact Level**: MEDIUM | **Timeline**: Medium-term | **Confidence**: 🟧MEDIUM
 
 - **Farming sector** (Lantbrukarnas Riksförbund, LRF): MJU21 agricultural climate transition — mixed. Riksrevisionen finding documents state insufficiency, which LRF will use to argue for better government support rather than regulatory pressure
@@ -458,7 +454,7 @@ graph LR
 
 ---
 
-### 5. Civil Society
+#### 5. Civil Society
 **Impact Level**: HIGH | **Timeline**: Immediate–Medium | **Confidence**: 🟩HIGH
 
 - **Environmental NGOs** (Naturskyddsföreningen, WWF): MJU21 agricultural climate finding = major advocacy victory; validates campaigns against agricultural emissions
@@ -468,7 +464,7 @@ graph LR
 
 ---
 
-### 6. International/EU
+#### 6. International/EU
 **Impact Level**: LOW-MEDIUM | **Timeline**: Medium | **Confidence**: 🟧MEDIUM
 
 - **EU Commission**: MJU21 agricultural climate — Sweden's Riksrevisionen finding will be noted in EU's review of member-state CAP compliance and climate transition progress
@@ -478,7 +474,7 @@ graph LR
 
 ---
 
-### 7. Judiciary/Constitutional
+#### 7. Judiciary/Constitutional
 **Impact Level**: HIGH | **Timeline**: Immediate | **Confidence**: 🟩HIGH
 
 - **Riksrevisionen**: MJU21 is its own finding — the constitutional body will monitor government response; if no action within 6 months, can escalate
@@ -488,7 +484,7 @@ graph LR
 
 ---
 
-### 8. Media/Public Opinion
+#### 8. Media/Public Opinion
 **Impact Level**: HIGH | **Timeline**: Immediate | **Confidence**: 🟩HIGH
 
 **Expected media framing**:
@@ -503,16 +499,15 @@ graph LR
 - Constitutional awareness: Only 34% of Swedes can name all five fundamental laws (Demoskop 2024) — HD11726 identifies a real gap
 
 ## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/scenario-analysis.md)_
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/scenario-analysis.md -->
 
 **Date**: 2026-04-20 | **Horizon**: Tomorrow / 7-day / 30-day
 
 ---
 
-## Three Base Scenarios
+### Three Base Scenarios
 
-### Scenario A: Government Containment (35% probability)
+#### Scenario A: Government Containment (35% probability)
 **Label**: "Strömmer Responds, Svantesson Pivots"
 **Confidence**: 🟧MEDIUM
 
@@ -527,7 +522,7 @@ _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-### Scenario B: S Accountability Gains Traction (50% probability)
+#### Scenario B: S Accountability Gains Traction (50% probability)
 **Label**: "The Double Climate Indictment"
 **Confidence**: 🟩HIGH
 
@@ -543,7 +538,7 @@ _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-### Scenario C: Constitutional Accountability Week (15% probability)
+#### Scenario C: Constitutional Accountability Week (15% probability)
 **Label**: "Four Documents, One Theme: Who Controls the State?"
 **Confidence**: 🟥LOW-MEDIUM
 
@@ -558,9 +553,9 @@ _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## Two Wildcards
+### Two Wildcards
 
-### Wildcard 1: Klimatpolitiska rådet Rapid Response
+#### Wildcard 1: Klimatpolitiska rådet Rapid Response
 **Probability**: 0.25 | **Impact if realised**: 🔴CRITICAL
 
 The independent climate policy council issues an urgent statement on the MJU21 + fuel tax cut combination within 7 days. This would:
@@ -570,14 +565,14 @@ The independent climate policy council issues an urgent statement on the MJU21 +
 
 ---
 
-### Wildcard 2: KU Summons Reveal Sensitive Budget Documents
+#### Wildcard 2: KU Summons Reveal Sensitive Budget Documents
 **Probability**: 0.20 | **Impact if realised**: 🟠HIGH
 
 The KU summons of Finance Minister Svantesson (flagged in realtime memory for this week) produces unexpected revelations about budgetary decision-making processes. If Svantesson's testimony on the Spring Economic Bill (HD03100) or the extra amendment budget (HD03236) reveals internal disagreements or rushed decision-making, the climate-fiscal accountability narrative widens.
 
 ---
 
-## ACH Grid — Key Hypotheses
+### ACH Grid — Key Hypotheses
 
 | Hypothesis | Scenario A | Scenario B | Scenario C |
 |-----------|:----------:|:----------:|:----------:|
@@ -589,7 +584,7 @@ The KU summons of Finance Minister Svantesson (flagged in realtime memory for th
 
 ---
 
-## 30-Day Forward Indicators
+### 30-Day Forward Indicators
 
 | Indicator | Expected Date | Significance |
 |-----------|:------------:|:------------:|
@@ -601,8 +596,7 @@ The KU summons of Finance Minister Svantesson (flagged in realtime memory for th
 | EU Commission climate review | May–June | Sweden's CAP compliance assessment |
 
 ## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/risk-assessment.md)_
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/risk-assessment.md -->
 
 **RSK ID**: `RSK-2026-04-20-EVE001`
 **Analysis Date**: 2026-04-20 17:34 UTC
@@ -610,7 +604,7 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Risk Heat Map
+### Risk Heat Map
 
 ```mermaid
 quadrantChart
@@ -633,9 +627,9 @@ quadrantChart
 
 ---
 
-## Risk Register
+### Risk Register
 
-### Risk 1: Riksrevisionen Agricultural Climate Finding Escalation
+#### Risk 1: Riksrevisionen Agricultural Climate Finding Escalation
 **Risk ID**: RSK-EA-001
 **Category**: Policy/Regulatory
 **Source**: HD01MJU21 (MJU21 committee report)
@@ -654,7 +648,7 @@ quadrantChart
 
 ---
 
-### Risk 2: S Stockholm Police Narrative Gains Media Traction
+#### Risk 2: S Stockholm Police Narrative Gains Media Traction
 **Risk ID**: RSK-EA-002
 **Category**: Political/Reputational
 **Source**: HD10439 (interpellation by Mattias Vepsä, S → Gunnar Strömmer, M)
@@ -673,7 +667,7 @@ quadrantChart
 
 ---
 
-### Risk 3: S Interpellation Surge Week 3 (Late April)
+#### Risk 3: S Interpellation Surge Week 3 (Late April)
 **Risk ID**: RSK-EA-003
 **Category**: Political/Parliamentary
 **Source**: Pattern analysis — motions (21 in 6 days), interpellations (7 in 6 days), questions (8 today)
@@ -692,7 +686,7 @@ quadrantChart
 
 ---
 
-### Risk 4: Coalition Energy/Environment Fracture on Alum Shale
+#### Risk 4: Coalition Energy/Environment Fracture on Alum Shale
 **Risk ID**: RSK-EA-004
 **Category**: Coalition Stability
 **Source**: HD11725 (question on municipal veto on alum shale mining)
@@ -709,7 +703,7 @@ quadrantChart
 
 ---
 
-### Risk 5: Constitutional Knowledge Trap (HD11726)
+#### Risk 5: Constitutional Knowledge Trap (HD11726)
 **Risk ID**: RSK-EA-005
 **Category**: Reputational/Institutional
 **Source**: HD11726 (question on Kunskap om grundlagarna by Eva Lindh, S → Education Minister Mohammso)
@@ -726,7 +720,7 @@ quadrantChart
 
 ---
 
-## Coalition Stability Risk Assessment
+### Coalition Stability Risk Assessment
 
 ```mermaid
 graph LR
@@ -748,8 +742,7 @@ graph LR
 **Confidence**: 🟩HIGH
 
 ## SWOT Analysis
-
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/swot-analysis.md)_
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/swot-analysis.md -->
 
 **SWOT ID**: `SWT-2026-04-20-EVE001`
 **Analysis Date**: 2026-04-20 17:33 UTC
@@ -757,7 +750,7 @@ _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/mai
 
 ---
 
-## Quadrant Mapping
+### Quadrant Mapping
 
 ```mermaid
 mindmap
@@ -824,55 +817,54 @@ mindmap
 
 ---
 
-## Coalition SWOT (Tidö: M-KD-L, supported by SD)
+### Coalition SWOT (Tidö: M-KD-L, supported by SD)
 
-### Strengths
+#### Strengths
 - **Police delivery**: BRÅ confirmed 10,000 officers target met — rare example of government delivering on a precise numerical commitment. Strömmer can invoke this against HD10439 `[VERY HIGH confidence 🟦]`
 - **Energy reform package**: The sibling proposition analysis confirms HD03239/240/238 deliver a coherent industrial policy — positive contrast to the climate-only narrative opposition prefers `[HIGH confidence 🟩]`
 - **NATO credibility**: HD03220 (EFP Finland) and Ukraine accountability measures (HD03231/32) place Sweden firmly in the mainstream European security architecture `[VERY HIGH confidence 🟦]`
 - **Fiscal package**: Three budget propositions (HD03100, HD0399, HD03236) provide election-year economic narrative `[HIGH confidence 🟩]`
 
-### Weaknesses
+#### Weaknesses
 - **Agricultural climate**: MJU21/Riksrevisionen creates an official record that cannot be redacted. Agriculture = 14% of domestic GHG; documented insufficiency joins fuel tax cut as climate credibility damage `[HIGH confidence 🟩]`
 - **Stockholm policing**: Quantitative goal vs qualitative/geographic distribution gap — S's framing exposes the limitation of headline-number politics `[MEDIUM confidence 🟧]`
 - **KD infrastructure**: Carlson's portfolio is consistently identified as weakest in coalition; KD cannot afford to lose further seats to M or S `[HIGH confidence 🟩]`
 - **Alum shale position**: SD's presumed support for mineral extraction puts it at odds with C (coalition-adjacent) and S on HD11725 — a microcosm of wider environmental coalition tension `[MEDIUM confidence 🟧]`
 
-### Opportunities
+#### Opportunities
 - **Agricultural action plan**: A rapid announcement of an SOU or consultation process would transform MJU21 from a liability to a response. Window is April 20–May 10 before Riksdag recess discussions begin `[HIGH confidence 🟩]`
 - **Constitutional leadership**: KU42 debate on budget structure — if the government champions transparent fiscal architecture, it takes the lead narrative away from opposition `[MEDIUM confidence 🟧]`
 - **Police quality follow-up**: Address Stockholm distribution concern proactively in Strömmer's HD10439 response — cite HD03237 as the structural solution `[HIGH confidence 🟩]`
 
-### Threats
+#### Threats
 - **Klimatpolitiska rådet escalation**: The council is independent; MJU21 finding likely triggers a council review comment in May–June 2026, amplifying the damage `[MEDIUM-HIGH confidence 🟧]`
 - **HD11726 constitutional trap**: The Education Ministry will have to answer "what is being done to increase constitutional knowledge among citizens?" — any weak answer will be weaponised as the vilande amendments make the constitution a live election issue `[MEDIUM confidence 🟧]`
 - **S filing momentum**: The week-over-week escalation in S's parliamentary activity (motions, interpellations, written questions) is structurally concerning — Riksdag summer recess approaches, each filed question locks in a ministerial record `[HIGH confidence 🟩]`
 
 ---
 
-## Opposition SWOT (S + V + MP + C)
+### Opposition SWOT (S + V + MP + C)
 
-### Strengths
+#### Strengths
 - **Documented government failures**: MJU21 provides an independent audit authority's finding — more durable than political accusations `[VERY HIGH confidence 🟦]`
 - **Coordinated accountability campaign**: S's simultaneous coverage of infrastructure, justice, energy, education, and climate demonstrates portfolio breadth that suggests S is ready to govern `[HIGH confidence 🟩]`
 - **Climate narrative coherence**: Fuel tax cut (HD03236) + agricultural climate failure (MJU21) + MJU25 (forthcoming) = a layered, multi-front climate case `[HIGH confidence 🟩]`
 
-### Weaknesses
+#### Weaknesses
 - **S silent on deportation** (from motions analysis): S's revealed strategic choice to avoid the security-enforcement immigration narrative limits coalition-building credibility on the right `[HIGH confidence 🟩]`
 - **V+MP electoral risk**: Their arms-export and immigration positions poll poorly with median voter `[MEDIUM confidence 🟧]`
 - **S must own economic failure too**: Sweden's 0.82% GDP growth and 8.69% unemployment happened under conditions S did not fully prevent when in government 2014–2022 `[MEDIUM confidence 🟧]`
 
-### Opportunities
+#### Opportunities
 - **MJU21 amplification**: Bring Riksrevisionen finding to media at first plenary debate opportunity `[HIGH confidence 🟩]`
 - **HD11726 timing**: Constitutional knowledge debate immediately post-vilande amendments is symbolically perfect for S `[HIGH confidence 🟩]`
 
-### Threats
+#### Threats
 - **Government pays its debts**: If Strömmer, Carlson, and other ministers respond substantively to the written question wave, the accountability saturation tactic loses impact `[MEDIUM confidence 🟧]`
 - **Election fatigue**: Voters may tune out escalating accountability campaigns if not tied to vivid personal stories `[LOW confidence 🟥]`
 
 ## Threat Analysis
-
-_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/threat-analysis.md)_
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/threat-analysis.md -->
 
 **THR ID**: `THR-2026-04-20-EVE001`
 **Analysis Date**: 2026-04-20 17:35 UTC
@@ -880,7 +872,7 @@ _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Threat Taxonomy Network
+### Threat Taxonomy Network
 
 ```mermaid
 graph TD
@@ -908,9 +900,9 @@ graph TD
 
 ---
 
-## Threat Category Analysis
+### Threat Category Analysis
 
-### Category 1: Constitutional Threats
+#### Category 1: Constitutional Threats
 **Severity**: 3/5 | **Confidence**: 🟩HIGH
 
 | Threat | Source | Severity | Probability | Timeline |
@@ -923,7 +915,7 @@ graph TD
 
 ---
 
-### Category 2: Climate/Environment Threats
+#### Category 2: Climate/Environment Threats
 **Severity**: 4/5 | **Confidence**: 🟩HIGH
 
 | Threat | Source | Severity | Probability | Timeline |
@@ -936,7 +928,7 @@ graph TD
 
 ---
 
-### Category 3: Security/Rule of Law Threats
+#### Category 3: Security/Rule of Law Threats
 **Severity**: 3/5 | **Confidence**: 🟩HIGH
 
 | Threat | Source | Severity | Probability | Timeline |
@@ -949,7 +941,7 @@ graph TD
 
 ---
 
-### Category 4: Economic Threats
+#### Category 4: Economic Threats
 **Severity**: 4/5 | **Confidence**: 🟩HIGH
 
 | Threat | Source | Severity | Probability | Timeline |
@@ -962,7 +954,7 @@ graph TD
 
 ---
 
-### Category 5: Coalition Stability Threats
+#### Category 5: Coalition Stability Threats
 **Severity**: 3/5 | **Confidence**: 🟩HIGH
 
 | Threat | Source | Severity | Probability | Timeline |
@@ -973,7 +965,7 @@ graph TD
 
 ---
 
-### Category 6: Democratic Integrity Threats
+#### Category 6: Democratic Integrity Threats
 **Severity**: 2/5 | **Confidence**: 🟧MEDIUM
 
 | Threat | Source | Severity | Probability | Timeline |
@@ -985,27 +977,26 @@ graph TD
 
 ---
 
-## Overall Threat Assessment
+### Overall Threat Assessment
 
 **Confidence level**: Threat near MEDIUM-HIGH (2026-04-20 evening)
 
 The dominant threat cluster is the **climate accountability compound** (MJU21 + HD03236 + HD11725) — independently verified, multi-front, and aligned with three opposition parties (S, MP, C). The secondary threat is the **parliamentary saturation campaign** — S's escalating filing pace is structurally asymmetric in that the government must respond to every question while S pays no cost for filing.
 
 ## Comparative International
-
-_Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/comparative-international.md)_
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/comparative-international.md -->
 
 ---
 
-## Overview
+### Overview
 
 Today's Swedish parliamentary activity — Riksrevisionen agricultural climate failure, police quality accountability, and constitutional scrutiny — has direct parallels across Nordic and EU peers.
 
 ---
 
-## Jurisdiction Benchmarks
+### Jurisdiction Benchmarks
 
-### 1. Denmark 🇩🇰 — Agricultural Climate Transition (Lead Comparator)
+#### 1. Denmark 🇩🇰 — Agricultural Climate Transition (Lead Comparator)
 **Relevance**: HD01MJU21 agricultural climate findings
 
 Denmark is the most direct comparator for Sweden's agricultural climate challenge. In 2021, Denmark adopted the world's first comprehensive **agricultural climate plan**, including:
@@ -1019,7 +1010,7 @@ Denmark is the most direct comparator for Sweden's agricultural climate challeng
 
 ---
 
-### 2. Finland 🇫🇮 — Police Resource Distribution (Security Comparator)
+#### 2. Finland 🇫🇮 — Police Resource Distribution (Security Comparator)
 **Relevance**: HD10439 Stockholm police shortage
 
 Finland's police reform (2013–2016) provides a cautionary tale for Sweden's HD10439 situation. Finland merged 24 police districts into 11, **reducing operational presence in smaller cities while concentrating resources in Helsinki**. The result was: improved response times in Helsinki (+8%) but **rural policing deterioration** that required emergency reversal 2019–2021.
@@ -1032,7 +1023,7 @@ Sweden faces an analogous challenge: meeting the national 10,000-officer target 
 
 ---
 
-### 3. Germany 🇩🇪 — Fuel Tax / Climate Hypocrisy Precedent
+#### 3. Germany 🇩🇪 — Fuel Tax / Climate Hypocrisy Precedent
 **Relevance**: HD03236 fuel tax + MJU21 compound
 
 Germany's 2022 Tankrabatt (fuel tax cut, €3 billion, June–August 2022) is the direct European precedent for Sweden's HD03236. Key findings:
@@ -1048,7 +1039,7 @@ Germany's 2022 Tankrabatt (fuel tax cut, €3 billion, June–August 2022) is th
 
 ---
 
-### 4. Norway 🇳🇴 — Constitutional Education Model
+#### 4. Norway 🇳🇴 — Constitutional Education Model
 **Relevance**: HD11726 constitutional knowledge question
 
 Norway has a relatively strong model for constitutional civic education. In connection with the 2014 bicentenary of the Norwegian constitution, Norway launched:
@@ -1064,7 +1055,7 @@ Norway has a relatively strong model for constitutional civic education. In conn
 
 ---
 
-### 5. Netherlands 🇳🇱 — Audit Authority Climate Escalation
+#### 5. Netherlands 🇳🇱 — Audit Authority Climate Escalation
 **Relevance**: MJU21 Riksrevisionen finding escalation risk
 
 The Netherlands' Algemene Rekenkamer (national audit court) issued a climate-transition finding in 2022 on agricultural emissions — and the institutional response provides a blueprint for Sweden:
@@ -1078,7 +1069,7 @@ The Netherlands' Algemene Rekenkamer (national audit court) issued a climate-tra
 
 ---
 
-### 6. EU Level — Pay Transparency Directive (Cross-Reference)
+#### 6. EU Level — Pay Transparency Directive (Cross-Reference)
 **Relevance**: From sibling interpellation analysis (IP437 — EU pay transparency directive failure)
 
 Sweden's documented failure to implement the EU Pay Transparency Directive (2023/970) on time is a compliance failure visible at EU level. The directive requires implementation by June 7, 2026. Sweden withdrew its implementation proposal (frs 2025/26:437 confirms). EU infringement proceedings typically take 12–18 months to reach formal decision — but the **political embarrassment** of being called out at EU institutions before September 13, 2026 is a live risk.
@@ -1089,7 +1080,7 @@ Sweden's documented failure to implement the EU Pay Transparency Directive (2023
 
 ---
 
-## Summary Scorecard
+### Summary Scorecard
 
 | Jurisdiction | Area | Sweden's Position | Gap |
 |-------------|------|:-----------------:|:---:|
@@ -1101,15 +1092,14 @@ Sweden's documented failure to implement the EU Pay Transparency Directive (2023
 | EU | Pay transparency | Non-compliant (rare) | Critical |
 
 ## Classification Results
-
-_Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/classification-results.md)_
+<!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/classification-results.md -->
 
 **CLS ID**: `CLS-2026-04-20-EVE001`
 **Analysis Date**: 2026-04-20 17:36 UTC
 
 ---
 
-## Sensitivity Decision Tree
+### Sensitivity Decision Tree
 
 ```mermaid
 graph TD
@@ -1130,7 +1120,7 @@ graph TD
 
 ---
 
-## Per-Document Classification Table
+### Per-Document Classification Table
 
 | Dok ID | Type | Sensitivity | Policy Domain | Urgency | Significance | Publication |
 |--------|------|:-----------:|---------------|:-------:|:------------:|:-----------:|
@@ -1149,7 +1139,7 @@ graph TD
 
 ---
 
-## Domain Classification
+### Domain Classification
 
 | Policy Domain | Documents | Weight | Election Relevance |
 |---------------|:---------:|:------:|:-----------------:|
@@ -1159,7 +1149,7 @@ graph TD
 | Infrastructure/Transport | HD11722, HD11723, HD11724 | 🟡 MEDIUM | 🟡 MEDIUM |
 | Rural/Agriculture/Energy | HD11721, HD11725 | 🟡 MEDIUM | 🟡 MEDIUM |
 
-## Urgency Classification
+### Urgency Classification
 
 **Critical (respond within 24h)**: None
 **High (respond within 48–72h)**: HD10439, HD01MJU21
@@ -1167,15 +1157,14 @@ graph TD
 **Low (routine response)**: HD01KU43, HD11720, HD11721, HD11723, HD11727
 
 ## Cross-Reference Map
-
-_Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/cross-reference-map.md)_
+<!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/cross-reference-map.md -->
 
 **XRF ID**: `XRF-2026-04-20-EVE001`
 **Analysis Date**: 2026-04-20 17:39 UTC
 
 ---
 
-## Document Relationship Graph
+### Document Relationship Graph
 
 ```mermaid
 graph LR
@@ -1229,7 +1218,7 @@ graph LR
 
 ---
 
-## Cross-Reference Table
+### Cross-Reference Table
 
 | This Document | Related Document | Relationship | Source | Type |
 |---------------|-----------------|--------------|--------|------|
@@ -1246,30 +1235,30 @@ graph LR
 
 ---
 
-## Thematic Clusters
+### Thematic Clusters
 
-### Cluster A: Climate-Accountability Compound
+#### Cluster A: Climate-Accountability Compound
 **Confidence**: 🟩HIGH | **Electoral Weight**: 🔴CRITICAL
 
 Connects: MJU21 (Riksrevisionen) ↔ HD03236 (fuel tax) ↔ MOT024082+98 (S+MP counter-motions) ↔ HD11725 (alum shale)
 
 This cluster represents the most structurally damaging accountability compound for the government. Three independently-sourced challenges to climate credibility, with an independent constitutional body (Riksrevisionen) as the primary anchor.
 
-### Cluster B: Police Security Debate
+#### Cluster B: Police Security Debate
 **Confidence**: 🟩HIGH | **Electoral Weight**: 🔴HIGH
 
 Connects: HD10439 (new IP) ↔ HD10437 (previous IP) ↔ HD03237 (paid training)
 
 The police security debate has been running since April 15. HD10439 adds Stockholm specificity — from "national police numbers" to "where are the police in Stockholm?"
 
-### Cluster C: Constitutional Awareness Chain
+#### Cluster C: Constitutional Awareness Chain
 **Confidence**: 🟩HIGH | **Electoral Weight**: 🟠HIGH
 
 Connects: KU33+KU32 vilande ↔ KU42 budget scrutiny ↔ HD11726 constitutional knowledge
 
 The constitutional awareness chain creates a coherent pre-election narrative: government is changing the constitution (KU33/KU32), managing the fiscal framework (KU42), but not educating citizens about what the constitution is (HD11726).
 
-### Cluster D: Infrastructure Carlson Accountability
+#### Cluster D: Infrastructure Carlson Accountability
 **Confidence**: 🟩HIGH | **Electoral Weight**: 🟠MEDIUM
 
 Connects: HD11722 ↔ HD11724 ↔ IP434 (sibling interpellation on housing starts)
@@ -1277,14 +1266,13 @@ Connects: HD11722 ↔ HD11724 ↔ IP434 (sibling interpellation on housing start
 S is maintaining consistent pressure on Infrastructure Minister Carlson across multiple parliamentary instruments. Written questions, interpellations — the approach is multi-layered.
 
 ## Methodology Reflection & Limitations
-
-_Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/methodology-reflection.md)_
+<!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/methodology-reflection.md -->
 
 **Date**: 2026-04-20 | **Analysis Version**: v5.0 | **Depth**: deep
 
 ---
 
-## Methodology Application Matrix
+### Methodology Application Matrix
 
 | Method | Applied | Quality | Evidence |
 |--------|:-------:|:-------:|---------|
@@ -1303,9 +1291,9 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Upstream Watchpoint Reconciliation
+### Upstream Watchpoint Reconciliation
 
-### Prior Evening Analysis (2026-04-17)
+#### Prior Evening Analysis (2026-04-17)
 **Key watchpoints from previous run**:
 
 | Watchpoint (from 2026-04-17) | Status Today (2026-04-20) | Evidence |
@@ -1317,7 +1305,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 | Bernadotte diplomatic sensitivity (IP435) | 🟡 PENDING | No government response yet; April 30 deadline |
 | Women's shelter closures narrative | 🟡 ONGOING | No new documents today but background risk remains |
 
-### Realtime Monitor Watchpoints (2026-04-20 earlier run — realtime-1428)
+#### Realtime Monitor Watchpoints (2026-04-20 earlier run — realtime-1428)
 **From memory: lead story "KU Summons Finance Minister Svantesson"**
 
 | Watchpoint | This Evening's Relevance | Resolution |
@@ -1327,7 +1315,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 | HD10439 police interpellation (new) | 🟩 NEW TODAY | Added to analysis as major finding |
 | Opposition acceleration pre-EU Summit | 🟩 CONFIRMED | 8 questions today confirms pre-EU Summit pressure |
 
-### Prior Weeks' Watchpoints (April 14–19)
+#### Prior Weeks' Watchpoints (April 14–19)
 | Watchpoint | Status | Notes |
 |-----------|:------:|-------|
 | Spring Economic Bill media narrative | 🟧 EVOLVING | GDP gap (0.82% vs Denmark 3.48%) remains problematic |
@@ -1338,24 +1326,23 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Pass-1 → Pass-2 Improvement Evidence
+### Pass-1 → Pass-2 Improvement Evidence
 
-### Pass 1 (Initial draft)
+#### Pass 1 (Initial draft)
 - Initial analysis focused primarily on individual document summaries
 - Risk scoring was initially 3 risks; expanded to 5 after reading cross-reference patterns
 - International comparative initially had 3 jurisdictions; expanded to 6 on re-read
 - Scenario analysis initially only 2 scenarios; third "constitutional week" scenario added after cross-referencing HD11726 with KU33/KU32 context
 
 ## Data Download Manifest
-
-_Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/data-download-manifest.md)_
+<!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/data-download-manifest.md -->
 
 **Generated**: 2026-04-20 17:31 UTC
 **Analysis Type**: evening-analysis
 **Riksmöte**: 2025/26
 **Workflow**: news-evening-analysis
 
-## Documents Analyzed
+### Documents Analyzed
 
 **Documents Analyzed**: 14
 
@@ -1376,13 +1363,13 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 | HD11726-1 | fr | — | Kunskap om grundlagarna (svar) | ✅ Summary |
 | HD11727-1 | fr | — | Passkopior (svar) | ✅ Summary |
 
-## Data Sources
+### Data Sources
 
 - riksdag-regering MCP: get_betankanden, get_interpellationer, get_fragor
 - Sibling analysis cross-references: committeeReports, propositions, motions, interpellations
 - Government press releases (g0v.se): Sverige ökar humanitärt stöd till Libanon (2026-04-19)
 
-## Completeness Assessment
+### Completeness Assessment
 
 - **Core committee reports**: 3/3 (KU42, KU43, MJU21) — HIGH completeness
 - **Interpellations (new)**: 1/1 (HD10439) — HIGH completeness
@@ -1390,7 +1377,25 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 - **Sibling analysis integrated**: committeeReports (6 docs), propositions (9 docs), motions (21 docs), interpellations (10 docs)
 - **Government communications**: 1 press release (Libanon aid increase)
 
-## Download Timestamps
+### Download Timestamps
 
 - Script pipeline: 2026-04-20 17:29 UTC
 - AI analysis: 2026-04-20 17:31 UTC
+
+## Article Sources
+
+Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
+
+- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/executive-brief.md)
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/synthesis-summary.md)
+- [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/significance-scoring.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/stakeholder-perspectives.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/scenario-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/threat-analysis.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/comparative-international.md)
+- [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/classification-results.md)
+- [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/cross-reference-map.md)
+- [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/methodology-reflection.md)
+- [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/data-download-manifest.md)

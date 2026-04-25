@@ -5,7 +5,7 @@ date: 2026-04-21
 subfolder: evening-analysis
 slug: 2026-04-21-evening-analysis
 source_folder: analysis/daily/2026-04-21/evening-analysis
-generated_at: 2026-04-25T11:09:59.885Z
+generated_at: 2026-04-25T15:36:04.685Z
 language: en
 layout: article
 ---
@@ -22,14 +22,13 @@ Use this guide to read the article as a political-intelligence product rather th
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Executive Brief
-
-_Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief.md)_
+<!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief.md -->
 
 **Package**: EVE-2026-04-21 | **Classification**: PUBLIC | **Confidence**: 🟩HIGH
 
 ---
 
-## BLUF (Bottom Line Up Front — ≤300 words)
+### BLUF (Bottom Line Up Front — ≤300 words)
 
 Sweden's parliament entered a decisive pre-election week with three simultaneous high-stakes policy developments. Finance Committee FiU48 — an extraordinary 4.1 billion SEK supplementary budget cutting fuel taxes to the EU's legal minimum and providing direct energy price support — moved to chamber vote (expected 2026-04-22), delivering tangible household relief to approximately 9 million Swedes at a moment when GDP growth stands at only 0.82% and unemployment has risen to 8.69%. Simultaneously, the government launched a new law requiring wind turbine operators to share revenues with nearby residents — a policy designed to convert local opposition (NIMBY) to support (YIMBY) for Sweden's renewable energy expansion. These two moves together define the coalition's "affordability and green transition" pre-election narrative.
 
@@ -37,7 +36,7 @@ The constitutional arena was equally active: Finance Minister Elisabeth Svantess
 
 ---
 
-## 3 Decisions This Brief Supports
+### 3 Decisions This Brief Supports
 
 1. **Editorial decision**: Publish FiU48 as lead story immediately in EN + SV — affects 9M citizens directly
 2. **Monitoring decision**: Track FiU48 chamber vote (2026-04-22/23) and any L party dissent as coalition stability signal
@@ -45,7 +44,7 @@ The constitutional arena was equally active: Finance Minister Elisabeth Svantess
 
 ---
 
-## 60-Second Read (8 Bullets)
+### 60-Second Read (8 Bullets)
 
 - 🔴 **FiU48 fuel tax cut**: Finance Committee approved extra budget reducing petrol tax by 82 öre/l and diesel by 319 SEK/m³ through September 2026; chamber vote imminent
 - ⚡ **Energy price support**: 4.1B SEK total including household el- och gasprisstöd for ~3M households facing elevated energy costs
@@ -58,7 +57,7 @@ The constitutional arena was equally active: Finance Minister Elisabeth Svantess
 
 ---
 
-## Named Actors (≥5 ministers/party leaders)
+### Named Actors (≥5 ministers/party leaders)
 
 | Actor | Role | Significance Today | dok_id |
 |-------|------|-------------------|--------|
@@ -74,7 +73,7 @@ The constitutional arena was equally active: Finance Minister Elisabeth Svantess
 
 ---
 
-## Next-Day Watch Points (2026-04-22)
+### Next-Day Watch Points (2026-04-22)
 
 | Watch Point | What to Monitor | Significance |
 |-------------|----------------|-------------|
@@ -86,7 +85,7 @@ The constitutional arena was equally active: Finance Minister Elisabeth Svantess
 
 ---
 
-## Top-5 Risks
+### Top-5 Risks
 
 | # | Risk | L×I Score | Timeline |
 |---|------|-----------|---------|
@@ -98,7 +97,7 @@ The constitutional arena was equally active: Finance Minister Elisabeth Svantess
 
 ---
 
-## Confidence Meter
+### Confidence Meter
 
 | Domain | Confidence |
 |--------|-----------|
@@ -112,8 +111,7 @@ The constitutional arena was equally active: Finance Minister Elisabeth Svantess
 *Produced by Riksdagsmonitor Evening Analysis v5.0 | 2026-04-21*
 
 ## Synthesis Summary
-
-_Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/synthesis-summary.md)_
+<!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/synthesis-summary.md -->
 
 <p align="center">
   <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="96" height="96">
@@ -128,7 +126,7 @@ _Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## 📋 Synthesis Metadata
+### 📋 Synthesis Metadata
 
 | Field | Value |
 |-------|-------|
@@ -143,7 +141,7 @@ _Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## 📊 Intelligence Dashboard
+### 📊 Intelligence Dashboard
 
 ```mermaid
 graph TD
@@ -170,7 +168,7 @@ graph TD
 
 ---
 
-## 🏆 Top 5 Intelligence Findings
+### 🏆 Top 5 Intelligence Findings
 
 | Rank | Finding | Source | Significance | Confidence | Electoral Impact |
 |------|---------|--------|-------------|-----------|-----------------|
@@ -182,7 +180,7 @@ graph TD
 
 ---
 
-## 🗂️ SWOT Summary
+### 🗂️ SWOT Summary
 
 | Dimension | Coalition (Tidöalliansen) | Opposition (S/V/MP/C) |
 |-----------|-------------------------|----------------------|
@@ -193,7 +191,7 @@ graph TD
 
 ---
 
-## 📈 Risk Landscape
+### 📈 Risk Landscape
 
 | Risk ID | Risk | Likelihood | Impact | L×I Score | Timeline |
 |---------|------|-----------|--------|-----------|----------|
@@ -206,7 +204,7 @@ graph TD
 
 ---
 
-## 🔮 Forward Indicators
+### 🔮 Forward Indicators
 
 | Indicator | Trigger | Timeline | Significance |
 |-----------|---------|----------|-------------|
@@ -219,7 +217,7 @@ graph TD
 
 ---
 
-## 📦 Artifacts Inventory
+### 📦 Artifacts Inventory
 
 | # | Artifact | Status | Size (bytes) |
 |---|---------|--------|-------------|
@@ -240,7 +238,7 @@ graph TD
 
 ---
 
-## 🗳️ Election 2026 Implications
+### 🗳️ Election 2026 Implications
 
 | Dimension | Assessment | Confidence |
 |-----------|-----------|-----------|
@@ -256,8 +254,7 @@ graph TD
 *Produced by Riksdagsmonitor AI Evening Analysis — Classification: PUBLIC — See full artifacts inventory above*
 
 ## Significance Scoring
-
-_Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/significance-scoring.md)_
+<!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/significance-scoring.md -->
 
 **SIG-ID**: SIG-2026-04-21-EVE001
 **Scoring Date**: 2026-04-21
@@ -265,7 +262,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## 5-Dimension Scoring Matrix
+### 5-Dimension Scoring Matrix
 
 ```mermaid
 graph LR
@@ -285,7 +282,7 @@ graph LR
 
 ---
 
-## Per-Document Significance Scores
+### Per-Document Significance Scores
 
 | dok_id | Electoral | Constitutional | Fiscal | International | Precedent | **Composite** | DIW Weight |
 |--------|----------|----------------|--------|--------------|-----------|---------------|-----------|
@@ -302,7 +299,7 @@ graph LR
 
 ---
 
-## Publication Decision
+### Publication Decision
 
 | Decision | Justification |
 |---------|--------------|
@@ -315,8 +312,7 @@ graph LR
 *Produced by Riksdagsmonitor Evening Analysis v5.0*
 
 ## Stakeholder Perspectives
-
-_Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/stakeholder-perspectives.md)_
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/stakeholder-perspectives.md -->
 
 **STA-ID**: STA-2026-04-21-EVE001
 **Analysis Date**: 2026-04-21
@@ -325,7 +321,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## Impact Radar
+### Impact Radar
 
 ```mermaid
 graph TD
@@ -352,9 +348,9 @@ graph TD
 
 ---
 
-## All 8 Stakeholder Groups
+### All 8 Stakeholder Groups
 
-### 1. Citizens (Allmänheten)
+#### 1. Citizens (Allmänheten)
 **Impact Level**: 🔴 VERY HIGH | **Timeline**: Immediate
 
 | Sub-group | Impact | Evidence |
@@ -368,7 +364,7 @@ graph TD
 
 **Confidence**: 🟩HIGH | **Key actor**: Ordinary Swedish households facing high energy and fuel costs
 
-### 2. Government Coalition (Tidöalliansen: M+SD+KD+L)
+#### 2. Government Coalition (Tidöalliansen: M+SD+KD+L)
 **Impact Level**: 🔴 VERY HIGH | **Timeline**: 0–3 days
 
 | Party | Position | Tension | Evidence |
@@ -380,7 +376,7 @@ graph TD
 
 **Assessment**: Coalition message discipline holds for FiU48 vote. L internal tension real but manageable given vindkraft counterweight. Confidence: 🟩HIGH
 
-### 3. Opposition Bloc (S/V/MP/C)
+#### 3. Opposition Bloc (S/V/MP/C)
 **Impact Level**: 🔴 VERY HIGH | **Timeline**: Immediate–Campaign 2026
 
 | Party | Position on FiU48 | Strategy | Evidence |
@@ -392,7 +388,7 @@ graph TD
 
 **Assessment**: Opposition in strategic bind on FiU48 — welfare concerns require affordability support, climate concerns require opposition. S's silence is strategically rational. Confidence: 🟩HIGH
 
-### 4. Business/Industry (Näringsliv)
+#### 4. Business/Industry (Näringsliv)
 **Impact Level**: 🟠 HIGH | **Timeline**: Immediate–12 months
 
 | Sector | Impact | Evidence |
@@ -405,7 +401,7 @@ graph TD
 
 **Confidence**: 🟩HIGH
 
-### 5. Civil Society (Civilsamhälle)
+#### 5. Civil Society (Civilsamhälle)
 **Impact Level**: 🟠 HIGH | **Timeline**: Immediate–Medium
 
 | Group | Impact | Evidence |
@@ -418,7 +414,7 @@ graph TD
 
 **Confidence**: 🟩HIGH
 
-### 6. International/EU
+#### 6. International/EU
 **Impact Level**: 🔴 VERY HIGH | **Timeline**: 47 days–4 weeks
 
 | Institution | Issue | Timeline | Confidence |
@@ -430,7 +426,7 @@ graph TD
 
 **Confidence**: 🟩HIGH — EU infringement risk is structurally certain; FiU48 EU monitoring is probable
 
-### 7. Judiciary/Constitutional
+#### 7. Judiciary/Constitutional
 **Impact Level**: 🟠 HIGH | **Timeline**: 2026-05-05 est.
 
 | Issue | Body | Impact | Evidence |
@@ -442,7 +438,7 @@ graph TD
 
 **Confidence**: 🟧MEDIUM (depends on KU conclusions not yet published)
 
-### 8. Media/Public Opinion
+#### 8. Media/Public Opinion
 **Impact Level**: 🟠 HIGH | **Timeline**: Immediate
 
 | Narrative | Expected Frame | Direction | Evidence |
@@ -459,8 +455,7 @@ graph TD
 *Produced by Riksdagsmonitor Evening Analysis v5.0 — Confidence: 🟩HIGH*
 
 ## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/scenario-analysis.md)_
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/scenario-analysis.md -->
 
 **SCN-ID**: SCN-2026-04-21-EVE001
 **Analysis Date**: 2026-04-21 | **Riksmöte**: 2025/26
@@ -468,7 +463,7 @@ _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## Scenario Taxonomy
+### Scenario Taxonomy
 
 ```mermaid
 mindmap
@@ -484,9 +479,9 @@ mindmap
 
 ---
 
-## Base Scenario Analysis
+### Base Scenario Analysis
 
-### B1: Smooth Coalition Passage (Probability: 65%)
+#### B1: Smooth Coalition Passage (Probability: 65%)
 
 **Trigger**: FiU48 passes chamber vote 2026-04-22 without L party defection; Vindkraft law clears committee by 2026-05-15.
 
@@ -513,7 +508,7 @@ mindmap
 
 ---
 
-### B2: L Party Fracture (Probability: 18%)
+#### B2: L Party Fracture (Probability: 18%)
 
 **Trigger**: L Riksdag caucus splits on FiU48 — 3+ L MPs abstain or vote No, forcing minority passage.
 
@@ -539,7 +534,7 @@ mindmap
 
 ---
 
-### B3: EU-Forced Policy Recalibration (Probability: 17%)
+#### B3: EU-Forced Policy Recalibration (Probability: 17%)
 
 **Trigger**: European Commission issues formal challenge to FiU48 (Energy Tax Directive violation) within 14 days; Sweden forced to modify or delay implementation.
 
@@ -557,9 +552,9 @@ mindmap
 
 ---
 
-## Wild Card Scenarios
+### Wild Card Scenarios
 
-### W1: Early Election Triggered (Probability: 3%)
+#### W1: Early Election Triggered (Probability: 3%)
 
 **Trigger**: FiU48 chamber vote fails due to surprise SD-L-M internal split; Kristersson announces confidence vote; early election (before September).
 
@@ -569,7 +564,7 @@ mindmap
 
 ---
 
-### W2: EU Emergency Injunction (Probability: 2%)
+#### W2: EU Emergency Injunction (Probability: 2%)
 
 **Trigger**: European Commission takes emergency action within 48 hours of FiU48 chamber vote to block implementation; first such action against a member state's supplementary budget.
 
@@ -579,7 +574,7 @@ mindmap
 
 ---
 
-## Analysis of Competing Hypotheses (ACH)
+### Analysis of Competing Hypotheses (ACH)
 
 For the central question: **"Will FiU48 pass the chamber vote without major incident?"**
 
@@ -594,7 +589,7 @@ For the central question: **"Will FiU48 pass the chamber vote without major inci
 
 ---
 
-## Scenario Monitoring Dashboard
+### Scenario Monitoring Dashboard
 
 ```mermaid
 xychart-beta
@@ -606,7 +601,7 @@ xychart-beta
 
 ---
 
-## Strategic Implications for 2026 Election
+### Strategic Implications for 2026 Election
 
 | Scenario | Election Outcome Implication |
 |----------|--------------------------|
@@ -618,8 +613,7 @@ xychart-beta
 *Produced by Riksdagsmonitor Evening Analysis v5.0 | 2026-04-21*
 
 ## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/risk-assessment.md)_
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/risk-assessment.md -->
 
 **RSK-ID**: RSK-2026-04-21-EVE001
 **Analysis Date**: 2026-04-21
@@ -628,7 +622,7 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Risk Heat Map
+### Risk Heat Map
 
 ```mermaid
 quadrantChart
@@ -651,7 +645,7 @@ quadrantChart
 
 ---
 
-## Detailed Risk Register
+### Detailed Risk Register
 
 | Risk ID | Risk Title | Likelihood (1-5) | Impact (1-5) | L×I Score | Owner | Timeline | Mitigation |
 |---------|-----------|-----------------|-------------|-----------|-------|----------|-----------|
@@ -666,7 +660,7 @@ quadrantChart
 
 ---
 
-## Coalition Stability Risk Analysis
+### Coalition Stability Risk Analysis
 
 ```mermaid
 graph TD
@@ -690,7 +684,7 @@ graph TD
 
 ---
 
-## Risk Trends from Previous Analysis
+### Risk Trends from Previous Analysis
 
 | Risk | Yesterday (2026-04-20) | Today (2026-04-21) | Change |
 |------|----------------------|-------------------|--------|
@@ -701,7 +695,7 @@ graph TD
 
 ---
 
-## Summary Risk Assessment
+### Summary Risk Assessment
 
 **Top 3 Risks requiring immediate monitoring:**
 
@@ -714,8 +708,7 @@ graph TD
 *Confidence: 🟩HIGH | Produced by Riksdagsmonitor Evening Analysis v5.0*
 
 ## SWOT Analysis
-
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/swot-analysis.md)_
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/swot-analysis.md -->
 
 **SWOT-ID**: SWT-2026-04-21-EVE001
 **Analysis Date**: 2026-04-21
@@ -724,7 +717,7 @@ _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/mai
 
 ---
 
-## Quadrant Mapping
+### Quadrant Mapping
 
 ```mermaid
 mindmap
@@ -763,9 +756,9 @@ mindmap
 
 ---
 
-## Full SWOT Matrix
+### Full SWOT Matrix
 
-### Strengths (Coalition: Tidöalliansen M+SD+KD+L)
+#### Strengths (Coalition: Tidöalliansen M+SD+KD+L)
 
 | Strength | Evidence | dok_id | Confidence |
 |----------|---------|--------|-----------|
@@ -775,7 +768,7 @@ mindmap
 | **Constitutional accountability operational** | KU G16 (Svantesson) + G34 (Wallström) hearings proceed — demonstrates functioning parliamentary oversight | HDC220260421ou1/ou2 | 🟩HIGH |
 | **TU16 simplification** | Removal of mandatory introduction course for B-license practice driving — regulatory simplification message | HD01TU16 | 🟩HIGH |
 
-### Weaknesses (Coalition: Tidöalliansen)
+#### Weaknesses (Coalition: Tidöalliansen)
 
 | Weakness | Evidence | dok_id | Confidence |
 |----------|---------|--------|-----------|
@@ -784,7 +777,7 @@ mindmap
 | **Andreas Carlson infrastructure accumulation** | 9 interpellations against KD Infrastructure Minister covering rail closures, road safety, housing, airports, defense. Creates "minister in crisis" meta-narrative | HD10434 and prior IPs | 🟩HIGH |
 | **L party climate tension** | Liberals historically support green taxation; supporting fossil subsidy is ideological compromise. Risk of "only for the election" framing | RT-1353 scenario B | 🟧MEDIUM |
 
-### Strengths (Opposition: S/V/MP/C)
+#### Strengths (Opposition: S/V/MP/C)
 
 | Strength | Evidence | dok_id | Confidence |
 |----------|---------|--------|-----------|
@@ -793,7 +786,7 @@ mindmap
 | **Women's welfare dual attack** | Two interpellations against Nina Larsson (L) filed same day: EU Pay Directive + women's shelter closures. "Minister failing women on two fronts" narrative | HD10437, HD10438 | 🟩HIGH |
 | **Systematic accountability documentation** | S filed 11 of 14 most recent interpellations — building a timestamped record of government failures to mobilize in campaign | Interpellations synthesis | 🟩HIGH |
 
-### Weaknesses (Opposition: S/V/MP/C)
+#### Weaknesses (Opposition: S/V/MP/C)
 
 | Weakness | Evidence | dok_id | Confidence |
 |----------|---------|--------|-----------|
@@ -801,7 +794,7 @@ mindmap
 | **S silent on deportation** | Despite filing motions on reception and housing immigration laws, S avoided HD024090/95/97 deportation cluster — revealed strategic weakness on enforcement narrative | Motions synthesis | 🟩HIGH |
 | **"Chaos coalition" risk** | When four opposition parties coordinate too visibly, M+SD frame it as "opposition chaos" — hurts opposition messaging | Motions synthesis | 🟧MEDIUM |
 
-### Opportunities
+#### Opportunities
 
 | Opportunity | Mechanism | Timeline | Confidence |
 |-------------|-----------|----------|-----------|
@@ -809,7 +802,7 @@ mindmap
 | **KU constrains opposition on Wallström** | G34 hearing of Wallström forces S to defend prior government decisions on foreign policy | 2026-05 est. | 🟧MEDIUM |
 | **SiS reform institutional care** | Government commitment to improving conditions for children in institutional care shows social welfare responsiveness | 2026-04-20 (press release) | 🟧MEDIUM |
 
-### Threats
+#### Threats
 
 | Threat | Mechanism | Probability | Severity | Confidence |
 |--------|-----------|------------|---------|-----------|
@@ -820,7 +813,7 @@ mindmap
 
 ---
 
-## Coalition vs Opposition SWOT
+### Coalition vs Opposition SWOT
 
 ```mermaid
 quadrantChart
@@ -844,8 +837,7 @@ quadrantChart
 *Produced by Riksdagsmonitor AI Evening Analysis — Confidence: 🟩HIGH*
 
 ## Threat Analysis
-
-_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/threat-analysis.md)_
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/threat-analysis.md -->
 
 **THR-ID**: THR-2026-04-21-EVE001
 **Analysis Date**: 2026-04-21
@@ -854,7 +846,7 @@ _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Threat Taxonomy Network
+### Threat Taxonomy Network
 
 ```mermaid
 graph TD
@@ -895,16 +887,16 @@ graph TD
 
 ---
 
-## Threat Category Details
+### Threat Category Details
 
-### Category 1: Institutional Threats
+#### Category 1: Institutional Threats
 
 | Threat | Actor | Severity (1-5) | Evidence | Timeline |
 |--------|-------|---------------|---------|---------|
 | KU G16 formal observation on Svantesson | Konstitutionsutskottet | 4 | KU G16 open hearing 2026-04-21 | 2026-05-05 |
 | Constitutional norm erosion via executive overreach | Government | 3 | Background pattern across 2025/26 | Ongoing |
 
-### Category 2: Legislative Threats
+#### Category 2: Legislative Threats
 
 | Threat | Actor | Severity (1-5) | Evidence | Timeline |
 |--------|-------|---------------|---------|---------|
@@ -912,7 +904,7 @@ graph TD
 | SfU22 ECHR incompatibility | Government | 4 | Inhibition replacing temporary permits | 2026-06-01 |
 | 21 opposition motions unaddressed | Opposition | 3 | HD024076-HD024089 etc. | Committee cycles |
 
-### Category 3: External/EU Threats
+#### Category 3: External/EU Threats
 
 | Threat | Actor | Severity (1-5) | Evidence | Timeline |
 |--------|-------|---------------|---------|---------|
@@ -920,21 +912,21 @@ graph TD
 | EU fossil subsidy monitoring FiU48 | EU Commission | 4 | EU Energy Tax Directive minimum breach | 2-4 weeks |
 | Gaza flotilla diplomatic incident | Israel/International | 3 | HD11731 question to Malmer Stenergard | Immediate |
 
-### Category 4: Electoral Threats
+#### Category 4: Electoral Threats
 
 | Threat | Actor | Severity (1-5) | Evidence | Timeline |
 |--------|-------|---------------|---------|---------|
 | Opposition 4-party immigration coordination | S/V/MP/C bloc | 4 | 21 motions including 4-party reception law cluster | Campaign 2026 |
 | S affordability credibility trap | Social Democrats | 3 | Cannot oppose FiU48 without appearing anti-household | Ongoing |
 
-### Category 5: Fiscal Threats
+#### Category 5: Fiscal Threats
 
 | Threat | Actor | Severity (1-5) | Evidence | Timeline |
 |--------|-------|---------------|---------|---------|
 | FiU48 structural deficit impact | Government | 3 | 4.1B SEK in 2026; structural budget impact | 2026 fiscal year |
 | Rural service closures (Skatteverket Vetlanda) | Government | 2 | HD11732 question | Immediate |
 
-### Category 6: Security Threats
+#### Category 6: Security Threats
 
 | Threat | Actor | Severity (1-5) | Evidence | Timeline |
 |--------|-------|---------------|---------|---------|
@@ -943,7 +935,7 @@ graph TD
 
 ---
 
-## Overall Threat Level Assessment
+### Overall Threat Level Assessment
 
 **Confidence Near HIGH** | Overall Threat Level: **HIGH**
 
@@ -952,8 +944,7 @@ The combination of a pending EU infringement deadline (47 days), climate law obl
 *Produced by Riksdagsmonitor Evening Analysis v5.0*
 
 ## Comparative International
-
-_Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/comparative-international.md)_
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/comparative-international.md -->
 
 **CMP-ID**: CMP-2026-04-21-EVE001
 **Analysis Date**: 2026-04-21 | **Riksmöte**: 2025/26
@@ -961,13 +952,13 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## Overview
+### Overview
 
 Today's Swedish parliamentary activity — a pre-election fuel tax cut (HD01FiU48), renewable energy revenue-sharing law, and EU Pay Directive compliance deadline — has direct parallels in at least five EU member states. This comparative analysis benchmarks each policy against international experience.
 
 ---
 
-## 1. Pre-Election Fuel Tax Cuts: Cross-EU Comparison
+### 1. Pre-Election Fuel Tax Cuts: Cross-EU Comparison
 
 Sweden's HD01FiU48 reduces petrol excise by 82 öre/litre through September 2026 (election day) at a cost of ~4.1B SEK. How does this compare to peer nations?
 
@@ -986,7 +977,7 @@ Sweden's HD01FiU48 reduces petrol excise by 82 öre/litre through September 2026
 
 ---
 
-## 2. Wind Energy Revenue Sharing: International Benchmarks
+### 2. Wind Energy Revenue Sharing: International Benchmarks
 
 The new Swedish law (announced by Johan Britz 2026-04-21) requires turbine operators to share revenues with residents within 9 turbine-heights radius.
 
@@ -1003,7 +994,7 @@ The new Swedish law (announced by Johan Britz 2026-04-21) requires turbine opera
 
 ---
 
-## 3. Constitutional Review of Finance Ministers: Nordic Comparison
+### 3. Constitutional Review of Finance Ministers: Nordic Comparison
 
 KU G16 hearing on Elisabeth Svantesson (M) on fiscal governance:
 
@@ -1018,7 +1009,7 @@ KU G16 hearing on Elisabeth Svantesson (M) on fiscal governance:
 
 ---
 
-## 4. EU Pay Transparency Directive: Member State Compliance Map
+### 4. EU Pay Transparency Directive: Member State Compliance Map
 
 Sweden (Nina Larsson, L, 47 days remaining):
 
@@ -1037,7 +1028,7 @@ Sweden (Nina Larsson, L, 47 days remaining):
 
 ---
 
-## 5. Opposition Coordination Waves: Comparative Analysis
+### 5. Opposition Coordination Waves: Comparative Analysis
 
 Sweden's 21 coordinated S/V/MP/C counter-motions (2026-04-21) on immigration and fiscal policy:
 
@@ -1053,7 +1044,7 @@ Sweden's 21 coordinated S/V/MP/C counter-motions (2026-04-21) on immigration and
 
 ---
 
-## Summary: Sweden's Position in EU Policy Space (April 2026)
+### Summary: Sweden's Position in EU Policy Space (April 2026)
 
 ```mermaid
 quadrantChart
@@ -1074,8 +1065,7 @@ quadrantChart
 *Produced by Riksdagsmonitor Evening Analysis v5.0 | 2026-04-21*
 
 ## Classification Results
-
-_Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/classification-results.md)_
+<!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/classification-results.md -->
 
 **CLS-ID**: CLS-2026-04-21-EVE001
 **Classification Date**: 2026-04-21
@@ -1083,7 +1073,7 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Sensitivity Decision Tree
+### Sensitivity Decision Tree
 
 ```mermaid
 graph TD
@@ -1116,7 +1106,7 @@ graph TD
 
 ---
 
-## Per-Document Classification Table
+### Per-Document Classification Table
 
 | dok_id | Title (abbreviated) | Sensitivity | Policy Domain | Urgency | Significance |
 |--------|--------------------|-----------|----|---------|-------------|
@@ -1134,7 +1124,7 @@ graph TD
 
 ---
 
-## Domain Classification
+### Domain Classification
 
 | Policy Domain | Documents | Combined Significance |
 |---------------|----------|----------------------|
@@ -1147,7 +1137,7 @@ graph TD
 
 ---
 
-## Publication Decision
+### Publication Decision
 
 | Article | Status | Classification | Labels |
 |---------|--------|---------------|--------|
@@ -1157,8 +1147,7 @@ graph TD
 *Produced by Riksdagsmonitor Evening Analysis — Classification: PUBLIC*
 
 ## Cross-Reference Map
-
-_Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/cross-reference-map.md)_
+<!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/cross-reference-map.md -->
 
 **XRF-ID**: XRF-2026-04-21-EVE001
 **Analysis Date**: 2026-04-21
@@ -1166,7 +1155,7 @@ _Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/bl
 
 ---
 
-## Document Relationship Graph
+### Document Relationship Graph
 
 ```mermaid
 graph TD
@@ -1204,7 +1193,7 @@ graph TD
 
 ---
 
-## Cross-Reference Table
+### Cross-Reference Table
 
 | Primary dok_id | Linked dok_id(s) | Relationship Type | Significance |
 |---------------|-----------------|------------------|-------------|
@@ -1220,7 +1209,7 @@ graph TD
 
 ---
 
-## Upstream Watchpoint Reconciliation (Last 3 Days)
+### Upstream Watchpoint Reconciliation (Last 3 Days)
 
 | Watchpoint | Source | Status |
 |-----------|--------|--------|
@@ -1233,7 +1222,7 @@ graph TD
 
 ---
 
-## Government Activity — Cross-Ministry Coherence
+### Government Activity — Cross-Ministry Coherence
 
 | Ministry | Activity Type | Coherence Assessment |
 |---------|--------------|---------------------|
@@ -1245,17 +1234,16 @@ graph TD
 *Produced by Riksdagsmonitor Evening Analysis v5.0*
 
 ## Methodology Reflection & Limitations
-
-_Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/methodology-reflection.md)_
+<!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/methodology-reflection.md -->
 
 **MTH-ID**: MTH-2026-04-21-EVE001
 **Analysis Date**: 2026-04-21 | **Riksmöte**: 2025/26
 
 ---
 
-## Analysis Quality Assessment
+### Analysis Quality Assessment
 
-### Methodology Version: ai-driven-analysis-guide.md v5.0
+#### Methodology Version: ai-driven-analysis-guide.md v5.0
 
 | Phase | Target Duration | Actual Duration | Quality Assessment |
 |-------|---------------|----------------|-------------------|
@@ -1264,7 +1252,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 | AI Analysis Pass 1 | 6–21 min | ~14 min (7 core artifacts) | 🟡 Compressed by context compaction |
 | AI Analysis Pass 2 | 21–28 min | ~22 min (7 additional artifacts) | ✅ Full second pass |
 
-### Analysis Depth: `deep`
+#### Analysis Depth: `deep`
 
 | Requirement | Target | Actual | Met? |
 |-------------|--------|--------|------|
@@ -1279,7 +1267,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## MCP Tool Performance
+### MCP Tool Performance
 
 | Tool | Status | Fallback Used |
 |------|--------|--------------|
@@ -1294,7 +1282,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Upstream Watchpoint Reconciliation (from 2026-04-20)
+### Upstream Watchpoint Reconciliation (from 2026-04-20)
 
 | Watchpoint from 2026-04-20 | Today's Update | Resolved? |
 |--------------------------|---------------|---------|
@@ -1307,7 +1295,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## New Watchpoints Created for 2026-04-22+
+### New Watchpoints Created for 2026-04-22+
 
 | Watchpoint | Priority | Trigger Condition |
 |-----------|---------|------------------|
@@ -1320,9 +1308,9 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Coverage Decisions
+### Coverage Decisions
 
-### Documents Analyzed (from 2026-04-21 sources)
+#### Documents Analyzed (from 2026-04-21 sources)
 
 | dok_id | Analysis Depth | Included in Articles |
 |--------|--------------|---------------------|
@@ -1338,7 +1326,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 | KU G16 (Svantesson) | ✅ DEEP | ✅ EN + SV section |
 | KU G34 (Wallström) | ✅ DEEP | ✅ EN + SV section |
 
-### Sibling Analysis Cross-Pollination
+#### Sibling Analysis Cross-Pollination
 
 | Source | Elements Borrowed |
 |--------|-----------------|
@@ -1349,7 +1337,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Process Improvement Notes
+### Process Improvement Notes
 
 1. **`get_calendar_events` workaround**: Tool consistently returns HTML rather than calendar data. Reliable fallback: `search_dokument` with `doktyp: "bet"` + `organ: "KU"` for constitutional hearings.
 2. **`populate-analysis-data.ts` timeout**: Script times out when MCP server is slow. Use `download-parliamentary-data.ts` as first-choice — faster, targeted, reliable.
@@ -1359,7 +1347,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Quality Confidence Assessment
+### Quality Confidence Assessment
 
 **Overall Analysis Confidence**: 🟩 HIGH
 
@@ -1375,8 +1363,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 *Produced by Riksdagsmonitor Evening Analysis v5.0 | 2026-04-21*
 
 ## Data Download Manifest
-
-_Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/data-download-manifest.md)_
+<!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/data-download-manifest.md -->
 
 **Generated**: 2026-04-21 18:24 UTC
 **Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer, get_dokument_innehall
@@ -1391,7 +1378,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 > `analysis/methodologies/ai-driven-analysis-guide.md` and using templates
 > from `analysis/templates/`.
 
-## Document Counts by Type
+### Document Counts by Type
 
 - **propositions**: 30 documents
 - **motions**: 30 documents
@@ -1401,7 +1388,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 - **questions**: 30 documents
 - **interpellations**: 30 documents
 
-## Date-Filtered Documents for 2026-04-21
+### Date-Filtered Documents for 2026-04-21
 
 | dok_id | Title | Typ | Organ | Significance |
 |--------|-------|-----|-------|-------------|
@@ -1414,7 +1401,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 | HD11731 | Sveriges agerande för att skydda sina medborgare i Gazaflottiljen | frå | - | 6/10 |
 | HD11732 | Planerad nedläggning av Skatteverkets kontor i Vetlanda | frå | - | 4/10 |
 
-## Sibling Analysis Cross-References
+### Sibling Analysis Cross-References
 
 | Sibling Type | Documents | Key Finding |
 |--------------|----------|-------------|
@@ -1423,9 +1410,27 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 | motions | 21 (opposition cluster 2026-04-13-17) | 4-party coordinated immigration counter-motions |
 | realtime-1353 | 7 (HD01FiU48 + KU hearings + IPs) | FiU48 + vindkraft law = coalition "affordability+green" |
 
-## Data Quality Notes
+### Data Quality Notes
 
 All documents sourced from official riksdag-regering-mcp API.
 World Bank data: GDP 0.82% (2024), Inflation 2.84% (2024), Unemployment 8.69% (2025)
 Calendar API: HTML response (fallback document search used)
 Data freshness: Live (synced 2026-04-21T18:20:23Z)
+
+## Article Sources
+
+Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
+
+- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief.md)
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/synthesis-summary.md)
+- [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/significance-scoring.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/stakeholder-perspectives.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/scenario-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/threat-analysis.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/comparative-international.md)
+- [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/classification-results.md)
+- [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/cross-reference-map.md)
+- [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/methodology-reflection.md)
+- [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/data-download-manifest.md)

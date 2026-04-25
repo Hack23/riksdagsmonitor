@@ -135,7 +135,15 @@ function rehypeSlugWithPrefix() {
         return;
       }
       const text = hastToString(node);
-      node.properties.id = `${HEADING_ID_PREFIX}${slugger.slug(text)}`;
+      // Trim leading hyphens that github-slugger emits when a heading
+      // starts with characters it strips (e.g. emoji like `🎯` in
+      // `## 🎯 BLUF` slug to `-bluf`). Without this, prepending the
+      // `rm-` prefix yields `rm--bluf`. Trailing hyphens are also
+      // collapsed for symmetry. See aggregator.ts#anchorForTitle which
+      // mirrors this normalisation so Reader Intelligence Guide
+      // anchors stay in lock-step.
+      const slug = slugger.slug(text).replace(/^-+|-+$/g, '');
+      node.properties.id = `${HEADING_ID_PREFIX}${slug}`;
     });
   };
 }

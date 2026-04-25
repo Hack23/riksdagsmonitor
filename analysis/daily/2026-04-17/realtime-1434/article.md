@@ -5,7 +5,7 @@ date: 2026-04-17
 subfolder: realtime-1434
 slug: 2026-04-17-realtime-1434
 source_folder: analysis/daily/2026-04-17/realtime-1434
-generated_at: 2026-04-25T11:09:59.828Z
+generated_at: 2026-04-25T15:36:04.625Z
 language: en
 layout: article
 ---
@@ -23,8 +23,7 @@ Use this guide to read the article as a political-intelligence product rather th
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Executive Brief
-
-_Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief.md)_
+<!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief.md -->
 
 <p align="center">
   <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts</em>
@@ -39,13 +38,13 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🧭 BLUF (Bottom Line Up Front)
+### 🧭 BLUF (Bottom Line Up Front)
 
 **Sweden's Konstitutionsutskottet advanced two grundlag amendments (HD01KU32 + HD01KU33) on 2026-04-17 — the first substantive narrowing of *Tryckfrihetsförordningen* (1766) in the digital-evidence domain in years. Because grundlag change requires two identical Riksdag votes spanning a general election, the September 2026 campaign becomes a de-facto referendum on press-freedom transparency.** On the same 24-hour window, FM Maria Malmer Stenergard and PM Ulf Kristersson tabled Sweden's accession to the Special Tribunal for the Crime of Aggression against Ukraine (HD03231) and the International Compensation Commission (HD03232) — the first aggression-crime tribunal since Nuremberg. The cluster reveals a coordinated pre-election legislative sprint across democratic infrastructure, foreign-policy norm entrepreneurship, housing-market integrity, and quality-of-life deregulation. `[HIGH]`
 
 ---
 
-## 🎯 Three Decisions This Brief Supports
+### 🎯 Three Decisions This Brief Supports
 
 | Decision | Evidence Locus | Action Window |
 |----------|---------------|--------------:|
@@ -55,7 +54,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 📐 What Readers Need to Know in 60 Seconds
+### 📐 What Readers Need to Know in 60 Seconds
 
 1. **The #1 finding is the KU33 grundlag amendment.** Narrows "allmän handling" status on digital material seized at husrannsakan unless *formellt tillförd bevisning*. The interpretive scope of that phrase is the **strategic centre of gravity**. `[HIGH]`
 2. **Ukraine tribunal and compensation commission are co-prominent.** Global news-value high; no direct Swedish fiscal burden; cross-party consensus near-universal (≈ 349 MPs). `[HIGH]`
@@ -65,7 +64,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🎭 Named Actors to Watch
+### 🎭 Named Actors to Watch
 
 | Actor | Role | Why They Matter Now |
 |-------|------|--------------------|
@@ -81,7 +80,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🔮 Next 14 Days — What to Watch
+### 🔮 Next 14 Days — What to Watch
 
 | Date / Window | Trigger | Impact |
 |---------------|---------|--------|
@@ -94,7 +93,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## ⚠️ Analyst Confidence — Honest Self-Assessment
+### ⚠️ Analyst Confidence — Honest Self-Assessment
 
 | Dimension | Confidence | Notes |
 |-----------|:----------:|-------|
@@ -108,7 +107,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 📎 Cross-Links
+### 📎 Cross-Links
 
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [Synthesis](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [Significance](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [Threat](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [Stakeholders](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [Scenarios](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [Comparative](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [Cross-References](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [Classification](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [Methodology Reflection](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
 
@@ -117,8 +116,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 **Classification**: Public · **Next Review**: 2026-04-24
 
 ## Synthesis Summary
-
-_Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md)_
+<!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md -->
 
 | Field | Value |
 |-------|-------|
@@ -135,13 +133,13 @@ _Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## 🎯 Executive Summary
+### 🎯 Executive Summary
 
 The 24 hours between 2026-04-16 14:00 UTC and 2026-04-17 14:34 UTC produced the **single most consequential democratic-infrastructure development** of the 2025/26 Riksmöte: the **Konstitutionsutskottet (KU)** approved first readings of two **grundlag amendments** — `HD01KU32` (media accessibility under the *Tryckfrihetsförordningen* and *Yttrandefrihetsgrundlagen*) and `HD01KU33` (removing "allmän handling" status from digital material seized in husrannsakan). Because grundlag change requires two identical Riksdag votes straddling a general election, the 2026 campaign will be shaped by — and will shape — the second reading. KU33 is the **first substantive narrowing of TF transparency in years**, touching a 1766 constitutional text that is older than the United States. Separately, FM **Maria Malmer Stenergard (M)** and PM **Ulf Kristersson (M)** tabled historic Ukraine-accountability propositions `HD03231` (Special Tribunal for the Crime of Aggression — first since Nuremberg) and `HD03232` (International Compensation Commission), while **Civilutskottet (CU)** advanced the national condominium register (`HD01CU28`) and property-transfer AML rules (`HD01CU27`). The cluster reveals a government executing a coordinated pre-election legislative sprint across four vectors: democratic infrastructure, foreign-policy norm entrepreneurship, housing-market integrity, and quality-of-life deregulation. `[HIGH]`
 
 ---
 
-## 🏛️ Lead-Story Decision (Publication Gate)
+### 🏛️ Lead-Story Decision (Publication Gate)
 
 > **Decision**: Lead article with **Constitutional Press-Freedom Reforms** (HD01KU32 + HD01KU33). **Re-weighting rationale**: Raw significance score favours HD03231 (news-value), but **democratic-impact weighting** prioritises grundlag-level changes that are systemic, long-tail, and directly reshape citizens' access rights and press freedom under Sweden's 1766 TF. Ukraine accountability is tabled as **co-prominent secondary coverage** — historically important and globally newsworthy, but institutionally one more step in an already-established Swedish foreign-policy trajectory (Ukraine aid since 2022, NATO March 2024). The KU amendments are the **novel democratic event** of the day.
 
@@ -160,7 +158,7 @@ The 24 hours between 2026-04-16 14:00 UTC and 2026-04-17 14:34 UTC produced the 
 
 ---
 
-## 📚 Documents Analysed: 6 (Level-3 depth for KU33; Level-2 for KU32/HD03231/HD03232/CU27/CU28)
+### 📚 Documents Analysed: 6 (Level-3 depth for KU33; Level-2 for KU32/HD03231/HD03232/CU27/CU28)
 
 | Dok ID | Title (short) | Type | Committee | Date | Raw / Weighted | Depth Level |
 |--------|--------------|------|-----------|------|:---:|:-----------:|
@@ -173,7 +171,7 @@ The 24 hours between 2026-04-16 14:00 UTC and 2026-04-17 14:34 UTC produced the 
 
 ---
 
-## 🗺️ Cluster Map
+### 🗺️ Cluster Map
 
 ```mermaid
 graph TD
@@ -222,7 +220,7 @@ graph TD
 
 ---
 
-## 🔑 Key Political Intelligence Findings
+### 🔑 Key Political Intelligence Findings
 
 | # | Finding | Evidence (dok_id / source) | Confidence | Democratic Impact |
 |---|---------|---------------------------|:----------:|:-----------------:|
@@ -237,7 +235,7 @@ graph TD
 
 ---
 
-## ⚖️ Risk Landscape (Aggregate from risk-assessment.md)
+### ⚖️ Risk Landscape (Aggregate from risk-assessment.md)
 
 ```mermaid
 xychart-beta
@@ -258,7 +256,7 @@ xychart-beta
 
 ---
 
-## 🎭 Cross-Party Political Dynamics
+### 🎭 Cross-Party Political Dynamics
 
 | Party | KU33 (press freedom) | KU32 (accessibility) | Ukraine Props | Housing (CU) |
 |-------|:--:|:--:|:--:|:--:|
@@ -275,7 +273,7 @@ xychart-beta
 
 ---
 
-## 🔮 Forward Indicators (Watch Items with Triggers)
+### 🔮 Forward Indicators (Watch Items with Triggers)
 
 | # | Indicator | Trigger | Owner / Source | Target Window |
 |---|-----------|---------|---------------|:-------------:|
@@ -294,7 +292,7 @@ xychart-beta
 
 ---
 
-## 🎯 Analyst Confidence Meter
+### 🎯 Analyst Confidence Meter
 
 | Dimension | Confidence | Notes |
 |-----------|:----------:|-------|
@@ -309,7 +307,7 @@ xychart-beta
 
 ---
 
-## 🕵️ Red-Team / Devil's Advocate Critique
+### 🕵️ Red-Team / Devil's Advocate Critique
 
 > Before accepting the base narrative, stress-test the assumptions. What if the analyst consensus is wrong?
 
@@ -324,7 +322,7 @@ xychart-beta
 
 ---
 
-## ❓ Key Uncertainties (What We Cannot Yet Know)
+### ❓ Key Uncertainties (What We Cannot Yet Know)
 
 | # | Uncertainty | Decision Impact | Resolution Window |
 |---|-------------|-----------------|:-----------------:|
@@ -339,7 +337,7 @@ xychart-beta
 
 ---
 
-## 🔬 Analysis of Competing Hypotheses (ACH) — KU33 Trajectory
+### 🔬 Analysis of Competing Hypotheses (ACH) — KU33 Trajectory
 
 Testing four hypotheses against the evidence base (adapted from Heuer's ACH methodology):
 
@@ -362,7 +360,7 @@ Testing four hypotheses against the evidence base (adapted from Heuer's ACH meth
 
 ---
 
-## 🔁 TOWS Cross-Cluster Strategic Interference
+### 🔁 TOWS Cross-Cluster Strategic Interference
 
 | Combination | Mechanism | Strategic Implication |
 |-------------|-----------|----------------------|
@@ -374,7 +372,7 @@ Testing four hypotheses against the evidence base (adapted from Heuer's ACH meth
 
 ---
 
-## 📎 Related Artifacts
+### 📎 Related Artifacts
 
 **Reference-grade dossier files**:
 - [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [Executive Brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief.md) · [Scenarios](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [Comparative International](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [Methodology Reflection](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
@@ -390,8 +388,7 @@ Testing four hypotheses against the evidence base (adapted from Heuer's ACH meth
 **Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.0
 
 ## Significance Scoring
-
-_Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md)_
+<!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md -->
 
 | Field | Value |
 |-------|-------|
@@ -401,9 +398,9 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-## 📐 Scoring Method
+### 📐 Scoring Method
 
-### Five-Dimension Raw Score (0-10 each)
+#### Five-Dimension Raw Score (0-10 each)
 
 1. **Parliamentary Impact** — committee size, coalition implications, multi-party engagement
 2. **Policy Impact** — scope of policy change, sector reach
@@ -413,7 +410,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 
 Composite Score = weighted average of five dimensions; **DIW multiplier** is applied last to reflect democratic-infrastructure durability.
 
-### Democratic-Impact Weighting (DIW) — v1.0
+#### Democratic-Impact Weighting (DIW) — v1.0
 
 > **Doctrine**: Raw significance captures news-value. But **democratic-impact weighting** prioritises legislation that shapes the rules under which future politics operates — constitutional amendments, electoral law, grundlag changes, and press-freedom infrastructure. These have **systemic, long-tail effects** that outlast policy cycles. Without DIW, news-value alone can over-weight foreign-policy moments and under-weight constitutional events whose effects compound for decades.
 
@@ -428,7 +425,7 @@ Composite Score = weighted average of five dimensions; **DIW multiplier** is app
 
 ---
 
-## 🏛️ Five-Dimension Scoring
+### 🏛️ Five-Dimension Scoring
 
 | Dok ID | Parliamentary | Policy | Public Interest | Urgency | Cross-Party | Raw | DIW | Weighted | Tier | Role |
 |--------|:-:|:-:|:-:|:-:|:-:|:-:|:---:|:---:|:--:|-----|
@@ -441,7 +438,7 @@ Composite Score = weighted average of five dimensions; **DIW multiplier** is app
 
 ---
 
-## 📊 Publication Decision
+### 📊 Publication Decision
 
 | Item | Decision |
 |------|----------|
@@ -455,7 +452,7 @@ Composite Score = weighted average of five dimensions; **DIW multiplier** is app
 
 ---
 
-## 🎯 Headline Direction (Enforced Against Weighted Rank)
+### 🎯 Headline Direction (Enforced Against Weighted Rank)
 
 **Primary framing**: *"Sweden's Riksdag Advances Constitutional Press Freedom Reforms"* — reflects the **#1 weighted rank** (HD01KU33).
 
@@ -467,7 +464,7 @@ Composite Score = weighted average of five dimensions; **DIW multiplier** is app
 
 ---
 
-## 🧮 Sensitivity Analysis — Does the Ranking Hold Under Weight Swaps?
+### 🧮 Sensitivity Analysis — Does the Ranking Hold Under Weight Swaps?
 
 > How robust is HD01KU33's #1 ranking to plausible variations in the Democratic-Impact Weighting?
 
@@ -481,7 +478,7 @@ Composite Score = weighted average of five dimensions; **DIW multiplier** is app
 
 **Sensitivity finding** `[HIGH]`: KU33 holds the **#1 position under DIW v1.0 + the two "democratic weighting" variants (3 of 5 scenarios)**. Raw news-value ranking flips to HD03231 (as expected). Foreign-policy bonus (rarely justified) also flips. The DIW v1.0 outcome is **robust to reasonable variation** in democratic-impact weights but **sensitive to whether democratic-impact weighting is applied at all**. This validates the methodology choice but highlights the importance of disciplined application.
 
-### Alternative Rankings — Committee-First View
+#### Alternative Rankings — Committee-First View
 
 If one applies a **committee-first** ranking (heavier weight to constitutional-committee output regardless of document-type), KU33 leads by even wider margin.
 
@@ -494,7 +491,7 @@ If one applies a **committee-first** ranking (heavier weight to constitutional-c
 
 ---
 
-## 🎯 Publication-Decision Audit
+### 🎯 Publication-Decision Audit
 
 | Decision | Locked At | By | Rationale |
 |----------|:--------:|----|-----------|
@@ -506,7 +503,7 @@ If one applies a **committee-first** ranking (heavier weight to constitutional-c
 
 ---
 
-## 🔍 Anti-Pattern Log
+### 🔍 Anti-Pattern Log
 
 > **Historical failure** (self-documented 2026-04-17 post-review): The original published article **omitted HD03231 and HD03232 entirely**, despite their weighted scores being 8.55 and 7.60. Although the lead-story selection (Constitutional Reforms) was correct under DIW, the failure to include Ukraine accountability as co-prominent coverage represents a **coverage-completeness failure**. The fix is the **Lead-Story Enforcement Gate** added to SHARED_PROMPT_PATTERNS.md, which requires articles to cover all documents with weighted score ≥ 7.0.
 
@@ -515,8 +512,7 @@ If one applies a **committee-first** ranking (heavier weight to constitutional-c
 **Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/political-classification-guide.md`
 
 ## Stakeholder Perspectives
-
-_Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md)_
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md -->
 
 | Field | Value |
 |-------|-------|
@@ -528,7 +524,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## 📊 Stakeholder Position Matrix (Quantified, 0–10)
+### 📊 Stakeholder Position Matrix (Quantified, 0–10)
 
 | Stakeholder | Power | Interest | KU33 Position (−5 to +5) | Ukraine Props Position | Evidence |
 |-------------|:----:|:-------:|:------------------------:|:----------------------:|----------|
@@ -555,7 +551,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## 🏛️ 1. Citizens & Swedish Public
+### 🏛️ 1. Citizens & Swedish Public
 
 **Position on LEAD (KU33/KU32)**: Low public awareness of grundlag mechanics; amendments typically salient only to attentive publics (~15%) `[MEDIUM]`. Press-freedom framing in 2026 campaign will raise awareness asymmetrically — V/MP electorates mobilise faster than median voter.
 
@@ -567,7 +563,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## 🏛️ 2. Government Coalition (M / KD / L)
+### 🏛️ 2. Government Coalition (M / KD / L)
 
 **Position**: Strongly supportive of all measures — proposing and defending them.
 
@@ -588,7 +584,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## 🏛️ 3. Opposition Bloc (S / V / MP)
+### 🏛️ 3. Opposition Bloc (S / V / MP)
 
 **Socialdemokraterna (S)**:
 - **Ukraine**: Strongly supportive — S led Sweden's 2022 Ukraine response under PM Magdalena Andersson `[HIGH]`
@@ -613,7 +609,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## 🏢 4. Business & Industry
+### 🏢 4. Business & Industry
 
 **Real estate sector** (Mäklarsamfundet, FMI): Broadly supportive of CU28 condominium register (reduces market uncertainty and mispricing risk). `[HIGH]`
 
@@ -627,7 +623,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## 🌐 5. Civil Society
+### 🌐 5. Civil Society
 
 **Press-freedom organisations** (TU, Utgivarna, SJF, Publicistklubben):
 - KU33: **Strongly concerned** — pre-filing remissvar urged; will monitor Lagrådet yttrande closely `[HIGH]`
@@ -646,7 +642,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## 🌍 6. International Actors
+### 🌍 6. International Actors
 
 | Actor | Ukraine Props Position | KU33 Position | Notes |
 |-------|:----------------------:|:-------------:|-------|
@@ -660,7 +656,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## ⚖️ 7. Judiciary & Constitutional Bodies
+### ⚖️ 7. Judiciary & Constitutional Bodies
 
 - **Lagrådet**: Pending yttrande — the most consequential upcoming stakeholder signal; will scope the interpretive boundary of KU33
 - **KU (Konstitutionsutskottet)**: Self-reviewing; committee record has constitutional weight
@@ -670,7 +666,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## 📰 8. Media & Public Opinion
+### 📰 8. Media & Public Opinion
 
 **Swedish mainstream media** (DN, SvD, Aftonbladet, Expressen, SVT):
 - **KU33**: Extensive editorial engagement expected — press freedom is a live newsroom stake `[HIGH]`
@@ -683,7 +679,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## 🎯 Coalition-Impact Summary
+### 🎯 Coalition-Impact Summary
 
 | Package | Coalition Risk | Second-Reading Risk (KU33 only) | Campaign Risk |
 |---------|:-------------:|:-------------------------------:|:-------------:|
@@ -693,7 +689,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## 🕸️ Influence-Network Map
+### 🕸️ Influence-Network Map
 
 ```mermaid
 graph TD
@@ -782,7 +778,7 @@ graph TD
 
 ---
 
-## 🌲 Coalition-Fracture Probability Tree (KU33 Second Reading)
+### 🌲 Coalition-Fracture Probability Tree (KU33 Second Reading)
 
 ```mermaid
 flowchart TD
@@ -821,44 +817,44 @@ flowchart TD
 
 ---
 
-## 🎙️ Named-Actor Briefing Cards
+### 🎙️ Named-Actor Briefing Cards
 
-### Card 1 — Magdalena Andersson (S, former PM, current party leader)
+#### Card 1 — Magdalena Andersson (S, former PM, current party leader)
 - **Position (projected)**: Pragmatic — likely supports constitutional-integrity framing of KU33 if Lagrådet scopes strictly
 - **Leverage**: Decisive for second-reading coalition
 - **Risk to profile**: Left flank mobilising against KU33
 - **Key signal**: First major speech after Lagrådet yttrande
 - **Confidence**: MEDIUM — S-internal dynamics are fluid
 
-### Card 2 — Gunnar Strömmer (M, Justice Minister)
+#### Card 2 — Gunnar Strömmer (M, Justice Minister)
 - **Position**: Owner of investigative-integrity rationale for KU33
 - **Leverage**: Defines how "formellt tillförd bevisning" is prosecutorially applied
 - **Risk to profile**: If interpretation is too narrow → gäng-agenda loses KU33 tool
 - **Key signal**: Guidance to prosecutors post-amendment
 - **Confidence**: HIGH
 
-### Card 3 — Lagrådet (Collective)
+#### Card 3 — Lagrådet (Collective)
 - **Position**: Constitutional review body
 - **Leverage**: **Single most consequential upcoming signal** in this run
 - **Risk to profile**: Reputational exposure if yttrande silent on interpretive question
 - **Key signal**: Yttrande text on "formellt tillförd bevisning"
 - **Confidence**: HIGH
 
-### Card 4 — Nooshi Dadgostar (V leader)
+#### Card 4 — Nooshi Dadgostar (V leader)
 - **Position**: Committed KU33 opposition; press-freedom framing
 - **Leverage**: Amplify attentive-voter mobilisation on press-freedom issue
 - **Risk to profile**: If campaign fails to mobilise beyond 2008 FRA-lagen levels
 - **Key signal**: Campaign launch speech + KU33 salience in polling
 - **Confidence**: HIGH
 
-### Card 5 — Maria Malmer Stenergard (M, FM)
+#### Card 5 — Maria Malmer Stenergard (M, FM)
 - **Position**: Ukraine accountability architect; Nuremberg-framing author
 - **Leverage**: Sweden's foreign-policy capital + norm-entrepreneurship credentials
 - **Risk to profile**: Russian retaliation targeting her personally + diplomatic signalling
 - **Key signal**: Dec 2026 annual foreign-policy speech
 - **Confidence**: HIGH
 
-### Card 6 — Jimmie Åkesson (SD leader)
+#### Card 6 — Jimmie Åkesson (SD leader)
 - **Position**: Parliamentary-support leverage on all four clusters
 - **Leverage**: 9–10% campaign talking-point reserves
 - **Risk to profile**: European populist-right realignment on Russia
@@ -870,8 +866,7 @@ flowchart TD
 **Classification**: Public · **Next Review**: 2026-04-24
 
 ## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md)_
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md -->
 
 | Field | Value |
 |-------|-------|
@@ -884,7 +879,7 @@ _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## 🧭 Master Scenario Tree
+### 🧭 Master Scenario Tree
 
 ```mermaid
 flowchart TD
@@ -937,9 +932,9 @@ flowchart TD
 
 ---
 
-## 📖 Scenario Narratives
+### 📖 Scenario Narratives
 
-### 🟢 BASE — "Narrow, Proportionate Reform" (P = 0.42)
+#### 🟢 BASE — "Narrow, Proportionate Reform" (P = 0.42)
 
 **Setup**: Lagrådet yttrande calibrates the interpretation; government retains majority; S leadership endorses amendment; second reading passes.
 
@@ -960,7 +955,7 @@ flowchart TD
 
 ---
 
-### 🔵 BULL-LITE — "Cross-Party Constitutional Statesmanship" (P = 0.20)
+#### 🔵 BULL-LITE — "Cross-Party Constitutional Statesmanship" (P = 0.20)
 
 **Setup**: S takes leadership, negotiates **stricter interpretive language** into the amendment before second reading. Amendment passes with S+M+KD+L+C joint stamp.
 
@@ -978,7 +973,7 @@ flowchart TD
 
 ---
 
-### 🔴 BEAR — "Second-Reading Collapse" (P = 0.15)
+#### 🔴 BEAR — "Second-Reading Collapse" (P = 0.15)
 
 **Setup**: Left bloc gains in Sep 2026 election; V+MP+S-left majority blocks KU33 at second reading.
 
@@ -997,7 +992,7 @@ flowchart TD
 
 ---
 
-### 🟠 MIXED — "Interpretive Drift" (P = 0.05)
+#### 🟠 MIXED — "Interpretive Drift" (P = 0.05)
 
 **Setup**: Lagrådet ambivalent; amendment passes; over 5+ years narrow interpretation entrenches in förvaltningsdomstol.
 
@@ -1012,7 +1007,7 @@ flowchart TD
 
 ---
 
-### ⚡ WILDCARD 1 — "Chilling Crisis" (P = 0.08)
+#### ⚡ WILDCARD 1 — "Chilling Crisis" (P = 0.08)
 
 **Trigger**: A high-profile case emerges (2026–2028) where investigative journalism was materially blocked by KU33 interpretation.
 
@@ -1027,7 +1022,7 @@ flowchart TD
 
 ---
 
-### ⚡ WILDCARD 2 — "Russian Hybrid Escalation Reshapes Campaign" (P = 0.10)
+#### ⚡ WILDCARD 2 — "Russian Hybrid Escalation Reshapes Campaign" (P = 0.10)
 
 **Trigger**: Major cyber / sabotage / disinformation event attributable to Russia during 2026 campaign — e.g., attack on Swedish government infrastructure, Nordic energy / data cable, or large-scale disinformation op.
 
@@ -1042,7 +1037,7 @@ flowchart TD
 
 ---
 
-## 🧮 Scenario Probabilities — Rolled Up
+### 🧮 Scenario Probabilities — Rolled Up
 
 | Outcome | Probability |
 |---------|:---------:|
@@ -1056,7 +1051,7 @@ flowchart TD
 
 ---
 
-## 🎯 Monitoring Indicators (What Flips Priors)
+### 🎯 Monitoring Indicators (What Flips Priors)
 
 | Indicator | Direction | Prior-Update Magnitude |
 |-----------|:---------:|:---------------------:|
@@ -1072,7 +1067,7 @@ flowchart TD
 
 ---
 
-## 🛠️ Scenario-Driven Editorial & Policy Implications
+### 🛠️ Scenario-Driven Editorial & Policy Implications
 
 | Scenario | Editorial Framing Implication | Policy Implication |
 |----------|-------------------------------|-------------------|
@@ -1085,7 +1080,7 @@ flowchart TD
 
 ---
 
-## 📎 Cross-References
+### 📎 Cross-References
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) §Red-Team Box informs low-probability path consideration
 - [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) §Bayesian Update Rules drive scenario priors
 - [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) §TOWS S4×T1 interference explains Mixed pathway
@@ -1096,8 +1091,7 @@ flowchart TD
 **Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: Scenario analysis v1.0
 
 ## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md)_
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md -->
 
 | Field | Value |
 |-------|-------|
@@ -1109,7 +1103,7 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🎯 Aggregate Risk Landscape
+### 🎯 Aggregate Risk Landscape
 
 ```mermaid
 quadrantChart
@@ -1135,7 +1129,7 @@ quadrantChart
 
 ---
 
-## 🗂️ Risk Register
+### 🗂️ Risk Register
 
 | Risk ID | Risk Description | Cluster | Likelihood (1-5) | Impact (1-5) | Score | Confidence | Status | Mitigation Owner |
 |:-------:|-----------------|:-------:|:----------------:|:------------:|:-----:|:----------:|:------:|------------------|
@@ -1154,9 +1148,9 @@ quadrantChart
 
 ---
 
-## 🔴 Priority Risks (Score ≥ 12) — Deep Dive
+### 🔴 Priority Risks (Score ≥ 12) — Deep Dive
 
-### R1 — Russian Hybrid Warfare (Score 16, HIGH Confidence)
+#### R1 — Russian Hybrid Warfare (Score 16, HIGH Confidence)
 
 **Context**: Russia has conducted hybrid operations against NATO members following Ukraine-support decisions. Sweden's NATO accession (March 2024) combined with founding-member status in the aggression tribunal and reparations commission creates enhanced targeting.
 
@@ -1175,7 +1169,7 @@ quadrantChart
 - MSB cyber-incident bulletins
 - Nordic infrastructure events (cables, power, logistics)
 
-### R2 — KU33 Narrow-Interpretation Entrenchment (Score 12, MEDIUM Confidence)
+#### R2 — KU33 Narrow-Interpretation Entrenchment (Score 12, MEDIUM Confidence)
 
 **Context**: HD01KU33 preserves "allmän handling" status for seized digital material **only** when it is *formellt tillförd bevisning*. The interpretive boundary of "formally incorporated" is **legislatively underspecified** in the public summary. A future government (or shift in prosecutorial practice) could apply a narrow test, functionally shielding large volumes of seized material from offentlighetsprincipen.
 
@@ -1192,7 +1186,7 @@ quadrantChart
 
 **Bayesian update trigger**: If Lagrådet yttrande is silent on the interpretive test, update likelihood 3 → 4 (score to 16).
 
-### R3 — Tribunal Effectiveness Without US (Score 12, MEDIUM Confidence)
+#### R3 — Tribunal Effectiveness Without US (Score 12, MEDIUM Confidence)
 
 **Context**: The International Criminal Court illustrates the effectiveness cost of US non-participation. Public US statements on HD03231 have been cautious. The tribunal can still operate as a legitimacy platform and set precedent, but enforcement against high-value defendants becomes dependent on arrest-state cooperation.
 
@@ -1202,7 +1196,7 @@ quadrantChart
 
 **Mitigation**: EU coalition-building; Council of Europe framework provides legitimacy backstop; G7 asset-policy coordination.
 
-### R5 — KU33 Campaign Weaponisation (Score 12, HIGH Confidence)
+#### R5 — KU33 Campaign Weaponisation (Score 12, HIGH Confidence)
 
 **Context**: V/MP have strong press-freedom commitments and will foreground KU33 in the 2026 campaign. S's leadership has signalled mixed positions — if the S leadership moves against KU33, the second-reading coalition fractures.
 
@@ -1215,7 +1209,7 @@ quadrantChart
 
 ---
 
-## 📉 Risk Trend — 7-Day
+### 📉 Risk Trend — 7-Day
 
 ```mermaid
 %%{init: {'themeVariables': {'xyChart': {'plotColorPalette': '#D32F2F'}}}}%%
@@ -1233,7 +1227,7 @@ xychart-beta
 
 ---
 
-## 🔄 Bayesian Update Rules
+### 🔄 Bayesian Update Rules
 
 | Observable Signal | Direction | Risk Affected | Magnitude |
 |-------------------|:---------:|:-------------:|:---------:|
@@ -1247,7 +1241,7 @@ xychart-beta
 
 ---
 
-## 🧮 Bayesian Prior / Posterior Illustration — Risk R2 (KU33 Narrow Interpretation)
+### 🧮 Bayesian Prior / Posterior Illustration — Risk R2 (KU33 Narrow Interpretation)
 
 | Step | State | Likelihood Source | Score |
 |------|-------|-------------------|:-----:|
@@ -1261,7 +1255,7 @@ xychart-beta
 
 ---
 
-## 🕸️ Risk Interconnection Graph
+### 🕸️ Risk Interconnection Graph
 
 ```mermaid
 graph LR
@@ -1307,7 +1301,7 @@ graph LR
 
 ---
 
-## 🪜 ALARP Ladder (As Low As Reasonably Practicable)
+### 🪜 ALARP Ladder (As Low As Reasonably Practicable)
 
 | Risk Tier | Score Band | ALARP Status | Action Requirement |
 |-----------|:----------:|:-----------:|--------------------|
@@ -1316,7 +1310,7 @@ graph LR
 | **Medium (yellow)** | 7–11 | 🟡 ALARP — monitor | Owner assigned; quarterly review |
 | **Low (green)** | 1–6 | ✅ Accept | Monitor through standard bulletins |
 
-### Applied to this run
+#### Applied to this run
 
 | Risk | Score | Tier | Treatment Status |
 |------|:----:|:----:|-----------------|
@@ -1334,7 +1328,7 @@ graph LR
 
 ---
 
-## 🚀 Risk Velocity (Rate of Change)
+### 🚀 Risk Velocity (Rate of Change)
 
 | Risk | Current Trajectory | Expected Velocity (next 90 days) | Trigger |
 |------|:-----:|:-----:|---------|
@@ -1350,8 +1344,7 @@ graph LR
 **Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/political-risk-methodology.md`
 
 ## SWOT Analysis
-
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md)_
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md -->
 
 | Field | Value |
 |-------|-------|
@@ -1366,11 +1359,11 @@ _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/mai
 
 ---
 
-## 🏛️ Section 1 — Constitutional Press-Freedom Reforms (PRIMARY SCOPE)
+### 🏛️ Section 1 — Constitutional Press-Freedom Reforms (PRIMARY SCOPE)
 
 Scope: HD01KU32 (media accessibility amendment to TF + YGL) and HD01KU33 (removal of "allmän handling" status from digital material seized at husrannsakan). First reading only; second reading required post-2026 election for entry into force (proposed 2027-01-01).
 
-### ✅ Strengths — Government & Constitutional Framework Position
+#### ✅ Strengths — Government & Constitutional Framework Position
 
 | # | Strength Statement | Evidence (dok_id / source) | Confidence | Impact | Entry Date |
 |---|-------------------|----------------------------|:----------:|:------:|:----------:|
@@ -1380,7 +1373,7 @@ Scope: HD01KU32 (media accessibility amendment to TF + YGL) and HD01KU33 (remova
 | S4 | Narrow carve-out design — "allmän handling" status retained when material is formally incorporated as evidence — provides **textual safeguard** | HD01KU33 text | **HIGH** | **MEDIUM** | 2026-04-17 |
 | S5 | Disability-rights framing (KU32) unifies M/KD/L/C/MP/L and neutralises opposition | KU32 committee support pattern | **HIGH** | LOW | 2026-04-17 |
 
-### ⚠️ Weaknesses — Democratic-Infrastructure Risks
+#### ⚠️ Weaknesses — Democratic-Infrastructure Risks
 
 | # | Weakness Statement | Evidence | Confidence | Impact | Entry Date |
 |---|-------------------|----------|:----------:|:------:|:----------:|
@@ -1390,7 +1383,7 @@ Scope: HD01KU32 (media accessibility amendment to TF + YGL) and HD01KU33 (remova
 | W4 | Timing places constitutional press-freedom debate **inside 2026 campaign** — politicising grundlag in a way previous amendments were shielded from | 8 kap. 14 § RF two-reading rule; election cycle | **HIGH** | **MEDIUM** | 2026-04-17 |
 | W5 | Lagrådet review still pending at publication — constitutional craftsmanship not yet independently vetted | Lagrådet process | **HIGH** | LOW | 2026-04-17 |
 
-### 🚀 Opportunities — Democratic Upside
+#### 🚀 Opportunities — Democratic Upside
 
 | # | Opportunity Statement | Evidence | Confidence | Impact | Entry Date |
 |---|----------------------|----------|:----------:|:------:|:----------:|
@@ -1399,7 +1392,7 @@ Scope: HD01KU32 (media accessibility amendment to TF + YGL) and HD01KU33 (remova
 | O3 | Strengthened investigative integrity (KU33) → improved **organised-crime prosecution** outcomes; feeds government's gäng-agenda policy coherence | Gäng-agenda policy framework | **MEDIUM** | **MEDIUM** | 2026-04-17 |
 | O4 | Second-reading moment after election = **democratic stress-test** — new Riksdag's democratic bona fides judged by how it handles KU33 | 8 kap. RF | **MEDIUM** | **MEDIUM** | 2026-04-17 |
 
-### 🔴 Threats — Democratic Downside
+#### 🔴 Threats — Democratic Downside
 
 | # | Threat Statement | Evidence | Confidence | Impact | Entry Date |
 |---|------------------|----------|:----------:|:------:|:----------:|
@@ -1411,7 +1404,7 @@ Scope: HD01KU32 (media accessibility amendment to TF + YGL) and HD01KU33 (remova
 
 ---
 
-## 📊 SWOT Quadrant Mapping — Constitutional Reforms (Color-Coded)
+### 📊 SWOT Quadrant Mapping — Constitutional Reforms (Color-Coded)
 
 ```mermaid
 graph TD
@@ -1472,7 +1465,7 @@ graph TD
 
 ---
 
-## 🔀 TOWS Interference Matrix — Constitutional Cluster
+### 🔀 TOWS Interference Matrix — Constitutional Cluster
 
 | Interaction | Mechanism | Strategic Implication | Confidence |
 |-------------|-----------|----------------------|:----------:|
@@ -1485,7 +1478,7 @@ graph TD
 
 > **Cross-SWOT interference finding** `[HIGH]`: The **strategic centre of gravity** of the constitutional package is the interpretation of "*formellt tillförd bevisning*" (S4 / W2). If Lagrådet and Riksdag's legislative history lock in a strict interpretation, KU33 functions as a narrow, proportionate reform and T1/T3/T4 largely dissipate. If the language is left loose, T1+T4 combine into a durable democratic-infrastructure threat. **Recommendation**: press-freedom NGOs and opposition parties should make a **strict interpretive record** the price of second-reading support.
 
-### 🔗 Cross-Cluster Tension — Constitutional × Ukraine
+#### 🔗 Cross-Cluster Tension — Constitutional × Ukraine
 
 | Tension | Description | Strategic Implication |
 |---------|-------------|----------------------|
@@ -1493,9 +1486,9 @@ graph TD
 
 ---
 
-## 🌍 Section 2 — Ukraine Accountability Package (SECONDARY SCOPE)
+### 🌍 Section 2 — Ukraine Accountability Package (SECONDARY SCOPE)
 
-### Strengths
+#### Strengths
 
 | # | Statement | Evidence | Confidence | Impact |
 |---|-----------|----------|:---:|:---:|
@@ -1504,7 +1497,7 @@ graph TD
 | S3 | **No direct Swedish fiscal burden** for reparations — funded from Russian immobilised assets (~EUR 260B; EUR 191B at Euroclear) | HD03232; G7 Ukraine Loan | HIGH | HIGH |
 | S4 | Sweden's post-NATO (March 2024) norm-entrepreneurship credentials reinforced | HD03231; NATO accession context | HIGH | MEDIUM |
 
-### Weaknesses
+#### Weaknesses
 
 | # | Statement | Evidence | Confidence | Impact |
 |---|-----------|----------|:---:|:---:|
@@ -1512,14 +1505,14 @@ graph TD
 | W2 | Reparations timeline may span decades (Iraq UNCC: 31 years, $52B) | UNCC historical record | HIGH | MEDIUM |
 | W3 | Sitting-HoS immunity gap in international law | Rome Statute 2017 amendment limits | MEDIUM | MEDIUM |
 
-### Opportunities
+#### Opportunities
 
 | # | Statement | Evidence | Confidence | Impact |
 |---|-----------|----------|:---:|:---:|
 | O1 | Closes Nuremberg gap in modern international criminal law | First aggression tribunal since 1945-46 | HIGH | HIGH |
 | O2 | Reconstruction-governance voice (USD 486B+ damages per World Bank 2024) | HD03232; World Bank RDNA | HIGH | MEDIUM |
 
-### Threats
+#### Threats
 
 | # | Statement | Evidence | Confidence | Impact |
 |---|-----------|----------|:---:|:---:|
@@ -1529,7 +1522,7 @@ graph TD
 
 ---
 
-## 🏠 Section 3 — Housing Reforms (TERTIARY SCOPE)
+### 🏠 Section 3 — Housing Reforms (TERTIARY SCOPE)
 
 | Dimension | HD01CU28 (Register) | HD01CU27 (Identity + Ombildning) | Confidence |
 |-----------|---------------------|----------------------------------|:----------:|
@@ -1543,8 +1536,7 @@ graph TD
 **Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/political-swot-framework.md`
 
 ## Threat Analysis
-
-_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md)_
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md -->
 
 | Field | Value |
 |-------|-------|
@@ -1556,7 +1548,7 @@ _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🌳 Attack-Tree — Democratic-Infrastructure Threats (KU33 Focus)
+### 🌳 Attack-Tree — Democratic-Infrastructure Threats (KU33 Focus)
 
 ```mermaid
 graph TD
@@ -1597,7 +1589,7 @@ graph TD
 
 ---
 
-## 🎭 Threat Register
+### 🎭 Threat Register
 
 | Threat ID | Threat | Cluster | Actor | Method / TTP | Likelihood | Impact | Priority | Confidence |
 |:---------:|--------|:-------:|-------|--------------|:----------:|:------:|:--------:|:----------:|
@@ -1614,7 +1606,7 @@ graph TD
 
 ---
 
-## 🧭 STRIDE Mapping (Political Adaptation)
+### 🧭 STRIDE Mapping (Political Adaptation)
 
 | STRIDE | Threat ID(s) | Political Translation |
 |:------:|:------------:|-----------------------|
@@ -1627,31 +1619,31 @@ graph TD
 
 ---
 
-## 🔥 Priority-Mitigation Actions
+### 🔥 Priority-Mitigation Actions
 
-### T1 — KU33 Narrow-Interpretation (MITIGATE PRIORITY)
+#### T1 — KU33 Narrow-Interpretation (MITIGATE PRIORITY)
 - **Pre-vote**: Lagrådet yttrande must explicitly scope "formellt tillförd bevisning" test
 - **Pre-vote**: KU committee record should document legislator intent (strict interpretation)
 - **Post-vote**: JO/JK annual reporting on KU33 application; NGO monitoring framework
 
-### T2 — Campaign Weaponisation (MITIGATE)
+#### T2 — Campaign Weaponisation (MITIGATE)
 - Cross-party leadership statements on KU33 (avoid partisan capture)
 - Early NGO engagement (SJF, Utgivarna, TU) to co-design interpretive guardrails
 - Government transparency commitment: annual published summary of KU33 applications
 
-### T6 — Russian Hybrid (MITIGATE PRIORITY)
+#### T6 — Russian Hybrid (MITIGATE PRIORITY)
 - SÄPO reinforced posture during valrörelse
 - NCSC continuous monitoring of gov infrastructure
 - NATO CCDCOE and StratCom COE coordination
 - MSB public-awareness campaign on information-operation tactics
 
-### T3 / T10 — Slippery-Slope + Index Downgrade (ACTIVE)
+#### T3 / T10 — Slippery-Slope + Index Downgrade (ACTIVE)
 - UD press-freedom diplomacy pre-brief RSF/Freedom House on amendment scope
 - Constitutional scholars' commentary positioned for international audiences
 
 ---
 
-## 🧪 Threat Severity Matrix
+### 🧪 Threat Severity Matrix
 
 ```mermaid
 quadrantChart
@@ -1676,7 +1668,7 @@ quadrantChart
 
 ---
 
-## 🎯 Cyber-Kill-Chain Adaptation — Hybrid-Warfare Scenario (T6)
+### 🎯 Cyber-Kill-Chain Adaptation — Hybrid-Warfare Scenario (T6)
 
 > Adapting the Lockheed Martin Cyber Kill Chain (Hutchins et al. 2011) to Russian hybrid-warfare targeting of Sweden after HD03231 founding-member status.
 
@@ -1701,7 +1693,7 @@ flowchart LR
     style AC fill:#D32F2F,color:#FFFFFF
 ```
 
-### Kill-Chain Specific Indicators (for SÄPO / MSB)
+#### Kill-Chain Specific Indicators (for SÄPO / MSB)
 
 | Stage | Observable | Sensor | Detection Confidence |
 |-------|------------|--------|:-------------------:|
@@ -1717,7 +1709,7 @@ flowchart LR
 
 ---
 
-## 🔺 Diamond Model — Adversary Profile (T6 Russian Hybrid)
+### 🔺 Diamond Model — Adversary Profile (T6 Russian Hybrid)
 
 ```mermaid
 graph TD
@@ -1742,7 +1734,7 @@ graph TD
 
 ---
 
-## 🧰 MITRE-Style TTP Library (Hybrid-Warfare Observables)
+### 🧰 MITRE-Style TTP Library (Hybrid-Warfare Observables)
 
 | TTP Code | Tactic | Technique | Observable in Sweden (2023–25 baseline) |
 |----------|--------|-----------|------------------------------------------|
@@ -1765,7 +1757,7 @@ graph TD
 
 ---
 
-## 🛡️ Defensive Recommendations (Prioritised)
+### 🛡️ Defensive Recommendations (Prioritised)
 
 | # | Recommendation | Owner | Horizon |
 |---|---------------|-------|:-------:|
@@ -1784,8 +1776,7 @@ graph TD
 ## Per-document intelligence
 
 ### HD01CU27\-CU28
-
-_Source: [`documents/HD01CU27-CU28-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD01CU27-CU28-analysis.md)_
+<!-- source: documents/HD01CU27-CU28-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD01CU27-CU28-analysis.md -->
 
 | Field | Value |
 |-------|-------|
@@ -1799,7 +1790,7 @@ _Source: [`documents/HD01CU27-CU28-analysis.md`](https://github.com/Hack23/riksd
 
 ---
 
-## 1. Political Significance — A Coherent Housing-Market Integrity + Organised-Crime Architecture
+### 1. Political Significance — A Coherent Housing-Market Integrity + Organised-Crime Architecture
 
 These two betänkanden are **individually tertiary** in this run's DIW ranking but **collectively important** because they institutionalise a **housing-market-integrity + anti-money-laundering** architecture that:
 
@@ -1812,9 +1803,9 @@ These two betänkanden are **individually tertiary** in this run's DIW ranking b
 
 ---
 
-## 2. HD01CU28 — National Condominium Register
+### 2. HD01CU28 — National Condominium Register
 
-### 2.1 Mechanism
+#### 2.1 Mechanism
 
 - Creates a **new national register of all bostadsrätter** (cooperative apartments/condominiums)
 - Register contains:
@@ -1826,7 +1817,7 @@ These two betänkanden are **individually tertiary** in this run's DIW ranking b
 - **Operator**: Lantmäteriet
 - **Effective dates**: Register setup **Jan 1 2027**; other operational provisions per government decision
 
-### 2.2 Context and Scale `[HIGH]`
+#### 2.2 Context and Scale `[HIGH]`
 - ≈ **2 million bostadsrätter** — one of Sweden's most common housing forms
 - Absence of unified register has been repeatedly criticised since 2010s:
   - Credit-market opacity → mispricing risk
@@ -1835,7 +1826,7 @@ These two betänkanden are **individually tertiary** in this run's DIW ranking b
 - Financial sector (SEB, Swedbank, Handelsbanken, SBAB, Nordea) has lobbied for register since mid-2010s
 - SOU-ledda utredning underpinning this reform: estimate SOU 2023/24 (precise reference pending public availability)
 
-### 2.3 Six-Lens Analysis (Abbreviated)
+#### 2.3 Six-Lens Analysis (Abbreviated)
 
 | Lens | Finding | Conf. |
 |------|--------|:-----:|
@@ -1848,9 +1839,9 @@ These two betänkanden are **individually tertiary** in this run's DIW ranking b
 
 ---
 
-## 3. HD01CU27 — Identity Requirements + Ombildning Reform
+### 3. HD01CU27 — Identity Requirements + Ombildning Reform
 
-### 3.1 Mechanism — Two Reforms in One Betänkande
+#### 3.1 Mechanism — Two Reforms in One Betänkande
 
 **Reform 1 — Identity Requirements for Lagfart (Property Title Transfer)**:
 - **Physical persons**: Must supply **personnummer** or **samordningsnummer** when applying for lagfart
@@ -1863,14 +1854,14 @@ These two betänkanden are **individually tertiary** in this run's DIW ranking b
 - **New rule**: Tenant must have been **folkbokförd at the address for ≥ 6 months** to count in the 2/3 calculation
 - **Anti-fraud rationale**: Closes the "ghost-tenant" loophole where landlords registered cooperative actors at short-notice to manufacture conversion majorities
 
-### 3.2 Context `[HIGH]`
+#### 3.2 Context `[HIGH]`
 - Ombildning remains politically sensitive — particularly in Stockholm (2010s wave), Göteborg, Malmö
 - Hyresgästföreningen has long documented loophole exploitation
 - Financial press (Dagens industri, SvD Näringsliv) has covered multiple egregious cases
 - Skatteverket Hewlett + SÄPO: property has been a vector for organised-crime laundering — Bitcoin-era enforcement gap
 - EU AMLD6 (6th Anti-Money-Laundering Directive) compliance trajectory
 
-### 3.3 Six-Lens Analysis (Abbreviated)
+#### 3.3 Six-Lens Analysis (Abbreviated)
 
 | Lens | Finding | Conf. |
 |------|--------|:-----:|
@@ -1883,7 +1874,7 @@ These two betänkanden are **individually tertiary** in this run's DIW ranking b
 
 ---
 
-## 4. Combined SWOT (Mermaid)
+### 4. Combined SWOT (Mermaid)
 
 ```mermaid
 graph TD
@@ -1940,7 +1931,7 @@ graph TD
 
 ---
 
-## 5. Beneficiary Analysis
+### 5. Beneficiary Analysis
 
 ```mermaid
 pie title "Direct Beneficiaries — CU27 + CU28 Housing/AML"
@@ -1953,7 +1944,7 @@ pie title "Direct Beneficiaries — CU27 + CU28 Housing/AML"
 
 ---
 
-## 6. Stakeholder Positions — Named Actors
+### 6. Stakeholder Positions — Named Actors
 
 | Stakeholder | CU27 | CU28 | Evidence | Conf. |
 |-------------|:----:|:----:|----------|:-----:|
@@ -1977,7 +1968,7 @@ pie title "Direct Beneficiaries — CU27 + CU28 Housing/AML"
 
 ---
 
-## 7. Evidence Table
+### 7. Evidence Table
 
 | # | Claim | Source | Conf. | Impact |
 |---|-------|--------|:-----:|:------:|
@@ -1994,7 +1985,7 @@ pie title "Direct Beneficiaries — CU27 + CU28 Housing/AML"
 
 ---
 
-## 8. Indicator Library (What to Watch)
+### 8. Indicator Library (What to Watch)
 
 | # | Indicator | Trigger | Decision-Maker | Target |
 |---|-----------|---------|----------------|:------:|
@@ -2008,7 +1999,7 @@ pie title "Direct Beneficiaries — CU27 + CU28 Housing/AML"
 
 ---
 
-## 9. Implementation Risk Assessment
+### 9. Implementation Risk Assessment
 
 | Risk | L | I | Score | Mitigation Owner |
 |------|:-:|:-:|:-----:|------------------|
@@ -2021,7 +2012,7 @@ pie title "Direct Beneficiaries — CU27 + CU28 Housing/AML"
 
 ---
 
-## 10. Cross-References
+### 10. Cross-References
 
 - **Policy lineage**: Gäng-agenda (Prop 2025/26:100) · HD03246 (juvenile-crime, covered in realtime-0029 earlier today) · EU AMLD6
 - **Fiscal context**: Spring budget 2026 (HD0399)
@@ -2033,8 +2024,7 @@ pie title "Direct Beneficiaries — CU27 + CU28 Housing/AML"
 **Classification**: Public · **Depth**: L2 Strategic · **Next Review**: 2026-04-24
 
 ### HD01KU32\-KU33
-
-_Source: [`documents/HD01KU32-KU33-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD01KU32-KU33-analysis.md)_
+<!-- source: documents/HD01KU32-KU33-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD01KU32-KU33-analysis.md -->
 
 | Field | Value |
 |-------|-------|
@@ -2048,7 +2038,7 @@ _Source: [`documents/HD01KU32-KU33-analysis.md`](https://github.com/Hack23/riksd
 
 ---
 
-## 1. Political Significance — Why These Are the Lead Story
+### 1. Political Significance — Why These Are the Lead Story
 
 Sweden's **Tryckfrihetsförordningen (TF)** is the world's **oldest freedom-of-the-press law** (1766 — ten years before the United States Declaration of Independence, two decades before the U.S. First Amendment, and 83 years before France's 1849 press law). It is a **grundlag** — one of four constitutional laws of the realm. The **Yttrandefrihetsgrundlagen (YGL, 1991)** extends equivalent protections to modern broadcast and digital media.
 
@@ -2056,7 +2046,7 @@ Sweden's **Tryckfrihetsförordningen (TF)** is the world's **oldest freedom-of-t
 
 This mechanism is a deliberate constitutional brake: it forces every grundlag amendment to survive a democratic mandate change. The **2026 election campaign will therefore be partly a referendum on KU32 and KU33.**
 
-### HD01KU32 — Media Accessibility (EU EAA grundlag accommodation)
+#### HD01KU32 — Media Accessibility (EU EAA grundlag accommodation)
 
 - **Mechanism**: Amends TF and YGL to permit tillgänglighetskrav (accessibility requirements) to be imposed via **ordinary law** on products/services that fall within the grundlag-protected sphere.
 - **Three operative elements**:
@@ -2066,7 +2056,7 @@ This mechanism is a deliberate constitutional brake: it forces every grundlag am
 - **EU driver**: **European Accessibility Act (Directive 2019/882)** — full application since June 2025
 - **Beneficiary scale**: ~1.5 million Swedes with disabilities (Myndigheten för delaktighet baseline)
 
-### HD01KU33 — Search/Seizure Digital Evidence (TF transparency narrowing)
+#### HD01KU33 — Search/Seizure Digital Evidence (TF transparency narrowing)
 
 - **Mechanism**: Amends TF so that **digital recordings seized, copied, or taken over during husrannsakan** (criminal search) are **no longer "allmän handling"** — i.e., fall outside offentlighetsprincipen.
 - **Exception**: If seized material is **formally incorporated as evidence** (*formellt tillförd bevisning*) in the investigation, it **retains "allmän handling"** status.
@@ -2075,7 +2065,7 @@ This mechanism is a deliberate constitutional brake: it forces every grundlag am
 
 ---
 
-## 2. Constitutional Timeline (Mermaid)
+### 2. Constitutional Timeline (Mermaid)
 
 ```mermaid
 flowchart TD
@@ -2101,7 +2091,7 @@ flowchart TD
 
 ---
 
-## 3. Detailed SWOT (Both Amendments)
+### 3. Detailed SWOT (Both Amendments)
 
 | Dimension | HD01KU32 (Accessibility) | HD01KU33 (Search/Seizure) | Conf. |
 |-----------|--------------------------|---------------------------|:-----:|
@@ -2112,7 +2102,7 @@ flowchart TD
 
 ---
 
-## 4. "Formellt tillförd bevisning" — The Critical Interpretive Frontier
+### 4. "Formellt tillförd bevisning" — The Critical Interpretive Frontier
 
 The **single most important question** in KU33 is how Swedish legal institutions will interpret *"formellt tillförd bevisning"* ("formally incorporated as evidence"). Three interpretive postures are plausible:
 
@@ -2126,7 +2116,7 @@ The **single most important question** in KU33 is how Swedish legal institutions
 
 ---
 
-## 5. Stakeholder Perspectives (Named Actors)
+### 5. Stakeholder Perspectives (Named Actors)
 
 | Stakeholder | HD01KU32 | HD01KU33 | Evidence |
 |-------------|:--------:|:--------:|----------|
@@ -2145,7 +2135,7 @@ The **single most important question** in KU33 is how Swedish legal institutions
 
 ---
 
-## 6. Evidence Table (with Confidence Labels)
+### 6. Evidence Table (with Confidence Labels)
 
 | # | Claim | Source | Confidence | Impact |
 |---|-------|--------|:----------:|:------:|
@@ -2161,7 +2151,7 @@ The **single most important question** in KU33 is how Swedish legal institutions
 
 ---
 
-## 7. Forward Indicators (With Triggers and Dates)
+### 7. Forward Indicators (With Triggers and Dates)
 
 | # | Indicator | Trigger | Decision-Maker | Target |
 |---|-----------|---------|----------------|:------:|
@@ -2176,7 +2166,7 @@ The **single most important question** in KU33 is how Swedish legal institutions
 
 ---
 
-## 8. Cross-References
+### 8. Cross-References
 
 - **Grundlag text**: [Tryckfrihetsförordningen (TF, 1766)](https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/tryckfrihetsforordning-19491105_sfs-1949-105) · [Yttrandefrihetsgrundlagen (YGL, 1991)](https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/yttrandefrihetsgrundlag-19911469_sfs-1991-1469) · 8 kap. 14 § [Regeringsformen](https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/kungorelse-1974152-om-beslutad-ny-regeringsform_sfs-1974-152)
 - **EU driver**: Directive 2019/882 (European Accessibility Act)
@@ -2186,7 +2176,7 @@ The **single most important question** in KU33 is how Swedish legal institutions
 
 ---
 
-## 9. International Comparison — Digital-Evidence Transparency Regimes
+### 9. International Comparison — Digital-Evidence Transparency Regimes
 
 | Country | Regime | RSF 2025 | Parallel to KU33? |
 |---------|--------|:--:|------------------|
@@ -2207,7 +2197,7 @@ The **single most important question** in KU33 is how Swedish legal institutions
 
 ---
 
-## 10. Lagrådet-Scenario Branching Tree
+### 10. Lagrådet-Scenario Branching Tree
 
 ```mermaid
 flowchart TD
@@ -2235,8 +2225,7 @@ flowchart TD
 **Classification**: Public · **Analysis Level**: L3 (Intelligence) · **Next Review**: 2026-04-24
 
 ### HD03231
-
-_Source: [`documents/HD03231-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD03231-analysis.md)_
+<!-- source: documents/HD03231-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD03231-analysis.md -->
 
 | Field | Value |
 |-------|-------|
@@ -2253,11 +2242,11 @@ _Source: [`documents/HD03231-analysis.md`](https://github.com/Hack23/riksdagsmon
 
 ---
 
-## 1. Political Significance — Why This Is a Generational Norm-Entrepreneurship Moment
+### 1. Political Significance — Why This Is a Generational Norm-Entrepreneurship Moment
 
 Sweden formally proposes to become a **founding member** of the **Special Tribunal for the Crime of Aggression against Ukraine** — the **first criminal tribunal established since the Nuremberg and Tokyo tribunals (1945–1948) to prosecute the crime of aggression specifically**. The tribunal will sit in **The Hague**, operate under the **Council of Europe framework** via an Expanded Partial Agreement (EPA), and have jurisdiction to prosecute the Russian political and military leadership responsible for the February 2022 invasion of Ukraine.
 
-### Key developments since invasion
+#### Key developments since invasion
 
 | Date | Event | Significance |
 |------|-------|-------------|
@@ -2270,7 +2259,7 @@ Sweden formally proposes to become a **founding member** of the **Special Tribun
 | **Q2–Q3 2026 (projected)** | Swedish kammarvote on both propositions | Constitutional authorisation |
 | **H2 2026 or later** | Tribunal operations commence; first docket opens | Accountability delivery |
 
-### Strategic framing — FM Stenergard's verbatim statement
+#### Strategic framing — FM Stenergard's verbatim statement
 
 > *"Ryssland måste ställas till svars för sitt aggressionsbrott mot Ukraina. Annars riskerar vi en värld där anfallskrig lönar sig. Sverige tar nu nästa steg för att ansluta sig till en särskild tribunal för att åtala och döma ryska politiska och militära ledare för aggressionsbrottet, något som inte skett sedan Nürnbergrättegångarna."*
 
@@ -2278,39 +2267,39 @@ Sweden formally proposes to become a **founding member** of the **Special Tribun
 
 ---
 
-## 2. Six-Lens Analytical Framework
+### 2. Six-Lens Analytical Framework
 
-### 2.1 Constitutional / Legal Lens `[HIGH]`
+#### 2.1 Constitutional / Legal Lens `[HIGH]`
 - Ratification requires Riksdag approval under RF 10 kap. (treaty accession)
 - EPA structure means Sweden contributes assessed dues under Council of Europe framework — no novel domestic-law needed
 - Tribunal jurisdiction covers **crime of aggression** as defined in ICC Rome Statute Art. 8 *bis* (2017 Kampala amendments) — filling the gap where ICC's aggression jurisdiction excludes UNSC permanent-member nationals in most circumstances
 - **Sitting-HoS immunity** remains a frontier legal question — the SCSL precedent (Charles Taylor) and Rome Statute Art. 27 support piercing, but ICJ *Arrest Warrant* (2002, DRC v Belgium) established general HoS immunity under customary international law
 
-### 2.2 Electoral / Political Lens `[HIGH]`
+#### 2.2 Electoral / Political Lens `[HIGH]`
 - **Coalition position (M/KD/L + SD parliamentary support)**: Strongly supportive
 - **Opposition (S/V/MP)**: S and MP strongly supportive; V historically sceptical of NATO framing but consistently pro-accountability since 2022
 - **SD calculus**: Nuremberg framing neutralises SD's prior ambivalence on international-institution deepening; Russia-hostility overlaps with SD voter base
 - **Centre (C)**: Strongly supportive (European international-law tradition)
 - **Projected cross-party consensus**: ≈ **349 MPs** — near-universal
 
-### 2.3 Geopolitical / Security Lens `[HIGH]`
+#### 2.3 Geopolitical / Security Lens `[HIGH]`
 - Sweden's **post-NATO (Mar 2024) norm-entrepreneurship credentials** reinforced — this is the first major multilateral-law commitment since accession
 - Complements the ICC: ICC covers war crimes, crimes against humanity, genocide; Special Tribunal fills the **aggression-crime gap** unprosecutable under current ICC rules (Kampala limitations)
 - Message to non-European aggressors (PRC strategic observers): aggression now has a dedicated accountability track even when UNSC is deadlocked
 - Signals to Russia: **no reset pathway** — Swedish commitment is institutional, not policy-cyclical
 
-### 2.4 Historical / Precedent Lens `[HIGH]`
+#### 2.4 Historical / Precedent Lens `[HIGH]`
 - Direct precedent: **Nuremberg IMT (1945–46)** — 12 death sentences, 3 life sentences, 4 acquittals
 - Closer structural model: **Special Court for Sierra Leone (SCSL, 2002–13)** — hybrid Council-of-Europe / state-accession design; convicted sitting-era HoS (Charles Taylor)
 - Parallel structural model: **Special Tribunal for Lebanon (STL, 2009–23)** — Council-of-Europe-adjacent framework
 - The tribunal represents a **major evolution in international criminal law since the Rome Statute (1998)** — institutionalising aggression-crime accountability outside UNSC veto politics
 
-### 2.5 Economic / Fiscal Lens `[MEDIUM]`
+#### 2.5 Economic / Fiscal Lens `[MEDIUM]`
 - Sweden's **direct fiscal contribution**: EPA assessed dues (estimate: SEK 30–80 M annually based on Council-of-Europe EPA patterns) — modest
 - **Indirect fiscal exposure**: Zero — reparations architecture (HD03232) funded from Russian immobilised assets, not Swedish treasury
 - **Asymmetric cost-benefit**: Low direct cost, high signalling value; enhanced reconstruction-contract positioning for Swedish firms (Saab, Volvo, Assa Abloy, Ericsson)
 
-### 2.6 Risk / Threat Lens `[HIGH]`
+#### 2.6 Risk / Threat Lens `[HIGH]`
 - **Diplomatic**: Russia has condemned all accountability mechanisms; additional rhetorical/diplomatic hostility expected
 - **Hybrid-warfare**: See `threat-analysis.md` T6 — MEDIUM-HIGH likelihood, HIGH impact
 - **Legal**: Tribunal effectiveness dependent on non-member cooperation (US, China, Russia not expected to join)
@@ -2319,7 +2308,7 @@ Sweden formally proposes to become a **founding member** of the **Special Tribun
 
 ---
 
-## 3. SWOT Analysis (Color-Coded Mermaid)
+### 3. SWOT Analysis (Color-Coded Mermaid)
 
 ```mermaid
 graph TD
@@ -2374,7 +2363,7 @@ graph TD
     style T4 fill:#D32F2F,color:#FFFFFF
 ```
 
-### TOWS Interference Highlights
+#### TOWS Interference Highlights
 
 | Interaction | Mechanism | Strategic Implication | Conf. |
 |-------------|-----------|----------------------|:-----:|
@@ -2385,7 +2374,7 @@ graph TD
 
 ---
 
-## 4. Stakeholder Positions — Named Actors
+### 4. Stakeholder Positions — Named Actors
 
 | Stakeholder | Position | Evidence / Rationale | Conf. |
 |-------------|:--:|---------------------|:-----:|
@@ -2412,7 +2401,7 @@ graph TD
 
 ---
 
-## 5. Evidence Table
+### 5. Evidence Table
 
 | # | Claim | Source | Conf. | Impact |
 |---|-------|--------|:-----:|:------:|
@@ -2429,7 +2418,7 @@ graph TD
 
 ---
 
-## 6. Threat Model — STRIDE Adaptation
+### 6. Threat Model — STRIDE Adaptation
 
 | STRIDE | Applies to HD03231? | Evidence / Translation |
 |--------|:------------------:|-----------------------|
@@ -2442,7 +2431,7 @@ graph TD
 
 ---
 
-## 7. Indicator Library (What to Watch)
+### 7. Indicator Library (What to Watch)
 
 | # | Indicator | Trigger | Decision-Maker | Target Window |
 |---|-----------|---------|----------------|:-------------:|
@@ -2457,7 +2446,7 @@ graph TD
 
 ---
 
-## 8. Forward Scenarios (Short + Medium Horizon)
+### 8. Forward Scenarios (Short + Medium Horizon)
 
 | Scenario | P | Indicator | Consequence |
 |----------|:-:|-----------|-------------|
@@ -2468,7 +2457,7 @@ graph TD
 
 ---
 
-## 9. Cross-References
+### 9. Cross-References
 
 - **Companion**: [`HD03232-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD03232-analysis.md) — International Compensation Commission
 - **Precedents**: Nuremberg IMT (1945–46); SCSL (Sierra Leone, 2002–13); STL (Lebanon, 2009–23)
@@ -2482,8 +2471,7 @@ graph TD
 **Classification**: Public · **Depth**: L2+ Strategic · **Next Review**: 2026-04-24
 
 ### HD03232
-
-_Source: [`documents/HD03232-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD03232-analysis.md)_
+<!-- source: documents/HD03232-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD03232-analysis.md -->
 
 | Field | Value |
 |-------|-------|
@@ -2500,11 +2488,11 @@ _Source: [`documents/HD03232-analysis.md`](https://github.com/Hack23/riksdagsmon
 
 ---
 
-## 1. Political Significance — Reparations Architecture for the Largest Inter-State Compensation Claim Since WWII
+### 1. Political Significance — Reparations Architecture for the Largest Inter-State Compensation Claim Since WWII
 
 Sweden proposes to accede to the convention establishing an **International Compensation Commission for Ukraine** (the "Hague Compensation Commission" / ICCU). The commission is the institutional mechanism through which **Russia can be held financially liable for the full-scale damages caused by its illegal invasion**. It is the **companion instrument** to HD03231 (Special Tribunal) — together they constitute the Ukraine accountability architecture: **criminal accountability of individuals** (tribunal) + **financial accountability of the state** (commission).
 
-### Origins and foundation
+#### Origins and foundation
 
 | Date | Event | Significance |
 |------|-------|-------------|
@@ -2517,7 +2505,7 @@ Sweden proposes to accede to the convention establishing an **International Comp
 | **Apr 16 2026** | Sweden tables HD03232 | **This document** |
 | **H2 2026 – H1 2027** | Projected commission operational start | Claims-adjudication phase |
 
-### Strategic framing — FM Stenergard's statement
+#### Strategic framing — FM Stenergard's statement
 
 > *"Genom skadeståndskommissionen kan Ryssland hållas ansvarigt för de skador som dess folkrättsvidriga handlingar har orsakat. Det ukrainska folket måste få upprättelse."*
 
@@ -2525,9 +2513,9 @@ Sweden proposes to accede to the convention establishing an **International Comp
 
 ---
 
-## 2. Six-Lens Analytical Framework
+### 2. Six-Lens Analytical Framework
 
-### 2.1 Constitutional / Legal Lens `[HIGH]`
+#### 2.1 Constitutional / Legal Lens `[HIGH]`
 - Riksdag approval required for treaty accession (RF 10 kap.)
 - ICCU is a **treaty-based international organisation** with claims-registration → adjudication → awards → enforcement pipeline
 - **Critical legal question**: enforcement mechanism. Options:
@@ -2536,14 +2524,14 @@ Sweden proposes to accede to the convention establishing an **International Comp
   3. **Post-settlement negotiation**: Part of future peace-settlement package
 - Sweden's accession locks in Swedish **voice in enforcement-mechanism selection**
 
-### 2.2 Electoral / Political Lens `[HIGH]`
+#### 2.2 Electoral / Political Lens `[HIGH]`
 - **Consensus issue**: Same near-universal support as HD03231 (≈349 MPs projected)
 - **Populist-positive framing**: "Russia pays, not Swedish taxpayers" — aligns with SD, C, M, KD messaging
 - **Progressive framing**: UN-backed mechanism, international law, victim restoration — aligns with S, V, MP, C messaging
 - **Rare cross-ideological policy**: Both left and right can champion without compromise
 - Expected Riksdag vote: late spring / early summer 2026
 
-### 2.3 Geopolitical / Security Lens `[HIGH]`
+#### 2.3 Geopolitical / Security Lens `[HIGH]`
 - Reparations mechanism designed to **complement** the tribunal (criminal accountability) with **structural financial accountability**
 - **Immobilised Russian sovereign assets (≈ EUR 260B)**: The primary source contemplated. Distribution:
   - **EUR 191B** at Euroclear (Belgium) — the largest single concentration
@@ -2552,7 +2540,7 @@ Sweden proposes to accede to the convention establishing an **International Comp
 - G7 Ukraine Loan (Jan 2025) uses **profits** from immobilised assets — this is the first institutional use; HD03232 potentially extends to principal use
 - Sweden's membership strengthens its voice in how the mechanism handles asset-use decisions — particularly **EU-internal cleavage** between asset-seizure hawks (Poland, Baltic states, Finland) and state-immunity cautious (Germany, France, Belgium)
 
-### 2.4 Historical / Precedent Lens `[HIGH]`
+#### 2.4 Historical / Precedent Lens `[HIGH]`
 - **Most direct precedent: UN Compensation Commission (UNCC) for Iraq/Kuwait, 1991–2022**
   - Paid out ≈ USD 52.4B over **31 years**
   - Funded from 5–30% of Iraqi oil-export revenues (UNSC Res 687/705/1956)
@@ -2562,14 +2550,14 @@ Sweden proposes to accede to the convention establishing an **International Comp
 - **Iran–US Claims Tribunal (1981–)**: Algiers Accords model; still active after 40+ years
 - Ukraine damages (USD 486B+ World Bank 2024) are ≈ 10× the Iraq–Kuwait figure — **unprecedented scale**
 
-### 2.5 Economic / Fiscal Lens `[HIGH]`
+#### 2.5 Economic / Fiscal Lens `[HIGH]`
 - **Sweden's own contribution to ICCU**: Administrative costs only (modest — SEK 10–40M annually estimate based on analogous UN/CoE administrative commissions)
 - **Reparations fund source**: Russian state (immobilised assets + future Russian obligations) — **not Swedish taxpayers**
 - **Total damages (World Bank RDNA3, 2024)**: USD 486B+; continues to rise
 - **Swedish indirect upside**: Reconstruction-contract positioning for Swedish firms (Skanska, NCC, Peab, ABB Sweden, Ericsson, Volvo Construction Equipment) — early-accession status strengthens lobbying position
 - **Fiscal risk**: Zero direct exposure; indirect exposure only if Sweden later contributes to bridging financing (political choice)
 
-### 2.6 Risk / Threat Lens `[HIGH]`
+#### 2.6 Risk / Threat Lens `[HIGH]`
 - **Legal**: Russia will refuse participation; enforcement depends on asset-repurposing coalition sustainability
 - **Diplomatic**: Russian retaliation parallel to HD03231
 - **Political (in Sweden)**: Very low (consensus)
@@ -2579,7 +2567,7 @@ Sweden proposes to accede to the convention establishing an **International Comp
 
 ---
 
-## 3. SWOT Analysis (Color-Coded Mermaid)
+### 3. SWOT Analysis (Color-Coded Mermaid)
 
 ```mermaid
 graph TD
@@ -2634,7 +2622,7 @@ graph TD
     style T4 fill:#D32F2F,color:#FFFFFF
 ```
 
-### TOWS Interference Highlights
+#### TOWS Interference Highlights
 
 | Interaction | Mechanism | Strategic Implication | Conf. |
 |-------------|-----------|----------------------|:-----:|
@@ -2645,7 +2633,7 @@ graph TD
 
 ---
 
-## 4. Stakeholder Positions — Named Actors
+### 4. Stakeholder Positions — Named Actors
 
 | Stakeholder | Position | Evidence / Rationale | Conf. |
 |-------------|:--:|---------------------|:-----:|
@@ -2672,7 +2660,7 @@ graph TD
 
 ---
 
-## 5. Evidence Table
+### 5. Evidence Table
 
 | # | Claim | Source | Conf. | Impact |
 |---|-------|--------|:-----:|:------:|
@@ -2689,7 +2677,7 @@ graph TD
 
 ---
 
-## 6. Bayesian Path Analysis (Conditional Scenarios)
+### 6. Bayesian Path Analysis (Conditional Scenarios)
 
 ```mermaid
 flowchart TD
@@ -2715,7 +2703,7 @@ flowchart TD
 
 ---
 
-## 7. Indicator Library (What to Watch)
+### 7. Indicator Library (What to Watch)
 
 | # | Indicator | Trigger | Decision-Maker | Target Window |
 |---|-----------|---------|----------------|:-------------:|
@@ -2730,7 +2718,7 @@ flowchart TD
 
 ---
 
-## 8. Scenario Snapshot
+### 8. Scenario Snapshot
 
 | Scenario | P | Key Trigger | Consequence |
 |----------|:-:|-------------|-------------|
@@ -2741,7 +2729,7 @@ flowchart TD
 
 ---
 
-## 9. Cross-References
+### 9. Cross-References
 
 - **Companion**: [`HD03231-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD03231-analysis.md) — Special Tribunal for Aggression
 - **Precedents**: UNCC (Iraq–Kuwait, 1991–2022, USD 52.4B over 31 years); Iran–US Claims Tribunal (1981–); Post-WWII German reparations tracks
@@ -2755,8 +2743,7 @@ flowchart TD
 **Classification**: Public · **Depth**: L2+ Strategic · **Next Review**: 2026-04-24
 
 ## Comparative International
-
-_Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md)_
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md -->
 
 | Field | Value |
 |-------|-------|
@@ -2767,11 +2754,11 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 🧭 Section 1 — Digital-Evidence Transparency: How Other Democracies Balance Investigative Integrity vs Press Freedom
+### 🧭 Section 1 — Digital-Evidence Transparency: How Other Democracies Balance Investigative Integrity vs Press Freedom
 
 > Context: KU33 narrows "allmän handling" status for digital material seized at husrannsakan unless *formellt tillförd bevisning*. How do comparable constitutional democracies reconcile press-freedom doctrine with investigative-integrity concerns over seized digital evidence?
 
-### Comparative Framework
+#### Comparative Framework
 
 | Jurisdiction | Constitutional Anchor | Digital-Evidence Transparency Rule | Press-Freedom Rank (RSF 2025) | Swedish Parallel |
 |-------------|----------------------|-------------------------------------|:--:|------------------|
@@ -2793,7 +2780,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 > 2. The 1766 grundlag history (no Nordic neighbour amends a 260-year-old constitutional text)
 > 3. Slippery-slope precedent for further TF compression
 
-### Nordic Transparency Models — Most-Similar Design
+#### Nordic Transparency Models — Most-Similar Design
 
 | Country | Transparency Law | Digital-Evidence Treatment | Key Protection |
 |---------|------------------|---------------------------|----------------|
@@ -2807,11 +2794,11 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 🧭 Section 2 — Aggression-Accountability Architecture: How Similar Tribunals Have Fared
+### 🧭 Section 2 — Aggression-Accountability Architecture: How Similar Tribunals Have Fared
 
 > Context: HD03231 (Special Tribunal for Crime of Aggression) and HD03232 (International Compensation Commission). Historical and comparative benchmarks for assessing likely trajectory.
 
-### Historical Aggression-Tribunal Benchmarks
+#### Historical Aggression-Tribunal Benchmarks
 
 | Tribunal | Era | Structure | Outcome | Relevance to HD03231 |
 |----------|------|-----------|---------|----------------------|
@@ -2823,7 +2810,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 | **ICC (Rome Statute)** | 2002– | Treaty-based | 124 states parties; aggression jurisdiction limited (Kampala amendments) | Complementary to HD03231 |
 | **STL** (Lebanon/Hariri) | 2009–23 | UN + Lebanon, Council of Europe-support model | Limited convictions | Structural model for HD03231 |
 
-### HD03231 Distinctive Features
+#### HD03231 Distinctive Features
 
 | Dimension | HD03231 (Ukraine) | Closest Precedent | Assessment |
 |-----------|------------------|-------------------|-----------|
@@ -2834,7 +2821,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 | Enforcement mechanism | State-cooperation; parallel asset-immobilisation | ICC | Limited without US participation |
 | Expected caseload | Highest-level Russian officials | IMT scope | Precedent-scale |
 
-### International Compensation Commission Precedents
+#### International Compensation Commission Precedents
 
 | Commission | Era | Mandate | Outcome | Relevance to HD03232 |
 |------------|-----|---------|---------|----------------------|
@@ -2849,7 +2836,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 🧭 Section 3 — Press-Freedom Indices — Sweden's Position and Risk
+### 🧭 Section 3 — Press-Freedom Indices — Sweden's Position and Risk
 
 | Index | 2025 Rank | Methodology Sensitivity to KU33 | Projected Direction Post-Amendment |
 |-------|:--:|--------------------------------|------------------------------------|
@@ -2858,7 +2845,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 | **V-Dem Civil Liberties** | 0.96 | LOW — absorbs within broader civil-liberties score | Minor `[LOW]` |
 | **Freedom on the Net** | 93/100 | MEDIUM — digital-freedom focus relevant to KU33 | ↓ 1–3 points `[MEDIUM]` |
 
-### Historical Sweden Index Movement (Context)
+#### Historical Sweden Index Movement (Context)
 
 | Year | RSF Rank | Notable Factor |
 |------|:--:|---------------|
@@ -2872,7 +2859,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 🧭 Section 4 — EU Accessibility Act Precedent (KU32 Context)
+### 🧭 Section 4 — EU Accessibility Act Precedent (KU32 Context)
 
 | Country | EAA Implementation Approach | Grundlag / Constitutional Adjustment? | Lessons for Sweden |
 |---------|-------------------------------|:-------------------------------------:|--------------------|
@@ -2887,7 +2874,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 🧭 Section 5 — Opposition-Exploitation Patterns in Comparable Democracies
+### 🧭 Section 5 — Opposition-Exploitation Patterns in Comparable Democracies
 
 | Jurisdiction | Analogous Case | Opposition Framing | Electoral Impact |
 |-------------|----------------|---------------------|:----:|
@@ -2901,7 +2888,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 🧭 Section 6 — Diplomatic Response Patterns to Aggression-Tribunal Founders
+### 🧭 Section 6 — Diplomatic Response Patterns to Aggression-Tribunal Founders
 
 | Founder-State | Year | Russian / Adversary Response | Magnitude |
 |--------------|:--:|------------------------------|:--:|
@@ -2916,7 +2903,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 📎 Sources
+### 📎 Sources
 
 - Reporters Without Borders, *World Press Freedom Index 2025*
 - Freedom House, *Freedom in the World 2025* / *Freedom on the Net 2025*
@@ -2931,7 +2918,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 📎 Cross-References
+### 📎 Cross-References
 
 - [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) scenarios Base/Bull-Lite use Nordic-model analogy
 - [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 Russian hybrid-warfare calibrated against Finland / Estonia / Lithuania precedents
@@ -2943,8 +2930,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 **Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: Comparative-politics analysis v1.0
 
 ## Classification Results
-
-_Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md)_
+<!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md -->
 
 | Field | Value |
 |-------|-------|
@@ -2954,7 +2940,7 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## 🗂️ Document Classification (with Data Depth)
+### 🗂️ Document Classification (with Data Depth)
 
 | Dok ID | Policy Area | Priority | Type | Committee | Sensitivity | Scope | Urgency | Grundlag? | Data Depth |
 |--------|-------------|:-------:|:----:|:---------:|:----------:|:-----:|:-------:|:---------:|:----------:|
@@ -2965,7 +2951,7 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 | HD01CU28 | Housing Policy / Financial Markets / AML | P2 — Important | Betänkande | CU | Public | Sector | 2027 | No | **L2 Strategic** |
 | HD01CU27 | Property Law / AML / Organised Crime | P2 — Important | Betänkande | CU | Public | Sector | H2 2026 | No | **L2 Strategic** |
 
-### Sensitivity Decision Tree (Mermaid)
+#### Sensitivity Decision Tree (Mermaid)
 
 ```mermaid
 flowchart TD
@@ -2988,7 +2974,7 @@ flowchart TD
 
 ---
 
-## 🗺️ Policy Domain Mapping
+### 🗺️ Policy Domain Mapping
 
 | Domain | Documents | Weighted Weight |
 |--------|-----------|:---------------:|
@@ -3000,7 +2986,7 @@ flowchart TD
 
 ---
 
-## 🇪🇺 EU, Council of Europe & International Linkages
+### 🇪🇺 EU, Council of Europe & International Linkages
 
 | Document | International Linkage | Treaty / Instrument | Urgency |
 |----------|-----------------------|---------------------|:-------:|
@@ -3012,7 +2998,7 @@ flowchart TD
 
 ---
 
-## 🎯 Publication Implications
+### 🎯 Publication Implications
 
 | Classification Signal | Article Impact |
 |----------------------|----------------|
@@ -3023,7 +3009,7 @@ flowchart TD
 
 ---
 
-## 🗄️ Data Depth Levels Applied
+### 🗄️ Data Depth Levels Applied
 
 | Document | Priority | Depth Tier | Per-Doc File |
 |----------|:-------:|:----------:|--------------|
@@ -3041,7 +3027,7 @@ flowchart TD
 
 ---
 
-## 📅 Retention & Review Cadence
+### 📅 Retention & Review Cadence
 
 | Artefact | Retention | Review Cadence | Trigger Events |
 |----------|-----------|:--------------:|----------------|
@@ -3053,7 +3039,7 @@ flowchart TD
 | `methodology-reflection.md` | Permanent | One-off reference artefact | Methodology change |
 | `documents/*-analysis.md` | Permanent | On kammarvote; post-implementation | Voting + operational milestones |
 
-### Trigger Events Requiring Re-Analysis
+#### Trigger Events Requiring Re-Analysis
 
 | Trigger | Owner | Files to Re-Review |
 |---------|-------|--------------------|
@@ -3065,7 +3051,7 @@ flowchart TD
 
 ---
 
-## 🔐 Access-Control Impact
+### 🔐 Access-Control Impact
 
 Classification **Public** means:
 - All files publishable on `github.com/Hack23/riksdagsmonitor`
@@ -3088,8 +3074,7 @@ Classification **Restricted** (none) would apply to:
 **Classification**: Public · **Next Review**: 2026-04-24
 
 ## Cross-Reference Map
-
-_Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md)_
+<!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md -->
 
 | Field | Value |
 |-------|-------|
@@ -3098,7 +3083,7 @@ _Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/bl
 
 ---
 
-## 🕸️ Document Linkage Graph (Constitutional Lead + Ukraine Context)
+### 🕸️ Document Linkage Graph (Constitutional Lead + Ukraine Context)
 
 ```mermaid
 graph TD
@@ -3185,22 +3170,22 @@ graph TD
 
 ---
 
-## 🧱 Thematic Clusters
+### 🧱 Thematic Clusters
 
-### Cluster A — Constitutional Reform (LEAD)
+#### Cluster A — Constitutional Reform (LEAD)
 - **HD01KU33 + HD01KU32** (this run, first reading)
 - Constitutional mechanics: TF (1766), YGL (1991), RF 8 kap. 14 §
 - EU driver: Accessibility Act (EAA 2019/882)
 - **Second reading required post-Sep-2026 election** — structurally embeds KU33/KU32 in 2026 valrörelse
 - Institutional review: Lagrådet yttrande pending
 
-### Cluster B — Ukraine Accountability
+#### Cluster B — Ukraine Accountability
 - **HD03231 + HD03232** (this run, propositions)
 - Institutional pillars: Council of Europe, Nuremberg precedent, ICC gap, Hague Convention Dec 2025
 - Financial architecture: G7 Ukraine Loan (Jan 2025), Euroclear EUR 191B, Russian assets ~EUR 260B
 - Security context: NATO accession (March 2024)
 
-### Cluster C — Property / AML
+#### Cluster C — Property / AML
 - **HD01CU28 + HD01CU27** (this run)
 - Policy lineage: gäng-agenda (Prop 2025/26:100), juvenile-crime proposition (HD03246)
 - EU context: AMLD6
@@ -3208,7 +3193,7 @@ graph TD
 
 ---
 
-## ⏱️ Contextual Timeline — Nuremberg → Rome → Hague → Stockholm → 2027
+### ⏱️ Contextual Timeline — Nuremberg → Rome → Hague → Stockholm → 2027
 
 ```mermaid
 timeline
@@ -3233,7 +3218,7 @@ timeline
 
 ---
 
-## 🔗 Cross-Cluster Interference (Rhetorical)
+### 🔗 Cross-Cluster Interference (Rhetorical)
 
 | Tension | Description | Opposition Exploit Vector |
 |---------|-------------|---------------------------|
@@ -3242,7 +3227,7 @@ timeline
 
 ---
 
-## 🔄 Prior-Run Forward-Chain Table
+### 🔄 Prior-Run Forward-Chain Table
 
 Continuity with adjacent Riksdagsmonitor runs — so subsequent analysts can find antecedents and the causal chain:
 
@@ -3255,7 +3240,7 @@ Continuity with adjacent Riksdagsmonitor runs — so subsequent analysts can fin
 | HD01CU28 (Apr 17) | SOU 2023/24 on bostadsrätt register | Implementation: register setup Jan 1 2027 |
 | HD01CU27 (Apr 17) | Hyresgästföreningen loophole documentation (2015–24) | Entry into force Jul 1 2026 |
 
-### Continuity Contracts (How Future Runs Inherit from This One)
+#### Continuity Contracts (How Future Runs Inherit from This One)
 
 | Commitment | Where | Inherited Claim |
 |-----------|-------|-----------------|
@@ -3270,8 +3255,7 @@ Continuity with adjacent Riksdagsmonitor runs — so subsequent analysts can fin
 **Classification**: Public · **Next Review**: 2026-04-24
 
 ## Methodology Reflection & Limitations
-
-_Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)_
+<!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md -->
 
 | Field | Value |
 |-------|-------|
@@ -3284,75 +3268,75 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## ✅ What Worked (Preserve in Templates)
+### ✅ What Worked (Preserve in Templates)
 
-### 1. DIW-Weighted Lead-Story Selection
+#### 1. DIW-Weighted Lead-Story Selection
 
 The Democratic-Impact Weighting methodology correctly elevated the grundlag package over raw news-value rank. Before DIW v1.0, the lede would have been Ukraine (raw 9). With DIW, the lead is KU33 (weighted 9.8). This is the correct democratic-infrastructure call.
 
 **Codify as**: Mandatory DIW table in every `significance-scoring.md` (see Rule 5 in `ai-driven-analysis-guide.md`). `[HIGH]`
 
-### 2. Coverage-Completeness Rule (Weighted ≥ 7.0)
+#### 2. Coverage-Completeness Rule (Weighted ≥ 7.0)
 
 The rule prevents silent omission of co-prominent stories. Ukraine propositions (weighted 8.55 + 7.60) must appear as dedicated H3 sections even when lead is elsewhere.
 
 **Codify as**: Bash enforcement gate in `SHARED_PROMPT_PATTERNS.md` "Lead-Story & Coverage-Completeness Gate". `[HIGH]`
 
-### 3. Confidence Labels on Every Analytical Claim
+#### 3. Confidence Labels on Every Analytical Claim
 
 Every claim in synthesis-summary, SWOT, risk, threat, stakeholder files carries `[HIGH]` / `[MEDIUM]` / `[LOW]`. This forces the analyst to distinguish observed fact from projection.
 
 **Codify as**: Template checklist item — any analytical sentence without a confidence label is flagged as template-filler in QA. `[HIGH]`
 
-### 4. Color-Coded Mermaid With Real Data
+#### 4. Color-Coded Mermaid With Real Data
 
 Every file has ≥ 1 Mermaid diagram with colour directives and real dok_ids / actor names. Zero placeholder diagrams.
 
 **Codify as**: Template preamble block with Mermaid colour palette (already in `political-style-guide.md`). `[HIGH]`
 
-### 5. TOWS Interference Matrix
+#### 5. TOWS Interference Matrix
 
 The S4 × T1 cross-SWOT interference finding (that the interpretation of "formellt tillförd bevisning" is the strategic centre of gravity) is the **single most actionable insight** in the dossier. It emerged from TOWS, not vanilla SWOT.
 
 **Codify as**: Mandatory TOWS matrix in every `swot-analysis.md` when the run has ≥ 4 entries in any SWOT quadrant. `[HIGH]`
 
-### 6. Cross-Cluster Rhetorical Tension
+#### 6. Cross-Cluster Rhetorical Tension
 
 The "press freedom abroad vs at home" tension was identified, named, and analysed for exploitation vectors. Opposition parties will use this; the government will need a counter-narrative.
 
 **Codify as**: When a run covers ≥ 2 thematic clusters, the synthesis-summary MUST include a §Cross-Cluster Interference subsection. `[HIGH]`
 
-### 7. Attack-Tree + Kill Chain + Diamond Model + STRIDE
+#### 7. Attack-Tree + Kill Chain + Diamond Model + STRIDE
 
 The threat-analysis file applies four complementary threat frameworks, each surfacing different dimensions (goal-decomposition, adversary-lifecycle, actor-infrastructure-capability-victim, and STRIDE classification). No single framework would have produced the full threat picture.
 
 **Codify as**: Threat-analysis template §3 (Frameworks) becomes a multi-framework checklist. `[HIGH]`
 
-### 8. Bayesian Update Rules
+#### 8. Bayesian Update Rules
 
 The risk-assessment file specifies **observable signals** (Lagrådet yttrande, S-leader statement, Nordic cable event) that trigger explicit prior/posterior risk-score updates. This makes the analysis **living** rather than static.
 
 **Codify as**: Every risk-assessment file MUST include a Bayesian-update-rules table. `[HIGH]`
 
-### 9. International Comparative Benchmarking
+#### 9. International Comparative Benchmarking
 
 The comparative file situated Swedish reforms against DE, UK, US, FR, Nordic, and EU benchmarks, revealing that Nordic neighbours operate **exactly the regime KU33 proposes** — a finding that directly refutes the strongest version of the "press-freedom regression" framing while preserving the interpretive-frontier concern.
 
 **Codify as**: Runs with P0 or P1 documents MUST include a `comparative-international.md` file. `[HIGH]`
 
-### 10. Scenario Analysis With Probabilities
+#### 10. Scenario Analysis With Probabilities
 
 Base / Bull-Lite / Bear / Mixed / Wildcard-1 / Wildcard-2 scenarios with explicit prior probabilities that sum to 1.0. Monitoring indicators flip priors. The analysis becomes **actionable** for editorial and policy decisions.
 
 **Codify as**: Runs with multiple scenarios should produce a `scenario-analysis.md`; mandatory for P0. `[HIGH]`
 
-### 11. Executive Brief (One-Pager)
+#### 11. Executive Brief (One-Pager)
 
 The `executive-brief.md` compresses the dossier into a 3-minute read for newsroom editors / policy advisors who will not read the full 11-file set.
 
 **Codify as**: Every run MUST produce an `executive-brief.md`. `[HIGH]`
 
-### 12. README / Reading Order
+#### 12. README / Reading Order
 
 Directory `README.md` provides quality tier, reading order by audience (executive / policy / intelligence / tracker / methodologist), and copy-paste-safe top-line findings. Onboarding time reduced from 30 min to 5 min.
 
@@ -3360,9 +3344,9 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 
 ---
 
-## ❌ What Failed First-Pass (Documented Anti-Patterns)
+### ❌ What Failed First-Pass (Documented Anti-Patterns)
 
-### AP-A: Silent Omission of Weighted ≥ 7 Documents
+#### AP-A: Silent Omission of Weighted ≥ 7 Documents
 
 **Failure**: First-draft English and Swedish articles **entirely omitted HD03231 and HD03232** despite their weighted scores being 8.55 and 7.60. The author prioritised grundlag lead but silently dropped Ukraine.
 
@@ -3372,7 +3356,7 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 
 **Lesson codified**: `ai-driven-analysis-guide.md` Rule 5 Anti-pattern A. `[HIGH]`
 
-### AP-B: News-Value vs Democratic-Impact Confusion
+#### AP-B: News-Value vs Democratic-Impact Confusion
 
 **Failure**: Raw significance score (9 for HD03231) would have led the article — correct for news-value but wrong for democratic-infrastructure impact.
 
@@ -3382,7 +3366,7 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 
 **Lesson codified**: `ai-driven-analysis-guide.md` Rule 5 + `significance-scoring.md` mandatory DIW section. `[HIGH]`
 
-### AP-C: Shallow Per-Doc Files for Secondary Clusters
+#### AP-C: Shallow Per-Doc Files for Secondary Clusters
 
 **Failure**: Initial per-doc files for HD03231, HD03232, CU27/CU28 were thin L1 (≈ 70–130 lines) without confidence labels, Mermaid diagrams, forward indicators, or stakeholder named actors — inconsistent with LEAD KU32/33 file (L3, 153 lines with full tradecraft).
 
@@ -3390,7 +3374,7 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 
 **Lesson codified**: Template update — `per-file-political-intelligence.md` gains an L1/L2/L3 depth-tier checklist; any document classified P0/P1 must be L2+ minimum. `[HIGH]`
 
-### AP-D: Stale Data Manifest
+#### AP-D: Stale Data Manifest
 
 **Failure**: `data-download-manifest.md` retained obsolete "HD03231 ✅ LEAD / HD01KU32 ✅ Secondary" labels after DIW re-ranking.
 
@@ -3398,7 +3382,7 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 
 **Lesson codified**: Template update — data manifest fields use "Selected? (post-DIW)" heading. Automated check: if significance-scoring.md disagrees with data-download-manifest.md on lead-story, block commit. `[MEDIUM]`
 
-### AP-E: Missing Self-Audit Loop
+#### AP-E: Missing Self-Audit Loop
 
 **Failure**: Prior runs had no mechanism to capture lessons-learned and feed them upstream into the methodology guide and templates. Failures kept recurring.
 
@@ -3408,9 +3392,9 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 
 ---
 
-## 🔧 Recommended Upstream Changes
+### 🔧 Recommended Upstream Changes
 
-### A. `ai-driven-analysis-guide.md` — Additions
+#### A. `ai-driven-analysis-guide.md` — Additions
 
 1. **§Rule 5 (DIW)**: Already in place — keep, cite realtime-1434 as exemplar
 2. **§Rule 6 — Reference-Grade Depth Tiers**: New rule specifying L1/L2/L3 content floors per document priority:
@@ -3422,7 +3406,7 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 4. **§Rule 8 — International-Comparative Benchmarking**: P0/P1 runs include `comparative-international.md`
 5. **§Exemplar pointer**: Cite realtime-1434 as canonical reference
 
-### B. Templates — New or Extended
+#### B. Templates — New or Extended
 
 | Template | Status | Action |
 |---------|:------:|--------|
@@ -3440,14 +3424,14 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 | `political-classification.md` | EXTEND | Sensitivity decision tree + data-depth levels |
 | `per-file-political-intelligence.md` | EXTEND | L1/L2/L3 depth tiers with content floor per tier |
 
-### C. Agentic Workflow Changes
+#### C. Agentic Workflow Changes
 
 1. `news-realtime-monitor.md` Step D.2: enforce Lead-Story & Coverage-Completeness Gate (already deployed)
 2. `news-realtime-monitor.md` Step D.3: (new) enforce reference-grade minimum file-set for P0 runs — exec-brief, scenarios, comparative, reflection, README
 3. `SHARED_PROMPT_PATTERNS.md`: Add new §"Reference-Grade File Set" verifying presence of required files per priority tier
 4. All 12 agentic workflows: replicate the gate pattern consistently
 
-### D. Skills Updates
+#### D. Skills Updates
 
 - `.github/skills/intelligence-analysis-techniques/SKILL.md`: Add ACH, Red-Team, Kill Chain, Diamond, Bayesian, scenario-tree references with pointer to realtime-1434 as exemplar
 - `.github/skills/editorial-standards/SKILL.md`: Already has Gate 0 (Lead-Story) — extend with reference-grade depth-tier guidance
@@ -3456,7 +3440,7 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 
 ---
 
-## 📈 Quality Metrics (Target vs Achieved)
+### 📈 Quality Metrics (Target vs Achieved)
 
 | Metric | Target | Achieved | Gap |
 |--------|:------:|:--------:|:---:|
@@ -3475,7 +3459,7 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 
 ---
 
-## 🎯 Recommendation to Methodology Owner (CEO)
+### 🎯 Recommendation to Methodology Owner (CEO)
 
 1. **Designate realtime-1434 as Riksdagsmonitor's reference exemplar** for political-intelligence tradecraft. All future runs measure against it.
 2. **Merge this reflection's Section C upstream changes** into `ai-driven-analysis-guide.md` v5.1 and template set.
@@ -3488,8 +3472,7 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 **Classification**: Public · **Next Review**: 2026-04-24 · **Exemplar Lock-In**: 2026-09-01 (CEO sign-off required)
 
 ## Data Download Manifest
-
-_Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/data-download-manifest.md)_
+<!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/data-download-manifest.md -->
 
 | Field | Value |
 |-------|-------|
@@ -3502,7 +3485,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## 🔌 Data Sources
+### 🔌 Data Sources
 
 | Source | MCP Tool | Status | Count |
 |--------|----------|:------:|:-----:|
@@ -3518,7 +3501,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## 📄 Key Documents Retrieved (Post-DIW Selection)
+### 📄 Key Documents Retrieved (Post-DIW Selection)
 
 | Dok ID | Type | Date | Raw | DIW | Weighted | Role | Depth |
 |--------|:----:|:----:|:---:|:---:|:--------:|------|:-----:|
@@ -3533,7 +3516,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## 🚫 Excluded Documents (Previously Covered)
+### 🚫 Excluded Documents (Previously Covered)
 
 | Dok ID | Reason |
 |--------|--------|
@@ -3544,7 +3527,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## 🕐 Data Freshness
+### 🕐 Data Freshness
 
 - **Last riksdagen sync**: 2026-04-17T14:34:37Z (live)
 - **Data age at analysis start**: < 1 minute
@@ -3553,7 +3536,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## 🔗 Provenance & Chain-of-Custody
+### 🔗 Provenance & Chain-of-Custody
 
 | Step | Tool / Responsible | Timestamp (UTC) |
 |------|-------------------|:---------------:|
@@ -3568,3 +3551,25 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 ---
 
 **Classification**: Public · **Next Review**: 2026-04-24
+
+## Article Sources
+
+Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
+
+- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief.md)
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md)
+- [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md)
+- [`documents/HD01CU27-CU28-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD01CU27-CU28-analysis.md)
+- [`documents/HD01KU32-KU33-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD01KU32-KU33-analysis.md)
+- [`documents/HD03231-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD03231-analysis.md)
+- [`documents/HD03232-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD03232-analysis.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md)
+- [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md)
+- [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md)
+- [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+- [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/data-download-manifest.md)

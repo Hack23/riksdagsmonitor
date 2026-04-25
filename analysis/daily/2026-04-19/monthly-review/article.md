@@ -5,7 +5,7 @@ date: 2026-04-19
 subfolder: monthly-review
 slug: 2026-04-19-monthly-review
 source_folder: analysis/daily/2026-04-19/monthly-review
-generated_at: 2026-04-25T11:09:59.856Z
+generated_at: 2026-04-25T15:36:04.651Z
 language: en
 layout: article
 ---
@@ -22,8 +22,7 @@ Use this guide to read the article as a political-intelligence product rather th
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Executive Brief
-
-_Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/executive-brief.md)_
+<!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/executive-brief.md -->
 
 <p align="center">
   <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts — 30-day retrospective</em>
@@ -42,13 +41,13 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🧭 BLUF (Bottom Line Up Front)
+### 🧭 BLUF (Bottom Line Up Front)
 
 > **April 2026 was the single most electorally consequential month of the 2025/26 Riksdag session.** The Tidö-koalitionen (M–SD–KD–L) under PM **Ulf Kristersson (M)** and Finance Minister **Elisabeth Svantesson (M)** concentrated its identity-defining legislation into a four-week pre-election sprint: the **Spring Fiscal Trilogy** (Vårproposition `HD03100` + Vårändringsbudget `HD0399` + Extra ändringsbudget `HD03236` — fuel-tax cut 82 öre/litre + el/gas household relief, ≈ SEK 60 B net stimulus); a **criminal-justice bloc** (`HD03218` double penalties for criminal networks, `HD03217` extended civil-servant liability, `HD03246` stricter youth-offender rules, `HD03245` national men's-violence strategy, `HD03237` paid police education); a **constitutional pair** (`HD01KU32` media-accessibility + `HD01KU33` search-and-seizure of digital evidence — both declared *vilande*, requiring confirmation by the post-September-2026 Riksdag and thereby making the general election a **de-facto referendum on constitutional change**); a **NATO operational first** (`HD03220` Sweden's 1,200-troop contribution to Finnish NATO eFP — first Article-5-era force deployment to allied territory); an **environmental-deregulation package** (`HD03238` new permit authority, `HD03242` active forestry, `HD03239` wind-power municipal veto, `HD03240` new electricity-system law); and **international-justice accession** (`HD03231` Special Tribunal on Crime of Aggression against Ukraine + `HD03232` International Compensation Commission). Against **0.82 % GDP growth 2024** (vs DK 3.48 %, NO 2.10 %, FI 0.42 %; World Bank) and **8.7 % unemployment 2025**, the month crystallises a **dual-positioning strategy**: fiscal stimulus + toughness on crime/border for swing voters, constitutional + environmental deregulation for the coalition's right flank — with the **women's-shelter closure interpellation `HD10438`** opening the central opposition attack vector. `[VERY HIGH]`
 
 ---
 
-## 🎯 Three Decisions This Brief Supports
+### 🎯 Three Decisions This Brief Supports
 
 | Decision | Evidence Locus | Action Window |
 |----------|---------------|--------------:|
@@ -58,7 +57,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 📐 What Readers Need to Know in 60 Seconds
+### 📐 What Readers Need to Know in 60 Seconds
 
 1. **The lead story is the Spring Fiscal Trilogy** (`HD03100` + `HD0399` + `HD03236`). ≈ SEK 60 B net stimulus; 82 öre/litre fuel-tax cut; el/gas relief. Sweden's 0.82 % 2024 growth trails Nordics by **2–3 percentage points** — the trilogy is simultaneously counter-cyclical economics and pre-election household-relief politics. **Q3-2026 macro data** (the release just before the September vote) becomes the campaign's fiscal-credibility verdict. `[VERY HIGH]`
 2. **The constitutional story is the KU32/KU33 pair** (`HD01KU32` media accessibility + `HD01KU33` digital-evidence search/seizure). **Grundlag amendments require two identical Riksdag votes separated by a general election** — the September-2026 campaign thereby becomes a de-facto referendum on narrowing *Tryckfrihetsförordningen* (1766). Interpretive scope of "*formellt tillförd bevisning*" in KU33 is the strategic centre of gravity. `[HIGH]`
@@ -72,7 +71,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🎭 Named Actors to Watch (≥ 5 ministers / party leaders with dok_id citations)
+### 🎭 Named Actors to Watch (≥ 5 ministers / party leaders with dok_id citations)
 
 | Actor | Role | dok_id Evidence | Why They Matter Now |
 |-------|------|-----------------|--------------------|
@@ -94,7 +93,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🗓 Forward Vote Calendar (Next 90 Days — with Triggers)
+### 🗓 Forward Vote Calendar (Next 90 Days — with Triggers)
 
 | Date / Window | Trigger | Impact |
 |---------------|---------|--------|
@@ -115,7 +114,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## ⚠️ Top-5 Risks (from `risk-assessment.md`)
+### ⚠️ Top-5 Risks (from `risk-assessment.md`)
 
 | Rank | Risk | Score | Status | Mitigation |
 |:----:|------|:-----:|:------:|-----------|
@@ -127,7 +126,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🎯 Top-5 Opportunities
+### 🎯 Top-5 Opportunities
 
 | # | Opportunity | Source | Window |
 |---|-------------|--------|:------:|
@@ -139,7 +138,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## ⚠️ Analyst Confidence — Honest Self-Assessment
+### ⚠️ Analyst Confidence — Honest Self-Assessment
 
 | Dimension | Confidence | Notes |
 |-----------|:----------:|-------|
@@ -154,7 +153,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 📎 Cross-Links
+### 📎 Cross-Links
 
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/README.md) · [Synthesis](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/synthesis-summary.md) · [Significance](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/significance-scoring.md) · [Classification](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/classification-results.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/swot-analysis.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/risk-assessment.md) · [Threat](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/threat-analysis.md) · [Stakeholders](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/stakeholder-perspectives.md) · [Scenarios](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/scenario-analysis.md) · [Comparative](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/comparative-international.md) · [Cross-References](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/cross-reference-map.md) · [Methodology Reflection](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/methodology-reflection.md) · [Data Manifest](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/data-download-manifest.md)
 
@@ -163,8 +162,7 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 **Classification**: Public · **Next Review**: 2026-05-19 (monthly cadence) or event-driven on Lagrådet KU33 yttrande · **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.0 · **Upstream Continuity Contract**: `.github/aw/SHARED_PROMPT_PATTERNS.md` §Recent Daily Knowledge-Base Synthesis
 
 ## Synthesis Summary
-
-_Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/synthesis-summary.md)_
+<!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/synthesis-summary.md -->
 
 **Analysis Date**: 2026-04-19  
 **Article Type**: monthly-review  
@@ -174,13 +172,13 @@ _Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## Executive Summary
+### Executive Summary
 
 April 2026 marks one of the most legislatively intensive months of the 2025/26 parliamentary session. The Tidö-koalitionen government (M–SD–KD–L) tabled its **spring budget package** — including an extra change budget cutting fuel taxes and introducing energy price support — against a backdrop of a Swedish economy growing at a modest 0.82% in 2024, far below Denmark's 3.5%. Simultaneously, a sweeping criminal justice overhaul emerged as the session's defining domestic theme, with three major bills targeting criminal networks, youth offenders, and civil servant accountability. Environmental governance was substantially restructured through a new environmental permit authority and active forestry deregulation. The month's activity provides a clear electoral positioning signal ahead of the September 2026 Riksdag election.
 
 ---
 
-## Key Legislative Developments (Chronological)
+### Key Legislative Developments (Chronological)
 
 ```mermaid
 timeline
@@ -214,7 +212,7 @@ timeline
 
 ---
 
-## Monthly Legislative Statistics
+### Monthly Legislative Statistics
 
 | Metric | Count | Trend vs. Prior Month |
 |--------|-------|----------------------|
@@ -228,7 +226,7 @@ timeline
 
 ---
 
-## Dominant Policy Themes
+### Dominant Policy Themes
 
 ```mermaid
 mindmap
@@ -271,7 +269,7 @@ mindmap
 
 ---
 
-## Party Activity Analysis (Last 30 Days)
+### Party Activity Analysis (Last 30 Days)
 
 | Party | Role | Notable Actions | Assessment |
 |-------|------|----------------|------------|
@@ -286,7 +284,7 @@ mindmap
 
 ---
 
-## Economic Context
+### Economic Context
 
 Sweden's economy grew at **0.82%** in 2024 — recovering from a -0.20% contraction in 2023 but significantly trailing Denmark (**3.5%**), Norway (**2.1%**), and the EU average. Unemployment hit **8.7%** in 2025, among the highest in the Nordic region. Inflation fell dramatically to **2.84%** in 2024 from a crisis peak of 8.55% in 2023. GDP per capita reached **USD 57,117** in 2024.
 
@@ -294,28 +292,28 @@ The government's extra change budget (HD03236) cutting fuel taxes and providing 
 
 ---
 
-## Significance Tiers
+### Significance Tiers
 
-### Tier 1 — National Significance
+#### Tier 1 — National Significance
 - **HD03100** Spring Proposition 2026 — frames entire government economic strategy
 - **HD03236** Extra budget — fuel taxes + energy support (immediate household impact)
 - **HD03218** Double penalties for criminal networks (major criminal justice reform)
 - **HD03220** NATO Finland contribution (national security commitment)
 
-### Tier 2 — Major Policy
+#### Tier 2 — Major Policy
 - **HD03238** New environmental permit authority (institutional restructuring)
 - **HD03245** National violence against women strategy
 - **HD03217** Extended civil servant criminal liability
 - **HD03246** Stricter youth offender rules
 
-### Tier 3 — Procedural/Technical
+#### Tier 3 — Procedural/Technical
 - **HD01CU28** National condominium register
 - **HD01CU27** Property identity requirements
 - **HD01KU32/33** Constitutional changes (vilande — require post-election confirmation)
 
 ---
 
-## Election 2026 Implications
+### Election 2026 Implications
 
 **Electoral Impact**: 🟩 HIGH — Budget season with fuel tax cuts is clearly electorally motivated. The September 2026 election means every major legislative action from April through September carries campaign weight.
 
@@ -328,15 +326,14 @@ The government's extra change budget (HD03236) cutting fuel taxes and providing 
 **Policy Legacy**: 🟦 VERY HIGH confidence that this spring session shapes the campaign agenda: the government has staked its identity on crime reduction and economic relief.
 
 ## Significance Scoring
-
-_Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/significance-scoring.md)_
+<!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/significance-scoring.md -->
 
 **Analysis Date**: 2026-04-19  
 **Article Type**: monthly-review
 
 ---
 
-## Scoring Methodology
+### Scoring Methodology
 
 Significance scored on three dimensions:
 - **Legislative Impact** (0-10): Constitutional/structural vs. procedural/technical
@@ -347,7 +344,7 @@ Final score = weighted average (0.4 × Legislative + 0.3 × Public + 0.3 × Elec
 
 ---
 
-## Top 15 Documents by Significance
+### Top 15 Documents by Significance
 
 ```mermaid
 xychart-beta
@@ -359,7 +356,7 @@ xychart-beta
 
 ---
 
-## Detailed Scores
+### Detailed Scores
 
 | dok_id | Legislative | Public | Electoral | Final | Tier |
 |--------|------------|--------|-----------|-------|------|
@@ -381,7 +378,7 @@ xychart-beta
 
 ---
 
-## Monthly Significance Index
+### Monthly Significance Index
 
 **This month's significance level**: 🟩 HIGH (score: 8.1/10)
 
@@ -403,8 +400,7 @@ xychart-beta
 - April 2026: HIGH (8.1) — spring peak ✓
 
 ## Stakeholder Perspectives
-
-_Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/stakeholder-perspectives.md)_
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/stakeholder-perspectives.md -->
 
 **Analysis Date**: 2026-04-19  
 **Article Type**: monthly-review  
@@ -412,7 +408,7 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 ---
 
-## Stakeholder Map
+### Stakeholder Map
 
 ```mermaid
 mindmap
@@ -449,7 +445,7 @@ mindmap
 
 ---
 
-## Perspective 1: Government Coalition (M–SD–KD–L)
+### Perspective 1: Government Coalition (M–SD–KD–L)
 
 **Stance**: Satisfied with April productivity  
 **Key interests**: Electoral positioning, crime reduction, fiscal prudence with relief  
@@ -465,7 +461,7 @@ mindmap
 
 ---
 
-## Perspective 2: Social Democrats (S)
+### Perspective 2: Social Democrats (S)
 
 **Stance**: Actively confrontational but constructive on security  
 **Key interests**: Welfare state integrity, workers' rights, regional equity  
@@ -477,7 +473,7 @@ mindmap
 
 ---
 
-## Perspective 3: Sweden Democrats (SD)
+### Perspective 3: Sweden Democrats (SD)
 
 **Stance**: Delivering on core programme through coalition  
 **Key interests**: Crime reduction, immigration restriction, national security  
@@ -489,7 +485,7 @@ mindmap
 
 ---
 
-## Perspective 4: Centerpartiet (C)
+### Perspective 4: Centerpartiet (C)
 
 **Stance**: Selective constructive opposition  
 **Key interests**: Rural business, entrepreneurship, personal liberty, NATO  
@@ -500,7 +496,7 @@ mindmap
 
 ---
 
-## Perspective 5: Miljöpartiet (MP)
+### Perspective 5: Miljöpartiet (MP)
 
 **Stance**: Principled opposition on environment and climate  
 **Key interests**: Green transition, social justice, EU alignment  
@@ -511,7 +507,7 @@ mindmap
 
 ---
 
-## Perspective 6: Business Community / Confederation of Swedish Enterprise (Svenskt Näringsliv)
+### Perspective 6: Business Community / Confederation of Swedish Enterprise (Svenskt Näringsliv)
 
 **Stance**: Generally supportive of April package  
 **Key interests**: Regulatory simplification, digital infrastructure, labour market flexibility  
@@ -522,7 +518,7 @@ mindmap
 
 ---
 
-## Perspective 7: Women's Rights and Civil Society Organisations
+### Perspective 7: Women's Rights and Civil Society Organisations
 
 **Stance**: Alarmed — between legislative progress and implementation failures  
 **Key interests**: Protection funding, wage equality, violence prevention  
@@ -534,7 +530,7 @@ mindmap
 
 ---
 
-## Perspective 8: Swedish Local Government / SKR (Sveriges Kommuner och Regioner)
+### Perspective 8: Swedish Local Government / SKR (Sveriges Kommuner och Regioner)
 
 **Stance**: Concerned about unfunded mandates and service withdrawals  
 **Key interests**: Municipal finance, service delivery standards, regional development  
@@ -544,8 +540,7 @@ mindmap
 **Risk**: Municipal election results in 2026 may see urban-rural divide exploited by all parties
 
 ## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/scenario-analysis.md)_
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/scenario-analysis.md -->
 
 | Field | Value |
 |-------|-------|
@@ -558,7 +553,7 @@ _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## Framework Overview
+### Framework Overview
 
 ```mermaid
 flowchart TD
@@ -579,57 +574,57 @@ Probabilities sum to 100 % (three base scenarios) + wildcard overlays; aligned t
 
 ---
 
-## Scenario A — Tidö-koalitionen Re-elected (Probability: **42 %** · Confidence 🟧 MEDIUM)
+### Scenario A — Tidö-koalitionen Re-elected (Probability: **42 %** · Confidence 🟧 MEDIUM)
 
-### Trigger conditions (signals that raise this scenario's probability)
+#### Trigger conditions (signals that raise this scenario's probability)
 - Opinion polls retain M+SD+KD+L ≥ 175 seats by August 2026
 - Q3-2026 macro release shows GDP growth ≥ 1.5 % (vs 0.82 % 2024)
 - Unemployment trending below 8.5 % (from 8.7 % 2025 baseline)
 - No major SÄPO-acknowledged Russian hybrid incident
 - Fuel-tax cut `HD03236` reaches households before August 2026
 
-### 30-day policy trajectory
+#### 30-day policy trajectory
 - `HD03100` + `HD0399` + `HD03236` clear chamber (2026-04-22 Extra budget vote passes bloc-vote 175–174)
 - `HD03218` double-penalty law passes first reading with expected SD-kingmaker discipline
 - `HD10438` women's-shelter interpellation answered without emergency supplemental
 
-### 90-day policy trajectory (through July 2026)
+#### 90-day policy trajectory (through July 2026)
 - Lagrådet KU33 yttrande **silent** on narrow interpretation → government proceeds unchanged
 - `HD03242` active forestry: EU Commission issues letter-of-formal-notice; government defends on subsidiarity
 - `HD03220` NATO eFP Bn-task-group deploys to Finland (July 2026) without incident
 - `HD03231` / `HD03232` Ukraine tribunal + reparations commission: chamber approval with ≥ 300 MPs
 
-### Post-election policy trajectory (Sep 2026 +)
+#### Post-election policy trajectory (Sep 2026 +)
 - KU32/KU33 **CONFIRMED** in second reading by new Riksdag (bloc vote ≥ 175)
 - Tidöavtalet 2.0 negotiations open — expanded deportation + migration-tightening mandate
 - `HD03218` expanded to additional offence categories by end-2026
 
-### Confidence indicators to monitor
+#### Confidence indicators to monitor
 - **Raise probability to 50 %+** if: Q2 inflation < 2.5 % AND unemployment < 8.5 % AND no SÄPO hybrid incident
 - **Lower probability to 35 %** if: shelter crisis unresolved AND V+MP+S cross-party motion wins C swing vote
 
 ---
 
-## Scenario B — S-led Government (Probability: **33 %** · Confidence 🟧 MEDIUM)
+### Scenario B — S-led Government (Probability: **33 %** · Confidence 🟧 MEDIUM)
 
-### Trigger conditions
+#### Trigger conditions
 - S regains ≥ 30 % polling (from ≈ 26 % April 2026 baseline)
 - Women's-shelter crisis (`HD10438`) dominates August campaign coverage
 - Q3-2026 macro shows GDP < 1 %, unemployment > 9 %
 - C refuses to enter Tidö-koalitionen after the election
 - V delivers parliamentary support tolerance (confidence-and-supply, not formal coalition)
 
-### 30-day policy trajectory
+#### 30-day policy trajectory
 - S + V + MP + C coordinated motion on women's-shelter emergency funding tests coalition discipline
 - S files counter-motion to `HD03236` reframing fuel-tax cut as regressive household-transfer
 - Magdalena Andersson leverages HD10438 as campaign-defining attack vector
 
-### 90-day policy trajectory (through July 2026)
+#### 90-day policy trajectory (through July 2026)
 - S tables comprehensive counter-budget for 2027 (pre-election)
 - Forestry `HD03242` passes but V + MP mobilisation becomes organising framework for the left bloc
 - `HD03217` civil-servant liability becomes union/LO mobilisation vector
 
-### Post-election policy trajectory (Sep 2026 +)
+#### Post-election policy trajectory (Sep 2026 +)
 - **KU32/KU33 FAIL** second reading — grundlag change lapses (political cost: zero; status quo ante)
 - `HD03242` active forestry **REVERSED** — species-inventory compromise (Finland model)
 - Women's-shelter emergency funding passed in first post-election budget
@@ -638,25 +633,25 @@ Probabilities sum to 100 % (three base scenarios) + wildcard overlays; aligned t
 - Criminal-justice bloc (`HD03218` + `HD03246`) **maintained** — cross-party support (rehabilitation supplements added)
 - NATO commitments (`HD03220`) **maintained** — bipartisan foreign-policy consensus since 2024
 
-### Confidence indicators to monitor
+#### Confidence indicators to monitor
 - **Raise probability to 40 %+** if: shelter crisis × fuel-tax regressivity attack-line breaks through by July
 - **Lower probability to 25 %** if: Q3-2026 macro outperforms + no new hybrid incident
 
 ---
 
-## Scenario C — Hung Parliament / Coalition Negotiations (Probability: **22 %** · Confidence 🟥 LOW)
+### Scenario C — Hung Parliament / Coalition Negotiations (Probability: **22 %** · Confidence 🟥 LOW)
 
-### Trigger conditions
+#### Trigger conditions
 - Neither Tidö-bloc nor S+V+MP+C coalition clears 175 seats
 - SD strong enough (≥ 22 %) to demand formal government role; C refuses
 - L drops below 4 % threshold (coalition-arithmetic shock)
 - Novus + SIFO average within ± 3 points of both blocs in the final week
 
-### 30-day policy trajectory (during election campaign)
+#### 30-day policy trajectory (during election campaign)
 - All major legislative files proceed — campaign-trail coverage intensifies, chamber behaviour unchanged
 - Parties position for post-election negotiating leverage
 
-### Post-election policy trajectory (Sep 2026–Dec 2026)
+#### Post-election policy trajectory (Sep 2026–Dec 2026)
 - Budget-negotiation stalemate consumes Q4 2026 — statsminister-omröstning may require 3–5 attempts
 - `HD03218` criminal-network law already enacted pre-election — **MAINTAINED** (cross-party consensus)
 - `HD03242` forestry + `HD03239` wind veto **FROZEN** pending coalition agreement
@@ -664,13 +659,13 @@ Probabilities sum to 100 % (three base scenarios) + wildcard overlays; aligned t
 - Women's-shelter emergency funding passed as **coalition-formation concession** (likely)
 - `HD03231` / `HD03232` Ukraine tribunal accession **MAINTAINED** — cross-party
 
-### Confidence indicators to monitor
+#### Confidence indicators to monitor
 - **Raise probability to 30 %+** if: L drops below 4 % in August polling AND C publicly rules out both blocs
 - **Lower probability to 15 %** if: one bloc consolidates > 47 % polling by early September
 
 ---
 
-## Wildcard W-1 — Russian Hybrid-Warfare Escalation (Probability: **8 %** · Impact: HIGH)
+### Wildcard W-1 — Russian Hybrid-Warfare Escalation (Probability: **8 %** · Impact: HIGH)
 
 **Trigger**: SÄPO-confirmed major cyber/hybrid incident attributable to Russia, timed to:
 1. The 2026-Q3 Bn-task-group deployment to Finland, OR
@@ -686,7 +681,7 @@ Probabilities sum to 100 % (three base scenarios) + wildcard overlays; aligned t
 
 ---
 
-## Wildcard W-2 — Early Election / No-Confidence Vote (Probability: **5 %** · Impact: HIGH)
+### Wildcard W-2 — Early Election / No-Confidence Vote (Probability: **5 %** · Impact: HIGH)
 
 **Trigger**: Coalition partner (most likely L given press-freedom / KU33 tensions) withdraws support on a specific grundlag paragraph → cabinet-confidence test.
 
@@ -699,7 +694,7 @@ Probabilities sum to 100 % (three base scenarios) + wildcard overlays; aligned t
 
 ---
 
-## ACH (Analysis of Competing Hypotheses) Grid
+### ACH (Analysis of Competing Hypotheses) Grid
 
 Legend: ✅ consistent · ⚠️ ambiguous · ❌ inconsistent
 
@@ -722,7 +717,7 @@ Legend: ✅ consistent · ⚠️ ambiguous · ❌ inconsistent
 
 ---
 
-## Monitoring-Trigger Calendar (Mapped to Scenario Shifts)
+### Monitoring-Trigger Calendar (Mapped to Scenario Shifts)
 
 | Date | Trigger Event | Scenario Shift Rules |
 |------|--------------|---------------------|
@@ -743,7 +738,7 @@ Legend: ✅ consistent · ⚠️ ambiguous · ❌ inconsistent
 
 ---
 
-## Cross-Reference to Upstream
+### Cross-Reference to Upstream
 
 - Probability bands **aligned** to [`analysis/daily/2026-04-18/weekly-review/scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/scenario-analysis.md) base of 45 % / 35 % / 20 %, adjusted to **42 % / 33 % / 22 %** on the monthly scope reflecting: (a) visible shelter-crisis attack-vector maturation (H-B +1), (b) arithmetic widening for hung-parliament (H-C +2), (c) corresponding H-A narrowing (-3). Every departure justified per `SHARED_PROMPT_PATTERNS.md` §"Probability alignment".
 - Wildcards **inherited** from [`analysis/daily/2026-04-19/month-ahead/scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/scenario-analysis.md) with monthly-scope probability adjustment (W-1: 6 % → 8 %; W-2: 4 % → 5 %) as eFP-deployment window approaches.
@@ -753,8 +748,7 @@ Legend: ✅ consistent · ⚠️ ambiguous · ❌ inconsistent
 **Confidence Assessment**: Base-scenario probabilities — 🟧 MEDIUM · Wildcards — 🟥 LOW (inherent tail-risk uncertainty) · Monitoring triggers — 🟩 HIGH (calendar anchored to concrete procedural events).
 
 ## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/risk-assessment.md)_
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/risk-assessment.md -->
 
 **Analysis Date**: 2026-04-19  
 **Article Type**: monthly-review  
@@ -762,7 +756,7 @@ _Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## Risk Heat Map
+### Risk Heat Map
 
 ```mermaid
 xychart-beta
@@ -774,7 +768,7 @@ xychart-beta
 
 ---
 
-## Risk Register
+### Risk Register
 
 | Risk ID | Risk Description | Likelihood | Impact | Score | Mitigation |
 |---------|-----------------|-----------|--------|-------|-----------|
@@ -791,26 +785,26 @@ xychart-beta
 
 ---
 
-## Top Risk Analysis
+### Top Risk Analysis
 
-### R-02: Economic Growth Stall
+#### R-02: Economic Growth Stall
 Sweden's GDP growth at 0.82% in 2024 recovering from -0.20% contraction is fragile. Unemployment at 8.7% in 2025 exceeds the Nordic average. The extra budget fuel tax cut (HD03236) is a short-term stimulus that does not address structural competitiveness gaps. If the Riksbank holds rates elevated into Q3 2026, housing investment and consumer spending may remain suppressed through the election.
 
 **Probability**: 45% | **Impact if realised**: GDP below 0.5% in 2025 triggers fiscal stimulus debate
 
-### R-03: Women's Shelter Crisis
+#### R-03: Women's Shelter Crisis
 The interpellation on women's shelter closures (HD10438) from S signals a politically charged welfare issue. Dozens of shelters across Sweden have closed due to municipal funding cuts. The national violence strategy (HD03245) passed in April but is a framework without immediate ring-fenced funding. Social media amplification potential is high.
 
 **Probability**: 70% | **Impact if realised**: Major opposition campaign issue from May–September 2026
 
-### R-04: EU Environmental Infringement
+#### R-04: EU Environmental Infringement
 Active forestry deregulation (HD03242) removing restrictions on clear-cutting and species protection in productive forests risks EU Taxonomy non-compliance and potential infringement proceedings under the EU Biodiversity Strategy. Sweden's forestry industry generates approximately 3% of GDP — conflict between economic and environmental interests.
 
 **Probability**: 35% | **Impact if realised**: EU formal notice, international reputation damage
 
 ---
 
-## Political Stability Assessment
+### Political Stability Assessment
 
 ```mermaid
 gauge
@@ -824,7 +818,7 @@ gauge
 
 ---
 
-## Confidence Levels (5-Point Scale)
+### Confidence Levels (5-Point Scale)
 
 | Assessment Area | Confidence |
 |----------------|-----------|
@@ -836,8 +830,7 @@ gauge
 | Post-election scenarios | 🟥 LOW |
 
 ## SWOT Analysis
-
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/swot-analysis.md)_
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/swot-analysis.md -->
 
 **Analysis Date**: 2026-04-19  
 **Article Type**: monthly-review  
@@ -845,7 +838,7 @@ _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/mai
 
 ---
 
-## SWOT Matrix Overview
+### SWOT Matrix Overview
 
 ```mermaid
 quadrantChart
@@ -868,122 +861,122 @@ quadrantChart
 
 ---
 
-## STRENGTHS
+### STRENGTHS
 
-### 1. Government Coalition (M–SD–KD–L Perspective)
+#### 1. Government Coalition (M–SD–KD–L Perspective)
 - Delivered a comprehensive spring budget package (HD03100, HD0399, HD03236) on schedule
 - Criminal justice reform (HD03218, HD03246, HD03217) demonstrates legislative discipline across coalition partners
 - NATO Finland contribution (HD03220) passed with broad cross-party support, reinforcing security credibility
 - New environmental agency (HD03238) signals institutional modernisation while controlling environmental costs
 - **Evidence**: 272 propositions in 2025/26 session; HD03236 passed FiU by April 14
 
-### 2. Opposition Parties (S, V, MP Perspective)
+#### 2. Opposition Parties (S, V, MP Perspective)
 - Social Democrats produced 25+ interpellations in 30 days demonstrating active parliamentary scrutiny
 - Women's shelter closures (HD10438) and wage transparency (HD10437) create high-visibility attack vectors
 - MP successfully branded extra budget (HD03236) as anti-climate, mobilising green base
 - **Evidence**: HD024098 (MP motion against fuel tax cut), HD10437–HD10438 (S interpellations)
 
-### 3. Democratic Institutions
+#### 3. Democratic Institutions
 - Constitutional amendments properly processed as "vilande" (HD01KU32, HD01KU33) — system integrity maintained
 - Committee system processed 50 betankanden in the spring surge without backlog
 - Property rights strengthened: condominium register (HD01CU28) and ID requirements (HD01CU27) improve housing market transparency
 
-### 4. Economic Policy Framework
+#### 4. Economic Policy Framework
 - Inflation reduced from 8.5% (2023) to 2.84% (2024) — monetary policy normalising
 - GDP per capita at USD 57,117 — solid base despite slow growth
 - Energy price support mechanism (HD03236) provides household relief amid elevated energy costs
 
-### 5. Digital Governance
+#### 5. Digital Governance
 - State e-ID bill (TU21) passed — major milestone for digital public services
 - Data interoperability for public sector (HD03244) modernises government infrastructure
 - Both initiatives align with EU Digital Single Market requirements
 
 ---
 
-## WEAKNESSES
+### WEAKNESSES
 
-### 1. Economic Performance (Citizen/Household Perspective)
+#### 1. Economic Performance (Citizen/Household Perspective)
 - GDP growth at 0.82% (2024) severely lags Denmark (3.5%), Norway (2.1%), and EU average
 - Unemployment at 8.7% (2025) — highest in five years, disproportionately affecting youth
 - Fuel tax cut in extra budget is fiscal stimulus, not structural reform
 - **Evidence**: World Bank indicators SWE 2024 vs. DNK 2024
 
-### 2. Gender Policy (Women's Rights Advocates, Civil Society)
+#### 2. Gender Policy (Women's Rights Advocates, Civil Society)
 - Women's shelter closure wave (HD10438 interpellation) reveals funding gap between national violence strategy (HD03245) and local implementation
 - Wage gap persisting despite EU directive pressure (HD10437) — enforcement mechanism weak
 - State strategic violence prevention strategy passed legislatively but opposition questions resource allocation
 
-### 3. Environmental Governance (Environmental Organisations, Green Economy Stakeholders)
+#### 3. Environmental Governance (Environmental Organisations, Green Economy Stakeholders)
 - Active forestry deregulation (HD03242) risks EU Taxonomy and biodiversity commitments
 - Wind power municipal reform (HD03239) introduces local veto risk, potentially slowing green transition
 - New environmental permit agency (HD03238) raises efficiency questions — whether streamlining helps or weakens environmental protection
 
-### 4. Regional Disparities (Local Government, Rural Communities)
+#### 4. Regional Disparities (Local Government, Rural Communities)
 - Closure of state service offices in peripheral areas (HD11718 — southeastern Skåne question)
 - Municipal harbour reform (TU19) centralises port governance, raising concerns for smaller coastal municipalities
 - Police education reform (HD03237) — whether paying police training will improve rural recruitment unclear
 
-### 5. Constitutional Process (Legal Scholars, Opposition)
+#### 5. Constitutional Process (Legal Scholars, Opposition)
 - Two constitutional changes (HD01KU32, KU33) approved as "vilande" — means post-2026 election parliament must confirm, creating policy uncertainty
 - Digital records privacy in criminal investigations (HD01KU33) raises press freedom concerns
 - Accessibility requirements for media (HD01KU32) welcomed by disability rights groups
 
 ---
 
-## OPPORTUNITIES
+### OPPORTUNITIES
 
-### 1. Electoral Positioning (Government Coalition)
+#### 1. Electoral Positioning (Government Coalition)
 - Crime package (HD03218 double penalties, HD03246 youth, HD03217 civil servants) directly addresses top voter priority
 - Fuel tax cut (HD03236) delivers tangible pre-election relief to households
 - NATO contribution (HD03220) demonstrates security responsibility ahead of September vote
 - Window to consolidate government record before election campaign
 
-### 2. Green Industrial Strategy (Business Sector, EU Context)
+#### 2. Green Industrial Strategy (Business Sector, EU Context)
 - New electricity system law (HD03240) enables renewable energy expansion
 - Environmental permit agency reform (HD03238) could attract clean-tech investment if streamlined effectively
 - Swedish wind energy potential if municipality reform (HD03239) strikes right balance
 - Green Taxonomy-aligned investments could boost sluggish GDP
 
-### 3. Nordic Economic Integration (Business, Nordic Perspective)
+#### 3. Nordic Economic Integration (Business, Nordic Perspective)
 - Sweden's GDP per capita (USD 57,117) remains competitive despite slow growth
 - Housing market reforms (HD01CU28, HD01CU27) improve property rights transparency — foreign investment attractiveness
 - Digital infrastructure (e-ID, data interoperability) positions Sweden for digital economy leadership
 
-### 4. Ukraine/International Leadership (Diplomatic, EU Perspective)
+#### 4. Ukraine/International Leadership (Diplomatic, EU Perspective)
 - Special tribunal accession (HD03231) builds international rule-of-law credentials
 - NATO Finland contribution strengthens Nordic defence cooperation
 - Arms export control modernisation (HD03114) balances security and democratic accountability
 
-### 5. Social Cohesion Reform (Academic, Think-Tank Perspective)
+#### 5. Social Cohesion Reform (Academic, Think-Tank Perspective)
 - Guardianship reform (HD01CU22) strengthens legal protections for vulnerable individuals
 - New violence prevention strategy (HD03245) aligns with EU gender equality commitments
 - Wage transparency directive implementation creates structural market correction opportunity
 
 ---
 
-## THREATS
+### THREATS
 
-### 1. Electoral Volatility (Political Risk Analysts)
+#### 1. Electoral Volatility (Political Risk Analysts)
 - Five months to September 2026 election — legislative agenda increasingly campaign-driven
 - SD maintains legislative influence without formal government membership — creates accountability opacity
 - Opposition unified on cost-of-living and welfare issues; government fiscal conservatism may face backlash
 
-### 2. Economic Deterioration Risk (Economists, Fiscal Analysts)
+#### 2. Economic Deterioration Risk (Economists, Fiscal Analysts)
 - Sweden's GDP growth (0.82%) cannot sustain high unemployment (8.7%) without fiscal stimulus
 - Extra budget fuel tax cuts reduce revenue without structural employment improvements
 - Risk of "stagflation light" if energy prices spike again post-support programme
 
-### 3. Environmental/Climate Commitments (EU, International Institutions)
+#### 3. Environmental/Climate Commitments (EU, International Institutions)
 - Active forestry deregulation (HD03242) risks EU infringement proceedings
 - Wind power municipal veto (HD03239) may undermine Sweden's EU renewable energy targets
 - Climate credibility gap threatens Nordic leadership position
 
-### 4. Security Escalation (Defence Analysts, NATO Context)
+#### 4. Security Escalation (Defence Analysts, NATO Context)
 - NATO forward presence in Finland (HD03220) — cost trajectory unclear
 - Civil preparedness legislation in pipeline — significant budgetary implications
 - Any Baltic security deterioration could overwhelm planned defence spending (spring budget)
 
-### 5. Social Fragmentation (Social Policy Researchers, Media)
+#### 5. Social Fragmentation (Social Policy Researchers, Media)
 - Women's shelter closures (HD10438) signal civil society funding squeeze
 - Youth unemployment elevated — stricter penalties for young offenders (HD03246) without parallel rehabilitation investment risks recidivism
 - Tax demands on trafficking victims (HD11719) — administrative injustice case highlighting systemic issues
@@ -991,7 +984,7 @@ quadrantChart
 
 ---
 
-## Stakeholder Impact Matrix
+### Stakeholder Impact Matrix
 
 | Stakeholder Group | Primary Concern | Outlook | Evidence |
 |------------------|----------------|---------|----------|
@@ -1007,14 +1000,13 @@ quadrantChart
 | Academic/Think-tanks | Constitutional changes | Monitoring | HD01KU32/33 |
 
 ## Threat Analysis
-
-_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/threat-analysis.md)_
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/threat-analysis.md -->
 
 > **📋 Template reference:** `analysis/templates/threat-analysis.md` v3.3 (2026-06-01). Political Threat Taxonomy · Attack Tree · Kill Chain · Diamond Model — **NOT** STRIDE.
 
 ---
 
-## 📋 Threat Analysis Context
+### 📋 Threat Analysis Context
 
 | Field | Value |
 |-------|-------|
@@ -1027,11 +1019,11 @@ _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🏷️ Section 1: Political Threat Taxonomy Assessment
+### 🏷️ Section 1: Political Threat Taxonomy Assessment
 
 > **Severity Scale:** 1=Negligible · 2=Minor · 3=Moderate · 4=Major · 5=Severe. All 6 Political Threat Taxonomy categories assessed below — STRIDE categories are **not** used for political threat analysis.
 
-### Political Threat Landscape
+#### Political Threat Landscape
 
 ```mermaid
 graph LR
@@ -1060,7 +1052,7 @@ graph LR
     class NI1,TR1 minor
 ```
 
-### Threat Severity Table (all 6 categories covered)
+#### Threat Severity Table (all 6 categories covered)
 
 | # | Taxonomy Category | Threat (1-sentence) | Sev | Confidence | Evidence (dok_id) |
 |---|-------------------|---------------------|:---:|:----------:|-------------------|
@@ -1076,7 +1068,7 @@ graph LR
 
 ---
 
-## 🌳 Section 2: Attack Tree — Top Threat (AC-01: KU33 press-freedom narrowing)
+### 🌳 Section 2: Attack Tree — Top Threat (AC-01: KU33 press-freedom narrowing)
 
 ```mermaid
 graph TD
@@ -1109,7 +1101,7 @@ graph TD
 
 ---
 
-## ⛓️ Section 3: Kill Chain Assessment (Top Threat AC-01)
+### ⛓️ Section 3: Kill Chain Assessment (Top Threat AC-01)
 
 | Stage | Definition | Current State (2026-04-19) | Confidence |
 |-------|-----------|----------------------------|:----------:|
@@ -1125,7 +1117,7 @@ graph TD
 
 ---
 
-## 💎 Section 4: Diamond Model — Primary Threat Actor (PB-01 · Tidö coalition legislative concentration)
+### 💎 Section 4: Diamond Model — Primary Threat Actor (PB-01 · Tidö coalition legislative concentration)
 
 ```mermaid
 graph TD
@@ -1149,7 +1141,7 @@ graph TD
 
 ---
 
-## 👤 Section 5: Threat Actor Profile — ICO (Intent-Capability-Opportunity)
+### 👤 Section 5: Threat Actor Profile — ICO (Intent-Capability-Opportunity)
 
 | Actor | Intent | Capability | Opportunity | Composite |
 |-------|:------:|:----------:|:-----------:|:---------:|
@@ -1163,33 +1155,33 @@ graph TD
 
 ---
 
-## 🚨 Section 6: Identified Threats — Consolidated Register
+### 🚨 Section 6: Identified Threats — Consolidated Register
 
-### TH-01 · Pre-election Legislative Concentration (PB-01)
+#### TH-01 · Pre-election Legislative Concentration (PB-01)
 - **Taxonomy**: Power Balance · **Severity**: 4 / Major · **Confidence**: `[HIGH]`
 - **Evidence (dok_id)**: HD03100, HD0399, HD03236, HD03241, HD03218, HD03246, HD03217, HD03242, HD03239
 - **Analysis**: 4 budgets + crime trilogy + environmental deregulation cluster delivered in 30 days represents the legislative apex of the spring session. Velocity is legitimate but compresses Lagrådet review windows and opposition-motion preparation cycles. V + MP + S collectively filed 19 counter-motions but could not reach the 175-MP threshold for procedural blocking.
 - **Mitigation stance**: Lagrådet should receive full allocated review time on all grundlag-adjacent items; opposition should front-load second-reading challenges in new Riksdag.
 
-### TH-02 · KU33 Press-Freedom Narrowing — *vilande* (AC-01)
+#### TH-02 · KU33 Press-Freedom Narrowing — *vilande* (AC-01)
 - **Taxonomy**: Accountability · **Severity**: 4 / Major · **Confidence**: `[HIGH]`
 - **Evidence (dok_id)**: HD01KU33, HD01KU32
 - **Analysis**: Narrow interpretation of *formellt tillförd bevisning* in TF 2:1 — if confirmed in second reading — sets case-law precedent durable for ≥ 8 years. The *vilande* design effectively turns Sep-2026 into a constitutional referendum. See §2 Attack Tree and §3 Kill Chain above.
 - **Mitigation stance**: TU + Pressens Opinionsnämnd + Journalistförbundet co-ordinated remissvar; Lagrådet engagement; post-election statutory-clarity amendments.
 
-### TH-03 · Hybrid-Threat Exposure Post-eFP Deployment (PB-02)
+#### TH-03 · Hybrid-Threat Exposure Post-eFP Deployment (PB-02)
 - **Taxonomy**: Power Balance (external) · **Severity**: 3 / Moderate · **Confidence**: `[MEDIUM]` (SÄPO/MSB source gap — not in monthly MCP sync)
 - **Evidence (dok_id)**: HD03220, HD03231
 - **Analysis**: Battalion-task-group deployment to Finland Q3 2026 + leadership on Ukraine Aggression Tribunal (HD03231) elevate Sweden's public profile. External hybrid-threat actors (Russia per documented posture) may respond with information-ops, cyber probing, or physical-infrastructure harassment — leading indicators track through SÄPO/MSB bulletins, not parliamentary documents.
 - **Mitigation stance**: Nordic-Baltic intel-sharing; civil-society resilience; MSB heightened public-info posture through deployment window.
 
-### TH-04 · Civil-Servant Chilling Effect (LI-01)
+#### TH-04 · Civil-Servant Chilling Effect (LI-01)
 - **Taxonomy**: Legislative Integrity · **Severity**: 3 / Moderate · **Confidence**: `[HIGH]`
 - **Evidence (dok_id)**: HD03217, HD03218, HD03246
 - **Analysis**: Extended criminal liability for civil servants (HD03217) paired with a general punitive legislative turn (HD03218/HD03246) risks risk-aversion in agency decision-making — a measurable effect visible in FOI-response latencies and internal-memo culture. V + MP raised rule-of-law objections in committee.
 - **Mitigation stance**: Parallel expansion of administrative appeal mechanisms; JK (Justitiekanslern) monitoring.
 
-### TH-05 · Environmental-Governance Compliance Friction (LI-02 derivative)
+#### TH-05 · Environmental-Governance Compliance Friction (LI-02 derivative)
 - **Taxonomy**: Legislative Integrity · **Severity**: 3 / Moderate · **Confidence**: `[HIGH]`
 - **Evidence (dok_id)**: HD03242, HD03239, HD03238, HD03240
 - **Analysis**: Active-forestry rules (HD03242) and wind-power municipal veto (HD03239) risk EU Commission infringement procedures on EU Biodiversity 2030 commitments. New environmental-permit authority (HD03238) may be unstaffed before transition (Naturvårdsverket transition risk).
@@ -1197,7 +1189,7 @@ graph TD
 
 ---
 
-## 📊 Section 7: Severity Distribution
+### 📊 Section 7: Severity Distribution
 
 ```mermaid
 pie title Threat Distribution by Severity (Political Threat Taxonomy)
@@ -1212,7 +1204,7 @@ pie title Threat Distribution by Severity (Political Threat Taxonomy)
 
 ---
 
-## 🔭 Section 8: Forward Indicators — MCP-Detectable Escalation Signals
+### 🔭 Section 8: Forward Indicators — MCP-Detectable Escalation Signals
 
 | # | Indicator | Data Source | Trigger Threshold | Horizon |
 |---|-----------|-------------|-------------------|:-------:|
@@ -1227,7 +1219,7 @@ Cross-reference: `scenario-analysis.md` §Monitoring-Trigger Calendar, `executiv
 
 ---
 
-## 🔁 Section 9: Upstream Reconciliation
+### 🔁 Section 9: Upstream Reconciliation
 
 Threats carried forward from sibling runs in the 30-day lookback window:
 
@@ -1239,8 +1231,7 @@ Threats carried forward from sibling runs in the 30-day lookback window:
 Full reconciliation: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/methodology-reflection.md) §Upstream Watchpoint Reconciliation.
 
 ## Comparative International
-
-_Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/comparative-international.md)_
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/comparative-international.md -->
 
 | Field | Value |
 |-------|-------|
@@ -1253,7 +1244,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## Cluster Overview: Sweden's April 2026 Innovates / Follows / Diverges Scorecard
+### Cluster Overview: Sweden's April 2026 Innovates / Follows / Diverges Scorecard
 
 | Policy Cluster | Flagship Docs | SE Innovates | SE Follows | SE Diverges |
 |---------------|---------------|:------------:|:----------:|:-----------:|
@@ -1272,7 +1263,7 @@ _Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 1. Nordic Economic Baseline
+### 1. Nordic Economic Baseline
 
 ```mermaid
 xychart-beta
@@ -1298,7 +1289,7 @@ xychart-beta
 
 ---
 
-## 2. Criminal-Justice Reform Cluster
+### 2. Criminal-Justice Reform Cluster
 
 **Sweden**: `HD03218` mandatory double-penalty enhancement for crimes with gang-network connection; `HD03246` stricter youth-offender rules; `HD03217` extended criminal liability for civil servants acting outside authority.
 
@@ -1314,7 +1305,7 @@ xychart-beta
 
 ---
 
-## 3. Constitutional Press-Freedom Cluster (KU32 + KU33 *vilande*)
+### 3. Constitutional Press-Freedom Cluster (KU32 + KU33 *vilande*)
 
 **Sweden**: `HD01KU32` media-accessibility grundlag change; `HD01KU33` search-and-seizure of digital evidence narrowing "allmän handling" scope.
 
@@ -1331,7 +1322,7 @@ xychart-beta
 
 ---
 
-## 4. Environmental Deregulation Cluster & EU Friction
+### 4. Environmental Deregulation Cluster & EU Friction
 
 **Sweden**: `HD03238` new environmental permit authority · `HD03242` active forestry · `HD03239` wind-power municipal veto · `HD03240` new electricity-system law.
 
@@ -1348,11 +1339,11 @@ xychart-beta
 
 ---
 
-## 5. Geopolitical / NATO Cluster
+### 5. Geopolitical / NATO Cluster
 
 **Sweden**: `HD03220` 1,200 troops to Finland under enhanced Forward Presence (first post-accession operational contribution); `HD03231` + `HD03232` Ukraine tribunal + reparations commission.
 
-### NATO operational integration benchmark
+#### NATO operational integration benchmark
 
 | Framework Nation | Battalion in Baltics since | Lead Nation For | Notes |
 |-----------------|:-------------------------:|-----------------|-------|
@@ -1364,7 +1355,7 @@ xychart-beta
 
 **SE posture**: Sweden **FOLLOWS** the UK/DE/CA eFP model — contributing a framework-nation-style presence to Finland. No lead-nation role yet; expected 2027+ review cycle.
 
-### International-justice norm entrepreneurship
+#### International-justice norm entrepreneurship
 
 | Instrument | SE Position | EU Position | US Position | Russia Position |
 |-----------|:-----------:|:-----------:|:-----------:|:--------------:|
@@ -1377,11 +1368,11 @@ xychart-beta
 
 ---
 
-## 6. Gender / Equality Cluster
+### 6. Gender / Equality Cluster
 
 **Sweden**: `HD03245` national strategy against men's violence; `HD10437` EU Wage Transparency Directive interpellation; `HD10438` women's-shelter-closure interpellation.
 
-### EU Wage Transparency Directive 2023/970 transposition race (deadline **2026-06-07**)
+#### EU Wage Transparency Directive 2023/970 transposition race (deadline **2026-06-07**)
 
 | Jurisdiction | Status April 2026 | Expected Completion |
 |-------------|------------------|:------------------:|
@@ -1395,7 +1386,7 @@ xychart-beta
 
 ---
 
-## 7. Democratic-Resilience Benchmark (V-Dem + RSF + Freedom House)
+### 7. Democratic-Resilience Benchmark (V-Dem + RSF + Freedom House)
 
 | Metric | 🇸🇪 SE 2025 | 🇳🇴 NO 2025 | 🇩🇰 DK 2025 | 🇫🇮 FI 2025 | Δ vs 2020 |
 |-------|:---------:|:---------:|:---------:|:---------:|:--------:|
@@ -1408,7 +1399,7 @@ xychart-beta
 
 ---
 
-## Summary — Sweden's International Positioning in April 2026
+### Summary — Sweden's International Positioning in April 2026
 
 | Axis | Posture | Implication |
 |------|:-------:|-------------|
@@ -1426,7 +1417,7 @@ xychart-beta
 
 ---
 
-## Cross-Reference to Upstream
+### Cross-Reference to Upstream
 
 - Nordic baseline table **aligned** to [`analysis/daily/2026-04-18/weekly-review/comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/comparative-international.md) with the monthly-scope extension to include DE, NL, and EU institutions as required by `SHARED_PROMPT_PATTERNS.md` Tier-C contract (≥ 5 jurisdictions).
 - Wage-transparency benchmarking **updated** to reflect DK completion (Q1 2026) from last weekly-review snapshot.
@@ -1434,15 +1425,14 @@ xychart-beta
 **Classification**: Public · **Next review**: 2026-05-19 (monthly cadence) · **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.0 · `SHARED_PROMPT_PATTERNS.md` §"WORLD BANK ECONOMIC CONTEXT INTEGRATION"
 
 ## Classification Results
-
-_Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/classification-results.md)_
+<!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/classification-results.md -->
 
 **Analysis Date**: 2026-04-19  
 **Article Type**: monthly-review
 
 ---
 
-## 🔒 ISMS CIA-Triad Classification (Riksdagsmonitor Package)
+### 🔒 ISMS CIA-Triad Classification (Riksdagsmonitor Package)
 
 > **Scope**: This classification governs the **monthly-review intelligence package itself** — the 14 analysis artefacts, the article, and their handling. It is **not** a classification of Swedish government documents (which are classified per *Offentlighets- och sekretesslagen* by the respective authorities).
 
@@ -1452,7 +1442,7 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 | **Integrity** | 🟠 **HIGH** | Analysis informs political-accountability reporting and editorial decisions; factual errors (vote-count, dok_id, minister attribution) would propagate to 14 translated articles and cause reputational + informational harm. | `methodology-reflection.md` §Uncertainty Hot-Spots |
 | **Availability** | 🟡 **MEDIUM** | Articles are published daily; a 24-hour outage degrades but does not destroy journalistic value (retrospectives remain retrievable). No real-time operational dependency. | GitHub Pages SLA + dual-deploy (GH Pages + S3) |
 
-### Compliance Framework Mapping
+#### Compliance Framework Mapping
 
 | Framework | Applicable Controls | Status |
 |-----------|---------------------|--------|
@@ -1463,7 +1453,7 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 | **CIS Controls v8.1** | CIS 3.1 data-management process · CIS 3.2 data-inventory (dok_id manifest) · CIS 14.9 documentation of data processing | ✅ Covered |
 | **Riksdagsmonitor ISMS policies** | `AI_Policy.md`, `Secure_Development_Policy.md`, `CLASSIFICATION.md`, `Information_Security_Policy.md` (Hack23 ISMS-PUBLIC) | ✅ Covered |
 
-### Retention & Handling
+#### Retention & Handling
 
 - **Retention**: Permanent public archive in git history + GitHub Pages. `documents/` raw JSON retained indefinitely for provenance audit.
 - **Sharing**: No restrictions. All artefacts suitable for external distribution, syndication, and academic citation.
@@ -1472,7 +1462,7 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## Document Classification by Policy Domain
+### Document Classification by Policy Domain
 
 ```mermaid
 pie title Policy Domain Distribution (April 2026)
@@ -1490,7 +1480,7 @@ pie title Policy Domain Distribution (April 2026)
 
 ---
 
-## Classification Matrix
+### Classification Matrix
 
 | dok_id | Title (EN) | Domain | Type | Significance | Electoral Relevance |
 |--------|-----------|--------|------|-------------|---------------------|
@@ -1516,38 +1506,37 @@ pie title Policy Domain Distribution (April 2026)
 
 ---
 
-## Thematic Clusters
+### Thematic Clusters
 
-### Cluster 1: Pre-Election Crime Package (Very High Electoral Salience)
+#### Cluster 1: Pre-Election Crime Package (Very High Electoral Salience)
 Documents: HD03218, HD03246, HD03217, HD03237
 - Narrative: SD-driven agenda delivered through coalition legislation
 - Opposition stance: S/V abstain or oppose, C partially supportive
 
-### Cluster 2: Spring Budget Package (Very High Electoral Salience)
+#### Cluster 2: Spring Budget Package (Very High Electoral Salience)
 Documents: HD03100, HD0399, HD03236, HD03241, HD03243
 - Narrative: Responsible budget + household relief
 - Opposition stance: MP opposes fuel cuts; S demands structural investment
 
-### Cluster 3: Environmental Reform Cluster (High EU/International Relevance)
+#### Cluster 3: Environmental Reform Cluster (High EU/International Relevance)
 Documents: HD03238, HD03239, HD03240, HD03242, MJU19
 - Narrative: Streamlined regulation for green economy growth
 - Opposition stance: V/MP strongly oppose deregulation; C mixed
 
-### Cluster 4: Social Protection Gap (High Public Attention)
+#### Cluster 4: Social Protection Gap (High Public Attention)
 Documents: HD10438, HD10437, HD03245, HD11719
 - Narrative: Gap between legislative intent and implementation funding
 - Opportunity for S to campaign on welfare state restoration
 
 ## Cross-Reference Map
-
-_Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/cross-reference-map.md)_
+<!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/cross-reference-map.md -->
 
 **Analysis Date**: 2026-04-19  
 **Article Type**: monthly-review
 
 ---
 
-## Document Relationship Graph
+### Document Relationship Graph
 
 ```mermaid
 graph TD
@@ -1606,7 +1595,7 @@ graph TD
 
 ---
 
-## Cross-Reference Table
+### Cross-Reference Table
 
 | Primary dok_id | Related dok_id | Relationship | Significance |
 |---------------|----------------|-------------|-------------|
@@ -1622,7 +1611,7 @@ graph TD
 
 ---
 
-## Sibling Article Type Connections
+### Sibling Article Type Connections
 
 | This Article | Sibling Type | Connection |
 |-------------|-------------|-----------|
@@ -1632,7 +1621,7 @@ graph TD
 
 ---
 
-## Legislative Pipeline Dependencies
+### Legislative Pipeline Dependencies
 
 ```mermaid
 flowchart LR
@@ -1645,8 +1634,7 @@ flowchart LR
 ```
 
 ## Methodology Reflection & Limitations
-
-_Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/methodology-reflection.md)_
+<!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/methodology-reflection.md -->
 
 | Field | Value |
 |-------|-------|
@@ -1659,7 +1647,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## 1. Methodology Application Matrix
+### 1. Methodology Application Matrix
 
 | Rule | Applied? | Evidence |
 |------|:--------:|---------|
@@ -1675,7 +1663,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## 2. 🔁 Upstream Watchpoint Reconciliation (Mandatory per SHARED_PROMPT_PATTERNS.md §Recent Daily Knowledge-Base Synthesis)
+### 2. 🔁 Upstream Watchpoint Reconciliation (Mandatory per SHARED_PROMPT_PATTERNS.md §Recent Daily Knowledge-Base Synthesis)
 
 **Lookback scope**: 30 days of sibling daily runs (2026-03-20 → 2026-04-19) + `weekly-review/2026-04-18` + `month-ahead/2026-04-19` + prior monthly baseline (`2026-03-30`).
 
@@ -1705,8 +1693,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 ---
 
 ## Data Download Manifest
-
-_Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/data-download-manifest.md)_
+<!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/data-download-manifest.md -->
 
 **Generated**: 2026-04-19 15:25 UTC
 **Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer, get_dokument_innehall
@@ -1721,7 +1708,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 > `analysis/methodologies/ai-driven-analysis-guide.md` and using templates
 > from `analysis/templates/`.
 
-## Document Counts by Type
+### Document Counts by Type
 
 - **propositions**: 200 documents
 - **motions**: 200 documents
@@ -1731,7 +1718,25 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 - **questions**: 200 documents
 - **interpellations**: 200 documents
 
-## Data Quality Notes
+### Data Quality Notes
 
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-04-17 via lookback fallback — check freshness indicators.
+
+## Article Sources
+
+Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
+
+- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/executive-brief.md)
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/synthesis-summary.md)
+- [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/significance-scoring.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/stakeholder-perspectives.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/scenario-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/threat-analysis.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/comparative-international.md)
+- [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/classification-results.md)
+- [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/cross-reference-map.md)
+- [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/methodology-reflection.md)
+- [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/data-download-manifest.md)

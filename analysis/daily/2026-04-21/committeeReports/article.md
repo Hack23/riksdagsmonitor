@@ -5,7 +5,7 @@ date: 2026-04-21
 subfolder: committeeReports
 slug: 2026-04-21-committeeReports
 source_folder: analysis/daily/2026-04-21/committeeReports
-generated_at: 2026-04-25T11:09:59.882Z
+generated_at: 2026-04-25T15:36:04.681Z
 language: en
 layout: article
 ---
@@ -23,8 +23,7 @@ Use this guide to read the article as a political-intelligence product rather th
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Executive Brief
-
-_Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief.md)_
+<!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief.md -->
 
 | Field | Value |
 |-------|-------|
@@ -36,13 +35,13 @@ _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🧭 BLUF (Bottom Line Up Front)
+### 🧭 BLUF (Bottom Line Up Front)
 
 On 2026-04-21 the Riksdag's committees adopted a **14-report package** that operationalises a **three-pillar electoral bet**: fiscal relief (FiU48, 4.1B SEK fuel and energy subsidies), enforcement credibility (SfU22 migration inhibition), and constitutional legacy (KU32/KU33 *vilande* grundlagsändringar that bind the next Riksdag). The **headline finding** is that this is the **first time since the 2014 decemberöverenskommelse** that a sitting government has coordinated pre-election fiscal, enforcement, and constitutional measures within a single committee week. FiU48 and SfU22 both score **22/25** on the significance matrix; their joint adoption defines the spring 2026 inflection point. `[HIGH]`
 
 ---
 
-## 🎯 Three Things to Know
+### 🎯 Three Things to Know
 
 1. **FiU48 is simultaneously an election relief measure AND an EU compliance correction.** Cutting petrol tax by 82 öre/liter and diesel by 319 SEK/m³ brings Sweden to the **EU Energy Tax Directive 2003/96/EC floor** — the lowest rate permitted by Brussels. The 4.1B SEK cost is absorbed as a supplementary budget and expires 30 September 2026 — **14 days after the election**. If the government is re-elected it will face pressure to extend; if the opposition wins it inherits a sunset clause that is politically costly to let lapse.
 
@@ -52,7 +51,7 @@ On 2026-04-21 the Riksdag's committees adopted a **14-report package** that oper
 
 ---
 
-## 📊 Top Five Reports, Ranked by Significance
+### 📊 Top Five Reports, Ranked by Significance
 
 | # | Dok_id | Report | Score | Committee | Watch Out For |
 |:-:|--------|--------|:-----:|-----------|---------------|
@@ -68,7 +67,7 @@ See [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🎯 Scenario Probabilities (from [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/scenario-analysis.md))
+### 🎯 Scenario Probabilities (from [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/scenario-analysis.md))
 
 | Scenario | Probability | Political outcome |
 |----------|:-----------:|-------------------|
@@ -80,7 +79,7 @@ See [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🛡️ Four Risks to Monitor Closely
+### 🛡️ Four Risks to Monitor Closely
 
 | Risk | L×I | Why it matters | Update signal |
 |------|:---:|----------------|---------------|
@@ -93,7 +92,7 @@ See [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/a
 
 ---
 
-## 📣 14-Day Watch Window
+### 📣 14-Day Watch Window
 
 | Timing | Signal | What to prepare |
 |--------|--------|-----------------|
@@ -108,7 +107,7 @@ See [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/a
 
 ---
 
-## 🎙️ Recommended Newsroom Framings (Verified Evidence-Based)
+### 🎙️ Recommended Newsroom Framings (Verified Evidence-Based)
 
 | Frame | Backed by | Confidence |
 |-------|-----------|:----------:|
@@ -120,7 +119,7 @@ See [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/a
 
 ---
 
-## ❌ Framings to Avoid (Factually Weak or Oversimplified)
+### ❌ Framings to Avoid (Factually Weak or Oversimplified)
 
 - ❌ "FiU48 is a permanent tax cut" — sunset clause 30 Sept 2026; structural continuation requires separate legislation
 - ❌ "SfU22 deports more people" — it creates a no-status residual cohort, not new removal capacity
@@ -130,7 +129,7 @@ See [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/a
 
 ---
 
-## 🔗 Deeper Reading
+### 🔗 Deeper Reading
 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/synthesis-summary.md) — Cross-document synthesis + mermaid map
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/significance-scoring.md) — 5-dimension matrix across 15 documents
@@ -152,8 +151,7 @@ See [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/a
 **Classification**: Public · **Next Review**: 2026-04-28
 
 ## Synthesis Summary
-
-_Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/synthesis-summary.md)_
+<!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/synthesis-summary.md -->
 
 **Date**: 2026-04-21  
 **Riksmöte**: 2025/26  
@@ -164,7 +162,7 @@ _Source: [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## 🎯 Top Story
+### 🎯 Top Story
 
 **Government Fires Election-Year Populist Salvo: Fuel Tax Cut and Energy Price Relief**
 
@@ -176,7 +174,7 @@ SfU22 — introducing "inhibition" (uppskjuten verkställighet) to replace tempo
 
 ---
 
-## 📊 Document Rankings by Significance
+### 📊 Document Rankings by Significance
 
 | Rank | dok_id | Title | Significance | Domain |
 |------|--------|-------|-------------|--------|
@@ -197,7 +195,7 @@ SfU22 — introducing "inhibition" (uppskjuten verkställighet) to replace tempo
 
 ---
 
-## 🏛️ Committee Activity Overview
+### 🏛️ Committee Activity Overview
 
 ```mermaid
 graph TB
@@ -228,29 +226,29 @@ graph TB
 
 ---
 
-## 🔑 Key Themes This Cycle
+### 🔑 Key Themes This Cycle
 
-### 1. 🔴 Election-Year Fiscal Relief (HD01FiU48) — TOP STORY
+#### 1. 🔴 Election-Year Fiscal Relief (HD01FiU48) — TOP STORY
 The supplementary budget is the government's most significant economic intervention since the 2022 energy crisis support packages. Fuel tax reduction to EU minimum levels (petrol: 82 öre/liter cut; diesel: 319 SEK/m³ cut) across May-September 2026 will benefit every Swedish driver — approximately 5.7 million licensed drivers and 4.8 million registered vehicles. The el- och gasprisstöd (electricity and gas price support) reimburses January-February 2026 heating costs. Total cost: 4.1 billion SEK. The government's justification — Middle East conflict and high winter heating bills — is technically accurate but politically transparent: this is relief timed to coincide with the final campaign buildup period before September 14, 2026.
 
-### 2. 🔴 Migration Enforcement Tightening (HD01SfU22)
+#### 2. 🔴 Migration Enforcement Tightening (HD01SfU22)
 The inhibition reform closes the temporary-permit pathway while extending deportation enforcement machinery. This is the government's most direct operationalization of its Tidöavtal migration commitments. Risk: ECHR exposure; Opportunity: electoral reward from enforcement-focused voters.
 
-### 3. 🟣 Dual Constitutional Amendments (HD01KU32, HD01KU33)
+#### 3. 🟣 Dual Constitutional Amendments (HD01KU32, HD01KU33)
 Two constitution-level changes adopted as "vilande" (pending) requiring re-affirmation after the September 2026 election. KU32 expands accessibility requirements applicable to press-freedom-protected media; KU33 restricts public access to digitally seized materials in criminal investigations. Both require the post-election Riksdag to pass identical wording — binding the next government to these changes regardless of who wins.
 
-### 4. 🔵 Digital Infrastructure Modernization (HD01TU21)
+#### 4. 🔵 Digital Infrastructure Modernization (HD01TU21)
 The state e-ID proposal moves Sweden toward eIDAS2 compliance and challenges BankID's near-monopoly. Cross-party support likely; implementation timeline 2027-2028. Digital equity benefit for 15-20% of Swedes lacking BankID access.
 
-### 5. 🟢 Agricultural & Climate Accountability (HD01MJU19, MJU20, MJU21)
+#### 5. 🟢 Agricultural & Climate Accountability (HD01MJU19, MJU20, MJU21)
 Three MJU-related reports this cycle: waste legislation reform (circular economy), Riksrevisionen audit of climate policy framework effectiveness, and agricultural emissions audit. Together these constitute the most comprehensive environmental accountability package of the 2025/26 session.
 
-### 6. 🏠 Housing & Property Market Reforms (HD01CU27, CU28)
+#### 6. 🏠 Housing & Property Market Reforms (HD01CU27, CU28)
 Two civil law reforms: a national housing register for all bostadsrätter (condominiums) with improved mortgage transparency, and stricter identity requirements for property registration — targeting money laundering in the real estate sector. Both effective 2026-2027.
 
 ---
 
-## ⚠️ Aggregate Risk Assessment
+### ⚠️ Aggregate Risk Assessment
 
 | Risk Area | Score | Key Driver |
 |-----------|-------|------------|
@@ -263,7 +261,7 @@ Two civil law reforms: a national housing register for all bostadsrätter (condo
 
 ---
 
-## 🗳️ Election 2026 Aggregate Assessment
+### 🗳️ Election 2026 Aggregate Assessment
 
 **Most electorally salient**: HD01FiU48 (fuel/energy relief — direct voter pocket benefit)  
 **Second tier**: HD01SfU22 (migration enforcement — top-3 voter issue)  
@@ -274,9 +272,9 @@ Two civil law reforms: a national housing register for all bostadsrätter (condo
 
 ---
 
-## 🔗 Cross-Document Analysis
+### 🔗 Cross-Document Analysis
 
-### The Election-Year Economic Triangle
+#### The Election-Year Economic Triangle
 The FiU48 supplementary budget, the SfU22 migration enforcement reform, and the KU32/33 constitutional amendments form a deliberate electoral triangle:
 - **FiU48**: "We put money in your pocket" — economic populism targeting centrist/right voters
 - **SfU22**: "We closed the migration loopholes" — enforcement credibility targeting SD/M base
@@ -284,7 +282,7 @@ The FiU48 supplementary budget, the SfU22 migration enforcement reform, and the 
 
 This pattern — economic relief + enforcement + constitutional legacy — reflects a government that expects to lose some ground in September 2026 but is positioning for a legacy and a competitive return.
 
-### EU Compliance Chain
+#### EU Compliance Chain
 Four reports this cycle are directly EU-mandated:
 - **FiU48**: EU energy tax directive minimum levels (fuel tax floor)
 - **TU21**: EU eIDAS2 Regulation (state digital identity)
@@ -293,17 +291,16 @@ Four reports this cycle are directly EU-mandated:
 
 Sweden faces simultaneous compliance pressure across four policy domains. The FiU48 fuel tax cut is paradoxically both an election relief measure AND an EU compliance correction — bringing Sweden to directive minimum levels.
 
-### Enforcement Architecture Expansion
+#### Enforcement Architecture Expansion
 Both **SfU22** (migration inhibition) and **TU22** (tachograph) expand state enforcement capacity through surveillance mechanisms (geographic restrictions/mandatory check-ins; digital tachograph monitoring). Together with **TU19** (municipal port security in NATO context) and **CU27** (property registration identity verification), this suggests a broad legislative trend toward enforcement infrastructure buildup across migration, transport, and property domains.
 
 ## Significance Scoring
-
-_Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/significance-scoring.md)_
+<!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/significance-scoring.md -->
 
 **Date**: 2026-04-21 | **Analyst**: news-committee-reports | **Method**: 5-dimension scoring  
 **Updated**: 14:45 UTC — includes HD01FiU48 (new top story, extra ändringsbudget 2026)
 
-## Scoring Matrix
+### Scoring Matrix
 
 | dok_id | Electoral | Constitutional | EU Impact | Immediacy | Controversy | TOTAL |
 |--------|-----------|---------------|-----------|-----------|-------------|-------|
@@ -323,7 +320,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 | HD01TU22 | 2 | 1 | 4 | 3 | 2 | **12/25** |
 | HD01KU43 | 1 | 2 | 1 | 1 | 1 | **6/25** |
 
-## Scoring Dimensions
+### Scoring Dimensions
 
 - **Electoral**: Impact on 2026 election voter mobilization (1=marginal, 5=top issue)
 - **Constitutional**: Affects fundamental rights, Riksdag powers, or rule of law (1=admin, 5=constitutional)
@@ -331,7 +328,7 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 - **Immediacy**: Implementation timeline relative to election (1=long-term, 5=pre-election)
 - **Controversy**: Opposition party resistance strength (1=consensus, 5=fierce opposition)
 
-## Top Story Recommendation
+### Top Story Recommendation
 
 **Co-headline**: HD01FiU48 (22/25 — Extra ändringsbudget: fuel tax cut + energy price relief, 4.1B SEK, election-year relief package) and HD01SfU22 (22/25 — Migration enforcement inhibition reform)
 
@@ -342,19 +339,18 @@ _Source: [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/b
 **Third tier**: HD01TU21 (17/25 — State e-ID), HD01MJU21 (17/25 — Agriculture climate audit), HD01MJU19 (17/25 — Waste legislation reform)
 
 ## Stakeholder Perspectives
-
-_Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/stakeholder-perspectives.md)_
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/stakeholder-perspectives.md -->
 
 **Date**: 2026-04-21 | **Framework**: 8-Group Political Intelligence Model | **Analyst**: news-committee-reports  
 **Updated**: 14:52 UTC — HD01FiU48 (extra ändringsbudget) added as primary document for all 8 groups
 
-## Overview
+### Overview
 
 Fourteen committee reports analyzed across 8 mandatory stakeholder groups. Primary focus on **HD01FiU48** (fuel tax cut + energy price relief, 4.1B SEK) as the most broadly impactful document, **HD01SfU22** (migration enforcement) for political significance, with secondary perspectives on KU32/KU33 (constitutional amendments), TU21 (e-ID), and MJU21 (agriculture climate).
 
 ---
 
-## 1. Citizens
+### 1. Citizens
 
 **HD01SfU22**: Swedish public opinion on migration enforcement remains strongly divided. SIFO polling (Jan 2026) shows 54% support tighter enforcement including stricter return procedures; 31% prioritize humanitarian protection. Working-class voters — SD's strongest demographic — overwhelmingly support deterrence measures. Elderly and welfare-dependent communities track TU21 (e-ID accessibility) as a practical concern.
 
@@ -364,7 +360,7 @@ Fourteen committee reports analyzed across 8 mandatory stakeholder groups. Prima
 
 ---
 
-## 2. Government Coalition (M, SD, KD, L)
+### 2. Government Coalition (M, SD, KD, L)
 
 **Moderaterna (M)**: Champions SfU22 as essential enforcement tool; supports TU21 as digital modernization; endorses MJU21 recommendations for efficiency-first agricultural reform.
 
@@ -378,7 +374,7 @@ Fourteen committee reports analyzed across 8 mandatory stakeholder groups. Prima
 
 ---
 
-## 3. Opposition Bloc (S, V, MP, C)
+### 3. Opposition Bloc (S, V, MP, C)
 
 **Socialdemokraterna (S)**: Opposes SfU22's elimination of temporary permits; argues it creates "stateless limbo." Supports TU21 in principle but demands privacy safeguards. Cautiously supports MJU21 recommendations.
 
@@ -390,7 +386,7 @@ Fourteen committee reports analyzed across 8 mandatory stakeholder groups. Prima
 
 ---
 
-## 4. Business/Industry
+### 4. Business/Industry
 
 **SfU22**: Transport and construction sectors (reliant on asylum labor) face labor supply uncertainty. Insurance industry monitors inhibited persons' legal status for contract validity.
 
@@ -400,7 +396,7 @@ Fourteen committee reports analyzed across 8 mandatory stakeholder groups. Prima
 
 ---
 
-## 5. Civil Society
+### 5. Civil Society
 
 **SfU22**: FARR (Flyktinggruppernas Riksråd), Red Cross, and Amnesty International will challenge inhibition orders through legal aid and court challenges. Public advocacy campaigns expected.
 
@@ -410,7 +406,7 @@ Fourteen committee reports analyzed across 8 mandatory stakeholder groups. Prima
 
 ---
 
-## 6. International/EU
+### 6. International/EU
 
 **SfU22**: EU Returns Directive (2008/115/EC) permits enforcement delay mechanisms; inhibition must comply. European Commission migration compliance reviews monitor Sweden's returns performance.
 
@@ -420,7 +416,7 @@ Fourteen committee reports analyzed across 8 mandatory stakeholder groups. Prima
 
 ---
 
-## 7. Judiciary/Constitutional
+### 7. Judiciary/Constitutional
 
 **SfU22**: Migration Court of Appeal (Migrationsöverdomstolen) will face novel questions on geographic restriction proportionality and ECHR Article 5 (liberty). Constitutional review (KU) should assess compatibility with basic freedoms.
 
@@ -430,7 +426,7 @@ Fourteen committee reports analyzed across 8 mandatory stakeholder groups. Prima
 
 ---
 
-## 8. Media/Public Opinion
+### 8. Media/Public Opinion
 
 **SfU22**: Aftonbladet, Expressen (left-leaning tabloids) will run personal stories of affected families; Svenska Dagbladet, Dagens Nyheter (quality press) will cover legal arguments. SVT will seek balanced reporting. Risk of "Sweden's cruel immigration system" international narrative.
 
@@ -440,51 +436,51 @@ Fourteen committee reports analyzed across 8 mandatory stakeholder groups. Prima
 
 ---
 
-## HD01FiU48 — Extra Ändringsbudget: Supplementary Analysis Across 8 Groups
+### HD01FiU48 — Extra Ändringsbudget: Supplementary Analysis Across 8 Groups
 
-### 1. Citizens (FiU48)
+#### 1. Citizens (FiU48)
 All 5.7 million Swedish licensed drivers benefit from the 82 öre/liter petrol reduction. Rural and suburban households — disproportionately car-dependent — gain the most. Elderly households and those with gas heating benefit from el- och gasprisstöd. Transit users and urban apartment renters see minimal direct benefit. **Net verdict**: High positive reception across a broad voter base, though climate-conscious citizens (primarily MP/V voters) may view the measure negatively.
 
-### 2. Government Coalition (FiU48)
+#### 2. Government Coalition (FiU48)
 **M (Moderaterna)**: Embraces fiscal conservatism caveat — supports as temporary, emergency measure; highlights EU compliance angle (directive minimum)
 **SD (Sverigedemokraterna)**: Champions as "government that delivers for ordinary Swedes" — rural drivers are core SD demographic  
 **KD (Kristdemokraterna)**: Frames as family protection — heating costs and commuter costs both benefit family households  
 **L (Liberalerna)**: Most cautious — monitors carbon pricing implications; may emphasize "temporary" framing  
 **Coalition unity**: VERY HIGH on FiU48 — one of strongest cross-party coalition moments since 2022 energy crisis
 
-### 3. Opposition Bloc (FiU48)
+#### 3. Opposition Bloc (FiU48)
 **S (Socialdemokraterna)**: Split — working-class drivers benefit, but S climate credibility threatened by supporting fossil fuel price cuts. Expected: accept without enthusiasm, criticize "election-year populism"  
 **V (Vänsterpartiet)**: Will oppose — frames as fossil fuel subsidy; demands that savings be redirected to public transport  
 **MP (Miljöpartiet)**: Will strongly oppose — EU minimum fossil fuel tax is antithema to climate policy  
 **C (Centerpartiet)**: Will welcome privately (rural voter base heavily car-dependent) but may maintain public silence on climate grounds  
 **Opposition fragmentation**: FiU48 splits the opposition, with V/MP opposing and C likely neutral/positive
 
-### 4. Business/Industry (FiU48)
+#### 4. Business/Industry (FiU48)
 **Transport sector (haulage, logistics)**: Significant direct savings on diesel — 319 SEK/m³ cut reduces operating costs for every Swedish haulage company. Estimates: 1.5-2% reduction in per-km fuel costs for heavy goods vehicles  
 **Agriculture (LRF)**: Combined benefit from FiU48 (fuel costs) and SkU23 (EV charging) — agriculture uses both diesel machinery and increasingly electric alternatives  
 **Retail fuel (Circle K, Preem, ST1, OKQ8)**: Volume increase expected as price elasticity triggers additional fill-up frequency  
 **EV sector**: Paradoxically disadvantaged — ICE vehicles made relatively more competitive vs. electric  
 **Energy providers**: El- och gasprisstöd creates one-time balance sheet item; minimal operational impact
 
-### 5. Civil Society (FiU48)
+#### 5. Civil Society (FiU48)
 **Naturskyddsföreningen, WWF, Greenpeace**: Will run "fossil fuel subsidy" campaign framing; pressure government on climate targets  
 **Konsumentverket**: Monitors whether petrol stations pass through full savings (price transparency obligation)  
 **Consumer organizations**: Support — cost-of-living relief visible and immediate  
 **Disability organizations**: Energy support benefits households relying on electric equipment (mobility aids, medical devices)
 
-### 6. International/EU (FiU48)
+#### 6. International/EU (FiU48)
 **European Commission**: Will note Sweden temporarily reducing fossil fuel taxes toward directive minimum — no formal infringement since Sweden remains at or above ETD floor. However, Commission Energy Transition DG may express concern about signal  
 **Nordic partners (DK, NO, FI)**: Norway exempt (non-EU). Denmark and Finland have higher fuel taxes — no competitive harmonization pressure  
 **IPCC/Climate bodies**: Sweden reducing its carbon price signal contradicts Paris Agreement ambition language  
 **NATO partners**: No direct implications for defense posture
 
-### 7. Judiciary/Constitutional (FiU48)
+#### 7. Judiciary/Constitutional (FiU48)
 **Riksdagen (legislative review)**: FiU mechanism legally uncontroversial; Finance Committee finds "special reasons" requirement met  
 **Swedish courts**: No constitutional challenge expected — extraordinary budget is standard legislative tool  
 **Skattemyndigheten (Tax Authority)**: Administrative implementation straightforward — existing systems handle tax rate changes  
 **EU Court of Justice**: Compliance with Energy Taxation Directive minimum levels — no violation
 
-### 8. Media/Public Opinion (FiU48)
+#### 8. Media/Public Opinion (FiU48)
 **Aftonbladet, Expressen**: Will run prominent "How much you save" price comparison graphics — positive coverage for government  
 **Dagens Nyheter, Svenska Dagbladet**: "Election-year populism" analytical angle; expert quotes on climate consequences  
 **SVT/SR**: Balanced — consumer benefit story + climate policy concern  
@@ -492,8 +488,7 @@ All 5.7 million Swedish licensed drivers benefit from the 82 öre/liter petrol r
 **International media (FT, Politico Europe)**: "Sweden cuts fuel taxes before election" story fits European right-populism narrative
 
 ## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/scenario-analysis.md)_
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/scenario-analysis.md -->
 
 **Date**: 2026-04-21 | **Analyst**: news-committee-reports workflow
 **Framework**: Bayesian scenario tree per `political-risk-methodology.md` §Scenario Tree Analysis.
@@ -501,7 +496,7 @@ _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob
 
 ---
 
-## 🎯 Scenario-Space Definition
+### 🎯 Scenario-Space Definition
 
 Five scenarios span the most plausible futures for the tri-pillar package (FiU48, SfU22, KU32/33). Each scenario is conditioned on the 14 September 2026 election and on ECHR/EU-court litigation outcomes through Q2 2027.
 
@@ -527,7 +522,7 @@ graph TB
 
 ---
 
-## 📊 Scenario Probability Matrix
+### 📊 Scenario Probability Matrix
 
 | Scenario | Prior P | Conditional P(Elec outcome) | Posterior P |
 |----------|:-------:|:---------------------------:|:-----------:|
@@ -541,9 +536,9 @@ Sums to 1.00 (normalised). Conditional probabilities informed by: Novus + SIFO A
 
 ---
 
-## 🎭 Scenario Narratives
+### 🎭 Scenario Narratives
 
-### 🟢 BASE (P=0.42) — Legacy Package Holds
+#### 🟢 BASE (P=0.42) — Legacy Package Holds
 
 **Political landscape**: Coalition retained with narrower margin (171–178 seats); FiU48 sunsets 30 Sept 2026 as scheduled; post-election Riksdag re-affirms KU32 and KU33 in Q4 2026 / Q1 2027; SfU22 amended minor-procedurally to address Migrationsöverdomstolen preliminary ruling (e.g. narrower geographic-restriction radius).
 
@@ -555,7 +550,7 @@ Sums to 1.00 (normalised). Conditional probabilities informed by: Novus + SIFO A
 - Opposition narrative: "They bought your votes and walked"
 - Coalition narrative: "We delivered relief + reform + legacy"
 
-### 🔵 BULL (P=0.12) — Electoral Tailwind
+#### 🔵 BULL (P=0.12) — Electoral Tailwind
 
 **Political landscape**: Coalition retained + gains. FiU48 extended to 31 Dec 2026 then gradually unwound to March 2027. Constitutional package passes with increased margin.
 
@@ -565,7 +560,7 @@ Sums to 1.00 (normalised). Conditional probabilities informed by: Novus + SIFO A
 - ECHR challenge filed but government uses electoral mandate to resist
 - SD + M consolidate enforcement credibility narrative
 
-### 🔴 BEAR (P=0.28) — Partial Reversal
+#### 🔴 BEAR (P=0.28) — Partial Reversal
 
 **Political landscape**: S-led minority government forms (S+V informal support + MP confidence-and-supply). Coalition unable to form alternative majority.
 
@@ -576,7 +571,7 @@ Sums to 1.00 (normalised). Conditional probabilities informed by: Novus + SIFO A
 - KU33: **lapses** — S-led government does not re-propose; 3-year cooling-off period begins
 - Tidöavtal effectively defunct post-2026
 
-### 🟣 TAIL (P=0.08) — Full Reversal + ECHR Strike
+#### 🟣 TAIL (P=0.08) — Full Reversal + ECHR Strike
 
 **Political landscape**: S+V+MP+C majority forms. Migrationsöverdomstolen issues preliminary ruling striking SfU22 §4 before new government takes office.
 
@@ -588,7 +583,7 @@ Sums to 1.00 (normalised). Conditional probabilities informed by: Novus + SIFO A
 - Narrative victory: "Courts protected constitutional rights that parliament tried to abolish"
 - ECtHR Strasbourg filing may be withdrawn as moot
 
-### ⚡ WILDCARD (P=0.10) — Inconclusive Election
+#### ⚡ WILDCARD (P=0.10) — Inconclusive Election
 
 **Political landscape**: 4–6 weeks of talks produce a technical-PM government (Schlüter/Johansson-style cross-bloc figure). No working majority.
 
@@ -601,7 +596,7 @@ Sums to 1.00 (normalised). Conditional probabilities informed by: Novus + SIFO A
 
 ---
 
-## 📈 Decision-Relevant Variables for Each Scenario
+### 📈 Decision-Relevant Variables for Each Scenario
 
 | Variable | BASE | BULL | BEAR | TAIL | WILDCARD |
 |----------|:----:|:----:|:----:|:----:|:--------:|
@@ -615,7 +610,7 @@ Sums to 1.00 (normalised). Conditional probabilities informed by: Novus + SIFO A
 
 ---
 
-## 🎯 Bayesian Update Protocol
+### 🎯 Bayesian Update Protocol
 
 Per `political-risk-methodology.md`, scenario probabilities must be updated monthly or when any of these evidence events occur:
 
@@ -631,7 +626,7 @@ Per `political-risk-methodology.md`, scenario probabilities must be updated mont
 
 ---
 
-## 🧭 Monitoring Triggers
+### 🧭 Monitoring Triggers
 
 | Trigger | Threshold | Action |
 |---------|-----------|--------|
@@ -643,7 +638,7 @@ Per `political-risk-methodology.md`, scenario probabilities must be updated mont
 
 ---
 
-## 📉 Worst-Case / Black-Swan Considerations
+### 📉 Worst-Case / Black-Swan Considerations
 
 Beyond the five scenarios, three low-probability high-impact events worth monitoring:
 
@@ -653,7 +648,7 @@ Beyond the five scenarios, three low-probability high-impact events worth monito
 
 ---
 
-## 🔗 Cross-Methodology Linkage
+### 🔗 Cross-Methodology Linkage
 
 - **Risk** [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/risk-assessment.md) — BEAR/TAIL scenarios materialise top-tier risks R-SfU22-1 + R-FiU48-1
 - **Threat** [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/threat-analysis.md) — TAIL scenario = realised Threat T1 (SfU22 ECHR strike)
@@ -668,13 +663,12 @@ Beyond the five scenarios, three low-probability high-impact events worth monito
 **Next Bayesian update**: 2026-05-21 (or triggered by monitor events above).
 
 ## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/risk-assessment.md)_
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/risk-assessment.md -->
 
 **Date**: 2026-04-21 | **Framework**: ISO 31000 + ISMS | **Analyst**: news-committee-reports  
 **Updated**: 14:52 UTC — Expanded to 14 documents, FiU48 fiscal risks added
 
-## Risk Heatmap
+### Risk Heatmap
 
 ```mermaid
 quadrantChart
@@ -696,9 +690,9 @@ quadrantChart
     KU42-Oversight: [0.30, 0.70]
 ```
 
-## Priority Risks
+### Priority Risks
 
-### 🔴 CRITICAL (L×I ≥ 15)
+#### 🔴 CRITICAL (L×I ≥ 15)
 
 | Risk ID | Description | L | I | Score | Owner | Timeline |
 |---------|-------------|---|---|-------|-------|----------|
@@ -707,7 +701,7 @@ quadrantChart
 | R-SfU22-1 | ECHR challenge to inhibition geographic restrictions | 3 | 5 | 15 | Justitiedepartementet | June 2026 |
 | R-SfU22-2 | Political weaponization of "stateless limbo" narrative | 4 | 4 | 16 | Government comms | Election 2026 |
 
-### 🟠 HIGH (L×I 8-14)
+#### 🟠 HIGH (L×I 8-14)
 
 | Risk ID | Description | L | I | Score |
 |---------|-------------|---|---|-------|
@@ -719,7 +713,7 @@ quadrantChart
 | R-KU32-1 | Post-election Riksdag fails to re-affirm KU32 (accessibility constitutional amendment) | 3 | 3 | 9 |
 | R-KU33-1 | Press freedom critics mobilize against KU33 (digital seizure ruling) | 3 | 3 | 9 |
 
-### 🟢 MODERATE (L×I ≤ 7)
+#### 🟢 MODERATE (L×I ≤ 7)
 
 | Risk ID | Description | L | I | Score |
 |---------|-------------|---|---|-------|
@@ -727,7 +721,7 @@ quadrantChart
 | R-CU28-1 | Housing register implementation delay | 2 | 3 | 6 |
 | R-SkU23-1 | EV charging exemption creates unequal subsidy landscape | 2 | 3 | 6 |
 
-## Mitigation Priority
+### Mitigation Priority
 
 1. **FiU48**: Sunset clause communication — government must proactively frame September 30, 2026 end date to prevent "permanent" expectation from forming
 2. **SfU22**: Legal aid access provisions + geographic restriction proportionality review
@@ -736,13 +730,12 @@ quadrantChart
 5. **MJU21**: Assign lead agency (Jordbruksverket) with binding targets
 
 ## SWOT Analysis
-
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/swot-analysis.md)_
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/swot-analysis.md -->
 
 **Date**: 2026-04-21 | **Analyst**: news-committee-reports | **Scope**: All 14 committee reports  
 **Updated**: 14:50 UTC — Expanded to 14 documents including HD01FiU48 (extra ändringsbudget)
 
-## Overall Legislative Batch Assessment
+### Overall Legislative Batch Assessment
 
 ```mermaid
 graph LR
@@ -790,9 +783,9 @@ graph LR
     style T4 fill:#cc8844,color:#fff
 ```
 
-## Dimension Details
+### Dimension Details
 
-### STRENGTHS
+#### STRENGTHS
 | Strength | Evidence | Docs | Confidence |
 |---------|---------|------|------------|
 | Fiscal relief to voters | Fuel tax cut 82 öre/liter + el/gas support; 5.7M drivers benefit | HD01FiU48 | 🟦VERY HIGH |
@@ -803,7 +796,7 @@ graph LR
 | Constitutional legacy | KU32/KU33 vilande bind next government to accessibility and seizure rules | HD01KU32, HD01KU33 | 🟩HIGH |
 | Circular economy progress | Waste legislation clarifies responsibility, enables circular economy | HD01MJU19 | 🟧MEDIUM |
 
-### WEAKNESSES
+#### WEAKNESSES
 | Weakness | Evidence | Docs | Confidence |
 |---------|---------|------|------------|
 | Fossil fuel price signal regression | Fuel tax to EU minimum undercuts Sweden's carbon leadership | HD01FiU48 | 🟩HIGH |
@@ -813,7 +806,7 @@ graph LR
 | Technical displacement challenge | BankID monopoly entrenched; state e-ID faces adoption battle | HD01TU21 | 🟩HIGH |
 | Climate audit non-response | MJU20 climate framework audit shows policy fragmentation | HD01MJU20 | 🟧MEDIUM |
 
-### OPPORTUNITIES
+#### OPPORTUNITIES
 | Opportunity | Evidence | Docs | Confidence |
 |------------|---------|------|------------|
 | Economic narrative dominance | FiU48 gives government "on your side" economic story | HD01FiU48 | 🟦VERY HIGH |
@@ -822,7 +815,7 @@ graph LR
 | Housing market reform credit | Two CU reforms improve consumer protection | HD01CU27, HD01CU28 | 🟧MEDIUM |
 | Environmental compliance | MJU19 positions Sweden as circular economy leader | HD01MJU19 | 🟧MEDIUM |
 
-### THREATS
+#### THREATS
 | Threat | L×I | Docs | Confidence |
 |-------|-----|------|------------|
 | Opposition reframes FiU48 as fossil fuel subsidy | 16 | HD01FiU48 | 🟩HIGH |
@@ -834,8 +827,7 @@ graph LR
 | KU32/KU33 campaign mobilization against constitutional amendments | 10 | HD01KU32, HD01KU33 | 🟧MEDIUM |
 
 ## Threat Analysis
-
-_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/threat-analysis.md)_
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/threat-analysis.md -->
 
 | Field | Value |
 |-------|-------|
@@ -851,7 +843,7 @@ _Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/m
 
 ---
 
-## 🏷️ Section 1: Political Threat Taxonomy Assessment
+### 🏷️ Section 1: Political Threat Taxonomy Assessment
 
 ```mermaid
 graph LR
@@ -877,7 +869,7 @@ graph LR
     style PB1 fill:#FF9800,color:#000
 ```
 
-### Dimension Scores (0–5)
+#### Dimension Scores (0–5)
 
 | Dimension | Score | Primary evidence | Direction |
 |-----------|:-----:|------------------|-----------|
@@ -892,7 +884,7 @@ graph LR
 
 ---
 
-## 🌳 Section 2: Attack Tree — Top Threat "SfU22 struck down by court"
+### 🌳 Section 2: Attack Tree — Top Threat "SfU22 struck down by court"
 
 The `political-threat-framework.md` mandates Attack Trees for the top threat.
 
@@ -917,7 +909,7 @@ graph TB
     style A1 fill:#FFC107,color:#000
 ```
 
-### Leaf-Node Attributes (per framework §Attack Tree Construction Protocol)
+#### Leaf-Node Attributes (per framework §Attack Tree Construction Protocol)
 
 | Leaf | Feasibility | Detectability | Cost to actor | Evidence |
 |------|:-----------:|:-------------:|:-------------:|----------|
@@ -931,7 +923,7 @@ graph TB
 
 ---
 
-## ⛓️ Section 3: Political Kill Chain — SfU22 ECHR Challenge Progression
+### ⛓️ Section 3: Political Kill Chain — SfU22 ECHR Challenge Progression
 
 ```mermaid
 flowchart LR
@@ -950,7 +942,7 @@ flowchart LR
     style Ach fill:#7B1FA2,color:#FFF
 ```
 
-### Kill-Chain Disruption Assessment
+#### Kill-Chain Disruption Assessment
 
 | Stage | Current status | Disruption opportunity (for government) |
 |-------|----------------|----------------------------------------|
@@ -964,7 +956,7 @@ flowchart LR
 
 ---
 
-## 💎 Section 4: Diamond Model — SfU22 Primary Threat Actor
+### 💎 Section 4: Diamond Model — SfU22 Primary Threat Actor
 
 ```mermaid
 graph TB
@@ -990,7 +982,7 @@ graph TB
 
 ---
 
-## 👤 Section 5: Threat Actor ICO Profile — FARR-led Coalition
+### 👤 Section 5: Threat Actor ICO Profile — FARR-led Coalition
 
 | Dimension | Assessment |
 |-----------|-----------|
@@ -1002,23 +994,23 @@ graph TB
 
 ---
 
-## 🎯 Section 6: Secondary Threats
+### 🎯 Section 6: Secondary Threats
 
-### T2 — FiU48 Climate-Framework Accountability Bypass (Severity 3)
+#### T2 — FiU48 Climate-Framework Accountability Bypass (Severity 3)
 
 **Taxonomy**: Accountability + Narrative Integrity.
 **Mechanism**: Klimatlagen (2017:720) §5 mandates climate-impact assessment of fiscal measures with emission significance. FiU48 was expedited as emergency supplementary budget, compressing that review. Klimatpolitiska rådet's Q3 2026 memo is expected to flag the bypass.
 **Disruption**: Government proactively publishes retrospective climate-impact note before Q3 2026.
 **Evidence**: HD01FiU48 motivering §3 (emergency justification); Skr. 2025/26:95 (MJU20 Riksrevisionen audit of Climate Policy Framework).
 
-### T3 — Dual *Vilande* Post-Election Failure (Severity 3)
+#### T3 — Dual *Vilande* Post-Election Failure (Severity 3)
 
 **Taxonomy**: Democratic Process.
 **Mechanism**: RF 8:14 *vilande* mechanism requires identical wording in next Riksdag. KU33 (digital-seizure *access restriction* via TF-amendment) has ≤50% re-affirmation probability in BEAR scenarios (see [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/coalition-mathematics.md) §*Vilande* Math) — an S-led government could view the restriction as an undue narrowing of public-records access and decline to re-propose. Failure to re-affirm triggers three-year waiting period before re-proposal.
 **Disruption**: None during this parliament; probability depends on 14 Sept election outcome.
 **Evidence**: HD01KU32, HD01KU33 *vilande* status confirmed in betänkandetexts.
 
-### T4 — Banking Sector Lobbying vs TU21 (Severity 2–3)
+#### T4 — Banking Sector Lobbying vs TU21 (Severity 2–3)
 
 **Taxonomy**: Power Balance + Legislative Integrity.
 **Mechanism**: Svenska Bankföreningen + BankID consortium have demonstrated 2018–2024 pattern of delaying legislation via regulatory capture of utredning references. eIDAS2 deadline 2026 narrows the window.
@@ -1027,7 +1019,7 @@ graph TB
 
 ---
 
-## 🔁 Section 7: Cross-Methodology Linkage
+### 🔁 Section 7: Cross-Methodology Linkage
 
 - **Threat T1 (SfU22 ECHR)** → Risk [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/risk-assessment.md) R-SfU22-1 (L=3, I=5, Score=15) + SWOT [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/swot-analysis.md) W2 "ECHR exposure" + Stakeholder [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/stakeholder-perspectives.md) §3 opposition framing.
 - **Threat T2 (FiU48 accountability)** → Risk R-FiU48-1 (L=4, I=4, Score=16) + SWOT W1 "fiscal precedent stickiness" + Election lens [`election-2026-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/election-2026-implications.md) §Tier 1.
@@ -1035,7 +1027,7 @@ graph TB
 
 ---
 
-## 📡 Section 8: Forward MCP-Detectable Indicators
+### 📡 Section 8: Forward MCP-Detectable Indicators
 
 | Indicator | MCP tool | Expected window | Meaning |
 |-----------|----------|-----------------|---------|
@@ -1048,7 +1040,7 @@ graph TB
 
 ---
 
-## 📅 Section 9: Threat Evolution Timeline (v2.3 template requirement)
+### 📅 Section 9: Threat Evolution Timeline (v2.3 template requirement)
 
 ```mermaid
 timeline
@@ -1070,7 +1062,7 @@ timeline
 
 ---
 
-## 📉 Section 10: Threat Level Change
+### 📉 Section 10: Threat Level Change
 
 | Period | Overall level | Drivers |
 |--------|---------------|---------|
@@ -1086,10 +1078,9 @@ timeline
 ## Per-document intelligence
 
 ### HD01CU27
+<!-- source: documents/HD01CU27-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01CU27-analysis.md -->
 
-_Source: [`documents/HD01CU27-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01CU27-analysis.md)_
-
-## 📋 Document Identity
+### 📋 Document Identity
 
 | Field | Value |
 |-------|-------|
@@ -1108,13 +1099,13 @@ _Source: [`documents/HD01CU27-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## 🎯 Executive Summary
+### 🎯 Executive Summary
 
 HD01CU27 adopts stricter identity-verification requirements at Lantmäteriet for property-title (*lagfart*) and leasehold-registration applications. This is the civil-affairs committee's **anti-money-laundering** contribution to the coalition's Tidöavtal-era financial-crime agenda: tightened identity checks prevent the use of property transactions to launder proceeds. Expected cross-party majority (≈330–0) reflects broad consensus on the policy direction, though implementation cost to Lantmäteriet is the principal operational concern. **[MEDIUM]** (summary data only)
 
 ---
 
-## 📊 Political Classification
+### 📊 Political Classification
 
 ```mermaid
 graph LR
@@ -1139,34 +1130,34 @@ graph LR
 
 ---
 
-## 💪 SWOT Analysis
+### 💪 SWOT Analysis
 
-### Strengths
+#### Strengths
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | AML alignment | Aligns with 6AMLD + Financial Action Task Force recommendations | 🟨 MEDIUM |
 | Broad cross-party support | All parties back principle; only implementation details debated | 🟨 MEDIUM |
 
-### Weaknesses
+#### Weaknesses
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Implementation cost to Lantmäteriet | Agency remissvar cites staffing + IT costs | 🟨 MEDIUM |
 | Non-resident purchaser friction | Transaction slowdown for foreign buyers | 🟨 MEDIUM |
 
-### Opportunities
+#### Opportunities
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Contributes to Sweden's FATF compliance | Q3 2026 mutual evaluation cycle | 🟨 MEDIUM |
 | Integrates with TU21 state e-ID for verification layer | [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/cross-reference-map.md) §4 | 🟨 MEDIUM |
 
-### Threats
+#### Threats
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Implementation delay if Lantmäteriet under-resourced | — | 🟨 MEDIUM |
 
 ---
 
-## ⚠️ Risk Assessment
+### ⚠️ Risk Assessment
 
 | Risk ID | Description | L | I | L×I |
 |---------|-------------|:-:|:-:|:---:|
@@ -1177,7 +1168,7 @@ graph LR
 
 ---
 
-## 📈 Significance Scoring
+### 📈 Significance Scoring
 
 | Dimension | Score | Rationale |
 |-----------|:-----:|-----------|
@@ -1190,7 +1181,7 @@ graph LR
 
 ---
 
-## 👥 Stakeholder Impact
+### 👥 Stakeholder Impact
 
 | Group | Position | Impact |
 |-------|----------|--------|
@@ -1201,7 +1192,7 @@ graph LR
 
 ---
 
-## 🔁 Same-Day Cross-Reference
+### 🔁 Same-Day Cross-Reference
 
 - **HD01CU28** (housing register): Thematic sibling; see [`HD01CU28-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01CU28-analysis.md)
 - **HD01TU21** (state e-ID): Provides identity-layer architecture for CU27 verification; [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/cross-reference-map.md) §4
@@ -1209,7 +1200,7 @@ graph LR
 
 ---
 
-## 📡 Forward Indicators
+### 📡 Forward Indicators
 
 | Signal | Window | MCP tool |
 |--------|--------|----------|
@@ -1220,10 +1211,9 @@ graph LR
 ---
 
 ### HD01CU28
+<!-- source: documents/HD01CU28-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01CU28-analysis.md -->
 
-_Source: [`documents/HD01CU28-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01CU28-analysis.md)_
-
-## 📋 Document Identity
+### 📋 Document Identity
 
 | Field | Value |
 |-------|-------|
@@ -1242,13 +1232,13 @@ _Source: [`documents/HD01CU28-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## 🎯 Executive Summary
+### 🎯 Executive Summary
 
 HD01CU28 establishes a national register for bostadsrätter (cooperative apartments) — a long-awaited market-transparency reform correcting an information asymmetry peculiar to Sweden's housing market. Unlike single-family homes and condominiums in most European jurisdictions, Swedish cooperative apartments have historically had no centralised ownership register, creating opacity, financial-crime vulnerability, and difficulty with mortgage-security assessment. The register aligns cooperative apartments with EU transparency norms and integrates with TU21 state e-ID and HD01CU27 identity verification. Implementation timeline spans 2027–2029. **[MEDIUM]** (summary data only)
 
 ---
 
-## 📊 Political Classification
+### 📊 Political Classification
 
 ```mermaid
 graph LR
@@ -1273,35 +1263,35 @@ graph LR
 
 ---
 
-## 💪 SWOT Analysis
+### 💪 SWOT Analysis
 
-### Strengths
+#### Strengths
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Closes long-standing market-transparency gap | CU: Finansinspektionen 2023 report cited as basis | 🟨 MEDIUM |
 | AML/transparency architecture | Enables systemic financial-crime monitoring | 🟨 MEDIUM |
 | Mortgage-security valuation | Aligns cooperative apartments with condominium norms | 🟨 MEDIUM |
 
-### Weaknesses
+#### Weaknesses
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Privacy concern for individual owners | Register scope (full owner disclosure vs aggregated) debated | 🟨 MEDIUM |
 | Bostadsrättsföreningar administrative burden | HSB + Riksbyggen remissvar cite small-association cost | 🟨 MEDIUM |
 
-### Opportunities
+#### Opportunities
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Proptech innovation pipeline | Opens data for third-party mortgage/analytics products | 🟨 MEDIUM |
 | EU transparency-directive alignment | — | 🟨 MEDIUM |
 
-### Threats
+#### Threats
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | GDPR compliance challenges on full-owner disclosure | — | 🟨 MEDIUM |
 
 ---
 
-## ⚠️ Risk Assessment
+### ⚠️ Risk Assessment
 
 | Risk ID | Description | L | I | L×I |
 |---------|-------------|:-:|:-:|:---:|
@@ -1313,7 +1303,7 @@ graph LR
 
 ---
 
-## 📈 Significance Scoring
+### 📈 Significance Scoring
 
 | Dimension | Score | Rationale |
 |-----------|:-----:|-----------|
@@ -1326,7 +1316,7 @@ graph LR
 
 ---
 
-## 👥 Stakeholder Impact
+### 👥 Stakeholder Impact
 
 | Group | Position | Impact |
 |-------|----------|--------|
@@ -1338,14 +1328,14 @@ graph LR
 
 ---
 
-## 🔁 Same-Day Cross-Reference
+### 🔁 Same-Day Cross-Reference
 
 - **HD01CU27** (identity at lagfart): Integrated verification pipeline; see [`HD01CU27-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01CU27-analysis.md)
 - **HD01TU21** (state e-ID): Identity-layer dependency; [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/cross-reference-map.md) §4
 
 ---
 
-## 📡 Forward Indicators
+### 📡 Forward Indicators
 
 | Signal | Window | MCP tool |
 |--------|--------|----------|
@@ -1356,8 +1346,7 @@ graph LR
 ---
 
 ### HD01FiU48
-
-_Source: [`documents/HD01FiU48-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01FiU48-analysis.md)_
+<!-- source: documents/HD01FiU48-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01FiU48-analysis.md -->
 
 **Document**: HD01FiU48  
 **Title**: Extra ändringsbudget för 2026 – Sänkt skatt på drivmedel samt el- och gasprisstöd  
@@ -1370,7 +1359,7 @@ _Source: [`documents/HD01FiU48-analysis.md`](https://github.com/Hack23/riksdagsm
 
 ---
 
-## 1. Document Summary
+### 1. Document Summary
 
 The Finance Committee (FiU) recommends that the Riksdag approve the government's extraordinary supplementary budget for 2026. The budget contains two measures:
 
@@ -1394,14 +1383,14 @@ The Finance Committee (FiU) recommends that the Riksdag approve the government's
 
 ---
 
-## 2. Six Analytical Lenses
+### 2. Six Analytical Lenses
 
-### Lens 1: Constitutional/Legal Dimension
+#### Lens 1: Constitutional/Legal Dimension
 The extraordinary budget (extra ändringsbudget) mechanism requires FiU to find "special reasons" (particularly strong justification). The committee accepts the government's framing. The fuel tax cut specifically aligns energy tax levels with EU minimum thresholds — paradoxically making this a compliance-oriented measure as well as an economic relief measure. No constitutional challenge expected.
 
 **Legal risk**: LOW [HIGH confidence]
 
-### Lens 2: Electoral/Political Dimension
+#### Lens 2: Electoral/Political Dimension
 This is the most electorally transparent measure in the April 2026 batch. The timing — five months before the September 14, 2026 general election — with a measure directly affecting petrol prices at every Swedish gas station — is an unambiguous electoral intervention. The government frames it as emergency relief; political scientists will note that emergency relief packages in election years are a textbook electoral strategy.
 
 **Electoral benefit**: The 82 öre/liter cut represents approximately 5% of typical pump price. With ~5.7 million licensed drivers and ~4.8 million registered cars in Sweden, the measure is personally felt by a majority of eligible voters. The rural and suburban voter profile — already disproportionately car-dependent — aligns with the M+SD+KD+L coalition's core demographic.
@@ -1420,14 +1409,14 @@ graph LR
     style Budget fill:#aa0000,color:#fff
 ```
 
-### Lens 3: Policy Substance Dimension
+#### Lens 3: Policy Substance Dimension
 The fuel tax cut brings Swedish energy taxes to the EU directive minimum — a floor set by the Energy Taxation Directive 2003/96/EC. This is a legitimate EU compliance observation, but the directive minimum was set in 2003 and has not been inflation-adjusted since, meaning it represents an extremely low floor by modern standards. Sweden has historically maintained much higher fuel taxes as part of its carbon pricing strategy.
 
 **Policy reversal significance**: Sweden had among the EU's highest fuel taxes pre-cut. Reducing to minimum temporarily reverses decades of progressive carbon pricing at the pump. If this becomes a political precedent, it complicates Sweden's Climate Action Plan targets and carbon price trajectory.
 
 **Energy support**: The el- och gasprisstöd fills a political gap — the high January-February 2026 heating season coincided with a period of above-normal electricity spot prices (due to cold snap + reduced Norwegian hydro). The government cannot change past prices but can compensate affected households retroactively.
 
-### Lens 4: Economic/Fiscal Dimension
+#### Lens 4: Economic/Fiscal Dimension
 ```mermaid
 quadrantChart
     title FiU48 Fiscal Risk Assessment
@@ -1448,7 +1437,7 @@ The 4.1 billion SEK total cost in election year represents approximately 0.04% o
 
 **Economic data (World Bank verified)**: Swedish inflation peaked at 8.5% in 2023 (FP.CPI.TOTL.ZG) before falling to 2.8% in 2024 — household energy cost burden remains politically salient even as headline inflation normalized. GDP growth recovered to 0.82% in 2024 (from -0.20% in 2023), providing fiscal headroom for temporary stimulus. Total 4.1B SEK cost ≈ 0.04% of Swedish GDP (603.7B USD in 2024).
 
-### Lens 5: Stakeholder Impact Dimension
+#### Lens 5: Stakeholder Impact Dimension
 
 | Stakeholder | Impact | Assessment |
 |-------------|--------|------------|
@@ -1461,7 +1450,7 @@ The 4.1 billion SEK total cost in election year represents approximately 0.04% o
 | State budget | -4.1B SEK 2026 | 🟧 MEDIUM risk |
 | EV drivers (SkU23 context) | Fuel competitors benefited not them | 🟧 MEDIUM concern |
 
-### Lens 6: Forward Indicators/Timeline Dimension
+#### Lens 6: Forward Indicators/Timeline Dimension
 | Indicator | Date | Significance |
 |-----------|------|-------------|
 | Fuel tax cut takes effect | May 1, 2026 | Immediate petrol price impact at pumps |
@@ -1473,7 +1462,7 @@ The 4.1 billion SEK total cost in election year represents approximately 0.04% o
 
 ---
 
-## 3. Evidence Table
+### 3. Evidence Table
 
 | Claim | Evidence | Confidence |
 |-------|---------|------------|
@@ -1490,7 +1479,7 @@ The 4.1 billion SEK total cost in election year represents approximately 0.04% o
 
 ---
 
-## 4. Risk Assessment (ISO 31000)
+### 4. Risk Assessment (ISO 31000)
 
 | Risk | L | I | L×I | Mitigation |
 |------|---|---|-----|-----------|
@@ -1502,7 +1491,7 @@ The 4.1 billion SEK total cost in election year represents approximately 0.04% o
 
 ---
 
-## 5. SWOT (FiU48-specific)
+### 5. SWOT (FiU48-specific)
 
 | Strengths | Weaknesses |
 |-----------|-----------|
@@ -1519,10 +1508,9 @@ The 4.1 billion SEK total cost in election year represents approximately 0.04% o
 | Precedent for post-election energy policy | Competing with EV charging tax exemption (SkU23) narrative |
 
 ### HD01KU32
+<!-- source: documents/HD01KU32-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU32-analysis.md -->
 
-_Source: [`documents/HD01KU32-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU32-analysis.md)_
-
-## 📋 Document Identity
+### 📋 Document Identity
 
 | Field | Value |
 |-------|-------|
@@ -1541,13 +1529,13 @@ _Source: [`documents/HD01KU32-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## 🎯 Executive Summary
+### 🎯 Executive Summary
 
 HD01KU32 adopts as *vilande* under Regeringsformen 8:14 a grundlagsändring extending digital-accessibility obligations to press-freedom-protected media (TF- and YGL-registered publications). Its consequence is that the next Riksdag — chosen 14 September 2026 — must pass **identical wording** for the amendment to take effect (expected 1 January 2028). Cross-party support is broad; disability-rights organisations and all four opposition parties endorse the policy direction. The threat surface is not political opposition but procedural continuity: if even minor textual amendments are required after the election, the three-year cooling-off period restarts. **[HIGH]**
 
 ---
 
-## 📊 Political Classification
+### 📊 Political Classification
 
 ```mermaid
 graph LR
@@ -1576,35 +1564,35 @@ graph LR
 
 ---
 
-## 💪 SWOT Analysis
+### 💪 SWOT Analysis
 
-### Strengths
+#### Strengths
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | CRPD Article 9 compliance strengthening | KU32 *motivering* cites UN Committee on the Rights of Persons with Disabilities 2022 observations | 🟩 HIGH |
 | Aligns with EU Accessibility Act 2025 | KU32 cross-references Directive (EU) 2019/882 implementation | 🟩 HIGH |
 | Disability-rights sector unified in support | Funka + Synskadades Riksförbund remissvar supportive | 🟩 HIGH |
 
-### Weaknesses
+#### Weaknesses
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Press-freedom concern from small publishers | TU: SVT Online + large publishers assert cost burden for small TF-registered publications | 🟨 MEDIUM |
 | Enforcement ambiguity for user-generated content | KU32 §4 leaves implementation to förordning; scope unclear for comment sections | 🟨 MEDIUM |
 
-### Opportunities
+#### Opportunities
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Aligns Sweden with Nordic accessibility leadership (Norway AT, Finland WCAG) | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/comparative-international.md) §disability | 🟩 HIGH |
 | CRPD 2027 Sweden review reports | Strengthens narrative | 🟨 MEDIUM |
 
-### Threats
+#### Threats
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Re-affirmation risk in fragmented post-election Riksdag | [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/coalition-mathematics.md) §*Vilande* Math: P=0.85–0.95 re-affirm | 🟨 MEDIUM |
 
 ---
 
-## ⚠️ Risk Assessment
+### ⚠️ Risk Assessment
 
 | Risk ID | Description | L | I | L×I | Mitigation |
 |---------|-------------|:-:|:-:|:---:|-----------|
@@ -1615,7 +1603,7 @@ graph LR
 
 ---
 
-## 🌳 Attack Tree — "KU32 lapses without re-affirmation" (goal: lapse)
+### 🌳 Attack Tree — "KU32 lapses without re-affirmation" (goal: lapse)
 
 ```mermaid
 graph TB
@@ -1633,7 +1621,7 @@ Low-probability threat scenario overall.
 
 ---
 
-## 📈 Significance Scoring
+### 📈 Significance Scoring
 
 | Dimension | Score (1–5) | Rationale |
 |-----------|:-----------:|-----------|
@@ -1646,7 +1634,7 @@ Low-probability threat scenario overall.
 
 ---
 
-## 👥 Stakeholder Impact
+### 👥 Stakeholder Impact
 
 | Group | Position | Impact |
 |-------|----------|--------|
@@ -1658,7 +1646,7 @@ Low-probability threat scenario overall.
 
 ---
 
-## 🔁 Same-Day Cross-Reference
+### 🔁 Same-Day Cross-Reference
 
 - **HD01KU33** (dual *vilande*): Shared RF 8:14 procedural vehicle and post-election timing; see [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/cross-reference-map.md) §3
 - **HD01KU42** (utgiftsområden): Constitutional-budget structure; same committee
@@ -1666,7 +1654,7 @@ Low-probability threat scenario overall.
 
 ---
 
-## 📡 Forward Indicators
+### 📡 Forward Indicators
 
 | Signal | Window | MCP tool |
 |--------|--------|----------|
@@ -1679,10 +1667,9 @@ Low-probability threat scenario overall.
 **Related**: [`HD01KU33-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU33-analysis.md) (sibling *vilande*)
 
 ### HD01KU33
+<!-- source: documents/HD01KU33-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU33-analysis.md -->
 
-_Source: [`documents/HD01KU33-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU33-analysis.md)_
-
-## 📋 Document Identity
+### 📋 Document Identity
 
 | Field | Value |
 |-------|-------|
@@ -1703,7 +1690,7 @@ _Source: [`documents/HD01KU33-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## 🎯 Executive Summary
+### 🎯 Executive Summary
 
 HD01KU33 adopts as *vilande grundlagsändring* an amendment to Tryckfrihetsförordningen (TF) establishing that **digital recordings seized or copied during a *husrannsakan* (police search) are not deemed *allmänna handlingar***. The rule also covers copies transferred between authorities pursuant to custody of the seized information carrier. A carve-back preserves public-records status for any recording that is *affixed* to a formal investigation or to separate authority business. As a grundlagsändring, re-affirmation by the post-election Riksdag is required; intended effect date 1 January 2027.
 
@@ -1711,7 +1698,7 @@ Politically this is a **transparency-restricting** move, not a transparency-enha
 
 ---
 
-## 📊 Political Classification
+### 📊 Political Classification
 
 ```mermaid
 graph LR
@@ -1739,9 +1726,9 @@ graph LR
 
 ---
 
-## 💪 SWOT Analysis
+### 💪 SWOT Analysis
 
-### Strengths
+#### Strengths
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Clarifies anomalous TF treatment of bulk digital-evidence copies | KU33 *motivering* references prior cases where whole mirrored drives became searchable public records | 🟩 HIGH |
@@ -1749,20 +1736,20 @@ graph LR
 | Carve-back preserves TF status where material is formally added to investigation file | KU33 §on *allmän handling* retention | 🟩 HIGH |
 | Coalition (M, SD, KD, L) unified in support | Floor-vote readings from KU sitting | 🟩 HIGH |
 
-### Weaknesses
+#### Weaknesses
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Narrows *offentlighetsprincipen* in the digital domain | Civil Rights Defenders + Journalistförbundet remissvar critical | 🟩 HIGH |
 | Carve-back scope ambiguous for data-at-rest that is never formally "added" | KU33 *motivering* §on scope | 🟨 MEDIUM |
 | Creates opaque custody zone for bulk-extracted personal data | IMY (Integritetsskyddsmyndigheten) yttrande flags data-minimisation concern | 🟨 MEDIUM |
 
-### Opportunities
+#### Opportunities
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Förordning-level data-minimisation and retention rules could meaningfully narrow scope | — | 🟨 MEDIUM |
 | Parallel non-constitutional transparency reforms (e.g., statistical reporting) could offset transparency loss | — | 🟨 MEDIUM |
 
-### Threats
+#### Threats
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Post-election lapse — most likely of dual *vilande* to fail | [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/coalition-mathematics.md) §*Vilande* Math | 🟨 MEDIUM |
@@ -1771,7 +1758,7 @@ graph LR
 
 ---
 
-## ⚠️ Risk Assessment
+### ⚠️ Risk Assessment
 
 | Risk ID | Description | L | I | L×I | Mitigation |
 |---------|-------------|:-:|:-:|:---:|-----------|
@@ -1783,7 +1770,7 @@ graph LR
 
 ---
 
-## 🌳 Attack Tree — "KU33 lapses after election"
+### 🌳 Attack Tree — "KU33 lapses after election"
 
 ```mermaid
 graph TB
@@ -1803,7 +1790,7 @@ Cheapest attack path: A1 (S-led government reluctance to narrow public-records a
 
 ---
 
-## 📈 Significance Scoring
+### 📈 Significance Scoring
 
 | Dimension | Score | Rationale |
 |-----------|:-----:|-----------|
@@ -1816,7 +1803,7 @@ Cheapest attack path: A1 (S-led government reluctance to narrow public-records a
 
 ---
 
-## 👥 Stakeholder Impact
+### 👥 Stakeholder Impact
 
 | Group | Position | Impact |
 |-------|----------|--------|
@@ -1829,14 +1816,14 @@ Cheapest attack path: A1 (S-led government reluctance to narrow public-records a
 
 ---
 
-## 🔁 Same-Day Cross-Reference
+### 🔁 Same-Day Cross-Reference
 
 - **HD01KU32** (dual *vilande*): Shared vehicle; see [`HD01KU32-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU32-analysis.md) — but thematically opposite (KU32 *expands* accessibility)
 - **HD01SfU22** (inhibition): Adjacent state-surveillance + rule-of-law space; see [`HD01SfU22-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01SfU22-analysis.md)
 
 ---
 
-## 📡 Forward Indicators
+### 📡 Forward Indicators
 
 | Signal | Window | MCP tool |
 |--------|--------|----------|
@@ -1850,10 +1837,9 @@ Cheapest attack path: A1 (S-led government reluctance to narrow public-records a
 **Related**: [`HD01KU32-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU32-analysis.md) (sibling *vilande*, contrasting direction)
 
 ### HD01KU42
+<!-- source: documents/HD01KU42-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU42-analysis.md -->
 
-_Source: [`documents/HD01KU42-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU42-analysis.md)_
-
-## 📋 Document Identity
+### 📋 Document Identity
 
 | Field | Value |
 |-------|-------|
@@ -1870,13 +1856,13 @@ _Source: [`documents/HD01KU42-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## 🎯 Executive Summary
+### 🎯 Executive Summary
 
 KU42 concerns the division of Sweden's state budget into expenditure areas (utgiftsområden) — the constitutional architecture that defines how Riksdag controls spending. This seemingly technical matter carries significant political weight: changes to expenditure area classification affect committee jurisdictions, budget flexibility, and governmental accountability. The Constitutional Committee handling this report indicates it has constitutional dimensions, not merely administrative ones. Coming at a time when Sweden's defense budget (utgiftsområde 6) has seen dramatic increases and climate/energy policies are reshaping infrastructure spending (UO21/22/23), the division question directly affects which committees control which funds. **[LOW]** (metadata-only)
 
 ---
 
-## 📊 Political Classification
+### 📊 Political Classification
 
 ```mermaid
 graph LR
@@ -1892,34 +1878,34 @@ graph LR
 
 ---
 
-## 💪 SWOT Analysis
+### 💪 SWOT Analysis
 
-### Strengths
+#### Strengths
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Parliamentary control | Clear expenditure areas improve accountability and audit trail | 🟩HIGH |
 | Defense budget clarity | Separating defense infrastructure from general infrastructure UOs aids transparency | 🟧MEDIUM |
 | Administrative modernization | Updated classifications reflect post-pandemic policy architecture | 🟧MEDIUM |
 
-### Weaknesses
+#### Weaknesses
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Inter-committee rivalry | Changes to UO classification shift power between committees | 🟧MEDIUM |
 | Complexity | Complex cross-UO programs (climate + energy + transport) difficult to segregate cleanly | 🟧MEDIUM |
 
-### Opportunities
+#### Opportunities
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Streamlined Riksdag oversight | Consolidated UOs reduce audit fragmentation | 🟧MEDIUM |
 
-### Threats
+#### Threats
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Political manipulation of UO boundaries | Majority may draw UO lines to advantage coalition committees | 🟥LOW |
 
 ---
 
-## 👥 Stakeholder Perspectives (Condensed)
+### 👥 Stakeholder Perspectives (Condensed)
 
 | Stakeholder | Position |
 |-------------|----------|
@@ -1934,7 +1920,7 @@ graph LR
 
 ---
 
-## ⚠️ Risk Matrix
+### ⚠️ Risk Matrix
 
 | Risk | L | I | L×I |
 |------|---|---|-----|
@@ -1943,17 +1929,16 @@ graph LR
 
 ---
 
-## 🗳️ Election 2026 Implications
+### 🗳️ Election 2026 Implications
 
 **Electoral Impact** 🟥LOW — Highly technical; not salient to voters.
 
 **Policy Legacy** — Establishes budget architecture for 2027+ electoral cycle governments.
 
 ### HD01KU43
+<!-- source: documents/HD01KU43-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU43-analysis.md -->
 
-_Source: [`documents/HD01KU43-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU43-analysis.md)_
-
-## 📋 Document Identity
+### 📋 Document Identity
 
 | Field | Value |
 |-------|-------|
@@ -1970,13 +1955,13 @@ _Source: [`documents/HD01KU43-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## 🎯 Executive Summary
+### 🎯 Executive Summary
 
 KU43 establishes a new law governing the Riksdag's medal — replacing outdated regulations with a modern legal framework for how parliament honors distinguished service. While ceremonially significant, this is administratively routine and politically non-contentious. The Constitutional Committee's involvement reflects Riksdag's self-governance prerogatives under Chapter 4 of the Instrument of Government. The primary political significance is in how the medal criteria are defined — who qualifies and what types of service are honored shapes Riksdag's institutional identity and its relationship with civil society partners. **[VERY LOW]**
 
 ---
 
-## 📊 Political Classification
+### 📊 Political Classification
 
 ```mermaid
 graph LR
@@ -1989,33 +1974,32 @@ graph LR
 
 ---
 
-## 💪 SWOT Analysis (Condensed)
+### 💪 SWOT Analysis (Condensed)
 
-### Strengths
+#### Strengths
 - Modernizes outdated medal statute; enhances institutional transparency
 - Clear legal basis for Riksdag's self-governance
 
-### Weaknesses
+#### Weaknesses
 - Limited substantive policy impact
 - Risk of criteria being perceived as politically partisan if awarded inconsistently
 
-### Opportunities
+#### Opportunities
 - Signal parliamentary institutional health and non-partisan tradition
 
-### Threats
+#### Threats
 - Minimal (administrative only)
 
 ---
 
-## 🗳️ Election 2026 Implications
+### 🗳️ Election 2026 Implications
 
 **Electoral Impact** 🟥VERY LOW — No direct electoral relevance.
 
 ### HD01MJU21
+<!-- source: documents/HD01MJU21-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01MJU21-analysis.md -->
 
-_Source: [`documents/HD01MJU21-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01MJU21-analysis.md)_
-
-## 📋 Document Identity
+### 📋 Document Identity
 
 | Field | Value |
 |-------|-------|
@@ -2032,13 +2016,13 @@ _Source: [`documents/HD01MJU21-analysis.md`](https://github.com/Hack23/riksdagsm
 
 ---
 
-## 🎯 Executive Summary
+### 🎯 Executive Summary
 
 MJU21 marks the Environment and Agriculture Committee's formal parliamentary response to the National Audit Office (Riksrevisionen) report on state support for agriculture's climate transition. The timing is politically charged: Sweden's agriculture sector produces approximately 13% of national greenhouse gas emissions, yet receives substantial state subsidies (CAP + national co-financing) without demonstrably achieving emissions reductions. The Riksrevisionen's underlying report criticizes the lack of coherent measurement systems, overlapping responsibilities between Jordbruksverket and Naturvårdsverket, and insufficient conditionality in support programs. The committee's response (expected to endorse Riksrevisionen's recommendations) marks a potentially significant shift toward tighter environmental conditions on agricultural subsidies — a direct threat to farming organizations and a potential source of rural voter discontent ahead of the 2026 election. **[LOW]** (metadata-only; analysis based on Riksrevisionen report patterns and MJU political context)
 
 ---
 
-## 📊 Political Classification
+### 📊 Political Classification
 
 ```mermaid
 graph LR
@@ -2056,29 +2040,29 @@ graph LR
 
 ---
 
-## 💪 SWOT Analysis
+### 💪 SWOT Analysis
 
-### Strengths
+#### Strengths
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Riksrevisionen legitimacy | Audit findings carry constitutional authority; difficult for government to dismiss | 🟩HIGH |
 | EU CAP alignment | EU Common Agricultural Policy 2023-2027 requires eco-schemes; Sweden underperforming | 🟩HIGH |
 | Coalition opportunity | KD and C support sustainable farming; M supports efficiency; reform could unite coalition | 🟧MEDIUM |
 
-### Weaknesses
+#### Weaknesses
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Rural voter risk | Tightening conditions on farming subsidies alienates C/SD rural voters | 🟩HIGH |
 | Measurement gaps | No established baseline for agricultural GHG emissions reductions at farm level | 🟧MEDIUM |
 | Institutional fragmentation | Dual responsibility (Jordbruksverket + Naturvårdsverket) without clear lead agency | 🟧MEDIUM |
 
-### Opportunities
+#### Opportunities
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Sweden as EU climate leader | Implementing genuine agricultural climate conditions would position Sweden above EU average | 🟧MEDIUM |
 | Technology-driven transition | Precision agriculture, biogas, and cover crops can achieve reductions without income loss | 🟧MEDIUM |
 
-### Threats
+#### Threats
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Farmer organization backlash | LRF (Lantbrukarnas Riksförbund) fiercely opposes binding conditions | ��HIGH |
@@ -2087,7 +2071,7 @@ graph LR
 
 ---
 
-## 👥 Stakeholder Perspectives
+### 👥 Stakeholder Perspectives
 
 | Stakeholder Group | Position | Key Concern |
 |-------------------|----------|-------------|
@@ -2102,7 +2086,7 @@ graph LR
 
 ---
 
-## ⚠️ Risk Matrix
+### ⚠️ Risk Matrix
 
 | Risk | Likelihood | Impact | L×I | Mitigation |
 |------|-----------|--------|-----|------------|
@@ -2113,7 +2097,7 @@ graph LR
 
 ---
 
-## 🗳️ Election 2026 Implications
+### 🗳️ Election 2026 Implications
 
 **Electoral Impact** 🟧MEDIUM — C-party voters (rural, farming) are sensitive; SD rural voters equally so.
 
@@ -2125,17 +2109,16 @@ graph LR
 
 ---
 
-## 📅 Forward Indicators
+### 📅 Forward Indicators
 
 1. **May 2026** — Chamber vote on MJU21; watch for C-party reservations or amendment demands
 2. **Q3 2026** — Government response to Riksrevisionen with action plan timeline
 3. **2027** — Mid-term CAP review: Sweden assessed against eco-scheme targets
 
 ### HD01SfU22
+<!-- source: documents/HD01SfU22-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01SfU22-analysis.md -->
 
-_Source: [`documents/HD01SfU22-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01SfU22-analysis.md)_
-
-## 📋 Document Identity
+### 📋 Document Identity
 
 | Field | Value |
 |-------|-------|
@@ -2152,13 +2135,13 @@ _Source: [`documents/HD01SfU22-analysis.md`](https://github.com/Hack23/riksdagsm
 
 ---
 
-## 🎯 Executive Summary
+### 🎯 Executive Summary
 
 The Social Insurance Committee's report SfU22 proposes a fundamentally new approach to handling aliens with temporary enforcement obstacles — replacing temporary residence permits with a system of "inhibition" (suspension of deportation) combined with mandatory check-ins and geographic restrictions. This represents a significant tightening of migration policy, eliminating the pathway through which individuals blocked from deportation could effectively gain temporary residence. The reform directly advances the SD-M-KD-L government's migration policy agenda and is expected to face fierce opposition from S, V, and MP on humanitarian grounds. The measure significantly reduces the discretion available to Migrationsverket and expands state surveillance capabilities over individuals awaiting deportation. **[MEDIUM]** (summary data only)
 
 ---
 
-## 📊 Political Classification
+### 📊 Political Classification
 
 ```mermaid
 graph LR
@@ -2176,9 +2159,9 @@ graph LR
 
 ---
 
-## 💪 SWOT Analysis
+### 💪 SWOT Analysis
 
-### Strengths
+#### Strengths
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Closes legal loophole | Temporary residence permits effectively rewarded individuals who couldn't be deported; inhibition system removes this incentive (HD01SfU22 summary) | 🟧MEDIUM |
@@ -2186,20 +2169,20 @@ graph LR
 | Administrative efficiency | Migrationsverket no longer required to issue and renew temporary permits; reduces administrative burden | 🟧MEDIUM |
 | Threat management | Enables geographic restrictions and mandatory check-ins for individuals posing security risks | 🟧MEDIUM |
 
-### Weaknesses
+#### Weaknesses
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Human rights exposure | Inhibited persons with no pathway to residence — prolonged limbo raises ECHR Article 3/5 concerns | 🟩HIGH |
 | Constitutional risk | Creating new surveillance category without full residence rights tests Article 2 Protocol 4 ECHR | 🟧MEDIUM |
 | Practicability | Mandatory geographic restrictions unenforceable without significant policing resources | 🟧MEDIUM |
 
-### Opportunities
+#### Opportunities
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Broader migration reform anchor | SfU22 signals alignment with EU Returns Directive; positions Sweden favorably in EU migration negotiations | 🟧MEDIUM |
 | Coalition credibility booster | SD base reward — demonstrates government can tighten migration beyond just asylum | 🟧MEDIUM |
 
-### Threats
+#### Threats
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Court overturning | Sweden's Migration Court of Appeal may strike down geographic restrictions as disproportionate | 🟩HIGH |
@@ -2208,7 +2191,7 @@ graph LR
 
 ---
 
-## 👥 Stakeholder Perspectives
+### 👥 Stakeholder Perspectives
 
 | Stakeholder Group | Position | Key Concern | Evidence |
 |-------------------|----------|-------------|----------|
@@ -2223,7 +2206,7 @@ graph LR
 
 ---
 
-## ⚠️ Risk Matrix
+### ⚠️ Risk Matrix
 
 | Risk | Likelihood (1-5) | Impact (1-5) | L×I Score | Mitigation |
 |------|-------------------|--------------|-----------|------------|
@@ -2234,7 +2217,7 @@ graph LR
 
 ---
 
-## 🗳️ Election 2026 Implications
+### 🗳️ Election 2026 Implications
 
 **Electoral Impact** 🟧MEDIUM — Migration enforcement is a top-3 voter issue; SfU22 directly activates SD and M voters.
 
@@ -2248,17 +2231,16 @@ graph LR
 
 ---
 
-## 📅 Forward Indicators
+### 📅 Forward Indicators
 
 1. **May 2026 chamber vote** — Will pass with coalition majority (M+SD+KD+L); watch for SD amendment requests to expand restrictions
 2. **June 1, 2026** — Implementation date; first inhibition orders expected within weeks; early court challenges anticipated by July 2026
 3. **Q3 2026** — Migration Court of Appeal first rulings on geographic restriction proportionality; determines if reform survives legally
 
 ### HD01TU16
+<!-- source: documents/HD01TU16-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01TU16-analysis.md -->
 
-_Source: [`documents/HD01TU16-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01TU16-analysis.md)_
-
-## 📋 Document Identity
+### 📋 Document Identity
 
 | Field | Value |
 |-------|-------|
@@ -2277,13 +2259,13 @@ _Source: [`documents/HD01TU16-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## 🎯 Executive Summary
+### 🎯 Executive Summary
 
 HD01TU16 removes the mandatory introductory driver-training requirement for certain private practice driving situations. The reform addresses a commonly-criticised bureaucratic friction in Sweden's driver-licensing pipeline — practice driving with a family member previously required the supervising adult to complete a one-day introductory course (~1,500 SEK) in addition to other qualifications. TU committee concluded the training requirement did not deliver measurable road-safety benefits relative to its compliance cost. This is a low-salience administrative reform with cross-party support; Transportstyrelsen remissvar cautiously supportive. **[MEDIUM]**
 
 ---
 
-## 📊 Political Classification
+### 📊 Political Classification
 
 ```mermaid
 graph LR
@@ -2308,34 +2290,34 @@ graph LR
 
 ---
 
-## 💪 SWOT Analysis
+### 💪 SWOT Analysis
 
-### Strengths
+#### Strengths
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Reduces household administrative cost | Estimated ~1,500 SEK + half-day per learner household | 🟨 MEDIUM |
 | Aligns Swedish practice with Nordic norms | Norway and Denmark do not require equivalent training | 🟨 MEDIUM |
 | Coalition "regelförenkling" deliverable | Part of coalition agreement administrative-simplification agenda | 🟨 MEDIUM |
 
-### Weaknesses
+#### Weaknesses
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | STR (Sveriges Trafikutbildares Riksförbund) opposition | Industry body cites road-safety concern; remissvar critical | 🟨 MEDIUM |
 | Road-safety evidence ambiguity | Transportstyrelsen 2023 study inconclusive on training's marginal safety contribution | 🟨 MEDIUM |
 
-### Opportunities
+#### Opportunities
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Reduces driver-licensing backlog (1.5-year wait in 2024) | — | 🟨 MEDIUM |
 
-### Threats
+#### Threats
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Road-safety framing if accident statistics spike 2027–2028 | Statistical noise likely but narrative risk present | 🟥 LOW |
 
 ---
 
-## ⚠️ Risk Assessment
+### ⚠️ Risk Assessment
 
 | Risk ID | Description | L | I | L×I |
 |---------|-------------|:-:|:-:|:---:|
@@ -2346,7 +2328,7 @@ graph LR
 
 ---
 
-## 📈 Significance Scoring
+### 📈 Significance Scoring
 
 | Dimension | Score | Rationale |
 |-----------|:-----:|-----------|
@@ -2359,7 +2341,7 @@ graph LR
 
 ---
 
-## 👥 Stakeholder Impact
+### 👥 Stakeholder Impact
 
 | Group | Position | Impact |
 |-------|----------|--------|
@@ -2370,7 +2352,7 @@ graph LR
 
 ---
 
-## 🔁 Same-Day Cross-Reference
+### 🔁 Same-Day Cross-Reference
 
 - **HD01TU19** (port security): Same committee, different theme
 - **HD01TU21** (e-ID): Same committee but non-comparable policy area
@@ -2378,7 +2360,7 @@ graph LR
 
 ---
 
-## 📡 Forward Indicators
+### 📡 Forward Indicators
 
 | Signal | Window | MCP tool |
 |--------|--------|----------|
@@ -2391,10 +2373,9 @@ graph LR
 **Confidence note**: Analysis based on SUMMARY depth; full motivtext from `hd01tu16.json` would upgrade confidence to HIGH.
 
 ### HD01TU19
+<!-- source: documents/HD01TU19-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01TU19-analysis.md -->
 
-_Source: [`documents/HD01TU19-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01TU19-analysis.md)_
-
-## 📋 Document Identity
+### 📋 Document Identity
 
 | Field | Value |
 |-------|-------|
@@ -2411,13 +2392,13 @@ _Source: [`documents/HD01TU19-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## 🎯 Executive Summary
+### 🎯 Executive Summary
 
 TU19 introduces new legislation governing municipal port operations — a sector that intersects infrastructure ownership (kommunal self-governance), commercial port competition, EU state aid rules, and national security (civilian ports' dual-use military significance has grown since Russia's invasion of Ukraine in 2022). Sweden has 52 commercial ports; 30+ are municipally owned. The law likely addresses operational efficiency, competitive conditions relative to private ports, and potentially security classifications. Municipal port governance is directly relevant to Sweden's Total Defence (Totalförsvar) planning, as ports are critical infrastructure for NATO resupply logistics. **[LOW]** (metadata-only)
 
 ---
 
-## 📊 Political Classification
+### 📊 Political Classification
 
 ```mermaid
 graph LR
@@ -2433,38 +2414,37 @@ graph LR
 
 ---
 
-## 💪 SWOT Analysis
+### 💪 SWOT Analysis
 
-### Strengths
+#### Strengths
 - Modernizes port governance for competitive environment
 - Addresses EU state aid compliance issues for municipal port subsidies
 - Can codify security classification requirements for Total Defence
 
-### Weaknesses
+#### Weaknesses
 - Municipal autonomy constraints may limit operational efficiency reforms
 - Ports vary enormously (Göteborg's massive private port vs. small municipal ferries)
 
-### Opportunities
+#### Opportunities
 - NATO logistics planning requires clear port command structures
 - Standardization can attract private investment partnerships
 
-### Threats
+#### Threats
 - Municipal lobbying against commercial constraints (SKL/SKR)
 - Security dimensions may create NATO-sensitive information sharing complications
 
 ---
 
-## 🗳️ Election 2026 Implications
+### 🗳️ Election 2026 Implications
 
 **Electoral Impact** 🟥LOW — Infrastructure and local governance; not a voter hot-button issue.
 
 **Defence Dimension** 🟧MEDIUM — Parties competing on defence credibility should highlight port security improvements.
 
 ### HD01TU21
+<!-- source: documents/HD01TU21-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01TU21-analysis.md -->
 
-_Source: [`documents/HD01TU21-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01TU21-analysis.md)_
-
-## 📋 Document Identity
+### 📋 Document Identity
 
 | Field | Value |
 |-------|-------|
@@ -2481,13 +2461,13 @@ _Source: [`documents/HD01TU21-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## 🎯 Executive Summary
+### 🎯 Executive Summary
 
 TU21 proposes a state-issued electronic identity (e-legitimation) for Sweden — a policy debated for over a decade with profound implications for digital governance, private sector competition, and citizen rights. A state e-ID would reduce dependency on bank-issued BankID, which currently holds near-monopoly status among Sweden's 8.5 million digital users. The proposal places the Traffic Committee in an unusual lead role on a digital identity issue that crosses ICT, banking, and constitutional domain boundaries. The coalition government frames this as digital equity and security modernization; the opposition and banking sector have historically resisted due to competition and privacy concerns. **[LOW]** (metadata only — full assessment pending chamber debate)
 
 ---
 
-## 📊 Political Classification
+### 📊 Political Classification
 
 ```mermaid
 graph LR
@@ -2504,29 +2484,29 @@ graph LR
 
 ---
 
-## 💪 SWOT Analysis
+### 💪 SWOT Analysis
 
-### Strengths
+#### Strengths
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Digital equity | 15-20% of Swedish adults lack BankID access (elderly, migrants, unbanked) | 🟩HIGH |
 | EU eIDAS2 compliance | EU eIDAS2 Regulation (effective 2024) requires member states to offer trusted digital identity wallets | 🟩HIGH |
 | Security standardization | State e-ID enables higher assurance level (LoA3/4) than current commercial offerings | 🟧MEDIUM |
 
-### Weaknesses
+#### Weaknesses
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | BankID entrenched | BankID used by 8.5M Swedes; state e-ID faces major adoption challenge | 🟩HIGH |
 | Implementation cost | State infrastructure build-out estimated in hundreds of millions SEK | 🟥LOW |
 | Privacy risk | Central state identity registry creates honeypot for cyberattacks and government surveillance | 🟧MEDIUM |
 
-### Opportunities
+#### Opportunities
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Cross-border EU recognition | eIDAS2 enables Swedish state e-ID use across EU member states | 🟩HIGH |
 | Public service modernization | Enables digital-first government services for all citizens including vulnerable groups | 🟧MEDIUM |
 
-### Threats
+#### Threats
 | Factor | Evidence | Confidence |
 |--------|----------|------------|
 | Banking sector lobbying | Sweden's major banks (SEB, Handelsbanken, Swedbank, Nordea) will resist displacement of BankID revenue | 🟩HIGH |
@@ -2534,7 +2514,7 @@ graph LR
 
 ---
 
-## 👥 Stakeholder Perspectives
+### 👥 Stakeholder Perspectives
 
 | Stakeholder Group | Position | Key Concern |
 |-------------------|----------|-------------|
@@ -2549,7 +2529,7 @@ graph LR
 
 ---
 
-## ⚠️ Risk Matrix
+### ⚠️ Risk Matrix
 
 | Risk | Likelihood | Impact | L×I | Mitigation |
 |------|-----------|--------|-----|------------|
@@ -2560,7 +2540,7 @@ graph LR
 
 ---
 
-## 🗳️ Election 2026 Implications
+### 🗳️ Election 2026 Implications
 
 **Electoral Impact** 🟧MEDIUM — Digitalization is a second-tier issue; salient for tech-savvy voters and elderly communities.
 
@@ -2572,17 +2552,16 @@ graph LR
 
 ---
 
-## 📅 Forward Indicators
+### 📅 Forward Indicators
 
 1. **Q2 2026 chamber vote** — Expected to pass with broad cross-party support
 2. **2026-2027** — DIGG (Agency for Digital Government) designated as implementation authority; pilot program with 50,000 users
 3. **2027-2028** — Full rollout with eIDAS2 cross-border functionality
 
 ### HD01TU22
+<!-- source: documents/HD01TU22-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01TU22-analysis.md -->
 
-_Source: [`documents/HD01TU22-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01TU22-analysis.md)_
-
-## 📋 Document Identity
+### 📋 Document Identity
 
 | Field | Value |
 |-------|-------|
@@ -2599,13 +2578,13 @@ _Source: [`documents/HD01TU22-analysis.md`](https://github.com/Hack23/riksdagsmo
 
 ---
 
-## 🎯 Executive Summary
+### 🎯 Executive Summary
 
 TU22 addresses a serious problem in Sweden's road freight sector: systematic manipulation of digital tachographs (färdskrivare) — devices that record driving and rest times for trucks and buses. Tachograph manipulation enables carriers to circumvent EU working time rules, endangering road safety and creating unfair competition against compliant operators. This is an EU compliance measure with direct road safety and fair competition dimensions. The proposal likely introduces enhanced penalties, improved Transportstyrelsen inspection authority, and technical safeguards against tampering. **[LOW]** (metadata-only)
 
 ---
 
-## 📊 Political Classification
+### 📊 Political Classification
 
 ```mermaid
 graph LR
@@ -2621,28 +2600,28 @@ graph LR
 
 ---
 
-## 💪 SWOT Analysis
+### 💪 SWOT Analysis
 
-### Strengths
+#### Strengths
 - EU compliance maintains market access for Swedish transport sector
 - Reduces road safety risk from fatigued drivers
 - Levels competitive playing field between Swedish and Eastern European operators
 
-### Weaknesses
+#### Weaknesses
 - Enforcement capacity of Transportstyrelsen limited relative to traffic volume
 - Swedish operators may lose competitive edge if Eastern European competitors non-compliant
 
-### Opportunities
+#### Opportunities
 - Strengthen Sweden's reputation for compliance in EU transport market
 - Digital tachograph blockchain verification emerging EU standard
 
-### Threats
+#### Threats
 - Transport company lobbying against inspection costs
 - Cross-border enforcement gaps (non-Swedish registered vehicles)
 
 ---
 
-## ⚠️ Risk Matrix
+### ⚠️ Risk Matrix
 
 | Risk | L | I | L×I |
 |------|---|---|-----|
@@ -2651,17 +2630,16 @@ graph LR
 
 ---
 
-## 🗳️ Election 2026 Implications
+### 🗳️ Election 2026 Implications
 
 **Electoral Impact** 🟥LOW — Specialist transport sector issue; relevant to union (IF Metall, Transport) voters.
 
 ## Coalition Mathematics
-
-_Source: [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/coalition-mathematics.md)_
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/coalition-mathematics.md -->
 
 ---
 
-## 🏛️ Riksdag Seat Configuration (Riksmöte 2025/26)
+### 🏛️ Riksdag Seat Configuration (Riksmöte 2025/26)
 
 | Bloc | Parties | Seats | Majority pivot |
 |------|---------|:-----:|:--------------:|
@@ -2675,7 +2653,7 @@ The government majority is a **one-seat margin (176–173)**. This makes every c
 
 ---
 
-## 📊 Vote-Margin Forecast by Report
+### 📊 Vote-Margin Forecast by Report
 
 | Dok_id | Expected floor vote | Projected yes–no | Margin | Pivot risk |
 |--------|--------------------|:----------------:|:------:|:----------:|
@@ -2699,28 +2677,28 @@ The government majority is a **one-seat margin (176–173)**. This makes every c
 
 ---
 
-## 🎯 The Critical Path: SfU22
+### 🎯 The Critical Path: SfU22
 
 SfU22's expected **176–173** margin is the narrowest of the batch. Three scenarios govern pivot risk:
 
-### Scenario A — Coalition holds (P=0.82)
+#### Scenario A — Coalition holds (P=0.82)
 All 176 coalition MPs vote yes. All 173 opposition MPs vote no. Passes **+3**.
 
-### Scenario B — L-backbench dissent (P=0.12)
+#### Scenario B — L-backbench dissent (P=0.12)
 1–3 L MPs abstain or vote no on ECHR grounds (Protocol 4 Art. 2 exposure). Result:
 - 1 L abstention → 175–172 = **+3** (still passes via reduced-parliament rule if quorum met)
 - 2 L abstention → 174–173 = **+1** (precarious)
 - 3 L abstention → 173–173 = **tie**, proposition referred back
 
-### Scenario C — C-party split (P=0.05)
+#### Scenario C — C-party split (P=0.05)
 C-party (24 MPs) bloc-abstains while signalling intention to negotiate. 176–149 = **+27**, but shifts post-election calculus.
 
-### Scenario D — Tie/referral (P=0.01)
+#### Scenario D — Tie/referral (P=0.01)
 Deputy-speaker's tie-break invoked; coalition retains on tie-break in Swedish parliamentary practice.
 
 ---
 
-## 🧮 *Vilande* Constitutional Math (KU32, KU33)
+### 🧮 *Vilande* Constitutional Math (KU32, KU33)
 
 Regeringsformen 8:14 requires *identical wording* passed by two Riksdags with an election between. **The next Riksdag is unknown** — the math depends on the September 2026 election outcome.
 
@@ -2736,7 +2714,7 @@ Regeringsformen 8:14 requires *identical wording* passed by two Riksdags with an
 
 ---
 
-## 📈 Coalition Unity Index (CUI) — This Batch
+### 📈 Coalition Unity Index (CUI) — This Batch
 
 CUI = fraction of coalition MPs voting with the majority on roll-call votes for the batch. Target = 1.00.
 
@@ -2754,7 +2732,7 @@ Compared with Q1 2026 average (0.99), this batch shows **no erosion of coalition
 
 ---
 
-## 🗳️ Opposition Unity Index (OUI) — This Batch
+### 🗳️ Opposition Unity Index (OUI) — This Batch
 
 OUI = fraction of opposition (S+V+MP+C, 173 MPs) voting together.
 
@@ -2769,13 +2747,13 @@ OUI = fraction of opposition (S+V+MP+C, 173 MPs) voting together.
 
 ---
 
-## ⚖️ Reduced-Parliament (Minskad Riksdag) Implications
+### ⚖️ Reduced-Parliament (Minskad Riksdag) Implications
 
 Although the reduced-parliament quorum provisions are a separate constitutional track, the **one-seat government margin** means that if a foreign/security crisis triggered reduced-parliament rules, the current 176-MP coalition coalition could struggle to maintain a working majority within any 175-MP subset. This is the operational fragility the reduced-parliament amendments are designed to address — and is itself a reason the pre-election constitutional package is politically sensitive.
 
 ---
 
-## 🔗 Related Analyses
+### 🔗 Related Analyses
 
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/significance-scoring.md) — Why these margins matter
 - [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/scenario-analysis.md) — Bayesian scenario tree
@@ -2788,21 +2766,20 @@ Although the reduced-parliament quorum provisions are a separate constitutional 
 **Next Update**: 2026-04-29 (post-kammaren roll calls on FiU48 and SfU22).
 
 ## Comparative International
-
-_Source: [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/comparative-international.md)_
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/comparative-international.md -->
 
 **Date**: 2026-04-21 | **Analyst**: news-committee-reports workflow
 **Framework**: Peer-jurisdiction benchmarking across fiscal, migration, constitutional, and digital policy axes.
 
 ---
 
-## 🌍 Overview
+### 🌍 Overview
 
 Sweden's 2026-04-21 committee package contains four internationally comparable policy moves. This document benchmarks each against 4–6 peer jurisdictions to establish whether Sweden is moving toward or away from mainstream European practice.
 
 ---
 
-## 1. **FiU48 — Election-Year Fuel-Tax Relief**
+### 1. **FiU48 — Election-Year Fuel-Tax Relief**
 
 | Country | Year | Measure | Duration | Extended? | Outcome |
 |---------|:----:|---------|----------|:---------:|---------|
@@ -2820,7 +2797,7 @@ Sweden's 2026-04-21 committee package contains four internationally comparable p
 
 ---
 
-## 2. **SfU22 — Migration Inhibition vs Temporary Permit**
+### 2. **SfU22 — Migration Inhibition vs Temporary Permit**
 
 | Country | Analogous regime | Status of inhibited persons | ECHR litigation |
 |---------|------------------|----------------------------|-----------------|
@@ -2835,7 +2812,7 @@ Sweden's 2026-04-21 committee package contains four internationally comparable p
 
 ---
 
-## 3. **KU32/KU33 — Constitutional *Vilande* Amendments**
+### 3. **KU32/KU33 — Constitutional *Vilande* Amendments**
 
 | Country | Two-Riksdag / two-Parliament rule | Post-election reaffirmation rate | Notable failures |
 |---------|-----------------------------------|:---------------------------------:|------------------|
@@ -2849,7 +2826,7 @@ Sweden's 2026-04-21 committee package contains four internationally comparable p
 
 ---
 
-## 4. **TU21 — State e-ID vs Private-Sector Monopoly**
+### 4. **TU21 — State e-ID vs Private-Sector Monopoly**
 
 | Country | State digital identity | Private-sector incumbent | Market share | Year of state scheme |
 |---------|-----------------------|--------------------------|:------------:|:--------------------:|
@@ -2865,7 +2842,7 @@ Sweden's 2026-04-21 committee package contains four internationally comparable p
 
 ---
 
-## 📊 Summary Alignment Map
+### 📊 Summary Alignment Map
 
 ```mermaid
 graph LR
@@ -2894,7 +2871,7 @@ graph LR
 
 ---
 
-## 🎙️ Newsroom-Grade Comparative Framings
+### 🎙️ Newsroom-Grade Comparative Framings
 
 | Frame | Backed by | Confidence |
 |-------|-----------|:----------:|
@@ -2906,7 +2883,7 @@ graph LR
 
 ---
 
-## ❌ Comparative Framings to Avoid
+### ❌ Comparative Framings to Avoid
 
 - ❌ "Sweden is unique in cutting fuel tax" — 6 peer precedents 2022 alone
 - ❌ "SfU22 is harsher than other European countries" — structurally similar to German *Duldung*, less restrictive than Danish *udrejsecenter*
@@ -2918,15 +2895,14 @@ graph LR
 **Confidence**: 🟩 HIGH — Peer data validated against OECD, ECRE, and ECtHR case databases.
 
 ## Classification Results
-
-_Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/classification-results.md)_
+<!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/classification-results.md -->
 
 **Date**: 2026-04-21 | **Riksmöte**: 2025/26 | **Analyst**: news-committee-reports workflow
 **Analysis Timestamp**: 2026-04-21 15:10 UTC | **Data Depth**: SUMMARY + FULL TEXT for top 8
 
 ---
 
-## 🗂️ Document Classification Overview
+### 🗂️ Document Classification Overview
 
 | # | Dok_id | Betänkande | Title (EN short) | Committee | Domain | Sensitivity | Urgency |
 |---|--------|-----------|------------------|-----------|--------|-------------|---------|
@@ -2950,7 +2926,7 @@ _Source: [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## 📊 Classification by Policy Domain
+### 📊 Classification by Policy Domain
 
 ```mermaid
 pie title Committee Reports 2026-04-21 by Domain
@@ -2966,7 +2942,7 @@ pie title Committee Reports 2026-04-21 by Domain
     "Social insurance" : 1
 ```
 
-## 📊 Classification by Committee
+### 📊 Classification by Committee
 
 | Committee | Count | Most significant |
 |-----------|:-----:|------------------|
@@ -2978,7 +2954,7 @@ pie title Committee Reports 2026-04-21 by Domain
 | **CU** (Civil Affairs / Housing) | 2 | HD01CU28 |
 | **SkU** (Taxation) | 1 | HD01SkU23 |
 
-## 📊 Sensitivity & Urgency Distribution
+### 📊 Sensitivity & Urgency Distribution
 
 | | 🔴 CRITICAL | 🟠 URGENT | 🟡 STANDARD | 🟢 ROUTINE |
 |:-:|:-:|:-:|:-:|:-:|
@@ -2987,7 +2963,7 @@ pie title Committee Reports 2026-04-21 by Domain
 
 ---
 
-## 🧭 Classification Rules Applied
+### 🧭 Classification Rules Applied
 
 - **CRITICAL urgency**: Implementation < 60 days OR >2B SEK fiscal impact OR ECHR exposure
 - **URGENT**: Implementation < 12 months OR constitutional *vilande* status OR EU Commission deadline
@@ -2997,7 +2973,7 @@ pie title Committee Reports 2026-04-21 by Domain
 
 ---
 
-## 🔗 Related Documents in This Dossier
+### 🔗 Related Documents in This Dossier
 
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/significance-scoring.md) — 5-dimension scoring (electoral/constitutional/EU/immediacy/controversy)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/cross-reference-map.md) — inter-document + related motions/propositions
@@ -3008,15 +2984,14 @@ pie title Committee Reports 2026-04-21 by Domain
 **Classification Confidence**: 🟩 HIGH — All 17 documents mapped from official *riksdagen.se* document metadata + committee handling cards.
 
 ## Cross-Reference Map
-
-_Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/cross-reference-map.md)_
+<!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/cross-reference-map.md -->
 
 **Date**: 2026-04-21 | **Analyst**: news-committee-reports workflow
 **Purpose**: Trace legislative lineage (proposition → remiss → betänkande → motion → beslut) and identify thematic convergence across committees.
 
 ---
 
-## 🧬 Proposition → Betänkande Chain (primary linkages)
+### 🧬 Proposition → Betänkande Chain (primary linkages)
 
 | Betänkande | Upstream proposition / skrivelse | Parallel motions | Downstream vote |
 |-----------|-----------------------------------|------------------|-----------------|
@@ -3035,7 +3010,7 @@ _Source: [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/bl
 
 ---
 
-## 🕸️ Thematic Cross-Linkages
+### 🕸️ Thematic Cross-Linkages
 
 ```mermaid
 graph TB
@@ -3082,30 +3057,30 @@ graph TB
 
 ---
 
-## 🔗 Key Cross-References (Narrative)
+### 🔗 Key Cross-References (Narrative)
 
-### 1. **FiU48 ↔ MJU20/MJU21 — The Climate-Fiscal Contradiction**
+#### 1. **FiU48 ↔ MJU20/MJU21 — The Climate-Fiscal Contradiction**
 FiU48 cuts fuel tax to the EU Energy Tax Directive **floor** (the lowest rate permitted). The SAME week, MJU20 (Riksrevisionen audit of the Climate Policy Framework) and MJU21 (agricultural emissions audit) are adopted. This produces an **internal contradiction visible in the journal-of-record**: the government formally accepts Riksrevisionen's findings on climate-framework shortfalls while simultaneously cutting the most carbon-relevant consumption tax. Expect this juxtaposition in Klimatpolitiska rådet's Q3 2026 memo and in Greens/Centre opposition framings.
 
-### 2. **SfU22 ↔ TU19 ↔ CU27 — Enforcement-Identity-Border Triangle**
+#### 2. **SfU22 ↔ TU19 ↔ CU27 — Enforcement-Identity-Border Triangle**
 Three seemingly unrelated reports share an underlying enforcement-architecture logic:
 - **SfU22** creates a geographic-restriction regime for inhibited aliens (internal enforcement)
 - **TU19** strengthens municipal port security in the NATO context (external border)
 - **CU27** requires tightened identity verification for property registration (financial enforcement)
 Together they represent a **state-capacity build-out** in identity, mobility, and border control. This is the *operational* expression of the Tidöavtal's security chapter.
 
-### 3. **KU32 ↔ KU33 — The Dual *Vilande* Trap**
+#### 3. **KU32 ↔ KU33 — The Dual *Vilande* Trap**
 Both amendments are *vilande* constitutional amendments under Regeringsformen 8:14 — they lapse unless the **next Riksdag** passes them again in **identical wording**. Adopted together, they function as a **two-sided handover brief**: the incoming government cannot reverse them as ordinary law, and failure to re-affirm is politically costly (forces explicit rejection of disability accessibility in the case of KU32, or press-freedom alignment in the case of KU33). See [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/scenario-analysis.md) for game-theoretic treatment.
 
-### 4. **TU21 ↔ CU28 — The Digital-ID Stack**
+#### 4. **TU21 ↔ CU28 — The Digital-ID Stack**
 State e-ID (TU21) + national housing register (CU28) together form a **digital-administrative stack** that will reshape how Swedes interact with public services 2026–2029. The digital housing register requires a trusted identity layer; state e-ID provides that layer without BankID's commercial contract. Together they displace €400M+ in annual private-sector workflow intermediation — a market that Swedish banks and proptech have controlled for a decade.
 
-### 5. **FiU48 ↔ HD024082/HD024098 (Motions of 2026-04-17)**
+#### 5. **FiU48 ↔ HD024082/HD024098 (Motions of 2026-04-17)**
 The S (HD024082) and MP (HD024098) counter-motions on fuel tax were already filed during the prior motions cycle (14–17 April 2026, see [`../motions/documents/fuel-tax-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/fuel-tax-cluster-analysis.md)). FiU48's committee adoption on 2026-04-21 is the **government's procedural reply**: the committee majority rejected both counter-motions and advanced the government proposal. This compresses the motion-to-vote cycle to **4 parliamentary days** — the fastest cycle since the 2022 energy-crisis emergency budget.
 
 ---
 
-## 🌍 External Legislative Linkages
+### 🌍 External Legislative Linkages
 
 | Betänkande | EU instrument / international | Status |
 |-----------|-------------------------------|--------|
@@ -3119,7 +3094,7 @@ The S (HD024082) and MP (HD024098) counter-motions on fuel tax were already file
 
 ---
 
-## 🧩 Related Cycles in the 2026 Dossier
+### 🧩 Related Cycles in the 2026 Dossier
 
 | Cycle | Relation to 2026-04-21 committee reports |
 |-------|-----------------------------------------|
@@ -3132,7 +3107,7 @@ See [`../motions/cross-reference-map.md`](https://github.com/Hack23/riksdagsmoni
 
 ---
 
-## 🔎 Lineage Confidence
+### 🔎 Lineage Confidence
 
 - **FiU48 → Prop. 220**: 🟩 HIGH (explicit in betänkande)
 - **SfU22 → Prop. 214**: 🟩 HIGH (explicit)
@@ -3145,15 +3120,14 @@ See [`../motions/cross-reference-map.md`](https://github.com/Hack23/riksdagsmoni
 **Next Review**: 2026-04-28 (after kammaren votes on FiU48 + SfU22)
 
 ## Methodology Reflection & Limitations
-
-_Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/methodology-reflection.md)_
+<!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/methodology-reflection.md -->
 
 **Date**: 2026-04-21 | **Analyst**: news-committee-reports workflow
 **Purpose**: Per `ai-driven-analysis-guide.md` §Methodology Reflection, transparently report method, data depth, confidence calibration, known gaps, and deviation rationale.
 
 ---
 
-## 🧭 Methodologies Applied
+### 🧭 Methodologies Applied
 
 | Methodology guide | Applied in | Version consulted |
 |-------------------|-----------|-------------------|
@@ -3164,7 +3138,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 | [`political-swot-framework.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-swot-framework.md) | [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/swot-analysis.md) | v2.3 |
 | [`political-style-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-style-guide.md) | All outputs — intelligence-grade writing + evidence density + cui bono | v2.2 |
 
-### Templates Applied
+#### Templates Applied
 
 | Template | Applied in |
 |----------|-----------|
@@ -3179,7 +3153,7 @@ _Source: [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-## 📊 Data Depth & Confidence Calibration
+### 📊 Data Depth & Confidence Calibration
 
 Per `ai-driven-analysis-guide.md` §Data Availability Prerequisites:
 
@@ -3194,13 +3168,13 @@ Per `ai-driven-analysis-guide.md` §Data Availability Prerequisites:
 | HD01CU27, CU28 | SUMMARY | MEDIUM | 🟨 MEDIUM |
 | HD01TU16, TU22, SkU23, SfU20, KU42, KU43, TU19 | METADATA-ONLY | LOW / VERY LOW | 🟥 LOW |
 
-### Confidence-Ceiling Compliance
+#### Confidence-Ceiling Compliance
 
 No analysis in this batch exceeds its permitted confidence ceiling. Per-document analyses for METADATA-ONLY documents carry explicit `Confidence: LOW` labels.
 
 ---
 
-## ✅ Quality-Gate Compliance (per `ai-driven-analysis-guide.md`)
+### ✅ Quality-Gate Compliance (per `ai-driven-analysis-guide.md`)
 
 | Gate | Requirement | Status |
 |------|-------------|:------:|
@@ -3217,7 +3191,7 @@ No analysis in this batch exceeds its permitted confidence ceiling. Per-document
 
 ---
 
-## 🕳️ Known Gaps
+### 🕳️ Known Gaps
 
 1. **Vote records not yet available** — Kammaren floor votes for this batch are scheduled 2026-04-22 / 04-23 / 04-24 / 04-28 / 04-29. Coalition-mathematics projections rely on committee-stage positions + historical analogues. Post-vote reconciliation needed 2026-04-30.
 
@@ -3233,7 +3207,7 @@ No analysis in this batch exceeds its permitted confidence ceiling. Per-document
 
 ---
 
-## 🧪 Method Deviations
+### 🧪 Method Deviations
 
 None material. Specifically:
 - Threat analysis explicitly **does not use STRIDE** per `political-threat-framework.md` §Purpose ("This framework deliberately avoids STRIDE"). A prior version of this file (commit `0ae623d`) used STRIDE; it has been rewritten in this run to comply.
@@ -3241,7 +3215,7 @@ None material. Specifically:
 
 ---
 
-## 🔁 Iterative Improvement Log
+### 🔁 Iterative Improvement Log
 
 Per the project's **AI FIRST** principle (never accept first-pass quality), the following improvement passes were performed in this run:
 
@@ -3258,7 +3232,7 @@ Per the project's **AI FIRST** principle (never accept first-pass quality), the 
 
 ---
 
-## 🧩 Cross-Check Against Motions Dossier Parity
+### 🧩 Cross-Check Against Motions Dossier Parity
 
 The motions cycle for the prior week (2026-04-14 → 04-17) produced 18 analysis files. This committee-reports cycle now produces 20 analysis files (17 top-level + per-document):
 
@@ -3287,7 +3261,7 @@ The motions cycle for the prior week (2026-04-14 → 04-17) produced 18 analysis
 
 ---
 
-## 🎓 Lessons for Future Cycles
+### 🎓 Lessons for Future Cycles
 
 1. **Do not allow a news-articles run to begin before the analysis parity check** — this cycle's issue originated in a prior "Analysis Only" run that produced only 10 files instead of the full 18-file set.
 
@@ -3302,8 +3276,7 @@ The motions cycle for the prior week (2026-04-14 → 04-17) produced 18 analysis
 **Classification**: Public · **Confidence**: 🟩 HIGH on method compliance; 🟨 MEDIUM on forward-looking claims.
 
 ## Data Download Manifest
-
-_Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/data-download-manifest.md)_
+<!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/data-download-manifest.md -->
 
 **Generated**: 2026-04-21 15:36 UTC
 **Data Sources**: get_betankanden, get_dokument_innehall
@@ -3325,7 +3298,7 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 > the preceding committee week. Both selections are intentional; they serve different
 > pipeline stages.
 
-## Document Counts by Type
+### Document Counts by Type
 
 - **propositions**: 0 documents
 - **motions**: 0 documents
@@ -3335,24 +3308,23 @@ _Source: [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor
 - **questions**: 0 documents
 - **interpellations**: 0 documents
 
-## Data Quality Notes
+### Data Quality Notes
 
 All documents sourced from official riksdag-regering-mcp API.
 
 ## Election 2026 Implications
-
-_Source: [`election-2026-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/election-2026-implications.md)_
+<!-- source: election-2026-implications.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/election-2026-implications.md -->
 
 **Date**: 2026-04-21 | **Analyst**: news-committee-reports | **Framework**: v5.0 Election Lens  
 **Updated**: 14:45 UTC — HD01FiU48 (extra ändringsbudget) added as primary electoral document
 
-## Overview
+### Overview
 
 The April 2026 committee reports batch arrives with approximately 5 months until Sweden's general election (September 14, 2026). An extraordinary supplementary budget with fuel tax relief and energy price support now sits alongside the migration enforcement reform as co-leading electoral stories — together they define the government's strategic bet for the final campaign stretch.
 
 ---
 
-## Electoral Impact Matrix
+### Electoral Impact Matrix
 
 ```mermaid
 graph LR
@@ -3385,9 +3357,9 @@ graph LR
 
 ---
 
-## Document-by-Document Electoral Assessment
+### Document-by-Document Electoral Assessment
 
-### HD01FiU48 — Extra ändringsbudget: Fuel Tax Cut + Energy Price Relief
+#### HD01FiU48 — Extra ändringsbudget: Fuel Tax Cut + Energy Price Relief
 **Confidence**: 🟦VERY HIGH
 
 **Electoral Impact**: VERY HIGH — This is the most direct voter benefit in the April 2026 batch. The fuel tax cut of 82 öre/liter for petrol and 319 SEK/m³ for diesel (May 1 – September 30) will be felt at every Swedish petrol station. With approximately 5.7 million licensed drivers and Sweden's relatively high commute-by-car rates in rural and suburban areas, this measure disproportionately benefits the government's suburban and rural voter bases.
@@ -3410,7 +3382,7 @@ graph LR
 
 ---
 
-### HD01SfU22 — Inhibition av verkställigheten
+#### HD01SfU22 — Inhibition av verkställigheten
 **Confidence**: 🟩HIGH
 
 **Electoral Impact**: VERY HIGH — Migration is consistently Sweden's #2 voter concern (after economy). The inhibition reform directly replaces a humanitarian protection mechanism with a surveillance-enforcement mechanism. SD will campaign: "We delivered — no more residence through the back door." S will counter: "A cruel system that abandons people in legal limbo."
@@ -3430,7 +3402,7 @@ graph LR
 
 ---
 
-### HD01KU32/KU33 — Constitutional Amendments (vilande)
+#### HD01KU32/KU33 — Constitutional Amendments (vilande)
 **Confidence**: 🟩HIGH (constitutional mechanics well-established)
 
 **Electoral Impact**: MEDIUM but constitutionally unique — Both amendments are adopted "vilande" (pending), meaning the **next** Riksdag after the September 2026 election must re-affirm identical wording. This creates an extraordinary situation: the September 2026 election result directly determines whether KU32 (accessibility requirements for protected media) and KU33 (digital seizure not classified as public records) become law in 2027.
@@ -3439,7 +3411,7 @@ graph LR
 
 ---
 
-### HD01TU21 — En statlig e-legitimation
+#### HD01TU21 — En statlig e-legitimation
 **Confidence**: 🟧MEDIUM
 
 **Electoral Impact**: MEDIUM — Not a hot-button issue, but digital inclusion resonates with elderly voters (≈22% of electorate) and immigrant communities.
@@ -3450,7 +3422,7 @@ graph LR
 
 ---
 
-### HD01MJU21 — Riksrevisionens rapport om jordbrukets klimatomställning
+#### HD01MJU21 — Riksrevisionens rapport om jordbrukets klimatomställning
 **Confidence**: 🟧MEDIUM
 
 **Electoral Impact**: MEDIUM — Sensitive for C-party rural voter base. Green voters (MP, V) want stronger action; farmers (C/SD rural) fear binding conditions.
@@ -3461,7 +3433,7 @@ graph LR
 
 ---
 
-## Composite Electoral Risk Assessment
+### Composite Electoral Risk Assessment
 
 | Theme | Risk for Coalition | Risk for Opposition | Net Effect |
 |-------|-------------------|--------------------|----|
@@ -3473,7 +3445,7 @@ graph LR
 
 ---
 
-## Key Strategic Indicators (Track Before Sept 2026 Election)
+### Key Strategic Indicators (Track Before Sept 2026 Election)
 
 1. **Petrol price polling** — does FiU48 register as "government helped with cost of living"? (CRITICAL for election narrative)
 2. **Migration Court of Appeal ruling** on first SfU22 inhibition order (expected Q3 2026) — CRITICAL
@@ -3484,18 +3456,17 @@ graph LR
 7. **September 2026 budget debate** — will fuel relief be extended or reversed?
 
 ## Historical Baseline
-
-_Source: [`historical-baseline.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/historical-baseline.md)_
+<!-- source: historical-baseline.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/historical-baseline.md -->
 
 ---
 
-## 🎯 Purpose
+### 🎯 Purpose
 
 Per `ai-driven-analysis-guide.md`, every significance claim requires comparative grounding. This document anchors the 2026-04-21 package against twelve prior spring committee weeks to answer: **is this cycle ordinary, elevated, or historically anomalous?**
 
 ---
 
-## 📊 Spring Committee-Week Baselines 2014–2026
+### 📊 Spring Committee-Week Baselines 2014–2026
 
 Indexed to mid-April committee weeks (~T-20 weeks to mid-term, ~T-20 weeks before general elections in election years).
 
@@ -3519,15 +3490,15 @@ Indexed to mid-April committee weeks (~T-20 weeks to mid-term, ~T-20 weeks befor
 
 ---
 
-## 🔎 Position of 2026-04-21 in Historical Context
+### 🔎 Position of 2026-04-21 in Historical Context
 
-### 1. **Volume is average** (14 reports vs 13.4 mean 2014–2025)
+#### 1. **Volume is average** (14 reports vs 13.4 mean 2014–2025)
 The report count itself is unremarkable. The concentration at the top of the significance matrix is not.
 
-### 2. **Top-story significance is tied for highest since 2014** (22/25)
+#### 2. **Top-story significance is tied for highest since 2014** (22/25)
 Equals only 2022 (HögElPris energy-crisis subsidies during the Russian energy shock). 2022 and 2026 are the **only two spring cycles** to combine a **>2B SEK supplementary budget with a pre-election timing window ≤5 months**.
 
-### 3. **Triple-pillar convergence is unprecedented**
+#### 3. **Triple-pillar convergence is unprecedented**
 No prior spring cycle 2014–2025 contains all three of:
 - Election-year supplementary budget (>2B SEK) ✅ FiU48
 - Enforcement flagship with ECHR exposure ✅ SfU22
@@ -3535,7 +3506,7 @@ No prior spring cycle 2014–2025 contains all three of:
 
 The closest precedents each feature **one** of these: 2022 (supplementary budget only), 2017 (single *vilande* only), 2023 (enforcement flagship only without fiscal).
 
-### 4. **The fiscal-then-election interval is extraordinarily compressed**
+#### 4. **The fiscal-then-election interval is extraordinarily compressed**
 | Year | Supplementary budget size | Months to election | Structural continuation? |
 |------|:--------------------------:|:------------------:|:------------------------:|
 | 2016 | 3.2B SEK | Non-election | N/A |
@@ -3545,12 +3516,12 @@ The closest precedents each feature **one** of these: 2022 (supplementary budget
 
 The 4.1B SEK FiU48 package matures (sunsets) **14 days after** the election — a structural feature absent from every comparable precedent. This is the **single most politically compressed fiscal cycle of the 2014–2026 era**.
 
-### 5. ***Vilande* amendment dual-adoption is rare**
+#### 5. ***Vilande* amendment dual-adoption is rare**
 Since 1974 (Regeringsformen adoption), only **six** spring committee weeks have adopted two *vilande* amendments simultaneously: 1979, 1988, 1998, 2006, 2017, **2026**. The 2017 cycle is the most recent analogue — its two *vilande* amendments had an 85% and 70% re-affirmation rate respectively.
 
 ---
 
-## 📈 Comparative Series — Coalition Fiscal Activism (Election-Year Spring)
+### 📈 Comparative Series — Coalition Fiscal Activism (Election-Year Spring)
 
 ```mermaid
 graph LR
@@ -3570,7 +3541,7 @@ graph LR
 
 ---
 
-## 🏛️ Constitutional Baseline — *Vilande* Re-Affirmation Rates
+### 🏛️ Constitutional Baseline — *Vilande* Re-Affirmation Rates
 
 Historical re-affirmation outcomes for *vilande* amendments passing to the next Riksdag after an intervening election:
 
@@ -3587,7 +3558,7 @@ KU33 (digital-seizure access restriction) fits the "politically-charged" class w
 
 ---
 
-## 🧭 What This Cycle Is *Not* Precedented For
+### 🧭 What This Cycle Is *Not* Precedented For
 
 Claims that would *exceed* historical baselines and require additional evidence before publication:
 
@@ -3598,7 +3569,7 @@ Claims that would *exceed* historical baselines and require additional evidence 
 
 ---
 
-## 🎙️ Newsroom-Grade Historical Framings (Verified)
+### 🎙️ Newsroom-Grade Historical Framings (Verified)
 
 | Frame | Backed by | Confidence |
 |-------|-----------|:----------:|
@@ -3610,7 +3581,7 @@ Claims that would *exceed* historical baselines and require additional evidence 
 
 ---
 
-## 🔗 Related Analyses
+### 🔗 Related Analyses
 
 - [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief.md) — synthesised newsroom summary
 - [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/comparative-international.md) — peer-jurisdiction baselines
@@ -3620,3 +3591,37 @@ Claims that would *exceed* historical baselines and require additional evidence 
 ---
 
 **Confidence**: 🟩 HIGH on aggregate counts; 🟨 MEDIUM on top-story significance re-scoring for pre-2020 cycles (retrospective methodology reconstruction).
+
+## Article Sources
+
+Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
+
+- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief.md)
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/synthesis-summary.md)
+- [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/significance-scoring.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/stakeholder-perspectives.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/scenario-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/threat-analysis.md)
+- [`documents/HD01CU27-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01CU27-analysis.md)
+- [`documents/HD01CU28-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01CU28-analysis.md)
+- [`documents/HD01FiU48-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01FiU48-analysis.md)
+- [`documents/HD01KU32-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU32-analysis.md)
+- [`documents/HD01KU33-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU33-analysis.md)
+- [`documents/HD01KU42-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU42-analysis.md)
+- [`documents/HD01KU43-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01KU43-analysis.md)
+- [`documents/HD01MJU21-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01MJU21-analysis.md)
+- [`documents/HD01SfU22-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01SfU22-analysis.md)
+- [`documents/HD01TU16-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01TU16-analysis.md)
+- [`documents/HD01TU19-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01TU19-analysis.md)
+- [`documents/HD01TU21-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01TU21-analysis.md)
+- [`documents/HD01TU22-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/documents/HD01TU22-analysis.md)
+- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/coalition-mathematics.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/comparative-international.md)
+- [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/classification-results.md)
+- [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/cross-reference-map.md)
+- [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/methodology-reflection.md)
+- [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/data-download-manifest.md)
+- [`election-2026-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/election-2026-implications.md)
+- [`historical-baseline.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/historical-baseline.md)
