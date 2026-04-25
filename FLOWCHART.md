@@ -969,3 +969,29 @@ flowchart LR
 - 24 indicators across 10 IMF dataflows (WEO / FM / IFS / BOP / DOTS / GFS_COFOG / PCPS / ER / MFS_IR / MFS_PR) catalogued in [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json)
 - Vintage discipline (>6 mo → annotation) enforced by `tests/imf-inventory.test.ts` (13 assertions) and `tests/economic-context-multi-provider.test.ts` (asserts IMF queried before WB)
 - Egress allow-list: `www.imf.org`, `sdmxcentral.imf.org` pinned in every workflow `network:` block
+
+---
+
+## 🏛️ Statskontoret Data Flow (Current State)
+
+```mermaid
+flowchart TD
+    Start[News / analysis workflow needs agency or budget-execution context]
+    Decision{Context type?}
+    Start --> Decision
+    Decision -->|Agency structure / headcount| MF[Statskontoret Myndighetsförteckning]
+    Decision -->|Annual budget outturn| AU[Statskontoret Årsutfall]
+    Decision -->|Monthly budget outturn| MU[Statskontoret Månadsutfall]
+    Decision -->|Macro projection| IMF[IMF WEO/FM]
+    MF --> CLI[statskontoret-fetch.ts]
+    AU --> CLI
+    MU --> CLI
+    CLI --> Discover[discover: extract Excel / CSV ZIP links]
+    CLI --> Headcount[headcount: parse XLSX and aggregate department time series]
+    Discover --> Persist[analysis/data/statskontoret JSON + meta]
+    Headcount --> Persist
+    Persist --> Article[Article / dashboard context with source URL and freshness]
+```
+
+Key gates: HTTPS-only source, source catalogue validation, parser tests, provenance sidecars, and optional-enrichment fallback.
+

@@ -687,3 +687,24 @@ IMF_LIVE_SMOKE=1 npm test -- imf-client.live
 - `tests/imf-vintage-discipline.test.ts` — asserts cache filenames carry vintage tags
 
 **Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
+
+---
+
+## 🧪 Statskontoret Test Coverage
+
+Statskontoret coverage is split across focused Vitest suites:
+
+| Test file | Coverage |
+|---|---|
+| `tests/statskontoret-client.test.ts` | Download-link extraction, XLSX workbook parsing, CSV ZIP extraction, Swedish decimal handling, injected fetch client behavior. |
+| `tests/statskontoret-fetch.test.ts` | Import-safe CLI parsing, typed CLI errors, source validation, resource classification, numeric parsing primitives. |
+| `tests/statskontoret-inventory.test.ts` | Inventory metadata, dataset coverage parity with `STATSKONTORET_SOURCES`, provider-decision matrix, client/CLI/persistence declarations. |
+
+Targeted validation command:
+
+```bash
+npx vitest run tests/statskontoret-client.test.ts tests/statskontoret-fetch.test.ts tests/statskontoret-inventory.test.ts
+```
+
+Quality expectation: no live network calls in tests; fixtures model Statskontoret workbook/ZIP assumptions and prevent workflow regressions without depending on upstream availability.
+

@@ -1108,3 +1108,35 @@ Riksdagsmonitor uses a **provider-tiered** data architecture, with each provider
 **Why this split** — IMF uses uniform SNA 2008 / GFSM 2014 / BPM6 methodology across countries (essential for cross-country comparison), publishes T+5 projections (essential for look-ahead workflows), and has fresher data than World Bank's economic indicators. World Bank remains the canonical source for the classes IMF does not publish (WGI governance, environment).
 
 Authority: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1 · hub: [`analysis/imf/`](analysis/imf/) · agent guide: [`AGENTS.md`](AGENTS.md) §IMF.
+
+---
+
+## 🏛️ Statskontoret Swedish Administration Integration
+
+Riksdagsmonitor now includes a pure-TypeScript Statskontoret integration for Swedish government-body and central-government budget-execution context.
+
+| Dataset | Use |
+|---|---|
+| Myndighetsförteckning | Authority count, department grouping, leadership form and årsarbetskrafter/headcount over time. |
+| Årsutfall för statens budget | Annual central-government revenue and expenditure outturns. |
+| Månadsutfall för statens budget | Monthly budget execution from 2006 onward. |
+| Tidsserier, statens budget m.m. | Long-run Swedish budget context. |
+
+Quick commands:
+
+```bash
+tsx scripts/statskontoret-fetch.ts list-sources
+tsx scripts/statskontoret-fetch.ts discover --source arsutfall --persist
+tsx scripts/statskontoret-fetch.ts headcount --url "https://www.statskontoret.se/...xlsx" --persist
+```
+
+Architecture and governance references:
+
+- `analysis/statskontoret/README.md` — integration hub.
+- `analysis/statskontoret/indicators-inventory.json` — machine-readable source catalogue.
+- `analysis/statskontoret/data-dictionary.md` — field and freshness rules.
+- `scripts/statskontoret-client.ts` / `scripts/statskontoret-fetch.ts` — client and workflow CLI.
+- `tests/statskontoret-client.test.ts`, `tests/statskontoret-fetch.test.ts`, `tests/statskontoret-inventory.test.ts` — regression coverage.
+
+Provider rule: IMF remains primary for macro/fiscal projections, SCB remains Swedish statistical ground truth, World Bank remains governance/environment/social residue, and Statskontoret is authoritative for Swedish agency structure and central-government budget execution.
+
