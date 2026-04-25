@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `synthesis-summary.md` in the workflow's own folder. This file synthesizes per-file analyses into an integrated intelligence picture. AI reads all per-file analyses and produces genuine synthesis — not a mechanical concatenation of summaries.
@@ -29,6 +29,22 @@
 > 5. Include ≥2 color-coded Mermaid diagrams (intelligence dashboard + one other)
 > 6. Rank documents by significance and explain the ranking rationale
 
+
+---
+
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **ANALYZE → DISSEMINATE** — integrates per-document Family E findings into the run's coherent intelligence picture, identifies cross-document patterns, and lights the path from raw documents to executive-brief BLUF. |
+| **PIRs Served** | Serves **all** standing PIRs that the day's documents touch; the synthesis explicitly lists which of PIR-1..PIR-7 each major finding addresses, and surfaces any PIR with insufficient evidence. |
+| **Admiralty Floor** | **B2** floor on synthesis-level claims; per-document anchor evidence inherits the Admiralty grade from the contributing Family E `{dok_id}-analysis.md`; aggregate confidence ≤ floor of contributing artifact confidences. |
+| **WEP + ODNI** | Pattern statements use **WEP** phrasing for cross-document inferences (`a likely coordinated push`, `about even between two interpretations`); aggregate confidence label is the floor (not average) of contributing-artifact confidences. |
+| **Source Diversity Floor** | The synthesis must integrate **≥3 different MCP sources** (riksdag-regering MCP + at least one of `data.scb.se`, IMF, regeringen.se / `data.regeringen.se`); a synthesis built from a single MCP source is downgraded to ≤ MEDIUM confidence regardless of within-source breadth. |
+| **SAT(s) Applied** | Cross-Impact Analysis (between same-day documents); Pattern Recognition (against the same-type 30-day baseline + same-type cross-run-diff); ACH lite (when ≥2 competing narratives explain the day); Indicators & Signposts (forward triggers extracted to `forward-indicators.md`). |
+| **ICD 203 Standards** | All 9 standards apply — synthesis is the artifact most directly evaluated against ICD 203; in particular 4 (relevance to consumer), 5 (sourcing), 6 (logical argumentation), 7 (uncertainty), 8 (analytic value), 9 (alternative analysis). |
+
+> See [`osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md) for canonical F3EAD / PIR catalogue / Admiralty Code / WEP / SAT / ICD 203 definitions, and [`synthesis-methodology.md`](../methodologies/synthesis-methodology.md) for DIW-weighted ranking, lead-story selection, and aggregate confidence rules.
 
 ---
 
@@ -388,8 +404,8 @@ graph LR
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/synthesis-summary.md`  
-- **Version:** 2.3  
-- **Effective Date:** 2026-06-01 (UTC)  
+- **Version:** 2.4  
+- **Effective Date:** 2026-04-25 (UTC)  
 - **Key Changes v2.3:** Added Election 2026 Implications section, Historical Comparison tables, 5-level confidence scale (VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW), updated quality checklist  
 - **Consumed By:** All news article generator workflows  
 - **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment)  

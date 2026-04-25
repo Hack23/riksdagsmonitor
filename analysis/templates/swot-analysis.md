@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `swot-analysis.md` in the workflow's own folder (never overwrite another workflow's files). Each SWOT entry requires a dok_id or named evidence source — opinion-only entries are prohibited. See [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md).
@@ -31,6 +31,22 @@
 > 7. **Document Control** footer
 >
 > **Good example:** [SWOT.md](../../SWOT.md) — this is the formatting quality standard.
+
+---
+
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **EXPLOIT / ANALYZE** — converts classified events into the strategic picture (what each actor can leverage, defend, exploit, mitigate); feeds executive-brief, scenario-analysis, and Family D coalition-mathematics. |
+| **PIRs Served** | PIR-1 (coalition stability), PIR-2 (opposition cohesion), PIR-4 (Election 2026 pathway); add PIR-3 (party-position drift) when SWOT entries record a shift relative to the 30-day baseline. |
+| **Admiralty Floor** | **B2** floor on every quadrant entry; **A1** required when an entry quotes a verbatim primary source (motion text, vote tally, ministerial statement); F6 entries are rejected. |
+| **WEP + ODNI** | Each entry carries a 5-level confidence label (🟦 VERY HIGH → ⬛ VERY LOW); narrative interpretation uses **WEP** phrasing for forward implications; TOWS strategic options pair likelihood × actor-capability assessments using WEP terms. |
+| **Source Diversity Floor** | ≥2 primary sources per HIGH-confidence quadrant entry; ≥1 primary for MEDIUM; LOW entries may be single-source but must carry `[needs-corroboration]`. Cross-SWOT interference rows must cite both contributing entries. |
+| **SAT(s) Applied** | SWOT (canonical); TOWS Matrix (SO/ST/WO/WT options); Cross-Impact Analysis (interference between actor SWOTs); Key Assumptions Check (on every TOWS option); ACH (when ≥2 strategic interpretations compete). |
+| **ICD 203 Standards** | 1 (objectivity — every actor SWOT receives equal analytical depth), 5 (sourcing), 6 (logical argumentation — TOWS derivation shown), 7 (uncertainty — confidence labels), 9 (alternative analysis — cross-SWOT and TOWS surface counter-narratives). |
+
+> See [`osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md) for canonical Admiralty / WEP / SAT / ICD 203 definitions, and [`political-swot-framework.md`](../methodologies/political-swot-framework.md) for evidence-based SWOT, TOWS, cross-SWOT interference, and the 180-day temporal-decay rule.
 
 ---
 
@@ -413,8 +429,8 @@ quadrantChart
 **Document Control:**  
 - **Template Path:** `/analysis/templates/swot-analysis.md`  
 - **Framework Reference:** [SWOT.md](../../SWOT.md), [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md)  
-- **Version:** 2.3  
-- **Effective Date:** 2026-06-01 (UTC)  
+- **Version:** 2.4  
+- **Effective Date:** 2026-04-25 (UTC)  
 - **Key Changes v2.3:** Added Election 2026 SWOT Dimension section (Section 9), Electoral SWOT Balance table, 5-level confidence scale reference, updated quality checklist  
 - **Advanced Sections:** Cross-SWOT Interference, TOWS Matrix, SWOT Delta, Forward Indicators & Scenario Outlook, MCP Data Provenance  
 - **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment)  

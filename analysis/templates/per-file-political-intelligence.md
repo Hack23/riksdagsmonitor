@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** This template is for **per-file** analysis. For each data file downloaded via MCP, the AI agent produces one analysis markdown file stored as `{id}-analysis.md` in the workflow's isolated folder. AI MUST read `analysis/methodologies/ai-driven-analysis-guide.md` (v5.0) before analyzing; consult other methodology guides only when needed for the current analysis step.
@@ -36,6 +36,22 @@
 >
 > **MUST include:** ≥3 evidence points with dok_id, ≥1 color-coded Mermaid diagram (classification tree, risk matrix, stakeholder map, or threat taxonomy — at least one is MANDATORY), multi-framework analysis (SWOT + at least one of: Risk, Attack Tree, Kill Chain), named actors with party affiliations, forward indicators.
 
+
+---
+
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **FIND / FIX / FINISH** — locate the document in the corpus, classify it across 7 dimensions, and produce the atomic per-document intelligence record that Family A synthesis builds on. |
+| **PIRs Served** | `[REQUIRED: list addressed PIRs from PIR-1..PIR-7]` — at minimum PIR-3 (party-position drift) plus the PIR matching the document's policy domain (defence → PIR-7, fiscal → PIR-6, institutional → PIR-5, election-adjacent → PIR-4). |
+| **Admiralty Floor** | **A1** for the dok_id itself (parliamentary primary source); **B2** floor for analytic inferences derived from it; F6 not permitted. |
+| **WEP + ODNI** | Classification claims use deterministic language ("the proposition states X" / "the committee voted Y–Z"); forward-looking implications use **WEP** terms (`likely`, `about even`, `unlikely`) paired with 5-level confidence per [`political-style-guide.md`](../methodologies/political-style-guide.md#-words-of-estimative-probability-wep--odni-confidence-overlay). |
+| **Source Diversity Floor** | ≥1 primary (the document) + ≥1 corroborating secondary source for every P0/P1 implication; single-source implications must carry `[unconfirmed]` and ≤ MEDIUM confidence. |
+| **SAT(s) Applied** | Quality of Information Check; Structured Brainstorming; Key Assumptions Check; Cross-Impact Analysis (against same-day documents). |
+| **ICD 203 Standards** | 1 (objectivity), 2 (independent), 3 (timeliness), 5 (sourcing), 6 (logical argumentation), 7 (uncertainty), 8 (analytic value), 9 (alternative analysis). |
+
+> See [`osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md) for canonical F3EAD / PIR catalogue / Admiralty Code / WEP / SAT / ICD 203 definitions, and [`political-style-guide.md`](../methodologies/political-style-guide.md) for tone, evidence-citation, and confidence-labelling conventions.
 
 ---
 
@@ -421,8 +437,8 @@ graph TD
 **Document Control:**  
 - **Template Path:** `/analysis/templates/per-file-political-intelligence.md`  
 - **Output Path:** `analysis/daily/YYYY-MM-DD/{articleType}/documents/{dok_id}-analysis.md`  
-- **Version:** 2.3  
-- **Effective Date:** 2026-06-01 (UTC)  
+- **Version:** 2.4  
+- **Effective Date:** 2026-04-25 (UTC)  
 - **Key Changes v2.3:** Added Election 2026 Implications section, 5-level confidence scale (VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW) replacing binary H/M/L, improved differentiated per-document insights  
 - **Frameworks:** SWOT, Risk, Attack Trees, Kill Chain, Diamond Model, Stakeholder  
 - **Framework References:** [SWOT.md](../../SWOT.md), [THREAT_MODEL.md](../../THREAT_MODEL.md)  

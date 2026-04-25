@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `significance-scoring.md` in the workflow's own folder (never overwrite another workflow's files). The significance scorer TypeScript implementation is at `scripts/analysis-framework/significance-scorer.ts` — this provides automated numeric scores only. AI must provide the **analytical rationale** explaining why documents score as they do.
@@ -27,6 +27,22 @@
 
 > **🚨 Anti-Pattern Warning:** Plain prose without structured tables, Mermaid diagrams, or evidence citations is REJECTED. Every analysis file MUST follow this template exactly: metadata header, structured tables with evidence columns, ≥1 color-coded Mermaid diagram, confidence labels on all claims. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
 
+
+---
+
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **ANALYZE** — assigns the DIW-weighted significance score that downstream Family A synthesis and Family C scenario analysis use to allocate dispatch budget and lead-story priority. |
+| **PIRs Served** | Feeds **all** standing PIRs (PIR-1..PIR-7); ranking determines which PIR receives lead-story emphasis on the day. Each scored event must be tagged with the PIR(s) it most directly informs. |
+| **Admiralty Floor** | **A1** for the underlying dok_id (parliamentary primary); **B2** floor for the analytic mapping from event → DIW score; **B3** acceptable for soft-signal events (rhetorical motions, signalverdi). |
+| **WEP + ODNI** | The DIW score itself carries a 5-level confidence label; uncertainty is expressed using **WEP** in the rationale narrative, not in the integer score. Tier mapping (P0 = 9–10, P1 = 7–8, P2 = 4–6, P3 = 1–3) is deterministic; **only the rationale, not the cutoffs, may be revised**. |
+| **Source Diversity Floor** | ≥1 primary per scored event; ≥2 primary plus ≥1 secondary for any score ≥ 7 (P0/P1 tier); P0 events with single-source provenance must be downgraded one tier. |
+| **SAT(s) Applied** | DIW 6-dimension weighted scoring (Hack23 in-house); Quality of Information Check; Pattern Recognition (against the same-type 30-day baseline); Calibration Check (against the calibration examples in §5). |
+| **ICD 203 Standards** | 5 (sourcing — every score has a dok_id), 6 (logical argumentation — DIW math is shown), 7 (uncertainty — confidence label per row), 8 (analytic value — tier mapping shows downstream use), 9 (alternative analysis — manual vs. automated divergence is documented). |
+
+> See [`osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md) for canonical Admiralty Code / WEP / SAT / ICD 203 definitions, and [`synthesis-methodology.md`](../methodologies/synthesis-methodology.md) for the DIW formula, dimension weights, and tier-mapping rationale.
 
 ---
 
@@ -362,8 +378,8 @@ These examples provide anchor points for consistent scoring across workflows:
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/significance-scoring.md`  
-- **Version:** 2.3  
-- **Effective Date:** 2026-06-01 (UTC)  
+- **Version:** 2.4  
+- **Effective Date:** 2026-04-25 (UTC)  
 - **Key Changes v2.3:** Added Election 2026 Relevance Score section, time-banded electoral proximity bonus (+0.0 to +2.0), coalition stability multiplier, voter salience factor  
 - **Scorer Implementation:** `scripts/analysis-framework/significance-scorer.ts`  
 - **Advanced Sections:** Relative Scoring, Same-Type Comparison  

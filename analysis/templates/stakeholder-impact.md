@@ -11,18 +11,34 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `stakeholder-impact.md` in the workflow's own folder (never overwrite another workflow's files). Complete the context block first, then assess each stakeholder group with specific evidence. AI must provide genuine impact analysis with named actors and dok_id citations — not generic "may affect business" prose.
 
 > **🚨 Anti-Pattern Warning:** Generic stakeholder statements like "this may affect business environment" or "citizens may be impacted" without specific evidence are REJECTED. Every stakeholder assessment MUST name specific actors, cite specific documents, and provide specific impact mechanisms. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
 
+
+---
+
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **ANALYZE → DISSEMINATE** — translates raw documents into named-actor impact assessments that downstream synthesis, executive-brief and Family D voter-segmentation/coalition-mathematics consume. |
+| **PIRs Served** | PIR-2 (opposition cohesion), PIR-3 (party-position drift), PIR-6 (economic transmission); add PIR-7 (foreign-policy alignment) when international stakeholders carry meaningful weight. |
+| **Admiralty Floor** | **A1** for verbatim party / minister / committee statements; **B2** floor for inferred preference functions and reaction forecasts; **B3** acceptable for civil-society / interest-group positions sourced from press coverage. |
+| **WEP + ODNI** | Position-alignment claims use **WEP** phrasing (`almost certainly opposes`, `likely supports`, `about even`); impact magnitude uses 1–5 scale with descriptive consequence narrative; confidence label per stakeholder row uses 5-level scale. |
+| **Source Diversity Floor** | ≥1 primary statement per stakeholder group; ≥3 primary + ≥1 secondary for any HIGH-magnitude impact claim (impact ≥ 4); single-source HIGH-magnitude claims are downgraded or flagged `[unconfirmed]`. |
+| **SAT(s) Applied** | Stakeholder Mapping (power × interest × position grid); Cross-Impact Analysis (between stakeholder groups); Devil's Advocacy (for HIGH-magnitude claims); Key Assumptions Check (on inferred preferences). |
+| **ICD 203 Standards** | 1 (objectivity — equal treatment of all parties), 2 (independent), 5 (sourcing), 6 (logical argumentation), 8 (analytic value — names *who* is affected and *how*), 9 (alternative analysis — counter-narratives surfaced). |
+
+> See [`osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md) for canonical Admiralty Code / WEP / SAT / ICD 203 definitions, and [`political-style-guide.md`](../methodologies/political-style-guide.md) for the named-actor citation canon and confidence-labelling conventions.
 
 ---
 
@@ -489,8 +505,8 @@ quadrantChart
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/stakeholder-impact.md`  
-- **Version:** 2.3  
-- **Effective Date:** 2026-06-01 (UTC)
+- **Version:** 2.4  
+- **Effective Date:** 2026-04-25 (UTC)
 - **Key Changes v2.3:** Added Election 2026 Stakeholder Effects section with Voting Bloc Alignment table, 5-level confidence scale reference, updated quality checklist  
 - **Lens References:** `scripts/analysis-framework/lenses/` (citizen, economic, government, international, media, opposition)  
 - **Framework Reference:** [methodologies/political-style-guide.md](../methodologies/political-style-guide.md)  

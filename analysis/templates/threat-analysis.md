@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-3.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-3.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 3.4 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `threat-analysis.md` in the workflow's own folder (never overwrite another workflow's files). Each threat requires evidence citations and multi-framework analysis. See [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md).
@@ -36,6 +36,24 @@
 >
 > **Good example:** [THREAT_MODEL.md](../../THREAT_MODEL.md) — this is the formatting quality standard.
 
+
+---
+
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **EXPLOIT / ANALYZE** — characterises political threats to democratic function across the 6-dimension Political Threat Taxonomy and feeds risk-assessment cascading chains, scenario-analysis tail scenarios, and forward-indicators escalation signals. |
+| **PIRs Served** | PIR-1 (coalition stability), PIR-5 (institutional risk), PIR-7 (foreign-policy alignment); add PIR-4 (Election 2026 pathway) when threats target electoral integrity; PIR-2 (opposition cohesion) when threats target opposition coordination capacity. |
+| **Admiralty Floor** | **B2** floor on every threat row; **A1** required when an entry quotes verbatim primary actor statements (motions, votes, ministerial declarations, public speeches); **F6** ungraded entries are flagged and downgraded; suspected disinformation must be tagged `[low-source-reliability]`. |
+| **WEP + ODNI** | Threat actor **capability**, **intent**, and **opportunity** (ICO) each carry **WEP**-phrased likelihood; threat severity is 1–5 with descriptive consequence narrative; confidence label per row uses 5-level scale. |
+| **Source Diversity Floor** | ≥3 primary + ≥1 secondary source per HIGH threat (severity ≥ 4); HIGH threats with single-source provenance must be downgraded to MEDIUM or flagged `[unconfirmed]`; foreign-actor threats require ≥1 cross-language corroboration where feasible. |
+| **SAT(s) Applied** | Red Team (adversarial perspective); Devil's Advocacy (challenge dominant threat hypothesis); Diamond Model walk-through (adversary–capability–infrastructure–victim); Kill-Chain mapping; ACH (when ≥2 competing threat hypotheses); Premortem (for HIGH-severity rows). |
+| **ICD 203 Standards** | 1 (objectivity), 2 (independent — no political alignment), 5 (sourcing), 6 (logical argumentation — attack-tree decomposition shown), 7 (uncertainty), 9 (alternative analysis — Devil's Advocacy + ACH). |
+
+> ⚠️ **STRIDE is NOT used.** The Political Threat Taxonomy (Narrative Integrity · Legislative Integrity · Accountability · Transparency · Democratic Process · Power Balance) replaces STRIDE for political analysis. STRIDE remains valid only for the platform's software security in `THREAT_MODEL.md`.
+
+> See [`osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md) for canonical Admiralty / WEP / SAT / ICD 203 definitions, and [`political-threat-framework.md`](../methodologies/political-threat-framework.md) for the 6-dimension taxonomy, attack-tree templates, kill-chain stages, and Diamond Model adaptation.
 
 ---
 
@@ -448,8 +466,8 @@ timeline
 **Document Control:**  
 - **Template Path:** `/analysis/templates/threat-analysis.md`  
 - **Framework Reference:** [THREAT_MODEL.md](../../THREAT_MODEL.md), [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md)  
-- **Version:** 3.3  
-- **Effective Date:** 2026-06-01 (UTC)
+- **Version:** 3.4  
+- **Effective Date:** 2026-04-25 (UTC)
 - **Key Changes v3.3:** Added Election 2026 Threat Implications section, 5-level confidence scale reference, updated quality checklist  
 - **Frameworks:** Attack Trees, Kill Chain, Diamond Model, Political Threat Taxonomy, Threat Actor Profiling  
 - **Advanced Sections:** Threat Evolution Timeline, Cross-Methodology Linkage  

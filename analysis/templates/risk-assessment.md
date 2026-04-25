@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `risk-assessment.md` in the workflow's own folder (never overwrite another workflow's files). Scores use Likelihood × Impact methodology from [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md).
@@ -30,6 +30,22 @@
 > 6. **Evidence tables** with L×I scores, dok_id citations, confidence labels
 > 7. **Forward indicators** and scenario outlook
 
+
+---
+
+## 🔄 Tradecraft Context
+
+| Element | Value |
+|---------|-------|
+| **F3EAD Stage** | **EXPLOIT** — quantifies political risk for decision-support; feeds Family C scenario analysis and Family D forward indicators. |
+| **PIRs Served** | PIR-1 (coalition stability), PIR-5 (institutional risk), PIR-6 (economic transmission); add PIR-4 (Election 2026 pathway) inside the 12-month pre-election window; add PIR-7 (foreign-policy alignment) when external risks dominate. |
+| **Admiralty Floor** | **B2** floor on every risk row; **A1** required for risk anchor evidence drawn from primary MCP sources (`search_voteringar`, `get_propositioner`, `get_betankanden`, `data.scb.se`, IMF datamapper); **F6** ungraded entries are rejected. |
+| **WEP + ODNI** | Likelihood expressed in **WEP** terms (`almost no chance` → `almost certain`) paired with the 1–5 numeric scale; impact narrated in 1–5 with descriptive consequence text; confidence label per row uses 5-level scale per [`political-style-guide.md`](../methodologies/political-style-guide.md#-5-level-confidence-scale). |
+| **Source Diversity Floor** | ≥3 primary + ≥1 secondary source per HIGH risk row (score ≥ 12); ≥2 primary for MEDIUM rows (score 6–11); ≥1 primary for LOW rows. Single-source HIGH risks must be downgraded or flagged `[unconfirmed]`. |
+| **SAT(s) Applied** | Premortem (failure-mode walk-back); Indicators & Signposts; Cone of Plausibility (cascading-risk chains); ACH (when ≥2 mechanisms compete to explain a risk driver); Key Assumptions Check (on every HIGH row). |
+| **ICD 203 Standards** | 1 (objectivity), 2 (independent), 5 (sourcing), 6 (logical argumentation), 7 (uncertainty — mandatory on every score), 8 (analytic value), 9 (alternative analysis — mandatory via cascading chains). |
+
+> See [`osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md) for canonical Admiralty Code, WEP, SAT and ICD 203 definitions, and [`political-risk-methodology.md`](../methodologies/political-risk-methodology.md) for the 8-category political risk taxonomy and 5×5 Likelihood × Impact matrix.
 
 ---
 
@@ -449,8 +465,8 @@ graph LR
 **Document Control:**  
 - **Template Path:** `/analysis/templates/risk-assessment.md`  
 - **Framework Reference:** [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md)  
-- **Version:** 2.3  
-- **Effective Date:** 2026-06-01 (UTC)  
+- **Version:** 2.4  
+- **Effective Date:** 2026-04-25 (UTC)  
 - **Key Changes v2.3:** Added Election 2026 Risk Dimensions section, 5-level confidence scale (VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW), updated quality checklist  
 - **Advanced Sections:** Cascading Risk, Risk Interconnection, Scenario Outlook, Previous Assessment Comparison, MCP Data Provenance  
 - **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment)  
