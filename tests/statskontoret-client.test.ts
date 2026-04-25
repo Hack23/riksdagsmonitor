@@ -53,7 +53,7 @@ describe('Statskontoret workbook parsing', () => {
     expect(workbook.sheets.map((sheet) => sheet.name)).toEqual(['Förteckning 2007–2025']);
 
     const records = rowsToRecords(workbook.sheets[0].rows);
-    expect(records).toHaveLength(3);
+    expect(records).toHaveLength(4);
 
     const headcount = buildHeadcountTimeSeries(workbook);
     expect(headcount).toEqual([
