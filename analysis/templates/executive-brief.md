@@ -16,7 +16,7 @@
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-25 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-25 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template instructions:** Produce one `executive-brief.md` per workflow folder. It is the 60-second read that an editor uses to decide if the day ships, what leads, and what goes on the forward-watch board. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/executive-brief.md`.
@@ -60,6 +60,24 @@
 > **[2–4 sentences.** Lead with the #1 DIW-ranked finding. Name the principal human actor with party. State the concrete action taken or proposed. Quantify impact. End with confidence label.**]**
 
 Example: *Sweden's Riksdag Finance Committee approved FiU48 today, cutting fuel taxes SEK 0.50–0.80/litre and providing electricity/gas price support to ~3 M households. Paired with the new wind-power revenue-sharing law, the move anchors the government's cost-of-living + green narrative ahead of September 2026. [🟩 HIGH — source: `H901FiU48`, vote record 2026-04-21].*
+
+---
+
+## 📖 Narrative (v3.2 — required)
+
+> **Purpose:** the BLUF is the analytic verdict; this section is the **prose handoff** to `article.md`. Apply [`political-style-guide.md` §"Narrative-Voice Standards"](../methodologies/political-style-guide.md#-narrative-voice-standards-v32--new) — pick **one** canonical lede pattern, name **three people** in the first 200 words, vary sentence cadence, include **≥ 1 concrete sensory detail per 400 words**, and end with the **counter-narrative paragraph**. This subsection is graded on the 6-axis Pass-2 narrative rubric (lede / scene / character / surprise / takeaway / counter-narrative); any axis < 3 forces a Pass-2 rewrite.
+
+**Lede paragraph** *(120–180 words, hard-news / tension-contrast / scene-setting / significance-first)*
+
+> `[REQUIRED — choose lede pattern. Sentence 1 must satisfy the pattern's evidence requirement. Sentence 2 should pull the reader into the consequence.]`
+
+**Body paragraphs** *(2–4 paragraphs, total 300–500 words)*
+
+> `[REQUIRED — name third actor by word 200, vary sentence length (one short / two medium / two long per paragraph), include one concrete sensory detail (time, room, exact phrasing of an interjection, or seating-chart fact). Tradecraft jargon allowed only with payoff within ≤ 2 sentences.]`
+
+**Counter-narrative** *(60–150 words, signposted)*
+
+> *"There is a contrary read."* `[REQUIRED — name one actor whose framing of these same numbers is genuinely different. Quote them. Do not soften with "however".]`
 
 ---
 

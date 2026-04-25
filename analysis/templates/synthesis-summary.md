@@ -16,7 +16,7 @@
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-04-25 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.5 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `synthesis-summary.md` in the workflow's own folder. This file synthesizes per-file analyses into an integrated intelligence picture. AI reads all per-file analyses and produces genuine synthesis — not a mechanical concatenation of summaries.
@@ -135,6 +135,30 @@ graph TD
 | 3 | `[REQUIRED]` | `[REQUIRED]` | `[#.#]` | `[tier]` | `[quadrant]` | `[action]` |
 | 4 | `[OPTIONAL]` | `[OPTIONAL]` | `[#.#]` | `[tier]` | `[quadrant]` | `[action]` |
 | 5 | `[OPTIONAL]` | `[OPTIONAL]` | `[#.#]` | `[tier]` | `[quadrant]` | `[action]` |
+
+---
+
+## 📖 Narrative (v3.2 — required)
+
+> **Purpose:** the table above is the analytic ranking; this section is the **prose handoff** to `article.md` for the lead story. Apply [`political-style-guide.md` §"Narrative-Voice Standards"](../methodologies/political-style-guide.md#-narrative-voice-standards-v32--new) — choose one canonical lede pattern, name three people in the first 200 words, follow the sentence-cadence rule, include sensory specificity, close with a counter-narrative paragraph. Pass-2 grades this on the 6-axis narrative rubric.
+
+### Lead-story narrative *(400–700 words)*
+
+**Lede** *(one of: hard-news / tension-contrast / scene-setting / significance-first — pick the form that fits the day's #1 ranked finding)*
+
+> `[REQUIRED]`
+
+**Body** *(2–4 paragraphs)*
+
+> `[REQUIRED — vary sentence length, name ≥ 3 actors with role + party + verb, ≥ 1 concrete sensory detail per 400 words. Tradecraft jargon allowed only with payoff within ≤ 2 sentences.]`
+
+**Counter-narrative** *(60–150 words, signposted)*
+
+> *"There is a contrary read."* `[REQUIRED — named source whose framing differs.]`
+
+### Secondary thread narrative *(200–400 words, optional but recommended for ≥ 3-finding days)*
+
+> `[OPTIONAL — same structure, applied to ranking row #2 if its DIW is within 1.5 of #1.]`
 
 ---
 
@@ -404,7 +428,7 @@ graph LR
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/synthesis-summary.md`  
-- **Version:** 2.4  
+- **Version:** 2.5  
 - **Effective Date:** 2026-04-25 (UTC)  
 - **Key Changes v2.3:** Added Election 2026 Implications section, Historical Comparison tables, 5-level confidence scale (VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW), updated quality checklist  
 - **Consumed By:** All news article generator workflows  

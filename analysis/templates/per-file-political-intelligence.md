@@ -16,7 +16,7 @@
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-04-25 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.5 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** This template is for **per-file** analysis. For each data file downloaded via MCP, the AI agent produces one analysis markdown file stored as `{id}-analysis.md` in the workflow's isolated folder. AI MUST read `analysis/methodologies/ai-driven-analysis-guide.md` (v5.0) before analyzing; consult other methodology guides only when needed for the current analysis step.
@@ -76,6 +76,24 @@
 `[REQUIRED: 3–5 sentences capturing the political significance. Intelligence-level analysis — not just what happened, but what it means for power dynamics, coalition stability, and democratic accountability. Include confidence label.]` **[VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW]**
 
 > ⚠️ **Confidence Ceiling Rule**: If `Data Depth` above is `METADATA-ONLY`, confidence MUST be `LOW` or `VERY LOW`. If `SUMMARY`, max is `MEDIUM`. Only `FULL-TEXT` documents may claim `HIGH` or `VERY HIGH`. See `ai-driven-analysis-guide.md` §Data Availability Prerequisites.
+
+---
+
+## 📖 Narrative (v3.2 — required for L2-Strategic+ depth tier)
+
+> **When required:** this subsection is **mandatory** when the document's DIW score places it at L2-Strategic, L2+ Priority, or L3 Intelligence-grade depth. For L1-Surface and clustered low-weight items it is **optional**. Apply [`political-style-guide.md` §"Narrative-Voice Standards"](../methodologies/political-style-guide.md#-narrative-voice-standards-v32--new). The Family A `synthesis-summary.md` and `executive-brief.md` will pull from this subsection when this document is the day's #1 or #2 ranked finding.
+
+**Lede paragraph** *(80–140 words, one canonical lede pattern)*
+
+> `[REQUIRED for ≥ L2 — pick: hard-news / tension-contrast / scene-setting / significance-first.]`
+
+**Body** *(1–2 paragraphs, total 200–400 words)*
+
+> `[REQUIRED for ≥ L2 — name three actors (sponsor / opponent / pivotal third) by word 200 with role + party + verb. Vary sentence cadence. Include ≥ 1 concrete sensory detail (committee room, time, exact phrasing of an interjection, page count of the tabled report). Tradecraft jargon must pay back within 2 sentences.]`
+
+**Counter-narrative** *(40–100 words, signposted)*
+
+> *"There is a contrary read."* `[REQUIRED for ≥ L2 — named source whose framing of these same documents is genuinely different.]`
 
 ---
 
@@ -437,7 +455,7 @@ graph TD
 **Document Control:**  
 - **Template Path:** `/analysis/templates/per-file-political-intelligence.md`  
 - **Output Path:** `analysis/daily/YYYY-MM-DD/{articleType}/documents/{dok_id}-analysis.md`  
-- **Version:** 2.4  
+- **Version:** 2.5  
 - **Effective Date:** 2026-04-25 (UTC)  
 - **Key Changes v2.3:** Added Election 2026 Implications section, 5-level confidence scale (VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW) replacing binary H/M/L, improved differentiated per-document insights  
 - **Frameworks:** SWOT, Risk, Attack Trees, Kill Chain, Diamond Model, Stakeholder  
