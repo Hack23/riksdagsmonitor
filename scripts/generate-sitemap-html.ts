@@ -79,6 +79,10 @@ interface LanguageMeta {
     testResultsDesc: string;
     recentArticles: string;
     newsIndexPages: string;
+    articleTrustAriaLabel: string;
+    articleTrustPublicSources: string;
+    articleTrustAiFirst: string;
+    articleTrustTraceable: string;
   };
 }
 
@@ -102,6 +106,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: 'Code Coverage Reports', coverageReportsDesc: 'Test coverage reports for JavaScript and TypeScript code.',
       testResults: 'Test Results', testResultsDesc: 'Automated test results and reports.',
       recentArticles: 'Recent News Articles', newsIndexPages: 'News Index Pages',
+      articleTrustAriaLabel: "Article provenance and quality controls", articleTrustPublicSources: "Public sources", articleTrustAiFirst: "AI-FIRST review", articleTrustTraceable: "Traceable artifacts",
     },
   },
   sv: {
@@ -123,6 +128,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: 'Kodtäckningsrapporter', coverageReportsDesc: 'Testtäckningsrapporter för JavaScript och TypeScript-kod.',
       testResults: 'Testresultat', testResultsDesc: 'Automatiserade testresultat och rapporter.',
       recentArticles: 'Senaste nyhetsartiklar', newsIndexPages: 'Nyhetsindexsidor',
+      articleTrustAriaLabel: "Artikelhärkomst och kvalitetskontroller", articleTrustPublicSources: "Offentliga källor", articleTrustAiFirst: "AI-FIRST granskning", articleTrustTraceable: "Spårbara artefakter",
     },
   },
   da: {
@@ -144,6 +150,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: 'Kodedækningsrapporter', coverageReportsDesc: 'Testdækningsrapporter for JavaScript og TypeScript-kode.',
       testResults: 'Testresultater', testResultsDesc: 'Automatiserede testresultater og rapporter.',
       recentArticles: 'Seneste nyheder', newsIndexPages: 'Nyhedsindekssider',
+      articleTrustAriaLabel: "Artikelproveniens og kvalitetskontroller", articleTrustPublicSources: "Offentlige kilder", articleTrustAiFirst: "AI-FIRST gennemgang", articleTrustTraceable: "Sporbare artefakter",
     },
   },
   no: {
@@ -165,6 +172,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: 'Kodedekkningsrapporter', coverageReportsDesc: 'Testdekkningsrapporter for JavaScript og TypeScript-kode.',
       testResults: 'Testresultater', testResultsDesc: 'Automatiserte testresultater og rapporter.',
       recentArticles: 'Siste nyheter', newsIndexPages: 'Nyhetsindekssider',
+      articleTrustAriaLabel: "Artikelproveniens og kvalitetskontroller", articleTrustPublicSources: "Offentlige kilder", articleTrustAiFirst: "AI-FIRST gjennomgang", articleTrustTraceable: "Sporbare artefakter",
     },
   },
   fi: {
@@ -186,6 +194,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: 'Koodikattavuusraportit', coverageReportsDesc: 'Testikattavuusraportit JavaScript- ja TypeScript-koodille.',
       testResults: 'Testitulokset', testResultsDesc: 'Automatisoidut testitulokset ja raportit.',
       recentArticles: 'Viimeisimmät uutiset', newsIndexPages: 'Uutisindeksisivut',
+      articleTrustAriaLabel: "Artikkelin alkuperä ja laadunvalvonta", articleTrustPublicSources: "Julkiset lähteet", articleTrustAiFirst: "AI-FIRST tarkastus", articleTrustTraceable: "Jäljitettävät artefaktit",
     },
   },
   de: {
@@ -207,6 +216,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: 'Code-Coverage-Berichte', coverageReportsDesc: 'Testabdeckungsberichte für JavaScript und TypeScript-Code.',
       testResults: 'Testergebnisse', testResultsDesc: 'Automatisierte Testergebnisse und Berichte.',
       recentArticles: 'Aktuelle Nachrichten', newsIndexPages: 'Nachrichtenindexseiten',
+      articleTrustAriaLabel: "Artikelherkunft und Qualitätskontrollen", articleTrustPublicSources: "Öffentliche Quellen", articleTrustAiFirst: "AI-FIRST Prüfung", articleTrustTraceable: "Nachvollziehbare Artefakte",
     },
   },
   fr: {
@@ -228,6 +238,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: 'Rapports de couverture de code', coverageReportsDesc: 'Rapports de couverture de tests pour le code JavaScript et TypeScript.',
       testResults: 'Résultats des tests', testResultsDesc: 'Résultats de tests automatisés et rapports.',
       recentArticles: 'Articles récents', newsIndexPages: 'Pages d\'index des actualités',
+      articleTrustAriaLabel: "Provenance de l'article et contrôles qualité", articleTrustPublicSources: "Sources publiques", articleTrustAiFirst: "Examen AI-FIRST", articleTrustTraceable: "Artefacts traçables",
     },
   },
   es: {
@@ -249,6 +260,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: 'Informes de cobertura de código', coverageReportsDesc: 'Informes de cobertura de pruebas para código JavaScript y TypeScript.',
       testResults: 'Resultados de pruebas', testResultsDesc: 'Resultados de pruebas automatizadas e informes.',
       recentArticles: 'Artículos recientes', newsIndexPages: 'Páginas de índice de noticias',
+      articleTrustAriaLabel: "Procedencia del artículo y controles de calidad", articleTrustPublicSources: "Fuentes públicas", articleTrustAiFirst: "Revisión AI-FIRST", articleTrustTraceable: "Artefactos rastreables",
     },
   },
   nl: {
@@ -270,6 +282,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: 'Codedekkingsrapporten', coverageReportsDesc: 'Testdekkingsrapporten voor JavaScript en TypeScript-code.',
       testResults: 'Testresultaten', testResultsDesc: 'Geautomatiseerde testresultaten en rapporten.',
       recentArticles: 'Recente artikelen', newsIndexPages: 'Nieuwsindexpagina\'s',
+      articleTrustAriaLabel: "Artikelherkomst en kwaliteitscontroles", articleTrustPublicSources: "Openbare bronnen", articleTrustAiFirst: "AI-FIRST controle", articleTrustTraceable: "Traceerbare artefacten",
     },
   },
   ar: {
@@ -291,6 +304,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: 'تقارير تغطية الكود', coverageReportsDesc: 'تقارير تغطية الاختبارات لكود JavaScript و TypeScript.',
       testResults: 'نتائج الاختبارات', testResultsDesc: 'نتائج الاختبارات الآلية والتقارير.',
       recentArticles: 'أحدث المقالات', newsIndexPages: 'صفحات فهرس الأخبار',
+      articleTrustAriaLabel: "مصدر المقال وضوابط الجودة", articleTrustPublicSources: "مصادر عامة", articleTrustAiFirst: "مراجعة AI-FIRST", articleTrustTraceable: "مصنوعات قابلة للتتبع",
     },
   },
   he: {
@@ -312,6 +326,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: 'דוחות כיסוי קוד', coverageReportsDesc: 'דוחות כיסוי בדיקות עבור קוד JavaScript ו-TypeScript.',
       testResults: 'תוצאות בדיקות', testResultsDesc: 'תוצאות בדיקות אוטומטיות ודוחות.',
       recentArticles: 'כתבות אחרונות', newsIndexPages: 'דפי אינדקס חדשות',
+      articleTrustAriaLabel: "מקור המאמר ובקרות איכות", articleTrustPublicSources: "מקורות ציבוריים", articleTrustAiFirst: "סקירת AI-FIRST", articleTrustTraceable: "פריטי מקור עקיבים",
     },
   },
   ja: {
@@ -333,6 +348,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: 'コードカバレッジレポート', coverageReportsDesc: 'JavaScript/TypeScriptコードのテストカバレッジレポート。',
       testResults: 'テスト結果', testResultsDesc: '自動テスト結果とレポート。',
       recentArticles: '最新記事', newsIndexPages: 'ニュースインデックスページ',
+      articleTrustAriaLabel: "記事の出所と品質管理", articleTrustPublicSources: "公開ソース", articleTrustAiFirst: "AI-FIRSTレビュー", articleTrustTraceable: "追跡可能なアーティファクト",
     },
   },
   ko: {
@@ -354,6 +370,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: '코드 커버리지 보고서', coverageReportsDesc: 'JavaScript 및 TypeScript 코드의 테스트 커버리지 보고서.',
       testResults: '테스트 결과', testResultsDesc: '자동화된 테스트 결과 및 보고서.',
       recentArticles: '최신 기사', newsIndexPages: '뉴스 인덱스 페이지',
+      articleTrustAriaLabel: "기사 출처 및 품질 관리", articleTrustPublicSources: "공개 출처", articleTrustAiFirst: "AI-FIRST 검토", articleTrustTraceable: "추적 가능한 아티팩트",
     },
   },
   zh: {
@@ -375,6 +392,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       coverageReports: '代码覆盖率报告', coverageReportsDesc: 'JavaScript和TypeScript代码的测试覆盖率报告。',
       testResults: '测试结果', testResultsDesc: '自动化测试结果和报告。',
       recentArticles: '最新文章', newsIndexPages: '新闻索引页面',
+      articleTrustAriaLabel: "文章来源与质量控制", articleTrustPublicSources: "公开来源", articleTrustAiFirst: "AI-FIRST审查", articleTrustTraceable: "可追溯产物",
     },
   },
 };

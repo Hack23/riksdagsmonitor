@@ -5,10 +5,26 @@ date: 2026-04-24
 subfolder: propositions
 slug: 2026-04-24-propositions
 source_folder: analysis/daily/2026-04-24/propositions
-generated_at: 2026-04-24T18:27:52.285Z
+generated_at: 2026-04-25T10:10:10.999Z
 language: en
 layout: article
 ---
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Media framing](#rm-media-framing-analysis) | likely narrative frames, amplifiers, counter-frames, and manipulation risks | `media-framing-analysis.md` |
+| [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/executive-brief.md)_
@@ -249,6 +265,45 @@ flowchart LR
 
 Every ranked item cites its `dok_id` and resolvable URL on riksdagen.se. No claim in this table is unevidenced. Sources diversity is **single-channel** (Riksdagen API only) — flagged for Pass-2 enrichment with SCB / Riksbanken / Finansinspektionen statements in a later aggregation run.
 
+## Media Framing Analysis
+
+_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/media-framing-analysis.md)_
+
+## Per-party framing (predicted)
+
+| Party | HD03252 frame | HD03253 frame | HD03256 frame |
+|---|---|---|---|
+| M | "Fairness: criminals shouldn't live at taxpayers' expense" | "Sweden delivers on EU financial stability" | "Protecting honest hauliers" |
+| KD | "Law and order — consequences matter" | neutral-positive | "Road safety for families" |
+| L | Cautious support; emphasises safeguards | Pro-EU | Neutral |
+| SD | Strong endorsement; ties to migration-crime narrative | neutral | Strong endorsement |
+| S | Silent or measured critique (triangulate) | Tactical support ("we negotiated the EU framework") | Measured support |
+| V | "Punishing poverty behind bars — class justice" | neutral | "Police powers expand — why?" |
+| MP | "Rights erosion — where is proportionality?" | neutral | "Good intent, but oversight?" |
+| C | Split — business-friendly on HD03256; cautious on HD03252 | Small-bank proportionality concerns | Support |
+
+## Press-quadrant framing (predicted)
+
+| Quadrant | Expected frame on HD03252 |
+|---|---|
+| Right-of-centre (SvD, Expressen ledarsida) | Supportive — "common sense" |
+| Centre-right (DN ledarsida) | Conditional support — "proportionality must be verified" |
+| Centre-left (Aftonbladet ledarsida) | Critical — "justice, not punishment" |
+| Left-of-centre (ETC, Flamman) | Strongly critical |
+
+## Platform framing (predicted)
+
+- **X / Twitter Sweden**: Polarised — M/KD/SD supporters amplify "fair consequence"; V/MP amplify "rights erosion". [HD03253](https://data.riksdagen.se/dokument/HD03253.html) gets low engagement (technical).
+- **TV4 / SVT news**: Framing as bundle — expect 2-minute explainer on all four bills (high production), 15-minute Agenda segment on HD03252 alone.
+- **Podcasts (Aftonbladet Ledaren, DN Åsikt)**: HD03252 deep-dive likely within 7 days.
+
+## Longitudinal frame record entry
+
+**Date**: 2026-04-24. **Bundle**: HD03252, HD03253, HD03256, HD03104. **Dominant elite frame**: "government delivers on Tidö-avtalet". **Dominant critical frame**: "proportionality question on HD03252". **Next inflection point**: SfU committee hearing schedule publication.
+
+## Cross-reference
+All framings are predictive, based on 2023–2025 editorial pattern observation. Empirical confirmation awaits Day+1 to Day+7 media capture — recommended follow-up in `evening-analysis` or `weekly-review` workflow.
+
 ## Stakeholder Perspectives
 
 _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/stakeholder-perspectives.md)_
@@ -316,58 +371,110 @@ flowchart LR
 | HD03256 | Legitimate hauliers; Polismyndigheten | Rogue operators; civil-liberty advocates |
 | HD03104 | Finansdep. narrative; Riksgälden validation | Opposition critique bandwidth |
 
-## SWOT Analysis
+## Forward Indicators
 
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/swot-analysis.md)_
+_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/forward-indicators.md)_
 
-**Unit of analysis**: The Kristersson government's 23 April 2026 proposition bundle as a whole (HD03253, HD03252, HD03256, HD03104).
+**Horizons**: 72 h / 1 week / 1 month / Election (Sep 2026).
 
-## Strengths
+## 72-hour window (by 2026-04-27)
 
-| # | Strength | Evidence |
-|:-:|---|---|
-| S1 | Technocratic preparedness — EU transposition delivered via standard CRR3/CRD6 machinery. | [HD03253](https://data.riksdagen.se/dokument/HD03253.html) "EU:s kapitaltäckningsdirektiv" motivation text; Finansinspektionen remiss. |
-| S2 | Tidö coalition remains operationally cohesive — all 4 signed by PM Kristersson with M/KD ministers delivering on programme. | HD03252, HD03253, HD03104 (M ministers); [HD03256](https://data.riksdagen.se/dokument/HD03256.html) (KD Carlson). |
-| S3 | Deliverable record before September 2026 election — hard effective dates (1 Jul, 1 Aug 2026). | Explicit in [HD03252](https://data.riksdagen.se/dokument/HD03252.html) "träda i kraft den 1 augusti 2026"; [HD03256](https://data.riksdagen.se/dokument/HD03256.html) "1 juli 2026". |
-| S4 | Reporting discipline — debt-management evaluation per Budgetlagen submitted on cycle. | [HD03104](https://data.riksdagen.se/dokument/HD03104.html) submitted to Riksdagen on statutory quinquennial schedule. |
+1. **2026-04-24 to 2026-04-27** — Opposition party-group first statements on [HD03252](https://data.riksdagen.se/dokument/HD03252.html) (V, MP, S coordination signal).
+2. **2026-04-25** — Swedish financial press (DI, Affärsvärlden) commentary on [HD03253](https://data.riksdagen.se/dokument/HD03253.html) RWA impact.
+3. **+72h** — SvD and DN ledarsida editorials on bundle.
 
-## Weaknesses
+## 1-week window (by 2026-05-01)
 
-| # | Weakness | Evidence |
-|:-:|---|---|
-| W1 | Late transposition of EU banking package — Sweden behind CRR3 deadline. | [HD03253](https://data.riksdagen.se/dokument/HD03253.html) ärendet-och-dess-beredning section; EU transposition deadline was January 2026. |
-| W2 | Proportionality exposure on detainee benefits — civil-liberty backlash risk. | [HD03252](https://data.riksdagen.se/dokument/HD03252.html) Bilaga 5 Lagrådets yttrande; implicates regeringsformen 2 kap. 12 § and ECHR Art. 8. |
-| W3 | Enforcement-capacity gap — tachograph law requires new investigative capability at Polismyndigheten and bilinspektörer. | [HD03256](https://data.riksdagen.se/dokument/HD03256.html) §5 on new powers; implicit resource question. |
-| W4 | Narrow messaging bandwidth — 4 bills on same day dilute press coverage. | Pattern observation across [riksdagen.se](https://data.riksdagen.se/dokument/HD03253.html) batch-publication days. |
+4. **2026-04-28 to 2026-05-01** — Committee referral decisions (FiU for [HD03253](https://data.riksdagen.se/dokument/HD03253.html), SfU for [HD03252](https://data.riksdagen.se/dokument/HD03252.html), TU for [HD03256](https://data.riksdagen.se/dokument/HD03256.html)).
+5. **2026-05-01** — Advokatsamfundet position statement on [HD03252](https://data.riksdagen.se/dokument/HD03252.html) proportionality.
+6. **+1 week** — Bankföreningen public comment on CRR3 output-floor ([HD03253](https://data.riksdagen.se/dokument/HD03253.html)).
 
-## Opportunities
+## 1-month window (by 2026-05-24)
 
-| # | Opportunity | Evidence |
-|:-:|---|---|
-| O1 | Financial-stability credential: Sweden aligns with EU Banking Union standard. | [HD03253](https://data.riksdagen.se/dokument/HD03253.html) transposes CRR3/CRD6 verbatim. |
-| O2 | Tidö signature reform on criminal justice operational before election. | [HD03252](https://data.riksdagen.se/dokument/HD03252.html) effective 1 Aug 2026 — ~5 weeks before election day. |
-| O3 | Business-community goodwill: tachograph crackdown protects legitimate hauliers. | [HD03256](https://data.riksdagen.se/dokument/HD03256.html) supports Transportföretagen competitive fairness. |
-| O4 | Frame 2021–2025 debt management as success story. | [HD03104](https://data.riksdagen.se/dokument/HD03104.html) skrivelse lets government set the narrative. |
+7. **2026-05-08** — Opposition motion-filing deadline (15 days) on [HD03252](https://data.riksdagen.se/dokument/HD03252.html).
+8. **2026-05-15** — First FiU hearing on [HD03253](https://data.riksdagen.se/dokument/HD03253.html) (typical timetable).
+9. **2026-05-24** — Finansinspektionen QIS snapshot for CRR3.
+10. **2026-05-30** — Försäkringskassan IT readiness statement for [HD03252](https://data.riksdagen.se/dokument/HD03252.html) 1 Aug cut-over.
 
-## Threats
+## Election window (by 2026-09-13, election day)
 
-| # | Threat | Evidence |
-|:-:|---|---|
-| T1 | Opposition coordination on HD03252 proportionality — V/S/MP joint motion possible. | [HD03252](https://data.riksdagen.se/dokument/HD03252.html) Bilaga 3 remissinstanserna includes civil-society bodies likely to object. |
-| T2 | Bank-sector pushback on CRR3 output floor — political lobbying during FiU referral. | Historical pattern on [HD03253](https://data.riksdagen.se/dokument/HD03253.html)-class transposition bills; Swedish banks have active public-affairs presence. |
-| T3 | Opportunity-cost narrative — "government pushing 4 bills while neglecting X". | Opposition framing risk; no concrete evidence yet on [riksdagen.se](https://data.riksdagen.se/dokument/HD03252.html). |
-| T4 | Lagrådet critique on HD03252 could force redraft during committee stage. | [HD03252](https://data.riksdagen.se/dokument/HD03252.html) Bilaga 5 Lagrådets yttrande already issued — depth of critique to be assessed in Pass 2. |
+11. **2026-06-15** — Kammaren vote on [HD03253](https://data.riksdagen.se/dokument/HD03253.html) (pre-recess target).
+12. **2026-06-20** — Kammaren vote on [HD03252](https://data.riksdagen.se/dokument/HD03252.html) (or deferred post-recess if Scenario S2).
+13. **2026-07-01** — [HD03256](https://data.riksdagen.se/dokument/HD03256.html) effective date — enforcement begins.
+14. **2026-08-01** — [HD03252](https://data.riksdagen.se/dokument/HD03252.html) effective date — election-year operational reality.
+15. **2026-09-13** — Riksdag election — retrospective scorecard on bundle delivery.
 
-## TOWS matrix (integrated strategies)
+## Indicator scoring dashboard
 
-| | Opportunities | Threats |
-|---|---|---|
-| **Strengths** | **SO**: Combine S1 technocratic credibility with O1 EU alignment → position Kristersson as "competent EU player" into election. Evidence: [HD03253](https://data.riksdagen.se/dokument/HD03253.html). | **ST**: Use S2 cohesion to suppress T1 coordination — whip discipline on [HD03252](https://data.riksdagen.se/dokument/HD03252.html) vote. |
-| **Weaknesses** | **WO**: Address W1 late transposition by invoking O1 completion narrative. Evidence: [HD03253](https://data.riksdagen.se/dokument/HD03253.html). | **WT**: If W2 proportionality challenge + T4 Lagrådet line up, government must redraft — monitor [HD03252](https://data.riksdagen.se/dokument/HD03252.html) committee timetable. |
+```mermaid
+timeline
+    title Forward indicator horizon
+    section 72h
+        2026-04-25 : Opposition first statement
+        2026-04-26 : DI/Affärsvärlden commentary
+    section 1 week
+        2026-05-01 : Advokatsamfundet position
+    section 1 month
+        2026-05-08 : Motion-filing deadline HD03252
+        2026-05-24 : FI QIS snapshot
+    section Election
+        2026-07-01 : HD03256 effective
+        2026-08-01 : HD03252 effective
+        2026-09-13 : Election day
+```
 
-## Cross-SWOT
+## Anti-vagueness check
 
-The dominant pattern is **"competence vs. rights"** — the government's execution strengths (S1, S2) are challenged by proportionality threats (W2, T4) on HD03252. [HD03253](https://data.riksdagen.se/dokument/HD03253.html) is structurally safer (EU-mandated, technical); [HD03252](https://data.riksdagen.se/dokument/HD03252.html) is where political risk concentrates.
+All 15 indicators have an explicit date, source anchor, and evidenced mechanism. Admiralty codes B2-C3 depending on whether the indicator is scheduled (deterministic) vs. behavioural (probabilistic).
+
+## Scenario Analysis
+
+_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/scenario-analysis.md)_
+
+**Horizon**: Riksdag summer recess (June 2026) → September 2026 election → first post-election cycle.
+
+## Scenario 1 — "Clean enactment" (probability 45%)
+
+**Narrative**: All 4 bills enacted on schedule. HD03256 effective 1 July, HD03252 effective 1 August, HD03253 in force per EU timetable, HD03104 noted. Tidö framing succeeds: "law and order + sound money."
+
+**Leading indicator**: FiU committee report on [HD03253](https://data.riksdagen.se/dokument/HD03253.html) published without amendments by mid-June 2026.
+
+## Scenario 2 — "Lagrådet-forced redraft of HD03252" (probability 25%)
+
+**Narrative**: Lagrådet yttrande critique on proportionality (visible in Bilaga 5 of [HD03252](https://data.riksdagen.se/dokument/HD03252.html)) prompts SfU to amend. Effective date slips to 1 Oct 2026 — post-election. Electoral "delivered" message weakens.
+
+**Leading indicator**: SfU schedules ≥ 2 hearings with rights-focused remissinstanser in May 2026.
+
+## Scenario 3 — "EU infringement squeeze on HD03253" (probability 20%)
+
+**Narrative**: EU Commission issues reasoned opinion on late CRR3 transposition before Swedish enactment. Government accelerates FiU timetable. Industry consultation short-circuited → harsher-than-necessary output-floor calibration for Handelsbanken/SEB.
+
+**Leading indicator**: DG FISMA communication to Stockholm in May; press leak to Financial Times.
+
+## Scenario 4 — "Bundle dilution success" (probability 10%)
+
+**Narrative**: 4-bill bundle strategy works: media attention fragmented; opposition coordination fails. All enacted without significant amendment.
+
+**Leading indicator**: Major dailies (DN, SvD, Aftonbladet) devote < 500 words combined to [HD03252](https://data.riksdagen.se/dokument/HD03252.html) in first 72 h.
+
+**Total: 100%**
+
+```mermaid
+pie title Scenario probabilities
+    "S1 Clean enactment" : 45
+    "S2 Lagrådet redraft" : 25
+    "S3 EU infringement squeeze" : 20
+    "S4 Bundle dilution" : 10
+```
+
+## Scenario-specific forward indicators
+
+| Scenario | 72-h indicator | 1-week indicator | 1-month indicator |
+|---|---|---|---|
+| S1 | No opposition joint motion filed | FiU hearing calendar published | Committee report drafted |
+| S2 | Lagrådet media commentary | ≥ 3 rights-focused op-eds | SfU amendment proposal |
+| S3 | EU Commission statement | Bankföreningen public position | Revised FiU timetable |
+| S4 | < 500 words press coverage | Opposition fragmented on [HD03252](https://data.riksdagen.se/dokument/HD03252.html) | All 4 in summer recess schedule |
 
 ## Risk Assessment
 
@@ -425,6 +532,59 @@ quadrantChart
 - **Posterior given FK 3-month IT runway**: 0.45 — operational timing is the binding constraint.
 
 **Sources**: All risks anchored to document text at [riksdagen.se](https://data.riksdagen.se/dokument/HD03253.html) and [riksdagen.se](https://data.riksdagen.se/dokument/HD03252.html). Admiralty code B2 (usually reliable source, probably true — government proposition text).
+
+## SWOT Analysis
+
+_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/swot-analysis.md)_
+
+**Unit of analysis**: The Kristersson government's 23 April 2026 proposition bundle as a whole (HD03253, HD03252, HD03256, HD03104).
+
+## Strengths
+
+| # | Strength | Evidence |
+|:-:|---|---|
+| S1 | Technocratic preparedness — EU transposition delivered via standard CRR3/CRD6 machinery. | [HD03253](https://data.riksdagen.se/dokument/HD03253.html) "EU:s kapitaltäckningsdirektiv" motivation text; Finansinspektionen remiss. |
+| S2 | Tidö coalition remains operationally cohesive — all 4 signed by PM Kristersson with M/KD ministers delivering on programme. | HD03252, HD03253, HD03104 (M ministers); [HD03256](https://data.riksdagen.se/dokument/HD03256.html) (KD Carlson). |
+| S3 | Deliverable record before September 2026 election — hard effective dates (1 Jul, 1 Aug 2026). | Explicit in [HD03252](https://data.riksdagen.se/dokument/HD03252.html) "träda i kraft den 1 augusti 2026"; [HD03256](https://data.riksdagen.se/dokument/HD03256.html) "1 juli 2026". |
+| S4 | Reporting discipline — debt-management evaluation per Budgetlagen submitted on cycle. | [HD03104](https://data.riksdagen.se/dokument/HD03104.html) submitted to Riksdagen on statutory quinquennial schedule. |
+
+## Weaknesses
+
+| # | Weakness | Evidence |
+|:-:|---|---|
+| W1 | Late transposition of EU banking package — Sweden behind CRR3 deadline. | [HD03253](https://data.riksdagen.se/dokument/HD03253.html) ärendet-och-dess-beredning section; EU transposition deadline was January 2026. |
+| W2 | Proportionality exposure on detainee benefits — civil-liberty backlash risk. | [HD03252](https://data.riksdagen.se/dokument/HD03252.html) Bilaga 5 Lagrådets yttrande; implicates regeringsformen 2 kap. 12 § and ECHR Art. 8. |
+| W3 | Enforcement-capacity gap — tachograph law requires new investigative capability at Polismyndigheten and bilinspektörer. | [HD03256](https://data.riksdagen.se/dokument/HD03256.html) §5 on new powers; implicit resource question. |
+| W4 | Narrow messaging bandwidth — 4 bills on same day dilute press coverage. | Pattern observation across [riksdagen.se](https://data.riksdagen.se/dokument/HD03253.html) batch-publication days. |
+
+## Opportunities
+
+| # | Opportunity | Evidence |
+|:-:|---|---|
+| O1 | Financial-stability credential: Sweden aligns with EU Banking Union standard. | [HD03253](https://data.riksdagen.se/dokument/HD03253.html) transposes CRR3/CRD6 verbatim. |
+| O2 | Tidö signature reform on criminal justice operational before election. | [HD03252](https://data.riksdagen.se/dokument/HD03252.html) effective 1 Aug 2026 — ~5 weeks before election day. |
+| O3 | Business-community goodwill: tachograph crackdown protects legitimate hauliers. | [HD03256](https://data.riksdagen.se/dokument/HD03256.html) supports Transportföretagen competitive fairness. |
+| O4 | Frame 2021–2025 debt management as success story. | [HD03104](https://data.riksdagen.se/dokument/HD03104.html) skrivelse lets government set the narrative. |
+
+## Threats
+
+| # | Threat | Evidence |
+|:-:|---|---|
+| T1 | Opposition coordination on HD03252 proportionality — V/S/MP joint motion possible. | [HD03252](https://data.riksdagen.se/dokument/HD03252.html) Bilaga 3 remissinstanserna includes civil-society bodies likely to object. |
+| T2 | Bank-sector pushback on CRR3 output floor — political lobbying during FiU referral. | Historical pattern on [HD03253](https://data.riksdagen.se/dokument/HD03253.html)-class transposition bills; Swedish banks have active public-affairs presence. |
+| T3 | Opportunity-cost narrative — "government pushing 4 bills while neglecting X". | Opposition framing risk; no concrete evidence yet on [riksdagen.se](https://data.riksdagen.se/dokument/HD03252.html). |
+| T4 | Lagrådet critique on HD03252 could force redraft during committee stage. | [HD03252](https://data.riksdagen.se/dokument/HD03252.html) Bilaga 5 Lagrådets yttrande already issued — depth of critique to be assessed in Pass 2. |
+
+## TOWS matrix (integrated strategies)
+
+| | Opportunities | Threats |
+|---|---|---|
+| **Strengths** | **SO**: Combine S1 technocratic credibility with O1 EU alignment → position Kristersson as "competent EU player" into election. Evidence: [HD03253](https://data.riksdagen.se/dokument/HD03253.html). | **ST**: Use S2 cohesion to suppress T1 coordination — whip discipline on [HD03252](https://data.riksdagen.se/dokument/HD03252.html) vote. |
+| **Weaknesses** | **WO**: Address W1 late transposition by invoking O1 completion narrative. Evidence: [HD03253](https://data.riksdagen.se/dokument/HD03253.html). | **WT**: If W2 proportionality challenge + T4 Lagrådet line up, government must redraft — monitor [HD03252](https://data.riksdagen.se/dokument/HD03252.html) committee timetable. |
+
+## Cross-SWOT
+
+The dominant pattern is **"competence vs. rights"** — the government's execution strengths (S1, S2) are challenged by proportionality threats (W2, T4) on HD03252. [HD03253](https://data.riksdagen.se/dokument/HD03253.html) is structurally safer (EU-mandated, technical); [HD03252](https://data.riksdagen.se/dokument/HD03252.html) is where political risk concentrates.
 
 ## Threat Analysis
 
@@ -830,111 +990,6 @@ DIW 2.8 reflects:
 
 Per `osint-tradecraft-standards.md` — ICD 203 compliant; Admiralty codes assigned; no exfiltration of non-public personal data; GDPR Art. 9(2)(e)+(g) lawful bases applied.
 
-## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/scenario-analysis.md)_
-
-**Horizon**: Riksdag summer recess (June 2026) → September 2026 election → first post-election cycle.
-
-## Scenario 1 — "Clean enactment" (probability 45%)
-
-**Narrative**: All 4 bills enacted on schedule. HD03256 effective 1 July, HD03252 effective 1 August, HD03253 in force per EU timetable, HD03104 noted. Tidö framing succeeds: "law and order + sound money."
-
-**Leading indicator**: FiU committee report on [HD03253](https://data.riksdagen.se/dokument/HD03253.html) published without amendments by mid-June 2026.
-
-## Scenario 2 — "Lagrådet-forced redraft of HD03252" (probability 25%)
-
-**Narrative**: Lagrådet yttrande critique on proportionality (visible in Bilaga 5 of [HD03252](https://data.riksdagen.se/dokument/HD03252.html)) prompts SfU to amend. Effective date slips to 1 Oct 2026 — post-election. Electoral "delivered" message weakens.
-
-**Leading indicator**: SfU schedules ≥ 2 hearings with rights-focused remissinstanser in May 2026.
-
-## Scenario 3 — "EU infringement squeeze on HD03253" (probability 20%)
-
-**Narrative**: EU Commission issues reasoned opinion on late CRR3 transposition before Swedish enactment. Government accelerates FiU timetable. Industry consultation short-circuited → harsher-than-necessary output-floor calibration for Handelsbanken/SEB.
-
-**Leading indicator**: DG FISMA communication to Stockholm in May; press leak to Financial Times.
-
-## Scenario 4 — "Bundle dilution success" (probability 10%)
-
-**Narrative**: 4-bill bundle strategy works: media attention fragmented; opposition coordination fails. All enacted without significant amendment.
-
-**Leading indicator**: Major dailies (DN, SvD, Aftonbladet) devote < 500 words combined to [HD03252](https://data.riksdagen.se/dokument/HD03252.html) in first 72 h.
-
-**Total: 100%**
-
-```mermaid
-pie title Scenario probabilities
-    "S1 Clean enactment" : 45
-    "S2 Lagrådet redraft" : 25
-    "S3 EU infringement squeeze" : 20
-    "S4 Bundle dilution" : 10
-```
-
-## Scenario-specific forward indicators
-
-| Scenario | 72-h indicator | 1-week indicator | 1-month indicator |
-|---|---|---|---|
-| S1 | No opposition joint motion filed | FiU hearing calendar published | Committee report drafted |
-| S2 | Lagrådet media commentary | ≥ 3 rights-focused op-eds | SfU amendment proposal |
-| S3 | EU Commission statement | Bankföreningen public position | Revised FiU timetable |
-| S4 | < 500 words press coverage | Opposition fragmented on [HD03252](https://data.riksdagen.se/dokument/HD03252.html) | All 4 in summer recess schedule |
-
-## Forward Indicators
-
-_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/forward-indicators.md)_
-
-**Horizons**: 72 h / 1 week / 1 month / Election (Sep 2026).
-
-## 72-hour window (by 2026-04-27)
-
-1. **2026-04-24 to 2026-04-27** — Opposition party-group first statements on [HD03252](https://data.riksdagen.se/dokument/HD03252.html) (V, MP, S coordination signal).
-2. **2026-04-25** — Swedish financial press (DI, Affärsvärlden) commentary on [HD03253](https://data.riksdagen.se/dokument/HD03253.html) RWA impact.
-3. **+72h** — SvD and DN ledarsida editorials on bundle.
-
-## 1-week window (by 2026-05-01)
-
-4. **2026-04-28 to 2026-05-01** — Committee referral decisions (FiU for [HD03253](https://data.riksdagen.se/dokument/HD03253.html), SfU for [HD03252](https://data.riksdagen.se/dokument/HD03252.html), TU for [HD03256](https://data.riksdagen.se/dokument/HD03256.html)).
-5. **2026-05-01** — Advokatsamfundet position statement on [HD03252](https://data.riksdagen.se/dokument/HD03252.html) proportionality.
-6. **+1 week** — Bankföreningen public comment on CRR3 output-floor ([HD03253](https://data.riksdagen.se/dokument/HD03253.html)).
-
-## 1-month window (by 2026-05-24)
-
-7. **2026-05-08** — Opposition motion-filing deadline (15 days) on [HD03252](https://data.riksdagen.se/dokument/HD03252.html).
-8. **2026-05-15** — First FiU hearing on [HD03253](https://data.riksdagen.se/dokument/HD03253.html) (typical timetable).
-9. **2026-05-24** — Finansinspektionen QIS snapshot for CRR3.
-10. **2026-05-30** — Försäkringskassan IT readiness statement for [HD03252](https://data.riksdagen.se/dokument/HD03252.html) 1 Aug cut-over.
-
-## Election window (by 2026-09-13, election day)
-
-11. **2026-06-15** — Kammaren vote on [HD03253](https://data.riksdagen.se/dokument/HD03253.html) (pre-recess target).
-12. **2026-06-20** — Kammaren vote on [HD03252](https://data.riksdagen.se/dokument/HD03252.html) (or deferred post-recess if Scenario S2).
-13. **2026-07-01** — [HD03256](https://data.riksdagen.se/dokument/HD03256.html) effective date — enforcement begins.
-14. **2026-08-01** — [HD03252](https://data.riksdagen.se/dokument/HD03252.html) effective date — election-year operational reality.
-15. **2026-09-13** — Riksdag election — retrospective scorecard on bundle delivery.
-
-## Indicator scoring dashboard
-
-```mermaid
-timeline
-    title Forward indicator horizon
-    section 72h
-        2026-04-25 : Opposition first statement
-        2026-04-26 : DI/Affärsvärlden commentary
-    section 1 week
-        2026-05-01 : Advokatsamfundet position
-    section 1 month
-        2026-05-08 : Motion-filing deadline HD03252
-        2026-05-24 : FI QIS snapshot
-    section Election
-        2026-07-01 : HD03256 effective
-        2026-08-01 : HD03252 effective
-        2026-09-13 : Election day
-```
-
-## Anti-vagueness check
-
-All 15 indicators have an explicit date, source anchor, and evidenced mechanism. Admiralty codes B2-C3 depending on whether the indicator is scheduled (deterministic) vs. behavioural (probabilistic).
-
 ## Election 2026 Analysis
 
 _Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/election-2026-analysis.md)_
@@ -1189,45 +1244,6 @@ timeline
     2026 : Today's bundle
          : HD03252 + HD03253 + HD03256
 ```
-
-## Media Framing Analysis
-
-_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/media-framing-analysis.md)_
-
-## Per-party framing (predicted)
-
-| Party | HD03252 frame | HD03253 frame | HD03256 frame |
-|---|---|---|---|
-| M | "Fairness: criminals shouldn't live at taxpayers' expense" | "Sweden delivers on EU financial stability" | "Protecting honest hauliers" |
-| KD | "Law and order — consequences matter" | neutral-positive | "Road safety for families" |
-| L | Cautious support; emphasises safeguards | Pro-EU | Neutral |
-| SD | Strong endorsement; ties to migration-crime narrative | neutral | Strong endorsement |
-| S | Silent or measured critique (triangulate) | Tactical support ("we negotiated the EU framework") | Measured support |
-| V | "Punishing poverty behind bars — class justice" | neutral | "Police powers expand — why?" |
-| MP | "Rights erosion — where is proportionality?" | neutral | "Good intent, but oversight?" |
-| C | Split — business-friendly on HD03256; cautious on HD03252 | Small-bank proportionality concerns | Support |
-
-## Press-quadrant framing (predicted)
-
-| Quadrant | Expected frame on HD03252 |
-|---|---|
-| Right-of-centre (SvD, Expressen ledarsida) | Supportive — "common sense" |
-| Centre-right (DN ledarsida) | Conditional support — "proportionality must be verified" |
-| Centre-left (Aftonbladet ledarsida) | Critical — "justice, not punishment" |
-| Left-of-centre (ETC, Flamman) | Strongly critical |
-
-## Platform framing (predicted)
-
-- **X / Twitter Sweden**: Polarised — M/KD/SD supporters amplify "fair consequence"; V/MP amplify "rights erosion". [HD03253](https://data.riksdagen.se/dokument/HD03253.html) gets low engagement (technical).
-- **TV4 / SVT news**: Framing as bundle — expect 2-minute explainer on all four bills (high production), 15-minute Agenda segment on HD03252 alone.
-- **Podcasts (Aftonbladet Ledaren, DN Åsikt)**: HD03252 deep-dive likely within 7 days.
-
-## Longitudinal frame record entry
-
-**Date**: 2026-04-24. **Bundle**: HD03252, HD03253, HD03256, HD03104. **Dominant elite frame**: "government delivers on Tidö-avtalet". **Dominant critical frame**: "proportionality question on HD03252". **Next inflection point**: SfU committee hearing schedule publication.
-
-## Cross-reference
-All framings are predictive, based on 2023–2025 editorial pattern observation. Empirical confirmation awaits Day+1 to Day+7 media capture — recommended follow-up in `evening-analysis` or `weekly-review` workflow.
 
 ## Implementation Feasibility
 

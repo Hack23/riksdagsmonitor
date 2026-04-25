@@ -5,10 +5,22 @@ date: 2026-04-19
 subfolder: month-ahead
 slug: 2026-04-19-month-ahead
 source_folder: analysis/daily/2026-04-19/month-ahead
-generated_at: 2026-04-24T18:27:52.192Z
+generated_at: 2026-04-25T10:10:10.928Z
 language: en
 layout: article
 ---
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/executive-brief.md)_
@@ -429,249 +441,6 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 
 **Social media dynamics**: Fuel tax cut and deportation rules expected to trend heavily. Ukraine solidarity likely positive sentiment across partisan lines.
 
-## SWOT Analysis
-
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/swot-analysis.md)_
-
-**Generated**: 2026-04-19T11:32:00Z
-**Article Type**: month-ahead
-**Analysis Depth**: deep (8 stakeholder groups required)
-
----
-
-## Strengths
-
-| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
-|---|---|---|---|---|---|
-| S1 | Government delivers historic Ukraine solidarity package — 3 interlinked propositions on tribunal, compensation commission, and NATO Finland deployment submitted in single week | HD03231, HD03232, HD03220 | 🟩HIGH | HIGH | 2026-04-16 |
-| S2 | Spring Economic Proposition + 2 supplementary budgets submitted simultaneously, showing coordinated fiscal planning | HD03100, HD0399, HD03236 | 🟦VERY HIGH | HIGH | 2026-04-13 |
-| S3 | Fuel tax cut and energy support demonstrate direct household relief capacity before election | HD03236 | 🟩HIGH | MEDIUM | 2026-04-13 |
-| S4 | Paid police training (HD03237) addresses chronic recruitment problem with structural solution | HD03237 | 🟩HIGH | MEDIUM | 2026-04-14 |
-| S5 | Constitutional law committee (KU) advancing two fundamental law modernisations simultaneously | HD01KU32, HD01KU33 | 🟧MEDIUM | MEDIUM | 2026-04-17 |
-| S6 | Wind power revenue-sharing law (HD03239) creates new financial incentive model for municipal acceptance | HD03239 | 🟧MEDIUM | MEDIUM | 2026-04-14 |
-| S7 | National housing register (HD01CU28) improves property market transparency and crime prevention | HD01CU28, HD01CU27 | 🟩HIGH | MEDIUM | 2026-04-17 |
-
----
-
-## Weaknesses
-
-| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
-|---|---|---|---|---|---|
-| W1 | Sweden GDP growth 2024 only 0.82%, significantly lagging Denmark (3.48%) and Norway (2.10%) | World Bank data | 🟦VERY HIGH | HIGH | 2026-04-19 |
-| W2 | Unemployment risen to 8.69% in 2025, highest among Nordic peers, eroding government's economic credibility | World Bank data | 🟦VERY HIGH | HIGH | 2026-04-19 |
-| W3 | Fuel tax cut (HD03236) contradicts climate commitments — MP motion HD024098, V motion HD024092 cite contradiction with net-zero targets | HD024098, HD024092 | 🟩HIGH | MEDIUM | 2026-04-16 |
-| W4 | Multiple coalition bills face strong opposition motions, indicating contested electoral legitimacy | HD024079-HD024097 (19 counter-motions) | 🟩HIGH | MEDIUM | 2026-04-15 |
-| W5 | Women's shelter closures (interpellation HD10438) expose gap between government rhetoric and social services funding | HD10438 | 🟧MEDIUM | MEDIUM | 2026-04-17 |
-| W6 | Housing construction declining in Stockholm region — 11,091 units planned for 2026 vs. higher demand | HD10434 | 🟧MEDIUM | MEDIUM | 2026-04-15 |
-| W7 | New environmental permitting agency (HD03238) adds institutional complexity in the short term | HD03238 | 🟧MEDIUM | LOW | 2026-04-14 |
-
----
-
-## Opportunities
-
-| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
-|---|---|---|---|---|---|
-| O1 | Spring budget package creates pre-election economic narrative — government can campaign on delivered fiscal relief | HD03100, HD0399, HD03236 | 🟩HIGH | HIGH | 2026-04-13 |
-| O2 | Ukraine legislative cluster enhances Sweden's international standing as a NATO ally and rule-of-law advocate | HD03231, HD03232, HD03220 | 🟩HIGH | HIGH | 2026-04-16 |
-| O3 | New electricity system laws (HD03240) provide regulatory certainty for energy investment | HD03240 | 🟩HIGH | HIGH | 2026-04-14 |
-| O4 | Data interoperability requirements (HD03244) position Sweden as digital governance leader in EU context | HD03244 | 🟧MEDIUM | MEDIUM | 2026-04-16 |
-| O5 | State e-ID (HD01TU21) reduces fraud and enables digital public services | HD01TU21 | 🟩HIGH | MEDIUM | 2026-04-14 |
-| O6 | Waste legislation reform (HD01MJU19) improves circular economy compliance with EU targets | HD01MJU19 | 🟧MEDIUM | MEDIUM | 2026-04-16 |
-
----
-
-## Threats
-
-| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
-|---|---|---|---|---|---|
-| T1 | Opposition unity on migration/reception law (V+MP+C+S all filing counter-motions) risks making HD03229 the most contested vote of the session | HD024079-HD024089 | 🟩HIGH | HIGH | 2026-04-15 |
-| T2 | Deportation rules (HD03235) face constitutional challenge risk — C motion (HD024095) seeks significant amendment | HD024090, HD024095, HD024097 | 🟩HIGH | HIGH | 2026-04-16 |
-| T3 | Tax system review pressure (interpellation HD10433) signals post-election risk of fundamental fiscal restructuring | HD10433 | 🟧MEDIUM | MEDIUM | 2026-04-15 |
-| T4 | EU wage transparency directive (interpellation HD10437) creates compliance obligation that may require further legislation | HD10437 | 🟧MEDIUM | MEDIUM | 2026-04-17 |
-| T5 | Defence infrastructure cost burden (interpellation HD10425) signals fiscal stress from NATO expansion obligations | HD10425 | 🟧MEDIUM | MEDIUM | 2026-03-31 |
-
----
-
-## Stakeholder Analysis (8 Mandatory Groups)
-
-### 1. Citizens [🟩HIGH confidence]
-**Benefits**: Fuel tax cut (HD03236) provides immediate household relief — petrol and diesel prices affected directly; parental allowance reform (HD01SfU20) removes bureaucratic burden for parents; housing register (HD01CU28) improves property transparency.
-**Risks**: Unemployment at 8.69% creates economic anxiety; declining housing construction in Stockholm limits affordability; women's shelter closures (HD10438) reduce safety net for vulnerable women.
-**Net assessment**: Mixed — pre-election economic measures provide visible short-term relief while structural employment and housing problems persist.
-
-### 2. Government Coalition (M+SD+KD+L) [🟦VERY HIGH confidence]
-**Benefits**: Massive legislative delivery package demonstrates governing capacity; Ukraine cluster strengthens international credentials; law-and-order narrative via migration/justice bills consolidates core SD voter base.
-**Risks**: Fuel tax cut creates climate credibility gap; unemployment rise undercuts economic management narrative; inter-coalition tensions between KD social policy and SD migration positions possible.
-**Net assessment**: Strong position entering campaign season but vulnerable on economic competence.
-
-### 3. Opposition Bloc (S+V+MP+C) [🟩HIGH confidence]
-**Benefits**: 19 counter-motions filed create clear policy differentiation for election campaigns; S can position as responsible alternative government; C occupies swing position on multiple bills.
-**Risks**: Opposition lacks votes to block any coalition bill; risk of being seen as obstructionist rather than constructive; V and MP face marginal parliamentary existence risk.
-**Net assessment**: Counter-motions are primarily electoral positioning documents — they will not change outcomes but build manifesto differentiation.
-
-### 4. Business & Industry [🟧MEDIUM confidence]
-**Benefits**: New electricity system laws (HD03240) provide investment certainty; state e-ID reduces administrative burden; data interoperability (HD03244) reduces public sector data friction; paid police training (HD03237) increases security.
-**Risks**: Forestry industry concerns about new regulations (HD03242); shipping industry affected by harbour law (HD03234); construction sector faces ongoing housing demand/supply mismatch.
-**Net assessment**: Net positive from regulatory modernisation and energy security framework.
-
-### 5. Civil Society [🟧MEDIUM confidence]
-**Benefits**: National strategy against violence against women (HD03245) represents significant policy commitment; accessibility improvements in fundamental law (HD01KU32) benefit persons with disabilities.
-**Risks**: Women's shelter closures (HD10438) signal funding gaps in violence prevention infrastructure; civil society asylum support organisations affected by new reception law (HD03229).
-**Net assessment**: Concerned — policy commitments not matched by service funding.
-
-### 6. International/EU [🟩HIGH confidence]
-**Benefits**: Three Ukraine solidarity bills significantly strengthen Sweden's international standing post-NATO accession; EU accessibility requirements compliance improved (HD01KU32); EU waste legislation compliance improved (HD01MJU19).
-**Risks**: EU wage transparency directive (HD10437) creates compliance pressure; weapons export rules debate (HD024091, HD024096) could affect EU/NATO arms coordination.
-**Net assessment**: Sweden's international posture strengthened substantially by Ukraine legislative cluster.
-
-### 7. Judiciary/Constitutional [🟧MEDIUM confidence]
-**Benefits**: Two fundamental law changes being adopted as "vilande" (HD01KU32, HD01KU33) — proper constitutional procedure followed; identity requirements for property registration (HD01CU27) strengthen anti-money-laundering framework.
-**Risks**: Deportation rules (HD03235) face legal scrutiny on proportionality; inhibition order law (HD01SfU22) tested against ECHR standards; freedom of speech protections under scrutiny (HD10429).
-**Net assessment**: Constitutional procedure is sound; specific bills face potential future legal challenge.
-
-### 8. Media/Public Opinion [🟩HIGH confidence]
-**Benefits**: Fuel tax cut generates positive headline coverage; Ukraine solidarity cluster creates positive international media narrative; police training reform is popular.
-**Risks**: Unemployment at 8.69% is the overriding economic story; women's shelter closures generate negative human interest coverage; migration debate is polarising.
-**Net assessment**: Media environment is contested — government has positive stories but negative economic indicators dominate.
-
-## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/risk-assessment.md)_
-
-**Generated**: 2026-04-19T11:33:00Z
-**Article Type**: month-ahead
-**Analysis Depth**: deep (≥4 risks with numeric L×I scores required)
-
----
-
-## Risk Matrix (Likelihood × Impact)
-
-| # | Risk | Likelihood (1-5) | Impact (1-5) | L×I Score | Category | Trigger |
-|---|---|---|---|---|---|---|
-| R1 | SfU committee blocks or significantly amends deportation rules (HD03235) under opposition pressure | 2 | 4 | **8** | Legislative/Political | V+MP+C forming blocking coalition in committee |
-| R2 | Spring budget (HD03100) triggers Riksbank credibility debate — high unemployment + deficit spending | 3 | 4 | **12** | Economic/Fiscal | Riksbank or NIER economic assessment |
-| R3 | NATO Finland deployment vote (HD01UFöU3) delayed by procedural challenge | 1 | 5 | **5** | Security/International | Opposition procedural motion |
-| R4 | Fuel tax cut (HD03236) generates EU state aid scrutiny | 2 | 3 | **6** | EU/Legal | European Commission notification |
-| R5 | Coalition tension on climate — energy support contradicts green commitments | 3 | 3 | **9** | Coalition/Reputational | L or KD public dissent on fuel subsidy |
-| R6 | New reception law (HD03229) faces constitutional court challenge post-enactment | 3 | 4 | **12** | Legal/Constitutional | Legal challenge filed by NGO or municipality |
-| R7 | Unemployment climbs further above 8.69% — undermines government's economic narrative | 3 | 4 | **12** | Economic | SCB/Statistics Sweden monthly labour data |
-| R8 | Women's shelter closure crisis escalates — interpellation becomes media crisis | 3 | 3 | **9** | Reputational/Social | More shelter closures reported in May 2026 |
-
----
-
-## Detailed Risk Analysis
-
-### R2/R6/R7: Economic Risk Cluster (Combined L×I: High)
-Sweden's GDP growth of 0.82% in 2024 — lagging Denmark (3.48%), Norway (2.10%), Finland (0.42%) — combined with rising unemployment to 8.69% in 2025 creates a fragile economic backdrop for the spring budget season. The government's fiscal stimulus via fuel tax cuts and energy support is expansionary at a time when fiscal consolidation may be more prudent. The Riksbank's assessment of the spring economic proposition will be the key inflection point.
-
-**Forward indicator**: Konjunkturinstitutet economic tendency survey (May) — if confidence falls, amplifies economic risk score.
-**Mitigation**: Government's explicit fiscal framework review (HD03241 — Riksrevisionen report on financial policy framework) provides parliamentary oversight mechanism.
-
-### R5: Climate Coalition Tension
-The fuel tax cut (HD03236) explicitly lowers taxes on petrol and diesel — a direct contradiction of L (Liberals) and KD's stated climate positions. Interpellation responses and Alliansen party statements in May will reveal the degree of internal tension. SD's voter base strongly supports lower fuel taxes; this is fundamentally a SD electoral concession within the coalition.
-
-**Forward indicator**: L party conference statements in May; environmental organisations' response.
-**Mitigation**: Simultaneous passage of EV charging tax relief (HD01SkU23) and wind power revenue sharing (HD03239) provides rhetorical balance.
-
-### R8: Social Services Deterioration
-Women's shelter closures (interpellation HD10438 by Sofia Amloh/S to Minister Nina Larsson/L) signal a systemic underfunding of violence prevention infrastructure. If additional closures are reported during May, this could escalate into a multi-day media event with cross-party condemnation.
-
-**Forward indicator**: Riksorganisationen för kvinnojourer och tjejjourer i Sverige (ROKS) membership survey results.
-**Mitigation**: National strategy against violence against women (HD03245 skrivelse) provides a policy response framework but no immediate funding commitment.
-
----
-
-## Risk Heatmap Summary
-
-```
-Impact ↑
-  5 |  R3
-  4 |      R1  R2  R6  R7
-  3 |          R4  R5  R8
-  2 |
-  1 |
-    +-------------------------→ Likelihood
-        1   2   3   4   5
-```
-
-**Highest priority**: R2 (economic credibility), R6 (reception law legal risk), R7 (unemployment trajectory)
-**Most urgent**: R1 (deportation rules — vote imminent), R3 (NATO Finland — imminent vote)
-
----
-
-## Confidence Assessment
-
-Overall risk confidence: 🟩HIGH — All risks grounded in specific legislative documents and observable economic data. Economic indicators are from World Bank (2024–2025 data). Legislative timeline risks based on committee report dates and known parliamentary procedure.
-
-## Threat Analysis
-
-_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/threat-analysis.md)_
-
-**Generated**: 2026-04-19T11:34:00Z
-**Article Type**: month-ahead
-**Confidence**: 🟩HIGH
-
----
-
-## Overall Threat Level: MEDIUM
-
-Sweden's parliamentary system is functioning within normal democratic parameters. The threat landscape is dominated by **political polarisation** around migration policy and **economic vulnerabilities** ahead of the September 2026 election, rather than acute institutional threats.
-
----
-
-## Threat Identification
-
-### T1: Democratic Legitimacy Strain on Migration Policy
-**Severity**: 🟠MEDIUM-HIGH
-**Confidence**: 🟩HIGH
-
-The simultaneous introduction of the new reception law (HD03229), stricter deportation rules (HD03235), and inhibition orders (HD01SfU22) creates a trifecta of migration tightening that has generated the most intensive parliamentary opposition of the 2025/26 session. With 19 counter-motions filed by S, V, MP, and C parties, and civil society organisations raising human rights concerns, the risk is that democratic legitimacy of these laws is contested post-enactment.
-
-**Evidence**: HD024079 (S), HD024080 (S), HD024087 (MP), HD024089 (C), HD024090 (V), HD024095 (C), HD024097 (MP) — 7 motions against HD03229 and HD03235 alone.
-**Forward indicator**: Administrative court challenges to individual deportation decisions under new rules.
-
-### T2: Constitutional Creep Risk
-**Severity**: 🟡MEDIUM
-**Confidence**: 🟧MEDIUM
-
-Two bills are being simultaneously adopted as "vilande" fundamental law changes (HD01KU32 accessibility in media, HD01KU33 documents obtained by search and seizure). While the procedure is constitutionally sound, the substance of HD01KU33 — removing seized digital files from public records — raises press freedom concerns noted in KU's own reasoning. The Swedish Press Freedom Foundation and journalist organisations are expected to scrutinise this closely.
-
-**Evidence**: HD01KU33 explicitly exempts seized digital files from being classified as public documents.
-**Forward indicator**: Statement by Swedish Press Photographers' Association or Reporters Without Borders.
-
-### T3: Cybersecurity Legislative Gap
-**Severity**: 🟡MEDIUM
-**Confidence**: 🟧MEDIUM
-
-The C party motion (HD024093) questioning the cybersecurity centre bill (HD03214-related) calls for further analysis before enactment. Sweden's cybersecurity posture is critical given NATO membership and the Ukraine conflict. Legislative delay in strengthening the National Cybersecurity Centre creates a potential capability gap.
-
-**Evidence**: HD024093 — Niels Paarup-Petersen (C) and Mikael Larsson (C) motion for further analysis.
-**Forward indicator**: NCSC operational assessment report.
-
-### T4: Economic Security Threat from Low Growth
-**Severity**: 🟠MEDIUM-HIGH
-**Confidence**: 🟦VERY HIGH
-
-Sweden's 0.82% GDP growth in 2024, rising unemployment (8.69% in 2025), and inflation now at 2.84% (down from 8.55% in 2023) represent an economic security threat. The government's spring budget offers modest stimulus, but structural reforms needed for sustained growth are not visible in the current legislative pipeline. This economic fragility increases Sweden's vulnerability to external shocks (trade war, energy price spikes, global recession).
-
-**Evidence**: World Bank data; HD03100 (Spring Economic Proposition), HD0399 (Supplementary Budget).
-**Forward indicator**: May unemployment statistics from SCB.
-
----
-
-## Severity Ranking
-
-1. T1: Migration legitimacy strain — **MEDIUM-HIGH** (🟧)
-2. T4: Economic security — **MEDIUM-HIGH** (🟧)
-3. T2: Constitutional creep — **MEDIUM** (🟡)
-4. T3: Cybersecurity gap — **MEDIUM** (🟡)
-
----
-
-## Mitigation Landscape
-
-The Riksdag's constitutional committee processes are functioning; government has parliamentary majority to pass contested legislation; economic policy framework review (HD03241) provides transparency. Threat level is unlikely to escalate to HIGH in the 30-day window absent major external shock.
-
 ## Scenario Analysis
 
 _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/scenario-analysis.md)_
@@ -916,6 +685,249 @@ A lightning ECHR docket (V/C/MP-prepared) produces a ruling on inhibition orders
 ---
 
 **Classification**: Public · **Next Review**: 2026-04-26 (weekly) or on any W1/W2 trigger · **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1 §Scenario Analysis + Bayesian priors + ACH.
+
+## Risk Assessment
+
+_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/risk-assessment.md)_
+
+**Generated**: 2026-04-19T11:33:00Z
+**Article Type**: month-ahead
+**Analysis Depth**: deep (≥4 risks with numeric L×I scores required)
+
+---
+
+## Risk Matrix (Likelihood × Impact)
+
+| # | Risk | Likelihood (1-5) | Impact (1-5) | L×I Score | Category | Trigger |
+|---|---|---|---|---|---|---|
+| R1 | SfU committee blocks or significantly amends deportation rules (HD03235) under opposition pressure | 2 | 4 | **8** | Legislative/Political | V+MP+C forming blocking coalition in committee |
+| R2 | Spring budget (HD03100) triggers Riksbank credibility debate — high unemployment + deficit spending | 3 | 4 | **12** | Economic/Fiscal | Riksbank or NIER economic assessment |
+| R3 | NATO Finland deployment vote (HD01UFöU3) delayed by procedural challenge | 1 | 5 | **5** | Security/International | Opposition procedural motion |
+| R4 | Fuel tax cut (HD03236) generates EU state aid scrutiny | 2 | 3 | **6** | EU/Legal | European Commission notification |
+| R5 | Coalition tension on climate — energy support contradicts green commitments | 3 | 3 | **9** | Coalition/Reputational | L or KD public dissent on fuel subsidy |
+| R6 | New reception law (HD03229) faces constitutional court challenge post-enactment | 3 | 4 | **12** | Legal/Constitutional | Legal challenge filed by NGO or municipality |
+| R7 | Unemployment climbs further above 8.69% — undermines government's economic narrative | 3 | 4 | **12** | Economic | SCB/Statistics Sweden monthly labour data |
+| R8 | Women's shelter closure crisis escalates — interpellation becomes media crisis | 3 | 3 | **9** | Reputational/Social | More shelter closures reported in May 2026 |
+
+---
+
+## Detailed Risk Analysis
+
+### R2/R6/R7: Economic Risk Cluster (Combined L×I: High)
+Sweden's GDP growth of 0.82% in 2024 — lagging Denmark (3.48%), Norway (2.10%), Finland (0.42%) — combined with rising unemployment to 8.69% in 2025 creates a fragile economic backdrop for the spring budget season. The government's fiscal stimulus via fuel tax cuts and energy support is expansionary at a time when fiscal consolidation may be more prudent. The Riksbank's assessment of the spring economic proposition will be the key inflection point.
+
+**Forward indicator**: Konjunkturinstitutet economic tendency survey (May) — if confidence falls, amplifies economic risk score.
+**Mitigation**: Government's explicit fiscal framework review (HD03241 — Riksrevisionen report on financial policy framework) provides parliamentary oversight mechanism.
+
+### R5: Climate Coalition Tension
+The fuel tax cut (HD03236) explicitly lowers taxes on petrol and diesel — a direct contradiction of L (Liberals) and KD's stated climate positions. Interpellation responses and Alliansen party statements in May will reveal the degree of internal tension. SD's voter base strongly supports lower fuel taxes; this is fundamentally a SD electoral concession within the coalition.
+
+**Forward indicator**: L party conference statements in May; environmental organisations' response.
+**Mitigation**: Simultaneous passage of EV charging tax relief (HD01SkU23) and wind power revenue sharing (HD03239) provides rhetorical balance.
+
+### R8: Social Services Deterioration
+Women's shelter closures (interpellation HD10438 by Sofia Amloh/S to Minister Nina Larsson/L) signal a systemic underfunding of violence prevention infrastructure. If additional closures are reported during May, this could escalate into a multi-day media event with cross-party condemnation.
+
+**Forward indicator**: Riksorganisationen för kvinnojourer och tjejjourer i Sverige (ROKS) membership survey results.
+**Mitigation**: National strategy against violence against women (HD03245 skrivelse) provides a policy response framework but no immediate funding commitment.
+
+---
+
+## Risk Heatmap Summary
+
+```
+Impact ↑
+  5 |  R3
+  4 |      R1  R2  R6  R7
+  3 |          R4  R5  R8
+  2 |
+  1 |
+    +-------------------------→ Likelihood
+        1   2   3   4   5
+```
+
+**Highest priority**: R2 (economic credibility), R6 (reception law legal risk), R7 (unemployment trajectory)
+**Most urgent**: R1 (deportation rules — vote imminent), R3 (NATO Finland — imminent vote)
+
+---
+
+## Confidence Assessment
+
+Overall risk confidence: 🟩HIGH — All risks grounded in specific legislative documents and observable economic data. Economic indicators are from World Bank (2024–2025 data). Legislative timeline risks based on committee report dates and known parliamentary procedure.
+
+## SWOT Analysis
+
+_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/swot-analysis.md)_
+
+**Generated**: 2026-04-19T11:32:00Z
+**Article Type**: month-ahead
+**Analysis Depth**: deep (8 stakeholder groups required)
+
+---
+
+## Strengths
+
+| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|---|---|---|---|---|
+| S1 | Government delivers historic Ukraine solidarity package — 3 interlinked propositions on tribunal, compensation commission, and NATO Finland deployment submitted in single week | HD03231, HD03232, HD03220 | 🟩HIGH | HIGH | 2026-04-16 |
+| S2 | Spring Economic Proposition + 2 supplementary budgets submitted simultaneously, showing coordinated fiscal planning | HD03100, HD0399, HD03236 | 🟦VERY HIGH | HIGH | 2026-04-13 |
+| S3 | Fuel tax cut and energy support demonstrate direct household relief capacity before election | HD03236 | 🟩HIGH | MEDIUM | 2026-04-13 |
+| S4 | Paid police training (HD03237) addresses chronic recruitment problem with structural solution | HD03237 | 🟩HIGH | MEDIUM | 2026-04-14 |
+| S5 | Constitutional law committee (KU) advancing two fundamental law modernisations simultaneously | HD01KU32, HD01KU33 | 🟧MEDIUM | MEDIUM | 2026-04-17 |
+| S6 | Wind power revenue-sharing law (HD03239) creates new financial incentive model for municipal acceptance | HD03239 | 🟧MEDIUM | MEDIUM | 2026-04-14 |
+| S7 | National housing register (HD01CU28) improves property market transparency and crime prevention | HD01CU28, HD01CU27 | 🟩HIGH | MEDIUM | 2026-04-17 |
+
+---
+
+## Weaknesses
+
+| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|---|---|---|---|---|
+| W1 | Sweden GDP growth 2024 only 0.82%, significantly lagging Denmark (3.48%) and Norway (2.10%) | World Bank data | 🟦VERY HIGH | HIGH | 2026-04-19 |
+| W2 | Unemployment risen to 8.69% in 2025, highest among Nordic peers, eroding government's economic credibility | World Bank data | 🟦VERY HIGH | HIGH | 2026-04-19 |
+| W3 | Fuel tax cut (HD03236) contradicts climate commitments — MP motion HD024098, V motion HD024092 cite contradiction with net-zero targets | HD024098, HD024092 | 🟩HIGH | MEDIUM | 2026-04-16 |
+| W4 | Multiple coalition bills face strong opposition motions, indicating contested electoral legitimacy | HD024079-HD024097 (19 counter-motions) | 🟩HIGH | MEDIUM | 2026-04-15 |
+| W5 | Women's shelter closures (interpellation HD10438) expose gap between government rhetoric and social services funding | HD10438 | 🟧MEDIUM | MEDIUM | 2026-04-17 |
+| W6 | Housing construction declining in Stockholm region — 11,091 units planned for 2026 vs. higher demand | HD10434 | 🟧MEDIUM | MEDIUM | 2026-04-15 |
+| W7 | New environmental permitting agency (HD03238) adds institutional complexity in the short term | HD03238 | 🟧MEDIUM | LOW | 2026-04-14 |
+
+---
+
+## Opportunities
+
+| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|---|---|---|---|---|
+| O1 | Spring budget package creates pre-election economic narrative — government can campaign on delivered fiscal relief | HD03100, HD0399, HD03236 | 🟩HIGH | HIGH | 2026-04-13 |
+| O2 | Ukraine legislative cluster enhances Sweden's international standing as a NATO ally and rule-of-law advocate | HD03231, HD03232, HD03220 | 🟩HIGH | HIGH | 2026-04-16 |
+| O3 | New electricity system laws (HD03240) provide regulatory certainty for energy investment | HD03240 | 🟩HIGH | HIGH | 2026-04-14 |
+| O4 | Data interoperability requirements (HD03244) position Sweden as digital governance leader in EU context | HD03244 | 🟧MEDIUM | MEDIUM | 2026-04-16 |
+| O5 | State e-ID (HD01TU21) reduces fraud and enables digital public services | HD01TU21 | 🟩HIGH | MEDIUM | 2026-04-14 |
+| O6 | Waste legislation reform (HD01MJU19) improves circular economy compliance with EU targets | HD01MJU19 | 🟧MEDIUM | MEDIUM | 2026-04-16 |
+
+---
+
+## Threats
+
+| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|---|---|---|---|---|
+| T1 | Opposition unity on migration/reception law (V+MP+C+S all filing counter-motions) risks making HD03229 the most contested vote of the session | HD024079-HD024089 | 🟩HIGH | HIGH | 2026-04-15 |
+| T2 | Deportation rules (HD03235) face constitutional challenge risk — C motion (HD024095) seeks significant amendment | HD024090, HD024095, HD024097 | 🟩HIGH | HIGH | 2026-04-16 |
+| T3 | Tax system review pressure (interpellation HD10433) signals post-election risk of fundamental fiscal restructuring | HD10433 | 🟧MEDIUM | MEDIUM | 2026-04-15 |
+| T4 | EU wage transparency directive (interpellation HD10437) creates compliance obligation that may require further legislation | HD10437 | 🟧MEDIUM | MEDIUM | 2026-04-17 |
+| T5 | Defence infrastructure cost burden (interpellation HD10425) signals fiscal stress from NATO expansion obligations | HD10425 | 🟧MEDIUM | MEDIUM | 2026-03-31 |
+
+---
+
+## Stakeholder Analysis (8 Mandatory Groups)
+
+### 1. Citizens [🟩HIGH confidence]
+**Benefits**: Fuel tax cut (HD03236) provides immediate household relief — petrol and diesel prices affected directly; parental allowance reform (HD01SfU20) removes bureaucratic burden for parents; housing register (HD01CU28) improves property transparency.
+**Risks**: Unemployment at 8.69% creates economic anxiety; declining housing construction in Stockholm limits affordability; women's shelter closures (HD10438) reduce safety net for vulnerable women.
+**Net assessment**: Mixed — pre-election economic measures provide visible short-term relief while structural employment and housing problems persist.
+
+### 2. Government Coalition (M+SD+KD+L) [🟦VERY HIGH confidence]
+**Benefits**: Massive legislative delivery package demonstrates governing capacity; Ukraine cluster strengthens international credentials; law-and-order narrative via migration/justice bills consolidates core SD voter base.
+**Risks**: Fuel tax cut creates climate credibility gap; unemployment rise undercuts economic management narrative; inter-coalition tensions between KD social policy and SD migration positions possible.
+**Net assessment**: Strong position entering campaign season but vulnerable on economic competence.
+
+### 3. Opposition Bloc (S+V+MP+C) [🟩HIGH confidence]
+**Benefits**: 19 counter-motions filed create clear policy differentiation for election campaigns; S can position as responsible alternative government; C occupies swing position on multiple bills.
+**Risks**: Opposition lacks votes to block any coalition bill; risk of being seen as obstructionist rather than constructive; V and MP face marginal parliamentary existence risk.
+**Net assessment**: Counter-motions are primarily electoral positioning documents — they will not change outcomes but build manifesto differentiation.
+
+### 4. Business & Industry [🟧MEDIUM confidence]
+**Benefits**: New electricity system laws (HD03240) provide investment certainty; state e-ID reduces administrative burden; data interoperability (HD03244) reduces public sector data friction; paid police training (HD03237) increases security.
+**Risks**: Forestry industry concerns about new regulations (HD03242); shipping industry affected by harbour law (HD03234); construction sector faces ongoing housing demand/supply mismatch.
+**Net assessment**: Net positive from regulatory modernisation and energy security framework.
+
+### 5. Civil Society [🟧MEDIUM confidence]
+**Benefits**: National strategy against violence against women (HD03245) represents significant policy commitment; accessibility improvements in fundamental law (HD01KU32) benefit persons with disabilities.
+**Risks**: Women's shelter closures (HD10438) signal funding gaps in violence prevention infrastructure; civil society asylum support organisations affected by new reception law (HD03229).
+**Net assessment**: Concerned — policy commitments not matched by service funding.
+
+### 6. International/EU [🟩HIGH confidence]
+**Benefits**: Three Ukraine solidarity bills significantly strengthen Sweden's international standing post-NATO accession; EU accessibility requirements compliance improved (HD01KU32); EU waste legislation compliance improved (HD01MJU19).
+**Risks**: EU wage transparency directive (HD10437) creates compliance pressure; weapons export rules debate (HD024091, HD024096) could affect EU/NATO arms coordination.
+**Net assessment**: Sweden's international posture strengthened substantially by Ukraine legislative cluster.
+
+### 7. Judiciary/Constitutional [🟧MEDIUM confidence]
+**Benefits**: Two fundamental law changes being adopted as "vilande" (HD01KU32, HD01KU33) — proper constitutional procedure followed; identity requirements for property registration (HD01CU27) strengthen anti-money-laundering framework.
+**Risks**: Deportation rules (HD03235) face legal scrutiny on proportionality; inhibition order law (HD01SfU22) tested against ECHR standards; freedom of speech protections under scrutiny (HD10429).
+**Net assessment**: Constitutional procedure is sound; specific bills face potential future legal challenge.
+
+### 8. Media/Public Opinion [🟩HIGH confidence]
+**Benefits**: Fuel tax cut generates positive headline coverage; Ukraine solidarity cluster creates positive international media narrative; police training reform is popular.
+**Risks**: Unemployment at 8.69% is the overriding economic story; women's shelter closures generate negative human interest coverage; migration debate is polarising.
+**Net assessment**: Media environment is contested — government has positive stories but negative economic indicators dominate.
+
+## Threat Analysis
+
+_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/threat-analysis.md)_
+
+**Generated**: 2026-04-19T11:34:00Z
+**Article Type**: month-ahead
+**Confidence**: 🟩HIGH
+
+---
+
+## Overall Threat Level: MEDIUM
+
+Sweden's parliamentary system is functioning within normal democratic parameters. The threat landscape is dominated by **political polarisation** around migration policy and **economic vulnerabilities** ahead of the September 2026 election, rather than acute institutional threats.
+
+---
+
+## Threat Identification
+
+### T1: Democratic Legitimacy Strain on Migration Policy
+**Severity**: 🟠MEDIUM-HIGH
+**Confidence**: 🟩HIGH
+
+The simultaneous introduction of the new reception law (HD03229), stricter deportation rules (HD03235), and inhibition orders (HD01SfU22) creates a trifecta of migration tightening that has generated the most intensive parliamentary opposition of the 2025/26 session. With 19 counter-motions filed by S, V, MP, and C parties, and civil society organisations raising human rights concerns, the risk is that democratic legitimacy of these laws is contested post-enactment.
+
+**Evidence**: HD024079 (S), HD024080 (S), HD024087 (MP), HD024089 (C), HD024090 (V), HD024095 (C), HD024097 (MP) — 7 motions against HD03229 and HD03235 alone.
+**Forward indicator**: Administrative court challenges to individual deportation decisions under new rules.
+
+### T2: Constitutional Creep Risk
+**Severity**: 🟡MEDIUM
+**Confidence**: 🟧MEDIUM
+
+Two bills are being simultaneously adopted as "vilande" fundamental law changes (HD01KU32 accessibility in media, HD01KU33 documents obtained by search and seizure). While the procedure is constitutionally sound, the substance of HD01KU33 — removing seized digital files from public records — raises press freedom concerns noted in KU's own reasoning. The Swedish Press Freedom Foundation and journalist organisations are expected to scrutinise this closely.
+
+**Evidence**: HD01KU33 explicitly exempts seized digital files from being classified as public documents.
+**Forward indicator**: Statement by Swedish Press Photographers' Association or Reporters Without Borders.
+
+### T3: Cybersecurity Legislative Gap
+**Severity**: 🟡MEDIUM
+**Confidence**: 🟧MEDIUM
+
+The C party motion (HD024093) questioning the cybersecurity centre bill (HD03214-related) calls for further analysis before enactment. Sweden's cybersecurity posture is critical given NATO membership and the Ukraine conflict. Legislative delay in strengthening the National Cybersecurity Centre creates a potential capability gap.
+
+**Evidence**: HD024093 — Niels Paarup-Petersen (C) and Mikael Larsson (C) motion for further analysis.
+**Forward indicator**: NCSC operational assessment report.
+
+### T4: Economic Security Threat from Low Growth
+**Severity**: 🟠MEDIUM-HIGH
+**Confidence**: 🟦VERY HIGH
+
+Sweden's 0.82% GDP growth in 2024, rising unemployment (8.69% in 2025), and inflation now at 2.84% (down from 8.55% in 2023) represent an economic security threat. The government's spring budget offers modest stimulus, but structural reforms needed for sustained growth are not visible in the current legislative pipeline. This economic fragility increases Sweden's vulnerability to external shocks (trade war, energy price spikes, global recession).
+
+**Evidence**: World Bank data; HD03100 (Spring Economic Proposition), HD0399 (Supplementary Budget).
+**Forward indicator**: May unemployment statistics from SCB.
+
+---
+
+## Severity Ranking
+
+1. T1: Migration legitimacy strain — **MEDIUM-HIGH** (🟧)
+2. T4: Economic security — **MEDIUM-HIGH** (🟧)
+3. T2: Constitutional creep — **MEDIUM** (🟡)
+4. T3: Cybersecurity gap — **MEDIUM** (🟡)
+
+---
+
+## Mitigation Landscape
+
+The Riksdag's constitutional committee processes are functioning; government has parliamentary majority to pass contested legislation; economic policy framework review (HD03241) provides transparency. Threat level is unlikely to escalate to HIGH in the 30-day window absent major external shock.
 
 ## Comparative International
 

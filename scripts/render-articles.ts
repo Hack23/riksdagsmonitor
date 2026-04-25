@@ -187,8 +187,12 @@ function resolveArtifactList(rc: RenderCase): readonly string[] {
       .sort((a, b) => a.name.localeCompare(b.name))) {
       const full = path.join(dir, e.name);
       const rel = prefix ? `${prefix}/${e.name}` : e.name;
-      if (e.isDirectory()) walk(full, rel);
-      else if (/\.(md|json)$/i.test(e.name)) out.push(rel);
+      if (e.isDirectory()) {
+        if (rel === 'pass1' || rel.startsWith('pass1/')) continue;
+        walk(full, rel);
+      } else if (/\.(md|json)$/i.test(e.name) && !/^article(?:\.[a-z-]+)?\.md$/i.test(e.name)) {
+        out.push(rel);
+      }
     }
   };
   walk(analysisAbs, '');

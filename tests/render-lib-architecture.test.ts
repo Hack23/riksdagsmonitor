@@ -159,6 +159,8 @@ describe('aggregator.ts (leaf, isolated from markdown/chrome)', () => {
     expect(AGGREGATION_ORDER[0]).toBe('executive-brief.md');
     expect(AGGREGATION_ORDER[1]).toBe('synthesis-summary.md');
     expect(AGGREGATION_ORDER[2]).toBe('intelligence-assessment.md');
+    expect(AGGREGATION_ORDER[4]).toBe('media-framing-analysis.md');
+    expect(AGGREGATION_ORDER[6]).toBe('forward-indicators.md');
     expect(AGGREGATION_ORDER[AGGREGATION_ORDER.length - 1]).toBe(
       'data-download-manifest.md',
     );
@@ -323,6 +325,8 @@ describe('article.ts (orchestrator)', () => {
     expect(html).toContain('class="rm-site-header"');
     // Body
     expect(html).toContain('class="rm-article-body"');
+    expect(html).toContain('class="rm-article-dek"');
+    expect(html).toContain('class="rm-article-trust-badges"');
     expect(html).toContain('Plain paragraph');
     // Sources block (depends on artifactsUsed being non-empty)
     expect(html).toContain('class="rm-article-sources"');

@@ -5,10 +5,22 @@ date: 2026-04-21
 subfolder: realtime-1353
 slug: 2026-04-21-realtime-1353
 source_folder: analysis/daily/2026-04-21/realtime-1353
-generated_at: 2026-04-24T18:27:52.237Z
+generated_at: 2026-04-25T10:10:10.962Z
 language: en
 layout: article
 ---
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/realtime-1353/executive-brief.md)_
@@ -344,210 +356,6 @@ _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonit
 **Evidence**: SVT/Sifo polling 2025: 62% of Swedes prioritize affordability; 58% prioritize climate action — both high = contradictory public demand  
 **Media attention expected**: SR Ekot, SVT Agenda, DN, SvD will cover FiU48 debate day
 
-## SWOT Analysis
-
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/realtime-1353/swot-analysis.md)_
-
-## Context Table
-
-| Field | Value |
-|-------|-------|
-| Analysis Date | 2026-04-21 |
-| Run | realtime-1353 |
-| Lead Doc | HD01FiU48 — Extra ändringsbudget 2026 |
-| Secondary | Vindkraft intäktsdelning (new law) |
-| Analyst Confidence | HIGH (live MCP data, committee report available) |
-| Political Context | Tidöalliansen (M+SD+KD+L) governing coalition, 2022-2026 mandate |
-
-## SWOT Analysis — Extra Budget FiU48 + Energy Policy
-
-```mermaid
-quadrantChart
-    title SWOT: Extra Budget FiU48 + Vindkraft Incentives (2026-04-21)
-    x-axis Low Risk --> High Risk
-    y-axis Low Impact --> High Impact
-    quadrant-1 Opportunities
-    quadrant-2 Strengths
-    quadrant-3 Weaknesses
-    quadrant-4 Threats
-    Fuel tax cut consumer relief: [0.2, 0.85]
-    Wind power revenue sharing law: [0.25, 0.78]
-    Energy price support breadth: [0.3, 0.80]
-    Coalition stability signal: [0.2, 0.65]
-    Public finance sustainability: [0.75, 0.70]
-    Green transition tension: [0.72, 0.75]
-    Opposition critique exposure: [0.78, 0.65]
-    Fossil fuel lock-in risk: [0.80, 0.72]
-```
-
-### Strengths
-
-| Strength | Evidence | dok_id | Confidence |
-|----------|----------|--------|------------|
-| Immediate consumer relief from fuel tax cut | FiU48 reduces fuel tax burden for ~6M vehicle owners; energy support helps ~3M households | HD01FiU48 | HIGH |
-| Wind power revenue sharing builds local acceptance | Up to 9 turbine-heights radius compensation creates incentive for communes to approve farms | gov/vindkraft | HIGH |
-| Three-pillar vindkraftspaket coherence | Commune subsidies (budget 2025) → resident compensation (new law) → property buy-out study | gov/vindkraft | HIGH |
-| FiU approval signals coalition discipline | Finance Committee (FiU) approving extra budget shows M+SD+KD+L bloc cohesion | HD01FiU48 | MEDIUM |
-| Cross-party fiscal pragmatism | Extra budget outside main annual budget cycle demonstrates crisis-response capability | HD01FiU48 | MEDIUM |
-
-### Weaknesses
-
-| Weakness | Evidence | dok_id | Confidence |
-|----------|----------|--------|------------|
-| Fuel tax cut undermines climate commitments | Sweden's 2030 fossil-free transport target conflicts with reducing fuel tax incentive | HD01FiU48 | HIGH |
-| Temporary energy support complexity | El- och gasprisstöd creates complex administration for Försäkringskassan/Skatteverket | HD01FiU48 | MEDIUM |
-| Vindkraft compensation may be insufficient | Residents closest to turbines may still oppose; law-mandated minimum may not match market | gov/vindkraft | MEDIUM |
-| Extra budget process signals fiscal improvisation | Multiple extra changes budgets in one year suggests reactive rather than strategic fiscal planning | HD01FiU48 | MEDIUM |
-
-### Opportunities
-
-| Opportunity | Evidence | dok_id | Confidence |
-|-------------|----------|--------|------------|
-| Accelerate Sweden's fossil-free electricity buildout | If wind power expansion succeeds → Sweden can export renewable energy surplus → economic gain | gov/vindkraft | HIGH |
-| Energy price support → political dividend for coalition | Direct household relief 2026 → potential electoral credit before 2026 elections | HD01FiU48 | HIGH |
-| Property buy-out model from Denmark → innovation | Investigating Danish property inlösen model → potential Swedish innovation in land rights | gov/vindkraft | MEDIUM |
-| Reframing wind power from NIMBY to YIMBY | Revenue-sharing turns opponents into stakeholders → paradigm shift in local acceptance | gov/vindkraft | MEDIUM |
-| KU hearings strengthen democratic accountability | Svantesson + Wallström hearings reinforce institutional norms of ministerial accountability | KU hearings | MEDIUM |
-
-### Threats
-
-| Threat | Evidence | dok_id | Confidence |
-|--------|----------|--------|------------|
-| Fuel tax cut locks in fossil dependency | Each SEK/liter reduction reduces price signal for EV adoption; risks missing 2030 targets | HD01FiU48 | HIGH |
-| Coalition may face EU criticism | EU Green Deal compliance tension if Sweden reduces fossil fuel taxes | HD01FiU48 | MEDIUM |
-| Vindkraft compensation law challenged in court | Property rights vs. developer rights may trigger legal challenges from landowners | gov/vindkraft | MEDIUM |
-| Opposition S may counter with alternative energy support | S-led opposition could propose more targeted support → political embarrassment | HD01FiU48 | MEDIUM |
-| KU scrutiny may surface governance failures | Wallström (S) investigation could reveal policy failures damaging coalition's credibility | KU hearings | LOW |
-
-## Cross-Cutting SWOT Dynamics
-
-**Strength–Threat Tension**: The fuel tax cut provides genuine short-term consumer relief (S) but threatens long-term climate targets (T). This tension defines the political debate: coalition argues affordability NOW vs. opposition argues sustainability LATER.
-
-**Opportunity–Weakness Interaction**: Wind power revenue sharing (O) directly addresses local opposition (W) but may be legally challenged (T). The Danish model study (O) signals openness to bolder reforms.
-
-**Scenario Dependency**: If energy prices remain elevated through 2026, el- och gasprisstöd becomes politically essential and FiU48 looks prescient. If energy prices drop, the extra budget looks wasteful.
-
-## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/realtime-1353/risk-assessment.md)_
-
-## Risk Matrix
-
-| Risk ID | Risk | Probability | Impact | DIW Score | Mitigation |
-|---------|------|-------------|--------|-----------|------------|
-| R01 | Fuel tax cut accelerates fossil dependency, missing 2030 transport decarbonization targets | HIGH (0.7) | HIGH | 8.5 | Parallel EV charging infrastructure investment; time-limit tax cut to 2026 |
-| R02 | Extra budget FiU48 rejected or amended in chamber vote → coalition embarrassment | LOW (0.15) | HIGH | 7.0 | M+SD+KD+L bloc has 175+ seats; rejection unlikely but possible if L dissents |
-| R03 | EU Commission objects to Swedish fuel tax reduction under Green Deal | MEDIUM (0.4) | MEDIUM | 6.0 | Sweden can argue affordability exemption; precedent from Germany 2022 Tankrabatt |
-| R04 | Wind power revenue-sharing law triggers property rights litigation | MEDIUM (0.35) | MEDIUM | 5.5 | Legal challenge from developers or landowners challenging compensation formula |
-| R05 | KU Svantesson hearing reveals budget process irregularities | LOW (0.2) | HIGH | 6.5 | Committee hearings are constitutional review — potential for governance findings |
-| R06 | El- och gasprisstöd administrative burden overwhelms Skatteverket | MEDIUM (0.3) | MEDIUM | 5.0 | Previous energy support programs (2021-2022) created backlogs |
-| R07 | Interpellation on ätstörningsvård (HD10442) escalates to formal VU | LOW (0.1) | HIGH | 5.5 | Opposition pattern: interpellation → motion → potential VU if no response |
-| R08 | Wallström KU hearing triggers fresh S-opposition narrative on foreign policy | MEDIUM (0.3) | MEDIUM | 4.5 | Historical review of pre-2022 FP decisions — S leadership may seek to manage narrative |
-
-## Top-5 Risks for Immediate Monitoring
-
-### R01 — Fossil Lock-in from Fuel Tax Cut *(CRITICAL)*
-**Probability**: 70% of measurable impact within 12 months  
-**Evidence**: Sweden's transport emissions fell 19% 2020-2024 partly due to high fuel prices; tax cut reverses price signal  
-**Affected parties**: S, MP, C (all have climate commitments); EU Commission  
-**Monitoring trigger**: Any indication that 2026 transport emission statistics diverge from projections
-
-### R02 — Chamber Vote on FiU48 Fails *(LOW but HIGH IMPACT)*
-**Probability**: 15%  
-**Scenario**: If Liberals (L) — historically pro-green tax — vote against, coalition loses majority (175 − 16 L seats = 159, below 175 threshold)  
-**Monitoring trigger**: L party statements before chamber vote; any L dissenters emerging
-
-### R03 — EU Green Deal Conflict *(MEDIUM)*
-**Probability**: 40%  
-**Context**: European Commission monitoring member-state fossil subsidies; Sweden could face State Aid review  
-**Evidence**: EU Regulation 2024/1679 requires member states to report fossil fuel subsidies  
-**Monitoring trigger**: EC press releases; Swedish EU mission statements
-
-### R05 — KU Hearing Governance Findings *(LOW probability, HIGH democratic impact)*
-**Probability**: 20%  
-**Context**: KU G16 examines Svantesson on fiscal framework processes; KU G34 examines Wallström on foreign policy decisions during S government  
-**Monitoring trigger**: KU draft report language; any dissenting KU committee member statements
-
-### R04 — Wind Power Law Legal Challenge *(MEDIUM)*
-**Probability**: 35%  
-**Context**: Developers may argue compensation calculation method violates property law; residents may argue amount too low  
-**Monitoring trigger**: Legal professional organizations' statements; first court filings post-implementation
-
-## Risk Trend (Compared to Previous Realtime Runs)
-
-| Risk Area | Previous (1130/1240) | Current (1353) | Trend |
-|-----------|---------------------|----------------|-------|
-| Fiscal accountability | MEDIUM | HIGH (FiU48 debate day) | ↑ |
-| Energy policy | MEDIUM | HIGH (two major items) | ↑ |
-| Constitutional oversight | HIGH | MEDIUM (hearings complete?) | → |
-| Coalition stability | LOW | LOW | → |
-| Climate targets | MEDIUM | HIGH (fuel tax cut) | ↑ |
-
-## Threat Analysis
-
-_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/realtime-1353/threat-analysis.md)_
-
-## Threat Level Assessment
-
-**Overall Threat Level**: MEDIUM-HIGH  
-**Confidence**: MEDIUM (parliamentary session data, no classified sources)  
-**Primary Threat Domain**: Democratic Accountability + Climate Policy Integrity
-
----
-
-## Active Threats
-
-### T01 — Climate Policy Integrity Threat (SEVERITY: HIGH)
-**Category**: Policy coherence threat  
-**Actors**: Riksdag coalition (M+SD+KD+L), EU Commission  
-**Description**: The extra budget amendment FiU48 reducing fuel taxes creates a direct structural conflict with Sweden's 2030 climate targets (54% emissions reduction vs. 1990 levels, transport sector currently at -37%). Reduced fuel taxes decrease the economic incentive for EV adoption and carpooling, potentially adding 500,000-1,000,000 metric tons CO2-equivalent annually if sustained beyond 2026.
-
-**Threat indicators**:
-- FiU48 scheduled for chamber debate 2026-04-21 (imminent)
-- No sunset clause mentioned in available documents
-- EU monitoring of member-state fossil fuel subsidies under Regulation 2024/1679
-
-**Democratic dimension**: Citizens who voted for parties with climate commitments (S, C, MP, V) may perceive this as a broken promise; trust in climate governance at risk.
-
-### T02 — Constitutional Oversight Threat (SEVERITY: MEDIUM)
-**Category**: Governance threat  
-**Actors**: KU Committee, Finance Minister Svantesson, former FM Wallström  
-**Description**: The dual KU hearings on 2026-04-21 represent active constitutional scrutiny of both the current government (Svantesson/fiscal processes) and the previous S government (Wallström/foreign policy). If KU hearings reveal ministerial accountability failures, they could trigger formal KU findings that damage reputations and set constitutional precedents.
-
-**Historical precedent**: KU findings in 2017-2018 (Ygeman/migration minister) led to formal criticism that contributed to political pressure on ministers.
-
-**Threat indicators**:
-- Dual hearings same day = coordinated KU scrutiny
-- HDA7KU42 (KU granskning meeting) same day suggests active investigation phase
-
-### T03 — Social Cohesion Threat from Eating Disorder Care Failures (SEVERITY: MEDIUM-LOW)
-**Category**: Social welfare governance threat  
-**Actors**: Region Stockholm, Finance Minister Svantesson, S opposition  
-**Description**: HD10442 interpellation (Kallifatides/S → Svantesson/M) on eating disorder care in Region Stockholm suggests systemic underfunding of mental health services. If Svantesson's response is inadequate, opposition can escalate to formal motion for increased healthcare funding — potential wedge issue on social welfare vs. fiscal conservatism.
-
-### T04 — Occupational Health Capacity Threat (SEVERITY: MEDIUM-LOW)
-**Category**: Labor market governance threat  
-**Actors**: Labor Minister Johan Britz (L), S opposition  
-**Description**: HD10440 interpellation on företagsläkare (occupational physicians) highlights structural gap since Arbetslivsinstitutet abolished 2007. Sweden has approximately 500 active occupational physicians vs. estimated need of 1,500-2,000 — a 60-70% gap. This threatens workplace health monitoring, particularly in sectors with high injury/illness rates.
-
----
-
-## Monitoring Triggers
-
-| Trigger Event | Threat | Timeline |
-|---------------|--------|---------|
-| FiU48 chamber vote — any dissenting M/SD/KD/L votes | T02 (coalition stability) | 1-3 days |
-| EU Commission climate progress report | T01 (fuel tax) | 30-60 days |
-| KU draft report on G16 (Svantesson) | T02 (constitutional) | 30-90 days |
-| S formal motion on ätstörningsvård | T03 (social welfare) | 7-21 days |
-| Arbetsmarknadsdepartementet response to ip HD10440 | T04 (labor health) | 21 days |
-
----
-
-## Threat Level: MEDIUM-HIGH
-
-The combination of a significant fiscal policy move (FiU48) that tests coalition climate credibility, simultaneous constitutional hearings on both the current and previous governments, and multiple S opposition interpellations on social welfare issues creates a MEDIUM-HIGH aggregate threat environment to Swedish democratic governance quality for the period 2026-04-21 to 2026-05-21.
-
 ## Scenario Analysis
 
 _Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/realtime-1353/scenario-analysis.md)_
@@ -640,6 +448,210 @@ A high-profile wind turbine fire or structural failure, particularly in Sweden o
 | 2026-05-01 | EU Commission quarterly fossil subsidy review | B (inquiry) or C (investigation) |
 | 2026-05-15 | KU G16 preliminary findings | A (clean) or B (observation) |
 | 2026-06-01 | First vindkraft revenue-sharing implementation cases | A (smooth) or B (legal challenge) |
+
+## Risk Assessment
+
+_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/realtime-1353/risk-assessment.md)_
+
+## Risk Matrix
+
+| Risk ID | Risk | Probability | Impact | DIW Score | Mitigation |
+|---------|------|-------------|--------|-----------|------------|
+| R01 | Fuel tax cut accelerates fossil dependency, missing 2030 transport decarbonization targets | HIGH (0.7) | HIGH | 8.5 | Parallel EV charging infrastructure investment; time-limit tax cut to 2026 |
+| R02 | Extra budget FiU48 rejected or amended in chamber vote → coalition embarrassment | LOW (0.15) | HIGH | 7.0 | M+SD+KD+L bloc has 175+ seats; rejection unlikely but possible if L dissents |
+| R03 | EU Commission objects to Swedish fuel tax reduction under Green Deal | MEDIUM (0.4) | MEDIUM | 6.0 | Sweden can argue affordability exemption; precedent from Germany 2022 Tankrabatt |
+| R04 | Wind power revenue-sharing law triggers property rights litigation | MEDIUM (0.35) | MEDIUM | 5.5 | Legal challenge from developers or landowners challenging compensation formula |
+| R05 | KU Svantesson hearing reveals budget process irregularities | LOW (0.2) | HIGH | 6.5 | Committee hearings are constitutional review — potential for governance findings |
+| R06 | El- och gasprisstöd administrative burden overwhelms Skatteverket | MEDIUM (0.3) | MEDIUM | 5.0 | Previous energy support programs (2021-2022) created backlogs |
+| R07 | Interpellation on ätstörningsvård (HD10442) escalates to formal VU | LOW (0.1) | HIGH | 5.5 | Opposition pattern: interpellation → motion → potential VU if no response |
+| R08 | Wallström KU hearing triggers fresh S-opposition narrative on foreign policy | MEDIUM (0.3) | MEDIUM | 4.5 | Historical review of pre-2022 FP decisions — S leadership may seek to manage narrative |
+
+## Top-5 Risks for Immediate Monitoring
+
+### R01 — Fossil Lock-in from Fuel Tax Cut *(CRITICAL)*
+**Probability**: 70% of measurable impact within 12 months  
+**Evidence**: Sweden's transport emissions fell 19% 2020-2024 partly due to high fuel prices; tax cut reverses price signal  
+**Affected parties**: S, MP, C (all have climate commitments); EU Commission  
+**Monitoring trigger**: Any indication that 2026 transport emission statistics diverge from projections
+
+### R02 — Chamber Vote on FiU48 Fails *(LOW but HIGH IMPACT)*
+**Probability**: 15%  
+**Scenario**: If Liberals (L) — historically pro-green tax — vote against, coalition loses majority (175 − 16 L seats = 159, below 175 threshold)  
+**Monitoring trigger**: L party statements before chamber vote; any L dissenters emerging
+
+### R03 — EU Green Deal Conflict *(MEDIUM)*
+**Probability**: 40%  
+**Context**: European Commission monitoring member-state fossil subsidies; Sweden could face State Aid review  
+**Evidence**: EU Regulation 2024/1679 requires member states to report fossil fuel subsidies  
+**Monitoring trigger**: EC press releases; Swedish EU mission statements
+
+### R05 — KU Hearing Governance Findings *(LOW probability, HIGH democratic impact)*
+**Probability**: 20%  
+**Context**: KU G16 examines Svantesson on fiscal framework processes; KU G34 examines Wallström on foreign policy decisions during S government  
+**Monitoring trigger**: KU draft report language; any dissenting KU committee member statements
+
+### R04 — Wind Power Law Legal Challenge *(MEDIUM)*
+**Probability**: 35%  
+**Context**: Developers may argue compensation calculation method violates property law; residents may argue amount too low  
+**Monitoring trigger**: Legal professional organizations' statements; first court filings post-implementation
+
+## Risk Trend (Compared to Previous Realtime Runs)
+
+| Risk Area | Previous (1130/1240) | Current (1353) | Trend |
+|-----------|---------------------|----------------|-------|
+| Fiscal accountability | MEDIUM | HIGH (FiU48 debate day) | ↑ |
+| Energy policy | MEDIUM | HIGH (two major items) | ↑ |
+| Constitutional oversight | HIGH | MEDIUM (hearings complete?) | → |
+| Coalition stability | LOW | LOW | → |
+| Climate targets | MEDIUM | HIGH (fuel tax cut) | ↑ |
+
+## SWOT Analysis
+
+_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/realtime-1353/swot-analysis.md)_
+
+## Context Table
+
+| Field | Value |
+|-------|-------|
+| Analysis Date | 2026-04-21 |
+| Run | realtime-1353 |
+| Lead Doc | HD01FiU48 — Extra ändringsbudget 2026 |
+| Secondary | Vindkraft intäktsdelning (new law) |
+| Analyst Confidence | HIGH (live MCP data, committee report available) |
+| Political Context | Tidöalliansen (M+SD+KD+L) governing coalition, 2022-2026 mandate |
+
+## SWOT Analysis — Extra Budget FiU48 + Energy Policy
+
+```mermaid
+quadrantChart
+    title SWOT: Extra Budget FiU48 + Vindkraft Incentives (2026-04-21)
+    x-axis Low Risk --> High Risk
+    y-axis Low Impact --> High Impact
+    quadrant-1 Opportunities
+    quadrant-2 Strengths
+    quadrant-3 Weaknesses
+    quadrant-4 Threats
+    Fuel tax cut consumer relief: [0.2, 0.85]
+    Wind power revenue sharing law: [0.25, 0.78]
+    Energy price support breadth: [0.3, 0.80]
+    Coalition stability signal: [0.2, 0.65]
+    Public finance sustainability: [0.75, 0.70]
+    Green transition tension: [0.72, 0.75]
+    Opposition critique exposure: [0.78, 0.65]
+    Fossil fuel lock-in risk: [0.80, 0.72]
+```
+
+### Strengths
+
+| Strength | Evidence | dok_id | Confidence |
+|----------|----------|--------|------------|
+| Immediate consumer relief from fuel tax cut | FiU48 reduces fuel tax burden for ~6M vehicle owners; energy support helps ~3M households | HD01FiU48 | HIGH |
+| Wind power revenue sharing builds local acceptance | Up to 9 turbine-heights radius compensation creates incentive for communes to approve farms | gov/vindkraft | HIGH |
+| Three-pillar vindkraftspaket coherence | Commune subsidies (budget 2025) → resident compensation (new law) → property buy-out study | gov/vindkraft | HIGH |
+| FiU approval signals coalition discipline | Finance Committee (FiU) approving extra budget shows M+SD+KD+L bloc cohesion | HD01FiU48 | MEDIUM |
+| Cross-party fiscal pragmatism | Extra budget outside main annual budget cycle demonstrates crisis-response capability | HD01FiU48 | MEDIUM |
+
+### Weaknesses
+
+| Weakness | Evidence | dok_id | Confidence |
+|----------|----------|--------|------------|
+| Fuel tax cut undermines climate commitments | Sweden's 2030 fossil-free transport target conflicts with reducing fuel tax incentive | HD01FiU48 | HIGH |
+| Temporary energy support complexity | El- och gasprisstöd creates complex administration for Försäkringskassan/Skatteverket | HD01FiU48 | MEDIUM |
+| Vindkraft compensation may be insufficient | Residents closest to turbines may still oppose; law-mandated minimum may not match market | gov/vindkraft | MEDIUM |
+| Extra budget process signals fiscal improvisation | Multiple extra changes budgets in one year suggests reactive rather than strategic fiscal planning | HD01FiU48 | MEDIUM |
+
+### Opportunities
+
+| Opportunity | Evidence | dok_id | Confidence |
+|-------------|----------|--------|------------|
+| Accelerate Sweden's fossil-free electricity buildout | If wind power expansion succeeds → Sweden can export renewable energy surplus → economic gain | gov/vindkraft | HIGH |
+| Energy price support → political dividend for coalition | Direct household relief 2026 → potential electoral credit before 2026 elections | HD01FiU48 | HIGH |
+| Property buy-out model from Denmark → innovation | Investigating Danish property inlösen model → potential Swedish innovation in land rights | gov/vindkraft | MEDIUM |
+| Reframing wind power from NIMBY to YIMBY | Revenue-sharing turns opponents into stakeholders → paradigm shift in local acceptance | gov/vindkraft | MEDIUM |
+| KU hearings strengthen democratic accountability | Svantesson + Wallström hearings reinforce institutional norms of ministerial accountability | KU hearings | MEDIUM |
+
+### Threats
+
+| Threat | Evidence | dok_id | Confidence |
+|--------|----------|--------|------------|
+| Fuel tax cut locks in fossil dependency | Each SEK/liter reduction reduces price signal for EV adoption; risks missing 2030 targets | HD01FiU48 | HIGH |
+| Coalition may face EU criticism | EU Green Deal compliance tension if Sweden reduces fossil fuel taxes | HD01FiU48 | MEDIUM |
+| Vindkraft compensation law challenged in court | Property rights vs. developer rights may trigger legal challenges from landowners | gov/vindkraft | MEDIUM |
+| Opposition S may counter with alternative energy support | S-led opposition could propose more targeted support → political embarrassment | HD01FiU48 | MEDIUM |
+| KU scrutiny may surface governance failures | Wallström (S) investigation could reveal policy failures damaging coalition's credibility | KU hearings | LOW |
+
+## Cross-Cutting SWOT Dynamics
+
+**Strength–Threat Tension**: The fuel tax cut provides genuine short-term consumer relief (S) but threatens long-term climate targets (T). This tension defines the political debate: coalition argues affordability NOW vs. opposition argues sustainability LATER.
+
+**Opportunity–Weakness Interaction**: Wind power revenue sharing (O) directly addresses local opposition (W) but may be legally challenged (T). The Danish model study (O) signals openness to bolder reforms.
+
+**Scenario Dependency**: If energy prices remain elevated through 2026, el- och gasprisstöd becomes politically essential and FiU48 looks prescient. If energy prices drop, the extra budget looks wasteful.
+
+## Threat Analysis
+
+_Source: [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/realtime-1353/threat-analysis.md)_
+
+## Threat Level Assessment
+
+**Overall Threat Level**: MEDIUM-HIGH  
+**Confidence**: MEDIUM (parliamentary session data, no classified sources)  
+**Primary Threat Domain**: Democratic Accountability + Climate Policy Integrity
+
+---
+
+## Active Threats
+
+### T01 — Climate Policy Integrity Threat (SEVERITY: HIGH)
+**Category**: Policy coherence threat  
+**Actors**: Riksdag coalition (M+SD+KD+L), EU Commission  
+**Description**: The extra budget amendment FiU48 reducing fuel taxes creates a direct structural conflict with Sweden's 2030 climate targets (54% emissions reduction vs. 1990 levels, transport sector currently at -37%). Reduced fuel taxes decrease the economic incentive for EV adoption and carpooling, potentially adding 500,000-1,000,000 metric tons CO2-equivalent annually if sustained beyond 2026.
+
+**Threat indicators**:
+- FiU48 scheduled for chamber debate 2026-04-21 (imminent)
+- No sunset clause mentioned in available documents
+- EU monitoring of member-state fossil fuel subsidies under Regulation 2024/1679
+
+**Democratic dimension**: Citizens who voted for parties with climate commitments (S, C, MP, V) may perceive this as a broken promise; trust in climate governance at risk.
+
+### T02 — Constitutional Oversight Threat (SEVERITY: MEDIUM)
+**Category**: Governance threat  
+**Actors**: KU Committee, Finance Minister Svantesson, former FM Wallström  
+**Description**: The dual KU hearings on 2026-04-21 represent active constitutional scrutiny of both the current government (Svantesson/fiscal processes) and the previous S government (Wallström/foreign policy). If KU hearings reveal ministerial accountability failures, they could trigger formal KU findings that damage reputations and set constitutional precedents.
+
+**Historical precedent**: KU findings in 2017-2018 (Ygeman/migration minister) led to formal criticism that contributed to political pressure on ministers.
+
+**Threat indicators**:
+- Dual hearings same day = coordinated KU scrutiny
+- HDA7KU42 (KU granskning meeting) same day suggests active investigation phase
+
+### T03 — Social Cohesion Threat from Eating Disorder Care Failures (SEVERITY: MEDIUM-LOW)
+**Category**: Social welfare governance threat  
+**Actors**: Region Stockholm, Finance Minister Svantesson, S opposition  
+**Description**: HD10442 interpellation (Kallifatides/S → Svantesson/M) on eating disorder care in Region Stockholm suggests systemic underfunding of mental health services. If Svantesson's response is inadequate, opposition can escalate to formal motion for increased healthcare funding — potential wedge issue on social welfare vs. fiscal conservatism.
+
+### T04 — Occupational Health Capacity Threat (SEVERITY: MEDIUM-LOW)
+**Category**: Labor market governance threat  
+**Actors**: Labor Minister Johan Britz (L), S opposition  
+**Description**: HD10440 interpellation on företagsläkare (occupational physicians) highlights structural gap since Arbetslivsinstitutet abolished 2007. Sweden has approximately 500 active occupational physicians vs. estimated need of 1,500-2,000 — a 60-70% gap. This threatens workplace health monitoring, particularly in sectors with high injury/illness rates.
+
+---
+
+## Monitoring Triggers
+
+| Trigger Event | Threat | Timeline |
+|---------------|--------|---------|
+| FiU48 chamber vote — any dissenting M/SD/KD/L votes | T02 (coalition stability) | 1-3 days |
+| EU Commission climate progress report | T01 (fuel tax) | 30-60 days |
+| KU draft report on G16 (Svantesson) | T02 (constitutional) | 30-90 days |
+| S formal motion on ätstörningsvård | T03 (social welfare) | 7-21 days |
+| Arbetsmarknadsdepartementet response to ip HD10440 | T04 (labor health) | 21 days |
+
+---
+
+## Threat Level: MEDIUM-HIGH
+
+The combination of a significant fiscal policy move (FiU48) that tests coalition climate credibility, simultaneous constitutional hearings on both the current and previous governments, and multiple S opposition interpellations on social welfare issues creates a MEDIUM-HIGH aggregate threat environment to Swedish democratic governance quality for the period 2026-04-21 to 2026-05-21.
 
 ## Comparative International
 
