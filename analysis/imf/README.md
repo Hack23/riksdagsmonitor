@@ -75,6 +75,10 @@ No MCP server is required for IMF — access is part of the repository's npm SBO
 
 ### 4.1 · TypeScript API quick reference
 
+The snippet below assumes it is copied into a TypeScript file at the
+repository root. From this README's directory (`analysis/imf/`), use
+`../../scripts/...` instead.
+
 ```ts
 import {
   ImfClient,

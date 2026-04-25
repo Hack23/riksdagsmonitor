@@ -302,6 +302,22 @@ describe('ImfClient', () => {
       global.fetch = vi.fn(async () => new Response('boom', { status: 500 })) as unknown as typeof global.fetch;
       await expect(client.getWeoIndicator('SWE', 'NGDP_RPCH')).rejects.toThrow(/IMF API error/);
     });
+
+    it('does not retry non-transient 4xx responses', async () => {
+      const spy = vi.fn(async () => new Response('not found', { status: 404 })) as unknown as typeof global.fetch;
+      global.fetch = spy;
+
+      await expect(client.getWeoIndicator('SWE', 'NGDP_RPCH')).rejects.toThrow(/IMF API error/);
+      expect((spy as unknown as { mock: { calls: unknown[][] } }).mock.calls).toHaveLength(1);
+    });
+
+    it('does not retry JSON parse errors from successful responses', async () => {
+      const spy = vi.fn(async () => new Response('not-json', { status: 200 })) as unknown as typeof global.fetch;
+      global.fetch = spy;
+
+      await expect(client.getWeoIndicator('SWE', 'NGDP_RPCH')).rejects.toThrow();
+      expect((spy as unknown as { mock: { calls: unknown[][] } }).mock.calls).toHaveLength(1);
+    });
   });
 
   describe('sdmxFetch', () => {
@@ -379,6 +395,15 @@ describe('ImfClient', () => {
       expect(result.get('NGDP_RPCH')?.length).toBe(1);
       expect(result.get('PCPIPCH')).toEqual([]);
       expect(result.get('LUR')?.length).toBe(1);
+    });
+
+    it('validates years up-front instead of swallowing caller errors', async () => {
+      global.fetch = vi.fn();
+
+      await expect(client.getWeoIndicatorsBatch('SWE', ['NGDP_RPCH'], 0)).rejects.toThrow(
+        /positive integer/,
+      );
+      expect((global.fetch as unknown as { mock: { calls: unknown[][] } }).mock.calls).toHaveLength(0);
     });
   });
 });

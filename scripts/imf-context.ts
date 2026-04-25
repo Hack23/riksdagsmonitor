@@ -30,7 +30,17 @@ import { IMF_WEO_INDICATORS, IMF_FM_INDICATORS } from './imf-client.js';
 // ---------------------------------------------------------------------------
 
 /** Database family an indicator belongs to. */
-export type ImfDatabase = 'WEO' | 'FM' | 'IFS' | 'BOP_AGG' | 'GFS_COFOG' | 'MFS_IR';
+export type ImfDatabase =
+  | 'WEO'
+  | 'FM'
+  | 'IFS'
+  | 'BOP'
+  | 'BOP_AGG'
+  | 'GFS_COFOG'
+  | 'MFS_IR'
+  | 'DOTS'
+  | 'PCPS'
+  | 'ER';
 
 /** An IMF economic indicator mapped to a Swedish policy area. */
 export interface ImfIndicatorContext {
@@ -359,11 +369,11 @@ export function imfCitation(database: ImfDatabase, indicatorId: string): string 
  * ```
  */
 export function findImfIndicatorByCode(
-  database: ImfDatabase,
+  database: string,
   indicatorId: string,
 ): ImfIndicatorContext | undefined {
-  const upperDb = database.toUpperCase() as ImfDatabase;
-  const upperId = indicatorId.toUpperCase();
+  const upperDb = database.trim().toUpperCase();
+  const upperId = indicatorId.trim().toUpperCase();
   return IMF_INDICATORS.find(
     (ind) => ind.database === upperDb && ind.indicatorId.toUpperCase() === upperId,
   );

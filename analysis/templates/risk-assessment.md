@@ -215,7 +215,7 @@ Every budget-risk claim MUST be anchored to an IMF projection with an explicit v
 | Real GDP growth | `WEO:NGDP_RPCH` | Denominator sensitivity for all % of GDP ratios |
 | Inflation (CPI) | `WEO:PCPIPCH` | Nominal-anchor assumption |
 
-Citation format: `(WEO Apr-2026, GGXWDG_NGDP)` — vintage tag mandatory for any projection. Example: *"Budget-implied public debt lands at 33.1 % of GDP in 2027 (WEO Apr-2026, GGXWDG_NGDP), inside the EU 60 % ceiling but 1.2 pp above the 2024 baseline."*
+Citation format: `(WEO Apr-2026, WEO:GGXWDG_NGDP)` — vintage tag mandatory for any projection. Example: *"Budget-implied public debt lands at 33.1 % of GDP in 2027 (WEO Apr-2026, WEO:GGXWDG_NGDP), inside the EU 60 % ceiling but 1.2 pp above the 2024 baseline."*
 
 Programmatic lookup: `findImfIndicatorsForCommittee('FiU')` in [`scripts/imf-context.ts`](../../scripts/imf-context.ts).
 

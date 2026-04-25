@@ -133,7 +133,12 @@ describe('imf-context', () => {
     });
 
     it('is case-insensitive on both arguments', () => {
-      const mixed = findImfIndicatorByCode('weo' as unknown as 'WEO', 'ngdp_rpch');
+      const mixed = findImfIndicatorByCode('weo', 'ngdp_rpch');
+      expect(mixed?.indicatorId).toBe('NGDP_RPCH');
+    });
+
+    it('trims whitespace before matching', () => {
+      const mixed = findImfIndicatorByCode(' WEO ', ' NGDP_RPCH ');
       expect(mixed?.indicatorId).toBe('NGDP_RPCH');
     });
 

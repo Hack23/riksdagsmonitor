@@ -149,6 +149,18 @@ interface DatamapperResponse {
   };
 }
 
+class ImfHttpError extends Error {
+  readonly retryable: boolean;
+  readonly retryAfterHeader?: string | null;
+
+  constructor(response: Response) {
+    super(`IMF API error: ${response.status} ${response.statusText} for ${response.url}`);
+    this.name = 'ImfHttpError';
+    this.retryable = response.status === 429 || response.status >= 500;
+    this.retryAfterHeader = response.headers.get('retry-after');
+  }
+}
+
 // ---------------------------------------------------------------------------
 // ImfClient class
 // ---------------------------------------------------------------------------
@@ -233,13 +245,21 @@ export class ImfClient {
     weoCodes: readonly string[],
     years = 10,
   ): Promise<Map<string, readonly ImfDataPoint[]>> {
+    if (years < 1 || !Number.isInteger(years)) {
+      throw new Error(`getWeoIndicatorsBatch: 'years' must be a positive integer, got ${years}`);
+    }
+
     const out = new Map<string, readonly ImfDataPoint[]>();
     for (const weoCode of weoCodes) {
       try {
         const series = await this.getWeoIndicator(iso3, weoCode, years);
         out.set(weoCode, series);
-      } catch {
-        out.set(weoCode, []);
+      } catch (error) {
+        if (isTransientFetchError(error) || error instanceof ImfHttpError) {
+          out.set(weoCode, []);
+          continue;
+        }
+        throw error;
       }
     }
     return out;
@@ -313,26 +333,19 @@ export class ImfClient {
         headers: { Accept: 'application/json', ...extraHeaders },
       });
 
-      if (response.status === 429 && attempt < this.maxRetries) {
-        // Respect IMF advertised rate limit (~10 req / 5 s) with an
-        // exponential back-off: 1 s → 2 s → 4 s (matches THREAT_MODEL.md
-        // TB-6a). Honour a `Retry-After` header (delta-seconds) when the
-        // server supplies one, capped at 30 s to avoid pathological waits.
-        const delay = calculateRetryDelay(attempt, response.headers.get('retry-after'));
-        clearTimeout(timeoutId);
-        await new Promise((resolve) => setTimeout(resolve, delay));
-        return this.fetchWithRetry(url, attempt + 1, extraHeaders);
-      }
-
       if (!response.ok) {
-        throw new Error(`IMF API error: ${response.status} ${response.statusText} for ${url}`);
+        throw new ImfHttpError(response);
       }
 
       return await response.json();
     } catch (error) {
-      if (attempt < this.maxRetries) {
+      const retryAfterHeader = error instanceof ImfHttpError ? error.retryAfterHeader : undefined;
+      if (attempt < this.maxRetries && isRetryableError(error)) {
         // Network / abort path: same exponential schedule (1 s → 2 s → 4 s).
-        const delay = calculateRetryDelay(attempt);
+        // HTTP 429 additionally honours Retry-After (delta-seconds), capped
+        // at 30 s to avoid pathological waits.
+        const delay = calculateRetryDelay(attempt, retryAfterHeader);
+        clearTimeout(timeoutId);
         await new Promise((resolve) => setTimeout(resolve, delay));
         return this.fetchWithRetry(url, attempt + 1, extraHeaders);
       }
@@ -427,6 +440,19 @@ export function parseDatamapperValues(
   // Sort by year desc so consumers can slice newest-first.
   points.sort((a, b) => Number.parseInt(b.date, 10) - Number.parseInt(a.date, 10));
   return points;
+}
+
+function isRetryableError(error: unknown): boolean {
+  if (error instanceof ImfHttpError) {
+    return error.retryable;
+  }
+  return isTransientFetchError(error);
+}
+
+function isTransientFetchError(error: unknown): boolean {
+  if (error instanceof TypeError) return true;
+  if (error instanceof Error) return error.name === 'AbortError';
+  return false;
 }
 
 // ---------------------------------------------------------------------------
