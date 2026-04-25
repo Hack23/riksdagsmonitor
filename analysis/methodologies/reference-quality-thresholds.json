@@ -1,5 +1,5 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "effectiveDate": "2026-04-25",
   "description": "Per-artifact minimum line-count floors used to enforce Rule 22 (Per-Artifact Depth Floors) of analysis/methodologies/ai-driven-analysis-guide.md for Riksdagsmonitor agentic news workflows. Values are calibrated to the DIW Output Matrix and the Riksdag 23-artifact catalog (see artifact-catalog.md). A file below its threshold MUST trigger a Pass-2 rewrite; it MUST NOT be shipped with a '[truncated]' or 'AI_MUST_REPLACE' note. When an articleType entry is absent the gate falls back to the default floor. When a per-artifact entry is present the effective floor is max(perArtifact, default), so the default can only raise, never lower, a configured floor.",
   "tradecraftQualitySignals": {
@@ -41,7 +41,7 @@
       "synthesis-summary.md",
       "swot-analysis.md",
       "risk-assessment.md",
-      "stakeholder-perspectives.md",
+      "stakeholder-impact.md",
       "media-framing-analysis.md",
       "voter-segmentation.md",
       "coalition-mathematics.md"
@@ -72,17 +72,18 @@
       "synthesis-summary.md": 205,
       "cross-reference-map.md": 110,
       "significance-scoring.md": 150,
-      "classification-results.md": 140,
+      "political-classification.md": 140,
       "swot-analysis.md": 160,
       "risk-assessment.md": 180,
       "threat-analysis.md": 180,
-      "stakeholder-perspectives.md": 220,
+      "stakeholder-impact.md": 220,
       "data-download-manifest.md": 60,
       "scenario-analysis.md": 180,
       "comparative-international.md": 150,
       "devils-advocate.md": 160,
       "intelligence-assessment.md": 160,
       "methodology-reflection.md": 200,
+      "executive-brief.md": 120,
       "election-2026-analysis.md": 150,
       "voter-segmentation.md": 140,
       "coalition-mathematics.md": 135,
@@ -102,69 +103,78 @@
       "synthesis-summary.md": 220,
       "risk-assessment.md": 200,
       "threat-analysis.md": 200,
-      "stakeholder-perspectives.md": 240,
+      "stakeholder-impact.md": 240,
       "forward-indicators.md": 170,
-      "methodology-reflection.md": 210
+      "methodology-reflection.md": 210,
+      "executive-brief.md": 150
     },
     "realtime-monitor": {
       "synthesis-summary.md": 170,
       "risk-assessment.md": 150,
       "threat-analysis.md": 150,
-      "stakeholder-perspectives.md": 190,
+      "stakeholder-impact.md": 190,
       "forward-indicators.md": 140,
-      "methodology-reflection.md": 180
+      "methodology-reflection.md": 180,
+      "executive-brief.md": 100
     },
     "propositions": {
       "synthesis-summary.md": 230,
-      "classification-results.md": 160,
+      "political-classification.md": 160,
       "swot-analysis.md": 180,
       "risk-assessment.md": 210,
       "implementation-feasibility.md": 170,
-      "stakeholder-perspectives.md": 250,
-      "methodology-reflection.md": 215
+      "stakeholder-impact.md": 250,
+      "methodology-reflection.md": 215,
+      "executive-brief.md": 130
     },
     "motions": {
       "synthesis-summary.md": 220,
       "significance-scoring.md": 170,
-      "classification-results.md": 155,
+      "political-classification.md": 155,
       "swot-analysis.md": 175,
-      "stakeholder-perspectives.md": 240,
+      "stakeholder-impact.md": 240,
       "comparative-international.md": 160,
-      "methodology-reflection.md": 210
+      "methodology-reflection.md": 210,
+      "executive-brief.md": 130
     },
     "committee-reports": {
       "synthesis-summary.md": 215,
       "swot-analysis.md": 170,
       "risk-assessment.md": 195,
       "implementation-feasibility.md": 165,
-      "stakeholder-perspectives.md": 235,
-      "methodology-reflection.md": 205
+      "stakeholder-impact.md": 235,
+      "methodology-reflection.md": 205,
+      "executive-brief.md": 130
     },
     "interpellations": {
       "synthesis-summary.md": 205,
       "swot-analysis.md": 160,
       "threat-analysis.md": 180,
-      "stakeholder-perspectives.md": 220,
+      "stakeholder-impact.md": 220,
       "media-framing-analysis.md": 160,
-      "methodology-reflection.md": 200
+      "methodology-reflection.md": 200,
+      "executive-brief.md": 110
     },
     "week-ahead": {
       "synthesis-summary.md": 200,
       "forward-indicators.md": 170,
-      "methodology-reflection.md": 195
+      "methodology-reflection.md": 195,
+      "executive-brief.md": 130
     },
     "month-ahead": {
       "synthesis-summary.md": 230,
       "forward-indicators.md": 200,
       "scenario-analysis.md": 200,
-      "methodology-reflection.md": 215
+      "methodology-reflection.md": 215,
+      "executive-brief.md": 150
     },
     "weekly-review": {
       "synthesis-summary.md": 240,
       "cross-session-intelligence.md": 180,
       "session-baseline.md": 170,
       "cross-run-diff.md": 160,
-      "methodology-reflection.md": 220
+      "methodology-reflection.md": 220,
+      "executive-brief.md": 180
     },
     "monthly-review": {
       "synthesis-summary.md": 260,
@@ -172,7 +182,8 @@
       "session-baseline.md": 200,
       "cross-run-diff.md": 180,
       "comparative-international.md": 180,
-      "methodology-reflection.md": 235
+      "methodology-reflection.md": 235,
+      "executive-brief.md": 200
     },
     "analyticalSupplementary": {
       "_comment": "Analytical supplementary templates — never blocking. Floors apply only when the template is produced. Sister-methodology: analytical-supplementary-methodology.md.",
