@@ -10,7 +10,9 @@ import {
   classifyStatskontoretResource,
   parseStatskontoretOptionalInt,
   parseStatskontoretSwedishNumber,
+  StatskontoretClient,
   StatskontoretError,
+  assertStatskontoretFetchTarget,
 } from '../scripts/statskontoret-client.js';
 
 describe('Statskontoret CLI parsing', () => {
@@ -46,5 +48,34 @@ describe('Statskontoret parsing primitives', () => {
     expect(parseStatskontoretSwedishNumber('not-a-number')).toBeUndefined();
     expect(parseStatskontoretOptionalInt('2026')).toBe(2026);
     expect(parseStatskontoretOptionalInt(null)).toBeUndefined();
+  });
+});
+
+describe('Statskontoret fetch target guard', () => {
+  it('accepts the allowlisted Statskontoret HTTPS host', () => {
+    expect(() =>
+      assertStatskontoretFetchTarget('https://www.statskontoret.se/page'),
+    ).not.toThrow();
+  });
+
+  it('rejects non-HTTPS schemes', () => {
+    expect(() =>
+      assertStatskontoretFetchTarget('http://www.statskontoret.se/page'),
+    ).toThrow(StatskontoretError);
+  });
+
+  it('rejects hosts outside the allowlist', () => {
+    expect(() =>
+      assertStatskontoretFetchTarget('https://example.com/path'),
+    ).toThrow(/not in allowlist/);
+  });
+
+  it('rejects malformed URLs with a typed error', () => {
+    expect(() => assertStatskontoretFetchTarget('not a url')).toThrow(StatskontoretError);
+  });
+
+  it('blocks fetchText calls that target other hosts', async () => {
+    const client = new StatskontoretClient();
+    await expect(client.fetchText('https://evil.example.com/x')).rejects.toThrow(/allowlist/);
   });
 });

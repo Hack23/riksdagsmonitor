@@ -9,6 +9,7 @@
  *   tsx scripts/statskontoret-fetch.ts headcount --url <xlsx-url> [--persist]
  */
 
+import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 import {
@@ -120,7 +121,20 @@ async function main(): Promise<void> {
   }
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+function isDirectExecution(): boolean {
+  const entry = process.argv[1];
+  if (!entry) return false;
+  try {
+    return import.meta.url === pathToFileURL(path.resolve(entry)).href;
+  } catch {
+    // pathToFileURL throws on non-absolute or otherwise invalid input. Keeping
+    // the CLI import-safe across runners is more important than detecting the
+    // direct-execution case in those edge environments.
+    return false;
+  }
+}
+
+if (isDirectExecution()) {
   main().catch((error: unknown) => {
     const message = error instanceof Error ? error.message : String(error);
     process.stderr.write(`statskontoret-fetch: ${message}\n`);

@@ -14,6 +14,8 @@
 
 import JSZip from 'jszip';
 
+import { decodeHtmlEntities } from './html-utils.js';
+
 export type StatskontoretSourceKey =
   | 'myndighetsforteckning'
   | 'budget-time-series'
@@ -131,7 +133,6 @@ const DEFAULT_TIMEOUT = 15_000;
 const FILE_EXTENSION_RE = /\.(xlsx|xls|csv|zip|docx|pdf)(?:$|[?#])/i;
 const HREF_RE = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
 const TAG_RE = /<[^>]+>/g;
-const ENTITY_RE = /&(amp|lt|gt|quot|apos|nbsp|#\d+|#x[0-9a-f]+);/gi;
 
 export class StatskontoretClient {
   readonly baseURL: string;
@@ -172,10 +173,12 @@ export class StatskontoretClient {
   }
 
   private async fetchWithTimeout(url: string): Promise<Response> {
+    const resolved = resolveStatskontoretUrl(url, this.baseURL);
+    assertStatskontoretFetchTarget(resolved);
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), this.timeout);
     try {
-      const response = await this.fetchFn(resolveStatskontoretUrl(url, this.baseURL), {
+      const response = await this.fetchFn(resolved, {
         signal: controller.signal,
         headers: {
           Accept: 'text/html,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/zip,text/csv,*/*',
@@ -462,6 +465,32 @@ function resolveStatskontoretUrl(url: string, baseURL: string): string {
   return new URL(decodeHtml(url), `${trimTrailingSlash(baseURL)}/`).toString();
 }
 
+/**
+ * Validate that an outbound URL targets the Statskontoret allowlisted host
+ * over HTTPS before issuing a fetch. Mirrors the firewall allowlist documented
+ * in `analysis/statskontoret/indicators-inventory.json` so absolute URLs from
+ * untrusted callers cannot redirect the client to arbitrary hosts.
+ */
+export function assertStatskontoretFetchTarget(url: string, baseURL: string = STATSKONTORET_BASE_URL): URL {
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    throw new StatskontoretError(`Invalid Statskontoret URL: ${url}`, 'http');
+  }
+  if (parsed.protocol !== 'https:') {
+    throw new StatskontoretError(`Statskontoret fetch must use https: ${url}`, 'http');
+  }
+  const allowedHost = new URL(baseURL).hostname;
+  if (parsed.hostname !== allowedHost) {
+    throw new StatskontoretError(
+      `Statskontoret fetch host ${parsed.hostname} not in allowlist (${allowedHost})`,
+      'http',
+    );
+  }
+  return parsed;
+}
+
 function trimTrailingSlash(value: string): string {
   return value.replace(/\/+$/, '');
 }
@@ -529,34 +558,12 @@ function extractPageLastModified(html: string): string | undefined {
 }
 
 function decodeHtml(value: string): string {
-  return value.replace(ENTITY_RE, (entity) => decodeEntity(entity));
+  // Reuse the centralized infrastructure decoder to keep entity handling consistent
+  // with the rest of the platform; `&nbsp;` is normalised to a regular space here
+  // to keep downstream whitespace and link-text matching predictable.
+  return decodeHtmlEntities(value).replace(/\u00a0/g, ' ');
 }
 
 function decodeXml(value: string): string {
   return decodeHtml(value);
-}
-
-function decodeEntity(entity: string): string {
-  const body = entity.slice(1, -1).toLowerCase();
-  switch (body) {
-    case 'amp': return '&';
-    case 'lt': return '<';
-    case 'gt': return '>';
-    case 'quot': return '"';
-    case 'apos': return "'";
-    case 'nbsp': return ' ';
-    default:
-      if (/^#x[0-9a-f]+$/i.test(body)) return decodeCodePoint(Number.parseInt(body.slice(2), 16), entity);
-      if (/^#\d+$/.test(body)) return decodeCodePoint(Number.parseInt(body.slice(1), 10), entity);
-      return entity;
-  }
-}
-
-function decodeCodePoint(codePoint: number, fallback: string): string {
-  if (!Number.isFinite(codePoint)) return fallback;
-  try {
-    return String.fromCodePoint(codePoint);
-  } catch {
-    return fallback;
-  }
 }
