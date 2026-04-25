@@ -211,12 +211,16 @@ const READER_GUIDE_ENTRIES: readonly {
  * canonical artifact section title.
  */
 function anchorForTitle(title: string): string {
-  // Mirror the leading/trailing-hyphen trim performed by
-  // markdown.ts#rehypeSlugWithPrefix — without it, headings starting
-  // with emoji or other slug-stripped characters (e.g. `🎯 BLUF`) yield
-  // `rm--bluf` and the Reader Intelligence Guide's `#anchor` links no
-  // longer resolve to the rendered heading IDs.
-  const slug = new GithubSlugger().slug(title).replace(/^-+|-+$/g, '');
+  // Mirror the pre-clean performed by markdown.ts#rehypeSlugWithPrefix:
+  // strip leading non-letter/non-number characters before slugging so
+  // an emoji-prefixed section title (e.g. `🎯 BLUF`) doesn't produce a
+  // leading-dash slug that would render as `rm--bluf` once the prefix
+  // is applied. The Reader Intelligence Guide must produce the
+  // identical slug as the rendered heading ID so its #anchor links
+  // resolve. Note: `anchorForTitle` is only called for distinct
+  // top-level section titles (no dedup state needed here).
+  const cleaned = title.replace(/^[^\p{L}\p{N}]+/u, '').trim() || title;
+  const slug = new GithubSlugger().slug(cleaned);
   return `${HEADING_ID_PREFIX}${slug}`;
 }
 

@@ -637,6 +637,40 @@ describe('render-lib — renderMarkdownToHtml', () => {
     );
     expect(html).not.toContain('<iframe');
   });
+
+  it('produces unique heading IDs even when an emoji-prefixed heading shares a base slug with a plain heading (HTMLHint id-unique guard)', async () => {
+    // Reproduces the html-validation CI failure: `### 📜 Sources` and
+    // a later `### Sources` were both slugged to `rm-sources`. The
+    // pre-clean step in `rehypeSlugWithPrefix` must keep the slugger's
+    // duplicate-suffix state consistent so the second heading gets
+    // `rm-sources-1`.
+    const md = [
+      '## Section A',
+      '',
+      '### 📜 Sources',
+      '',
+      'first',
+      '',
+      '## Section B',
+      '',
+      '### Sources',
+      '',
+      'second',
+      '',
+    ].join('\n');
+    const html = await renderMarkdownToHtml(md);
+    expect(html).toContain('id="rm-sources"');
+    expect(html).toContain('id="rm-sources-1"');
+    // Negative: no double-dash slugs may leak through.
+    expect(html).not.toMatch(/id="rm--/);
+  });
+
+  it('produces unique heading IDs across an emoji-prefixed and non-prefixed heading with mixed casing (defensive)', async () => {
+    const md = '### 🔒 Confidence Profile\n\nfoo\n\n### Confidence Profile\n\nbar\n';
+    const html = await renderMarkdownToHtml(md);
+    expect(html).toContain('id="rm-confidence-profile"');
+    expect(html).toContain('id="rm-confidence-profile-1"');
+  });
 });
 
 // ---------------------------------------------------------------------------
