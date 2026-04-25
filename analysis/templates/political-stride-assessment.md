@@ -135,4 +135,4 @@ graph TD
 
 ---
 
-**Template version:** v1.0 · **Last updated:** 2026-04-23
+**Template version:** v1.1 · **Last updated:** 2026-04-25

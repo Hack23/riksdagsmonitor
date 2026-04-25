@@ -129,3 +129,7 @@ Discipline definition — % of party MPs voting with majority of their party cau
 - Baseline: [`session-baseline.md`](session-baseline.md)
 - Prior aggregation runs: `[REQUIRED: list siblings in analysis/daily/…]`
 - Data source: `get_calendar_events`, `search_voteringar`, `search_dokument`, `search_anforanden`
+
+---
+
+**Template version:** v1.1 · **Last updated:** 2026-04-25

@@ -186,3 +186,7 @@ If `❌ FAILED`, the article MUST NOT be published. See [`05-analysis-gate.md`](
 - Catalog: [`../methodologies/artifact-catalog.md`](../methodologies/artifact-catalog.md)
 - Thresholds: [`../methodologies/reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json)
 - Gate: [`../../.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md)
+
+---
+
+**Template version:** v1.1 · **Last updated:** 2026-04-25

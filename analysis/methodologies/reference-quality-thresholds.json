@@ -1,6 +1,6 @@
 {
-  "version": "1.1",
-  "effectiveDate": "2026-04-23",
+  "version": "1.2",
+  "effectiveDate": "2026-04-25",
   "description": "Per-artifact minimum line-count floors used to enforce Rule 22 (Per-Artifact Depth Floors) of analysis/methodologies/ai-driven-analysis-guide.md for Riksdagsmonitor agentic news workflows. Values are calibrated to the DIW Output Matrix and the Riksdag 23-artifact catalog (see artifact-catalog.md). A file below its threshold MUST trigger a Pass-2 rewrite; it MUST NOT be shipped with a '[truncated]' or 'AI_MUST_REPLACE' note. When an articleType entry is absent the gate falls back to the default floor. When a per-artifact entry is present the effective floor is max(perArtifact, default), so the default can only raise, never lower, a configured floor.",
   "tradecraftQualitySignals": {
     "note": "ADDITIVE quality signals — NOT enforced by the line-count validator. They represent content-quality expectations that the Pass-2 self-audit in methodology-reflection.md must check. Every probabilistic artifact MUST also comply with osint-tradecraft-standards.md: (1) WEP band + time horizon on every headline judgement, (2) Admiralty grade on every external source, (3) confidence-in-evidence tracked separately from WEP probability, (4) >= 10 SATs applied per run (attested in methodology-reflection.md §Evidence audit). Non-compliant artifacts trigger a Pass-2 rewrite even if the line-count floor is met.",
@@ -234,7 +234,7 @@
     "waivers": "Thresholds may be waived only by the CEO (document owner) via a merged PR updating this file. Ad-hoc waivers in commit messages are rejected."
   },
   "meta": {
-    "version": "1.1",
+    "version": "1.2",
     "lastUpdated": "2026-04-23",
     "changelog": [
       "v1.1 (2026-04-23) — Added analyticalSupplementary section (pestle-analysis · political-stride-assessment · wildcards-blackswans · quantitative-swot); non-blocking."

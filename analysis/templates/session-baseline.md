@@ -141,3 +141,7 @@ Any source returning zero rows when it shouldn't → flag in `mcp-reliability-au
 - Methodology: [`../methodologies/per-artifact-methodologies.md#session-baseline`](../methodologies/per-artifact-methodologies.md#session-baseline)
 - Pair with: [`cross-session-intelligence.md`](cross-session-intelligence.md) (narrative) + [`historical-parallels.md`](historical-parallels.md) (trend)
 - Source tools: `riksdag-regering` MCP (see [`../../.github/prompts/02-mcp-access.md`](../../.github/prompts/02-mcp-access.md))
+
+---
+
+**Template version:** v1.1 · **Last updated:** 2026-04-25

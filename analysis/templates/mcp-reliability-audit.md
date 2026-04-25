@@ -171,3 +171,7 @@ Trend diagnosis — `[improving / stable / degrading]`.
 - Methodology: [`../methodologies/per-artifact-methodologies.md#mcp-reliability-audit`](../methodologies/per-artifact-methodologies.md#mcp-reliability-audit)
 - MCP access: [`../../.github/prompts/02-mcp-access.md`](../../.github/prompts/02-mcp-access.md)
 - MCP configuration: [`../../.github/copilot-mcp.json`](../../.github/copilot-mcp.json)
+
+---
+
+**Template version:** v1.1 · **Last updated:** 2026-04-25

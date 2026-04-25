@@ -1,6 +1,6 @@
 # World Bank Indicator → Article Type Mapping (Riksdagsmonitor)
 
-> ## ⚠️ Scope notice (effective 2026-04-24)
+> ## ⚠️ Scope notice (effective 2026-04-25)
 >
 > **World Bank is NOT the primary source for economic data** in Riksdagsmonitor articles. All macro / fiscal / monetary / external-sector / trade context is sourced from **IMF** — see [`imf-indicator-mapping.md`](imf-indicator-mapping.md) and [`analysis/imf/`](../imf/).
 >

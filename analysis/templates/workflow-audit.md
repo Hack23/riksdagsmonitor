@@ -172,3 +172,7 @@ These flow into the next run's `methodology-reflection.md §Improvements` sectio
 - Methodology: [`../methodologies/per-artifact-methodologies.md#workflow-audit`](../methodologies/per-artifact-methodologies.md#workflow-audit)
 - Core principles: [`../methodologies/ai-driven-analysis-guide.md`](../methodologies/ai-driven-analysis-guide.md)
 - Prompt modules: [`../../.github/prompts/`](../../.github/prompts/)
+
+---
+
+**Template version:** v1.1 · **Last updated:** 2026-04-25

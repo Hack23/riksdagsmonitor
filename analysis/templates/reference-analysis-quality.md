@@ -163,3 +163,7 @@ Numbered, concrete, executable. Each action must name the artifact, the gap and 
 - Thresholds: [`../methodologies/reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json)
 - Catalog: [`../methodologies/artifact-catalog.md`](../methodologies/artifact-catalog.md)
 - Gate: [`../../.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md)
+
+---
+
+**Template version:** v1.1 · **Last updated:** 2026-04-25

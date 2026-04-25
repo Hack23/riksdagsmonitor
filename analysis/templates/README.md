@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
+**📋 Document Owner:** CEO | **📄 Version:** 4.4 | **📅 Last Updated:** 2026-04-25 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-25  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -257,6 +257,29 @@ The 12 agentic news workflows in `.github/workflows/news-*.md` render these temp
 | Template | Produced artifact | Enforced by |
 |----------|-------------------|-------------|
 | [`per-file-political-intelligence.md`](per-file-political-intelligence.md) | `documents/{dok_id}-analysis.md` (one per input document) | Check 2 (per-doc coverage) |
+
+### 🛰️ Operational Supplementary (7 templates — recommended for `deep`, mandatory for Tier-C)
+
+| Template | Produced artifact | Purpose |
+|----------|-------------------|---------|
+| [`analysis-index.md`](analysis-index.md) | `analysis-index.md` (run navigator) | Read-me-first index; assembled at end of Pass 2 |
+| [`session-baseline.md`](session-baseline.md) | `session-baseline.md` | 30-day same-type baseline for pattern-recognition |
+| [`cross-run-diff.md`](cross-run-diff.md) | `cross-run-diff.md` | **Gate-required when `ANALYSIS_RUN_COUNT ≥ 2`** — same-type day-over-day delta |
+| [`cross-session-intelligence.md`](cross-session-intelligence.md) | `cross-session-intelligence.md` | Cross-Riksdag-session progression (week/month/quarter aggregation) |
+| [`reference-analysis-quality.md`](reference-analysis-quality.md) | `reference-analysis-quality.md` | Threshold audit against `reference-quality-thresholds.json` |
+| [`mcp-reliability-audit.md`](mcp-reliability-audit.md) | `mcp-reliability-audit.md` | MCP tool health snapshot — call counts, failures, fallbacks |
+| [`workflow-audit.md`](workflow-audit.md) | `workflow-audit.md` | End-to-end run audit: timing, cost, gate outcomes |
+
+### 🔭 Analytical Supplementary (4 templates — optional, never blocking)
+
+| Template | Produced artifact | When to use |
+|----------|-------------------|-------------|
+| [`pestle-analysis.md`](pestle-analysis.md) | `pestle-analysis.md` | Event crosses ≥ 2 PESTLE dimensions |
+| [`political-stride-assessment.md`](political-stride-assessment.md) | `political-stride-assessment.md` | Election-adjacent · integrity incident · disinfo spike · critical-infra vote |
+| [`wildcards-blackswans.md`](wildcards-blackswans.md) | `wildcards-blackswans.md` | Long-horizon forecasting (`monthly-review`, election-year aggregation) |
+| [`quantitative-swot.md`](quantitative-swot.md) | `quantitative-swot.md` | Decision memo requiring scored SWOT ranking |
+
+> **Total template files in this directory: 34** = 9 (Family A) + 2 (B) + 5 (C) + 7 (D) + 1 (E reusable) + 7 (operational supplementary) + 4 (analytical supplementary). The `analysis-index.md` template doubles as the Family A folder README scaffold. See [`../methodologies/artifact-catalog.md`](../methodologies/artifact-catalog.md) for the canonical row-per-artifact registry.
 
 **Tier-C additive contract** (aggregation workflows: `news-evening-analysis`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`, `news-realtime-monitor`, `news-article-generator`) — no extra files beyond the 23 above; instead:
 
@@ -740,9 +763,23 @@ sequenceDiagram
 
 ---
 
+## 🆕 v4.4 Library Reconciliation (2026-04-25)
+
+Phase 1 consistency & contract reconciliation pass — paired with [`../methodologies/README.md` §v4.4](../methodologies/README.md#-v44-library-reconciliation-2026-04-25). Highlights for the templates layer:
+
+- **Tradecraft Context block added** to the 7 Family A + E core templates that lacked one (`synthesis-summary.md`, `swot-analysis.md`, `risk-assessment.md`, `threat-analysis.md`, `stakeholder-impact.md`, `significance-scoring.md`, `per-file-political-intelligence.md`) — these now carry F3EAD stage · PIRs served · Admiralty floor · WEP+ODNI · Source Diversity floor · SATs applied · ICD 203 standards on parity with the v1.x Family C/D templates.
+- **Per-family inventory tables** added to the §"Artifact → workflow → gate check mapping" section so readers can see the complete 34-template inventory at a glance (was: tables only enumerated the 23 mandatory core).
+- **Operational supplementary templates** (`analysis-index.md`, `cross-run-diff.md`, `cross-session-intelligence.md`, `mcp-reliability-audit.md`, `reference-analysis-quality.md`, `session-baseline.md`, `workflow-audit.md`) now carry an explicit `Template version: v1.1 · Last updated: 2026-04-25` footer (previously version-less).
+- **Footer-stamp v1.0 templates** (`pestle-analysis.md`, `political-stride-assessment.md`, `quantitative-swot.md`, `wildcards-blackswans.md`) bumped to v1.1 / 2026-04-25.
+- **Family A + E v2.3 templates** bumped to v2.4 (threat-analysis to v3.4) with `Last Updated: 2026-04-25`.
+- **15 v1.0 templates** dated 2026-04-21 bumped to v1.1 / 2026-04-25.
+- **IMF-first language sweep** — `voter-segmentation.md` socio-economic controls now name IMF WEO + WB social/governance (was World Bank-only).
+
+---
+
 ## 🆕 v2.3 Common Improvements (All Templates)
 
-> **Scope note:** "All 8 templates" below refers to the original Family A core templates (A2–A9). Families B–E templates (added in v3.0+) inherit these improvements where applicable. See [Master Template Catalog](#-master-template-catalog--family-ae) for the complete 23-template inventory.
+> **Scope note:** "All 8 templates" below refers to the original Family A core templates (A2–A9). Families B–E templates (added in v3.0+) inherit these improvements where applicable. See [Master Template Catalog](#-master-template-catalog--family-ae) for the complete 34-template inventory (23 mandatory core: Family A 9 + B 2 + C 5 + D 7 — including the Family A folder README scaffolded from `analysis-index.md`; plus the Family E reusable template; plus 4 analytical supplementary; plus 7 operational supplementary).
 
 All 8 templates were updated in v2.3 (2026-06-01) with the following cross-cutting improvements:
 

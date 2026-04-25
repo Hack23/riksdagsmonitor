@@ -339,7 +339,7 @@ graph TD
 
 ### Threat Category Data Sources
 
-> **AI Instructions:** Map which MCP tools provided evidence for each assessed threat category. This ensures every threat severity score has traceable data provenance aligned with the 6 canonical categories from [methodology-types.ts](../../scripts/analysis-framework/methodology-types.ts).
+> **AI Instructions:** Map which MCP tools provided evidence for each assessed threat category. This ensures every threat severity score has traceable data provenance aligned with the 6 canonical categories from [`political-threat-framework.md`](../methodologies/political-threat-framework.md).
 
 | Threat Category | MCP Detection Tool | Key Parameters | Evidence Items | Detection Signal |
 |:---------------:|-------------------|----------------|:--------------:|-----------------|

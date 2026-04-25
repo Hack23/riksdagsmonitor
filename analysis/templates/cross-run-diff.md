@@ -169,3 +169,7 @@ One paragraph (3–5 sentences) summarising the single largest shift in assessme
 - Prior synthesis: `[REQUIRED: link to prior run's synthesis-summary.md]`
 - Current synthesis: [`synthesis-summary.md`](synthesis-summary.md)
 - SAT canon: [`../methodologies/osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md)
+
+---
+
+**Template version:** v1.1 · **Last updated:** 2026-04-25

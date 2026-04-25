@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.3-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.3 | **📅 Last Updated:** 2026-04-23 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-23  
+**📋 Document Owner:** CEO | **📄 Version:** 4.4 | **📅 Last Updated:** 2026-04-25 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-25  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -91,7 +91,7 @@
     <tr>
       <td><strong><a href="../templates/README.md">Analysis Templates</a></strong></td>
       <td>📋 Templates</td>
-      <td>23 structured analysis output templates (8 core single-type + 15 extended / Tier-C)</td>
+      <td>34 template files producing 23 mandatory core artifacts (Family A 9 + B 2 + C 5 + D 7) + N Family E per-document + 4 analytical supplementary + 7 operational supplementary</td>
       <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/README.md">View Source</a></td>
     </tr>
   </tbody>
@@ -124,7 +124,7 @@ The 12 agentic news workflows in `.github/workflows/news-*.md` are the **primary
 | [`political-risk-methodology.md`](political-risk-methodology.md) | ✅ produces `risk-assessment.md` | ✅ sensitivity & posterior probabilities | `05-analysis-gate.md` check 1 |
 | [`political-threat-framework.md`](political-threat-framework.md) | ✅ produces `threat-analysis.md` | ✅ kill-chain depth | `05-analysis-gate.md` check 1 |
 | [`political-style-guide.md`](political-style-guide.md) | — | ✅ tone, neutrality, evidence citations | Article Pass-2 review |
-| [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | ✅ every run, all 5 Family C artifacts (`executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, `methodology-reflection.md`) | ✅ scenario probabilities, ICD 203 audit | `05-analysis-gate.md` checks 1 + 7 (Family C structure) |
+| [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | ✅ every run, all 5 Family C artifacts (`scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, `methodology-reflection.md`) | ✅ scenario probabilities, ICD 203 audit | `05-analysis-gate.md` checks 1 + 7 (Family C structure) |
 | [`structural-metadata-methodology.md`](structural-metadata-methodology.md) | ✅ cross-reference continuity contracts | — | `05-analysis-gate.md` check 1 (artifact presence) |
 | [`synthesis-methodology.md`](synthesis-methodology.md) | ✅ produces `synthesis-summary.md` with DIW-weighted ranking | ✅ lead-story justification | `05-analysis-gate.md` checks 1 + 5 (Mermaid) |
 | [`electoral-domain-methodology.md`](electoral-domain-methodology.md) | ✅ Election 2026 lens paragraph | — | Article-generation mandatory section |
@@ -325,7 +325,7 @@ graph TB
 
 | Document | Purpose | Consumers |
 |----------|---------|-----------|
-| [`artifact-catalog.md`](artifact-catalog.md) | **Single source of truth** for every markdown artifact produced by a news workflow (23 core + 7 supplementary + N per-document). One row per artifact naming methodology, template, line floor, Mermaid type, MCP data source and gate check. | All agents, `.github/prompts/04-analysis-pipeline.md`, `05-analysis-gate.md` |
+| [`artifact-catalog.md`](artifact-catalog.md) | **Single source of truth** for every markdown artifact produced by a news workflow (23 mandatory core + 4 analytical supplementary + 7 operational supplementary + N per-document = 34 templates). One row per artifact naming methodology, template, line floor, Mermaid type, MCP data source and gate check. | All agents, `.github/prompts/04-analysis-pipeline.md`, `05-analysis-gate.md` |
 | [`per-artifact-methodologies.md`](per-artifact-methodologies.md) | Per-artifact **Inputs / Analytic-moves / Evidence-rules / Anti-patterns** reference. One §section per artifact — read only the sections needed for the current run. | All agents writing artifacts |
 | [`worldbank-indicator-mapping.md`](worldbank-indicator-mapping.md) | Article-type → non-economic World Bank indicator codes (social, health, education, environment, defence, agriculture, innovation, governance). Wave-2 WB↔IMF split. | `comparative-international.md`, `voter-segmentation.md`, `implementation-feasibility.md`, `session-baseline.md` |
 | [`imf-indicator-mapping.md`](imf-indicator-mapping.md) | Article-type → IMF WEO/IFS/BOP/FM/GFS codes — **authoritative source** for all economic context (macro / fiscal / trade / monetary / exchange rates). Vintage-tagged forecasts, T+5. | Every artifact with economic-context obligations |
@@ -337,7 +337,7 @@ These five files are the **meta-layer** — read them before opening any framewo
 
 | Document | Purpose | Templates governed |
 |----------|---------|--------------------|
-| [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md) | Rules for **optional deep-dive analytical templates** that augment the 23 core artifacts with specialised lenses. Non-blocking in `05-analysis-gate.md`. Defines composition rules (DIW weight vector, evidence citations, Forward-Indicator feed, TTP mapping) and per-template analytic moves. | `pestle-analysis.md` · `political-stride-assessment.md` · `wildcards-blackswans.md` · `quantitative-swot.md` |
+| [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md) | Rules for **optional deep-dive analytical templates** that augment the 23 mandatory core artifacts with specialised lenses. Non-blocking in `05-analysis-gate.md`. Defines composition rules (DIW weight vector, evidence citations, Forward-Indicator feed, TTP mapping) and per-template analytic moves. | `pestle-analysis.md` · `political-stride-assessment.md` · `wildcards-blackswans.md` · `quantitative-swot.md` |
 
 **When to produce:**
 
@@ -937,6 +937,37 @@ flowchart TD
 | **Prompts v2** | AI prompt library for analysis generation | [scripts/prompts/v2/](../../scripts/prompts/v2/) |
 | **WORKFLOWS.md** | CI/CD and agentic workflow documentation | [WORKFLOWS.md](../../WORKFLOWS.md) |
 | **ISMS-PUBLIC** | Hack23 Information Security Management System | [Hack23/ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC) |
+
+---
+
+## 🆕 v4.4 Library Reconciliation (2026-04-25)
+
+Phase 1 consistency & contract reconciliation pass — surfacing accurate file inventory, IMF-first economic-data canon, and tradecraft-anchor parity across the library. **No new analytical content; mechanical and small structural fixes only.** Pass-2 deep improvements (Phases 2–5) are scheduled as separate sessions per the AI-FIRST 2-pass principle.
+
+### 📊 Inventory reconciliation
+- Methodology files: **17 .md + 1 .json** (was reported as varying counts).
+- Template files: **34 .md** = 23 mandatory core (Family A 9 + B 2 + C 5 + D 7) + 1 Family E reusable + 4 analytical supplementary + 7 operational supplementary. Earlier "23 templates" wording referred to the mandatory artifact count, not the file count — both READMEs now disambiguate.
+- Methodologies map of contents now correctly lists **5** Family C artifacts (was 6 — `executive-brief.md` was wrongly listed in Family C; it is Family A).
+
+### 🌐 IMF-first economic-data canon (per [`ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1)
+- `osint-tradecraft-standards.md` — PIR-6 + Standard #4: IMF lifted to PRIMARY, World Bank reframed as non-economic residue.
+- `political-swot-framework.md` — economic-context evidence row: IMF WEO/FM + SCB national accounts (was World Bank).
+- `ai-driven-analysis-guide.md` — budget/fiscal MCP tool list: IMF added (was WB only).
+- `political-risk-methodology.md` — economic-context inputs, statistical-data row, External→Budget cell: IMF lifted to primary.
+- `voter-segmentation.md` — socio-economic controls now name IMF WEO + WB social/governance.
+
+### 🛡️ Tradecraft anchor parity (Family A + E)
+Tradecraft Context blocks (F3EAD stage · PIRs served · Admiralty floor · WEP+ODNI · Source Diversity floor · SATs · ICD 203 standards) added to the 7 Family A and Family E core templates that lacked them — now present on all single-type templates. Templates bumped accordingly:
+- `synthesis-summary.md` v2.3 → v2.4
+- `swot-analysis.md` v2.3 → v2.4
+- `risk-assessment.md` v2.3 → v2.4
+- `threat-analysis.md` v3.3 → v3.4
+- `stakeholder-impact.md` v2.3 → v2.4
+- `significance-scoring.md` v2.3 → v2.4
+- `per-file-political-intelligence.md` v2.3 → v2.4
+
+### 🔢 Library-wide version refresh
+All 17 methodologies, 34 templates, both READMEs and the JSON thresholds bumped by 0.1 with `Last Updated: 2026-04-25`. Operational supplementary templates that previously lacked a version stamp now carry `Template version: v1.1 · Last updated: 2026-04-25`.
 
 ---
 
