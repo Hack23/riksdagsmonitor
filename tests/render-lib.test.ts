@@ -444,6 +444,11 @@ describe('render-lib — readFirstHeading / readFirstParagraph', () => {
     expect(readFirstParagraph(long)!.length).toBe(500);
   });
 
+  it('readFirstParagraph converts inline markdown links to plain text for article metadata', () => {
+    expect(readFirstParagraph('# T\n\nA [HD10447](https://data.riksdagen.se/dokument/HD10447.html) filing with `A2` evidence.')!)
+      .toBe('A HD10447 filing with A2 evidence.');
+  });
+
   it('returns null when markdown has no suitable paragraph', () => {
     expect(readFirstParagraph('# T\n\n## Only headings\n')).toBeNull();
   });

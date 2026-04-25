@@ -5,10 +5,24 @@ date: 2026-04-20
 subfolder: interpellations
 slug: 2026-04-20-interpellations
 source_folder: analysis/daily/2026-04-20/interpellations
-generated_at: 2026-04-24T18:27:52.209Z
+generated_at: 2026-04-25T09:12:18.239Z
 language: en
 layout: article
 ---
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | Where to go | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Key Judgments](#intelligence-assessment-key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
+| [Significance scoring](#significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Scenarios](#scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Per-document intelligence](#per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
+| [Audit appendix](#classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief.md)_
@@ -536,101 +550,175 @@ The announcement (ANM) of frs 2025/26:437 and frs 2025/26:438 is scheduled for A
 ### EU Commission (External Stakeholder)
 Sweden's failure to implement the Pay Transparency Directive on time (frs 2025/26:437) creates a compliance obligation for the Commission. If Sweden does not formally respond, infringement proceedings are available under EU law. The Commission typically grants grace periods before formal action but the political accountability occurs domestically through parliamentary scrutiny.
 
-## SWOT Analysis
+## Scenario Analysis
 
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/swot-analysis.md)_
+_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/scenario-analysis.md)_
 
-**Analysis Date**: 2026-04-20 | **Focus**: Parliamentary Accountability — April 14–17 Wave
+**Analysis date**: 2026-04-20 | **Horizon**: 14 days (response window) + 5 months (to Election 2026, September 2026)
+**Method**: Morphological scenario construction with key-uncertainty decomposition
+**AI-FIRST iterations**: 2 (pass 1 draft + pass 2 stress-test)
+
+## Purpose
+
+Four alternative futures for the April 29 – May 5 response window and subsequent political dynamics through September 2026. Probabilities are analyst estimates, sum to ~1.0 (minor overlap intentional). Each scenario covers: trigger, pathway, political effect, Election 2026 implication, and observable indicators to discriminate between scenarios early.
+
+## Key Uncertainties (2-axis morphology)
+
+The scenarios are generated from the **Cartesian product of two decisive uncertainties**:
+
+**Axis A — Government response quality** (April 29 – May 5 window):
+- **A1. Strong**: Concrete policy concessions (e.g., interim EU directive measures, housing package, kvinnojour emergency funding)
+- **A2. Weak**: Procedural responses, no new commitments
+
+**Axis B — S operational discipline** (through summer 2026):
+- **B1. Sustained**: S maintains coordinated campaign pressure through summer with follow-up motions, committee activity, and media operationalisation
+- **B2. Dissipated**: S attention fragments across non-interpellation issues; campaign loses focus
+
+The four resulting quadrants define the scenarios.
 
 ---
 
-## Multi-Stakeholder SWOT Matrix
+## Scenario 1 — "Neutralisation" (A1 × B1)
+### Government strong + S sustained
 
-### 1. CITIZENS (Väljare / General Public)
+**Probability**: P = 0.20
 
-| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
-|---|-----------|--------------------------|-----------|--------|-----------|
-| **S** | Safety net infrastructure intact — question rights formally documented | frs 2025/26:438 HD10438 — parlamentarisk fråga ställd | [MEDIUM] 🟧 | Public accountability | 2026-04-17 |
-| **S** | Formal democratic channel functioning — 438 interpellations filed in rm 2025/26 | Total interpellation count, MCP data | [HIGH] 🟩 | Democratic health | 2026-04-20 |
-| **W** | Women's shelters closing nationwide — direct safety risk | frs 2025/26:438 HD10438 — "många kvinnojourer runt om i landet läggs ned" | [HIGH] 🟩 | -9/10 | 2026-04-17 |
-| **W** | Tax system unfair perception — labor taxed heavily vs capital | frs 2025/26:433 HD10433 — "avsevärt lägre skatt än vanliga löntagare" | [HIGH] 🟩 | -7/10 | 2026-04-15 |
-| **W** | Housing access deteriorating — 900 fewer Stockholm homes planned in 2026 | frs 2025/26:434 HD10434 — Länsstyrelsen Stockholm data | [HIGH] 🟩 | -8/10 | 2026-04-15 |
-| **O** | Pay gap closure possible via EU directive — if government acts | frs 2025/26:437 HD10437 — EU directive mechanism exists | [MEDIUM] 🟧 | +6/10 | 2026-04-17 |
-| **T** | Aging hospital infrastructure creating care gaps — 1960s buildings | frs 2025/26:432 HD10432 — hospital investment crisis | [MEDIUM] 🟧 | -7/10 | 2026-04-15 |
+**Narrative**: By May 5, Larsson announces interim EU Pay Transparency Directive measures by administrative regulation, pending legislation; Svantesson signals a narrow tax review; Carlson announces a SEK 5–10 billion housing/construction-loan guarantee package; the government also announces SEK 100–150 million emergency kvinnojour funding. S continues the campaign with follow-up motions and committee hearings but is deprived of the "inaction" framing.
 
-### 2. GOVERNMENT COALITION (M, KD, SD, L)
+**Political effect**: The interpellation wave is **converted into policy concessions** rather than electoral momentum. S's campaign is damaged but survives through autumn policy debates. Coalition demonstrates operational effectiveness.
 
-| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
-|---|-----------|--------------------------|-----------|--------|-----------|
-| **S** | Formal responses can demonstrate competence if handled well | Response deadlines documented: SISVA April 29–May 5 | [MEDIUM] 🟧 | +4/10 | 2026-04-20 |
-| **S** | HD10436 withdrawn — suggests space industry issue resolved bilaterally | frs 2025/26:436 status: "Återtagen" | [HIGH] 🟩 | +5/10 | 2026-04-16 |
-| **W** | EU Pay Transparency Directive implementation proposal WITHDRAWN by government | frs 2025/26:437 HD10437 — government withdrew proposal | [HIGH] 🟩 | -9/10 | 2026-04-17 |
-| **W** | Andreas Carlson (KD) is parliament's most-targeted minister — 6+ interpellations on infrastructure | HD10434, HD10428, HD10425, HD10424, HD10418, HD10417 | [HIGH] 🟩 | -8/10 | 2026-04-20 |
-| **W** | Nina Larsson (L) simultaneously targeted on two gender equality failures | frs 2025/26:437 + frs 2025/26:438 same day | [HIGH] 🟩 | -7/10 | 2026-04-17 |
-| **O** | Moderate responses can reframe interpellations as routine scrutiny | Standard parliamentary process | [LOW] 🟥 | +3/10 | 2026-04-20 |
-| **T** | Response to HD10435 (Bernadotte) requires diplomatic precision vs Israel | frs 2025/26:435 deadline April 30, 2026 | [HIGH] 🟩 | -8/10 | 2026-04-16 |
+**Election 2026 implication**: M–KD–SD–L coalition holds its ~45–46% bloc. S at ~30–32%. Coalition still plausibly re-elected.
 
-### 3. OPPOSITION BLOC (S, V, MP + C dissent)
+**Indicators (early tell)**:
+- Pre-April 29 ministerial announcements or policy signals
+- Coordinated coalition messaging in April 26–28 interviews
+- Finansdepartementet pre-budget signal (early May)
+- Carlson press event with specific housing numbers
 
-| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
-|---|-----------|--------------------------|-----------|--------|-----------|
-| **S** | S filed 7 of 10 recent interpellations — disciplined pre-election accountability campaign | Analysis of interpellation filers, MCP data | [HIGH] 🟩 | +8/10 | 2026-04-20 |
-| **S** | S coordinated dual filing on April 17 targeting same minister on related topics | frs 2025/26:437 + frs 2025/26:438 filed same day | [HIGH] 🟩 | +7/10 | 2026-04-17 |
-| **S** | EU compliance failure is documented — government cannot easily rebut factual record | frs 2025/26:437 — "Sverige kommer inte att lyckas implementera direktivet i tid" | [HIGH] 🟩 | +9/10 | 2026-04-17 |
-| **W** | Bernadotte interpellation (El-Haj, independent) could backfire if perceived as partisan | frs 2025/26:435 — El-Haj is independent, not party-affiliated | [MEDIUM] 🟧 | -3/10 | 2026-04-16 |
-| **O** | Five interpellations with SISVA April 29–May 5 create accountability window before spring recess | Response deadlines clustered | [HIGH] 🟩 | +7/10 | 2026-04-20 |
-| **T** | If ministers respond effectively, parliamentary attention may shift away | Risk of deflection in responses | [MEDIUM] 🟧 | -4/10 | 2026-04-20 |
+**Red flags against this scenario**:
+- No pre-April 29 government signalling → counter-evidence (S will observe this)
+- SD rejection of any housing-subsidy package → intra-coalition block
 
-### 4. BUSINESS / INDUSTRY (Näringsliv)
+---
 
-| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
-|---|-----------|--------------------------|-----------|--------|-----------|
-| **S** | Tax certainty debate may clarify investment environment | frs 2025/26:433 HD10433 | [MEDIUM] 🟧 | +4/10 | 2026-04-15 |
-| **W** | Housing construction decline (-900 units in Stockholm 2026) affects workforce planning | frs 2025/26:434 HD10434 — Länsstyrelsen data | [HIGH] 🟩 | -6/10 | 2026-04-15 |
-| **W** | EU Pay Transparency Directive delay creates legal uncertainty for employers | frs 2025/26:437 HD10437 — compliance uncertainty | [HIGH] 🟩 | -7/10 | 2026-04-17 |
-| **O** | Space industry interpellation withdrawn — signals government-industry dialogue active | frs 2025/26:436 withdrawn | [MEDIUM] 🟧 | +5/10 | 2026-04-16 |
-| **T** | Sweden unemployment at 8.694% (2025, World Bank) — rising trend hurts productivity | World Bank SL.UEM.TOTL.ZS 2025 | [HIGH] 🟩 | -6/10 | 2026-04-20 |
+## Scenario 2 — "S Campaign Traction" (A2 × B1)
+### Government weak + S sustained
 
-### 5. CIVIL SOCIETY (Civilsamhälle)
+**Probability**: P = 0.35 (MOST LIKELY)
 
-| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
-|---|-----------|--------------------------|-----------|--------|-----------|
-| **S** | Women's shelters (idéburna organisationer) formally defended in parliament | frs 2025/26:438 HD10438 | [HIGH] 🟩 | +7/10 | 2026-04-17 |
-| **S** | LGBTQ+ rights internationally defended via C's interpellation | frs 2025/26:431 HD10431 | [MEDIUM] 🟧 | +5/10 | 2026-04-14 |
-| **W** | Government failures to fund women's shelters threaten sector viability | frs 2025/26:438 — "stora konsekvenser för möjligheten att lämna en våldsam relation" | [HIGH] 🟩 | -9/10 | 2026-04-17 |
-| **W** | Mosque scrutiny (HD10430) may create chilling effect on religious organizations | frs 2025/26:430 HD10430 — SD mosque targeting | [MEDIUM] 🟧 | -5/10 | 2026-04-07 |
-| **O** | Parliamentary pressure may trigger emergency government action on shelter funding | Accountability mechanism working | [LOW] 🟥 | +6/10 | 2026-04-20 |
-| **T** | Hospital infrastructure crisis without state guarantee endangers community care access | frs 2025/26:432 HD10432 | [MEDIUM] 🟧 | -7/10 | 2026-04-15 |
+**Narrative**: Ministerial responses are procedural and lack concrete new commitments. Larsson defers Pay Transparency Directive on "complexity" grounds. Svantesson defends 3:12 rules. Carlson cites "market conditions." The government misses the June 7 EU deadline. S operationalises the documented failures into summer campaign material, coordinating with LO and Byggnads. Media coverage frames accountability responses as inadequate.
 
-### 6. INTERNATIONAL / EU
+**Political effect**: The interpellation wave becomes the **spine of S's election campaign narrative**. Each weekly polling release shows marginal S gains. Gender gap voters shift slightly. Carlson becomes a liability KD cannot remove without acknowledging failure.
 
-| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
-|---|-----------|--------------------------|-----------|--------|-----------|
-| **S** | Sweden still formally committed to EU directive frameworks | Multiple EU directives referenced | [MEDIUM] 🟧 | +4/10 | 2026-04-20 |
-| **W** | Sweden will MISS EU Pay Transparency Directive deadline — constitutional obligations | frs 2025/26:437 HD10437 — "Sverige kommer inte att lyckas implementera direktivet i tid" | [HIGH] 🟩 | -8/10 | 2026-04-17 |
-| **W** | Swedish foreign policy on Israel/Palestine under parliamentary pressure | frs 2025/26:435 HD10435 — Bernadotte/Malmer Stenergard | [HIGH] 🟩 | -7/10 | 2026-04-16 |
-| **O** | Bernadotte interpellation creates opportunity for Sweden to lead on historical justice | frs 2025/26:435 — three explicit demands for apology/compensation | [LOW] 🟥 | +5/10 | 2026-04-16 |
-| **T** | Swedish foreign minister must balance Israel relations with LGBTQ/human rights portfolio | frs 2025/26:431 + frs 2025/26:435 combined | [MEDIUM] 🟧 | -6/10 | 2026-04-20 |
+**Election 2026 implication**: S polling rises from ~28–30% to ~32–34% by August. Coalition bloc drops to ~43–44%. Red-Green bloc becomes competitive. Election 2026 outcome becomes genuinely uncertain.
 
-### 7. JUDICIARY / CONSTITUTIONAL
+**Indicators (early tell)**:
+- Ministerial responses use phrases like "pågående arbete" (ongoing work), "komplex fråga" (complex issue) without concrete steps
+- No new propositions tabled May–June
+- S PR coordinated with LO statements post-debate
+- Polling shifts 1–2 points in S's favour within 4 weeks
 
-| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
-|---|-----------|--------------------------|-----------|--------|-----------|
-| **S** | Constitutional freedom of expression tradition formally invoked | frs 2025/26:429 HD10429 — "Sverige har en stolt och i många avseenden unik tradition" | [HIGH] 🟩 | +6/10 | 2026-04-07 |
-| **W** | Proposition 2025/26:133 (unnamed in interpellation) may compromise press freedom — SD challenge | frs 2025/26:429 HD10429 | [MEDIUM] 🟧 | -7/10 | 2026-04-07 |
-| **W** | El-Haj interpellation on Bernadotte cites failure to hold Israeli murderers accountable — 78 years unresolved | frs 2025/26:435 HD10435 — "Ingen dömdes någonsin" | [HIGH] 🟩 | -6/10 | 2026-04-16 |
-| **O** | Parliamentary scrutiny of executive compliance with EU law creates constitutional accountability | EU directive obligation | [MEDIUM] 🟧 | +6/10 | 2026-04-20 |
-| **T** | Tax system inequality documented in interpellation creates legitimacy crisis risk | frs 2025/26:433 HD10433 | [MEDIUM] 🟧 | -5/10 | 2026-04-15 |
+**Why most likely**: Based on (1) historical government responsiveness to interpellations being low; (2) coalition tensions on directive implementation; (3) S's demonstrated coordination capacity; (4) EU deadline's external timing.
 
-### 8. MEDIA / PUBLIC OPINION
+---
 
-| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
-|---|-----------|--------------------------|-----------|--------|-----------|
-| **S** | Bernadotte interpellation offers compelling historical narrative with contemporary resonance | frs 2025/26:435 HD10435 — "ett av de mest uppmärksammade politiska attentaten" | [HIGH] 🟩 | +7/10 | 2026-04-16 |
-| **S** | Women's shelter closures are highly media-ready story — human interest + policy failure | frs 2025/26:438 HD10438 | [HIGH] 🟩 | +8/10 | 2026-04-17 |
-| **W** | EU Pay Transparency Directive failure is a complex story — may require media simplification | frs 2025/26:437 HD10437 | [MEDIUM] 🟧 | -3/10 | 2026-04-17 |
-| **O** | Six interpellations with deadlines in 9–15 days creates "countdown" media narrative | Response deadline analysis | [HIGH] 🟩 | +6/10 | 2026-04-20 |
-| **T** | Mosque/freedom of expression interpellations (SD) may dominate coverage vs. substantive S issues | frs 2025/26:430 + frs 2025/26:429 | [MEDIUM] 🟧 | -5/10 | 2026-04-20 |
+## Scenario 3 — "Fragmentation" (A2 × B2)
+### Government weak + S dissipated
+
+**Probability**: P = 0.25
+
+**Narrative**: Ministerial responses are weak as in S2, but S fails to sustain coordinated campaign pressure. Summer recess, competing intra-party priorities, or a leadership communication failure dissipate momentum. The interpellation wave peaks on May 5 and fades into ordinary political noise. Media moves to other topics.
+
+**Political effect**: The accountability material is **generated but not exploited**. The government escapes the narrative consequences of its policy failures through opposition inefficiency.
+
+**Election 2026 implication**: Polling stays within current bands. Election 2026 becomes competitive on other issues (crime, migration, economy) rather than the gender-equality / EU-compliance axis.
+
+**Indicators (early tell)**:
+- S doesn't issue coordinated press follow-up within 48 hours of each ministerial response
+- LO/Byggnads do not amplify
+- S communications director announcements focus elsewhere
+- No motion of no-confidence discussion in committee stage
+
+**Why not likely**: S has demonstrated coordination in the April 14–17 filings; fragmentation would be inconsistent with the observed pattern. However, summer recess is a genuine risk factor.
+
+---
+
+## Scenario 4 — "Coalition Rupture" (A1 × B2)
+### Government strong + S dissipated but coalition fractures internally
+
+**Probability**: P = 0.10 (TAIL RISK)
+
+**Narrative**: Aggressive government response to interpellations (announcing concessions) triggers coalition conflict. SD rejects kvinnojour emergency funding as "welfare expansion." KD rejects EU directive implementation as "Brussels overreach." L insists on firmer gender-equality action. The government becomes visibly divided on multiple axes. S's campaign becomes secondary to coalition drama.
+
+**Political effect**: Government paralysis triggers **confidence crisis**. Possible motion of no confidence if numbers align. Small probability of early election or government reshuffle.
+
+**Election 2026 implication**: Coalition credibility collapses. Uncertain outcome; could favour S (disciplined), SD (populist insurgent), or benefit smaller parties (C, MP).
+
+**Indicators (early tell)**:
+- SD party-leader criticism of coalition partners (Åkesson / Jomshof)
+- L internal discussions about coalition exit
+- KD leadership testing cross-party positions on specific issues
+- Opinion polls showing simultaneous SD + S gains at coalition expense
+
+**Why low probability**: Coalition has held together through more stressful periods (2023 budget); no trigger event as major as Election 2022 counter-trigger; SD has structural reasons to remain (policy gains vs opposition).
+
+---
+
+## Scenario Probability Summary
+
+| # | Scenario | Short name | Probability |
+|---|---------|-----------|:-----------:|
+| 1 | Gov strong + S sustained | Neutralisation | 0.20 |
+| 2 | Gov weak + S sustained | **S Traction** ⭐ | **0.35** |
+| 3 | Gov weak + S dissipated | Fragmentation | 0.25 |
+| 4 | Gov strong + S dissipated → coalition rupture | Coalition Rupture | 0.10 |
+| — | Residual / unmodelled | — | 0.10 |
+|   | **Sum** | | **1.00** |
+
+## Decision Indicators Matrix
+
+A single indicator grid for rapid scenario discrimination by mid-May 2026:
+
+| Indicator (status by 2026-05-15) | S1 Neutralise | S2 Traction | S3 Fragmentation | S4 Rupture |
+|-----------------------------------|:-------------:|:-----------:|:----------------:|:----------:|
+| Any new major government proposition on gender equality | ✓ | ✗ | ✗ | ✓ |
+| S press activity weekly post-debate | ✓ | ✓ | ✗ | ✗ |
+| Coalition joint public statements | ✓ | ✓ | ✓ | ✗ |
+| Novus polling shift ≥1.5pp to S | ✗ | ✓ | ✗ | Mixed |
+| SD public criticism of coalition partners | ✗ | ✗ | ✗ | ✓ |
+| EU Commission informal signal on Sweden | ✗ | ✓ | Mixed | Mixed |
+| Kvinnojour emergency funding announcement | ✓ | ✗ | ✗ | ✓ (then blocked) |
+
+## Analytic Judgement
+
+The **modal expectation** is S2 "S Traction" at P=0.35, with S3 "Fragmentation" as the most likely alternative at P=0.25. The combined probability of S2 + S3 (weak government response) is **0.60** — the base case is that the government response will be procedural and not neutralising, driven by coalition-internal constraints on issuing concessions.
+
+The **upside scenario for the government** (S1, P=0.20) requires active coordination between Larsson, Svantesson, Carlson, and SD leadership. This is achievable but not automatic.
+
+The **tail risk** (S4, P=0.10) is low-probability but high-impact — analysts should monitor SD public criticism as the primary leading indicator.
+
+## Red Team Reflection
+
+*Could we be over-weighting S2?* The coordination pattern is clear, but it is a single observation (one dual-filing). A counter-case would require S to show similar coordination in ≥2 other waves this session. So far, only this wave shows it at such density. Weakening S2 slightly (from 0.40 to 0.35) and redistributing to S3 (0.20 → 0.25) accounts for this.
+
+*Could we be under-weighting S4?* Coalition tensions have been consistently present but have not produced rupture. P=0.10 is appropriate unless specific trigger events emerge.
+
+## Next-Update Triggers
+
+This scenario set should be **re-evaluated** when any of the following occur:
+- First ministerial response (April 21 for HD10429, HD10430)
+- April 29 Svantesson/Carlson response block
+- April 30 Malmer Stenergard Bernadotte response
+- May 5 Larsson dual response
+- Any Novus/Sifo/Demoskop poll showing ≥1pp shift
+- Any EU Commission communication on transposition
+- Any SD public criticism of coalition partner
+
+---
+
+**Analyst**: news-interpellations workflow (pass 2, AI-FIRST) + reference-class expansion
+**Peer-review**: See `intelligence-assessment.md` Red Team for independent challenge
+**Confidence**: MEDIUM — scenarios are probabilistic and depend on decision-maker choices not yet made
 
 ## Risk Assessment
 
@@ -766,6 +854,102 @@ Even with optimal government risk-treatment, residual risks remain:
 - Weekly review during May 6 – June 7
 - Post-June 7 debrief (EU directive deadline)
 - Quarterly review until Election 2026
+
+## SWOT Analysis
+
+_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/swot-analysis.md)_
+
+**Analysis Date**: 2026-04-20 | **Focus**: Parliamentary Accountability — April 14–17 Wave
+
+---
+
+## Multi-Stakeholder SWOT Matrix
+
+### 1. CITIZENS (Väljare / General Public)
+
+| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|--------------------------|-----------|--------|-----------|
+| **S** | Safety net infrastructure intact — question rights formally documented | frs 2025/26:438 HD10438 — parlamentarisk fråga ställd | [MEDIUM] 🟧 | Public accountability | 2026-04-17 |
+| **S** | Formal democratic channel functioning — 438 interpellations filed in rm 2025/26 | Total interpellation count, MCP data | [HIGH] 🟩 | Democratic health | 2026-04-20 |
+| **W** | Women's shelters closing nationwide — direct safety risk | frs 2025/26:438 HD10438 — "många kvinnojourer runt om i landet läggs ned" | [HIGH] 🟩 | -9/10 | 2026-04-17 |
+| **W** | Tax system unfair perception — labor taxed heavily vs capital | frs 2025/26:433 HD10433 — "avsevärt lägre skatt än vanliga löntagare" | [HIGH] 🟩 | -7/10 | 2026-04-15 |
+| **W** | Housing access deteriorating — 900 fewer Stockholm homes planned in 2026 | frs 2025/26:434 HD10434 — Länsstyrelsen Stockholm data | [HIGH] 🟩 | -8/10 | 2026-04-15 |
+| **O** | Pay gap closure possible via EU directive — if government acts | frs 2025/26:437 HD10437 — EU directive mechanism exists | [MEDIUM] 🟧 | +6/10 | 2026-04-17 |
+| **T** | Aging hospital infrastructure creating care gaps — 1960s buildings | frs 2025/26:432 HD10432 — hospital investment crisis | [MEDIUM] 🟧 | -7/10 | 2026-04-15 |
+
+### 2. GOVERNMENT COALITION (M, KD, SD, L)
+
+| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|--------------------------|-----------|--------|-----------|
+| **S** | Formal responses can demonstrate competence if handled well | Response deadlines documented: SISVA April 29–May 5 | [MEDIUM] 🟧 | +4/10 | 2026-04-20 |
+| **S** | HD10436 withdrawn — suggests space industry issue resolved bilaterally | frs 2025/26:436 status: "Återtagen" | [HIGH] 🟩 | +5/10 | 2026-04-16 |
+| **W** | EU Pay Transparency Directive implementation proposal WITHDRAWN by government | frs 2025/26:437 HD10437 — government withdrew proposal | [HIGH] 🟩 | -9/10 | 2026-04-17 |
+| **W** | Andreas Carlson (KD) is parliament's most-targeted minister — 6+ interpellations on infrastructure | HD10434, HD10428, HD10425, HD10424, HD10418, HD10417 | [HIGH] 🟩 | -8/10 | 2026-04-20 |
+| **W** | Nina Larsson (L) simultaneously targeted on two gender equality failures | frs 2025/26:437 + frs 2025/26:438 same day | [HIGH] 🟩 | -7/10 | 2026-04-17 |
+| **O** | Moderate responses can reframe interpellations as routine scrutiny | Standard parliamentary process | [LOW] 🟥 | +3/10 | 2026-04-20 |
+| **T** | Response to HD10435 (Bernadotte) requires diplomatic precision vs Israel | frs 2025/26:435 deadline April 30, 2026 | [HIGH] 🟩 | -8/10 | 2026-04-16 |
+
+### 3. OPPOSITION BLOC (S, V, MP + C dissent)
+
+| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|--------------------------|-----------|--------|-----------|
+| **S** | S filed 7 of 10 recent interpellations — disciplined pre-election accountability campaign | Analysis of interpellation filers, MCP data | [HIGH] 🟩 | +8/10 | 2026-04-20 |
+| **S** | S coordinated dual filing on April 17 targeting same minister on related topics | frs 2025/26:437 + frs 2025/26:438 filed same day | [HIGH] 🟩 | +7/10 | 2026-04-17 |
+| **S** | EU compliance failure is documented — government cannot easily rebut factual record | frs 2025/26:437 — "Sverige kommer inte att lyckas implementera direktivet i tid" | [HIGH] 🟩 | +9/10 | 2026-04-17 |
+| **W** | Bernadotte interpellation (El-Haj, independent) could backfire if perceived as partisan | frs 2025/26:435 — El-Haj is independent, not party-affiliated | [MEDIUM] 🟧 | -3/10 | 2026-04-16 |
+| **O** | Five interpellations with SISVA April 29–May 5 create accountability window before spring recess | Response deadlines clustered | [HIGH] 🟩 | +7/10 | 2026-04-20 |
+| **T** | If ministers respond effectively, parliamentary attention may shift away | Risk of deflection in responses | [MEDIUM] 🟧 | -4/10 | 2026-04-20 |
+
+### 4. BUSINESS / INDUSTRY (Näringsliv)
+
+| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|--------------------------|-----------|--------|-----------|
+| **S** | Tax certainty debate may clarify investment environment | frs 2025/26:433 HD10433 | [MEDIUM] 🟧 | +4/10 | 2026-04-15 |
+| **W** | Housing construction decline (-900 units in Stockholm 2026) affects workforce planning | frs 2025/26:434 HD10434 — Länsstyrelsen data | [HIGH] 🟩 | -6/10 | 2026-04-15 |
+| **W** | EU Pay Transparency Directive delay creates legal uncertainty for employers | frs 2025/26:437 HD10437 — compliance uncertainty | [HIGH] 🟩 | -7/10 | 2026-04-17 |
+| **O** | Space industry interpellation withdrawn — signals government-industry dialogue active | frs 2025/26:436 withdrawn | [MEDIUM] 🟧 | +5/10 | 2026-04-16 |
+| **T** | Sweden unemployment at 8.694% (2025, World Bank) — rising trend hurts productivity | World Bank SL.UEM.TOTL.ZS 2025 | [HIGH] 🟩 | -6/10 | 2026-04-20 |
+
+### 5. CIVIL SOCIETY (Civilsamhälle)
+
+| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|--------------------------|-----------|--------|-----------|
+| **S** | Women's shelters (idéburna organisationer) formally defended in parliament | frs 2025/26:438 HD10438 | [HIGH] 🟩 | +7/10 | 2026-04-17 |
+| **S** | LGBTQ+ rights internationally defended via C's interpellation | frs 2025/26:431 HD10431 | [MEDIUM] 🟧 | +5/10 | 2026-04-14 |
+| **W** | Government failures to fund women's shelters threaten sector viability | frs 2025/26:438 — "stora konsekvenser för möjligheten att lämna en våldsam relation" | [HIGH] 🟩 | -9/10 | 2026-04-17 |
+| **W** | Mosque scrutiny (HD10430) may create chilling effect on religious organizations | frs 2025/26:430 HD10430 — SD mosque targeting | [MEDIUM] 🟧 | -5/10 | 2026-04-07 |
+| **O** | Parliamentary pressure may trigger emergency government action on shelter funding | Accountability mechanism working | [LOW] 🟥 | +6/10 | 2026-04-20 |
+| **T** | Hospital infrastructure crisis without state guarantee endangers community care access | frs 2025/26:432 HD10432 | [MEDIUM] 🟧 | -7/10 | 2026-04-15 |
+
+### 6. INTERNATIONAL / EU
+
+| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|--------------------------|-----------|--------|-----------|
+| **S** | Sweden still formally committed to EU directive frameworks | Multiple EU directives referenced | [MEDIUM] 🟧 | +4/10 | 2026-04-20 |
+| **W** | Sweden will MISS EU Pay Transparency Directive deadline — constitutional obligations | frs 2025/26:437 HD10437 — "Sverige kommer inte att lyckas implementera direktivet i tid" | [HIGH] 🟩 | -8/10 | 2026-04-17 |
+| **W** | Swedish foreign policy on Israel/Palestine under parliamentary pressure | frs 2025/26:435 HD10435 — Bernadotte/Malmer Stenergard | [HIGH] 🟩 | -7/10 | 2026-04-16 |
+| **O** | Bernadotte interpellation creates opportunity for Sweden to lead on historical justice | frs 2025/26:435 — three explicit demands for apology/compensation | [LOW] 🟥 | +5/10 | 2026-04-16 |
+| **T** | Swedish foreign minister must balance Israel relations with LGBTQ/human rights portfolio | frs 2025/26:431 + frs 2025/26:435 combined | [MEDIUM] 🟧 | -6/10 | 2026-04-20 |
+
+### 7. JUDICIARY / CONSTITUTIONAL
+
+| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|--------------------------|-----------|--------|-----------|
+| **S** | Constitutional freedom of expression tradition formally invoked | frs 2025/26:429 HD10429 — "Sverige har en stolt och i många avseenden unik tradition" | [HIGH] 🟩 | +6/10 | 2026-04-07 |
+| **W** | Proposition 2025/26:133 (unnamed in interpellation) may compromise press freedom — SD challenge | frs 2025/26:429 HD10429 | [MEDIUM] 🟧 | -7/10 | 2026-04-07 |
+| **W** | El-Haj interpellation on Bernadotte cites failure to hold Israeli murderers accountable — 78 years unresolved | frs 2025/26:435 HD10435 — "Ingen dömdes någonsin" | [HIGH] 🟩 | -6/10 | 2026-04-16 |
+| **O** | Parliamentary scrutiny of executive compliance with EU law creates constitutional accountability | EU directive obligation | [MEDIUM] 🟧 | +6/10 | 2026-04-20 |
+| **T** | Tax system inequality documented in interpellation creates legitimacy crisis risk | frs 2025/26:433 HD10433 | [MEDIUM] 🟧 | -5/10 | 2026-04-15 |
+
+### 8. MEDIA / PUBLIC OPINION
+
+| # | Statement | Evidence (frs ID/dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|--------------------------|-----------|--------|-----------|
+| **S** | Bernadotte interpellation offers compelling historical narrative with contemporary resonance | frs 2025/26:435 HD10435 — "ett av de mest uppmärksammade politiska attentaten" | [HIGH] 🟩 | +7/10 | 2026-04-16 |
+| **S** | Women's shelter closures are highly media-ready story — human interest + policy failure | frs 2025/26:438 HD10438 | [HIGH] 🟩 | +8/10 | 2026-04-17 |
+| **W** | EU Pay Transparency Directive failure is a complex story — may require media simplification | frs 2025/26:437 HD10437 | [MEDIUM] 🟧 | -3/10 | 2026-04-17 |
+| **O** | Six interpellations with deadlines in 9–15 days creates "countdown" media narrative | Response deadline analysis | [HIGH] 🟩 | +6/10 | 2026-04-20 |
+| **T** | Mosque/freedom of expression interpellations (SD) may dominate coverage vs. substantive S issues | frs 2025/26:430 + frs 2025/26:429 | [MEDIUM] 🟧 | -5/10 | 2026-04-20 |
 
 ## Threat Analysis
 
@@ -1780,176 +1964,6 @@ Sofia Amloh (S) interpellates Gender Equality Minister Nina Larsson (L) on the n
 
 **Response deadline**: May 5, 2026 (SISVA)  
 **ANM**: April 21, 2026 (same as HD10437 — simultaneous chamber announcement)
-
-## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/scenario-analysis.md)_
-
-**Analysis date**: 2026-04-20 | **Horizon**: 14 days (response window) + 5 months (to Election 2026, September 2026)
-**Method**: Morphological scenario construction with key-uncertainty decomposition
-**AI-FIRST iterations**: 2 (pass 1 draft + pass 2 stress-test)
-
-## Purpose
-
-Four alternative futures for the April 29 – May 5 response window and subsequent political dynamics through September 2026. Probabilities are analyst estimates, sum to ~1.0 (minor overlap intentional). Each scenario covers: trigger, pathway, political effect, Election 2026 implication, and observable indicators to discriminate between scenarios early.
-
-## Key Uncertainties (2-axis morphology)
-
-The scenarios are generated from the **Cartesian product of two decisive uncertainties**:
-
-**Axis A — Government response quality** (April 29 – May 5 window):
-- **A1. Strong**: Concrete policy concessions (e.g., interim EU directive measures, housing package, kvinnojour emergency funding)
-- **A2. Weak**: Procedural responses, no new commitments
-
-**Axis B — S operational discipline** (through summer 2026):
-- **B1. Sustained**: S maintains coordinated campaign pressure through summer with follow-up motions, committee activity, and media operationalisation
-- **B2. Dissipated**: S attention fragments across non-interpellation issues; campaign loses focus
-
-The four resulting quadrants define the scenarios.
-
----
-
-## Scenario 1 — "Neutralisation" (A1 × B1)
-### Government strong + S sustained
-
-**Probability**: P = 0.20
-
-**Narrative**: By May 5, Larsson announces interim EU Pay Transparency Directive measures by administrative regulation, pending legislation; Svantesson signals a narrow tax review; Carlson announces a SEK 5–10 billion housing/construction-loan guarantee package; the government also announces SEK 100–150 million emergency kvinnojour funding. S continues the campaign with follow-up motions and committee hearings but is deprived of the "inaction" framing.
-
-**Political effect**: The interpellation wave is **converted into policy concessions** rather than electoral momentum. S's campaign is damaged but survives through autumn policy debates. Coalition demonstrates operational effectiveness.
-
-**Election 2026 implication**: M–KD–SD–L coalition holds its ~45–46% bloc. S at ~30–32%. Coalition still plausibly re-elected.
-
-**Indicators (early tell)**:
-- Pre-April 29 ministerial announcements or policy signals
-- Coordinated coalition messaging in April 26–28 interviews
-- Finansdepartementet pre-budget signal (early May)
-- Carlson press event with specific housing numbers
-
-**Red flags against this scenario**:
-- No pre-April 29 government signalling → counter-evidence (S will observe this)
-- SD rejection of any housing-subsidy package → intra-coalition block
-
----
-
-## Scenario 2 — "S Campaign Traction" (A2 × B1)
-### Government weak + S sustained
-
-**Probability**: P = 0.35 (MOST LIKELY)
-
-**Narrative**: Ministerial responses are procedural and lack concrete new commitments. Larsson defers Pay Transparency Directive on "complexity" grounds. Svantesson defends 3:12 rules. Carlson cites "market conditions." The government misses the June 7 EU deadline. S operationalises the documented failures into summer campaign material, coordinating with LO and Byggnads. Media coverage frames accountability responses as inadequate.
-
-**Political effect**: The interpellation wave becomes the **spine of S's election campaign narrative**. Each weekly polling release shows marginal S gains. Gender gap voters shift slightly. Carlson becomes a liability KD cannot remove without acknowledging failure.
-
-**Election 2026 implication**: S polling rises from ~28–30% to ~32–34% by August. Coalition bloc drops to ~43–44%. Red-Green bloc becomes competitive. Election 2026 outcome becomes genuinely uncertain.
-
-**Indicators (early tell)**:
-- Ministerial responses use phrases like "pågående arbete" (ongoing work), "komplex fråga" (complex issue) without concrete steps
-- No new propositions tabled May–June
-- S PR coordinated with LO statements post-debate
-- Polling shifts 1–2 points in S's favour within 4 weeks
-
-**Why most likely**: Based on (1) historical government responsiveness to interpellations being low; (2) coalition tensions on directive implementation; (3) S's demonstrated coordination capacity; (4) EU deadline's external timing.
-
----
-
-## Scenario 3 — "Fragmentation" (A2 × B2)
-### Government weak + S dissipated
-
-**Probability**: P = 0.25
-
-**Narrative**: Ministerial responses are weak as in S2, but S fails to sustain coordinated campaign pressure. Summer recess, competing intra-party priorities, or a leadership communication failure dissipate momentum. The interpellation wave peaks on May 5 and fades into ordinary political noise. Media moves to other topics.
-
-**Political effect**: The accountability material is **generated but not exploited**. The government escapes the narrative consequences of its policy failures through opposition inefficiency.
-
-**Election 2026 implication**: Polling stays within current bands. Election 2026 becomes competitive on other issues (crime, migration, economy) rather than the gender-equality / EU-compliance axis.
-
-**Indicators (early tell)**:
-- S doesn't issue coordinated press follow-up within 48 hours of each ministerial response
-- LO/Byggnads do not amplify
-- S communications director announcements focus elsewhere
-- No motion of no-confidence discussion in committee stage
-
-**Why not likely**: S has demonstrated coordination in the April 14–17 filings; fragmentation would be inconsistent with the observed pattern. However, summer recess is a genuine risk factor.
-
----
-
-## Scenario 4 — "Coalition Rupture" (A1 × B2)
-### Government strong + S dissipated but coalition fractures internally
-
-**Probability**: P = 0.10 (TAIL RISK)
-
-**Narrative**: Aggressive government response to interpellations (announcing concessions) triggers coalition conflict. SD rejects kvinnojour emergency funding as "welfare expansion." KD rejects EU directive implementation as "Brussels overreach." L insists on firmer gender-equality action. The government becomes visibly divided on multiple axes. S's campaign becomes secondary to coalition drama.
-
-**Political effect**: Government paralysis triggers **confidence crisis**. Possible motion of no confidence if numbers align. Small probability of early election or government reshuffle.
-
-**Election 2026 implication**: Coalition credibility collapses. Uncertain outcome; could favour S (disciplined), SD (populist insurgent), or benefit smaller parties (C, MP).
-
-**Indicators (early tell)**:
-- SD party-leader criticism of coalition partners (Åkesson / Jomshof)
-- L internal discussions about coalition exit
-- KD leadership testing cross-party positions on specific issues
-- Opinion polls showing simultaneous SD + S gains at coalition expense
-
-**Why low probability**: Coalition has held together through more stressful periods (2023 budget); no trigger event as major as Election 2022 counter-trigger; SD has structural reasons to remain (policy gains vs opposition).
-
----
-
-## Scenario Probability Summary
-
-| # | Scenario | Short name | Probability |
-|---|---------|-----------|:-----------:|
-| 1 | Gov strong + S sustained | Neutralisation | 0.20 |
-| 2 | Gov weak + S sustained | **S Traction** ⭐ | **0.35** |
-| 3 | Gov weak + S dissipated | Fragmentation | 0.25 |
-| 4 | Gov strong + S dissipated → coalition rupture | Coalition Rupture | 0.10 |
-| — | Residual / unmodelled | — | 0.10 |
-|   | **Sum** | | **1.00** |
-
-## Decision Indicators Matrix
-
-A single indicator grid for rapid scenario discrimination by mid-May 2026:
-
-| Indicator (status by 2026-05-15) | S1 Neutralise | S2 Traction | S3 Fragmentation | S4 Rupture |
-|-----------------------------------|:-------------:|:-----------:|:----------------:|:----------:|
-| Any new major government proposition on gender equality | ✓ | ✗ | ✗ | ✓ |
-| S press activity weekly post-debate | ✓ | ✓ | ✗ | ✗ |
-| Coalition joint public statements | ✓ | ✓ | ✓ | ✗ |
-| Novus polling shift ≥1.5pp to S | ✗ | ✓ | ✗ | Mixed |
-| SD public criticism of coalition partners | ✗ | ✗ | ✗ | ✓ |
-| EU Commission informal signal on Sweden | ✗ | ✓ | Mixed | Mixed |
-| Kvinnojour emergency funding announcement | ✓ | ✗ | ✗ | ✓ (then blocked) |
-
-## Analytic Judgement
-
-The **modal expectation** is S2 "S Traction" at P=0.35, with S3 "Fragmentation" as the most likely alternative at P=0.25. The combined probability of S2 + S3 (weak government response) is **0.60** — the base case is that the government response will be procedural and not neutralising, driven by coalition-internal constraints on issuing concessions.
-
-The **upside scenario for the government** (S1, P=0.20) requires active coordination between Larsson, Svantesson, Carlson, and SD leadership. This is achievable but not automatic.
-
-The **tail risk** (S4, P=0.10) is low-probability but high-impact — analysts should monitor SD public criticism as the primary leading indicator.
-
-## Red Team Reflection
-
-*Could we be over-weighting S2?* The coordination pattern is clear, but it is a single observation (one dual-filing). A counter-case would require S to show similar coordination in ≥2 other waves this session. So far, only this wave shows it at such density. Weakening S2 slightly (from 0.40 to 0.35) and redistributing to S3 (0.20 → 0.25) accounts for this.
-
-*Could we be under-weighting S4?* Coalition tensions have been consistently present but have not produced rupture. P=0.10 is appropriate unless specific trigger events emerge.
-
-## Next-Update Triggers
-
-This scenario set should be **re-evaluated** when any of the following occur:
-- First ministerial response (April 21 for HD10429, HD10430)
-- April 29 Svantesson/Carlson response block
-- April 30 Malmer Stenergard Bernadotte response
-- May 5 Larsson dual response
-- Any Novus/Sifo/Demoskop poll showing ≥1pp shift
-- Any EU Commission communication on transposition
-- Any SD public criticism of coalition partner
-
----
-
-**Analyst**: news-interpellations workflow (pass 2, AI-FIRST) + reference-class expansion
-**Peer-review**: See `intelligence-assessment.md` Red Team for independent challenge
-**Confidence**: MEDIUM — scenarios are probabilistic and depend on decision-maker choices not yet made
 
 ## Comparative International
 

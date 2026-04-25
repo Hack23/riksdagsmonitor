@@ -5,10 +5,26 @@ date: 2026-04-22
 subfolder: realtime-2338
 slug: 2026-04-22-realtime-2338
 source_folder: analysis/daily/2026-04-22/realtime-2338
-generated_at: 2026-04-24T18:27:52.247Z
+generated_at: 2026-04-25T09:12:18.266Z
 language: en
 layout: article
 ---
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | Where to go | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Key Judgments](#intelligence-assessment-key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
+| [Significance scoring](#significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Media framing](#media-framing-analysis) | likely narrative frames, amplifiers, counter-frames, and manipulation risks | `media-framing-analysis.md` |
+| [Forward indicators](#forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
+| [Scenarios](#scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Per-document intelligence](#per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
+| [Audit appendix](#classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief.md)_
@@ -346,6 +362,78 @@ gantt
 | HD01FiU48 | 2026-05-01 | Fuel tax cut takes effect — petrol prices at pump |
 | HD03240 | 2026-06-01 | El-system law enters parliamentary committee |
 
+## Media Framing Analysis
+
+_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/media-framing-analysis.md)_
+
+---
+
+## Expected Framing by Political Actor
+
+### Government/Coalition Framing
+**Primary frame**: "Delivery-focused government protecting Swedish households" — HD01FiU48 fuel cut as headline, energy legislation as long-term security
+**Supporting narrative**: "S is engaging in pre-election theatre while we govern"
+**Vulnerability**: HD10444 employer contributions to social dumping — if Svantesson cannot provide factual rebuttal, "government enables wage exploitation" frame becomes credible
+**Tone**: "Responsible fiscal management, record delivery"
+**Expected media vehicles**: Moderate sympathetic outlets (Expressen, SvD), governmental press conferences
+
+### S (Socialdemokraterna) Framing
+**Primary frame**: "Coalition ministers fail to protect Swedish workers and vulnerable citizens"
+**Sub-frames**:
+- HD10444: "Svantesson enables tax-funded social dumping" (employer contribution angle)
+- HD10445: "Slottner allows municipal social dumping of Sweden's most vulnerable"
+- HD10446: "Carlson's ministry falsely declares citizens dead" (HD10446 — death record scandal)
+- HD10442: "Svantesson ignores eating disorder court case costing women their lives"
+**Tone**: Accountability, moral outrage (carefully calibrated to avoid "too strident")
+**Expected media vehicles**: Aftonbladet, LO-Tidningen, S-aligned regional press
+
+### SD (Sverigedemokraterna) Framing
+**Primary frame**: Unlikely to prominently cover S interpellations (different accountability axis). Will focus on fuel tax cut SUCCESS (populist energy nationalism) and youth crime reform (HD03246).
+**Expected media vehicles**: Avpixlat-adjacent outlets, social media
+
+### MP (Miljöpartiet) Framing
+**Primary frame**: "Fuel tax cut is climate regression; coalition abandons Sweden's climate commitments"
+**Sub-frame**: Energy legislation (HD03239 vindkraft) as insufficient half-measure
+**Expected media vehicles**: Miljömagasinet, urban progressive press
+
+### V (Vänsterpartiet) Framing
+**Primary frame**: "Government cuts fuel tax instead of investing in public transport — wrong priorities for working class"
+**Sub-frame**: Social dumping (aligns with HD10443/HD10444) — V's traditional labour market accountability frame
+**Expected media vehicles**: Flamman, Proletären, social media
+
+---
+
+## Expected Mainstream Media Framing (Swedish Press Outlets)
+
+| Outlet | Expected Frame | Based on past coverage patterns |
+|--------|---------------|--------------------------------|
+| Aftonbladet | Accountability-first: Svantesson interpellations lead | S-sympathetic tabloid; likely HD10444/10442 double spread [B2] |
+| Expressen | Balanced accountability with coalition defence | Centre-liberal; will examine both interpellations and coalition's fuel tax delivery [B2] |
+| Dagens Nyheter (DN) | Analysis: "Is this a turning point?" | Quality broadsheet; likely scenario analysis rather than pure accountability [B2] |
+| SVT Nyheter | Public interest neutral: all 4 interpellations reported | Public broadcaster; procedural coverage of all parties [B2] |
+| SvD | Business-framing: HD01FiU48 economic analysis | Conservative-leaning; will examine fiscal impact of fuel cut [B2] |
+
+---
+
+## Framing Risk Matrix
+
+```mermaid
+quadrantChart
+    title Media Framing Risk vs. Coalition Electoral Impact
+    x-axis Low Risk --> High Risk
+    y-axis Low Impact --> High Impact
+    quadrant-1 Manage proactively
+    quadrant-2 Crisis response needed
+    quadrant-3 Monitor passively
+    quadrant-4 Communications strategy needed
+    HD10444 employer contributions: [0.7, 0.8]
+    HD10442 eating disorder: [0.65, 0.75]
+    HD10446 false death records: [0.8, 0.8]
+    HD01FiU48 fuel cut (positive): [0.2, 0.6]
+    Energy legislation: [0.2, 0.4]
+    HD03246 youth crime reform: [0.3, 0.5]
+```
+
 ## Stakeholder Perspectives
 
 _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/stakeholder-perspectives.md)_
@@ -442,6 +530,327 @@ flowchart TD
     style HD01FiU48 fill:#e65100,color:#FFFFFF
     style HD03246 fill:#1565c0,color:#FFFFFF
 ```
+
+## Forward Indicators
+
+_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/forward-indicators.md)_
+
+---
+
+## Indicator Framework
+≥10 dated indicators across 4 time horizons (Near, Short, Medium, Long)
+
+---
+
+## Horizon 1: Near-Term (0–14 days: 2026-04-22 to 2026-05-06)
+
+### FI-1: Svantesson interpellation debate answers
+**Watch date**: 2026-04-28 to 2026-05-05
+**Indicator**: Did Svantesson provide factual, specific answers to HD10444 (employer contributions) and HD10442 (eating disorder court case)?
+**Green signal**: Detailed factual answer with Finansinspektionen/Tillväxtverket data → narrative containment
+**Red signal**: Vague or deflective answer → S picks up 2-4 points in next poll, KU petition likely
+**Source**: riksdagen.se anföranden, SVT Nyheter coverage
+
+### FI-2: HD10446 false death declaration debate
+**Watch date**: 2026-04-28 to 2026-05-05
+**Indicator**: Carlson (KD) provides government's account of Skatteverket/Socialstyrelsen coordination on false death records
+**Green signal**: Documented remediation of process → issue closed
+**Red signal**: No systemic fix documented → JO complaint risk [B2]
+**Source**: riksdagen.se anföranden
+
+### FI-3: HD01FiU48 pump price visibility
+**Watch date**: 2026-05-02 to 2026-05-05
+**Indicator**: Do major Swedish fuel retailers (Preem, Circle K, OKQ8) publish pump price reduction reflecting 82 öre tax cut?
+**Green signal**: Visible pump price drop → government can claim HD01FiU48 impact
+**Red signal**: No visible drop → opposition "fake relief" narrative activated
+**Source**: Fuel retailer price data (public websites)
+
+### FI-4: New S/V/MP interpellations after HD10444 cycle
+**Watch date**: 2026-04-23 to 2026-05-06
+**Indicator**: How many further accountability interpellations filed by S between now and May 6?
+**Green signal (for coalition)**: 0–1 further interpellations → one-day tactical burst
+**Red signal (for coalition)**: ≥3 further interpellations → sustained campaign confirmed
+**Source**: riksdagen.se search_dokument(doktyp=ip, rm=2025/26)
+
+---
+
+## Horizon 2: Short-Term (2–6 weeks: 2026-05-06 to 2026-06-03)
+
+### FI-5: Energy legislation committee reports (HD03240/239/238)
+**Watch date**: 2026-05-15 to 2026-06-15
+**Indicator**: Do NäringsU and MiljöU publish positive committee reports enabling Riksdag votes before summer recess?
+**Green signal**: All three approved → coalition pre-election legacy narrative
+**Red signal**: One or more deferred to autumn → "unfinished business" opposition attack
+**Source**: riksdagen.se get_betankanden(organ=NU,MJU)
+
+### FI-6: Youth offender reform (HD03246) committee report
+**Watch date**: 2026-05-30 to 2026-06-10
+**Indicator**: Does JuU publish committee report on unga lagöverträdare reform?
+**Green signal**: Approved with broad support → bipartisan crime policy achievement
+**Red signal**: S/V/MP dissents → crime policy dividing line in election campaign
+**Source**: riksdagen.se get_betankanden(organ=JuU)
+
+### FI-7: Polling movement post-interpellation cycle
+**Watch date**: 2026-05-10 to 2026-05-20
+**Indicator**: Do Novus/Ipsos/SIFO polls show S moving above 30% following interpellation cycle?
+**Green signal (for S)**: S polling >30% → accountability campaign gaining electoral traction
+**Green signal (for coalition)**: M+SD+KD+L hold ≥176 projected seats → Tidö continuation
+**Source**: Published poll aggregates (Novus, Ipsos, SIFO)
+
+---
+
+## Horizon 3: Medium-Term (6 weeks–3 months: 2026-06-03 to 2026-09-01)
+
+### FI-8: C (Centerpartiet) coalition signal
+**Watch date**: 2026-06-15 to 2026-08-01
+**Indicator**: Does C party leader (Muharrem Demirok) state a preference for post-election coalition direction?
+**Green signal (for Tidö)**: C signals it will prioritise governing with M over S bloc
+**Green signal (for S bloc)**: C signals openness to S-led government
+**Source**: Press interviews, SVT/SR Almedalen declarations (Almedalen late June)
+
+### FI-9: L (Liberalerna) threshold poll
+**Watch date**: 2026-06-01 to 2026-09-13
+**Indicator**: Does L consistently poll above 4% in ≥3 successive polls?
+**Green signal**: L above 4% → Tidö coalition arithmetic stable
+**Red signal**: L polling below 4% in ≥2 polls → threshold risk scenario activated
+**Source**: Published poll aggregates
+
+### FI-10: Ukraine tribunal legislation (HD03231/232) committee report
+**Watch date**: 2026-05-20 to 2026-06-15
+**Indicator**: Does UtU publish report approving Ukraine tribunal framework propositions?
+**Green signal**: Approved → Sweden's Ukraine transitional justice role confirmed
+**Source**: riksdagen.se get_betankanden(organ=UU)
+
+---
+
+## Horizon 4: Long-Term (3+ months: 2026-09-01 onward)
+
+### FI-11: Election 2026 result — Riksdag composition
+**Watch date**: 2026-09-13
+**Indicator**: Which bloc achieves majority (175 seats)?
+**Source**: Swedish Election Authority (Valmyndigheten)
+
+### FI-12: HD01KU33/32 constitutional second reading
+**Watch date**: 2026-10-01 to 2027-03-01
+**Indicator**: Does the newly constituted Riksdag (post-election) advance KU33/32 to second reading and approval?
+**Source**: riksdagen.se post-election session documents
+
+---
+
+## Forward Indicator Dashboard
+
+```mermaid
+gantt
+    title Forward Indicators Timeline
+    dateFormat YYYY-MM-DD
+    section Near-term
+        FI-1 Svantesson answers           :crit, 2026-04-28, 2026-05-05
+        FI-2 HD10446 debate               :crit, 2026-04-28, 2026-05-05
+        FI-3 Pump price visibility        :active, 2026-05-01, 2026-05-05
+        FI-4 New S interpellations        :active, 2026-04-23, 2026-05-06
+    section Short-term
+        FI-5 Energy committee reports     :2026-05-15, 2026-06-15
+        FI-6 Youth crime committee        :2026-05-30, 2026-06-10
+        FI-7 Post-cycle polling           :2026-05-10, 2026-05-20
+    section Medium-term
+        FI-8 C coalition signal           :2026-06-15, 2026-08-01
+        FI-9 L threshold poll             :2026-06-01, 2026-09-13
+        FI-10 Ukraine committee           :2026-05-20, 2026-06-15
+    section Long-term
+        FI-11 Election Day                :milestone, 2026-09-13, 1d
+        FI-12 KU constitutional 2nd read  :2026-10-01, 2027-03-01
+```
+
+## Scenario Analysis
+
+_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/scenario-analysis.md)_
+
+---
+
+## Scenario Framework
+Three scenarios for the political trajectory of the S accountability offensive and its impact on Election 2026, based on the interpellation cluster filed 2026-04-22.
+
+---
+
+## Scenario 1: "Accountability Breakthrough" (Probability: 25%)
+
+**Description**: Finance Minister Svantesson provides a factually challenged or evasive answer to one or more of the three interpellations targeting her (HD10444 employer contributions, HD10442 eating disorder court case, HD10446 false death declarations). Media coverage escalates to a sustained news cycle over 10+ days. KU constitutional review petition filed by S group.
+
+**Leading indicators**:
+- Svantesson avoids direct factual answer on HD10442 court case [watch 2026-04-28+]
+- Aftonbladet publishes follow-up investigation naming specific retailers (HD10444)
+- JO receives new complaint on social dumping (HD10443)
+
+**Election impact**: HIGH negative for M/coalition. Fiscal competence narrative damaged. S gains 1–3 percentage points in polls (within polling error but directionally significant).
+
+**Cascade**: Coalition considers emergency response (press conference, Riksdag statement); possible M party executive communication strategy revision.
+
+---
+
+## Scenario 2: "Narrative Containment" (Probability: 55%)
+
+**Description**: Finance Minister Svantesson delivers measured, factually defended answers to all three interpellations. Media coverage is routine (one news cycle, 3–5 days). The coalition successfully pivots to the fuel tax relief implementation (2026-05-01) and energy legislation agenda (HD03240, HD03239). The S accountability offensive scores tactical points but does not produce a sustained narrative advantage.
+
+**Leading indicators**:
+- Government prepares detailed written responses before debate
+- Fuel prices visibly drop at pump post-May 1 (media focus shifts to consumer benefit)
+- Energy legislation committee hearings begin (HD03240)
+
+**Election impact**: NEUTRAL. Status quo maintained. Both S and coalition activate base supporters but neither gains net new voters from interpellation cycle.
+
+**Cascade**: S shifts to next accountability target (possibly housing segregation HD10445, or education/healthcare domains).
+
+---
+
+## Scenario 3: "Opposition Fragmentation" (Probability: 20%)
+
+**Description**: The S accountability offensive backfires. The government points to enacted legislation (HD01FiU48 fuel relief, HD03246 youth crime, HD03244 data interoperability) as proof of delivery. Media frames the interpellations as pre-election theatre. Centerpartiet (C) explicitly distances itself from S on deportation (HD024095 amending rather than rejecting prop. 2025/26:235) — fracturing the "alternative bloc" narrative.
+
+**Leading indicators**:
+- C publicly praises elements of government's deportation reform (HD03235) while seeking amendments
+- Fuel price cut generates positive consumer media coverage post-May 1
+- HD10444 answer cites Finansinspektionen/Tillväxtverket data contradicting Aftonbladet report
+
+**Election impact**: POSITIVE for coalition. S bloc cohesion weakened. C positioned as responsible alternative, potentially in coalition talks regardless of who wins.
+
+**Cascade**: S internal pressure to find stronger accountability angle; possible leadership communication tension within S parliamentary group.
+
+---
+
+## Scenario Probability Distribution
+
+```mermaid
+pie title Scenario Probabilities — Realtime 2026-04-22
+    "Scenario 1: Accountability Breakthrough" : 25
+    "Scenario 2: Narrative Containment" : 55
+    "Scenario 3: Opposition Fragmentation" : 20
+```
+
+## Leading Indicator Matrix
+
+| Indicator | Scenario 1 | Scenario 2 | Scenario 3 | Watch date |
+|-----------|------------|------------|------------|------------|
+| Svantesson interpellation answer quality | Weak/evasive | Measured | Strong + deflects | 2026-04-28 |
+| Aftonbladet follow-up on HD10444 | Published + names retailers | No follow-up | Aftonbladet retracts/corrects | 2026-04-25–05-05 |
+| Fuel prices at pump post-May 1 | No visible drop | Moderate drop | Significant drop, consumer praise | 2026-05-02 |
+| C party statement on HD024095 | Aligns with S | Silent | Praises government approach | 2026-04-25 |
+| Media framing (SVT/DN/Aftonbladet) | "Crisis" framing | "Politics as usual" | "S overreach" framing | Daily from 2026-04-28 |
+
+## Risk Assessment
+
+_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/risk-assessment.md)_
+
+---
+
+## Risk Register (5 Dimensions × 5 Items)
+
+### Dimension Definitions
+- **L**: Likelihood (1–5)
+- **I**: Impact (1–5)
+- **T**: Timing (1=imminent, 5=long-term)
+- **R**: Reversibility (1=irreversible, 5=easily reversed)
+- **Score**: L × I (adjusted for T, R)
+
+---
+
+## Risk 1 — Interpellation Debate Escalation to Ministerial Crisis [HD10444/HD10442]
+
+**Description**: If Finance Minister Svantesson delivers a weak or factually challenged answer to HD10444 (employer contributions) or HD10442 (eating disorders court case) during the parliamentary debate (expected 2026-04-28–05-05), the accountability story will compound. Given the court vindication of Region Stockholm in HD10442 and documented Aftonbladet evidence for HD10444, the evidentiary burden on Svantesson is high.
+
+| L | I | T | R | Score | Admiralty |
+|---|---|---|---|-------|-----------|
+| 3 | 4 | 1 | 3 | **12** | [B2] |
+
+**Response**: Monitor debate scheduling; prepare analytical brief on each interpellation text vs. prior ministerial statements.
+
+**Cascading risk**: Parliamentary demand for Riksdag Konstitutionsutskott review of ministerial statements → constitutional accountability track (possible post-election).
+
+---
+
+## Risk 2 — Fuel Tax Cut Backfire: Climate Credibility Collapse [HD01FiU48]
+
+**Description**: The enacted 82 öre/litre fuel tax cut (HD01FiU48, riksdagen.se/dokument/HD01FiU48) reduces Sweden's energy tax to EU minimum floor. If spring/summer fuel consumption increases significantly and emissions data shows uptick, the opposition will have a documented case that the government prioritised electoral cost relief over climate commitments. Particularly damaging if COP or EU review coincides.
+
+| L | I | T | R | Score | Admiralty |
+|---|---|---|---|-------|-----------|
+| 3 | 3 | 2 | 2 | **9** | [A1] |
+
+**Response**: Track fuel consumption data from Trafikverket and SCB fuel statistics post-1 May 2026.
+
+---
+
+## Risk 3 — Social Dumping Litigation / Human Rights Escalation [HD10443]
+
+**Description**: Interpellation HD10443 (riksdagen.se/dokument/HD10443) documents systematic municipal social dumping — transferring vulnerable residents between municipalities without consent. If civil society organizations or the Justitieombudsman (JO) initiate formal complaints, the government faces a dual legislative-judicial track crisis.
+
+| L | I | T | R | Score | Admiralty |
+|---|---|---|---|-------|-----------|
+| 2 | 4 | 2 | 2 | **8** | [B2] |
+
+**Response**: Monitor JO diariet for new incoming complaints on kommunal social dumping; check SOU 2025 docket for related investigations.
+
+---
+
+## Risk 4 — Stockholm Housing Segregation Escalation [HD10445]
+
+**Description**: Failure to advance SOU 2024:38 recommendations on municipal pre-emption rights for key suburban properties (HD10445, riksdagen.se/dokument/HD10445) creates a structural risk: if a private equity or speculative investor acquires one of the named centre properties (Sätra, Vårberg, Rågsved) before the election, the political fallout for the government's urban policy will be acute.
+
+| L | I | T | R | Score | Admiralty |
+|---|---|---|---|-------|-----------|
+| 2 | 3 | 2 | 2 | **6** | [B2] |
+
+**Response**: Monitor property transaction records via Lantmäteriet for named suburban centres; track SOU 2024:38 implementation status.
+
+---
+
+## Risk 5 — Energy Law Delay: Electricity System Legislation [HD03240]
+
+**Description**: The new electricity system laws (HD03240, riksdagen.se/dokument/HD03240, submitted 2026-04-14 by Climate and Business Dept.) are scheduled for committee review. If the legislative timeline slips past the September 2026 election, the successor government (of any composition) will inherit an unresolved electricity system framework — creating regulatory uncertainty for grid investments.
+
+| L | I | T | R | Score | Admiralty |
+|---|---|---|---|-------|-----------|
+| 2 | 4 | 3 | 3 | **8** | [A2] |
+
+**Response**: Monitor NMU/KNU committee scheduling for HD03240 after submission.
+
+---
+
+## Cascading Risk Chains
+
+```mermaid
+flowchart TD
+    A["HD10444 Employer contribution abuse"] --> B["Interpellation debate 2026-04-28+"]
+    B --> C{"Svantesson answer quality?"}
+    C -->|"Weak/evasive"| D["Media cycle escalation<br/>KU granskning demand [B2]"]
+    C -->|"Strong/documented"| E["Story contained<br/>S shifts to next target"]
+    D --> F["Coalition credibility damage<br/>pre-election"]
+
+    HD10442["HD10442 Eating disorder court case<br/>[pre-existing risk]"] --> B
+
+    HD01FiU48["HD01FiU48 Fuel cut enacted"] --> G["May–Sep 2026 fuel consumption data"]
+    G --> H{"Emissions increase?"}
+    H -->|"Yes"| I["Climate narrative exploit<br/>by S/MP/V [B2]"]
+    H -->|"No/neutral"| J["Relief narrative holds"]
+
+    style A fill:#c62828,color:#FFFFFF
+    style D fill:#b71c1c,color:#FFFFFF
+    style HD10442 fill:#e53935,color:#FFFFFF
+    style HD01FiU48 fill:#e65100,color:#FFFFFF
+    style I fill:#f57f17,color:#000000
+    style J fill:#2e7d32,color:#FFFFFF
+    style E fill:#2e7d32,color:#FFFFFF
+
+```
+
+## Posterior Probability Estimates
+
+| Risk | P(Trigger Event) | P(Escalation|Trigger) | P(Full escalation) |
+|------|-----------------|----------------------|-------------------|
+| R1: Ministerial debate escalation | 0.40 | 0.45 | **0.18** |
+| R2: Fuel cut climate backfire | 0.35 | 0.50 | **0.18** |
+| R3: Social dumping litigation | 0.25 | 0.40 | **0.10** |
+| R4: Stockholm housing incident | 0.20 | 0.40 | **0.08** |
+| R5: Energy law delay | 0.30 | 0.35 | **0.11** |
 
 ## SWOT Analysis
 
@@ -559,122 +968,6 @@ quadrantChart
 
     style Energy fill:#2e7d32,color:#fff
 ```
-
-## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/risk-assessment.md)_
-
----
-
-## Risk Register (5 Dimensions × 5 Items)
-
-### Dimension Definitions
-- **L**: Likelihood (1–5)
-- **I**: Impact (1–5)
-- **T**: Timing (1=imminent, 5=long-term)
-- **R**: Reversibility (1=irreversible, 5=easily reversed)
-- **Score**: L × I (adjusted for T, R)
-
----
-
-## Risk 1 — Interpellation Debate Escalation to Ministerial Crisis [HD10444/HD10442]
-
-**Description**: If Finance Minister Svantesson delivers a weak or factually challenged answer to HD10444 (employer contributions) or HD10442 (eating disorders court case) during the parliamentary debate (expected 2026-04-28–05-05), the accountability story will compound. Given the court vindication of Region Stockholm in HD10442 and documented Aftonbladet evidence for HD10444, the evidentiary burden on Svantesson is high.
-
-| L | I | T | R | Score | Admiralty |
-|---|---|---|---|-------|-----------|
-| 3 | 4 | 1 | 3 | **12** | [B2] |
-
-**Response**: Monitor debate scheduling; prepare analytical brief on each interpellation text vs. prior ministerial statements.
-
-**Cascading risk**: Parliamentary demand for Riksdag Konstitutionsutskott review of ministerial statements → constitutional accountability track (possible post-election).
-
----
-
-## Risk 2 — Fuel Tax Cut Backfire: Climate Credibility Collapse [HD01FiU48]
-
-**Description**: The enacted 82 öre/litre fuel tax cut (HD01FiU48, riksdagen.se/dokument/HD01FiU48) reduces Sweden's energy tax to EU minimum floor. If spring/summer fuel consumption increases significantly and emissions data shows uptick, the opposition will have a documented case that the government prioritised electoral cost relief over climate commitments. Particularly damaging if COP or EU review coincides.
-
-| L | I | T | R | Score | Admiralty |
-|---|---|---|---|-------|-----------|
-| 3 | 3 | 2 | 2 | **9** | [A1] |
-
-**Response**: Track fuel consumption data from Trafikverket and SCB fuel statistics post-1 May 2026.
-
----
-
-## Risk 3 — Social Dumping Litigation / Human Rights Escalation [HD10443]
-
-**Description**: Interpellation HD10443 (riksdagen.se/dokument/HD10443) documents systematic municipal social dumping — transferring vulnerable residents between municipalities without consent. If civil society organizations or the Justitieombudsman (JO) initiate formal complaints, the government faces a dual legislative-judicial track crisis.
-
-| L | I | T | R | Score | Admiralty |
-|---|---|---|---|-------|-----------|
-| 2 | 4 | 2 | 2 | **8** | [B2] |
-
-**Response**: Monitor JO diariet for new incoming complaints on kommunal social dumping; check SOU 2025 docket for related investigations.
-
----
-
-## Risk 4 — Stockholm Housing Segregation Escalation [HD10445]
-
-**Description**: Failure to advance SOU 2024:38 recommendations on municipal pre-emption rights for key suburban properties (HD10445, riksdagen.se/dokument/HD10445) creates a structural risk: if a private equity or speculative investor acquires one of the named centre properties (Sätra, Vårberg, Rågsved) before the election, the political fallout for the government's urban policy will be acute.
-
-| L | I | T | R | Score | Admiralty |
-|---|---|---|---|-------|-----------|
-| 2 | 3 | 2 | 2 | **6** | [B2] |
-
-**Response**: Monitor property transaction records via Lantmäteriet for named suburban centres; track SOU 2024:38 implementation status.
-
----
-
-## Risk 5 — Energy Law Delay: Electricity System Legislation [HD03240]
-
-**Description**: The new electricity system laws (HD03240, riksdagen.se/dokument/HD03240, submitted 2026-04-14 by Climate and Business Dept.) are scheduled for committee review. If the legislative timeline slips past the September 2026 election, the successor government (of any composition) will inherit an unresolved electricity system framework — creating regulatory uncertainty for grid investments.
-
-| L | I | T | R | Score | Admiralty |
-|---|---|---|---|-------|-----------|
-| 2 | 4 | 3 | 3 | **8** | [A2] |
-
-**Response**: Monitor NMU/KNU committee scheduling for HD03240 after submission.
-
----
-
-## Cascading Risk Chains
-
-```mermaid
-flowchart TD
-    A["HD10444 Employer contribution abuse"] --> B["Interpellation debate 2026-04-28+"]
-    B --> C{"Svantesson answer quality?"}
-    C -->|"Weak/evasive"| D["Media cycle escalation<br/>KU granskning demand [B2]"]
-    C -->|"Strong/documented"| E["Story contained<br/>S shifts to next target"]
-    D --> F["Coalition credibility damage<br/>pre-election"]
-
-    HD10442["HD10442 Eating disorder court case<br/>[pre-existing risk]"] --> B
-
-    HD01FiU48["HD01FiU48 Fuel cut enacted"] --> G["May–Sep 2026 fuel consumption data"]
-    G --> H{"Emissions increase?"}
-    H -->|"Yes"| I["Climate narrative exploit<br/>by S/MP/V [B2]"]
-    H -->|"No/neutral"| J["Relief narrative holds"]
-
-    style A fill:#c62828,color:#FFFFFF
-    style D fill:#b71c1c,color:#FFFFFF
-    style HD10442 fill:#e53935,color:#FFFFFF
-    style HD01FiU48 fill:#e65100,color:#FFFFFF
-    style I fill:#f57f17,color:#000000
-    style J fill:#2e7d32,color:#FFFFFF
-    style E fill:#2e7d32,color:#FFFFFF
-
-```
-
-## Posterior Probability Estimates
-
-| Risk | P(Trigger Event) | P(Escalation|Trigger) | P(Full escalation) |
-|------|-----------------|----------------------|-------------------|
-| R1: Ministerial debate escalation | 0.40 | 0.45 | **0.18** |
-| R2: Fuel cut climate backfire | 0.35 | 0.50 | **0.18** |
-| R3: Social dumping litigation | 0.25 | 0.40 | **0.10** |
-| R4: Stockholm housing incident | 0.20 | 0.40 | **0.08** |
-| R5: Energy law delay | 0.30 | 0.35 | **0.11** |
 
 ## Threat Analysis
 
@@ -1015,211 +1308,6 @@ False death declarations in Swedish welfare state registers (folkbokföring, Ska
 - JO risk: HIGH — false death declarations are exactly the type of systemic failure JO investigates
 - Media: Personal story angle (citizen falsely declared dead) is highly media-friendly → watch Aftonbladet/Expressen
 - Socialstyrelsen/Skatteverket response: Agency heads may be called to parliamentary committee hearing
-
-## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/scenario-analysis.md)_
-
----
-
-## Scenario Framework
-Three scenarios for the political trajectory of the S accountability offensive and its impact on Election 2026, based on the interpellation cluster filed 2026-04-22.
-
----
-
-## Scenario 1: "Accountability Breakthrough" (Probability: 25%)
-
-**Description**: Finance Minister Svantesson provides a factually challenged or evasive answer to one or more of the three interpellations targeting her (HD10444 employer contributions, HD10442 eating disorder court case, HD10446 false death declarations). Media coverage escalates to a sustained news cycle over 10+ days. KU constitutional review petition filed by S group.
-
-**Leading indicators**:
-- Svantesson avoids direct factual answer on HD10442 court case [watch 2026-04-28+]
-- Aftonbladet publishes follow-up investigation naming specific retailers (HD10444)
-- JO receives new complaint on social dumping (HD10443)
-
-**Election impact**: HIGH negative for M/coalition. Fiscal competence narrative damaged. S gains 1–3 percentage points in polls (within polling error but directionally significant).
-
-**Cascade**: Coalition considers emergency response (press conference, Riksdag statement); possible M party executive communication strategy revision.
-
----
-
-## Scenario 2: "Narrative Containment" (Probability: 55%)
-
-**Description**: Finance Minister Svantesson delivers measured, factually defended answers to all three interpellations. Media coverage is routine (one news cycle, 3–5 days). The coalition successfully pivots to the fuel tax relief implementation (2026-05-01) and energy legislation agenda (HD03240, HD03239). The S accountability offensive scores tactical points but does not produce a sustained narrative advantage.
-
-**Leading indicators**:
-- Government prepares detailed written responses before debate
-- Fuel prices visibly drop at pump post-May 1 (media focus shifts to consumer benefit)
-- Energy legislation committee hearings begin (HD03240)
-
-**Election impact**: NEUTRAL. Status quo maintained. Both S and coalition activate base supporters but neither gains net new voters from interpellation cycle.
-
-**Cascade**: S shifts to next accountability target (possibly housing segregation HD10445, or education/healthcare domains).
-
----
-
-## Scenario 3: "Opposition Fragmentation" (Probability: 20%)
-
-**Description**: The S accountability offensive backfires. The government points to enacted legislation (HD01FiU48 fuel relief, HD03246 youth crime, HD03244 data interoperability) as proof of delivery. Media frames the interpellations as pre-election theatre. Centerpartiet (C) explicitly distances itself from S on deportation (HD024095 amending rather than rejecting prop. 2025/26:235) — fracturing the "alternative bloc" narrative.
-
-**Leading indicators**:
-- C publicly praises elements of government's deportation reform (HD03235) while seeking amendments
-- Fuel price cut generates positive consumer media coverage post-May 1
-- HD10444 answer cites Finansinspektionen/Tillväxtverket data contradicting Aftonbladet report
-
-**Election impact**: POSITIVE for coalition. S bloc cohesion weakened. C positioned as responsible alternative, potentially in coalition talks regardless of who wins.
-
-**Cascade**: S internal pressure to find stronger accountability angle; possible leadership communication tension within S parliamentary group.
-
----
-
-## Scenario Probability Distribution
-
-```mermaid
-pie title Scenario Probabilities — Realtime 2026-04-22
-    "Scenario 1: Accountability Breakthrough" : 25
-    "Scenario 2: Narrative Containment" : 55
-    "Scenario 3: Opposition Fragmentation" : 20
-```
-
-## Leading Indicator Matrix
-
-| Indicator | Scenario 1 | Scenario 2 | Scenario 3 | Watch date |
-|-----------|------------|------------|------------|------------|
-| Svantesson interpellation answer quality | Weak/evasive | Measured | Strong + deflects | 2026-04-28 |
-| Aftonbladet follow-up on HD10444 | Published + names retailers | No follow-up | Aftonbladet retracts/corrects | 2026-04-25–05-05 |
-| Fuel prices at pump post-May 1 | No visible drop | Moderate drop | Significant drop, consumer praise | 2026-05-02 |
-| C party statement on HD024095 | Aligns with S | Silent | Praises government approach | 2026-04-25 |
-| Media framing (SVT/DN/Aftonbladet) | "Crisis" framing | "Politics as usual" | "S overreach" framing | Daily from 2026-04-28 |
-
-## Forward Indicators
-
-_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/forward-indicators.md)_
-
----
-
-## Indicator Framework
-≥10 dated indicators across 4 time horizons (Near, Short, Medium, Long)
-
----
-
-## Horizon 1: Near-Term (0–14 days: 2026-04-22 to 2026-05-06)
-
-### FI-1: Svantesson interpellation debate answers
-**Watch date**: 2026-04-28 to 2026-05-05
-**Indicator**: Did Svantesson provide factual, specific answers to HD10444 (employer contributions) and HD10442 (eating disorder court case)?
-**Green signal**: Detailed factual answer with Finansinspektionen/Tillväxtverket data → narrative containment
-**Red signal**: Vague or deflective answer → S picks up 2-4 points in next poll, KU petition likely
-**Source**: riksdagen.se anföranden, SVT Nyheter coverage
-
-### FI-2: HD10446 false death declaration debate
-**Watch date**: 2026-04-28 to 2026-05-05
-**Indicator**: Carlson (KD) provides government's account of Skatteverket/Socialstyrelsen coordination on false death records
-**Green signal**: Documented remediation of process → issue closed
-**Red signal**: No systemic fix documented → JO complaint risk [B2]
-**Source**: riksdagen.se anföranden
-
-### FI-3: HD01FiU48 pump price visibility
-**Watch date**: 2026-05-02 to 2026-05-05
-**Indicator**: Do major Swedish fuel retailers (Preem, Circle K, OKQ8) publish pump price reduction reflecting 82 öre tax cut?
-**Green signal**: Visible pump price drop → government can claim HD01FiU48 impact
-**Red signal**: No visible drop → opposition "fake relief" narrative activated
-**Source**: Fuel retailer price data (public websites)
-
-### FI-4: New S/V/MP interpellations after HD10444 cycle
-**Watch date**: 2026-04-23 to 2026-05-06
-**Indicator**: How many further accountability interpellations filed by S between now and May 6?
-**Green signal (for coalition)**: 0–1 further interpellations → one-day tactical burst
-**Red signal (for coalition)**: ≥3 further interpellations → sustained campaign confirmed
-**Source**: riksdagen.se search_dokument(doktyp=ip, rm=2025/26)
-
----
-
-## Horizon 2: Short-Term (2–6 weeks: 2026-05-06 to 2026-06-03)
-
-### FI-5: Energy legislation committee reports (HD03240/239/238)
-**Watch date**: 2026-05-15 to 2026-06-15
-**Indicator**: Do NäringsU and MiljöU publish positive committee reports enabling Riksdag votes before summer recess?
-**Green signal**: All three approved → coalition pre-election legacy narrative
-**Red signal**: One or more deferred to autumn → "unfinished business" opposition attack
-**Source**: riksdagen.se get_betankanden(organ=NU,MJU)
-
-### FI-6: Youth offender reform (HD03246) committee report
-**Watch date**: 2026-05-30 to 2026-06-10
-**Indicator**: Does JuU publish committee report on unga lagöverträdare reform?
-**Green signal**: Approved with broad support → bipartisan crime policy achievement
-**Red signal**: S/V/MP dissents → crime policy dividing line in election campaign
-**Source**: riksdagen.se get_betankanden(organ=JuU)
-
-### FI-7: Polling movement post-interpellation cycle
-**Watch date**: 2026-05-10 to 2026-05-20
-**Indicator**: Do Novus/Ipsos/SIFO polls show S moving above 30% following interpellation cycle?
-**Green signal (for S)**: S polling >30% → accountability campaign gaining electoral traction
-**Green signal (for coalition)**: M+SD+KD+L hold ≥176 projected seats → Tidö continuation
-**Source**: Published poll aggregates (Novus, Ipsos, SIFO)
-
----
-
-## Horizon 3: Medium-Term (6 weeks–3 months: 2026-06-03 to 2026-09-01)
-
-### FI-8: C (Centerpartiet) coalition signal
-**Watch date**: 2026-06-15 to 2026-08-01
-**Indicator**: Does C party leader (Muharrem Demirok) state a preference for post-election coalition direction?
-**Green signal (for Tidö)**: C signals it will prioritise governing with M over S bloc
-**Green signal (for S bloc)**: C signals openness to S-led government
-**Source**: Press interviews, SVT/SR Almedalen declarations (Almedalen late June)
-
-### FI-9: L (Liberalerna) threshold poll
-**Watch date**: 2026-06-01 to 2026-09-13
-**Indicator**: Does L consistently poll above 4% in ≥3 successive polls?
-**Green signal**: L above 4% → Tidö coalition arithmetic stable
-**Red signal**: L polling below 4% in ≥2 polls → threshold risk scenario activated
-**Source**: Published poll aggregates
-
-### FI-10: Ukraine tribunal legislation (HD03231/232) committee report
-**Watch date**: 2026-05-20 to 2026-06-15
-**Indicator**: Does UtU publish report approving Ukraine tribunal framework propositions?
-**Green signal**: Approved → Sweden's Ukraine transitional justice role confirmed
-**Source**: riksdagen.se get_betankanden(organ=UU)
-
----
-
-## Horizon 4: Long-Term (3+ months: 2026-09-01 onward)
-
-### FI-11: Election 2026 result — Riksdag composition
-**Watch date**: 2026-09-13
-**Indicator**: Which bloc achieves majority (175 seats)?
-**Source**: Swedish Election Authority (Valmyndigheten)
-
-### FI-12: HD01KU33/32 constitutional second reading
-**Watch date**: 2026-10-01 to 2027-03-01
-**Indicator**: Does the newly constituted Riksdag (post-election) advance KU33/32 to second reading and approval?
-**Source**: riksdagen.se post-election session documents
-
----
-
-## Forward Indicator Dashboard
-
-```mermaid
-gantt
-    title Forward Indicators Timeline
-    dateFormat YYYY-MM-DD
-    section Near-term
-        FI-1 Svantesson answers           :crit, 2026-04-28, 2026-05-05
-        FI-2 HD10446 debate               :crit, 2026-04-28, 2026-05-05
-        FI-3 Pump price visibility        :active, 2026-05-01, 2026-05-05
-        FI-4 New S interpellations        :active, 2026-04-23, 2026-05-06
-    section Short-term
-        FI-5 Energy committee reports     :2026-05-15, 2026-06-15
-        FI-6 Youth crime committee        :2026-05-30, 2026-06-10
-        FI-7 Post-cycle polling           :2026-05-10, 2026-05-20
-    section Medium-term
-        FI-8 C coalition signal           :2026-06-15, 2026-08-01
-        FI-9 L threshold poll             :2026-06-01, 2026-09-13
-        FI-10 Ukraine committee           :2026-05-20, 2026-06-15
-    section Long-term
-        FI-11 Election Day                :milestone, 2026-09-13, 1d
-        FI-12 KU constitutional 2nd read  :2026-10-01, 2027-03-01
-```
 
 ## Election 2026 Analysis
 
@@ -1578,78 +1666,6 @@ timeline
         S accountability offensive : 5 interpellations
         Energy legislation sprint : April 2026 - submitted
         Election 13 September 2026 : Outcome TBD
-```
-
-## Media Framing Analysis
-
-_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/media-framing-analysis.md)_
-
----
-
-## Expected Framing by Political Actor
-
-### Government/Coalition Framing
-**Primary frame**: "Delivery-focused government protecting Swedish households" — HD01FiU48 fuel cut as headline, energy legislation as long-term security
-**Supporting narrative**: "S is engaging in pre-election theatre while we govern"
-**Vulnerability**: HD10444 employer contributions to social dumping — if Svantesson cannot provide factual rebuttal, "government enables wage exploitation" frame becomes credible
-**Tone**: "Responsible fiscal management, record delivery"
-**Expected media vehicles**: Moderate sympathetic outlets (Expressen, SvD), governmental press conferences
-
-### S (Socialdemokraterna) Framing
-**Primary frame**: "Coalition ministers fail to protect Swedish workers and vulnerable citizens"
-**Sub-frames**:
-- HD10444: "Svantesson enables tax-funded social dumping" (employer contribution angle)
-- HD10445: "Slottner allows municipal social dumping of Sweden's most vulnerable"
-- HD10446: "Carlson's ministry falsely declares citizens dead" (HD10446 — death record scandal)
-- HD10442: "Svantesson ignores eating disorder court case costing women their lives"
-**Tone**: Accountability, moral outrage (carefully calibrated to avoid "too strident")
-**Expected media vehicles**: Aftonbladet, LO-Tidningen, S-aligned regional press
-
-### SD (Sverigedemokraterna) Framing
-**Primary frame**: Unlikely to prominently cover S interpellations (different accountability axis). Will focus on fuel tax cut SUCCESS (populist energy nationalism) and youth crime reform (HD03246).
-**Expected media vehicles**: Avpixlat-adjacent outlets, social media
-
-### MP (Miljöpartiet) Framing
-**Primary frame**: "Fuel tax cut is climate regression; coalition abandons Sweden's climate commitments"
-**Sub-frame**: Energy legislation (HD03239 vindkraft) as insufficient half-measure
-**Expected media vehicles**: Miljömagasinet, urban progressive press
-
-### V (Vänsterpartiet) Framing
-**Primary frame**: "Government cuts fuel tax instead of investing in public transport — wrong priorities for working class"
-**Sub-frame**: Social dumping (aligns with HD10443/HD10444) — V's traditional labour market accountability frame
-**Expected media vehicles**: Flamman, Proletären, social media
-
----
-
-## Expected Mainstream Media Framing (Swedish Press Outlets)
-
-| Outlet | Expected Frame | Based on past coverage patterns |
-|--------|---------------|--------------------------------|
-| Aftonbladet | Accountability-first: Svantesson interpellations lead | S-sympathetic tabloid; likely HD10444/10442 double spread [B2] |
-| Expressen | Balanced accountability with coalition defence | Centre-liberal; will examine both interpellations and coalition's fuel tax delivery [B2] |
-| Dagens Nyheter (DN) | Analysis: "Is this a turning point?" | Quality broadsheet; likely scenario analysis rather than pure accountability [B2] |
-| SVT Nyheter | Public interest neutral: all 4 interpellations reported | Public broadcaster; procedural coverage of all parties [B2] |
-| SvD | Business-framing: HD01FiU48 economic analysis | Conservative-leaning; will examine fiscal impact of fuel cut [B2] |
-
----
-
-## Framing Risk Matrix
-
-```mermaid
-quadrantChart
-    title Media Framing Risk vs. Coalition Electoral Impact
-    x-axis Low Risk --> High Risk
-    y-axis Low Impact --> High Impact
-    quadrant-1 Manage proactively
-    quadrant-2 Crisis response needed
-    quadrant-3 Monitor passively
-    quadrant-4 Communications strategy needed
-    HD10444 employer contributions: [0.7, 0.8]
-    HD10442 eating disorder: [0.65, 0.75]
-    HD10446 false death records: [0.8, 0.8]
-    HD01FiU48 fuel cut (positive): [0.2, 0.6]
-    Energy legislation: [0.2, 0.4]
-    HD03246 youth crime reform: [0.3, 0.5]
 ```
 
 ## Implementation Feasibility

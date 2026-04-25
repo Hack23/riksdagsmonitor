@@ -495,6 +495,15 @@ function truncateToSentenceBoundary(
   return sliced.trim() + '…';
 }
 
+function markdownInlineToText(markdown: string): string {
+  return markdown
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/[*_`]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 /**
  * Return the first prose paragraph that immediately follows a `## 🎯 BLUF`
  * (or `## BLUF`, case-insensitive) heading in an executive-brief. This is
@@ -522,7 +531,7 @@ function readBlufParagraph(markdown: string): string | null {
     if (/^[>*]\s/.test(p)) continue;
     const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
-    return p.replace(/[*_`]/g, '').replace(/\s+/g, ' ');
+    return markdownInlineToText(p);
   }
   return null;
 }
@@ -539,8 +548,7 @@ function readFirstParagraph(markdown: string): string | null {
     // Structural-only delimiter (see ADMIN_FRAGMENT_SPLITTER JSDoc).
     const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
-    // Strip markdown emphasis for the meta description.
-    return p.replace(/[*_`]/g, '').replace(/\s+/g, ' ');
+    return markdownInlineToText(p);
   }
   return null;
 }
@@ -594,7 +602,7 @@ function cleanArticleTitle(raw: string | null): string | null {
  */
 function titleFromBluf(bluf: string | null, maxLen: number = 70): string | null {
   if (!bluf) return null;
-  const clean = bluf.replace(/[*_`]/g, '').replace(/\s+/g, ' ').trim();
+  const clean = markdownInlineToText(bluf);
   if (!clean) return null;
   // Take the first sentence (bounded by . ! ? 。) — but never exceed maxLen.
   SENTENCE_END_RE.lastIndex = 0;
@@ -791,6 +799,7 @@ export const __test__ = {
   readFirstParagraph,
   readBlufParagraph,
   truncateToSentenceBoundary,
+  markdownInlineToText,
   cleanArticleTitle,
   titleFromBluf,
   escapeYaml,

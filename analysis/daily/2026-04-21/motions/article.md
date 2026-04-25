@@ -5,10 +5,23 @@ date: 2026-04-21
 subfolder: motions
 slug: 2026-04-21-motions
 source_folder: analysis/daily/2026-04-21/motions
-generated_at: 2026-04-24T18:27:52.234Z
+generated_at: 2026-04-25T09:12:18.257Z
 language: en
 layout: article
 ---
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | Where to go | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Significance scoring](#significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Scenarios](#scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Per-document intelligence](#per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
+| [Audit appendix](#classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/executive-brief.md)_
@@ -907,229 +920,282 @@ flowchart TD
 
 **Classification**: Public · **Next Review**: 2026-04-27
 
-## SWOT Analysis
+## Scenario Analysis
 
-_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/swot-analysis.md)_
+_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/scenario-analysis.md)_
 
 | Field | Value |
 |-------|-------|
-| **Date** | 2026-04-20 |
-| **Riksmöte** | 2025/26 |
-| **Analyst** | news-motions workflow |
-| **Analysis Timestamp** | 2026-04-20 13:04 UTC |
-| **Framework** | Political SWOT v2.2 + **TOWS interference matrix** |
-| **Stakeholder Coverage** | All 8 mandatory groups + 4-cluster drill-down |
+| **SCN-ID** | SCN-2026-04-20-motions |
+| **Framework** | Alternative-futures analysis (ACH-informed) + Bayesian scenario weighting |
+| **Horizon** | Short (Q2 2026 — SfU/FiU/UU votes) · Medium (pre-election autumn 2026) · Long (post-election government formation 2026–2028) |
+| **Methodology** | ACH on three competing hypotheses; scenario-tree with analyst priors |
+| **Priors provenance** | Novus Q1 2026 polling · SOM-institutet 2025 · Historical coalition-formation patterns 1991–2022 |
+
+> **Purpose**: Structured alternative-futures reasoning to stress-test the dominant narrative ("opposition coordination builds toward 2026 electoral gain"), surface wildcards, and assign prior probabilities that can be updated as forward indicators fire.
 
 ---
 
-## 🔬 Multi-Stakeholder SWOT Framework
+## 🧭 Section 1 — ACH: Three Competing Hypotheses
 
-The 21 opposition motions filed April 14–17, 2026 reveal a unified opposition counter-strategy against the government's spring legislative package. Analysis below covers:
-1. **Cluster-level SWOT** for the LEAD immigration cluster (primary focus)
-2. **Cross-cluster aggregate SWOT** across all four thematic clusters
-3. **TOWS interference matrix** — cross-quadrant strategy derivation
-4. All 8 mandatory stakeholder groups
+Applied to the central question: *What is the strategic logic of the April 14–17 opposition-motion wave?*
 
----
+| H | Hypothesis | Supporting evidence | Disconfirming evidence | Prior P |
+|:-:|------------|---------------------|------------------------|:-------:|
+| **H1** | **Coalition rehearsal** — parties testing a post-2026 S+V+MP+C majority scenario on substantive policy | Unprecedented 4-party filing on prop. 2025/26:229; same-day triple filings on prop. 2025/26:215/235; cross-pressure coordination | S absent on deportation (HD024095 cluster); V–C rhetorical incompatibility on reception law | **0.35** |
+| **H2** | **Campaign-narrative construction** — parties building durable 2026 talking points, not governing preparation | Clustered messages on immigration + climate (twin pillars); each party front a distinct voter segment; no joint press conference | H1 evidence partially duplicates; some evidence ambiguous | **0.50** |
+| **H3** | **Opportunistic signalling** — parties reacting independently to government legislative velocity rather than coordinating | Chatham-House-style asymmetry (party leaders do not appear together); S-silence on deportation suggests individual calculation | Same-day triple filings are hard to explain opportunistically; content-overlap suggests coordination | **0.15** |
 
-## ⚡ SWOT: Immigration Policy Cluster (LEAD — DIW 9.4)
+**ACH verdict `[HIGH]`**: H2 (campaign-narrative construction) has the highest posterior probability. It fits the division-of-labour pattern, survives the S-silence evidence (S calculated separately per cluster), and does not require overhypothesising coordination capacity.
 
-### Strengths of Opposition Motions
-
-| # | Statement | Evidence (dok_id) | Conf. | Impact | Entry |
-|:-:|-----------|-------------------|:-----:|:------:|:-----:|
-| **S1** | Quadruple-party coordination on New Reception Law signals disciplined opposition front | HD024076 (V), HD024080 (S), HD024087 (MP), HD024089 (C) — all within 72 h of prop. 2025/26:229 | 🟩 HIGH | CRITICAL | 2026-04-15 |
-| **S2** | S's counter-motion on reception law targets private-sector asylum housing — protects vulnerable people and creates positive electoral narrative | HD024080: "asylboenden ska inte kunna överlåtas i privat drift" — clear anti-privatization platform | 🟩 HIGH | HIGH | 2026-04-15 |
-| **S3** | C takes moderate position on deportation — requires proportionality (systematic repeated offenses) — converges with European statutory mainstream | HD024095 — aligned with Germany AufenthG §53, Netherlands "glijdende schaal", Denmark Udlændingeloven §26 | 🟩 HIGH | HIGH | 2026-04-16 |
-| **S4** | MP's comprehensive rejection of deportation law challenges constitutional proportionality principle; ECHR Art. 8 alignment | HD024097 — preserves partial law (8 kap. 1-3 §) while rejecting coercive expansion | 🟧 MEDIUM | HIGH | 2026-04-16 |
-| **S5** | V's total-rejection strategy provides left-flank anchor for opposition messaging | HD024090 — outright rejection of entire prop. 2025/26:235 | 🟩 HIGH | MEDIUM | 2026-04-16 |
-| **S6** | S's challenge to time-limited immigrant housing frames integration as economic investment, not welfare | HD024079 — Ardalan Shekarabi requests government return with new housing proposals | 🟧 MEDIUM | HIGH | 2026-04-15 |
-| **S7** | MP's EU Pact compatibility frame (HD024087) gives cluster international-legitimacy authority | HD024087 cites EU Reg. 2024/1348 Art. 17 material-conditions standard | 🟩 HIGH | MEDIUM | 2026-04-15 |
-| **S8** | Division-of-labour frames cover all major voter segments (left / welfare / international / pragmatist) | Rhetoric-axis analysis across HD024076/80/87/89 | 🟩 HIGH | HIGH | 2026-04-15 |
-
-### Weaknesses of Opposition Motions
-
-| # | Statement | Evidence | Conf. | Impact | Entry |
-|:-:|-----------|----------|:-----:|:------:|:-----:|
-| **W1** | S's positions on immigration are internally contradictory — party supported stricter policies 2022–2024, now opposes them | S filed HD024080 but governed with stricter policy 2014-2022 | 🟩 HIGH | HIGH | 2026-04-15 |
-| **W2** | Four-party coordination masks substantive incompatibility — V's rejection (HD024090) and C's amendment (HD024095) cannot co-govern | Motion-text comparison V vs C on same proposition | 🟧 MEDIUM | HIGH | 2026-04-16 |
-| **W3** | V and MP arms-export motions put them at odds with post-NATO consensus | HD024091/96 vs 58/32/10 SOM arms-export support (2025) | 🟩 HIGH | HIGH | 2026-04-16 |
-| **W4** | MP's across-the-board rejection strategy (4 total rejections) risks being seen as obstructionist | HD024087, HD024097, HD024096, HD024098 — all outright rejections | 🟧 MEDIUM | MEDIUM | 2026-04-15 |
-| **W5** | **S-silence on deportation** (HD024090/95/97 cluster) reveals S has calculated deportation is a losing issue for centre-left | S filed no motion on prop. 2025/26:235; filed on every other cluster | 🟩 HIGH | HIGH | 2026-04-16 |
-| **W6** | No joint press conference or coalition statement; coordination is visible but unclaimed | Absence of joint presser from S, V, MP, C | 🟧 MEDIUM | MEDIUM | 2026-04-15 |
-| **W7** | V's consistent-rejection pattern across immigration + arms creates "universal rejectionist" frame vulnerability | HD024076 + HD024090 + HD024091 all rejection-structured | 🟩 HIGH | HIGH | 2026-04-16 |
-
-### Opportunities Created by These Motions
-
-| # | Statement | Evidence | Conf. | Impact | Entry |
-|:-:|-----------|----------|:-----:|:------:|:-----:|
-| **O1** | Immigration becomes defining election issue — opposition can build 2026 campaign around "humane alternative" | 10 of 21 motions (48%) target immigration | 🟩 HIGH | CRITICAL | 2026-04-15 |
-| **O2** | Fuel-tax opposition (HD024082/98) gives S+MP ownership of climate narrative | Sweden GDP 0.82% 2024, unemployment 8.69% 2025 — economic alternative story | 🟩 HIGH | HIGH | 2026-04-15 |
-| **O3** | Healthcare motions (HD024081/83/94) create unusual S+V+C coalition signalling post-2026 cooperation potential | Three ideologically diverse parties on healthcare governance | 🟧 MEDIUM | MEDIUM | 2026-04-15 |
-| **O4** | Riksrevisionen report on Sida enables MP+C to demand accountability on government aid effectiveness | HD024072/70 — adds "good governance" credibility | 🟧 MEDIUM | LOW | 2026-04-08 |
-| **O5** | C's proportionality frame on deportation may attract L backbench sympathy; splits Tidö | L rule-of-law sensitivity + comparative statutory-test alignment | 🟧 MEDIUM | MEDIUM | 2026-04-16 |
-| **O6** | Post-adoption ECtHR litigation on deportation creates multi-year reputational drag on government | Swedish ECHR adverse-judgment track record | 🟧 MEDIUM | MEDIUM | 2026-04-16 |
-| **O7** | MP's end-user review language on arms (HD024096) aligns with Norwegian/Dutch/German practice — standard-setting | Comparative analysis §4 | 🟧 MEDIUM | LOW | 2026-04-16 |
-
-### Threats to Opposition Strategy
-
-| # | Statement | Evidence | Conf. | Impact | Entry |
-|:-:|-----------|----------|:-----:|:------:|:-----:|
-| **T1** | Government M/SD/KD/L majority will pass all four propositions; opposition risks credibility | prop. 2025/26:229/235/215/236/228 all have coalition support | 🟩 HIGH | HIGH | 2026-04-15 |
-| **T2** | S's opposition to fuel-tax cut may alienate working-class rural voters who benefit | HD024082 vs Norrland S vote 2022 baseline | 🟧 MEDIUM | HIGH | 2026-04-15 |
-| **T3** | Arms-export opposition (V+MP) conflicts with Swedish post-NATO security doctrine | HD024091/96 vs 58% public support continued exports | 🟩 HIGH | MEDIUM | 2026-04-16 |
-| **T4** | Coordinated opposition risks being framed as "obstructionism" on security-critical reforms | Simultaneous rejection on deportation/reception/housing/arms | 🟧 MEDIUM | MEDIUM | 2026-04-16 |
-| **T5** | SD attack ads weaponise V's consistent-rejection pattern as "defends criminals / unreliable on Ukraine" | V's HD024090 + HD024091 joint attack surface | 🟩 HIGH | HIGH | 2026-04-16 |
-| **T6** | 62% voter support for stricter immigration sets a polling floor opposition cannot breach | Novus Q1 2026 migration salience | 🟩 HIGH | HIGH | 2026-04-15 |
-| **T7** | Extra-budget fast-track procedure on fuel tax compresses opposition narrative-building window to ≤ 4 weeks | FiU extra-budget timetable | 🟧 MEDIUM | MEDIUM | 2026-04-15 |
+> **Implication**: The opposition's goal is not to prepare for government (too early, polls insufficient) but to **lock in 2026 campaign narratives** before the Riksdag recesses in summer 2026. Motions function as **timestamped talking points** that survive the summer silence.
 
 ---
 
-## 🎯 TOWS Interference Matrix — Cross-Quadrant Strategy Derivation
+## 🧭 Section 2 — Master Scenario Tree (Short → Medium → Long)
 
-The TOWS matrix multiplies SWOT quadrants to surface non-obvious strategic moves. Below: the **≥3-entry interference cells** with strategic impact on the April 2026 opposition campaign.
+```mermaid
+flowchart TD
+    T0["🟡 Now<br/>2026-04-20<br/>Cluster filed"]
 
-### SO (Strengths × Opportunities) — Offensive Moves
+    V1["⚖️ SfU/FiU/UU votes<br/>May–June 2026"]
+    V1a["🟢 Amendments<br/>(C's HD024095 partial)<br/>P = 0.20"]
+    V1b["🔵 Straight rejection<br/>of all motions<br/>P = 0.60"]
+    V1c["🟠 Committee compromise<br/>(minor changes)<br/>P = 0.20"]
 
-| # | Interference | Strategy |
-|:-:|--------------|----------|
-| **SO1** | **S1 (4-party coordination) × O1 (election definition)** | **Sustain coordinated-opposition narrative through summer** with sequential follow-on motions and media events designed to prevent government from reclaiming the agenda |
-| **SO2** | **S3 (C moderate/statutory) × O5 (L backbench)** | **Target L MPs** (Johan Pehrson, Sofia Zettergren) via C's amendment frame; L's historical rule-of-law sensitivity + statutory-test comparative alignment creates narrow negotiation window |
-| **SO3** | **S2 (S anti-privatisation) × O2 (climate narrative)** | **Link housing-privatisation to fuel-tax private-benefit** as "government prioritises private interests over public goods" unified frame |
-| **SO4** | **S7 (MP EU Pact compatibility) × O6 (ECtHR litigation)** | **Pre-stage EU Commission remissvar + Strasbourg litigation path**; MP's HD024087 text is usable as precedent for post-adoption legal challenge |
+    L["📅 Summer recess<br/>Jul–Sep 2026"]
+    E["🗳️ Election<br/>2026-09-13"]
+    E1["M-KD-L+SD retained<br/>P = 0.50"]
+    E2["S-led minority<br/>(S+MP or S+V+MP)<br/>P = 0.33"]
+    E3["S+V+MP+C majority<br/>P = 0.12"]
+    E4["Inconclusive / new election<br/>P = 0.05"]
 
-### ST (Strengths × Threats) — Defensive Hardening
+    T0 --> V1
+    V1 --> V1a
+    V1 --> V1b
+    V1 --> V1c
 
-| # | Interference | Strategy |
-|:-:|--------------|----------|
-| **ST1** | **S3 (C proportionality, European mainstream) × T4 (obstructionism frame)** | **Publish comparative-international analysis** showing C's amendment converges with Germany, Netherlands, Denmark — neutralises obstructionism charge |
-| **ST2** | **S1 (4-party coordination) × T1 (government majority passes)** | **Coordinate SfU vote sequencing** — amendment first, then rejection — to prevent "disarray" framing at chamber vote |
-| **ST3** | **S2 (S anti-privatisation) × T2 (rural-voter alienation)** | **Front Norrland-anchored S MPs** (Joakim Järrebring, Fredrik Lundh Sammeli) in media appearances on welfare-state framing |
+    V1a --> L
+    V1b --> L
+    V1c --> L
 
-### WO (Weaknesses × Opportunities) — Strategic Pivots Required
+    L --> E
+    E --> E1
+    E --> E2
+    E --> E3
+    E --> E4
 
-| # | Interference | Strategy |
-|:-:|--------------|----------|
-| **WO1** | **W1 (S 2015–2022 legacy) × O1 (election definition)** | **S must own the 2015 pivot publicly** — frame HD024080 as "learning from experience" to neutralise legacy-credibility gap |
-| **WO2** | **W5 (S-silence on deportation) × O3 (S+V+C healthcare coalition)** | **S should use healthcare coalition as broader S+V+C rehearsal template**; deportation-silence fragments the left only if not compensated by other coordination evidence |
-| **WO3** | **W2 (V–C incompatibility) × O5 (L backbench)** | **Stage-manage SfU voting**: C's amendment goes first; if passed, C-V-MP-S-L vote together on amended law; if failed, they unify on rejection. Avoid simultaneous V-reject + C-amend vote |
+    E1 --> BASE["🟢 BASE<br/>Reforms enacted as filed<br/>P = 0.45"]
+    E2 --> BULL["🔵 BULL<br/>Partial reversal of reception law<br/>P = 0.22"]
+    E3 --> BEAR["🔴 BEAR-for-government<br/>Full reversal package<br/>P = 0.10"]
+    E4 --> WILD1["⚡ WILDCARD<br/>Minority-gov volatility<br/>P = 0.05"]
 
-### WT (Weaknesses × Threats) — 🔴 Critical Strategic Vulnerabilities
+    V1b --> CYCLE["🔄 Campaign cycle<br/>HD motions become<br/>campaign ads"]
 
-| # | Interference | Strategy |
-|:-:|--------------|----------|
-| **WT1** | **W7 (V universal-rejectionist pattern) × T5 (SD attack ads)** | **🔴 CRITICAL**: V must pair every rejection with concrete alternative (border-capacity investment, Ukraine-lethal-aid affirmation). V's HD024076/90/91 texts currently lead with rejection-framing — tactical error. SD ad cycle can cost V 1–2 polling points. |
-| **WT2** | **W2 (V–C incompatibility) × T1 (majority passes)** | **🔴 CRITICAL**: If government forces a vote where V and C oppose for opposite reasons, media reports "opposition in disarray" and cluster narrative collapses. See WO3 mitigation. |
-| **WT3** | **W5 (S-silence on deportation) × T6 (polling floor)** | **🔴 CRITICAL**: S's revealed preference (deportation = losing issue) means the opposition **cannot** form a unified pre-election deportation narrative. Each party must run its deportation position separately — no joint framing possible. |
-| **WT4** | **W6 (no joint press) × T4 (obstructionism frame)** | Unclaimed coordination invites hostile reframing. Weighted decision: a joint press risks "coalition of chaos" framing but absence of it concedes the obstructionism narrative. **Recommendation**: coordinated op-eds by four party leaders on same day (April 27 target) without joint photo-op. |
-| **WT5** | **W7 (V rejectionism) × T3 (post-NATO doctrine)** | V's HD024091 risks framing V as "unreliable NATO partner". V must explicitly affirm Ukraine support in motion supplementary statements. |
+    style T0 fill:#FFC107,color:#000000
+    style V1a fill:#4CAF50,color:#FFFFFF
+    style V1b fill:#1565C0,color:#FFFFFF
+    style V1c fill:#FF9800,color:#FFFFFF
+    style E1 fill:#1e3a8a,color:#FFFFFF
+    style E2 fill:#7B1FA2,color:#FFFFFF
+    style E3 fill:#D32F2F,color:#FFFFFF
+    style E4 fill:#424242,color:#FFFFFF
+    style BASE fill:#4CAF50,color:#FFFFFF
+    style BULL fill:#1565C0,color:#FFFFFF
+    style BEAR fill:#D32F2F,color:#FFFFFF
+    style WILD1 fill:#FF9800,color:#FFFFFF
+```
 
-> **Strategic centre of gravity `[HIGH]`**: **WT1** (V universal rejectionism × SD attack ads) and **WT2** (V–C incompatibility × government majority) are the **two critical vulnerabilities** that could collapse the cluster's campaign value. **WO3** is the essential mitigation: disciplined SfU vote sequencing.
-
----
-
-## 👥 8-Stakeholder Perspective Matrix
-
-### 1. Citizens (🟧 MEDIUM Salience)
-
-Swedish citizens experience immigration policy directly through social services, housing markets, and labour competition. With unemployment at 8.69% in 2025 (up from 8.4% in 2024), citizens in lower-income brackets are receptive to government arguments about limiting new arrivals. However, **S's HD024080** appeals to citizens concerned about privatisation of asylum services — a proxy for welfare-state protection values that resonate with S's base. The fuel-tax opposition (HD024082/98) speaks directly to household budgets but risks appearing out-of-touch with rural drivers. A **divided citizenry** is the realistic baseline — the opposition's job is to move ~3-5% swing voters, not to flip majority opinion. `[MEDIUM]`
-
-### 2. Government Coalition (M/SD/KD/L) (🟩 HIGH Salience)
-
-The governing coalition views these counter-motions as expected partisan opposition. For **Tidö-agreement** parties, the immigration cluster validates their legislative agenda. The sheer number of counter-motions (10/21 on immigration) **confirms the opposition's strategy** and allows the government to campaign on "defending Sweden's security" against a unified left-green-centre bloc. **L is the weak link**: Johan Pehrson's historical rule-of-law sensitivity and the comparative evidence backing C's HD024095 proportionality test create a narrow fault line. The fuel-tax counter-motions create a secondary vulnerability — the government must justify why a climate-ambivalent tax cut is in Sweden's interest. `[HIGH]`
-
-### 3. Opposition Bloc (S/V/MP/C) (🟩 HIGH Salience)
-
-This batch represents the most coordinated opposition filing in the current riksmöte. **Socialdemokraterna (S)** under party leader Magdalena Andersson is pursuing a "responsible opposition" strategy — accepting some security reforms while drawing clear lines on welfare-state privatisation (HD024080) and integration investment (HD024079). The **S-silence on deportation** is strategic, not accidental. **Vänsterpartiet (V)** under Nooshi Dadgostar maintains a principled rejection stance on all immigration tightening but risks the universal-rejectionist framing. **Miljöpartiet (MP)** under Janine Alm Ericson leads on climate issues (HD024098) and humanitarian concerns. **Centerpartiet (C)** occupies the critical swing position — accepting some deportation reform but demanding proportionality (HD024095); C is the most politically interesting actor in this wave because its amendment posture is the bridge between opposition messaging and European mainstream practice. `[HIGH]`
-
-### 4. Business/Industry (🟧 MEDIUM Salience)
-
-Swedish industry faces contradictory pressures. The fuel-tax cut (prop. 2025/26:236) benefits transport-dependent industries — making S's HD024082 unpopular with business. However, the time-limited housing law (prop. 2025/26:215) addresses industry's need for a stable, integratable workforce — V's HD024077 argues the housing limitation reduces integration success, which over time damages labour supply. Consumer-credit reform (HD024088, C) affects the financial services sector directly. **Defence industry** (Saab Linköping ~15k jobs, BAE Karlskoga ~8k jobs) opposes V's HD024091 and will quietly lobby committee MPs. **Transport-sector unions** may publicly split from S on HD024082 — a risk S must pre-empt. `[MEDIUM]`
-
-### 5. Civil Society (🟩 HIGH Salience)
-
-NGOs, church organisations, and refugee-advocacy groups are the strongest supporters of all opposition immigration motions. **Röda Korset**, **Rädda Barnen**, and **Caritas Sverige** have publicly opposed prop. 2025/26:229. Civil-society concerns centre on: (1) private-sector asylum housing (S's HD024080), (2) proportionality in deportation (C's HD024095 / MP's HD024097), and (3) integration investment (S's HD024079). Crime-victim organisations have mixed views on HD024078/84/85 — parent-liability provisions in the crime-victim law create tension with child-protection principles. **Svenska Freds, Diakonia, Amnesty Sverige** form a durable pro-opposition coalition on arms-export motions. `[HIGH]`
-
-### 6. International/EU (🟧 MEDIUM Salience)
-
-Sweden's immigration policy reforms must remain compatible with the **EU Pact on Migration and Asylum** (entered force 2024, phased implementation 2025–2027). **MP's HD024087** explicitly argues the new reception law risks non-compliance with Reg. 2024/1348 Article 17 material-conditions standard. The arms-export motions (HD024091/96) create international friction — **Sweden's NATO partners** (UK, Germany, US) expect continued defence-industry cooperation post-NATO accession. **EU DG CLIMA** is monitoring Swedish fuel-tax policy under Fit-for-55 and ETS II (entering 2027). **ECtHR** remains a durable post-adoption challenge venue on deportation (prop. 2025/26:235). `[MEDIUM]`
-
-### 7. Judiciary/Constitutional (🟧 MEDIUM Salience)
-
-Legal scholars have flagged proportionality concerns in prop. 2025/26:235. **C's HD024095** reflects this — requiring "systematic repeated offenses over time" for deportation aligns with European Court of Human Rights proportionality doctrine and converges with Germany/Netherlands/Denmark/Switzerland statutory practice. **V's total rejection (HD024090)** goes further, arguing the entire law conflicts with ECHR Article 8 (family life). **Lagrådet yttrande** on prop. 2025/26:229 and 2025/26:235 is the single most consequential pending signal — expected Q2 2026. Konstitutionsutskottet (KU) has not published a formal opinion. Administrative Courts (Migrationsdomstolen) will become the main post-adoption venue. `[MEDIUM]`
-
-### 8. Media/Public Opinion (🟩 HIGH Salience)
-
-Swedish media (SVT, DN, Aftonbladet, SvD) will cover the coordinated opposition filing as a major political story. Public polling (Novus Q1 2026) shows immigration as the #1 political concern for Swedish voters in 2025–2026. The "four parties against one law" narrative is highly newsworthy. The fuel-tax story plays differently: tabloid media (Expressen, Aftonbladet) will frame it as "opposition opposes affordable fuel" — a potential negative story for S. Regional/local media (Sveriges Radio Norrbotten, NSD, NT) will cover the Norrland angle on fuel tax. Young-voter media (TikTok, Instagram) favours MP's climate frame. **Press editorial lines** will be split: DN/SvD lean cautiously pro-government; Aftonbladet/ETC lean pro-opposition; Expressen variable. `[HIGH]`
+> Probabilities are **analyst priors**, zero-sum within each branch. They update as Lagrådet yttranden, polling data, and SfU rapporteur reports arrive.
 
 ---
 
-## 🗺️ Opposition Coordination Flowchart
+## 🧭 Section 3 — Scenario Narratives
+
+### 🟢 BASE — "Government Reforms Enacted" (P = 0.45)
+
+**Setup**: SfU/FiU/UU straight-reject opposition motions in May–June; government retains majority in September; all four propositions become law; opposition runs them as 2026–2030 campaign material but cannot reverse them.
+
+**Key forward signals confirming BASE:**
+- Novus lead for M+SD+KD+L remains ≥ 1.5 points from April to September `[HIGH]`
+- SfU rapporteur is M/SD/KD MP (not L) `[HIGH]`
+- Lagrådet yttrande on 2025/26:229 is silent or permissive on privatisation `[MEDIUM]`
+- No major gäng-crime incident that shifts immigration salience further toward government `[MEDIUM]`
+
+**Consequences:**
+- New mottagandelag enters force 2027-01-01 with private-operator clauses
+- Deportation expansion generates first Admin Court challenges by Q2 2027
+- Fuel tax cut produces +0.3–0.5 MtCO₂e/year; Sweden misses 2030 climate target more deeply
+- Arms export framework modernised with no end-user review addition
+- Opposition enters 2027 Riksdag with all four propositions as "what we would repeal"
+
+**Three-year risk profile**:
+- Fiscal: negligible
+- Reputational: moderate (climate, possible ECtHR adverse deportation judgment)
+- Electoral: favourable to government until 2030
+
+### 🔵 BULL — "S-Led Minority, Partial Reception-Law Reversal" (P = 0.22)
+
+**Setup**: Election produces S-led minority with MP support (±V) but not C; reception-law partial reversal via amendment in Q1 2027. Deportation law retained (S silence locks in). Fuel tax cut reversed. Arms export framework unchanged.
+
+**Key forward signals confirming BULL:**
+- S polls gain 3+ points by August 2026 on back of cluster narrative `[MEDIUM]`
+- L defects publicly in committee negotiations on reception law `[LOW]`
+- Ukraine support consensus holds (reduces V's post-election leverage on arms) `[HIGH]`
+- SD loses 2+ polling points (corruption scandal or internal dispute) `[LOW]`
+
+**Consequences:**
+- Private-operator clauses repealed; reception reverts to pre-2027 model but retains activation duties
+- Climate credibility partially restored via fuel-tax reversal
+- Deportation law remains in force (S silence leaves no mandate)
+- MP achieves symbolic but not decisive influence
+
+**Partial victory for opposition narrative**: reception and fuel tax reversed; deportation and arms retained.
+
+### 🔴 BEAR-for-Government — "Full Reversal Package" (P = 0.10)
+
+**Setup**: Election produces S+V+MP+C 175+ majority; full reversal of reception law, fuel tax, and partial reversal of deportation via statutory proportionality test (HD024095 adopted).
+
+**Key forward signals confirming BEAR-for-government:**
+- Gäng crime incident with cross-party condemnation that neutralises SD's immigration-security edge `[LOW]`
+- Tidö coalition L defection during campaign `[LOW]`
+- Major Saab/BAE controversy that shifts arms-export salience `[LOW]`
+- Polling convergence: S+V+MP+C ≥ 49% by August 2026 `[LOW]`
+
+**Consequences:**
+- Reception law repealed; new reception act drafted Q1–Q3 2027
+- Deportation law amended with statutory proportionality test (C's HD024095 language adopted)
+- Arms export framework amended with end-user review (MP's HD024096 language)
+- Fuel tax restored; CO₂-tax indexation introduced
+- Sweden climate 2030 target back within plausible range
+
+**Low-probability but high-impact**: requires simultaneous Tidö collapse and opposition discipline — historically rare.
+
+### ⚡ WILDCARD — "Minority-Government Volatility" (P = 0.05)
+
+**Setup**: Election produces no 175+ majority configuration; months of negotiation; eventual minority government with no clear mandate. Motions cluster becomes **negotiation currency** rather than governing programme.
+
+**Consequences:**
+- Reception law amendments negotiated case-by-case
+- Some opposition motion language absorbed into final amended statutes
+- Political system instability with 1-2 year horizon for re-election
+
+---
+
+## 🧭 Section 4 — Scenario-Specific Intelligence Products to Prepare
+
+| Scenario | Opposition should prepare | Government should prepare | Newsroom should prepare |
+|----------|----------------------------|----------------------------|--------------------------|
+| BASE | 2026–2030 campaign narrative; post-adoption litigation strategy; NGO alliance | Implementation plan; defensive communications | Multi-year implementation tracker |
+| BULL | Reception-law repeal legislation; coalition-agreement provisions | Damage-control communications; alternative legislation | S-leader interview series; legal-analysis series |
+| BEAR | Full reversal legislation; new Reception Act drafting; statutory proportionality text | Post-loss narrative; policy-continuity carve-outs | Election-reversal analysis; comparative restoration precedents |
+| WILDCARD | Amendment-by-amendment playbook | Holding-pattern communications | Minority-government instability explainer |
+
+---
+
+## 🧭 Section 5 — Red-Team Critique
+
+> **Devil's Advocate**: What if the entire cluster is strategically irrelevant?
+
+The Red-Team case against the cluster's political value:
+
+1. **Same-day triple filings may be coincidence** — Riksdag motion cycles drive filing windows; parties respond to same propositions on same schedule without coordination.
+2. **Division-of-labour may be rationalised ex-post** — V/MP/C/S have stable positions; filing together is not design, it's stability.
+3. **Base scenario (P=0.45) implies the cluster buys ~0.5 percentage points of polling benefit at most** — below the 2026 election margin of error.
+4. **S-silence on deportation reveals that opposition unity is rhetorical** — actual coalition behaviour remains fragmented.
+5. **Post-2026 majority scenarios require Tidö collapse (L or KD defection)** — no current evidence of that.
+
+**Red-Team posterior**: If we accept the critique, the cluster's expected value is 0.5–1 percentage points of campaign benefit with high variance. That is still **net positive for the opposition**, but it does not constitute a strategic re-alignment of Swedish politics. The honest reading is that this cluster is **a tactical win** (talking-points) rather than a **strategic win** (coalition-rehearsal).
+
+> **Integration**: This Red-Team critique reduces the BASE scenario's political-consequence magnitude, not its probability. The overall scenario tree remains valid; the expected utility to the opposition shrinks.
+
+---
+
+## 🧭 Section 6 — Bayesian Update Rules
+
+| Observable signal | Prior shift direction | Magnitude |
+|-------------------|-----------------------|-----------|
+| L defection on any motion in SfU | BASE ↓ 0.08, BULL ↑ 0.06 | Medium |
+| Lagrådet yttrande strict on prop. 2025/26:229 privatisation | BASE ↓ 0.05, BULL ↑ 0.05 | Medium |
+| S gains 3+ polling points May–Aug 2026 | BASE ↓ 0.06, BULL ↑ 0.08 | Large |
+| Major gäng-crime incident before election | BASE ↑ 0.08 (government beneficiary) | Large |
+| Saab/BAE controversy | BASE ↓ 0.03, BEAR ↑ 0.02 | Small |
+| Ukraine-war escalation shifting Swedish defence salience | BASE ↑ 0.05 (status-quo preference) | Medium |
+| Klimatpolitiska rådet annual report critical | BASE ↓ 0.02, BULL ↑ 0.02 | Small |
+| Transport union public endorsement of fuel-tax cut | BASE ↑ 0.04 (working-class narrative shift) | Medium |
+| C leader explicit amendment-negotiation overture | V1a ↑ 0.10 | Large |
+| NGO joint press conference on reception law | W1 (V–C incoherence) ↓ 0.04 | Small-medium |
+
+> **Update procedure**: Re-score scenario tree when any of these signals fire. If posteriors shift the BASE/BULL/BEAR ranking, update `synthesis-summary.md` and `executive-brief.md` accordingly.
+
+---
+
+## 🧭 Section 7 — Cross-Cluster Scenario Dependencies
 
 ```mermaid
 flowchart LR
-    subgraph Immigration["🏛️ Immigration Policy Cluster (10 motions · LEAD)"]
-        P229["prop. 2025/26:229<br/>New Reception Law"]
-        P235["prop. 2025/26:235<br/>Stricter Deportation"]
-        P215["prop. 2025/26:215<br/>Time-Limited Housing"]
+    subgraph EarlyNegotiation["Early Negotiation (May-June 2026)"]
+        SfU["SfU votes<br/>(Reception + Deportation + Housing)"]
+        FiU["FiU vote<br/>(Fuel tax)"]
+        UU["UU vote<br/>(Arms export)"]
     end
 
-    subgraph Climate["🌍 Climate/Fiscal Cluster (2-3 motions)"]
-        P236["prop. 2025/26:236<br/>Fuel Tax Cut"]
+    subgraph CampaignPeriod["Campaign Period (Jul-Sep 2026)"]
+        Narratives["Campaign narratives<br/>rolled out by party"]
+        Media["Newsroom coverage<br/>of motions package"]
+        Polling["Polling response<br/>tracked weekly"]
     end
 
-    subgraph Defense["⚔️ Defense/Arms Cluster (2 motions · TERTIARY)"]
-        P228["prop. 2025/26:228<br/>Arms Export Rules"]
+    subgraph PostElection["Post-Election (Oct 2026 - 2027)"]
+        GovFormation["Government formation<br/>negotiations"]
+        Implementation["Implementation<br/>of retained laws"]
+        Reversal["Reversal legislation<br/>(if BULL/BEAR)"]
     end
 
-    subgraph Healthcare["🏥 Healthcare Coalition (3 motions)"]
-        P216["prop. 2025/26:216<br/>Medical Competence"]
-    end
+    SfU --> Narratives
+    FiU --> Narratives
+    UU --> Narratives
+    Narratives --> Media
+    Media --> Polling
+    Polling --> GovFormation
+    GovFormation --> Implementation
+    GovFormation --> Reversal
 
-    S[S · Magdalena Andersson] -->|HD024080 privatisation| P229
-    S -->|HD024079 integration| P215
-    S -->|HD024082 fiscal| P236
-    S -->|HD024081 healthcare| P216
-
-    V[V · Nooshi Dadgostar] -->|HD024076 rejection| P229
-    V -->|HD024077 rejection| P215
-    V -->|HD024090 rejection| P235
-    V -->|HD024091 rejection| P228
-    V -->|HD024083 healthcare| P216
-
-    MP[MP · Janine Alm Ericson] -->|HD024087 EU Pact| P229
-    MP -->|HD024086 humanitarian| P215
-    MP -->|HD024097 preserve| P235
-    MP -->|HD024096 end-user| P228
-    MP -->|HD024098 climate| P236
-
-    C[C · Paarup-Petersen] -->|HD024089 phased| P229
-    C -->|HD024095 proportional| P235
-    C -->|HD024094 healthcare| P216
-
-    style S fill:#ff6b6b,color:#000
-    style V fill:#dc3545,color:#fff
-    style MP fill:#28a745,color:#fff
-    style C fill:#007bff,color:#fff
-    style P229 fill:#ff4757,color:#fff
-    style P235 fill:#ff6b81,color:#fff
-    style P215 fill:#ffa94d,color:#000
-    style P236 fill:#ffc107,color:#000
-    style P228 fill:#6f42c1,color:#fff
-    style P216 fill:#17a2b8,color:#fff
+    style SfU fill:#FFC107,color:#000
+    style FiU fill:#FFC107,color:#000
+    style UU fill:#FFC107,color:#000
+    style GovFormation fill:#7B1FA2,color:#FFF
+    style Implementation fill:#1565C0,color:#FFF
+    style Reversal fill:#4CAF50,color:#FFF
 ```
+
+---
+
+## 🧭 Section 8 — Analyst Confidence Self-Assessment
+
+| Dimension | Confidence | Basis |
+|-----------|:----------:|-------|
+| H2 (campaign-narrative) as dominant hypothesis | 🟩 HIGH | Fits evidence pattern; disconfirms available for H1/H3 |
+| BASE scenario probability (0.45) | 🟩 HIGH | Polling stable; no Tidö-collapse signals |
+| BULL scenario probability (0.22) | 🟧 MEDIUM | S-led minority is plausible but requires favourable polling swings |
+| BEAR scenario probability (0.10) | 🟧 MEDIUM | Historically rare; requires Tidö collapse + opposition unity |
+| WILDCARD probability (0.05) | 🟧 MEDIUM | Minority-gov volatility possible but 2022 showed parliament can resolve |
+| Red-Team posterior (cluster value is tactical not strategic) | 🟧 MEDIUM | Compelling counter-case but not decisive |
+| Bayesian update magnitudes | 🟧 MEDIUM | Calibrated on historical analogues, but Swedish politics idiosyncratic |
 
 ---
 
 ## 📎 Cross-References
 
-- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/synthesis-summary.md) — LEAD finding + ACH + Red-Team
-- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/reception-law-cluster-analysis.md) — LEAD cluster SWOT
-- [`documents/deportation-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/deportation-cluster-analysis.md) — 3-party triangulation SWOT
-- [`documents/fuel-tax-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/fuel-tax-cluster-analysis.md) — climate-fiscal cluster SWOT
-- [`documents/arms-export-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/arms-export-cluster-analysis.md) — post-NATO cluster SWOT
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/risk-assessment.md) — Bayesian risk priors
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/threat-analysis.md) — Attack-tree derived from WT1/WT2/WT3
+- `synthesis-summary.md` — LEAD story selection and findings
+- `executive-brief.md` — 14-day watch window
+- `risk-assessment.md` — scenario-linked risks
+- `significance-scoring.md` — DIW weighting methodology
+- `comparative-international.md` — international-precedent informed scenarios
+- `documents/reception-law-cluster-analysis.md` — cluster-specific scenario dependencies
+- `documents/deportation-cluster-analysis.md` — ECHR-litigation scenario branch
+- `documents/fuel-tax-cluster-analysis.md` — climate-policy scenario branch
+- `documents/arms-export-cluster-analysis.md` — defence-policy signalling scenario
 
 ---
 
@@ -1409,6 +1475,234 @@ quadrantChart
 - [`documents/deportation-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/deportation-cluster-analysis.md) — DR1–DR6
 - [`documents/fuel-tax-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/fuel-tax-cluster-analysis.md) — FR1–FR5
 - [`documents/arms-export-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/arms-export-cluster-analysis.md) — AR1–AR6
+
+---
+
+**Classification**: Public · **Next Review**: 2026-04-27
+
+## SWOT Analysis
+
+_Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/swot-analysis.md)_
+
+| Field | Value |
+|-------|-------|
+| **Date** | 2026-04-20 |
+| **Riksmöte** | 2025/26 |
+| **Analyst** | news-motions workflow |
+| **Analysis Timestamp** | 2026-04-20 13:04 UTC |
+| **Framework** | Political SWOT v2.2 + **TOWS interference matrix** |
+| **Stakeholder Coverage** | All 8 mandatory groups + 4-cluster drill-down |
+
+---
+
+## 🔬 Multi-Stakeholder SWOT Framework
+
+The 21 opposition motions filed April 14–17, 2026 reveal a unified opposition counter-strategy against the government's spring legislative package. Analysis below covers:
+1. **Cluster-level SWOT** for the LEAD immigration cluster (primary focus)
+2. **Cross-cluster aggregate SWOT** across all four thematic clusters
+3. **TOWS interference matrix** — cross-quadrant strategy derivation
+4. All 8 mandatory stakeholder groups
+
+---
+
+## ⚡ SWOT: Immigration Policy Cluster (LEAD — DIW 9.4)
+
+### Strengths of Opposition Motions
+
+| # | Statement | Evidence (dok_id) | Conf. | Impact | Entry |
+|:-:|-----------|-------------------|:-----:|:------:|:-----:|
+| **S1** | Quadruple-party coordination on New Reception Law signals disciplined opposition front | HD024076 (V), HD024080 (S), HD024087 (MP), HD024089 (C) — all within 72 h of prop. 2025/26:229 | 🟩 HIGH | CRITICAL | 2026-04-15 |
+| **S2** | S's counter-motion on reception law targets private-sector asylum housing — protects vulnerable people and creates positive electoral narrative | HD024080: "asylboenden ska inte kunna överlåtas i privat drift" — clear anti-privatization platform | 🟩 HIGH | HIGH | 2026-04-15 |
+| **S3** | C takes moderate position on deportation — requires proportionality (systematic repeated offenses) — converges with European statutory mainstream | HD024095 — aligned with Germany AufenthG §53, Netherlands "glijdende schaal", Denmark Udlændingeloven §26 | 🟩 HIGH | HIGH | 2026-04-16 |
+| **S4** | MP's comprehensive rejection of deportation law challenges constitutional proportionality principle; ECHR Art. 8 alignment | HD024097 — preserves partial law (8 kap. 1-3 §) while rejecting coercive expansion | 🟧 MEDIUM | HIGH | 2026-04-16 |
+| **S5** | V's total-rejection strategy provides left-flank anchor for opposition messaging | HD024090 — outright rejection of entire prop. 2025/26:235 | 🟩 HIGH | MEDIUM | 2026-04-16 |
+| **S6** | S's challenge to time-limited immigrant housing frames integration as economic investment, not welfare | HD024079 — Ardalan Shekarabi requests government return with new housing proposals | 🟧 MEDIUM | HIGH | 2026-04-15 |
+| **S7** | MP's EU Pact compatibility frame (HD024087) gives cluster international-legitimacy authority | HD024087 cites EU Reg. 2024/1348 Art. 17 material-conditions standard | 🟩 HIGH | MEDIUM | 2026-04-15 |
+| **S8** | Division-of-labour frames cover all major voter segments (left / welfare / international / pragmatist) | Rhetoric-axis analysis across HD024076/80/87/89 | 🟩 HIGH | HIGH | 2026-04-15 |
+
+### Weaknesses of Opposition Motions
+
+| # | Statement | Evidence | Conf. | Impact | Entry |
+|:-:|-----------|----------|:-----:|:------:|:-----:|
+| **W1** | S's positions on immigration are internally contradictory — party supported stricter policies 2022–2024, now opposes them | S filed HD024080 but governed with stricter policy 2014-2022 | 🟩 HIGH | HIGH | 2026-04-15 |
+| **W2** | Four-party coordination masks substantive incompatibility — V's rejection (HD024090) and C's amendment (HD024095) cannot co-govern | Motion-text comparison V vs C on same proposition | 🟧 MEDIUM | HIGH | 2026-04-16 |
+| **W3** | V and MP arms-export motions put them at odds with post-NATO consensus | HD024091/96 vs 58/32/10 SOM arms-export support (2025) | 🟩 HIGH | HIGH | 2026-04-16 |
+| **W4** | MP's across-the-board rejection strategy (4 total rejections) risks being seen as obstructionist | HD024087, HD024097, HD024096, HD024098 — all outright rejections | 🟧 MEDIUM | MEDIUM | 2026-04-15 |
+| **W5** | **S-silence on deportation** (HD024090/95/97 cluster) reveals S has calculated deportation is a losing issue for centre-left | S filed no motion on prop. 2025/26:235; filed on every other cluster | 🟩 HIGH | HIGH | 2026-04-16 |
+| **W6** | No joint press conference or coalition statement; coordination is visible but unclaimed | Absence of joint presser from S, V, MP, C | 🟧 MEDIUM | MEDIUM | 2026-04-15 |
+| **W7** | V's consistent-rejection pattern across immigration + arms creates "universal rejectionist" frame vulnerability | HD024076 + HD024090 + HD024091 all rejection-structured | 🟩 HIGH | HIGH | 2026-04-16 |
+
+### Opportunities Created by These Motions
+
+| # | Statement | Evidence | Conf. | Impact | Entry |
+|:-:|-----------|----------|:-----:|:------:|:-----:|
+| **O1** | Immigration becomes defining election issue — opposition can build 2026 campaign around "humane alternative" | 10 of 21 motions (48%) target immigration | 🟩 HIGH | CRITICAL | 2026-04-15 |
+| **O2** | Fuel-tax opposition (HD024082/98) gives S+MP ownership of climate narrative | Sweden GDP 0.82% 2024, unemployment 8.69% 2025 — economic alternative story | 🟩 HIGH | HIGH | 2026-04-15 |
+| **O3** | Healthcare motions (HD024081/83/94) create unusual S+V+C coalition signalling post-2026 cooperation potential | Three ideologically diverse parties on healthcare governance | 🟧 MEDIUM | MEDIUM | 2026-04-15 |
+| **O4** | Riksrevisionen report on Sida enables MP+C to demand accountability on government aid effectiveness | HD024072/70 — adds "good governance" credibility | 🟧 MEDIUM | LOW | 2026-04-08 |
+| **O5** | C's proportionality frame on deportation may attract L backbench sympathy; splits Tidö | L rule-of-law sensitivity + comparative statutory-test alignment | 🟧 MEDIUM | MEDIUM | 2026-04-16 |
+| **O6** | Post-adoption ECtHR litigation on deportation creates multi-year reputational drag on government | Swedish ECHR adverse-judgment track record | 🟧 MEDIUM | MEDIUM | 2026-04-16 |
+| **O7** | MP's end-user review language on arms (HD024096) aligns with Norwegian/Dutch/German practice — standard-setting | Comparative analysis §4 | 🟧 MEDIUM | LOW | 2026-04-16 |
+
+### Threats to Opposition Strategy
+
+| # | Statement | Evidence | Conf. | Impact | Entry |
+|:-:|-----------|----------|:-----:|:------:|:-----:|
+| **T1** | Government M/SD/KD/L majority will pass all four propositions; opposition risks credibility | prop. 2025/26:229/235/215/236/228 all have coalition support | 🟩 HIGH | HIGH | 2026-04-15 |
+| **T2** | S's opposition to fuel-tax cut may alienate working-class rural voters who benefit | HD024082 vs Norrland S vote 2022 baseline | 🟧 MEDIUM | HIGH | 2026-04-15 |
+| **T3** | Arms-export opposition (V+MP) conflicts with Swedish post-NATO security doctrine | HD024091/96 vs 58% public support continued exports | 🟩 HIGH | MEDIUM | 2026-04-16 |
+| **T4** | Coordinated opposition risks being framed as "obstructionism" on security-critical reforms | Simultaneous rejection on deportation/reception/housing/arms | 🟧 MEDIUM | MEDIUM | 2026-04-16 |
+| **T5** | SD attack ads weaponise V's consistent-rejection pattern as "defends criminals / unreliable on Ukraine" | V's HD024090 + HD024091 joint attack surface | 🟩 HIGH | HIGH | 2026-04-16 |
+| **T6** | 62% voter support for stricter immigration sets a polling floor opposition cannot breach | Novus Q1 2026 migration salience | 🟩 HIGH | HIGH | 2026-04-15 |
+| **T7** | Extra-budget fast-track procedure on fuel tax compresses opposition narrative-building window to ≤ 4 weeks | FiU extra-budget timetable | 🟧 MEDIUM | MEDIUM | 2026-04-15 |
+
+---
+
+## 🎯 TOWS Interference Matrix — Cross-Quadrant Strategy Derivation
+
+The TOWS matrix multiplies SWOT quadrants to surface non-obvious strategic moves. Below: the **≥3-entry interference cells** with strategic impact on the April 2026 opposition campaign.
+
+### SO (Strengths × Opportunities) — Offensive Moves
+
+| # | Interference | Strategy |
+|:-:|--------------|----------|
+| **SO1** | **S1 (4-party coordination) × O1 (election definition)** | **Sustain coordinated-opposition narrative through summer** with sequential follow-on motions and media events designed to prevent government from reclaiming the agenda |
+| **SO2** | **S3 (C moderate/statutory) × O5 (L backbench)** | **Target L MPs** (Johan Pehrson, Sofia Zettergren) via C's amendment frame; L's historical rule-of-law sensitivity + statutory-test comparative alignment creates narrow negotiation window |
+| **SO3** | **S2 (S anti-privatisation) × O2 (climate narrative)** | **Link housing-privatisation to fuel-tax private-benefit** as "government prioritises private interests over public goods" unified frame |
+| **SO4** | **S7 (MP EU Pact compatibility) × O6 (ECtHR litigation)** | **Pre-stage EU Commission remissvar + Strasbourg litigation path**; MP's HD024087 text is usable as precedent for post-adoption legal challenge |
+
+### ST (Strengths × Threats) — Defensive Hardening
+
+| # | Interference | Strategy |
+|:-:|--------------|----------|
+| **ST1** | **S3 (C proportionality, European mainstream) × T4 (obstructionism frame)** | **Publish comparative-international analysis** showing C's amendment converges with Germany, Netherlands, Denmark — neutralises obstructionism charge |
+| **ST2** | **S1 (4-party coordination) × T1 (government majority passes)** | **Coordinate SfU vote sequencing** — amendment first, then rejection — to prevent "disarray" framing at chamber vote |
+| **ST3** | **S2 (S anti-privatisation) × T2 (rural-voter alienation)** | **Front Norrland-anchored S MPs** (Joakim Järrebring, Fredrik Lundh Sammeli) in media appearances on welfare-state framing |
+
+### WO (Weaknesses × Opportunities) — Strategic Pivots Required
+
+| # | Interference | Strategy |
+|:-:|--------------|----------|
+| **WO1** | **W1 (S 2015–2022 legacy) × O1 (election definition)** | **S must own the 2015 pivot publicly** — frame HD024080 as "learning from experience" to neutralise legacy-credibility gap |
+| **WO2** | **W5 (S-silence on deportation) × O3 (S+V+C healthcare coalition)** | **S should use healthcare coalition as broader S+V+C rehearsal template**; deportation-silence fragments the left only if not compensated by other coordination evidence |
+| **WO3** | **W2 (V–C incompatibility) × O5 (L backbench)** | **Stage-manage SfU voting**: C's amendment goes first; if passed, C-V-MP-S-L vote together on amended law; if failed, they unify on rejection. Avoid simultaneous V-reject + C-amend vote |
+
+### WT (Weaknesses × Threats) — 🔴 Critical Strategic Vulnerabilities
+
+| # | Interference | Strategy |
+|:-:|--------------|----------|
+| **WT1** | **W7 (V universal-rejectionist pattern) × T5 (SD attack ads)** | **🔴 CRITICAL**: V must pair every rejection with concrete alternative (border-capacity investment, Ukraine-lethal-aid affirmation). V's HD024076/90/91 texts currently lead with rejection-framing — tactical error. SD ad cycle can cost V 1–2 polling points. |
+| **WT2** | **W2 (V–C incompatibility) × T1 (majority passes)** | **🔴 CRITICAL**: If government forces a vote where V and C oppose for opposite reasons, media reports "opposition in disarray" and cluster narrative collapses. See WO3 mitigation. |
+| **WT3** | **W5 (S-silence on deportation) × T6 (polling floor)** | **🔴 CRITICAL**: S's revealed preference (deportation = losing issue) means the opposition **cannot** form a unified pre-election deportation narrative. Each party must run its deportation position separately — no joint framing possible. |
+| **WT4** | **W6 (no joint press) × T4 (obstructionism frame)** | Unclaimed coordination invites hostile reframing. Weighted decision: a joint press risks "coalition of chaos" framing but absence of it concedes the obstructionism narrative. **Recommendation**: coordinated op-eds by four party leaders on same day (April 27 target) without joint photo-op. |
+| **WT5** | **W7 (V rejectionism) × T3 (post-NATO doctrine)** | V's HD024091 risks framing V as "unreliable NATO partner". V must explicitly affirm Ukraine support in motion supplementary statements. |
+
+> **Strategic centre of gravity `[HIGH]`**: **WT1** (V universal rejectionism × SD attack ads) and **WT2** (V–C incompatibility × government majority) are the **two critical vulnerabilities** that could collapse the cluster's campaign value. **WO3** is the essential mitigation: disciplined SfU vote sequencing.
+
+---
+
+## 👥 8-Stakeholder Perspective Matrix
+
+### 1. Citizens (🟧 MEDIUM Salience)
+
+Swedish citizens experience immigration policy directly through social services, housing markets, and labour competition. With unemployment at 8.69% in 2025 (up from 8.4% in 2024), citizens in lower-income brackets are receptive to government arguments about limiting new arrivals. However, **S's HD024080** appeals to citizens concerned about privatisation of asylum services — a proxy for welfare-state protection values that resonate with S's base. The fuel-tax opposition (HD024082/98) speaks directly to household budgets but risks appearing out-of-touch with rural drivers. A **divided citizenry** is the realistic baseline — the opposition's job is to move ~3-5% swing voters, not to flip majority opinion. `[MEDIUM]`
+
+### 2. Government Coalition (M/SD/KD/L) (🟩 HIGH Salience)
+
+The governing coalition views these counter-motions as expected partisan opposition. For **Tidö-agreement** parties, the immigration cluster validates their legislative agenda. The sheer number of counter-motions (10/21 on immigration) **confirms the opposition's strategy** and allows the government to campaign on "defending Sweden's security" against a unified left-green-centre bloc. **L is the weak link**: Johan Pehrson's historical rule-of-law sensitivity and the comparative evidence backing C's HD024095 proportionality test create a narrow fault line. The fuel-tax counter-motions create a secondary vulnerability — the government must justify why a climate-ambivalent tax cut is in Sweden's interest. `[HIGH]`
+
+### 3. Opposition Bloc (S/V/MP/C) (🟩 HIGH Salience)
+
+This batch represents the most coordinated opposition filing in the current riksmöte. **Socialdemokraterna (S)** under party leader Magdalena Andersson is pursuing a "responsible opposition" strategy — accepting some security reforms while drawing clear lines on welfare-state privatisation (HD024080) and integration investment (HD024079). The **S-silence on deportation** is strategic, not accidental. **Vänsterpartiet (V)** under Nooshi Dadgostar maintains a principled rejection stance on all immigration tightening but risks the universal-rejectionist framing. **Miljöpartiet (MP)** under Janine Alm Ericson leads on climate issues (HD024098) and humanitarian concerns. **Centerpartiet (C)** occupies the critical swing position — accepting some deportation reform but demanding proportionality (HD024095); C is the most politically interesting actor in this wave because its amendment posture is the bridge between opposition messaging and European mainstream practice. `[HIGH]`
+
+### 4. Business/Industry (🟧 MEDIUM Salience)
+
+Swedish industry faces contradictory pressures. The fuel-tax cut (prop. 2025/26:236) benefits transport-dependent industries — making S's HD024082 unpopular with business. However, the time-limited housing law (prop. 2025/26:215) addresses industry's need for a stable, integratable workforce — V's HD024077 argues the housing limitation reduces integration success, which over time damages labour supply. Consumer-credit reform (HD024088, C) affects the financial services sector directly. **Defence industry** (Saab Linköping ~15k jobs, BAE Karlskoga ~8k jobs) opposes V's HD024091 and will quietly lobby committee MPs. **Transport-sector unions** may publicly split from S on HD024082 — a risk S must pre-empt. `[MEDIUM]`
+
+### 5. Civil Society (🟩 HIGH Salience)
+
+NGOs, church organisations, and refugee-advocacy groups are the strongest supporters of all opposition immigration motions. **Röda Korset**, **Rädda Barnen**, and **Caritas Sverige** have publicly opposed prop. 2025/26:229. Civil-society concerns centre on: (1) private-sector asylum housing (S's HD024080), (2) proportionality in deportation (C's HD024095 / MP's HD024097), and (3) integration investment (S's HD024079). Crime-victim organisations have mixed views on HD024078/84/85 — parent-liability provisions in the crime-victim law create tension with child-protection principles. **Svenska Freds, Diakonia, Amnesty Sverige** form a durable pro-opposition coalition on arms-export motions. `[HIGH]`
+
+### 6. International/EU (🟧 MEDIUM Salience)
+
+Sweden's immigration policy reforms must remain compatible with the **EU Pact on Migration and Asylum** (entered force 2024, phased implementation 2025–2027). **MP's HD024087** explicitly argues the new reception law risks non-compliance with Reg. 2024/1348 Article 17 material-conditions standard. The arms-export motions (HD024091/96) create international friction — **Sweden's NATO partners** (UK, Germany, US) expect continued defence-industry cooperation post-NATO accession. **EU DG CLIMA** is monitoring Swedish fuel-tax policy under Fit-for-55 and ETS II (entering 2027). **ECtHR** remains a durable post-adoption challenge venue on deportation (prop. 2025/26:235). `[MEDIUM]`
+
+### 7. Judiciary/Constitutional (🟧 MEDIUM Salience)
+
+Legal scholars have flagged proportionality concerns in prop. 2025/26:235. **C's HD024095** reflects this — requiring "systematic repeated offenses over time" for deportation aligns with European Court of Human Rights proportionality doctrine and converges with Germany/Netherlands/Denmark/Switzerland statutory practice. **V's total rejection (HD024090)** goes further, arguing the entire law conflicts with ECHR Article 8 (family life). **Lagrådet yttrande** on prop. 2025/26:229 and 2025/26:235 is the single most consequential pending signal — expected Q2 2026. Konstitutionsutskottet (KU) has not published a formal opinion. Administrative Courts (Migrationsdomstolen) will become the main post-adoption venue. `[MEDIUM]`
+
+### 8. Media/Public Opinion (🟩 HIGH Salience)
+
+Swedish media (SVT, DN, Aftonbladet, SvD) will cover the coordinated opposition filing as a major political story. Public polling (Novus Q1 2026) shows immigration as the #1 political concern for Swedish voters in 2025–2026. The "four parties against one law" narrative is highly newsworthy. The fuel-tax story plays differently: tabloid media (Expressen, Aftonbladet) will frame it as "opposition opposes affordable fuel" — a potential negative story for S. Regional/local media (Sveriges Radio Norrbotten, NSD, NT) will cover the Norrland angle on fuel tax. Young-voter media (TikTok, Instagram) favours MP's climate frame. **Press editorial lines** will be split: DN/SvD lean cautiously pro-government; Aftonbladet/ETC lean pro-opposition; Expressen variable. `[HIGH]`
+
+---
+
+## 🗺️ Opposition Coordination Flowchart
+
+```mermaid
+flowchart LR
+    subgraph Immigration["🏛️ Immigration Policy Cluster (10 motions · LEAD)"]
+        P229["prop. 2025/26:229<br/>New Reception Law"]
+        P235["prop. 2025/26:235<br/>Stricter Deportation"]
+        P215["prop. 2025/26:215<br/>Time-Limited Housing"]
+    end
+
+    subgraph Climate["🌍 Climate/Fiscal Cluster (2-3 motions)"]
+        P236["prop. 2025/26:236<br/>Fuel Tax Cut"]
+    end
+
+    subgraph Defense["⚔️ Defense/Arms Cluster (2 motions · TERTIARY)"]
+        P228["prop. 2025/26:228<br/>Arms Export Rules"]
+    end
+
+    subgraph Healthcare["🏥 Healthcare Coalition (3 motions)"]
+        P216["prop. 2025/26:216<br/>Medical Competence"]
+    end
+
+    S[S · Magdalena Andersson] -->|HD024080 privatisation| P229
+    S -->|HD024079 integration| P215
+    S -->|HD024082 fiscal| P236
+    S -->|HD024081 healthcare| P216
+
+    V[V · Nooshi Dadgostar] -->|HD024076 rejection| P229
+    V -->|HD024077 rejection| P215
+    V -->|HD024090 rejection| P235
+    V -->|HD024091 rejection| P228
+    V -->|HD024083 healthcare| P216
+
+    MP[MP · Janine Alm Ericson] -->|HD024087 EU Pact| P229
+    MP -->|HD024086 humanitarian| P215
+    MP -->|HD024097 preserve| P235
+    MP -->|HD024096 end-user| P228
+    MP -->|HD024098 climate| P236
+
+    C[C · Paarup-Petersen] -->|HD024089 phased| P229
+    C -->|HD024095 proportional| P235
+    C -->|HD024094 healthcare| P216
+
+    style S fill:#ff6b6b,color:#000
+    style V fill:#dc3545,color:#fff
+    style MP fill:#28a745,color:#fff
+    style C fill:#007bff,color:#fff
+    style P229 fill:#ff4757,color:#fff
+    style P235 fill:#ff6b81,color:#fff
+    style P215 fill:#ffa94d,color:#000
+    style P236 fill:#ffc107,color:#000
+    style P228 fill:#6f42c1,color:#fff
+    style P216 fill:#17a2b8,color:#fff
+```
+
+---
+
+## 📎 Cross-References
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/synthesis-summary.md) — LEAD finding + ACH + Red-Team
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/reception-law-cluster-analysis.md) — LEAD cluster SWOT
+- [`documents/deportation-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/deportation-cluster-analysis.md) — 3-party triangulation SWOT
+- [`documents/fuel-tax-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/fuel-tax-cluster-analysis.md) — climate-fiscal cluster SWOT
+- [`documents/arms-export-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/arms-export-cluster-analysis.md) — post-NATO cluster SWOT
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/risk-assessment.md) — Bayesian risk priors
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/threat-analysis.md) — Attack-tree derived from WT1/WT2/WT3
 
 ---
 
@@ -2571,287 +2865,6 @@ flowchart LR
 - ✅ L1: Identity table · 2-paragraph significance · SWOT table · stakeholder rows ≥5 · evidence table · cross-references
 - ✅ L2: Color-coded SWOT-adjacent Mermaid · named-actor stakeholder table ≥10 (16 named) · indicator library with triggers/owners/dates · implementation-risk table
 - ✅ L2+: TOWS interference highlights · 6-lens analysis (rhetorical / strategic / electoral / legal / coalition / international) · 20+ named actors · precedent/international benchmark · forward scenarios with priors
-
-**Classification**: Public · **Next Review**: 2026-04-27
-
-## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/scenario-analysis.md)_
-
-| Field | Value |
-|-------|-------|
-| **SCN-ID** | SCN-2026-04-20-motions |
-| **Framework** | Alternative-futures analysis (ACH-informed) + Bayesian scenario weighting |
-| **Horizon** | Short (Q2 2026 — SfU/FiU/UU votes) · Medium (pre-election autumn 2026) · Long (post-election government formation 2026–2028) |
-| **Methodology** | ACH on three competing hypotheses; scenario-tree with analyst priors |
-| **Priors provenance** | Novus Q1 2026 polling · SOM-institutet 2025 · Historical coalition-formation patterns 1991–2022 |
-
-> **Purpose**: Structured alternative-futures reasoning to stress-test the dominant narrative ("opposition coordination builds toward 2026 electoral gain"), surface wildcards, and assign prior probabilities that can be updated as forward indicators fire.
-
----
-
-## 🧭 Section 1 — ACH: Three Competing Hypotheses
-
-Applied to the central question: *What is the strategic logic of the April 14–17 opposition-motion wave?*
-
-| H | Hypothesis | Supporting evidence | Disconfirming evidence | Prior P |
-|:-:|------------|---------------------|------------------------|:-------:|
-| **H1** | **Coalition rehearsal** — parties testing a post-2026 S+V+MP+C majority scenario on substantive policy | Unprecedented 4-party filing on prop. 2025/26:229; same-day triple filings on prop. 2025/26:215/235; cross-pressure coordination | S absent on deportation (HD024095 cluster); V–C rhetorical incompatibility on reception law | **0.35** |
-| **H2** | **Campaign-narrative construction** — parties building durable 2026 talking points, not governing preparation | Clustered messages on immigration + climate (twin pillars); each party front a distinct voter segment; no joint press conference | H1 evidence partially duplicates; some evidence ambiguous | **0.50** |
-| **H3** | **Opportunistic signalling** — parties reacting independently to government legislative velocity rather than coordinating | Chatham-House-style asymmetry (party leaders do not appear together); S-silence on deportation suggests individual calculation | Same-day triple filings are hard to explain opportunistically; content-overlap suggests coordination | **0.15** |
-
-**ACH verdict `[HIGH]`**: H2 (campaign-narrative construction) has the highest posterior probability. It fits the division-of-labour pattern, survives the S-silence evidence (S calculated separately per cluster), and does not require overhypothesising coordination capacity.
-
-> **Implication**: The opposition's goal is not to prepare for government (too early, polls insufficient) but to **lock in 2026 campaign narratives** before the Riksdag recesses in summer 2026. Motions function as **timestamped talking points** that survive the summer silence.
-
----
-
-## 🧭 Section 2 — Master Scenario Tree (Short → Medium → Long)
-
-```mermaid
-flowchart TD
-    T0["🟡 Now<br/>2026-04-20<br/>Cluster filed"]
-
-    V1["⚖️ SfU/FiU/UU votes<br/>May–June 2026"]
-    V1a["🟢 Amendments<br/>(C's HD024095 partial)<br/>P = 0.20"]
-    V1b["🔵 Straight rejection<br/>of all motions<br/>P = 0.60"]
-    V1c["🟠 Committee compromise<br/>(minor changes)<br/>P = 0.20"]
-
-    L["📅 Summer recess<br/>Jul–Sep 2026"]
-    E["🗳️ Election<br/>2026-09-13"]
-    E1["M-KD-L+SD retained<br/>P = 0.50"]
-    E2["S-led minority<br/>(S+MP or S+V+MP)<br/>P = 0.33"]
-    E3["S+V+MP+C majority<br/>P = 0.12"]
-    E4["Inconclusive / new election<br/>P = 0.05"]
-
-    T0 --> V1
-    V1 --> V1a
-    V1 --> V1b
-    V1 --> V1c
-
-    V1a --> L
-    V1b --> L
-    V1c --> L
-
-    L --> E
-    E --> E1
-    E --> E2
-    E --> E3
-    E --> E4
-
-    E1 --> BASE["🟢 BASE<br/>Reforms enacted as filed<br/>P = 0.45"]
-    E2 --> BULL["🔵 BULL<br/>Partial reversal of reception law<br/>P = 0.22"]
-    E3 --> BEAR["🔴 BEAR-for-government<br/>Full reversal package<br/>P = 0.10"]
-    E4 --> WILD1["⚡ WILDCARD<br/>Minority-gov volatility<br/>P = 0.05"]
-
-    V1b --> CYCLE["🔄 Campaign cycle<br/>HD motions become<br/>campaign ads"]
-
-    style T0 fill:#FFC107,color:#000000
-    style V1a fill:#4CAF50,color:#FFFFFF
-    style V1b fill:#1565C0,color:#FFFFFF
-    style V1c fill:#FF9800,color:#FFFFFF
-    style E1 fill:#1e3a8a,color:#FFFFFF
-    style E2 fill:#7B1FA2,color:#FFFFFF
-    style E3 fill:#D32F2F,color:#FFFFFF
-    style E4 fill:#424242,color:#FFFFFF
-    style BASE fill:#4CAF50,color:#FFFFFF
-    style BULL fill:#1565C0,color:#FFFFFF
-    style BEAR fill:#D32F2F,color:#FFFFFF
-    style WILD1 fill:#FF9800,color:#FFFFFF
-```
-
-> Probabilities are **analyst priors**, zero-sum within each branch. They update as Lagrådet yttranden, polling data, and SfU rapporteur reports arrive.
-
----
-
-## 🧭 Section 3 — Scenario Narratives
-
-### 🟢 BASE — "Government Reforms Enacted" (P = 0.45)
-
-**Setup**: SfU/FiU/UU straight-reject opposition motions in May–June; government retains majority in September; all four propositions become law; opposition runs them as 2026–2030 campaign material but cannot reverse them.
-
-**Key forward signals confirming BASE:**
-- Novus lead for M+SD+KD+L remains ≥ 1.5 points from April to September `[HIGH]`
-- SfU rapporteur is M/SD/KD MP (not L) `[HIGH]`
-- Lagrådet yttrande on 2025/26:229 is silent or permissive on privatisation `[MEDIUM]`
-- No major gäng-crime incident that shifts immigration salience further toward government `[MEDIUM]`
-
-**Consequences:**
-- New mottagandelag enters force 2027-01-01 with private-operator clauses
-- Deportation expansion generates first Admin Court challenges by Q2 2027
-- Fuel tax cut produces +0.3–0.5 MtCO₂e/year; Sweden misses 2030 climate target more deeply
-- Arms export framework modernised with no end-user review addition
-- Opposition enters 2027 Riksdag with all four propositions as "what we would repeal"
-
-**Three-year risk profile**:
-- Fiscal: negligible
-- Reputational: moderate (climate, possible ECtHR adverse deportation judgment)
-- Electoral: favourable to government until 2030
-
-### 🔵 BULL — "S-Led Minority, Partial Reception-Law Reversal" (P = 0.22)
-
-**Setup**: Election produces S-led minority with MP support (±V) but not C; reception-law partial reversal via amendment in Q1 2027. Deportation law retained (S silence locks in). Fuel tax cut reversed. Arms export framework unchanged.
-
-**Key forward signals confirming BULL:**
-- S polls gain 3+ points by August 2026 on back of cluster narrative `[MEDIUM]`
-- L defects publicly in committee negotiations on reception law `[LOW]`
-- Ukraine support consensus holds (reduces V's post-election leverage on arms) `[HIGH]`
-- SD loses 2+ polling points (corruption scandal or internal dispute) `[LOW]`
-
-**Consequences:**
-- Private-operator clauses repealed; reception reverts to pre-2027 model but retains activation duties
-- Climate credibility partially restored via fuel-tax reversal
-- Deportation law remains in force (S silence leaves no mandate)
-- MP achieves symbolic but not decisive influence
-
-**Partial victory for opposition narrative**: reception and fuel tax reversed; deportation and arms retained.
-
-### 🔴 BEAR-for-Government — "Full Reversal Package" (P = 0.10)
-
-**Setup**: Election produces S+V+MP+C 175+ majority; full reversal of reception law, fuel tax, and partial reversal of deportation via statutory proportionality test (HD024095 adopted).
-
-**Key forward signals confirming BEAR-for-government:**
-- Gäng crime incident with cross-party condemnation that neutralises SD's immigration-security edge `[LOW]`
-- Tidö coalition L defection during campaign `[LOW]`
-- Major Saab/BAE controversy that shifts arms-export salience `[LOW]`
-- Polling convergence: S+V+MP+C ≥ 49% by August 2026 `[LOW]`
-
-**Consequences:**
-- Reception law repealed; new reception act drafted Q1–Q3 2027
-- Deportation law amended with statutory proportionality test (C's HD024095 language adopted)
-- Arms export framework amended with end-user review (MP's HD024096 language)
-- Fuel tax restored; CO₂-tax indexation introduced
-- Sweden climate 2030 target back within plausible range
-
-**Low-probability but high-impact**: requires simultaneous Tidö collapse and opposition discipline — historically rare.
-
-### ⚡ WILDCARD — "Minority-Government Volatility" (P = 0.05)
-
-**Setup**: Election produces no 175+ majority configuration; months of negotiation; eventual minority government with no clear mandate. Motions cluster becomes **negotiation currency** rather than governing programme.
-
-**Consequences:**
-- Reception law amendments negotiated case-by-case
-- Some opposition motion language absorbed into final amended statutes
-- Political system instability with 1-2 year horizon for re-election
-
----
-
-## 🧭 Section 4 — Scenario-Specific Intelligence Products to Prepare
-
-| Scenario | Opposition should prepare | Government should prepare | Newsroom should prepare |
-|----------|----------------------------|----------------------------|--------------------------|
-| BASE | 2026–2030 campaign narrative; post-adoption litigation strategy; NGO alliance | Implementation plan; defensive communications | Multi-year implementation tracker |
-| BULL | Reception-law repeal legislation; coalition-agreement provisions | Damage-control communications; alternative legislation | S-leader interview series; legal-analysis series |
-| BEAR | Full reversal legislation; new Reception Act drafting; statutory proportionality text | Post-loss narrative; policy-continuity carve-outs | Election-reversal analysis; comparative restoration precedents |
-| WILDCARD | Amendment-by-amendment playbook | Holding-pattern communications | Minority-government instability explainer |
-
----
-
-## 🧭 Section 5 — Red-Team Critique
-
-> **Devil's Advocate**: What if the entire cluster is strategically irrelevant?
-
-The Red-Team case against the cluster's political value:
-
-1. **Same-day triple filings may be coincidence** — Riksdag motion cycles drive filing windows; parties respond to same propositions on same schedule without coordination.
-2. **Division-of-labour may be rationalised ex-post** — V/MP/C/S have stable positions; filing together is not design, it's stability.
-3. **Base scenario (P=0.45) implies the cluster buys ~0.5 percentage points of polling benefit at most** — below the 2026 election margin of error.
-4. **S-silence on deportation reveals that opposition unity is rhetorical** — actual coalition behaviour remains fragmented.
-5. **Post-2026 majority scenarios require Tidö collapse (L or KD defection)** — no current evidence of that.
-
-**Red-Team posterior**: If we accept the critique, the cluster's expected value is 0.5–1 percentage points of campaign benefit with high variance. That is still **net positive for the opposition**, but it does not constitute a strategic re-alignment of Swedish politics. The honest reading is that this cluster is **a tactical win** (talking-points) rather than a **strategic win** (coalition-rehearsal).
-
-> **Integration**: This Red-Team critique reduces the BASE scenario's political-consequence magnitude, not its probability. The overall scenario tree remains valid; the expected utility to the opposition shrinks.
-
----
-
-## 🧭 Section 6 — Bayesian Update Rules
-
-| Observable signal | Prior shift direction | Magnitude |
-|-------------------|-----------------------|-----------|
-| L defection on any motion in SfU | BASE ↓ 0.08, BULL ↑ 0.06 | Medium |
-| Lagrådet yttrande strict on prop. 2025/26:229 privatisation | BASE ↓ 0.05, BULL ↑ 0.05 | Medium |
-| S gains 3+ polling points May–Aug 2026 | BASE ↓ 0.06, BULL ↑ 0.08 | Large |
-| Major gäng-crime incident before election | BASE ↑ 0.08 (government beneficiary) | Large |
-| Saab/BAE controversy | BASE ↓ 0.03, BEAR ↑ 0.02 | Small |
-| Ukraine-war escalation shifting Swedish defence salience | BASE ↑ 0.05 (status-quo preference) | Medium |
-| Klimatpolitiska rådet annual report critical | BASE ↓ 0.02, BULL ↑ 0.02 | Small |
-| Transport union public endorsement of fuel-tax cut | BASE ↑ 0.04 (working-class narrative shift) | Medium |
-| C leader explicit amendment-negotiation overture | V1a ↑ 0.10 | Large |
-| NGO joint press conference on reception law | W1 (V–C incoherence) ↓ 0.04 | Small-medium |
-
-> **Update procedure**: Re-score scenario tree when any of these signals fire. If posteriors shift the BASE/BULL/BEAR ranking, update `synthesis-summary.md` and `executive-brief.md` accordingly.
-
----
-
-## 🧭 Section 7 — Cross-Cluster Scenario Dependencies
-
-```mermaid
-flowchart LR
-    subgraph EarlyNegotiation["Early Negotiation (May-June 2026)"]
-        SfU["SfU votes<br/>(Reception + Deportation + Housing)"]
-        FiU["FiU vote<br/>(Fuel tax)"]
-        UU["UU vote<br/>(Arms export)"]
-    end
-
-    subgraph CampaignPeriod["Campaign Period (Jul-Sep 2026)"]
-        Narratives["Campaign narratives<br/>rolled out by party"]
-        Media["Newsroom coverage<br/>of motions package"]
-        Polling["Polling response<br/>tracked weekly"]
-    end
-
-    subgraph PostElection["Post-Election (Oct 2026 - 2027)"]
-        GovFormation["Government formation<br/>negotiations"]
-        Implementation["Implementation<br/>of retained laws"]
-        Reversal["Reversal legislation<br/>(if BULL/BEAR)"]
-    end
-
-    SfU --> Narratives
-    FiU --> Narratives
-    UU --> Narratives
-    Narratives --> Media
-    Media --> Polling
-    Polling --> GovFormation
-    GovFormation --> Implementation
-    GovFormation --> Reversal
-
-    style SfU fill:#FFC107,color:#000
-    style FiU fill:#FFC107,color:#000
-    style UU fill:#FFC107,color:#000
-    style GovFormation fill:#7B1FA2,color:#FFF
-    style Implementation fill:#1565C0,color:#FFF
-    style Reversal fill:#4CAF50,color:#FFF
-```
-
----
-
-## 🧭 Section 8 — Analyst Confidence Self-Assessment
-
-| Dimension | Confidence | Basis |
-|-----------|:----------:|-------|
-| H2 (campaign-narrative) as dominant hypothesis | 🟩 HIGH | Fits evidence pattern; disconfirms available for H1/H3 |
-| BASE scenario probability (0.45) | 🟩 HIGH | Polling stable; no Tidö-collapse signals |
-| BULL scenario probability (0.22) | 🟧 MEDIUM | S-led minority is plausible but requires favourable polling swings |
-| BEAR scenario probability (0.10) | 🟧 MEDIUM | Historically rare; requires Tidö collapse + opposition unity |
-| WILDCARD probability (0.05) | 🟧 MEDIUM | Minority-gov volatility possible but 2022 showed parliament can resolve |
-| Red-Team posterior (cluster value is tactical not strategic) | 🟧 MEDIUM | Compelling counter-case but not decisive |
-| Bayesian update magnitudes | 🟧 MEDIUM | Calibrated on historical analogues, but Swedish politics idiosyncratic |
-
----
-
-## 📎 Cross-References
-
-- `synthesis-summary.md` — LEAD story selection and findings
-- `executive-brief.md` — 14-day watch window
-- `risk-assessment.md` — scenario-linked risks
-- `significance-scoring.md` — DIW weighting methodology
-- `comparative-international.md` — international-precedent informed scenarios
-- `documents/reception-law-cluster-analysis.md` — cluster-specific scenario dependencies
-- `documents/deportation-cluster-analysis.md` — ECHR-litigation scenario branch
-- `documents/fuel-tax-cluster-analysis.md` — climate-policy scenario branch
-- `documents/arms-export-cluster-analysis.md` — defence-policy signalling scenario
-
----
 
 **Classification**: Public · **Next Review**: 2026-04-27
 

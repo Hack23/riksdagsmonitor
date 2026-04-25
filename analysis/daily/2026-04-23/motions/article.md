@@ -5,10 +5,26 @@ date: 2026-04-23
 subfolder: motions
 slug: 2026-04-23-motions
 source_folder: analysis/daily/2026-04-23/motions
-generated_at: 2026-04-24T18:27:52.265Z
+generated_at: 2026-04-25T09:12:18.280Z
 language: en
 layout: article
 ---
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | Where to go | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Key Judgments](#intelligence-assessment-key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
+| [Significance scoring](#significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Media framing](#media-framing-analysis) | likely narrative frames, amplifiers, counter-frames, and manipulation risks | `media-framing-analysis.md` |
+| [Forward indicators](#forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
+| [Scenarios](#scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Per-document intelligence](#per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
+| [Audit appendix](#classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Executive Brief
 
 _Source: [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief.md)_
@@ -281,6 +297,54 @@ xychart-beta
 
 *Sources: riksdagen.se document metadata + full-text analysis. Admiralty [B2] for document-derived scores; [A2] for multi-agency corroborated items.*
 
+## Media Framing Analysis
+
+_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/media-framing-analysis.md)_
+
+---
+
+## Primary Frame War: "Relief" vs. "Justice"
+
+The dominant narrative battle this week is between the government's "relief" frame and the opposition's "justice" frame:
+
+**Government frame (Tidö)**: The supplementary budget provides immediate energy price relief to Swedish households during a difficult economic period. The fuel tax cut is a targeted, temporary measure to help families who depend on their cars.
+
+**V/MP counter-frame (HD024092, HD024098)**: The relief is mis-targeted — it benefits high-income households disproportionately. The five expert agencies said the measure is economically inefficient and climate-damaging. Technical competence arguments.
+
+**S counter-frame (HD024082)**: The relief has design flaws — 800,000 cooperative housing households are excluded. S offers better design, not rejection of relief.
+
+**Assessment**: The government's "relief" frame is emotionally simpler and will likely dominate media coverage. The opposition's counter-frames require voters to process distributional data (V) or engage with design complexity (S). In a pre-election environment, simple beats complex.
+
+---
+
+## Secondary Frame: "Rule of Law" vs. "Deterrence"
+
+**V/MP frame (HD024090)**: The deportation law is unconstitutional, legally incoherent, and Lagrådet-rejected. "Rättssäkerheten" (rule of law) is under attack.
+
+**C frame (HD024095)**: Conditional acceptance: the framework is legitimate but must include procedural safeguards. "Proportionality."
+
+**SD/M frame (absent from motions — expected government position)**: "Deterrence works. We need firm signals to prevent migration."
+
+---
+
+## Media Amplification Probability
+
+| Topic | Predicted amplification | Reason |
+|-------|------------------------|--------|
+| S's design-flaw argument (HD024082) | HIGH | 800,000 households = concrete, large, sympathetic group |
+| V's RUT distributional analysis (HD024092) | MEDIUM | Requires some media sophistication to convey |
+| MP's five-agency citation (HD024098) | MEDIUM | Expert opinion always amplifiable; threshold risk angle also newsworthy |
+| Lagrådet rejection of deportation law (HD024090) | HIGH | Institutional conflict = classic news story |
+| Arms export ban motion (HD024096) | LOW | Less immediate relevance to domestic agenda |
+
+---
+
+## Social Media Hypothesis
+
+On platforms prioritising emotional resonance (Instagram, TikTok), the "800,000 households excluded" narrative (S) and "Lagrådet says it's illegal" narrative (V/MP) are the most shareable. The distributional data in V's motion requires more text than a social post allows.
+
+*Note: No social media monitoring data available. Assessment is structural inference from content analysis [C3].*
+
 ## Stakeholder Perspectives
 
 _Source: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/stakeholder-perspectives.md)_
@@ -376,6 +440,234 @@ graph LR
     classDef committee fill:#1a1e3d,color:#e0e0e0,stroke:#ff006e
 ```
 
+## Forward Indicators
+
+_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/forward-indicators.md)_
+
+---
+
+## Indicator Framework
+
+This file tracks 12 dated indicators across 4 horizons (30-day, 90-day, 6-month, 12-month) that would confirm or refute the key judgments in `intelligence-assessment.md`.
+
+---
+
+## Horizon 1: 30-Day Indicators (May 2026)
+
+### IND-01: FiU Committee Vote on prop. 2025/26:236 (fuel tax)
+- **Expected date**: ~May 5, 2026 (FiU scheduled)
+- **Indicator**: Does FiU adopt S's design amendment (HD024082)? Yes = KJ-1 partially refuted (opposition succeeded). No = KJ-1 confirmed.
+- **Trigger threshold**: Any S, V, or MP amendment adopted by FiU majority
+- **Confidence**: HIGH [A2] that vote will occur; MEDIUM [B2] that government amendments will prevail
+
+### IND-02: Skatteverket Implementation Notice
+- **Expected date**: ~May 1, 2026 (law comes into force)
+- **Indicator**: Does official implementation guidance include or exclude cooperative housing (*bostadsrättsföreningar*)? Exclusion confirmed = HD024082 validated; political cost to government elevated.
+- **Confidence**: HIGH [A1] that notice will be published
+
+### IND-03: SfU Committee Vote on prop. 2025/26:235 (deportation law)
+- **Expected date**: ~May 12, 2026
+- **Indicator**: Does SfU include any C amendments? C amendment adopted = coalition complexity signal.
+- **Confidence**: HIGH [A1] that vote will occur
+
+---
+
+## Horizon 2: 90-Day Indicators (June–July 2026)
+
+### IND-04: First Deportation Under New Law
+- **Expected date**: June–July 2026 (Migrationsverket implementation)
+- **Indicator**: Is the first deportation case published? Does it produce a court challenge?
+- **Confidence**: MEDIUM [B2] that early cases will be filed quickly
+
+### IND-05: MP Poll Result (4% threshold)
+- **Expected date**: Any major poll, June–July 2026
+- **Indicator**: MP at/above 4% = electoral calculation shifts. MP below 4% = coalition arithmetic for S+V more difficult.
+- **Confidence**: HIGH [A1] that polls will be published; threshold outcome is MEDIUM [C3]
+
+### IND-06: S+V+MP Joint Election Platform Statement
+- **Expected date**: June 2026 (traditional alliance-building period)
+- **Indicator**: A joint platform on energy would refute H1 (fragmentation is strategic differentiation) and confirm H1-alt (genuine coordination).
+- **Confidence**: MEDIUM [B3] that some form of coordination statement emerges; quality uncertain
+
+---
+
+## Horizon 3: 6-Month Indicators (September–October 2026)
+
+### IND-07: 2026 Election Polling Trend
+- **Expected date**: Ongoing, key snapshot September 2026
+- **Indicator**: If government coalition (M+SD+KD+L) polling above 175 seats → KJ-1 (fragmentation = government advantage) confirmed.
+- **Confidence**: HIGH [A1] that polls will be published
+
+### IND-08: C's Final Alliance Declaration
+- **Expected date**: C autumn congress, September 2026 (est.)
+- **Indicator**: C declares coalition preference. C → left = major political realignment. C → right = status quo confirmed.
+- **Confidence**: MEDIUM [B2] that C will clarify before election campaign
+
+### IND-09: Arms Export Policy Development
+- **Expected date**: Summer/autumn 2026 (Riksdag follows up HD024096)
+- **Indicator**: Any governmental communication on arms export secrecy provisions (opposed by MP in HD024096). Government concession = small HD024096 victory.
+- **Confidence**: LOW [C3]
+
+---
+
+## Horizon 4: 12-Month Indicators (Spring 2027)
+
+### IND-10: ECtHR Case Registration
+- **Expected date**: Autumn 2026–Spring 2027 (cases filed after law implementation)
+- **Indicator**: ECtHR registers case against Sweden under ECHR Art. 8 related to prop. 2025/26:235. Registration = medium-term legal risk elevated (KJ-2 confirmed on legal dimension).
+- **Confidence**: MEDIUM [B2]
+
+### IND-11: Migrationsverket Capacity Report
+- **Expected date**: Q1 2027 (annual report)
+- **Indicator**: Migrationsverket reports implementation difficulties with new Mottagandelagen. Friction confirmed = C's HD024089 concerns validated.
+- **Confidence**: MEDIUM [B3]
+
+### IND-12: Post-Election Coalition Negotiations
+- **Expected date**: September–November 2026 (post-election)
+- **Indicator**: Who negotiates with whom? If S+C talks emerge seriously, KJ-3 (C as pivotal actor) fully confirmed. If Tidö 2.0 forms without modification, KJ-1 (fragmentation cost opposition the election) confirmed.
+- **Confidence**: HIGH [A1] that negotiations will occur
+
+---
+
+## Indicator Summary Matrix
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Forward Indicators Timeline
+    dateFormat YYYY-MM-DD
+    section 30-Day
+    IND-01 FiU Vote fuel tax    :milestone, 2026-05-05, 0d
+    IND-02 Skatteverket notice  :milestone, 2026-05-01, 0d
+    IND-03 SfU deportation vote :milestone, 2026-05-12, 0d
+    section 90-Day
+    IND-04 First deportation    :2026-06-01, 30d
+    IND-05 MP threshold poll    :2026-06-01, 60d
+    IND-06 S+V+MP platform      :milestone, 2026-06-15, 0d
+    section 6-Month
+    IND-07 Election polling     :2026-09-01, 30d
+    IND-08 C declaration        :milestone, 2026-09-15, 0d
+    IND-09 Arms export followup :2026-08-01, 90d
+    section 12-Month
+    IND-10 ECtHR registration   :2026-11-01, 120d
+    IND-11 Migrationsverket rpt :milestone, 2027-02-01, 0d
+    IND-12 Coalition talks      :2026-10-01, 60d
+```
+
+## Scenario Analysis
+
+_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/scenario-analysis.md)_
+
+---
+
+## Scenarios for Spring 2026 Parliamentary Outcome
+
+### Scenario 1: Government Wins All Four Propositions (Most Likely)
+**Probability**: 65% [C2]  
+**Narrative**: SD and the four-party government coalition pass prop. 2025/26:235, 236, 228, and 229 intact. Opposition motions (HD024082–098, HD024090–097, HD024096, HD024089–091) are voted down in committee and plenary. The fuel tax cut takes effect 1 May 2026. Deportation rules tighten 1 September 2026.  
+**Why likely**: SD has been reliable since the Tidö agreement; no by-election pressure; C partially supporting migration proposals.  
+**Leading indicator**: Monitor FiU committee vote date (est. late April/early May 2026). If S/V/MP cannot coordinate to delay, Scenario 1 is confirmed.  
+**Impact on opposition**: Deepens fragmentation narrative; V/MP locked into protest stance; S under pressure to differentiate from V.
+
+### Scenario 2: Budget Propositions Modified — C Demands Concessions (Plausible)
+**Probability**: 22% [C3]  
+**Narrative**: C leverages its SfU position to demand changes to the Mottagandelag area-restriction provisions (HD024089) in exchange for abstention on the fuel tax supplementary. Government makes minor concessions. S, V, MP motions still voted down. Electricity support design is tweaked but 800k cooperative households remain partially excluded.  
+**Why plausible**: C has a track record of extracting symbolic wins on migration (see 2023 Tidö addendum). Niels Paarup-Petersen's motion (HD024089) is specifically calibrated to be acceptable as a negotiating position.  
+**Leading indicator**: Any informal contact between C leadership and government whips in the two weeks before FiU vote.  
+**Impact**: Partial vindication for C; S/V/MP still lose but narrative shifts to "C saves municipal welfare."
+
+### Scenario 3: Lagrådet Rejection Creates Constitutional Crisis on Deportation Law (Low probability, High impact)
+**Probability**: 13% [D3]  
+**Narrative**: After prop. 2025/26:235 passes, an immediate constitutional challenge is mounted by legal NGOs citing Lagrådet's opinion. The Supreme Court (Högsta domstolen) issues an interim stay on the deportation expansion for those who arrived before age 15. Government embarrassed; V (HD024090, Tony Haddou) vindicated. This delays implementation beyond the September 2026 target and becomes a major election issue.  
+**Why low probability**: Courts rarely issue interim stays on legislation; Lagrådet opinions are advisory, not binding. But the specific removal of childhood-arrival protections is a ECHR Art. 8 (family life) flashpoint.  
+**Leading indicator**: Filing of a formal constitutional complaint within 30 days of the law passing (est. August 2026); any ECHR provisional measures request.  
+**Impact**: Severely damages government credibility on rule of law; boosts V/MP in polls; S gains from not opposing in the same extreme terms.
+
+---
+
+## Scenario Probability Summary
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27"}}}%%
+pie title Scenario Probability Distribution — Spring 2026 Legislative Outcome
+    "Scenario 1: Government wins all" : 65
+    "Scenario 2: Budget modified via C" : 22
+    "Scenario 3: Constitutional crisis" : 13
+```
+
+*Probabilities sum to 100%. All scenarios based on parliamentary pattern analysis and motion text; no insider information used. Confidence [C2–D3] reflects the limited predictive base for Swedish coalition dynamics 6+ weeks out.*
+
+---
+
+## Leading Indicators per Scenario
+
+| Indicator | Triggers | Timeline |
+|-----------|----------|----------|
+| FiU committee vote date announced | Scenario 1 or 2 pathway | Late April 2026 |
+| C leadership statement on HD024089 outcome | Scenario 2 possible | May 2026 |
+| Legal NGO constitutional filing on prop. 2025/26:235 | Scenario 3 activated | August 2026 |
+| Government press release modifying electricity support | Scenario 2 outcome | May 2026 |
+| SD amendment demand on energy proposition | New Scenario possible | April–May 2026 |
+
+## Risk Assessment
+
+_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/risk-assessment.md)_
+
+---
+
+## 5-Dimension Risk Register
+
+| Risk ID | Description | Likelihood (1–5) | Impact (1–5) | L×I | Trend | Evidence |
+|---------|-------------|-----------------|-------------|-----|-------|----------|
+| R-01 | All opposition motions voted down, zero policy change | 4 | 2 | **8** | Stable | SD-government bloc solid; structural 2025/26 pattern [B1] |
+| R-02 | Fuel tax cut passes but electricity support design remains inequitable | 4 | 3 | **12** | Rising | S motion HD024082 identifies 800k excluded households [B1] |
+| R-03 | Stricter deportation law (prop. 2025/26:235) creates mass court challenges | 3 | 4 | **12** | Rising | Lagrådet rejection + extensive remiss criticism [A1] |
+| R-04 | Opposition fragmentation deepens ahead of 2026 elections | 3 | 5 | **15** | Rising | No joint motions across budget cluster; C partial government support [B1] |
+| R-05 | Arms export modernisation creates diplomatic risk with EU partners | 2 | 4 | **8** | Stable | MP HD024096 + remiss citations on third-country diversion [B2] |
+| R-06 | Mottagandelag area restrictions ruled unconstitutional | 2 | 4 | **8** | Uncertain | C HD024089 raises kommunal självstyre concerns [C3] |
+| R-07 | Climate credibility damage from fuel tax cut undermines Swedish COP commitments | 3 | 3 | **9** | Rising | MP HD024098 + agency consensus [A2] |
+
+---
+
+## Priority Risks (L×I ≥ 10)
+
+### R-04 — Opposition Fragmentation [HIGH RISK, L×I = 15]
+
+The most severe risk for democratic accountability: when S, V, and MP cannot agree on a budget alternative, the government faces no unified opposition. Evidence: three separate motions (HD024082, HD024092, HD024098) against the same government proposition, each with a different analytical framework and policy demand. This is structurally worse than the 2022–23 budget period when S and V coordinated more frequently.
+
+**Cascading chain**: Fragmentation → no alternative budget → government wins FiU vote → fuel tax implemented → climate agencies increase criticism → media shifts to "government vs experts" framing → opposition fails to capture narrative.
+
+### R-02 + R-03 — Social Policy Double Jeopardy [HIGH RISK, L×I = 12 each]
+
+Two simultaneous social policy risks create a compound exposure: (1) electricity support design flaw disproportionately affects cooperative housing (S: HD024082); (2) deportation law challenged as unconstitutional by Lagrådet with likely court litigation (V: HD024090). Either alone is manageable; together they strain public trust in government competence.
+
+**Posterior probability**: Given Lagrådet's explicit rejection and the 2022 reform being less than 4 years old, probability of at least one court challenge to the deportation rules within 12 months of implementation (Sep 2026) is estimated at ~55% [C3 — analyst judgement].
+
+---
+
+## Mermaid: Risk Heat Map
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Risk Heat Map — Opposition Motions 2026-04-23
+    x-axis Low Likelihood --> High Likelihood
+    y-axis Low Impact --> High Impact
+    quadrant-1 High Likelihood + High Impact (CRITICAL)
+    quadrant-2 Low Likelihood + High Impact (MONITOR)
+    quadrant-3 Low Likelihood + Low Impact (ACCEPT)
+    quadrant-4 High Likelihood + Low Impact (MANAGE)
+    R-04 Fragmentation: [0.65, 0.95]
+    R-02 Electricity gap: [0.80, 0.65]
+    R-03 Court challenges: [0.62, 0.80]
+    R-07 Climate credibility: [0.62, 0.62]
+    R-01 Motions defeated: [0.85, 0.40]
+    R-05 Diplomatic risk: [0.42, 0.80]
+    R-06 Unconstitutional: [0.42, 0.78]
+```
+
+*Confidence: MEDIUM [B2–C3]. Risk scores based on parliamentary patterns + primary documents.*
+
 ## SWOT Analysis
 
 _Source: [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/swot-analysis.md)_
@@ -455,65 +747,6 @@ quadrantChart
 ```
 
 *Admiralty codes assigned per evidence type: government documents [A1], corroborated reports [A2], single-source official [B1], peer-reviewed public [B2], unconfirmed open-source [C3]*
-
-## Risk Assessment
-
-_Source: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/risk-assessment.md)_
-
----
-
-## 5-Dimension Risk Register
-
-| Risk ID | Description | Likelihood (1–5) | Impact (1–5) | L×I | Trend | Evidence |
-|---------|-------------|-----------------|-------------|-----|-------|----------|
-| R-01 | All opposition motions voted down, zero policy change | 4 | 2 | **8** | Stable | SD-government bloc solid; structural 2025/26 pattern [B1] |
-| R-02 | Fuel tax cut passes but electricity support design remains inequitable | 4 | 3 | **12** | Rising | S motion HD024082 identifies 800k excluded households [B1] |
-| R-03 | Stricter deportation law (prop. 2025/26:235) creates mass court challenges | 3 | 4 | **12** | Rising | Lagrådet rejection + extensive remiss criticism [A1] |
-| R-04 | Opposition fragmentation deepens ahead of 2026 elections | 3 | 5 | **15** | Rising | No joint motions across budget cluster; C partial government support [B1] |
-| R-05 | Arms export modernisation creates diplomatic risk with EU partners | 2 | 4 | **8** | Stable | MP HD024096 + remiss citations on third-country diversion [B2] |
-| R-06 | Mottagandelag area restrictions ruled unconstitutional | 2 | 4 | **8** | Uncertain | C HD024089 raises kommunal självstyre concerns [C3] |
-| R-07 | Climate credibility damage from fuel tax cut undermines Swedish COP commitments | 3 | 3 | **9** | Rising | MP HD024098 + agency consensus [A2] |
-
----
-
-## Priority Risks (L×I ≥ 10)
-
-### R-04 — Opposition Fragmentation [HIGH RISK, L×I = 15]
-
-The most severe risk for democratic accountability: when S, V, and MP cannot agree on a budget alternative, the government faces no unified opposition. Evidence: three separate motions (HD024082, HD024092, HD024098) against the same government proposition, each with a different analytical framework and policy demand. This is structurally worse than the 2022–23 budget period when S and V coordinated more frequently.
-
-**Cascading chain**: Fragmentation → no alternative budget → government wins FiU vote → fuel tax implemented → climate agencies increase criticism → media shifts to "government vs experts" framing → opposition fails to capture narrative.
-
-### R-02 + R-03 — Social Policy Double Jeopardy [HIGH RISK, L×I = 12 each]
-
-Two simultaneous social policy risks create a compound exposure: (1) electricity support design flaw disproportionately affects cooperative housing (S: HD024082); (2) deportation law challenged as unconstitutional by Lagrådet with likely court litigation (V: HD024090). Either alone is manageable; together they strain public trust in government competence.
-
-**Posterior probability**: Given Lagrådet's explicit rejection and the 2022 reform being less than 4 years old, probability of at least one court challenge to the deportation rules within 12 months of implementation (Sep 2026) is estimated at ~55% [C3 — analyst judgement].
-
----
-
-## Mermaid: Risk Heat Map
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
-quadrantChart
-    title Risk Heat Map — Opposition Motions 2026-04-23
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
-    quadrant-1 High Likelihood + High Impact (CRITICAL)
-    quadrant-2 Low Likelihood + High Impact (MONITOR)
-    quadrant-3 Low Likelihood + Low Impact (ACCEPT)
-    quadrant-4 High Likelihood + Low Impact (MANAGE)
-    R-04 Fragmentation: [0.65, 0.95]
-    R-02 Electricity gap: [0.80, 0.65]
-    R-03 Court challenges: [0.62, 0.80]
-    R-07 Climate credibility: [0.62, 0.62]
-    R-01 Motions defeated: [0.85, 0.40]
-    R-05 Diplomatic risk: [0.42, 0.80]
-    R-06 Unconstitutional: [0.42, 0.78]
-```
-
-*Confidence: MEDIUM [B2–C3]. Risk scores based on parliamentary patterns + primary documents.*
 
 ## Threat Analysis
 
@@ -1062,175 +1295,6 @@ MP motion opposing the fuel tax cut, citing five expert agencies: Konjunkturinst
 
 The five agency remiss documents are not independently fetched — cited as reported in MP's motion. [B2]. MP's threshold risk (currently near 4%) means this motion may be the party's last major pre-election policy statement.
 
-## Scenario Analysis
-
-_Source: [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/scenario-analysis.md)_
-
----
-
-## Scenarios for Spring 2026 Parliamentary Outcome
-
-### Scenario 1: Government Wins All Four Propositions (Most Likely)
-**Probability**: 65% [C2]  
-**Narrative**: SD and the four-party government coalition pass prop. 2025/26:235, 236, 228, and 229 intact. Opposition motions (HD024082–098, HD024090–097, HD024096, HD024089–091) are voted down in committee and plenary. The fuel tax cut takes effect 1 May 2026. Deportation rules tighten 1 September 2026.  
-**Why likely**: SD has been reliable since the Tidö agreement; no by-election pressure; C partially supporting migration proposals.  
-**Leading indicator**: Monitor FiU committee vote date (est. late April/early May 2026). If S/V/MP cannot coordinate to delay, Scenario 1 is confirmed.  
-**Impact on opposition**: Deepens fragmentation narrative; V/MP locked into protest stance; S under pressure to differentiate from V.
-
-### Scenario 2: Budget Propositions Modified — C Demands Concessions (Plausible)
-**Probability**: 22% [C3]  
-**Narrative**: C leverages its SfU position to demand changes to the Mottagandelag area-restriction provisions (HD024089) in exchange for abstention on the fuel tax supplementary. Government makes minor concessions. S, V, MP motions still voted down. Electricity support design is tweaked but 800k cooperative households remain partially excluded.  
-**Why plausible**: C has a track record of extracting symbolic wins on migration (see 2023 Tidö addendum). Niels Paarup-Petersen's motion (HD024089) is specifically calibrated to be acceptable as a negotiating position.  
-**Leading indicator**: Any informal contact between C leadership and government whips in the two weeks before FiU vote.  
-**Impact**: Partial vindication for C; S/V/MP still lose but narrative shifts to "C saves municipal welfare."
-
-### Scenario 3: Lagrådet Rejection Creates Constitutional Crisis on Deportation Law (Low probability, High impact)
-**Probability**: 13% [D3]  
-**Narrative**: After prop. 2025/26:235 passes, an immediate constitutional challenge is mounted by legal NGOs citing Lagrådet's opinion. The Supreme Court (Högsta domstolen) issues an interim stay on the deportation expansion for those who arrived before age 15. Government embarrassed; V (HD024090, Tony Haddou) vindicated. This delays implementation beyond the September 2026 target and becomes a major election issue.  
-**Why low probability**: Courts rarely issue interim stays on legislation; Lagrådet opinions are advisory, not binding. But the specific removal of childhood-arrival protections is a ECHR Art. 8 (family life) flashpoint.  
-**Leading indicator**: Filing of a formal constitutional complaint within 30 days of the law passing (est. August 2026); any ECHR provisional measures request.  
-**Impact**: Severely damages government credibility on rule of law; boosts V/MP in polls; S gains from not opposing in the same extreme terms.
-
----
-
-## Scenario Probability Summary
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27"}}}%%
-pie title Scenario Probability Distribution — Spring 2026 Legislative Outcome
-    "Scenario 1: Government wins all" : 65
-    "Scenario 2: Budget modified via C" : 22
-    "Scenario 3: Constitutional crisis" : 13
-```
-
-*Probabilities sum to 100%. All scenarios based on parliamentary pattern analysis and motion text; no insider information used. Confidence [C2–D3] reflects the limited predictive base for Swedish coalition dynamics 6+ weeks out.*
-
----
-
-## Leading Indicators per Scenario
-
-| Indicator | Triggers | Timeline |
-|-----------|----------|----------|
-| FiU committee vote date announced | Scenario 1 or 2 pathway | Late April 2026 |
-| C leadership statement on HD024089 outcome | Scenario 2 possible | May 2026 |
-| Legal NGO constitutional filing on prop. 2025/26:235 | Scenario 3 activated | August 2026 |
-| Government press release modifying electricity support | Scenario 2 outcome | May 2026 |
-| SD amendment demand on energy proposition | New Scenario possible | April–May 2026 |
-
-## Forward Indicators
-
-_Source: [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/forward-indicators.md)_
-
----
-
-## Indicator Framework
-
-This file tracks 12 dated indicators across 4 horizons (30-day, 90-day, 6-month, 12-month) that would confirm or refute the key judgments in `intelligence-assessment.md`.
-
----
-
-## Horizon 1: 30-Day Indicators (May 2026)
-
-### IND-01: FiU Committee Vote on prop. 2025/26:236 (fuel tax)
-- **Expected date**: ~May 5, 2026 (FiU scheduled)
-- **Indicator**: Does FiU adopt S's design amendment (HD024082)? Yes = KJ-1 partially refuted (opposition succeeded). No = KJ-1 confirmed.
-- **Trigger threshold**: Any S, V, or MP amendment adopted by FiU majority
-- **Confidence**: HIGH [A2] that vote will occur; MEDIUM [B2] that government amendments will prevail
-
-### IND-02: Skatteverket Implementation Notice
-- **Expected date**: ~May 1, 2026 (law comes into force)
-- **Indicator**: Does official implementation guidance include or exclude cooperative housing (*bostadsrättsföreningar*)? Exclusion confirmed = HD024082 validated; political cost to government elevated.
-- **Confidence**: HIGH [A1] that notice will be published
-
-### IND-03: SfU Committee Vote on prop. 2025/26:235 (deportation law)
-- **Expected date**: ~May 12, 2026
-- **Indicator**: Does SfU include any C amendments? C amendment adopted = coalition complexity signal.
-- **Confidence**: HIGH [A1] that vote will occur
-
----
-
-## Horizon 2: 90-Day Indicators (June–July 2026)
-
-### IND-04: First Deportation Under New Law
-- **Expected date**: June–July 2026 (Migrationsverket implementation)
-- **Indicator**: Is the first deportation case published? Does it produce a court challenge?
-- **Confidence**: MEDIUM [B2] that early cases will be filed quickly
-
-### IND-05: MP Poll Result (4% threshold)
-- **Expected date**: Any major poll, June–July 2026
-- **Indicator**: MP at/above 4% = electoral calculation shifts. MP below 4% = coalition arithmetic for S+V more difficult.
-- **Confidence**: HIGH [A1] that polls will be published; threshold outcome is MEDIUM [C3]
-
-### IND-06: S+V+MP Joint Election Platform Statement
-- **Expected date**: June 2026 (traditional alliance-building period)
-- **Indicator**: A joint platform on energy would refute H1 (fragmentation is strategic differentiation) and confirm H1-alt (genuine coordination).
-- **Confidence**: MEDIUM [B3] that some form of coordination statement emerges; quality uncertain
-
----
-
-## Horizon 3: 6-Month Indicators (September–October 2026)
-
-### IND-07: 2026 Election Polling Trend
-- **Expected date**: Ongoing, key snapshot September 2026
-- **Indicator**: If government coalition (M+SD+KD+L) polling above 175 seats → KJ-1 (fragmentation = government advantage) confirmed.
-- **Confidence**: HIGH [A1] that polls will be published
-
-### IND-08: C's Final Alliance Declaration
-- **Expected date**: C autumn congress, September 2026 (est.)
-- **Indicator**: C declares coalition preference. C → left = major political realignment. C → right = status quo confirmed.
-- **Confidence**: MEDIUM [B2] that C will clarify before election campaign
-
-### IND-09: Arms Export Policy Development
-- **Expected date**: Summer/autumn 2026 (Riksdag follows up HD024096)
-- **Indicator**: Any governmental communication on arms export secrecy provisions (opposed by MP in HD024096). Government concession = small HD024096 victory.
-- **Confidence**: LOW [C3]
-
----
-
-## Horizon 4: 12-Month Indicators (Spring 2027)
-
-### IND-10: ECtHR Case Registration
-- **Expected date**: Autumn 2026–Spring 2027 (cases filed after law implementation)
-- **Indicator**: ECtHR registers case against Sweden under ECHR Art. 8 related to prop. 2025/26:235. Registration = medium-term legal risk elevated (KJ-2 confirmed on legal dimension).
-- **Confidence**: MEDIUM [B2]
-
-### IND-11: Migrationsverket Capacity Report
-- **Expected date**: Q1 2027 (annual report)
-- **Indicator**: Migrationsverket reports implementation difficulties with new Mottagandelagen. Friction confirmed = C's HD024089 concerns validated.
-- **Confidence**: MEDIUM [B3]
-
-### IND-12: Post-Election Coalition Negotiations
-- **Expected date**: September–November 2026 (post-election)
-- **Indicator**: Who negotiates with whom? If S+C talks emerge seriously, KJ-3 (C as pivotal actor) fully confirmed. If Tidö 2.0 forms without modification, KJ-1 (fragmentation cost opposition the election) confirmed.
-- **Confidence**: HIGH [A1] that negotiations will occur
-
----
-
-## Indicator Summary Matrix
-
-```mermaid
-%%{init: {"theme": "dark"}}%%
-gantt
-    title Forward Indicators Timeline
-    dateFormat YYYY-MM-DD
-    section 30-Day
-    IND-01 FiU Vote fuel tax    :milestone, 2026-05-05, 0d
-    IND-02 Skatteverket notice  :milestone, 2026-05-01, 0d
-    IND-03 SfU deportation vote :milestone, 2026-05-12, 0d
-    section 90-Day
-    IND-04 First deportation    :2026-06-01, 30d
-    IND-05 MP threshold poll    :2026-06-01, 60d
-    IND-06 S+V+MP platform      :milestone, 2026-06-15, 0d
-    section 6-Month
-    IND-07 Election polling     :2026-09-01, 30d
-    IND-08 C declaration        :milestone, 2026-09-15, 0d
-    IND-09 Arms export followup :2026-08-01, 90d
-    section 12-Month
-    IND-10 ECtHR registration   :2026-11-01, 120d
-    IND-11 Migrationsverket rpt :milestone, 2027-02-01, 0d
-    IND-12 Coalition talks      :2026-10-01, 60d
-```
-
 ## Election 2026 Analysis
 
 _Source: [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/election-2026-analysis.md)_
@@ -1541,54 +1605,6 @@ timeline
     2026 : Prop 2025/26:235 (New deportation law) — Lagrådet explicitly rejects
     2030 : Projected: ECtHR ruling or Swedish Supreme Administrative Court review
 ```
-
-## Media Framing Analysis
-
-_Source: [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/media-framing-analysis.md)_
-
----
-
-## Primary Frame War: "Relief" vs. "Justice"
-
-The dominant narrative battle this week is between the government's "relief" frame and the opposition's "justice" frame:
-
-**Government frame (Tidö)**: The supplementary budget provides immediate energy price relief to Swedish households during a difficult economic period. The fuel tax cut is a targeted, temporary measure to help families who depend on their cars.
-
-**V/MP counter-frame (HD024092, HD024098)**: The relief is mis-targeted — it benefits high-income households disproportionately. The five expert agencies said the measure is economically inefficient and climate-damaging. Technical competence arguments.
-
-**S counter-frame (HD024082)**: The relief has design flaws — 800,000 cooperative housing households are excluded. S offers better design, not rejection of relief.
-
-**Assessment**: The government's "relief" frame is emotionally simpler and will likely dominate media coverage. The opposition's counter-frames require voters to process distributional data (V) or engage with design complexity (S). In a pre-election environment, simple beats complex.
-
----
-
-## Secondary Frame: "Rule of Law" vs. "Deterrence"
-
-**V/MP frame (HD024090)**: The deportation law is unconstitutional, legally incoherent, and Lagrådet-rejected. "Rättssäkerheten" (rule of law) is under attack.
-
-**C frame (HD024095)**: Conditional acceptance: the framework is legitimate but must include procedural safeguards. "Proportionality."
-
-**SD/M frame (absent from motions — expected government position)**: "Deterrence works. We need firm signals to prevent migration."
-
----
-
-## Media Amplification Probability
-
-| Topic | Predicted amplification | Reason |
-|-------|------------------------|--------|
-| S's design-flaw argument (HD024082) | HIGH | 800,000 households = concrete, large, sympathetic group |
-| V's RUT distributional analysis (HD024092) | MEDIUM | Requires some media sophistication to convey |
-| MP's five-agency citation (HD024098) | MEDIUM | Expert opinion always amplifiable; threshold risk angle also newsworthy |
-| Lagrådet rejection of deportation law (HD024090) | HIGH | Institutional conflict = classic news story |
-| Arms export ban motion (HD024096) | LOW | Less immediate relevance to domestic agenda |
-
----
-
-## Social Media Hypothesis
-
-On platforms prioritising emotional resonance (Instagram, TikTok), the "800,000 households excluded" narrative (S) and "Lagrådet says it's illegal" narrative (V/MP) are the most shareable. The distributional data in V's motion requires more text than a social post allows.
-
-*Note: No social media monitoring data available. Assessment is structural inference from content analysis [C3].*
 
 ## Implementation Feasibility
 
