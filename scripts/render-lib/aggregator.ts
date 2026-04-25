@@ -10,20 +10,38 @@
  * **pure with respect to the filesystem** — given the same set of
  * artifact files on disk, it always produces byte-identical output.
  *
- * ## Narrative order
- * See {@link AGGREGATION_ORDER}. The order is intentionally fixed:
+ * ## Narrative order (reader-intelligence-first projection)
+ * See {@link AGGREGATION_ORDER}. The order is intentionally fixed to surface
+ * high-value political-intelligence lenses before technical audit appendices:
+ *
+ * **Round 0 — generated navigation layer**
+ * 0. `Reader Intelligence Guide` — deterministic navigation table injected
+ *    before any artifact sections
+ *
+ * **Round 1 — BLUF and thesis**
  * 1. `executive-brief.md` (mandatory — supplies title + description)
  * 2. `synthesis-summary.md`
  * 3. `intelligence-assessment.md` — ICD-203 Key Judgments centrepiece
  * 4. `significance-scoring.md`
- * 5. `stakeholder-perspectives.md`
- * 6. `swot-analysis.md`
- * 7. `risk-assessment.md`
- * 8. `threat-analysis.md`
- * 9. `documents/*-analysis.md` — inlined as "Per-document intelligence"
- * 10. `scenario-analysis.md` … `methodology-reflection.md` (see list)
- * 11. any remaining supplementary `*.md` not in the canonical list —
- *     appended alphabetically
+ *
+ * **Round 2 — reader-facing intelligence lenses (most valuable first)**
+ * 5. `media-framing-analysis.md` — narrative contestation, amplifiers, manipulation risk
+ * 6. `stakeholder-perspectives.md`
+ * 7. `forward-indicators.md` — dated watch items for readers to verify/falsify
+ * 8. `scenario-analysis.md`
+ * 9. `risk-assessment.md`
+ * 10. `swot-analysis.md`
+ * 11. `threat-analysis.md`
+ *
+ * **Round 3 — per-document evidence**
+ * 12. `documents/*-analysis.md` — inlined as "Per-document intelligence"
+ *
+ * **Round 4 — electoral and domain lenses**
+ * 13. `election-2026-analysis.md` … `implementation-feasibility.md`
+ *
+ * **Round 5 — challenge and audit appendix**
+ * 15. `devils-advocate.md` … `data-download-manifest.md`
+ * 16. any remaining supplementary `*.md` — appended alphabetically
  *
  * ## Cleaning rules (see {@link cleanArtifactBody})
  * - strip YAML front-matter

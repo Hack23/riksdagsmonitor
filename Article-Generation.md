@@ -41,6 +41,7 @@
 - [🚀 Build and S3 Deployment](#-build-and-s3-deployment)
 - [🛡️ Security, Privacy and ISMS Controls](#-security-privacy-and-isms-controls)
 - [✅ Operational Checklist](#-operational-checklist)
+- [🚀 Future Improvements Roadmap](#-future-improvements-roadmap)
 - [🔗 Source File Index](#-source-file-index)
 
 ---
@@ -480,7 +481,7 @@ The sample file begins with:
 ```yaml
 ---
 title: "Interpellation Debates"
-description: "A single new interpellation ([HD10447](https://data.riksdagen.se/dokument/HD10447.html), S) was announced today, forcing Energy- och näringsminister Ebba Busch (KD) to defend the 2024 abolition of…"
+description: "A single new interpellation (HD10447, S) was announced today, forcing Energy- och näringsminister Ebba Busch (KD) to defend the 2024 abolition of the high-sick-pay-cost reimbursement by 2026-05-07."
 date: 2026-04-24
 subfolder: interpellations
 slug: 2026-04-24-interpellations
@@ -943,7 +944,299 @@ news/2026-04-24-interpellations-sv.html
 
 ---
 
-## 🔗 Source File Index
+## 🚀 Future Improvements Roadmap
+
+This section documents the highest-leverage improvements identified for producing publication-quality political-intelligence articles from the analysis artifact pipeline. Items are organized into three domains: political-intelligence quality, UI/UX of the rendered product, and code quality/architecture.
+
+---
+
+### 🧠 Political Intelligence Quality
+
+The current system produces a correct, auditable article. The following improvements would raise its political-intelligence value significantly.
+
+#### 1. Integrated narrative articles (not artifact collages)
+
+**Problem:** Generated articles currently expose artifact structure directly to the reader: `## Executive Brief`, `## Synthesis Summary`, `## Intelligence Assessment — Key Judgments`, and so on. Each section is the content of a corresponding source file, pasted in sequence. The reader experiences the article as an annotated folder listing, not a coherent intelligence narrative.
+
+**Improvement:** Introduce a narrative synthesis step between aggregation and rendering. A trusted synthesis pass should produce a **unified article body** structured as:
+
+- **Lead** (lede): one or two punchy sentences naming the most democratically significant finding (DIW-ranked), the principal actor, and the forward trigger.
+- **Context block**: 2–3 sentences of baseline context (coalition status, committee history, relevant legislation).
+- **Main development**: the story, drawing on Key Judgments and per-document analysis.
+- **Stakes and alternatives**: scenario probabilities, SWOT, coalition math, risk scores — woven into the narrative.
+- **Forward view**: dated watch items from `forward-indicators.md` and scenarios.
+- **Technical appendix** (optional reader-expand): the full artifact stack for researchers.
+
+This would require the aggregator to emit a clean `article-narrative.md` (authored in this later synthesis step) that renders in place of the current artifact collage, with the artifact stack demoted to a collapsible appendix.
+
+#### 2. Article-type-specific ordering
+
+**Problem:** `AGGREGATION_ORDER` is a single static list applied identically to all article types: interpellations, propositions, committee reports, evening analyses, motions, weekly reviews, monthly reviews and forecasting runs.
+
+**Improvement:** Define a map from article type to a specialized order:
+
+| Article type | Priority lenses |
+|---|---|
+| `interpellations` | `executive-brief` → `intelligence-assessment` → `forward-indicators` (ministerial deadline) → `stakeholder-perspectives` → … |
+| `propositions` | `executive-brief` → `synthesis-summary` → `implementation-feasibility` → `coalition-mathematics` → `scenario-analysis` → … |
+| `committee-reports` | `executive-brief` → `synthesis-summary` → `significance-scoring` → `stakeholder-perspectives` → `swot-analysis` → … |
+| `evening-analysis` | `executive-brief` → `intelligence-assessment` → `media-framing-analysis` → `forward-indicators` → … |
+| `motions` | `executive-brief` → `coalition-mathematics` → `voter-segmentation` → `scenario-analysis` → … |
+| `forecasting` | `executive-brief` → `scenario-analysis` → `coalition-mathematics` → `election-2026-analysis` → `forward-indicators` → … |
+
+The `aggregateAnalysis` function should accept an optional `articleType` parameter and select the appropriate order from a type map.
+
+#### 3. Proper journalistic lede extraction
+
+**Problem:** The article `description` and article header dek are extracted from the first prose paragraph of `executive-brief.md` (after stripping admin bylines). This is often a summary sentence, not a proper lede.
+
+**Improvement:** Introduce a dedicated `lede` field contract for `executive-brief.md`: the file should contain a `## 🎯 BLUF` section whose first sentence is a single tight lede in the form **"Who did what to whom, and by when?"** The aggregator should prefer this sentence for description and dek, and the analysis gate should enforce that it is present, names at least one real actor with their title, and includes one dok_id or date trigger.
+
+#### 4. Confidence and Admiralty code visualization
+
+**Problem:** Confidence labels (`HIGH`, `MEDIUM`, `LOW`) and Admiralty source codes (`A2`, `B3`, etc.) appear as plain inline text throughout the articles. Readers must know what these mean.
+
+**Improvement:**
+
+- Render `CONFIDENCE: HIGH/MEDIUM/LOW` spans as styled `<mark class="confidence-high|medium|low">` chips via a post-processing pass in `markdown.ts`.
+- Render Admiralty codes `A1`–`F6` as `<abbr title="Source reliability A — Completely reliable; Information credibility 1 — Confirmed by other sources">A1</abbr>`.
+- Add a once-per-page methodology note in the article footer explaining the confidence and Admiralty schema.
+- The styled chips should work in both light and dark mode.
+
+#### 5. Media framing as inline callouts
+
+**Problem:** `media-framing-analysis.md` is currently appended as section 5. Its value is highest when readers encounter framing alerts near the finding they apply to, not as a separate section they may never reach.
+
+**Improvement:** Allow `media-framing-analysis.md` to emit a `## 🔎 Framing Alerts` subsection per key story that can be referenced inline. The aggregator could inject "framing callout" anchors into the main narrative at matching dok_id boundaries. This is a step toward the integrated narrative article model above.
+
+#### 6. Forward-indicator timelines
+
+**Problem:** `forward-indicators.md` is a Markdown table. Tables work, but for a time-ordered set of dated watch items, a visual timeline communicates urgency more effectively.
+
+**Improvement:** The analysis agent should emit a `forward-indicators.json` alongside `forward-indicators.md` with structured events (`{"date": "2026-05-07", "title": "...", "type": "deadline|vote|publication", "probability": 0.75, "dok_id": "HD10447"}`). A trusted site module (`js/article-forward-indicators.mjs`) would render this as a responsive horizontal timeline using the existing Chart.js build chunk. The Markdown table remains as the accessible fallback.
+
+#### 7. Historical parallels integration
+
+**Problem:** `historical-parallels.md` appears late (position 17) in the current order and tends to be read by researchers only, despite containing high-value context for general readers.
+
+**Improvement:** The synthesis narrative (improvement #1) should weave the single most relevant historical parallel into the context block of the article lead. The full `historical-parallels.md` section would remain in the technical appendix.
+
+#### 8. Cross-article series navigation
+
+**Problem:** There is no editorial continuity between articles on the same topic. An interpellation today has no link to the committee hearing next week or the vote result the month after.
+
+**Improvement:** Introduce a `related_articles` field in `article.md` front matter listing prior/subsequent articles in the same legislative sequence. The article chrome renderer should emit a `<nav class="rm-article-series">` block. Population could initially be manual or auto-populated by a script that scans `analysis/daily/` for shared dok_ids.
+
+---
+
+### 🎨 UI/UX of the Rendered HTML Product
+
+#### 9. Progressive disclosure for long-form articles
+
+**Problem:** Long-form articles (committee reports, monthly reviews) may produce 8,000–15,000-word HTML pages. Readers on mobile cannot quickly reach the section they need.
+
+**Improvement:** Generate a sticky in-article table of contents from the aggregated H2/H3 heading structure. This should be:
+
+- Implemented as a `<nav class="rm-article-toc" aria-label="Article sections">` block injected by `article.ts` before the article body.
+- Collapsed on mobile (max-width 768px) with an accessible expand toggle.
+- Sticky on desktop, highlighting the current section via `IntersectionObserver` in a trusted site script.
+
+#### 10. Article type badges and visual identity
+
+**Problem:** All article types (`interpellations`, `propositions`, `evening-analysis`, `weekly-review`, etc.) render identically. A reader cannot distinguish a fast realtime monitor from a deep monthly review at a glance.
+
+**Improvement:**
+
+- Add an `article_type` field to `article.md` front matter.
+- Render a prominent `<span class="rm-article-type-badge rm-badge--${type}">` in the article header.
+- Define per-type accent colors in `styles/themes/article-types.css`: e.g. cyan for interpellations, yellow for committee reports, magenta for evening-analysis.
+- Add a matching type-icon via the existing cyberpunk design token set.
+
+#### 11. Sticky article header with reading progress
+
+**Problem:** The article site header (logo, nav) takes up vertical space when scrolled. There is no reading-progress indicator.
+
+**Improvement:**
+
+- Add a `position: sticky; top: 0` article header band that collapses to show only the article title and type badge after scrolling past the full header.
+- Add a thin reading-progress bar (`<div class="rm-reading-progress">`) at the very top of the viewport, driven by a minimal trusted `js/reading-progress.mjs`.
+
+#### 12. Accessible confidence and risk heat map panels
+
+**Problem:** `risk-assessment.md` and `significance-scoring.md` produce Markdown tables. For high-dimensional data (risk score × risk type × party), a heat-map panel communicates at a glance.
+
+**Improvement:** The analysis pipeline should emit `risk-heatmap.json` alongside `risk-assessment.md`. A trusted `js/article-risk-heatmap.mjs` renders a CSS-grid-based heat map with keyboard navigation and WCAG 2.1 AA contrast. The Markdown table remains as the accessible fallback.
+
+#### 13. Citation copy helper
+
+**Problem:** Political science researchers and journalists need to cite specific claims from Riksdagsmonitor articles.
+
+**Improvement:** Add a copy-citation button (`<button class="rm-cite-btn" aria-label="Copy citation">`) to each article section heading. On click, it copies a formatted citation to the clipboard:
+
+```
+Riksdagsmonitor. (2026-04-24). Interpellation Debates: HD10447 – Sjuklönekostnad.
+https://riksdagsmonitor.com/news/2026-04-24-interpellations-en.html#intelligence-assessment-key-judgments
+Retrieved: 2026-04-25.
+```
+
+This should be implemented as a minimal trusted site script, not inline AI-authored JS.
+
+#### 14. Full light-mode article polish
+
+**Problem:** Light mode for article pages applies `html[data-theme="light"]` overrides but the default `:root` palette and the cyberpunk token fallbacks are tuned for dark backgrounds. Key elements (article header gradient, source footer) remain dark in light mode.
+
+**Improvement:** Audit every `rm-*` CSS rule for contrast and background in light mode. Introduce a fully specified light-mode palette in the `:root` block so light-mode article pages are as polished as dark ones. Target 4.5:1 contrast ratio for all text throughout.
+
+#### 15. Share and annotation support
+
+**Problem:** No built-in mechanism for sharing a specific finding or annotating a specific paragraph.
+
+**Improvement:**
+- Add per-heading deep-link buttons already surfaced by `rehype-autolink-headings`; make them visible on hover.
+- Add a minimal share API call (`navigator.share`) with clipboard fallback for mobile.
+- Integrate with a future annotation layer (out of scope for current sprint, but reserve the `rm-annotation-*` CSS namespace).
+
+---
+
+### 🏗️ Code Quality, Architecture and Test Coverage
+
+#### 16. Article-type-aware aggregation module
+
+**Problem:** `aggregateAnalysis()` accepts only `date` and `subfolder`. The article type (interpellations, propositions, etc.) is inferred from the subfolder name informally.
+
+**Improvement:**
+
+- Introduce an `ArticleType` enum in `render-lib/constants.ts`.
+- Add an `articleType` parameter to `aggregateAnalysis()` (optional, defaults to heuristic inference from subfolder name).
+- Add a `AGGREGATION_ORDER_BY_TYPE: Record<ArticleType, readonly string[]>` map.
+- Test coverage: one test per article type verifying that the correct order is applied and that `media-framing-analysis.md` and `forward-indicators.md` precede `swot-analysis.md` in all types.
+
+#### 17. Stale JSDoc module comment in `aggregator.ts`
+
+**Status: Fixed in 2026-04-25 commit.** The `@module` JSDoc now correctly documents the reader-intelligence-first narrative order with all five rounds.
+
+#### 18. E2E Playwright tests for rendered article HTML
+
+**Problem:** Current render-lib tests are unit and integration tests. There are no visual regression or accessibility tests for the full rendered article page.
+
+**Improvement:** Add Playwright test specs covering:
+
+- Article page loads without JS console errors.
+- `<article class="rm-article">` is present and has accessible heading structure (`h1` > `h2` > `h3`).
+- Language switcher dropdown opens and lists correct language codes.
+- Mermaid blocks receive the `mermaid` class and are non-empty.
+- `rm-article-sources` section exists and at least one GitHub link is present.
+- WCAG 2.1 AA axe-core scan passes (no critical violations).
+- Light mode and dark mode color contrast requirements (via `@axe-core/playwright`).
+
+#### 19. Render pipeline multi-language test coverage
+
+**Problem:** `tests/render-lib.test.ts` primarily tests EN articles. There is no direct test for RTL article rendering (Arabic `ar`, Hebrew `he`).
+
+**Improvement:** Add test cases verifying:
+
+- `dir="rtl"` is set on `<html>` for Arabic and Hebrew.
+- RTL articles have `<link rel="alternate" hreflang="ar">` and `<link rel="alternate" hreflang="he">`.
+- The language switcher dropdown does not contain `ar`/`he` when the current language is AR/HE.
+
+#### 20. Article quality metrics CI gate
+
+**Problem:** The analysis gate (`05-analysis-gate.md`) is enforced by the AI agent at runtime. There is no static CI gate that checks rendered article quality after `npm run build`.
+
+**Improvement:** Add a `validate-articles` npm script and corresponding GitHub Actions job that checks every file in `news/`:
+
+```bash
+# Minimum article quality checks
+for f in news/*.html; do
+  grep -q '<meta name="description"' "$f" || echo "FAIL: no description in $f"
+  grep -q '"NewsArticle"' "$f"         || echo "FAIL: no JSON-LD in $f"
+  grep -q 'rm-article-sources'  "$f"  || echo "FAIL: no sources section in $f"
+  grep -q 'hreflang="x-default"' "$f" || echo "FAIL: no x-default hreflang in $f"
+done
+```
+
+This should be a failing CI gate, not just a warning.
+
+#### 21. Render-lib barrel architecture enforcement
+
+**Problem:** `tests/render-lib-architecture.test.ts` verifies that every exported symbol in each leaf module is re-exported from the barrel. But if a developer adds a new leaf module without adding it to the barrel, the test does not catch the omission.
+
+**Improvement:** Add a test that scans `scripts/render-lib/*.ts` for all public `export` symbols and asserts that `scripts/render-lib/index.ts` re-exports every file in the directory (except `index.ts` itself).
+
+#### 22. SEO contract regression tests for description length
+
+**Problem:** `truncateToSentenceBoundary` is tested, but there is no test asserting that the actual generated `article.md` descriptions for every analysis subfolder fall within the 140–200 character window.
+
+**Improvement:** Add a test that runs `aggregateAnalysis` on every folder under `analysis/daily/` and asserts that the resulting `description` in front matter is between 50 and 200 characters and contains no raw Markdown syntax (`[`, `*`, `` ` ``).
+
+#### 23. Aggregate-analysis CLI error handling
+
+**Problem:** `scripts/aggregate-analysis.ts --all` silently skips subfolders that are missing `executive-brief.md`. This means a run can complete with exit code 0 while some analysis subfolders produced no article.
+
+**Improvement:** The `--all` flag should:
+- Print a summary of successful and failed subfolders.
+- Exit non-zero if any subfolder fails.
+- Accept a `--strict` flag that makes even missing-optional-artifact subfolders fail.
+
+---
+
+### 📋 Improvement Priority Matrix
+
+| # | Improvement | Intelligence value | User-facing impact | Effort | Priority |
+|---|---|:---:|:---:|:---:|:---:|
+| 1 | Integrated narrative article | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | High | P1 |
+| 6 | Forward-indicator timelines (JSON+chart) | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | Medium | P1 |
+| 4 | Confidence/Admiralty code chips | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | Low | P1 |
+| 9 | Sticky in-article ToC | ⭐⭐ | ⭐⭐⭐⭐⭐ | Low | P1 |
+| 3 | Proper journalistic lede extraction | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | Medium | P2 |
+| 2 | Article-type-specific ordering | ⭐⭐⭐⭐ | ⭐⭐⭐ | Medium | P2 |
+| 10 | Article type badges | ⭐⭐ | ⭐⭐⭐⭐ | Low | P2 |
+| 14 | Full light-mode polish | ⭐⭐ | ⭐⭐⭐⭐ | Medium | P2 |
+| 20 | Article quality CI gate | ⭐⭐⭐ | ⭐ | Low | P2 |
+| 18 | Playwright E2E accessibility tests | ⭐⭐ | ⭐⭐ | Medium | P2 |
+| 5 | Media framing inline callouts | ⭐⭐⭐⭐ | ⭐⭐⭐ | High | P3 |
+| 8 | Cross-article series navigation | ⭐⭐⭐ | ⭐⭐⭐ | Medium | P3 |
+| 12 | Risk heat map panels | ⭐⭐⭐ | ⭐⭐⭐ | Medium | P3 |
+| 7 | Historical parallels integration | ⭐⭐⭐ | ⭐⭐ | Medium | P3 |
+| 11 | Reading-progress bar | ⭐ | ⭐⭐⭐ | Low | P3 |
+| 13 | Citation copy helper | ⭐⭐ | ⭐⭐⭐ | Low | P3 |
+| 16 | Article-type-aware aggregation module | ⭐⭐⭐ | ⭐ | Medium | P3 |
+| 22 | SEO contract regression tests | ⭐⭐ | ⭐ | Low | P3 |
+| 23 | Aggregate-analysis CLI error handling | ⭐⭐ | ⭐ | Low | P3 |
+| 15 | Share and annotation | ⭐ | ⭐⭐ | Medium | P4 |
+| 19 | RTL render test coverage | ⭐⭐ | ⭐ | Low | P4 |
+| 21 | Barrel architecture enforcement | ⭐ | ⭐ | Low | P4 |
+
+---
+
+### 🔗 Improvement Dependencies
+
+```mermaid
+%%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","lineColor":"#90CAF9","secondaryColor":"#7B1FA2","tertiaryColor":"#2E7D32","tertiaryTextColor":"#ffffff","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
+flowchart TB
+    N1["#1 Integrated narrative"] --> N5["#5 Media framing inline"]
+    N1 --> N7["#7 Historical parallels integration"]
+    N1 --> N8["#8 Series navigation"]
+    N3["#3 Journalistic lede"] --> N1
+    N2["#2 Article-type ordering"] --> N1
+    N2 --> N16["#16 Type-aware aggregation module"]
+    N6["#6 Forward-indicator JSON+chart"] --> N18["#18 Playwright E2E tests"]
+    N4["#4 Confidence chips"] --> N18
+    N12["#12 Risk heat map"] --> N18
+    N9["#9 Sticky ToC"] --> N11["#11 Reading-progress bar"]
+    N20["#20 CI article quality gate"] --> N22["#22 SEO regression tests"]
+    N20 --> N23["#23 CLI error handling"]
+
+    style N1 fill:#D32F2F,color:#ffffff
+    style N2 fill:#1565C0,color:#ffffff
+    style N3 fill:#1565C0,color:#ffffff
+    style N6 fill:#7B1FA2,color:#ffffff
+    style N20 fill:#2E7D32,color:#ffffff
+```
+
+---
+
+
 
 ### Agentic workflow contract
 
