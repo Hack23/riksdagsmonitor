@@ -279,6 +279,15 @@ describe('html-inspector: inspectHtmlContent', () => {
     expect(meta.twitterDescription).toBe('Twitter description first.');
   });
 
+  it('decodes entity-bearing unquoted meta attribute values', () => {
+    const html = `<!DOCTYPE html><html lang="en"><head>
+      <title>Unquoted attribute example</title>
+      <meta name=description content=Sweden&#39;s-budget>
+    </head><body><article><p>Body.</p></article></body></html>`;
+    const meta = inspectHtmlContent(html);
+    expect(meta.metaDescription).toBe("Sweden's-budget");
+  });
+
   it('populates bodyPlainText from <article> contents', () => {
     const meta = inspectHtmlContent(SAMPLE_HTML);
     expect(meta.bodyPlainText).toContain('Sveriges regering godkände');

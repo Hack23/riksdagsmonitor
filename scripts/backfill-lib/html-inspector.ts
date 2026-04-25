@@ -59,8 +59,6 @@ export interface ArticleMetadata {
 const REGEXES = {
   htmlLang: /<html[^>]*\blang="([^"]+)"/i,
   title: /<title[^>]*>([\s\S]*?)<\/title>/i,
-  metaTag: /<meta\b[^>]*>/gi,
-  jsonLdScript: /<script\s+type="application\/ld\+json"\s*>([\s\S]*?)<\/script>/gi,
   article: /<article\b[^>]*>([\s\S]*?)<\/article>/i,
 } as const;
 
@@ -93,7 +91,6 @@ function htmlDecode(s: string): string {
 
 function decodeCodePoint(value: number, fallback: string): string {
   if (
-    !Number.isInteger(value) ||
     value < 0 ||
     value > 0x10ffff ||
     (value >= 0xd800 && value <= 0xdfff)
@@ -127,9 +124,9 @@ function extractMetaContent(
   selectorAttr: 'name' | 'property',
   selectorValue: string,
 ): string {
-  REGEXES.metaTag.lastIndex = 0;
+  const metaTagRe = /<meta\b[^>]*>/gi;
   let m: RegExpExecArray | null;
-  while ((m = REGEXES.metaTag.exec(html)) !== null) {
+  while ((m = metaTagRe.exec(html)) !== null) {
     const attrs = parseAttributes(m[0]);
     if (attrs[selectorAttr]?.toLowerCase() === selectorValue.toLowerCase()) {
       return htmlDecode(attrs.content ?? '').trim();
@@ -152,10 +149,10 @@ function parseAttributes(tag: string): Record<string, string> {
  *  it. Uses `JSON.parse` with graceful fall-through — a malformed block
  *  is skipped rather than crashing the whole scan. */
 function extractJsonLdField(html: string, field: 'headline' | 'alternativeHeadline' | 'description'): string {
-  // Reset global regex state.
-  REGEXES.jsonLdScript.lastIndex = 0;
+  const jsonLdScriptRe =
+    /<script\s+type="application\/ld\+json"\s*>([\s\S]*?)<\/script>/gi;
   let m: RegExpExecArray | null;
-  while ((m = REGEXES.jsonLdScript.exec(html)) !== null) {
+  while ((m = jsonLdScriptRe.exec(html)) !== null) {
     const body = m[1] ?? '';
     try {
       const parsed = JSON.parse(body) as unknown;
