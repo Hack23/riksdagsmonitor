@@ -51,7 +51,7 @@ Riksdagsmonitor articles are **not hand-written HTML pages**. They are determini
 
 1. **Agentic workflows** in [`.github/workflows/news-*.md`](.github/workflows/) run on schedules or manual dispatch.
 2. The workflow imports bounded prompt modules from [`.github/prompts/`](.github/prompts/README.md).
-3. The AI agent collects public Riksdag/Regering data through the `riksdag-regering` MCP server, Swedish statistics through SCB, non-economic context through World Bank, and economic context through the repository IMF TypeScript client.
+3. The AI agent collects public Riksdag/Regering data through the `riksdag-regering` MCP server, Swedish statistics through SCB, governance/environment/social-education residue through World Bank, and economic context through the repository IMF TypeScript client.
 4. The agent produces a **stable set of 23 core analysis artifacts** plus per-document files under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`.
 5. The **single blocking gate** in [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) must pass before any article is generated.
 6. [`scripts/aggregate-analysis.ts`](scripts/aggregate-analysis.ts) turns the analysis folder into one canonical `article.md`.
@@ -235,6 +235,8 @@ flowchart LR
 | **IMF** | Primary economic/fiscal/monetary/external-sector/trade context | `tsx scripts/imf-fetch.ts` + `scripts/imf-client.ts` |
 | **World Bank** | Non-economic residue only: governance, environment, social/education, defence historicals, crime | `worldbank-mcp@1.0.1` |
 | **GitHub** | PR creation and repository metadata | GitHub MCP / safe outputs |
+
+The authoritative IMF-first / World-Bank-residue split is defined in [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md). In short: macroeconomic, fiscal, monetary, external-sector and trade claims are IMF-first; World Bank is reserved for governance, environment and other non-economic residue that IMF does not publish.
 
 ### Evidence standard
 
@@ -708,6 +710,8 @@ The rendered article chrome supports 14 language alternates:
 | `ko` | `ko` | Korean |
 | `zh` | `zh` | Chinese |
 
+Norwegian is in a compatibility migration state: generated HTML uses the BCP-47 `nb` hreflang for Norwegian Bokmål, while existing filenames and URL siblings still use the legacy `_no` / `-no.html` pattern for backwards-compatible site output. New code should keep both surfaces in sync until the wider URL migration is completed.
+
 ### Translation workflow
 
 Per-type content workflows render only core languages, normally `en,sv`. The dedicated translation workflow is:
@@ -729,7 +733,9 @@ The renderer populates hreflang alternates for all languages even when the sibli
 
 ## 🚀 Build and S3 Deployment
 
-> The repository file is named [`.github/workflows/deploy-s3.yml`](.github/workflows/deploy-s3.yml). If someone refers to `s3-deploy.yml`, they are referring to this deployment workflow.
+### Canonical workflow name
+
+The repository file is named [`.github/workflows/deploy-s3.yml`](.github/workflows/deploy-s3.yml). If someone refers to `s3-deploy.yml`, they are referring to this deployment workflow.
 
 ### Build chain
 
@@ -804,7 +810,9 @@ The `deploy` job performs:
 | `dist/docs/` | deploy workflow copy from `docs/` | ✅ | Documentation output when present. |
 | `dist/cia-data/` | `postbuild` | ✅ | CIA data copied into build output. |
 
-The rendered HTML source footer and JSON-LD `isBasedOn` block enumerate `.md` and `.json` files found in the analysis folder. In current renders this list can include `article.md` itself because the renderer resolves the artifact list from folder contents after aggregation; this is intentional provenance for the canonical Markdown projection as well as the underlying source artifacts.
+The rendered HTML source footer and JSON-LD `isBasedOn` block enumerate `.md` and `.json` files found in the analysis folder.
+
+In current renders this list can include `article.md` itself because the renderer resolves the artifact list from folder contents after aggregation. That self-reference is acceptable here because `article.md` is the canonical Markdown projection that connects the underlying analysis artifacts to the rendered HTML page.
 
 ### S3 upload and cache strategy
 
