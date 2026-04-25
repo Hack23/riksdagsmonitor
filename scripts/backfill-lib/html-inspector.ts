@@ -11,8 +11,8 @@
  *
  * Parsing is regex-based rather than DOM-based for three reasons:
  *
- * 1. **Speed.** Inspecting 2,736 articles in dry-run mode must complete
- *    in a few seconds on CI, not minutes.
+ * 1. **Speed.** Inspecting thousands of articles in dry-run mode must
+ *    complete in a few seconds on CI, not minutes.
  * 2. **Byte safety.** The existing rewriter already uses the same
  *    regex approach so output is consistent between the two tools.
  * 3. **No extra dependency.** `jsdom` / `cheerio` would pull a few MB
@@ -59,16 +59,7 @@ export interface ArticleMetadata {
 const REGEXES = {
   htmlLang: /<html[^>]*\blang="([^"]+)"/i,
   title: /<title[^>]*>([\s\S]*?)<\/title>/i,
-  metaDescription:
-    /<meta\s+name="description"\s+content="([^"]*)"/i,
-  ogTitle:
-    /<meta\s+property="og:title"\s+content="([^"]*)"/i,
-  ogDescription:
-    /<meta\s+property="og:description"\s+content="([^"]*)"/i,
-  twitterTitle:
-    /<meta\s+name="twitter:title"\s+content="([^"]*)"/i,
-  twitterDescription:
-    /<meta\s+name="twitter:description"\s+content="([^"]*)"/i,
+  metaTag: /<meta\b[^>]*>/gi,
   jsonLdScript: /<script\s+type="application\/ld\+json"\s*>([\s\S]*?)<\/script>/gi,
   article: /<article\b[^>]*>([\s\S]*?)<\/article>/i,
 } as const;
@@ -87,8 +78,8 @@ function htmlDecode(s: string): string {
   };
   return s.replace(/&(?:#(\d+)|#x([0-9a-fA-F]+)|([a-zA-Z][a-zA-Z0-9]+)|#39);?/g,
     (full, dec?: string, hex?: string, name?: string) => {
-      if (dec) return String.fromCodePoint(Number(dec));
-      if (hex) return String.fromCodePoint(parseInt(hex, 16));
+      if (dec) return decodeCodePoint(Number(dec), full);
+      if (hex) return decodeCodePoint(parseInt(hex, 16), full);
       if (full === '&#39;') return "'";
       if (name) {
         const lower = name.toLowerCase();
@@ -100,13 +91,25 @@ function htmlDecode(s: string): string {
     });
 }
 
+function decodeCodePoint(value: number, fallback: string): string {
+  if (
+    !Number.isInteger(value) ||
+    value < 0 ||
+    value > 0x10ffff ||
+    (value >= 0xd800 && value <= 0xdfff)
+  ) {
+    return fallback;
+  }
+  return String.fromCodePoint(value);
+}
+
 /** Strip inline HTML tags and collapse whitespace to produce plain prose.
- *  Script / style end tags allow whitespace before `>` per the HTML5
- *  parser; bare `</script>` would otherwise miss `</script >`. */
+ *  Script / style end tags tolerate whitespace and malformed trailing
+ *  tokens before `>` so an odd `</script\t\n bar>` cannot leak body text. */
 function stripTags(fragment: string): string {
   return fragment
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, ' ')
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, ' ')
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/gi, ' ')
     .replace(/<br\s*\/?>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/\s+/g, ' ')
@@ -117,6 +120,32 @@ function stripTags(fragment: string): string {
 function match1(html: string, re: RegExp): string {
   const m = html.match(re);
   return m ? htmlDecode(m[1] ?? '').trim() : '';
+}
+
+function extractMetaContent(
+  html: string,
+  selectorAttr: 'name' | 'property',
+  selectorValue: string,
+): string {
+  REGEXES.metaTag.lastIndex = 0;
+  let m: RegExpExecArray | null;
+  while ((m = REGEXES.metaTag.exec(html)) !== null) {
+    const attrs = parseAttributes(m[0]);
+    if (attrs[selectorAttr]?.toLowerCase() === selectorValue.toLowerCase()) {
+      return htmlDecode(attrs.content ?? '').trim();
+    }
+  }
+  return '';
+}
+
+function parseAttributes(tag: string): Record<string, string> {
+  const attrs: Record<string, string> = {};
+  const attrRe = /([^\s=/>]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+))/g;
+  let m: RegExpExecArray | null;
+  while ((m = attrRe.exec(tag)) !== null) {
+    attrs[m[1]!.toLowerCase()] = m[2] ?? m[3] ?? m[4] ?? '';
+  }
+  return attrs;
 }
 
 /** Extract a string field from the *first* JSON-LD block that contains
@@ -179,11 +208,11 @@ export function inspectHtmlFile(filePath: string): ArticleMetadata {
 export function inspectHtmlContent(html: string, filePath: string = ''): ArticleMetadata {
   const lang = match1(html, REGEXES.htmlLang);
   const rawTitle = match1(html, REGEXES.title);
-  const metaDescription = match1(html, REGEXES.metaDescription);
-  const ogTitle = match1(html, REGEXES.ogTitle);
-  const ogDescription = match1(html, REGEXES.ogDescription);
-  const twitterTitle = match1(html, REGEXES.twitterTitle);
-  const twitterDescription = match1(html, REGEXES.twitterDescription);
+  const metaDescription = extractMetaContent(html, 'name', 'description');
+  const ogTitle = extractMetaContent(html, 'property', 'og:title');
+  const ogDescription = extractMetaContent(html, 'property', 'og:description');
+  const twitterTitle = extractMetaContent(html, 'name', 'twitter:title');
+  const twitterDescription = extractMetaContent(html, 'name', 'twitter:description');
 
   const jsonLdHeadline = extractJsonLdField(html, 'headline');
   const jsonLdAlternativeHeadline = extractJsonLdField(html, 'alternativeHeadline');
@@ -213,5 +242,7 @@ export function inspectHtmlContent(html: string, filePath: string = ''): Article
 export const __test__ = {
   htmlDecode,
   stripTags,
+  extractMetaContent,
+  parseAttributes,
   REGEXES,
 };

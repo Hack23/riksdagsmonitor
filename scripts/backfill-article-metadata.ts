@@ -71,6 +71,13 @@ const DEFAULT_OUTPUT = path.join(
 
 type Mode = 'dry-run' | 'check' | 'apply';
 
+export class CliUsageError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'CliUsageError';
+  }
+}
+
 interface CliOptions {
   readonly mode: Mode;
   readonly tiers: readonly Tier[] | null; // null = all
@@ -169,8 +176,7 @@ function assertIsoDate(flag: string, value: string): void {
 }
 
 function fail(message: string): never {
-  process.stderr.write(`backfill-article-metadata: ${message}\n`);
-  process.exit(2);
+  throw new CliUsageError(message);
 }
 
 /** List every `news/*.html` file (non-recursive, matches issue spec). */
@@ -263,10 +269,10 @@ export function scan(options: CliOptions): ScanResult {
       filesWithViolations += 1;
       totalViolations += contract.violations.length;
     }
-    if (classification.tiers.length === 0) {
+    if (tiersToEmit.length === 0) {
       uncategorised += 1;
     } else {
-      for (const t of classification.tiers) tierCounts[t] += 1;
+      for (const t of tiersToEmit) tierCounts[t] += 1;
     }
   }
 
@@ -284,7 +290,16 @@ export function scan(options: CliOptions): ScanResult {
 }
 
 function main(argv: readonly string[]): number {
-  const options = parseFlags(argv);
+  let options: CliOptions;
+  try {
+    options = parseFlags(argv);
+  } catch (error) {
+    if (error instanceof CliUsageError) {
+      process.stderr.write(`backfill-article-metadata: ${error.message}\n`);
+      return 2;
+    }
+    throw error;
+  }
 
   if (options.mode === 'apply') {
     process.stderr.write(
@@ -331,7 +346,9 @@ if (invokedDirectly) {
 }
 
 export const __test__ = {
+  CliUsageError,
   parseFlags,
   listArticleFiles,
+  scan,
   main,
 };

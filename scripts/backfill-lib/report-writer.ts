@@ -65,7 +65,7 @@ export interface ReportRow {
 }
 
 /** Quote a single CSV field per RFC 4180. */
-export function quoteField(value: string): string {
+export function quoteField(value: string | null | undefined): string {
   const s = value ?? '';
   const needsQuoting = /[",\r\n]/.test(s);
   if (!needsQuoting) return s;

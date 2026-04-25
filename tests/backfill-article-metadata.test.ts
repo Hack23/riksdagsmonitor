@@ -262,6 +262,23 @@ describe('html-inspector: inspectHtmlContent', () => {
     expect(meta.jsonLdDescription).toBe('JSON-LD Description');
   });
 
+  it('extracts meta tag content regardless of attribute order', () => {
+    const html = `<!DOCTYPE html><html lang="en"><head>
+      <title>Attribute order example</title>
+      <meta content="Description first." name="description">
+      <meta content="OG title first" property="og:title">
+      <meta content="OG description first." property="og:description">
+      <meta content="Twitter title first" name="twitter:title">
+      <meta content="Twitter description first." name="twitter:description">
+    </head><body><article><p>Body.</p></article></body></html>`;
+    const meta = inspectHtmlContent(html);
+    expect(meta.metaDescription).toBe('Description first.');
+    expect(meta.ogTitle).toBe('OG title first');
+    expect(meta.ogDescription).toBe('OG description first.');
+    expect(meta.twitterTitle).toBe('Twitter title first');
+    expect(meta.twitterDescription).toBe('Twitter description first.');
+  });
+
   it('populates bodyPlainText from <article> contents', () => {
     const meta = inspectHtmlContent(SAMPLE_HTML);
     expect(meta.bodyPlainText).toContain('Sveriges regering godkände');
@@ -310,6 +327,12 @@ describe('html-inspector: inspectHtmlContent', () => {
     expect(inspectorTest.htmlDecode('&#x2014;')).toBe('—');
   });
 
+  it('htmlDecode leaves invalid numeric references untouched', () => {
+    expect(inspectorTest.htmlDecode('&#999999999999;')).toBe('&#999999999999;');
+    expect(inspectorTest.htmlDecode('&#x110000;')).toBe('&#x110000;');
+    expect(inspectorTest.htmlDecode('&#xD800;')).toBe('&#xD800;');
+  });
+
   it('htmlDecode is single-pass (CodeQL js/double-escaping regression)', () => {
     // `&amp;quot;` must survive as the literal text `&quot;` rather
     // than being double-decoded to `"`.
@@ -327,6 +350,11 @@ describe('html-inspector: inspectHtmlContent', () => {
     // before the bracket) is valid HTML5 syntax and must be stripped.
     expect(inspectorTest.stripTags('a<script>evil()</script >b')).toBe('a b');
     expect(inspectorTest.stripTags('a<style>x{}</style\t>b')).toBe('a b');
+  });
+
+  it('stripTags handles malformed script end tags with trailing tokens', () => {
+    expect(inspectorTest.stripTags('a<script>evil()</script\t\n bar>b')).toBe('a b');
+    expect(inspectorTest.stripTags('a<style>x{}</style bogus>b')).toBe('a b');
   });
 
   it('inspectHtmlContent strips a script block whose end tag has whitespace', () => {
@@ -358,7 +386,8 @@ describe('report-writer: RFC 4180 quoting', () => {
     expect(quoteField('line1\rline2')).toBe('"line1\rline2"');
   });
   it('treats null-ish input as empty string', () => {
-    expect(quoteField(undefined as unknown as string)).toBe('');
+    expect(quoteField(undefined)).toBe('');
+    expect(quoteField(null)).toBe('');
   });
 
   it('serialiseRow emits columns in CSV_COLUMNS order', () => {
@@ -539,6 +568,16 @@ describe('CLI: parseFlags', () => {
   it('parses --quiet', () => {
     expect(parseFlags(['--quiet']).quiet).toBe(true);
   });
+
+  it('throws a typed CLI usage error instead of exiting for bad flags', () => {
+    expect(() => parseFlags(['--bad-flag'])).toThrow(cliTest.CliUsageError);
+    expect(() => parseFlags(['--date-from=bad-date'])).toThrow(cliTest.CliUsageError);
+  });
+
+  it('main maps CLI usage errors to exit code 2', () => {
+    expect(cliTest.main(['--bad-flag'])).toBe(2);
+    expect(cliTest.main(['--date-to=bad-date'])).toBe(2);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -626,6 +665,20 @@ describe('CLI: scan end-to-end', () => {
       // tier column is index 4
       expect(cols[4]).toBe('B');
     }
+  });
+
+  it('--tier=C summary counts reflect emitted tiers, not pre-filter classification', () => {
+    const opts = cliTest.parseFlags([
+      `--news-dir=${newsDir}`,
+      `--output=${outCsv}`,
+      '--quiet',
+      '--tier=C',
+      '--dry-run',
+    ]);
+    const result = cliTest.scan(opts);
+    expect(result.totals.filesMatched).toBe(1);
+    expect(result.totals.tierCounts).toEqual({ A: 0, B: 0, C: 1 });
+    expect(result.rows.every((row) => row.tier === 'C')).toBe(true);
   });
 
   it('--date-from / --date-to restrict by ISO date', () => {

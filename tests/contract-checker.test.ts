@@ -332,6 +332,7 @@ describe('contract-checker: regex corpus', () => {
   });
   it('TRAILING_BRAND_RE matches trailing " — Riksdagsmonitor"', () => {
     expect(TRAILING_BRAND_RE.test('Sweden approves budget — Riksdagsmonitor')).toBe(true);
+    expect(TRAILING_BRAND_RE.test('Sweden approves budget | Riksdagsmonitor')).toBe(false);
     expect(TRAILING_BRAND_RE.test('Riksdagsmonitor reports on the Riksdag')).toBe(false);
   });
   it('GENERIC_FILLER_RE matches contract-listed filler', () => {

@@ -134,7 +134,7 @@ export const ISO_DATE_RE = /\b\d{4}[-/]\d{2}[-/]\d{2}\b/;
  *  Contract §2.2: the raw editorial `<title>` must not end in
  *  ` — Riksdagsmonitor` because the chrome template appends it for
  *  og:title / twitter:title only. */
-export const TRAILING_BRAND_RE = /\s*[—\-–|]\s*Riksdagsmonitor\s*$/;
+export const TRAILING_BRAND_RE = /\s*[—\-–]\s*Riksdagsmonitor\s*$/;
 
 /** Generic fallback phrases that the aggregator emitted when it could
  *  not find a real description (contract §1, issue "Generic filler"). */
