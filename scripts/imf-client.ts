@@ -71,6 +71,19 @@ export interface ImfClientConfig {
    * April / October when the IMF publishes a new flagship release.
    */
   readonly weoVintage?: string;
+  /**
+   * Optional diagnostic hook invoked when `getWeoIndicatorsBatch()` fail-softs
+   * one indicator to an empty series because the IMF transport/API call failed.
+   * The default is no-op so callers can opt in without polluting JSON stdout.
+   */
+  readonly onBatchIndicatorError?: (event: ImfBatchIndicatorErrorEvent) => void;
+}
+
+/** Diagnostic payload for one fail-softed `getWeoIndicatorsBatch()` item. */
+export interface ImfBatchIndicatorErrorEvent {
+  readonly countryCode: string;
+  readonly indicatorId: string;
+  readonly error: unknown;
 }
 
 // ---------------------------------------------------------------------------
@@ -92,6 +105,12 @@ const RETRY_BASE_DELAY_MS = 1_000;
  * Matches THREAT_MODEL.md TB-6a (resource-exhaustion via cooperative back-off).
  */
 const RETRY_AFTER_CAP_MS = 30_000;
+const NETWORK_TYPE_ERROR_PATTERNS = [
+  /fetch failed/i,
+  /failed to fetch/i,
+  /network/i,
+  /load failed/i,
+] as const;
 
 /**
  * Canonical IMF indicator IDs used by Riksdagsmonitor articles. Each
@@ -187,6 +206,7 @@ export class ImfClient {
   readonly timeout: number;
   readonly maxRetries: number;
   readonly weoVintage: string;
+  private readonly onBatchIndicatorError?: (event: ImfBatchIndicatorErrorEvent) => void;
 
   constructor(config: ImfClientConfig = {}) {
     this.datamapperBaseURL = config.datamapperBaseURL ?? DEFAULT_DATAMAPPER_BASE_URL;
@@ -194,6 +214,7 @@ export class ImfClient {
     this.timeout = config.timeout ?? DEFAULT_TIMEOUT;
     this.maxRetries = config.maxRetries ?? DEFAULT_MAX_RETRIES;
     this.weoVintage = config.weoVintage ?? DEFAULT_WEO_VINTAGE;
+    this.onBatchIndicatorError = config.onBatchIndicatorError;
   }
 
   /**
@@ -256,6 +277,7 @@ export class ImfClient {
         out.set(weoCode, series);
       } catch (error) {
         if (isTransientFetchError(error) || error instanceof ImfHttpError) {
+          this.onBatchIndicatorError?.({ countryCode: iso3, indicatorId: weoCode, error });
           out.set(weoCode, []);
           continue;
         }
@@ -450,7 +472,9 @@ function isRetryableError(error: unknown): boolean {
 }
 
 function isTransientFetchError(error: unknown): boolean {
-  if (error instanceof TypeError) return true;
+  if (error instanceof TypeError) {
+    return NETWORK_TYPE_ERROR_PATTERNS.some((pattern) => pattern.test(error.message));
+  }
   if (error instanceof Error) return error.name === 'AbortError';
   return false;
 }

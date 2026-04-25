@@ -132,6 +132,12 @@ describe('imf-context', () => {
       expect(hit?.name).toMatch(/Real GDP growth/i);
     });
 
+    it('keeps strict ImfDatabase literal callers backwards compatible', () => {
+      const database = 'WEO' as const;
+      const hit = findImfIndicatorByCode(database, 'NGDP_RPCH');
+      expect(hit?.database).toBe(database);
+    });
+
     it('is case-insensitive on both arguments', () => {
       const mixed = findImfIndicatorByCode('weo', 'ngdp_rpch');
       expect(mixed?.indicatorId).toBe('NGDP_RPCH');

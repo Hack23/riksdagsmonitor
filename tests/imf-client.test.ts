@@ -318,6 +318,18 @@ describe('ImfClient', () => {
       await expect(client.getWeoIndicator('SWE', 'NGDP_RPCH')).rejects.toThrow();
       expect((spy as unknown as { mock: { calls: unknown[][] } }).mock.calls).toHaveLength(1);
     });
+
+    it('does not retry non-network TypeError programmer errors', async () => {
+      const spy = vi.fn(async () => {
+        throw new TypeError('Cannot read properties of undefined');
+      }) as unknown as typeof global.fetch;
+      global.fetch = spy;
+
+      await expect(client.getWeoIndicator('SWE', 'NGDP_RPCH')).rejects.toThrow(
+        /Cannot read properties/,
+      );
+      expect((spy as unknown as { mock: { calls: unknown[][] } }).mock.calls).toHaveLength(1);
+    });
   });
 
   describe('sdmxFetch', () => {
@@ -395,6 +407,45 @@ describe('ImfClient', () => {
       expect(result.get('NGDP_RPCH')?.length).toBe(1);
       expect(result.get('PCPIPCH')).toEqual([]);
       expect(result.get('LUR')?.length).toBe(1);
+    });
+
+    it('emits a diagnostic event when one indicator is fail-softed', async () => {
+      const diagnostics = vi.fn();
+      global.fetch = vi.fn(async () => new Response('boom', { status: 500 })) as unknown as typeof global.fetch;
+
+      const noRetryClient = new ImfClient({
+        maxRetries: 0,
+        timeout: 1_000,
+        onBatchIndicatorError: diagnostics,
+      });
+      const result = await noRetryClient.getWeoIndicatorsBatch('SWE', ['PCPIPCH']);
+
+      expect(result.get('PCPIPCH')).toEqual([]);
+      expect(diagnostics).toHaveBeenCalledOnce();
+      expect(diagnostics).toHaveBeenCalledWith(
+        expect.objectContaining({
+          countryCode: 'SWE',
+          indicatorId: 'PCPIPCH',
+          error: expect.any(Error),
+        }),
+      );
+    });
+
+    it('fail-softs fetch network TypeErrors but not programmer TypeErrors', async () => {
+      global.fetch = vi.fn(async () => {
+        throw new TypeError('fetch failed');
+      }) as unknown as typeof global.fetch;
+      const noRetryClient = new ImfClient({ maxRetries: 0, timeout: 1_000 });
+
+      const result = await noRetryClient.getWeoIndicatorsBatch('SWE', ['PCPIPCH']);
+      expect(result.get('PCPIPCH')).toEqual([]);
+
+      global.fetch = vi.fn(async () => {
+        throw new TypeError('Cannot read properties of undefined');
+      }) as unknown as typeof global.fetch;
+      await expect(noRetryClient.getWeoIndicatorsBatch('SWE', ['PCPIPCH'])).rejects.toThrow(
+        /Cannot read properties/,
+      );
     });
 
     it('validates years up-front instead of swallowing caller errors', async () => {
