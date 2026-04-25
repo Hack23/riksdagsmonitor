@@ -119,12 +119,24 @@ function parseFlags(argv: readonly string[]): CliOptions {
     } else if (arg === '--quiet') quiet = true;
     else if (arg.startsWith('--tier=')) {
       const raw = arg.slice('--tier='.length).trim();
-      if (raw === 'all' || raw === '') tiers = null;
+      if (raw === 'all') tiers = null;
       else {
-        tiers = raw.split(',').map((t) => t.trim().toUpperCase() as Tier);
-        for (const t of tiers) {
-          if (t !== 'A' && t !== 'B' && t !== 'C') {
-            fail(`Invalid --tier value: ${t}. Expected A | B | C | all.`);
+        // Mirror `--lang=` semantics: drop empty list items so
+        // `--tier=`, `--tier=,`, and `--tier=A,,C` are tolerated and an
+        // all-empty result resets to "all" rather than producing an
+        // empty tier filter that would silently match nothing.
+        const parsed = raw
+          .split(',')
+          .map((t) => t.trim().toUpperCase())
+          .filter(Boolean);
+        if (parsed.length === 0) {
+          tiers = null;
+        } else {
+          tiers = parsed as Tier[];
+          for (const t of tiers) {
+            if (t !== 'A' && t !== 'B' && t !== 'C') {
+              fail(`Invalid --tier value: ${t}. Expected A | B | C | all.`);
+            }
           }
         }
       }
@@ -226,7 +238,11 @@ export function scan(options: CliOptions): ScanResult {
   let uncategorised = 0;
 
   for (const abs of allFiles) {
-    const relPath = path.relative(ROOT_DIR, abs);
+    // Normalise to POSIX separators so the CSV `file_path` column is
+    // identical on macOS / Linux / Windows runners — `path.relative`
+    // returns backslashes on Windows which would otherwise break the
+    // "byte-for-byte deterministic" report contract.
+    const relPath = path.relative(ROOT_DIR, abs).split(path.sep).join('/');
     const fp = parseArticleFilename(relPath);
 
     // Apply CLI filters.
@@ -238,14 +254,22 @@ export function scan(options: CliOptions): ScanResult {
     // Prefer the explicit `<html lang>` when present; fall back to the
     // filename suffix if the attribute is missing (the inspector returns
     // an empty string in that case so we can distinguish "missing" from
-    // "explicitly en"). Final fallback to 'en' keeps windows resolvable.
+    // "explicitly en"). Final fallback to 'en' keeps windows resolvable
+    // even when the filename is unparseable.
     const lang = meta.lang || fp.lang || 'en';
+    // When the filename couldn't be parsed at all (`fp.lang === ''`),
+    // hydrate the fingerprint with the resolved lang so the classifier's
+    // Tier C check (`fp.lang !== 'en'`) doesn't mis-label English pages
+    // as non-EN translation-repair candidates. Files with a parseable
+    // `-<lang>` suffix keep their filename signal so existing rows stay
+    // byte-identical with the committed dry-run CSV.
+    const fpResolved: typeof fp = fp.lang === '' ? { ...fp, lang } : fp;
     const contract = checkAgainstContract(
       { title: meta.title, description: meta.metaDescription },
       lang,
     );
 
-    const classification = classify(ANALYSIS_DIR, fp, contract);
+    const classification = classify(ANALYSIS_DIR, fpResolved, contract);
 
     // Apply tier filter after classification (classification is pure so
     // the CSV can still show *which* tiers the file qualified for).
@@ -260,7 +284,7 @@ export function scan(options: CliOptions): ScanResult {
     // Feed the filtered tier list into rowsForArticle by constructing a
     // shallow copy — keeps the classifier module pure and non-mutated.
     const articleRows = rowsForArticle(
-      fp,
+      fpResolved,
       {
         tiers: tiersToEmit,
         reasons: classification.reasons,

@@ -145,16 +145,30 @@ export function rowsForArticle(
  * Write the full report to `outputPath`. Creates any missing parent
  * directories. Returns the number of rows written (excluding the
  * header).
+ *
+ * Rows are streamed to disk one line at a time via a synchronous file
+ * descriptor, so peak memory stays bounded even for thousands of files
+ * × multiple tiers/violations. Output bytes are unchanged versus the
+ * previous all-in-memory implementation: header + `\n` + serialised
+ * rows joined by `\n`, with a trailing `\n` only when at least one row
+ * is present.
  */
 export function writeReport(
   outputPath: string,
   rows: readonly ReportRow[],
 ): number {
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-  const header = CSV_COLUMNS.join(',');
-  const body = rows.map(serialiseRow).join('\n');
-  const csv = rows.length > 0 ? `${header}\n${body}\n` : `${header}\n`;
-  fs.writeFileSync(outputPath, csv, 'utf8');
+  const fd = fs.openSync(outputPath, 'w');
+  try {
+    fs.writeSync(fd, CSV_COLUMNS.join(','));
+    fs.writeSync(fd, '\n');
+    for (const row of rows) {
+      fs.writeSync(fd, serialiseRow(row));
+      fs.writeSync(fd, '\n');
+    }
+  } finally {
+    fs.closeSync(fd);
+  }
   return rows.length;
 }
 

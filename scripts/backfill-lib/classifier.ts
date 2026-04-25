@@ -66,13 +66,17 @@ export function parseArticleFilename(relPath: string): ArticleFingerprint {
   // Greedy date at the start, greedy lang at the end.
   const m = base.match(/^(\d{4}-\d{2}-\d{2})-(.+?)-([a-z]{2})$/i);
   if (!m) {
-    return { relPath, date: null, subfolder: null, lang: 'en' };
+    // Empty `lang` rather than `'en'` so unparseable filenames are not
+    // silently treated as English by `--lang` filtering. The CLI still
+    // applies a final `meta.lang || fp.lang || 'en'` fallback when
+    // resolving the language window for contract checks.
+    return { relPath, date: null, subfolder: null, lang: '' };
   }
   return {
     relPath,
     date: m[1] ?? null,
     subfolder: m[2] ?? null,
-    lang: (m[3] ?? 'en').toLowerCase(),
+    lang: (m[3] ?? '').toLowerCase(),
   };
 }
 

@@ -124,15 +124,33 @@ function extractMetaContent(
   selectorAttr: 'name' | 'property',
   selectorValue: string,
 ): string {
+  const map = parseAllMetaTags(html);
+  return map.get(`${selectorAttr}:${selectorValue.toLowerCase()}`) ?? '';
+}
+
+/** Walk every `<meta …>` once and build a lookup keyed by
+ *  `${name|property}:${value}` (lowercased). The CLI scans thousands of
+ *  files, so collapsing five sequential regex passes into one keeps the
+ *  hot path small. */
+function parseAllMetaTags(html: string): Map<string, string> {
+  const map = new Map<string, string>();
   const metaTagRe = /<meta\b[^>]*>/gi;
   let m: RegExpExecArray | null;
   while ((m = metaTagRe.exec(html)) !== null) {
     const attrs = parseAttributes(m[0]);
-    if (attrs[selectorAttr]?.toLowerCase() === selectorValue.toLowerCase()) {
-      return htmlDecode(attrs.content ?? '').trim();
+    const content = htmlDecode(attrs.content ?? '').trim();
+    const name = attrs.name?.toLowerCase();
+    const property = attrs.property?.toLowerCase();
+    if (name) {
+      const key = `name:${name}`;
+      if (!map.has(key)) map.set(key, content);
+    }
+    if (property) {
+      const key = `property:${property}`;
+      if (!map.has(key)) map.set(key, content);
     }
   }
-  return '';
+  return map;
 }
 
 function parseAttributes(tag: string): Record<string, string> {
@@ -156,13 +174,13 @@ function extractHtmlLang(html: string): string {
   return htmlDecode(attrs.lang ?? '').trim();
 }
 
-/** Extract a string field from the *first* JSON-LD block that contains
- *  it. Uses `JSON.parse` with graceful fall-through — a malformed block
- *  is skipped rather than crashing the whole scan. The script tag is
- *  matched permissively so additional attributes, alternate orderings,
- *  and single-quoted `type` values are all detected. */
-function extractJsonLdField(html: string, field: 'headline' | 'alternativeHeadline' | 'description'): string {
+/** Walk every `<script>` once, keep the JSON-LD ones, and return their
+ *  parsed (or `null` for malformed) bodies. The script tag matcher
+ *  tolerates additional attributes, alternate orderings, and
+ *  single-quoted `type` values. */
+function parseAllJsonLdBlocks(html: string): readonly unknown[] {
   const scriptRe = /<script\b([^>]*)>([\s\S]*?)<\/script\b[^>]*>/gi;
+  const blocks: unknown[] = [];
   let m: RegExpExecArray | null;
   while ((m = scriptRe.exec(html)) !== null) {
     const attrs = parseAttributes(`<script ${m[1] ?? ''}>`);
@@ -170,13 +188,21 @@ function extractJsonLdField(html: string, field: 'headline' | 'alternativeHeadli
     if (type !== 'application/ld+json') continue;
     const body = m[2] ?? '';
     try {
-      const parsed = JSON.parse(body) as unknown;
-      const value = readJsonLdField(parsed, field);
-      if (value) return value;
+      blocks.push(JSON.parse(body));
     } catch {
       // Skip malformed blocks — never fatal.
-      continue;
     }
+  }
+  return blocks;
+}
+
+function readJsonLdFieldFromBlocks(
+  blocks: readonly unknown[],
+  field: 'headline' | 'alternativeHeadline' | 'description',
+): string {
+  for (const parsed of blocks) {
+    const value = readJsonLdField(parsed, field);
+    if (value) return value;
   }
   return '';
 }
@@ -220,15 +246,23 @@ export function inspectHtmlFile(filePath: string): ArticleMetadata {
 export function inspectHtmlContent(html: string, filePath: string = ''): ArticleMetadata {
   const lang = extractHtmlLang(html);
   const title = match1(html, REGEXES.title);
-  const metaDescription = extractMetaContent(html, 'name', 'description');
-  const ogTitle = extractMetaContent(html, 'property', 'og:title');
-  const ogDescription = extractMetaContent(html, 'property', 'og:description');
-  const twitterTitle = extractMetaContent(html, 'name', 'twitter:title');
-  const twitterDescription = extractMetaContent(html, 'name', 'twitter:description');
 
-  const jsonLdHeadline = extractJsonLdField(html, 'headline');
-  const jsonLdAlternativeHeadline = extractJsonLdField(html, 'alternativeHeadline');
-  const jsonLdDescription = extractJsonLdField(html, 'description');
+  // Parse `<meta>` tags and JSON-LD blocks once per file rather than
+  // scanning the document for every requested field. The CLI walks
+  // thousands of articles, so collapsing 5 + 3 sequential passes into
+  // one each keeps the hot path tight.
+  const metaMap = parseAllMetaTags(html);
+  const jsonLdBlocks = parseAllJsonLdBlocks(html);
+
+  const metaDescription = metaMap.get('name:description') ?? '';
+  const ogTitle = metaMap.get('property:og:title') ?? '';
+  const ogDescription = metaMap.get('property:og:description') ?? '';
+  const twitterTitle = metaMap.get('name:twitter:title') ?? '';
+  const twitterDescription = metaMap.get('name:twitter:description') ?? '';
+
+  const jsonLdHeadline = readJsonLdFieldFromBlocks(jsonLdBlocks, 'headline');
+  const jsonLdAlternativeHeadline = readJsonLdFieldFromBlocks(jsonLdBlocks, 'alternativeHeadline');
+  const jsonLdDescription = readJsonLdFieldFromBlocks(jsonLdBlocks, 'description');
 
   const articleMatch = html.match(REGEXES.article);
   const bodyPlainText = articleMatch
