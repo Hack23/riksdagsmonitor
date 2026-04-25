@@ -431,6 +431,24 @@ jobs:
 - `coverage/lcov.info` - LCOV format for badges
 - `coverage/json` - JSON format for analysis
 
+#### Enforced Coverage Thresholds (vitest.config.js)
+
+CI fails if any of these falls below the configured floor. Thresholds are
+calibrated to **(measured baseline − 2 %)** so they catch regressions without
+forcing retroactive backfill of legacy modules. Raise incrementally as tests
+land for `scripts/render-lib/**` and `src/browser/dashboards/**`.
+
+| Metric | Threshold | Baseline (2026-04-25) | Long-term target |
+| --- | --- | --- | --- |
+| Statements | **22 %** | 24.89 % | 70 % |
+| Branches | **22 %** | 24.01 % | 60 % |
+| Functions | **20 %** | 22.13 % | 70 % |
+| Lines | **23 %** | 25.61 % | 70 % |
+
+To re-measure the baseline after adding tests, run `npm run test:coverage` and
+read the `All files` row at the bottom of the table; update both the
+`thresholds` block in `vitest.config.js` and the table above in the same PR.
+
 ### Quality Gates
 
 **All PRs must pass**:
@@ -438,18 +456,18 @@ jobs:
 - ✅ E2E tests (100% pass rate)
 - ✅ CSV data validation (all files valid)
 - ✅ No test skips or conditionals
-- ✅ >80% code coverage (target)
+- ✅ Coverage thresholds (22 % statements / 22 % branches / 20 % functions / 23 % lines — see table above)
 
 ## 📊 Test Metrics
 
-### Current Status (2026-02-18)
+### Current Status (2026-04-25)
 
 | Metric | Value | Target | Status |
 |--------|-------|--------|--------|
-| **Unit Tests** | 1183 | >1000 | ✅ |
+| **Unit Tests** | 2185 | >1000 | ✅ |
 | **E2E Tests** | 150+ | >100 | ✅ |
 | **CSV Validation** | 159 | 100% | ✅ |
-| **Code Coverage** | ~30% | >80% | 🟡 |
+| **Code Coverage** | 22–26 % (see threshold table) | >70 % long-term | 🟡 |
 | **Test Skips** | 0 | 0 | ✅ |
 | **Dashboards Covered** | 9/9 | 9/9 | ✅ |
 | **Languages Tested** | 1/14 | 14/14 | 🟡 |
@@ -458,9 +476,9 @@ jobs:
 
 | Test Suite | Duration | Target |
 |------------|----------|--------|
-| Unit Tests (Vitest) | ~15s | <30s |
-| E2E Tests (Cypress) | TBD | <5min |
-| Visual Tests (Playwright) | TBD | <10min |
+| Unit Tests (Vitest) | ~63 s | <90 s |
+| E2E Tests (Cypress) | TBD | <5 min |
+| Visual Tests (Playwright) | TBD | <10 min |
 
 ## 🚀 Running Tests
 
@@ -470,10 +488,13 @@ jobs:
 # Run all unit tests
 npm test
 
-# Run specific test file
+# Run a specific test file
 npm test tests/csv-validation.test.js
 
-# Run tests with coverage
+# Run a focused subset by name pattern
+npm test -- --grep "imf-client"
+
+# Run tests with coverage (enforces thresholds in vitest.config.js)
 npm run test:coverage
 
 # Watch mode (interactive)

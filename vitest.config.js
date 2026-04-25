@@ -29,22 +29,18 @@ export default defineConfig({
       // Enabled: include all source files so zero-coverage modules are visible
       all: true,
       
-      // Coverage thresholds — intentionally low during transition while all:true
-      // exposes previously-hidden zero-coverage files.  Raise incrementally as
-      // tests are added for the dashboard and browser modules.
-      //
-      // 2026-04: thresholds adjusted downward after the PR #1979 pipeline
-      // refactor deleted ~29k lines of legacy news-generation code. The net
-      // numerator/denominator shift left coverage at ~21% while the old
-      // 25/20/25/25 floor was calibrated against the previous codebase shape.
-      // Follow-up: add dedicated tests for scripts/render-lib/** and
-      // src/browser/dashboards/** to raise these back toward the long-term
-      // target (lines:70, functions:70, branches:60, statements:70).
+      // Coverage thresholds — set to (current − 2 %) per the 2026-04-25
+      // code-quality refresh. Measured baseline (npm run test:coverage):
+      //   statements 24.89% · branches 24.01% · functions 22.13% · lines 25.61%
+      // Thresholds catch regressions without forcing retroactive backfill of
+      // already-uncovered legacy modules. Raise incrementally as tests are
+      // added for `scripts/render-lib/**` and `src/browser/dashboards/**`.
+      // Long-term target: lines:70, functions:70, branches:60, statements:70.
       thresholds: {
-        lines: 20,
-        functions: 17,
-        branches: 18,
-        statements: 20,
+        lines: 23,
+        functions: 20,
+        branches: 22,
+        statements: 22,
       },
       
       // Include patterns
