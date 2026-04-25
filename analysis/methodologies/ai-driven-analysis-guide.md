@@ -16,7 +16,7 @@
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 6.5 | **📅 Last Updated:** 2026-04-25 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 6.6 | **📅 Last Updated:** 2026-04-25 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -124,6 +124,9 @@ Use the [`per-file-political-intelligence.md`](../templates/per-file-political-i
 - Forward indicators with dated triggers
 - ≥ 1 color-coded Mermaid diagram
 - Confidence label on every claim using **5-Level Scale** and **WEP language** for probability
+- For ≥ L2 documents: a §"Narrative" subsection per [`political-style-guide.md` §"Narrative-Voice Standards"](political-style-guide.md#-narrative-voice-standards-v32--new) (lede + body + counter-narrative); the Family A `synthesis-summary.md` and `executive-brief.md` will pull from this when the document is the day's #1 or #2 ranked finding
+
+> 💡 **Doctype detection (v1.3):** before writing a per-file analysis, run the doctype-variant detector from [`per-document-methodology.md` §"Per-doctype Mermaid taxonomy"](per-document-methodology.md#per-doctype-mermaid-taxonomy). The 5 extended variants (`motion-package`, `fpm` shadow-budget, `utskottsbetänkande-variants` with reservations, `KU-anmälan` constitutional scrutiny, `EU-nämnd` consultations) demand specialised Mermaid shapes and analytic handling — a generic `mot` template applied to a `fpm` misses the entire delta-envelope analysis.
 
 ---
 
@@ -148,7 +151,7 @@ Plus **two structural files** produced every run:
 | # | File | Template | Purpose |
 |:-:|------|----------|---------|
 | 10 | `data-download-manifest.md` | [`data-download-manifest.md`](../templates/data-download-manifest.md) | What was downloaded, from where, with data-depth counts |
-| 11 | `cross-reference-map.md` | [`cross-reference-map.md`](../templates/cross-reference-map.md) | Policy clusters, legislative chains, coordinated-activity patterns |
+| 11 | `cross-reference-map.md` | [`cross-reference-map.md`](../templates/cross-reference-map.md) | Policy clusters, legislative chains, coordinated-activity patterns — every Mermaid edge labelled with one of the 7 atomic edge types per [`structural-metadata-methodology.md` §"Relationship taxonomy"](structural-metadata-methodology.md#relationship-taxonomy-canonical--7-edge-types--use-these-names-exactly) |
 
 ---
 
@@ -211,6 +214,8 @@ Read every file you produced in Steps 3–5. For each one, **improve every secti
 - Re-rank the significance scoring if the rewrite reveals a stronger lead.
 - Rewrite the lede of `synthesis-summary.md` so it leads with the #1 DIW-ranked finding — not the document count.
 - **Complete the ICD 203 compliance checklist** in `methodology-reflection.md`.
+- **Run the Pass-2 Self-Audit Checklist** present in every template (10 items: tradecraft anchors / source diversity / evidence specificity / named-actor discipline / counter-narrative / Election 2026 lens / no illustrative content as fact / cross-references resolve / Mermaid renders / line-floor check). Any unchecked ❌ at the end of Pass 2 forces a Pass-3 rewrite of the affected section.
+- **Score the Narrative subsection** in `executive-brief.md`, `synthesis-summary.md`, and any L2+ per-file artifact against the 6-axis narrative rubric in [`political-style-guide.md` §"Narrative-Voice Standards"](political-style-guide.md#-narrative-voice-standards-v32--new) (lede / scene density / character density / surprise quotient / takeaway sharpness / counter-narrative). **Hard floor: 18 / 30 total to publish; any single axis < 3 fails the gate.**
 
 **Time budget rule**: Pass 1 uses ≤ 60 % of workflow time; Pass 2 uses ≥ 25 %; Quality gate the remainder. Workflows completing in < 45 minutes of a 60-minute allocation indicate the pass-2 rewrite was skipped.
 
@@ -385,6 +390,8 @@ Every `significance-scoring.md` ranks documents against these six dimensions.
 
 **Rhetorical-tension rule**: when the top-ranked findings carry opposing political valences, surface the tension in a dedicated subsection.
 
+> 💡 **Worked example available (v1.3):** for a line-by-line scoring of a hypothetical wealth-tax proposition + the Winner/loser quantification rubric (Identity / Magnitude / Direction / Confidence / Counter-narrative), see [`synthesis-methodology.md` §"DIW formula — canonical"](synthesis-methodology.md#diw-formula--canonical). For the Sainte-Laguë seat-allocation walkthrough used in `coalition-mathematics.md`, see [`electoral-domain-methodology.md` §"Worked example — Sainte-Laguë modified seat allocation"](electoral-domain-methodology.md#worked-example--sainte-laguë-modified-seat-allocation). Always show the divisor table; never assert seat outcomes without the computation visible.
+
 ---
 
 ## 🗳️ Election 2026 Lens (mandatory during pre-election window)
@@ -475,6 +482,8 @@ Carry-forward files contain: a parliamentary-calendar explanation, the most rece
 | 8 | Forward indicators have dated triggers | Specific committee dates, vote schedules, not "1–2 weeks" |
 | 9 | Folder isolation respected | `git status` shows only `analysis/daily/${DATE}/${SCOPE}/` paths |
 | 10 | Pass-2 rewrite applied to every file | Each section measurably improved vs. first pass |
+| 11 | **Pass-2 Self-Audit Checklist** completed per template (10 items) | Every box ticked; failures force Pass-3 rewrite |
+| 12 | **Narrative subsection scored ≥ 18 / 30** on the 6-axis rubric for `executive-brief.md`, `synthesis-summary.md`, and L2+ per-file artifacts | No single axis < 3 |
 
 ---
 
@@ -582,7 +591,9 @@ Every security-relevant control in Family A maps to **ISO 27001:2022**, **NIST C
 
 **Document Control**
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`
-- **Version:** 6.5 — source diversity rule integration (political-style-guide.md v3.1)
+- **Version:** 6.6 — Phase 2–5 alignment (worked examples + narrative-voice + Pass-2 self-audit)
+- **Key changes in v6.6:** Step 3 now points at the v1.3 doctype-variant detector (5 extended types: motion-package, fpm, utskottsbetänkande-variants, KU-anmälan, EU-nämnd) and adds Narrative subsection requirement for ≥ L2 per-file artifacts; Step 4 cross-reference-map row links to the 7 atomic edge types in `structural-metadata-methodology.md` v1.3; Step 7 Pass-2 rewrite checklist adds two binding items — Pass-2 Self-Audit Checklist (10 items) and Narrative 6-axis rubric (18/30 floor); DIW section adds worked-example callout to `synthesis-methodology.md` v1.3 (line-by-line scoring + winner/loser rubric) and Sainte-Laguë walkthrough in `electoral-domain-methodology.md` v1.3; Quality Gate Checklist gains rows 11–12.
+- **Key changes in v6.5:** source diversity rule integration (political-style-guide.md v3.1)
 - **Key changes in v6.4:** Updated Step 1 reading list to reference **Source Diversity Rule** in political-style-guide.md v3.1 (multi-source corroboration by claim priority, conflict resolution, worked scenario); added Source Diversity check to Quality Gate Evidence dimension (P0/P1: ≥3 sources required); added source diversity verification to Pass-2 rewrite checklist; added IMF collection tools to referenced Collection Management Matrix.
 - **Key changes in v6.3:** Integrated F3EAD intelligence cycle stage labels into all 7 steps (Step 2=FIND/FIX, Step 3=FINISH, Step 4=EXPLOIT/ANALYZE, Step 5=ANALYZE, Step 7=DISSEMINATE); added SAT(s) Applied column to Family C+D file table; added Admiralty Code and WEP requirements to quality gate rubric; added ICD 203 compliance as hard pass/fail gate; updated Step 7 Pass-2 rewrite checklist with PIR/EEI tagging and Admiralty verification; reordered reading list to put `political-style-guide.md` (tradecraft anchors) at #2 after this guide.
 - **Key changes in v6.2:** Elevated Families C + D to always-produced core (no more trigger language); marked `methodology-reflection.md` as ⭐ VITAL run-audit gate with explicit quality-gate enforcement; added filename-variant mapping table (`historical-baseline`↔`historical-parallels`, `election-2026-implications`↔`election-2026-analysis`, `international-comparative`↔`comparative-international`); added depth-tier calibration table (L1/L2/L2+/L3) showing how files adapt without changing the output set; Output Matrix now marks all 6 workflow rows as "✅ All" for every family; Step 5 rewritten as "always produced — 12 files" with per-file behaviour on light-event vs P0-dense days; every downstream methodology cross-ref updated.

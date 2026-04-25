@@ -16,7 +16,7 @@
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.4 | **📅 Last Updated:** 2026-04-25 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 4.5 | **📅 Last Updated:** 2026-04-25 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-25  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -169,6 +169,22 @@ Key findings in `intelligence-assessment.md`, `executive-brief.md`, and `synthes
 ### ICD 203 Compliance
 
 Every `methodology-reflection.md` includes an ICD 203 compliance checklist verifying all 9 analytic tradecraft standards are met.
+
+### ✅ Pass-2 Self-Audit Checklist (v4.4 — universal)
+
+Every production template (33 files; excludes the templates index README and `methodology-reflection.md` itself) carries a 10-item Pass-2 Self-Audit Checklist at its end. After Pass 1 produces the artifact, Pass 2 must re-read it end-to-end and verify each item; remediation is logged in `methodology-reflection.md §"Pass-2 audit log"`. Any unchecked ❌ at the end of Pass 2 forces a Pass-3 rewrite of the affected section.
+
+The 10 items: (1) Tradecraft anchors honoured · (2) Source diversity floor met · (3) Evidence specificity (no "according to data" hand-waves) · (4) Named-actor discipline · (5) Counter-narrative present · (6) Election 2026 lens applied · (7) No illustrative content shipped as fact · (8) Cross-references resolve · (9) Mermaid renders · (10) Line-floor check against [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json).
+
+### 📖 Narrative subsection (Family A synthesis templates + L2+ per-file)
+
+Three templates carry a binding §"Narrative" subsection that is the prose handoff to `article.md`:
+
+- [`executive-brief.md`](executive-brief.md) v1.2 — lede paragraph (120–180 words) + body (300–500 words) + counter-narrative (60–150 words).
+- [`synthesis-summary.md`](synthesis-summary.md) v2.5 — lead-story narrative (400–700 words) + optional secondary-thread narrative for ≥ 3-finding days.
+- [`per-file-political-intelligence.md`](per-file-political-intelligence.md) v2.5 — required for ≥ L2-Strategic depth tier; optional for L1-Surface and clustered low-weight items.
+
+All three are graded against the **Pass-2 6-axis narrative rubric** in [`political-style-guide.md` §"Narrative-Voice Standards"](../methodologies/political-style-guide.md#-narrative-voice-standards-v32--new): lede grade · scene density · character density · surprise quotient · takeaway sharpness · counter-narrative. **Hard floor: 18 / 30 to publish; any single axis < 3 fails the gate.**
 
 ### 📰 Reader-Facing Output Contract (script-enforced)
 
@@ -760,6 +776,36 @@ sequenceDiagram
         QG->>AI: ❌ Revision required
     end
 ```
+
+---
+
+## 🆕 v4.5 Template Content Completion (2026-04-25)
+
+Surfaces the Phase 3–4 template content additions. Every change here is binding contract for new artifact generation runs.
+
+### ✅ Pass-2 Self-Audit Checklist — universal (33 templates)
+
+Every production template (excludes only the templates index README and `methodology-reflection.md`, which IS the Pass-2 audit) now carries a **10-item Pass-2 Self-Audit Checklist** at its end. The checklist is binding: any unchecked ❌ at the end of Pass 2 forces a Pass-3 rewrite of the affected section. Items cover tradecraft anchors, source-diversity floor, evidence specificity, named-actor discipline, counter-narrative presence, Election 2026 lens, no illustrative content as fact, cross-reference resolution, Mermaid render check, and line-floor compliance against [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json).
+
+### 📖 Narrative subsection — Family A synthesis + L2+ per-file (3 templates)
+
+- `executive-brief.md` v1.1 → v1.2 — added §"Narrative" with lede + body + counter-narrative slots.
+- `synthesis-summary.md` v2.4 → v2.5 — added §"Narrative" with lead-story narrative (400–700 words) + optional secondary-thread narrative.
+- `per-file-political-intelligence.md` v2.4 → v2.5 — added §"Narrative" required for ≥ L2-Strategic depth tier.
+
+All three are graded against the **Pass-2 6-axis narrative rubric** (lede / scene / character / surprise / takeaway / counter-narrative) in [`political-style-guide.md` §"Narrative-Voice Standards"](../methodologies/political-style-guide.md#-narrative-voice-standards-v32--new) — hard floor 18 / 30 to publish; any single axis < 3 fails.
+
+### 📋 Doctype-variant alignment
+
+Family E template `per-file-political-intelligence.md` is now bound to the **5 extended doctype variants** introduced in `per-document-methodology.md` v1.3: `motion-package`, `fpm` (shadow budget — full delta-envelope analysis), `utskottsbetänkande-variants` (explicit reservation handling), `KU-anmälan` (constitutional scrutiny), `EU-nämnd` (EU consultation). Each variant has a specialised Mermaid shape; the binding doctype-detection algorithm runs before any per-file analysis is written.
+
+### 🔢 Version bumps (33 templates)
+
+All 33 production templates were version-bumped (handles both `**📄 Version:**` major-format and `**Template version:**` footer-format). Library-wide: 277 cross-document `.md` links resolve, 0 broken; 33/33 templates carry Pass-2 Self-Audit Checklists; 35/35 templates carry Tradecraft Context blocks; 3/3 synthesis templates carry Narrative subsections; date-stamps unified at 2026-04-25.
+
+### 🧪 Threshold JSON alignment (`reference-quality-thresholds.json` v1.2 → v1.3)
+
+Legacy template aliases renamed throughout JSON: `classification-results.md` → `political-classification.md`; `stakeholder-perspectives.md` → `stakeholder-impact.md`. `executive-brief.md` line floors added to all 11 article-types. 0 ghost references remaining.
 
 ---
 
