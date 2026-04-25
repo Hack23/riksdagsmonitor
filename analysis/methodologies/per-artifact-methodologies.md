@@ -167,9 +167,9 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 
 ### comparative-international
 
-**Inputs** — world-bank MCP, IMF CLI, SCB, peer-country press.  
+**Inputs** — world-bank MCP (non-economic residue), IMF CLI (economic primary), SCB, Statskontoret for public-administration comparators, peer-country press.  
 **Analytic moves** — (1) ≥ 2 comparator jurisdictions (Nordic baseline + EU or global); (2) Outside-In analysis (what would this look like to a Finnish / Danish / EU observer?); (3) quantitative table of ≥ 3 indicators.  
-**Evidence rules** — indicator code (e.g. `SE.XPD.TOTL.GD.ZS`) + source URL per row; year stamp.  
+**Evidence rules** — indicator code (e.g. `WEO:NGDP_RPCH`, `SE.XPD.TOTL.GD.ZS`) + source URL per row; year/vintage stamp. Statskontoret rows cite report/page URL + publication date.  
 **Anti-patterns** — Swedish exceptionalism; comparator chosen only to confirm prior.
 
 ### devils-advocate
@@ -235,9 +235,9 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 
 ### implementation-feasibility
 
-**Inputs** — relevant myndighet (agency) capacity, budget, IT, regulatory, workforce.  
+**Inputs** — relevant myndighet (agency) capacity, Statskontoret evaluations/reports, budget, IT, regulatory, workforce.  
 **Analytic moves** — (1) delivery-risk view per dimension; (2) backlog audit (for no-bill days); (3) timeline with critical path.  
-**Evidence rules** — myndighet citation + budget appropriation; regulatory CV.  
+**Evidence rules** — myndighet citation + budget appropriation + Statskontoret URL where available; regulatory CV.  
 **Anti-patterns** — "easy to implement" without citing capacity data.
 
 ### forward-indicators

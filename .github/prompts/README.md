@@ -20,6 +20,7 @@ This directory is the **single source of truth** for how GitHub Agentic Workflow
   - Agentic-workflows blog series: <https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt>
   - Source repo: <https://github.com/github/gh-aw>
   - GitHub CLI: <https://cli.github.com/manual/>
+- **Article-generation system map** → [`Article-Generation.md`](../../Article-Generation.md) is the readable end-to-end contract for how workflows, prompts, artifacts, `article.md`, renderer chrome, SEO, UI/UX exports, and deployment fit together. Prompt modules below remain the executable per-phase rules.
 - **Analysis artifact contract** (the "deep political analysis" product that every news workflow must produce *before* writing a single article sentence):
   - **Read-me-first** — [`analysis/methodologies/artifact-catalog.md`](../../analysis/methodologies/artifact-catalog.md) (single source of truth for every artifact — family, template, depth floor, Mermaid, MCP, gate check) and [`analysis/methodologies/per-artifact-methodologies.md`](../../analysis/methodologies/per-artifact-methodologies.md) (Inputs / Analytic-moves / Evidence-rules / Anti-patterns per artifact)
   - Methodology → [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md)
@@ -124,6 +125,7 @@ The monolithic `.github/aw/SHARED_PROMPT_PATTERNS.md` was deleted when these mod
 - [`.github/agents/README.md`](../agents/README.md) — 24 agent files (14 persona + 9 workflow-specialist + 1 developer-instructions)
 - [`.github/skills/README.md`](../skills/README.md) — 91 skills by functional category
 - [`.github/workflows/README.md`](../workflows/README.md) — 45 workflow files (21 `.yml` + 12 `.md` + 12 `.lock.yml`)
+- [`Article-Generation.md`](../../Article-Generation.md) — article-generation architecture, business value, UI/UX export, SEO, deployment and source index
 - [`analysis/README.md`](../../analysis/README.md) — on-disk artifact layout (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`)
 - [`analysis/methodologies/README.md`](../../analysis/methodologies/README.md) — 12 methodology modules (AI guide · 4 domain frameworks · 5 Family production methodologies · style guide · **OSINT / INTOP tradecraft standards** canon)
 - [`analysis/templates/README.md`](../../analysis/templates/README.md) — 23 canonical output templates

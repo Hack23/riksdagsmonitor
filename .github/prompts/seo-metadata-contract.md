@@ -10,7 +10,7 @@
 
 This contract is the single source of truth for what the `<title>` and
 `<meta name="description">` of every published article must look like,
-in every one of the 14 supported languages. Every article also propagates
+in every one of the 14 supported languages. It is the SEO-specific companion to [`Article-Generation.md`](../../Article-Generation.md), which describes the complete workflow → analysis artifacts → `article.md` → HTML/UI export pipeline. Every article also propagates
 these two strings into eight other SEO surfaces (`og:title`,
 `og:description`, `twitter:title`, `twitter:description`, JSON-LD
 `headline` / `alternativeHeadline` / `description`, and the human-readable

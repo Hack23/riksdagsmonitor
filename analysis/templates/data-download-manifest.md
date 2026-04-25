@@ -63,10 +63,12 @@ flowchart LR
     WF --> T2["📊 scb<br/>PxWeb v2<br/>(economic context)"]
     WF --> T3["🌍 world-bank<br/>governance + WGI<br/>(comparative context)"]
     WF --> T4["💰 imf<br/>WEO/SDMX 3.0<br/>(macro/fiscal)"]
+    WF --> T5["🏛️ Statskontoret<br/>public web reports<br/>(agency capacity)"]
     T1 --> OUT["📁 data-download-manifest.md"]
     T2 --> OUT
     T3 --> OUT
     T4 --> OUT
+    T5 --> OUT
 
     style WF fill:#1565C0,color:#FFFFFF
     style T1 fill:#7B1FA2,color:#FFFFFF
@@ -87,6 +89,7 @@ flowchart LR
 | `imf` (scripted, SDMX) | `tsx scripts/imf-fetch.ts sdmx` | `/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2022-01` | `N` | monthly CPI (`IFS`) |
 | `world-bank` (non-economic ONLY) | `get-economic-data` | `country=SE, indicator=CC.EST` | `N` | WGI governance (`source=75`) |
 | `world-bank` (non-economic ONLY) | `get-economic-data` | `country=SE, indicator=EN.ATM.CO2E.PC` | `N` | environment (CO2) |
+| Statskontoret (public web) | `web_fetch` | `https://www.statskontoret.se/...` | `N` | agency-capacity / implementation evidence |
 
 > **v2.1 reminder**: WB economic codes (`NY.GDP.*`, `FP.CPI.TOTL.ZG`, `SL.UEM.TOTL.ZS`, `GC.DOD.*`, `GC.XPN.*`, `GC.REV.*`, `BN.CAB.*`, `NE.EXP.*`) are **deprecated** — use their IMF replacement listed in [`analysis/imf/indicators-inventory.json → deprecationPolicy`](../imf/indicators-inventory.json).
 
@@ -116,7 +119,7 @@ flowchart LR
 
 | Document | Primary Source | Enrichment Sources | Notes |
 |----------|:--------------:|--------------------|-------|
-| `HD03100` | `get_propositioner` | `search_voteringar` (FiU1 budget vote), SCB NR0103 GDP, IMF WEO 2026 | GDP data ties spring-bill narrative to macro context |
+| `HD03100` | `get_propositioner` | `search_voteringar` (FiU1 budget vote), SCB NR0103 GDP, IMF WEO 2026, Statskontoret agency-capacity report if relevant | GDP data ties spring-bill narrative to macro context; Statskontoret tests deliverability assumptions |
 | `HD03236` | `get_propositioner` | SCB PR0101 (pump-price index), SCB AKU (employment) | Fuel-tax cost-of-living linkage |
 
 ---

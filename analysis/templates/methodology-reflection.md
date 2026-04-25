@@ -111,6 +111,8 @@ flowchart LR
 
 ## 📊 Content Metrics
 
+> Include IMF provenance and Statskontoret coverage in this section whenever relevant. Economic claims without IMF vintage/provenance or implementation claims without a Statskontoret search note are methodology gaps, even if the rest of the gate passes.
+
 | Metric | Target | Actual | Status |
 |--------|:------:|:------:|:------:|
 | Total word count across Family A | ≥ 5 000 | 7 320 | 🟢 |

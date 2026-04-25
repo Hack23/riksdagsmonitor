@@ -80,6 +80,8 @@ network:
     - riksdagen.se
     - www.regeringen.se
     - www.scb.se
+    - www.statskontoret.se
+    - statskontoret.se
     - regeringen.se
     - hack23.com
     - www.hack23.com
@@ -127,6 +129,8 @@ safe-outputs:
     - riksdagen.se
     - www.regeringen.se
     - www.scb.se
+    - www.statskontoret.se
+    - statskontoret.se
     - hack23.com
     - www.hack23.com
     - riksdagsmonitor.com
@@ -183,7 +187,7 @@ steps:
       echo "═══════════════════════════════════════════"
       echo ""
       echo "📡 DNS Resolution Tests:"
-      for domain in riksdag-regering-ai.onrender.com api.scb.se api.worldbank.org data.riksdagen.se www.riksdagen.se www.regeringen.se; do
+      for domain in riksdag-regering-ai.onrender.com api.scb.se api.worldbank.org data.riksdagen.se www.riksdagen.se www.regeringen.se www.statskontoret.se statskontoret.se; do
         if nslookup "$domain" >/dev/null 2>&1; then
           IP=$(nslookup "$domain" 2>/dev/null | grep -A1 "Name:" | grep "Address:" | head -1 | awk '{print $2}')
           echo "  ✅ $domain → $IP"

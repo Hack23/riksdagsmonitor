@@ -47,6 +47,7 @@
 | **Generated** | `YYYY-MM-DD HH:MM UTC` |
 | **Subject measure** | `dok_id and short title` |
 | **Responsible ministry / agency** | `e.g., Finansdepartementet + Skatteverket` |
+| **Statskontoret relevance** | `Relevant report/page URL or "none found"` |
 | **Declared start date** | `YYYY-MM-DD` |
 | **Declared completion date** | `YYYY-MM-DD` |
 | **Budget envelope** | `SEK X.Y billion` |
@@ -98,9 +99,11 @@ graph LR
 
 ### 🏛️ Administrative feasibility — 3/5
 
+> **Statskontoret overlay:** administrative-capacity, coordination, backlog, regulatory-burden and efficiency claims should cite Statskontoret first when a relevant public report/page exists. Record URL, report title, publication date, retrieval time and Admiralty grade in `data-download-manifest.md`.
+
 | Check | Status | Evidence |
 |-------|:------:|----------|
-| Responsible agency capacity (Skatteverket) | 🟡 | Prior surcharge adjustment completed in 4 months |
+| Responsible agency capacity (Skatteverket) | 🟡 | Prior surcharge adjustment completed in 4 months; validate against relevant Statskontoret report/page where available |
 | Inter-agency coordination (SCB, Tullverket) | 🟢 | Precedent exists |
 | Guidance-document turnaround | 🟡 | Normal 90-day cycle |
 | Reporting / auditing | 🟢 | Standard reports available |

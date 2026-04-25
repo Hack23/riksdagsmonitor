@@ -17,7 +17,7 @@ This is the **only** gate separating analysis from article generation. If it fai
    - **Family D (7)** — `election-2026-analysis.md`, `voter-segmentation.md`, `coalition-mathematics.md`, `historical-parallels.md`, `media-framing-analysis.md`, `implementation-feasibility.md`, `forward-indicators.md`.
 2. **Per-document coverage (Family E)** — `$ANALYSIS_DIR/documents/` contains one `.md` per `dok_id` listed in `data-download-manifest.md` (metadata-only documents are tagged, not skipped).
 3. **No stubs** — zero occurrences of `AI_MUST_REPLACE`, `[REQUIRED]`, `TODO:`, or `Lorem ipsum` across all artifacts.
-4. **Evidence citations** — `swot-analysis.md` and `significance-scoring.md` contain at least one piece of primary-source evidence per quadrant / ranked item. Accepted evidence patterns: a `dok_id` (e.g. `H901FiU1`, `HD01CU27`) **or** a primary-source URL host (`riksdagen.se`, `regeringen.se`, `scb.se`, `worldbank.org`, `api.imf.org`, `data.imf.org`, `www.imf.org`). Enforced against SWOT `### Strengths/Weaknesses/Opportunities/Threats` sections (bullets + table rows) and significance-scoring bullets **plus** ranking table rows and Mermaid node labels.
+4. **Evidence citations** — `swot-analysis.md` and `significance-scoring.md` contain at least one piece of primary-source evidence per quadrant / ranked item. Accepted evidence patterns: a `dok_id` (e.g. `H901FiU1`, `HD01CU27`) **or** a primary-source URL host (`riksdagen.se`, `regeringen.se`, `scb.se`, `statskontoret.se`, `worldbank.org`, `api.imf.org`, `data.imf.org`, `www.imf.org`). Enforced against SWOT `### Strengths/Weaknesses/Opportunities/Threats` sections (bullets + table rows) and significance-scoring bullets **plus** ranking table rows and Mermaid node labels.
 5. **Mermaid diagrams** — every Family A and Family D synthesis file contains ≥ 1 Mermaid diagram with colour-coded `style` directives (or `themeVariables` / `%%{init …}` block).
 6. **Pass-2 done** — agent has read back each enforced Pass-2 artifact after creation and committed improvements: all Family A, B, C, and D artifacts except `data-download-manifest.md`. (Enforced by file mtime diff: final file mtime > creation time + 3 min, OR two git-history snapshots on disk.)
 7. **Family C structure checks** (extension-quality gate):
@@ -59,7 +59,7 @@ SYNTHESIS=(synthesis-summary.md swot-analysis.md risk-assessment.md threat-analy
            media-framing-analysis.md implementation-feasibility.md \
            forward-indicators.md)
 DOK_RE='[Hh][A-Za-z0-9]{3,}[0-9]+'
-EVIDENCE_RE='[Hh][A-Za-z0-9]{3,}[0-9]+|riksdagen\.se|regeringen\.se|scb\.se|worldbank\.org|api\.imf\.org|data\.imf\.org|www\.imf\.org'
+EVIDENCE_RE='[Hh][A-Za-z0-9]{3,}[0-9]+|riksdagen\.se|regeringen\.se|scb\.se|statskontoret\.se|worldbank\.org|api\.imf\.org|data\.imf\.org|www\.imf\.org'
 FAIL=0
 
 # Check 1 — artifact existence (all 23)

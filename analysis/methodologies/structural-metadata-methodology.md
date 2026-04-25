@@ -56,6 +56,7 @@ flowchart LR
     G[regeringen.se]:::src
     S[SCB PxWeb]:::src
     W[World Bank / IMF]:::src
+    ST[Statskontoret<br/>agency-capacity reports]:::src
 
     M[data-download-manifest.md<br/>📥 provenance ledger]:::prov
     X[cross-reference-map.md<br/>🔗 linkage graph]:::link
@@ -64,6 +65,7 @@ flowchart LR
     G --> M
     S --> M
     W --> M
+    ST --> M
     M --> X
     X --> FamilyA[Family A — synthesis consumes linkages]:::out
     X --> FamilyE[Family E — per-doc references xref]:::out
@@ -78,7 +80,7 @@ Maintain an **auditable ledger** of every piece of data that fed the workflow. T
 
 ### Input
 - MCP tool-call logs from riksdag-regering, scb, world-bank, imf (bash script)
-- Any `web_fetch` results from regeringen.se, riksdagen.se, myndighet sites
+- Any `web_fetch` results from regeringen.se, riksdagen.se, Statskontoret, myndighet sites
 - Static reference files (SCB tables, World Bank indicators) with their version/vintage
 
 ### Output — required structure
