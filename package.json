@@ -183,7 +183,7 @@
     "json-schema-to-typescript": "15.0.4",
     "jszip": "3.10.1",
     "knip": "6.6.3",
-    "mermaid": "11.4.1",
+    "mermaid": "11.10.0",
     "papaparse": "5.5.3",
     "playwright": "1.59.1",
     "rehype-autolink-headings": "^7.1.0",
