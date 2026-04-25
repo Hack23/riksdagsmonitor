@@ -1,169 +1,169 @@
 {
-    "version": "1.1",
-    "description": "Machine-readable inventory of Statskontoret open datasets used by Riksdagsmonitor for Swedish government-body and central-government budget context. Complements IMF (primary economic projections), SCB (Swedish official statistics), World Bank (non-economic global context), and Riksdag/Regering data.",
-    "lastUpdated": "2026-04-25",
-    "effectiveDate": "2026-04-25",
-    "source": "Statskontoret open data (www.statskontoret.se)",
-    "classification": "Public",
-    "clients": {
-        "cli": "tsx scripts/statskontoret-fetch.ts (commands: list-sources, discover, headcount, budget-outturn)",
-        "library": "scripts/statskontoret-client.ts (StatskontoretClient class)",
-        "persistence": "scripts/parliamentary-data/data-persistence.ts (persistStatskontoretData)"
-    },
-    "notes": {
-        "firewallAllowlist": "www.statskontoret.se",
-        "noMcp": "Statskontoret is not an MCP server. Agentic workflows invoke the TypeScript CLI via the bash tool, mirroring IMF's no-MCP client pattern.",
-        "formats": "Myndighetsförteckningen is published as Excel. Årsutfall and Månadsutfall expose both Excel and CSV ZIP downloads. Budget time-series pages link to annual official-statistics publications and related open-data tables.",
-        "privacy": "Public authority/agency data and aggregate budget data only; no private-person data. Authority names and agency-level budget lines are public administrative records."
-    },
-    "datasets": {
-        "myndighetsforteckning": {
-            "title": "Myndighetsförteckning – öppna data",
-            "url": "https://www.statskontoret.se/analys-och-statistik/oppna-data/myndighetsforteckning/",
-            "cadence": "Annual snapshot; source page metadata observed as last-modified 2026-02-06 for the 2025 workbook.",
-            "coverage": "Summerande statistik 2025; tidsserier 2007–2025; förteckning 2025; förteckning 2007–2025.",
-            "format": [
-                "xlsx"
-            ],
-            "primaryUse": "Headcount of government bodies, grouped by department, leadership form and special organs; department headcount over time from 2007 onward.",
-            "keyFields": [
-                "År",
-                "Myndighet",
-                "Departement / departementstillhörighet",
-                "Årsarbetskrafter",
-                "Ledningsform",
-                "Särskilda organ"
-            ],
-            "derivedArtifacts": [
-                {
-                    "id": "headcount-by-department",
-                    "description": "Sum årsarbetskrafter by year and department, with authority count per group.",
-                    "script": "tsx scripts/statskontoret-fetch.ts headcount --url <xlsx-url> --persist",
-                    "storage": "analysis/data/statskontoret/myndighetsforteckning/headcount-by-department.json"
-                }
-            ],
-            "committees": [
-                "KU",
-                "FiU",
-                "AU"
-            ],
-            "admiralty": "A1"
-        },
-        "budget-time-series": {
-            "title": "Tidsserier, statens budget m.m.",
-            "url": "https://www.statskontoret.se/analys-och-statistik/officiell-statistik/tidsserier-statens-budget-m.m",
-            "cadence": "Annual official statistics release.",
-            "coverage": "Final outcomes for central-government revenue, expenditure, balance and related public-finance tables, generally from 1995.",
-            "format": [
-                "html-publication",
-                "linked-open-data"
-            ],
-            "primaryUse": "Long-run Swedish central-government budget context for finance, tax and public-administration analysis.",
-            "committees": [
-                "FiU",
-                "SkU",
-                "KU"
-            ],
-            "admiralty": "A1",
-            "derivedArtifacts": [
-                {
-                    "id": "budget-outturn",
-                    "description": "Long-run central-government budget time series (revenue and expenditure) from 1995 onward parsed into StatskontoretBudgetRow objects.",
-                    "script": "tsx scripts/statskontoret-fetch.ts budget-outturn --source budget-time-series --url <xlsx-url> --persist",
-                    "storage": "analysis/data/statskontoret/budget-time-series/budget-outturn.json"
-                }
-            ]
-        },
-        "arsutfall": {
-            "title": "Årsutfall för statens budget – öppna data",
-            "url": "https://www.statskontoret.se/analys-och-statistik/oppna-data/arsutfall/",
-            "cadence": "Annual, with preliminary and definitive releases.",
-            "coverage": "Annual revenue and expenditure outturns based on Hermes reporting, Riksdag budget decisions and government disposition rights.",
-            "format": [
-                "xlsx",
-                "csv-zip"
-            ],
-            "primaryUse": "Annual budget execution by appropriation, income title and agency; definitive vs preliminary status tracking.",
-            "queryParameters": [
-                "documentType",
-                "fileType",
-                "fileName",
-                "Year",
-                "month",
-                "status"
-            ],
-            "committees": [
-                "FiU",
-                "SkU"
-            ],
-            "admiralty": "A1",
-            "derivedArtifacts": [
-                {
-                    "id": "budget-outturn-inkomst",
-                    "description": "Annual central-government revenue outturn rows (documentType=Inkomst) parsed into StatskontoretBudgetRow objects.",
-                    "script": "tsx scripts/statskontoret-fetch.ts budget-outturn --source arsutfall --url <xlsx-url> --doc-type Inkomst --persist",
-                    "storage": "analysis/data/statskontoret/arsutfall/budget-outturn-inkomst.json"
-                },
-                {
-                    "id": "budget-outturn-utgift",
-                    "description": "Annual central-government expenditure outturn rows (documentType=Utgift) parsed into StatskontoretBudgetRow objects.",
-                    "script": "tsx scripts/statskontoret-fetch.ts budget-outturn --source arsutfall --url <xlsx-url> --doc-type Utgift --persist",
-                    "storage": "analysis/data/statskontoret/arsutfall/budget-outturn-utgift.json"
-                }
-            ]
-        },
-        "manadsutfall": {
-            "title": "Månadsutfall för statens budget – öppna data",
-            "url": "https://www.statskontoret.se/analys-och-statistik/oppna-data/manadsutfall/",
-            "cadence": "Monthly.",
-            "coverage": "Monthly revenue and expenditure outcomes from January 2006 onward, specified at income-subtitle / appropriation-item / agency granularity.",
-            "format": [
-                "xlsx",
-                "csv-zip"
-            ],
-            "primaryUse": "High-frequency budget execution monitoring and agency-level spending/revenue context.",
-            "queryParameters": [
-                "documentType",
-                "fileType",
-                "fileName",
-                "Year",
-                "month",
-                "status"
-            ],
-            "committees": [
-                "FiU",
-                "SkU",
-                "KU"
-            ],
-            "admiralty": "A1",
-            "derivedArtifacts": [
-                {
-                    "id": "budget-outturn-inkomst",
-                    "description": "Monthly central-government revenue outturn rows (documentType=Inkomst) parsed into StatskontoretBudgetRow objects.",
-                    "script": "tsx scripts/statskontoret-fetch.ts budget-outturn --source manadsutfall --url <xlsx-url> --doc-type Inkomst --persist",
-                    "storage": "analysis/data/statskontoret/manadsutfall/budget-outturn-inkomst.json"
-                },
-                {
-                    "id": "budget-outturn-utgift",
-                    "description": "Monthly central-government expenditure outturn rows (documentType=Utgift) parsed into StatskontoretBudgetRow objects.",
-                    "script": "tsx scripts/statskontoret-fetch.ts budget-outturn --source manadsutfall --url <xlsx-url> --doc-type Utgift --persist",
-                    "storage": "analysis/data/statskontoret/manadsutfall/budget-outturn-utgift.json"
-                }
-            ]
+  "version": "1.1",
+  "description": "Machine-readable inventory of Statskontoret open datasets used by Riksdagsmonitor for Swedish government-body and central-government budget context. Complements IMF (primary economic projections), SCB (Swedish official statistics), World Bank (non-economic global context), and Riksdag/Regering data.",
+  "lastUpdated": "2026-04-25",
+  "effectiveDate": "2026-04-25",
+  "source": "Statskontoret open data (www.statskontoret.se)",
+  "classification": "Public",
+  "clients": {
+    "cli": "tsx scripts/statskontoret-fetch.ts (commands: list-sources, discover, headcount, budget-outturn)",
+    "library": "scripts/statskontoret-client.ts (StatskontoretClient class)",
+    "persistence": "scripts/parliamentary-data/data-persistence.ts (persistStatskontoretData)"
+  },
+  "notes": {
+    "firewallAllowlist": "www.statskontoret.se",
+    "noMcp": "Statskontoret is not an MCP server. Agentic workflows invoke the TypeScript CLI via the bash tool, mirroring IMF's no-MCP client pattern.",
+    "formats": "Myndighetsförteckningen is published as Excel. Årsutfall and Månadsutfall expose both Excel and CSV ZIP downloads. Budget time-series pages link to annual official-statistics publications and related open-data tables.",
+    "privacy": "Public authority/agency data and aggregate budget data only; no private-person data. Authority names and agency-level budget lines are public administrative records."
+  },
+  "datasets": {
+    "myndighetsforteckning": {
+      "title": "Myndighetsförteckning – öppna data",
+      "url": "https://www.statskontoret.se/analys-och-statistik/oppna-data/myndighetsforteckning/",
+      "cadence": "Annual snapshot; source page metadata observed as last-modified 2026-02-06 for the 2025 workbook.",
+      "coverage": "Summerande statistik 2025; tidsserier 2007–2025; förteckning 2025; förteckning 2007–2025.",
+      "format": [
+        "xlsx"
+      ],
+      "primaryUse": "Headcount of government bodies, grouped by department, leadership form and special organs; department headcount over time from 2007 onward.",
+      "keyFields": [
+        "År",
+        "Myndighet",
+        "Departement / departementstillhörighet",
+        "Årsarbetskrafter",
+        "Ledningsform",
+        "Särskilda organ"
+      ],
+      "derivedArtifacts": [
+        {
+          "id": "headcount-by-department",
+          "description": "Sum årsarbetskrafter by year and department, with authority count per group.",
+          "script": "tsx scripts/statskontoret-fetch.ts headcount --url <xlsx-url> --persist",
+          "storage": "analysis/data/statskontoret/myndighetsforteckning/headcount-by-department.json"
         }
+      ],
+      "committees": [
+        "KU",
+        "FiU",
+        "AU"
+      ],
+      "admiralty": "A1"
     },
-    "providerDecisionMatrix": {
-        "governmentBodiesHeadcount": "statskontoret:myndighetsforteckning",
-        "agencyLeadershipForm": "statskontoret:myndighetsforteckning",
-        "centralGovernmentBudgetAnnualOutturn": "statskontoret:arsutfall",
-        "centralGovernmentBudgetMonthlyOutturn": "statskontoret:manadsutfall",
-        "longRunBudgetTimeSeries": "statskontoret:budget-time-series",
-        "macroFiscalProjection": "imf:WEO/FM",
-        "swedishOfficialRegionalStats": "scb:pxweb"
+    "budget-time-series": {
+      "title": "Tidsserier, statens budget m.m.",
+      "url": "https://www.statskontoret.se/analys-och-statistik/officiell-statistik/tidsserier-statens-budget-m.m",
+      "cadence": "Annual official statistics release.",
+      "coverage": "Final outcomes for central-government revenue, expenditure, balance and related public-finance tables, generally from 1995.",
+      "format": [
+        "html-publication",
+        "linked-open-data"
+      ],
+      "primaryUse": "Long-run Swedish central-government budget context for finance, tax and public-administration analysis.",
+      "committees": [
+        "FiU",
+        "SkU",
+        "KU"
+      ],
+      "admiralty": "A1",
+      "derivedArtifacts": [
+        {
+          "id": "budget-outturn",
+          "description": "Long-run central-government budget time series (revenue and expenditure) from 1995 onward parsed into StatskontoretBudgetRow objects.",
+          "script": "tsx scripts/statskontoret-fetch.ts budget-outturn --source budget-time-series --url <xlsx-url> --persist",
+          "storage": "analysis/data/statskontoret/budget-time-series/budget-outturn.json"
+        }
+      ]
     },
-    "updateDiscipline": {
-        "myndighetsforteckning": "Check annually and whenever the source page last-modified value changes.",
-        "budgetOutturn": "Check monthly for Månadsutfall and annually/preliminary cycles for Årsutfall.",
-        "integrity": "Persist raw source payload plus .meta.json provenance; review derived headcount diffs in PRs."
+    "arsutfall": {
+      "title": "Årsutfall för statens budget – öppna data",
+      "url": "https://www.statskontoret.se/analys-och-statistik/oppna-data/arsutfall/",
+      "cadence": "Annual, with preliminary and definitive releases.",
+      "coverage": "Annual revenue and expenditure outturns based on Hermes reporting, Riksdag budget decisions and government disposition rights.",
+      "format": [
+        "xlsx",
+        "csv-zip"
+      ],
+      "primaryUse": "Annual budget execution by appropriation, income title and agency; definitive vs preliminary status tracking.",
+      "queryParameters": [
+        "documentType",
+        "fileType",
+        "fileName",
+        "Year",
+        "month",
+        "status"
+      ],
+      "committees": [
+        "FiU",
+        "SkU"
+      ],
+      "admiralty": "A1",
+      "derivedArtifacts": [
+        {
+          "id": "budget-outturn-inkomst",
+          "description": "Annual central-government revenue outturn rows (documentType=Inkomst) parsed into StatskontoretBudgetRow objects.",
+          "script": "tsx scripts/statskontoret-fetch.ts budget-outturn --source arsutfall --url <xlsx-url> --doc-type Inkomst --persist",
+          "storage": "analysis/data/statskontoret/arsutfall/budget-outturn-inkomst.json"
+        },
+        {
+          "id": "budget-outturn-utgift",
+          "description": "Annual central-government expenditure outturn rows (documentType=Utgift) parsed into StatskontoretBudgetRow objects.",
+          "script": "tsx scripts/statskontoret-fetch.ts budget-outturn --source arsutfall --url <xlsx-url> --doc-type Utgift --persist",
+          "storage": "analysis/data/statskontoret/arsutfall/budget-outturn-utgift.json"
+        }
+      ]
+    },
+    "manadsutfall": {
+      "title": "Månadsutfall för statens budget – öppna data",
+      "url": "https://www.statskontoret.se/analys-och-statistik/oppna-data/manadsutfall/",
+      "cadence": "Monthly.",
+      "coverage": "Monthly revenue and expenditure outcomes from January 2006 onward, specified at income-subtitle / appropriation-item / agency granularity.",
+      "format": [
+        "xlsx",
+        "csv-zip"
+      ],
+      "primaryUse": "High-frequency budget execution monitoring and agency-level spending/revenue context.",
+      "queryParameters": [
+        "documentType",
+        "fileType",
+        "fileName",
+        "Year",
+        "month",
+        "status"
+      ],
+      "committees": [
+        "FiU",
+        "SkU",
+        "KU"
+      ],
+      "admiralty": "A1",
+      "derivedArtifacts": [
+        {
+          "id": "budget-outturn-inkomst",
+          "description": "Monthly central-government revenue outturn rows (documentType=Inkomst) parsed into StatskontoretBudgetRow objects.",
+          "script": "tsx scripts/statskontoret-fetch.ts budget-outturn --source manadsutfall --url <xlsx-url> --doc-type Inkomst --persist",
+          "storage": "analysis/data/statskontoret/manadsutfall/budget-outturn-inkomst.json"
+        },
+        {
+          "id": "budget-outturn-utgift",
+          "description": "Monthly central-government expenditure outturn rows (documentType=Utgift) parsed into StatskontoretBudgetRow objects.",
+          "script": "tsx scripts/statskontoret-fetch.ts budget-outturn --source manadsutfall --url <xlsx-url> --doc-type Utgift --persist",
+          "storage": "analysis/data/statskontoret/manadsutfall/budget-outturn-utgift.json"
+        }
+      ]
     }
+  },
+  "providerDecisionMatrix": {
+    "governmentBodiesHeadcount": "statskontoret:myndighetsforteckning",
+    "agencyLeadershipForm": "statskontoret:myndighetsforteckning",
+    "centralGovernmentBudgetAnnualOutturn": "statskontoret:arsutfall",
+    "centralGovernmentBudgetMonthlyOutturn": "statskontoret:manadsutfall",
+    "longRunBudgetTimeSeries": "statskontoret:budget-time-series",
+    "macroFiscalProjection": "imf:WEO/FM",
+    "swedishOfficialRegionalStats": "scb:pxweb"
+  },
+  "updateDiscipline": {
+    "myndighetsforteckning": "Check annually and whenever the source page last-modified value changes.",
+    "budgetOutturn": "Check monthly for Månadsutfall and annually/preliminary cycles for Årsutfall.",
+    "integrity": "Persist raw source payload plus .meta.json provenance; review derived headcount diffs in PRs."
+  }
 }

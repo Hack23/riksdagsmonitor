@@ -115,6 +115,41 @@ describe('StatskontoretClient', () => {
     expect(links[0].url).toBe('https://www.statskontoret.se/file.xlsx');
   });
 
+  it('allows custom HTTPS baseURL hosts through the fetch guard', async () => {
+    let requestedUrl = '';
+    const fetchFn = async (input: RequestInfo | URL) => {
+      requestedUrl = String(input);
+      return new Response('ok', { status: 200 });
+    };
+    const client = new StatskontoretClient({
+      baseURL: 'https://staging.statskontoret.test',
+      fetchFn: fetchFn as typeof fetch,
+    });
+
+    await expect(client.fetchText('/page')).resolves.toBe('ok');
+    expect(requestedUrl).toBe('https://staging.statskontoret.test/page');
+  });
+
+  it('wraps network failures in typed http errors with the original cause', async () => {
+    const cause = new Error('socket closed');
+    const fetchFn = async () => {
+      throw cause;
+    };
+    const client = new StatskontoretClient({ fetchFn: fetchFn as typeof fetch });
+
+    let caught: StatskontoretError | undefined;
+    try {
+      await client.fetchText('https://www.statskontoret.se/down');
+    } catch (error) {
+      caught = error as StatskontoretError;
+    }
+
+    expect(caught).toBeInstanceOf(StatskontoretError);
+    expect(caught?.kind).toBe('http');
+    expect(caught?.message).toContain('socket closed');
+    expect(caught?.cause).toBe(cause);
+  });
+
   it('densifies sparse worksheet rows so column alignment is preserved', async () => {
     // Worksheet with explicit cell refs that skip column B, leaving a hole at
     // index 1; densification must fill the gap with '' so headers stay aligned.

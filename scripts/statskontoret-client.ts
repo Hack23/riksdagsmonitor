@@ -136,8 +136,8 @@ export interface StatskontoretBudgetSummary {
 export class StatskontoretError extends Error {
   readonly kind: 'http' | 'workbook' | 'contract' | 'cli';
 
-  constructor(message: string, kind: StatskontoretError['kind'] = 'contract') {
-    super(message);
+  constructor(message: string, kind: StatskontoretError['kind'] = 'contract', options?: ErrorOptions) {
+    super(message, options);
     this.name = 'StatskontoretError';
     this.kind = kind;
   }
@@ -225,23 +225,27 @@ export class StatskontoretClient {
 
   private async fetchWithTimeout(url: string): Promise<Response> {
     const resolved = resolveStatskontoretUrl(url, this.baseURL);
-    assertStatskontoretFetchTarget(resolved);
+    assertStatskontoretFetchTarget(resolved, this.baseURL);
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), this.timeout);
+    let response: Response;
     try {
-      const response = await this.fetchFn(resolved, {
+      response = await this.fetchFn(resolved, {
         signal: controller.signal,
         headers: {
           Accept: 'text/html,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/zip,text/csv,*/*',
         },
       });
-      if (!response.ok) {
-        throw new StatskontoretError(`Statskontoret API error: ${response.status} ${response.statusText} for ${response.url}`, 'http');
-      }
-      return response;
+    } catch (error) {
+      const detail = error instanceof Error ? error.message : String(error);
+      throw new StatskontoretError(`Statskontoret fetch failed for ${resolved}: ${detail}`, 'http', { cause: error });
     } finally {
       clearTimeout(timeoutId);
     }
+    if (!response.ok) {
+      throw new StatskontoretError(`Statskontoret API error: ${response.status} ${response.statusText} for ${response.url}`, 'http');
+    }
+    return response;
   }
 }
 
@@ -457,8 +461,8 @@ export function parseBudgetRows(
 
 /**
  * Parse all sheets in a budget-outturn workbook and return a flat array of
- * typed rows sorted by year ascending, then month ascending (NaN last for
- * annual rows), then documentType alphabetically.  For single-type workbooks
+ * typed rows sorted by year ascending, then month ascending (annual rows last
+ * for the same year), then documentType alphabetically.  For single-type workbooks
  * (e.g. a file explicitly downloaded as "Inkomst"), pass
  * `options.documentType` to set the label uniformly.
  */

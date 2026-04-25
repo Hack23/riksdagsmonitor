@@ -23,7 +23,7 @@ Evidence standard: cite Statskontoret official-statistics publication year and t
 Use `summarizeBudgetOutturn` to aggregate individual `StatskontoretBudgetRow` records from `arsutfall` or `manadsutfall` into per-year, per-documentType totals. This is the standard pattern for producing summary tables in articles and committee-report context.
 
 ```ts
-import { parseBudgetRows, summarizeBudgetOutturn } from '../scripts/statskontoret-client.js';
+import { parseBudgetRows, summarizeBudgetOutturn } from '../../scripts/statskontoret-client.js';
 
 const rows = parseBudgetRows(records, { documentType: 'Inkomst' });
 const summary = summarizeBudgetOutturn(rows);
