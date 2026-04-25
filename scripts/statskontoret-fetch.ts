@@ -127,9 +127,9 @@ function isDirectExecution(): boolean {
   try {
     return import.meta.url === pathToFileURL(path.resolve(entry)).href;
   } catch {
-    // pathToFileURL throws on non-absolute or otherwise invalid input. Keeping
-    // the CLI import-safe across runners is more important than detecting the
-    // direct-execution case in those edge environments.
+    // `pathToFileURL` throws on malformed paths; `path.resolve` is used to
+    // normalise the entry first so most runners reach the comparison, and the
+    // catch keeps the module import-safe across exotic launchers.
     return false;
   }
 }
