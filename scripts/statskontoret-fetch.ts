@@ -9,11 +9,14 @@
  *   tsx scripts/statskontoret-fetch.ts headcount --url <xlsx-url> [--persist]
  */
 
+import { pathToFileURL } from 'node:url';
+
 import {
   buildHeadcountTimeSeries,
   getStatskontoretSource,
   STATSKONTORET_SOURCES,
   StatskontoretClient,
+  StatskontoretError,
   type StatskontoretSourceKey,
 } from './statskontoret-client.js';
 import { persistStatskontoretData } from './parliamentary-data/data-persistence.js';
@@ -38,20 +41,18 @@ Flags:
   --persist       Write raw/derived output under analysis/data/statskontoret/
 `;
 
-function parseArgs(argv: readonly string[]): ParsedArgs {
+export function parseStatskontoretArgs(argv: readonly string[]): ParsedArgs {
   const command = (argv[0] ?? 'help') as ParsedArgs['command'];
   const validCommands: readonly ParsedArgs['command'][] = ['list-sources', 'discover', 'headcount', 'help'];
   if (!validCommands.includes(command)) {
-    process.stderr.write(`statskontoret-fetch: unknown command ${command}\n`);
-    process.exit(2);
+    throw new StatskontoretError(`unknown command ${command}`, 'cli');
   }
   const flags = new Map<string, string>();
   const booleans = new Set<string>();
   for (let i = 1; i < argv.length; i++) {
     const token = argv[i];
     if (!token.startsWith('--')) {
-      process.stderr.write(`statskontoret-fetch: unexpected positional argument ${token}\n`);
-      process.exit(2);
+      throw new StatskontoretError(`unexpected positional argument ${token}`, 'cli');
     }
     const key = token.slice(2);
     const next = argv[i + 1];
@@ -65,25 +66,21 @@ function parseArgs(argv: readonly string[]): ParsedArgs {
   return { command, flags, booleans };
 }
 
-function requireFlag(flags: ReadonlyMap<string, string>, key: string): string {
+export function requireStatskontoretFlag(flags: ReadonlyMap<string, string>, key: string): string {
   const value = flags.get(key);
   if (!value) {
-    process.stderr.write(`statskontoret-fetch: missing required flag --${key}\n`);
-    process.exit(2);
-    throw new Error(`Missing required flag --${key}`);
+    throw new StatskontoretError(`missing required flag --${key}`, 'cli');
   }
   return value;
 }
 
-function parseSource(value: string): StatskontoretSourceKey {
+export function parseStatskontoretSource(value: string): StatskontoretSourceKey {
   if (STATSKONTORET_SOURCES.some((source) => source.key === value)) return value as StatskontoretSourceKey;
-  process.stderr.write(`statskontoret-fetch: unknown source ${value}\n`);
-  process.exit(2);
-  throw new Error(`Unknown source ${value}`);
+  throw new StatskontoretError(`unknown source ${value}`, 'cli');
 }
 
 async function runDiscover(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<string>): Promise<void> {
-  const source = parseSource(requireFlag(flags, 'source'));
+  const source = parseStatskontoretSource(requireStatskontoretFlag(flags, 'source'));
   const client = new StatskontoretClient();
   const links = await client.discoverDownloads(source);
   const payload = { source: getStatskontoretSource(source), links };
@@ -94,7 +91,7 @@ async function runDiscover(flags: ReadonlyMap<string, string>, booleans: Readonl
 }
 
 async function runHeadcount(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<string>): Promise<void> {
-  const url = requireFlag(flags, 'url');
+  const url = requireStatskontoretFlag(flags, 'url');
   const client = new StatskontoretClient();
   const workbook = await client.fetchWorkbook(url);
   const headcount = buildHeadcountTimeSeries(workbook, { sheetNamePattern: /förteckning|forteckning/i });
@@ -106,7 +103,7 @@ async function runHeadcount(flags: ReadonlyMap<string, string>, booleans: Readon
 }
 
 async function main(): Promise<void> {
-  const { command, flags, booleans } = parseArgs(process.argv.slice(2));
+  const { command, flags, booleans } = parseStatskontoretArgs(process.argv.slice(2));
   switch (command) {
     case 'list-sources':
       process.stdout.write(`${JSON.stringify({ sources: STATSKONTORET_SOURCES }, null, 2)}\n`);
@@ -123,8 +120,10 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch((error: unknown) => {
-  const message = error instanceof Error ? error.message : String(error);
-  process.stderr.write(`statskontoret-fetch: ${message}\n`);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error: unknown) => {
+    const message = error instanceof Error ? error.message : String(error);
+    process.stderr.write(`statskontoret-fetch: ${message}\n`);
+    process.exit(error instanceof StatskontoretError && error.kind === 'cli' ? 2 : 1);
+  });
+}

@@ -74,6 +74,22 @@ export interface StatskontoretHeadcountOptions {
   readonly fallbackYear?: number;
 }
 
+/**
+ * Typed error thrown by the Statskontoret client and parsers.
+ *
+ * `kind` lets callers distinguish transport, parsing and contract failures
+ * without brittle message matching.
+ */
+export class StatskontoretError extends Error {
+  readonly kind: 'http' | 'workbook' | 'contract' | 'cli';
+
+  constructor(message: string, kind: StatskontoretError['kind'] = 'contract') {
+    super(message);
+    this.name = 'StatskontoretError';
+    this.kind = kind;
+  }
+}
+
 export const STATSKONTORET_BASE_URL = 'https://www.statskontoret.se';
 
 export const STATSKONTORET_SOURCES: readonly StatskontoretSourceDefinition[] = Object.freeze([
@@ -166,7 +182,7 @@ export class StatskontoretClient {
         },
       });
       if (!response.ok) {
-        throw new Error(`Statskontoret API error: ${response.status} ${response.statusText} for ${response.url}`);
+        throw new StatskontoretError(`Statskontoret API error: ${response.status} ${response.statusText} for ${response.url}`, 'http');
       }
       return response;
     } finally {
@@ -177,7 +193,7 @@ export class StatskontoretClient {
 
 export function getStatskontoretSource(key: StatskontoretSourceKey): StatskontoretSourceDefinition {
   const source = STATSKONTORET_SOURCES.find((candidate) => candidate.key === key);
-  if (!source) throw new Error(`Unknown Statskontoret source: ${key}`);
+  if (!source) throw new StatskontoretError(`Unknown Statskontoret source: ${key}`);
   return source;
 }
 
@@ -193,12 +209,12 @@ export function extractStatskontoretDownloadLinks(
     const href = decodeHtml(match[1] ?? '').trim();
     const text = normalizeWhitespace(decodeHtml((match[2] ?? '').replace(TAG_RE, ' ')));
     if (!href) continue;
-    const resourceType = classifyResource(href, text);
+    const resourceType = classifyStatskontoretResource(href, text);
     if (resourceType === 'unknown') continue;
     const url = resolveStatskontoretUrl(href, baseURL);
     const parsed = new URL(url);
-    const year = parseOptionalInt(parsed.searchParams.get('Year'));
-    const month = parseOptionalInt(parsed.searchParams.get('month'));
+    const year = parseStatskontoretOptionalInt(parsed.searchParams.get('Year'));
+    const month = parseStatskontoretOptionalInt(parsed.searchParams.get('month'));
     links.push({
       source,
       sourcePage,
@@ -276,9 +292,9 @@ export function aggregateHeadcountByDepartment(
   const aggregate = new Map<string, { headcount: number; authorities: Set<string> }>();
   for (const record of records) {
     const lookup = buildRecordLookup(record);
-    const year = parseOptionalInt(findField(lookup, ['år', 'ar', 'year']) ?? '') ?? fallbackYear;
+    const year = parseStatskontoretOptionalInt(findField(lookup, ['år', 'ar', 'year']) ?? '') ?? fallbackYear;
     const department = findField(lookup, ['departement', 'departementstillhörighet', 'departementstillhorighet'])?.trim();
-    const headcountValue = parseSwedishNumber(findField(lookup, ['årsarbetskrafter', 'arsarbetskrafter', 'åa', 'aa']) ?? '');
+    const headcountValue = parseStatskontoretSwedishNumber(findField(lookup, ['årsarbetskrafter', 'arsarbetskrafter', 'åa', 'aa']) ?? '');
     if (!year || !department || headcountValue === undefined) continue;
     const authority = findField(lookup, ['myndighet', 'myndighetsnamn', 'namn'])?.trim() ?? '';
     const key = `${year}\u0000${department}`;
@@ -405,7 +421,7 @@ function findField(lookup: ReadonlyMap<string, string>, candidates: readonly str
   return undefined;
 }
 
-function parseSwedishNumber(value: string): number | undefined {
+export function parseStatskontoretSwedishNumber(value: string): number | undefined {
   const compact = value.replace(/\s/g, '');
   const normalized = compact.includes(',')
     ? compact.replace(/\./g, '').replace(',', '.')
@@ -414,13 +430,13 @@ function parseSwedishNumber(value: string): number | undefined {
   return Number.isFinite(parsed) ? parsed : undefined;
 }
 
-function parseOptionalInt(value: string | null): number | undefined {
+export function parseStatskontoretOptionalInt(value: string | null): number | undefined {
   if (!value) return undefined;
   const parsed = Number.parseInt(value, 10);
   return Number.isFinite(parsed) ? parsed : undefined;
 }
 
-function classifyResource(href: string, text: string): StatskontoretResourceType {
+export function classifyStatskontoretResource(href: string, text: string): StatskontoretResourceType {
   const haystack = `${href} ${text}`.toLowerCase();
   if (haystack.includes('filetype=excel') || /\.xlsx(?:$|[?#])/i.test(href) || /\bexcel\b/i.test(text)) return 'excel';
   if (haystack.includes('filetype=zip') && /\bcsv\b/i.test(text)) return 'csv-zip';
@@ -503,7 +519,7 @@ function extractTextNodes(xml: string): string {
 
 async function readZipText(zip: JSZip, path: string): Promise<string> {
   const file = zip.file(path);
-  if (!file) throw new Error(`Statskontoret workbook missing ${path}`);
+  if (!file) throw new StatskontoretError(`Statskontoret workbook missing ${path}`, 'workbook');
   return file.async('string');
 }
 
