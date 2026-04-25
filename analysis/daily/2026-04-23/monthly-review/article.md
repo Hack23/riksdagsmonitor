@@ -5,7 +5,7 @@ date: 2026-04-23
 subfolder: monthly-review
 slug: 2026-04-23-monthly-review
 source_folder: analysis/daily/2026-04-23/monthly-review
-generated_at: 2026-04-25T09:12:18.276Z
+generated_at: 2026-04-25T09:53:00.423Z
 language: en
 layout: article
 ---
@@ -13,10 +13,10 @@ layout: article
 
 Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
 
-| Reader need | Where to go | Source artifact |
+| Reader need | What you'll get | Source artifact |
 |---|---|---|
 | [BLUF and editorial decisions](#executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
-| [Key Judgments](#intelligence-assessment-key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
+| [Key Judgments](#intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
 | [Media framing](#media-framing-analysis) | likely narrative frames, amplifiers, counter-frames, and manipulation risks | `media-framing-analysis.md` |
 | [Forward indicators](#forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |

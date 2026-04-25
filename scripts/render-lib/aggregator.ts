@@ -63,6 +63,7 @@ import fs from 'fs';
 import path from 'path';
 
 import matter from 'gray-matter';
+import GithubSlugger from 'github-slugger';
 
 import { buildGithubBlobUrl } from './url-helpers.js';
 import { GITHUB_BLOB } from './constants.js';
@@ -193,13 +194,22 @@ const READER_GUIDE_ENTRIES: readonly {
   },
 ];
 
+/**
+ * Generate the same heading slug that `rehype-slug` produces downstream.
+ *
+ * `rehype-slug` delegates to `github-slugger` (the GitHub heading slug
+ * algorithm). Re-implementing the algorithm here would risk divergence
+ * on punctuation, Unicode and duplicate-heading suffixes, which would
+ * break the Reader Intelligence Guide anchors. Instead we use the same
+ * library so the slugs are guaranteed to match.
+ *
+ * A fresh `GithubSlugger` instance is used per call so the function is
+ * stateless — duplicate-heading disambiguation is not relevant for the
+ * Reader Intelligence Guide because each guide entry maps to a unique
+ * canonical artifact section title.
+ */
 function anchorForTitle(title: string): string {
-  return title
-    .toLowerCase()
-    .normalize('NFKD')
-    .replace(/[^\p{L}\p{N}\s-]/gu, '')
-    .trim()
-    .replace(/\s+/g, '-');
+  return new GithubSlugger().slug(title);
 }
 
 function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: boolean): string {
@@ -225,7 +235,7 @@ function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: boolean)
     '',
     'Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.',
     '',
-    '| Reader need | Where to go | Source artifact |',
+    '| Reader need | What you\'ll get | Source artifact |',
     '|---|---|---|',
     ...entries,
   ].join('\n');

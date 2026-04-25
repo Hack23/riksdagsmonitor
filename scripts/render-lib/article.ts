@@ -142,10 +142,10 @@ ${chrome.headerHtml}
             <time datetime="${publishedIso}">${escapeHtml(date)}</time>
             · <span class="rm-article-lang">${LANGUAGE_META[input.lang].flag} ${LANGUAGE_META[input.lang].nativeName}</span>
           </p>
-          <ul class="rm-article-trust-badges" aria-label="Article provenance and quality controls">
-            <li>Public sources</li>
-            <li>AI-FIRST review</li>
-            <li>Traceable artifacts</li>
+          <ul class="rm-article-trust-badges" aria-label="${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustAriaLabel)}">
+            <li>${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustPublicSources)}</li>
+            <li>${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustAiFirst)}</li>
+            <li>${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustTraceable)}</li>
           </ul>
         </header>
         <div class="rm-article-body">

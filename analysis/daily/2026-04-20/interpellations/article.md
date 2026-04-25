@@ -5,7 +5,7 @@ date: 2026-04-20
 subfolder: interpellations
 slug: 2026-04-20-interpellations
 source_folder: analysis/daily/2026-04-20/interpellations
-generated_at: 2026-04-25T09:12:18.239Z
+generated_at: 2026-04-25T09:53:00.386Z
 language: en
 layout: article
 ---
@@ -13,10 +13,10 @@ layout: article
 
 Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
 
-| Reader need | Where to go | Source artifact |
+| Reader need | What you'll get | Source artifact |
 |---|---|---|
 | [BLUF and editorial decisions](#executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
-| [Key Judgments](#intelligence-assessment-key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
+| [Key Judgments](#intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
 | [Scenarios](#scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
