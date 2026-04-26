@@ -9,14 +9,18 @@ ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$SUBFOLDER"
 
 SKIP_ANALYSIS=false
 ALL_PRESENT=true
-COUNT=0
+EXPECTED=23
+CHECKED=0
 # 23 required artifacts (Families A+B+C+D) — every workflow, every run.
 # We feed them via a here-doc so the loop never builds an inline bash array
 # (the AWF sandbox flags `REQ=(...); for f in "${REQ[@]}"`; see
 # 01-bash-and-shell-safety.md §Banned expansion patterns).
+# The loop short-circuits on the first missing artifact, so $CHECKED is the
+# number examined up to that point — never larger than $EXPECTED. We log
+# both numbers so the difference is unambiguous in the run output.
 while IFS= read -r f; do
   [ -z "$f" ] && continue
-  COUNT=$((COUNT + 1))
+  CHECKED=$((CHECKED + 1))
   [ -s "$ANALYSIS_DIR/$f" ] || { ALL_PRESENT=false; break; }
 done <<'REQUIRED_ARTIFACTS'
 README.md
@@ -49,7 +53,7 @@ REQUIRED_ARTIFACTS
 # ext/tier-c-aggregation.md and the gate in 05-analysis-gate.md.
 
 [ "$ALL_PRESENT" = "true" ] && SKIP_ANALYSIS=true
-echo "SKIP_ANALYSIS=$SKIP_ANALYSIS  (required artifacts present: $ALL_PRESENT, count: $COUNT)"
+echo "SKIP_ANALYSIS=$SKIP_ANALYSIS  (required artifacts present: $ALL_PRESENT, checked: $CHECKED of $EXPECTED)"
 ```
 
 | `SKIP_ANALYSIS` | Behaviour |

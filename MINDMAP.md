@@ -24,7 +24,7 @@
 > - 📈 Added **🌐 IMF** branch under Data Integration alongside World Bank (WEO, Fiscal Monitor, IFS, SDMX 3.0, T+5 projections, pure-TypeScript client `scripts/imf-client.ts` — *not an MCP server*, per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md)).
 >
 > **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
-> - Mindmaps expanded to explicitly enumerate the **15 CIA data subsystems** (anomaly, coalition, committee, distribution, election, election-cycle, ministry, parties, party, percentile, politician, pre-election, risk, seasonal, voting), **11 agentic news workflows**, **24 Copilot agents**, **92 skills**, **8 MCP servers**, **14 languages**, and the **dual distribution model** (static site + `riksdagsmonitor` npm package with SLSA provenance).
+> - Mindmaps expanded to explicitly enumerate the **15 CIA data subsystems** (anomaly, coalition, committee, distribution, election, election-cycle, ministry, parties, party, percentile, politician, pre-election, risk, seasonal, voting), **11 agentic news workflows**, **24 Copilot agents**, **91 skills**, **8 MCP servers**, **14 languages**, and the **dual distribution model** (static site + `riksdagsmonitor` npm package with SLSA provenance).
 > - Added mindmap branch for toolchain: Node.js ≥25, TypeScript 6.0.3, Vite 8.0.9, Vitest 4.1.4, ESLint 10.2.1, Cypress 15.14.0, Playwright 1.59.1, typedoc 0.28.19.
 > - Added mindmap branch for compliance frameworks anchored to ISMS-PUBLIC: ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, GDPR, NIS2, EU CRA, OpenSSF Best Practices #12069, OpenSSF Scorecard.
 
