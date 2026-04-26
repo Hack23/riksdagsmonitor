@@ -59,7 +59,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — overrides upstream default 1500s (25 min) with a 5-min HTTP MCP ping. Keeps `riksdag-regering` (HTTP) and any other HTTP-backed MCPs warm for the entire 45-min job; lets us run 45-50 min sessions safely. Does NOT keep the local `safeoutputs` Streamable-HTTP idle session alive (Timer C ~25-30 min) — call `safeoutputs___create_pull_request` by minute 28 (hard 30). See prompts/07-commit-and-pr.md §Deadline enforcement and reference: https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/mcp-gateway.md
+    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — overrides the upstream default 1500s (25 min) with a 5-min HTTP MCP ping to reduce idle disconnects for `riksdag-regering` (HTTP) and other HTTP-backed MCPs during this 45-min job. It does NOT extend the workflow `timeout-minutes` budget and does NOT keep the local `safeoutputs` Streamable-HTTP idle session alive (Timer C ~25-30 min) — call `safeoutputs___create_pull_request` by minute 28 (hard 30). See prompts/07-commit-and-pr.md §Deadline enforcement and reference: https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/mcp-gateway.md
 
 runtimes:
   node:
@@ -68,7 +68,12 @@ runtimes:
 network:
   allowed:
     - node
-    - containers # node:25-alpine containers used by SCB + World Bank MCP servers
+    # Minimal Docker Hub hosts for node:25-alpine pulls used by SCB + World Bank MCP servers
+    # (replaces the broader `containers` ecosystem identifier to keep least-privilege egress)
+    - docker.io
+    - registry-1.docker.io
+    - auth.docker.io
+    - production.cloudflare.docker.com
     - github
     - riksdag-regering-ai.onrender.com
     - api.scb.se
