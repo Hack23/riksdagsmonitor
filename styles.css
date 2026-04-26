@@ -12144,6 +12144,15 @@ html[data-theme="light"] .footer-disclaimer a {
   backdrop-filter: blur(18px);
 }
 
+/* Publishes the sticky header's nominal height so siblings positioned
+   below it (e.g. `.rm-lang-bar`) can stick beneath rather than under it.
+   Defined on `:root` so descendant siblings inherit it; layouts with a
+   non-default header height can override this single token without
+   touching the consumer rules. */
+:root {
+  --rm-site-header-sticky-offset: 72px;
+}
+
 .rm-site-header-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -12310,6 +12319,137 @@ html[data-theme="light"] .footer-disclaimer a {
 
 @media (max-width: 420px) {
   .rm-lang-current-label { display: none; }
+}
+
+/* ---- brand image logo (PR2012 regression fix) ---------------------------
+   The unified `buildChrome` originally rendered only an emoji glyph, so the
+   real `riksdagsmonitor-logo.webp` was missing from every generated page
+   (news index, sitemap, political-intelligence and articles). The chrome
+   now emits an `<img class="rm-logo-img">` ahead of the existing
+   `.rm-logo-glyph`; the glyph stays in DOM as an automatic fallback when
+   the image fails to load (e.g. ad-blocked CDN paths) so the brand row
+   never collapses to plain text. */
+.rm-logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: contain;
+  display: inline-block;
+  flex-shrink: 0;
+  background: transparent;
+}
+
+/* When the bitmap logo loads, the `🇸🇪` flag glyph would duplicate the
+   brand mark — hide the glyph only after the image successfully loads.
+   `theme-toggle.js` adds `.rm-logo-img-loaded` on the parent `<a class="rm-logo">`
+   when the `<img>` fires its `load` event. If the image fails (network error,
+   blocked CDN, future webp removal) the glyph stays visible as a graceful
+   fallback so the brand row never collapses to plain text. */
+.rm-logo.rm-logo-img-loaded > .rm-logo-glyph {
+  display: none;
+}
+
+/* ---- always-visible horizontal language bar (PR2012 regression fix) -----
+   Restores the pre-PR2012 `<nav class="language-switcher">` row that lived
+   directly under the header. Inherits the existing `.language-switcher`
+   palette and adds an `rm-lang-bar` modifier for spacing parity with the
+   sticky header above. The header above us is `position: sticky; top: 0;
+   z-index: 100`, so the bar sticks _beneath_ it via the
+   `--rm-site-header-sticky-offset` token published on `:root` (default
+   72px; override per layout if the header changes height). */
+.rm-lang-bar {
+  position: sticky;
+  top: var(--rm-site-header-sticky-offset, 72px);
+  z-index: 99; /* one below `.rm-site-header` so it scrolls under it */
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .rm-lang-bar {
+    position: static; /* avoid double-stacking on narrow viewports */
+  }
+}
+
+/* ---- colour-coded article cards (PR2012 regression fix) -----------------
+   The `.news-page .article-card` palette in styles.css renders every card
+   identically. To restore the editorial colour-coding the user remembers,
+   we tint the top border + type badge by article category. Topics get a
+   subtle accent stripe on the left edge. Each rule provides a static
+   `rgba()` fallback first so older browsers that don't yet implement
+   CSS `color-mix()` (Safari < 16.2, legacy Edge, older mobile WebViews)
+   still get the colour-coding; modern engines override it with the
+   `color-mix()` declaration that follows. */
+.news-page .article-card[data-type="prospective"] {
+  border-top: 3px solid rgba(0, 217, 255, 0.8);
+  border-top: 3px solid color-mix(in srgb, #00d9ff 80%, transparent);
+}
+.news-page .article-card[data-type="retrospective"] {
+  border-top: 3px solid rgba(255, 190, 11, 0.8);
+  border-top: 3px solid color-mix(in srgb, #ffbe0b 80%, transparent);
+}
+.news-page .article-card[data-type="analysis"] {
+  border-top: 3px solid rgba(255, 0, 110, 0.75);
+  border-top: 3px solid color-mix(in srgb, #ff006e 75%, transparent);
+}
+.news-page .article-card[data-type="breaking"] {
+  border-top: 3px solid rgba(244, 67, 54, 0.8);
+  border-top: 3px solid color-mix(in srgb, #f44336 80%, transparent);
+}
+
+.news-page .article-type[data-type="prospective"] {
+  background: rgba(0, 217, 255, 0.18);
+  background: color-mix(in srgb, #00d9ff 18%, transparent);
+  color: #00d9ff;
+  color: color-mix(in srgb, #00d9ff 90%, var(--text-color, #e0e0e0));
+}
+.news-page .article-type[data-type="retrospective"] {
+  background: rgba(255, 190, 11, 0.22);
+  background: color-mix(in srgb, #ffbe0b 22%, transparent);
+  color: #ffbe0b;
+  color: color-mix(in srgb, #ffbe0b 95%, var(--text-color, #e0e0e0));
+}
+.news-page .article-type[data-type="analysis"] {
+  background: rgba(255, 0, 110, 0.18);
+  background: color-mix(in srgb, #ff006e 18%, transparent);
+  color: #ff006e;
+  color: color-mix(in srgb, #ff006e 90%, var(--text-color, #e0e0e0));
+}
+.news-page .article-type[data-type="breaking"] {
+  background: rgba(244, 67, 54, 0.22);
+  background: color-mix(in srgb, #f44336 22%, transparent);
+  color: #f44336;
+  color: color-mix(in srgb, #f44336 95%, var(--text-color, #e0e0e0));
+}
+
+/* Topic-driven left accent stripe — keeps the type-driven top border
+   distinct so type and topic both communicate visually. */
+.news-page .article-card[data-topic="parliament"] {
+  border-left: 3px solid rgba(76, 175, 80, 0.7);
+  border-left: 3px solid color-mix(in srgb, #4caf50 70%, transparent);
+}
+.news-page .article-card[data-topic="government"] {
+  border-left: 3px solid rgba(255, 152, 0, 0.7);
+  border-left: 3px solid color-mix(in srgb, #ff9800 70%, transparent);
+}
+.news-page .article-card[data-topic="eu"] {
+  border-left: 3px solid rgba(41, 98, 255, 0.7);
+  border-left: 3px solid color-mix(in srgb, #2962ff 70%, transparent);
+}
+.news-page .article-card[data-topic="defense"] {
+  border-left: 3px solid rgba(183, 28, 28, 0.7);
+  border-left: 3px solid color-mix(in srgb, #b71c1c 70%, transparent);
+}
+.news-page .article-card[data-topic="environment"] {
+  border-left: 3px solid rgba(46, 125, 50, 0.7);
+  border-left: 3px solid color-mix(in srgb, #2e7d32 70%, transparent);
+}
+.news-page .article-card[data-topic="committees"] {
+  border-left: 3px solid rgba(106, 27, 154, 0.7);
+  border-left: 3px solid color-mix(in srgb, #6a1b9a 70%, transparent);
+}
+.news-page .article-card[data-topic="legislation"] {
+  border-left: 3px solid rgba(0, 131, 143, 0.7);
+  border-left: 3px solid color-mix(in srgb, #00838f 70%, transparent);
 }
 
 /* ---- site sub-navigation (breadcrumbs + published date) ---- */

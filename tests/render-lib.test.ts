@@ -770,9 +770,66 @@ describe('render-lib — buildChrome', () => {
     // Should include sv, da, no, …  (13 others)
     expect(chrome.headerHtml).toMatch(/lang="sv"/);
     expect(chrome.headerHtml).toMatch(/lang="ar"/);
-    // Current language link should NOT be in the dropdown (it is in the summary)
-    const dropdown = chrome.headerHtml.split('rm-lang-switcher-dropdown')[1] ?? '';
+    // Current language link should NOT be in the dropdown (it is in the summary).
+    // Scope the split to the dropdown's own container so the always-visible
+    // horizontal `.rm-lang-bar` row that follows the header is not included.
+    const dropdownStart = chrome.headerHtml.indexOf('rm-lang-switcher-dropdown');
+    const dropdownEnd = chrome.headerHtml.indexOf('</details>', dropdownStart);
+    expect(dropdownStart).toBeGreaterThanOrEqual(0);
+    expect(dropdownEnd).toBeGreaterThanOrEqual(0);
+    expect(dropdownEnd).toBeGreaterThan(dropdownStart);
+    const dropdown = chrome.headerHtml.slice(dropdownStart, dropdownEnd);
     expect(dropdown).not.toMatch(/>\s*English\s*</);
+  });
+
+  it('appends bodyClass to the <body> class list', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/index.html',
+      bodyClass: 'news-page',
+    });
+    // Always retains the base `rm-article-body` class …
+    expect(chrome.headerHtml).toMatch(/<body class="rm-article-body news-page">/);
+  });
+
+  it('omits bodyClass when not supplied (only base class on <body>)', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/index.html',
+    });
+    expect(chrome.headerHtml).toMatch(/<body class="rm-article-body">/);
+    expect(chrome.headerHtml).not.toMatch(/<body class="rm-article-body /);
+  });
+
+  it('renders the always-visible horizontal language bar by default', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/x-en.html',
+    });
+    expect(chrome.headerHtml).toMatch(/<nav class="language-switcher rm-lang-bar"/);
+    // Current language is rendered as a non-interactive <span> with
+    // aria-current="page" rather than an `<a href="#">`.
+    expect(chrome.headerHtml).toMatch(/<span class="lang-link active"[^>]*aria-current="page"/);
+  });
+
+  it('suppresses the horizontal language bar when languageBar is false', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/x-en.html',
+      languageBar: false,
+    });
+    expect(chrome.headerHtml).not.toMatch(/rm-lang-bar/);
+    // The compact <details> dropdown is still rendered — only the
+    // horizontal row is gated by `languageBar`.
+    expect(chrome.headerHtml).toMatch(/rm-lang-switcher-dropdown/);
   });
 
   it('computes the depth-prefix ../ correctly for nested canonical paths', () => {

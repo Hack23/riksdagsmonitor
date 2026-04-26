@@ -110,6 +110,24 @@ export interface ChromeOptions {
    * page is not translated.
    */
   readonly defaultAlternateBase?: string;
+  /**
+   * Extra space-separated CSS classes appended to the `<body>` after the
+   * canonical `rm-article-body` class. Used by the news-index renderer to
+   * opt back into the legacy `body.news-page .article-card` palette in
+   * `styles.css`, which provides the colour-coded card layout that the
+   * unified chrome would otherwise bypass.
+   */
+  readonly bodyClass?: string;
+  /**
+   * When set to `false`, suppresses the always-visible horizontal
+   * `<nav class="language-switcher rm-lang-bar">` row that follows the
+   * sticky header. Defaults to `true` so every chromed page (article,
+   * news index, sitemap, political-intelligence) gets the horizontal
+   * row in addition to the compact `<details class="rm-lang-switcher">`
+   * dropdown. Articles/PI/Sitemap pre-PR2012 already exposed an inline
+   * row; restoring it here re-establishes parity.
+   */
+  readonly languageBar?: boolean;
 }
 
 export interface SiteChrome {
@@ -336,11 +354,33 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
     })
     .join('\n');
 
-  const headerHtml = `<body class="rm-article-body">
+  // Inline horizontal language switcher row (always visible) — restores the
+  // pre-PR2012 `<nav class="language-switcher">` UX where every language is
+  // discoverable as a flag + native name link without expanding a dropdown.
+  // Includes the current language with `aria-current="page"` so screen-readers
+  // and keyboard users can confirm context.
+  const horizontalLangBar = LANGUAGES
+    .map((l) => {
+      const lm = LANGUAGE_META[l];
+      const isCurrent = l === opts.lang;
+      if (isCurrent) {
+        // Render the current language as a non-interactive `<span>` rather
+        // than an `<a href="#">` so we avoid (a) a stray fragment navigation
+        // that scrolls to the page top and (b) advertising a `hreflang`
+        // whose destination doesn't actually point at the alternate.
+        return `      <span class="lang-link active" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}" aria-current="page"><span aria-hidden="true">${lm.flag}</span> ${escapeHtml(lm.nativeName)}</span>`;
+      }
+      const href = `${prefix}${opts.hreflangAlternates?.[l] ?? fallbackAltHref(l)}`;
+      return `      <a href="${href}" class="lang-link" hreflang="${lm.hreflang}" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}"><span aria-hidden="true">${lm.flag}</span> ${escapeHtml(lm.nativeName)}</a>`;
+    })
+    .join('\n');
+
+  const headerHtml = `<body class="rm-article-body${opts.bodyClass ? ' ' + escapeHtml(opts.bodyClass) : ''}">
     <a class="skip-link" href="#main">${escapeHtml('Skip to main content')}</a>
     <header class="rm-site-header" role="banner">
       <div class="rm-site-header-inner">
         <a class="rm-logo" href="${prefix}${indexFile}" aria-label="Riksdagsmonitor ${escapeHtml(t.home)}">
+          <img class="rm-logo-img" data-rm-logo-img="true" src="${prefix}images/riksdagsmonitor-logo.webp" alt="" width="40" height="40" loading="eager" decoding="async">
           <span class="rm-logo-glyph" aria-hidden="true">🇸🇪</span>
           <span class="rm-logo-text">
             <span class="rm-logo-brand">Riksdagsmonitor</span>
@@ -353,7 +393,7 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
           <a href="${prefix}${sitemapFile}">${escapeHtml(t.siteMap)}</a>
         </nav>
         <details class="rm-lang-switcher">
-          <summary aria-label="${escapeHtml(t.sitemapInOtherLanguages)}">
+          <summary aria-label="${escapeHtml('Switch language')}">
             <span aria-hidden="true">${meta.flag}</span>
             <span class="rm-lang-current-label">${escapeHtml(meta.nativeName)}</span>
             <span class="rm-lang-switcher-caret" aria-hidden="true">▾</span>
@@ -380,7 +420,10 @@ ${breadcrumbLis}
         </nav>
         ${opts.publishedIso ? `<time class="rm-article-published" datetime="${opts.publishedIso}">${opts.publishedIso.slice(0, 10)}</time>` : ''}
       </div>
-    </header>
+    </header>${(opts.languageBar ?? true) ? `
+    <nav class="language-switcher rm-lang-bar" role="navigation" aria-label="${escapeHtml('This page in other languages')}">
+${horizontalLangBar}
+    </nav>` : ''}
 ${opts.breadcrumbHtml ?? ''}
     <main id="main" class="rm-article-main" tabindex="-1">`;
 
