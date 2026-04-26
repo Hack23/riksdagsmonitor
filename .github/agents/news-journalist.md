@@ -199,6 +199,6 @@ Maps to **ISO 27001:2022**, **NIST CSF 2.0**, **CIS Controls v8.1**, **GDPR** (e
 
 - **Contract** → [`.github/prompts/README.md`](../prompts/README.md) (role, shell, MCP, download, analysis, gate, article, commit).
 - **Analysis product** → [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md) + [`analysis/templates/`](../../analysis/templates/). Every news article MUST be preceded by 9 core artifacts (14 for Tier-C aggregation) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. [`05-analysis-gate.md`](../prompts/05-analysis-gate.md) is the single blocking gate.
-- **gh-aw v0.71.1** — [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
+- **gh-aw v0.69.3** — [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
 
 - **IMF citation discipline** — lead every economic claim with IMF (WEO/FM/IFS/BOP/DOTS/GFS_COFOG/PCPS/ER/MFS); emit `economicProvenance` block with vintage label; banned phrases enforced per [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) v2.1. WB only for governance/environment residue. Hub: [`analysis/imf/`](../../analysis/imf/).

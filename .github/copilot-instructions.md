@@ -112,7 +112,7 @@ Map every security-relevant control to **ISO 27001:2022 Annex A**, **NIST CSF 2.
 
 ## 🤖 GitHub Agentic Workflows
 
-This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw v0.71.1, pinned via `gh-aw-actions/setup-cli@v0.71.1`) for AI-powered news generation. 11 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
+This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw v0.69.3, pinned via `gh-aw-actions/setup-cli@v0.69.3`) for AI-powered news generation. 11 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
 
 1. **Read-only tokens** — Agent gets only read permissions
 2. **Zero secrets in agent** — Write tokens isolated in separate jobs
