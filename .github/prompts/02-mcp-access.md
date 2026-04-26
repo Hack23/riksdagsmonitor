@@ -4,16 +4,21 @@ Authoritative per-workflow surface: the `mcp-servers:` + `tools:` blocks in that
 
 ## Servers & tool naming
 
-News workflows declare three data MCP servers + the built-in `github` toolset (via `tools.github.toolsets: [all]`) + `bash` + `agentic-workflows`.
+News workflows declare three data MCP servers + the built-in `github` toolset (via `tools.github.toolsets: [all]`) + `bash` + `edit` + `web-fetch` (frontmatter key; agent calls it as `web_fetch`) + `agentic-workflows` + `cache-memory` (resilience).
 
-| Server | Transport | Declared in | Tool-name style | Example tools |
-|--------|-----------|-------------|-----------------|---------------|
+> **Naming convention reminder**: gh-aw frontmatter keys use **kebab-case** (`tools.web-fetch:`, `tools.cache-memory:`, `tools.agentic-workflows:`); the **runtime tool names** the agent invokes use **snake_case** (`web_fetch`, `cache_memory`, …). The same split applies to safe outputs (`safe-outputs.create-pull-request:` in YAML → `safeoutputs___create_pull_request` at call time).
+
+| Server / tool | Transport | Declared in | Tool-name style | Example tools |
+|---------------|-----------|-------------|-----------------|---------------|
 | `riksdag-regering` | HTTP (Render) | workflow `mcp-servers:` | `snake_case` | `get_sync_status`, `search_dokument`, `get_voteringar`, `get_dokument_innehall` |
-| `scb` | container (`@jarib/pxweb-mcp`) | workflow `mcp-servers:` | `snake_case` | `search_tables`, `get_table_info`, `query_table` |
-| `world-bank` | container (`worldbank-mcp`) | workflow `mcp-servers:` | `kebab-case` | `get-economic-data` *(legacy — economic context has migrated to IMF CLI; keep for WGI governance / environment / social residue only)*, `get-country-info`, `search-indicators` |
-| `github` | HTTP (Copilot MCP) | workflow `tools.github` | standard | full GitHub MCP toolset |
-| `bash` | local helper | workflow `tools.bash` | standard | shell execution (**also hosts the IMF CLI — see § IMF CLI below**) |
-| `safeoutputs` | runner | always available | `snake_case` | `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___dispatch_workflow` |
+| `scb` | container (`@jarib/pxweb-mcp`, `node:25-alpine`) | workflow `mcp-servers:` | `snake_case` | `search_tables`, `get_table_info`, `query_table` |
+| `world-bank` | container (`worldbank-mcp`, `node:25-alpine`) | workflow `mcp-servers:` | `kebab-case` | `get-economic-data` *(legacy — economic context has migrated to IMF CLI; keep for WGI governance / environment / social residue only)*, `get-country-info`, `search-indicators` |
+| `github` | HTTP (Copilot MCP) | workflow `tools.github` (`toolsets: [all]`) | standard | full GitHub MCP toolset (issues, PRs, repos, code-search, actions, releases, discussions, …) |
+| `bash` | local helper | workflow `tools.bash: true` | standard | shell execution (**also hosts the IMF CLI — see § IMF CLI below**) |
+| `edit` | local helper | workflow `tools.edit:` | standard | filesystem edits inside `$GITHUB_WORKSPACE` |
+| `web-fetch` | local helper | workflow `tools.web-fetch:` | standard | HTTP fetch for non-MCP public sources (e.g. `www.statskontoret.se`, `riksdagsmonitor.com`) — domain-filtered through the AWF firewall. **Agent calls this as `web_fetch`** (snake_case runtime name) |
+| `cache-memory` | GitHub Actions cache | workflow `tools.cache-memory:` | (filesystem) | persistent file storage at `/tmp/gh-aw/cache-memory/` keyed by `news-${workflow}-${article_date}` (14-day retention). Survives across runs and can restore the most recent prior cache via `restore-keys` when the exact key is not found → **resilience for failed-PR retries**. See [`07-commit-and-pr.md` §Cache-memory recovery](07-commit-and-pr.md). |
+| `safeoutputs` | runner (Streamable HTTP) | always available | `snake_case` | `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___dispatch_workflow`, `safeoutputs___add_comment`, `safeoutputs___missing_data`, `safeoutputs___missing_tool`, `safeoutputs___report_incomplete` |
 
 `filesystem`, `memory`, and `sequential-thinking` are declared in [`.github/copilot-mcp.json`](../copilot-mcp.json) for the **local Copilot / `assign_copilot_to_issue`** channel and are **not** available to news workflows unless the workflow itself declares them under `mcp-servers:`.
 
@@ -67,4 +72,16 @@ Run once at workflow start, then proceed — do not loop forever.
 
 ## Pre-warm step (CI job, not prompt)
 
-Every news workflow declares a **single** `curl`-based pre-warm step with ≤ 6 retries, ≤ 20 s apart. With `curl --max-time 30`, the worst-case runtime can exceed 4 minutes, so this is a best-effort pre-warm rather than a hard ≤ 2 minute guarantee. If a strict 2 minute cap is required, the workflow's `curl` timeout and/or retry policy must be reduced accordingly. No background pingers. MCP session longevity is maintained via `sandbox.mcp.keepalive-interval: 300`.
+Every news workflow declares a **single** `curl`-based pre-warm step with ≤ 6 retries, ≤ 20 s apart. With `curl --max-time 30`, the worst-case runtime can exceed 4 minutes, so this is a best-effort pre-warm rather than a hard ≤ 2 minute guarantee. If a strict 2 minute cap is required, the workflow's `curl` timeout and/or retry policy must be reduced accordingly. No background pingers.
+
+## MCP gateway keepalive (`sandbox.mcp.keepalive-interval`)
+
+Every news workflow sets `sandbox.mcp.keepalive-interval: 300`, which compiles to the gh-aw mcp-gateway's `keepaliveInterval` field. Semantics ([upstream spec](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/mcp-gateway.md)):
+
+| Value | Meaning |
+|-------|---------|
+| `0` or unset | Gateway default = **1500 s (25 min)** — too slow for 45-min news jobs; the `riksdag-regering` HTTP MCP would idle out before Pass 2 finishes |
+| `-1` | Disable keepalive entirely (do not use) |
+| **`300`** *(our setting)* | Ping every 5 minutes — keeps `riksdag-regering` (HTTP) and any other HTTP-backed MCPs warm for the full 45-minute job budget. **This is the resilience knob that lets us run the full 45-minute sessions reliably.** |
+
+The keepalive pings the **upstream HTTP MCPs through the gateway**. It does **not** keep the local `safeoutputs` Streamable-HTTP idle session alive — that session has its own ~25–30 min idle timeout (Timer C in `00-base-contract.md` and `07-commit-and-pr.md`). Reach `safeoutputs___create_pull_request` by minute 28 (hard 30) regardless of keepalive.
