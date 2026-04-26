@@ -357,7 +357,7 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
   // Inline horizontal language switcher row (always visible) — restores the
   // pre-PR2012 `<nav class="language-switcher">` UX where every language is
   // discoverable as a flag + native name link without expanding a dropdown.
-  // Includes the current language with `aria-current="true"` so screen-readers
+  // Includes the current language with `aria-current="page"` so screen-readers
   // and keyboard users can confirm context.
   const horizontalLangBar = LANGUAGES
     .map((l) => {

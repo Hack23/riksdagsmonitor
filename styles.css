@@ -12144,6 +12144,15 @@ html[data-theme="light"] .footer-disclaimer a {
   backdrop-filter: blur(18px);
 }
 
+/* Publishes the sticky header's nominal height so siblings positioned
+   below it (e.g. `.rm-lang-bar`) can stick beneath rather than under it.
+   Defined on `:root` so descendant siblings inherit it; layouts with a
+   non-default header height can override this single token without
+   touching the consumer rules. */
+:root {
+  --rm-site-header-sticky-offset: 72px;
+}
+
 .rm-site-header-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -12345,10 +12354,9 @@ html[data-theme="light"] .footer-disclaimer a {
    directly under the header. Inherits the existing `.language-switcher`
    palette and adds an `rm-lang-bar` modifier for spacing parity with the
    sticky header above. The header above us is `position: sticky; top: 0;
-   z-index: 100`, so the bar sticks _beneath_ it using a CSS variable that
-   the header sets to its own scroll-locked height (defaults to 72px which
-   matches the typical header height; precise value can be set per layout
-   via `--rm-site-header-sticky-offset`). */
+   z-index: 100`, so the bar sticks _beneath_ it via the
+   `--rm-site-header-sticky-offset` token published on `:root` (default
+   72px; override per layout if the header changes height). */
 .rm-lang-bar {
   position: sticky;
   top: var(--rm-site-header-sticky-offset, 72px);
