@@ -775,6 +775,9 @@ describe('render-lib — buildChrome', () => {
     // horizontal `.rm-lang-bar` row that follows the header is not included.
     const dropdownStart = chrome.headerHtml.indexOf('rm-lang-switcher-dropdown');
     const dropdownEnd = chrome.headerHtml.indexOf('</details>', dropdownStart);
+    expect(dropdownStart).toBeGreaterThanOrEqual(0);
+    expect(dropdownEnd).toBeGreaterThanOrEqual(0);
+    expect(dropdownEnd).toBeGreaterThan(dropdownStart);
     const dropdown = chrome.headerHtml.slice(dropdownStart, dropdownEnd);
     expect(dropdown).not.toMatch(/>\s*English\s*</);
   });

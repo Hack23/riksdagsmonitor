@@ -12330,10 +12330,13 @@ html[data-theme="light"] .footer-disclaimer a {
   background: transparent;
 }
 
-/* When the bitmap logo is present, the `🇸🇪` flag glyph would duplicate the
-   brand mark — hide it but keep it in DOM as a fallback (sibling selector
-   reveals it again if `<img>` fails / `<picture>` swaps to it later). */
-.rm-logo-img + .rm-logo-glyph {
+/* When the bitmap logo loads, the `🇸🇪` flag glyph would duplicate the
+   brand mark — hide the glyph only after the image successfully loads.
+   `theme-toggle.js` adds `.rm-logo-img-loaded` on the parent `<a class="rm-logo">`
+   when the `<img>` fires its `load` event. If the image fails (network error,
+   blocked CDN, future webp removal) the glyph stays visible as a graceful
+   fallback so the brand row never collapses to plain text. */
+.rm-logo.rm-logo-img-loaded > .rm-logo-glyph {
   display: none;
 }
 
@@ -12341,10 +12344,14 @@ html[data-theme="light"] .footer-disclaimer a {
    Restores the pre-PR2012 `<nav class="language-switcher">` row that lived
    directly under the header. Inherits the existing `.language-switcher`
    palette and adds an `rm-lang-bar` modifier for spacing parity with the
-   sticky header above. */
+   sticky header above. The header above us is `position: sticky; top: 0;
+   z-index: 100`, so the bar sticks _beneath_ it using a CSS variable that
+   the header sets to its own scroll-locked height (defaults to 72px which
+   matches the typical header height; precise value can be set per layout
+   via `--rm-site-header-sticky-offset`). */
 .rm-lang-bar {
   position: sticky;
-  top: 0;
+  top: var(--rm-site-header-sticky-offset, 72px);
   z-index: 99; /* one below `.rm-site-header` so it scrolls under it */
   margin-top: 0;
 }

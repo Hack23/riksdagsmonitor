@@ -363,12 +363,15 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
     .map((l) => {
       const lm = LANGUAGE_META[l];
       const isCurrent = l === opts.lang;
-      const href = isCurrent
-        ? '#'
-        : `${prefix}${opts.hreflangAlternates?.[l] ?? fallbackAltHref(l)}`;
-      const activeAttr = isCurrent ? ' aria-current="true"' : '';
-      const activeClass = isCurrent ? ' active' : '';
-      return `      <a href="${href}" class="lang-link${activeClass}" hreflang="${lm.hreflang}" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}"${activeAttr}><span aria-hidden="true">${lm.flag}</span> ${escapeHtml(lm.nativeName)}</a>`;
+      if (isCurrent) {
+        // Render the current language as a non-interactive `<span>` rather
+        // than an `<a href="#">` so we avoid (a) a stray fragment navigation
+        // that scrolls to the page top and (b) advertising a `hreflang`
+        // whose destination doesn't actually point at the alternate.
+        return `      <span class="lang-link active" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}" aria-current="true"><span aria-hidden="true">${lm.flag}</span> ${escapeHtml(lm.nativeName)}</span>`;
+      }
+      const href = `${prefix}${opts.hreflangAlternates?.[l] ?? fallbackAltHref(l)}`;
+      return `      <a href="${href}" class="lang-link" hreflang="${lm.hreflang}" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}"><span aria-hidden="true">${lm.flag}</span> ${escapeHtml(lm.nativeName)}</a>`;
     })
     .join('\n');
 
@@ -377,7 +380,7 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
     <header class="rm-site-header" role="banner">
       <div class="rm-site-header-inner">
         <a class="rm-logo" href="${prefix}${indexFile}" aria-label="Riksdagsmonitor ${escapeHtml(t.home)}">
-          <img class="rm-logo-img" src="${prefix}images/riksdagsmonitor-logo.webp" alt="" width="40" height="40" loading="eager" decoding="async">
+          <img class="rm-logo-img" src="${prefix}images/riksdagsmonitor-logo.webp" alt="" width="40" height="40" loading="eager" decoding="async" onload="this.parentNode&amp;&amp;this.parentNode.classList.add('rm-logo-img-loaded')">
           <span class="rm-logo-glyph" aria-hidden="true">🇸🇪</span>
           <span class="rm-logo-text">
             <span class="rm-logo-brand">Riksdagsmonitor</span>
@@ -390,7 +393,7 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
           <a href="${prefix}${sitemapFile}">${escapeHtml(t.siteMap)}</a>
         </nav>
         <details class="rm-lang-switcher">
-          <summary aria-label="${escapeHtml(t.sitemapInOtherLanguages)}">
+          <summary aria-label="${escapeHtml('Switch language')}">
             <span aria-hidden="true">${meta.flag}</span>
             <span class="rm-lang-current-label">${escapeHtml(meta.nativeName)}</span>
             <span class="rm-lang-switcher-caret" aria-hidden="true">▾</span>
@@ -418,7 +421,7 @@ ${breadcrumbLis}
         ${opts.publishedIso ? `<time class="rm-article-published" datetime="${opts.publishedIso}">${opts.publishedIso.slice(0, 10)}</time>` : ''}
       </div>
     </header>${(opts.languageBar ?? true) ? `
-    <nav class="language-switcher rm-lang-bar" role="navigation" aria-label="${escapeHtml(t.sitemapInOtherLanguages)}">
+    <nav class="language-switcher rm-lang-bar" role="navigation" aria-label="${escapeHtml('This page in other languages')}">
 ${horizontalLangBar}
     </nav>` : ''}
 ${opts.breadcrumbHtml ?? ''}
