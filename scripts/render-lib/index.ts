@@ -79,7 +79,7 @@ export { sanitizeSchema, renderMarkdownToHtml } from './markdown.js';
 
 // --- Chrome -----------------------------------------------------------------
 export { renderChromeHead, buildChrome } from './chrome.js';
-export type { ChromeOptions, SiteChrome } from './chrome.js';
+export type { ChromeOptions, SiteChrome, BreadcrumbItem } from './chrome.js';
 
 // --- Article (orchestrator) -------------------------------------------------
 export { renderArticleHtml } from './article.js';

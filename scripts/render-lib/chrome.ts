@@ -51,6 +51,16 @@ import {
 // Options + return shape
 // ---------------------------------------------------------------------------
 
+/**
+ * One breadcrumb node. The last item in the array is rendered with
+ * `aria-current="page"` and no anchor (it is the current page); all
+ * other items must supply an `href`.
+ */
+export interface BreadcrumbItem {
+  readonly label: string;
+  readonly href?: string;
+}
+
 export interface ChromeOptions {
   readonly lang: Language;
   readonly title: string;
@@ -76,6 +86,30 @@ export interface ChromeOptions {
   readonly section?: string;
   /** RSS feed URL, defaults to `/rss.xml`. */
   readonly rssHref?: string;
+  /**
+   * og:type. Defaults to `'article'` for backwards-compat with the article
+   * renderer. Index/sitemap/methodology pages should set `'website'` so
+   * that crawlers do not treat them as individual articles and the
+   * `article:*` meta block is suppressed.
+   */
+  readonly ogType?: 'article' | 'website';
+  /**
+   * Custom breadcrumb path used by `buildChrome` to render the sub-navigation
+   * row. The last item is the current page. When omitted, `buildChrome`
+   * falls back to the legacy 3-tier `Home > Political Intelligence > {title}`
+   * breadcrumb used by individual articles.
+   */
+  readonly breadcrumb?: readonly BreadcrumbItem[];
+  /**
+   * Filename used by the lang-switcher fallback (when an explicit
+   * `hreflangAlternates` entry for a given language is not supplied). For
+   * the English version, this is the literal file (e.g. `'sitemap.html'`,
+   * `'political-intelligence.html'`); other languages get the
+   * `_${lang}` suffix automatically. Defaults to `'index.html'` so the
+   * fallback always lands on a valid landing page even if the current
+   * page is not translated.
+   */
+  readonly defaultAlternateBase?: string;
 }
 
 export interface SiteChrome {
@@ -153,6 +187,15 @@ export function renderChromeHead(opts: ChromeOptions): string {
 
   const hreflangHtml = renderHreflangBlock(opts.lang, opts.canonicalPath, opts.hreflangAlternates);
 
+  const ogType = opts.ogType ?? 'article';
+  const articleMetaBlock = ogType === 'article'
+    ? `    <meta property="article:publisher" content="https://www.hack23.com">
+    <meta property="article:section" content="${escapeHtml(opts.section ?? 'Political Intelligence')}">
+    <meta property="article:modified_time" content="${modified}">
+    <meta property="article:published_time" content="${published}">
+`
+    : '';
+
   return `<!DOCTYPE html>
 <html lang="${meta.hreflang}" dir="${meta.dir}">
 <head>
@@ -183,7 +226,7 @@ ${hreflangHtml}
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="alternate" type="application/rss+xml" title="Riksdagsmonitor news (${escapeHtml(meta.nativeName)})" href="${opts.rssHref ?? '/rss.xml'}">
 
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="${ogType}">
     <meta property="og:site_name" content="Riksdagsmonitor">
     <meta property="og:title" content="${escapedBrandedTitle}">
     <meta property="og:description" content="${escapeHtml(opts.description)}">
@@ -196,11 +239,7 @@ ${alternateLocalesHtml}
     <meta property="og:image:alt" content="Riksdagsmonitor ${escapedTitle}">
     <meta property="og:updated_time" content="${modified}">
 
-    <meta property="article:publisher" content="https://www.hack23.com">
-    <meta property="article:section" content="${escapeHtml(opts.section ?? 'Political Intelligence')}">
-    <meta property="article:modified_time" content="${modified}">
-    <meta property="article:published_time" content="${published}">
-
+${articleMetaBlock}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@riksdagsmonitor">
     <meta name="twitter:creator" content="@hack23ab">
@@ -234,6 +273,20 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
   const piFile = opts.lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${opts.lang}.html`;
   const rssHref = opts.rssHref ?? (opts.lang === 'en' ? '/rss.xml' : `/rss_${opts.lang}.xml`);
 
+  /**
+   * Resolve the lang-switcher fallback href for a given language.
+   *
+   * Caller-supplied `hreflangAlternates[lang]` always wins. Otherwise
+   * we use the configurable `defaultAlternateBase` (e.g. `'sitemap.html'`
+   * for the sitemap generator, `'political-intelligence.html'` for PI),
+   * defaulting to `'index.html'` so the legacy article behaviour is
+   * preserved when no explicit base is supplied.
+   */
+  const altBase = opts.defaultAlternateBase ?? 'index.html';
+  const altBaseStem = altBase.replace(/\.html$/i, '');
+  const fallbackAltHref = (l: Language): string =>
+    l === 'en' ? altBase : `${altBaseStem}_${l}.html`;
+
   // Header dropdown (compact "more languages") — excludes the current
   // language (which is shown in the summary). When no explicit alternate
   // is provided for a given lang, fall back to the language homepage —
@@ -243,7 +296,7 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
     .filter((l) => l !== opts.lang)
     .map((l) => {
       const lm = LANGUAGE_META[l];
-      const href = opts.hreflangAlternates?.[l] ?? (l === 'en' ? 'index.html' : `index_${l}.html`);
+      const href = opts.hreflangAlternates?.[l] ?? fallbackAltHref(l);
       return `          <a href="${prefix}${href}" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}" role="menuitem"><span aria-hidden="true">${lm.flag}</span> ${lm.nativeName}</a>`;
     })
     .join('\n');
@@ -254,7 +307,7 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
     .filter((l) => l !== opts.lang)
     .map((l) => {
       const lm = LANGUAGE_META[l];
-      const href = opts.hreflangAlternates?.[l] ?? (l === 'en' ? 'index.html' : `index_${l}.html`);
+      const href = opts.hreflangAlternates?.[l] ?? fallbackAltHref(l);
       return `          <a href="${prefix}${href}" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}"><span aria-hidden="true">${lm.flag}</span> <span class="rm-lang-code">${lm.hreflang}</span></a>`;
     })
     .join('\n');
@@ -262,6 +315,26 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
   const tagline = 'Swedish parliamentary intelligence · Open-source · Apache-2.0';
   const lastUpdatedIso = opts.modifiedIso ?? new Date().toISOString();
   const lastUpdatedDisplay = lastUpdatedIso.slice(0, 16).replace('T', ' ') + ' UTC';
+
+  // Render the breadcrumb sub-navigation. When the caller supplies a
+  // custom `breadcrumb` array, render it verbatim (last item gets
+  // `aria-current="page"` and no anchor). Otherwise fall back to the
+  // legacy 3-tier `Home > Political Intelligence > {title}` breadcrumb
+  // used by individual articles.
+  const breadcrumbItems: readonly BreadcrumbItem[] = opts.breadcrumb ?? [
+    { label: t.home, href: `${prefix}${indexFile}` },
+    { label: 'Political Intelligence', href: `${prefix}${piFile}` },
+    { label: opts.title },
+  ];
+  const breadcrumbLis = breadcrumbItems
+    .map((item, idx) => {
+      const isLast = idx === breadcrumbItems.length - 1;
+      if (isLast || !item.href) {
+        return `            <li aria-current="page">${escapeHtml(item.label)}</li>`;
+      }
+      return `            <li><a href="${item.href}">${escapeHtml(item.label)}</a></li>`;
+    })
+    .join('\n');
 
   const headerHtml = `<body class="rm-article-body">
     <a class="skip-link" href="#main">${escapeHtml('Skip to main content')}</a>
@@ -299,12 +372,10 @@ ${languageSwitcher}
           <span class="rm-theme-toggle-label">${escapeHtml('Theme')}</span>
         </button>
       </div>
-      <div class="rm-site-subnav" aria-label="Article context">
+      <div class="rm-site-subnav" aria-label="Page context">
         <nav class="rm-breadcrumb" aria-label="Breadcrumb">
           <ol>
-            <li><a href="${prefix}${indexFile}">${escapeHtml(t.home)}</a></li>
-            <li><a href="${prefix}${piFile}">${escapeHtml('Political Intelligence')}</a></li>
-            <li aria-current="page">${escapeHtml(opts.title)}</li>
+${breadcrumbLis}
           </ol>
         </nav>
         ${opts.publishedIso ? `<time class="rm-article-published" datetime="${opts.publishedIso}">${opts.publishedIso.slice(0, 10)}</time>` : ''}
