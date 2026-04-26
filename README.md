@@ -39,6 +39,8 @@ Riksdagsmonitor is a comprehensive intelligence platform for monitoring politica
       </div>
       <div>
         <a href="https://riksdagsmonitor.com"><strong>🌐 Official Website</strong></a> •
+        <a href="https://riksdagsmonitor.com/political-intelligence.html"><strong>🕵️ Political Intelligence</strong></a> •
+        <a href="https://riksdagsmonitor.com/sitemap.html"><strong>🗺️ Sitemap</strong></a> •
         <a href="https://github.com/Hack23/riksdagsmonitor"><strong>📂 Repository</strong></a> •
         <a href="https://hack23.com/riksdagsmonitor-features.html"><strong>✨ Features</strong></a> •
         <a href="https://hack23.com/riksdagsmonitor-docs.html"><strong>📚 Documentation</strong></a>
@@ -245,6 +247,17 @@ npm install chartjs-plugin-annotation             # Optional — for chart annot
 ## 🌐 Live Platform
 
 **Website:** [riksdagsmonitor.com](https://riksdagsmonitor.com)
+
+### 🗺️ Key Web Pages
+
+Two flagship pages are the entry points for analysts, journalists, search engines and citizens — both are auto-generated, multilingual (14 languages) and SEO-optimised with canonical URLs, Open Graph, Twitter Cards, JSON-LD `CollectionPage` schema and full `hreflang` alternates.
+
+| Icon | Page | URL | Description |
+|------|------|-----|-------------|
+| 🕵️ | **Political Intelligence Index** | <https://riksdagsmonitor.com/political-intelligence.html> | Complete catalogue of Riksdagsmonitor's evidence-based intelligence work — every analysis methodology, template and **daily analysis artifact** (Family A baseline + Family B + Family C synthesis + Family D extension) covering the Swedish Riksdag and Regeringskansliet. The single best entry point for OSINT/INTOP researchers. |
+| 🗺️ | **Sitemap (Human + Machine)** | <https://riksdagsmonitor.com/sitemap.html> | Human-readable navigation of every page on the platform — dashboards, news articles, methodologies, language variants — plus the machine-readable [`sitemap.xml`](https://riksdagsmonitor.com/sitemap.xml) and [`rss.xml`](https://riksdagsmonitor.com/rss.xml) feeds. Daily refreshed; honours `robots.txt` and search-engine indexing best practices. |
+
+Both pages are also localised — append `_<lang>` (e.g. `political-intelligence_sv.html`, `sitemap_de.html`) for any of the 14 supported languages.
 
 **Available in 14 Languages:**
 - English, Swedish, Danish, Norwegian, Finnish

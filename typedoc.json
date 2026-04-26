@@ -121,12 +121,20 @@
   "searchInDocuments": true,
   "navigationLinks": {
     "🏠 Home": "https://riksdagsmonitor.com",
+    "🕵️ Political Intelligence": "https://riksdagsmonitor.com/political-intelligence.html",
+    "🗺️ Sitemap": "https://riksdagsmonitor.com/sitemap.html",
     "📦 npm Package": "https://www.npmjs.com/package/riksdagsmonitor",
     "📦 GitHub": "https://github.com/Hack23/riksdagsmonitor",
     "🛡️ ISMS": "https://github.com/Hack23/ISMS-PUBLIC",
     "🏛️ CIA Platform": "https://github.com/Hack23/cia"
   },
   "sidebarLinks": {
+    "── Live Platform ──": "https://riksdagsmonitor.com",
+    "🌐 Riksdagsmonitor.com": "https://riksdagsmonitor.com",
+    "🕵️ Political Intelligence Index": "https://riksdagsmonitor.com/political-intelligence.html",
+    "🗺️ Sitemap (Human + XML)": "https://riksdagsmonitor.com/sitemap.html",
+    "📰 News & Articles": "https://riksdagsmonitor.com/news/",
+    "📦 npm Package": "https://www.npmjs.com/package/riksdagsmonitor",
     "── Current Architecture ──": "https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md",
     "🏛️ Architecture": "https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md",
     "🔒 Security Architecture": "https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md",
