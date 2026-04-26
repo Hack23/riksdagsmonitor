@@ -99,6 +99,24 @@ Each agentic workflow is a **pair**: an authored `.md` source + a compiled `.loc
 8. `../prompts/07-commit-and-pr.md` — stage → commit → exactly one `create_pull_request`
 9. *(Tier-C workflows only)* `../prompts/ext/tier-c-aggregation.md` — 14-artifact gate, period multipliers
 
+### Common tool surface (every `news-*.md`)
+
+Every news workflow declares the **same** tool & runtime surface for parity, resilience, and full gh-aw v0.69.3 capability coverage:
+
+| Field | Value | Purpose |
+|-------|-------|---------|
+| `runtimes.node.version` | `"25"` | Pinned Node 25 for IMF CLI + render scripts |
+| `tools.github.toolsets` | `[all]` | Full GitHub MCP surface (issues, PRs, repos, code-search, actions, releases, discussions, …); see [`github-tools.md`](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/github-tools.md) |
+| `tools.bash` / `tools.edit` / `tools.web-fetch` / `tools.agentic-workflows` | enabled | Full local tool surface; `web-fetch` reaches non-MCP public sources (`statskontoret.se`, `riksdagsmonitor.com`) through the AWF firewall |
+| `tools.cache-memory` | keyed by `news-${workflow}-${article_date}`, 14-day retention | **Resilience knob** — analysis artifacts persisted at `/tmp/gh-aw/cache-memory/`; restored on the next run if the previous PR failed (see [`07-commit-and-pr.md` §Cache-memory recovery](../prompts/07-commit-and-pr.md)) |
+| `tools.playwright` | enabled in `news-evening-analysis` + `news-realtime-monitor` only | Live HTML validation for tier-C aggregation runs |
+| `features.mcp-gateway` | `true` | Routes all MCP traffic through the gh-aw mcp-gateway (single audit point) |
+| `sandbox.mcp.keepalive-interval` | `300` (5 min) | Compiles to gateway `keepaliveInterval`; overrides upstream default `1500 s (25 min)` so HTTP MCPs (`riksdag-regering`) stay warm for the full 45–50 min job (see [`02-mcp-access.md` §MCP gateway keepalive](../prompts/02-mcp-access.md)) |
+| `safe-outputs.create-pull-request.fallback-as-issue` | `true` (explicit) | If org disables Actions PR creation, fall back to an issue + branch link instead of failing |
+| `safe-outputs.create-pull-request.if-no-changes` | `warn` | Empty patches emit a warning instead of failing the run (e.g. duplicate-date dispatches) |
+| `network.allowed` | `node`, `containers`, `github`, `defaults` + IMF/SCB/Riksdag/Statskontoret/site domains | Ecosystem identifiers preferred per upstream `network.md`; `containers` covers `node:25-alpine` images for SCB + World Bank MCPs |
+| `permissions` | `contents: read`, `issues: read`, `pull-requests: read`, `actions: read`, `discussions: read`, `security-events: read` | Least-privilege agent token; write capabilities live exclusively in the safe-outputs runner job |
+
 ## 🛠️ Automation & Tooling (4)
 
 | File | Trigger | Purpose |

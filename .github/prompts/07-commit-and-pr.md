@@ -52,6 +52,29 @@ Translations for the remaining twelve languages are produced by the dedicated **
 
 5. **Do not** `git push`, `git checkout`, or `git checkout -b` after the call. The safe-outputs runner job publishes the PR; subsequent agent commits are not added.
 
+## Cache-memory recovery (resilience for failed PRs)
+
+Every news workflow declares `tools.cache-memory:` keyed by `news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}` with 14-day retention (see `02-mcp-access.md` §Servers & tool naming). gh-aw automatically restores the cache from the previous run on each invocation — analysis artifacts under `/tmp/gh-aw/cache-memory/` survive across failed runs and can be reused on the next attempt.
+
+**On every run, immediately after MCP pre-warm:**
+
+1. Check whether `/tmp/gh-aw/cache-memory/$ARTICLE_DATE/$SUBFOLDER/` exists with prior analysis artifacts (Family A/B/C/D `.md` files). If so, this is a **retry of a failed run**. Copy them into `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` *before* re-running the analysis pipeline so Pass 2 builds on Pass 1 work that previous runs already paid for.
+2. After a successful Pass 1 (or after the analysis gate passes), copy the produced `.md` artifacts back to `/tmp/gh-aw/cache-memory/$ARTICLE_DATE/$SUBFOLDER/` so the next run can recover them if `safeoutputs___create_pull_request` fails or the run is killed by Timer A/B/C.
+3. The cache is **automatically saved** by gh-aw at job end — the agent does **not** call any safe-output tool to persist it. Just write to `/tmp/gh-aw/cache-memory/`.
+
+Cache-memory is **not** a substitute for committing real files on disk under `analysis/daily/`. It is a recovery mechanism for the next run, not a deliverable.
+
+## PR creation resilience (`fallback-as-issue`, `if-no-changes`)
+
+Every news workflow's `safe-outputs.create-pull-request:` block sets two explicit resilience flags:
+
+| Flag | Value | Effect |
+|------|-------|--------|
+| `fallback-as-issue` | `true` *(explicit, also the gh-aw default)* | If org settings disable "Allow GitHub Actions to create and approve pull requests", the safe-outputs runner falls back to creating an **issue with branch link** instead of failing. The agent's commit is still pushed; only the PR-creation step degrades. |
+| `if-no-changes` | `warn` | If the agent commits but the patch is empty (e.g. all artifacts already exist for this date with `force_generation=false`), the runner emits a warning instead of failing the workflow. Combined with the run-mode selection in `03-data-download.md`, this prevents spurious red runs on duplicate-date dispatches. |
+
+Neither flag changes the agent's behaviour — both are runner-side resilience knobs. The agent still calls `safeoutputs___create_pull_request` exactly once. See [upstream `create-pull-request` reference](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/safe-outputs-pull-requests.md) for the full schema.
+
 ## Canonical PR body template
 
 ```markdown

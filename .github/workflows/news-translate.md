@@ -55,7 +55,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300 # 5m ping keeps upstream MCPs warm; safeoutputs HTTP idle session (~25-30 min) is the operative deadline → safeoutputs___create_pull_request must be called by minute 28 (hard 30); see prompts/07-commit-and-pr.md §Deadline enforcement
+    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — overrides upstream default 1500s (25 min) with a 5-min HTTP MCP ping. Keeps `riksdag-regering` (HTTP) and any other HTTP-backed MCPs warm for the entire 45-min job; lets us run 45-50 min sessions safely. Does NOT keep the local `safeoutputs` Streamable-HTTP idle session alive (Timer C ~25-30 min) — call `safeoutputs___create_pull_request` by minute 28 (hard 30). See prompts/07-commit-and-pr.md §Deadline enforcement and reference: https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/mcp-gateway.md
 
 runtimes:
   node:
@@ -64,6 +64,7 @@ runtimes:
 network:
   allowed:
     - node
+    - containers # node:25-alpine containers used by SCB + World Bank MCP servers
     - github
     - riksdag-regering-ai.onrender.com
     - api.scb.se
@@ -110,6 +111,11 @@ tools:
       - all
   agentic-workflows: true
   bash: true
+  edit:
+  web-fetch:
+  cache-memory:
+    key: news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}
+    retention-days: 14
 
 safe-outputs:
   report-failure-as-issue: false
@@ -139,6 +145,8 @@ safe-outputs:
     draft: false
     expires: 14d
     max: 1
+    if-no-changes: warn       # Don't fail when nothing changed (resilience)
+    fallback-as-issue: true   # If org disables Actions PR creation, fall back to an issue with branch link
   add-comment: {}
 
 steps:
