@@ -216,6 +216,11 @@ ${alternateLocalesHtml}
 
 ${jsonLdBlocks}
 ${opts.extraHead ?? ''}
+    <!-- Anti-flash theme bootstrap: applies the user's saved/preferred
+         theme to <html data-theme> before first paint. Same storage key
+         (\`riksdagsmonitor-theme\`) and resolution rules as the legacy
+         article pages so the toggle button stays in sync. -->
+    <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 ${opts.extraStyle ? `    <style>${opts.extraStyle}</style>` : ''}
 </head>`;
 }
@@ -284,6 +289,15 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
 ${languageSwitcher}
           </div>
         </details>
+        <button id="theme-toggle" class="rm-theme-toggle" type="button"
+                aria-pressed="false"
+                aria-label="Switch theme"
+                title="Switch theme"
+                data-label-dark="Switch to light theme"
+                data-label-light="Switch to dark theme">
+          <span class="rm-theme-toggle-icon" aria-hidden="true">🌓</span>
+          <span class="rm-theme-toggle-label">${escapeHtml('Theme')}</span>
+        </button>
       </div>
       <div class="rm-site-subnav" aria-label="Article context">
         <nav class="rm-breadcrumb" aria-label="Breadcrumb">
@@ -344,8 +358,29 @@ ${footerLangRow}
         © ${new Date().getFullYear()} Hack23 AB · Apache-2.0 · Public political data only — GDPR Art. 9(2)(e,g). No cookies, no tracking, no advertising.
       </p>
     </footer>
-    <script type="module" src="${prefix}js/lib/mermaid-init.mjs"></script>
-    <script type="module" src="${prefix}js/back-to-top.js"></script>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         The src strings below are imperatively assembled at runtime so that
+         Vite's HTML/script-tag transformer does NOT try to bundle, hash and
+         re-emit the underlying modules under \`/assets/…\` (which previously
+         caused 404s like \`/assets/mermaid.esm.min-XXXX.mjs\` whenever the
+         pinned \`mermaid\` devDependency was upgraded between deploys).
+         The unhashed runtime files live under \`/js/lib/\` and \`/js/\` and are
+         deployed verbatim to S3 by the "Copy JS libraries to build output"
+         step in \`.github/workflows/deploy-s3.yml\`. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
   </body>
 </html>
 `;
