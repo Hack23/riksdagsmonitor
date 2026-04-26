@@ -46,6 +46,7 @@ This directory is the **single source of truth** for how GitHub Agentic Workflow
 | [`05-analysis-gate.md`](05-analysis-gate.md) | Single blocking gate before any article is touched (checks 1–8 across all 23 artifacts) | All content workflows |
 | [`06-article-generation.md`](06-article-generation.md) | Article sections, banned patterns, visualisation, translations | All content workflows |
 | [`07-commit-and-pr.md`](07-commit-and-pr.md) | Stage → commit → exactly one `create_pull_request` | All news workflows + translate |
+| [`seo-metadata-contract.md`](seo-metadata-contract.md) | Reference contract for `<title>` + `<meta description>` per language (used at render time, not imported) | Reference document — referenced by `06-article-generation.md` and the renderer |
 | [`ext/tier-c-aggregation.md`](ext/tier-c-aggregation.md) | Tier-C additive rules: period multipliers, cross-type sibling synthesis, prior-cycle PIR ingestion, article floor | Aggregation & reference-grade workflows |
 
 ## Dependency matrix

@@ -60,8 +60,7 @@ Populate `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` with raw Riksdag/Regering da
 | news-weekly-review | `weekly-review` |
 | news-monthly-review | `monthly-review` |
 | news-evening-analysis | `evening-analysis` |
-| news-realtime-monitor | `realtime-$HHMM` |
-| news-realtime-monitor | `realtime-pulse` |
+| news-realtime-monitor | `realtime-$HHMM` (per-event) or `realtime-pulse` (rolling 4-hour pulse) |
 
 If `force_generation=true` is supplied on a day whose base subfolder already contains `synthesis-summary.md` from a prior merged run, auto-suffix the subfolder (`propositions-2`, `propositions-3`, …) so the forced rerun does not overwrite the merged analysis. Under the default `force_generation=false`, the same base subfolder is reused across runs — see §Pre-flight above.
 
@@ -117,5 +116,3 @@ Always produce `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/data-download-manifest.m
 ## Next step
 
 On success, proceed to `04-analysis-pipeline.md`. Never start analysis while `data-download-manifest.md` is missing or empty.
-
-After the manifest is written, run the **phase checkpoint** from `00-base-contract.md` with label `phase-03-download` so the download provenance is persisted to repo memory before any analysis begins.

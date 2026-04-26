@@ -62,7 +62,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300 # 5m ping to keep MCP connections alive; Copilot API token expires ~60min so PR must be created within 25min of agent start
+    keepalive-interval: 300 # 5m ping keeps upstream MCPs warm; safeoutputs HTTP idle session (~25-30 min) is the operative deadline → safeoutputs___create_pull_request must be called by minute 28 (hard 30); see prompts/07-commit-and-pr.md §Deadline enforcement
 
 runtimes:
   node:

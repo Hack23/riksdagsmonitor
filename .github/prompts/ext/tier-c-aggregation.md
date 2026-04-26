@@ -8,7 +8,6 @@ Import this **in addition to** the 8 core modules for aggregation / reference-gr
 - `news-week-ahead`
 - `news-month-ahead`
 - `news-realtime-monitor`
-- Any period-scoped Tier-C workflow: `news-evening-analysis`, `news-weekly-review`, `news-monthly-review`, `news-week-ahead`, `news-month-ahead`, `news-realtime-monitor`
 
 These are the flagship editorial surfaces of Riksdagsmonitor. Tier-C rules are **additive**, not replacements — all 23 Family A/B/C/D artifacts from `04-analysis-pipeline.md` are already mandatory for every workflow. Tier-C adds depth multipliers, cross-type synthesis, sibling-citation requirements and a higher article-output floor.
 
