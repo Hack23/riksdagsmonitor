@@ -12235,10 +12235,19 @@ html[data-theme="light"] .footer-disclaimer a {
   border-radius: 6px;
   padding: 0.5rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  display: flex;
+  /* Hidden by default so the closed <details> doesn't leave dropdown
+     anchors as click targets (Cypress would otherwise hit them through
+     the sticky rm-site-header). The class selector previously beat the
+     UA-default `details:not([open]) > *:not(summary) { display: none }`
+     rule and forced the dropdown visible even when collapsed. */
+  display: none;
   flex-direction: column;
   gap: 0.125rem;
   z-index: 120;
+}
+
+.rm-lang-switcher[open] > .rm-lang-switcher-dropdown {
+  display: flex;
 }
 
 .rm-lang-switcher-dropdown a {
@@ -12884,4 +12893,71 @@ html[data-theme="light"] .rm-site-footer {
     color: var(--text-color, #1a1a1a);
     background: rgba(0, 102, 51, 0.06);
   }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Article-chrome theme toggle (`.rm-theme-toggle`)
+   --------------------------------------------------------------------------
+   Sits inline inside `.rm-site-header-inner` next to the language switcher.
+   Distinct from the legacy `.theme-toggle-btn` class used by older,
+   absolutely-positioned news templates — that class uses `position:absolute`
+   which clashes with the rm-site-header flex layout.
+   ────────────────────────────────────────────────────────────────────────── */
+.rm-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(0, 217, 255, 0.06);
+  border: 1px solid rgba(0, 217, 255, 0.4);
+  color: var(--light-text, #e0e0e0);
+  font-family: var(--font-main, 'Inter', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  min-height: 40px;          /* WCAG 2.5.5 touch target */
+  line-height: 1;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  -webkit-user-select: none;
+          user-select: none;
+}
+
+.rm-theme-toggle:hover {
+  background: rgba(255, 0, 110, 0.1);
+  border-color: var(--primary-magenta, #ff006e);
+  color: var(--primary-magenta, #ff006e);
+}
+
+.rm-theme-toggle:focus-visible {
+  outline: 2px solid var(--primary-yellow, #ffbe0b);
+  outline-offset: 2px;
+}
+
+.rm-theme-toggle:active {
+  transform: scale(0.97);
+}
+
+.rm-theme-toggle-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .rm-theme-toggle-label { display: none; }
+  .rm-theme-toggle { padding: 0.4rem 0.55rem; }
+}
+
+/* Light-mode override: swap dark accents for the legible green palette
+   used by the rest of the article chrome under data-theme="light". */
+html[data-theme="light"] .rm-theme-toggle {
+  background: rgba(0, 102, 51, 0.06);
+  border-color: rgba(0, 102, 51, 0.45);
+  color: var(--text-color, #1a1a1a);
+}
+
+html[data-theme="light"] .rm-theme-toggle:hover {
+  background: rgba(0, 102, 51, 0.12);
+  border-color: rgba(0, 102, 51, 0.7);
+  color: var(--text-color, #1a1a1a);
 }

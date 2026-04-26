@@ -244,11 +244,13 @@ describe('News Page - Navigation', () => {
   it('should support language switching on news page', () => {
     cy.visit('/news/');
     
-    // Try to switch to Swedish version
+    // Try to switch to Swedish version. The canonical chrome renders the
+    // top-of-page lang switcher inside a collapsed <details> dropdown, so
+    // filter to the visible anchor (footer language row, or open dropdown).
     cy.get('body').then(($body) => {
       const svLink = $body.find('a[href*="index_sv.html"]');
       if (svLink.length > 0) {
-        cy.get('a[href*="index_sv.html"]').first().click();
+        cy.get('a[href*="index_sv.html"]:visible').first().click();
         cy.url().should('include', 'index_sv.html');
       } else {
         cy.log('Swedish language link not found - skipping language switch test');
