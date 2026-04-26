@@ -513,6 +513,6 @@ All work operates under [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBL
 
 - **Contract** → [`.github/prompts/README.md`](../prompts/README.md) (role, shell, MCP, download, analysis, gate, article, commit).
 - **Analysis product** → [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md) + [`analysis/templates/`](../../analysis/templates/). Every news article MUST be preceded by 9 core artifacts (14 for Tier-C aggregation) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. [`05-analysis-gate.md`](../prompts/05-analysis-gate.md) is the single blocking gate.
-- **gh-aw v0.71.1** — [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
+- **gh-aw v0.69.3** — [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
 
 - **CSS-only IMF data visualisations** — vintage badge component (yellow >3 mo, red >6 mo); WEO forecast cone (T+5); cross-validation badge when IMF SWE figure diverges >0.3pp from SCB. IMF is the **primary economic-data source**; WB residue only. Hub: [`analysis/imf/`](../../analysis/imf/).

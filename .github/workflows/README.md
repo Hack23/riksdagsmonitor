@@ -101,7 +101,7 @@ Each agentic workflow is a **pair**: an authored `.md` source + a compiled `.loc
 
 ### Common tool surface (every `news-*.md`)
 
-Every news workflow declares the **same** tool & runtime surface for parity, resilience, and full gh-aw v0.71.1 capability coverage:
+Every news workflow declares the **same** tool & runtime surface for parity, resilience, and full gh-aw v0.69.3 capability coverage:
 
 | Field | Value | Purpose |
 |-------|-------|---------|

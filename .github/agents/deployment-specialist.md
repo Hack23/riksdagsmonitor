@@ -501,6 +501,6 @@ All work operates under [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBL
 
 - **Contract** → [`.github/prompts/README.md`](../prompts/README.md) (role, shell, MCP, download, analysis, gate, article, commit).
 - **Analysis product** → [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md) + [`analysis/templates/`](../../analysis/templates/). Every news article MUST be preceded by 9 core artifacts (14 for Tier-C aggregation) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. [`05-analysis-gate.md`](../prompts/05-analysis-gate.md) is the single blocking gate.
-- **gh-aw v0.71.1** — [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
+- **gh-aw v0.69.3** — [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
 
 - **IMF egress allow-list** — include `www.imf.org` and `sdmxcentral.imf.org` in CDN/WAF egress configs and in every workflow `network:` allowlist; preserve vintage-tagged cache across deploys. IMF is the **primary economic-data source** per [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) v2.1; WB residue only. Hub: [`analysis/imf/`](../../analysis/imf/).
