@@ -36,6 +36,24 @@ const __dirname = path.dirname(__filename);
 
 const WORKFLOWS_DIR = path.join(__dirname, '..', '.github', 'workflows');
 const SCRIPTS_DIR = path.join(__dirname, '..', 'scripts');
+/**
+ * Shared composite action that contains the canonical pre-warm + pre-flight
+ * diagnostics for every `news-*.md` agentic workflow. Introduced in PR #2008
+ * to deduplicate ~80 lines of identical YAML across 11 workflows. The
+ * frontmatter `steps:` block in each workflow references this action via
+ * `uses: ./.github/actions/news-prewarm`, so the diagnostics literals
+ * (e.g. "Pre-flight external endpoint reachability check", "DNS Resolution
+ * Tests") now live in the action file rather than each workflow.
+ */
+const NEWS_PREWARM_ACTION = path.join(
+  __dirname,
+  '..',
+  '.github',
+  'actions',
+  'news-prewarm',
+  'action.yml'
+);
+const NEWS_PREWARM_USES_REF = './.github/actions/news-prewarm';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -390,45 +408,73 @@ describe('Network Diagnostics Configuration', () => {
   });
 
   describe('Pre-flight External Reachability Check (runs before MCP Gateway)', () => {
-    it('all workflows should label pre-flight step correctly', () => {
-      // The pre-flight step tests DIRECT external HTTPS — not gateway routing.
-      // It MUST be clearly named to avoid false confidence (see PR #1711).
+    // The pre-flight diagnostics were extracted in PR #2008 into the shared
+    // composite action `.github/actions/news-prewarm/action.yml` and every
+    // news workflow now references it via `uses: ./.github/actions/news-prewarm`.
+    // We therefore validate (a) the composite action carries the canonical
+    // diagnostics content, and (b) every workflow wires the action into its
+    // frontmatter `steps:` block — instead of grepping each workflow file for
+    // the inline YAML literals (which no longer exist).
+
+    it('shared news-prewarm composite action exists', () => {
+      expect(
+        fs.existsSync(NEWS_PREWARM_ACTION),
+        `Missing shared pre-warm action at ${NEWS_PREWARM_ACTION}`
+      ).toBe(true);
+    });
+
+    it('shared news-prewarm action labels pre-flight step correctly', () => {
+      const action = fs.readFileSync(NEWS_PREWARM_ACTION, 'utf-8');
+
+      // Must NOT use the misleading old name from PR #1711.
+      expect(
+        action,
+        'news-prewarm still uses misleading "Network and MCP diagnostics" step name'
+      ).not.toContain('- name: Network and MCP diagnostics');
+
+      // Must use the clarified name.
+      expect(
+        action,
+        'news-prewarm missing pre-flight step with clarified name'
+      ).toContain('Pre-flight external endpoint reachability check');
+    });
+
+    it('all workflows reference the shared news-prewarm composite action', () => {
       ALL_NEWS_WORKFLOWS.forEach(workflow => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
         const content = fs.readFileSync(filepath, 'utf-8');
         const fm = extractFrontmatter(content);
 
-        // Must NOT use the misleading old name
+        // Each workflow must wire the shared composite action so the
+        // pre-flight + pre-warm diagnostics run before the MCP Gateway.
         expect(
           fm,
-          `${workflow} still uses misleading "Network and MCP diagnostics" step name`
-        ).not.toContain('- name: Network and MCP diagnostics');
+          `${workflow} does not reference shared composite action ${NEWS_PREWARM_USES_REF}`
+        ).toContain(`uses: ${NEWS_PREWARM_USES_REF}`);
 
-        // Must use the clarified name
+        // And it must NOT have re-introduced the misleading inline name.
         expect(
           fm,
-          `${workflow} missing pre-flight step with clarified name`
-        ).toContain('Pre-flight external endpoint reachability check');
+          `${workflow} still uses misleading "Network and MCP diagnostics" inline step`
+        ).not.toContain('- name: Network and MCP diagnostics');
       });
     });
 
-    it('news-propositions.md should have canonical diagnostics content', () => {
-      const filepath = path.join(WORKFLOWS_DIR, 'news-propositions.md');
-      const content = fs.readFileSync(filepath, 'utf-8');
+    it('shared news-prewarm action has canonical diagnostics content', () => {
+      const action = fs.readFileSync(NEWS_PREWARM_ACTION, 'utf-8');
 
-      expect(content).toContain('DNS Resolution Tests');
-      expect(content).toContain('HTTPS Connectivity Tests');
-      expect(content).toContain('MCP Server Tool Count');
+      expect(action).toContain('DNS Resolution Tests');
+      expect(action).toContain('HTTPS Connectivity Tests');
+      expect(action).toContain('MCP Server Tool Count');
     });
 
-    it('diagnostics block should test all required domains', () => {
-      const filepath = path.join(WORKFLOWS_DIR, 'news-propositions.md');
-      const content = fs.readFileSync(filepath, 'utf-8');
+    it('shared news-prewarm action probes all required MCP/data domains', () => {
+      const action = fs.readFileSync(NEWS_PREWARM_ACTION, 'utf-8');
 
       REQUIRED_MCP_DOMAINS.forEach(domain => {
         expect(
-          content,
-          `Diagnostics block missing domain check for: ${domain}`
+          action,
+          `news-prewarm action missing domain check for: ${domain}`
         ).toContain(domain);
       });
     });
@@ -438,10 +484,12 @@ describe('Network Diagnostics Configuration', () => {
     // The dedicated "MCP Quick Diagnostic" in-prompt block that existed in
     // the pre-modularisation architecture is now replaced by the health gate
     // in `../prompts/02-mcp-access.md` (3× `get_sync_status` at workflow
-    // start, then proceed). The CI `steps:` block handles external DNS /
-    // HTTPS pre-flight checks, and the MCP-unreachable no-op policy lives
-    // in `../prompts/07-commit-and-pr.md`. We therefore verify the effective
-    // prompt exposes the health gate rather than a specific legacy heading.
+    // start, then proceed). The frontmatter `steps:` block references the
+    // shared composite action `./.github/actions/news-prewarm` (PR #2008)
+    // which handles external DNS / HTTPS pre-flight checks; the
+    // MCP-unreachable no-op policy lives in `../prompts/07-commit-and-pr.md`.
+    // We therefore verify the effective prompt exposes the health gate and
+    // that the workflow wires in the shared pre-flight composite action.
     const CONTENT_GENERATION_WORKFLOWS = ALL_NEWS_WORKFLOWS.filter(w => w !== 'news-translate.md');
 
     CONTENT_GENERATION_WORKFLOWS.forEach(workflow => {
@@ -462,49 +510,62 @@ describe('Network Diagnostics Configuration', () => {
         ).toContain('safeoutputs___noop');
       });
 
-      it(`${workflow} should test external MCP reachability in frontmatter pre-flight step`, () => {
+      it(`${workflow} should wire shared pre-flight composite action`, () => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
         const content = fs.readFileSync(filepath, 'utf-8');
         const fm = extractFrontmatter(content);
 
         // External HTTPS reachability to the MCP server is verified by the
-        // frontmatter pre-flight step, not by an in-prompt diagnostic block.
+        // frontmatter `steps:` block, which references the shared composite
+        // action `./.github/actions/news-prewarm` rather than inlining the
+        // pre-flight YAML in every workflow (PR #2008 deduplication).
         expect(
           fm,
-          `${workflow} missing pre-flight external reachability check`
-        ).toContain('Pre-flight external endpoint reachability check');
-        expect(
-          fm,
-          `${workflow} pre-flight step should probe the Render MCP endpoint`
-        ).toContain('riksdag-regering-ai.onrender.com');
+          `${workflow} missing reference to shared pre-flight action ${NEWS_PREWARM_USES_REF}`
+        ).toContain(`uses: ${NEWS_PREWARM_USES_REF}`);
       });
+    });
+
+    it('shared news-prewarm action probes the Render MCP endpoint', () => {
+      // The shared composite action is the single place where the external
+      // HTTPS reachability check runs, so the Render MCP endpoint probe must
+      // live there (either as a literal default or via the `mcp-url` input).
+      const action = fs.readFileSync(NEWS_PREWARM_ACTION, 'utf-8');
+      expect(
+        action,
+        'news-prewarm action does not probe riksdag-regering-ai.onrender.com'
+      ).toContain('riksdag-regering-ai.onrender.com');
     });
   });
 
   describe('Pre-warm and Keep-alive Patterns', () => {
-    it('news-propositions.md should have MCP pre-warm step', () => {
-      const filepath = path.join(WORKFLOWS_DIR, 'news-propositions.md');
-      const content = fs.readFileSync(filepath, 'utf-8');
-
-      // The single `curl`-based pre-warm `steps:` block is canonical
-      // (see `../prompts/02-mcp-access.md` §"Pre-warm step"). We no longer
-      // keep long-running keep-alive pingers — the `safeoutputs` session is
-      // kept alive by completing work inside its ~30-minute idle window.
-      expect(content).toContain('Pre-warm MCP server');
-      expect(content).toContain('tools/list');
+    it('shared news-prewarm action contains MCP pre-warm step', () => {
+      // The single `curl`-based pre-warm `steps:` block is canonical and now
+      // lives in the shared composite action `.github/actions/news-prewarm/`
+      // (see `../prompts/02-mcp-access.md` §"Pre-warm step" and PR #2008).
+      // We no longer keep long-running keep-alive pingers — the `safeoutputs`
+      // session is kept alive by completing work inside its ~30-minute idle
+      // window.
+      const action = fs.readFileSync(NEWS_PREWARM_ACTION, 'utf-8');
+      expect(action).toContain('Pre-warm MCP server');
+      expect(action).toContain('tools/list');
     });
 
     ALL_NEWS_WORKFLOWS.forEach(workflow => {
       it(`${workflow} should reference MCP pre-warm or health check`, () => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
         const content = readWorkflowWithImports(filepath);
+        const fm = extractFrontmatter(fs.readFileSync(filepath, 'utf-8'));
 
-        const hasPreWarm = content.includes('Pre-warm') || content.includes('pre-warm');
+        const hasPreWarmReference =
+          content.includes('Pre-warm') ||
+          content.includes('pre-warm') ||
+          fm.includes(NEWS_PREWARM_USES_REF);
         const hasHealthGate = content.includes('get_sync_status');
         const hasToolsList = content.includes('tools/list');
 
         expect(
-          hasPreWarm || hasHealthGate || hasToolsList,
+          hasPreWarmReference || hasHealthGate || hasToolsList,
           `${workflow} has no MCP warm-up or health check mechanism`
         ).toBe(true);
       });
@@ -512,11 +573,12 @@ describe('Network Diagnostics Configuration', () => {
   });
 
   describe('Step Ordering Awareness', () => {
-    it('pre-flight steps should be in frontmatter, health gate in prompt body', () => {
+    it('pre-flight steps should be in frontmatter (via shared action), health gate in prompt body', () => {
       // Validates the architectural split:
-      // - Pre-flight external reachability checks (frontmatter `steps:`) run
-      //   BEFORE the agent starts, proving DNS + HTTPS to the Render MCP
-      //   endpoint work from the runner.
+      // - Pre-flight external reachability checks run BEFORE the agent starts
+      //   via the shared composite action `./.github/actions/news-prewarm`
+      //   wired into the frontmatter `steps:` block (PR #2008). This proves
+      //   DNS + HTTPS to the Render MCP endpoint work from the runner.
       // - The in-prompt MCP health gate (`get_sync_status` + noop fallback)
       //   runs INSIDE the agent, proving the MCP Gateway routes tool calls
       //   correctly. That rule lives in `../prompts/02-mcp-access.md`.
@@ -527,11 +589,12 @@ describe('Network Diagnostics Configuration', () => {
         const fm = extractFrontmatter(content);
         const effective = readWorkflowWithImports(filepath);
 
-        // Pre-flight reachability should be in frontmatter steps.
+        // Pre-flight reachability is wired via the shared composite action
+        // referenced from the frontmatter `steps:` block.
         expect(
           fm,
-          `${workflow} missing pre-flight check in frontmatter steps`
-        ).toContain('Pre-flight external endpoint reachability');
+          `${workflow} missing shared pre-flight composite action ${NEWS_PREWARM_USES_REF}`
+        ).toContain(`uses: ${NEWS_PREWARM_USES_REF}`);
 
         // Health gate should be reachable from the effective prompt surface
         // (workflow body + imported modules).
