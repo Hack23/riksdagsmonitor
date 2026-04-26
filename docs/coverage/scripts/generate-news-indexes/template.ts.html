@@ -683,7 +683,26 @@
 <a name='L618'></a><a href='#L618'>618</a>
 <a name='L619'></a><a href='#L619'>619</a>
 <a name='L620'></a><a href='#L620'>620</a>
-<a name='L621'></a><a href='#L621'>621</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L621'></a><a href='#L621'>621</a>
+<a name='L622'></a><a href='#L622'>622</a>
+<a name='L623'></a><a href='#L623'>623</a>
+<a name='L624'></a><a href='#L624'>624</a>
+<a name='L625'></a><a href='#L625'>625</a>
+<a name='L626'></a><a href='#L626'>626</a>
+<a name='L627'></a><a href='#L627'>627</a>
+<a name='L628'></a><a href='#L628'>628</a>
+<a name='L629'></a><a href='#L629'>629</a>
+<a name='L630'></a><a href='#L630'>630</a>
+<a name='L631'></a><a href='#L631'>631</a>
+<a name='L632'></a><a href='#L632'>632</a>
+<a name='L633'></a><a href='#L633'>633</a>
+<a name='L634'></a><a href='#L634'>634</a>
+<a name='L635'></a><a href='#L635'>635</a>
+<a name='L636'></a><a href='#L636'>636</a>
+<a name='L637'></a><a href='#L637'>637</a>
+<a name='L638'></a><a href='#L638'>638</a>
+<a name='L639'></a><a href='#L639'>639</a>
+<a name='L640'></a><a href='#L640'>640</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -863,9 +882,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">308x</span>
 <span class="cline-any cline-yes">308x</span>
 <span class="cline-any cline-yes">308x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1477,6 +1515,11 @@ export function generateIndexHTML(
     jsonLd,
     extraHead,
     extraStyle,
+    // Opt back into the legacy colour-coded `.news-page .article-card` palette
+    // (≈300 LOC starting at `body.news-page` in `styles.css`). Without this
+    // class the `rm-article-body` chrome bypassed the news-index visual
+    // language entirely (see issue #2012-regression).
+    bodyClass: 'news-page',
   });
 &nbsp;
   // News-index body — preserves the rich filter bar, articles grid, JS,
@@ -1632,11 +1675,13 @@ ${needsLanguageNotice ? <span class="branch-0 cbranch-no" title="branch not cove
         availableDisplay = \`&lt;p class="available-languages"&gt;&lt;strong&gt;\${AVAILABLE_IN_TEXT}:&lt;/strong&gt; \${availableBadges}&lt;/p&gt;\`;
       }
 &nbsp;
+      const primaryTopic = (article.topics &amp;&amp; article.topics.length &gt; 0) ? article.topics[0] : '';
+&nbsp;
       return \`
-      &lt;article class="article-card"&gt;
+      &lt;article class="article-card" data-type="\${esc(article.type)}" data-topic="\${esc(primaryTopic)}"&gt;
         &lt;div class="article-meta"&gt;
           &lt;time class="article-date" datetime="\${esc(article.date)}"&gt;\${formatDate(article.date)}&lt;/time&gt;
-          &lt;span class="article-type"&gt;\${localizeType(article.type)}&lt;/span&gt;
+          &lt;span class="article-type" data-type="\${esc(article.type)}"&gt;\${typeIcon(article.type)} \${localizeType(article.type)}&lt;/span&gt;
           \${langBadge}
         &lt;/div&gt;
         &lt;h2 class="article-title"&gt;
@@ -1649,6 +1694,18 @@ ${needsLanguageNotice ? <span class="branch-0 cbranch-no" title="branch not cove
         &lt;/div&gt;
       &lt;/article&gt;
     \`;
+    }
+&nbsp;
+    // Emoji icon per article type — keeps the visual language consistent with
+    // the rest of the site (root index.html, political-intelligence.html).
+    function typeIcon(type) {
+      switch (type) {
+        case 'prospective': return '&lt;span aria-hidden="true"&gt;🔮&lt;/span&gt;';
+        case 'retrospective': return '&lt;span aria-hidden="true"&gt;📊&lt;/span&gt;';
+        case 'analysis': return '&lt;span aria-hidden="true"&gt;🧠&lt;/span&gt;';
+        case 'breaking': return '&lt;span aria-hidden="true"&gt;⚡&lt;/span&gt;';
+        default: return '&lt;span aria-hidden="true"&gt;📰&lt;/span&gt;';
+      }
     }
 &nbsp;
     function renderPage() {
@@ -1930,7 +1987,7 @@ export function <span class="fstat-no" title="function not covered" >generateLan
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-26T21:04:38.008Z
+                at 2026-04-26T23:25:49.226Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
