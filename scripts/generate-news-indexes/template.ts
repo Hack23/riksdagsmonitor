@@ -172,6 +172,11 @@ export function generateIndexHTML(
     jsonLd,
     extraHead,
     extraStyle,
+    // Opt back into the legacy colour-coded `.news-page .article-card` palette
+    // (≈300 LOC starting at `body.news-page` in `styles.css`). Without this
+    // class the `rm-article-body` chrome bypassed the news-index visual
+    // language entirely (see issue #2012-regression).
+    bodyClass: 'news-page',
   });
 
   // News-index body — preserves the rich filter bar, articles grid, JS,
@@ -327,11 +332,13 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
         availableDisplay = \`<p class="available-languages"><strong>\${AVAILABLE_IN_TEXT}:</strong> \${availableBadges}</p>\`;
       }
 
+      const primaryTopic = (article.topics && article.topics.length > 0) ? article.topics[0] : '';
+
       return \`
-      <article class="article-card">
+      <article class="article-card" data-type="\${esc(article.type)}" data-topic="\${esc(primaryTopic)}">
         <div class="article-meta">
           <time class="article-date" datetime="\${esc(article.date)}">\${formatDate(article.date)}</time>
-          <span class="article-type">\${localizeType(article.type)}</span>
+          <span class="article-type" data-type="\${esc(article.type)}">\${typeIcon(article.type)} \${localizeType(article.type)}</span>
           \${langBadge}
         </div>
         <h2 class="article-title">
@@ -344,6 +351,18 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
         </div>
       </article>
     \`;
+    }
+
+    // Emoji icon per article type — keeps the visual language consistent with
+    // the rest of the site (root index.html, political-intelligence.html).
+    function typeIcon(type) {
+      switch (type) {
+        case 'prospective': return '<span aria-hidden="true">🔮</span>';
+        case 'retrospective': return '<span aria-hidden="true">📊</span>';
+        case 'analysis': return '<span aria-hidden="true">🧠</span>';
+        case 'breaking': return '<span aria-hidden="true">⚡</span>';
+        default: return '<span aria-hidden="true">📰</span>';
+      }
     }
 
     function renderPage() {

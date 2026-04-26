@@ -770,8 +770,12 @@ describe('render-lib — buildChrome', () => {
     // Should include sv, da, no, …  (13 others)
     expect(chrome.headerHtml).toMatch(/lang="sv"/);
     expect(chrome.headerHtml).toMatch(/lang="ar"/);
-    // Current language link should NOT be in the dropdown (it is in the summary)
-    const dropdown = chrome.headerHtml.split('rm-lang-switcher-dropdown')[1] ?? '';
+    // Current language link should NOT be in the dropdown (it is in the summary).
+    // Scope the split to the dropdown's own container so the always-visible
+    // horizontal `.rm-lang-bar` row that follows the header is not included.
+    const dropdownStart = chrome.headerHtml.indexOf('rm-lang-switcher-dropdown');
+    const dropdownEnd = chrome.headerHtml.indexOf('</details>', dropdownStart);
+    const dropdown = chrome.headerHtml.slice(dropdownStart, dropdownEnd);
     expect(dropdown).not.toMatch(/>\s*English\s*</);
   });
 
