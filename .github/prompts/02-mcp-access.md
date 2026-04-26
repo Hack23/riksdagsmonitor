@@ -17,7 +17,7 @@ News workflows declare three data MCP servers + the built-in `github` toolset (v
 | `bash` | local helper | workflow `tools.bash: true` | standard | shell execution (**also hosts the IMF CLI — see § IMF CLI below**) |
 | `edit` | local helper | workflow `tools.edit:` | standard | filesystem edits inside `$GITHUB_WORKSPACE` |
 | `web-fetch` | local helper | workflow `tools.web-fetch:` | standard | HTTP fetch for non-MCP public sources (e.g. `www.statskontoret.se`, `riksdagsmonitor.com`) — domain-filtered through the AWF firewall. **Agent calls this as `web_fetch`** (snake_case runtime name) |
-| `cache-memory` | GitHub Actions cache | workflow `tools.cache-memory:` | (filesystem) | persistent file storage at `/tmp/gh-aw/cache-memory/` keyed by `news-${workflow}-${article_date}` (14-day retention). Survives across runs, restores from previous run on cache miss → **resilience for failed-PR retries**. See [`07-commit-and-pr.md` §Cache-memory recovery](07-commit-and-pr.md). |
+| `cache-memory` | GitHub Actions cache | workflow `tools.cache-memory:` | (filesystem) | persistent file storage at `/tmp/gh-aw/cache-memory/` keyed by `news-${workflow}-${article_date}` (14-day retention). Survives across runs and can restore the most recent prior cache via `restore-keys` when the exact key is not found → **resilience for failed-PR retries**. See [`07-commit-and-pr.md` §Cache-memory recovery](07-commit-and-pr.md). |
 | `safeoutputs` | runner (Streamable HTTP) | always available | `snake_case` | `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___dispatch_workflow`, `safeoutputs___add_comment`, `safeoutputs___missing_data`, `safeoutputs___missing_tool`, `safeoutputs___report_incomplete` |
 
 `filesystem`, `memory`, and `sequential-thinking` are declared in [`.github/copilot-mcp.json`](../copilot-mcp.json) for the **local Copilot / `assign_copilot_to_issue`** channel and are **not** available to news workflows unless the workflow itself declares them under `mcp-servers:`.
@@ -82,6 +82,6 @@ Every news workflow sets `sandbox.mcp.keepalive-interval: 300`, which compiles t
 |-------|---------|
 | `0` or unset | Gateway default = **1500 s (25 min)** — too slow for 45-min news jobs; the `riksdag-regering` HTTP MCP would idle out before Pass 2 finishes |
 | `-1` | Disable keepalive entirely (do not use) |
-| **`300`** *(our setting)* | Ping every 5 minutes — keeps `riksdag-regering` (HTTP) and any other HTTP-backed MCPs warm for the entire 45–50 min job. **This is the resilience knob that lets us run 45-50 min sessions reliably.** |
+| **`300`** *(our setting)* | Ping every 5 minutes — keeps `riksdag-regering` (HTTP) and any other HTTP-backed MCPs warm for the full 45-minute job budget. **This is the resilience knob that lets us run the full 45-minute sessions reliably.** |
 
 The keepalive pings the **upstream HTTP MCPs through the gateway**. It does **not** keep the local `safeoutputs` Streamable-HTTP idle session alive — that session has its own ~25–30 min idle timeout (Timer C in `00-base-contract.md` and `07-commit-and-pr.md`). Reach `safeoutputs___create_pull_request` by minute 28 (hard 30) regardless of keepalive.

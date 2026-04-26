@@ -54,13 +54,13 @@ Translations for the remaining twelve languages are produced by the dedicated **
 
 ## Cache-memory recovery (resilience for failed PRs)
 
-Every news workflow declares `tools.cache-memory:` keyed by `news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}` with 14-day retention (see `02-mcp-access.md` §Servers & tool naming). gh-aw automatically restores the cache from the previous run on each invocation — analysis artifacts under `/tmp/gh-aw/cache-memory/` survive across failed runs and can be reused on the next attempt.
+Every news workflow declares `tools.cache-memory:` keyed by `news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}` with 14-day retention (see `02-mcp-access.md` §Servers & tool naming). gh-aw automatically restores the cache from the **last successfully persisted run** on each invocation. Analysis artifacts under `/tmp/gh-aw/cache-memory/` can therefore be reused on the next attempt when a previous run reached the cache-update stage, but newly generated cache-memory content from an agent job that **fails or times out** is **not** guaranteed to persist for the next retry.
 
 **On every run, immediately after MCP pre-warm:**
 
-1. Check whether `/tmp/gh-aw/cache-memory/$ARTICLE_DATE/$SUBFOLDER/` exists with prior analysis artifacts (Family A/B/C/D `.md` files). If so, this is a **retry of a failed run**. Copy them into `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` *before* re-running the analysis pipeline so Pass 2 builds on Pass 1 work that previous runs already paid for.
-2. After a successful Pass 1 (or after the analysis gate passes), copy the produced `.md` artifacts back to `/tmp/gh-aw/cache-memory/$ARTICLE_DATE/$SUBFOLDER/` so the next run can recover them if `safeoutputs___create_pull_request` fails or the run is killed by Timer A/B/C.
-3. The cache is **automatically saved** by gh-aw at job end — the agent does **not** call any safe-output tool to persist it. Just write to `/tmp/gh-aw/cache-memory/`.
+1. Check whether `/tmp/gh-aw/cache-memory/$ARTICLE_DATE/$SUBFOLDER/` exists with prior analysis artifacts (Family A/B/C/D `.md` files). If so, treat this as a **retry with recoverable prior work**. Copy them into `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` *before* re-running the analysis pipeline so Pass 2 builds on Pass 1 work that a previous successful agent run already produced.
+2. After a successful Pass 1 (or after the analysis gate passes), copy the produced `.md` artifacts back to `/tmp/gh-aw/cache-memory/$ARTICLE_DATE/$SUBFOLDER/` so they are available for persistence if the workflow later fails during PR publication or another post-agent stage.
+3. The agent does **not** call any safe-output tool to persist cache-memory; it only writes to `/tmp/gh-aw/cache-memory/`. In compiled workflows, the updated cache is saved for the next run by a separate cache-update step/job that runs **only after a successful agent job** (`needs.agent.result == 'success'`), so recovery is reliable for **post-agent failures** (e.g. PR-publication problems) but **not** for agent-job failures or timeouts.
 
 Cache-memory is **not** a substitute for committing real files on disk under `analysis/daily/`. It is a recovery mechanism for the next run, not a deliverable.
 
