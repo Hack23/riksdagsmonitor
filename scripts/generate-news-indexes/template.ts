@@ -183,6 +183,14 @@ export function generateIndexHTML(
   const body = `  <div class="container">
 ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
 
+    <!-- Page heading (canonical chrome puts brand only in <header>; the
+         news-index page itself owns the document <h1> for a11y heading
+         hierarchy and SEO, matching sitemap.html and political-intelligence.html). -->
+    <header class="news-page-heading">
+      <h1>${escapeHtml(lang.title)}</h1>
+      <p class="news-page-subtitle">${escapeHtml(lang.subtitle)}</p>
+    </header>
+
     <!-- Filter Bar -->
     <div class="filter-bar">
       <div class="filter-group">

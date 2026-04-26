@@ -12235,10 +12235,19 @@ html[data-theme="light"] .footer-disclaimer a {
   border-radius: 6px;
   padding: 0.5rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  display: flex;
+  /* Hidden by default so the closed <details> doesn't leave dropdown
+     anchors as click targets (Cypress would otherwise hit them through
+     the sticky rm-site-header). The class selector previously beat the
+     UA-default `details:not([open]) > *:not(summary) { display: none }`
+     rule and forced the dropdown visible even when collapsed. */
+  display: none;
   flex-direction: column;
   gap: 0.125rem;
   z-index: 120;
+}
+
+.rm-lang-switcher[open] > .rm-lang-switcher-dropdown {
+  display: flex;
 }
 
 .rm-lang-switcher-dropdown a {
