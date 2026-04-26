@@ -55,11 +55,15 @@ Stage analysis + article.md + news/*.html → Commit → ONE create_pull_request
 
 ## Session keepalive requirement
 
-> ⚠️ **Critical**: The Copilot API creates a server-side session when the agent starts. That session is bound to the `github.token` baked in at step start — it is **never refreshed** mid-run. The session expires at approximately **60 minutes** (gh-aw issue #24920). After expiry, all tool calls and inference requests fail silently. The workflow appears to run but makes zero progress, and **the PR is never created**.
+> ⚠️ **Critical — three timers**: Plan every run for the **shortest** of the three.
+>
+> 1. **Job timeout (45 min)** — every news workflow declares `timeout-minutes: 45`. After 45 min the GitHub Actions runner kills the agent unconditionally.
+> 2. **Copilot API session (~60 min)** — bound to the `github.token` baked in at step start; never refreshed mid-run (gh-aw issue #24920). After expiry every tool call and inference fails silently.
+> 3. **Safe Outputs MCP idle session (~25–30 min observed)** — drops if the agent goes idle toward `safeoutputs___*` for 25+ minutes; every subsequent safe-output call returns `session not found`.
+>
+> The operative deadline is therefore Timer 3. To mitigate MCP-side idle drops, workflows set `sandbox.mcp.keepalive-interval: 300` (5-minute ping). That keeps upstream MCPs alive but does **not** refresh the Copilot session and does **not** keep the safeoutputs HTTP session alive.
 
-To mitigate MCP idle-connection drops, workflows set `sandbox.mcp.keepalive-interval: 300` (5-minute ping). This keeps MCP connections alive but does **not** refresh the Copilot API token.
-
-**The reliable mitigation is to ensure `safeoutputs___create_pull_request` is called well before the session approaches expiry.** A second, shorter-firing clock — the Safe Outputs HTTP MCP idle session (~25–30 min observed) — now drives the operative deadline. Plan the run so the PR is created **within 22–27 minutes** (hard deadline **30 minutes**) of agent start. See `07-commit-and-pr.md §Deadline enforcement` for the authoritative PR-timing procedure, including the full two-timer explanation; that section supersedes any older ~45-minute guidance that predated the 23-artifact pipeline.
+**The reliable mitigation is to ensure `safeoutputs___create_pull_request` is called well before the safeoutputs idle session approaches expiry.** Plan the run so the PR is created **within 22–27 minutes** (hard deadline **30 minutes**) of agent start. The remaining 15+ minutes of the 45-min job budget exist solely as a safety margin for the safeoutputs runner to publish the PR — do **not** schedule additional analysis after the PR call. See `07-commit-and-pr.md §Deadline enforcement` for the authoritative PR-timing procedure.
 
 Do not add per-phase checkpoint PRs or repo-memory push steps.
 

@@ -107,25 +107,27 @@ In every other case, commit whatever exists and call `create_pull_request` once.
 
 ## Deadline enforcement
 
-Two independent timers can kill a run silently. Plan for the **shorter** of the two.
+Three independent timers can kill a run silently. Plan for the **shortest** of the three.
 
-> **Timer A — Copilot API session (~60 min)**: The Copilot API session is bound to the `github.token` baked in at step start. That token expires at approximately **60 minutes** and is never refreshed mid-run (gh-aw issue #24920). Every tool call and inference request fails silently after that point — the agent appears to run but makes no progress and the PR is never created. Setup steps consume ~5 minutes, so the agent has at most **~55 minutes** of usable session time.
+> **Timer A — Job `timeout-minutes` (45 min)**: every news workflow declares `timeout-minutes: 45`. After 45 minutes GitHub Actions kills the runner unconditionally — no retry, no save, no PR.
 >
-> **Timer B — Safe Outputs MCP idle session (~25–30 min, observed)**: The local Safe Outputs HTTP MCP tracks a per-agent Streamable HTTP session. If the agent goes **idle toward safeoutputs** for 25+ minutes (e.g. a long Pass 1 that only uses `edit` + `bash`), the session is dropped and every subsequent `safeoutputs___*` call returns `Error POSTing to endpoint: session not found` — including the final `safeoutputs___create_pull_request`, `safeoutputs___noop`, and `safeoutputs___report_incomplete`. The `sandbox.mcp.keepalive-interval: 300` setting does **not** prevent this; that knob keeps the `mcp-gateway` upstream MCPs alive, not the safeoutputs HTTP server. Observed failure: run [`24821837975`](https://github.com/Hack23/riksdagsmonitor/actions/runs/24821837975) — 23 artifacts committed at ~33 min, all three safe-output calls rejected.
+> **Timer B — Copilot API session (~60 min)**: The Copilot API session is bound to the `github.token` baked in at step start. That token expires at approximately **60 minutes** and is never refreshed mid-run (gh-aw issue #24920). Every tool call and inference request fails silently after that point — the agent appears to run but makes no progress and the PR is never created.
+>
+> **Timer C — Safe Outputs MCP idle session (~25–30 min, observed)**: The local Safe Outputs HTTP MCP tracks a per-agent Streamable HTTP session. If the agent goes **idle toward safeoutputs** for 25+ minutes (e.g. a long Pass 1 that only uses `edit` + `bash`), the session is dropped and every subsequent `safeoutputs___*` call returns `Error POSTing to endpoint: session not found` — including the final `safeoutputs___create_pull_request`, `safeoutputs___noop`, and `safeoutputs___report_incomplete`. The `sandbox.mcp.keepalive-interval: 300` setting does **not** prevent this; that knob keeps the `mcp-gateway` upstream MCPs alive, not the safeoutputs HTTP server.
+
+Timer C fires first and is therefore the operative deadline. The 45-min job budget (Timer A) leaves ~15 minutes of safety margin after the PR call for the safe-outputs runner to publish the PR.
 
 ### Keeping the Safe Outputs MCP session warm
 
-Do **not** use safe outputs as a keepalive strategy. In this workflow, `safeoutputs___create_pull_request` is limited to a single successful end-of-run call, and `safeoutputs___noop` is likewise reserved for the final "no files produced" outcome, so neither can be safely spent to keep the Safe Outputs MCP session alive. Some other `safeoutputs___*` tools (e.g. `report_incomplete`, `missing_tool`, `missing_data`) may allow more than one call in compiled workflows, but they are not a documented or reliable heartbeat path for this prompt. **The only reliable mitigation is to reach `safeoutputs___create_pull_request` before Timer B fires.** Plan Pass 1 + gate + commit to finish well inside the 30-minute hard deadline below. If a future gh-aw release publishes a safe touch path for the local safeoutputs HTTP server (for example, an explicitly supported status or `tools/list` endpoint with verified keepalive behaviour), update this section with the concrete command and its observed effect.
+Do **not** use safe outputs as a keepalive strategy. In this workflow, `safeoutputs___create_pull_request` is limited to a single successful end-of-run call, and `safeoutputs___noop` is likewise reserved for the final "no files produced" outcome, so neither can be safely spent to keep the Safe Outputs MCP session alive. Some other `safeoutputs___*` tools (e.g. `report_incomplete`, `missing_tool`, `missing_data`) may allow more than one call in compiled workflows, but they are not a documented or reliable heartbeat path for this prompt. **The only reliable mitigation is to reach `safeoutputs___create_pull_request` before Timer C fires.** Plan Pass 1 + gate + commit to finish well inside the 30-minute hard deadline below. If a future gh-aw release publishes a safe touch path for the local safeoutputs HTTP server (for example, an explicitly supported status or `tools/list` endpoint with verified keepalive behaviour), update this section with the concrete command and its observed effect.
 
 ### PR-creation windows
-
-> **Authoritative override:** For PR timing and hard deadlines, this section supersedes any older guidance imported from `.github/prompts/00-base-contract.md` that suggests creating the PR at around **45 minutes**. The operative deadline for both runs is **30 minutes**, with Run 1 targeting **22–27 minutes** and Run 2 targeting **20–25 minutes**.
 
 | Phase | Target PR window | Hard deadline | Floor for Pass 2 |
 |-------|------------------|---------------|------------------|
 | Analysis + aggregate + render | **22–27 min** after agent start | **30 min** | 5 min, skip beyond 25 min |
 
-These windows are tighter than the historical 48-min figure because Timer B fires first on the 23-artifact pipeline. The 30-min hard deadline leaves ~5 minutes of margin for staging, `git commit`, and the safeoutputs round-trip before Timer B has been observed to fire, and ~25 minutes of margin before Timer A.
+The 30-min hard deadline leaves ~5 minutes of margin for staging, `git commit`, and the safeoutputs round-trip before Timer C fires; ~30 minutes of margin before Timer B; and ~15 minutes of margin before Timer A. Do **not** schedule any analysis or article work after the PR call — the agent's only remaining job is to exit cleanly while the safe-outputs runner publishes the PR.
 
 ### If the run exceeds its hard deadline with no safe-output call yet
 

@@ -41,7 +41,7 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 55
+timeout-minutes: 45
 
 concurrency:
   group: gh-aw-news-weekly-review-${{ inputs.article_date || 'today' }}
@@ -239,7 +239,7 @@ Generates deep political intelligence analysis **and** the rendered HTML article
 
 ## Time budget
 
-> 🔴 **CRITICAL — safeoutputs MCP idle timeout (~30 min)**: The `safeoutputs` MCP server's Streamable-HTTP session expires after **~30–35 minutes of idle time**. **Your first and only `safeoutputs___*` call MUST happen by minute 28 at the latest.** This is a harder deadline than the ~60-minute Copilot-API token window described in `00-base-contract.md §Session keepalive requirement`.
+> 🔴 **CRITICAL — safeoutputs MCP idle timeout (~30 min)**: The `safeoutputs` MCP server's Streamable-HTTP session expires after **~30 minutes of idle time**. **Your first and only `safeoutputs___*` call MUST happen by minute 28 at the latest.** This is a harder deadline than the ~60-minute Copilot-API token window and the 45-minute job `timeout-minutes` budget described in `00-base-contract.md §Session keepalive requirement`.
 >
 > **AI-FIRST within the compressed budget**: Pass 2 is still mandatory. Under the tightened ~28-min budget, prefer **scope compression over iteration skipping** — reduce the download/manifest scope if needed, but maintain 1:1 per-document coverage and always perform a full read-back-and-improve Pass 2 on whatever artifacts exist. For scheduled runs treat `analysis_depth` as `standard` in practice; reserve `deep`/`comprehensive` for manual `workflow_dispatch` backfills.
 
