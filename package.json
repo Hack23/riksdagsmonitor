@@ -203,7 +203,7 @@
     "typescript-eslint": "8.59.0",
     "unified": "^11.0.5",
     "vite": "8.0.10",
-    "vite-plugin-sri-gen": "1.4.0",
+    "vite-plugin-sri-gen": "1.4.1",
     "vitest": "4.1.5",
     "worldbank-mcp": "1.0.1"
   },
