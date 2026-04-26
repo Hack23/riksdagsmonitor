@@ -35,43 +35,63 @@ This is the **only** gate separating analysis from article generation. If it fai
 
 No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–8):
 
-```
+```bash
 set -Eeuo pipefail
 : "${ARTICLE_DATE:?ARTICLE_DATE must be set}"
 : "${SUBFOLDER:?SUBFOLDER must be set}"
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$SUBFOLDER"
 [ -d "$ANALYSIS_DIR" ] || { echo "❌ ANALYSIS_DIR does not exist: $ANALYSIS_DIR"; exit 1; }
-
-FAMILY_A=(README.md executive-brief.md synthesis-summary.md significance-scoring.md \
-          classification-results.md swot-analysis.md risk-assessment.md \
-          threat-analysis.md stakeholder-perspectives.md)
-FAMILY_B=(data-download-manifest.md cross-reference-map.md)
-FAMILY_C=(scenario-analysis.md comparative-international.md devils-advocate.md \
-          intelligence-assessment.md methodology-reflection.md)
-FAMILY_D=(election-2026-analysis.md voter-segmentation.md coalition-mathematics.md \
-          historical-parallels.md media-framing-analysis.md \
-          implementation-feasibility.md forward-indicators.md)
-REQ=("${FAMILY_A[@]}" "${FAMILY_B[@]}" "${FAMILY_C[@]}" "${FAMILY_D[@]}")
-SYNTHESIS=(synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md \
-           stakeholder-perspectives.md significance-scoring.md classification-results.md \
-           cross-reference-map.md executive-brief.md election-2026-analysis.md \
-           voter-segmentation.md coalition-mathematics.md historical-parallels.md \
-           media-framing-analysis.md implementation-feasibility.md \
-           forward-indicators.md)
 DOK_RE='[Hh][A-Za-z0-9]{3,}[0-9]+'
 EVIDENCE_RE='[Hh][A-Za-z0-9]{3,}[0-9]+|riksdagen\.se|regeringen\.se|scb\.se|statskontoret\.se|worldbank\.org|api\.imf\.org|data\.imf\.org|www\.imf\.org'
 FAIL=0
 
+# Materialise required-file lists via /tmp lists so we never build an inline
+# bash array — the AWF sandbox rejects `REQ=(...); "${REQ[@]}"` (see
+# 01-bash-and-shell-safety.md §Banned expansion patterns).
+GATE_REQ_LIST="/tmp/gate-req-$$"; GATE_PASS2_LIST="/tmp/gate-pass2-$$"
+GATE_SYNTH_LIST="/tmp/gate-synth-$$"; GATE_DOK_LIST="/tmp/gate-doks-$$"
+trap 'rm -f "$GATE_REQ_LIST" "$GATE_PASS2_LIST" "$GATE_SYNTH_LIST" "$GATE_DOK_LIST"' EXIT
+
+write_list() { local out="$1"; shift; printf '%s\n' "$@" > "$out"; }
+
+write_list "$GATE_REQ_LIST" \
+  README.md executive-brief.md synthesis-summary.md significance-scoring.md classification-results.md \
+  swot-analysis.md risk-assessment.md threat-analysis.md stakeholder-perspectives.md \
+  data-download-manifest.md cross-reference-map.md \
+  scenario-analysis.md comparative-international.md devils-advocate.md intelligence-assessment.md methodology-reflection.md \
+  election-2026-analysis.md voter-segmentation.md coalition-mathematics.md historical-parallels.md \
+  media-framing-analysis.md implementation-feasibility.md forward-indicators.md
+
+write_list "$GATE_SYNTH_LIST" \
+  synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md stakeholder-perspectives.md \
+  significance-scoring.md classification-results.md cross-reference-map.md executive-brief.md \
+  election-2026-analysis.md voter-segmentation.md coalition-mathematics.md historical-parallels.md \
+  media-framing-analysis.md implementation-feasibility.md forward-indicators.md
+
+# data-download-manifest.md is produced by module 03 and may legitimately be
+# unchanged at Pass 2 — exclude it from the Pass-2 evidence check.
+write_list "$GATE_PASS2_LIST" \
+  synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md stakeholder-perspectives.md \
+  significance-scoring.md classification-results.md cross-reference-map.md executive-brief.md README.md \
+  scenario-analysis.md comparative-international.md devils-advocate.md intelligence-assessment.md methodology-reflection.md \
+  election-2026-analysis.md voter-segmentation.md coalition-mathematics.md historical-parallels.md \
+  media-framing-analysis.md implementation-feasibility.md forward-indicators.md
+
 # Check 1 — artifact existence (all 23)
-for f in "${REQ[@]}"; do
+while IFS= read -r f; do
+  [ -z "$f" ] && continue
   [ -s "$ANALYSIS_DIR/$f" ] || { echo "❌ missing/empty: $f"; FAIL=1; }
-done
+done < "$GATE_REQ_LIST"
 
 # Check 2 — per-document coverage against manifest
 if [ -s "$ANALYSIS_DIR/data-download-manifest.md" ]; then
-  mapfile -t DOKS < <(grep -oE "$DOK_RE" "$ANALYSIS_DIR/data-download-manifest.md" | sort -u)
-  [ "${#DOKS[@]}" -gt 0 ] || { echo "❌ manifest has no dok_id entries"; FAIL=1; }
-  for d in "${DOKS[@]}"; do
+  # Avoid `mapfile -t … < <(…)` — process substitution is best-avoided
+  # under the AWF sandbox (01-bash-and-shell-safety.md §Shell hygiene).
+  grep -oE "$DOK_RE" "$ANALYSIS_DIR/data-download-manifest.md" | sort -u > "$GATE_DOK_LIST"
+  DOK_COUNT=$(wc -l < "$GATE_DOK_LIST" | tr -d ' ')
+  [ "${DOK_COUNT:-0}" -gt 0 ] || { echo "❌ manifest has no dok_id entries"; FAIL=1; }
+  while IFS= read -r d; do
+    [ -z "$d" ] && continue
     d_lc="${d,,}"
     if [ ! -s "$ANALYSIS_DIR/documents/${d}.md" ] \
        && [ ! -s "$ANALYSIS_DIR/documents/${d}-analysis.md" ] \
@@ -80,7 +100,7 @@ if [ -s "$ANALYSIS_DIR/data-download-manifest.md" ]; then
       echo "❌ documents/${d}.md or documents/${d}-analysis.md missing (any case)"
       FAIL=1
     fi
-  done
+  done < "$GATE_DOK_LIST"
 fi
 
 # Check 3 — no stubs
@@ -136,7 +156,8 @@ awk -v re="$EVIDENCE_RE" '
 ' "$ANALYSIS_DIR/significance-scoring.md" || FAIL=1
 
 # Check 5 — Mermaid + colour-coded config on core synthesis + key extension files
-for f in "${SYNTHESIS[@]}"; do
+while IFS= read -r f; do
+  [ -z "$f" ] && continue
   p="$ANALYSIS_DIR/$f"; [ -s "$p" ] || continue
   grep -qE '^```mermaid' "$p" || { echo "❌ $f: missing Mermaid block"; FAIL=1; }
   if ! grep -qE '^[[:space:]]*style[[:space:]]+' "$p" \
@@ -144,19 +165,11 @@ for f in "${SYNTHESIS[@]}"; do
     echo "❌ $f: missing Mermaid colour-coded config (no 'style …' directive and no 'themeVariables' / '%%{init …}' block)"
     FAIL=1
   fi
-done
+done < "$GATE_SYNTH_LIST"
 
 # Check 6 — Pass-2 evidence (mtime ≥ birth + 180s, OR differing pass1 snapshot on disk)
-# data-download-manifest.md is produced by module 03 and may legitimately be unchanged.
-PASS2_REQ=(synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md \
-           stakeholder-perspectives.md significance-scoring.md classification-results.md \
-           cross-reference-map.md executive-brief.md README.md \
-           scenario-analysis.md comparative-international.md devils-advocate.md \
-           intelligence-assessment.md methodology-reflection.md \
-           election-2026-analysis.md voter-segmentation.md coalition-mathematics.md \
-           historical-parallels.md media-framing-analysis.md \
-           implementation-feasibility.md forward-indicators.md)
-for f in "${PASS2_REQ[@]}"; do
+while IFS= read -r f; do
+  [ -z "$f" ] && continue
   p="$ANALYSIS_DIR/$f"; [ -s "$p" ] || continue
   ok=0
   B=$(stat -c %W "$p" 2>/dev/null || echo 0)
@@ -164,7 +177,7 @@ for f in "${PASS2_REQ[@]}"; do
   [ "${B:-0}" -gt 0 ] && [ "${M:-0}" -ge $((B + 180)) ] && ok=1
   [ -s "$ANALYSIS_DIR/pass1/$f" ] && ! cmp -s "$ANALYSIS_DIR/pass1/$f" "$p" && ok=1
   [ "$ok" -eq 1 ] || { echo "❌ $f: Pass-2 evidence missing (mtime<birth+180s and no pass1/ snapshot)"; FAIL=1; }
-done
+done < "$GATE_PASS2_LIST"
 
 # Check 7 — Family C structure
 if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
@@ -261,15 +274,21 @@ RUN_COUNT=1
 [[ "${ANALYSIS_RUN_COUNT:-}" =~ ^[0-9]+$ ]] && RUN_COUNT="${ANALYSIS_RUN_COUNT}"
 (( RUN_COUNT >= 2 )) && IS_MULTI_RUN=1
 if (( IS_AGGREGATION == 1 || IS_TIER_C == 1 || IS_MULTI_RUN == 1 )); then
-  SUPP=()
+  # Avoid building a bash array (`SUPP+=(...)`); materialise the filenames
+  # via printf into a temp file and loop over that — see
+  # 01-bash-and-shell-safety.md §Banned expansion patterns.
+  SUPP_LIST="/tmp/gate-supp-$$"
+  : > "$SUPP_LIST"
   if (( IS_AGGREGATION == 1 || IS_TIER_C == 1 )); then
-    SUPP+=(analysis-index.md reference-analysis-quality.md mcp-reliability-audit.md workflow-audit.md)
+    printf '%s\n' analysis-index.md reference-analysis-quality.md mcp-reliability-audit.md workflow-audit.md >> "$SUPP_LIST"
   fi
-  (( IS_AGGREGATION == 1 )) && SUPP+=(cross-session-intelligence.md session-baseline.md)
-  (( IS_MULTI_RUN == 1 )) && SUPP+=(cross-run-diff.md)
-  for f in "${SUPP[@]}"; do
+  (( IS_AGGREGATION == 1 )) && printf '%s\n' cross-session-intelligence.md session-baseline.md >> "$SUPP_LIST"
+  (( IS_MULTI_RUN == 1 )) && printf '%s\n' cross-run-diff.md >> "$SUPP_LIST"
+  while IFS= read -r f; do
+    [ -z "$f" ] && continue
     [ -s "$ANALYSIS_DIR/$f" ] || { echo "❌ supplementary missing (agg=$IS_AGGREGATION tier-c=$IS_TIER_C multi-run=$IS_MULTI_RUN): $f"; FAIL=1; }
-  done
+  done < "$SUPP_LIST"
+  rm -f "$SUPP_LIST"
 fi
 ```
 

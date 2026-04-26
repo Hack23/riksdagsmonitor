@@ -141,85 +141,8 @@ safe-outputs:
     max: 1
 
 steps:
-  - name: Setup Node.js
-    uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
-    with:
-      node-version: '25'
-
-  - name: Install dependencies
-    run: |
-      npm ci --prefer-offline --no-audit
-
-  - name: Pre-warm MCP server (Render.com cold start mitigation)
-    run: |
-      echo "🔥 Pre-warming riksdag-regering MCP server via MCP protocol..."
-      MCP_URL="https://riksdag-regering-ai.onrender.com/mcp"
-      WARM=false
-      for i in 1 2 3 4 5 6; do
-        RESP=$(curl -sf --max-time 30 -X POST \
-          -H "Content-Type: application/json" \
-          -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
-          "$MCP_URL" 2>/dev/null) || true
-        if echo "$RESP" | grep -q '"tools"'; then
-          TOOL_COUNT=$(echo "$RESP" | grep -o '"name"' | wc -l)
-          echo "✅ MCP server responded on attempt $i with $TOOL_COUNT tools registered"
-          WARM=true
-          break
-        fi
-        echo "⏳ Attempt $i/6 — server may be cold-starting, waiting 20s..."
-        sleep 20
-      done
-      if [ "$WARM" = "false" ]; then
-        echo "⚠️ MCP server did not respond after 6 attempts — agent will retry via in-prompt health gate"
-      fi
-
-  - name: Pre-flight external endpoint reachability check (runs before MCP Gateway)
-    run: |
-      echo "🔍 Network Diagnostics — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
-      echo "═══════════════════════════════════════════"
-      echo ""
-      echo "📡 DNS Resolution Tests:"
-      for domain in riksdag-regering-ai.onrender.com api.scb.se api.worldbank.org data.riksdagen.se www.riksdagen.se www.regeringen.se www.statskontoret.se statskontoret.se; do
-        if nslookup "$domain" >/dev/null 2>&1; then
-          IP=$(nslookup "$domain" 2>/dev/null | grep -A1 "Name:" | grep "Address:" | head -1 | awk '{print $2}')
-          echo "  ✅ $domain → $IP"
-        else
-          echo "  ❌ $domain — DNS FAILED"
-        fi
-      done
-      echo ""
-      echo "🌐 HTTPS Connectivity Tests:"
-      for url in \
-        "https://riksdag-regering-ai.onrender.com/mcp" \
-        "https://api.scb.se/OV0104/v2beta" \
-        "https://api.worldbank.org/v2/country/SE?format=json" \
-        "https://data.riksdagen.se/dokumentlista/?sok=test&doktyp=bet&utformat=json&a=1" \
-      ; do
-        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$url" 2>/dev/null || echo "000")
-        DOMAIN=$(echo "$url" | sed 's|https://||' | cut -d/ -f1)
-        if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 400 ]; then
-          echo "  ✅ $DOMAIN → HTTP $HTTP_CODE"
-        elif [ "$HTTP_CODE" = "000" ]; then
-          echo "  ❌ $DOMAIN → TIMEOUT/UNREACHABLE"
-        else
-          echo "  ⚠️ $DOMAIN → HTTP $HTTP_CODE"
-        fi
-      done
-      echo ""
-      echo "🔌 MCP Server Tool Count:"
-      TOOL_RESP=$(curl -sf --max-time 15 -X POST \
-        -H "Content-Type: application/json" \
-        -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
-        "https://riksdag-regering-ai.onrender.com/mcp" 2>/dev/null) || TOOL_RESP=""
-      if echo "$TOOL_RESP" | grep -q '"tools"'; then
-        TOOL_COUNT=$(echo "$TOOL_RESP" | grep -o '"name"' | wc -l)
-        echo "  ✅ riksdag-regering MCP: $TOOL_COUNT tools registered"
-      else
-        echo "  ❌ riksdag-regering MCP: No tools response (server may still be starting)"
-      fi
-      echo ""
-      echo "═══════════════════════════════════════════"
-
+  - name: News pre-warm & pre-flight (composite)
+    uses: ./.github/actions/news-prewarm
 engine:
   id: copilot
   model: claude-opus-4.7
