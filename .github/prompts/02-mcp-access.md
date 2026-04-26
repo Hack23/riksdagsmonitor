@@ -4,7 +4,9 @@ Authoritative per-workflow surface: the `mcp-servers:` + `tools:` blocks in that
 
 ## Servers & tool naming
 
-News workflows declare three data MCP servers + the built-in `github` toolset (via `tools.github.toolsets: [all]`) + `bash` + `edit` + `web-fetch` + `agentic-workflows` + `cache-memory` (resilience).
+News workflows declare three data MCP servers + the built-in `github` toolset (via `tools.github.toolsets: [all]`) + `bash` + `edit` + `web-fetch` (frontmatter key; agent calls it as `web_fetch`) + `agentic-workflows` + `cache-memory` (resilience).
+
+> **Naming convention reminder**: gh-aw frontmatter keys use **kebab-case** (`tools.web-fetch:`, `tools.cache-memory:`, `tools.agentic-workflows:`); the **runtime tool names** the agent invokes use **snake_case** (`web_fetch`, `cache_memory`, …). The same split applies to safe outputs (`safe-outputs.create-pull-request:` in YAML → `safeoutputs___create_pull_request` at call time).
 
 | Server / tool | Transport | Declared in | Tool-name style | Example tools |
 |---------------|-----------|-------------|-----------------|---------------|
@@ -14,7 +16,7 @@ News workflows declare three data MCP servers + the built-in `github` toolset (v
 | `github` | HTTP (Copilot MCP) | workflow `tools.github` (`toolsets: [all]`) | standard | full GitHub MCP toolset (issues, PRs, repos, code-search, actions, releases, discussions, …) |
 | `bash` | local helper | workflow `tools.bash: true` | standard | shell execution (**also hosts the IMF CLI — see § IMF CLI below**) |
 | `edit` | local helper | workflow `tools.edit:` | standard | filesystem edits inside `$GITHUB_WORKSPACE` |
-| `web-fetch` | local helper | workflow `tools.web-fetch:` | standard | HTTP fetch for non-MCP public sources (e.g. `www.statskontoret.se`, `riksdagsmonitor.com`) — domain-filtered through the AWF firewall |
+| `web-fetch` | local helper | workflow `tools.web-fetch:` | standard | HTTP fetch for non-MCP public sources (e.g. `www.statskontoret.se`, `riksdagsmonitor.com`) — domain-filtered through the AWF firewall. **Agent calls this as `web_fetch`** (snake_case runtime name) |
 | `cache-memory` | GitHub Actions cache | workflow `tools.cache-memory:` | (filesystem) | persistent file storage at `/tmp/gh-aw/cache-memory/` keyed by `news-${workflow}-${article_date}` (14-day retention). Survives across runs, restores from previous run on cache miss → **resilience for failed-PR retries**. See [`07-commit-and-pr.md` §Cache-memory recovery](07-commit-and-pr.md). |
 | `safeoutputs` | runner (Streamable HTTP) | always available | `snake_case` | `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___dispatch_workflow`, `safeoutputs___add_comment`, `safeoutputs___missing_data`, `safeoutputs___missing_tool`, `safeoutputs___report_incomplete` |
 
