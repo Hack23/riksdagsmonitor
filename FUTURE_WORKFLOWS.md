@@ -188,12 +188,12 @@ flowchart TB
 
 | Metric | Value |
 | --- | --- |
-| Total Workflow Files | 47 (23 YAML + 12 agentic `.md` + 12 `.lock.yml`) = **35 distinct workflows** |
+| Total Workflow Files | 43 (21 YAML + 11 agentic `.md` + 11 `.lock.yml`) = **32 distinct workflows** |
 | TypeScript Modules | 31 (in `src/browser/`) |
 | Unit Tests | 2890 (Vitest) |
 | Language Support | 14 languages (incl. RTL) |
 | Deployment | Dual: AWS S3/CloudFront + GitHub Pages |
-| AI Content | 12 agentic workflows (Claude Opus 4.7) |
+| AI Content | 11 agentic workflows (Claude Opus 4.7) |
 | Security Compliance | ISO 27001, NIST CSF 2.0, CIS Controls v8.1 |
 
 ---
@@ -682,12 +682,12 @@ gantt
 
 | Year | Projected Distinct Workflows | New Capabilities |
 | --- | --- | --- |
-| 2026 Q1 | **35** (47 files) | TypeScript foundation, 12 agentic workflows, Node.js 25 ✅ |
-| 2026 Q2 | **36** (48 files) | **Node.js 26 Current upgrade** (around Apr release; LTS later 2026) |
-| 2026 Q4 | **42** (54 files) | CIA pipeline v2, preview deploys, visual regression |
-| 2027 Q4 | **47** (59 files) | Node.js 27 LTS, OSINT pipeline, ML predictions, real-time streams |
-| 2028 Q4 | **57** (69 files) | Node.js 28 LTS, self-healing, canary deploy, AI editorial board |
-| 2029 Q4 | **67+** (79+ files) | Node.js 29 LTS, intelligence API, multi-parliament, federation |
+| 2026 Q1 | **32** (43 files) | TypeScript foundation, 11 agentic workflows, Node.js 25 ✅ |
+| 2026 Q2 | **33** (44 files) | **Node.js 26 Current upgrade** (around Apr release; LTS later 2026) |
+| 2026 Q4 | **39** (50 files) | CIA pipeline v2, preview deploys, visual regression |
+| 2027 Q4 | **44** (55 files) | Node.js 27 LTS, OSINT pipeline, ML predictions, real-time streams |
+| 2028 Q4 | **54** (65 files) | Node.js 28 LTS, self-healing, canary deploy, AI editorial board |
+| 2029 Q4 | **64+** (75+ files) | Node.js 29 LTS, intelligence API, multi-parliament, federation |
 
 ---
 

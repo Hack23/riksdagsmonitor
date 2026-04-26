@@ -3,17 +3,17 @@
 ## 📋 Repository Context
 
 **Project**: Riksdagsmonitor — Swedish Parliament (Riksdag) monitoring platform
-**Stack**: HTML5, CSS3, TypeScript 6.0.2, Vite 8.0.3, Vitest 4.1.2, Cypress 15.13.0
+**Stack**: HTML5, CSS3, TypeScript 6.0.3, Vite 8.0.10, Vitest 4.1.5, Cypress 15.14.1
 **Runtime**: Node.js 25, ES2025 target, ESNext modules
 **Deploy**: GitHub Pages + AWS S3 dual deployment
 **Languages**: 14-language support (EN, SV, DA, NB, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH)
 **Security**: ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1 compliant
 **Organization**: Hack23 AB
 **ISMS**: [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
-**Version**: 0.8.17
+**Version**: 0.8.56
 **Agents**: 24 agent files (14 persona + 9 workflow-specialist + 1 developer-instructions) in `.github/agents/`
 **Skills**: 91 skills in `.github/skills/` (including 13 gh-aw skills)
-**Workflows**: 45 workflow files (21 standard `.yml` + 12 agentic `.md` sources + 12 compiled `.lock.yml`)
+**Workflows**: 43 workflow files (21 standard `.yml` + 11 agentic `.md` sources + 11 compiled `.lock.yml`)
 **MCP Servers**: 8 configured (riksdag-regering, scb, world-bank, github, filesystem, memory, sequential-thinking, playwright)
 
 ## 🎯 Core Rules
@@ -112,7 +112,7 @@ Map every security-relevant control to **ISO 27001:2022 Annex A**, **NIST CSF 2.
 
 ## 🤖 GitHub Agentic Workflows
 
-This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw v0.69.3, pinned via `gh-aw-actions/setup-cli@v0.69.3`) for AI-powered news generation. 12 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
+This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw v0.69.3, pinned via `gh-aw-actions/setup-cli@v0.69.3`) for AI-powered news generation. 11 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
 
 1. **Read-only tokens** — Agent gets only read permissions
 2. **Zero secrets in agent** — Write tokens isolated in separate jobs
@@ -289,5 +289,5 @@ tsx scripts/imf-fetch.ts list-indicators
 
 ---
 
-**Last Updated**: 2026-04-24
-**Version**: 3.3
+**Last Updated**: 2026-04-26
+**Version**: 3.4

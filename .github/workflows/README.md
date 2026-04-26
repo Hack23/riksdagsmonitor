@@ -1,6 +1,6 @@
 # ⚙️ `.github/workflows/` — GitHub Actions Catalog
 
-This directory holds **45 workflow files** (21 standard `.yml` + 12 agentic Markdown sources + 12 compiled `.lock.yml` siblings) that power Riksdagsmonitor's CI/CD, security, data pipeline, agentic news generation, and monitoring.
+This directory holds **43 workflow files** (21 standard `.yml` + 11 agentic Markdown sources + 11 compiled `.lock.yml` siblings) that power Riksdagsmonitor's CI/CD, security, data pipeline, agentic news generation, and monitoring.
 
 > **Canonical long-form workflow reference:** [`WORKFLOWS.md`](../../WORKFLOWS.md) at the repository root — version matrices, Mermaid pipeline diagrams, ISMS control mapping, troubleshooting, and KPIs.
 > **Agentic workflow contract (imports, analysis gate, 9/14 artifacts):** [`.github/prompts/README.md`](../prompts/README.md).

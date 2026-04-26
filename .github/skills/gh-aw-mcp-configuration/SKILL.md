@@ -1806,7 +1806,7 @@ For Copilot coding agent sessions (not agentic workflows), MCP servers are confi
 
 ## 🔗 Integration with Riksdagsmonitor agentic workflows
 
-This gh-aw skill is applied by the 12 agentic news workflows in `.github/workflows/news-*.md`. Their domain contract (analysis-artifact product, gate, article contract) lives in:
+This gh-aw skill is applied by the 11 agentic news workflows in `.github/workflows/news-*.md`. Their domain contract (analysis-artifact product, gate, article contract) lives in:
 
 - [`.github/prompts/README.md`](../../prompts/README.md) — module catalogue, import rules, AI-FIRST 2-pass rule.
 - [`analysis/methodologies/ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + [`analysis/templates/`](../../../analysis/templates/) — 9 core / 14 Tier-C artifacts.

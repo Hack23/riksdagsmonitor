@@ -1,19 +1,21 @@
 # 🔖 SEO Metadata Contract — article `<title>` and `<meta description>`
 
-> **Status:** Normative · **Owner:** Editorial · **Effective:** 2026-04-24 ·
-> **Consumed by:** `scripts/render-lib/aggregator.ts` · `scripts/render-lib/chrome.ts` ·
-> `scripts/generate-news-indexes/*` · `scripts/generate-sitemap-html.ts` ·
-> the `news-translate` agentic workflow · every human editor writing an
-> `executive-brief.md`.
-> **Enforced by:** `tests/render-lib.test.ts` (forward-fix) and (post-PR 5)
-> `tests/seo-metadata.test.ts` as a CI-blocking gate.
+> **Owner:** Editorial · **Consumed by:** `scripts/render-lib/aggregator.ts` ·
+> `scripts/render-lib/chrome.ts` · `scripts/generate-news-indexes/*` ·
+> `scripts/generate-sitemap-html.ts` · the `news-translate` agentic workflow ·
+> every human editor writing an `executive-brief.md`.
+> **Enforced by:** `tests/render-lib.test.ts` and `tests/seo-metadata.test.ts`
+> as a CI-blocking gate.
 
 This contract is the single source of truth for what the `<title>` and
 `<meta name="description">` of every published article must look like,
-in every one of the 14 supported languages. It is the SEO-specific companion to [`Article-Generation.md`](../../Article-Generation.md), which describes the complete workflow → analysis artifacts → `article.md` → HTML/UI export pipeline. Every article also propagates
-these two strings into eight other SEO surfaces (`og:title`,
-`og:description`, `twitter:title`, `twitter:description`, JSON-LD
-`headline` / `alternativeHeadline` / `description`, and the human-readable
+in every one of the 14 supported languages. It is the SEO-specific
+companion to [`Article-Generation.md`](../../Article-Generation.md), which
+describes the complete workflow → analysis artifacts → `article.md` →
+HTML/UI export pipeline. Every article also propagates these two strings
+into eight other SEO surfaces (`og:title`, `og:description`,
+`twitter:title`, `twitter:description`, JSON-LD `headline` /
+`alternativeHeadline` / `description`, and the human-readable
 `sitemap*.html` / `news/index*.html` cards). Get the two sources right
 here and the other eight follow for free.
 
@@ -21,17 +23,16 @@ here and the other eight follow for free.
 
 ## 1 · Why this exists
 
-Scan of `news/*.html` on 2026-04-24 (2,736 articles across 14 languages)
-surfaced six quality issues worth the price of a rewrite:
+Six recurring quality issues in `news/*.html` motivate the rules below:
 
-| Issue                                                                    | Affected | Root cause                                                                          |
-| ------------------------------------------------------------------------ | -------: | ----------------------------------------------------------------------------------- |
-| Description truncated mid-word (no sentence boundary)                    |      547 | `readFirstParagraph` used a blind `.slice(0, 300)`; legacy renderer used `.slice(0, 160)` |
-| Admin metadata leaking into description (`Brief ID:`, `Classification:`) |   12 + 14-lang siblings | `ADMIN_FIELD_RE` only covered 12 field names; splitter missed `\|` |
-| Boilerplate `Executive Brief — X YYYY-MM-DD` titles                      |       28 | `readFirstHeading()` picked the literal H1 of `executive-brief.md`                  |
-| `YYYY-MM-DD` in `<title>` (SEO dilutive)                                 |       83 | Same as above                                                                       |
-| Descriptions below Google's 70-char floor                                |    dozens (mostly ja/zh/ar/he/ko committee-reports) | `news-translate` aggressively shortens; no lower-bound enforcement |
-| Generic `"AI-generated political intelligence"` filler                   |    2 + 14-lang siblings | Executive-brief missing or had no prose paragraph — aggregator fell back to `prettifyFallbackTitle(subfolder)` |
+| Issue                                                                    | Root cause                                                                          |
+| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| Description truncated mid-word (no sentence boundary)                    | `readFirstParagraph` used a blind `.slice(0, 300)`; legacy renderer used `.slice(0, 160)` |
+| Admin metadata leaking into description (`Brief ID:`, `Classification:`) | `ADMIN_FIELD_RE` only covered 12 field names; splitter missed `\|`                  |
+| Boilerplate `Executive Brief — X YYYY-MM-DD` titles                      | `readFirstHeading()` picked the literal H1 of `executive-brief.md`                  |
+| `YYYY-MM-DD` in `<title>` (SEO dilutive)                                 | Same as above                                                                       |
+| Descriptions below Google's 70-char floor                                | `news-translate` aggressively shortens; no lower-bound enforcement                  |
+| Generic `"AI-generated political intelligence"` filler                   | Executive-brief missing or had no prose paragraph — aggregator fell back to `prettifyFallbackTitle(subfolder)` |
 
 The contract below prevents all six from ever happening again.
 
@@ -111,15 +112,15 @@ warn (not block) on it.
 
 ### 3.2 Good vs bad (real examples from `news/*.html`)
 
-✅ `Sweden's government tables 8 propositions covering electricity system overhaul, wind power revenue sharing, paid police education, digital fraud protection, and a new environmental permitting authority.` (198 chars, 8 concrete instruments, 2026-04-15)
+✅ `Sweden's government tables 8 propositions covering electricity system overhaul, wind power revenue sharing, paid police education, digital fraud protection, and a new environmental permitting authority.` (198 chars, 8 concrete instruments)
 
-✅ `With 2,308 rule violations flagged across 2,494 tracked politicians and 109,259 documents processed, the parliamentary session reveals a government struggling to translate coalition arithmetic into legislative momentum.` (200 chars, 3 numbers, named entity, 2026-02-13)
+✅ `With 2,308 rule violations flagged across 2,494 tracked politicians and 109,259 documents processed, the parliamentary session reveals a government struggling to translate coalition arithmetic into legislative momentum.` (200 chars, 3 numbers, named entity)
 
-❌ `Brief ID: EB-2026-04-22-EVE001 Prepared by: James Pether Sörling Prepared at: 2026-04-22 23:50 UTC Classification: Public — GDPR Art. 9(2)(e) Confidence: HIGH [A1] 60-second read: ✅` (admin leak, 2026-04-22)
+❌ `Brief ID: EB-2026-04-22-EVE001 Prepared by: James Pether Sörling Prepared at: 2026-04-22 23:50 UTC Classification: Public — GDPR Art. 9(2)(e) Confidence: HIGH [A1] 60-second read: ✅` (admin leak)
 
-❌ `Riksdag Committee Reports — AI-generated political intelligence from Sweden's Riksdag` (generic filler, 2026-04-15)
+❌ `Riksdag Committee Reports — AI-generated political intelligence from Sweden's Riksdag` (generic filler)
 
-❌ `Analyse von 10 Ausschussberichten` (35 chars, below floor, no concrete content, 2026-02-14 DE)
+❌ `Analyse von 10 Ausschussberichten` (35 chars, below floor, no concrete content)
 
 ---
 
@@ -200,13 +201,5 @@ Before committing an `executive-brief.md` artifact:
       literal date (§2.3).
 - [ ] Description contains at least one concrete number / instrument /
       named actor (§3.1).
-
----
-
-## 7 · Change log
-
-| Date       | Change                                                      | Author   |
-| ---------- | ----------------------------------------------------------- | -------- |
-| 2026-04-24 | Initial contract (PR 1 of the 5-PR SEO rescue plan)         | Copilot  |
 
 <!-- End of contract -->

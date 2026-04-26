@@ -12,7 +12,7 @@ tools: ["*"]
 2. [`.github/copilot-mcp.json`](/.github/copilot-mcp.json) — MCP servers available
 3. [`README.md`](/README.md) — project mission, features, architecture
 4. [`SECURITY_ARCHITECTURE.md`](/SECURITY_ARCHITECTURE.md) & [`THREAT_MODEL.md`](/THREAT_MODEL.md)
-5. [`.github/skills/`](/.github/skills/) — auto-loaded skills library (92 skills)
+5. [`.github/skills/`](/.github/skills/) — auto-loaded skills library (91 skills)
 
 ---
 

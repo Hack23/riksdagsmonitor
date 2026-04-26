@@ -7,33 +7,53 @@ Run this check as the **first action** after MCP pre-warm, before any download:
 ```bash
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$SUBFOLDER"
 
-# 23 required artifacts (Families A+B+C+D) — every workflow, every run
-REQ=(
-  # Family A — Core Synthesis (9)
-  README.md executive-brief.md synthesis-summary.md significance-scoring.md \
-  classification-results.md swot-analysis.md risk-assessment.md \
-  threat-analysis.md stakeholder-perspectives.md \
-  # Family B — Structural Metadata (2)
-  data-download-manifest.md cross-reference-map.md \
-  # Family C — Strategic Extensions (5)
-  scenario-analysis.md comparative-international.md devils-advocate.md \
-  intelligence-assessment.md methodology-reflection.md \
-  # Family D — Electoral & Domain Lenses (7)
-  election-2026-analysis.md voter-segmentation.md coalition-mathematics.md \
-  historical-parallels.md media-framing-analysis.md \
-  implementation-feasibility.md forward-indicators.md)
-
-# Tier-C workflows add no new files — all 23 are already mandatory. What Tier-C
-# adds is the cross-type synthesis + period multipliers enforced by
-# ext/tier-c-aggregation.md and the gate in 05-analysis-gate.md.
-
 SKIP_ANALYSIS=false
 ALL_PRESENT=true
-for f in "${REQ[@]}"; do
+EXPECTED=23
+CHECKED=0
+# 23 required artifacts (Families A+B+C+D) — every workflow, every run.
+# We feed them via a here-doc so the loop never builds an inline bash array
+# (the AWF sandbox flags `REQ=(...); for f in "${REQ[@]}"`; see
+# 01-bash-and-shell-safety.md §Banned expansion patterns).
+# The loop short-circuits on the first missing artifact, so $CHECKED is the
+# number examined up to that point — never larger than $EXPECTED. We log
+# both numbers so the difference is unambiguous in the run output.
+while IFS= read -r f; do
+  [ -z "$f" ] && continue
+  CHECKED=$((CHECKED + 1))
   [ -s "$ANALYSIS_DIR/$f" ] || { ALL_PRESENT=false; break; }
-done
+done <<'REQUIRED_ARTIFACTS'
+README.md
+executive-brief.md
+synthesis-summary.md
+significance-scoring.md
+classification-results.md
+swot-analysis.md
+risk-assessment.md
+threat-analysis.md
+stakeholder-perspectives.md
+data-download-manifest.md
+cross-reference-map.md
+scenario-analysis.md
+comparative-international.md
+devils-advocate.md
+intelligence-assessment.md
+methodology-reflection.md
+election-2026-analysis.md
+voter-segmentation.md
+coalition-mathematics.md
+historical-parallels.md
+media-framing-analysis.md
+implementation-feasibility.md
+forward-indicators.md
+REQUIRED_ARTIFACTS
+
+# Tier-C workflows add no new files — all 23 are already mandatory. What
+# Tier-C adds is the cross-type synthesis + period multipliers enforced by
+# ext/tier-c-aggregation.md and the gate in 05-analysis-gate.md.
+
 [ "$ALL_PRESENT" = "true" ] && SKIP_ANALYSIS=true
-echo "SKIP_ANALYSIS=$SKIP_ANALYSIS  (required artifacts present: $ALL_PRESENT, count: ${#REQ[@]})"
+echo "SKIP_ANALYSIS=$SKIP_ANALYSIS  (required artifacts present: $ALL_PRESENT, checked: $CHECKED of $EXPECTED)"
 ```
 
 | `SKIP_ANALYSIS` | Behaviour |
@@ -60,8 +80,7 @@ Populate `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` with raw Riksdag/Regering da
 | news-weekly-review | `weekly-review` |
 | news-monthly-review | `monthly-review` |
 | news-evening-analysis | `evening-analysis` |
-| news-realtime-monitor | `realtime-$HHMM` |
-| news-realtime-monitor | `realtime-pulse` |
+| news-realtime-monitor | `realtime-$HHMM` (per-event) or `realtime-pulse` (rolling 4-hour pulse) |
 
 If `force_generation=true` is supplied on a day whose base subfolder already contains `synthesis-summary.md` from a prior merged run, auto-suffix the subfolder (`propositions-2`, `propositions-3`, …) so the forced rerun does not overwrite the merged analysis. Under the default `force_generation=false`, the same base subfolder is reused across runs — see §Pre-flight above.
 
@@ -117,5 +136,3 @@ Always produce `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/data-download-manifest.m
 ## Next step
 
 On success, proceed to `04-analysis-pipeline.md`. Never start analysis while `data-download-manifest.md` is missing or empty.
-
-After the manifest is written, run the **phase checkpoint** from `00-base-contract.md` with label `phase-03-download` so the download provenance is persisted to repo memory before any analysis begins.

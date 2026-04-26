@@ -43,7 +43,7 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 55
+timeout-minutes: 45
 
 concurrency:
   group: gh-aw-news-translate-${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}
@@ -55,7 +55,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300 # 5m ping to keep MCP connections alive; Copilot API token expires ~60min so PR must be created within 25min of agent start
+    keepalive-interval: 300 # 5m ping keeps upstream MCPs warm; safeoutputs HTTP idle session (~25-30 min) is the operative deadline → safeoutputs___create_pull_request must be called by minute 28 (hard 30); see prompts/07-commit-and-pr.md §Deadline enforcement
 
 runtimes:
   node:
@@ -142,85 +142,8 @@ safe-outputs:
   add-comment: {}
 
 steps:
-  - name: Setup Node.js
-    uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
-    with:
-      node-version: '25'
-
-  - name: Install dependencies
-    run: |
-      npm ci --prefer-offline --no-audit
-
-  - name: Pre-warm MCP server (Render.com cold start mitigation)
-    run: |
-      echo "🔥 Pre-warming riksdag-regering MCP server via MCP protocol..."
-      MCP_URL="https://riksdag-regering-ai.onrender.com/mcp"
-      WARM=false
-      for i in 1 2 3 4 5 6; do
-        RESP=$(curl -sf --max-time 30 -X POST \
-          -H "Content-Type: application/json" \
-          -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
-          "$MCP_URL" 2>/dev/null) || true
-        if echo "$RESP" | grep -q '"tools"'; then
-          TOOL_COUNT=$(echo "$RESP" | grep -o '"name"' | wc -l)
-          echo "✅ MCP server responded on attempt $i with $TOOL_COUNT tools registered"
-          WARM=true
-          break
-        fi
-        echo "⏳ Attempt $i/6 — server may be cold-starting, waiting 20s..."
-        sleep 20
-      done
-      if [ "$WARM" = "false" ]; then
-        echo "⚠️ MCP server did not respond after 6 attempts — agent will retry via in-prompt health gate"
-      fi
-
-  - name: Pre-flight external endpoint reachability check (runs before MCP Gateway)
-    run: |
-      echo "🔍 Network Diagnostics — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
-      echo "═══════════════════════════════════════════"
-      echo ""
-      echo "📡 DNS Resolution Tests:"
-      for domain in riksdag-regering-ai.onrender.com api.scb.se api.worldbank.org data.riksdagen.se www.riksdagen.se www.regeringen.se www.statskontoret.se statskontoret.se; do
-        if nslookup "$domain" >/dev/null 2>&1; then
-          IP=$(nslookup "$domain" 2>/dev/null | grep -A1 "Name:" | grep "Address:" | head -1 | awk '{print $2}')
-          echo "  ✅ $domain → $IP"
-        else
-          echo "  ❌ $domain — DNS FAILED"
-        fi
-      done
-      echo ""
-      echo "🌐 HTTPS Connectivity Tests:"
-      for url in \
-        "https://riksdag-regering-ai.onrender.com/mcp" \
-        "https://api.scb.se/OV0104/v2beta" \
-        "https://api.worldbank.org/v2/country/SE?format=json" \
-        "https://data.riksdagen.se/dokumentlista/?sok=test&doktyp=bet&utformat=json&a=1" \
-      ; do
-        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$url" 2>/dev/null || echo "000")
-        DOMAIN=$(echo "$url" | sed 's|https://||' | cut -d/ -f1)
-        if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 400 ]; then
-          echo "  ✅ $DOMAIN → HTTP $HTTP_CODE"
-        elif [ "$HTTP_CODE" = "000" ]; then
-          echo "  ❌ $DOMAIN → TIMEOUT/UNREACHABLE"
-        else
-          echo "  ⚠️ $DOMAIN → HTTP $HTTP_CODE"
-        fi
-      done
-      echo ""
-      echo "🔌 MCP Server Tool Count:"
-      TOOL_RESP=$(curl -sf --max-time 15 -X POST \
-        -H "Content-Type: application/json" \
-        -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
-        "https://riksdag-regering-ai.onrender.com/mcp" 2>/dev/null) || TOOL_RESP=""
-      if echo "$TOOL_RESP" | grep -q '"tools"'; then
-        TOOL_COUNT=$(echo "$TOOL_RESP" | grep -o '"name"' | wc -l)
-        echo "  ✅ riksdag-regering MCP: $TOOL_COUNT tools registered"
-      else
-        echo "  ❌ riksdag-regering MCP: No tools response (server may still be starting)"
-      fi
-      echo ""
-      echo "═══════════════════════════════════════════"
-
+  - name: News pre-warm & pre-flight (composite)
+    uses: ./.github/actions/news-prewarm
   - name: Pre-flight content PR dependency check
     env:
       GH_TOKEN: ${{ github.token }}
@@ -328,14 +251,20 @@ Translation is a pure-derivative workflow:
 - Keep the PR under the safe-outputs 100-file cap. If more translations are pending than fit in one PR, translate the highest-priority batch and leave the rest for the next scheduled run.
 - Skip any language whose translation already exists and is non-empty unless `force` is explicitly requested.
 
-## Time budget (~40 min)
+## Time budget
+
+> 🔴 **CRITICAL — safeoutputs MCP idle timeout (~30 min)**: The `safeoutputs` MCP server's Streamable-HTTP session expires after **~30 minutes of idle time**. **Your single `safeoutputs___create_pull_request` call MUST happen by minute 28 at the latest** (hard deadline 30 min). The 45-min `timeout-minutes` job budget exists only as a safety margin; never plan a translate run beyond 28 min before the PR call.
+
+**Single run** (target ~26 min, hard deadline 28 min for the PR call):
 
 | Minutes | Phase |
 |---------|-------|
 | 0–2 | MCP pre-warm + date resolution |
-| 2–6 | Scan untranslated articles; build work list |
-| 6–36 | Translate + validate in priority order (highest-value types first) |
-| 36–39 | Final validation, stage, commit |
-| 39–41 | **One** `safeoutputs___create_pull_request` call |
+| 2–4 | Scan untranslated articles; build prioritised work list, cap at safe-outputs 100-file budget |
+| 4–22 | Translate + validate in priority order (highest-value types first); trim batch size before quality |
+| 22–25 | Final validation with `scripts/validate-news-translations.ts`, stage scoped files, commit |
+| 25–28 | **One** `safeoutputs___create_pull_request` call — **HARD DEADLINE minute 28** |
+
+If a batch cannot finish under this budget, commit the translations completed so far and call `safeoutputs___create_pull_request` with label `partial`; the next scheduled run picks up the remaining languages. A partial PR is always better than losing the whole batch to a `session not found` error.
 
 All non-workflow-specific rules are in the imported modules — do not restate them here.
