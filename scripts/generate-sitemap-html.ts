@@ -18,6 +18,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import type { Language } from './types/language.js';
+import { buildChrome } from './render-lib/chrome.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -587,13 +588,6 @@ function generateSitemapHtml(lang: Language, articlesByLang: Map<Language, Artic
 
   const docsSections = getDocsSections();
 
-  // Build hreflang tags
-  const hreflangTags = LANGUAGES.map((l) => {
-    const hreflangCode = LANGUAGE_META[l].hreflang;
-    const href = l === 'en' ? 'sitemap.html' : `sitemap_${l}.html`;
-    return `    <link rel="alternate" hreflang="${hreflangCode}" href="${BASE_URL}/${href}">`;
-  }).join('\n');
-
   // Build other language links section
   const otherLanguageLinks = LANGUAGES
     .filter((l) => l !== lang)
@@ -690,83 +684,86 @@ function generateSitemapHtml(lang: Language, articlesByLang: Map<Language, Artic
             </section>`;
   }
 
-  return `<!DOCTYPE html>
-<html lang="${lang}" dir="${meta.dir}">
-<head>
-    <title>${escapeHtml(t.siteMap)} | Riksdagsmonitor</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="canonical" href="${BASE_URL}/${sitemapFile}">
-    <meta name="description" content="${escapeHtml(t.completeNavigation)}">
-    <meta name="keywords" content="sitemap, site navigation, riksdagsmonitor pages, Swedish parliament monitoring">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="James Pether Sörling, CISSP, CISM">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="${escapeHtml(t.siteMap)} | Riksdagsmonitor">
-    <meta property="og:description" content="${escapeHtml(t.completeNavigation)}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="${BASE_URL}/${sitemapFile}">
-    <meta property="og:image" content="https://riksdagsmonitor.com/images/og-image.webp">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Riksdagsmonitor ${escapeHtml(t.siteMap)}">
-    <meta property="og:locale" content="${meta.locale}">
-    <meta property="og:site_name" content="Riksdagsmonitor">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="${escapeHtml(t.siteMap)} | Riksdagsmonitor">
-    <meta name="twitter:description" content="${escapeHtml(t.completeNavigation)}">
-    <meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image.webp">
-    <meta name="twitter:site" content="@riksdagsmonitor">
-    
-    <!-- Additional Meta Tags -->
-    <meta name="theme-color" content="#0a0e27">
-    <meta name="color-scheme" content="dark light">
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" href="/favicon.ico" sizes="48x48">
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <!-- Hreflang tags for all language versions -->
-${hreflangTags}
-    <link rel="alternate" hreflang="x-default" href="${BASE_URL}/sitemap.html">
-    
-    <style>
+  // Build hreflang alternates map for the chrome — each language maps to
+  // its sibling sitemap file (sitemap.html / sitemap_${lang}.html).
+  const hreflangAlternates: Partial<Record<Language, string>> = {};
+  for (const l of LANGUAGES) {
+    hreflangAlternates[l] = l === 'en' ? 'sitemap.html' : `sitemap_${l}.html`;
+  }
+
+  // JSON-LD: Organization + WebSite (always) + SiteNavigationElement +
+  // BreadcrumbList. The article renderer emits the same Organization +
+  // WebSite shape so the three top-level navigable pages are now
+  // structurally consistent for Google Rich Results.
+  const jsonLd: unknown[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Hack23 AB',
+      url: 'https://www.hack23.com',
+      logo: `${BASE_URL}/images/android-chrome-512x512.png`,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Riksdagsmonitor',
+      url: BASE_URL,
+      description: 'Swedish Parliament Intelligence Platform - Real-time monitoring, coalition predictions, and comprehensive political analysis',
+      inLanguage: ['en', 'sv', 'da', 'nb', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'],
+      publisher: {
+        '@type': 'Organization',
+        name: 'Hack23 AB',
+        url: 'https://www.hack23.com',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SiteNavigationElement',
+      name: t.siteMap,
+      url: `${BASE_URL}/${sitemapFile}`,
+      inLanguage: lang,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: t.home, item: `${BASE_URL}/${indexFile}` },
+        { '@type': 'ListItem', position: 2, name: t.siteMap, item: `${BASE_URL}/${sitemapFile}` },
+      ],
+    },
+  ];
+
+  // Inline page-specific stylesheet for the sitemap body. Chrome owns
+  // header + footer + theme bootstrap; the styles below scope only to
+  // sitemap-specific markup (.sitemap-section, .sitemap-list, etc.).
+  const extraStyle = `
         .sitemap-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem 1rem;
         }
-        
-        .sitemap-header {
+
+        .sitemap-page-hero {
             text-align: center;
             margin-bottom: 3rem;
             padding-bottom: 2rem;
             border-bottom: 2px solid var(--primary-cyan);
         }
-        
-        .sitemap-header h1 {
+
+        .sitemap-page-hero h1 {
             font-family: var(--font-heading);
             color: var(--primary-cyan);
             font-size: clamp(2rem, 4vw, 3rem);
             margin-bottom: 1rem;
         }
-        
-        .sitemap-header p {
+
+        .sitemap-page-hero p {
             color: var(--light-text);
             font-size: 1.125rem;
         }
-        
-        .sitemap-section {
-            margin-bottom: 3rem;
-        }
-        
+
+        .sitemap-section { margin-bottom: 3rem; }
+
         .sitemap-section h2 {
             font-family: var(--font-heading);
             color: var(--primary-magenta);
@@ -775,7 +772,7 @@ ${hreflangTags}
             padding-bottom: 0.5rem;
             border-bottom: 1px solid var(--primary-magenta);
         }
-        
+
         .sitemap-section h3 {
             font-family: var(--font-heading);
             color: var(--primary-yellow);
@@ -783,12 +780,9 @@ ${hreflangTags}
             margin-top: 2rem;
             margin-bottom: 1rem;
         }
-        
-        .sitemap-list {
-            list-style: none;
-            padding: 0;
-        }
-        
+
+        .sitemap-list { list-style: none; padding: 0; }
+
         .sitemap-list li {
             margin-bottom: 1.5rem;
             padding: 1rem;
@@ -796,12 +790,12 @@ ${hreflangTags}
             border-radius: 8px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        
+
         .sitemap-list li:hover {
             transform: translateX(5px);
             box-shadow: 0 4px 12px rgba(0, 217, 255, 0.2);
         }
-        
+
         .sitemap-list a {
             color: var(--primary-cyan);
             text-decoration: none;
@@ -810,22 +804,16 @@ ${hreflangTags}
             display: block;
             margin-bottom: 0.5rem;
         }
-        
-        .sitemap-list a:hover {
-            text-decoration: underline;
-        }
-        
-        .sitemap-list a:focus {
-            outline: 2px solid var(--primary-cyan);
-            outline-offset: 2px;
-        }
-        
+
+        .sitemap-list a:hover { text-decoration: underline; }
+        .sitemap-list a:focus { outline: 2px solid var(--primary-cyan); outline-offset: 2px; }
+
         .sitemap-description {
             color: var(--muted-text);
             font-size: 0.9375rem;
             line-height: 1.6;
         }
-        
+
         .sitemap-article-date {
             display: inline-block;
             font-family: var(--font-mono, 'Courier New', monospace);
@@ -838,28 +826,20 @@ ${hreflangTags}
             margin-bottom: 0.5rem;
             letter-spacing: 0.02em;
         }
-        
+
         .language-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
         }
-        
-        .language-grid li {
-            margin-bottom: 0;
-        }
-        
+
+        .language-grid li { margin-bottom: 0; }
+
         @media (max-width: 768px) {
-            .sitemap-container {
-                padding: 1rem 0.5rem;
-            }
-            
-            .language-grid {
-                grid-template-columns: 1fr;
-            }
+            .sitemap-container { padding: 1rem 0.5rem; }
+            .language-grid { grid-template-columns: 1fr; }
         }
-        
-        /* Table of Contents */
+
         .toc-nav {
             background: var(--mid-bg);
             border-radius: 8px;
@@ -867,7 +847,7 @@ ${hreflangTags}
             margin-bottom: 2rem;
             border-left: 4px solid var(--primary-cyan);
         }
-        
+
         .toc-nav h2 {
             font-family: var(--font-heading);
             color: var(--primary-cyan);
@@ -876,7 +856,7 @@ ${hreflangTags}
             border: none;
             padding: 0;
         }
-        
+
         .toc-list {
             list-style: none;
             padding: 0;
@@ -884,12 +864,9 @@ ${hreflangTags}
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 0.5rem;
         }
-        
-        .toc-list li {
-            margin: 0;
-            padding: 0;
-        }
-        
+
+        .toc-list li { margin: 0; padding: 0; }
+
         .toc-list a {
             color: var(--primary-cyan);
             text-decoration: none;
@@ -897,56 +874,38 @@ ${hreflangTags}
             padding: 0.5rem 0;
             transition: transform 0.2s ease;
         }
-        
-        .toc-list a:hover {
-            transform: translateX(5px);
-            text-decoration: underline;
-        }
-        
-        .toc-list a:focus {
-            outline: 2px solid var(--primary-cyan);
-            outline-offset: 2px;
-        }
-    </style>
-    
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Riksdagsmonitor",
-      "url": "${BASE_URL}",
-      "description": "Swedish Parliament Intelligence Platform - Real-time monitoring, coalition predictions, and comprehensive political analysis",
-      "inLanguage": ["en", "sv", "da", "nb", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
-      "publisher": {
-        "@type": "Organization",
-        "name": "Hack23 AB",
-        "url": "https://www.hack23.com"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SiteNavigationElement",
-      "name": "${escapeHtml(t.siteMap)}",
-      "url": "${BASE_URL}/${sitemapFile}",
-      "inLanguage": "${lang}"
-    }
-    </script>
-</head>
-<body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <div class="sitemap-container">
-        <header class="sitemap-header">
-            <a href="/${indexFile}" aria-label="Riksdagsmonitor Home">
-              <img src="/images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" style="display:block;max-width:100px;height:auto;margin:0 auto 0.75rem" width="100" height="100" loading="eager">
-            </a>
+
+        .toc-list a:hover { transform: translateX(5px); text-decoration: underline; }
+        .toc-list a:focus { outline: 2px solid var(--primary-cyan); outline-offset: 2px; }
+`;
+
+  const chrome = buildChrome({
+    lang,
+    title: t.siteMap,
+    description: t.completeNavigation,
+    keywords: 'sitemap, site navigation, riksdagsmonitor pages, Swedish parliament monitoring',
+    canonicalPath: sitemapFile,
+    hreflangAlternates,
+    defaultAlternateBase: 'sitemap.html',
+    ogType: 'website',
+    rssHref: lang === 'en' ? '/rss.xml' : `/rss_${lang}.xml`,
+    breadcrumb: [
+      { label: t.home, href: indexFile },
+      { label: t.siteMap },
+    ],
+    jsonLd,
+    extraStyle,
+  });
+
+  // Body content — keeps the rich sitemap sections from the legacy
+  // template; the surrounding chrome (header / breadcrumb / footer /
+  // language switcher / theme toggle) is now provided by `buildChrome`.
+  const body = `    <div class="sitemap-container">
+        <header class="sitemap-page-hero">
             <h1>${escapeHtml(t.siteMap)}</h1>
             <p>${escapeHtml(t.completeNavigation)}</p>
         </header>
-        
+
         <!-- Quick Navigation -->
         <nav class="toc-nav" aria-label="${escapeHtml(t.quickJumpTo)}">
             <h2>${escapeHtml(t.quickJumpTo)}</h2>
@@ -960,91 +919,88 @@ ${hreflangTags}
                 <li><a href="#sitemap-languages">${escapeHtml(t.sitemapLanguages)}</a></li>
             </ul>
         </nav>
-        
-        <main id="main-content">
-            <!-- Main Platform Section -->
-            <section class="sitemap-section" id="main-platform">
-                <h2>${escapeHtml(t.mainPlatform)}</h2>
-                <ul class="sitemap-list">
-                    <li>
-                        <a href="${indexFile}">${escapeHtml(t.home)} - ${escapeHtml(meta.nativeName)}</a>
-                        <p class="sitemap-description">${escapeHtml(t.mainPlatformDesc)}</p>
-                    </li>
-                </ul>
-            </section>
-            
-            <!-- Dashboards Section -->
-            <section class="sitemap-section" id="dashboards">
-                <h2>${escapeHtml(t.dashboards)}</h2>
-                <ul class="sitemap-list">
+
+        <!-- Main Platform Section -->
+        <section class="sitemap-section" id="main-platform">
+            <h2>${escapeHtml(t.mainPlatform)}</h2>
+            <ul class="sitemap-list">
+                <li>
+                    <a href="${indexFile}">${escapeHtml(t.home)} - ${escapeHtml(meta.nativeName)}</a>
+                    <p class="sitemap-description">${escapeHtml(t.mainPlatformDesc)}</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Dashboards Section -->
+        <section class="sitemap-section" id="dashboards">
+            <h2>${escapeHtml(t.dashboards)}</h2>
+            <ul class="sitemap-list">
 ${dashboardLinks}
-                    <li>
-                        <a href="politician-dashboard.html">${escapeHtml(t.politicianDashboard)}</a>
-                        <p class="sitemap-description">${escapeHtml(t.politicianDashboardDesc)}</p>
-                    </li>
-                </ul>
-            </section>
-            
-            <!-- News Section -->
-            <section class="sitemap-section" id="news">
-                <h2>${escapeHtml(t.newsAnalysis)}</h2>
-                <h3>${escapeHtml(t.newsIndexPages)}</h3>
-                <ul class="sitemap-list">
-                    <li>
-                        <a href="${newsIndexFile}">${escapeHtml(t.newsIndex)} - ${escapeHtml(meta.nativeName)}</a>
-                        <p class="sitemap-description">${escapeHtml(t.newsDesc)}</p>
-                    </li>
-                    <li>
-                        <a href="${lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${lang}.html`}">🧠 Political Intelligence - ${escapeHtml(meta.nativeName)}</a>
-                        <p class="sitemap-description">Methodologies, analysis templates, and every daily intelligence artifact (linked to GitHub for full auditability).</p>
-                    </li>
-                </ul>
-                ${recentArticles.length > 0 ? `
-                <h3>${escapeHtml(t.recentArticles)}</h3>
-                <ul class="sitemap-list">
+                <li>
+                    <a href="politician-dashboard.html">${escapeHtml(t.politicianDashboard)}</a>
+                    <p class="sitemap-description">${escapeHtml(t.politicianDashboardDesc)}</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- News Section -->
+        <section class="sitemap-section" id="news">
+            <h2>${escapeHtml(t.newsAnalysis)}</h2>
+            <h3>${escapeHtml(t.newsIndexPages)}</h3>
+            <ul class="sitemap-list">
+                <li>
+                    <a href="${newsIndexFile}">${escapeHtml(t.newsIndex)} - ${escapeHtml(meta.nativeName)}</a>
+                    <p class="sitemap-description">${escapeHtml(t.newsDesc)}</p>
+                </li>
+                <li>
+                    <a href="${lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${lang}.html`}">🧠 Political Intelligence - ${escapeHtml(meta.nativeName)}</a>
+                    <p class="sitemap-description">Methodologies, analysis templates, and every daily intelligence artifact (linked to GitHub for full auditability).</p>
+                </li>
+            </ul>
+            ${recentArticles.length > 0 ? `
+            <h3>${escapeHtml(t.recentArticles)}</h3>
+            <ul class="sitemap-list">
 ${articleListHtml}
-                </ul>` : ''}
-            </section>
-            
-            <!-- Multi-Language Section -->
-            <section class="sitemap-section" id="languages">
-                <h2>${escapeHtml(t.multiLanguage)}</h2>
-                <p class="sitemap-description" style="margin-bottom: 1.5rem;">${escapeHtml(t.accessPlatform)}</p>
-                <ul class="sitemap-list language-grid">
+            </ul>` : ''}
+        </section>
+
+        <!-- Multi-Language Section -->
+        <section class="sitemap-section" id="languages">
+            <h2>${escapeHtml(t.multiLanguage)}</h2>
+            <p class="sitemap-description" style="margin-bottom: 1.5rem;">${escapeHtml(t.accessPlatform)}</p>
+            <ul class="sitemap-list language-grid">
 ${multiLangLinks}
-                </ul>
-            </section>
-            ${docsHtml}
-            <!-- Additional Resources -->
-            <section class="sitemap-section" id="resources">
-                <h2>${escapeHtml(t.resources)}</h2>
-                <ul class="sitemap-list">
-                    <li>
-                        <a href="sitemap.xml">${escapeHtml(t.xmlSitemap)}</a>
-                        <p class="sitemap-description">${escapeHtml(t.xmlSitemapDesc)}</p>
-                    </li>
-                    <li>
-                        <a href="robots.txt">${escapeHtml(t.robotsTxt)}</a>
-                        <p class="sitemap-description">${escapeHtml(t.robotsTxtDesc)}</p>
-                    </li>
-                </ul>
-            </section>
-            
-            <!-- Other Sitemap Languages -->
-            <section class="sitemap-section" id="sitemap-languages">
-                <h2>${escapeHtml(t.sitemapInOtherLanguages)}</h2>
-                <ul class="sitemap-list language-grid">
+            </ul>
+        </section>
+        ${docsHtml}
+        <!-- Additional Resources -->
+        <section class="sitemap-section" id="resources">
+            <h2>${escapeHtml(t.resources)}</h2>
+            <ul class="sitemap-list">
+                <li>
+                    <a href="sitemap.xml">${escapeHtml(t.xmlSitemap)}</a>
+                    <p class="sitemap-description">${escapeHtml(t.xmlSitemapDesc)}</p>
+                </li>
+                <li>
+                    <a href="robots.txt">${escapeHtml(t.robotsTxt)}</a>
+                    <p class="sitemap-description">${escapeHtml(t.robotsTxtDesc)}</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Other Sitemap Languages -->
+        <section class="sitemap-section" id="sitemap-languages">
+            <h2>${escapeHtml(t.sitemapInOtherLanguages)}</h2>
+            <ul class="sitemap-list language-grid">
 ${otherLanguageLinks}
-                </ul>
-            </section>
-        </main>
-        
-        <footer style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--primary-cyan); color: var(--muted-text);">
-            <p>&copy; 2026 Riksdagsmonitor | <a href="${indexFile}" style="color: var(--primary-cyan);">${escapeHtml(t.home)}</a></p>
-        </footer>
-    </div>
-</body>
-</html>`;
+            </ul>
+        </section>
+    </div>`;
+
+  return `${chrome.head}
+${chrome.headerHtml}
+${body}
+${chrome.footerHtml}`;
 }
 
 /**
