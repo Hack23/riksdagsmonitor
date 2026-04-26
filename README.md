@@ -650,7 +650,7 @@ Riksdagsmonitor uses **GitHub Copilot personas, skills, and agentic workflows** 
 - [`.github/agents/README.md`](.github/agents/README.md) — **24 agent files** (14 persona agents + 9 workflow-specialist `.agent.md` + shared `developer.instructions.md`)
 - [`.github/skills/README.md`](.github/skills/README.md) — **91 skills** grouped by 12 functional categories
 - [`.github/prompts/README.md`](.github/prompts/README.md) — 8 bounded-context prompt modules + Tier-C extension, imported by every agentic news workflow
-- [`.github/workflows/README.md`](.github/workflows/README.md) — 45 workflow files (standard + agentic)
+- [`.github/workflows/README.md`](.github/workflows/README.md) — 43 workflow files (standard + agentic)
 - [AGENTS.md](AGENTS.md) — canonical persona catalog with skill-mapping tables and invocation examples
 - [SKILLS.md](SKILLS.md) — canonical skill catalog with agent-skill mappings
 
@@ -761,7 +761,7 @@ Every published article is a deterministic projection of three input sources, in
 The aggregator concatenates the day's evidence in template order (with `intelligence-assessment.md` — the ICD-203 Key Judgments centrepiece — surfaced at position 3 immediately after the executive brief + synthesis), the renderer transforms the markdown into sanitised HTML, and the chrome layer wraps it with JSON-LD, a tagline-and-breadcrumb header, a 3-column footer (*Riksdagsmonitor* / *Resources* / *Trust & compliance*) and both a dropdown and an always-visible footer language switcher. The chrome's language switcher populates `hreflangAlternates` for **all 14 supported languages** at render time, so switching language from any article always lands on the sibling article (e.g. `news/2026-04-24-propositions-de.html`), never on the language homepage. Internally, `scripts/render-lib/` is split into six focused leaf modules — `aggregator.ts`, `markdown.ts`, `chrome.ts`, `article.ts`, `url-helpers.ts`, `constants.ts` — behind a thin barrel `index.ts`; see [`ARCHITECTURE.md`](ARCHITECTURE.md#pipeline-stages) for the full per-module contract. The `Sources of Method` block in every article footer links back to every methodology and template file actually used — provenance is preserved end-to-end.
 
 > 📚 **Directory-level catalogs** (single sources of truth):
-> - [`.github/workflows/README.md`](.github/workflows/README.md) — 45 workflow files (21 standard `.yml` + 11 agentic `.md` sources + 11 compiled `.lock.yml`)
+> - [`.github/workflows/README.md`](.github/workflows/README.md) — 43 workflow files (21 standard `.yml` + 11 agentic `.md` sources + 11 compiled `.lock.yml`)
 > - [`.github/prompts/README.md`](.github/prompts/README.md) — 8 bounded-context prompt modules + `ext/tier-c-aggregation.md`, imported by every news workflow
 > - [`.github/agents/README.md`](.github/agents/README.md) — 24 Copilot agent files (14 personas + 9 workflow-specialists + 1 shared developer-instructions)
 > - [`.github/skills/README.md`](.github/skills/README.md) — 91 skills grouped by 12 functional categories
@@ -819,7 +819,7 @@ timeline
     title Riksdagsmonitor Evolution — 2026 to 2037
     section Phase 3 — Foundation (2026)
         Q1-Q2 : TypeScript migration ✅
-               : 12 agentic news workflows ✅
+               : 11 agentic news workflows ✅
                : 34 GitHub Actions workflows + 10 agent prompt files
                : Dual deployment (S3 + GitHub Pages)
         Q3-Q4 : CIA data pipeline integration

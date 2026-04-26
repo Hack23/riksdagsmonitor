@@ -221,7 +221,7 @@ The aggregator's structural projections (heading demotion, source-preamble strip
 
 ## 🤖 Artifact → workflow → gate check mapping
 
-The 12 agentic news workflows in `.github/workflows/news-*.md` render these templates into concrete artifacts under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. Authoring contract: [`.github/prompts/README.md`](../../.github/prompts/README.md). Tradecraft canon: [`../methodologies/osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md).
+The 11 agentic news workflows in `.github/workflows/news-*.md` render these templates into concrete artifacts under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. Authoring contract: [`.github/prompts/README.md`](../../.github/prompts/README.md). Tradecraft canon: [`../methodologies/osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md).
 
 **23 always-produced artifacts per run** (every news workflow — single-type + Tier-C):
 

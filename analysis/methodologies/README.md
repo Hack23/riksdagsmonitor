@@ -113,7 +113,7 @@
 
 ## 🤖 How agentic workflows consume these methodologies
 
-The 12 agentic news workflows in `.github/workflows/news-*.md` are the **primary consumer** of these methodologies. The authoritative workflow contract lives in [`.github/prompts/`](../../.github/prompts/) — see [`.github/prompts/README.md`](../../.github/prompts/README.md) for the full module catalogue.
+The 11 agentic news workflows in `.github/workflows/news-*.md` are the **primary consumer** of these methodologies. The authoritative workflow contract lives in [`.github/prompts/`](../../.github/prompts/) — see [`.github/prompts/README.md`](../../.github/prompts/README.md) for the full module catalogue.
 
 | Methodology | Read in Pass 1 (mandatory) | Read in Pass 2 (improvement) | Enforced by |
 |-------------|---------------------------|------------------------------|-------------|

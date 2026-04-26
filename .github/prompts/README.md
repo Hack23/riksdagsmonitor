@@ -43,7 +43,7 @@ This directory is the **single source of truth** for how GitHub Agentic Workflow
 | [`02-mcp-access.md`](02-mcp-access.md) | MCP server inventory, tool naming, in-prompt health gate | All news workflows + translate |
 | [`03-data-download.md`](03-data-download.md) | Download pipeline, subfolder naming, lookback fallback, manifest | All content workflows |
 | [`04-analysis-pipeline.md`](04-analysis-pipeline.md) | Methodologies, templates, **23 required artifacts** (Families A+B+C+D), Pass 1 / Pass 2 | All content workflows |
-| [`05-analysis-gate.md`](05-analysis-gate.md) | Single blocking gate before any article is touched (checks 1–8 across all 23 artifacts) | All content workflows |
+| [`05-analysis-gate.md`](05-analysis-gate.md) | Single blocking gate before any article is touched (checks 1–9 across all 23 artifacts; supplementary check 9 is blocking for `comprehensive` / Tier-C / multi-run) | All content workflows |
 | [`06-article-generation.md`](06-article-generation.md) | Article sections, banned patterns, visualisation, translations | All content workflows |
 | [`07-commit-and-pr.md`](07-commit-and-pr.md) | Stage → commit → exactly one `create_pull_request` | All news workflows + translate |
 | [`seo-metadata-contract.md`](seo-metadata-contract.md) | Reference contract for `<title>` + `<meta description>` per language (used at render time, not imported) | Reference document — referenced by `06-article-generation.md` and the renderer |
@@ -125,7 +125,7 @@ The monolithic `.github/aw/SHARED_PROMPT_PATTERNS.md` was deleted when these mod
 
 - [`.github/agents/README.md`](../agents/README.md) — 24 agent files (14 persona + 9 workflow-specialist + 1 developer-instructions)
 - [`.github/skills/README.md`](../skills/README.md) — 91 skills by functional category
-- [`.github/workflows/README.md`](../workflows/README.md) — 45 workflow files (21 `.yml` + 12 `.md` + 12 `.lock.yml`)
+- [`.github/workflows/README.md`](../workflows/README.md) — 43 workflow files (21 `.yml` + 11 `.md` + 11 `.lock.yml`)
 - [`Article-Generation.md`](../../Article-Generation.md) — article-generation architecture, business value, UI/UX export, SEO, deployment and source index
 - [`analysis/README.md`](../../analysis/README.md) — on-disk artifact layout (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`)
 - [`analysis/methodologies/README.md`](../../analysis/methodologies/README.md) — 12 methodology modules (AI guide · 4 domain frameworks · 5 Family production methodologies · style guide · **OSINT / INTOP tradecraft standards** canon)
