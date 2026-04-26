@@ -225,7 +225,10 @@ describe('Sitemap HTML Generation', () => {
       const articlesByLang = module.getArticlesByLanguage();
       const html = module.generateSitemapHtml('en', articlesByLang);
       expect(html).toContain('skip-link');
-      expect(html).toContain('#main-content');
+      // Unified chrome (render-lib/chrome.ts) targets `#main` (not the
+      // legacy `#main-content`). Both ID and the skip-link href use it.
+      expect(html).toContain('href="#main"');
+      expect(html).toContain('id="main"');
     });
 
     it('should include localized section headings', () => {
@@ -242,34 +245,97 @@ describe('Sitemap HTML Generation', () => {
       const articlesByLang = module.getArticlesByLanguage();
       const html = module.generateSitemapHtml('en', articlesByLang);
       expect(html).toContain('application/ld+json');
-      expect(html).toContain('"@type": "WebSite"');
-      expect(html).toContain('"@type": "SiteNavigationElement"');
+      // Unified chrome embeds JSON-LD via `JSON.stringify(blob)` (no
+      // pretty-print), so the `@type:` keys have no space after colon.
+      expect(html).toContain('"@type":"WebSite"');
+      expect(html).toContain('"@type":"SiteNavigationElement"');
+      // Sitemap now also emits BreadcrumbList + Organization (parity
+      // with the article + news-index renderers).
+      expect(html).toContain('"@type":"BreadcrumbList"');
+      expect(html).toContain('"@type":"Organization"');
     });
 
-    it('should use /index.html for English home link', () => {
+    it('should use index.html for English home link', () => {
       const articlesByLang = module.getArticlesByLanguage();
       const html = module.generateSitemapHtml('en', articlesByLang);
-      expect(html).toContain('href="/index.html"');
-      expect(html).not.toContain('href="/index_en.html"');
+      // Unified chrome uses relative hrefs (no leading slash) so the
+      // pages work both under `/` and under any sub-path on a CDN/S3.
+      expect(html).toContain('href="index.html"');
+      expect(html).not.toContain('href="index_en.html"');
     });
 
     it('should use language-specific home link for non-English languages', () => {
       const articlesByLang = module.getArticlesByLanguage();
       const svHtml = module.generateSitemapHtml('sv', articlesByLang);
-      expect(svHtml).toContain('href="/index_sv.html"');
+      expect(svHtml).toContain('href="index_sv.html"');
 
       const arHtml = module.generateSitemapHtml('ar', articlesByLang);
-      expect(arHtml).toContain('href="/index_ar.html"');
+      expect(arHtml).toContain('href="index_ar.html"');
 
       const jaHtml = module.generateSitemapHtml('ja', articlesByLang);
-      expect(jaHtml).toContain('href="/index_ja.html"');
+      expect(jaHtml).toContain('href="index_ja.html"');
     });
 
-    it('should include logo image in header', () => {
+    it('should include the unified `rm-site-header` brand row', () => {
       const articlesByLang = module.getArticlesByLanguage();
       const html = module.generateSitemapHtml('en', articlesByLang);
-      expect(html).toContain('riksdagsmonitor-logo.webp');
-      expect(html).toContain('aria-label="Riksdagsmonitor Home"');
+      // The legacy hero-image logo is replaced by the canonical
+      // `rm-logo` brand row provided by `buildChrome` (article parity).
+      expect(html).toContain('class="rm-site-header"');
+      expect(html).toContain('class="rm-logo"');
+      expect(html).toContain('class="rm-logo-brand"');
+    });
+  });
+
+  describe('Unified chrome contract (parity with article + news-index renderers)', () => {
+    let html: string;
+    beforeAll(() => {
+      const articlesByLang = module.getArticlesByLanguage();
+      html = module.generateSitemapHtml('en', articlesByLang);
+    });
+
+    it('emits the canonical `rm-site-header` (with theme toggle and lang switcher)', () => {
+      expect(html).toContain('class="rm-site-header"');
+      expect(html).toContain('id="theme-toggle"');
+      expect(html).toContain('class="rm-theme-toggle"');
+      expect(html).toContain('class="rm-lang-switcher"');
+    });
+
+    it('emits the canonical 3-column `rm-site-footer` and footer language row', () => {
+      expect(html).toContain('class="rm-site-footer"');
+      expect(html).toContain('class="rm-footer-col rm-footer-brand"');
+      expect(html).toContain('class="rm-footer-col rm-footer-navigate"');
+      expect(html).toContain('class="rm-footer-col rm-footer-trust"');
+      expect(html).toContain('class="rm-footer-langs"');
+      expect(html).toContain('class="rm-footer-updated"');
+    });
+
+    it('emits the anti-flash inline theme bootstrap in <head>', () => {
+      expect(html).toContain("'riksdagsmonitor-theme'");
+      expect(html).toContain("document.documentElement.setAttribute('data-theme'");
+    });
+
+    it('emits a `BreadcrumbList` JSON-LD blob (Home > Sitemap)', () => {
+      expect(html).toContain('"@type":"BreadcrumbList"');
+      expect(html).toMatch(/"name":"Sitemap"/);
+    });
+
+    it('emits a localised footer (Swedish)', () => {
+      const articlesByLang = module.getArticlesByLanguage();
+      const svHtml = module.generateSitemapHtml('sv', articlesByLang);
+      expect(svHtml).toContain('class="rm-footer-col rm-footer-brand"');
+      // Swedish lang attr appears in the footer row
+      expect(svHtml).toContain('lang="sv"');
+    });
+
+    it('uses the sitemap-specific lang switcher fallback (`sitemap_sv.html`, not `index_sv.html`)', () => {
+      // Header dropdown should link to sibling sitemaps.
+      expect(html).toContain('href="sitemap_sv.html"');
+    });
+
+    it('uses og:type="website" (suppresses article:* meta)', () => {
+      expect(html).toContain('property="og:type" content="website"');
+      expect(html).not.toContain('property="article:publisher"');
     });
   });
 

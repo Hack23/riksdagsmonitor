@@ -118,8 +118,13 @@ describe('Political Intelligence HTML Generation', () => {
           expect(html).toContain('property="og:title"');
           expect(html).toContain('property="og:url"');
           expect(html).toContain('name="twitter:card"');
-          expect(html).toContain('"@type": "CollectionPage"');
-          expect(html).toContain('"@type": "BreadcrumbList"');
+          // Unified chrome embeds JSON-LD via `JSON.stringify(blob)` (no
+          // pretty-print), so `@type` keys have no space after the colon.
+          expect(html).toContain('"@type":"CollectionPage"');
+          expect(html).toContain('"@type":"BreadcrumbList"');
+          // Parity with article + sitemap + news-index renderers.
+          expect(html).toContain('"@type":"Organization"');
+          expect(html).toContain('"@type":"WebSite"');
         });
 
         it('includes methodology, template, and daily sections', () => {
@@ -150,8 +155,23 @@ describe('Political Intelligence HTML Generation', () => {
 
         it('renders a skip-link, semantic main, and ARIA-labelled TOC', () => {
           expect(html).toContain('class="skip-link"');
-          expect(html).toContain('id="main-content"');
+          // Unified chrome (render-lib/chrome.ts) targets `#main`.
+          expect(html).toContain('href="#main"');
+          expect(html).toContain('id="main"');
           expect(html).toContain('aria-label=');
+        });
+
+        it('uses the unified `rm-site-header` chrome with theme toggle', () => {
+          expect(html).toContain('class="rm-site-header"');
+          expect(html).toContain('id="theme-toggle"');
+          expect(html).toContain('class="rm-theme-toggle"');
+        });
+
+        it('uses the unified 3-column `rm-site-footer`', () => {
+          expect(html).toContain('class="rm-site-footer"');
+          expect(html).toContain('class="rm-footer-col rm-footer-brand"');
+          expect(html).toContain('class="rm-footer-col rm-footer-navigate"');
+          expect(html).toContain('class="rm-footer-col rm-footer-trust"');
         });
 
         it('uses localized title and subtitle from PI_TRANSLATIONS', () => {

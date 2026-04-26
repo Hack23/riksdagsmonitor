@@ -711,8 +711,10 @@ The rendering path is:
 1. Markdown contains ```` ```mermaid ```` fences.
 2. [`scripts/render-lib/markdown.ts`](scripts/render-lib/markdown.ts) rewrites them to `<pre class="mermaid">` before Markdown parsing.
 3. `rehype-sanitize` allows the `pre.mermaid` class.
-4. [`scripts/render-lib/chrome.ts`](scripts/render-lib/chrome.ts) includes `js/lib/mermaid-init.mjs`.
-5. [`js/lib/mermaid-init.mjs`](js/lib/mermaid-init.mjs) dynamically imports Mermaid `11.4.1` from the **same-origin vendored copy under `js/lib/mermaid/`**, initializes a dark theme and renders all Mermaid blocks after page load.
+4. [`scripts/render-lib/chrome.ts`](scripts/render-lib/chrome.ts) emits an inline imperative bootstrap script that injects a `<script type="module" src="/js/lib/mermaid-init.mjs">` into `<head>` at runtime. The DOM-injection pattern is intentional: it bypasses Vite's HTML/script-tag transformer so the loader and the vendored mermaid runtime are **not** bundled, hashed and re-emitted under `/assets/`. (The previous static `<script type="module" src="…mermaid-init.mjs">` pattern caused production 404s like `/assets/mermaid.esm.min-XXXX.mjs` whenever the pinned `mermaid` devDependency was upgraded between deploys, because Vite would emit a chunk hash that didn't match the file actually deployed to S3.)
+5. [`js/lib/mermaid-init.mjs`](js/lib/mermaid-init.mjs) dynamically imports Mermaid from the **same-origin vendored copy under `js/lib/mermaid/`** (resolved against its own `import.meta.url`), initializes a dark theme and renders all Mermaid blocks after page load.
+
+The same inline bootstrap also injects [`/js/back-to-top.js`](js/back-to-top.js) (module) and [`/js/theme-toggle.js`](js/theme-toggle.js) (classic, deferred) so the dark/light theme button in the rm-site-header stays functional without going through Vite's bundler. The matching anti-flash bootstrap (`html[data-theme]` set before first paint) is emitted as an inline `<script>` in `<head>` by [`renderChromeHead`](scripts/render-lib/chrome.ts).
 
 The Mermaid distribution is vendored at build time:
 

@@ -307,13 +307,14 @@ describe('Generate News Indexes', () => {
     it('should include translated Schema.org WebSite description per language', () => {
       module.generateAllIndexes();
 
-      // English index should NOT have hardcoded English-only description for all
+      // Unified chrome serialises JSON-LD via `JSON.stringify(blob)` with no
+      // pretty-print, so `@type` keys have no space after the colon.
       const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
-      expect(enContent).toContain('"inLanguage": "en"');
+      expect(enContent).toContain('"inLanguage":"en"');
 
       // German index should have German schema description
       const deContent = fs.readFileSync(path.join(NEWS_DIR, 'index_de.html'), 'utf-8');
-      expect(deContent).toContain('"inLanguage": "de"');
+      expect(deContent).toContain('"inLanguage":"de"');
       expect(deContent).toContain('Schwedische Parlaments');
     });
 
@@ -428,29 +429,68 @@ describe('Generate News Indexes', () => {
       expect(svContent).not.toContain('>🤖 AI-Disrupted News Generation<');
     });
 
-    it('should include app version in footer', () => {
+    it('should include app version marker', () => {
       module.generateAllIndexes();
 
       const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
-      expect(enContent).toMatch(/\| v\d+\.\d+\.\d+/);
+      // News-index emits an HTML-comment app-version marker immediately after
+      // the AI-newsroom section. Format: `<!-- app-version: v0.0.0 -->`.
+      expect(enContent).toMatch(/<!-- app-version: v\d+\.\d+\.\d+ -->/);
     });
 
-    it('should include disclaimer with GitHub issues link in footer', () => {
+    it('should include the unified `rm-site-footer` 3-column trust block', () => {
       module.generateAllIndexes();
 
       const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
-      expect(enContent).toContain('footer-disclaimer');
-      expect(enContent).toContain('Ongoing improvements');
-      expect(enContent).toContain('https://github.com/Hack23/riksdagsmonitor/issues');
+      // Legacy `.footer-disclaimer` row is replaced by the canonical
+      // 3-column rm-footer trust block (parity with article + sitemap + PI).
+      expect(enContent).toContain('class="rm-footer-col rm-footer-trust"');
+      expect(enContent).toContain('Trust &amp; compliance');
+      // GitHub issues link still appears via the navigate column.
+      expect(enContent).toContain('https://github.com/Hack23/riksdagsmonitor');
     });
 
-    it('should localise disclaimer for non-English languages', () => {
+    it('should localise footer brand description for non-English languages', () => {
       module.generateAllIndexes();
 
+      // The unified chrome footer description (`mainPlatformDesc`) is sourced
+      // from `LANGUAGE_META[lang].translations` so it is translated for every
+      // language. The Swedish version must therefore contain Swedish-language
+      // text in the brand column rather than English.
       const svContent = fs.readFileSync(path.join(NEWS_DIR, 'index_sv.html'), 'utf-8');
-      expect(svContent).toContain('footer-disclaimer');
-      expect(svContent).toContain('rapportera eventuella problem');
-      expect(svContent).not.toContain('>Ongoing improvements<');
+      expect(svContent).toContain('class="rm-footer-col rm-footer-brand"');
+      expect(svContent).toContain('lang="sv"');
+    });
+
+    it('should include the unified `rm-site-header` chrome with theme toggle', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('class="rm-site-header"');
+      expect(enContent).toContain('id="theme-toggle"');
+      // Legacy `.theme-toggle-btn` is replaced by `.rm-theme-toggle`.
+      expect(enContent).toContain('class="rm-theme-toggle"');
+      expect(enContent).not.toContain('class="theme-toggle-btn"');
+      // Compact <details> language switcher (replaces inline `.language-switcher`).
+      expect(enContent).toContain('class="rm-lang-switcher"');
+    });
+
+    it('should include the anti-flash inline theme bootstrap in <head>', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain("'riksdagsmonitor-theme'");
+      expect(enContent).toContain("document.documentElement.setAttribute('data-theme'");
+    });
+
+    it('should emit Organization + WebSite + ItemList + BreadcrumbList JSON-LD', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('"@type":"Organization"');
+      expect(enContent).toContain('"@type":"WebSite"');
+      expect(enContent).toContain('"@type":"ItemList"');
+      expect(enContent).toContain('"@type":"BreadcrumbList"');
+      // SearchAction (Sitelinks Searchbox) is preserved on the WebSite blob.
+      expect(enContent).toContain('"@type":"SearchAction"');
     });
   });
 

@@ -83,7 +83,7 @@ describe('Sitemap Pages', () => {
     const languages = [
       { code: 'sv', name: 'Swedish', dir: 'ltr' },
       { code: 'da', name: 'Danish', dir: 'ltr' },
-      { code: 'no', name: 'Norwegian', dir: 'ltr' },
+      { code: 'no', name: 'Norwegian', dir: 'ltr', lang: 'nb' },
       { code: 'fi', name: 'Finnish', dir: 'ltr' },
       { code: 'de', name: 'German', dir: 'ltr' },
       { code: 'fr', name: 'French', dir: 'ltr' },
@@ -96,7 +96,7 @@ describe('Sitemap Pages', () => {
       { code: 'zh', name: 'Chinese', dir: 'ltr' }
     ];
 
-    languages.forEach(({ code, name, dir }) => {
+    languages.forEach(({ code, name, dir, lang }) => {
       describe(`${name} Sitemap (${code})`, () => {
         it(`should load ${name} sitemap successfully`, () => {
           cy.visit(`/sitemap_${code}.html`);
@@ -105,7 +105,10 @@ describe('Sitemap Pages', () => {
 
         it(`should have proper lang attribute for ${name}`, () => {
           cy.visit(`/sitemap_${code}.html`);
-          cy.get('html').should('have.attr', 'lang', code);
+          // URL slug uses legacy ISO code (e.g. /sitemap_no.html) but the
+          // <html lang="…"> attribute follows BCP-47 (e.g. lang="nb" for
+          // Norwegian Bokmål). Allow per-language override.
+          cy.get('html').should('have.attr', 'lang', lang ?? code);
         });
 
         it(`should have proper dir attribute for ${name}`, () => {

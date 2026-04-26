@@ -859,6 +859,114 @@ describe('render-lib — buildChrome', () => {
       .match(/lang="[a-zA-Z-]+"/g) ?? [];
     expect(langAttrs).toHaveLength(13);
   });
+
+  it('emits a header dark/light theme toggle button (id="theme-toggle")', () => {
+    const chrome = buildChrome({
+      lang: 'en', title: 'T', description: 'd',
+      canonicalPath: 'news/x-en.html',
+    });
+    // Button lives inside the rm-site-header, not the footer.
+    expect(chrome.headerHtml).toContain('id="theme-toggle"');
+    expect(chrome.headerHtml).toContain('class="rm-theme-toggle"');
+    // Accessibility metadata required by js/theme-toggle.js for label sync.
+    expect(chrome.headerHtml).toMatch(/aria-pressed="false"/);
+    expect(chrome.headerHtml).toMatch(/data-label-dark="[^"]+"/);
+    expect(chrome.headerHtml).toMatch(/data-label-light="[^"]+"/);
+  });
+
+  it('emits the anti-flash theme bootstrap inline script in <head>', () => {
+    const head = renderChromeHead({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/x-en.html',
+    });
+    expect(head).toContain("'riksdagsmonitor-theme'");
+    expect(head).toContain("document.documentElement.setAttribute('data-theme'");
+  });
+
+  it('bootstraps mermaid + back-to-top + theme-toggle via inline DOM injection (Vite-bypass)', () => {
+    const chrome = buildChrome({
+      lang: 'en', title: 'T', description: 'd',
+      canonicalPath: 'news/x-en.html',
+    });
+    // Footer must NOT contain a <script type="module" src="…mermaid…"> tag —
+    // that pattern is what Vite tries to bundle/hash and 404s on.
+    expect(chrome.footerHtml).not.toMatch(/<script\s+type="module"\s+src="[^"]*mermaid-init\.mjs"/);
+    // Instead, the footer injects the loader at runtime via an inline
+    // imperative bootstrapper, so Vite's HTML transformer leaves it alone.
+    expect(chrome.footerHtml).toContain("'/js/lib/mermaid-init.mjs'");
+    expect(chrome.footerHtml).toContain("'/js/back-to-top.js'");
+    expect(chrome.footerHtml).toContain("'/js/theme-toggle.js'");
+  });
+
+  it('renders a custom breadcrumb when `breadcrumb` is supplied (skips the legacy 3-tier default)', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'Sitemap',
+      description: 'd',
+      canonicalPath: 'sitemap.html',
+      breadcrumb: [
+        { label: 'Home', href: 'index.html' },
+        { label: 'Sitemap' },
+      ],
+    });
+    // Last item has aria-current and no <a>
+    expect(chrome.headerHtml).toMatch(/<li aria-current="page">Sitemap<\/li>/);
+    // Penultimate item is a link
+    expect(chrome.headerHtml).toMatch(/<li><a href="index\.html">Home<\/a><\/li>/);
+    // Legacy "Political Intelligence" middle node must NOT be present in the breadcrumb
+    const breadcrumbBlock =
+      chrome.headerHtml.match(/<nav class="rm-breadcrumb"[\s\S]*?<\/nav>/)?.[0] ?? '';
+    expect(breadcrumbBlock).not.toMatch(/Political Intelligence/);
+  });
+
+  it('uses `defaultAlternateBase` for the lang-switcher fallback hrefs', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'Sitemap',
+      description: 'd',
+      canonicalPath: 'sitemap.html',
+      defaultAlternateBase: 'sitemap.html',
+    });
+    // SV alternate should fall back to sitemap_sv.html, not index_sv.html
+    expect(chrome.headerHtml).toContain('href="sitemap_sv.html"');
+    expect(chrome.footerHtml).toContain('href="sitemap_sv.html"');
+    // No accidental fallback to the default index_sv.html in the lang switcher
+    const dropdown = chrome.headerHtml.split('rm-lang-switcher-dropdown')[1] ?? '';
+    expect(dropdown).not.toContain('href="index_sv.html"');
+  });
+});
+
+describe('render-lib — renderChromeHead `ogType`', () => {
+  it('defaults to og:type="article" and emits the article:* meta block', () => {
+    const head = renderChromeHead({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/x.html',
+    });
+    expect(head).toContain('property="og:type" content="article"');
+    expect(head).toContain('property="article:publisher"');
+    expect(head).toContain('property="article:section"');
+    expect(head).toContain('property="article:modified_time"');
+    expect(head).toContain('property="article:published_time"');
+  });
+
+  it('switches to og:type="website" and suppresses the article:* meta block when `ogType: "website"`', () => {
+    const head = renderChromeHead({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'sitemap.html',
+      ogType: 'website',
+    });
+    expect(head).toContain('property="og:type" content="website"');
+    expect(head).not.toContain('property="article:publisher"');
+    expect(head).not.toContain('property="article:section"');
+    expect(head).not.toContain('property="article:modified_time"');
+    expect(head).not.toContain('property="article:published_time"');
+  });
 });
 
 // ---------------------------------------------------------------------------
