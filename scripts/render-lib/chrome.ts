@@ -368,7 +368,7 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
         // than an `<a href="#">` so we avoid (a) a stray fragment navigation
         // that scrolls to the page top and (b) advertising a `hreflang`
         // whose destination doesn't actually point at the alternate.
-        return `      <span class="lang-link active" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}" aria-current="true"><span aria-hidden="true">${lm.flag}</span> ${escapeHtml(lm.nativeName)}</span>`;
+        return `      <span class="lang-link active" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}" aria-current="page"><span aria-hidden="true">${lm.flag}</span> ${escapeHtml(lm.nativeName)}</span>`;
       }
       const href = `${prefix}${opts.hreflangAlternates?.[l] ?? fallbackAltHref(l)}`;
       return `      <a href="${href}" class="lang-link" hreflang="${lm.hreflang}" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}"><span aria-hidden="true">${lm.flag}</span> ${escapeHtml(lm.nativeName)}</a>`;
@@ -380,7 +380,7 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
     <header class="rm-site-header" role="banner">
       <div class="rm-site-header-inner">
         <a class="rm-logo" href="${prefix}${indexFile}" aria-label="Riksdagsmonitor ${escapeHtml(t.home)}">
-          <img class="rm-logo-img" src="${prefix}images/riksdagsmonitor-logo.webp" alt="" width="40" height="40" loading="eager" decoding="async" onload="this.parentNode&amp;&amp;this.parentNode.classList.add('rm-logo-img-loaded')">
+          <img class="rm-logo-img" data-rm-logo-img="true" src="${prefix}images/riksdagsmonitor-logo.webp" alt="" width="40" height="40" loading="eager" decoding="async">
           <span class="rm-logo-glyph" aria-hidden="true">🇸🇪</span>
           <span class="rm-logo-text">
             <span class="rm-logo-brand">Riksdagsmonitor</span>

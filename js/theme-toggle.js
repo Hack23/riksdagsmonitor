@@ -84,3 +84,38 @@
     }, 350);
   });
 }());
+
+/**
+ * Brand-logo bitmap fallback bootstrap.
+ *
+ * The header brand row renders an `<img class="rm-logo-img" data-rm-logo-img>`
+ * stacked over a `🇸🇪` flag glyph fallback. When the bitmap loads
+ * successfully we add `.rm-logo-img-loaded` to the parent `<a class="rm-logo">`
+ * so the CSS rule `.rm-logo.rm-logo-img-loaded > .rm-logo-glyph { display: none }`
+ * can hide the glyph. If the image errors (network failure, CDN block,
+ * future asset removal) the class is never set and the emoji remains
+ * visible — no broken-image icon, no collapsed brand row.
+ *
+ * Done in JS rather than via inline `onload=` so the chrome stays free of
+ * inline scripting and we keep the option of tightening CSP in the future.
+ */
+(function () {
+  if (typeof document === 'undefined') return;
+  var imgs = document.querySelectorAll('img[data-rm-logo-img]');
+  for (var i = 0; i < imgs.length; i++) {
+    (function (img) {
+      function markLoaded() {
+        var parent = img.parentNode;
+        if (parent && parent.classList) {
+          parent.classList.add('rm-logo-img-loaded');
+        }
+      }
+      // Image may already be cached/decoded by the time this runs.
+      if (img.complete && img.naturalWidth > 0) {
+        markLoaded();
+      } else {
+        img.addEventListener('load', markLoaded, { once: true });
+      }
+    })(imgs[i]);
+  }
+}());

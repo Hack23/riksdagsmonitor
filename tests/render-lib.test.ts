@@ -782,6 +782,56 @@ describe('render-lib — buildChrome', () => {
     expect(dropdown).not.toMatch(/>\s*English\s*</);
   });
 
+  it('appends bodyClass to the <body> class list', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/index.html',
+      bodyClass: 'news-page',
+    });
+    // Always retains the base `rm-article-body` class …
+    expect(chrome.headerHtml).toMatch(/<body class="rm-article-body news-page">/);
+  });
+
+  it('omits bodyClass when not supplied (only base class on <body>)', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/index.html',
+    });
+    expect(chrome.headerHtml).toMatch(/<body class="rm-article-body">/);
+    expect(chrome.headerHtml).not.toMatch(/<body class="rm-article-body /);
+  });
+
+  it('renders the always-visible horizontal language bar by default', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/x-en.html',
+    });
+    expect(chrome.headerHtml).toMatch(/<nav class="language-switcher rm-lang-bar"/);
+    // Current language is rendered as a non-interactive <span> with
+    // aria-current="page" rather than an `<a href="#">`.
+    expect(chrome.headerHtml).toMatch(/<span class="lang-link active"[^>]*aria-current="page"/);
+  });
+
+  it('suppresses the horizontal language bar when languageBar is false', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/x-en.html',
+      languageBar: false,
+    });
+    expect(chrome.headerHtml).not.toMatch(/rm-lang-bar/);
+    // The compact <details> dropdown is still rendered — only the
+    // horizontal row is gated by `languageBar`.
+    expect(chrome.headerHtml).toMatch(/rm-lang-switcher-dropdown/);
+  });
+
   it('computes the depth-prefix ../ correctly for nested canonical paths', () => {
     const shallow = buildChrome({
       lang: 'en', title: 'T', description: 'd',
