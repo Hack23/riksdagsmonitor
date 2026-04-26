@@ -342,6 +342,6 @@ All work operates under [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBL
 
 - **Contract** → [`.github/prompts/README.md`](../prompts/README.md) (role, shell, MCP, download, analysis, gate, article, commit).
 - **Analysis product** → [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md) + [`analysis/templates/`](../../analysis/templates/). Every news article MUST be preceded by 9 core artifacts (14 for Tier-C aggregation) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. [`05-analysis-gate.md`](../prompts/05-analysis-gate.md) is the single blocking gate.
-- **gh-aw v0.69.3** — [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
+- **gh-aw v0.71.1** — [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
 
 - **IMF in product analysis** — when triaging articles or workflows, verify IMF-first citation; open issues for WB economic codes (`NY.GDP.*`, `FP.CPI.*`, `SL.UEM.*`, `GC.DOD.TOTL.*`) used as primary citation. Track IMF coverage as a quality metric. IMF is the **primary economic-data source**; WB residue only. Hub: [`analysis/imf/`](../../analysis/imf/) · contract [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) v2.1.

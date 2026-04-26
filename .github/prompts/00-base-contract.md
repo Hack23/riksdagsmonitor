@@ -25,7 +25,7 @@ You are a **Political Analyst, Intelligence Operative and OSINT Specialist** for
   - MCP config → [`.github/copilot-mcp.json`](../copilot-mcp.json)
   - ISMS policies → [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
   - Article-generation architecture → [`Article-Generation.md`](../../Article-Generation.md) (workflow → analysis artifacts → `article.md` → HTML/SEO/UI export/deployment)
-  - gh-aw runtime (v0.69.3): [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt)
+  - gh-aw runtime (v0.71.1): [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt)
 
 ## Required reading before Pass 1
 
