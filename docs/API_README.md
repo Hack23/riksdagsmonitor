@@ -31,8 +31,6 @@ These two pages are the canonical entry points for OSINT analysts, journalists, 
 
 Shared types, theme system, and dashboard utilities are published as an npm package with provenance:
 
-Shared types, theme system, and dashboard utilities are published as an npm package with provenance:
-
 ```bash
 npm install riksdagsmonitor
 ```

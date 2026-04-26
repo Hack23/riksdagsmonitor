@@ -33,7 +33,7 @@ This is the **only** gate separating analysis from article generation. If it fai
 
 ## Implementation
 
-No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–8):
+No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–9, with check 9 conditional where applicable):
 
 ```bash
 set -Eeuo pipefail
