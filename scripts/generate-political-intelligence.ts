@@ -26,6 +26,7 @@ import { fileURLToPath } from 'url';
 
 import type { Language } from './types/language.js';
 import { LANGUAGE_META, escapeHtml } from './generate-sitemap-html.js';
+import { buildChrome } from './render-lib/chrome.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1895,18 +1896,7 @@ function artifactIcon(file: string): string {
   return '📄';
 }
 
-function renderHreflangTags(current: Language): string {
-  return LANGUAGES.map((l) => {
-    const href = l === 'en' ? 'political-intelligence.html' : `political-intelligence_${l}.html`;
-    return `    <link rel="alternate" hreflang="${hreflangCodeOf(l)}" href="${BASE_URL}/${href}">`;
-  }).concat([
-    `    <link rel="alternate" hreflang="x-default" href="${BASE_URL}/political-intelligence.html">`,
-    `    <link rel="canonical" href="${BASE_URL}/${current === 'en' ? 'political-intelligence.html' : `political-intelligence_${current}.html`}">`,
-  ]).join('\n');
-}
-
 function generatePoliticalIntelligenceHtml(lang: Language): string {
-  const meta = LANGUAGE_META[lang];
   const t = PI_TRANSLATIONS[lang];
   const isEnglish = lang === 'en';
   const selfFile = isEnglish ? 'political-intelligence.html' : `political-intelligence_${lang}.html`;
@@ -1927,21 +1917,12 @@ function generatePoliticalIntelligenceHtml(lang: Language): string {
   const recentDaysHtml = recentDays.map((d) => renderDailyDay(d, t, lang)).join('\n');
   const olderDaysHtml = olderDays.map((d) => renderDailyDay(d, t, lang)).join('\n');
 
-  const otherLangLinks = LANGUAGES
-    .filter((l) => l !== lang)
-    .map((l) => {
-      const lm = LANGUAGE_META[l];
-      const href = l === 'en' ? 'political-intelligence.html' : `political-intelligence_${l}.html`;
-      return `        <a href="${href}" lang="${hreflangCodeOf(l)}" title="${escapeHtml(lm.nativeName)}"><span aria-hidden="true">${lm.flag}</span> ${lm.nativeName}</a>`;
-    })
-    .join('\n');
-
   // Latest analysis date — used as `dateModified` for SEO/JSON-LD; falls back
   // to today when no daily artifacts have been generated yet.
   const latestDate = days[0]?.date ?? new Date().toISOString().slice(0, 10);
   const buildIso = new Date().toISOString();
 
-  const jsonLd = {
+  const collectionPageLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: `${t.title} — Riksdagsmonitor`,
@@ -1953,19 +1934,10 @@ function generatePoliticalIntelligenceHtml(lang: Language): string {
     mainEntityOfPage: `${BASE_URL}/${selfFile}`,
     dateModified: latestDate,
     dateCreated: '2026-04-01',
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'Riksdagsmonitor',
-      url: BASE_URL,
-    },
+    isPartOf: { '@type': 'WebSite', name: 'Riksdagsmonitor', url: BASE_URL },
     publisher: {
-      '@type': 'Organization',
-      name: 'Hack23 AB',
-      url: 'https://www.hack23.com',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${BASE_URL}/images/logo.png`,
-      },
+      '@type': 'Organization', name: 'Hack23 AB', url: 'https://www.hack23.com',
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/logo.png` },
     },
     about: [
       { '@type': 'Thing', name: 'Swedish Parliament political intelligence' },
@@ -1973,28 +1945,12 @@ function generatePoliticalIntelligenceHtml(lang: Language): string {
       { '@type': 'Thing', name: 'Political risk assessment' },
     ],
     hasPart: [
-      {
-        '@type': 'CreativeWork',
-        name: t.methodologies,
-        url: `${GITHUB_TREE}/analysis/methodologies`,
-        description: t.methodologiesDesc,
-      },
-      {
-        '@type': 'CreativeWork',
-        name: t.templates,
-        url: `${GITHUB_TREE}/analysis/templates`,
-        description: t.templatesDesc,
-      },
-      {
-        '@type': 'Dataset',
-        name: t.dailyArtifacts,
-        url: `${GITHUB_TREE}/analysis/daily`,
-        description: t.dailyArtifactsDesc,
-      },
+      { '@type': 'CreativeWork', name: t.methodologies, url: `${GITHUB_TREE}/analysis/methodologies`, description: t.methodologiesDesc },
+      { '@type': 'CreativeWork', name: t.templates, url: `${GITHUB_TREE}/analysis/templates`, description: t.templatesDesc },
+      { '@type': 'Dataset', name: t.dailyArtifacts, url: `${GITHUB_TREE}/analysis/daily`, description: t.dailyArtifactsDesc },
     ],
   };
 
-  // Detailed `ItemList` of recent days for richer search-engine results.
   const recentDaysItemList = recentDays.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -2002,10 +1958,7 @@ function generatePoliticalIntelligenceHtml(lang: Language): string {
     numberOfItems: recentDays.length,
     itemListOrder: 'https://schema.org/ItemListOrderDescending',
     itemListElement: recentDays.map((d, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      name: d.date,
-      url: d.githubUrl,
+      '@type': 'ListItem', position: i + 1, name: d.date, url: d.githubUrl,
     })),
   } : null;
 
@@ -2018,81 +1971,45 @@ function generatePoliticalIntelligenceHtml(lang: Language): string {
     ],
   };
 
-  return `<!DOCTYPE html>
-<html lang="${hreflangCodeOf(lang)}" dir="${meta.dir}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${escapeHtml(t.title)} — Riksdagsmonitor</title>
-    <meta name="description" content="${escapeHtml(t.metaDescription)}">
-    <meta name="keywords" content="${escapeHtml(t.metaKeywords)}">
-    <meta name="news_keywords" content="${escapeHtml(t.metaKeywords)}">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="author" content="James Pether Sörling, CISSP, CISM">
-    <meta name="publisher" content="Hack23 AB">
-    <meta name="theme-color" content="#0a0e27">
-    <meta name="color-scheme" content="dark light">
-    <meta name="generator" content="riksdagsmonitor:scripts/generate-political-intelligence.ts">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Language" content="${hreflangCodeOf(lang)}">
+  // Organization + WebSite — emitted on every top-level page so structured
+  // data parity with the article + sitemap + news-index renderers.
+  const organizationLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Hack23 AB',
+    url: 'https://www.hack23.com',
+    logo: `${BASE_URL}/images/android-chrome-512x512.png`,
+  };
+  const websiteLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Riksdagsmonitor',
+    url: BASE_URL,
+    description: 'Swedish Parliament Intelligence Platform - Real-time monitoring, coalition predictions, and comprehensive political analysis',
+    inLanguage: ['en', 'sv', 'da', 'nb', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'],
+    publisher: { '@type': 'Organization', name: 'Hack23 AB', url: 'https://www.hack23.com' },
+  };
 
-    <!-- Performance hints: preconnect to outbound link targets -->
-    <link rel="preconnect" href="https://github.com" crossorigin>
-    <link rel="dns-prefetch" href="https://github.com">
-    <link rel="preconnect" href="https://www.hack23.com" crossorigin>
+  const jsonLd: unknown[] = [
+    organizationLd,
+    websiteLd,
+    collectionPageLd,
+    breadcrumbLd,
+  ];
+  if (recentDaysItemList) jsonLd.push(recentDaysItemList);
 
-    <link rel="stylesheet" type="text/css" href="styles.css">
+  // Per-language alternates for hreflang — each language has its own
+  // political-intelligence_${lang}.html sibling.
+  const hreflangAlternates: Partial<Record<Language, string>> = {};
+  for (const l of LANGUAGES) {
+    hreflangAlternates[l] = l === 'en' ? 'political-intelligence.html' : `political-intelligence_${l}.html`;
+  }
 
-    <!-- Hreflang + canonical -->
-${renderHreflangTags(lang)}
-
-    <!-- Sitemap + RSS feed -->
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-    <link rel="alternate" type="application/rss+xml" title="Riksdagsmonitor news (English)" href="/rss/news.xml">
-    <link rel="alternate" type="application/rss+xml" title="Riksdagsmonitor news (${escapeHtml(meta.nativeName)})" href="/rss/news_${lang}.xml">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Riksdagsmonitor">
-    <meta property="og:title" content="${escapeHtml(t.title)} — Riksdagsmonitor">
-    <meta property="og:description" content="${escapeHtml(t.metaDescription)}">
-    <meta property="og:url" content="${BASE_URL}/${selfFile}">
-    <meta property="og:locale" content="${meta.locale}">
-${LANGUAGES.filter((l) => l !== lang).map((l) => `    <meta property="og:locale:alternate" content="${LANGUAGE_META[l].locale}">`).join('\n')}
-    <meta property="og:image" content="${BASE_URL}/images/og-image.webp">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Riksdagsmonitor ${escapeHtml(t.title)}">
-    <meta property="og:updated_time" content="${buildIso}">
-
-    <!-- Article (collection-page) extras -->
-    <meta property="article:publisher" content="https://www.hack23.com">
-    <meta property="article:section" content="${escapeHtml(t.title)}">
-    <meta property="article:modified_time" content="${buildIso}">
-    <meta property="article:published_time" content="${latestDate}T00:00:00Z">
-${(t.metaKeywords ?? '').split(',').slice(0, 8).map((k) => `    <meta property="article:tag" content="${escapeHtml(k.trim())}">`).join('\n')}
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@riksdagsmonitor">
-    <meta name="twitter:creator" content="@hack23ab">
-    <meta name="twitter:title" content="${escapeHtml(t.title)} — Riksdagsmonitor">
-    <meta name="twitter:description" content="${escapeHtml(t.metaDescription)}">
-    <meta name="twitter:image" content="${BASE_URL}/images/og-image.webp">
-    <meta name="twitter:image:alt" content="Riksdagsmonitor ${escapeHtml(t.title)}">
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" href="/favicon.ico" sizes="48x48">
-    <link rel="manifest" href="/site.webmanifest">
-
-    <style>
+  // Page-specific styles — kept inline for the rich PI dashboard layout
+  // (hero, TOC, cards, day grids). Chrome owns header/footer styling.
+  const extraStyle = `
         .pi-container { max-width: 1280px; margin: 0 auto; padding: 2rem 1rem 4rem; }
-        .pi-hero {
+        .pi-page-hero {
             text-align: center;
             padding: 3rem 1rem;
             margin-bottom: 2.5rem;
@@ -2100,20 +2017,20 @@ ${(t.metaKeywords ?? '').split(',').slice(0, 8).map((k) => `    <meta property="
             border: 1px solid rgba(0, 217, 255, 0.25);
             border-radius: 12px;
         }
-        .pi-hero h1 {
+        .pi-page-hero h1 {
             font-family: var(--font-heading, 'Orbitron', sans-serif);
             color: var(--primary-cyan, #00d9ff);
             font-size: clamp(2rem, 4.5vw, 3.25rem);
             margin: 0 0 0.5rem;
             letter-spacing: 0.02em;
         }
-        .pi-hero p.pi-subtitle {
+        .pi-page-hero p.pi-subtitle {
             color: var(--primary-yellow, #ffbe0b);
             font-size: clamp(1rem, 2vw, 1.25rem);
             margin: 0.25rem 0 1rem;
             font-weight: 500;
         }
-        .pi-hero p.pi-intro {
+        .pi-page-hero p.pi-intro {
             color: var(--light-text, #e0e0e0);
             max-width: 900px;
             margin: 1rem auto 0;
@@ -2228,39 +2145,40 @@ ${(t.metaKeywords ?? '').split(',').slice(0, 8).map((k) => `    <meta property="
         .pi-older-toggle:hover, .pi-older-toggle:focus { background: rgba(0, 217, 255, 0.06); }
         .pi-older-content[hidden] { display: none; }
 
-        .pi-other-langs { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 2rem; }
-        .pi-other-langs a { padding: 0.5rem 0.8rem; border: 1px solid rgba(0, 217, 255, 0.3); border-radius: 999px; color: var(--primary-cyan, #00d9ff); text-decoration: none; font-size: 0.9rem; }
-        .pi-other-langs a:hover, .pi-other-langs a:focus { background: rgba(0, 217, 255, 0.08); text-decoration: underline; }
-
         @media (max-width: 640px) {
             .pi-container { padding: 1rem 0.5rem 3rem; }
-            .pi-hero { padding: 2rem 0.75rem; }
+            .pi-page-hero { padding: 2rem 0.75rem; }
             .pi-grid { grid-template-columns: 1fr; }
             .pi-streams { grid-template-columns: 1fr; }
         }
 
         [dir="rtl"] .pi-day-github { margin-left: 0; margin-right: auto; }
         [dir="rtl"] .toc-nav { border-left: none; border-right: 4px solid var(--primary-cyan, #00d9ff); }
-    </style>
+`;
 
-    <script type="application/ld+json">
-${JSON.stringify(jsonLd, null, 2)}
-    </script>
-    <script type="application/ld+json">
-${JSON.stringify(breadcrumbLd, null, 2)}
-    </script>${recentDaysItemList ? `
-    <script type="application/ld+json">
-${JSON.stringify(recentDaysItemList, null, 2)}
-    </script>` : ''}
-</head>
-<body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+  const chrome = buildChrome({
+    lang,
+    title: t.title,
+    description: t.metaDescription,
+    keywords: t.metaKeywords,
+    canonicalPath: selfFile,
+    hreflangAlternates,
+    defaultAlternateBase: 'political-intelligence.html',
+    ogType: 'website',
+    section: t.title,
+    publishedIso: `${latestDate}T00:00:00Z`,
+    modifiedIso: buildIso,
+    rssHref: lang === 'en' ? '/rss/news.xml' : `/rss/news_${lang}.xml`,
+    breadcrumb: [
+      { label: t.home, href: indexFile },
+      { label: t.title },
+    ],
+    jsonLd,
+    extraStyle,
+  });
 
-    <div class="pi-container">
-        <header class="pi-hero">
-            <a href="/${indexFile}" aria-label="Riksdagsmonitor Home">
-                <img src="/images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" style="display:block;max-width:100px;height:auto;margin:0 auto 0.75rem" width="100" height="100" loading="eager">
-            </a>
+  const body = `    <div class="pi-container">
+        <header class="pi-page-hero">
             <h1><span aria-hidden="true">🧠</span> ${escapeHtml(t.title)}</h1>
             <p class="pi-subtitle">${escapeHtml(t.subtitle)}</p>
             <p class="pi-intro">${escapeHtml(t.intro)}</p>
@@ -2282,60 +2200,51 @@ ${JSON.stringify(recentDaysItemList, null, 2)}
             </ul>
         </nav>
 
-        <main id="main-content">
-            <section id="methodologies" class="pi-section">
-                <div class="pi-section-header">
-                    <h2><span aria-hidden="true">📚</span> ${escapeHtml(t.methodologies)}</h2>
-                    <span class="pi-section-link"><a href="${GITHUB_TREE}/analysis/methodologies" target="_blank" rel="noopener noreferrer">${escapeHtml(t.browseDirectoryOnGithub)} <span aria-hidden="true">↗</span></a></span>
-                </div>
-                <p class="pi-section-desc">${escapeHtml(t.methodologiesDesc)}</p>
-                <div class="pi-grid">
+        <section id="methodologies" class="pi-section">
+            <div class="pi-section-header">
+                <h2><span aria-hidden="true">📚</span> ${escapeHtml(t.methodologies)}</h2>
+                <span class="pi-section-link"><a href="${GITHUB_TREE}/analysis/methodologies" target="_blank" rel="noopener noreferrer">${escapeHtml(t.browseDirectoryOnGithub)} <span aria-hidden="true">↗</span></a></span>
+            </div>
+            <p class="pi-section-desc">${escapeHtml(t.methodologiesDesc)}</p>
+            <div class="pi-grid">
 ${methodologyCardsHtml}
-                </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="templates" class="pi-section">
-                <div class="pi-section-header">
-                    <h2><span aria-hidden="true">📋</span> ${escapeHtml(t.templates)}</h2>
-                    <span class="pi-section-link"><a href="${GITHUB_TREE}/analysis/templates" target="_blank" rel="noopener noreferrer">${escapeHtml(t.browseDirectoryOnGithub)} <span aria-hidden="true">↗</span></a></span>
-                </div>
-                <p class="pi-section-desc">${escapeHtml(t.templatesDesc)}</p>
-                <div class="pi-grid">
+        <section id="templates" class="pi-section">
+            <div class="pi-section-header">
+                <h2><span aria-hidden="true">📋</span> ${escapeHtml(t.templates)}</h2>
+                <span class="pi-section-link"><a href="${GITHUB_TREE}/analysis/templates" target="_blank" rel="noopener noreferrer">${escapeHtml(t.browseDirectoryOnGithub)} <span aria-hidden="true">↗</span></a></span>
+            </div>
+            <p class="pi-section-desc">${escapeHtml(t.templatesDesc)}</p>
+            <div class="pi-grid">
 ${templateCardsHtml}
-                </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="daily" class="pi-section">
-                <div class="pi-section-header">
-                    <h2><span aria-hidden="true">📅</span> ${escapeHtml(t.dailyArtifacts)}</h2>
-                    <span class="pi-section-link"><a href="${GITHUB_TREE}/analysis/daily" target="_blank" rel="noopener noreferrer">${escapeHtml(t.browseAllDays)} <span aria-hidden="true">↗</span></a></span>
-                </div>
-                <p class="pi-section-desc">${escapeHtml(t.dailyArtifactsDesc)}</p>
+        <section id="daily" class="pi-section">
+            <div class="pi-section-header">
+                <h2><span aria-hidden="true">📅</span> ${escapeHtml(t.dailyArtifacts)}</h2>
+                <span class="pi-section-link"><a href="${GITHUB_TREE}/analysis/daily" target="_blank" rel="noopener noreferrer">${escapeHtml(t.browseAllDays)} <span aria-hidden="true">↗</span></a></span>
+            </div>
+            <p class="pi-section-desc">${escapeHtml(t.dailyArtifactsDesc)}</p>
 
-                <h3 style="font-family: var(--font-heading, 'Orbitron', sans-serif); color: var(--primary-yellow, #ffbe0b); font-size: 1.1rem; margin-top: 1.5rem;">${escapeHtml(t.recentDays)}</h3>
+            <h3 style="font-family: var(--font-heading, 'Orbitron', sans-serif); color: var(--primary-yellow, #ffbe0b); font-size: 1.1rem; margin-top: 1.5rem;">${escapeHtml(t.recentDays)}</h3>
 ${recentDaysHtml}
 ${olderDays.length > 0 ? `
-                <button type="button" class="pi-older-toggle" aria-expanded="false" aria-controls="pi-older-days" onclick="(function(b){var el=document.getElementById('pi-older-days');var exp=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',(!exp).toString());if(exp){el.setAttribute('hidden','');}else{el.removeAttribute('hidden');}})(this)">
-                    <span aria-hidden="true">🕰️</span> ${escapeHtml(t.olderDays)} (${olderDays.length}) — ${escapeHtml(t.showMore)}
-                </button>
-                <div id="pi-older-days" class="pi-older-content" hidden>
+            <button type="button" class="pi-older-toggle" aria-expanded="false" aria-controls="pi-older-days" onclick="(function(b){var el=document.getElementById('pi-older-days');var exp=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',(!exp).toString());if(exp){el.setAttribute('hidden','');}else{el.removeAttribute('hidden');}})(this)">
+                <span aria-hidden="true">🕰️</span> ${escapeHtml(t.olderDays)} (${olderDays.length}) — ${escapeHtml(t.showMore)}
+            </button>
+            <div id="pi-older-days" class="pi-older-content" hidden>
 ${olderDaysHtml}
-                </div>` : ''}
-            </section>
-        </main>
+            </div>` : ''}
+        </section>
+    </div>`;
 
-        <nav class="pi-other-langs" aria-label="Other languages">
-${otherLangLinks}
-        </nav>
-
-        <footer style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--primary-cyan, #00d9ff); color: var(--muted-text, #a0a3bd);">
-            <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary-cyan, #00d9ff);">Hack23 AB</a> |
-            <a href="/${indexFile}" style="color: var(--primary-cyan, #00d9ff);">${escapeHtml(t.home)}</a> ·
-            <a href="/${sitemapFile}" style="color: var(--primary-cyan, #00d9ff);">${escapeHtml(t.sitemap)}</a></p>
-        </footer>
-    </div>
-</body>
-</html>`;
+  return `${chrome.head}
+${chrome.headerHtml}
+${body}
+${chrome.footerHtml}`;
 }
 
 // ---------------------------------------------------------------------------
