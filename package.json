@@ -51,7 +51,7 @@
     "dev": "vite",
     "predev": "npx tsx scripts/copy-vendor-mermaid.ts --quiet",
     "copy-vendor": "npx tsx scripts/copy-vendor-mermaid.ts",
-    "prebuild": "npx tsx scripts/copy-vendor-mermaid.ts --quiet && npx tsx scripts/aggregate-analysis.ts --all --quiet && npx tsx scripts/render-articles.ts --all --lang en,sv --quiet && npx tsx scripts/generate-news-indexes/index.ts && npx tsx scripts/extract-news-metadata.ts && npx tsx scripts/generate-sitemap-html.ts && npx tsx scripts/generate-political-intelligence.ts && npx tsx scripts/generate-rss.ts && npx tsx scripts/generate-sitemap.ts",
+    "prebuild": "npx tsx scripts/copy-vendor-mermaid.ts --quiet && npx tsx scripts/aggregate-analysis.ts --all --quiet && npx tsx scripts/render-articles.ts --all --lang en,sv --quiet && npx tsx scripts/generate-news-indexes/index.ts && npx tsx scripts/extract-news-metadata.ts && npx tsx scripts/generate-sitemap-html.ts && npx tsx scripts/generate-political-intelligence.ts && npx tsx scripts/generate-rss.ts && npx tsx scripts/generate-sitemap.ts && npx tsx scripts/normalize-static-html-chrome.ts && npx tsx scripts/backfill-translated-chrome.ts",
     "build": "vite build",
     "build:lib": "tsc -p tsconfig.lib.json && tsc -p tsconfig.npm-scripts.json",
     "postbuild": "cp rss.xml dist/rss.xml && cp sitemap.xml dist/sitemap.xml && cp -r cia-data dist/cia-data",

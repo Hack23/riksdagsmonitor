@@ -53,6 +53,60 @@ export interface RenderArticleInput {
   readonly artifactsUsed?: readonly string[];
 }
 
+const ARTICLE_TYPE_LABELS: Record<string, string> = {
+  propositions: 'Government propositions',
+  'committee-reports': 'Committee reports',
+  committeeReports: 'Committee reports',
+  motions: 'Opposition motions',
+  interpellations: 'Interpellations',
+  'evening-analysis': 'Evening analysis',
+  'week-ahead': 'Week ahead',
+  'month-ahead': 'Month ahead',
+  'weekly-review': 'Weekly review',
+  'monthly-review': 'Monthly review',
+  'deep-inspection': 'Deep inspection',
+  realtime: 'Realtime pulse',
+  'realtime-pulse': 'Realtime pulse',
+  breaking: 'Breaking intelligence',
+  'parliament-agenda': 'Parliament agenda',
+};
+
+function normalizeArticleType(value: string): string {
+  return value
+    .replace(/committeeReports/g, 'committee-reports')
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/[^a-zA-Z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .toLowerCase();
+}
+
+function inferArticleType(canonicalPath: string, title: string): { type: string; label: string } {
+  const source = `${canonicalPath} ${title}`.toLowerCase();
+  const candidates = [
+    'propositions',
+    'committee-reports',
+    'committeeReports',
+    'motions',
+    'interpellations',
+    'evening-analysis',
+    'week-ahead',
+    'month-ahead',
+    'weekly-review',
+    'monthly-review',
+    'deep-inspection',
+    'realtime-pulse',
+    'realtime',
+    'breaking',
+    'parliament-agenda',
+  ];
+  const match = candidates.find((candidate) => source.includes(candidate.toLowerCase()));
+  const type = normalizeArticleType(match ?? 'political-intelligence');
+  return {
+    type,
+    label: ARTICLE_TYPE_LABELS[match ?? type] ?? 'Political intelligence',
+  };
+}
+
 export async function renderArticleHtml(input: RenderArticleInput): Promise<string> {
   const parsed = matter(input.markdown);
   const fm = parsed.data as Record<string, unknown>;
@@ -69,6 +123,7 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
   }
   const publishedIso = `${date}T00:00:00Z`;
   const modifiedIso = new Date().toISOString();
+  const articleType = inferArticleType(input.canonicalPath, title);
 
   const bodyHtml = await renderMarkdownToHtml(parsed.content);
 
@@ -134,8 +189,9 @@ ${sourcesList}
 
   return `${chrome.head}
 ${chrome.headerHtml}
-      <article class="rm-article" lang="${LANGUAGE_META[input.lang].hreflang}">
+      <article class="rm-article rm-article-type-${escapeHtml(articleType.type)}" data-article-type="${escapeHtml(articleType.type)}" lang="${LANGUAGE_META[input.lang].hreflang}">
         <header class="rm-article-header">
+          <p class="rm-article-eyebrow">${escapeHtml(articleType.label)}</p>
           <h1>${escapeHtml(title)}</h1>
           <p class="rm-article-dek">${escapeHtml(description)}</p>
           <p class="rm-article-meta">
