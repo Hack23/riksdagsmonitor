@@ -46,6 +46,7 @@ import {
   GITHUB_TREE,
   LANGUAGES,
 } from './constants.js';
+import { chromeStrings } from './chrome-i18n.js';
 
 // ---------------------------------------------------------------------------
 // Options + return shape
@@ -285,6 +286,7 @@ ${opts.extraStyle ? `    <style>${opts.extraStyle}</style>` : ''}
 export function buildChrome(opts: ChromeOptions): SiteChrome {
   const meta = LANGUAGE_META[opts.lang];
   const t = meta.translations;
+  const cs = chromeStrings(opts.lang);
   const prefix = depth(opts.canonicalPath);
   const indexFile = opts.lang === 'en' ? 'index.html' : `index_${opts.lang}.html`;
   const sitemapFile = opts.lang === 'en' ? 'sitemap.html' : `sitemap_${opts.lang}.html`;
@@ -346,7 +348,7 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
   // used by individual articles.
   const breadcrumbItems: readonly BreadcrumbItem[] = opts.breadcrumb ?? [
     { label: t.home, href: `${prefix}${indexFile}` },
-    { label: 'Political Intelligence', href: `${prefix}${piFile}` },
+    { label: cs.politicalIntelligence, href: `${prefix}${piFile}` },
     { label: opts.title },
   ];
   const breadcrumbLis = breadcrumbItems
@@ -381,7 +383,7 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
     .join('\n');
 
   const headerHtml = `<body class="rm-article-body${opts.bodyClass ? ' ' + escapeHtml(opts.bodyClass) : ''}">
-    <a class="skip-link" href="#main">${escapeHtml('Skip to main content')}</a>
+    <a class="skip-link" href="#main">${escapeHtml(cs.skipToMain)}</a>
     <header class="rm-site-header" role="banner">
       <div class="rm-site-header-inner">
         <a class="rm-logo" href="${prefix}${indexFile}" aria-label="Riksdagsmonitor ${escapeHtml(t.home)}">
@@ -392,16 +394,16 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
             <span class="rm-logo-tagline">${escapeHtml(tagline)}</span>
           </span>
         </a>
-        <nav class="rm-site-nav" aria-label="${escapeHtml(t.mainPlatform)}">
+        <nav class="rm-site-nav" aria-label="${escapeHtml(cs.mainNav)}">
           <a href="${prefix}${indexFile}">${escapeHtml(t.home)}</a>
-          <a href="${prefix}${newsFile}">News</a>
-          <a href="${prefix}${dashboardFile}">Dashboard</a>
-          <a href="${prefix}${piFile}">🧠 ${escapeHtml('Political Intelligence')}</a>
+          <a href="${prefix}${newsFile}">${escapeHtml(cs.news)}</a>
+          <a href="${prefix}${dashboardFile}">${escapeHtml(cs.dashboard)}</a>
+          <a href="${prefix}${piFile}">🧠 ${escapeHtml(cs.politicalIntelligence)}</a>
           <a href="${prefix}${sitemapFile}">${escapeHtml(t.siteMap)}</a>
           <a href="${apiDocsHref}">${escapeHtml(t.apiDocs)}</a>
         </nav>
         <details class="rm-lang-switcher">
-          <summary aria-label="${escapeHtml('Switch language')}">
+          <summary aria-label="${escapeHtml(cs.switchLanguage)}">
             <span aria-hidden="true">${meta.flag}</span>
             <span class="rm-lang-current-label">${escapeHtml(meta.nativeName)}</span>
             <span class="rm-lang-switcher-caret" aria-hidden="true">▾</span>
@@ -413,31 +415,31 @@ ${languageSwitcher}
         <a class="rm-header-cta rm-header-cta-transparency"
            href="${GITHUB_BLOB}/SECURITY.md"
            target="_blank" rel="noopener noreferrer"
-           title="Hack23 commitment to transparency and security"
-           aria-label="Hack23 commitment to transparency and security">
+           title="${escapeHtml(cs.transparencyTitle)}"
+           aria-label="${escapeHtml(cs.transparencyTitle)}">
           <span class="rm-header-cta-icon" aria-hidden="true">🔐</span>
-          <span class="rm-header-cta-label">${escapeHtml('Transparency &amp; Security')}</span>
+          <span class="rm-header-cta-label">${cs.transparencyLabel}</span>
         </a>
         <a class="rm-header-cta rm-header-cta-sponsor"
            href="https://github.com/sponsors/Hack23"
            target="_blank" rel="noopener noreferrer"
-           title="Become a sponsor to Hack23 on GitHub"
-           aria-label="Sponsor Hack23 on GitHub">
+           title="${escapeHtml(cs.sponsorTitle)}"
+           aria-label="${escapeHtml(cs.sponsorTitle)}">
           <span class="rm-header-cta-icon" aria-hidden="true">💖</span>
-          <span class="rm-header-cta-label">${escapeHtml('Sponsor Hack23')}</span>
+          <span class="rm-header-cta-label">${escapeHtml(cs.sponsorLabel)}</span>
         </a>
         <button id="theme-toggle" class="rm-theme-toggle" type="button"
                 aria-pressed="false"
-                aria-label="Switch theme"
-                title="Switch theme"
-                data-label-dark="Switch to light theme"
-                data-label-light="Switch to dark theme">
+                aria-label="${escapeHtml(cs.themeAria)}"
+                title="${escapeHtml(cs.themeAria)}"
+                data-label-dark="${escapeHtml(cs.themeToLight)}"
+                data-label-light="${escapeHtml(cs.themeToDark)}">
           <span class="rm-theme-toggle-icon" aria-hidden="true">🌓</span>
-          <span class="rm-theme-toggle-label">${escapeHtml('Theme')}</span>
+          <span class="rm-theme-toggle-label">${escapeHtml(cs.themeLabel)}</span>
         </button>
       </div>
-      <div class="rm-site-subnav" aria-label="Page context">
-        <nav class="rm-breadcrumb" aria-label="Breadcrumb">
+      <div class="rm-site-subnav" aria-label="${escapeHtml(cs.pageContext)}">
+        <nav class="rm-breadcrumb" aria-label="${escapeHtml(cs.breadcrumb)}">
           <ol>
 ${breadcrumbLis}
           </ol>
@@ -445,7 +447,7 @@ ${breadcrumbLis}
         ${opts.publishedIso ? `<time class="rm-article-published" datetime="${opts.publishedIso}">${opts.publishedIso.slice(0, 10)}</time>` : ''}
       </div>
     </header>${(opts.languageBar ?? true) ? `
-    <nav class="language-switcher rm-lang-bar" role="navigation" aria-label="${escapeHtml('This page in other languages')}">
+    <nav class="language-switcher rm-lang-bar" role="navigation" aria-label="${escapeHtml(cs.thisPageInOtherLanguages)}">
 ${horizontalLangBar}
     </nav>` : ''}
 ${opts.breadcrumbHtml ?? ''}
@@ -455,80 +457,80 @@ ${opts.breadcrumbHtml ?? ''}
     <footer class="rm-site-footer" role="contentinfo">
       <div class="rm-site-footer-inner">
         <section class="rm-footer-col rm-footer-brand" aria-labelledby="rm-ft-about">
-          <h2 id="rm-ft-about" class="rm-footer-heading">Riksdagsmonitor</h2>
+          <h2 id="rm-ft-about" class="rm-footer-heading">${escapeHtml(cs.footerAboutHeading)}</h2>
           <p>${escapeHtml(meta.translations.mainPlatformDesc)}</p>
-          <p>Swedish cybersecurity consultancy specializing in political transparency and open-source intelligence.</p>
+          <p>${escapeHtml(cs.footerCybersecurityTagline)}</p>
           <p class="rm-footer-attribution">
-            Powered by
-            <a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a>
-            · Built by
+            ${escapeHtml(cs.footerPoweredBy)}
+            <a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkCiaPlatform)}</a>
+            · ${escapeHtml(cs.footerBuiltBy)}
             <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a>
           </p>
-          <p class="rm-footer-updated"><small>Last updated: <time datetime="${lastUpdatedIso}">${escapeHtml(lastUpdatedDisplay)}</time></small></p>
+          <p class="rm-footer-updated"><small>${escapeHtml(cs.footerLastUpdated)} <time datetime="${lastUpdatedIso}">${escapeHtml(lastUpdatedDisplay)}</time></small></p>
         </section>
         <section class="rm-footer-col rm-footer-navigate" aria-labelledby="rm-ft-nav">
-          <h2 id="rm-ft-nav" class="rm-footer-heading">Quick Links</h2>
+          <h2 id="rm-ft-nav" class="rm-footer-heading">${escapeHtml(cs.footerQuickLinksHeading)}</h2>
           <ul>
             <li><a href="${prefix}${indexFile}">${escapeHtml(t.home)}</a></li>
-            <li><a href="${prefix}${newsFile}">News</a></li>
-            <li><a href="${prefix}${dashboardFile}">Dashboard</a></li>
-            <li><a href="${prefix}${piFile}"><span aria-hidden="true">🧠</span> Political Intelligence</a></li>
+            <li><a href="${prefix}${newsFile}">${escapeHtml(cs.news)}</a></li>
+            <li><a href="${prefix}${dashboardFile}">${escapeHtml(cs.dashboard)}</a></li>
+            <li><a href="${prefix}${piFile}"><span aria-hidden="true">🧠</span> ${escapeHtml(cs.politicalIntelligence)}</a></li>
             <li><a href="${prefix}${sitemapFile}"><span aria-hidden="true">🗺️</span> ${escapeHtml(t.siteMap)}</a></li>
-            <li><a href="${apiDocsHref}"><span aria-hidden="true">📚</span> API Documentation (TypeDoc)</a></li>
-            <li><a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
-            <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
-            <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
-            <li><a href="${rssHref}" type="application/rss+xml" rel="alternate"><span aria-hidden="true">📡</span> RSS feed</a></li>
+            <li><a href="${apiDocsHref}"><span aria-hidden="true">📚</span> ${escapeHtml(cs.linkApiDocs)}</a></li>
+            <li><a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkCiaPlatform)}</a></li>
+            <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkGithubRepo)}</a></li>
+            <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkRiksdag)}</a></li>
+            <li><a href="${rssHref}" type="application/rss+xml" rel="alternate"><span aria-hidden="true">📡</span> ${escapeHtml(cs.linkRss)}</a></li>
           </ul>
         </section>
         <section class="rm-footer-col rm-footer-trust" aria-labelledby="rm-ft-trust">
-          <h2 id="rm-ft-trust" class="rm-footer-heading">Built by Hack23 AB</h2>
+          <h2 id="rm-ft-trust" class="rm-footer-heading">${escapeHtml(cs.footerBuiltByHeading)}</h2>
           <ul>
-            <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
-            <li><a href="https://www.hack23.com/riksdagsmonitor.html" target="_blank" rel="noopener noreferrer">Hack23 · Riksdagsmonitor</a></li>
-            <li><a href="https://www.hack23.com/riksdagsmonitor-features.html" target="_blank" rel="noopener noreferrer">Hack23 · Features</a></li>
-            <li><a href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💖</span> Sponsor Hack23</a></li>
-            <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">Company LinkedIn</a></li>
-            <li><a href="https://github.com/Hack23" target="_blank" rel="noopener noreferrer">Hack23 GitHub Org</a></li>
-            <li><a href="mailto:info@hack23.com">Contact Us</a></li>
+            <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkHack23Home)}</a></li>
+            <li><a href="https://www.hack23.com/riksdagsmonitor.html" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkHack23Riksdagsmonitor)}</a></li>
+            <li><a href="https://www.hack23.com/riksdagsmonitor-features.html" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkHack23Features)}</a></li>
+            <li><a href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💖</span> ${escapeHtml(cs.linkSponsorHack23)}</a></li>
+            <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkLinkedin)}</a></li>
+            <li><a href="https://github.com/Hack23" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkHack23Org)}</a></li>
+            <li><a href="mailto:info@hack23.com">${escapeHtml(cs.linkContactUs)}</a></li>
           </ul>
         </section>
         <section class="rm-footer-col rm-footer-isms" aria-labelledby="rm-ft-isms">
-          <h2 id="rm-ft-isms" class="rm-footer-heading"><span aria-hidden="true">🛡️</span> Hack23 ISMS</h2>
-          <p class="rm-footer-isms-tagline">Public ISMS aligned with ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, EU CRA &amp; NIS2.</p>
+          <h2 id="rm-ft-isms" class="rm-footer-heading"><span aria-hidden="true">🛡️</span> ${escapeHtml(cs.footerIsmsHeading)}</h2>
+          <p class="rm-footer-isms-tagline">${cs.footerIsmsTagline}</p>
           <ul>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">Public ISMS repository</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">Information Security Policy</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer">Secure Development Policy</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md" target="_blank" rel="noopener noreferrer">AI Policy</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md" target="_blank" rel="noopener noreferrer">Threat Modeling</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md" target="_blank" rel="noopener noreferrer">Vulnerability Management</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md" target="_blank" rel="noopener noreferrer">Incident Response Plan</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md" target="_blank" rel="noopener noreferrer">Access Control Policy</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md" target="_blank" rel="noopener noreferrer">Cryptography Policy</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md" target="_blank" rel="noopener noreferrer">Open Source Policy</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md" target="_blank" rel="noopener noreferrer">Change Management</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md" target="_blank" rel="noopener noreferrer">Classification</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Security_Metrics.md" target="_blank" rel="noopener noreferrer">Security Metrics</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkPublicIsmsRepo)}</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkInfoSecPolicy)}</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkPrivacyPolicy)}</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkSecureDevPolicy)}</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkAiPolicy)}</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkThreatModeling)}</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkVulnMgmt)}</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkIncidentResponse)}</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkAccessControl)}</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkCryptoPolicy)}</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkOpenSourcePolicy)}</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkChangeMgmt)}</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkClassification)}</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Security_Metrics.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkSecurityMetrics)}</a></li>
           </ul>
         </section>
         <section class="rm-footer-col rm-footer-trust" aria-labelledby="rm-ft-compliance">
-          <h2 id="rm-ft-compliance" class="rm-footer-heading"><span aria-hidden="true">🔐</span> Transparency &amp; compliance</h2>
+          <h2 id="rm-ft-compliance" class="rm-footer-heading"><span aria-hidden="true">🔐</span> ${cs.footerComplianceHeading}</h2>
           <ul>
-            <li><a href="${GITHUB_BLOB}/SECURITY.md" target="_blank" rel="noopener noreferrer">Security Policy</a></li>
-            <li><a href="${GITHUB_BLOB}/CRA-ASSESSMENT.md" target="_blank" rel="noopener noreferrer">EU CRA assessment</a></li>
-            <li><a href="${GITHUB_BLOB}/THREAT_MODEL.md" target="_blank" rel="noopener noreferrer">Threat model</a></li>
-            <li><a href="${GITHUB_BLOB}/TRANSLATION_GUIDE.md" target="_blank" rel="noopener noreferrer">Translation guide</a></li>
-            <li><a href="${GITHUB_BLOB}/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing</a></li>
-            <li><a href="${GITHUB_BLOB}/CODE_OF_CONDUCT.md" target="_blank" rel="noopener noreferrer">Code of Conduct</a></li>
-            <li><a href="${GITHUB_BLOB}/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Changelog</a></li>
-            <li><a href="${GITHUB_BLOB}/LICENSE" target="_blank" rel="noopener noreferrer">License (Apache-2.0)</a></li>
-            <li><a href="${issueHref}" target="_blank" rel="noopener noreferrer">Report a GitHub issue</a></li>
+            <li><a href="${GITHUB_BLOB}/SECURITY.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkSecurityPolicy)}</a></li>
+            <li><a href="${GITHUB_BLOB}/CRA-ASSESSMENT.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkCraAssessment)}</a></li>
+            <li><a href="${GITHUB_BLOB}/THREAT_MODEL.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkThreatModel)}</a></li>
+            <li><a href="${GITHUB_BLOB}/TRANSLATION_GUIDE.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkTranslationGuide)}</a></li>
+            <li><a href="${GITHUB_BLOB}/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkContributing)}</a></li>
+            <li><a href="${GITHUB_BLOB}/CODE_OF_CONDUCT.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkCodeOfConduct)}</a></li>
+            <li><a href="${GITHUB_BLOB}/CHANGELOG.md" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkChangelog)}</a></li>
+            <li><a href="${GITHUB_BLOB}/LICENSE" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkLicense)}</a></li>
+            <li><a href="${issueHref}" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkReportIssue)}</a></li>
           </ul>
         </section>
       </div>
-      <nav class="rm-footer-trust-badges" aria-label="Open trust, quality and security badges">
+      <nav class="rm-footer-trust-badges" aria-label="${escapeHtml(cs.trustBadgesAria)}">
         <a href="https://www.npmjs.com/package/riksdagsmonitor" target="_blank" rel="noopener noreferrer" aria-label="Riksdagsmonitor on npmjs">
           <img src="https://img.shields.io/npm/v/riksdagsmonitor.svg?logo=npm&label=npm" alt="Riksdagsmonitor on npmjs" width="100" height="20" loading="lazy" decoding="async">
         </a>
@@ -566,12 +568,12 @@ ${opts.breadcrumbHtml ?? ''}
           <img src="https://img.shields.io/website?url=https%3A%2F%2Friksdagsmonitor.com" alt="Riksdagsmonitor.com website status" width="120" height="20" loading="lazy" decoding="async">
         </a>
       </nav>
-      <nav class="rm-footer-langs" aria-label="Switch language">
+      <nav class="rm-footer-langs" aria-label="${escapeHtml(cs.footerLangsAria)}">
         <span class="rm-footer-langs-label" aria-hidden="true">🌐</span>
 ${footerLangRow}
       </nav>
       <p class="rm-footer-legal">
-        © ${new Date().getFullYear()} Hack23 AB · Apache-2.0 · Public political data only — GDPR Art. 9(2)(e,g). No cookies, no tracking, no advertising.
+        © ${new Date().getFullYear()} ${cs.footerLegal}
       </p>
     </footer>
     <!-- Mermaid + back-to-top + theme toggle bootstrap.
