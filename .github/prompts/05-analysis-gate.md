@@ -232,6 +232,80 @@ if [ -s "$ANALYSIS_DIR/coalition-mathematics.md" ]; then
     || { echo "❌ coalition-mathematics.md: missing seat-count / vote-breakdown table"; FAIL=1; }
 fi
 
+# Check 9 — PIR status sidecar (`pir-status.json`)
+# A valid pir-status.json must be present after every analysis run so that
+# open PIRs can be automatically rolled forward to the next cycle.
+# Schema: schemas/pir-status.schema.json (v1.0)
+# Roll-forward script: scripts/roll-forward-pirs.ts
+PIR_FILE="$ANALYSIS_DIR/pir-status.json"
+if [ ! -s "$PIR_FILE" ]; then
+  echo "❌ pir-status.json missing or empty in $ANALYSIS_DIR — create it per schemas/pir-status.schema.json"
+  FAIL=1
+else
+  # Structural check: required top-level fields
+  for PIR_FIELD in schema_version cycle date subfolder pirs generated_at; do
+    python3 -c "
+import json, sys
+try:
+    d = json.load(open('$PIR_FILE'))
+    sys.exit(0 if '$PIR_FIELD' in d else 1)
+except Exception:
+    sys.exit(1)
+" 2>/dev/null || { echo "❌ pir-status.json: missing required field '$PIR_FIELD'"; FAIL=1; }
+  done
+  # schema_version must be '1.0'
+  python3 -c "
+import json, sys
+try:
+    d = json.load(open('$PIR_FILE'))
+    sys.exit(0 if d.get('schema_version') == '1.0' else 1)
+except Exception:
+    sys.exit(1)
+" 2>/dev/null || { echo "❌ pir-status.json: schema_version must be '1.0'"; FAIL=1; }
+  # pirs must be an array
+  python3 -c "
+import json, sys
+try:
+    d = json.load(open('$PIR_FILE'))
+    sys.exit(0 if isinstance(d.get('pirs'), list) else 1)
+except Exception:
+    sys.exit(1)
+" 2>/dev/null || { echo "❌ pir-status.json: 'pirs' field must be a JSON array"; FAIL=1; }
+  # each PIR (any status) must have valid pir_id, statement, status, confidence;
+  # answered PIRs must carry answer_summary; non-answered PIRs must not.
+  python3 -c "
+import json, sys, re
+try:
+    d = json.load(open('$PIR_FILE'))
+    PIR_ID_RE = re.compile(r'^PIR-[A-Za-z0-9]+(-[A-Za-z0-9]+)*$')
+    VALID_STATUS = {'open','answered','superseded','deferred','cancelled'}
+    VALID_CONF = {'VERY HIGH','HIGH','MEDIUM','LOW','VERY LOW'}
+    bad = 0
+    # Cross-field invariant: subfolder must equal cycle (not enforceable in pure JSON Schema).
+    if d.get('subfolder') != d.get('cycle'):
+        print(f'❌ pir-status.json: subfolder={d.get(\"subfolder\")!r} must equal cycle={d.get(\"cycle\")!r}'); bad = 1
+    for p in d.get('pirs', []):
+        pid = p.get('pir_id')
+        if not isinstance(pid, str) or not PIR_ID_RE.match(pid):
+            print(f'❌ pir-status.json: invalid pir_id format: {pid!r}'); bad = 1
+        for f in ('statement', 'status', 'confidence'):
+            if not p.get(f):
+                print(f'❌ pir-status.json pir={pid!r}: missing required field \"{f}\"'); bad = 1
+        if p.get('status') not in VALID_STATUS:
+            print(f'❌ pir-status.json pir={pid!r}: invalid status {p.get(\"status\")!r}'); bad = 1
+        if p.get('confidence') not in VALID_CONF:
+            print(f'❌ pir-status.json pir={pid!r}: invalid confidence {p.get(\"confidence\")!r}'); bad = 1
+        # Conditional: answer_summary required iff status == 'answered'.
+        if p.get('status') == 'answered' and not p.get('answer_summary'):
+            print(f'❌ pir-status.json pir={pid!r}: status=answered requires non-empty answer_summary'); bad = 1
+        if p.get('status') != 'answered' and 'answer_summary' in p:
+            print(f'❌ pir-status.json pir={pid!r}: status={p.get(\"status\")!r} must not carry answer_summary'); bad = 1
+    sys.exit(bad)
+except Exception as e:
+    print(f'❌ pir-status.json: parse error: {e}'); sys.exit(1)
+" 2>&1 || FAIL=1
+fi
+
 [ "$FAIL" -eq 0 ] || exit 1
 ```
 
@@ -264,7 +338,7 @@ Non-blocking for `standard` / `deep` runs; **blocking for `comprehensive` / Tier
 Inline bash probe — append to the main block after `FAIL=0` bookkeeping completes. Supplementary artifacts have **three independent blocking triggers**, not a single tier-only rule: **aggregation article types** (`weekly-review`, `monthly-review`) require the aggregation artifacts; any run whose **tier** is `comprehensive` (the Tier-C run mode) requires the Tier-C supplementary set; and `cross-run-diff.md` is blocking whenever the workflow has **≥ 2 production runs** of the same article type, including `standard` and `deep` runs. `ARTICLE_TYPE` encodes the workflow family; `ANALYSIS_TIER` (when set) encodes the depth tier (`standard` | `deep` | `comprehensive`); `ANALYSIS_RUN_COUNT` (when set) is the numeric count of runs for the same article-generation cycle (if unset or non-numeric, treated as `1`).
 
 ```bash
-# Check 9 — supplementary artifacts (blocking for aggregation types, any Tier-C run, and S5 when run-count >= 2)
+# Check 10 — supplementary artifacts (blocking for aggregation types, any Tier-C run, and S5 when run-count >= 2)
 IS_AGGREGATION=0
 IS_TIER_C=0
 IS_MULTI_RUN=0
