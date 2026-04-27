@@ -304,6 +304,8 @@ export function rollForward(
   const relativeSourcePath =
     relativeToRepo &&
     !relativeToRepo.startsWith('..') &&
+    // `path.relative()` can still return an absolute path across Windows
+    // drive roots; keep this guard so only true descendants are relativized.
     !path.isAbsolute(relativeToRepo)
       ? relativeToRepo.split(path.sep).join('/')
       : sourcePath.split(path.sep).join('/');
@@ -347,7 +349,7 @@ export function parseArgs(argv: string[]): CliArgs {
         throw new Error('--max-lookback requires a positive integer value');
       }
       const parsed = Number.parseInt(raw, 10);
-      if (!Number.isFinite(parsed) || parsed < 1 || String(parsed) !== raw.trim()) {
+      if (!/^[0-9]+$/.test(raw.trim()) || !Number.isFinite(parsed) || parsed < 1) {
         throw new Error(`--max-lookback must be a positive integer (received '${raw}')`);
       }
       args.maxLookback = parsed;

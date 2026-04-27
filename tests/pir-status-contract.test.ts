@@ -259,6 +259,9 @@ describe('parseArgs', () => {
   it('--max-lookback overrides default', () => {
     expect(parseArgs(['--max-lookback', '7']).maxLookback).toBe(7);
   });
+  it('--max-lookback accepts zero-padded positive integers', () => {
+    expect(parseArgs(['--max-lookback', '007']).maxLookback).toBe(7);
+  });
   it('--max-lookback throws when value is missing', () => {
     expect(() => parseArgs(['--max-lookback'])).toThrow(/requires a positive integer/);
   });
