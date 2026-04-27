@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://riksdagsmonitor.com/schemas/pir-status.schema.json",
+  "title": "PIR Status Sidecar",
+  "description": "Machine-readable Priority Intelligence Requirement (PIR) status sidecar produced by every agentic analysis cycle. Written to `analysis/daily/YYYY-MM-DD/{subfolder}/pir-status.json`. Enables automated PIR roll-forward, cross-cycle gap detection, and CI gate enforcement. Schema v1.0.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "cycle", "date", "subfolder", "pirs", "generated_at"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Schema version — always '1.0' for this release.",
+      "enum": ["1.0"]
+    },
+    "cycle": {
+      "type": "string",
+      "description": "Analysis cycle type slug (matches the subfolder name convention).",
+      "enum": [
+        "committeeReports",
+        "propositions",
+        "motions",
+        "interpellations",
+        "evening-analysis",
+        "realtime-pulse",
+        "week-ahead",
+        "month-ahead",
+        "weekly-review",
+        "monthly-review"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "description": "ISO calendar date of this analysis run (YYYY-MM-DD).",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "subfolder": {
+      "type": "string",
+      "description": "Relative subfolder path under `analysis/daily/YYYY-MM-DD/` — typically equal to `cycle`. Cross-field equality is not enforced by the schema (it would require a verbose `oneOf` per cycle); the CI analysis gate (Check 10 in `.github/prompts/05-analysis-gate.md`) and the `roll-forward-pirs.ts` writer enforce `subfolder === cycle`.",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "description": "ISO-8601 timestamp of when this sidecar was generated (UTC).",
+      "format": "date-time"
+    },
+    "inherited_from": {
+      "type": ["string", "null"],
+      "description": "Source path this file was rolled forward from, e.g. `analysis/daily/2026-04-26/month-ahead/pir-status.json`. Null when this is a freshly authored set (no roll-forward).",
+      "default": null
+    },
+    "pirs": {
+      "type": "array",
+      "description": "Ordered list of PIRs for this cycle. May be empty for short-event cycles that did not define standing PIRs.",
+      "items": { "$ref": "#/$defs/pirEntry" }
+    }
+  },
+  "$defs": {
+    "pirEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pir_id", "statement", "status", "confidence"],
+      "properties": {
+        "pir_id": {
+          "type": "string",
+          "description": "Stable local identifier within this cycle, e.g. 'PIR-1', 'PIR-A', 'PIR-FiU-1'. Must be unique within the `pirs` array.",
+          "pattern": "^PIR-[A-Za-z0-9]+([-][A-Za-z0-9]+)*$"
+        },
+        "statement": {
+          "type": "string",
+          "description": "Human-readable intelligence requirement statement. Must be specific, falsifiable, and actionable.",
+          "minLength": 10
+        },
+        "trigger": {
+          "type": "string",
+          "description": "Observable event or threshold that would answer / close this PIR. Optional but strongly recommended.",
+          "minLength": 5
+        },
+        "status": {
+          "type": "string",
+          "description": "Current disposition of this PIR.",
+          "enum": ["open", "answered", "superseded", "deferred", "cancelled"]
+        },
+        "confidence": {
+          "type": "string",
+          "description": "ODNI-aligned confidence label on the current status assessment.",
+          "enum": ["VERY HIGH", "HIGH", "MEDIUM", "LOW", "VERY LOW"]
+        },
+        "answer_summary": {
+          "type": "string",
+          "description": "Short (≤ 500 chars) summary of the evidence or event that answered this PIR. Populate only when status='answered'.",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "inherits_from": {
+          "type": "array",
+          "description": "Zero or more `pir_id` references from the previous cycle that this PIR continues or inherits from.",
+          "items": {
+            "type": "string",
+            "pattern": "^PIR-[A-Za-z0-9]+([-][A-Za-z0-9]+)*$"
+          },
+          "default": []
+        },
+        "evidence_refs": {
+          "type": "array",
+          "description": "Riksdag `dok_id` references, primary-source URLs, or named artifacts that provide evidence for the current status assessment. At least one reference is recommended for answered PIRs.",
+          "items": {
+            "type": "string",
+            "minLength": 2
+          },
+          "default": []
+        },
+        "horizon": {
+          "type": "string",
+          "description": "Monitoring horizon for this PIR, expressed as an ISO date (YYYY-MM-DD) or a relative label ('next-session', 'next-week', 'election-day'). Optional.",
+          "minLength": 4
+        },
+        "admiralty_grade": {
+          "type": "string",
+          "description": "Admiralty Code grade of the best available source for the current status (STANAG 2022). Source reliability A–F + information credibility 1–6.",
+          "pattern": "^[A-F][1-6]$"
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "answered" } }, "required": ["status"] },
+          "then": { "required": ["answer_summary"] },
+          "else": { "not": { "required": ["answer_summary"] } }
+        }
+      ]
+    }
+  }
+}
