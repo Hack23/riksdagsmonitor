@@ -72,9 +72,9 @@ afterEach(() => {
 // ---------------------------------------------------------------------------
 
 describe('parseArgs --auto-full-text-top-n', () => {
-  it('defaults to 0 when flag is absent', () => {
+  it('defaults to null when flag is absent', () => {
     const result = parseArgs(['node', 'script.ts']);
-    expect(result.autoFullTextTopN).toBe(0);
+    expect(result.autoFullTextTopN).toBeNull();
   });
 
   it('parses integer value correctly', () => {

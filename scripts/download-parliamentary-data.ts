@@ -15,6 +15,7 @@
  * Usage:
  *   npx tsx scripts/download-parliamentary-data.ts [--date YYYY-MM-DD] [--limit N]
  *   npx tsx scripts/download-parliamentary-data.ts --aggregate weekly [--date YYYY-WNN]
+ *   npx tsx scripts/download-parliamentary-data.ts --auto-full-text-top-n 2
  *
  * @see analysis/methodologies/ai-driven-analysis-guide.md
  * @author Hack23 AB
@@ -63,7 +64,7 @@ export function parseArgs(argv: string[]): {
   rm: string | null;
   docType: DocumentTypeKey | null;
   documentIds: string[];
-  autoFullTextTopN: number;
+  autoFullTextTopN: number | null;
 } {
   const args = argv.slice(2);
   const get = (flag: string): string | null => {
@@ -148,14 +149,19 @@ export function parseArgs(argv: string[]): {
       })
     : [];
 
-  // --auto-full-text-top-n: Number of documents to auto-fetch full text for.
-  // Defaults to 0 (disabled). When enabled, the script fetches full text for the
-  // first N documents in the current filtered array order for deep-analysis tiers (L2/L3).
-  // Note: no DIW significance ranking is applied here; order reflects the MCP fetch order.
+  // --auto-full-text-top-n: Override the per-type full-text enrichment limit and
+  // persist full text outcomes for the first N documents in the current filtered
+  // array order. Defaults to null when omitted so downloadAllDocuments uses
+  // MAX_ENRICHMENT_PER_TYPE; explicit 0 disables per-type enrichment and
+  // persisted full-text fetching. No DIW significance ranking is applied here.
   const autoFullTextTopNArg = get('--auto-full-text-top-n');
-  const autoFullTextTopN = autoFullTextTopNArg !== null ? Number(autoFullTextTopNArg) : 0;
-  if (!Number.isInteger(autoFullTextTopN) || autoFullTextTopN < 0) {
-    throw new Error(`Invalid --auto-full-text-top-n value: ${autoFullTextTopNArg}. Expected a non-negative integer.`);
+  let autoFullTextTopN: number | null = null;
+  if (autoFullTextTopNArg !== null) {
+    const parsed = Number(autoFullTextTopNArg);
+    if (!Number.isInteger(parsed) || parsed < 0) {
+      throw new Error(`Invalid --auto-full-text-top-n value: ${autoFullTextTopNArg}. Expected a non-negative integer.`);
+    }
+    autoFullTextTopN = parsed;
   }
 
   return { date: isoDate, aggregate, limit, weekLabel, rm, docType, documentIds, autoFullTextTopN };
@@ -400,7 +406,7 @@ async function runPreArticleAnalysis(opts: {
   rm: string | null;
   docType: DocumentTypeKey | null;
   documentIds: string[];
-  autoFullTextTopN: number;
+  autoFullTextTopN: number | null;
 }): Promise<void> {
   const { date, limit, aggregate, weekLabel, rm, docType, documentIds, autoFullTextTopN } = opts;
 
@@ -432,9 +438,16 @@ async function runPreArticleAnalysis(opts: {
   const client = new MCPClient();
   const resolvedRm = rm ?? riksMoteFromDate(date);
 
-  const downloadOpts: { limit: number; rm: string; docTypes?: DocumentTypeKey[] } = { limit, rm: resolvedRm };
+  const downloadOpts: { limit: number; rm: string; docTypes?: DocumentTypeKey[]; enrichLimit?: number } = { limit, rm: resolvedRm };
   if (docType) {
     downloadOpts.docTypes = [docType];
+  }
+  // --auto-full-text-top-n wires the CLI flag into the per-type enrichment
+  // limit, enabling more targeted full-text fetching for significance scoring.
+  // When null, downloadAllDocuments uses MAX_ENRICHMENT_PER_TYPE (5) by default.
+  if (autoFullTextTopN !== null) {
+    downloadOpts.enrichLimit = autoFullTextTopN;
+    console.log(`   📝 Full-text enrichment: top ${autoFullTextTopN} documents per type (--auto-full-text-top-n=${autoFullTextTopN})`);
   }
 
   const { data, manifest } = await downloadAllDocuments(client, downloadOpts);
@@ -521,7 +534,7 @@ async function runPreArticleAnalysis(opts: {
 
   // ── Step 2b: Auto-fetch full text for top-N documents ────────────────────
   let fullTextOutcomes: FullTextFetchOutcome[] | undefined;
-  if (autoFullTextTopN > 0 && allDocs.length > 0) {
+  if (autoFullTextTopN !== null && autoFullTextTopN > 0 && allDocs.length > 0) {
     console.log(`\n📄 Step 2b: Auto-fetching full text for top-${autoFullTextTopN} documents (--auto-full-text-top-n=${autoFullTextTopN})...`);
     console.log('   ⏱️  This may take 30–60 s — documented quality investment for deep-analysis tiers.');
     fullTextOutcomes = await fetchFullTextForTopN(client, allDocs, autoFullTextTopN, outputDir);
@@ -575,7 +588,7 @@ async function runPreArticleAnalysis(opts: {
   console.log(`\n✅ Data download complete! Results in: ${path.relative(REPO_ROOT, outputDir)}/`);
   console.log(`   📄 ${totalFiles} total files written (1 manifest + ${storedCount} documents)`);
   console.log(`   📊 ${allDocs.length} documents available for AI analysis`);
-  if (autoFullTextTopN > 0) {
+  if (autoFullTextTopN !== null && autoFullTextTopN > 0) {
     const successCount = fullTextOutcomes?.filter(o => o.success).length ?? 0;
     const attempted = fullTextOutcomes?.length ?? 0;
     console.log(`   📄 Full text: ${successCount}/${attempted} top-${autoFullTextTopN} documents (see full-text/ sub-folder)`);
@@ -588,6 +601,11 @@ async function runPreArticleAnalysis(opts: {
   console.log('      - analysis/methodologies/ai-driven-analysis-guide.md');
   console.log('      - analysis/templates/ (per-file analysis templates)');
   console.log('      - npx tsx scripts/catalog-downloaded-data.ts --pending-only');
+  if (autoFullTextTopN !== null && autoFullTextTopN > 0) {
+    console.log(`      ℹ️  Significance-scoring note: top-${autoFullTextTopN} documents per type have full text`);
+    console.log('         available (contentFetched=true) — AI significance-scoring step');
+    console.log('         should prioritise those documents for deeper analysis.');
+  }
 }
 
 // ---------------------------------------------------------------------------

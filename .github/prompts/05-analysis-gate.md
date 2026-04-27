@@ -30,12 +30,14 @@ This is the **only** gate separating analysis from article generation. If it fai
 8. **Family D structure checks**:
    - `forward-indicators.md` declares **≥ 10 dated indicators** (bullet or table rows matching a date pattern across the four horizon sections).
    - `coalition-mathematics.md` contains a seat-count table (≥ 1 table row with `Ja`/`Nej`/`Avstår` or a party-to-seats mapping).
-9. **Supplementary artifacts** — see §Supplementary checks below (blocking for aggregation/Tier-C/multi-run).
+   - `implementation-feasibility.md` — when it names a recognised agency (Kriminalvården, Polismyndigheten, Försäkringskassan, Skatteverket, Migrationsverket, Arbetsförmedlingen, Socialstyrelsen, Transportstyrelsen, Trafikverket, Naturvårdsverket, Energimyndigheten) — contains a `statskontoret.se` URL citation **or** the literal phrase `none found` in the `Statskontoret relevance` row.
+9. **PIR status sidecar** — `pir-status.json` is present and valid so open PIRs can roll forward to the next cycle.
 10. **Top-2 full-text availability** — when `data-download-manifest.md` contains a `## Full-Text Fetch Outcomes` table (written by `download-parliamentary-data.ts --auto-full-text-top-n`), at least 2 top documents must have `full_text_available=true`. Add `<!-- full-text-fallback: <reason> -->` to the manifest to bypass (e.g. when full text is genuinely unavailable from the MCP server or the flag was not used).
+11. **Supplementary artifacts** — see §Supplementary checks below (blocking for aggregation/Tier-C/multi-run).
 
 ## Implementation
 
-No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–10, with checks 9 and 10 conditional where applicable):
+No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–11, plus conditional check 9b where applicable):
 
 ```bash
 set -Eeuo pipefail
@@ -232,6 +234,18 @@ fi
 if [ -s "$ANALYSIS_DIR/coalition-mathematics.md" ]; then
   grep -qE '^\|.*(Ja|Nej|Avstår|Frånvarande|Seats|Mandat)' "$ANALYSIS_DIR/coalition-mathematics.md" \
     || { echo "❌ coalition-mathematics.md: missing seat-count / vote-breakdown table"; FAIL=1; }
+fi
+
+# Check 9b — Statskontoret evidence in implementation-feasibility.md
+# When implementation-feasibility.md names a recognised agency, the file MUST
+# populate the `| **Statskontoret relevance** | ... |` row with either a
+# statskontoret.se URL or the literal `none found` when no relevant coverage exists.
+AGENCY_RE='Kriminalvård(en)?|Polismyndigheten|Försäkringskassan|Skatteverket|Migrationsverket|Arbetsförmedlingen|Socialstyrelsen|Transportstyrelsen|Trafikverket|Naturvårdsverket|Energimyndigheten'
+if [ -s "$ANALYSIS_DIR/implementation-feasibility.md" ]; then
+  if grep -qE "$AGENCY_RE" "$ANALYSIS_DIR/implementation-feasibility.md"; then
+    grep -qiE '^\|[[:space:]]*\*\*Statskontoret relevance\*\*[[:space:]]*\|[[:space:]]*([^|]*statskontoret\.se[^|]*|[^|]*none found[^|]*)\|' "$ANALYSIS_DIR/implementation-feasibility.md" \
+      || { echo "❌ implementation-feasibility.md: names a recognised agency but the Statskontoret relevance row lacks a statskontoret.se URL or 'none found'"; FAIL=1; }
+  fi
 fi
 
 # Check 9 — PIR status sidecar (`pir-status.json`)
