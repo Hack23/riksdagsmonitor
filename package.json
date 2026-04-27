@@ -200,7 +200,7 @@
     "typedoc": "0.28.19",
     "typedoc-plugin-mdn-links": "5.1.1",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.59.0",
+    "typescript-eslint": "8.59.1",
     "unified": "^11.0.5",
     "vite": "8.0.10",
     "vite-plugin-sri-gen": "1.4.1",
