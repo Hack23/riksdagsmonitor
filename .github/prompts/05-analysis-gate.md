@@ -241,9 +241,10 @@ fi
 # populate the `| **Statskontoret relevance** | ... |` row with either a
 # statskontoret.se URL or the literal `none found` when no relevant coverage exists.
 AGENCY_RE='Kriminalvård(en)?|Polismyndigheten|Försäkringskassan|Skatteverket|Migrationsverket|Arbetsförmedlingen|Socialstyrelsen|Transportstyrelsen|Trafikverket|Naturvårdsverket|Energimyndigheten'
+STATSKONTORET_RELEVANCE_RE='^\|[[:space:]]*\*\*Statskontoret relevance\*\*[[:space:]]*\|[[:space:]]*([^|]*statskontoret\.se[^|]*|[^|]*none found[^|]*)\|'
 if [ -s "$ANALYSIS_DIR/implementation-feasibility.md" ]; then
   if grep -qE "$AGENCY_RE" "$ANALYSIS_DIR/implementation-feasibility.md"; then
-    grep -qiE '^\|[[:space:]]*\*\*Statskontoret relevance\*\*[[:space:]]*\|[[:space:]]*([^|]*statskontoret\.se[^|]*|[^|]*none found[^|]*)\|' "$ANALYSIS_DIR/implementation-feasibility.md" \
+    grep -qiE "$STATSKONTORET_RELEVANCE_RE" "$ANALYSIS_DIR/implementation-feasibility.md" \
       || { echo "❌ implementation-feasibility.md: names a recognised agency but the Statskontoret relevance row lacks a statskontoret.se URL or 'none found'"; FAIL=1; }
   fi
 fi

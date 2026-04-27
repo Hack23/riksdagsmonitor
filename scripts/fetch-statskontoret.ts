@@ -180,8 +180,8 @@ export async function fetchStatskontoretCached(
 
   try {
     links = await client.discoverDownloads(sourceKey);
-    // Stamp provenance after the fetch completes so `fetchedAt` reflects when
-    // the data was actually retrieved, not when the request was issued.
+    // Stamp provenance after discovery completes so `fetchedAt` reflects the
+    // cache completion time, not when the request was issued.
     fetchedAt = new Date().toISOString();
     writeCacheEntry(filePath, { fetchedAt, sourceKey, links });
   } catch (error) {
