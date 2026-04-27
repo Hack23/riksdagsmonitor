@@ -33,7 +33,8 @@ import { logger } from './shared/logger.js';
 async function loadDashboard(
   moduleLoader: () => Promise<{ init: () => Promise<void> }>,
 ): Promise<void> {
-  await import('./shared/register-globals.js');
+  const { registerBrowserGlobals } = await import('./shared/register-globals.js');
+  registerBrowserGlobals();
   const { init } = await moduleLoader();
   await init();
 }

@@ -13,8 +13,10 @@
 
 // ─── Library Imports ─────────────────────────────────────────────────────────
 // Register Chart.js on globalThis so CIA dashboard modules can access it.
-import './shared/register-globals.js';
+import { registerBrowserGlobals } from './shared/register-globals.js';
 
 // ─── CIA Dashboard Modules ──────────────────────────────────────────────────
-// dashboard-init.ts handles all orchestration internally
-import './cia/dashboard-init.js';
+import { startDashboard } from './cia/dashboard-init.js';
+
+registerBrowserGlobals();
+startDashboard();

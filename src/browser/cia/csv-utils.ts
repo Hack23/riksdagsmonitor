@@ -16,6 +16,7 @@
  */
 
 import type { CSVRow } from './types.js';
+import Papa from 'papaparse';
 
 /** Signature used by per-domain loaders to fetch and parse a single CSV. */
 export type LoadCSV = (
@@ -34,42 +35,26 @@ export type LoadCSV = (
  * @returns Parsed rows (empty array if header-only or empty)
  */
 export function parseCSV(csvText: string): CSVRow[] {
-  const lines = csvText.trim().split('\n');
-  if (lines.length < 2) return [];
+  const trimmed = csvText.trim();
+  if (!trimmed || !trimmed.includes('\n')) return [];
 
-  const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
-  const rows: CSVRow[] = [];
+  const parsed = Papa.parse<CSVRow>(trimmed, {
+    header: true,
+    dynamicTyping: true,
+    skipEmptyLines: true,
+    transformHeader: header => header.trim().replace(/^"|"$/g, ''),
+  });
 
-  for (let i = 1; i < lines.length; i++) {
-    const line = lines[i].trim();
-    if (!line) continue;
-
-    // Simple CSV parsing (handles basic quoting)
-    const values: string[] = [];
-    let current = '';
-    let inQuotes = false;
-    for (let j = 0; j < line.length; j++) {
-      const ch = line[j];
-      if (ch === '"') {
-        inQuotes = !inQuotes;
-      } else if (ch === ',' && !inQuotes) {
-        values.push(current.trim());
-        current = '';
-      } else {
-        current += ch;
-      }
-    }
-    values.push(current.trim());
-
-    const row: CSVRow = {};
-    headers.forEach((h, idx) => {
-      const val = values[idx] || '';
-      const num = Number(val);
-      row[h] = val !== '' && !isNaN(num) ? num : val;
-    });
-    rows.push(row);
+  if (parsed.errors.length > 0) {
+    const errorSummary = parsed.errors
+      .map(error => `${error.code} at row ${error.row ?? 'unknown'}: ${error.message}`)
+      .join('; ');
+    throw new Error(`CSV parse error: ${errorSummary}`);
   }
-  return rows;
+
+  return parsed.data.filter(row =>
+    Object.values(row).some(value => value !== null && value !== undefined && value !== '')
+  );
 }
 
 /**
