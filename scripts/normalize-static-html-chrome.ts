@@ -68,7 +68,7 @@ function languageGrid(prefix: string, family: PageFamily, current: Language): st
 }
 
 function languageBar(prefix: string, family: PageFamily, current: Language): string {
-  return `\n<nav class="language-switcher site-language-switcher" aria-label="This page in other languages" data-rm-static-language-switcher="true">\n${languageGrid(prefix, family, current)}\n</nav>\n`;
+  return `<nav class="language-switcher site-language-switcher" aria-label="This page in other languages" data-rm-static-language-switcher="true">\n${languageGrid(prefix, family, current)}\n</nav>`;
 }
 
 function footer(prefix: string, family: PageFamily, current: Language): string {
@@ -153,12 +153,12 @@ function replaceFooter(html: string, prefix: string, family: PageFamily, lang: L
 }
 
 function ensureLanguageSwitcher(html: string, prefix: string, family: PageFamily, lang: Language): string {
-  const cleaned = html.replace(/\n?<nav class="language-switcher site-language-switcher"[\s\S]*?data-rm-static-language-switcher="true"[\s\S]*?<\/nav>\n?/i, '\n');
+  const cleaned = html.replace(/\s*<nav class="language-switcher site-language-switcher"[\s\S]*?data-rm-static-language-switcher="true"[\s\S]*?<\/nav>\s*/i, '\n');
   const bar = languageBar(prefix, family, lang);
   if (/<\/header>/i.test(cleaned)) {
-    return cleaned.replace(/<\/header>/i, `${bar}</header>`);
+    return cleaned.replace(/\s*<\/header>/i, `\n${bar}\n</header>`);
   }
-  return cleaned.replace(/(<body[^>]*>)/i, `$1${bar}`);
+  return cleaned.replace(/(<body[^>]*>)/i, `$1\n${bar}\n`);
 }
 
 let changed = 0;
