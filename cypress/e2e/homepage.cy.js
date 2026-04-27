@@ -71,4 +71,10 @@ describe('Riksdagsmonitor Homepage', () => {
     cy.get('meta[name="twitter:card"]').should('exist');
     cy.get('meta[name="twitter:title"]').should('exist');
   });
+
+  it('should expose the Service Worker API for PWA install + offline support', () => {
+    // Verify the runtime supports service workers; the actual registration
+    // is initiated from src/browser/main.ts on the `load` event.
+    cy.window().its('navigator.serviceWorker').should('exist');
+  });
 });
