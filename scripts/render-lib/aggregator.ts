@@ -12,19 +12,25 @@
  *
  * ## Narrative order (reader-intelligence-first projection)
  * See {@link AGGREGATION_ORDER}. The order is intentionally fixed to surface
- * high-value political-intelligence lenses before technical audit appendices:
+ * high-value political-intelligence lenses before technical audit appendices.
+ * The executive brief opens the article so a reader gets BLUF + so-what
+ * context **before** the navigation table tells them where to jump next:
  *
- * **Round 0 — generated navigation layer**
- * 0. `Reader Intelligence Guide` — deterministic navigation table injected
- *    before any artifact sections
+ * **Round 0 — opening context**
+ * 0. `executive-brief.md` (mandatory — supplies title + description, gives
+ *    the reader a 60-second frame before any navigation/appendix metadata)
  *
- * **Round 1 — BLUF and thesis**
- * 1. `executive-brief.md` (mandatory — supplies title + description)
+ * **Round 1 — generated navigation layer**
+ * 1. `Reader Intelligence Guide` — deterministic navigation table injected
+ *    immediately after the executive brief so readers can route into the
+ *    deeper analytical lenses with the BLUF already in mind
+ *
+ * **Round 2 — thesis and significance**
  * 2. `synthesis-summary.md`
  * 3. `intelligence-assessment.md` — ICD-203 Key Judgments centrepiece
  * 4. `significance-scoring.md`
  *
- * **Round 2 — reader-facing intelligence lenses (most valuable first)**
+ * **Round 3 — reader-facing intelligence lenses (most valuable first)**
  * 5. `media-framing-analysis.md` — narrative contestation, amplifiers, manipulation risk
  * 6. `stakeholder-perspectives.md`
  * 7. `forward-indicators.md` — dated watch items for readers to verify/falsify
@@ -33,13 +39,13 @@
  * 10. `swot-analysis.md`
  * 11. `threat-analysis.md`
  *
- * **Round 3 — per-document evidence**
+ * **Round 4 — per-document evidence**
  * 12. `documents/*-analysis.md` — inlined as "Per-document intelligence"
  *
- * **Round 4 — electoral and domain lenses**
+ * **Round 5 — electoral and domain lenses**
  * 13. `election-2026-analysis.md` … `implementation-feasibility.md`
  *
- * **Round 5 — challenge and audit appendix**
+ * **Round 6 — challenge and audit appendix**
  * 15. `devils-advocate.md` … `data-download-manifest.md`
  * 16. any remaining supplementary `*.md` — appended alphabetically
  *
@@ -312,6 +318,121 @@ const ADMIN_FIELD_NAMES: readonly string[] = [
   'Disseminated',
   'Source',
   'Dissemination',
+  // Extended 2026-04-27 — preamble fields observed leaking into Executive
+  // Brief / synthesis / per-document headers across 28 of 41 articles. See
+  // analysis/daily/2026-04-27/propositions/executive-brief.md for the
+  // canonical leak shape (`**Author** \n **Date** \n **Analysis period** \n
+  // **Confidence** \n **Classification** \n **Pass 2**`). Without these
+  // entries the entire admin paragraph fails the `allAdmin` test in
+  // `stripLeadingAdminBylines` because two fragments are unrecognised, so
+  // the whole template preamble survives into the published article body.
+  // Round 2: scenario-analysis / comparative-international /
+  // methodology-reflection / coalition-mathematics / etc. preambles add
+  // Horizon / Method / Focus / Workflow / Purpose / Analysis date as
+  // structured `**Label**: value` admin fragments before any prose.
+  'Analysis\\s*period',
+  'Analysis\\s*date',
+  'Horizon',
+  'Method',
+  'Focus',
+  'Workflow',
+  'Purpose',
+  'Pass\\s*2',
+  'AI[-\\s]?FIRST\\s*iterations?',
+  'ARTICLE_TYPE',
+  'Article\\s*type',
+  'Article\\s*period',
+  'Period',
+  'Window',
+  'Coverage\\s*window',
+  'Run\\s*started',
+  'Run\\s*completed',
+  'Run\\s*at',
+  // Round 3 (2026-04-27) — per-document and per-artifact preamble fields
+  // observed leaking 393 times across 36 of 41 articles. These appear as
+  // structured `**Label**: value` fragments in the leading paragraph of
+  // exec briefs, per-document analyses (`documents/{dok_id}-analysis.md`)
+  // and Family C artifacts. Examples:
+  //   - **F3EAD Stage**: Exploit
+  //   - **Framework**: Political SWOT v3.4
+  //   - **Dok ID** / **Dok-ID** / **Dok_ID** / **Document ID**: HD03253
+  //   - **SCN-ID**, **SIG-ID**, **STA-ID**, **RSK-ID**, **THR-ID**,
+  //     **CMP-ID**, **CLS-ID**, **XRF-ID**, **MTH-ID** (artifact-row IDs)
+  //   - **Organ**: FiU | **Subject**: ... | **Type**: Proposition
+  //   - **Comparator set**: Sweden vs DE/FR | **Election date**: 2026-09
+  // Body-text mentions like *"the Party (S) filed..."* are not bold +
+  // colon-anchored, so they pass `ADMIN_FIELD_RE` correctly.
+  'F3EAD\\s*Stage',
+  'Framework',
+  'Party',
+  'Dok[-_\\s]?ID',
+  'Document(?:\\s*ID)?',
+  'Organ',
+  'Subject',
+  'Type',
+  'Committee',
+  'Comparator(?:\\s*set)?',
+  'Election\\s*date',
+  '[A-Z]{3}[-_]ID',
+  // Round 4 (2026-04-27) — additional preamble fields observed in
+  // per-document, family C and family D artifacts. Riksmöte = Swedish
+  // parliamentary year (e.g. `2025/26`); DIW Score = significance ranking
+  // header (Diplomatic / Informational / Wider impact); Confidence
+  // distribution / Confidence floor = artifact-level trust roll-ups.
+  'Riksm(?:ö|o)te',
+  'DIW\\s*Score',
+  'Confidence\\s*(?:distribution|floor|baseline)',
+  'Frame',
+  'Question',
+  'Overall\\s*Threat\\s*Level',
+  'Overall\\s*Risk\\s*Level',
+  'Overall\\s*Score',
+  'Tradecraft(?:\\s*context)?',
+  'PIRs?(?:\\s*served)?',
+  'Source\\s*Diversity(?:\\s*floor)?',
+  'WEP\\+ODNI',
+  'SATs?\\s*applied',
+  'ICD\\s*203(?:\\s*standards)?',
+  'Hash',
+  'Signature',
+  'Provenance',
+  // Round 5 (2026-04-27) — manifest / synthesis preamble fields. The
+  // `data-download-manifest.md` and `synthesis-summary.md` artifacts emit
+  // structured run-metadata that is never article content.
+  'Article\\s*Type',
+  'Article\\s*Date',
+  'Analysis\\s*Type',
+  'Analysis\\s*Depth',
+  'Data\\s*Sources?',
+  'Documents?\\s*Downloaded',
+  'Documents?\\s*Selected(?:\\s*\\([^)]+\\))?',
+  'Produced\\s*By',
+  'Scope\\s*of\\s*this\\s*file',
+  // Round 6 (2026-04-27) — per-document and per-artifact preamble fields
+  // used in motion / interpellation / proposition / committee templates.
+  // Includes Swedish-language labels and audit timestamp variants.
+  'Session',
+  'Datum',
+  'Tier',
+  'DIW\\s*Tier',
+  'Admiralty\\s*Source\\s*Code',
+  'Inl(?:ä|a)mnare',
+  'Mottagare',
+  'Talman',
+  'Ministry',
+  'SISVA(?:\\s*\\([^)]+\\))?',
+  'Filed(?:\\s*by)?',
+  'Effective\\s*[Dd]ate',
+  'Tabling\\s*date',
+  'Requested\\s*date',
+  'Source\\s*authority',
+  'UTC\\s*Timestamp',
+  'Analysis\\s*Timestamp',
+  'Analysis\\s*run',
+  'Updated',
+  'Level',
+  'Relates\\s*to',
+  'frs',
 ];
 
 /**
@@ -351,27 +472,41 @@ function stripPassTwoSection(body: string): string {
 }
 
 /**
- * Remove leading admin-byline paragraphs (those made up entirely of bold
- * `**Author**` / `**Run ID**` / `**Classification**` / `**Confidence**` /
- * … fields). Walks paragraph-by-paragraph from the top, stopping at the
- * first real-prose paragraph.
+ * Remove admin-byline paragraphs anywhere in the artifact body. Walks
+ * paragraph-by-paragraph; any paragraph whose fragments are 100% bold-
+ * label admin metadata (per {@link ADMIN_FIELD_RE}) is dropped. Any
+ * paragraph with at least one non-admin fragment is preserved verbatim.
+ *
+ * Originally this stripper only ran on **leading** paragraphs and stopped
+ * at the first prose paragraph (hence the name). Per-document analyses
+ * and Family C/D artifacts emit *additional* admin blocks immediately
+ * under their internal `### {dok_id}` / `## Section` headings, so the
+ * leading-only sweep let ~393 admin-byline lines leak into the published
+ * Article body across 36 of 41 articles (audit 2026-04-27). Walking the
+ * whole body — but still requiring a paragraph to be **fully** admin —
+ * keeps body prose intact while removing the duplicate metadata blocks.
+ *
+ * The function name and signature are preserved so callers and tests
+ * that imported it through `__test__` continue to work; the behaviour is
+ * a strict superset of the previous version.
  */
 function stripLeadingAdminBylines(body: string): string {
   const paragraphs = body.split(/\n\n+/);
-  let skip = 0;
+  const kept: string[] = [];
   for (const p of paragraphs) {
     const trimmed = p.trim();
-    if (!trimmed) { skip += 1; continue; }
-    // Structural-only delimiter — see ADMIN_FRAGMENT_SPLITTER JSDoc.
-    const fragments = trimmed.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
-    const allAdmin = fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()));
-    if (allAdmin && fragments.length > 0) {
-      skip += 1;
+    if (!trimmed) {
+      // Preserve blank paragraph spacing — collapsed downstream by the
+      // `\n{3,}` rule in cleanArtifactBody.
+      kept.push(p);
       continue;
     }
-    break;
+    const fragments = trimmed.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
+    const allAdmin = fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()));
+    if (allAdmin && fragments.length > 0) continue;
+    kept.push(p);
   }
-  return skip === 0 ? body : paragraphs.slice(skip).join('\n\n');
+  return kept.join('\n\n');
 }
 
 /**
@@ -404,6 +539,106 @@ function stripLeadingAdminBylines(body: string): string {
  *    for each pair. We already collapse 3+ blank lines to 2; this also
  *    drops paragraphs that are empty after `_Source:_` italics removal.
  */
+/**
+ * Curated list of bold-label fields that are **pure process / audit
+ * metadata** — never genuine journalistic content even when they appear
+ * inside a paragraph that also carries fact-bearing labels. Stripped
+ * line-by-line by {@link stripProcessMetaLines}, so per-document
+ * identification cards (Title, Beteckning, Department, Committee,
+ * Minister, Response deadline, Filed, Effective date, …) survive
+ * intact while the workflow noise (Author, Date, Confidence, DIW Score,
+ * Admiralty, …) is removed.
+ *
+ * This is a strict subset of {@link ADMIN_FIELD_NAMES} so we never strip
+ * a label that the paragraph-level stripper considers "fact-bearing".
+ *
+ * Added 2026-04-27 (Round 7) after the journalist-perspective audit on
+ * the latest articles found that the paragraph-level stripper was
+ * over-conservative with mixed paragraphs — per-document `**Author** /
+ * **Date** / **Confidence** / **DIW Score** / **Admiralty Code** /
+ * **Self-audit cycle** / **Standard** / **Framework**` lines survived
+ * inside the per-document identification cards.
+ */
+const PROCESS_META_FIELD_NAMES: readonly string[] = [
+  'Author',
+  'Run\\s*ID',
+  'Date',
+  'Generated',
+  'Confidence',
+  'Classification',
+  'Admiralty(?:\\s*(?:Code|range|baseline|Source\\s*Code))?',
+  'Admiration\\s*Code',  // Common typo of "Admiralty"
+  'DIW\\s*(?:Score|Tier)',
+  'Self[-\\s]?audit\\s*cycle',
+  'Standard',
+  'Framework',
+  'Methodology',
+  'Pass\\s*2',
+  'AI[-\\s]?FIRST\\s*iterations?',
+  'ARTICLE_TYPE',
+  'Article\\s*[Tt]ype',
+  'Analysis\\s*[Tt]ype',
+  'Analysis\\s*[Dd]epth',
+  'Analysis\\s*[Pp]eriod',
+  'Analysis\\s*[Dd]ate',
+  'Analysis\\s*[Tt]imestamp',
+  'Analysis\\s*run',
+  'UTC\\s*Timestamp',
+  'Brief\\s*ID',
+  'Prepared\\s*by',
+  'Prepared\\s*at',
+  'Analyst',
+  'Distribution',
+  'Cycle',
+  '60[-\\s]?second\\s*read',
+  'Reviewed\\s*by',
+  'Reviewer',
+  'Disseminated',
+  'Dissemination',
+  'F3EAD\\s*Stage',
+  'PIRs?(?:\\s*served)?',
+  'Source\\s*Diversity(?:\\s*floor)?',
+  'WEP\\+ODNI',
+  'SATs?\\s*applied',
+  'ICD\\s*203(?:\\s*standards?)?',
+  'Hash',
+  'Signature',
+  'Provenance',
+  'Tradecraft(?:\\s*context)?',
+  'Confidence\\s*(?:distribution|floor|baseline)',
+  // NOTE: synthetic artifact-row IDs (SCN-ID, RSK-ID, THR-ID, CMP-ID,
+  // CLS-ID, XRF-ID, MTH-ID, SIG-ID, STA-ID) are deliberately NOT in the
+  // line-level stripper because the case-insensitive `gim` flag would
+  // also match journalist-useful labels like `Dok_ID` / `Dok-ID`. Those
+  // synthetic IDs only ever appear inside pure-admin paragraphs, so the
+  // paragraph-level stripper in `stripLeadingAdminBylines` already
+  // catches them safely (see ADMIN_FIELD_NAMES `[A-Z]{3}[-_]ID` entry).
+  'Riksm(?:ö|o)te',
+  'Election\\b(?!\\s*date)',  // Bare "Election" — keep "Election date" (a fact)
+];
+
+const PROCESS_META_LINE_RE = new RegExp(
+  `^[ \\t]*\\*{0,2}(?:${PROCESS_META_FIELD_NAMES.join('|')})\\*{0,2}\\s*:[^\\n]*$`,
+  'gim',
+);
+
+/**
+ * Strip individual `**Field**: value` lines that carry pure workflow /
+ * audit metadata, while leaving the rest of their paragraph untouched.
+ * This complements the paragraph-level {@link stripLeadingAdminBylines}
+ * sweep — paragraphs that mix process-metadata with genuine journalist
+ * facts (e.g. per-document identification cards) survive, but their
+ * process-metadata lines get scrubbed in place.
+ *
+ * Trailing two-space markdown line-breaks (`  \n`) and CRs are matched
+ * by the `[^\\n]*` body, so a stripped line removes its line terminator
+ * cleanly. Subsequent `\\n{3,}` collapse in {@link cleanArtifactBody}
+ * cleans up any blank-line residue.
+ */
+function stripProcessMetaLines(body: string): string {
+  return body.replace(PROCESS_META_LINE_RE, '');
+}
+
 function cleanArtifactBody(raw: string): string {
   const parsed = matter(raw);
   let body = parsed.content;
@@ -421,6 +656,12 @@ function cleanArtifactBody(raw: string): string {
   body = stripPassTwoSection(body);
   // Strip leading admin-byline paragraphs (template preamble).
   body = stripLeadingAdminBylines(body.trimStart());
+  // Strip individual process-metadata lines anywhere in the body. Runs
+  // *after* paragraph-level stripping so per-document identification
+  // cards (mixed fact + process metadata) keep their fact lines while
+  // the workflow noise (Author, Date, Confidence, DIW Score, Admiralty,
+  // Self-audit cycle, Standard, Framework, …) is scrubbed in place.
+  body = stripProcessMetaLines(body);
   // Strip in-body `_Source: file.md_` italic preambles (legacy template
   // preamble — sources are now surfaced in the Reader Intelligence
   // Guide and the `## Article Sources` appendix instead).
@@ -804,12 +1045,23 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   const docsDirForGuide = path.join(subfolderAbsPath, 'documents');
   const hasDocumentAnalyses = fs.existsSync(docsDirForGuide) &&
     fs.readdirSync(docsDirForGuide).some((f) => /\.md$/i.test(f));
+
+  // 2. Emit the executive brief FIRST so the reader meets the BLUF / so-what
+  //    frame before any navigation metadata. The Reader Intelligence Guide
+  //    is then injected immediately after, routing the reader into the
+  //    deeper analytical lenses with the executive context already loaded.
+  readSection('executive-brief.md', false);
   sections.push(buildReaderGuide(rootArtifactSet, hasDocumentAnalyses));
 
-  // 2. Emit the canonical narrative order, expanding documents/ between
-  //    threat-analysis and election-2026-analysis.
+  // 3. Emit the rest of the canonical narrative order, expanding documents/
+  //    between threat-analysis and election-2026-analysis. Article types
+  //    that produce only a subset of the canonical artifacts (e.g. realtime,
+  //    week-ahead, monthly-review) are supported transparently — readSection
+  //    skips missing files and the Reader Guide above filters its rows on
+  //    `available.has(entry.file)`.
   for (const fileName of AGGREGATION_ORDER) {
-    readSection(fileName, fileName !== 'executive-brief.md');
+    if (fileName === 'executive-brief.md') continue; // already emitted in Round 0
+    readSection(fileName, true);
     if (fileName === 'threat-analysis.md') {
       // Inject per-document analyses as one merged section.
       const docsDir = path.join(subfolderAbsPath, 'documents');
@@ -930,9 +1182,11 @@ export const __test__ = {
   PASS_TWO_HEADING_RE,
   ADMIN_FIELD_RE,
   ADMIN_FRAGMENT_SPLITTER,
+  PROCESS_META_LINE_RE,
   SENTENCE_END_RE,
   stripPassTwoSection,
   stripLeadingAdminBylines,
+  stripProcessMetaLines,
   stripSourcePreamble,
   demoteHeadings,
   cleanArtifactBody,

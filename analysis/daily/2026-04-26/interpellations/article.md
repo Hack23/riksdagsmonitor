@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: interpellations
 slug: 2026-04-26-interpellations
 source_folder: analysis/daily/2026-04-26/interpellations
-generated_at: 2026-04-27T15:59:44.656Z
+generated_at: 2026-04-27T16:50:07.028Z
 language: en
 layout: article
 ---
@@ -27,13 +27,6 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief.md -->
-
-**Author**: James Pether Sörling  
-**Date**: 2026-04-26  
-**Article Type**: Interpellations  
-**Classification**: PUBLIC — GDPR Art. 9(2)(e,g)  
-**Confidence**: B2 (Credible source, probably true)  
-**Run ID**: news-interpellations-2026-04-26
 
 ---
 
@@ -99,11 +92,6 @@ Data sourced from Riksdagen API (riksdag-regering MCP, rm=2025/26, doktyp=ip). D
 
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/intelligence-assessment.md -->
-
-**Author**: James Pether Sörling  
-**Classification**: PUBLIC — GDPR Art. 9(2)(e,g)  
-**Confidence**: B2 (Admiralty Code)  
-**ICD 203 Standards**: Applied
 
 ---
 
@@ -639,28 +627,24 @@ The government's position is defensive but not critically weakened. Its stronges
 **Mechanism**: Coordinated interpellation bombardment targeting KD ministers and Finance Ministry across welfare, housing, and employment policy simultaneously. S's strategy creates a mutually reinforcing "system failure" narrative: sick-pay removal → increased worker insecurity → employer exploitation of reform → declining housing → inadequate police response → government unable to protect ordinary Swedes.  
 **Timeline**: Active through June 2026; expected to peak at June budget debate  
 **Countermeasures**: Spring supplementary budget responsive measures; proactive ministerial data releases; visible policy announcements before parliamentary recess  
-**Confidence**: B1 — high; pattern is documented and systematic
 
 #### TH-2: Information-Environment Destabilisation [MEDIUM]
 **Actor**: Sweden Democrats (Sverigedemokraterna — SD) + affiliated media ecosystem  
 **Mechanism**: SD's wind-power disinformation interpellation (HD10448) is part of a pattern including the mosque-hate-speech filing (HD10430) and the free-speech/proposition challenge (HD10429). Collectively, these interpellations attempt to establish parliamentary precedent for public-media accountability that could be used to justify future regulatory pressure on SVT/SR.  
 **Timeline**: Ongoing; escalation risk if Energy Ministry response is sympathetic  
 **Countermeasures**: Government maintains editorial-independence principle in responses; SVT/SR respond factually to specific accuracy claims  
-**Confidence**: B2 — probable pattern identification
 
 #### TH-3: Coalition Internal Tension — Energy Policy [LOW-MEDIUM]
 **Actor**: SD energy wing  
 **Mechanism**: SD's wind-disinformation interpellation targets KD's Energy Minister Busch. If Busch endorses the "disinformation" framing, she risks credibility damage with pro-renewable industry stakeholders. If she dismisses the concern, she risks SD dissatisfaction. The interpellation creates a no-clean-answer dynamic.  
 **Timeline**: Short-term (response expected within 2 weeks)  
 **Countermeasures**: Carefully calibrated ministerial response  
-**Confidence**: B3 — possibly true; early signal
 
 #### TH-4: Labour Market Policy Backlash from SMEs [MEDIUM]
 **Actor**: Small and medium enterprise (SME) community, employer organisations  
 **Mechanism**: The removal of high-sick-pay reimbursement (HD10447) combined with alleged youth-employment-contribution gaming (HD10444) creates dual pressure on SME legitimacy: SMEs bear higher sick-pay costs while larger firms game the youth employment subsidy.  
 **Timeline**: Growing through 2026 as sick-pay costs accumulate  
 **Countermeasures**: Potential business community advocacy for restoration of sick-pay reimbursement; Finance Ministry data on employer-contribution reform impact  
-**Confidence**: B2 — probably true; consistent with SME cost-structure analysis
 
 ---
 
@@ -687,10 +671,8 @@ The dominant threat is electoral narrative consolidation by S through an unusual
 <!-- source: documents/HD10434-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/documents/HD10434-analysis.md -->
 
 **dok_id**: HD10434  
-**Author**: James Pether Sörling  
-**Classification**: PUBLIC  
+
 **Significance**: L2+ Priority (17/20)  
-**Confidence**: B1
 
 ---
 
@@ -766,10 +748,8 @@ Boverket statistics are official, primary-source data (A1). The structural cause
 <!-- source: documents/HD10439-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/documents/HD10439-analysis.md -->
 
 **dok_id**: HD10439  
-**Author**: James Pether Sörling  
-**Classification**: PUBLIC  
+
 **Significance**: L3 Intelligence-grade (18/20)  
-**Confidence**: B1
 
 ---
 
@@ -844,10 +824,8 @@ BRÅ's headcount confirmation is A1 (completely reliable official source). Stock
 <!-- source: documents/HD10444-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/documents/HD10444-analysis.md -->
 
 **dok_id**: HD10444  
-**Author**: James Pether Sörling  
-**Classification**: PUBLIC  
+
 **Significance**: L3 Intelligence-grade (19/20)  
-**Confidence**: B2 (probably true — claim is premature but plausible)
 
 ---
 
@@ -915,10 +893,8 @@ The mechanism for gaming is real and structurally plausible. Historical preceden
 <!-- source: documents/HD10447-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/documents/HD10447-analysis.md -->
 
 **dok_id**: HD10447  
-**Author**: James Pether Sörling  
-**Classification**: PUBLIC  
+
 **Significance**: L2+ Priority (17/20)  
-**Confidence**: B2
 
 ---
 
@@ -986,10 +962,8 @@ The financial impact on SMEs from abolishing the scheme is documented and the ca
 <!-- source: documents/HD10448-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/documents/HD10448-analysis.md -->
 
 **dok_id**: HD10448  
-**Author**: James Pether Sörling  
-**Classification**: PUBLIC  
+
 **Significance**: L2 Strategic (16/20)  
-**Confidence**: B2 / D4 (for SD's specific factual claims)
 
 ---
 
@@ -1520,8 +1494,6 @@ Devil's advocacy most successfully challenges the employer-contribution gaming c
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/classification-results.md -->
 
-**Author**: James Pether Sörling  
-**Classification**: PUBLIC  
 **GDPR**: Art. 9(2)(e) — political opinions publicly made; Art. 9(2)(g) — substantial public interest
 
 ---

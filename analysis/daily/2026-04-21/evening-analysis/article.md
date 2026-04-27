@@ -5,7 +5,7 @@ date: 2026-04-21
 subfolder: evening-analysis
 slug: 2026-04-21-evening-analysis
 source_folder: analysis/daily/2026-04-21/evening-analysis
-generated_at: 2026-04-27T15:59:44.580Z
+generated_at: 2026-04-27T16:50:06.914Z
 language: en
 layout: article
 ---
@@ -258,7 +258,6 @@ graph TD
 
 **SIG-ID**: SIG-2026-04-21-EVE001
 **Scoring Date**: 2026-04-21
-**Riksmöte**: 2025/26
 
 ---
 
@@ -314,11 +313,6 @@ graph LR
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/stakeholder-perspectives.md -->
 
-**STA-ID**: STA-2026-04-21-EVE001
-**Analysis Date**: 2026-04-21
-**Riksmöte**: 2025/26
-**Confidence**: 🟩HIGH
-
 ---
 
 ### Impact Radar
@@ -362,8 +356,6 @@ graph TD
 | Eating disorder patients | NEGATIVE — Region Stockholm service failures | HD10442 Kallifatides → Svantesson |
 | Rural residents (Vetlanda) | NEGATIVE — Skatteverket office closure | HD11732 |
 
-**Confidence**: 🟩HIGH | **Key actor**: Ordinary Swedish households facing high energy and fuel costs
-
 #### 2. Government Coalition (Tidöalliansen: M+SD+KD+L)
 **Impact Level**: 🔴 VERY HIGH | **Timeline**: 0–3 days
 
@@ -399,8 +391,6 @@ graph TD
 | Energy sector | MIXED — support for renewables + fossil stabilization | FiU48 + vindkraft |
 | Rural businesses | NEGATIVE — Skatteverket Vetlanda service loss | HD11732 |
 
-**Confidence**: 🟩HIGH
-
 #### 5. Civil Society (Civilsamhälle)
 **Impact Level**: 🟠 HIGH | **Timeline**: Immediate–Medium
 
@@ -412,8 +402,6 @@ graph TD
 | Ukraine solidarity organizations | POSITIVE — 154M SEK democracy support | 2026-04-20 press release |
 | Eating disorder patient groups | NEGATIVE — Region Stockholm failing on care | HD10442 |
 
-**Confidence**: 🟩HIGH
-
 #### 6. International/EU
 **Impact Level**: 🔴 VERY HIGH | **Timeline**: 47 days–4 weeks
 
@@ -423,8 +411,6 @@ graph TD
 | **EU Commission** | Fossil subsidy monitoring re: FiU48 fuel cut | 2-4 weeks | 🟩HIGH |
 | **UN/International community** | Gaza flotilla — Swedish citizen protection | Immediate | 🟧MEDIUM |
 | **Nordic partners (DK/NO/FI)** | Sweden joining EU fossil floor — competitive concern | Medium-term | 🟧MEDIUM |
-
-**Confidence**: 🟩HIGH — EU infringement risk is structurally certain; FiU48 EU monitoring is probable
 
 #### 7. Judiciary/Constitutional
 **Impact Level**: 🟠 HIGH | **Timeline**: 2026-05-05 est.
@@ -436,8 +422,6 @@ graph TD
 | Rättssäkerhetsproblem (Widding) | Justitiedepartementet | Systemic reform needed | HD10441 |
 | SfU22 ECHR compliance | Migrationsverket | Deportation legal risk | HD01SfU22 |
 
-**Confidence**: 🟧MEDIUM (depends on KU conclusions not yet published)
-
 #### 8. Media/Public Opinion
 **Impact Level**: 🟠 HIGH | **Timeline**: Immediate
 
@@ -448,18 +432,12 @@ graph TD
 | "Opposition coordinated" | May trigger "chaos coalition" counter-attack | MIXED | 21-motion cluster |
 | "Constitutional accountability" | Elite media scrutiny of KU hearings | NEUTRAL | KU G16/G34 |
 
-**Confidence**: 🟧MEDIUM — public opinion polls not yet available for 2026-04-21
-
 ---
 
 *Produced by Riksdagsmonitor Evening Analysis v5.0 — Confidence: 🟩HIGH*
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/scenario-analysis.md -->
-
-**SCN-ID**: SCN-2026-04-21-EVE001
-**Analysis Date**: 2026-04-21 | **Riksmöte**: 2025/26
-**Confidence**: 🟩HIGH across all base scenarios
 
 ---
 
@@ -615,11 +593,6 @@ xychart-beta
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/risk-assessment.md -->
 
-**RSK-ID**: RSK-2026-04-21-EVE001
-**Analysis Date**: 2026-04-21
-**Riksmöte**: 2025/26
-**Confidence**: 🟩HIGH
-
 ---
 
 ### Risk Heat Map
@@ -705,15 +678,10 @@ graph TD
 
 3. **R03 (KU G16 Observation)** — L×I=12, HIGH — Finance Minister Svantesson's constitutional hearing today could produce formal observations in the KU annual report affecting campaign credibility.
 
-*Confidence: 🟩HIGH | Produced by Riksdagsmonitor Evening Analysis v5.0*
-
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/swot-analysis.md -->
 
 **SWOT-ID**: SWT-2026-04-21-EVE001
-**Analysis Date**: 2026-04-21
-**Riksmöte**: 2025/26
-**Confidence**: 🟩HIGH
 
 ---
 
@@ -839,11 +807,6 @@ quadrantChart
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/threat-analysis.md -->
 
-**THR-ID**: THR-2026-04-21-EVE001
-**Analysis Date**: 2026-04-21
-**Riksmöte**: 2025/26
-**Confidence**: 🟩HIGH
-
 ---
 
 ### Threat Taxonomy Network
@@ -947,8 +910,6 @@ The combination of a pending EU infringement deadline (47 days), climate law obl
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/comparative-international.md -->
 
 **CMP-ID**: CMP-2026-04-21-EVE001
-**Analysis Date**: 2026-04-21 | **Riksmöte**: 2025/26
-**Confidence**: 🟩HIGH (policy design) | 🟧MEDIUM (electoral outcome predictions)
 
 ---
 
@@ -1069,7 +1030,6 @@ quadrantChart
 
 **CLS-ID**: CLS-2026-04-21-EVE001
 **Classification Date**: 2026-04-21
-**Riksmöte**: 2025/26
 
 ---
 
@@ -1148,10 +1108,6 @@ graph TD
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/cross-reference-map.md -->
-
-**XRF-ID**: XRF-2026-04-21-EVE001
-**Analysis Date**: 2026-04-21
-**Riksmöte**: 2025/26
 
 ---
 
@@ -1235,9 +1191,6 @@ graph TD
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/methodology-reflection.md -->
-
-**MTH-ID**: MTH-2026-04-21-EVE001
-**Analysis Date**: 2026-04-21 | **Riksmöte**: 2025/26
 
 ---
 
@@ -1364,12 +1317,6 @@ graph TD
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/data-download-manifest.md -->
-
-**Generated**: 2026-04-21 18:24 UTC
-**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer, get_dokument_innehall
-**Documents Downloaded**: 180
-**Documents Selected (date-filtered)**: 8
-**Produced By**: download-parliamentary-data script (data download only)
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
 > All political intelligence analysis (classification, risk assessment, SWOT,

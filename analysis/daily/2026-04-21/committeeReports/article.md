@@ -5,7 +5,7 @@ date: 2026-04-21
 subfolder: committeeReports
 slug: 2026-04-21-committeeReports
 source_folder: analysis/daily/2026-04-21/committeeReports
-generated_at: 2026-04-27T15:59:44.577Z
+generated_at: 2026-04-27T16:50:06.909Z
 language: en
 layout: article
 ---
@@ -148,17 +148,10 @@ See [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/a
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-28
-
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/synthesis-summary.md -->
 
-**Date**: 2026-04-21  
-**Riksmöte**: 2025/26  
-**Analyst**: news-committee-reports workflow  
 **Documents Analyzed**: 14 committee reports (7 carried over + 7 new including HD01FiU48)  
-**Analysis Timestamp**: 2026-04-21 14:45 UTC  
-**Confidence**: 🟩HIGH (SUMMARY/METADATA + FULL TEXT data)
 
 ---
 
@@ -297,9 +290,6 @@ Both **SfU22** (migration inhibition) and **TU22** (tachograph) expand state enf
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/significance-scoring.md -->
 
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports | **Method**: 5-dimension scoring  
-**Updated**: 14:45 UTC — includes HD01FiU48 (new top story, extra ändringsbudget 2026)
-
 ### Scoring Matrix
 
 | dok_id | Electoral | Constitutional | EU Impact | Immediacy | Controversy | TOTAL |
@@ -340,9 +330,6 @@ Both **SfU22** (migration inhibition) and **TU22** (tachograph) expand state enf
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/stakeholder-perspectives.md -->
-
-**Date**: 2026-04-21 | **Framework**: 8-Group Political Intelligence Model | **Analyst**: news-committee-reports  
-**Updated**: 14:52 UTC — HD01FiU48 (extra ändringsbudget) added as primary document for all 8 groups
 
 ### Overview
 
@@ -490,8 +477,6 @@ All 5.7 million Swedish licensed drivers benefit from the 82 öre/liter petrol r
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/scenario-analysis.md -->
 
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports workflow
-**Framework**: Bayesian scenario tree per `political-risk-methodology.md` §Scenario Tree Analysis.
 **Assessment window**: 2026-04-21 → 2027-04-21 (12 months).
 
 ---
@@ -658,15 +643,10 @@ Beyond the five scenarios, three low-probability high-impact events worth monito
 
 ---
 
-**Confidence**: 🟨 MEDIUM. Probabilities are point estimates with ±0.05 uncertainty bands. Primary uncertainty is the September 2026 election outcome (no reliable forecast exists with <60% confidence at T-5 months).
-
 **Next Bayesian update**: 2026-05-21 (or triggered by monitor events above).
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/risk-assessment.md -->
-
-**Date**: 2026-04-21 | **Framework**: ISO 31000 + ISMS | **Analyst**: news-committee-reports  
-**Updated**: 14:52 UTC — Expanded to 14 documents, FiU48 fiscal risks added
 
 ### Risk Heatmap
 
@@ -731,9 +711,6 @@ quadrantChart
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/swot-analysis.md -->
-
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports | **Scope**: All 14 committee reports  
-**Updated**: 14:50 UTC — Expanded to 14 documents including HD01FiU48 (extra ändringsbudget)
 
 ### Overall Legislative Batch Assessment
 
@@ -1073,8 +1050,6 @@ timeline
 
 ---
 
-**Confidence**: 🟩 HIGH. Primary evidence is the full text of HD01FiU48, HD01SfU22, HD01KU32, HD01KU33 plus peer-jurisdiction ECtHR case law. See [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/methodology-reflection.md) for known gaps.
-
 ## Per-document intelligence
 
 ### HD01CU27
@@ -1351,11 +1326,9 @@ graph LR
 **Document**: HD01FiU48  
 **Title**: Extra ändringsbudget för 2026 – Sänkt skatt på drivmedel samt el- och gasprisstöd  
 **Committee**: Finansutskottet (FiU)  
-**Date**: 2026-04-21  
-**Riksmöte**: 2025/26  
+
 **Significance Score**: 22/25 (TOP STORY — co-leads with HD01SfU22)  
 **Analyst Confidence**: 🟦VERY HIGH  
-**Analysis Timestamp**: 2026-04-21 14:45 UTC
 
 ---
 
@@ -2762,14 +2735,10 @@ Although the reduced-parliament quorum provisions are a separate constitutional 
 
 ---
 
-**Confidence**: 🟨 MEDIUM — Projections extrapolated from committee-stage positions + historical analogues. Actual floor votes will refine.
 **Next Update**: 2026-04-29 (post-kammaren roll calls on FiU48 and SfU22).
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/comparative-international.md -->
-
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports workflow
-**Framework**: Peer-jurisdiction benchmarking across fiscal, migration, constitutional, and digital policy axes.
 
 ---
 
@@ -2892,13 +2861,8 @@ graph LR
 
 ---
 
-**Confidence**: 🟩 HIGH — Peer data validated against OECD, ECRE, and ECtHR case databases.
-
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/classification-results.md -->
-
-**Date**: 2026-04-21 | **Riksmöte**: 2025/26 | **Analyst**: news-committee-reports workflow
-**Analysis Timestamp**: 2026-04-21 15:10 UTC | **Data Depth**: SUMMARY + FULL TEXT for top 8
 
 ---
 
@@ -2985,9 +2949,6 @@ pie title Committee Reports 2026-04-21 by Domain
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/cross-reference-map.md -->
-
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports workflow
-**Purpose**: Trace legislative lineage (proposition → remiss → betänkande → motion → beslut) and identify thematic convergence across committees.
 
 ---
 
@@ -3121,9 +3082,6 @@ See [`../motions/cross-reference-map.md`](https://github.com/Hack23/riksdagsmoni
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/methodology-reflection.md -->
-
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports workflow
-**Purpose**: Per `ai-driven-analysis-guide.md` §Methodology Reflection, transparently report method, data depth, confidence calibration, known gaps, and deviation rationale.
 
 ---
 
@@ -3273,12 +3231,9 @@ The motions cycle for the prior week (2026-04-14 → 04-17) produced 18 analysis
 
 ---
 
-**Classification**: Public · **Confidence**: 🟩 HIGH on method compliance; 🟨 MEDIUM on forward-looking claims.
-
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/data-download-manifest.md -->
 
-**Generated**: 2026-04-21 15:36 UTC
 **Data Sources**: get_betankanden, get_dokument_innehall
 **Scope of this file**: raw data downloaded by the **data-only downloader**. This is **not** the analysis-selection set. The full analysis dossier in this directory covers a broader **14-report week package** that includes reports adopted 2026-04-14 → 2026-04-21 as surfaced by the news-committee-reports workflow; see [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/synthesis-summary.md) and [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/classification-results.md) for the complete analysis set.
 **Documents Downloaded (this run)**: 50 (type=committeeReports, raw listing from `get_betankanden`)
@@ -3314,9 +3269,6 @@ All documents sourced from official riksdag-regering-mcp API.
 
 ## Election 2026 Implications
 <!-- source: election-2026-implications.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/election-2026-implications.md -->
-
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports | **Framework**: v5.0 Election Lens  
-**Updated**: 14:45 UTC — HD01FiU48 (extra ändringsbudget) added as primary electoral document
 
 ### Overview
 
@@ -3360,7 +3312,6 @@ graph LR
 ### Document-by-Document Electoral Assessment
 
 #### HD01FiU48 — Extra ändringsbudget: Fuel Tax Cut + Energy Price Relief
-**Confidence**: 🟦VERY HIGH
 
 **Electoral Impact**: VERY HIGH — This is the most direct voter benefit in the April 2026 batch. The fuel tax cut of 82 öre/liter for petrol and 319 SEK/m³ for diesel (May 1 – September 30) will be felt at every Swedish petrol station. With approximately 5.7 million licensed drivers and Sweden's relatively high commute-by-car rates in rural and suburban areas, this measure disproportionately benefits the government's suburban and rural voter bases.
 
@@ -3383,7 +3334,6 @@ graph LR
 ---
 
 #### HD01SfU22 — Inhibition av verkställigheten
-**Confidence**: 🟩HIGH
 
 **Electoral Impact**: VERY HIGH — Migration is consistently Sweden's #2 voter concern (after economy). The inhibition reform directly replaces a humanitarian protection mechanism with a surveillance-enforcement mechanism. SD will campaign: "We delivered — no more residence through the back door." S will counter: "A cruel system that abandons people in legal limbo."
 
@@ -3403,7 +3353,6 @@ graph LR
 ---
 
 #### HD01KU32/KU33 — Constitutional Amendments (vilande)
-**Confidence**: 🟩HIGH (constitutional mechanics well-established)
 
 **Electoral Impact**: MEDIUM but constitutionally unique — Both amendments are adopted "vilande" (pending), meaning the **next** Riksdag after the September 2026 election must re-affirm identical wording. This creates an extraordinary situation: the September 2026 election result directly determines whether KU32 (accessibility requirements for protected media) and KU33 (digital seizure not classified as public records) become law in 2027.
 
@@ -3412,7 +3361,6 @@ graph LR
 ---
 
 #### HD01TU21 — En statlig e-legitimation
-**Confidence**: 🟧MEDIUM
 
 **Electoral Impact**: MEDIUM — Not a hot-button issue, but digital inclusion resonates with elderly voters (≈22% of electorate) and immigrant communities.
 
@@ -3423,7 +3371,6 @@ graph LR
 ---
 
 #### HD01MJU21 — Riksrevisionens rapport om jordbrukets klimatomställning
-**Confidence**: 🟧MEDIUM
 
 **Electoral Impact**: MEDIUM — Sensitive for C-party rural voter base. Green voters (MP, V) want stronger action; farmers (C/SD rural) fear binding conditions.
 
@@ -3589,8 +3536,6 @@ Claims that would *exceed* historical baselines and require additional evidence 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/synthesis-summary.md) — overall synthesis
 
 ---
-
-**Confidence**: 🟩 HIGH on aggregate counts; 🟨 MEDIUM on top-story significance re-scoring for pre-2020 cycles (retrospective methodology reconstruction).
 
 ## Article Sources
 

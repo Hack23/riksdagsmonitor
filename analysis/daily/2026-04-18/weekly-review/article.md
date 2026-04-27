@@ -5,7 +5,7 @@ date: 2026-04-18
 subfolder: weekly-review
 slug: 2026-04-18-weekly-review
 source_folder: analysis/daily/2026-04-18/weekly-review
-generated_at: 2026-04-27T15:59:44.534Z
+generated_at: 2026-04-27T16:50:06.848Z
 language: en
 layout: article
 ---
@@ -146,8 +146,6 @@ Use this guide to read the article as a political-intelligence product rather th
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/README.md) · [Synthesis](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/synthesis-summary.md) · [Significance](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/significance-scoring.md) · [Classification](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/classification-results.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/swot-analysis.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/risk-assessment.md) · [Threat](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/threat-analysis.md) · [Stakeholders](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/stakeholder-perspectives.md) · [Scenarios](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/scenario-analysis.md) · [Comparative](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/comparative-international.md) · [Cross-References](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/cross-reference-map.md) · [Methodology Reflection](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/methodology-reflection.md) · [Data Manifest](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/data-download-manifest.md)
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-25 (event-driven) · **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/synthesis-summary.md -->
@@ -478,8 +476,6 @@ Full risk register, Bayesian update rules, ALARP ladder, 90-day calendar in [`ri
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-25 (event-driven) · **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1 (Rules 0–8 applied)
-
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/significance-scoring.md -->
 
@@ -669,8 +665,6 @@ flowchart TD
 - [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/risk-assessment.md) §R1 cites HD03231 + HD01UFöU3 weighting
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-25 · **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1 §Rule 5 (DIW v1.0)
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/stakeholder-perspectives.md -->
@@ -931,8 +925,6 @@ graph TD
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-25 · **Methodology**: 6-lens stakeholder analysis (`political-style-guide.md`) + Election 2026 implication grid (`ai-driven-analysis-guide.md` v5.1 §Rule 5 Election lens)
-
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/scenario-analysis.md -->
 
@@ -1189,8 +1181,6 @@ flowchart TD
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-25 (event-driven; immediate update if W1/W2 trigger fires) · **Methodology**: `ai-driven-analysis-guide.md` v5.1 §Scenario Analysis + Bayesian + ACH
-
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/risk-assessment.md -->
 
@@ -1387,8 +1377,6 @@ quadrantChart
 - [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/comparative-international.md) §Diplomatic-Response patterns calibrate R1 magnitude
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-25 (event-driven; immediate update if R1 trigger fires) · **Methodology**: `analysis/methodologies/political-risk-methodology.md` v2.x (5×5 + Bayesian + ALARP + cascading)
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/swot-analysis.md -->
@@ -1631,8 +1619,6 @@ graph TD
 - [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/comparative-international.md) §Nordic models supports O3 + W2
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-25 · **Methodology**: `analysis/methodologies/political-swot-framework.md` v3.0 (TOWS + cross-bloc + scenario-branching)
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/threat-analysis.md -->
@@ -1948,8 +1934,6 @@ graph TD
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-25 (event-driven; immediate update if T1 trigger fires) · **Methodology**: `analysis/methodologies/political-threat-framework.md` v2.0 (STRIDE + Attack Tree + Kill Chain + Diamond + Political Threat Taxonomy)
-
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/comparative-international.md -->
 
@@ -2181,8 +2165,6 @@ graph TD
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-25 · **Methodology**: `ai-driven-analysis-guide.md` v5.1 §Rule 8 (Comparative Benchmarking) + World Bank + RSF + national parliament references
-
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/classification-results.md -->
 
@@ -2315,8 +2297,6 @@ All 28 documents classified **Public** under [`Hack23 ISMS-PUBLIC CLASSIFICATION
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/stakeholder-perspectives.md) maps each P0/P1 document to its stakeholder lens
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-25 · **Methodology**: `analysis/methodologies/political-classification-guide.md` v3.0
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/cross-reference-map.md -->
@@ -2457,8 +2437,6 @@ Each of those events triggers a **per-event analysis** in the appropriate `analy
 - [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/scenario-analysis.md) §Scenarios apply cluster framing
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-25 · **Methodology**: Thematic clustering + cross-cluster interference + prior-run continuity (see `political-swot-framework.md` §Cross-Cluster Interference)
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/methodology-reflection.md -->
@@ -2642,8 +2620,6 @@ The following items should be raised at the next quarterly methodology sweep:
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-25 (event-driven) + Quarterly Methodology Sweep 2026-07-18 · **Methodology**: `ai-driven-analysis-guide.md` v5.1 §Rule 7 (Reference-Grade Self-Audit)
-
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/data-download-manifest.md -->
 
@@ -2751,8 +2727,6 @@ These documents are referenced extensively in this analysis but live in upstream
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/synthesis-summary.md) §Documents Analysed cross-references each row
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-25 · **Methodology**: `ai-driven-analysis-guide.md` v5.1 §Rule 2 (separation: data download vs analysis) + §Provenance discipline
 
 ## Article Sources
 

@@ -5,7 +5,7 @@ date: 2026-04-23
 subfolder: motions
 slug: 2026-04-23-motions
 source_folder: analysis/daily/2026-04-23/motions
-generated_at: 2026-04-27T15:59:44.612Z
+generated_at: 2026-04-27T16:50:06.963Z
 language: en
 layout: article
 ---
@@ -79,8 +79,6 @@ quadrantChart
     HD024089 C-Reception: [0.72, 0.70]
     HD024098 MP-Budget: [0.70, 0.78]
 ```
-
-*Confidence: HIGH overall [B2]; individual document scores reflect manifest data + full text where available.*
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/synthesis-summary.md -->
@@ -179,15 +177,11 @@ flowchart TB
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/intelligence-assessment.md -->
 
-**Author**: James Pether Sörling | **Date**: 2026-04-23  
-**Classification**: PUBLIC  
 **PIR reference**: PIR-1 (Governmental stability), PIR-3 (Policy reform trajectory), PIR-5 (Electoral dynamics)
 
 ---
 
 ### Key Judgment KJ-1: Opposition Fragmentation is the Dominant Political Story
-
-**Confidence: HIGH**
 
 The most significant intelligence output from this week's motions is not any individual policy clash but the structural fragmentation of the centre-left opposition. S (HD024082), V (HD024092), and MP (HD024098) all oppose the same government proposition (2025/26:236) but cannot agree on a common alternative. This fragmentation is observable, documented, and structurally persistent — reflecting genuine policy disagreements about the relative priority of distributional justice (V), environmental protection (MP), and fiscal competence (S). The pattern is likely to persist through the 2026 election campaign.
 
@@ -197,8 +191,6 @@ The most significant intelligence output from this week's motions is not any ind
 
 ### Key Judgment KJ-2: Government's Legislative Program is Expert-Isolated
 
-**Confidence: HIGH**
-
 The government faces unprecedented expert agency opposition to its supplementary budget: Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet, Statens energimyndighet, and Trafikverket all opposed the fuel tax reduction in remiss (cited in HD024098). Simultaneously, Lagrådet explicitly advised against the deportation law (cited in HD024090). This double expert-isolation — on fiscal and legal dimensions simultaneously — is a significant indicator of reduced policy quality and increased implementation risk.
 
 *Evidence*: Five agencies cited by name in HD024098 [A2]; Lagrådet rejection cited in HD024090 [A1]. Independent confirmation from multiple institutional sources.
@@ -206,8 +198,6 @@ The government faces unprecedented expert agency opposition to its supplementary
 ---
 
 ### Key Judgment KJ-3: Migration Policy Arena is the Key 2026 Electoral Battleground
-
-**Confidence: MEDIUM-HIGH**
 
 The week's migration motions (HD024089, HD024090, HD024095, HD024097, HD024080, HD024079, HD024077, HD024086) reveal that C occupies the most strategically exposed position: broadly accepting both the deportation framework and the Mottagandelag while opposing specific elements. This makes C a plausible coalition partner for either a right-wing or centre-left government in 2026 — and therefore a pivotal swing actor whose final positioning will be decisive.
 
@@ -657,12 +647,9 @@ quadrantChart
     R-06 Unconstitutional: [0.42, 0.78]
 ```
 
-*Confidence: MEDIUM [B2–C3]. Risk scores based on parliamentary patterns + primary documents.*
-
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/swot-analysis.md -->
 
-**Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: HIGH [B2]  
 **Framing**: Strengths/Weaknesses of the *opposition bloc's* motion strategy; Opportunities/Threats from *their* political perspective.
 
 ---
@@ -835,10 +822,6 @@ flowchart TD
 ### HD024077
 <!-- source: documents/HD024077-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024077-analysis.md -->
 
-**dok_id**: HD024077
-**Author**: James Pether Sörling | **Date**: 2026-04-23
-**Admiralty**: [C3] — metadata-only; full text not fetched in this run
-
 ---
 
 ### Summary
@@ -861,10 +844,6 @@ Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching
 
 ### HD024079
 <!-- source: documents/HD024079-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024079-analysis.md -->
-
-**dok_id**: HD024079
-**Author**: James Pether Sörling | **Date**: 2026-04-23
-**Admiralty**: [C3] — metadata-only; full text not fetched in this run
 
 ---
 
@@ -889,10 +868,6 @@ Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching
 ### HD024080
 <!-- source: documents/HD024080-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024080-analysis.md -->
 
-**dok_id**: HD024080
-**Author**: James Pether Sörling | **Date**: 2026-04-23
-**Admiralty**: [C3] — metadata-only; full text not fetched in this run
-
 ---
 
 ### Summary
@@ -915,12 +890,6 @@ Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching
 
 ### HD024082
 <!-- source: documents/HD024082-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024082-analysis.md -->
-
-**dok_id**: HD024082  
-**Author**: James Pether Sörling | **Date**: 2026-04-23  
-**Party**: Socialdemokraterna (S) | **Talman**: Mikael Damberg  
-**Type**: Motion (följdmotion to prop. 2025/26:236)  
-**Admiralty**: [B1] — confirmed by riksdagen.se document access, primary source
 
 ---
 
@@ -951,10 +920,6 @@ The exact number of excluded households (800,000) is S's figure — not independ
 ### HD024086
 <!-- source: documents/HD024086-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024086-analysis.md -->
 
-**dok_id**: HD024086
-**Author**: James Pether Sörling | **Date**: 2026-04-23
-**Admiralty**: [C3] — metadata-only; full text not fetched in this run
-
 ---
 
 ### Summary
@@ -978,10 +943,6 @@ Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching
 ### HD024087
 <!-- source: documents/HD024087-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024087-analysis.md -->
 
-**dok_id**: HD024087
-**Author**: James Pether Sörling | **Date**: 2026-04-23
-**Admiralty**: [C3] — metadata-only; full text not fetched in this run
-
 ---
 
 ### Summary
@@ -1004,12 +965,6 @@ Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching
 
 ### HD024089
 <!-- source: documents/HD024089-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024089-analysis.md -->
-
-**dok_id**: HD024089  
-**Author**: James Pether Sörling | **Date**: 2026-04-23  
-**Party**: Centerpartiet (C) | **Talman**: Niels Paarup-Petersen  
-**Type**: Motion (följdmotion to new Mottagandelagen)  
-**Admiralty**: [B1] — confirmed primary source; full text fetched
 
 ---
 
@@ -1041,12 +996,6 @@ Whether C will press its amendments to a committee vote or accept the law withou
 ### HD024090
 <!-- source: documents/HD024090-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024090-analysis.md -->
 
-**dok_id**: HD024090  
-**Author**: James Pether Sörling | **Date**: 2026-04-23  
-**Party**: Vänsterpartiet (V) | **Talman**: Tony Haddou  
-**Type**: Motion (följdmotion to prop. 2025/26:235)  
-**Admiralty**: [B1] — confirmed primary source
-
 ---
 
 ### Summary
@@ -1077,10 +1026,6 @@ Lagrådet opinion text not independently fetched — cited as reported in V's mo
 ### HD024091
 <!-- source: documents/HD024091-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024091-analysis.md -->
 
-**dok_id**: HD024091
-**Author**: James Pether Sörling | **Date**: 2026-04-23
-**Admiralty**: [C3] — metadata-only; full text not fetched in this run
-
 ---
 
 ### Summary
@@ -1103,12 +1048,6 @@ Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching
 
 ### HD024092
 <!-- source: documents/HD024092-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024092-analysis.md -->
-
-**dok_id**: HD024092  
-**Author**: James Pether Sörling | **Date**: 2026-04-23  
-**Party**: Vänsterpartiet (V) | **Talman**: Nooshi Dadgostar  
-**Type**: Motion (följdmotion to prop. 2025/26:236)  
-**Admiralty**: [B1] — confirmed primary source
 
 ---
 
@@ -1138,12 +1077,6 @@ RUT dnr 2026:158 document not independently fetched — cited as reported in V's
 
 ### HD024095
 <!-- source: documents/HD024095-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024095-analysis.md -->
-
-**dok_id**: HD024095  
-**Author**: James Pether Sörling | **Date**: 2026-04-23  
-**Party**: Centerpartiet (C) | **Talman**: Niels Paarup-Petersen  
-**Type**: Motion (följdmotion to prop. 2025/26:235)  
-**Admiralty**: [B1] — confirmed primary source; full text fetched
 
 ---
 
@@ -1175,12 +1108,6 @@ Whether C's amendment demands will be adopted by SfU committee is uncertain. If 
 ### HD024096
 <!-- source: documents/HD024096-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024096-analysis.md -->
 
-**dok_id**: HD024096  
-**Author**: James Pether Sörling | **Date**: 2026-04-23  
-**Party**: Miljöpartiet (MP) | **Talman**: Jacob Risberg  
-**Type**: Motion  
-**Admiralty**: [C3] — metadata-only; full text not fetched
-
 ---
 
 ### Summary
@@ -1211,10 +1138,6 @@ Full text not fetched — analysis based on title and metadata only. [C3]. The s
 ### HD024097
 <!-- source: documents/HD024097-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024097-analysis.md -->
 
-**dok_id**: HD024097
-**Author**: James Pether Sörling | **Date**: 2026-04-23
-**Admiralty**: [C3] — metadata-only; full text not fetched in this run
-
 ---
 
 ### Summary
@@ -1237,12 +1160,6 @@ Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching
 
 ### HD024098
 <!-- source: documents/HD024098-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/documents/HD024098-analysis.md -->
-
-**dok_id**: HD024098  
-**Author**: James Pether Sörling | **Date**: 2026-04-23  
-**Party**: Miljöpartiet (MP) | **Talman**: Janine Alm Ericson  
-**Type**: Motion (följdmotion to prop. 2025/26:236)  
-**Admiralty**: [B1] — confirmed primary source
 
 ---
 
@@ -1357,8 +1274,6 @@ pie title Current Parliament Approximate Seat Distribution
 **Government coalition (M+SD+KD+L)**: 176 seats — bare majority  
 **Opposition bloc (S+V+MP)**: 149 seats  
 **Pivotal C**: 24 seats
-
-*Source: riksdagen.se official election results [A1]*
 
 ---
 
@@ -1504,8 +1419,6 @@ quadrantChart
 | Export to conflict zones | New framework, softer standards | Tightened after Ukraine; export to warring parties debated | Conditional; restricted to NATO allies primarily |
 | Third-country diversion | Not required in main text | Required in some licences | Required |
 | Parliamentary override | Government controls | Parliamentary consultation required | Parliamentary consultation required |
-
-**Comparator set**: [Norway — arms export], [Germany — arms export], [Netherlands — arms export]
 
 **Outside-In**: MP's (HD024096) demand that third-country diversion risk always be considered at the licensing stage aligns with German practice. The Netherlands requires parliamentary notification for major sales. Sweden's proposed framework is less stringent on both counts. From an international norm perspective, MP's position is closer to EU partner practice.
 

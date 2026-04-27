@@ -5,7 +5,7 @@ date: 2026-04-22
 subfolder: evening-analysis
 slug: 2026-04-22-evening-analysis
 source_folder: analysis/daily/2026-04-22/evening-analysis
-generated_at: 2026-04-27T15:59:44.593Z
+generated_at: 2026-04-27T16:50:06.934Z
 language: en
 layout: article
 ---
@@ -92,11 +92,10 @@ pie title Confidence Distribution by Admiralty Code
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/synthesis-summary.md -->
 
 **Synthesis ID**: SYN-2026-04-22-EVE001
-**Analysis Date**: 2026-04-22 23:50 UTC
-**Analyst**: James Pether Sörling
+
 **Documents Analysed**: 20 (direct) + 36 (via sibling cross-reference) = 56 total
 **Overall Confidence**: HIGH [A1]
-**Riksmöte**: 2025/26
+
 **Days to Election**: ~144 (September 13, 2026)
 
 ---
@@ -227,9 +226,7 @@ graph LR
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/intelligence-assessment.md -->
 
 **Assessment ID**: IA-2026-04-22-EVE001
-**Analyst**: James Pether Sörling
-**Classification**: Public | **Confidence**: HIGH [A1] overall
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
+
 **Days to election**: 144
 
 ---
@@ -237,8 +234,6 @@ graph LR
 ### Key Judgment 1 (KJ-1)
 
 **The S dual-track strategy on HD01FiU48 — voting Ja in chamber while filing climate counter-motion — is a deliberate electoral calculation, not a policy incoherence.**
-
-**Confidence**: HIGH
 
 **Evidence**: S MPs on FiU voted Ja at 16:29 2026-04-22 (riksdagen.se vote record CE14CCEF) while the same party filed HD024082 opposing the same proposition the preceding week. Both actions are confirmed primary-source facts. The strategic logic — avoiding blame for high energy costs while signalling climate credentials to the base — is the only coherent explanation.
 
@@ -252,8 +247,6 @@ graph LR
 
 **Finance Minister Elisabeth Svantesson (M) faces a heightened ministerial accountability risk from interpellation HD10442 because the court documentation attached makes denial structurally difficult.**
 
-**Confidence**: MEDIUM
-
 **Evidence**: HD10442 (riksdagen.se, filed 2026-04-21 by Markus Kallifatides, S) references a court ruling that upheld Region Stockholm's position on eating disorder care — a position directly contradicting Svantesson's public statements. The accountability chain is: (1) Svantesson makes public statement, (2) Region Stockholm challenges in court, (3) court upholds Region Stockholm, (4) S files IP citing court ruling. Step 4 confirmed; ministerial exposure is probable [B2] but not certain — a skilled parliamentary response could neutralise it.
 
 **Key Assumption**: Svantesson's original statements were indeed the ones characterised in the IP. If the IP mischaracterises her statements (possible [C3]), this judgment weakens.
@@ -265,8 +258,6 @@ graph LR
 ### Key Judgment 3 (KJ-3)
 
 **The Spring Proposition 2026 (HD03100) — the last vårproposition before the September 2026 election — defines the central economic battleground, and S will systematically contest every major fiscal assumption.**
-
-**Confidence**: VERY HIGH
 
 **Evidence**: HD03100 (riksdagen.se, Finansdepartementet, 2026-04-13 by Elisabeth Svantesson) is the formal statement of the government's multi-year fiscal framework. The document sets riktlinjer (spending guidelines) and fiscal targets. Sweden GDP growth 2024: 0.82% (World Bank), 2023: −0.20% — weak trajectory provides S with ammunition. Every budget assumption becomes campaign material.
 
@@ -280,8 +271,6 @@ graph LR
 
 **The simultaneous grundlag first readings (HD01KU33 + HD01KU32) reflect an unusually active constitutional reform agenda that will require a second reading in the next riksmöte — creating campaign complications for all parties.**
 
-**Confidence**: HIGH
-
 **Evidence**: HD01KU33 (husrannsakan insyn) and HD01KU32 (medietillgänglighet) are both in first reading (vilande) as of 2026-04-22 (riksdagen.se, KU committee). Both are grundlag changes requiring second reading after election. This means whichever party/coalition wins September 2026 will inherit these constitutional changes — creating electoral accountability for their content.
 
 **PIR-4**: Constitutional reform pipeline status? → **ANSWERED** — two simultaneous first readings active.
@@ -291,8 +280,6 @@ graph LR
 ### Key Judgment 5 (KJ-5)
 
 **Sweden's accession to both the Ukraina compensation commission (HD03232) and the international aggression tribunal (HD03231) on the same day signals a coherent and deepening Western alignment commitment beyond mere NATO membership.**
-
-**Confidence**: HIGH
 
 **Evidence**: HD03232 + HD03231 (riksdagen.se, UU committee, submitted 2026-04-16) — both passed through riksdag committee process and submitted by Foreign Minister Maria Malmer Stenergard (M). Two distinct legal frameworks on the same day = coordinated foreign policy signalling.
 
@@ -327,11 +314,6 @@ graph LR
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/significance-scoring.md -->
-
-**Methodology**: DIW weighting per significance-scoring.md template
-**Analyst**: James Pether Sörling
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
-**Scope**: Cross-type synthesis of 20 key documents across 4 article types
 
 ---
 
@@ -412,10 +394,6 @@ flowchart LR
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/media-framing-analysis.md -->
 
-**Analyst**: James Pether Sörling
-**Framework**: electoral-domain-methodology.md § Media Framing
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
-
 ---
 
 ### Per-Party Framing Predictions
@@ -484,14 +462,8 @@ quadrantChart
 
 **This narrative is**: Complex (two S positions simultaneously), high-stakes (144 days to election), and rich in specifics (the court documentation elevates HD10442 above typical political theatre).
 
-**Admiralty**: [B3] — media framing prediction based on structural analysis of party positions and historical press coverage patterns; not verified against actual press coverage.
-
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/stakeholder-perspectives.md -->
-
-**Analyst**: James Pether Sörling
-**Framework**: stakeholder-impact.md (6-lens matrix, named actors)
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
 
 ---
 
@@ -595,9 +567,6 @@ flowchart LR
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/forward-indicators.md -->
 
-**Analyst**: James Pether Sörling
-**Framework**: electoral-domain-methodology.md § Forward Indicators
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
 **Horizons**: 72h / 1 week / 1 month / election (≥10 indicators required)
 
 ---
@@ -662,15 +631,9 @@ flowchart LR
 
 **Total indicators**: 16 (exceeds minimum requirement of 10)
 **Horizon coverage**: 4/4 horizons represented (72h: 4, 1-week: 4, 1-month: 4, election: 4)
-**Admiralty range**: [A1] through [C3] — appropriate uncertainty gradient across time horizons
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/scenario-analysis.md -->
-
-**SCN-ID**: SCN-2026-04-22-EVE001
-**Analyst**: James Pether Sörling
-**Framework**: scenario-analysis.md template
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
 
 ---
 
@@ -709,8 +672,6 @@ mindmap
 
 **Strategic implications for government**: Double down on fiscal responsibility narrative; advance HD03240 (electricity system) as forward-looking policy; schedule HD10442 debate late to minimise exposure.
 
-**Admiralty**: [C3] — Based on inference from electoral context, not confirmed intelligence
-
 ---
 
 #### Scenario 2: Accountability Crisis (Probability: 30%)
@@ -730,8 +691,6 @@ mindmap
 
 **Strategic implications for opposition**: Maintain consistent messaging; seek media partners for investigative coverage; consider linking to broader healthcare accountability narrative.
 
-**Admiralty**: [B2] — Probable; court documentation provides unusually strong evidentiary basis for this scenario
-
 ---
 
 #### Scenario 3: Climate Fracture (Probability: 15%)
@@ -748,8 +707,6 @@ mindmap
 - MP/V campaign advertisements featuring S contradiction
 - SCB/Demoskop polling on climate issue salience
 
-**Admiralty**: [C3] — Possible; dependent on media frame choices not yet determined
-
 ---
 
 #### Scenario 4: Wild Card — EU Challenge (Probability: 5%)
@@ -758,8 +715,6 @@ mindmap
 
 **Triggers**: Any Commission preliminary investigation notification; formal infringement proceedings
 
-**Admiralty**: [D4] — Remotely possible; based on general EU legal framework, no specific intelligence
-
 ---
 
 #### Scenario 5: Wild Card — Early Election (Probability: 5%)
@@ -767,8 +722,6 @@ mindmap
 **Definition**: Accountability pressure accumulates beyond manageable level; Kristersson government faces confidence vote; early election called.
 
 **Triggers**: HD10442 + additional accountability cases trigger combined confidence motion from S+V+MP; L or C defects from coalition
-
-**Admiralty**: [E5] — Remote; current parliamentary arithmetic makes this very unlikely before September 2026
 
 ---
 
@@ -800,10 +753,6 @@ pie title Scenario Probabilities (Sums to 100%)
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/risk-assessment.md -->
-
-**Analyst**: James Pether Sörling
-**Methodology**: political-risk-methodology.md (5-dimension register, L×I scoring)
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
 
 ---
 
@@ -882,11 +831,6 @@ flowchart TD
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/swot-analysis.md -->
-
-**Analyst**: James Pether Sörling
-**Framework**: political-swot-framework.md
-**Scope**: Cross-type synthesis — propositions, committee reports, interpellations, motions
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
 
 ---
 
@@ -969,11 +913,6 @@ quadrantChart
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/threat-analysis.md -->
-
-**Analyst**: James Pether Sörling
-**Framework**: political-threat-framework.md (Political Threat Taxonomy, attack tree)
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
-**Overall Threat Level**: Elevated | **Confidence**: [B2]
 
 ---
 
@@ -1088,7 +1027,6 @@ flowchart TD
 
 **dok_id**: HD01CU27
 **Title**: Betänkande CU27 — Civilutskottet bostadsrätt/hyresrätt reform
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1100,14 +1038,11 @@ Betänkande CU27 — Civilutskottet bostadsrätt/hyresrätt reform. Retrieved as
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD01CU28
 <!-- source: documents/HD01CU28-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD01CU28-analysis.md -->
 
 **dok_id**: HD01CU28
 **Title**: Betänkande CU28 — Civilutskottet bostadsrättslagen ändring
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1119,8 +1054,6 @@ Betänkande CU28 — Civilutskottet bostadsrättslagen ändring. Retrieved as pa
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD01FiU48
 <!-- source: documents/HD01FiU48-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD01FiU48-analysis.md -->
 
@@ -1129,7 +1062,6 @@ See parent analysis files for full significance assessment and cross-references.
 **Title**: Extra ändringsbudget för 2026 — bränsle och drivmedelsavgifter + energistöd
 **Committee**: FiU (Finansutskottet)
 **Enacted**: 2026-04-22 16:29 CET
-**Admiralty**: [A1] — Riksdagen.se enacted record
 
 ---
 
@@ -1169,14 +1101,11 @@ HD01FiU48 is the committee report on the government's extra ändringsbudget for 
 
 **Corrected analysis**: Government bloc (176) > 175 threshold. S participation was **politically voluntary** — not mathematically necessary. This makes S's decision MORE significant: they had the freedom to abstain or vote Nej, but chose Ja.
 
-**Admiralty**: [A1] for vote record; [B2] for political significance assessment.
-
 ### HD01KU32
 <!-- source: documents/HD01KU32-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD01KU32-analysis.md -->
 
 **dok_id**: HD01KU32
 **Title**: Betänkande KU32 — Grundlagsändring medietillgänglighet (Stage 1)
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1188,14 +1117,11 @@ Betänkande KU32 — Grundlagsändring medietillgänglighet (Stage 1). Retrieved
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD01KU33
 <!-- source: documents/HD01KU33-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD01KU33-analysis.md -->
 
 **dok_id**: HD01KU33
 **Title**: Betänkande KU33 — Grundlagsändring husrannsakan insyn (Stage 1)
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1207,8 +1133,6 @@ Betänkande KU33 — Grundlagsändring husrannsakan insyn (Stage 1). Retrieved a
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD024082
 <!-- source: documents/HD024082-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD024082-analysis.md -->
 
@@ -1218,7 +1142,6 @@ See parent analysis files for full significance assessment and cross-references.
 **Filed by**: S (Socialdemokraterna) + V + MP parallel motions (HD024082/092/098)
 **Filed date**: 2026-04-22
 **Committee referral**: FiU / MJU (likely)
-**Admiralty**: [A1] — Riksdagen.se motion record
 
 ---
 
@@ -1253,14 +1176,11 @@ HD024082 is one of three parallel climate counter-motions filed by S, V, and MP 
 - Opposition campaign research
 - Journalistic fact-checking
 
-**Admiralty**: [A1] for document facts; [B2] for strategic significance.
-
 ### HD024090
 <!-- source: documents/HD024090-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD024090-analysis.md -->
 
 **dok_id**: HD024090
 **Title**: Motion 2024/90 — Klimat och energiomställning (relaterad)
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1272,14 +1192,11 @@ Motion 2024/90 — Klimat och energiomställning (relaterad). Retrieved as part 
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD024092
 <!-- source: documents/HD024092-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD024092-analysis.md -->
 
 **dok_id**: HD024092
 **Title**: Motion V — Klimatmotion mot HD03236 (parallell till HD024082)
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1291,14 +1208,11 @@ Motion V — Klimatmotion mot HD03236 (parallell till HD024082). Retrieved as pa
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD024095
 <!-- source: documents/HD024095-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD024095-analysis.md -->
 
 **dok_id**: HD024095
 **Title**: Motion 2024/95 — Energipolitik
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1310,14 +1224,11 @@ Motion 2024/95 — Energipolitik. Retrieved as part of Tier-C evening analysis c
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD024097
 <!-- source: documents/HD024097-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD024097-analysis.md -->
 
 **dok_id**: HD024097
 **Title**: Motion 2024/97 — Energi och klimat
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1329,14 +1240,11 @@ Motion 2024/97 — Energi och klimat. Retrieved as part of Tier-C evening analys
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD024098
 <!-- source: documents/HD024098-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD024098-analysis.md -->
 
 **dok_id**: HD024098
 **Title**: Motion MP — Miljöpartiet klimatmotion mot HD03236
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1348,8 +1256,6 @@ Motion MP — Miljöpartiet klimatmotion mot HD03236. Retrieved as part of Tier-
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD03100
 <!-- source: documents/HD03100-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD03100-analysis.md -->
 
@@ -1358,7 +1264,6 @@ See parent analysis files for full significance assessment and cross-references.
 **Title**: 2026 års ekonomiska vårproposition
 **Submitted by**: Finansdepartementet (Finance Ministry)
 **Filed**: 2026-04-15 (approximate — vårproposition timing)
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ---
 
@@ -1392,14 +1297,11 @@ The Vårproposition is the government's last major economic document before the 
 - The 4.1 GSEK HD01FiU48 appropriation now embedded in this baseline
 - Creates political accountability: government will be judged on whether fiscal projections hold
 
-**Admiralty**: [A1] for document existence; [B2] for content assessment (derived from sibling folder).
-
 ### HD03232
 <!-- source: documents/HD03232-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD03232-analysis.md -->
 
 **dok_id**: HD03232
 **Title**: Prop HD03232 — Sverige ansluter sig till ukrainskt skadeståndsregister
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1411,14 +1313,11 @@ Prop HD03232 — Sverige ansluter sig till ukrainskt skadeståndsregister. Retri
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD03236
 <!-- source: documents/HD03236-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD03236-analysis.md -->
 
 **dok_id**: HD03236
 **Title**: Prop HD03236 — Extra ändringsbudget 2026 (source for HD01FiU48)
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1430,14 +1329,11 @@ Prop HD03236 — Extra ändringsbudget 2026 (source for HD01FiU48). Retrieved as
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD03239
 <!-- source: documents/HD03239-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD03239-analysis.md -->
 
 **dok_id**: HD03239
 **Title**: Prop HD03239 — Stärkt försörjningsberedskap inom energiområdet
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1449,14 +1345,11 @@ Prop HD03239 — Stärkt försörjningsberedskap inom energiområdet. Retrieved 
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD03240
 <!-- source: documents/HD03240-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD03240-analysis.md -->
 
 **dok_id**: HD03240
 **Title**: Prop HD03240 — Nya elsystemlagar och energisäkerhetsramverk
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1468,14 +1361,11 @@ Prop HD03240 — Nya elsystemlagar och energisäkerhetsramverk. Retrieved as par
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD0399
 <!-- source: documents/HD0399-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD0399-analysis.md -->
 
 **dok_id**: HD0399
 **Title**: Prop HD0399 — Vårändringbudget 2026
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1487,8 +1377,6 @@ Prop HD0399 — Vårändringbudget 2026. Retrieved as part of Tier-C evening ana
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD10442
 <!-- source: documents/HD10442-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD10442-analysis.md -->
 
@@ -1498,7 +1386,6 @@ See parent analysis files for full significance assessment and cross-references.
 **Filed by**: S MP (accountability offensive)
 **Filed date**: 2026-04-21
 **Target minister**: Svantesson (Finance), possibly also Health Minister
-**Admiralty**: [A1] — Riksdagen.se interpellation record
 
 ---
 
@@ -1530,14 +1417,11 @@ HD10442 is an interpellation to a government minister (Svantesson or Health Mini
 
 **Party accountability value for S**: This is the highest-quality document in the interpellation cluster. The other 4 (HD10443-HD10446) are standard accountability questions. HD10442 with court documentation is qualitatively different.
 
-**Admiralty**: [A1] for document/filing facts; [B2] for strategic significance assessment.
-
 ### HD10443
 <!-- source: documents/HD10443-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD10443-analysis.md -->
 
 **dok_id**: HD10443
 **Title**: Interpellation HD10443 — Social dumpning (Svantesson)
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1549,14 +1433,11 @@ Interpellation HD10443 — Social dumpning (Svantesson). Retrieved as part of Ti
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD10444
 <!-- source: documents/HD10444-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD10444-analysis.md -->
 
 **dok_id**: HD10444
 **Title**: Interpellation HD10444 — Arbetsgivaravgifter bostadssektor
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1568,14 +1449,11 @@ Interpellation HD10444 — Arbetsgivaravgifter bostadssektor. Retrieved as part 
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD10445
 <!-- source: documents/HD10445-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD10445-analysis.md -->
 
 **dok_id**: HD10445
 **Title**: Interpellation HD10445 — Energikostnader hushåll
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1587,14 +1465,11 @@ Interpellation HD10445 — Energikostnader hushåll. Retrieved as part of Tier-C
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ### HD10446
 <!-- source: documents/HD10446-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/documents/HD10446-analysis.md -->
 
 **dok_id**: HD10446
 **Title**: Interpellation HD10446 — Uppföljning socialtjänst
-**Admiralty**: [A1] — Riksdagen.se document record
 
 ### Summary
 
@@ -1606,14 +1481,9 @@ Interpellation HD10446 — Uppföljning socialtjänst. Retrieved as part of Tier
 
 See parent analysis files for full significance assessment and cross-references.
 
-**Admiralty**: [A1] for document existence; [B3] for contextual significance assessment.
-
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/election-2026-analysis.md -->
 
-**Analyst**: James Pether Sörling
-**Framework**: electoral-domain-methodology.md + Kent Scale WEP
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
 **Days until election**: ~144 days (election estimated September 2026)
 
 ---
@@ -1708,9 +1578,6 @@ The S accountability offensive targeting Svantesson (Finance), housing minister,
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/coalition-mathematics.md -->
 
-**Analyst**: James Pether Sörling
-**Framework**: electoral-domain-methodology.md § Coalition Mathematics
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
 **Key data**: HD01FiU48 vote record
 
 ---
@@ -1813,10 +1680,6 @@ The HD01FiU48 cross-party majority (M+SD+KD+S) is **constitutionally and elector
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/voter-segmentation.md -->
 
-**Analyst**: James Pether Sörling
-**Framework**: electoral-domain-methodology.md § Voter Segmentation
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
-
 ---
 
 ### Segment Impact Matrix — HD01FiU48 (Fuel Tax Cut)
@@ -1879,16 +1742,9 @@ The critical voter segment is **rural S-leaning voters** (traditional social dem
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/comparative-international.md -->
 
-**Analyst**: James Pether Sörling
-**Framework**: comparative-international.md template
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
-**Comparator set**: Norway, Finland, Germany (Nordic + EU minimum requirement)
-
 ---
 
 ### Comparator Set
-
-**Comparator set**: Norway (NO), Finland (FI), Germany (DE) — all Nordic/EU neighbours facing similar energy policy and fiscal dilemmas in 2025–2026.
 
 ---
 
@@ -1938,10 +1794,6 @@ flowchart TD
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/historical-parallels.md -->
 
-**Analyst**: James Pether Sörling
-**Framework**: electoral-domain-methodology.md § Historical Parallels
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
-
 ---
 
 ### Precedent 1: Cross-Bloc Fiscal Emergency Measures (2008–2009)
@@ -1954,8 +1806,6 @@ flowchart TD
 - Timing: pre-election fiscal decision with household impact
 
 **Key difference**: In 2008–09 the external shock (global crisis) provided cover for cross-party cooperation. In 2026, the "external shock" justification is weaker — energy prices have moderated from 2022 peaks. This makes the cross-party majority more politically conscious and therefore more strategically significant.
-
-**Admiralty**: [B2] — based on public records of 2008–09 Riksdag proceedings; structural comparison drawn by analyst.
 
 ---
 
@@ -1970,8 +1820,6 @@ flowchart TD
 
 **Key difference**: The LAS dual-track was between parliament (formal vote) and union structures (informal influence). The 2026 dual-track is entirely within parliament (committee motion vs. chamber vote) — making the contradiction more visible in Riksdag records.
 
-**Admiralty**: [A2] — LAS compromise is extensively documented in Swedish parliamentary record.
-
 ---
 
 ### Precedent 3: Fuel Tax Reduction Reversal Risk — Swedish Fuel Tax History
@@ -1979,8 +1827,6 @@ flowchart TD
 **Parallel**: Sweden introduced the current fuel tax framework under Alliansen 2011–2012. A temporary fuel duty freeze in 2014–2015 was later partially reversed. The pattern of temporary measures becoming permanent political commitments is documented.
 
 **Relevance to HD01FiU48**: The May–September 2026 sunset clause for the fuel tax cut will face political pressure to extend post-election, regardless of which party forms government. This is a structural fiscal risk.
-
-**Admiralty**: [A1] — based on Riksdag legislative record (public).
 
 ---
 
@@ -1994,8 +1840,6 @@ flowchart TD
 - Intended to define election issues in S's favour
 
 **Key difference**: In 2013–14, S had a single coherent message. In 2026, S's simultaneous Ja vote on fuel tax cut creates message complexity — the opposition wants accountability AND credit for relief. The dual-track makes the narrative more complex than 2013–14.
-
-**Admiralty**: [A2] — 2013–14 interpellation record is public; electoral analysis draws on published research.
 
 ---
 
@@ -2023,10 +1867,6 @@ timeline
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/implementation-feasibility.md -->
-
-**Analyst**: James Pether Sörling
-**Framework**: electoral-domain-methodology.md § Implementation Feasibility
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
 
 ---
 
@@ -2095,10 +1935,6 @@ timeline
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/devils-advocate.md -->
-
-**Analyst**: James Pether Sörling
-**Framework**: ACH matrix + Red Team challenge
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
 
 ---
 
@@ -2184,10 +2020,6 @@ It does NOT matter for the median voter unfamiliar with committee motions. This 
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/classification-results.md -->
 
-**Analyst**: James Pether Sörling
-**Framework**: political-classification-guide.md (7-dimension classification per document)
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
-
 ---
 
 ### Classification Overview
@@ -2235,11 +2067,6 @@ pie title Document Priority Tier Distribution
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/cross-reference-map.md -->
-
-**Analyst**: James Pether Sörling
-**Framework**: Tier-C cross-type synthesis + structural-metadata-methodology.md
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
-**Scope**: Cross-reference of all 4 sibling analysis folders + prior evening cycle
 
 ---
 
@@ -2318,9 +2145,6 @@ pie title Document Priority Tier Distribution
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/methodology-reflection.md -->
 
 **Reflection ID**: MR-2026-04-22-EVE001
-**Analyst**: James Pether Sörling
-**Methodology**: osint-tradecraft-standards.md, ai-driven-analysis-guide.md
-**Date**: 2026-04-22 | **Riksmöte**: 2025/26
 
 ---
 
@@ -2417,12 +2241,11 @@ This run used: Scenario Analysis, ACH, Red Team, Hypothesis Testing, SWOT, TOWS,
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/data-download-manifest.md -->
 
 **Workflow**: news-evening-analysis
-**Run ID**: 24808228341
-**UTC Timestamp**: 2026-04-22T23:40:00Z
+
 **Requested Date**: 2026-04-22
 **Effective Date**: 2026-04-22 (sibling folder integration)
 **MCP Server**: riksdag-regering (live, confirmed at 23:38:58Z)
-**Riksmöte**: 2025/26
+
 **Days to Election**: ~144 days (September 13, 2026)
 
 ### MCP Server Status

@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: evening-analysis
 slug: 2026-04-26-evening-analysis
 source_folder: analysis/daily/2026-04-26/evening-analysis
-generated_at: 2026-04-27T15:59:44.653Z
+generated_at: 2026-04-27T16:50:07.023Z
 language: en
 layout: article
 ---
@@ -28,9 +28,6 @@ Use this guide to read the article as a political-intelligence product rather th
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/executive-brief.md -->
 
-**Author**: James Pether Sörling  
-**Classification**: OPEN — Public sources only (GDPR Art. 9(2)(e))  
-**Confidence**: HIGH [A1–B2]  
 **Base date**: 2026-04-26 (data: 2026-04-24 lookback)
 
 ### 🎯 BLUF
@@ -674,7 +671,6 @@ flowchart TD
 **Title**: En effektivare och säkrare byggprocess  
 **Organ**: CU (Civilutskottet)  
 **Source**: [data.riksdagen.se/dokument/HD01CU24](https://data.riksdagen.se/dokument/HD01CU24.html) [A1]  
-**DIW Score**: 70 — L2 Strategic  
 
 ### Summary
 
@@ -697,7 +693,6 @@ A regulatory modernisation item with lagged electoral benefit. The reform will n
 **Title**: Ny vapenlag  
 **Organ**: JuU (Justitieutskottet)  
 **Source**: [data.riksdagen.se/dokument/HD01JuU10](https://data.riksdagen.se/dokument/HD01JuU10.html) [A1]  
-**DIW Score**: 84 — L2+ Priority  
 
 ### Summary
 
@@ -726,7 +721,6 @@ The weapons law is the Tidö coalition's most substantive security-policy delive
 **Title**: Riksrevisonens granskning av polisreformen  
 **Organ**: JuU (Justitieutskottet)  
 **Source**: [data.riksdagen.se/dokument/HD01JuU31](https://data.riksdagen.se/dokument/HD01JuU31.html) [A1]  
-**DIW Score**: 88 — L3 Intelligence-grade  
 
 ### Summary
 
@@ -751,7 +745,6 @@ This is the most electorally significant document in the evening analysis window
 **Title**: Åtgärder för äldreomsorgen och för dem som vårdar eller stöttar närstående  
 **Organ**: SoU (Socialutskottet)  
 **Source**: [data.riksdagen.se/dokument/HD01SoU25](https://data.riksdagen.se/dokument/HD01SoU25.html) [A1]  
-**DIW Score**: 80 — L2+ Priority  
 
 ### Summary
 
@@ -773,10 +766,6 @@ This is a KD-driven delivery item. The d/a analysis (devils-advocate.md) notes t
 ### HD10448
 <!-- source: documents/HD10448-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD10448-analysis.md -->
 
-**dok_id**: HD10448  
-**Source**: [data.riksdagen.se/dokument/HD10448](https://data.riksdagen.se/dokument/HD10448.html) [A1]  
-**DIW Score**: 20 — L0 Administrative  
-
 ### Summary
 
 Secondary administrative document — committee referral or minor measure in the April 2026 tabling window. Full content not retrieved in data pipeline (secondary document classification).
@@ -787,10 +776,6 @@ No independent intelligence value. Context contributor to building-process refor
 
 ### HD11747
 <!-- source: documents/HD11747-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11747-analysis.md -->
-
-**dok_id**: HD11747  
-**Source**: [data.riksdagen.se/dokument/HD11747](https://data.riksdagen.se/dokument/HD11747.html) [A1]  
-**DIW Score**: 20 — L0 Administrative  
 
 ### Summary
 
@@ -803,10 +788,6 @@ No independent intelligence value. Supporting context for CU domain.
 ### HD11748
 <!-- source: documents/HD11748-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11748-analysis.md -->
 
-**dok_id**: HD11748  
-**Source**: [data.riksdagen.se/dokument/HD11748](https://data.riksdagen.se/dokument/HD11748.html) [A1]  
-**DIW Score**: 20 — L0 Administrative  
-
 ### Summary
 
 Secondary administrative document — committee referral in the April 2026 tabling window.
@@ -817,10 +798,6 @@ No independent intelligence value. Supporting context for SoU domain.
 
 ### HD11749
 <!-- source: documents/HD11749-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11749-analysis.md -->
-
-**dok_id**: HD11749  
-**Source**: [data.riksdagen.se/dokument/HD11749](https://data.riksdagen.se/dokument/HD11749.html) [A1]  
-**DIW Score**: 20 — L0 Administrative  
 
 ### Summary
 
@@ -1322,12 +1299,10 @@ This Evening Analysis was produced using the Riksdagsmonitor Tier-C aggregation 
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/data-download-manifest.md -->
 
 **Workflow**: news-evening-analysis  
-**Run ID**: 24966509519  
-**Generated**: 2026-04-26T20:45:00Z  
+
 **Requested date**: 2026-04-26  
 **Effective date**: 2026-04-24 (1 business-day lookback — no documents published 2026-04-26)  
 **Window used**: 2026-04-24 to 2026-04-26  
-**Author**: James Pether Sörling
 
 ### MCP Server Status
 

@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: propositions
 slug: 2026-04-24-propositions
 source_folder: analysis/daily/2026-04-24/propositions
-generated_at: 2026-04-27T15:59:44.633Z
+generated_at: 2026-04-27T16:50:06.995Z
 language: en
 layout: article
 ---
@@ -153,8 +153,6 @@ flowchart TD
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/intelligence-assessment.md -->
 
 **Audience**: Decision-makers in financial markets, political risk, civil society.
-**Classification**: Public OSINT.
-**Author**: James Pether Sörling.
 
 ### Key Judgments
 
@@ -164,15 +162,11 @@ flowchart TD
 
 **Evidence**: [HD03252](https://data.riksdagen.se/dokument/HD03252.html) effective 1 August 2026; [HD03256](https://data.riksdagen.se/dokument/HD03256.html) effective 1 July 2026; no new programmatic announcements today.
 
-**Confidence**: **HIGH** (multiple corroborating documents; Admiralty B2).
-
 #### Key Judgment 2 (KJ-2) — HIGH confidence
 
 **Judgment**: [HD03253](https://data.riksdagen.se/dokument/HD03253.html) (EU Banking Package transposition) is the single most consequential document in today's batch for Sweden's financial sector, reshaping capital requirements for the 4 systemically-important banks (Handelsbanken, SEB, Swedbank, Nordea).
 
 **Evidence**: Proposition explicitly cites CRR3/CRD6 directives; Finansdepartementet-led with FI operational role; DIW 3.8 (highest in batch).
-
-**Confidence**: **HIGH**.
 
 #### Key Judgment 3 (KJ-3) — MEDIUM confidence
 
@@ -180,23 +174,17 @@ flowchart TD
 
 **Evidence**: Lagrådet yttrande already issued (Bilaga 5 of [HD03252](https://data.riksdagen.se/dokument/HD03252.html)); historical proportionality sensitivity in Swedish social-insurance law.
 
-**Confidence**: **MEDIUM** (single-source dependency on document text; opposition positioning not yet public).
-
 #### Key Judgment 4 (KJ-4) — MEDIUM confidence
 
 **Judgment**: Sweden faces an EU Commission infringement-risk window of ~90 days on late CRR3 transposition (scenario S3, probability 20%).
 
 **Evidence**: CRR3 transposition deadline January 2026; [HD03253](https://data.riksdagen.se/dokument/HD03253.html) tabled only 23 April 2026.
 
-**Confidence**: **MEDIUM**.
-
 #### Key Judgment 5 (KJ-5) — LOW confidence
 
 **Judgment**: Coalition cohesion will hold on all 4 votes, including [HD03252](https://data.riksdagen.se/dokument/HD03252.html).
 
 **Evidence**: L has historically pushed back on punitive social-policy but has not publicly broken with Tidö on HD03252-adjacent bills 2023–25.
-
-**Confidence**: **LOW** — single precedent class, future behaviour contingent on whip calibration. See `coalition-mathematics.md`.
 
 ### Priority Intelligence Requirements (PIRs) for next cycle
 
@@ -225,8 +213,6 @@ flowchart TD
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/significance-scoring.md -->
-
-**Framework**: Decision-Informational-Weighting (DIW) per `ai-driven-analysis-guide.md` §DIW. Scores on 0–5 scale.
 
 ### Scoring table (ranked)
 
@@ -293,8 +279,6 @@ Every ranked item cites its `dok_id` and resolvable URL on riksdagen.se. No clai
 - **Podcasts (Aftonbladet Ledaren, DN Åsikt)**: HD03252 deep-dive likely within 7 days.
 
 ### Longitudinal frame record entry
-
-**Date**: 2026-04-24. **Bundle**: HD03252, HD03253, HD03256, HD03104. **Dominant elite frame**: "government delivers on Tidö-avtalet". **Dominant critical frame**: "proportionality question on HD03252". **Next inflection point**: SfU committee hearing schedule publication.
 
 ### Cross-reference
 All framings are predictive, based on 2023–2025 editorial pattern observation. Empirical confirmation awaits Day+1 to Day+7 media capture — recommended follow-up in `evening-analysis` or `weekly-review` workflow.
@@ -423,8 +407,6 @@ All 15 indicators have an explicit date, source anchor, and evidenced mechanism.
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/scenario-analysis.md -->
 
-**Horizon**: Riksdag summer recess (June 2026) → September 2026 election → first post-election cycle.
-
 ### Scenario 1 — "Clean enactment" (probability 45%)
 
 **Narrative**: All 4 bills enacted on schedule. HD03256 effective 1 July, HD03252 effective 1 August, HD03253 in force per EU timetable, HD03104 noted. Tidö framing succeeds: "law and order + sound money."
@@ -470,8 +452,6 @@ pie title Scenario probabilities
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/risk-assessment.md -->
-
-**Framework**: per `analysis/methodologies/political-risk-methodology.md` — dimensions: Political, Institutional, Economic, Social/Rights, Operational.
 
 ### Risk register
 
@@ -579,8 +559,6 @@ The dominant pattern is **"competence vs. rights"** — the government's executi
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/threat-analysis.md -->
 
-**Overall Threat Level**: HIGH · **Severity**: HIGH (TH1, TH2, TH4) / MEDIUM (TH3, TH5) · **Confidence**: HIGH (A2 — primary-source proposition texts HD03252/HD03253/HD03256, FiU referral phase observable).
-
 ### Threat taxonomy mapping
 
 | # | Threat category | Specific threat | Actor | Target | Evidence |
@@ -640,7 +618,7 @@ flowchart TD
 **Responsible minister**: Niklas Wykman (M)
 **Signatory PM**: Ulf Kristersson (M)
 **Committee referral**: FiU
-**DIW score**: 2.5 / 5
+
 **Effective date**: N/A (reporting document)
 **Signed**: 2026-04-23 (tabled to Riksdag 2026-04-24)
 
@@ -725,7 +703,7 @@ Per `osint-tradecraft-standards.md` — ICD 203 compliant; Admiralty codes assig
 **Responsible minister**: Gunnar Strömmer (M)
 **Signatory PM**: Ulf Kristersson (M)
 **Committee referral**: SfU
-**DIW score**: 3.5 / 5
+
 **Effective date**: 1 August 2026
 **Signed**: 2026-04-23 (tabled to Riksdag 2026-04-24)
 
@@ -812,7 +790,7 @@ Per `osint-tradecraft-standards.md` — ICD 203 compliant; Admiralty codes assig
 **Responsible minister**: Niklas Wykman (M)
 **Signatory PM**: Ulf Kristersson (M)
 **Committee referral**: FiU
-**DIW score**: 3.8 / 5
+
 **Effective date**: Staggered per EU timetable (main provisions 1 January 2027 with transitional output-floor phase-in)
 **Signed**: 2026-04-23 (tabled to Riksdag 2026-04-24)
 
@@ -898,7 +876,7 @@ Per `osint-tradecraft-standards.md` — ICD 203 compliant; Admiralty codes assig
 **Responsible minister**: Andreas Carlson (KD)
 **Signatory PM**: Ulf Kristersson (M)
 **Committee referral**: TU
-**DIW score**: 2.8 / 5
+
 **Effective date**: 1 July 2026
 **Signed**: 2026-04-23 (tabled to Riksdag 2026-04-24)
 
@@ -1126,8 +1104,6 @@ On a low-drama propositions day (which today is, electorally — high-salience i
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/comparative-international.md -->
-
-**Comparator set**: Nordic (Denmark, Finland, Norway) + EU (Germany, Netherlands).
 
 ### Comparator analysis
 
@@ -1521,12 +1497,11 @@ Current run scoped as Standard tier due to 28-min MCP idle budget. Budget compre
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/data-download-manifest.md -->
 
-**Generated**: 2026-04-24 00:28 UTC
 **Workflow**: news-propositions
-**Run ID**: 24865726626
+
 **Requested date**: 2026-04-24
 **Effective date**: 2026-04-23 (1-business-day lookback — Riksdag publishes after close-of-day)
-**Riksmöte**: 2025/26
+
 **Data sources**: `get_propositioner`, `get_dokument_innehall` (riksdag-regering MCP, session 4N6ZRTD5)
 **Window used**: 2026-04-23 00:00–23:59 Europe/Stockholm
 **MCP availability**: `riksdag-regering` ✅ live (get_sync_status OK at 00:27Z); `scb`, `world-bank` not called this run (single-type propositions scope).

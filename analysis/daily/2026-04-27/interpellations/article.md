@@ -5,7 +5,7 @@ date: 2026-04-27
 subfolder: interpellations
 slug: 2026-04-27-interpellations
 source_folder: analysis/daily/2026-04-27/interpellations
-generated_at: 2026-04-27T15:59:44.689Z
+generated_at: 2026-04-27T16:50:07.076Z
 language: en
 layout: article
 ---
@@ -84,10 +84,6 @@ graph TD
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/synthesis-summary.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Admiration Code**: [B2] — Confirmed, plausible source
 
 ---
 
@@ -250,10 +246,6 @@ mindmap
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/significance-scoring.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: DIW (Decision Impact Weight) framework — Distance, Impact, Window
-
 ---
 
 ### DIW Scoring Methodology
@@ -340,10 +332,6 @@ graph LR
 
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/media-framing-analysis.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Per-party framing + press quadrant analysis
 
 ---
 
@@ -435,10 +423,6 @@ xychart-beta
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/stakeholder-perspectives.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Framework**: 6-lens stakeholder matrix with influence network
-
 ---
 
 ### 6-Lens Stakeholder Matrix
@@ -514,10 +498,6 @@ Ebba Busch (KD) is interpellated by **both** an opposition MP (Lundqvist/S, HD10
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/forward-indicators.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: ≥10 dated indicators across 4 horizons (72h / week / month / election)
 
 ---
 
@@ -652,10 +632,6 @@ timeline
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/scenario-analysis.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Three-scenario probability analysis with leading indicators
-
 ---
 
 ### Scenario Framework
@@ -754,10 +730,6 @@ timeline
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/risk-assessment.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Framework**: 5-dimension risk register, L×I scoring, cascading chains
-
 ---
 
 ### Risk Register
@@ -832,10 +804,6 @@ xychart-beta
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/swot-analysis.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Framework**: Political SWOT with TOWS matrix
-
 ---
 
 ### SWOT Matrix — Government Position
@@ -898,10 +866,6 @@ quadrantChart
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/threat-analysis.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Framework**: Political Threat Taxonomy, attack tree analysis
 
 ---
 
@@ -978,12 +942,11 @@ graph TD
 <!-- source: documents/HD10447-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/documents/HD10447-analysis.md -->
 
 **Dok-ID**: HD10447  
-**Date**: 2026-04-23  
+
 **Type**: Interpellation  
-**Author**: Patrik Lundqvist (S)  
+
 **Minister**: Ebba Busch (KD), Ministry of Energy, Business and Industry  
 **Response deadline**: 2026-05-07  
-**Riksmöte**: 2025/26
 
 ---
 
@@ -1058,12 +1021,11 @@ This two-sided attack is strategically coherent: no matter where you sit in the 
 <!-- source: documents/HD10448-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/documents/HD10448-analysis.md -->
 
 **Dok-ID**: HD10448  
-**Date**: 2026-04-24  
+
 **Type**: Interpellation  
-**Author**: Josef Fransson (SD)  
+
 **Minister**: Ebba Busch (KD), Ministry of Energy, Business and Industry  
 **Response deadline**: 2026-05-08  
-**Riksmöte**: 2025/26
 
 ---
 
@@ -1127,12 +1089,11 @@ The interpellation is notable because it comes from a coalition support party (S
 <!-- source: documents/HD10449-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/documents/HD10449-analysis.md -->
 
 **Dok-ID**: HD10449  
-**Date**: 2026-04-27  
+
 **Type**: Interpellation  
-**Author**: Robert Olesen (S), Hässleholm constituency  
+
 **Minister**: Andreas Carlson (KD), Ministry of Infrastructure  
 **Response deadline**: 2026-05-18  
-**Riksmöte**: 2025/26
 
 ---
 
@@ -1194,12 +1155,11 @@ Carlson will likely:
 <!-- source: documents/HD10450-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/documents/HD10450-analysis.md -->
 
 **Dok-ID**: HD10450  
-**Date**: 2026-04-27  
+
 **Type**: Interpellation  
-**Author**: Jessica Rodén (S)  
+
 **Minister**: Anna Tenje (M), Ministry of Social Affairs  
 **Response deadline**: 2026-05-18  
-**Riksmöte**: 2025/26
 
 ---
 
@@ -1257,10 +1217,6 @@ Jessica Rodén (S) challenges Social Affairs Minister Tenje on the abolition of 
 
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/election-2026-analysis.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Election Date**: General election due September 2026
 
 ---
 
@@ -1354,10 +1310,6 @@ xychart-beta
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/coalition-mathematics.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Current seat map, pivotal vote analysis, Tidö coalition stability assessment
 
 ---
 
@@ -1470,10 +1422,6 @@ The Tidö coalition's survival depends on SD's continued support with a **1-seat
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/voter-segmentation.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Demographic + regional + ideological impact segmentation
-
 ---
 
 ### Segmentation Framework
@@ -1575,13 +1523,7 @@ xychart-beta
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/comparative-international.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Outside-In analysis, ≥2 comparator jurisdictions
-
 ---
-
-**Comparator set**: Norway (NO), Germany (DE), Finland (FI), Denmark (DK)
 
 ---
 
@@ -1660,10 +1602,6 @@ xychart-beta
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/historical-parallels.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Historical case analysis with similarity scoring
 
 ---
 
@@ -1746,10 +1684,6 @@ xychart-beta
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/implementation-feasibility.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Delivery risk view per interpellation demand
 
 ---
 
@@ -1861,10 +1795,6 @@ quadrantChart
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/devils-advocate.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Analysis of Competing Hypotheses (ACH) matrix with ≥3 competing hypotheses
 
 ---
 
@@ -1978,10 +1908,6 @@ quadrantChart
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/classification-results.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Framework**: 7-dimension political classification
-
 ---
 
 ### 7-Dimension Classification Per Document
@@ -2089,10 +2015,6 @@ graph TD
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/cross-reference-map.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Framework**: Policy clusters, legislative chains, coordinated-activity patterns
-
 ---
 
 ### Policy Clusters
@@ -2148,11 +2070,9 @@ graph LR
 
 **Pattern 1 — S Multi-Minister Campaign (Week 22)**  
 Robert Olesen (S), Jessica Rodén (S), Patrik Lundqvist (S), and additional S MPs filed 5 interpellations targeting 4 ministers in the same week. This temporal clustering — all filed 2026-04-21 to 2026-04-24, all announced together 2026-04-27 — indicates party coordination.  
-**Confidence**: [B2] — inferred from timing pattern; no direct evidence of S party leadership directive.
 
 **Pattern 2 — SD Single-Shot Energy Challenge**  
 HD10448 (Fransson/SD) is unique: a coalition partner's interpellation against a coalition minister. This is an institutionally constrained form of policy disagreement. It creates a parliamentary record of SD dissent on energy without breaking the coalition agreement.  
-**Confidence**: [B2]
 
 ### Sibling Folder Citations (for Cross-Run Continuity)
 
@@ -2162,10 +2082,6 @@ HD10448 (Fransson/SD) is unique: a coalition partner's interpellation against a 
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/methodology-reflection.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Standard**: ICD 203 — Analytic Standards and Tradecraft
 
 ---
 

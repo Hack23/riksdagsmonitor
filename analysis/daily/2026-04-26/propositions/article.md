@@ -5,26 +5,10 @@ date: 2026-04-26
 subfolder: propositions
 slug: 2026-04-26-propositions
 source_folder: analysis/daily/2026-04-26/propositions
-generated_at: 2026-04-27T15:59:44.670Z
+generated_at: 2026-04-27T17:09:37.169Z
 language: en
 layout: article
 ---
-## Reader Intelligence Guide
-
-Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
-
-| Reader need | What you'll get | Source artifact |
-|---|---|---|
-| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
-| [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
-| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing](#rm-media-framing-analysis) | likely narrative frames, amplifiers, counter-frames, and manipulation risks | `media-framing-analysis.md` |
-| [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
-| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
-| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
-| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
-| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
-
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief.md -->
 
@@ -80,6 +64,22 @@ graph LR
     style H fill:#1a1e3d,color:#e0e0e0
     style I fill:#1a1e3d,color:#e0e0e0
 ```
+
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Media framing](#rm-media-framing-analysis) | likely narrative frames, amplifiers, counter-frames, and manipulation risks | `media-framing-analysis.md` |
+| [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/synthesis-summary.md -->
@@ -773,27 +773,21 @@ graph LR
 
 #### Threat 1: Opposition Legislative Obstruction (HD03253 EU Bankpaket)
 
-**Classification**: Systemic / Institutional  
 **Actors**: S (Socialdemokraterna, 107 seats), V (Vänsterpartiet, 24 seats), MP (Miljöpartiet, 24 seats)  
 **Method**: FiU committee amendments → prolonged hearing cycle → delay CRD6 transposition further  
 **Impact**: Swedish banks remain in legal uncertainty; European Banking Authority (EBA) guidance incomplete; Finansinspektionen enforcement hampered  
-**Admiralty**: [B2] — Pattern consistent with prior S/V FiU behaviour on bank regulation (2022 banking supervision reform, rm 2021/22)
 
 #### Threat 2: Constitutional Proportionality Attack (HD03252)
 
-**Classification**: Legal/Institutional  
 **Actors**: Academic lawyers, JO (Justitieombudsmannen), potential Lagrådet  
 **Method**: Lagrådet critique on proportionality → referred to constitutional committee (KU) → legal delay  
 **Impact**: SD loses key election-year policy win; government faces contradiction between law-and-order messaging and legal setback  
-**Admiralty**: [B3] — Lagrådet review standard procedure; proportionality risk elevated given *säkerhetsförvaring* indefinite nature
 
 #### Threat 3: Small-Bank Lobby Mobilisation (HD03253)
 
-**Classification**: Economic/Political  
 **Actors**: Sparbankerna, niche lenders, Swedish Banking Association small-bank division  
 **Method**: Direct FiU lobbying for proportionality carve-out in Swedish implementing legislation → government pressure to add gold-plating exemptions  
 **Impact**: Delays CRD6 full implementation; creates legal uncertainty for Finansinspektionen enforcement  
-**Admiralty**: [C2] — Banking Association statement February 2026 (observed trend, single source)
 
 ### Attack Tree: EU Bank Package Obstruction
 
@@ -845,8 +839,6 @@ graph TD
 **Type**: Skrivelse (Government communication — not voted upon)  
 **Organ**: FiU (Finansutskottet)  
 **Minister/Dept**: Niklas Wykman, Finansdepartementet  
-**Date**: 2026-04-23  
-**DIW Score**: 6.5/10
 
 ---
 
@@ -944,8 +936,6 @@ Key forward signal: Finansdepartementet endorses continuation of green bond prog
 **Type**: Proposition  
 **Organ**: SfU (Socialförsäkringsutskottet)  
 **Minister/Dept**: Gunnar Strömmer, Justitiedepartementet  
-**Date**: 2026-04-23  
-**DIW Score**: 6.0/10
 
 ---
 
@@ -1043,8 +1033,6 @@ RF 2:6 (protection against degrading treatment): Domestic parallel to ECHR Art 3
 **Type**: Proposition  
 **Organ**: FiU (Finansutskottet)  
 **Minister/Dept**: Niklas Wykman, Finansdepartementet  
-**Date**: 2026-04-23  
-**DIW Score**: 9.0/10 (HIGHEST in this package)
 
 ---
 
@@ -1141,8 +1129,6 @@ CRR3 output floor creates temporary competitive difference vs. US banks (Basel I
 **Type**: Proposition  
 **Organ**: TU (Trafikutskottet)  
 **Minister/Dept**: Andreas Carlson, Landsbygds- och infrastrukturdepartementet  
-**Date**: 2026-04-23  
-**DIW Score**: 3.3/10
 
 ---
 
@@ -1440,9 +1426,6 @@ graph LR
 ---
 
 ### Comparator Set
-
-**Comparator set**: Denmark (DK), Norway (NO), Finland (FI), Germany (DE), Netherlands (NL)  
-**Focus**: CRD6/CRR3 transposition timelines; welfare restriction precedents; tachograph enforcement
 
 ---
 
@@ -1976,12 +1959,6 @@ pie title ICD 203 Standards Compliance
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/data-download-manifest.md -->
-
-**Generated**: 2026-04-26 18:02 UTC
-**Data Sources**: get_propositioner, get_dokument_innehall
-**Documents Downloaded**: 10
-**Documents Selected (date-filtered)**: 4
-**Produced By**: download-parliamentary-data script (data download only)
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
 > All political intelligence analysis (classification, risk assessment, SWOT,

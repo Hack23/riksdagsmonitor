@@ -5,7 +5,7 @@ date: 2026-04-19
 subfolder: month-ahead
 slug: 2026-04-19-month-ahead
 source_folder: analysis/daily/2026-04-19/month-ahead
-generated_at: 2026-04-27T15:59:44.544Z
+generated_at: 2026-04-27T16:50:06.863Z
 language: en
 layout: article
 ---
@@ -164,16 +164,8 @@ Full treatment: [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-26 (weekly) · **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1 (Rules 0–8 applied).
-
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/synthesis-summary.md -->
-
-**Generated**: 2026-04-19T11:30:00Z
-**Article Type**: month-ahead
-**Riksmöte**: 2025/26
-**Analysis Depth**: deep
-**Confidence**: 🟩HIGH (based on 20+ confirmed legislative documents)
 
 ---
 
@@ -254,10 +246,6 @@ The legislative agenda April–May 2026 is deeply shaped by election positioning
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/significance-scoring.md -->
 
-**Generated**: 2026-04-19T11:35:00Z
-**Article Type**: month-ahead
-**Riksmöte**: 2025/26
-
 ---
 
 ### Top-Scoring Legislative Items
@@ -302,14 +290,8 @@ Scores are computed as a weighted composite:
 
 The 2025/26 riksmöte is on track to be the most legislatively active session of the Tidö coalition's term. The concentration of high-significance bills in April–May 2026 (all 20 top-scoring items submitted between April 9–17, 2026) indicates deliberate legislative acceleration before the summer recess and September election. This is consistent with international patterns of incumbent governments front-loading their policy agenda in the final parliamentary session before an election.
 
-**Confidence**: 🟩HIGH
-
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/stakeholder-perspectives.md -->
-
-**Generated**: 2026-04-19T11:36:00Z
-**Article Type**: month-ahead
-**Analysis Depth**: deep
 
 ---
 
@@ -679,14 +661,8 @@ A lightning ECHR docket (V/C/MP-prepared) produces a ruling on inhibition orders
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-26 (weekly) or on any W1/W2 trigger · **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1 §Scenario Analysis + Bayesian priors + ACH.
-
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/risk-assessment.md -->
-
-**Generated**: 2026-04-19T11:33:00Z
-**Article Type**: month-ahead
-**Analysis Depth**: deep (≥4 risks with numeric L×I scores required)
 
 ---
 
@@ -751,10 +727,6 @@ Overall risk confidence: 🟩HIGH — All risks grounded in specific legislative
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/swot-analysis.md -->
-
-**Generated**: 2026-04-19T11:32:00Z
-**Article Type**: month-ahead
-**Analysis Depth**: deep (8 stakeholder groups required)
 
 ---
 
@@ -856,10 +828,6 @@ Overall risk confidence: 🟩HIGH — All risks grounded in specific legislative
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/threat-analysis.md -->
 
-**Generated**: 2026-04-19T11:34:00Z
-**Article Type**: month-ahead
-**Confidence**: 🟩HIGH
-
 ---
 
 ### Overall Threat Level: MEDIUM
@@ -872,7 +840,6 @@ Sweden's parliamentary system is functioning within normal democratic parameters
 
 #### T1: Democratic Legitimacy Strain on Migration Policy
 **Severity**: 🟠MEDIUM-HIGH
-**Confidence**: 🟩HIGH
 
 The simultaneous introduction of the new reception law (HD03229), stricter deportation rules (HD03235), and inhibition orders (HD01SfU22) creates a trifecta of migration tightening that has generated the most intensive parliamentary opposition of the 2025/26 session. With 19 counter-motions filed by S, V, MP, and C parties, and civil society organisations raising human rights concerns, the risk is that democratic legitimacy of these laws is contested post-enactment.
 
@@ -881,7 +848,6 @@ The simultaneous introduction of the new reception law (HD03229), stricter depor
 
 #### T2: Constitutional Creep Risk
 **Severity**: 🟡MEDIUM
-**Confidence**: 🟧MEDIUM
 
 Two bills are being simultaneously adopted as "vilande" fundamental law changes (HD01KU32 accessibility in media, HD01KU33 documents obtained by search and seizure). While the procedure is constitutionally sound, the substance of HD01KU33 — removing seized digital files from public records — raises press freedom concerns noted in KU's own reasoning. The Swedish Press Freedom Foundation and journalist organisations are expected to scrutinise this closely.
 
@@ -890,7 +856,6 @@ Two bills are being simultaneously adopted as "vilande" fundamental law changes 
 
 #### T3: Cybersecurity Legislative Gap
 **Severity**: 🟡MEDIUM
-**Confidence**: 🟧MEDIUM
 
 The C party motion (HD024093) questioning the cybersecurity centre bill (HD03214-related) calls for further analysis before enactment. Sweden's cybersecurity posture is critical given NATO membership and the Ukraine conflict. Legislative delay in strengthening the National Cybersecurity Centre creates a potential capability gap.
 
@@ -899,7 +864,6 @@ The C party motion (HD024093) questioning the cybersecurity centre bill (HD03214
 
 #### T4: Economic Security Threat from Low Growth
 **Severity**: 🟠MEDIUM-HIGH
-**Confidence**: 🟦VERY HIGH
 
 Sweden's 0.82% GDP growth in 2024, rising unemployment (8.69% in 2025), and inflation now at 2.84% (down from 8.55% in 2023) represent an economic security threat. The government's spring budget offers modest stimulus, but structural reforms needed for sustained growth are not visible in the current legislative pipeline. This economic fragility increases Sweden's vulnerability to external shocks (trade war, energy price spikes, global recession).
 
@@ -1173,8 +1137,6 @@ The Riksdag's constitutional committee processes are functioning; government has
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-26 (weekly checkpoint) or on material jurisdiction-shift · **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1 §Rule 8.
-
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/classification-results.md -->
 
@@ -1387,13 +1349,8 @@ This legislative sprint is analogous to the **Reinfeldt government's 2009 fiscal
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-26 · **Methodology**: `analysis/methodologies/political-classification-guide.md` v3.0 + `ai-driven-analysis-guide.md` v5.1 §Rule 5.
-
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/cross-reference-map.md -->
-
-**Generated**: 2026-04-19T11:37:00Z
-**Article Type**: month-ahead
 
 ---
 
@@ -1658,13 +1615,8 @@ Single-pass output (the original 9-artefact base) was **shallow** on upstream co
 
 ---
 
-**Classification**: Public · **Next Review**: on any material methodology-doctrine update · **Methodology**: self-audit per `ai-driven-analysis-guide.md` v5.1 §Rule 7.
-
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/data-download-manifest.md -->
-
-**Generated**: 2026-04-19 11:20 UTC · **Pipeline mode**: aggregation (live MCP + upstream synthesis)
-**Produced By**: `news-month-ahead` agentic workflow, consolidated by News Journalist agent
 
 ### Ingestion mode
 

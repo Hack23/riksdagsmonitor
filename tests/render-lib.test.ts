@@ -32,6 +32,7 @@ import {
 const {
   stripPassTwoSection,
   stripLeadingAdminBylines,
+  stripProcessMetaLines,
   stripSourcePreamble,
   demoteHeadings,
   cleanArtifactBody,
@@ -155,6 +156,129 @@ describe('render-lib — helpers', () => {
     ].join('\n');
     expect(stripLeadingAdminBylines(body)).toContain('Real prose begins here.');
     expect(stripLeadingAdminBylines(body)).not.toContain('Classification');
+  });
+
+  it('stripLeadingAdminBylines drops admin blocks anywhere in body, not just leading', () => {
+    // Per-document analyses and Family C/D artifacts emit additional admin
+    // preambles after `### {dok_id}` / `## Section` headings. Those must
+    // be stripped too — leading-only sweep let ~393 lines leak (audit
+    // 2026-04-27).
+    const body = [
+      'Lead paragraph of real prose.',
+      '',
+      '**Author**: J',
+      '**Date**: 2026-04-27',
+      '**Confidence**: HIGH [B2]',
+      '',
+      'Second prose paragraph.',
+      '',
+      '**Dok ID**: HD03253',
+      '**Type**: Proposition',
+      '**Riksmöte**: 2025/26',
+      '',
+      'Third prose paragraph after dok-level admin.',
+    ].join('\n');
+    const out = stripLeadingAdminBylines(body);
+    expect(out).toContain('Lead paragraph of real prose.');
+    expect(out).toContain('Second prose paragraph.');
+    expect(out).toContain('Third prose paragraph after dok-level admin.');
+    expect(out).not.toContain('**Author**');
+    expect(out).not.toContain('**Dok ID**');
+    expect(out).not.toContain('**Riksmöte**');
+  });
+
+  it('stripLeadingAdminBylines preserves mixed paragraphs (1 admin + analytical fragments)', () => {
+    // Safety: a paragraph containing ANY analytical fragment must survive
+    // intact, even if it also contains admin-style fragments. Otherwise
+    // ACH/SWOT/risk callouts would be stripped.
+    const body = [
+      '**ACH Score**: H1 likely [B2] | **Evidence**: vote record HD10437',
+      '',
+      '**Author**: J | **Classification**: Public',
+    ].join('\n');
+    const out = stripLeadingAdminBylines(body);
+    expect(out).toContain('**ACH Score**');
+    expect(out).toContain('**Evidence**');
+    expect(out).not.toContain('**Author**');
+    expect(out).not.toContain('**Classification**');
+  });
+});
+
+describe('render-lib — stripProcessMetaLines (per-document journalist-card preservation)', () => {
+  it('strips workflow-process lines while preserving journalist-fact lines in the same paragraph', () => {
+    // Per-document identification card: mixes Dok_ID/Beteckning/Title
+    // (journalism facts that link readers to primary sources) with
+    // Author/Date/Confidence/DIW Score (workflow audit metadata that
+    // doesn't belong in published journalism).
+    const body = [
+      '**Dok_ID**: HD03253  ',
+      '**Beteckning**: Prop. 2025/26:253  ',
+      '**Title**: EU:s bankpaket — genomförande av reviderade kapitaltäckningsregler  ',
+      '**Department**: Finansdepartementet  ',
+      '**Committee**: FiU (Finansutskottet)  ',
+      '**DIW Score**: 9/10 (CRITICAL)  ',
+      '**Author**: James Pether Sörling  ',
+      '**Date**: 2026-04-27  ',
+      '**Confidence**: HIGH [A2]',
+    ].join('\n');
+    const out = stripProcessMetaLines(body);
+    // Journalist facts survive
+    expect(out).toContain('**Dok_ID**');
+    expect(out).toContain('**Beteckning**');
+    expect(out).toContain('**Title**');
+    expect(out).toContain('**Department**');
+    expect(out).toContain('**Committee**');
+    // Workflow process metadata stripped
+    expect(out).not.toContain('**Author**');
+    expect(out).not.toContain('**Date**');
+    expect(out).not.toContain('**Confidence**');
+    expect(out).not.toContain('**DIW Score**');
+  });
+
+  it('strips Admiralty Code typo "Admiration Code" used in some artifacts', () => {
+    const body = '**Admiration Code**: [B2] — Confirmed, plausible source';
+    expect(stripProcessMetaLines(body)).toBe('');
+  });
+
+  it('strips ICD 203 / Standard / Self-audit cycle / Framework', () => {
+    const body = [
+      '**Standard**: ICD 203 — Analytic Standards and Tradecraft',
+      '**Self-audit cycle**: Pass 1 → Pass 2',
+      '**Framework**: 5-dimension political risk register',
+      'Real prose paragraph survives.',
+    ].join('\n');
+    const out = stripProcessMetaLines(body);
+    expect(out).toContain('Real prose paragraph survives.');
+    expect(out).not.toContain('**Standard**');
+    expect(out).not.toContain('**Self-audit cycle**');
+    expect(out).not.toContain('**Framework**');
+  });
+
+  it('does NOT strip "Election date" (a journalism fact) but does strip bare "Election"', () => {
+    expect(stripProcessMetaLines('**Election date**: 2026-09-20')).toBe('**Election date**: 2026-09-20');
+    expect(stripProcessMetaLines('**Election**: Riksdag election 2026')).toBe('');
+  });
+
+  it('does NOT strip per-document journalist facts (Beteckning, Minister, Response deadline, Effective date)', () => {
+    const body = [
+      '**Beteckning**: Prop. 2025/26:253',
+      '**Minister**: Ebba Busch (KD), Ministry of Energy',
+      '**Response deadline**: 2026-05-07',
+      '**Effective date**: 2026-07-01',
+      '**Tabling date**: 2026-04-23',
+    ].join('\n');
+    const out = stripProcessMetaLines(body);
+    expect(out).toBe(body);
+  });
+
+  it('does NOT strip analytical callouts (ACH Score, ALARP, Mitigation, Evidence)', () => {
+    const body = [
+      '**ACH Score**: H1 likely [B2]',
+      '**ALARP**: MITIGATE via opposition monitoring',
+      '**Mitigation**: pre-amplify Lagrådet language',
+      '**Evidence**: vote record HD10437 [A1]',
+    ].join('\n');
+    expect(stripProcessMetaLines(body)).toBe(body);
   });
 });
 
@@ -364,14 +488,16 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     expect(result.markdown).not.toMatch(/self-audit text/);
     expect(result.markdown).not.toMatch(/\*\*Run ID\*\*/);
 
-    // Section order: synthesis → intelligence-assessment must appear in that order.
+    // Section order: executive brief opens the article (BLUF context for
+    // the reader), then the Reader Intelligence Guide routes them into the
+    // deeper lenses, then synthesis → intelligence-assessment must follow.
     const guidePos = result.markdown.indexOf('## Reader Intelligence Guide');
     const execPos = result.markdown.indexOf('## Executive Brief');
     const synthPos = result.markdown.indexOf('## Synthesis Summary');
     const kjPos = result.markdown.indexOf('## Intelligence Assessment');
-    expect(guidePos).toBeGreaterThan(-1);
-    expect(execPos).toBeGreaterThan(guidePos);
-    expect(synthPos).toBeGreaterThan(-1);
+    expect(execPos).toBeGreaterThan(-1);
+    expect(guidePos).toBeGreaterThan(execPos);
+    expect(synthPos).toBeGreaterThan(guidePos);
     expect(kjPos).toBeGreaterThan(synthPos);
   });
 
@@ -1254,6 +1380,100 @@ describe('render-lib — ADMIN_FIELD_RE (SEO contract §3a)', () => {
       '**Disseminated**: 2026-04-23',
       '**Source**: Riksdagen',
       '**Dissemination**: TLP:WHITE',
+    ]) {
+      expect(ADMIN_FIELD_RE.test(f)).toBe(true);
+    }
+  });
+
+  it('matches preamble-leak fields observed 2026-04-27 (Analysis period / Pass 2 / AI-FIRST iterations / ARTICLE_TYPE)', () => {
+    for (const f of [
+      '**Analysis period**: 2026-04-23 (most recent parliamentary day)',
+      '**Pass 2**: 2026-04-27T06:38Z — Improved economic provenance',
+      '**AI-FIRST iterations**: 2',
+      '**AI-FIRST iterations**: 2 (pass 1 + pass 2 improvement)',
+      '**ARTICLE_TYPE**: month-ahead',
+      '**Article type**: propositions',
+      '**Article period**: 2026-04-23',
+      '**Period**: 2026-04-20 → 2026-04-26',
+      '**Window**: April 20–26, 2026',
+      '**Coverage window**: 30-day rolling',
+      '**Analysis date**: 2026-04-20',
+      '**Horizon**: 14 days',
+      '**Method**: Morphological scenario construction',
+      '**Focus**: HD10437 (frs 2025/26:437) in EU comparative context',
+      '**Workflow**: `news-interpellations`',
+      '**Purpose**: Document the analytic pipeline',
+      '**Run started**: 2026-04-27T06:00Z',
+      // Round 3 — per-document / per-artifact preamble labels
+      '**F3EAD Stage**: Exploit',
+      '**Framework**: Political SWOT v3.4',
+      '**Party**: M (initiated)',
+      '**Dok ID**: HD03253',
+      '**Dok-ID**: HD03253',
+      '**Dok_ID**: HD03253',
+      '**Document ID**: HD03253',
+      '**Document**: HD03253',
+      '**Organ**: FiU',
+      '**Subject**: Banking',
+      '**Type**: Proposition',
+      '**Committee**: FiU',
+      '**Comparator set**: Sweden vs DE/FR',
+      '**Election date**: 2026-09-20',
+      '**SCN-ID**: SCN-2026-04-27-001',
+      '**RSK-ID**: RSK-2026-04-27-001',
+      '**THR-ID**: THR-2026-04-27-001',
+      // Round 4 — extra family A/C/D preamble labels
+      '**Riksmöte**: 2025/26',
+      '**DIW Score**: 7/10 (HIGH)',
+      '**Confidence distribution**: 2× HIGH, 3× MEDIUM, 1× LOW',
+      '**Confidence floor**: B2',
+      '**Overall Threat Level**: MEDIUM',
+      '**Overall Risk Level**: HIGH',
+      '**PIRs**: PIR-1, PIR-2',
+      '**PIRs served**: PIR-1',
+      '**Source Diversity**: 4 distinct sources',
+      '**Source Diversity floor**: 3',
+      '**SATs applied**: ACH, KAC, Red Team',
+      '**ICD 203**: compliant',
+      '**Hash**: sha256:abc123',
+      // Round 5 — manifest / synthesis preamble labels
+      '**Article Type**: month-ahead',
+      '**Article Date**: 2026-04-27',
+      '**Analysis Type**: interpellations',
+      '**Analysis Depth**: deep',
+      '**Data Sources**: get_propositioner, get_motioner',
+      '**Data Source**: riksdag-regering-mcp',
+      '**Documents Downloaded**: 1200',
+      '**Documents Selected (date-filtered)**: 11',
+      '**Produced By**: download-parliamentary-data script',
+      '**Scope of this file**: raw data downloaded',
+      // Round 6 — per-document and Swedish-language admin preamble labels
+      '**Session**: Riksmöte 2025/26 (final spring phase)',
+      '**Datum**: 2026-04-23',
+      '**Tier**: A',
+      '**DIW Tier**: HIGH',
+      '**Admiralty Source Code**: A1',
+      '**Inlämnare**: Magdalena Andersson (S)',
+      '**Mottagare**: Finansutskottet',
+      '**Talman**: Andreas Norlén',
+      '**Ministry**: Finansdepartementet',
+      '**SISVA (response deadline)**: 2026-05-15',
+      '**Filed**: 2026-04-23',
+      '**Filed by**: M, KD, L, SD',
+      '**Effective date**: 2026-07-01',
+      '**Effective Date**: 2026-07-01',
+      '**Tabling date**: 2026-04-23',
+      '**Requested date**: 2026-04-15',
+      '**Source authority**: riksdagen.se',
+      '**UTC Timestamp**: 2026-04-27T16:00Z',
+      '**Analysis Timestamp**: 2026-04-27T16:00Z',
+      '**Analysis run**: rm-2026-04-27-001',
+      '**Updated**: 2026-04-27',
+      '**Level**: HIGH',
+      '**Relates to**: HD03253',
+      '**frs**: 2025/26:437',
+      '**Run completed**: 2026-04-27T06:38Z',
+      '**Run at**: 2026-04-27 06:38 UTC',
     ]) {
       expect(ADMIN_FIELD_RE.test(f)).toBe(true);
     }

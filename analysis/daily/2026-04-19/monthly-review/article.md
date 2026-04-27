@@ -5,7 +5,7 @@ date: 2026-04-19
 subfolder: monthly-review
 slug: 2026-04-19-monthly-review
 source_folder: analysis/daily/2026-04-19/monthly-review
-generated_at: 2026-04-27T15:59:44.547Z
+generated_at: 2026-04-27T16:50:06.870Z
 language: en
 layout: article
 ---
@@ -159,16 +159,8 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-05-19 (monthly cadence) or event-driven on Lagrådet KU33 yttrande · **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.0 · **Upstream Continuity Contract**: `.github/aw/SHARED_PROMPT_PATTERNS.md` §Recent Daily Knowledge-Base Synthesis
-
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/synthesis-summary.md -->
-
-**Analysis Date**: 2026-04-19  
-**Article Type**: monthly-review  
-**Riksmöte**: 2025/26  
-**Analysis Depth**: deep  
-**Analyst**: AI Political Intelligence (Pass 2 — iteratively improved)
 
 ---
 
@@ -328,9 +320,6 @@ The government's extra change budget (HD03236) cutting fuel taxes and providing 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/significance-scoring.md -->
 
-**Analysis Date**: 2026-04-19  
-**Article Type**: monthly-review
-
 ---
 
 ### Scoring Methodology
@@ -402,8 +391,6 @@ xychart-beta
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/stakeholder-perspectives.md -->
 
-**Analysis Date**: 2026-04-19  
-**Article Type**: monthly-review  
 **Minimum perspectives required**: 7 (deep depth)
 
 ---
@@ -750,8 +737,6 @@ Legend: ✅ consistent · ⚠️ ambiguous · ❌ inconsistent
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/risk-assessment.md -->
 
-**Analysis Date**: 2026-04-19  
-**Article Type**: monthly-review  
 **Risk Framework**: NIST CSF / Political Risk Matrix
 
 ---
@@ -831,10 +816,6 @@ gauge
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/swot-analysis.md -->
-
-**Analysis Date**: 2026-04-19  
-**Article Type**: monthly-review  
-**Analysis Depth**: deep (5+ stakeholder perspectives per quadrant)
 
 ---
 
@@ -1422,13 +1403,8 @@ xychart-beta
 - Nordic baseline table **aligned** to [`analysis/daily/2026-04-18/weekly-review/comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/comparative-international.md) with the monthly-scope extension to include DE, NL, and EU institutions as required by `SHARED_PROMPT_PATTERNS.md` Tier-C contract (≥ 5 jurisdictions).
 - Wage-transparency benchmarking **updated** to reflect DK completion (Q1 2026) from last weekly-review snapshot.
 
-**Classification**: Public · **Next review**: 2026-05-19 (monthly cadence) · **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.0 · `SHARED_PROMPT_PATTERNS.md` §"WORLD BANK ECONOMIC CONTEXT INTEGRATION"
-
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/classification-results.md -->
-
-**Analysis Date**: 2026-04-19  
-**Article Type**: monthly-review
 
 ---
 
@@ -1530,9 +1506,6 @@ Documents: HD10438, HD10437, HD03245, HD11719
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/cross-reference-map.md -->
-
-**Analysis Date**: 2026-04-19  
-**Article Type**: monthly-review
 
 ---
 
@@ -1694,12 +1667,6 @@ flowchart LR
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/data-download-manifest.md -->
-
-**Generated**: 2026-04-19 15:25 UTC
-**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer, get_dokument_innehall
-**Documents Downloaded**: 1200
-**Documents Selected (date-filtered)**: 11
-**Produced By**: download-parliamentary-data script (data download only)
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
 > All political intelligence analysis (classification, risk assessment, SWOT,
