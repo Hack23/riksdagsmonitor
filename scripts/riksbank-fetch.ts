@@ -26,9 +26,15 @@ export interface RiksbankFetchPayload {
   readonly url: string;
   readonly contentType: string;
   readonly retrievedAt: string;
+  readonly status: 'ok' | 'no-data';
+  readonly warning?: string;
   readonly title?: string;
   readonly json?: unknown;
   readonly text?: string;
+  /** Base64-encoded payload for binary responses (e.g. PDF). Capped at PDF_MAX_BYTES. */
+  readonly pdfBase64?: string;
+  /** Byte length of the binary payload before base64 encoding. */
+  readonly pdfBytes?: number;
   readonly economicProvenance: RiksbankEconomicProvenance;
 }
 
@@ -108,51 +114,137 @@ function extractTitle(text: string): string | undefined {
   return title && title.length > 0 ? title : undefined;
 }
 
+const DEFAULT_RIKSBANK_TIMEOUT_MS = 15_000;
+const TEXT_MAX_BYTES = 20_000;
+/** Hard cap on PDF size accepted from Riksbank. Matches a generous monetary-policy
+ *  report size (~5 MB) without allowing pathological responses to exhaust memory. */
+const PDF_MAX_BYTES = 5 * 1024 * 1024;
+
+function buildProvenance(kind: RiksbankArtifactKind, url: string, retrievedAt: string): RiksbankEconomicProvenance {
+  return {
+    provider: 'riksbank',
+    dataflow: 'riksbank-web',
+    indicator: kind,
+    url,
+    retrieved_at: retrievedAt,
+  };
+}
+
+function buildOutagePayload(
+  kind: RiksbankArtifactKind,
+  url: string,
+  contentType: string,
+  warning: string,
+): RiksbankFetchPayload {
+  const retrievedAt = new Date().toISOString();
+  return {
+    provider: 'riksbank',
+    kind,
+    url,
+    contentType,
+    retrievedAt,
+    status: 'no-data',
+    warning,
+    economicProvenance: buildProvenance(kind, url, retrievedAt),
+  };
+}
+
 export async function fetchRiksbankPayload(
   kind: RiksbankArtifactKind,
   url: string,
+  options: { timeoutMs?: number } = {},
 ): Promise<RiksbankFetchPayload> {
   const target = assertRiksbankFetchTarget(url);
-  const response = await fetch(target, {
-    headers: { Accept: 'application/json, text/html, application/pdf;q=0.8, text/plain;q=0.7' },
-  });
-  if (!response.ok) throw new Error(`Riksbank fetch error: ${response.status} ${response.statusText}`);
+  const timeoutMs = options.timeoutMs ?? DEFAULT_RIKSBANK_TIMEOUT_MS;
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+  let response: Response;
+  try {
+    response = await fetch(target, {
+      headers: { Accept: 'application/json, text/html, application/pdf;q=0.8, text/plain;q=0.7' },
+      signal: controller.signal,
+    });
+  } catch (error) {
+    clearTimeout(timeoutId);
+    const detail = error instanceof Error ? error.message : String(error);
+    return buildOutagePayload(
+      kind,
+      target.toString(),
+      'application/octet-stream',
+      `Riksbank fetch failed (${detail}); callers should fall back to cached analysis/data/riksbank/ artifacts.`,
+    );
+  }
+  clearTimeout(timeoutId);
+
+  if (!response.ok) {
+    return buildOutagePayload(
+      kind,
+      target.toString(),
+      response.headers.get('content-type') ?? 'application/octet-stream',
+      `Riksbank fetch returned HTTP ${response.status} ${response.statusText}; callers should fall back to cached analysis/data/riksbank/ artifacts.`,
+    );
+  }
+
   const contentType = response.headers.get('content-type') ?? 'application/octet-stream';
   const retrievedAt = new Date().toISOString();
+
   if (contentType.includes('json')) {
-    const json = await response.json() as unknown;
+    let json: unknown;
+    try {
+      json = await response.json();
+    } catch (error) {
+      const detail = error instanceof Error ? error.message : String(error);
+      return buildOutagePayload(kind, target.toString(), contentType, `Riksbank JSON parse failed (${detail}).`);
+    }
     return {
       provider: 'riksbank',
       kind,
       url: target.toString(),
       contentType,
       retrievedAt,
+      status: 'ok',
       json,
-      economicProvenance: {
-        provider: 'riksbank',
-        dataflow: 'riksbank-web',
-        indicator: kind,
-        url: target.toString(),
-        retrieved_at: retrievedAt,
-      },
+      economicProvenance: buildProvenance(kind, target.toString(), retrievedAt),
     };
   }
+
+  if (contentType.includes('pdf')) {
+    const buffer = await response.arrayBuffer();
+    if (buffer.byteLength > PDF_MAX_BYTES) {
+      return buildOutagePayload(
+        kind,
+        target.toString(),
+        contentType,
+        `Riksbank PDF response exceeded ${PDF_MAX_BYTES} bytes (received ${buffer.byteLength}); persisted as no-data.`,
+      );
+    }
+    const pdfBase64 = Buffer.from(buffer).toString('base64');
+    return {
+      provider: 'riksbank',
+      kind,
+      url: target.toString(),
+      contentType,
+      retrievedAt,
+      status: 'ok',
+      pdfBase64,
+      pdfBytes: buffer.byteLength,
+      economicProvenance: buildProvenance(kind, target.toString(), retrievedAt),
+    };
+  }
+
   const text = await response.text();
+  const title = extractTitle(text);
   return {
     provider: 'riksbank',
     kind,
     url: target.toString(),
     contentType,
     retrievedAt,
-    ...(extractTitle(text) ? { title: extractTitle(text) } : {}),
-    text: text.slice(0, 20_000),
-    economicProvenance: {
-      provider: 'riksbank',
-      dataflow: 'riksbank-web',
-      indicator: kind,
-      url: target.toString(),
-      retrieved_at: retrievedAt,
-    },
+    status: 'ok',
+    ...(title ? { title } : {}),
+    text: text.slice(0, TEXT_MAX_BYTES),
+    economicProvenance: buildProvenance(kind, target.toString(), retrievedAt),
   };
 }
 

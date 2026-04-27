@@ -64,7 +64,7 @@ export const SCB_PRESETS: readonly SCBPreset[] = Object.freeze([
     label: 'Labour Force Survey (AKU)',
     domain: 'labour',
     defaultValueCodes: Object.freeze({ Tid: 'top(8)' }),
-    notes: 'Quarterly labour-market layer for AU unemployment and employment comparisons.',
+    notes: 'Quarterly labour-market layer for AKU unemployment and employment comparisons.',
   },
   {
     key: 'household-economy',

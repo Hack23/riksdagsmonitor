@@ -162,10 +162,10 @@ flowchart TD
 
 | Mechanism | Required source | economicProvenance provider | Latest signal | Intelligence implication |
 |-----------|-----------------|-----------------------------|:-------------:|--------------------------|
-| Price shock / relief channel | `tsx scripts/scb-fetch.ts preset --preset cpi` + `--preset fuel-prices` | `scb` | — | Does the measure materially affect household cost pressure? |
+| Price shock / relief channel | `tsx scripts/scb-fetch.ts preset --preset cpi` + `tsx scripts/scb-fetch.ts preset --preset fuel-prices` | `scb` | — | Does the measure materially affect household cost pressure? |
 | Labour-market sensitivity | `tsx scripts/scb-fetch.ts preset --preset aku` | `scb` | — | Does unemployment amplify or mute the political signal? |
 | Household exposure | `tsx scripts/scb-fetch.ts preset --preset household-economy` | `scb` | — | Which voter segments face the strongest disposable-income effect? |
-| Monetary-policy reaction function | `tsx scripts/riksbank-fetch.ts repo-rate-path` + `minutes` | `riksbank` | — | Does the Riksbank path support or contradict the claimed transmission? |
+| Monetary-policy reaction function | `tsx scripts/riksbank-fetch.ts repo-rate-path` + `tsx scripts/riksbank-fetch.ts minutes` | `riksbank` | — | Does the Riksbank path support or contradict the claimed transmission? |
 
 **Assessment note:** Cite concrete SCB/Riksbank values before making a forecast about disposable income, consumer sentiment or polling impact. If either source is unavailable, label the gap and fall back to cached `analysis/data/scb/` or `analysis/data/riksbank/` artifacts.
 
