@@ -121,6 +121,7 @@ export default defineConfig({
         'scripts/validate-methodology-reflection.ts',
         'scripts/catalog-downloaded-data.ts',
         'scripts/download-parliamentary-data.ts',
+        'scripts/fetch-rir-followups.ts',
         'scripts/fetch-calendar.ts',
         'scripts/fetch-voting-records.ts',
         'scripts/imf-fetch.ts',
