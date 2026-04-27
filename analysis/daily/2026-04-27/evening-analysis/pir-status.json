@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "cycle": "evening-analysis",
+  "date": "2026-04-27",
+  "subfolder": "evening-analysis",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "Busch HD10448 answer wording",
+      "status": "OPEN",
+      "expected": "2026-04-30",
+      "priority": "HIGH"
+    },
+    {
+      "id": "PIR-2",
+      "title": "FiU committee HD03253 hearing schedule",
+      "status": "OPEN",
+      "expected": "2026-05-15",
+      "priority": "HIGH"
+    },
+    {
+      "id": "PIR-3",
+      "title": "S polling movement post-campaign",
+      "status": "OPEN",
+      "expected": "2026-05-07",
+      "priority": "MEDIUM"
+    },
+    {
+      "id": "PIR-4",
+      "title": "Lagrådet HD03252 proportionality review",
+      "status": "OPEN",
+      "expected": "2026-06-01",
+      "priority": "MEDIUM"
+    },
+    {
+      "id": "PIR-5",
+      "title": "SD energy messaging between now and campaign start",
+      "status": "OPEN",
+      "expected": "2026-08-01",
+      "priority": "HIGH"
+    },
+    {
+      "id": "PIR-C1",
+      "title": "JuU hearing for V HD024090 EU deportation",
+      "status": "CARRIED-FORWARD",
+      "carried_from": "motions/2026-04-27",
+      "priority": "LOW"
+    },
+    {
+      "id": "PIR-C2",
+      "title": "Riksbanken response to HD01FiU23 review",
+      "status": "CARRIED-FORWARD",
+      "carried_from": "committeeReports/2026-04-27",
+      "priority": "LOW"
+    }
+  ],
+  "generated_at": "2026-04-27T18:50:00Z"
+}
