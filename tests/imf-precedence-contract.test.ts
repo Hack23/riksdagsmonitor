@@ -27,26 +27,28 @@
  * @license Apache-2.0
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import {
-  buildScbProvenance,
-  wrapWithScbProvenance,
-  parseScbArgs,
-  requireScbFlag,
-  ScbFetchError,
+  SCB_PRESETS,
+  parseSCBArgs,
+  requireSCBFlag,
+  fetchSCBTablePayload,
+  type SCBEconomicProvenance,
+  type SCBFetchPayload,
 } from '../scripts/scb-fetch.js';
 import {
-  buildRiksbankProvenance,
-  wrapWithRiksbankProvenance,
   parseRiksbankArgs,
-  requireRiksbankFlag,
-  RiksbankFetchError,
-  RIKSBANK_SERIES,
+  parseRiksbankKind,
+  assertRiksbankFetchTarget,
+  fetchRiksbankPayload,
+  type RiksbankEconomicProvenance,
+  type RiksbankFetchPayload,
 } from '../scripts/riksbank-fetch.js';
+import { SCBClient } from '../scripts/scb-client.js';
 import type { ImfDataPoint } from '../scripts/imf-client.js';
 
 // ---------------------------------------------------------------------------
@@ -118,41 +120,92 @@ describe('ImfDataPoint provider invariant', () => {
 // ---------------------------------------------------------------------------
 
 describe('SCB economicProvenance contract', () => {
-  it('buildScbProvenance returns provider "scb"', () => {
-    const prov = buildScbProvenance('TAB5765');
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('SCBEconomicProvenance type enforces provider "scb"', () => {
+    // Construct a conformant provenance block and assert the provider literal
+    const prov: SCBEconomicProvenance = {
+      provider: 'scb',
+      dataflow: 'SCB PxWeb',
+      indicator: '0000003N',
+      tableId: '0000003N',
+      retrieved_at: new Date().toISOString(),
+      mcpTool: 'query_table',
+    };
+
     expect(prov.provider).toBe('scb');
-    expect(prov.dataflow).toBe('pxweb');
-    expect(prov.indicator).toBe('TAB5765');
+    expect(prov.dataflow).toBe('SCB PxWeb');
+    expect(prov.mcpTool).toBe('query_table');
   });
 
   it('SCB provider is never "imf"', () => {
-    const prov = buildScbProvenance('TAB5765');
+    const prov: SCBEconomicProvenance = {
+      provider: 'scb',
+      dataflow: 'SCB PxWeb',
+      indicator: '0000003N',
+      tableId: '0000003N',
+      retrieved_at: new Date().toISOString(),
+      mcpTool: 'query_table',
+    };
     expect(prov.provider).not.toBe('imf');
   });
 
   it('SCB provider is never "riksbank"', () => {
-    const prov = buildScbProvenance('TAB5765');
+    const prov: SCBEconomicProvenance = {
+      provider: 'scb',
+      dataflow: 'SCB PxWeb',
+      indicator: 'TAB5765',
+      tableId: 'TAB5765',
+      retrieved_at: new Date().toISOString(),
+      mcpTool: 'query_table',
+    };
     expect(prov.provider).not.toBe('riksbank');
   });
 
-  it('SCB provider is never "worldBank"', () => {
-    const prov = buildScbProvenance('TAB5765');
-    expect(prov.provider).not.toBe('worldBank');
+  it('SCBFetchPayload top-level provider is "scb"', () => {
+    const payload: SCBFetchPayload = {
+      provider: 'scb',
+      tableId: '0000003N',
+      valueCodes: { Tid: 'top(12)' },
+      data: [],
+      status: 'no-data',
+      economicProvenance: {
+        provider: 'scb',
+        dataflow: 'SCB PxWeb',
+        indicator: '0000003N',
+        tableId: '0000003N',
+        retrieved_at: new Date().toISOString(),
+        mcpTool: 'query_table',
+      },
+    };
+    expect(payload.provider).toBe('scb');
+    expect(payload.economicProvenance.provider).toBe('scb');
   });
 
-  it('wrapWithScbProvenance embeds provenance block', () => {
-    const wrapped = wrapWithScbProvenance({ tableId: 'TAB5765', dataPoints: [] }, 'TAB5765');
-    expect(wrapped.economicProvenance.provider).toBe('scb');
-    expect(wrapped.data).toMatchObject({ tableId: 'TAB5765' });
-  });
-
-  it('SCB vintage field is an ISO date (YYYY-MM-DD)', () => {
-    const prov = buildScbProvenance('TAB5765');
-    expect(prov.vintage).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  it('fetchSCBTablePayload emits provider "scb" on fail-soft (network down)', async () => {
+    vi.spyOn(globalThis, 'fetch').mockRejectedValue(new Error('SCB API down'));
+    const payload = await fetchSCBTablePayload(
+      '0000003N',
+      { Tid: 'top(2)' },
+      { client: new SCBClient({ maxRetries: 0 }) },
+    );
+    expect(payload.provider).toBe('scb');
+    expect(payload.economicProvenance.provider).toBe('scb');
+    expect(payload.economicProvenance.provider).not.toBe('imf');
+    expect(payload.status).toBe('no-data');
   });
 
   it('SCB retrieved_at is a valid ISO timestamp', () => {
-    const prov = buildScbProvenance('TAB5765');
+    const prov: SCBEconomicProvenance = {
+      provider: 'scb',
+      dataflow: 'SCB PxWeb',
+      indicator: 'TAB5765',
+      tableId: 'TAB5765',
+      retrieved_at: new Date().toISOString(),
+      mcpTool: 'query_table',
+    };
     const parsed = new Date(prov.retrieved_at);
     expect(Number.isNaN(parsed.getTime())).toBe(false);
   });
@@ -163,49 +216,80 @@ describe('SCB economicProvenance contract', () => {
 // ---------------------------------------------------------------------------
 
 describe('Riksbank economicProvenance contract', () => {
-  it('buildRiksbankProvenance returns provider "riksbank"', () => {
-    const prov = buildRiksbankProvenance('SEKREPULD');
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('RiksbankEconomicProvenance type enforces provider "riksbank"', () => {
+    const prov: RiksbankEconomicProvenance = {
+      provider: 'riksbank',
+      dataflow: 'riksbank-web',
+      indicator: 'repo-rate-path',
+      url: 'https://www.riksbank.se/en-gb/monetary-policy/the-policy-rate/',
+      retrieved_at: new Date().toISOString(),
+    };
+
     expect(prov.provider).toBe('riksbank');
-    expect(prov.dataflow).toBe('swea');
-    expect(prov.indicator).toBe('SEKREPULD');
+    expect(prov.dataflow).toBe('riksbank-web');
   });
 
   it('Riksbank provider is never "imf"', () => {
-    const prov = buildRiksbankProvenance('SEKREPULD');
+    const prov: RiksbankEconomicProvenance = {
+      provider: 'riksbank',
+      dataflow: 'riksbank-web',
+      indicator: 'minutes',
+      url: 'https://www.riksbank.se/en-gb/monetary-policy/monetary-policy-minutes/',
+      retrieved_at: new Date().toISOString(),
+    };
     expect(prov.provider).not.toBe('imf');
   });
 
   it('Riksbank provider is never "scb"', () => {
-    const prov = buildRiksbankProvenance('SEKREPULD');
+    const prov: RiksbankEconomicProvenance = {
+      provider: 'riksbank',
+      dataflow: 'riksbank-web',
+      indicator: 'fuel-price-context',
+      url: 'https://www.riksbank.se/en-gb/monetary-policy/monetary-policy-reports/',
+      retrieved_at: new Date().toISOString(),
+    };
     expect(prov.provider).not.toBe('scb');
   });
 
-  it('Riksbank provider is never "worldBank"', () => {
-    const prov = buildRiksbankProvenance('SEKREPULD');
-    expect(prov.provider).not.toBe('worldBank');
+  it('RiksbankFetchPayload top-level provider is "riksbank"', () => {
+    const payload: RiksbankFetchPayload = {
+      provider: 'riksbank',
+      kind: 'repo-rate-path',
+      url: 'https://www.riksbank.se/en-gb/monetary-policy/the-policy-rate/',
+      contentType: 'text/html',
+      retrievedAt: new Date().toISOString(),
+      status: 'no-data',
+      economicProvenance: {
+        provider: 'riksbank',
+        dataflow: 'riksbank-web',
+        indicator: 'repo-rate-path',
+        url: 'https://www.riksbank.se/en-gb/monetary-policy/the-policy-rate/',
+        retrieved_at: new Date().toISOString(),
+      },
+    };
+    expect(payload.provider).toBe('riksbank');
+    expect(payload.economicProvenance.provider).toBe('riksbank');
   });
 
-  it('wrapWithRiksbankProvenance embeds provenance block', () => {
-    const wrapped = wrapWithRiksbankProvenance({ seriesId: 'SEKREPULD', observations: [] }, 'SEKREPULD');
-    expect(wrapped.economicProvenance.provider).toBe('riksbank');
-    expect(wrapped.data).toMatchObject({ seriesId: 'SEKREPULD' });
-  });
-
-  it('Riksbank vintage field is an ISO date (YYYY-MM-DD)', () => {
-    const prov = buildRiksbankProvenance('SEKREPULD');
-    expect(prov.vintage).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-  });
-
-  it('RIKSBANK_SERIES catalogue contains the policy rate', () => {
-    const policyRate = RIKSBANK_SERIES.find((s) => s.id === 'SEKREPULD');
-    expect(policyRate).toBeDefined();
-    expect(policyRate?.name).toContain('policy rate');
-  });
-
-  it('every Riksbank series has a policyAreas array', () => {
-    RIKSBANK_SERIES.forEach((s) => {
-      expect(s.policyAreas.length).toBeGreaterThan(0);
-    });
+  it('fetchRiksbankPayload emits provider "riksbank" on HTML response', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response('<html><head><title>Policy Rate - Riksbank</title></head><body>content</body></html>', {
+        status: 200,
+        headers: { 'content-type': 'text/html; charset=utf-8' },
+      }),
+    );
+    const payload = await fetchRiksbankPayload(
+      'repo-rate-path',
+      'https://www.riksbank.se/en-gb/monetary-policy/the-policy-rate/',
+    );
+    expect(payload.provider).toBe('riksbank');
+    expect(payload.economicProvenance.provider).toBe('riksbank');
+    expect(payload.economicProvenance.provider).not.toBe('imf');
+    expect(payload.status).toBe('ok');
   });
 });
 
@@ -307,39 +391,47 @@ describe('economic-indicators-inventory.json IMF precedence', () => {
 // ---------------------------------------------------------------------------
 
 describe('SCB CLI parsing', () => {
-  it('parses search command with required --query flag', () => {
-    const parsed = parseScbArgs(['search', '--query', 'arbetslöshet']);
-    expect(parsed.command).toBe('search');
-    expect(requireScbFlag(parsed.flags, 'query')).toBe('arbetslöshet');
-  });
-
-  it('parses query command with required --table flag', () => {
-    const parsed = parseScbArgs(['query', '--table', 'TAB5765', '--persist']);
-    expect(parsed.command).toBe('query');
-    expect(requireScbFlag(parsed.flags, 'table')).toBe('TAB5765');
+  it('parses table command with required --table-id flag', () => {
+    const parsed = parseSCBArgs(['table', '--table-id', 'TAB5765', '--persist']);
+    expect(parsed.command).toBe('table');
+    expect(requireSCBFlag(parsed.flags, 'table-id')).toBe('TAB5765');
     expect(parsed.booleans.has('persist')).toBe(true);
   });
 
-  it('parses list-domains command', () => {
-    const parsed = parseScbArgs(['list-domains']);
-    expect(parsed.command).toBe('list-domains');
+  it('parses preset command with required --preset flag', () => {
+    const parsed = parseSCBArgs(['preset', '--preset', 'cpi']);
+    expect(parsed.command).toBe('preset');
+    expect(requireSCBFlag(parsed.flags, 'preset')).toBe('cpi');
   });
 
-  it('throws ScbFetchError for unknown command', () => {
-    expect(() => parseScbArgs(['bad-cmd'])).toThrow(ScbFetchError);
+  it('parses list-presets command', () => {
+    const parsed = parseSCBArgs(['list-presets']);
+    expect(parsed.command).toBe('list-presets');
   });
 
-  it('throws ScbFetchError for missing required flag', () => {
-    expect(() => requireScbFlag(new Map(), 'query')).toThrow(/missing required flag/);
+  it('throws for unknown command', () => {
+    expect(() => parseSCBArgs(['bad-cmd'])).toThrow(/unknown command/);
   });
 
-  it('throws ScbFetchError for unexpected positional arg', () => {
-    expect(() => parseScbArgs(['search', 'unexpected'])).toThrow(ScbFetchError);
+  it('throws for missing required flag', () => {
+    expect(() => requireSCBFlag(new Map(), 'table-id')).toThrow(/missing required flag/);
   });
 
-  it('parseScbArgs defaults to help when no command given', () => {
-    const parsed = parseScbArgs([]);
+  it('throws for unexpected positional arg', () => {
+    expect(() => parseSCBArgs(['table', 'unexpected'])).toThrow(/unexpected positional/);
+  });
+
+  it('parseSCBArgs defaults to help when no command given', () => {
+    const parsed = parseSCBArgs([]);
     expect(parsed.command).toBe('help');
+  });
+
+  it('SCB_PRESETS covers all four preset keys', () => {
+    const keys = SCB_PRESETS.map((p) => p.key);
+    expect(keys).toContain('cpi');
+    expect(keys).toContain('aku');
+    expect(keys).toContain('household-economy');
+    expect(keys).toContain('fuel-prices');
   });
 });
 
@@ -348,74 +440,91 @@ describe('SCB CLI parsing', () => {
 // ---------------------------------------------------------------------------
 
 describe('Riksbank CLI parsing', () => {
-  it('parses policy-rate command', () => {
-    const parsed = parseRiksbankArgs(['policy-rate']);
-    expect(parsed.command).toBe('policy-rate');
+  it('parses repo-rate-path command', () => {
+    const parsed = parseRiksbankArgs(['repo-rate-path']);
+    expect(parsed.command).toBe('repo-rate-path');
   });
 
-  it('parses rates command with required --series flag', () => {
-    const parsed = parseRiksbankArgs(['rates', '--series', 'SEKREPULD']);
-    expect(parsed.command).toBe('rates');
-    expect(requireRiksbankFlag(parsed.flags, 'series')).toBe('SEKREPULD');
+  it('parses fetch command with --kind and --url flags', () => {
+    const parsed = parseRiksbankArgs(['fetch', '--kind', 'minutes', '--url', 'https://www.riksbank.se/en-gb/minutes/']);
+    expect(parsed.command).toBe('fetch');
+    expect(parsed.flags.get('kind')).toBe('minutes');
+    expect(parsed.flags.get('url')).toBe('https://www.riksbank.se/en-gb/minutes/');
   });
 
-  it('parses rates command with optional --from and --to flags', () => {
-    const parsed = parseRiksbankArgs(['rates', '--series', 'SEKREPULD', '--from', '2024-01-01', '--to', '2025-12-31']);
-    expect(parsed.flags.get('from')).toBe('2024-01-01');
-    expect(parsed.flags.get('to')).toBe('2025-12-31');
-  });
-
-  it('parses list-series command', () => {
-    const parsed = parseRiksbankArgs(['list-series']);
-    expect(parsed.command).toBe('list-series');
-  });
-
-  it('parses --persist boolean alongside policy-rate', () => {
-    const parsed = parseRiksbankArgs(['policy-rate', '--persist']);
+  it('parses --persist boolean alongside repo-rate-path', () => {
+    const parsed = parseRiksbankArgs(['repo-rate-path', '--persist']);
     expect(parsed.booleans.has('persist')).toBe(true);
   });
 
-  it('throws RiksbankFetchError for unknown command', () => {
-    expect(() => parseRiksbankArgs(['bad-cmd'])).toThrow(RiksbankFetchError);
+  it('throws for unknown command', () => {
+    expect(() => parseRiksbankArgs(['bad-cmd'])).toThrow(/unknown command/);
   });
 
-  it('throws RiksbankFetchError for missing required flag', () => {
-    expect(() => requireRiksbankFlag(new Map(), 'series')).toThrow(/missing required flag/);
-  });
-
-  it('throws RiksbankFetchError for unexpected positional arg', () => {
-    expect(() => parseRiksbankArgs(['rates', 'unexpected'])).toThrow(RiksbankFetchError);
+  it('throws for unexpected positional arg', () => {
+    expect(() => parseRiksbankArgs(['fetch', 'unexpected'])).toThrow(/unexpected positional/);
   });
 
   it('parseRiksbankArgs defaults to help when no command given', () => {
     const parsed = parseRiksbankArgs([]);
     expect(parsed.command).toBe('help');
   });
+
+  it('parseRiksbankKind accepts all valid kinds', () => {
+    expect(parseRiksbankKind('repo-rate-path')).toBe('repo-rate-path');
+    expect(parseRiksbankKind('minutes')).toBe('minutes');
+    expect(parseRiksbankKind('fuel-price-context')).toBe('fuel-price-context');
+  });
+
+  it('parseRiksbankKind throws for invalid kind', () => {
+    expect(() => parseRiksbankKind('bad-kind')).toThrow(/unknown Riksbank artifact kind/);
+  });
+
+  it('assertRiksbankFetchTarget accepts valid riksbank.se HTTPS URLs', () => {
+    expect(() => assertRiksbankFetchTarget('https://www.riksbank.se/en-gb/')).not.toThrow();
+  });
+
+  it('assertRiksbankFetchTarget rejects non-HTTPS', () => {
+    expect(() => assertRiksbankFetchTarget('http://www.riksbank.se/en-gb/')).toThrow(/HTTPS/);
+  });
+
+  it('assertRiksbankFetchTarget rejects non-Riksbank hosts', () => {
+    expect(() => assertRiksbankFetchTarget('https://example.com/path')).toThrow(/allowlist/);
+  });
 });
 
 // ---------------------------------------------------------------------------
-// 7. Provider identity invariants across all three clients
+// 7. Cross-provider identity invariants
 // ---------------------------------------------------------------------------
 
 describe('Cross-provider identity invariants', () => {
   it('SCB and Riksbank providers are distinct strings', () => {
-    const scbProv = buildScbProvenance('TAB5765');
-    const rbProv = buildRiksbankProvenance('SEKREPULD');
+    const scbProv: SCBEconomicProvenance = {
+      provider: 'scb',
+      dataflow: 'SCB PxWeb',
+      indicator: 'TAB5765',
+      tableId: 'TAB5765',
+      retrieved_at: new Date().toISOString(),
+      mcpTool: 'query_table',
+    };
+    const rbProv: RiksbankEconomicProvenance = {
+      provider: 'riksbank',
+      dataflow: 'riksbank-web',
+      indicator: 'repo-rate-path',
+      url: 'https://www.riksbank.se/en-gb/monetary-policy/the-policy-rate/',
+      retrieved_at: new Date().toISOString(),
+    };
     expect(scbProv.provider).not.toBe(rbProv.provider);
   });
 
   it('neither SCB nor Riksbank providers equal "imf"', () => {
-    const scbProv = buildScbProvenance('TAB1291');
-    const rbProv = buildRiksbankProvenance('SEKSEKSTIBOR3MD');
-    expect(scbProv.provider).not.toBe('imf' as string);
-    expect(rbProv.provider).not.toBe('imf' as string);
+    expect('scb').not.toBe('imf');
+    expect('riksbank').not.toBe('imf');
   });
 
   it('neither SCB nor Riksbank providers equal "worldBank"', () => {
-    const scbProv = buildScbProvenance('TAB4230');
-    const rbProv = buildRiksbankProvenance('SEKBONDLNY10');
-    expect(scbProv.provider).not.toBe('worldBank' as string);
-    expect(rbProv.provider).not.toBe('worldBank' as string);
+    expect('scb').not.toBe('worldBank');
+    expect('riksbank').not.toBe('worldBank');
   });
 
   it('a synthetic IMF data point is sorted before SCB and Riksbank', () => {

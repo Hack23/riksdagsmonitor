@@ -1,190 +1,81 @@
 #!/usr/bin/env tsx
 /**
  * @module scripts/riksbank-fetch
- * @description CLI wrapper for Sveriges Riksbank (SWEA) interest rate data.
- *
- * Fetches monetary policy data directly from the Riksbank SWEA REST API
- * (`https://api.riksbank.se/swea/v1/`) using native `fetch`. Every response
- * includes an `economicProvenance` block with `provider: "riksbank"` as
- * required by `.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.1.
- *
- * **Provider hierarchy reminder** (per ECONOMIC_DATA_CONTRACT.md v2.1):
- *   1. IMF — macro (GDP, inflation, unemployment, fiscal, monetary projections)
- *   2. SCB — Sweden-specific ground truth (regional, monthly, granular)
- *   3. Riksbank — Swedish central bank policy rates and monetary statistics
- *   4. World Bank — governance/environment residue
- *
- * Riksbank data is used **when direct official rate data is needed** (e.g.
- * exact styrränta for the current date) rather than IMF MFS_IR monthly
- * aggregates. It is NEVER aliased as IMF in provenance metadata.
- *
- * ## Usage
- *
- *   tsx scripts/riksbank-fetch.ts policy-rate [--persist]
- *   tsx scripts/riksbank-fetch.ts rates --series SEKREPULD [--from 2024-01-01] [--to 2025-12-31] [--persist]
- *   tsx scripts/riksbank-fetch.ts list-series
- *   tsx scripts/riksbank-fetch.ts help
- *
- * `--persist` writes the raw response under `analysis/data/riksbank/` via
- * {@link persistRiksbankData}. Outputs JSON (with `economicProvenance`) to
- * stdout regardless.
- *
- * ## Exit codes
- *
- *   0 — success
- *   1 — runtime / network / validation error
- *   2 — bad CLI arguments
- *
- * @author Hack23 AB
- * @license Apache-2.0
- * @see https://api.riksbank.se/swea/v1/
+ * @description Fetches public Riksbank web/JSON artifacts for Swedish
+ * monetary-policy and fuel-price transmission context.
  */
 
-import { pathToFileURL } from 'node:url';
 import path from 'node:path';
-import fs from 'node:fs';
-import { fileURLToPath } from 'node:url';
+import { pathToFileURL } from 'node:url';
 
-// ---------------------------------------------------------------------------
-// Constants
-// ---------------------------------------------------------------------------
+import { persistRiksbankData } from './parliamentary-data/data-persistence.js';
 
-const RIKSBANK_SWEA_BASE_URL = 'https://api.riksbank.se/swea/v1';
+export type RiksbankArtifactKind = 'repo-rate-path' | 'minutes' | 'fuel-price-context';
 
-/** Default request timeout in milliseconds */
-const DEFAULT_TIMEOUT = 15_000;
+export interface RiksbankEconomicProvenance {
+  readonly provider: 'riksbank';
+  readonly dataflow: 'riksbank-web';
+  readonly indicator: RiksbankArtifactKind;
+  readonly url: string;
+  readonly retrieved_at: string;
+}
 
-/** Known Riksbank SWEA series IDs relevant to Swedish political analysis */
-export const RIKSBANK_SERIES = [
-  {
-    id: 'SEKREPULD',
-    name: 'Swedish policy rate (styrränta / reporänta)',
-    description: 'Sveriges Riksbank main policy rate. Key monetary-policy indicator for FiU committee analysis.',
-    policyAreas: ['monetary policy', 'interest rates'],
-    committees: ['FiU'],
-    unit: '% per annum',
-  },
-  {
-    id: 'SEKSEKSTIBOR3MD',
-    name: 'STIBOR 3-month rate',
-    description: 'Stockholm Interbank Offered Rate, 3-month. Reference rate for short-term lending.',
-    policyAreas: ['monetary policy', 'financial markets'],
-    committees: ['FiU'],
-    unit: '% per annum',
-  },
-  {
-    id: 'SEKBONDLNY10',
-    name: 'Swedish government bond 10-year yield',
-    description: 'Yield on Swedish 10-year government bonds. Indicator for long-term borrowing costs.',
-    policyAreas: ['fiscal policy', 'monetary policy'],
-    committees: ['FiU'],
-    unit: '% per annum',
-  },
-] as const;
+export interface RiksbankFetchPayload {
+  readonly provider: 'riksbank';
+  readonly kind: RiksbankArtifactKind;
+  readonly url: string;
+  readonly contentType: string;
+  readonly retrievedAt: string;
+  readonly status: 'ok' | 'no-data';
+  readonly warning?: string;
+  readonly title?: string;
+  readonly json?: unknown;
+  readonly text?: string;
+  /** Base64-encoded payload for binary responses (e.g. PDF). Capped at PDF_MAX_BYTES. */
+  readonly pdfBase64?: string;
+  /** Byte length of the binary payload before base64 encoding. */
+  readonly pdfBytes?: number;
+  readonly economicProvenance: RiksbankEconomicProvenance;
+}
 
-/** Series IDs for the policy-rate command (primary styrränta) */
-const POLICY_RATE_SERIES_ID = 'SEKREPULD';
-
-// ---------------------------------------------------------------------------
-// Types
-// ---------------------------------------------------------------------------
-
-/** Parsed command-line arguments */
-export interface ParsedRiksbankArgs {
-  readonly command: 'policy-rate' | 'rates' | 'list-series' | 'help';
+interface ParsedArgs {
+  readonly command: 'repo-rate-path' | 'minutes' | 'fuel-price-context' | 'fetch' | 'help';
   readonly flags: ReadonlyMap<string, string>;
   readonly booleans: ReadonlySet<string>;
 }
 
-/** economicProvenance block emitted with every response */
-export interface RiksbankEconomicProvenance {
-  readonly provider: 'riksbank';
-  readonly dataflow: 'swea';
-  readonly indicator: string;
-  readonly vintage: string;
-  readonly retrieved_at: string;
-}
-
-/** A single Riksbank data observation */
-export interface RiksbankObservation {
-  readonly date: string;
-  readonly value: number | null;
-  readonly seriesId: string;
-}
-
-/** Wrapped response with provenance */
-export interface RiksbankProvenanceResponse<T = unknown> {
-  readonly data: T;
-  readonly economicProvenance: RiksbankEconomicProvenance;
-}
-
-// ---------------------------------------------------------------------------
-// Error class
-// ---------------------------------------------------------------------------
-
-/** Typed error for Riksbank fetch CLI failures */
-export class RiksbankFetchError extends Error {
-  readonly kind: 'cli' | 'network' | 'validation';
-
-  constructor(message: string, kind: RiksbankFetchError['kind']) {
-    super(message);
-    this.name = 'RiksbankFetchError';
-    this.kind = kind;
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Help text
-// ---------------------------------------------------------------------------
+const DEFAULT_URLS: Readonly<Record<RiksbankArtifactKind, string>> = Object.freeze({
+  'repo-rate-path': 'https://www.riksbank.se/en-gb/monetary-policy/the-policy-rate/',
+  minutes: 'https://www.riksbank.se/en-gb/monetary-policy/monetary-policy-minutes/',
+  'fuel-price-context': 'https://www.riksbank.se/en-gb/monetary-policy/monetary-policy-reports/',
+});
 
 const HELP = `tsx scripts/riksbank-fetch.ts <command> [flags]
 
 Commands:
-  policy-rate   Fetch the Swedish policy rate (styrränta) time series
-  rates         Fetch an arbitrary SWEA series
-  list-series   Print the built-in Riksbank series catalogue
-  help          Show this message
+  repo-rate-path      Fetch the policy-rate path source page unless --url overrides it
+  minutes             Fetch monetary-policy minutes source page/PDF/JSON
+  fuel-price-context  Fetch monetary-policy report context for fuel/energy assumptions
+  fetch               Fetch a custom --kind and --url pair from www.riksbank.se
+  help                Show this message
 
 Flags:
-  --series <ID>        SWEA series ID (e.g. SEKREPULD) for 'rates' command
-  --from <YYYY-MM-DD>  Start date for series fetch (optional)
-  --to <YYYY-MM-DD>    End date for series fetch (optional)
-  --persist            Write raw output under analysis/data/riksbank/
-
-Provider note:
-  All output carries economicProvenance.provider = "riksbank".
-  Riksbank is NEVER aliased as IMF — they are distinct providers.
-  Use scripts/imf-fetch.ts sdmx --path ".../MFS_IR/..." for IMF monetary data.
+  --url <URL>      Riksbank HTTPS URL (host must be www.riksbank.se or riksbank.se)
+  --kind <KIND>    repo-rate-path | minutes | fuel-price-context (fetch command)
+  --persist        Write output under analysis/data/riksbank/
 `;
 
-// ---------------------------------------------------------------------------
-// Argument parsing
-// ---------------------------------------------------------------------------
-
-/**
- * Parse CLI arguments into a structured form.
- *
- * @param argv - Process arguments (excluding node and script path)
- * @returns Parsed command, flags, and boolean options
- * @throws {RiksbankFetchError} for unknown commands
- */
-export function parseRiksbankArgs(argv: readonly string[]): ParsedRiksbankArgs {
-  const command = (argv[0] ?? 'help') as ParsedRiksbankArgs['command'];
-  const validCommands: readonly ParsedRiksbankArgs['command'][] = [
-    'policy-rate', 'rates', 'list-series', 'help',
+export function parseRiksbankArgs(argv: readonly string[]): ParsedArgs {
+  const command = (argv[0] ?? 'help') as ParsedArgs['command'];
+  const validCommands: readonly ParsedArgs['command'][] = [
+    'repo-rate-path', 'minutes', 'fuel-price-context', 'fetch', 'help',
   ];
-  if (!validCommands.includes(command)) {
-    throw new RiksbankFetchError(`unknown command "${command}"`, 'cli');
-  }
-
+  if (!validCommands.includes(command)) throw new Error(`unknown command ${command}`);
   const flags = new Map<string, string>();
   const booleans = new Set<string>();
-
   for (let i = 1; i < argv.length; i++) {
     const token = argv[i];
-    if (!token.startsWith('--')) {
-      throw new RiksbankFetchError(`unexpected positional argument "${token}"`, 'cli');
-    }
+    if (!token.startsWith('--')) throw new Error(`unexpected positional argument ${token}`);
     const key = token.slice(2);
     const next = argv[i + 1];
     if (next !== undefined && !next.startsWith('--')) {
@@ -194,280 +85,354 @@ export function parseRiksbankArgs(argv: readonly string[]): ParsedRiksbankArgs {
       booleans.add(key);
     }
   }
-
   return { command, flags, booleans };
 }
 
-/**
- * Require a CLI flag, throwing a typed error if absent.
- *
- * @param flags - Parsed flags map
- * @param key   - Flag name (without `--`)
- * @returns Flag value
- * @throws {RiksbankFetchError} if the flag is missing
- */
-export function requireRiksbankFlag(
-  flags: ReadonlyMap<string, string>,
-  key: string,
-): string {
-  const value = flags.get(key);
-  if (!value) {
-    throw new RiksbankFetchError(`missing required flag --${key}`, 'cli');
-  }
-  return value;
+export function parseRiksbankKind(value: string): RiksbankArtifactKind {
+  if (value === 'repo-rate-path' || value === 'minutes' || value === 'fuel-price-context') return value;
+  throw new Error(`unknown Riksbank artifact kind ${value}`);
 }
 
-// ---------------------------------------------------------------------------
-// Provenance builder
-// ---------------------------------------------------------------------------
+export function assertRiksbankFetchTarget(url: string): URL {
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    throw new Error(`invalid Riksbank URL: ${url}`);
+  }
+  if (parsed.protocol !== 'https:') throw new Error('Riksbank fetch URL must use HTTPS');
+  if (parsed.hostname !== 'www.riksbank.se' && parsed.hostname !== 'riksbank.se') {
+    throw new Error(`Riksbank host ${parsed.hostname} is not in allowlist`);
+  }
+  return parsed;
+}
 
-/**
- * Build an `economicProvenance` block for Riksbank data.
- *
- * @param indicator - SWEA series ID
- * @returns Provenance block with provider "riksbank"
- */
-export function buildRiksbankProvenance(indicator: string): RiksbankEconomicProvenance {
-  const now = new Date();
+function extractTitle(text: string): string | undefined {
+  const title = /<title[^>]*>(.*?)<\/title>/is.exec(text)?.[1]
+    ?.replace(/\s+/g, ' ')
+    .trim();
+  return title && title.length > 0 ? title : undefined;
+}
+
+const DEFAULT_RIKSBANK_TIMEOUT_MS = 15_000;
+const TEXT_MAX_BYTES = 20_000;
+/** Hard cap on HTML/text body size before truncation. Prevents pathological
+ *  HTML pages from exhausting memory while still allowing a generous slice. */
+const TEXT_RESPONSE_MAX_BYTES = 2 * 1024 * 1024;
+/** Hard cap on PDF size accepted from Riksbank. Matches a generous monetary-policy
+ *  report size (~5 MB) without allowing pathological responses to exhaust memory. */
+const PDF_MAX_BYTES = 5 * 1024 * 1024;
+/** Maximum number of redirects to follow manually while re-validating each host. */
+const MAX_REDIRECTS = 3;
+
+async function safeCancel(target: ReadableStreamDefaultReader<Uint8Array> | ReadableStream<Uint8Array> | null | undefined): Promise<void> {
+  if (!target) return;
+  try { await target.cancel(); } catch { /* ignore cancel errors */ }
+}
+
+async function safeReleaseLock(reader: ReadableStreamDefaultReader<Uint8Array>): Promise<void> {
+  try { reader.releaseLock(); } catch { /* ignore release errors */ }
+}
+
+function buildProvenance(kind: RiksbankArtifactKind, url: string, retrievedAt: string): RiksbankEconomicProvenance {
   return {
     provider: 'riksbank',
-    dataflow: 'swea',
-    indicator,
-    vintage: now.toISOString().slice(0, 10),
-    retrieved_at: now.toISOString(),
+    dataflow: 'riksbank-web',
+    indicator: kind,
+    url,
+    retrieved_at: retrievedAt,
   };
 }
 
-/**
- * Wrap a payload with a Riksbank economicProvenance block.
- *
- * @param data      - The fetched data
- * @param indicator - SWEA series ID
- * @returns Wrapped response with provenance
- */
-export function wrapWithRiksbankProvenance<T>(
-  data: T,
-  indicator: string,
-): RiksbankProvenanceResponse<T> {
+function buildOutagePayload(
+  kind: RiksbankArtifactKind,
+  url: string,
+  contentType: string,
+  warning: string,
+): RiksbankFetchPayload {
+  const retrievedAt = new Date().toISOString();
   return {
-    data,
-    economicProvenance: buildRiksbankProvenance(indicator),
+    provider: 'riksbank',
+    kind,
+    url,
+    contentType,
+    retrievedAt,
+    status: 'no-data',
+    warning,
+    economicProvenance: buildProvenance(kind, url, retrievedAt),
   };
 }
 
-// ---------------------------------------------------------------------------
-// SWEA API client
-// ---------------------------------------------------------------------------
-
-/** Raw SWEA API observation from the `/observations` endpoint */
-interface SweaObservationRaw {
-  date?: string;
-  value?: number | string | null;
-  seriesId?: string;
+function parseContentLength(header: string | null): number | undefined {
+  if (!header) return undefined;
+  const value = Number.parseInt(header, 10);
+  return Number.isFinite(value) && value >= 0 ? value : undefined;
 }
 
-/** Raw SWEA API envelope */
-interface SweaResponse {
-  observations?: SweaObservationRaw[];
-  seriesId?: string;
-  [key: string]: unknown;
+/** Read a `ReadableStream<Uint8Array>` body with a hard byte cap. The returned
+ *  `bytes` holds the data read so far; `exceeded === true` means the cap was
+ *  hit and `bytes` should not be consumed. */
+async function readBodyWithCap(
+  body: ReadableStream<Uint8Array> | null,
+  maxBytes: number,
+): Promise<{ exceeded: boolean; bytes: Uint8Array; bytesRead: number }> {
+  if (!body) return { exceeded: false, bytes: new Uint8Array(0), bytesRead: 0 };
+  const reader = body.getReader();
+  const chunks: Uint8Array[] = [];
+  let total = 0;
+  let exceeded = false;
+  try {
+    for (;;) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      if (!value) continue;
+      total += value.byteLength;
+      if (total > maxBytes) {
+        exceeded = true;
+        await safeCancel(reader);
+        break;
+      }
+      chunks.push(value);
+    }
+  } finally {
+    await safeReleaseLock(reader);
+  }
+  if (exceeded) {
+    return { exceeded: true, bytes: new Uint8Array(0), bytesRead: total };
+  }
+  const out = new Uint8Array(total);
+  let offset = 0;
+  for (const chunk of chunks) {
+    out.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return { exceeded: false, bytes: out, bytesRead: total };
 }
 
-/**
- * Fetch observations for a single SWEA series.
- *
- * @param seriesId - Riksbank SWEA series identifier (e.g. "SEKREPULD")
- * @param from     - Optional ISO date (YYYY-MM-DD) start filter
- * @param to       - Optional ISO date (YYYY-MM-DD) end filter
- * @param timeout  - Request timeout in ms (default 15 000)
- * @returns Array of observations
- * @throws {RiksbankFetchError} on network / validation failure
- */
-export async function fetchRiksbankSeries(
-  seriesId: string,
-  from?: string,
-  to?: string,
-  timeout = DEFAULT_TIMEOUT,
-): Promise<RiksbankObservation[]> {
-  const params = new URLSearchParams();
-  if (from) params.set('from', from);
-  if (to) params.set('to', to);
+/** Perform a single fetch with manual-redirect handling against the Riksbank
+ *  host allowlist. Returns the final 2xx Response or throws. */
+async function fetchWithManualRedirects(
+  target: URL,
+  signal: AbortSignal,
+): Promise<{ response: Response; finalUrl: URL }> {
+  let current = target;
+  for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
+    const response = await fetch(current, {
+      headers: { Accept: 'application/json, text/html, application/pdf;q=0.8, text/plain;q=0.7' },
+      signal,
+      redirect: 'manual',
+    });
+    if (response.status >= 300 && response.status < 400) {
+      const location = response.headers.get('location');
+      if (!location) {
+        throw new Error(`Riksbank redirect ${response.status} without Location header`);
+      }
+      // Drain redirect body to free the connection.
+      await safeCancel(response.body);
+      const next = new URL(location, current);
+      assertRiksbankFetchTarget(next.toString());
+      current = next;
+      continue;
+    }
+    return { response, finalUrl: current };
+  }
+  throw new Error(`Riksbank fetch exceeded ${MAX_REDIRECTS} redirects`);
+}
 
-  const qs = params.toString();
-  const url = `${RIKSBANK_SWEA_BASE_URL}/observations/${encodeURIComponent(seriesId)}${qs ? `?${qs}` : ''}`;
-
+export async function fetchRiksbankPayload(
+  kind: RiksbankArtifactKind,
+  url: string,
+  options: { timeoutMs?: number } = {},
+): Promise<RiksbankFetchPayload> {
+  const target = assertRiksbankFetchTarget(url);
+  const timeoutMs = options.timeoutMs ?? DEFAULT_RIKSBANK_TIMEOUT_MS;
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), timeout);
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
-    const response = await fetch(url, {
-      signal: controller.signal,
-      headers: {
-        Accept: 'application/json',
-      },
-    });
-
-    if (!response.ok) {
-      throw new RiksbankFetchError(
-        `Riksbank SWEA API error ${response.status} ${response.statusText} for series ${seriesId}`,
-        'network',
+    let response: Response;
+    let finalUrl: URL;
+    try {
+      ({ response, finalUrl } = await fetchWithManualRedirects(target, controller.signal));
+    } catch (error) {
+      const detail = error instanceof Error ? error.message : String(error);
+      return buildOutagePayload(
+        kind,
+        target.toString(),
+        'application/octet-stream',
+        `Riksbank fetch failed (${detail}); callers should fall back to cached analysis/data/riksbank/ artifacts.`,
       );
     }
 
-    const json = await response.json() as SweaResponse | SweaObservationRaw[];
+    const finalUrlStr = finalUrl.toString();
 
-    // The SWEA v1 API returns either a plain array or a wrapped envelope
-    const rawObs: SweaObservationRaw[] = Array.isArray(json)
-      ? json
-      : (json.observations ?? []);
+    if (!response.ok) {
+      await safeCancel(response.body);
+      return buildOutagePayload(
+        kind,
+        finalUrlStr,
+        response.headers.get('content-type') ?? 'application/octet-stream',
+        `Riksbank fetch returned HTTP ${response.status} ${response.statusText}; callers should fall back to cached analysis/data/riksbank/ artifacts.`,
+      );
+    }
 
-    return rawObs.map((obs): RiksbankObservation => ({
-      date: String(obs.date ?? ''),
-      value: obs.value !== undefined && obs.value !== null
-        ? (typeof obs.value === 'string' ? Number.parseFloat(obs.value) : obs.value)
-        : null,
-      seriesId,
-    }));
-  } catch (error) {
-    if (error instanceof RiksbankFetchError) throw error;
-    const msg = error instanceof Error ? error.message : String(error);
-    throw new RiksbankFetchError(`Riksbank SWEA fetch failed for ${seriesId}: ${msg}`, 'network');
+    const contentType = response.headers.get('content-type') ?? 'application/octet-stream';
+    const contentLength = parseContentLength(response.headers.get('content-length'));
+    const retrievedAt = new Date().toISOString();
+
+    if (contentType.includes('json')) {
+      // JSON responses are typically small; still cap to TEXT_RESPONSE_MAX_BYTES.
+      if (contentLength !== undefined && contentLength > TEXT_RESPONSE_MAX_BYTES) {
+        await safeCancel(response.body);
+        return buildOutagePayload(
+          kind,
+          finalUrlStr,
+          contentType,
+          `Riksbank JSON Content-Length ${contentLength} exceeds cap ${TEXT_RESPONSE_MAX_BYTES}; persisted as no-data.`,
+        );
+      }
+      const capped = await readBodyWithCap(response.body, TEXT_RESPONSE_MAX_BYTES);
+      if (capped.exceeded) {
+        return buildOutagePayload(
+          kind,
+          finalUrlStr,
+          contentType,
+          `Riksbank JSON body exceeded ${TEXT_RESPONSE_MAX_BYTES} bytes (read ${capped.bytesRead}); persisted as no-data.`,
+        );
+      }
+      const jsonBytes = capped.bytes;
+      let json: unknown;
+      try {
+        json = JSON.parse(new TextDecoder('utf-8').decode(jsonBytes));
+      } catch (error) {
+        const detail = error instanceof Error ? error.message : String(error);
+        return buildOutagePayload(kind, finalUrlStr, contentType, `Riksbank JSON parse failed (${detail}).`);
+      }
+      return {
+        provider: 'riksbank',
+        kind,
+        url: finalUrlStr,
+        contentType,
+        retrievedAt,
+        status: 'ok',
+        json,
+        economicProvenance: buildProvenance(kind, finalUrlStr, retrievedAt),
+      };
+    }
+
+    if (contentType.includes('pdf')) {
+      if (contentLength !== undefined && contentLength > PDF_MAX_BYTES) {
+        await safeCancel(response.body);
+        return buildOutagePayload(
+          kind,
+          finalUrlStr,
+          contentType,
+          `Riksbank PDF Content-Length ${contentLength} exceeds cap ${PDF_MAX_BYTES}; persisted as no-data.`,
+        );
+      }
+      const capped = await readBodyWithCap(response.body, PDF_MAX_BYTES);
+      if (capped.exceeded) {
+        return buildOutagePayload(
+          kind,
+          finalUrlStr,
+          contentType,
+          `Riksbank PDF body exceeded ${PDF_MAX_BYTES} bytes (read ${capped.bytesRead}); persisted as no-data.`,
+        );
+      }
+      const pdfBytesRaw = capped.bytes;
+      const pdfBase64 = Buffer.from(pdfBytesRaw).toString('base64');
+      return {
+        provider: 'riksbank',
+        kind,
+        url: finalUrlStr,
+        contentType,
+        retrievedAt,
+        status: 'ok',
+        pdfBase64,
+        pdfBytes: pdfBytesRaw.byteLength,
+        economicProvenance: buildProvenance(kind, finalUrlStr, retrievedAt),
+      };
+    }
+
+    if (contentLength !== undefined && contentLength > TEXT_RESPONSE_MAX_BYTES) {
+      await safeCancel(response.body);
+      return buildOutagePayload(
+        kind,
+        finalUrlStr,
+        contentType,
+        `Riksbank text Content-Length ${contentLength} exceeds cap ${TEXT_RESPONSE_MAX_BYTES}; persisted as no-data.`,
+      );
+    }
+    const capped = await readBodyWithCap(response.body, TEXT_RESPONSE_MAX_BYTES);
+    if (capped.exceeded) {
+      return buildOutagePayload(
+        kind,
+        finalUrlStr,
+        contentType,
+        `Riksbank text body exceeded ${TEXT_RESPONSE_MAX_BYTES} bytes (read ${capped.bytesRead}); persisted as no-data.`,
+      );
+    }
+    const textBytes = capped.bytes;
+    const text = new TextDecoder('utf-8').decode(textBytes);
+    const title = extractTitle(text);
+    return {
+      provider: 'riksbank',
+      kind,
+      url: finalUrlStr,
+      contentType,
+      retrievedAt,
+      status: 'ok',
+      ...(title ? { title } : {}),
+      text: text.slice(0, TEXT_MAX_BYTES),
+      economicProvenance: buildProvenance(kind, finalUrlStr, retrievedAt),
+    };
   } finally {
     clearTimeout(timeoutId);
   }
 }
 
-// ---------------------------------------------------------------------------
-// Persistence helper
-// ---------------------------------------------------------------------------
-
-function resolveDataRoot(): string {
-  const __dirname = path.dirname(fileURLToPath(import.meta.url));
-  const repoRoot = path.resolve(__dirname, '..');
-  return path.join(repoRoot, 'analysis', 'data');
-}
-
-/**
- * Persist Riksbank series data under `analysis/data/riksbank/`.
- *
- * @param seriesId  - SWEA series identifier
- * @param payload   - Full response payload with provenance
- * @returns Absolute path of the written data file
- */
-export function persistRiksbankData(
-  seriesId: string,
-  payload: unknown,
-): string {
-  const dataRoot = resolveDataRoot();
-  const dir = path.join(dataRoot, 'riksbank');
-  fs.mkdirSync(dir, { recursive: true });
-
-  const safe = seriesId.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-');
-  const filename = `${safe}.json`;
-  const filepath = path.join(dir, filename);
-
-  fs.writeFileSync(filepath, JSON.stringify(payload, null, 2), 'utf8');
-
-  const metaFilename = `${safe}.meta.json`;
-  fs.writeFileSync(
-    path.join(dir, metaFilename),
-    JSON.stringify({
-      fetchedAt: new Date().toISOString(),
-      mcpTool: 'riksbank-swea',
-      seriesId,
-      provider: 'riksbank',
-    }, null, 2),
-    'utf8',
-  );
-
-  return filepath;
-}
-
-// ---------------------------------------------------------------------------
-// Command implementations
-// ---------------------------------------------------------------------------
-
-async function runPolicyRate(booleans: ReadonlySet<string>): Promise<void> {
-  const seriesId = POLICY_RATE_SERIES_ID;
-  const observations = await fetchRiksbankSeries(seriesId);
-  const payload = wrapWithRiksbankProvenance(
-    { seriesId, observations },
-    seriesId,
-  );
-
-  process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
-
-  if (booleans.has('persist')) {
-    persistRiksbankData(seriesId, payload);
-  }
-}
-
-async function runRates(
-  flags: ReadonlyMap<string, string>,
+async function runKind(
+  kind: RiksbankArtifactKind,
+  url: string,
   booleans: ReadonlySet<string>,
 ): Promise<void> {
-  const seriesId = requireRiksbankFlag(flags, 'series');
-  const from = flags.get('from');
-  const to = flags.get('to');
-
-  const observations = await fetchRiksbankSeries(seriesId, from, to);
-  const payload = wrapWithRiksbankProvenance(
-    { seriesId, from: from ?? null, to: to ?? null, observations },
-    seriesId,
-  );
-
+  const payload = await fetchRiksbankPayload(kind, url);
   process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
-
-  if (booleans.has('persist')) {
-    persistRiksbankData(seriesId, payload);
-  }
+  if (booleans.has('persist')) persistRiksbankData(kind, payload);
 }
 
-function runListSeries(): void {
-  const payload = wrapWithRiksbankProvenance(
-    { series: RIKSBANK_SERIES },
-    'series-catalogue',
-  );
-  process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
+function requireRiksbankFlag(
+  flags: ReadonlyMap<string, string>,
+  name: string,
+): string {
+  const value = flags.get(name)?.trim();
+  if (!value) throw new Error(`missing required flag --${name}`);
+  return value;
 }
-
-// ---------------------------------------------------------------------------
-// Main entry point
-// ---------------------------------------------------------------------------
 
 async function main(): Promise<void> {
   const { command, flags, booleans } = parseRiksbankArgs(process.argv.slice(2));
-
-  switch (command) {
-    case 'policy-rate':
-      await runPolicyRate(booleans);
-      return;
-    case 'rates':
-      await runRates(flags, booleans);
-      return;
-    case 'list-series':
-      runListSeries();
-      return;
-    case 'help':
-    default:
-      process.stdout.write(HELP);
+  if (command === 'help') {
+    process.stdout.write(HELP);
+    return;
   }
+  const kind =
+    command === 'fetch' ? parseRiksbankKind(requireRiksbankFlag(flags, 'kind')) : command;
+  const urlFlag = flags.get('url')?.trim();
+  const url = urlFlag && urlFlag.length > 0 ? urlFlag : DEFAULT_URLS[kind];
+  await runKind(kind, url, booleans);
 }
 
 function isDirectExecution(): boolean {
   const entry = process.argv[1];
   if (!entry) return false;
-  try {
-    return import.meta.url === pathToFileURL(path.resolve(entry)).href;
-  } catch {
-    return false;
-  }
+  return import.meta.url === pathToFileURL(path.resolve(entry)).href;
 }
 
 if (isDirectExecution()) {
   main().catch((error: unknown) => {
     const message = error instanceof Error ? error.message : String(error);
     process.stderr.write(`riksbank-fetch: ${message}\n`);
-    process.exit(error instanceof RiksbankFetchError && error.kind === 'cli' ? 2 : 1);
+    process.exit(/^(missing|unknown|unexpected|invalid|Riksbank fetch URL)/i.test(message) ? 2 : 1);
   });
 }

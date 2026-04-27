@@ -1,137 +1,115 @@
 #!/usr/bin/env tsx
 /**
  * @module scripts/scb-fetch
- * @description CLI wrapper around {@link SCBClient} for agentic workflows.
- *
- * Agentic workflows invoke this script through the `bash` tool to query
- * Statistics Sweden (SCB) data via the PXWeb MCP server. Every response
- * includes an `economicProvenance` block with `provider: "scb"` as required
- * by `.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.1.
- *
- * **SCB is NEVER aliased as IMF.** SCB provides Sweden-specific ground-truth
- * data (regional, monthly, granular) that IMF does not publish. IMF remains
- * the primary provider for macro, fiscal, and monetary indicators.
- *
- * ## Usage
- *
- *   tsx scripts/scb-fetch.ts search --query "arbetslöshet" [--limit 5]
- *   tsx scripts/scb-fetch.ts query --table TAB5765 [--persist]
- *   tsx scripts/scb-fetch.ts list-domains
- *   tsx scripts/scb-fetch.ts help
- *
- * `--persist` writes the raw response under `analysis/data/scb/` via
- * {@link persistSCBData}. Outputs JSON (with `economicProvenance`) to
- * stdout regardless.
- *
- * ## Exit codes
- *
- *   0 — success
- *   1 — runtime / network / validation error
- *   2 — bad CLI arguments
- *
- * @author Hack23 AB
- * @license Apache-2.0
+ * @description CLI wrapper around the SCB MCP client for Swedish ground-truth
+ * quantitative layers used alongside the IMF economic canon.
  */
 
-import { pathToFileURL } from 'node:url';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 
-import { SCBClient, SCB_DOMAINS } from './scb-client.js';
+import { SCBClient } from './scb-client.js';
 import { persistSCBData } from './parliamentary-data/data-persistence.js';
 
-// ---------------------------------------------------------------------------
-// Types
-// ---------------------------------------------------------------------------
+export type SCBPresetKey = 'cpi' | 'aku' | 'household-economy' | 'fuel-prices';
 
-/** Parsed command-line arguments */
-export interface ParsedScbArgs {
-  readonly command: 'search' | 'query' | 'list-domains' | 'help';
+export interface SCBPreset {
+  readonly key: SCBPresetKey;
+  readonly tableId: string;
+  readonly label: string;
+  readonly domain: string;
+  readonly defaultValueCodes: Readonly<Record<string, string>>;
+  readonly notes: string;
+}
+
+export interface SCBEconomicProvenance {
+  readonly provider: 'scb';
+  readonly dataflow: 'SCB PxWeb';
+  readonly indicator: string;
+  readonly tableId: string;
+  readonly retrieved_at: string;
+  readonly mcpTool: 'query_table';
+}
+
+export interface SCBFetchPayload {
+  readonly provider: 'scb';
+  readonly preset?: SCBPresetKey;
+  readonly tableId: string;
+  readonly label?: string;
+  readonly valueCodes: Readonly<Record<string, string>>;
+  readonly data: readonly unknown[];
+  readonly status: 'ok' | 'no-data';
+  readonly warning?: string;
+  readonly economicProvenance: SCBEconomicProvenance;
+}
+
+interface ParsedArgs {
+  readonly command: 'list-presets' | 'preset' | 'table' | 'help';
   readonly flags: ReadonlyMap<string, string>;
   readonly booleans: ReadonlySet<string>;
 }
 
-/** economicProvenance block emitted with every response */
-export interface ScbEconomicProvenance {
-  readonly provider: 'scb';
-  readonly dataflow: 'pxweb';
-  readonly indicator: string;
-  readonly vintage: string;
-  readonly retrieved_at: string;
-}
-
-/** Wrapped response with provenance */
-export interface ScbProvenanceResponse<T = unknown> {
-  readonly data: T;
-  readonly economicProvenance: ScbEconomicProvenance;
-}
-
-// ---------------------------------------------------------------------------
-// Error class
-// ---------------------------------------------------------------------------
-
-/** Typed error for SCB fetch CLI failures */
-export class ScbFetchError extends Error {
-  readonly kind: 'cli' | 'network' | 'validation';
-
-  constructor(message: string, kind: ScbFetchError['kind']) {
-    super(message);
-    this.name = 'ScbFetchError';
-    this.kind = kind;
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Help text
-// ---------------------------------------------------------------------------
+export const SCB_PRESETS: readonly SCBPreset[] = Object.freeze([
+  {
+    key: 'cpi',
+    tableId: '0000003N',
+    label: 'Consumer Price Index (KPI)',
+    domain: 'inflation',
+    defaultValueCodes: Object.freeze({ Tid: 'top(12)' }),
+    notes: 'Monthly CPI / KPI layer for disposable-income and cost-of-living transmission analysis.',
+  },
+  {
+    key: 'aku',
+    tableId: '000003V8',
+    label: 'Labour Force Survey (AKU)',
+    domain: 'labour',
+    defaultValueCodes: Object.freeze({ Tid: 'top(8)' }),
+    notes: 'Quarterly labour-market layer for AKU unemployment and employment comparisons.',
+  },
+  {
+    key: 'household-economy',
+    tableId: 'HE0110A',
+    label: 'Household economy (HEK / income distribution)',
+    domain: 'household economy',
+    defaultValueCodes: Object.freeze({ Tid: 'top(5)' }),
+    notes: 'Household income and distribution layer for disposable-income impact estimates.',
+  },
+  {
+    key: 'fuel-prices',
+    tableId: 'PR0101A',
+    label: 'Fuel and energy consumer-price components',
+    domain: 'prices',
+    defaultValueCodes: Object.freeze({ Tid: 'top(12)' }),
+    notes: 'Fuel-price component layer for pump-price to CPI transmission analysis.',
+  },
+] as const);
 
 const HELP = `tsx scripts/scb-fetch.ts <command> [flags]
 
 Commands:
-  search        Search SCB tables by query string
-  query         Fetch data from a specific SCB table (by tableId)
-  list-domains  Print the built-in SCB domain catalogue
+  list-presets  Print curated KPI / AKU / HEK / fuel-price presets
+  preset        Fetch one curated preset by --preset
+  table         Fetch one SCB table by --table-id
   help          Show this message
 
 Flags:
-  --query <TEXT>       Search query for 'search' command (e.g. "arbetslöshet")
-  --limit <N>          Max results for 'search' (default: 5)
-  --table <TABLE_ID>   SCB table ID for 'query' command (e.g. TAB5765)
-  --persist            Write raw output under analysis/data/scb/
-
-Provider note:
-  All output carries economicProvenance.provider = "scb".
-  SCB is NEVER aliased as IMF — they are distinct providers.
-  Use scripts/imf-fetch.ts for macro/fiscal/monetary indicators.
+  --preset <KEY>          cpi | aku | household-economy | fuel-prices
+  --table-id <ID>         SCB table ID for table command
+  --value-codes <JSON>    PxWeb value_codes JSON, e.g. '{"Tid":"top(10)"}'
+  --periods <N>           Convenience fallback for Tid=top(N)
+  --persist               Write output under analysis/data/scb/
 `;
 
-// ---------------------------------------------------------------------------
-// Argument parsing
-// ---------------------------------------------------------------------------
-
-/**
- * Parse CLI arguments into a structured form.
- *
- * @param argv - Process arguments (excluding node and script path)
- * @returns Parsed command, flags, and boolean options
- * @throws {ScbFetchError} for unknown commands or malformed arguments
- */
-export function parseScbArgs(argv: readonly string[]): ParsedScbArgs {
-  const command = (argv[0] ?? 'help') as ParsedScbArgs['command'];
-  const validCommands: readonly ParsedScbArgs['command'][] = [
-    'search', 'query', 'list-domains', 'help',
-  ];
-  if (!validCommands.includes(command)) {
-    throw new ScbFetchError(`unknown command "${command}"`, 'cli');
-  }
+export function parseSCBArgs(argv: readonly string[]): ParsedArgs {
+  const command = (argv[0] ?? 'help') as ParsedArgs['command'];
+  const validCommands: readonly ParsedArgs['command'][] = ['list-presets', 'preset', 'table', 'help'];
+  if (!validCommands.includes(command)) throw new Error(`unknown command ${command}`);
 
   const flags = new Map<string, string>();
   const booleans = new Set<string>();
-
   for (let i = 1; i < argv.length; i++) {
     const token = argv[i];
-    if (!token.startsWith('--')) {
-      throw new ScbFetchError(`unexpected positional argument "${token}"`, 'cli');
-    }
+    if (!token.startsWith('--')) throw new Error(`unexpected positional argument ${token}`);
     const key = token.slice(2);
     const next = argv[i + 1];
     if (next !== undefined && !next.startsWith('--')) {
@@ -141,131 +119,105 @@ export function parseScbArgs(argv: readonly string[]): ParsedScbArgs {
       booleans.add(key);
     }
   }
-
   return { command, flags, booleans };
 }
 
-/**
- * Require a CLI flag, throwing a typed error if absent.
- *
- * @param flags - Parsed flags map
- * @param key   - Flag name (without `--`)
- * @returns Flag value
- * @throws {ScbFetchError} if the flag is missing
- */
-export function requireScbFlag(
-  flags: ReadonlyMap<string, string>,
-  key: string,
-): string {
+export function requireSCBFlag(flags: ReadonlyMap<string, string>, key: string): string {
   const value = flags.get(key);
-  if (!value) {
-    throw new ScbFetchError(`missing required flag --${key}`, 'cli');
-  }
+  if (!value) throw new Error(`missing required flag --${key}`);
   return value;
 }
 
-// ---------------------------------------------------------------------------
-// Provenance builder
-// ---------------------------------------------------------------------------
+export function parseSCBPreset(value: string): SCBPreset {
+  const preset = SCB_PRESETS.find((item) => item.key === value);
+  if (!preset) throw new Error(`unknown SCB preset ${value}`);
+  return preset;
+}
 
-/**
- * Build an `economicProvenance` block for SCB data.
- *
- * @param indicator - SCB table ID or query string
- * @returns Provenance block with provider "scb"
- */
-export function buildScbProvenance(indicator: string): ScbEconomicProvenance {
-  const now = new Date();
+export function parseSCBValueCodes(raw: string | undefined, periods: string | undefined): Record<string, string> {
+  if (raw) {
+    const parsed = JSON.parse(raw) as unknown;
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+      throw new Error('--value-codes must be a JSON object');
+    }
+    return Object.fromEntries(
+      Object.entries(parsed as Record<string, unknown>).map(([key, value]) => [key, String(value)]),
+    );
+  }
+  if (periods) {
+    const count = Number.parseInt(periods, 10);
+    if (!Number.isInteger(count) || count < 1) throw new Error('--periods must be a positive integer');
+    return { Tid: `top(${count})` };
+  }
+  return {};
+}
+
+export async function fetchSCBTablePayload(
+  tableId: string,
+  valueCodes: Readonly<Record<string, string>>,
+  options: { preset?: SCBPreset; client?: SCBClient } = {},
+): Promise<SCBFetchPayload> {
+  const client = options.client ?? new SCBClient();
+  const data = await client.getTableData(tableId, { ...valueCodes });
+  const retrievedAt = new Date().toISOString();
+  const status = data.length > 0 ? 'ok' : 'no-data';
   return {
     provider: 'scb',
-    dataflow: 'pxweb',
-    indicator,
-    vintage: now.toISOString().slice(0, 10),
-    retrieved_at: now.toISOString(),
-  };
-}
-
-/**
- * Wrap a payload with an SCB economicProvenance block.
- *
- * @param data - The fetched data
- * @param indicator - Indicator / table ID to include in provenance
- * @returns Wrapped response with provenance
- */
-export function wrapWithScbProvenance<T>(
-  data: T,
-  indicator: string,
-): ScbProvenanceResponse<T> {
-  return {
+    ...(options.preset ? { preset: options.preset.key, label: options.preset.label } : {}),
+    tableId,
+    valueCodes,
     data,
-    economicProvenance: buildScbProvenance(indicator),
+    status,
+    ...(status === 'no-data' ? { warning: 'SCB returned no rows; callers should fall back to cached data if available.' } : {}),
+    economicProvenance: {
+      provider: 'scb',
+      dataflow: 'SCB PxWeb',
+      indicator: tableId,
+      tableId,
+      retrieved_at: retrievedAt,
+      mcpTool: 'query_table',
+    },
   };
 }
 
-// ---------------------------------------------------------------------------
-// Command implementations
-// ---------------------------------------------------------------------------
-
-async function runSearch(
-  flags: ReadonlyMap<string, string>,
+async function runTable(
+  tableId: string,
+  valueCodes: Readonly<Record<string, string>>,
   booleans: ReadonlySet<string>,
+  preset?: SCBPreset,
 ): Promise<void> {
-  const query = requireScbFlag(flags, 'query');
-  const limit = Number.parseInt(flags.get('limit') ?? '5', 10);
-  if (!Number.isInteger(limit) || limit < 1) {
-    throw new ScbFetchError(`--limit must be a positive integer, got "${flags.get('limit')}"`, 'cli');
-  }
-
-  const client = new SCBClient();
-  const tables = await client.searchTables(query, limit);
-  const payload = wrapWithScbProvenance({ query, limit, tables }, `search:${query}`);
-
+  const payload = await fetchSCBTablePayload(tableId, valueCodes, { ...(preset ? { preset } : {}) });
   process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
-
   if (booleans.has('persist')) {
-    persistSCBData(`search-${query.replace(/\s+/g, '-')}`, payload, { query, limit });
+    persistSCBData(tableId, payload, {
+      provider: 'scb',
+      ...(preset ? { preset: preset.key } : {}),
+      valueCodes,
+    });
   }
 }
-
-async function runQuery(
-  flags: ReadonlyMap<string, string>,
-  booleans: ReadonlySet<string>,
-): Promise<void> {
-  const tableId = requireScbFlag(flags, 'table');
-
-  const client = new SCBClient();
-  const dataPoints = await client.getTableData(tableId);
-  const payload = wrapWithScbProvenance({ tableId, dataPoints }, tableId);
-
-  process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
-
-  if (booleans.has('persist')) {
-    persistSCBData(tableId, payload, { tableId });
-  }
-}
-
-function runListDomains(): void {
-  const payload = wrapWithScbProvenance({ domains: SCB_DOMAINS }, 'domain-catalogue');
-  process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
-}
-
-// ---------------------------------------------------------------------------
-// Main entry point
-// ---------------------------------------------------------------------------
 
 async function main(): Promise<void> {
-  const { command, flags, booleans } = parseScbArgs(process.argv.slice(2));
-
+  const { command, flags, booleans } = parseSCBArgs(process.argv.slice(2));
   switch (command) {
-    case 'search':
-      await runSearch(flags, booleans);
+    case 'list-presets':
+      process.stdout.write(`${JSON.stringify({ presets: SCB_PRESETS }, null, 2)}\n`);
       return;
-    case 'query':
-      await runQuery(flags, booleans);
+    case 'preset': {
+      const preset = parseSCBPreset(requireSCBFlag(flags, 'preset'));
+      const valueCodes = {
+        ...preset.defaultValueCodes,
+        ...parseSCBValueCodes(flags.get('value-codes'), flags.get('periods')),
+      };
+      await runTable(preset.tableId, valueCodes, booleans, preset);
       return;
-    case 'list-domains':
-      runListDomains();
+    }
+    case 'table': {
+      const tableId = requireSCBFlag(flags, 'table-id');
+      const valueCodes = parseSCBValueCodes(flags.get('value-codes'), flags.get('periods'));
+      await runTable(tableId, valueCodes, booleans);
       return;
+    }
     case 'help':
     default:
       process.stdout.write(HELP);
@@ -275,17 +227,13 @@ async function main(): Promise<void> {
 function isDirectExecution(): boolean {
   const entry = process.argv[1];
   if (!entry) return false;
-  try {
-    return import.meta.url === pathToFileURL(path.resolve(entry)).href;
-  } catch {
-    return false;
-  }
+  return import.meta.url === pathToFileURL(path.resolve(entry)).href;
 }
 
 if (isDirectExecution()) {
   main().catch((error: unknown) => {
     const message = error instanceof Error ? error.message : String(error);
     process.stderr.write(`scb-fetch: ${message}\n`);
-    process.exit(error instanceof ScbFetchError && error.kind === 'cli' ? 2 : 1);
+    process.exit(/^(missing|unknown|unexpected|--)/i.test(message) ? 2 : 1);
   });
 }
