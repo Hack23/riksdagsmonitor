@@ -20,7 +20,7 @@ Comprehensive testing strategy covering unit tests (Vitest), E2E tests (Cypress)
 | **Vitest** | Unit & Integration Tests | 1183+ tests |
 | **Cypress** | E2E & Integration Tests | 150+ tests |
 | **Playwright** | Visual Regression (planned) | TBD |
-| **cypress-axe** | Accessibility Testing (planned) | TBD |
+| **cypress-axe** | Automated WCAG 2.1 AA Accessibility | Active (cypress/e2e/wcag-axe.cy.js) |
 
 ## 📂 Test Structure
 
@@ -39,7 +39,8 @@ cypress/e2e/
 ├── dashboards.cy.js                    # Individual dashboard tests (updated)
 ├── dashboard-page.cy.js                # Dashboard page tests (updated)
 ├── politician-dashboard.cy.js          # Politician-specific tests
-├── accessibility.cy.js                 # WCAG 2.1 AA tests
+├── accessibility.cy.js                 # Structural WCAG 2.1 AA tests
+├── wcag-axe.cy.js                      # Automated WCAG 2.1 AA scan via axe-core
 ├── homepage.cy.js                      # Homepage tests
 ├── multi-language-sanity.cy.js         # 14-language validation
 ├── news-articles.cy.js                 # News article tests
@@ -290,44 +291,82 @@ test('party-dashboard should match baseline', async ({ page }) => {
 });
 ```
 
-## ♿ Accessibility Tests (Planned)
+## ♿ Accessibility Tests (Active)
 
-**Tool**: cypress-axe
+**Tools**: `cypress-axe` + `axe-core` (industry-standard accessibility engine)
 
-**Planned Coverage**:
-- WCAG 2.1 AA automated validation
-- Keyboard navigation tests
-- Color contrast validation (4.5:1 minimum)
-- ARIA label verification
-- Screen reader compatibility
+**Active coverage** (`cypress/e2e/wcag-axe.cy.js`):
+- WCAG 2.1 A and AA automated validation (`wcag2a`, `wcag2aa`, `wcag21a`, `wcag21aa` rule tags)
+- Colour-contrast ratios (SC 1.4.3 / 1.4.11)
+- ARIA role correctness and required attributes
+- Landmark region completeness (banner, main, contentinfo, nav)
+- Interactive element name calculation
+- Link purpose in context
+- Form error identification
+- Status messages (ARIA live regions)
+- Keyboard trap detection (SC 2.1.2)
 
-**Example**:
+**Pages scanned on every PR** (extends as new pages stabilise):
+- `/` — Homepage (EN)
+- `/index_sv.html` — Homepage (SV)
+- `/index_ar.html` — Homepage (AR, RTL bidirectional layout)
+- `/index_he.html` — Homepage (HE, RTL bidirectional layout)
+- `/politician-dashboard.html` — Politician dashboard
+
+The structural checks in `cypress/e2e/accessibility.cy.js` (heading
+hierarchy, alt text, skip links, focus indicators, language switcher,
+keyboard navigation) remain in place — `wcag-axe.cy.js` complements them
+with the rules that require a real accessibility engine.
+
+**CI gate**: included in `cypress:run:critical` and runs as a matrix job
+in `.github/workflows/test-homepage.yml` on every PR. Any new WCAG 2.1
+AA violation fails the build.
+
+**Configuration**: `cypress/axe-config.js`
+- `AXE_RUN_OPTIONS` — fixed to WCAG 2.1 A/AA tags so the gate matches
+  the platform's published commitment.
+- `KNOWN_VIOLATIONS` — currently empty. Add entries here ONLY together
+  with a linked GitHub remediation issue and an `expires` date so the
+  exception cannot decay silently.
+- `logViolations` — shared callback that prints `id`, `impact`,
+  `helpUrl`, target selectors and `failureSummary` for every violation
+  to make local triage and CI logs identical.
+
+**Investigating violations locally**:
+
+```bash
+# 1. Build and serve the site
+npm run build
+npm run preview &
+
+# 2. Run only the axe spec (output includes target selectors + helpUrl)
+npx cypress run --spec cypress/e2e/wcag-axe.cy.js --config video=false
+
+# 3. For interactive debugging, open Cypress and pick `wcag-axe.cy.js`
+npm run cypress:open
+```
+
+Each violation log entry follows the format
+`[axe][NEW|KNOWN] <rule-id> (<impact>): <description>` followed by the
+help URL and the offending DOM target — paste the rule ID into the
+[Deque axe documentation](https://dequeuniversity.com/rules/axe/) for
+remediation guidance.
+
+**Example** (the legacy structural-only style is still supported in
+`accessibility.cy.js`; new tests should prefer the axe-core form):
+
 ```javascript
 import 'cypress-axe';
+import { AXE_CONTEXT, AXE_RUN_OPTIONS, logViolations } from '../axe-config.js';
 
 describe('Dashboard Accessibility (WCAG 2.1 AA)', () => {
   beforeEach(() => {
     cy.visit('/');
     cy.injectAxe();
   });
-  
-  it('should have no accessibility violations', () => {
-    cy.checkA11y();
-  });
-  
-  it('should have sufficient color contrast', () => {
-    cy.checkA11y(null, {
-      rules: {
-        'color-contrast': { enabled: true }
-      }
-    });
-  });
-  
-  it('should have ARIA labels on all charts', () => {
-    cy.get('canvas').each($canvas => {
-      expect($canvas).to.have.attr('role', 'img');
-      expect($canvas).to.have.attr('aria-label');
-    });
+
+  it('should have no WCAG 2.1 AA violations', () => {
+    cy.checkA11y(AXE_CONTEXT, AXE_RUN_OPTIONS, logViolations);
   });
 });
 ```

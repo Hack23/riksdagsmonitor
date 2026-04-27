@@ -11,6 +11,8 @@ on:
       - 'src/browser/**'
       - 'cypress/e2e/homepage.cy.js'
       - 'cypress/e2e/accessibility.cy.js'
+      - 'cypress/e2e/wcag-axe.cy.js'
+      - 'cypress/axe-config.js'
       - '.github/workflows/test-homepage.yml'
   pull_request:
     branches:
@@ -22,6 +24,8 @@ on:
       - 'src/browser/**'
       - 'cypress/e2e/homepage.cy.js'
       - 'cypress/e2e/accessibility.cy.js'
+      - 'cypress/e2e/wcag-axe.cy.js'
+      - 'cypress/axe-config.js'
   workflow_dispatch:
 
 permissions:
@@ -72,6 +76,7 @@ jobs:
         spec:
           - 'cypress/e2e/homepage.cy.js'
           - 'cypress/e2e/accessibility.cy.js'
+          - 'cypress/e2e/wcag-axe.cy.js'
     
     steps:
       - name: Harden Runner
