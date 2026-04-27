@@ -13536,3 +13536,196 @@ html[data-theme="light"] .news-article[class*="article-type-"] h2::before {
     font-size: 0.64rem;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Header sponsor / transparency CTAs (`.rm-header-cta`)
+   --------------------------------------------------------------------------
+   Used in both the modern `.rm-site-header-inner` and the legacy
+   `.site-header-nav` / `.article-top-nav` so visitors can reach the Hack23
+   sponsorship page and the public security/transparency commitment from
+   every page in every supported language.
+   ────────────────────────────────────────────────────────────────────────── */
+.rm-header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-family: var(--font-main, 'Inter', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  min-height: 40px;          /* WCAG 2.5.5 touch target */
+  line-height: 1;
+  border: 1px solid transparent;
+  transition: background-color 0.18s ease, border-color 0.18s ease,
+              color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.rm-header-cta-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.rm-header-cta-transparency {
+  background: rgba(0, 217, 255, 0.08);
+  border-color: rgba(0, 217, 255, 0.45);
+  color: var(--primary-cyan, #00d9ff);
+}
+
+.rm-header-cta-transparency:hover,
+.rm-header-cta-transparency:focus-visible {
+  background: rgba(0, 217, 255, 0.18);
+  border-color: var(--primary-cyan, #00d9ff);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 217, 255, 0.25);
+}
+
+.rm-header-cta-sponsor {
+  background: linear-gradient(120deg, rgba(255, 0, 110, 0.18), rgba(255, 190, 11, 0.18));
+  border-color: rgba(255, 0, 110, 0.55);
+  color: #ffffff;
+}
+
+.rm-header-cta-sponsor:hover,
+.rm-header-cta-sponsor:focus-visible {
+  background: linear-gradient(120deg, rgba(255, 0, 110, 0.32), rgba(255, 190, 11, 0.32));
+  border-color: var(--primary-magenta, #ff006e);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(255, 0, 110, 0.3);
+}
+
+.rm-header-cta:focus-visible {
+  outline: 2px solid var(--primary-yellow, #ffbe0b);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1024px) {
+  .rm-header-cta-label {
+    display: none;
+  }
+  .rm-header-cta {
+    padding: 0.4rem 0.55rem;
+  }
+}
+
+html[data-theme="light"] .rm-header-cta-transparency {
+  background: rgba(0, 102, 153, 0.08);
+  border-color: rgba(0, 102, 153, 0.45);
+  color: #006699;
+}
+
+html[data-theme="light"] .rm-header-cta-transparency:hover,
+html[data-theme="light"] .rm-header-cta-transparency:focus-visible {
+  background: rgba(0, 102, 153, 0.18);
+  border-color: #006699;
+  color: #003355;
+}
+
+html[data-theme="light"] .rm-header-cta-sponsor {
+  background: linear-gradient(120deg, rgba(196, 0, 90, 0.16), rgba(204, 130, 0, 0.16));
+  border-color: rgba(196, 0, 90, 0.55);
+  color: #6b0033;
+}
+
+html[data-theme="light"] .rm-header-cta-sponsor:hover,
+html[data-theme="light"] .rm-header-cta-sponsor:focus-visible {
+  background: linear-gradient(120deg, rgba(196, 0, 90, 0.28), rgba(204, 130, 0, 0.28));
+  color: #4d0024;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Footer Hack23 ISMS column (`.rm-footer-isms`)
+   ────────────────────────────────────────────────────────────────────────── */
+.rm-footer-isms .rm-footer-isms-tagline,
+.rm-footer-isms p {
+  font-size: 0.8rem;
+  color: var(--mid-text, #a0a0a0);
+  margin: 0 0 0.75rem;
+  line-height: 1.45;
+}
+
+html[data-theme="light"] .rm-footer-isms .rm-footer-isms-tagline,
+html[data-theme="light"] .rm-footer-isms p {
+  color: #355;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Footer trust-badges row (`.rm-footer-trust-badges`)
+   --------------------------------------------------------------------------
+   Renders the npmjs / OpenSSF Scorecard / OpenSSF Best Practices / CodeQL /
+   Quality Checks / Dependency Review / License / Hack23 ISMS / ISO 27001 /
+   NIST CSF / CIS Controls / Website Status badges as a flex row underneath
+   the footer columns. Each badge sits inside an `<a>` so that the alt-text
+   and aria-label remain accessible if the remote image fails to load.
+   ────────────────────────────────────────────────────────────────────────── */
+.rm-footer-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 1rem 1.25rem;
+  margin: 0.5rem auto 0;
+  max-width: 1280px;
+  border-top: 1px solid rgba(0, 217, 255, 0.18);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.12);
+}
+
+.rm-footer-trust-badges a {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 2px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid transparent;
+  transition: background-color 0.18s ease, border-color 0.18s ease,
+              transform 0.18s ease;
+}
+
+.rm-footer-trust-badges a:hover,
+.rm-footer-trust-badges a:focus-visible {
+  background: rgba(0, 217, 255, 0.12);
+  border-color: rgba(0, 217, 255, 0.55);
+  transform: translateY(-1px);
+}
+
+.rm-footer-trust-badges a:focus-visible {
+  outline: 2px solid var(--primary-yellow, #ffbe0b);
+  outline-offset: 2px;
+}
+
+.rm-footer-trust-badges img {
+  display: block;
+  height: 20px;
+  width: auto;
+  max-width: 220px;
+}
+
+html[data-theme="light"] .rm-footer-trust-badges {
+  border-top-color: rgba(0, 102, 153, 0.25);
+  border-bottom-color: rgba(0, 102, 153, 0.18);
+}
+
+html[data-theme="light"] .rm-footer-trust-badges a {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+html[data-theme="light"] .rm-footer-trust-badges a:hover,
+html[data-theme="light"] .rm-footer-trust-badges a:focus-visible {
+  background: rgba(0, 102, 153, 0.12);
+  border-color: rgba(0, 102, 153, 0.55);
+}
+
+@media (max-width: 640px) {
+  .rm-footer-trust-badges {
+    gap: 0.4rem;
+    padding: 0.75rem 0.5rem;
+  }
+  .rm-footer-trust-badges img {
+    height: 18px;
+  }
+}

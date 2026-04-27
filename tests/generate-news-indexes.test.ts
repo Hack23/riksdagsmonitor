@@ -445,7 +445,7 @@ describe('Generate News Indexes', () => {
       // Legacy `.footer-disclaimer` row is replaced by the canonical
       // 3-column rm-footer trust block (parity with article + sitemap + PI).
       expect(enContent).toContain('class="rm-footer-col rm-footer-trust"');
-      expect(enContent).toContain('Trust &amp; compliance');
+      expect(enContent).toContain('Transparency &amp; compliance');
       // GitHub issues link still appears via the navigate column.
       expect(enContent).toContain('https://github.com/Hack23/riksdagsmonitor');
     });
