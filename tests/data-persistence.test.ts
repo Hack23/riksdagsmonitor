@@ -28,6 +28,7 @@ import {
   persistWorldBankData,
   persistIMFData,
   persistSCBData,
+  persistRiksbankData,
   getDataRoot,
 } from '../scripts/parliamentary-data/data-persistence.js';
 
@@ -493,6 +494,24 @@ describe('data-persistence', () => {
       const metaPath = resultPath.replace('.json', '.meta.json');
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
       expect(meta.query).toBeUndefined();
+    });
+  });
+
+  describe('persistRiksbankData', () => {
+    it('should store Riksbank artifacts with sidecar', () => {
+      const resultPath = persistRiksbankData(
+        'repo-rate-path',
+        { provider: 'riksbank', url: 'https://www.riksbank.se/en-gb/monetary-policy/' },
+        tmpDir,
+      );
+      expect(fs.existsSync(resultPath)).toBe(true);
+      expect(resultPath).toContain(path.join('riksbank', 'repo-rate-path.json'));
+
+      const metaPath = resultPath.replace('.json', '.meta.json');
+      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      expect(meta.kind).toBe('repo-rate-path');
+      expect(meta.url).toBe('https://www.riksbank.se/en-gb/monetary-policy/');
+      expect(meta.mcpTool).toBe('riksbank-ts-client');
     });
   });
 
