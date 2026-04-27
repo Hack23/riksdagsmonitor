@@ -53,7 +53,8 @@ export const KNOWN_VIOLATIONS = [];
 /**
  * Default callback used by `cy.checkA11y` to log a readable failure summary
  * before Cypress throws. Keeping this in one place ensures every spec
- * produces consistent output for triage.
+ * produces consistent output for triage. Uses `cy.log` so messages appear
+ * in the Cypress command log alongside the failing assertion.
  *
  * @param {Array<object>} violations - axe-core violation objects
  */
@@ -66,16 +67,12 @@ export const logViolations = (violations) => {
 
   violations.forEach((v) => {
     const status = acknowledged.has(v.id) ? 'KNOWN' : 'NEW';
-    // eslint-disable-next-line no-console
-    console.log(`[axe][${status}] ${v.id} (${v.impact}): ${v.description}`);
-    // eslint-disable-next-line no-console
-    console.log(`        help: ${v.helpUrl}`);
+    cy.log(`[axe][${status}] ${v.id} (${v.impact}): ${v.description}`);
+    cy.log(`help: ${v.helpUrl}`);
     v.nodes.forEach((node) => {
-      // eslint-disable-next-line no-console
-      console.log(`        target: ${node.target.join(' ')}`);
+      cy.log(`target: ${node.target.join(' ')}`);
       if (node.failureSummary) {
-        // eslint-disable-next-line no-console
-        console.log(`        ${node.failureSummary.replace(/\n/g, '\n        ')}`);
+        cy.log(node.failureSummary);
       }
     });
   });
