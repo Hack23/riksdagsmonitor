@@ -6,6 +6,12 @@ description: |
     3. Pre-warm the riksdag-regering MCP server (Render.com cold-start mitigation).
     4. Pre-flight DNS + HTTPS reachability + MCP `tools/list` probe for the
        upstream services consumed by the news pipeline.
+    5. IMF connectivity & vintage pre-flight gate
+       (`scripts/check-imf-connectivity.ts`) writing `data/imf-context.json`
+       on success or `data/imf-unavailable.flag` on failure, so the
+       agentic analysis pipeline can fail-fast or annotate per
+       `analysis/imf/agentic-integration.md` §"Pre-warm gate" and
+       `.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.1.
 
   This action exists to deduplicate ~80 lines of identical YAML across the 11
   news workflow files. Edit it in one place.
@@ -103,4 +109,38 @@ runs:
           echo "  ❌ riksdag-regering MCP: No tools response (server may still be starting)"
         fi
         echo ""
+        echo "═══════════════════════════════════════════"
+
+    - name: IMF connectivity pre-flight & vintage gate
+      shell: bash
+      # Probes the three IMF transports (WEO + FM via Datamapper, IFS via
+      # SDMX 3.0) and writes data/imf-context.json with the result. On
+      # connectivity failure also writes data/imf-unavailable.flag, which
+      # downstream analysis steps read to inject the standard "⚠️ IMF
+      # context unavailable" block into executive-brief.md,
+      # comparative-international.md, and synthesis-summary.md per
+      # analysis/imf/agentic-integration.md §6.1.
+      #
+      # Non-blocking by design: the script exits 0 even when probes fail
+      # so the pre-warm does not abort the entire workflow — the agent
+      # is expected to degrade gracefully via the flag file. Use --strict
+      # only for ad-hoc operator debugging.
+      #
+      # 60-second hard timeout per the issue's acceptance criteria.
+      run: |
+        echo ""
+        echo "🌍 IMF connectivity pre-flight — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+        echo "═══════════════════════════════════════════"
+        timeout 60 npx tsx scripts/check-imf-connectivity.ts --output-dir data \
+          > /tmp/imf-precheck.json 2> /tmp/imf-precheck.err || true
+        if [ -f data/imf-unavailable.flag ]; then
+          echo "  ⚠️ IMF connectivity FAILED — flag file written (workflow continues, agent must inject ⚠️ block)"
+          cat /tmp/imf-precheck.err 2>/dev/null || true
+        elif [ -f data/imf-context.json ]; then
+          STATUS=$(grep -o '"status": "[^"]*"' data/imf-context.json | head -1 | cut -d'"' -f4)
+          AGE=$(grep -o '"vintageAgeMonths": [0-9-]*' data/imf-context.json | head -1 | awk '{print $2}')
+          echo "  ✅ IMF connectivity OK (status=$STATUS, vintageAgeMonths=$AGE)"
+        else
+          echo "  ❌ IMF pre-flight produced no output (timeout or crash) — agent must treat IMF as unavailable"
+        fi
         echo "═══════════════════════════════════════════"
