@@ -207,6 +207,39 @@ function localizedSuffix(lang: Language): string {
   return lang === 'en' ? '' : `_${lang}`;
 }
 
+function inferLegacyArticleType(file: string): string {
+  const lower = file.toLowerCase();
+  const mappings: readonly [string, string][] = [
+    ['committee-reports', 'committee-reports'],
+    ['committeereports', 'committee-reports'],
+    ['propositions', 'propositions'],
+    ['government-propositions', 'propositions'],
+    ['opposition-motions', 'motions'],
+    ['motions', 'motions'],
+    ['interpellations', 'interpellations'],
+    ['evening-analysis', 'evening-analysis'],
+    ['week-ahead', 'week-ahead'],
+    ['month-ahead', 'month-ahead'],
+    ['weekly-review', 'weekly-review'],
+    ['monthly-review', 'monthly-review'],
+    ['deep-inspection', 'deep-inspection'],
+    ['realtime-pulse', 'realtime-pulse'],
+    ['realtime', 'realtime'],
+    ['breaking', 'breaking'],
+    ['parliament-agenda', 'parliament-agenda'],
+  ];
+  return mappings.find(([needle]) => lower.includes(needle))?.[1] ?? 'political-intelligence';
+}
+
+function ensureLegacyArticleTypeClass(html: string, file: string): string {
+  const type = inferLegacyArticleType(file);
+  return html.replace(/<article\b([^>]*class=")([^"]*\bnews-article\b[^"]*)(")/i, (_match, before, classes, after) => {
+    const classSet = new Set(String(classes).split(/\s+/).filter(Boolean));
+    classSet.add(`article-type-${type}`);
+    return `<article${before}${Array.from(classSet).join(' ')}${after}`;
+  });
+}
+
 function addNewsQuickLinks(html: string, lang: Language): string {
   if (html.includes('political-intelligence')) return html;
   const suffix = localizedSuffix(lang);
@@ -295,6 +328,7 @@ for (const absolute of walkHtmlFiles(path.join(ROOT_DIR, 'news'))) {
   let after = normalizeApiLinks(before);
   if (!after.includes('class="rm-site-footer"')) {
     after = normalizeLegacyNewsChrome(addNewsHeaderLinks(addNewsQuickLinks(after, lang), lang), lang);
+    after = ensureLegacyArticleTypeClass(after, rel);
   }
   if (after !== before) {
     fs.writeFileSync(absolute, after, 'utf8');
