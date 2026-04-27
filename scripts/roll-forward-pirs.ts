@@ -183,13 +183,14 @@ function rollForward(
       // Non-open PIRs are carried forward unchanged for history.
       return { ...p, inherits_from: [p.pir_id] };
     }
+    // Destructure to explicitly drop answer_summary for open (carried-forward) PIRs.
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { answer_summary: _dropped, ...rest } = p;
     return {
-      ...p,
+      ...rest,
       // Degrade confidence to signal this PIR needs fresh review.
       confidence: degrade(p.confidence),
       inherits_from: [...(p.inherits_from ?? []), p.pir_id],
-      // Clear answer_summary for re-opened/carried-forward open PIRs.
-      answer_summary: undefined,
     };
   });
 
@@ -259,8 +260,10 @@ async function main(argv: string[]): Promise<void> {
     // Derive targetDate and targetCycle from `--to` path.
     const parts = targetDir.replace(/\\/g, '/').split('/');
     const dailyIdx = parts.indexOf('daily');
-    targetDate = dailyIdx >= 0 ? (parts[dailyIdx + 1] ?? '') : '';
-    targetCycle = (dailyIdx >= 0 ? parts[dailyIdx + 2] : '') as CycleType;
+    const datePart = dailyIdx >= 0 && dailyIdx + 1 < parts.length ? (parts[dailyIdx + 1] ?? '') : '';
+    const cyclePart = dailyIdx >= 0 && dailyIdx + 2 < parts.length ? (parts[dailyIdx + 2] ?? '') : '';
+    targetDate = datePart;
+    targetCycle = cyclePart as CycleType;
     if (!targetDate.match(/^\d{4}-\d{2}-\d{2}$/) || !VALID_CYCLES.has(targetCycle)) {
       console.error(`Cannot derive date/cycle from --to path: ${args.to}`);
       process.exit(1);
