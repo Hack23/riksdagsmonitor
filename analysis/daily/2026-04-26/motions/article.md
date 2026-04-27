@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: motions
 slug: 2026-04-26-motions
 source_folder: analysis/daily/2026-04-26/motions
-generated_at: 2026-04-27T16:24:08.546Z
+generated_at: 2026-04-27T16:35:07.036Z
 language: en
 layout: article
 ---
@@ -27,9 +27,6 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief.md -->
-
-**Classification**: Public | **F3EAD Stage**: DISSEMINATE
-**Author**: James Pether Sörling | **Date**: 2026-04-26
 
 ---
 
@@ -81,9 +78,6 @@ graph LR
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/synthesis-summary.md -->
-
-**F3EAD Stage**: EXPLOIT → ANALYZE | **Methodology**: synthesis-methodology.md
-**Date**: 2026-04-26 | **Riksmöte**: 2025/26
 
 ---
 
@@ -179,8 +173,6 @@ graph TD
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/intelligence-assessment.md -->
 
-**F3EAD Stage**: ANALYZE (extended) | **Methodology**: intelligence-assessment.md template
-
 ### Key Judgments (KJ)
 
 | KJ | Judgment | Confidence | WEP |
@@ -233,8 +225,6 @@ graph LR
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/significance-scoring.md -->
 
-**F3EAD Stage**: ANALYZE | **Methodology**: significance-scoring.md template, synthesis-methodology.md Part 1
-
 ### DIW-Weighted Rankings
 
 | Rank | dok_id | Title | DIW Score | Tier | Evidence |
@@ -284,8 +274,6 @@ graph LR
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/media-framing-analysis.md -->
 
-**F3EAD Stage**: ANALYZE (extended) | **Methodology**: media-framing.md template
-
 ### Primary Frame: Accountability vs. Deflection
 
 The opposition (S) documents cluster around **accountability framing**: establishing that the Tidö government is failing on welfare, rights, and social protection. Expected media frames:
@@ -332,8 +320,6 @@ graph TD
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/stakeholder-perspectives.md -->
-
-**F3EAD Stage**: ANALYZE | **Methodology**: stakeholder-impact.md template, 6-lens matrix
 
 ### 6-Lens Stakeholder Impact Matrix
 
@@ -385,8 +371,6 @@ graph LR
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/forward-indicators.md -->
 
-**F3EAD Stage**: ANALYZE (extended) | **Methodology**: forward-indicators.md template, ICD 203
-
 ### Indicator Framework (4 Horizons)
 
 #### Horizon 1: 0–30 Days (Tactical)
@@ -429,8 +413,6 @@ graph LR
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/scenario-analysis.md -->
 
-**F3EAD Stage**: ANALYZE (extended) | **Methodology**: scenario-analysis.md template, What If? + Morphological
-
 ### Three Scenarios
 
 #### Scenario A: Government Accountability Delivered (30% probability)
@@ -462,8 +444,6 @@ A child is placed in a Kriminalvårds unit before the educational legal framewor
 | B: Deflection + escalation | 50% | Default government communication pattern |
 | C: Constitutional violation | 20% | Implementation proceeds before Riksdag acts |
 
-**Confidence**: Roughly even [C3] on scenario B as most likely. Unlikely [D3] on scenario C.
-
 ```mermaid
 graph TD
     A["2026-04-24\nOpposition frågor"] --> B["Scenario A (30%)\nSubstantiella svar\n+ åtgärder"]
@@ -484,8 +464,6 @@ graph TD
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/risk-assessment.md -->
-
-**F3EAD Stage**: ANALYZE | **Methodology**: political-risk-methodology.md (5×5 L×I matrix)
 
 ### Risk Register
 
@@ -530,8 +508,6 @@ graph TD
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/swot-analysis.md -->
-
-**F3EAD Stage**: ANALYZE | **Methodology**: political-swot-framework.md (SWOT + TOWS)
 
 ### Primary Stakeholder SWOT: Socialdemokraterna (S)
 
@@ -583,8 +559,6 @@ quadrantChart
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/threat-analysis.md -->
-
-**F3EAD Stage**: ANALYZE | **Methodology**: political-threat-framework.md
 
 ### Political Threat Taxonomy
 
@@ -650,8 +624,6 @@ graph TD
 ### HD01CU24
 <!-- source: documents/HD01CU24-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD01CU24-analysis.md -->
 
-**F3EAD Stage**: FINISH
-
 ### Document Identity
 
 | Field | Value |
@@ -676,12 +648,8 @@ graph LR
     style B fill:#4CAF50,color:#FFFFFF
 ```
 
-**Confidence**: Likely [B3] on content — metadata only available.
-
 ### HD01JuU10
 <!-- source: documents/HD01JuU10-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD01JuU10-analysis.md -->
-
-**F3EAD Stage**: FINISH (per-document tactical analysis)
 
 ### Document Identity
 
@@ -733,12 +701,8 @@ graph LR
     style D fill:#FF9800,color:#FFFFFF
 ```
 
-**Confidence**: Almost certain [A2] that the committee approved the proposition. Likely [B2] that opposition parties filed reservations on the semi-auto hunting rifle ban.
-
 ### HD01JuU31
 <!-- source: documents/HD01JuU31-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD01JuU31-analysis.md -->
-
-**F3EAD Stage**: FINISH (per-document tactical analysis)
 
 ### Document Identity
 
@@ -782,12 +746,8 @@ graph TD
     style E fill:#4CAF50,color:#FFFFFF
 ```
 
-**Confidence**: Almost certain [A1] — Riksrevisionen is Sweden's supreme audit institution.
-
 ### HD01SoU25
 <!-- source: documents/HD01SoU25-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD01SoU25-analysis.md -->
-
-**F3EAD Stage**: FINISH
 
 ### Document Identity
 
@@ -813,12 +773,8 @@ graph LR
     style B fill:#4CAF50,color:#FFFFFF
 ```
 
-**Confidence**: Likely [B3] on content — metadata only available.
-
 ### HD10448
 <!-- source: documents/HD10448-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD10448-analysis.md -->
-
-**F3EAD Stage**: FINISH (per-document tactical analysis)
 
 ### Document Identity
 
@@ -917,12 +873,8 @@ graph TD
     style F2 fill:#4CAF50,color:#FFFFFF
 ```
 
-**Confidence**: Likely [B2] that Windeurope report exists and was reported by SVT/SR. Likely [B2] that Fransson's framing creates genuine parliamentary tension. Roughly even [C3] that response will cause significant coalition friction.
-
 ### HD11747
 <!-- source: documents/HD11747-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD11747-analysis.md -->
-
-**F3EAD Stage**: FINISH (per-document tactical analysis)
 
 ### Document Identity
 
@@ -1017,12 +969,8 @@ graph LR
     style F fill:#1565C0,color:#FFFFFF
 ```
 
-**Confidence**: Almost certain [A1] that the Skåne case exists given multi-source corroboration (Arbetet, IF Metall, Arbetsmiljöverket). Likely [B2] that Arbetsförmedlingen oversight protocols failed.
-
 ### HD11748
 <!-- source: documents/HD11748-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD11748-analysis.md -->
-
-**F3EAD Stage**: FINISH (per-document tactical analysis)
 
 ### Document Identity
 
@@ -1107,12 +1055,8 @@ graph TD
     style F fill:#4CAF50,color:#FFFFFF
 ```
 
-**Confidence**: Almost certain [A2] that case exists (MP submission based on verified individual). Likely [B2] that Burundi's deteriorating conditions complicate Swedish options.
-
 ### HD11749
 <!-- source: documents/HD11749-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD11749-analysis.md -->
-
-**F3EAD Stage**: FINISH (per-document tactical analysis)
 
 ### Document Identity
 
@@ -1207,12 +1151,8 @@ graph TD
     style F fill:#FFC107,color:#000000
 ```
 
-**Confidence**: Almost certain [A1] that legal framework gap exists (confirmed by Institutet för mänskliga rättigheter). Almost certain [A2] that government must respond with implementation timeline.
-
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/election-2026-analysis.md -->
-
-**F3EAD Stage**: ANALYZE (extended) | **Methodology**: election-2026-analysis.md template
 
 ### Current Seat Map (Riksdagen 2022)
 
@@ -1273,12 +1213,8 @@ graph TD
     style F fill:#4CAF50,color:#FFFFFF
 ```
 
-**Confidence**: Roughly even [C3] on election outcome projections — too early (2026 election 16+ months away). Key indicator: L vote share in summer 2026 polls.
-
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/coalition-mathematics.md -->
-
-**F3EAD Stage**: ANALYZE (extended) | **Methodology**: coalition-mathematics.md template, Morphological
 
 ### Current Seat Map
 
@@ -1329,8 +1265,6 @@ graph TD
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/voter-segmentation.md -->
 
-**F3EAD Stage**: ANALYZE (extended) | **Methodology**: voter-segmentation.md template, Outside-In Thinking
-
 ### Segment Impact Matrix
 
 | Voter Segment | Size Est. | Impact | Key Document | Direction |
@@ -1371,8 +1305,6 @@ graph LR
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/comparative-international.md -->
-
-**F3EAD Stage**: ANALYZE (extended) | **Methodology**: comparative-international.md template, Outside-In Thinking
 
 ### Peer-Country Comparisons (≥5 peers)
 
@@ -1443,8 +1375,6 @@ graph LR
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/historical-parallels.md -->
 
-**F3EAD Stage**: ANALYZE (extended) | **Methodology**: historical-parallels.md template
-
 ### Parallel 1: Disability Worker Rights + Agency Accountability
 
 **Case**: The 2015–2017 Arbetsförmedlingen LSS support employment scandals
@@ -1491,8 +1421,6 @@ graph LR
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/implementation-feasibility.md -->
 
-**F3EAD Stage**: ANALYZE (extended) | **Methodology**: implementation-feasibility.md template
-
 ### Demand-by-Demand Feasibility
 
 #### HD11747: Workplace Safety Investigation
@@ -1533,8 +1461,6 @@ graph LR
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/devils-advocate.md -->
-
-**F3EAD Stage**: ANALYZE (extended) | **Methodology**: devils-advocate.md template, ACH + Red Team
 
 ### Competing Hypotheses (ACH)
 
@@ -1581,8 +1507,6 @@ graph TD
 
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/classification-results.md -->
-
-**F3EAD Stage**: ANALYZE | **Methodology**: political-classification-guide.md
 
 ### Aggregated 7-Dimension Classification
 
@@ -1686,9 +1610,6 @@ HD11747 + HD11748 + HD11749 all filed by S MPs on the same date (2026-04-24). Th
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/methodology-reflection.md -->
 
-**F3EAD Stage**: ANALYZE (extended) | **Status**: VITAL run-audit gate
-**Author**: James Pether Sörling | **Date**: 2026-04-26
-
 ---
 
 ### Evidence Sufficiency Assessment
@@ -1716,8 +1637,6 @@ HD11747 + HD11748 + HD11749 all filed by S MPs on the same date (2026-04-24). Th
 | Likely [B2] | 8+ claims | Coordinated S strategy, deflection pattern, coalition tension |
 | Roughly even [C3] | 3 claims | SD-KD coalition fracture, media amplification, Windeurope reframing success |
 | Remote/Unknown | 1 | Specific Burundi consular details |
-
-**Distribution**: Appropriate — high-confidence claims on documented facts, appropriately hedged analytical inferences.
 
 ---
 

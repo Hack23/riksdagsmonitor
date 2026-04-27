@@ -5,7 +5,7 @@ date: 2026-04-18
 subfolder: realtime-1705
 slug: 2026-04-18-realtime-1705
 source_folder: analysis/daily/2026-04-18/realtime-1705
-generated_at: 2026-04-27T16:24:08.388Z
+generated_at: 2026-04-27T16:35:06.839Z
 language: en
 layout: article
 ---
@@ -120,8 +120,6 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-25
-
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/synthesis-summary.md -->
 
@@ -157,8 +155,6 @@ All four major documents advance pre-election positioning: energy subsidies for 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/significance-scoring.md -->
 
-**Analysis run:** realtime-1705 | **Methodology:** DIW (Democratic Impact Weighting)
-
 ### Scoring Matrix
 
 | dok_id | Title | Party Breadth | Fiscal | Defense | Crime/Social | Named Minister | Committee | DIW Score | Tier |
@@ -187,8 +183,6 @@ Generate breaking news article covering:
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/stakeholder-perspectives.md -->
-
-**Analysis run:** realtime-1705 | **Date:** 2026-04-18
 
 ### The 8 Mandatory Stakeholder Groups
 
@@ -496,12 +490,8 @@ flowchart TD
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-25
-
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/risk-assessment.md -->
-
-**Analysis run:** realtime-1705 | **Date:** 2026-04-18
 
 ### Risk Matrix
 
@@ -527,8 +517,6 @@ Sweden has now submitted three fiscal adjustment instruments within two months: 
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/swot-analysis.md -->
-
-**Analysis run:** realtime-1705 | **Date:** 2026-04-18
 
 ### Overall SWOT: Kristersson Government's Spring Policy Sprint
 
@@ -579,8 +567,6 @@ graph TD
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/threat-analysis.md -->
-
-**Analysis run:** realtime-1705 | **Date:** 2026-04-18
 
 ### Overall Threat Level
 
@@ -1036,12 +1022,8 @@ Criminal justice reform with direct constitutional (rights) and welfare (childre
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-25
-
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/classification-results.md -->
-
-**Analysis run:** realtime-1705 | **Date:** 2026-04-18
 
 ### Document Classification Matrix
 
@@ -1071,8 +1053,6 @@ This legislative sprint is analogous to the Reinfeldt government's 2009 fiscal e
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/cross-reference-map.md -->
-
-**Analysis run:** realtime-1705 | **Date:** 2026-04-18
 
 ### Document Dependency Graph
 

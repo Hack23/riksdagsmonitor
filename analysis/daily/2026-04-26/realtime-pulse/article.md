@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: realtime-pulse
 slug: 2026-04-26-realtime-pulse
 source_folder: analysis/daily/2026-04-26/realtime-pulse
-generated_at: 2026-04-27T16:24:08.556Z
+generated_at: 2026-04-27T16:35:07.047Z
 language: en
 layout: article
 ---
@@ -206,25 +206,17 @@ Carrying forward PIRs from sibling analysis folders for this cross-cycle synthes
 
 #### KJ-1: Tidö Coalition Will Complete Spring Legislative Sprint
 
-**Confidence: HIGH** [B2]
-
 We assess with HIGH confidence that the Tidö coalition will complete its spring legislative sprint — including HD01FiU48, HD03253, HD01JuU10, and HC03205 — before the September 2026 election. This judgment is supported by the committee approval schedule recorded in riksdagen.se data, the government's demonstrated pattern of cohesive parliamentary scheduling, and the absence of any recorded SD formal reservation on spring bills to date. The principal risk that could invalidate this judgment is a late-stage SD intervention on HD03253 EU bankpaket proportionality provisions; we assess this risk at approximately 25%.
 
 #### KJ-2: Demoskop Reading 2026-05-08 Will Show Temporary Tidö Boost
-
-**Confidence: MEDIUM** [C2]
 
 We assess with MEDIUM confidence that the next Demoskop poll (2026-05-08) will show a temporary polling boost for the Tidö coalition, attributable to the HD01FiU48 fuel and energy relief announcement. This judgment draws on the Norwegian Strømprisstøtte 2.0 comparator (Comparative International analysis §Comparator 4), which showed a +3pp transient boost for analogous energy relief. The MEDIUM confidence reflects uncertainty about the magnitude and timing of the polling effect, and whether pre-existing economic headwinds (8.5% unemployment, housing shortage) will dampen or reverse any relief benefit.
 
 #### KJ-3: Civil Defence Capability Gap Remains Material Risk Through 2026
 
-**Confidence: HIGH** [B2]
-
 We assess with HIGH confidence that Sweden's civil defence capability gap, documented by Riksrevisionen in HC03206 and compounded by unactioned police reform recommendations in HD01JuU31, represents a material strategic risk throughout 2026. The HC03205 MSB→MfcF structural reform does not include a publicly costed capability investment plan. Without supplementary appropriations, the structural reform will not close the gaps identified in the RiR audit. This judgment is supported by two independent official sources (HC03206 RiR audit, HD01JuU31 RiR audit) and Finnish comparator analysis indicating that analogous reforms require 3-year investment plans to deliver capability improvements [B2, C2].
 
 #### KJ-4: Opposition Interpellation Campaign Targets July–August News Cycle
-
-**Confidence: MEDIUM** [C2]
 
 We assess with MEDIUM confidence that the Social Democrats' coordinated interpellation campaign (HD10444, HD10447, HD10434, HD10445, and others) is strategically targeted not at immediate news coverage but at building evidentiary records for campaign media in July–August 2026. This assessment draws on historical patterns of Swedish pre-election parliamentary strategy. The MEDIUM confidence reflects that S's strategic intent cannot be directly confirmed from parliamentary filings, and the campaign could alternatively be reactive rather than strategically sequenced.
 
@@ -312,8 +304,6 @@ graph LR
 
 ### Dominant Government Narrative (Expected)
 
-**Frame**: "Responsible delivery — security, relief, and European alignment"
-
 Key message pillars:
 1. **Law-and-order delivery**: Weapons law (HD01JuU10) + prison expansion (HD01CU25) = government following through on 2022 commitments
 2. **Cost-of-living action**: Fuel and energy relief (HD01FiU48) = government responding to household pressure in "special circumstances"
@@ -323,8 +313,6 @@ Key message pillars:
 **Expected amplifiers**: SVT Rapport evening edition; DN front page on HD01FiU48; SvD editorial on EU banking alignment; government.se press releases from Wykman (Finance), Strömmer (Justice), Bohlin (Civil Defence) [C2]
 
 ### Dominant Opposition Narrative (Expected)
-
-**Frame**: "Coalition claims delivery but accountability reveals failures"
 
 Key message pillars:
 1. **Police failure**: Riksrevisionen HD01JuU31 = government expanded prison but failed to fix policing capacity
@@ -847,12 +835,6 @@ graph TD
 
 ### HD01FiU48
 <!-- source: documents/HD01FiU48-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/documents/HD01FiU48-analysis.md -->
-
-**dok_id**: HD01FiU48
-**Committee**: Finansutskottet (FiU)
-**Type**: Betänkande (committee report)
-**Status**: Approved 2026-04-23
-**Source**: riksdagen.se [B2]
 
 ### Summary
 

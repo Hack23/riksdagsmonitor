@@ -5,7 +5,7 @@ date: 2026-04-25
 subfolder: monthly-review
 slug: 2026-04-25-monthly-review
 source_folder: analysis/daily/2026-04-25/monthly-review
-generated_at: 2026-04-27T16:24:08.516Z
+generated_at: 2026-04-27T16:35:07.000Z
 language: en
 layout: article
 ---
@@ -443,9 +443,6 @@ flowchart LR
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/forward-indicators.md -->
 
-**Author**: James Pether Sörling | **Confidence**: HIGH (A1)
-**Window**: 2026-04-26 → 2026-09-13 (election day)
-
 ### Dated indicator ledger (≥10)
 
 | Date | Indicator | Decision relevance | Source |
@@ -499,9 +496,6 @@ flowchart LR
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/scenario-analysis.md -->
-
-**Author**: James Pether Sörling | **Confidence**: HIGH (A1)
-**Method**: Three-scenario cone + sensitivity ladder; 141-day horizon to 2026-09-13
 
 ### Baseline anchor
 
@@ -573,8 +567,6 @@ quadrantChart
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/risk-assessment.md -->
 
-**Author**: James Pether Sörling | **Confidence**: HIGH (A1) | **Horizon**: April–September 2026
-
 ### 5-dimension risk register
 
 | ID | Dimension | Risk | Likelihood | Impact | Inherent | Mitigation | Residual | Evidence |
@@ -631,9 +623,6 @@ flowchart TD
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/swot-analysis.md -->
-
-**Author**: James Pether Sörling | **Confidence**: HIGH (A1)
-**Subject**: Tidö coalition position 141 days before September 2026 election
 
 ### TOWS matrix
 
@@ -699,9 +688,6 @@ flowchart LR
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/threat-analysis.md -->
-
-**Author**: James Pether Sörling | **Confidence**: HIGH (A1)
-**Framework**: Political Threat Taxonomy (institutional, electoral, informational, implementation)
 
 ### Threat register
 
@@ -780,9 +766,6 @@ flowchart TD
 ### HD01CU24
 <!-- source: documents/HD01CU24-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD01CU24-analysis.md -->
 
-**Organ**: CU | **dok_id**: HD01CU24 | **Window**: 2026-04-25 monthly review
-**Author**: James Pether Sörling | **Confidence**: MEDIUM-HIGH (B2)
-
 ### Summary
 
 Reformpaket för förenklad byggprocess och kortare kommunala handläggningstider; instämmer i regeringens förslag med vissa följdmotioner.
@@ -809,9 +792,6 @@ Implementeringsrisken ligger på kommunal handläggar­kapacitet, inte på lagte
 
 ### HD01JuU10
 <!-- source: documents/HD01JuU10-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD01JuU10-analysis.md -->
-
-**Organ**: JuU | **dok_id**: HD01JuU10 | **Window**: 2026-04-25 monthly review
-**Author**: James Pether Sörling | **Confidence**: MEDIUM-HIGH (B2)
 
 ### Summary
 
@@ -840,9 +820,6 @@ Implementeringen är beroende av att RiR-rekommendationerna i HD01JuU31 stängs;
 ### HD01JuU31
 <!-- source: documents/HD01JuU31-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD01JuU31-analysis.md -->
 
-**Organ**: JuU | **dok_id**: HD01JuU31 | **Window**: 2026-04-25 monthly review
-**Author**: James Pether Sörling | **Confidence**: MEDIUM-HIGH (B2)
-
 ### Summary
 
 Riksrevisionens andra uppföljning av Polisreformen 2015; 9 öppna rekommendationer; utskottet kräver statusrapport Q3 2026.
@@ -868,9 +845,6 @@ Operativ förändring osannolik före september-valet 2026; effekten är narrati
 
 ### HD01SoU25
 <!-- source: documents/HD01SoU25-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD01SoU25-analysis.md -->
-
-**Organ**: SoU | **dok_id**: HD01SoU25 | **Window**: 2026-04-25 monthly review
-**Author**: James Pether Sörling | **Confidence**: MEDIUM-HIGH (B2)
 
 ### Summary
 
@@ -899,9 +873,6 @@ Implementeringen kräver nationell direktör (utses 2026-06-30) och kommunal kap
 ### HD10448
 <!-- source: documents/HD10448-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD10448-analysis.md -->
 
-**Organ**: Ip | **dok_id**: HD10448 | **Window**: 2026-04-25 monthly review
-**Author**: James Pether Sörling | **Confidence**: MEDIUM-HIGH (B2)
-
 ### Summary
 
 Interpellation från MP/S till energiminister om systematisk desinformation om vindkraft i kommunala beslutsprocesser; svar 2026-05-06.
@@ -927,9 +898,6 @@ Frame är dubbelbottnad — gynnar opposition på storstad/yngre men kan förlor
 
 ### HD11747
 <!-- source: documents/HD11747-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD11747-analysis.md -->
-
-**Organ**: Fr | **dok_id**: HD11747 | **Window**: 2026-04-25 monthly review
-**Author**: James Pether Sörling | **Confidence**: MEDIUM-HIGH (B2)
 
 ### Summary
 
@@ -957,9 +925,6 @@ Liten omedelbar effekt men bygger berättelse-arsenal till manifest-fasen 2026-0
 ### HD11748
 <!-- source: documents/HD11748-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD11748-analysis.md -->
 
-**Organ**: Fr | **dok_id**: HD11748 | **Window**: 2026-04-25 monthly review
-**Author**: James Pether Sörling | **Confidence**: MEDIUM-HIGH (B2)
-
 ### Summary
 
 Skriftlig fråga från V-ledamot om svensk hantering av Burundi-tolken Sahabo; mänskliga rättigheter och utlämning.
@@ -984,9 +949,6 @@ Ingen omedelbar policy-effekt; ingår i V:s pre-kampanjnarrativ.
 
 ### HD11749
 <!-- source: documents/HD11749-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD11749-analysis.md -->
-
-**Organ**: Fr | **dok_id**: HD11749 | **Window**: 2026-04-25 monthly review
-**Author**: James Pether Sörling | **Confidence**: MEDIUM-HIGH (B2)
 
 ### Summary
 
@@ -1210,11 +1172,6 @@ flowchart LR
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/comparative-international.md -->
 
-**Author**: James Pether Sörling | **Confidence**: HIGH (A1)
-**Method**: Cross-Nordic + EU peer comparison on the four delivered portfolios
-
-**Comparator set**: Denmark, Norway, Finland, Germany, Netherlands
-
 ### Comparator table — fiscal pivot to election
 
 | Jurisdiction | Election | Pre-election fiscal action | Coalition pattern | Outcome lesson |
@@ -1352,9 +1309,6 @@ flowchart TD
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/devils-advocate.md -->
-
-**Author**: James Pether Sörling | **Confidence**: MEDIUM (B2)
-**Method**: ACH (Analysis of Competing Hypotheses) + structured red-team
 
 ### Mainline finding under stress
 

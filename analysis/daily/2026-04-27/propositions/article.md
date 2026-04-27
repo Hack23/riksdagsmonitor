@@ -5,7 +5,7 @@ date: 2026-04-27
 subfolder: propositions
 slug: 2026-04-27-propositions
 source_folder: analysis/daily/2026-04-27/propositions
-generated_at: 2026-04-27T16:24:08.588Z
+generated_at: 2026-04-27T16:35:07.077Z
 language: en
 layout: article
 ---
@@ -27,13 +27,6 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief.md -->
-
-**Author**: James Pether Sörling
-**Date**: 2026-04-27
-**Analysis period**: 2026-04-23 (most recent parliamentary day)
-**Confidence**: HIGH [B2]
-**Classification**: PUBLIC — GDPR Art. 9(2)(e,g)
-**Pass 2**: 2026-04-27T06:38Z — Improved economic provenance, strengthened BLUF, added Swedish context details
 
 ---
 
@@ -103,12 +96,6 @@ graph LR
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/synthesis-summary.md -->
-
-**Author**: James Pether Sörling
-**Date**: 2026-04-27
-**Riksmöte**: 2025/26
-**Pass 2**: 2026-04-27T06:38Z — Strengthened economic context, corrected Hirst v UK reference, added coalition analysis precision
-**Confidence**: HIGH [B2]
 
 ---
 
@@ -189,11 +176,6 @@ The benign macroeconomic environment lowers opposition leverage on fiscal ground
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/intelligence-assessment.md -->
 
-**Author**: James Pether Sörling
-**Date**: 2026-04-27
-**Source**: PIR-2 (Legislative pipeline), PIR-3 (Coalition dynamics), PIR-5 (EU compliance)
-**Confidence distribution**: 2× HIGH, 3× MEDIUM, 1× LOW
-
 ---
 
 ### Key Judgments
@@ -269,11 +251,6 @@ The coordinated submission of four propositions on one day — spanning three de
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/significance-scoring.md -->
-
-**Author**: James Pether Sörling
-**Date**: 2026-04-27
-**Method**: DIW (Depth-Impact-Width) framework per `analysis/methodologies/ai-driven-analysis-guide.md`
-**Confidence**: HIGH [B2]
 
 ---
 
@@ -449,11 +426,6 @@ Expected framing: Balanced reporting. Will likely request Lagrådet comment on H
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/stakeholder-perspectives.md -->
-
-**Author**: James Pether Sörling
-**Date**: 2026-04-27
-**Framework**: `analysis/methodologies/synthesis-methodology.md` — 6-lens stakeholder matrix
-**Confidence**: HIGH [B2]
 
 ---
 
@@ -738,11 +710,6 @@ timeline
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/risk-assessment.md -->
 
-**Author**: James Pether Sörling
-**Date**: 2026-04-27
-**Framework**: `analysis/methodologies/political-risk-methodology.md`
-**Confidence**: HIGH [B2]
-
 ---
 
 ### Risk Register (5 Dimensions × L×I)
@@ -819,11 +786,6 @@ quadrantChart
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/swot-analysis.md -->
 
-**Author**: James Pether Sörling
-**Date**: 2026-04-27
-**Framework**: `analysis/methodologies/political-swot-framework.md`
-**Confidence**: HIGH [B2]
-
 ---
 
 ### Cross-SWOT: Government Package
@@ -894,11 +856,6 @@ graph TD
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/threat-analysis.md -->
-
-**Author**: James Pether Sörling
-**Date**: 2026-04-27
-**Framework**: `analysis/methodologies/political-threat-framework.md` — Political Threat Taxonomy
-**Confidence**: MEDIUM-HIGH [B2]
 
 ---
 
@@ -1584,13 +1541,6 @@ graph TD
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/comparative-international.md -->
 
-**Author**: James Pether Sörling
-**Date**: 2026-04-27
-**Framework**: Outside-In comparative analysis
-**Confidence**: MEDIUM [B2]
-
-**Comparator set**: Denmark (DK), Norway (NO), Germany (DE), Netherlands (NL)
-
 ---
 
 ### HD03253 — EU Banking Package: Nordic/European Comparison
@@ -1644,11 +1594,6 @@ xychart-beta
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/historical-parallels.md -->
-
-**Author**: James Pether Sörling
-**Date**: 2026-04-27
-**Pass 2**: 2026-04-27T06:38Z — Deepened historical parallels, refined similarity scores, corrected 2015 regulatory references
-**Confidence**: MEDIUM [B2]
 
 ---
 
@@ -1836,11 +1781,6 @@ gantt
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/devils-advocate.md -->
 
-**Author**: James Pether Sörling
-**Date**: 2026-04-27
-**Method**: ACH (Analysis of Competing Hypotheses) matrix
-**Confidence**: MEDIUM [B3]
-
 ---
 
 ### ACH Matrix
@@ -1923,11 +1863,6 @@ gantt
 
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/classification-results.md -->
-
-**Author**: James Pether Sörling
-**Date**: 2026-04-27
-**Framework**: `analysis/methodologies/political-classification-guide.md`
-**Confidence**: HIGH [B2]
 
 ---
 
@@ -2186,12 +2121,6 @@ The output-floor impact assessment lacks specific data on Swedish banks' average
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/data-download-manifest.md -->
-
-**Generated**: 2026-04-27 06:21 UTC
-**Data Sources**: get_propositioner, get_dokument_innehall
-**Documents Downloaded**: 30
-**Documents Selected (date-filtered)**: 4
-**Produced By**: download-parliamentary-data script (data download only)
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
 > All political intelligence analysis (classification, risk assessment, SWOT,

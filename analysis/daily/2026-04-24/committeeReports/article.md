@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: committeeReports
 slug: 2026-04-24-committeeReports
 source_folder: analysis/daily/2026-04-24/committeeReports
-generated_at: 2026-04-27T16:24:08.488Z
+generated_at: 2026-04-27T16:35:06.966Z
 language: en
 layout: article
 ---
@@ -281,9 +281,6 @@ All 5 rows cite a live `dok_id` resolvable via `get_dokument` + a primary-source
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/media-framing-analysis.md -->
 
-**Framework**: narrative-ecosystem analysis per `osint-tradecraft-standards.md` §Strategic Communication.
-**Confidence**: MEDIUM (C3) on framing uptake.
-
 ### Likely outlet-level framings
 
 | Outlet | CU25 | SfU23 | FiU23 | AU15 | CU29 |
@@ -348,9 +345,6 @@ flowchart LR
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/stakeholder-perspectives.md -->
-
-**Framework**: 6-lens matrix from `analysis/methodologies/synthesis-methodology.md` — (1) Parties, (2) Government agencies, (3) Affected citizens / demographic groups, (4) Civil society / unions / employers, (5) Subnational government, (6) International / EU.
-**Confidence**: HIGH on party positions (A1–B2); MEDIUM on agency and civil society inference (B3–C3).
 
 ### Master stakeholder table
 
@@ -522,10 +516,6 @@ gantt
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/scenario-analysis.md -->
 
-**Framework**: `analysis/methodologies/strategic-extensions-methodology.md` (Alternative futures + leading indicators).
-**Horizon**: baseline 2026-04-24 → Sep 2026 general election → 2027 H1 implementation.
-**Confidence**: MEDIUM overall (C3); HIGH on event set (B2), MEDIUM on probability weighting.
-
 ### Scenario set (probabilities sum to 100 %)
 
 #### Scenario 1 — "Signature delivery locked in" (p = 40 %)
@@ -604,10 +594,6 @@ flowchart TD
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/risk-assessment.md -->
-
-**Framework**: `analysis/methodologies/political-risk-methodology.md` (5 dimensions: Institutional, Operational, Fiscal, Political-reputational, Legal-compliance).
-**Method**: Likelihood (L, 1–5) × Impact (I, 1–5) → Risk score (1–25). Cascading chains + posterior probabilities via Bayesian update where prior data exists.
-**Confidence**: HIGH on top-3 risks (B2); MEDIUM on tail risks (C3).
 
 ### Risk register
 
@@ -698,10 +684,6 @@ Every row cites `dok_id` + authoritative implementation agency URL (kriminalvard
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/swot-analysis.md -->
 
-**Framework**: `analysis/methodologies/political-swot-framework.md` + TOWS matrix.
-**Scope**: the 5-report cluster tabled 2026-04-23.
-**Confidence**: HIGH (B2).
-
 ### SWOT matrix
 
 #### Strengths
@@ -786,10 +768,6 @@ All rows cite `dok_id` + primary-source URL. See `cross-reference-map.md` for po
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/threat-analysis.md -->
-
-**Framework**: `analysis/methodologies/political-threat-framework.md` — Political Threat Taxonomy with attack tree + kill chain + MITRE-style TTP mapping.
-**Scope**: threats to democratic institutions, policy integrity, and epistemic environment arising from today's 5-report cluster.
-**Confidence**: MEDIUM (C3) — intent signals are indirect; capability signals are well-attested.
 
 ### Threat taxonomy (per-category)
 
@@ -1199,9 +1177,6 @@ Pass 2 revalidated DIW 80 against sensitivity band documented in `../significanc
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/election-2026-analysis.md -->
 
-**Horizon**: Sep 2026 general election (~140 days from base date).
-**Confidence**: MEDIUM (C3) on electoral impact inferences; HIGH (B2) on delivery-indicator logic.
-
 ### Electoral salience ranking of cluster items
 
 | Item | Electoral salience (0-100) | Base for rating | Expected voter segments activated |
@@ -1287,9 +1262,6 @@ flowchart TD
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/coalition-mathematics.md -->
 
-**Framework**: Current 2022–2026 Riksdag arithmetic applied to cluster-item voting scenarios.
-**Confidence**: HIGH (B2) on seat counts; MEDIUM (C3) on defection probabilities.
-
 ### Current Riksdag seat distribution (349 mandat)
 
 | Parti | Mandat | Block |
@@ -1304,8 +1276,6 @@ flowchart TD
 | L | 16 | Tidö |
 | **Tidö total** | **176** | **Majority 175** |
 | **Opposition total** | **173** | |
-
-Source: [riksdagen.se/ledamoter-och-partier](https://www.riksdagen.se/) [A1].
 
 ### Expected floor vote projections
 
@@ -1496,10 +1466,6 @@ flowchart LR
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/comparative-international.md -->
 
-**Framework**: Outside-In analysis with Nordic + EU comparator set.
-**Comparator set**: Denmark (primary Nordic), Finland (primary Nordic), Norway (Nordic non-EU), Germany (EU large-state), Netherlands (EU mid-state).
-**Confidence**: HIGH on ratification dates and formal regimes (A1); MEDIUM on implementation quality inferences (B2).
-
 ### Comparator summary table
 
 | Jurisdiction | ILO C190 ratified | Prison-capacity model | Central-bank recap precedent | Migration-research carve-out | EV home-charging regime |
@@ -1559,9 +1525,6 @@ All ratification dates from ilo.org NORMLEX database [A1]; all comparator agenci
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/historical-parallels.md -->
 
-**Framework**: historical-pattern analysis with ≥ 3 prior precedents; Admiralty-coded sources.
-**Confidence**: MEDIUM (C3) on causal analogies.
-
 ### Parallel 1 — Pre-election committee-report clustering (2022, 2018, 2014)
 
 Incumbent governments have historically front-loaded committee reports in the final spring before September elections. 2018 S+MP government tabled ≥ 5 signature committee reports in April-May; 2014 S-led opposition-constraining cluster in spring 2014; 2022 S government in April 2022. Base rate for pre-election cluster: ~ 80 % of incumbencies. [B2, riksdagen.se/kalender archives]
@@ -1620,9 +1583,6 @@ flowchart TD
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/implementation-feasibility.md -->
-
-**Framework**: agency-capacity assessment + risk-adjusted implementation scoring.
-**Confidence**: HIGH (B2) on agency-mandate; MEDIUM (C3) on capacity forecasts.
 
 ### Feasibility matrix (0-100 composite)
 
@@ -1690,9 +1650,6 @@ flowchart TD
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/devils-advocate.md -->
-
-**Framework**: Analysis of Competing Hypotheses (ACH) — Heuer methodology; Red-Team challenge.
-**Confidence**: MEDIUM (C3) — hypotheses test analytic robustness of the mainline reading.
 
 ### Competing hypotheses
 
@@ -1811,9 +1768,6 @@ flowchart LR
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/cross-reference-map.md -->
-
-**Purpose**: map policy clusters, legislative chains, coordinated-activity patterns, and sibling-folder references across the five tabled reports.
-**Confidence**: HIGH on direct committee + legislative chains (A1); MEDIUM on cluster inference (B2).
 
 ### Policy clusters
 
@@ -2007,12 +1961,6 @@ This reflection cites: `analysis/methodologies/ai-driven-analysis-guide.md`, `os
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/data-download-manifest.md -->
-
-**Generated**: 2026-04-24 01:06 UTC
-**Data Sources**: get_betankanden, get_dokument_innehall
-**Documents Downloaded**: 50
-**Documents Selected (date-filtered)**: 5
-**Produced By**: download-parliamentary-data script (data download only)
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
 > All political intelligence analysis (classification, risk assessment, SWOT,

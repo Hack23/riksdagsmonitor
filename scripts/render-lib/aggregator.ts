@@ -312,6 +312,121 @@ const ADMIN_FIELD_NAMES: readonly string[] = [
   'Disseminated',
   'Source',
   'Dissemination',
+  // Extended 2026-04-27 — preamble fields observed leaking into Executive
+  // Brief / synthesis / per-document headers across 28 of 41 articles. See
+  // analysis/daily/2026-04-27/propositions/executive-brief.md for the
+  // canonical leak shape (`**Author** \n **Date** \n **Analysis period** \n
+  // **Confidence** \n **Classification** \n **Pass 2**`). Without these
+  // entries the entire admin paragraph fails the `allAdmin` test in
+  // `stripLeadingAdminBylines` because two fragments are unrecognised, so
+  // the whole template preamble survives into the published article body.
+  // Round 2: scenario-analysis / comparative-international /
+  // methodology-reflection / coalition-mathematics / etc. preambles add
+  // Horizon / Method / Focus / Workflow / Purpose / Analysis date as
+  // structured `**Label**: value` admin fragments before any prose.
+  'Analysis\\s*period',
+  'Analysis\\s*date',
+  'Horizon',
+  'Method',
+  'Focus',
+  'Workflow',
+  'Purpose',
+  'Pass\\s*2',
+  'AI[-\\s]?FIRST\\s*iterations?',
+  'ARTICLE_TYPE',
+  'Article\\s*type',
+  'Article\\s*period',
+  'Period',
+  'Window',
+  'Coverage\\s*window',
+  'Run\\s*started',
+  'Run\\s*completed',
+  'Run\\s*at',
+  // Round 3 (2026-04-27) — per-document and per-artifact preamble fields
+  // observed leaking 393 times across 36 of 41 articles. These appear as
+  // structured `**Label**: value` fragments in the leading paragraph of
+  // exec briefs, per-document analyses (`documents/{dok_id}-analysis.md`)
+  // and Family C artifacts. Examples:
+  //   - **F3EAD Stage**: Exploit
+  //   - **Framework**: Political SWOT v3.4
+  //   - **Dok ID** / **Dok-ID** / **Dok_ID** / **Document ID**: HD03253
+  //   - **SCN-ID**, **SIG-ID**, **STA-ID**, **RSK-ID**, **THR-ID**,
+  //     **CMP-ID**, **CLS-ID**, **XRF-ID**, **MTH-ID** (artifact-row IDs)
+  //   - **Organ**: FiU | **Subject**: ... | **Type**: Proposition
+  //   - **Comparator set**: Sweden vs DE/FR | **Election date**: 2026-09
+  // Body-text mentions like *"the Party (S) filed..."* are not bold +
+  // colon-anchored, so they pass `ADMIN_FIELD_RE` correctly.
+  'F3EAD\\s*Stage',
+  'Framework',
+  'Party',
+  'Dok[-_\\s]?ID',
+  'Document(?:\\s*ID)?',
+  'Organ',
+  'Subject',
+  'Type',
+  'Committee',
+  'Comparator(?:\\s*set)?',
+  'Election\\s*date',
+  '[A-Z]{3}[-_]ID',
+  // Round 4 (2026-04-27) — additional preamble fields observed in
+  // per-document, family C and family D artifacts. Riksmöte = Swedish
+  // parliamentary year (e.g. `2025/26`); DIW Score = significance ranking
+  // header (Diplomatic / Informational / Wider impact); Confidence
+  // distribution / Confidence floor = artifact-level trust roll-ups.
+  'Riksm(?:ö|o)te',
+  'DIW\\s*Score',
+  'Confidence\\s*(?:distribution|floor|baseline)',
+  'Frame',
+  'Question',
+  'Overall\\s*Threat\\s*Level',
+  'Overall\\s*Risk\\s*Level',
+  'Overall\\s*Score',
+  'Tradecraft(?:\\s*context)?',
+  'PIRs?(?:\\s*served)?',
+  'Source\\s*Diversity(?:\\s*floor)?',
+  'WEP\\+ODNI',
+  'SATs?\\s*applied',
+  'ICD\\s*203(?:\\s*standards)?',
+  'Hash',
+  'Signature',
+  'Provenance',
+  // Round 5 (2026-04-27) — manifest / synthesis preamble fields. The
+  // `data-download-manifest.md` and `synthesis-summary.md` artifacts emit
+  // structured run-metadata that is never article content.
+  'Article\\s*Type',
+  'Article\\s*Date',
+  'Analysis\\s*Type',
+  'Analysis\\s*Depth',
+  'Data\\s*Sources?',
+  'Documents?\\s*Downloaded',
+  'Documents?\\s*Selected(?:\\s*\\([^)]+\\))?',
+  'Produced\\s*By',
+  'Scope\\s*of\\s*this\\s*file',
+  // Round 6 (2026-04-27) — per-document and per-artifact preamble fields
+  // used in motion / interpellation / proposition / committee templates.
+  // Includes Swedish-language labels and audit timestamp variants.
+  'Session',
+  'Datum',
+  'Tier',
+  'DIW\\s*Tier',
+  'Admiralty\\s*Source\\s*Code',
+  'Inl(?:ä|a)mnare',
+  'Mottagare',
+  'Talman',
+  'Ministry',
+  'SISVA(?:\\s*\\([^)]+\\))?',
+  'Filed(?:\\s*by)?',
+  'Effective\\s*[Dd]ate',
+  'Tabling\\s*date',
+  'Requested\\s*date',
+  'Source\\s*authority',
+  'UTC\\s*Timestamp',
+  'Analysis\\s*Timestamp',
+  'Analysis\\s*run',
+  'Updated',
+  'Level',
+  'Relates\\s*to',
+  'frs',
 ];
 
 /**
@@ -351,27 +466,41 @@ function stripPassTwoSection(body: string): string {
 }
 
 /**
- * Remove leading admin-byline paragraphs (those made up entirely of bold
- * `**Author**` / `**Run ID**` / `**Classification**` / `**Confidence**` /
- * … fields). Walks paragraph-by-paragraph from the top, stopping at the
- * first real-prose paragraph.
+ * Remove admin-byline paragraphs anywhere in the artifact body. Walks
+ * paragraph-by-paragraph; any paragraph whose fragments are 100% bold-
+ * label admin metadata (per {@link ADMIN_FIELD_RE}) is dropped. Any
+ * paragraph with at least one non-admin fragment is preserved verbatim.
+ *
+ * Originally this stripper only ran on **leading** paragraphs and stopped
+ * at the first prose paragraph (hence the name). Per-document analyses
+ * and Family C/D artifacts emit *additional* admin blocks immediately
+ * under their internal `### {dok_id}` / `## Section` headings, so the
+ * leading-only sweep let ~393 admin-byline lines leak into the published
+ * Article body across 36 of 41 articles (audit 2026-04-27). Walking the
+ * whole body — but still requiring a paragraph to be **fully** admin —
+ * keeps body prose intact while removing the duplicate metadata blocks.
+ *
+ * The function name and signature are preserved so callers and tests
+ * that imported it through `__test__` continue to work; the behaviour is
+ * a strict superset of the previous version.
  */
 function stripLeadingAdminBylines(body: string): string {
   const paragraphs = body.split(/\n\n+/);
-  let skip = 0;
+  const kept: string[] = [];
   for (const p of paragraphs) {
     const trimmed = p.trim();
-    if (!trimmed) { skip += 1; continue; }
-    // Structural-only delimiter — see ADMIN_FRAGMENT_SPLITTER JSDoc.
-    const fragments = trimmed.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
-    const allAdmin = fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()));
-    if (allAdmin && fragments.length > 0) {
-      skip += 1;
+    if (!trimmed) {
+      // Preserve blank paragraph spacing — collapsed downstream by the
+      // `\n{3,}` rule in cleanArtifactBody.
+      kept.push(p);
       continue;
     }
-    break;
+    const fragments = trimmed.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
+    const allAdmin = fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()));
+    if (allAdmin && fragments.length > 0) continue;
+    kept.push(p);
   }
-  return skip === 0 ? body : paragraphs.slice(skip).join('\n\n');
+  return kept.join('\n\n');
 }
 
 /**

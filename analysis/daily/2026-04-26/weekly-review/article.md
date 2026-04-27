@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: weekly-review
 slug: 2026-04-26-weekly-review
 source_folder: analysis/daily/2026-04-26/weekly-review
-generated_at: 2026-04-27T16:24:08.572Z
+generated_at: 2026-04-27T16:35:07.057Z
 language: en
 layout: article
 ---
@@ -321,8 +321,6 @@ style HC03206 fill:#ff006e,stroke:#00d9ff
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/media-framing-analysis.md -->
 
-**Author**: James Pether Sörling | **Framework**: Media frame analysis + per-party framing
-
 ---
 
 ### Key Issue Frames
@@ -421,8 +419,6 @@ flowchart TD
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/stakeholder-perspectives.md -->
 
-**Author**: James Pether Sörling | **Framework**: 6-Lens Stakeholder Matrix
-
 ---
 
 ### Stakeholder Matrix
@@ -497,8 +493,6 @@ style SD fill:#ffbe0b
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/forward-indicators.md -->
-
-**Author**: James Pether Sörling | **Framework**: PIR-driven indicator monitoring
 
 ---
 
@@ -597,8 +591,6 @@ gantt
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/scenario-analysis.md -->
-
-**Author**: James Pether Sörling | **Framework**: ACH-informed scenario development
 
 ---
 
@@ -699,8 +691,6 @@ style "S1: Stability Through Security" fill:#00d9ff,stroke:#ff006e
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/risk-assessment.md -->
 
-**Author**: James Pether Sörling | **Framework**: 5-Dimension Political Risk Register
-
 ---
 
 ### Risk Register
@@ -774,8 +764,6 @@ style "R-03 Coalition fracture" fill:#ffbe0b,stroke:#0a0e27
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/swot-analysis.md -->
-
-**Author**: James Pether Sörling | **Framework**: Political-SWOT with TOWS matrix
 
 ---
 
@@ -863,8 +851,6 @@ style "Unemployment threat HC10746" fill:#ff006e,stroke:#00d9ff
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/threat-analysis.md -->
-
-**Author**: James Pether Sörling | **Framework**: Political Threat Taxonomy + TTP mapping
 
 ---
 
@@ -1038,8 +1024,6 @@ The simultaneous filing of HC10744/HC10745/HC10746 creates a "three-vector" atta
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/election-2026-analysis.md -->
 
-**Author**: James Pether Sörling | **Framework**: Electoral impact assessment
-
 ---
 
 ### Current Polling Context (As of Analysis Horizon)
@@ -1120,8 +1104,6 @@ xychart-beta
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/coalition-mathematics.md -->
-
-**Author**: James Pether Sörling | **Framework**: Riksdag seat arithmetic + coalition viability
 
 ---
 
@@ -1226,8 +1208,6 @@ style M fill:#00d9ff,stroke:#ff006e
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/voter-segmentation.md -->
 
-**Author**: James Pether Sörling | **Framework**: Demographic, regional, and ideological segmentation
-
 ---
 
 ### Key Voter Segments Affected This Week
@@ -1322,11 +1302,7 @@ style "Law and order" fill:#00d9ff,stroke:#ff006e
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/comparative-international.md -->
 
-**Author**: James Pether Sörling | **Framework**: Outside-In comparative analysis
-
 ---
-
-**Comparator set**: Finland, Norway, Germany, Estonia, Denmark
 
 ---
 
@@ -1387,8 +1363,6 @@ style Sweden fill:#ff006e,stroke:#00d9ff
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/historical-parallels.md -->
-
-**Author**: James Pether Sörling | **Framework**: Historical analogical reasoning
 
 ---
 
@@ -1455,8 +1429,6 @@ style "1990s Unemployment" fill:#ff006e,stroke:#00d9ff
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/implementation-feasibility.md -->
-
-**Author**: James Pether Sörling | **Framework**: Policy delivery risk assessment
 
 ---
 
@@ -1556,8 +1528,6 @@ style "APL acquisition" fill:#00d9ff,stroke:#ff006e
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/devils-advocate.md -->
-
-**Author**: James Pether Sörling | **Framework**: ACH + Red Team challenge
 
 ---
 
@@ -1672,8 +1642,6 @@ style "H2 Reform cosmetic" fill:#ffbe0b,stroke:#0a0e27
 
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/classification-results.md -->
-
-**Author**: James Pether Sörling | **Framework**: 7-Dimension Political Classification
 
 ---
 
@@ -1824,8 +1792,6 @@ style ClusterC fill:#1a1e3d,stroke:#00d9ff
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/methodology-reflection.md -->
-
-**Author**: James Pether Sörling | **Framework**: ICD 203 analytic standards self-audit
 
 ---
 
@@ -1998,9 +1964,6 @@ No prior sibling analyses exist in `analysis/daily/` for the lookback window (fi
 ## Analysis Index
 <!-- source: analysis-index.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/analysis-index.md -->
 
-**Type**: Supplementary artifact S1
-**Purpose**: Cross-artifact navigation index
-
 ### Artifact Cross-Reference
 
 | Artifact | Primary documents | Key claims | Forward links |
@@ -2033,9 +1996,6 @@ Full artifact sequence as listed in README.md (estimated 45–60 min).
 ## Cross Session Intelligence
 <!-- source: cross-session-intelligence.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/cross-session-intelligence.md -->
 
-**Type**: Supplementary artifact S5
-**Purpose**: Track intelligence threads across workflow sessions
-
 ### Carried-Forward Intelligence (from prior sessions)
 
 **PIR-A (carried forward)**: Municipal civil-preparedness capacity below NATO Article 3 threshold
@@ -2066,9 +2026,6 @@ This is the inaugural weekly-review session. No verified prior-cycle data from p
 
 ## Mcp Reliability Audit
 <!-- source: mcp-reliability-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/mcp-reliability-audit.md -->
-
-**Type**: Supplementary artifact S3
-**Purpose**: Track MCP tool performance this session
 
 ### riksdag-regering MCP
 
@@ -2107,9 +2064,6 @@ Not used this session (no Swedish monthly statistics queries needed).
 ## Reference Analysis Quality
 <!-- source: reference-analysis-quality.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/reference-analysis-quality.md -->
 
-**Type**: Supplementary artifact S2
-**Purpose**: Evidence quality and sourcing audit
-
 ### Source Quality Assessment
 
 | Source tier | Count | % of citations | Notes |
@@ -2142,9 +2096,6 @@ Not used this session (no Swedish monthly statistics queries needed).
 
 ## Session Baseline
 <!-- source: session-baseline.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/session-baseline.md -->
-
-**Type**: Supplementary artifact S6
-**Purpose**: Establish quantitative baseline for comparison in future sessions
 
 ### Political Baseline
 
@@ -2188,9 +2139,6 @@ Not used this session (no Swedish monthly statistics queries needed).
 
 ## Workflow Audit
 <!-- source: workflow-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/workflow-audit.md -->
-
-**Type**: Supplementary artifact S4
-**Purpose**: Process compliance and quality gate verification
 
 ### Gate Compliance Check
 

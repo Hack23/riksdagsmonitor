@@ -5,7 +5,7 @@ date: 2026-04-27
 subfolder: committeeReports
 slug: 2026-04-27-committeeReports
 source_folder: analysis/daily/2026-04-27/committeeReports
-generated_at: 2026-04-27T16:24:08.575Z
+generated_at: 2026-04-27T16:35:07.062Z
 language: en
 layout: article
 ---
@@ -80,8 +80,6 @@ graph LR
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/synthesis-summary.md -->
-
-**Author**: James Pether Sörling | **Date**: 2026-04-27 | **Riksmöte**: 2025/26
 
 ### Lead Story: Tidö Coalition Activates Cost-of-Living and Security Agenda Ahead of 2026 Election
 
@@ -228,11 +226,7 @@ xychart-beta
 
 #### Socialdemokraterna (S)
 
-**Frame**: Challenge Tidö on HD01FiU48 climate regression — "Sweden cannot abandon its climate commitments for short-term electoral gain." Counter-narrative on weapons law: "The transition rules are too permissive — we wanted stronger protection." Will use HD01SoU25 as minimum position — "We support elder care but question the funding."
-
 #### Vänsterpartiet (V) + Miljöpartiet (MP)
-
-**Frame**: HD01FiU48 is "a gift to oil companies dressed up as household relief." Climate emergency framing. Will campaign on reservation. MP specifically: "Sweden's green credibility is being sold for votes."
 
 #### Centerpartiet (C)
 
@@ -618,8 +612,6 @@ graph TD
 ### HD01CU24
 <!-- source: documents/HD01CU24-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/documents/HD01CU24-analysis.md -->
 
-**dok_id**: HD01CU24 | **Committee**: CU | **Date**: 2026-04-24
-
 ### Document Summary
 
 HD01CU24 is the Civil Affairs Committee's (civilutskottet) report on building process reform (byggprocessen). The report covers measures to streamline the permit and planning process for new construction, reducing administrative burden on municipalities and developers.
@@ -658,8 +650,6 @@ HD01CU24 is the Civil Affairs Committee's (civilutskottet) report on building pr
 
 ### HD01FiU23
 <!-- source: documents/HD01FiU23-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/documents/HD01FiU23-analysis.md -->
-
-**dok_id**: HD01FiU23 | **Committee**: FiU | **Date**: 2026-04-24
 
 ### Document Summary
 
@@ -701,8 +691,6 @@ HD01FiU23 is the Finance Committee's annual accountability review of the Riksban
 
 ### HD01FiU48
 <!-- source: documents/HD01FiU48-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/documents/HD01FiU48-analysis.md -->
-
-**dok_id**: HD01FiU48 | **Committee**: FiU | **Date**: 2026-04-24
 
 ### Document Summary
 
@@ -746,8 +734,6 @@ HD01FiU48 is the Finance Committee's report on a supplementary/extra budget (til
 
 ### HD01JuU10
 <!-- source: documents/HD01JuU10-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/documents/HD01JuU10-analysis.md -->
-
-**dok_id**: HD01JuU10 | **Committee**: JuU | **Date**: 2026-04-24
 
 ### Document Summary
 
@@ -796,8 +782,6 @@ HD01JuU10 is the Justice Committee's report on new weapons legislation (vapenlag
 ### HD01JuU31
 <!-- source: documents/HD01JuU31-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/documents/HD01JuU31-analysis.md -->
 
-**dok_id**: HD01JuU31 | **Committee**: JuU | **Date**: 2026-04-24
-
 ### Document Summary
 
 HD01JuU31 is the Justice Committee's report on Riksrevisionen's (National Audit Office) review of the Swedish police reform (polisreformen). The Riksrevisionen examined whether the 2015 police reform achieved its stated objectives: more police officers, better service delivery, and improved organisational efficiency.
@@ -839,8 +823,6 @@ HD01JuU31 is the Justice Committee's report on Riksrevisionen's (National Audit 
 
 ### HD01SoU25
 <!-- source: documents/HD01SoU25-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/documents/HD01SoU25-analysis.md -->
-
-**dok_id**: HD01SoU25 | **Committee**: SoU | **Date**: 2026-04-24
 
 ### Document Summary
 
@@ -1053,8 +1035,6 @@ graph LR
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/comparative-international.md -->
 
 ### Comparator Set
-
-**Comparator set**: Norway, Denmark, Finland, Germany, Netherlands — Nordic peers + major EU member states relevant to weapons law and fiscal stimulus
 
 ### Outside-In Analysis
 

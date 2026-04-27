@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: monthly-review
 slug: 2026-04-26-monthly-review
 source_folder: analysis/daily/2026-04-26/monthly-review
-generated_at: 2026-04-27T16:24:08.543Z
+generated_at: 2026-04-27T16:35:07.031Z
 language: en
 layout: article
 ---
@@ -329,9 +329,6 @@ Sweden is 140 days from the 2026-09-13 election. The Tidö coalition has legisla
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/significance-scoring.md -->
-
-**Author**: James Pether Sörling | **Date**: 2026-04-26
-**Window**: 2026-03-27 → 2026-04-26 | **Methodology**: DIW (Decisional Impact × Implementation Weight × Welfare Weight)
 
 ### DIW Score Table
 
@@ -786,9 +783,6 @@ flowchart TD
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/risk-assessment.md -->
 
-**Author**: James Pether Sörling | **Date**: 2026-04-26
-**Window**: 2026-03-27 → 2026-04-26 | **Methodology**: 5-dimension, L×I scoring, posterior Bayesian
-
 ### Risk Register (5-dimension)
 
 | # | Risk | Likelihood (L 1–5) | Impact (I 1–5) | L×I | Dimension | Source |
@@ -838,9 +832,6 @@ flowchart LR
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/swot-analysis.md -->
-
-**Author**: James Pether Sörling | **Date**: 2026-04-26
-**Window**: 2026-03-27 → 2026-04-26 | **Scope**: Tidö coalition + Swedish political system
 
 ### Strengths
 
@@ -1322,11 +1313,7 @@ Individual interpellation value is low (ceremonial); pattern value is medium (Fr
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/election-2026-analysis.md -->
 
-**Election date**: 2026-09-13 (140 days from 2026-04-26)
-
 ### Current Poll Aggregate
-
-Source: Demoskop 2026-03-26 (vintage 31 days; caution — C3 confidence)
 
 | Party | % | Seats (349 total) | Block |
 |-------|---|------|-------|
@@ -2100,8 +2087,6 @@ graph LR
 
 #### IMF Data Unavailability (Non-Fatal)
 
-**Status**: The IMF CLI (`tsx scripts/imf-fetch.ts`) returned a connection error during this workflow run. As a result, no IMF economic context (WEO, FM, IFS dataflows) was injected into any artifact.
-
 **Impact assessment**: Moderate. The monthly review's primary focus is legislative/political documents; economic data is context, not core evidence. The absence of IMF figures affects:
 - `executive-brief.md`: Swedish GDP growth rate not cited (gap noted)
 - `stakeholder-perspectives.md`: Household welfare analysis uses qualitative proxies
@@ -2113,15 +2098,11 @@ graph LR
 
 #### Lookback Fallback (Non-Fatal)
 
-**Status**: Zero documents found for 2026-04-26; fallback used 8 documents from 2026-04-24.
-
 **Impact**: Minimal — committee reports from April 24 are substantively the same legislative package. The April-26 data gap is structural (Sunday; Riksdag does not typically publish new documents on Sundays).
 
 **Mitigation**: April-23 propositions fetched fresh via MCP; manifests correctly document the fallback.
 
 #### Single Polling Source (Moderate Limitation)
-
-**Status**: Demoskop 2026-03-26 is the only poll cited in this analysis. The vintage is 31 days old.
 
 **Impact**: PIR-A (Demoskop ≥ 44%) depends on a stale poll. Probability estimates in scenario-analysis.md carry elevated uncertainty.
 

@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: week-ahead
 slug: 2026-04-26-week-ahead
 source_folder: analysis/daily/2026-04-26/week-ahead
-generated_at: 2026-04-27T16:24:08.566Z
+generated_at: 2026-04-27T16:35:07.052Z
 language: en
 layout: article
 ---
@@ -27,8 +27,6 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief.md -->
-
-**Author**: James Pether Sörling | **Date**: 2026-04-26 | **Period**: 2026-04-27 to 2026-05-03
 
 ---
 
@@ -738,9 +736,6 @@ Overall political threat level: **ELEVATED** (3/5). No existential coalition thr
 ### HD01CU24
 <!-- source: documents/HD01CU24-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01CU24-analysis.md -->
 
-**Document ID**: HD01CU24
-**Date**: 2026-04-26 | **Analyst**: James Pether Sörling
-
 ### Document Summary
 
 *(Sourced from riksdag-regering MCP; processed in data-download phase.)*
@@ -757,9 +752,6 @@ This document contributes to the week-ahead analysis under the themes of law & o
 
 ### HD01JuU10
 <!-- source: documents/HD01JuU10-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01JuU10-analysis.md -->
-
-**Document ID**: HD01JuU10
-**Date**: 2026-04-26 | **Analyst**: James Pether Sörling
 
 ### Document Summary
 
@@ -778,9 +770,6 @@ This document contributes to the week-ahead analysis under the themes of law & o
 ### HD01JuU31
 <!-- source: documents/HD01JuU31-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01JuU31-analysis.md -->
 
-**Document ID**: HD01JuU31
-**Date**: 2026-04-26 | **Analyst**: James Pether Sörling
-
 ### Document Summary
 
 *(Sourced from riksdag-regering MCP; processed in data-download phase.)*
@@ -797,9 +786,6 @@ This document contributes to the week-ahead analysis under the themes of law & o
 
 ### HD01SoU25
 <!-- source: documents/HD01SoU25-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01SoU25-analysis.md -->
-
-**Document ID**: HD01SoU25
-**Date**: 2026-04-26 | **Analyst**: James Pether Sörling
 
 ### Document Summary
 
@@ -818,9 +804,6 @@ This document contributes to the week-ahead analysis under the themes of law & o
 ### HD10448
 <!-- source: documents/HD10448-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD10448-analysis.md -->
 
-**Document ID**: HD10448
-**Date**: 2026-04-26 | **Analyst**: James Pether Sörling
-
 ### Document Summary
 
 *(Sourced from riksdag-regering MCP; processed in data-download phase.)*
@@ -837,9 +820,6 @@ This document contributes to the week-ahead analysis under the themes of law & o
 
 ### HD11747
 <!-- source: documents/HD11747-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD11747-analysis.md -->
-
-**Document ID**: HD11747
-**Date**: 2026-04-26 | **Analyst**: James Pether Sörling
 
 ### Document Summary
 
@@ -858,9 +838,6 @@ This document contributes to the week-ahead analysis under the themes of law & o
 ### HD11748
 <!-- source: documents/HD11748-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD11748-analysis.md -->
 
-**Document ID**: HD11748
-**Date**: 2026-04-26 | **Analyst**: James Pether Sörling
-
 ### Document Summary
 
 *(Sourced from riksdag-regering MCP; processed in data-download phase.)*
@@ -877,9 +854,6 @@ This document contributes to the week-ahead analysis under the themes of law & o
 
 ### HD11749
 <!-- source: documents/HD11749-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD11749-analysis.md -->
-
-**Document ID**: HD11749
-**Date**: 2026-04-26 | **Analyst**: James Pether Sörling
 
 ### Document Summary
 
@@ -1091,8 +1065,6 @@ pie title Riksdag Composition 349 Seats
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/comparative-international.md -->
-
-**Comparator set**: Denmark (DK), Norway (NO), Germany (DE), EU institutions, Ukraine accountability framework
 
 ### Outside-In Analysis
 
@@ -1475,14 +1447,6 @@ For HD01JuU10 (vapenlag), cross-reference search_voteringar from past weapons-re
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/data-download-manifest.md -->
-
-**Workflow**: news-week-ahead
-**Run ID**: 24961726066
-**Generated**: 2026-04-26 16:44 UTC
-**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer, get_dokument_innehall
-**Documents Downloaded**: 180
-**Documents Selected (date-filtered)**: 8
-**Produced By**: download-parliamentary-data script (data download only)
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
 > All political intelligence analysis (classification, risk assessment, SWOT,

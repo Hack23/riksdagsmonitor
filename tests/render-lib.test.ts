@@ -156,6 +156,51 @@ describe('render-lib — helpers', () => {
     expect(stripLeadingAdminBylines(body)).toContain('Real prose begins here.');
     expect(stripLeadingAdminBylines(body)).not.toContain('Classification');
   });
+
+  it('stripLeadingAdminBylines drops admin blocks anywhere in body, not just leading', () => {
+    // Per-document analyses and Family C/D artifacts emit additional admin
+    // preambles after `### {dok_id}` / `## Section` headings. Those must
+    // be stripped too — leading-only sweep let ~393 lines leak (audit
+    // 2026-04-27).
+    const body = [
+      'Lead paragraph of real prose.',
+      '',
+      '**Author**: J',
+      '**Date**: 2026-04-27',
+      '**Confidence**: HIGH [B2]',
+      '',
+      'Second prose paragraph.',
+      '',
+      '**Dok ID**: HD03253',
+      '**Type**: Proposition',
+      '**Riksmöte**: 2025/26',
+      '',
+      'Third prose paragraph after dok-level admin.',
+    ].join('\n');
+    const out = stripLeadingAdminBylines(body);
+    expect(out).toContain('Lead paragraph of real prose.');
+    expect(out).toContain('Second prose paragraph.');
+    expect(out).toContain('Third prose paragraph after dok-level admin.');
+    expect(out).not.toContain('**Author**');
+    expect(out).not.toContain('**Dok ID**');
+    expect(out).not.toContain('**Riksmöte**');
+  });
+
+  it('stripLeadingAdminBylines preserves mixed paragraphs (1 admin + analytical fragments)', () => {
+    // Safety: a paragraph containing ANY analytical fragment must survive
+    // intact, even if it also contains admin-style fragments. Otherwise
+    // ACH/SWOT/risk callouts would be stripped.
+    const body = [
+      '**ACH Score**: H1 likely [B2] | **Evidence**: vote record HD10437',
+      '',
+      '**Author**: J | **Classification**: Public',
+    ].join('\n');
+    const out = stripLeadingAdminBylines(body);
+    expect(out).toContain('**ACH Score**');
+    expect(out).toContain('**Evidence**');
+    expect(out).not.toContain('**Author**');
+    expect(out).not.toContain('**Classification**');
+  });
 });
 
 describe('render-lib — AGGREGATION_ORDER', () => {
@@ -1254,6 +1299,100 @@ describe('render-lib — ADMIN_FIELD_RE (SEO contract §3a)', () => {
       '**Disseminated**: 2026-04-23',
       '**Source**: Riksdagen',
       '**Dissemination**: TLP:WHITE',
+    ]) {
+      expect(ADMIN_FIELD_RE.test(f)).toBe(true);
+    }
+  });
+
+  it('matches preamble-leak fields observed 2026-04-27 (Analysis period / Pass 2 / AI-FIRST iterations / ARTICLE_TYPE)', () => {
+    for (const f of [
+      '**Analysis period**: 2026-04-23 (most recent parliamentary day)',
+      '**Pass 2**: 2026-04-27T06:38Z — Improved economic provenance',
+      '**AI-FIRST iterations**: 2',
+      '**AI-FIRST iterations**: 2 (pass 1 + pass 2 improvement)',
+      '**ARTICLE_TYPE**: month-ahead',
+      '**Article type**: propositions',
+      '**Article period**: 2026-04-23',
+      '**Period**: 2026-04-20 → 2026-04-26',
+      '**Window**: April 20–26, 2026',
+      '**Coverage window**: 30-day rolling',
+      '**Analysis date**: 2026-04-20',
+      '**Horizon**: 14 days',
+      '**Method**: Morphological scenario construction',
+      '**Focus**: HD10437 (frs 2025/26:437) in EU comparative context',
+      '**Workflow**: `news-interpellations`',
+      '**Purpose**: Document the analytic pipeline',
+      '**Run started**: 2026-04-27T06:00Z',
+      // Round 3 — per-document / per-artifact preamble labels
+      '**F3EAD Stage**: Exploit',
+      '**Framework**: Political SWOT v3.4',
+      '**Party**: M (initiated)',
+      '**Dok ID**: HD03253',
+      '**Dok-ID**: HD03253',
+      '**Dok_ID**: HD03253',
+      '**Document ID**: HD03253',
+      '**Document**: HD03253',
+      '**Organ**: FiU',
+      '**Subject**: Banking',
+      '**Type**: Proposition',
+      '**Committee**: FiU',
+      '**Comparator set**: Sweden vs DE/FR',
+      '**Election date**: 2026-09-20',
+      '**SCN-ID**: SCN-2026-04-27-001',
+      '**RSK-ID**: RSK-2026-04-27-001',
+      '**THR-ID**: THR-2026-04-27-001',
+      // Round 4 — extra family A/C/D preamble labels
+      '**Riksmöte**: 2025/26',
+      '**DIW Score**: 7/10 (HIGH)',
+      '**Confidence distribution**: 2× HIGH, 3× MEDIUM, 1× LOW',
+      '**Confidence floor**: B2',
+      '**Overall Threat Level**: MEDIUM',
+      '**Overall Risk Level**: HIGH',
+      '**PIRs**: PIR-1, PIR-2',
+      '**PIRs served**: PIR-1',
+      '**Source Diversity**: 4 distinct sources',
+      '**Source Diversity floor**: 3',
+      '**SATs applied**: ACH, KAC, Red Team',
+      '**ICD 203**: compliant',
+      '**Hash**: sha256:abc123',
+      // Round 5 — manifest / synthesis preamble labels
+      '**Article Type**: month-ahead',
+      '**Article Date**: 2026-04-27',
+      '**Analysis Type**: interpellations',
+      '**Analysis Depth**: deep',
+      '**Data Sources**: get_propositioner, get_motioner',
+      '**Data Source**: riksdag-regering-mcp',
+      '**Documents Downloaded**: 1200',
+      '**Documents Selected (date-filtered)**: 11',
+      '**Produced By**: download-parliamentary-data script',
+      '**Scope of this file**: raw data downloaded',
+      // Round 6 — per-document and Swedish-language admin preamble labels
+      '**Session**: Riksmöte 2025/26 (final spring phase)',
+      '**Datum**: 2026-04-23',
+      '**Tier**: A',
+      '**DIW Tier**: HIGH',
+      '**Admiralty Source Code**: A1',
+      '**Inlämnare**: Magdalena Andersson (S)',
+      '**Mottagare**: Finansutskottet',
+      '**Talman**: Andreas Norlén',
+      '**Ministry**: Finansdepartementet',
+      '**SISVA (response deadline)**: 2026-05-15',
+      '**Filed**: 2026-04-23',
+      '**Filed by**: M, KD, L, SD',
+      '**Effective date**: 2026-07-01',
+      '**Effective Date**: 2026-07-01',
+      '**Tabling date**: 2026-04-23',
+      '**Requested date**: 2026-04-15',
+      '**Source authority**: riksdagen.se',
+      '**UTC Timestamp**: 2026-04-27T16:00Z',
+      '**Analysis Timestamp**: 2026-04-27T16:00Z',
+      '**Analysis run**: rm-2026-04-27-001',
+      '**Updated**: 2026-04-27',
+      '**Level**: HIGH',
+      '**Relates to**: HD03253',
+      '**frs**: 2025/26:437',
+      '**Run completed**: 2026-04-27T06:38Z',
+      '**Run at**: 2026-04-27 06:38 UTC',
     ]) {
       expect(ADMIN_FIELD_RE.test(f)).toBe(true);
     }

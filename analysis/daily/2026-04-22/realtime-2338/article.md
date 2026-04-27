@@ -5,7 +5,7 @@ date: 2026-04-22
 subfolder: realtime-2338
 slug: 2026-04-22-realtime-2338
 source_folder: analysis/daily/2026-04-22/realtime-2338
-generated_at: 2026-04-27T16:24:08.466Z
+generated_at: 2026-04-27T16:35:06.938Z
 language: en
 layout: article
 ---
@@ -272,9 +272,6 @@ quadrantChart
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/significance-scoring.md -->
-
-**Analyst**: James Pether Sörling | **Methodology**: ai-driven-analysis-guide.md, significance-scoring.md
-**Classification**: Public | **Riksmöte**: 2025/26
 
 ---
 
@@ -846,9 +843,6 @@ flowchart TD
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/swot-analysis.md -->
 
-**Analyst**: James Pether Sörling | **Framework**: political-swot-framework.md
-**Classification**: Public | **Cycle**: Realtime-2338 | **Date**: 2026-04-22
-
 ---
 
 ### Context
@@ -1131,9 +1125,6 @@ This is the most directly consequential enacted legislation in today's cycle. Ef
 ### HD10443
 <!-- source: documents/HD10443-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10443-analysis.md -->
 
-**dok_id**: HD10443 | **Type**: Interpellation | **Filed**: 2026-04-22
-**Analyst**: James Pether Sörling | **Source authority**: [A1] riksdagen.se direct retrieval
-
 ---
 
 ### Document Summary
@@ -1170,9 +1161,6 @@ Inter-municipal social welfare dumping (kommuner "recommending" welfare recipien
 
 ### HD10444
 <!-- source: documents/HD10444-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10444-analysis.md -->
-
-**dok_id**: HD10444 | **Type**: Interpellation | **Filed**: 2026-04-22
-**Analyst**: James Pether Sörling | **Source authority**: [A1] riksdagen.se direct retrieval
 
 ---
 
@@ -1214,9 +1202,6 @@ This framing is politically devastating for Svantesson because:
 ### HD10445
 <!-- source: documents/HD10445-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10445-analysis.md -->
 
-**dok_id**: HD10445 | **Type**: Interpellation | **Filed**: 2026-04-22
-**Analyst**: James Pether Sörling | **Source authority**: [A1] riksdagen.se direct retrieval
-
 ---
 
 ### Document Summary
@@ -1253,9 +1238,6 @@ The housing segregation framing links to committee reports HD01CU27/28 (civil la
 
 ### HD10446
 <!-- source: documents/HD10446-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10446-analysis.md -->
-
-**dok_id**: HD10446 | **Type**: Interpellation | **Filed**: 2026-04-22
-**Analyst**: James Pether Sörling | **Source authority**: [A1] riksdagen.se direct retrieval
 
 ---
 
@@ -1510,8 +1492,6 @@ flowchart TD
 
 ---
 
-**Comparator set**: Denmark (Nordic peer), Germany (EU large economy), United Kingdom (non-EU Westminster model)
-
 ---
 
 ### Comparative Framework
@@ -1586,8 +1566,6 @@ flowchart LR
 
 **Key difference**: 1994 crisis was far more severe (banking system collapse, currency peg collapse). 2026 context is inflationary pressure post-COVID/Ukraine, not systemic financial crisis. The relief measure's electoral effectiveness is therefore less certain to be overwhelmed by wider crisis dynamics.
 
-**Confidence**: [B2] — historical parallel based on secondary sources; direct documentation available in Riksdagsbiblioteket
-
 ---
 
 ### Parallel 2: 2018 SD Accountability Interpellations Against Löfven Government
@@ -1601,8 +1579,6 @@ flowchart LR
 
 **Key difference**: SD in 2018 targeted Andersson on immigration/costs — a domain where SD had comparative advantage. S in 2026 targets Svantesson on labour market exploitation and welfare fraud — a domain where S traditionally has credibility. S's strategic positioning is arguably stronger than SD's was in 2018 on these issues.
 
-**Confidence**: [B2] — interpellation records available in riksdagen.se but specific 2018 cluster not independently verified in this run
-
 ---
 
 ### Parallel 3: 2010 Reinfeldt Alliansen Legislative Sprint
@@ -1615,8 +1591,6 @@ flowchart LR
 - Coalition unity maintained through spring ↔ Tidö coalition showing no internal splits
 
 **Key difference**: 2010 Alliansen had a more unified single economic narrative ("the work-first society") than the current Tidö coalition which spans from nationalist-conservative (SD) to liberal (L) on social policy.
-
-**Confidence**: [B2] — parallel based on well-documented 2010 campaign record
 
 ---
 

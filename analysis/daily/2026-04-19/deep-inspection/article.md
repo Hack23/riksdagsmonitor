@@ -5,7 +5,7 @@ date: 2026-04-19
 subfolder: deep-inspection
 slug: 2026-04-19-deep-inspection
 source_folder: analysis/daily/2026-04-19/deep-inspection
-generated_at: 2026-04-27T16:24:08.401Z
+generated_at: 2026-04-27T16:35:06.855Z
 language: en
 layout: article
 ---
@@ -134,8 +134,6 @@ Use this guide to read the article as a political-intelligence product rather th
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/README.md) · [Synthesis](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/synthesis-summary.md) · [Significance](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/swot-analysis.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/risk-assessment.md) · [Threat](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/threat-analysis.md) · [Stakeholders](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/stakeholder-perspectives.md) · [Scenarios](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/scenario-analysis.md) · [Comparative](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/comparative-international.md) · [Cross-References](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/cross-reference-map.md) · [Classification](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/classification-results.md) · [Methodology Reflection](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/methodology-reflection.md) · [Data Manifest](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/data-download-manifest.md) · [HD03231 L3 analysis](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/documents/HD03231-analysis.md)
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-05-03 or event-driven (Lagrådet yttrande, SÄPO bulletin, Baltic cable incident)
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/synthesis-summary.md -->
@@ -478,8 +476,6 @@ Sweden becomes a **founding member** of the world's first dedicated tribunal for
 
 **Electoral implications**: HD03231 is not a polarising issue like KU33 (press freedom). It is a **unifying issue** that serves government narrative of responsible international leadership. Risk: disinformation-driven fatigue could make it mildly polarising by election day (Sep 2026).
 
-**Confidence**: HIGH for support; MEDIUM for durability under sustained Russian disinformation campaign.
-
 ---
 
 ### 🏛️ 2. Government Coalition (M / KD / L)
@@ -704,8 +700,6 @@ flowchart TD
 - Defence-industry Ukraine procurement pipeline continues; Saab Gripen E/F wins one additional export letter of intent in 2026 `[MEDIUM]`
 - R1 residual risk drifts down to **12/25** by end of 2027 if no operational incident `[MEDIUM]`
 
-**Confidence**: MEDIUM-HIGH — this is the central projection reflecting base rates of Russian retaliation against aggression-accountability actions.
-
 ---
 
 #### 🔵 BULL — "Ratified + Security Remediation Package" (P = 0.22)
@@ -734,8 +728,6 @@ flowchart TD
 - Defence-industry secondary benefit: CNI hardening contracts (Ericsson, Fortum Sverige, Saab cyber) `[MEDIUM]`
 - Article should highlight this as the **policy remediation pathway** — it is not guaranteed, but it is the highest-impact achievable upgrade
 
-**Confidence**: MEDIUM — requires opposition policy entrepreneurship OR government self-correction; both are possible but not highly likely.
-
 ---
 
 #### 🔴 BEAR — "Operational Cyber Incident Before Tribunal Opens" (P = 0.18)
@@ -760,8 +752,6 @@ flowchart TD
 - Defence-commission-style review commissioned; results report in 2027 with policy recommendations
 - Public narrative becomes "we were warned; we did not act" — political accountability falls on whoever held the JU/UD/defence portfolios at the time
 - Article should treat this scenario as the **motivating bear-case** for why the executive-brief section "Three Decisions" rates SÄPO/NCSC/MSB posture as immediate
-
-**Confidence**: MEDIUM — consistent with Russian pattern; specific targeting vector and timing are uncertain.
 
 ---
 
@@ -879,8 +869,6 @@ If the following signals fire, update priors as shown:
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/README.md) · [Executive Brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/executive-brief.md) · [Synthesis](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/synthesis-summary.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/risk-assessment.md) · [Threat](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/threat-analysis.md) · [Methodology Reflection](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/methodology-reflection.md)
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-05-03 or event-driven (first Lagrådet yttrande or SÄPO bulletin)
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/risk-assessment.md -->
@@ -1811,8 +1799,6 @@ This comparative-international file aligns with and cites:
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-05-03 · **Data freshness**: World Bank WDI 2024 edition · SIPRI 2024 edition · NATO 2024–25 expenditure reports
-
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/classification-results.md -->
 
@@ -2160,8 +2146,6 @@ Stored in [`economic-data.json`](https://github.com/Hack23/riksdagsmonitor/blob/
 - ✅ Live MCP data source (no fabrication, no cached-data reuse beyond documented sibling-run citations)
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-05-03 or event-driven · **Methodology**: `ai-driven-analysis-guide.md` v5.1
 
 ## Article Sources
 

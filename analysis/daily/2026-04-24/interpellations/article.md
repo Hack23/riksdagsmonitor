@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: interpellations
 slug: 2026-04-24-interpellations
 source_folder: analysis/daily/2026-04-24/interpellations
-generated_at: 2026-04-27T16:24:08.498Z
+generated_at: 2026-04-27T16:35:06.978Z
 language: en
 layout: article
 ---
@@ -220,8 +220,6 @@ Consistent with `historical-parallels.md` pattern of pre-election S wedge campai
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/significance-scoring.md -->
 
-**Method**: DIW weighting (Data-Importance-Weight) per [`ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md) §DIW.
-
 ### Ranking
 
 | Rank | dok_id | Title (shortened) | DIW | Tier | Rationale |
@@ -292,8 +290,6 @@ flowchart LR
 
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/media-framing-analysis.md -->
-
-**Subject**: Likely media frames for HD10447 and the cluster campaign.
 
 ### Frame candidates
 
@@ -369,8 +365,6 @@ Legend (line order): A (S-frame) · B (Tidö-frame) · C (wonkish) · D (compara
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/stakeholder-perspectives.md -->
 
-**Subject**: HD10447 *Borttagandet av ersättningen för höga sjuklönekostnader*. **Lens**: 6-lens stakeholder matrix per [`stakeholder-impact.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/stakeholder-impact.md).
-
 ### 6-lens matrix
 
 | Lens | Stakeholder | Position | Influence | Evidence |
@@ -435,8 +429,6 @@ flowchart LR
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/forward-indicators.md -->
 
-**Purpose**: Dated, observable indicators that will update probability estimates across scenarios. 4 horizons: 72h · week · month · election.
-
 ### Horizon 1 — Next 72h (through 2026-04-27)
 
 1. **2026-04-25**: Additional S interpellation on labour-cost or SME theme filed. (Tests H1 coordinated campaign.) Source: data.riksdagen.se/dokumentstatus daily poll.
@@ -497,8 +489,6 @@ flowchart LR
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/scenario-analysis.md -->
-
-**Subject**: Possible outcomes from HD10447 between 2026-05-07 (SISVA) and the 2026-09-13 general election. **Method**: 4 distinct scenarios, probabilities sum to 100%, leading indicator per scenario.
 
 ### Scenario 1 — "Defensive defend" (P = 50%)
 
@@ -576,8 +566,6 @@ graph TD
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/risk-assessment.md -->
-
-**Subject**: Risks triggered by HD10447 and the wider S-opposition interpellation campaign. **Method**: 5-dimension register (Political / Economic / Institutional / Social / Reputational), L × I scoring.
 
 ### Risk register
 
@@ -718,10 +706,6 @@ quadrantChart
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/threat-analysis.md -->
-
-**Frame**: Political-threat taxonomy applied to HD10447 as an opposition accountability instrument. **Method**: [`political-threat-framework.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-threat-framework.md) + lightweight MITRE-style TTP mapping for political action.
-
-**Overall Threat Level**: MEDIUM · **Severity**: MEDIUM · **Confidence**: MEDIUM (A2 single-source IP filing, dated 2026-05-07 floor-debate window observable).
 
 > **Scope note**: "Threat" in this political intelligence context means *actions that may degrade the governing coalition's electoral and legislative standing*, not cyber/physical threats. The subject is a legitimate, constitutionally-sanctioned instrument (interpellation). This analysis is descriptive, neutral, and public-source only.
 
@@ -965,8 +949,6 @@ If KD drops below 4%, entire Tidö coalition math collapses (no cabinet). This m
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/coalition-mathematics.md -->
 
-**Frame**: Current Riksdag (2022–2026) 349 seats. Tidö = M + SD + KD + L. Red-green opposition = S + MP + V + C.
-
 ### Current seat distribution (post-2022 val, adjusted through 2026-04)
 
 | Party | Seats | Bloc |
@@ -1079,8 +1061,6 @@ graph TB
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/voter-segmentation.md -->
 
-**Question**: Which voter segments does HD10447 move, and how much?
-
 ### Primary segments
 
 | Segment | Size (eligible) | 2022 vote split | Relevance to HD10447 | Est. movement |
@@ -1137,10 +1117,6 @@ Segment sizes from SCB 2025 labour-market tables (A1). 2022 vote splits from Val
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/comparative-international.md -->
 
-**Subject**: How comparable jurisdictions treat SME high-sick-pay-cost reimbursement. **Method**: Outside-In comparator analysis per [`ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md).
-
-**Comparator set**: Denmark, Finland, Norway, Germany, EU baseline (Nordic + EU minimum).
-
 ### Comparator table
 
 | Jurisdiction | Equivalent scheme | Current status | Employer cost share | Primary source |
@@ -1196,8 +1172,6 @@ graph TB
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/historical-parallels.md -->
-
-**Question**: What past episodes most closely resemble HD10447 + cluster, and what did they predict?
 
 ### Parallel 1 — 2021-22 S wedge campaign on pensioners' tax (pre-2022 election)
 
@@ -1269,8 +1243,6 @@ graph LR
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/implementation-feasibility.md -->
 
-**Subject**: How feasible is partial or full reinstatement of ersättning för höga sjuklönekostnader, if a future government chose to do so?
-
 ### Administrative readiness
 
 - **Legacy system**: Försäkringskassan administered the scheme 2016–2024. Infrastructure de-commissioned but **not fully dismantled**; code paths and reporting schemas are archived. Reactivation estimate: 6–9 months from political decision to operational payout.
@@ -1335,8 +1307,6 @@ flowchart LR
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/devils-advocate.md -->
-
-**Purpose**: Challenge the lead framing via ACH (Analysis of Competing Hypotheses). **Reference**: [`ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md) §Red-team.
 
 ### Competing hypotheses
 
@@ -1409,8 +1379,6 @@ Legend: `++` strong supporting · `+` weak supporting · `0` neutral · `−` co
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/classification-results.md -->
 
-**Method**: 7-dimension political-classification per [`political-classification-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-classification-guide.md).
-
 ### HD10447 — Borttagandet av ersättningen för höga sjuklönekostnader
 
 | Dimension | Value | Evidence |
@@ -1475,8 +1443,6 @@ graph TD
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/cross-reference-map.md -->
-
-**Purpose**: Map HD10447 to adjacent policy clusters, legislative chains, and coordinated-activity patterns.
 
 ### Policy clusters
 
@@ -1562,8 +1528,6 @@ flowchart LR
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/methodology-reflection.md -->
 
-**Purpose**: Audit the analytical process itself against ICD 203 and OSINT tradecraft canon; log what worked, what didn't, and concrete improvements.
-
 ### ICD 203 audit
 
 | ICD 203 standard | How addressed | Gap |
@@ -1632,12 +1596,6 @@ Probabilities expressed both as percentages (50 / 20 / 20 / 10) and anchored to 
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/data-download-manifest.md -->
-
-**Generated**: 2026-04-24 01:36 UTC
-**Data Sources**: get_interpellationer, get_dokument_innehall
-**Documents Downloaded**: 30
-**Documents Selected (date-filtered)**: 1
-**Produced By**: download-parliamentary-data script (data download only)
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
 > All political intelligence analysis (classification, risk assessment, SWOT,

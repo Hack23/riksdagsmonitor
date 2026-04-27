@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: interpellations
 slug: 2026-04-26-interpellations
 source_folder: analysis/daily/2026-04-26/interpellations
-generated_at: 2026-04-27T16:24:08.534Z
+generated_at: 2026-04-27T16:35:07.022Z
 language: en
 layout: article
 ---
@@ -27,13 +27,6 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief.md -->
-
-**Author**: James Pether Sörling  
-**Date**: 2026-04-26  
-**Article Type**: Interpellations  
-**Classification**: PUBLIC — GDPR Art. 9(2)(e,g)  
-**Confidence**: B2 (Credible source, probably true)  
-**Run ID**: news-interpellations-2026-04-26
 
 ---
 
@@ -99,11 +92,6 @@ Data sourced from Riksdagen API (riksdag-regering MCP, rm=2025/26, doktyp=ip). D
 
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/intelligence-assessment.md -->
-
-**Author**: James Pether Sörling  
-**Classification**: PUBLIC — GDPR Art. 9(2)(e,g)  
-**Confidence**: B2 (Admiralty Code)  
-**ICD 203 Standards**: Applied
 
 ---
 

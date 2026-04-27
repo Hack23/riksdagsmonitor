@@ -5,7 +5,7 @@ date: 2026-04-19
 subfolder: realtime-1219
 slug: 2026-04-19-realtime-1219
 source_folder: analysis/daily/2026-04-19/realtime-1219
-generated_at: 2026-04-27T16:24:08.415Z
+generated_at: 2026-04-27T16:35:06.877Z
 language: en
 layout: article
 ---
@@ -138,17 +138,8 @@ Per-document: [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/bl
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-26 · **Methodology**: `ai-driven-analysis-guide.md` v5.1 + DIW v1.0
-
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/synthesis-summary.md -->
-
-**SYN-ID**: SYN-20260419-1219
-**Date**: 2026-04-19
-**Analyst**: James Pether Sörling
-**Version**: 3.0 (Pass 3 — reference-grade extension: red-team box, analyst-confidence meter, ACH anchor)
-**Confidence**: HIGH on lead selection · MEDIUM on post-election outcomes
-**Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1 + DIW v1.0
 
 ### Intelligence Dashboard
 
@@ -261,11 +252,6 @@ Linked from [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/b
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/significance-scoring.md -->
 
-**SIG-ID**: SIG-20260419-1219  
-**Date**: 2026-04-19  
-**Analyst**: James Pether Sörling  
-**Version**: 2.0 (Pass 2 — fully enriched)
-
 ### Democratic-Impact Weighting (DIW) Scoring Matrix
 
 | # | dok_id | Document | DI (30%) | ParSig (15%) | PolImp (15%) | PubInt (15%) | Urgency (15%) | Cross-party (10%) | **DIW Score** |
@@ -344,11 +330,6 @@ This sensitivity confirms the article should treat BOTH stories as co-leads.
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/stakeholder-perspectives.md -->
-
-**STA-ID**: STA-20260419-1219  
-**Date**: 2026-04-19  
-**Analyst**: James Pether Sörling  
-**Version**: 2.0 (Pass 2 enriched — 8 stakeholder groups + named actors)
 
 ### Impact Radar
 
@@ -734,15 +715,8 @@ Aggregating H1 + H2 + modified confirmations gives the `executive-brief.md` seco
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-05-01 (after KU33 first reading + Lagrådet yttrande) · **Methodology**: `ai-driven-analysis-guide.md` v5.1 §Rule 6 (L3 tier) + ACH doctrine
-
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/risk-assessment.md -->
-
-**RSK-ID**: RSK-20260419-1219
-**Date**: 2026-04-19
-**Analyst**: James Pether Sörling
-**Version**: 3.0 (Pass 3 — reference-grade extension: 10 risks, interconnection graph, ALARP mapping)
 
 ### Risk Heat Map
 
@@ -866,11 +840,6 @@ Given a new signal at time t, update the posterior probability of each risk:
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/swot-analysis.md -->
-
-**SWT-ID**: SWT-20260419-1219
-**Date**: 2026-04-19
-**Analyst**: James Pether Sörling
-**Version**: 3.0 (Pass 3 — reference-grade extension: full TOWS matrix, cluster-specific quadrants, Mermaid mindmap retained)
 
 ### SWOT Quadrant Mapping
 
@@ -1020,12 +989,6 @@ SWOT entries mapped to influence network in [`stakeholder-perspectives.md`](http
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/threat-analysis.md -->
-
-**THR-ID**: THR-20260419-1219
-**Date**: 2026-04-19
-**Analyst**: James Pether Sörling
-**Version**: 3.0 (Pass 3 — reference-grade extension: Attack Tree, Diamond Model, STRIDE pass, MITRE-TTP)
-**Confidence**: MEDIUM-HIGH
 
 ### Threat Taxonomy
 
@@ -1511,13 +1474,6 @@ This is the second time a sitting Swedish monarch has made a major foreign polic
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/comparative-international.md -->
 
-**CMP-ID**: CMP-20260419-1219
-**Date**: 2026-04-19
-**Analyst**: James Pether Sörling
-**Version**: 1.0 (Tier-C reference-grade extension)
-**Scope**: Benchmarks KU33 (seizure transparency), KU32 (accessibility), and HD03231 + HD03232 (Ukraine accountability) against ≥ 5 comparator jurisdictions per cluster
-**Data sources**: Council of Europe (Venice Commission, ECHR), RSF World Press Freedom Index 2025, OECD Open Government Index, Euroclear public disclosures, Eurostat, World Bank, national statutes
-
 ---
 
 ### 🌍 Jurisdiction Panel
@@ -1680,15 +1636,8 @@ The panel is constructed per cluster:
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-05-15 · **Methodology**: `ai-driven-analysis-guide.md` v5.1 §Rule 8 (International benchmarking — ≥ 5 jurisdictions per cluster)
-
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/classification-results.md -->
-
-**CLS-ID**: CLS-20260419-1219  
-**Date**: 2026-04-19  
-**Analyst**: James Pether Sörling  
-**Version**: 2.0 (Pass 2 enriched)
 
 ### Sensitivity Decision Framework
 
@@ -1769,11 +1718,6 @@ No CIA-triad rating change is proposed by this run; existing `CLASSIFICATION.md`
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/cross-reference-map.md -->
-
-**XRF-ID**: XRF-20260419-1219  
-**Date**: 2026-04-19  
-**Analyst**: James Pether Sörling  
-**Version**: 2.0 (Pass 2 enriched)
 
 ### Document Relationships
 
@@ -1877,12 +1821,6 @@ Where 1219 **diverges** from 1434:
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/methodology-reflection.md -->
-
-**MTH-ID**: MTH-20260419-1219
-**Date**: 2026-04-19
-**Analyst**: James Pether Sörling
-**Version**: 1.0 (Tier-C reference-grade extension)
-**Purpose**: Self-audit of the analytic tradecraft applied in realtime-1219, upstream watchpoint reconciliation across 5 sibling runs, and doctrine-level recommendations for codification into `analysis/methodologies/ai-driven-analysis-guide.md` and `.github/aw/SHARED_PROMPT_PATTERNS.md`.
 
 ---
 
@@ -2052,8 +1990,6 @@ Trigger a new synthesis for this cluster if any of the following occur within 14
 6. Any ECHR complaint filed referencing TF amendment
 
 ---
-
-**Classification**: Public · **Methodology**: `ai-driven-analysis-guide.md` v5.1 §Rule 7 (self-audit) + §Rule 8 (international benchmarking) · **Next review**: 2026-05-01
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/data-download-manifest.md -->

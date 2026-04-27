@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: evening-analysis
 slug: 2026-04-26-evening-analysis
 source_folder: analysis/daily/2026-04-26/evening-analysis
-generated_at: 2026-04-27T16:24:08.530Z
+generated_at: 2026-04-27T16:35:07.016Z
 language: en
 layout: article
 ---
@@ -773,10 +773,6 @@ This is a KD-driven delivery item. The d/a analysis (devils-advocate.md) notes t
 ### HD10448
 <!-- source: documents/HD10448-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD10448-analysis.md -->
 
-**dok_id**: HD10448  
-**Source**: [data.riksdagen.se/dokument/HD10448](https://data.riksdagen.se/dokument/HD10448.html) [A1]  
-**DIW Score**: 20 — L0 Administrative  
-
 ### Summary
 
 Secondary administrative document — committee referral or minor measure in the April 2026 tabling window. Full content not retrieved in data pipeline (secondary document classification).
@@ -787,10 +783,6 @@ No independent intelligence value. Context contributor to building-process refor
 
 ### HD11747
 <!-- source: documents/HD11747-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11747-analysis.md -->
-
-**dok_id**: HD11747  
-**Source**: [data.riksdagen.se/dokument/HD11747](https://data.riksdagen.se/dokument/HD11747.html) [A1]  
-**DIW Score**: 20 — L0 Administrative  
 
 ### Summary
 
@@ -803,10 +795,6 @@ No independent intelligence value. Supporting context for CU domain.
 ### HD11748
 <!-- source: documents/HD11748-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11748-analysis.md -->
 
-**dok_id**: HD11748  
-**Source**: [data.riksdagen.se/dokument/HD11748](https://data.riksdagen.se/dokument/HD11748.html) [A1]  
-**DIW Score**: 20 — L0 Administrative  
-
 ### Summary
 
 Secondary administrative document — committee referral in the April 2026 tabling window.
@@ -817,10 +805,6 @@ No independent intelligence value. Supporting context for SoU domain.
 
 ### HD11749
 <!-- source: documents/HD11749-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11749-analysis.md -->
-
-**dok_id**: HD11749  
-**Source**: [data.riksdagen.se/dokument/HD11749](https://data.riksdagen.se/dokument/HD11749.html) [A1]  
-**DIW Score**: 20 — L0 Administrative  
 
 ### Summary
 

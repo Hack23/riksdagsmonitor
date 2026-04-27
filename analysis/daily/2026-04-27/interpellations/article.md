@@ -5,7 +5,7 @@ date: 2026-04-27
 subfolder: interpellations
 slug: 2026-04-27-interpellations
 source_folder: analysis/daily/2026-04-27/interpellations
-generated_at: 2026-04-27T16:24:08.580Z
+generated_at: 2026-04-27T16:35:07.067Z
 language: en
 layout: article
 ---
@@ -250,10 +250,6 @@ mindmap
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/significance-scoring.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: DIW (Decision Impact Weight) framework — Distance, Impact, Window
-
 ---
 
 ### DIW Scoring Methodology
@@ -340,10 +336,6 @@ graph LR
 
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/media-framing-analysis.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Per-party framing + press quadrant analysis
 
 ---
 
@@ -435,10 +427,6 @@ xychart-beta
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/stakeholder-perspectives.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Framework**: 6-lens stakeholder matrix with influence network
-
 ---
 
 ### 6-Lens Stakeholder Matrix
@@ -514,10 +502,6 @@ Ebba Busch (KD) is interpellated by **both** an opposition MP (Lundqvist/S, HD10
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/forward-indicators.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: ≥10 dated indicators across 4 horizons (72h / week / month / election)
 
 ---
 
@@ -652,10 +636,6 @@ timeline
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/scenario-analysis.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Three-scenario probability analysis with leading indicators
-
 ---
 
 ### Scenario Framework
@@ -754,10 +734,6 @@ timeline
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/risk-assessment.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Framework**: 5-dimension risk register, L×I scoring, cascading chains
-
 ---
 
 ### Risk Register
@@ -832,10 +808,6 @@ xychart-beta
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/swot-analysis.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Framework**: Political SWOT with TOWS matrix
-
 ---
 
 ### SWOT Matrix — Government Position
@@ -898,10 +870,6 @@ quadrantChart
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/threat-analysis.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Framework**: Political Threat Taxonomy, attack tree analysis
 
 ---
 
@@ -1258,10 +1226,6 @@ Jessica Rodén (S) challenges Social Affairs Minister Tenje on the abolition of 
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/election-2026-analysis.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Election Date**: General election due September 2026
-
 ---
 
 ### Current Seat Projection (Riksdag 349 seats, majority = 175)
@@ -1354,10 +1318,6 @@ xychart-beta
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/coalition-mathematics.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Current seat map, pivotal vote analysis, Tidö coalition stability assessment
 
 ---
 
@@ -1470,10 +1430,6 @@ The Tidö coalition's survival depends on SD's continued support with a **1-seat
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/voter-segmentation.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Demographic + regional + ideological impact segmentation
-
 ---
 
 ### Segmentation Framework
@@ -1575,13 +1531,7 @@ xychart-beta
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/comparative-international.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Outside-In analysis, ≥2 comparator jurisdictions
-
 ---
-
-**Comparator set**: Norway (NO), Germany (DE), Finland (FI), Denmark (DK)
 
 ---
 
@@ -1660,10 +1610,6 @@ xychart-beta
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/historical-parallels.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Historical case analysis with similarity scoring
 
 ---
 
@@ -1746,10 +1692,6 @@ xychart-beta
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/implementation-feasibility.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Delivery risk view per interpellation demand
 
 ---
 
@@ -1861,10 +1803,6 @@ quadrantChart
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/devils-advocate.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Method**: Analysis of Competing Hypotheses (ACH) matrix with ≥3 competing hypotheses
 
 ---
 
@@ -1978,10 +1916,6 @@ quadrantChart
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/classification-results.md -->
 
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Framework**: 7-dimension political classification
-
 ---
 
 ### 7-Dimension Classification Per Document
@@ -2088,10 +2022,6 @@ graph TD
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/cross-reference-map.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Framework**: Policy clusters, legislative chains, coordinated-activity patterns
 
 ---
 

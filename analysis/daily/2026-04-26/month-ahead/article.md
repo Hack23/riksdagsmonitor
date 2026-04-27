@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: month-ahead
 slug: 2026-04-26-month-ahead
 source_folder: analysis/daily/2026-04-26/month-ahead
-generated_at: 2026-04-27T16:24:08.538Z
+generated_at: 2026-04-27T16:35:07.026Z
 language: en
 layout: article
 ---
@@ -27,12 +27,6 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief.md -->
-
-**Author**: James Pether Sörling  
-**Date**: 2026-04-26  
-**Classification**: PUBLIC — GDPR Art. 9(2)(e,g) applied  
-**Confidence**: B2 (reliable source, probably true)  
-**Analysis depth**: standard  
 
 ---
 
@@ -180,8 +174,6 @@ quadrantChart
 
 **The Tidö coalition will complete its core pre-election legislative agenda by mid-June 2026.**
 
-Confidence: **HIGH** [B2 — reliable source, probably true]
-
 Evidence: 276 propositions filed in 2025/26, coalition retains parliamentary majority, all four coalition parties have formally supported key JuU reform package (HD01JuU10, HD03246, HD03252). Historical precedent: Swedish governments rarely fail to pass their own legislative proposals.
 
 ---
@@ -189,8 +181,6 @@ Evidence: 276 propositions filed in 2025/26, coalition retains parliamentary maj
 ### Key Judgment 2 (KJ-2)
 
 **Riksrevisionen's police reform evaluation (HD01JuU31) will become a major S election campaign tool.**
-
-Confidence: **VERY HIGH** [A2 — very reliable source, probably true]
 
 Evidence: HD01JuU31 explicitly states "Polismyndigheten inte arbetat tillräckligt effektivt" — this is institutional verification, not opposition spin. S have deployed Riksrevisionen findings in previous elections (2014, 2018). The 448 interpellations filed in 2025/26 (data.riksdagen.se) demonstrate opposition is maximally active.
 
@@ -200,8 +190,6 @@ Evidence: HD01JuU31 explicitly states "Polismyndigheten inte arbetat tillräckli
 
 **The September 2026 election outcome is genuinely uncertain — both major blocs have a realistic path to forming government.**
 
-Confidence: **MEDIUM** [C3 — fairly reliable, possibly true]
-
 Evidence: Current polling shows rough parity (S+MP+V+C vs M+SD+KD+L). The large number of undecided voters (historically 15–20% of Swedish electorate in spring before September election) creates genuine uncertainty. The legislative record cuts both ways: coalition can claim delivery; opposition can claim harm. [Evidence: riksdagen.se — 448 interpellations, 276 propositions, cross-party opposition formation]
 
 ---
@@ -210,8 +198,6 @@ Evidence: Current polling shows rough parity (S+MP+V+C vs M+SD+KD+L). The large 
 
 **The EU banking package (HD03253) will be implemented on schedule with no major domestic political controversy.**
 
-Confidence: **HIGH** [A2]
-
 Evidence: HD03253 is an EU implementation obligation (CRR3/CRD6); no credible parliamentary opposition to EU banking regulation transposition identified. Finance Committee (FiU) has traditionally been consensus-oriented on financial stability legislation.
 
 ---
@@ -219,8 +205,6 @@ Evidence: HD03253 is an EU implementation obligation (CRR3/CRD6); no credible pa
 ### Key Judgment 5 (KJ-5)
 
 **Sweden's accession to Ukraine accountability mechanisms (HD03231, HD03232) will proceed without significant domestic opposition.**
-
-Confidence: **VERY HIGH** [A2]
 
 Evidence: HD03231 (aggression tribunal) and HD03232 (compensation commission) have broad cross-party support. Foreign policy consensus on Ukraine support transcends coalition/opposition divide. Utrikesdepartementet Minister Malmer Stenergard has bipartisan credibility on Ukraine.
 
@@ -765,11 +749,6 @@ graph TD
 ### HD01CU24
 <!-- source: documents/HD01CU24-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/documents/HD01CU24-analysis.md -->
 
-**Dok ID**: HD01CU24  
-**Type**: Betänkande (CU — Civil Committee)  
-**Subject**: Construction and planning regulations  
-**Date**: 2026-04-26  
-
 ### Intelligence Summary
 
 HD01CU24 is the Civil Committee's betänkande on construction regulations reform. This relates to plan- och bygglagen (PBL) amendments aimed at reducing administrative burden for housing construction in Sweden's ongoing housing shortage.
@@ -798,11 +777,6 @@ MEDIUM CONFIDENCE: HD01CU24 is a technical legislative reform with low electoral
 
 ### HD01JuU10
 <!-- source: documents/HD01JuU10-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/documents/HD01JuU10-analysis.md -->
-
-**Dok ID**: HD01JuU10  
-**Type**: Betänkande (JuU — Justice Committee)  
-**Subject**: New weapons law (vapenlag)  
-**Date**: 2026-04-26  
 
 ### Intelligence Summary
 
@@ -845,11 +819,6 @@ HIGH CONFIDENCE: HD01JuU10 will activate a mobilized rural/hunting-community opp
 
 ### HD01JuU31
 <!-- source: documents/HD01JuU31-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/documents/HD01JuU31-analysis.md -->
-
-**Dok ID**: HD01JuU31  
-**Type**: Betänkande (JuU — Justice Committee)  
-**Subject**: Police 2.0 reform — Riksrevisionen evaluation  
-**Date**: 2026-04-26  
 
 ### Intelligence Summary
 
@@ -897,11 +866,6 @@ See forward-indicators.md: Indicator 1 (Police 2.0 progress report), Indicator 4
 ### HD01SoU25
 <!-- source: documents/HD01SoU25-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/documents/HD01SoU25-analysis.md -->
 
-**Dok ID**: HD01SoU25  
-**Type**: Betänkande (SoU — Social Committee)  
-**Subject**: Children's rights in conflict families  
-**Date**: 2026-04-26  
-
 ### Intelligence Summary
 
 HD01SoU25 is the Social Committee's betänkande on protecting children's rights and welfare in families experiencing conflict (including domestic violence, custody disputes, and social services interventions). This relates to amendments in socialtjänstlagen and föräldrabalken.
@@ -931,11 +895,6 @@ MEDIUM CONFIDENCE: HD01SoU25 will pass with broad support. Its primary significa
 ### HD10448
 <!-- source: documents/HD10448-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/documents/HD10448-analysis.md -->
 
-**Dok ID**: HD10448  
-**Type**: Interpellation (or proposition — confirm from manifest)  
-**Subject**: TBD (downloaded; subject from dok_id pattern suggests HD10-series = interpellation or proposition)  
-**Date**: 2026-04-26  
-
 ### Intelligence Summary
 
 HD10448 was included in the 2026-04-26 download based on date-filtered selection. The dok_id prefix HD10 suggests a proposition or related parliamentary item from riksmöte. Full subject requires full-text retrieval; the following is based on manifest and dok_id pattern analysis.
@@ -960,11 +919,6 @@ This gap is reflected in methodology-reflection.md §Evidence Sufficiency — do
 
 ### HD11747
 <!-- source: documents/HD11747-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/documents/HD11747-analysis.md -->
-
-**Dok ID**: HD11747  
-**Type**: Interpellation  
-**Subject**: Government accountability — interpellation cluster (see cross-reference-map.md)  
-**Date**: 2026-04-26  
 
 ### Intelligence Summary
 
@@ -995,11 +949,6 @@ See cross-reference-map.md Cluster 3 (Parliamentary Accountability Intensificati
 ### HD11748
 <!-- source: documents/HD11748-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/documents/HD11748-analysis.md -->
 
-**Dok ID**: HD11748  
-**Type**: Interpellation  
-**Subject**: Government accountability — interpellation cluster (see cross-reference-map.md)  
-**Date**: 2026-04-26  
-
 ### Intelligence Summary
 
 HD11748 is part of the interpellation cluster downloaded in the 2026-04-26 run. Interpellation series HD117xx are filed by opposition MPs (subject confirmed via dok_id pattern analysis — HD11 series = interpellation filed in riksmöte 2025/26). These are part of the pre-election accountability scrutiny intensification identified in cross-reference-map.md.
@@ -1028,11 +977,6 @@ See cross-reference-map.md Cluster 3 (Parliamentary Accountability Intensificati
 
 ### HD11749
 <!-- source: documents/HD11749-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/documents/HD11749-analysis.md -->
-
-**Dok ID**: HD11749  
-**Type**: Interpellation  
-**Subject**: Government accountability — interpellation cluster (see cross-reference-map.md)  
-**Date**: 2026-04-26  
 
 ### Intelligence Summary
 
@@ -1221,8 +1165,6 @@ pie title Current Seat Distribution (2022 Baseline)
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/comparative-international.md -->
 
 ### Comparator Set
-
-**Comparator set**: Norway, Denmark, Finland, Germany, Netherlands — Nordic peers + major EU member states with comparable parliamentary legislative patterns.
 
 ### Comparative Dimension 1: Pre-Election Legislative Sprints
 

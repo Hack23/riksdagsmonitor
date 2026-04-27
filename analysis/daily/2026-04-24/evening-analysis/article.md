@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: evening-analysis
 slug: 2026-04-24-evening-analysis
 source_folder: analysis/daily/2026-04-24/evening-analysis
-generated_at: 2026-04-27T16:24:08.493Z
+generated_at: 2026-04-27T16:35:06.972Z
 language: en
 layout: article
 ---
@@ -412,8 +412,6 @@ Three factors place today in the **top-5% of reporting-day signal density** for 
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/media-framing-analysis.md -->
 
-**Purpose**: Analyze how today's legislative batch is likely to be framed across major Swedish media categories and what this implies for narrative contestation.
-
 ### Expected framing by outlet category
 
 #### Public-service (SVT, SR, DN public-facing)
@@ -808,8 +806,6 @@ flowchart LR
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md -->
 
-**Framework**: 5-dimension risk register (Political × Legal × Operational × Financial × Reputational) with L×I (Likelihood × Impact) scoring on a 1–5 scale.
-
 ### Risk register (ranked by L×I)
 
 | ID | Risk | Dimensions | L | I | L×I | Mitigation / monitor | Linked dok_ids |
@@ -961,9 +957,6 @@ Actor of analysis: **The Tidö coalition government (M-KD-L + SD support party)*
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/threat-analysis.md -->
-
-**Framework**: Political-threat taxonomy + attack-tree per `ai-driven-analysis-guide.md §Step 8`.
-**Scope**: Threats to democratic accountability, institutional integrity, and rule-of-law durability exposed by today's legislative batch — not security threats to individuals or infrastructure.
 
 ### Threat taxonomy
 
@@ -1331,8 +1324,6 @@ Opposition (S+V+MP): 115+28+14 = **157** (below threshold, needs C)
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/voter-segmentation.md -->
 
-**Framework**: 7-segment post-2022-election taxonomy (refined by 2024 Eurobarometer + SCB socio-economic data).
-
 ### Segment matrix × today's issues
 
 | Segment | Size (est) | Core concerns | Today's issue relevance |
@@ -1407,9 +1398,6 @@ Today's battle lines favor S structurally (B + D + F are economy-responsive). Co
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/comparative-international.md -->
 
-**Comparator set**: Nordic + EU minimum (Denmark, Norway, Finland, Germany, Netherlands)
-**Framework**: Cross-country parallel-case analysis with normalization for political-system differences, per `ai-driven-analysis-guide.md §Step 9`.
-
 ### Comparator table — policy analogs to today's Swedish batch
 
 | SE policy | Closest comparator(s) | Parallel analogue | Status abroad | Lesson for Sweden |
@@ -1470,8 +1458,6 @@ Sweden's distinguishing feature in this reporting day is not any single policy �
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/historical-parallels.md -->
-
-**Purpose**: Place today's reporting signals in historical context — Swedish and Nordic parliamentary history, with disciplined analogical reasoning.
 
 ### Swedish historical parallels
 
@@ -1541,8 +1527,6 @@ Today's reporting day fits recurrent Swedish + Nordic patterns but with one dist
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/implementation-feasibility.md -->
-
-**Framework**: 4-dimension feasibility assessment (Operational × Fiscal × Legal × Political) per `ai-driven-analysis-guide.md §Step 7`.
 
 ### Feasibility matrix — top legislative items
 
@@ -1639,8 +1623,6 @@ The **opposition motion cluster** is structurally infeasible under current coali
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/devils-advocate.md -->
-
-**Framework**: Analysis of Competing Hypotheses (ACH) per Heuer, plus formal devil's-advocate challenge to the base narrative (ICD 203 Standard 9).
 
 ### The base narrative (what the synthesis claims)
 
@@ -1958,9 +1940,6 @@ Every forward indicator (F1–F20) in `forward-indicators.md` links to ≥ 1 PIR
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md -->
 
-**Purpose**: Self-audit against ICD 203 + Admiralty + WEP standards; explicit Methodology Improvements for next-cycle application.
-**Author**: James Pether Sörling
-
 ### Compliance matrix — tradecraft standards applied
 
 | Standard | Requirement | Where applied in this artifact set | Status |
@@ -2061,12 +2040,6 @@ Today I used Nordic + EU comparators (Denmark 2019, Germany 2024, etc.) qualitat
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/data-download-manifest.md -->
-
-**Workflow**: `news-evening-analysis` · **Run ID**: 24906725202 · **UTC**: 2026-04-24T19:00:52Z
-**Requested date**: 2026-04-24 · **Effective date**: 2026-04-24 · **Window**: today + 7-day lookback for sibling integration
-
-**Author**: James Pether Sörling · **Classification**: OPEN · Public sources only (GDPR Art. 9(2)(e,g))
-**Confidence**: HIGH (A1) — primary Riksdag open-data via MCP `get_sync_status` returned `status: live` at 19:00:52Z
 
 ### MCP health at start
 

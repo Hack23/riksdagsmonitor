@@ -5,7 +5,7 @@ date: 2026-04-25
 subfolder: month-ahead
 slug: 2026-04-25-month-ahead
 source_folder: analysis/daily/2026-04-25/month-ahead
-generated_at: 2026-04-27T16:24:08.513Z
+generated_at: 2026-04-27T16:35:06.995Z
 language: en
 layout: article
 ---
@@ -76,8 +76,6 @@ flowchart LR
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/synthesis-summary.md -->
-
-**Date**: 2026-04-25 | **Author**: James Pether Sörling | **Tier**: Tier-C Month-Ahead
 
 ### Lead Intelligence Picture
 
@@ -825,8 +823,6 @@ The most credible threat combination is: **economic data shock (T-X01/T-E01) + o
 ### HD03100
 <!-- source: documents/HD03100-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/documents/HD03100-analysis.md -->
 
-**dok_id**: HD03100 | **Type**: Proposition | **Level**: L3 | **Date**: 2026-04
-
 ### Document Summary
 The 2026 Spring Budget (Ekonomisk vårproposition) is the government's primary macroeconomic policy statement before the September 2026 election. It establishes the fiscal framework, growth projections, and spending priorities for 2026–2030.
 
@@ -856,8 +852,6 @@ HD03100 is the PIR-1 anchor: if Q1 GDP release (SCB, May 2026) confirms ≥1.5% 
 ### HD03231
 <!-- source: documents/HD03231-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/documents/HD03231-analysis.md -->
 
-**dok_id**: HD03231 | **Type**: Proposition | **Level**: L2 | **Date**: 2026-04
-
 ### Document Summary
 
 See significance-scoring.md for DIW ranking. This document is part of the April 2026 legislative sprint (riksmöte 2025/26).
@@ -875,8 +869,6 @@ Detailed analysis of this document is integrated into the Family A synthesis art
 
 ### HD03236
 <!-- source: documents/HD03236-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/documents/HD03236-analysis.md -->
-
-**dok_id**: HD03236 | **Type**: Ändringsbudget | **Level**: L3 | **Date**: 2026-04
 
 ### Document Summary
 An extra ändringsbudget providing emergency cost-of-living relief via fuel tax reductions and electricity/gas price support for households and businesses.
@@ -898,8 +890,6 @@ The H3 hypothesis (SD ultimatum) in devils-advocate.md finds its primary support
 ### HD03237
 <!-- source: documents/HD03237-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/documents/HD03237-analysis.md -->
 
-**dok_id**: HD03237 | **Type**: Proposition | **Level**: L2 | **Date**: 2026-04
-
 ### Document Summary
 
 See significance-scoring.md for DIW ranking. This document is part of the April 2026 legislative sprint (riksmöte 2025/26).
@@ -917,8 +907,6 @@ Detailed analysis of this document is integrated into the Family A synthesis art
 
 ### HD03238
 <!-- source: documents/HD03238-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/documents/HD03238-analysis.md -->
-
-**dok_id**: HD03238 | **Type**: Proposition | **Level**: L2 | **Date**: 2026-04
 
 ### Document Summary
 
@@ -938,8 +926,6 @@ Detailed analysis of this document is integrated into the Family A synthesis art
 ### HD03239
 <!-- source: documents/HD03239-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/documents/HD03239-analysis.md -->
 
-**dok_id**: HD03239 | **Type**: Proposition | **Level**: L2 | **Date**: 2026-04
-
 ### Document Summary
 
 See significance-scoring.md for DIW ranking. This document is part of the April 2026 legislative sprint (riksmöte 2025/26).
@@ -957,8 +943,6 @@ Detailed analysis of this document is integrated into the Family A synthesis art
 
 ### HD03240
 <!-- source: documents/HD03240-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/documents/HD03240-analysis.md -->
-
-**dok_id**: HD03240 | **Type**: Proposition | **Level**: L2+ | **Date**: 2026-04
 
 ### Document Summary
 Comprehensive legislation restructuring the Swedish electricity grid regulatory framework, including new balancing rules, consumer rights, and grid capacity planning mandates.
@@ -979,8 +963,6 @@ Svenska kraftnät has existing capacity. Primary risk is industry consultation p
 
 ### HD03246
 <!-- source: documents/HD03246-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/documents/HD03246-analysis.md -->
-
-**dok_id**: HD03246 | **Type**: Proposition | **Level**: L2 | **Date**: 2026-04
 
 ### Document Summary
 
@@ -1166,8 +1148,6 @@ pie title Voter Segment Targeting Reach
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/comparative-international.md -->
-
-**Comparator set**: Nordic peers (Denmark, Norway, Finland) + Germany + UK (post-Labour)
 
 ### Outside-In Framework
 

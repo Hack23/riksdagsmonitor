@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: motions
 slug: 2026-04-24-motions
 source_folder: analysis/daily/2026-04-24/motions
-generated_at: 2026-04-27T16:24:08.503Z
+generated_at: 2026-04-27T16:35:06.985Z
 language: en
 layout: article
 ---
@@ -900,8 +900,6 @@ The 9 propositions in one 72-hour motion window dilute media attention per bill 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/threat-analysis.md -->
 
-**Overall Threat Level**: HIGH · **Severity**: HIGH (T-4, T-7) / MEDIUM (T-1, T-2, T-3, T-5) / LOW (T-6) · **Confidence**: MEDIUM (B2 — multi-source motion-wave pattern, plausibility judgements per row).
-
 This analysis adopts the Political Threat Taxonomy — adversarial actors, techniques, and targets that could exploit or undermine the democratic process around this motion wave. **This is NOT political opposition research**; it is threat modelling against democratic legitimacy.
 
 ### Political Threat Taxonomy
@@ -1010,8 +1008,6 @@ quadrantChart
 ### HD024078
 <!-- source: documents/HD024078-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024078-analysis.md -->
 
-**dok_id**: HD024078 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024078.html) · **Party**: S · **Committee**: SoU · **Responds to**: Prop 216 · **Filed**: 2026-04-15
-
 ### Summary
 S motion demanding broader kommun-sektor consultation before any reform to medicinsk legitimationsprocess. Flags risk that the Tidö proposition moves too fast without workforce-pipeline data.
 
@@ -1037,8 +1033,6 @@ S motion demanding broader kommun-sektor consultation before any reform to medic
 ### HD024079
 <!-- source: documents/HD024079-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024079-analysis.md -->
 
-**dok_id**: HD024079 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024079.html) · **Party**: S · **Committee**: UU · **Responds to**: Prop 228 · **Filed**: 2026-04-15
-
 ### Summary
 S motion on proposed amendments to the swedish arms-export regime (prop 228). S frames as pragmatic support with amendment; not a ban.
 
@@ -1063,8 +1057,6 @@ S motion on proposed amendments to the swedish arms-export regime (prop 228). S 
 ### HD024080
 <!-- source: documents/HD024080-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024080-analysis.md -->
 
-**dok_id**: HD024080 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024080.html) · **Party**: S · **Committee**: AU · **Responds to**: Prop 222 · **Filed**: 2026-04-15
-
 ### Summary
 S motion seeking amendments to ersättningsregler in prop 222. Focus on pensioner/sickness-benefit integrity.
 
@@ -1087,8 +1079,6 @@ S motion seeking amendments to ersättningsregler in prop 222. Focus on pensione
 
 ### HD024081
 <!-- source: documents/HD024081-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024081-analysis.md -->
-
-**dok_id**: HD024081 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024081.html) · **Party**: S · **Committee**: SfU · **Responds to**: Prop 235 · **Filed**: 2026-04-15
 
 ### Summary
 S motion with rättssäkerhets-amendments to prop 235 utvisning reform. Not an avslag; a technical reform motion.
@@ -1113,8 +1103,6 @@ S motion with rättssäkerhets-amendments to prop 235 utvisning reform. Not an a
 
 ### HD024082
 <!-- source: documents/HD024082-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024082-analysis.md -->
-
-**dok_id**: HD024082 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024082.html) · **Party**: S · **Committee**: FiU · **Responds to**: Prop 236 · **Filed**: 2026-04-15
 
 ### Summary
 **Lead motion of the entire wave.** S positions as fiscal-anchor — challenges extra ändringsbudget-finansieringen för drivmedel-reduktion utan tydlig motsvarande besparing.
@@ -1143,8 +1131,6 @@ S motion with rättssäkerhets-amendments to prop 235 utvisning reform. Not an a
 ### HD024083
 <!-- source: documents/HD024083-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024083-analysis.md -->
 
-**dok_id**: HD024083 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024083.html) · **Party**: V · **Committee**: SoU · **Responds to**: Prop 216 · **Filed**: 2026-04-15
-
 ### Summary
 V motion calling for avslag on prop 216 absent funded workforce pipeline; argues the reform erodes kommun-sector capacity.
 
@@ -1169,8 +1155,6 @@ V motion calling for avslag on prop 216 absent funded workforce pipeline; argues
 ### HD024084
 <!-- source: documents/HD024084-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024084-analysis.md -->
 
-**dok_id**: HD024084 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024084.html) · **Party**: V · **Committee**: CU · **Responds to**: Prop 223 · **Filed**: 2026-04-15
-
 ### Summary
 V motion demands stricter konsumentskydd än prop 223 som drafted; specifically högre räntetak and stricter marknadsföringsförbud.
 
@@ -1192,8 +1176,6 @@ V motion demands stricter konsumentskydd än prop 223 som drafted; specifically 
 
 ### HD024085
 <!-- source: documents/HD024085-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024085-analysis.md -->
-
-**dok_id**: HD024085 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024085.html) · **Party**: MP · **Committee**: FöU · **Responds to**: Prop 214 · **Filed**: 2026-04-15
 
 ### Summary
 MP motion on prop 214 cyber reform — adds privacy/civil-liberty dimensions to cybersäkerhetsreformen.
@@ -1217,8 +1199,6 @@ MP motion on prop 214 cyber reform — adds privacy/civil-liberty dimensions to 
 ### HD024086
 <!-- source: documents/HD024086-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024086-analysis.md -->
 
-**dok_id**: HD024086 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024086.html) · **Party**: MP · **Committee**: AU · **Responds to**: Prop 222 · **Filed**: 2026-04-15
-
 ### Summary
 MP motion on ersättningsreformen; adds jämställdhets- and miljö-dimensioner till arbetslöshets-/sjukersättning.
 
@@ -1241,8 +1221,6 @@ MP motion on ersättningsreformen; adds jämställdhets- and miljö-dimensioner 
 ### HD024087
 <!-- source: documents/HD024087-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024087-analysis.md -->
 
-**dok_id**: HD024087 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024087.html) · **Party**: MP · **Committee**: SoU · **Responds to**: Prop 216 · **Filed**: 2026-04-16
-
 ### Summary
 MP motion mot prop 216 — kräver klimatkompetens-integration i hälso- och sjukvårdsutbildning; betonar jämlikhet.
 
@@ -1264,8 +1242,6 @@ MP motion mot prop 216 — kräver klimatkompetens-integration i hälso- och sju
 
 ### HD024088
 <!-- source: documents/HD024088-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024088-analysis.md -->
-
-**dok_id**: HD024088 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024088.html) · **Party**: C · **Committee**: CU · **Responds to**: Prop 223 · **Filed**: 2026-04-16
 
 ### Summary
 C motion med reform-inte-avslag stance på prop 223 — fokus på småföretagens kreditgivning.
@@ -1290,8 +1266,6 @@ C motion med reform-inte-avslag stance på prop 223 — fokus på småföretagen
 ### HD024089
 <!-- source: documents/HD024089-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024089-analysis.md -->
 
-**dok_id**: HD024089 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024089.html) · **Party**: C · **Committee**: SfU · **Responds to**: Prop 229 · **Filed**: 2026-04-16
-
 ### Summary
 C motion på kommunal ersättningsnivå i prop 229 mottagandelag — krever kommunkompensation vid kapacitetskrav.
 
@@ -1314,8 +1288,6 @@ C motion på kommunal ersättningsnivå i prop 229 mottagandelag — krever komm
 
 ### HD024090
 <!-- source: documents/HD024090-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024090-analysis.md -->
-
-**dok_id**: HD024090 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024090.html) · **Party**: V · **Committee**: SfU · **Responds to**: Prop 235 · **Filed**: 2026-04-16
 
 ### Summary
 V full avslag på prop 235 — ECHR-kompatibilitet ifrågasatt, rättssäkerhetsrisk.
@@ -1340,8 +1312,6 @@ V full avslag på prop 235 — ECHR-kompatibilitet ifrågasatt, rättssäkerhets
 ### HD024091
 <!-- source: documents/HD024091-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024091-analysis.md -->
 
-**dok_id**: HD024091 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024091.html) · **Party**: V · **Committee**: UU · **Responds to**: Prop 228 · **Filed**: 2026-04-16
-
 ### Summary
 V full avslag på prop 228 — vapenexport-liberalisering avvisas principiellt.
 
@@ -1363,8 +1333,6 @@ V full avslag på prop 228 — vapenexport-liberalisering avvisas principiellt.
 
 ### HD024092
 <!-- source: documents/HD024092-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024092-analysis.md -->
-
-**dok_id**: HD024092 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024092.html) · **Party**: V · **Committee**: FiU · **Responds to**: Prop 236 · **Filed**: 2026-04-17
 
 ### Summary
 V motion mot prop 236 drivmedelsreduktionen — begär förstärkt kollektivtrafik i stället.
@@ -1389,8 +1357,6 @@ V motion mot prop 236 drivmedelsreduktionen — begär förstärkt kollektivtraf
 ### HD024093
 <!-- source: documents/HD024093-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024093-analysis.md -->
 
-**dok_id**: HD024093 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024093.html) · **Party**: C · **Committee**: TU · **Responds to**: Prop 215 · **Filed**: 2026-04-17
-
 ### Summary
 C motion på digitaliseringsreformen — fokus på rural bredbandsutbyggnad och SME-access.
 
@@ -1412,8 +1378,6 @@ C motion på digitaliseringsreformen — fokus på rural bredbandsutbyggnad och 
 
 ### HD024094
 <!-- source: documents/HD024094-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024094-analysis.md -->
-
-**dok_id**: HD024094 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024094.html) · **Party**: C · **Committee**: SoU · **Responds to**: Prop 216 · **Filed**: 2026-04-17
 
 ### Summary
 C motion på prop 216 — regional jämlik tillgång, SKR-samråd, kommunekonomisk analys.
@@ -1438,8 +1402,6 @@ C motion på prop 216 — regional jämlik tillgång, SKR-samråd, kommunekonomi
 ### HD024095
 <!-- source: documents/HD024095-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024095-analysis.md -->
 
-**dok_id**: HD024095 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024095.html) · **Party**: C · **Committee**: FöU · **Responds to**: Prop 214 · **Filed**: 2026-04-17
-
 ### Summary
 C motion på prop 214 cybersäkerhet — SME-fokus + implementation cost.
 
@@ -1461,8 +1423,6 @@ C motion på prop 214 cybersäkerhet — SME-fokus + implementation cost.
 
 ### HD024096
 <!-- source: documents/HD024096-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024096-analysis.md -->
-
-**dok_id**: HD024096 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024096.html) · **Party**: MP · **Committee**: UU · **Responds to**: Prop 228 · **Filed**: 2026-04-17
 
 ### Summary
 MP motion på prop 228 vapenexport — etisk ramverks-amendment, klimatdimension.
@@ -1486,8 +1446,6 @@ MP motion på prop 228 vapenexport — etisk ramverks-amendment, klimatdimension
 ### HD024097
 <!-- source: documents/HD024097-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024097-analysis.md -->
 
-**dok_id**: HD024097 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024097.html) · **Party**: MP · **Committee**: SfU · **Responds to**: Prop 235 · **Filed**: 2026-04-17
-
 ### Summary
 MP motion på prop 235 — reform-ansats, ECHR-kompatibilitet säkerställs, humanitära hänsyn.
 
@@ -1509,8 +1467,6 @@ MP motion på prop 235 — reform-ansats, ECHR-kompatibilitet säkerställs, hum
 
 ### HD024098
 <!-- source: documents/HD024098-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024098-analysis.md -->
-
-**dok_id**: HD024098 · [riksdagen.se](https://data.riksdagen.se/dokument/HD024098.html) · **Party**: MP · **Committee**: FiU · **Responds to**: Prop 236 · **Filed**: 2026-04-17
 
 ### Summary
 MP motion mot prop 236 drivmedelsreduktion — klimat-principiell avslag.
@@ -1549,8 +1505,6 @@ The motion wave of 2026-04-24 lands ~4.5 months before the Swedish parliamentary
 | KD | 5.3% | 4–6% | Stable |
 | MP | 5.1% | 4–5% | Stable (threshold risk) |
 | L | 4.6% | 3–4% | Down (threshold risk) |
-
-*Source: aggregate of publicly reported Novus/Demoskop/Ipsos; April 2026.*
 
 ### Campaign axes activated by motion wave
 
@@ -2156,8 +2110,6 @@ Structured challenge to the lead synthesis. Presents competing hypotheses (ACH �
 - SD silence might be strategic apathy, not discipline
 - Motion filing != voter salience
 
-**Confidence**: Moderate (Admiralty B3)
-
 #### H2 — Baseline / null hypothesis
 **Statement**: This motion wave is routine parliamentary procedure; the 20-motion count is statistically within normal post-proposition activity and has no predictive value for 2026.
 
@@ -2170,8 +2122,6 @@ Structured challenge to the lead synthesis. Presents competing hypotheses (ACH �
 - Four-party convergence on prop 216 is unusual
 - MP's escalation on krigsmateriel is a specific policy shift ([HD024096](https://data.riksdagen.se/dokument/HD024096.html))
 - Timing 4 months pre-election amplifies salience
-
-**Confidence**: Moderate (Admiralty B3)
 
 #### H3 — Contrarian hypothesis (Tidö is the vulnerable party)
 **Statement**: The real political story is not opposition coordination but Tidö fragility — the need for 9 bills in a single wave is itself a signal of rushed implementation pre-election, and SD silence is preparation to claim credit if bills pass or to break away if they fail.
@@ -2186,8 +2136,6 @@ Structured challenge to the lead synthesis. Presents competing hypotheses (ACH �
 - SD silence is longstanding pattern, not novel
 - Extra ändringsbudget is not unprecedented
 
-**Confidence**: Low-Moderate (C3)
-
 #### H4 — Economic-determinist hypothesis
 **Statement**: Fuel-price politics (prop 236 / HD024082 / HD024092 / HD024098) dominates everything; migration/defence/welfare motions are noise around the real axis of rural-urban fiscal conflict, already mediated by SCB KPI data and ECB rate cycle.
 
@@ -2200,8 +2148,6 @@ Structured challenge to the lead synthesis. Presents competing hypotheses (ACH �
 - Four-party convergence is on prop 216 (healthcare), not drivmedel
 - Migration issue salience independent of fuel prices in Sweden 2022+
 - MP framing explicitly multi-axis
-
-**Confidence**: Low (C4)
 
 ### ACH matrix (consistency scoring)
 
@@ -2557,8 +2503,6 @@ All accessible at `https://data.riksdagen.se/dokument/{dok_id}.html`. Example: <
 **Opposition coverage**: S (5), V (4), MP (6), C (5). Sverigedemokraterna (SD) absent from counter-motion wave — a structurally notable signal given SD's Tidö-coalition alignment.
 
 ---
-
-*Author: James Pether Sörling · Generated via riksdag-regering MCP*
 
 ## Article Sources
 

@@ -5,7 +5,7 @@ date: 2026-04-27
 subfolder: motions
 slug: 2026-04-27-motions
 source_folder: analysis/daily/2026-04-27/motions
-generated_at: 2026-04-27T16:24:08.584Z
+generated_at: 2026-04-27T16:35:07.072Z
 language: en
 layout: article
 ---
@@ -268,9 +268,6 @@ timeline
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/significance-scoring.md -->
 
-**Author**: James Pether Sörling  
-**Method**: DIW (Democratic Impact × Institutional Weight × Welfare Significance)
-
 ---
 
 ### Priority Documents (L2+ Intelligence-grade)
@@ -394,9 +391,6 @@ Integration]
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/stakeholder-perspectives.md -->
-
-**Author**: James Pether Sörling
-**Method**: 6-lens stakeholder matrix + influence network
 
 ---
 
@@ -558,9 +552,6 @@ gantt
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/scenario-analysis.md -->
-
-**Author**: James Pether Sörling
-**Method**: WEP/Kent Scale 7-band probability assessment
 
 ---
 
@@ -763,9 +754,6 @@ style HD024090 fill:#ff006e,color:#fff
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/threat-analysis.md -->
 
-**Author**: James Pether Sörling
-**Method**: Political Threat Taxonomy + Attack Tree Analysis
-
 ---
 
 ### Political Threat Taxonomy
@@ -839,10 +827,6 @@ HD024092 riksdagen.se]
 ### HD024068
 <!-- source: documents/HD024068-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024068-analysis.md -->
 
-**Party**: Various
-**Committee**: Various
-**DIW Score**: 0.35
-
 ### Summary
 
 Low-weight motion. Full text not retrieved. Filed in committee Various in riksmöte 2025/26. Part of the Various spring 2026 opposition cluster. Expected outcome: rejected in committee per standard parliamentary arithmetic.
@@ -852,10 +836,6 @@ Low-weight motion. Full text not retrieved. Filed in committee Various in riksm�
 
 ### HD024069
 <!-- source: documents/HD024069-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024069-analysis.md -->
-
-**Party**: V
-**Committee**: SoU
-**DIW Score**: 0.32
 
 ### Summary
 
@@ -867,10 +847,6 @@ Low-weight motion. Full text not retrieved. Filed in committee SoU in riksmöte 
 ### HD024070
 <!-- source: documents/HD024070-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024070-analysis.md -->
 
-**Party**: S
-**Committee**: UbU
-**DIW Score**: 0.30
-
 ### Summary
 
 Low-weight motion. Full text not retrieved. Filed in committee UbU in riksmöte 2025/26. Part of the S spring 2026 opposition cluster. Expected outcome: rejected in committee per standard parliamentary arithmetic.
@@ -880,10 +856,6 @@ Low-weight motion. Full text not retrieved. Filed in committee UbU in riksmöte 
 
 ### HD024072
 <!-- source: documents/HD024072-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024072-analysis.md -->
-
-**Party**: MP
-**Committee**: TU
-**DIW Score**: 0.29
 
 ### Summary
 
@@ -895,10 +867,6 @@ Low-weight motion. Full text not retrieved. Filed in committee TU in riksmöte 2
 ### HD024073
 <!-- source: documents/HD024073-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024073-analysis.md -->
 
-**Party**: V
-**Committee**: FöU
-**DIW Score**: 0.28
-
 ### Summary
 
 Low-weight motion. Full text not retrieved. Filed in committee FöU in riksmöte 2025/26. Part of the V spring 2026 opposition cluster. Expected outcome: rejected in committee per standard parliamentary arithmetic.
@@ -908,10 +876,6 @@ Low-weight motion. Full text not retrieved. Filed in committee FöU in riksmöte
 
 ### HD024074
 <!-- source: documents/HD024074-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024074-analysis.md -->
-
-**Party**: S
-**Committee**: AU
-**DIW Score**: 0.35
 
 ### Summary
 
@@ -923,10 +887,6 @@ Low-weight motion. Full text not retrieved. Filed in committee AU in riksmöte 2
 ### HD024075
 <!-- source: documents/HD024075-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024075-analysis.md -->
 
-**Party**: MP
-**Committee**: MJU
-**DIW Score**: 0.38
-
 ### Summary
 
 Low-weight motion. Full text not retrieved. Filed in committee MJU in riksmöte 2025/26. Part of the MP spring 2026 opposition cluster. Expected outcome: rejected in committee per standard parliamentary arithmetic.
@@ -936,12 +896,6 @@ Low-weight motion. Full text not retrieved. Filed in committee MJU in riksmöte 
 
 ### HD024076
 <!-- source: documents/HD024076-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024076-analysis.md -->
-
-**Party**: Vänsterpartiet (V)
-**Author**: Vänsterpartiet (V)
-**Committee**: SfU
-**Relates to**: Prop. 2025/26:229
-**DIW Score**: 0.79
 
 ### Summary
 
@@ -965,10 +919,6 @@ MEDIUM-HIGH — immigration policy cluster.
 ### HD024077
 <!-- source: documents/HD024077-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024077-analysis.md -->
 
-**Party**: V
-**Committee**: SfU
-**DIW Score**: 0.42
-
 ### Summary
 
 Low-weight motion. Full text not retrieved. Filed in committee SfU in riksmöte 2025/26. Part of the V spring 2026 opposition cluster. Expected outcome: rejected in committee per standard parliamentary arithmetic.
@@ -978,10 +928,6 @@ Low-weight motion. Full text not retrieved. Filed in committee SfU in riksmöte 
 
 ### HD024078
 <!-- source: documents/HD024078-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024078-analysis.md -->
-
-**Party**: S
-**Committee**: SfU
-**DIW Score**: 0.40
 
 ### Summary
 
@@ -993,10 +939,6 @@ Low-weight motion. Full text not retrieved. Filed in committee SfU in riksmöte 
 ### HD024079
 <!-- source: documents/HD024079-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024079-analysis.md -->
 
-**Party**: MP
-**Committee**: SfU
-**DIW Score**: 0.38
-
 ### Summary
 
 Low-weight motion. Full text not retrieved. Filed in committee SfU in riksmöte 2025/26. Part of the MP spring 2026 opposition cluster. Expected outcome: rejected in committee per standard parliamentary arithmetic.
@@ -1006,12 +948,6 @@ Low-weight motion. Full text not retrieved. Filed in committee SfU in riksmöte 
 
 ### HD024080
 <!-- source: documents/HD024080-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024080-analysis.md -->
-
-**Party**: Vänsterpartiet (V)
-**Author**: Vänsterpartiet (V)
-**Committee**: SfU
-**Relates to**: Prop. 2025/26:229
-**DIW Score**: 0.72
 
 ### Summary
 
@@ -1035,10 +971,6 @@ MEDIUM — children's rights framing has broad sympathy.
 ### HD024081
 <!-- source: documents/HD024081-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024081-analysis.md -->
 
-**Party**: V
-**Committee**: SoU
-**DIW Score**: 0.33
-
 ### Summary
 
 Low-weight motion. Full text not retrieved. Filed in committee SoU in riksmöte 2025/26. Part of the V spring 2026 opposition cluster. Expected outcome: rejected in committee per standard parliamentary arithmetic.
@@ -1048,12 +980,6 @@ Low-weight motion. Full text not retrieved. Filed in committee SoU in riksmöte 
 
 ### HD024082
 <!-- source: documents/HD024082-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024082-analysis.md -->
-
-**Party**: Vänsterpartiet (V)
-**Author**: Vänsterpartiet (V)
-**Committee**: FiU
-**Relates to**: Prop. 2025/26:236
-**DIW Score**: 0.60
 
 ### Summary
 
@@ -1077,10 +1003,6 @@ MEDIUM — urban transit voters.
 ### HD024083
 <!-- source: documents/HD024083-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024083-analysis.md -->
 
-**Party**: S
-**Committee**: SoU
-**DIW Score**: 0.35
-
 ### Summary
 
 Low-weight motion. Full text not retrieved. Filed in committee SoU in riksmöte 2025/26. Part of the S spring 2026 opposition cluster. Expected outcome: rejected in committee per standard parliamentary arithmetic.
@@ -1090,10 +1012,6 @@ Low-weight motion. Full text not retrieved. Filed in committee SoU in riksmöte 
 
 ### HD024084
 <!-- source: documents/HD024084-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024084-analysis.md -->
-
-**Party**: MP
-**Committee**: KrU
-**DIW Score**: 0.28
 
 ### Summary
 
@@ -1105,10 +1023,6 @@ Low-weight motion. Full text not retrieved. Filed in committee KrU in riksmöte 
 ### HD024085
 <!-- source: documents/HD024085-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024085-analysis.md -->
 
-**Party**: V
-**Committee**: CU
-**DIW Score**: 0.30
-
 ### Summary
 
 Low-weight motion. Full text not retrieved. Filed in committee CU in riksmöte 2025/26. Part of the V spring 2026 opposition cluster. Expected outcome: rejected in committee per standard parliamentary arithmetic.
@@ -1118,12 +1032,6 @@ Low-weight motion. Full text not retrieved. Filed in committee CU in riksmöte 2
 
 ### HD024086
 <!-- source: documents/HD024086-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024086-analysis.md -->
-
-**Party**: Miljöpartiet (MP)
-**Author**: Leila Ali Elmi m.fl.
-**Committee**: AU (Arbetsmarknadsutskottet)
-**Relates to**: Prop. 2025/26:215
-**DIW Score**: 0.82
 
 ### Summary
 
@@ -1147,12 +1055,6 @@ HIGH — key MP electoral differentiation on integration policy.
 ### HD024087
 <!-- source: documents/HD024087-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024087-analysis.md -->
 
-**Party**: Miljöpartiet (MP)
-**Author**: Miljöpartiet (MP)
-**Committee**: SfU
-**Relates to**: Prop. 2025/26:229
-**DIW Score**: 0.70
-
 ### Summary
 
 MP's alternative to reception housing system — maintains dispersal with municipal support payments.
@@ -1175,10 +1077,6 @@ MEDIUM.
 ### HD024088
 <!-- source: documents/HD024088-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024088-analysis.md -->
 
-**Party**: S
-**Committee**: SfU
-**DIW Score**: 0.45
-
 ### Summary
 
 Low-weight motion. Full text not retrieved. Filed in committee SfU in riksmöte 2025/26. Part of the S spring 2026 opposition cluster. Expected outcome: rejected in committee per standard parliamentary arithmetic.
@@ -1188,12 +1086,6 @@ Low-weight motion. Full text not retrieved. Filed in committee SfU in riksmöte 
 
 ### HD024089
 <!-- source: documents/HD024089-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024089-analysis.md -->
-
-**Party**: Socialdemokraterna (S)
-**Author**: Socialdemokraterna (S)
-**Committee**: SfU
-**Relates to**: Prop. 2025/26:229
-**DIW Score**: 0.68
 
 ### Summary
 
@@ -1217,12 +1109,6 @@ MEDIUM — S positioning for coalition government responsibility.
 ### HD024090
 <!-- source: documents/HD024090-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024090-analysis.md -->
 
-**Party**: Vänsterpartiet (V)
-**Author**: Tony Haddou m.fl.
-**Committee**: SfU (Socialförsäkringsutskottet)
-**Relates to**: Prop. 2025/26:235
-**DIW Score**: 0.91
-
 ### Summary
 
 V challenges prop. 2025/26:235 on criminal deportation grounds, arguing EU fundamental rights incompatibility and proportionality violations.
@@ -1244,12 +1130,6 @@ HIGH — flagship V immigration-rights position for 2026 election.
 
 ### HD024092
 <!-- source: documents/HD024092-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024092-analysis.md -->
-
-**Party**: Vänsterpartiet (V)
-**Author**: Nooshi Dadgostar m.fl.
-**Committee**: FiU (Finansutskottet)
-**Relates to**: Prop. 2025/26:236
-**DIW Score**: 0.87
 
 ### Summary
 
@@ -1273,12 +1153,6 @@ HIGH — contrasts V's climate/social equity agenda against SD/M rural-economic 
 ### HD024093
 <!-- source: documents/HD024093-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024093-analysis.md -->
 
-**Party**: Vänsterpartiet (V)
-**Author**: Vänsterpartiet (V)
-**Committee**: FöU
-**Relates to**: Prop. 2025/26:214
-**DIW Score**: 0.55
-
 ### Summary
 
 V motion on NIS2 cybersecurity implementation — calls for expanded public-sector applicability.
@@ -1301,10 +1175,6 @@ LOW — technical policy area, limited electoral salience.
 ### HD024094
 <!-- source: documents/HD024094-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024094-analysis.md -->
 
-**Party**: V
-**Committee**: SoU
-**DIW Score**: 0.32
-
 ### Summary
 
 Low-weight motion. Full text not retrieved. Filed in committee SoU in riksmöte 2025/26. Part of the V spring 2026 opposition cluster. Expected outcome: rejected in committee per standard parliamentary arithmetic.
@@ -1314,12 +1184,6 @@ Low-weight motion. Full text not retrieved. Filed in committee SoU in riksmöte 
 
 ### HD024095
 <!-- source: documents/HD024095-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024095-analysis.md -->
-
-**Party**: Socialdemokraterna (S)
-**Author**: Socialdemokraterna (S)
-**Committee**: SfU
-**Relates to**: Prop. 2025/26:235
-**DIW Score**: 0.65
 
 ### Summary
 
@@ -1343,10 +1207,6 @@ MEDIUM.
 ### HD024096
 <!-- source: documents/HD024096-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024096-analysis.md -->
 
-**Party**: S
-**Committee**: FiU
-**DIW Score**: 0.48
-
 ### Summary
 
 Low-weight motion. Full text not retrieved. Filed in committee FiU in riksmöte 2025/26. Part of the S spring 2026 opposition cluster. Expected outcome: rejected in committee per standard parliamentary arithmetic.
@@ -1356,12 +1216,6 @@ Low-weight motion. Full text not retrieved. Filed in committee FiU in riksmöte 
 
 ### HD024097
 <!-- source: documents/HD024097-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024097-analysis.md -->
-
-**Party**: Miljöpartiet (MP)
-**Author**: Miljöpartiet (MP)
-**Committee**: SfU
-**Relates to**: Prop. 2025/26:235
-**DIW Score**: 0.63
 
 ### Summary
 
@@ -1385,12 +1239,6 @@ MEDIUM-HIGH for MP base.
 ### HD024098
 <!-- source: documents/HD024098-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/documents/HD024098-analysis.md -->
 
-**Party**: Miljöpartiet (MP)
-**Author**: Miljöpartiet (MP)
-**Committee**: FiU
-**Relates to**: Prop. 2025/26:236
-**DIW Score**: 0.58
-
 ### Summary
 
 MP climate-focused budget motion — opposes fuel tax cuts and demands carbon rebate mechanism.
@@ -1412,9 +1260,6 @@ MEDIUM-HIGH — MP climate base.
 
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/election-2026-analysis.md -->
-
-**Author**: James Pether Sörling
-**Horizon**: September 2026 Swedish general election
 
 ---
 
@@ -1565,9 +1410,6 @@ pie title Voter Segment Alignment with Motion Arguments
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/comparative-international.md -->
-
-**Author**: James Pether Sörling
-**Comparator set**: Denmark, Germany, Finland, Netherlands
 
 ---
 
@@ -1727,9 +1569,6 @@ quadrantChart
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/devils-advocate.md -->
 
-**Author**: James Pether Sörling
-**Method**: ACH (Analysis of Competing Hypotheses)
-
 ---
 
 ### ACH Matrix
@@ -1826,9 +1665,6 @@ H1 dominant, H3 possible secondary]
 
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/classification-results.md -->
-
-**Author**: James Pether Sörling  
-**Method**: 7-dimension political classification
 
 ---
 
@@ -2042,15 +1878,6 @@ pie title Data Source Reliability Distribution
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/data-download-manifest.md -->
-
-**Workflow**: news-motions  
-**Run ID**: 24982305886  
-**Generated**: 2026-04-27 07:38 UTC  
-**Data Sources**: riksdag-regering-mcp (get_motioner, get_dokument_innehall)  
-**Requested Date**: 2026-04-27  
-**Effective Date**: 2026-04-07 to 2026-04-17 (lookback applied — no documents found for 2026-04-27)  
-**Documents Downloaded**: 30  
-**Documents Selected**: 29 (HD024071 excluded — Motionen utgår)
 
 ### Lookback Note
 

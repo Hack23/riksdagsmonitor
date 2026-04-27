@@ -5,7 +5,7 @@ date: 2026-04-21
 subfolder: committeeReports
 slug: 2026-04-21-committeeReports
 source_folder: analysis/daily/2026-04-21/committeeReports
-generated_at: 2026-04-27T16:24:08.443Z
+generated_at: 2026-04-27T16:35:06.908Z
 language: en
 layout: article
 ---
@@ -147,8 +147,6 @@ See [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/a
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/methodology-reflection.md) — Method, confidence bounds, and known gaps
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-28
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/synthesis-summary.md -->
@@ -297,9 +295,6 @@ Both **SfU22** (migration inhibition) and **TU22** (tachograph) expand state enf
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/significance-scoring.md -->
 
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports | **Method**: 5-dimension scoring  
-**Updated**: 14:45 UTC — includes HD01FiU48 (new top story, extra ändringsbudget 2026)
-
 ### Scoring Matrix
 
 | dok_id | Electoral | Constitutional | EU Impact | Immediacy | Controversy | TOTAL |
@@ -340,9 +335,6 @@ Both **SfU22** (migration inhibition) and **TU22** (tachograph) expand state enf
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/stakeholder-perspectives.md -->
-
-**Date**: 2026-04-21 | **Framework**: 8-Group Political Intelligence Model | **Analyst**: news-committee-reports  
-**Updated**: 14:52 UTC — HD01FiU48 (extra ändringsbudget) added as primary document for all 8 groups
 
 ### Overview
 
@@ -658,15 +650,10 @@ Beyond the five scenarios, three low-probability high-impact events worth monito
 
 ---
 
-**Confidence**: 🟨 MEDIUM. Probabilities are point estimates with ±0.05 uncertainty bands. Primary uncertainty is the September 2026 election outcome (no reliable forecast exists with <60% confidence at T-5 months).
-
 **Next Bayesian update**: 2026-05-21 (or triggered by monitor events above).
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/risk-assessment.md -->
-
-**Date**: 2026-04-21 | **Framework**: ISO 31000 + ISMS | **Analyst**: news-committee-reports  
-**Updated**: 14:52 UTC — Expanded to 14 documents, FiU48 fiscal risks added
 
 ### Risk Heatmap
 
@@ -731,9 +718,6 @@ quadrantChart
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/swot-analysis.md -->
-
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports | **Scope**: All 14 committee reports  
-**Updated**: 14:50 UTC — Expanded to 14 documents including HD01FiU48 (extra ändringsbudget)
 
 ### Overall Legislative Batch Assessment
 
@@ -1072,8 +1056,6 @@ timeline
 | 2026-06-01 (SfU22 implementation) | HIGH→SEVERE (expected) | Litigation fact-patterns materialise |
 
 ---
-
-**Confidence**: 🟩 HIGH. Primary evidence is the full text of HD01FiU48, HD01SfU22, HD01KU32, HD01KU33 plus peer-jurisdiction ECtHR case law. See [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/methodology-reflection.md) for known gaps.
 
 ## Per-document intelligence
 
@@ -2768,9 +2750,6 @@ Although the reduced-parliament quorum provisions are a separate constitutional 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/comparative-international.md -->
 
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports workflow
-**Framework**: Peer-jurisdiction benchmarking across fiscal, migration, constitutional, and digital policy axes.
-
 ---
 
 ### 🌍 Overview
@@ -2892,8 +2871,6 @@ graph LR
 
 ---
 
-**Confidence**: 🟩 HIGH — Peer data validated against OECD, ECRE, and ECtHR case databases.
-
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/classification-results.md -->
 
@@ -2985,9 +2962,6 @@ pie title Committee Reports 2026-04-21 by Domain
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/cross-reference-map.md -->
-
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports workflow
-**Purpose**: Trace legislative lineage (proposition → remiss → betänkande → motion → beslut) and identify thematic convergence across committees.
 
 ---
 
@@ -3121,9 +3095,6 @@ See [`../motions/cross-reference-map.md`](https://github.com/Hack23/riksdagsmoni
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/methodology-reflection.md -->
-
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports workflow
-**Purpose**: Per `ai-driven-analysis-guide.md` §Methodology Reflection, transparently report method, data depth, confidence calibration, known gaps, and deviation rationale.
 
 ---
 
@@ -3273,8 +3244,6 @@ The motions cycle for the prior week (2026-04-14 → 04-17) produced 18 analysis
 
 ---
 
-**Classification**: Public · **Confidence**: 🟩 HIGH on method compliance; 🟨 MEDIUM on forward-looking claims.
-
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/data-download-manifest.md -->
 
@@ -3314,9 +3283,6 @@ All documents sourced from official riksdag-regering-mcp API.
 
 ## Election 2026 Implications
 <!-- source: election-2026-implications.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/election-2026-implications.md -->
-
-**Date**: 2026-04-21 | **Analyst**: news-committee-reports | **Framework**: v5.0 Election Lens  
-**Updated**: 14:45 UTC — HD01FiU48 (extra ändringsbudget) added as primary electoral document
 
 ### Overview
 
@@ -3589,8 +3555,6 @@ Claims that would *exceed* historical baselines and require additional evidence 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/synthesis-summary.md) — overall synthesis
 
 ---
-
-**Confidence**: 🟩 HIGH on aggregate counts; 🟨 MEDIUM on top-story significance re-scoring for pre-2020 cycles (retrospective methodology reconstruction).
 
 ## Article Sources
 

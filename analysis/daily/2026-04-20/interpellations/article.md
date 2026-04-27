@@ -5,7 +5,7 @@ date: 2026-04-20
 subfolder: interpellations
 slug: 2026-04-20-interpellations
 source_folder: analysis/daily/2026-04-20/interpellations
-generated_at: 2026-04-27T16:24:08.426Z
+generated_at: 2026-04-27T16:35:06.888Z
 language: en
 layout: article
 ---
@@ -95,8 +95,6 @@ This interpellation wave is the **first clear evidence** of S operating in full 
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/synthesis-summary.md -->
-
-**Analysis Date**: 2026-04-20 | **Analysis Depth**: Deep | **Confidence**: HIGH
 
 ---
 
@@ -479,8 +477,6 @@ An interpellation's significance decays differently depending on its type:
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/stakeholder-perspectives.md -->
 
-**Analysis Date**: 2026-04-20 | **Framework**: Multi-actor perspective analysis
-
 ---
 
 ### Minister Perspectives (Government Side)
@@ -547,10 +543,6 @@ Sweden's failure to implement the Pay Transparency Directive on time (frs 2025/2
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/scenario-analysis.md -->
-
-**Analysis date**: 2026-04-20 | **Horizon**: 14 days (response window) + 5 months (to Election 2026, September 2026)
-**Method**: Morphological scenario construction with key-uncertainty decomposition
-**AI-FIRST iterations**: 2 (pass 1 draft + pass 2 stress-test)
 
 ### Purpose
 
@@ -717,8 +709,6 @@ This scenario set should be **re-evaluated** when any of the following occur:
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/risk-assessment.md -->
 
-**Analysis Date**: 2026-04-20 | **Framework**: Likelihood × Impact (1–5 scale)
-
 ### Risk Matrix
 
 | Risk ID | Risk | Likelihood (L) | Impact (I) | Score (L×I) | Severity |
@@ -851,8 +841,6 @@ Even with optimal government risk-treatment, residual risks remain:
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/swot-analysis.md -->
 
-**Analysis Date**: 2026-04-20 | **Focus**: Parliamentary Accountability — April 14–17 Wave
-
 ---
 
 ### Multi-Stakeholder SWOT Matrix
@@ -952,8 +940,6 @@ Even with optimal government risk-treatment, residual risks remain:
 ### Overview Threat Assessment
 
 Sweden's parliament is entering an intensive pre-election accountability phase with 8 active interpellations across 8 ministers, 5 response deadlines clustering in the April 29 – May 5 window, and documented government policy failures that the opposition is systematically exploiting ahead of the 2026 general election.
-
-**Overall Threat Level: HIGH** | Confidence: 🟩 HIGH
 
 ---
 
@@ -1949,9 +1935,6 @@ Sofia Amloh (S) interpellates Gender Equality Minister Nina Larsson (L) on the n
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/comparative-international.md -->
 
-**Analysis date**: 2026-04-20 | **Focus**: HD10437 (frs 2025/26:437) in EU comparative context
-**AI-FIRST iterations**: 2
-
 This document places Sweden's apparent Pay Transparency Directive transposition failure in comparative EU context, which materially strengthens (or weakens) the political-accountability narrative. Directive 2023/970/EU — the "Pay Transparency Directive" — was adopted on 10 May 2023 with a **transposition deadline of 7 June 2026** (Art. 34).
 
 ### Directive Summary (2023/970/EU)
@@ -2217,8 +2200,6 @@ HD10436 withdrawn by S after filing. **Frequency**: Rare; typically 1–3 per se
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/cross-reference-map.md -->
 
-**Analysis Date**: 2026-04-20 | **Purpose**: Connect interpellations to policy patterns, minister records, and prior session events
-
 ### Thematic Cross-Reference Clusters
 
 #### Cluster 1: Gender Equality & EU Compliance
@@ -2289,10 +2270,6 @@ frs 2025/26:421 (HD10421) ─── Integration policy (S) [prev batch] ─ Svan
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/methodology-reflection.md -->
-
-**Analysis date**: 2026-04-20 | **Workflow**: `news-interpellations` (agentic workflow) + reference-class expansion
-**AI-FIRST iterations**: 2 (pass 1 + pass 2 improvement), plus post-review expansion pass
-**Purpose**: Document the analytic pipeline, its strengths and limitations, and lessons for future interpellation-debates runs
 
 ### Pipeline Overview
 
@@ -2376,12 +2353,6 @@ The AI-FIRST principle mandates **minimum 2 complete iterations** with genuine c
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/data-download-manifest.md -->
-
-**Generated**: 2026-04-20 07:16 UTC  
-**Analysis Type**: interpellations  
-**Article Date**: 2026-04-20  
-**Riksmöte**: 2025/26  
-**Data Sources**: riksdag-regering-mcp (get_interpellationer, get_dokument, get_dokument_innehall, World Bank)
 
 ### Key Documents Analyzed (New Since Last Run 2026-04-14)
 

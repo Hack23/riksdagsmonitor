@@ -5,7 +5,7 @@ date: 2026-04-17
 subfolder: realtime-1434
 slug: 2026-04-17-realtime-1434
 source_folder: analysis/daily/2026-04-17/realtime-1434
-generated_at: 2026-04-27T16:24:08.382Z
+generated_at: 2026-04-27T16:35:06.832Z
 language: en
 layout: article
 ---
@@ -112,8 +112,6 @@ Use this guide to read the article as a political-intelligence product rather th
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [Synthesis](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [Significance](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [Threat](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [Stakeholders](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [Scenarios](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [Comparative](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [Cross-References](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [Classification](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [Methodology Reflection](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-24
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md -->
@@ -385,8 +383,6 @@ Testing four hypotheses against the evidence base (adapted from Heuer's ACH meth
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.0
-
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md -->
 
@@ -508,8 +504,6 @@ If one applies a **committee-first** ranking (heavier weight to constitutional-c
 > **Historical failure** (self-documented 2026-04-17 post-review): The original published article **omitted HD03231 and HD03232 entirely**, despite their weighted scores being 8.55 and 7.60. Although the lead-story selection (Constitutional Reforms) was correct under DIW, the failure to include Ukraine accountability as co-prominent coverage represents a **coverage-completeness failure**. The fix is the **Lead-Story Enforcement Gate** added to SHARED_PROMPT_PATTERNS.md, which requires articles to cover all documents with weighted score ≥ 7.0.
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/political-classification-guide.md`
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md -->
@@ -863,8 +857,6 @@ flowchart TD
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-24
-
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md -->
 
@@ -950,8 +942,6 @@ flowchart TD
 - TF narrative internationally: "Sweden modernises world's oldest press-freedom law responsibly"
 - Press-freedom NGO posture shifts to **monitoring** rather than litigation
 - Cross-cluster rhetorical tension dissipates — government can credibly advocate press freedom abroad while pointing to narrow, investigation-specific scope at home
-
-**Confidence**: HIGH — this is the DIW-consistent central projection.
 
 ---
 
@@ -1087,8 +1077,6 @@ flowchart TD
 - [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) provides Base-scenario benchmarks
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: Scenario analysis v1.0
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md -->
@@ -1341,8 +1329,6 @@ graph LR
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/political-risk-methodology.md`
-
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md -->
 
@@ -1360,8 +1346,6 @@ graph LR
 ---
 
 ### 🏛️ Section 1 — Constitutional Press-Freedom Reforms (PRIMARY SCOPE)
-
-Scope: HD01KU32 (media accessibility amendment to TF + YGL) and HD01KU33 (removal of "allmän handling" status from digital material seized at husrannsakan). First reading only; second reading required post-2026 election for entry into force (proposed 2027-01-01).
 
 #### ✅ Strengths — Government & Constitutional Framework Position
 
@@ -1532,8 +1516,6 @@ graph TD
 | **Threat** | Cyber-attack surface on centralised financial data | Mission-creep into surveillance state | MEDIUM |
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/political-swot-framework.md`
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md -->
@@ -1730,8 +1712,6 @@ graph TD
     style VIC fill:#1565C0,color:#FFFFFF
 ```
 
-**Confidence**: HIGH — mapping consistent with SÄPO annual assessments (2023–25) and FOI / Nordic-Baltic intelligence-sharing findings.
-
 ---
 
 ### 🧰 MITRE-Style TTP Library (Hybrid-Warfare Observables)
@@ -1770,8 +1750,6 @@ graph TD
 | D7 | Counter-narrative prep on "press freedom abroad vs at home" rhetorical tension | UD, press-freedom NGOs | Q2–Q3 2026 |
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/political-threat-framework.md`
 
 ## Per-document intelligence
 
@@ -2021,8 +1999,6 @@ pie title "Direct Beneficiaries — CU27 + CU28 Housing/AML"
 
 ---
 
-**Classification**: Public · **Depth**: L2 Strategic · **Next Review**: 2026-04-24
-
 ### HD01KU32\-KU33
 <!-- source: documents/HD01KU32-KU33-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD01KU32-KU33-analysis.md -->
 
@@ -2221,8 +2197,6 @@ flowchart TD
 ```
 
 ---
-
-**Classification**: Public · **Analysis Level**: L3 (Intelligence) · **Next Review**: 2026-04-24
 
 ### HD03231
 <!-- source: documents/HD03231-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD03231-analysis.md -->
@@ -2467,8 +2441,6 @@ graph TD
 - **Stakeholder detail**: [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) §6 International
 
 ---
-
-**Classification**: Public · **Depth**: L2+ Strategic · **Next Review**: 2026-04-24
 
 ### HD03232
 <!-- source: documents/HD03232-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/documents/HD03232-analysis.md -->
@@ -2740,8 +2712,6 @@ flowchart TD
 
 ---
 
-**Classification**: Public · **Depth**: L2+ Strategic · **Next Review**: 2026-04-24
-
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md -->
 
@@ -2927,8 +2897,6 @@ flowchart TD
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: Comparative-politics analysis v1.0
-
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md -->
 
@@ -3070,8 +3038,6 @@ Classification **Restricted** (none) would apply to:
 - Defensive-tradecraft details beyond open-source availability
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-24
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md -->
@@ -3251,8 +3217,6 @@ Continuity with adjacent Riksdagsmonitor runs — so subsequent analysts can fin
 | Second-reading vote post-Sep-2026 election is decisive | `synthesis-summary.md` + scenario tree | 2026-09-14+ runs must update cross-party matrices |
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-24
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md -->
@@ -3469,8 +3433,6 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-24 · **Exemplar Lock-In**: 2026-09-01 (CEO sign-off required)
-
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/data-download-manifest.md -->
 
@@ -3549,8 +3511,6 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 | Reference-grade upgrade (this version) | Copilot Opus 4.7 (2026-04-18 session) | 2026-04-18 07:30– |
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-24
 
 ## Article Sources
 

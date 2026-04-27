@@ -5,7 +5,7 @@ date: 2026-04-21
 subfolder: motions
 slug: 2026-04-21-motions
 source_folder: analysis/daily/2026-04-21/motions
-generated_at: 2026-04-27T16:24:08.453Z
+generated_at: 2026-04-27T16:35:06.922Z
 language: en
 layout: article
 ---
@@ -126,8 +126,6 @@ Between 2026-04-13 and 2026-04-17 Sweden's four major opposition parties (S, V, 
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-27
-
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/synthesis-summary.md -->
 
@@ -158,8 +156,6 @@ The dominant strategic-logic hypothesis (ACH: P=0.50) is **campaign-narrative co
 Twenty-one opposition motions filed between April 13–17, 2026 represent the most coordinated parliamentary opposition offensive in the current riksmöte. In an historically rare manoeuvre, all four major opposition parties — **Socialdemokraterna (S)**, **Vänsterpartiet (V)**, **Miljöpartiet (MP)**, and **Centerpartiet (C)** — simultaneously filed counter-motions against the government's flagship immigration legislation package, signalling that immigration policy will be the defining battleground of Sweden's September 2026 election.
 
 The motions target three simultaneous government propositions on immigration (prop. 2025/26:229, 2025/26:235, and 2025/26:215) while also challenging the government's environmentally inconsistent fuel tax cut (prop. 2025/26:236), arms export expansion (prop. 2025/26:228), and healthcare and justice reforms. Sweden's deteriorating economic context — with unemployment rising to 8.69% in 2025 and GDP growth slowing to 0.82% in 2024 — frames a policy environment in which the government has electoral advantage on immigration but exposure on climate credibility.
-
-**Confidence**: 🟩 HIGH
 
 ---
 
@@ -343,8 +339,6 @@ When the dossier covers multiple policy clusters (here: immigration, climate/fis
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-27 · **Methodology**: `ai-driven-analysis-guide.md` v5.1 + DIW v1.0
-
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/significance-scoring.md -->
 
@@ -507,13 +501,8 @@ Raw significance × DIW multiplier = DIW-weighted significance. DIW reflects **h
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-27
-
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/stakeholder-perspectives.md -->
-
-**Date**: 2026-04-20 | **Riksmöte**: 2025/26 | **Analyst**: news-motions workflow
-**Analysis Timestamp**: 2026-04-20 13:07 UTC
 
 ---
 
@@ -534,8 +523,6 @@ This analysis provides deep stakeholder perspective assessments for the 21 oppos
 - **Crime victims** (HD024078): S's motion demanding a dedicated crime victim law (mot. 2025/26:4078) directly appeals to citizens affected by violent crime, a growing segment of S's electoral concern.
 - **Parents of patients** (municipal healthcare, HD024081/83/94): Families relying on municipal elderly care are directly affected by medical competence rules.
 
-**Confidence**: 🟩 HIGH — citizen polling data consistently shows immigration as #1 concern
-
 ---
 
 ### 2. 🏛️ Government Coalition (M/SD/KD/L)
@@ -548,8 +535,6 @@ This analysis provides deep stakeholder perspective assessments for the 21 oppos
 - **Sverigedemokraterna (SD)**: Strongly supports stricter deportation (HD024090/95/97 motivate their base by showing "the establishment is defending criminals"). New reception law validates SD's decade-long campaign.
 - **Kristdemokraterna (KD)**: Supports immigration restrictions but has some tension with crime victim law — KD traditionally advocates for restorative justice, and parent liability provisions in prop. 2025/26:222 (HD024078/84/85) are controversial within KD.
 - **Liberalerna (L)**: More nuanced on deportation proportionality — C's HD024095 closely mirrors L's own constitutional concerns. L may quietly support C's proportionality amendment.
-
-**Confidence**: 🟩 HIGH — coalition voting patterns are predictable
 
 ---
 
@@ -578,8 +563,6 @@ This analysis provides deep stakeholder perspective assessments for the 21 oppos
 - Centerpartiet is the most strategically positioned — constructive on healthcare (HD024094), moderate on deportation (HD024095), protective on consumer finance (HD024088)
 - C's unique position on deportation (partial acceptance with proportionality requirements) is the most legally sophisticated opposition motion
 
-**Confidence**: 🟩 HIGH
-
 ---
 
 ### 4. 💼 Business/Industry
@@ -591,8 +574,6 @@ This analysis provides deep stakeholder perspective assessments for the 21 oppos
 - **Healthcare/Elderly Care**: Affected by S/V/C opposition to municipal healthcare competence rules
 
 **Key conflict**: Transport industry backs government on fuel tax; financial sector cautiously supports C on consumer credit amendment. The business community is fragmented on these motions, with no unified position.
-
-**Confidence**: 🟧 MEDIUM
 
 ---
 
@@ -608,8 +589,6 @@ This analysis provides deep stakeholder perspective assessments for the 21 oppos
 
 **Civil society is the most organized constituency supporting opposition motions** on immigration.
 
-**Confidence**: 🟩 HIGH
-
 ---
 
 ### 6. 🌍 International/EU
@@ -623,8 +602,6 @@ This analysis provides deep stakeholder perspective assessments for the 21 oppos
 - V's HD024091 and MP's HD024096 rejecting arms export modernization run counter to Sweden's NATO Article 3 obligations to maintain defense capability
 - European defence partners (Germany, France) have signaled they expect Sweden to maintain arms export flexibility post-NATO accession
 
-**Confidence**: 🟧 MEDIUM — EU enforcement timeline is long; NATO pressure is real but informal
-
 ---
 
 ### 7. ⚖️ Judiciary/Constitutional
@@ -635,8 +612,6 @@ This analysis provides deep stakeholder perspective assessments for the 21 oppos
 - **Parent liability (crime victims)**: MP's HD024085 partial rejection targets the parent responsibility provisions as disproportionate — KU review anticipated
 
 **Lagrådet** (Council on Legislation) has been consulted on all three immigration propositions. Opposition motions reflect areas where Lagrådet expressed reservations.
-
-**Confidence**: 🟧 MEDIUM — constitutional review bodies have long timelines
 
 ---
 
@@ -652,8 +627,6 @@ This analysis provides deep stakeholder perspective assessments for the 21 oppos
 - 62% of Swedish voters (Novus, Q1 2026) support stricter immigration controls — government has electoral majority on this issue
 - Only 35% support the fuel tax cut as climate policy — opposition has edge on climate
 - 71% support crime victim compensation reform — opposition risks being painted as blocking it
-
-**Confidence**: 🟩 HIGH — Swedish media behavior on immigration stories is well-established
 
 ---
 
@@ -913,8 +886,6 @@ flowchart TD
 - [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/) — cluster-level actor deep dives
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-27
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/scenario-analysis.md -->
@@ -1194,8 +1165,6 @@ flowchart LR
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-27
-
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/risk-assessment.md -->
 
@@ -1472,8 +1441,6 @@ quadrantChart
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-27
-
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/swot-analysis.md -->
 
@@ -1699,8 +1666,6 @@ flowchart LR
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-27
-
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/threat-analysis.md -->
 
@@ -1782,8 +1747,6 @@ The unprecedented coordination of S, V, MP, and C against three immigration prop
 
 **Evidence**: 10 of 21 motions (48%) target immigration — no other policy area comes close. The concentration signals that the opposition has calculated immigration is their highest-return electoral investment.
 
-**Confidence**: 🟧 MEDIUM — electoral dynamics are inherently uncertain; the threat materialises only if the opposition successfully executes its framing strategy.
-
 #### T2 — Climate-Fiscal Government Contradiction [MEDIUM — 🟩 HIGH Confidence]
 
 Sweden's GDP growth was only 0.82% in 2024 (recovering from –0.2% in 2023), yet the government's prop. 2025/26:236 cuts fuel taxes in a supplementary budget — a move that adds **+0.3–0.5 MtCO₂e/year** (Naturvårdsverket elasticity modelling) at a time when Sweden is ~20% behind its 2030 trajectory under Klimatlagen 2017:720. S (HD024082) and MP (HD024098) both challenge this with different framings but reach the same conclusion: the fuel-tax cut is bad policy.
@@ -1792,15 +1755,11 @@ Sweden's GDP growth was only 0.82% in 2024 (recovering from –0.2% in 2023), ye
 
 **Comparative evidence**: Only Germany (2022 Tankrabatt) is a direct precedent; Germany did not extend. Sweden is betting against European experience.
 
-**Confidence**: 🟩 HIGH — the climate-fiscal contradiction is factual and measurable.
-
 #### T3 — Arms-Export Policy Uncertainty [MEDIUM — 🟧 MEDIUM Confidence]
 
 V's HD024091 (complete rejection of prop. 2025/26:228) and MP's HD024096 (arms-export ban including follow-up deliveries) signal that a future left-green government would reverse Sweden's post-NATO defence-industrial policy. This creates **policy uncertainty risk** for defence-industry investment decisions. Swedish arms manufacturers (Saab Linköping ~15k jobs, BAE Systems Karlskoga ~8k jobs) need long-term policy certainty that their export licences will be maintained.
 
 **Evidence**: Both motions challenge prop. 2025/26:228. V's motion explicitly rejects the proposed law; MP demands a ban on exports to human-rights violators.
-
-**Confidence**: 🟧 MEDIUM — V and MP are currently in opposition with no pathway to government without S.
 
 #### T6 — Disinformation / Coordinated Inauthentic Behaviour [MEDIUM — 🟧 MEDIUM Confidence] 🆕
 
@@ -1935,8 +1894,6 @@ Adapting STRIDE (Microsoft threat-modelling) to democratic-process integrity:
 | T5 Democratic-deficit perception | 🟢 LOW | 🟧 MEDIUM | Ongoing | Taxonomy |
 | T6 Disinformation / CIB | 🟡 MEDIUM | 🟧 MEDIUM | Immediate–September | Diamond + STRIDE |
 
-**Overall Threat Level**: 🟡 **MEDIUM** — Healthy democratic process with identifiable strategic threats, primarily in the **narrative-capture** and **information-integrity** domains rather than **constitutional / rule-of-law** domains.
-
 ---
 
 ### 🧭 Recommended Analyst Actions
@@ -1964,8 +1921,6 @@ Adapting STRIDE (Microsoft threat-modelling) to democratic-process integrity:
 - [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/comparative-international.md) — neutralises C2 "obstructionism" frame
 
 ---
-
-**Classification**: Public · **Next Review**: 2026-04-27
 
 ## Per-document intelligence
 
@@ -2191,8 +2146,6 @@ graph TD
 - ✅ Post-NATO context matrix; TOWS interference (5 cells); international comparison (8 jurisdictions)
 - ✅ Risk matrix (6 risks with L×I); 5 forward indicators; color-coded stakeholder Mermaid
 
-**Classification**: Public · **Next Review**: 2026-04-27
-
 ### deportation\-cluster
 <!-- source: documents/deportation-cluster-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/deportation-cluster-analysis.md -->
 
@@ -2410,8 +2363,6 @@ graph LR
 - ✅ Color-coded influence-network Mermaid; 18 named actors; 5 forward indicators with triggers
 - ✅ TOWS interference with 5 cross-entries; international comparative table (6 jurisdictions); ECHR compatibility assessment
 - ✅ Bayesian priors on 5 key uncertainties; honest self-assessment section
-
-**Classification**: Public · **Next Review**: 2026-04-27
 
 ### fuel\-tax\-cluster
 <!-- source: documents/fuel-tax-cluster-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/fuel-tax-cluster-analysis.md -->
@@ -2635,8 +2586,6 @@ graph LR
 - ✅ Color-coded Mermaid; indicator library (6 triggers); implementation-risk table (5 risks L×I)
 - ✅ Comparative table (7 jurisdictions); TOWS interference (5 cells); climate-act quantification
 
-**Classification**: Public · **Next Review**: 2026-04-27
-
 ### reception\-law\-cluster
 <!-- source: documents/reception-law-cluster-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/documents/reception-law-cluster-analysis.md -->
 
@@ -2854,8 +2803,6 @@ flowchart LR
 - ✅ L2: Color-coded SWOT-adjacent Mermaid · named-actor stakeholder table ≥10 (16 named) · indicator library with triggers/owners/dates · implementation-risk table
 - ✅ L2+: TOWS interference highlights · 6-lens analysis (rhetorical / strategic / electoral / legal / coalition / international) · 20+ named actors · precedent/international benchmark · forward scenarios with priors
 
-**Classification**: Public · **Next Review**: 2026-04-27
-
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/coalition-mathematics.md -->
 
@@ -3038,8 +2985,6 @@ Observations that will update the posterior on scenario #2 during the remaining 
 3. **[MEDIUM]** C's positioning is the single largest uncertainty; the June 2026 chamber vote on the April cluster will be the most informative single observation for updating the scenario-#2 posterior.
 
 ---
-
-**Classification**: Public · **Reviewer note**: seat projections use Sainte-Laguë allocation with 4 % threshold; the Novus April mid-month average is the baseline. Update this file when the May 20, 2026 polls are published. The `historical-baseline.md` polling-delta priors feed directly into §4 here.
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/comparative-international.md -->
@@ -3235,8 +3180,6 @@ quadrantChart
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-27
-
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/classification-results.md -->
 
@@ -3336,9 +3279,6 @@ The unusual alignment of S, V, and C against prop. 2025/26:216 (municipal health
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/cross-reference-map.md -->
-
-**Date**: 2026-04-20 | **Riksmöte**: 2025/26 | **Analyst**: news-motions workflow
-**Analysis Timestamp**: 2026-04-20 13:08 UTC
 
 ---
 
@@ -3539,12 +3479,6 @@ Checked against ai-driven-analysis-guide v5.1 rules 1–10.
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/data-download-manifest.md -->
 
-**Generated**: 2026-04-21 07:16 UTC
-**Data Sources**: 
-**Documents Downloaded**: 0
-**Documents Selected (date-filtered)**: 0
-**Produced By**: download-parliamentary-data script (data download only)
-
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
 > All political intelligence analysis (classification, risk assessment, SWOT,
 > threat analysis, stakeholder perspectives, significance scoring, cross-references,
@@ -3715,8 +3649,6 @@ Counting the share of opposition motions where **≥ 3 parties file on the same 
 - **Motion-count completeness**: HD-number ranges were reconciled against the filing index; cross-referenced to Riksdagen dokument API on 2026-04-20.
 
 ---
-
-**Classification**: Public · **Confidence on headline baseline claims**: 🟩 HIGH · **Reviewer**: please flag any inter-period comparability concerns (committee reorganisations, rule changes) for the next revision.
 
 ## Article Sources
 

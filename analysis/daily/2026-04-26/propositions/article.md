@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: propositions
 slug: 2026-04-26-propositions
 source_folder: analysis/daily/2026-04-26/propositions
-generated_at: 2026-04-27T16:24:08.550Z
+generated_at: 2026-04-27T16:35:07.041Z
 language: en
 layout: article
 ---
@@ -1441,9 +1441,6 @@ graph LR
 
 ### Comparator Set
 
-**Comparator set**: Denmark (DK), Norway (NO), Finland (FI), Germany (DE), Netherlands (NL)  
-**Focus**: CRD6/CRR3 transposition timelines; welfare restriction precedents; tachograph enforcement
-
 ---
 
 ### Outside-In Analysis: EU Bank Package (HD03253)
@@ -1976,12 +1973,6 @@ pie title ICD 203 Standards Compliance
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/data-download-manifest.md -->
-
-**Generated**: 2026-04-26 18:02 UTC
-**Data Sources**: get_propositioner, get_dokument_innehall
-**Documents Downloaded**: 10
-**Documents Selected (date-filtered)**: 4
-**Produced By**: download-parliamentary-data script (data download only)
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
 > All political intelligence analysis (classification, risk assessment, SWOT,

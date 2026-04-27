@@ -5,7 +5,7 @@ date: 2026-04-23
 subfolder: committeeReports
 slug: 2026-04-23-committeeReports
 source_folder: analysis/daily/2026-04-23/committeeReports
-generated_at: 2026-04-27T16:24:08.470Z
+generated_at: 2026-04-27T16:35:06.943Z
 language: en
 layout: article
 ---
@@ -1202,8 +1202,6 @@ Constitutional amendments (KU33/KU32) require post-election confirmation — thi
 | **Tidö total** | | **176** | **49.4%** |
 | **Opposition total** | | **173** | **48.8%** |
 
-*Source: valmyndigheten.se election 2022 [A1 equivalent]*
-
 ### Pivotal Vote Analysis for Constitutional Amendments
 
 For KU33 and KU32 to pass the **second vote** in the post-election Riksdag:
@@ -1270,8 +1268,6 @@ Evidence basis: HD01FiU48 [A1], HD01CU27/28 [A1], HD01CU22 [A1], HD01MJU21 [A1]
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/committeeReports/comparative-international.md -->
 
 ### Comparator Set
-
-**Comparator set**: Norway (NO), Denmark (DK), Finland (FI) — Nordic baseline; Germany (DE) — EU major economy energy policy comparator; European Union level — constitutional accessibility obligations
 
 ---
 
@@ -1396,8 +1392,6 @@ Purely procedural; no administration required. The second vote is a Riksdag deci
 | Fiscal | FiU48 energy support | SEK 4.1bn (per legislation) |
 | Court capacity | CU27 new offences | Marginal increase |
 | Regulatory | TU16, MJU19 | Low (rule update only) |
-
-Confidence: Implementation cost estimates are structural [B3]; IT cost estimates are high-uncertainty [C4].
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/committeeReports/devils-advocate.md -->
