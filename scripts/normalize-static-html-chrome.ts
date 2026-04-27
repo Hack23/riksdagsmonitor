@@ -53,7 +53,8 @@ function normalizeApiLinks(html: string): string {
     .replace(/href="(?:\.\.\/)?api\/index\.html"/g, `href="${API_DOCS_URL}"`)
     .replace(/href="(?:\.\.\/)?docs\/api\/?"/g, `href="${API_DOCS_URL}"`)
     .replace(/href="(?:\.\.\/)?docs\/api\/index\.html"/g, `href="${API_DOCS_URL}"`)
-    .replace(/href="https:\/\/riksdagsmonitor\.com\/docs\/api\/?"/g, `href="${API_DOCS_URL}"`);
+    .replace(/href="https:\/\/riksdagsmonitor\.com\/docs\/api\/?"/g, `href="${API_DOCS_URL}"`)
+    .replace(/href="https:\/\/github\.com\/Hack23\/riksdagsmonitor\/issues"/g, `href="${ISSUE_URL}"`);
 }
 
 function languageGrid(prefix: string, family: PageFamily, current: Language): string {
@@ -176,4 +177,67 @@ for (const target of targets()) {
   }
 }
 
-console.log(`Normalized static HTML chrome for ${changed} page(s).`);
+function langFromNewsFile(file: string): Language | null {
+  const match = file.match(/-([a-z]{2})\.html$/);
+  const candidate = match?.[1] as Language | undefined;
+  return candidate && (LANGUAGES as readonly string[]).includes(candidate) ? candidate : null;
+}
+
+function localizedSuffix(lang: Language): string {
+  return lang === 'en' ? '' : `_${lang}`;
+}
+
+function addNewsQuickLinks(html: string, lang: Language): string {
+  if (html.includes('political-intelligence')) return html;
+  const suffix = localizedSuffix(lang);
+  const additions = `
+        <li><a href="../political-intelligence${suffix}.html"><span aria-hidden="true">🧠</span> Political Intelligence</a></li>
+        <li><a href="../sitemap${suffix}.html"><span aria-hidden="true">🗺️</span> Sitemap</a></li>
+        <li><a href="${API_DOCS_URL}"><span aria-hidden="true">📚</span> API Documentation (TypeDoc)</a></li>`;
+  const dashboardHref = `../dashboard/index${suffix}.html`;
+  const dashboardLinkPattern = new RegExp(`(<li><a href="${dashboardHref.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>[\\s\\S]*?<\\/a><\\/li>)`, 'i');
+  return html.replace(dashboardLinkPattern, `$1${additions}`);
+}
+
+function addNewsHeaderLinks(html: string, lang: Language): string {
+  if (html.includes('political-intelligence')) return html;
+  const suffix = localizedSuffix(lang);
+  const additions = `
+      <li><a href="../political-intelligence${suffix}.html">🧠 Political Intelligence</a></li>
+      <li><a href="../sitemap${suffix}.html">🗺️ Sitemap</a></li>`;
+  const dashboardHref = `../dashboard/index${suffix}.html`;
+  const dashboardLinkPattern = new RegExp(`(<li><a href="${dashboardHref.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>[\\s\\S]*?<\\/a><\\/li>)`, 'i');
+  return html.replace(dashboardLinkPattern, `$1${additions}`);
+}
+
+function walkHtmlFiles(dir: string): string[] {
+  if (!fs.existsSync(dir)) return [];
+  const out: string[] = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      out.push(...walkHtmlFiles(full));
+    } else if (entry.isFile() && entry.name.endsWith('.html')) {
+      out.push(full);
+    }
+  }
+  return out;
+}
+
+let newsChanged = 0;
+for (const absolute of walkHtmlFiles(path.join(ROOT_DIR, 'news'))) {
+  const rel = path.relative(ROOT_DIR, absolute);
+  const lang = langFromNewsFile(rel);
+  if (!lang) continue;
+  const before = fs.readFileSync(absolute, 'utf8');
+  let after = normalizeApiLinks(before);
+  if (!after.includes('class="rm-site-footer"')) {
+    after = addNewsHeaderLinks(addNewsQuickLinks(after, lang), lang);
+  }
+  if (after !== before) {
+    fs.writeFileSync(absolute, after, 'utf8');
+    newsChanged++;
+  }
+}
+
+console.log(`Normalized static HTML chrome for ${changed} page(s) and legacy news links for ${newsChanged} page(s).`);
