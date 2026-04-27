@@ -91,7 +91,7 @@ SD,80`;
 Moderates,68,75,7,22.4,70,80
 Social Democrats,107,100,-7,29.0,,`;
       const scenariosCsv = `name,probability,composition,totalSeats,majority,riskLevel
-Tidö,0.55,"M,KD,L,SD",178,true,MEDIUM`;
+Tidö,55,"M,KD,L,SD",178,true,MEDIUM`;
 
       const loadCSV = fakeLoadCSV({
         'election_forecast.csv': forecastCsv,
