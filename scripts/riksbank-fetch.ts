@@ -169,16 +169,18 @@ function parseContentLength(header: string | null): number | undefined {
   return Number.isFinite(value) && value >= 0 ? value : undefined;
 }
 
-/** Read a `ReadableStream<Uint8Array>` body with a hard byte cap; aborts and
- *  returns `{ exceeded: true }` if the cap is exceeded mid-stream. */
+/** Read a `ReadableStream<Uint8Array>` body with a hard byte cap. The returned
+ *  `bytes` holds the data read so far; `exceeded === true` means the cap was
+ *  hit and `bytes` should not be consumed. */
 async function readBodyWithCap(
   body: ReadableStream<Uint8Array> | null,
   maxBytes: number,
-): Promise<{ exceeded: false; bytes: Uint8Array } | { exceeded: true; bytesRead: number }> {
-  if (!body) return { exceeded: false, bytes: new Uint8Array(0) };
+): Promise<{ exceeded: boolean; bytes: Uint8Array; bytesRead: number }> {
+  if (!body) return { exceeded: false, bytes: new Uint8Array(0), bytesRead: 0 };
   const reader = body.getReader();
   const chunks: Uint8Array[] = [];
   let total = 0;
+  let exceeded = false;
   try {
     for (;;) {
       const { value, done } = await reader.read();
@@ -186,13 +188,17 @@ async function readBodyWithCap(
       if (!value) continue;
       total += value.byteLength;
       if (total > maxBytes) {
+        exceeded = true;
         await safeCancel(reader);
-        return { exceeded: true, bytesRead: total };
+        break;
       }
       chunks.push(value);
     }
   } finally {
     await safeReleaseLock(reader);
+  }
+  if (exceeded) {
+    return { exceeded: true, bytes: new Uint8Array(0), bytesRead: total };
   }
   const out = new Uint8Array(total);
   let offset = 0;
@@ -200,7 +206,7 @@ async function readBodyWithCap(
     out.set(chunk, offset);
     offset += chunk.byteLength;
   }
-  return { exceeded: false, bytes: out };
+  return { exceeded: false, bytes: out, bytesRead: total };
 }
 
 /** Perform a single fetch with manual-redirect handling against the Riksbank
@@ -294,9 +300,10 @@ export async function fetchRiksbankPayload(
           `Riksbank JSON body exceeded ${TEXT_RESPONSE_MAX_BYTES} bytes (read ${capped.bytesRead}); persisted as no-data.`,
         );
       }
+      const jsonBytes = capped.bytes;
       let json: unknown;
       try {
-        json = JSON.parse(new TextDecoder('utf-8').decode(capped.bytes));
+        json = JSON.parse(new TextDecoder('utf-8').decode(jsonBytes));
       } catch (error) {
         const detail = error instanceof Error ? error.message : String(error);
         return buildOutagePayload(kind, finalUrlStr, contentType, `Riksbank JSON parse failed (${detail}).`);
@@ -332,7 +339,8 @@ export async function fetchRiksbankPayload(
           `Riksbank PDF body exceeded ${PDF_MAX_BYTES} bytes (read ${capped.bytesRead}); persisted as no-data.`,
         );
       }
-      const pdfBase64 = Buffer.from(capped.bytes).toString('base64');
+      const pdfBytesRaw = capped.bytes;
+      const pdfBase64 = Buffer.from(pdfBytesRaw).toString('base64');
       return {
         provider: 'riksbank',
         kind,
@@ -341,7 +349,7 @@ export async function fetchRiksbankPayload(
         retrievedAt,
         status: 'ok',
         pdfBase64,
-        pdfBytes: capped.bytes.byteLength,
+        pdfBytes: pdfBytesRaw.byteLength,
         economicProvenance: buildProvenance(kind, finalUrlStr, retrievedAt),
       };
     }
@@ -364,7 +372,8 @@ export async function fetchRiksbankPayload(
         `Riksbank text body exceeded ${TEXT_RESPONSE_MAX_BYTES} bytes (read ${capped.bytesRead}); persisted as no-data.`,
       );
     }
-    const text = new TextDecoder('utf-8').decode(capped.bytes);
+    const textBytes = capped.bytes;
+    const text = new TextDecoder('utf-8').decode(textBytes);
     const title = extractTitle(text);
     return {
       provider: 'riksbank',
