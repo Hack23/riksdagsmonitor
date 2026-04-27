@@ -171,7 +171,8 @@ export function findLatestSource(
 
 /**
  * Strict structural + enum validation. Validates top-level required fields,
- * `schema_version`, `pirs` array shape, and each PIR's `pir_id` pattern,
+ * `schema_version`, `cycle`, `date`, `subfolder`, `generated_at`, optional
+ * `inherited_from`, `pirs` array shape, and each PIR's `pir_id` pattern,
  * `status`, and `confidence` enum membership. Does not call ajv to keep the
  * script dependency-free.
  *
@@ -182,13 +183,37 @@ export function validateSource(raw: unknown, filePath: string): PirStatusFile {
     throw new Error(`${filePath}: not a JSON object`);
   }
   const obj = raw as Record<string, unknown>;
-  for (const key of ['schema_version', 'cycle', 'date', 'pirs'] as const) {
+  for (const key of ['schema_version', 'cycle', 'date', 'subfolder', 'generated_at', 'pirs'] as const) {
     if (!(key in obj)) throw new Error(`${filePath}: missing required field '${key}'`);
   }
   if (obj['schema_version'] !== '1.0') {
     throw new Error(
       `${filePath}: unsupported schema_version '${String(obj['schema_version'])}'`,
     );
+  }
+  if (typeof obj['cycle'] !== 'string' || !VALID_CYCLES.has(obj['cycle'] as CycleType)) {
+    throw new Error(`${filePath}: cycle '${String(obj['cycle'])}' is not a valid cycle`);
+  }
+  if (typeof obj['date'] !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(obj['date'])) {
+    throw new Error(`${filePath}: date '${String(obj['date'])}' must match YYYY-MM-DD`);
+  }
+  if (typeof obj['subfolder'] !== 'string' || obj['subfolder'].length === 0) {
+    throw new Error(`${filePath}: subfolder must be a non-empty string`);
+  }
+  if (obj['subfolder'] !== obj['cycle']) {
+    throw new Error(
+      `${filePath}: subfolder '${String(obj['subfolder'])}' must equal cycle '${String(obj['cycle'])}'`,
+    );
+  }
+  if (typeof obj['generated_at'] !== 'string' || Number.isNaN(Date.parse(obj['generated_at']))) {
+    throw new Error(`${filePath}: generated_at '${String(obj['generated_at'])}' must be a valid date-time string`);
+  }
+  if (
+    obj['inherited_from'] !== undefined &&
+    obj['inherited_from'] !== null &&
+    typeof obj['inherited_from'] !== 'string'
+  ) {
+    throw new Error(`${filePath}: inherited_from must be a string or null when present`);
   }
   if (!Array.isArray(obj['pirs'])) {
     throw new Error(`${filePath}: 'pirs' must be an array`);
@@ -275,9 +300,13 @@ export function rollForward(
     };
   });
 
-  const relativeSourcePath = sourcePath.startsWith(repoRoot + path.sep)
-    ? sourcePath.slice(repoRoot.length + 1).replace(/\\/g, '/')
-    : sourcePath.replace(/\\/g, '/');
+  const relativeToRepo = path.relative(repoRoot, sourcePath);
+  const relativeSourcePath =
+    relativeToRepo &&
+    !relativeToRepo.startsWith('..') &&
+    !path.isAbsolute(relativeToRepo)
+      ? relativeToRepo.split(path.sep).join('/')
+      : sourcePath.split(path.sep).join('/');
 
   return {
     schema_version: '1.0',
@@ -312,7 +341,17 @@ export function parseArgs(argv: string[]): CliArgs {
     else if (arg === '--date') args.date = argv[++i];
     else if (arg === '--cycle') args.cycle = argv[++i] as CycleType;
     else if (arg === '--dry-run') args.dryRun = true;
-    else if (arg === '--max-lookback') args.maxLookback = parseInt(argv[++i] ?? '14', 10);
+    else if (arg === '--max-lookback') {
+      const raw = argv[++i];
+      if (!raw || raw.startsWith('--')) {
+        throw new Error('--max-lookback requires a positive integer value');
+      }
+      const parsed = Number.parseInt(raw, 10);
+      if (!Number.isFinite(parsed) || parsed < 1 || String(parsed) !== raw.trim()) {
+        throw new Error(`--max-lookback must be a positive integer (received '${raw}')`);
+      }
+      args.maxLookback = parsed;
+    }
   }
   return args;
 }
@@ -333,7 +372,14 @@ export function runMain(argv: string[], io: RunIO = {}): void {
   const out = io.stdout ?? process.stdout;
   const err = io.stderr ?? process.stderr;
   const exit = io.exit ?? ((c: number): never => process.exit(c));
-  const args = parseArgs(argv);
+  let args: CliArgs;
+  try {
+    args = parseArgs(argv);
+  } catch (e) {
+    err.write(`Argument error: ${String(e instanceof Error ? e.message : e)}\n`);
+    exit(1);
+    return;
+  }
 
   let sourcePath: string;
   let targetDir: string;

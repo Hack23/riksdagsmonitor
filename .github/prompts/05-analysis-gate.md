@@ -232,7 +232,7 @@ if [ -s "$ANALYSIS_DIR/coalition-mathematics.md" ]; then
     || { echo "❌ coalition-mathematics.md: missing seat-count / vote-breakdown table"; FAIL=1; }
 fi
 
-# Check 10 — PIR status sidecar (`pir-status.json`)
+# Check 9 — PIR status sidecar (`pir-status.json`)
 # A valid pir-status.json must be present after every analysis run so that
 # open PIRs can be automatically rolled forward to the next cycle.
 # Schema: schemas/pir-status.schema.json (v1.0)
@@ -338,7 +338,7 @@ Non-blocking for `standard` / `deep` runs; **blocking for `comprehensive` / Tier
 Inline bash probe — append to the main block after `FAIL=0` bookkeeping completes. Supplementary artifacts have **three independent blocking triggers**, not a single tier-only rule: **aggregation article types** (`weekly-review`, `monthly-review`) require the aggregation artifacts; any run whose **tier** is `comprehensive` (the Tier-C run mode) requires the Tier-C supplementary set; and `cross-run-diff.md` is blocking whenever the workflow has **≥ 2 production runs** of the same article type, including `standard` and `deep` runs. `ARTICLE_TYPE` encodes the workflow family; `ANALYSIS_TIER` (when set) encodes the depth tier (`standard` | `deep` | `comprehensive`); `ANALYSIS_RUN_COUNT` (when set) is the numeric count of runs for the same article-generation cycle (if unset or non-numeric, treated as `1`).
 
 ```bash
-# Check 9 — supplementary artifacts (blocking for aggregation types, any Tier-C run, and S5 when run-count >= 2)
+# Check 10 — supplementary artifacts (blocking for aggregation types, any Tier-C run, and S5 when run-count >= 2)
 IS_AGGREGATION=0
 IS_TIER_C=0
 IS_MULTI_RUN=0

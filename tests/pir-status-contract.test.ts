@@ -17,7 +17,7 @@
  * @license Apache-2.0
  */
 
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import {
   existsSync,
   mkdirSync,
@@ -198,6 +198,13 @@ describe('schemas/pir-status.schema.json', () => {
     expect(conditional).toHaveProperty('else');
   });
 
+  it('schema requires answer_summary to be non-empty when present', () => {
+    const defs = (schema['$defs'] ?? {}) as Record<string, unknown>;
+    const pirEntry = (defs['pirEntry'] ?? {}) as Record<string, unknown>;
+    const props = (pirEntry['properties'] ?? {}) as Record<string, { minLength?: number }>;
+    expect(props['answer_summary']?.minLength).toBe(1);
+  });
+
   it('subfolder description acknowledges schema cannot enforce equality with cycle', () => {
     const props = (schema['properties'] ?? {}) as Record<string, { description?: string }>;
     expect(props['subfolder']?.description).toMatch(/not enforced|gate|writer/i);
@@ -252,8 +259,14 @@ describe('parseArgs', () => {
   it('--max-lookback overrides default', () => {
     expect(parseArgs(['--max-lookback', '7']).maxLookback).toBe(7);
   });
-  it('--max-lookback uses default when value missing', () => {
-    expect(parseArgs(['--max-lookback']).maxLookback).toBe(14);
+  it('--max-lookback throws when value is missing', () => {
+    expect(() => parseArgs(['--max-lookback'])).toThrow(/requires a positive integer/);
+  });
+  it('--max-lookback throws when value is non-numeric', () => {
+    expect(() => parseArgs(['--max-lookback', 'abc'])).toThrow(/positive integer/);
+  });
+  it('--max-lookback throws when value is zero', () => {
+    expect(() => parseArgs(['--max-lookback', '0'])).toThrow(/positive integer/);
   });
   it('returns CliArgs shape with required fields', () => {
     const args: CliArgs = parseArgs([]);
@@ -295,6 +308,42 @@ describe('validateSource', () => {
     const fix = validFixture() as unknown as Record<string, unknown>;
     delete fix['cycle'];
     expect(() => validateSource(fix, '/tmp/x')).toThrow(/missing required field 'cycle'/);
+  });
+
+  it('rejects invalid top-level cycle', () => {
+    expect(() =>
+      validateSource(validFixture({ cycle: 'not-a-cycle' as CycleType }), '/tmp/x'),
+    ).toThrow(/is not a valid cycle/);
+  });
+
+  it('rejects invalid top-level date format', () => {
+    expect(() =>
+      validateSource(validFixture({ date: '27-04-2026' }), '/tmp/x'),
+    ).toThrow(/must match YYYY-MM-DD/);
+  });
+
+  it('rejects empty top-level subfolder', () => {
+    expect(() =>
+      validateSource(validFixture({ subfolder: '' }), '/tmp/x'),
+    ).toThrow(/subfolder must be a non-empty string/);
+  });
+
+  it('rejects top-level subfolder that does not equal cycle', () => {
+    expect(() =>
+      validateSource(validFixture({ subfolder: 'week-ahead' }), '/tmp/x'),
+    ).toThrow(/must equal cycle/);
+  });
+
+  it('rejects invalid top-level generated_at date-time', () => {
+    expect(() =>
+      validateSource(validFixture({ generated_at: 'not-a-date' }), '/tmp/x'),
+    ).toThrow(/must be a valid date-time string/);
+  });
+
+  it('rejects invalid inherited_from type', () => {
+    const fix = validFixture() as unknown as Record<string, unknown>;
+    fix['inherited_from'] = 42;
+    expect(() => validateSource(fix, '/tmp/x')).toThrow(/inherited_from must be a string or null/);
   });
 
   it('rejects invalid pir_id pattern', () => {
@@ -544,6 +593,16 @@ describe('rollForward', () => {
     );
   });
 
+  it('inherited_from normalizes relative paths via path.relative semantics', () => {
+    const repo = join(os.tmpdir(), 'pir-path-repo-root');
+    const source = join(repo, 'analysis', 'daily', '2026-04-26', 'month-ahead', 'pir-status.json');
+    const out = rollForward(validFixture(), source, '2026-04-27', 'month-ahead', {
+      now: fixedNow,
+      repoRoot: repo,
+    });
+    expect(out.inherited_from).toBe('analysis/daily/2026-04-26/month-ahead/pir-status.json');
+  });
+
   it('inherited_from falls back to absolute path when source is outside repoRoot', () => {
     const out = rollForward(validFixture(), '/elsewhere/pir-status.json', '2026-04-27', 'month-ahead', {
       now: fixedNow,
@@ -649,6 +708,19 @@ describe('runMain', () => {
     const out = runMainSafe(['--date', '2026-04-27', '--cycle', 'unknown-cycle']);
     expect(out.exitCode).toBe(1);
     expect(out.stderr).toMatch(/Unknown cycle/);
+  });
+
+  it('exits 1 with invalid --max-lookback', () => {
+    const out = runMainSafe([
+      '--date',
+      '2026-04-27',
+      '--cycle',
+      'month-ahead',
+      '--max-lookback',
+      '0',
+    ]);
+    expect(out.exitCode).toBe(1);
+    expect(out.stderr).toMatch(/Argument error: --max-lookback must be a positive integer/);
   });
 
   it('exits 2 when source JSON is malformed', () => {
@@ -773,6 +845,10 @@ describe('analysis-gate pir-status.json contract', () => {
   it('05-analysis-gate.md enforces conditional answer_summary', () => {
     expect(gate).toMatch(/status.*answered.*answer_summary/);
   });
+  it('05-analysis-gate.md keeps PIR and supplementary checks sequential', () => {
+    expect(gate).toContain('# Check 9 — PIR status sidecar');
+    expect(gate).toContain('# Check 10 — supplementary artifacts');
+  });
   it('ai-driven-analysis-guide.md references pir-status.json', () => {
     expect(guide).toContain('pir-status.json');
   });
@@ -803,13 +879,5 @@ describe('module export sanity', () => {
       'monthly-review',
     ];
     expect(cycles).toHaveLength(10);
-  });
-
-  it('runMain does not invoke exit when invoked with valid args', () => {
-    // Already covered by happy-path test, but assert the spy pattern is clean.
-    const exitSpy = vi.fn();
-    const noopOut = { write: () => true } as unknown as NodeJS.WritableStream;
-    expect(typeof exitSpy).toBe('function');
-    expect(typeof noopOut.write).toBe('function');
   });
 });

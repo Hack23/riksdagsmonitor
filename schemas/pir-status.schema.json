@@ -88,6 +88,7 @@
         "answer_summary": {
           "type": "string",
           "description": "Short (≤ 500 chars) summary of the evidence or event that answered this PIR. Populate only when status='answered'.",
+          "minLength": 1,
           "maxLength": 500
         },
         "inherits_from": {
