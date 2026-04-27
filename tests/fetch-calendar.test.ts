@@ -135,6 +135,10 @@ describe('isHtmlErrorResponse', () => {
     expect(isHtmlErrorResponse('<head><title>Error</title></head>')).toBe(true);
   });
 
+  it('returns true for a self-closing <meta /> fragment', () => {
+    expect(isHtmlErrorResponse('<meta charset="utf-8" />')).toBe(true);
+  });
+
   it('returns false for a JSON response', () => {
     expect(isHtmlErrorResponse('{"jsonrpc":"2.0","id":1}')).toBe(false);
   });
@@ -413,6 +417,19 @@ describe('parseRiksdagKalendariumHtml', () => {
       </article>
     `;
     expect(parseRiksdagKalendariumHtml(html)).toEqual([]);
+  });
+
+  it('parses calendar-item articles when class attribute uses single quotes', () => {
+    const html = `
+      <article data-akt="debatt" class='calendar-card calendar-item' data-organ="FiU">
+        <time datetime="2026-04-28T15:00:00">15.00</time>
+        <h2>Finansdebatt</h2>
+      </article>
+    `;
+    const events = parseRiksdagKalendariumHtml(html);
+    expect(events).toHaveLength(1);
+    expect(events[0]?.org).toBe('FiU');
+    expect(events[0]?.summary).toContain('Finansdebatt');
   });
 });
 

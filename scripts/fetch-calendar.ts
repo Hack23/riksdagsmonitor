@@ -130,7 +130,7 @@ const DEFAULT_MAX_RETRIES = 2;
 const RETRY_BASE_DELAY_MS = 1_000;
 
 // HTML detection: common HTML document / fragment leading tags.
-const HTML_PREFIX_RE = /^\s*(?:<!doctype\b|<html\b|<head\b|<body\b|<title\b|<meta\b)/i;
+const HTML_PREFIX_RE = /^\s*(?:<!doctype(?=[\s>])|<html(?=[\s>/])|<head(?=[\s>/])|<body(?=[\s>/])|<title(?=[\s>/])|<meta(?=[\s>/]))/i;
 
 // ---------------------------------------------------------------------------
 // HTML detection
@@ -375,10 +375,11 @@ export function normalizeMcpCalendarEvent(raw: unknown): CalendarEvent {
 export function parseRiksdagKalendariumHtml(html: string): CalendarEvent[] {
   const events: CalendarEvent[] = [];
 
-  // Extract calendar-item <article> blocks (Pattern A).
-  const articleRe = /<article\b([^>]*class="[^"]*\bcalendar-item\b[^"]*"[^>]*)>([\s\S]*?)<\/article>/gi;
+  // Extract <article> blocks, then retain only calendar-item articles (Pattern A).
+  const articleRe = /<article\b([^>]*)>([\s\S]*?)<\/article>/gi;
   for (const articleMatch of html.matchAll(articleRe)) {
     const attrs = articleMatch[1] ?? '';
+    if (!hasCalendarItemClass(attrs)) continue;
     const body = articleMatch[2] ?? '';
     const event = parseCalendarArticle(attrs, body);
     if (event) events.push(event);
@@ -478,6 +479,12 @@ function extractDataAttr(attrs: string, name: string): string | null {
   const re = new RegExp(`\\bdata-${name}="([^"]*)"`, 'i');
   const m = attrs.match(re);
   return m && m[1]?.trim() ? m[1].trim() : null;
+}
+
+/** True when an element attribute string contains a `calendar-item` class token. */
+function hasCalendarItemClass(attrs: string): boolean {
+  const m = attrs.match(/\bclass\s*=\s*(["'])(.*?)\1/i);
+  return m ? (m[2] ?? '').split(/\s+/).includes('calendar-item') : false;
 }
 
 /**
