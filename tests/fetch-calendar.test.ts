@@ -329,6 +329,19 @@ describe('normalizeMcpCalendarEvent', () => {
     expect(event.doc_refs).toEqual([]);
     expect(event.source).toBe('mcp-primary');
   });
+
+  it('omits dtend when not present in raw event', () => {
+    const raw = {
+      dtstart: '2026-04-28T10:00:00',
+      organ: 'KU',
+      akt: 'beredning',
+      summary: 'Konstitutionsutskottets möte',
+      // dtend intentionally absent
+    };
+    const event = normalizeMcpCalendarEvent(raw);
+    expect(event.dtend).toBeUndefined();
+    expect(event.dtstart).toBe('2026-04-28T10:00:00');
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -527,7 +540,9 @@ describe('fetchCalendarWithFallback', () => {
     const fetchFn = vi.fn(async (url: RequestInfo | URL) => {
       callCount++;
       const urlStr = String(url);
-      if (urlStr.includes('onrender.com') || urlStr.includes('mcp.test')) {
+      // Use exact hostname match rather than substring to avoid incomplete-URL checks.
+      const hostname = (() => { try { return new URL(urlStr).hostname; } catch { return ''; } })();
+      if (hostname === 'mcp.test') {
         // MCP endpoint returns HTML error
         return new Response('<!DOCTYPE html><html><body>503 Service Unavailable</body></html>', {
           status: 200, // MCP sometimes returns 200 with HTML body
@@ -564,7 +579,8 @@ describe('fetchCalendarWithFallback', () => {
     const fetchFn = vi.fn(async (url: RequestInfo | URL) => {
       callCount++;
       const urlStr = String(url);
-      if (urlStr.includes('mcp.test')) {
+      const hostname = (() => { try { return new URL(urlStr).hostname; } catch { return ''; } })();
+      if (hostname === 'mcp.test') {
         throw new Error('ECONNREFUSED');
       }
       return new Response(webHtml, { status: 200, headers: { 'Content-Type': 'text/html' } });
@@ -618,8 +634,8 @@ describe('fetchCalendarWithFallback', () => {
     let mcpCallCount = 0;
     let webCallCount = 0;
     const fetchFn = vi.fn(async (url: RequestInfo | URL) => {
-      const urlStr = String(url);
-      if (urlStr.includes('mcp.test')) {
+      const hostname = (() => { try { return new URL(String(url)).hostname; } catch { return ''; } })();
+      if (hostname === 'mcp.test') {
         mcpCallCount++;
         return new Response('<!DOCTYPE html><html>Error</html>', { status: 200 });
       }

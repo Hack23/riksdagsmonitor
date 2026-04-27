@@ -639,7 +639,7 @@ export async function fetchCalendarWithFallback(
   let primaryError: string | undefined;
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     if (attempt > 0) {
-      const delay = RETRY_BASE_DELAY_MS * Math.pow(2, attempt - 1);
+      const delay = Math.min(RETRY_BASE_DELAY_MS * Math.pow(2, attempt - 1), 30_000);
       console.warn(
         `  ⚠️  MCP calendar retry ${attempt}/${maxRetries} after ${delay} ms…`,
       );
