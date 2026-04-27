@@ -172,13 +172,16 @@ export default defineConfig({
         // and are exercised by integration smoke tests, not unit coverage.
         'scripts/parliamentary-data/pdf-converter.ts',
         'scripts/mcp-client/transport.ts',
-        // SCB client / CIA data-loader: large network clients with extensive
-        // error-handling branches; tested via mocked unit tests today, full
-        // coverage tracked as follow-up. Excluded from the gate so the gate
-        // measures finished modules at the ISMS floor rather than partial
-        // network-client surfaces.
+        // SCB client / CIA shared data-loader: large network clients with
+        // extensive error-handling branches; tested via mocked unit tests
+        // today, full coverage tracked as follow-up. Excluded from the gate
+        // so the gate measures finished modules at the ISMS floor rather
+        // than partial network-client surfaces.
+        // NOTE: 'src/browser/cia/data-loader.ts' previously listed here was
+        // decomposed into focused modules (types.ts, sources.ts,
+        // csv-utils.ts, loaders/*.ts) and is now covered by the gate via
+        // tests/cia-data-loader-*.test.ts and tests/cia-loaders.test.ts.
         'scripts/scb-client.ts',
-        'src/browser/cia/data-loader.ts',
         'src/browser/shared/data-loader.ts',
         // Network clients with extensive error-branching tested via mocks;
         // dedicated tests for the remaining branches tracked as follow-up.

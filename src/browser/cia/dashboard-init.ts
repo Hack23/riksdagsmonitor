@@ -28,7 +28,7 @@ import { CIADashboardRenderer } from './visualizations.js';
 import { Election2026Predictions } from './election-predictions.js';
 import { t } from './i18n-translations.js';
 
-import type { CIADataPayload } from './data-loader.js';
+import type { CIADataPayload } from './types.js';
 import type { RendererData } from './visualizations.js';
 
 /* ------------------------------------------------------------------ */

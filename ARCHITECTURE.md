@@ -644,19 +644,24 @@ sequenceDiagram
 
 ### 📊 Data Pipeline Pattern
 
-**Description:** Data flows from CIA Platform → CSV files → Chart.js/D3.js rendering
+**Description:** Data flows from CIA Platform → CSV files → focused TypeScript loader modules → Chart.js/D3.js rendering
 
 **Components:**
 1. **Data Sources** - CIA Platform aggregates from Swedish Parliament API
-2. **Data Export** - CSV files stored in repository
-3. **Client-Side Parsing** - Papa Parse loads CSV in browser
-4. **Visualization** - Chart.js/D3.js render interactive dashboards
+2. **Data Export** - CSV files stored in repository (`cia-data/`)
+3. **Source Inventory** (`src/browser/cia/sources.ts`) - 25 CSV source URL definitions + Riksdag/committee constants, side-effect free
+4. **Type Definitions** (`src/browser/cia/types.ts`) - 30+ DTO interfaces consumed by both the loader and the renderer; visualization layer imports types here directly to avoid pulling in network code
+5. **CSV Helpers** (`src/browser/cia/csv-utils.ts`) - `parseCSV` / `loadCSV` / `createLoadCSV` free functions with local-first + remote fallback strategy
+6. **Per-Domain Loaders** (`src/browser/cia/loaders/*.ts`) - One file per dashboard domain (overview, election, parties, top10, committees, voting, ministries, demographics, documents, risk); each is a pure function `(loadCSV) => Promise<T>` that can be unit-tested in isolation
+7. **Orchestrator** (`src/browser/cia/data-loader.ts`) - `CIADataLoader` class wiring loaders together with a shared `LoadCSV` closure; preserves the historical public API for `dashboard-init.ts` and `election-predictions.ts`
+8. **Visualization** - Chart.js/D3.js render interactive dashboards from the typed payloads
 
 **Benefits:**
-- Clear data lineage
+- Clear data lineage with bounded module responsibilities
 - Version-controlled data
 - Fast client-side rendering
 - No database required
+- Each loader is independently testable; types are importable without the HTTP client
 
 ### 🌍 Multi-Language Pattern
 

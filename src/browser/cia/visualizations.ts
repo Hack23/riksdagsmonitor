@@ -35,7 +35,7 @@ import type {
   DemographicsDashboard,
   DocumentActivityDashboard,
   RiskEvolutionDashboard,
-} from './data-loader.js';
+} from './types.js';
 
 /* ------------------------------------------------------------------ */
 /*  Global library reference (loaded via <script> tag)                */
