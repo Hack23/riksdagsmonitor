@@ -156,6 +156,21 @@ flowchart TD
 
 ---
 
+## 📊 Quantitative Transmission Check (SCB + Riksbank)
+
+> Complete this block for assessments where economic transmission affects intent, timing or voter impact. It is a Swedish ground-truth layer and complements — but does not replace — IMF macro/fiscal context.
+
+| Mechanism | Required source | economicProvenance provider | Latest signal | Intelligence implication |
+|-----------|-----------------|-----------------------------|:-------------:|--------------------------|
+| Price shock / relief channel | `tsx scripts/scb-fetch.ts preset --preset cpi` + `--preset fuel-prices` | `scb` | — | Does the measure materially affect household cost pressure? |
+| Labour-market sensitivity | `tsx scripts/scb-fetch.ts preset --preset aku` | `scb` | — | Does unemployment amplify or mute the political signal? |
+| Household exposure | `tsx scripts/scb-fetch.ts preset --preset household-economy` | `scb` | — | Which voter segments face the strongest disposable-income effect? |
+| Monetary-policy reaction function | `tsx scripts/riksbank-fetch.ts repo-rate-path` + `minutes` | `riksbank` | — | Does the Riksbank path support or contradict the claimed transmission? |
+
+**Assessment note:** Cite concrete SCB/Riksbank values before making a forecast about disposable income, consumer sentiment or polling impact. If either source is unavailable, label the gap and fall back to cached `analysis/data/scb/` or `analysis/data/riksbank/` artifacts.
+
+---
+
 ## 🚩 Red Flags (elevate scrutiny)
 
 | Signal | Meaning | Recommended action |
@@ -211,4 +226,3 @@ flowchart TD
 - [ ] **Cross-references resolve** — every `[link](file.md)` in this artifact points to a file that exists in the run folder (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) or to a methodology / template under `analysis/`.
 - [ ] **Mermaid renders** — every fenced ` ```mermaid ` block parses (no missing class definitions, no orphan nodes, no >40-node graphs that overflow viewport on mobile).
 - [ ] **Line-floor check** — artifact length ≥ the per-artifact floor in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json); shorter artifacts trigger Pass-2 rewrite, never a `[truncated]` note.
-

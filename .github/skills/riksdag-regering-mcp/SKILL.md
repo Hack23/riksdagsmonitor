@@ -23,6 +23,7 @@ Provide comprehensive access to Swedish political data through the `riksdag-rege
 4. **Real-Time Access**: Latest parliamentary and government activities
 5. **GDPR Compliance**: Public interest basis (Article 6(1)(e)), no personal data beyond official capacity
 6. **Multi-Source Integration**: Riksdag documents + Government publications
+7. **Quantitative Context Handoff**: Pair parliamentary evidence with SCB/Riksbank helper outputs when domestic economic transmission matters; keep IMF as cross-country macro canon and SCB/Riksbank as Swedish ground truth.
 
 ## Available Tools (32 Total)
 
@@ -112,6 +113,7 @@ Provide comprehensive access to Swedish political data through the `riksdag-rege
 - **Electoral Research**: Historical trends, party evolution
 - **Transparency Dashboards**: Real-time political metrics
 - **Risk Assessment**: Identify democratic accountability gaps
+- **Economic Transmission Analysis**: Combine Riksdag measures with `scripts/scb-fetch.ts` KPI/AKU/HEK/fuel presets and `scripts/riksbank-fetch.ts` policy-rate/minutes context for Swedish-specific impact estimates.
 
 ## Calling MCP Tools in Agentic Workflows
 

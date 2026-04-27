@@ -159,6 +159,21 @@ graph TB
 
 ---
 
+## 🇸🇪 Swedish Ground-Truth Transmission Layer (SCB + Riksbank)
+
+> Use this table whenever the Swedish measure depends on domestic price, labour-market, household-income or monetary-policy transmission. IMF remains primary for cross-country macro; SCB and Riksbank supply the Swedish-specific ground truth. Fetch with `tsx scripts/scb-fetch.ts preset --preset <cpi|aku|household-economy|fuel-prices> --persist` and `tsx scripts/riksbank-fetch.ts <repo-rate-path|minutes|fuel-price-context> --persist`.
+
+| Transmission step | Swedish source | Required provenance | Current value | Timing / lag | Analytical use |
+|-------------------|----------------|---------------------|:-------------:|--------------|----------------|
+| Pump price / energy component → CPI | SCB `fuel-prices` (`PR0101A`) + SCB `cpi` (`0000003N`) | `economicProvenance.provider="scb"` | — | Monthly | Estimate direct CPI and disposable-income effect |
+| Labour-market slack | SCB `aku` (`000003V8`) | `economicProvenance.provider="scb"` | — | Quarterly | Judge whether Swedish unemployment divergence is structural or cyclical |
+| Household disposable-income exposure | SCB `household-economy` (`HE0110A`) | `economicProvenance.provider="scb"` | — | Annual / latest | Distributional incidence and voter-segment exposure |
+| Monetary-policy pass-through | Riksbank `repo-rate-path` + `minutes` | `economicProvenance.provider="riksbank"` | — | Per monetary-policy decision | Check whether fiscal relief conflicts with the Riksbank inflation path |
+
+> **Interpretation:** State the Swedish mechanism explicitly: instrument → SCB/Riksbank metric → household / labour / sentiment channel → expected political salience. Never relabel SCB or Riksbank data as IMF; use IMF only for cross-country macro/fiscal comparators.
+
+---
+
 ## 📘 Policy-Transfer Assessment
 
 | Question | Answer | Evidence |
@@ -216,4 +231,3 @@ graph TB
 - [ ] **Cross-references resolve** — every `[link](file.md)` in this artifact points to a file that exists in the run folder (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) or to a methodology / template under `analysis/`.
 - [ ] **Mermaid renders** — every fenced ` ```mermaid ` block parses (no missing class definitions, no orphan nodes, no >40-node graphs that overflow viewport on mobile).
 - [ ] **Line-floor check** — artifact length ≥ the per-artifact floor in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json); shorter artifacts trigger Pass-2 rewrite, never a `[truncated]` note.
-
