@@ -118,6 +118,13 @@ export interface DeadlineCalculatorOptions {
 /** Swedish constitutional practice: 4-month skrivelse deadline. */
 export const CONSTITUTIONAL_DEADLINE_MONTHS = 4 as const;
 
+/**
+ * Default risk level applied when a record's `risk_level` is missing.
+ * Used by both alert detection and risk-level filtering so downstream
+ * logic stays consistent.
+ */
+export const DEFAULT_RISK_LEVEL = 'MEDIUM' as const;
+
 /** Riksdag search endpoint for government communications (skrivelser). */
 export const RIR_SKRIVELSE_DOKTYP = 'skr' as const;
 
@@ -229,8 +236,9 @@ export function deriveResponseStatus(
 /**
  * Calculate the number of days a deadline is overdue.
  *
- * @param deadlineDate - ISO 8601 date string
+ * @param deadlineDate - ISO 8601 date string (YYYY-MM-DD)
  * @param asOf - Reference date. Defaults to now.
+ * @throws RangeError when either date is invalid (mirrors {@link calculateSkrivelseDeadline}).
  * @returns Positive integer (days overdue) or 0 if not yet overdue.
  */
 export function daysOverdue(
@@ -239,6 +247,12 @@ export function daysOverdue(
 ): number {
   const now = typeof asOf === 'string' ? new Date(asOf + 'T00:00:00Z') : asOf;
   const deadline = new Date(deadlineDate + 'T00:00:00Z');
+  if (isNaN(deadline.getTime())) {
+    throw new RangeError(`Invalid deadlineDate: ${deadlineDate}`);
+  }
+  if (isNaN(now.getTime())) {
+    throw new RangeError(`Invalid asOf: ${String(asOf)}`);
+  }
   const diffMs = now.getTime() - deadline.getTime();
   return diffMs > 0 ? Math.floor(diffMs / (1000 * 60 * 60 * 24)) : 0;
 }
@@ -275,7 +289,7 @@ export function detectOverdueAlerts(
         agency: record.agency,
         skrivelse_deadline: record.skrivelse_deadline,
         days_overdue: daysOverdue(record.skrivelse_deadline, now),
-        risk_level: record.risk_level ?? 'MEDIUM',
+        risk_level: record.risk_level ?? DEFAULT_RISK_LEVEL,
         riksdag_url: record.riksdag_url,
       });
     }
@@ -431,7 +445,7 @@ export function filterByMinRiskLevel(
     CRITICAL: 3,
   };
   const threshold = order[minLevel];
-  return records.filter((r) => order[r.risk_level ?? 'LOW'] >= threshold);
+  return records.filter((r) => order[r.risk_level ?? DEFAULT_RISK_LEVEL] >= threshold);
 }
 
 // ---------------------------------------------------------------------------
@@ -521,8 +535,8 @@ export function validateRirDataset(
 /**
  * Load the RiR follow-ups dataset from a JSON file.
  *
- * @param readFileFn - Injectable file reader (default: synchronous fs.readFileSync)
  * @param filePath - Absolute or relative path to the JSON file
+ * @param readFileFn - Injectable file reader (default: synchronous fs.readFileSync)
  * @returns Parsed dataset
  */
 export function loadRirDataset(

@@ -65,8 +65,14 @@ function parseArgs(argv: string[]): CliOptions {
     const arg = args[i];
     if (arg === '--dry-run') dryRun = true;
     else if (arg === '--alert') alertOnOverdue = true;
-    else if (arg === '--date' && args[i + 1]) {
-      dateStr = args[++i];
+    else if (arg === '--date') {
+      const nextArg = args[i + 1];
+      if (!nextArg) {
+        console.error('[fetch-rir-followups] Missing value for --date. Expected YYYY-MM-DD.');
+        process.exit(2);
+      }
+      dateStr = nextArg;
+      i++;
     }
   }
 
@@ -91,45 +97,65 @@ function parseArgs(argv: string[]): CliOptions {
 async function fetchRiksdagSkrivelser(
   fromDate: string,
   toDate: string,
-  limit = 50,
+  pageSize = 50,
 ): Promise<RiksdagDocumentResult[]> {
-  const params = new URLSearchParams({
-    doktyp: 'skr',
-    from: fromDate,
-    tom: toDate,
-    sz: String(limit),
-    utformat: 'json',
-    sort: 'datum',
-    sortorder: 'desc',
-  });
+  const documents: RiksdagDocumentResult[] = [];
+  let page = 1;
 
-  const url = `https://data.riksdagen.se/dokumentlista/?${params.toString()}`;
-
-  let response: Response;
-  try {
-    response = await fetch(url, {
-      signal: AbortSignal.timeout(15_000),
-      headers: { Accept: 'application/json' },
+  // Page through results until exhausted, so 90-day windows with > pageSize
+  // skrivelser do not silently drop matches.
+  for (;;) {
+    const params = new URLSearchParams({
+      doktyp: 'skr',
+      from: fromDate,
+      tom: toDate,
+      sz: String(pageSize),
+      p: String(page),
+      utformat: 'json',
+      sort: 'datum',
+      sortorder: 'desc',
     });
-  } catch (err) {
-    console.error(`[fetch-rir-followups] Network error fetching Riksdag API: ${err}`);
-    return [];
+
+    const url = `https://data.riksdagen.se/dokumentlista/?${params.toString()}`;
+
+    let response: Response;
+    try {
+      response = await fetch(url, {
+        signal: AbortSignal.timeout(15_000),
+        headers: { Accept: 'application/json' },
+      });
+    } catch (err) {
+      console.error(`[fetch-rir-followups] Network error fetching Riksdag API: ${err}`);
+      return documents;
+    }
+
+    if (!response.ok) {
+      console.error(`[fetch-rir-followups] Riksdag API returned ${response.status}`);
+      return documents;
+    }
+
+    let json: RiksdagDocumentListResponse;
+    try {
+      json = (await response.json()) as RiksdagDocumentListResponse;
+    } catch {
+      console.error('[fetch-rir-followups] Failed to parse Riksdag API JSON response');
+      return documents;
+    }
+
+    const pageDocuments = json?.dokumentlista?.dokument ?? [];
+    documents.push(...pageDocuments);
+
+    // Stop when the page is short or empty (last/only page).
+    if (pageDocuments.length === 0 || pageDocuments.length < pageSize) {
+      break;
+    }
+
+    page += 1;
+    // Hard safety cap to avoid runaway loops on misbehaving APIs.
+    if (page > 50) break;
   }
 
-  if (!response.ok) {
-    console.error(`[fetch-rir-followups] Riksdag API returned ${response.status}`);
-    return [];
-  }
-
-  let json: RiksdagDocumentListResponse;
-  try {
-    json = (await response.json()) as RiksdagDocumentListResponse;
-  } catch {
-    console.error('[fetch-rir-followups] Failed to parse Riksdag API JSON response');
-    return [];
-  }
-
-  return json?.dokumentlista?.dokument ?? [];
+  return documents;
 }
 
 interface RiksdagDocumentResult {
@@ -156,16 +182,28 @@ interface RiksdagDocumentListResponse {
 // ---------------------------------------------------------------------------
 
 /**
+ * Normalise a skrivelse reference for tolerant equality comparison.
+ * Strips the "Skr." prefix, whitespace, and lowercases — so
+ * "Skr. 2025/26:78" and "skr2025/26:78" match.
+ */
+function normalizeSkrivelseRef(value: string): string {
+  return value.replace(/^skr\.?\s*/i, '').replace(/\s+/g, '').toLowerCase();
+}
+
+/**
  * Attempt to match a Riksdag skrivelse document against known RiR follow-up
- * records by looking for the RiR report ID in the document title or related
- * document ID fields.
+ * records by looking for the RiR report ID / number in the document title,
+ * or by comparing the skrivelse `beteckning` to a previously stored
+ * `response_skrivelse_id` (after normalisation).
  */
 function matchSkrivelse(
   skrivelse: RiksdagDocumentResult,
   records: readonly RirFollowUpRecord[],
 ): RirFollowUpRecord | null {
   const title = (skrivelse.titel ?? '').toLowerCase();
-  const docId = skrivelse.dok_id ?? skrivelse.id ?? '';
+  // beteckning is the human reference (e.g. "2025/26:78"); compare against
+  // record.response_skrivelse_id ("Skr. 2025/26:78") after normalisation.
+  const beteckningNorm = skrivelse.beteckning ? normalizeSkrivelseRef(skrivelse.beteckning) : '';
 
   for (const record of records) {
     // Match on rir_report_id in title
@@ -173,8 +211,11 @@ function matchSkrivelse(
     // Match on rir_number (e.g. "RiR 2026:6") in title
     const rirNum = record.rir_number.toLowerCase();
     if (title.includes(rirNum)) return record;
-    // Match on response_skrivelse_id (document already matched)
-    if (record.response_skrivelse_id && docId.includes(record.response_skrivelse_id)) return record;
+    // Match on response_skrivelse_id via beteckning (normalised both sides).
+    if (record.response_skrivelse_id && beteckningNorm) {
+      const recordRefNorm = normalizeSkrivelseRef(record.response_skrivelse_id);
+      if (recordRefNorm && beteckningNorm === recordRefNorm) return record;
+    }
   }
   return null;
 }
@@ -227,17 +268,22 @@ async function main(): Promise<void> {
         const newId = skr.beteckning ?? skr.dok_id ?? skr.id ?? null;
         if (newId && (!record.response_skrivelse_id || record.gov_response_status === 'PARTIAL')) {
           const prevStatus = record.gov_response_status;
-          // Mark the record as responded when a matching skrivelse is found.
-          // PARTIAL records are upgraded to RESPONDED when a (presumably fuller) skrivelse appears.
-          const newStatus: RirFollowUpRecord['gov_response_status'] = 'RESPONDED';
+          // Derive the persisted status from a candidate record so stored data
+          // stays consistent with the canonical library rules — e.g. a response
+          // recorded while open_recommendations > 0 remains PARTIAL rather than
+          // being forced to RESPONDED.
+          const candidateRecord: RirFollowUpRecord = {
+            ...record,
+            response_skrivelse_id: newId,
+          };
+          const newStatus = deriveResponseStatus(candidateRecord, opts.asOf);
           console.log(
             `[fetch-rir-followups] Matched response for ${record.rir_report_id} (${prevStatus} → ${newStatus}): ${newId}`,
           );
           updatedCount++;
           return {
-            ...record,
+            ...candidateRecord,
             gov_response_status: newStatus,
-            response_skrivelse_id: newId,
           };
         }
       }

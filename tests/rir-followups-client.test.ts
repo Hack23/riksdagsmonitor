@@ -192,6 +192,14 @@ describe('daysOverdue', () => {
   it('returns 0 exactly on the deadline day', () => {
     expect(daysOverdue('2026-04-10', '2026-04-10')).toBe(0);
   });
+
+  it('throws RangeError on invalid deadlineDate', () => {
+    expect(() => daysOverdue('not-a-date', '2026-04-10')).toThrow(RangeError);
+  });
+
+  it('throws RangeError on invalid asOf string', () => {
+    expect(() => daysOverdue('2026-04-10', 'not-a-date')).toThrow(RangeError);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -474,10 +482,11 @@ describe('filterByMinRiskLevel', () => {
     expect(result.every((r) => r.risk_level === 'HIGH' || r.risk_level === 'CRITICAL')).toBe(true);
   });
 
-  it('defaults missing risk_level to LOW', () => {
+  it('defaults missing risk_level to MEDIUM (shared default)', () => {
     const noRisk: RirFollowUpRecord = { ...RECORD_RESPONDED, risk_level: undefined };
-    const result = filterByMinRiskLevel([noRisk], 'MEDIUM');
-    expect(result).toHaveLength(0);
+    // Default MEDIUM ⇒ included when filtering at MEDIUM, excluded when filtering at HIGH.
+    expect(filterByMinRiskLevel([noRisk], 'MEDIUM')).toHaveLength(1);
+    expect(filterByMinRiskLevel([noRisk], 'HIGH')).toHaveLength(0);
   });
 });
 
