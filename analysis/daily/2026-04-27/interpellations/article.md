@@ -5,7 +5,7 @@ date: 2026-04-27
 subfolder: interpellations
 slug: 2026-04-27-interpellations
 source_folder: analysis/daily/2026-04-27/interpellations
-generated_at: 2026-04-27T16:35:07.067Z
+generated_at: 2026-04-27T16:50:07.076Z
 language: en
 layout: article
 ---
@@ -84,10 +84,6 @@ graph TD
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/synthesis-summary.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Admiration Code**: [B2] — Confirmed, plausible source
 
 ---
 
@@ -946,12 +942,11 @@ graph TD
 <!-- source: documents/HD10447-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/documents/HD10447-analysis.md -->
 
 **Dok-ID**: HD10447  
-**Date**: 2026-04-23  
+
 **Type**: Interpellation  
-**Author**: Patrik Lundqvist (S)  
+
 **Minister**: Ebba Busch (KD), Ministry of Energy, Business and Industry  
 **Response deadline**: 2026-05-07  
-**Riksmöte**: 2025/26
 
 ---
 
@@ -1026,12 +1021,11 @@ This two-sided attack is strategically coherent: no matter where you sit in the 
 <!-- source: documents/HD10448-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/documents/HD10448-analysis.md -->
 
 **Dok-ID**: HD10448  
-**Date**: 2026-04-24  
+
 **Type**: Interpellation  
-**Author**: Josef Fransson (SD)  
+
 **Minister**: Ebba Busch (KD), Ministry of Energy, Business and Industry  
 **Response deadline**: 2026-05-08  
-**Riksmöte**: 2025/26
 
 ---
 
@@ -1095,12 +1089,11 @@ The interpellation is notable because it comes from a coalition support party (S
 <!-- source: documents/HD10449-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/documents/HD10449-analysis.md -->
 
 **Dok-ID**: HD10449  
-**Date**: 2026-04-27  
+
 **Type**: Interpellation  
-**Author**: Robert Olesen (S), Hässleholm constituency  
+
 **Minister**: Andreas Carlson (KD), Ministry of Infrastructure  
 **Response deadline**: 2026-05-18  
-**Riksmöte**: 2025/26
 
 ---
 
@@ -1162,12 +1155,11 @@ Carlson will likely:
 <!-- source: documents/HD10450-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/documents/HD10450-analysis.md -->
 
 **Dok-ID**: HD10450  
-**Date**: 2026-04-27  
+
 **Type**: Interpellation  
-**Author**: Jessica Rodén (S)  
+
 **Minister**: Anna Tenje (M), Ministry of Social Affairs  
 **Response deadline**: 2026-05-18  
-**Riksmöte**: 2025/26
 
 ---
 
@@ -2078,11 +2070,9 @@ graph LR
 
 **Pattern 1 — S Multi-Minister Campaign (Week 22)**  
 Robert Olesen (S), Jessica Rodén (S), Patrik Lundqvist (S), and additional S MPs filed 5 interpellations targeting 4 ministers in the same week. This temporal clustering — all filed 2026-04-21 to 2026-04-24, all announced together 2026-04-27 — indicates party coordination.  
-**Confidence**: [B2] — inferred from timing pattern; no direct evidence of S party leadership directive.
 
 **Pattern 2 — SD Single-Shot Energy Challenge**  
 HD10448 (Fransson/SD) is unique: a coalition partner's interpellation against a coalition minister. This is an institutionally constrained form of policy disagreement. It creates a parliamentary record of SD dissent on energy without breaking the coalition agreement.  
-**Confidence**: [B2]
 
 ### Sibling Folder Citations (for Cross-Run Continuity)
 
@@ -2092,10 +2082,6 @@ HD10448 (Fransson/SD) is unique: a coalition partner's interpellation against a 
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/methodology-reflection.md -->
-
-**Date**: 2026-04-27  
-**Author**: James Pether Sörling  
-**Standard**: ICD 203 — Analytic Standards and Tradecraft
 
 ---
 

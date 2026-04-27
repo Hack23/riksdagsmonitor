@@ -5,7 +5,7 @@ date: 2026-04-20
 subfolder: motions
 slug: 2026-04-20-motions
 source_folder: analysis/daily/2026-04-20/motions
-generated_at: 2026-04-27T16:35:06.899Z
+generated_at: 2026-04-27T16:50:06.898Z
 language: en
 layout: article
 ---
@@ -3182,9 +3182,6 @@ quadrantChart
 
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/classification-results.md -->
-
-**Date**: 2026-04-20 | **Riksmöte**: 2025/26 | **Analyst**: news-motions workflow
-**Analysis Timestamp**: 2026-04-20 13:02 UTC | **Data Depth**: SUMMARY (MCP get_motioner)
 
 ---
 

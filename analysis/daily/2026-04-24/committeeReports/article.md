@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: committeeReports
 slug: 2026-04-24-committeeReports
 source_folder: analysis/daily/2026-04-24/committeeReports
-generated_at: 2026-04-27T16:35:06.966Z
+generated_at: 2026-04-27T16:50:06.970Z
 language: en
 layout: article
 ---
@@ -146,7 +146,6 @@ All five items will clear chamber in 2026 before dissolution, but **execution la
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/intelligence-assessment.md -->
 
-**Author**: James Pether Sörling   **Audience**: analyst-desk, newsroom, KU oversight interests.
 **Standards**: ICD 203 (analytic standards); WEP / Kent confidence scale; Admiralty Code on all source citations.
 **Base date**: 2026-04-24.
 
@@ -430,7 +429,6 @@ See master table for per-row citations. All party positions inferred from publis
 
 **Purpose**: leading indicator register for +30 d / +60 d / +90 d / +180 d horizons.
 **Standards**: each indicator has owner, source URL, expected date, and detection signal.
-**Confidence**: HIGH (B2) on sources; MEDIUM (C3) on expected-date predictions.
 
 ### Indicator register (≥ 10 dated indicators)
 
@@ -868,7 +866,7 @@ All threats cited with `dok_id` + primary agency URL. Epistemic threats calibrat
 <!-- source: documents/HD01AU15-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01AU15-analysis.md -->
 
 **Committee**: Arbetsmarknadsutskottet (AU)
-**Riksmöte**: 2025/26   **Tabling date**: 2026-04-23 (lookback from 2026-04-24)
+
 **DIW**: 45
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
@@ -930,7 +928,7 @@ Pass 2 revalidated DIW 45 against sensitivity band documented in `../significanc
 <!-- source: documents/HD01CU25-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01CU25-analysis.md -->
 
 **Committee**: Civilutskottet (CU)
-**Riksmöte**: 2025/26   **Tabling date**: 2026-04-23 (lookback from 2026-04-24)
+
 **DIW**: 85
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
@@ -992,7 +990,7 @@ Pass 2 revalidated DIW 85 against sensitivity band documented in `../significanc
 <!-- source: documents/HD01CU29-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01CU29-analysis.md -->
 
 **Committee**: Civilutskottet (CU)
-**Riksmöte**: 2025/26   **Tabling date**: 2026-04-23 (lookback from 2026-04-24)
+
 **DIW**: 50
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
@@ -1054,7 +1052,7 @@ Pass 2 revalidated DIW 50 against sensitivity band documented in `../significanc
 <!-- source: documents/HD01FiU23-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01FiU23-analysis.md -->
 
 **Committee**: Finansutskottet (FiU)
-**Riksmöte**: 2025/26   **Tabling date**: 2026-04-23 (lookback from 2026-04-24)
+
 **DIW**: 65
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
@@ -1116,7 +1114,7 @@ Pass 2 revalidated DIW 65 against sensitivity band documented in `../significanc
 <!-- source: documents/HD01SfU23-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/documents/HD01SfU23-analysis.md -->
 
 **Committee**: Socialförsäkringsutskottet (SfU)
-**Riksmöte**: 2025/26   **Tabling date**: 2026-04-23 (lookback from 2026-04-24)
+
 **DIW**: 80
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
@@ -1393,7 +1391,6 @@ flowchart LR
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/voter-segmentation.md -->
 
 **Segmentation framework**: Swedish voter archetypes (7 segments) × cluster items.
-**Confidence**: MEDIUM (C3) on activation probabilities.
 
 ### Segment × item activation matrix
 

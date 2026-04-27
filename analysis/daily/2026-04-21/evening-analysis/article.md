@@ -5,7 +5,7 @@ date: 2026-04-21
 subfolder: evening-analysis
 slug: 2026-04-21-evening-analysis
 source_folder: analysis/daily/2026-04-21/evening-analysis
-generated_at: 2026-04-27T16:35:06.913Z
+generated_at: 2026-04-27T16:50:06.914Z
 language: en
 layout: article
 ---
@@ -258,7 +258,6 @@ graph TD
 
 **SIG-ID**: SIG-2026-04-21-EVE001
 **Scoring Date**: 2026-04-21
-**Riksmöte**: 2025/26
 
 ---
 
@@ -356,8 +355,6 @@ graph TD
 | Women needing shelter | NEGATIVE — closures accelerating | HD10437-38 (interpellations analysis) |
 | Eating disorder patients | NEGATIVE — Region Stockholm service failures | HD10442 Kallifatides → Svantesson |
 | Rural residents (Vetlanda) | NEGATIVE — Skatteverket office closure | HD11732 |
-
-**Confidence**: 🟩HIGH | **Key actor**: Ordinary Swedish households facing high energy and fuel costs
 
 #### 2. Government Coalition (Tidöalliansen: M+SD+KD+L)
 **Impact Level**: 🔴 VERY HIGH | **Timeline**: 0–3 days
@@ -681,15 +678,10 @@ graph TD
 
 3. **R03 (KU G16 Observation)** — L×I=12, HIGH — Finance Minister Svantesson's constitutional hearing today could produce formal observations in the KU annual report affecting campaign credibility.
 
-*Confidence: 🟩HIGH | Produced by Riksdagsmonitor Evening Analysis v5.0*
-
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/swot-analysis.md -->
 
 **SWOT-ID**: SWT-2026-04-21-EVE001
-**Analysis Date**: 2026-04-21
-**Riksmöte**: 2025/26
-**Confidence**: 🟩HIGH
 
 ---
 
@@ -918,8 +910,6 @@ The combination of a pending EU infringement deadline (47 days), climate law obl
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/comparative-international.md -->
 
 **CMP-ID**: CMP-2026-04-21-EVE001
-**Analysis Date**: 2026-04-21 | **Riksmöte**: 2025/26
-**Confidence**: 🟩HIGH (policy design) | 🟧MEDIUM (electoral outcome predictions)
 
 ---
 
@@ -1040,7 +1030,6 @@ quadrantChart
 
 **CLS-ID**: CLS-2026-04-21-EVE001
 **Classification Date**: 2026-04-21
-**Riksmöte**: 2025/26
 
 ---
 

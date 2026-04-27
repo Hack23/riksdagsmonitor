@@ -5,7 +5,7 @@ date: 2026-04-25
 subfolder: month-ahead
 slug: 2026-04-25-month-ahead
 source_folder: analysis/daily/2026-04-25/month-ahead
-generated_at: 2026-04-27T16:35:06.995Z
+generated_at: 2026-04-27T16:50:07.001Z
 language: en
 layout: article
 ---
@@ -151,21 +151,18 @@ quadrantChart
 The Tidö government's Spring Budget 2026 (HD03100 [riksdagen.se]) projects recovery, but the explicit acknowledgement in HC01FiU20 [riksdagen.se] that lågkonjunktur is "more prolonged than expected" indicates the government is managing downside scenarios rather than celebrating growth. **We assess with MEDIUM confidence that Q1 2026 GDP data will show growth between 0% and 0.5% — insufficient to validate the government's recovery narrative but not catastrophic.** The risk of negative Q1 GDP is estimated at 15–20% given external trade headwinds.
 
 Confidence label: **MEDIUM**
-PIR: PIR-1 (Q1 GDP data release date, expected May 2026)
 
 #### Key Judgment 2 — Tidö Coalition Will Remain Intact Through September Election [HIGH confidence]
 
 Despite fiscal pressure and opposition attacks, **we assess with HIGH confidence that the Tidö coalition (M+SD+KD+L) will not fracture before the September 2026 election.** SD has a strong electoral incentive to remain associated with the government's law-and-order delivery (HD03237, HD03246 [riksdagen.se]). M/KD/L have no viable alternative coalition partner. The emergency relief budget (HD03236) is a concession designed precisely to manage SD demands. The marginal risk is SD abstention on specific votes, not a confidence crisis.
 
 Confidence label: **HIGH**
-PIR: PIR-3 (SD official position on Vårpropositionen framework)
 
 #### Key Judgment 3 — Energy Legislative Package Will Pass With Minor Amendments [HIGH confidence]
 
 The electricity system law (HD03240 [riksdagen.se]) and wind power municipality revenue law (HD03239 [riksdagen.se]) reflect a rare area of broad cross-party support (M, SD, C, L, and conditionally MP). **We assess with HIGH confidence that both will pass the Riksdag before the summer recess**, with possible amendments requiring higher transparency on revenue distribution mechanisms. The new environmental review authority (HD03238) is more contentious and may face one-year implementation delay.
 
 Confidence label: **HIGH**
-PIR: PIR-4 (Environmental review authority legal challenges, Länsstyrelse response)
 
 #### Key Judgment 4 — Ukraine International Legal Instruments Will Achieve Near-Unanimous Ratification [VERY HIGH confidence]
 
@@ -297,8 +294,6 @@ xychart-beta
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/media-framing-analysis.md -->
 
-**Date**: 2026-04-25 | **Note**: Qualitative assessment only — no systematic media corpus gathered in this run.
-
 ### Government/Coalition Party Framing
 
 #### Moderaterna (M)
@@ -373,8 +368,6 @@ flowchart LR
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/stakeholder-perspectives.md -->
-
-**Date**: 2026-04-25 | **Lens**: 6-Dimension Stakeholder Matrix
 
 ### Stakeholder Influence Network
 
@@ -1026,8 +1019,6 @@ These 12 documents complement the 8 top-priority propositions analyzed individua
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/election-2026-analysis.md -->
 
-**Date**: 2026-04-25 | **Election**: Sweden General Election, September 2026
-
 ### Current Seat Projections (2026-Q1 estimates; no new polling in this run)
 
 Based on polling through Q1 2026 (Novus/Sifo tracking, most recent available):
@@ -1074,8 +1065,6 @@ pie title Coalition Formation Probability
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/coalition-mathematics.md -->
-
-**Date**: 2026-04-25 | **Riksdag**: 349 seats | **Majority threshold**: 175
 
 ### Current Tidö Vote Distribution (2022 mandate)
 
@@ -1573,8 +1562,6 @@ flowchart TD
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/methodology-reflection.md -->
-
-**Date**: 2026-04-25 | **Author**: James Pether Sörling | **Review type**: AI FIRST Pass 2 retrospective
 
 ### §ICD 203 Audit
 

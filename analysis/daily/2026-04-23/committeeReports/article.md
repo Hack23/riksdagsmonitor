@@ -5,7 +5,7 @@ date: 2026-04-23
 subfolder: committeeReports
 slug: 2026-04-23-committeeReports
 source_folder: analysis/daily/2026-04-23/committeeReports
-generated_at: 2026-04-27T16:35:06.943Z
+generated_at: 2026-04-27T16:50:06.946Z
 language: en
 layout: article
 ---
@@ -112,9 +112,7 @@ ADMINISTRATIVE DEREGULATION (LOW PRIORITY)
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/committeeReports/synthesis-summary.md -->
 
 **Analysis folder**: `analysis/daily/2026-04-23/committeeReports/`
-**Generated**: 2026-04-23T05:00:00Z
-**Analyst**: James Pether Sörling
-**Methodology**: `analysis/methodologies/synthesis-methodology.md` + `ai-driven-analysis-guide.md`
+
 **Admiralty overall**: [B2] — Multiple reliable primary sources, information independently corroborated
 
 ---
@@ -784,9 +782,6 @@ All threat assessments grounded in primary documents: HD01FiU48 [A1], HD01KU33 [
 **Dok ID**: HD01CU22
 **Title**: Ett ställföreträdarskap att lita på
 **Committee**: Civilutskottet (CU)
-**Date**: 2026-04-17
-**DIW Tier**: L2 Strategic — Major legal guardianship reform affecting vulnerable adults
-**Admiralty Source Code**: [A1]
 
 ### Summary of Decision
 
@@ -810,9 +805,6 @@ URL: https://data.riksdagen.se/dokument/HD01CU22
 **Dok ID**: HD01CU27
 **Title**: Identitetskrav vid lagfart och åtgärder mot kringgåenden av bostadsrättslagen
 **Committee**: Civilutskottet (CU)
-**Date**: 2026-04-17
-**DIW Tier**: L2+ Priority — Housing market integrity, anti-crime, property ownership transparency
-**Admiralty Source Code**: [A1]
 
 ### Document Classification
 
@@ -846,9 +838,6 @@ URL: https://data.riksdagen.se/dokument/HD01CU27
 **Dok ID**: HD01CU28
 **Title**: Ett register för alla bostadsrätter
 **Committee**: Civilutskottet (CU)
-**Date**: 2026-04-17
-**DIW Tier**: L2+ Priority — Major housing market infrastructure reform
-**Admiralty Source Code**: [A1]
 
 ### Summary of Decision
 
@@ -872,9 +861,6 @@ URL: https://data.riksdagen.se/dokument/HD01CU28
 **Dok ID**: HD01FiU48
 **Title**: Extra ändringsbudget för 2026 – Sänkt skatt på drivmedel samt el- och gasprisstöd
 **Committee**: Finansutskottet (FiU)
-**Date**: 2026-04-21
-**DIW Tier**: L2+ Priority — Fiscal policy with immediate household impact and election-year political salience
-**Admiralty Source Code**: [A1] — Riksdagen primary source, confirmed via API
 
 ### Document Classification
 
@@ -938,9 +924,6 @@ URL: https://data.riksdagen.se/dokument/HD01FiU48
 **Dok ID**: HD01KU32
 **Title**: Tillgänglighetskrav för vissa medier
 **Committee**: Konstitutionsutskottet (KU)
-**Date**: 2026-04-17
-**DIW Tier**: L2 Strategic — Constitutional amendment enabling EU accessibility compliance for media/digital products
-**Admiralty Source Code**: [A1]
 
 ### Document Classification
 
@@ -973,9 +956,6 @@ URL: https://data.riksdagen.se/dokument/HD01KU32
 **Dok ID**: HD01KU33
 **Title**: Insyn i handlingar som inhämtas genom beslag och kopiering vid husrannsakan
 **Committee**: Konstitutionsutskottet (KU)
-**Date**: 2026-04-17
-**DIW Tier**: L2+ Priority — Constitutional law, fundamental rights (offentlighetsprincipen vs. criminal investigation effectiveness)
-**Admiralty Source Code**: [A1]
 
 ### Document Classification
 
@@ -1029,9 +1009,6 @@ URL: https://data.riksdagen.se/dokument/HD01KU33
 **Dok ID**: HD01MJU19
 **Title**: Reformering av avfallslagstiftningen för ökad materialåtervinning
 **Committee**: Miljö- och jordbruksutskottet (MJU)
-**Date**: 2026-04-16
-**DIW Tier**: L2 Strategic — EU circular economy compliance, waste legislation reform
-**Admiralty Source Code**: [A1]
 
 ### Summary of Decision
 
@@ -1055,9 +1032,7 @@ URL: https://data.riksdagen.se/dokument/HD01MJU19
 **Dok ID**: HD01MJU21
 **Title**: Riksrevisionens rapport om statens insatser för jordbrukets klimatomställning
 **Committee**: Miljö- och jordbruksutskottet (MJU)
-**Date**: 2026-04-20
-**DIW Tier**: L2 Strategic — Riksrevisionen critical audit of agricultural climate transition policy
-**Admiralty Source Code**: [A1]
+
 **Data Depth**: METADATA-ONLY (no summary available in API response)
 
 ### Summary of Decision
@@ -1079,9 +1054,6 @@ URL: https://data.riksdagen.se/dokument/HD01MJU21
 **Dok ID**: HD01SfU20
 **Title**: Ett slopat krav på anmälan före ansökan om föräldrapenning
 **Committee**: Socialförsäkringsutskottet (SfU)
-**Date**: 2026-04-16
-**DIW Tier**: L1 Surface — Administrative simplification, social insurance
-**Admiralty Source Code**: [A1]
 
 ### Summary of Decision
 
@@ -1104,9 +1076,6 @@ URL: https://data.riksdagen.se/dokument/HD01SfU20
 **Dok ID**: HD01TU16
 **Title**: Slopat krav på introduktionsutbildning för övningskörning
 **Committee**: Trafikutskottet (TU)
-**Date**: 2026-04-21
-**DIW Tier**: L1 Surface — Road safety regulation, driving license reform
-**Admiralty Source Code**: [A1]
 
 ### Summary of Decision
 
@@ -1124,10 +1093,6 @@ URL: https://data.riksdagen.se/dokument/HD01TU16
 
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/committeeReports/election-2026-analysis.md -->
-
-**Methodology**: `analysis/methodologies/electoral-domain-methodology.md`
-**Analyst**: James Pether Sörling | **Date**: 2026-04-23
-**Election**: Swedish general election, September 2026
 
 ### Context
 
@@ -1651,8 +1616,7 @@ Use search_anforanden for FiU48 debates to obtain direct MP quotes, transforming
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/committeeReports/data-download-manifest.md -->
 
 **Workflow**: news-committee-reports
-**Run ID**: 24817022343
-**UTC Timestamp**: 2026-04-23T04:45:00Z
+
 **Article Date**: 2026-04-23
 **Effective Date**: 2026-04-21 (most recent reports)
 **Data Window**: 2025/26 riksmöte, from_date 2026-04-01

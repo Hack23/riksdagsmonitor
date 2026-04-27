@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: propositions
 slug: 2026-04-26-propositions
 source_folder: analysis/daily/2026-04-26/propositions
-generated_at: 2026-04-27T16:35:07.041Z
+generated_at: 2026-04-27T16:50:07.049Z
 language: en
 layout: article
 ---
@@ -773,27 +773,21 @@ graph LR
 
 #### Threat 1: Opposition Legislative Obstruction (HD03253 EU Bankpaket)
 
-**Classification**: Systemic / Institutional  
 **Actors**: S (Socialdemokraterna, 107 seats), V (Vänsterpartiet, 24 seats), MP (Miljöpartiet, 24 seats)  
 **Method**: FiU committee amendments → prolonged hearing cycle → delay CRD6 transposition further  
 **Impact**: Swedish banks remain in legal uncertainty; European Banking Authority (EBA) guidance incomplete; Finansinspektionen enforcement hampered  
-**Admiralty**: [B2] — Pattern consistent with prior S/V FiU behaviour on bank regulation (2022 banking supervision reform, rm 2021/22)
 
 #### Threat 2: Constitutional Proportionality Attack (HD03252)
 
-**Classification**: Legal/Institutional  
 **Actors**: Academic lawyers, JO (Justitieombudsmannen), potential Lagrådet  
 **Method**: Lagrådet critique on proportionality → referred to constitutional committee (KU) → legal delay  
 **Impact**: SD loses key election-year policy win; government faces contradiction between law-and-order messaging and legal setback  
-**Admiralty**: [B3] — Lagrådet review standard procedure; proportionality risk elevated given *säkerhetsförvaring* indefinite nature
 
 #### Threat 3: Small-Bank Lobby Mobilisation (HD03253)
 
-**Classification**: Economic/Political  
 **Actors**: Sparbankerna, niche lenders, Swedish Banking Association small-bank division  
 **Method**: Direct FiU lobbying for proportionality carve-out in Swedish implementing legislation → government pressure to add gold-plating exemptions  
 **Impact**: Delays CRD6 full implementation; creates legal uncertainty for Finansinspektionen enforcement  
-**Admiralty**: [C2] — Banking Association statement February 2026 (observed trend, single source)
 
 ### Attack Tree: EU Bank Package Obstruction
 
@@ -845,8 +839,6 @@ graph TD
 **Type**: Skrivelse (Government communication — not voted upon)  
 **Organ**: FiU (Finansutskottet)  
 **Minister/Dept**: Niklas Wykman, Finansdepartementet  
-**Date**: 2026-04-23  
-**DIW Score**: 6.5/10
 
 ---
 
@@ -944,8 +936,6 @@ Key forward signal: Finansdepartementet endorses continuation of green bond prog
 **Type**: Proposition  
 **Organ**: SfU (Socialförsäkringsutskottet)  
 **Minister/Dept**: Gunnar Strömmer, Justitiedepartementet  
-**Date**: 2026-04-23  
-**DIW Score**: 6.0/10
 
 ---
 
@@ -1043,8 +1033,6 @@ RF 2:6 (protection against degrading treatment): Domestic parallel to ECHR Art 3
 **Type**: Proposition  
 **Organ**: FiU (Finansutskottet)  
 **Minister/Dept**: Niklas Wykman, Finansdepartementet  
-**Date**: 2026-04-23  
-**DIW Score**: 9.0/10 (HIGHEST in this package)
 
 ---
 
@@ -1141,8 +1129,6 @@ CRR3 output floor creates temporary competitive difference vs. US banks (Basel I
 **Type**: Proposition  
 **Organ**: TU (Trafikutskottet)  
 **Minister/Dept**: Andreas Carlson, Landsbygds- och infrastrukturdepartementet  
-**Date**: 2026-04-23  
-**DIW Score**: 3.3/10
 
 ---
 

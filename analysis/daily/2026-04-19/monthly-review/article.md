@@ -5,7 +5,7 @@ date: 2026-04-19
 subfolder: monthly-review
 slug: 2026-04-19-monthly-review
 source_folder: analysis/daily/2026-04-19/monthly-review
-generated_at: 2026-04-27T16:35:06.870Z
+generated_at: 2026-04-27T16:50:06.870Z
 language: en
 layout: article
 ---
@@ -391,8 +391,6 @@ xychart-beta
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/stakeholder-perspectives.md -->
 
-**Analysis Date**: 2026-04-19  
-**Article Type**: monthly-review  
 **Minimum perspectives required**: 7 (deep depth)
 
 ---
@@ -739,8 +737,6 @@ Legend: ✅ consistent · ⚠️ ambiguous · ❌ inconsistent
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/risk-assessment.md -->
 
-**Analysis Date**: 2026-04-19  
-**Article Type**: monthly-review  
 **Risk Framework**: NIST CSF / Political Risk Matrix
 
 ---

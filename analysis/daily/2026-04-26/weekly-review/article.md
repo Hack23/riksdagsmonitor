@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: weekly-review
 slug: 2026-04-26-weekly-review
 source_folder: analysis/daily/2026-04-26/weekly-review
-generated_at: 2026-04-27T16:35:07.057Z
+generated_at: 2026-04-27T16:50:07.066Z
 language: en
 layout: article
 ---
@@ -179,8 +179,6 @@ flowchart TD
 
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/intelligence-assessment.md -->
-
-**Author**: James Pether Sörling | **ICD 203 Standard**: Applies
 
 ---
 
@@ -952,7 +950,7 @@ style Coalition fill:#1a1e3d,stroke:#00d9ff
 
 **dok_id**: HC03205
 **Type**: Proposition
-**Riksmöte**: 2024/25
+
 **Topic**: Renaming MSB to Myndigheten för civilt försvar (MfcF) with expanded civil-defence mandate
 
 ### Summary
@@ -961,7 +959,6 @@ HC03205 proposes and implements the renaming of Myndigheten för samhällsskydd 
 
 ### Political Significance
 
-**DIW score**: 10.0 (highest in this week's dataset)
 - Direct NATO Article 3 compliance signal
 - Creates new accountability structure for civil-military coordination
 - Generates immediate opposition scrutiny (HC03206 audit, HC10752 interpellation)
@@ -988,9 +985,8 @@ HIGH — see implementation-feasibility.md. Mandate change without confirmed bud
 
 **dok_id**: HC10744
 **Type**: Interpellation
-**Author**: Muharrem Demirok / S (approx)
+
 **Target**: Finance Minister or Labour Minister
-**Riksmöte**: 2024/25
 
 ### Summary
 
@@ -998,7 +994,6 @@ HC10744 is one of three unemployment interpellations filed in rapid succession (
 
 ### Political Significance
 
-**DIW score**: 9.6
 - Coordinated three-interpellation attack pattern (youth/disability/general)
 - Youth voters are swing voters in competitive constituencies
 - L (Liberals) is particularly vulnerable on this issue

@@ -5,7 +5,7 @@ date: 2026-04-23
 subfolder: monthly-review
 slug: 2026-04-23-monthly-review
 source_folder: analysis/daily/2026-04-23/monthly-review
-generated_at: 2026-04-27T16:35:06.954Z
+generated_at: 2026-04-27T16:50:06.957Z
 language: en
 layout: article
 ---
@@ -27,9 +27,6 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/executive-brief.md -->
-
-**Classification**: PUBLIC | **Analyst**: James Pether Sörling | **Date**: 2026-04-23
-**Confidence**: HIGH [A1] | **Days to Election**: ~143
 
 ---
 
@@ -109,11 +106,6 @@ pie title Confidence Distribution — Monthly Review
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/synthesis-summary.md -->
 
-**Analysis Date**: 2026-04-23
-**Analyst**: James Pether Sörling
-**Methodology**: DIW weighting per synthesis-methodology.md; Tier-C 1.5× period multiplier
-**Riksmöte**: 2025/26
-**Analysis Depth**: comprehensive (Tier-C monthly-review)
 **Documents Analyzed**: 24 primary + 13 sibling synthesis references
 **Overall Confidence**: HIGH [A1]
 **Days to Election 2026**: ~143 (September 13, 2026)
@@ -1123,8 +1115,6 @@ ECHR challenge timing is critical. An adverse ECHR ruling before September 13, 2
 
 **dok_id**: HD10429 | **Type**: Interpellation
 **From**: SD | **To**: Justice Minister Gunnar Strömmer (M)
-**Date**: April 2026
-**Analyst**: James Pether Sörling | **Confidence**: HIGH [A1]
 
 ### Document Summary
 
@@ -1151,8 +1141,6 @@ This is an unprecedented intra-coalition challenge — a support party formally 
 
 **dok_id**: HD10442 | **Type**: Interpellation
 **From**: S | **To**: Finance Minister Elisabeth Svantesson (M)
-**Date**: April 2026
-**Analyst**: James Pether Sörling | **Confidence**: HIGH [A1]
 
 ### Document Summary
 
@@ -1917,8 +1905,7 @@ This monthly review synthesises all single-type analyses from the period March 2
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/data-download-manifest.md -->
 
 **Workflow**: news-monthly-review
-**Run ID**: 24810587515
-**Generated**: 2026-04-23T00:58:00Z
+
 **Requested date**: 2026-04-23
 **Effective date**: 2026-04-23
 **Review period**: 2026-03-24 to 2026-04-23 (30-day lookback)

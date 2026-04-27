@@ -5,7 +5,7 @@ date: 2026-04-22
 subfolder: realtime-2338
 slug: 2026-04-22-realtime-2338
 source_folder: analysis/daily/2026-04-22/realtime-2338
-generated_at: 2026-04-27T16:35:06.938Z
+generated_at: 2026-04-27T16:50:06.940Z
 language: en
 layout: article
 ---
@@ -105,10 +105,6 @@ flowchart TD
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/synthesis-summary.md -->
 
-**Analysis Date**: 2026-04-22 | **Subfolder**: realtime-2338
-**Analyst**: James Pether Sörling | **Methodology**: synthesis-methodology.md, ai-driven-analysis-guide.md v6.4
-**Classification**: Public | **Riksmöte**: 2025/26
-
 ---
 
 ### 🎯 Lead Story Decision
@@ -192,9 +188,6 @@ quadrantChart
 
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/intelligence-assessment.md -->
-
-**Analyst**: James Pether Sörling | **Sources**: Riksdag API [A1], Sibling Analysis [A2]
-**Classification**: Public | **Confidence**: See per-KJ labels | **Cycle**: Realtime-2338
 
 ---
 
@@ -1068,7 +1061,6 @@ flowchart TD
 <!-- source: documents/HD01FiU48-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD01FiU48-analysis.md -->
 
 **dok_id**: HD01FiU48 | **Type**: Betänkande (Committee Report) | **Adopted**: 2026-04-21
-**Analyst**: James Pether Sörling | **Source authority**: [A1] riksdagen.se direct retrieval
 
 ---
 
@@ -1995,9 +1987,6 @@ flowchart LR
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/methodology-reflection.md -->
 
-**Analyst**: James Pether Sörling | **Standard**: ICD 203 + Admiralty Code + SAT Catalog
-**Classification**: Public | **Cycle**: Realtime-2338
-
 ---
 
 ### ICD 203 Audit (9 Standards)
@@ -2060,11 +2049,10 @@ All analysis in this cycle follows the osint-tradecraft-standards.md canon: ICD 
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/data-download-manifest.md -->
 
 **Workflow**: news-realtime-monitor
-**Run ID**: 24808210801
-**UTC Timestamp**: 2026-04-22T23:38:00Z
+
 **Requested Date**: 2026-04-22
 **Effective Date**: 2026-04-22
-**Riksmöte**: 2025/26
+
 **Subfolder**: realtime-2338
 
 ### MCP Server Status

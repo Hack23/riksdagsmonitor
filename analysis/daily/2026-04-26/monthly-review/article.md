@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: monthly-review
 slug: 2026-04-26-monthly-review
 source_folder: analysis/daily/2026-04-26/monthly-review
-generated_at: 2026-04-27T16:35:07.031Z
+generated_at: 2026-04-27T16:50:07.038Z
 language: en
 layout: article
 ---
@@ -28,9 +28,7 @@ Use this guide to read the article as a political-intelligence product rather th
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief.md -->
 
-**Author**: James Pether Sörling | **Date**: 2026-04-26
 **Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
-**Confidence**: HIGH (A1) | **Admiralty range**: A1–C3 | **Days to election**: 140
 
 ### 🎯 BLUF
 
@@ -93,7 +91,7 @@ flowchart TB
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis using DIW scoring, ACH, SWOT, and WEP probability language  
-**Confidence floor**: All factual claims rated ≥ C3 (plausible) per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable (connection error this run; Riksbank minutes substituted). Polling vintage: 31 days (Demoskop 2026-03-26). No direct media monitoring — frames inferred from document language.  
 **Standards**: ICD 203 (alternative hypotheses, probability language); AI FIRST (minimum 2 iterations)  
 **Next cycle**: Monthly Review 2026-05-26 — should include updated Demoskop reading and SD congress monitoring
@@ -101,9 +99,8 @@ flowchart TB
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/synthesis-summary.md -->
 
-**Author**: James Pether Sörling · **Confidence**: HIGH (A1) · **Mode**: Tier-C monthly aggregation
 **Window**: 2026-03-27 → 2026-04-26 (30 days) · **Riksmöte**: 2025/26
-**Admiralty range**: A1–C3 · **WEP language**: "highly likely" / "likely" / "possible" / "unlikely"
+
 **Documents analysed**: 8 primary (April-24 batch) + 4 propositions (April-23) + 15 sibling synthesis references
 **Days to Election 2026**: 140 (target 2026-09-13)
 
@@ -194,7 +191,7 @@ Overall analytic confidence: **HIGH (A1)** for legislative completion picture an
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis using DIW scoring, ACH, SWOT, and WEP probability language  
-**Confidence floor**: All factual claims rated ≥ C3 (plausible) per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable (connection error this run; Riksbank minutes substituted). Polling vintage: 31 days (Demoskop 2026-03-26). No direct media monitoring — frames inferred from document language.  
 **Standards**: ICD 203 (alternative hypotheses, probability language); AI FIRST (minimum 2 iterations)  
 **Next cycle**: Monthly Review 2026-05-26 — should include updated Demoskop reading and SD congress monitoring
@@ -216,8 +213,6 @@ Overall analytic confidence: **HIGH (A1)** for legislative completion picture an
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/intelligence-assessment.md -->
 
-**Author**: James Pether Sörling | **Issuing officer**: Pether Sörling, Analyst-of-record
-**Date**: 2026-04-26 | **Sourcing**: A1–C3 Admiralty range
 **Standards**: ICD 203 (Analytic Standards) compliance asserted
 
 ### Bottom Line Up Front
@@ -305,7 +300,7 @@ Sweden is 140 days from the 2026-09-13 election. The Tidö coalition has legisla
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis using DIW scoring, ACH, SWOT, and WEP probability language  
-**Confidence floor**: All factual claims rated ≥ C3 (plausible) per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable (connection error this run; Riksbank minutes substituted). Polling vintage: 31 days (Demoskop 2026-03-26). No direct media monitoring — frames inferred from document language.  
 **Standards**: ICD 203 (alternative hypotheses, probability language); AI FIRST (minimum 2 iterations)  
 **Next cycle**: Monthly Review 2026-05-26 — should include updated Demoskop reading and SD congress monitoring
@@ -395,7 +390,7 @@ style HD01JuU31 color:#ffbe0b, stroke:#ffbe0b
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis using DIW scoring, ACH, SWOT, and WEP probability language  
-**Confidence floor**: All factual claims rated ≥ C3 (plausible) per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable (connection error this run; Riksbank minutes substituted). Polling vintage: 31 days (Demoskop 2026-03-26). No direct media monitoring — frames inferred from document language.  
 **Standards**: ICD 203 (alternative hypotheses, probability language); AI FIRST (minimum 2 iterations)  
 **Next cycle**: Monthly Review 2026-05-26 — should include updated Demoskop reading and SD congress monitoring
@@ -486,7 +481,7 @@ graph TD
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -544,7 +539,7 @@ graph LR
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -690,7 +685,7 @@ timeline
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -776,7 +771,7 @@ flowchart TD
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -826,7 +821,7 @@ flowchart LR
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -928,7 +923,7 @@ style Opposition framing quad color:#ff006e, stroke:#ff006e
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -988,7 +983,7 @@ flowchart TD
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -1000,7 +995,7 @@ flowchart TD
 **dok_id**: HD01CU24  
 **Title**: Civilrättsliga frågor — betänkande  
 **Committee**: Civilutskottet (CU)  
-**Date**: 2026-04-24  
+
 **Source**: [riksdagen.se](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/HD01CU24/)
 
 ### Summary
@@ -1039,7 +1034,7 @@ CU committee vote expected before summer recess. Routine outcome (M/SD/KD/L majo
 **dok_id**: HD01JuU10  
 **Title**: Vapenlag — committee report (betänkande)  
 **Committee**: Justitieutskottet (JuU)  
-**Date**: 2026-04-24  
+
 **Source**: [riksdagen.se](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/HD01JuU10/)
 
 ### Summary
@@ -1078,7 +1073,7 @@ Committee vote scheduled before summer recess (June 2026). Expected Ja: M+SD+KD+
 **dok_id**: HD01JuU31  
 **Title**: Polisreform — betänkande (Riksrevisionen RiR 2026:6 follow-up)  
 **Committee**: Justitieutskottet (JuU)  
-**Date**: 2026-04-24  
+
 **Source**: [riksdagen.se](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/HD01JuU31/)
 
 ### Summary
@@ -1126,7 +1121,7 @@ I-3: JuU committee vote on HD01JuU31 (expected June 2026). I-2 linked: SoU25 dir
 **dok_id**: HD01SoU25  
 **Title**: Nationell äldrevård — betänkande  
 **Committee**: Socialutskottet (SoU)  
-**Date**: 2026-04-24  
+
 **Source**: [riksdagen.se](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/HD01SoU25/)
 
 ### Summary
@@ -1170,7 +1165,7 @@ I-2: Director appointment announcement by June 1. I-7: SoU25 committee vote (Jun
 **Type**: Interpellation  
 **Filed by**: S  
 **Addressed to**: Statsminister Kristersson  
-**Date**: 2026-04-24  
+
 **Source**: [riksdagen.se](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/HD10448/)
 
 ### Summary
@@ -1207,7 +1202,7 @@ Individual interpellation value is low (ceremonial); pattern value is medium (Fr
 **Type**: Interpellation  
 **Filed by**: V  
 **Addressed to**: Arbetsmarknadsminister Stenberg  
-**Date**: 2026-04-24  
+
 **Source**: [riksdagen.se](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/HD11747/)
 
 ### Summary
@@ -1244,7 +1239,7 @@ Individual interpellation value is low (ceremonial); pattern value is medium (Fr
 **Type**: Interpellation  
 **Filed by**: S  
 **Addressed to**: Utrikesminister Billström  
-**Date**: 2026-04-24  
+
 **Source**: [riksdagen.se](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/HD11748/)
 
 ### Summary
@@ -1281,7 +1276,7 @@ Individual interpellation value is low (ceremonial); pattern value is medium (Fr
 **Type**: Interpellation  
 **Filed by**: MP  
 **Addressed to**: Justitieminister Strömmer  
-**Date**: 2026-04-24  
+
 **Source**: [riksdagen.se](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/HD11749/)
 
 ### Summary
@@ -1380,7 +1375,7 @@ xychart-beta
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -1500,7 +1495,7 @@ flowchart TD
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -1592,7 +1587,7 @@ pie title Voter Segment Estimated Sizes
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -1662,7 +1657,7 @@ graph LR
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -1730,7 +1725,7 @@ timeline
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -1841,7 +1836,7 @@ quadrantChart
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -1929,7 +1924,7 @@ quadrantChart
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -1977,7 +1972,7 @@ pie title Priority Distribution (document count)
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -2064,7 +2059,7 @@ graph LR
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
 **Method**: Structured political intelligence analysis  
-**Confidence floor**: ≥ C3 per Admiralty system; structural assessments ≥ B2  
+
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
@@ -2112,11 +2107,10 @@ graph LR
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/data-download-manifest.md -->
 
 **Workflow**: news-monthly-review
-**Run ID**: 24954190812
-**UTC Timestamp**: 2026-04-26T10:19:00Z
+
 **Requested date**: 2026-04-26
 **Effective date**: 2026-04-24 (1-day lookback — no new documents on 2026-04-26)
-**Riksmöte**: 2025/26
+
 **Analysis window**: 2026-03-27 → 2026-04-26 (30 days)
 
 ### MCP Server Availability

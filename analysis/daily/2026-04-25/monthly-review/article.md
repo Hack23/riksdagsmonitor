@@ -5,7 +5,7 @@ date: 2026-04-25
 subfolder: monthly-review
 slug: 2026-04-25-monthly-review
 source_folder: analysis/daily/2026-04-25/monthly-review
-generated_at: 2026-04-27T16:35:07.000Z
+generated_at: 2026-04-27T16:50:07.005Z
 language: en
 layout: article
 ---
@@ -27,9 +27,6 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief.md -->
-
-**Classification**: PUBLIC | **Analyst**: James Pether Sörling | **Date**: 2026-04-25
-**Confidence**: HIGH [A1] | **Days to Election**: ~141 | **Window**: 2026-03-26 → 2026-04-25
 
 ---
 
@@ -101,9 +98,8 @@ flowchart TD
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/synthesis-summary.md -->
 
-**Author**: James Pether Sörling · **Confidence**: HIGH (A1) · **Mode**: Tier-C monthly aggregation
 **Window**: 2026-03-26 → 2026-04-25 (30 days) · **Riksmöte**: 2025/26
-**Admiralty range**: A1–C3 · **WEP language**: "highly likely" / "likely" / "possible" / "unlikely" per Kent Scale
+
 **Documents analysed**: 8 primary (April 24 closure batch) + 13 sibling synthesis references in window
 **Days to Election 2026**: 141 (target 2026-09-13)
 
@@ -180,8 +176,6 @@ Overall analytic confidence is **HIGH (A1)** for the structural picture (deliver
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/intelligence-assessment.md -->
 
-**Author**: James Pether Sörling | **Issuing officer**: Pether Sörling, Analyst-of-record
-**Date**: 2026-04-25 | **Sourcing**: A1–C3 Admiralty range
 **Standards**: ICD 203 (Analytic Standards) compliance asserted
 
 ### Bottom Line Up Front
@@ -251,8 +245,6 @@ This product:
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/significance-scoring.md -->
-
-**Author**: James Pether Sörling | **Confidence**: HIGH (A1) | **Mode**: DIW (Decision-Impact Weighting)
 
 ### Methodology
 
@@ -383,7 +375,6 @@ flowchart LR
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/stakeholder-perspectives.md -->
 
-**Author**: James Pether Sörling | **Confidence**: HIGH (A1)
 **Lens**: 6-stakeholder map — government parties, opposition parties, agencies, kommuner, media, väljargrupper
 
 ### Stakeholder map
@@ -975,7 +966,6 @@ Liten omedelbar effekt men hög sammanlänkning med Yngre 18-29-segmentet.
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/election-2026-analysis.md -->
 
-**Author**: James Pether Sörling | **Confidence**: MEDIUM (B2)
 **Election date**: 2026-09-13 | **Days remaining**: 141
 
 ### Pre-campaign architecture
@@ -1423,7 +1413,6 @@ flowchart LR
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/cross-reference-map.md -->
 
-**Author**: James Pether Sörling | **Confidence**: HIGH (A1)
 **Mode**: Tier-C aggregation — siblings ingested per `ext/tier-c-aggregation.md`
 
 ### Sibling synthesis files ingested
@@ -1478,7 +1467,6 @@ This monthly review extends `analysis/daily/2026-04-23/monthly-review/` by 2 cal
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/methodology-reflection.md -->
 
-**Author**: James Pether Sörling | **Confidence**: HIGH (A1)
 **Standards reference**: ICD 203 (Analytic Standards), Heuer & Pherson Structured Analytic Techniques
 
 ### ICD 203 audit

@@ -32,6 +32,7 @@ import {
 const {
   stripPassTwoSection,
   stripLeadingAdminBylines,
+  stripProcessMetaLines,
   stripSourcePreamble,
   demoteHeadings,
   cleanArtifactBody,
@@ -200,6 +201,84 @@ describe('render-lib — helpers', () => {
     expect(out).toContain('**Evidence**');
     expect(out).not.toContain('**Author**');
     expect(out).not.toContain('**Classification**');
+  });
+});
+
+describe('render-lib — stripProcessMetaLines (per-document journalist-card preservation)', () => {
+  it('strips workflow-process lines while preserving journalist-fact lines in the same paragraph', () => {
+    // Per-document identification card: mixes Dok_ID/Beteckning/Title
+    // (journalism facts that link readers to primary sources) with
+    // Author/Date/Confidence/DIW Score (workflow audit metadata that
+    // doesn't belong in published journalism).
+    const body = [
+      '**Dok_ID**: HD03253  ',
+      '**Beteckning**: Prop. 2025/26:253  ',
+      '**Title**: EU:s bankpaket — genomförande av reviderade kapitaltäckningsregler  ',
+      '**Department**: Finansdepartementet  ',
+      '**Committee**: FiU (Finansutskottet)  ',
+      '**DIW Score**: 9/10 (CRITICAL)  ',
+      '**Author**: James Pether Sörling  ',
+      '**Date**: 2026-04-27  ',
+      '**Confidence**: HIGH [A2]',
+    ].join('\n');
+    const out = stripProcessMetaLines(body);
+    // Journalist facts survive
+    expect(out).toContain('**Dok_ID**');
+    expect(out).toContain('**Beteckning**');
+    expect(out).toContain('**Title**');
+    expect(out).toContain('**Department**');
+    expect(out).toContain('**Committee**');
+    // Workflow process metadata stripped
+    expect(out).not.toContain('**Author**');
+    expect(out).not.toContain('**Date**');
+    expect(out).not.toContain('**Confidence**');
+    expect(out).not.toContain('**DIW Score**');
+  });
+
+  it('strips Admiralty Code typo "Admiration Code" used in some artifacts', () => {
+    const body = '**Admiration Code**: [B2] — Confirmed, plausible source';
+    expect(stripProcessMetaLines(body)).toBe('');
+  });
+
+  it('strips ICD 203 / Standard / Self-audit cycle / Framework', () => {
+    const body = [
+      '**Standard**: ICD 203 — Analytic Standards and Tradecraft',
+      '**Self-audit cycle**: Pass 1 → Pass 2',
+      '**Framework**: 5-dimension political risk register',
+      'Real prose paragraph survives.',
+    ].join('\n');
+    const out = stripProcessMetaLines(body);
+    expect(out).toContain('Real prose paragraph survives.');
+    expect(out).not.toContain('**Standard**');
+    expect(out).not.toContain('**Self-audit cycle**');
+    expect(out).not.toContain('**Framework**');
+  });
+
+  it('does NOT strip "Election date" (a journalism fact) but does strip bare "Election"', () => {
+    expect(stripProcessMetaLines('**Election date**: 2026-09-20')).toBe('**Election date**: 2026-09-20');
+    expect(stripProcessMetaLines('**Election**: Riksdag election 2026')).toBe('');
+  });
+
+  it('does NOT strip per-document journalist facts (Beteckning, Minister, Response deadline, Effective date)', () => {
+    const body = [
+      '**Beteckning**: Prop. 2025/26:253',
+      '**Minister**: Ebba Busch (KD), Ministry of Energy',
+      '**Response deadline**: 2026-05-07',
+      '**Effective date**: 2026-07-01',
+      '**Tabling date**: 2026-04-23',
+    ].join('\n');
+    const out = stripProcessMetaLines(body);
+    expect(out).toBe(body);
+  });
+
+  it('does NOT strip analytical callouts (ACH Score, ALARP, Mitigation, Evidence)', () => {
+    const body = [
+      '**ACH Score**: H1 likely [B2]',
+      '**ALARP**: MITIGATE via opposition monitoring',
+      '**Mitigation**: pre-amplify Lagrådet language',
+      '**Evidence**: vote record HD10437 [A1]',
+    ].join('\n');
+    expect(stripProcessMetaLines(body)).toBe(body);
   });
 });
 

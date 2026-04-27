@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: motions
 slug: 2026-04-24-motions
 source_folder: analysis/daily/2026-04-24/motions
-generated_at: 2026-04-27T16:35:06.985Z
+generated_at: 2026-04-27T16:50:06.990Z
 language: en
 layout: article
 ---
@@ -2443,8 +2443,7 @@ At least 10 SATs applied to this run:
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/data-download-manifest.md -->
 
 **Workflow**: news-motions
-**Run ID**: 24866827737
-**UTC timestamp**: 2026-04-24T01:05Z
+
 **Requested date**: 2026-04-24
 **Effective window**: 2026-04-15 to 2026-04-17 (most recent motion datum in open data)
 **MCP**: riksdag-regering (HTTP, Render) — `get_sync_status` = live; `get_motioner` limit=20 returned 20 of 257,825 total

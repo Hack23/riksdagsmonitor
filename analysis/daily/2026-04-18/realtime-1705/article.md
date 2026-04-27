@@ -5,7 +5,7 @@ date: 2026-04-18
 subfolder: realtime-1705
 slug: 2026-04-18-realtime-1705
 source_folder: analysis/daily/2026-04-18/realtime-1705
-generated_at: 2026-04-27T16:35:06.839Z
+generated_at: 2026-04-27T16:50:06.839Z
 language: en
 layout: article
 ---
@@ -122,8 +122,6 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/synthesis-summary.md -->
-
-**Analysis run:** realtime-1705 | **Coverage:** April 13-18, 2026 | **Documents analyzed:** 4 primary
 
 ### Key Findings
 
@@ -718,7 +716,6 @@ graph TD
 | **Riksbank** | Monitoring for fiscal discipline | Critical of extra budgets |
 
 ### Analytical Lens 4: DIW Score
-**DIW Score: 9.5/10** – Spring Economic Proposition is the single most significant annual fiscal document in Swedish politics. It frames the entire year's political-economic debate and sets parameters for all other budget decisions, including HD03236, HD0399.
 
 ### Analytical Lens 5: Cross-References
 - **HD0399** (Vårändringsbudget): Sister document with specific expenditure adjustments
@@ -1109,8 +1106,6 @@ Youth crime law and migration inhibition orders both belong to the Tidö agreeme
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/data-download-manifest.md -->
-
-**Analysis run:** realtime-1705 | **MCP Status:** LIVE | **Generated:** 2026-04-18T17:10Z
 
 ### Data Sources Used
 

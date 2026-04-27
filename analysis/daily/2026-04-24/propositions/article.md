@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: propositions
 slug: 2026-04-24-propositions
 source_folder: analysis/daily/2026-04-24/propositions
-generated_at: 2026-04-27T16:35:06.990Z
+generated_at: 2026-04-27T16:50:06.995Z
 language: en
 layout: article
 ---
@@ -153,8 +153,6 @@ flowchart TD
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/intelligence-assessment.md -->
 
 **Audience**: Decision-makers in financial markets, political risk, civil society.
-**Classification**: Public OSINT.
-**Author**: James Pether Sörling.
 
 ### Key Judgments
 
@@ -620,7 +618,7 @@ flowchart TD
 **Responsible minister**: Niklas Wykman (M)
 **Signatory PM**: Ulf Kristersson (M)
 **Committee referral**: FiU
-**DIW score**: 2.5 / 5
+
 **Effective date**: N/A (reporting document)
 **Signed**: 2026-04-23 (tabled to Riksdag 2026-04-24)
 
@@ -705,7 +703,7 @@ Per `osint-tradecraft-standards.md` — ICD 203 compliant; Admiralty codes assig
 **Responsible minister**: Gunnar Strömmer (M)
 **Signatory PM**: Ulf Kristersson (M)
 **Committee referral**: SfU
-**DIW score**: 3.5 / 5
+
 **Effective date**: 1 August 2026
 **Signed**: 2026-04-23 (tabled to Riksdag 2026-04-24)
 
@@ -792,7 +790,7 @@ Per `osint-tradecraft-standards.md` — ICD 203 compliant; Admiralty codes assig
 **Responsible minister**: Niklas Wykman (M)
 **Signatory PM**: Ulf Kristersson (M)
 **Committee referral**: FiU
-**DIW score**: 3.8 / 5
+
 **Effective date**: Staggered per EU timetable (main provisions 1 January 2027 with transitional output-floor phase-in)
 **Signed**: 2026-04-23 (tabled to Riksdag 2026-04-24)
 
@@ -878,7 +876,7 @@ Per `osint-tradecraft-standards.md` — ICD 203 compliant; Admiralty codes assig
 **Responsible minister**: Andreas Carlson (KD)
 **Signatory PM**: Ulf Kristersson (M)
 **Committee referral**: TU
-**DIW score**: 2.8 / 5
+
 **Effective date**: 1 July 2026
 **Signed**: 2026-04-23 (tabled to Riksdag 2026-04-24)
 
@@ -1499,12 +1497,11 @@ Current run scoped as Standard tier due to 28-min MCP idle budget. Budget compre
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/data-download-manifest.md -->
 
-**Generated**: 2026-04-24 00:28 UTC
 **Workflow**: news-propositions
-**Run ID**: 24865726626
+
 **Requested date**: 2026-04-24
 **Effective date**: 2026-04-23 (1-business-day lookback — Riksdag publishes after close-of-day)
-**Riksmöte**: 2025/26
+
 **Data sources**: `get_propositioner`, `get_dokument_innehall` (riksdag-regering MCP, session 4N6ZRTD5)
 **Window used**: 2026-04-23 00:00–23:59 Europe/Stockholm
 **MCP availability**: `riksdag-regering` ✅ live (get_sync_status OK at 00:27Z); `scb`, `world-bank` not called this run (single-type propositions scope).

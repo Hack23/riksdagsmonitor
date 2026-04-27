@@ -5,7 +5,7 @@ date: 2026-04-27
 subfolder: motions
 slug: 2026-04-27-motions
 source_folder: analysis/daily/2026-04-27/motions
-generated_at: 2026-04-27T16:35:07.072Z
+generated_at: 2026-04-27T16:50:07.081Z
 language: en
 layout: article
 ---
@@ -187,9 +187,6 @@ HD024090 riksdagen.se]
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/intelligence-assessment.md -->
 
-**Author**: James Pether Sörling
-**Classification**: OPEN | Admiralty Code applied throughout
-
 ---
 
 ### Key Judgments
@@ -200,7 +197,6 @@ The Tidö coalition, with SD parliamentary support, will pass its key spring 202
 
 **Evidence**: HD024090, HD024076, HD024092 (riksdagen.se) — all filed as minority opposition in committees where government holds majority with SD support. Prior pattern in riksmöte 2025/26 shows consistent government victories.
 
-**Confidence**: VERY HIGH [A2]
 **PIR reference**: PIR-1 (Legislative outcome tracking)
 
 ---
@@ -211,7 +207,6 @@ Eight of 29 motions (28%) target immigration-related propositions (props 215, 22
 
 **Evidence**: HD024090, HD024095, HD024097 (riksdagen.se — SfU), HD024076, HD024080, HD024087, HD024089 (riksdagen.se — SfU), HD024086 (riksdagen.se — AU). Concentration of SfU motions unprecedented in recent riksmöten.
 
-**Confidence**: HIGH [A2]
 **PIR reference**: PIR-2 (Immigration policy monitoring)
 
 ---
@@ -222,7 +217,6 @@ Vänsterpartiet's HD024090 (riksdagen.se) raises substantive EU law compatibilit
 
 **Evidence**: HD024090 (riksdagen.se) — V motion by Tony Haddou referencing EU fundamental rights framework; Dutch precedent of ECJ referral on similar measures (comparative-international.md).
 
-**Confidence**: MEDIUM [B2]
 **PIR reference**: PIR-3 (Legal/constitutional risk monitoring)
 
 ---
@@ -233,7 +227,6 @@ V's opposition to fuel tax cuts (HD024092 riksdagen.se) and energy price support
 
 **Evidence**: HD024092 (riksdagen.se) — Nooshi Dadgostar partimotion challenging prop. 2025/26:236 on social grounds. Cross-referenced with climate-target risk in risk-assessment.md.
 
-**Confidence**: HIGH [A2]
 **PIR reference**: PIR-4 (Fiscal/electoral politics)
 
 ---
@@ -630,9 +623,6 @@ style S1 fill:#00d9ff,color:#000
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/risk-assessment.md -->
-
-**Author**: James Pether Sörling
-**Framework**: 5-dimension political risk register | L × I scoring
 
 ---
 

@@ -5,7 +5,7 @@ date: 2026-04-23
 subfolder: month-ahead
 slug: 2026-04-23-month-ahead
 source_folder: analysis/daily/2026-04-23/month-ahead
-generated_at: 2026-04-27T16:35:06.949Z
+generated_at: 2026-04-27T16:50:06.952Z
 language: en
 layout: article
 ---
@@ -98,8 +98,6 @@ quadrantChart
 - **Economic data confidence**: MEDIUM-HIGH (World Bank 2024 data, vårproposition not yet full-text parsed)
 - **Legislative outcomes confidence**: HIGH (government holds majority through SD support)
 - **Electoral impact confidence**: MEDIUM (5 months to election; polls can shift)
-
-**Admiralty Code**: [B2] — Reliable source, confirmed by multiple independent parliamentary documents
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/synthesis-summary.md -->
@@ -510,7 +508,6 @@ graph TD
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/forward-indicators.md -->
 
-**Author**: James Pether Sörling | **Generated**: 2026-04-23
 **Gate requirement**: ≥10 indicators with date patterns across 4 horizons
 
 ---
@@ -740,8 +737,7 @@ quadrantChart
 
 ### Confidence Notes
 
-All risk assessments are based on public parliamentary documents. Likelihood scores reflect political dynamics observable from parliamentary record; they are not probabilistic models.  
-**Admiralty Code**: [B2] — Reliable source, confirmed by multiple independent documents.
+All risk assessments are based on public parliamentary documents. Likelihood scores reflect political dynamics observable from parliamentary record; they are not probabilistic models.
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/swot-analysis.md -->
@@ -949,7 +945,6 @@ graph TD
 **Title**: Proposition 2025/26:100 — Vårpropositionen 2026 (Spring Fiscal Policy Bill)
 **Filed by**: Regeringen (Finance Minister Elisabeth Svantesson, M)
 **Status**: In committee (FiU)
-**Riksmöte**: 2025/26
 
 **BLUF**: The government's spring economic framework projects GDP recovery (0.82% growth 2025, expanding in 2026), sets ceiling for the supplementary budget, and establishes fiscal priorities for the remainder of the Riksmöte 2025/26 session.
 
@@ -1019,7 +1014,6 @@ graph TD
 
 **BLUF**: Authorises Swedish military personnel to be stationed in Finland as part of NATO Article 5 eastern flank posture. FöU committee review ongoing.
 
-**DIW Score**: 6.8/10 | **Admiralty**: [B2]
 **NATO context**: Consistent with Allied eastern flank commitments; smaller than Germany's Lithuania brigade but symbolically important for first-time NATO member Sweden.
 **Risk**: Russian diplomatic reaction (XT-01 in threat-analysis.md) possible.
 
@@ -1083,7 +1077,6 @@ graph TD
 
 **BLUF**: Tightens youth criminal sentencing; reduces rehabilitation-focused disposals for serious offences. Part of Law & Order package. Expected passage with government majority.
 
-**DIW Score**: 6.2/10 | **Admiralty**: [A1]
 **Opposition**: S+V+MP oppose on rehabilitation grounds. C silent.
 
 ### HD0399
@@ -1400,7 +1393,6 @@ Sweden's contribution is consistent with Allied commitments but smaller in scale
 
 ### Parallel 1: 2010 Alliansen Pre-Election Spring Session
 
-**Date**: Spring 2010 — 5 months before September 2010 election
 **Government**: Alliansen (M+C+L+KD) under PM Fredrik Reinfeldt
 **Structural similarity**: Right-centre minority coalition; major fiscal package; SD entering parliament for first time in September 2010
 
@@ -1416,7 +1408,6 @@ Sweden's contribution is consistent with Allied commitments but smaller in scale
 
 ### Parallel 2: Löfven Budget Crisis 2021
 
-**Date**: June 2021
 **Government**: S-MP minority under PM Stefan Löfven
 **Event**: No-confidence vote (misstroendevotum) carried in Riksdag when V withdrew support over HD clause reform
 
@@ -1893,12 +1884,10 @@ This analysis applies OSINT methodology per ICD 203, using:
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/data-download-manifest.md -->
 
 **Workflow**: news-month-ahead
-**Run ID**: 24810574623
-**UTC Timestamp**: 2026-04-23T01:00:00Z
+
 **Requested Date**: 2026-04-23
 **Effective Date**: 2026-04-23
 **Lookback Window**: Current session riksmöte 2025/26 (recent 30 days)
-**Analysis Period**: 2026-04-23 → 2026-05-31 (38 days)
 
 ### MCP Server Availability
 

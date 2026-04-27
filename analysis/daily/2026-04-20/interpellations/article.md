@@ -5,7 +5,7 @@ date: 2026-04-20
 subfolder: interpellations
 slug: 2026-04-20-interpellations
 source_folder: analysis/daily/2026-04-20/interpellations
-generated_at: 2026-04-27T16:35:06.888Z
+generated_at: 2026-04-27T16:50:06.888Z
 language: en
 layout: article
 ---
@@ -192,7 +192,6 @@ graph LR
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/intelligence-assessment.md -->
 
 **Analytic framework**: Structured Analytic Techniques (SATs) — ACH, Key Assumptions Check, Red Team / Devil's Advocate
-**Analysis date**: 2026-04-20 | **Confidence baseline**: HIGH | **AI-FIRST iterations**: 2
 
 This document applies three structured analytic techniques to pressure-test the main intelligence judgements about the April 14–17 interpellation wave. It is designed to surface hidden assumptions, force consideration of alternative explanations, and reduce the risk of mirror-imaging or confirmation bias.
 
@@ -377,8 +376,6 @@ For each major judgement, the underlying assumptions are made explicit and teste
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/significance-scoring.md -->
-
-**Analysis Date**: 2026-04-20 | **Scoring Framework**: Newsworthiness × Political Impact × Accountability Pressure
 
 ### Ranked Significance Matrix
 
@@ -702,9 +699,7 @@ This scenario set should be **re-evaluated** when any of the following occur:
 
 ---
 
-**Analyst**: news-interpellations workflow (pass 2, AI-FIRST) + reference-class expansion
 **Peer-review**: See `intelligence-assessment.md` Red Team for independent challenge
-**Confidence**: MEDIUM — scenarios are probabilistic and depend on decision-maker choices not yet made
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/risk-assessment.md -->
@@ -934,7 +929,6 @@ Even with optimal government risk-treatment, residual risks remain:
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/threat-analysis.md -->
 
-**Analysis Date**: 2026-04-20 | **Confidence**: HIGH overall (MCP live data, full text documents)  
 **Threat Level**: 🔴 HIGH — Multiple active accountability threats with near-term response deadlines
 
 ### Overview Threat Assessment
@@ -1024,7 +1018,6 @@ Sweden's parliament is entering an intensive pre-election accountability phase w
 
 #### TA-1: Social Democrats (S) — Primary Threat Actor
 
-**Classification**: Institutional opposition party; tier-1 threat actor
 **Capability**: High — 107 MPs, professional party apparatus, coordinated whip system, union affiliations (LO, TCO), media reach
 **Intent**: HIGH — explicit pre-Election 2026 accountability campaign
 **Opportunity**: HIGH — April 14 – May 5 response window coincides with pre-summer-recess attention peak
@@ -1044,7 +1037,6 @@ Sweden's parliament is entering an intensive pre-election accountability phase w
 
 #### TA-2: Sweden Democrats (SD) — Secondary Threat Actor
 
-**Classification**: Coalition external supply party; tier-2 threat actor (asymmetric)
 **Capability**: Medium–High (72 MPs, coalition arrangement-based leverage)
 **Intent**: MEDIUM — agenda-setting and brand-signalling more than direct government-toppling
 **Opportunity**: MEDIUM — as coalition partner, SD can embarrass government but not overthrow
@@ -1056,7 +1048,6 @@ Sweden's parliament is entering an intensive pre-election accountability phase w
 
 #### TA-3: Jamal El-Haj (Independent) — Wildcard Actor
 
-**Classification**: Individual independent MP; tier-2 threat actor (institutional weight limited; asymmetric impact potential high)
 **Capability**: Low in raw numbers; high in diaspora-community mobilisation
 **Intent**: HIGH on Israel/Palestine accountability
 **Opportunity**: HIGH — 10-day response window, media-ready narrative
@@ -1065,7 +1056,6 @@ Sweden's parliament is entering an intensive pre-election accountability phase w
 
 #### TA-4: Centerpartiet (C) — Tier-3 Actor
 
-**Classification**: External supply party; tier-3
 **Capability**: 24 MPs; moderate
 **Intent**: Brand-differentiation more than government-opposition
 **TTPs**: Selective issue-championing (HD10431 LGBTQI+)
@@ -2066,8 +2056,6 @@ The article should explicitly include:
 
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/classification-results.md -->
-
-**Analysis Date**: 2026-04-20 | **Riksmöte**: 2025/26 | **Total Interpellations**: 10
 
 ### Classification by Policy Domain
 

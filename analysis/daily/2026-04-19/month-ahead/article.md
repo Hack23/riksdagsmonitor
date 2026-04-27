@@ -5,7 +5,7 @@ date: 2026-04-19
 subfolder: month-ahead
 slug: 2026-04-19-month-ahead
 source_folder: analysis/daily/2026-04-19/month-ahead
-generated_at: 2026-04-27T16:35:06.863Z
+generated_at: 2026-04-27T16:50:06.863Z
 language: en
 layout: article
 ---
@@ -840,7 +840,6 @@ Sweden's parliamentary system is functioning within normal democratic parameters
 
 #### T1: Democratic Legitimacy Strain on Migration Policy
 **Severity**: 🟠MEDIUM-HIGH
-**Confidence**: 🟩HIGH
 
 The simultaneous introduction of the new reception law (HD03229), stricter deportation rules (HD03235), and inhibition orders (HD01SfU22) creates a trifecta of migration tightening that has generated the most intensive parliamentary opposition of the 2025/26 session. With 19 counter-motions filed by S, V, MP, and C parties, and civil society organisations raising human rights concerns, the risk is that democratic legitimacy of these laws is contested post-enactment.
 
@@ -849,7 +848,6 @@ The simultaneous introduction of the new reception law (HD03229), stricter depor
 
 #### T2: Constitutional Creep Risk
 **Severity**: 🟡MEDIUM
-**Confidence**: 🟧MEDIUM
 
 Two bills are being simultaneously adopted as "vilande" fundamental law changes (HD01KU32 accessibility in media, HD01KU33 documents obtained by search and seizure). While the procedure is constitutionally sound, the substance of HD01KU33 — removing seized digital files from public records — raises press freedom concerns noted in KU's own reasoning. The Swedish Press Freedom Foundation and journalist organisations are expected to scrutinise this closely.
 
@@ -858,7 +856,6 @@ Two bills are being simultaneously adopted as "vilande" fundamental law changes 
 
 #### T3: Cybersecurity Legislative Gap
 **Severity**: 🟡MEDIUM
-**Confidence**: 🟧MEDIUM
 
 The C party motion (HD024093) questioning the cybersecurity centre bill (HD03214-related) calls for further analysis before enactment. Sweden's cybersecurity posture is critical given NATO membership and the Ukraine conflict. Legislative delay in strengthening the National Cybersecurity Centre creates a potential capability gap.
 
@@ -867,7 +864,6 @@ The C party motion (HD024093) questioning the cybersecurity centre bill (HD03214
 
 #### T4: Economic Security Threat from Low Growth
 **Severity**: 🟠MEDIUM-HIGH
-**Confidence**: 🟦VERY HIGH
 
 Sweden's 0.82% GDP growth in 2024, rising unemployment (8.69% in 2025), and inflation now at 2.84% (down from 8.55% in 2023) represent an economic security threat. The government's spring budget offers modest stimulus, but structural reforms needed for sustained growth are not visible in the current legislative pipeline. This economic fragility increases Sweden's vulnerability to external shocks (trade war, energy price spikes, global recession).
 

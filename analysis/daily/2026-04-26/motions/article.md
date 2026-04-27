@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: motions
 slug: 2026-04-26-motions
 source_folder: analysis/daily/2026-04-26/motions
-generated_at: 2026-04-27T16:35:07.036Z
+generated_at: 2026-04-27T16:50:07.044Z
 language: en
 layout: article
 ---
@@ -1383,7 +1383,6 @@ graph LR
 **Pattern**: Multiple cases emerged of Arbetsförmedlingen-supported placements in workplaces violating disability rights standards. Opposition (then in government, S) introduced stricter oversight.
 **Lesson**: Single well-documented case (HD11747) can snowball into systemic review if media amplifies.
 **Outcome**: Regulatory clarification; Arbetsförmedlingen monitoring strengthened.
-**Confidence**: [B3] — parallel reconstructed from public record
 
 ### Parallel 2: Constitutional Rights and Criminal Justice Reform Sequencing
 
@@ -1393,7 +1392,6 @@ graph LR
 **Pattern**: Sweden implemented youth remand policy before fully updating the school regulations that governed education in remand facilities, leading to JO criticism.
 **Lesson**: Implementation-before-legislation is a recurring Swedish governance failure pattern.
 **Current relevance**: HD11749 repeats this exact pattern.
-**Confidence**: [B3]
 
 ### Parallel 3: Energy Policy and Parliamentary Narrative Challenges
 
@@ -1402,7 +1400,6 @@ graph LR
 **Period**: ~7–9 years ago
 **Pattern**: SD and M used parliamentary questions and interpellations to challenge renewable energy policy, framing wind subsidies as economically irrational. Government (S-MP) defended wind energy.
 **Lesson**: Energy narrative battles play out over multiple parliamentary sessions; no single interpellation resolves them.
-**Confidence**: [B3]
 
 ```mermaid
 graph LR
@@ -1552,7 +1549,6 @@ graph TD
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/cross-reference-map.md -->
 
-**F3EAD Stage**: ANALYZE | **Methodology**: structural-metadata-methodology.md §Relationship taxonomy
 **Edge types used**: amends, thematic, coordinated-filing, committee-routed, rebuts
 
 ### Policy Cluster Map
@@ -1697,13 +1693,11 @@ Per political-style-guide.md §Source Diversity Rule: P0/P1 claims require ≥3 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/data-download-manifest.md -->
 
-**Generated**: 2026-04-26 18:28 UTC
 **Workflow**: news-motions (Opposition Motions)
 **Data Sources**: riksdag-regering-mcp (get_motioner, get_fragor, get_interpellationer, get_betankanden, get_dokument)
 **Documents Selected**: 8
-**Riksmöte**: 2025/26
+
 **Lookback Active**: Data from 2026-04-24 (1 business day lookback, no documents on 2026-04-26)
-**Analysis Depth**: standard
 
 ### Document Inventory
 

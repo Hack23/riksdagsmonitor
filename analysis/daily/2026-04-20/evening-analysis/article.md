@@ -5,7 +5,7 @@ date: 2026-04-20
 subfolder: evening-analysis
 slug: 2026-04-20-evening-analysis
 source_folder: analysis/daily/2026-04-20/evening-analysis
-generated_at: 2026-04-27T16:35:06.881Z
+generated_at: 2026-04-27T16:50:06.881Z
 language: en
 layout: article
 ---
@@ -263,7 +263,6 @@ graph TD
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/significance-scoring.md -->
 
 **SIG ID**: `SIG-2026-04-20-EVE001`
-**Analysis Date**: 2026-04-20 17:37 UTC
 
 ---
 
@@ -364,7 +363,6 @@ graph TD
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/stakeholder-perspectives.md -->
 
 **STA ID**: `STA-2026-04-20-EVE001`
-**Analysis Date**: 2026-04-20 17:38 UTC
 
 ---
 
@@ -499,7 +497,6 @@ graph LR
 
 #### Scenario A: Government Containment (35% probability)
 **Label**: "Strömmer Responds, Svantesson Pivots"
-**Confidence**: 🟧MEDIUM
 
 **Narrative**: Justice Minister Strömmer issues a strong HD10439 response citing HD03237 (paid training) as the structural answer to Stockholm police distribution gaps. The Climate/Agriculture Ministry announces an agricultural emissions action plan within 14 days of the MJU21 debate. The Education Ministry's HD11726 response references a new constitutional literacy campaign timed to coincide with the election. The government successfully frames the week as "accountable governance responding to legitimate questions."
 
@@ -514,7 +511,6 @@ graph LR
 
 #### Scenario B: S Accountability Gains Traction (50% probability)
 **Label**: "The Double Climate Indictment"
-**Confidence**: 🟩HIGH
 
 **Narrative**: MJU21 becomes the lead story in DN/SvD on April 21, framed as "Riksrevisionen: Sverige klarar inte jordbrukets klimatomställning." This is combined with reporting that the government simultaneously cut fuel taxes (HD03236), adding emissions. S's Magdalena Andersson holds a press conference citing both Riksrevisionen findings and the motions already filed (HD024082, HD024098). The police interpellation (HD10439) generates secondary coverage on Stockholm-specific policing gaps. The government's response window is 10 days but the media narrative is already set.
 
@@ -530,7 +526,6 @@ graph LR
 
 #### Scenario C: Constitutional Accountability Week (15% probability)
 **Label**: "Four Documents, One Theme: Who Controls the State?"
-**Confidence**: 🟥LOW-MEDIUM
 
 **Narrative**: The KU42 budget structure debate, the KU33/KU32 vilande amendments, the HD11726 constitutional knowledge question, and the announced KU summons of Finance Minister Svantesson (from realtime memory) combine into a unified "constitutional accountability week" narrative. Media frames the week as "who controls Sweden's constitutional architecture?" HD11726 becomes a viral talking point about the government changing the constitution without citizen education.
 
@@ -589,7 +584,7 @@ The KU summons of Finance Minister Svantesson (flagged in realtime memory for th
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/risk-assessment.md -->
 
 **RSK ID**: `RSK-2026-04-20-EVE001`
-**Analysis Date**: 2026-04-20 17:34 UTC
+
 **Risk Framework**: Likelihood × Impact (L×I scoring, 0.1–5.0)
 
 ---
@@ -729,13 +724,12 @@ graph LR
 
 **Overall Coalition Stability Score**: 6.8/10 (moderate, trending cautiously lower)
 **Key Vulnerability**: KD (Andreas Carlson infrastructure portfolio) and L (Nina Larsson gender equality portfolio)
-**Confidence**: 🟩HIGH
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/swot-analysis.md -->
 
 **SWOT ID**: `SWT-2026-04-20-EVE001`
-**Analysis Date**: 2026-04-20 17:33 UTC
+
 **Scope**: Full-day synthesis — committee reports, interpellations, written questions
 
 ---
@@ -857,8 +851,6 @@ mindmap
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/threat-analysis.md -->
 
 **THR ID**: `THR-2026-04-20-EVE001`
-**Analysis Date**: 2026-04-20 17:35 UTC
-**Framework**: STRIDE + Political Threat Taxonomy
 
 ---
 
@@ -1073,7 +1065,6 @@ Sweden's documented failure to implement the EU Pay Transparency Directive (2023
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/classification-results.md -->
 
 **CLS ID**: `CLS-2026-04-20-EVE001`
-**Analysis Date**: 2026-04-20 17:36 UTC
 
 ---
 
@@ -1138,7 +1129,6 @@ graph TD
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/cross-reference-map.md -->
 
 **XRF ID**: `XRF-2026-04-20-EVE001`
-**Analysis Date**: 2026-04-20 17:39 UTC
 
 ---
 
@@ -1216,28 +1206,24 @@ graph LR
 ### Thematic Clusters
 
 #### Cluster A: Climate-Accountability Compound
-**Confidence**: 🟩HIGH | **Electoral Weight**: 🔴CRITICAL
 
 Connects: MJU21 (Riksrevisionen) ↔ HD03236 (fuel tax) ↔ MOT024082+98 (S+MP counter-motions) ↔ HD11725 (alum shale)
 
 This cluster represents the most structurally damaging accountability compound for the government. Three independently-sourced challenges to climate credibility, with an independent constitutional body (Riksrevisionen) as the primary anchor.
 
 #### Cluster B: Police Security Debate
-**Confidence**: 🟩HIGH | **Electoral Weight**: 🔴HIGH
 
 Connects: HD10439 (new IP) ↔ HD10437 (previous IP) ↔ HD03237 (paid training)
 
 The police security debate has been running since April 15. HD10439 adds Stockholm specificity — from "national police numbers" to "where are the police in Stockholm?"
 
 #### Cluster C: Constitutional Awareness Chain
-**Confidence**: 🟩HIGH | **Electoral Weight**: 🟠HIGH
 
 Connects: KU33+KU32 vilande ↔ KU42 budget scrutiny ↔ HD11726 constitutional knowledge
 
 The constitutional awareness chain creates a coherent pre-election narrative: government is changing the constitution (KU33/KU32), managing the fiscal framework (KU42), but not educating citizens about what the constitution is (HD11726).
 
 #### Cluster D: Infrastructure Carlson Accountability
-**Confidence**: 🟩HIGH | **Electoral Weight**: 🟠MEDIUM
 
 Connects: HD11722 ↔ HD11724 ↔ IP434 (sibling interpellation on housing starts)
 
@@ -1245,8 +1231,6 @@ S is maintaining consistent pressure on Infrastructure Minister Carlson across m
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/methodology-reflection.md -->
-
-**Date**: 2026-04-20 | **Analysis Version**: v5.0 | **Depth**: deep
 
 ---
 

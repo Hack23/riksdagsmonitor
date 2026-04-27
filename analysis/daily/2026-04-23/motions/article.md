@@ -5,7 +5,7 @@ date: 2026-04-23
 subfolder: motions
 slug: 2026-04-23-motions
 source_folder: analysis/daily/2026-04-23/motions
-generated_at: 2026-04-27T16:35:06.959Z
+generated_at: 2026-04-27T16:50:06.963Z
 language: en
 layout: article
 ---
@@ -177,8 +177,6 @@ flowchart TB
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/intelligence-assessment.md -->
 
-**Author**: James Pether Sörling | **Date**: 2026-04-23  
-**Classification**: PUBLIC  
 **PIR reference**: PIR-1 (Governmental stability), PIR-3 (Policy reform trajectory), PIR-5 (Electoral dynamics)
 
 ---
@@ -652,7 +650,6 @@ quadrantChart
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/swot-analysis.md -->
 
-**Author**: James Pether Sörling | **Date**: 2026-04-23 | **Confidence**: HIGH [B2]  
 **Framing**: Strengths/Weaknesses of the *opposition bloc's* motion strategy; Opportunities/Threats from *their* political perspective.
 
 ---

@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: committeeReports
 slug: 2026-04-26-committeeReports
 source_folder: analysis/daily/2026-04-26/committeeReports
-generated_at: 2026-04-27T16:35:07.011Z
+generated_at: 2026-04-27T16:50:07.018Z
 language: en
 layout: article
 ---
@@ -210,7 +210,6 @@ style D fill:#00d9ff,color:#000000
 ### Key Judgments (KJ)
 
 #### KJ-1: The April 2026 package is electorally timed but substantively mixed
-**Confidence: HIGH** [Likely 63-80%, ICD 203]
 
 The April 2026 cluster of committee reports (12 betänkanden, HD01FiU48 through HD01TU16) represents a deliberate legislative acceleration ahead of the September 2026 election. The dominant measure — HD01FiU48 fuel tax cut and energy support (4.1B SEK) — is timed for maximum pre-election salience.
 
@@ -219,7 +218,6 @@ The April 2026 cluster of committee reports (12 betänkanden, HD01FiU48 through 
 **Net assessment**: Electoral timing is real but does not invalidate substantive policy content
 
 #### KJ-2: Police reform failure (HD01JuU31) creates persistent institutional risk regardless of election outcome
-**Confidence: HIGH** [Likely 63-80%, ICD 203]
 
 Riksrevisionen's documented finding that Polismyndigheten's reform failed its stated goals, combined with no remedial mandate from JuU, creates a structural accountability gap. This is not resolved by any measure in the April 2026 package.
 
@@ -228,7 +226,6 @@ Riksrevisionen's documented finding that Polismyndigheten's reform failed its st
 **Net assessment**: The institutional failure documented in HD01JuU31 will persist into the next parliamentary mandate regardless of who governs — it requires proactive remediation
 
 #### KJ-3: The prison expansion (HD01CU25) sets a constitutional precedent that will shape future policymaking
-**Confidence: MEDIUM-HIGH** [Roughly even to Likely, 45-63%, ICD 203]
 
 The fast-track mechanism enabling prison construction by overriding Plan and Building Act (PBL) local governance provisions is novel. If used without challenge, it will likely be applied again to other "national interest" infrastructure (energy, transport, defence).
 
@@ -237,7 +234,6 @@ The fast-track mechanism enabling prison construction by overriding Plan and Bui
 **Net assessment**: The constitutional precedent is real but its durability is uncertain pending judicial review
 
 #### KJ-4: The climate-fiscal contradiction (HD01FiU48 + HD01MJU21) will damage Sweden's EU climate standing
-**Confidence: MEDIUM** [Roughly even 45-55%, ICD 203]
 
 Simultaneous fuel tax cut (HD01FiU48) and documented agricultural climate steering failure (HD01MJU21) create an evidence base that European Commission monitoring bodies and environmental NGOs will cite in EU Green Deal progress reviews.
 

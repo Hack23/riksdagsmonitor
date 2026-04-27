@@ -5,7 +5,7 @@ date: 2026-04-19
 subfolder: realtime-1219
 slug: 2026-04-19-realtime-1219
 source_folder: analysis/daily/2026-04-19/realtime-1219
-generated_at: 2026-04-27T16:35:06.877Z
+generated_at: 2026-04-27T16:50:06.876Z
 language: en
 layout: article
 ---
@@ -291,7 +291,6 @@ Documents with DIW ≥ 7.0 requiring dedicated H3 sections:
 **PUBLISH**: YES — HIGH severity (maximum DIW 8.48 > threshold 7.0)  
 **Type**: Breaking / Realtime update  
 **Languages**: EN + SV  
-**Confidence**: HIGH (live MCP data, government sources confirmed)
 
 ### Sensitivity Analysis
 
@@ -549,10 +548,9 @@ graph TD
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/scenario-analysis.md -->
 
 **SCN-ID**: SCN-20260419-1219
-**Date**: 2026-04-19
-**Analyst**: James Pether Sörling
+
 **Version**: 1.0 (Tier-C reference-grade extension)
-**Confidence**: MEDIUM-HIGH on base scenarios; LOW-MEDIUM on wildcards
+
 **Horizon Bands**: 30 days · 90 days · post-September-2026 election
 
 ---
@@ -1189,9 +1187,9 @@ graph TD
 
 **dok_id**: HD01KU32  
 **Depth Tier**: L2+ (P0 Constitutional)  
-**Date**: 2026-04-17  
+
 **Committee**: Konstitutionsutskottet (KU)  
-**Analyst**: James Pether Sörling  
+
 **Version**: 2.0 (Pass 2 enriched)
 
 ### Document Identity
@@ -1253,9 +1251,9 @@ This is a less controversial constitutional amendment than KU33 — it expands t
 
 **dok_id**: HD01KU33  
 **Depth Tier**: L3 (P0 Constitutional)  
-**Date**: 2026-04-17  
+
 **Committee**: Konstitutionsutskottet (KU)  
-**Analyst**: James Pether Sörling  
+
 **Version**: 2.0 (Pass 2 enriched — full L3 content)
 
 ### Document Identity
@@ -1369,9 +1367,9 @@ How do comparable democracies handle law enforcement seizure transparency?
 
 **dok_ids**: HD03231, HD03232  
 **Depth Tier**: L2+ (P1 Critical — International Treaty)  
-**Date**: 2026-04-16  
+
 **Ministry**: Utrikesdepartementet  
-**Analyst**: James Pether Sörling  
+
 **Version**: 2.0 (Pass 2 enriched)
 
 ### Document Identity

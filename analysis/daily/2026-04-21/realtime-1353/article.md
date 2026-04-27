@@ -5,7 +5,7 @@ date: 2026-04-21
 subfolder: realtime-1353
 slug: 2026-04-21-realtime-1353
 source_folder: analysis/daily/2026-04-21/realtime-1353
-generated_at: 2026-04-27T16:35:06.926Z
+generated_at: 2026-04-27T16:50:06.927Z
 language: en
 layout: article
 ---
@@ -27,8 +27,6 @@ Use this guide to read the article as a political-intelligence product rather th
 ### BLUF (Bottom Line Up Front)
 
 Sweden's Riksdag Finance Committee approved an extra budget amendment (FiU48) today cutting fuel taxes and providing electricity/gas price support — directly benefiting ~9M citizens. Simultaneously, the government launched a new wind power revenue-sharing law. Both measures are designed to address household affordability while maintaining a "green transition" narrative ahead of the September 2026 elections.
-
-**Confidence**: HIGH | **Elapsed since MCP data pull**: < 15 minutes | **Data freshness**: Live (synced 2026-04-21T13:53Z)
 
 ---
 
@@ -181,7 +179,6 @@ Three new interpellations filed 2026-04-21:
 ### DIW-Weighted Significance Matrix
 
 #### HD01FiU48 — Extra ändringsbudget 2026: Sänkt skatt på drivmedel + el- och gasprisstöd
-**DIW Score: 9.0 / 10** *(Lead Story)*
 
 | Factor | Points | Justification |
 |--------|--------|---------------|
@@ -200,7 +197,6 @@ Three new interpellations filed 2026-04-21:
 ---
 
 #### Vindkraft Intäktsdelning — Ny lag om ersättning till närboende
-**DIW Score: 8.0 / 10** *(Second Lead)*
 
 | Factor | Points | Justification |
 |--------|--------|---------------|
@@ -215,7 +211,6 @@ Three new interpellations filed 2026-04-21:
 ---
 
 #### KU-utfrågning: Svantesson + Wallström — Konstitutionsutskottet
-**DIW Score: 7.5 / 10** *(Third Lead)*
 
 | Factor | Points | Justification |
 |--------|--------|---------------|
@@ -228,7 +223,6 @@ Three new interpellations filed 2026-04-21:
 ---
 
 #### HD10442 — Interpellation: Ätstörningsvården i Region Stockholm (Markus Kallifatides/S → Svantesson/M)
-**DIW Score: 5.5 / 10** *(MEDIUM)*
 
 | Factor | Points | Justification |
 |--------|--------|---------------|
@@ -241,7 +235,6 @@ Three new interpellations filed 2026-04-21:
 ---
 
 #### HD10440 — Interpellation: Företagsläkare (Johanna Haraldsson/S → Johan Britz/L)
-**DIW Score: 4.5 / 10** *(MEDIUM)*
 
 | Factor | Points | Justification |
 |--------|--------|---------------|
@@ -254,12 +247,10 @@ Three new interpellations filed 2026-04-21:
 ---
 
 #### HD10441 — Interpellation: Rättssäkerheten (Elsa Widding → Gunnar Strömmer/M)
-**DIW Score: 4.0 / 10** *(MEDIUM)*
 
 ---
 
 #### HD01TU16 — Slopat krav på introduktionsutbildning (TU betänkande)
-**DIW Score: 3.0 / 10** *(LOW — skip)*
 
 ---
 
@@ -587,7 +578,7 @@ quadrantChart
 ### Threat Level Assessment
 
 **Overall Threat Level**: MEDIUM-HIGH  
-**Confidence**: MEDIUM (parliamentary session data, no classified sources)  
+
 **Primary Threat Domain**: Democratic Accountability + Climate Policy Integrity
 
 ---
@@ -918,8 +909,6 @@ graph TD
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/realtime-1353/data-download-manifest.md -->
 
-**Generated**: 2026-04-21 13:55 UTC
-**Run ID**: realtime-1353
 **Data Sources**: riksdag-regering-mcp (32 tools), get_sync_status, search_dokument, get_betankanden, get_interpellationer, get_propositioner, search_regering
 **MCP Status**: live (2026-04-21T13:53:57Z)
 **Documents Analyzed**: 7 primary + 4 government press releases
