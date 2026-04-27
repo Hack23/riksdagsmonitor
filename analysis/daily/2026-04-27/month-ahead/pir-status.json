@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "cycle": "month-ahead",
+  "subfolder": "month-ahead",
+  "article_date": "2026-04-27",
+  "generated_at": "2026-04-27T17:45:00Z",
+  "pirs": [
+    {
+      "id": "PIR-01",
+      "question": "Will the Tidö coalition maintain its +1 seat majority through the May 2026 legislative session?",
+      "status": "open",
+      "priority": "critical",
+      "confidence": "HIGH",
+      "answer": "Yes — voting discipline strong, no defection signals. FI-01/FI-02 forward indicators to confirm.",
+      "forward_indicator": "FI-01"
+    },
+    {
+      "id": "PIR-02",
+      "question": "Will the HD01JuU10 weapons law pass with its current provisions intact?",
+      "status": "open",
+      "priority": "high",
+      "confidence": "HIGH",
+      "answer": "Very likely — only hunting community provisions may see amendment pressure.",
+      "forward_indicator": "FI-01"
+    },
+    {
+      "id": "PIR-03",
+      "question": "Will S's sick-pay interpellation produce a ministerial commitment to revisit the day-180 ceiling?",
+      "status": "open",
+      "priority": "high",
+      "confidence": "LOW",
+      "answer": "Unlikely — government will defend Tidö agreement implementation. Monitor FI-03.",
+      "forward_indicator": "FI-03"
+    },
+    {
+      "id": "PIR-04",
+      "question": "Will Södra stambanan receive a funding commitment in May 2026?",
+      "status": "open",
+      "priority": "medium",
+      "confidence": "LOW",
+      "answer": "Unlikely before election. Government likely to defer to post-election infrastructure plan. Monitor FI-04, FI-15.",
+      "forward_indicator": "FI-15"
+    },
+    {
+      "id": "PIR-05",
+      "question": "Will HD03231/HD03232 Ukraine ratifications pass with bipartisan support?",
+      "status": "open",
+      "priority": "medium",
+      "confidence": "VERY HIGH",
+      "answer": "Near-certain near-consensus. S, M, C, L, KD, MP all supportive. SD likely Ja.",
+      "forward_indicator": "none"
+    },
+    {
+      "id": "PIR-06",
+      "question": "Will polling in May 2026 show Tidö coalition maintaining ≥175 seats?",
+      "status": "open",
+      "priority": "high",
+      "confidence": "MEDIUM",
+      "answer": "Current estimates marginal. FI-06 (June polling) is the key indicator.",
+      "forward_indicator": "FI-06"
+    },
+    {
+      "id": "PIR-07",
+      "question": "Will the Centre Party (C) signal a post-election coalition preference before summer 2026?",
+      "status": "open",
+      "priority": "critical",
+      "confidence": "LOW",
+      "answer": "C typically avoids pre-election coalition commitments. Most likely to emerge in August (FI-13).",
+      "forward_indicator": "FI-13"
+    }
+  ]
+}
