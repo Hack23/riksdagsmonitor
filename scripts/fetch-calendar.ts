@@ -29,6 +29,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { decodeHtmlEntities } from './html-utils.js';
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -387,10 +389,10 @@ export function parseRiksdagKalendariumHtml(html: string): CalendarEvent[] {
 
   // If no articles found, try <li> blocks (Pattern B).
   if (events.length === 0) {
-    const liRe = /<li\b([^>]*class="[^"]*calendar[^"]*"[^>]*)>([\s\S]*?)<\/li>/gi;
+    const liRe = /<li\b([^>]*class=(["'])[^"']*calendar[^"']*\2[^>]*)>([\s\S]*?)<\/li>/gi;
     for (const liMatch of html.matchAll(liRe)) {
       const attrs = liMatch[1] ?? '';
-      const body = liMatch[2] ?? '';
+      const body = liMatch[3] ?? '';
       const event = parseCalendarListItem(attrs, body);
       if (event) events.push(event);
     }
@@ -426,9 +428,9 @@ export function parseCalendarArticle(attrs: string, body: string): CalendarEvent
 
   return {
     dtstart,
-    org: normalizeOrgCode(org),
-    akt: normalizeAkt(akt),
-    summary: stripTags(summary).trim(),
+    org: normalizeOrgCode(decodeHtmlEntities(org)),
+    akt: normalizeAkt(decodeHtmlEntities(akt)),
+    summary: decodeHtmlEntities(stripTags(summary).trim()),
     doc_refs: docRefs,
     source: 'web-fallback',
   };
@@ -456,9 +458,9 @@ export function parseCalendarListItem(attrs: string, body: string): CalendarEven
 
   return {
     dtstart,
-    org: normalizeOrgCode(org),
-    akt: normalizeAkt(akt),
-    summary: stripTags(summary).trim(),
+    org: normalizeOrgCode(decodeHtmlEntities(org)),
+    akt: normalizeAkt(decodeHtmlEntities(akt)),
+    summary: decodeHtmlEntities(stripTags(summary).trim()),
     doc_refs: docRefs,
     source: 'web-fallback',
   };
@@ -470,15 +472,15 @@ export function parseCalendarListItem(attrs: string, body: string): CalendarEven
 
 /** Extract the `datetime` attribute from a `<time>` element. */
 function extractDatetime(html: string): string | null {
-  const m = html.match(/<time\b[^>]*\bdatetime="([^"]+)"/i);
-  return m ? (m[1] ?? null) : null;
+  const m = html.match(/<time\b[^>]*\bdatetime=(["'])(.*?)\1/i);
+  return m ? (m[2] ?? null) : null;
 }
 
 /** Extract a `data-{attr}` attribute value from a tag's attribute string. */
 function extractDataAttr(attrs: string, name: string): string | null {
-  const re = new RegExp(`\\bdata-${name}="([^"]*)"`, 'i');
+  const re = new RegExp(`\\bdata-${name}\\s*=\\s*(["'])(.*?)\\1`, 'i');
   const m = attrs.match(re);
-  return m && m[1]?.trim() ? m[1].trim() : null;
+  return m && m[2]?.trim() ? m[2].trim() : null;
 }
 
 /** True when an element attribute string contains a `calendar-item` class token. */
@@ -492,9 +494,12 @@ function hasCalendarItemClass(attrs: string): boolean {
  * Uses a simple, non-greedy regex that covers the common markup pattern.
  */
 function extractSpanText(html: string, name: string): string | null {
-  const re = new RegExp(`<span\\b[^>]*class="[^"]*${name}[^"]*"[^>]*>([\\s\\S]*?)<\\/span>`, 'i');
+  const re = new RegExp(
+    `<span\\b[^>]*\\bclass\\s*=\\s*(["'])[^"']*${name}[^"']*\\1[^>]*>([\\s\\S]*?)<\\/span>`,
+    'i',
+  );
   const m = html.match(re);
-  return m ? stripTags(m[1] ?? '').trim() || null : null;
+  return m ? stripTags(m[2] ?? '').trim() || null : null;
 }
 
 /**
@@ -509,9 +514,9 @@ function extractHeadingAndLinks(html: string): { summary: string; docRefs: strin
 
   // Collect document reference links (/sv/dokument-och-lagar/… or /dokument/…).
   const docRefs: string[] = [];
-  const hrefRe = /<a\b[^>]*\bhref="([^"]+)"[^>]*>/gi;
+  const hrefRe = /<a\b[^>]*\bhref=(["'])([^"']+)\1[^>]*>/gi;
   for (const m of html.matchAll(hrefRe)) {
-    const href = (m[1] ?? '').trim();
+    const href = (m[2] ?? '').trim();
     if (isRiksdagDocumentHref(href)) {
       docRefs.push(href);
     }
@@ -731,9 +736,13 @@ const CALENDAR_DIR = path.join(REPO_ROOT, 'data', 'calendar');
  * The file is an object with `{ manifest, events }` so that consumers can
  * load a single file and get both the data and the provenance record.
  */
-export function persistCalendarJson(from: string, result: CalendarFetchResult): string {
-  fs.mkdirSync(CALENDAR_DIR, { recursive: true });
-  const outputPath = path.join(CALENDAR_DIR, `${from}.json`);
+export function persistCalendarJson(
+  from: string,
+  result: CalendarFetchResult,
+  outputDir: string = CALENDAR_DIR,
+): string {
+  fs.mkdirSync(outputDir, { recursive: true });
+  const outputPath = path.join(outputDir, `${from}.json`);
   const payload = {
     schema: 'riksdagsmonitor-calendar/1.0',
     manifest: result.manifest,

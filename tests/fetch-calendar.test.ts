@@ -19,6 +19,9 @@
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
 import {
   isHtmlErrorResponse,
   callMcpCalendarEvents,
@@ -31,6 +34,7 @@ import {
   fetchWebCalendar,
   formatManifestMarkdown,
   parseCalendarArgs,
+  persistCalendarJson,
   type CalendarFetchConfig,
   type CalendarEvent,
 } from '../scripts/fetch-calendar.js';
@@ -853,5 +857,92 @@ describe('CalendarEvent shape', () => {
     expect(typeof event.summary).toBe('string');
     expect(Array.isArray(event.doc_refs)).toBe(true);
     expect(event.source).toBe('web-fallback');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// persistCalendarJson – filesystem persistence
+// ---------------------------------------------------------------------------
+
+describe('persistCalendarJson', () => {
+  let tmpDir: string;
+
+  beforeEach(() => {
+    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'fetch-calendar-test-'));
+  });
+
+  afterEach(() => {
+    fs.rmSync(tmpDir, { recursive: true, force: true });
+  });
+
+  it('creates the output directory and writes a JSON file', () => {
+    const outputDir = path.join(tmpDir, 'calendar');
+    const result = {
+      manifest: {
+        path: 'mcp-primary' as const,
+        date: '2026-04-28',
+        dateTo: '2026-04-28',
+        eventCount: 1,
+        fetchedAt: '2026-04-28T00:00:00.000Z',
+      },
+      events: [
+        {
+          dtstart: '2026-04-28T10:00:00',
+          org: 'FiU',
+          akt: 'debatt',
+          summary: 'Test event',
+          doc_refs: [],
+          source: 'mcp-primary' as const,
+        },
+      ],
+    };
+
+    const outPath = persistCalendarJson('2026-04-28', result, outputDir);
+
+    expect(fs.existsSync(outPath)).toBe(true);
+    expect(outPath).toBe(path.join(outputDir, '2026-04-28.json'));
+  });
+
+  it('written file contains correct schema, manifest, and events', () => {
+    const outputDir = path.join(tmpDir, 'calendar');
+    const event: CalendarEvent = {
+      dtstart: '2026-04-28T10:00:00',
+      org: 'KU',
+      akt: 'votering',
+      summary: 'Omröstning',
+      doc_refs: ['/sv/dokument-och-lagar/betankanden/KU10/'],
+      source: 'web-fallback',
+    };
+    const result = {
+      manifest: {
+        path: 'web-fallback' as const,
+        date: '2026-04-28',
+        dateTo: '2026-04-28',
+        eventCount: 1,
+        fetchedAt: '2026-04-28T01:00:00.000Z',
+        primaryError: 'HTML error page',
+      },
+      events: [event],
+    };
+
+    persistCalendarJson('2026-04-28', result, outputDir);
+
+    const content = JSON.parse(
+      fs.readFileSync(path.join(outputDir, '2026-04-28.json'), 'utf8'),
+    ) as Record<string, unknown>;
+    expect(content['schema']).toBe('riksdagsmonitor-calendar/1.0');
+    expect(content['manifest']).toEqual(result.manifest);
+    expect(content['events']).toEqual([event]);
+  });
+
+  it('returns the output file path', () => {
+    const outputDir = path.join(tmpDir, 'calendar');
+    const result = {
+      manifest: { path: 'none' as const, date: '2026-05-01', dateTo: '2026-05-01', eventCount: 0, fetchedAt: '2026-04-28T00:00:00.000Z' },
+      events: [],
+    };
+
+    const outPath = persistCalendarJson('2026-05-01', result, outputDir);
+    expect(outPath).toBe(path.join(outputDir, '2026-05-01.json'));
   });
 });
