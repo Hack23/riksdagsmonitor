@@ -488,14 +488,16 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     expect(result.markdown).not.toMatch(/self-audit text/);
     expect(result.markdown).not.toMatch(/\*\*Run ID\*\*/);
 
-    // Section order: synthesis → intelligence-assessment must appear in that order.
+    // Section order: executive brief opens the article (BLUF context for
+    // the reader), then the Reader Intelligence Guide routes them into the
+    // deeper lenses, then synthesis → intelligence-assessment must follow.
     const guidePos = result.markdown.indexOf('## Reader Intelligence Guide');
     const execPos = result.markdown.indexOf('## Executive Brief');
     const synthPos = result.markdown.indexOf('## Synthesis Summary');
     const kjPos = result.markdown.indexOf('## Intelligence Assessment');
-    expect(guidePos).toBeGreaterThan(-1);
-    expect(execPos).toBeGreaterThan(guidePos);
-    expect(synthPos).toBeGreaterThan(-1);
+    expect(execPos).toBeGreaterThan(-1);
+    expect(guidePos).toBeGreaterThan(execPos);
+    expect(synthPos).toBeGreaterThan(guidePos);
     expect(kjPos).toBeGreaterThan(synthPos);
   });
 

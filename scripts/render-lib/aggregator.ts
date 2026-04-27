@@ -12,19 +12,25 @@
  *
  * ## Narrative order (reader-intelligence-first projection)
  * See {@link AGGREGATION_ORDER}. The order is intentionally fixed to surface
- * high-value political-intelligence lenses before technical audit appendices:
+ * high-value political-intelligence lenses before technical audit appendices.
+ * The executive brief opens the article so a reader gets BLUF + so-what
+ * context **before** the navigation table tells them where to jump next:
  *
- * **Round 0 — generated navigation layer**
- * 0. `Reader Intelligence Guide` — deterministic navigation table injected
- *    before any artifact sections
+ * **Round 0 — opening context**
+ * 0. `executive-brief.md` (mandatory — supplies title + description, gives
+ *    the reader a 60-second frame before any navigation/appendix metadata)
  *
- * **Round 1 — BLUF and thesis**
- * 1. `executive-brief.md` (mandatory — supplies title + description)
+ * **Round 1 — generated navigation layer**
+ * 1. `Reader Intelligence Guide` — deterministic navigation table injected
+ *    immediately after the executive brief so readers can route into the
+ *    deeper analytical lenses with the BLUF already in mind
+ *
+ * **Round 2 — thesis and significance**
  * 2. `synthesis-summary.md`
  * 3. `intelligence-assessment.md` — ICD-203 Key Judgments centrepiece
  * 4. `significance-scoring.md`
  *
- * **Round 2 — reader-facing intelligence lenses (most valuable first)**
+ * **Round 3 — reader-facing intelligence lenses (most valuable first)**
  * 5. `media-framing-analysis.md` — narrative contestation, amplifiers, manipulation risk
  * 6. `stakeholder-perspectives.md`
  * 7. `forward-indicators.md` — dated watch items for readers to verify/falsify
@@ -33,13 +39,13 @@
  * 10. `swot-analysis.md`
  * 11. `threat-analysis.md`
  *
- * **Round 3 — per-document evidence**
+ * **Round 4 — per-document evidence**
  * 12. `documents/*-analysis.md` — inlined as "Per-document intelligence"
  *
- * **Round 4 — electoral and domain lenses**
+ * **Round 5 — electoral and domain lenses**
  * 13. `election-2026-analysis.md` … `implementation-feasibility.md`
  *
- * **Round 5 — challenge and audit appendix**
+ * **Round 6 — challenge and audit appendix**
  * 15. `devils-advocate.md` … `data-download-manifest.md`
  * 16. any remaining supplementary `*.md` — appended alphabetically
  *
@@ -1039,12 +1045,23 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   const docsDirForGuide = path.join(subfolderAbsPath, 'documents');
   const hasDocumentAnalyses = fs.existsSync(docsDirForGuide) &&
     fs.readdirSync(docsDirForGuide).some((f) => /\.md$/i.test(f));
+
+  // 2. Emit the executive brief FIRST so the reader meets the BLUF / so-what
+  //    frame before any navigation metadata. The Reader Intelligence Guide
+  //    is then injected immediately after, routing the reader into the
+  //    deeper analytical lenses with the executive context already loaded.
+  readSection('executive-brief.md', false);
   sections.push(buildReaderGuide(rootArtifactSet, hasDocumentAnalyses));
 
-  // 2. Emit the canonical narrative order, expanding documents/ between
-  //    threat-analysis and election-2026-analysis.
+  // 3. Emit the rest of the canonical narrative order, expanding documents/
+  //    between threat-analysis and election-2026-analysis. Article types
+  //    that produce only a subset of the canonical artifacts (e.g. realtime,
+  //    week-ahead, monthly-review) are supported transparently — readSection
+  //    skips missing files and the Reader Guide above filters its rows on
+  //    `available.has(entry.file)`.
   for (const fileName of AGGREGATION_ORDER) {
-    readSection(fileName, fileName !== 'executive-brief.md');
+    if (fileName === 'executive-brief.md') continue; // already emitted in Round 0
+    readSection(fileName, true);
     if (fileName === 'threat-analysis.md') {
       // Inject per-document analyses as one merged section.
       const docsDir = path.join(subfolderAbsPath, 'documents');
