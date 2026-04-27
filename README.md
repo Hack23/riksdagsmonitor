@@ -1,10 +1,6 @@
 # 🗳️ Riksdagsmonitor
 
-> Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency
-
-## 🎯 Mission
-
-Riksdagsmonitor is a comprehensive intelligence platform for monitoring political activity in Sweden's Riksdag (Parliament). Built on the [Citizen Intelligence Agency (CIA)](https://github.com/Hack23/cia) platform, we provide systematic transparency through real-time analysis and 50+ years of historical data.
+> **Swedish Political Intelligence Platform** — democratic transparency, evidence-based analysis and AI-generated political news, powered by official open data and a fully autonomous agentic newsroom.
 
 <table>
   <tr>
@@ -22,7 +18,8 @@ Riksdagsmonitor is a comprehensive intelligence platform for monitoring politica
       </div>
     </td>
     <td>
-      <p><strong>Swedish Parliament Intelligence Platform</strong> monitoring political activity in Sweden's Riksdag with systematic transparency through real-time analysis and 50+ years of historical data (1971-2024).</p>
+      <p><strong>🕵️ Political intelligence · 🔍 Democratic transparency · 🤖 AI-generated news · 📊 50+ years of evidence</strong></p>
+      <p>Riksdagsmonitor monitors Sweden's Riksdag (Parliament), the Government (Regeringskansliet) and public agencies (Myndigheter) with structured intelligence techniques (ACH, SWOT, STRIDE, political-risk scoring, OSINT tradecraft) applied to <strong>349 current MPs</strong>, <strong>2,494 historical politicians (1971–2024)</strong>, <strong>3.5M+ votes</strong> and <strong>109,000+ parliamentary documents</strong>. An autonomous AI newsroom turns this evidence into <strong>publication-ready intelligence articles in 14 languages</strong> every day.</p>
       <div>
         <a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor">
           <img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard">
@@ -38,12 +35,11 @@ Riksdagsmonitor is a comprehensive intelligence platform for monitoring politica
         </a>
       </div>
       <div>
-        <a href="https://riksdagsmonitor.com"><strong>🌐 Official Website</strong></a> •
+        <a href="https://riksdagsmonitor.com"><strong>🌐 Live Platform</strong></a> •
         <a href="https://riksdagsmonitor.com/political-intelligence.html"><strong>🕵️ Political Intelligence</strong></a> •
-        <a href="https://riksdagsmonitor.com/sitemap.html"><strong>🗺️ Sitemap</strong></a> •
-        <a href="https://github.com/Hack23/riksdagsmonitor"><strong>📂 Repository</strong></a> •
-        <a href="https://hack23.com/riksdagsmonitor-features.html"><strong>✨ Features</strong></a> •
-        <a href="https://hack23.com/riksdagsmonitor-docs.html"><strong>📚 Documentation</strong></a>
+        <a href="https://riksdagsmonitor.com/news/index.html"><strong>📰 AI Newsroom</strong></a> •
+        <a href="https://riksdagsmonitor.com/dashboard/index.html"><strong>📊 Intelligence Dashboard</strong></a> •
+        <a href="https://riksdagsmonitor.com/sitemap.html"><strong>🗺️ Sitemap</strong></a>
       </div>
     </td>
   </tr>
@@ -52,650 +48,92 @@ Riksdagsmonitor is a comprehensive intelligence platform for monitoring politica
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor)
 [![Quality Checks](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml)
 [![Dependency Review](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml)
+[![CodeQL](https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml)
+[![JavaScript Testing](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml)
+[![Translation Validation](https://github.com/Hack23/riksdagsmonitor/actions/workflows/translation-validation.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/translation-validation.yml)
+[![Release](https://github.com/Hack23/riksdagsmonitor/actions/workflows/release.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/release.yml)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/12069/badge)](https://www.bestpractices.dev/projects/12069)
 [![License](https://img.shields.io/github/license/Hack23/riksdagsmonitor)](https://github.com/Hack23/riksdagsmonitor/blob/main/LICENSE)
-[![ISMS](https://img.shields.io/badge/Hack23-ISMS-blue)](https://github.com/Hack23/ISMS-PUBLIC)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Hack23/riksdagsmonitor)
-
-
-
-## 📊 Quality Metrics
-
-### CI/CD & Security
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor)
-[![Quality Checks](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml)
-[![Dependency Review](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml)
-[![CodeQL](https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml)
-
-### Testing
-[![JavaScript Testing](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml)
-[![JSDoc Validation](https://github.com/Hack23/riksdagsmonitor/actions/workflows/jsdoc-validation.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/jsdoc-validation.yml)
-[![Translation Validation](https://github.com/Hack23/riksdagsmonitor/actions/workflows/translation-validation.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/translation-validation.yml)
-
-### Documentation & Release
-[![Release](https://github.com/Hack23/riksdagsmonitor/actions/workflows/release.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/release.yml)
-[![API Docs](https://img.shields.io/badge/API-Documentation-blue?logo=javascript)](https://riksdagsmonitor.com/docs/api/)
-[![Test Coverage](https://img.shields.io/badge/Coverage-Reports-green?logo=vitest)](https://riksdagsmonitor.com/docs/coverage/)
-[![E2E Reports](https://img.shields.io/badge/E2E-Cypress_Reports-green?logo=cypress)](https://riksdagsmonitor.com/docs/cypress/)
-
-### Compliance & Standards
-[![License](https://img.shields.io/github/license/Hack23/riksdagsmonitor)](LICENSE)
 [![ISMS](https://img.shields.io/badge/Hack23-ISMS-blue?logo=shield)](https://github.com/Hack23/ISMS-PUBLIC)
 [![ISO 27001](https://img.shields.io/badge/ISO-27001:2022-purple?logo=iso)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
 [![NIST CSF](https://img.shields.io/badge/NIST-CSF_2.0-orange?logo=nist)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
 [![CIS Controls](https://img.shields.io/badge/CIS-Controls_v8.1-red?logo=cisecurity)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Hack23/riksdagsmonitor)
 
-**Security Policy:** Per [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md), we maintain defense-in-depth architecture with comprehensive security controls and documentation. See [WORKFLOWS.md](WORKFLOWS.md) for complete CI/CD pipeline documentation and [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for security controls.
+---
 
-## 📊 Project Classification
+## 🎯 Mission
 
-Riksdagsmonitor follows Hack23 AB's comprehensive [Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) for security, business continuity, and impact analysis:
+> **Strengthen Swedish democracy through systematic transparency.**
 
-### 🎯 Project Classification
-[![Project Type](https://img.shields.io/badge/Type-Frontend_Apps-yellow?style=for-the-badge&logo=window-maximize&logoColor=black)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#project-type-classifications)
-[![Process Type](https://img.shields.io/badge/Process-Development-cyan?style=for-the-badge&logo=code&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#project-type-classifications)
+Riksdagsmonitor exists to put **rigorous, evidence-based political intelligence** in the hands of every citizen, journalist, researcher and policymaker. We combine:
 
-### 🔒 Security Classification (CIA Triad)
-[![Confidentiality](https://img.shields.io/badge/Confidentiality-Public-lightgrey?style=for-the-badge&logo=shield&logoColor=black)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)
-[![Integrity](https://img.shields.io/badge/Integrity-High-orange?style=for-the-badge&logo=check-circle&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels)
-[![Availability](https://img.shields.io/badge/Availability-High-orange?style=for-the-badge&logo=server&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)
+- 🕵️ **Structured intelligence tradecraft** — ACH, SWOT, PESTLE, STRIDE, political-risk scoring, OSINT/INTOP methodology, ICD-203 Key Judgments
+- 🔍 **Democratic transparency** — every claim traceable to a primary source (`dok_id`, vote count, named MP, government document) or it does not get published
+- 🤖 **AI-generated political news** — a fully autonomous newsroom turning open data into 14-language analysis articles, daily
+- 📊 **50+ years of historical evidence** — 1971–2024 voting records, document corpus, and party-evolution analytics from the [Citizen Intelligence Agency (CIA)](https://github.com/Hack23/cia) platform
+- ⚖️ **Neutrality & GDPR by design** — equal treatment of all 8 parliamentary parties, public-data only, privacy-by-design architecture, explicit democratic safeguards
 
-**Confidentiality:** Public - All information intentionally disclosed (Swedish Riksdag open data, website content)  
-**Integrity:** High - Automated validation, digital signatures (Git commits), accurate political data required  
-**Availability:** High - 99.998% design availability target (underpinned by AWS CloudFront 99.9% SLA), automated failover (AWS multi-region, GitHub Pages DR)
+The platform is **non-partisan, open-source (Apache-2.0), and operated under the [Hack23 ISMS](https://github.com/Hack23/ISMS-PUBLIC)** with full ISO 27001:2022 / NIST CSF 2.0 / CIS Controls v8.1 alignment. It does not collect user data, does not run ads, does not push narratives, and is architecturally designed so it cannot be weaponised for partisan influence.
 
-### 🏷️ Privacy Classification
-[![Privacy](https://img.shields.io/badge/Privacy-Personal-orange?style=for-the-badge&logo=user-shield&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#privacy-levels)
+---
 
-**Personal Data (Public Officials):** This project processes personal data about public officials (e.g., names, roles, voting records, person identifiers) sourced from Swedish Riksdag open data and the Citizen Intelligence Agency (CIA) datasets. Data relates only to MPs and other public figures acting in their official capacity; no special-category data or data about private individuals is processed. GDPR applies, with processing based on public-interest and legitimate-interest grounds for transparency and democratic accountability.
+## 🌐 Explore the Platform
 
-### ⏱️ Business Continuity Classification
-[![RTO](https://img.shields.io/badge/RTO-High_%281--4hrs%29-yellow?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#rto-classifications)
-[![RPO](https://img.shields.io/badge/RPO-Daily_%284--24hrs%29-lightblue?style=for-the-badge&logo=database&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#rpo-classifications)
-
-**RTO (Recovery Time Objective):** 1-4 hours - Automated multi-region failover (AWS CloudFront + S3 us-east-1 primary, eu-west-1 replica, GitHub Pages DR)  
-**RPO (Recovery Point Objective):** 4-24 hours - Daily data pipeline updates, Git version control, S3 versioning
-
-### 💰 Business Impact Analysis
-
-| Impact Category | Level | Description |
-|-----------------|-------|-------------|
-| **Financial** | [![Low](https://img.shields.io/badge/Low-lightgreen?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#financial-impact-levels) | Minimal financial impact (<$500 daily) - Open-source project, no revenue dependency |
-| **Operational** | [![Moderate](https://img.shields.io/badge/Moderate-yellow?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#operational-impact-levels) | Partial service impact - Swedish political transparency temporarily unavailable |
-| **Reputational** | [![Moderate](https://img.shields.io/badge/Moderate-yellow?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#reputational-impact-levels) | Industry attention - Transparency advocates may notice outage |
-| **Regulatory** | [![Low](https://img.shields.io/badge/Low-lightgreen?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#regulatory-impact-levels) | No regulatory impact - Public information dissemination only |
-
-### 📋 Data Classification Levels
-
-For operational data handling, we use a simplified 4-level scheme:
-
-| Classification | Description | Examples | Handling Requirements |
-|----------------|-------------|----------|----------------------|
-| 🟢 **Public** | Information intended for public disclosure | Website content, Swedish Riksdag open data, documentation | No restrictions, published on GitHub Pages |
-| 🟡 **Internal** | Information for internal use only | GitHub Actions secrets, deployment credentials | GitHub organization access only, MFA required |
-| 🟠 **Confidential** | Sensitive business information | Not applicable to this project | N/A |
-| 🔴 **Restricted** | Highly sensitive information | Not applicable to this project | N/A |
-
-### 📦 Data Inventory
-
-**Public Data (🟢):**
-- All website HTML/CSS content (14 languages)
-- Swedish Parliament data (MPs, votes, documents, committees)
-- Election results and statistics
-- Government budget and spending data
-- All source code and documentation
-
-**Internal Data (🟡):**
-- GitHub Actions secrets (tokens if used; no long-lived PATs)
-- AWS IAM credentials (ephemeral via OIDC)
-- Deployment pipeline configurations
-
-**No User or Confidential Data:**
-- ❌ No user accounts or authentication
-- ❌ No non-public or end-user personally identifiable information (PII)
-- ✅ Only public-figure data from official Swedish Parliament records (MP names, roles, votes)
-- ❌ No financial transactions or payment data
-- ❌ No confidential government information
-
-### 🔐 Data Handling Controls
-
-**Public Data:**
-- Published via GitHub Pages and AWS CloudFront
-- TLS 1.3 encryption in transit
-- No access controls required (intentionally public)
-- Version controlled via Git
-
-**Internal Data:**
-- Stored in GitHub Secrets (encrypted at rest)
-- AWS credentials via OIDC (no long-lived keys)
-- Accessed only via secure GitHub Actions workflows
-- Least privilege principle enforced
-- Regular rotation and audit
-
-### 📋 Compliance Alignment
-
-- **ISO 27001:2022 A.8** - Asset Management
-- **NIST CSF 2.0 PR.DS** - Data Security
-- **CIS Controls v8.1 Control 3** - Data Protection
-- **GDPR** - Applicable for public-official data processing (public interest and legitimate interest grounds)
-- **Hack23 Classification Framework** - [Full framework documentation](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
-
-See [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for detailed security controls.
-
-## ✨ Features
-
-- **349 Current MPs** - Individual MP tracking and performance metrics
-- **2,494 Historical Politicians** - Complete database from 1971-2024 (50+ years)
-- **8 Political Parties** - Party performance, coalition dynamics, voting patterns
-- **45 Risk Rules** - Systematic transparency through behavioral analysis
-- **3.5+ Million Votes** - Comprehensive voting record analysis
-- **109,000+ Documents** - Parliamentary documents processed and analyzed
-
-## 📦 npm Package
-
-Install the shared TypeScript library for Swedish Parliament data visualization:
-
-```bash
-npm install riksdagsmonitor
-```
-
-### What's Included
-
-- **Theme System** — Dark/light cyberpunk themes with WCAG AA contrast compliance
-- **Chart Factory** — Pre-configured Chart.js creation with responsive breakpoints and keyboard navigation
-- **Data Loader** — Resilient data fetching with retry logic, caching, and CSV/JSON parsing
-- **DOM Utilities** — Loading states, error boundaries, screen reader announcements, locale-aware formatting
-- **Type Definitions** — Full TypeScript interfaces for political data structures
-- **Dashboard Modules** — 12 specialized intelligence dashboard components
-- **CIA Intelligence Modules** — Data loaders, visualizations, and election prediction engine
-
-### Usage
-
-```typescript
-// Core utilities (no dependencies required)
-import { getActiveThemeColors, BREAKPOINTS, getPartyColor } from 'riksdagsmonitor';
-import { loadJSON, loadCSV, createDataSource } from 'riksdagsmonitor';
-import { showLoadingState, showErrorState, formatNumber, debounce } from 'riksdagsmonitor';
-
-// Chart utilities (requires chart.js peer dependency)
-import { createChart, getResponsiveOptions, initDashboardSection } from 'riksdagsmonitor/shared/chart-factory';
-
-// Register Chart.js, D3.js, PapaParse as globals (requires peer dependencies)
-import 'riksdagsmonitor/shared/register-globals';
-
-// Individual dashboard modules
-import { init as initPartyDashboard } from 'riksdagsmonitor/dashboards/party-dashboard';
-import { init as initRiskDashboard } from 'riksdagsmonitor/dashboards/risk-dashboard';
-
-// CIA intelligence modules
-import { CIADataLoader } from 'riksdagsmonitor/cia/data-loader';
-import { CIADashboardRenderer } from 'riksdagsmonitor/cia/visualizations';
-```
-
-### Peer Dependencies
-
-The core shared utilities work without any dependencies. For visualization dashboards, install the optional peer dependencies:
-
-```bash
-npm install chart.js d3 papaparse                # Required for dashboard support
-npm install chartjs-plugin-annotation             # Optional — for chart annotations
-```
-
-> **Note:** `chartjs-plugin-annotation` is loaded conditionally at runtime — dashboards work without it, but chart annotations will be unavailable.
-
-## 🌐 Live Platform
-
-**Website:** [riksdagsmonitor.com](https://riksdagsmonitor.com)
-
-### 🗺️ Key Web Pages
-
-Two flagship pages are the entry points for analysts, journalists, search engines and citizens — both are auto-generated, multilingual (14 languages) and SEO-optimised with canonical URLs, Open Graph, Twitter Cards, JSON-LD `CollectionPage` schema and full `hreflang` alternates.
-
-| Icon | Page | URL | Description |
-|------|------|-----|-------------|
-| 🕵️ | **Political Intelligence Index** | <https://riksdagsmonitor.com/political-intelligence.html> | Complete catalogue of Riksdagsmonitor's evidence-based intelligence work — every analysis methodology, template and **daily analysis artifact** (Family A baseline + Family B + Family C synthesis + Family D extension) covering the Swedish Riksdag and Regeringskansliet. The single best entry point for OSINT/INTOP researchers. |
-| 🗺️ | **Sitemap (Human + Machine)** | <https://riksdagsmonitor.com/sitemap.html> | Human-readable navigation of every page on the platform — dashboards, news articles, methodologies, language variants — plus the machine-readable [`sitemap.xml`](https://riksdagsmonitor.com/sitemap.xml) and [`rss.xml`](https://riksdagsmonitor.com/rss.xml) feeds. Daily refreshed; honours `robots.txt` and search-engine indexing best practices. |
-
-Both pages are also localised — append `_<lang>` (e.g. `political-intelligence_sv.html`, `sitemap_de.html`) for any of the 14 supported languages.
-
-**Available in 14 Languages:**
-- English, Swedish, Danish, Norwegian, Finnish
-- German, French, Spanish, Dutch
-- Arabic, Hebrew, Japanese, Korean, Chinese
-
-## 📊 CIA Data Products Integration
-
-Riksdagsmonitor integrates with the CIA platform through automated data pipelines, schema validation, and daily statistics updates.
-
-### Production Database Statistics
-
-**Live Statistics** (Updated Daily at 03:00 CET):
-- **2,494 Politicians** - Complete historical database (1971-2024)
-- **349 Current MPs** - Active Members of Parliament
-- **3.5+ Million Votes** - Comprehensive voting records
-- **109,000+ Documents** - Parliamentary documents processed
-- **8,740 Committee Documents** - Committee work tracked
-- **2,308 Rule Violations** - Transparency issues identified
-
-**Data Source**: [extraction_summary_report.csv](https://github.com/Hack23/cia/blob/master/service.data.impl/sample-data/extraction_summary_report.csv)  
-**Update Schedule**: Daily automated fetch via GitHub Actions  
-**Last Extraction**: See `cia-data/production-stats.json` → `metadata.last_updated` (updated daily)
-
-**Implementation**:
-- `scripts/load-cia-stats.js` - Fetches and parses production statistics
-- `scripts/update-stats-from-cia.js` - Updates website files
-- `.github/workflows/update-cia-stats.yml` - Automated daily workflow
-- `cia-data/production-stats.json` - Cached statistics (24-hour freshness)
-
-### Schema Integration
-- **Automated Validation** - All CIA exports validated against JSON schemas
-- **Type Safety** - TypeScript type definitions for development
-- **CI/CD Integration** - Daily validation checks in GitHub Actions
-- **Update Detection** - Weekly checks for schema updates
-
-See [CIA Schema Integration Documentation](docs/CIA_SCHEMA_INTEGRATION.md) for details.
-
-### Data Products
-
-Riksdagsmonitor leverages 19 comprehensive visualization products from the CIA platform:
-
-### Intelligence Dashboards
-- **Overview Dashboard** - Complete Riksdag intelligence snapshot
-- **Party Performance** - Longitudinal party analysis and effectiveness metrics
-- **Government Cabinet** - Ministry-level performance scorecards
-- **Election Cycle Analysis** - Historical patterns and trend forecasting
-
-### Top 10 Rankings
-- Most Influential MPs (network analysis)
-- Most Productive MPs (legislative output)
-- Most Controversial MPs (voting patterns)
-- Most Absent MPs (attendance tracking)
-- Party Rebels (cross-party voting)
-- Coalition Brokers (collaboration patterns)
-- Rising Stars (emerging political figures)
-- Electoral Risk (MPs at risk)
-- Ethics Concerns (transparency issues)
-- Media Presence (public visibility)
-
-### Advanced Analytics
-- **Committee Network Analysis** - Influence mapping and assignments
-- **Politician Career Analysis** - Career trajectories and milestones
-- **Party Longitudinal Analysis** - 50+ years of party evolution
-
-## 📈 Implemented Dashboards
-
-Riksdagsmonitor currently features 4 interactive intelligence dashboards built with Chart.js and D3.js:
-
-### 1. 🌡️ Seasonal Activity Patterns Dashboard
-- **Coverage**: 2002-2025 (quarterly data, 23+ years)
-- **Visualizations**: Heat maps, time series, Z-score analysis
-- **Purpose**: Track quarterly parliamentary activity patterns and detect seasonal trends
-- **Data Source**: `cia-data/seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv`
-
-### 2. 👤 Politician Dashboard
-- **Coverage**: 349 MPs with comprehensive risk and performance metrics
-- **Visualizations**: Top 10 rankings, risk profiles, influence metrics
-- **Purpose**: Individual MP tracking and transparency assessment
-- **Data Source**: `cia-data/politician/*.csv`
-
-### 3. 🗳️ Pre-Election Monitoring Dashboard
-- **Coverage**: Q4 2023-2025 (12-15 months before 2026 election)
-- **Visualizations**: Historical comparisons, election-year patterns
-- **Purpose**: Track pre-election parliamentary activity and behavior changes
-- **Data Source**: `cia-data/pre-election/*.csv`
-
-### 4. 🗳️ Party Performance & Effectiveness Dashboard
-
-**Coverage:** 1990-2026 (37 years)  
-**Analysis:** Comprehensive party analytics across 8 Swedish political parties
-
-**Key Features:**
-- **Effectiveness Trends:** Historical legislative productivity and voting consistency
-- **Comparative Analysis:** Party-by-party benchmarking
-- **Coalition Patterns:** Party alignment visualization
-- **Momentum Indicators:** Electoral trajectory with percentile benchmarks
-
-### 5. 🚨 Anomaly Detection & Early Warning System
-- **Coverage**: 2002-2026 (41 quarters analyzed)
-- **Visualizations**: 6 interactive charts including timeline, Z-score distribution, heat map
-- **Features**:
-  - Real-time alert system for critical anomalies
-  - Statistical Z-score analysis (|Z| ≥ 2.0 for anomalies)
-  - Severity classification: CRITICAL (≥2.5), HIGH (≥2.0), MODERATE (≥1.5), LOW (<1.5)
-  - Anomaly types: Ballot, Document, Attendance
-  - Direction indicators: UNUSUALLY_HIGH, UNUSUALLY_LOW
-- **Data Source**: `cia-data/seasonal/view_riksdagen_seasonal_anomaly_detection_sample.csv`
-
-**Dashboard Features**:
-- Local-first data loading (1-hour caching)
-- WCAG 2.1 AA accessible
-- 14-language support
-- Responsive design (320px-1440px+)
-- CSP-compliant (SRI hashes on all CDN resources)
-## 🔗 Data Sources
-
-Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
-
-- **[Swedish Parliament (Riksdagen)](http://data.riksdagen.se/)** - Votes, documents, committee work, MP information
-- **[Swedish Election Authority](http://www.val.se/)** - Election results, voter turnout, electoral statistics
-- **[Swedish Financial Management Authority](https://www.esv.se/psidata/)** - Government budget and spending data
-- **[World Bank Open Data](http://data.worldbank.org/)** - Governance (WGI), environment, and long-horizon social/education indicators
-- **[IMF Public Data](https://data.imf.org/)** - Macro, fiscal, monetary, and external-sector indicators (WEO, Fiscal Monitor, IFS) with T+5 projections — primary source for fresh macro/fiscal figures and forward-looking commentary (see `analysis/imf/README.md` and `docs/adr/0001-adopt-imf-data-alongside-world-bank.md`)
-
-## 🏗️ Technical Architecture
-
-### Stack
-- **Frontend:** Static HTML/CSS with JavaScript dashboards
-- **Build System:** Vite 8 (ES modules, code splitting)
-- **Visualization:** Chart.js 4 + D3.js 7 hosted locally on CloudFront
-- **Testing:** Vitest (unit), Cypress (E2E) - 2890 tests passing
-- **Styling:** Custom CSS with cyberpunk theme, responsive design
-- **Hosting:** GitHub Pages with CloudFront CDN
-- **CI/CD:** GitHub Actions for automated testing and deployment
-- **Data Platform:** CIA OSINT platform (Java/Spring Boot backend)
-- **Runtime:** Node.js 25.x
-
-### JavaScript Architecture
-- **8 Dashboard Modules:**
-  - party-dashboard.js (effectiveness analytics)
-  - anomaly-detection-dashboard.js (statistical outliers)
-  - seasonal-patterns-dashboard.js (temporal trends)
-  - pre-election-dashboard.js (election monitoring)
-  - politician-dashboard.js (MP tracking)
-  - ministry-dashboard.js (cabinet analysis)
-  - election-cycle-dashboard.js (cycle patterns)
-  - back-to-top.js (navigation)
-
-- **Data Loading:** Local-first with GitHub fallback
-- **Caching:** LocalStorage with freshness checks (1-7 days)
-- **Performance:** Code splitting, lazy loading, asset optimization
-- **Security:** SRI hashes (sha384), CSP-compliant script loading
-
-### Security
-- **HTTPS-Only:** TLS 1.3 encryption enforced
-- **Security Headers:** CSP, HSTS, X-Frame-Options, X-Content-Type-Options
-- **Access Control:** GitHub MFA, SSH keys, GPG commit signing
-- **Monitoring:** Dependabot, CodeQL, Secret Scanning
-- **Documentation:** [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md), [THREAT_MODEL.md](THREAT_MODEL.md)
-
-## 🔐 Commitment to Transparency and Security
-
-At Hack23 AB, we believe that true security comes through transparency and demonstrable practices. Our Information Security Management System (ISMS) is publicly available, showcasing our commitment to security excellence and organizational transparency.
+Four flagship pages anchor the public site. Each is **multilingual (14 languages)**, **WCAG 2.1 AA accessible**, **SEO-optimised** with JSON-LD structured data and `hreflang` alternates, and **CSP-hardened** with Subresource Integrity (SRI) on every CDN asset.
 
 <table>
-  <tr>
-    <td width="50%">
-      <div align="center">
-        <h3>📋 ISMS Compliance</h3>
-        <p><strong>ISO 27001:2022 Aligned</strong></p>
-        <ul align="left">
-          <li><a href="https://github.com/Hack23/ISMS-PUBLIC">ISMS Repository</a></li>
-          <li><a href="https://github.com/Hack23/ISMS-PUBLIC">Public ISMS</a></li>
-          <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a></li>
-          <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">Threat Modeling</a></li>
-          <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Compliance_Checklist.md">Compliance Checklist</a></li>
-        </ul>
-      </div>
-    </td>
-    <td width="50%">
-      <div align="center">
-        <h3>🛡️ Security Documentation</h3>
-        <p><strong>Defense-in-Depth Architecture</strong></p>
-        <ul align="left">
-          <li><a href="SECURITY_ARCHITECTURE.md">Security Architecture</a></li>
-          <li><a href="THREAT_MODEL.md">Threat Model</a></li>
-          <li><a href="WORKFLOWS.md">CI/CD Workflows</a></li>
-          <li><a href="ARCHITECTURE.md">System Architecture</a></li>
-          <li><a href="FUTURE_SECURITY_ARCHITECTURE.md">Future Security</a></li>
-        </ul>
-      </div>
-    </td>
-  </tr>
+<thead>
+<tr><th width="80" align="center">Icon</th><th>Page</th><th>What it does</th></tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">🌐</td>
+<td><a href="https://riksdagsmonitor.com/"><strong>Live Platform — riksdagsmonitor.com</strong></a></td>
+<td>The public homepage and primary entry point. Front-loads the <strong>current coalition status</strong> (e.g. <em>Tidö Agreement</em> — 176/349 seats, fragility indicators, CIA risk alerts), then deep-dives into <strong>40 years of election-cycle intelligence (1994–2034)</strong>, <strong>party performance &amp; effectiveness (1990–2026)</strong>, <strong>committee networks &amp; productivity (15 committees)</strong>, <strong>coalition &amp; voting-pattern analysis</strong>, <strong>seasonal activity with Z-score anomaly detection (2002–2025)</strong>, <strong>pre-election monitoring</strong>, <strong>ministry risk &amp; influence</strong>, and a live <strong>45-rule × 349-MP risk heat map</strong>. Updated daily at 03:00 CET.</td>
+</tr>
+<tr>
+<td align="center">🕵️</td>
+<td><a href="https://riksdagsmonitor.com/political-intelligence.html"><strong>Political Intelligence Index</strong></a></td>
+<td>The single canonical entry point for OSINT/INTOP researchers. Catalogues every <strong>methodology</strong> that governs analysis on the platform — <em>AI-Driven Analysis Guide, OSINT Tradecraft Standards, Political Risk Methodology, Political SWOT Framework, Political Threat Framework, Political Classification Guide, Electoral Domain Methodology, Synthesis Methodology, IMF &amp; World Bank Indicator Mappings, Reference-Quality Thresholds, Political Style Guide</em> — plus the full daily artifact catalogue (Family A baseline, Family B, Family C synthesis, Family D extension). Each item links straight to the source-of-truth on GitHub. Available in 14 languages (append <code>_sv</code>, <code>_de</code>, <code>_ar</code>, …).</td>
+</tr>
+<tr>
+<td align="center">📰</td>
+<td><a href="https://riksdagsmonitor.com/news/index.html"><strong>AI-Generated News &amp; Analysis</strong></a></td>
+<td>The world's first fully AI-driven political-intelligence newsroom for parliamentary monitoring. <strong>11 specialised agentic workflows</strong> (10 scheduled + 1 on-demand, powered by Claude Opus via GitHub Copilot Coding Agent) autonomously produce <strong>committee-report, proposition, motion, interpellation, week-ahead, month-ahead, real-time, evening, weekly-review and monthly-review</strong> articles — with source verification, multi-party balance and GDPR-compliant OSINT methodology baked in. Every article carries machine-readable provenance through JSON-LD <code>NewsArticle.isBasedOn</code>, links back to the analysis artifacts that produced it, and is published in 14 languages.</td>
+</tr>
+<tr>
+<td align="center">📊</td>
+<td><a href="https://riksdagsmonitor.com/dashboard/index.html"><strong>CIA Intelligence Dashboard</strong></a></td>
+<td>Interactive Chart.js / D3.js intelligence dashboard powered by the <a href="https://github.com/Hack23/cia">Citizen Intelligence Agency (CIA)</a> data products. Live <strong>Overview Metrics</strong> (MPs, parties, risk rules, coalition seats), <strong>Risk Alerts (Critical / Major / Minor, last 90 days)</strong>, <strong>Party Performance Analysis</strong>, <strong>Swedish Election 2026 Predictions</strong> with coalition scenarios and key factors, <strong>Top-10 Most Influential MPs</strong> (network analysis), <strong>Voting Patterns Heat Map</strong>, <strong>Committee Network Analysis</strong>, <strong>Ministry Performance</strong>, <strong>Parliamentary Demographics</strong>, <strong>Document Activity</strong> and <strong>Risk-Score Evolution</strong>. Local-first data loading with 1-hour cache, keyboard navigable, CSP-compliant.</td>
+</tr>
+<tr>
+<td align="center">🗺️</td>
+<td><a href="https://riksdagsmonitor.com/sitemap.html"><strong>Sitemap (Human + Machine)</strong></a></td>
+<td>Human-readable navigation of every page on the platform plus the machine-readable <a href="https://riksdagsmonitor.com/sitemap.xml"><code>sitemap.xml</code></a> and <a href="https://riksdagsmonitor.com/rss.xml"><code>rss.xml</code></a> feeds. Daily refreshed; honours <code>robots.txt</code> and search-engine indexing best practices.</td>
+</tr>
+</tbody>
 </table>
 
-### Compliance Frameworks
-- **ISO 27001:2022** - Information security management controls (7 controls implemented)
-- **NIST CSF 2.0** - Cybersecurity framework (6 functions aligned)
-- **CIS Controls v8.1** - Security best practices (6 controls implemented)
+**🌍 14 supported languages:** English · Swedish · Danish · Norwegian · Finnish · German · French · Spanish · Dutch · Arabic (RTL) · Hebrew (RTL) · Japanese · Korean · Chinese.
 
-### Security Metrics
+---
 
-| Metric | Status | Details |
-|--------|--------|---------|
-| **Risk Level** | 🟢 LOW | 5.52/10.0 (99.7% risk reduction) |
-| **HTML Validation** | ✅ PASSED | 0 errors (HTMLHint) |
-| **Dependencies** | ✅ CLEAN | Dependabot monitoring |
-| **Secrets** | ✅ SECURE | Secret scanning enabled |
-| **Code Scanning** | ✅ ACTIVE | CodeQL analysis |
+## 🤖 AI-Generated Political Intelligence News
 
-## 🚀 Development
+> *"While traditional newsrooms debate whether AI will replace journalists, Riksdagsmonitor already runs a fully autonomous political-intelligence newsroom — 11 agentic workflows, 14 languages, zero human editors, and a publication schedule that would bankrupt any legacy outlet trying to keep up."*
 
-### Prerequisites
-- **Node.js**: 25.x or higher
-- **npm**: 10.x or higher (comes with Node.js)
-- Git with GPG signing configured
-- GitHub account with MFA enabled
-- SSH keys for GitHub authentication
+### What makes it different
 
-### Local Development
+Traditional AI-generated news is shallow — it rewrites press releases. Riksdagsmonitor's pipeline performs **deep political-intelligence analysis** before a single sentence of an article is written:
 
-```bash
-# Clone repository
-git clone git@github.com:Hack23/riksdagsmonitor.git
-cd riksdagsmonitor
-
-# Install dependencies
-npm install
-
-# Development server with Vite (hot reload)
-npm run dev
-# Opens http://localhost:8080
-
-# OR serve statically
-python3 -m http.server 8080
-# or
-npx http-server -p 8080
-
-# Open in browser
-open http://localhost:8080
-```
-
-### Testing
-
-```bash
-# Install dependencies (if not already done)
-npm install
-
-# Run unit tests (Vitest)
-npm test
-
-# Run tests in watch mode
-npm run test:watch
-
-# Run tests with coverage
-npm run test:coverage
-
-# Run tests with UI
-npm run test:ui
-
-# Run E2E tests (Cypress)
-npm run cypress:open    # Interactive GUI
-npm run cypress:run     # Headless
-
-# Full E2E test suite
-npm run e2e            # Builds, previews, and runs Cypress
-```
-
-### Building for Production
-
-```bash
-# Build with Vite
-npm run build
-
-# Preview production build
-npm run preview
-# Opens http://localhost:4173
-
-# Build output in dist/
-ls dist/
-```
-
-### Quality Checks
-
-```bash
-# HTML validation
-npm run htmlhint
-
-# Link checking
-python3 -m http.server 8080 &
-npm run linkcheck
-
-# Run all quality checks
-npm run htmlhint && npm test && npm run build
-```
-
-### CI/CD Pipeline
-
-**Automated Checks:**
-- HTML validation (HTMLHint)
-- Link checking (linkinator)
-- JavaScript testing (Vitest unit tests - 2890 tests)
-- E2E testing (Cypress)
-- Build validation (Vite)
-- Dependency review (Dependabot)
-- Security scanning (CodeQL, Secret Scanning)
-
-**Workflows:**
-- `.github/workflows/quality-checks.yml` - HTML/link validation
-- `.github/workflows/javascript-testing.yml` - Vite build, Vitest, Cypress E2E
-- `.github/workflows/dependency-review.yml` - Dependency security
-- `.github/workflows/copilot-setup-steps.yml` - Copilot agent setup
-- `.github/workflows/release.yml` - Release with attestations and documentation-as-code
-
-**Test Results**:
-- ✅ 2890/2890 unit tests passing (Vitest)
-- ✅ 100% test pass rate
-- ✅ Coverage: 70% lines, 70% functions, 60% branches
-
-## 🚀 Release Process
-
-Riksdagsmonitor follows a comprehensive release process with full supply chain security:
-
-### Release Workflow
-
-- **Trigger**: Manual (workflow_dispatch) or tag push (v*.*.*)
-- **Duration**: ~20-30 minutes
-- **Jobs**: Prepare → Build → Release
-
-### Release Artifacts
-
-Each release includes:
-- ✅ Production build (`riksdagsmonitor-vX.Y.Z.zip`)
-- ✅ SHA-256 checksum for verification
-- ✅ SBOM in SPDX format (Software Bill of Materials)
-- ✅ SLSA Build Provenance attestations (signed)
-
-### Documentation as Code
-
-Every release automatically generates and publishes:
-- 📚 API Documentation (JSDoc)
-- 📊 Test Coverage Report (Vitest)
-- 🧪 E2E Test Reports (Cypress)
-- 📦 Dependency Tree (npm)
-
-**Documentation Hub**: [riksdagsmonitor.com/docs/](https://riksdagsmonitor.com/docs/)
-
-### Dual Deployment
-
-- **Primary**: AWS S3/CloudFront (https://riksdagsmonitor.com)
-- **Backup**: GitHub Pages (disaster recovery)
-
-### Security & Verification
-
-Verify attestations using GitHub CLI:
-```bash
-gh attestation verify riksdagsmonitor-v1.0.0.zip -R Hack23/riksdagsmonitor
-```
-
-**Full Release Guide**: See [RELEASE_PROCESS.md](RELEASE_PROCESS.md)
-
-## 📖 Documentation
-
-### Project Documentation
-- [README.md](README.md) - This file
-- [RELEASE_PROCESS.md](RELEASE_PROCESS.md) - Comprehensive release guide with attestations ✨ **NEW**
-- [TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md) - Multi-language translation standards and glossary
-- [SECURITY.md](SECURITY.md) - Security policy and vulnerability reporting ✨ **NEW**
-- [CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines ✨ **NEW**
-- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) - Community standards ✨ **NEW**
-- [LICENSE](LICENSE) - Apache License 2.0
-
-### Architecture Documentation Portfolio
-| Current State | Future State |
-|--------------|-------------|
-| [🏗️ Architecture](ARCHITECTURE.md) | [🚀 Future Architecture](FUTURE_ARCHITECTURE.md) |
-| [📊 Data Model](DATA_MODEL.md) | [📊 Future Data Model](FUTURE_DATA_MODEL.md) |
-| [🔄 Flowcharts](FLOWCHART.md) | [🔄 Future Flowcharts](FUTURE_FLOWCHART.md) |
-| [🔄 State Diagrams](STATEDIAGRAM.md) | [🔄 Future State Diagrams](FUTURE_STATEDIAGRAM.md) |
-| [🗺️ Mindmap](MINDMAP.md) | [🗺️ Future Mindmap](FUTURE_MINDMAP.md) |
-| [💼 SWOT](SWOT.md) | [💼 Future SWOT](FUTURE_SWOT.md) |
-
-### Security Documentation
-- [🛡️ Security Architecture](SECURITY_ARCHITECTURE.md) - Defense-in-depth security controls
-- [🔮 Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md) - Security roadmap
-- [🎯 Threat Model](THREAT_MODEL.md) - STRIDE threat analysis and risk assessment
-- [🛡️ CRA Assessment](CRA-ASSESSMENT.md) - EU Cyber Resilience Act conformity
-- [🔧 Workflows](WORKFLOWS.md) - CI/CD workflows and automation
-- [🔐 Security Policy](SECURITY.md) - Vulnerability reporting and disclosure
-
-### ISMS Policy Alignment
-- [🛡️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) — Architecture documentation requirements
-- [🔓 Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) — OSS governance, license compliance, security posture evidence
-- [🛡️ CRA Conformity Assessment Process](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CRA_Conformity_Assessment_Process.md) — CRA self-assessment template and methodology
-- [🎯 Threat Modeling Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) — STRIDE/MITRE ATT&CK methodology
-- [🏷️ Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) — CIA triad, RTO/RPO, business impact
-
-### GitHub Copilot Integration
-
-Riksdagsmonitor uses **GitHub Copilot personas, skills, and agentic workflows** as first-class automation. The directory READMEs are the single source of truth; [`AGENTS.md`](AGENTS.md) and [`SKILLS.md`](SKILLS.md) are the long-form reference catalogs.
-
-- [`.github/agents/README.md`](.github/agents/README.md) — **24 agent files** (14 persona agents + 9 workflow-specialist `.agent.md` + shared `developer.instructions.md`)
-- [`.github/skills/README.md`](.github/skills/README.md) — **91 skills** grouped by 12 functional categories
-- [`.github/prompts/README.md`](.github/prompts/README.md) — 8 bounded-context prompt modules + Tier-C extension, imported by every agentic news workflow
-- [`.github/workflows/README.md`](.github/workflows/README.md) — 43 workflow files (standard + agentic)
-- [AGENTS.md](AGENTS.md) — canonical persona catalog with skill-mapping tables and invocation examples
-- [SKILLS.md](SKILLS.md) — canonical skill catalog with agent-skill mappings
-
-**14 Persona Agents** (assignable via `assign_copilot_to_issue`):
-
-- **security-architect** · **documentation-architect** · **quality-engineer** · **frontend-specialist** · **isms-compliance-manager** · **deployment-specialist** · **devops-engineer** · **intelligence-operative** · **news-journalist** · **content-generator** · **data-pipeline-specialist** · **data-visualization-specialist** · **task-agent** · **ui-enhancement-specialist**
-
-**9 Workflow-Specialist Agents** (`.agent.md`, invoked by name from workflows): `agentic-workflows` · `ci-cleaner` · `contribution-checker` · `create-safe-output-type` · `custom-engine-implementation` · `grumpy-reviewer` · `interactive-agent-designer` · `technical-doc-writer` · `w3c-specification-writer`
-
-**Available Skills (91)** — see [`.github/skills/README.md`](.github/skills/README.md) for the complete catalog across:
-
-- 🛡️ Core Infrastructure & Governance (9) · 🕵️ Political Intelligence (11) · 🔐 ISMS & Security (14)
-- ⚙️ Development & Operations (14) · 🧪 Testing & QA (2) · 🎨 UI/UX & Design (8)
-- 📡 Data Integration (6) · 📰 Journalism & Media (5) · 🏛️ Government, Regulatory & Economics (7)
-- 🗣️ Language & Localization (1) · 🤖 GitHub Agentic Workflows (13) · 📋 Copilot Patterns (1)
-
-*Economic-Data Integrations (three primary sources, parity-treated):*
-- **scb-mcp** (`@jarib/pxweb-mcp@2.0.0`) — official Swedish statistics via PxWebAPI 2.0 (1,200+ tables)
-- **world-bank-mcp** (`worldbank-mcp@1.0.1`) + `scripts/world-bank-client.ts` — WGI governance, environment, long-horizon social/education
-- **IMF TypeScript client** (`scripts/imf-client.ts`) — WEO, Fiscal Monitor, IFS, GFS_COFOG via Datamapper JSON + SDMX 3.0; macro/fiscal freshness + T+5 projections. **Intentionally not an MCP server** — pure-TS, fully covered by the npm SBOM (ADR 0001).
-
-### External Documentation
-- [CIA Platform Documentation](https://hack23.github.io/cia/)
-- [CIA JSON Export Specifications](https://github.com/Hack23/cia/tree/master/json-export-specs/visualizations)
-- [Hack23 ISMS](https://github.com/Hack23/ISMS)
-- [Hack23 Public ISMS](https://github.com/Hack23/ISMS-PUBLIC)
-- [Hack23 Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
-- [Hack23 Blog](https://hack23.com/blog.html)
-
-## 🔬 Political Intelligence Analysis & News Creation
-
-Riksdagsmonitor is built around two tightly-coupled product lines: **deep political intelligence analysis** and **autonomous news article creation**. Every news article is backed by a reproducible analysis artifact trail on disk.
+- 🔎 **Source verification** — every claim traced to official Riksdag/Regering data via the `riksdag-regering` MCP server (32+ tools)
+- ⚖️ **Multi-party balance** — algorithmic fairness across all 8 parliamentary parties, no editorial bias possible
+- 📊 **Quantitative rigor** — voting cohesion metrics, attendance scoring, legislative productivity indices, ICD-203 Key Judgments, 45-rule transparency scoring
+- 🌐 **14-language reach** — culturally adapted political analysis with RTL support (Arabic / Hebrew), not machine translation
+- 🛡️ **GDPR-compliant OSINT** — only public parliamentary data; political opinions are processed under GDPR Art. 9(2)(e) (manifestly made public) / 9(2)(g) (substantial public interest)
+- 🚦 **Hard analysis gate** — every news workflow MUST produce 9 (single-type) or 14 (Tier-C) analysis artifacts on disk before article generation; the gate at [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) is non-negotiable
+- 🧪 **Quality gates** — HTMLHint validation, link checking, accessibility (WCAG 2.1 AA) and translation parity in CI before publication
 
 ### End-to-end pipeline
 
@@ -705,451 +143,356 @@ flowchart LR
   B --> C[📋 Populate templates<br/>analysis/templates]
   C --> D[📂 Write 9 or 14 artifacts<br/>analysis/daily/$DATE/$SUBFOLDER]
   D --> E{🚦 Analysis Gate<br/>prompts/05}
-  E -- pass --> F[📰 Generate article<br/>prompts/06]
+  E -- pass --> F[📰 Aggregate → article.md<br/>scripts/aggregate-analysis.ts]
   E -- fail --> C
-  F --> G[🌐 Translate into<br/>remaining 12 languages]
-  G --> H[🔀 One PR per article type<br/>prompts/07]
+  F --> G[🌐 Sanitised HTML<br/>scripts/render-articles.ts]
+  G --> H[🌍 Translate into<br/>12 other languages]
+  H --> I[🔀 One PR per article type<br/>S3 + CloudFront deploy]
   style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
   style E fill:#dc3545,stroke:#b02a37,color:#fff
-  style H fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+  style I fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
 ```
 
-### Vital documents
+A new `.md` artifact written anywhere under `analysis/daily/$DATE/$SUB/` is enough to publish an English + Swedish HTML article on the next CI build — there is no manual scaffolding, no template fill-in, and no per-type generator class. The dedicated `news-translate` workflow then propagates to the remaining 12 languages out-of-band. See **[`Article-Generation.md`](Article-Generation.md)** for the full agentic-workflow contract.
 
-| Area | Document | What you'll find |
-|------|----------|------------------|
-| **Analysis framework** | [`analysis/README.md`](analysis/README.md) | Artifact taxonomy, 9-artifact / 14-artifact contract, daily-output layout |
-| **Methodology library** | [`analysis/methodologies/README.md`](analysis/methodologies/README.md) | 11 methodology documents (AI-driven guide, per-document protocol, risk/SWOT/threat frameworks, synthesis, electoral, classification, style) |
-| **Template library** | [`analysis/templates/README.md`](analysis/templates/README.md) | 23 templates — 8 core single-type (T1–T8) + 15 extended/Tier-C (scenario, executive-brief, coalition-mathematics, election-2026, historical-parallels, comparative-international, devil's advocate, etc.) |
-| **News-generation contract** | [`.github/prompts/README.md`](.github/prompts/README.md) | 8 bounded-context prompt modules + Tier-C extension; single blocking analysis gate |
-| **Workflow orchestration** | [`.github/workflows/README.md`](.github/workflows/README.md) + [`WORKFLOWS.md`](WORKFLOWS.md) §Stage 6.1 | How each `news-*.md` source compiles to a hardened `.lock.yml` with SHA-pinned actions, egress firewall, and five-layer safe-outputs |
-| **Specialist personas** | [`.github/agents/README.md`](.github/agents/README.md) | `intelligence-operative`, `news-journalist`, `content-generator` — and 11 more |
-| **Rules that guide the agents** | [`.github/skills/README.md`](.github/skills/README.md) | 11 political-intelligence skills + 5 journalism skills + 14 ISMS/security skills |
-
-### Data sources used during analysis
-
-- **Riksdagen & Regeringen** via `riksdag-regering-mcp` (32 tools): MPs, votes, documents, speeches, committees, government docs
-- **Statistics Sweden (SCB)** via `@jarib/pxweb-mcp@2.0.0` (1 200+ PxWeb tables)
-- **World Bank Open Data** via `worldbank-mcp@1.0.1` + `scripts/world-bank-client.ts` (WGI governance, environment, education)
-- **IMF** via `scripts/imf-client.ts` (pure-TS, WEO + Fiscal Monitor + IFS + GFS_COFOG, T+5 projections)
-- **CIA platform** (Hack23) — 19 visualisation products consumed nightly via `update-cia-csv-data.yml`
-
----
-
-## 🤖 AI-Disrupted News Generation
-
-> *"While traditional newsrooms debate whether AI will replace journalists, Riksdagsmonitor already runs a fully autonomous political intelligence newsroom — 11 agentic workflows, 14 languages, zero human editors, and a publication schedule that would bankrupt any legacy outlet trying to keep up."*
-
-Riksdagsmonitor's **agentic news generation pipeline** is the world's first fully AI-driven political intelligence newsroom for parliamentary monitoring. Powered by Claude Opus (currently 4.7) via GitHub Copilot Coding Agent, our **11 specialized workflows** (10 single-run news pipelines + 1 dedicated translation workflow) autonomously produce deep political analysis — not shallow summaries, but structured intelligence products with source verification, multi-party balance, and GDPR-compliant OSINT methodology.
-
-### 🧬 Pipeline at a glance
-
-```mermaid
-flowchart LR
-    A[MCP servers<br/>Riksdag · SCB · World Bank] --> B[Analysis artifacts<br/>analysis/daily/&dollar;DATE/&dollar;SUB/<br/>9 core or 14 Tier-C .md files]
-    M[analysis/methodologies/<br/>analysis/templates/] --> B
-    B --> C[scripts/aggregate-analysis.ts<br/>Concatenate · strip dups · rewrite links · emit manifest]
-    C --> D[article.md<br/>Canonical aggregated markdown]
-    D --> E[scripts/render-articles.ts<br/>+ scripts/render-lib/<br/>unified · remark · rehype · sanitize]
-    E --> F[news/&dollar;DATE-&dollar;SUB-en.html<br/>news/&dollar;DATE-&dollar;SUB-sv.html]
-    F --> G[news-translate workflow<br/>EN+SV → 12 other languages<br/>OUT-OF-BAND]
-    F --> S[sitemap.xml + sitemap.html<br/>rss.xml<br/>political-intelligence_*.html]
-    G --> S
-
-    style C fill:#2196f3,color:#fff
-    style E fill:#4caf50
-    style G fill:#9e9e9e,color:#fff
-```
-
-A new `.md` artifact written anywhere under `analysis/daily/$DATE/$SUB/` is enough to produce a published English + Swedish HTML article on the next CI build — there is no manual scaffolding step, no template fill-in, and no per-type generator class. The news workflows themselves never write localised HTML; that is the sole responsibility of `news-translate`.
-
-### 📐 Anatomy of an article
-
-Every published article is a deterministic projection of three input sources, in this priority:
-
-1. **`analysis/methodologies/`** — the *editorial method* (e.g. STRIDE, devil's-advocate, ACH, comparative-politics framing). These files define **how** an analysis is conducted; they are version-controlled and cited from every article footer.
-2. **`analysis/templates/`** — the *output structure* (executive-brief, synthesis, significance, stakeholders, SWOT, scenarios, comparative, intel-assessment, classification, …). These define **what sections** appear and in **what order**.
-3. **`analysis/daily/$DATE/$SUB/*.md`** — the *evidence* (per-day artifacts produced by the agentic workflow's analysis phase). These provide the **specific facts**, MCP query results, and per-document analyses for one day's coverage.
-
-The aggregator concatenates the day's evidence in template order (with `intelligence-assessment.md` — the ICD-203 Key Judgments centrepiece — surfaced at position 3 immediately after the executive brief + synthesis), the renderer transforms the markdown into sanitised HTML, and the chrome layer wraps it with JSON-LD, a tagline-and-breadcrumb header, a 3-column footer (*Riksdagsmonitor* / *Resources* / *Trust & compliance*) and both a dropdown and an always-visible footer language switcher. The chrome's language switcher populates `hreflangAlternates` for **all 14 supported languages** at render time, so switching language from any article always lands on the sibling article (e.g. `news/2026-04-24-propositions-de.html`), never on the language homepage. Internally, `scripts/render-lib/` is split into six focused leaf modules — `aggregator.ts`, `markdown.ts`, `chrome.ts`, `article.ts`, `url-helpers.ts`, `constants.ts` — behind a thin barrel `index.ts`; see [`ARCHITECTURE.md`](ARCHITECTURE.md#pipeline-stages) for the full per-module contract. The `Sources of Method` block in every article footer links back to every methodology and template file actually used — provenance is preserved end-to-end.
-
-> 📚 **Directory-level catalogs** (single sources of truth):
-> - [`.github/workflows/README.md`](.github/workflows/README.md) — 43 workflow files (21 standard `.yml` + 11 agentic `.md` sources + 11 compiled `.lock.yml`)
-> - [`.github/prompts/README.md`](.github/prompts/README.md) — 8 bounded-context prompt modules + `ext/tier-c-aggregation.md`, imported by every news workflow
-> - [`.github/agents/README.md`](.github/agents/README.md) — 24 Copilot agent files (14 personas + 9 workflow-specialists + 1 shared developer-instructions)
-> - [`.github/skills/README.md`](.github/skills/README.md) — 91 skills grouped by 12 functional categories
-> - [`analysis/README.md`](analysis/README.md) — on-disk artifact layout (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) with 9-artifact / 14-artifact contracts
-> - [`analysis/methodologies/README.md`](analysis/methodologies/README.md) — 11 methodology documents
-> - [`analysis/templates/README.md`](analysis/templates/README.md) — 23 canonical output templates (8 core single-type + 15 extended / Tier-C)
-> - [`WORKFLOWS.md`](WORKFLOWS.md) — canonical end-to-end reference (v7.2, includes Stage 6.1 *Agentic Workflow Structure & Prompt Imports*)
-
-### Autonomous Publication Schedule
-
-Every day, the platform's AI operatives awaken on cron schedules, query the Swedish Parliament's open data via **32 MCP tools**, cross-reference government sources, and generate publication-ready intelligence articles in **14 languages** — including RTL support for Arabic and Hebrew.
+### Autonomous publication schedule
 
 | Time (UTC) | Workflow | Coverage | Frequency |
-|:-----------:|:---------|:---------|:----------|
+|:-----------|:---------|:---------|:----------|
 | 🌅 04:00 | **Committee Reports** | Utskottsbetänkanden analysis, voting breakdowns | Mon–Fri |
 | 🌅 05:00 | **Propositions** | Government bills, legislative impact assessment | Mon–Fri |
-| ☀️ 06:00 | **Motions** | Opposition proposals, party strategy decoding | Mon–Fri |
+| ☀️ 06:00 | **Motions** | Opposition proposals, party-strategy decoding | Mon–Fri |
 | ❓ 07:00 | **Interpellations** | Ministerial accountability, evasion detection | Mon–Fri |
 | 🔮 07:00 | **Week Ahead** | Parliamentary calendar preview, agenda intelligence | Friday |
 | 📅 08:00 | **Month Ahead** | Strategic outlook, coalition forecasting | 1st of month |
-| 🔍 10:00 & 14:00 (Mon–Fri); 12:00 (Sat/Sun) | **Realtime Monitor** | Breaking political developments, flash analysis | Mon–Fri (×2) + weekends |
+| 🔍 10:00 & 14:00 (Mon–Fri); 12:00 (Sat/Sun) | **Real-Time Monitor** | Breaking political developments, flash analysis | Mon–Fri (×2) + weekends |
 | 🌍 11:00 & 17:00 (Mon–Fri); 14:00 (Sat/Sun) | **Translate** | 12 additional languages from EN/SV cores | Daily |
 | 🌆 18:00 (16:00 Sat) | **Evening Analysis** | Deep-dive intelligence synthesis | Mon–Sat |
 | 📊 09:00 | **Weekly Review** | Week-in-review scorecard, party performance | Saturday |
 | 📈 10:00 | **Monthly Review** | Comprehensive monthly intelligence assessment | 28th of month |
 
-> _All times are **UTC** (GitHub Actions cron). For local time, convert to CET/CEST. Authoritative schedules defined in `.github/workflows/news-*.lock.yml` workflows — see [`.github/workflows/README.md`](.github/workflows/README.md) for the complete inventory._
+> _Authoritative schedules defined in `.github/workflows/news-*.lock.yml` — see [`.github/workflows/README.md`](.github/workflows/README.md) for the complete inventory._
 
-> **Result**: Dozens of articles per week across 14 languages — delivering **hundreds of localized intelligence products each month**, generated autonomously with zero editorial intervention.
-
-### 🧠 Why This Is Different
-
-Traditional AI-generated news is shallow — it rewrites press releases. Riksdagsmonitor's agentic pipeline performs **deep political intelligence analysis**:
-
-- 🔎 **Source verification**: Every claim traced to official Riksdag/Regering data via MCP
-- ⚖️ **Multi-party balance**: Algorithmic fairness across all 8 parliamentary parties
-- 📊 **Quantitative rigor**: Voting cohesion metrics, attendance scoring, legislative productivity indices
-- 🌐 **14-language reach**: Native-quality political analysis — not machine translation, but culturally adapted intelligence
-- 🛡️ **GDPR-compliant OSINT**: Only public parliamentary data, with privacy-by-design architecture
-- 🧪 **Quality gates**: HTMLHint validation, link checking, accessibility compliance (WCAG 2.1 AA) — every article passes CI before publication
+**Result:** dozens of articles per week across 14 languages — **hundreds of localised intelligence products each month**, generated autonomously with zero editorial intervention, every one of them auditable down to its source `dok_id`.
 
 ---
 
-## 🔮 Future Roadmap: 2026–2037
+## 🕵️ Political Intelligence Methodology
 
-> *From agentic news generation to AGI-powered democratic intelligence — the 11-year evolution of Riksdagsmonitor.*
+Every analysis on the platform is governed by an explicit, version-controlled methodology. The full library is browseable at <https://riksdagsmonitor.com/political-intelligence.html>; the canonical sources live in [`analysis/`](analysis/).
+
+| Layer | Document | What you'll find |
+|:------|:---------|:-----------------|
+| **🧭 Framework** | [`analysis/README.md`](analysis/README.md) | Artifact taxonomy, 9-artifact / 14-artifact contract, on-disk daily layout |
+| **📐 Methodology library** | [`analysis/methodologies/README.md`](analysis/methodologies/README.md) | <strong>11 methodology documents</strong> — AI-Driven Analysis Guide · OSINT Tradecraft Standards · Political Risk Methodology · Political SWOT Framework · Political Threat Framework · Political Classification Guide · Electoral Domain Methodology · Synthesis Methodology · Per-Document & Per-Artifact Methodologies · Strategic Extensions (scenario / wildcard / long-horizon) · Structural Metadata · Political Style Guide |
+| **📋 Template library** | [`analysis/templates/README.md`](analysis/templates/README.md) | <strong>23 templates</strong> — 8 core single-type (T1–T8) plus 15 extended / Tier-C (executive-brief, scenario-analysis, coalition-mathematics, election-2026, historical-parallels, comparative-international, devil's-advocate, intel-assessment / ICD-203 Key Judgments, …) |
+| **🚦 News-generation contract** | [`.github/prompts/README.md`](.github/prompts/README.md) | 8 bounded-context prompt modules + Tier-C extension; the single blocking analysis gate |
+| **⚙️ Workflow orchestration** | [`.github/workflows/README.md`](.github/workflows/README.md) + [`WORKFLOWS.md`](WORKFLOWS.md) | How each `news-*.md` source compiles to a hardened `.lock.yml` with SHA-pinned actions, egress firewall (Squid + iptables) and five-layer safe-outputs |
+| **🔍 IMF integration** | [`analysis/imf/README.md`](analysis/imf/README.md) + [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md) | Macro/fiscal/monetary/external context with T+5 projections; canonical pattern for every economic claim |
+| **🏛️ Statskontoret integration** | [`analysis/statskontoret/README.md`](analysis/statskontoret/README.md) | Swedish agency structure and central-government budget execution (årsutfall / månadsutfall / tidsserier) |
+| **🤖 Specialist personas** | [`.github/agents/README.md`](.github/agents/README.md) | 14 persona agents incl. `intelligence-operative`, `news-journalist`, `content-generator` + 9 workflow-specialist agents + shared `developer.instructions.md` |
+| **🧠 Skills library** | [`.github/skills/README.md`](.github/skills/README.md) | <strong>91 skills</strong> across 12 functional categories — 11 political-intelligence, 5 journalism, 14 ISMS/security, 13 GitHub Agentic Workflows, … |
+
+### Evidence standard
+
+Every claim must tie to: **a `dok_id` citation, a named actor, a vote count, or a primary-source URL**. Generic statements without evidence are rejected by the analysis gate. AI is an accelerator — never an excuse for shallow output.
+
+### AI-FIRST quality principle
+
+Minimum **2 complete iterations** for every analysis. Pass 1 produces the artifact; Pass 2 reads everything back and improves every section (stronger evidence, deeper analytic rigor, broader stakeholder coverage, quantified risk). Workflows that complete in under 75 % of their allocated time are treated as failed. See [`AGENTS.md`](AGENTS.md) §AI-FIRST.
+
+---
+
+## 📊 Interactive Intelligence Dashboards
+
+Five flagship Chart.js / D3.js dashboards on <https://riksdagsmonitor.com/> (and the consolidated [CIA Intelligence Dashboard](https://riksdagsmonitor.com/dashboard/index.html)):
+
+| # | Dashboard | Coverage | Visualisations | Data |
+|:-:|:----------|:---------|:---------------|:-----|
+| 1 | 🌡️ **Seasonal Activity Patterns** | 2002–2025 quarterly (23+ years) | Heat maps, time series, Z-score anomaly detection (\|Z\| ≥ 2.0) | `cia-data/seasonal/` |
+| 2 | 👤 **Politician Dashboard** | 349 current MPs | Top-10 rankings, 45-rule risk profiles, influence metrics | `cia-data/politician/` |
+| 3 | 🗳️ **Pre-Election Monitoring** | Q4 2023 → 2025 | Historical comparisons, election-year vs non-election Q4 patterns, early-warning indicator matrix | `cia-data/pre-election/` |
+| 4 | 🏛️ **Party Performance & Effectiveness** | 1990–2026 (37 years, 8 parties) | Effectiveness trends, comparative bars, coalition-alignment, momentum with P50/P90 percentiles | `cia-data/party/` |
+| 5 | 🚨 **Anomaly Detection & Early Warning** | 2002–2026 (41 quarters) | Timeline · Z-score distribution · type breakdown · severity heat map · recent-anomaly feed | `cia-data/seasonal/` |
+
+**Dashboard properties** — local-first data loading with 1-hour cache; WCAG 2.1 AA accessible (keyboard, screen reader, 4.5:1 contrast); 14-language; responsive 320 px → 1440 px+; CSP-compliant with SRI hashes (`sha384`) on all CDN resources.
+
+---
+
+## 🗳️ Transparency Statistics
+
+Live numbers (updated daily at 03:00 CET via [`update-cia-csv-data.yml`](.github/workflows/update-cia-csv-data.yml)):
+
+| Metric | Value | Note |
+|:-------|:------|:-----|
+| 👥 **Current MPs** | **349** | All active Members of Parliament |
+| 📜 **Historical politicians** | **2,494** | 1971–2024 (50+ years) |
+| 🗳️ **Votes analysed** | **3.5+ million** | Comprehensive voting-record corpus |
+| 📄 **Documents processed** | **109,000+** | Parliamentary documents (motions, propositions, interpellations, …) |
+| 🏛️ **Committee documents** | **8,740** | Committee work tracked |
+| ⚠️ **Rule violations identified** | **2,308** | Across 45 transparency rules |
+| 🇸🇪 **Political parties** | **8** | All Riksdag-represented parties |
+| ⏱️ **CIA subsystems** | **15** | anomaly · coalition · committee · distribution · election · election-cycle · ministry · parties · party · percentile · politician · pre-election · risk · seasonal · voting |
+| 📰 **News articles published** | **2,669+ files** under `news/` | 14 languages |
+
+**Data source:** [extraction_summary_report.csv](https://github.com/Hack23/cia/blob/master/service.data.impl/sample-data/extraction_summary_report.csv) · cached in `cia-data/production-stats.json` (24 h freshness).
+
+---
+
+## 🔗 Authoritative Data Sources
+
+Riksdagsmonitor uses a **provider-tiered** data architecture, with each provider chosen for its area of strength.
+
+| Tier | Provider | Scope | Access |
+|:-----|:---------|:------|:-------|
+| 🏛️ **Parliamentary primary** | **[Riksdagen Open Data](http://data.riksdagen.se/)** | Documents, motions, votes, MPs, speeches, committees | `riksdag-regering` MCP server (32+ tools) |
+| 🏢 **Government primary** | **[Regeringskansliet](https://www.regeringen.se/)** | Propositions, SOU, Ds, directives, press releases | `riksdag-regering` MCP server |
+| 📈 **Primary economic** | **[IMF](https://data.imf.org/)** (Datamapper REST + SDMX 3.0) | GDP, growth, unemployment, inflation, fiscal balance, debt, current account, bilateral trade, commodity prices, exchange rates, government spending by COFOG function — **with T+5 projections** | Pure-TypeScript client `scripts/imf-client.ts` (intentionally non-MCP) |
+| 🇸🇪 **Swedish ground truth** | **[SCB](https://www.scb.se/)** (PxWeb v2) | Swedish monthly labour (AKU), monthly inflation (KPI), regional/municipal, budget execution | `scb` MCP server (`@jarib/pxweb-mcp@2.0.0`, 1,200+ tables) |
+| 🏛️ **Statskontoret** | [Statskontoret](https://www.statskontoret.se/) | Authority count, dept grouping, leadership form, FTE / headcount, central-government budget outturns | `scripts/statskontoret-client.ts` |
+| 🌍 **Non-economic residue** | **[World Bank](http://data.worldbank.org/)** | Governance (WGI, `source=75`), environment, social/education residue, defence historicals | `world-bank` MCP server (`worldbank-mcp@1.0.1`) |
+| 🗳️ **Election authority** | [Valmyndigheten](http://www.val.se/) | Election results, voter turnout, electoral statistics | Public datasets |
+| 💰 **ESV** | [Ekonomistyrningsverket](https://www.esv.se/psidata/) | Government budget and spending data | Public datasets |
+| 🕵️ **Citizen Intelligence Agency** | [Hack23/cia](https://github.com/Hack23/cia) | 15 CIA subsystems consumed nightly via [`update-cia-csv-data.yml`](.github/workflows/update-cia-csv-data.yml) | JSON / CSV exports |
+
+**Why this split** — IMF uses uniform SNA 2008 / GFSM 2014 / BPM6 methodology across countries (essential for cross-country comparison), publishes T+5 projections (essential for look-ahead workflows), and has fresher data than World Bank's economic indicators. World Bank remains canonical for the classes IMF does not publish (WGI governance, environment). SCB is the Swedish-specific ground-truth layer. **Banned phrases** (e.g. *"the World Bank reports Swedish GDP growth of …"*) and **vintage discipline** (data > 6 months old → annotation required) are enforced by CI per [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1.
+
+---
+
+## 🏗️ Technical Architecture
+
+> Full system architecture (C4 Context / Container / Component / Dynamic views) lives in **[`ARCHITECTURE.md`](ARCHITECTURE.md)** (v2.2).
+
+### Stack
+
+- **Frontend** — Static HTML5 / CSS3 with TypeScript-built Chart.js / D3.js dashboards (no SPA framework, mobile-first, cyberpunk theme)
+- **Build** — Vite 8 (ES modules, code splitting, SRI via `vite-plugin-sri-gen`)
+- **Visualisation** — Chart.js 4 + D3.js 7, hosted locally on CloudFront
+- **Testing** — Vitest 4 (2,890 unit tests, 100 % pass rate, 70 % line coverage) + Cypress 15 (E2E)
+- **Hosting** — AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) via OIDC; GitHub Pages as DR fallback
+- **CI/CD** — 43 GitHub Actions workflows (21 standard `.yml` + 11 agentic `.md` sources + 11 compiled `.lock.yml`); SHA-pinned, `step-security/harden-runner` everywhere
+- **Data Platform** — Citizen Intelligence Agency (CIA) Java/Spring Boot backend + 15 CIA subsystems
+- **Runtime** — Node.js 25.x
+
+### Architecture documentation portfolio
+
+| Current State | Future State |
+|:--------------|:-------------|
+| 🏗️ [Architecture](ARCHITECTURE.md) | 🚀 [Future Architecture](FUTURE_ARCHITECTURE.md) |
+| 📊 [Data Model](DATA_MODEL.md) | 📊 [Future Data Model](FUTURE_DATA_MODEL.md) |
+| 🔄 [Flowcharts](FLOWCHART.md) | 🔄 [Future Flowcharts](FUTURE_FLOWCHART.md) |
+| 🔄 [State Diagrams](STATEDIAGRAM.md) | 🔄 [Future State Diagrams](FUTURE_STATEDIAGRAM.md) |
+| 🗺️ [Mindmap](MINDMAP.md) | 🗺️ [Future Mindmap](FUTURE_MINDMAP.md) |
+| 💼 [SWOT](SWOT.md) | 💼 [Future SWOT](FUTURE_SWOT.md) |
+
+---
+
+## 🔐 Security, Privacy & ISMS Compliance
+
+> Full controls in **[`SECURITY_ARCHITECTURE.md`](SECURITY_ARCHITECTURE.md)** · threat model in **[`THREAT_MODEL.md`](THREAT_MODEL.md)** · CRA conformity in **[`CRA-ASSESSMENT.md`](CRA-ASSESSMENT.md)**.
+
+### Classification (per [Hack23 Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md))
+
+| Dimension | Level | Note |
+|:----------|:------|:-----|
+| 🔒 **Confidentiality** | 🟢 Public | All data intentionally disclosed (Swedish open data + website content) |
+| ✅ **Integrity** | 🟠 High | Automated validation, GPG-signed commits, SLSA build provenance |
+| 🟢 **Availability** | 🟠 High | 99.998 % design target (CloudFront 99.9 % SLA + multi-region S3 + GitHub Pages DR) |
+| 🏷️ **Privacy** | 🟠 Personal (public officials only) | GDPR Art. 6(1)(e/f); Art. 9(2)(e/g) for political opinions; **no end-user PII**, no accounts, no ads, no tracking |
+| ⏱️ **RTO / RPO** | 1–4 h / 4–24 h | Automated multi-region failover, daily data refresh |
+| 💰 **Business impact** | 🟢 Low (financial) · 🟡 Moderate (reputational) | Open-source project, no revenue dependency |
+
+### Compliance frameworks
+
+- **ISO 27001:2022** — 7 Annex A controls implemented · **NIST CSF 2.0** — 6 functions aligned · **CIS Controls v8.1** — 6 controls implemented
+- **GDPR** — public-interest / legitimate-interest grounds for public-official data; political opinions under Art. 9(2)(e)/(g)
+- **EU CRA** — self-assessment in [`CRA-ASSESSMENT.md`](CRA-ASSESSMENT.md)
+- **OpenSSF Best Practices** — [Project #12069](https://www.bestpractices.dev/projects/12069)
+
+### Defence-in-depth highlights
+
+- 🔒 **HTTPS-only** — TLS 1.3, HSTS, CSP, X-Frame-Options, X-Content-Type-Options
+- 🧱 **Five-layer agentic-workflow security** — read-only agent tokens, zero secrets in agent context, containerised + Squid/iptables egress firewall, safe-outputs validation, AI threat-detection scan
+- 🔐 **SHA-pinned actions** + `step-security/harden-runner` + Dependabot + CodeQL + Secret Scanning + dependency-review + OIDC-only AWS deploy
+- 📜 **Aligned ISMS policies** — [Information Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) · [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) · [Threat Modeling](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) · [AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) · [Vulnerability Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) · [Change Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) · [Incident Response Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md) · [Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md)
+
+| Metric | Status |
+|:-------|:-------|
+| **Risk level** | 🟢 LOW (5.52 / 10.0 — 99.7 % risk reduction) |
+| **HTML validation** | ✅ 0 errors (HTMLHint) |
+| **Dependencies** | ✅ Dependabot clean |
+| **Secrets** | ✅ Secret Scanning enabled |
+| **Code scanning** | ✅ CodeQL active |
+
+---
+
+## 📦 npm Package
+
+The platform's reusable shared utilities are published as **[`riksdagsmonitor`](https://www.npmjs.com/package/riksdagsmonitor)** with SLSA build provenance.
+
+```bash
+npm install riksdagsmonitor
+```
+
+**Includes** — Theme System (cyberpunk, WCAG AA) · Chart Factory (Chart.js with responsive breakpoints + keyboard nav) · Resilient Data Loader (retry, cache, CSV/JSON) · DOM utilities · Full TypeScript types · 12 dashboard modules · CIA intelligence modules.
+
+```typescript
+import { getActiveThemeColors, BREAKPOINTS, getPartyColor } from 'riksdagsmonitor';
+import { loadJSON, loadCSV, createDataSource } from 'riksdagsmonitor';
+import { showLoadingState, formatNumber, debounce } from 'riksdagsmonitor';
+import { createChart, initDashboardSection } from 'riksdagsmonitor/shared/chart-factory';
+import { CIADataLoader } from 'riksdagsmonitor/cia/data-loader';
+import { CIADashboardRenderer } from 'riksdagsmonitor/cia/visualizations';
+```
+
+**Peer dependencies** — `chart.js` `d3` `papaparse` (required for dashboards); `chartjs-plugin-annotation` (optional, loaded conditionally).
+
+---
+
+## 🚀 Development
+
+### Prerequisites
+Node.js ≥ 25 · npm ≥ 10 · Git with GPG signing · GitHub MFA + SSH keys.
+
+### Quick start
+
+```bash
+git clone git@github.com:Hack23/riksdagsmonitor.git
+cd riksdagsmonitor
+npm install
+npm run dev          # Vite dev server with hot reload → http://localhost:8080
+
+# Tests
+npm test                 # Vitest unit (2,890 tests)
+npm run test:coverage    # with coverage
+npm run cypress:open     # E2E interactive
+npm run e2e              # full E2E (build + preview + Cypress)
+
+# Quality
+npm run htmlhint         # HTML5 validation
+npm run linkcheck        # link integrity (linkinator)
+
+# Production
+npm run build            # Vite production build → dist/
+npm run preview          # http://localhost:4173
+```
+
+### CI/CD
+
+- HTMLHint validation · Linkinator · Vitest (2,890 tests) · Cypress · Vite build · Dependency review · CodeQL · Secret scanning · Translation validation
+- Releases — workflow_dispatch or `v*.*.*` tag → SBOM (SPDX) + SHA-256 + SLSA Build Provenance attestations + dual deployment (S3/CloudFront primary, GitHub Pages DR)
+- `gh attestation verify riksdagsmonitor-vX.Y.Z.zip -R Hack23/riksdagsmonitor`
+
+See [`WORKFLOWS.md`](WORKFLOWS.md) and [`RELEASE_PROCESS.md`](RELEASE_PROCESS.md) for the canonical reference.
+
+---
+
+## 🤖 GitHub Copilot — Agents, Skills & Agentic Workflows
+
+Riksdagsmonitor uses **GitHub Copilot personas, skills and agentic workflows** as first-class automation. Directory READMEs are the single source of truth; [`AGENTS.md`](AGENTS.md) and [`SKILLS.md`](SKILLS.md) are the long-form catalogs.
+
+| Surface | Catalog | Count |
+|:--------|:--------|:------|
+| 🤖 **Custom agents** | [`.github/agents/README.md`](.github/agents/README.md) | **24** files (14 personas + 9 workflow-specialists + 1 shared developer-instructions) |
+| 🧠 **Skills** | [`.github/skills/README.md`](.github/skills/README.md) | **91** skills across 12 functional categories |
+| 📜 **Prompt modules** | [`.github/prompts/README.md`](.github/prompts/README.md) | 8 bounded-context modules + Tier-C extension |
+| ⚙️ **Workflows** | [`.github/workflows/README.md`](.github/workflows/README.md) | **43** files (21 standard + 11 agentic sources + 11 compiled) |
+| 🔌 **MCP servers** | [`.github/copilot-mcp.json`](.github/copilot-mcp.json) | **8** — `riksdag-regering`, `scb`, `world-bank`, `github` (insiders), `filesystem`, `memory`, `sequential-thinking`, `playwright` |
+
+**14 persona agents** (assignable via `assign_copilot_to_issue`):
+`security-architect` · `documentation-architect` · `quality-engineer` · `frontend-specialist` · `isms-compliance-manager` · `deployment-specialist` · `devops-engineer` · **`intelligence-operative`** · **`news-journalist`** · **`content-generator`** · `data-pipeline-specialist` · `data-visualization-specialist` · `task-agent` · `ui-enhancement-specialist`.
+
+**9 workflow-specialist agents** (`.agent.md`, invoked from workflows):
+`agentic-workflows` · `ci-cleaner` · `contribution-checker` · `create-safe-output-type` · `custom-engine-implementation` · `grumpy-reviewer` · `interactive-agent-designer` · `technical-doc-writer` · `w3c-specification-writer`.
+
+---
+
+## 📖 Documentation Index
+
+### Project documentation
+- [`Article-Generation.md`](Article-Generation.md) — **Canonical agentic-newsroom contract** (data → analysis → article → HTML → S3)
+- [`AGENTS.md`](AGENTS.md) · [`SKILLS.md`](SKILLS.md) — Copilot persona & skill catalogs
+- [`WORKFLOWS.md`](WORKFLOWS.md) — End-to-end CI/CD reference (v7.2)
+- [`RELEASE_PROCESS.md`](RELEASE_PROCESS.md) — Release with attestations & docs-as-code
+- [`TRANSLATION_GUIDE.md`](TRANSLATION_GUIDE.md) — 14-language standards & glossary
+- [`SECURITY.md`](SECURITY.md) · [`CONTRIBUTING.md`](CONTRIBUTING.md) · [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) · [`LICENSE`](LICENSE)
+
+### Future planning
+- [`FUTURE_WORKFLOWS.md`](FUTURE_WORKFLOWS.md) · [`FUTURE_MINDMAP.md`](FUTURE_MINDMAP.md) · [`FUTURE_ARCHITECTURE.md`](FUTURE_ARCHITECTURE.md) · [`FUTURE_SECURITY_ARCHITECTURE.md`](FUTURE_SECURITY_ARCHITECTURE.md) · [`FUTURE_SWOT.md`](FUTURE_SWOT.md)
+
+### External
+- 📚 [API Documentation (JSDoc)](https://riksdagsmonitor.com/docs/api/) · [Test Coverage](https://riksdagsmonitor.com/docs/coverage/) · [Cypress E2E Reports](https://riksdagsmonitor.com/docs/cypress/)
+- 🕵️ [CIA Platform](https://hack23.github.io/cia/) · [CIA JSON Export Specs](https://github.com/Hack23/cia/tree/master/json-export-specs/visualizations)
+- 🛡️ [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC) · 📰 [Hack23 Blog](https://hack23.com/blog.html)
+
+---
+
+## 🔮 Future Roadmap (2026 → 2037)
+
+> *From agentic news generation to AGI-powered democratic intelligence — an 11-year evolution.*
 >
-> 📋 **Detailed planning**: [Future Workflows](FUTURE_WORKFLOWS.md) · [Future Mindmap](FUTURE_MINDMAP.md)
-
-### Evolution Overview
+> Detailed planning: [`FUTURE_WORKFLOWS.md`](FUTURE_WORKFLOWS.md) · [`FUTURE_MINDMAP.md`](FUTURE_MINDMAP.md) · [`FUTURE_ARCHITECTURE.md`](FUTURE_ARCHITECTURE.md)
 
 ```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "background": "#0a0e27"}}}%%
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
 timeline
-    title Riksdagsmonitor Evolution — 2026 to 2037
+    title Riksdagsmonitor Evolution — 2026 → 2037
     section Phase 3 — Foundation (2026)
-        Q1-Q2 : TypeScript migration ✅
-               : 11 agentic news workflows ✅
-               : 34 GitHub Actions workflows + 10 agent prompt files
-               : Dual deployment (S3 + GitHub Pages)
-        Q3-Q4 : CIA data pipeline integration
-               : Predictive dashboards
-               : 14-language expansion
-               : 40 GitHub Actions workflows + 10 agent prompt files
-    section Phase 4 — Intelligence (2027-2029)
-        2027 : Real-time data streams
-             : ML prediction models
-             : Multi-source OSINT
-             : Nordic parliament expansion
-        2028 : Multi-modal content (audio/video)
-             : Self-healing pipelines
-             : AI editorial board
-             : 65 automation assets
-        2029 : Fully autonomous pipeline
-             : Expert-level analysis
-             : API platform launch
-             : 75 automation assets
-    section Phase 5 — Scale (2030-2033)
-        2030-2031 : EU-wide coverage
-                  : 85+ automation assets
-                  : Near-expert analysis
-                  : Sovereign AI evaluation
-        2032-2033 : Global parliamentary monitoring
-                  : 100 automation assets
-                  : Pre-AGI capabilities
-                  : Every UN language
-    section Phase 6 — AGI Era (2034-2037)
-        2034-2035 : AGI-enhanced intelligence
-                  : 195 parliaments monitored
-                  : Predictive governance
-                  : 110+ automation assets
-        2036-2037 : Transformative democracy platform
-                  : 120+ automation assets
-                  : Post-AGI capabilities
-                  : Democratic safeguards architecture
+        Q1-Q2 : ✅ TypeScript migration · 11 agentic news workflows
+              : ✅ 14 languages · S3 + GitHub Pages dual deploy
+        Q3-Q4 : 🔄 CIA pipeline integration · predictive dashboards
+    section Phase 4 — Predictive Intelligence (2027–2029)
+        2027 : Real-time streams · ML election models · Nordic expansion (DK · NO · FI)
+        2028 : Multi-modal (audio/video) · AI editorial board · self-healing pipelines
+        2029 : Fully autonomous · expert-level analysis · API platform launch
+    section Phase 5 — Scale (2030–2033)
+        2030-2031 : EU-wide coverage (27 + EP) · sovereign-AI evaluation
+        2032-2033 : Global parliamentary watch (100+ democracies) · every UN language · pre-AGI
+    section Phase 6 — AGI Era (2034–2037)
+        2034-2035 : AGI-enhanced intelligence · 195 parliaments · predictive governance
+        2036-2037 : Transformative democracy platform · democratic safeguards architecture
 ```
 
-### Phase 3: Agentic Intelligence Foundation (2026)
-
-*Current phase — AI-disrupted news generation operational*
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
-graph LR
-    subgraph SGCompleted["✅ Completed"]
-        style SGCompleted fill:#006400,stroke:#00d9ff,color:#e0e0e0
-        A[TypeScript Migration<br/>31 modules] --> B[Agentic News Gen<br/>12 workflows]
-        B --> C[14 Languages<br/>RTL support]
-        C --> D[Dual Deploy<br/>S3 + GitHub Pages]
-    end
-    subgraph SGProgress["🔄 In Progress"]
-        style SGProgress fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
-        E[CIA Data Pipeline<br/>19 products] --> F[Predictive Dashboards<br/>Chart.js/D3.js]
-        F --> G[Content Expansion<br/>Hundreds of articles/month]
-    end
-    subgraph SGPlanned["📋 Planned"]
-        style SGPlanned fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
-        H[API Platform<br/>GraphQL] --> I[Nordic Expansion<br/>Denmark, Norway, Finland]
-    end
-    D --> E
-    G --> H
-```
-
-| Capability | Status | Details |
-|:-----------|:------:|:--------|
-| TypeScript migration | ✅ Done | 31 modules, 2890 Vitest tests |
-| Agentic news generation | ✅ Live | 12 workflows (11 scheduled + 1 on-demand), 14 languages |
-| 14-language support | ✅ Live | Including Arabic/Hebrew RTL |
-| CIA data integration | 🔄 Active | 19 visualization products |
-| Predictive dashboards | 📋 Planned | Chart.js/D3.js interactive displays |
-
-### Phase 4: Predictive Intelligence & Nordic Expansion (2027–2029)
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
-graph TB
-    subgraph SG2027["2027 — Predictive Analytics"]
-        style SG2027 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-        PA1[🔮 ML Election Models<br/>Coalition probability scoring]
-        PA2[📡 Real-Time Streams<br/>Live parliamentary feeds]
-        PA3[🌍 Nordic Expansion<br/>DK · NO · FI parliaments]
-        PA4[🔍 Multi-Source OSINT<br/>Media + social + official]
-    end
-    subgraph SG2028["2028 — Multi-Modal Intelligence"]
-        style SG2028 fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
-        MM1[🎙️ Audio/Video Analysis<br/>Debate tone detection]
-        MM2[🤖 AI Editorial Board<br/>Autonomous quality control]
-        MM3[🔧 Self-Healing Pipelines<br/>Auto-recovery workflows]
-        MM4[📊 65 Automation Assets]
-    end
-    subgraph SG2029["2029 — Autonomous Platform"]
-        style SG2029 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
-        AP1[🚀 Fully Autonomous Pipeline<br/>Zero human intervention]
-        AP2[🧠 Expert-Level Analysis<br/>PhD-equivalent insight]
-        AP3[🔌 API Platform Launch<br/>GraphQL + REST]
-        AP4[📊 75 Automation Assets]
-    end
-    PA1 --> MM1
-    PA2 --> MM2
-    PA3 --> MM3
-    PA4 --> MM4
-    MM1 --> AP1
-    MM2 --> AP2
-    MM3 --> AP3
-    MM4 --> AP4
-```
-
-### Phase 5: EU-Wide Coverage & Pre-AGI (2030–2033)
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
-graph LR
-    subgraph SGEU["2030-2031 — EU Scale"]
-        style SGEU fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-        EU1[🇪🇺 27 EU Parliaments<br/>+ European Parliament]
-        EU2[🧠 Near-Expert Analysis<br/>Opus 8.x capabilities]
-        EU3[📊 85+ Automation Assets<br/>Continent-wide coverage]
-        EU4[🏛️ Sovereign AI Evaluation<br/>EU AI Act compliance]
-    end
-    subgraph SGGL["2032-2033 — Global Reach"]
-        style SGGL fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
-        GL1[🌍 Global Parliamentary Watch<br/>100+ democracies]
-        GL2[🗣️ Every UN Language<br/>Native-quality output]
-        GL3[📊 100 Automation Assets<br/>Pre-AGI capabilities]
-        GL4[🔒 Zero-Trust Architecture<br/>Quantum-safe cryptography]
-    end
-    EU1 --> GL1
-    EU2 --> GL2
-    EU3 --> GL3
-    EU4 --> GL4
-```
-
-### Phase 6: AGI Era & Transformative Democracy (2034–2037)
-
-> *When AGI or near-AGI systems emerge, Riksdagsmonitor's modular architecture is designed with flexibility to adapt to future AI paradigm shifts — including potential AGI capabilities — while maintaining democratic safeguards.*
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#00d9ff", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
-graph TB
-    subgraph SGAGI["🤖 6.1 AGI-Enhanced Intelligence"]
-        style SGAGI fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
-        AGI1["🤖 Autonomous Analysis<br/>Real-time intelligence across<br/>all 195 parliamentary systems"]
-        AGI2["🌐 Universal Language<br/>Every UN language<br/>supported natively"]
-        AGI3["📊 Predictive Governance<br/>Policy impact prediction<br/>before legislation proposed"]
-    end
-    subgraph SGSAFE["⚖️ 6.2 Democratic Safeguards"]
-        style SGSAFE fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
-        SAFE1["⚖️ Ethical AI Governance<br/>Human oversight maintained<br/>regardless of AI capability"]
-        SAFE2["🛡️ Anti-Weaponization<br/>Architecture prevents<br/>manipulation or misuse"]
-        SAFE3["🔒 Constitutional Alignment<br/>Democratic values encoded<br/>in platform architecture"]
-    end
-    subgraph SGPARA["🧬 6.3 Paradigm Readiness"]
-        style SGPARA fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
-        PARA1["⚛️ Quantum AI Ready<br/>Post-quantum cryptography<br/>Quantum ML integration"]
-        PARA2["🧠 Neuromorphic Computing<br/>Brain-inspired architectures<br/>Edge intelligence deployment"]
-        PARA3["🌍 Transformative Platform<br/>120+ automation assets · 195 parliaments<br/>Global democratic intelligence"]
-    end
-    AGI1 --> SAFE1
-    AGI2 --> SAFE2
-    AGI3 --> SAFE3
-    SAFE1 --> PARA1
-    SAFE2 --> PARA2
-    SAFE3 --> PARA3
-```
-
-**Strategic Considerations for Phase 6:**
-- 🤖 **Autonomous analysis**: AGI-powered real-time political intelligence across all 195 parliamentary systems
-- 🌐 **Universal language support**: Every UN language supported natively
-- 📊 **Predictive governance**: Policy impact prediction *before* legislation is proposed
-- ⚖️ **Ethical AI governance**: Human oversight maintained regardless of AI capability level
-- 🛡️ **Democratic safeguards**: Platform architecture prevents weaponization or manipulation
-
-### 📈 AI Model Evolution Strategy
-
-**Illustrative assumptions** *(high uncertainty — AI landscape evolves rapidly)*:
-- Model updates assumed roughly quarterly; actual cadence will vary by vendor and paradigm
-- Version numbers (Opus 5.x–12.x) are illustrative — actual products may differ significantly
-- Competitors (OpenAI, Google, Meta, EU sovereign AI) evaluated at each major release cycle
-- Architecture must accommodate potential paradigm shifts (quantum AI, neuromorphic computing, or entirely new approaches)
-
-**Workflow Count Projection:**
-
-| Year | Automation Assets | AI Model | Key Capability |
-|:----:|:---------------:|:---------|:---------------|
-| **2026** | 44→50 | Opus 4.7–4.9 | 🤖 Agentic news generation (current) |
+| Year | Automation assets | AI model | Key capability |
+|:----:|:----------------:|:---------|:---------------|
+| **2026** | 44 → 50 | Opus 4.7–4.9 | 🤖 Agentic news generation (current) |
 | **2027** | 50–55 | Opus 5.x | 🔮 Predictive analytics & Nordic expansion |
-| **2028** | 55–65 | Opus 6.x | 🎙️ Multi-modal content (audio/video) |
+| **2028** | 55–65 | Opus 6.x | 🎙️ Multi-modal content |
 | **2029** | 65–75 | Opus 7.x | 🚀 Fully autonomous pipeline |
-| **2030** | 75–85 | Opus 8.x | 🧠 Near-expert analysis |
-| **2031–2033** | 85–100 | Opus 9–10.x / Pre-AGI | 🌍 Global parliamentary coverage |
-| **2034–2037** | 100–120+ | AGI / Post-AGI | ⚡ Transformative democracy platform |
+| **2030–2033** | 75–100 | Opus 8–10.x / pre-AGI | 🌍 EU → Global coverage |
+| **2034–2037** | 100–120+ | AGI / post-AGI | ⚡ Transformative democracy platform |
 
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
-xychart-beta
-    title "Riksdagsmonitor Workflow Growth Projection (2026–2037)"
-    x-axis ["2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037"]
-    y-axis "Automation Assets (Workflows + Prompt Files)" 0 --> 130
-    bar [47, 53, 60, 70, 80, 88, 95, 100, 105, 110, 115, 120]
-    line [47, 53, 60, 70, 80, 88, 95, 100, 105, 110, 115, 120]
-```
+> *Version numbers are illustrative — actual products and paradigm shifts (quantum AI, neuromorphic computing) will vary. Architecture is designed for graceful adaptation while preserving democratic safeguards: human oversight maintained regardless of AI capability, anti-weaponisation by design, constitutional alignment encoded in platform architecture.*
 
-> Note: The chart values are midpoint estimates within the projected ranges in the table above and are illustrative, not exact counts.
+---
 
-### 📋 Detailed Future Planning
+## 🤝 Contributing
 
-| Document | Description |
-|:---------|:------------|
-| 📋 [**Future Workflows**](FUTURE_WORKFLOWS.md) | Complete 11-year workflow evolution roadmap with architecture diagrams |
-| 🗺️ [**Future Mindmap**](FUTURE_MINDMAP.md) | Capability expansion map from Swedish monitoring to global democratic intelligence |
-| 🚀 [Future Architecture](FUTURE_ARCHITECTURE.md) | Architectural evolution from static site to AI-native platform |
-| 🔒 [Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md) | Security roadmap including post-quantum cryptography |
-| 💼 [Future SWOT](FUTURE_SWOT.md) | Strategic opportunities in democratic technology |
+Contributions welcome under Hack23's secure-development standards.
+
+1. Fork the repository and create a descriptive feature branch
+2. **GPG-sign** every commit · enable **MFA** on your GitHub account
+3. Run quality checks locally (`npm run htmlhint && npm test && npm run build`)
+4. Submit a pull request with comprehensive description; address review feedback
+5. Never introduce security vulnerabilities; follow [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
 
 ---
 
 ## 🏢 About Hack23
 
-**Hack23 AB (Org.nr 5595347807)** - Swedish cybersecurity and open-source intelligence consultancy
+**Hack23 AB** (Org.nr 559534-7807) — Swedish cybersecurity and open-source intelligence consultancy.
 
-- 🌐 **Website**: [www.hack23.com](https://www.hack23.com)
-- 💼 **LinkedIn**: [Company Profile](https://www.linkedin.com/company/hack23/)
-- 👨‍💻 **Founder**: [James Pether Sörling, CISSP, CISM](https://www.linkedin.com/in/jamessorling/)
-- 🔒 **ISMS**: [Public ISMS Repository](https://github.com/Hack23/ISMS-PUBLIC)
+- 🌐 [www.hack23.com](https://www.hack23.com) · 📰 [Blog](https://hack23.com/blog.html)
+- 💼 [LinkedIn — Hack23](https://www.linkedin.com/company/hack23/)
+- 👨‍💻 Founder: [James Pether Sörling, CISSP, CISM](https://www.linkedin.com/in/jamessorling/)
+- 🛡️ [Public ISMS](https://github.com/Hack23/ISMS-PUBLIC) · 🕵️ [CIA platform](https://github.com/Hack23/cia)
 
-## 🤝 Contributing
-
-Contributions welcome! Please follow Hack23's secure development standards:
-
-1. **Fork** the repository
-2. **Create** a feature branch with descriptive name
-3. **Sign** commits with GPG key
-4. **Test** changes locally (HTML validation, link checking)
-5. **Submit** pull request with comprehensive description
-6. **Address** code review feedback
-
-**Requirements:**
-- GitHub account with MFA enabled
-- GPG-signed commits
-- HTML validation passing
-- No security vulnerabilities introduced
+---
 
 ## 📜 License
 
-Copyright © 2008-2026 Hack23 AB (Org.nr 5595347807)
-
-Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) file for details.
-
-## 🔗 Links
-
-- **Website:** [riksdagsmonitor.com](https://riksdagsmonitor.com)
-- **CIA Platform:** [www.hack23.com/cia](https://www.hack23.com/cia)
-- **GitHub:** [github.com/Hack23/riksdagsmonitor](https://github.com/Hack23/riksdagsmonitor)
-- **Hack23:** [www.hack23.com](https://www.hack23.com)
-- **ISMS:** [github.com/Hack23/ISMS](https://github.com/Hack23/ISMS)
-- **LinkedIn:** [James Pether Sörling](https://www.linkedin.com/in/jamessorling/)
-
-## 👨‍💻 Maintainer
-
-**James Pether Sörling**  
-CISSP, CISM  
-CEO, Hack23 AB  
-[LinkedIn](https://www.linkedin.com/in/jamessorling/) | [GitHub](https://github.com/pethers)
+Copyright © 2008–2026 **Hack23 AB** (Org.nr 559534-7807). Licensed under the **Apache License 2.0** — see [`LICENSE`](LICENSE).
 
 ---
 
-*Monitor political activity in Sweden with systematic transparency*
-
-
-
----
-
-## 🌐 Authoritative Data Sources (Current State)
-
-Riksdagsmonitor uses a **provider-tiered** data architecture, with each provider chosen for its area of strength. As of **2026-04-24**, all four providers are implemented and in production.
-
-| Tier | Provider | Scope | Access |
-|---|---|---|---|
-| **Primary economic** | **IMF** (Datamapper REST + SDMX 3.0) | GDP, growth, unemployment, inflation, fiscal balance, debt, current account, bilateral trade, commodity prices, exchange rates, government spending by COFOG function — including T+5 projections | Pure-TypeScript client `scripts/imf-client.ts` (intentionally non-MCP) |
-| **Parliamentary primary** | **Riksdagen Open Data** | Documents, motions, votes, MPs, speeches | `riksdag-regering` MCP server |
-| **Swedish ground truth** | **SCB** (PxWeb v2) | Swedish monthly labour (AKU), monthly inflation (KPI), regional/municipal, budget execution | `scb` MCP server |
-| **Non-economic residue** | **World Bank** | Governance (WGI), environment, social/education residue, defence-spending depth | `world-bank` MCP server |
-
-**Why this split** — IMF uses uniform SNA 2008 / GFSM 2014 / BPM6 methodology across countries (essential for cross-country comparison), publishes T+5 projections (essential for look-ahead workflows), and has fresher data than World Bank's economic indicators. World Bank remains the canonical source for the classes IMF does not publish (WGI governance, environment).
-
-Authority: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1 · hub: [`analysis/imf/`](analysis/imf/) · agent guide: [`AGENTS.md`](AGENTS.md) §IMF.
-
----
-
-## 🏛️ Statskontoret Swedish Administration Integration
-
-Riksdagsmonitor now includes a pure-TypeScript Statskontoret integration for Swedish government-body and central-government budget-execution context.
-
-| Dataset | Use |
-|---|---|
-| Myndighetsförteckning | Authority count, department grouping, leadership form and årsarbetskrafter/headcount over time. |
-| Årsutfall för statens budget | Annual central-government revenue and expenditure outturns. |
-| Månadsutfall för statens budget | Monthly budget execution from 2006 onward. |
-| Tidsserier, statens budget m.m. | Long-run Swedish budget context. |
-
-Quick commands:
-
-```bash
-tsx scripts/statskontoret-fetch.ts list-sources
-tsx scripts/statskontoret-fetch.ts discover --source arsutfall --persist
-tsx scripts/statskontoret-fetch.ts headcount --url "https://www.statskontoret.se/...xlsx" --persist
-```
-
-Architecture and governance references:
-
-- `analysis/statskontoret/README.md` — integration hub.
-- `analysis/statskontoret/indicators-inventory.json` — machine-readable source catalogue.
-- `analysis/statskontoret/data-dictionary.md` — field and freshness rules.
-- `scripts/statskontoret-client.ts` / `scripts/statskontoret-fetch.ts` — client and workflow CLI.
-- `tests/statskontoret-client.test.ts`, `tests/statskontoret-fetch.test.ts`, `tests/statskontoret-inventory.test.ts` — regression coverage.
-
-Provider rule: IMF remains primary for macro/fiscal projections, SCB remains Swedish statistical ground truth, World Bank remains governance/environment/social residue, and Statskontoret is authoritative for Swedish agency structure and central-government budget execution.
-
+<p align="center"><em>🗳️ Empower citizens · 🔍 Strengthen democratic accountability · 🕵️ Illuminate the political process</em></p>
