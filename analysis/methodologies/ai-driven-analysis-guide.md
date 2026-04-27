@@ -95,6 +95,28 @@ npx tsx scripts/download-parliamentary-data.ts \
 
 **Write `data-download-manifest.md`** using the [manifest template](../templates/data-download-manifest.md). It records what arrived, from which MCP tools, with what data-depth distribution (FULL-TEXT / SUMMARY / METADATA-ONLY) and — when `--auto-full-text-top-n` is used — the `## Full-Text Fetch Outcomes` table.
 
+After `download-parliamentary-data.ts` completes for `committeeReports`, also run the voting-records script to capture party-level vote counts and defector detection for each betänkande:
+
+```bash
+npx tsx scripts/fetch-voting-records.ts \
+  --date ${ARTICLE_DATE} \
+  --doc-type committeeReports \
+  --persist
+```
+
+This writes `data/voteringar/${ARTICLE_DATE}/{bet}.json` and injects voting-record summaries into `analysis/daily/${ARTICLE_DATE}/committeeReports/voting-records/`.  Each record carries an explicit `status` field. `fetchVotingForBet` emits one of three statuses: `"fetched"` (full table available), `"not_found"` (MCP returned successfully with zero rows — e.g. referral, procedural decision, or committee item without a chamber vote), or `"error"` (transient MCP/network failure with `errorMessage`). Editorial tooling that *knows* a vote is upcoming may also persist `"vote_pending"` annotations manually. The script emits a matching injection template for every non-`fetched` status (`<!-- vote-not-found: {bet} -->`, `<!-- vote-fetch-error: {bet} -->`, `<!-- vote-pending: {bet} -->`), so the coalition-mathematics section can paste the template verbatim and rerun the script to upgrade `error` / `not_found` to `fetched` once data is available.
+
+To fetch the parliamentary forward calendar for week-ahead or month-ahead forecasting, run:
+
+```bash
+npx tsx scripts/fetch-calendar.ts \
+  --from ${ARTICLE_DATE} \
+  --tom ${TOM_DATE} \
+  --persist
+```
+
+This writes `analysis/data/calendar/${ARTICLE_DATE}_${TOM_DATE}.json` using the MCP `get_calendar_events` primary path with automatic fallback to HTML parsing of riksdagen.se/sv/kalendarium/.
+
 If the date yields 0 documents, apply the **Empty-Day Protocol** (§ Empty-Day Handling below) — never publish a "0 documents" file.
 
 ---
@@ -170,7 +192,7 @@ Every run produces **all five Family C files and all seven Family D files**. The
 | ⭐ `methodology-reflection.md` | **VITAL run-audit gate.** Evidence sufficiency, confidence distribution, source diversity, party-neutrality arithmetic, **ICD 203 compliance audit**, three concrete methodology improvements for the next cycle. Skipping it breaks the self-correction loop. | [`methodology-reflection.md`](../templates/methodology-reflection.md) | Key Assumptions Check, Quality of Information Check |
 | `election-2026-analysis.md` | Seat-projection deltas + coalition viability for every run through 2026-09; after the election it converts to a permanent "post-2026 government-formation context" file | [`election-2026-analysis.md`](../templates/election-2026-analysis.md) | Morphological |
 | `voter-segmentation.md` | Demographic / regional / ideological segment impact; when the day's docs are procedural, documents baseline segment positions | [`voter-segmentation.md`](../templates/voter-segmentation.md) | Outside-In Thinking |
-| `coalition-mathematics.md` | Current seat map + pivotal votes + Sainte-Laguë scenarios; stable structure regardless of daily contentiousness | [`coalition-mathematics.md`](../templates/coalition-mathematics.md) | Morphological |
+| `coalition-mathematics.md` | Current seat map + pivotal votes + Sainte-Laguë scenarios; stable structure regardless of daily contentiousness. **MUST** include a voting-record table sourced from `fetch-voting-records` output (`data/voteringar/{date}/{bet}.json`) for every betänkande cited, or one of the explicit annotations: `<!-- vote-not-found: {bet} -->` when `status: "not_found"` (MCP returned successfully with zero data — referral or procedural vote), `<!-- vote-fetch-error: {bet} -->` when `status: "error"` (transient MCP/network failure; rerun once the service is back), or — set manually by editorial tooling that knows a vote is upcoming — `<!-- vote-pending: {bet} -->`. | [`coalition-mathematics.md`](../templates/coalition-mathematics.md) | Morphological |
 | `historical-parallels.md` | Named precedent(s) ≤ 40 years with similarity score; when no obvious parallel exists, documents the "no-precedent" finding with reasoning | [`historical-parallels.md`](../templates/historical-parallels.md) | Outside-In Thinking |
 | `media-framing-analysis.md` | How each party, press quadrant, and platform frames the day; runs every cycle to build the longitudinal frame record | [`media-framing-analysis.md`](../templates/media-framing-analysis.md) | Outside-In Thinking |
 | `implementation-feasibility.md` | Delivery-risk view (budget / IT / regulatory / workforce); when no new bill lands, audits the backlog of in-flight commitments | [`implementation-feasibility.md`](../templates/implementation-feasibility.md) | Premortem Analysis |
@@ -283,6 +305,12 @@ graph TB
 |----------|:--------:|:--------:|:--------:|:--------:|:--------:|
 | Morning per-type (propositions, motions, betänkanden, interpellationer, frågor) | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every doc |
 | Midday week-ahead / month-ahead forecasts | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every forecast item |
+
+> 📅 **Week-ahead / month-ahead calendar enrichment**: For midday forecasting runs, run `fetch-calendar.ts` **before** analysis to pre-populate forward events:
+> ```bash
+> npx tsx scripts/fetch-calendar.ts --from ${ARTICLE_DATE} --tom ${TOM_DATE} --persist
+> ```
+> The resulting `analysis/data/calendar/${ARTICLE_DATE}_${TOM_DATE}.json` feeds `forward-indicators.md` (horizon items) and `coalition-mathematics.md` (scheduled votes). Use the `source` field to cite whether events came from MCP (`"mcp"`) or the web fallback (`"web_fallback"`), and apply the appropriate Admiralty reliability code.
 | Evening analysis | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every doc |
 | Realtime monitor | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | ✅ Every doc |
 | Weekly review | ✅ All 9 | ✅ Both | ✅ All 5 | ✅ All 7 | Top 20 |
