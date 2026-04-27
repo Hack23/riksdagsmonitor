@@ -31,10 +31,13 @@ This is the **only** gate separating analysis from article generation. If it fai
    - `forward-indicators.md` declares **≥ 10 dated indicators** (bullet or table rows matching a date pattern across the four horizon sections).
    - `coalition-mathematics.md` contains a seat-count table (≥ 1 table row with `Ja`/`Nej`/`Avstår` or a party-to-seats mapping).
    - `implementation-feasibility.md` — when it names a recognised agency (Kriminalvården, Polismyndigheten, Försäkringskassan, Skatteverket, Migrationsverket, Arbetsförmedlingen, Socialstyrelsen, Transportstyrelsen, Trafikverket, Naturvårdsverket, Energimyndigheten) — contains a `statskontoret.se` URL citation **or** the literal phrase `none found` in the `Statskontoret relevance` row.
+9. **PIR status sidecar** — `pir-status.json` is present and valid so open PIRs can roll forward to the next cycle.
+10. **Top-2 full-text availability** — when `data-download-manifest.md` contains a `## Full-Text Fetch Outcomes` table (written by `download-parliamentary-data.ts --auto-full-text-top-n`), at least 2 top documents must have `full_text_available=true`. Add `<!-- full-text-fallback: <reason> -->` to the manifest to bypass (e.g. when full text is genuinely unavailable from the MCP server or the flag was not used).
+11. **Supplementary artifacts** — see §Supplementary checks below (blocking for aggregation/Tier-C/multi-run).
 
 ## Implementation
 
-No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–9, plus conditional check 9b where applicable):
+No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–11, plus conditional check 9b where applicable):
 
 ```bash
 set -Eeuo pipefail
@@ -238,9 +241,10 @@ fi
 # populate the `| **Statskontoret relevance** | ... |` row with either a
 # statskontoret.se URL or the literal `none found` when no relevant coverage exists.
 AGENCY_RE='Kriminalvård(en)?|Polismyndigheten|Försäkringskassan|Skatteverket|Migrationsverket|Arbetsförmedlingen|Socialstyrelsen|Transportstyrelsen|Trafikverket|Naturvårdsverket|Energimyndigheten'
+STATSKONTORET_RELEVANCE_RE='^\|[[:space:]]*\*\*Statskontoret relevance\*\*[[:space:]]*\|[[:space:]]*([^|]*statskontoret\.se[^|]*|[^|]*none found[^|]*)\|'
 if [ -s "$ANALYSIS_DIR/implementation-feasibility.md" ]; then
   if grep -qE "$AGENCY_RE" "$ANALYSIS_DIR/implementation-feasibility.md"; then
-    grep -qiE '^\|[[:space:]]*\*\*Statskontoret relevance\*\*[[:space:]]*\|[[:space:]]*([^|]*statskontoret\.se[^|]*|[^|]*none found[^|]*)\|' "$ANALYSIS_DIR/implementation-feasibility.md" \
+    grep -qiE "$STATSKONTORET_RELEVANCE_RE" "$ANALYSIS_DIR/implementation-feasibility.md" \
       || { echo "❌ implementation-feasibility.md: names a recognised agency but the Statskontoret relevance row lacks a statskontoret.se URL or 'none found'"; FAIL=1; }
   fi
 fi
@@ -319,6 +323,26 @@ except Exception as e:
 " 2>&1 || FAIL=1
 fi
 
+# Check 10 — top-2 full-text availability (auto-full-text-top-n gate)
+# When the manifest contains a "Full-Text Fetch Outcomes" table (written by
+# download-parliamentary-data.ts --auto-full-text-top-n), verify that at least
+# 2 top documents have full_text_available=true. A fallback annotation
+# <!-- full-text-fallback: <reason> --> anywhere in the manifest bypasses
+# this check so that runs without the flag, or runs where full text is
+# genuinely unavailable from the MCP server, are not blocked.
+if [ -s "$ANALYSIS_DIR/data-download-manifest.md" ]; then
+  if grep -q "## Full-Text Fetch Outcomes" "$ANALYSIS_DIR/data-download-manifest.md"; then
+    if grep -q "full-text-fallback:" "$ANALYSIS_DIR/data-download-manifest.md"; then
+      : # Fallback annotation present — bypass check
+    else
+      FT_SUCCESS=$(grep -cE '^\|[[:space:]]*[A-Za-z0-9_-]+[[:space:]]*\|[[:space:]]*true' \
+        "$ANALYSIS_DIR/data-download-manifest.md" || true)
+      [ "${FT_SUCCESS:-0}" -ge 2 ] \
+        || { echo "❌ data-download-manifest.md: Full-Text Fetch Outcomes table present but fewer than 2 top documents have full_text_available=true (found ${FT_SUCCESS:-0}). Add <!-- full-text-fallback: <reason> --> to the manifest to bypass."; FAIL=1; }
+    fi
+  fi
+fi
+
 [ "$FAIL" -eq 0 ] || exit 1
 ```
 
@@ -351,7 +375,7 @@ Non-blocking for `standard` / `deep` runs; **blocking for `comprehensive` / Tier
 Inline bash probe — append to the main block after `FAIL=0` bookkeeping completes. Supplementary artifacts have **three independent blocking triggers**, not a single tier-only rule: **aggregation article types** (`weekly-review`, `monthly-review`) require the aggregation artifacts; any run whose **tier** is `comprehensive` (the Tier-C run mode) requires the Tier-C supplementary set; and `cross-run-diff.md` is blocking whenever the workflow has **≥ 2 production runs** of the same article type, including `standard` and `deep` runs. `ARTICLE_TYPE` encodes the workflow family; `ANALYSIS_TIER` (when set) encodes the depth tier (`standard` | `deep` | `comprehensive`); `ANALYSIS_RUN_COUNT` (when set) is the numeric count of runs for the same article-generation cycle (if unset or non-numeric, treated as `1`).
 
 ```bash
-# Check 10 — supplementary artifacts (blocking for aggregation types, any Tier-C run, and S5 when run-count >= 2)
+# Check 11 — supplementary artifacts (blocking for aggregation types, any Tier-C run, and S5 when run-count >= 2)
 IS_AGGREGATION=0
 IS_TIER_C=0
 IS_MULTI_RUN=0
