@@ -10,10 +10,10 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Coverage-70%25_lines-brightgreen?style=for-the-badge" alt="Coverage"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/WCAG-2.1_AA-purple?style=for-the-badge" alt="WCAG 2.1 AA"/></a>
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Coverage-70%25_lines-brightgreen?style=for-the-badge" alt="Coverage"/>
+  <img src="https://img.shields.io/badge/WCAG-2.1_AA-purple?style=for-the-badge" alt="WCAG 2.1 AA"/>
 </p>
 
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **🔄 Review Cycle:** Quarterly  

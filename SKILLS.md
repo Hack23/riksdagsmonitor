@@ -10,10 +10,10 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Skills-91-success?style=for-the-badge" alt="91 Skills"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Categories-12-purple?style=for-the-badge" alt="12 Categories"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Updated-2026--04--22-orange?style=for-the-badge" alt="Updated"/></a>
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Skills-91-success?style=for-the-badge" alt="91 Skills"/>
+  <img src="https://img.shields.io/badge/Categories-12-purple?style=for-the-badge" alt="12 Categories"/>
+  <img src="https://img.shields.io/badge/Updated-2026--04--22-orange?style=for-the-badge" alt="Updated"/>
 </p>
 
 **📋 Document Owner:** CEO | **🏢 Owner:** Hack23 AB (Org.nr 559534-7807) | **🏷️ Classification:** 🟢 Public

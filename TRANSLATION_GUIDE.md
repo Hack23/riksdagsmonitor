@@ -10,10 +10,10 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Languages-14-success?style=for-the-badge" alt="14 Languages"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--10-orange?style=for-the-badge" alt="Effective Date"/></a>
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Languages-14-success?style=for-the-badge" alt="14 Languages"/>
+  <img src="https://img.shields.io/badge/Effective-2026--02--10-orange?style=for-the-badge" alt="Effective Date"/>
 </p>
 
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-10 (UTC)  

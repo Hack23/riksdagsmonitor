@@ -13,10 +13,10 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Integrity-High-orange?style=for-the-badge" alt="Integrity"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/AI--FIRST-2%20Passes-ff006e?style=for-the-badge" alt="AI FIRST"/></a>
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/>
+  <img src="https://img.shields.io/badge/Integrity-High-orange?style=for-the-badge" alt="Integrity"/>
+  <img src="https://img.shields.io/badge/AI--FIRST-2%20Passes-ff006e?style=for-the-badge" alt="AI FIRST"/>
 </p>
 
 **📋 Document Owner:** CEO | **📅 Last Updated:** 2026-04-25 (UTC)  

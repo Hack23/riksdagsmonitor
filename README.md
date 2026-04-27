@@ -81,7 +81,7 @@ The platform is **non-partisan, open-source (Apache-2.0), and operated under the
 
 ## 🌐 Explore the Platform
 
-Four flagship pages anchor the public site. Each is **multilingual (14 languages)**, **WCAG 2.1 AA accessible**, **SEO-optimised** with JSON-LD structured data and `hreflang` alternates, and **CSP-hardened** with Subresource Integrity (SRI) on every CDN asset.
+Five flagship pages anchor the public site. Each is **multilingual (14 languages)**, **WCAG 2.1 AA accessible**, **SEO-optimised** with JSON-LD structured data and `hreflang` alternates, and **CSP-hardened** with Subresource Integrity (SRI) on every CDN asset.
 
 <table>
 <thead>
