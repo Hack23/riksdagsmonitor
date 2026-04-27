@@ -152,12 +152,10 @@ export function parseArgs(argv: string[]): {
   // Defaults to 0 (disabled). Use 2 to guarantee the top-2 DIW-ranked documents
   // have full text available for deep-analysis tiers (L2/L3).
   const autoFullTextTopNArg = get('--auto-full-text-top-n');
-  const DEFAULT_AUTO_FULL_TEXT_TOP_N = 0;
-  const parsedAutoFullTextTopN = autoFullTextTopNArg !== null ? Number(autoFullTextTopNArg) : DEFAULT_AUTO_FULL_TEXT_TOP_N;
-  if (!Number.isInteger(parsedAutoFullTextTopN) || parsedAutoFullTextTopN < 0) {
+  const autoFullTextTopN = autoFullTextTopNArg !== null ? Number(autoFullTextTopNArg) : 0;
+  if (!Number.isInteger(autoFullTextTopN) || autoFullTextTopN < 0) {
     throw new Error(`Invalid --auto-full-text-top-n value: ${autoFullTextTopNArg}. Expected a non-negative integer.`);
   }
-  const autoFullTextTopN = parsedAutoFullTextTopN;
 
   return { date: isoDate, aggregate, limit, weekLabel, rm, docType, documentIds, autoFullTextTopN };
 }

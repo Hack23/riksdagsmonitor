@@ -572,6 +572,9 @@ export async function fetchFullTextForTopN(
       };
 
       const rawText = str(details['text']).trim();
+      // fullText may contain MP profile/deceased-notice text — sanitize it.
+      // text and html fields are structural content from the Riksdag dump and
+      // do not contain person-profile text, so str().trim() is sufficient.
       const rawFullText = sanitize(details['fullText']);
       const rawHtml = str(details['html']).trim();
 
@@ -583,8 +586,8 @@ export async function fetchFullTextForTopN(
           : rawHtml;
 
       if (content.length > FULL_TEXT_MIN_LENGTH) {
-        const safeName = dokId.replace(/[^A-Za-z0-9_-]/g, '_');
-        const filePath = path.join(fullTextDir, `${safeName}.md`);
+        const filenameSafeDokId = dokId.replace(/[^A-Za-z0-9_-]/g, '_');
+        const filePath = path.join(fullTextDir, `${filenameSafeDokId}.md`);
         const snippet = sanitize(details['snippet']) || sanitize(details['summary']) || '';
         const header = [
           `# Full Text — ${dokId}`,
