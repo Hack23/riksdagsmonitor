@@ -35,7 +35,7 @@ import type { RendererData } from './visualizations.js';
 /*  Dashboard initialization                                          */
 /* ------------------------------------------------------------------ */
 
-async function initDashboard(): Promise<void> {
+export async function initDashboard(): Promise<void> {
   const loader = new CIADataLoader();
 
   // Update loading text with i18n
@@ -109,9 +109,10 @@ async function initDashboard(): Promise<void> {
   }
 }
 
-// Initialize on DOM ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initDashboard);
-} else {
-  initDashboard();
+export function startDashboard(): void {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => void initDashboard());
+  } else {
+    void initDashboard();
+  }
 }

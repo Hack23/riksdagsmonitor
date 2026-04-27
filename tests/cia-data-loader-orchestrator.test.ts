@@ -26,6 +26,19 @@ describe('CIADataLoader orchestrator', () => {
     expect(loader.parseCSV('only-header')).toEqual([]);
   });
 
+  it('parseCSV handles quoted commas and multiline fields from larger CIA exports', () => {
+    const loader = new CIADataLoader();
+    const rows = loader.parseCSV('id,title,comment\n1,"Motion, with comma","Line one\nLine two"');
+
+    expect(rows).toEqual([
+      {
+        id: 1,
+        title: 'Motion, with comma',
+        comment: 'Line one\nLine two'
+      }
+    ]);
+  });
+
   it('loadCSV uses the configured base URL and fallback URL', async () => {
     const seen: string[] = [];
     globalThis.fetch = vi.fn().mockImplementation(async (url: string) => {

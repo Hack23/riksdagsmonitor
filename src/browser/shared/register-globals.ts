@@ -15,10 +15,14 @@ import { Chart } from 'chart.js/auto';
 import * as d3 from 'd3';
 import Papa from 'papaparse';
 
-// Expose on globalThis so dashboard modules can access via (globalThis as any).Chart / .d3 / .Papa
-(globalThis as Record<string, unknown>).Chart = Chart;
-(globalThis as Record<string, unknown>).d3 = d3;
-(globalThis as Record<string, unknown>).Papa = Papa;
+export function registerBrowserGlobals(): void {
+  // Expose on globalThis so dashboard modules can access via (globalThis as any).Chart / .d3 / .Papa
+  (globalThis as Record<string, unknown>).Chart = Chart;
+  (globalThis as Record<string, unknown>).d3 = d3;
+  (globalThis as Record<string, unknown>).Papa = Papa;
+}
+
+registerBrowserGlobals();
 
 // Optional Chart.js plugins must be imported explicitly by applications that
 // need them. Do not dynamically import `chartjs-plugin-annotation` here:
