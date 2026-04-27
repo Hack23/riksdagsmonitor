@@ -665,10 +665,10 @@ export async function fetchCalendarWithFallback(
     }
 
     try {
-      console.log(`  🔄 [fetch-calendar] MCP primary attempt ${attempt + 1}/${maxRetries + 1}…`);
+      console.error(`  🔄 [fetch-calendar] MCP primary attempt ${attempt + 1}/${maxRetries + 1}…`);
       const raw = await callMcpCalendarEvents(from, to, resolved);
       const events = raw.map(normalizeMcpCalendarEvent);
-      console.log(`  ✅ [fetch-calendar] MCP primary succeeded — ${events.length} events`);
+      console.error(`  ✅ [fetch-calendar] MCP primary succeeded — ${events.length} events`);
 
       return {
         events,
@@ -691,11 +691,11 @@ export async function fetchCalendarWithFallback(
   }
 
   // ── Web fallback path ──────────────────────────────────────────────────
-  console.log(`  🔄 [fetch-calendar] Falling back to riksdagen.se/sv/kalendarium/…`);
+  console.error(`  🔄 [fetch-calendar] Falling back to riksdagen.se/sv/kalendarium/…`);
   let fallbackError: string | undefined;
   try {
     const events = await fetchWebCalendar(from, to, resolved);
-    console.log(`  ✅ [fetch-calendar] Web fallback succeeded — ${events.length} events`);
+    console.error(`  ✅ [fetch-calendar] Web fallback succeeded — ${events.length} events`);
 
     return {
       events,
@@ -737,10 +737,12 @@ const REPO_ROOT = path.resolve(__dirname, '..');
 const CALENDAR_DIR = path.join(REPO_ROOT, 'data', 'calendar');
 
 /**
- * Write a `CalendarFetchResult` to `data/calendar/{from}.json`.
+ * Write a `CalendarFetchResult` to `data/calendar/{from}_{to}.json`.
  *
  * The file is an object with `{ manifest, events }` so that consumers can
  * load a single file and get both the data and the provenance record.
+ * Including `to` in the filename prevents collisions when the same `from`
+ * date is fetched with different ranges (e.g. week-ahead vs month-ahead).
  */
 export function persistCalendarJson(
   from: string,
@@ -748,14 +750,16 @@ export function persistCalendarJson(
   outputDir: string = CALENDAR_DIR,
 ): string {
   fs.mkdirSync(outputDir, { recursive: true });
-  const outputPath = path.join(outputDir, `${from}.json`);
+  const dateTo = result.manifest.dateTo ?? from;
+  const fileName = dateTo && dateTo !== from ? `${from}_${dateTo}.json` : `${from}.json`;
+  const outputPath = path.join(outputDir, fileName);
   const payload = {
     schema: 'riksdagsmonitor-calendar/1.0',
     manifest: result.manifest,
     events: result.events,
   };
   fs.writeFileSync(outputPath, JSON.stringify(payload, null, 2), 'utf8');
-  console.log(`  💾 [fetch-calendar] Persisted ${result.events.length} events → ${outputPath}`);
+  console.error(`  💾 [fetch-calendar] Persisted ${result.events.length} events → ${outputPath}`);
   return outputPath;
 }
 
@@ -791,7 +795,20 @@ export function formatManifestMarkdown(manifest: CalendarFetchManifest): string 
   return lines.join('\n');
 }
 
-/** Parse CLI argv into `{ from, to, persist }`. */
+/** Thrown by `parseCalendarArgs` for invalid CLI arguments (exit code 2). */
+export class CliArgsError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'CliArgsError';
+  }
+}
+
+/**
+ * Parse CLI argv into `{ from, to, persist }`.
+ *
+ * Accepts `--to` (preferred) and `--tom` (Swedish alias, used in repo docs)
+ * as the end-date flag. Throws `CliArgsError` for invalid arguments.
+ */
 export function parseCalendarArgs(argv: readonly string[]): {
   from: string;
   to: string;
@@ -813,29 +830,31 @@ export function parseCalendarArgs(argv: readonly string[]): {
   }
   const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
   const from = flags.get('from') ?? '';
-  const to = flags.get('to') ?? '';
+  // Accept both `--to` and `--tom` (Swedish alias used in repo docs).
+  const to = flags.get('to') ?? flags.get('tom') ?? '';
   if (!ISO_DATE_RE.test(from)) {
-    throw new Error(`--from must be an ISO 8601 date (YYYY-MM-DD), got: "${from}"`);
+    throw new CliArgsError(`--from must be an ISO 8601 date (YYYY-MM-DD), got: "${from}"`);
   }
   if (!ISO_DATE_RE.test(to)) {
-    throw new Error(`--to must be an ISO 8601 date (YYYY-MM-DD), got: "${to}"`);
+    throw new CliArgsError(`--to must be an ISO 8601 date (YYYY-MM-DD), got: "${to}"`);
   }
   return { from, to, persist: booleans.has('persist') };
 }
 
 async function main(): Promise<void> {
   const args = parseCalendarArgs(process.argv.slice(2));
-  console.log(`📅 [fetch-calendar] Fetching ${args.from} → ${args.to}`);
+  console.error(`📅 [fetch-calendar] Fetching ${args.from} → ${args.to}`);
 
   const result = await fetchCalendarWithFallback(args.from, args.to);
 
-  console.log(formatManifestMarkdown(result.manifest));
+  // Manifest is human-readable status info → stderr, not stdout.
+  console.error(formatManifestMarkdown(result.manifest));
 
   if (args.persist) {
     persistCalendarJson(args.from, result);
   } else {
     // Print JSON to stdout for piping / agentic workflow consumption.
-    console.log(JSON.stringify(result, null, 2));
+    process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
   }
 
   if (result.manifest.path === 'none') {
@@ -847,6 +866,7 @@ async function main(): Promise<void> {
 if (path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1] ?? '')) {
   main().catch((err: unknown) => {
     console.error('❌ [fetch-calendar] Fatal error:', err instanceof Error ? err.message : err);
-    process.exit(1);
+    // Bad CLI arguments → exit code 2 (per module header & repo convention).
+    process.exit(err instanceof CliArgsError ? 2 : 1);
   });
 }

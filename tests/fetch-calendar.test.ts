@@ -35,6 +35,7 @@ import {
   formatManifestMarkdown,
   parseCalendarArgs,
   persistCalendarJson,
+  CliArgsError,
   type CalendarFetchConfig,
   type CalendarEvent,
 } from '../scripts/fetch-calendar.js';
@@ -722,6 +723,28 @@ describe('parseCalendarArgs', () => {
       parseCalendarArgs(['--from', '28-04-2026', '--to', '2026-05-04']),
     ).toThrow(/ISO 8601/);
   });
+
+  it('accepts --tom as an alias for --to (Swedish, used in repo docs)', () => {
+    const args = parseCalendarArgs(['--from', '2026-04-28', '--tom', '2026-05-04']);
+    expect(args.from).toBe('2026-04-28');
+    expect(args.to).toBe('2026-05-04');
+  });
+
+  it('prefers --to over --tom when both are provided', () => {
+    const args = parseCalendarArgs([
+      '--from', '2026-04-28',
+      '--to', '2026-05-04',
+      '--tom', '2026-05-31',
+    ]);
+    expect(args.to).toBe('2026-05-04');
+  });
+
+  it('throws CliArgsError (typed) for invalid arguments', () => {
+    expect(() => parseCalendarArgs(['--to', '2026-05-04'])).toThrow(CliArgsError);
+    expect(() =>
+      parseCalendarArgs(['--from', 'bogus', '--to', '2026-05-04']),
+    ).toThrow(CliArgsError);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -944,5 +967,23 @@ describe('persistCalendarJson', () => {
 
     const outPath = persistCalendarJson('2026-05-01', result, outputDir);
     expect(outPath).toBe(path.join(outputDir, '2026-05-01.json'));
+  });
+
+  it('uses {from}_{dateTo}.json when range spans multiple days', () => {
+    const outputDir = path.join(tmpDir, 'calendar');
+    const result = {
+      manifest: {
+        path: 'mcp-primary' as const,
+        date: '2026-04-28',
+        dateTo: '2026-05-04',
+        eventCount: 0,
+        fetchedAt: '2026-04-28T00:00:00.000Z',
+      },
+      events: [],
+    };
+
+    const outPath = persistCalendarJson('2026-04-28', result, outputDir);
+    expect(outPath).toBe(path.join(outputDir, '2026-04-28_2026-05-04.json'));
+    expect(fs.existsSync(outPath)).toBe(true);
   });
 });
