@@ -35,7 +35,7 @@
     },
     "subfolder": {
       "type": "string",
-      "description": "Relative subfolder path under `analysis/daily/YYYY-MM-DD/` — must equal the `cycle` value.",
+      "description": "Relative subfolder path under `analysis/daily/YYYY-MM-DD/` — typically equal to `cycle`. Cross-field equality is not enforced by the schema (it would require a verbose `oneOf` per cycle); the CI analysis gate (Check 10 in `.github/prompts/05-analysis-gate.md`) and the `roll-forward-pirs.ts` writer enforce `subfolder === cycle`.",
       "minLength": 1
     },
     "generated_at": {
@@ -118,7 +118,14 @@
           "description": "Admiralty Code grade of the best available source for the current status (STANAG 2022). Source reliability A–F + information credibility 1–6.",
           "pattern": "^[A-F][1-6]$"
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "answered" } }, "required": ["status"] },
+          "then": { "required": ["answer_summary"] },
+          "else": { "not": { "required": ["answer_summary"] } }
+        }
+      ]
     }
   }
 }

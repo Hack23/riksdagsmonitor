@@ -7,18 +7,22 @@
  * Reads `pir-status.json` from a previous analysis cycle and propagates all
  * open PIRs into the target cycle directory, creating a fresh `pir-status.json`
  * that inherits the `pir_id` chain. Answered, superseded, cancelled, and
- * deferred PIRs are carried forward with their status preserved so analysts
- * can see the full history.
+ * deferred PIRs are carried forward unchanged (preserving their existing
+ * `inherits_from` history) so analysts can see the full chain.
+ *
+ * Module exports (for unit testing): `degrade`, `validateSource`, `rollForward`,
+ * `findLatestSource`, `parseArgs`, `subtractDays`, `runMain`. The CLI entry
+ * point only fires when this file is invoked directly (see isMainModule guard
+ * at the bottom of the file).
  *
  * Usage:
  *   npx tsx scripts/roll-forward-pirs.ts \
  *     --from analysis/daily/2026-04-26/month-ahead \
  *     --to   analysis/daily/2026-04-27/month-ahead
  *
- *   # Auto-detect previous day:
+ *   # Auto-detect previous cycle within 14 days:
  *   npx tsx scripts/roll-forward-pirs.ts \
- *     --date 2026-04-27 \
- *     --cycle month-ahead
+ *     --date 2026-04-27 --cycle month-ahead
  *
  *   # Dry-run (print JSON, do not write):
  *   npx tsx scripts/roll-forward-pirs.ts \
@@ -26,8 +30,9 @@
  *
  * Exit codes:
  *   0 — success (file written or dry-run)
- *   1 — no source found (non-fatal when source dir does not exist yet)
- *   2 — schema validation error in source file
+ *   1 — no source found, missing args, unknown cycle
+ *   2 — schema validation error in source file (malformed JSON, unknown
+ *       status/confidence enum, missing required field, bad pir_id)
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -41,9 +46,9 @@ import { fileURLToPath } from 'node:url';
 // Types (inlined to keep the module self-contained)
 // ---------------------------------------------------------------------------
 
-type PirStatus = 'open' | 'answered' | 'superseded' | 'deferred' | 'cancelled';
-type Confidence = 'VERY HIGH' | 'HIGH' | 'MEDIUM' | 'LOW' | 'VERY LOW';
-type CycleType =
+export type PirStatus = 'open' | 'answered' | 'superseded' | 'deferred' | 'cancelled';
+export type Confidence = 'VERY HIGH' | 'HIGH' | 'MEDIUM' | 'LOW' | 'VERY LOW';
+export type CycleType =
   | 'committeeReports'
   | 'propositions'
   | 'motions'
@@ -55,7 +60,7 @@ type CycleType =
   | 'weekly-review'
   | 'monthly-review';
 
-interface PirEntry {
+export interface PirEntry {
   pir_id: string;
   statement: string;
   trigger?: string;
@@ -68,7 +73,7 @@ interface PirEntry {
   admiralty_grade?: string;
 }
 
-interface PirStatusFile {
+export interface PirStatusFile {
   schema_version: '1.0';
   cycle: CycleType;
   date: string;
@@ -83,7 +88,7 @@ interface PirStatusFile {
 // ---------------------------------------------------------------------------
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const REPO_ROOT = path.resolve(__dirname, '..');
+export const REPO_ROOT = path.resolve(__dirname, '..');
 const ANALYSIS_DIR = path.join(REPO_ROOT, 'analysis', 'daily');
 const PIR_FILE = 'pir-status.json';
 
@@ -100,29 +105,61 @@ const VALID_CYCLES = new Set<CycleType>([
   'monthly-review',
 ]);
 
+const VALID_STATUSES = new Set<PirStatus>([
+  'open',
+  'answered',
+  'superseded',
+  'deferred',
+  'cancelled',
+]);
+
+const CONFIDENCE_ORDER: Confidence[] = [
+  'VERY HIGH',
+  'HIGH',
+  'MEDIUM',
+  'LOW',
+  'VERY LOW',
+];
+const VALID_CONFIDENCES = new Set<Confidence>(CONFIDENCE_ORDER);
+const PIR_ID_PATTERN = /^PIR-[A-Za-z0-9]+(-[A-Za-z0-9]+)*$/;
+
 // ---------------------------------------------------------------------------
-// Helpers
+// Pure helpers (exported for unit testing)
 // ---------------------------------------------------------------------------
 
 /** Subtract N calendar days from an ISO date string, returning YYYY-MM-DD. */
-function subtractDays(isoDate: string, n: number): string {
+export function subtractDays(isoDate: string, n: number): string {
   const d = new Date(`${isoDate}T12:00:00Z`);
   d.setUTCDate(d.getUTCDate() - n);
   return d.toISOString().slice(0, 10);
 }
 
 /**
+ * Degrade a confidence label one step toward `VERY LOW`.
+ * Throws on unknown values rather than silently returning `VERY HIGH`.
+ */
+export function degrade(c: Confidence): Confidence {
+  const idx = CONFIDENCE_ORDER.indexOf(c);
+  if (idx === -1) {
+    throw new Error(`Unknown confidence value: '${String(c)}'`);
+  }
+  if (idx >= CONFIDENCE_ORDER.length - 1) return 'VERY LOW';
+  return CONFIDENCE_ORDER[idx + 1] as Confidence;
+}
+
+/**
  * Walk backwards up to `maxLookback` days to find the most recent
  * `pir-status.json` for the given cycle.
  */
-function findLatestSource(
+export function findLatestSource(
   cycle: string,
   beforeDate: string,
   maxLookback = 14,
+  analysisDir: string = ANALYSIS_DIR,
 ): string | null {
   for (let i = 1; i <= maxLookback; i++) {
     const candidate = path.join(
-      ANALYSIS_DIR,
+      analysisDir,
       subtractDays(beforeDate, i),
       cycle,
       PIR_FILE,
@@ -132,8 +169,15 @@ function findLatestSource(
   return null;
 }
 
-/** Basic structural validation — not a full JSON Schema validator. */
-function validateSource(raw: unknown, filePath: string): PirStatusFile {
+/**
+ * Strict structural + enum validation. Validates top-level required fields,
+ * `schema_version`, `pirs` array shape, and each PIR's `pir_id` pattern,
+ * `status`, and `confidence` enum membership. Does not call ajv to keep the
+ * script dependency-free.
+ *
+ * @throws Error with descriptive message on any validation failure.
+ */
+export function validateSource(raw: unknown, filePath: string): PirStatusFile {
   if (typeof raw !== 'object' || raw === null) {
     throw new Error(`${filePath}: not a JSON object`);
   }
@@ -142,10 +186,50 @@ function validateSource(raw: unknown, filePath: string): PirStatusFile {
     if (!(key in obj)) throw new Error(`${filePath}: missing required field '${key}'`);
   }
   if (obj['schema_version'] !== '1.0') {
-    throw new Error(`${filePath}: unsupported schema_version '${String(obj['schema_version'])}'`);
+    throw new Error(
+      `${filePath}: unsupported schema_version '${String(obj['schema_version'])}'`,
+    );
   }
   if (!Array.isArray(obj['pirs'])) {
     throw new Error(`${filePath}: 'pirs' must be an array`);
+  }
+  // Strict per-entry validation.
+  for (let i = 0; i < (obj['pirs'] as unknown[]).length; i++) {
+    const p = (obj['pirs'] as unknown[])[i] as Record<string, unknown>;
+    if (typeof p !== 'object' || p === null) {
+      throw new Error(`${filePath}: pirs[${i}] is not an object`);
+    }
+    if (typeof p['pir_id'] !== 'string' || !PIR_ID_PATTERN.test(p['pir_id'])) {
+      throw new Error(
+        `${filePath}: pirs[${i}].pir_id '${String(p['pir_id'])}' does not match ${PIR_ID_PATTERN}`,
+      );
+    }
+    if (typeof p['statement'] !== 'string' || p['statement'].length < 10) {
+      throw new Error(
+        `${filePath}: pirs[${i}] (${String(p['pir_id'])}).statement missing or shorter than 10 chars`,
+      );
+    }
+    if (!VALID_STATUSES.has(p['status'] as PirStatus)) {
+      throw new Error(
+        `${filePath}: pirs[${i}] (${String(p['pir_id'])}).status '${String(p['status'])}' is not a valid PIR status`,
+      );
+    }
+    if (!VALID_CONFIDENCES.has(p['confidence'] as Confidence)) {
+      throw new Error(
+        `${filePath}: pirs[${i}] (${String(p['pir_id'])}).confidence '${String(p['confidence'])}' is not a valid confidence value`,
+      );
+    }
+    if (p['status'] === 'answered') {
+      if (typeof p['answer_summary'] !== 'string' || p['answer_summary'].length === 0) {
+        throw new Error(
+          `${filePath}: pirs[${i}] (${String(p['pir_id'])}) status='answered' requires non-empty answer_summary`,
+        );
+      }
+    } else if (p['answer_summary'] !== undefined) {
+      throw new Error(
+        `${filePath}: pirs[${i}] (${String(p['pir_id'])}) status='${String(p['status'])}' must not carry answer_summary`,
+      );
+    }
   }
   return obj as unknown as PirStatusFile;
 }
@@ -153,54 +237,55 @@ function validateSource(raw: unknown, filePath: string): PirStatusFile {
 /**
  * Build a rolled-forward PIR status file.
  *
- * Open PIRs are carried forward with confidence degraded by one level
- * (HIGH → MEDIUM, etc.) to signal that staleness must be addressed.
- * All other PIRs are preserved as-is so the history is visible.
+ * - Open PIRs are carried forward with confidence degraded by one level
+ *   (HIGH → MEDIUM, etc.) to signal that staleness must be addressed; the
+ *   prior `pir_id` is appended to the existing `inherits_from` chain so
+ *   inheritance is fully preserved.
+ * - Non-open PIRs (answered, superseded, deferred, cancelled) are carried
+ *   forward UNCHANGED — including any pre-existing `inherits_from` chain —
+ *   so the historical lineage is never lost.
  */
-function rollForward(
+export function rollForward(
   source: PirStatusFile,
   sourcePath: string,
   targetDate: string,
   targetCycle: CycleType,
+  options: { now?: () => Date; repoRoot?: string } = {},
 ): PirStatusFile {
-  const CONFIDENCE_ORDER: Confidence[] = [
-    'VERY HIGH',
-    'HIGH',
-    'MEDIUM',
-    'LOW',
-    'VERY LOW',
-  ];
-
-  const degrade = (c: Confidence): Confidence => {
-    const idx = CONFIDENCE_ORDER.indexOf(c);
-    return idx < CONFIDENCE_ORDER.length - 1
-      ? (CONFIDENCE_ORDER[idx + 1] as Confidence)
-      : 'VERY LOW';
-  };
+  const now = options.now ?? (() => new Date());
+  const repoRoot = options.repoRoot ?? REPO_ROOT;
 
   const pirs: PirEntry[] = source.pirs.map((p) => {
     if (p.status !== 'open') {
-      // Non-open PIRs are carried forward unchanged for history.
-      return { ...p, inherits_from: [p.pir_id] };
+      // Non-open PIRs are carried forward UNCHANGED so prior inherits_from
+      // chains are preserved in full.
+      return { ...p };
     }
     // Destructure to explicitly drop answer_summary for open (carried-forward) PIRs.
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // (An open PIR may have inherited an answer_summary if a workflow ever
+    // re-opens it; clearing on roll-forward keeps the schema invariant.)
     const { answer_summary: _dropped, ...rest } = p;
+    void _dropped;
     return {
       ...rest,
       // Degrade confidence to signal this PIR needs fresh review.
       confidence: degrade(p.confidence),
+      // Append the prior pir_id to any existing inherits_from chain.
       inherits_from: [...(p.inherits_from ?? []), p.pir_id],
     };
   });
+
+  const relativeSourcePath = sourcePath.startsWith(repoRoot + path.sep)
+    ? sourcePath.slice(repoRoot.length + 1).replace(/\\/g, '/')
+    : sourcePath.replace(/\\/g, '/');
 
   return {
     schema_version: '1.0',
     cycle: targetCycle,
     date: targetDate,
     subfolder: targetCycle,
-    generated_at: new Date().toISOString(),
-    inherited_from: sourcePath.replace(REPO_ROOT + path.sep, '').replace(/\\/g, '/'),
+    generated_at: now().toISOString(),
+    inherited_from: relativeSourcePath,
     pirs,
   };
 }
@@ -209,7 +294,7 @@ function rollForward(
 // CLI argument parsing
 // ---------------------------------------------------------------------------
 
-interface CliArgs {
+export interface CliArgs {
   from?: string;
   to?: string;
   date?: string;
@@ -218,7 +303,7 @@ interface CliArgs {
   maxLookback: number;
 }
 
-function parseArgs(argv: string[]): CliArgs {
+export function parseArgs(argv: string[]): CliArgs {
   const args: CliArgs = { dryRun: false, maxLookback: 14 };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
@@ -233,10 +318,21 @@ function parseArgs(argv: string[]): CliArgs {
 }
 
 // ---------------------------------------------------------------------------
-// Main
+// Main (CLI entry point)
 // ---------------------------------------------------------------------------
 
-async function main(argv: string[]): Promise<void> {
+export interface RunIO {
+  stdout?: NodeJS.WritableStream;
+  stderr?: NodeJS.WritableStream;
+  cwd?: string;
+  exit?: (code: number) => never;
+  now?: () => Date;
+}
+
+export function runMain(argv: string[], io: RunIO = {}): void {
+  const out = io.stdout ?? process.stdout;
+  const err = io.stderr ?? process.stderr;
+  const exit = io.exit ?? ((c: number): never => process.exit(c));
   const args = parseArgs(argv);
 
   let sourcePath: string;
@@ -245,33 +341,33 @@ async function main(argv: string[]): Promise<void> {
   let targetCycle: CycleType;
 
   if (args.from && args.to) {
-    // Explicit paths provided.
     sourcePath = path.isAbsolute(args.from)
       ? path.join(args.from, PIR_FILE)
       : path.join(REPO_ROOT, args.from, PIR_FILE);
-    targetDir = path.isAbsolute(args.to)
-      ? args.to
-      : path.join(REPO_ROOT, args.to);
+    targetDir = path.isAbsolute(args.to) ? args.to : path.join(REPO_ROOT, args.to);
 
     if (!fs.existsSync(sourcePath)) {
-      console.error(`Source not found: ${sourcePath}`);
-      process.exit(1);
+      err.write(`Source not found: ${sourcePath}\n`);
+      exit(1);
+      return;
     }
-    // Derive targetDate and targetCycle from `--to` path.
+    // Derive targetDate and targetCycle from `--to` path (bounds-checked).
     const parts = targetDir.replace(/\\/g, '/').split('/');
     const dailyIdx = parts.indexOf('daily');
     const datePart = dailyIdx >= 0 && dailyIdx + 1 < parts.length ? (parts[dailyIdx + 1] ?? '') : '';
     const cyclePart = dailyIdx >= 0 && dailyIdx + 2 < parts.length ? (parts[dailyIdx + 2] ?? '') : '';
     targetDate = datePart;
     targetCycle = cyclePart as CycleType;
-    if (!targetDate.match(/^\d{4}-\d{2}-\d{2}$/) || !VALID_CYCLES.has(targetCycle)) {
-      console.error(`Cannot derive date/cycle from --to path: ${args.to}`);
-      process.exit(1);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(targetDate) || !VALID_CYCLES.has(targetCycle)) {
+      err.write(`Cannot derive date/cycle from --to path: ${args.to}\n`);
+      exit(1);
+      return;
     }
   } else if (args.date && args.cycle) {
     if (!VALID_CYCLES.has(args.cycle)) {
-      console.error(`Unknown cycle: ${args.cycle}. Valid: ${[...VALID_CYCLES].join(', ')}`);
-      process.exit(1);
+      err.write(`Unknown cycle: ${args.cycle}. Valid: ${[...VALID_CYCLES].join(', ')}\n`);
+      exit(1);
+      return;
     }
     targetDate = args.date;
     targetCycle = args.cycle;
@@ -279,62 +375,81 @@ async function main(argv: string[]): Promise<void> {
 
     const found = findLatestSource(targetCycle, targetDate, args.maxLookback);
     if (!found) {
-      console.warn(
-        `No previous pir-status.json found for cycle '${targetCycle}' within ${args.maxLookback} days before ${targetDate}. Exiting with code 1.`,
+      err.write(
+        `No previous pir-status.json found for cycle '${targetCycle}' within ${args.maxLookback} days before ${targetDate}. Exiting with code 1.\n`,
       );
-      process.exit(1);
+      exit(1);
+      return;
     }
     sourcePath = found;
   } else {
-    console.error(
+    err.write(
       'Usage:\n' +
         '  roll-forward-pirs --from <dir> --to <dir>\n' +
-        '  roll-forward-pirs --date YYYY-MM-DD --cycle <cycle> [--dry-run] [--max-lookback N]',
+        '  roll-forward-pirs --date YYYY-MM-DD --cycle <cycle> [--dry-run] [--max-lookback N]\n',
     );
-    process.exit(1);
+    exit(1);
+    return;
   }
 
   // Read and validate source.
   let rawSource: unknown;
   try {
     rawSource = JSON.parse(fs.readFileSync(sourcePath, 'utf-8'));
-  } catch (err) {
-    console.error(`Failed to read source: ${String(err)}`);
-    process.exit(2);
+  } catch (e) {
+    err.write(`Failed to read source: ${String(e)}\n`);
+    exit(2);
+    return;
   }
 
   let source: PirStatusFile;
   try {
     source = validateSource(rawSource, sourcePath);
-  } catch (err) {
-    console.error(`Schema validation error: ${String(err)}`);
-    process.exit(2);
-  }
-
-  // Build rolled-forward output.
-  const output = rollForward(source, sourcePath, targetDate, targetCycle);
-
-  const json = JSON.stringify(output, null, 2) + '\n';
-
-  if (args.dryRun) {
-    process.stdout.write(json);
+  } catch (e) {
+    err.write(`Schema validation error: ${String(e)}\n`);
+    exit(2);
     return;
   }
 
-  // Write to target directory (create if needed).
-  if (!fs.existsSync(targetDir)) {
-    fs.mkdirSync(targetDir, { recursive: true });
+  const opts: { now?: () => Date } = {};
+  if (io.now) opts.now = io.now;
+  const output = rollForward(source, sourcePath, targetDate, targetCycle, opts);
+  const json = JSON.stringify(output, null, 2) + '\n';
+
+  if (args.dryRun) {
+    out.write(json);
+    return;
   }
+
+  if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir, { recursive: true });
   const targetPath = path.join(targetDir, PIR_FILE);
   fs.writeFileSync(targetPath, json, 'utf-8');
 
-  console.log(
+  out.write(
     `✅ Rolled forward ${source.pirs.filter((p) => p.status === 'open').length} open PIR(s) ` +
-      `from ${sourcePath.replace(REPO_ROOT + path.sep, '')} → ${targetPath.replace(REPO_ROOT + path.sep, '')}`,
+      `from ${sourcePath.replace(REPO_ROOT + path.sep, '')} → ${targetPath.replace(REPO_ROOT + path.sep, '')}\n`,
   );
 }
 
-main(process.argv.slice(2)).catch((err: unknown) => {
-  console.error('Unexpected error:', err);
-  process.exit(1);
-});
+// ---------------------------------------------------------------------------
+// CLI guard — only run main() when invoked directly.
+// ---------------------------------------------------------------------------
+
+const isMainModule = (() => {
+  try {
+    const invokedPath = process.argv[1] ? path.resolve(process.argv[1]) : '';
+    const modulePath = fileURLToPath(import.meta.url);
+    return invokedPath === modulePath;
+  } catch {
+    return false;
+  }
+})();
+
+if (isMainModule) {
+  try {
+    runMain(process.argv.slice(2));
+  } catch (e) {
+    process.stderr.write(`Unexpected error: ${String(e)}\n`);
+    process.exit(1);
+  }
+}

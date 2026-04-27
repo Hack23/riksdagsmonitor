@@ -271,21 +271,35 @@ try:
 except Exception:
     sys.exit(1)
 " 2>/dev/null || { echo "❌ pir-status.json: 'pirs' field must be a JSON array"; FAIL=1; }
-  # each open PIR must have pir_id, statement, status, confidence
+  # each PIR (any status) must have valid pir_id, statement, status, confidence;
+  # answered PIRs must carry answer_summary; non-answered PIRs must not.
   python3 -c "
 import json, sys, re
 try:
     d = json.load(open('$PIR_FILE'))
     PIR_ID_RE = re.compile(r'^PIR-[A-Za-z0-9]+(-[A-Za-z0-9]+)*$')
+    VALID_STATUS = {'open','answered','superseded','deferred','cancelled'}
+    VALID_CONF = {'VERY HIGH','HIGH','MEDIUM','LOW','VERY LOW'}
     bad = 0
+    # Cross-field invariant: subfolder must equal cycle (not enforceable in pure JSON Schema).
+    if d.get('subfolder') != d.get('cycle'):
+        print(f'❌ pir-status.json: subfolder={d.get(\"subfolder\")!r} must equal cycle={d.get(\"cycle\")!r}'); bad = 1
     for p in d.get('pirs', []):
-        if not PIR_ID_RE.match(p.get('pir_id', '')):
-            print(f'❌ pir-status.json: invalid pir_id format: {p.get(\"pir_id\")}'); bad = 1
+        pid = p.get('pir_id')
+        if not isinstance(pid, str) or not PIR_ID_RE.match(pid):
+            print(f'❌ pir-status.json: invalid pir_id format: {pid!r}'); bad = 1
         for f in ('statement', 'status', 'confidence'):
             if not p.get(f):
-                print(f'❌ pir-status.json pir={p.get(\"pir_id\")}: missing required field \"{f}\"'); bad = 1
-        if p.get('status') not in ('open','answered','superseded','deferred','cancelled'):
-            print(f'❌ pir-status.json pir={p.get(\"pir_id\")}: invalid status \"{p.get(\"status\")}\"'); bad = 1
+                print(f'❌ pir-status.json pir={pid!r}: missing required field \"{f}\"'); bad = 1
+        if p.get('status') not in VALID_STATUS:
+            print(f'❌ pir-status.json pir={pid!r}: invalid status {p.get(\"status\")!r}'); bad = 1
+        if p.get('confidence') not in VALID_CONF:
+            print(f'❌ pir-status.json pir={pid!r}: invalid confidence {p.get(\"confidence\")!r}'); bad = 1
+        # Conditional: answer_summary required iff status == 'answered'.
+        if p.get('status') == 'answered' and not p.get('answer_summary'):
+            print(f'❌ pir-status.json pir={pid!r}: status=answered requires non-empty answer_summary'); bad = 1
+        if p.get('status') != 'answered' and 'answer_summary' in p:
+            print(f'❌ pir-status.json pir={pid!r}: status={p.get(\"status\")!r} must not carry answer_summary'); bad = 1
     sys.exit(bad)
 except Exception as e:
     print(f'❌ pir-status.json: parse error: {e}'); sys.exit(1)
