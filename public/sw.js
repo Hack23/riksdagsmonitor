@@ -121,12 +121,12 @@ async function staleWhileRevalidate(cacheName, request) {
  * @returns {Promise<Response>}
  */
 async function cacheFirst(cacheName, request) {
-  const cached = await caches.match(request);
+  const cache = await caches.open(cacheName);
+  const cached = await cache.match(request);
   if (cached) return cached;
 
   const response = await fetch(request);
   if (response && response.ok) {
-    const cache = await caches.open(cacheName);
     cache.put(request, response.clone()).catch(() => { /* quota or aborted */ });
   }
   return response;

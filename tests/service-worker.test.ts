@@ -299,4 +299,42 @@ describe('service worker (public/sw.js)', () => {
     });
     expect(respondCalled).toBe(false);
   });
+
+  it('cache-first reads only from the named cache (not other caches)', async () => {
+    const url = 'https://riksdagsmonitor.com/index.html';
+
+    // Plant a response in the *wrong* cache (cia-data-v1) — cacheFirst
+    // for an HTML document should NOT find it; it should miss and fall
+    // through to the network instead, since HTML belongs in
+    // riksdagsmonitor-v1.
+    const wrongCache = await sw.caches.open('cia-data-v1');
+    await wrongCache.put(url, makeResponse('WRONG-CACHE', { status: 200 }));
+
+    sw.fetch.mockImplementationOnce(async () =>
+      makeResponse('FROM-NETWORK', { status: 200 }),
+    );
+
+    const req = new Request(url);
+    Object.defineProperty(req, 'destination', { value: 'document', configurable: true });
+
+    let resolved: Response | undefined;
+    sw.handlers.fetch?.({
+      request: req,
+      respondWith: (p) => { void Promise.resolve(p).then((r) => { resolved = r; }); },
+    });
+
+    await new Promise((r) => setTimeout(r, 0));
+    await new Promise((r) => setTimeout(r, 0));
+
+    expect(resolved).toBeDefined();
+    expect(await resolved!.text()).toBe('FROM-NETWORK');
+    expect(sw.fetch).toHaveBeenCalledTimes(1);
+
+    // After the network fetch, the response should be stored in the
+    // correct named cache (riksdagsmonitor-v1), not cia-data-v1.
+    const correctCache = await sw.caches.open('riksdagsmonitor-v1');
+    const stored = await correctCache.match(url);
+    expect(stored).toBeDefined();
+    expect(await stored!.text()).toBe('FROM-NETWORK');
+  });
 });
