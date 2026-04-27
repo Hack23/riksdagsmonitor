@@ -313,7 +313,7 @@ async function fetchVotingForBet(client: MCPClient, bet: string): Promise<Voting
   const fetchedAt = new Date().toISOString();
 
   let partyVotes: PartyVoteRow[] = [];
-  let rawIndividualVotes: unknown[] = [];
+  let rawIndividualVotes: unknown[];
   let rm: string | null = null;
 
   try {
