@@ -25,11 +25,13 @@ Apply this skill when:
 - ✅ Constructing influence networks from voting alignment patterns
 - ✅ Forecasting trends in party support or politician effectiveness
 - ✅ Clustering politicians or parties by voting similarity
+- ✅ Modelling Swedish economic transmission chains using IMF macro context plus SCB KPI/AKU/HEK/fuel-price series and Riksbank policy-rate/minutes signals
 
 Do NOT use for:
 - ❌ Simple aggregation queries (use SQL views instead)
 - ❌ Real-time operational dashboards (use materialized views)
 - ❌ Causal inference without proper experimental design or quasi-experimental methods
+- ❌ Replacing IMF cross-country macro/fiscal indicators with SCB or Riksbank series; use SCB/Riksbank only as Swedish ground-truth complements
 
 ## Data Science Framework for CIA Platform
 
