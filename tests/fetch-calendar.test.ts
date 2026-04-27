@@ -127,6 +127,14 @@ describe('isHtmlErrorResponse', () => {
     expect(isHtmlErrorResponse('<html lang="sv">')).toBe(true);
   });
 
+  it('returns true for an uppercase <HTML> opening tag', () => {
+    expect(isHtmlErrorResponse('<HTML lang="sv">')).toBe(true);
+  });
+
+  it('returns true for a leading <head> tag fragment', () => {
+    expect(isHtmlErrorResponse('<head><title>Error</title></head>')).toBe(true);
+  });
+
   it('returns false for a JSON response', () => {
     expect(isHtmlErrorResponse('{"jsonrpc":"2.0","id":1}')).toBe(false);
   });
@@ -365,7 +373,7 @@ describe('parseRiksdagKalendariumHtml', () => {
     const events = parseRiksdagKalendariumHtml(html);
     expect(events).toHaveLength(2);
     expect(events[0]?.dtstart).toBe('2026-04-28T10:00:00');
-    expect(events[0]?.org).toBe('FIU');
+    expect(events[0]?.org).toBe('FiU');
     expect(events[0]?.akt).toBe('votering');
     expect(events[0]?.summary).toContain('Budget 2026');
     expect(events[0]?.doc_refs).toContain('/sv/dokument-och-lagar/utskottens-arbete/betankanden/H901FiU1/');
@@ -396,6 +404,16 @@ describe('parseRiksdagKalendariumHtml', () => {
     const html = '<html><body><p>No events today.</p></body></html>';
     expect(parseRiksdagKalendariumHtml(html)).toEqual([]);
   });
+
+  it('ignores non-calendar article blocks even when they contain time elements', () => {
+    const html = `
+      <article class="news-card">
+        <time datetime="2026-04-28T10:00:00">28 april</time>
+        <h2>Pressmeddelande som inte är kalenderhändelse</h2>
+      </article>
+    `;
+    expect(parseRiksdagKalendariumHtml(html)).toEqual([]);
+  });
 });
 
 describe('parseCalendarArticle', () => {
@@ -407,7 +425,7 @@ describe('parseCalendarArticle', () => {
   it('extracts organ and akt from data attributes', () => {
     const body = `<time datetime="2026-04-28T11:00:00">11.00</time><h2>Test</h2>`;
     const event = parseCalendarArticle('data-organ="SoU" data-akt="debatt"', body);
-    expect(event?.org).toBe('SOU');
+    expect(event?.org).toBe('SoU');
     expect(event?.akt).toBe('debatt');
   });
 
@@ -438,7 +456,7 @@ describe('parseCalendarListItem', () => {
     `;
     const event = parseCalendarListItem('', body);
     expect(event?.dtstart).toBe('2026-05-02T14:00:00');
-    expect(event?.org).toBe('JUU');
+    expect(event?.org).toBe('JuU');
     expect(event?.doc_refs).toContain('/sv/dokument-och-lagar/betankanden/H901JuU10/');
     expect(event?.source).toBe('web-fallback');
   });

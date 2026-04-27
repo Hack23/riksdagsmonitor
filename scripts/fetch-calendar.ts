@@ -129,8 +129,8 @@ const DEFAULT_MAX_RETRIES = 2;
 /** Retry base delay (ms); doubled on each subsequent attempt. */
 const RETRY_BASE_DELAY_MS = 1_000;
 
-// HTML detection: any response whose first non-whitespace token is a tag.
-const HTML_PREFIX_RE = /^\s*<!(?:DOCTYPE|doctype)|^\s*<html\b/;
+// HTML detection: common HTML document / fragment leading tags.
+const HTML_PREFIX_RE = /^\s*(?:<!doctype\b|<html\b|<head\b|<body\b|<title\b|<meta\b)/i;
 
 // ---------------------------------------------------------------------------
 // HTML detection
@@ -375,8 +375,8 @@ export function normalizeMcpCalendarEvent(raw: unknown): CalendarEvent {
 export function parseRiksdagKalendariumHtml(html: string): CalendarEvent[] {
   const events: CalendarEvent[] = [];
 
-  // Extract <article> blocks (Pattern A).
-  const articleRe = /<article\b([^>]*)>([\s\S]*?)<\/article>/gi;
+  // Extract calendar-item <article> blocks (Pattern A).
+  const articleRe = /<article\b([^>]*class="[^"]*\bcalendar-item\b[^"]*"[^>]*)>([\s\S]*?)<\/article>/gi;
   for (const articleMatch of html.matchAll(articleRe)) {
     const attrs = articleMatch[1] ?? '';
     const body = articleMatch[2] ?? '';
@@ -535,9 +535,9 @@ function stripTags(html: string): string {
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
 }
 
-/** Normalize committee/organ codes (upper-case, trim). */
+/** Normalize committee/organ codes by collapsing whitespace and trimming only. */
 function normalizeOrgCode(raw: string): string {
-  return raw.replace(/\s+/g, ' ').trim().toUpperCase();
+  return raw.replace(/\s+/g, ' ').trim();
 }
 
 /** Normalize activity type strings to lower-case-with-hyphens. */
@@ -822,12 +822,7 @@ async function main(): Promise<void> {
 }
 
 // Guard: run `main()` only when this file is the direct entry point.
-if (
-  typeof process !== 'undefined' &&
-  process.argv[1] &&
-  (process.argv[1].endsWith('/fetch-calendar.ts') ||
-    process.argv[1].endsWith('/fetch-calendar.js'))
-) {
+if (path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1] ?? '')) {
   main().catch((err: unknown) => {
     console.error('❌ [fetch-calendar] Fatal error:', err instanceof Error ? err.message : err);
     process.exit(1);
