@@ -380,6 +380,8 @@ describe('CalendarOutput structure', () => {
     };
 
     expect(output.fetchedAt).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/);
-    expect(() => new Date(output.fetchedAt)).not.toThrow();
+    // `new Date(string)` never throws (it returns Invalid Date), so use
+    // Date.parse to actually validate the timestamp.
+    expect(Number.isNaN(Date.parse(output.fetchedAt))).toBe(false);
   });
 });

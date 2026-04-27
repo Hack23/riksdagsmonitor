@@ -288,10 +288,14 @@ describe('contract: voting records have status field', () => {
           );
         }
 
+        // `typeof null === 'object'` and arrays are also objects, so
+        // `toBeTypeOf('object')` would silently accept either and then
+        // fail with a confusing TypeError on the next line. Require a
+        // non-null, non-array plain object up front.
         expect(
-          parsed,
-          `${jsonFile} should be an object`,
-        ).toBeTypeOf('object');
+          parsed !== null && typeof parsed === 'object' && !Array.isArray(parsed),
+          `${jsonFile} should be a non-null plain object, got: ${JSON.stringify(parsed)}`,
+        ).toBe(true);
 
         const record = parsed as Record<string, unknown>;
         expect(

@@ -172,18 +172,27 @@ export function detectDefectors(votes: unknown[]): {
     tally.set(rost, (tally.get(rost) ?? 0) + 1);
   }
 
-  // Determine majority vote per party
+  // Determine majority vote per party. Ties for the maximum count are
+  // ambiguous (e.g. equal Ja/Nej splits), so we leave the majority
+  // *undefined* for those parties rather than picking an arbitrary winner
+  // based on iteration order — that previously produced false defectors.
   const partyMajority = new Map<string, string>();
   for (const [parti, tally] of partyTally) {
     let maxCount = 0;
     let majorityVote = '';
+    let isTied = false;
     for (const [rost, count] of tally) {
       if (count > maxCount) {
         maxCount = count;
         majorityVote = rost;
+        isTied = false;
+      } else if (count === maxCount && count > 0 && rost !== majorityVote) {
+        isTied = true;
       }
     }
-    partyMajority.set(parti, majorityVote);
+    if (!isTied && majorityVote) {
+      partyMajority.set(parti, majorityVote);
+    }
   }
 
   // Find defectors
@@ -377,17 +386,21 @@ async function fetchVotingForBet(client: MCPClient, bet: string): Promise<Voting
   }
 
   if (partyVotes.length === 0 && rawIndividualVotes.length === 0) {
-    const pendingRecord: VotingRecordOutput = {
+    // MCP returned successfully but with zero data — treat as a confirmed
+    // empty result (`not_found`) so downstream can distinguish from
+    // `vote_pending` (used by editorial tooling that *knows* a vote is
+    // upcoming) and `error` (transient MCP/network failure).
+    const notFoundRecord: VotingRecordOutput = {
       bet,
       rm: rm || null,
       fetchedAt,
-      status: 'vote_pending',
+      status: 'not_found',
       partyVotes: [],
       defectors: [],
       mermaidDiagram: generateMermaidVoteChart([], bet),
     };
-    pendingRecord.injectionMarkdown = buildInjectionMarkdown(pendingRecord);
-    return pendingRecord;
+    notFoundRecord.injectionMarkdown = buildInjectionMarkdown(notFoundRecord);
+    return notFoundRecord;
   }
 
   const { defectors } = detectDefectors(rawIndividualVotes);
