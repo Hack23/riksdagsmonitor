@@ -16,7 +16,7 @@
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 6.6 | **📅 Last Updated:** 2026-04-25 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 6.7 | **📅 Last Updated:** 2026-04-27 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -87,11 +87,13 @@ Scripts run the download. Example:
 ```bash
 npx tsx scripts/download-parliamentary-data.ts \
   --date ${ARTICLE_DATE} \
-  --scope ${DOC_TYPE} \
-  --out analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/data/
+  --doc-type ${DOC_TYPE} \
+  --auto-full-text-top-n 2
 ```
 
-**Write `data-download-manifest.md`** using the [manifest template](../templates/data-download-manifest.md). It records what arrived, from which MCP tools, with what data-depth distribution (FULL-TEXT / SUMMARY / METADATA-ONLY).
+**`--auto-full-text-top-n 2`** (recommended for L2/L3 runs): after the bulk download, the script calls `get_dokument_innehall` with `include_full_text=true` for the top-2 documents (by order in the downloaded batch) and persists the retrieved content to `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/full-text/{dok_id}.md`. Accept the extra 30–60 s as a documented quality investment. The manifest's `## Full-Text Fetch Outcomes` table records `full_text_available` per `dok_id`; the analysis gate (check 10) enforces that ≥ 2 succeed or a `<!-- full-text-fallback: <reason> -->` annotation is present.
+
+**Write `data-download-manifest.md`** using the [manifest template](../templates/data-download-manifest.md). It records what arrived, from which MCP tools, with what data-depth distribution (FULL-TEXT / SUMMARY / METADATA-ONLY) and — when `--auto-full-text-top-n` is used — the `## Full-Text Fetch Outcomes` table.
 
 After `download-parliamentary-data.ts` completes for `committeeReports`, also run the voting-records script to capture party-level vote counts and defector detection for each betänkande:
 

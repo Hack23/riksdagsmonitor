@@ -125,8 +125,7 @@ describe('Statskontoret inventory → implementation-feasibility coverage contra
     expect(inv.datasets['myndighetsforteckning'].admiralty).toBe('A1');
   });
 
-  it('at least one implementation-feasibility.md file in the analysis tree ' +
-     'mentions a known Swedish agency (otherwise the per-file coverage test is vacuous)', () => {
+  it('at least one implementation-feasibility.md file in the analysis tree mentions a known Swedish agency (otherwise the per-file coverage test is vacuous)', () => {
     const filesWithMentions = feasibilityFiles.filter((filePath) => {
       const content = fs.readFileSync(filePath, 'utf-8');
       return extractAgencyMentions(content, KNOWN_AGENCIES).length > 0;
@@ -138,8 +137,7 @@ describe('Statskontoret inventory → implementation-feasibility coverage contra
     ).toBeGreaterThan(0);
   });
 
-  it('every implementation-feasibility.md mentioning a known agency resolves to ' +
-     'a Statskontoret dataset that covers it via myndighetsforteckning', () => {
+  it('every implementation-feasibility.md mentioning a known agency resolves to a Statskontoret dataset that covers it via myndighetsforteckning', () => {
     // Since myndighetsforteckning covers ALL Swedish government bodies by
     // definition, one dataset entry suffices for all named agencies. This
     // test enforces the contract per-file: every file mentioning an agency

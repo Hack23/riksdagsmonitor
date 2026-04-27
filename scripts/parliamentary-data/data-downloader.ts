@@ -9,12 +9,16 @@
  * and `rm`). Date-specific filtering should be applied by the caller after download
  * (e.g., filtering by the `datum` field on each `RawDocument`).
  *
- * This module is intentionally side-effect-free with respect to the filesystem;
- * callers are responsible for writing any output.
+ * Most functions in this module are side-effect-free with respect to the filesystem;
+ * callers are responsible for writing any output. The exception is `fetchFullTextForTopN`,
+ * which writes persisted full-text files to `{outputDir}/full-text/` — see its JSDoc.
  *
  * @author Hack23 AB
  * @license Apache-2.0
  */
+
+import fs from 'node:fs';
+import path from 'node:path';
 
 import type { RawDocument } from '../data-transformers/types.js';
 import { isPersonProfileText } from '../data-transformers/helpers.js';
@@ -81,6 +85,24 @@ export interface DownloadResult {
 
 /** Maximum number of documents to enrich with full-text content per type. */
 export const MAX_ENRICHMENT_PER_TYPE = 5;
+
+/**
+ * Outcome record for a single document in a top-N full-text fetch.
+ * Used in the data-download-manifest and as the return value of
+ * `fetchFullTextForTopN`.
+ */
+export interface FullTextFetchOutcome {
+  /** Riksdag document identifier */
+  dokId: string;
+  /** Whether meaningful full-text content was retrieved and persisted */
+  success: boolean;
+  /** Length (chars) of the persisted content; 0 when success is false */
+  chars: number;
+  /** Relative path to the persisted `.md` file (undefined when success is false) */
+  filePath?: string;
+  /** Human-readable reason when success is false */
+  reason?: string;
+}
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -484,4 +506,151 @@ export function flattenDocuments(data: DownloadedData): RawDocument[] {
     seen.add(id);
     return true;
   });
+}
+
+// ---------------------------------------------------------------------------
+// Top-N full-text fetch (auto-full-text-top-n feature)
+// ---------------------------------------------------------------------------
+
+/**
+ * Fetch full-text content for the top-N documents in `docs` and persist each
+ * to `{outputDir}/full-text/{dok_id}.md`.
+ *
+ * This function has filesystem side effects: it creates `outputDir/full-text/`
+ * (including any missing parent directories) and writes one `.md` file per
+ * successfully fetched document.
+ *
+ * Documents that lack a resolvable `dok_id` are skipped. If the MCP call
+ * succeeds but returns no meaningful content (< FULL_TEXT_MIN_LENGTH chars),
+ * the outcome is recorded as `success: false` with an explanatory `reason` so
+ * the caller (and the analysis gate) can distinguish "not tried" from
+ * "tried but only metadata returned".
+ *
+ * @param client      - MCPClient instance for calling get_dokument_innehall
+ * @param docs        - Ordered list of documents; first `topN` will be attempted
+ * @param topN        - Maximum number of documents to fetch full text for
+ * @param outputDir   - Base directory; `full-text/` sub-folder is created here
+ *                      (including any missing parent directories)
+ * @returns           - One outcome record per dok_id attempted
+ */
+export async function fetchFullTextForTopN(
+  client: MCPClient,
+  docs: RawDocument[],
+  topN: number,
+  outputDir: string,
+): Promise<FullTextFetchOutcome[]> {
+  if (topN <= 0 || docs.length === 0) return [];
+
+  const fullTextDir = path.join(outputDir, 'full-text');
+  fs.mkdirSync(fullTextDir, { recursive: true });
+
+  // Resolve dok_id for each candidate in the same priority order as enrichment.
+  const candidates: Array<{ dokId: string; doc: RawDocument }> = [];
+  for (const doc of docs) {
+    if (candidates.length >= topN) break;
+    const record = doc as Record<string, unknown>;
+    const dokId = [
+      record['dok_id'],
+      record['dokument_id'],
+      record['rel_dok_id'],
+      record['id'],
+      record['dokumentnamn'],
+    ]
+      .map((v) => (typeof v === 'string' ? v.trim() : ''))
+      .find((v) => v.length > 0);
+    if (!dokId) continue;
+    candidates.push({ dokId, doc });
+  }
+
+  const outcomes: FullTextFetchOutcome[] = [];
+
+  for (const { dokId, doc } of candidates) {
+    let outcome: FullTextFetchOutcome;
+    try {
+      const str = (v: unknown): string => (typeof v === 'string' ? v : '');
+      const sanitize = (v: unknown): string => {
+        const s = str(v).trim();
+        return isPersonProfileText(s) ? '' : s;
+      };
+      const selectContent = (source: Record<string, unknown>): string => {
+        const rawText = str(source['text']).trim();
+        const rawFullContent = sanitize(source['fullContent']);
+        // fullText may contain MP profile/deceased-notice text — sanitize it.
+        // text and html fields are structural content from the Riksdag dump and
+        // do not contain person-profile text, so str().trim() is sufficient.
+        const rawFullText = sanitize(source['fullText']);
+        const rawHtml = str(source['html']).trim();
+
+        // Prefer normalized/enriched content already present on the document,
+        // then fall back to the raw HTML dump fields.
+        return rawText.length > FULL_TEXT_MIN_LENGTH
+          ? rawText
+          : rawFullContent.length > FULL_TEXT_MIN_LENGTH
+            ? rawFullContent
+            : rawFullText.length > FULL_TEXT_MIN_LENGTH
+              ? rawFullText
+              : rawHtml;
+      };
+
+      // Reuse already-enriched fields on the document (set by downloadAllDocuments)
+      // before issuing a duplicate MCP call. Only call fetchDocumentDetails when
+      // the document does not already carry meaningful content.
+      const docRecord = doc as Record<string, unknown>;
+      let details: Record<string, unknown> | null = null;
+      let content = selectContent(docRecord);
+
+      if (content.length <= FULL_TEXT_MIN_LENGTH) {
+        details = (await client.fetchDocumentDetails(dokId, true)) as Record<string, unknown>;
+        content = selectContent(details);
+      }
+
+      if (content.length > FULL_TEXT_MIN_LENGTH) {
+        const filenameSafeDokId = dokId.replace(/[^A-Za-z0-9_-]/g, '_');
+        const filePath = path.join(fullTextDir, `${filenameSafeDokId}.md`);
+        const snippet =
+          sanitize(docRecord['snippet']) ||
+          sanitize(docRecord['summary']) ||
+          sanitize(details?.['snippet']) ||
+          sanitize(details?.['summary']) ||
+          '';
+        // Build header without filtering blank lines so Markdown structure is preserved.
+        // The array is joined with \n and must end with \n so content starts on a new line.
+        const headerLines = [
+          `# Full Text — ${dokId}`,
+          '',
+          ...(snippet ? [`> ${snippet}`, ''] : []),
+          '---',
+          '',
+        ];
+        const header = headerLines.join('\n');
+        fs.writeFileSync(filePath, header + content, 'utf8');
+        // Use outputDir as the stable base for the relative path so the manifest
+        // entry is consistent regardless of the caller's working directory.
+        // Normalize separators to POSIX form for byte-identical artifacts across OSes.
+        outcome = {
+          dokId,
+          success: true,
+          chars: content.length,
+          filePath: path.relative(outputDir, filePath).split(path.sep).join('/'),
+        };
+      } else {
+        outcome = {
+          dokId,
+          success: false,
+          chars: 0,
+          reason: `content below FULL_TEXT_MIN_LENGTH (${FULL_TEXT_MIN_LENGTH}) — metadata-only`,
+        };
+      }
+    } catch (err) {
+      outcome = {
+        dokId,
+        success: false,
+        chars: 0,
+        reason: `fetchDocumentDetails failed: ${err instanceof Error ? err.message : String(err)}`,
+      };
+    }
+    outcomes.push(outcome);
+  }
+
+  return outcomes;
 }
