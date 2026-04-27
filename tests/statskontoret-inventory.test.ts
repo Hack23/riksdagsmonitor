@@ -45,9 +45,11 @@ describe('analysis/statskontoret/indicators-inventory.json', () => {
     expect(inv.providerDecisionMatrix.centralGovernmentBudgetMonthlyOutturn).toBe('statskontoret:manadsutfall');
   });
 
-  it('documents the client, CLI and persistence surfaces', () => {
+  it('documents the client, CLI, cachedFetch and persistence surfaces', () => {
     expect(inv.clients.cli).toContain('scripts/statskontoret-fetch.ts');
     expect(inv.clients.library).toContain('scripts/statskontoret-client.ts');
+    expect(inv.clients.cachedFetch).toContain('scripts/fetch-statskontoret.ts');
+    expect(inv.clients.cachedFetch).toContain('30-day');
     expect(inv.clients.persistence).toContain('persistStatskontoretData');
   });
 });

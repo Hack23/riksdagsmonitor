@@ -286,6 +286,81 @@ When an agency is named in `implementation-feasibility.md`:
 - **Stakeholder voices** - Include citizens, experts, civil society
 - **Public interest** - Agencies serve citizens, not themselves
 
+## Statskontoret Data Integration
+
+Statskontoret (Swedish Agency for Public Management) publishes open data that provides
+authoritative, Admiralty-A1 ground truth for government-body context. Use this data
+**before** relying on estimates or secondary sources when writing about agency headcounts,
+organisational structures or central-government budget execution.
+
+### Available Datasets
+
+| Dataset key | Title | Cadence | Primary use |
+|-------------|-------|---------|-------------|
+| `myndighetsforteckning` | Myndighetsförteckning — öppna data | Annual | Headcount by department & leadership form (2007–present) |
+| `arsutfall` | Årsutfall för statens budget — öppna data | Annual | Annual budget outturn by appropriation & agency |
+| `manadsutfall` | Månadsutfall för statens budget — öppna data | Monthly | High-frequency budget-execution monitoring |
+| `budget-time-series` | Tidsserier, statens budget m.m. | Annual | Long-run central-government budget context (1995+) |
+
+### How to Fetch (agentic workflows)
+
+The cached library helper is invoked from TypeScript code (see "Cached Fetch Module"
+below). For ad-hoc CLI use, the `statskontoret-fetch.ts` wrapper is the entrypoint:
+
+```bash
+# CLI: list every built-in Statskontoret source
+tsx scripts/statskontoret-fetch.ts list-sources
+
+# CLI: discover downloadable files for a source
+tsx scripts/statskontoret-fetch.ts discover --source myndighetsforteckning
+
+# CLI: fetch + parse headcount workbook
+tsx scripts/statskontoret-fetch.ts headcount --url <xlsx-url> --persist
+
+# CLI: fetch + parse budget-outturn workbook
+tsx scripts/statskontoret-fetch.ts budget-outturn --source arsutfall --url <xlsx-url> --doc-type Inkomst --persist
+```
+
+### Cached Fetch Module (`scripts/fetch-statskontoret.ts`)
+
+The `fetch-statskontoret.ts` module provides a **30-day TTL cache layer** over the raw
+HTTP client, making it suitable for agentic workflows that run daily but should only
+re-download large Excel workbooks every 30 days:
+
+```typescript
+import { fetchStatskontoretCached, isStatskontoretCacheFresh } from './fetch-statskontoret.js';
+
+// Check cache freshness without a network call
+if (!isStatskontoretCacheFresh('myndighetsforteckning')) {
+  const payload = await fetchStatskontoretCached('myndighetsforteckning');
+  // payload.fromCache === false → fresh download
+  // payload.links → array of StatskontoretDownloadLink (Excel URLs)
+}
+```
+
+On network failure the module automatically falls back to the most recent stale cache
+entry, ensuring workflows remain resilient to temporary outages.
+
+### Data Provenance Rule
+
+Any implementation-feasibility or agency-context analysis that names a Swedish
+government body **must** annotate the headcount or budget figure with a
+Statskontoret source citation:
+
+```markdown
+*Headcount source: Statskontoret Myndighetsförteckning 2025
+(analysis/data/statskontoret/myndighetsforteckning/) [A1]*
+```
+
+Admiralty grade for own-Statskontoret publications: **A1** (official statistics,
+primary public record).
+
+### Network Allowlist
+
+`www.statskontoret.se` and `statskontoret.se` are included in the `network.allowed`
+list of all 11 `news-*.md` agentic workflow files. No additional configuration is
+required.
+
 ## References
 
 - [Swedish Agency Directory](https://www.regeringen.se/regeringens-politik/myndigheter-under-regeringen/)
@@ -294,6 +369,9 @@ When an agency is named in `implementation-feasibility.md`:
 - [OECD Public Administration Reviews](https://www.oecd.org/governance/)
 - [Transparency International Sweden](https://www.transparency.se/)
 - [Swedish Agency for Public Management (Statskontoret)](https://www.statskontoret.se/)
+- [Statskontoret Indicators Inventory](../../../analysis/statskontoret/indicators-inventory.json)
+- [fetch-statskontoret.ts](../../../scripts/fetch-statskontoret.ts) — 30-day cache module
+- [statskontoret-client.ts](../../../scripts/statskontoret-client.ts) — HTTP client library
 
 ---
 
