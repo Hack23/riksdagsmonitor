@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import type { LoadCSV } from '../src/browser/cia/csv-utils.js';
-import { parseCSV, createLoadCSV } from '../src/browser/cia/csv-utils.js';
+import { parseCSV, createLoadCSV, joinURL } from '../src/browser/cia/csv-utils.js';
 import {
   loadOverviewDashboard,
   loadElectionAnalysis,
@@ -301,6 +301,29 @@ p2,MEDIUM,40`;
       } finally {
         globalThis.fetch = originalFetch;
       }
+    });
+  });
+
+  describe('joinURL', () => {
+    it.each([
+      ['/base/', 'foo.csv', '/base/foo.csv'],
+      ['/base', 'foo.csv', '/base/foo.csv'],
+      ['/base/', '/foo.csv', '/base/foo.csv'],
+      ['/base', '/foo.csv', '/base/foo.csv'],
+      ['/base///', '///foo.csv', '/base/foo.csv'],
+      ['../cia-data/', 'voting/x.csv', '../cia-data/voting/x.csv'],
+      ['https://host.example/path/', 'x.csv', 'https://host.example/path/x.csv'],
+      ['https://host.example/path', 'x.csv', 'https://host.example/path/x.csv'],
+    ])('joins %s + %s -> %s', (base, path, expected) => {
+      expect(joinURL(base, path)).toBe(expected);
+    });
+
+    it('returns the path when base is empty', () => {
+      expect(joinURL('', 'foo.csv')).toBe('foo.csv');
+    });
+
+    it('returns the base when path is empty', () => {
+      expect(joinURL('/base/', '')).toBe('/base/');
     });
   });
 });

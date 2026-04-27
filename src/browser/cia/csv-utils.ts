@@ -73,14 +73,38 @@ export function parseCSV(csvText: string): CSVRow[] {
 }
 
 /**
+ * Join a base URL with a relative path using exactly one slash between them.
+ *
+ * Tolerant of base URLs that omit the trailing slash and of paths that include
+ * a leading slash — both common foot-guns when callers concatenate URL strings
+ * by hand. Empty `path` is returned as-is so the caller can still use the base
+ * URL alone (e.g. for directory listings).
+ *
+ * @param base - Base URL (with or without trailing slash); must be non-empty
+ * @param path - Relative path (with or without leading slash)
+ * @returns The two segments joined by exactly one `/`
+ */
+export function joinURL(base: string, path: string): string {
+  if (!base) return path;
+  if (!path) return base;
+  const trimmedBase = base.replace(/\/+$/, '');
+  const trimmedPath = path.replace(/^\/+/, '');
+  return `${trimmedBase}/${trimmedPath}`;
+}
+
+/**
  * Load a CSV with local-first fallback.
  *
- * Tries `${csvBaseURL}${localPath}` first. If the response is non-OK or yields
- * zero rows, falls back to `${fallbackURL}${fallbackPath ?? localPath}` when a
- * `fallbackURL` is provided. Network errors are logged as warnings rather
- * than thrown so the page can degrade gracefully when offline.
+ * Tries `joinURL(csvBaseURL, localPath)` first. If the response is non-OK or
+ * yields zero rows, falls back to `joinURL(fallbackURL, fallbackPath ?? localPath)`
+ * when a `fallbackURL` is provided. Network errors are logged as warnings
+ * rather than thrown so the page can degrade gracefully when offline.
  *
- * @param csvBaseURL - Base URL for the local-first CSV directory (must include trailing slash)
+ * URL joining is tolerant of missing trailing slashes on the base URL and
+ * leading slashes on the path; callers do not need to worry about the slash
+ * boundary.
+ *
+ * @param csvBaseURL - Base URL for the local-first CSV directory
  * @param fallbackURL - Optional remote fallback URL (e.g. raw.githubusercontent.com mirror); empty string disables fallback
  * @param localPath - Path relative to `csvBaseURL`
  * @param fallbackPath - Optional path on the fallback host (defaults to `localPath`)
@@ -92,9 +116,9 @@ export async function loadCSV(
   localPath: string,
   fallbackPath?: string
 ): Promise<CSVRow[]> {
-  const urls: string[] = [`${csvBaseURL}${localPath}`];
+  const urls: string[] = [joinURL(csvBaseURL, localPath)];
   if (fallbackURL) {
-    urls.push(`${fallbackURL}${fallbackPath ?? localPath}`);
+    urls.push(joinURL(fallbackURL, fallbackPath ?? localPath));
   }
 
   for (const url of urls) {

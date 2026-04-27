@@ -649,7 +649,7 @@ sequenceDiagram
 **Components:**
 1. **Data Sources** - CIA Platform aggregates from Swedish Parliament API
 2. **Data Export** - CSV files stored in repository (`cia-data/`)
-3. **Source Inventory** (`src/browser/cia/sources.ts`) - 25 CSV source URL definitions + Riksdag/committee constants, side-effect free
+3. **Source Inventory** (`src/browser/cia/sources.ts`) - 26 CSV source URL definitions + Riksdag/committee constants, side-effect free
 4. **Type Definitions** (`src/browser/cia/types.ts`) - 30+ DTO interfaces consumed by both the loader and the renderer; visualization layer imports types here directly to avoid pulling in network code
 5. **CSV Helpers** (`src/browser/cia/csv-utils.ts`) - `parseCSV` / `loadCSV` / `createLoadCSV` free functions with local-first + remote fallback strategy
 6. **Per-Domain Loaders** (`src/browser/cia/loaders/*.ts`) - One file per dashboard domain (overview, election, parties, top10, committees, voting, ministries, demographics, documents, risk); each is a pure function `(loadCSV) => Promise<T>` that can be unit-tested in isolation

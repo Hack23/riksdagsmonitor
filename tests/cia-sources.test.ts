@@ -9,8 +9,8 @@ import {
 describe('CIA sources configuration', () => {
   it('exposes a non-empty local path and description for every CSV source', () => {
     const entries = Object.entries(CSV_SOURCES);
-    // Acceptance criterion: 25 source definitions
-    expect(entries.length).toBeGreaterThanOrEqual(25);
+    // Acceptance criterion: at least 25 source definitions (currently 26).
+    expect(entries.length).toBe(26);
 
     for (const [key, def] of entries) {
       expect(def.local, `${key}.local should be a non-empty string`).toBeTypeOf('string');
