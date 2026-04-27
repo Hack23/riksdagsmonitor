@@ -84,7 +84,6 @@ export default defineConfig({
         'src/browser/cia/dashboard-init.ts',
         'src/browser/cia/election-predictions.ts',
         'src/browser/cia/i18n-translations.ts',
-        'src/browser/cia/visualizations.ts',
         // Browser entry points (Vite bundling glue, no logic to test).
         'src/browser/cia-entry.ts',
         'src/browser/main.ts',
