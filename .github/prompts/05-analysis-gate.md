@@ -232,6 +232,66 @@ if [ -s "$ANALYSIS_DIR/coalition-mathematics.md" ]; then
     || { echo "❌ coalition-mathematics.md: missing seat-count / vote-breakdown table"; FAIL=1; }
 fi
 
+# Check 10 — PIR status sidecar (`pir-status.json`)
+# A valid pir-status.json must be present after every analysis run so that
+# open PIRs can be automatically rolled forward to the next cycle.
+# Schema: schemas/pir-status.schema.json (v1.0)
+# Roll-forward script: scripts/roll-forward-pirs.ts
+PIR_FILE="$ANALYSIS_DIR/pir-status.json"
+if [ ! -s "$PIR_FILE" ]; then
+  echo "❌ pir-status.json missing or empty in $ANALYSIS_DIR — create it per schemas/pir-status.schema.json"
+  FAIL=1
+else
+  # Structural check: required top-level fields
+  for PIR_FIELD in schema_version cycle date subfolder pirs generated_at; do
+    python3 -c "
+import json, sys
+try:
+    d = json.load(open('$PIR_FILE'))
+    sys.exit(0 if '$PIR_FIELD' in d else 1)
+except Exception:
+    sys.exit(1)
+" 2>/dev/null || { echo "❌ pir-status.json: missing required field '$PIR_FIELD'"; FAIL=1; }
+  done
+  # schema_version must be '1.0'
+  python3 -c "
+import json, sys
+try:
+    d = json.load(open('$PIR_FILE'))
+    sys.exit(0 if d.get('schema_version') == '1.0' else 1)
+except Exception:
+    sys.exit(1)
+" 2>/dev/null || { echo "❌ pir-status.json: schema_version must be '1.0'"; FAIL=1; }
+  # pirs must be an array
+  python3 -c "
+import json, sys
+try:
+    d = json.load(open('$PIR_FILE'))
+    sys.exit(0 if isinstance(d.get('pirs'), list) else 1)
+except Exception:
+    sys.exit(1)
+" 2>/dev/null || { echo "❌ pir-status.json: 'pirs' field must be a JSON array"; FAIL=1; }
+  # each open PIR must have pir_id, statement, status, confidence
+  python3 -c "
+import json, sys, re
+try:
+    d = json.load(open('$PIR_FILE'))
+    PIR_ID_RE = re.compile(r'^PIR-[A-Za-z0-9]+(-[A-Za-z0-9]+)*$')
+    bad = 0
+    for p in d.get('pirs', []):
+        if not PIR_ID_RE.match(p.get('pir_id', '')):
+            print(f'❌ pir-status.json: invalid pir_id format: {p.get(\"pir_id\")}'); bad = 1
+        for f in ('statement', 'status', 'confidence'):
+            if not p.get(f):
+                print(f'❌ pir-status.json pir={p.get(\"pir_id\")}: missing required field \"{f}\"'); bad = 1
+        if p.get('status') not in ('open','answered','superseded','deferred','cancelled'):
+            print(f'❌ pir-status.json pir={p.get(\"pir_id\")}: invalid status \"{p.get(\"status\")}\"'); bad = 1
+    sys.exit(bad)
+except Exception as e:
+    print(f'❌ pir-status.json: parse error: {e}'); sys.exit(1)
+" 2>&1 || FAIL=1
+fi
+
 [ "$FAIL" -eq 0 ] || exit 1
 ```
 

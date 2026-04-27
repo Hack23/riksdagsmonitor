@@ -209,6 +209,7 @@ Read every file you produced in Steps 3–5. For each one, **improve every secti
 - Add one more named actor (MP, minister, official) to every stakeholder and SWOT entry.
 - Add one more dok_id or vote-record citation to every evidence column that has < 2 citations.
 - **Tag every key finding to a PIR/EEI** from the catalog in `political-style-guide.md`.
+- **Write `pir-status.json`** — every cycle must produce `$ANALYSIS_DIR/pir-status.json` conforming to `schemas/pir-status.schema.json` v1.0 (required fields: `schema_version`, `cycle`, `date`, `subfolder`, `pirs`, `generated_at`). Extract PIRs from `intelligence-assessment.md` and set each status to `open`. This file is the machine-readable PIR sidecar used for automated roll-forward (see `scripts/roll-forward-pirs.ts`) and CI gate enforcement (Check 10 in `05-analysis-gate.md`).
 - Add Statskontoret evidence to every implementation-capacity or agency-burden claim where a relevant public report/page exists.
 - Verify every macro/fiscal/monetary/external-sector claim is IMF-first, vintage-tagged when projected, and represented in `economic-data.json` when charted.
 - Re-rank the significance scoring if the rewrite reveals a stronger lead.
@@ -579,6 +580,53 @@ Every security-relevant control in Family A maps to **ISO 27001:2022**, **NIST C
 | [`political-threat-framework.md`](political-threat-framework.md) | Attack trees + kill chain + threat taxonomy |
 | [`political-style-guide.md`](political-style-guide.md) | Writing voice, attribution, evidence density |
 
+### PIR status sidecar — automated roll-forward
+
+Every analysis cycle writes a `pir-status.json` sidecar alongside the 23 required artifacts:
+
+| Item | Detail |
+|------|--------|
+| **Schema** | `schemas/pir-status.schema.json` v1.0 — JSON Schema 2020-12 |
+| **Location** | `analysis/daily/YYYY-MM-DD/{subfolder}/pir-status.json` |
+| **Fields** | `schema_version`, `cycle`, `date`, `subfolder`, `generated_at`, `inherited_from`, `pirs[]` |
+| **PIR entry fields** | `pir_id` (pattern `PIR-*`), `statement`, `status`, `confidence`, `trigger`, `answer_summary`, `inherits_from[]`, `evidence_refs[]`, `horizon`, `admiralty_grade` |
+| **Roll-forward script** | `scripts/roll-forward-pirs.ts` — propagates `open` PIRs from the previous cycle to the current cycle, degrading confidence by one level to flag staleness |
+| **CI gate** | Check 10 in `.github/prompts/05-analysis-gate.md` — blocks article generation if `pir-status.json` is absent or structurally invalid |
+
+**How to write `pir-status.json` during analysis (Step 7):**
+
+```json
+{
+  "schema_version": "1.0",
+  "cycle": "month-ahead",
+  "date": "2026-04-27",
+  "subfolder": "month-ahead",
+  "generated_at": "2026-04-27T10:00:00Z",
+  "inherited_from": null,
+  "pirs": [
+    {
+      "pir_id": "PIR-1",
+      "statement": "SD voting discipline on prop. 2025/26:236 (fuel tax)",
+      "trigger": "May 2026 chamber vote on HD01FiU48",
+      "status": "open",
+      "confidence": "HIGH",
+      "evidence_refs": ["HD01FiU48"],
+      "horizon": "2026-05-15",
+      "admiralty_grade": "B2"
+    }
+  ]
+}
+```
+
+**Roll-forward usage (next cycle):**
+
+```bash
+npx tsx scripts/roll-forward-pirs.ts \
+  --date 2026-04-28 --cycle month-ahead
+```
+
+---
+
 ### Templates and platform exemplars
 
 | Document | Purpose |
@@ -591,7 +639,8 @@ Every security-relevant control in Family A maps to **ISO 27001:2022**, **NIST C
 
 **Document Control**
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`
-- **Version:** 6.6 — Phase 2–5 alignment (worked examples + narrative-voice + Pass-2 self-audit)
+- **Version:** 6.7 — PIR status sidecar (`pir-status.json`) integration
+- **Key changes in v6.7:** Added mandatory `pir-status.json` sidecar write step to Pass-2 checklist (Step 7); added PIR status sidecar reference section under Related Documents; added roll-forward usage example (`scripts/roll-forward-pirs.ts`) and schema reference (`schemas/pir-status.schema.json`).
 - **Key changes in v6.6:** Step 3 now points at the v1.3 doctype-variant detector (5 extended types: motion-package, fpm, utskottsbetänkande-variants, KU-anmälan, EU-nämnd) and adds Narrative subsection requirement for ≥ L2 per-file artifacts; Step 4 cross-reference-map row links to the 7 atomic edge types in `structural-metadata-methodology.md` v1.3; Step 7 Pass-2 rewrite checklist adds two binding items — Pass-2 Self-Audit Checklist (10 items) and Narrative 6-axis rubric (18/30 floor); DIW section adds worked-example callout to `synthesis-methodology.md` v1.3 (line-by-line scoring + winner/loser rubric) and Sainte-Laguë walkthrough in `electoral-domain-methodology.md` v1.3; Quality Gate Checklist gains rows 11–12.
 - **Key changes in v6.5:** source diversity rule integration (political-style-guide.md v3.1)
 - **Key changes in v6.4:** Updated Step 1 reading list to reference **Source Diversity Rule** in political-style-guide.md v3.1 (multi-source corroboration by claim priority, conflict resolution, worked scenario); added Source Diversity check to Quality Gate Evidence dimension (P0/P1: ≥3 sources required); added source diversity verification to Pass-2 rewrite checklist; added IMF collection tools to referenced Collection Management Matrix.
