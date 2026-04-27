@@ -10,7 +10,7 @@
  *
  * ### Cache behaviour
  * - Cache root: `analysis/data/statskontoret/<sourceKey>/cache/`
- * - TTL: 30 days (configurable via `CacheTtlMs`)
+ * - TTL: 30 days (configurable via the `cacheTtlMs` option)
  * - On hit: returns the cached payload with provenance metadata
  * - On miss or stale: invokes `StatskontoretClient.discoverDownloads()` and
  *   persists the result before returning
@@ -156,7 +156,6 @@ export async function fetchStatskontoretCached(
 
   const source = getStatskontoretSource(sourceKey);
   const filePath = cacheFilePath(sourceKey, cacheRoot);
-  const now = new Date().toISOString();
 
   // --- Cache hit ---
   const cached = readCacheEntry(filePath);
@@ -181,7 +180,9 @@ export async function fetchStatskontoretCached(
 
   try {
     links = await client.discoverDownloads(sourceKey);
-    fetchedAt = now;
+    // Stamp provenance after the fetch completes so `fetchedAt` reflects when
+    // the data was actually retrieved, not when the request was issued.
+    fetchedAt = new Date().toISOString();
     writeCacheEntry(filePath, { fetchedAt, sourceKey, links });
   } catch (error) {
     // --- Resilience: return stale cache on fetch failure ---
@@ -211,7 +212,7 @@ export async function fetchStatskontoretCached(
     sourceTitle: source.title,
     sourceUrl: source.url,
     links,
-    cachedAt: now,
+    cachedAt: fetchedAt,
     fetchedAt,
     fromCache: false,
     cacheAgeMs: 0,

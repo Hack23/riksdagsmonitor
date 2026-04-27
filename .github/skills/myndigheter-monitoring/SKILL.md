@@ -255,9 +255,12 @@ organisational structures or central-government budget execution.
 
 ### How to Fetch (agentic workflows)
 
+The cached library helper is invoked from TypeScript code (see "Cached Fetch Module"
+below). For ad-hoc CLI use, the `statskontoret-fetch.ts` wrapper is the entrypoint:
+
 ```bash
-# List all available download links for the authority register (30-day cache)
-tsx scripts/fetch-statskontoret.ts   # (import fetchStatskontoretCached)
+# CLI: list every built-in Statskontoret source
+tsx scripts/statskontoret-fetch.ts list-sources
 
 # CLI: discover downloadable files for a source
 tsx scripts/statskontoret-fetch.ts discover --source myndighetsforteckning
@@ -317,9 +320,9 @@ required.
 - [OECD Public Administration Reviews](https://www.oecd.org/governance/)
 - [Transparency International Sweden](https://www.transparency.se/)
 - [Swedish Agency for Public Management (Statskontoret)](https://www.statskontoret.se/)
-- [Statskontoret Indicators Inventory](../../analysis/statskontoret/indicators-inventory.json)
-- [fetch-statskontoret.ts](../../scripts/fetch-statskontoret.ts) — 30-day cache module
-- [statskontoret-client.ts](../../scripts/statskontoret-client.ts) — HTTP client library
+- [Statskontoret Indicators Inventory](../../../analysis/statskontoret/indicators-inventory.json)
+- [fetch-statskontoret.ts](../../../scripts/fetch-statskontoret.ts) — 30-day cache module
+- [statskontoret-client.ts](../../../scripts/statskontoret-client.ts) — HTTP client library
 
 ---
 

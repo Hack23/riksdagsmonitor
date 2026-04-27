@@ -125,34 +125,55 @@ describe('Statskontoret inventory → implementation-feasibility coverage contra
     expect(inv.datasets['myndighetsforteckning'].admiralty).toBe('A1');
   });
 
-  it('for every implementation-feasibility.md that names a Swedish agency, ' +
-     'the inventory provides myndighetsforteckning coverage', () => {
+  it('at least one implementation-feasibility.md file in the analysis tree ' +
+     'mentions a known Swedish agency (otherwise the per-file coverage test is vacuous)', () => {
+    const filesWithMentions = feasibilityFiles.filter((filePath) => {
+      const content = fs.readFileSync(filePath, 'utf-8');
+      return extractAgencyMentions(content, KNOWN_AGENCIES).length > 0;
+    });
+    expect(
+      filesWithMentions.length,
+      'No implementation-feasibility.md file references any known Swedish agency. ' +
+        'Either the analysis corpus is empty or KNOWN_AGENCIES is misconfigured.',
+    ).toBeGreaterThan(0);
+  });
+
+  it('every implementation-feasibility.md mentioning a known agency resolves to ' +
+     'a Statskontoret dataset that covers it via myndighetsforteckning', () => {
     // Since myndighetsforteckning covers ALL Swedish government bodies by
-    // definition, one dataset entry suffices for all named agencies.
-    const missingCoverage: string[] = [];
+    // definition, one dataset entry suffices for all named agencies. This
+    // test enforces the contract per-file: every file mentioning an agency
+    // is recorded with the exact agencies it cites, and the inventory must
+    // serve that file via the myndighetsforteckning dataset.
+    const perFileCoverage: Array<{ file: string; agencies: string[]; covered: boolean }> = [];
 
     for (const filePath of feasibilityFiles) {
       const content = fs.readFileSync(filePath, 'utf-8');
       const mentioned = extractAgencyMentions(content, KNOWN_AGENCIES);
+      if (mentioned.length === 0) continue;
 
-      if (mentioned.length === 0) continue; // file mentions no known agencies → skip
-
-      // The inventory MUST contain myndighetsforteckning to cover any named agency.
-      if (!inv.datasets['myndighetsforteckning']) {
-        missingCoverage.push(
-          `${path.relative(REPO_ROOT, filePath)} mentions ${mentioned.join(', ')} but inventory has no myndighetsforteckning`,
-        );
-      }
+      const covered = inv.datasets['myndighetsforteckning'] !== undefined;
+      perFileCoverage.push({
+        file: path.relative(REPO_ROOT, filePath),
+        agencies: mentioned,
+        covered,
+      });
     }
 
+    const uncovered = perFileCoverage.filter((entry) => !entry.covered);
     expect(
-      missingCoverage,
-      `Statskontoret inventory is missing myndighetsforteckning coverage for:\n${missingCoverage.join('\n')}`,
+      uncovered,
+      `Statskontoret inventory is missing myndighetsforteckning coverage for:\n` +
+        uncovered.map((u) => `  - ${u.file} (mentions: ${u.agencies.join(', ')})`).join('\n'),
     ).toHaveLength(0);
+
+    // Sanity: confirm we actually recorded coverage for at least one file —
+    // protects against the prior version that always passed even when no
+    // file mentioned any agency.
+    expect(perFileCoverage.length, 'expected at least one feasibility file to mention a known agency').toBeGreaterThan(0);
   });
 
-  it('every feasibility file that names an agency also has a matching committee ' +
-     'in at least one Statskontoret dataset', () => {
+  it('inventory globally covers FiU and KU committees in at least one Statskontoret dataset', () => {
     // Collect all committees covered across all datasets.
     const coveredCommittees = new Set<string>();
     for (const dataset of Object.values(inv.datasets)) {
@@ -161,8 +182,8 @@ describe('Statskontoret inventory → implementation-feasibility coverage contra
       }
     }
 
-    // Files mentioning agencies related to FiU or KU should be coverable.
-    // This is a structural sanity check, not a per-file enforcement.
+    // Structural sanity check: FiU (Finance) and KU (Constitution) are the
+    // committees most likely to need Statskontoret context for agency analysis.
     expect(coveredCommittees.has('FiU')).toBe(true);
     expect(coveredCommittees.has('KU')).toBe(true);
   });
