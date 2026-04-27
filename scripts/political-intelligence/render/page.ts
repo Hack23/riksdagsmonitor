@@ -20,7 +20,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import type { Language } from '../../types/language.js';
-import { LANGUAGE_META, escapeHtml } from '../../generate-sitemap-html.js';
+import { LANGUAGE_META, escapeHtml } from '../../sitemap-html/index.js';
 import { buildChrome } from '../../render-lib/chrome.js';
 
 import { collectCatalog } from '../catalog.js';

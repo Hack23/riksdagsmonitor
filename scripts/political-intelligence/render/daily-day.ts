@@ -15,7 +15,7 @@
  */
 
 import type { Language } from '../../types/language.js';
-import { escapeHtml } from '../../generate-sitemap-html.js';
+import { escapeHtml } from '../../sitemap-html/index.js';
 
 import type { DailyDay } from '../daily-streams.js';
 import { artifactTitle } from '../i18n/artifact-i18n.js';

@@ -15,7 +15,7 @@
  */
 
 import type { Language } from '../../types/language.js';
-import { escapeHtml } from '../../generate-sitemap-html.js';
+import { escapeHtml } from '../../sitemap-html/index.js';
 
 import type { CatalogEntry } from '../catalog.js';
 import { artifactTitle, localisedCatalogDescription } from '../i18n/artifact-i18n.js';

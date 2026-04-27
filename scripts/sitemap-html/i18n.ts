@@ -15,7 +15,7 @@
  * @license Apache-2.0
  */
 
-import type { Language } from '../../types/language.js';
+import type { Language } from '../types/language.js';
 
 export interface LanguageMeta {
   name: string;
