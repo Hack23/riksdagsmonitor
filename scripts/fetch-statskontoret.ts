@@ -49,7 +49,7 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const REPO_ROOT = path.resolve(path.dirname(__filename), '..');
 
-/** Default 30-day cache TTL in milliseconds. */
+/** Default 30-day cache TTL in milliseconds (30 days × 24 h × 60 min × 60 s × 1000 ms). */
 export const CACHE_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 
 /** Root directory for cached Statskontoret payloads. */
