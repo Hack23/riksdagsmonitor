@@ -19,7 +19,8 @@
     </td>
     <td>
       <p><strong>🕵️ Political intelligence · 🔍 Democratic transparency · 🤖 AI-generated news · 📊 50+ years of evidence</strong></p>
-      <p>Riksdagsmonitor monitors Sweden's Riksdag (Parliament), the Government (Regeringskansliet) and public agencies (Myndigheter) with structured intelligence techniques (ACH, SWOT, STRIDE, political-risk scoring, OSINT tradecraft) applied to <strong>349 current MPs</strong>, <strong>2,494 historical politicians (1971–2024)</strong>, <strong>3.5M+ votes</strong> and <strong>109,000+ parliamentary documents</strong>. An autonomous AI newsroom turns this evidence into <strong>publication-ready intelligence articles in 14 languages</strong> every day.</p>
+      <p>Riksdagsmonitor monitors Sweden's Riksdag (Parliament), the Government (Regeringskansliet) and public agencies (Myndigheter) with structured intelligence techniques — ACH, SWOT, PESTLE, STRIDE, political-risk scoring and OSINT/INTOP tradecraft — applied to <strong>349 current MPs</strong>, <strong>2,494 historical politicians (1971–2024)</strong>, <strong>3.5M+ votes</strong> and <strong>109,000+ parliamentary documents</strong>.</p>
+      <p>An autonomous AI newsroom — 11 agentic workflows, Claude Opus, zero human editors — turns this evidence into <strong>publication-ready intelligence articles in 14 languages, every day</strong>.</p>
       <div>
         <a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor">
           <img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard">
@@ -90,22 +91,72 @@ Four flagship pages anchor the public site. Each is **multilingual (14 languages
 <tr>
 <td align="center">🌐</td>
 <td><a href="https://riksdagsmonitor.com/"><strong>Live Platform — riksdagsmonitor.com</strong></a></td>
-<td>The public homepage and primary entry point. Front-loads the <strong>current coalition status</strong> (e.g. <em>Tidö Agreement</em> — 176/349 seats, fragility indicators, CIA risk alerts), then deep-dives into <strong>40 years of election-cycle intelligence (1994–2034)</strong>, <strong>party performance &amp; effectiveness (1990–2026)</strong>, <strong>committee networks &amp; productivity (15 committees)</strong>, <strong>coalition &amp; voting-pattern analysis</strong>, <strong>seasonal activity with Z-score anomaly detection (2002–2025)</strong>, <strong>pre-election monitoring</strong>, <strong>ministry risk &amp; influence</strong>, and a live <strong>45-rule × 349-MP risk heat map</strong>. Updated daily at 03:00 CET.</td>
+<td>
+The public homepage and primary entry point. Front-loads the <strong>current coalition status</strong> (e.g. <em>Tidö Agreement</em> — 176/349 seats, fragility indicators, CIA risk alerts), then deep-dives into the full intelligence stack:
+<ul>
+<li>🗳️ <strong>Election-cycle intelligence</strong> — 40 years (1994–2034)</li>
+<li>🏛️ <strong>Party performance &amp; effectiveness</strong> — 1990–2026, 8 parties</li>
+<li>🤝 <strong>Committee networks &amp; productivity</strong> — 15 committees</li>
+<li>📊 <strong>Coalition &amp; voting-pattern analysis</strong></li>
+<li>🌡️ <strong>Seasonal activity with Z-score anomaly detection</strong> — 2002–2025</li>
+<li>🔮 <strong>Pre-election monitoring</strong></li>
+<li>🎖️ <strong>Ministry risk &amp; influence</strong></li>
+<li>🚨 <strong>45-rule × 349-MP risk heat map</strong> (live)</li>
+</ul>
+Updated daily at 03:00 CET.
+</td>
 </tr>
 <tr>
 <td align="center">🕵️</td>
 <td><a href="https://riksdagsmonitor.com/political-intelligence.html"><strong>Political Intelligence Index</strong></a></td>
-<td>The single canonical entry point for OSINT/INTOP researchers. Catalogues every <strong>methodology</strong> that governs analysis on the platform — <em>AI-Driven Analysis Guide, OSINT Tradecraft Standards, Political Risk Methodology, Political SWOT Framework, Political Threat Framework, Political Classification Guide, Electoral Domain Methodology, Synthesis Methodology, IMF &amp; World Bank Indicator Mappings, Reference-Quality Thresholds, Political Style Guide</em> — plus the full daily artifact catalogue (Family A baseline, Family B, Family C synthesis, Family D extension). Each item links straight to the source-of-truth on GitHub. Available in 14 languages (append <code>_sv</code>, <code>_de</code>, <code>_ar</code>, …).</td>
+<td>
+The single canonical entry point for OSINT/INTOP researchers. Catalogues every <strong>methodology</strong> that governs analysis on the platform:
+<ul>
+<li>📐 AI-Driven Analysis Guide</li>
+<li>🔍 OSINT Tradecraft Standards</li>
+<li>⚠️ Political Risk Methodology</li>
+<li>💼 Political SWOT Framework</li>
+<li>🎯 Political Threat Framework</li>
+<li>🏷️ Political Classification Guide</li>
+<li>🗳️ Electoral Domain Methodology</li>
+<li>🧬 Synthesis Methodology</li>
+<li>📈 IMF &amp; 🌍 World Bank Indicator Mappings</li>
+<li>📏 Reference-Quality Thresholds · ✍️ Political Style Guide</li>
+</ul>
+Plus the full daily artifact catalogue (Family A baseline · Family B · Family C synthesis · Family D extension). Each item links straight to the source-of-truth on GitHub. Available in 14 languages (append <code>_sv</code>, <code>_de</code>, <code>_ar</code>, …).
+</td>
 </tr>
 <tr>
 <td align="center">📰</td>
 <td><a href="https://riksdagsmonitor.com/news/index.html"><strong>AI-Generated News &amp; Analysis</strong></a></td>
-<td>The world's first fully AI-driven political-intelligence newsroom for parliamentary monitoring. <strong>11 specialised agentic workflows</strong> (10 scheduled + 1 on-demand, powered by Claude Opus via GitHub Copilot Coding Agent) autonomously produce <strong>committee-report, proposition, motion, interpellation, week-ahead, month-ahead, real-time, evening, weekly-review and monthly-review</strong> articles — with source verification, multi-party balance and GDPR-compliant OSINT methodology baked in. Every article carries machine-readable provenance through JSON-LD <code>NewsArticle.isBasedOn</code>, links back to the analysis artifacts that produced it, and is published in 14 languages.</td>
+<td>
+The world's first fully AI-driven political-intelligence newsroom for parliamentary monitoring. <strong>11 specialised agentic workflows</strong> (10 scheduled + 1 on-demand, powered by Claude Opus via GitHub Copilot Coding Agent) autonomously produce daily intelligence articles:
+<ul>
+<li>🌅 Committee reports · 🏛️ propositions · ✊ motions · ❓ interpellations</li>
+<li>🔮 Week-ahead · 📅 month-ahead · 🔍 real-time monitor</li>
+<li>🌆 Evening analysis · 📊 weekly review · 📈 monthly review</li>
+</ul>
+Source verification, multi-party balance and GDPR-compliant OSINT methodology baked in. Every article carries machine-readable provenance through JSON-LD <code>NewsArticle.isBasedOn</code>, links back to the analysis artifacts that produced it, and is published in 14 languages.
+</td>
 </tr>
 <tr>
 <td align="center">📊</td>
 <td><a href="https://riksdagsmonitor.com/dashboard/index.html"><strong>CIA Intelligence Dashboard</strong></a></td>
-<td>Interactive Chart.js / D3.js intelligence dashboard powered by the <a href="https://github.com/Hack23/cia">Citizen Intelligence Agency (CIA)</a> data products. Live <strong>Overview Metrics</strong> (MPs, parties, risk rules, coalition seats), <strong>Risk Alerts (Critical / Major / Minor, last 90 days)</strong>, <strong>Party Performance Analysis</strong>, <strong>Swedish Election 2026 Predictions</strong> with coalition scenarios and key factors, <strong>Top-10 Most Influential MPs</strong> (network analysis), <strong>Voting Patterns Heat Map</strong>, <strong>Committee Network Analysis</strong>, <strong>Ministry Performance</strong>, <strong>Parliamentary Demographics</strong>, <strong>Document Activity</strong> and <strong>Risk-Score Evolution</strong>. Local-first data loading with 1-hour cache, keyboard navigable, CSP-compliant.</td>
+<td>
+Interactive Chart.js / D3.js intelligence dashboard powered by the <a href="https://github.com/Hack23/cia">Citizen Intelligence Agency (CIA)</a> data products:
+<ul>
+<li>📋 Overview metrics — MPs, parties, risk rules, coalition seats</li>
+<li>🚨 Risk alerts — Critical / Major / Minor (last 90 days)</li>
+<li>🏛️ Party performance analysis</li>
+<li>🗳️ Swedish Election 2026 predictions — coalition scenarios &amp; key factors</li>
+<li>👥 Top-10 most influential MPs — network analysis</li>
+<li>🔥 Voting-patterns heat map</li>
+<li>🤝 Committee network analysis</li>
+<li>🎖️ Ministry performance</li>
+<li>📊 Parliamentary demographics · 📄 document activity · 📉 risk-score evolution</li>
+</ul>
+Local-first data loading with 1-hour cache, keyboard navigable, CSP-compliant.
+</td>
 </tr>
 <tr>
 <td align="center">🗺️</td>
