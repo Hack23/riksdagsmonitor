@@ -30,10 +30,12 @@ This is the **only** gate separating analysis from article generation. If it fai
 8. **Family D structure checks**:
    - `forward-indicators.md` declares **≥ 10 dated indicators** (bullet or table rows matching a date pattern across the four horizon sections).
    - `coalition-mathematics.md` contains a seat-count table (≥ 1 table row with `Ja`/`Nej`/`Avstår` or a party-to-seats mapping).
+9. **Supplementary artifacts** — see §Supplementary checks below (blocking for aggregation/Tier-C/multi-run).
+10. **Top-2 full-text availability** — when `data-download-manifest.md` contains a `## Full-Text Fetch Outcomes` table (written by `download-parliamentary-data.ts --auto-full-text-top-n`), at least 2 top documents must have `full_text_available=true`. Add `<!-- full-text-fallback: <reason> -->` to the manifest to bypass (e.g. when full text is genuinely unavailable from the MCP server or the flag was not used).
 
 ## Implementation
 
-No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–9, with check 9 conditional where applicable):
+No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–10, with checks 9 and 10 conditional where applicable):
 
 ```bash
 set -Eeuo pipefail
@@ -230,6 +232,26 @@ fi
 if [ -s "$ANALYSIS_DIR/coalition-mathematics.md" ]; then
   grep -qE '^\|.*(Ja|Nej|Avstår|Frånvarande|Seats|Mandat)' "$ANALYSIS_DIR/coalition-mathematics.md" \
     || { echo "❌ coalition-mathematics.md: missing seat-count / vote-breakdown table"; FAIL=1; }
+fi
+
+# Check 10 — top-2 full-text availability (auto-full-text-top-n gate)
+# When the manifest contains a "Full-Text Fetch Outcomes" table (written by
+# download-parliamentary-data.ts --auto-full-text-top-n), verify that at least
+# 2 top documents have full_text_available=true. A fallback annotation
+# <!-- full-text-fallback: <reason> --> anywhere in the manifest bypasses
+# this check so that runs without the flag, or runs where full text is
+# genuinely unavailable from the MCP server, are not blocked.
+if [ -s "$ANALYSIS_DIR/data-download-manifest.md" ]; then
+  if grep -q "## Full-Text Fetch Outcomes" "$ANALYSIS_DIR/data-download-manifest.md"; then
+    if grep -q "full-text-fallback:" "$ANALYSIS_DIR/data-download-manifest.md"; then
+      : # Fallback annotation present — bypass check
+    else
+      FT_SUCCESS=$(grep -cE '^\|[[:space:]]*[A-Za-z0-9_-]+[[:space:]]*\|[[:space:]]*true' \
+        "$ANALYSIS_DIR/data-download-manifest.md" || true)
+      [ "${FT_SUCCESS:-0}" -ge 2 ] \
+        || { echo "❌ data-download-manifest.md: Full-Text Fetch Outcomes table present but fewer than 2 top documents have full_text_available=true (found ${FT_SUCCESS:-0}). Add <!-- full-text-fallback: <reason> --> to the manifest to bypass."; FAIL=1; }
+    fi
+  fi
 fi
 
 [ "$FAIL" -eq 0 ] || exit 1

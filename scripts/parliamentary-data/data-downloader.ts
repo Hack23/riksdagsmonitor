@@ -16,6 +16,9 @@
  * @license Apache-2.0
  */
 
+import fs from 'node:fs';
+import path from 'node:path';
+
 import type { RawDocument } from '../data-transformers/types.js';
 import { isPersonProfileText } from '../data-transformers/helpers.js';
 import type { MCPClient } from '../mcp-client/client.js';
@@ -81,6 +84,24 @@ export interface DownloadResult {
 
 /** Maximum number of documents to enrich with full-text content per type. */
 export const MAX_ENRICHMENT_PER_TYPE = 5;
+
+/**
+ * Outcome record for a single document in a top-N full-text fetch.
+ * Used in the data-download-manifest and as the return value of
+ * `fetchFullTextForTopN`.
+ */
+export interface FullTextFetchOutcome {
+  /** Riksdag document identifier */
+  dokId: string;
+  /** Whether meaningful full-text content was retrieved and persisted */
+  success: boolean;
+  /** Length (chars) of the persisted content; 0 when success is false */
+  chars: number;
+  /** Relative path to the persisted `.md` file (undefined when success is false) */
+  filePath?: string;
+  /** Human-readable reason when success is false */
+  reason?: string;
+}
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -484,4 +505,120 @@ export function flattenDocuments(data: DownloadedData): RawDocument[] {
     seen.add(id);
     return true;
   });
+}
+
+// ---------------------------------------------------------------------------
+// Top-N full-text fetch (auto-full-text-top-n feature)
+// ---------------------------------------------------------------------------
+
+/**
+ * Fetch full-text content for the top-N documents in `docs` and persist each
+ * to `{outputDir}/full-text/{dok_id}.md`.
+ *
+ * Documents that lack a resolvable `dok_id` are skipped. If the MCP call
+ * succeeds but returns no meaningful content (< FULL_TEXT_MIN_LENGTH chars),
+ * the outcome is recorded as `success: false` with an explanatory `reason` so
+ * the caller (and the analysis gate) can distinguish "not tried" from
+ * "tried but only metadata returned".
+ *
+ * The function is intentionally *not* side-effect-free: it writes files to
+ * `outputDir/full-text/`. The caller is responsible for creating `outputDir`.
+ *
+ * @param client      - MCPClient instance for calling get_dokument_innehall
+ * @param docs        - Ordered list of documents; first `topN` will be attempted
+ * @param topN        - Maximum number of documents to fetch full text for
+ * @param outputDir   - Base directory where `full-text/` sub-folder is created
+ * @returns           - One outcome record per dok_id attempted
+ */
+export async function fetchFullTextForTopN(
+  client: MCPClient,
+  docs: RawDocument[],
+  topN: number,
+  outputDir: string,
+): Promise<FullTextFetchOutcome[]> {
+  if (topN <= 0 || docs.length === 0) return [];
+
+  const fullTextDir = path.join(outputDir, 'full-text');
+  fs.mkdirSync(fullTextDir, { recursive: true });
+
+  // Resolve dok_id for each candidate in the same priority order as enrichment.
+  const candidates: Array<{ dokId: string; doc: RawDocument }> = [];
+  for (const doc of docs) {
+    if (candidates.length >= topN) break;
+    const record = doc as Record<string, unknown>;
+    const dokId = [
+      record['dok_id'],
+      record['dokument_id'],
+      record['rel_dok_id'],
+      record['id'],
+      record['dokumentnamn'],
+    ]
+      .map((v) => (typeof v === 'string' ? v.trim() : ''))
+      .find((v) => v.length > 0);
+    if (!dokId) continue;
+    candidates.push({ dokId, doc });
+  }
+
+  const outcomes: FullTextFetchOutcome[] = [];
+
+  for (const { dokId } of candidates) {
+    let outcome: FullTextFetchOutcome;
+    try {
+      const details = await client.fetchDocumentDetails(dokId, true) as Record<string, unknown>;
+      const str = (v: unknown): string => (typeof v === 'string' ? v : '');
+      const sanitize = (v: unknown): string => {
+        const s = str(v).trim();
+        return isPersonProfileText(s) ? '' : s;
+      };
+
+      const rawText = str(details['text']).trim();
+      const rawFullText = sanitize(details['fullText']);
+      const rawHtml = str(details['html']).trim();
+
+      // Prefer MCP 'text' field (embedded HTML dump), fall back to fullText then html.
+      const content = rawText.length > FULL_TEXT_MIN_LENGTH
+        ? rawText
+        : rawFullText.length > FULL_TEXT_MIN_LENGTH
+          ? rawFullText
+          : rawHtml;
+
+      if (content.length > FULL_TEXT_MIN_LENGTH) {
+        const safeName = dokId.replace(/[^A-Za-z0-9_-]/g, '_');
+        const filePath = path.join(fullTextDir, `${safeName}.md`);
+        const snippet = sanitize(details['snippet']) || sanitize(details['summary']) || '';
+        const header = [
+          `# Full Text — ${dokId}`,
+          '',
+          snippet ? `> ${snippet}` : '',
+          '',
+          '---',
+          '',
+        ].filter(Boolean).join('\n');
+        fs.writeFileSync(filePath, header + content, 'utf8');
+        outcome = {
+          dokId,
+          success: true,
+          chars: content.length,
+          filePath: path.relative(process.cwd(), filePath),
+        };
+      } else {
+        outcome = {
+          dokId,
+          success: false,
+          chars: 0,
+          reason: `content below FULL_TEXT_MIN_LENGTH (${FULL_TEXT_MIN_LENGTH}) — metadata-only`,
+        };
+      }
+    } catch (err) {
+      outcome = {
+        dokId,
+        success: false,
+        chars: 0,
+        reason: `fetchDocumentDetails failed: ${err instanceof Error ? err.message : String(err)}`,
+      };
+    }
+    outcomes.push(outcome);
+  }
+
+  return outcomes;
 }
