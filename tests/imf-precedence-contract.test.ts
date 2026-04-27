@@ -237,7 +237,7 @@ describe('economic-indicators-inventory.json IMF precedence', () => {
   const inv = readJson<EconomicInventory>('analysis/economic-indicators-inventory.json');
 
   it('inventory version is at least 4.x', () => {
-    const major = Number.parseFloat(inv.version);
+    const major = Number.parseInt(inv.version.split('.')[0] ?? '0', 10);
     expect(major).toBeGreaterThanOrEqual(4);
   });
 
