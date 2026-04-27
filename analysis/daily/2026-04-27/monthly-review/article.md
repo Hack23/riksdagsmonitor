@@ -5,32 +5,14 @@ date: 2026-04-27
 subfolder: monthly-review
 slug: 2026-04-27-monthly-review
 source_folder: analysis/daily/2026-04-27/monthly-review
-generated_at: 2026-04-27T16:44:14.132Z
+generated_at: 2026-04-27T21:50:57.981Z
 language: en
 layout: article
 ---
-## Reader Intelligence Guide
-
-Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
-
-| Reader need | What you'll get | Source artifact |
-|---|---|---|
-| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
-| [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
-| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing](#rm-media-framing-analysis) | likely narrative frames, amplifiers, counter-frames, and manipulation risks | `media-framing-analysis.md` |
-| [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
-| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
-| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
-| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
-| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
-
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief.md -->
 
-**Author**: James Pether Sörling | **Date**: 2026-04-27
 **Window**: 2026-03-28 → 2026-04-27 (30 days) | **Riksmöte**: 2025/26
-**Confidence**: HIGH (A1) | **Admiralty range**: A1–C3 | **Days to election**: 139
 
 ### 🎯 BLUF
 
@@ -96,17 +78,32 @@ flowchart TB
 
 **Collection**: Riksdag Open Data API (riksdag-regering-mcp); 30-day sibling-analysis synthesis  
 **Method**: DIW scoring, ACH, SWOT, WEP probability language, Admiralty coding  
-**Confidence floor**: All factual claims ≥ C3; structural assessments ≥ B2  
+
 **Economic provenance**: IMF WEO Apr-2026 (NGDP_RPCH, GGXWDG_NGDP, BCA_NGDPD), retrieved 2026-04-27  
 **Standards**: ICD 203 (alternative hypotheses, probability language); AI FIRST (minimum 2 iterations)  
 **Next cycle**: Monthly Review 2026-05-27 — should include Demoskop reading (PIR-A), Riksbank rate decision (I-4), SD congress outcome
 
 ---
 
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Media framing](#rm-media-framing-analysis) | likely narrative frames, amplifiers, counter-frames, and manipulation risks | `media-framing-analysis.md` |
+| [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/synthesis-summary.md -->
 
-**Author**: James Pether Sörling | **Date**: 2026-04-27 | **Riksmöte**: 2025/26
 **Window**: 2026-03-28 → 2026-04-27 | **Days to election**: 139
 
 ### Lead Story: SD-KD Energy Fault Line Emerges as Coalition Completes 2025/26 Portfolio
@@ -163,8 +160,6 @@ xychart-beta
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/intelligence-assessment.md -->
 
-**Author**: James Pether Sörling | **Issuing officer**: Pether Sörling, Analyst-of-record
-**Date**: 2026-04-27 | **Sourcing**: A1–C3 Admiralty range
 **Standards**: ICD 203 (Analytic Standards) compliance asserted
 
 ### Bottom Line Up Front
@@ -262,9 +257,6 @@ flowchart LR
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/significance-scoring.md -->
-
-**Author**: James Pether Sörling | **Date**: 2026-04-27
-**Method**: DIW (Decision-depth × Impact × Width), Admiralty coding
 
 ### Scoring Methodology
 
@@ -585,9 +577,6 @@ xychart-beta
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/risk-assessment.md -->
 
-**Author**: James Pether Sörling | **Date**: 2026-04-27
-**Method**: STRIDE-aligned political risk, Admiralty coded
-
 ### Risk Register
 
 | Risk ID | Description | Probability | Impact | Risk Score | Evidence | Admiralty |
@@ -629,9 +618,6 @@ quadrantChart
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/swot-analysis.md -->
-
-**Author**: James Pether Sörling | **Date**: 2026-04-27
-**Method**: Political SWOT with TOWS matrix | **Scope**: 30-day window April 2026
 
 ### Strengths
 
@@ -699,9 +685,6 @@ quadrantChart
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/threat-analysis.md -->
 
-**Author**: James Pether Sörling | **Date**: 2026-04-27
-**Method**: STRIDE-P political threat framework
-
 ### Threat Register
 
 | Threat | Actor | Vector | Severity | Evidence | Admiralty |
@@ -751,8 +734,6 @@ flowchart TD
 ### HD01FiU48
 <!-- source: documents/HD01FiU48.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01FiU48.md -->
 
-**Dok_ID**: HD01FiU48 | **Source**: riksdagen.se | **Date**: 2026-04-27
-
 ### Document in Context
 
 This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
@@ -763,8 +744,6 @@ See cross-reference-map.md for canonical edge labels and sibling-folder relation
 
 ### HD01JuU10
 <!-- source: documents/HD01JuU10.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01JuU10.md -->
-
-**Dok_ID**: HD01JuU10 | **Source**: riksdagen.se | **Date**: 2026-04-27
 
 ### Document in Context
 
@@ -777,8 +756,6 @@ See cross-reference-map.md for canonical edge labels and sibling-folder relation
 ### HD01JuU31
 <!-- source: documents/HD01JuU31.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01JuU31.md -->
 
-**Dok_ID**: HD01JuU31 | **Source**: riksdagen.se | **Date**: 2026-04-27
-
 ### Document in Context
 
 This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
@@ -789,8 +766,6 @@ See cross-reference-map.md for canonical edge labels and sibling-folder relation
 
 ### HD01SoU25
 <!-- source: documents/HD01SoU25.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01SoU25.md -->
-
-**Dok_ID**: HD01SoU25 | **Source**: riksdagen.se | **Date**: 2026-04-27
 
 ### Document in Context
 
@@ -803,8 +778,6 @@ See cross-reference-map.md for canonical edge labels and sibling-folder relation
 ### HD03104
 <!-- source: documents/HD03104.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD03104.md -->
 
-**Dok_ID**: HD03104 | **Source**: riksdagen.se | **Date**: 2026-04-27
-
 ### Document in Context
 
 This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
@@ -815,8 +788,6 @@ See cross-reference-map.md for canonical edge labels and sibling-folder relation
 
 ### HD03252
 <!-- source: documents/HD03252.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD03252.md -->
-
-**Dok_ID**: HD03252 | **Source**: riksdagen.se | **Date**: 2026-04-27
 
 ### Document in Context
 
@@ -829,8 +800,6 @@ See cross-reference-map.md for canonical edge labels and sibling-folder relation
 ### HD03253
 <!-- source: documents/HD03253.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD03253.md -->
 
-**Dok_ID**: HD03253 | **Source**: riksdagen.se | **Date**: 2026-04-27
-
 ### Document in Context
 
 This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
@@ -841,8 +810,6 @@ See cross-reference-map.md for canonical edge labels and sibling-folder relation
 
 ### HD10448
 <!-- source: documents/HD10448.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD10448.md -->
-
-**Dok_ID**: HD10448 | **Source**: riksdagen.se | **Date**: 2026-04-27
 
 ### Document in Context
 
@@ -855,7 +822,6 @@ See cross-reference-map.md for canonical edge labels and sibling-folder relation
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/election-2026-analysis.md -->
 
-**Author**: James Pether Sörling | **Date**: 2026-04-27
 **Days to election (September 13, 2026)**: 139
 
 ### Current Political Landscape
@@ -1085,8 +1051,6 @@ Sweden enters its pre-election period with structural characteristics distinguis
 
 **Historical outcome**: The Bildt coalition survived through 1994 election despite tensions; equivalent resilience is plausible for Tidö.
 
-**Confidence**: MEDIUM (B3) — structural parallel is strong; contextual differences (SD role as external vs internal in 1991) limit direct inference.
-
 ### Parallel 2 — 2004–2006: S Interpellation Escalation Pre-Election
 
 **Historical event**: S (in opposition to the Persson government's final years) mounted a systematic interpellation campaign in 2004–2006, covering education, health, and labor. The campaign intensified in the 18 months before the 2006 election.
@@ -1097,8 +1061,6 @@ Sweden enters its pre-election period with structural characteristics distinguis
 
 **Present implication**: S's current campaign risk is the same: if interpellations displace policy-alternative communication, the governing bloc may win on competence messaging despite the accountability narrative.
 
-**Confidence**: HIGH (B2)
-
 ### Parallel 3 — 2019: Finland Government Formation Post-Election
 
 **Historical event**: The 2019 Finnish parliamentary election produced a five-party S-equivalent coalition requiring extensive negotiation. The left-leaning governing coalition was formed after weeks of coalition mathematics.
@@ -1108,8 +1070,6 @@ Sweden enters its pre-election period with structural characteristics distinguis
 **Historical outcome**: Finland's 2019 coalition held for the full term with managed internal tensions.
 
 **Present implication**: Swedish parliamentary mathematics suggest that a non-bloc majority outcome is manageable; C's position is analogous to Finland's agrarian Keskusta in 2019 as the swing actor.
-
-**Confidence**: MEDIUM (C2) — different party system, but coalition-formation dynamics are transferable.
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/implementation-feasibility.md -->
@@ -1217,9 +1177,6 @@ All three devil's-advocate challenges are assessed as credible alternatives warr
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/classification-results.md -->
 
-**Author**: James Pether Sörling | **Date**: 2026-04-27
-**Classification**: PUBLIC | **GDPR basis**: Art. 9(2)(e) publicly made; Art. 9(2)(g) substantial public interest
-
 ### Political Classification (7-Dimension Framework)
 
 | Dok_ID | Ideological | Institutional | Partisan | Procedural | Temporal | Geographic | Impact |
@@ -1263,9 +1220,6 @@ pie title Document Priority Tier Distribution
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/cross-reference-map.md -->
-
-**Author**: James Pether Sörling | **Date**: 2026-04-27
-**Type**: Tier-C aggregation cross-reference
 
 ### Intra-Document Cross-References
 
@@ -1396,7 +1350,6 @@ This analysis was produced under ICD 203 (Standards of Analytic Production) guid
 
 **Workflow**: news-monthly-review | **Run ID**: 25006920446 | **UTC**: 2026-04-27T16:30:00Z
 **Requested date**: 2026-04-27 | **Effective date**: 2026-04-27 | **Window**: 2026-03-28 → 2026-04-27 (30 days)
-**Riksmöte**: 2025/26 | **Analysis depth**: deep | **Type**: Tier-C aggregation
 
 ### Document Counts by Type
 
