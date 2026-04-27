@@ -8,6 +8,7 @@
   "clients": {
     "cli": "tsx scripts/statskontoret-fetch.ts (commands: list-sources, discover, headcount, budget-outturn)",
     "library": "scripts/statskontoret-client.ts (StatskontoretClient class)",
+    "cachedFetch": "scripts/fetch-statskontoret.ts (fetchStatskontoretCached — 30-day TTL cache layer for agentic workflows)",
     "persistence": "scripts/parliamentary-data/data-persistence.ts (persistStatskontoretData)"
   },
   "notes": {

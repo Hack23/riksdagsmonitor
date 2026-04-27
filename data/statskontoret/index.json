@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+  "source": "Statskontoret",
+  "classification": "Public",
+  "cache_ttl_days": 30,
+  "description": "Agency-capacity evidence index sourced from Statskontoret public reports. Used by implementation-feasibility analysis to cite empirical capacity data for named agencies (Kriminalvården, Polismyndigheten, Försäkringskassan, etc.).",
+  "generated_at": "2026-04-27T00:00:00Z",
+  "entries": [
+    {
+      "title": "Statskontorets myndighetsförteckning",
+      "year": 2025,
+      "agency": "*",
+      "summary": "Annual register of all Swedish central-government authorities: headcount by department, organisational form and appropriation codes. Primary source for agency headcount time series.",
+      "url": "https://www.statskontoret.se/om-statskontoret/publika-register/myndighetsforteckning/",
+      "admiralty_grade": "A2",
+      "cached_at": "2026-04-27T00:00:00Z"
+    },
+    {
+      "title": "Polisens förmåga att utreda brott — en uppföljning",
+      "year": 2023,
+      "agency": "Polismyndigheten",
+      "summary": "Follow-up study on the Swedish Police Authority's capacity to investigate crime. Analyses investigative backlog, clear-up rates and resource allocation. Relevant for implementation-feasibility of criminal-justice legislation. Note: URL points to the publications landing page; search for the specific report title to retrieve the direct PDF/HTML link.",
+      "url": "https://www.statskontoret.se/publikationer/",
+      "admiralty_grade": "C2",
+      "cached_at": "2026-04-27T00:00:00Z"
+    },
+    {
+      "title": "Kriminalvårdens kapacitetsutmaningar",
+      "year": 2022,
+      "agency": "Kriminalvården",
+      "summary": "Assessment of the Swedish Prison and Probation Service capacity constraints: cell utilisation, staffing shortfalls, expansion plans, and implementation risks for new prison construction programmes. Note: URL points to the publications landing page; search for the specific report title to retrieve the direct PDF/HTML link.",
+      "url": "https://www.statskontoret.se/publikationer/",
+      "admiralty_grade": "C2",
+      "cached_at": "2026-04-27T00:00:00Z"
+    },
+    {
+      "title": "Försäkringskassans administration av ersättningar",
+      "year": 2021,
+      "agency": "Försäkringskassan",
+      "summary": "Review of the Social Insurance Agency's administrative capacity for benefit administration, processing times, IT-system constraints, and implementation risk for new benefit schemes. Note: URL points to the publications landing page; search for the specific report title to retrieve the direct PDF/HTML link.",
+      "url": "https://www.statskontoret.se/publikationer/",
+      "admiralty_grade": "C2",
+      "cached_at": "2026-04-27T00:00:00Z"
+    },
+    {
+      "title": "Statskontoret årsutfall — statsbudgeten",
+      "year": 2025,
+      "agency": "*",
+      "summary": "Annual budget outturn for the entire central-government budget. Contains expenditure by appropriation area enabling cross-agency fiscal feasibility benchmarking.",
+      "url": "https://www.statskontoret.se/om-statskontoret/publika-register/arsutfall/",
+      "admiralty_grade": "A1",
+      "cached_at": "2026-04-27T00:00:00Z"
+    }
+  ]
+}
