@@ -166,7 +166,9 @@ export function parseCalendarHtml(html: string): CalendarEvent[] {
   const jsonLdRe = /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi;
   for (const m of html.matchAll(jsonLdRe)) {
     try {
-      const obj = JSON.parse(m[1]!) as Record<string, unknown>;
+      const raw = m[1];
+      if (!raw) continue;
+      const obj = JSON.parse(raw) as Record<string, unknown>;
       const items = Array.isArray(obj) ? obj : [obj];
       for (const item of items) {
         if (typeof item !== 'object' || item === null) continue;
@@ -198,7 +200,8 @@ export function parseCalendarHtml(html: string): CalendarEvent[] {
 
   const dates = [...html.matchAll(dateRe)].map((m) => m[1] ?? '');
   const titles = [...html.matchAll(titleRe)].map((m) =>
-    (m[1] ?? '').replace(/<[^>]+>/g, '').trim(),
+    // Use [\s\S]*? to match newlines inside tags (prevents incomplete sanitization)
+    (m[1] ?? '').replace(/<[\s\S]*?>/g, '').trim(),
   );
 
   const usedDates = new Set<number>();
