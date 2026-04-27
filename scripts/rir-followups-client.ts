@@ -11,11 +11,12 @@
  *  - Dataset load/save helpers (Node.js fs; mocked in tests)
  *
  * Constitutional basis:
- *   Swedish Government Offices / Riksdag conventions require the government to
- *   deliver a formal skrivelse (written communication) to the Riksdag within
- *   4 calendar months of a Riksrevisionen (RiR) report publication. This is
- *   rooted in RF ch. 13:7 and the Riksdag's own practice documented in RO
- *   10:4 with typical 4-month turnaround.
+ *   Swedish parliamentary practice (Riksdagsordningen ch. 10:4, with related
+ *   accountability framing in RF 5:4 and RF ch. 13:7) requires the government
+ *   to deliver a formal skrivelse (written communication) to the Riksdag
+ *   within 4 calendar months of a Riksrevisionen (RiR) report publication.
+ *   These provisions are treated as complementary rather than conflicting
+ *   bases for the response expectation.
  *
  * @see data/rir-followups.json
  * @see schemas/rir-followups-schema.json
@@ -24,6 +25,8 @@
  * @author Hack23 AB
  * @license Apache-2.0
  */
+
+import { readFileSync, writeFileSync } from 'node:fs';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -129,20 +132,21 @@ export const RIR_SKRIVELSE_SUBTYP = 'rsk' as const;
  * Calculate the skrivelse deadline from a RiR report publish date.
  *
  * Swedish constitutional practice: 4 calendar months after publication.
- * The returned date is the last day of the 4th full calendar month following
- * the publish month (i.e. add 4 months, keep same day-of-month unless it
- * falls beyond the end of that month, in which case use last day).
+ * The returned date is computed by adding the configured number of calendar
+ * months to the publish date and preserving the original day-of-month when
+ * possible; if the target month is shorter, the date is clamped to that
+ * month's last day.
  *
  * @param publishDate - ISO 8601 date string (YYYY-MM-DD)
  * @param options - Optional override for month count
  * @returns ISO 8601 date string for the calculated deadline
  *
  * @example
- * calculateSkrivelsDeadline('2026-01-15') // '2026-05-15'
- * calculateSkrivelsDeadline('2026-01-31') // '2026-05-31'
- * calculateSkrivelsDeadline('2026-10-31') // '2027-02-28' (Feb has no 31st)
+ * calculateSkrivelseDeadline('2026-01-15') // '2026-05-15'
+ * calculateSkrivelseDeadline('2026-01-31') // '2026-05-31'
+ * calculateSkrivelseDeadline('2026-10-31') // '2027-02-28' (Feb has no 31st)
  */
-export function calculateSkrivelsDeadline(
+export function calculateSkrivelseDeadline(
   publishDate: string,
   options: DeadlineCalculatorOptions = {},
 ): string {
@@ -166,6 +170,12 @@ export function calculateSkrivelsDeadline(
   return `${deadlineYear}-${pad(deadlineMonth + 1)}-${pad(deadlineDay)}`;
 }
 
+/**
+ * @deprecated Use {@link calculateSkrivelseDeadline} (correctly spelled).
+ * Kept as a thin alias for backwards compatibility.
+ */
+export const calculateSkrivelsDeadline = calculateSkrivelseDeadline;
+
 // ---------------------------------------------------------------------------
 // Status helpers
 // ---------------------------------------------------------------------------
@@ -174,9 +184,14 @@ export function calculateSkrivelsDeadline(
  * Derive the current response status for a record given today's date.
  *
  * Rules (in priority order):
- *  1. If `response_skrivelse_id` is set → RESPONDED (full) or PARTIAL
+ *  1. If `response_skrivelse_id` is set:
+ *     - If `gov_response_status === 'PARTIAL'` (or `open_recommendations > 0`) → PARTIAL
+ *     - Otherwise → RESPONDED
  *  2. If deadline has elapsed and no response → OVERDUE
  *  3. Otherwise → PENDING
+ *
+ * Status is derived primarily from the presence of `response_skrivelse_id`:
+ * a record cannot be PENDING/OVERDUE if a skrivelse reference is recorded.
  *
  * @param record - The RiR follow-up record
  * @param asOf - Reference date for "today" (ISO 8601 or Date). Defaults to now.
@@ -188,22 +203,26 @@ export function deriveResponseStatus(
 ): RirResponseStatus {
   const now = typeof asOf === 'string' ? new Date(asOf + 'T00:00:00Z') : asOf;
 
-  // Already marked responded or partial explicitly — respect it unless no skrivelse ID
-  if (record.gov_response_status === 'RESPONDED' && record.response_skrivelse_id) {
+  // Rule 1: a recorded skrivelse ID is the canonical signal of a response.
+  if (record.response_skrivelse_id) {
+    if (
+      record.gov_response_status === 'PARTIAL' ||
+      (typeof record.open_recommendations === 'number' && record.open_recommendations > 0)
+    ) {
+      return 'PARTIAL';
+    }
     return 'RESPONDED';
   }
-  if (record.gov_response_status === 'PARTIAL' && record.response_skrivelse_id) {
-    return 'PARTIAL';
-  }
 
-  // No response yet — check deadline
+  // Rule 2: no response yet — check deadline.
   if (record.skrivelse_deadline) {
     const deadline = new Date(record.skrivelse_deadline + 'T00:00:00Z');
-    if (now > deadline && !record.response_skrivelse_id) {
+    if (now > deadline) {
       return 'OVERDUE';
     }
   }
 
+  // Rule 3: default.
   return 'PENDING';
 }
 
@@ -452,6 +471,21 @@ export function validateRirRecord(record: RirFollowUpRecord): readonly string[] 
   }
   if (!Array.isArray(record.parliamentary_followup_doc_ids)) {
     errors.push('parliamentary_followup_doc_ids must be an array');
+  } else if (!record.parliamentary_followup_doc_ids.every((id) => typeof id === 'string')) {
+    errors.push('parliamentary_followup_doc_ids items must all be strings');
+  }
+  if (
+    record.committees !== undefined &&
+    (!Array.isArray(record.committees) ||
+      !record.committees.every((c) => typeof c === 'string'))
+  ) {
+    errors.push('committees must be an array of strings (when present)');
+  }
+  if (
+    record.response_skrivelse_id !== null &&
+    typeof record.response_skrivelse_id !== 'string'
+  ) {
+    errors.push('response_skrivelse_id must be a string or null');
   }
 
   // Consistency: RESPONDED requires a response_skrivelse_id
@@ -505,31 +539,33 @@ export function loadRirDataset(
  * @param dataset - Dataset to persist
  * @param filePath - Absolute or relative path to write to
  * @param writeFileFn - Injectable file writer (default: synchronous fs.writeFileSync)
+ * @param nowDate - Injectable clock for `last_updated` (default: `new Date()`)
  */
 export function saveRirDataset(
   dataset: RirFollowUpsDataset,
   filePath: string,
   writeFileFn: (path: string, data: string, encoding: BufferEncoding) => void = defaultWriteFileFn,
+  nowDate: Date = new Date(),
 ): void {
-  const json = JSON.stringify({ ...dataset, last_updated: new Date().toISOString().slice(0, 10) }, null, 2) + '\n';
+  const json =
+    JSON.stringify(
+      { ...dataset, last_updated: nowDate.toISOString().slice(0, 10) },
+      null,
+      2,
+    ) + '\n';
   writeFileFn(filePath, json, 'utf8');
 }
 
 // ---------------------------------------------------------------------------
-// Default I/O implementations (wrapped so tests can mock without fs mocks)
+// Default I/O implementations (ESM-compatible static imports)
 // ---------------------------------------------------------------------------
 
 /* istanbul ignore next -- Node.js fs wrapper, not testable in unit tests */
 function defaultReadFileFn(path: string, encoding: BufferEncoding): string {
-  // Dynamic require to keep the module importable in browser-like test envs
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const fs = require('node:fs') as typeof import('node:fs');
-  return fs.readFileSync(path, encoding);
+  return readFileSync(path, encoding);
 }
 
 /* istanbul ignore next -- Node.js fs wrapper, not testable in unit tests */
 function defaultWriteFileFn(path: string, data: string, encoding: BufferEncoding): void {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const fs = require('node:fs') as typeof import('node:fs');
-  fs.writeFileSync(path, data, encoding);
+  writeFileSync(path, data, encoding);
 }

@@ -5,7 +5,7 @@
   "last_updated": "2026-04-27",
   "constitutional_deadline_months": 4,
   "notes": [
-    "Swedish constitutional practice (RF 5:4 + RO 10:4) requires the government to formally respond to each Riksrevisionen audit report with a skrivelse (written communication) to the Riksdag.",
+    "Swedish constitutional and parliamentary practice cites RO 10:4 for Riksdag handling of Riksrevisionen reports, together with RF 5:4 and, in some assessments, RF ch. 13:7 for the government's accountability and follow-up context; this dataset treats those provisions as complementary rather than conflicting bases for the formal skrivelse response expectation.",
     "The conventional deadline is 4 calendar months after the RiR report publication date.",
     "A skrivelse_deadline of null means the deadline has not yet been confirmed in the dataset.",
     "gov_response_status values: PENDING | RESPONDED | OVERDUE | PARTIAL"

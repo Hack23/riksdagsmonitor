@@ -25,7 +25,6 @@
  * @license Apache-2.0
  */
 
-import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
@@ -71,7 +70,13 @@ function parseArgs(argv: string[]): CliOptions {
     }
   }
 
-  const asOf = dateStr ? new Date(dateStr + 'T00:00:00Z') : new Date();
+  const asOf = dateStr ? new Date(`${dateStr}T00:00:00Z`) : new Date();
+
+  if (Number.isNaN(asOf.getTime())) {
+    console.error('[fetch-rir-followups] Invalid --date value. Expected YYYY-MM-DD.');
+    process.exit(1);
+  }
+
   return { dryRun, asOf, alertOnOverdue, dataFile };
 }
 
@@ -201,10 +206,10 @@ async function main(): Promise<void> {
     }
   }
 
-  // Fetch recent skrivelser (last 90 days)
+  // Fetch recent skrivelser (last 90 days, UTC-safe arithmetic)
   const toDate = opts.asOf.toISOString().slice(0, 10);
   const fromDate90 = new Date(opts.asOf);
-  fromDate90.setDate(fromDate90.getDate() - 90);
+  fromDate90.setUTCDate(fromDate90.getUTCDate() - 90);
   const fromDate = fromDate90.toISOString().slice(0, 10);
 
   console.log(`[fetch-rir-followups] Fetching skrivelser from ${fromDate} to ${toDate} ...`);
@@ -220,22 +225,20 @@ async function main(): Promise<void> {
     for (const skr of skrivelser) {
       if (matchSkrivelse(skr, [record])) {
         const newId = skr.beteckning ?? skr.dok_id ?? skr.id ?? null;
-        if (newId) {
+        if (newId && (!record.response_skrivelse_id || record.gov_response_status === 'PARTIAL')) {
           const prevStatus = record.gov_response_status;
-          // PARTIAL → RESPONDED when a new (or fuller) skrivelse is found
-          const newStatus: RirFollowUpRecord['gov_response_status'] =
-            prevStatus === 'PARTIAL' && record.response_skrivelse_id ? 'RESPONDED' : 'RESPONDED';
-          if (!record.response_skrivelse_id || prevStatus === 'PARTIAL') {
-            console.log(
-              `[fetch-rir-followups] Matched response for ${record.rir_report_id} (${prevStatus} → ${newStatus}): ${newId}`,
-            );
-            updatedCount++;
-            return {
-              ...record,
-              gov_response_status: newStatus,
-              response_skrivelse_id: newId,
-            };
-          }
+          // Mark the record as responded when a matching skrivelse is found.
+          // PARTIAL records are upgraded to RESPONDED when a (presumably fuller) skrivelse appears.
+          const newStatus: RirFollowUpRecord['gov_response_status'] = 'RESPONDED';
+          console.log(
+            `[fetch-rir-followups] Matched response for ${record.rir_report_id} (${prevStatus} → ${newStatus}): ${newId}`,
+          );
+          updatedCount++;
+          return {
+            ...record,
+            gov_response_status: newStatus,
+            response_skrivelse_id: newId,
+          };
         }
       }
     }
@@ -253,7 +256,7 @@ async function main(): Promise<void> {
     return record;
   });
 
-  // Detect overdue alerts
+  // Detect overdue alerts (derived from current dataset, no mutation)
   const updatedDataset: RirFollowUpsDataset = { ...dataset, records: updatedRecords };
   const alerts = detectOverdueAlerts(updatedDataset, opts.asOf);
 
@@ -269,13 +272,15 @@ async function main(): Promise<void> {
     console.log('[fetch-rir-followups] No overdue skrivelse deadlines detected.');
   }
 
-  // Persist
+  // Persist only when stored records actually change.
+  // Overdue alerts are derived from the dataset and do not mutate persisted state,
+  // so they alone should NOT cause a noisy rewrite of the JSON file.
   if (!opts.dryRun) {
-    if (updatedCount > 0 || alerts.length > 0) {
+    if (updatedCount > 0) {
       saveRirDataset(updatedDataset, opts.dataFile);
       console.log(`[fetch-rir-followups] Dataset saved (${updatedCount} record(s) updated).`);
     } else {
-      console.log('[fetch-rir-followups] No changes — dataset not rewritten.');
+      console.log('[fetch-rir-followups] No record changes — dataset not rewritten.');
     }
   } else {
     console.log('[fetch-rir-followups] --dry-run: no changes written to disk.');

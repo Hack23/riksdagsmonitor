@@ -57,6 +57,20 @@
         "parliamentary_followup_doc_ids"
       ],
       "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": { "gov_response_status": { "const": "RESPONDED" } },
+            "required": ["gov_response_status"]
+          },
+          "then": {
+            "properties": {
+              "response_skrivelse_id": { "type": "string", "minLength": 1 }
+            },
+            "required": ["response_skrivelse_id"]
+          }
+        }
+      ],
       "properties": {
         "rir_report_id": {
           "type": "string",

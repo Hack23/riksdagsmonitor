@@ -1154,7 +1154,7 @@ The `rir-followups-client` module provides all necessary tools:
 
 ```typescript
 import {
-  calculateSkrivelsDeadline,  // Deadline from publish date
+  calculateSkrivelseDeadline,  // Deadline from publish date (canonical spelling)
   deriveResponseStatus,       // Re-derive status vs today's date
   detectOverdueAlerts,        // Scan dataset for overdue records
   renderRirFollowUpTable,     // Render Markdown table

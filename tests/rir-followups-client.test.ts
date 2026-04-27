@@ -1,9 +1,11 @@
 /**
- * Unit tests for `scripts/rir-followups-client.ts`.
+ * Unit and integration tests for `scripts/rir-followups-client.ts`.
  *
- * All tests use synthetic data — no file system I/O. The dataset-load/save
- * helpers are exercised by injecting mock read/write functions so the tests
- * remain stable regardless of the content of `data/rir-followups.json`.
+ * Most tests use synthetic data. The dataset-load/save helpers are primarily
+ * exercised by injecting mock read/write functions so the unit tests remain
+ * stable regardless of the content of `data/rir-followups.json`. This file
+ * also includes an integration check that reads the real dataset from
+ * `data/rir-followups.json` via file system I/O.
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -14,6 +16,7 @@ import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
+  calculateSkrivelseDeadline,
   calculateSkrivelsDeadline,
   daysOverdue,
   deriveResponseStatus,
@@ -133,38 +136,43 @@ describe('constants', () => {
 });
 
 // ---------------------------------------------------------------------------
-// calculateSkrivelsDeadline
+// calculateSkrivelseDeadline
 // ---------------------------------------------------------------------------
 
-describe('calculateSkrivelsDeadline', () => {
+describe('calculateSkrivelseDeadline', () => {
   it('adds 4 months to a mid-month date', () => {
-    expect(calculateSkrivelsDeadline('2026-01-15')).toBe('2026-05-15');
+    expect(calculateSkrivelseDeadline('2026-01-15')).toBe('2026-05-15');
   });
 
   it('adds 4 months crossing a year boundary', () => {
-    expect(calculateSkrivelsDeadline('2025-10-31')).toBe('2026-02-28');
+    expect(calculateSkrivelseDeadline('2025-10-31')).toBe('2026-02-28');
   });
 
   it('clamps to last day when target month is shorter', () => {
     // Jan 31 + 1 month = Feb 28 (non-leap)
-    expect(calculateSkrivelsDeadline('2025-01-31', { monthsOverride: 1 })).toBe('2025-02-28');
+    expect(calculateSkrivelseDeadline('2025-01-31', { monthsOverride: 1 })).toBe('2025-02-28');
   });
 
   it('handles leap year correctly', () => {
     // Oct 31 2023 + 4 months = Feb 29 2024 (leap year)
-    expect(calculateSkrivelsDeadline('2023-10-31')).toBe('2024-02-29');
+    expect(calculateSkrivelseDeadline('2023-10-31')).toBe('2024-02-29');
   });
 
   it('uses custom month override', () => {
-    expect(calculateSkrivelsDeadline('2026-01-15', { monthsOverride: 6 })).toBe('2026-07-15');
+    expect(calculateSkrivelseDeadline('2026-01-15', { monthsOverride: 6 })).toBe('2026-07-15');
   });
 
   it('throws RangeError on invalid date', () => {
-    expect(() => calculateSkrivelsDeadline('not-a-date')).toThrow(RangeError);
+    expect(() => calculateSkrivelseDeadline('not-a-date')).toThrow(RangeError);
   });
 
   it('handles end of year wrapping correctly', () => {
-    expect(calculateSkrivelsDeadline('2026-12-15')).toBe('2027-04-15');
+    expect(calculateSkrivelseDeadline('2026-12-15')).toBe('2027-04-15');
+  });
+
+  it('exposes a backwards-compatible alias `calculateSkrivelsDeadline`', () => {
+    expect(calculateSkrivelsDeadline).toBe(calculateSkrivelseDeadline);
+    expect(calculateSkrivelsDeadline('2026-01-15')).toBe('2026-05-15');
   });
 });
 
@@ -220,6 +228,26 @@ describe('deriveResponseStatus', () => {
   it('uses current date by default', () => {
     // Just check that it does not throw
     expect(() => deriveResponseStatus(RECORD_PENDING)).not.toThrow();
+  });
+
+  it('returns RESPONDED when stored status is PENDING but response_skrivelse_id is set (rule 1)', () => {
+    const stalePending: RirFollowUpRecord = {
+      ...RECORD_PENDING,
+      gov_response_status: 'PENDING',
+      response_skrivelse_id: 'Skr. 2026/27:42',
+      open_recommendations: 0,
+    };
+    expect(deriveResponseStatus(stalePending, '2026-04-27')).toBe('RESPONDED');
+  });
+
+  it('returns PARTIAL when response_skrivelse_id is set but open_recommendations > 0', () => {
+    const stalePending: RirFollowUpRecord = {
+      ...RECORD_PENDING,
+      gov_response_status: 'PENDING',
+      response_skrivelse_id: 'Skr. 2026/27:42',
+      open_recommendations: 3,
+    };
+    expect(deriveResponseStatus(stalePending, '2026-04-27')).toBe('PARTIAL');
   });
 });
 
@@ -500,6 +528,27 @@ describe('validateRirRecord', () => {
     const errors = validateRirRecord(noDeadline);
     expect(errors.filter((e) => e.includes('skrivelse_deadline'))).toHaveLength(0);
   });
+
+  it('reports non-string response_skrivelse_id', () => {
+    const bad = { ...RECORD_PENDING, response_skrivelse_id: 42 as unknown as null };
+    const errors = validateRirRecord(bad);
+    expect(errors.some((e) => e.includes('response_skrivelse_id'))).toBe(true);
+  });
+
+  it('reports non-string item in parliamentary_followup_doc_ids', () => {
+    const bad = {
+      ...RECORD_PENDING,
+      parliamentary_followup_doc_ids: ['ok', 123 as unknown as string],
+    };
+    const errors = validateRirRecord(bad);
+    expect(errors.some((e) => e.includes('parliamentary_followup_doc_ids'))).toBe(true);
+  });
+
+  it('reports non-string item in committees', () => {
+    const bad = { ...RECORD_PENDING, committees: ['JuU', 5 as unknown as string] };
+    const errors = validateRirRecord(bad);
+    expect(errors.some((e) => e.includes('committees'))).toBe(true);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -556,13 +605,13 @@ describe('saveRirDataset', () => {
     expect(parsed.records).toHaveLength(4);
   });
 
-  it('updates last_updated to today', () => {
+  it('updates last_updated using injected clock (deterministic)', () => {
     let written = '';
     const mockWrite = (_path: string, data: string) => { written = data; };
-    saveRirDataset(DATASET, '/fake/path.json', mockWrite);
+    const fixedClock = new Date('2026-04-27T12:34:56Z');
+    saveRirDataset(DATASET, '/fake/path.json', mockWrite, fixedClock);
     const parsed = JSON.parse(written) as RirFollowUpsDataset;
-    const today = new Date().toISOString().slice(0, 10);
-    expect(parsed.last_updated).toBe(today);
+    expect(parsed.last_updated).toBe('2026-04-27');
   });
 });
 
