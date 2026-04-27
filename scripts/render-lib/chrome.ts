@@ -289,6 +289,8 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
   const indexFile = opts.lang === 'en' ? 'index.html' : `index_${opts.lang}.html`;
   const sitemapFile = opts.lang === 'en' ? 'sitemap.html' : `sitemap_${opts.lang}.html`;
   const piFile = opts.lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${opts.lang}.html`;
+  const newsFile = opts.lang === 'en' ? 'news/index.html' : `news/index_${opts.lang}.html`;
+  const dashboardFile = opts.lang === 'en' ? 'dashboard/index.html' : `dashboard/index_${opts.lang}.html`;
   const rssHref = opts.rssHref ?? (opts.lang === 'en' ? '/rss.xml' : `/rss_${opts.lang}.xml`);
 
   /**
@@ -331,6 +333,8 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
     .join('\n');
 
   const tagline = 'Swedish parliamentary intelligence · Open-source · Apache-2.0';
+  const apiDocsHref = 'https://riksdagsmonitor.com/docs/api/index.html';
+  const issueHref = 'https://github.com/Hack23/riksdagsmonitor/issues/new/choose';
   const lastUpdatedIso = opts.modifiedIso ?? new Date().toISOString();
   const lastUpdatedDisplay = lastUpdatedIso.slice(0, 16).replace('T', ' ') + ' UTC';
 
@@ -380,7 +384,7 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
     <header class="rm-site-header" role="banner">
       <div class="rm-site-header-inner">
         <a class="rm-logo" href="${prefix}${indexFile}" aria-label="Riksdagsmonitor ${escapeHtml(t.home)}">
-          <img class="rm-logo-img" data-rm-logo-img="true" src="${prefix}images/riksdagsmonitor-logo.webp" alt="" width="40" height="40" loading="eager" decoding="async">
+          <img class="rm-logo-img" data-rm-logo-img="true" src="${prefix}images/riksdagsmonitor-logo.webp" alt="" width="48" height="48" loading="eager" decoding="async">
           <span class="rm-logo-glyph" aria-hidden="true">🇸🇪</span>
           <span class="rm-logo-text">
             <span class="rm-logo-brand">Riksdagsmonitor</span>
@@ -389,8 +393,11 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
         </a>
         <nav class="rm-site-nav" aria-label="${escapeHtml(t.mainPlatform)}">
           <a href="${prefix}${indexFile}">${escapeHtml(t.home)}</a>
-          <a href="${prefix}${piFile}">${escapeHtml('Political Intelligence')}</a>
+          <a href="${prefix}${newsFile}">News</a>
+          <a href="${prefix}${dashboardFile}">Dashboard</a>
+          <a href="${prefix}${piFile}">🧠 ${escapeHtml('Political Intelligence')}</a>
           <a href="${prefix}${sitemapFile}">${escapeHtml(t.siteMap)}</a>
+          <a href="${apiDocsHref}">${escapeHtml(t.apiDocs)}</a>
         </nav>
         <details class="rm-lang-switcher">
           <summary aria-label="${escapeHtml('Switch language')}">
@@ -433,34 +440,50 @@ ${opts.breadcrumbHtml ?? ''}
         <section class="rm-footer-col rm-footer-brand" aria-labelledby="rm-ft-about">
           <h2 id="rm-ft-about" class="rm-footer-heading">Riksdagsmonitor</h2>
           <p>${escapeHtml(meta.translations.mainPlatformDesc)}</p>
+          <p>Swedish cybersecurity consultancy specializing in political transparency and open-source intelligence.</p>
           <p class="rm-footer-attribution">
             Powered by
-            <a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">CIA OSINT Platform</a>
+            <a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a>
             · Built by
             <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a>
           </p>
           <p class="rm-footer-updated"><small>Last updated: <time datetime="${lastUpdatedIso}">${escapeHtml(lastUpdatedDisplay)}</time></small></p>
         </section>
         <section class="rm-footer-col rm-footer-navigate" aria-labelledby="rm-ft-nav">
-          <h2 id="rm-ft-nav" class="rm-footer-heading">${escapeHtml(t.resources)}</h2>
+          <h2 id="rm-ft-nav" class="rm-footer-heading">Quick Links</h2>
           <ul>
             <li><a href="${prefix}${indexFile}">${escapeHtml(t.home)}</a></li>
-            <li><a href="${prefix}${piFile}">${escapeHtml('Political Intelligence')}</a></li>
-            <li><a href="${prefix}${sitemapFile}">${escapeHtml(t.siteMap)}</a></li>
+            <li><a href="${prefix}${newsFile}">News</a></li>
+            <li><a href="${prefix}${dashboardFile}">Dashboard</a></li>
+            <li><a href="${prefix}${piFile}"><span aria-hidden="true">🧠</span> Political Intelligence</a></li>
+            <li><a href="${prefix}${sitemapFile}"><span aria-hidden="true">🗺️</span> ${escapeHtml(t.siteMap)}</a></li>
+            <li><a href="${apiDocsHref}"><span aria-hidden="true">📚</span> API Documentation (TypeDoc)</a></li>
+            <li><a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
+            <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+            <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
             <li><a href="${rssHref}" type="application/rss+xml" rel="alternate"><span aria-hidden="true">📡</span> RSS feed</a></li>
-            <li><a href="${GITHUB_TREE}/analysis" target="_blank" rel="noopener noreferrer">GitHub · analysis/</a></li>
-            <li><a href="${GITHUB_TREE}" target="_blank" rel="noopener noreferrer">GitHub · source</a></li>
           </ul>
         </section>
         <section class="rm-footer-col rm-footer-trust" aria-labelledby="rm-ft-trust">
-          <h2 id="rm-ft-trust" class="rm-footer-heading">Trust &amp; compliance</h2>
+          <h2 id="rm-ft-trust" class="rm-footer-heading">Built by Hack23 AB</h2>
           <ul>
-            <li><a href="${GITHUB_BLOB}/SECURITY.md" target="_blank" rel="noopener noreferrer">Security policy</a></li>
+            <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
+            <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">Company LinkedIn</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">Public ISMS</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">Security Policy</a></li>
+            <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+            <li><a href="mailto:info@hack23.com">Contact Us</a></li>
+          </ul>
+        </section>
+        <section class="rm-footer-col rm-footer-trust" aria-labelledby="rm-ft-compliance">
+          <h2 id="rm-ft-compliance" class="rm-footer-heading">Trust &amp; compliance</h2>
+          <ul>
+            <li><a href="${GITHUB_BLOB}/SECURITY.md" target="_blank" rel="noopener noreferrer">Security Policy</a></li>
             <li><a href="${GITHUB_BLOB}/CRA-ASSESSMENT.md" target="_blank" rel="noopener noreferrer">EU CRA assessment</a></li>
             <li><a href="${GITHUB_BLOB}/THREAT_MODEL.md" target="_blank" rel="noopener noreferrer">Threat model</a></li>
             <li><a href="${GITHUB_BLOB}/TRANSLATION_GUIDE.md" target="_blank" rel="noopener noreferrer">Translation guide</a></li>
             <li><a href="${GITHUB_BLOB}/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing</a></li>
-            <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">Hack23 ISMS policies</a></li>
+            <li><a href="${issueHref}" target="_blank" rel="noopener noreferrer">Report a GitHub issue</a></li>
           </ul>
         </section>
       </div>
