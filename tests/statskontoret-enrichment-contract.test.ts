@@ -85,6 +85,8 @@ describe('data/statskontoret/index.json', () => {
     const agencies = idx.entries.map(e => e.agency);
     // At least one catch-all cross-agency entry should be present
     expect(agencies.some(a => a === '*')).toBe(true);
+    // At least one entry should target a specific named agency
+    expect(agencies.some(a => a !== '*')).toBe(true);
   });
 
   it('entries with named agencies target recognised Swedish authorities', () => {

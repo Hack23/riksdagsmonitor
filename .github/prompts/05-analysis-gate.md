@@ -240,7 +240,7 @@ fi
 AGENCY_RE='Kriminalvård(en)?|Polismyndigheten|Försäkringskassan|Skatteverket|Migrationsverket|Arbetsförmedlingen|Socialstyrelsen|Transports(tyrelsen|verket)|Naturvårdsverket|Energimyndigheten'
 if [ -s "$ANALYSIS_DIR/implementation-feasibility.md" ]; then
   if grep -qE "$AGENCY_RE" "$ANALYSIS_DIR/implementation-feasibility.md"; then
-    grep -qE 'statskontoret\.se|Statskontoret relevance.*https?://|none found' "$ANALYSIS_DIR/implementation-feasibility.md" \
+    grep -qiE 'statskontoret\.se|Statskontoret relevance.*https?://|none found' "$ANALYSIS_DIR/implementation-feasibility.md" \
       || { echo "❌ implementation-feasibility.md: names a recognised agency but lacks a Statskontoret evidence citation (statskontoret.se URL or 'none found')"; FAIL=1; }
   fi
 fi
