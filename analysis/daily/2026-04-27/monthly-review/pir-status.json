@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "cycle": "monthly-review",
+  "date": "2026-04-27",
+  "subfolder": "monthly-review",
+  "pirs": [
+    {
+      "id": "PIR-A",
+      "title": "Coalition polling shift pre-election",
+      "status": "WATCHING",
+      "confidence": "B3",
+      "priority": "HIGH",
+      "trigger": "SD congress May 2026; August poll series",
+      "next_update": "2026-05-31",
+      "evidence": ["HD10448", "HD01FiU48"]
+    },
+    {
+      "id": "PIR-B",
+      "title": "Police reform audit closure",
+      "status": "WATCHING",
+      "confidence": "B2",
+      "priority": "HIGH",
+      "trigger": "Riksrevisionen follow-up on RiR 2026:6",
+      "next_update": "2026-05-31",
+      "evidence": ["HD01JuU31"]
+    },
+    {
+      "id": "PIR-C",
+      "title": "SD coalition discipline — escalated",
+      "status": "ESCALATED",
+      "confidence": "B2",
+      "priority": "HIGH",
+      "trigger": "SD congress energy chapter resolution",
+      "next_update": "2026-05-20",
+      "evidence": ["HD10448", "HD03252"]
+    },
+    {
+      "id": "PIR-D",
+      "title": "SD-KD energy policy fault line — NEW this cycle",
+      "status": "NEW-CRITICAL",
+      "confidence": "A2",
+      "priority": "CRITICAL",
+      "trigger": "SD congress energy platform adoption",
+      "next_update": "2026-05-20",
+      "evidence": ["HD10448"]
+    },
+    {
+      "id": "PIR-E",
+      "title": "Swedish SIB capital adequacy post-CRD6",
+      "status": "WATCHING",
+      "confidence": "B2",
+      "priority": "MEDIUM",
+      "trigger": "FI CRD6/CRR3 implementation status report Q2 2026",
+      "next_update": "2026-06-30",
+      "evidence": ["HD03253"]
+    }
+  ],
+  "generated_at": "2026-04-27T00:00:00Z"
+}
