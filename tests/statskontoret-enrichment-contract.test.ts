@@ -100,7 +100,7 @@ describe('data/statskontoret/index.json', () => {
       'Arbetsförmedlingen',
       'Socialstyrelsen',
       'Transportstyrelsen',
-      'Transportverket',
+      'Trafikverket',
       'Naturvårdsverket',
       'Energimyndigheten',
     ]);

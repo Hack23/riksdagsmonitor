@@ -271,7 +271,7 @@ Statskontoret reports are slow-moving; refresh the index at most once every **30
 When an agency is named in `implementation-feasibility.md`:
 - The **Feasibility Context** table MUST include a populated `Statskontoret relevance` row (URL or `"none found"`).
 - The **Administrative feasibility** section MUST cite the Statskontoret entry or explicitly state no relevant report was found.
-- Both fields are enforced by the analysis gate (`05-analysis-gate.md` Check 9).
+- Both fields are enforced by the analysis gate (`05-analysis-gate.md` Check 9b).
 
 ## Remember
 

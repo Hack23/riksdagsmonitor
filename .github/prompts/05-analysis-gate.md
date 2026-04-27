@@ -30,11 +30,11 @@ This is the **only** gate separating analysis from article generation. If it fai
 8. **Family D structure checks**:
    - `forward-indicators.md` declares **≥ 10 dated indicators** (bullet or table rows matching a date pattern across the four horizon sections).
    - `coalition-mathematics.md` contains a seat-count table (≥ 1 table row with `Ja`/`Nej`/`Avstår` or a party-to-seats mapping).
-   - `implementation-feasibility.md` — when it names a recognised agency (Kriminalvården, Polismyndigheten, Försäkringskassan, Skatteverket, Migrationsverket, Arbetsförmedlingen, Socialstyrelsen, Transportverket, Naturvårdsverket, Energimyndigheten) — contains a `statskontoret.se` URL citation **or** the literal phrase `none found` in the `Statskontoret relevance` row.
+   - `implementation-feasibility.md` — when it names a recognised agency (Kriminalvården, Polismyndigheten, Försäkringskassan, Skatteverket, Migrationsverket, Arbetsförmedlingen, Socialstyrelsen, Transportstyrelsen, Trafikverket, Naturvårdsverket, Energimyndigheten) — contains a `statskontoret.se` URL citation **or** the literal phrase `none found` in the `Statskontoret relevance` row.
 
 ## Implementation
 
-No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–9b, with check 9b conditional where applicable):
+No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–9, plus conditional check 9b where applicable):
 
 ```bash
 set -Eeuo pipefail
@@ -235,13 +235,13 @@ fi
 
 # Check 9b — Statskontoret evidence in implementation-feasibility.md
 # When implementation-feasibility.md names a recognised agency, the file MUST
-# contain either a populated Statskontoret relevance URL or a statskontoret.se
-# citation.  "none found" is accepted when the agency is truly not covered.
-AGENCY_RE='Kriminalvård(en)?|Polismyndigheten|Försäkringskassan|Skatteverket|Migrationsverket|Arbetsförmedlingen|Socialstyrelsen|Transports(tyrelsen|verket)|Naturvårdsverket|Energimyndigheten'
+# populate the `| **Statskontoret relevance** | ... |` row with either a
+# statskontoret.se URL or the literal `none found` when no relevant coverage exists.
+AGENCY_RE='Kriminalvård(en)?|Polismyndigheten|Försäkringskassan|Skatteverket|Migrationsverket|Arbetsförmedlingen|Socialstyrelsen|Transportstyrelsen|Trafikverket|Naturvårdsverket|Energimyndigheten'
 if [ -s "$ANALYSIS_DIR/implementation-feasibility.md" ]; then
   if grep -qE "$AGENCY_RE" "$ANALYSIS_DIR/implementation-feasibility.md"; then
-    grep -qiE 'statskontoret\.se|Statskontoret relevance.*https?://|none found' "$ANALYSIS_DIR/implementation-feasibility.md" \
-      || { echo "❌ implementation-feasibility.md: names a recognised agency but lacks a Statskontoret evidence citation (statskontoret.se URL or 'none found')"; FAIL=1; }
+    grep -qiE '^\|[[:space:]]*\*\*Statskontoret relevance\*\*[[:space:]]*\|[[:space:]]*([^|]*statskontoret\.se[^|]*|[^|]*none found[^|]*)\|' "$ANALYSIS_DIR/implementation-feasibility.md" \
+      || { echo "❌ implementation-feasibility.md: names a recognised agency but the Statskontoret relevance row lacks a statskontoret.se URL or 'none found'"; FAIL=1; }
   fi
 fi
 
