@@ -122,6 +122,8 @@ export default defineConfig({
         'scripts/catalog-downloaded-data.ts',
         'scripts/download-parliamentary-data.ts',
         'scripts/fetch-rir-followups.ts',
+        'scripts/fetch-calendar.ts',
+        'scripts/fetch-voting-records.ts',
         'scripts/imf-fetch.ts',
         'scripts/statskontoret-fetch.ts',
         'scripts/mcp-query-cli.ts',

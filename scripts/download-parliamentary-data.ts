@@ -34,8 +34,9 @@ import {
   flattenDocuments,
   subtractBusinessDays,
   MAX_LOOKBACK_BUSINESS_DAYS,
+  fetchFullTextForTopN,
 } from './parliamentary-data/data-downloader.js';
-import type { DocumentTypeKey } from './parliamentary-data/data-downloader.js';
+import type { DocumentTypeKey, FullTextFetchOutcome } from './parliamentary-data/data-downloader.js';
 
 import { persistDownloadedData, sanitizeDokId } from './parliamentary-data/data-persistence.js';
 
@@ -148,10 +149,11 @@ export function parseArgs(argv: string[]): {
       })
     : [];
 
-  // --auto-full-text-top-n: Override the per-type full-text enrichment limit.
-  // When set, only the top N documents per type receive fetchDocumentDetails
-  // (full-text) enrichment, enabling more targeted significance-scoring input.
-  // Defaults to MAX_ENRICHMENT_PER_TYPE when omitted (null → caller uses default).
+  // --auto-full-text-top-n: Override the per-type full-text enrichment limit and
+  // persist full text outcomes for the first N documents in the current filtered
+  // array order. Defaults to null when omitted so downloadAllDocuments uses
+  // MAX_ENRICHMENT_PER_TYPE; explicit 0 disables per-type enrichment and
+  // persisted full-text fetching. No DIW significance ranking is applied here.
   const autoFullTextTopNArg = get('--auto-full-text-top-n');
   let autoFullTextTopN: number | null = null;
   if (autoFullTextTopNArg !== null) {
@@ -235,6 +237,7 @@ function serializeDataManifest(
   docCounts: Record<string, number>,
   dateFilteredTotal: number,
   dataFreshness: string | null,
+  fullTextOutcomes?: FullTextFetchOutcome[],
 ): string {
   const totalDocs = Object.values(docCounts).reduce((a, b) => a + b, 0);
   const lines: string[] = [
@@ -265,6 +268,21 @@ function serializeDataManifest(
   lines.push('All documents sourced from official riksdag-regering-mcp API.');
   if (dataFreshness) {
     lines.push(`Data sourced from ${dataFreshness} via lookback fallback — check freshness indicators.`);
+  }
+
+  // Append full-text fetch outcomes when --auto-full-text-top-n was used.
+  if (fullTextOutcomes && fullTextOutcomes.length > 0) {
+    lines.push('', '## Full-Text Fetch Outcomes', '');
+    lines.push('| dok_id | full_text_available | chars | notes |');
+    lines.push('|--------|--------------------:|------:|-------|');
+    for (const o of fullTextOutcomes) {
+      const available = o.success ? 'true' : 'false';
+      const chars = o.chars > 0 ? String(o.chars) : '0';
+      const notes = o.reason ?? (o.filePath ? `persisted: ${o.filePath}` : '');
+      lines.push(`| ${o.dokId} | ${available} | ${chars} | ${notes} |`);
+    }
+    const successCount = fullTextOutcomes.filter(o => o.success).length;
+    lines.push('', `**Full-text retrieved**: ${successCount}/${fullTextOutcomes.length} top documents`);
   }
 
   return lines.join('\n');
@@ -514,10 +532,27 @@ async function runPreArticleAnalysis(opts: {
   const persistResult = persistDownloadedData(data, resolvedRm);
   console.log(`   🗄️  Persisted data for ${persistResult.written} documents to ${path.relative(REPO_ROOT, persistResult.dataRoot)}/ (${persistResult.skipped} skipped)`);
 
+  // ── Step 2b: Auto-fetch full text for top-N documents ────────────────────
+  let fullTextOutcomes: FullTextFetchOutcome[] | undefined;
+  if (autoFullTextTopN !== null && autoFullTextTopN > 0 && allDocs.length > 0) {
+    console.log(`\n📄 Step 2b: Auto-fetching full text for top-${autoFullTextTopN} documents (--auto-full-text-top-n=${autoFullTextTopN})...`);
+    console.log('   ⏱️  This may take 30–60 s — documented quality investment for deep-analysis tiers.');
+    fullTextOutcomes = await fetchFullTextForTopN(client, allDocs, autoFullTextTopN, outputDir);
+    const successCount = fullTextOutcomes.filter(o => o.success).length;
+    console.log(`   ✅ Full text retrieved for ${successCount}/${fullTextOutcomes.length} document(s)`);
+    for (const o of fullTextOutcomes) {
+      if (o.success) {
+        console.log(`      ✅ ${o.dokId}: ${o.chars} chars → ${o.filePath}`);
+      } else {
+        console.warn(`      ⚠️ ${o.dokId}: ${o.reason}`);
+      }
+    }
+  }
+
   // Write data-download-manifest.md (factual download summary — NOT analysis)
   const manifestContent = serializeDataManifest(
     date, generatedAt, manifest.dataSources, manifest.docCounts,
-    allDocs.length, dataFreshness,
+    allDocs.length, dataFreshness, fullTextOutcomes,
   );
   const manifestPath = path.join(outputDir, 'data-download-manifest.md');
   fs.writeFileSync(manifestPath, manifestContent, 'utf8');
@@ -553,6 +588,11 @@ async function runPreArticleAnalysis(opts: {
   console.log(`\n✅ Data download complete! Results in: ${path.relative(REPO_ROOT, outputDir)}/`);
   console.log(`   📄 ${totalFiles} total files written (1 manifest + ${storedCount} documents)`);
   console.log(`   📊 ${allDocs.length} documents available for AI analysis`);
+  if (autoFullTextTopN !== null && autoFullTextTopN > 0) {
+    const successCount = fullTextOutcomes?.filter(o => o.success).length ?? 0;
+    const attempted = fullTextOutcomes?.length ?? 0;
+    console.log(`   📄 Full text: ${successCount}/${attempted} top-${autoFullTextTopN} documents (see full-text/ sub-folder)`);
+  }
   if (docType) {
     console.log(`   📋 Scoped to: ${docType}`);
   }

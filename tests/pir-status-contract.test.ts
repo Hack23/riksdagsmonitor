@@ -850,7 +850,10 @@ describe('analysis-gate pir-status.json contract', () => {
   });
   it('05-analysis-gate.md keeps PIR and supplementary checks sequential', () => {
     expect(gate).toContain('# Check 9 — PIR status sidecar');
-    expect(gate).toContain('# Check 10 — supplementary artifacts');
+    // Check 10 is now "top-2 full-text availability" (added by --auto-full-text-top-n);
+    // supplementary artifacts shifted to Check 11.
+    expect(gate).toContain('# Check 10 — top-2 full-text availability');
+    expect(gate).toContain('# Check 11 — supplementary artifacts');
   });
   it('ai-driven-analysis-guide.md references pir-status.json', () => {
     expect(guide).toContain('pir-status.json');
