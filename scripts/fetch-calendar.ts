@@ -470,6 +470,11 @@ export function parseCalendarListItem(attrs: string, body: string): CalendarEven
 // HTML extraction helpers
 // ---------------------------------------------------------------------------
 
+/** Escape a string for safe use in a `new RegExp(...)` constructor. */
+function escapeRegex(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 /** Extract the `datetime` attribute from a `<time>` element. */
 function extractDatetime(html: string): string | null {
   const m = html.match(/<time\b[^>]*\bdatetime=(["'])(.*?)\1/i);
@@ -478,7 +483,7 @@ function extractDatetime(html: string): string | null {
 
 /** Extract a `data-{attr}` attribute value from a tag's attribute string. */
 function extractDataAttr(attrs: string, name: string): string | null {
-  const re = new RegExp(`\\bdata-${name}\\s*=\\s*(["'])(.*?)\\1`, 'i');
+  const re = new RegExp(`\\bdata-${escapeRegex(name)}\\s*=\\s*(["'])(.*?)\\1`, 'i');
   const m = attrs.match(re);
   return m && m[2]?.trim() ? m[2].trim() : null;
 }
@@ -494,8 +499,9 @@ function hasCalendarItemClass(attrs: string): boolean {
  * Uses a simple, non-greedy regex that covers the common markup pattern.
  */
 function extractSpanText(html: string, name: string): string | null {
+  const safe = escapeRegex(name);
   const re = new RegExp(
-    `<span\\b[^>]*\\bclass\\s*=\\s*(["'])[^"']*${name}[^"']*\\1[^>]*>([\\s\\S]*?)<\\/span>`,
+    `<span\\b[^>]*\\bclass\\s*=\\s*(["'])[^"']*${safe}[^"']*\\1[^>]*>([\\s\\S]*?)<\\/span>`,
     'i',
   );
   const m = html.match(re);
