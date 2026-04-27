@@ -136,6 +136,46 @@ describe('Party Dashboard', () => {
 
 **Note**: Dashboard JavaScript files are browser-only IIFEs (not ES6 modules), so we test DOM structure and configuration rather than importing functions.
 
+### CIA Visualizations Renderer Unit Tests
+
+**File**: `tests/visualizations.test.ts`
+
+Covers all 9 public render methods of `src/browser/cia/visualizations.ts` — the
+primary chart rendering engine that drives every CIA intelligence dashboard.
+The module is now included in the Vitest coverage gate.
+
+**Chart.js mock pattern.** The renderer captures `Chart` at module load time
+(`const Chart = (globalThis as any).Chart;`). To intercept each chart
+construction with a per-test spy we:
+
+1. Replace `globalThis.Chart` with a `vi.fn()` that pushes `{ ctx, type, data,
+   options }` into a `chartCalls` array.
+2. Call `vi.resetModules()` and **dynamically** `import` the module so the new
+   `Chart` reference is captured.
+
+```typescript
+async function loadRenderer(): Promise<RendererCtor> {
+  vi.resetModules();
+  const mod = await import('../src/browser/cia/visualizations.js');
+  return mod.CIADashboardRenderer as unknown as RendererCtor;
+}
+
+it('passes correct party labels to Chart.js', async () => {
+  const Renderer = await loadRenderer();
+  makeCanvas('party-seats-chart');
+  makeCanvas('party-cohesion-chart');
+
+  new Renderer({ partyPerf: fxPartyPerf() }).renderPartyPerformance();
+
+  expect(chartCalls[0].type).toBe('bar');
+  expect(chartCalls[0].data.labels).toEqual(['S','M','SD','C','V','KD','L','MP']);
+});
+```
+
+**Edge cases covered.** Empty/missing dashboards (early `return` warning paths),
+missing `globalThis.Chart` (graceful no-op), and NaN / non-finite numeric
+fields (rendered as `'N/A'` or replaced with `0`).
+
 ## 🌐 E2E Tests (Cypress)
 
 ### Comprehensive Dashboard Coverage
