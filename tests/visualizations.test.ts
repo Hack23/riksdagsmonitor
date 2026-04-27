@@ -18,7 +18,7 @@
  *    base `globalThis.Chart` mock. We replace it locally with a `vi.fn()`
  *    spy so we can capture each Chart.js configuration.
  *  - Fixture data is kept minimal but shape-compliant with the
- *    `RendererData` interface defined in `data-loader.ts`.
+ *    `RendererData` interface used by the visualizations module.
  *  - Edge cases: empty/missing dashboards, missing Chart constructor,
  *    null/NaN numeric fields.
  *

@@ -138,12 +138,11 @@ describe('Party Dashboard', () => {
 
 ### CIA Visualizations Renderer Unit Tests
 
-**File**: `tests/visualizations.test.ts` (32 tests)
+**File**: `tests/visualizations.test.ts`
 
 Covers all 9 public render methods of `src/browser/cia/visualizations.ts` — the
-813-line primary chart rendering engine that drives every CIA intelligence
-dashboard. The module is now in the coverage gate denominator (≥ 99 % lines, ≥ 95 %
-branches at the time of writing).
+primary chart rendering engine that drives every CIA intelligence dashboard.
+The module is now included in the Vitest coverage gate.
 
 **Chart.js mock pattern.** The renderer captures `Chart` at module load time
 (`const Chart = (globalThis as any).Chart;`). To intercept each chart
