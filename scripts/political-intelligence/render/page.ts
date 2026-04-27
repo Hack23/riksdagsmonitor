@@ -175,7 +175,7 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
     section: t.title,
     publishedIso: `${latestDate}T00:00:00Z`,
     modifiedIso: buildIso,
-    rssHref: lang === 'en' ? '/rss/news.xml' : `/rss/news_${lang}.xml`,
+    rssHref: '/rss.xml',
     breadcrumb: [
       { label: t.home, href: indexFile },
       { label: t.title },
