@@ -122,6 +122,8 @@ export default defineConfig({
         'scripts/catalog-downloaded-data.ts',
         'scripts/download-parliamentary-data.ts',
         'scripts/imf-fetch.ts',
+        'scripts/scb-fetch.ts',
+        'scripts/riksbank-fetch.ts',
         'scripts/statskontoret-fetch.ts',
         'scripts/mcp-query-cli.ts',
         'scripts/extract-news-metadata.ts',
