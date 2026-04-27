@@ -133,7 +133,7 @@ export function extractBetValues(manifestText: string): string[] {
     // Require at least one letter before the digits (already guaranteed by regex)
     // Filter year/version-like tokens that are not committee designations,
     // for example a single-letter prefix followed by a 4-digit year: "A2026".
-    if (/^[A-ZÅÄÖ]\d{4}$/i.test(candidate)) continue;
+    if (/^[A-ZÅÄÖ]\d{4}$/.test(candidate)) continue;
     // Skip if the digit-free prefix alone is a known false-positive acronym
     const letterPart = candidate.replace(/\d+$/, '');
     if (/^(Se|En|Sv|Da|No|Fi|De|Fr|Es|Nl|Ar|He|Ja|Ko|Zh|Id|Ok|In|As|At|By|Be|Do|Go|Is|It|If|Of|On|Or|To|Up|Us|We)$/i.test(letterPart)) continue;
