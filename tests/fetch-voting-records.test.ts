@@ -278,9 +278,14 @@ describe('contract: voting records have status field', () => {
         let parsed: unknown;
         try {
           parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-        } catch {
-          // Skip malformed files
-          continue;
+        } catch (error: unknown) {
+          // Contract test: malformed voting-record JSON is a hard failure,
+          // not something to silently skip.
+          const message = error instanceof Error ? error.message : String(error);
+          throw new Error(
+            `Malformed voting record JSON in ${filePath}: ${message}`,
+            { cause: error },
+          );
         }
 
         expect(
@@ -295,14 +300,14 @@ describe('contract: voting records have status field', () => {
         ).toBeDefined();
 
         expect(
-          ['fetched', 'vote_pending', 'not_found'],
+          ['fetched', 'vote_pending', 'not_found', 'error'],
           `${jsonFile} status must be a valid value`,
         ).toContain(record['status']);
       }
     }
   });
 
-  it('betänkanden cited in intelligence-assessment.md have voting records or vote-pending annotation', () => {
+  it('cited betänkanden have either a voting record or an explicit pending/not-found/error annotation', () => {
     if (!fs.existsSync(dailyRoot)) return;
 
     const dateDirs = fs
@@ -312,6 +317,13 @@ describe('contract: voting records have status field', () => {
     for (const dateDir of dateDirs) {
       const date = dateDir.name;
       const baseDir = path.join(dailyRoot, date);
+      const voterDir = path.join(voterRoot, date);
+
+      // Only enforce the annotation contract for dates where
+      // fetch-voting-records has actually run (i.e. a per-date voter
+      // directory exists). This avoids retroactive failures on historical
+      // assessments authored before this script was introduced.
+      if (!fs.existsSync(voterDir)) continue;
 
       // Find all intelligence-assessment.md files
       const assessmentFiles: string[] = [];
@@ -329,24 +341,31 @@ describe('contract: voting records have status field', () => {
         const bets = extractBetValues(content);
 
         for (const bet of bets) {
-          const voterDir = path.join(voterRoot, date);
           const votingFile = path.join(voterDir, `${sanitizeBet(bet)}.json`);
 
-          // If voting file exists, it must have a status
           if (fs.existsSync(votingFile)) {
-            let record: unknown;
-            try {
-              record = JSON.parse(fs.readFileSync(votingFile, 'utf8'));
-            } catch {
-              continue;
-            }
+            const record = JSON.parse(fs.readFileSync(votingFile, 'utf8')) as Record<string, unknown>;
             expect(
-              (record as Record<string, unknown>)['status'],
+              record['status'],
               `Voting record for ${bet} (${date}) must have a status field`,
             ).toBeDefined();
+          } else {
+            // No voting file → assessment must carry an explicit annotation
+            // so readers know whether the vote is pending, missing from the
+            // API, or failed to fetch.
+            const votePendingAnnotation = `<!-- vote-pending: ${bet} -->`;
+            const voteNotFoundAnnotation = `<!-- vote-not-found: ${bet} -->`;
+            const voteFetchErrorAnnotation = `<!-- vote-fetch-error: ${bet} -->`;
+
+            expect(
+              content.includes(votePendingAnnotation) ||
+                content.includes(voteNotFoundAnnotation) ||
+                content.includes(voteFetchErrorAnnotation),
+              `Missing voting record for ${bet} (${date}) must be annotated with ` +
+                `${votePendingAnnotation}, ${voteNotFoundAnnotation} or ` +
+                `${voteFetchErrorAnnotation} in ${asmFile}`,
+            ).toBe(true);
           }
-          // If no voting file, the assessment may have <!-- vote-pending: {bet} -->
-          // (we don't fail here — the file just hasn't been fetched yet)
         }
       }
     }

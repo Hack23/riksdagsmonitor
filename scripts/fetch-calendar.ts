@@ -8,7 +8,8 @@
  *   npx tsx scripts/fetch-calendar.ts --from 2026-04-27 --tom 2026-05-27 [--org UTSK] [--akt bet] [--persist]
  *
  * Output:
- *   analysis/data/calendar/{from}_{tom}.json   — always written
+ *   stdout                                    — always written (JSON)
+ *   analysis/data/calendar/{from}_{tom}.json  — written only when --persist is set
  *
  * Exit codes:
  *   0 — success
@@ -203,9 +204,13 @@ export function parseCalendarHtml(html: string): CalendarEvent[] {
     // Use [\s\S]*? to match newlines inside tags (prevents incomplete sanitization)
     (m[1] ?? '').replace(/<[\s\S]*?>/g, '').trim(),
   );
+  // Pre-compute time matches once outside the loop (O(N) instead of
+  // O(titles × times)). Keep an index pointer (`timeCursor`) similar to
+  // `usedDates`'s sequential walk so each match is consumed at most once.
+  const allTimes = [...html.matchAll(timeRe)].map((m) => m[1] ?? '');
 
   const usedDates = new Set<number>();
-  const usedTimes = new Set<number>();
+  let timeCursor = 0;
 
   for (let i = 0; i < titles.length; i++) {
     const title = titles[i];
@@ -221,13 +226,12 @@ export function parseCalendarHtml(html: string): CalendarEvent[] {
       }
     }
 
-    // Find nearest time
-    const allTimes = [...html.matchAll(timeRe)];
+    // Consume the next available time match (linear pointer scan)
     let tid = '';
-    for (let t = i; t < allTimes.length; t++) {
-      if (!usedTimes.has(t) && allTimes[t]?.[1]) {
-        tid = allTimes[t]![1]!;
-        usedTimes.add(t);
+    while (timeCursor < allTimes.length) {
+      const candidate = allTimes[timeCursor++];
+      if (candidate) {
+        tid = candidate;
         break;
       }
     }
@@ -243,6 +247,7 @@ async function fetchViaWeb(args: ParsedCalendarArgs): Promise<CalendarEvent[]> {
   if (args.from) url.searchParams.set('from', args.from);
   if (args.tom) url.searchParams.set('tom', args.tom);
   if (args.org) url.searchParams.set('org', args.org);
+  if (args.akt) url.searchParams.set('akt', args.akt);
 
   const response = await fetch(url.toString(), {
     headers: { 'User-Agent': 'riksdagsmonitor/1.0 (+https://hack23.com)' },
@@ -255,6 +260,58 @@ async function fetchViaWeb(args: ParsedCalendarArgs): Promise<CalendarEvent[]> {
 
   const html = await response.text();
   return parseCalendarHtml(html);
+}
+
+// ---------------------------------------------------------------------------
+// Orchestrator — MCP primary → web fallback → graceful empty
+// ---------------------------------------------------------------------------
+
+/**
+ * Dependencies for the calendar fetch orchestrator. Allows tests to inject
+ * deterministic stubs in place of the real MCP and web paths.
+ */
+export interface FetchCalendarDeps {
+  readonly fetchViaMcp: (args: ParsedCalendarArgs) => Promise<CalendarEvent[]>;
+  readonly fetchViaWeb: (args: ParsedCalendarArgs) => Promise<CalendarEvent[]>;
+  readonly now?: () => Date;
+  readonly logger?: (msg: string) => void;
+}
+
+/**
+ * Run the MCP-primary → web-fallback chain and return a `CalendarOutput`.
+ * Source is `'mcp'` if the MCP path returned ≥1 event, otherwise
+ * `'web_fallback'` (regardless of whether the web fallback itself returned
+ * events or had to degrade gracefully to an empty array).
+ */
+export async function fetchCalendarEvents(
+  args: ParsedCalendarArgs,
+  deps: FetchCalendarDeps,
+): Promise<CalendarOutput> {
+  const log = deps.logger ?? (() => {});
+  const fetchedAt = (deps.now?.() ?? new Date()).toISOString();
+
+  let events: CalendarEvent[] = [];
+  let source: 'mcp' | 'web_fallback' = 'mcp';
+
+  try {
+    events = await deps.fetchViaMcp(args);
+    log(`fetch-calendar: MCP returned ${events.length} event(s)`);
+  } catch (mcpErr) {
+    log(`fetch-calendar: MCP failed (${String(mcpErr)}), trying web fallback`);
+  }
+
+  if (events.length === 0) {
+    source = 'web_fallback';
+    try {
+      events = await deps.fetchViaWeb(args);
+      log(`fetch-calendar: web_fallback returned ${events.length} event(s)`);
+    } catch (webErr) {
+      log(`fetch-calendar: web_fallback also failed (${String(webErr)}), returning empty`);
+      events = [];
+    }
+  }
+
+  return { from: args.from, tom: args.tom, fetchedAt, source, events };
 }
 
 // ---------------------------------------------------------------------------
@@ -271,33 +328,11 @@ async function main(): Promise<void> {
   const { from, tom, persist } = args;
 
   const client = new MCPClient();
-  const fetchedAt = new Date().toISOString();
-  let events: CalendarEvent[] = [];
-  let source: 'mcp' | 'web_fallback' = 'mcp';
-
-  try {
-    events = await fetchViaMcp(client, args);
-    process.stderr.write(`fetch-calendar: MCP returned ${events.length} event(s)\n`);
-  } catch (mcpErr) {
-    process.stderr.write(
-      `fetch-calendar: MCP failed (${String(mcpErr)}), trying web fallback\n`,
-    );
-  }
-
-  if (events.length === 0) {
-    source = 'web_fallback';
-    try {
-      events = await fetchViaWeb(args);
-      process.stderr.write(`fetch-calendar: web_fallback returned ${events.length} event(s)\n`);
-    } catch (webErr) {
-      process.stderr.write(
-        `fetch-calendar: web_fallback also failed (${String(webErr)}), returning empty\n`,
-      );
-      // Graceful degradation — emit empty result rather than crash
-    }
-  }
-
-  const output: CalendarOutput = { from, tom, fetchedAt, source, events };
+  const output = await fetchCalendarEvents(args, {
+    fetchViaMcp: (a) => fetchViaMcp(client, a),
+    fetchViaWeb,
+    logger: (msg) => process.stderr.write(`${msg}\n`),
+  });
 
   process.stdout.write(JSON.stringify(output, null, 2) + '\n');
 

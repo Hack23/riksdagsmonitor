@@ -61,10 +61,11 @@ export interface VotingRecordOutput {
   bet: string;
   rm: string | null;
   fetchedAt: string;
-  status: 'fetched' | 'vote_pending' | 'not_found';
+  status: 'fetched' | 'vote_pending' | 'not_found' | 'error';
   partyVotes: PartyVoteRow[];
   defectors: DefectorRecord[];
   mermaidDiagram: string;
+  errorMessage?: string;
   injectionMarkdown?: string;
 }
 
@@ -130,8 +131,9 @@ export function extractBetValues(manifestText: string): string[] {
     const candidate = match[1];
     if (!candidate) continue;
     // Require at least one letter before the digits (already guaranteed by regex)
-    // Filter candidates that look like years (e.g. "A2026") or version numbers
-    if (/^\d/.test(candidate)) continue;
+    // Filter year/version-like tokens that are not committee designations,
+    // for example a single-letter prefix followed by a 4-digit year: "A2026".
+    if (/^[A-ZÅÄÖ]\d{4}$/i.test(candidate)) continue;
     // Skip if the digit-free prefix alone is a known false-positive acronym
     const letterPart = candidate.replace(/\d+$/, '');
     if (/^(Se|En|Sv|Da|No|Fi|De|Fr|Es|Nl|Ar|He|Ja|Ko|Zh|Id|Ok|In|As|At|By|Be|Do|Go|Is|It|If|Of|On|Or|To|Up|Us|We)$/i.test(letterPart)) continue;
@@ -255,13 +257,30 @@ export function generateMermaidVoteChart(partyVotes: PartyVoteRow[], bet: string
 // ---------------------------------------------------------------------------
 
 function buildInjectionMarkdown(record: VotingRecordOutput): string {
-  const { bet, status, partyVotes, defectors, mermaidDiagram } = record;
+  const { bet, status, partyVotes, defectors, mermaidDiagram, errorMessage } = record;
 
   if (status === 'vote_pending') {
     return [
       `<!-- vote-pending: ${bet} -->`,
       `> **Omröstning ej genomförd** — betänkande \`${bet}\` har ännu inte röstats igenom.`,
       `> Uppdatera med \`fetch-voting-records.ts --date {date}\` när omröstningen är avslutad.`,
+    ].join('\n');
+  }
+
+  if (status === 'not_found') {
+    return [
+      `<!-- vote-not-found: ${bet} -->`,
+      `> **Ingen omröstning registrerad** — betänkande \`${bet}\` saknar röstresultat i Riksdagens öppna data`,
+      `> (kan vara remiss, procedurellt beslut eller utskottsärende utan kammaravgörande).`,
+    ].join('\n');
+  }
+
+  if (status === 'error') {
+    const detail = errorMessage ? `: ${errorMessage}` : '';
+    return [
+      `<!-- vote-fetch-error: ${bet} -->`,
+      `> **Hämtning av omröstning misslyckades** — \`${bet}\`${detail}.`,
+      `> Återhämta med \`fetch-voting-records.ts --date {date}\` när MCP/nätverket är tillgängligt.`,
     ].join('\n');
   }
 
@@ -337,21 +356,28 @@ async function fetchVotingForBet(client: MCPClient, bet: string): Promise<Voting
 
     rawIndividualVotes = await client.fetchVotingRecords({ bet, limit: 200 });
   } catch (err) {
-    process.stderr.write(`⚠️  fetch-voting-records: MCP error for bet=${bet}: ${String(err)}\n`);
-    // Return not_found if network/MCP totally fails
-    return {
+    // Distinguish fetch failures (transient/network/MCP errors) from a
+    // confirmed empty voting record. `'not_found'` is reserved for the
+    // case where the MCP returned successfully but had zero data, while
+    // `'error'` carries the error message for downstream annotation.
+    const message = err instanceof Error ? err.message : String(err);
+    process.stderr.write(`⚠️  fetch-voting-records: MCP error for bet=${bet}: ${message}\n`);
+    const errorRecord: VotingRecordOutput = {
       bet,
       rm: null,
       fetchedAt,
-      status: 'not_found',
+      status: 'error',
       partyVotes: [],
       defectors: [],
       mermaidDiagram: generateMermaidVoteChart([], bet),
+      errorMessage: message,
     };
+    errorRecord.injectionMarkdown = buildInjectionMarkdown(errorRecord);
+    return errorRecord;
   }
 
   if (partyVotes.length === 0 && rawIndividualVotes.length === 0) {
-    return {
+    const pendingRecord: VotingRecordOutput = {
       bet,
       rm: rm || null,
       fetchedAt,
@@ -360,6 +386,8 @@ async function fetchVotingForBet(client: MCPClient, bet: string): Promise<Voting
       defectors: [],
       mermaidDiagram: generateMermaidVoteChart([], bet),
     };
+    pendingRecord.injectionMarkdown = buildInjectionMarkdown(pendingRecord);
+    return pendingRecord;
   }
 
   const { defectors } = detectDefectors(rawIndividualVotes);

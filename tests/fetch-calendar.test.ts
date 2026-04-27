@@ -3,12 +3,16 @@
  * @description Vitest unit tests for fetch-calendar.ts
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 
 import {
   parseArgs,
   parseCalendarHtml,
+  fetchCalendarEvents,
+  type CalendarEvent,
   type CalendarOutput,
+  type FetchCalendarDeps,
+  type ParsedCalendarArgs,
 } from '../scripts/fetch-calendar.js';
 
 // ---------------------------------------------------------------------------
@@ -148,63 +152,119 @@ describe('parseCalendarHtml', () => {
 });
 
 // ---------------------------------------------------------------------------
-// MCP primary path — mock MCPClient
+// fetchCalendarEvents — orchestrator (real logic exercised via injected deps)
 // ---------------------------------------------------------------------------
 
+const baseArgs: ParsedCalendarArgs = {
+  from: '2026-04-27',
+  tom: '2026-05-27',
+  org: null,
+  akt: null,
+  persist: false,
+};
+
+function makeDeps(overrides: Partial<FetchCalendarDeps>): FetchCalendarDeps {
+  return {
+    fetchViaMcp: overrides.fetchViaMcp ?? (async () => []),
+    fetchViaWeb: overrides.fetchViaWeb ?? (async () => []),
+    now: overrides.now ?? (() => new Date('2026-04-27T00:00:00.000Z')),
+    logger: overrides.logger,
+  };
+}
+
 describe('fetchCalendarEvents — MCP primary path', () => {
-  it('source is "mcp" when MCP client returns events', async () => {
-    // We test the shape/logic by simulating what the main function would produce
-    // when MCP returns data — using the output structure directly
-    const mockEvents = [
+  it('source is "mcp" when MCP returns events and web is never called', async () => {
+    const mcpEvents: CalendarEvent[] = [
       { datum: '2026-05-05', tid: '10:00', org: 'FiU', titel: 'Utfrågning', typ: 'Öppet' },
     ];
+    const webSpy = vi.fn(async () => [] as CalendarEvent[]);
 
-    const output: CalendarOutput = {
+    const out = await fetchCalendarEvents(
+      baseArgs,
+      makeDeps({ fetchViaMcp: async () => mcpEvents, fetchViaWeb: webSpy }),
+    );
+
+    expect(out.source).toBe('mcp');
+    expect(out.events).toEqual(mcpEvents);
+    expect(webSpy).not.toHaveBeenCalled();
+    expect(out.fetchedAt).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+  });
+
+  it('falls back to web when MCP throws', async () => {
+    const webEvents: CalendarEvent[] = [
+      { datum: '2026-05-06', tid: '14:00', org: 'KU', titel: 'Möte', typ: '' },
+    ];
+
+    const out = await fetchCalendarEvents(
+      baseArgs,
+      makeDeps({
+        fetchViaMcp: async () => {
+          throw new Error('mcp down');
+        },
+        fetchViaWeb: async () => webEvents,
+      }),
+    );
+
+    expect(out.source).toBe('web_fallback');
+    expect(out.events).toEqual(webEvents);
+  });
+});
+
+describe('fetchCalendarEvents — web fallback path', () => {
+  it('source is "web_fallback" when MCP returns empty', async () => {
+    const webEvents: CalendarEvent[] = [
+      { datum: '2026-05-07', tid: '09:00', org: 'AU', titel: 'Debatt', typ: '' },
+    ];
+
+    const out = await fetchCalendarEvents(
+      baseArgs,
+      makeDeps({
+        fetchViaMcp: async () => [],
+        fetchViaWeb: async () => webEvents,
+      }),
+    );
+
+    expect(out.source).toBe('web_fallback');
+    expect(out.events).toEqual(webEvents);
+  });
+
+  it('gracefully degrades to empty events array when web fetch fails', async () => {
+    const out = await fetchCalendarEvents(
+      baseArgs,
+      makeDeps({
+        fetchViaMcp: async () => [],
+        fetchViaWeb: async () => {
+          throw new Error('web down');
+        },
+      }),
+    );
+
+    expect(out.source).toBe('web_fallback');
+    expect(out.events).toEqual([]);
+    expect(out.fetchedAt).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+  });
+
+  it('preserves args.from / args.tom on the output', async () => {
+    const out = await fetchCalendarEvents(
+      { ...baseArgs, from: '2026-06-01', tom: '2026-06-30' },
+      makeDeps({}),
+    );
+    expect(out.from).toBe('2026-06-01');
+    expect(out.tom).toBe('2026-06-30');
+  });
+});
+
+// Backwards-compatibility shape assertions (object literal, no logic)
+describe('CalendarOutput object shape', () => {
+  it('accepts a fully-populated CalendarOutput literal', () => {
+    const out: CalendarOutput = {
       from: '2026-04-27',
       tom: '2026-05-27',
       fetchedAt: new Date().toISOString(),
       source: 'mcp',
-      events: mockEvents,
-    };
-
-    expect(output.source).toBe('mcp');
-    expect(output.events).toHaveLength(1);
-    expect(output.events[0]!.datum).toBe('2026-05-05');
-  });
-});
-
-// ---------------------------------------------------------------------------
-// Fallback path
-// ---------------------------------------------------------------------------
-
-describe('fetchCalendarEvents — web fallback path', () => {
-  it('source is "web_fallback" when MCP returns empty', () => {
-    // Simulates the behavior where MCP returns 0 events → fallback activated
-    const fallbackOutput: CalendarOutput = {
-      from: '2026-04-27',
-      tom: '2026-05-27',
-      fetchedAt: new Date().toISOString(),
-      source: 'web_fallback',
       events: [],
     };
-
-    expect(fallbackOutput.source).toBe('web_fallback');
-  });
-
-  it('gracefully degrades to empty events array when web fetch fails', () => {
-    // Simulate the graceful-degradation path (web also fails)
-    const degradedOutput: CalendarOutput = {
-      from: '2026-04-27',
-      tom: '2026-05-27',
-      fetchedAt: new Date().toISOString(),
-      source: 'web_fallback',
-      events: [],
-    };
-
-    // The output should still be a valid CalendarOutput with empty events
-    expect(degradedOutput.events).toEqual([]);
-    expect(typeof degradedOutput.fetchedAt).toBe('string');
-    expect(degradedOutput.fetchedAt).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+    expect(out.source).toBe('mcp');
   });
 });
 
