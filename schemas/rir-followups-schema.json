@@ -1,0 +1,155 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://riksdagsmonitor.com/schemas/rir-followups-schema.json",
+  "title": "RiR Follow-ups Dataset",
+  "description": "Schema for the Riksrevisionen (RiR) follow-up tracker — constitutional skrivelse deadlines and government response status",
+  "type": "object",
+  "required": ["version", "description", "last_updated", "constitutional_deadline_months", "records"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "description": "Dataset schema version"
+    },
+    "description": {
+      "type": "string"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date when the dataset was last updated"
+    },
+    "constitutional_deadline_months": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 24,
+      "description": "Default deadline in calendar months (Swedish constitutional practice: 4 months)"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "$ref": "#/definitions/RirFollowUpRecord"
+      }
+    }
+  },
+  "definitions": {
+    "RirFollowUpRecord": {
+      "type": "object",
+      "required": [
+        "rir_report_id",
+        "rir_number",
+        "title",
+        "agency",
+        "publish_date",
+        "skrivelse_deadline",
+        "gov_response_status",
+        "response_skrivelse_id",
+        "parliamentary_followup_doc_ids"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "rir_report_id": {
+          "type": "string",
+          "description": "Riksdag document ID for the RiR report (e.g. HD01JuU31)"
+        },
+        "rir_number": {
+          "type": "string",
+          "pattern": "^RiR \\d{4}:\\d+$",
+          "description": "Official RiR publication number (e.g. RiR 2026:6)"
+        },
+        "title": {
+          "type": "string",
+          "description": "Swedish title of the RiR report"
+        },
+        "title_en": {
+          "type": "string",
+          "description": "English translation of the title"
+        },
+        "agency": {
+          "type": "string",
+          "description": "Primary government agency audited"
+        },
+        "policy_area": {
+          "type": "string",
+          "description": "Swedish policy area"
+        },
+        "committees": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Riksdag committee codes handling the report (e.g. JuU, FöU)"
+        },
+        "publish_date": {
+          "type": "string",
+          "format": "date",
+          "description": "ISO 8601 date when the RiR report was published"
+        },
+        "skrivelse_deadline": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Deadline for the government skrivelse response (null if not confirmed)"
+        },
+        "gov_response_status": {
+          "type": "string",
+          "enum": ["PENDING", "RESPONDED", "OVERDUE", "PARTIAL"],
+          "description": "Government response status: PENDING=awaiting response, RESPONDED=fully responded, OVERDUE=deadline elapsed without response, PARTIAL=partial response only"
+        },
+        "response_skrivelse_id": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The Riksdag document ID or reference of the government skrivelse response (null if not yet responded)"
+        },
+        "parliamentary_followup_doc_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of Riksdag document IDs for parliamentary follow-up documents (motions, betänkanden, interpellationer)"
+        },
+        "open_recommendations": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of open/unresolved RiR recommendations"
+        },
+        "risk_level": {
+          "type": "string",
+          "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+          "description": "Political accountability risk level"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Additional context or intelligence notes"
+        },
+        "riksdag_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the document on riksdagen.se"
+        }
+      }
+    }
+  }
+}

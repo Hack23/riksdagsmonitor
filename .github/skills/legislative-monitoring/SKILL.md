@@ -28,6 +28,9 @@ Apply this skill when:
 - ✅ Detecting legislative obstruction or procedural manipulation
 - ✅ Measuring government vs. opposition effectiveness
 - ✅ Tracking amendment success rates and strategic positioning
+- ✅ Tracking Riksrevisionen (RiR) audit findings and constitutional skrivelse deadlines
+- ✅ Monitoring government accountability for audit recommendations
+- ✅ Generating overdue-deadline alerts for unanswered RiR reports
 
 Do NOT use for:
 - ❌ Manipulating legislative processes through intelligence
@@ -1104,6 +1107,133 @@ ORDER BY intensity_score DESC, collaboration_count DESC;
 |---------|-------------|
 | **CIS Control 8 - Audit Log Management** | Legislative activity audit logging |
 | **CIS Control 11 - Data Recovery** | Parliamentary data backup and recovery |
+
+## 7. Riksrevisionen (RiR) Follow-Up Tracking
+
+### Constitutional Framework
+
+Swedish constitutional practice (Riksdagsordningen ch. 10 and Government Offices' established conventions) requires the government to formally respond to each Riksrevisionen audit report with a **skrivelse** (written communication to the Riksdag) within **4 calendar months** of the report's publication.
+
+Failure to respond within this deadline is a constitutional accountability gap that creates political risk and potential for opposition interpellations, motions, and media pressure.
+
+### Data Model
+
+The authoritative dataset lives at `data/rir-followups.json` (JSON schema: `schemas/rir-followups-schema.json`). Each record captures:
+
+| Field | Description |
+|-------|-------------|
+| `rir_report_id` | Riksdag document ID (e.g. `HD01JuU31`) |
+| `rir_number` | Official RiR number (e.g. `RiR 2026:6`) |
+| `title` / `title_en` | Swedish and English titles |
+| `agency` | Primary audited government agency |
+| `committees` | Riksdag committee codes (e.g. `JuU`, `FöU`) |
+| `publish_date` | ISO 8601 publication date |
+| `skrivelse_deadline` | Calculated 4-month constitutional deadline |
+| `gov_response_status` | `PENDING` \| `RESPONDED` \| `OVERDUE` \| `PARTIAL` |
+| `response_skrivelse_id` | Reference if government has responded |
+| `parliamentary_followup_doc_ids` | Related Riksdag documents |
+| `open_recommendations` | Count of unresolved audit recommendations |
+| `risk_level` | `LOW` \| `MEDIUM` \| `HIGH` \| `CRITICAL` |
+
+### Status Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> PENDING : RiR report published
+    PENDING --> RESPONDED : Government delivers skrivelse
+    PENDING --> OVERDUE : 4-month deadline elapsed, no response
+    PENDING --> PARTIAL : Government responds partially
+    OVERDUE --> RESPONDED : Belated skrivelse delivered
+    PARTIAL --> RESPONDED : Full response delivered
+    RESPONDED --> [*] : Follow-up complete
+```
+
+### Library: `scripts/rir-followups-client.ts`
+
+The `rir-followups-client` module provides all necessary tools:
+
+```typescript
+import {
+  calculateSkrivelsDeadline,  // Deadline from publish date
+  deriveResponseStatus,       // Re-derive status vs today's date
+  detectOverdueAlerts,        // Scan dataset for overdue records
+  renderRirFollowUpTable,     // Render Markdown table
+  injectRirTableIntoDocument, // Inject/replace table in a document
+  filterByCommittee,          // Filter by Riksdag committee
+  filterByStatus,             // Filter by response status
+  filterByMinRiskLevel,       // Filter by minimum risk level
+  validateRirRecord,          // Validate a single record
+  validateRirDataset,         // Validate full dataset
+  loadRirDataset,             // Load JSON from file (injectable I/O)
+  saveRirDataset,             // Save JSON to file (injectable I/O)
+} from './rir-followups-client.js';
+```
+
+### CLI: `scripts/fetch-rir-followups.ts`
+
+Run daily (or as part of the news workflow) to:
+1. Fetch recent government skrivelser from `data.riksdagen.se`
+2. Match against known RiR follow-up records
+3. Update `gov_response_status` and `response_skrivelse_id`
+4. Emit overdue alerts (exit code 1 with `--alert` flag)
+
+```bash
+# Check for overdue alerts (exit 1 if found)
+npx tsx scripts/fetch-rir-followups.ts --alert
+
+# Dry-run against a specific reference date
+npx tsx scripts/fetch-rir-followups.ts --dry-run --date 2026-05-01
+```
+
+### Injecting RiR Follow-Up Tables into Intelligence Assessments
+
+Every intelligence-assessment document that cites a Riksrevisionen finding **MUST** include a follow-up status table. Use the `injectRirTableIntoDocument` helper or add the HTML markers manually:
+
+```markdown
+<!-- RIR-FOLLOWUP-TABLE-START -->
+
+## 🔍 Riksrevisionen Follow-Up Status
+
+| RiR # | Title | Agency | Published | Skrivelse Deadline | Status | Days Overdue |
+|-------|-------|--------|-----------|-------------------|--------|--------------|
+| RiR 2026:6 | [Polisreform…](https://…) | Polismyndigheten | 2026-01-15 | 2026-05-15 | ⏳ PENDING | — |
+| RiR 2025:18 | [Civilt försvar…](https://…) | MSB | 2025-12-10 | 2026-04-10 | 🚨 OVERDUE | ⚠️ 17 |
+
+<!-- RIR-FOLLOWUP-TABLE-END -->
+```
+
+### Riksdag API Search for Skrivelser
+
+To fetch government responses manually via the riksdag-regering-mcp tools:
+
+```typescript
+// Via search_dokument MCP tool
+riksdag-regering-search_dokument({
+  doktyp: 'skr',     // skrivelse (government communication)
+  from_date: '2025-01-01',
+  to_date: '2026-12-31',
+  titel: 'Riksrevisionen'  // or specific RiR number
+})
+```
+
+### Workflow Integration
+
+Wire the RiR follow-up tracker into intelligence-assessment generation by:
+
+1. **Daily fetch**: Run `fetch-rir-followups.ts` before news generation to ensure `data/rir-followups.json` is up to date
+2. **Automatic injection**: For any intelligence assessment document citing a RiR finding (detected via `rir_report_id` or `rir_number` keywords), call `injectRirTableIntoDocument` with the filtered relevant records
+3. **KJ propagation**: When a record transitions to `OVERDUE`, update all active Key Judgements (KJs) that reference that RiR finding to reflect the accountability gap
+
+### Alert Thresholds
+
+| Days Overdue | Alert Level | Recommended Action |
+|--------------|-------------|-------------------|
+| 0 | None | Normal monitoring |
+| 1–30 | LOW | Note in intelligence assessment |
+| 31–90 | MEDIUM | Create GitHub issue, escalate in weekly-review |
+| 91+ | HIGH | Create GitHub issue immediately, flag in KJs |
+
+---
 
 ## Hack23 ISMS Policy References
 
