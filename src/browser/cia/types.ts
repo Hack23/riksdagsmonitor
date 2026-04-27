@@ -28,9 +28,9 @@
 /** Definition for a single CSV data source mapping. */
 export interface CSVSourceDefinition {
   /** Relative path within the csvBaseURL directory. */
-  local: string;
+  readonly local: string;
   /** Human-readable description of the data product. */
-  description: string;
+  readonly description: string;
 }
 
 /** Map of all known CSV source categories. */

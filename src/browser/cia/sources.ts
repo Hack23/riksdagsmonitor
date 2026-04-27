@@ -165,8 +165,8 @@ const CSV_SOURCES_RAW: CSVSourceMap = {
 };
 
 /** Deep-frozen CSV source inventory shared across the CIA pipeline. */
-export const CSV_SOURCES: CSVSourceMap = Object.freeze(
+export const CSV_SOURCES: Readonly<CSVSourceMap> = Object.freeze(
   Object.fromEntries(
     Object.entries(CSV_SOURCES_RAW).map(([key, value]) => [key, Object.freeze({ ...value })])
   )
-) as CSVSourceMap;
+) as Readonly<CSVSourceMap>;

@@ -207,6 +207,20 @@ export const PROBE_TIMEOUT_MS = 20_000;
 /** Maximum WEO vintage age (in months) before the article must annotate. */
 export const STALE_VINTAGE_MAX_MONTHS = 6;
 
+/** Successful probe outcome. */
+type ProbeOk<T> = { readonly ok: true; readonly value: T };
+
+/** Failed probe outcome (network error or hard timeout). */
+type ProbeErr = { readonly ok: false; readonly error: Error };
+
+/** Tagged union returned by {@link withTimeout}. */
+type ProbeResult<T> = ProbeOk<T> | ProbeErr;
+
+/** Type predicate: is the probe result a failure? */
+function isProbeErr(result: ProbeResult<unknown>): result is ProbeErr {
+  return result.ok === false;
+}
+
 /**
  * Race a promise against a hard timeout. Resolves to `{ ok: true, value }`
  * on success, `{ ok: false, error }` on rejection or timeout. Never throws.
@@ -218,7 +232,7 @@ export const STALE_VINTAGE_MAX_MONTHS = 6;
 async function withTimeout<T>(
   promise: Promise<T>,
   timeoutMs: number,
-): Promise<{ ok: true; value: T } | { ok: false; error: Error }> {
+): Promise<ProbeResult<T>> {
   let timer: ReturnType<typeof setTimeout> | undefined;
   const timeoutError = new Error('probe timeout after ' + String(timeoutMs) + 'ms');
   try {
@@ -256,7 +270,15 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
       client.getWeoIndicator('SWE', 'NGDP_RPCH', 1),
       PROBE_TIMEOUT_MS,
     );
-    if (result.ok) {
+    if (isProbeErr(result)) {
+      probes.push({
+        dataflow: 'WEO',
+        transport: 'datamapper',
+        ok: false,
+        latencyMs: Date.now() - start,
+        error: result.error.message,
+      });
+    } else {
       const series = result.value;
       probes.push({
         dataflow: 'WEO',
@@ -264,14 +286,6 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
         ok: series.length > 0,
         latencyMs: Date.now() - start,
         ...(series.length === 0 ? { error: 'empty-series' } : {}),
-      });
-    } else {
-      probes.push({
-        dataflow: 'WEO',
-        transport: 'datamapper',
-        ok: false,
-        latencyMs: Date.now() - start,
-        error: result.error.message,
       });
     }
   }
@@ -283,7 +297,15 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
       client.getWeoIndicator('SWE', 'GGXONLB_NGDP', 1),
       PROBE_TIMEOUT_MS,
     );
-    if (result.ok) {
+    if (isProbeErr(result)) {
+      probes.push({
+        dataflow: 'FM',
+        transport: 'datamapper',
+        ok: false,
+        latencyMs: Date.now() - start,
+        error: result.error.message,
+      });
+    } else {
       const series = result.value;
       probes.push({
         dataflow: 'FM',
@@ -291,14 +313,6 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
         ok: series.length > 0,
         latencyMs: Date.now() - start,
         ...(series.length === 0 ? { error: 'empty-series' } : {}),
-      });
-    } else {
-      probes.push({
-        dataflow: 'FM',
-        transport: 'datamapper',
-        ok: false,
-        latencyMs: Date.now() - start,
-        error: result.error.message,
       });
     }
   }
@@ -313,7 +327,15 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
       client.sdmxFetch('/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01'),
       PROBE_TIMEOUT_MS,
     );
-    if (result.ok) {
+    if (isProbeErr(result)) {
+      probes.push({
+        dataflow: 'IFS',
+        transport: 'sdmx',
+        ok: false,
+        latencyMs: Date.now() - start,
+        error: result.error.message,
+      });
+    } else {
       const raw = result.value;
       const ok = raw !== null && typeof raw === 'object';
       probes.push({
@@ -322,14 +344,6 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
         ok,
         latencyMs: Date.now() - start,
         ...(ok ? {} : { error: 'non-object-response' }),
-      });
-    } else {
-      probes.push({
-        dataflow: 'IFS',
-        transport: 'sdmx',
-        ok: false,
-        latencyMs: Date.now() - start,
-        error: result.error.message,
       });
     }
   }

@@ -77,12 +77,13 @@ export function parseCSV(csvText: string): CSVRow[] {
  *
  * Tolerant of base URLs that omit the trailing slash and of paths that include
  * a leading slash — both common foot-guns when callers concatenate URL strings
- * by hand. Empty `path` is returned as-is so the caller can still use the base
- * URL alone (e.g. for directory listings).
+ * by hand. Empty inputs are passed through: an empty `base` returns `path`
+ * unchanged, and an empty `path` returns `base` unchanged (useful for directory
+ * listings or when the path is computed conditionally).
  *
- * @param base - Base URL (with or without trailing slash); must be non-empty
- * @param path - Relative path (with or without leading slash)
- * @returns The two segments joined by exactly one `/`
+ * @param base - Base URL (with or without trailing slash); empty string returns `path` as-is
+ * @param path - Relative path (with or without leading slash); empty string returns `base` as-is
+ * @returns The two segments joined by exactly one `/`, or whichever input is non-empty when one is empty
  */
 export function joinURL(base: string, path: string): string {
   if (!base) return path;

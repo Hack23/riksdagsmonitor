@@ -105,7 +105,7 @@ export class CIADataLoader {
   static readonly COMMITTEE_DOCS_PER_MEETING_ESTIMATE = COMMITTEE_DOCS_PER_MEETING_ESTIMATE;
 
   /** CSV data source definitions – maps to real PostgreSQL view exports. */
-  static readonly CSV_SOURCES: CSVSourceMap = CSV_SOURCES;
+  static readonly CSV_SOURCES: Readonly<CSVSourceMap> = CSV_SOURCES;
 
   /** Loader closure bound to this instance's URL configuration. */
   private readonly loadCSVFn: LoadCSV;
