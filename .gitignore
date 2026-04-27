@@ -62,6 +62,10 @@ scripts/__pycache__/
 /news/index.html
 /news/index_*.html
 /data/news-articles.json
+# IMF connectivity pre-flight artifacts (regenerated at the start of every
+# news-* workflow by scripts/check-imf-connectivity.ts; transient).
+/data/imf-context.json
+/data/imf-unavailable.flag
 /rss.xml
 /sitemap*
 dashboard-initial.png

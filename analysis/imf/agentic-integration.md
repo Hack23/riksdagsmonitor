@@ -64,6 +64,33 @@ tsx scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH --years 1 >/dev
 sleep 1
 ```
 
+> 🔴 **Pre-warm gate** — the throwaway call above is the *manual* cold-start
+> probe. The full pre-warm gate is invoked automatically by the
+> `.github/actions/news-prewarm` composite action (and therefore by every
+> one of the 11 `.github/workflows/news-*.md` workflows) via
+> `scripts/check-imf-connectivity.ts`:
+>
+> - **What it probes** — three IMF transports: WEO + FM via Datamapper,
+>   IFS monthly CPI via SDMX 3.0.
+> - **Vintage discipline** — parses `ImfClient.weoVintage`
+>   (`WEO-2026-04` at the time of writing) into a calendar age. Anything
+>   older than `STALE_VINTAGE_MAX_MONTHS` (6) flips the report to
+>   `status: "stale-vintage"` and emits an `ℹ️` annotation block per
+>   `.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.1 §"Vintage discipline".
+> - **Outputs** — always writes `data/imf-context.json`
+>   (`{status, vintage, vintageAgeMonths, stale, probes, checkedAt,
+>   warningBlock}`); on connectivity failure additionally writes
+>   `data/imf-unavailable.flag` containing the structured payload.
+> - **Failure handling** — non-blocking by default (exit 0 + flag file
+>   so the workflow continues). On connectivity failure every workflow
+>   MUST inject the `⚠️ IMF context unavailable` block into
+>   `executive-brief.md`, `comparative-international.md`, and
+>   `synthesis-summary.md` — the exact wording is provided in
+>   `report.warningBlock` so the agent can paste it verbatim.
+> - **Manual invocation** — `tsx scripts/check-imf-connectivity.ts
+>   [--strict] [--output-dir data]`. `--strict` flips to fail-fast for
+>   operator debugging.
+
 ### Step 4 — Batched `compare` call for peer-set
 
 Always prefer `compare` (single batched Datamapper call across countries) over parallel `weo` calls — one call vs five gets you 80 % off the rate-limit budget.

@@ -268,4 +268,24 @@ describe('imf-context', () => {
       expect(new Set(citations).size).toBe(citations.length);
     });
   });
+
+  describe('connectivity pre-flight integration', () => {
+    // The IMF pre-flight gate (`scripts/check-imf-connectivity.ts`) is the
+    // upstream half of the IMF context system: it verifies the gate is
+    // reachable before any policy-area lookup is attempted. The full unit
+    // tests live in `imf-connectivity.test.ts`; the smoke check here pins
+    // the public surface so a refactor to one cannot silently break the
+    // other.
+    it('exposes the pre-flight surface that workflows depend on', async () => {
+      const m = await import('../scripts/check-imf-connectivity.js');
+      expect(typeof m.runProbes).toBe('function');
+      expect(typeof m.buildReport).toBe('function');
+      expect(typeof m.writeReport).toBe('function');
+      expect(typeof m.parseVintage).toBe('function');
+      expect(typeof m.vintageAgeMonths).toBe('function');
+      expect(typeof m.formatUnavailableWarning).toBe('function');
+      expect(typeof m.formatStaleVintageAnnotation).toBe('function');
+      expect(m.STALE_VINTAGE_MAX_MONTHS).toBe(6);
+    });
+  });
 });
