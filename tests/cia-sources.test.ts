@@ -42,4 +42,13 @@ describe('CIA sources configuration', () => {
     expect(COMMITTEE_DOCS_PER_MEETING_ESTIMATE).toBeGreaterThan(0);
     expect(Number.isFinite(COMMITTEE_DOCS_PER_MEETING_ESTIMATE)).toBe(true);
   });
+
+  it('deep-freezes the shared source inventory so consumers cannot mutate it', () => {
+    expect(Object.isFrozen(CSV_SOURCES)).toBe(true);
+    expect(Object.isFrozen(RIKSDAG_PARTIES)).toBe(true);
+    expect(Object.isFrozen(COMMITTEE_ORG_CODES)).toBe(true);
+    for (const [key, def] of Object.entries(CSV_SOURCES)) {
+      expect(Object.isFrozen(def), `${key} descriptor should be frozen`).toBe(true);
+    }
+  });
 });

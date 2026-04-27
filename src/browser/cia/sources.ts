@@ -18,12 +18,12 @@
 import type { CSVSourceMap } from './types.js';
 
 /** The 8 parties represented in the Swedish Riksdag. */
-export const RIKSDAG_PARTIES: readonly string[] = [
+export const RIKSDAG_PARTIES: readonly string[] = Object.freeze([
   'S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'
-];
+]);
 
 /** Mapping of full Swedish committee names to their Riksdag org codes. */
-export const COMMITTEE_ORG_CODES: Readonly<Record<string, string>> = {
+export const COMMITTEE_ORG_CODES: Readonly<Record<string, string>> = Object.freeze({
   'Konstitutionsutskottet': 'KU',
   'Civilutskottet': 'CU',
   'Trafikutskottet': 'TU',
@@ -42,7 +42,7 @@ export const COMMITTEE_ORG_CODES: Readonly<Record<string, string>> = {
   'Försvarsutskottet': 'FöU',
   'Lagutskottet': 'LU',
   'Bostadsutskottet': 'BoU'
-};
+});
 
 /**
  * Heuristic divisor to estimate meetings/year from committee document counts.
@@ -50,8 +50,14 @@ export const COMMITTEE_ORG_CODES: Readonly<Record<string, string>> = {
  */
 export const COMMITTEE_DOCS_PER_MEETING_ESTIMATE = 25;
 
-/** CSV data source definitions – maps to real PostgreSQL view exports. */
-export const CSV_SOURCES: CSVSourceMap = {
+/**
+ * CSV data source definitions – maps to real PostgreSQL view exports.
+ *
+ * Both the outer map and each inner descriptor are deep-frozen so that
+ * historical `CIADataLoader.CSV_SOURCES` consumers cannot mutate the shared
+ * source inventory.
+ */
+const CSV_SOURCES_RAW: CSVSourceMap = {
   personStatus: {
     local: 'distribution_person_status.csv',
     description: 'Active MP counts by status'
@@ -157,3 +163,10 @@ export const CSV_SOURCES: CSVSourceMap = {
     description: 'Behavioral risk patterns per party'
   }
 };
+
+/** Deep-frozen CSV source inventory shared across the CIA pipeline. */
+export const CSV_SOURCES: CSVSourceMap = Object.freeze(
+  Object.fromEntries(
+    Object.entries(CSV_SOURCES_RAW).map(([key, value]) => [key, Object.freeze({ ...value })])
+  )
+) as CSVSourceMap;
