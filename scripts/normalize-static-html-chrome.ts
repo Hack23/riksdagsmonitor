@@ -230,6 +230,48 @@ function addNewsHeaderLinks(html: string, lang: Language): string {
   return html.replace(dashboardLinkPattern, `$1${additions}`);
 }
 
+function legacyNewsHeader(lang: Language): string {
+  const suffix = localizedSuffix(lang);
+  return `<header class="site-header" role="banner">
+<nav class="article-top-nav" aria-label="Site navigation">
+<a href="../index${suffix}.html" class="nav-home" aria-label="Riksdagsmonitor Home">
+  <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+  <span>Riksdagsmonitor</span>
+</a>
+<span class="nav-separator">|</span>
+<a href="index${suffix}.html" class="nav-news">News</a>
+<a href="../dashboard/index${suffix}.html">Dashboard</a>
+<a href="../political-intelligence${suffix}.html">🧠 Political Intelligence</a>
+<a href="../sitemap${suffix}.html">🗺️ Sitemap</a>
+<a href="${API_DOCS_URL}">📚 API Docs</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Switch to dark theme"
+        title="Switch to dark theme"
+        data-label-dark="Switch to light theme"
+        data-label-light="Switch to dark theme">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
+</nav>
+</header>`;
+}
+
+function normalizeLegacyNewsChrome(html: string, lang: Language): string {
+  if (html.includes('class="rm-site-header"')) return html;
+  let next = html;
+  if (/<header\b[^>]*class="[^"]*\bsite-header\b[^"]*"[^>]*>[\s\S]*?<\/header>/i.test(next)) {
+    next = next.replace(/<header\b[^>]*class="[^"]*\bsite-header\b[^"]*"[^>]*>[\s\S]*?<\/header>/i, legacyNewsHeader(lang));
+  }
+  if (!next.includes('id="theme-toggle"') && /<body[^>]*>/i.test(next)) {
+    next = next.replace(/(<body[^>]*>)/i, `$1\n${legacyNewsHeader(lang)}`);
+  }
+  const normalizedFooter = footer('../', 'home', lang);
+  if (/<footer\b[^>]*(?:role="contentinfo"|class="[^"]*\bsite-footer\b)[^>]*>[\s\S]*?<\/footer>/i.test(next)) {
+    next = next.replace(/<footer\b[^>]*(?:role="contentinfo"|class="[^"]*\bsite-footer\b)[^>]*>[\s\S]*?<\/footer>/i, normalizedFooter);
+  }
+  return next;
+}
+
 function walkHtmlFiles(dir: string): string[] {
   if (!fs.existsSync(dir)) return [];
   const out: string[] = [];
@@ -252,7 +294,7 @@ for (const absolute of walkHtmlFiles(path.join(ROOT_DIR, 'news'))) {
   const before = fs.readFileSync(absolute, 'utf8');
   let after = normalizeApiLinks(before);
   if (!after.includes('class="rm-site-footer"')) {
-    after = addNewsHeaderLinks(addNewsQuickLinks(after, lang), lang);
+    after = normalizeLegacyNewsChrome(addNewsHeaderLinks(addNewsQuickLinks(after, lang), lang), lang);
   }
   if (after !== before) {
     fs.writeFileSync(absolute, after, 'utf8');

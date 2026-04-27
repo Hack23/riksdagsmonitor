@@ -431,7 +431,7 @@
   </footer>
 </article>
 
-<footer role="contentinfo">
+<footer role="contentinfo" class="site-footer" data-rm-static-footer="true">
   <div class="footer-content">
     <div class="footer-section">
       <a href="../index.html" aria-label="Riksdagsmonitor Home">
@@ -439,6 +439,7 @@
       </a>
       <h3>About Riksdagsmonitor</h3>
       <p>Live intelligence platform for Swedish Parliament monitoring using CIA OSINT capabilities.</p>
+      <p>Swedish cybersecurity consultancy specializing in political transparency and open-source intelligence.</p>
       <ul class="footer-stats">
         <li><strong>349 MPs</strong> tracked</li>
         <li><strong>45 risk rules</strong> active</li>
@@ -450,9 +451,12 @@
       <h3>Quick Links</h3>
       <ul>
         <li><a href="../index.html">Home</a></li>
-        <li><a href="index.html">News</a></li>
+        <li><a href="../news/index.html">News</a></li>
         <li><a href="../dashboard/index.html">Dashboard</a></li>
-        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
+        <li><a href="../political-intelligence.html"><span aria-hidden="true">🧠</span> Political Intelligence</a></li>
+        <li><a href="../sitemap.html"><span aria-hidden="true">🗺️</span> Sitemap</a></li>
+        <li><a href="https://riksdagsmonitor.com/docs/api/index.html"><span aria-hidden="true">📚</span> API Documentation (TypeDoc)</a></li>
+        <li><a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
         <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
         <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
       </ul>
@@ -467,30 +471,31 @@
         <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">Security Policy</a></li>
         <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
         <li><a href="mailto:info@hack23.com">Contact Us</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor/issues/new/choose" target="_blank" rel="noopener noreferrer">Report a GitHub issue</a></li>
       </ul>
     </div>
     <div class="footer-section">
       <h3>Languages</h3>
       <div class="language-grid">
-        <a href="../index.html" title="English" aria-label="Switch to English"><span aria-hidden="true">🇬🇧</span> EN</a>
-        <a href="../index_sv.html" title="Svenska" aria-label="Byt till Svenska"><span aria-hidden="true">🇸🇪</span> SV</a>
-        <a href="../index_da.html" title="Dansk" aria-label="Skift til Dansk"><span aria-hidden="true">🇩🇰</span> DA</a>
-        <a href="../index_no.html" title="Norsk" aria-label="Bytt til Norsk"><span aria-hidden="true">🇳🇴</span> NO</a>
-        <a href="../index_fi.html" title="Suomi" aria-label="Vaihda Suomeksi"><span aria-hidden="true">🇫🇮</span> FI</a>
-        <a href="../index_de.html" title="Deutsch" aria-label="Wechseln zu Deutsch"><span aria-hidden="true">🇩🇪</span> DE</a>
-        <a href="../index_fr.html" title="Français" aria-label="Passer au Français"><span aria-hidden="true">🇫🇷</span> FR</a>
-        <a href="../index_es.html" title="Español" aria-label="Cambiar a Español"><span aria-hidden="true">🇪🇸</span> ES</a>
-        <a href="../index_nl.html" title="Nederlands" aria-label="Schakel naar Nederlands"><span aria-hidden="true">🇳🇱</span> NL</a>
-        <a href="../index_ar.html" title="العربية" aria-label="التبديل إلى العربية"><span aria-hidden="true">🇸🇦</span> AR</a>
-        <a href="../index_he.html" title="עברית" aria-label="עבור לעברית"><span aria-hidden="true">🇮🇱</span> HE</a>
-        <a href="../index_ja.html" title="日本語" aria-label="日本語に切り替え"><span aria-hidden="true">🇯🇵</span> JA</a>
-        <a href="../index_ko.html" title="한국어" aria-label="한국어로 전환"><span aria-hidden="true">🇰🇷</span> KO</a>
-        <a href="../index_zh.html" title="中文" aria-label="切换到中文"><span aria-hidden="true">🇨🇳</span> ZH</a>
+        <a href="../index.html" lang="en" hreflang="en" title="English" aria-label="Switch to English" aria-current="page" class="active"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="../index_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="Switch to Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="../index_da.html" lang="da" hreflang="da" title="Dansk" aria-label="Switch to Danish"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="../index_no.html" lang="nb" hreflang="nb" title="Norsk" aria-label="Switch to Norwegian"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="../index_fi.html" lang="fi" hreflang="fi" title="Suomi" aria-label="Switch to Finnish"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="../index_de.html" lang="de" hreflang="de" title="Deutsch" aria-label="Switch to German"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="../index_fr.html" lang="fr" hreflang="fr" title="Français" aria-label="Switch to French"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="../index_es.html" lang="es" hreflang="es" title="Español" aria-label="Switch to Spanish"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="../index_nl.html" lang="nl" hreflang="nl" title="Nederlands" aria-label="Switch to Dutch"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="../index_ar.html" lang="ar" hreflang="ar" title="العربية" aria-label="Switch to Arabic"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="../index_he.html" lang="he" hreflang="he" title="עברית" aria-label="Switch to Hebrew"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="../index_ja.html" lang="ja" hreflang="ja" title="日本語" aria-label="Switch to Japanese"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="../index_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="Switch to Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="../index_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="Switch to Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | Gothenburg, Sweden | v0.8.0</p>
+    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | Gothenburg, Sweden</p>
     <p class="footer-disclaimer">⚠️ Ongoing improvements — please <a href="https://github.com/Hack23/riksdagsmonitor/issues/new/choose" target="_blank" rel="noopener noreferrer">report any issues on GitHub</a>.</p>
   </div>
 </footer>
