@@ -148,9 +148,10 @@ export function parseArgs(argv: string[]): {
       })
     : [];
 
-  // --auto-full-text-top-n: Number of top documents to auto-fetch full text for.
-  // Defaults to 0 (disabled). Use 2 to guarantee the top-2 DIW-ranked documents
-  // have full text available for deep-analysis tiers (L2/L3).
+  // --auto-full-text-top-n: Number of documents to auto-fetch full text for.
+  // Defaults to 0 (disabled). When enabled, the script fetches full text for the
+  // first N documents in the current filtered array order for deep-analysis tiers (L2/L3).
+  // Note: no DIW significance ranking is applied here; order reflects the MCP fetch order.
   const autoFullTextTopNArg = get('--auto-full-text-top-n');
   const autoFullTextTopN = autoFullTextTopNArg !== null ? Number(autoFullTextTopNArg) : 0;
   if (!Number.isInteger(autoFullTextTopN) || autoFullTextTopN < 0) {

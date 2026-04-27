@@ -9,8 +9,9 @@
  * and `rm`). Date-specific filtering should be applied by the caller after download
  * (e.g., filtering by the `datum` field on each `RawDocument`).
  *
- * This module is intentionally side-effect-free with respect to the filesystem;
- * callers are responsible for writing any output.
+ * Most functions in this module are side-effect-free with respect to the filesystem;
+ * callers are responsible for writing any output. The exception is `fetchFullTextForTopN`,
+ * which writes persisted full-text files to `{outputDir}/full-text/` — see its JSDoc.
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -515,19 +516,21 @@ export function flattenDocuments(data: DownloadedData): RawDocument[] {
  * Fetch full-text content for the top-N documents in `docs` and persist each
  * to `{outputDir}/full-text/{dok_id}.md`.
  *
+ * This function has filesystem side effects: it creates `outputDir/full-text/`
+ * (including any missing parent directories) and writes one `.md` file per
+ * successfully fetched document.
+ *
  * Documents that lack a resolvable `dok_id` are skipped. If the MCP call
  * succeeds but returns no meaningful content (< FULL_TEXT_MIN_LENGTH chars),
  * the outcome is recorded as `success: false` with an explanatory `reason` so
  * the caller (and the analysis gate) can distinguish "not tried" from
  * "tried but only metadata returned".
  *
- * The function is intentionally *not* side-effect-free: it writes files to
- * `outputDir/full-text/`. The caller is responsible for creating `outputDir`.
- *
  * @param client      - MCPClient instance for calling get_dokument_innehall
  * @param docs        - Ordered list of documents; first `topN` will be attempted
  * @param topN        - Maximum number of documents to fetch full text for
- * @param outputDir   - Base directory where `full-text/` sub-folder is created
+ * @param outputDir   - Base directory; `full-text/` sub-folder is created here
+ *                      (including any missing parent directories)
  * @returns           - One outcome record per dok_id attempted
  */
 export async function fetchFullTextForTopN(
@@ -589,20 +592,24 @@ export async function fetchFullTextForTopN(
         const filenameSafeDokId = dokId.replace(/[^A-Za-z0-9_-]/g, '_');
         const filePath = path.join(fullTextDir, `${filenameSafeDokId}.md`);
         const snippet = sanitize(details['snippet']) || sanitize(details['summary']) || '';
-        const header = [
+        // Build header without filtering blank lines so Markdown structure is preserved.
+        // The array is joined with \n and must end with \n so content starts on a new line.
+        const headerLines = [
           `# Full Text — ${dokId}`,
           '',
-          snippet ? `> ${snippet}` : '',
-          '',
+          ...(snippet ? [`> ${snippet}`, ''] : []),
           '---',
           '',
-        ].filter(Boolean).join('\n');
+        ];
+        const header = headerLines.join('\n');
         fs.writeFileSync(filePath, header + content, 'utf8');
+        // Use outputDir as the stable base for the relative path so the manifest
+        // entry is consistent regardless of the caller's working directory.
         outcome = {
           dokId,
           success: true,
           chars: content.length,
-          filePath: path.relative(process.cwd(), filePath),
+          filePath: path.relative(outputDir, filePath),
         };
       } else {
         outcome = {

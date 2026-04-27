@@ -330,6 +330,21 @@ describe('fetchFullTextForTopN', () => {
       expect(written).toContain('# Full Text — DOC99');
       expect(written).toContain('A short summary');
       expect(written).toContain(content);
+      // Blank lines must be preserved so the horizontal rule renders correctly
+      expect(written).toContain('\n\n---\n');
+    });
+
+    it('filePath in outcome is relative to outputDir (not CWD)', async () => {
+      const content = 'Z'.repeat(FULL_TEXT_MIN_LENGTH + 5);
+      const client = createMockClient(async () => ({ text: content }));
+
+      const outcomes = await fetchFullTextForTopN(
+        client, [makeDoc({ dok_id: 'RELPATH' })], 1, tmpDir,
+      );
+
+      expect(outcomes[0]!.success).toBe(true);
+      // filePath should be relative to outputDir, not an absolute path or CWD-relative
+      expect(outcomes[0]!.filePath).toBe(path.join('full-text', 'RELPATH.md'));
     });
 
     it('sanitizes MP profile text (isPersonProfileText filter)', async () => {
