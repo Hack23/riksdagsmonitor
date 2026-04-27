@@ -646,8 +646,11 @@ export function persistRiksbankData(
     'utf8',
   );
 
-  const sourceUrl = typeof response === 'object' && response !== null && 'url' in response
-    ? String((response as { url?: unknown }).url)
+  const candidateUrl = typeof response === 'object' && response !== null && 'url' in response
+    ? (response as { url?: unknown }).url
+    : undefined;
+  const sourceUrl = typeof candidateUrl === 'string' && candidateUrl.length > 0
+    ? candidateUrl
     : undefined;
   const metaFilename = `${sanitized}.meta.json`;
   fs.writeFileSync(

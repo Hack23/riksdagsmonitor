@@ -86,4 +86,49 @@ describe('Riksbank fetch CLI helpers', () => {
     expect(payload.status).toBe('no-data');
     expect(payload.warning).toMatch(/HTTP 503/);
   });
+
+  it('fail-softs when Content-Length exceeds the PDF cap before downloading', async () => {
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(null, {
+        status: 200,
+        headers: { 'content-type': 'application/pdf', 'content-length': String(10 * 1024 * 1024) },
+      }),
+    );
+    const payload = await fetchRiksbankPayload('minutes', 'https://www.riksbank.se/en-gb/m.pdf');
+    expect(payload.status).toBe('no-data');
+    expect(payload.warning).toMatch(/Content-Length/);
+    expect(fetchSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('follows redirects manually and validates each Location host', async () => {
+    const fetchSpy = vi.spyOn(globalThis, 'fetch')
+      .mockResolvedValueOnce(
+        new Response(null, {
+          status: 302,
+          headers: { location: 'https://www.riksbank.se/en-gb/final/' },
+        }),
+      )
+      .mockResolvedValueOnce(
+        new Response('<html><head><title>Final</title></head></html>', {
+          status: 200,
+          headers: { 'content-type': 'text/html; charset=utf-8' },
+        }),
+      );
+    const payload = await fetchRiksbankPayload('minutes', 'https://www.riksbank.se/en-gb/start/');
+    expect(payload.status).toBe('ok');
+    expect(payload.url).toBe('https://www.riksbank.se/en-gb/final/');
+    expect(fetchSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('rejects redirects to off-allowlist hosts', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(null, {
+        status: 302,
+        headers: { location: 'https://evil.example.com/leak' },
+      }),
+    );
+    const payload = await fetchRiksbankPayload('minutes', 'https://www.riksbank.se/en-gb/m/');
+    expect(payload.status).toBe('no-data');
+    expect(payload.warning).toMatch(/allowlist|fetch failed/i);
+  });
 });

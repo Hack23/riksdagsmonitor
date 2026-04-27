@@ -116,9 +116,23 @@ function extractTitle(text: string): string | undefined {
 
 const DEFAULT_RIKSBANK_TIMEOUT_MS = 15_000;
 const TEXT_MAX_BYTES = 20_000;
+/** Hard cap on HTML/text body size before truncation. Prevents pathological
+ *  HTML pages from exhausting memory while still allowing a generous slice. */
+const TEXT_RESPONSE_MAX_BYTES = 2 * 1024 * 1024;
 /** Hard cap on PDF size accepted from Riksbank. Matches a generous monetary-policy
  *  report size (~5 MB) without allowing pathological responses to exhaust memory. */
 const PDF_MAX_BYTES = 5 * 1024 * 1024;
+/** Maximum number of redirects to follow manually while re-validating each host. */
+const MAX_REDIRECTS = 3;
+
+async function safeCancel(target: ReadableStreamDefaultReader<Uint8Array> | ReadableStream<Uint8Array> | null | undefined): Promise<void> {
+  if (!target) return;
+  try { await target.cancel(); } catch { /* ignore cancel errors */ }
+}
+
+async function safeReleaseLock(reader: ReadableStreamDefaultReader<Uint8Array>): Promise<void> {
+  try { reader.releaseLock(); } catch { /* ignore release errors */ }
+}
 
 function buildProvenance(kind: RiksbankArtifactKind, url: string, retrievedAt: string): RiksbankEconomicProvenance {
   return {
@@ -149,6 +163,76 @@ function buildOutagePayload(
   };
 }
 
+function parseContentLength(header: string | null): number | undefined {
+  if (!header) return undefined;
+  const value = Number.parseInt(header, 10);
+  return Number.isFinite(value) && value >= 0 ? value : undefined;
+}
+
+/** Read a `ReadableStream<Uint8Array>` body with a hard byte cap; aborts and
+ *  returns `{ exceeded: true }` if the cap is exceeded mid-stream. */
+async function readBodyWithCap(
+  body: ReadableStream<Uint8Array> | null,
+  maxBytes: number,
+): Promise<{ exceeded: false; bytes: Uint8Array } | { exceeded: true; bytesRead: number }> {
+  if (!body) return { exceeded: false, bytes: new Uint8Array(0) };
+  const reader = body.getReader();
+  const chunks: Uint8Array[] = [];
+  let total = 0;
+  try {
+    for (;;) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      if (!value) continue;
+      total += value.byteLength;
+      if (total > maxBytes) {
+        await safeCancel(reader);
+        return { exceeded: true, bytesRead: total };
+      }
+      chunks.push(value);
+    }
+  } finally {
+    await safeReleaseLock(reader);
+  }
+  const out = new Uint8Array(total);
+  let offset = 0;
+  for (const chunk of chunks) {
+    out.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return { exceeded: false, bytes: out };
+}
+
+/** Perform a single fetch with manual-redirect handling against the Riksbank
+ *  host allowlist. Returns the final 2xx Response or throws. */
+async function fetchWithManualRedirects(
+  target: URL,
+  signal: AbortSignal,
+): Promise<{ response: Response; finalUrl: URL }> {
+  let current = target;
+  for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
+    const response = await fetch(current, {
+      headers: { Accept: 'application/json, text/html, application/pdf;q=0.8, text/plain;q=0.7' },
+      signal,
+      redirect: 'manual',
+    });
+    if (response.status >= 300 && response.status < 400) {
+      const location = response.headers.get('location');
+      if (!location) {
+        throw new Error(`Riksbank redirect ${response.status} without Location header`);
+      }
+      // Drain redirect body to free the connection.
+      await safeCancel(response.body);
+      const next = new URL(location, current);
+      assertRiksbankFetchTarget(next.toString());
+      current = next;
+      continue;
+    }
+    return { response, finalUrl: current };
+  }
+  throw new Error(`Riksbank fetch exceeded ${MAX_REDIRECTS} redirects`);
+}
+
 export async function fetchRiksbankPayload(
   kind: RiksbankArtifactKind,
   url: string,
@@ -159,93 +243,143 @@ export async function fetchRiksbankPayload(
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
-  let response: Response;
   try {
-    response = await fetch(target, {
-      headers: { Accept: 'application/json, text/html, application/pdf;q=0.8, text/plain;q=0.7' },
-      signal: controller.signal,
-    });
-  } catch (error) {
-    clearTimeout(timeoutId);
-    const detail = error instanceof Error ? error.message : String(error);
-    return buildOutagePayload(
-      kind,
-      target.toString(),
-      'application/octet-stream',
-      `Riksbank fetch failed (${detail}); callers should fall back to cached analysis/data/riksbank/ artifacts.`,
-    );
-  }
-  clearTimeout(timeoutId);
-
-  if (!response.ok) {
-    return buildOutagePayload(
-      kind,
-      target.toString(),
-      response.headers.get('content-type') ?? 'application/octet-stream',
-      `Riksbank fetch returned HTTP ${response.status} ${response.statusText}; callers should fall back to cached analysis/data/riksbank/ artifacts.`,
-    );
-  }
-
-  const contentType = response.headers.get('content-type') ?? 'application/octet-stream';
-  const retrievedAt = new Date().toISOString();
-
-  if (contentType.includes('json')) {
-    let json: unknown;
+    let response: Response;
+    let finalUrl: URL;
     try {
-      json = await response.json();
+      ({ response, finalUrl } = await fetchWithManualRedirects(target, controller.signal));
     } catch (error) {
       const detail = error instanceof Error ? error.message : String(error);
-      return buildOutagePayload(kind, target.toString(), contentType, `Riksbank JSON parse failed (${detail}).`);
-    }
-    return {
-      provider: 'riksbank',
-      kind,
-      url: target.toString(),
-      contentType,
-      retrievedAt,
-      status: 'ok',
-      json,
-      economicProvenance: buildProvenance(kind, target.toString(), retrievedAt),
-    };
-  }
-
-  if (contentType.includes('pdf')) {
-    const buffer = await response.arrayBuffer();
-    if (buffer.byteLength > PDF_MAX_BYTES) {
       return buildOutagePayload(
         kind,
         target.toString(),
-        contentType,
-        `Riksbank PDF response exceeded ${PDF_MAX_BYTES} bytes (received ${buffer.byteLength}); persisted as no-data.`,
+        'application/octet-stream',
+        `Riksbank fetch failed (${detail}); callers should fall back to cached analysis/data/riksbank/ artifacts.`,
       );
     }
-    const pdfBase64 = Buffer.from(buffer).toString('base64');
+
+    const finalUrlStr = finalUrl.toString();
+
+    if (!response.ok) {
+      await safeCancel(response.body);
+      return buildOutagePayload(
+        kind,
+        finalUrlStr,
+        response.headers.get('content-type') ?? 'application/octet-stream',
+        `Riksbank fetch returned HTTP ${response.status} ${response.statusText}; callers should fall back to cached analysis/data/riksbank/ artifacts.`,
+      );
+    }
+
+    const contentType = response.headers.get('content-type') ?? 'application/octet-stream';
+    const contentLength = parseContentLength(response.headers.get('content-length'));
+    const retrievedAt = new Date().toISOString();
+
+    if (contentType.includes('json')) {
+      // JSON responses are typically small; still cap to TEXT_RESPONSE_MAX_BYTES.
+      if (contentLength !== undefined && contentLength > TEXT_RESPONSE_MAX_BYTES) {
+        await safeCancel(response.body);
+        return buildOutagePayload(
+          kind,
+          finalUrlStr,
+          contentType,
+          `Riksbank JSON Content-Length ${contentLength} exceeds cap ${TEXT_RESPONSE_MAX_BYTES}; persisted as no-data.`,
+        );
+      }
+      const capped = await readBodyWithCap(response.body, TEXT_RESPONSE_MAX_BYTES);
+      if (capped.exceeded) {
+        return buildOutagePayload(
+          kind,
+          finalUrlStr,
+          contentType,
+          `Riksbank JSON body exceeded ${TEXT_RESPONSE_MAX_BYTES} bytes (read ${capped.bytesRead}); persisted as no-data.`,
+        );
+      }
+      let json: unknown;
+      try {
+        json = JSON.parse(new TextDecoder('utf-8').decode(capped.bytes));
+      } catch (error) {
+        const detail = error instanceof Error ? error.message : String(error);
+        return buildOutagePayload(kind, finalUrlStr, contentType, `Riksbank JSON parse failed (${detail}).`);
+      }
+      return {
+        provider: 'riksbank',
+        kind,
+        url: finalUrlStr,
+        contentType,
+        retrievedAt,
+        status: 'ok',
+        json,
+        economicProvenance: buildProvenance(kind, finalUrlStr, retrievedAt),
+      };
+    }
+
+    if (contentType.includes('pdf')) {
+      if (contentLength !== undefined && contentLength > PDF_MAX_BYTES) {
+        await safeCancel(response.body);
+        return buildOutagePayload(
+          kind,
+          finalUrlStr,
+          contentType,
+          `Riksbank PDF Content-Length ${contentLength} exceeds cap ${PDF_MAX_BYTES}; persisted as no-data.`,
+        );
+      }
+      const capped = await readBodyWithCap(response.body, PDF_MAX_BYTES);
+      if (capped.exceeded) {
+        return buildOutagePayload(
+          kind,
+          finalUrlStr,
+          contentType,
+          `Riksbank PDF body exceeded ${PDF_MAX_BYTES} bytes (read ${capped.bytesRead}); persisted as no-data.`,
+        );
+      }
+      const pdfBase64 = Buffer.from(capped.bytes).toString('base64');
+      return {
+        provider: 'riksbank',
+        kind,
+        url: finalUrlStr,
+        contentType,
+        retrievedAt,
+        status: 'ok',
+        pdfBase64,
+        pdfBytes: capped.bytes.byteLength,
+        economicProvenance: buildProvenance(kind, finalUrlStr, retrievedAt),
+      };
+    }
+
+    if (contentLength !== undefined && contentLength > TEXT_RESPONSE_MAX_BYTES) {
+      await safeCancel(response.body);
+      return buildOutagePayload(
+        kind,
+        finalUrlStr,
+        contentType,
+        `Riksbank text Content-Length ${contentLength} exceeds cap ${TEXT_RESPONSE_MAX_BYTES}; persisted as no-data.`,
+      );
+    }
+    const capped = await readBodyWithCap(response.body, TEXT_RESPONSE_MAX_BYTES);
+    if (capped.exceeded) {
+      return buildOutagePayload(
+        kind,
+        finalUrlStr,
+        contentType,
+        `Riksbank text body exceeded ${TEXT_RESPONSE_MAX_BYTES} bytes (read ${capped.bytesRead}); persisted as no-data.`,
+      );
+    }
+    const text = new TextDecoder('utf-8').decode(capped.bytes);
+    const title = extractTitle(text);
     return {
       provider: 'riksbank',
       kind,
-      url: target.toString(),
+      url: finalUrlStr,
       contentType,
       retrievedAt,
       status: 'ok',
-      pdfBase64,
-      pdfBytes: buffer.byteLength,
-      economicProvenance: buildProvenance(kind, target.toString(), retrievedAt),
+      ...(title ? { title } : {}),
+      text: text.slice(0, TEXT_MAX_BYTES),
+      economicProvenance: buildProvenance(kind, finalUrlStr, retrievedAt),
     };
+  } finally {
+    clearTimeout(timeoutId);
   }
-
-  const text = await response.text();
-  const title = extractTitle(text);
-  return {
-    provider: 'riksbank',
-    kind,
-    url: target.toString(),
-    contentType,
-    retrievedAt,
-    status: 'ok',
-    ...(title ? { title } : {}),
-    text: text.slice(0, TEXT_MAX_BYTES),
-    economicProvenance: buildProvenance(kind, target.toString(), retrievedAt),
-  };
 }
 
 async function runKind(
@@ -258,14 +392,25 @@ async function runKind(
   if (booleans.has('persist')) persistRiksbankData(kind, payload);
 }
 
+function requireRiksbankFlag(
+  flags: ReadonlyMap<string, string>,
+  name: string,
+): string {
+  const value = flags.get(name)?.trim();
+  if (!value) throw new Error(`missing required flag --${name}`);
+  return value;
+}
+
 async function main(): Promise<void> {
   const { command, flags, booleans } = parseRiksbankArgs(process.argv.slice(2));
   if (command === 'help') {
     process.stdout.write(HELP);
     return;
   }
-  const kind = command === 'fetch' ? parseRiksbankKind(flags.get('kind') ?? '') : command;
-  const url = flags.get('url') ?? DEFAULT_URLS[kind];
+  const kind =
+    command === 'fetch' ? parseRiksbankKind(requireRiksbankFlag(flags, 'kind')) : command;
+  const urlFlag = flags.get('url')?.trim();
+  const url = urlFlag && urlFlag.length > 0 ? urlFlag : DEFAULT_URLS[kind];
   await runKind(kind, url, booleans);
 }
 
