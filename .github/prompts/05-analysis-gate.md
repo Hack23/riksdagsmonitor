@@ -341,6 +341,7 @@ if [ -s "$ANALYSIS_DIR/data-download-manifest.md" ]; then
         || { echo "❌ data-download-manifest.md: Full-Text Fetch Outcomes table present but fewer than 2 top documents have full_text_available=true (found ${FT_SUCCESS:-0}). Add <!-- full-text-fallback: <reason> --> to the manifest to bypass."; FAIL=1; }
     fi
   fi
+fi
 
 [ "$FAIL" -eq 0 ] || exit 1
 ```
