@@ -71,6 +71,23 @@ function languageBar(prefix: string, family: PageFamily, current: Language): str
   return `<nav class="language-switcher site-language-switcher" aria-label="This page in other languages" data-rm-static-language-switcher="true">\n${languageGrid(prefix, family, current)}\n</nav>`;
 }
 
+function primaryNav(prefix: string, current: Language): string {
+  const suffix = localizedSuffix(current);
+  const indexFile = `${prefix}index${suffix}.html`;
+  const newsFile = `${prefix}news/index${suffix}.html`;
+  const dashboardFile = `${prefix}dashboard/index${suffix}.html`;
+  const piFile = `${prefix}political-intelligence${suffix}.html`;
+  const sitemapFile = `${prefix}sitemap${suffix}.html`;
+  return `<nav class="site-header-nav" aria-label="Primary navigation" data-rm-static-primary-nav="true">
+  <a href="${indexFile}">Home</a>
+  <a href="${newsFile}">News</a>
+  <a href="${dashboardFile}">Dashboard</a>
+  <a href="${piFile}"><span aria-hidden="true">🧠</span> Political Intelligence</a>
+  <a href="${sitemapFile}"><span aria-hidden="true">🗺️</span> Sitemap</a>
+  <a href="${API_DOCS_URL}"><span aria-hidden="true">📚</span> API Docs</a>
+</nav>`;
+}
+
 function footer(prefix: string, family: PageFamily, current: Language): string {
   const indexFile = current === 'en' ? 'index.html' : `index_${current}.html`;
   const newsFile = current === 'en' ? 'news/index.html' : `news/index_${current}.html`;
@@ -153,12 +170,15 @@ function replaceFooter(html: string, prefix: string, family: PageFamily, lang: L
 }
 
 function ensureLanguageSwitcher(html: string, prefix: string, family: PageFamily, lang: Language): string {
-  const cleaned = html.replace(/\s*<nav class="language-switcher site-language-switcher"[\s\S]*?data-rm-static-language-switcher="true"[\s\S]*?<\/nav>\s*/i, '\n');
+  const cleaned = html
+    .replace(/\s*<nav class="site-header-nav"[\s\S]*?data-rm-static-primary-nav="true"[\s\S]*?<\/nav>\s*/i, '\n')
+    .replace(/\s*<nav class="language-switcher site-language-switcher"[\s\S]*?data-rm-static-language-switcher="true"[\s\S]*?<\/nav>\s*/i, '\n');
+  const nav = primaryNav(prefix, lang);
   const bar = languageBar(prefix, family, lang);
   if (/<\/header>/i.test(cleaned)) {
-    return cleaned.replace(/\s*<\/header>/i, `\n${bar}\n</header>`);
+    return cleaned.replace(/\s*<\/header>/i, `\n${nav}\n${bar}\n</header>`);
   }
-  return cleaned.replace(/(<body[^>]*>)/i, `$1\n${bar}\n`);
+  return cleaned.replace(/(<body[^>]*>)/i, `$1\n${nav}\n${bar}\n`);
 }
 
 let changed = 0;

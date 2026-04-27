@@ -607,6 +607,7 @@ html {
   height: 100%;
   width: 100%;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 /* Smooth theme transitions when toggling light/dark mode */
@@ -636,6 +637,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body.rm-article-body {
+  padding: 0;
+}
+
 /* Scan line effect for dark mode */
 @media (prefers-color-scheme: dark) {
   body::after {
@@ -643,8 +648,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    right: 0;
+    bottom: 0;
     background: repeating-linear-gradient(
       transparent 0px,
       rgba(0, 0, 0, 0.05) 1px,
@@ -1436,10 +1441,11 @@ header {
 /* Site Logo in Header */
 .site-logo {
   display: block;
-  max-width: clamp(56px, 8vw, 80px);
+  width: clamp(48px, 8vw, 80px);
+  height: clamp(48px, 8vw, 80px);
+  max-width: 80px;
   max-height: 80px;
-  width: auto;
-  height: auto;
+  object-fit: contain;
   margin: 0 auto;
   border-radius: var(--border-radius-lg);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
@@ -1478,8 +1484,58 @@ html[data-theme="dark"] .site-logo:hover {
 
 @media (max-width: 480px) {
   .site-logo {
+    width: 48px;
+    height: 48px;
     max-height: 48px;
-    max-width: clamp(36px, 10vw, 48px);
+    max-width: 48px;
+  }
+}
+
+.site-header-nav {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: var(--spacing-md) auto 0;
+  padding: 0 var(--spacing-md);
+}
+
+.site-header-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 40px;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: color-mix(in srgb, var(--card-bg) 70%, transparent);
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.site-header-nav a:hover,
+.site-header-nav a:focus-visible {
+  color: var(--button-text);
+  background: var(--button-bg);
+  border-color: var(--button-bg);
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .site-header-nav {
+    padding: 0;
+    gap: 0.35rem;
+  }
+
+  .site-header-nav a {
+    flex: 1 1 calc(50% - 0.35rem);
+    justify-content: center;
+    padding: 0.45rem 0.5rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -11378,8 +11434,8 @@ html[data-theme="dark"] body::after {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
   background: repeating-linear-gradient(
     transparent 0px,
     rgba(0, 0, 0, 0.05) 1px,
