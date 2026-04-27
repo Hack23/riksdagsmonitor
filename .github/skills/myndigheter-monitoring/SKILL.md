@@ -224,6 +224,55 @@ interviews (5 labor economists), stakeholder statements*
 - **Courts** - Administrative law challenges
 - **Media** - Investigative reporting (that's you!)
 
+## Statskontoret Enrichment Layer
+
+The **Statskontoret enrichment layer** provides empirical agency-capacity evidence beneath document-level analysis. Use it whenever an `implementation-feasibility.md` artifact names a specific agency (Kriminalvården, Polismyndigheten, Försäkringskassan, etc.) and a feasibility claim needs grounding in published capacity data.
+
+### Index
+
+The seed index is at [`data/statskontoret/index.json`](../../../data/statskontoret/index.json). It contains the following fields per entry:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `title` | string | Full Swedish report/dataset title |
+| `year` | number | Publication or reference year |
+| `agency` | string | Named agency or `"*"` for cross-agency |
+| `summary` | string | One-sentence abstract |
+| `url` | string | Canonical Statskontoret URL |
+| `admiralty_grade` | string | Source reliability (Admiralty scale A–F / 1–6) |
+| `cached_at` | ISO-8601 | When the entry was last verified (TTL 30 days) |
+
+### How to use in implementation-feasibility.md
+
+1. **Look up** the agency in `data/statskontoret/index.json` (or via a `bash` search on `www.statskontoret.se`).
+2. **Populate** the `Statskontoret relevance` row in the Feasibility Context table with the matched entry's URL and title.
+3. **Cite** the entry in the 🏛️ Administrative feasibility section, following the established "Statskontoret overlay" pattern.
+4. If no entry matches, search `https://www.statskontoret.se/publikationer/` and record `"none found"`.
+
+### CLI (fetch & persist)
+
+```bash
+# Discover downloadable links for the agency register
+tsx scripts/statskontoret-fetch.ts discover --source myndighetsforteckning
+
+# Fetch agency headcount workbook (once a URL is discovered)
+tsx scripts/statskontoret-fetch.ts headcount --url <xlsx-url> --persist
+
+# Budget outturn
+tsx scripts/statskontoret-fetch.ts budget-outturn --url <xlsx-url> --source arsutfall --persist
+```
+
+### Cache TTL
+
+Statskontoret reports are slow-moving; refresh the index at most once every **30 days**. The `cached_at` timestamp in each entry tracks the last verification.
+
+### Required behaviour for implementation-feasibility
+
+When an agency is named in `implementation-feasibility.md`:
+- The **Feasibility Context** table MUST include a populated `Statskontoret relevance` row (URL or `"none found"`).
+- The **Administrative feasibility** section MUST cite the Statskontoret entry or explicitly state no relevant report was found.
+- Both fields are enforced by the analysis gate (`05-analysis-gate.md` Check 9).
+
 ## Remember
 
 - **Agencies matter** - They implement policy, affect daily life directly

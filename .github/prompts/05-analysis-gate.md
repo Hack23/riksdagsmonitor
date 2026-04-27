@@ -30,10 +30,11 @@ This is the **only** gate separating analysis from article generation. If it fai
 8. **Family D structure checks**:
    - `forward-indicators.md` declares **≥ 10 dated indicators** (bullet or table rows matching a date pattern across the four horizon sections).
    - `coalition-mathematics.md` contains a seat-count table (≥ 1 table row with `Ja`/`Nej`/`Avstår` or a party-to-seats mapping).
+   - `implementation-feasibility.md` — when it names a recognised agency (Kriminalvården, Polismyndigheten, Försäkringskassan, Skatteverket, Migrationsverket, Arbetsförmedlingen, Socialstyrelsen, Transportverket, Naturvårdsverket, Energimyndigheten) — contains a `statskontoret.se` URL citation **or** the literal phrase `none found` in the `Statskontoret relevance` row.
 
 ## Implementation
 
-No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–9, with check 9 conditional where applicable):
+No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–9b, with check 9b conditional where applicable):
 
 ```bash
 set -Eeuo pipefail
@@ -230,6 +231,18 @@ fi
 if [ -s "$ANALYSIS_DIR/coalition-mathematics.md" ]; then
   grep -qE '^\|.*(Ja|Nej|Avstår|Frånvarande|Seats|Mandat)' "$ANALYSIS_DIR/coalition-mathematics.md" \
     || { echo "❌ coalition-mathematics.md: missing seat-count / vote-breakdown table"; FAIL=1; }
+fi
+
+# Check 9b — Statskontoret evidence in implementation-feasibility.md
+# When implementation-feasibility.md names a recognised agency, the file MUST
+# contain either a populated Statskontoret relevance URL or a statskontoret.se
+# citation.  "none found" is accepted when the agency is truly not covered.
+AGENCY_RE='Kriminalvård(en)?|Polismyndigheten|Försäkringskassan|Skatteverket|Migrationsverket|Arbetsförmedlingen|Socialstyrelsen|Transports(tyrelsen|verket)|Naturvårdsverket|Energimyndigheten'
+if [ -s "$ANALYSIS_DIR/implementation-feasibility.md" ]; then
+  if grep -qE "$AGENCY_RE" "$ANALYSIS_DIR/implementation-feasibility.md"; then
+    grep -qE 'statskontoret\.se|Statskontoret relevance.*https?://|none found' "$ANALYSIS_DIR/implementation-feasibility.md" \
+      || { echo "❌ implementation-feasibility.md: names a recognised agency but lacks a Statskontoret evidence citation (statskontoret.se URL or 'none found')"; FAIL=1; }
+  fi
 fi
 
 [ "$FAIL" -eq 0 ] || exit 1

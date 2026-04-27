@@ -15,6 +15,7 @@
  * Usage:
  *   npx tsx scripts/download-parliamentary-data.ts [--date YYYY-MM-DD] [--limit N]
  *   npx tsx scripts/download-parliamentary-data.ts --aggregate weekly [--date YYYY-WNN]
+ *   npx tsx scripts/download-parliamentary-data.ts --auto-full-text-top-n 2
  *
  * @see analysis/methodologies/ai-driven-analysis-guide.md
  * @author Hack23 AB
@@ -62,6 +63,7 @@ export function parseArgs(argv: string[]): {
   rm: string | null;
   docType: DocumentTypeKey | null;
   documentIds: string[];
+  autoFullTextTopN: number | null;
 } {
   const args = argv.slice(2);
   const get = (flag: string): string | null => {
@@ -146,7 +148,21 @@ export function parseArgs(argv: string[]): {
       })
     : [];
 
-  return { date: isoDate, aggregate, limit, weekLabel, rm, docType, documentIds };
+  // --auto-full-text-top-n: Override the per-type full-text enrichment limit.
+  // When set, only the top N documents per type receive fetchDocumentDetails
+  // (full-text) enrichment, enabling more targeted significance-scoring input.
+  // Defaults to MAX_ENRICHMENT_PER_TYPE when omitted (null → caller uses default).
+  const autoFullTextTopNArg = get('--auto-full-text-top-n');
+  let autoFullTextTopN: number | null = null;
+  if (autoFullTextTopNArg !== null) {
+    const parsed = Number(autoFullTextTopNArg);
+    if (!Number.isInteger(parsed) || parsed < 0) {
+      throw new Error(`Invalid --auto-full-text-top-n value: ${autoFullTextTopNArg}. Expected a non-negative integer.`);
+    }
+    autoFullTextTopN = parsed;
+  }
+
+  return { date: isoDate, aggregate, limit, weekLabel, rm, docType, documentIds, autoFullTextTopN };
 }
 
 function isoWeekNumber(date: Date): number {
@@ -372,8 +388,9 @@ async function runPreArticleAnalysis(opts: {
   rm: string | null;
   docType: DocumentTypeKey | null;
   documentIds: string[];
+  autoFullTextTopN: number | null;
 }): Promise<void> {
-  const { date, limit, aggregate, weekLabel, rm, docType, documentIds } = opts;
+  const { date, limit, aggregate, weekLabel, rm, docType, documentIds, autoFullTextTopN } = opts;
 
   if (aggregate && weekLabel) {
     console.log(`\n📅 Running weekly data summary for: ${weekLabel}`);
@@ -403,9 +420,16 @@ async function runPreArticleAnalysis(opts: {
   const client = new MCPClient();
   const resolvedRm = rm ?? riksMoteFromDate(date);
 
-  const downloadOpts: { limit: number; rm: string; docTypes?: DocumentTypeKey[] } = { limit, rm: resolvedRm };
+  const downloadOpts: { limit: number; rm: string; docTypes?: DocumentTypeKey[]; enrichLimit?: number } = { limit, rm: resolvedRm };
   if (docType) {
     downloadOpts.docTypes = [docType];
+  }
+  // --auto-full-text-top-n wires the CLI flag into the per-type enrichment
+  // limit, enabling more targeted full-text fetching for significance scoring.
+  // When null, downloadAllDocuments uses MAX_ENRICHMENT_PER_TYPE (5) by default.
+  if (autoFullTextTopN !== null) {
+    downloadOpts.enrichLimit = autoFullTextTopN;
+    console.log(`   📝 Full-text enrichment: top ${autoFullTextTopN} documents per type (--auto-full-text-top-n=${autoFullTextTopN})`);
   }
 
   const { data, manifest } = await downloadAllDocuments(client, downloadOpts);
@@ -537,6 +561,11 @@ async function runPreArticleAnalysis(opts: {
   console.log('      - analysis/methodologies/ai-driven-analysis-guide.md');
   console.log('      - analysis/templates/ (per-file analysis templates)');
   console.log('      - npx tsx scripts/catalog-downloaded-data.ts --pending-only');
+  if (autoFullTextTopN !== null && autoFullTextTopN > 0) {
+    console.log(`      ℹ️  Significance-scoring note: top-${autoFullTextTopN} documents per type have full text`);
+    console.log('         available (contentFetched=true) — AI significance-scoring step');
+    console.log('         should prioritise those documents for deeper analysis.');
+  }
 }
 
 // ---------------------------------------------------------------------------
