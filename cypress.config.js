@@ -35,7 +35,11 @@ export default defineConfig({
     
     // Timeouts (optimized for faster feedback)
     defaultCommandTimeout: 5000, // Reduced from 10s to 5s
-    pageLoadTimeout: 20000, // Reduced from 30s to 20s
+    // Cypress default is 60s. 30s gives Vite-preview enough head-room to
+    // cold-transform the CIA module graph (cia-entry → dashboard-init →
+    // data-loader → 13 sub-modules) on the first visit while still keeping
+    // the suite responsive after warm-up.
+    pageLoadTimeout: 30000,
     requestTimeout: 5000, // Reduced from 10s to 5s
     responseTimeout: 20000, // Reduced from 30s to 20s
     

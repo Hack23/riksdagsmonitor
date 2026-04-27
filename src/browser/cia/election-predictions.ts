@@ -22,7 +22,7 @@
  * @marketing Peak virality content — election prediction charts and coalition probability visualizations achieve maximum social media engagement and press coverage. Each forecast update is a content marketing event. Prediction accuracy tracking builds long-term brand credibility.
  * */
 
-import type { ElectionAnalysis } from './data-loader.js';
+import type { ElectionAnalysis } from './types.js';
 
 /* ------------------------------------------------------------------ */
 /*  Global library reference (loaded via <script> tag)                */
