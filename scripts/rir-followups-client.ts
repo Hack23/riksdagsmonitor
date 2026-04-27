@@ -432,7 +432,7 @@ export function validateRirRecord(record: RirFollowUpRecord): readonly string[] 
     errors.push('rir_report_id is required and must be a string');
   }
   if (!record.rir_number || !/^RiR \d{4}:\d+$/.test(record.rir_number)) {
-    errors.push(`rir_number must match /^RiR \\d{4}:\\d+$/, got: ${record.rir_number}`);
+    errors.push(`rir_number must match pattern RiR YYYY:N (e.g. RiR 2026:6), got: ${record.rir_number}`);
   }
   if (!record.title || typeof record.title !== 'string') {
     errors.push('title is required and must be a string');

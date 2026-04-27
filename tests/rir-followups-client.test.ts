@@ -10,6 +10,9 @@
  */
 
 import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import {
   calculateSkrivelsDeadline,
   daysOverdue,
@@ -31,7 +34,6 @@ import {
 import type {
   RirFollowUpRecord,
   RirFollowUpsDataset,
-  RirDeadlineAlert,
 } from '../scripts/rir-followups-client.js';
 
 // ---------------------------------------------------------------------------
@@ -568,16 +570,12 @@ describe('saveRirDataset', () => {
 // Integration: load real data/rir-followups.json
 // ---------------------------------------------------------------------------
 
+const __dirn = dirname(fileURLToPath(import.meta.url));
+const REAL_DATA_FILE = resolve(__dirn, '../data/rir-followups.json');
+
 describe('data/rir-followups.json integrity', () => {
   it('loads and validates the real dataset file', () => {
-    // Use real fs to validate the actual dataset
-    const { readFileSync } = require('node:fs') as typeof import('node:fs');
-    const { resolve, dirname } = require('node:path') as typeof import('node:path');
-    const { fileURLToPath } = require('node:url') as typeof import('node:url');
-    const __dirn = dirname(fileURLToPath(import.meta.url));
-    const dataFile = resolve(__dirn, '../data/rir-followups.json');
-
-    const raw = readFileSync(dataFile, 'utf8');
+    const raw = readFileSync(REAL_DATA_FILE, 'utf8');
     const dataset = JSON.parse(raw) as RirFollowUpsDataset;
 
     expect(dataset.version).toBeTruthy();
@@ -595,13 +593,7 @@ describe('data/rir-followups.json integrity', () => {
   });
 
   it('all records in data/rir-followups.json have required fields', () => {
-    const { readFileSync } = require('node:fs') as typeof import('node:fs');
-    const { resolve, dirname } = require('node:path') as typeof import('node:path');
-    const { fileURLToPath } = require('node:url') as typeof import('node:url');
-    const __dirn = dirname(fileURLToPath(import.meta.url));
-    const dataFile = resolve(__dirn, '../data/rir-followups.json');
-
-    const raw = readFileSync(dataFile, 'utf8');
+    const raw = readFileSync(REAL_DATA_FILE, 'utf8');
     const dataset = JSON.parse(raw) as RirFollowUpsDataset;
 
     for (const record of dataset.records) {

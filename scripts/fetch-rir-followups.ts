@@ -214,21 +214,28 @@ async function main(): Promise<void> {
   // Match and update records
   let updatedCount = 0;
   const updatedRecords = dataset.records.map((record): RirFollowUpRecord => {
-    if (record.gov_response_status === 'RESPONDED') return record;
+    // Skip fully-responded records — no further action needed
+    if (record.gov_response_status === 'RESPONDED' && record.response_skrivelse_id) return record;
 
     for (const skr of skrivelser) {
       if (matchSkrivelse(skr, [record])) {
         const newId = skr.beteckning ?? skr.dok_id ?? skr.id ?? null;
-        if (newId && !record.response_skrivelse_id) {
-          console.log(
-            `[fetch-rir-followups] Matched response for ${record.rir_report_id}: ${newId}`,
-          );
-          updatedCount++;
-          return {
-            ...record,
-            gov_response_status: 'RESPONDED',
-            response_skrivelse_id: newId,
-          };
+        if (newId) {
+          const prevStatus = record.gov_response_status;
+          // PARTIAL → RESPONDED when a new (or fuller) skrivelse is found
+          const newStatus: RirFollowUpRecord['gov_response_status'] =
+            prevStatus === 'PARTIAL' && record.response_skrivelse_id ? 'RESPONDED' : 'RESPONDED';
+          if (!record.response_skrivelse_id || prevStatus === 'PARTIAL') {
+            console.log(
+              `[fetch-rir-followups] Matched response for ${record.rir_report_id} (${prevStatus} → ${newStatus}): ${newId}`,
+            );
+            updatedCount++;
+            return {
+              ...record,
+              gov_response_status: newStatus,
+              response_skrivelse_id: newId,
+            };
+          }
         }
       }
     }
