@@ -141,6 +141,38 @@ runs:
           AGE=$(grep -o '"vintageAgeMonths": [0-9-]*' data/imf-context.json | head -1 | awk '{print $2}')
           echo "  ✅ IMF connectivity OK (status=$STATUS, vintageAgeMonths=$AGE)"
         else
-          echo "  ❌ IMF pre-flight produced no output (timeout or crash) — agent must treat IMF as unavailable"
+          # Script was killed by `timeout 60` or crashed before it could
+          # write either artifact. Synthesise a minimal `unavailable`
+          # report so downstream analysis steps still have a deterministic
+          # on-disk signal to inject the standard ⚠️ block.
+          echo "  ❌ IMF pre-flight produced no output (timeout or crash) — writing fallback unavailable artifacts"
+          cat /tmp/imf-precheck.err 2>/dev/null || true
+          mkdir -p data
+          NOW=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+          cat > data/imf-context.json <<EOF
+        {
+          "status": "unavailable",
+          "vintage": "unknown",
+          "vintageAgeMonths": -1,
+          "stale": true,
+          "probes": [],
+          "checkedAt": "$NOW",
+          "warningBlock": "> ⚠️ **IMF context unavailable**\n>\n> The IMF pre-flight check at $NOW timed out or crashed before completing. Economic claims in this article are grounded in the most recent cached IMF release where available; figures labelled \"inferred\" use SCB ground-truth or Riksbank minutes as the fallback source per \`analysis/imf/agentic-integration.md\` §6.1.\n>\n> Failed probes: pre-flight script timeout-or-crash-before-artifact-write.\n>\n> This annotation is required by \`.github/aw/ECONOMIC_DATA_CONTRACT.md\` v2.1 §\"Vintage discipline\" and the AI-FIRST quality principle in \`AGENTS.md\`.",
+          "reason": "timeout-or-crash-before-artifact-write"
+        }
+        EOF
+          cat > data/imf-unavailable.flag <<EOF
+        # IMF connectivity pre-flight failed
+        # checkedAt: $NOW
+        # failed-probes: timeout-or-crash-before-artifact-write
+        #
+        # The pre-flight script (scripts/check-imf-connectivity.ts) was
+        # killed by the 60-second composite-action timeout or crashed
+        # before it could write its own report. Workflows reading this
+        # flag MUST inject the standard "⚠️ IMF context unavailable"
+        # block into executive-brief.md, comparative-international.md,
+        # and synthesis-summary.md per analysis/imf/agentic-integration.md §6.1.
+        {"status":"unavailable","reason":"timeout-or-crash-before-artifact-write","checkedAt":"$NOW"}
+        EOF
         fi
         echo "═══════════════════════════════════════════"

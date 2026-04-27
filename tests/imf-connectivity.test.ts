@@ -19,7 +19,7 @@
  * @license Apache-2.0
  */
 
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { mkdtempSync, readFileSync, existsSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -32,6 +32,7 @@ import {
   runProbes,
   vintageAgeMonths,
   writeReport,
+  PROBE_TIMEOUT_MS,
   STALE_VINTAGE_MAX_MONTHS,
   type ImfProbeResult,
 } from '../scripts/check-imf-connectivity.js';
@@ -161,6 +162,42 @@ describe('runProbes', () => {
     expect(ifs?.ok).toBe(false);
     expect(ifs?.error).toBe('non-object-response');
   });
+
+  it('enforces PROBE_TIMEOUT_MS so a hung IMF endpoint cannot starve the composite-action budget', async () => {
+    // Stub an `ImfClient` whose probes never resolve. Without timeout
+    // enforcement runProbes would hang forever; with it the probes
+    // resolve as ok=false / "probe timeout after Xms" within the
+    // configured PROBE_TIMEOUT_MS budget.
+    const hangingClient = {
+      weoVintage: 'WEO-2026-04',
+      getWeoIndicator(): Promise<unknown[]> {
+        return new Promise(() => {
+          /* never resolves */
+        });
+      },
+      sdmxFetch(): Promise<unknown> {
+        return new Promise(() => {
+          /* never resolves */
+        });
+      },
+    } as unknown as Parameters<typeof runProbes>[0];
+
+    vi.useFakeTimers();
+    try {
+      const probesPromise = runProbes(hangingClient);
+      // Three sequential probes × PROBE_TIMEOUT_MS — advance enough virtual
+      // time for all three to time out.
+      await vi.advanceTimersByTimeAsync(PROBE_TIMEOUT_MS * 3 + 100);
+      const probes = await probesPromise;
+      expect(probes).toHaveLength(3);
+      expect(probes.every((p) => p.ok === false)).toBe(true);
+      for (const p of probes) {
+        expect(p.error).toMatch(/probe timeout/);
+      }
+    } finally {
+      vi.useRealTimers();
+    }
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -238,6 +275,18 @@ describe('formatStaleVintageAnnotation', () => {
     const block = formatStaleVintageAnnotation({ vintage: 'WEO-2025-04', vintageAgeMonths: 12 });
     expect(block).toContain('WEO-2025-04');
     expect(block).toContain('12 months');
+  });
+
+  it('uses STALE_VINTAGE_MAX_MONTHS in the heading instead of a hardcoded number', () => {
+    const block = formatStaleVintageAnnotation({ vintage: 'WEO-2025-04', vintageAgeMonths: 12 });
+    expect(block).toContain('older than ' + String(STALE_VINTAGE_MAX_MONTHS) + ' months');
+  });
+
+  it('renders -1 (sentinel for malformed vintage) as "unknown age" instead of a literal "-1 months"', () => {
+    const block = formatStaleVintageAnnotation({ vintage: 'garbage', vintageAgeMonths: -1 });
+    expect(block).toContain('unknown age');
+    expect(block).toContain('invalid vintage tag');
+    expect(block).not.toContain('-1 months');
   });
 });
 

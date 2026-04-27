@@ -170,12 +170,19 @@ export function formatUnavailableWarning(report: Pick<ImfConnectivityReport, 'pr
 /**
  * Render the lighter "vintage stale" annotation used when connectivity is
  * fine but the WEO release is more than `STALE_VINTAGE_MAX_MONTHS` old.
+ *
+ * `vintageAgeMonths === -1` is the sentinel `buildReport()` uses for
+ * malformed vintage tags — render it as "unknown age" rather than the
+ * confusing literal "-1 months old".
  */
 export function formatStaleVintageAnnotation(report: Pick<ImfConnectivityReport, 'vintage' | 'vintageAgeMonths'>): string {
+  const ageDescription = report.vintageAgeMonths < 0
+    ? 'of unknown age (invalid vintage tag)'
+    : 'is ' + String(report.vintageAgeMonths) + ' months old';
   return [
-    '> ℹ️ **IMF vintage older than 6 months**',
+    '> ℹ️ **IMF vintage older than ' + String(STALE_VINTAGE_MAX_MONTHS) + ' months**',
     '>',
-    '> Active IMF WEO vintage `' + report.vintage + '` is ' + String(report.vintageAgeMonths) + ' months old.',
+    '> Active IMF WEO vintage `' + report.vintage + '` ' + ageDescription + '.',
     '> Per `.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.1 every',
     '> `economicProvenance` block in this article MUST carry the explicit',
     '> vintage tag and an annotation noting the staleness.',
@@ -186,18 +193,58 @@ export function formatStaleVintageAnnotation(report: Pick<ImfConnectivityReport,
 // Probes
 // ---------------------------------------------------------------------------
 
-/** Hard upper bound for a single probe (independent of the client's own timeout). */
+/**
+ * Hard upper bound for a single probe (independent of the client's own
+ * timeout + retry budget). Enforced by {@link withTimeout} so a hung IMF
+ * endpoint cannot push the composite action past its 60-second wall-clock
+ * deadline before `imf-context.json` / `imf-unavailable.flag` are written.
+ *
+ * Three sequential probes × 20 s = 60 s worst case, matching the action's
+ * `timeout 60` envelope.
+ */
 export const PROBE_TIMEOUT_MS = 20_000;
 
 /** Maximum WEO vintage age (in months) before the article must annotate. */
 export const STALE_VINTAGE_MAX_MONTHS = 6;
 
 /**
- * Run the three IMF connectivity probes. Each probe is best-effort and its
- * own failure is captured into the returned array — callers decide whether
- * "any failure" or "all failed" is the trigger.
+ * Race a promise against a hard timeout. Resolves to `{ ok: true, value }`
+ * on success, `{ ok: false, error }` on rejection or timeout. Never throws.
  *
- * Tests inject a stub `ImfClient` so we never hit the real IMF API.
+ * Note: this does NOT cancel the underlying work. `ImfClient.fetchWithRetry`
+ * already enforces its own per-request `AbortController`, so the orphaned
+ * promise can finish in the background without blocking the caller.
+ */
+async function withTimeout<T>(
+  promise: Promise<T>,
+  timeoutMs: number,
+): Promise<{ ok: true; value: T } | { ok: false; error: Error }> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const timeoutError = new Error('probe timeout after ' + String(timeoutMs) + 'ms');
+  try {
+    const value = await Promise.race<T>([
+      promise,
+      new Promise<T>((_resolve, reject) => {
+        timer = setTimeout(() => reject(timeoutError), timeoutMs);
+      }),
+    ]);
+    return { ok: true, value };
+  } catch (err) {
+    return { ok: false, error: err instanceof Error ? err : new Error(String(err)) };
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
+/**
+ * Run the three IMF connectivity probes. Each probe is best-effort and its
+ * own failure (network error, hard timeout, or empty/malformed response)
+ * is captured into the returned array — callers decide whether "any
+ * failure" or "all failed" is the trigger.
+ *
+ * Each probe is wrapped in {@link withTimeout} with `PROBE_TIMEOUT_MS` so
+ * a single hung IMF endpoint cannot starve the composite action's 60-second
+ * envelope. Tests inject a stub `ImfClient` so we never hit the real API.
  */
 export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
   const probes: ImfProbeResult[] = [];
@@ -205,8 +252,12 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
   // Probe 1: WEO via Datamapper
   {
     const start = Date.now();
-    try {
-      const series = await client.getWeoIndicator('SWE', 'NGDP_RPCH', 1);
+    const result = await withTimeout(
+      client.getWeoIndicator('SWE', 'NGDP_RPCH', 1),
+      PROBE_TIMEOUT_MS,
+    );
+    if (result.ok) {
+      const series = result.value;
       probes.push({
         dataflow: 'WEO',
         transport: 'datamapper',
@@ -214,13 +265,13 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
         latencyMs: Date.now() - start,
         ...(series.length === 0 ? { error: 'empty-series' } : {}),
       });
-    } catch (err) {
+    } else {
       probes.push({
         dataflow: 'WEO',
         transport: 'datamapper',
         ok: false,
         latencyMs: Date.now() - start,
-        error: err instanceof Error ? err.message : String(err),
+        error: result.error.message,
       });
     }
   }
@@ -228,8 +279,12 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
   // Probe 2: FM via Datamapper
   {
     const start = Date.now();
-    try {
-      const series = await client.getWeoIndicator('SWE', 'GGXONLB_NGDP', 1);
+    const result = await withTimeout(
+      client.getWeoIndicator('SWE', 'GGXONLB_NGDP', 1),
+      PROBE_TIMEOUT_MS,
+    );
+    if (result.ok) {
+      const series = result.value;
       probes.push({
         dataflow: 'FM',
         transport: 'datamapper',
@@ -237,13 +292,13 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
         latencyMs: Date.now() - start,
         ...(series.length === 0 ? { error: 'empty-series' } : {}),
       });
-    } catch (err) {
+    } else {
       probes.push({
         dataflow: 'FM',
         transport: 'datamapper',
         ok: false,
         latencyMs: Date.now() - start,
-        error: err instanceof Error ? err.message : String(err),
+        error: result.error.message,
       });
     }
   }
@@ -254,8 +309,12 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
   // to re-verify here.
   {
     const start = Date.now();
-    try {
-      const raw = await client.sdmxFetch('/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01');
+    const result = await withTimeout(
+      client.sdmxFetch('/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01'),
+      PROBE_TIMEOUT_MS,
+    );
+    if (result.ok) {
+      const raw = result.value;
       const ok = raw !== null && typeof raw === 'object';
       probes.push({
         dataflow: 'IFS',
@@ -264,13 +323,13 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
         latencyMs: Date.now() - start,
         ...(ok ? {} : { error: 'non-object-response' }),
       });
-    } catch (err) {
+    } else {
       probes.push({
         dataflow: 'IFS',
         transport: 'sdmx',
         ok: false,
         latencyMs: Date.now() - start,
-        error: err instanceof Error ? err.message : String(err),
+        error: result.error.message,
       });
     }
   }
