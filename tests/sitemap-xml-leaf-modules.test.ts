@@ -1,0 +1,104 @@
+/**
+ * @module Tests/SitemapXml/LeafModules
+ * @description Unit tests for the bounded-context leaf modules of the
+ * sitemap.xml generator (Round-6 split).
+ *
+ * Covers the pure helpers that have no filesystem dependency:
+ *   - hreflangCode
+ *   - generateUrlEntry
+ *   - validateSitemap
+ *
+ * The scanner / git-timestamps / orchestrator modules are already
+ * exercised by `generate-sitemap.test.ts` via the CLI shim's barrel
+ * re-export; these tests pin the unit-level invariants of the new
+ * leaves so future refactors stay safe.
+ */
+import { describe, it, expect } from 'vitest';
+
+import { hreflangCode } from '../scripts/sitemap-xml/hreflang.js';
+import {
+  generateUrlEntry,
+  type HreflangAlternate,
+} from '../scripts/sitemap-xml/render/url-entry.js';
+import { validateSitemap } from '../scripts/sitemap-xml/validator.js';
+
+describe('sitemap-xml/hreflang.ts — hreflangCode', () => {
+  it('maps the legacy `no` file-suffix to BCP-47 `nb` (Norwegian Bokmål)', () => {
+    expect(hreflangCode('no')).toBe('nb');
+  });
+
+  it.each(['en', 'sv', 'da', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'])(
+    'passes %s through unchanged',
+    (code) => {
+      expect(hreflangCode(code)).toBe(code);
+    },
+  );
+
+  it('passes unknown codes through unchanged (does not throw on unexpected input)', () => {
+    expect(hreflangCode('xx-pirate')).toBe('xx-pirate');
+    expect(hreflangCode('')).toBe('');
+  });
+});
+
+describe('sitemap-xml/render/url-entry.ts — generateUrlEntry', () => {
+  it('emits a minimal `<url>` block without alternates', () => {
+    const xml = generateUrlEntry('news/index.html', '2026-04-01T00:00:00.000Z', 'daily', '0.9');
+    expect(xml).toContain('<loc>https://riksdagsmonitor.com/news/index.html</loc>');
+    expect(xml).toContain('<lastmod>2026-04-01T00:00:00.000Z</lastmod>');
+    expect(xml).toContain('<changefreq>daily</changefreq>');
+    expect(xml).toContain('<priority>0.9</priority>');
+    expect(xml).not.toContain('xhtml:link');
+  });
+
+  it('emits one `<xhtml:link rel="alternate">` per alternate, normalising `no` → `nb`', () => {
+    const alternates: HreflangAlternate[] = [
+      { lang: 'en', href: 'index.html' },
+      { lang: 'sv', href: 'index_sv.html' },
+      { lang: 'no', href: 'index_no.html' },
+      { lang: 'x-default', href: 'index.html' },
+    ];
+    const xml = generateUrlEntry('index.html', '2026-04-01', 'daily', '1.0', alternates);
+    expect(xml).toContain('hreflang="en" href="https://riksdagsmonitor.com/index.html"');
+    expect(xml).toContain('hreflang="sv" href="https://riksdagsmonitor.com/index_sv.html"');
+    // Norwegian must be normalised to "nb" on the wire even though the
+    // file suffix is "no".
+    expect(xml).toContain('hreflang="nb" href="https://riksdagsmonitor.com/index_no.html"');
+    expect(xml).toContain('hreflang="x-default" href="https://riksdagsmonitor.com/index.html"');
+  });
+
+  it('always prefixes the canonical absolute base URL', () => {
+    const xml = generateUrlEntry('rss.xml', '2026-04-01', 'daily', '0.5');
+    expect(xml).toContain('<loc>https://riksdagsmonitor.com/rss.xml</loc>');
+  });
+});
+
+describe('sitemap-xml/validator.ts — validateSitemap', () => {
+  const happyPath = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url><loc>https://riksdagsmonitor.com/index.html</loc></url>
+</urlset>`;
+
+  it('returns true on a valid sitemap', () => {
+    expect(validateSitemap(happyPath)).toBe(true);
+  });
+
+  it('throws on missing XML declaration', () => {
+    expect(() => validateSitemap('<urlset><url><loc>x</loc></url></urlset>')).toThrow(/XML declaration/);
+  });
+
+  it('throws on missing or wrong sitemap namespace', () => {
+    const bad = `<?xml version="1.0"?><urlset><url><loc>x</loc></url></urlset>`;
+    expect(() => validateSitemap(bad)).toThrow(/sitemap namespace/);
+  });
+
+  it('throws when there are zero URL entries', () => {
+    const empty = `<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>`;
+    expect(() => validateSitemap(empty)).toThrow(/No URLs/);
+  });
+
+  it('throws when `<url>` blocks lack `<loc>` tags', () => {
+    const noLoc = `<?xml version="1.0"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><lastmod>x</lastmod></url></urlset>`;
+    expect(() => validateSitemap(noLoc)).toThrow(/<loc>/);
+  });
+});

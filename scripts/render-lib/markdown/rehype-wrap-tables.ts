@@ -1,0 +1,59 @@
+/**
+ * @module Infrastructure/RenderLib/Markdown/RehypeWrapTables
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name Wrap `<table>` in a horizontally-scrollable `<div>`
+ *
+ * @description
+ * Wraps every `<table>` element in a `<div class="rm-table-wrap">` so
+ * wide tables can scroll horizontally without forcing `display: block`
+ * on the `<table>` itself. Keeping the native `display: table` preserves
+ * column sizing and the table semantics that assistive technology relies
+ * on.
+ *
+ * Round-5 split: extracted from `render-lib/markdown.ts`.
+ *
+ * @author Hack23 AB (Infrastructure Team)
+ * @license Apache-2.0
+ */
+
+import type { Element, Root } from 'hast';
+import { visit, SKIP } from 'unist-util-visit';
+
+/**
+ * Rehype plugin: wrap every `<table>` element in a
+ * `<div class="rm-table-wrap">`. Idempotent — tables already wrapped in
+ * a div carrying the `rm-table-wrap` class are not re-wrapped.
+ */
+export function rehypeWrapTables() {
+  return (tree: Root): void => {
+    visit(tree, 'element', (node: Element, index, parent) => {
+      if (node.tagName !== 'table' || !parent || typeof index !== 'number') {
+        return;
+      }
+      // Skip if already wrapped (idempotent). HAST `className` can be either
+      // a string or string[] depending on whether the wrapper was emitted by
+      // markdown processing (array) or pre-existing raw HTML (string).
+      if (
+        parent.type === 'element' &&
+        (parent as Element).tagName === 'div'
+      ) {
+        const cls = (parent as Element).properties?.className;
+        const hasClass =
+          (Array.isArray(cls) && (cls as string[]).includes('rm-table-wrap')) ||
+          (typeof cls === 'string' && cls.split(/\s+/).includes('rm-table-wrap'));
+        if (hasClass) {
+          return;
+        }
+      }
+      const wrapper: Element = {
+        type: 'element',
+        tagName: 'div',
+        properties: { className: ['rm-table-wrap'] },
+        children: [node],
+      };
+      // Replace the table in the parent's children with the wrapper.
+      (parent.children as unknown as Element[])[index] = wrapper;
+      return [SKIP, index + 1];
+    });
+  };
+}
