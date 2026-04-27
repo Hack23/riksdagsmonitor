@@ -42,7 +42,15 @@ export function parseCSV(csvText: string): CSVRow[] {
     header: true,
     dynamicTyping: true,
     skipEmptyLines: true,
+    transformHeader: header => header.trim().replace(/^"|"$/g, ''),
   });
+
+  if (parsed.errors.length > 0) {
+    const errorSummary = parsed.errors
+      .map(error => `${error.code} at row ${error.row ?? 'unknown'}: ${error.message}`)
+      .join('; ');
+    throw new Error(`CSV parse error: ${errorSummary}`);
+  }
 
   return parsed.data.filter(row =>
     Object.values(row).some(value => value !== null && value !== undefined && value !== '')

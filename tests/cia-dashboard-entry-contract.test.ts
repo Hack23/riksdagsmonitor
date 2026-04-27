@@ -11,15 +11,24 @@ describe('CIA dashboard production entry contract', () => {
     expect(entry).toContain('startDashboard();');
   });
 
-  it('marks source bootstrap modules as side-effectful for the app build', () => {
+  it('keeps bootstrap ownership explicit without module import side effects', () => {
+    const registerGlobals = readFileSync(resolve(process.cwd(), 'src/browser/shared/register-globals.ts'), 'utf8');
+    const dashboardInit = readFileSync(resolve(process.cwd(), 'src/browser/cia/dashboard-init.ts'), 'utf8');
+
+    expect(registerGlobals).not.toMatch(/\nregisterBrowserGlobals\(\);/);
+    expect(dashboardInit).not.toContain('export async function initDashboard');
+    expect(dashboardInit).toContain('export function startDashboard');
+  });
+
+  it('marks only the source entry bootstrap as side-effectful for the app build', () => {
     const packageJson = JSON.parse(readFileSync(resolve(process.cwd(), 'package.json'), 'utf8'));
 
     expect(packageJson.sideEffects).toEqual(
       expect.arrayContaining([
         './src/browser/cia-entry.ts',
-        './src/browser/cia/dashboard-init.ts',
-        './src/browser/shared/register-globals.ts',
       ]),
     );
+    expect(packageJson.sideEffects).not.toContain('./src/browser/cia/dashboard-init.ts');
+    expect(packageJson.sideEffects).not.toContain('./src/browser/shared/register-globals.ts');
   });
 });

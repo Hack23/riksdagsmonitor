@@ -8,9 +8,7 @@
   "types": "dist/lib/shared/index.d.ts",
   "sideEffects": [
     "./dist/lib/shared/register-globals.js",
-    "./src/browser/cia-entry.ts",
-    "./src/browser/cia/dashboard-init.ts",
-    "./src/browser/shared/register-globals.ts"
+    "./src/browser/cia-entry.ts"
   ],
   "exports": {
     ".": {

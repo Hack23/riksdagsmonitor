@@ -22,8 +22,6 @@ export function registerBrowserGlobals(): void {
   (globalThis as Record<string, unknown>).Papa = Papa;
 }
 
-registerBrowserGlobals();
-
 // Optional Chart.js plugins must be imported explicitly by applications that
 // need them. Do not dynamically import `chartjs-plugin-annotation` here:
 // bundlers such as Vite/Rollup/Webpack will still try to resolve the module

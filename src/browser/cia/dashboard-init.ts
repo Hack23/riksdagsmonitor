@@ -35,7 +35,7 @@ import type { RendererData } from './visualizations.js';
 /*  Dashboard initialization                                          */
 /* ------------------------------------------------------------------ */
 
-export async function initDashboard(): Promise<void> {
+async function initDashboard(): Promise<void> {
   const loader = new CIADataLoader();
 
   // Update loading text with i18n

@@ -39,6 +39,15 @@ describe('CIADataLoader orchestrator', () => {
     ]);
   });
 
+  it('parseCSV normalizes headers and surfaces malformed CSV errors', () => {
+    const loader = new CIADataLoader();
+
+    expect(loader.parseCSV(' "party" , "risk_level" \nS,HIGH')).toEqual([
+      { party: 'S', risk_level: 'HIGH' }
+    ]);
+    expect(() => loader.parseCSV('party,comment\nS,"unterminated')).toThrow('CSV parse error');
+  });
+
   it('loadCSV uses the configured base URL and fallback URL', async () => {
     const seen: string[] = [];
     globalThis.fetch = vi.fn().mockImplementation(async (url: string) => {
