@@ -77,6 +77,15 @@ export default [
     },
   },
   {
+    // Service Worker — runs in ServiceWorkerGlobalScope, not Window
+    files: ['public/sw.js'],
+    languageOptions: {
+      globals: {
+        ...globals.serviceworker,
+      },
+    },
+  },
+  {
     // Ignore patterns
     ignores: [
       'node_modules/**',

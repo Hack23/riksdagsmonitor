@@ -126,3 +126,16 @@ if (document.readyState === 'loading') {
 } else {
   void initAll();
 }
+
+// ─── Service Worker Registration ─────────────────────────────────────────────
+// Registers /sw.js to enable PWA install + offline read-only access and
+// stale-while-revalidate caching for CIA data assets. Registration is deferred
+// to the `load` event to avoid contending with critical path resources.
+if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then((reg) => logger.info('[SW] Registered:', reg.scope))
+      .catch((err) => logger.warn('[SW] Registration failed:', err));
+  });
+}

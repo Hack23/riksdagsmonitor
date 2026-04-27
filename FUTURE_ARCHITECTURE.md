@@ -611,6 +611,21 @@ Mobile Apps → AppSync (GraphQL) → Lambda → Aurora / DynamoDB
                                   Lambda → Neptune Serverless
 ```
 
+> **PWA / Service Worker — implemented in v0.8.60**
+> The static-site phase already ships a Workbox-free service worker
+> (`public/sw.js`, registered from `src/browser/main.ts`) implementing
+> `stale-while-revalidate` for `/cia-data/*.csv|*.json` (and the
+> raw.githubusercontent.com CIA fallback) plus `cache-first` for HTML
+> documents and CSS. Two named caches (`riksdagsmonitor-v1`,
+> `cia-data-v1`) are versioned and outdated entries are removed on
+> `activate`. This complements the localStorage 7-day TTL cache in
+> `src/browser/shared/data-loader.ts` with a network-layer cache that
+> survives tab/browser restarts, enables full PWA install (the
+> manifest's `display: standalone` is now backed by an SW), and provides
+> degraded offline read-only access. Lighthouse PWA "installable" passes
+> on production builds. Future phases extend this with Workbox-driven
+> precaching as the AWS Amplify SSR PWA layer comes online.
+
 **Phase 4: Full Serverless (2028+)**
 ```
 Amplify Hosting (SSR) → CloudFront
