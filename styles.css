@@ -1344,6 +1344,9 @@ header {
   /* Single smooth clamp avoids layout jumps at breakpoints */
   height: clamp(100px, 22vw, 280px);
   overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(0, 217, 255, 0.12), transparent 45%),
+    linear-gradient(135deg, var(--dark-bg, #0a0e27), var(--mid-bg, #1a1e3d));
 }
 
 .hero-banner-bg {
@@ -1352,8 +1355,9 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
+  object-fit: contain;
+  object-position: center center;
+  padding: clamp(0.25rem, 1vw, 0.75rem);
 }
 
 /* Title and tagline below banner */

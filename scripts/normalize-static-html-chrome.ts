@@ -60,7 +60,7 @@ function languageGrid(prefix: string, family: PageFamily, current: Language): st
   return LANGUAGES.map((lang) => {
     const meta = LANGUAGE_META[lang];
     const href = `${prefix}${fileFor(family, lang)}`;
-    const code = meta.hreflang.toUpperCase();
+    const code = lang === 'no' ? 'NO' : meta.hreflang.toUpperCase();
     const currentAttrs = lang === current ? ' aria-current="page" class="active"' : '';
     return `        <a href="${href}" lang="${meta.hreflang}" hreflang="${meta.hreflang}" title="${meta.nativeName}" aria-label="Switch to ${meta.name}"${currentAttrs}><span aria-hidden="true">${meta.flag}</span> ${code}</a>`;
   }).join('\n');
@@ -155,7 +155,7 @@ function ensureLanguageSwitcher(html: string, prefix: string, family: PageFamily
   const cleaned = html.replace(/\n?<nav class="language-switcher site-language-switcher"[\s\S]*?data-rm-static-language-switcher="true"[\s\S]*?<\/nav>\n?/i, '\n');
   const bar = languageBar(prefix, family, lang);
   if (/<\/header>/i.test(cleaned)) {
-    return cleaned.replace(/<\/header>/i, `</header>${bar}`);
+    return cleaned.replace(/<\/header>/i, `${bar}</header>`);
   }
   return cleaned.replace(/(<body[^>]*>)/i, `$1${bar}`);
 }

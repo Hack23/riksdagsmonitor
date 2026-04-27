@@ -328,7 +328,8 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
     .map((l) => {
       const lm = LANGUAGE_META[l];
       const href = opts.hreflangAlternates?.[l] ?? fallbackAltHref(l);
-      return `          <a href="${prefix}${href}" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}"><span aria-hidden="true">${lm.flag}</span> <span class="rm-lang-code">${lm.hreflang}</span></a>`;
+      const displayCode = l === 'no' ? 'NO' : lm.hreflang.toUpperCase();
+      return `          <a href="${prefix}${href}" lang="${lm.hreflang}" title="${escapeHtml(lm.nativeName)}"><span aria-hidden="true">${lm.flag}</span> <span class="rm-lang-code">${displayCode}</span></a>`;
     })
     .join('\n');
 
