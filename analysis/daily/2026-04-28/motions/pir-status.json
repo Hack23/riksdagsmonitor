@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "cycle": "motions",
+  "subfolder": "motions",
+  "date": "2026-04-28",
+  "generated_at": "2026-04-28T07:53:04Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "topic": "Coalition stability on prop. 2025/26:217",
+      "key_judgment": "KJ-1",
+      "confidence": "HIGH [A2]",
+      "status": "ADDRESSED",
+      "collection_gaps": [
+        "SD internal deliberations not public"
+      ]
+    },
+    {
+      "id": "PIR-2",
+      "topic": "Chilling-effect risk post-enactment",
+      "key_judgment": "KJ-2",
+      "confidence": "MEDIUM [B3]",
+      "status": "ADDRESSED",
+      "collection_gaps": [
+        "Prosecutorial discretion policy not yet published",
+        "No Lagrådet opinion access"
+      ]
+    },
+    {
+      "id": "PIR-3",
+      "topic": "Chapter 10 BrB reform timeline",
+      "key_judgment": "KJ-3",
+      "confidence": "MEDIUM-HIGH [B2]",
+      "status": "ADDRESSED",
+      "collection_gaps": [
+        "Post-election government composition unknown"
+      ]
+    }
+  ]
+}
