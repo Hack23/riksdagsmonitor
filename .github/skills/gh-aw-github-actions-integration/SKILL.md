@@ -728,9 +728,15 @@ jobs:
           EXPIRATION=$(gh api user | jq -r '.token_expires_at // "never"')
           
           if [ "$EXPIRATION" != "never" ]; then
-            DAYS_UNTIL_EXPIRATION=$(( ($(date -d "$EXPIRATION" +%s) - $(date +%s)) / 86400 ))
-            
-            if [ $DAYS_UNTIL_EXPIRATION -lt 7 ]; then
+            # Capture each command substitution into its own variable first.
+            # Avoids nested `$(…$(…)…)` shapes that the gh-aw AWF sandbox
+            # rejects as a staged-injection pattern (see
+            # `.github/prompts/01-bash-and-shell-safety.md`).
+            EXP_EPOCH=$(date -d "$EXPIRATION" +%s)
+            NOW_EPOCH=$(date +%s)
+            DAYS_UNTIL_EXPIRATION=$(( (EXP_EPOCH - NOW_EPOCH) / 86400 ))
+
+            if [ "$DAYS_UNTIL_EXPIRATION" -lt 7 ]; then
               echo "⚠️ Token expires in $DAYS_UNTIL_EXPIRATION days"
               gh issue create \
                 --title "🔐 GitHub PAT Expiring Soon" \
