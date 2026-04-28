@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "cycle": "committee-reports",
+  "date": "2026-04-28",
+  "subfolder": "committeeReports",
+  "generated_at": "2026-04-28T05:30:00.000Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "Economic Policy Framework 2025",
+      "documents": ["HC01FiU20"],
+      "status": "satisfied",
+      "confidence": "HIGH",
+      "notes": "Full text retrieved; GDP, unemployment, bidragsreform analysed"
+    },
+    {
+      "id": "PIR-2",
+      "title": "Riksbank Monetary Policy Evaluation",
+      "documents": ["HC01FiU24"],
+      "status": "satisfied",
+      "confidence": "HIGH",
+      "notes": "Full text retrieved; external evaluator findings documented"
+    },
+    {
+      "id": "PIR-3",
+      "title": "Constitutional Accountability",
+      "documents": ["HC01KU20"],
+      "status": "partial",
+      "confidence": "MEDIUM",
+      "notes": "Metadata only; full text not retrieved"
+    },
+    {
+      "id": "PIR-4",
+      "title": "Social and Welfare Policy",
+      "documents": ["HC01SoU29", "HC01FiU20"],
+      "status": "partial",
+      "confidence": "MEDIUM",
+      "notes": "Bidragsreform in FiU20 (full text); SoU29 metadata only"
+    }
+  ]
+}
