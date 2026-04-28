@@ -1,0 +1,1327 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for scripts/political-intelligence/i18n/stream-i18n.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">scripts/political-intelligence/i18n</a> stream-i18n.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">94.28% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>33/35</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">84.61% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>22/26</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>5/5</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>26/26</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a>
+<a name='L358'></a><a href='#L358'>358</a>
+<a name='L359'></a><a href='#L359'>359</a>
+<a name='L360'></a><a href='#L360'>360</a>
+<a name='L361'></a><a href='#L361'>361</a>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a>
+<a name='L371'></a><a href='#L371'>371</a>
+<a name='L372'></a><a href='#L372'>372</a>
+<a name='L373'></a><a href='#L373'>373</a>
+<a name='L374'></a><a href='#L374'>374</a>
+<a name='L375'></a><a href='#L375'>375</a>
+<a name='L376'></a><a href='#L376'>376</a>
+<a name='L377'></a><a href='#L377'>377</a>
+<a name='L378'></a><a href='#L378'>378</a>
+<a name='L379'></a><a href='#L379'>379</a>
+<a name='L380'></a><a href='#L380'>380</a>
+<a name='L381'></a><a href='#L381'>381</a>
+<a name='L382'></a><a href='#L382'>382</a>
+<a name='L383'></a><a href='#L383'>383</a>
+<a name='L384'></a><a href='#L384'>384</a>
+<a name='L385'></a><a href='#L385'>385</a>
+<a name='L386'></a><a href='#L386'>386</a>
+<a name='L387'></a><a href='#L387'>387</a>
+<a name='L388'></a><a href='#L388'>388</a>
+<a name='L389'></a><a href='#L389'>389</a>
+<a name='L390'></a><a href='#L390'>390</a>
+<a name='L391'></a><a href='#L391'>391</a>
+<a name='L392'></a><a href='#L392'>392</a>
+<a name='L393'></a><a href='#L393'>393</a>
+<a name='L394'></a><a href='#L394'>394</a>
+<a name='L395'></a><a href='#L395'>395</a>
+<a name='L396'></a><a href='#L396'>396</a>
+<a name='L397'></a><a href='#L397'>397</a>
+<a name='L398'></a><a href='#L398'>398</a>
+<a name='L399'></a><a href='#L399'>399</a>
+<a name='L400'></a><a href='#L400'>400</a>
+<a name='L401'></a><a href='#L401'>401</a>
+<a name='L402'></a><a href='#L402'>402</a>
+<a name='L403'></a><a href='#L403'>403</a>
+<a name='L404'></a><a href='#L404'>404</a>
+<a name='L405'></a><a href='#L405'>405</a>
+<a name='L406'></a><a href='#L406'>406</a>
+<a name='L407'></a><a href='#L407'>407</a>
+<a name='L408'></a><a href='#L408'>408</a>
+<a name='L409'></a><a href='#L409'>409</a>
+<a name='L410'></a><a href='#L410'>410</a>
+<a name='L411'></a><a href='#L411'>411</a>
+<a name='L412'></a><a href='#L412'>412</a>
+<a name='L413'></a><a href='#L413'>413</a>
+<a name='L414'></a><a href='#L414'>414</a>
+<a name='L415'></a><a href='#L415'>415</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">288x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2326x</span>
+<span class="cline-any cline-yes">575x</span>
+<span class="cline-any cline-yes">477x</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2367x</span>
+<span class="cline-any cline-yes">2367x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">519x</span>
+<span class="cline-any cline-yes">519x</span>
+<span class="cline-any cline-yes">420x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">420x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">99x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2492x</span>
+<span class="cline-any cline-yes">2492x</span>
+<span class="cline-any cline-yes">476x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">2492x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * @module Infrastructure/PoliticalIntelligence/I18n/StreamI18n
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name Stream metadata, names, descriptions + helpers (14 languages)
+ *
+ * @description
+ * Owns the workflow-stream (propositions / motions / committeeReports /
+ * realtime-HHMM …) bounded context: icons, English canonical descriptions,
+ * per-language display names + descriptions, plus the helpers
+ * `prettifyStream`, `streamIcon`, `streamDisplayName`, `streamDescription`.
+ *
+ * Round-6 split: extracted from `scripts/generate-political-intelligence.ts`.
+ *
+ * @author Hack23 AB (Infrastructure Team)
+ * @license Apache-2.0
+ */
+&nbsp;
+import type { Language } from '../../types/language.js';
+&nbsp;
+export const STREAM_META: Record&lt;string, { icon: string; description: string }&gt; = {
+  propositions: { icon: '📜', description: 'Government propositions (bills tabled by the Cabinet).' },
+  motions: { icon: '✍️', description: 'Member motions (bills and proposals introduced by MPs).' },
+  interpellations: { icon: '❓', description: 'Interpellations — formal ministerial questions and responses.' },
+  committeeReports: { icon: '🏛️', description: 'Parliamentary committee reports (betänkanden) and recommendations.' },
+  'committee-reports': { icon: '🏛️', description: 'Parliamentary committee reports (betänkanden) and recommendations.' },
+  'evening-analysis': { icon: '🌙', description: 'Evening analysis synthesising the day\'s parliamentary and government developments.' },
+  'deep-inspection': { icon: '🔬', description: 'Deep inspection — long-form structured analysis of a focused topic.' },
+  'week-ahead': { icon: '📅', description: 'Week-ahead prospective coverage of scheduled parliamentary activity.' },
+  'month-ahead': { icon: '📆', description: 'Month-ahead forward-looking intelligence covering scheduled activity.' },
+  'weekly-review': { icon: '🗓️', description: 'Weekly review synthesising the week\'s political and legislative developments.' },
+  'monthly-review': { icon: '📊', description: 'Monthly review synthesising the month\'s political and legislative developments.' },
+  'breaking-news': { icon: '🚨', description: 'Breaking-news intelligence products generated in response to significant events.' },
+};
+&nbsp;
+// ---------------------------------------------------------------------------
+// Per-language description overlays — every stream, methodology, template, and
+// artifact filename has a concise localised description for all 14 supported
+// languages. Helpers fall back to English when a specific key/lang is missing.
+// ---------------------------------------------------------------------------
+&nbsp;
+/** Per-language display name for each known stream slug. */
+&nbsp;
+export const STREAM_NAME_I18N: Record&lt;string, Record&lt;Language, string&gt;&gt; = {
+  propositions: {
+    en: 'Propositions', sv: 'Propositioner', da: 'Propositioner', no: 'Proposisjoner', fi: 'Propositiot',
+    de: 'Propositionen', fr: 'Propositions', es: 'Proposiciones', nl: 'Proposities',
+    ar: 'المقترحات الحكومية', he: 'הצעות חוק ממשלתיות', ja: '政府法案', ko: '정부 제안', zh: '政府法案',
+  },
+  motions: {
+    en: 'Motions', sv: 'Motioner', da: 'Motioner', no: 'Motsjoner', fi: 'Aloitteet',
+    de: 'Motionen', fr: 'Motions', es: 'Mociones', nl: 'Moties',
+    ar: 'عرائض برلمانية', he: 'הצעות חוק פרטיות', ja: '動議', ko: '의안', zh: '动议',
+  },
+  interpellations: {
+    en: 'Interpellations', sv: 'Interpellationer', da: 'Interpellationer', no: 'Interpellasjoner', fi: 'Interpellaatiot',
+    de: 'Interpellationen', fr: 'Interpellations', es: 'Interpelaciones', nl: 'Interpellaties',
+    ar: 'استجوابات وزارية', he: 'שאילתות', ja: '質問主意書', ko: '질의', zh: '质询',
+  },
+  committeeReports: {
+    en: 'Committee Reports', sv: 'Betänkanden', da: 'Udvalgsrapporter', no: 'Komitérapporter', fi: 'Valiokuntaraportit',
+    de: 'Ausschussberichte', fr: 'Rapports de commission', es: 'Informes de comité', nl: 'Commissierapporten',
+    ar: 'تقارير اللجان', he: 'דוחות ועדה', ja: '委員会報告', ko: '위원회 보고서', zh: '委员会报告',
+  },
+  'committee-reports': {
+    en: 'Committee Reports', sv: 'Betänkanden', da: 'Udvalgsrapporter', no: 'Komitérapporter', fi: 'Valiokuntaraportit',
+    de: 'Ausschussberichte', fr: 'Rapports de commission', es: 'Informes de comité', nl: 'Commissierapporten',
+    ar: 'تقارير اللجان', he: 'דוחות ועדה', ja: '委員会報告', ko: '위원회 보고서', zh: '委员会报告',
+  },
+  'evening-analysis': {
+    en: 'Evening Analysis', sv: 'Kvällsanalys', da: 'Aftenanalyse', no: 'Kveldsanalyse', fi: 'Ilta-analyysi',
+    de: 'Abendanalyse', fr: 'Analyse du soir', es: 'Análisis vespertino', nl: 'Avondanalyse',
+    ar: 'تحليل مسائي', he: 'ניתוח ערב', ja: '夜間分析', ko: '저녁 분석', zh: '晚间分析',
+  },
+  'deep-inspection': {
+    en: 'Deep Inspection', sv: 'Djupgranskning', da: 'Dybdeinspektion', no: 'Dybdegranskning', fi: 'Syvätarkastelu',
+    de: 'Tiefeninspektion', fr: 'Inspection approfondie', es: 'Inspección profunda', nl: 'Diepte-inspectie',
+    ar: 'فحص معمق', he: 'בדיקה מעמיקה', ja: '詳細調査', ko: '심층 조사', zh: '深度检查',
+  },
+  'week-ahead': {
+    en: 'Week Ahead', sv: 'Veckan framåt', da: 'Ugen forude', no: 'Uken fremover', fi: 'Tuleva viikko',
+    de: 'Kommende Woche', fr: 'Semaine à venir', es: 'Semana próxima', nl: 'Komende week',
+    ar: 'الأسبوع القادم', he: 'השבוע הקרוב', ja: '今後一週間', ko: '다음 주', zh: '未来一周',
+  },
+  'month-ahead': {
+    en: 'Month Ahead', sv: 'Månaden framåt', da: 'Måneden forude', no: 'Måneden fremover', fi: 'Tuleva kuukausi',
+    de: 'Kommender Monat', fr: 'Mois à venir', es: 'Mes próximo', nl: 'Komende maand',
+    ar: 'الشهر القادم', he: 'החודש הקרוב', ja: '今後一か月', ko: '다음 달', zh: '未来一月',
+  },
+  'weekly-review': {
+    en: 'Weekly Review', sv: 'Veckoöversikt', da: 'Ugeoversigt', no: 'Ukesoppsummering', fi: 'Viikkokatsaus',
+    de: 'Wochenrückblick', fr: 'Revue hebdomadaire', es: 'Resumen semanal', nl: 'Weekoverzicht',
+    ar: 'المراجعة الأسبوعية', he: 'סקירה שבועית', ja: '週次レビュー', ko: '주간 리뷰', zh: '每周综述',
+  },
+  'monthly-review': {
+    en: 'Monthly Review', sv: 'Månadsöversikt', da: 'Månedsoversigt', no: 'Månedsoppsummering', fi: 'Kuukausikatsaus',
+    de: 'Monatsrückblick', fr: 'Revue mensuelle', es: 'Resumen mensual', nl: 'Maandoverzicht',
+    ar: 'المراجعة الشهرية', he: 'סקירה חודשית', ja: '月次レビュー', ko: '월간 리뷰', zh: '每月综述',
+  },
+  'breaking-news': {
+    en: 'Breaking News', sv: 'Senaste nytt', da: 'Breaking news', no: 'Siste nytt', fi: 'Uutisvirta',
+    de: 'Eilmeldungen', fr: 'Actualité urgente', es: 'Noticias de última hora', nl: 'Laatste nieuws',
+    ar: 'أخبار عاجلة', he: 'חדשות בוערות', ja: '速報', ko: '속보', zh: '突发新闻',
+  },
+  documents: {
+    en: 'Documents', sv: 'Dokument', da: 'Dokumenter', no: 'Dokumenter', fi: 'Asiakirjat',
+    de: 'Dokumente', fr: 'Documents', es: 'Documentos', nl: 'Documenten',
+    ar: 'الوثائق', he: 'מסמכים', ja: '文書', ko: '문서', zh: '文档',
+  },
+};
+&nbsp;
+/** Per-language description for each known stream slug. */
+export const STREAM_DESC_I18N: Record&lt;string, Record&lt;Language, string&gt;&gt; = {
+  propositions: {
+    en: 'Government propositions (bills tabled by the Cabinet).',
+    sv: 'Regeringens propositioner (lagförslag från regeringen).',
+    da: 'Regeringens propositioner (lovforslag fra kabinettet).',
+    no: 'Regjeringens proposisjoner (lovforslag fra regjeringen).',
+    fi: 'Hallituksen esitykset (hallituksen lakiehdotukset).',
+    de: 'Regierungsvorlagen (vom Kabinett eingebrachte Gesetzentwürfe).',
+    fr: 'Propositions gouvernementales (projets de loi déposés par le gouvernement).',
+    es: 'Proposiciones del Gobierno (proyectos de ley presentados por el Gabinete).',
+    nl: 'Regeringsvoorstellen (wetsvoorstellen ingediend door het Kabinet).',
+    ar: 'مقترحات حكومية (مشاريع قوانين مقدمة من مجلس الوزراء).',
+    he: 'הצעות חוק ממשלתיות (הצעות שהונחו על־ידי הקבינט).',
+    ja: '政府提出法案（内閣が提出する法律案）。',
+    ko: '정부 제안 법안(내각이 제출한 법률안).',
+    zh: '政府法案（内阁提交的法案）。',
+  },
+  motions: {
+    en: 'Member motions (bills and proposals introduced by MPs).',
+    sv: 'Motioner (förslag från enskilda riksdagsledamöter).',
+    da: 'Motioner (lovforslag indbragt af folketingsmedlemmer).',
+    no: 'Motsjoner (forslag fra enkelte stortingsrepresentanter).',
+    fi: 'Kansanedustajien aloitteet (edustajien lakialoitteet ja ehdotukset).',
+    de: 'Anträge von Abgeordneten (von Parlamentariern eingebrachte Gesetzentwürfe und Vorschläge).',
+    fr: 'Motions parlementaires (projets et propositions déposés par les députés).',
+    es: 'Mociones de miembros (proyectos y propuestas presentados por los parlamentarios).',
+    nl: 'Moties van leden (wetsvoorstellen en voorstellen ingediend door Kamerleden).',
+    ar: 'عرائض النواب (مشاريع قوانين ومقترحات يقدمها أعضاء البرلمان).',
+    he: 'הצעות חוק פרטיות של חברי פרלמנט.',
+    ja: '議員発議の動議（議員が提出する法案・提案）。',
+    ko: '의원 발의 의안(의원이 제출한 법안 및 제안).',
+    zh: '议员动议（国会议员提出的法案和提案）。',
+  },
+  interpellations: {
+    en: 'Interpellations — formal ministerial questions and responses.',
+    sv: 'Interpellationer — formella ministerfrågor och svar.',
+    da: 'Interpellationer — formelle ministerspørgsmål og svar.',
+    no: 'Interpellasjoner — formelle statsrådsspørsmål og svar.',
+    fi: 'Interpellaatiot — ministeriöille esitettyjä muodollisia kysymyksiä ja vastauksia.',
+    de: 'Interpellationen — formelle Anfragen an Minister und deren Antworten.',
+    fr: 'Interpellations — questions ministérielles formelles et réponses.',
+    es: 'Interpelaciones: preguntas ministeriales formales y sus respuestas.',
+    nl: 'Interpellaties — formele ministeriële vragen en antwoorden.',
+    ar: 'استجوابات — أسئلة وزارية رسمية وإجاباتها.',
+    he: 'שאילתות — שאלות רשמיות לשרים ותשובותיהם.',
+    ja: '質問主意書 — 閣僚に対する正式な質問と回答。',
+    ko: '질의 — 장관에 대한 공식 질문과 답변.',
+    zh: '质询 — 向部长提出的正式问题及其答复。',
+  },
+  committeeReports: {
+    en: 'Parliamentary committee reports (betänkanden) and recommendations.',
+    sv: 'Riksdagens utskottsbetänkanden och rekommendationer.',
+    da: 'Udvalgsbetænkninger og anbefalinger fra Folketingets udvalg.',
+    no: 'Komitébetenkninger og tilrådninger fra Stortingets komiteer.',
+    fi: 'Eduskunnan valiokuntien mietinnöt ja suositukset.',
+    de: 'Berichte und Empfehlungen der Parlamentsausschüsse (betänkanden).',
+    fr: 'Rapports des commissions parlementaires (betänkanden) et recommandations.',
+    es: 'Informes y recomendaciones de las comisiones parlamentarias (betänkanden).',
+    nl: 'Rapporten en aanbevelingen van parlementaire commissies (betänkanden).',
+    ar: 'تقارير لجان البرلمان السويدي (بيتينكانديْن) وتوصياتها.',
+    he: 'דוחות והמלצות של ועדות הפרלמנט (betänkanden).',
+    ja: '国会委員会報告（betänkanden）と勧告。',
+    ko: '의회 위원회 보고서(betänkanden)와 권고.',
+    zh: '议会委员会报告（betänkanden）及建议。',
+  },
+  'committee-reports': {
+    en: 'Parliamentary committee reports (betänkanden) and recommendations.',
+    sv: 'Riksdagens utskottsbetänkanden och rekommendationer.',
+    da: 'Udvalgsbetænkninger og anbefalinger fra Folketingets udvalg.',
+    no: 'Komitébetenkninger og tilrådninger fra Stortingets komiteer.',
+    fi: 'Eduskunnan valiokuntien mietinnöt ja suositukset.',
+    de: 'Berichte und Empfehlungen der Parlamentsausschüsse (betänkanden).',
+    fr: 'Rapports des commissions parlementaires (betänkanden) et recommandations.',
+    es: 'Informes y recomendaciones de las comisiones parlamentarias (betänkanden).',
+    nl: 'Rapporten en aanbevelingen van parlementaire commissies (betänkanden).',
+    ar: 'تقارير لجان البرلمان السويدي (بيتينكانديْن) وتوصياتها.',
+    he: 'דוחות והמלצות של ועדות הפרלמנט (betänkanden).',
+    ja: '国会委員会報告（betänkanden）と勧告。',
+    ko: '의회 위원회 보고서(betänkanden)와 권고.',
+    zh: '议会委员会报告（betänkanden）及建议。',
+  },
+  'evening-analysis': {
+    en: 'Evening analysis synthesising the day\'s parliamentary and government developments.',
+    sv: 'Kvällsanalys som sammanfattar dagens händelser i riksdag och regering.',
+    da: 'Aftenanalyse der samler dagens parlaments- og regeringsudvikling.',
+    no: 'Kveldsanalyse som oppsummerer dagens hendelser i parlament og regjering.',
+    fi: 'Ilta-analyysi, joka kokoaa päivän parlamentti- ja hallituskehityksen.',
+    de: 'Abendanalyse, die die parlamentarischen und Regierungsereignisse des Tages zusammenfasst.',
+    fr: 'Analyse du soir synthétisant les développements parlementaires et gouvernementaux du jour.',
+    es: 'Análisis vespertino que sintetiza los acontecimientos parlamentarios y gubernamentales del día.',
+    nl: 'Avondanalyse die de parlementaire en regeringsontwikkelingen van de dag samenvat.',
+    ar: 'تحليل مسائي يُجمِل تطورات البرلمان والحكومة خلال اليوم.',
+    he: 'ניתוח ערב המסכם את התפתחויות הפרלמנט והממשלה מהיום.',
+    ja: '議会と政府のその日の動向をまとめる夜間分析。',
+    ko: '당일 의회 및 정부 상황을 종합한 저녁 분석.',
+    zh: '汇总当日议会和政府动态的晚间分析。',
+  },
+  'deep-inspection': {
+    en: 'Deep inspection — long-form structured analysis of a focused topic.',
+    sv: 'Djupgranskning — utförlig strukturerad analys av ett fokuserat ämne.',
+    da: 'Dybdeinspektion — lang, struktureret analyse af et fokuseret emne.',
+    no: 'Dybdegranskning — lang strukturert analyse av et fokusert emne.',
+    fi: 'Syvätarkastelu — pitkä, jäsennelty analyysi rajatusta aiheesta.',
+    de: 'Tiefeninspektion — strukturierte Langform-Analyse zu einem fokussierten Thema.',
+    fr: 'Inspection approfondie — analyse structurée et longue sur un sujet ciblé.',
+    es: 'Inspección profunda: análisis estructurado y extenso sobre un tema concreto.',
+    nl: 'Diepte-inspectie — lange, gestructureerde analyse van een specifiek onderwerp.',
+    ar: 'فحص معمق — تحليل منظم ومفصل لموضوع محدد.',
+    he: 'בדיקה מעמיקה — ניתוח מובנה וארוך על נושא ממוקד.',
+    ja: '特定のテーマに焦点を当てた長編の構造化分析（詳細調査）。',
+    ko: '특정 주제에 초점을 맞춘 장문의 구조화 분석(심층 조사).',
+    zh: '针对特定主题的长篇结构化分析（深度检查）。',
+  },
+  'week-ahead': {
+    en: 'Week-ahead prospective coverage of scheduled parliamentary activity.',
+    sv: 'Prospektiv bevakning för kommande vecka i riksdagen.',
+    da: 'Fremadrettet dækning af den kommende uges parlamentariske aktivitet.',
+    no: 'Framskuende dekning av neste ukes parlamentariske aktivitet.',
+    fi: 'Tulevan viikon eduskuntatoiminnan ennakkokatsaus.',
+    de: 'Vorausschauende Berichterstattung zur parlamentarischen Tagesordnung der kommenden Woche.',
+    fr: 'Couverture prospective de l\'activité parlementaire prévue pour la semaine à venir.',
+    es: 'Cobertura prospectiva de la actividad parlamentaria prevista para la semana próxima.',
+    nl: 'Vooruitblik op de parlementaire agenda van de komende week.',
+    ar: 'تغطية استشرافية لأنشطة البرلمان في الأسبوع القادم.',
+    he: 'סקירה צופה פני עתיד של פעילות הפרלמנט בשבוע הקרוב.',
+    ja: '翌週に予定されている議会活動の先行分析。',
+    ko: '다음 주 의회 활동에 대한 사전 분석.',
+    zh: '对未来一周议会活动的前瞻报道。',
+  },
+  'month-ahead': {
+    en: 'Month-ahead forward-looking intelligence covering scheduled activity.',
+    sv: 'Framåtblickande underrättelser för kommande månad.',
+    da: 'Fremadrettet efterretning for den kommende måned.',
+    no: 'Framskuende etterretning for neste måneds planlagte aktivitet.',
+    fi: 'Tulevan kuukauden ennakoiva tiedustelukatsaus.',
+    de: 'Vorausschauende Intelligenz zur geplanten Tätigkeit im kommenden Monat.',
+    fr: 'Renseignement prospectif couvrant l\'activité planifiée du mois à venir.',
+    es: 'Inteligencia prospectiva sobre la actividad programada del próximo mes.',
+    nl: 'Vooruitkijkende inlichtingen voor de geplande activiteit van de komende maand.',
+    ar: 'استخبارات استشرافية تغطي النشاط المخطط للشهر القادم.',
+    he: 'מודיעין צופה פני עתיד לפעילות המתוכננת בחודש הקרוב.',
+    ja: '翌月の予定活動に関する先読みインテリジェンス。',
+    ko: '다음 달 예정 활동을 다루는 사전 인텔리전스.',
+    zh: '覆盖未来一月预定活动的前瞻性情报。',
+  },
+  'weekly-review': {
+    en: 'Weekly review synthesising the week\'s political and legislative developments.',
+    sv: 'Veckoöversikt som sammanfattar veckans politiska och lagstiftningsmässiga händelser.',
+    da: 'Ugeoversigt der samler ugens politiske og lovgivningsmæssige udvikling.',
+    no: 'Ukeoppsummering som samler ukens politiske og lovgivende utvikling.',
+    fi: 'Viikkokatsaus, joka kokoaa viikon poliittiset ja lainsäädännölliset tapahtumat.',
+    de: 'Wochenrückblick, der die politischen und legislativen Entwicklungen der Woche zusammenfasst.',
+    fr: 'Revue hebdomadaire synthétisant les développements politiques et législatifs de la semaine.',
+    es: 'Resumen semanal que sintetiza los desarrollos políticos y legislativos de la semana.',
+    nl: 'Weekoverzicht dat de politieke en wetgevende ontwikkelingen van de week samenvat.',
+    ar: 'مراجعة أسبوعية تُجمل التطورات السياسية والتشريعية للأسبوع.',
+    he: 'סקירה שבועית המסכמת את ההתפתחויות הפוליטיות והחקיקתיות מהשבוע.',
+    ja: '週の政治・立法動向をまとめる週次レビュー。',
+    ko: '한 주의 정치·입법 동향을 종합한 주간 리뷰.',
+    zh: '汇总本周政治与立法动态的每周综述。',
+  },
+  'monthly-review': {
+    en: 'Monthly review synthesising the month\'s political and legislative developments.',
+    sv: 'Månadsöversikt som sammanfattar månadens politiska och lagstiftningsmässiga händelser.',
+    da: 'Månedsoversigt der samler månedens politiske og lovgivningsmæssige udvikling.',
+    no: 'Månedsoppsummering som samler månedens politiske og lovgivende utvikling.',
+    fi: 'Kuukausikatsaus, joka kokoaa kuukauden poliittiset ja lainsäädännölliset tapahtumat.',
+    de: 'Monatsrückblick, der die politischen und legislativen Entwicklungen des Monats zusammenfasst.',
+    fr: 'Revue mensuelle synthétisant les développements politiques et législatifs du mois.',
+    es: 'Resumen mensual que sintetiza los desarrollos políticos y legislativos del mes.',
+    nl: 'Maandoverzicht dat de politieke en wetgevende ontwikkelingen van de maand samenvat.',
+    ar: 'مراجعة شهرية تُجمل التطورات السياسية والتشريعية للشهر.',
+    he: 'סקירה חודשית המסכמת את ההתפתחויות הפוליטיות והחקיקתיות מהחודש.',
+    ja: '月の政治・立法動向をまとめる月次レビュー。',
+    ko: '한 달의 정치·입법 동향을 종합한 월간 리뷰.',
+    zh: '汇总本月政治与立法动态的每月综述。',
+  },
+  'breaking-news': {
+    en: 'Breaking-news intelligence products generated in response to significant events.',
+    sv: 'Underrättelseprodukter som produceras direkt vid betydande händelser.',
+    da: 'Efterretningsprodukter genereret som reaktion på væsentlige begivenheder.',
+    no: 'Etterretningsprodukter laget som svar på betydelige hendelser.',
+    fi: 'Merkittäviin tapahtumiin reagoivat uutisluokan tiedustelutuotteet.',
+    de: 'Intelligenzprodukte, die als Reaktion auf bedeutende Ereignisse erstellt werden.',
+    fr: 'Produits de renseignement générés en réponse à des événements majeurs.',
+    es: 'Productos de inteligencia generados en respuesta a eventos significativos.',
+    nl: 'Inlichtingenproducten die als reactie op belangrijke gebeurtenissen worden gegenereerd.',
+    ar: 'منتجات استخباراتية عاجلة تُنتج استجابةً لأحداث بارزة.',
+    he: 'מוצרי מודיעין הנוצרים בתגובה לאירועים משמעותיים.',
+    ja: '重要な出来事に応じて生成される速報インテリジェンス製品。',
+    ko: '중요한 사건에 대응하여 생성되는 속보 인텔리전스 제품.',
+    zh: '针对重大事件即时产出的突发新闻情报产品。',
+  },
+  documents: {
+    en: 'Raw source documents and supporting materials for this stream.',
+    sv: 'Källdokument och stödmaterial som ligger till grund för strömmen.',
+    da: 'Kildedokumenter og støttemateriale til denne strøm.',
+    no: 'Kildedokumenter og støttemateriale for denne strømmen.',
+    fi: 'Tämän virran lähdeasiakirjat ja tukimateriaalit.',
+    de: 'Quelldokumente und Hintergrundmaterial für diesen Strom.',
+    fr: 'Documents sources et éléments d\'appui pour ce flux.',
+    es: 'Documentos fuente y materiales de apoyo de este flujo.',
+    nl: 'Brondocumenten en ondersteunend materiaal voor deze stroom.',
+    ar: 'الوثائق المصدرية والمواد الداعمة لهذا التيار.',
+    he: 'מסמכי מקור וחומרי עזר לזרם זה.',
+    ja: 'このストリームの原資料および補足資料。',
+    ko: '이 스트림의 원본 문서 및 보조 자료.',
+    zh: '本流的原始文档和支持材料。',
+  },
+};
+&nbsp;
+/** Per-language realtime description template. */
+export const REALTIME_DESC_I18N: Record&lt;Language, string&gt; = {
+  en: 'Realtime snapshot capturing the parliamentary and government state at a specific time.',
+  sv: 'Realtidssnapshot som fångar riksdagens och regeringens tillstånd vid en specifik tid.',
+  da: 'Realtidsoptagelse der fanger parlamentets og regeringens tilstand på et bestemt tidspunkt.',
+  no: 'Sanntidssnapshot som fanger parlamentets og regjeringens tilstand på et gitt tidspunkt.',
+  fi: 'Reaaliaikainen tilannekuva, joka tallentaa parlamentin ja hallituksen tilan tietyllä hetkellä.',
+  de: 'Echtzeit-Snapshot, der den parlamentarischen und Regierungszustand zu einem bestimmten Zeitpunkt festhält.',
+  fr: 'Capture en temps réel de l\'état du parlement et du gouvernement à un moment donné.',
+  es: 'Instantánea en tiempo real que captura el estado del parlamento y del Gobierno en un momento concreto.',
+  nl: 'Realtime snapshot die de staat van parlement en regering op een specifiek moment vastlegt.',
+  ar: 'لقطة في الزمن الحقيقي ترصد حالة البرلمان والحكومة في وقت محدد.',
+  he: 'תמונת זמן אמת הלוכדת את מצב הפרלמנט והממשלה ברגע מסוים.',
+  ja: 'ある時点における議会と政府の状態を捉えたリアルタイム・スナップショット。',
+  ko: '특정 시점의 의회 및 정부 상태를 포착한 실시간 스냅샷.',
+  zh: '捕捉某一时刻议会和政府状态的实时快照。',
+};
+&nbsp;
+/** Generic fallback for unknown streams, keyed by language. The "%s" placeholder
+ *  is replaced by the prettified stream name. */
+export const STREAM_GENERIC_DESC_I18N: Record&lt;Language, string&gt; = {
+  en: 'Analytical content stream: %s.',
+  sv: 'Analytisk innehållsström: %s.',
+  da: 'Analytisk indholdsstrøm: %s.',
+  no: 'Analytisk innholdsstrøm: %s.',
+  fi: 'Analyyttinen sisältövirta: %s.',
+  de: 'Analytischer Inhaltsstrom: %s.',
+  fr: 'Flux de contenu analytique : %s.',
+  es: 'Flujo de contenido analítico: %s.',
+  nl: 'Analytische inhoudsstroom: %s.',
+  ar: 'تيار محتوى تحليلي: %s.',
+  he: 'זרם תוכן אנליטי: %s.',
+  ja: '分析コンテンツストリーム: %s。',
+  ko: '분석 콘텐츠 스트림: %s.',
+  zh: '分析内容流：%s。',
+};
+&nbsp;
+// ---------------------------------------------------------------------------
+// Localised descriptions for every methodology file, template file and
+// recurring artifact filename. Entries fall back to the English META
+// description when a specific key/lang combination is missing.
+// ---------------------------------------------------------------------------
+&nbsp;
+&nbsp;
+&nbsp;
+/**
+ * Convert `propositions` → `Propositions`, `committee_reports` → `Committee Reports`.
+ * Pure string transform; English-only — used as the cross-language fallback.
+ */
+export function prettifyStream(name: string): string {
+  return name
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, (c) =&gt; c.toUpperCase());
+}
+&nbsp;
+/**
+ * Pick the icon for a stream. Falls back to bucket-specific icons for
+ * realtime / morning / midday / evening cycle prefixes, then to a generic
+ * package icon.
+ */
+export function streamIcon(name: string): string {
+  if (STREAM_META[name]) return STREAM_META[name].icon;
+  if (name === 'documents') return '📂';
+  if (name.startsWith('realtime-')) return '⏱️';
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (name.startsWith('morning-')) <span class="cstat-no" title="statement not covered" >return '🌅';</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (name.startsWith('midday-')) <span class="cstat-no" title="statement not covered" >return '🕛';</span>
+  if (name.startsWith('evening-')) return '🌙';
+  return '📦';
+}
+&nbsp;
+/** Localised stream display name (falls back to English prettify). */
+export function streamDisplayName(name: string, lang: Language): string {
+  const hit = STREAM_NAME_I18N[name]?.[lang];
+  if (hit) return hit;
+  // Preserve timestamp suffix for realtime-HHMM → "Realtime HH:MM" variants
+  const match = name.match(/^realtime-(\d{2})(\d{2})$/);
+  if (match) {
+    const base = STREAM_NAME_I18N['breaking-news']?.[lang] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'Realtime';</span>
+    // Use English "Realtime" label for clarity across languages
+    return `${lang === 'en' ? 'Realtime' : base.replace(/breaking[-\s]?news?/i, 'Realtime')} ${match[1]}:${match[2]}`;
+  }
+  return prettifyStream(name);
+}
+&nbsp;
+/** Localised stream description. Falls back through realtime → generic. */
+export function streamDescription(name: string, lang: Language): string {
+  const hit = STREAM_DESC_I18N[name]?.[lang];
+  if (hit) return hit;
+  if (name.startsWith('realtime-')) return REALTIME_DESC_I18N[lang];
+  const generic = STREAM_GENERIC_DESC_I18N[lang] ?? <span class="branch-1 cbranch-no" title="branch not covered" >STREAM_GENERIC_DESC_I18N.en;</span>
+  return generic.replace('%s', streamDisplayName(name, lang));
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-04-28T01:42:06.157Z
+            </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    
