@@ -41,6 +41,22 @@ export interface EconomicIndicatorContext {
   readonly committees: readonly string[];
   /** Unit of measurement */
   readonly unit: string;
+  /**
+   * `true` if this WB code is deprecated as a primary economic citation
+   * (`.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.1). Deprecated indicators
+   * are filtered out of the default {@link ECONOMIC_INDICATORS} export and
+   * are only available via {@link ALL_WORLD_BANK_INDICATORS} for audit /
+   * back-compat readers.
+   */
+  readonly deprecated?: boolean;
+  /**
+   * Canonical IMF replacement when `deprecated === true`, formatted as
+   * `imf:DATABASE:INDICATOR_ID` (e.g. `imf:WEO:NGDP_RPCH`). Mirrors
+   * `analysis/economic-indicators-inventory.json → deprecationPolicy.supersedes`.
+   */
+  readonly supersededBy?: string;
+  /** Plain-English reason the WB code was deprecated. */
+  readonly deprecationReason?: string;
 }
 
 /** Nordic country comparison set */
@@ -73,6 +89,9 @@ interface InventoryIndicator {
   mcpTool?: string;
   mcpParam?: string;
   source?: number;
+  deprecated?: boolean;
+  supersededBy?: string;
+  deprecationReason?: string;
 }
 
 interface InventoryDomain {
@@ -111,6 +130,10 @@ function resolveInventoryPath(): string {
  * Load and transform indicators from the JSON inventory file.
  * Each indicator in the JSON is mapped to an EconomicIndicatorContext
  * with description, policyAreas, and committees.
+ *
+ * Returns the **raw** inventory including indicators marked `deprecated`
+ * — call sites that need only the active set should consume
+ * {@link ECONOMIC_INDICATORS}.
  */
 function loadIndicatorsFromInventory(): readonly EconomicIndicatorContext[] {
   try {
@@ -127,6 +150,9 @@ function loadIndicatorsFromInventory(): readonly EconomicIndicatorContext[] {
           policyAreas: ind.policyAreas ?? [domain.label.toLowerCase()],
           committees: ind.committees ?? domain.committees,
           unit: ind.unit,
+          deprecated: ind.deprecated === true,
+          supersededBy: ind.supersededBy,
+          deprecationReason: ind.deprecationReason,
         });
       }
     }
@@ -154,14 +180,33 @@ function loadIndicatorsFromInventory(): readonly EconomicIndicatorContext[] {
 // ---------------------------------------------------------------------------
 
 /**
- * All World Bank indicators mapped to Swedish political policy areas.
- * Loaded from `analysis/worldbank/indicators-inventory.json` — the single source of truth.
- *
- * To add indicators: edit the JSON file, NOT this module.
- * Full inventory: analysis/worldbank/indicators-inventory.json
- * Committee mapping: analysis/worldbank/indicator-policy-mapping.md
+ * **Raw** WB inventory — includes deprecated economic codes. Use this only
+ * for audit / back-compat / migration tooling. New code should consume the
+ * filtered {@link ECONOMIC_INDICATORS} export below.
  */
-export const ECONOMIC_INDICATORS: readonly EconomicIndicatorContext[] = loadIndicatorsFromInventory();
+export const ALL_WORLD_BANK_INDICATORS: readonly EconomicIndicatorContext[] =
+  loadIndicatorsFromInventory();
+
+/**
+ * Active World Bank indicators mapped to Swedish political policy areas —
+ * **filtered to non-deprecated only** per the v2.1 economic-data contract.
+ *
+ * IMF (WEO/FM/IFS/BOP/GFS_COFOG/DOTS/PCPS/MFS_IR/ER) is the primary canon for
+ * macro / fiscal / monetary / external-sector / trade / commodity / FX
+ * context. World Bank entries surfaced here are the **non-economic residue**
+ * authoritative on the WB side: WGI governance (`source=75`), environment
+ * (`EN.*`, `EG.*`, `AG.LND.FRST.ZS`), social / education participation
+ * (`SE.*`, `SH.*`, `SP.*`), defence historicals (`MS.MIL.*`), inequality
+ * (`SI.POV.*`), and crime / justice (`VC.IHR.*`).
+ *
+ * Authority: `.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.1 ·
+ * `analysis/economic-indicators-inventory.json` ·
+ * `analysis/imf/indicators-inventory.json` ·
+ * `analysis/worldbank/indicators-inventory.json` (per-indicator
+ * `deprecated: true` + `supersededBy: "imf:..."` flags).
+ */
+export const ECONOMIC_INDICATORS: readonly EconomicIndicatorContext[] =
+  ALL_WORLD_BANK_INDICATORS.filter((ind) => ind.deprecated !== true);
 
 // ---------------------------------------------------------------------------
 // Nordic comparison configuration
@@ -315,9 +360,12 @@ export function getEconomicHeading(
 
 /**
  * Find relevant economic indicators for a given policy area or committee.
+ * **Excludes** deprecated WB economic codes — to retrieve the raw inventory
+ * (including deprecated codes for audit/back-compat), iterate
+ * {@link ALL_WORLD_BANK_INDICATORS} directly.
  *
  * @param query - Policy area or committee abbreviation to search for
- * @returns Matching economic indicators
+ * @returns Matching non-deprecated economic indicators
  */
 export function findRelevantIndicators(query: string): readonly EconomicIndicatorContext[] {
   const q = query.trim().toLowerCase();
@@ -332,8 +380,36 @@ export function findRelevantIndicators(query: string): readonly EconomicIndicato
 }
 
 /**
+ * Return all WB indicators marked `deprecated: true` in the inventory. Used
+ * by audit tooling and by `tests/worldbank-deprecation-contract.test.ts` to
+ * cross-check that the contract banned-list is fully reflected in the
+ * inventory.
+ */
+export function findDeprecatedIndicators(): readonly EconomicIndicatorContext[] {
+  return ALL_WORLD_BANK_INDICATORS.filter((ind) => ind.deprecated === true);
+}
+
+/**
+ * Resolve a WB indicator to its IMF replacement citation, if deprecated.
+ * Returns `undefined` when the WB code is non-deprecated (the WB code is
+ * still authoritative for that domain) or unknown.
+ *
+ * @example
+ * ```ts
+ * resolveImfReplacement('NY.GDP.MKTP.KD.ZG'); // → 'imf:WEO:NGDP_RPCH'
+ * resolveImfReplacement('CC.EST');            // → undefined (WGI residue still authoritative)
+ * ```
+ */
+export function resolveImfReplacement(worldBankIndicatorId: string): string | undefined {
+  const ind = ALL_WORLD_BANK_INDICATORS.find((i) => i.indicatorId === worldBankIndicatorId);
+  return ind?.deprecated === true ? ind.supersededBy : undefined;
+}
+
+/**
  * Get the World Bank API query parameters for Swedish economic indicators.
  * Used by agentic workflows to know which indicators to fetch.
+ *
+ * **Excludes** deprecated WB economic codes — see {@link ECONOMIC_INDICATORS}.
  *
  * @returns Array of { countryCode, indicatorId, name } for all configured indicators
  */
@@ -349,6 +425,11 @@ export function getSwedishIndicatorQueries(): readonly { countryCode: string; in
  * Detect economic context references in article content.
  * Used by article quality enhancer to score economic depth.
  *
+ * Recognises both legacy World Bank citations (NY.GDP.\*, FP.CPI.\*, …) and
+ * the **primary** IMF citations (`WEO:NGDP_RPCH`, `FM:GGXWDG_NGDP`,
+ * `IFS:PCPI_IX`, `BOP:*`, `GFS_COFOG:*`, `DOTS:*`, `PCPS:*`, `MFS_IR:*`,
+ * `ER:*`) introduced by the v2.1 economic-data contract.
+ *
  * @param content - HTML or text content to analyze
  * @returns True if economic context is present
  */
@@ -360,6 +441,7 @@ export function hasEconomicContext(content: string): boolean {
     /\binflation\b/i,
     /\beconomic\s+(growth|context|impact)\b/i,
     /\bworld\s+bank\b/i,
+    /\bimf\b/i, // International Monetary Fund — primary economic source per v2.1 contract
     /\bbnp\b/i, // Swedish: bruttonationalprodukt
     /\barbetslöshet/i, // Swedish: unemployment (arbetslöshet, arbetslösheten, etc.)
     /\bekonomi/i, // Swedish: economy
@@ -385,6 +467,10 @@ export function hasEconomicContext(content: string): boolean {
     /\bEN\.ATM/i,
     /\bSH\.XPD/i,
     /\bSE\.XPD/i,
+    // IMF citations — `DATABASE:INDICATOR_ID` (v2.1 contract; see imfCitation())
+    /\b(?:WEO|FM|IFS|BOP|BOP_AGG|GFS_COFOG|MFS_IR|DOTS|PCPS|ER):[A-Z][A-Z0-9_]+/i,
+    // IMF projection vintage tag, e.g. "(WEO Apr-2026, GGXWDG_NGDP)"
+    /\bWEO\s+(?:Apr|Oct|April|October)-\d{4}\b/i,
   ];
 
   return patterns.some((pattern) => pattern.test(text));

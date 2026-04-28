@@ -55,7 +55,8 @@ flowchart LR
     R[riksdag-regering MCP]:::src
     G[regeringen.se]:::src
     S[SCB PxWeb]:::src
-    W[World Bank / IMF]:::src
+    W[IMF<br/>WEO+FM+IFS+BOP+GFS_COFOG+DOTS+PCPS+MFS_IR+ER<br/>🏛️ primary economic source]:::src
+    WB[World Bank<br/>WGI / environment / social residue<br/>⚠️ non-economic only]:::src
     ST[Statskontoret<br/>agency-capacity reports]:::src
 
     M[data-download-manifest.md<br/>📥 provenance ledger]:::prov
@@ -65,6 +66,7 @@ flowchart LR
     G --> M
     S --> M
     W --> M
+    WB --> M
     ST --> M
     M --> X
     X --> FamilyA[Family A — synthesis consumes linkages]:::out
@@ -79,9 +81,9 @@ flowchart LR
 Maintain an **auditable ledger** of every piece of data that fed the workflow. The manifest is the single file a reviewer consults to answer "is this analysis reproducible from primary sources?".
 
 ### Input
-- MCP tool-call logs from riksdag-regering, scb, world-bank, imf (bash script)
+- MCP tool-call logs from riksdag-regering, scb, world-bank (non-economic residue only), imf (bash script — primary economic source)
 - Any `web_fetch` results from regeringen.se, riksdagen.se, Statskontoret, myndighet sites
-- Static reference files (SCB tables, World Bank indicators) with their version/vintage
+- Static reference files (SCB tables, IMF datasets, World Bank non-economic indicators) with their version/vintage
 
 ### Output — required structure
 
@@ -90,7 +92,7 @@ Maintain an **auditable ledger** of every piece of data that fed the workflow. T
    - `Source` · `Endpoint / MCP tool` · `Parameters` · `Records returned` · `Vintage / rm` · `Integrity (SHA or URL)` · `Retrieved at`
 3. **Document ledger** — every `dok_id` touched with:
    - `dok_id` · `doktyp` · `titel` · `datum` · `direct URL` · `tool used` · `confidence that retrieval was complete`
-4. **Stale-data flags** — any source older than its SLA (e.g. SCB table >90 days, World Bank >24 months) flagged with ⚠️
+4. **Stale-data flags** — any source older than its SLA (e.g. SCB table >90 days, IMF WEO >12 months, World Bank non-economic residue >24 months) flagged with ⚠️
 5. **Completeness Mermaid** — color-coded freshness ring/donut
 
 ### Required Mermaid — data freshness
@@ -101,7 +103,7 @@ pie showData
     "Fresh (≤24h) — Riksdag live APIs" : 62
     "Recent (≤7d) — Regeringen releases" : 18
     "Quarterly (≤90d) — SCB tables" : 12
-    "Annual (≤24mo) — World Bank" : 6
+    "Annual (≤24mo) — World Bank (non-economic residue only — WGI, environment, social)" : 6
     "Stale (>SLA) — flagged" : 2
 ```
 
@@ -254,8 +256,8 @@ flowchart TD
 | Riksdag live APIs | ≤24 h | ≤7 d | ≤30 d | >30 d |
 | Regeringen.se | ≤24 h | ≤7 d | ≤30 d | >30 d |
 | SCB PxWeb | ≤7 d | ≤30 d | ≤90 d | >90 d |
-| World Bank indicators | ≤12 mo | ≤24 mo | ≤36 mo | >36 mo |
-| IMF WEO projections | ≤6 mo | ≤12 mo | ≤18 mo | >18 mo |
+| **IMF WEO / FM / IFS / BOP / GFS_COFOG / DOTS / PCPS / MFS_IR / ER** *(primary economic — all macro / fiscal / monetary / external / commodity / FX context)* | ≤3 mo | ≤6 mo | ≤12 mo | >12 mo |
+| World Bank indicators *(non-economic residue only — WGI / environment / social / education participation / defence historicals)* | ≤12 mo | ≤24 mo | ≤36 mo | >36 mo |
 
 ---
 

@@ -9,10 +9,13 @@
 import { describe, it, expect } from 'vitest';
 import {
   ECONOMIC_INDICATORS,
+  ALL_WORLD_BANK_INDICATORS,
   ECONOMIC_SECTION_HEADINGS,
   NORDIC_COMPARISON,
   getEconomicHeading,
   findRelevantIndicators,
+  findDeprecatedIndicators,
+  resolveImfReplacement,
   getSwedishIndicatorQueries,
   hasEconomicContext,
 } from '../scripts/world-bank-context.js';
@@ -38,28 +41,29 @@ describe('world-bank-context', () => {
       });
     });
 
-    it('should include GDP growth indicator', () => {
-      const gdp = ECONOMIC_INDICATORS.find((i) => i.name === 'GDP Growth');
-      expect(gdp).toBeDefined();
-      expect(gdp!.indicatorId).toBe('NY.GDP.MKTP.KD.ZG');
-      expect(gdp!.committees).toContain('FiU');
+    it('should NOT include the deprecated WB GDP growth code (IMF-first contract v2.1)', () => {
+      const gdp = ECONOMIC_INDICATORS.find((i) => i.indicatorId === 'NY.GDP.MKTP.KD.ZG');
+      expect(gdp).toBeUndefined();
     });
 
-    it('should include unemployment indicator', () => {
-      const unemployment = ECONOMIC_INDICATORS.find((i) => i.name === 'Unemployment Rate');
-      expect(unemployment).toBeDefined();
-      expect(unemployment!.indicatorId).toBe('SL.UEM.TOTL.ZS');
-      expect(unemployment!.committees).toContain('AU');
+    it('should NOT include the deprecated WB unemployment code (use IMF WEO:LUR)', () => {
+      const unemployment = ECONOMIC_INDICATORS.find((i) => i.indicatorId === 'SL.UEM.TOTL.ZS');
+      expect(unemployment).toBeUndefined();
     });
 
-    it('should include military expenditure for defense policy', () => {
+    it('should NOT include the deprecated WB CPI code (use IMF WEO:PCPIPCH)', () => {
+      const cpi = ECONOMIC_INDICATORS.find((i) => i.indicatorId === 'FP.CPI.TOTL.ZG');
+      expect(cpi).toBeUndefined();
+    });
+
+    it('should still include military expenditure for defense policy (non-economic residue)', () => {
       const military = ECONOMIC_INDICATORS.find((i) => i.name === 'Military Expenditure (% GDP)');
       expect(military).toBeDefined();
       expect(military!.policyAreas).toContain('defense');
       expect(military!.committees).toContain('FöU');
     });
 
-    it('should include CO2 emissions for climate policy', () => {
+    it('should still include CO2 emissions for climate policy (non-economic residue)', () => {
       const co2 = ECONOMIC_INDICATORS.find((i) => i.name.includes('CO₂'));
       expect(co2).toBeDefined();
       expect(co2!.policyAreas).toContain('climate policy');
@@ -76,6 +80,85 @@ describe('world-bank-context', () => {
           expect(validCommittees).toContain(committee);
         });
       });
+    });
+
+    it('should never carry deprecated: true (active set is filtered)', () => {
+      ECONOMIC_INDICATORS.forEach((indicator) => {
+        expect(indicator.deprecated).not.toBe(true);
+      });
+    });
+  });
+
+  describe('ALL_WORLD_BANK_INDICATORS (raw inventory)', () => {
+    it('should include the deprecated WB GDP growth code (raw inventory)', () => {
+      const gdp = ALL_WORLD_BANK_INDICATORS.find((i) => i.indicatorId === 'NY.GDP.MKTP.KD.ZG');
+      expect(gdp).toBeDefined();
+      expect(gdp!.deprecated).toBe(true);
+      expect(gdp!.supersededBy).toBe('imf:WEO:NGDP_RPCH');
+    });
+
+    it('should include the deprecated WB CPI code with IMF replacement', () => {
+      const cpi = ALL_WORLD_BANK_INDICATORS.find((i) => i.indicatorId === 'FP.CPI.TOTL.ZG');
+      expect(cpi).toBeDefined();
+      expect(cpi!.deprecated).toBe(true);
+      expect(cpi!.supersededBy).toBe('imf:WEO:PCPIPCH');
+    });
+
+    it('should be a strict superset of the active ECONOMIC_INDICATORS set', () => {
+      expect(ALL_WORLD_BANK_INDICATORS.length).toBeGreaterThan(ECONOMIC_INDICATORS.length);
+      ECONOMIC_INDICATORS.forEach((active) => {
+        expect(
+          ALL_WORLD_BANK_INDICATORS.some((all) => all.indicatorId === active.indicatorId),
+        ).toBe(true);
+      });
+    });
+  });
+
+  describe('findDeprecatedIndicators', () => {
+    it('should return at least the contract banned-list of WB economic codes', () => {
+      const deprecated = findDeprecatedIndicators();
+      const ids = new Set(deprecated.map((i) => i.indicatorId));
+      // Banned-list per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1
+      const contractBanned = [
+        'NY.GDP.MKTP.KD.ZG',
+        'NY.GDP.MKTP.CD',
+        'NY.GDP.PCAP.CD',
+        'FP.CPI.TOTL.ZG',
+        'SL.UEM.TOTL.ZS',
+        'GC.XPN.TOTL.GD.ZS',
+        'GC.REV.XGRT.GD.ZS',
+        'BN.CAB.XOKA.GD.ZS',
+        'NE.EXP.GNFS.ZS',
+      ];
+      contractBanned.forEach((code) => {
+        expect(ids.has(code)).toBe(true);
+      });
+    });
+
+    it('should ensure every deprecated indicator has an IMF replacement', () => {
+      const deprecated = findDeprecatedIndicators();
+      deprecated.forEach((ind) => {
+        expect(ind.supersededBy).toBeDefined();
+        expect(ind.supersededBy).toMatch(/^imf:[A-Z_]+:[A-Z0-9_]+/);
+        expect(ind.deprecationReason).toBeDefined();
+      });
+    });
+  });
+
+  describe('resolveImfReplacement', () => {
+    it('should resolve banned WB codes to IMF citations', () => {
+      expect(resolveImfReplacement('NY.GDP.MKTP.KD.ZG')).toBe('imf:WEO:NGDP_RPCH');
+      expect(resolveImfReplacement('FP.CPI.TOTL.ZG')).toBe('imf:WEO:PCPIPCH');
+      expect(resolveImfReplacement('SL.UEM.TOTL.ZS')).toBe('imf:WEO:LUR');
+    });
+
+    it('should return undefined for non-deprecated WB residue (governance, environment)', () => {
+      expect(resolveImfReplacement('CC.EST')).toBeUndefined(); // WGI control of corruption
+      expect(resolveImfReplacement('EN.ATM.CO2E.PC')).toBeUndefined(); // CO2 emissions
+    });
+
+    it('should return undefined for unknown indicator IDs', () => {
+      expect(resolveImfReplacement('NOT.A.REAL.CODE')).toBeUndefined();
     });
   });
 
@@ -174,24 +257,26 @@ describe('world-bank-context', () => {
   });
 
   describe('findRelevantIndicators', () => {
-    it('should find GDP for fiscal policy queries', () => {
+    it('should NOT surface deprecated WB GDP for fiscal policy (use IMF)', () => {
       const results = findRelevantIndicators('fiscal policy');
-      expect(results.length).toBeGreaterThan(0);
-      expect(results.some((i) => i.indicatorId === 'NY.GDP.MKTP.KD.ZG')).toBe(true);
+      // The active set must not contain banned WB economic codes — agents must
+      // get IMF citations for fiscal/macro context, not WB.
+      expect(results.some((i) => i.indicatorId === 'NY.GDP.MKTP.KD.ZG')).toBe(false);
     });
 
-    it('should find unemployment for labor market queries', () => {
+    it('should NOT surface deprecated WB unemployment for labor market (use IMF WEO:LUR)', () => {
       const results = findRelevantIndicators('labor market');
-      expect(results.length).toBeGreaterThan(0);
-      expect(results.some((i) => i.indicatorId === 'SL.UEM.TOTL.ZS')).toBe(true);
+      expect(results.some((i) => i.indicatorId === 'SL.UEM.TOTL.ZS')).toBe(false);
     });
 
-    it('should find indicators by committee abbreviation', () => {
+    it('should still find indicators by committee abbreviation (non-economic residue)', () => {
       const fiuResults = findRelevantIndicators('FiU');
-      expect(fiuResults.length).toBeGreaterThan(0);
+      // FiU may return zero WB residue indicators (financial-sector codes are deprecated),
+      // but the lookup must not throw or return undefined.
+      expect(Array.isArray(fiuResults)).toBe(true);
 
       const auResults = findRelevantIndicators('AU');
-      expect(auResults.length).toBeGreaterThan(0);
+      expect(Array.isArray(auResults)).toBe(true);
     });
 
     it('should find defense indicators for NATO queries', () => {
@@ -266,8 +351,14 @@ describe('world-bank-context', () => {
       expect(hasEconomicContext('The economic growth has stalled')).toBe(true);
     });
 
-    it('should detect World Bank data source references', () => {
-      expect(hasEconomicContext('Source: World Bank Open Data')).toBe(true);
+    it('should detect IMF as primary economic data source (v2.1 contract)', () => {
+      expect(hasEconomicContext('Source: IMF World Economic Outlook April 2026')).toBe(true);
+    });
+
+    it('should detect legacy World Bank source references (back-compat)', () => {
+      // World Bank is no longer a primary economic source, but legacy article
+      // back-compat detection must continue to flag any "World Bank" mention.
+      expect(hasEconomicContext('Source: World Bank Open Data (governance residue)')).toBe(true);
     });
 
     it('should detect Swedish economic terms', () => {
@@ -282,7 +373,20 @@ describe('world-bank-context', () => {
       expect(hasEconomicContext('Statsskulden minskade som andel av BNP')).toBe(true);
     });
 
-    it('should detect World Bank indicator IDs', () => {
+    it('should detect IMF citation strings (DATABASE:INDICATOR_ID)', () => {
+      expect(hasEconomicContext('per WEO:NGDP_RPCH the projection rises')).toBe(true);
+      expect(hasEconomicContext('IMF FM:GGXWDG_NGDP shows 32.5% of GDP')).toBe(true);
+      expect(hasEconomicContext('GFS_COFOG:G02 defence spending decomposition')).toBe(true);
+      expect(hasEconomicContext('DOTS:TXG_FOB_USD bilateral trade')).toBe(true);
+      expect(hasEconomicContext('PCPS:POILAPSP commodity overlay')).toBe(true);
+    });
+
+    it('should detect IMF projection vintage tags', () => {
+      expect(hasEconomicContext('forecast (WEO Apr-2026)')).toBe(true);
+      expect(hasEconomicContext('per WEO October-2025 vintage')).toBe(true);
+    });
+
+    it('should detect legacy World Bank indicator IDs (back-compat)', () => {
       expect(hasEconomicContext('Indicator NY.GDP.MKTP.KD.ZG shows positive trend')).toBe(true);
       expect(hasEconomicContext('SL.UEM.TOTL.ZS data for Sweden')).toBe(true);
     });

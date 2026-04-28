@@ -1,7 +1,7 @@
 {
-  "version": "3.0",
-  "description": "Complete inventory of 144 World Bank indicators for Riksdagsmonitor political intelligence. This is the SINGLE SOURCE OF TRUTH — both AI agents (via view tool) and TypeScript modules load from this file.",
-  "lastUpdated": "2026-04-12",
+  "version": "3.1",
+  "description": "Complete inventory of 144 World Bank indicators for Riksdagsmonitor political intelligence. This is the SINGLE SOURCE OF TRUTH \u2014 both AI agents (via view tool) and TypeScript modules load from this file.",
+  "lastUpdated": "2026-04-28",
   "source": "World Bank Open Data API (api.worldbank.org/v2) + worldbank-mcp@1.0.1",
   "targetCountry": "SE (Sweden)",
   "comparisonCountries": [
@@ -31,11 +31,14 @@
           "key": "gdp",
           "name": "GDP (current US$)",
           "unit": "USD",
-          "description": "Total economic output in current US dollars — headline measure for international comparison.",
+          "description": "Total economic output in current US dollars \u2014 headline measure for international comparison.",
           "policyAreas": [
             "fiscal policy",
             "economic growth"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:NGDPD",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NY.GDP.MKTP.KD.ZG",
@@ -44,30 +47,36 @@
           "unit": "% annual",
           "mcpTool": "get-economic-data",
           "mcpParam": "GDP_GROWTH",
-          "description": "Annual GDP growth rate — key measure of economic performance impacting government fiscal capacity.",
+          "description": "Annual GDP growth rate \u2014 key measure of economic performance impacting government fiscal capacity.",
           "policyAreas": [
             "fiscal policy",
             "economic growth",
             "budget"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:NGDP_RPCH",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NY.GDP.MKTP.KN",
           "key": "gdpConstantLcu",
           "name": "GDP (constant LCU)",
           "unit": "SEK (constant)",
-          "description": "GDP in constant local currency — real growth excluding price effects.",
+          "description": "GDP in constant local currency \u2014 real growth excluding price effects.",
           "policyAreas": [
             "fiscal policy",
             "economic growth"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:NGDP_R",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NY.GDP.MKTP.PP.CD",
           "key": "gdpPpp",
           "name": "GDP, PPP",
           "unit": "international $",
-          "description": "GDP adjusted for purchasing power — cross-country economic size comparison.",
+          "description": "GDP adjusted for purchasing power \u2014 cross-country economic size comparison.",
           "policyAreas": [
             "fiscal policy",
             "EU relations"
@@ -75,7 +84,10 @@
           "committees": [
             "FiU",
             "UU"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:PPPGDP",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NY.GDP.PCAP.CD",
@@ -84,7 +96,7 @@
           "unit": "USD",
           "mcpTool": "get-economic-data",
           "mcpParam": "GDP_PER_CAPITA",
-          "description": "GDP per capita in current USD — standard of living measure relevant to welfare debates.",
+          "description": "GDP per capita in current USD \u2014 standard of living measure relevant to welfare debates.",
           "policyAreas": [
             "economic growth",
             "welfare",
@@ -93,47 +105,59 @@
           "committees": [
             "FiU",
             "AU"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:NGDPDPC",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NY.GDP.PCAP.KD.ZG",
           "key": "gdpPerCapitaGrowth",
           "name": "GDP per Capita Growth",
           "unit": "% annual",
-          "description": "Annual GDP per capita growth — tracks individual prosperity trends over time.",
+          "description": "Annual GDP per capita growth \u2014 tracks individual prosperity trends over time.",
           "policyAreas": [
             "economic growth",
             "welfare"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:NGDPRPC",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NY.GDP.PCAP.PP.CD",
           "key": "gdpPerCapitaPpp",
           "name": "GDP per Capita (PPP)",
           "unit": "international $",
-          "description": "GDP per capita adjusted for purchasing power — better cross-country welfare comparison.",
+          "description": "GDP per capita adjusted for purchasing power \u2014 better cross-country welfare comparison.",
           "policyAreas": [
             "economic growth",
             "welfare"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:PPPPC",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NY.GDP.PCAP.PP.KD",
           "key": "gdpPerCapitaPppConst",
           "name": "GDP per Capita (PPP, constant)",
           "unit": "2021 international $",
-          "description": "Real GDP per capita PPP — comparable living standard measure across time and countries.",
+          "description": "Real GDP per capita PPP \u2014 comparable living standard measure across time and countries.",
           "policyAreas": [
             "economic growth",
             "welfare"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:PPPPC",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NE.CON.GOVT.ZS",
           "key": "govConsumption",
           "name": "Government Consumption",
           "unit": "% of GDP",
-          "description": "General government final consumption expenditure as share of GDP — public sector size.",
+          "description": "General government final consumption expenditure as share of GDP \u2014 public sector size.",
           "policyAreas": [
             "public spending",
             "fiscal policy"
@@ -144,7 +168,7 @@
           "key": "householdConsumption",
           "name": "Household Consumption",
           "unit": "% of GDP",
-          "description": "Household final consumption as share of GDP — private spending and demand strength.",
+          "description": "Household final consumption as share of GDP \u2014 private spending and demand strength.",
           "policyAreas": [
             "cost of living",
             "welfare",
@@ -160,7 +184,7 @@
           "key": "grossCapitalFormation",
           "name": "Gross Capital Formation",
           "unit": "% of GDP",
-          "description": "Total investment as share of GDP — measures economic investment and future growth capacity.",
+          "description": "Total investment as share of GDP \u2014 measures economic investment and future growth capacity.",
           "policyAreas": [
             "investment",
             "economic growth"
@@ -175,7 +199,7 @@
           "key": "grossFixedCapital",
           "name": "Gross Fixed Capital Formation",
           "unit": "% of GDP",
-          "description": "Fixed investment (buildings, machinery) as share of GDP — infrastructure and productive capacity.",
+          "description": "Fixed investment (buildings, machinery) as share of GDP \u2014 infrastructure and productive capacity.",
           "policyAreas": [
             "investment",
             "infrastructure"
@@ -190,18 +214,21 @@
           "key": "grossSavings",
           "name": "Gross Savings",
           "unit": "% of GDP",
-          "description": "National savings as share of GDP — fiscal sustainability and future investment capacity.",
+          "description": "National savings as share of GDP \u2014 fiscal sustainability and future investment capacity.",
           "policyAreas": [
             "fiscal policy",
             "pension policy"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:NGSD_NGDP",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NY.ADJ.NNTY.PC.CD",
           "key": "adjNetNationalIncome",
           "name": "Adjusted Net National Income per Capita",
           "unit": "USD",
-          "description": "Net income per person adjusted for depreciation — sustainable welfare measure.",
+          "description": "Net income per person adjusted for depreciation \u2014 sustainable welfare measure.",
           "policyAreas": [
             "economic growth",
             "welfare"
@@ -212,11 +239,14 @@
           "key": "gni",
           "name": "GNI",
           "unit": "USD",
-          "description": "Gross National Income — total economic value generated by residents.",
+          "description": "Gross National Income \u2014 total economic value generated by residents.",
           "policyAreas": [
             "fiscal policy",
             "economic growth"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:NGDPD",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NY.GNP.PCAP.CD",
@@ -225,22 +255,28 @@
           "unit": "USD",
           "mcpTool": "get-economic-data",
           "mcpParam": "GNI_PER_CAPITA",
-          "description": "GNI per capita, Atlas method — income level classification used by World Bank.",
+          "description": "GNI per capita, Atlas method \u2014 income level classification used by World Bank.",
           "policyAreas": [
             "economic growth",
             "welfare"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:NGDPDPC",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NY.GNP.PCAP.PP.CD",
           "key": "gniPerCapitaPpp",
           "name": "GNI per Capita (PPP)",
           "unit": "international $",
-          "description": "GNI per capita adjusted for purchasing power — real income comparison across countries.",
+          "description": "GNI per capita adjusted for purchasing power \u2014 real income comparison across countries.",
           "policyAreas": [
             "economic growth",
             "welfare"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:PPPPC",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         }
       ]
     },
@@ -257,19 +293,22 @@
           "key": "taxRevenue",
           "name": "Tax Revenue",
           "unit": "% of GDP",
-          "description": "Tax revenue as share of GDP — central to taxation policy debates and fiscal capacity.",
+          "description": "Tax revenue as share of GDP \u2014 central to taxation policy debates and fiscal capacity.",
           "policyAreas": [
             "taxation",
             "fiscal policy",
             "public finances"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:GGR_NGDP",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "GC.XPN.TOTL.GD.ZS",
           "key": "govExpenditure",
           "name": "Government Expenditure",
           "unit": "% of GDP",
-          "description": "Government expense as share of GDP — reflects public sector size and spending.",
+          "description": "Government expense as share of GDP \u2014 reflects public sector size and spending.",
           "policyAreas": [
             "public spending",
             "fiscal policy",
@@ -277,14 +316,17 @@
           ],
           "committees": [
             "FiU"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:GGX_NGDP",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "GC.REV.XGRT.GD.ZS",
           "key": "govRevenue",
           "name": "Government Revenue",
           "unit": "% of GDP",
-          "description": "Government revenue excluding grants as share of GDP — fiscal capacity measure.",
+          "description": "Government revenue excluding grants as share of GDP \u2014 fiscal capacity measure.",
           "policyAreas": [
             "fiscal policy",
             "taxation",
@@ -293,14 +335,17 @@
           "committees": [
             "FiU",
             "SkU"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:GGR_NGDP",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "GC.TAX.GSRV.RV.ZS",
           "key": "taxGoodsServices",
           "name": "Taxes on Goods & Services",
           "unit": "% of revenue",
-          "description": "VAT and excise taxes as share of total revenue — consumption tax burden.",
+          "description": "VAT and excise taxes as share of total revenue \u2014 consumption tax burden.",
           "policyAreas": [
             "taxation",
             "consumer policy"
@@ -314,7 +359,7 @@
           "key": "taxIncome",
           "name": "Taxes on Income & Profits",
           "unit": "% of revenue",
-          "description": "Income and corporate taxes as share of revenue — direct tax structure.",
+          "description": "Income and corporate taxes as share of revenue \u2014 direct tax structure.",
           "policyAreas": [
             "taxation",
             "labor market"
@@ -329,7 +374,7 @@
           "key": "taxTrade",
           "name": "Taxes on International Trade",
           "unit": "% of revenue",
-          "description": "Trade taxes as share of revenue — trade policy and EU tariff coordination.",
+          "description": "Trade taxes as share of revenue \u2014 trade policy and EU tariff coordination.",
           "policyAreas": [
             "taxation",
             "trade policy",
@@ -345,7 +390,7 @@
           "key": "netInvestment",
           "name": "Net Public Investment",
           "unit": "% of GDP",
-          "description": "Net investment in nonfinancial assets as share of GDP — public infrastructure spending.",
+          "description": "Net investment in nonfinancial assets as share of GDP \u2014 public infrastructure spending.",
           "policyAreas": [
             "infrastructure",
             "public investment"
@@ -360,28 +405,34 @@
           "key": "cashSurplusDeficit",
           "name": "Cash Surplus/Deficit",
           "unit": "% of GDP",
-          "description": "Government cash surplus or deficit as share of GDP — fiscal balance indicator.",
+          "description": "Government cash surplus or deficit as share of GDP \u2014 fiscal balance indicator.",
           "policyAreas": [
             "fiscal policy",
             "budget"
           ],
           "committees": [
             "FiU"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:GGXCNL_NGDP",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "GC.NLD.TOTL.GD.ZS",
           "key": "netLending",
           "name": "Net Lending/Borrowing",
           "unit": "% of GDP",
-          "description": "Government net lending or borrowing as share of GDP — fiscal position indicator.",
+          "description": "Government net lending or borrowing as share of GDP \u2014 fiscal position indicator.",
           "policyAreas": [
             "fiscal policy",
             "debt management"
           ],
           "committees": [
             "FiU"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:GGXCNL_NGDP",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         }
       ]
     },
@@ -398,7 +449,7 @@
           "key": "tradeGdpPct",
           "name": "Trade Openness",
           "unit": "% of GDP",
-          "description": "Total trade as percentage of GDP — economic integration and trade dependency.",
+          "description": "Total trade as percentage of GDP \u2014 economic integration and trade dependency.",
           "policyAreas": [
             "trade policy",
             "EU relations",
@@ -412,60 +463,72 @@
           "unit": "% of GDP",
           "mcpTool": "get-economic-data",
           "mcpParam": "EXPORTS_GDP",
-          "description": "Exports of goods and services as share of GDP — trade competitiveness.",
+          "description": "Exports of goods and services as share of GDP \u2014 trade competitiveness.",
           "policyAreas": [
             "trade policy",
             "EU relations",
             "competitiveness"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:TX_RPCH",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NE.IMP.GNFS.ZS",
           "key": "importsGdpPct",
           "name": "Imports (% of GDP)",
           "unit": "% of GDP",
-          "description": "Imports of goods and services as share of GDP — domestic demand and trade dependence.",
+          "description": "Imports of goods and services as share of GDP \u2014 domestic demand and trade dependence.",
           "policyAreas": [
             "trade policy",
             "consumer policy"
           ],
           "committees": [
             "NU"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:TM_RPCH",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NE.EXP.GNFS.CD",
           "key": "exportsUsd",
           "name": "Exports (current US$)",
           "unit": "USD",
-          "description": "Total exports in current dollars — absolute trade volume.",
+          "description": "Total exports in current dollars \u2014 absolute trade volume.",
           "policyAreas": [
             "trade policy",
             "competitiveness"
           ],
           "committees": [
             "NU"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:TX_RPCH",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NE.IMP.GNFS.CD",
           "key": "importsUsd",
           "name": "Imports (current US$)",
           "unit": "USD",
-          "description": "Total imports in current dollars — import dependency and demand.",
+          "description": "Total imports in current dollars \u2014 import dependency and demand.",
           "policyAreas": [
             "trade policy"
           ],
           "committees": [
             "NU"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:TM_RPCH",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "BN.CAB.XOKA.GD.ZS",
           "key": "currentAccountBalance",
           "name": "Current Account Balance",
           "unit": "% of GDP",
-          "description": "Current account balance as share of GDP — external economic position.",
+          "description": "Current account balance as share of GDP \u2014 external economic position.",
           "policyAreas": [
             "trade policy",
             "economic stability",
@@ -474,7 +537,10 @@
           "committees": [
             "FiU",
             "NU"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:BCA_NGDPD",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "BN.KLT.DINV.CD",
@@ -483,7 +549,7 @@
           "unit": "USD",
           "mcpTool": "get-economic-data",
           "mcpParam": "FDI_NET",
-          "description": "Foreign direct investment, net inflows — foreign investment attractiveness.",
+          "description": "Foreign direct investment, net inflows \u2014 foreign investment attractiveness.",
           "policyAreas": [
             "trade policy",
             "investment",
@@ -498,7 +564,7 @@
           "key": "fdiNetGdpPct",
           "name": "FDI Net Inflows (% GDP)",
           "unit": "% of GDP",
-          "description": "FDI net inflows as share of GDP — investment openness relative to economy size.",
+          "description": "FDI net inflows as share of GDP \u2014 investment openness relative to economy size.",
           "policyAreas": [
             "trade policy",
             "investment"
@@ -512,7 +578,7 @@
           "key": "fdiOutGdpPct",
           "name": "FDI Net Outflows (% GDP)",
           "unit": "% of GDP",
-          "description": "FDI Net Outflows (% GDP) — Trade & Balance of Payments indicator for Sweden.",
+          "description": "FDI Net Outflows (% GDP) \u2014 Trade & Balance of Payments indicator for Sweden.",
           "policyAreas": [
             "trade & balance of payments"
           ]
@@ -522,7 +588,7 @@
           "key": "highTechExports",
           "name": "High-Technology Exports",
           "unit": "% of manufactured exports",
-          "description": "High-tech exports as share of manufactured exports — innovation competitiveness.",
+          "description": "High-tech exports as share of manufactured exports \u2014 innovation competitiveness.",
           "policyAreas": [
             "trade policy",
             "innovation",
@@ -538,14 +604,17 @@
           "key": "externalBalance",
           "name": "External Balance",
           "unit": "% of GDP",
-          "description": "External balance on goods and services — net trade position.",
+          "description": "External balance on goods and services \u2014 net trade position.",
           "policyAreas": [
             "trade policy",
             "competitiveness"
           ],
           "committees": [
             "NU"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:BCA_NGDPD",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         }
       ]
     },
@@ -563,19 +632,22 @@
           "unit": "% of labor force",
           "mcpTool": "get-economic-data",
           "mcpParam": "UNEMPLOYMENT",
-          "description": "Total unemployment as percentage of labor force — central to labor market policy.",
+          "description": "Total unemployment as percentage of labor force \u2014 central to labor market policy.",
           "policyAreas": [
             "labor market",
             "welfare",
             "employment policy"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:LUR",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "SL.UEM.TOTL.FE.ZS",
           "key": "unemploymentFemale",
           "name": "Unemployment, Female",
           "unit": "% of female labor force",
-          "description": "Female unemployment rate — gender equality in labor market.",
+          "description": "Female unemployment rate \u2014 gender equality in labor market.",
           "policyAreas": [
             "labor market",
             "gender equality"
@@ -586,7 +658,7 @@
           "key": "unemploymentMale",
           "name": "Unemployment, Male",
           "unit": "% of male labor force",
-          "description": "Male unemployment rate — gender comparison in labor market.",
+          "description": "Male unemployment rate \u2014 gender comparison in labor market.",
           "policyAreas": [
             "labor market"
           ]
@@ -596,7 +668,7 @@
           "key": "youthUnemployment",
           "name": "Youth Unemployment (15-24)",
           "unit": "% ages 15-24",
-          "description": "Youth unemployment rate — education-to-work transition effectiveness.",
+          "description": "Youth unemployment rate \u2014 education-to-work transition effectiveness.",
           "policyAreas": [
             "labor market",
             "youth policy",
@@ -612,7 +684,7 @@
           "key": "youthUnemploymentFemale",
           "name": "Youth Unemployment, Female",
           "unit": "% ages 15-24",
-          "description": "Female youth unemployment — gender gap in early career.",
+          "description": "Female youth unemployment \u2014 gender gap in early career.",
           "policyAreas": [
             "labor market",
             "gender equality",
@@ -624,7 +696,7 @@
           "key": "youthUnemploymentMale",
           "name": "Youth Unemployment, Male",
           "unit": "% ages 15-24",
-          "description": "Male youth unemployment — gender comparison for young workers.",
+          "description": "Male youth unemployment \u2014 gender comparison for young workers.",
           "policyAreas": [
             "labor market",
             "youth policy"
@@ -635,7 +707,7 @@
           "key": "longTermUnemployment",
           "name": "Long-term Unemployment",
           "unit": "% of total unemployment",
-          "description": "Long-term unemployment share — structural labor market challenges.",
+          "description": "Long-term unemployment share \u2014 structural labor market challenges.",
           "policyAreas": [
             "labor market",
             "welfare",
@@ -651,7 +723,7 @@
           "key": "longTermUnemploymentFemale",
           "name": "Long-term Unemployment, Female",
           "unit": "% of female unemployment",
-          "description": "Female long-term unemployment — gender dimension of structural unemployment.",
+          "description": "Female long-term unemployment \u2014 gender dimension of structural unemployment.",
           "policyAreas": [
             "labor market",
             "gender equality"
@@ -662,7 +734,7 @@
           "key": "longTermUnemploymentMale",
           "name": "Long-term Unemployment, Male",
           "unit": "% of male unemployment",
-          "description": "Male long-term unemployment — structural unemployment by gender.",
+          "description": "Male long-term unemployment \u2014 structural unemployment by gender.",
           "policyAreas": [
             "labor market"
           ]
@@ -672,7 +744,7 @@
           "key": "laborForceParticipation",
           "name": "Labor Force Participation",
           "unit": "% ages 15+",
-          "description": "Labor force participation rate — active workforce share.",
+          "description": "Labor force participation rate \u2014 active workforce share.",
           "policyAreas": [
             "labor market",
             "employment policy"
@@ -683,7 +755,7 @@
           "key": "laborForceParticipationFemale",
           "name": "Labor Force Participation, Female",
           "unit": "% ages 15+",
-          "description": "Female labor participation — gender equality benchmark.",
+          "description": "Female labor participation \u2014 gender equality benchmark.",
           "policyAreas": [
             "labor market",
             "gender equality"
@@ -694,7 +766,7 @@
           "key": "laborForceParticipationMale",
           "name": "Labor Force Participation, Male",
           "unit": "% ages 15+",
-          "description": "Male labor participation — baseline for gender gap analysis.",
+          "description": "Male labor participation \u2014 baseline for gender gap analysis.",
           "policyAreas": [
             "labor market"
           ]
@@ -704,7 +776,7 @@
           "key": "laborForceTotal",
           "name": "Labor Force Total",
           "unit": "persons",
-          "description": "Total labor force — absolute workforce size for policy planning.",
+          "description": "Total labor force \u2014 absolute workforce size for policy planning.",
           "policyAreas": [
             "labor market",
             "demographics"
@@ -715,7 +787,7 @@
           "key": "employmentRatio",
           "name": "Employment-to-Population Ratio",
           "unit": "% ages 15+",
-          "description": "Employment rate — share of working-age population actually employed.",
+          "description": "Employment rate \u2014 share of working-age population actually employed.",
           "policyAreas": [
             "labor market",
             "employment policy"
@@ -726,7 +798,7 @@
           "key": "employmentRatioFemale",
           "name": "Employment Ratio, Female",
           "unit": "% ages 15+",
-          "description": "Female employment rate — gender equality in actual employment.",
+          "description": "Female employment rate \u2014 gender equality in actual employment.",
           "policyAreas": [
             "labor market",
             "gender equality"
@@ -737,7 +809,7 @@
           "key": "employmentRatioMale",
           "name": "Employment Ratio, Male",
           "unit": "% ages 15+",
-          "description": "Male employment rate — gender comparison baseline.",
+          "description": "Male employment rate \u2014 gender comparison baseline.",
           "policyAreas": [
             "labor market"
           ]
@@ -747,7 +819,7 @@
           "key": "vulnerableEmployment",
           "name": "Vulnerable Employment",
           "unit": "% of total employment",
-          "description": "Vulnerable employment share — precarious work conditions indicator.",
+          "description": "Vulnerable employment share \u2014 precarious work conditions indicator.",
           "policyAreas": [
             "labor market",
             "social protection",
@@ -763,7 +835,7 @@
           "key": "selfEmployed",
           "name": "Self-Employment",
           "unit": "% of total employment",
-          "description": "Self-employed share — entrepreneurship and gig economy measure.",
+          "description": "Self-employed share \u2014 entrepreneurship and gig economy measure.",
           "policyAreas": [
             "labor market",
             "enterprise policy"
@@ -778,7 +850,7 @@
           "key": "wageSalariedWorkers",
           "name": "Wage & Salaried Workers",
           "unit": "% of total employment",
-          "description": "Wage workers share — formal employment structure.",
+          "description": "Wage workers share \u2014 formal employment structure.",
           "policyAreas": [
             "labor market",
             "employment policy"
@@ -789,7 +861,7 @@
           "key": "laborProductivity",
           "name": "Labor Productivity",
           "unit": "constant 2021 PPP $",
-          "description": "GDP per person employed — productivity and competitiveness measure.",
+          "description": "GDP per person employed \u2014 productivity and competitiveness measure.",
           "policyAreas": [
             "economic growth",
             "competitiveness",
@@ -816,34 +888,43 @@
           "unit": "% annual",
           "mcpTool": "get-economic-data",
           "mcpParam": "INFLATION",
-          "description": "Annual change in consumer prices — affects household purchasing power.",
+          "description": "Annual change in consumer prices \u2014 affects household purchasing power.",
           "policyAreas": [
             "monetary policy",
             "cost of living",
             "economic stability"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:PCPIPCH",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "NY.GDP.DEFL.KD.ZG",
           "key": "inflationGdpDeflator",
           "name": "GDP Deflator Inflation",
           "unit": "% annual",
-          "description": "GDP deflator annual change — broad price pressure measure.",
+          "description": "GDP deflator annual change \u2014 broad price pressure measure.",
           "policyAreas": [
             "monetary policy",
             "economic stability"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:WEO:NGDP_D",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "FP.CPI.TOTL",
           "key": "consumerPriceIndex",
           "name": "Consumer Price Index",
           "unit": "index (2010=100)",
-          "description": "CPI level (2010=100) — price level tracking for purchasing power analysis.",
+          "description": "CPI level (2010=100) \u2014 price level tracking for purchasing power analysis.",
           "policyAreas": [
             "cost of living",
             "monetary policy"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:IFS:PCPI_IX",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         }
       ]
     },
@@ -859,7 +940,7 @@
           "key": "domesticCreditBanks",
           "name": "Domestic Credit by Banks",
           "unit": "% of GDP",
-          "description": "Bank credit to private sector — financial sector depth and credit availability.",
+          "description": "Bank credit to private sector \u2014 financial sector depth and credit availability.",
           "policyAreas": [
             "financial regulation",
             "monetary policy"
@@ -870,33 +951,42 @@
           "key": "realInterestRate",
           "name": "Real Interest Rate",
           "unit": "%",
-          "description": "Real interest rate — monetary conditions affecting investment and savings.",
+          "description": "Real interest rate \u2014 monetary conditions affecting investment and savings.",
           "policyAreas": [
             "monetary policy",
             "economic stability"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:IFS:FIDR",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "FR.INR.LEND",
           "key": "lendingRate",
           "name": "Lending Interest Rate",
           "unit": "%",
-          "description": "Bank lending rate — credit cost for businesses and households.",
+          "description": "Bank lending rate \u2014 credit cost for businesses and households.",
           "policyAreas": [
             "monetary policy",
             "consumer policy"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:IFS:FILR",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         },
         {
           "id": "FR.INR.DPST",
           "key": "depositRate",
           "name": "Deposit Interest Rate",
           "unit": "%",
-          "description": "Bank deposit rate — savings return for households.",
+          "description": "Bank deposit rate \u2014 savings return for households.",
           "policyAreas": [
             "monetary policy",
             "consumer policy"
-          ]
+          ],
+          "deprecated": true,
+          "supersededBy": "imf:IFS:FIDR",
+          "deprecationReason": "WB economic series lag 12-24 months and publish no projections; IMF WEO/FM/IFS publish April/October cadence with T+5 projections. Banned for primary citation per .github/aw/ECONOMIC_DATA_CONTRACT.md v2.1."
         }
       ]
     },
@@ -914,7 +1004,7 @@
           "unit": "persons",
           "mcpTool": "get-social-data",
           "mcpParam": "POPULATION",
-          "description": "Total population — fundamental demographic context for all policy areas.",
+          "description": "Total population \u2014 fundamental demographic context for all policy areas.",
           "policyAreas": [
             "demographics",
             "welfare planning"
@@ -925,7 +1015,7 @@
           "key": "populationGrowth",
           "name": "Population Growth",
           "unit": "% annual",
-          "description": "Annual population growth rate — demographic trend affecting all policy planning.",
+          "description": "Annual population growth rate \u2014 demographic trend affecting all policy planning.",
           "policyAreas": [
             "demographics",
             "migration",
@@ -937,7 +1027,7 @@
           "key": "population65Plus",
           "name": "Population 65+",
           "unit": "% of total",
-          "description": "Share of population aged 65+ — aging society pressure on pensions and healthcare.",
+          "description": "Share of population aged 65+ \u2014 aging society pressure on pensions and healthcare.",
           "policyAreas": [
             "demographics",
             "pension policy",
@@ -949,7 +1039,7 @@
           "key": "populationChildren",
           "name": "Population 0-14",
           "unit": "% of total",
-          "description": "Share of population aged 0-14 — child welfare and education demand.",
+          "description": "Share of population aged 0-14 \u2014 child welfare and education demand.",
           "policyAreas": [
             "demographics",
             "family policy",
@@ -965,7 +1055,7 @@
           "key": "populationWorkingAge",
           "name": "Working-Age Population",
           "unit": "% of total",
-          "description": "Share of population aged 15-64 — labor supply and tax base.",
+          "description": "Share of population aged 15-64 \u2014 labor supply and tax base.",
           "policyAreas": [
             "demographics",
             "labor market",
@@ -982,7 +1072,7 @@
           "key": "urbanPopulation",
           "name": "Urban Population",
           "unit": "% of total",
-          "description": "Urban population share — urbanization trend affecting housing and infrastructure.",
+          "description": "Urban population share \u2014 urbanization trend affecting housing and infrastructure.",
           "policyAreas": [
             "housing policy",
             "infrastructure",
@@ -998,7 +1088,7 @@
           "key": "ruralPopulation",
           "name": "Rural Population",
           "unit": "% of total",
-          "description": "Rural population share — rural development and regional equity.",
+          "description": "Rural population share \u2014 rural development and regional equity.",
           "policyAreas": [
             "regional policy",
             "agriculture"
@@ -1013,7 +1103,7 @@
           "key": "ageDependencyRatio",
           "name": "Age Dependency Ratio",
           "unit": "% of working-age",
-          "description": "Dependents per 100 working-age persons — welfare system pressure.",
+          "description": "Dependents per 100 working-age persons \u2014 welfare system pressure.",
           "policyAreas": [
             "demographics",
             "welfare",
@@ -1025,7 +1115,7 @@
           "key": "ageDependencyOld",
           "name": "Old-Age Dependency Ratio",
           "unit": "% of working-age",
-          "description": "Elderly per 100 working-age — pension and healthcare sustainability.",
+          "description": "Elderly per 100 working-age \u2014 pension and healthcare sustainability.",
           "policyAreas": [
             "pension policy",
             "health policy",
@@ -1037,7 +1127,7 @@
           "key": "ageDependencyYoung",
           "name": "Young Dependency Ratio",
           "unit": "% of working-age",
-          "description": "Children per 100 working-age — education and family policy demand.",
+          "description": "Children per 100 working-age \u2014 education and family policy demand.",
           "policyAreas": [
             "family policy",
             "education",
@@ -1053,7 +1143,7 @@
           "key": "netMigration",
           "name": "Net Migration",
           "unit": "persons",
-          "description": "Net migration — immigration policy impact and demographic change driver.",
+          "description": "Net migration \u2014 immigration policy impact and demographic change driver.",
           "policyAreas": [
             "migration policy",
             "demographics",
@@ -1069,7 +1159,7 @@
           "key": "refugeePopulation",
           "name": "Refugee Population",
           "unit": "persons",
-          "description": "Refugees by country of asylum — refugee policy context and integration needs.",
+          "description": "Refugees by country of asylum \u2014 refugee policy context and integration needs.",
           "policyAreas": [
             "migration policy",
             "integration",
@@ -1083,7 +1173,7 @@
           "unit": "years",
           "mcpTool": "get-social-data",
           "mcpParam": "LIFE_EXPECTANCY",
-          "description": "Life expectancy at birth — health system performance and quality of life.",
+          "description": "Life expectancy at birth \u2014 health system performance and quality of life.",
           "policyAreas": [
             "health policy",
             "welfare",
@@ -1095,7 +1185,7 @@
           "key": "lifeExpectancyFemale",
           "name": "Life Expectancy, Female",
           "unit": "years",
-          "description": "Female life expectancy — gender health equity measure.",
+          "description": "Female life expectancy \u2014 gender health equity measure.",
           "policyAreas": [
             "health policy",
             "gender equality"
@@ -1106,7 +1196,7 @@
           "key": "lifeExpectancyMale",
           "name": "Life Expectancy, Male",
           "unit": "years",
-          "description": "Male life expectancy — gender health gap indicator.",
+          "description": "Male life expectancy \u2014 gender health gap indicator.",
           "policyAreas": [
             "health policy"
           ]
@@ -1118,7 +1208,7 @@
           "unit": "per 1,000 people",
           "mcpTool": "get-social-data",
           "mcpParam": "BIRTH_RATE",
-          "description": "Crude birth rate — demographic trend affecting welfare planning and family policy.",
+          "description": "Crude birth rate \u2014 demographic trend affecting welfare planning and family policy.",
           "policyAreas": [
             "demographics",
             "family policy",
@@ -1132,7 +1222,7 @@
           "unit": "per 1,000 people",
           "mcpTool": "get-social-data",
           "mcpParam": "DEATH_RATE",
-          "description": "Crude death rate — demographic and health system outcome indicator.",
+          "description": "Crude death rate \u2014 demographic and health system outcome indicator.",
           "policyAreas": [
             "demographics",
             "health policy"
@@ -1143,7 +1233,7 @@
           "key": "fertilityRate",
           "name": "Fertility Rate",
           "unit": "births per woman",
-          "description": "Total fertility rate — family policy effectiveness and demographic sustainability.",
+          "description": "Total fertility rate \u2014 family policy effectiveness and demographic sustainability.",
           "policyAreas": [
             "demographics",
             "family policy"
@@ -1154,7 +1244,7 @@
           "key": "adolescentFertility",
           "name": "Adolescent Fertility Rate",
           "unit": "per 1,000 women ages 15-19",
-          "description": "Teen birth rate — reproductive health and youth welfare indicator.",
+          "description": "Teen birth rate \u2014 reproductive health and youth welfare indicator.",
           "policyAreas": [
             "youth policy",
             "health policy",
@@ -1166,7 +1256,7 @@
           "key": "infantMortality",
           "name": "Infant Mortality Rate",
           "unit": "per 1,000 live births",
-          "description": "Infant deaths per 1,000 live births — healthcare quality for newborns.",
+          "description": "Infant deaths per 1,000 live births \u2014 healthcare quality for newborns.",
           "policyAreas": [
             "health policy",
             "child welfare"
@@ -1177,7 +1267,7 @@
           "key": "under5Mortality",
           "name": "Under-5 Mortality Rate",
           "unit": "per 1,000 live births",
-          "description": "Child deaths under age 5 — pediatric healthcare and child welfare.",
+          "description": "Child deaths under age 5 \u2014 pediatric healthcare and child welfare.",
           "policyAreas": [
             "health policy",
             "child welfare"
@@ -1190,7 +1280,7 @@
           "unit": "% of population",
           "mcpTool": "get-social-data",
           "mcpParam": "INTERNET_USERS",
-          "description": "Internet users as share of population — digital infrastructure and e-government readiness.",
+          "description": "Internet users as share of population \u2014 digital infrastructure and e-government readiness.",
           "policyAreas": [
             "digital policy",
             "e-government",
@@ -1216,7 +1306,7 @@
           "unit": "% of GDP",
           "mcpTool": "get-health-data",
           "mcpParam": "HEALTH_EXPENDITURE",
-          "description": "Current health expenditure as share of GDP — healthcare investment level.",
+          "description": "Current health expenditure as share of GDP \u2014 healthcare investment level.",
           "policyAreas": [
             "health policy",
             "public spending",
@@ -1228,7 +1318,7 @@
           "key": "healthExpenditurePerCapita",
           "name": "Health Expenditure per Capita",
           "unit": "USD",
-          "description": "Health spending per person — healthcare investment in absolute terms.",
+          "description": "Health spending per person \u2014 healthcare investment in absolute terms.",
           "policyAreas": [
             "health policy",
             "public spending"
@@ -1239,7 +1329,7 @@
           "key": "govHealthExpenditure",
           "name": "Government Health Expenditure",
           "unit": "% of GDP",
-          "description": "Domestic government health spending as share of GDP — public healthcare commitment.",
+          "description": "Domestic government health spending as share of GDP \u2014 public healthcare commitment.",
           "policyAreas": [
             "health policy",
             "public spending"
@@ -1250,7 +1340,7 @@
           "key": "govHealthShare",
           "name": "Government Health Share",
           "unit": "% of health expenditure",
-          "description": "Government share of total health expenditure — public vs. private healthcare balance.",
+          "description": "Government share of total health expenditure \u2014 public vs. private healthcare balance.",
           "policyAreas": [
             "health policy",
             "welfare"
@@ -1261,7 +1351,7 @@
           "key": "privateHealthShare",
           "name": "Private Health Expenditure Share",
           "unit": "% of health expenditure",
-          "description": "Private health spending share — out-of-pocket burden and private insurance role.",
+          "description": "Private health spending share \u2014 out-of-pocket burden and private insurance role.",
           "policyAreas": [
             "health policy",
             "consumer policy"
@@ -1272,7 +1362,7 @@
           "key": "outOfPocketHealth",
           "name": "Out-of-Pocket Health Expenditure",
           "unit": "% of health expenditure",
-          "description": "Out-of-pocket health costs — financial burden on patients.",
+          "description": "Out-of-pocket health costs \u2014 financial burden on patients.",
           "policyAreas": [
             "health policy",
             "welfare",
@@ -1286,7 +1376,7 @@
           "unit": "per 1,000 people",
           "mcpTool": "get-health-data",
           "mcpParam": "PHYSICIANS",
-          "description": "Physicians per 1,000 people — healthcare staffing capacity.",
+          "description": "Physicians per 1,000 people \u2014 healthcare staffing capacity.",
           "policyAreas": [
             "health policy",
             "healthcare staffing"
@@ -1299,7 +1389,7 @@
           "unit": "per 1,000 people",
           "mcpTool": "get-health-data",
           "mcpParam": "HOSPITAL_BEDS",
-          "description": "Hospital beds per 1,000 people — healthcare infrastructure capacity.",
+          "description": "Hospital beds per 1,000 people \u2014 healthcare infrastructure capacity.",
           "policyAreas": [
             "health policy",
             "healthcare infrastructure"
@@ -1310,7 +1400,7 @@
           "key": "nursesAndMidwives",
           "name": "Nurses & Midwives per 1,000",
           "unit": "per 1,000 people",
-          "description": "Nursing workforce per 1,000 — primary care capacity indicator.",
+          "description": "Nursing workforce per 1,000 \u2014 primary care capacity indicator.",
           "policyAreas": [
             "health policy",
             "healthcare staffing"
@@ -1321,7 +1411,7 @@
           "key": "suicideMortality",
           "name": "Suicide Mortality Rate",
           "unit": "per 100,000",
-          "description": "Suicides per 100,000 population — mental health system effectiveness.",
+          "description": "Suicides per 100,000 population \u2014 mental health system effectiveness.",
           "policyAreas": [
             "mental health policy",
             "health policy",
@@ -1333,7 +1423,7 @@
           "key": "tobaccoUse",
           "name": "Tobacco Use Prevalence",
           "unit": "% of adults",
-          "description": "Current tobacco use among adults — public health policy target.",
+          "description": "Current tobacco use among adults \u2014 public health policy target.",
           "policyAreas": [
             "public health",
             "health policy"
@@ -1344,7 +1434,7 @@
           "key": "alcoholConsumption",
           "name": "Alcohol Consumption",
           "unit": "liters pure alcohol",
-          "description": "Alcohol consumption per capita — public health and substance abuse policy.",
+          "description": "Alcohol consumption per capita \u2014 public health and substance abuse policy.",
           "policyAreas": [
             "public health",
             "substance abuse policy"
@@ -1357,7 +1447,7 @@
           "unit": "% of children 12-23 months",
           "mcpTool": "get-health-data",
           "mcpParam": "IMMUNIZATION",
-          "description": "Measles vaccination coverage — childhood immunization program effectiveness.",
+          "description": "Measles vaccination coverage \u2014 childhood immunization program effectiveness.",
           "policyAreas": [
             "public health",
             "child health"
@@ -1368,7 +1458,7 @@
           "key": "dptImmunization",
           "name": "DPT Immunization",
           "unit": "% of children 12-23 months",
-          "description": "DPT vaccination coverage — childhood immunization program breadth.",
+          "description": "DPT vaccination coverage \u2014 childhood immunization program breadth.",
           "policyAreas": [
             "public health",
             "child health"
@@ -1390,7 +1480,7 @@
           "unit": "% of GDP",
           "mcpTool": "get-education-data",
           "mcpParam": "EDUCATION_EXPENDITURE",
-          "description": "Government education spending as share of GDP — investment level comparison.",
+          "description": "Government education spending as share of GDP \u2014 investment level comparison.",
           "policyAreas": [
             "education",
             "public spending",
@@ -1402,7 +1492,7 @@
           "key": "educationGovShare",
           "name": "Education (% Govt Expenditure)",
           "unit": "% of govt expenditure",
-          "description": "Education as share of government budget — policy priority indicator.",
+          "description": "Education as share of government budget \u2014 policy priority indicator.",
           "policyAreas": [
             "education",
             "budget"
@@ -1419,7 +1509,7 @@
           "unit": "% gross",
           "mcpTool": "get-education-data",
           "mcpParam": "SCHOOL_ENROLLMENT",
-          "description": "Gross primary enrollment ratio — education access.",
+          "description": "Gross primary enrollment ratio \u2014 education access.",
           "policyAreas": [
             "education",
             "child welfare"
@@ -1430,7 +1520,7 @@
           "key": "secondaryEnrollment",
           "name": "School Enrollment (Secondary)",
           "unit": "% gross",
-          "description": "Gross secondary enrollment — education progression.",
+          "description": "Gross secondary enrollment \u2014 education progression.",
           "policyAreas": [
             "education",
             "youth policy"
@@ -1441,7 +1531,7 @@
           "key": "tertiaryEnrollment",
           "name": "School Enrollment (Tertiary)",
           "unit": "% gross",
-          "description": "Gross tertiary enrollment — higher education access and knowledge economy.",
+          "description": "Gross tertiary enrollment \u2014 higher education access and knowledge economy.",
           "policyAreas": [
             "education",
             "research policy",
@@ -1453,7 +1543,7 @@
           "key": "primaryCompletion",
           "name": "Primary Completion Rate",
           "unit": "% of relevant age group",
-          "description": "Primary completion rate — basic education system effectiveness.",
+          "description": "Primary completion rate \u2014 basic education system effectiveness.",
           "policyAreas": [
             "education",
             "child welfare"
@@ -1471,9 +1561,9 @@
         {
           "id": "EN.ATM.CO2E.PC",
           "key": "co2Emissions",
-          "name": "CO₂ Emissions per Capita",
+          "name": "CO\u2082 Emissions per Capita",
           "unit": "metric tons per capita",
-          "description": "Carbon dioxide per person — climate policy and environmental legislation.",
+          "description": "Carbon dioxide per person \u2014 climate policy and environmental legislation.",
           "policyAreas": [
             "climate policy",
             "environmental regulation",
@@ -1483,9 +1573,9 @@
         {
           "id": "EN.ATM.CO2E.KT",
           "key": "co2EmissionsTotal",
-          "name": "CO₂ Emissions Total (kt)",
+          "name": "CO\u2082 Emissions Total (kt)",
           "unit": "kilotons",
-          "description": "Total CO₂ emissions — national carbon footprint.",
+          "description": "Total CO\u2082 emissions \u2014 national carbon footprint.",
           "policyAreas": [
             "climate policy",
             "environmental regulation"
@@ -1496,7 +1586,7 @@
           "key": "energyUse",
           "name": "Energy Use per Capita",
           "unit": "kg oil equivalent",
-          "description": "Energy consumption per person — energy efficiency and transition progress.",
+          "description": "Energy consumption per person \u2014 energy efficiency and transition progress.",
           "policyAreas": [
             "energy policy",
             "climate policy"
@@ -1511,7 +1601,7 @@
           "key": "renewableEnergy",
           "name": "Renewable Energy (%)",
           "unit": "% of total energy",
-          "description": "Renewable energy share of total consumption — green transition progress.",
+          "description": "Renewable energy share of total consumption \u2014 green transition progress.",
           "policyAreas": [
             "energy policy",
             "climate policy",
@@ -1527,7 +1617,7 @@
           "key": "renewableElectricity",
           "name": "Renewable Electricity (%)",
           "unit": "% of total electricity",
-          "description": "Renewable electricity output share — power sector decarbonization.",
+          "description": "Renewable electricity output share \u2014 power sector decarbonization.",
           "policyAreas": [
             "energy policy",
             "climate policy"
@@ -1542,7 +1632,7 @@
           "key": "forestArea",
           "name": "Forest Area (%)",
           "unit": "% of land area",
-          "description": "Forest cover as share of land area — natural resource management.",
+          "description": "Forest cover as share of land area \u2014 natural resource management.",
           "policyAreas": [
             "environmental regulation",
             "forestry",
@@ -1553,8 +1643,8 @@
           "id": "EN.ATM.PM25.MC.M3",
           "key": "airPollution",
           "name": "Air Pollution (PM2.5)",
-          "unit": "µg/m³",
-          "description": "PM2.5 air pollution level — environmental health risk indicator.",
+          "unit": "\u00b5g/m\u00b3",
+          "description": "PM2.5 air pollution level \u2014 environmental health risk indicator.",
           "policyAreas": [
             "environmental regulation",
             "public health"
@@ -1569,7 +1659,7 @@
           "key": "nuclearElectricity",
           "name": "Nuclear Electricity (%)",
           "unit": "% of total electricity",
-          "description": "Nuclear power share — energy mix and nuclear policy debates.",
+          "description": "Nuclear power share \u2014 energy mix and nuclear policy debates.",
           "policyAreas": [
             "energy policy",
             "nuclear policy"
@@ -1584,7 +1674,7 @@
           "key": "hydroElectricity",
           "name": "Hydroelectric Power (%)",
           "unit": "% of total electricity",
-          "description": "Hydroelectric share — renewable energy baseload capacity.",
+          "description": "Hydroelectric share \u2014 renewable energy baseload capacity.",
           "policyAreas": [
             "energy policy"
           ],
@@ -1598,7 +1688,7 @@
           "key": "renewableElecExHydro",
           "name": "Renewable Excl. Hydro (%)",
           "unit": "% of total electricity",
-          "description": "Wind, solar, and other renewables — new renewable energy growth.",
+          "description": "Wind, solar, and other renewables \u2014 new renewable energy growth.",
           "policyAreas": [
             "energy policy",
             "climate policy",
@@ -1623,7 +1713,7 @@
           "key": "broadbandSubscriptions",
           "name": "Broadband Subscriptions",
           "unit": "per 100 people",
-          "description": "Fixed broadband per 100 people — digital infrastructure quality.",
+          "description": "Fixed broadband per 100 people \u2014 digital infrastructure quality.",
           "policyAreas": [
             "digital policy",
             "telecommunications",
@@ -1635,7 +1725,7 @@
           "key": "mobileSubscriptions",
           "name": "Mobile Subscriptions",
           "unit": "per 100 people",
-          "description": "Mobile cellular per 100 people — telecom market maturity.",
+          "description": "Mobile cellular per 100 people \u2014 telecom market maturity.",
           "policyAreas": [
             "telecommunications",
             "digital policy"
@@ -1646,14 +1736,14 @@
           "key": "secureServers",
           "name": "Secure Internet Servers",
           "unit": "per million people",
-          "description": "Secure servers per million people — digital economy infrastructure and cybersecurity.",
+          "description": "Secure servers per million people \u2014 digital economy infrastructure and cybersecurity.",
           "policyAreas": [
             "cybersecurity",
             "digital policy"
           ],
           "committees": [
             "TU",
-            "FöU"
+            "F\u00f6U"
           ]
         },
         {
@@ -1661,7 +1751,7 @@
           "key": "airPassengers",
           "name": "Air Transport Passengers",
           "unit": "persons",
-          "description": "Air passengers carried — transport infrastructure usage and mobility.",
+          "description": "Air passengers carried \u2014 transport infrastructure usage and mobility.",
           "policyAreas": [
             "transport policy",
             "infrastructure"
@@ -1672,7 +1762,7 @@
           "key": "patentsResident",
           "name": "Patent Applications (Resident)",
           "unit": "applications",
-          "description": "Domestic patent filings — innovation output indicator.",
+          "description": "Domestic patent filings \u2014 innovation output indicator.",
           "policyAreas": [
             "innovation",
             "research policy"
@@ -1687,7 +1777,7 @@
           "key": "patentsNonresident",
           "name": "Patent Applications (Non-resident)",
           "unit": "applications",
-          "description": "Foreign patent filings — attractiveness for innovation.",
+          "description": "Foreign patent filings \u2014 attractiveness for innovation.",
           "policyAreas": [
             "innovation",
             "trade policy"
@@ -1710,7 +1800,7 @@
           "key": "rdExpenditure",
           "name": "R&D Expenditure",
           "unit": "% of GDP",
-          "description": "Research & development spending as share of GDP — innovation capacity.",
+          "description": "Research & development spending as share of GDP \u2014 innovation capacity.",
           "policyAreas": [
             "research policy",
             "innovation",
@@ -1722,7 +1812,7 @@
           "key": "researchersPerMillion",
           "name": "Researchers per Million",
           "unit": "per million people",
-          "description": "R&D researchers per million people — knowledge economy human capital.",
+          "description": "R&D researchers per million people \u2014 knowledge economy human capital.",
           "policyAreas": [
             "research policy",
             "education",
@@ -1734,7 +1824,7 @@
           "key": "scientificArticles",
           "name": "Scientific Journal Articles",
           "unit": "articles",
-          "description": "Scientific publications — research output and academic excellence.",
+          "description": "Scientific publications \u2014 research output and academic excellence.",
           "policyAreas": [
             "research policy",
             "education"
@@ -1745,7 +1835,7 @@
           "key": "ictServiceExports",
           "name": "ICT Service Exports",
           "unit": "% of service exports",
-          "description": "ICT service exports as share of total service exports — digital economy strength.",
+          "description": "ICT service exports as share of total service exports \u2014 digital economy strength.",
           "policyAreas": [
             "digital policy",
             "trade policy",
@@ -1761,7 +1851,7 @@
     "military": {
       "label": "Military & Security",
       "committees": [
-        "FöU"
+        "F\u00f6U"
       ],
       "indicatorCount": 5,
       "indicators": [
@@ -1770,7 +1860,7 @@
           "key": "militaryExpenditure",
           "name": "Military Expenditure (% GDP)",
           "unit": "% of GDP",
-          "description": "Defense spending as share of GDP — NATO 2% target context and security policy.",
+          "description": "Defense spending as share of GDP \u2014 NATO 2% target context and security policy.",
           "policyAreas": [
             "defense",
             "security policy",
@@ -1782,7 +1872,7 @@
           "key": "militaryExpenditureUsd",
           "name": "Military Expenditure (USD)",
           "unit": "USD",
-          "description": "Defense spending in absolute terms — military capability measure.",
+          "description": "Defense spending in absolute terms \u2014 military capability measure.",
           "policyAreas": [
             "defense",
             "security policy"
@@ -1793,14 +1883,14 @@
           "key": "militaryGovShare",
           "name": "Military (% Govt Expenditure)",
           "unit": "% of govt expenditure",
-          "description": "Defense as share of government budget — security policy priority.",
+          "description": "Defense as share of government budget \u2014 security policy priority.",
           "policyAreas": [
             "defense",
             "budget",
             "security policy"
           ],
           "committees": [
-            "FöU",
+            "F\u00f6U",
             "FiU"
           ]
         },
@@ -1809,7 +1899,7 @@
           "key": "armedForcesTotal",
           "name": "Armed Forces Personnel",
           "unit": "persons",
-          "description": "Total military personnel — defense capability measure.",
+          "description": "Total military personnel \u2014 defense capability measure.",
           "policyAreas": [
             "defense",
             "security policy"
@@ -1820,7 +1910,7 @@
           "key": "armedForcesLaborShare",
           "name": "Armed Forces (% Labor Force)",
           "unit": "% of labor force",
-          "description": "Military personnel as share of labor force — societal defense commitment.",
+          "description": "Military personnel as share of labor force \u2014 societal defense commitment.",
           "policyAreas": [
             "defense",
             "labor market"
@@ -1843,7 +1933,7 @@
           "name": "Rule of Law",
           "unit": "index (-2.5 to 2.5)",
           "source": 75,
-          "description": "WGI rule of law estimate — judicial independence, property rights, constitutional order.",
+          "description": "WGI rule of law estimate \u2014 judicial independence, property rights, constitutional order.",
           "policyAreas": [
             "rule of law",
             "constitutional affairs",
@@ -1856,7 +1946,7 @@
           "name": "Voice and Accountability",
           "unit": "index (-2.5 to 2.5)",
           "source": 75,
-          "description": "WGI voice and accountability — citizen participation and press freedom.",
+          "description": "WGI voice and accountability \u2014 citizen participation and press freedom.",
           "policyAreas": [
             "democracy",
             "press freedom",
@@ -1872,7 +1962,7 @@
           "name": "Government Effectiveness",
           "unit": "index (-2.5 to 2.5)",
           "source": 75,
-          "description": "WGI government effectiveness — public service quality and policy implementation.",
+          "description": "WGI government effectiveness \u2014 public service quality and policy implementation.",
           "policyAreas": [
             "public administration",
             "government quality",
@@ -1889,7 +1979,7 @@
           "name": "Regulatory Quality",
           "unit": "index (-2.5 to 2.5)",
           "source": 75,
-          "description": "WGI regulatory quality — private sector development and regulation effectiveness.",
+          "description": "WGI regulatory quality \u2014 private sector development and regulation effectiveness.",
           "policyAreas": [
             "regulation",
             "business climate",
@@ -1906,7 +1996,7 @@
           "name": "Control of Corruption",
           "unit": "index (-2.5 to 2.5)",
           "source": 75,
-          "description": "WGI corruption control — anti-corruption effectiveness and institutional integrity.",
+          "description": "WGI corruption control \u2014 anti-corruption effectiveness and institutional integrity.",
           "policyAreas": [
             "anti-corruption",
             "rule of law",
@@ -1919,7 +2009,7 @@
           "name": "Political Stability",
           "unit": "index (-2.5 to 2.5)",
           "source": 75,
-          "description": "WGI political stability and absence of violence — governance stability.",
+          "description": "WGI political stability and absence of violence \u2014 governance stability.",
           "policyAreas": [
             "political stability",
             "security policy",
@@ -1927,7 +2017,7 @@
           ],
           "committees": [
             "KU",
-            "FöU"
+            "F\u00f6U"
           ]
         }
       ]
@@ -1945,7 +2035,7 @@
           "key": "giniIndex",
           "name": "GINI Index",
           "unit": "index (0-100)",
-          "description": "Income inequality measure (0=equality, 100=inequality) — social policy and redistribution.",
+          "description": "Income inequality measure (0=equality, 100=inequality) \u2014 social policy and redistribution.",
           "policyAreas": [
             "income distribution",
             "social policy",
@@ -1957,7 +2047,7 @@
           "key": "incomeTop10",
           "name": "Income Share: Top 10%",
           "unit": "% of income",
-          "description": "Income share of richest 10% — inequality concentration measure.",
+          "description": "Income share of richest 10% \u2014 inequality concentration measure.",
           "policyAreas": [
             "income distribution",
             "taxation",
@@ -1973,7 +2063,7 @@
           "key": "incomeBottom10",
           "name": "Income Share: Bottom 10%",
           "unit": "% of income",
-          "description": "Income share of poorest 10% — poverty depth measure.",
+          "description": "Income share of poorest 10% \u2014 poverty depth measure.",
           "policyAreas": [
             "poverty",
             "social policy",
@@ -1988,7 +2078,7 @@
           "key": "incomeBottom20",
           "name": "Income Share: Bottom 20%",
           "unit": "% of income",
-          "description": "Income share of poorest 20% — broad poverty measure.",
+          "description": "Income share of poorest 20% \u2014 broad poverty measure.",
           "policyAreas": [
             "poverty",
             "social policy",
@@ -2003,7 +2093,7 @@
           "key": "incomeTop20",
           "name": "Income Share: Top 20%",
           "unit": "% of income",
-          "description": "Income share of richest 20% — wealth concentration.",
+          "description": "Income share of richest 20% \u2014 wealth concentration.",
           "policyAreas": [
             "income distribution",
             "taxation"
@@ -2028,7 +2118,7 @@
           "key": "womenInParliament",
           "name": "Women in Parliament",
           "unit": "% of total seats",
-          "description": "Share of parliamentary seats held by women — gender equality in politics.",
+          "description": "Share of parliamentary seats held by women \u2014 gender equality in politics.",
           "policyAreas": [
             "gender equality",
             "democratic representation",
@@ -2050,7 +2140,7 @@
           "key": "electricPowerConsumption",
           "name": "Electric Power Consumption",
           "unit": "kWh per capita",
-          "description": "Electricity consumption per capita — energy demand and efficiency.",
+          "description": "Electricity consumption per capita \u2014 energy demand and efficiency.",
           "policyAreas": [
             "energy policy",
             "infrastructure"
@@ -2058,5 +2148,22 @@
         }
       ]
     }
+  },
+  "deprecationNotice": {
+    "effective": "2026-04-24",
+    "authority": ".github/aw/ECONOMIC_DATA_CONTRACT.md v2.1",
+    "masterPolicy": "analysis/economic-indicators-inventory.json",
+    "imfCounterpartCatalogue": "analysis/imf/indicators-inventory.json",
+    "rationale": "World Bank economic series (national accounts, government finance, trade, inflation, headline labor, financial-sector interest rates) are DEPRECATED as primary economic citations in new articles. IMF (WEO + FM + IFS + BOP + GFS_COFOG + DOTS + PCPS + MFS_IR + ER) is the primary canon. World Bank remains authoritative for non-economic residue: governance (WGI, source=75), environment (EN.ATM.*, EG.*, AG.LND.FRST.ZS), social/education participation (SE.*, SH.*, SP.*), defence historicals (MS.MIL.*), inequality (SI.POV.*), and crime (VC.IHR.*).",
+    "enforcement": "scripts/world-bank-context.ts filters indicators where deprecated === true out of ECONOMIC_INDICATORS by default. Use ALL_WORLD_BANK_INDICATORS for audit/back-compat readers that still need the raw inventory.",
+    "deprecatedCount": 30,
+    "domainsTouched": [
+      "financial",
+      "governmentFinance",
+      "inflation",
+      "labor",
+      "nationalAccounts",
+      "trade"
+    ]
   }
 }

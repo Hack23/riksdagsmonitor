@@ -160,7 +160,7 @@ All forward-looking claims use **Words of Estimative Probability (WEP)**:
 
 ### Source Diversity Rule
 
-Every P0/P1 claim requires **≥3 primary sources** (MCP-sourced Riksdag/Regering documents) **+ ≥1 secondary source** (SCB, World Bank, IMF, press, OSINT). Single-source claims must be labeled `[unconfirmed]`. See the **Source Diversity Rule** + **Collection Management Matrix** (MCP tool → evidence → template) in [`political-style-guide.md`](../methodologies/political-style-guide.md).
+Every P0/P1 claim requires **≥3 primary sources** (MCP-sourced Riksdag/Regering documents) **+ ≥1 secondary source** (SCB, **IMF for economic context**, press, OSINT — World Bank may appear only as a non-economic residue secondary source for WGI / environment / social / defence historicals; **never** for economic context, not even as secondary or fallback). Single-source claims must be labeled `[unconfirmed]`. See the **Source Diversity Rule** + **Collection Management Matrix** (MCP tool → evidence → template) in [`political-style-guide.md`](../methodologies/political-style-guide.md).
 
 ### PIR Tagging
 

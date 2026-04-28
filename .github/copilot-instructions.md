@@ -260,7 +260,7 @@ Quality gates: HTMLHint + linkinator + Dependabot + CodeQL + secret scanning
 - **Use agents/skills** — Leverage specialized expertise
 - **BCP-47** — Norwegian uses `nb` not `no`
 - **No shortcuts** — Real AI work for all phases, never produce shallow output
-- **Economic data: IMF first** — Macro/fiscal/monetary/external/trade ⇒ IMF (WEO, FM, IFS, BOP, DOTS, GFS_COFOG, PCPS, ER, MFS); World Bank reserved for governance/environment/social residue only; SCB for Swedish-specific ground truth. Hub: [`analysis/imf/`](../analysis/imf/) · contract: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](aw/ECONOMIC_DATA_CONTRACT.md) v2.1. Banned phrases + vintage discipline (>6 mo → annotation) enforced.
+- **Economic data: IMF ONLY** — Macro/fiscal/monetary/external/trade/commodity/FX context **MUST** use IMF (WEO, FM, IFS, BOP, DOTS, GFS_COFOG, PCPS, ER, MFS_IR). **World Bank is NEVER acceptable for economic context — not as primary, not as secondary, not as fallback, not as historical**. World Bank is reserved exclusively for non-economic residue (WGI governance `source=75`, environment, social/education participation, defence historicals, crime). SCB is Swedish-specific ground truth. Hub: [`analysis/imf/`](../analysis/imf/) · contract: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](aw/ECONOMIC_DATA_CONTRACT.md) v2.1. Banned phrases + vintage discipline (>6 mo → annotation) enforced.
 
 ## 🌐 IMF Quick Reference (Economic Data Canonical Pattern)
 

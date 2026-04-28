@@ -31,7 +31,7 @@
 |---------|-------|
 | **F3EAD Stage** | **ANALYZE** — cross-country contextualisation |
 | **PIRs Served** | **PIR-4** (Defence Posture, NATO comparison), **PIR-5** (Fiscal Trajectory, peer benchmarks), **PIR-3** (Migration Policy, EU harmonisation) |
-| **Admiralty Floor** | IMF WEO/FM, World Bank/OECD statistics require **[A1]**; country-specific policy documents require **[B2]** |
+| **Admiralty Floor** | **IMF** WEO/FM/IFS/BOP/GFS_COFOG/DOTS/PCPS/MFS_IR/ER (the **only** acceptable economic source) and OECD statistics require **[A1]**; World Bank residue (WGI / environment / social — **never** economic) requires **[A1]**; country-specific policy documents require **[B2]** |
 | **WEP + ODNI** | Cross-country parallels use **WEP** (likely/unlikely) with **MODERATE** confidence; avoid claiming "Sweden will follow X" without Swedish-specific evidence |
 | **Source Diversity Floor** | P1 (policy trajectory claims): ≥3 sources (≥1 Swedish primary + ≥2 peer-country comparables); avoid single-country analogy |
 | **SAT(s) Applied** | Outside-In Thinking (start from external context), What If? (transferability scenarios) |

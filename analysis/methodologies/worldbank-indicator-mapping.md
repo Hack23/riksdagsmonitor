@@ -1,8 +1,8 @@
 # World Bank Indicator → Article Type Mapping (Riksdagsmonitor)
 
-> ## ⚠️ Scope notice (effective 2026-04-25)
+> ## ⚠️ Scope notice (effective 2026-04-28)
 >
-> **World Bank is NOT the primary source for economic data** in Riksdagsmonitor articles. All macro / fiscal / monetary / external-sector / trade context is sourced from **IMF** — see [`imf-indicator-mapping.md`](imf-indicator-mapping.md) and [`analysis/imf/`](../imf/).
+> **World Bank is NEVER acceptable for economic context** in Riksdagsmonitor — not as primary, not as secondary, not as fallback, not as historical. All macro / fiscal / monetary / external-sector / trade / commodity / FX / interest-rate context is sourced from **IMF** (WEO + FM + IFS + BOP + GFS_COFOG + DOTS + PCPS + MFS_IR + ER) — see [`imf-indicator-mapping.md`](imf-indicator-mapping.md) and [`analysis/imf/`](../imf/). The deprecation is enforced programmatically in `scripts/world-bank-context.ts` (filters `deprecated: true` from the active set), in `analysis/worldbank/indicators-inventory.json` v3.1 (per-indicator `deprecated: true` + `supersededBy: "imf:..."`), and in `tests/worldbank-deprecation-contract.test.ts` (CI gate).
 >
 > This document covers the **non-economic residue** World Bank retains as primary:
 > - Governance (WGI, `source=75`) — `CC.EST`, `RL.EST`, `VA.EST`, `GE.EST`, `RQ.EST`, `PV.EST`
