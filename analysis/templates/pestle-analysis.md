@@ -77,7 +77,7 @@ tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?start
 
 ## 👥 Social (S)
 
-> SCB is the authoritative Swedish source; World Bank for comparative OECD context. Use 5-year trend series minimum.
+> SCB is the authoritative Swedish source; World Bank supplies the non-economic OECD comparative context (environment, social, education participation, demographics). Income inequality / Gini and labour-market metrics with macro relevance source from **IMF or SCB**. Use 5-year trend series minimum.
 
 | Factor | SCB / WB code | Latest value | Trend (5 y) | Political salience (1–5) | Evidence | Admiralty |
 |--------|---------------|--------------|-------------|-------------------------|----------|-----------|

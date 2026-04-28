@@ -91,7 +91,7 @@ flowchart LR
 | `world-bank` (non-economic ONLY) | `get-economic-data` | `country=SE, indicator=EN.ATM.CO2E.PC` | `N` | environment (CO2) |
 | Statskontoret (public web) | `web_fetch` | `https://www.statskontoret.se/...` | `N` | agency-capacity / implementation evidence |
 
-> **v2.1 reminder**: WB economic codes (`NY.GDP.*`, `FP.CPI.TOTL.ZG`, `SL.UEM.TOTL.ZS`, `GC.DOD.*`, `GC.XPN.*`, `GC.REV.*`, `BN.CAB.*`, `NE.EXP.*`) are **deprecated** — use their IMF replacement listed in [`analysis/imf/indicators-inventory.json → deprecationPolicy`](../imf/indicators-inventory.json).
+> **Provider routing**: every economic claim cites the IMF dataflow + indicator (`WEO:NGDP_RPCH`, `WEO:PCPIPCH`, `WEO:LUR`, `FM:GGXWDG_NGDP`, etc.); SCB supplies Swedish-specific ground truth. World Bank values appear in the manifest for governance, environment, social, defence-historical, and crime/justice context. See [`analysis/imf/README.md`](../imf/README.md) §8.
 
 ---
 

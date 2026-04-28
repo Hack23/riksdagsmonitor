@@ -282,7 +282,7 @@ Translate political positions into **material consequences** for citizens, secto
 ### Input
 - stakeholder-perspectives.md (actor list)
 - significance-scoring.md (which documents have measurable impact)
-- SCB microdata, World Bank, IMF for quantitative scale
+- SCB microdata (Swedish-specific ground truth), **IMF** WEO/FM/IFS for quantitative scale (primary economic source), World Bank for non-economic residue only (WGI governance / environment / social / education participation / defence historicals)
 - Family E per-document implementation feasibility sections
 
 ### Output — required structure

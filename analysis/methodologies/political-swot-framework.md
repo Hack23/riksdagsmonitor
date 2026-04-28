@@ -73,7 +73,8 @@ graph LR
 |:----------:|-------------------|----------|
 | **HIGH** | Riksdag official document (proposition, betänkande, protokoll) | `get_dokument`, `search_dokument` |
 | **HIGH** | Verified voting record | `search_voteringar` |
-| **HIGH** | SCB official statistics | World Bank, SCB API |
+| **HIGH** | SCB official statistics | SCB PxWeb API |
+| **HIGH** | IMF economic data (WEO / FM / IFS / BOP / GFS_COFOG / DOTS / PCPS / MFS_IR / ER) — **primary and only** economic source | IMF Datamapper REST + SDMX 3.0 (`scripts/imf-fetch.ts`) |
 | **MEDIUM** | Government press release | `search_regering` |
 | **MEDIUM** | Named politician's anförande in Riksdag | `search_anforanden` |
 | **MEDIUM** | Verified major newspaper with named sources | `search_dokument_fulltext` |
@@ -486,7 +487,8 @@ Riksdagsmonitor enriches its SWOT analysis with **EU Parliament data** via the [
 |:----------:|-------------------|----------|
 | **HIGH** | Official Riksdag voted text, verified roll-call record | `search_voteringar`, `get_betankanden` |
 | **HIGH** | Government proposition text (approved or tabled) | `get_propositioner` |
-| **HIGH** | SCB / Eurostat official statistics | SCB API, World Bank, Eurostat |
+| **HIGH** | SCB / Eurostat official statistics | SCB PxWeb, Eurostat |
+| **HIGH** | IMF economic data (WEO / FM / IFS / BOP / GFS_COFOG / DOTS / PCPS / MFS_IR / ER) — **primary and only** economic source | `scripts/imf-fetch.ts` |
 | **HIGH** | EP plenary roll-call vote (verified) | EP Open Data `/votes` |
 | **MEDIUM** | Named MP speech in Riksdag plenary record | `search_anforanden` |
 | **MEDIUM** | Committee / commission statement (Riksdag or EP) | `search_dokument`, EP `/committees` |

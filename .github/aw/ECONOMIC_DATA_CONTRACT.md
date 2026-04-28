@@ -1,24 +1,21 @@
-# Economic Data Contract — Agentic Workflows (v2.1)
+# Economic Data Contract — Agentic Workflows (v3.0)
 
-> **Single source of truth** for live IMF / World Bank / SCB data, Chart.js
+> **Single source of truth** for live IMF / SCB economic data, Chart.js
 > visualisations, and AI commentary in every news article.
 > Consumed by `scripts/validate-economic-context.ts` and referenced
 > (by link) from every `news-*.md` agentic workflow.
 
-> **Schema v2.1 (2026-04-24)** — IMF-first. World Bank economic codes are
-> explicitly **deprecated** for new articles (kept as read-only reference for
-> back-compat). Banned-phrasings list extended to catch WB-GDP regressions.
-> Vintage-staleness rule added (6-month threshold). Footer attribution
-> prefers `Data by IMF / SCB` when no WB non-economic data is cited.
->
-> **Schema v2.0 (2026-04-20)** — additive. Added IMF (accessed via the
-> repo's pure-TypeScript `scripts/imf-client.ts` + `scripts/imf-fetch.ts`
-> CLI, no Python MCP) as a first-class primary source for macro, fiscal,
-> monetary, and external-sector indicators. World Bank remains
-> authoritative for governance (WGI), environment, and long-horizon
-> social/education residue. SCB remains the Swedish primary source.
-> v1 artefacts remain valid; the validator accepts both shapes during
-> the 2026-04-20 → 2026-05-31 grace window.
+> **Schema v3.0 (2026-04-28)** — IMF is the economic-data source for
+> every economic claim. Every economic indicator (GDP, inflation,
+> unemployment, fiscal aggregates, debt, BoP, trade flows, commodity
+> prices, FX, interest rates) carries `provider: "imf"` and an IMF
+> database tag (`WEO`, `FM`, `IFS`, `BOP`, `GFS_COFOG`, `DOTS`,
+> `PCPS`, `MFS_IR`, `ER`). SCB supplies Swedish-specific ground truth
+> (AKU labour-force survey, KPIF, regional and high-frequency monthly
+> tables). World Bank supplies non-economic context: governance (WGI,
+> `source=75`), environment, social/education residue, defence
+> historicals, and crime/justice. Vintage discipline: economic data
+> older than 6 months carries an explicit annotation.
 
 ---
 
@@ -30,7 +27,8 @@ supplied `dataPoints` and the bullet-only fallback was emitted. This
 contract closes the gap so that:
 
 1. Every `<section id="economic-dashboard">` renders **real** Chart.js
-   canvases backed by live World Bank / SCB values.
+   canvases backed by live IMF / SCB values (with World Bank residue
+   for non-economic context only).
 2. Every article carries a 2–4 sentence **AI commentary** paragraph
    that cites concrete numbers.
 3. A deterministic quality gate fails the PR if any of **data**,
@@ -99,8 +97,15 @@ where `{analysisSubfolder}` maps from the kebab article-type slug via
 - `commentary` MUST cite 2–3 concrete numeric values that appear in
   `dataPoints` (the validator enforces only a word count; the human
   review + multi-dim quality score enforces the citation).
-- At least one of `source.worldBank` / `source.scb` / `source.imf` MUST
-  be non-empty (previously only `worldBank`/`scb` counted).
+- At least one of `source.imf` / `source.scb` MUST be non-empty for
+  every economic-context article. `source.worldBank` is the
+  appropriate field for governance / environment / social /
+  defence-historicals / crime data points.
+- Every `dataPoint` whose policy domain is in `{macro, fiscal,
+  monetary, external, trade, inflation, commodity, exchangeRate}`
+  carries `provider: "imf"` (or `provider: "scb"` for Swedish-specific
+  ground truth). The validator confirms each row in those domains
+  uses an IMF or SCB provider.
 - When any `dataPoint.projection === true`, it MUST carry a
   `projectionVintage` tag (e.g. `"WEO-2026-04"`, `"FM-2026-04"`).
   Projection values MAY only be cited in article commentary for the
@@ -112,30 +117,26 @@ where `{analysisSubfolder}` maps from the kebab article-type slug via
 - File MUST validate against
   `analysis/schemas/economic-data.schema.json`.
 
-### v1 back-compat
-
-A v1 artefact (no `source.imf[]`, no `provider`/`projection` on data
-points) is still accepted. The loader fills defaults
-(`provider: "worldBank"`, `projection: false`). New workflows SHOULD
-emit v2.
-
 ---
 
 ## MCP tool contract
 
 Step 2.6 of every `news-*.md` workflow MUST perform these MCP calls
-**before** writing `economic-data.json`. The order of provider
-preference is:
+**before** writing `economic-data.json`. Provider precedence is:
 
-1. **IMF** — macro (GDP, inflation, unemployment), fiscal (debt, deficit,
-   revenue, expenditure), monetary, external sector. WEO projections
-   extend to T+5 and MUST be used for look-ahead article types.
+1. **IMF** — every economic claim. Macro (GDP, inflation,
+   unemployment), fiscal (debt, deficit, revenue, expenditure, COFOG
+   functional decomposition), monetary, external sector, trade,
+   commodity, FX. WEO projections extend to T+5 and MUST be used for
+   look-ahead article types.
 2. **SCB** — Swedish-specific ground truth that IMF does not carry
    (household consumption patterns, regional data, high-frequency
-   monthly tables).
-3. **World Bank** — governance (WGI: CC.EST, RL.EST, VA.EST, GE.EST,
-   RQ.EST, PV.EST), environment (CO2, forest area, renewables), and
-   long-horizon social/education indicators IMF does not cover.
+   monthly tables, AKU labour-force survey).
+3. **World Bank** — non-economic residue **only**: governance (WGI:
+   CC.EST, RL.EST, VA.EST, GE.EST, RQ.EST, PV.EST), environment (CO2,
+   forest area, renewables, water), defence historicals
+   (`MS.MIL.XPND.GD.ZS`, `MS.MIL.TOTL.P1`), and long-horizon
+   social/education indicators IMF does not cover.
 
 ### 1. Map documents → policy domains → indicators
 
@@ -147,9 +148,9 @@ Each indicator entry carries a `provider` field (`imf` | `worldBank` |
 `scb`), plus IMF-specific fields (`imfDatabase`, `imfIndicatorCode`,
 `imfDimensionFilters`, `projectionHorizon`) when the primary provider
 is IMF. Select every indicator whose `committees` / `policyAreas`
-match the day's source documents. The legacy inventory at
-`analysis/worldbank/indicators-inventory.json` is retained as an
-append-only reference during the migration window.
+match the day's source documents. The non-economic residue inventory
+at `analysis/worldbank/indicators-inventory.json` covers governance /
+environment / social / defence historicals only.
 
 ### 2. Query IMF (Sweden + Nordic peers) — PRIMARY for macro/fiscal/monetary
 
@@ -186,9 +187,9 @@ between separate `imf-fetch.ts` invocations, and rely on the client's
 built-in 3× retry with exponential back-off (1 s → 2 s → 4 s) for 429 /
 5xx. Pre-warm 1 request at workflow start.
 
-### 3. Query World Bank (governance / env / social residue ONLY)
+### 3. Query World Bank — governance, environment, social residue, defence historicals, crime/justice
 
-> ⚠️ **v2.1 deprecation** — World Bank is **no longer** a primary source for economic data. Do **not** call `get-economic-data` for `NY.GDP.*`, `FP.CPI.TOTL.ZG`, `SL.UEM.TOTL.ZS`, `GC.DOD.*`, `GC.XPN.*`, `GC.REV.*`, `BN.CAB.*`, `NE.EXP.*` in new articles. These are deprecated in favour of the IMF counterpart listed in `analysis/imf/indicators-inventory.json → deprecationPolicy`. The validator currently accepts WB economic codes during the grace window (2026-04-20 → 2026-05-31); after the grace window, `source.worldBank[]` containing any of these codes will be flagged as a stale citation.
+> **Scope** — World Bank supplies non-economic context: governance (WGI `source=75`), environment (CO₂, forest area, renewables, water), social/education residue (population, life expectancy, school enrolment), defence historicals (`MS.MIL.XPND.GD.ZS`, `MS.MIL.TOTL.P1`), and crime/justice (`VC.IHR.PSRC.P5`). Use `scripts/imf-fetch.ts` for every economic claim; use `scripts/scb-client.ts` for Swedish-specific ground truth.
 
 ```
 # Governance / WGI (source=75)
@@ -329,10 +330,10 @@ cat > "$ANALYSIS_DIR/economic-data.json" <<EOF
 EOF
 ```
 
-Cache raw MCP responses alongside the legacy WB path:
+Cache raw MCP responses by provider:
 - IMF:        `analysis/data/imf/$(date +%Y)/$indicator-$country.json`
-- World Bank: `analysis/data/worldbank/$(date +%Y)/$indicator-$country.json`
 - SCB:        `analysis/data/scb/$(date +%Y)/$table.json`
+- World Bank (non-economic residue only): `analysis/data/worldbank/$(date +%Y)/$indicator-$country.json`
 
 Reuse across article types in the same daily run (rate-limit
 mitigation).
@@ -360,17 +361,35 @@ Banned phrasings (all detected by `multi-dim quality score`):
   cited IMF WEO or Fiscal Monitor value from `dataPoints` where
   `projection: true`. Use the explicit form "IMF projects Sweden's
   debt/GDP at 32.4 % in 2027 (WEO Apr-2026, GGXWDG_NGDP)" instead.
-- **v2.1 — World Bank economic regressions** — any of the following as a
-  primary economic citation in new articles:
-  "World Bank GDP", "WB GDP growth", "World Bank inflation",
-  "World Bank unemployment", "NY.GDP.MKTP.KD.ZG for Sweden" (as primary),
-  "FP.CPI.TOTL.ZG" (as primary), "SL.UEM.TOTL.ZS" (as primary),
-  "GC.DOD.TOTL.GD.ZS" (as primary). These codes MUST be replaced by
-  the IMF counterpart — see
-  [`analysis/imf/indicators-inventory.json → deprecationPolicy`](../../analysis/imf/indicators-inventory.json).
-  Non-economic WB codes (WGI, `EN.*`, `EG.*`, `AG.LND.FRST.ZS`,
-  `MS.MIL.*`, `VC.IHR.PSRC.P5`, `SE.*`, `SH.*`, `SP.*`) remain
-  authoritative and are NOT banned.
+
+### Provider routing for economic citations
+
+Every economic claim cites the IMF dataflow + indicator code. Use:
+
+- `WEO:NGDP_RPCH` for real GDP growth · `WEO:NGDPD` for nominal GDP ·
+  `WEO:NGDPDPC` for GDP per capita.
+- `WEO:PCPIPCH` for annual CPI inflation · `IFS:PCPI_IX` for monthly
+  CPI · SCB KPIF for Swedish-specific high-frequency inflation.
+- `WEO:LUR` for the annual unemployment rate · SCB AKU for the
+  Swedish-specific labour-force survey.
+- `FM:GGXWDG_NGDP` (or `WEO:GGXWDG_NGDP`) for gross public debt ·
+  `WEO:GGXCNL_NGDP` / `FM:GGXCNLB_NGDP` for fiscal balance ·
+  `FM:GGXONLB_NGDP` for primary balance · `FM:GGSB_NPGDP` for the
+  cyclically-adjusted balance.
+- `WEO:GGR_NGDP` for revenue / GDP · `WEO:GGX_NGDP` for expenditure /
+  GDP · `GFS_COFOG:G02 / G07 / G09 / G10` for COFOG functional
+  decomposition.
+- `WEO:BCA_NGDPD` for current account · `BOP:*` for BoP detail ·
+  `WEO:TX_RPCH` / `WEO:TM_RPCH` for export/import volume growth ·
+  `DOTS:TXG_FOB_USD`, `DOTS:TMG_CIF_USD` for bilateral trade flows.
+- `MFS_IR:FPOLM_PA` for the Riksbank policy rate ·
+  `ER:ENDA_XDC_USD_RATE` / `ER:ENDE_XDC_EUR_RATE` for exchange rates ·
+  `PCPS:POILAPSP` / `PCPS:PALLFNF` for commodity prices.
+
+World Bank citations remain authoritative for non-economic context:
+WGI governance (`*.EST`), environment (`EN.*`, `EG.*`, `AG.LND.FRST.ZS`),
+defence historicals (`MS.MIL.*`), social/education residue (`SP.*`,
+`SH.*`, `SE.*`), and crime/justice (`VC.IHR.PSRC.P5`).
 
 ### Projections — allowed usage
 
@@ -412,9 +431,9 @@ commits violations:
 3. Missing / empty / malformed `economic-data.json`.
 4. `dataPoints` empty (without a valid `skip: true`).
 5. Commentary below `minCommentaryWords`.
-6. Missing footer attribution "Data by IMF / World Bank / SCB"
-   (historical variants "Data by World Bank / SCB" still accepted
-   during the v1→v2 grace window).
+6. Missing footer attribution `Data by IMF / SCB` (or `Data by IMF /
+   SCB / World Bank` when non-economic WB data is also cited in the
+   article).
 
 ### Contract effective date
 
@@ -447,53 +466,35 @@ mirror the change in the version history below.
 
 ## Version history
 
-- **1.0 (2026-04-17)** — Initial contract following the April 17
-  committee-reports placeholder incident.
-- **1.0.1 (2026-04-18)** — Added `CONTRACT_EFFECTIVE_DATE = 2026-04-18`
-  exemption to the validator so the daily audit stops re-reporting
-  pre-contract articles for 7 days after every rollout. No change to
-  the schema or enforcement for new articles.
+- **3.0 (2026-04-28)** — IMF is the economic-data source for every
+  economic claim. `INDICATOR_IDS` (`scripts/world-bank-client.ts`)
+  and `analysis/worldbank/indicators-inventory.json` v4.0 catalogue
+  the World Bank's non-economic scope: governance, environment,
+  social, defence historicals, demographics, health, education,
+  innovation, infrastructure, inequality, gender, energy use. Footer
+  attribution is `Data by IMF / SCB` for economic-context articles
+  and `Data by IMF / SCB / World Bank` when an article also cites
+  governance, environment, or social World Bank data.
+- **2.1 (2026-04-24)** — IMF promoted to primary across all economic
+  domains. Vintage-staleness rule (6-month threshold) added. Step 3
+  reframed as governance / environment / social residue.
 - **2.0 (2026-04-20)** — Add IMF as a first-class primary source via
   the repository's pure-TypeScript `scripts/imf-client.ts` +
   `scripts/imf-fetch.ts` CLI (Datamapper JSON for WEO, SDMX 3.0
   passthrough for IFS / BOP / FM / GFS / DOTS). **No Python MCP /
   `uvx`** — IMF access is under the same npm / SBOM governance as
   `world-bank-client.ts` and `scb-client.ts`. Additive schema changes:
-  - `source.imf: string[]` (optional in v1, recommended in v2)
+  - `source.imf: string[]`
   - `dataPoints[].provider` (`imf` | `worldBank` | `scb`)
   - `dataPoints[].projection` (boolean)
   - `dataPoints[].projectionVintage` (string; required when
     `projection: true`)
-  Validator now accepts IMF in the footer attribution and treats any
-  non-empty `source.{imf,worldBank,scb}` as satisfying citation.
-  Projections are allowed in commentary for look-ahead article types
-  (`week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`)
-  only, and MUST carry the `projectionVintage` tag. Un-sourced
-  forecast phrasing added to the banned list. World Bank remains
-  authoritative for WGI governance, environment, and long-horizon
-  social/education residue; SCB unchanged. v1 artefacts remain valid
-  through the 2026-04-20 → 2026-05-31 grace window.
-- **2.1 (2026-04-24)** — IMF promoted to PRIMARY across **all** economic
-  domains; World Bank economic codes explicitly **deprecated** for new
-  articles. Extensions:
-  - Banned-phrasings list expanded to catch WB economic regressions
-    ("World Bank GDP", "WB GDP growth", "NY.GDP.MKTP.KD.ZG" as primary,
-    "FP.CPI.TOTL.ZG" as primary, "SL.UEM.TOTL.ZS" as primary,
-    "GC.DOD.TOTL.GD.ZS" as primary, "growth is forecast to…",
-    "analysts expect…" without citation).
-  - **Vintage-staleness rule** — projection citations whose vintage is
-    > 6 months older than the article date are flagged `[STALE-VINTAGE]`.
-  - Step 3 renamed to "Query World Bank (governance / env / social
-    residue ONLY)" with explicit deprecation box.
-  - Full catalogue moved to [`analysis/imf/indicators-inventory.json`](../../analysis/imf/indicators-inventory.json)
-    (24 indicators × 10 dataflows × 10 domains, `deprecationPolicy`
-    with per-code `supersedes` mapping, `committeeMatrix` for
-    FiU/SkU/AU/NU/UU/SoU/SfU/FöU/MJU/UbU/KU/JuU/KrU/TU/CU).
-  - Companion docs: [`analysis/imf/README.md`](../../analysis/imf/README.md) ·
-    [`analysis/imf/data-dictionary.md`](../../analysis/imf/data-dictionary.md) (dataflow reference) ·
-    [`analysis/imf/agentic-integration.md`](../../analysis/imf/agentic-integration.md) (7-step playbook) ·
-    [`analysis/imf/indicator-policy-mapping.md`](../../analysis/imf/indicator-policy-mapping.md) (committee matrix).
-  - Footer attribution prefers `Data by IMF / SCB` for IMF-primary
-    articles (add `/ World Bank` only when non-economic WB data is
-    cited). The `World Bank / SCB` legacy form remains accepted during
-    grace window.
+  Validator accepts IMF in the footer attribution. Projections are
+  allowed in commentary for look-ahead article types (`week-ahead`,
+  `month-ahead`, `weekly-review`, `monthly-review`) only.
+- **1.0.1 (2026-04-18)** — Added `CONTRACT_EFFECTIVE_DATE = 2026-04-18`
+  exemption to the validator so the daily audit stops re-reporting
+  pre-contract articles for 7 days after every rollout. No change to
+  the schema or enforcement for new articles.
+- **1.0 (2026-04-17)** — Initial contract following the April 17
+  committee-reports placeholder incident.

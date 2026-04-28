@@ -219,7 +219,7 @@ Key policies at risk of parliamentary defeat, amendment, or delay:
 
 **IMF Macro-Fiscal Anchor (REQUIRED for every budget risk assessment):**
 
-Every budget-risk claim MUST be anchored to an IMF projection with an explicit vintage tag. World Bank economic codes are **deprecated** for budget analysis — see [`analysis/imf/README.md`](../imf/README.md) §8 and [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1.
+Every budget-risk claim is anchored to an IMF projection with an explicit vintage tag — see [`analysis/imf/README.md`](../imf/README.md) §8 and [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v3.0.
 
 | IMF indicator | Citation | Use in budget risk |
 |---|---|---|

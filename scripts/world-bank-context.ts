@@ -1,17 +1,22 @@
 /**
  * @module WorldBank/Context
- * @description Economic context provider for news generation and political intelligence.
- * Maps World Bank indicators to Swedish political policy areas, enabling enriched
- * analysis that connects parliamentary decisions to economic outcomes.
+ * @description **Non-economic-only** context provider for political intelligence.
  *
- * **SINGLE SOURCE OF TRUTH**: Indicator data is loaded from
- * `analysis/worldbank/indicators-inventory.json` — the canonical machine-readable
- * inventory. Both AI agents (`view` tool) and this TypeScript module consume the
- * same JSON, ensuring consistency. To add or modify indicators, edit the JSON file
- * only — no TypeScript changes are required, and updates are picked up on the next run.
+ * World Bank is **NEVER** used for economic context in Riksdagsmonitor — not as
+ * primary, not as secondary, not as fallback, not as historical. All economic
+ * context (macro / fiscal / monetary / external-sector / trade / commodity / FX
+ * / interest rates / labour-market headlines) is sourced from **IMF** via
+ * `scripts/imf-fetch.ts` (catalogue: `analysis/imf/indicators-inventory.json`).
  *
- * Used by agentic workflows and article quality enhancement to add economic depth
- * to political reporting.
+ * This module exposes only the **non-economic residue** WB still publishes
+ * authoritatively: WGI governance (`source=75`), environment, social /
+ * health / education participation, demographics, defence historicals,
+ * agriculture, innovation (R&D / patents), inequality (GINI / income
+ * distribution), and crime / justice.
+ *
+ * **SINGLE SOURCE OF TRUTH**: indicator data is loaded from
+ * `analysis/worldbank/indicators-inventory.json`. To add or modify indicators
+ * edit the JSON file only — no TypeScript changes are required.
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -27,9 +32,16 @@ import { COUNTRY_CODES } from './world-bank-client.js';
 // Types
 // ---------------------------------------------------------------------------
 
-/** An economic indicator mapped to a policy area */
-export interface EconomicIndicatorContext {
-  /** World Bank indicator ID */
+/**
+ * A **non-economic** WB indicator mapped to a Swedish policy area.
+ *
+ * Note: economic codes (national accounts, government finance, trade,
+ * inflation, headline labour, financial-sector interest rates) are **not**
+ * present in this inventory. Use IMF citations via `scripts/imf-fetch.ts`
+ * for any economic context.
+ */
+export interface WorldBankIndicatorContext {
+  /** World Bank indicator ID (non-economic only) */
   readonly indicatorId: string;
   /** Human-readable name */
   readonly name: string;
@@ -109,15 +121,18 @@ function resolveInventoryPath(): string {
 
 /**
  * Load and transform indicators from the JSON inventory file.
- * Each indicator in the JSON is mapped to an EconomicIndicatorContext
- * with description, policyAreas, and committees.
+ * The inventory catalogues World Bank's documented scope (governance,
+ * environment, social, demographics, health, education, defence
+ * historicals, innovation, infrastructure, inequality, gender, energy,
+ * agriculture, crime/justice). Each indicator is mapped to a
+ * {@link WorldBankIndicatorContext}.
  */
-function loadIndicatorsFromInventory(): readonly EconomicIndicatorContext[] {
+function loadIndicatorsFromInventory(): readonly WorldBankIndicatorContext[] {
   try {
     const raw = readFileSync(resolveInventoryPath(), 'utf-8');
     const inventory: IndicatorInventory = JSON.parse(raw);
 
-    const indicators: EconomicIndicatorContext[] = [];
+    const indicators: WorldBankIndicatorContext[] = [];
     for (const domain of Object.values(inventory.domains)) {
       for (const ind of domain.indicators) {
         indicators.push({
@@ -138,8 +153,6 @@ function loadIndicatorsFromInventory(): readonly EconomicIndicatorContext[] {
         : new Error(`[world-bank-context] Failed to load indicators inventory: ${String(err)}`);
 
     // Tests may intentionally mock or omit the inventory file.
-    // Preserve the existing fallback there, but fail fast elsewhere so
-    // builds cannot silently generate incomplete economic content.
     if (process.env.NODE_ENV === 'test') {
       return [];
     }
@@ -150,18 +163,28 @@ function loadIndicatorsFromInventory(): readonly EconomicIndicatorContext[] {
 }
 
 // ---------------------------------------------------------------------------
-// Economic indicator mappings (loaded from JSON)
+// Indicator mappings (loaded from JSON — non-economic residue only)
 // ---------------------------------------------------------------------------
 
 /**
- * All World Bank indicators mapped to Swedish political policy areas.
- * Loaded from `analysis/worldbank/indicators-inventory.json` — the single source of truth.
+ * World Bank indicators mapped to Swedish political policy areas. The
+ * inventory holds the indicators World Bank publishes authoritatively —
+ * WGI governance (`source=75`), environment, social / health / education
+ * participation, demographics, defence historicals, agriculture,
+ * innovation (R&D / patents), inequality (GINI / income distribution)
+ * and crime / justice.
  *
- * To add indicators: edit the JSON file, NOT this module.
- * Full inventory: analysis/worldbank/indicators-inventory.json
- * Committee mapping: analysis/worldbank/indicator-policy-mapping.md
+ * Economic context (macro / fiscal / monetary / external-sector / trade /
+ * commodity / FX / interest rates / labour-market headlines) is sourced
+ * from IMF via `scripts/imf-fetch.ts`; SCB supplies Swedish-specific
+ * ground truth.
+ *
+ * Authority: `.github/aw/ECONOMIC_DATA_CONTRACT.md` v3.0 ·
+ * `analysis/imf/indicators-inventory.json` ·
+ * `analysis/worldbank/indicators-inventory.json` v4.0.
  */
-export const ECONOMIC_INDICATORS: readonly EconomicIndicatorContext[] = loadIndicatorsFromInventory();
+export const WORLD_BANK_INDICATORS: readonly WorldBankIndicatorContext[] =
+  loadIndicatorsFromInventory();
 
 // ---------------------------------------------------------------------------
 // Nordic comparison configuration
@@ -314,17 +337,19 @@ export function getEconomicHeading(
 }
 
 /**
- * Find relevant economic indicators for a given policy area or committee.
+ * Find non-economic World Bank indicators relevant to a Swedish policy area
+ * or committee. The inventory contains only non-economic residue, so all
+ * results are safe to surface in articles. For economic context use IMF.
  *
  * @param query - Policy area or committee abbreviation to search for
- * @returns Matching economic indicators
+ * @returns Matching non-economic indicators
  */
-export function findRelevantIndicators(query: string): readonly EconomicIndicatorContext[] {
+export function findRelevantIndicators(query: string): readonly WorldBankIndicatorContext[] {
   const q = query.trim().toLowerCase();
   if (q.length === 0) {
     return [];
   }
-  return ECONOMIC_INDICATORS.filter(
+  return WORLD_BANK_INDICATORS.filter(
     (indicator) =>
       indicator.policyAreas.some((area) => area.toLowerCase().includes(q)) ||
       indicator.committees.some((c) => c.toLowerCase() === q),
@@ -332,13 +357,15 @@ export function findRelevantIndicators(query: string): readonly EconomicIndicato
 }
 
 /**
- * Get the World Bank API query parameters for Swedish economic indicators.
- * Used by agentic workflows to know which indicators to fetch.
+ * Get the World Bank API query parameters for the **non-economic** Swedish
+ * indicators surfaced by this module. Used by agentic workflows to know
+ * which non-economic indicators to fetch from World Bank. Economic context
+ * queries go through `scripts/imf-fetch.ts` instead.
  *
  * @returns Array of { countryCode, indicatorId, name } for all configured indicators
  */
 export function getSwedishIndicatorQueries(): readonly { countryCode: string; indicatorId: string; name: string }[] {
-  return ECONOMIC_INDICATORS.map((indicator) => ({
+  return WORLD_BANK_INDICATORS.map((indicator) => ({
     countryCode: COUNTRY_CODES.sweden,
     indicatorId: indicator.indicatorId,
     name: indicator.name,
@@ -347,7 +374,11 @@ export function getSwedishIndicatorQueries(): readonly { countryCode: string; in
 
 /**
  * Detect economic context references in article content.
- * Used by article quality enhancer to score economic depth.
+ *
+ * Recognises canonical IMF citations (`WEO:NGDP_RPCH`, `FM:GGXWDG_NGDP`,
+ * `IFS:PCPI_IX`, `BOP:*`, `GFS_COFOG:*`, `DOTS:*`, `PCPS:*`, `MFS_IR:*`,
+ * `ER:*`) and natural-language economic terms in English and Swedish. Used
+ * by the article quality enhancer to score economic depth.
  *
  * @param content - HTML or text content to analyze
  * @returns True if economic context is present
@@ -359,32 +390,32 @@ export function hasEconomicContext(content: string): boolean {
     /\bunemployment\b/i,
     /\binflation\b/i,
     /\beconomic\s+(growth|context|impact)\b/i,
-    /\bworld\s+bank\b/i,
+    /\b(?:IMF|International\s+Monetary\s+Fund)\b/i, // IMF — primary and only economic source
     /\bbnp\b/i, // Swedish: bruttonationalprodukt
-    /\barbetslöshet/i, // Swedish: unemployment (arbetslöshet, arbetslösheten, etc.)
+    /\barbetslöshet/i, // Swedish: unemployment
     /\bekonomi/i, // Swedish: economy
-    /\bhandelsbalans/i, // Swedish: trade balance (handelsbalans, handelsbalansen, etc.)
-    /\bstatsskuld/i, // Swedish: national debt (statsskuld, statsskulden, etc.)
-    /\bförsvarsutgift/i, // Swedish: defense expenditure (försvarsutgift, försvarsutgifter, etc.)
-    /\bforskningsutgift/i, // Swedish: R&D expenditure (forskningsutgift, forskningsutgifter, etc.)
-    /\bmilitärut/i, // Swedish: military expenditure (militärutgift, etc.)
-    /\bskattein/i, // Swedish: tax revenue (skatteintäkt, skatteintäkter, etc.)
-    /\bgini/i, // GINI index
+    /\bhandelsbalans/i, // Swedish: trade balance
+    /\bstatsskuld/i, // Swedish: national debt
+    /\bförsvarsutgift/i, // Swedish: defense expenditure
+    /\bforskningsutgift/i, // Swedish: R&D expenditure
+    /\bmilitärut/i, // Swedish: military expenditure
+    /\bskattein/i, // Swedish: tax revenue
+    /\bgini/i, // GINI index (inequality — non-economic residue)
     /\bco2\b/i, // CO2 emissions
     /\bnato\s*2\s*%/i, // NATO 2% target
-    /\bförny(?:else)?bart?\s+energi/i, // Swedish: renewable energy (förnybar/förnyelsebar energi)
+    /\bförny(?:else)?bart?\s+energi/i, // Swedish: renewable energy
     /\bbirth\s*rate\b/i,
     /\bfertility\s*rate\b/i,
     /\blife\s*expectancy\b/i,
-    /\bNY\.GDP/i, // World Bank indicator IDs
-    /\bSL\.UEM/i,
-    /\bFP\.CPI/i,
-    /\bMS\.MIL/i,
-    /\bGC\.TAX/i,
-    /\bSI\.POV\.GINI/i,
-    /\bEN\.ATM/i,
-    /\bSH\.XPD/i,
-    /\bSE\.XPD/i,
+    /\bMS\.MIL/i, // WB defence historicals (non-economic residue)
+    /\bSI\.POV\.GINI/i, // WB inequality residue
+    /\bEN\.ATM/i, // WB environment residue
+    /\bSH\.XPD/i, // WB health residue
+    /\bSE\.XPD/i, // WB education residue
+    // IMF citations — `DATABASE:INDICATOR_ID` (v2.1 contract; see imfCitation())
+    /\b(?:WEO|FM|IFS|BOP|BOP_AGG|GFS_COFOG|MFS_IR|DOTS|PCPS|ER):[A-Z][A-Z0-9_]+/i,
+    // IMF projection vintage tag, e.g. "(WEO Apr-2026, GGXWDG_NGDP)"
+    /\bWEO\s+(?:Apr|Oct|April|October)-\d{4}\b/i,
   ];
 
   return patterns.some((pattern) => pattern.test(text));

@@ -1836,7 +1836,7 @@ The IMF integration in Riksdagsmonitor is delivered as a **TypeScript CLI** (`ts
 |---|---|
 | `riksdag-regering-mcp` | Swedish parliamentary primary source |
 | `scb-mcp` | Swedish national statistics (PxWeb v2) |
-| `worldbank-mcp` | Governance (WGI), environment, social residue **only** — economic codes deprecated (use IMF CLI) |
+| `worldbank-mcp` | Governance (WGI), environment, social residue **only** — never economic context (use IMF CLI) |
 
 ### Calling IMF from agentic workflows
 

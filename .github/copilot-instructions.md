@@ -198,7 +198,7 @@ network:
     - api.scb.se                       # Statistics Sweden API
     - www.imf.org                      # IMF Datamapper REST (PRIMARY economic — WEO/FM)
     - sdmxcentral.imf.org              # IMF SDMX 3.0 (PRIMARY economic — IFS/BOP/DOTS/GFS/PCPS/ER/MFS)
-    - api.worldbank.org                # World Bank API (governance/environment residue ONLY — economic codes deprecated, use IMF)
+    - api.worldbank.org                # World Bank API (governance/environment residue ONLY — never economic; use IMF)
     - data.riksdagen.se                # Riksdag open data
     - riksdagen.se                     # Riksdag website
     - www.riksdagen.se                 # Riksdag website
@@ -260,7 +260,7 @@ Quality gates: HTMLHint + linkinator + Dependabot + CodeQL + secret scanning
 - **Use agents/skills** — Leverage specialized expertise
 - **BCP-47** — Norwegian uses `nb` not `no`
 - **No shortcuts** — Real AI work for all phases, never produce shallow output
-- **Economic data: IMF first** — Macro/fiscal/monetary/external/trade ⇒ IMF (WEO, FM, IFS, BOP, DOTS, GFS_COFOG, PCPS, ER, MFS); World Bank reserved for governance/environment/social residue only; SCB for Swedish-specific ground truth. Hub: [`analysis/imf/`](../analysis/imf/) · contract: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](aw/ECONOMIC_DATA_CONTRACT.md) v2.1. Banned phrases + vintage discipline (>6 mo → annotation) enforced.
+- **Economic data: IMF** — Macro/fiscal/monetary/external/trade/commodity/FX context uses IMF (WEO, FM, IFS, BOP, DOTS, GFS_COFOG, PCPS, ER, MFS_IR). SCB is Swedish-specific ground truth. World Bank is reserved for non-economic residue (WGI governance `source=75`, environment, social/education participation, defence historicals, crime). Hub: [`analysis/imf/`](../analysis/imf/) · contract: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](aw/ECONOMIC_DATA_CONTRACT.md) v3.0. Vintage discipline (>6 mo → annotation) enforced.
 
 ## 🌐 IMF Quick Reference (Economic Data Canonical Pattern)
 
@@ -285,7 +285,7 @@ tsx scripts/imf-fetch.ts list-indicators
 | Swedish monthly labour, regional, budget execution | **SCB** |
 | Parliamentary docs, votes, MPs, speeches | **Riksdag MCP** |
 
-**Output discipline:** every economic claim in an article emits an `economicProvenance` block (provider, dataflow, indicator, vintage, retrieved_at). Banned phrases ("the World Bank reports Swedish GDP growth of...", "WB projects...") block CI.
+**Output discipline:** every economic claim in an article emits an `economicProvenance` block (provider, dataflow, indicator, vintage, retrieved_at). The provenance `provider` field for economic context is `imf` (or `scb` for Swedish-specific ground truth).
 
 ---
 

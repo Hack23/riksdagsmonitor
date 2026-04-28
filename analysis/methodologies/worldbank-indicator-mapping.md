@@ -1,10 +1,8 @@
 # World Bank Indicator → Article Type Mapping (Riksdagsmonitor)
 
-> ## ⚠️ Scope notice (effective 2026-04-25)
+> **Scope** — Riksdagsmonitor uses World Bank Open Data for non-economic context. Companion docs cover the rest of the data stack: [`imf-indicator-mapping.md`](imf-indicator-mapping.md) for economic context (macro, fiscal, monetary, external sector, trade, commodity, FX, interest rates) and SCB tables for Swedish-specific ground truth.
 >
-> **World Bank is NOT the primary source for economic data** in Riksdagsmonitor articles. All macro / fiscal / monetary / external-sector / trade context is sourced from **IMF** — see [`imf-indicator-mapping.md`](imf-indicator-mapping.md) and [`analysis/imf/`](../imf/).
->
-> This document covers the **non-economic residue** World Bank retains as primary:
+> Domains covered by this document:
 > - Governance (WGI, `source=75`) — `CC.EST`, `RL.EST`, `VA.EST`, `GE.EST`, `RQ.EST`, `PV.EST`
 > - Environment — `EN.ATM.CO2E.PC`, `EG.FEC.RNEW.ZS`, `AG.LND.FRST.ZS`, `ER.H2O.FWTL.ZS`
 > - Social / demographics — `SP.POP.TOTL`, `SP.DYN.LE00.IN`, `SP.DYN.CBRT.IN`, `IT.NET.USER.ZS`
@@ -15,22 +13,7 @@
 > - Innovation — `GB.XPD.RSDV.GD.ZS`, `IP.PAT.RESD`
 > - Crime / justice — `VC.IHR.PSRC.P5`
 >
-> ### 🚫 Deprecated economic codes (do NOT use as primary in new articles)
->
-> | WB code (deprecated) | IMF replacement (use instead) |
-> |----------------------|-------------------------------|
-> | `NY.GDP.MKTP.KD.ZG` | `WEO:NGDP_RPCH` |
-> | `NY.GDP.MKTP.CD` | `WEO:NGDPD` |
-> | `NY.GDP.PCAP.CD` | `WEO:NGDPDPC` |
-> | `FP.CPI.TOTL.ZG` | `WEO:PCPIPCH` |
-> | `SL.UEM.TOTL.ZS` | `WEO:LUR` (SCB AKU for Swedish-specific) |
-> | `GC.DOD.TOTL.GD.ZS` | `WEO:GGXWDG_NGDP` |
-> | `GC.XPN.TOTL.GD.ZS` | `WEO:GGX_NGDP` |
-> | `GC.REV.XGRT.GD.ZS` | `WEO:GGR_NGDP` |
-> | `BN.CAB.XOKA.GD.ZS` | `WEO:BCA_NGDPD` |
-> | `NE.EXP.GNFS.ZS` | `WEO:TX_RPCH` |
->
-> These codes remain read-only for back-compat with pre-2026-04-20 articles; new articles MUST use the IMF counterpart. See [`analysis/imf/indicators-inventory.json → deprecationPolicy`](../imf/indicators-inventory.json).
+> **Scope reference** — `scripts/world-bank-client.ts` `INDICATOR_IDS` and `analysis/worldbank/indicators-inventory.json` v4.0 catalogue the WB indicators documented here. Economic context (macro, fiscal, monetary, external, trade, commodity, FX, interest rates) is sourced from IMF via `scripts/imf-fetch.ts`.
 
 ---
 
@@ -38,7 +21,7 @@
 
 **Data access** — via the `world-bank` MCP server (local container, `worldbank-mcp@1.0.1`) using `get-social-data`, `get-health-data`, `get-education-data`, and the raw-REST passthrough for environment / defence / agriculture / innovation / governance codes. See [`.github/copilot-mcp.json`](../../.github/copilot-mcp.json) and [`.github/prompts/02-mcp-access.md`](../../.github/prompts/02-mcp-access.md).
 
-**Enforcement** — the gate check in [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) Check 4 currently verifies primary-source evidence (a `dok_id` or an allowed primary-source URL host — `riksdagen.se`, `regeringen.se`, `scb.se`, `worldbank.org`, `api.imf.org`, `data.imf.org`, `www.imf.org`). It does not yet block WB economic codes in new articles — treat the economic-deprecation list above as **methodology guidance** (advisory), with a follow-up automated lint planned.
+**Scope reference** — `INDICATOR_IDS` in `scripts/world-bank-client.ts` and `analysis/worldbank/indicators-inventory.json` v4.0 catalogue the indicators documented here (governance, environment, social, demographics, health, education, defence historicals, innovation, infrastructure, inequality, gender, energy, agriculture, crime/justice). Companion routing for economic context lives in [`imf-indicator-mapping.md`](imf-indicator-mapping.md) and [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md).
 
 ---
 
@@ -115,7 +98,8 @@ Sweden, 2023, WDI via world-bank MCP. Admiralty: B2.
 
 ## 6. Changelog
 
-- **v1.1 (2026-04-24)** — Scope tightened: WB economic codes explicitly deprecated, IMF replacements listed, scope notice added to header. Full IMF integration across methodologies/templates/prompts.
+- **v1.2 (2026-04-28)** — Document scoped to non-economic indicators (governance, environment, social, defence historicals, demographics, health, education, innovation, infrastructure, inequality, gender, energy, agriculture, crime). Economic context routes through [`imf-indicator-mapping.md`](imf-indicator-mapping.md).
+- **v1.1 (2026-04-24)** — Scope tightened: full IMF integration across methodologies/templates/prompts.
 - **v1.0 (2026-04-23)** — Initial Riksdagsmonitor mapping; adapted from EU Parliament Monitor `worldbank-indicator-mapping.md` Wave-2 scope.
 
 ---
@@ -193,7 +177,6 @@ get-health-data(countryCode="SWE", indicator="HEALTH_EXPENDITURE", years=10)
 | WGI country coverage gaps | Governance (some years) | Flag in `mcp-reliability-audit.md §7` if year missing |
 | Small-count suppression | HIV, TB, undernourishment | Note in article: "WB suppresses counts below threshold; exact value below X" |
 | WDI aggregation methodology differs from Eurostat / SCB | Social / health / education | When citing for EU comparison, note "WB WDI methodology; Eurostat may differ by ±X pp" |
-| WB economic code still callable but deprecated | All economic domains | Run `WB_ECON_REG` check in `mcp-reliability-audit.md §7`; re-fetch via IMF |
 | WGI annual frequency only | Governance | Do not interpolate between years; use "most recent available (YYYY)" |
 
 ---

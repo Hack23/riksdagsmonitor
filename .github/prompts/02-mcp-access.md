@@ -12,7 +12,7 @@ News workflows declare three data MCP servers + the built-in `github` toolset (v
 |---------------|-----------|-------------|-----------------|---------------|
 | `riksdag-regering` | HTTP (Render) | workflow `mcp-servers:` | `snake_case` | `get_sync_status`, `search_dokument`, `get_voteringar`, `get_dokument_innehall` |
 | `scb` | container (`@jarib/pxweb-mcp`, `node:25-alpine`) | workflow `mcp-servers:` | `snake_case` | `search_tables`, `get_table_info`, `query_table` |
-| `world-bank` | container (`worldbank-mcp`, `node:25-alpine`) | workflow `mcp-servers:` | `kebab-case` | `get-economic-data` *(legacy — economic context has migrated to IMF CLI; keep for WGI governance / environment / social residue only)*, `get-country-info`, `search-indicators` |
+| `world-bank` | container (`worldbank-mcp`, `node:25-alpine`) | workflow `mcp-servers:` | `kebab-case` | `get-economic-data` *(despite the legacy name, this method serves the non-economic indicator IDs documented in `analysis/worldbank/indicators-inventory.json`: governance WGI, environment, social/education residue, defence historicals, crime/justice; route economic context through `scripts/imf-fetch.ts`)*, `get-country-info`, `search-indicators` |
 | `github` | HTTP (Copilot MCP) | workflow `tools.github` (`toolsets: [all]`) | standard | full GitHub MCP toolset (issues, PRs, repos, code-search, actions, releases, discussions, …) |
 | `bash` | local helper | workflow `tools.bash: true` | standard | shell execution (**also hosts the IMF CLI — see § IMF CLI below**) |
 | `edit` | local helper | workflow `tools.edit:` | standard | filesystem edits inside `$GITHUB_WORKSPACE` |
@@ -47,7 +47,7 @@ Rules:
 - **Vintage discipline**: every projection quote MUST include the vintage tag — `(WEO Apr-2026, GGXWDG_NGDP)`.
 - **Provider decision**: macro / fiscal / monetary / external → IMF; governance (WGI) / environment / social residue → World Bank; Swedish-specific ground truth → SCB.
 - **Authoritative inventory**: [`analysis/imf/indicators-inventory.json`](../../analysis/imf/indicators-inventory.json) (machine-readable) · [`analysis/imf/data-dictionary.md`](../../analysis/imf/data-dictionary.md) (dataflow reference) · [`analysis/imf/agentic-integration.md`](../../analysis/imf/agentic-integration.md) (7-step playbook) · [`analysis/imf/indicator-policy-mapping.md`](../../analysis/imf/indicator-policy-mapping.md) (committee matrix).
-- **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) v2.1+.
+- **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) v3.0+.
 - **Firewall egress**: `data.imf.org`, `api.imf.org`, `www.imf.org` (already in every workflow's `network.allowed`).
 - **Statskontoret egress**: `www.statskontoret.se` / `statskontoret.se` are public non-MCP web sources used for agency capacity, state-governance evaluations, implementation feasibility, administrative burden and public-sector efficiency evidence.
 

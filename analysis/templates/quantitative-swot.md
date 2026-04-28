@@ -218,7 +218,7 @@ xychart-beta
 - [`scenario-analysis.md`](scenario-analysis.md) — SO quadrant actions → optimistic scenario; WT quadrant → pessimistic scenario
 - [`wildcards-blackswans.md`](wildcards-blackswans.md) — T1 (disinformation) directly maps to W5; T3 (EDP) maps to W8
 - [`coalition-mathematics.md`](coalition-mathematics.md) — W1 (thin majority) seat arithmetic sourced from here
-- [`analysis/imf/README.md`](../imf/README.md) — **IMF economic-data contract** for S2, T2, T3 economic items; use `WEO:NGDP_RPCH`, `FM:GGXWDG_NGDP`, `WEO:GGXCNL_NGDP` with vintage tag; World Bank economic codes deprecated
+- [`analysis/imf/README.md`](../imf/README.md) — **IMF economic-data contract** for S2, T2, T3 economic items; use `WEO:NGDP_RPCH`, `FM:GGXWDG_NGDP`, `WEO:GGXCNL_NGDP` with vintage tag
 
 † WEP = [Words-of-Estimative-Probability](../methodologies/osint-tradecraft-standards.md#wep) confidence band (mapped to `C` parameter).
 

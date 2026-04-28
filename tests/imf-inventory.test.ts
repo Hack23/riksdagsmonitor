@@ -4,10 +4,10 @@
  * Asserts the shape and completeness of:
  *   - analysis/imf/indicators-inventory.json (v1.0 canonical IMF catalogue)
  *   - analysis/economic-indicators-inventory.json (v4.1 multi-provider, with
- *     IMF-first decision matrix and WB deprecation policy)
+ *     IMF-first decision matrix and per-domain provider routing)
  *
  * These files are referenced by:
- *   - .github/aw/ECONOMIC_DATA_CONTRACT.md (v2.1+)
+ *   - .github/aw/ECONOMIC_DATA_CONTRACT.md (v3.0+)
  *   - analysis/methodologies/imf-indicator-mapping.md (v2.0)
  *   - analysis/methodologies/worldbank-indicator-mapping.md (v1.1)
  *   - .github/prompts/02-mcp-access.md, 04-analysis-pipeline.md
@@ -41,7 +41,6 @@ interface ImfDomain {
   primary?: boolean;
   committees: string[];
   indicators: ImfIndicator[];
-  supersedesWorldBank?: string[];
   [key: string]: unknown;
 }
 
@@ -50,28 +49,17 @@ interface ImfInventory {
   lastUpdated: string;
   source: string;
   committeeMatrix: Record<string, { provider: string; mustQuery: string[] }>;
-  deprecationPolicy: {
-    worldBankEconomicCodes: {
-      supersedes: Record<string, string>;
-      [k: string]: unknown;
-    };
-  };
   vintageDiscipline: { current: string; [k: string]: unknown };
   domains: Record<string, ImfDomain>;
   databases: Record<string, { label: string; [k: string]: unknown }>;
   totalIndicators: number;
+  indicators?: ImfIndicator[];
 }
 
 interface EconomicInventory {
   version: string;
-  deprecationPolicy: {
-    worldBankEconomicCodes: {
-      supersedes: Record<string, string>;
-      [k: string]: unknown;
-    };
-  };
   authoritativeSources: Record<string, string>;
-  indicators: Array<{ id: string; provider: string; supersedes?: string; [k: string]: unknown }>;
+  indicators: Array<{ id: string; provider: string; domain?: string; [k: string]: unknown }>;
 }
 
 function readJson<T>(relativePath: string): T {
@@ -139,16 +127,8 @@ describe('analysis/imf/indicators-inventory.json (v1.0 canonical)', () => {
     }
   });
 
-  it('exposes a deprecation policy mapping WB economic codes to IMF replacements', () => {
-    const dep = inv.deprecationPolicy.worldBankEconomicCodes.supersedes;
-    for (const wbCode of [
-      'NY.GDP.MKTP.KD.ZG',
-      'FP.CPI.TOTL.ZG',
-      'SL.UEM.TOTL.ZS',
-      'GC.DOD.TOTL.GD.ZS',
-    ]) {
-      expect(dep[wbCode], `deprecationPolicy missing WB code ${wbCode}`).toMatch(/^imf:/);
-    }
+  it('IMF inventory uses provider routing (no deprecation block)', () => {
+    expect((inv as { deprecationPolicy?: unknown }).deprecationPolicy).toBeUndefined();
   });
 
   it('committee matrix covers the main economic committees with IMF provider', () => {
@@ -187,24 +167,26 @@ describe('analysis/economic-indicators-inventory.json (v4.1 multi-provider)', ()
     );
   });
 
-  it('declares the WB-→-IMF supersedes map consistent with the IMF inventory', () => {
-    const econDep = inv.deprecationPolicy.worldBankEconomicCodes.supersedes;
+  it('master and IMF inventories use provider routing (no deprecation block)', () => {
+    expect((inv as { deprecationPolicy?: unknown }).deprecationPolicy).toBeUndefined();
     const imfInv = readJson<ImfInventory>('analysis/imf/indicators-inventory.json');
-    const imfDep = imfInv.deprecationPolicy.worldBankEconomicCodes.supersedes;
-
-    // Every WB code listed in the multi-provider inventory must match the IMF-inventory mapping.
-    for (const [wbCode, imfTarget] of Object.entries(econDep)) {
-      expect(imfDep[wbCode], `IMF inventory deprecation missing ${wbCode}`).toBe(imfTarget);
-    }
+    expect((imfInv as { deprecationPolicy?: unknown }).deprecationPolicy).toBeUndefined();
   });
 
-  it('every inline IMF indicator that supersedes a WB code uses a valid WB prefix', () => {
-    for (const ind of inv.indicators ?? []) {
-      if (ind.supersedes) {
-        expect(ind.supersedes, `${ind.id} supersedes must be worldBank:CODE`).toMatch(
-          /^worldBank:[A-Z0-9._]+$/,
-        );
+  it('IMF inventory indicators use IMF dataflows directly (no `supersedes` mapping)', () => {
+    const imfInv = readJson<ImfInventory>('analysis/imf/indicators-inventory.json');
+    const domains = (imfInv as { domains?: Record<string, { indicators?: Array<Record<string, unknown>> }> }).domains ?? {};
+    let inspected = 0;
+    for (const [domainKey, domain] of Object.entries(domains)) {
+      for (const ind of domain.indicators ?? []) {
+        inspected++;
+        const id = (ind as { id?: string }).id ?? '<unknown>';
+        expect(
+          (ind as { supersedes?: string }).supersedes,
+          `IMF indicator ${domainKey}/${id} must not carry a supersedes link`,
+        ).toBeUndefined();
       }
     }
+    expect(inspected, 'expected to inspect at least one IMF indicator').toBeGreaterThan(0);
   });
 });

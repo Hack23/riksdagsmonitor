@@ -272,7 +272,8 @@ graph TD
 | **Social media (X/Twitter, Facebook)** | **D–E** | 4–5 | MP tweet `[D4]` |
 | **Anonymous source** | **E** | 5 | Unnamed coalition source `[E5]` |
 | **SCB official statistics** | **A** | 1 | SCB partisympati Q1 2026 `[A1]` |
-| **World Bank / IMF data** | **A** | 1 | World Bank WGI 2025 `[A1]` |
+| **IMF data** (WEO/FM/IFS/BOP/GFS_COFOG/DOTS/PCPS/MFS_IR/ER) | **A** | 1 | IMF WEO Apr-2026 NGDP_RPCH `[A1]` |
+| **World Bank** (non-economic residue only — WGI, environment, social) | **A** | 1 | World Bank WGI 2025 `[A1]` |
 | **Pollster (SIFO, Novus, Demoskop)** | **B** | 2 | SIFO March 2026 `[B2]` |
 
 ### Admiralty Annotation Format
@@ -573,10 +574,10 @@ This matrix maps MCP tools to evidence types and template usage. Use this to pla
 | **riksdag-regering** | `search_regering` | Government documents | `comparative-international.md` | A1 |
 | **scb** | `query_table` | Swedish statistics | `voter-segmentation.md`, `election-2026-analysis.md` | A1 |
 | **scb** | `search_tables` | Statistical metadata | Evidence context | A1 |
-| **world-bank** | `get-economic-data` | WGI, economic indicators | `comparative-international.md` | A1 |
-| **world-bank** | `get-social-data` | Social indicators | `implementation-feasibility.md` | A1 |
-| **imf** (via `bash` + `tsx scripts/imf-fetch.ts`) | WEO projections (T+5) | Fiscal/macro forecasts | `comparative-international.md`, `implementation-feasibility.md` | A1 |
-| **imf** (via `bash` + `tsx scripts/imf-fetch.ts`) | SDMX IFS/BOP/GFS/DOTS | Balance of payments, fiscal indicators | `risk-assessment.md`, `implementation-feasibility.md` | A1 |
+| **world-bank** *(non-economic residue only)* | `get-country-info`, `search-indicators` | WGI governance (`source=75`), environment, social/education participation, defence historicals — **never** primary economic context | `comparative-international.md` (WGI rows only) | A1 |
+| **world-bank** *(non-economic residue only)* | `get-social-data` | Social/health/education indicators (non-economic residue) | `implementation-feasibility.md` | A1 |
+| **imf** (via `bash` + `tsx scripts/imf-fetch.ts`) — **PRIMARY ECONOMIC SOURCE** | WEO projections (T+5) | Macro / fiscal forecasts, GDP growth, inflation, unemployment, fiscal balance | `comparative-international.md`, `implementation-feasibility.md` | A1 |
+| **imf** (via `bash` + `tsx scripts/imf-fetch.ts`) — **PRIMARY ECONOMIC SOURCE** | SDMX IFS/BOP/GFS/DOTS/PCPS/MFS_IR/ER | Monetary, balance-of-payments, fiscal-by-function, bilateral trade, commodities, exchange rates | `risk-assessment.md`, `implementation-feasibility.md` | A1 |
 
 ### Collection Plan Template
 
