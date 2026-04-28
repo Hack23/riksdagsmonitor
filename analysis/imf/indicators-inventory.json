@@ -24,12 +24,12 @@
     "cli": "tsx scripts/imf-fetch.ts (commands: weo, compare, sdmx, list-indicators)",
     "library": "scripts/imf-client.ts (ImfClient class)",
     "codes": "scripts/imf-codes.ts (ISO3_TO_IMF_AREA for IFS/GFS/BOP numeric area codes)",
-    "context": "scripts/imf-context.ts (policy-area \u2194 committee mapping, IMF_NORDIC_PEERS)"
+    "context": "scripts/imf-context.ts (policy-area ↔ committee mapping, IMF_NORDIC_PEERS)"
   },
   "notes": {
     "firewallAllowlist": "data.imf.org, api.imf.org, www.imf.org",
     "noMcp": "IMF is NOT an MCP server. Agentic workflows invoke the TypeScript CLI via the bash tool. This keeps IMF under the same npm/SBOM governance as world-bank-client.ts and scb-client.ts with zero Python/uvx runtime.",
-    "rateLimit": "IMF advertises ~10 req / 5s. Prefer the 'compare' subcommand (single batched call) over parallel 'weo' calls. Client retries 3\u00d7 on 429/5xx with 1s\u21922s\u21924s back-off.",
+    "rateLimit": "IMF advertises ~10 req / 5s. Prefer the 'compare' subcommand (single batched call) over parallel 'weo' calls. Client retries 3× on 429/5xx with 1s→2s→4s back-off.",
     "vintage": "Every projection value carries a projectionVintage tag (e.g. 'WEO-2026-04', 'FM-2026-04'). Update DEFAULT_WEO_VINTAGE in scripts/imf-client.ts when the IMF publishes a new flagship release (April / October).",
     "persistence": "Use the --persist flag to cache raw responses under analysis/data/imf/{indicator}/{country}.json. Reuse across article types within the same daily run to minimise API calls."
   },
@@ -51,7 +51,7 @@
       "frequency": "Annual",
       "cadence": "April / October (flagship releases, aligned with WEO)",
       "projectionHorizon": "T+5",
-      "coverage": "Deeper fiscal detail than WEO \u2014 primary balance, cyclically-adjusted balance, interest payments, debt-sustainability analysis.",
+      "coverage": "Deeper fiscal detail than WEO — primary balance, cyclically-adjusted balance, interest payments, debt-sustainability analysis.",
       "urlPattern": "https://www.imf.org/external/datamapper/api/v1/{indicatorCode}/{iso3}"
     },
     "IFS": {
@@ -59,7 +59,7 @@
       "endpoint": "sdmx",
       "frequency": "Monthly / Quarterly",
       "cadence": "Monthly",
-      "coverage": "High-frequency monetary & financial series \u2014 policy rates, interest rates, exchange rates, CPI (monthly), money supply, reserves.",
+      "coverage": "High-frequency monetary & financial series — policy rates, interest rates, exchange rates, CPI (monthly), money supply, reserves.",
       "note": "Accessed via ImfClient.sdmxFetch(). Uses IMF 3-digit numeric AREA codes (see scripts/imf-codes.ts)."
     },
     "BOP": {
@@ -71,15 +71,15 @@
       "note": "BOP_AGG is the aggregate summary; raw BOP has deeper detail."
     },
     "GFS_COFOG": {
-      "label": "Government Finance Statistics \u2014 Classification of Functions of Government",
+      "label": "Government Finance Statistics — Classification of Functions of Government",
       "endpoint": "sdmx",
       "frequency": "Annual",
       "cadence": "T+1 (data for year Y released in year Y+1)",
-      "coverage": "Government expenditure broken down by function (COFOG 01\u201310): 02 Defence \u2192 F\u00f6U, 07 Health \u2192 SoU, 09 Education \u2192 UbU, 10 Social Protection \u2192 SfU.",
+      "coverage": "Government expenditure broken down by function (COFOG 01–10): 02 Defence → FöU, 07 Health → SoU, 09 Education → UbU, 10 Social Protection → SfU.",
       "note": "Best source for committee-aligned spending decomposition."
     },
     "MFS_IR": {
-      "label": "Monetary & Financial Statistics \u2014 Interest Rates",
+      "label": "Monetary & Financial Statistics — Interest Rates",
       "endpoint": "sdmx",
       "frequency": "Monthly",
       "cadence": "Monthly",
@@ -90,14 +90,14 @@
       "endpoint": "sdmx",
       "frequency": "Monthly",
       "cadence": "Monthly",
-      "coverage": "Bilateral trade flows \u2014 exports and imports by partner country. Useful for NU/UU trade-policy coverage."
+      "coverage": "Bilateral trade flows — exports and imports by partner country. Useful for NU/UU trade-policy coverage."
     },
     "PCPS": {
       "label": "Primary Commodity Prices",
       "endpoint": "sdmx",
       "frequency": "Monthly",
       "cadence": "Monthly",
-      "coverage": "Commodity price indices \u2014 energy, metals, food. Feeds inflation-drivers commentary."
+      "coverage": "Commodity price indices — energy, metals, food. Feeds inflation-drivers commentary."
     },
     "ER": {
       "label": "Exchange Rates",
@@ -142,7 +142,6 @@
           ],
           "projectionHorizon": "T+5",
           "publishesProjections": true,
-          "supersedes": "worldBank:NY.GDP.MKTP.KD.ZG",
           "citation": "WEO:NGDP_RPCH",
           "admiralty": "A1"
         },
@@ -180,7 +179,6 @@
           ],
           "projectionHorizon": "T+5",
           "publishesProjections": true,
-          "supersedes": "worldBank:NY.GDP.MKTP.CD",
           "citation": "WEO:NGDPD",
           "admiralty": "A1"
         },
@@ -202,7 +200,6 @@
           ],
           "projectionHorizon": "T+5",
           "publishesProjections": true,
-          "supersedes": "worldBank:NY.GDP.PCAP.CD",
           "citation": "WEO:NGDPDPC",
           "admiralty": "A1"
         },
@@ -254,7 +251,6 @@
           ],
           "projectionHorizon": "T+5",
           "publishesProjections": true,
-          "supersedes": "worldBank:FP.CPI.TOTL.ZG",
           "citation": "WEO:PCPIPCH",
           "admiralty": "A1"
         },
@@ -309,11 +305,10 @@
           ],
           "projectionHorizon": "T+5",
           "publishesProjections": true,
-          "supersedes": "worldBank:SL.UEM.TOTL.ZS",
           "citation": "WEO:LUR",
           "admiralty": "A2",
           "caveats": [
-            "WEO LUR may diverge from SCB AKU by 0.1\u20130.3 pp due to definitional differences. Prefer SCB for Swedish-specific ground truth; use IMF for cross-country comparison."
+            "WEO LUR may diverge from SCB AKU by 0.1–0.3 pp due to definitional differences. Prefer SCB for Swedish-specific ground truth; use IMF for cross-country comparison."
           ]
         },
         {
@@ -337,7 +332,7 @@
       ]
     },
     "fiscal": {
-      "label": "Fiscal policy \u2014 general government",
+      "label": "Fiscal policy — general government",
       "primary": true,
       "committees": [
         "FiU",
@@ -367,7 +362,6 @@
           ],
           "projectionHorizon": "T+5",
           "publishesProjections": true,
-          "supersedes": "worldBank:GC.DOD.TOTL.GD.ZS",
           "citation": "WEO:GGXWDG_NGDP",
           "admiralty": "A1"
         },
@@ -388,7 +382,6 @@
           ],
           "projectionHorizon": "T+5",
           "publishesProjections": true,
-          "supersedes": "worldBank:GC.REV.XGRT.GD.ZS",
           "citation": "WEO:GGR_NGDP",
           "admiralty": "A1"
         },
@@ -408,7 +401,6 @@
           ],
           "projectionHorizon": "T+5",
           "publishesProjections": true,
-          "supersedes": "worldBank:GC.XPN.TOTL.GD.ZS",
           "citation": "WEO:GGX_NGDP",
           "admiralty": "A1"
         },
@@ -418,7 +410,7 @@
           "database": "WEO",
           "name": "General government net lending / borrowing (% of GDP)",
           "unit": "% of GDP",
-          "description": "Headline fiscal balance (surplus +, deficit \u2212). Projected to T+5.",
+          "description": "Headline fiscal balance (surplus +, deficit −). Projected to T+5.",
           "policyAreas": [
             "fiscal policy",
             "budget"
@@ -458,7 +450,7 @@
           "database": "FM",
           "name": "Cyclically-adjusted primary balance (% of potential GDP)",
           "unit": "% of potential GDP",
-          "description": "Structural fiscal stance \u2014 removes business-cycle effects from the primary balance. Preferred metric for assessing discretionary policy.",
+          "description": "Structural fiscal stance — removes business-cycle effects from the primary balance. Preferred metric for assessing discretionary policy.",
           "policyAreas": [
             "fiscal policy",
             "structural balance"
@@ -505,7 +497,6 @@
           ],
           "projectionHorizon": "T+5",
           "publishesProjections": true,
-          "supersedes": "worldBank:BN.CAB.XOKA.GD.ZS",
           "citation": "WEO:BCA_NGDPD",
           "admiralty": "A1"
         },
@@ -582,7 +573,7 @@
           "database": "MFS_IR",
           "name": "Central bank policy rate",
           "unit": "% per annum",
-          "description": "Riksbankens styrr\u00e4nta / central-bank target rate. Monthly frequency.",
+          "description": "Riksbankens styrränta / central-bank target rate. Monthly frequency.",
           "policyAreas": [
             "monetary policy"
           ],
@@ -618,7 +609,7 @@
       "label": "Government spending by function (COFOG)",
       "primary": true,
       "committees": [
-        "F\u00f6U",
+        "FöU",
         "SoU",
         "UbU",
         "SfU",
@@ -637,7 +628,7 @@
             "fiscal policy"
           ],
           "committees": [
-            "F\u00f6U",
+            "FöU",
             "FiU"
           ],
           "publishesProjections": false,
@@ -716,7 +707,7 @@
           "id": "TXG_FOB_USD",
           "key": "imfExportsBilateral",
           "database": "DOTS",
-          "name": "Exports of goods, FOB (USD) \u2014 bilateral",
+          "name": "Exports of goods, FOB (USD) — bilateral",
           "unit": "USD",
           "description": "Monthly bilateral merchandise exports to a named partner country. Useful for trade-policy & sanctions coverage.",
           "policyAreas": [
@@ -735,7 +726,7 @@
           "id": "TMG_CIF_USD",
           "key": "imfImportsBilateral",
           "database": "DOTS",
-          "name": "Imports of goods, CIF (USD) \u2014 bilateral",
+          "name": "Imports of goods, CIF (USD) — bilateral",
           "unit": "USD",
           "description": "Monthly bilateral merchandise imports from a named partner country.",
           "policyAreas": [
@@ -892,7 +883,7 @@
         "GFS_COFOG:G10"
       ]
     },
-    "F\u00f6U": {
+    "FöU": {
       "provider": "IMF + WB",
       "mustQuery": [
         "GFS_COFOG:G02"
@@ -932,7 +923,7 @@
       "april": "Late-April (flagship WEO + Fiscal Monitor)",
       "october": "Mid-October (flagship WEO + Fiscal Monitor)"
     },
-    "rule": "Every projection citation MUST include the vintage tag in parentheses \u2014 e.g. '(WEO Apr-2026, GGXWDG_NGDP)'. Historical citations do not need the tag. Any projection citation older than 6 months gets a warning annotation in methodology-reflection.md.",
+    "rule": "Every projection citation MUST include the vintage tag in parentheses — e.g. '(WEO Apr-2026, GGXWDG_NGDP)'. Historical citations do not need the tag. Any projection citation older than 6 months gets a warning annotation in methodology-reflection.md.",
     "cutover": "When a new WEO release is published, update DEFAULT_WEO_VINTAGE in scripts/imf-client.ts and the 'current' field above in the same PR."
   },
   "referenced": {

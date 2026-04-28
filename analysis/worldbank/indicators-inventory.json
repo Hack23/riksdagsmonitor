@@ -1,6 +1,6 @@
 {
   "version": "4.0",
-  "description": "Complete inventory of 144 World Bank indicators for Riksdagsmonitor political intelligence. This is the SINGLE SOURCE OF TRUTH \u2014 both AI agents (via view tool) and TypeScript modules load from this file.",
+  "description": "Inventory of 79 World Bank indicators covering Riksdagsmonitor's documented WB scope: governance (WGI, source=75), environment, social, demographics, health, education, defence historicals, innovation, infrastructure, inequality, gender, energy, agriculture, crime/justice. This is the SINGLE SOURCE OF TRUTH \u2014 both AI agents (via view tool) and TypeScript modules load from this file. Economic context (macro, fiscal, monetary, external, trade, commodity, FX, interest rates) is sourced from IMF \u2014 see analysis/imf/indicators-inventory.json.",
   "lastUpdated": "2026-04-28",
   "source": "World Bank Open Data API (api.worldbank.org/v2) + worldbank-mcp@1.0.1",
   "targetCountry": "SE (Sweden)",

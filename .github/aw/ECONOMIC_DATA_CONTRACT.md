@@ -468,7 +468,7 @@ mirror the change in the version history below.
 
 - **3.0 (2026-04-28)** — IMF is the economic-data source for every
   economic claim. `INDICATOR_IDS` (`scripts/world-bank-client.ts`)
-  and `analysis/worldbank/indicators-inventory.json` v3.2 catalogue
+  and `analysis/worldbank/indicators-inventory.json` v4.0 catalogue
   the World Bank's non-economic scope: governance, environment,
   social, defence historicals, demographics, health, education,
   innovation, infrastructure, inequality, gender, energy use. Footer

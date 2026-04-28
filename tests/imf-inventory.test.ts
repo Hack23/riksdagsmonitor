@@ -175,11 +175,18 @@ describe('analysis/economic-indicators-inventory.json (v4.1 multi-provider)', ()
 
   it('IMF inventory indicators use IMF dataflows directly (no `supersedes` mapping)', () => {
     const imfInv = readJson<ImfInventory>('analysis/imf/indicators-inventory.json');
-    for (const ind of imfInv.indicators ?? []) {
-      expect(
-        (ind as { supersedes?: string }).supersedes,
-        `IMF indicator ${ind.id} must not carry a supersedes link`,
-      ).toBeUndefined();
+    const domains = (imfInv as { domains?: Record<string, { indicators?: Array<Record<string, unknown>> }> }).domains ?? {};
+    let inspected = 0;
+    for (const [domainKey, domain] of Object.entries(domains)) {
+      for (const ind of domain.indicators ?? []) {
+        inspected++;
+        const id = (ind as { id?: string }).id ?? '<unknown>';
+        expect(
+          (ind as { supersedes?: string }).supersedes,
+          `IMF indicator ${domainKey}/${id} must not carry a supersedes link`,
+        ).toBeUndefined();
+      }
     }
+    expect(inspected, 'expected to inspect at least one IMF indicator').toBeGreaterThan(0);
   });
 });

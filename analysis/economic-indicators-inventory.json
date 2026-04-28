@@ -1,7 +1,7 @@
 {
-  "version": "4.1",
-  "description": "Multi-provider economic indicator inventory for Riksdagsmonitor. Single source of truth for IMF + World Bank + SCB indicator discovery. IMF is PRIMARY for all economic context (see analysis/imf/indicators-inventory.json v1.0 for the full machine-readable IMF catalogue). World Bank economic codes are DEPRECATED (kept as read-only reference for back-compat); WB remains primary for non-economic residue (WGI governance, environment, social/education participation, defence historicals, crime). SCB tables are defined by scripts/scb-context.ts (committee \u2192 TAB mapping).",
-  "lastUpdated": "2026-04-24",
+  "version": "4.2",
+  "description": "Multi-provider indicator inventory for Riksdagsmonitor. Provider routing: IMF supplies every economic claim (macro, fiscal, monetary, external, trade, commodity, FX, interest rates) \u2014 see analysis/imf/indicators-inventory.json v1.0 for the full machine-readable IMF catalogue. SCB tables (defined by scripts/scb-context.ts, committee \u2192 TAB mapping) supply Swedish-specific ground truth. World Bank covers governance (WGI source=75), environment, social/education participation, demographics, health, education, defence historicals, innovation, infrastructure, inequality, gender, energy, agriculture, crime/justice \u2014 see analysis/worldbank/indicators-inventory.json.",
+  "lastUpdated": "2026-04-28",
   "effectiveDate": "2026-04-20",
   "schemaCutover": "2026-05-31",
   "authoritativeSources": {

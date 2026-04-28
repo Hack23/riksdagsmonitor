@@ -121,11 +121,11 @@ function resolveInventoryPath(): string {
 
 /**
  * Load and transform indicators from the JSON inventory file.
- * The inventory contains **non-economic residue only** — economic codes
- * have been purged. Each indicator is mapped to an
- * {@link WorldBankIndicatorContext} (the legacy interface name is retained
- * for back-compat with downstream callers; semantically the contents are
- * non-economic only).
+ * The inventory catalogues World Bank's documented scope (governance,
+ * environment, social, demographics, health, education, defence
+ * historicals, innovation, infrastructure, inequality, gender, energy,
+ * agriculture, crime/justice). Each indicator is mapped to a
+ * {@link WorldBankIndicatorContext}.
  */
 function loadIndicatorsFromInventory(): readonly WorldBankIndicatorContext[] {
   try {

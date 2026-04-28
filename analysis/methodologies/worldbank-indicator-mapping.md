@@ -13,7 +13,7 @@
 > - Innovation — `GB.XPD.RSDV.GD.ZS`, `IP.PAT.RESD`
 > - Crime / justice — `VC.IHR.PSRC.P5`
 >
-> **Enforcement** — `scripts/world-bank-client.ts` `INDICATOR_IDS` exposes only non-economic codes; `analysis/worldbank/indicators-inventory.json` v3.2 contains only non-economic domains; reaching for an economic code (GDP, inflation, unemployment, fiscal aggregates, BoP, trade flows, interest rates) is a TypeScript compile error pointing at `scripts/imf-fetch.ts`.
+> **Scope reference** — `scripts/world-bank-client.ts` `INDICATOR_IDS` and `analysis/worldbank/indicators-inventory.json` v4.0 catalogue the WB indicators documented here. Economic context (macro, fiscal, monetary, external, trade, commodity, FX, interest rates) is sourced from IMF via `scripts/imf-fetch.ts`.
 
 ---
 
@@ -21,7 +21,7 @@
 
 **Data access** — via the `world-bank` MCP server (local container, `worldbank-mcp@1.0.1`) using `get-social-data`, `get-health-data`, `get-education-data`, and the raw-REST passthrough for environment / defence / agriculture / innovation / governance codes. See [`.github/copilot-mcp.json`](../../.github/copilot-mcp.json) and [`.github/prompts/02-mcp-access.md`](../../.github/prompts/02-mcp-access.md).
 
-**Scope reference** — `INDICATOR_IDS` in `scripts/world-bank-client.ts` and `analysis/worldbank/indicators-inventory.json` v3.2 catalogue the indicators documented here (governance, environment, social, demographics, health, education, defence historicals, innovation, infrastructure, inequality, gender, energy, agriculture, crime/justice). Companion routing for economic context lives in [`imf-indicator-mapping.md`](imf-indicator-mapping.md) and [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md).
+**Scope reference** — `INDICATOR_IDS` in `scripts/world-bank-client.ts` and `analysis/worldbank/indicators-inventory.json` v4.0 catalogue the indicators documented here (governance, environment, social, demographics, health, education, defence historicals, innovation, infrastructure, inequality, gender, energy, agriculture, crime/justice). Companion routing for economic context lives in [`imf-indicator-mapping.md`](imf-indicator-mapping.md) and [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md).
 
 ---
 
