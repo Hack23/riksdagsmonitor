@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "analysis_date": "2026-04-28",
+  "subfolder": "realtime-pulse",
+  "generated_at": "2026-04-28T19:30:00Z",
+  "pirs": [
+    {
+      "id": "PIR-001",
+      "question": "Will the vilande grundlagsbeslut (prop. 2024/25:165, 2/3-majority constitutional amendment) be confirmed by the post-election parliament?",
+      "status": "OPEN",
+      "priority": "CRITICAL",
+      "collection_requirement": "Monitor September 2026 election results; track ip452 response from Strömmer 2026-05-19",
+      "forward_indicator": "FI-11",
+      "last_update": "2026-04-28"
+    },
+    {
+      "id": "PIR-002",
+      "question": "What is the government's confirmed timeline for SfU28 passage?",
+      "status": "RESOLVED",
+      "resolution": "Committee vote expected by 2026-05-28; chamber vote June 2026; in-force July 2026",
+      "priority": "HIGH",
+      "forward_indicator": "FI-01",
+      "last_update": "2026-04-28"
+    },
+    {
+      "id": "PIR-003",
+      "question": "Will Sweden's CER Directive transposition (FöU20) be completed on schedule by EU deadline?",
+      "status": "RESOLVED",
+      "resolution": "YES — FöU20 scheduled for vote 2026-06-15; EU deadline June 2026; on track",
+      "priority": "HIGH",
+      "forward_indicator": "FI-03",
+      "last_update": "2026-04-28"
+    },
+    {
+      "id": "PIR-004",
+      "question": "What is the IMF's revised GDP growth projection for Sweden 2026?",
+      "status": "PARTIAL",
+      "partial_answer": "WEO Apr-2026 projects approximately 1.2% GDP growth for Sweden 2026. Full SDMX confirmation pending.",
+      "priority": "MEDIUM",
+      "forward_indicator": "FI-06",
+      "last_update": "2026-04-28"
+    },
+    {
+      "id": "PIR-005",
+      "question": "Will SfU28 coalition unity hold — specifically will SD accept EU-citizen carveout and will L/KD accept any language test provisions?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "collection_requirement": "Monitor SfU28 committee deliberation; track SD and L/KD press statements May 2026",
+      "forward_indicator": "FI-01",
+      "last_update": "2026-04-28"
+    }
+  ]
+}
