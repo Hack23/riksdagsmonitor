@@ -373,6 +373,19 @@ describe('Network Diagnostics Configuration', () => {
 
   describe('Safe-Output Allowed Domains', () => {
     ALL_NEWS_WORKFLOWS.forEach(workflow => {
+      it(`${workflow} should set threat detection to warning-only mode`, () => {
+        const filepath = path.join(WORKFLOWS_DIR, workflow);
+        const content = fs.readFileSync(filepath, 'utf-8');
+        const fm = extractFrontmatter(content);
+
+        expect(
+          fm,
+          `${workflow} missing safe-outputs.threat-detection.continue-on-error: true`
+        ).toMatch(/safe-outputs:[\s\S]*^\s{2}threat-detection:\n^\s{4}continue-on-error:\s+true\b/m);
+      });
+    });
+
+    ALL_NEWS_WORKFLOWS.forEach(workflow => {
       it(`${workflow} should have safe-outputs.allowed-domains covering MCP services`, () => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
         const content = fs.readFileSync(filepath, 'utf-8');
