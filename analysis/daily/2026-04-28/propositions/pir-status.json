@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "cycle": "propositions",
+  "date": "2026-04-28",
+  "subfolder": "propositions",
+  "generated_at": "2026-04-28T06:45:00Z",
+  "pirs": [
+    {
+      "id": "PIR-2026-PROP-001",
+      "question": "Will HD03252 (welfare restriction for controlled housing inmates) pass the riksdag before the September 2026 election?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "indicators": [
+        "Lagrådet opinion on EU coordination law compatibility",
+        "L (Liberalerna) party group statement on conditions",
+        "SfU committee referral timeline"
+      ],
+      "watch_date": "2026-05-31",
+      "related_docs": ["HD03252"]
+    },
+    {
+      "id": "PIR-2026-PROP-002",
+      "question": "Will CRR3/CRD6 implementation (HD03253) trigger visible housing credit tightening in Sweden by Q3 2026?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "indicators": [
+        "Riksbanken Stabilitetsrapport May 2026 credit conditions",
+        "FI capital requirement impact assessment Q2 2026",
+        "Swedish major bank Q2 results capital statements"
+      ],
+      "watch_date": "2026-05-28",
+      "related_docs": ["HD03253"]
+    },
+    {
+      "id": "PIR-2026-PROP-003",
+      "question": "Is the 2026-04-23 batch part of a coordinated Finansdepartementet fiscal narrative operation?",
+      "status": "ASSESSED",
+      "priority": "LOW",
+      "assessment": "HIGH CONFIDENCE — Yes. HD03104 + HD03253 dual FiU submission in same week is consistent with coordinated messaging.",
+      "related_docs": ["HD03104", "HD03253"]
+    }
+  ]
+}
