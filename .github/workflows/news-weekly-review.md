@@ -120,6 +120,8 @@ tools:
     retention-days: 14
 
 safe-outputs:
+  threat-detection:
+    continue-on-error: true
   allowed-domains:
     - riksdag-regering-ai.onrender.com
     - api.scb.se

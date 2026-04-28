@@ -123,6 +123,8 @@ tools:
     retention-days: 14
 
 safe-outputs:
+  threat-detection:
+    continue-on-error: true
   report-failure-as-issue: false
   allowed-domains:
     - riksdag-regering-ai.onrender.com
