@@ -5,7 +5,8 @@
 #
 # Triggered by `workflow_run` after each news-* workflow completes (success
 # OR failure). Downloads the `agent` artifact, looks for the sandbox commit
-# handoff (/tmp/gh-aw/aw-fallback.bundle + /tmp/gh-aw/aw-fallback.json) that
+# handoff (`/tmp/gh-aw/aw-fallback.bundle` + `/tmp/gh-aw/agent/aw-fallback.json`,
+# with `/tmp/gh-aw/aw-fallback.json` accepted as a legacy fallback) that
 # Stage E in `.github/prompts/07-commit-and-pr.md` mandates, and pushes the
 # recovered commit to origin under a host PAT — opening (or refreshing) the
 # PR that the in-sandbox safeoutputs call could not deliver.
@@ -123,7 +124,13 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           ref: main
-          fetch-depth: 1
+          # fetch-depth: 0 (full history) — required so the protected-paths
+          # gate in scripts/gh-aw-pat-pr-fallback.sh can resolve the
+          # merge-base between the recovered branch and origin/main even when
+          # main has advanced since the agent run started. With a shallow
+          # checkout the merge-base may not exist locally and the gate would
+          # fail closed (which is correct, but wastes a recovery opportunity).
+          fetch-depth: 0
           persist-credentials: false
 
       - name: Download agent artifact from triggering run

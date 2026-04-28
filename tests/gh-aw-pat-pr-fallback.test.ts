@@ -39,6 +39,10 @@ interface RunOptions {
   ghAwDir: string;
   hostRepoDir: string;
   env?: Record<string, string>;
+  /** When true, do not set GH_AW_PAT_FALLBACK_MANIFEST so the script's
+   *  built-in auto-probe of /tmp/gh-aw/agent/aw-fallback.json (and the
+   *  legacy /tmp/gh-aw/aw-fallback.json) is exercised. */
+  skipManifestOverride?: boolean;
 }
 
 function runScript(opts: RunOptions): RunResult {
@@ -50,7 +54,10 @@ function runScript(opts: RunOptions): RunResult {
     HOME: process.env.HOME,
     ...opts.env,
     GH_AW_PAT_FALLBACK_BUNDLE: path.join(opts.ghAwDir, 'aw-fallback.bundle'),
-    GH_AW_PAT_FALLBACK_MANIFEST: path.join(opts.ghAwDir, 'aw-fallback.json'),
+    // Per-test sandbox of the auto-probe paths so the script never reads or
+    // writes the real `/tmp/gh-aw/...` shared by every test.
+    GH_AW_PAT_FALLBACK_MANIFEST_PRIMARY: path.join(opts.ghAwDir, 'agent', 'aw-fallback.json'),
+    GH_AW_PAT_FALLBACK_MANIFEST_LEGACY: path.join(opts.ghAwDir, 'aw-fallback.json'),
     GH_AW_PAT_FALLBACK_STDIO_LOG: path.join(opts.ghAwDir, 'agent-stdio.log'),
     GH_AW_PAT_FALLBACK_AUDIT_LOG: auditPath,
     GH_AW_PAT_FALLBACK_SAFEOUTPUTS_FILE: path.join(opts.ghAwDir, 'safeoutputs.jsonl'),
@@ -62,6 +69,9 @@ function runScript(opts: RunOptions): RunResult {
     GITHUB_STEP_SUMMARY: summaryPath,
     DEFAULT_BRANCH: 'main',
   };
+  if (!opts.skipManifestOverride) {
+    env.GH_AW_PAT_FALLBACK_MANIFEST = path.join(opts.ghAwDir, 'aw-fallback.json');
+  }
   const result = spawnSync('bash', [SCRIPT], {
     cwd: opts.hostRepoDir,
     env,
@@ -182,6 +192,27 @@ describe('gh-aw-pat-pr-fallback.sh', () => {
     expect(result.audit).toMatch(/"event":"primary_start"/);
     expect(result.audit).toMatch(/"event":"dry_run_success"/);
     expect(result.audit).toMatch(/"message":"primary path"/);
+    expect(result.audit).toMatch(new RegExp(`"branch":"${branch}"`));
+  });
+
+  it('scenario 1b: auto-probes manifest at agent/aw-fallback.json (current contract location)', () => {
+    const hostRepoDir = makeHostRepo(rootTmp);
+    const ghAwDir = path.join(rootTmp, 'gh-aw');
+    fs.mkdirSync(path.join(ghAwDir, 'agent'), { recursive: true });
+    const branch = 'news/2026-04-28-week-in-review-run-autoprobe';
+    const handoff = makeBundleHandoff(rootTmp, hostRepoDir, branch);
+    fs.copyFileSync(handoff.bundlePath, path.join(ghAwDir, 'aw-fallback.bundle'));
+    // Write manifest ONLY at the new contract location — no env override.
+    fs.writeFileSync(
+      path.join(ghAwDir, 'agent', 'aw-fallback.json'),
+      JSON.stringify(handoff.manifest),
+    );
+    fs.writeFileSync(path.join(ghAwDir, 'safeoutputs.jsonl'), '');
+
+    const result = runScript({ ghAwDir, hostRepoDir, skipManifestOverride: true });
+    expect(result.status).toBe(0);
+    expect(result.audit).toMatch(/"event":"primary_start"/);
+    expect(result.audit).toMatch(/"event":"dry_run_success"/);
     expect(result.audit).toMatch(new RegExp(`"branch":"${branch}"`));
   });
 

@@ -15,12 +15,20 @@
 #   1. Primary — positive bundle handoff (preferred).
 #        Stage E in .github/prompts/07-commit-and-pr.md mandates that the
 #        agent, immediately after `git commit`, writes:
-#            /tmp/gh-aw/aw-fallback.bundle   (git bundle create … main..HEAD)
-#            /tmp/gh-aw/aw-fallback.json     (branch, sha, slug, title, body, …)
-#        gh-aw uploads `/tmp/gh-aw/aw-*.bundle` and `/tmp/gh-aw/aw-*.json`
-#        with the `agent` artifact (already in the upload glob). The host job
-#        downloads the artifact, fetches the bundle into the host checkout,
-#        and force-with-leases the branch to origin under the host PAT.
+#            /tmp/gh-aw/aw-fallback.bundle        (git bundle create … "$BRANCH" --not main)
+#            /tmp/gh-aw/agent/aw-fallback.json    (branch, sha, slug, title, body, …)
+#        The bundle path is matched by the gh-aw artifact upload glob
+#        `aw-*.bundle`. The manifest is **not** matched by `aw-*.json`
+#        (no such glob exists in the compiled news-*.lock.yml upload step) —
+#        but the entire `/tmp/gh-aw/agent/` directory is uploaded recursively,
+#        so writing the manifest inside it guarantees it reaches the host job.
+#        The host job downloads the artifact, fetches the bundle into the host
+#        checkout, runs fail-closed safety gates (default-branch refusal +
+#        protected-paths diff scan), and force-with-leases the branch to
+#        origin under the host PAT.
+#        For backwards compatibility, the consumer also probes the legacy
+#        location `/tmp/gh-aw/aw-fallback.json` if the manifest is not at the
+#        primary location.
 #
 #   2. Secondary — legacy dirty-workspace recovery (kept for compatibility).
 #        Triggered when no bundle is present but the agent stdio log contains
@@ -135,13 +143,15 @@ bundle="${GH_AW_PAT_FALLBACK_BUNDLE:-/tmp/gh-aw/aw-fallback.bundle}"
 # locations here for backwards compatibility with older agent runs.
 manifest="${GH_AW_PAT_FALLBACK_MANIFEST:-}"
 if [ -z "$manifest" ]; then
-  for cand in /tmp/gh-aw/agent/aw-fallback.json /tmp/gh-aw/aw-fallback.json; do
+  manifest_primary="${GH_AW_PAT_FALLBACK_MANIFEST_PRIMARY:-/tmp/gh-aw/agent/aw-fallback.json}"
+  manifest_legacy="${GH_AW_PAT_FALLBACK_MANIFEST_LEGACY:-/tmp/gh-aw/aw-fallback.json}"
+  for cand in "$manifest_primary" "$manifest_legacy"; do
     if [ -f "$cand" ]; then
       manifest="$cand"
       break
     fi
   done
-  [ -n "$manifest" ] || manifest="/tmp/gh-aw/agent/aw-fallback.json"
+  [ -n "$manifest" ] || manifest="$manifest_primary"
 fi
 stdio_log="${GH_AW_PAT_FALLBACK_STDIO_LOG:-/tmp/gh-aw/agent-stdio.log}"
 safeoutputs_file="${GH_AW_PAT_FALLBACK_SAFEOUTPUTS_FILE:-${GH_AW_SAFE_OUTPUTS:-/tmp/gh-aw/safeoutputs.jsonl}}"
@@ -346,32 +356,49 @@ if [ "$primary_active" -eq 1 ]; then
   esac
 
   # (b) Reject diffs touching protected paths. We compute the diff between the
-  #     recovered tip and its merge-base with the local default branch (the
-  #     host checkout was fetched at depth=1 of `main`, so this is reliable).
+  #     recovered tip and its merge-base with the local default branch. The
+  #     host job uses `fetch-depth: 0` so origin/$default_branch contains full
+  #     history; if merge-base still cannot be resolved (e.g. detached or
+  #     malformed checkout), this is the most important fail-closed check, so
+  #     we deepen aggressively before giving up — and exit non-zero rather
+  #     than skipping the gate.
   protected_re='^(\.github/|\.agents/|package(-lock)?\.json$|pnpm-lock\.yaml$|yarn\.lock$|Gemfile\.lock$|node_modules/|dist/|build/|cypress\.config\..+|tsconfig.*\.json$|vite\.config\..+|vitest\.config\..+)'
   base_sha=""
-  if git rev-parse --verify --quiet "origin/$default_branch" >/dev/null 2>&1; then
-    base_sha=$(git merge-base "origin/$default_branch" "$recovered_sha" 2>/dev/null || true)
-  fi
-  if [ -z "$base_sha" ] && git rev-parse --verify --quiet "$default_branch" >/dev/null 2>&1; then
-    base_sha=$(git merge-base "$default_branch" "$recovered_sha" 2>/dev/null || true)
-  fi
-  if [ -n "$base_sha" ]; then
-    bad_paths=$(git diff --name-only "$base_sha".."$recovered_sha" | grep -E "$protected_re" || true)
-    if [ -n "$bad_paths" ]; then
-      log "recovered commit touches protected paths:"
-      printf '  %s\n' "$bad_paths" >&2
-      step_summary "❌ Host-side PAT PR fallback refused — recovered commit modifies protected paths:"
-      step_summary '```'
-      step_summary "$bad_paths"
-      step_summary '```'
-      die "recovered commit touches protected paths" \
-        "$(printf '{"branch":"%s","files":%s}' "$branch" \
-          "$(printf '%s' "$bad_paths" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>process.stdout.write(JSON.stringify(s.split(/\n/).filter(Boolean))))')")"
+  resolve_base() {
+    if git rev-parse --verify --quiet "origin/$default_branch" >/dev/null 2>&1; then
+      git merge-base "origin/$default_branch" "$recovered_sha" 2>/dev/null || true
+    elif git rev-parse --verify --quiet "$default_branch" >/dev/null 2>&1; then
+      git merge-base "$default_branch" "$recovered_sha" 2>/dev/null || true
     fi
-  else
-    log "warning: could not resolve merge-base with $default_branch; skipping protected-paths gate"
-    audit "warn" "merge-base unresolved; protected-paths gate skipped"
+  }
+  base_sha=$(resolve_base)
+  if [ -z "$base_sha" ]; then
+    log "merge-base unresolved; deepening origin/$default_branch and retrying"
+    git fetch --no-tags --quiet --depth=200 origin "$default_branch" 2>/dev/null || true
+    base_sha=$(resolve_base)
+  fi
+  if [ -z "$base_sha" ]; then
+    log "merge-base still unresolved; unshallowing origin/$default_branch"
+    git fetch --no-tags --quiet --unshallow origin "$default_branch" 2>/dev/null \
+      || git fetch --no-tags --quiet origin "$default_branch" 2>/dev/null || true
+    base_sha=$(resolve_base)
+  fi
+  if [ -z "$base_sha" ]; then
+    step_summary "❌ Host-side PAT PR fallback refused — could not resolve merge-base with \`$default_branch\` to run the protected-paths gate."
+    die "merge-base with $default_branch unresolved; refusing to push without protected-paths gate" \
+      "$(printf '{"branch":"%s","default":"%s"}' "$branch" "$default_branch")"
+  fi
+  bad_paths=$(git diff --name-only "$base_sha".."$recovered_sha" | grep -E "$protected_re" || true)
+  if [ -n "$bad_paths" ]; then
+    log "recovered commit touches protected paths:"
+    printf '  %s\n' "$bad_paths" >&2
+    step_summary "❌ Host-side PAT PR fallback refused — recovered commit modifies protected paths:"
+    step_summary '```'
+    step_summary "$bad_paths"
+    step_summary '```'
+    die "recovered commit touches protected paths" \
+      "$(printf '{"branch":"%s","files":%s}' "$branch" \
+        "$(printf '%s' "$bad_paths" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>process.stdout.write(JSON.stringify(s.split(/\n/).filter(Boolean))))')")"
   fi
 
   # Compose body.
@@ -403,9 +430,10 @@ if [ "$primary_active" -eq 1 ]; then
 | Recovery path | primary (bundle handoff) |
 
 The fallback never modifies the working tree of the host runner — it pushes
-the bundle commit verbatim with \`--force-with-lease\`. Protected paths
-(\`.github/\`, \`package.json\`, lock files, etc.) are enforced by the agent
-prompt's Stage E checks before the bundle is created.
+the bundle commit verbatim with \`--force-with-lease\`. Before push, the
+host-side script enforces fail-closed gates: it refuses to push to the
+default branch and rejects any diff touching protected paths
+(\`.github/\`, \`.agents/\`, \`package.json\`, lock files, build configs).
 EOF_BODY
   } > "$body_file"
 
