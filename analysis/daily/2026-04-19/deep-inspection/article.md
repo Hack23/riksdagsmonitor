@@ -5,23 +5,10 @@ date: 2026-04-19
 subfolder: deep-inspection
 slug: 2026-04-19-deep-inspection
 source_folder: analysis/daily/2026-04-19/deep-inspection
-generated_at: 2026-04-27T16:50:06.855Z
+generated_at: 2026-04-28T00:16:17.420Z
 language: en
 layout: article
 ---
-## Reader Intelligence Guide
-
-Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
-
-| Reader need | What you'll get | Source artifact |
-|---|---|---|
-| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
-| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
-| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
-| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
-| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
-
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/executive-brief.md -->
 
@@ -134,6 +121,19 @@ Use this guide to read the article as a political-intelligence product rather th
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/README.md) · [Synthesis](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/synthesis-summary.md) · [Significance](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/swot-analysis.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/risk-assessment.md) · [Threat](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/threat-analysis.md) · [Stakeholders](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/stakeholder-perspectives.md) · [Scenarios](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/scenario-analysis.md) · [Comparative](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/comparative-international.md) · [Cross-References](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/cross-reference-map.md) · [Classification](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/classification-results.md) · [Methodology Reflection](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/methodology-reflection.md) · [Data Manifest](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/data-download-manifest.md) · [HD03231 L3 analysis](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/documents/HD03231-analysis.md)
 
 ---
+
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/synthesis-summary.md -->

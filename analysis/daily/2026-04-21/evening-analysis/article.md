@@ -5,22 +5,10 @@ date: 2026-04-21
 subfolder: evening-analysis
 slug: 2026-04-21-evening-analysis
 source_folder: analysis/daily/2026-04-21/evening-analysis
-generated_at: 2026-04-27T16:50:06.914Z
+generated_at: 2026-04-28T00:16:17.488Z
 language: en
 layout: article
 ---
-## Reader Intelligence Guide
-
-Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
-
-| Reader need | What you'll get | Source artifact |
-|---|---|---|
-| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
-| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
-| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
-| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
-
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief.md -->
 
@@ -109,6 +97,18 @@ The constitutional arena was equally active: Finance Minister Elisabeth Svantess
 | Chamber vote result | 🟩 HIGH (predicted: passes 175+) |
 
 *Produced by Riksdagsmonitor Evening Analysis v5.0 | 2026-04-21*
+
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/synthesis-summary.md -->
