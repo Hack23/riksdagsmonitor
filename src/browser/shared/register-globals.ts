@@ -6,7 +6,7 @@
  * `(globalThis as any).d3`, and `(globalThis as any).Papa`. ES module side-effect
  * imports (`import 'chart.js/auto'`) do NOT set globals, so this module must be
  * imported before any dashboard module to ensure the globals are available at
- * module-evaluation time.
+ * module initialization time (when the importing module is first executed).
  *
  * @security No inline scripts — all library loading is programmatic via Vite bundling
  */

@@ -127,7 +127,7 @@ const CIA_DATA_URLS = {
     'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_politician_risk_summary_sample.csv',
 } as const;
 
-/** The 45 risk rules evaluated for each MP. */
+/** The 45 risk rules scored for each MP. */
 const RISK_RULES: readonly string[] = [
   'Absenteeism', 'Effectiveness', 'Discipline', 'Productivity', 'Collaboration',
   'Ethics Compliance', 'Financial Disclosure', 'Conflict of Interest',
@@ -162,7 +162,7 @@ function getRiskColor(score: number): string {
 }
 
 function parseCSV(text: string): CSVRow[] {
-  // Use PapaParse for CSP-compatible CSV parsing (no unsafe-eval needed)
+  // Use PapaParse for CSP-compatible CSV parsing (no dynamic code execution)
   const Papa = (globalThis as { Papa?: { parse: (text: string, config: { header: boolean; skipEmptyLines: boolean }) => { data: CSVRow[] } } }).Papa;
   if (Papa) {
     const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });

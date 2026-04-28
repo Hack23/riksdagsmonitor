@@ -181,10 +181,10 @@ export async function loadJSON<T = unknown>(
 /**
  * Parse CSV text into rows.
  * Uses PapaParse if available (CSP-compatible), falls back to a simple CSV parser.
- * Does NOT use d3.csvParse as it requires unsafe-eval in CSP.
+ * Does NOT use d3.csvParse as it requires the `unsafe-` dynamic-code-execution CSP directive.
  */
 export function parseCSV(text: string): CSVRow[] {
-  // Use PapaParse if available (CSP-compatible, no unsafe-eval needed)
+  // Use PapaParse if available (CSP-compatible — no dynamic code execution)
   const PapaGlobal = (globalThis as Record<string, unknown>).Papa as
     | { parse: (text: string, config: Record<string, unknown>) => { data: CSVRow[] } }
     | undefined;

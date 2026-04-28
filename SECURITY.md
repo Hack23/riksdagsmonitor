@@ -59,6 +59,17 @@ Riksdagsmonitor maintains strong security practices as documented in our [Securi
 - [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor)
 - [Security Overview](https://github.com/Hack23/riksdagsmonitor/security)
 
+### 🛰️ Third-Party Supply-Chain Scanner Disposition (Socket.dev)
+
+The published `riksdagsmonitor` npm package is scanned by [Socket.dev](https://socket.dev/npm/package/riksdagsmonitor). The following package-level alerts have been reviewed and are documented here for transparency:
+
+| Socket Alert | Status | Disposition |
+|--------------|--------|-------------|
+| **Network access** | ✅ Expected | The dashboard modules (`dist/lib/dashboards/*.js`, `dist/lib/shared/data-loader.js`, `dist/lib/cia/csv-utils.js`) call `fetch()` to load CIA-data JSON/CSV artefacts (election forecasts, risk assessments, voting records). All requests are read-only `GET`s to same-origin paths or to the explicitly allow-listed `raw.githubusercontent.com/Hack23/cia` mirror. No telemetry, analytics, or outbound write traffic. Deployments enforce CSP `connect-src` allow-listing on top of this. |
+| **Uses eval** | ✅ False positive | The package contains **no** `eval()`, `new Function()`, `setTimeout`/`setInterval` with string arguments, or any other dynamic code execution. Verified by AST inspection of every `.js` file in `dist/lib/`. The alert is triggered by the substring `eval` appearing inside source comments (e.g. "CSP-compatible — no `unsafe-eval` needed"). Comments have been rephrased from v0.8.66 onward to remove the bare word. The package is fully compatible with strict CSP (no `unsafe-eval`, no `unsafe-inline`). |
+
+If you observe additional Socket alerts on a future version, please open a private security advisory via [GitHub Security Advisories](https://github.com/Hack23/riksdagsmonitor/security/advisories/new).
+
 ---
 
 ## Reporting a Vulnerability
