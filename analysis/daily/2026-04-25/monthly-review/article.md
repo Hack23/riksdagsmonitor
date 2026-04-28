@@ -5,7 +5,7 @@ date: 2026-04-25
 subfolder: monthly-review
 slug: 2026-04-25-monthly-review
 source_folder: analysis/daily/2026-04-25/monthly-review
-generated_at: 2026-04-28T00:16:17.590Z
+generated_at: 2026-04-28T01:09:37.420Z
 language: en
 layout: article
 ---
