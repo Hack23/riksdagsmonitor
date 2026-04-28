@@ -123,7 +123,6 @@ Every news workflow declares the **same** tool & runtime surface for parity, res
 |------|---------|---------|
 | [`compile-agentic-workflows.yml`](compile-agentic-workflows.yml) | Push/PR touching `news-*.md`, manual | Run `gh aw compile` → regenerate `.lock.yml`; enforce firewall + safe-outputs + SHA-pinning |
 | [`agentics-maintenance.yml`](agentics-maintenance.yml) | Scheduled + manual | Hygiene of the agentic environment: stale branch cleanup, secret-rotation hooks, runtime-cache eviction |
-| [`economic-context-audit.yml`](economic-context-audit.yml) | Scheduled | Periodic audit of macro joins (SCB + World Bank + IMF) used by news workflows; validates IMF `projectionVintage` freshness and Economic Data Contract v2.0 schema conformance |
 | [`copilot-setup-steps.yml`](copilot-setup-steps.yml) | Push, manual | Bootstrap GitHub Copilot coding-agent environment for this repo |
 
 ## 📡 Monitoring & Infrastructure (1)

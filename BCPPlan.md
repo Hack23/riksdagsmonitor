@@ -976,7 +976,7 @@ Updates: Follow https://github.com/Hack23/riksdagsmonitor/issues
 | Scenario | Trigger | Detection | Response |
 |---|---|---|---|
 | **IMF-BCP-01** IMF API outage <24h | HTTP 5xx persistent | Workflow log + retry budget exhausted | Serve last cached vintage; annotate articles "cache fallback"; auto-recover on resolution |
-| **IMF-BCP-02** IMF API outage >24h | HTTP 5xx persistent ≥24h | `economic-context-audit.yml` daily run fails | Open issue; escalate to editorial; switch to SCB for SE-specific GDP/CPI; pause look-ahead workflows |
+| **IMF-BCP-02** IMF API outage >24h | HTTP 5xx persistent ≥24h | News-* workflow runs fail with stale-vintage error | Open issue; escalate to editorial; switch to SCB for SE-specific GDP/CPI; pause look-ahead workflows |
 | **IMF-BCP-03** WEO vintage cycle skip | Apr WEO not published | `imf-fetch.ts --healthcheck` reports stale vintage | Annotate articles with last vintage + advisory; do not block publishing |
 | **IMF-BCP-04** IMF Datamapper schema breaking change | CI integration test fails | `tests/imf-client.test.ts` red on schedule | Pin client to last-known-good schema; emergency hotfix per Change Management policy |
 | **IMF-BCP-05** IMF licence change (attribution rule modified) | Notification on imf.org | Manual monitoring quarterly | Update article footer template; backfill existing articles |

@@ -25,7 +25,7 @@
 >
 > **🆕 What changed since last review (v7.0 → v7.1, 2026-04-20):**
 > - **Factual correction:** total workflow-file count under `.github/workflows/` is **43** (not 45 or 48). The breakdown is **21 standard `.yml` workflows + 11 agentic Markdown sources (`.md`) + 11 compiled `.lock.yml` siblings**. All inventory tables and narrative text below have been reconciled with `ls .github/workflows/`.
-> - Added previously unlisted workflows: **`agentics-maintenance.yml`** (agent platform hygiene, scheduled maintenance of agentic environment) and **`economic-context-audit.yml`** (periodic audit of economic-context data joins used by news agentic workflows).
+> - Added previously unlisted workflow: **`agentics-maintenance.yml`** (agent platform hygiene, scheduled maintenance of agentic environment).
 > - Realigned categorisation: `compile-agentic-workflows.yml` is a standard `.yml` **build tool**, not an agentic workflow — moved into the "Automation & Tooling" category.
 > - Reconfirmed that the **five-layer safe-output security model** and **egress firewall (Squid proxy + iptables allow-list)** wrap every `news-*` agentic workflow, per [gh-aw-safe-outputs](.github/skills/gh-aw-safe-outputs/) and [gh-aw-firewall](.github/skills/gh-aw-firewall/) skills.
 > - All `uses:` references remain SHA-pinned; `step-security/harden-runner` is applied across all workflows; deployment uses **AWS OIDC only** (no long-lived secrets) via `id-token: write`.
@@ -1147,12 +1147,6 @@ flowchart LR
 | --- | --- | --- | --- | --- |
 | 5.13 | 🔧 Compile Agentic Workflows | `compile-agentic-workflows.yml` | Push/PR touching `news-*.md`, manual | Compile `.md` sources → `.lock.yml` via `gh-aw` compiler; enforces firewall + safe-outputs + SHA-pinning policy |
 | 5.14 | 🧹 Agentics Maintenance | `agentics-maintenance.yml` | Scheduled + manual | Scheduled hygiene of agentic environment: stale branch cleanup, secret rotation hooks, runtime-cache eviction, agent-config validation |
-
-### 📊 Data Integrity Audit (1 workflow)
-
-| # | Workflow | File | Trigger | Purpose |
-| --- | --- | --- | --- | --- |
-| 6.0 | 📈 Economic Context Audit | `economic-context-audit.yml` | Scheduled | Periodic audit of macroeconomic joins (SCB + World Bank + **IMF** data) used by news agentic workflows to avoid stale/incorrect economic framing in generated articles. IMF ingestion (via pure-TS `scripts/imf-client.ts`, *not* MCP) is validated for `projectionVintage` freshness and schema conformance against Economic Data Contract v2.0. |
 
 ### 📡 Monitoring & Infrastructure (2 workflows)
 
