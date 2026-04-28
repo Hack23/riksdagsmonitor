@@ -160,7 +160,7 @@ All forward-looking claims use **Words of Estimative Probability (WEP)**:
 
 ### Source Diversity Rule
 
-Every P0/P1 claim requires **≥3 primary sources** (MCP-sourced Riksdag/Regering documents) **+ ≥1 secondary source** (SCB, **IMF for economic context**, press, OSINT — World Bank may appear only as a non-economic residue secondary source for WGI / environment / social / defence historicals; **never** for economic context, not even as secondary or fallback). Single-source claims must be labeled `[unconfirmed]`. See the **Source Diversity Rule** + **Collection Management Matrix** (MCP tool → evidence → template) in [`political-style-guide.md`](../methodologies/political-style-guide.md).
+Every P0/P1 claim requires **≥3 primary sources** (MCP-sourced Riksdag/Regering documents) **+ ≥1 secondary source** (SCB, **IMF for economic context**, press, OSINT — World Bank covers governance / environment / social / defence historicals as a non-economic secondary source). Single-source claims must be labeled `[unconfirmed]`. See the **Source Diversity Rule** + **Collection Management Matrix** (MCP tool → evidence → template) in [`political-style-guide.md`](../methodologies/political-style-guide.md).
 
 ### PIR Tagging
 
@@ -819,7 +819,7 @@ Phase 1 consistency & contract reconciliation pass — paired with [`../methodol
 - **Footer-stamp v1.0 templates** (`pestle-analysis.md`, `political-stride-assessment.md`, `quantitative-swot.md`, `wildcards-blackswans.md`) bumped to v1.1 / 2026-04-25.
 - **Family A + E v2.3 templates** bumped to v2.4 (threat-analysis to v3.4) with `Last Updated: 2026-04-25`.
 - **15 v1.0 templates** dated 2026-04-21 bumped to v1.1 / 2026-04-25.
-- **IMF-first language sweep** — `voter-segmentation.md` socio-economic controls now name IMF WEO + WB social/governance (was World Bank-only).
+- **IMF-first language sweep** — `voter-segmentation.md` socio-economic controls name IMF WEO for macro context and WB social/governance for participation and rule-of-law context.
 
 ---
 

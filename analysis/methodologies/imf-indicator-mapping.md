@@ -2,7 +2,7 @@
 
 > **Authoritative methodology** — canonical reference mapping Riksdagsmonitor news workflow article types to the most-relevant IMF indicators sourced from **WEO**, **Fiscal Monitor**, **IFS**, **BOP**, **GFS_COFOG**, **MFS_IR**, **DOTS**, **PCPS**, and **ER** via the local TypeScript IMF client at `scripts/imf-fetch.ts` (Datamapper JSON base URL `https://www.imf.org/external/datamapper/api/v1`, SDMX 3.0 base URL `https://api.imf.org/external/sdmx/3.0`).
 >
-> **Effective**: 2026-04-25 · **Version**: 2.1 · **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1+
+> **Effective**: 2026-04-25 · **Version**: 2.1 · **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v3.0+
 
 ---
 
@@ -19,9 +19,9 @@
 
 ## 1 · Provider decision matrix
 
-The following rule is non-negotiable — every economic claim in a new article routes through IMF; WB is consulted only for the non-economic residue.
+The following rule is non-negotiable — every economic claim routes through IMF in any role (primary, secondary, fallback, historical). World Bank is consulted only for the non-economic residue.
 
-| Claim class | Primary | Secondary | Deprecated (do NOT use as primary) |
+| Claim class | Primary | Secondary | Forbidden (NEVER use, in any role) |
 |-------------|---------|-----------|-------------------------------------|
 | Real GDP growth | `WEO:NGDP_RPCH` [proj T+5] | SCB QNA | `WB:NY.GDP.MKTP.KD.ZG` |
 | Nominal GDP (USD) | `WEO:NGDPD` [proj] | — | `WB:NY.GDP.MKTP.CD` |
@@ -195,7 +195,7 @@ A projection citation whose vintage tag is **> 6 months old** relative to articl
 
 ## 7 · Economic Data Contract integration
 
-All Chart.js specifications for charts fed by IMF data live in [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1+. Key points:
+All Chart.js specifications for charts fed by IMF data live in [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v3.0+. Key points:
 
 - `economic-data.json` is the single source of truth the static site consumes.
 - `source.imf[]` MUST be non-empty for any article with an economic-context section.
@@ -228,7 +228,7 @@ The evidence-host regex in [`.github/prompts/05-analysis-gate.md`](../../.github
 
 ## 10 · Machine-readable sources
 
-- [`analysis/imf/indicators-inventory.json`](../imf/indicators-inventory.json) — full indicator catalogue, committee matrix, deprecation policy, vintage discipline.
+- [`analysis/imf/indicators-inventory.json`](../imf/indicators-inventory.json) — full indicator catalogue, committee matrix, non-economic scope policy, vintage discipline.
 - [`analysis/economic-indicators-inventory.json`](../economic-indicators-inventory.json) v4.1 — multi-provider pointer.
 - [`scripts/imf-context.ts`](../../scripts/imf-context.ts) — programmatic lookups (`findImfIndicatorsForCommittee`, `findImfIndicatorsForDomains`, `imfCitation`).
 
@@ -236,5 +236,5 @@ The evidence-host regex in [`.github/prompts/05-analysis-gate.md`](../../.github
 
 ## 11 · Changelog
 
-- **v2.0 (2026-04-24)** — Full rewrite. IMF promoted to PRIMARY across all economic domains; WB economic codes marked deprecated (kept as read-only reference). Added complete dataflow catalogue (9 dataflows), deep committee matrix (including KrU/TU/CU/JuU), vintage-discipline canon, enforcement & anti-patterns. Cross-references every companion doc in `analysis/imf/`.
+- **v2.0 (2026-04-24)** — Full rewrite. IMF set as the source for every economic claim across all domains. Added complete dataflow catalogue (9 dataflows), deep committee matrix (including KrU/TU/CU/JuU), vintage-discipline canon, enforcement & anti-patterns. Cross-references every companion doc in `analysis/imf/`.
 - **v1.0 (2026-04-23)** — Initial Wave-2 IMF↔WB split; adapted from EU Parliament Monitor.

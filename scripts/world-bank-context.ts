@@ -167,18 +167,19 @@ function loadIndicatorsFromInventory(): readonly WorldBankIndicatorContext[] {
 // ---------------------------------------------------------------------------
 
 /**
- * World Bank **non-economic** indicators mapped to Swedish political policy
- * areas. The inventory holds only the residue WB still publishes
- * authoritatively — WGI governance (`source=75`), environment, social /
- * health / education participation, demographics, defence historicals,
- * agriculture, innovation (R&D / patents), inequality (GINI / income
- * distribution) and crime / justice.
+ * World Bank indicators mapped to Swedish political policy areas. The
+ * inventory holds the indicators World Bank publishes authoritatively —
+ * WGI governance (`source=75`), environment, social / health / education
+ * participation, demographics, defence historicals, agriculture,
+ * innovation (R&D / patents), inequality (GINI / income distribution)
+ * and crime / justice.
  *
- * **Economic context (macro / fiscal / monetary / external-sector / trade /
+ * Economic context (macro / fiscal / monetary / external-sector / trade /
  * commodity / FX / interest rates / labour-market headlines) is sourced
- * from IMF only** via `scripts/imf-fetch.ts` — never from World Bank.
+ * from IMF via `scripts/imf-fetch.ts`; SCB supplies Swedish-specific
+ * ground truth.
  *
- * Authority: `.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.1 ·
+ * Authority: `.github/aw/ECONOMIC_DATA_CONTRACT.md` v3.0 ·
  * `analysis/imf/indicators-inventory.json` ·
  * `analysis/worldbank/indicators-inventory.json` v4.0.
  */

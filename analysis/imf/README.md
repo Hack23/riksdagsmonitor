@@ -53,7 +53,7 @@ Rule of thumb: if a journalist would quote "the IMF projects…" in a Financial 
 
 - **Agentic workflows** (LLM-driven article authoring) invoke the `scripts/imf-fetch.ts` CLI via the `bash` tool (`tsx scripts/imf-fetch.ts weo|compare|sdmx|list-indicators …`). The CLI is a thin wrapper over `scripts/imf-client.ts` — a pure-TypeScript client — so there is **no Python / `uvx` runtime** and **no third-party MCP server** on the critical path.
 - **Build-time scripts** import `scripts/imf-client.ts` directly. Primary transport is the IMF **Datamapper** JSON endpoint (WEO + FM, no auth); targeted SDMX 3.0 is available via `ImfClient.sdmxFetch()` for IFS / BOP / GFS_COFOG / DOTS / PCPS / ER.
-- **World Bank** (`worldbank-mcp@1.0.1`) remains as an MCP server for WGI governance, environment, and social residue. Do **not** replace WB calls that target these classes. Do **not** route fresh economic data through WB — use IMF.
+- **World Bank** (`worldbank-mcp@1.0.1`) remains the MCP server for WGI governance, environment, and social residue — keep WB calls that target these classes. Economic data routes through `scripts/imf-fetch.ts`.
 - **SCB** (`pxweb-mcp`) is unchanged; remains the Swedish primary source for monthly inflation (KPIF), AKU labour, regional data, and budget execution.
 
 See ADR: [`docs/adr/0001-adopt-imf-data-alongside-world-bank.md`](../../docs/adr/0001-adopt-imf-data-alongside-world-bank.md).
@@ -167,26 +167,27 @@ Ship all four in **one PR** titled `chore(imf): cut over to WEO-YYYY-MM vintage`
 
 ---
 
-## 8 · Migration from World Bank (economic codes)
+## 8 · Economic context — IMF dataflow + indicator reference
 
-These WB codes are **deprecated for new articles** and kept as read-only reference for back-compat.
+Use this table to pick the right IMF dataflow + indicator for each economic claim.
 
-| WB (deprecated) | IMF replacement | Rationale |
-|-----------------|-----------------|-----------|
-| `NY.GDP.MKTP.KD.ZG` | `WEO:NGDP_RPCH` | Freshness + projections |
-| `NY.GDP.MKTP.CD` | `WEO:NGDPD` | Same |
-| `NY.GDP.PCAP.CD` | `WEO:NGDPDPC` | Same |
-| `FP.CPI.TOTL.ZG` | `WEO:PCPIPCH` | Same |
-| `SL.UEM.TOTL.ZS` | `WEO:LUR` | Same; SCB still preferred for Swedish specifics |
-| `GC.DOD.TOTL.GD.ZS` | `WEO:GGXWDG_NGDP` | General-government (EDP) basis |
-| `GC.XPN.TOTL.GD.ZS` | `WEO:GGX_NGDP` | GFSM 2014 |
-| `GC.REV.XGRT.GD.ZS` | `WEO:GGR_NGDP` | Same |
-| `BN.CAB.XOKA.GD.ZS` | `WEO:BCA_NGDPD` | Same |
-| `NE.EXP.GNFS.ZS` | `WEO:TX_RPCH` | Growth basis cleaner for trend articles |
+| Claim | IMF dataflow + indicator | Rationale |
+|-------|---------------------------|-----------|
+| Real GDP growth | `WEO:NGDP_RPCH` | Vintage-tagged WEO with T+5 projections |
+| Nominal GDP (USD) | `WEO:NGDPD` | Same |
+| GDP per capita | `WEO:NGDPDPC` | Same |
+| Annual inflation | `WEO:PCPIPCH` | Same; `IFS:PCPI_IX` for monthly |
+| Unemployment (annual) | `WEO:LUR` | SCB AKU as Swedish-specific ground truth |
+| Gross public debt / GDP | `WEO:GGXWDG_NGDP` (or `FM:GGXWDG_NGDP`) | General-government (EDP) basis |
+| Fiscal balance / GDP | `WEO:GGXCNL_NGDP` (or `FM:GGXCNLB_NGDP`) | GFSM 2014 |
+| Expenditure / GDP | `WEO:GGX_NGDP` | Same |
+| Revenue / GDP | `WEO:GGR_NGDP` | Same |
+| Current account / GDP | `WEO:BCA_NGDPD` | Same |
+| Export / Import volume growth | `WEO:TX_RPCH` / `WEO:TM_RPCH` | Growth basis cleaner for trend articles |
 
-Full supersedes map: see the `deprecationPolicy` section of [`indicators-inventory.json`](indicators-inventory.json).
+See the `providerSelection` section of [`indicators-inventory.json`](indicators-inventory.json) for the complete catalogue.
 
-**WB is still primary** for: WGI governance (source=75), environment (CO2, renewables, forest), education participation, defence historicals (`MS.MIL.XPND.GD.ZS`), crime & justice (`VC.IHR.PSRC.P5`).
+**World Bank** is the source for governance (WGI `source=75`), environment (CO₂, renewables, forest), education participation, defence historicals (`MS.MIL.XPND.GD.ZS`), and crime & justice (`VC.IHR.PSRC.P5`).
 
 ---
 

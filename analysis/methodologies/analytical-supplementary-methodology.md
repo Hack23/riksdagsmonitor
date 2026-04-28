@@ -116,7 +116,7 @@ Every wildcard (W1–Wn) must cite at least one historical analogue (Swedish or 
 
 ### Rule 7 — IMF-first for all economic evidence
 
-All economic data in any AS template (PESTLE E dimension, QSWOT S/W/O/T economic items, Wildcard W2/W8 fiscal triggers, STRIDE D fiscal impact) **MUST** use IMF as primary source. World Bank economic codes are deprecated per [`imf-indicator-mapping.md §4`](imf-indicator-mapping.md#4-deprecated-world-bank-economic-codes-and-their-imf-replacements). This rule applies in AS templates with no exceptions.
+All economic data in any AS template (PESTLE E dimension, QSWOT S/W/O/T economic items, Wildcard W2/W8 fiscal triggers, STRIDE D fiscal impact) cites IMF as the source — see [`imf-indicator-mapping.md`](imf-indicator-mapping.md) and [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v3.0. SCB supplies Swedish-specific ground truth where the AS template needs high-frequency or regional detail.
 
 ---
 

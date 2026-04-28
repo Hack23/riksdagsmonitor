@@ -367,9 +367,9 @@ describe('WorldBankClient', () => {
     });
   });
 
-  describe('INDICATOR_IDS — non-economic residue only', () => {
+  describe('INDICATOR_IDS — World Bank scope', () => {
     it.each([
-      // Banned WB economic codes — economic context comes from IMF, never WB
+      // Economic indicators routed through IMF (so absent from INDICATOR_IDS)
       ['gdp', 'NY.GDP.MKTP.CD'],
       ['gdpGrowth', 'NY.GDP.MKTP.KD.ZG'],
       ['gdpPerCapita', 'NY.GDP.PCAP.CD'],
@@ -387,13 +387,13 @@ describe('WorldBankClient', () => {
       ['lendingRate', 'FR.INR.LEND'],
       ['laborForceParticipation', 'SL.TLF.CACT.ZS'],
     ] as const)(
-      'must not expose forbidden economic key "%s" (%s) — IMF is the only economic source',
+      'INDICATOR_IDS does not expose economic key "%s" (%s) — IMF supplies that context',
       (key, _id) => {
         expect((INDICATOR_IDS as Record<string, string>)[key]).toBeUndefined();
       },
     );
 
-    it('must include the surviving non-economic residue (military, environment, governance, demographics)', () => {
+    it('includes the World Bank coverage areas (military, environment, governance, demographics, health, education)', () => {
       expect(INDICATOR_IDS.militaryExpenditure).toBe('MS.MIL.XPND.GD.ZS');
       expect(INDICATOR_IDS.co2Emissions).toBe('EN.ATM.CO2E.PC');
       expect(INDICATOR_IDS.ruleOfLaw).toBe('RL.EST');
@@ -402,11 +402,11 @@ describe('WorldBankClient', () => {
       expect(INDICATOR_IDS.educationExpenditure).toBe('SE.XPD.TOTL.GD.ZS');
     });
 
-    it('must define a non-trivial number of non-economic residue indicators', () => {
+    it('defines a meaningful number of World Bank indicators', () => {
       expect(Object.keys(INDICATOR_IDS).length).toBeGreaterThanOrEqual(50);
     });
 
-    it('must use a valid World Bank indicator ID format for every entry', () => {
+    it('uses a valid World Bank indicator ID format for every entry', () => {
       Object.values(INDICATOR_IDS).forEach((id) => {
         expect(id).toMatch(/^[A-Z]{2}\./);
       });

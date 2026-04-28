@@ -18,12 +18,12 @@ import {
 import type { Language } from '../scripts/types/language.js';
 
 /**
- * Codes that MUST NOT appear in the World Bank inventory under any
- * circumstance. Riksdagsmonitor sources every economic context
+ * Codes whose economic context routes through IMF rather than the
+ * World Bank inventory. Riksdagsmonitor sources every economic context
  * (macro / fiscal / monetary / external-sector / trade / commodity / FX /
- * interest rates / labour-market headlines) from IMF only.
+ * interest rates / labour-market headlines) from IMF.
  */
-const FORBIDDEN_WB_ECONOMIC_CODES = [
+const IMF_ROUTED_ECONOMIC_CODES = [
   // National accounts / GDP
   'NY.GDP.MKTP.KD.ZG',
   'NY.GDP.MKTP.CD',
@@ -72,8 +72,8 @@ describe('world-bank-context', () => {
       });
     });
 
-    it.each(FORBIDDEN_WB_ECONOMIC_CODES)(
-      'must not surface forbidden WB economic code "%s" — IMF is the only economic source',
+    it.each(IMF_ROUTED_ECONOMIC_CODES)(
+      'inventory excludes economic indicator "%s" because economic context routes through IMF',
       (code) => {
         const found = WORLD_BANK_INDICATORS.find((i) => i.indicatorId === code);
         expect(found).toBeUndefined();
@@ -211,8 +211,8 @@ describe('world-bank-context', () => {
   });
 
   describe('findRelevantIndicators', () => {
-    it.each(FORBIDDEN_WB_ECONOMIC_CODES)(
-      'must not surface forbidden WB economic code "%s" for any policy area query',
+    it.each(IMF_ROUTED_ECONOMIC_CODES)(
+      'no policy-area query returns economic indicator "%s" (IMF-routed)',
       (code) => {
         const allQueries = ['fiscal policy', 'macro', 'inflation', 'labor market', 'trade', 'monetary', 'FiU', 'AU', 'NU'];
         allQueries.forEach((q) => {
@@ -265,8 +265,8 @@ describe('world-bank-context', () => {
       });
     });
 
-    it.each(FORBIDDEN_WB_ECONOMIC_CODES)(
-      'must not query the forbidden WB economic code "%s"',
+    it.each(IMF_ROUTED_ECONOMIC_CODES)(
+      'committee query does not request economic indicator "%s" (IMF-routed)',
       (code) => {
         const queries = getSwedishIndicatorQueries();
         expect(queries.some((q) => q.indicatorId === code)).toBe(false);

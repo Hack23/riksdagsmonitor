@@ -171,7 +171,7 @@ graph TD
 `[REQUIRED: 2–3 sentences. Reference scripts/analysis-framework/lenses/economic.ts.]`
 
 > **IMF Economic Provenance (REQUIRED for any macro / fiscal / trade / exchange-rate claim):**
-> Every macro-sensitive statement in this section MUST cite an IMF indicator by its canonical `DATABASE:INDICATOR_ID` citation with a vintage tag. World Bank economic codes are **deprecated** — see [`analysis/imf/README.md`](../imf/README.md) §8 and [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1.
+> Every macro-sensitive statement in this section cites an IMF indicator by its canonical `DATABASE:INDICATOR_ID` citation with a vintage tag — see [`analysis/imf/README.md`](../imf/README.md) §8 and [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v3.0.
 >
 > Typical business-sector citations:
 > - Real GDP growth — `WEO:NGDP_RPCH`

@@ -162,7 +162,7 @@ Place the Swedish political event in **international context** so readers unders
 
 ### Input
 - synthesis-summary.md (current events)
-- **IMF** WEO / FM / IFS / BOP / GFS_COFOG / DOTS / PCPS / MFS_IR / ER (**primary economic source — never World Bank for any economic context**), SCB cross-country comparables (Swedish-specific ground truth), World Bank WGI governance indicators (`source=75`) and other non-economic residue (environment, social, defence historicals — **never** for economic context, not even as secondary/fallback)
+- **IMF** WEO / FM / IFS / BOP / GFS_COFOG / DOTS / PCPS / MFS_IR / ER (economic context); **SCB** for Swedish-specific ground truth; **World Bank** for governance (WGI `source=75`), environment, social/education participation, defence historicals, crime/justice
 - EU legislative database references (where EU law intersects)
 - Named peer countries (default set: DK, NO, FI, DE, NL, EE for Nordic+Baltic-West benchmark)
 
@@ -208,7 +208,7 @@ graph LR
 - [ ] Every peer row has a quantified outcome and a source URL
 - [ ] Applicability column distinguishes constitutional, institutional, and operational transferability
 - [ ] EU-law intersection lists specific directive/regulation numbers
-- [ ] Benchmark chart included when **IMF** economic data exists, or WB **non-economic** data exists for governance/environment/social axes (WB economic codes are forbidden as primary or secondary)
+- [ ] Benchmark chart included when **IMF** economic data exists, or **World Bank** non-economic data exists for governance, environment, or social axes
 
 ---
 

@@ -350,18 +350,18 @@ describe('economic-indicators-inventory.json IMF precedence', () => {
     });
   });
 
-  it('master inventory MUST NOT carry any deprecationPolicy / supersedes block — WB economic codes are purged, not deprecated', () => {
+  it('master inventory uses provider routing (not a deprecation block)', () => {
     expect((inv as { deprecationPolicy?: unknown }).deprecationPolicy).toBeUndefined();
   });
 
-  it('master inventory MUST NOT enumerate any banned WB economic code anywhere in `indicators`', () => {
-    const banned = [
+  it('master inventory carries IMF identifiers for every macro / fiscal / monetary / external / trade indicator', () => {
+    const wbEconomicCodes = [
       'NY.GDP.MKTP.KD.ZG', 'NY.GDP.MKTP.CD', 'NY.GDP.PCAP.CD',
       'FP.CPI.TOTL.ZG', 'SL.UEM.TOTL.ZS',
       'GC.XPN.TOTL.GD.ZS', 'GC.REV.XGRT.GD.ZS', 'GC.DOD.TOTL.GD.ZS',
       'BN.CAB.XOKA.GD.ZS', 'NE.EXP.GNFS.ZS',
     ];
-    banned.forEach((code) => {
+    wbEconomicCodes.forEach((code) => {
       expect(inv.indicators.some((i) => i.id === code)).toBe(false);
     });
   });

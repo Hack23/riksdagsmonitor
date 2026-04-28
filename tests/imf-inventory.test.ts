@@ -4,10 +4,10 @@
  * Asserts the shape and completeness of:
  *   - analysis/imf/indicators-inventory.json (v1.0 canonical IMF catalogue)
  *   - analysis/economic-indicators-inventory.json (v4.1 multi-provider, with
- *     IMF-first decision matrix and WB deprecation policy)
+ *     IMF-first decision matrix and per-domain provider routing)
  *
  * These files are referenced by:
- *   - .github/aw/ECONOMIC_DATA_CONTRACT.md (v2.1+)
+ *   - .github/aw/ECONOMIC_DATA_CONTRACT.md (v3.0+)
  *   - analysis/methodologies/imf-indicator-mapping.md (v2.0)
  *   - analysis/methodologies/worldbank-indicator-mapping.md (v1.1)
  *   - .github/prompts/02-mcp-access.md, 04-analysis-pipeline.md
@@ -127,7 +127,7 @@ describe('analysis/imf/indicators-inventory.json (v1.0 canonical)', () => {
     }
   });
 
-  it('IMF inventory MUST NOT carry any deprecationPolicy block — economic context is IMF-native', () => {
+  it('IMF inventory uses provider routing (no deprecation block)', () => {
     expect((inv as { deprecationPolicy?: unknown }).deprecationPolicy).toBeUndefined();
   });
 
@@ -167,13 +167,13 @@ describe('analysis/economic-indicators-inventory.json (v4.1 multi-provider)', ()
     );
   });
 
-  it('master and IMF inventories MUST NOT carry any deprecationPolicy block — WB economic codes are purged, not deprecated', () => {
+  it('master and IMF inventories use provider routing (no deprecation block)', () => {
     expect((inv as { deprecationPolicy?: unknown }).deprecationPolicy).toBeUndefined();
     const imfInv = readJson<ImfInventory>('analysis/imf/indicators-inventory.json');
     expect((imfInv as { deprecationPolicy?: unknown }).deprecationPolicy).toBeUndefined();
   });
 
-  it('no IMF inventory indicator carries a `supersedes` link to World Bank — economic context is IMF-native', () => {
+  it('IMF inventory indicators use IMF dataflows directly (no `supersedes` mapping)', () => {
     const imfInv = readJson<ImfInventory>('analysis/imf/indicators-inventory.json');
     for (const ind of imfInv.indicators ?? []) {
       expect(
