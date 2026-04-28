@@ -441,7 +441,7 @@ export function hasEconomicContext(content: string): boolean {
     /\binflation\b/i,
     /\beconomic\s+(growth|context|impact)\b/i,
     /\bworld\s+bank\b/i,
-    /\bimf\b/i, // International Monetary Fund — primary economic source per v2.1 contract
+    /\b(?:IMF|International\s+Monetary\s+Fund)\b/i, // International Monetary Fund — primary economic source per v2.1 contract
     /\bbnp\b/i, // Swedish: bruttonationalprodukt
     /\barbetslöshet/i, // Swedish: unemployment (arbetslöshet, arbetslösheten, etc.)
     /\bekonomi/i, // Swedish: economy
