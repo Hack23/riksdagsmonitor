@@ -3046,7 +3046,7 @@ flowchart LR
     subgraph Trusted["Trust Boundary — Riksdagsmonitor build/news pipeline"]
         Worker[News-* workflow worker · Node 25 · tsx scripts/imf-fetch.ts]
         Cache[(analysis/imf/ + analysis/daily/*/economic-data.json · vintage-tagged · SHA-256 pinned)]
-        Audit[Workflow logs · economic-context-audit.yml]
+        Audit[Workflow logs · news-* runs]
     end
     subgraph Public["Public-Internet · IMF Open APIs (no auth)"]
         Datamapper[www.imf.org/external/datamapper/api/v1]
