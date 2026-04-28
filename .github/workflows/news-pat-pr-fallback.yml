@@ -74,6 +74,27 @@ jobs:
           WR_URL: ${{ github.event.workflow_run.html_url }}
         run: |
           set -euo pipefail
+          # Explicit name → slug mapping for the 11 news workflows.
+          # Keep this in sync with the article-type slugs used by Stage E in
+          # each .github/workflows/news-*.md (the SUBFOLDER variable). When
+          # the agent uploads a manifest the slug from the manifest wins; this
+          # mapping is the fallback when only a bundle (or nothing) is present.
+          slug_for_name() {
+            case "$1" in
+              "News: Committee Reports")        echo "committee-reports" ;;
+              "News Evening Analysis")          echo "evening-analysis" ;;
+              "News: Interpellation Debates")   echo "interpellations" ;;
+              "News: Month Ahead")              echo "month-ahead" ;;
+              "News: Monthly Review")           echo "monthly-review" ;;
+              "News: Opposition Motions")       echo "motions" ;;
+              "News: Government Propositions")  echo "propositions" ;;
+              "News Realtime Monitor")          echo "realtime-pulse" ;;
+              "News: Translate Articles")       echo "translate" ;;
+              "News: Week Ahead")               echo "week-ahead" ;;
+              "News: Weekly Review")            echo "week-in-review" ;;
+              *) echo "" ;;
+            esac
+          }
           if [ -n "${DISPATCH_RUN_ID:-}" ]; then
             run_id="$DISPATCH_RUN_ID"
             wf_name="manual-replay"
@@ -83,8 +104,13 @@ jobs:
             run_id="$WR_ID"
             wf_name="$WR_NAME"
             run_url="$WR_URL"
-            # Derive slug from workflow name suffix (after the last colon or dash):
-            slug=$(printf '%s' "$wf_name" | sed -E 's/^News[: ]+//; s/^"//; s/"$//' | tr '[:upper:] ' '[:lower:]-' )
+            slug=$(slug_for_name "$wf_name")
+            # Last-resort generic derivation — should only fire if a new
+            # news-* workflow was added without updating the table above.
+            if [ -z "$slug" ]; then
+              slug=$(printf '%s' "$wf_name" | sed -E 's/^News[: ]+//; s/^"//; s/"$//' | tr '[:upper:] ' '[:lower:]-')
+              echo "::warning::No explicit slug mapping for workflow '$wf_name'; using generic derivation '$slug'. Update slug_for_name() in news-pat-pr-fallback.yml."
+            fi
           fi
           {
             echo "run_id=$run_id"
@@ -119,7 +145,11 @@ jobs:
           have_manifest=0
           have_stdio=0
           [ -f /tmp/gh-aw/aw-fallback.bundle ] && have_bundle=1 || true
-          [ -f /tmp/gh-aw/aw-fallback.json ] && have_manifest=1 || true
+          # Manifest lives in /tmp/gh-aw/agent/aw-fallback.json (current) or
+          # /tmp/gh-aw/aw-fallback.json (legacy). Probe both.
+          if [ -f /tmp/gh-aw/agent/aw-fallback.json ] || [ -f /tmp/gh-aw/aw-fallback.json ]; then
+            have_manifest=1
+          fi
           [ -f /tmp/gh-aw/agent-stdio.log ] && have_stdio=1 || true
           {
             echo "have_bundle=$have_bundle"
@@ -128,6 +158,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
           echo "Handoff inventory: bundle=$have_bundle manifest=$have_manifest stdio=$have_stdio"
           ls -la /tmp/gh-aw/ 2>&1 | head -40 || true
+          ls -la /tmp/gh-aw/agent/ 2>&1 | head -40 || true
 
       - name: Run host-side PAT PR fallback
         if: steps.download.outcome == 'success'

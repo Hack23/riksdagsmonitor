@@ -21,6 +21,10 @@ import { execFileSync, spawnSync } from 'node:child_process';
 import * as fs from 'node:fs';
 import * as os from 'node:os';
 import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const SCRIPT = path.resolve(__dirname, '..', 'scripts', 'gh-aw-pat-pr-fallback.sh');
 
@@ -144,13 +148,22 @@ afterEach(() => {
 });
 
 describe('gh-aw-pat-pr-fallback.sh', () => {
-  it('script is executable and shellcheck-clean', () => {
+  it('script is executable and bash-syntax clean (and shellcheck-clean if available)', () => {
     const stat = fs.statSync(SCRIPT);
     // owner-execute bit
     expect(stat.mode & 0o100).toBe(0o100);
-    // also verify it parses
+    // bash -n syntax check
     const r = spawnSync('bash', ['-n', SCRIPT], { encoding: 'utf8' });
     expect(r.status).toBe(0);
+    // Run shellcheck if installed (CI image has it pre-installed); skip
+    // silently if not so the suite stays portable.
+    const shellcheckProbe = spawnSync('shellcheck', ['--version'], { encoding: 'utf8' });
+    if (shellcheckProbe.status === 0) {
+      const sc = spawnSync('shellcheck', [SCRIPT], { encoding: 'utf8' });
+      if (sc.status !== 0) {
+        throw new Error(`shellcheck reported issues:\n${sc.stdout}\n${sc.stderr}`);
+      }
+    }
   });
 
   it('scenario 1: primary path with bundle + manifest succeeds (dry run)', () => {
@@ -261,5 +274,83 @@ describe('gh-aw-pat-pr-fallback.sh', () => {
     const result = runScript({ ghAwDir, hostRepoDir });
     expect(result.status).not.toBe(0);
     expect(result.audit).toMatch(/"event":"error"/);
+  });
+
+  it('refuses to push when recovered branch equals the default branch', () => {
+    const hostRepoDir = makeHostRepo(rootTmp);
+    const ghAwDir = path.join(rootTmp, 'gh-aw');
+    fs.mkdirSync(ghAwDir, { recursive: true });
+    // Build a bundle whose actual head IS `main`. The script must refuse to
+    // force-push it to origin/main even though the manifest agrees.
+    const sandbox = path.join(rootTmp, 'sandbox-main');
+    fs.mkdirSync(sandbox, { recursive: true });
+    execFileSync('git', ['clone', '-q', hostRepoDir, sandbox]);
+    git(sandbox, ['config', 'user.email', 'a@a']);
+    git(sandbox, ['config', 'user.name', 'a']);
+    // Add a benign commit on main itself.
+    fs.writeFileSync(path.join(sandbox, 'EVIL.md'), 'tamper\n');
+    git(sandbox, ['add', '.']);
+    git(sandbox, ['commit', '-q', '-m', 'rogue main commit']);
+    const bundlePath = path.join(rootTmp, 'aw-fallback-main.bundle');
+    // `git bundle create … main` would have no upstream to compare with —
+    // bundle the single tip ref directly.
+    execFileSync('git', ['bundle', 'create', bundlePath, 'main'], { cwd: sandbox });
+    fs.copyFileSync(bundlePath, path.join(ghAwDir, 'aw-fallback.bundle'));
+    fs.writeFileSync(
+      path.join(ghAwDir, 'aw-fallback.json'),
+      JSON.stringify({
+        branch: 'main',
+        head_sha: git(sandbox, ['rev-parse', 'HEAD']).trim(),
+        parent_sha: git(sandbox, ['rev-parse', 'HEAD~1']).trim(),
+        slug: 'rogue',
+        today: '2026-04-28',
+        title: 'Rogue',
+      }),
+    );
+    fs.writeFileSync(path.join(ghAwDir, 'safeoutputs.jsonl'), '');
+
+    const result = runScript({ ghAwDir, hostRepoDir });
+    expect(result.status).not.toBe(0);
+    expect(result.audit).toMatch(/refusing to push to protected branch/);
+    expect(result.audit).not.toMatch(/"event":"primary_created"/);
+    expect(result.audit).not.toMatch(/"event":"dry_run_success"/);
+  });
+
+  it('refuses to push when recovered commit modifies protected paths', () => {
+    const hostRepoDir = makeHostRepo(rootTmp);
+    const ghAwDir = path.join(rootTmp, 'gh-aw');
+    fs.mkdirSync(ghAwDir, { recursive: true });
+    // Build a bundle whose commit touches .github/ — must be rejected.
+    const sandbox = path.join(rootTmp, 'sandbox-bad');
+    fs.mkdirSync(sandbox, { recursive: true });
+    execFileSync('git', ['clone', '-q', hostRepoDir, sandbox]);
+    git(sandbox, ['config', 'user.email', 'a@a']);
+    git(sandbox, ['config', 'user.name', 'a']);
+    const branch = 'news/2026-04-28-bad-paths';
+    git(sandbox, ['checkout', '-q', '-b', branch]);
+    fs.mkdirSync(path.join(sandbox, '.github', 'workflows'), { recursive: true });
+    fs.writeFileSync(path.join(sandbox, '.github', 'workflows', 'evil.yml'), 'name: evil\n');
+    git(sandbox, ['add', '.']);
+    git(sandbox, ['commit', '-q', '-m', 'tamper']);
+    const bundlePath = path.join(rootTmp, 'aw-fallback-bad.bundle');
+    execFileSync('git', ['bundle', 'create', bundlePath, branch, '--not', 'main'], { cwd: sandbox });
+    fs.copyFileSync(bundlePath, path.join(ghAwDir, 'aw-fallback.bundle'));
+    fs.writeFileSync(
+      path.join(ghAwDir, 'aw-fallback.json'),
+      JSON.stringify({
+        branch,
+        head_sha: git(sandbox, ['rev-parse', 'HEAD']).trim(),
+        parent_sha: git(sandbox, ['rev-parse', 'HEAD~1']).trim(),
+        slug: 'bad-paths',
+        today: '2026-04-28',
+        title: 'Bad',
+      }),
+    );
+    fs.writeFileSync(path.join(ghAwDir, 'safeoutputs.jsonl'), '');
+
+    const result = runScript({ ghAwDir, hostRepoDir });
+    expect(result.status).not.toBe(0);
+    expect(result.audit).toMatch(/recovered commit touches protected paths/);
+    expect(result.audit).not.toMatch(/"event":"primary_created"/);
   });
 });

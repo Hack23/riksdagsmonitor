@@ -44,11 +44,12 @@ Translations for the remaining twelve languages are produced by the dedicated **
 
 3. **Commit** once with a descriptive message, e.g. `news(${article_type}): $ARTICLE_DATE — analysis + article`.
 
-4. **🛟 Sandbox commit handoff (mandatory)** — *immediately after `git commit` and **before** any `safeoutputs___*` call*, write a portable bundle + manifest so the host-side PAT PR fallback can recover the commit if `safeoutputs___create_pull_request` later fails (e.g. `session not found` after Timer C fires). Both files are inside the gh-aw `agent` artifact upload glob (`/tmp/gh-aw/aw-*.bundle`, `/tmp/gh-aw/aw-*.json`) so they reach the host job automatically. Run this in the same bash session as the commit:
+4. **🛟 Sandbox commit handoff (mandatory)** — *immediately after `git commit` and **before** any `safeoutputs___*` call*, write a portable bundle + manifest so the host-side PAT PR fallback can recover the commit if `safeoutputs___create_pull_request` later fails (e.g. `session not found` after Timer C fires). The bundle goes to `/tmp/gh-aw/aw-fallback.bundle` (matched by the gh-aw artifact upload glob `/tmp/gh-aw/aw-*.bundle`); the JSON manifest goes to `/tmp/gh-aw/agent/aw-fallback.json` because the upload glob does **not** match `aw-*.json` — but it does upload the entire `/tmp/gh-aw/agent/` directory, so writing inside it guarantees the manifest reaches the host job. Run this in the same bash session as the commit:
 
    ```bash
    set -euo pipefail
-   mkdir -p /tmp/gh-aw
+   mkdir -p /tmp/gh-aw /tmp/gh-aw/agent
+   export BRANCH HEAD_SHA PARENT_SHA ARTICLE_MD TITLE GATE
    BRANCH=$(git rev-parse --abbrev-ref HEAD)
    HEAD_SHA=$(git rev-parse HEAD)
    PARENT_SHA=$(git rev-parse "HEAD^" 2>/dev/null || git rev-parse HEAD)
@@ -63,7 +64,9 @@ Translations for the remaining twelve languages are produced by the dedicated **
    GATE="UNKNOWN"
    MANIFEST_FILE="analysis/daily/$ARTICLE_DATE/$SUBFOLDER/manifest.json"
    [ -f "$MANIFEST_FILE" ] && GATE=$(node -e 'const m=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));const h=Array.isArray(m.history)?m.history:[];const last=h.length?h[h.length-1]:{};process.stdout.write(last.gateResult||m.gateResult||"UNKNOWN")' "$MANIFEST_FILE" 2>/dev/null || echo UNKNOWN)
-   node -e '
+   # SUBFOLDER and ARTICLE_DATE are exported by the workflow; BRANCH/HEAD_SHA/PARENT_SHA/ARTICLE_MD/TITLE/GATE
+   # are exported above so node -e can read them via process.env.
+   SUBFOLDER="$SUBFOLDER" ARTICLE_DATE="$ARTICLE_DATE" node -e '
      const fs = require("fs");
      const out = {
        branch: process.env.BRANCH,
@@ -76,12 +79,12 @@ Translations for the remaining twelve languages are produced by the dedicated **
        title: process.env.TITLE || `news: ${process.env.SUBFOLDER} — ${process.env.ARTICLE_DATE}`,
        body_summary: `Sandbox commit ${process.env.HEAD_SHA} produced for ${process.env.SUBFOLDER} on ${process.env.ARTICLE_DATE}.`,
        gate_result: process.env.GATE,
-       protected_paths: [".github/", "package.json", "package-lock.json", "node_modules/"],
+       protected_paths: [".github/", ".agents/", "package.json", "package-lock.json", "node_modules/"],
        generated_at: new Date().toISOString()
      };
-     fs.writeFileSync("/tmp/gh-aw/aw-fallback.json", JSON.stringify(out, null, 2));
+     fs.writeFileSync("/tmp/gh-aw/agent/aw-fallback.json", JSON.stringify(out, null, 2));
    '
-   echo "✅ Sandbox commit handoff written: /tmp/gh-aw/aw-fallback.{bundle,json}"
+   echo "✅ Sandbox commit handoff written: /tmp/gh-aw/aw-fallback.bundle + /tmp/gh-aw/agent/aw-fallback.json"
    ```
 
    This step is non-negotiable. Skipping it leaves the run with **no recovery path** if Timer C fires before `safeoutputs___create_pull_request` returns. See `.github/aw/SANDBOX_COMMIT_HANDOFF.md` for the full contract and `.github/workflows/news-pat-pr-fallback.yml` for the host-side recovery job.

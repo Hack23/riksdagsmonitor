@@ -127,9 +127,28 @@ primary_branch_from_bundle() {
 # ---------------------------------------------------------------------------
 
 bundle="${GH_AW_PAT_FALLBACK_BUNDLE:-/tmp/gh-aw/aw-fallback.bundle}"
-manifest="${GH_AW_PAT_FALLBACK_MANIFEST:-/tmp/gh-aw/aw-fallback.json}"
+# The gh-aw `agent` artifact upload glob in compiled news-*.lock.yml only
+# matches `/tmp/gh-aw/aw-*.bundle` and `/tmp/gh-aw/aw-*.patch` (no `aw-*.json`),
+# but the entire `/tmp/gh-aw/agent/` directory is uploaded recursively. Stage E
+# in `.github/prompts/07-commit-and-pr.md` therefore writes the manifest at
+# `/tmp/gh-aw/agent/aw-fallback.json` so it reaches the host job. We probe both
+# locations here for backwards compatibility with older agent runs.
+manifest="${GH_AW_PAT_FALLBACK_MANIFEST:-}"
+if [ -z "$manifest" ]; then
+  for cand in /tmp/gh-aw/agent/aw-fallback.json /tmp/gh-aw/aw-fallback.json; do
+    if [ -f "$cand" ]; then
+      manifest="$cand"
+      break
+    fi
+  done
+  [ -n "$manifest" ] || manifest="/tmp/gh-aw/agent/aw-fallback.json"
+fi
 stdio_log="${GH_AW_PAT_FALLBACK_STDIO_LOG:-/tmp/gh-aw/agent-stdio.log}"
 safeoutputs_file="${GH_AW_PAT_FALLBACK_SAFEOUTPUTS_FILE:-${GH_AW_SAFE_OUTPUTS:-/tmp/gh-aw/safeoutputs.jsonl}}"
+
+# Default branch detection — used both for the `git pr create --base` target
+# and for the protected-branch safety check below.
+default_branch="${DEFAULT_BRANCH:-main}"
 
 # A successful safeoutputs PR creation writes a `create_pull_request` event to
 # safeoutputs.jsonl. If that event exists, the deliverable already shipped via
@@ -314,6 +333,47 @@ if [ "$primary_active" -eq 1 ]; then
       "$(printf '{"manifest_head":"%s","bundle_head":"%s"}' "$head_sha" "$recovered_sha")"
   fi
 
+  # ---- Fail-closed safety checks before any push ----
+  # (a) Refuse to push to the default branch — agent should never have
+  #     committed there, and even if the bundle carries main→main, the host
+  #     fallback must not silently overwrite it.
+  case "$branch" in
+    "$default_branch"|main|master|develop|trunk|production|release)
+      step_summary "❌ Host-side PAT PR fallback refused — recovered branch \`$branch\` is a protected/default branch."
+      die "refusing to push to protected branch '$branch'" \
+        "$(printf '{"branch":"%s","default":"%s"}' "$branch" "$default_branch")"
+      ;;
+  esac
+
+  # (b) Reject diffs touching protected paths. We compute the diff between the
+  #     recovered tip and its merge-base with the local default branch (the
+  #     host checkout was fetched at depth=1 of `main`, so this is reliable).
+  protected_re='^(\.github/|\.agents/|package(-lock)?\.json$|pnpm-lock\.yaml$|yarn\.lock$|Gemfile\.lock$|node_modules/|dist/|build/|cypress\.config\..+|tsconfig.*\.json$|vite\.config\..+|vitest\.config\..+)'
+  base_sha=""
+  if git rev-parse --verify --quiet "origin/$default_branch" >/dev/null 2>&1; then
+    base_sha=$(git merge-base "origin/$default_branch" "$recovered_sha" 2>/dev/null || true)
+  fi
+  if [ -z "$base_sha" ] && git rev-parse --verify --quiet "$default_branch" >/dev/null 2>&1; then
+    base_sha=$(git merge-base "$default_branch" "$recovered_sha" 2>/dev/null || true)
+  fi
+  if [ -n "$base_sha" ]; then
+    bad_paths=$(git diff --name-only "$base_sha".."$recovered_sha" | grep -E "$protected_re" || true)
+    if [ -n "$bad_paths" ]; then
+      log "recovered commit touches protected paths:"
+      printf '  %s\n' "$bad_paths" >&2
+      step_summary "❌ Host-side PAT PR fallback refused — recovered commit modifies protected paths:"
+      step_summary '```'
+      step_summary "$bad_paths"
+      step_summary '```'
+      die "recovered commit touches protected paths" \
+        "$(printf '{"branch":"%s","files":%s}' "$branch" \
+          "$(printf '%s' "$bad_paths" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>process.stdout.write(JSON.stringify(s.split(/\n/).filter(Boolean))))')")"
+    fi
+  else
+    log "warning: could not resolve merge-base with $default_branch; skipping protected-paths gate"
+    audit "warn" "merge-base unresolved; protected-paths gate skipped"
+  fi
+
   # Compose body.
   body_file=$(mktemp)
   trap 'rm -f "$body_file"' EXIT
@@ -379,7 +439,7 @@ EOF_BODY
     exit 0
   fi
 
-  base_branch="${DEFAULT_BRANCH:-main}"
+  base_branch="$default_branch"
   if ! pr_url=$(gh pr create \
       --repo "$repo" \
       --base "$base_branch" \

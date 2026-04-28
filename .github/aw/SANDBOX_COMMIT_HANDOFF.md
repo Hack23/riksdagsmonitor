@@ -25,8 +25,8 @@ Immediately **after** `git commit` and **before** any `safeoutputs___*` call, th
 
 | Path | Purpose |
 |------|---------|
-| `/tmp/gh-aw/aw-fallback.bundle` | A `git bundle` containing every commit reachable from the new branch tip and not present on `main`. Produced via `git bundle create … "$PARENT_SHA..HEAD" --branches="$BRANCH"`. |
-| `/tmp/gh-aw/aw-fallback.json` | A JSON manifest with the metadata the host-side script needs to act autonomously. |
+| `/tmp/gh-aw/aw-fallback.bundle` | A `git bundle` containing every commit reachable from the new branch tip and not present on `main`. Produced via `git bundle create /tmp/gh-aw/aw-fallback.bundle "$BRANCH" --not main` (with `git bundle create … "$BRANCH"` as a fallback when the runner can't resolve `main`). The bundle MUST carry the proper `refs/heads/$BRANCH` ref name — bare `HEAD` bundles cannot be fetched into the host with the standard `+refs/heads/*:refs/aw-fallback/*` refspec. |
+| `/tmp/gh-aw/agent/aw-fallback.json` | A JSON manifest with the metadata the host-side script needs to act autonomously. The manifest lives **inside `/tmp/gh-aw/agent/`** because the gh-aw artifact upload glob in compiled lock files matches `/tmp/gh-aw/aw-*.bundle` and `/tmp/gh-aw/aw-*.patch` only — it does **not** match `aw-*.json` — but it does upload `/tmp/gh-aw/agent/` recursively. The host-side script falls back to the legacy `/tmp/gh-aw/aw-fallback.json` location for backwards compatibility. |
 
 The exact bash recipe lives in `.github/prompts/07-commit-and-pr.md` step 4 — it is the canonical implementation, and any deviation in a per-workflow `.md` source is a contract violation.
 
@@ -53,18 +53,29 @@ The exact bash recipe lives in `.github/prompts/07-commit-and-pr.md` step 4 — 
 
 ### Transport — gh-aw `agent` artifact
 
-The gh-aw upload step at `…lock.yml` already includes the bundle/manifest paths in its glob:
+The gh-aw upload step at `…lock.yml` uploads:
 
 ```yaml
 path: |
-  /tmp/gh-aw/aw-*.patch
-  /tmp/gh-aw/aw-*.bundle
-  /tmp/gh-aw/aw-*.json   # manifest is matched by aw-*.json
+  /tmp/gh-aw/aw-*.patch     # legacy patches
+  /tmp/gh-aw/aw-*.bundle    # ✅ matches aw-fallback.bundle
+  /tmp/gh-aw/agent/         # ✅ uploaded recursively — manifest lives here
+  /tmp/gh-aw/sandbox/firewall/logs/
+  /tmp/gh-aw/sandbox/firewall/audit/
 ```
 
-> **Note (riksdagsmonitor).** As of 2026-04-28 the upload glob in compiled lock files lists `aw-*.patch` and `aw-*.bundle`. Manifest files (`aw-fallback.json`) are also picked up by the implicit glob because gh-aw uploads `/tmp/gh-aw/aw-*` siblings; if a future gh-aw release narrows the glob, add `/tmp/gh-aw/aw-*.json` explicitly to the producer-side manifest filename pattern (e.g. `aw-fallback.json` already starts with `aw-`).
+The bundle is matched by `aw-*.bundle`. The manifest is **not** matched by `aw-*.json` (no such glob exists in the upload step) — that is why Stage E writes it to `/tmp/gh-aw/agent/aw-fallback.json` instead, which is uploaded by virtue of the recursive `/tmp/gh-aw/agent/` directory upload.
 
-No per-workflow YAML change is required. `gh aw compile` is unaffected.
+The host-side script probes `/tmp/gh-aw/agent/aw-fallback.json` first and `/tmp/gh-aw/aw-fallback.json` second (legacy path), so old agent runs that put the manifest at the legacy location still recover.
+
+No per-workflow YAML change is required and `gh aw compile` is unaffected.
+
+### Host-side safety checks (fail-closed before push)
+
+Before the host-side script pushes the recovered branch under the PAT, it enforces two gates that cannot be defeated by a misbehaving agent:
+
+1. **Default-branch refusal.** If the recovered `branch` equals `$DEFAULT_BRANCH` (or any of `main`, `master`, `develop`, `trunk`, `production`, `release`), the script exits non-zero with `refusing to push to protected branch …`. The agent must never have committed to the default branch in the first place; this is the host-side belt-and-braces.
+2. **Protected-paths gate.** The script computes `git diff --name-only $base..$recovered_sha` (`$base` = merge-base with the local `main` checkout) and rejects the push if any path matches `^(\.github/|\.agents/|package(-lock)?\.json$|pnpm-lock\.yaml$|yarn\.lock$|Gemfile\.lock$|node_modules/|dist/|build/|cypress\.config\..+|tsconfig.*\.json$|vite\.config\..+|vitest\.config\..+)`. Article workflows must only touch `analysis/daily/**` and `news/**`; anything else is treated as an attempted bypass of the safe-outputs protected-file gate and fails the job loudly.
 
 ### Consumer side (host-side workflow — `.github/workflows/news-pat-pr-fallback.yml`)
 
