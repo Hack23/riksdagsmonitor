@@ -237,10 +237,7 @@ export default defineConfig({
         'scripts/generate-rss.ts',
         'scripts/generate-news-indexes/index.ts',
         // Logger module exercised by browser entry; tiny helper, not gated.
-        'src/browser/shared/logger.ts',
-        // Tiny constant exporters used at runtime by the bundler / browser
-        // entry — no branching.
-        'scripts/shared/version.ts'
+        'src/browser/shared/logger.ts'
       ]
     },
     

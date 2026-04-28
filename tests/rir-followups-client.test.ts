@@ -17,7 +17,6 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   calculateSkrivelseDeadline,
-  calculateSkrivelsDeadline,
   daysOverdue,
   deriveResponseStatus,
   detectOverdueAlerts,
@@ -168,11 +167,6 @@ describe('calculateSkrivelseDeadline', () => {
 
   it('handles end of year wrapping correctly', () => {
     expect(calculateSkrivelseDeadline('2026-12-15')).toBe('2027-04-15');
-  });
-
-  it('exposes a backwards-compatible alias `calculateSkrivelsDeadline`', () => {
-    expect(calculateSkrivelsDeadline).toBe(calculateSkrivelseDeadline);
-    expect(calculateSkrivelsDeadline('2026-01-15')).toBe('2026-05-15');
   });
 });
 

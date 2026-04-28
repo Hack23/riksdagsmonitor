@@ -1,0 +1,83 @@
+name: Knip Dead Code Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  knip:
+    name: Run Knip
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@8d3c67de8e2fe68ef647c8db1e6a09f647780f40 # v2.19.0
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            codeload.github.com:443
+            github.com:443
+            nodejs.org:443
+            objects.githubusercontent.com:443
+            registry.npmjs.org:443
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '25'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Knip (blocking — files, dependencies, duplicates)
+        # Blocks the workflow on actionable findings: unused files, unused/unlisted/
+        # unresolved dependencies, unused binaries, and duplicate exports. Unused
+        # exports/types are intentionally informational only (see next step) — most
+        # are barrel re-exports that form the public API of internal libraries.
+        run: |
+          echo "🔍 Running Knip dead-code detector (blocking subset)..."
+          echo ""
+          if npx knip --no-progress --include files,dependencies,unlisted,binaries,unresolved,duplicates > knip-blocking.txt 2>&1; then
+            echo "✅ No actionable dead-code findings."
+            cat knip-blocking.txt
+          else
+            echo "❌ Knip found actionable issues:"
+            cat knip-blocking.txt
+            echo ""
+            echo "Triage options for each finding:"
+            echo "  a) Used but not detected → update knip.json (entry/ignoreDependencies)."
+            echo "  b) Should be used but isn't → wire it up in the consumer."
+            echo "  c) Truly unused → delete the file/dep/binary."
+            exit 1
+          fi
+
+      - name: Run Knip (informational — exports & types)
+        # Non-blocking: surfaces unused exports/types so reviewers can spot drift
+        # without forcing every barrel re-export to be hand-pruned. Failures here
+        # do NOT fail the workflow.
+        if: always()
+        continue-on-error: true
+        run: |
+          echo "🔎 Running Knip (informational — unused exports / types)..."
+          echo ""
+          npx knip --no-progress --include exports,nsExports,types,nsTypes,enumMembers > knip-informational.txt 2>&1 || true
+          cat knip-informational.txt
+
+      - name: Upload Knip Report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: knip-report
+          path: |
+            knip-blocking.txt
+            knip-informational.txt
+          retention-days: 30
