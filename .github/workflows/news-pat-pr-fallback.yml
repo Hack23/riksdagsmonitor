@@ -1,0 +1,198 @@
+# SPDX-FileCopyrightText: 2024-2026 Hack23 AB
+# SPDX-License-Identifier: Apache-2.0
+#
+# Host-side PAT PR fallback for every news-* agentic workflow.
+#
+# Triggered by `workflow_run` after each news-* workflow completes (success
+# OR failure). Downloads the `agent` artifact, looks for the sandbox commit
+# handoff (`/tmp/gh-aw/aw-fallback.bundle` + `/tmp/gh-aw/agent/aw-fallback.json`,
+# with `/tmp/gh-aw/aw-fallback.json` accepted as a legacy fallback) that
+# Stage E in `.github/prompts/07-commit-and-pr.md` mandates, and pushes the
+# recovered commit to origin under a host PAT — opening (or refreshing) the
+# PR that the in-sandbox safeoutputs call could not deliver.
+#
+# Single source of truth for all 11 news workflows. No per-workflow lock.yml
+# edits required; gh aw compile is unaffected.
+#
+# See `.github/aw/SANDBOX_COMMIT_HANDOFF.md` for the full contract.
+
+name: "News: Host-side PAT PR fallback"
+
+on:
+  workflow_run:
+    workflows:
+      - "News: Committee Reports"
+      - "News Evening Analysis"
+      - "News: Interpellation Debates"
+      - "News: Month Ahead"
+      - "News: Monthly Review"
+      - "News: Opposition Motions"
+      - "News: Government Propositions"
+      - "News Realtime Monitor"
+      - "News: Translate Articles"
+      - "News: Week Ahead"
+      - "News: Weekly Review"
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Agent workflow run ID to recover (manual replay)."
+        required: true
+        type: string
+      slug:
+        description: "Article slug (e.g. week-in-review). Used only when manifest is absent."
+        required: false
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: gh-aw-news-pat-pr-fallback-${{ github.event.workflow_run.id || inputs.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  fallback:
+    name: Host-side PAT PR fallback
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: read
+    timeout-minutes: 10
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@8d3c67de8e2fe68ef647c8db1e6a09f647780f40 # v2.19.0
+        with:
+          egress-policy: audit
+
+      - name: Resolve target run
+        id: target
+        env:
+          DISPATCH_RUN_ID: ${{ inputs.run_id }}
+          DISPATCH_SLUG: ${{ inputs.slug }}
+          WR_ID: ${{ github.event.workflow_run.id }}
+          WR_NAME: ${{ github.event.workflow_run.name }}
+          WR_URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          set -euo pipefail
+          # Explicit name → slug mapping for the 11 news workflows.
+          # Keep this in sync with the article-type slugs used by Stage E in
+          # each .github/workflows/news-*.md (the SUBFOLDER variable). When
+          # the agent uploads a manifest the slug from the manifest wins; this
+          # mapping is the fallback when only a bundle (or nothing) is present.
+          slug_for_name() {
+            case "$1" in
+              "News: Committee Reports")        echo "committee-reports" ;;
+              "News Evening Analysis")          echo "evening-analysis" ;;
+              "News: Interpellation Debates")   echo "interpellations" ;;
+              "News: Month Ahead")              echo "month-ahead" ;;
+              "News: Monthly Review")           echo "monthly-review" ;;
+              "News: Opposition Motions")       echo "motions" ;;
+              "News: Government Propositions")  echo "propositions" ;;
+              "News Realtime Monitor")          echo "realtime-pulse" ;;
+              "News: Translate Articles")       echo "translate" ;;
+              "News: Week Ahead")               echo "week-ahead" ;;
+              "News: Weekly Review")            echo "week-in-review" ;;
+              *) echo "" ;;
+            esac
+          }
+          if [ -n "${DISPATCH_RUN_ID:-}" ]; then
+            run_id="$DISPATCH_RUN_ID"
+            wf_name="manual-replay"
+            run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${run_id}"
+            slug="${DISPATCH_SLUG:-}"
+          else
+            run_id="$WR_ID"
+            wf_name="$WR_NAME"
+            run_url="$WR_URL"
+            slug=$(slug_for_name "$wf_name")
+            # Last-resort generic derivation — should only fire if a new
+            # news-* workflow was added without updating the table above.
+            if [ -z "$slug" ]; then
+              slug=$(printf '%s' "$wf_name" | sed -E 's/^News[: ]+//; s/^"//; s/"$//' | tr '[:upper:] ' '[:lower:]-')
+              echo "::warning::No explicit slug mapping for workflow '$wf_name'; using generic derivation '$slug'. Update slug_for_name() in news-pat-pr-fallback.yml."
+            fi
+          fi
+          {
+            echo "run_id=$run_id"
+            echo "wf_name=$wf_name"
+            echo "run_url=$run_url"
+            echo "slug=$slug"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Checkout main (host-side, no sandbox credentials)
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: main
+          # fetch-depth: 0 (full history) — required so the protected-paths
+          # gate in scripts/gh-aw-pat-pr-fallback.sh can resolve the
+          # merge-base between the recovered branch and origin/main even when
+          # main has advanced since the agent run started. With a shallow
+          # checkout the merge-base may not exist locally and the gate would
+          # fail closed (which is correct, but wastes a recovery opportunity).
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Download agent artifact from triggering run
+        id: download
+        continue-on-error: true
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: agent
+          path: /tmp/gh-aw/
+          run-id: ${{ steps.target.outputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Inspect artifact for handoff
+        id: inspect
+        if: steps.download.outcome == 'success'
+        run: |
+          set -euo pipefail
+          have_bundle=0
+          have_manifest=0
+          have_stdio=0
+          [ -f /tmp/gh-aw/aw-fallback.bundle ] && have_bundle=1 || true
+          # Manifest lives in /tmp/gh-aw/agent/aw-fallback.json (current) or
+          # /tmp/gh-aw/aw-fallback.json (legacy). Probe both.
+          if [ -f /tmp/gh-aw/agent/aw-fallback.json ] || [ -f /tmp/gh-aw/aw-fallback.json ]; then
+            have_manifest=1
+          fi
+          [ -f /tmp/gh-aw/agent-stdio.log ] && have_stdio=1 || true
+          {
+            echo "have_bundle=$have_bundle"
+            echo "have_manifest=$have_manifest"
+            echo "have_stdio=$have_stdio"
+          } >> "$GITHUB_OUTPUT"
+          echo "Handoff inventory: bundle=$have_bundle manifest=$have_manifest stdio=$have_stdio"
+          ls -la /tmp/gh-aw/ 2>&1 | head -40 || true
+          ls -la /tmp/gh-aw/agent/ 2>&1 | head -40 || true
+
+      - name: Run host-side PAT PR fallback
+        if: steps.download.outcome == 'success'
+        env:
+          GH_AW_PAT_PR_FALLBACK_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
+          GH_AW_PAT_FALLBACK_SLUG: ${{ steps.target.outputs.slug }}
+          GH_AW_PAT_FALLBACK_RUN_URL: ${{ steps.target.outputs.run_url }}
+          GH_AW_PAT_FALLBACK_WORKFLOW_NAME: ${{ steps.target.outputs.wf_name }}
+          DEFAULT_BRANCH: main
+        run: |
+          if [ -z "${GH_AW_PAT_PR_FALLBACK_TOKEN:-}" ]; then
+            echo "::warning::COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN not configured; falling back to GITHUB_TOKEN (limited scope)."
+            export GH_AW_PAT_PR_FALLBACK_TOKEN="${GITHUB_TOKEN:-}"
+          fi
+          bash scripts/gh-aw-pat-pr-fallback.sh
+
+      - name: Skip — no agent artifact on triggering run
+        if: steps.download.outcome != 'success'
+        run: |
+          echo "::notice::No \`agent\` artifact on the triggering run; nothing to recover."
+          echo "ℹ️ Host-side PAT PR fallback skipped — triggering run did not upload an \`agent\` artifact." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload audit log
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: pat-pr-fallback-audit-${{ steps.target.outputs.run_id }}
+          path: /tmp/gh-aw/fallback-events.jsonl
+          if-no-files-found: ignore
+          retention-days: 14

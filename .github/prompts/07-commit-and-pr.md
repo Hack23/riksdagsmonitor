@@ -44,13 +44,58 @@ Translations for the remaining twelve languages are produced by the dedicated **
 
 3. **Commit** once with a descriptive message, e.g. `news(${article_type}): $ARTICLE_DATE — analysis + article`.
 
-4. **Call** `safeoutputs___create_pull_request` exactly once:
+4. **🛟 Sandbox commit handoff (mandatory)** — *immediately after `git commit` and **before** any `safeoutputs___*` call*, write a portable bundle + manifest so the host-side PAT PR fallback can recover the commit if `safeoutputs___create_pull_request` later fails (e.g. `session not found` after Timer C fires). The bundle goes to `/tmp/gh-aw/aw-fallback.bundle` (matched by the gh-aw artifact upload glob `/tmp/gh-aw/aw-*.bundle`); the JSON manifest goes to `/tmp/gh-aw/agent/aw-fallback.json` because the upload glob does **not** match `aw-*.json` — but it does upload the entire `/tmp/gh-aw/agent/` directory, so writing inside it guarantees the manifest reaches the host job. Run this in the same bash session as the commit:
+
+   ```bash
+   set -euo pipefail
+   mkdir -p /tmp/gh-aw /tmp/gh-aw/agent
+   export BRANCH HEAD_SHA PARENT_SHA ARTICLE_MD TITLE GATE
+   BRANCH=$(git rev-parse --abbrev-ref HEAD)
+   HEAD_SHA=$(git rev-parse HEAD)
+   PARENT_SHA=$(git rev-parse "HEAD^" 2>/dev/null || git rev-parse HEAD)
+   # Bundle: include everything reachable from $BRANCH but not from main, with
+   # the proper refs/heads/$BRANCH ref name (not bare HEAD). This is what the
+   # host-side `git fetch <bundle> '+refs/heads/*:refs/aw-fallback/*'` expects.
+   git bundle create /tmp/gh-aw/aw-fallback.bundle "$BRANCH" --not main 2>/dev/null \
+     || git bundle create /tmp/gh-aw/aw-fallback.bundle "$BRANCH"
+   ARTICLE_MD="analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md"
+   TITLE=""
+   [ -f "$ARTICLE_MD" ] && TITLE=$(awk '/^# / { sub(/^# /, ""); print; exit }' "$ARTICLE_MD")
+   GATE="UNKNOWN"
+   MANIFEST_FILE="analysis/daily/$ARTICLE_DATE/$SUBFOLDER/manifest.json"
+   [ -f "$MANIFEST_FILE" ] && GATE=$(node -e 'const m=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));const h=Array.isArray(m.history)?m.history:[];const last=h.length?h[h.length-1]:{};process.stdout.write(last.gateResult||m.gateResult||"UNKNOWN")' "$MANIFEST_FILE" 2>/dev/null || echo UNKNOWN)
+   # SUBFOLDER and ARTICLE_DATE are exported by the workflow; BRANCH/HEAD_SHA/PARENT_SHA/ARTICLE_MD/TITLE/GATE
+   # are exported above so node -e can read them via process.env.
+   SUBFOLDER="$SUBFOLDER" ARTICLE_DATE="$ARTICLE_DATE" node -e '
+     const fs = require("fs");
+     const out = {
+       branch: process.env.BRANCH,
+       head_sha: process.env.HEAD_SHA,
+       parent_sha: process.env.PARENT_SHA,
+       slug: process.env.SUBFOLDER,
+       today: process.env.ARTICLE_DATE,
+       analysis_dir: `analysis/daily/${process.env.ARTICLE_DATE}/${process.env.SUBFOLDER}`,
+       article_md_path: process.env.ARTICLE_MD,
+       title: process.env.TITLE || `news: ${process.env.SUBFOLDER} — ${process.env.ARTICLE_DATE}`,
+       body_summary: `Sandbox commit ${process.env.HEAD_SHA} produced for ${process.env.SUBFOLDER} on ${process.env.ARTICLE_DATE}.`,
+       gate_result: process.env.GATE,
+       protected_paths: [".github/", ".agents/", "package.json", "package-lock.json", "node_modules/"],
+       generated_at: new Date().toISOString()
+     };
+     fs.writeFileSync("/tmp/gh-aw/agent/aw-fallback.json", JSON.stringify(out, null, 2));
+   '
+   echo "✅ Sandbox commit handoff written: /tmp/gh-aw/aw-fallback.bundle + /tmp/gh-aw/agent/aw-fallback.json"
+   ```
+
+   This step is non-negotiable. Skipping it leaves the run with **no recovery path** if Timer C fires before `safeoutputs___create_pull_request` returns. See `.github/aw/SANDBOX_COMMIT_HANDOFF.md` for the full contract and `.github/workflows/news-pat-pr-fallback.yml` for the host-side recovery job.
+
+5. **Call** `safeoutputs___create_pull_request` exactly once:
    - Title: `📰 ${Article Type} — $ARTICLE_DATE`.
    - Body: use the PR template below.
    - Labels: `agentic-news` + article-type label.
    - Branch: handled automatically by safeoutputs (`news/content/$ARTICLE_DATE/$ARTICLE_TYPE`).
 
-5. **Do not** `git push`, `git checkout`, or `git checkout -b` after the call. The safe-outputs runner job publishes the PR; subsequent agent commits are not added.
+6. **Do not** `git push`, `git checkout`, or `git checkout -b` after the call. The safe-outputs runner job publishes the PR; subsequent agent commits are not added.
 
 ## Cache-memory recovery (resilience for failed PRs)
 
@@ -64,7 +109,7 @@ Every news workflow declares `tools.cache-memory:` keyed by `news-${{ github.wor
 
 Cache-memory is **not** a substitute for committing real files on disk under `analysis/daily/`. It is a recovery mechanism for the next run, not a deliverable.
 
-## PR creation resilience (`fallback-as-issue`, `if-no-changes`)
+## PR creation resilience (`fallback-as-issue`, `if-no-changes`, host-side PAT fallback)
 
 Every news workflow's `safe-outputs.create-pull-request:` block sets two explicit resilience flags:
 
@@ -74,6 +119,8 @@ Every news workflow's `safe-outputs.create-pull-request:` block sets two explici
 | `if-no-changes` | `warn` | If the agent commits but the patch is empty (e.g. all artifacts already exist for this date with `force_generation=false`), the runner emits a warning instead of failing the workflow. Combined with the run-mode selection in `03-data-download.md`, this prevents spurious red runs on duplicate-date dispatches. |
 
 Neither flag changes the agent's behaviour — both are runner-side resilience knobs. The agent still calls `safeoutputs___create_pull_request` exactly once. See [upstream `create-pull-request` reference](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/safe-outputs-pull-requests.md) for the full schema.
+
+In addition, the **Sandbox commit handoff** in step 4 above is the *third* (and most important) resilience layer: when `safeoutputs___create_pull_request` itself fails — e.g. `Error POSTing to endpoint: session not found` after Timer C fires, or any transient MCP outage — the standalone host-side workflow `.github/workflows/news-pat-pr-fallback.yml` is triggered by `workflow_run` on completion of every news-* workflow. It downloads the agent artifact, fetches the bundle into the host checkout, force-with-leases the recovered branch to origin under the repo PAT, and opens (or refreshes) the PR. The job is **green only when the PR is actually created** — silent green-exits are eliminated.
 
 ## Canonical PR body template
 
