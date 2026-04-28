@@ -162,7 +162,7 @@ Place the Swedish political event in **international context** so readers unders
 
 ### Input
 - synthesis-summary.md (current events)
-- World Bank WGI indicators, IMF fiscal/monetary data, SCB cross-country comparables
+- **IMF** WEO / FM / IFS / BOP / GFS_COFOG / DOTS / PCPS / MFS_IR / ER (economic context); **SCB** for Swedish-specific ground truth; **World Bank** for governance (WGI `source=75`), environment, social/education participation, defence historicals, crime/justice
 - EU legislative database references (where EU law intersects)
 - Named peer countries (default set: DK, NO, FI, DE, NL, EE for Nordic+Baltic-West benchmark)
 
@@ -175,7 +175,7 @@ Place the Swedish political event in **international context** so readers unders
 4. **Incompatibility notes** — three elements that do not travel well, with reasons
 5. **EU-law intersection** — directives, regulations, and open infringement procedures that apply
 6. **Comparative Mermaid** — color-coded country grid on the chosen axis (e.g. policy permissiveness)
-7. **Benchmark trend chart** — quantitative time-series Mermaid where World Bank / IMF data exists
+7. **Benchmark trend chart** — quantitative time-series Mermaid using **IMF** macro/fiscal data as primary economic source (WB WGI / environment / social residue may be charted only where the axis is non-economic — governance, environment, social participation)
 
 ### Required Mermaid — peer grid
 
@@ -208,7 +208,7 @@ graph LR
 - [ ] Every peer row has a quantified outcome and a source URL
 - [ ] Applicability column distinguishes constitutional, institutional, and operational transferability
 - [ ] EU-law intersection lists specific directive/regulation numbers
-- [ ] Benchmark chart included when World Bank / IMF data exists
+- [ ] Benchmark chart included when **IMF** economic data exists, or **World Bank** non-economic data exists for governance, environment, or social axes
 
 ---
 

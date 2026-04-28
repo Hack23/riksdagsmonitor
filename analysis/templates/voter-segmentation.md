@@ -171,7 +171,8 @@ flowchart LR
 | `scb` MCP — Befolkning, Åldersstatistik, Boende | Segment sizing |
 | SIFO / Novus / Demoskop monthly poll | Directional signals |
 | Valmyndigheten 2022 result | Baseline voting behaviour |
-| IMF WEO + World Bank social/governance indicators | Macro context + socio-economic controls |
+| **IMF** (WEO + FM + IFS) | Macro context (GDP, inflation, unemployment, fiscal balance, debt) |
+| World Bank (WGI governance, environment, social participation) | Socio-economic context for governance, environmental, and social/participation controls |
 
 ---
 

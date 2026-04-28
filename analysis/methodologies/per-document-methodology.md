@@ -244,7 +244,8 @@ graph TB
 - Anförande: `(anförande 2025/26:KU1 — [Politician Name, party])`
 - Votes: `(vote 2025/26:XX — Ja: 175, Nej: 168, Avstår: 6)`
 - SCB: `(SCB — <table-id> — <vintage>)`
-- World Bank / IMF: `(WB WGI 2024)` / `(IMF WEO Oct 2025)`
+- IMF (**primary economic citation**): `(IMF WEO Apr-2026 — NGDP_RPCH SWE)` / `(IMF FM Oct-2025 — GGXWDG_NGDP)` / `(IMF SDMX IFS — PCPI_IX SWE 2026M03)`
+- World Bank (**non-economic residue only**): `(WB WGI 2024 — CC.EST SWE)` / `(WB EN.ATM.CO2E.PC 2024)`
 
 ### Party neutrality
 Every Family E file gives **equal analytical depth** to whatever parties are involved. A single-doc file on a government proposition should still reflect on opposition objections where those have been filed; a motion analysis should still reflect on the government's likely response where documented.

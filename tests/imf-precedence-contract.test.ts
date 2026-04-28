@@ -306,15 +306,11 @@ describe('economic-indicators-inventory.json IMF precedence', () => {
       worldBank?: Record<string, unknown>;
       scb?: Record<string, unknown>;
     };
-    deprecationPolicy: {
-      worldBankEconomicCodes: {
-        supersedes: Record<string, string>;
-      };
-    };
     indicators: Array<{
       id: string;
       provider: string;
       key?: string;
+      domain?: string;
     }>;
   }
 
@@ -354,19 +350,32 @@ describe('economic-indicators-inventory.json IMF precedence', () => {
     });
   });
 
-  it('WB GDP code is deprecated in favour of IMF', () => {
-    const dep = inv.deprecationPolicy.worldBankEconomicCodes.supersedes;
-    expect(dep['NY.GDP.MKTP.KD.ZG']).toMatch(/^imf:/);
+  it('master inventory uses provider routing (not a deprecation block)', () => {
+    expect((inv as { deprecationPolicy?: unknown }).deprecationPolicy).toBeUndefined();
   });
 
-  it('WB CPI code is deprecated in favour of IMF', () => {
-    const dep = inv.deprecationPolicy.worldBankEconomicCodes.supersedes;
-    expect(dep['FP.CPI.TOTL.ZG']).toMatch(/^imf:/);
+  it('master inventory carries IMF identifiers for every macro / fiscal / monetary / external / trade indicator', () => {
+    const wbEconomicCodes = [
+      'NY.GDP.MKTP.KD.ZG', 'NY.GDP.MKTP.CD', 'NY.GDP.PCAP.CD',
+      'FP.CPI.TOTL.ZG', 'SL.UEM.TOTL.ZS',
+      'GC.XPN.TOTL.GD.ZS', 'GC.REV.XGRT.GD.ZS', 'GC.DOD.TOTL.GD.ZS',
+      'BN.CAB.XOKA.GD.ZS', 'NE.EXP.GNFS.ZS',
+    ];
+    wbEconomicCodes.forEach((code) => {
+      expect(inv.indicators.some((i) => i.id === code)).toBe(false);
+    });
   });
 
-  it('WB unemployment code is deprecated in favour of IMF', () => {
-    const dep = inv.deprecationPolicy.worldBankEconomicCodes.supersedes;
-    expect(dep['SL.UEM.TOTL.ZS']).toMatch(/^imf:/);
+  it('every economic indicator (provider !== "scb" Swedish-specific & domain ∈ macro/fiscal/monetary/external/trade) MUST come from IMF', () => {
+    const economicDomains = ['nationalAccounts', 'governmentFinance', 'monetary', 'external', 'trade', 'inflation', 'commodity', 'exchangeRate'];
+    inv.indicators.forEach((ind) => {
+      if (ind.domain !== undefined && economicDomains.includes(ind.domain as string)) {
+        expect(
+          ind.provider,
+          `economic indicator ${ind.id} (domain ${ind.domain}) must use provider="imf", got "${ind.provider}"`,
+        ).toBe('imf');
+      }
+    });
   });
 
   it('headline real GDP growth indicator uses IMF WEO', () => {

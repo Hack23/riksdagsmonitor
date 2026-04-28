@@ -115,7 +115,7 @@ RR:::ok  SCB:::ok  WB:::deg  IMF:::ok
 
 ## 4️⃣ `world-bank` MCP (local container — non-economic residue ONLY)
 
-> **v2.1 reminder**: economic codes (`NY.GDP.*`, `FP.CPI.TOTL.ZG`, `SL.UEM.TOTL.ZS`, `GC.DOD.*`, etc.) are **deprecated** for new articles. If any WB economic call appears in this audit for a new article, flag it as a regression in §7 Failure Analysis and re-run via IMF.
+> **Provider routing**: economic-context calls (GDP, inflation, unemployment, fiscal aggregates, debt, BoP, trade, commodity, FX, interest rates) route through `scripts/imf-fetch.ts`. The World Bank MCP serves governance, environment, social, defence-historical, and crime/justice indicators catalogued in [`analysis/worldbank/indicators-inventory.json`](../worldbank/indicators-inventory.json). If this audit shows a WB call where the cited indicator falls outside that catalogue, log it in §7 Failure Analysis and re-run via IMF.
 
 | Tool / code | Indicator | Country | Year range | Succeeded | Latency (ms) | SLA ≤ 4000 ms | Notes |
 |-------------|-----------|:-------:|:----------:|:---------:|:------------:|:-------------:|-------|
@@ -254,7 +254,7 @@ xychart-beta
 - Methodology: [`../methodologies/per-artifact-methodologies.md#mcp-reliability-audit`](../methodologies/per-artifact-methodologies.md#mcp-reliability-audit)
 - MCP access: [`../../.github/prompts/02-mcp-access.md`](../../.github/prompts/02-mcp-access.md)
 - MCP configuration: [`../../.github/copilot-mcp.json`](../../.github/copilot-mcp.json)
-- IMF contract: [`../../analysis/imf/README.md`](../imf/README.md) — vintage discipline; deprecated WB codes
+- IMF contract: [`../../analysis/imf/README.md`](../imf/README.md) — vintage discipline; non-economic-only WB scope
 - WB retained codes: [`../methodologies/worldbank-indicator-mapping.md`](../methodologies/worldbank-indicator-mapping.md)
 
 ---

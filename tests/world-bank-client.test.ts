@@ -367,47 +367,59 @@ describe('WorldBankClient', () => {
     });
   });
 
-  describe('INDICATOR_IDS', () => {
-    it('should have GDP growth indicator', () => {
-      expect(INDICATOR_IDS.gdpGrowth).toBe('NY.GDP.MKTP.KD.ZG');
+  describe('INDICATOR_IDS — World Bank scope', () => {
+    it.each([
+      // Economic indicators routed through IMF (so absent from INDICATOR_IDS)
+      ['gdp', 'NY.GDP.MKTP.CD'],
+      ['gdpGrowth', 'NY.GDP.MKTP.KD.ZG'],
+      ['gdpPerCapita', 'NY.GDP.PCAP.CD'],
+      ['unemployment', 'SL.UEM.TOTL.ZS'],
+      ['inflation', 'FP.CPI.TOTL.ZG'],
+      ['consumerPriceIndex', 'FP.CPI.TOTL'],
+      ['govExpenditure', 'GC.XPN.TOTL.GD.ZS'],
+      ['govRevenue', 'GC.REV.XGRT.GD.ZS'],
+      ['taxRevenue', 'GC.TAX.TOTL.GD.ZS'],
+      ['currentAccountBalance', 'BN.CAB.XOKA.GD.ZS'],
+      ['exportsGdpPct', 'NE.EXP.GNFS.ZS'],
+      ['importsGdpPct', 'NE.IMP.GNFS.ZS'],
+      ['fdiNet', 'BN.KLT.DINV.CD'],
+      ['realInterestRate', 'FR.INR.RINR'],
+      ['lendingRate', 'FR.INR.LEND'],
+      ['laborForceParticipation', 'SL.TLF.CACT.ZS'],
+    ] as const)(
+      'INDICATOR_IDS does not expose economic key "%s" (%s) — IMF supplies that context',
+      (key, _id) => {
+        expect((INDICATOR_IDS as Record<string, string>)[key]).toBeUndefined();
+      },
+    );
+
+    it('includes the World Bank coverage areas (military, environment, governance, demographics, health, education)', () => {
+      expect(INDICATOR_IDS.militaryExpenditure).toBe('MS.MIL.XPND.GD.ZS');
+      expect(INDICATOR_IDS.co2Emissions).toBe('EN.ATM.CO2E.PC');
+      expect(INDICATOR_IDS.ruleOfLaw).toBe('RL.EST');
+      expect(INDICATOR_IDS.population).toBe('SP.POP.TOTL');
+      expect(INDICATOR_IDS.healthExpenditure).toBe('SH.XPD.CHEX.GD.ZS');
+      expect(INDICATOR_IDS.educationExpenditure).toBe('SE.XPD.TOTL.GD.ZS');
     });
 
-    it('should have unemployment indicator', () => {
-      expect(INDICATOR_IDS.unemployment).toBe('SL.UEM.TOTL.ZS');
+    it('defines a meaningful number of World Bank indicators', () => {
+      expect(Object.keys(INDICATOR_IDS).length).toBeGreaterThanOrEqual(50);
     });
 
-    it('should have inflation indicator', () => {
-      expect(INDICATOR_IDS.inflation).toBe('FP.CPI.TOTL.ZG');
-    });
-
-    it('should have all 144 defined indicators', () => {
-      const indicatorCount = Object.keys(INDICATOR_IDS).length;
-      expect(indicatorCount).toBe(144);
-    });
-
-    it('should have valid World Bank indicator ID format', () => {
+    it('uses a valid World Bank indicator ID format for every entry', () => {
       Object.values(INDICATOR_IDS).forEach((id) => {
-        // World Bank IDs follow pattern: XX.XXX.XXXX... (dot-separated segments)
-        // or governance indicators: XX.EST
         expect(id).toMatch(/^[A-Z]{2}\./);
       });
     });
 
-    it('should cover all 17 Riksdag-relevant domains', () => {
-      // Verify we have indicators from each major domain
+    it('must cover every non-economic Riksdag-relevant domain', () => {
       const domains = {
-        nationalAccounts: (id: string) => id.startsWith('NY.GDP') || id.startsWith('NE.CON') || id.startsWith('NE.GDI') || id.startsWith('NY.GNS') || id.startsWith('NY.ADJ') || id.startsWith('NY.GNP'),
-        taxation: (id: string) => id.startsWith('GC.'),
-        trade: (id: string) => id.startsWith('NE.TRD') || id.startsWith('NE.EXP') || id.startsWith('NE.IMP') || id.startsWith('BN.') || id.startsWith('BX.') || id.startsWith('BM.') || id.startsWith('TX.') || id.startsWith('NE.RSB'),
-        labor: (id: string) => id.startsWith('SL.'),
-        inflation: (id: string) => id.startsWith('FP.'),
-        financial: (id: string) => id.startsWith('FS.') || id.startsWith('FR.'),
-        demographics: (id: string) => id.startsWith('SP.') || id.startsWith('SM.') || id.startsWith('SH.DYN'),
+        demographics: (id: string) => id.startsWith('SP.') || id.startsWith('SM.') || id.startsWith('SH.DYN') || id === 'IT.NET.USER.ZS',
         health: (id: string) => id.startsWith('SH.') && !id.startsWith('SH.DYN'),
         education: (id: string) => id.startsWith('SE.'),
         environment: (id: string) => id.startsWith('EN.') || id.startsWith('AG.'),
         infrastructure: (id: string) => id.startsWith('IT.') || id.startsWith('IS.') || id.startsWith('IP.PAT'),
-        innovation: (id: string) => id.startsWith('GB.') || id === 'BX.GSR.CCIS.ZS' || id.startsWith('IP.JRN'),
+        innovation: (id: string) => id.startsWith('GB.') || id.startsWith('IP.JRN'),
         military: (id: string) => id.startsWith('MS.'),
         governance: (id: string) => id.endsWith('.EST'),
         inequality: (id: string) => id.startsWith('SI.'),

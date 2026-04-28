@@ -8,7 +8,7 @@
 |---|---|---|
 | `riksdag-regering` | Swedish parliamentary primary source (Riksdag + Regering documents, motions, votes, MPs, speeches) | ✅ Active (HTTP) |
 | `scb` | Statistics Sweden national-statistics ground truth (PxWeb v2) | ✅ Active (container) |
-| `world-bank` | Governance (WGI), environment, social residue **only** — economic codes deprecated | ✅ Active (container) |
+| `world-bank` | Governance (WGI), environment, social residue **only** — never economic context (use IMF) | ✅ Active (container) |
 | `github`, `filesystem`, `memory`, `sequential-thinking`, `playwright` | Standard tooling | ✅ Active |
 
 ## 🌐 Why IMF is **not** an MCP server (and never should be)
