@@ -105,7 +105,7 @@ function listMarkdown(dir: string): string[] {
 
 /**
  * Extract every fenced code block from a markdown source. We treat
- * bash, sh, shell, console, and unspecified fences as shell-bearing --
+ * bash, sh, shell, zsh, console, and unspecified fences as shell-bearing --
  * the AWF sandbox does not look at the language tag, only at the
  * resulting command string the agent constructs.
  */
