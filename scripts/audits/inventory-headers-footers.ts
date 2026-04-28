@@ -222,12 +222,6 @@ interface CategoryGroup {
   totalPages: number;
 }
 
-function variantKey(block: BlockInventory): string {
-  const links = dedupe(block.links).map((l) => `${l.href}|${l.text}`).join('\n');
-  const images = dedupe(block.images).map((i) => `${i.src}|${i.alt}`).join('\n');
-  return `class=${block.className ?? '∅'}\n${links}\n--IMG--\n${images}`;
-}
-
 function main(): void {
   const pages: PageInventory[] = [];
   for (const absolute of walk(ROOT_DIR)) {
