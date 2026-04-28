@@ -23,7 +23,14 @@ export default defineConfig({
     // Coverage configuration
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'html', 'lcov', 'json'],
+      // The default `text` reporter inherits the terminal width and elides
+      // long file names with `…`, which makes CI logs hard to act on (e.g.
+      // `…ted-chrome.ts` could be either `backfill-translated-chrome.ts`
+      // or `normalize-static-html-chrome.ts`). Pinning `maxCols: 200`
+      // forces the istanbul-reports text writer to print every column at
+      // full width regardless of TTY size, so console logs always show
+      // the full path.
+      reporter: [['text', { maxCols: 200 }], 'html', 'lcov', 'json'],
       reportsDirectory: './builds/coverage',
       
       // Enabled: include all source files so zero-coverage modules are visible
@@ -125,6 +132,33 @@ export default defineConfig({
         'scripts/fetch-voting-records.ts',
         'scripts/imf-fetch.ts',
         'scripts/statskontoret-fetch.ts',
+        // CLI fetch scripts that exec at module load (process.argv parsing
+        // + top-level file I/O), exercised by integration smoke tests
+        // mirroring `imf-fetch.ts`/`statskontoret-fetch.ts` above.
+        'scripts/scb-fetch.ts',
+        'scripts/riksbank-fetch.ts',
+        // CLI shims for the post-Round-6 split modules. Each shim is now
+        // ~60 LOC: a `main()` that fans out across the 14 supported
+        // languages and writes files to disk. The bounded-context leaf
+        // modules under `scripts/sitemap-xml/`, `scripts/sitemap-html/`
+        // and `scripts/political-intelligence/` (where the real branching
+        // logic lives) remain inside the gate and are unit-tested via
+        // `tests/sitemap-xml-leaf-modules.test.ts`,
+        // `tests/sitemap-html-leaf-modules.test.ts` and
+        // `tests/political-intelligence-leaf-modules.test.ts`.
+        'scripts/generate-sitemap.ts',
+        'scripts/generate-sitemap-html.ts',
+        'scripts/generate-political-intelligence.ts',
+        // CLI helpers that operate on the rendered HTML / vendored assets
+        // at module load (file I/O on import). Exercised end-to-end by the
+        // build pipeline (`prebuild`/`postbuild` in `package.json`) and by
+        // headers/footers audit and article-validator workflows, not by
+        // unit tests.
+        'scripts/backfill-translated-chrome.ts',
+        'scripts/copy-vendor-mermaid.ts',
+        'scripts/normalize-static-html-chrome.ts',
+        'scripts/validate-article.ts',
+        'scripts/audits/inventory-headers-footers.ts',
         'scripts/mcp-query-cli.ts',
         'scripts/extract-news-metadata.ts',
         'scripts/rewrite-article-metadata.ts',
@@ -146,6 +180,18 @@ export default defineConfig({
         // Pure-barrel re-export modules (no executable code beyond imports).
         'scripts/data-transformers.ts',
         'scripts/generate-news-indexes.ts',
+        // Pure-barrel `index.ts` files — `export { … } from './leaf.js'`
+        // only, no branching. Their leaves are individually gated and
+        // unit-tested; the barrels are purely a public-surface convention
+        // (consumers import from the directory, not the leaves).
+        'scripts/political-intelligence/index.ts',
+        'scripts/rss/index.ts',
+        'scripts/sitemap-html/index.ts',
+        'scripts/sitemap-xml/index.ts',
+        'src/browser/cia/loaders/index.ts',
+        // Pure-type module (interfaces + type aliases). No runtime code,
+        // therefore no runtime coverage to measure.
+        'src/browser/cia/types.ts',
         // Constants-only / large translation-dictionary modules (data, not
         // logic; verified via schema tests, not branch coverage).
         'scripts/data-transformers/types.ts',
