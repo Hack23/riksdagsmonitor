@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "cycle": "month-ahead",
+  "date": "2026-04-28",
+  "subfolder": "month-ahead",
+  "pirs": [
+    {
+      "pir_id": "PIR-1",
+      "statement": "Will the Tidö coalition (M+KD+L with SD support) remain stable through June 2026?",
+      "status": "open",
+      "confidence": "HIGH"
+    },
+    {
+      "pir_id": "PIR-2",
+      "statement": "Will the government's criminal justice legislative cluster (weapons law, prison expansion, youth offenders, police training) pass in May 2026 as scheduled?",
+      "status": "open",
+      "confidence": "HIGH"
+    },
+    {
+      "pir_id": "PIR-3",
+      "statement": "Will Sweden's ratification of the international reparations commission (HD03231) and special tribunal (HD03232) for Ukraine proceed to successful Riksdag vote in May-June 2026?",
+      "status": "open",
+      "confidence": "VERY HIGH"
+    },
+    {
+      "pir_id": "PIR-4",
+      "statement": "Will Socialdemokraterna's coordinated six-interpellation campaign (infrastructure, sick-pay, corporate crime) produce measurable polling movement of ≥1.5pp by June 2026?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-5",
+      "statement": "Will SD's challenge on energy policy escalate to coalition friction in May-June 2026?",
+      "status": "open",
+      "confidence": "LOW"
+    },
+    {
+      "pir_id": "PIR-6",
+      "statement": "Will the Södra stambanan infrastructure gap (HD10449) become a sustained electoral liability for the government coalition before September 2026?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-7",
+      "statement": "Will Centre Party make a public coalition preference signal before summer 2026 that could reshape coalition formation assumptions?",
+      "status": "open",
+      "confidence": "LOW"
+    },
+    {
+      "pir_id": "PIR-8",
+      "statement": "Will the HD024099 motion (extending official liability beyond proposition 2025/26:217) produce JuU committee hearings or substantive amendments in May 2026?",
+      "status": "open",
+      "confidence": "LOW"
+    }
+  ]
+}
