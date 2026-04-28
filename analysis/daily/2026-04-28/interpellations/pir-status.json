@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "cycle": "interpellations",
+  "date": "2026-04-28",
+  "subfolder": "interpellations",
+  "generated_at": "2026-04-28T00:00:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-INFRA-SWE-RAIL",
+      "statement": "Will the Tidö government restore the Alvesta-Växjö double track and Södra stambanan investments in the national infrastructure plan?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "notes": "Minister Carlson's response due 2026-05-18; no public commitment made as of filing date"
+    },
+    {
+      "pir_id": "PIR-SOCIAL-DAY180",
+      "statement": "Does the Tidö government intend to reform or remove the day-180 sickness insurance exception?",
+      "status": "open",
+      "confidence": "LOW",
+      "notes": "No public government position confirmed; interpellation triggered by signals not yet made formal policy"
+    },
+    {
+      "pir_id": "PIR-CRIME-CORP-FOLLOW",
+      "statement": "What additional measures beyond the January 2025 law will the government take to prevent criminal use of corporate structures?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "notes": "Minister Strömmer's response due 2026-05-18; ESO 352 BSEK estimate creates strong political pressure to announce additional measures"
+    },
+    {
+      "pir_id": "PIR-OPP-STRATEGY-2026",
+      "statement": "Is the S opposition executing a coordinated pre-election accountability strategy targeting infrastructure, welfare, and rule-of-law simultaneously?",
+      "status": "answered",
+      "confidence": "VERY HIGH",
+      "notes": "Three coordinated interpellations filed on the same day (2026-04-27) across three distinct ministerial domains; strongly indicates deliberate strategy"
+    }
+  ]
+}
