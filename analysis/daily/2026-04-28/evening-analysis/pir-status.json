@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "cycle": "evening-analysis",
+  "subfolder": "evening-analysis",
+  "date": "2026-04-28",
+  "generated_at": "2026-04-28T20:15:00Z",
+  "pirs": [
+    {
+      "id": "PIR-01",
+      "requirement": "Will L formally support or oppose HD01SfU28 language requirement amendments?",
+      "status": "OPEN",
+      "confidence": "N/A",
+      "resolution": null,
+      "watch_window_end": "2026-05-15"
+    },
+    {
+      "id": "PIR-02",
+      "requirement": "Will HC01FiU20 pass plenary without amendment triggering minority report?",
+      "status": "OPEN",
+      "confidence": "N/A",
+      "resolution": null,
+      "watch_window_end": "2026-05-25"
+    },
+    {
+      "id": "PIR-03",
+      "requirement": "What is the US tariff exposure for Swedish manufacturing embedded in FiU20 GDP forecast?",
+      "status": "OPEN",
+      "confidence": "N/A",
+      "resolution": null,
+      "watch_window_end": "2026-05-30"
+    },
+    {
+      "id": "PIR-04",
+      "requirement": "Will S and C announce joint fiscal alternative before the Spring Budget plenary?",
+      "status": "OPEN",
+      "confidence": "N/A",
+      "resolution": null,
+      "watch_window_end": "2026-05-25"
+    },
+    {
+      "id": "PIR-05",
+      "requirement": "Has EU Commission initiated infringement proceedings against Sweden on CER Directive?",
+      "status": "OPEN",
+      "confidence": "N/A",
+      "resolution": null,
+      "watch_window_end": "2026-06-30"
+    }
+  ],
+  "prior_cycle_pirs": [
+    {
+      "id": "PIR-A01",
+      "from_cycle": "realtime-pulse",
+      "from_date": "2026-04-27",
+      "requirement": "Would Spring Bills pass FiU committee?",
+      "status": "RESOLVED",
+      "resolution": "HC01FiU20 + HC01FiU24 endorsed by FiU committee majority 2026-04-28"
+    },
+    {
+      "id": "PIR-A02",
+      "from_cycle": "realtime-pulse",
+      "from_date": "2026-04-27",
+      "requirement": "Would CER legislation advance in FöU?",
+      "status": "RESOLVED",
+      "resolution": "HD01FöU20 and HD01FöU14 advanced — FöU recommends passage"
+    },
+    {
+      "id": "PIR-A03",
+      "from_cycle": "motions",
+      "from_date": "2026-04-27",
+      "requirement": "Would S file formal counter on anti-corruption?",
+      "status": "RESOLVED",
+      "resolution": "HD024099 filed — S formally challenges Prop. 2025/26:217 scope"
+    }
+  ]
+}
