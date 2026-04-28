@@ -52,6 +52,12 @@ interface BannedPattern {
 /**
  * The blocklist -- kept in sync with the table in
  * .github/prompts/01-bash-and-shell-safety.md (Banned expansion patterns).
+ *
+ * Every row in that table maps to one entry below; if a new row is
+ * added to the safety doc, add the corresponding pattern here in the
+ * same PR (the doc-presence guard tests rely on the safety doc still
+ * naming all four base shapes, but new shapes need a matching regex
+ * to be enforced repo-wide).
  */
 const BANNED_PATTERNS: readonly BannedPattern[] = [
   {
@@ -77,12 +83,47 @@ const BANNED_PATTERNS: readonly BannedPattern[] = [
   {
     id: 'eval-on-variable',
     description: 'eval, bash -c "$var", or source /dev/stdin <<<"$var"',
-    // Match eval followed by a string- or variable-bearing argument.
-    // Eval on plain-literal flag-only invocations is also banned in our
-    // workflows -- there is no safe eval use in this repo.
+    // There is no safe eval use in this repo. Match every shape:
+    //   eval $var | eval "$var" | eval -- "$var" | eval some-cmd
+    //   bash -c "$var" / bash -c '...$var...'
+    //   source /dev/stdin <<<"$var"
     regex:
-      /(^|[^A-Za-z_./])(eval\s+["'$\\]|bash\s+-c\s+["'][^"']*\$|source\s+\/dev\/stdin)/,
+      /(^|[^A-Za-z_./])(eval(?:\s|$)|bash\s+-c\s+["'][^"']*\$|source\s+\/dev\/stdin)/,
     safeRewrite: 'arrays, case, or explicit branches -- never eval',
+  },
+  {
+    id: 'chained-builder-cmd-substitution',
+    description:
+      'Chained builder assignments that progressively construct a command substitution (a=foo; b="$a"bar; c=$($b))',
+    // Detect `c=$($b)` / `out=$("$cmd")` etc. -- a single command
+    // substitution whose body is *only* a variable expansion, with no
+    // literal command name. This is the staged-injection shape called
+    // out by the safety doc; safe code names a real command up front.
+    regex: /=\s*\$\(\s*["']?\$[A-Za-z_][A-Za-z0-9_]*["']?\s*\)/,
+    safeRewrite: 'declare cmd as an array; invoke "${cmd[@]}" -- never re-parse a string',
+  },
+  {
+    id: 'echo-double-cmd-substitution',
+    description:
+      'echo/printf "...$(cmd)..." with a second $(...) elsewhere on the same line (AWF false-positive nested-cmd-subst)',
+    // The AWF sandbox flags `echo "...$(a)..."` when ANY second $(...)
+    // appears on the same `command` string, even if the two are not
+    // nested. Catch any echo/printf line with two or more $(...) -- the
+    // safe rewrite is RESULT=$(cmd); echo "...$RESULT..." regardless of
+    // whether the substitutions sit inside the same quoted string.
+    regex: /\b(?:echo|printf)\b[^\n]*\$\([^)\n]*\)[^\n]*\$\(/,
+    safeRewrite: 'RESULT=$(cmd); echo "...$RESULT..."  (split into two lines)',
+  },
+  {
+    id: 'inline-array-expansion',
+    description:
+      'Inline bash array literal built and expanded with "${arr[@]}" in the same command string (AWF rejects (...) + [@])',
+    // Catch `ARR=(... )` followed later on the same line by `${ARR[@]}`.
+    // Multi-line array declarations are fine -- it is only the single-
+    // command-string shape that the AWF sandbox v0.69.3 rejects.
+    regex: /[A-Za-z_][A-Za-z0-9_]*=\([^)]*\)[^\n]*\$\{[A-Za-z_][A-Za-z0-9_]*\[@\]\}/,
+    safeRewrite:
+      'write the list to /tmp and `while IFS= read -r f`, or unroll the loop with `for f in a b c`',
   },
 ];
 
@@ -108,6 +149,11 @@ function listMarkdown(dir: string): string[] {
  * bash, sh, shell, zsh, console, and unspecified fences as shell-bearing --
  * the AWF sandbox does not look at the language tag, only at the
  * resulting command string the agent constructs.
+ *
+ * Indented fences (e.g. shell blocks nested under list items) are
+ * supported: any leading whitespace before the opening fence is
+ * tolerated, and the closing fence must match that indentation level
+ * (the standard CommonMark rule).
  */
 function extractShellBlocks(source: string): { startLine: number; body: string }[] {
   const lines = source.split('\n');
@@ -116,26 +162,33 @@ function extractShellBlocks(source: string): { startLine: number; body: string }
   let lang = '';
   let bodyStart = 0;
   let bodyLines: string[] = [];
+  let openIndent = '';
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i] ?? '';
-    const fenceMatch = line.match(/^```([A-Za-z0-9_+-]*)\s*$/);
-    if (fenceMatch) {
-      if (!inBlock) {
+    if (!inBlock) {
+      const open = line.match(/^(\s*)```([A-Za-z0-9_+-]*)\s*$/);
+      if (open) {
         inBlock = true;
-        lang = (fenceMatch[1] ?? '').toLowerCase();
+        openIndent = open[1] ?? '';
+        lang = (open[2] ?? '').toLowerCase();
         bodyStart = i + 1;
         bodyLines = [];
-      } else {
-        if (lang === '' || ['bash', 'sh', 'shell', 'console', 'zsh'].includes(lang)) {
-          blocks.push({ startLine: bodyStart + 1, body: bodyLines.join('\n') });
-        }
-        inBlock = false;
-        lang = '';
       }
       continue;
     }
-    if (inBlock) bodyLines.push(line);
+    // Inside a block: the closing fence is ``` at the same indentation.
+    const close = line.match(/^(\s*)```\s*$/);
+    if (close && (close[1] ?? '') === openIndent) {
+      if (lang === '' || ['bash', 'sh', 'shell', 'console', 'zsh'].includes(lang)) {
+        blocks.push({ startLine: bodyStart + 1, body: bodyLines.join('\n') });
+      }
+      inBlock = false;
+      lang = '';
+      openIndent = '';
+      continue;
+    }
+    bodyLines.push(line);
   }
   return blocks;
 }
@@ -191,7 +244,10 @@ const FILES_TO_SCAN: readonly string[] = [
     .readdirSync(PROMPTS_DIR)
     .filter((f) => f.endsWith('.md') && f !== SAFETY_DOC)
     .map((f) => path.join(PROMPTS_DIR, f)),
-  ...listMarkdown(SKILLS_DIR),
+  // Skill bodies the agent loads at runtime are the SKILL.md files only;
+  // README.md and other docs under .github/skills/ are not mounted into
+  // the prompt context, so excluding them avoids noisy unrelated failures.
+  ...listMarkdown(SKILLS_DIR).filter((file) => path.basename(file) === 'SKILL.md'),
 ];
 
 describe('Agentic Workflow Bash & Shell Safety', () => {

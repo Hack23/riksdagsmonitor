@@ -743,10 +743,11 @@ jobs:
                 --body "Personal Access Token expires in $DAYS_UNTIL_EXPIRATION days. Please rotate." \
                 --label security,automation
             elif [ "$DAYS_UNTIL_EXPIRATION" -lt 0 ]; then
-              echo "❌ Token already expired ($DAYS_UNTIL_EXPIRATION days ago) — rotate immediately"
+              EXPIRED_DAYS=$((-DAYS_UNTIL_EXPIRATION))
+              echo "❌ Token already expired ($EXPIRED_DAYS days ago) — rotate immediately"
               gh issue create \
                 --title "🔐 GitHub PAT Expired" \
-                --body "Personal Access Token expired $((-DAYS_UNTIL_EXPIRATION)) days ago." \
+                --body "Personal Access Token expired $EXPIRED_DAYS days ago." \
                 --label security,automation
             fi
           fi
