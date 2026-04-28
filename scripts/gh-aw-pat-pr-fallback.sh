@@ -1,0 +1,512 @@
+#!/usr/bin/env bash
+# SPDX-FileCopyrightText: 2024-2026 Hack23 AB
+# SPDX-License-Identifier: Apache-2.0
+#
+# gh-aw Host-side PAT PR fallback.
+#
+# Recovers a sandbox-side `git commit` produced by a news-* agentic workflow
+# when the gh-aw safeoutputs MCP `create_pull_request` call failed (typically
+# `Error POSTing to endpoint: session not found` after the ~30 min Streamable
+# HTTP idle TTL, but also any other safeoutputs failure that leaves the
+# committed branch unpublished).
+#
+# Two recovery paths, evaluated in order:
+#
+#   1. Primary — positive bundle handoff (preferred).
+#        Stage E in .github/prompts/07-commit-and-pr.md mandates that the
+#        agent, immediately after `git commit`, writes:
+#            /tmp/gh-aw/aw-fallback.bundle   (git bundle create … main..HEAD)
+#            /tmp/gh-aw/aw-fallback.json     (branch, sha, slug, title, body, …)
+#        gh-aw uploads `/tmp/gh-aw/aw-*.bundle` and `/tmp/gh-aw/aw-*.json`
+#        with the `agent` artifact (already in the upload glob). The host job
+#        downloads the artifact, fetches the bundle into the host checkout,
+#        and force-with-leases the branch to origin under the host PAT.
+#
+#   2. Secondary — legacy dirty-workspace recovery (kept for compatibility).
+#        Triggered when no bundle is present but the agent stdio log contains
+#        `session not found` AND there are uncommitted changes (or an
+#        `aw-*.patch` to apply). Stages only `analysis/daily/**` + `news/**`.
+#
+# Failure semantics: the job is GREEN only when a PR was successfully created
+# or already existed for the target branch. Any other outcome (push failure,
+# malformed manifest, missing PAT scopes, gh pr create error) exits non-zero
+# so the job fails loudly. The earlier "silent green-exit" failure mode that
+# masked run 25028873034 in euparliamentmonitor is eliminated.
+#
+# Required env (set by the calling workflow):
+#   GH_AW_PAT_PR_FALLBACK_TOKEN  PAT with `contents:write,pull_requests:write`
+#                                (falls back to GH_TOKEN if unset)
+#   GH_AW_PAT_FALLBACK_SLUG      Article slug (e.g. `week-in-review`)
+#   GH_AW_PAT_FALLBACK_RUN_URL   URL of the agent run that produced the bundle
+#   GH_AW_PAT_FALLBACK_WORKFLOW_NAME  Human-readable workflow name
+#   GITHUB_REPOSITORY, GITHUB_SERVER_URL, GITHUB_RUN_ID  (set by Actions)
+#
+# Optional env:
+#   GH_AW_PAT_FALLBACK_BUNDLE   Override path (default /tmp/gh-aw/aw-fallback.bundle)
+#   GH_AW_PAT_FALLBACK_MANIFEST Override path (default /tmp/gh-aw/aw-fallback.json)
+#   GH_AW_PAT_FALLBACK_STDIO_LOG Override path (default /tmp/gh-aw/agent-stdio.log)
+#   GH_AW_PAT_FALLBACK_AUDIT_LOG Override path (default /tmp/gh-aw/fallback-events.jsonl)
+#   GH_AW_PAT_FALLBACK_SAFEOUTPUTS_FILE  Override safeoutputs.jsonl path
+#   GH_AW_PAT_FALLBACK_DRY_RUN   When `1`, skip remote push and `gh pr create`
+#                                (used by tests).
+#
+
+set -euo pipefail
+
+log() {
+  printf 'gh-aw-pat-pr-fallback: %s\n' "$*" >&2
+}
+
+die() {
+  log "ERROR: $*"
+  audit "error" "$1" "${2:-}"
+  exit 1
+}
+
+step_summary() {
+  if [ -n "${GITHUB_STEP_SUMMARY:-}" ] && [ -w "$(dirname "${GITHUB_STEP_SUMMARY}")" ] 2>/dev/null; then
+    printf '%s\n' "$*" >> "$GITHUB_STEP_SUMMARY"
+  fi
+}
+
+audit() {
+  # OTLP-shaped JSON event; one event per line.
+  local event="$1"
+  local message="${2:-}"
+  local extra="${3:-}"
+  local audit_log="${GH_AW_PAT_FALLBACK_AUDIT_LOG:-/tmp/gh-aw/fallback-events.jsonl}"
+  mkdir -p "$(dirname "$audit_log")" 2>/dev/null || true
+  local ts
+  ts=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+  node - "$ts" "$event" "$message" "$extra" \
+    "${GH_AW_PAT_FALLBACK_SLUG:-}" "${GH_AW_PAT_FALLBACK_WORKFLOW_NAME:-}" \
+    "${GITHUB_RUN_ID:-}" "${GITHUB_REPOSITORY:-}" \
+    >> "$audit_log" 2>/dev/null <<'NODE_AUDIT' || true
+const [, , ts, event, message, extra, slug, wf, run, repo] = process.argv;
+const payload = { ts, event, slug, workflow: wf, run_id: run, repo };
+if (message) payload.message = message;
+if (extra) {
+  try { Object.assign(payload, JSON.parse(extra)); }
+  catch { payload.extra = extra; }
+}
+process.stdout.write(JSON.stringify(payload) + '\n');
+NODE_AUDIT
+}
+
+mask_token() {
+  local tok="$1"
+  if [ -n "$tok" ]; then
+    printf '::add-mask::%s\n' "$tok"
+  fi
+}
+
+read_manifest_field() {
+  # read_manifest_field <manifest-path> <field-name>
+  node - "$1" "$2" <<'NODE_FIELD'
+const fs = require('fs');
+const [, , path, field] = process.argv;
+try {
+  const m = JSON.parse(fs.readFileSync(path, 'utf8'));
+  const v = m[field];
+  if (v === undefined || v === null) process.stdout.write('');
+  else if (typeof v === 'string') process.stdout.write(v);
+  else process.stdout.write(JSON.stringify(v));
+} catch (e) {
+  process.exit(2);
+}
+NODE_FIELD
+}
+
+primary_branch_from_bundle() {
+  # Extract the (single) branch ref from a git bundle.
+  git bundle list-heads "$1" 2>/dev/null | awk 'NR==1 {print $2}' | sed 's|^refs/heads/||'
+}
+
+# ---------------------------------------------------------------------------
+# Trigger evaluation
+# ---------------------------------------------------------------------------
+
+bundle="${GH_AW_PAT_FALLBACK_BUNDLE:-/tmp/gh-aw/aw-fallback.bundle}"
+manifest="${GH_AW_PAT_FALLBACK_MANIFEST:-/tmp/gh-aw/aw-fallback.json}"
+stdio_log="${GH_AW_PAT_FALLBACK_STDIO_LOG:-/tmp/gh-aw/agent-stdio.log}"
+safeoutputs_file="${GH_AW_PAT_FALLBACK_SAFEOUTPUTS_FILE:-${GH_AW_SAFE_OUTPUTS:-/tmp/gh-aw/safeoutputs.jsonl}}"
+
+# A successful safeoutputs PR creation writes a `create_pull_request` event to
+# safeoutputs.jsonl. If that event exists, the deliverable already shipped via
+# safeoutputs and the host-side fallback must skip — never duplicate PRs.
+if [ -f "$safeoutputs_file" ] && grep -q '"create_pull_request"' "$safeoutputs_file"; then
+  log "safeoutputs already produced a create_pull_request event; fallback skipped"
+  step_summary "✅ Host-side PAT PR fallback skipped — safeoutputs PR already created."
+  audit "skip" "safeoutputs PR already created"
+  exit 0
+fi
+
+primary_active=0
+secondary_active=0
+if [ -f "$manifest" ] && [ -f "$bundle" ]; then
+  primary_active=1
+  log "primary path active — manifest + bundle present"
+elif [ -f "$bundle" ]; then
+  primary_active=1
+  log "primary path active — bundle only (will derive metadata)"
+elif [ -f "$stdio_log" ] && grep -qi 'session not found' "$stdio_log"; then
+  secondary_active=1
+  log "secondary path active — session not found detected, no bundle"
+fi
+
+if [ "$primary_active" -eq 0 ] && [ "$secondary_active" -eq 0 ]; then
+  log "no fallback handoff present; nothing to do"
+  step_summary "ℹ️ Host-side PAT PR fallback not triggered — no bundle, no session-not-found marker."
+  audit "noop" "no handoff and no session-not-found"
+  exit 0
+fi
+
+# ---------------------------------------------------------------------------
+# Token + scope validation (fail closed)
+# ---------------------------------------------------------------------------
+
+token=""
+if [ -n "${GH_AW_PAT_PR_FALLBACK_TOKEN:-}" ]; then
+  token="$GH_AW_PAT_PR_FALLBACK_TOKEN"
+elif [ -n "${GH_TOKEN:-}" ]; then
+  token="$GH_TOKEN"
+fi
+
+if [ -z "$token" ]; then
+  step_summary "❌ Host-side PAT PR fallback failed — no token available."
+  die "no fallback token available"
+fi
+
+mask_token "$token"
+export GH_TOKEN="$token"
+
+repo=""
+if [ -n "${GITHUB_REPOSITORY:-}" ]; then
+  repo="$GITHUB_REPOSITORY"
+else
+  step_summary "❌ Host-side PAT PR fallback failed — GITHUB_REPOSITORY unavailable."
+  die "GITHUB_REPOSITORY unavailable"
+fi
+
+server_url="${GITHUB_SERVER_URL:-https://github.com}"
+case "$server_url" in
+  http://*|https://*) ;;
+  *)
+    step_summary "❌ Host-side PAT PR fallback failed — GITHUB_SERVER_URL must include scheme."
+    die "GITHUB_SERVER_URL must include http:// or https://"
+    ;;
+esac
+server_host="${server_url#https://}"
+server_host="${server_host#http://}"
+
+if [ "${GH_AW_PAT_FALLBACK_DRY_RUN:-0}" != "1" ]; then
+  # Probe: does the PAT have write access to this repo?
+  if ! gh auth status >/dev/null 2>&1; then
+    step_summary "❌ Host-side PAT PR fallback failed — \`gh auth status\` rejected the supplied token."
+    die "gh auth status failed; PAT not authenticated"
+  fi
+  perms_json=$(gh api "/repos/$repo" --jq '{push: .permissions.push, pull: .permissions.pull, admin: .permissions.admin}' 2>/dev/null || true)
+  if [ -z "$perms_json" ]; then
+    step_summary "⚠️ Host-side PAT PR fallback — could not query repo permissions; proceeding optimistically."
+    audit "warn" "permission probe returned empty"
+  else
+    push=$(printf '%s' "$perms_json" | node -e 'let s=""; process.stdin.on("data",c=>s+=c).on("end",()=>{ try { const o=JSON.parse(s); process.stdout.write(o.push?"true":"false"); } catch { process.stdout.write("unknown"); }})')
+    if [ "$push" != "true" ]; then
+      step_summary "❌ Host-side PAT PR fallback failed — token lacks contents:write on $repo."
+      die "PAT lacks push permission" "$perms_json"
+    fi
+  fi
+fi
+
+git config --global user.email "github-actions[bot]@users.noreply.github.com"
+git config --global user.name "github-actions[bot]"
+git config --global advice.defaultBranchName false
+
+# ---------------------------------------------------------------------------
+# Primary path — bundle handoff
+# ---------------------------------------------------------------------------
+
+if [ "$primary_active" -eq 1 ]; then
+  branch=""
+  head_sha=""
+  parent_sha=""
+  slug="${GH_AW_PAT_FALLBACK_SLUG:-}"
+  today=""
+  analysis_dir=""
+  article_md_path=""
+  title=""
+  body_summary=""
+  gate_result="UNKNOWN"
+
+  if [ -f "$manifest" ]; then
+    if ! node -e 'JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"))' "$manifest" >/dev/null 2>&1; then
+      step_summary "❌ Host-side PAT PR fallback failed — manifest is not valid JSON."
+      die "aw-fallback.json is not valid JSON"
+    fi
+    branch=$(read_manifest_field "$manifest" branch || true)
+    head_sha=$(read_manifest_field "$manifest" head_sha || true)
+    parent_sha=$(read_manifest_field "$manifest" parent_sha || true)
+    [ -n "$slug" ] || slug=$(read_manifest_field "$manifest" slug || true)
+    today=$(read_manifest_field "$manifest" today || true)
+    analysis_dir=$(read_manifest_field "$manifest" analysis_dir || true)
+    article_md_path=$(read_manifest_field "$manifest" article_md_path || true)
+    title=$(read_manifest_field "$manifest" title || true)
+    body_summary=$(read_manifest_field "$manifest" body_summary || true)
+    gate_result=$(read_manifest_field "$manifest" gate_result || true)
+    [ -n "$gate_result" ] || gate_result="UNKNOWN"
+  fi
+
+  # If manifest didn't supply a branch, derive it from the bundle.
+  if [ -z "$branch" ]; then
+    branch=$(primary_branch_from_bundle "$bundle" || true)
+  fi
+
+  if [ -z "$branch" ]; then
+    step_summary "❌ Host-side PAT PR fallback failed — could not determine branch name from manifest or bundle."
+    die "branch name unavailable in manifest or bundle"
+  fi
+
+  # Derive title from article markdown when manifest didn't carry one.
+  if [ -z "$title" ] && [ -n "$article_md_path" ] && [ -f "$article_md_path" ]; then
+    title=$(awk '/^# / { sub(/^# /, ""); print; exit }' "$article_md_path")
+  fi
+  if [ -z "$title" ]; then
+    if [ -n "$slug" ] && [ -n "$today" ]; then
+      title="news: $slug — $today (host-side fallback)"
+    else
+      title="news: ${GH_AW_PAT_FALLBACK_SLUG:-recovery} — $(date -u +%Y-%m-%d) (host-side fallback)"
+    fi
+  fi
+  case "$title" in
+    "[news]"*|"📰 "*) ;;
+    *) title="📰 $title" ;;
+  esac
+
+  log "primary handoff: branch=$branch head=$head_sha parent=$parent_sha"
+  audit "primary_start" "bundle handoff" \
+    "$(printf '{"branch":"%s","head":"%s","parent":"%s","gate":"%s"}' "$branch" "$head_sha" "$parent_sha" "$gate_result")"
+
+  # Fetch bundle into the host checkout. We map all heads in the bundle into
+  # refs/aw-fallback/* to avoid clobbering any local branch.
+  if ! git fetch "$bundle" "+refs/heads/*:refs/aw-fallback/*"; then
+    step_summary "❌ Host-side PAT PR fallback failed — \`git fetch\` from bundle failed."
+    die "git fetch from bundle failed"
+  fi
+
+  recovered_ref="refs/aw-fallback/$branch"
+  if ! git rev-parse --verify --quiet "$recovered_ref" >/dev/null; then
+    # Some bundles only carry one head — try the first.
+    only_ref=$(git for-each-ref --format='%(refname)' refs/aw-fallback/ | head -n 1 || true)
+    if [ -n "$only_ref" ]; then
+      recovered_ref="$only_ref"
+      branch="${only_ref#refs/aw-fallback/}"
+      log "branch from manifest not in bundle; using sole bundle head $branch"
+    else
+      step_summary "❌ Host-side PAT PR fallback failed — bundle contains no branch heads."
+      die "bundle contains no branch heads"
+    fi
+  fi
+
+  recovered_sha=$(git rev-parse "$recovered_ref")
+  if [ -n "$head_sha" ] && [ "$head_sha" != "$recovered_sha" ]; then
+    log "warning: manifest head_sha=$head_sha differs from bundle head=$recovered_sha — trusting bundle"
+    audit "warn" "manifest/bundle head mismatch" \
+      "$(printf '{"manifest_head":"%s","bundle_head":"%s"}' "$head_sha" "$recovered_sha")"
+  fi
+
+  # Compose body.
+  body_file=$(mktemp)
+  trap 'rm -f "$body_file"' EXIT
+  workflow_name="${GH_AW_PAT_FALLBACK_WORKFLOW_NAME:-${slug:-news}}"
+  run_url="${GH_AW_PAT_FALLBACK_RUN_URL:-$server_url/$repo/actions/runs/${GITHUB_RUN_ID:-unknown}}"
+  {
+    if [ -n "$body_summary" ]; then
+      printf '%s\n\n' "$body_summary"
+    fi
+    cat <<EOF_BODY
+> 🛟 **Host-side PAT fallback PR.** The agent committed inside the gh-aw sandbox
+> but the safeoutputs MCP \`create_pull_request\` call failed (typically a
+> \`session not found\` after the ~30 min Streamable-HTTP idle TTL). The host
+> job replayed the agent commit from a portable git bundle and opened this PR
+> under the repo PAT.
+
+| Field | Value |
+|-------|-------|
+| Workflow | $workflow_name |
+| Agent run | $run_url |
+| Branch | \`$branch\` |
+| Head SHA | \`$recovered_sha\` |
+| Article slug | \`${slug:-?}\` |
+| Article date | \`${today:-?}\` |
+| Analysis dir | \`${analysis_dir:-?}\` |
+| Gate result | \`${gate_result}\` |
+| Recovery path | primary (bundle handoff) |
+
+The fallback never modifies the working tree of the host runner — it pushes
+the bundle commit verbatim with \`--force-with-lease\`. Protected paths
+(\`.github/\`, \`package.json\`, lock files, etc.) are enforced by the agent
+prompt's Stage E checks before the bundle is created.
+EOF_BODY
+  } > "$body_file"
+
+  if [ "${GH_AW_PAT_FALLBACK_DRY_RUN:-0}" = "1" ]; then
+    log "dry run: would push $recovered_ref → refs/heads/$branch on $server_host/$repo"
+    log "dry run: would open PR titled '$title'"
+    step_summary "🧪 Host-side PAT PR fallback dry run completed for branch \`$branch\`."
+    audit "dry_run_success" "primary path" \
+      "$(printf '{"branch":"%s","title":%s}' "$branch" "$(printf '%s' "$title" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>process.stdout.write(JSON.stringify(s.trim())))')")"
+    exit 0
+  fi
+
+  push_url="https://x-access-token:${token}@${server_host}/${repo}.git"
+  if ! git push --force-with-lease "$push_url" "$recovered_ref:refs/heads/$branch" 2>&1; then
+    step_summary "❌ Host-side PAT PR fallback failed — \`git push\` rejected (force-with-lease conflict or auth)."
+    die "git push of recovered branch failed"
+  fi
+
+  existing_pr=$(gh pr list --repo "$repo" --head "$branch" --state open --json number,url --jq '.[0]' 2>/dev/null || true)
+  if [ -n "$existing_pr" ] && [ "$existing_pr" != "null" ]; then
+    pr_number=$(printf '%s' "$existing_pr" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>{const o=JSON.parse(s);process.stdout.write(String(o.number));})')
+    pr_url=$(printf '%s' "$existing_pr" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>{const o=JSON.parse(s);process.stdout.write(o.url);})')
+    log "open PR #$pr_number already exists for $branch — refreshing title/body"
+    if ! gh pr edit "$pr_number" --repo "$repo" --title "$title" --body-file "$body_file"; then
+      step_summary "❌ Host-side PAT PR fallback failed — could not update existing PR #$pr_number."
+      die "gh pr edit failed for #$pr_number"
+    fi
+    step_summary "✅ Host-side PAT PR fallback updated existing PR [#$pr_number]($pr_url) for branch \`$branch\`."
+    audit "primary_updated" "existing PR refreshed" \
+      "$(printf '{"branch":"%s","pr":%s,"url":"%s"}' "$branch" "$pr_number" "$pr_url")"
+    exit 0
+  fi
+
+  base_branch="${DEFAULT_BRANCH:-main}"
+  if ! pr_url=$(gh pr create \
+      --repo "$repo" \
+      --base "$base_branch" \
+      --head "$branch" \
+      --title "$title" \
+      --body-file "$body_file" 2>&1); then
+    step_summary "❌ Host-side PAT PR fallback failed — \`gh pr create\` errored: $pr_url"
+    die "gh pr create failed" "$(printf '{"err":%s}' "$(printf '%s' "$pr_url" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>process.stdout.write(JSON.stringify(s.trim())))')")"
+  fi
+  step_summary "✅ Host-side PAT PR fallback created PR $pr_url for branch \`$branch\`."
+  audit "primary_created" "$pr_url" \
+    "$(printf '{"branch":"%s","title":%s}' "$branch" "$(printf '%s' "$title" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>process.stdout.write(JSON.stringify(s.trim())))')")"
+  exit 0
+fi
+
+# ---------------------------------------------------------------------------
+# Secondary path — legacy dirty-workspace recovery
+# ---------------------------------------------------------------------------
+
+log "secondary path: dirty-workspace recovery"
+audit "secondary_start" "legacy dirty-workspace path"
+
+slug="${GH_AW_PAT_FALLBACK_SLUG:-${ARTICLE_TYPE_SLUG:-}}"
+if [ -z "$slug" ]; then
+  step_summary "❌ Host-side PAT PR fallback failed — no slug provided for secondary path."
+  die "article slug unavailable in secondary path"
+fi
+today="${TODAY:-$(date -u +%Y-%m-%d)}"
+branch="news/$today-$slug-recovery-${GITHUB_RUN_ID:-manual}"
+
+all_changed=$(mktemp)
+eligible_changed=$(mktemp)
+disallowed_changed=$(mktemp)
+trap 'rm -f "$all_changed" "$eligible_changed" "$disallowed_changed"' EXIT
+
+if [ -z "$(git status --porcelain)" ]; then
+  for patch_file in /tmp/gh-aw/aw-*.patch; do
+    [ -e "$patch_file" ] || continue
+    log "applying agent patch artifact $patch_file"
+    if git apply --whitespace=nowarn "$patch_file"; then
+      break
+    fi
+    log "patch artifact did not apply cleanly: $patch_file"
+  done
+fi
+
+git diff --name-only > "$all_changed"
+git ls-files --others --exclude-standard >> "$all_changed"
+sort -u "$all_changed" -o "$all_changed"
+
+while IFS= read -r file; do
+  [ -z "$file" ] && continue
+  case "$file" in
+    analysis/daily/*|news/*)
+      case "$file" in
+        *.lock|.github/workflows/*.lock.yml|.github/*|node_modules/*)
+          printf '%s\n' "$file" >> "$disallowed_changed" ;;
+        *)
+          printf '%s\n' "$file" >> "$eligible_changed" ;;
+      esac
+      ;;
+    *)
+      printf '%s\n' "$file" >> "$disallowed_changed" ;;
+  esac
+done < "$all_changed"
+
+if [ ! -s "$eligible_changed" ]; then
+  log "secondary path: no eligible analysis/news changes found; treating as no-op"
+  step_summary "ℹ️ Host-side PAT PR fallback (secondary) — no eligible changes; treated as no-op."
+  audit "secondary_noop" "no eligible files"
+  exit 0
+fi
+
+if [ -s "$disallowed_changed" ]; then
+  log "secondary path: leaving non-eligible workspace changes unstaged:"
+  sed 's/^/  - /' "$disallowed_changed" >&2
+fi
+
+git remote set-url origin "https://x-access-token:${token}@${server_host}/${repo}.git" 2>/dev/null || true
+git checkout -B "$branch"
+git reset --mixed --quiet
+
+while IFS= read -r file; do
+  git add -A -- "$file"
+done < "$eligible_changed"
+
+if git diff --cached --quiet; then
+  log "secondary path: staged diff is empty after add"
+  step_summary "ℹ️ Host-side PAT PR fallback (secondary) — staged diff empty; no-op."
+  audit "secondary_noop" "empty staged diff"
+  exit 0
+fi
+
+git commit -m "news(secondary fallback): publish $slug $today"
+
+if [ "${GH_AW_PAT_FALLBACK_DRY_RUN:-0}" = "1" ]; then
+  log "dry run: secondary path would push origin $branch and open PR"
+  step_summary "🧪 Host-side PAT PR fallback (secondary) dry run completed for \`$branch\`."
+  audit "dry_run_success" "secondary path" "$(printf '{"branch":"%s"}' "$branch")"
+  exit 0
+fi
+
+if ! git push --force-with-lease origin "$branch"; then
+  step_summary "❌ Host-side PAT PR fallback (secondary) failed — \`git push\` rejected."
+  die "secondary path: git push failed"
+fi
+
+run_url="${GH_AW_PAT_FALLBACK_RUN_URL:-$server_url/$repo/actions/runs/${GITHUB_RUN_ID:-unknown}}"
+title="📰 [news fallback] $slug — $today"
+body=$(printf 'Host-side PAT fallback (secondary path) created this PR after a sandbox safeoutputs failure for %s.\n\nAgent run: %s\n' "$slug" "$run_url")
+
+existing_pr=$(gh pr list --repo "$repo" --head "$branch" --state open --json number,url --jq '.[0]' 2>/dev/null || true)
+if [ -n "$existing_pr" ] && [ "$existing_pr" != "null" ]; then
+  pr_number=$(printf '%s' "$existing_pr" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>{const o=JSON.parse(s);process.stdout.write(String(o.number));})')
+  pr_url=$(printf '%s' "$existing_pr" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>{const o=JSON.parse(s);process.stdout.write(o.url);})')
+  if ! gh pr edit "$pr_number" --repo "$repo" --title "$title" --body "$body"; then
+    step_summary "❌ Host-side PAT PR fallback (secondary) — could not update existing PR #$pr_number."
+    die "secondary path: gh pr edit failed"
+  fi
+  step_summary "✅ Host-side PAT PR fallback (secondary) updated PR [#$pr_number]($pr_url)."
+  audit "secondary_updated" "$pr_url" "$(printf '{"branch":"%s"}' "$branch")"
+  exit 0
+fi
+
+if ! pr_url=$(gh pr create --repo "$repo" --base "${DEFAULT_BRANCH:-main}" --head "$branch" --title "$title" --body "$body" 2>&1); then
+  step_summary "❌ Host-side PAT PR fallback (secondary) — \`gh pr create\` errored: $pr_url"
+  die "secondary path: gh pr create failed"
+fi
+step_summary "✅ Host-side PAT PR fallback (secondary) created PR $pr_url for \`$branch\`."
+audit "secondary_created" "$pr_url" "$(printf '{"branch":"%s"}' "$branch")"
