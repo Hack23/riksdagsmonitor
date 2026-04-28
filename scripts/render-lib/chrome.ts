@@ -43,7 +43,6 @@ import { LANGUAGE_META, escapeHtml } from '../generate-sitemap-html.js';
 import {
   BASE_URL,
   GITHUB_BLOB,
-  GITHUB_TREE,
   LANGUAGES,
 } from './constants.js';
 import { chromeStrings } from './chrome-i18n.js';
