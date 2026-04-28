@@ -83,8 +83,6 @@ import {
 // Public barrel — for parity-with-leaf identity assertions.
 import * as aggregatorBarrel from '../scripts/render-lib/aggregator/index.js';
 import * as markdownBarrel from '../scripts/render-lib/markdown/index.js';
-import * as legacyAggregatorShim from '../scripts/render-lib/aggregator.js';
-import * as legacyMarkdownShim from '../scripts/render-lib/markdown.js';
 
 describe('aggregator/order — canonical narrative order', () => {
   it('AGGREGATION_ORDER opens with the executive brief', () => {
@@ -447,9 +445,7 @@ describe('markdown/* — leaf module isolation', () => {
 
 describe('barrel parity — leaf identity matches barrel re-export', () => {
   it('aggregator barrel re-exports the same `aggregateAnalysis` identity', () => {
-    expect(aggregatorBarrel.aggregateAnalysis).toBe(
-      legacyAggregatorShim.aggregateAnalysis,
-    );
+    expect(aggregatorBarrel.aggregateAnalysis).toBe(aggregateAnalysis);
   });
 
   it('aggregator barrel `__test__` exposes the same regex identity as the leaf', () => {
@@ -473,10 +469,5 @@ describe('barrel parity — leaf identity matches barrel re-export', () => {
   it('markdown barrel re-exports the same `sanitizeSchema` identity', () => {
     expect(markdownBarrel.sanitizeSchema).toBe(sanitizeSchema);
     expect(markdownBarrel.HEADING_ID_PREFIX).toBe(HEADING_ID_PREFIX);
-  });
-
-  it('legacy markdown shim re-exports the same `sanitizeSchema` identity', () => {
-    expect(legacyMarkdownShim.sanitizeSchema).toBe(sanitizeSchema);
-    expect(legacyMarkdownShim.HEADING_ID_PREFIX).toBe(HEADING_ID_PREFIX);
   });
 });

@@ -178,7 +178,6 @@ export default defineConfig({
         // Pure-type declaration files (no runtime code).
         'scripts/types/**',
         // Pure-barrel re-export modules (no executable code beyond imports).
-        'scripts/data-transformers.ts',
         'scripts/generate-news-indexes.ts',
         // Pure-barrel `index.ts` files — `export { … } from './leaf.js'`
         // only, no branching. Their leaves are individually gated and
