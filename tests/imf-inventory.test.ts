@@ -41,7 +41,6 @@ interface ImfDomain {
   primary?: boolean;
   committees: string[];
   indicators: ImfIndicator[];
-  supersedesWorldBank?: string[];
   [key: string]: unknown;
 }
 
@@ -50,28 +49,17 @@ interface ImfInventory {
   lastUpdated: string;
   source: string;
   committeeMatrix: Record<string, { provider: string; mustQuery: string[] }>;
-  deprecationPolicy: {
-    worldBankEconomicCodes: {
-      supersedes: Record<string, string>;
-      [k: string]: unknown;
-    };
-  };
   vintageDiscipline: { current: string; [k: string]: unknown };
   domains: Record<string, ImfDomain>;
   databases: Record<string, { label: string; [k: string]: unknown }>;
   totalIndicators: number;
+  indicators?: ImfIndicator[];
 }
 
 interface EconomicInventory {
   version: string;
-  deprecationPolicy: {
-    worldBankEconomicCodes: {
-      supersedes: Record<string, string>;
-      [k: string]: unknown;
-    };
-  };
   authoritativeSources: Record<string, string>;
-  indicators: Array<{ id: string; provider: string; supersedes?: string; [k: string]: unknown }>;
+  indicators: Array<{ id: string; provider: string; domain?: string; [k: string]: unknown }>;
 }
 
 function readJson<T>(relativePath: string): T {
@@ -139,16 +127,8 @@ describe('analysis/imf/indicators-inventory.json (v1.0 canonical)', () => {
     }
   });
 
-  it('exposes a deprecation policy mapping WB economic codes to IMF replacements', () => {
-    const dep = inv.deprecationPolicy.worldBankEconomicCodes.supersedes;
-    for (const wbCode of [
-      'NY.GDP.MKTP.KD.ZG',
-      'FP.CPI.TOTL.ZG',
-      'SL.UEM.TOTL.ZS',
-      'GC.DOD.TOTL.GD.ZS',
-    ]) {
-      expect(dep[wbCode], `deprecationPolicy missing WB code ${wbCode}`).toMatch(/^imf:/);
-    }
+  it('IMF inventory MUST NOT carry any deprecationPolicy block — economic context is IMF-native', () => {
+    expect((inv as { deprecationPolicy?: unknown }).deprecationPolicy).toBeUndefined();
   });
 
   it('committee matrix covers the main economic committees with IMF provider', () => {
@@ -187,24 +167,19 @@ describe('analysis/economic-indicators-inventory.json (v4.1 multi-provider)', ()
     );
   });
 
-  it('declares the WB-→-IMF supersedes map consistent with the IMF inventory', () => {
-    const econDep = inv.deprecationPolicy.worldBankEconomicCodes.supersedes;
+  it('master and IMF inventories MUST NOT carry any deprecationPolicy block — WB economic codes are purged, not deprecated', () => {
+    expect((inv as { deprecationPolicy?: unknown }).deprecationPolicy).toBeUndefined();
     const imfInv = readJson<ImfInventory>('analysis/imf/indicators-inventory.json');
-    const imfDep = imfInv.deprecationPolicy.worldBankEconomicCodes.supersedes;
-
-    // Every WB code listed in the multi-provider inventory must match the IMF-inventory mapping.
-    for (const [wbCode, imfTarget] of Object.entries(econDep)) {
-      expect(imfDep[wbCode], `IMF inventory deprecation missing ${wbCode}`).toBe(imfTarget);
-    }
+    expect((imfInv as { deprecationPolicy?: unknown }).deprecationPolicy).toBeUndefined();
   });
 
-  it('every inline IMF indicator that supersedes a WB code uses a valid WB prefix', () => {
-    for (const ind of inv.indicators ?? []) {
-      if (ind.supersedes) {
-        expect(ind.supersedes, `${ind.id} supersedes must be worldBank:CODE`).toMatch(
-          /^worldBank:[A-Z0-9._]+$/,
-        );
-      }
+  it('no IMF inventory indicator carries a `supersedes` link to World Bank — economic context is IMF-native', () => {
+    const imfInv = readJson<ImfInventory>('analysis/imf/indicators-inventory.json');
+    for (const ind of imfInv.indicators ?? []) {
+      expect(
+        (ind as { supersedes?: string }).supersedes,
+        `IMF indicator ${ind.id} must not carry a supersedes link`,
+      ).toBeUndefined();
     }
   });
 });

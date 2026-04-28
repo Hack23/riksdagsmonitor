@@ -1,17 +1,22 @@
 /**
  * @module WorldBank/Context
- * @description Economic context provider for news generation and political intelligence.
- * Maps World Bank indicators to Swedish political policy areas, enabling enriched
- * analysis that connects parliamentary decisions to economic outcomes.
+ * @description **Non-economic-only** context provider for political intelligence.
  *
- * **SINGLE SOURCE OF TRUTH**: Indicator data is loaded from
- * `analysis/worldbank/indicators-inventory.json` — the canonical machine-readable
- * inventory. Both AI agents (`view` tool) and this TypeScript module consume the
- * same JSON, ensuring consistency. To add or modify indicators, edit the JSON file
- * only — no TypeScript changes are required, and updates are picked up on the next run.
+ * World Bank is **NEVER** used for economic context in Riksdagsmonitor — not as
+ * primary, not as secondary, not as fallback, not as historical. All economic
+ * context (macro / fiscal / monetary / external-sector / trade / commodity / FX
+ * / interest rates / labour-market headlines) is sourced from **IMF** via
+ * `scripts/imf-fetch.ts` (catalogue: `analysis/imf/indicators-inventory.json`).
  *
- * Used by agentic workflows and article quality enhancement to add economic depth
- * to political reporting.
+ * This module exposes only the **non-economic residue** WB still publishes
+ * authoritatively: WGI governance (`source=75`), environment, social /
+ * health / education participation, demographics, defence historicals,
+ * agriculture, innovation (R&D / patents), inequality (GINI / income
+ * distribution), and crime / justice.
+ *
+ * **SINGLE SOURCE OF TRUTH**: indicator data is loaded from
+ * `analysis/worldbank/indicators-inventory.json`. To add or modify indicators
+ * edit the JSON file only — no TypeScript changes are required.
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -27,9 +32,16 @@ import { COUNTRY_CODES } from './world-bank-client.js';
 // Types
 // ---------------------------------------------------------------------------
 
-/** An economic indicator mapped to a policy area */
-export interface EconomicIndicatorContext {
-  /** World Bank indicator ID */
+/**
+ * A **non-economic** WB indicator mapped to a Swedish policy area.
+ *
+ * Note: economic codes (national accounts, government finance, trade,
+ * inflation, headline labour, financial-sector interest rates) are **not**
+ * present in this inventory. Use IMF citations via `scripts/imf-fetch.ts`
+ * for any economic context.
+ */
+export interface WorldBankIndicatorContext {
+  /** World Bank indicator ID (non-economic only) */
   readonly indicatorId: string;
   /** Human-readable name */
   readonly name: string;
@@ -41,22 +53,6 @@ export interface EconomicIndicatorContext {
   readonly committees: readonly string[];
   /** Unit of measurement */
   readonly unit: string;
-  /**
-   * `true` if this WB code is deprecated as a primary economic citation
-   * (`.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.1). Deprecated indicators
-   * are filtered out of the default {@link ECONOMIC_INDICATORS} export and
-   * are only available via {@link ALL_WORLD_BANK_INDICATORS} for audit /
-   * back-compat readers.
-   */
-  readonly deprecated?: boolean;
-  /**
-   * Canonical IMF replacement when `deprecated === true`, formatted as
-   * `imf:DATABASE:INDICATOR_ID` (e.g. `imf:WEO:NGDP_RPCH`). Mirrors
-   * `analysis/economic-indicators-inventory.json → deprecationPolicy.supersedes`.
-   */
-  readonly supersededBy?: string;
-  /** Plain-English reason the WB code was deprecated. */
-  readonly deprecationReason?: string;
 }
 
 /** Nordic country comparison set */
@@ -89,9 +85,6 @@ interface InventoryIndicator {
   mcpTool?: string;
   mcpParam?: string;
   source?: number;
-  deprecated?: boolean;
-  supersededBy?: string;
-  deprecationReason?: string;
 }
 
 interface InventoryDomain {
@@ -128,19 +121,18 @@ function resolveInventoryPath(): string {
 
 /**
  * Load and transform indicators from the JSON inventory file.
- * Each indicator in the JSON is mapped to an EconomicIndicatorContext
- * with description, policyAreas, and committees.
- *
- * Returns the **raw** inventory including indicators marked `deprecated`
- * — call sites that need only the active set should consume
- * {@link ECONOMIC_INDICATORS}.
+ * The inventory contains **non-economic residue only** — economic codes
+ * have been purged. Each indicator is mapped to an
+ * {@link WorldBankIndicatorContext} (the legacy interface name is retained
+ * for back-compat with downstream callers; semantically the contents are
+ * non-economic only).
  */
-function loadIndicatorsFromInventory(): readonly EconomicIndicatorContext[] {
+function loadIndicatorsFromInventory(): readonly WorldBankIndicatorContext[] {
   try {
     const raw = readFileSync(resolveInventoryPath(), 'utf-8');
     const inventory: IndicatorInventory = JSON.parse(raw);
 
-    const indicators: EconomicIndicatorContext[] = [];
+    const indicators: WorldBankIndicatorContext[] = [];
     for (const domain of Object.values(inventory.domains)) {
       for (const ind of domain.indicators) {
         indicators.push({
@@ -150,9 +142,6 @@ function loadIndicatorsFromInventory(): readonly EconomicIndicatorContext[] {
           policyAreas: ind.policyAreas ?? [domain.label.toLowerCase()],
           committees: ind.committees ?? domain.committees,
           unit: ind.unit,
-          deprecated: ind.deprecated === true,
-          supersededBy: ind.supersededBy,
-          deprecationReason: ind.deprecationReason,
         });
       }
     }
@@ -164,8 +153,6 @@ function loadIndicatorsFromInventory(): readonly EconomicIndicatorContext[] {
         : new Error(`[world-bank-context] Failed to load indicators inventory: ${String(err)}`);
 
     // Tests may intentionally mock or omit the inventory file.
-    // Preserve the existing fallback there, but fail fast elsewhere so
-    // builds cannot silently generate incomplete economic content.
     if (process.env.NODE_ENV === 'test') {
       return [];
     }
@@ -176,37 +163,27 @@ function loadIndicatorsFromInventory(): readonly EconomicIndicatorContext[] {
 }
 
 // ---------------------------------------------------------------------------
-// Economic indicator mappings (loaded from JSON)
+// Indicator mappings (loaded from JSON — non-economic residue only)
 // ---------------------------------------------------------------------------
 
 /**
- * **Raw** WB inventory — includes deprecated economic codes. Use this only
- * for audit / back-compat / migration tooling. New code should consume the
- * filtered {@link ECONOMIC_INDICATORS} export below.
- */
-export const ALL_WORLD_BANK_INDICATORS: readonly EconomicIndicatorContext[] =
-  loadIndicatorsFromInventory();
-
-/**
- * Active World Bank indicators mapped to Swedish political policy areas —
- * **filtered to non-deprecated only** per the v2.1 economic-data contract.
+ * World Bank **non-economic** indicators mapped to Swedish political policy
+ * areas. The inventory holds only the residue WB still publishes
+ * authoritatively — WGI governance (`source=75`), environment, social /
+ * health / education participation, demographics, defence historicals,
+ * agriculture, innovation (R&D / patents), inequality (GINI / income
+ * distribution) and crime / justice.
  *
- * IMF (WEO/FM/IFS/BOP/GFS_COFOG/DOTS/PCPS/MFS_IR/ER) is the primary canon for
- * macro / fiscal / monetary / external-sector / trade / commodity / FX
- * context. World Bank entries surfaced here are the **non-economic residue**
- * authoritative on the WB side: WGI governance (`source=75`), environment
- * (`EN.*`, `EG.*`, `AG.LND.FRST.ZS`), social / education participation
- * (`SE.*`, `SH.*`, `SP.*`), defence historicals (`MS.MIL.*`), inequality
- * (`SI.POV.*`), and crime / justice (`VC.IHR.*`).
+ * **Economic context (macro / fiscal / monetary / external-sector / trade /
+ * commodity / FX / interest rates / labour-market headlines) is sourced
+ * from IMF only** via `scripts/imf-fetch.ts` — never from World Bank.
  *
  * Authority: `.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.1 ·
- * `analysis/economic-indicators-inventory.json` ·
  * `analysis/imf/indicators-inventory.json` ·
- * `analysis/worldbank/indicators-inventory.json` (per-indicator
- * `deprecated: true` + `supersededBy: "imf:..."` flags).
+ * `analysis/worldbank/indicators-inventory.json` v4.0.
  */
-export const ECONOMIC_INDICATORS: readonly EconomicIndicatorContext[] =
-  ALL_WORLD_BANK_INDICATORS.filter((ind) => ind.deprecated !== true);
+export const WORLD_BANK_INDICATORS: readonly WorldBankIndicatorContext[] =
+  loadIndicatorsFromInventory();
 
 // ---------------------------------------------------------------------------
 // Nordic comparison configuration
@@ -359,20 +336,19 @@ export function getEconomicHeading(
 }
 
 /**
- * Find relevant economic indicators for a given policy area or committee.
- * **Excludes** deprecated WB economic codes — to retrieve the raw inventory
- * (including deprecated codes for audit/back-compat), iterate
- * {@link ALL_WORLD_BANK_INDICATORS} directly.
+ * Find non-economic World Bank indicators relevant to a Swedish policy area
+ * or committee. The inventory contains only non-economic residue, so all
+ * results are safe to surface in articles. For economic context use IMF.
  *
  * @param query - Policy area or committee abbreviation to search for
- * @returns Matching non-deprecated economic indicators
+ * @returns Matching non-economic indicators
  */
-export function findRelevantIndicators(query: string): readonly EconomicIndicatorContext[] {
+export function findRelevantIndicators(query: string): readonly WorldBankIndicatorContext[] {
   const q = query.trim().toLowerCase();
   if (q.length === 0) {
     return [];
   }
-  return ECONOMIC_INDICATORS.filter(
+  return WORLD_BANK_INDICATORS.filter(
     (indicator) =>
       indicator.policyAreas.some((area) => area.toLowerCase().includes(q)) ||
       indicator.committees.some((c) => c.toLowerCase() === q),
@@ -380,41 +356,15 @@ export function findRelevantIndicators(query: string): readonly EconomicIndicato
 }
 
 /**
- * Return all WB indicators marked `deprecated: true` in the inventory. Used
- * by audit tooling and by `tests/worldbank-deprecation-contract.test.ts` to
- * cross-check that the contract banned-list is fully reflected in the
- * inventory.
- */
-export function findDeprecatedIndicators(): readonly EconomicIndicatorContext[] {
-  return ALL_WORLD_BANK_INDICATORS.filter((ind) => ind.deprecated === true);
-}
-
-/**
- * Resolve a WB indicator to its IMF replacement citation, if deprecated.
- * Returns `undefined` when the WB code is non-deprecated (the WB code is
- * still authoritative for that domain) or unknown.
- *
- * @example
- * ```ts
- * resolveImfReplacement('NY.GDP.MKTP.KD.ZG'); // → 'imf:WEO:NGDP_RPCH'
- * resolveImfReplacement('CC.EST');            // → undefined (WGI residue still authoritative)
- * ```
- */
-export function resolveImfReplacement(worldBankIndicatorId: string): string | undefined {
-  const ind = ALL_WORLD_BANK_INDICATORS.find((i) => i.indicatorId === worldBankIndicatorId);
-  return ind?.deprecated === true ? ind.supersededBy : undefined;
-}
-
-/**
- * Get the World Bank API query parameters for Swedish economic indicators.
- * Used by agentic workflows to know which indicators to fetch.
- *
- * **Excludes** deprecated WB economic codes — see {@link ECONOMIC_INDICATORS}.
+ * Get the World Bank API query parameters for the **non-economic** Swedish
+ * indicators surfaced by this module. Used by agentic workflows to know
+ * which non-economic indicators to fetch from World Bank. Economic context
+ * queries go through `scripts/imf-fetch.ts` instead.
  *
  * @returns Array of { countryCode, indicatorId, name } for all configured indicators
  */
 export function getSwedishIndicatorQueries(): readonly { countryCode: string; indicatorId: string; name: string }[] {
-  return ECONOMIC_INDICATORS.map((indicator) => ({
+  return WORLD_BANK_INDICATORS.map((indicator) => ({
     countryCode: COUNTRY_CODES.sweden,
     indicatorId: indicator.indicatorId,
     name: indicator.name,
@@ -423,12 +373,11 @@ export function getSwedishIndicatorQueries(): readonly { countryCode: string; in
 
 /**
  * Detect economic context references in article content.
- * Used by article quality enhancer to score economic depth.
  *
- * Recognises both legacy World Bank citations (NY.GDP.\*, FP.CPI.\*, …) and
- * the **primary** IMF citations (`WEO:NGDP_RPCH`, `FM:GGXWDG_NGDP`,
+ * Recognises canonical IMF citations (`WEO:NGDP_RPCH`, `FM:GGXWDG_NGDP`,
  * `IFS:PCPI_IX`, `BOP:*`, `GFS_COFOG:*`, `DOTS:*`, `PCPS:*`, `MFS_IR:*`,
- * `ER:*`) introduced by the v2.1 economic-data contract.
+ * `ER:*`) and natural-language economic terms in English and Swedish. Used
+ * by the article quality enhancer to score economic depth.
  *
  * @param content - HTML or text content to analyze
  * @returns True if economic context is present
@@ -440,33 +389,28 @@ export function hasEconomicContext(content: string): boolean {
     /\bunemployment\b/i,
     /\binflation\b/i,
     /\beconomic\s+(growth|context|impact)\b/i,
-    /\bworld\s+bank\b/i,
-    /\b(?:IMF|International\s+Monetary\s+Fund)\b/i, // International Monetary Fund — primary economic source per v2.1 contract
+    /\b(?:IMF|International\s+Monetary\s+Fund)\b/i, // IMF — primary and only economic source
     /\bbnp\b/i, // Swedish: bruttonationalprodukt
-    /\barbetslöshet/i, // Swedish: unemployment (arbetslöshet, arbetslösheten, etc.)
+    /\barbetslöshet/i, // Swedish: unemployment
     /\bekonomi/i, // Swedish: economy
-    /\bhandelsbalans/i, // Swedish: trade balance (handelsbalans, handelsbalansen, etc.)
-    /\bstatsskuld/i, // Swedish: national debt (statsskuld, statsskulden, etc.)
-    /\bförsvarsutgift/i, // Swedish: defense expenditure (försvarsutgift, försvarsutgifter, etc.)
-    /\bforskningsutgift/i, // Swedish: R&D expenditure (forskningsutgift, forskningsutgifter, etc.)
-    /\bmilitärut/i, // Swedish: military expenditure (militärutgift, etc.)
-    /\bskattein/i, // Swedish: tax revenue (skatteintäkt, skatteintäkter, etc.)
-    /\bgini/i, // GINI index
+    /\bhandelsbalans/i, // Swedish: trade balance
+    /\bstatsskuld/i, // Swedish: national debt
+    /\bförsvarsutgift/i, // Swedish: defense expenditure
+    /\bforskningsutgift/i, // Swedish: R&D expenditure
+    /\bmilitärut/i, // Swedish: military expenditure
+    /\bskattein/i, // Swedish: tax revenue
+    /\bgini/i, // GINI index (inequality — non-economic residue)
     /\bco2\b/i, // CO2 emissions
     /\bnato\s*2\s*%/i, // NATO 2% target
-    /\bförny(?:else)?bart?\s+energi/i, // Swedish: renewable energy (förnybar/förnyelsebar energi)
+    /\bförny(?:else)?bart?\s+energi/i, // Swedish: renewable energy
     /\bbirth\s*rate\b/i,
     /\bfertility\s*rate\b/i,
     /\blife\s*expectancy\b/i,
-    /\bNY\.GDP/i, // World Bank indicator IDs
-    /\bSL\.UEM/i,
-    /\bFP\.CPI/i,
-    /\bMS\.MIL/i,
-    /\bGC\.TAX/i,
-    /\bSI\.POV\.GINI/i,
-    /\bEN\.ATM/i,
-    /\bSH\.XPD/i,
-    /\bSE\.XPD/i,
+    /\bMS\.MIL/i, // WB defence historicals (non-economic residue)
+    /\bSI\.POV\.GINI/i, // WB inequality residue
+    /\bEN\.ATM/i, // WB environment residue
+    /\bSH\.XPD/i, // WB health residue
+    /\bSE\.XPD/i, // WB education residue
     // IMF citations — `DATABASE:INDICATOR_ID` (v2.1 contract; see imfCitation())
     /\b(?:WEO|FM|IFS|BOP|BOP_AGG|GFS_COFOG|MFS_IR|DOTS|PCPS|ER):[A-Z][A-Z0-9_]+/i,
     // IMF projection vintage tag, e.g. "(WEO Apr-2026, GGXWDG_NGDP)"
