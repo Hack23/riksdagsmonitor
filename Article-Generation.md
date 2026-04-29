@@ -716,6 +716,11 @@ The rendering path is:
 
 The same inline bootstrap also injects [`/js/back-to-top.js`](js/back-to-top.js) (module) and [`/js/theme-toggle.js`](js/theme-toggle.js) (classic, deferred) so the dark/light theme button in the rm-site-header stays functional without going through Vite's bundler. The matching anti-flash bootstrap (`html[data-theme]` set before first paint) is emitted as an inline `<script>` in `<head>` by [`renderChromeHead`](scripts/render-lib/chrome.ts).
 
+> **Single source of truth for runtime JS.** The chrome bootstrap injects scripts dynamically from `/js/*.js`. Per the HTML spec, dynamically-created `<script>` tags ignore the `defer` attribute, so the runtime modules **must self-bootstrap** without relying on `DOMContentLoaded`. Both [`js/theme-toggle.js`](js/theme-toggle.js) and [`js/back-to-top.js`](js/back-to-top.js) are written to that contract. The repo-canonical `js/` tree is therefore deployed verbatim by the [Copy JS libraries](.github/workflows/deploy-s3.yml) step (`cp -r js/* dist/js/` — force-overwrite, so `js/` wins over any stale duplicate that Vite may have copied from `public/js/`). **Never** commit a `public/js/<filename>.js` whose content diverges from `js/<filename>.js`; if you must keep the file under `public/` for Vite's auto-copy to dev (`vite preview`), keep it byte-identical with `js/`.
+
+> **Hero banner.** Every chromed page (article, news index, political-intelligence) inherits the brand banner from [`scripts/render-lib/chrome.ts`](scripts/render-lib/chrome.ts) — a `<div class="hero-banner">` block emitted right after `<header class="rm-site-header">` with the canonical decorative image `images/riksdagsmonitor-banner.webp` (depth-aware `prefix`, `alt=""`, `aria-hidden="true"`, `width=1536` / `height=1024` for CLS). Set `heroBanner: false` on `BuildChromeOpts` for chrome variants where a full-bleed banner conflicts with the page's own hero (e.g. dashboards).
+
+
 The Mermaid distribution is vendored at build time:
 
 | Step | Location | What it does |

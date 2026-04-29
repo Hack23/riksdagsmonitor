@@ -12784,6 +12784,40 @@ html[data-theme="light"] .footer-disclaimer a {
   border-color: color-mix(in srgb, var(--primary-magenta, #ff006e) 35%, transparent);
 }
 
+/* Light-mode mitigation for Mermaid diagrams.
+ *
+ * Mermaid is initialized with a fixed dark theme (cyan/magenta on
+ * #0a0e27 — see js/lib/mermaid-init.mjs) so every diagram is rendered
+ * for a dark surface. When the page itself is in light mode the rest
+ * of the article surface is bright, which causes the dark mermaid SVG
+ * to look like an arbitrary dark blob with low contrast against the
+ * page chrome. To keep the diagrams legible without re-themeing
+ * Mermaid (which would force re-rendering the whole page on every
+ * theme toggle), we wrap each diagram in a deliberately-dark “card”:
+ *  - dark gradient background that matches the diagram's baked-in
+ *    `background: '#0a0e27'`
+ *  - cyan-tinted border + subtle outer shadow to separate the card
+ *    from the surrounding bright page
+ *  - extra padding so SVG strokes do not touch the card edge
+ *  - light caption color for the optional fallback text inside <pre>
+ */
+html[data-theme="light"] .rm-article-body pre.mermaid {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
+  color: rgba(224, 224, 224, 0.85);
+  border: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 35%, transparent);
+  box-shadow: 0 2px 12px rgba(10, 14, 39, 0.18);
+  padding: 1.25rem;
+  border-radius: 12px;
+}
+
+/* Keep any inline SVG text rendered by Mermaid readable against the
+ * dark card even when the surrounding page is light. Mermaid sets the
+ * SVG `background` attribute to #0a0e27 itself; we just guard against
+ * a transparent SVG ever inheriting the light page background. */
+html[data-theme="light"] .rm-article-body pre.mermaid > svg {
+  background: transparent;
+}
+
 .rm-article-body .rm-table-wrap {
   width: 100%;
   margin: 1.25rem 0;
