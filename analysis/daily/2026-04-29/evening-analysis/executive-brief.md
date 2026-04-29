@@ -26,6 +26,7 @@ Sweden's parliamentary session on 29 April 2026 delivered three confirmation sig
 - **Criminal network exposure**: HVB-hem infiltration (HD10454) + 352 bn SEK criminal economy (HD10451) directly attack Tidökoalitionen's law-and-order credibility
 - **China risk convergence**: Three parliamentary instruments on Chinese threats today (HD12744, HD12746, HD10456) — security consensus forming across party lines
 - **Intra-coalition fracture**: SD's Josef Fransson demands gas bridge (HD10453) vs KD Energy Minister Busch — subtle but durable tension
+- **Additional afternoon votes (re-run)**: 8 more kam-vo decisions adopted 16:00–16:21 — civilian protection [FöU12, S NEJ punkt 2], prison expansion [CU25, near-consensus], EV charging [CU29], waste reform [MJU19], climate reports [MJU20/21], Riksbank oversight [FiU23], researcher migration [SfU23]
 
 ## Top Forward Trigger
 
