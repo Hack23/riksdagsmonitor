@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "cycle": "interpellations",
+  "subfolder": "interpellations",
+  "article_date": "2026-04-29",
+  "generated_at": "2026-04-29T07:30:00Z",
+  "pirs": [
+    {
+      "id": "PIR-2026-INTERP-001",
+      "question": "What is the scale of criminal economy governance failure in Sweden as evidenced by April 2026 interpellations?",
+      "status": "ANSWERED",
+      "confidence": "HIGH",
+      "admiralty": "B2",
+      "key_judgment": "ESO 2026: 352bn SEK (5.5% GDP); Brå 2025: 23,000 companies; HD10454/HD10451/HD10447 cluster confirmed",
+      "forward_indicator_ids": ["FI-001", "FI-002", "FI-003"]
+    },
+    {
+      "id": "PIR-2026-INTERP-002",
+      "question": "Does SD's energy interpellation (HD10453) represent genuine coalition rupture risk?",
+      "status": "ANSWERED",
+      "confidence": "MEDIUM",
+      "admiralty": "C2",
+      "key_judgment": "Strategic positioning; coalition rupture probability ~15%; SD arithmetic favors staying",
+      "forward_indicator_ids": ["FI-007", "FI-010"]
+    },
+    {
+      "id": "PIR-2026-INTERP-003",
+      "question": "What is the electoral impact of the social safety net interpellation cluster?",
+      "status": "ANSWERED",
+      "confidence": "MEDIUM",
+      "admiralty": "C2",
+      "key_judgment": "Suburban working class and rural elderly most affected; S +5-8 seats in Status Quo scenario",
+      "forward_indicator_ids": ["FI-008", "FI-009"]
+    },
+    {
+      "id": "PIR-2026-INTERP-004",
+      "question": "Can Sweden legislate against organ harvesting (HD10456) before 2027?",
+      "status": "ANSWERED",
+      "confidence": "MEDIUM",
+      "admiralty": "B2",
+      "key_judgment": "Technically feasible (CETS 216 template); political will MEDIUM; timeline 6-12 months",
+      "forward_indicator_ids": ["FI-005", "FI-017"]
+    },
+    {
+      "id": "PIR-2026-INTERP-005",
+      "question": "When will the police HVB criminal list be publicly released?",
+      "status": "OUTSTANDING",
+      "confidence": null,
+      "admiralty": null,
+      "key_judgment": "Unknown; legal challenge cited; 2-year delay documented; watch by 2026-05-15",
+      "forward_indicator_ids": ["FI-003"]
+    }
+  ],
+  "total_pirs": 5,
+  "answered": 4,
+  "outstanding": 1
+}
