@@ -5,7 +5,7 @@ date: 2026-04-27
 subfolder: evening-analysis
 slug: 2026-04-27-evening-analysis
 source_folder: analysis/daily/2026-04-27/evening-analysis
-generated_at: 2026-04-28T15:09:00.732Z
+generated_at: 2026-04-29T11:46:56.823Z
 language: en
 layout: article
 ---
