@@ -141,8 +141,32 @@ interface SweepStats {
   noChromeScripts: number;
   patched: number;
   themeInitInlined: number;
+  sriStripped: number;
   patchedFiles: string[];
 }
+
+/**
+ * Match `integrity="…"` and `crossorigin[="…"]` attributes inside a
+ * `<script>` tag that points at a first-party JS path. Per the
+ * "trust S3 / CloudFront" platform classification we deliberately do
+ * not require SRI on first-party JavaScript / TypeScript output, so
+ * any such attributes that crept into committed HTML (e.g. from an
+ * older `vite-plugin-sri-gen` configuration that did not skip JS) are
+ * stripped here.
+ *
+ * The pattern matches a whole `<script …src="…js/…"…>` opening tag,
+ * captures the attribute soup, removes the two attributes from the
+ * captured slice, and re-emits the tag.
+ *
+ * Examples handled:
+ *   <script src="../js/lib/chart.umd.4.4.1.js" integrity="sha384-…" crossorigin="anonymous"></script>
+ *   <script integrity="sha384-…" src="../js/chart-init.js" crossorigin></script>
+ *   <script src="/js/back-to-top.js" crossorigin="use-credentials"></script>
+ */
+const FIRST_PARTY_JS_SCRIPT_TAG_RE =
+  /<script\b([^>]*\bsrc="(?:\.\.\/|\/)?js\/[^"]+\.m?js"[^>]*)>/gi;
+const SRI_ATTR_RE = /\s+integrity="[^"]*"/gi;
+const CROSSORIGIN_ATTR_RE = /\s+crossorigin(?:="[^"]*")?/gi;
 
 /**
  * Files to sweep, expressed as `(directory, filenameMatcher)` pairs.
@@ -195,6 +219,33 @@ function processFile(file: string, stats: SweepStats): void {
   let html = original;
   let modified = false;
 
+  // Step 0: strip `integrity="…"` and `crossorigin[="…"]` from any
+  // `<script>` tag pointing at a first-party JS path. SRI on first-party
+  // JS is no longer required (deliveries are trusted via S3/CloudFront),
+  // and stale SRI hashes embedded in committed HTML would block legitimate
+  // updates. Done first so the subsequent steps see clean tags.
+  html = html.replace(FIRST_PARTY_JS_SCRIPT_TAG_RE, (match, attrs) => {
+    let cleaned: string = attrs;
+    let hadSri = false;
+    if (SRI_ATTR_RE.test(cleaned)) {
+      hadSri = true;
+      cleaned = cleaned.replace(SRI_ATTR_RE, '');
+    }
+    if (CROSSORIGIN_ATTR_RE.test(cleaned)) {
+      hadSri = true;
+      cleaned = cleaned.replace(CROSSORIGIN_ATTR_RE, '');
+    }
+    SRI_ATTR_RE.lastIndex = 0;
+    CROSSORIGIN_ATTR_RE.lastIndex = 0;
+    if (hadSri) {
+      stats.sriStripped++;
+      modified = true;
+      return `<script${cleaned}>`;
+    }
+    return match;
+  });
+  FIRST_PARTY_JS_SCRIPT_TAG_RE.lastIndex = 0;
+
   // Step 1: replace the external anti-flash tag with the inline bootstrap.
   // This is independent of the chrome injector — even pages that already
   // have the modern inject block can still be carrying the external
@@ -243,6 +294,7 @@ function main(): void {
     noChromeScripts: 0,
     patched: 0,
     themeInitInlined: 0,
+    sriStripped: 0,
     patchedFiles: [],
   };
 
@@ -266,6 +318,7 @@ function main(): void {
       `scanned=${stats.scanned} ` +
       `patched=${stats.patched} ` +
       `themeInitInlined=${stats.themeInitInlined} ` +
+      `sriStripped=${stats.sriStripped} ` +
       `alreadyModern=${stats.alreadyModern} ` +
       `noChromeScripts=${stats.noChromeScripts}`,
   );
