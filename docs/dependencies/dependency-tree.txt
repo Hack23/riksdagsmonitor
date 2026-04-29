@@ -1,16 +1,16 @@
-riksdagsmonitor@0.8.66 /home/runner/work/riksdagsmonitor/riksdagsmonitor
-├─┬ @emnapi/core@1.9.2 extraneous
+riksdagsmonitor@0.8.67 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+├─┬ @emnapi/core@1.10.0 extraneous
 │ ├── @emnapi/wasi-threads@1.2.1 deduped
 │ └── tslib@2.8.1
-├─┬ @emnapi/runtime@1.9.2 extraneous
+├─┬ @emnapi/runtime@1.10.0 extraneous
 │ └── tslib@2.8.1 deduped
 ├─┬ @emnapi/wasi-threads@1.2.1 extraneous
 │ └── tslib@2.8.1 deduped
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.2.1 deduped
 ├─┬ @napi-rs/wasm-runtime@1.1.4 extraneous
-│ ├── @emnapi/core@1.9.2 deduped
-│ ├── @emnapi/runtime@1.9.2 deduped
+│ ├── @emnapi/core@1.10.0 deduped
+│ ├── @emnapi/runtime@1.10.0 deduped
 │ └── @tybys/wasm-util@0.10.1 deduped
 ├─┬ @tybys/wasm-util@0.10.1 extraneous
 │ └── tslib@2.8.1 deduped
@@ -58,6 +58,8 @@ riksdagsmonitor@0.8.66 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └─┬ @types/d3-zoom@3.0.8
 │   ├── @types/d3-interpolate@3.0.4 deduped
 │   └── @types/d3-selection@3.0.11 deduped
+├─┬ @types/hast@3.0.4
+│ └── @types/unist@3.0.3
 ├─┬ @types/node@25.6.0
 │ └── undici-types@7.19.2
 ├─┬ @types/papaparse@5.5.2
@@ -538,6 +540,8 @@ riksdagsmonitor@0.8.66 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └─┬ ws@8.19.0
 │   ├── UNMET OPTIONAL DEPENDENCY bufferutil@^4.0.1
 │   └── UNMET OPTIONAL DEPENDENCY utf-8-validate@>=5.0.2
+├─┬ hast-util-to-string@3.0.1
+│ └── @types/hast@3.0.4 deduped
 ├─┬ htmlhint@1.9.2
 │ ├── async@3.2.6
 │ ├── chalk@4.1.2 deduped
@@ -586,7 +590,7 @@ riksdagsmonitor@0.8.66 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── safe-buffer@5.1.2
 │ │ └── util-deprecate@1.0.2
 │ └── setimmediate@1.0.5
-├─┬ knip@6.7.0
+├─┬ knip@6.9.0
 │ ├─┬ fdir@6.5.0
 │ │ └── picomatch@4.0.4 deduped
 │ ├─┬ formatly@0.3.0
@@ -596,28 +600,28 @@ riksdagsmonitor@0.8.66 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── resolve-pkg-maps@1.0.0
 │ ├── jiti@2.6.1 deduped
 │ ├── minimist@1.2.8 deduped
-│ ├─┬ oxc-parser@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm-eabi@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm64@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-arm64@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-x64@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-freebsd-x64@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-gnueabihf@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-musleabihf@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-gnu@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-musl@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-ppc64-gnu@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-gnu@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-musl@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-s390x-gnu@0.127.0
-│ │ ├── @oxc-parser/binding-linux-x64-gnu@0.127.0
-│ │ ├── @oxc-parser/binding-linux-x64-musl@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-openharmony-arm64@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-wasm32-wasi@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-arm64-msvc@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-ia32-msvc@0.127.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-x64-msvc@0.127.0
-│ │ └── @oxc-project/types@0.127.0
+│ ├─┬ oxc-parser@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm-eabi@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm64@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-arm64@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-x64@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-freebsd-x64@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-gnueabihf@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-musleabihf@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-gnu@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-musl@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-ppc64-gnu@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-gnu@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-musl@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-s390x-gnu@0.128.0
+│ │ ├── @oxc-parser/binding-linux-x64-gnu@0.128.0
+│ │ ├── @oxc-parser/binding-linux-x64-musl@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-openharmony-arm64@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-wasm32-wasi@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-arm64-msvc@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-ia32-msvc@0.128.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-x64-msvc@0.128.0
+│ │ └── @oxc-project/types@0.128.0
 │ ├─┬ oxc-resolver@11.19.1
 │ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm-eabi@11.19.1
 │ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm64@11.19.1
@@ -723,25 +727,15 @@ riksdagsmonitor@0.8.66 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── ts-dedent@2.2.0
 │ └── uuid@11.1.0
 ├── papaparse@5.5.3
-├─┬ playwright@1.59.1
-│ ├── UNMET OPTIONAL DEPENDENCY fsevents@2.3.2
-│ └── playwright-core@1.59.1
 ├─┬ rehype-autolink-headings@7.1.0
-│ ├─┬ @types/hast@3.0.4
-│ │ └── @types/unist@3.0.3 deduped
+│ ├── @types/hast@3.0.4 deduped
 │ ├── @ungap/structured-clone@1.3.0
 │ ├─┬ hast-util-heading-rank@3.0.0
 │ │ └── @types/hast@3.0.4 deduped
 │ ├─┬ hast-util-is-element@3.0.0
 │ │ └── @types/hast@3.0.4 deduped
 │ ├── unified@11.0.5 deduped
-│ └─┬ unist-util-visit@5.1.0
-│   ├── @types/unist@3.0.3 deduped
-│   ├─┬ unist-util-is@6.0.1
-│   │ └── @types/unist@3.0.3 deduped
-│   └─┬ unist-util-visit-parents@6.0.2
-│     ├── @types/unist@3.0.3 deduped
-│     └── unist-util-is@6.0.1 deduped
+│ └── unist-util-visit@5.1.0 deduped
 ├─┬ rehype-raw@7.0.0
 │ ├── @types/hast@3.0.4 deduped
 │ ├─┬ hast-util-raw@9.1.0
@@ -794,13 +788,6 @@ riksdagsmonitor@0.8.66 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── @types/hast@3.0.4 deduped
 │   ├── @ungap/structured-clone@1.3.0 deduped
 │   └── unist-util-position@5.0.0 deduped
-├─┬ rehype-slug@6.0.0
-│ ├── @types/hast@3.0.4 deduped
-│ ├── github-slugger@2.0.0 deduped
-│ ├── hast-util-heading-rank@3.0.0 deduped
-│ ├─┬ hast-util-to-string@3.0.1
-│ │ └── @types/hast@3.0.4 deduped
-│ └── unist-util-visit@5.1.0 deduped
 ├─┬ rehype-stringify@10.0.1
 │ ├── @types/hast@3.0.4 deduped
 │ ├─┬ hast-util-to-html@9.0.5
@@ -1170,7 +1157,7 @@ riksdagsmonitor@0.8.66 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └── typescript@6.0.3 deduped
 ├── typescript@6.0.3
 ├─┬ unified@11.0.5
-│ ├── @types/unist@3.0.3
+│ ├── @types/unist@3.0.3 deduped
 │ ├── bail@2.0.2
 │ ├─┬ devlop@1.1.0
 │ │ └── dequal@2.0.3
@@ -1178,6 +1165,13 @@ riksdagsmonitor@0.8.66 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── is-plain-obj@4.1.0
 │ ├── trough@2.2.0
 │ └── vfile@6.0.3 deduped
+├─┬ unist-util-visit@5.1.0
+│ ├── @types/unist@3.0.3 deduped
+│ ├─┬ unist-util-is@6.0.1
+│ │ └── @types/unist@3.0.3 deduped
+│ └─┬ unist-util-visit-parents@6.0.2
+│   ├── @types/unist@3.0.3 deduped
+│   └── unist-util-is@6.0.1 deduped
 ├─┬ vite-plugin-sri-gen@1.4.1
 │ ├─┬ parse5@8.0.0
 │ │ └── entities@6.0.1
@@ -1208,7 +1202,7 @@ riksdagsmonitor@0.8.66 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── picocolors@1.1.1
 │ │ └── source-map-js@1.2.1 deduped
 │ ├─┬ rolldown@1.0.0-rc.17
-│ │ ├── @oxc-project/types@0.127.0 deduped
+│ │ ├── @oxc-project/types@0.127.0
 │ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-android-arm64@1.0.0-rc.17
 │ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-arm64@1.0.0-rc.17
 │ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-x64@1.0.0-rc.17
