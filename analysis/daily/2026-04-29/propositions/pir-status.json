@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "cycle": "propositions",
+  "date": "2026-04-29",
+  "subfolder": "propositions",
+  "generated_at": "2026-04-29T00:00:00Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "question": "Vad är den exakta järnväg/väg-fördelningen i de 875 Mdr kr?",
+      "status": "open",
+      "source_doc": "HD03259",
+      "priority": "HIGH",
+      "notes": "Full text av skrivelsen behövs för att bekräfta fördelning"
+    },
+    {
+      "id": "PIR-2",
+      "question": "Hur planerar SD att agera om järnvägstillägget är under 30 Mdr kr?",
+      "status": "open",
+      "source_doc": "HD03259",
+      "priority": "HIGH",
+      "notes": "Koalitionsriskindicator — kräver parlamentarisk observation"
+    },
+    {
+      "id": "PIR-3",
+      "question": "Vilka specifika läkemedel klassificeras under HD03247 rådgivningskrav?",
+      "status": "open",
+      "source_doc": "HD03247",
+      "priority": "MEDIUM",
+      "notes": "Definieras troligen i Läkemedelsverkets föreskrifter, ej propositionen"
+    },
+    {
+      "id": "PIR-4",
+      "question": "Hur många kommunala lantmäterimyndigheter har icke-kompatibla IT-system per HD03257?",
+      "status": "open",
+      "source_doc": "HD03257",
+      "priority": "MEDIUM",
+      "notes": "Lantmäteriet bör ha statistik; ej omnämnt i tillgänglig metadata"
+    },
+    {
+      "id": "PIR-5",
+      "question": "Är transportplanen (HD03259) förenlig med EU:s Fit for 55 och 2040 Climate Law?",
+      "status": "open",
+      "source_doc": "HD03259",
+      "priority": "HIGH",
+      "notes": "EU-klimatgranskning saknas i metadata; trolig oppositionsfråga"
+    }
+  ]
+}
