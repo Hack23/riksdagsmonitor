@@ -70,6 +70,7 @@ import {
   titleFromBluf,
 } from '../scripts/render-lib/aggregator/seo/title.js';
 import { buildSourcesAppendix } from '../scripts/render-lib/aggregator/sources-appendix.js';
+import { aggregateAnalysis } from '../scripts/render-lib/aggregator/aggregate.js';
 
 // Markdown leaf modules
 import { preprocessMermaidFences } from '../scripts/render-lib/markdown/mermaid-preprocess.js';
