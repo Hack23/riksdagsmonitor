@@ -215,16 +215,20 @@ jobs:
       - name: Copy JS libraries to build output
         run: |
           echo "📦 Copying js/ directory to dist/js/..."
-          # The js/ directory contains utility scripts (theme-init.js, etc.)
-          # and vendor libraries (js/lib/chart.umd.*.js, d3, papaparse, etc.)
-          # that are referenced by news articles and dashboard pages via
+          # The js/ directory contains utility scripts (theme-init.js,
+          # theme-toggle.js, back-to-top.js, chart-init.js) and vendor
+          # libraries (js/lib/chart.umd.*.js, d3, papaparse, etc.) that
+          # are referenced by news articles and dashboard pages via
           # relative paths (../js/lib/chart.umd.4.4.1.js).
-          # Vite only copies public/js/ to dist/js/, so we merge the full
-          # js/ tree on top — cp -rn (no-clobber) keeps Vite's copies when
-          # both directories contain the same filename.
+          # Vite also copies public/js/ to dist/js/. We merge js/ ON TOP
+          # with `cp -r` (force-overwrite) so the repository-canonical
+          # js/* sources are the single source of truth in dist/. The
+          # earlier `cp -rn` (no-clobber) caused stale public/js/*.js to
+          # win over newer js/*.js, breaking the theme switcher on every
+          # page that loads /js/theme-toggle.js dynamically.
           if [ -d "js" ]; then
-            cp -rn js/* dist/js/
-            echo "✅ JS directory merged into dist/js/"
+            cp -r js/* dist/js/
+            echo "✅ JS directory merged into dist/js/ (js/ takes precedence)"
             echo "  Files in dist/js/:"
             find dist/js -type f | sort
           else

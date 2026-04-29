@@ -1403,6 +1403,16 @@ header {
   }
 }
 
+/* Hero banner spacing for chromed (generated) pages. The shared chrome in
+ * scripts/render-lib/chrome.ts emits .hero-banner inside <body class="rm-article-body">
+ * directly after <header class="rm-site-header">. Constrain its height a little
+ * tighter than the hand-authored index hero, and add bottom spacing so the
+ * language bar / breadcrumb does not collide with the banner image. */
+.rm-article-body .hero-banner {
+  height: clamp(80px, 14vw, 200px);
+  margin-bottom: var(--spacing-md);
+}
+
 @media (prefers-color-scheme: dark) {
   header {
     border-bottom: 1px solid rgba(0, 204, 102, 0.3);
