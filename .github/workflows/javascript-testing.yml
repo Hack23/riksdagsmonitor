@@ -120,17 +120,11 @@ jobs:
         run: npm ci
       
       - name: Build with Vite
-        # Vite/Rollup loads ~4200+ news/*.html entries (auto-discovered in
-        # vite.config.js → discoverNewsArticles()), and at the
-        # `rendering chunks` phase the default ~4 GB Node heap is no longer
-        # enough — the build OOMs with
-        # `FATAL ERROR: Ineffective mark-compacts near heap limit
-        #  Allocation failed - JavaScript heap out of memory` → exit 134.
-        # GitHub-hosted ubuntu-latest runners ship with 16 GB RAM, so
-        # raising the V8 old-space limit to 8 GB gives the build headroom
-        # (matches deploy-s3.yml).
-        env:
-          NODE_OPTIONS: --max-old-space-size=8192
+        # The static-pages-emit plugin (scripts/vite-plugin-static-
+        # pages.js) keeps the ~3 500 news/*.html, sitemap_*.html and
+        # political-intelligence_*.html pages out of Rollup's module
+        # graph; the build now needs <1 GB heap on the current corpus,
+        # well under Node's default ~4 GB.
         run: npm run build
       
       - name: Check build output
