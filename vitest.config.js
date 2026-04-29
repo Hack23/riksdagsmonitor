@@ -194,7 +194,6 @@ export default defineConfig({
         // Constants-only / large translation-dictionary modules (data, not
         // logic; verified via schema tests, not branch coverage).
         'scripts/data-transformers/types.ts',
-        'scripts/data-transformers/index.ts',
         'scripts/data-transformers/text-cleaner.ts',
         'scripts/data-transformers/helpers.ts',
         'scripts/data-transformers/constants.ts',
