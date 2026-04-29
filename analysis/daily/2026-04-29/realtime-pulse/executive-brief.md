@@ -8,7 +8,7 @@
 
 ## 🎯 BLUF
 
-Sweden's Riksdag convenes Wednesday 29 April for a decisive working session: the chamber debates a new weapons law (JuU10) with a binding vote scheduled from 16:00, while multiple parliamentary instruments — interpellations, written questions, and committee reports — converge on three systemic risks: China's expanding influence in Swedish critical industry and energy (HD12744), the collapse of trust in residential care home oversight after criminal networks seized control of HVB facilities (HD10454), and accelerating water scarcity in southern Sweden (HD12743, HD12745). The EU-nämnden simultaneously conducts mandatory government briefing ahead of the Ecofin finance ministers' meeting on 5 May. Together, today's parliamentary output reveals a government under pressure on multiple security, welfare, and sovereignty fronts.
+**[CONFIRMED — VOTE RESULTS 16:13–16:21 STOCKHOLM]** Sweden's Riksdag adopted two landmark bills on 29 April: (1) **JuU10 (En ny vapenlag)** passed at 16:13 with Tidöblock + Socialdemokraterna in majority; critically, **Centerpartiet (C) voted unanimously NEJ** — a rare public break with the centre-right bloc, signalling C's growing distance from Tidöblock security politics. (2) **SfU28 (Skärpta krav för svenskt medborgarskap)** passed at 16:21 with M, SD, KD, L, and **most of S voting JA** — a significant rightward shift by Sweden's Social Democrats on citizenship and migration. V and MP voted NEJ on both. These vote outcomes confirm Sweden's post-NATO security realignment continues, while C's weapons-law defection introduces a new fault line ahead of the 2026 election campaign.
 
 ## Decisions This Brief Supports
 
@@ -26,9 +26,22 @@ Sweden's Riksdag convenes Wednesday 29 April for a decisive working session: the
 - ⚛️ **Nuclear regulation** — HD01NU19 (NU19): committee report on streamlining nuclear facility permit review — significant for Sweden's nuclear revival policy.
 - 🇪🇺 **Ekofin prep** — EU-nämnden meeting at 09:00 briefed by State Secretary Lybeck Lilja on Sweden's position ahead of EU finance ministers' Ecofin session 5 May.
 
+## Confirmed Vote Results — 29 April 2026 (Afternoon)
+
+| Vote | Time | Outcome | Key Signal |
+|------|------|---------|-----------|
+| JuU10 punkt 1 (Ny vapenlag) | 16:13:22 | ✅ ADOPTED | **C voted unanimously NEJ** — bloc defection |
+| JuU10 punkt 2 (opposition amendment) | 16:13 | ❌ REJECTED | S/V/MP/ex-party voted NEJ (no crossover) |
+| SfU28 punkt 1 (Medborgarskap requirements) | 16:21:06 | ✅ ADOPTED | **S (most members) voted JA** with Tidöblock |
+| SfU28 punkt 2 | 16:21 | ❌ REJECTED | S+C+V+MP voted NEJ (unanimous cross-bloc rejection) |
+
+**Strategic read on C's JuU10 NEJ**: All 20 C MPs voted against the weapons law. This is not a procedural protest — it is a public differentiation on security culture. C leaders have previously expressed reservations about militarising civilian weapons culture. This vote is now on record and creates ammunition (literally) for 2026 campaign advertising by Tidöblock parties against C.
+
+**Strategic read on S's SfU28 JA**: The Social Democrats' support for stricter citizenship requirements represents the clearest endorsement of Tidöblock migration framing by the main opposition in this parliamentary term. Annika Strandhäll (S) was among the rare S dissenters voting NEJ — a signal that left wing of S is uncomfortable. The S leadership clearly judged that popular support for stricter citizenship rules outweighs left-flank discomfort.
+
 ## Top Forward Trigger
 
-**Vote on JuU10 (En ny vapenlag) — 29 April 2026, ≥16:00**: The weapons law vote is the single most consequential event of today's session. Expected outcome: adoption; watch for SD and MP divergence.
+**[RESOLVED]** ~~Vote on JuU10 — ≥16:00~~ CONFIRMED ADOPTED at 16:13. New top trigger: **C's response to weapons law criticism** — watch for press conferences from C leadership (Annie Lööf successor) and whether SD exploits C's NEJ vote in 2026 pre-campaign messaging.
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%

@@ -2,9 +2,24 @@
 
 **DIW weighting applied**: High-weight documents prioritised by policy impact, cross-party salience, and vote imminence.
 
-## Lead Story: New Weapons Law Vote (JuU10)
+## Lead Story: New Weapons Law Vote (JuU10) — **CONFIRMED ADOPTED 16:13**
 
-The Justice Committee's report JuU10 *En ny vapenlag* reaches the chamber floor today with a vote scheduled from 16:00. This is Sweden's most substantial revision of civilian weapons regulation since NATO accession. The committee report, supported by the government majority (M+SD+KD+L), replaces the 1996 Vapenlag with modernised licensing, tighter storage requirements, and improved EU-interoperability under the revised EU Firearms Directive. Key opposition positions: S supports core provisions, V and MP filed reservations on penalties. Expected adoption.
+**VOTE RESULT**: JuU10 *En ny vapenlag* ADOPTED at 16:13:22 Stockholm. Final party positions confirmed:
+
+| Party | Seats | JuU10 Punkt 1 Vote |
+|-------|-------|--------------------|
+| M (Moderaterna) | 68 | ✅ JA |
+| SD (Sverigedemokraterna) | 73 | ✅ JA |
+| S (Socialdemokraterna) | 107 | ✅ JA |
+| KD (Kristdemokraterna) | 19 | ✅ JA |
+| L (Liberalerna) | 16 | ✅ JA |
+| **C (Centerpartiet)** | **24** | **❌ NEJ (all 20 present)** |
+| V (Vänsterpartiet) | 24 | ❌ NEJ |
+| MP (Miljöpartiet) | 18 | ❌ NEJ |
+
+**Intelligence value**: C's unanimous NEJ on the weapons law is the day's most consequential political signal. Centerpartiet has differentiated itself from the Tidöblock coalition on a security-culture vote. C MPs including Kerstin Lundgren, Anders Karlsson, and Ulrika Heie all voted against. This creates a public record that SD and M will likely exploit in 2026 election messaging.
+
+**SfU28 (Skärpta krav för svenskt medborgarskap) — ADOPTED 16:21**: Most of S voted JA alongside Tidöblock. V, MP, and former left-party independents voted NEJ. One S MP (Annika Strandhäll) voted NEJ. This confirms S's rightward migration on citizenship policy.
 
 ## Integrated Intelligence Picture
 
