@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-04-29T00:00:00Z",
+  "cycle": "2026-04-29/monthly-review",
+  "prior_cycle": "2026-04-27/monthly-review",
+  "pirs": [
+    {
+      "pir_id": "PIR-A",
+      "title": "Swedish polling trajectory 137 days to election",
+      "status": "open",
+      "priority": "HIGH",
+      "description": "Track party polling; monitor L (4.2%±0.8pp) and MP (4.0%±0.8pp) threshold risks. Coalition seat arithmetic: Tidö at exactly 175.",
+      "evidence": ["Election-2026 analysis", "Voter segmentation", "Coalition mathematics"],
+      "next_collection": "FI-02 (L citizenship vote), FI-11 (T-30 poll)",
+      "last_updated": "2026-04-29"
+    },
+    {
+      "pir_id": "PIR-B",
+      "title": "Police reform implementation and credibility",
+      "status": "open",
+      "priority": "HIGH",
+      "description": "Track whether Riksrevisionen HD01JuU31 9 open recommendations receive government closure timeline before election. As of 2026-04-29: no closure date confirmed.",
+      "evidence": ["HD01JuU31", "risk-assessment.md R-SEC-01", "media-framing-analysis.md F-POLICE"],
+      "next_collection": "FI-04 (government communication May 2026)",
+      "last_updated": "2026-04-29"
+    },
+    {
+      "pir_id": "PIR-C",
+      "title": "SD party discipline and coalition boundary",
+      "status": "open",
+      "priority": "HIGH",
+      "description": "Track SD internal discipline. HD10448 interpellation against own minister = boundary-testing. SD congress (May 2026) is crystallisation event.",
+      "evidence": ["HD10448", "threat-analysis.md TH-COAL-01", "scenario-analysis.md"],
+      "next_collection": "FI-01 (SD congress May 2026)",
+      "last_updated": "2026-04-29"
+    },
+    {
+      "pir_id": "PIR-D",
+      "title": "SD-KD energy policy divergence",
+      "status": "open",
+      "priority": "CRITICAL",
+      "description": "SD-KD energy fault line (HD10448). Busch 'technology-neutral' response received. SD congress energy platform adoption (May 2026) is decisive trigger. 45% prob ambiguous, 20% nuclear-maximalist (Scenario C trigger).",
+      "evidence": ["HD10448", "forward-indicators.md FI-01", "scenario-analysis.md", "devils-advocate.md"],
+      "next_collection": "FI-01 (SD congress May 2026)",
+      "last_updated": "2026-04-29"
+    },
+    {
+      "pir_id": "PIR-E",
+      "title": "Swedish SIB capital adequacy (CRR3)",
+      "status": "open",
+      "priority": "MEDIUM",
+      "description": "CRR3 72.5% output floor (HD03253). FI pillar-2 discretion choices not yet visible. Remissvar hearings May-June 2026. SIBs: Nordea, SEB, Handelsbanken, Swedbank.",
+      "evidence": ["HD03253", "risk-assessment.md R-FIN-01", "comparative-international.md"],
+      "next_collection": "FI-03 (FI remissvar May 2026)",
+      "last_updated": "2026-04-29"
+    }
+  ]
+}
