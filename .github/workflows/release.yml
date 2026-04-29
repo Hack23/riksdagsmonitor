@@ -138,7 +138,7 @@ jobs:
         shell: bash
         env:
           CYPRESS_VIDEO: false
-          NODE_OPTIONS: "--max-old-space-size=4096"
+          NODE_OPTIONS: "--max-old-space-size=8192"
           XKB_DEFAULT_RULES: evdev
           XKB_DEFAULT_MODEL: pc105
           XKB_DEFAULT_LAYOUT: us
@@ -147,7 +147,7 @@ jobs:
           echo "🚀 Running E2E tests for release validation..."
           mkdir -p builds/cypress
           set -o pipefail
-          NODE_OPTIONS="--max-old-space-size=4096" \
+          NODE_OPTIONS="--max-old-space-size=8192" \
             xvfb-run --auto-servernum --server-args="-screen 0 1280x720x24 -ac +extension GLX +extension RANDR +render -nolisten tcp" \
             npm run e2e 2>&1 | tee builds/cypress/e2e-output.log
           TEST_EXIT_CODE=$?
