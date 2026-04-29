@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "cycle": "news-motions",
+  "date": "2026-04-29",
+  "subfolder": "motions",
+  "pirs": [
+    {
+      "pir_id": "PIR-NATO-01",
+      "title": "V Coalition Signalling on NATO Forward Presence",
+      "description": "Will V publicly restate or soften its NATO Forward Presence position before the 2026 election?",
+      "status": "open",
+      "priority": "high",
+      "collection_method": "Monitor V party spokesperson statements, riksdag.se interpellationer",
+      "threshold": "Any V leader statement modifying HD024120 stance = upgrade to MEDIUM significance",
+      "timeline": "Through September 2026 election",
+      "related_motions": ["HD024120"],
+      "related_propositions": ["prop. 2025/26:220"]
+    },
+    {
+      "pir_id": "PIR-JUU-01",
+      "title": "Prop. 217 JuU Delay Indicator",
+      "description": "Does JuU Chair grant extended hearing following C's HD024111 request for consequence analysis?",
+      "status": "open",
+      "priority": "medium",
+      "collection_method": "JuU calendar (riksdag.se), committee press releases",
+      "threshold": "JuU calendar shows prop. 217 hearing date moved past June 2026 = S2 scenario triggered",
+      "timeline": "Within 30 days (by 2026-05-29)",
+      "related_motions": ["HD024111"],
+      "related_propositions": ["prop. 2025/26:217"]
+    },
+    {
+      "pir_id": "PIR-SD-01",
+      "title": "Arms Export Coalition Fracture",
+      "description": "Does SD's HD024106 trigger a coalition-level discussion on arms export criteria?",
+      "status": "open",
+      "priority": "low",
+      "collection_method": "Monitor UU deliberations, government spokesperson statements on export policy",
+      "threshold": "Government issues clarifying statement on export criteria within 60 days = coalition friction confirmed",
+      "timeline": "Within 60 days (by 2026-06-28)",
+      "related_motions": ["HD024106"],
+      "related_propositions": []
+    }
+  ],
+  "generated_at": "2026-04-29T00:00:00Z"
+}
