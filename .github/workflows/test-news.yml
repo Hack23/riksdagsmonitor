@@ -52,12 +52,11 @@ jobs:
         run: npm ci
       
       - name: Build with Vite
-        env:
-          # Vite renders ~4,200 modules and ~3,500 HTML entries; the
-          # default ~1.7 GB Node heap OOMs during `rendering chunks`.
-          # Mirror the heap size used by deploy-s3.yml so PR builds
-          # succeed for the same workload that ships to S3.
-          NODE_OPTIONS: --max-old-space-size=8192
+        # The static-pages-emit plugin (scripts/vite-plugin-static-
+        # pages.js) keeps the ~3 500 news/*.html, sitemap_*.html and
+        # political-intelligence_*.html pages out of Rollup's module
+        # graph; the build now needs <1 GB heap on the current corpus,
+        # well under Node's default ~4 GB.
         run: npm run build
       
       - name: Upload build artifacts
