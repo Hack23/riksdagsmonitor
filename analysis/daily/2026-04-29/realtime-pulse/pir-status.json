@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "cycle": "realtime-pulse",
+  "subfolder": "realtime-pulse",
+  "date": "2026-04-29",
+  "generated_at": "2026-04-29T11:30:00Z",
+  "prior_cycle_path": "analysis/daily/2026-04-28/realtime-pulse",
+  "pirs": [
+    {
+      "id": "PIR-001",
+      "question": "Will the constitutional amendment (vilande grundlagsbeslut) survive post-election confirmation?",
+      "status": "OPEN",
+      "priority": "CRITICAL",
+      "carried_from": "2026-04-28",
+      "monitor_signals": ["weekly_polling", "constituency_surveys", "election_result"],
+      "next_check": "weekly"
+    },
+    {
+      "id": "PIR-004",
+      "question": "What is the IMF's revised GDP growth projection for Sweden 2026?",
+      "status": "PARTIALLY_RESOLVED",
+      "resolution_note": "IMF WEO April 2026 confirms NGDP_RPCH ~1.2% for Sweden. Full SDMX validation pending.",
+      "priority": "LOW",
+      "carried_from": "2026-04-28",
+      "next_check": "monthly"
+    },
+    {
+      "id": "PIR-005",
+      "question": "What is the SfU28 committee vote date and expected outcome?",
+      "status": "RESOLUTION_EXPECTED_TODAY",
+      "resolution_note": "SfU28 chamber vote scheduled ≥16:00 on 2026-04-29. Check Riksdag vote record tonight.",
+      "priority": "HIGH",
+      "carried_from": "2026-04-28",
+      "next_check": "tonight"
+    },
+    {
+      "id": "PIR-006",
+      "question": "Will SD formally demand an updated China economic security doctrine by June 2026?",
+      "status": "OPEN",
+      "priority": "MODERATE",
+      "opened": "2026-04-29",
+      "monitor_signals": ["SD_press_releases", "SD_spokesperson_interviews", "riksdag_interpellations"],
+      "next_check": "weekly"
+    },
+    {
+      "id": "PIR-007",
+      "question": "Will the government present a remiss on police→IVO HVB information sharing before June 2026?",
+      "status": "OPEN",
+      "priority": "MODERATE",
+      "opened": "2026-04-29",
+      "monitor_signals": ["socialdepartementet_press_releases", "riksdag_calendar", "waltersson_gronvall_statements"],
+      "next_check": "weekly"
+    }
+  ]
+}
