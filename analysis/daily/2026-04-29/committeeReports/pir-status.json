@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "cycle": "committeeReports",
+  "subfolder": "committeeReports",
+  "article_date": "2026-04-29",
+  "effective_date": "2026-04-28",
+  "generated_at": "2026-04-29T07:30:00Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "question": "What legislation most significantly alters Sweden's security posture before September 2026 election?",
+      "status": "ANSWERED",
+      "confidence": "HIGH",
+      "admiralty_code": "B2",
+      "finding": "HD01SfU28 (internal security/integration) and HD01FöU20+HD01FöU14 (external defence) collectively represent the strongest security cluster in this riksmöte cycle.",
+      "documents": ["HD01SfU28", "HD01FöU20", "HD01FöU14"]
+    },
+    {
+      "id": "PIR-2",
+      "question": "What is the probability of a constitutional challenge to HD01SfU28 succeeding within 24 months?",
+      "status": "ASSESSED",
+      "confidence": "MEDIUM",
+      "admiralty_code": "B3",
+      "finding": "~15-25% probability. ECtHR Art. 8 is a viable avenue. Danish precedent reduces risk. C's 6 reservations signal sustained domestic legal pressure.",
+      "documents": ["HD01SfU28"]
+    },
+    {
+      "id": "PIR-3",
+      "question": "What EU compliance exposure does Sweden face from CER transposition delay?",
+      "status": "ANSWERED",
+      "confidence": "HIGH",
+      "admiralty_code": "B2",
+      "finding": "Sweden is ~20 months behind EU deadline (Oct 2024). Formal notice risk HIGH. Material security risk LOW given existing MSB frameworks. June 2026 law expected to close infringement track.",
+      "documents": ["HD01FöU20"]
+    }
+  ],
+  "coverage_summary": {
+    "documents_analysed": 8,
+    "documents_full_text": 7,
+    "tier1_documents": 3,
+    "tier2_documents": 5,
+    "key_judgments": 4,
+    "scenarios": 4,
+    "forward_indicators": 20,
+    "coalition_vote_tables": 3
+  }
+}
