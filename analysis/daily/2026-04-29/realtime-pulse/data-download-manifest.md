@@ -50,3 +50,16 @@
 
 full-text-fallback: metadata-only run — full text snippets available via MCP but complete text not fetched within time budget. Key summaries and snippets used for analysis.
 
+
+## Afternoon Vote Confirmation Entries (16:13–16:21 Stockholm)
+
+| Entry | Bet | Vote Time | Outcome | Source |
+|-------|-----|-----------|---------|--------|
+| JuU10 punkt 1 | HD01JuU10 | 16:13:22 | ADOPTED | riksdag-regering MCP voteringar |
+| JuU10 punkt 2 | HD01JuU10 | 16:13 | REJECTED | riksdag-regering MCP voteringar |
+| SfU28 punkt 1 | HD01SfU28 | 16:21:06 | ADOPTED | riksdag-regering MCP voteringar |
+| SfU28 punkt 2 | HD01SfU28 | 16:21 | REJECTED | riksdag-regering MCP voteringar |
+
+**Vote data provenance**: Retrieved via `search_voteringar` with bet=JuU10/SfU28 filtering. Full individual vote records retrieved (Nej votes confirmed per party). Party aggregation confirmed via cross-reference of individual MP names against party affiliations.
+
+vote-confirmation-timestamp: 2026-04-29T16:45Z

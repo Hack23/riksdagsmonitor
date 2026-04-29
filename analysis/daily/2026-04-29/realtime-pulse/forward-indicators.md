@@ -6,7 +6,7 @@
 
 | # | Indicator | Threshold | Source | dok_id |
 |---|-----------|---------|--------|--------|
-| FI-01 | JuU10 vote result in chamber | Pass=YES, Fail=NO | Riksdagen voteringresultat | HDC120260429ap |
+| FI-01 | JuU10 vote result in chamber | ✅ CONFIRMED ADOPTED 16:13 — C voted NEJ (all ~20 present) | riksdag-regering MCP voteringar | coalition-mathematics |
 | FI-02 | Waltersson Grönvall response to HD10454 interpellation | Substantive or formulaic | Riksdagen anföranden | HD10454 |
 | FI-03 | Government press release on JuU10 | Within 24h of vote = high priority | Regeringen.se | HD01JuU10 |
 | FI-04 | Media coverage volume on HVB homes | >3 major outlets = elevated risk | Google News / TT |  HD10454 |
@@ -66,3 +66,12 @@ gantt
     Polling FI-16           :2026-06-01, 90d
 ```
 
+
+## NEW Forward Indicators from Afternoon Votes
+
+| ID | Indicator | Trigger condition | Source | Related artifact |
+|----|-----------|------------------|--------|-----------------|
+| FI-21 | C party response to JuU10 NEJ record | Press conference or public statement by C leadership | Major Swedish media | coalition-mathematics |
+| FI-22 | SD/M campaign use of C weapons law NEJ vote | Social media ad or campaign material citing C's NEJ | social media / party comms | coalition-mathematics |
+| FI-23 | S left-wing (Strandhäll faction) reaction to SfU28 JA | Open dissent in S riksdag group or party press release | Swedish media | synthesis-summary |
+| FI-24 | SfU28 citizenship law implementation timeline | Government SFS publication for new citizenship rules | SFS register | HD01SfU28 |

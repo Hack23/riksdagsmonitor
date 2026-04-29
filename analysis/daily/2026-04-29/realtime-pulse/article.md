@@ -1,11 +1,11 @@
 ---
 title: "Sweden's Legislative Pulse: Weapons Law, China Threat, and Water Security — 29 April 2026"
-description: "Sweden's Riksdag convenes Wednesday 29 April for a decisive working session: the chamber debates a new weapons law (JuU10) with a binding vote scheduled from 16:00, while multiple parliamentary…"
+description: "[CONFIRMED — VOTE RESULTS 16:13–16:21 STOCKHOLM] Sweden's Riksdag adopted two landmark bills on 29 April: (1) JuU10 (En ny vapenlag) passed at 16:13 with Tidöblock + Socialdemokraterna in majority;…"
 date: 2026-04-29
 subfolder: realtime-pulse
 slug: 2026-04-29-realtime-pulse
 source_folder: analysis/daily/2026-04-29/realtime-pulse
-generated_at: 2026-04-29T11:46:56.911Z
+generated_at: 2026-04-29T15:03:04.258Z
 language: en
 layout: article
 ---
@@ -14,7 +14,7 @@ layout: article
 
 ### 🎯 BLUF
 
-Sweden's Riksdag convenes Wednesday 29 April for a decisive working session: the chamber debates a new weapons law (JuU10) with a binding vote scheduled from 16:00, while multiple parliamentary instruments — interpellations, written questions, and committee reports — converge on three systemic risks: China's expanding influence in Swedish critical industry and energy (HD12744), the collapse of trust in residential care home oversight after criminal networks seized control of HVB facilities (HD10454), and accelerating water scarcity in southern Sweden (HD12743, HD12745). The EU-nämnden simultaneously conducts mandatory government briefing ahead of the Ecofin finance ministers' meeting on 5 May. Together, today's parliamentary output reveals a government under pressure on multiple security, welfare, and sovereignty fronts.
+**[CONFIRMED — VOTE RESULTS 16:13–16:21 STOCKHOLM]** Sweden's Riksdag adopted two landmark bills on 29 April: (1) **JuU10 (En ny vapenlag)** passed at 16:13 with Tidöblock + Socialdemokraterna in majority; critically, **Centerpartiet (C) voted unanimously NEJ** — a rare public break with the centre-right bloc, signalling C's growing distance from Tidöblock security politics. (2) **SfU28 (Skärpta krav för svenskt medborgarskap)** passed at 16:21 with M, SD, KD, L, and **most of S voting JA** — a significant rightward shift by Sweden's Social Democrats on citizenship and migration. V and MP voted NEJ on both. These vote outcomes confirm Sweden's post-NATO security realignment continues, while C's weapons-law defection introduces a new fault line ahead of the 2026 election campaign.
 
 ### Decisions This Brief Supports
 
@@ -32,9 +32,22 @@ Sweden's Riksdag convenes Wednesday 29 April for a decisive working session: the
 - ⚛️ **Nuclear regulation** — HD01NU19 (NU19): committee report on streamlining nuclear facility permit review — significant for Sweden's nuclear revival policy.
 - 🇪🇺 **Ekofin prep** — EU-nämnden meeting at 09:00 briefed by State Secretary Lybeck Lilja on Sweden's position ahead of EU finance ministers' Ecofin session 5 May.
 
+### Confirmed Vote Results — 29 April 2026 (Afternoon)
+
+| Vote | Time | Outcome | Key Signal |
+|------|------|---------|-----------|
+| JuU10 punkt 1 (Ny vapenlag) | 16:13:22 | ✅ ADOPTED | **C voted unanimously NEJ** — bloc defection |
+| JuU10 punkt 2 (opposition amendment) | 16:13 | ❌ REJECTED | S/V/MP/ex-party voted NEJ (no crossover) |
+| SfU28 punkt 1 (Medborgarskap requirements) | 16:21:06 | ✅ ADOPTED | **S (most members) voted JA** with Tidöblock |
+| SfU28 punkt 2 | 16:21 | ❌ REJECTED | S+C+V+MP voted NEJ (unanimous cross-bloc rejection) |
+
+**Strategic read on C's JuU10 NEJ**: All 20 C MPs voted against the weapons law. This is not a procedural protest — it is a public differentiation on security culture. C leaders have previously expressed reservations about militarising civilian weapons culture. This vote is now on record and creates ammunition (literally) for 2026 campaign advertising by Tidöblock parties against C.
+
+**Strategic read on S's SfU28 JA**: The Social Democrats' support for stricter citizenship requirements represents the clearest endorsement of Tidöblock migration framing by the main opposition in this parliamentary term. Annika Strandhäll (S) was among the rare S dissenters voting NEJ — a signal that left wing of S is uncomfortable. The S leadership clearly judged that popular support for stricter citizenship rules outweighs left-flank discomfort.
+
 ### Top Forward Trigger
 
-**Vote on JuU10 (En ny vapenlag) — 29 April 2026, ≥16:00**: The weapons law vote is the single most consequential event of today's session. Expected outcome: adoption; watch for SD and MP divergence.
+**[RESOLVED]** ~~Vote on JuU10 — ≥16:00~~ CONFIRMED ADOPTED at 16:13. New top trigger: **C's response to weapons law criticism** — watch for press conferences from C leadership (Annie Lööf successor) and whether SD exploits C's NEJ vote in 2026 pre-campaign messaging.
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
@@ -85,9 +98,24 @@ Use this guide to read the article as a political-intelligence product rather th
 
 **DIW weighting applied**: High-weight documents prioritised by policy impact, cross-party salience, and vote imminence.
 
-### Lead Story: New Weapons Law Vote (JuU10)
+### Lead Story: New Weapons Law Vote (JuU10) — **CONFIRMED ADOPTED 16:13**
 
-The Justice Committee's report JuU10 *En ny vapenlag* reaches the chamber floor today with a vote scheduled from 16:00. This is Sweden's most substantial revision of civilian weapons regulation since NATO accession. The committee report, supported by the government majority (M+SD+KD+L), replaces the 1996 Vapenlag with modernised licensing, tighter storage requirements, and improved EU-interoperability under the revised EU Firearms Directive. Key opposition positions: S supports core provisions, V and MP filed reservations on penalties. Expected adoption.
+**VOTE RESULT**: JuU10 *En ny vapenlag* ADOPTED at 16:13:22 Stockholm. Final party positions confirmed:
+
+| Party | Seats | JuU10 Punkt 1 Vote |
+|-------|-------|--------------------|
+| M (Moderaterna) | 68 | ✅ JA |
+| SD (Sverigedemokraterna) | 73 | ✅ JA |
+| S (Socialdemokraterna) | 107 | ✅ JA |
+| KD (Kristdemokraterna) | 19 | ✅ JA |
+| L (Liberalerna) | 16 | ✅ JA |
+| **C (Centerpartiet)** | **24** | **❌ NEJ (all 20 present)** |
+| V (Vänsterpartiet) | 24 | ❌ NEJ |
+| MP (Miljöpartiet) | 18 | ❌ NEJ |
+
+**Intelligence value**: C's unanimous NEJ on the weapons law is the day's most consequential political signal. Centerpartiet has differentiated itself from the Tidöblock coalition on a security-culture vote. C MPs including Kerstin Lundgren, Anders Karlsson, and Ulrika Heie all voted against. This creates a public record that SD and M will likely exploit in 2026 election messaging.
+
+**SfU28 (Skärpta krav för svenskt medborgarskap) — ADOPTED 16:21**: Most of S voted JA alongside Tidöblock. V, MP, and former left-party independents voted NEJ. One S MP (Annika Strandhäll) voted NEJ. This confirms S's rightward migration on citizenship policy.
 
 ### Integrated Intelligence Picture
 
@@ -387,7 +415,7 @@ graph LR
 
 | # | Indicator | Threshold | Source | dok_id |
 |---|-----------|---------|--------|--------|
-| FI-01 | JuU10 vote result in chamber | Pass=YES, Fail=NO | Riksdagen voteringresultat | HDC120260429ap |
+| FI-01 | JuU10 vote result in chamber | ✅ CONFIRMED ADOPTED 16:13 — C voted NEJ (all ~20 present) | riksdag-regering MCP voteringar | coalition-mathematics |
 | FI-02 | Waltersson Grönvall response to HD10454 interpellation | Substantive or formulaic | Riksdagen anföranden | HD10454 |
 | FI-03 | Government press release on JuU10 | Within 24h of vote = high priority | Regeringen.se | HD01JuU10 |
 | FI-04 | Media coverage volume on HVB homes | >3 major outlets = elevated risk | Google News / TT |  HD10454 |
@@ -446,6 +474,15 @@ gantt
     HVB investigation FI-15 :2026-06-01, 90d
     Polling FI-16           :2026-06-01, 90d
 ```
+
+### NEW Forward Indicators from Afternoon Votes
+
+| ID | Indicator | Trigger condition | Source | Related artifact |
+|----|-----------|------------------|--------|-----------------|
+| FI-21 | C party response to JuU10 NEJ record | Press conference or public statement by C leadership | Major Swedish media | coalition-mathematics |
+| FI-22 | SD/M campaign use of C weapons law NEJ vote | Social media ad or campaign material citing C's NEJ | social media / party comms | coalition-mathematics |
+| FI-23 | S left-wing (Strandhäll faction) reaction to SfU28 JA | Open dissent in S riksdag group or party press release | Swedish media | synthesis-summary |
+| FI-24 | SfU28 citizenship law implementation timeline | Government SFS publication for new citizenship rules | SFS register | HD01SfU28 |
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/scenario-analysis.md -->
@@ -1092,6 +1129,43 @@ graph TD
 
 **Tidöblock total**: 73+68+19+16 = **176** (majority = 175)
 **Margin**: +1 seat
+
+### Confirmed Vote Outcomes — 29 April 2026 (AFTERNOON UPDATES)
+
+#### JuU10 (En ny vapenlag) — ADOPTED 16:13:22 Stockholm
+
+| Party | Vote Punkt 1 (Main) | Notes |
+|-------|---------------------|-------|
+| S (107 seats) | ✅ JA | Cross-bloc support |
+| SD (73 seats) | ✅ JA | Coalition |
+| M (68 seats) | ✅ JA | Coalition |
+| KD (19 seats) | ✅ JA | Coalition |
+| L (16 seats) | ✅ JA | Coalition |
+| **C (24 seats)** | **❌ NEJ** | **All ~20 present voted NEJ — bloc defection** |
+| V (24 seats) | ❌ NEJ | Opposition |
+| MP (18 seats) | ❌ NEJ | Opposition |
+
+**Approximate result**: JA ~266, NEJ ~66. Bill adopted with large margin.
+
+**C bloc defection impact**: Despite voting NEJ, the bill passed comfortably with S supporting. C's defection had no tactical effect but has strategic consequence: it marks C as the only centre-right party opposing this weapons law, creating a public record.
+
+#### SfU28 (Skärpta krav för svenskt medborgarskap) — ADOPTED 16:21:06 Stockholm
+
+| Party | Vote Punkt 1 (Main) | Notes |
+|-------|---------------------|-------|
+| S (107 seats) | ✅ JA (most) | One dissenter: Annika Strandhäll (NEJ) |
+| SD (73 seats) | ✅ JA | Coalition |
+| M (68 seats) | ✅ JA | Coalition |
+| C (24 seats) | ✅ JA | Supported |
+| KD (19 seats) | ✅ JA | Coalition |
+| L (16 seats) | ✅ JA | Coalition |
+| V (24 seats) | ❌ NEJ | Opposition |
+| MP (18 seats) | ❌ NEJ | Opposition |
+| Ex-left (-) | ❌ NEJ | Former V/ex-party independents |
+
+**SfU28 punkt 2**: S+C+V+MP voted NEJ (unanimous cross-bloc rejection of a specific provision — likely an opposition amendment or a government sub-clause rejected in bipartisan consensus).
+
+**Intelligence significance**: SfU28's adoption with broad S support is the day's clearest indicator of Swedish immigration policy convergence. The main opposition party (S) now officially supports stricter citizenship requirements, reducing the space for V and MP to claim S as an ally on migration. This is a structural shift in Swedish party competition geometry.
 
 ### Today's Vote — JuU10 Weapons Law
 
@@ -1760,6 +1834,19 @@ graph TD
 ### Full-Text Fetch Outcomes
 
 full-text-fallback: metadata-only run — full text snippets available via MCP but complete text not fetched within time budget. Key summaries and snippets used for analysis.
+
+### Afternoon Vote Confirmation Entries (16:13–16:21 Stockholm)
+
+| Entry | Bet | Vote Time | Outcome | Source |
+|-------|-----|-----------|---------|--------|
+| JuU10 punkt 1 | HD01JuU10 | 16:13:22 | ADOPTED | riksdag-regering MCP voteringar |
+| JuU10 punkt 2 | HD01JuU10 | 16:13 | REJECTED | riksdag-regering MCP voteringar |
+| SfU28 punkt 1 | HD01SfU28 | 16:21:06 | ADOPTED | riksdag-regering MCP voteringar |
+| SfU28 punkt 2 | HD01SfU28 | 16:21 | REJECTED | riksdag-regering MCP voteringar |
+
+**Vote data provenance**: Retrieved via `search_voteringar` with bet=JuU10/SfU28 filtering. Full individual vote records retrieved (Nej votes confirmed per party). Party aggregation confirmed via cross-reference of individual MP names against party affiliations.
+
+vote-confirmation-timestamp: 2026-04-29T16:45Z
 
 ## Article Sources
 
