@@ -5,7 +5,7 @@ date: 2026-04-29
 subfolder: evening-analysis
 slug: 2026-04-29-evening-analysis
 source_folder: analysis/daily/2026-04-29/evening-analysis
-generated_at: 2026-04-29T16:55:32.530Z
+generated_at: 2026-04-29T18:38:50.741Z
 language: en
 layout: article
 ---
@@ -32,6 +32,7 @@ Sweden's parliamentary session on 29 April 2026 delivered three confirmation sig
 - **Criminal network exposure**: HVB-hem infiltration (HD10454) + 352 bn SEK criminal economy (HD10451) directly attack Tidökoalitionen's law-and-order credibility
 - **China risk convergence**: Three parliamentary instruments on Chinese threats today (HD12744, HD12746, HD10456) — security consensus forming across party lines
 - **Intra-coalition fracture**: SD's Josef Fransson demands gas bridge (HD10453) vs KD Energy Minister Busch — subtle but durable tension
+- **Additional afternoon votes (re-run)**: 8 more kam-vo decisions adopted 16:00–16:21 — civilian protection [FöU12, S NEJ punkt 2], prison expansion [CU25, near-consensus], EV charging [CU29], waste reform [MJU19], climate reports [MJU20/21], Riksbank oversight [FiU23], researcher migration [SfU23]
 
 ### Top Forward Trigger
 
@@ -110,6 +111,13 @@ Use this guide to read the article as a political-intelligence product rather th
 | 8 | HD01UbU17 | Vocational higher education reform | 6.5 | L2 |
 | 9 | HD01NU19 | Nuclear licensing streamlining | 6.3 | L2 |
 | 10 | HD024120 | V rejects NATO Forward Presence (isolated) | 6.1 | L2 |
+| 11 | HDC320260429FöU12 | Civilian protection (skyddsrum) ADOPTED — S NEJ punkt 2 | 5.8 | L2 |
+| 12 | HDC320260429CU25 | Prison expansion ADOPTED — near-consensus incl. S | 5.6 | L2 |
+| 13 | HDC320260429MJU19–21 | Waste reform + 2 climate Riksrevisionen reports ADOPTED | 5.2 | L1 |
+| 14 | HDC320260429FiU23 | Riksbankens förvaltning 2025 ADOPTED | 4.8 | L1 |
+| 15 | HDC320260429SfU23 | Researcher migration rules ADOPTED — broad consensus | 4.5 | L1 |
+
+**Re-run note (25126712946)**: Eight additional chamber vote decisions (kam-vo) published at 16:30 UTC captured in re-run. The lead narrative and DIW Top-10 remain unchanged; items 11–15 provide completeness context [A2].
 
 ### Integrated Intelligence Picture
 
@@ -122,6 +130,8 @@ Use this guide to read the article as a political-intelligence product rather th
 **Narrative 4 — Infrastructure as Electoral Battleground**: The 875 Mdr kr transport plan (HD03259) is the largest single policy instrument of the 2025/26 riksmöte. With elections five months away, the plan's approval or delay directly affects regional M and SD parliamentary seats in Norrland and the Mälar Valley. IMF projects Swedish GDP growth at +1.8% (2026) — transport investment at ~1.0% of BNP annually provides a Keynesian stimulus visible to voters.
 
 **Narrative 5 — Energy Policy: Coalition's Hidden Fault Line**: SD Energy Shadow Josef Fransson's call for gas bridge (HD10453) vs KD Energy Minister Ebba Busch's nuclear-first strategy represents the coalition's deepest policy disagreement. This is not public but it is structural — SD's industrial-policy base (Norrland manufacturing) wants energy now; KD's Christian-democratic base prefers long-term nuclear.
+
+**Narrative 6 — Comprehensive Legislative Day**: Beyond the top political stories, Parliament adopted 8 additional measures on 29 April: civilian protection enhancement with new skyddsrum law [HDC320260429FöU12] (S opposed punkt 2 — opposition to total-defence framing); accelerated prison/detention expansion [HDC320260429CU25] (near-consensus including S, continuing the cross-bloc crime consensus trend); EV home-charging facilitation [HDC320260429CU29]; waste legislation reform [HDC320260429MJU19]; two Riksrevisionen reports on climate governance adopted [HDC320260429MJU20, MJU21]; Riksbankens annual oversight approved [HDC320260429FiU23]; and researcher migration rules improved [HDC320260429SfU23]. The legislative velocity confirms a riksmöte end-sprint pattern typical of spring sessions before summer recess.
 
 ### Confidence Distribution
 
@@ -1786,6 +1796,21 @@ The `<full-text-fallback: full text ingested via sibling analysis cycle>` annota
 | JuU10 | En ny vapenlag (ADOPTED 16:13) | Votering/Betänkande | JuU | metadata-only |
 | HD024100 | S motion: Ekonomisk politik alternativ | Motion | FiU | metadata-only |
 | HD024120 | V motion: Nej till NATO-bidrag Finland | Motion | FöU | metadata-only |
+
+### Additional Chamber Votes (Re-run 25126712946 — captured post-16:30)
+
+| dok_id | Title | Committee | Vote Time | Outcome | Parties Supporting |
+|--------|-------|-----------|-----------|---------|-------------------|
+| HDC320260429FöU12 | Skyddsrum och skyddade utrymmen (civilian protection) | FöU | 16:17:59 | ADOPTED | M, SD, C, KD, L, V partial — S NEJ punkt 2 [A2] |
+| HDC320260429CU25 | Snabbare utbyggnad av kriminalvårdsanstalter (prison expansion) | CU | 16:03:22 | ADOPTED | Near-consensus incl. S JA [A2] |
+| HDC320260429CU29 | Ökade möjligheter till hemmaladdning av elfordon (EV charging) | CU | 16:04:14 | ADOPTED | Broad consensus [A2] |
+| HDC320260429MJU19 | Reformering av avfallslagstiftningen (waste/recycling) | MJU | 16:00:21 | ADOPTED | Majority [A2] |
+| HDC320260429MJU20 | Riksrevisionens rapport — klimatpolitiska ramverket underlag | MJU | 16:06:19 | ADOPTED | Majority [A2] |
+| HDC320260429MJU21 | Riksrevisionens rapport — jordbrukets klimatomställning | MJU | 16:07:37 | ADOPTED | Majority [A2] |
+| HDC320260429FiU23 | Riksbankens verksamhet och förvaltning 2025 | FiU | 16:17:50 | ADOPTED | Near-consensus [A2] |
+| HDC320260429SfU23 | Bättre migrationsrättsliga regler för forskare (researcher migration) | SfU | 16:20:58 | ADOPTED | Broad consensus [A2] |
+
+**Note**: These chamber vote decisions (kam-vo) were published at 16:30 UTC and were not captured in initial run 25121285494 (started 16:38 UTC). Added in re-run 25126712946.
 
 ### ## Full-Text Fetch Outcomes
 

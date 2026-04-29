@@ -25,6 +25,13 @@
 | 8 | HD01UbU17 | Vocational higher education reform | 6.5 | L2 |
 | 9 | HD01NU19 | Nuclear licensing streamlining | 6.3 | L2 |
 | 10 | HD024120 | V rejects NATO Forward Presence (isolated) | 6.1 | L2 |
+| 11 | HDC320260429FöU12 | Civilian protection (skyddsrum) ADOPTED — S NEJ punkt 2 | 5.8 | L2 |
+| 12 | HDC320260429CU25 | Prison expansion ADOPTED — near-consensus incl. S | 5.6 | L2 |
+| 13 | HDC320260429MJU19–21 | Waste reform + 2 climate Riksrevisionen reports ADOPTED | 5.2 | L1 |
+| 14 | HDC320260429FiU23 | Riksbankens förvaltning 2025 ADOPTED | 4.8 | L1 |
+| 15 | HDC320260429SfU23 | Researcher migration rules ADOPTED — broad consensus | 4.5 | L1 |
+
+**Re-run note (25126712946)**: Eight additional chamber vote decisions (kam-vo) published at 16:30 UTC captured in re-run. The lead narrative and DIW Top-10 remain unchanged; items 11–15 provide completeness context [A2].
 
 ## Integrated Intelligence Picture
 
@@ -37,6 +44,8 @@
 **Narrative 4 — Infrastructure as Electoral Battleground**: The 875 Mdr kr transport plan (HD03259) is the largest single policy instrument of the 2025/26 riksmöte. With elections five months away, the plan's approval or delay directly affects regional M and SD parliamentary seats in Norrland and the Mälar Valley. IMF projects Swedish GDP growth at +1.8% (2026) — transport investment at ~1.0% of BNP annually provides a Keynesian stimulus visible to voters.
 
 **Narrative 5 — Energy Policy: Coalition's Hidden Fault Line**: SD Energy Shadow Josef Fransson's call for gas bridge (HD10453) vs KD Energy Minister Ebba Busch's nuclear-first strategy represents the coalition's deepest policy disagreement. This is not public but it is structural — SD's industrial-policy base (Norrland manufacturing) wants energy now; KD's Christian-democratic base prefers long-term nuclear.
+
+**Narrative 6 — Comprehensive Legislative Day**: Beyond the top political stories, Parliament adopted 8 additional measures on 29 April: civilian protection enhancement with new skyddsrum law [HDC320260429FöU12] (S opposed punkt 2 — opposition to total-defence framing); accelerated prison/detention expansion [HDC320260429CU25] (near-consensus including S, continuing the cross-bloc crime consensus trend); EV home-charging facilitation [HDC320260429CU29]; waste legislation reform [HDC320260429MJU19]; two Riksrevisionen reports on climate governance adopted [HDC320260429MJU20, MJU21]; Riksbankens annual oversight approved [HDC320260429FiU23]; and researcher migration rules improved [HDC320260429SfU23]. The legislative velocity confirms a riksmöte end-sprint pattern typical of spring sessions before summer recess.
 
 ## Confidence Distribution
 

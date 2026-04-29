@@ -36,6 +36,21 @@
 | HD024100 | S motion: Ekonomisk politik alternativ | Motion | FiU | metadata-only |
 | HD024120 | V motion: Nej till NATO-bidrag Finland | Motion | FöU | metadata-only |
 
+## Additional Chamber Votes (Re-run 25126712946 — captured post-16:30)
+
+| dok_id | Title | Committee | Vote Time | Outcome | Parties Supporting |
+|--------|-------|-----------|-----------|---------|-------------------|
+| HDC320260429FöU12 | Skyddsrum och skyddade utrymmen (civilian protection) | FöU | 16:17:59 | ADOPTED | M, SD, C, KD, L, V partial — S NEJ punkt 2 [A2] |
+| HDC320260429CU25 | Snabbare utbyggnad av kriminalvårdsanstalter (prison expansion) | CU | 16:03:22 | ADOPTED | Near-consensus incl. S JA [A2] |
+| HDC320260429CU29 | Ökade möjligheter till hemmaladdning av elfordon (EV charging) | CU | 16:04:14 | ADOPTED | Broad consensus [A2] |
+| HDC320260429MJU19 | Reformering av avfallslagstiftningen (waste/recycling) | MJU | 16:00:21 | ADOPTED | Majority [A2] |
+| HDC320260429MJU20 | Riksrevisionens rapport — klimatpolitiska ramverket underlag | MJU | 16:06:19 | ADOPTED | Majority [A2] |
+| HDC320260429MJU21 | Riksrevisionens rapport — jordbrukets klimatomställning | MJU | 16:07:37 | ADOPTED | Majority [A2] |
+| HDC320260429FiU23 | Riksbankens verksamhet och förvaltning 2025 | FiU | 16:17:50 | ADOPTED | Near-consensus [A2] |
+| HDC320260429SfU23 | Bättre migrationsrättsliga regler för forskare (researcher migration) | SfU | 16:20:58 | ADOPTED | Broad consensus [A2] |
+
+**Note**: These chamber vote decisions (kam-vo) were published at 16:30 UTC and were not captured in initial run 25121285494 (started 16:38 UTC). Added in re-run 25126712946.
+
 ## ## Full-Text Fetch Outcomes
 
 | dok_id | full_text_available |
