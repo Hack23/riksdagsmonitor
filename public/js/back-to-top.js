@@ -93,9 +93,39 @@
 
 (function() {
   'use strict';
-  
-  const backToTopButton = document.getElementById('back-to-top');
-  
+
+  /**
+   * Ensure the back-to-top button markup exists in the DOM.
+   *
+   * On news articles and root `index*.html` pages the markup is authored
+   * directly in the HTML.  On pages that load this script without the
+   * markup (dashboard/index*.html, politician-dashboard*.html), we inject
+   * a semantically identical button as a progressive enhancement so the
+   * feature works everywhere without requiring each template to emit
+   * boilerplate separately.
+   *
+   * The injected button uses the same id/class/aria-label contract as
+   * the authored markup so CSS rules in `styles.css` (.back-to-top,
+   * .back-to-top.visible) apply uniformly.
+   */
+  function ensureButton() {
+    var existing = document.getElementById('back-to-top');
+    if (existing) return existing;
+    if (!document.body) return null; // called before <body> parsed — unexpected
+    var btn = document.createElement('button');
+    btn.id = 'back-to-top';
+    btn.className = 'back-to-top';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.setAttribute('title', 'Back to top');
+    // Inline the arrow glyph used by the authored markup for visual parity.
+    btn.innerHTML = '<span aria-hidden="true">↑</span>';
+    document.body.appendChild(btn);
+    return btn;
+  }
+
+  var backToTopButton = ensureButton();
+
   if (backToTopButton) {
     // Show/hide button based on scroll position
     window.addEventListener('scroll', function() {
@@ -104,11 +134,11 @@
       } else {
         backToTopButton.classList.remove('visible');
       }
-    }, { passive: true });
-    
+    });
+
     // Smooth scroll to top with reduced motion support
     backToTopButton.addEventListener('click', function() {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       window.scrollTo({
         top: 0,
         behavior: prefersReducedMotion ? 'auto' : 'smooth'

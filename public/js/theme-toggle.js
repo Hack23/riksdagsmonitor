@@ -1,86 +1,80 @@
 /**
- * @module ThemeToggle
- * @description Dark/light theme toggle for Riksdagsmonitor.
+ * Theme toggle functionality for Riksdagsmonitor news articles.
  *
- * Behaviour:
- *  1. On first visit, reads `prefers-color-scheme` to pick dark or light.
- *  2. The user's explicit choice is persisted to `localStorage`.
- *  3. The `data-theme` attribute on `<html>` drives all CSS custom-property
- *     overrides, giving higher specificity than the media-query fallback.
- *  4. Listens for system-theme changes and follows them unless the user has
- *     already made an explicit choice.
+ * Reads/writes the user's preference under the same storage key
+ * (`riksdagsmonitor-theme`) used by the anti-flash head snippet so that
+ * the initial state, the toggle, and the CSS selector (`[data-theme]` on
+ * `<html>`) are all kept in sync.
  *
- * Accessibility:
- *  - Toggle is a native `<button>` with `aria-pressed` and a descriptive
- *    `aria-label` that updates on every toggle.
- *  - Keyboard: native `<button>` handles Enter / Space automatically.
- *
- * @license Apache-2.0
+ * @module js/theme-toggle
  */
 (function () {
-  'use strict';
+  var STORAGE_KEY = 'riksdagsmonitor-theme';
+  var DARK = 'dark';
+  var LIGHT = 'light';
+  var _transitionTimer = null;
 
-  const STORAGE_KEY = 'riksdagsmonitor-theme';
-  const DARK  = 'dark';
-  const LIGHT = 'light';
-  let _transitionTimer = null;
-
-  /* ── Helpers ──────────────────────────────────────────────────────────── */
-
-  function prefersDark() {
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var button = document.getElementById('theme-toggle');
+  if (!button) {
+    return;
   }
 
   /**
-   * Determine the initial theme.
-   * Priority: localStorage > system preference
+   * Apply the given theme to the document and update the toggle button state.
+   * Receives the button element explicitly to avoid relying on the outer-scope variable.
+   *
+   * @param {string} theme - 'dark' or 'light'
+   * @param {HTMLElement} btn - The theme-toggle button element
    */
-  function resolveTheme() {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved === DARK || saved === LIGHT) return saved;
-    } catch (_) { /* private browsing */ }
-    return prefersDark() ? DARK : LIGHT;
-  }
-
-  /**
-   * Write the theme to the DOM and persist it.
-   * @param {string} theme - 'dark' | 'light'
-   * @param {boolean} [persist=true] - save to localStorage
-   */
-  function applyTheme(theme, persist) {
+  function applyTheme(theme, btn) {
     document.documentElement.setAttribute('data-theme', theme);
-    if (persist !== false) {
-      try { localStorage.setItem(STORAGE_KEY, theme); } catch (_) { /* storage unavailable */ }
+
+    var isDark = theme === DARK;
+    btn.setAttribute('aria-pressed', String(isDark));
+    var label = isDark
+      ? btn.getAttribute('data-label-dark')
+      : btn.getAttribute('data-label-light');
+    if (label) {
+      btn.setAttribute('aria-label', label);
+      btn.setAttribute('title', label);
     }
   }
 
-  /* ── Button state ─────────────────────────────────────────────────────── */
-
-  function updateButton(theme) {
-    const btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-
-    const isDark  = theme === DARK;
-    const icon    = btn.querySelector('.theme-icon');
-    const darkLbl = btn.getAttribute('data-label-dark')  || 'Switch to light theme';
-    const lightLbl= btn.getAttribute('data-label-light') || 'Switch to dark theme';
-
-    btn.setAttribute('aria-pressed', String(isDark));
-    btn.setAttribute('aria-label',   isDark ? darkLbl : lightLbl);
-    btn.setAttribute('title',        isDark ? darkLbl : lightLbl);
-
-    if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+  function getStoredTheme() {
+    try {
+      var stored = window.localStorage.getItem(STORAGE_KEY);
+      if (stored === DARK || stored === LIGHT) {
+        return stored;
+      }
+    } catch (_e) {
+      // Ignore storage errors and fall back to the attribute set by the anti-flash snippet
+    }
+    return null;
   }
 
-  /* ── Toggle handler ───────────────────────────────────────────────────── */
+  // Resolve the initial theme in priority order:
+  //  1. `data-theme` attribute on <html> — already set by the anti-flash head
+  //     snippet before first paint; respecting it avoids a second flash.
+  //  2. `localStorage` value — respects the user's explicit last choice when
+  //     the anti-flash snippet could not set the attribute (e.g. JS disabled).
+  //  3. Default to LIGHT if neither source provides a valid value.
+  var initial = document.documentElement.getAttribute('data-theme');
+  var currentTheme =
+    (initial === DARK || initial === LIGHT ? initial : null) ||
+    getStoredTheme() ||
+    LIGHT;
 
-  function toggle() {
-    const current = document.documentElement.getAttribute('data-theme') || LIGHT;
-    const next    = current === DARK ? LIGHT : DARK;
+  applyTheme(currentTheme, button);
+
+  button.addEventListener('click', function () {
+    currentTheme = currentTheme === DARK ? LIGHT : DARK;
     document.documentElement.classList.add('theme-transition');
-    applyTheme(next);
-    updateButton(next);
+    applyTheme(currentTheme, button);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, currentTheme);
+    } catch (_e) {
+      // Ignore storage errors
+    }
     // Remove transition class after animations complete; clear any pending timer
     // to avoid races when the user clicks rapidly.
     if (_transitionTimer) { clearTimeout(_transitionTimer); }
@@ -88,58 +82,40 @@
       document.documentElement.classList.remove('theme-transition');
       _transitionTimer = null;
     }, 350);
-  }
-
-  /* ── Boot ─────────────────────────────────────────────────────────────── */
-
-  // Apply before first paint (called synchronously by the anti-flash snippet
-  // already present in <head>; this line covers when the module loads later).
-  var _initialTheme = resolveTheme();
-  applyTheme(_initialTheme, false /* initial resolution only; do not persist on module boot */);
-  // Update button immediately — the script is placed after the button in <body>
-  // so the element is already in the DOM; this avoids a brief mismatch before
-  // DOMContentLoaded fires.
-  updateButton(_initialTheme);
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const theme = document.documentElement.getAttribute('data-theme') || LIGHT;
-    updateButton(theme);
-
-    const btn = document.getElementById('theme-toggle');
-    if (btn) {
-      btn.addEventListener('click', toggle);
-    }
-
-    // Follow system changes only when no explicit user preference is set
-    if (window.matchMedia) {
-      var mql = window.matchMedia('(prefers-color-scheme: dark)');
-      var handleSchemeChange = function (e) {
-        try {
-          var storedTheme = localStorage.getItem(STORAGE_KEY);
-          if (storedTheme === DARK || storedTheme === LIGHT) {
-            return; // explicit valid choice wins
-          }
-          // Clear invalid or legacy values so system preference can apply
-          if (storedTheme !== null) {
-            localStorage.removeItem(STORAGE_KEY);
-          }
-        } catch (_) { /* storage unavailable */ }
-        var sysTheme = e.matches ? DARK : LIGHT;
-        applyTheme(sysTheme, false);
-        updateButton(sysTheme);
-      };
-      // Use addEventListener where available; fall back to legacy addListener
-      if (typeof mql.addEventListener === 'function') {
-        mql.addEventListener('change', handleSchemeChange);
-      } else if (typeof mql.addListener === 'function') {
-        mql.addListener(handleSchemeChange);
-      }
-    }
   });
+}());
 
-  // Expose for programmatic use (e.g. Chart.js colour refresh)
-  window.riksdagsToggleTheme  = toggle;
-  window.riksdagsGetTheme     = function () {
-    return document.documentElement.getAttribute('data-theme') || LIGHT;
-  };
-})();
+/**
+ * Brand-logo bitmap fallback bootstrap.
+ *
+ * The header brand row renders an `<img class="rm-logo-img" data-rm-logo-img>`
+ * stacked over a `🇸🇪` flag glyph fallback. When the bitmap loads
+ * successfully we add `.rm-logo-img-loaded` to the parent `<a class="rm-logo">`
+ * so the CSS rule `.rm-logo.rm-logo-img-loaded > .rm-logo-glyph { display: none }`
+ * can hide the glyph. If the image errors (network failure, CDN block,
+ * future asset removal) the class is never set and the emoji remains
+ * visible — no broken-image icon, no collapsed brand row.
+ *
+ * Done in JS rather than via inline `onload=` so the chrome stays free of
+ * inline scripting and we keep the option of tightening CSP in the future.
+ */
+(function () {
+  if (typeof document === 'undefined') return;
+  var imgs = document.querySelectorAll('img[data-rm-logo-img]');
+  for (var i = 0; i < imgs.length; i++) {
+    (function (img) {
+      function markLoaded() {
+        var parent = img.parentNode;
+        if (parent && parent.classList) {
+          parent.classList.add('rm-logo-img-loaded');
+        }
+      }
+      // Image may already be cached/decoded by the time this runs.
+      if (img.complete && img.naturalWidth > 0) {
+        markLoaded();
+      } else {
+        img.addEventListener('load', markLoaded, { once: true });
+      }
+    })(imgs[i]);
+  }
+}());

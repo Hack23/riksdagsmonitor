@@ -128,6 +128,16 @@ export interface ChromeOptions {
    * row; restoring it here re-establishes parity.
    */
   readonly languageBar?: boolean;
+  /**
+   * When `true` (default), emits the brand `.hero-banner` block immediately
+   * after `<header class="rm-site-header">`. The image is decorative
+   * (`alt=""`, `aria-hidden="true"`) so screen-readers skip it while
+   * sighted users get the same visual identity as the hand-authored
+   * `index.html`. Set `false` for chrome variants where a full-bleed
+   * banner conflicts with the page's own hero (e.g. dashboards that
+   * already render their own visualization above the fold).
+   */
+  readonly heroBanner?: boolean;
 }
 
 export interface SiteChrome {
@@ -445,7 +455,10 @@ ${breadcrumbLis}
         </nav>
         ${opts.publishedIso ? `<time class="rm-article-published" datetime="${opts.publishedIso}">${opts.publishedIso.slice(0, 10)}</time>` : ''}
       </div>
-    </header>${(opts.languageBar ?? true) ? `
+    </header>${(opts.heroBanner ?? true) ? `
+    <div class="hero-banner" aria-hidden="true">
+      <img src="${prefix}images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async">
+    </div>` : ''}${(opts.languageBar ?? true) ? `
     <nav class="language-switcher rm-lang-bar" role="navigation" aria-label="${escapeHtml(cs.thisPageInOtherLanguages)}">
 ${horizontalLangBar}
     </nav>` : ''}

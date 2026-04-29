@@ -76,7 +76,7 @@
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"이번 주에는 주요 토론, 위원회 회의 및 정부 협의를 포함한 중요한 의회 활동이 있습니다","alternativeHeadline":"이번 주에는 주요 토론, 위원회 회의 및 정부 협의를 포함한 중요한 의회 활동이 있습니다","description":"이번 주에는 주요 토론, 위원회 회의 및 정부 협의를 포함한 중요한 의회 활동이 있습니다.","datePublished":"2026-03-12T00:00:00.000Z","dateModified":"2026-03-12T00:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"정치 인텔리전스 분석가","affiliation":{"@type":"Organization","name":"Hack23 AB"},"url":"https://riksdagsmonitor.com"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":1200,"height":630},"articleSection":"다음 주 전망","articleBody":"&lt;div class=&quot;context-box&quot;&gt; &lt;h3&gt;이번 주가 중요한 이유&lt;/h3&gt; &lt;p&gt;이번 주에는 주요 토론, 위원회 회의 및 정부 협의를 포함한 중요한 의회 활동이 있습니다.&lt;/p&gt; &lt;/div&gt; &lt;h2&gt;향후 입법 일정&lt;/h2&gt; &lt;div class=&quot;document-entry&quot;&gt; &lt;h4&gt;&lt;a href=&quot;https://riksdagen.se/sv/dokument-och-lagar/dokument/HDA3EUN202603200900/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;span data-translate=&quot;true&quot; lang=&quot;sv&quo...","wordCount":3678,"inLanguage":"ko","keywords":"의회, 다음 주, 일정, 이벤트, 일정, 이벤트, 토론, 스웨덴 의회, Riksdag, 정치, 스웨덴","about":{"@type":"Thing","name":"Swedish Parliament","sameAs":"https://www.wikidata.org/wiki/Q1968818"},"isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://riksdagsmonitor.com/news/2026-03-12-week-ahead-ko.html"},"mentions":[{"@type":"Thing","name":"다음 주 전망"}]}</script>
@@ -552,7 +552,22 @@
   </div>
 </footer>
 
-<script src="../js/back-to-top.js" defer></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

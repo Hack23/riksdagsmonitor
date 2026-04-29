@@ -77,7 +77,7 @@
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"每周回顾：议会回顾","alternativeHeadline":"每周回顾：议会回顾","description":"议会正在审议本期17项政府提案，包括\"Verksamheten i Europeiska unionen under 2025\"。","datePublished":"2026-03-14T00:00:00.000Z","dateModified":"2026-03-14T00:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"政治情报分析师","affiliation":{"@type":"Organization","name":"Hack23 AB"},"url":"https://riksdagsmonitor.com"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":1200,"height":630},"articleSection":"每周回顾","articleBody":"&lt;p class=&quot;article-lede&quot;&gt;议会正在审议本期17项政府提案，包括&amp;quot;Verksamheten i Europeiska unionen under 2025&amp;quot;。&lt;/p&gt; &lt;h2&gt;主题分析&lt;/h2&gt; &lt;h3&gt;政府提案 (17)&lt;/h3&gt; &lt;div class=&quot;document-entry&quot;&gt; &lt;h4&gt;&lt;span lang=&quot;sv&quot;&gt;Verksamheten i Europeiska unionen under 2025&lt;/span&gt;&lt;/h4&gt; &lt;p&gt;&lt;span class=&quot;doc-date&quot;&gt;&lt;strong&gt;发布日期:&lt;/strong&gt; &lt;time dat...","wordCount":10549,"inLanguage":"zh","keywords":"议会, 每周回顾, 分析, 总结, 瑞典议会, Riksdag, 政治, 瑞典","about":{"@type":"Thing","name":"Swedish Parliament","sameAs":"https://www.wikidata.org/wiki/Q1968818"},"isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://riksdagsmonitor.com/news/2026-03-14-weekly-review-zh.html"},"mentions":[{"@type":"Thing","name":"委员会报告"}]}</script>
@@ -923,7 +923,22 @@
 </footer>
 
 
-<script src="../js/back-to-top.js" defer></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

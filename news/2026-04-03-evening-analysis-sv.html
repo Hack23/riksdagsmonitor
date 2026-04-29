@@ -331,8 +331,6 @@ style: OSINT/INTOP
     <p class="footer-disclaimer">⚠️ <a href="https://github.com/Hack23/riksdagsmonitor/issues/new/choose" target="_blank" rel="noopener noreferrer">Rapportera ett GitHub-ärende</a></p>
   </div>
 </footer>
-<script src="../js/back-to-top.js" defer></script>
-<script src="../js/theme-toggle.js" defer></script>
 
   
   <section class="analysis-references" aria-label="Analyskällor och metodik">
@@ -363,5 +361,22 @@ style: OSINT/INTOP
     <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-03/week-ahead" rel="noopener noreferrer">📂 Week Ahead</a></li>
     </ul>
   </section>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

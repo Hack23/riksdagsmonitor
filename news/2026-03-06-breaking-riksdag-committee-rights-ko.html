@@ -71,7 +71,7 @@
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"속보: 릭스다그, 권리·선거·외교 정책에 관한 주요 보고서 발표","alternativeHeadline":"속보: 릭스다그, 권리·선거·외교 정책에 관한 주요 보고서 발표","description":"스웨덴 릭스다그는 오늘 기본권, 선거, 투명성, 국제법, 유엔 정책, 소비자 보호, 임대권, 연구에 관한 10건의 위원회 보고서를 발표했습니다. 헌법위원회만 3건의 보고서를 발표했습니다.","datePublished":"2026-03-06T00:00:00.000Z","dateModified":"2026-03-06T00:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"정치 인텔리전스 분석가","affiliation":{"@type":"Organization","name":"Hack23 AB"},"url":"https://riksdagsmonitor.com"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":512,"height":512},"articleSection":"속보","articleBody":"&lt;div class=&quot;article-summary&quot;&gt;&lt;p&gt;스웨덴 릭스다그는 오늘 기본권, 선거, 투명성, 국제법, 유엔 정책, 소비자 보호, 임대권, 연구에 관한 10건의 위원회 보고서를 발표했습니다. 헌법위원회만 3건의 보고서를 발표했습니다. 정부는 재판 절차 효율화 제안도 제출했습니다.&lt;/p&gt;&lt;/div&gt; &lt;h2&gt;헌법위원회 보고서 (KU)&lt;/h2&gt; &lt;p&gt;헌법위원회는 스웨덴 민주주의의 기본적 측면에 관한 3건의 중요한 보고서를 발표했습니다.&lt;/p&gt; &lt;ul class=&quot;document-list&quot;&gt;&lt;li&gt;&lt;a class=&quot;document-link&quot; href=&quot;https://data.riksdagen.se/dokument/HD01KU28.html&quot; target=&quot;_blank&quot; rel=&...","wordCount":602,"inLanguage":"ko","keywords":"riksdag, committee report, constitutional committee, foreign affairs, rights, elections, international law, proposition","about":{"@type":"Thing","name":"Swedish Parliament","sameAs":"https://www.wikidata.org/wiki/Q1968818"},"isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://riksdagsmonitor.com/news/2026-03-06-breaking-riksdag-committee-rights-ko.html"},"mentions":[{"@type":"Thing","name":"breaking-news"},{"@type":"Thing","name":"committee-reports"},{"@type":"Thing","name":"constitutional-committee"},{"@type":"Thing","name":"foreign-affairs"}]}</script>
@@ -373,7 +373,22 @@
   </div>
 </footer>
 
-<script src="../js/back-to-top.js"></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

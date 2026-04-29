@@ -77,7 +77,7 @@
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Komitéinnstillinger: Stortingets prioriteringer denne uken","alternativeHeadline":"Komitéinnstillinger: Stortingets prioriteringer denne uken","description":"Denne runden med 10 komitéinnstillinger dekker 5 forskjellige komiteer.","datePublished":"2026-03-12T00:00:00.000Z","dateModified":"2026-03-12T00:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"Politisk etterretningsanalytiker","affiliation":{"@type":"Organization","name":"Hack23 AB"},"url":"https://riksdagsmonitor.com"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":1200,"height":630},"articleSection":"Analyse","articleBody":"&lt;h2&gt;Siste komitéinnstillinger&lt;/h2&gt; &lt;p class=&quot;article-lede&quot;&gt;Denne runden med 10 komitéinnstillinger dekker 5 forskjellige komiteer.&lt;/p&gt; &lt;h2&gt;Tematisk analyse&lt;/h2&gt; &lt;h3&gt;Committee on Finance&lt;/h3&gt; &lt;p&gt;&lt;em&gt;4 innstillinger fra denne komiteen signaliserer intensivt lovgivningsarbeid.&lt;/em&gt;&lt;/p&gt; &lt;div class=&quot;report-entry&quot;&gt; &lt;h4&gt;&lt;span data-translate=&quot;true&quot; lang=&quot;sv&q...","wordCount":2121,"inLanguage":"nb","keywords":"komité, innstillinger, innstillinger, parlament, komiteer, innstillinger, Svensk Parlament, Riksdag, politikk, Sverige","about":{"@type":"Thing","name":"Swedish Parliament","sameAs":"https://www.wikidata.org/wiki/Q1968818"},"isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://riksdagsmonitor.com/news/2026-03-12-committee-reports-no.html"},"mentions":[{"@type":"Thing","name":"Komitéinnstillinger"}]}</script>
@@ -477,7 +477,22 @@
   </div>
 </footer>
 
-<script type="module" src="../js/back-to-top.js"></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

@@ -958,6 +958,47 @@ describe('render-lib — buildChrome', () => {
     expect(chrome.headerHtml).toMatch(/rm-lang-switcher-dropdown/);
   });
 
+  it('renders the hero banner immediately after the site header by default', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/x-en.html',
+    });
+    // Banner appears after </header> and before any <main>, with the
+    // canonical decorative image and width/height attributes for CLS.
+    expect(chrome.headerHtml).toMatch(/<\/header>[\s\S]*<div class="hero-banner"/);
+    expect(chrome.headerHtml).toContain('hero-banner-bg');
+    expect(chrome.headerHtml).toContain('riksdagsmonitor-banner.webp');
+    expect(chrome.headerHtml).toMatch(/width="1536"/);
+    expect(chrome.headerHtml).toMatch(/height="1024"/);
+    // alt is empty (decorative); aria-hidden suppresses for screen-readers.
+    expect(chrome.headerHtml).toMatch(/<img src="[^"]*riksdagsmonitor-banner\.webp" alt="" class="hero-banner-bg"/);
+  });
+
+  it('uses the depth-aware prefix for the hero banner image src', () => {
+    const nested = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/2026-04-29-realtime-pulse-en.html',
+    });
+    // News articles live at /news/* → prefix is `../`.
+    expect(nested.headerHtml).toMatch(/<img src="\.\.\/images\/riksdagsmonitor-banner\.webp"/);
+  });
+
+  it('suppresses the hero banner when heroBanner is false', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'news/x-en.html',
+      heroBanner: false,
+    });
+    expect(chrome.headerHtml).not.toContain('hero-banner');
+    expect(chrome.headerHtml).not.toContain('riksdagsmonitor-banner.webp');
+  });
+
   it('computes the depth-prefix ../ correctly for nested canonical paths', () => {
     const shallow = buildChrome({
       lang: 'en', title: 'T', description: 'd',

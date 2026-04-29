@@ -77,7 +77,7 @@
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"주간 리뷰: 의회 회고","alternativeHeadline":"주간 리뷰: 의회 회고","description":"의회는 이 기간 동안 17건의 정부 법안을 심의하고 있습니다, \"Verksamheten i Europeiska unionen under 2025\" 포함.","datePublished":"2026-03-14T00:00:00.000Z","dateModified":"2026-03-14T00:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"정치 인텔리전스 분석가","affiliation":{"@type":"Organization","name":"Hack23 AB"},"url":"https://riksdagsmonitor.com"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":1200,"height":630},"articleSection":"주간 리뷰","articleBody":"&lt;p class=&quot;article-lede&quot;&gt;의회는 이 기간 동안 17건의 정부 법안을 심의하고 있습니다, &amp;quot;Verksamheten i Europeiska unionen under 2025&amp;quot; 포함.&lt;/p&gt; &lt;h2&gt;주제별 분석&lt;/h2&gt; &lt;h3&gt;정부 법안 (17)&lt;/h3&gt; &lt;div class=&quot;document-entry&quot;&gt; &lt;h4&gt;&lt;span lang=&quot;sv&quot;&gt;Verksamheten i Europeiska unionen under 2025&lt;/span&gt;&lt;/h4&gt; &lt;p&gt;&lt;span class=&quot;doc-date&quot;&gt;&lt;strong&gt;게시일:&lt;/s...","wordCount":10690,"inLanguage":"ko","keywords":"의회, 주간 리뷰, 분석, 요약, 스웨덴 의회, Riksdag, 정치, 스웨덴","about":{"@type":"Thing","name":"Swedish Parliament","sameAs":"https://www.wikidata.org/wiki/Q1968818"},"isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://riksdagsmonitor.com/news/2026-03-14-weekly-review-ko.html"},"mentions":[{"@type":"Thing","name":"위원회 보고서"}]}</script>
@@ -923,7 +923,22 @@
 </footer>
 
 
-<script src="../js/back-to-top.js" defer></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

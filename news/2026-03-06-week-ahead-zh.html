@@ -67,7 +67,7 @@
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"下周展望：2026年3月10日至13日","alternativeHeadline":"下周展望：2026年3月10日至13日","description":"涉及司法政策领域。司法提案须在法治原则、人权义务与公共安全需求之间寻求平衡，需经过精心起草方能经受宪法审查。","datePublished":"2026-03-06T00:00:00.000Z","dateModified":"2026-03-06T00:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"政治情报分析师","affiliation":{"@type":"Organization","name":"Hack23 AB"},"url":"https://riksdagsmonitor.com"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":512,"height":512},"articleSection":"下周展望","articleBody":"&lt;div class=&quot;context-box&quot;&gt; &lt;h3&gt;为什么本周很重要&lt;/h3&gt; &lt;p&gt;本周有重要的议会活动，包括关键辩论、委员会会议和政府磋商。&lt;/p&gt; &lt;/div&gt; &lt;h2&gt;未来立法议程&lt;/h2&gt; &lt;div class=&quot;document-entry&quot;&gt; &lt;h4&gt;&lt;a href=&quot;https://riksdagen.se/sv/dokument-och-lagar/dokument/prop-202526165/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;span lang=&quot;sv&quot;&gt;En lag om socialdataregister&lt;/span&gt;&lt;/a&gt;&lt;/h4...","wordCount":2281,"inLanguage":"zh","keywords":"议会, 下周展望, 日历, 事件, 辩论, 瑞典议会, Riksdag, 政治, 瑞典","about":{"@type":"Thing","name":"Swedish Parliament","sameAs":"https://www.wikidata.org/wiki/Q1968818"},"isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://riksdagsmonitor.com/news/2026-03-06-week-ahead-zh.html"},"mentions":[{"@type":"Thing","name":"下周展望"}]}</script>
@@ -634,7 +634,22 @@
   </div>
 </footer>
 
-<script src="../js/back-to-top.js"></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

@@ -64,7 +64,7 @@
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Opposition Motions: Battle Lines This Week","alternativeHeadline":"Opposition Motions: Battle Lines This Week","description":"Analysis of 10 opposition motions revealing parliamentary fault lines","datePublished":"2026-03-16T00:00:00.000Z","dateModified":"2026-03-16T00:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"Political Intelligence Analyst","affiliation":{"@type":"Organization","name":"Hack23 AB"},"url":"https://riksdagsmonitor.com"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":1200,"height":630},"articleSection":"Analysis","articleBody":"&lt;h2&gt;Opposition Motions&lt;/h2&gt; &lt;p class=&quot;article-lede&quot;&gt;Opposition MPs have filed 10 new motions, mapping the political fault lines in the current Riksdag. These motions reveal not just policy disagreements but the strategic positioning of parties as they prepare for the next electoral contest.&lt;/p&gt; &lt;h2&gt;Responses to Government Propositions&lt;/h2&gt; &lt;h3&gt;Prop. 2025/26:146: &lt;span data-translate=&quot;true&quot; lang=&quot;sv&quot;&gt;Bättre mig...","wordCount":2467,"inLanguage":"en","keywords":"motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden","about":{"@type":"Thing","name":"Swedish Parliament","sameAs":"https://www.wikidata.org/wiki/Q1968818"},"isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://riksdagsmonitor.com/news/2026-03-16-opposition-motions-en.html"},"mentions":[{"@type":"Thing","name":"Opposition Motions"}]}</script>
@@ -437,7 +437,22 @@
   </div>
 </footer>
 
-<script src="../js/back-to-top.js"></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

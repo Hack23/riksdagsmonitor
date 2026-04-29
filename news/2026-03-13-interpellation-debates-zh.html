@@ -76,7 +76,7 @@
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Theme initialization -->
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"质询辩论：追究政府责任","alternativeHeadline":"质询辩论：追究政府责任","description":"议员们提交了15项质询，要求部长直接答复。这些辩论揭示了议会问责机制的战略性运用。","datePublished":"2026-03-13T00:00:00.000Z","dateModified":"2026-03-13T00:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"政治情报分析师","affiliation":{"@type":"Organization","name":"Hack23 AB"},"url":"https://riksdagsmonitor.com"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":1200,"height":630},"articleSection":"分析","articleBody":"&lt;h2&gt;质询辩论&lt;/h2&gt; &lt;p class=&quot;article-lede&quot;&gt;议员们提交了15项质询，要求部长直接答复。这些辩论揭示了议会问责机制的战略性运用。&lt;/p&gt; &lt;h2&gt;质询策略&lt;/h2&gt; &lt;p&gt;来自3个不同政党的质询揭示了议会监督的广度和对部长问责的要求。&lt;/p&gt; &lt;p&gt;&lt;strong&gt;S&lt;/strong&gt;以12项质询领先，重点关注医疗政策和司法政策. MP以2项质询紧随其后。&lt;/p&gt; &lt;h2&gt;主题分析&lt;/h2&gt; &lt;h3&gt;医疗政策 (3)&lt;/h3&gt; &lt;div class=&quot;motion-entry&quot;&gt; &lt;h4&gt;&lt;span data-translate=&quot;true&quot; lang=&quot;sv&quot;&gt;Äldres rättigheter och kvaliteten i äldreoms...","wordCount":3335,"inLanguage":"zh","keywords":"interpellations, parliamentary questions, 议会, accountability, 瑞典议会, Riksdag, 政治, 瑞典","about":{"@type":"Thing","name":"Swedish Parliament","sameAs":"https://www.wikidata.org/wiki/Q1968818"},"isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://riksdagsmonitor.com/news/2026-03-13-interpellation-debates-zh.html"},"mentions":[{"@type":"Thing","name":"质询辩论"}]}</script>
@@ -567,7 +567,22 @@
   </div>
 </footer>
 
-<script src="../js/back-to-top.js"></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

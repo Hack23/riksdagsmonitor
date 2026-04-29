@@ -8,7 +8,7 @@
  * @license Apache-2.0
  */
 
-import { defineConfig } from 'vite';
+import { createLogger, defineConfig } from 'vite';
 import sri from 'vite-plugin-sri-gen';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -42,10 +42,54 @@ function discoverNewsArticles() {
 
 const newsArticleEntries = discoverNewsArticles();
 
+/**
+ * Custom Vite logger that suppresses the `vite:build-html` advisory
+ * warning emitted for legacy translated articles that load Chart.js as a
+ * classic UMD script via `<script src="../js/lib/chart.umd.4.4.1.js">`
+ * and `<script src="../js/chart-init.js">`.
+ *
+ * Vite's HTML transformer prints "<script src="…"> in "/news/…html"
+ * can't be bundled without type=\"module\" attribute" because it cannot
+ * rewrite a classic-script `src` into a hashed `/assets/…` import. That
+ * is intentional: chart.umd is a UMD bundle that exposes `window.Chart`,
+ * and chart-init.js is a classic module that consumes it. Both are
+ * deployed verbatim to S3 by `.github/workflows/deploy-s3.yml` and are
+ * intentionally trusted by the platform (per the "trust S3 / CloudFront"
+ * classification — no SRI required on first-party JS, see commit
+ * "trust S3/CloudFront — drop SRI on first-party JS").
+ *
+ * Suppressing only this exact message keeps every other Vite warning
+ * visible. Other Vite logging (errors, info, debug) is left untouched.
+ */
+const VITE_BUILD_HTML_BUNDLE_WARNING_RE =
+  /can't be bundled without type="module" attribute/;
+function createSuppressingLogger() {
+  const base = createLogger();
+  return {
+    ...base,
+    warn(msg, opts) {
+      if (typeof msg === 'string' && VITE_BUILD_HTML_BUNDLE_WARNING_RE.test(msg)) {
+        return;
+      }
+      base.warn(msg, opts);
+    },
+    warnOnce(msg, opts) {
+      if (typeof msg === 'string' && VITE_BUILD_HTML_BUNDLE_WARNING_RE.test(msg)) {
+        return;
+      }
+      base.warnOnce(msg, opts);
+    },
+  };
+}
+
 export default defineConfig({
   // Base configuration
   root: '.',
   base: '/',
+
+  // Suppress only the `vite:build-html` "can't be bundled without
+  // type=module" warning for legacy chart.umd/chart-init UMD scripts.
+  customLogger: createSuppressingLogger(),
   
   // Server configuration for local development
   server: {
@@ -223,13 +267,27 @@ export default defineConfig({
   
   // Plugins
   plugins: [
-    // Generate Subresource Integrity (SRI) hashes for security
-    // Skip external Google Fonts — they don't support CORS for SRI verification
+    // Generate Subresource Integrity (SRI) hashes for security.
+    // Skip:
+    //   - Google Fonts (no CORS for SRI verification).
+    //   - First-party JavaScript and TypeScript output. Per the
+    //     "trust S3 / CloudFront" platform classification, first-party
+    //     JS/TS is delivered from infrastructure we control end-to-end
+    //     and does not require SRI verification. This also keeps the
+    //     `vite:build-html` warnings around chart.umd / chart-init quiet
+    //     because SRI rewriting is no longer attempted on those tags.
     sri({
       algorithm: 'sha384',
       skipResources: [
         'https://fonts.googleapis.com/*',
-        'https://fonts.gstatic.com/*'
+        'https://fonts.gstatic.com/*',
+        '*.js',
+        '*.mjs',
+        '*.ts',
+        '/js/*',
+        '/js/**',
+        '/assets/js/*',
+        '/assets/js/**'
       ]
     })
   ],
