@@ -271,6 +271,22 @@
     <p>Published by <a href="https://hack23.github.io/riksdagsmonitor/">Riksdagsmonitor</a> · <a href="https://hack23.com">Hack23</a> · Author: James Pether Sörling</p>
     <p><small>AI-generated political intelligence analysis based on open parliamentary data. Content is produced by automated systems and should be verified against primary sources.</small></p>
   </footer>
-<script src="../js/back-to-top.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

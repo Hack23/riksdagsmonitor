@@ -71,7 +71,7 @@
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"快讯：瑞典议会发布关于权利、选举和外交政策的重要报告","alternativeHeadline":"快讯：瑞典议会发布关于权利、选举和外交政策的重要报告","description":"瑞典议会今天发布了10份委员会报告，涵盖基本权利、选举、透明度、国际法、联合国政策、消费者保护、租赁权和研究。仅宪法委员会就发布了三份报告。政府还提交了一项关于司法效率的提案。","datePublished":"2026-03-06T00:00:00.000Z","dateModified":"2026-03-06T00:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"政治情报分析师","affiliation":{"@type":"Organization","name":"Hack23 AB"},"url":"https://riksdagsmonitor.com"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":512,"height":512},"articleSection":"突发新闻","articleBody":"&lt;div class=&quot;article-summary&quot;&gt;&lt;p&gt;瑞典议会今天发布了10份委员会报告，涵盖基本权利、选举、透明度、国际法、联合国政策、消费者保护、租赁权和研究。仅宪法委员会就发布了三份报告。政府还提交了一项关于司法效率的提案。&lt;/p&gt;&lt;/div&gt; &lt;h2&gt;宪法委员会报告（KU）&lt;/h2&gt; &lt;p&gt;宪法委员会发布了三份关于瑞典民主制度基本方面的重要报告。&lt;/p&gt; &lt;ul class=&quot;document-list&quot;&gt;&lt;li&gt;&lt;a class=&quot;document-link&quot; href=&quot;https://data.riksdagen.se/dokument/HD01KU28.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;KU28&lt;/a&gt;: Rights and Free...","wordCount":566,"inLanguage":"zh","keywords":"riksdag, committee report, constitutional committee, foreign affairs, rights, elections, international law, proposition","about":{"@type":"Thing","name":"Swedish Parliament","sameAs":"https://www.wikidata.org/wiki/Q1968818"},"isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://riksdagsmonitor.com/news/2026-03-06-breaking-riksdag-committee-rights-zh.html"},"mentions":[{"@type":"Thing","name":"breaking-news"},{"@type":"Thing","name":"committee-reports"},{"@type":"Thing","name":"constitutional-committee"},{"@type":"Thing","name":"foreign-affairs"}]}</script>
@@ -373,7 +373,22 @@
   </div>
 </footer>
 
-<script src="../js/back-to-top.js"></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

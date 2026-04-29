@@ -76,7 +76,7 @@
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Theme initialization -->
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Interpellationsdebatter: Regeringen stilles til ansvar","alternativeHeadline":"Interpellationsdebatter: Regeringen stilles til ansvar","description":"Folketingsmedlemmer har indgivet 15 interpellationer, der kræver direkte ministersvar. Disse debatter afslører den strategiske brug af parlamentariske kontrolmekanismer.","datePublished":"2026-03-13T00:00:00.000Z","dateModified":"2026-03-13T00:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"Politisk efterretningsanalytiker","affiliation":{"@type":"Organization","name":"Hack23 AB"},"url":"https://riksdagsmonitor.com"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":1200,"height":630},"articleSection":"Analyse","articleBody":"&lt;h2&gt;Interpellationsdebatter&lt;/h2&gt; &lt;p class=&quot;article-lede&quot;&gt;Folketingsmedlemmer har indgivet 15 interpellationer, der kræver direkte ministersvar. Disse debatter afslører den strategiske brug af parlamentariske kontrolmekanismer.&lt;/p&gt; &lt;h2&gt;Interpellationsstrategi&lt;/h2&gt; &lt;p&gt;Interpellationer fra 3 forskellige partier viser bredden i parlamentarisk kontrol og krav om ministeransvar.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;S&lt;/strong&gt; fører med 12 interpellationer, med fokus på sundhedspolitik og retspolitik. MP følger med 2 interpellationer.&lt;/p&gt; &lt;h2&gt;Tematisk analyse&lt;/h2&gt; &lt;h3&gt;su...","wordCount":3692,"inLanguage":"da","keywords":"interpellations, parliamentary questions, parlament, accountability, Svensk Parlament, Riksdag, politik, Sverige","about":{"@type":"Thing","name":"Swedish Parliament","sameAs":"https://www.wikidata.org/wiki/Q1968818"},"isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://riksdagsmonitor.com/news/2026-03-13-interpellation-debates-da.html"},"mentions":[{"@type":"Thing","name":"Interpellationsdebatter"}]}</script>
@@ -567,7 +567,22 @@
   </div>
 </footer>
 
-<script src="../js/back-to-top.js"></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

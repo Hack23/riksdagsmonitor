@@ -450,6 +450,22 @@
  <script>
  document.addEventListener('DOMContentLoaded',function(){var btn=document.getElementById('theme-toggle');if(!btn)return;var key='riksdagsmonitor-theme';function getTheme(){var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}return t;}function applyTheme(t){document.documentElement.setAttribute('data-theme',t);btn.querySelector('.theme-icon').textContent=t==='dark'?'🌙':'☀️';btn.setAttribute('aria-label',(t==='dark'?'Switch to light':'Switch to dark')+' theme');}btn.addEventListener('click',function(){var current=getTheme();var next=current==='dark'?'light':'dark';try{localStorage.setItem(key,next);}catch(e){}applyTheme(next);});applyTheme(getTheme());});
  </script>
-<script src="../js/back-to-top.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

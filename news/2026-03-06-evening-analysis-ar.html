@@ -63,7 +63,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Evening Analysis: عشرة تقارير لجان تغمر البرلمان السويدي مع تصدر الحقوق الدستورية وحماية المستهلك المشهد","description":"جلب يوم الجمعة انهيارًا تشريعيًا في ستوكهولم. عشرة تقارير لجان هبطت في البرلمان السويدي في يوم واحد — إنتاج استثنائي شمل الحقوق الدستورية وقانون الانتخابات والشفافية العامة وحماية…","datePublished":"2026-03-06T18:00:00.000Z","dateModified":"2026-03-06T18:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"CISSP, CISM","url":"https://www.linkedin.com/in/jamessorling/"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":1200,"height":630},"mainEntityOfPage":"https://riksdagsmonitor.com/news/2026-03-06-evening-analysis-ar.html","articleSection":"تحليل مسائي","inLanguage":"ar","keywords":["السويد","البرلمان السويدي","تحليل مسائي","تقارير اللجان","الحقوق الدستورية","الأمن السيبراني","حماية المستهلك"]}</script>
 </head>
@@ -283,7 +283,22 @@
   </div>
 </footer>
 
-<script src="../js/back-to-top.js"></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

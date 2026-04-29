@@ -55,7 +55,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&amp;family=Share+Tech+Mono&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&amp;family=Share+Tech+Mono&amp;display=swap"></noscript>
   <link rel="stylesheet" href="../styles.css">
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"AI-ansiktsigenkänning i blåsväder, skärpta medborgarskapsregler och invasiva arter — veckans öppning","alternativeHeadline":"AI-ansiktsigenkänning i blåsväder, skärpta medborgarskapsregler och invasiva arter — veckans öppning","description":"Måndagen öppnade den parlamentariska veckan med att Vänsterpartiet lämnade in två skarpa oppositionsmotioner — en som kräver strängare säkerhetskrav för polisens användning av AI-ansiktsigenkänning i…","datePublished":"2026-03-16T18:00:00.000Z","dateModified":"2026-03-16T18:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"Politisk underrättelseanalytiker","url":"https://www.hack23.com"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":1200,"height":630},"mainEntityOfPage":"https://riksdagsmonitor.com/news/2026-03-16-evening-analysis-sv.html","articleSection":"Kvällsanalys","inLanguage":"sv","keywords":["Sverige","riksdagen","AI-ansiktsigenkänning","medborgarskap","invasiva arter","utskottsbetänkanden","polisövervakning"]}</script>
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -273,7 +273,22 @@
     <p class="footer-disclaimer">⚠️ <a href="https://github.com/Hack23/riksdagsmonitor/issues/new/choose" target="_blank" rel="noopener noreferrer">Rapportera ett GitHub-ärende</a></p>
   </div>
 </footer>
-<script type="module" src="../js/back-to-top.js"></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

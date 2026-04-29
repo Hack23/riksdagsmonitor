@@ -76,7 +76,7 @@
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"לוח שנה פרלמנטרי, פגישות ועדה ודיונים לשבוע הקרוב","alternativeHeadline":"לוח שנה פרלמנטרי, פגישות ועדה ודיונים לשבוע הקרוב","description":"לוח שנה פרלמנטרי, פגישות ועדה ודיונים לשבוע הקרוב","datePublished":"2026-03-12T00:00:00.000Z","dateModified":"2026-03-12T00:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"אנליסט מודיעין פוליטי","affiliation":{"@type":"Organization","name":"Hack23 AB"},"url":"https://riksdagsmonitor.com"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":1200,"height":630},"articleSection":"השבוע הקרוב","articleBody":"&lt;div class=&quot;context-box&quot;&gt; &lt;h3&gt;למה השבוע הזה חשוב&lt;/h3&gt; &lt;p&gt;השבוע כולל פעילות פרלמנטרית משמעותית עם דיונים מרכזיים, ישיבות ועדה והתייעצויות ממשלתיות.&lt;/p&gt; &lt;/div&gt; &lt;h2&gt;סדר היום החקיקתי הקרוב&lt;/h2&gt; &lt;div class=&quot;document-entry&quot;&gt; &lt;h4&gt;&lt;a href=&quot;https://riksdagen.se/sv/dokument-och-lagar/dokument/HDA3EUN202603200900/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt...","wordCount":3821,"inLanguage":"he","keywords":"פרלמנט, השבוע הקרוב, לוח שנה, אירועים, לוח שנה, אירועים, דיונים, הפרלמנט השבדי, Riksdag, פוליטיקה, שבדיה","about":{"@type":"Thing","name":"Swedish Parliament","sameAs":"https://www.wikidata.org/wiki/Q1968818"},"isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://riksdagsmonitor.com/news/2026-03-12-week-ahead-he.html"},"mentions":[{"@type":"Thing","name":"השבוע הקרוב"}]}</script>
@@ -552,7 +552,22 @@
   </div>
 </footer>
 
-<script src="../js/back-to-top.js" defer></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>

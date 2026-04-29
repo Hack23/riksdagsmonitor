@@ -71,7 +71,7 @@
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
-  <script src="../js/theme-init.js"></script>
+  <script>(function(){var k='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(k);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(k);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"חדשות אחרונות: הריקסדאג מפרסם דוחות חשובים על זכויות, בחירות ומדיניות חוץ","alternativeHeadline":"חדשות אחרונות: הריקסדאג מפרסם דוחות חשובים על זכויות, בחירות ומדיניות חוץ","description":"10 דוחות ועדות חדשים והצעת חוק על יעילות ההליך השיפוטי","datePublished":"2026-03-06T00:00:00.000Z","dateModified":"2026-03-06T00:00:00.000Z","author":{"@type":"Person","name":"James Pether Sörling","jobTitle":"אנליסט מודיעין פוליטי","affiliation":{"@type":"Organization","name":"Hack23 AB"},"url":"https://riksdagsmonitor.com"},"publisher":{"@type":"Organization","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com","logo":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/android-chrome-512x512.png","width":512,"height":512}},"image":{"@type":"ImageObject","url":"https://riksdagsmonitor.com/images/og-image-news.webp","width":512,"height":512},"articleSection":"חדשות אחרונות","articleBody":"&lt;div class=&quot;article-summary&quot;&gt;&lt;p&gt;הריקסדאג השוודי פרסם היום 10 דוחות ועדות על זכויות יסוד, סוגיות בחירות, שקיפות, משפט בינלאומי, מדיניות האו&quot;ם, הגנת הצרכן, דיני שכירות ומחקר. ועדת החוקה לבדה פרסמה שלושה דוחות. הממשלה הגישה הצעת חוק להליך שיפוטי יעיל יותר.&lt;/p&gt;&lt;/div&gt; &lt;h2&gt;דוחות ועדת החוקה (KU)&lt;/h2&gt; &lt;p&gt;ועדת החוקה פרסמה שלושה דוחות משמעותיים על היבטים יסודיים של הדמוקרטיה השוודית.&lt;/p&gt; &lt;ul class=&quot;document-list&quot;&gt;&lt;li&gt;&l...","wordCount":682,"inLanguage":"he","keywords":"riksdag, committee report, constitutional committee, foreign affairs, rights, elections, international law, proposition","about":{"@type":"Thing","name":"Swedish Parliament","sameAs":"https://www.wikidata.org/wiki/Q1968818"},"isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Riksdagsmonitor","url":"https://riksdagsmonitor.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://riksdagsmonitor.com/news/2026-03-06-breaking-riksdag-committee-rights-he.html"},"mentions":[{"@type":"Thing","name":"breaking-news"},{"@type":"Thing","name":"committee-reports"},{"@type":"Thing","name":"constitutional-committee"},{"@type":"Thing","name":"foreign-affairs"}]}</script>
@@ -373,7 +373,22 @@
   </div>
 </footer>
 
-<script src="../js/back-to-top.js"></script>
-<script src="../js/theme-toggle.js" defer></script>
-</body>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
 </html>
