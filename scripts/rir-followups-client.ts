@@ -177,12 +177,6 @@ export function calculateSkrivelseDeadline(
   return `${deadlineYear}-${pad(deadlineMonth + 1)}-${pad(deadlineDay)}`;
 }
 
-/**
- * @deprecated Use {@link calculateSkrivelseDeadline} (correctly spelled).
- * Kept as a thin alias for backwards compatibility.
- */
-export const calculateSkrivelsDeadline = calculateSkrivelseDeadline;
-
 // ---------------------------------------------------------------------------
 // Status helpers
 // ---------------------------------------------------------------------------

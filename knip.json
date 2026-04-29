@@ -3,9 +3,8 @@
   "entry": [
     "src/browser/**/*.ts",
     "js/*.js",
-    "dashboard/*.js",
     "scripts/*.ts",
-    "scripts/news-types/*.ts",
+    "scripts/audits/**/*.ts",
     "scripts/committees-dashboard/*.ts",
     "scripts/coalition-dashboard/*.ts",
     "tests/**/*.test.ts",
@@ -16,7 +15,6 @@
   "project": [
     "src/browser/**/*.ts",
     "js/**/*.js",
-    "dashboard/**/*.js",
     "scripts/**/*.ts",
     "tests/**/*.ts",
     "tests/**/*.js",
@@ -27,7 +25,10 @@
   ],
   "ignoreDependencies": [
     "htmlhint",
-    "js-yaml"
+    "js-yaml",
+    "mermaid",
+    "chartjs-plugin-annotation",
+    "worldbank-mcp"
   ],
   "ignoreBinaries": [
     "cypress",

@@ -24,16 +24,16 @@ import {
   titleForArtifact,
   aggregateAnalysis,
   __test__,
-} from '../scripts/render-lib/aggregator.js';
+} from '../scripts/render-lib/aggregator/index.js';
 import type {
   AggregationInput,
   AggregationResult,
-} from '../scripts/render-lib/aggregator.js';
+} from '../scripts/render-lib/aggregator/index.js';
 
 import {
   sanitizeSchema,
   renderMarkdownToHtml,
-} from '../scripts/render-lib/markdown.js';
+} from '../scripts/render-lib/markdown/index.js';
 
 import {
   renderChromeHead,

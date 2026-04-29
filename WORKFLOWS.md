@@ -48,6 +48,7 @@
 [![TypeScript & JavaScript Testing](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml)
 [![TypeDoc Validation](https://github.com/Hack23/riksdagsmonitor/actions/workflows/jsdoc-validation.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/jsdoc-validation.yml)
 [![Translation Validation](https://github.com/Hack23/riksdagsmonitor/actions/workflows/translation-validation.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/translation-validation.yml)
+[![Knip Dead Code Check](https://github.com/Hack23/riksdagsmonitor/actions/workflows/knip.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/knip.yml)
 
 ### Documentation & Release
 
@@ -293,11 +294,12 @@ graph TB
 ### Core CI/CD Workflows
 
 1. **✅ Quality Checks** (`.github/workflows/quality-checks.yml`) — ESLint linting, HTML validation, link checking
-2. **🧪 TypeScript & JavaScript Testing** (`.github/workflows/javascript-testing.yml`) — Vitest unit tests, TypeScript type-checking, Cypress E2E
-3. **📖 TypeDoc Validation** (`.github/workflows/jsdoc-validation.yml`) — API documentation generation and coverage
-4. **🌐 Translation Validation** (`.github/workflows/translation-validation.yml`) — 14-language validation with RTL and hreflang
-5. **🚀 Release with Attestations** (`.github/workflows/release.yml`) — SLSA provenance, SBOM, dual deployment
-6. **☁️ Deploy to S3** (`.github/workflows/deploy-s3.yml`) — AWS S3/CloudFront deployment
+2. **🧹 Knip Dead Code Check** (`.github/workflows/knip.yml`) — Detects unused files, dependencies, binaries, and duplicate exports on every PR (informational pass also reports unused exports/types)
+3. **🧪 TypeScript & JavaScript Testing** (`.github/workflows/javascript-testing.yml`) — Vitest unit tests, TypeScript type-checking, Cypress E2E
+4. **📖 TypeDoc Validation** (`.github/workflows/jsdoc-validation.yml`) — API documentation generation and coverage
+5. **🌐 Translation Validation** (`.github/workflows/translation-validation.yml`) — 14-language validation with RTL and hreflang
+6. **🚀 Release with Attestations** (`.github/workflows/release.yml`) — SLSA provenance, SBOM, dual deployment
+7. **☁️ Deploy to S3** (`.github/workflows/deploy-s3.yml`) — AWS S3/CloudFront deployment
 
 ### Security Scanning Workflows
 
@@ -425,6 +427,7 @@ flowchart TB
 | **ESLint** | Zero errors | quality-checks.yml | Required ✅ |
 | **HTMLHint Validation** | Zero errors | quality-checks.yml | Required ✅ |
 | **Link Integrity** | Zero broken internal links | quality-checks.yml | Required ✅ |
+| **Knip Dead Code (files/deps/dups)** | Zero unused files, deps, binaries, or duplicate exports | knip.yml | Required ✅ |
 | **Unit Test Pass Rate** | 100% (2890 tests) | javascript-testing.yml | Required ✅ |
 | **CodeQL SAST** | No critical/high | codeql.yml | Required ✅ |
 | **Dependency Vulnerabilities** | No critical/high | dependency-review.yml | Required ✅ |
@@ -1095,17 +1098,18 @@ flowchart LR
 | 1.4 | 🏷️ Setup Labels | `setup-labels.yml` | Manual dispatch | A.5.37, PR.IP-1 |
 | 1.5 | 🏷️ PR Labeler | `labeler.yml` | Pull requests | A.5.37, PR.IP-1 |
 
-### 🧪 Testing & Validation (7 workflows)
+### 🧪 Testing & Validation (8 workflows)
 
 | # | Workflow | File | Trigger | Coverage |
 | --- | --- | --- | --- | --- |
 | 2.1 | 🧪 TypeScript & JS Testing | `javascript-testing.yml` | Push/PR (TS/JS/HTML) | TSC + Vitest + Cypress |
 | 2.2 | 📖 TypeDoc Validation | `jsdoc-validation.yml` | Manual dispatch | TypeDoc generation + coverage |
 | 2.3 | ✅ Quality Checks | `quality-checks.yml` | Push/PR to main | ESLint + HTMLHint + linkinator |
-| 2.4 | 🌐 Translation Validation | `translation-validation.yml` | Push/PR (HTML) | 14-language + RTL + hreflang |
-| 2.5 | 🖥️ Test Dashboard | `test-dashboard.yml` | Push/PR (src/browser) | Dashboard Cypress E2E |
-| 2.6 | 🏠 Test Homepage | `test-homepage.yml` | Push/PR (src/browser) | Homepage Cypress E2E |
-| 2.7 | 📰 Test News | `test-news.yml` | Push/PR (news) | News pages Cypress E2E |
+| 2.4 | 🧹 Knip Dead Code Check | `knip.yml` | Push/PR to main | Unused files, deps, binaries, duplicate exports (blocking); unused exports/types (informational) |
+| 2.5 | 🌐 Translation Validation | `translation-validation.yml` | Push/PR (HTML) | 14-language + RTL + hreflang |
+| 2.6 | 🖥️ Test Dashboard | `test-dashboard.yml` | Push/PR (src/browser) | Dashboard Cypress E2E |
+| 2.7 | 🏠 Test Homepage | `test-homepage.yml` | Push/PR (src/browser) | Homepage Cypress E2E |
+| 2.8 | 📰 Test News | `test-news.yml` | Push/PR (news) | News pages Cypress E2E |
 
 ### 📊 CIA Data Pipeline (1 workflow)
 

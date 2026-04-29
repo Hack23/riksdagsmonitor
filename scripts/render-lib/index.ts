@@ -68,14 +68,14 @@ export {
   titleForArtifact,
   aggregateAnalysis,
   __test__,
-} from './aggregator.js';
+} from './aggregator/index.js';
 export type {
   AggregationInput,
   AggregationResult,
-} from './aggregator.js';
+} from './aggregator/index.js';
 
 // --- Markdown ---------------------------------------------------------------
-export { sanitizeSchema, renderMarkdownToHtml } from './markdown.js';
+export { sanitizeSchema, renderMarkdownToHtml } from './markdown/index.js';
 
 // --- Chrome -----------------------------------------------------------------
 export { renderChromeHead, buildChrome } from './chrome.js';

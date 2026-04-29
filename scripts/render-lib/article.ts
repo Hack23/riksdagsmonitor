@@ -35,7 +35,7 @@ import type { Language } from '../types/language.js';
 import { LANGUAGE_META, escapeHtml } from '../generate-sitemap-html.js';
 import { BASE_URL } from './constants.js';
 import { buildGithubBlobUrl } from './url-helpers.js';
-import { renderMarkdownToHtml } from './markdown.js';
+import { renderMarkdownToHtml } from './markdown/index.js';
 import { buildChrome } from './chrome.js';
 
 export interface RenderArticleInput {

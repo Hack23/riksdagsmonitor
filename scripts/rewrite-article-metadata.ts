@@ -46,7 +46,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import { __test__ } from './render-lib/aggregator.js';
+import { __test__ } from './render-lib/aggregator/index.js';
 
 const {
   ADMIN_FIELD_RE,

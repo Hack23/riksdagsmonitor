@@ -178,7 +178,6 @@ export default defineConfig({
         // Pure-type declaration files (no runtime code).
         'scripts/types/**',
         // Pure-barrel re-export modules (no executable code beyond imports).
-        'scripts/data-transformers.ts',
         'scripts/generate-news-indexes.ts',
         // Pure-barrel `index.ts` files — `export { … } from './leaf.js'`
         // only, no branching. Their leaves are individually gated and
@@ -195,7 +194,6 @@ export default defineConfig({
         // Constants-only / large translation-dictionary modules (data, not
         // logic; verified via schema tests, not branch coverage).
         'scripts/data-transformers/types.ts',
-        'scripts/data-transformers/index.ts',
         'scripts/data-transformers/text-cleaner.ts',
         'scripts/data-transformers/helpers.ts',
         'scripts/data-transformers/constants.ts',
@@ -237,10 +235,7 @@ export default defineConfig({
         'scripts/generate-rss.ts',
         'scripts/generate-news-indexes/index.ts',
         // Logger module exercised by browser entry; tiny helper, not gated.
-        'src/browser/shared/logger.ts',
-        // Tiny constant exporters used at runtime by the bundler / browser
-        // entry — no branching.
-        'scripts/shared/version.ts'
+        'src/browser/shared/logger.ts'
       ]
     },
     
