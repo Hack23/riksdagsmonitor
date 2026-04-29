@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-04-29T00:00:00Z",
+  "subfolder": "month-ahead",
+  "cycle": "month-ahead",
+  "article_date": "2026-04-29",
+  "pirs": [
+    {
+      "pir_id": "PIR-1",
+      "statement": "Will the Tidö coalition maintain sufficient parliamentary support (≥175 seats) to pass HC01FiU20 and key legislation through June 2026?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "answer_summary": null
+    },
+    {
+      "pir_id": "PIR-2",
+      "statement": "Will the justice legislation cluster (HD01JuU10 weapons law, HD03252 youth crime) pass Riksdag before the summer recess?",
+      "status": "open",
+      "confidence": "HIGH",
+      "answer_summary": null
+    },
+    {
+      "pir_id": "PIR-3",
+      "statement": "Has Sweden completed ratification of Ukraine NATO fund contributions (HD03231/32)?",
+      "status": "answered",
+      "confidence": "VERY HIGH",
+      "answer_summary": "Cross-party support confirmed in prior cycle analysis. Ukraine ratification passed with broad support. No new escalation documents 2026-04-29."
+    },
+    {
+      "pir_id": "PIR-4",
+      "statement": "Is the S party's interpellation campaign (HD10449, HD10450, HD10454, HD11767) gaining polling traction?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "answer_summary": null
+    },
+    {
+      "pir_id": "PIR-5",
+      "statement": "Will SD's energy policy demands (HD10448) create visible coalition friction before the summer recess?",
+      "status": "open",
+      "confidence": "LOW-MEDIUM",
+      "answer_summary": null
+    },
+    {
+      "pir_id": "PIR-6",
+      "statement": "Will Södra stambanan infrastructure funding be resolved before the election?",
+      "status": "open",
+      "confidence": "LOW",
+      "answer_summary": null
+    },
+    {
+      "pir_id": "PIR-7",
+      "statement": "What is C party's coalition alignment signal heading into the September 2026 election?",
+      "status": "open",
+      "confidence": "LOW",
+      "answer_summary": null
+    },
+    {
+      "pir_id": "PIR-8",
+      "statement": "Will the government commit to HVB homes legislation (police list) in the May 20 ministerial response to HD10454?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "answer_summary": null
+    }
+  ]
+}
