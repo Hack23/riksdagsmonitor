@@ -31,7 +31,7 @@ jobs:
   build:
     name: Build for Dashboard Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 10
     
     steps:
       - name: Harden Runner
@@ -52,6 +52,12 @@ jobs:
         run: npm ci
       
       - name: Build with Vite
+        env:
+          # Vite renders ~4,200 modules and ~3,500 HTML entries; the
+          # default ~1.7 GB Node heap OOMs during `rendering chunks`.
+          # Mirror the heap size used by deploy-s3.yml so PR builds
+          # succeed for the same workload that ships to S3.
+          NODE_OPTIONS: --max-old-space-size=8192
         run: npm run build
       
       - name: Upload build artifacts
