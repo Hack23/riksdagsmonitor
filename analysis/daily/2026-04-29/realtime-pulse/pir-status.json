@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "cycle": "realtime-pulse",
+  "date": "2026-04-29",
+  "subfolder": "realtime-pulse",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "question": "Will JuU10 pass without substantive amendment?",
+      "status": "OPEN",
+      "indicator": "Chamber vote record",
+      "watch_date": "2026-04-29",
+      "dok_id": "HDC120260429ap"
+    },
+    {
+      "id": "PIR-2",
+      "question": "When will Government announce comprehensive China strategy?",
+      "status": "OPEN",
+      "indicator": "Press release from Regeringen.se",
+      "watch_date": "2026-05-31",
+      "dok_id": "HD12744"
+    },
+    {
+      "id": "PIR-3",
+      "question": "Will Skåne water rationing begin before August?",
+      "status": "OPEN",
+      "indicator": "MSB/Länsstyrelse advisory",
+      "watch_date": "2026-07-31",
+      "dok_id": "HD12743"
+    },
+    {
+      "id": "PIR-4",
+      "question": "Will NU19 nuclear permitting pass in May?",
+      "status": "OPEN",
+      "indicator": "Riksdag calendar vote scheduling",
+      "watch_date": "2026-05-14",
+      "dok_id": "HD01NU19"
+    },
+    {
+      "id": "PIR-5",
+      "question": "Will Ecofin coordination (HDA3EUN37) produce Swedish position paper?",
+      "status": "OPEN",
+      "indicator": "Government statement post-5 May Ecofin",
+      "watch_date": "2026-05-07",
+      "dok_id": "HDA3EUN37"
+    }
+  ],
+  "prior_cycle_pir_ingestion": [
+    {
+      "prior_pir": "Nuclear regulatory reform progress",
+      "prior_cycle": "2026-04-26/realtime-pulse",
+      "status": "RESOLVED",
+      "resolution_note": "HD01NU19 bet confirmed on today's calendar"
+    },
+    {
+      "prior_pir": "China parliamentary activity",
+      "prior_cycle": "2026-04-26/weekly-review",
+      "status": "SUSTAINED",
+      "resolution_note": "Three new instruments today — multi-week pattern confirmed"
+    },
+    {
+      "prior_pir": "Water security urgency",
+      "prior_cycle": "2026-04-24/realtime-pulse",
+      "status": "ELEVATED",
+      "resolution_note": "HD12745 civil-defence framing = frame shift"
+    },
+    {
+      "prior_pir": "Coalition stability signals",
+      "prior_cycle": "2026-04-28/realtime-pulse",
+      "status": "STABLE",
+      "resolution_note": "No coalition stress signals observed"
+    }
+  ],
+  "generated_at": "2026-04-29T00:00:00Z"
+}
