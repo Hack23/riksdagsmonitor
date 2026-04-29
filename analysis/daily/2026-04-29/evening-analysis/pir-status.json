@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "cycle": "evening-analysis",
+  "date": "2026-04-29",
+  "subfolder": "evening-analysis",
+  "pirs": [
+    {
+      "pir_id": "PIR-EA-01",
+      "statement": "Will Centerpartiet sustain a deliberate bloc-exit voting strategy through the May 2026 Riksdag session, or does the JuU10 NEJ represent a single-issue gun-ownership constituency response?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-EA-02",
+      "statement": "What is the systemic scope of criminal operator infiltration in Swedish HVB (hem för vård eller boende) institutions, and will JO or IVO initiate a formal investigation within 30 days?",
+      "status": "open",
+      "confidence": "HIGH"
+    },
+    {
+      "pir_id": "PIR-EA-03",
+      "statement": "Will the three parliamentary instruments on China risk (HD12744, HD12746, HD12744-related) result in a formal committee hearing or government inquiry before the 2026 summer recess?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-EA-04",
+      "statement": "Will SD's gas bridge demand trigger a formal coalition negotiation or KD policy concession on natural gas infrastructure ahead of the 2026 energy winter planning cycle?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-PROP-01",
+      "statement": "Will HD03259 transport plan secure full parliamentary support across Riksdag parties, or will S and opposition table alternative funding amendments?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-COMM-01",
+      "statement": "Will the SfU28 citizenship law face implementation delays at Migrationsverket due to capacity constraints, and will Statskontoret be commissioned to assess administrative burden?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-MOT-01",
+      "statement": "Will V's isolation on NATO forward presence (HD024120) accelerate V voter migration to S ahead of the 2026 election?",
+      "status": "open",
+      "confidence": "LOW"
+    }
+  ]
+}
