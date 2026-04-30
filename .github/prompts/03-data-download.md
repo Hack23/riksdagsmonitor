@@ -78,7 +78,7 @@ fi
 # Detect previously rendered article HTML for this date + subfolder.
 # Match the renderer's filename convention: news/$ARTICLE_DATE-$SUBFOLDER-{lang}.html
 # (subfolder may contain hyphens, e.g. `evening-analysis`, `weekly-review`).
-EXISTING_HTML_COUNT=$(ls -1 "$NEWS_DIR/$ARTICLE_DATE-$SUBFOLDER-"*.html 2>/dev/null | wc -l | tr -d ' ')
+EXISTING_HTML_COUNT=$(find "$NEWS_DIR" -maxdepth 1 -type f -name "$ARTICLE_DATE-$SUBFOLDER-*.html" -print 2>/dev/null | wc -l | tr -d '[:space:]')
 [ -z "$EXISTING_HTML_COUNT" ] && EXISTING_HTML_COUNT=0
 
 echo "IMPROVEMENT_MODE=$IMPROVEMENT_MODE  (required artifacts: $PRESENT present of $EXPECTED checked, all-present: $ALL_PRESENT, first missing: ${FIRST_MISSING:-none}, existing news/*.html: $EXISTING_HTML_COUNT)"

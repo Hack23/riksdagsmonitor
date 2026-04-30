@@ -175,8 +175,25 @@ In addition, the **Sandbox commit handoff** in step 4 above is the *third* (and 
 1. **MCP unreachable from start** — all three MCP attempts in `02-mcp-access.md §Three-attempt connect protocol` failed, no document data was downloaded, **and** `IMPROVEMENT_MODE=false` from `03-data-download.md §Pre-flight` (which already returns `true` when either all 23 required artifacts are present **or** `$ANALYSIS_DIR/synthesis-summary.md` exists as a usable improvement baseline from a partial prior run). When `IMPROVEMENT_MODE=true`, route to improvement-mode and continue without MCP instead of calling noop.
 2. **Hard input error** — invalid `article_date` (e.g. unparseable, future-dated beyond +30 days, or pre-2014), invalid `$SUBFOLDER`, or other structural input failure that prevents any analysis from running, **and** zero files were produced.
 3. **Empty data window with no fallback content** — every lookback day in `03-data-download.md §Lookback fallback` (`DAYS_BACK = 1..7`) returned zero documents **and** there is no prior analysis on disk for `$ARTICLE_DATE` + `$SUBFOLDER` to improve. Zero-document weekend or holiday days when prior analysis exists must run improvement-mode instead.
+4. **Empty repository diff after a complete improvement-mode run** — `IMPROVEMENT_MODE=true`, every required step (read-back, re-download, extension plan, baseline snapshot, extensions, Pass 2, gate, aggregate, render) ran to completion **and** the mandatory rerun marker below was written, but `git status --porcelain` still reports zero tracked-file changes. This is the only "no diff" exit permitted; the noop message must explicitly cite "empty diff after full improvement-mode run".
 
-In **every other case** — including "today's HTML already exists", "all 23 artifacts already exist", "no new dok_ids since last run", or "prior run was the same day" — commit whatever was extended or re-rendered and call `create_pull_request` once. There is **always** something to extend on a re-run: newer voting outcomes, fresher economic vintage, sharpened uncertainty disclosure, closed `[unconfirmed]` flags, new media frames, or a freshly-rendered HTML that picks up template/chrome improvements. The aggregator + renderer always run on improvement-mode re-runs, so the PR diff is never empty.
+### Mandatory rerun marker (improvement-mode only)
+
+To eliminate the gap between "noop forbidden" and "no changes to PR" on deterministic re-runs, every improvement-mode run **must** append a single dated entry to `$ANALYSIS_DIR/methodology-reflection.md` under a `## Re-run log` heading **before** the gate, regardless of whether substantive content changed. The entry includes:
+
+```markdown
+## Re-run log
+
+- **Re-run**: $RUN_TIMESTAMP_UTC · workflow=$GITHUB_WORKFLOW · run_id=$GITHUB_RUN_ID · attempt=$GITHUB_RUN_ATTEMPT
+  - new dok_ids: <count or "none">
+  - artifacts extended: <comma-separated list or "none — content stable">
+  - flags closed: <count>
+  - vintage refresh: <"yes" or "no, IMF WEO Apr-2026 still current">
+```
+
+This guarantees a deterministic, content-bearing diff on every improvement-mode re-run. If — after writing this marker, regenerating `article.md`, and re-rendering `news/*.html` — `git status --porcelain` is still empty (e.g. the timestamp is the only token and it round-trips identically because the file already contained the same `RUN_ID`), only then does noop condition #4 apply.
+
+In **every other case** — including "today's HTML already exists", "all 23 artifacts already exist", "no new dok_ids since last run", or "prior run was the same day" — commit whatever was extended, re-rendered, or marker-logged and call `create_pull_request` once. There is **always** something to extend on a re-run: newer voting outcomes, fresher economic vintage, sharpened uncertainty disclosure, closed `[unconfirmed]` flags, new media frames, or a freshly-rendered HTML that picks up template/chrome improvements. The aggregator + renderer always run on improvement-mode re-runs and the rerun-log marker is always appended, so the PR diff is never empty under normal conditions; condition #4 above only fires in the deterministic edge case where every byte round-trips identically.
 
 The noop message **must** include which condition above applies and why improvement-mode was not viable — e.g. `"MCP unreachable from start; no prior analysis on disk for 2026-04-30/propositions"`.
 
