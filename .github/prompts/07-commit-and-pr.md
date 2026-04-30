@@ -172,7 +172,7 @@ In addition, the **Sandbox commit handoff** in step 4 above is the *third* (and 
 
 `safeoutputs___noop({"message": "<reason>"})` is reserved for **catastrophic input failures** where no useful work is possible **and** zero files were produced. Allowed conditions (and only these):
 
-1. **MCP unreachable from start** — all three MCP attempts in `02-mcp-access.md §Three-attempt connect protocol` failed, no document data was downloaded, and `$ANALYSIS_DIR` does **not** contain prior analysis from another run that could be improved instead.
+1. **MCP unreachable from start** — all three MCP attempts in `02-mcp-access.md §Three-attempt connect protocol` failed, no document data was downloaded, **and** `IMPROVEMENT_MODE=false` from `03-data-download.md §Pre-flight` (i.e. zero of the 23 required artifacts are present, or only a partial subset is present and `$ANALYSIS_DIR/synthesis-summary.md` does not yet exist as a usable improvement baseline). When `IMPROVEMENT_MODE=true` *or* when `$ANALYSIS_DIR/synthesis-summary.md` is present from a partial prior run, route to improvement-mode and continue without MCP instead of calling noop.
 2. **Hard input error** — invalid `article_date` (e.g. unparseable, future-dated beyond +30 days, or pre-2014), invalid `$SUBFOLDER`, or other structural input failure that prevents any analysis from running, **and** zero files were produced.
 3. **Empty data window with no fallback content** — every lookback day in `03-data-download.md §Lookback fallback` (`DAYS_BACK = 1..7`) returned zero documents **and** there is no prior analysis on disk for `$ARTICLE_DATE` + `$SUBFOLDER` to improve. Zero-document weekend or holiday days when prior analysis exists must run improvement-mode instead.
 

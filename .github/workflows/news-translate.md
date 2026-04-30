@@ -264,7 +264,13 @@ Translation is a pure-derivative workflow:
 - No original analysis. Never produce files under `analysis/daily/`.
 - Validate every translation against the source with `scripts/validate-news-translations.ts` before commit.
 - Keep the PR under the safe-outputs 100-file cap. If more translations are pending than fit in one PR, translate the highest-priority batch and leave the rest for the next scheduled run.
-- **Per-language idempotency, not workflow-level no-op**: a language whose translation already exists, is non-empty, **and** has a source-mtime ≤ translation-mtime (source has not changed since last translation) **and** passes `scripts/validate-news-translations.ts` is skipped *for that language only*. If all target languages are already up-to-date, the run enters **translation-improvement mode**: re-validate every translation against the latest source, fix any drift / regressions / SEO metadata gaps the validator flags, refresh stale `dateModified`, and commit the resulting changes. Only call `safeoutputs___noop` under the conditions in `07-commit-and-pr.md §No-op policy` (e.g. the source article does not exist on disk at all). "All translations already exist" is **never** a noop trigger — it is an improvement trigger.
+- **Per-language idempotency, not workflow-level no-op**:
+  - A target language is skipped *for that language only* when **all three** of the following hold:
+    1. its translation file already exists and is non-empty,
+    2. the source-mtime is ≤ the translation-mtime (the source has not changed since the last translation), and
+    3. `scripts/validate-news-translations.ts` passes for that language.
+  - When **all** target languages satisfy the three conditions above, the run does **not** exit. It enters **translation-improvement mode**: re-run the validator across every translation, fix any drift / regressions / SEO metadata gaps the validator flags, refresh stale `dateModified`, and commit the resulting changes.
+  - `safeoutputs___noop` is only allowed under the conditions in `07-commit-and-pr.md §No-op policy` — for example, when the source article does not exist on disk at all. "All translations already exist and are valid" is **never** a noop trigger; it is an improvement trigger.
 
 ## Time budget
 

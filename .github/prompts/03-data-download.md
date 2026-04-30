@@ -19,11 +19,17 @@ CHECKED=0
 # (the AWF sandbox flags `REQ=(...); for f in "${REQ[@]}"`; see
 # 01-bash-and-shell-safety.md §Banned expansion patterns).
 # The loop continues to the end so $CHECKED counts how many artifacts are
-# already on disk — useful telemetry for partial improvement re-runs.
+# already on disk — useful telemetry for partial improvement re-runs. We
+# also record the first missing artifact (if any) so operators can see why
+# IMPROVEMENT_MODE stayed false.
+FIRST_MISSING=""
 while IFS= read -r f; do
   [ -z "$f" ] && continue
   CHECKED=$((CHECKED + 1))
-  [ -s "$ANALYSIS_DIR/$f" ] || ALL_PRESENT=false
+  if [ ! -s "$ANALYSIS_DIR/$f" ]; then
+    ALL_PRESENT=false
+    [ -z "$FIRST_MISSING" ] && FIRST_MISSING="$f"
+  fi
 done <<'REQUIRED_ARTIFACTS'
 README.md
 executive-brief.md
@@ -62,7 +68,7 @@ REQUIRED_ARTIFACTS
 EXISTING_HTML_COUNT=$(ls -1 "$NEWS_DIR/$ARTICLE_DATE-$SUBFOLDER-"*.html 2>/dev/null | wc -l | tr -d ' ')
 [ -z "$EXISTING_HTML_COUNT" ] && EXISTING_HTML_COUNT=0
 
-echo "IMPROVEMENT_MODE=$IMPROVEMENT_MODE  (required artifacts present: $ALL_PRESENT, on-disk: $CHECKED of $EXPECTED, existing news/*.html: $EXISTING_HTML_COUNT)"
+echo "IMPROVEMENT_MODE=$IMPROVEMENT_MODE  (required artifacts present: $ALL_PRESENT, on-disk: $CHECKED of $EXPECTED, first missing: ${FIRST_MISSING:-none}, existing news/*.html: $EXISTING_HTML_COUNT)"
 ```
 
 | `IMPROVEMENT_MODE` | Behaviour |
