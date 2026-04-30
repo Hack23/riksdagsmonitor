@@ -178,9 +178,18 @@ if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
 
     // When the new SW takes control after `SKIP_WAITING`, reload so
     // the page is served from the new HTML cache.
+    //
+    // IMPORTANT: skip the reload on the *first* install. A page loaded
+    // before any SW exists is initially uncontrolled; once our SW's
+    // `activate` handler calls `clients.claim()`, `controllerchange`
+    // fires for the first time and would otherwise auto-reload the
+    // page mid-navigation (breaks Cypress E2E flows and any in-flight
+    // user interaction). Only reload when the page was already
+    // controlled at registration time, i.e. this is an *update*.
+    const wasControlled = Boolean(navigator.serviceWorker.controller);
     let reloading = false;
     navigator.serviceWorker.addEventListener('controllerchange', () => {
-      if (reloading) return;
+      if (reloading || !wasControlled) return;
       reloading = true;
       window.location.reload();
     });
