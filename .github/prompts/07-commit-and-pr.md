@@ -3,8 +3,8 @@
 ## Core rule
 
 > Every run ends with **exactly one** safe-output call:
-> - `safeoutputs___create_pull_request` — when any file on disk was created or modified.
-> - `safeoutputs___noop` — only when zero files were produced (e.g. MCP unreachable from the start).
+> - `safeoutputs___create_pull_request` — the **default and overwhelmingly common** outcome. Always used when any file on disk was created **or** modified, including improvement-mode re-runs that extend prior analysis and re-render `article.md` + HTML.
+> - `safeoutputs___noop` — **last-resort only**. See §No-op policy below for the narrow conditions. **Never** call noop because prior analysis or rendered HTML already exists for this date — that is the trigger for improvement-mode (see `03-data-download.md §Pre-flight`), not for exit.
 >
 > Do not open checkpoint, heartbeat, or keep-alive PRs. Content committed after the first `create_pull_request` call is lost.
 
@@ -168,12 +168,34 @@ In addition, the **Sandbox commit handoff** in step 4 above is the *third* (and 
 
 ## No-op policy
 
-Call `safeoutputs___noop({"message": "<reason>"})` **only** if:
+> 🔴 **No-op is forbidden as a "nothing to do" exit.** Detecting prior analysis, prior `article.md`, or prior rendered HTML for `$ARTICLE_DATE` + `$SUBFOLDER` is **never** grounds for noop — it is the trigger for **improvement-mode** in `03-data-download.md §Pre-flight` and `04-analysis-pipeline.md §Execution order`. The agent must always extend prior artifacts, regenerate `article.md`, regenerate `news/*.html`, and end the run with `safeoutputs___create_pull_request`.
 
-- MCP unreachable from start **and** no files were created, or
-- Hard input error (e.g. invalid `article_date`) **and** no files were created.
+`safeoutputs___noop({"message": "<reason>"})` is reserved for **catastrophic input failures** where no useful work is possible **and** zero files were produced. Allowed conditions (and only these):
 
-In every other case, commit whatever exists and call `create_pull_request` once.
+1. **MCP unreachable from start** — all three MCP attempts in `02-mcp-access.md §Three-attempt connect protocol` failed, no document data was downloaded, **and** `IMPROVEMENT_MODE=false` from `03-data-download.md §Pre-flight` (which already returns `true` when either all 23 required artifacts are present **or** `$ANALYSIS_DIR/synthesis-summary.md` exists as a usable improvement baseline from a partial prior run). When `IMPROVEMENT_MODE=true`, route to improvement-mode and continue without MCP instead of calling noop.
+2. **Hard input error** — invalid `article_date` (e.g. unparseable, future-dated beyond +30 days, or pre-2014), invalid `$SUBFOLDER`, or other structural input failure that prevents any analysis from running, **and** zero files were produced.
+3. **Empty data window with no fallback content** — every lookback day in `03-data-download.md §Lookback fallback` (`DAYS_BACK = 1..7`) returned zero documents **and** there is no prior analysis on disk for `$ARTICLE_DATE` + `$SUBFOLDER` to improve. Zero-document weekend or holiday days when prior analysis exists must run improvement-mode instead.
+4. **Improvement-mode rerun-marker write produced no tracked diff** — `IMPROVEMENT_MODE=true`, every required step (read-back, re-download, extension plan, baseline snapshot, extensions, Pass 2, gate, aggregate, render) ran to completion, the mandatory rerun marker below was attempted, but `git status --porcelain` still reports zero tracked-file changes (e.g. the marker write failed, `methodology-reflection.md` is outside the tracked/staged scope, or another repository-state failure prevented the required write from appearing as a tracked diff). Under normal conditions appending the marker always produces a non-empty diff, so this condition is an abnormal edge case only; the noop message must explicitly cite "improvement-mode rerun marker produced no tracked diff".
+
+### Mandatory rerun marker (improvement-mode only)
+
+To eliminate the gap between "noop forbidden" and "no changes to PR" on deterministic re-runs, every improvement-mode run **must** append a single dated entry to `$ANALYSIS_DIR/methodology-reflection.md` under a `## Re-run log` heading, regardless of whether substantive content changed. **Ordering is mandatory:** in improvement-mode, do **not** write this marker before the Pass-1 / step-4 baseline snapshot is taken (see `04-analysis-pipeline.md §Execution order`, which forbids any writes in improvement-mode until after that snapshot). Append it **immediately after** the baseline snapshot is captured and **before** running the gate, so the pre-improvement `pass1/` baseline remains uncontaminated. The entry includes:
+
+```markdown
+## Re-run log
+
+- **Re-run**: $RUN_TIMESTAMP_UTC · workflow=$GITHUB_WORKFLOW · run_id=$GITHUB_RUN_ID · attempt=$GITHUB_RUN_ATTEMPT
+  - new dok_ids: <count or "none">
+  - artifacts extended: <comma-separated list or "none — content stable">
+  - flags closed: <count>
+  - vintage refresh: <"yes" or "no, IMF WEO Apr-2026 still current">
+```
+
+This guarantees a deterministic, content-bearing diff on every improvement-mode re-run. If — after attempting to write this marker, regenerating `article.md`, and re-rendering `news/*.html` — `git status --porcelain` is still empty, treat that as an abnormal edge case only: the rerun marker did not persist as a tracked diff, `methodology-reflection.md` is outside the tracked/staged scope, or another repository-state failure prevented the required write from appearing. Only then does noop condition #4 apply.
+
+In **every other case** — including "today's HTML already exists", "all 23 artifacts already exist", "no new dok_ids since last run", or "prior run was the same day" — commit whatever was extended, re-rendered, or marker-logged and call `create_pull_request` once. There is **always** something to extend on a re-run: newer voting outcomes, fresher economic vintage, sharpened uncertainty disclosure, closed `[unconfirmed]` flags, new media frames, or a freshly-rendered HTML that picks up template/chrome improvements. The aggregator + renderer always run on improvement-mode re-runs and the rerun-log marker is always appended, so the PR diff is never empty under normal conditions; condition #4 above only fires when that mandatory marker flow fails to produce any tracked change.
+
+The noop message **must** include which condition above applies and why improvement-mode was not viable — e.g. `"MCP unreachable from start; no prior analysis on disk for 2026-04-30/propositions"` or `"Improvement-mode rerun marker write produced no tracked diff; repository state prevented a safe PR for 2026-04-30/propositions"`.
 
 ## Deadline enforcement
 
