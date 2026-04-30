@@ -179,7 +179,7 @@ In addition, the **Sandbox commit handoff** in step 4 above is the *third* (and 
 
 ### Mandatory rerun marker (improvement-mode only)
 
-To eliminate the gap between "noop forbidden" and "no changes to PR" on deterministic re-runs, every improvement-mode run **must** append a single dated entry to `$ANALYSIS_DIR/methodology-reflection.md` under a `## Re-run log` heading **before** the gate, regardless of whether substantive content changed. The entry includes:
+To eliminate the gap between "noop forbidden" and "no changes to PR" on deterministic re-runs, every improvement-mode run **must** append a single dated entry to `$ANALYSIS_DIR/methodology-reflection.md` under a `## Re-run log` heading, regardless of whether substantive content changed. **Ordering is mandatory:** in improvement-mode, do **not** write this marker before the Pass-1 / step-4 baseline snapshot is taken (see `04-analysis-pipeline.md §Execution order`, which forbids any writes in improvement-mode until after that snapshot). Append it **immediately after** the baseline snapshot is captured and **before** running the gate, so the pre-improvement `pass1/` baseline remains uncontaminated. The entry includes:
 
 ```markdown
 ## Re-run log

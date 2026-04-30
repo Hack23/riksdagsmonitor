@@ -270,7 +270,7 @@ Translation is a pure-derivative workflow:
     2. a **deterministic source-revision signal** shows the source has not changed since that translation was last produced (for example, the source file's latest git commit timestamp / commit SHA via `git log -1 --format=%ct -- <path>`, or a content hash / validator-produced source signature — **never** filesystem mtimes, which are unstable on CI runners after `actions/checkout`), and
     3. `scripts/validate-news-translations.ts` passes for that language.
   - When **all** target languages satisfy the three conditions above, the run does **not** exit. It enters **translation-improvement mode**: re-run the validator across every translation, use the same deterministic source-revision signal when deciding whether any language needs a refresh, fix any drift / regressions / SEO metadata gaps the validator flags, refresh stale `dateModified`, and commit the resulting changes.
-  - `safeoutputs___noop` is only allowed under the conditions in `07-commit-and-pr.md §No-op policy` — for example, when the source article does not exist on disk at all. "All translations already exist and are valid" is **never** a noop trigger; it is an improvement trigger.
+  - `safeoutputs___noop` is only allowed under the conditions in `07-commit-and-pr.md §No-op policy`. "All translations already exist and are valid" is **never** a noop trigger; it is an improvement trigger.
 
 ## Time budget
 
