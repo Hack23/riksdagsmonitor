@@ -87,3 +87,23 @@ Policy impacts analysed across 6 voter segments based on Sifo/SCB demographic ov
 | Senior citizens | 1.6M | Social care | Contested | KD/S |
 | Young urban | 0.7M | Climate/housing | HD11774 (opp) | S/MP lean |
 | SME/entrepreneurs | 0.6M | Finance/regulation | NU19/M (gov) | M stable |
+
+## Voter Segmentation Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart TD
+    VOTERS["Swedish Electorate\n~8M eligible voters"] --> RIGHT["Right Bloc\n~50% (M+SD+KD+L)"]
+    VOTERS --> LEFT["Left/Centre-Left\n~45% (S+V+MP+C)"]
+    RIGHT --> SD_BASE["SD Base:\nImmigration control\nHD03262-65"]
+    RIGHT --> M_BASE["M/KD/L Base:\nNTP, Defence, Economy"]
+    LEFT --> S_BASE["S Base:\nWorker rights, Healthcare\nHD11778 mammography"]
+    LEFT --> MP_V["MP/V:\nEnvironment, Social\nHD11777 museums"]
+    style VOTERS fill:#00d9ff,color:#0a0e27
+    style RIGHT fill:#1a1e3d,color:#ff006e
+    style LEFT fill:#1a1e3d,color:#ffbe0b
+    style SD_BASE fill:#ff006e,color:#fff
+    style M_BASE fill:#1a1e3d,color:#00d9ff
+    style S_BASE fill:#1a1e3d,color:#ffbe0b
+    style MP_V fill:#1a1e3d,color:#00d9ff
+```
