@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "cycle": "propositions",
+  "date": "2026-04-30",
+  "subfolder": "propositions",
+  "generated_at": "2026-04-30T06:45:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-1",
+      "statement": "Does the National Transport Plan 2026–2037 (HD03259) materially shift Swedish infrastructure investment toward rail and maintenance over new road capacity?",
+      "status": "partially_answered",
+      "confidence": "HIGH",
+      "answer_summary": "HD03259 confirms 970 bn SEK commitment with explicit rail mainline prioritisation and maintenance focus. Full answer requires Trafikverket project portfolio breakdown expected June 2026."
+    },
+    {
+      "pir_id": "PIR-2",
+      "statement": "Does the Tidöalliansen government's legislative programme represent a consistent law-and-order electoral strategy ahead of the September 2026 election?",
+      "status": "answered",
+      "confidence": "HIGH",
+      "answer_summary": "HD03252 is the third consecutive justice-social security restriction proposition (following HC03202, HC03201) directly traceable to Tidöavtalet 2022 commitments. The pattern is confirmed: consistent law-and-order legislative escalation with direct electoral intent."
+    },
+    {
+      "pir_id": "PIR-3",
+      "statement": "What is Sweden's exposure to EU financial regulatory changes in 2026, and how will Swedish banks be affected by CRR3/CRD6?",
+      "status": "answered",
+      "confidence": "MEDIUM",
+      "answer_summary": "HD03253 transposing CRR3/CRD6 into Swedish law. Major Swedish banks (Handelsbanken, SEB, Nordea, Swedbank) have pre-built buffers. Output floor (72.5%) is the most material change but expected to be manageable. Medium confidence due to bank-specific balance sheet uncertainty."
+    },
+    {
+      "pir_id": "PIR-4",
+      "statement": "Are Swedish OTC medicine safety regulations being strengthened to address post-2009 pharmacy liberalisation gaps?",
+      "status": "answered",
+      "confidence": "HIGH",
+      "answer_summary": "HD03247 directly addresses OTC safety gaps from the 2009 Apoteksreformen by creating a mandatory advisory category. Broad cross-party support. Implementation straightforward."
+    }
+  ]
+}
