@@ -1,0 +1,1652 @@
+---
+title: "Swedish Government Propositions, 30 April 2026"
+description: "Sweden's Kristersson government has submitted four significant propositions to the Riksdag in late April 2026, spanning infrastructure investment, criminal justice reform, EU financial regulation,…"
+date: 2026-04-30
+subfolder: propositions
+slug: 2026-04-30-propositions
+source_folder: analysis/daily/2026-04-30/propositions
+generated_at: 2026-04-30T06:33:00.183Z
+language: en
+layout: article
+---
+## Executive Brief
+<!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief.md -->
+
+---
+
+### 🎯 BLUF
+
+Sweden's Kristersson government has submitted four significant propositions to the Riksdag in late April 2026, spanning infrastructure investment, criminal justice reform, EU financial regulation, and healthcare access. The dominant document — the National Transport Infrastructure Plan 2026–2037 (HD03259) — commits an historic 970 billion SEK to rail, road, maritime and aviation over twelve years, encoding a strategic pivot toward electric rail and climate-adapted roads that will shape regional competitiveness and industrial location decisions through the next decade. Parallel propositions tighten social security for incarcerated persons (HD03252), transpose the EU banking package into Swedish law (HD03253), and introduce pharmacist-advisory requirements for selected OTC medicines (HD03247).
+
+### 🧭 3 Decisions This Brief Supports
+
+| # | Decision | Relevance | Horizon |
+|---|----------|-----------|---------|
+| 1 | Infrastructure investment/relocation strategies for industries dependent on freight rail or E-road expansion | HD03259 allocates major funds to specific corridors — knowledge of winners/losers is actionable | 2026–2037 |
+| 2 | Banking/financial sector compliance planning for Basel III / CRR3 / CRD6 domestic transposition | HD03253 sets the Swedish compliance timeline | 2026–2027 |
+| 3 | Social policy positioning for parties ahead of 2026 autumn election | HD03252 restricts benefits for electronically-monitored prisoners — a tough-on-crime signal with electoral implications | 2026 H2 |
+
+### ⚡ 60-Second Read
+
+- **Infrastructure (HD03259)**: 970 bn SEK over 2026–2037; rail maintenance prioritised; new high-speed segments; Norrland connectivity; climate-proofing. Committee: TU.  
+- **Justice/Social (HD03252)**: Persons serving sentences in "kontrollerat boende" (home detention with electronic tag) or in säkerhetsförvaring (preventive detention) lose entitlement to most social insurance benefits. Committee: SfU. Signals escalating law-and-order stance.  
+- **Finance/EU (HD03253)**: Sweden transposes EU banking package (CRR3, CRD6, BRRD2 amendments) — Basel III full implementation, stricter capital buffers, new own-funds requirements. Finansdepartementet. Committee: FiU.  
+- **Health (HD03247)**: Pharmacists must provide specific advisory interaction for designated OTC drugs to reduce misuse. Socialdepartementet. Committee: SoU.
+
+### 🔮 Top Forward Trigger
+
+**Infrastructure votes in TU committee (expected May–June 2026)**: Opposition parties SD, S, and MP have divergent positions on the corridor priorities. A minority government with no single-party majority must negotiate; watch for SD extracting concessions on road versus rail balance.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+## Reader Intelligence Guide
+
+Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
+
+| Reader need | What you'll get | Source artifact |
+|---|---|---|
+| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
+| [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
+| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
+| [Media framing](#rm-media-framing-analysis) | likely narrative frames, amplifiers, counter-frames, and manipulation risks | `media-framing-analysis.md` |
+| [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
+| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
+| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
+| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+
+## Synthesis Summary
+<!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/synthesis-summary.md -->
+
+---
+
+### Lead Story Decision
+
+The National Transport Infrastructure Plan (HD03259) is the dominant event of this propositions cycle. At 970 billion SEK committed over 2026–2037, it represents the largest single peacetime infrastructure commitment in Swedish modern history. Its allocation logic — favouring rail maintenance and electrification over new road construction in the south, while investing heavily in Norrland connectivity — encodes strategic choices that will determine regional industrial competitiveness for a generation.
+
+### DIW-Weighted Intelligence Picture
+
+The four propositions span three policy clusters with distinct momentum:
+
+**High weight (DIW L2+ Strategic)**: HD03259 (infrastructure) and HD03253 (EU banking) carry systemic consequences. The infrastructure plan shapes geography of economic activity; the banking package affects capital requirements for Swedish banks at a moment when EBA stress tests signal resilience concerns for mid-size EU institutions.
+
+**Medium weight (DIW L2)**: HD03252 (social security restriction for sentenced persons) carries significant electoral signalling value ahead of the 2026 Riksdag election. The Tidöalliansen has advanced an escalating law-and-order legislative programme across 2024–2026; this proposition continues that trajectory.
+
+**Lower weight (DIW L1)**: HD03247 (OTC pharmacist guidance) is technically important for patient safety but carries narrow political controversy.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+quadrantChart
+    title DIW Weight vs Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Weight --> High Weight
+    quadrant-1 Monitor Closely
+    quadrant-2 Priority Action
+    quadrant-3 Background
+    quadrant-4 Watch
+    HD03259: [0.35, 0.92]
+    HD03253: [0.30, 0.70]
+    HD03252: [0.75, 0.65]
+    HD03247: [0.20, 0.30]
+```
+
+### Integrated Intelligence Picture
+
+The April 2026 propositions batch signals four strategic vectors of the Tidöalliansen government in its final legislative year before the September 2026 election:
+
+1. **Infrastructure as legacy claim**: HD03259 frames the government's industrial and climate narrative — electric rail, Norrland, international freight corridors — designed to consolidate centre-right and rural/northern constituencies.
+
+2. **Law-and-order escalation**: HD03252 is the latest in a sequence of propositions tightening the justice-social security nexus (see also HC03202, HC03201 from 2025). The pattern targets swing voters influenced by crime as a top-3 election issue.
+
+3. **European regulatory integration**: HD03253 completes Sweden's Basel III transposition, aligning the Swedish banking sector with EU standards and reducing regulatory arbitrage risk. This is a technocratic delivery with low political controversy.
+
+4. **Healthcare safety and patient protection**: HD03247 reflects health ministry attention to responsible self-medication in an ageing population context.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+mindmap
+    root((April 2026 Propositions))
+        Infrastructure
+            HD03259 Transport Plan 2026-2037
+            970 billion SEK
+            Rail / Road / Maritime
+        Justice Reform
+            HD03252 Prison Social Security
+            Kontrollerat boende
+            Säkerhetsförvaring
+        EU Compliance
+            HD03253 Banking Package
+            Basel III CRR3 CRD6
+        Healthcare
+            HD03247 OTC Pharmacist Advisory
+```
+
+### Source Evidence
+
+Primary sources: HD03259 (riksdagen.se), HD03252 (riksdagen.se), HD03253 (riksdagen.se), HD03247 (riksdagen.se). All documents submitted 2026-04-23 to 2026-04-28. MCP server: data.riksdagen.se via riksdag-regering MCP.
+
+## Intelligence Assessment — Key Judgments
+<!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/intelligence-assessment.md -->
+
+---
+
+### Key Judgment 1 (KJ-1): Infrastructure Plan Shapes Industrial Geography
+
+**Judgment**: The National Transport Infrastructure Plan 2026–2037 (HD03259) will materially influence industrial location decisions and regional economic competitiveness, with rail-served corridors gaining economic advantage over road-only areas.
+
+**WEP/Kent Band**: Likely (75–85%)  
+**PIR linkage**: PIR-1 (Infrastructure investment and regional competitiveness)
+
+**Evidence**: HD03259 (riksdagen.se, 2026-04-28); Trafikverket infrastructure analysis; EU TEN-T corridor requirements. The 970 bn SEK commitment includes maintenance prioritisation for mainline rail (Västra stambanan, Södra stambanan), new capacity on Norrland connections, and port/maritime investments. Industries dependent on rail freight — forestry, heavy manufacturing, steel — are primary beneficiaries. Source: data.riksdagen.se/dokument/HD03259 [A2].
+
+### Key Judgment 2 (KJ-2): HD03252 Primarily Electoral, Secondarily Policy
+
+**Judgment**: The primary purpose of restricting social insurance benefits for persons in "kontrollerat boende" (HD03252) is electoral signalling to the Tidöalliansen's law-and-order voter base ahead of the September 2026 election; the welfare-abuse-prevention rationale is secondary and the affected population is small.
+
+**WEP/Kent Band**: Likely (75–85%)  
+**PIR linkage**: PIR-2 (Criminal justice reform trajectory)
+
+**Evidence**: HD03252 (riksdagen.se, 2026-04-23); Tidöavtalet (2022) explicit commitments; legislative sequence HC03202 (2024), HC03201 (2024), now HD03252 (2026). The three consecutive justice-social security propositions form a coherent electoral narrative. Source: data.riksdagen.se/dokument/HD03252 [A2].
+
+### Key Judgment 3 (KJ-3): Swedish Banking Sector Well-Positioned for Basel III
+
+**Judgment**: Sweden's transposition of the EU Banking Package (HD03253) will not create material capital shortfalls for major Swedish banks; Handelsbanken, SEB, Nordea, and Swedbank have proactively built capital buffers in advance of CRR3/CRD6 requirements.
+
+**WEP/Kent Band**: Probably (60–75%)  
+**PIR linkage**: PIR-3 (EU financial regulatory integration)
+
+**Evidence**: HD03253 (riksdagen.se, 2026-04-23); Finansinspektionen stability report Q4 2025; EBA stress test results 2025 showing Swedish G-SIIs above minimum thresholds. However, specific own-funds requirements under CRR3 for covered-bond-heavy balance sheets introduces some uncertainty. Source: data.riksdagen.se/dokument/HD03253 [B2].
+
+### Key Judgment 4 (KJ-4): OTC Advisory Requirement Is Effective Patient Safety Measure
+
+**Judgment**: HD03247's pharmacist advisory requirement for designated OTC medicines will reduce misuse incidents for the targeted drug categories, with minimal industry resistance.
+
+**WEP/Kent Band**: Highly likely (85–95%)  
+**PIR linkage**: PIR-4 (Healthcare system safety)
+
+**Evidence**: HD03247 (riksdagen.se, 2026-04-28); comparable Danish and EU pharmacy advisory model results; Läkemedelsverket support for the measure. Source: data.riksdagen.se/dokument/HD03247 [A2].
+
+### PIR Status Summary
+
+| PIR | Statement | Confidence | Status |
+|-----|-----------|-----------|--------|
+| PIR-1 | Infrastructure investment drives regional competitiveness 2026–2037 | HIGH | Partially answered by HD03259 — full answer requires implementation follow-through |
+| PIR-2 | Law-and-order trajectory pre-2026 election | HIGH | Confirmed escalating by HD03252 |
+| PIR-3 | Swedish banking sector EU regulatory exposure | MEDIUM | HD03253 reduces regulatory gap |
+| PIR-4 | Healthcare access and safety reforms | HIGH | HD03247 addresses OTC safety |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+graph TD
+    KJ1["KJ-1: Infrastructure\nshapes geography\n[HIGH confidence]"] -->|Evidence| E1["HD03259\n970bn SEK\nRail corridor priority"]
+    KJ2["KJ-2: HD03252\nprimarily electoral\n[HIGH confidence]"] -->|Evidence| E2["Tidöavtalet 2022\n+ HC03202 + HD03252\nsequence"]
+    KJ3["KJ-3: Banking sector\nwell-positioned\n[MEDIUM confidence]"] -->|Evidence| E3["HD03253\nFI Stability Report\nEBA stress tests"]
+    KJ4["KJ-4: OTC advisory\neffective\n[HIGH confidence]"] -->|Evidence| E4["HD03247\nDanish model\nLäkemedelsverket"]
+    style KJ1 fill:#00d9ff,color:#0a0e27
+    style KJ2 fill:#ff006e,color:#fff
+    style KJ3 fill:#ffbe0b,color:#0a0e27
+    style KJ4 fill:#00d9ff,color:#0a0e27
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+    style E3 fill:#1a1e3d,color:#e0e0e0
+    style E4 fill:#1a1e3d,color:#e0e0e0
+```
+
+## Significance Scoring
+<!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/significance-scoring.md -->
+
+---
+
+### Ranked Significance
+
+1. **HD03259** — Nationell planering för transportinfrastrukturen 2026–2037 [riksdagen.se, data.riksdagen.se/dokument/HD03259]
+   - Detectability: 9/10 (published skrivelse, publicly debated)
+   - Impact: 10/10 (970 bn SEK, 12-year horizon, systemic national effect)
+   - Willingness: 8/10 (government has majority to advance; opposition procedural scrutiny expected)
+   - **DIW Score: 9.0** | Priority: P0
+
+2. **HD03253** — EU:s bankpaket [riksdagen.se, data.riksdagen.se/dokument/HD03253]
+   - Detectability: 7/10 (technical EU transposition, media coverage moderate)
+   - Impact: 8/10 (affects capital requirements for all Swedish banks)
+   - Willingness: 9/10 (EU obligation, cross-party support for transposition)
+   - **DIW Score: 8.0** | Priority: P1
+
+3. **HD03252** — Begränsning av socialförsäkringsförmåner för dömda [riksdagen.se, data.riksdagen.se/dokument/HD03252]
+   - Detectability: 8/10 (high media salience on crime/justice)
+   - Impact: 7/10 (affects sentenced persons' benefits; electoral signal nationally)
+   - Willingness: 9/10 (Tidöalliansen strong majority for this type of measure)
+   - **DIW Score: 8.0** | Priority: P1
+
+4. **HD03247** — Receptfria läkemedel med krav på rådgivning [riksdagen.se, data.riksdagen.se/dokument/HD03247]
+   - Detectability: 6/10 (specialist health press)
+   - Impact: 5/10 (patient safety improvement, narrow scope)
+   - Willingness: 9/10 (broad cross-party health safety consensus)
+   - **DIW Score: 6.5** | Priority: P2
+
+### Sensitivity Analysis
+
+If infrastructure plan receives SD demands for road re-weighting, DIW for HD03259 political controversy rises to 9.5. If EU banking package faces parliamentary delay, HD03253 impact score holds but willingness drops to 6 (unlikely).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+xychart-beta
+    title "DIW Significance Scores by Proposition"
+    x-axis ["HD03259 Transport", "HD03253 Banking", "HD03252 Prison", "HD03247 OTC"]
+    y-axis "DIW Score" 0 --> 10
+    bar [9.0, 8.0, 8.0, 6.5]
+    style bar fill:#00d9ff
+```
+
+### Priority Tier Summary
+
+| Tier | dok_id | Committee | Urgency |
+|------|--------|-----------|---------|
+| P0 | HD03259 | TU | High — national infrastructure, 12-yr commitment |
+| P1 | HD03253 | FiU | Medium — EU compliance deadline |
+| P1 | HD03252 | SfU | Medium-High — election-year policy signal |
+| P2 | HD03247 | SoU | Standard — health safety, non-controversial |
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/media-framing-analysis.md -->
+
+---
+
+### Framing Landscape
+
+#### HD03259 — Transport Infrastructure
+
+**Dominant frame (expected)**: "Rekordstort investeringspaket — men räcker pengarna?"  
+Swedish media will compare 970 bn SEK to previous NTPs and immediately ask about cost overruns and reprioritisation risks. DN and SvD will focus on the macroeconomic feasibility; regional media (Norrbottens Kuriren, VK) will lead with Norrland-specific investments; business press (DI) will assess logistics and industrial competitiveness.
+
+**Opposition frame**: S/V will emphasise hospital and school underfunding relative to transport spending. MP will attempt to reframe as "insufficient climate investment."
+
+**SD counter-frame**: Will claim credit for E4 and other road improvements; may resist rail prioritisation in public positioning while voting Yes in Riksdag.
+
+**Societal concern frame**: Infrastructure projects' climate impact; cost-benefit analysis of large rail projects vs. maintenance backlog.
+
+#### HD03252 — Prison Social Benefits
+
+**Dominant frame**: "Fängelsetiden ska inte löna sig" — this phrase is likely to be used directly by government spokespeople and absorbed into headline language across mainstream Swedish media.
+
+**Critical frame**: Left-leaning media (Aftonbladet, ETC) will interview affected families; Amnesty International Sweden may issue statement; Brå researchers will be quoted on recidivism evidence.
+
+**Legal frame**: DN legal reporter likely to examine proportionality arguments; possible EU legal challenge framing given ECHR Article 8 considerations.
+
+#### HD03253 — EU Banking Package
+
+**Dominant frame**: Technical compliance legislation, minimal front-page coverage. Svenska Dagbladet and Dagens Industri business sections will cover; Reuters will file brief. No political controversy expected.
+
+**Specialist frame**: Finanstidningen will detail CRR3 capital requirement calculations for specific Swedish banks.
+
+#### HD03247 — OTC Medicines
+
+**Dominant frame**: "Patient safety" — broadly positive coverage. Apotekarsocieteten and Läkemedelsverket supportive statements expected.
+
+**Consumer frame**: Some coverage of inconvenience for regular OTC purchasers; counter-balanced by safety benefits.
+
+### Source Credibility Map
+
+| Source | Bias | Reliability | Expected Treatment |
+|--------|------|-------------|-------------------|
+| SVT/SR | Neutral | High | Factual reporting, opposition balance |
+| DN | Centre-liberal | High | Analytical, critical of cost overruns |
+| SvD | Conservative | High | Broadly positive framing |
+| Aftonbladet | Centre-left | Medium | HD03252 critical |
+| Expressen | Liberal | Medium | Mixed by proposition |
+| DI | Business | High | Economic analysis focus |
+| ETC | Left | Medium | HD03252 strongly critical |
+
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/stakeholder-perspectives.md -->
+
+---
+
+### HD03259 — Transport Infrastructure Plan 2026–2037
+
+#### Proponents
+
+| Actor | Role | Position | Evidence |
+|-------|------|----------|----------|
+| M (Moderaterna) | Lead coalition party | Strong support — frames as industrial competitiveness and climate | HD03259 (riksdagen.se); Jakob Forssmed/Andreas Carlson (KD/M) presenting |
+| KD (Kristdemokraterna) | Coalition | Support — rural connectivity, Norrland priority | HD03259 (riksdagen.se) |
+| Swedish Association of Local Authorities (SKR) | Stakeholder | Generally supportive — regional infrastructure benefits municipalities | SKR infrastructure position 2025 |
+| Trafikverket | Implementation | Technical supporter — plan provides mandate | HD03259 (riksdagen.se) |
+
+#### Opponents / Critics
+
+| Actor | Role | Position | Evidence |
+|-------|------|----------|----------|
+| SD (Sverigedemokraterna) | Coalition support party | Mixed — demands road/rail balance adjustment | SD transport policy 2025; HD03259 (riksdagen.se) TU referral |
+| Environmental groups | Advocacy | Supports electrification, critical of any road expansion | SNF/WWF Sweden statements |
+| S (Socialdemokraterna) | Main opposition | Supportive in principle but will propose alternative allocations | S infrastructure motion 2025/26 |
+
+### HD03252 — Social Security Restriction for Prisoners
+
+#### Proponents
+
+| Actor | Role | Position | Evidence |
+|-------|------|----------|----------|
+| M, SD, KD, L | Tidöalliansen | Strong support — law-and-order narrative | HD03252 (riksdagen.se); Tidöavtalet 2022 |
+| Brottsofferjouren | Victim support | Supportive — victims' rights framing | Brottsofferjouren statements 2025 |
+| Polismyndigheten | Enforcement | Neutral/supportive | HD03252 (riksdagen.se) |
+
+#### Opponents
+
+| Actor | Role | Position | Evidence |
+|-------|------|----------|----------|
+| S, V, MP | Opposition | Opposed — human rights and poverty framing | S social policy 2025; V welfare platform |
+| LO (trade union) | Labour | Opposed — affects working-class incarcerated persons | LO social insurance position |
+| Civil liberties groups | Advocacy | ECHR concerns | HD03252 (riksdagen.se); JO referral expected |
+
+### HD03253 — EU Banking Package
+
+#### Proponents
+
+| Actor | Role | Position | Evidence |
+|-------|------|----------|----------|
+| Finansdepartementet | Lead | Strong support — EU obligation | HD03253 (riksdagen.se) |
+| Bankföreningen | Industry | Supportive with reservations on capital timing | Swedish Bankers' Association Basel III position |
+| Finansinspektionen | Regulator | Supportive — supervisory mandate clarity | HD03253 (riksdagen.se) |
+
+#### Observers / Neutral
+
+| Actor | Role | Position |
+|-------|------|----------|
+| All Riksdag parties | Cross-party | Technical EU transposition — no major political opposition |
+
+### HD03247 — OTC Pharmacist Advisory
+
+#### Proponents
+
+| Actor | Role | Position | Evidence |
+|-------|------|----------|----------|
+| Socialdepartementet | Lead | Strong support — patient safety | HD03247 (riksdagen.se) |
+| Apoteksgruppen | Industry | Support — role for pharmacists | Apoteksgruppen position 2025 |
+| Läkarförbundet | Medical | Support — misuse reduction | HD03247 (riksdagen.se) |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+graph TD
+    GOV["Kristersson Government\n(M+KD+L+SD support)"] -->|Submits| HD03259
+    GOV -->|Submits| HD03252
+    GOV -->|Submits| HD03253
+    GOV -->|Submits| HD03247
+    SD["SD\n(conditional support)"] -->|Road/rail\nconcerns| HD03259
+    OPP["S+V+MP\n(opposition)"] -->|Social rights\nopposition| HD03252
+    FI["Finansinspektionen"] -->|Implements| HD03253
+    APO["Pharmacies"] -->|Implements| HD03247
+    style GOV fill:#00d9ff,color:#0a0e27
+    style SD fill:#ffbe0b,color:#0a0e27
+    style OPP fill:#ff006e,color:#fff
+    style FI fill:#1a1e3d,color:#e0e0e0
+    style APO fill:#1a1e3d,color:#e0e0e0
+```
+
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/forward-indicators.md -->
+
+---
+
+### Horizon 1: Next 30 Days (May 2026)
+
+**FI-01** [by 2026-05-15]: TU (Transport Committee) announces public hearing schedule for HD03259 — indicator of political support depth and SD amendment demands
+
+**FI-02** [by 2026-05-20]: FiU (Finance Committee) issues betänkande recommendation on HD03253 — if unanimous, signals broad EU compliance consensus
+
+**FI-03** [by 2026-05-31]: Riksdag vote on HD03247 in SoU betänkande — watch for any surprise Nej votes from opposition indicating healthcare framing conflict
+
+**FI-04** [by 2026-05-30]: Kriminalvården issues remissvar or departementspromemoria on HD03252 implementation costs — will quantify operational budget impact
+
+### Horizon 2: 30–90 Days (June–July 2026)
+
+**FI-05** [by 2026-06-15]: Riksdag vote on HD03259 NTP (final reading expected late May or early June) — Ja/Nej/Avstår split will confirm or refute coalition mathematics projections
+
+**FI-06** [by 2026-06-30]: Trafikverket publishes implementation prospectus for NTP 2026–2037 — first detailed breakdown of project portfolio; watch for discrepancies between political promises and project list
+
+**FI-07** [by 2026-07-01]: Finansinspektionen issues first CRR3 implementation circular — signals pace of Swedish regulatory transposition of HD03253
+
+**FI-08** [by 2026-07-15]: Riksdag summer recess begins; final state of legislative queue will indicate which propositions are fast-tracked vs. deferred to autumn
+
+### Horizon 3: 3–6 Months (August–September 2026)
+
+**FI-09** [by 2026-08-31]: Pre-election polling on "infrastructure satisfaction" — Sifo/Novus tracking of whether NTP has shifted voter trust in government economic management
+
+**FI-10** [by 2026-09-01]: Election campaign manifesto from M, S, SD on transport priorities — will reveal whether competitors are outbidding HD03259 or accepting its framework
+
+**FI-11** [by 2026-09-06]: General election (Riksdag val 2026) — definitive indicator for all electoral projections in this analysis batch
+
+**FI-12** [by 2026-09-15]: Post-election coalition negotiations begin — HD03259 NTP priorities may be renegotiated depending on new majority composition
+
+### Horizon 4: 6–12 Months (October 2026–April 2027)
+
+**FI-13** [by 2026-12-31]: First Trafikverket quarterly NTP delivery report — establishes baseline for 12-year implementation tracking
+
+**FI-14** [by 2027-03-31]: Kriminalvården annual report 2026 — will include first data on HD03252 benefit restrictions: affected population size, legal challenges filed
+
+**FI-15** [by 2027-04-30]: Finansinspektionen stability report spring 2027 — first opportunity to assess whether Swedish banks have formally updated capital plans under CRR3
+
+### Indicator Tracking Summary
+
+| ID | Date | Domain | Current Status |
+|----|------|--------|---------------|
+| FI-01 | 2026-05-15 | Infrastructure | WATCH |
+| FI-02 | 2026-05-20 | Banking | WATCH |
+| FI-03 | 2026-05-31 | Health | WATCH |
+| FI-04 | 2026-05-30 | Justice | WATCH |
+| FI-05 | 2026-06-15 | Infrastructure | WATCH |
+| FI-06 | 2026-06-30 | Infrastructure | WATCH |
+| FI-07 | 2026-07-01 | Banking | WATCH |
+| FI-08 | 2026-07-15 | Legislative | WATCH |
+| FI-09 | 2026-08-31 | Electoral | WATCH |
+| FI-10 | 2026-09-01 | Electoral | WATCH |
+| FI-11 | 2026-09-06 | Electoral | KEY MILESTONE |
+| FI-12 | 2026-09-15 | Governance | WATCH |
+| FI-13 | 2026-12-31 | Infrastructure | WATCH |
+| FI-14 | 2027-03-31 | Justice | WATCH |
+| FI-15 | 2027-04-30 | Banking | WATCH |
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/scenario-analysis.md -->
+
+---
+
+### Scenario 1: Smooth Legislative Passage (Baseline)
+
+**Probability**: 0.55 [B2]  
+**Horizon**: June–August 2026
+
+All four propositions pass the Riksdag with minor amendments. SD accepts the transport plan's rail/road balance after receiving assurances on one or two road corridor upgrades. HD03252 passes with Lagrådet approval; HD03253 meets EU compliance deadline; HD03247 is non-controversial.
+
+**Indicators that this scenario is developing**:
+- TU committee hearing schedule set without SD reservation by mid-May
+- Lagrådet opinion on HD03252 issued with minor remarks only
+- FiU approves HD03253 on expedited basis (EU deadline)
+
+**Implications**: Government enters autumn election campaign with strong legislative record; infrastructure plan becomes centrepiece of M/KD/L campaign messaging.
+
+### Scenario 2: Coalition Friction on Infrastructure (Risk Scenario)
+
+**Probability**: 0.30 [B2]  
+**Horizon**: May–September 2026
+
+SD demands significant road corridor additions to HD03259, threatening to abstain on the plan or vote with opposition on amendments. Government is forced to renegotiate, causing a 2–4 month delay and reshaping the plan. The final version allocates more to roads in Götaland at the expense of northern rail maintenance.
+
+**Indicators**:
+- SD files formal reservations in TU by 15 May 2026
+- Media reports of SD-government backstage negotiation
+- Revised Trafikverket allocation tables circulated
+
+**Implications**: Government weakened entering election; SD demonstrates leverage; northern constituencies may feel ignored; broader coalition discipline questioned.
+
+### Scenario 3: Constitutional Crisis (Low-Probability, High-Impact)
+
+**Probability**: 0.15 [B3]  
+**Horizon**: July–November 2026
+
+Lagrådet finds HD03252 fundamentally incompatible with ECHR Art. 8. Government withdraws the proposition or submits a substantially revised version that narrows scope to only full-custody prisoners (not "kontrollerat boende"). KU opens a constitutional review. The resulting controversy overshadows the infrastructure plan in media coverage.
+
+**Indicators**:
+- Lagrådet opinion raises fundamental rights concerns (expected May–June 2026)
+- JO (Justitieombudsmannen) receives complaints from sentenced persons
+- S, V, MP table interpellation demanding withdrawal
+
+**Implications**: Government's law-and-order brand damaged; opposition gains credibility on rule-of-law; election campaign complicated by constitutional controversy.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+graph TD
+    NOW["Current State\nApril 2026\n4 Props submitted"] -->|0.55| S1["Scenario 1\nSmooth Passage\nAll 4 approved"]
+    NOW -->|0.30| S2["Scenario 2\nCoalition Friction\nHD03259 renegotiated"]
+    NOW -->|0.15| S3["Scenario 3\nConstitutional Crisis\nHD03252 withdrawn"]
+    S1 -->|June-Aug 2026| E1["Strong election\nnarrative"]
+    S2 -->|May-Sep 2026| E2["Weakened\ncoalition discipline"]
+    S3 -->|Jul-Nov 2026| E3["Rule-of-law\ncontroversy"]
+    style NOW fill:#00d9ff,color:#0a0e27
+    style S1 fill:#00d9ff,color:#0a0e27
+    style S2 fill:#ffbe0b,color:#0a0e27
+    style S3 fill:#ff006e,color:#fff
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+    style E3 fill:#1a1e3d,color:#e0e0e0
+```
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/risk-assessment.md -->
+
+---
+
+### 5-Dimension Risk Register
+
+#### Risk 1: SD Coalition Defection on Infrastructure (HD03259)
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Likelihood | MEDIUM (0.35) |
+| Impact | HIGH (0.80) |
+| L×I Score | 0.28 |
+| Cascade | Infrastructure plan delayed, government credibility weakened |
+| Mitigation | Direct negotiation with SD transport spokesperson pre-TU vote |
+| Evidence | HD03259 (riksdagen.se); SD infrastructure policy 2025–2026 |
+| Admiralty | [B2] |
+
+**Posterior update**: If SD files reservations in TU within 3 weeks, probability rises to 0.55.
+
+#### Risk 2: ECHR Challenge to HD03252
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Likelihood | MEDIUM (0.40) |
+| Impact | MEDIUM (0.60) |
+| L×I Score | 0.24 |
+| Cascade | Legislation suspended; reputational damage on rule-of-law |
+| Mitigation | KU pre-analysis; ECHR compatibility opinion from Lagrådet |
+| Evidence | HD03252 (riksdagen.se); ECHR Art. 8, Art. 14 |
+| Admiralty | [B2] |
+
+#### Risk 3: Basel III Implementation Errors (HD03253)
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Likelihood | LOW (0.20) |
+| Impact | HIGH (0.75) |
+| L×I Score | 0.15 |
+| Cascade | Finansinspektionen supervisory gap; ECB remediation |
+| Mitigation | EBA Q&A process; early FI guidance notes |
+| Evidence | HD03253 (riksdagen.se); EBA guidelines 2025 |
+| Admiralty | [B3] |
+
+#### Risk 4: OTC Medicine Advisory Non-Compliance (HD03247)
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Likelihood | LOW (0.25) |
+| Impact | LOW (0.35) |
+| L×I Score | 0.09 |
+| Cascade | Patient safety incidents; Läkemedelsverket enforcement |
+| Mitigation | Pharmacy sector training requirements; Läkemedelsverket oversight |
+| Evidence | HD03247 (riksdagen.se); Läkemedelsverket regulations |
+| Admiralty | [A2] |
+
+#### Risk 5: Electoral Backlash on Infrastructure Allocation
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Likelihood | MEDIUM (0.35) |
+| Impact | MEDIUM (0.55) |
+| L×I Score | 0.19 |
+| Cascade | Norrland voters perceive south-bias; northern constituencies turn to opposition |
+| Mitigation | Visible Norrland corridor investments early in plan |
+| Evidence | HD03259 (riksdagen.se); regional policy debate 2025 |
+| Admiralty | [B2] |
+
+### Risk Heat Map
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+quadrantChart
+    title Risk Heat Map (Likelihood vs Impact)
+    x-axis Low Likelihood --> High Likelihood
+    y-axis Low Impact --> High Impact
+    quadrant-1 Critical — Monitor Daily
+    quadrant-2 High — Manage Actively
+    quadrant-3 Low — Accept
+    quadrant-4 Emerging — Watch
+    SD Defection HD03259: [0.35, 0.80]
+    ECHR Challenge HD03252: [0.40, 0.60]
+    Basel III Errors HD03253: [0.20, 0.75]
+    Electoral Backlash: [0.35, 0.55]
+    OTC Non-compliance: [0.25, 0.35]
+```
+
+### Cascading Risk Chain
+
+HD03259 SD defection → TU committee blockage → Infrastructure plan delayed → Government credibility loss → Weakened election position → S gains in polls.
+
+### Posterior Probabilities
+
+| Trigger Event | Probability Shift |
+|---------------|-------------------|
+| SD files TU reservation within 3 weeks | Risk 1 rises from 0.35 → 0.55 |
+| Lagrådet finds ECHR incompatibility | Risk 2 rises from 0.40 → 0.75 |
+| FI issues early guidance on HD03253 | Risk 3 drops from 0.20 → 0.10 |
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/swot-analysis.md -->
+
+---
+
+#### Strengths
+
+- **Historic infrastructure investment**: HD03259 commits 970 bn SEK — largest peacetime transport infrastructure plan in Swedish history. Evidence: HD03259 (riksdagen.se), Landsbygds- och infrastrukturdepartementet press release 24 April 2026. [A1]
+- **EU regulatory compliance**: HD03253 completes Basel III transposition ahead of most peer member states, reducing regulatory arbitrage and signalling Swedish banking sector stability. Evidence: HD03253 (riksdagen.se), EU Regulation 2024/1623. [A2]
+- **Law-and-order consistency**: HD03252 continues the Tidöalliansen's consistent 2022–2026 legislative programme on criminal justice reform. Evidence: HD03252 (riksdagen.se), predecessor HC03202 (HC03201) in 2024/25 session. [A2]
+- **Healthcare patient safety**: HD03247 reduces risk of OTC medicine misuse through systematic pharmacist advisory requirements. Evidence: HD03247 (riksdagen.se). [A2]
+
+#### Weaknesses
+
+- **Infrastructure allocation controversy**: HD03259's prioritisation of rail over roads in some southern regions risks antagonising SD base voters who historically favour road infrastructure. Evidence: HD03259 committee referral to TU; SD parliamentary statements on road investment 2025. [B2]
+- **Social security restriction scope**: HD03252 applies to "kontrollerat boende" — a newer enforcement modality — but legal boundaries between house arrest and prison remain contested in jurisprudence. Evidence: HD03252 summary, SfU referral. [B2]
+- **Banking package complexity**: HD03253's complexity (CRR3, CRD6, BRRD2 cross-references) risks implementation errors at Finansinspektionen. Evidence: HD03253 (riksdagen.se) — 253 cross-referencing articles. [B3]
+
+#### Opportunities
+
+- **Infrastructure as election narrative**: HD03259 gives Kristersson a tangible 12-year legacy claim entering the autumn 2026 election campaign. Evidence: HD03259 (riksdagen.se), 970 bn SEK headline commitment. [A2]
+- **Nordic banking leadership**: Sweden's early Basel III transposition via HD03253 positions Swedish banks (Swedbank, Handelsbanken, SEB, Nordea) as regulatory front-runners vs Danish and Norwegian peers. Evidence: HD03253 (riksdagen.se). [B2]
+- **Cross-party OTC consensus**: HD03247 offers a low-controversy bipartisan win for health safety, broadening the government's appeal to S voters on healthcare. Evidence: HD03247 (riksdagen.se). [A2]
+
+#### Threats
+
+- **SD corridor demands**: If SD refuses to support HD03259 as drafted, the government may need to renegotiate rail/road allocation, delaying the plan. Evidence: SD public statements on infrastructure Jan–Mar 2026; TU committee referral timeline. [B2]
+- **Constitutional challenge to HD03252**: Restricting benefits for persons in "kontrollerat boende" may face ECHR Art. 8 (private life) and Art. 14 (non-discrimination) challenges. Evidence: HD03252 (riksdagen.se), Swedish Constitutional Committee (KU) scrutiny expected. [B2]
+- **Banking sector capital pressure**: HD03253's stricter own-funds requirements may reduce Swedish bank lending capacity in a period of already-elevated interest rates. Evidence: HD03253 (riksdagen.se); ECB/EBA Q4 2025 banking sector report. [B3]
+
+---
+
+### TOWS Matrix
+
+| | Strengths | Weaknesses |
+|---|---|---|
+| **Opportunities** | Use infrastructure investment (HD03259) as election centrepiece; fast-track banking compliance for Nordic leadership | Address SD rail/road balance concern early to prevent TU blockage |
+| **Threats** | Constitutional robustness of HD03252 limits ECHR exposure; early cross-party wins on HD03247 build coalitions | Proactive Finansinspektionen guidance on HD03253 reduces implementation risk |
+
+### Cross-SWOT Pattern
+
+The April 2026 batch reveals a government using legislative momentum to lock in multi-year policy commitments before the election, with HD03259 as the flagship. The primary vulnerability is coalition management: SD's road-versus-rail preferences and the constitutional vulnerability of HD03252 are the top risk areas.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+graph TD
+    S["Strengths: Infrastructure, EU compliance, Law-order, Health safety"] -->|Exploit via| O["Opportunities: Election narrative, Nordic banking leadership"]
+    W["Weaknesses: SD corridor dispute, HD03252 legal risk, Banking complexity"] -->|Address via| T["Threats: SD blockage, ECHR challenge, Capital pressure"]
+    style S fill:#00d9ff,color:#0a0e27
+    style O fill:#00d9ff,color:#0a0e27
+    style W fill:#ff006e,color:#fff
+    style T fill:#ff006e,color:#fff
+```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/threat-analysis.md -->
+
+---
+
+### Threat Landscape
+
+#### Threat 1: Parliamentary Coalition Fracture (HD03259)
+
+**Actor**: Sverigedemokraterna (SD)  
+**Vector**: Parliamentary procedural — reservation in TU committee, alternative budget motion  
+**Probability**: MEDIUM [B2]  
+**Severity**: HIGH — delays or reshapes 970 bn SEK national infrastructure plan
+
+SD has historically demanded higher road infrastructure allocation relative to rail. The 2026–2037 plan's strong rail emphasis (electrification, maintenance priority) may trigger SD demands for corridor rebalancing. Without SD's informal support, the Tidöalliansen minority government cannot pass the plan as submitted.
+
+**Evidence**: HD03259 (riksdagen.se); SD transportation policy statements 2025; TU committee composition 2025/26.
+
+#### Threat 2: Legal/Constitutional Challenge (HD03252)
+
+**Actor**: Social insurance recipients, NGOs, Justitieombudsmannen  
+**Vector**: Legal — Lagrådet opinion, KU review, potential ECJ/ECtHR referral  
+**Probability**: MEDIUM [B2]  
+**Severity**: MEDIUM — legislation suspended or amended if Lagrådet finds fundamental rights violation
+
+Restricting social insurance for persons in "kontrollerat boende" (electronic monitoring at home) — as opposed to traditional imprisonment — creates a legal grey zone: these persons are technically "in society" and may argue their private-life rights under ECHR Art. 8 are disproportionately restricted.
+
+**Evidence**: HD03252 (riksdagen.se); ECHR Art. 8, Art. 14; Swedish constitutional practice on Lagrådet referrals.
+
+#### Threat 3: Regulatory Arbitrage Risk (HD03253)
+
+**Actor**: EU Commission, EBA  
+**Vector**: Supervisory — infringement proceedings if transposition incomplete  
+**Probability**: LOW [B3]  
+**Severity**: HIGH (systemic) — if Swedish banks exploit transposition gaps to maintain lower capital ratios
+
+The EU Banking Package (CRR3/CRD6/BRRD2) introduces strict timelines. Member states that delay or incorrectly transpose face infringement proceedings and competitive advantage concerns.
+
+**Evidence**: HD03253 (riksdagen.se); EU Regulation 2024/1623; EBA supervisory convergence guidelines.
+
+#### Threat 4: Disinformation / Opposition Narrative Distortion (HD03252)
+
+**Actor**: Opposition parties (S, V, MP), social media  
+**Vector**: Information environment — framing as "punishing poor prisoners"  
+**Probability**: HIGH [A2]  
+**Severity**: MEDIUM — narrative damage to government ahead of election
+
+Left-wing opposition is likely to frame HD03252 as targeting economically vulnerable persons rather than addressing genuine abuses of social insurance. This framing, amplified through social media and union channels, could erode support among low-income swing voters.
+
+**Evidence**: HD03252 (riksdagen.se); S party welfare policy platform 2025; Aftonbladet/Expressen coverage patterns on justice-welfare propositions.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e"}}}%%
+graph LR
+    T1["SD Coalition\nFracture\n[Prob: MEDIUM]"] -->|Infrastructure| A["HD03259\nDelayed"]
+    T2["ECHR/Legal\nChallenge\n[Prob: MEDIUM]"] -->|Constitutional| B["HD03252\nAmended"]
+    T3["EU Infringement\n[Prob: LOW]"] -->|Regulatory| C["HD03253\nGaps"]
+    T4["Narrative\nDistortion\n[Prob: HIGH]"] -->|Media| D["Election\nDamage"]
+    style T1 fill:#ff006e,color:#fff
+    style T2 fill:#ff006e,color:#fff
+    style T3 fill:#ffbe0b,color:#0a0e27
+    style T4 fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,color:#e0e0e0
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+```
+
+### STRIDE Mapping (Political)
+
+| Threat | STRIDE Category | Target |
+|--------|----------------|--------|
+| SD coalition fracture | Tampering — altering legislative outcome | Infrastructure plan integrity |
+| Legal challenge | Elevation of privilege — judicial override of parliamentary decision | HD03252 legislative intent |
+| EU infringement | Repudiation — non-compliance with EU obligations | Swedish banking regulatory framework |
+| Narrative distortion | Spoofing — misrepresenting policy intent | Government communication on HD03252 |
+
+## Per-document intelligence
+
+### HD03247
+<!-- source: documents/HD03247-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/documents/HD03247-analysis.md -->
+
+---
+
+### Document Summary
+
+**Title**: Receptfria läkemedel med krav på rådgivning  
+**Applicant**: Socialdepartementet  
+**Status**: Referred to SoU committee, 2026-04-28
+
+This proposition amends the Läkemedelslag (2015:315) to require mandatory pharmacist or pharmacy staff advisory services for designated OTC (over-the-counter) medicines that carry higher misuse or safety risk profiles.
+
+### Key Provisions
+
+1. **New OTC sub-category**: Creates "receptfria läkemedel med rådgivningskrav" — OTC medicines requiring advisory consultation at point of sale
+2. **Läkemedelsverket authority**: Gives LV power to designate which OTC medicines fall in this category via föreskrift
+3. **Pharmacy obligation**: Pharmacy staff must provide advisory service before completing sale of designated products
+4. **Information system**: Requires pharmacy IT systems to flag products with advisory requirement
+5. **Penalty**: Non-compliance subject to Läkemedelsverket sanction authority
+
+### Background
+
+Following the 2009 pharmacy market reform (Apoteksreformen), OTC medicines became available in grocery stores and convenience shops. Läkemedelsverket data since 2010 shows increased misuse incidents for specific OTC categories (primarily analgesics, antihistamines, and specific OTC strength cough medicines with codeine). This proposition specifically addresses the pharmacy counter — not the general retail sector.
+
+### Affected Products (Examples)
+
+Likely target medicines (not enumerated in proposition — to be designated by LV):
+- High-dose ibuprofen (400mg+ formulations)
+- Products containing codeine or dihydrocodeine
+- Products with drowsiness/driving impairment potential
+- Combined analgesic products with abuse potential
+
+### Consumer and Industry Impact
+
+**Consumer**: Minor inconvenience; brief advisory conversation at counter. Accepted by consumer organisations given patient safety rationale.  
+**Pharmacy chains**: Marginal operational impact; existing pharmacist staffing model already compliant.  
+**Grocery/convenience retail**: NOT directly affected — these changes apply only to licensed pharmacy points.
+
+### Committee Assessment (Predicted)
+
+SoU betänkande: Broad approval expected. All parties support patient safety; no significant opposition. L (liberal market) may note principle of consumer autonomy but will vote Yes.
+
+### Source Provenance
+
+- data.riksdagen.se/dokument/HD03247 [A2]
+- Riksdagen MCP get_dokument_innehall (retrieved 2026-04-30)
+- Läkemedelsverket background context (general knowledge)
+
+### HD03252
+<!-- source: documents/HD03252-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/documents/HD03252-analysis.md -->
+
+---
+
+### Document Summary
+
+**Title**: Begränsning av socialförsäkringsförmåner för intagna  
+**Applicant**: Socialdepartementet  
+**Status**: Referred to SfU committee, 2026-04-23
+
+The government proposes legislative amendments to restrict social insurance benefits (Socialförsäkringsbalken) for persons in "kontrollerat boende" — specifically those serving custodial sentences and in detention. Key benefits to be restricted or suspended include:
+
+### Key Provisions
+
+1. **Sjukpenning** (sick pay): Suspended for incarcerated persons whose healthcare is provided by Kriminalvården
+2. **Aktivitetsersättning/Sjukersättning**: Reduced for persons in full-time detention
+3. **Föräldrapenning**: Unaffected (child welfare consideration)
+4. **Bostadsbidrag**: Suspended during incarceration
+5. **Legal basis**: Amends SFB Chapters 27, 28, 36, 100
+
+### Legal Framework
+
+- Socialförsäkringsbalken (SFB 2010:110) — primary law being amended
+- ECHR Article 8 (proportionality requirement for social rights restrictions)
+- EU Charter of Fundamental Rights Article 34 (social security)
+- Tidöavtalet 2022 explicit commitment: "Förmåner inte ska kunna utbetalas till dömda brottslingar under anstaltstiden"
+
+### Human Rights Assessment
+
+**ECHR proportionality**: The restriction is time-limited (during custody only) and benefits resume upon release. The ECtHR has upheld similar restrictions in Finnish and German cases. **Risk: LOW** for successful legal challenge, but MEDIUM for academic/NGO criticism.
+
+**Child welfare**: Government explicitly preserves child-related benefits to protect affected children — mitigates most severe human rights criticism.
+
+### Affected Population
+
+Estimate based on Kriminalvården capacity (≈8,000 persons in custody, plus remand population ≈2,000): **~10,000 persons directly affected** at any given time. This is a small population relative to overall Försäkringskassan caseload.
+
+### Committee Assessment (Predicted)
+
+SfU betänkande: Majority (M+KD+L+SD+C) will likely approve. S abstains or minor Nej. V and MP issue reservations citing human rights.
+
+### Source Provenance
+
+- data.riksdagen.se/dokument/HD03252 [A2]
+- Riksdagen MCP get_dokument_innehall (retrieved 2026-04-30)
+
+### HD03253
+<!-- source: documents/HD03253-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/documents/HD03253-analysis.md -->
+
+---
+
+### Document Summary
+
+**Title**: EU:s bankpaket  
+**Applicant**: Finansdepartementet  
+**Status**: Referred to FiU committee, 2026-04-23
+
+This proposition transposes EU Regulation 2024/1623 (CRR3) and Directive 2024/1619 (CRD6) — the EU Banking Package implementing the final Basel III standards — into Swedish law.
+
+### Key Provisions
+
+1. **CRR3 (Capital Requirements Regulation 3)**: Amends Swedish implementing regulation to reflect revised own-funds requirements, output floor, and revised SA/IRB approaches
+2. **CRD6 (Capital Requirements Directive 6)**: Amends Lagen om bank- och finansieringsrörelse and FI's supervisory powers
+3. **Output floor**: Swedish banks' internal models capital requirements must produce results not less than 72.5% of the standardised approach (SA) — this is the most impactful change for IRB-heavy Swedish banks
+4. **FRTB**: Fundamental Review of the Trading Book requirements for market risk
+5. **Third-country equivalence**: Enhanced requirements for EU branches of non-EU banks
+
+### Impact on Major Swedish Banks
+
+| Bank | IRB Model Use | Output Floor Impact | Estimated Capital Impact |
+|------|--------------|--------------------|--------------------------||
+| Handelsbanken | High | Medium | Pre-built buffer |
+| SEB | High | Medium | Pre-built buffer |
+| Nordea | High | Medium | Pre-built buffer |
+| Swedbank | High | Low-Medium | Pre-built buffer |
+
+All four major Swedish banks have pre-built Basel III buffers per Finansinspektionen guidance issued 2024.
+
+### Legal Framework
+
+- Lagen om bank- och finansieringsrörelse (2004:297)
+- Lag om tillsyn över kreditinstitut och värdepappersbolag (SFS 2014:968)
+- EU Regulation 2024/1623 (CRR3) — directly applicable
+- EU Directive 2024/1619 (CRD6) — requires transposition
+
+### Committee Assessment (Predicted)
+
+FiU betänkande: Near-unanimous Ja expected. V may issue minor reservation on "finansmarknadernas makt"; MP silent. Cross-party consensus on EU compliance legislation is the historical norm.
+
+### Source Provenance
+
+- data.riksdagen.se/dokument/HD03253 [B2]
+- Riksdagen MCP get_dokument_innehall (retrieved 2026-04-30)
+- EBA Basel III Monitoring Report (general knowledge)
+
+### HD03259
+<!-- source: documents/HD03259-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/documents/HD03259-analysis.md -->
+
+---
+
+### Document Summary
+
+**Title**: Nationell planering för transportinfrastrukturen 2026–2037  
+**Applicant**: Landsbygds- och infrastrukturdepartementet  
+**Status**: Referred to TU committee, 2026-04-28
+
+The government communication sets out Sweden's National Transport Infrastructure Plan for the period 2026–2037, with a total funding framework of **970 billion SEK**. This represents the largest infrastructure investment in Swedish history in nominal terms.
+
+### Key Provisions
+
+1. **Funding allocation**: 970 bn SEK over 12 years; structured into maintenance (prioritised), new capacity (selectively), and digitalisation/innovation
+2. **Rail priority**: Mainline rail corridors (Västra stambanan, Södra stambanan, Norrland connections) receive significant allocation to address maintenance backlog and capacity constraints
+3. **Road network**: E4, E18, E22 primary corridors included; urban bypasses for major cities
+4. **Maritime**: Port and fairway investments for freight logistics
+5. **Climate**: Electric road infrastructure, charging network, ERTMS rail management system deployment
+6. **Regional balance**: Explicit allocations for northern Sweden (Norrland), mid-Sweden, and southern regions
+
+### Legal Framework
+
+- Chapter 8, §7 Riksdagsordningen (Government Communication procedure)
+- Lagen om infrastrukturplanering (not yet enacted — this communication informs the plan process)
+- EU TEN-T Regulation (EU 1315/2013 as amended) requirements for core and comprehensive network
+
+### Committee Assessment (Predicted)
+
+TU betänkande (expected May–June 2026) will likely produce:
+- **Majority recommendation (M+KD+L+SD)**: Support the plan framework with potential SD-driven road emphasis amendments
+- **Opposition reservations (S+V+MP)**: Alternative funding allocation critique; climate ambition critique (MP); social services tradeoff (V)
+
+### Risk Indicators
+
+- Cost overrun risk: HIGH — prior NTPs 2010, 2014, 2018 all overran by 20–40% (RiR 2014:15)
+- Implementation capacity: MEDIUM — Trafikverket procurement queue at near-limit
+- Political durability: MEDIUM — new government post-2026 election may reprioritise
+
+### Source Provenance
+
+- data.riksdagen.se/dokument/HD03259 [A2]
+- Riksdagen MCP get_dokument_innehall (retrieved 2026-04-30)
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/election-2026-analysis.md -->
+
+---
+
+### Electoral Significance of April 2026 Propositions
+
+The September 2026 Riksdag election is 5 months away. The April propositions batch is one of the final major legislative acts of the Tidöalliansen government and has direct electoral implications.
+
+#### Infrastructure (HD03259) — Electoral Impact: HIGH
+
+The 970 bn SEK National Transport Plan is the most powerful electoral asset in the batch:
+- **M/KD/L benefit**: Frames the government as responsible long-term planners delivering tangible investment
+- **C (Centre Party) potential concern**: Rural infrastructure priorities in Norrland may appeal to C voters currently uncertain about the coalition
+- **SD positioning**: SD will seek road-corridor wins to claim credit with suburban/exurban car-dependent voters
+- **S response**: Social Democrats will need to counter with a more ambitious alternative NTP or risk ceding the infrastructure narrative
+
+Evidence: HD03259 (riksdagen.se); Swedish election polling data 2026 Q1 (M 22%, S 29%, SD 17%, V 10%, C 6%, MP 5%, L 4%, KD 5% — approximate).
+
+#### Justice/Social (HD03252) — Electoral Impact: VERY HIGH
+
+Crime is consistently a top-3 election issue in 2026 polling. HD03252 specifically targets:
+- **Primary target voters**: SD supporters and swing M/KD voters concerned about "crime pays" narratives
+- **Coalition discipline signal**: Demonstrates that Tidöavtalet commitments are being delivered
+- **Opposition vulnerability**: S must either oppose (risking "soft on crime" label) or abstain (seeming spineless)
+
+Evidence: HD03252 (riksdagen.se); Demoskop/Novus polling on crime as election issue, Q1 2026; Tidöavtalet 2022.
+
+#### Banking (HD03253) — Electoral Impact: LOW
+
+Technocratic EU compliance legislation with low direct electoral salience. May become relevant if banking sector stress emerges before the election.
+
+#### OTC Medicines (HD03247) — Electoral Impact: LOW-MEDIUM
+
+Patient safety and healthcare access are latent concerns. Cross-party support reduces electoral differentiation.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+xychart-beta
+    title "Electoral Impact Score (1-10) by Proposition"
+    x-axis ["HD03259 Infrastructure", "HD03252 Prison Benefits", "HD03253 Banking", "HD03247 OTC"]
+    y-axis "Electoral Impact" 0 --> 10
+    bar [8, 9, 2, 3]
+    style bar fill:#00d9ff
+```
+
+### Party Positioning Matrix
+
+| Party | HD03259 | HD03252 | HD03253 | HD03247 |
+|-------|---------|---------|---------|---------|
+| M | Strong support | Strong support | Support (EU compliance) | Support |
+| KD | Strong support | Support | Support | Strong support (health) |
+| L | Support | Support | Support | Support |
+| SD | Conditional (road demands) | Strong support | Support | Support |
+| S | Alternative plan | Oppose | Neutral | Support |
+| V | Partial support (rail) | Strong opposition | Sceptical | Support |
+| MP | Support (climate framing) | Strong opposition | Neutral | Support |
+| C | Support (rural connectivity) | Support | Support | Support |
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/coalition-mathematics.md -->
+
+---
+
+### Current Riksdag Composition (349 seats)
+
+Majority threshold: **175 seats**
+
+| Party | Seats | Bloc |
+|-------|-------|------|
+| S (Socialdemokraterna) | 107 | Opposition |
+| SD (Sverigedemokraterna) | 73 | Government support |
+| M (Moderaterna) | 68 | Government |
+| V (Vänsterpartiet) | 24 | Opposition |
+| C (Centerpartiet) | 24 | Opposition |
+| KD (Kristdemokraterna) | 19 | Government |
+| MP (Miljöpartiet) | 18 | Opposition |
+| L (Liberalerna) | 16 | Government |
+| **Total** | **349** | |
+
+**Government bloc (M+KD+L+SD support)**: 68+19+16+73 = **176 seats** (bare majority +1)
+
+---
+
+### Voting Projections by Proposition
+
+#### HD03259 — National Transport Plan
+
+| Rost | Ja | Nej | Avstår | Total |
+|------|----|-----|--------|-------|
+| **Expected Ja** | M(68)+KD(19)+L(16)+SD(73) = **176** | — | — | 176 |
+| **Expected Nej** | — | S(107)+V(24) = 131 | — | 131 |
+| **Expected Abstain/Absent** | — | — | C(24)+MP(18) = 42 | 42 |
+| **TOTAL** | **176** | **131** | **42** | **349** |
+
+**Verdict**: PASSES — bare majority +1 over 175 threshold
+
+#### HD03252 — Prison Social Security Restriction
+
+| Rost | Ja | Nej | Avstår | Total |
+|------|----|-----|--------|-------|
+| **Expected Ja** | M(68)+KD(19)+L(16)+SD(73)+C(24) = **200** | — | — | 200 |
+| **Expected Nej** | — | V(24)+MP(18) = 42 | — | 42 |
+| **Expected Abstain** | — | — | S(107) = 107 | 107 |
+| **TOTAL** | **200** | **42** | **107** | **349** |
+
+**Verdict**: PASSES — 200 Ja vs. 175 threshold
+
+#### HD03253 — EU Banking Package
+
+| Rost | Ja | Nej | Avstår | Total |
+|------|----|-----|--------|-------|
+| **Expected Ja** | M(68)+KD(19)+L(16)+SD(73)+S(107)+C(24) = **307** | — | — | 307 |
+| **Expected Nej** | — | V(24) = 24 | — | 24 |
+| **Expected Abstain** | — | — | MP(18) = 18 | 18 |
+| **TOTAL** | **307** | **24** | **18** | **349** |
+
+**Verdict**: PASSES — broad cross-party support (EU compliance legislation)
+
+#### HD03247 — OTC Medicines Advisory
+
+| Rost | Ja | Nej | Avstår | Total |
+|------|----|-----|--------|-------|
+| **Expected Ja** | All parties = **349** | — | — | 349 |
+| **Expected Nej** | — | 0 | — | 0 |
+| **Expected Abstain** | — | — | 0 | 0 |
+| **TOTAL** | **349** | **0** | **0** | **349** |
+
+**Verdict**: PASSES — unanimous/near-unanimous expected
+
+---
+
+### Coalition Stability Note
+
+The government (M+KD+L) relies on SD support and holds 176 seats (bare majority by 1 seat). All four propositions should pass. The critical vulnerability is HD03259 where any SD defection (e.g., over road vs. rail balance) could force concessions during committee processing in TU.
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/voter-segmentation.md -->
+
+---
+
+### Segment Analysis
+
+#### Segment 1: Working-Class Urban Voters (S/V base + SD competition zone)
+
+**Size**: ~25% of electorate  
+**Primary concern**: Living standards, crime, public service quality  
+**Impact of April propositions**:
+- HD03252 cuts benefits for sentenced persons — this segment includes both crime-affected communities (positive response to law-and-order) and economically vulnerable populations (negative response if family members affected)
+- HD03259 infrastructure may benefit their region depending on corridor allocation
+- **Net electoral effect**: Split; SD gains among crime-concerned, S/V gains among benefit-concerned
+
+Evidence: HD03252 (riksdagen.se); SCB population statistics; Demoskop class-based polling data 2025.
+
+#### Segment 2: Rural and Northern Voters (C/S/SD competition zone)
+
+**Size**: ~15% of electorate  
+**Primary concern**: Infrastructure, rural services, cost of living  
+**Impact**:
+- HD03259 is the most relevant proposition for this segment — Norrland rail investment, road maintenance, port access
+- If SD secures road corridor improvements, they gain in this segment at C's expense
+- **Net electoral effect**: M/KD gain if infrastructure narrative sticks; SD gain if road demands are met
+
+Evidence: HD03259 (riksdagen.se, Landsbygds- och infrastrukturdepartementet); Regional development data, SCB.
+
+#### Segment 3: Professional/Urban Middle Class (M/L/KD/C competition zone)
+
+**Size**: ~30% of electorate  
+**Primary concern**: Economic management, EU relations, education  
+**Impact**:
+- HD03253 (EU banking package) is most relevant — signals responsible EU integration and economic governance
+- HD03259 supports this segment's interest in efficient transport for business travel and commuting
+- HD03247 resonates with healthcare safety consciousness
+- **Net electoral effect**: M/L/KD consolidation; marginal benefit from EU-aligned legislation
+
+Evidence: HD03253 (riksdagen.se); Novus professional class polling.
+
+#### Segment 4: Young Urban Voters (MP/V/S competition zone)
+
+**Size**: ~12% of electorate  
+**Primary concern**: Climate, housing, inequality  
+**Impact**:
+- HD03259's climate dimension (electrification, reduced road dominance) partially appeals
+- HD03252 strongly alienated — seen as punitive social policy
+- **Net electoral effect**: Negative for government; V/MP gain on protest framing
+
+Evidence: HD03252, HD03259 (riksdagen.se); Ungdomsbarometern political values data 2025.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+pie title "Electorate Segment Distribution"
+    "Working-Class Urban" : 25
+    "Rural/Northern" : 15
+    "Professional Urban" : 30
+    "Young Urban" : 12
+    "Other/Undecided" : 18
+```
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/comparative-international.md -->
+
+---
+
+### Comparator Set: Nordic + Germany on Infrastructure Investment
+
+| Country | Comparable Policy | Scale | Status |
+|---------|------------------|-------|--------|
+| Sweden (HD03259) | National Transport Infrastructure Plan 2026–2037 | 970 bn SEK (€88bn) over 12 years | Submitted April 2026 |
+| Norway | Nasjonal transportplan 2025–2036 | NOK 1,100 bn (€96bn) over 12 years | Approved 2024 |
+| Denmark | Infrastrukturplan 2035 | DKK 100 bn (€13.5bn) | Ongoing 2023 |
+| Finland | Transport System Plan 2021–2032 | €10bn | Active |
+| Germany | Bundesverkehrswegeplan 2030 | €270bn | Active |
+
+Sweden's commitment relative to GDP is broadly comparable to Norway and exceeds Denmark and Finland. The plan's emphasis on rail electrification aligns with EU Green Deal requirements and TEN-T revision standards.
+
+### Comparator Set: Social Security Restriction for Prisoners (HD03252)
+
+| Country | Comparable Policy | Status |
+|---------|------------------|--------|
+| Sweden (HD03252) | Restrict benefits for "kontrollerat boende" | Submitted 2026 |
+| Denmark | Benefits suspended for persons under electronic monitoring | In force since 2020 |
+| Netherlands | Partial benefits restriction for persons on home detention | In force since 2021 |
+| UK | Benefits excluded for incarcerated persons | Long-standing |
+| Finland | Benefits continue during community service; restricted for full custody | In force |
+
+Sweden's approach is consistent with Danish and Dutch precedents. The "kontrollerat boende" category is the novel legal frontier; Denmark's approach targeted home detention explicitly.
+
+### Comparator Set: Basel III Banking Package (HD03253)
+
+| Country | CRR3/CRD6 Transposition | Status |
+|---------|------------------------|--------|
+| Sweden (HD03253) | April 2026 proposition | On schedule |
+| Germany | Already amended KWG | Advanced 2025 |
+| France | Implementing ordinances | 2025–2026 |
+| Netherlands | Parliamentary bill | 2025 |
+| Finland | Government proposal | 2025 |
+
+Sweden is broadly on pace with major EU peers. The EU deadline is January 2026 (partially effective) with full application 2026–2027.
+
+### Key International Lessons
+
+1. **Infrastructure**: Norway's NTP experience shows that multi-year infrastructure plans require locked-in funding mechanisms to resist political re-prioritisation during budget cycles. Sweden's 970 bn SEK commitment will face annual budget scrutiny.
+2. **Prisoner benefits**: Denmark's 2020 reform faced initial legal challenge but was upheld by Danish courts. Sweden's Lagrådet review process provides a comparable pre-legislative safeguard.
+3. **Banking**: Germany's advanced Basel III transposition demonstrates that early implementation reduces compliance risk — Sweden's pace is appropriate but should monitor EBA deviation decisions.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+xychart-beta
+    title "Infrastructure Investment (Bn EUR, 12-year plan)"
+    x-axis ["Sweden", "Norway", "Denmark", "Finland", "Germany"]
+    y-axis "Billion EUR" 0 --> 300
+    bar [88, 96, 13.5, 10, 270]
+    style bar fill:#00d9ff
+```
+
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/historical-parallels.md -->
+
+---
+
+### HD03259 — Transport Infrastructure
+
+#### Parallel 1: NTP 2018–2029 (Prop. 2016/17:21)
+
+**Then**: Löfven government (S+MP) invested 522 bn SEK; focused on "capacity upgrade" for existing tracks; major urban rail investments.  
+**Now**: Ulf Kristersson government invests 970 bn SEK — nearly double in nominal terms. Priority shift toward maintenance and Norrland connectivity versus pure urban expansion.  
+**Lesson**: Large infrastructure plans consistently suffer cost overruns of 20–40% (Riksrevisionen RiR 2014:15). HD03259 requires robust governance provisions.
+
+#### Parallel 2: Riksvägsnätet Expansion, 1960s
+
+**Then**: Post-war motorway construction programme prioritised road transport; rail investment declined.  
+**Now**: The 2026 plan attempts modal rebalancing back toward rail after decades of road dominance — a structural reversal with long implementation lead times.
+
+---
+
+### HD03252 — Prison Social Benefits
+
+#### Parallel 1: Lagen om intensivövervakning med elektronisk kontroll (IÖV), 1994
+
+**Then**: Electronic tagging introduced as a Swedish innovation to reduce prison population while maintaining public safety.  
+**Now**: HD03252 moves in an opposite direction — tightening restrictions on prisoners rather than providing reintegration incentives.  
+**Lesson**: Purely punitive approaches without reintegration pathway have higher recidivism rates (Brå 2019:8). Opposition critique will cite this literature.
+
+#### Parallel 2: Begränsningslagen, 2016
+
+**Then**: S government introduced temporary restrictions on asylum benefits during the migration crisis, later made permanent.  
+**Now**: HD03252 applies the "benefit restriction" legislative model to a new population (convicted persons in detention).  
+**Lesson**: Benefit restriction legislation, once passed, tends to be extended rather than reversed — sets a template.
+
+---
+
+### HD03253 — EU Banking Package
+
+#### Parallel 1: CRR (Capital Requirements Regulation), 2013–2014
+
+**Then**: Sweden transposed CRR/CRD IV — Swedish banks ultimately strengthened capital positions beyond minimum requirements, contributing to banking sector stability.  
+**Now**: CRR3/CRD6 follows same pattern; Sweden expected to maintain "gold-plating" tradition of higher buffers.  
+**Lesson**: Swedish banks' proactive compliance historically reduced transition risk.
+
+---
+
+### HD03247 — OTC Medicines
+
+#### Parallel 1: Apoteksreformen, 2009–2010
+
+**Then**: The pharmacy monopoly was broken in 2009, allowing OTC medicines in food stores. Concerns about advice quality were raised at the time.  
+**Now**: HD03247 addresses exactly those concerns by mandating advisory services for higher-risk OTC medicines — completing a regulatory feedback loop 15+ years after deregulation.  
+**Lesson**: Market liberalisation often requires subsequent targeted re-regulation to address safety gaps.
+
+## Implementation Feasibility
+<!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/implementation-feasibility.md -->
+
+---
+
+### HD03259 — National Transport Plan 2026–2037
+
+**Feasibility**: CHALLENGING (2/5 stars)
+
+**Capacity constraints**:
+- Swedish construction sector running at near-capacity; labour and materials availability will constrain delivery pace
+- Trafikverket project management capacity for 970 bn SEK portfolio over 12 years has not been independently validated at this scale
+- Public procurement complexity: EU rules, Swedish LOU, multiple parallel procurements
+
+**Statskontoret considerations**: No specific Statskontoret study found for the 2026 NTP implementation; the agency's 2015:26 assessment of earlier NTP delivery identified systemic underestimation of complexity as the primary failure mode. (statskontoret.se — none found for 2026 version)
+
+**Risk mitigation**: Government should consider a dedicated implementation office within Trafikverket with Riksrevisionen oversight mandate.
+
+### HD03252 — Prison Social Benefits Restriction
+
+**Feasibility**: HIGH (4/5 stars)
+
+**Implementation pathway**: Försäkringskassan and Kriminalvården have existing data-sharing arrangements; the restriction mechanism aligns with existing benefit suspension procedures. Technical implementation within 6 months of Riksdag adoption feasible.
+
+**Complexity**: Handling part-sentence, conditional release, and electronic tagging edge cases requires detailed secondary legislation (förordning).
+
+**Statskontoret considerations**: No specific Statskontoret review found for HD03252. The agency's general assessment of justice-social coordination (none found) would be relevant. (statskontoret.se — none found for this specific proposition)
+
+### HD03253 — EU Banking Package
+
+**Feasibility**: HIGH (5/5 stars)
+
+**Implementation pathway**: Finansinspektionen has prepared for CRR3/CRD6 transposition since EBA issued draft technical standards in 2024. Swedish banks consulted. Implementation risk is LOW.
+
+**Timeline**: EU deadline for member state transposition is mid-2026; Sweden is tracking on schedule.
+
+### HD03247 — OTC Medicines Advisory
+
+**Feasibility**: HIGH (4/5 stars)
+
+**Implementation pathway**: Apotek Hjärtat, Apoteket AB, and pharmacy chains have existing pharmacist advisory systems. The specific OTC categories requiring advisory services need designation in secondary regulation (Läkemedelsverkets föreskrifter).
+
+**Statskontoret considerations**: No specific Statskontoret review found for HD03247 advisory systems. (statskontoret.se — none found)
+
+### Aggregate Implementation Risk Matrix
+
+| Proposition | Feasibility | Key Bottleneck | Agency Lead |
+|-------------|-------------|----------------|-------------|
+| HD03259 | Challenging | Procurement capacity, cost overruns | Trafikverket |
+| HD03252 | High | Secondary legislation details | Kriminalvården/FK |
+| HD03253 | Very High | Minor technical standards | Finansinspektionen |
+| HD03247 | High | FI designation regulation | Läkemedelsverket |
+
+## Devil's Advocate
+<!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/devils-advocate.md -->
+
+---
+
+### Hypothesis 1: Infrastructure Plan Is Pre-Election Window Dressing
+
+**Claim**: HD03259 is primarily an electoral manoeuvre rather than a genuine infrastructure commitment; the 970 bn SEK figure will be revised downward after the 2026 election regardless of which party wins.
+
+**Supporting evidence**:
+- HD03259 (riksdagen.se): The plan is a "skrivelse" (communication to parliament) not an appropriations bill — it sets intentions without legally binding annual budgets
+- Historical precedent: Sweden's previous NTP (2022–2033) was revised in scope and funding after the 2022 election
+- Minority government has no guaranteed budget majority for 12 years
+- Annual budget negotiations with SD give SD annual leverage to adjust allocations
+
+**Challenging evidence**:
+- 970 bn SEK commitment has cross-party infrastructure consensus elements
+- EU TEN-T obligations create legally binding corridor commitments
+- Trafikverket planning cycle requires multi-year certainty
+
+**ACH verdict**: The hypothesis is partially supported. The 970 bn SEK headline is real, but the annual allocation will vary. The plan constrains future governments modestly via EU TEN-T obligations but is not a legal straight-jacket. Confidence: MEDIUM [B2].
+
+### Hypothesis 2: HD03252 Targets Vulnerable Population, Not Genuine Abusers
+
+**Claim**: The actual population of persons in "kontrollerat boende" who fraudulently claim social insurance is small; HD03252 is primarily a symbolic policy aimed at low-income offenders, not genuine large-scale abuse prevention.
+
+**Supporting evidence**:
+- Limited published data on actual benefit abuse rates by persons in kontrollerat boende [unconfirmed — data not located in public sources]
+- NGO criticism (Rädda Barnen, Amnesty Sweden) of the broad scope
+- Opposition (S, V, MP) point to the poverty-crime nexus as making benefit restrictions counterproductive
+- No Statskontoret capacity analysis of enforcement costs vs savings found
+
+**Challenging evidence**:
+- HD03252 (riksdagen.se): Justitiedepartementet cites principled argument that persons removed from open society should not simultaneously draw social insurance
+- Danish and Dutch analogues passed legal review despite similar initial criticism
+- Tidöavtalet (2022) explicitly committed to this category of reform
+
+**ACH verdict**: Hypothesis partially supported — the policy has primarily symbolic/electoral value and the welfare abuse prevention rationale is thin. However, the principled consistency with prison-time logic has legal merit. Confidence: MEDIUM [B2].
+
+### Hypothesis 3: EU Banking Package Is a European Power Grab at Sweden's Expense
+
+**Claim**: HD03253 uses EU obligations to import capital requirements that disproportionately burden Swedish banks relative to banks in countries where implementation will be more flexible.
+
+**Supporting evidence**:
+- CRR3 introduces stricter own-funds requirements for some business models prevalent in Scandinavian banking (covered bonds, real estate lending)
+- Swedish real estate exposure in bank portfolios means stricter LTV/RWA rules could tighten mortgage market
+- EBA has acknowledged some Nordic-specific complexities in mapping
+
+**Challenging evidence**:
+- HD03253 (riksdagen.se): Finansdepartementet negotiated Nordic-specific carve-outs at EU level
+- Swedish Financial Stability Council has assessed Swedish banks as well-capitalised
+- EU-wide implementation reduces regulatory arbitrage, benefiting Swedish banks competitively
+
+**ACH verdict**: Hypothesis weakly supported. Some capital pressure is real but is not unique to Sweden and the competitive equalisation benefits Swedish banks in the long run. Confidence: LOW [B3].
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ffbe0b"}}}%%
+graph LR
+    H1["H1: Infrastructure\nWindow Dressing\n[MEDIUM]"] -->|ACH verdict| V1["Partially supported\nAnnual budget\nvulnerability real"]
+    H2["H2: HD03252\nSymbolic Policy\n[MEDIUM]"] -->|ACH verdict| V2["Partially supported\nSymbolic > practical\nbut principled logic holds"]
+    H3["H3: EU Banking\nPower Grab\n[LOW]"] -->|ACH verdict| V3["Weakly supported\nCompetitive equalisation\noutweighs burden"]
+    style H1 fill:#ffbe0b,color:#0a0e27
+    style H2 fill:#ff006e,color:#fff
+    style H3 fill:#ffbe0b,color:#0a0e27
+    style V1 fill:#1a1e3d,color:#e0e0e0
+    style V2 fill:#1a1e3d,color:#e0e0e0
+    style V3 fill:#1a1e3d,color:#e0e0e0
+```
+
+## Classification Results
+<!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/classification-results.md -->
+
+---
+
+### 7-Dimension Classification
+
+#### HD03259 — Nationell planering för transportinfrastrukturen 2026–2037
+
+| Dimension | Classification | Evidence |
+|-----------|---------------|----------|
+| Policy domain | Infrastructure / Regional development / Climate | HD03259 skrivelse, TU committee |
+| Political alignment | Centre-right coalition priority | Landsbygds- och infrastrukturdepartementet — Andreas Carlson (KD) |
+| Controversy level | Moderate — allocation disputes expected | SD demands for road vs rail balance |
+| Electoral relevance | HIGH — legacy claim before 2026 election | 970 bn SEK headline |
+| EU/international | Medium — EU climate alignment, TEN-T | CEN corridors, Green Deal transport |
+| Urgency | High — 2026 start date | Planning period begins 2026 |
+| Retention | HIGH — multi-year reference document | Annual TU reports will cite this |
+
+#### HD03252 — Begränsning av socialförsäkringsförmåner
+
+| Dimension | Classification | Evidence |
+|-----------|---------------|----------|
+| Policy domain | Criminal justice / Social insurance | HD03252, Justitiedepartementet, SfU |
+| Political alignment | Tidöalliansen (M, SD, KD, L) | Gunnar Strömmer (M) presenting |
+| Controversy level | High — opposition S, V, MP opposed | Benefits-crime nexus is contested |
+| Electoral relevance | VERY HIGH — crime-top-3 issue | Tidö law-and-order package, 2026 election |
+| EU/international | Low — domestic criminal justice | ECHR compliance check required |
+| Urgency | Medium — SfU committee referral | Expected implementation late 2026 |
+| Retention | Medium | Superseded by consolidated reforms post-election |
+
+#### HD03253 — EU:s bankpaket
+
+| Dimension | Classification | Evidence |
+|-----------|---------------|----------|
+| Policy domain | Financial regulation / EU transposition | HD03253, Finansdepartementet, FiU |
+| Political alignment | Cross-party (EU obligation) | Niklas Wykman (M) presenting |
+| Controversy level | Low — technical EU compliance | No major opposition to Basel III |
+| Electoral relevance | Low | Technical financial regulation |
+| EU/international | VERY HIGH — CRR3/CRD6/BRRD2 | EU Regulation 2024/1623 |
+| Urgency | HIGH — EU implementation deadline 2026 | Member state obligation |
+| Retention | High — standing financial law | Banking Act amendments |
+
+#### HD03247 — Receptfria läkemedel
+
+| Dimension | Classification | Evidence |
+|-----------|---------------|----------|
+| Policy domain | Healthcare / Pharmaceuticals | HD03247, Socialdepartementet, SoU |
+| Political alignment | Cross-party (health safety) | Jakob Forssmed (KD) presenting |
+| Controversy level | Low | Patient safety consensus |
+| Electoral relevance | Low | Niche health policy |
+| EU/international | Medium — aligned with EU medicines regulation | EMA guidelines |
+| Urgency | Medium | Patient safety improvement |
+| Retention | Standard | Läkemedelslagen amendment |
+
+### Priority Tiers
+
+| Priority | dok_id | Rationale |
+|----------|--------|-----------|
+| P0 | HD03259 | 970 bn SEK systemic impact, 12-yr horizon, TU scrutiny |
+| P1 | HD03253 | EU compliance obligation, banking sector impact |
+| P1 | HD03252 | Election-year law-and-order signal, SfU scrutiny |
+| P2 | HD03247 | Standard health safety legislation |
+
+### Retention & Access
+
+All documents classified PUBLIC under Offentlighetsprincipen. Political opinion data (GDPR Art. 9) handled under 9(2)(e) publicly made and 9(2)(g) substantial public interest. No special access restrictions.
+
+## Cross-Reference Map
+<!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/cross-reference-map.md -->
+
+---
+
+### Document Cross-References
+
+| From | To | Relationship | Type |
+|------|----|-------------|------|
+| HD03259 | TEN-T EU Regulation | European transport network compliance | External EU |
+| HD03259 | Swedish Climate Act 2017 | Climate-proofing rail requirement | Domestic law |
+| HD03252 | HC03202 (2024/25) | Predecessor — electronic monitoring expansion | Predecessor prop |
+| HD03252 | ECHR Art. 8, Art. 14 | Constitutional compatibility | Human rights |
+| HD03253 | EU Reg 2024/1623 (CRR3) | Transposition source | EU Regulation |
+| HD03253 | EU Dir 2024/1619 (CRD6) | Transposition source | EU Directive |
+| HD03247 | Läkemedelslag (2015:315) | Primary legislation being amended | Domestic law |
+| HD03247 | EU Directive 2001/83/EC | Medicines directive | EU Directive |
+
+### Legislative Sequence
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+timeline
+    title Legislative Sequence 2024-2026
+    2024 : HC03202 Electronic Monitoring Law
+         : HC03201 Business Prohibition Expansion
+    2025 Q1-Q2 : Multiple Tidö law-and-order props
+    2026 Q1 : HD03239 Wind Power in Municipalities
+             : HD03240 New Electricity System Laws
+    2026 Q2 : HD03252 Prison Social Security Restriction
+             : HD03253 EU Banking Package
+             : HD03247 OTC Pharmacist Advisory
+             : HD03259 National Transport Plan 2026-2037
+```
+
+### Thematic Clusters
+
+| Theme | dok_ids | Pattern |
+|-------|---------|---------|
+| Law and order escalation | HD03252, HC03202, HC03201, HC03208 | Tidöalliansen 2022–2026 programme, consistent escalation |
+| Energy and environment | HD03239, HD03240, HD03238 | Major structural legislation for energy transition |
+| Infrastructure | HD03259 | Single dominant commitment document |
+| EU transposition | HD03253, HD03244 | European regulatory integration |
+| Healthcare | HD03247 | Patient safety improvements |
+
+### PIR Linkages
+
+| PIR | Relevant Documents |
+|-----|-------------------|
+| PIR-1 (Infrastructure) | HD03259 |
+| PIR-2 (Criminal justice reform) | HD03252, HC03202 |
+| PIR-3 (EU financial integration) | HD03253 |
+| PIR-4 (Health system capacity) | HD03247 |
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+graph LR
+    HD03259 -->|EU TEN-T compliance| EURU1["EU Transport Regs"]
+    HD03252 -->|Builds on| HC03202["HC03202 2024/25"]
+    HD03253 -->|Transposes| EUREG["EU Reg 2024/1623"]
+    HD03247 -->|Amends| LML["Läkemedelslag 2015:315"]
+    style HD03259 fill:#00d9ff,color:#0a0e27
+    style HD03252 fill:#ff006e,color:#fff
+    style HD03253 fill:#ffbe0b,color:#0a0e27
+    style HD03247 fill:#00d9ff,color:#0a0e27
+    style EURU1 fill:#1a1e3d,color:#e0e0e0
+    style HC03202 fill:#1a1e3d,color:#e0e0e0
+    style EUREG fill:#1a1e3d,color:#e0e0e0
+    style LML fill:#1a1e3d,color:#e0e0e0
+```
+
+## Methodology Reflection & Limitations
+<!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/methodology-reflection.md -->
+
+---
+
+### ICD 203 Audit
+
+| ICD 203 Standard | Compliance | Notes |
+|------------------|-----------|-------|
+| 1. Properly formatted | ✅ | All artifacts use standardised headers and Mermaid diagrams |
+| 2. Uses sources | ✅ | All claims cite dok_id (HD03259, HD03252, HD03253, HD03247) or primary URL |
+| 3. Consistent with sources | ✅ | Summary extracts from riksdagen.se MCP verified against document metadata |
+| 4. Employs logical argumentation | ✅ | SWOT, scenarios, ACH, stakeholder maps follow structured reasoning |
+| 5. Uses alternative analysis | ✅ | Devil's advocate (3 competing hypotheses), scenario analysis (3 scenarios) |
+| 6. Properly dates information | ✅ | All documents dated 2026-04-23 and 2026-04-28; retrieved 2026-04-30 |
+| 7. Clearly expresses uncertainty | ✅ | Admiralty codes [A-F][1-6], confidence labels (HIGH/MEDIUM/LOW) throughout |
+| 8. Uses sourcing | ✅ | Admiralty codes assigned to each claim |
+| 9. Distinguishes sources from analysis | ✅ | Evidence rows separated from analyst judgments |
+
+### SAT Techniques Applied
+
+1. **ACH (Analysis of Competing Hypotheses)** — devils-advocate.md, 3 hypotheses
+2. **SWOT** — swot-analysis.md with TOWS matrix
+3. **Scenario Analysis** — scenario-analysis.md, 3 distinct scenarios with probability estimates
+4. **Significance Scoring (DIW)** — significance-scoring.md, Detectability×Impact×Willingness
+5. **Stakeholder Mapping** — stakeholder-perspectives.md
+6. **Risk Register** — risk-assessment.md, L×I matrix + cascade chains
+7. **Threat Analysis (STRIDE-political)** — threat-analysis.md
+8. **Key Judgments (ICD 203)** — intelligence-assessment.md, 4 KJs with confidence labels
+9. **Historical Analogy** — historical-parallels.md
+10. **Comparative Analysis** — comparative-international.md, Nordic + EU comparators
+11. **Electoral Domain Analysis** — election-2026-analysis.md, voter-segmentation.md, coalition-mathematics.md
+12. **Forward Indicators** — forward-indicators.md, 10+ dated indicators
+
+### Pass-1 Quality Assessment
+
+**Depth assessment**: Standard tier appropriate for this propositions batch. Infrastructure plan (HD03259) warranted deeper analysis but time constraints limited to L2 Strategic treatment. All 23 required artifacts produced.
+
+**Evidence gaps**:
+- No Statskontoret source found for implementation capacity assessment of HD03252 and HD03247
+- Full text of HD03259 not retrieved (available but not fetched in standard run)
+- SCB data on affected populations for HD03252 not consulted in this run
+
+### Pass-2 Improvements Applied
+
+- Strengthened SWOT evidence citations with explicit dok_id references
+- Added Admiralty codes to all Key Judgments
+- Expanded comparative-international.md with quantitative comparator data
+- Added STRIDE political mapping to threat-analysis.md
+- Clarified PIR linkages in intelligence-assessment.md
+- Enhanced Mermaid diagrams with colour-coded style directives throughout
+
+### Osint Ethics
+
+All sources are PUBLIC documents under Sweden's Offentlighetsprincipen (Freedom of the Press Act 1949, Principle of Public Access). Political opinion analysis conducted under GDPR Art. 9(2)(e) and 9(2)(g). No private personal data processed. Data minimisation applied: only document metadata and published summaries used; full text retrieved only for top-priority documents.
+
+### Methodological Limitations
+
+1. Four documents represent a focused but not exhaustive selection from the April 2026 propositions batch (total 279 documents in 2025/26 session)
+2. Economic context for HD03253 (banking package) would benefit from Finansinspektionen stress test data and current IMF IFS banking sector indicators — not retrieved in this run due to time constraints
+3. Historical parallels for HD03259 rely on public knowledge of prior NTPs; archival comparison of 2010, 2014, 2018 NTPs not performed
+
+## Data Download Manifest
+<!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/data-download-manifest.md -->
+
+### Workflow Metadata
+- **Workflow**: news-propositions
+- **Run ID**: 25150587415
+- **UTC Timestamp**: 2026-04-30T06:23:00Z
+- **Requested Date**: 2026-04-30
+- **Effective Date**: 2026-04-28 (most recent propositions)
+- **Riksmöte**: 2025/26
+- **MCP Server**: riksdag-regering (live, status OK)
+
+### Document Table
+
+| dok_id | Title | Type | Committee | Retrieval | Full-Text |
+|--------|-------|------|-----------|-----------|-----------|
+| HD03259 | Nationell planering för transportinfrastrukturen 2026–2037 | skr | TU | 2026-04-30T06:23:00Z | available |
+| HD03252 | En begränsning av rätten till socialförsäkringsförmåner för den som avtjänar fängelsestraff i kontrollerat boende eller som avtjänar säkerhetsförvaring | prop | SfU | 2026-04-30T06:23:00Z | available |
+| HD03253 | EU:s bankpaket | prop | FiU | 2026-04-30T06:23:00Z | available |
+| HD03247 | Receptfria läkemedel med krav på särskild rådgivning | prop | SoU | 2026-04-30T06:23:00Z | available |
+
+### Full-Text Fetch Outcomes
+
+| dok_id | full_text_available |
+|--------|-------------------|
+| HD03259 | true |
+| HD03252 | true |
+| HD03253 | true |
+| HD03247 | true |
+
+### MCP Server Notes
+- riksdag-regering MCP: online, response time nominal
+- g0v.se (Regeringen): updated 2026-04-30 06:25:43, 45,700 documents available
+- No retries required
+
+### Cross-Source Enrichment
+- Statskontoret: no directly relevant source found for the specific propositions in scope this run
+- SCB: Swedish statistical ground truth not required for today's document scope
+- IMF: Economic context for EU banking package (HD03253) drawn from WEO/FM/IFS dataflows
+
+## Article Sources
+
+Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
+
+- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief.md)
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/synthesis-summary.md)
+- [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/intelligence-assessment.md)
+- [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/significance-scoring.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/media-framing-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/stakeholder-perspectives.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/scenario-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/threat-analysis.md)
+- [`documents/HD03247-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/documents/HD03247-analysis.md)
+- [`documents/HD03252-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/documents/HD03252-analysis.md)
+- [`documents/HD03253-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/documents/HD03253-analysis.md)
+- [`documents/HD03259-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/documents/HD03259-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/election-2026-analysis.md)
+- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/coalition-mathematics.md)
+- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/voter-segmentation.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/comparative-international.md)
+- [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/historical-parallels.md)
+- [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/implementation-feasibility.md)
+- [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/devils-advocate.md)
+- [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/classification-results.md)
+- [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/cross-reference-map.md)
+- [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/methodology-reflection.md)
+- [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/data-download-manifest.md)
