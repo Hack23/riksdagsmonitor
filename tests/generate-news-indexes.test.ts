@@ -492,6 +492,153 @@ describe('Generate News Indexes', () => {
       // SearchAction (Sitelinks Searchbox) is preserved on the WebSite blob.
       expect(enContent).toContain('"@type":"SearchAction"');
     });
+
+    it('should include collapsible filter-bar-wrapper details element', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('class="filter-bar-wrapper"');
+      expect(enContent).toContain('class="filter-bar-toggle"');
+      expect(enContent).toContain('class="filter-bar"');
+    });
+
+    it('should include clear-filters button with localized English label', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('id="clear-filters-btn"');
+      expect(enContent).toContain('class="clear-filters-btn"');
+      expect(enContent).toContain('Clear filters');
+    });
+
+    it('should include localized clear-filters label for Swedish', () => {
+      module.generateAllIndexes();
+      const svContent = fs.readFileSync(path.join(NEWS_DIR, 'index_sv.html'), 'utf-8');
+      expect(svContent).toContain('Rensa filter');
+    });
+
+    it('should include localized clear-filters label for Arabic', () => {
+      module.generateAllIndexes();
+      const arContent = fs.readFileSync(path.join(NEWS_DIR, 'index_ar.html'), 'utf-8');
+      expect(arContent).toContain('مسح الفلاتر');
+    });
+
+    it('should include filter-active-count badge with aria-live', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('id="filter-active-count"');
+      expect(enContent).toContain('aria-live="polite"');
+    });
+
+    it('should include article-card-skeleton elements in articles grid', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('class="article-card-skeleton"');
+      expect(enContent).toContain('class="skeleton-line skeleton-meta"');
+      expect(enContent).toContain('class="skeleton-line skeleton-title"');
+      expect(enContent).toContain('class="skeleton-line skeleton-excerpt"');
+      expect(enContent).toContain('class="skeleton-line skeleton-tags"');
+    });
+
+    it('should set aria-busy on articles grid initially for skeleton state', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('id="articles-grid"');
+      expect(enContent).toContain('aria-busy="true"');
+    });
+
+    it('should include skeleton cards with aria-hidden for accessibility', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      // Skeletons are decorative — must be hidden from AT
+      expect(enContent).toContain('class="article-card-skeleton" aria-hidden="true"');
+    });
+
+    it('should include computeRecency function in client script', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('function computeRecency(');
+      expect(enContent).toContain("return 'today'");
+      expect(enContent).toContain("return 'this-week'");
+      expect(enContent).toContain("return 'this-month'");
+    });
+
+    it('should include RECENCY_LABELS JSON blob in client script', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('const RECENCY_LABELS =');
+      expect(enContent).toContain('"today"');
+      expect(enContent).toContain('"this-week"');
+      expect(enContent).toContain('"this-month"');
+    });
+
+    it('should localise RECENCY_LABELS for Swedish', () => {
+      module.generateAllIndexes();
+      const svContent = fs.readFileSync(path.join(NEWS_DIR, 'index_sv.html'), 'utf-8');
+      expect(svContent).toContain('Idag');
+      expect(svContent).toContain('Denna vecka');
+      expect(svContent).toContain('Denna månad');
+    });
+
+    it('should include localizeRecency function in client script', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('function localizeRecency(');
+    });
+
+    it('should include recency-badge in article card builder', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('class="recency-badge"');
+      expect(enContent).toContain('data-recency=');
+    });
+
+    it('should include data-date-recent attribute in article card builder', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('data-date-recent=');
+    });
+
+    it('should include updateFilterChrome function in client script', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('function updateFilterChrome(');
+      expect(enContent).toContain("clearBtn.hidden = activeCount === 0");
+    });
+
+    it('should include clearAllFilters function in client script', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('function clearAllFilters(');
+    });
+
+    it('should wire clear-filters button to clearAllFilters via onclick', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      // Button calls clearAllFilters when clicked
+      expect(enContent).toContain('clearAllFilters()');
+    });
+
+    it('should apply dir="ltr" to language badges in RTL layout (Arabic)', () => {
+      module.generateAllIndexes();
+      const arContent = fs.readFileSync(path.join(NEWS_DIR, 'index_ar.html'), 'utf-8');
+      // Arabic pages set IS_RTL = true, so language badges get dir="ltr"
+      expect(arContent).toContain('const IS_RTL = true');
+    });
+
+    it('should set IS_RTL = false for non-RTL languages (English)', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('const IS_RTL = false');
+    });
+
+    it('should include filter-bar with all four filter groups', () => {
+      module.generateAllIndexes();
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      // type, topic, sort, search — four filter groups
+      expect(enContent).toContain('id="filter-type"');
+      expect(enContent).toContain('id="filter-topic"');
+      expect(enContent).toContain('id="filter-sort"');
+      expect(enContent).toContain('id="search-input"');
+    });
   });
 
   describe('classifyArticleType multi-language', () => {
