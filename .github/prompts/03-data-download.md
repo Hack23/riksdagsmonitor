@@ -145,7 +145,7 @@ For every committee-report, motion, or interpellation cycle, enrich the manifest
 
 ## Statskontoret enrichment
 
-Statskontoret pre-warm is a **mandatory checklist item** for every cycle, not "if relevant". For each downloaded document, judge against this trigger list — if **any** trigger fires, perform a Statskontoret search:
+Statskontoret pre-warm is a **mandatory checklist evaluation** for every cycle, not "if relevant" — the trigger list below is **always evaluated**, even when no actual `web_fetch` is needed. For each downloaded document, judge against this trigger list — if **any** trigger fires, perform a Statskontoret search; if **no** trigger fires, record the negative finding so downstream artifacts know absence was examined, not skipped:
 
 | Trigger | Examples |
 |---------|----------|
