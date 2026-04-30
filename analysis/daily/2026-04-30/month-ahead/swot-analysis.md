@@ -58,3 +58,36 @@ SWOT assessed from the perspective of the Tidöalliansen government's ability to
 ## Cross-SWOT Pattern
 
 The dominant cross-SWOT dynamic is **S1+O1 vs T1**: the government's majority strength enables NTP passage (Strength), but SD's coalition leverage creates a structural extraction opportunity (Threat). The observable leading indicator is whether SD files amendments in TU. No amendments = clean legacy pass; amendments accepted = political cost; amendments rejected = coalition friction story.
+
+## SWOT Overview Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+quadrantChart
+    title SWOT Analysis — Month Ahead 2026-04-30
+    x-axis Internal --> External
+    y-axis Negative --> Positive
+    quadrant-1 Opportunities
+    quadrant-2 Strengths
+    quadrant-3 Weaknesses
+    quadrant-4 Threats
+    NTP 970bn SEK: [0.25, 0.9]
+    SD Coalition Leverage: [0.2, 0.45]
+    Immigration Package Complexity: [0.3, 0.2]
+    EU Asylum Pact Risk: [0.8, 0.15]
+    NATO Integration: [0.85, 0.8]
+    Election 2026 Positioning: [0.7, 0.75]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    S1["S1: Majority\nStrength"]:::str --> O1["O1: NTP Legacy\nDelivery"]:::opp
+    S1 --> T1["T1: SD\nExtraction Risk"]:::thr
+    W1["W1: Immigration\nComplexity"]:::wk --> T2["T2: LO/TF\nReaction"]:::thr
+    O2["O2: NATO\nCredentials"]:::opp --> S1
+    classDef str fill:#00d9ff,color:#0a0e27
+    classDef wk fill:#ff006e,color:#fff
+    classDef opp fill:#ffbe0b,color:#0a0e27
+    classDef thr fill:#1a1e3d,color:#ff006e
+```

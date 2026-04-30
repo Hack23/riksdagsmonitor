@@ -18,7 +18,7 @@
 
 ### Statskontoret Evidence
 
-**Search result**: Statskontoret report on major infrastructure project delivery — no specific 2026 NTP pre-implementation review found in available data (Statskontoret typically publishes post-implementation reviews).
+**Search result**: Statskontoret report on major infrastructure project delivery — no specific 2026 NTP pre-implementation review found in available data (Statskontoret typically publishes post-implementation reviews). Source: https://www.statskontoret.se/
 
 **Nearest relevant Statskontoret publication**: "Effektiv statlig infrastrukturförvaltning" (2023:18) — found evidence that:
 - Trafikverket project delivery rate for major rail projects (>5bn SEK) was 68% on-time, 74% on-budget 2015–2022
@@ -71,3 +71,23 @@ Key implementation constraints:
 | CRR3 HD03253 | VERY HIGH | FI circular June 2026 | None significant |
 | JuU9 court reform | MEDIUM | IT system upgrade Q4 2026 | Judicial recruitment |
 | Opposition motions | N/A — not passing | N/A | N/A |
+
+## Implementation Feasibility Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart TD
+    PACKAGES["May 2026\nImplementation\nPackages"] --> IM_CLUSTER["Immigration\nHD03262-65\nMigrationsverket"]
+    PACKAGES --> NTP["Transport Plan\nHD03259\nTrafikverket"]
+    PACKAGES --> NUCLEAR["Nuclear Permits\nHD01NU19\nSSM"]
+    IM_CLUSTER --> MIG_CAP["Migrationsverket\nCapacity:\n★★★ (MEDIUM)"]
+    NTP --> TV_CAP["Trafikverket\nCapacity:\n★★★★★ (HIGH)"]
+    NUCLEAR --> SSM_CAP["SSM\nCapacity:\n★★★★ (HIGH)"]
+    style PACKAGES fill:#00d9ff,color:#0a0e27
+    style IM_CLUSTER fill:#ff006e,color:#fff
+    style NTP fill:#ffbe0b,color:#0a0e27
+    style NUCLEAR fill:#1a1e3d,color:#00d9ff
+    style MIG_CAP fill:#ff006e,color:#fff
+    style TV_CAP fill:#1a1e3d,color:#ffbe0b
+    style SSM_CAP fill:#1a1e3d,color:#00d9ff
+```

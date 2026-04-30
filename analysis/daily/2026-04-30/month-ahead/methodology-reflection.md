@@ -80,3 +80,11 @@ The coalition-mathematics.md artifact was completed but lacked real-time seat pr
 | Comparator jurisdictions | 5 | ≥2 |
 
 **Self-assessment**: PASS — all ICD 203 metrics met; analytical depth is adequate for standard depth Tier-C aggregation.
+
+## Re-run log
+
+- **Re-run**: 2026-04-30T13:03:30Z · workflow=news-month-ahead · run_id=25166621315 · attempt=improvement
+  - new dok_ids: 10 (HD03251, HD03254, HD03258, HD03260, HD03262, HD03263, HD03264, HD03265, HD11777, HD11778)
+  - artifacts extended: data-download-manifest.md, cross-reference-map.md, synthesis-summary.md, forward-indicators.md, documents/ (10 new per-doc files)
+  - flags closed: 0
+  - vintage refresh: no, IMF WEO Apr-2026 still current

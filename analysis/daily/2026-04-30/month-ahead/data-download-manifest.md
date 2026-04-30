@@ -54,3 +54,25 @@
 ## Lookback
 
 - Primary date 2026-04-30 returned 11 documents. Sibling analyses from the 30-day window (2026-03-30 to 2026-04-30) provide comprehensive month-ahead synthesis.
+
+## Re-run 2026-04-30 13:03 UTC
+
+New documents retrieved on re-run:
+
+| dok_id | Title | Type | Dept | Retrieved | Full-text |
+|--------|-------|------|------|-----------|-----------|
+| HD03251 | En mer sammanhållen vård för skadligt bruk | prop | Socialdepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03254 | Förbättrade förutsättningar för operativt militärt samarbete | prop | Försvarsdepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03258 | Ökad insyn i politiska processer | prop | Justitiedepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03260 | En mer ändamålsenlig reglering av etikprövning | prop | Utbildningsdepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03262 | Utmönstring av permanent uppehållstillstånd + EU asylpakt | prop | Justitiedepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03263 | Stärkt återvändandeverksamhet | prop | Justitiedepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03264 | Skärpta krav på vandel för uppehållstillstånd | prop | Justitiedepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03265 | Skärpta regler om uppsikt och förvar | prop | Justitiedepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD11777 | Verksamheten vid Statens museer för världskultur | fr | MP | 2026-04-30T13:03Z | metadata-only |
+| HD11778 | Nekad mammografi på grund av grav funktionsnedsättning | fr | S | 2026-04-30T13:03Z | metadata-only |
+
+### Key Finding
+2026-04-30 represents a major legislative package day: four Justitiedepartementet immigration propositions (HD03262-65) constitute Sweden's largest single-day migration law submission in modern history.
+
+<full-text-fallback: metadata-only documents in this re-run batch>

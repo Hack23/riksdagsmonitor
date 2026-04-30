@@ -62,3 +62,52 @@ The following events would trigger scenario downgrade (Scenario 1→2 or Scenari
 | PIR-3 (opinion polling) | 4, 8, 14 | Weekly poll aggregation; Novus tracker |
 | PIR-4 (AI Act transposition) | 18 | Post-election; monthly check |
 | PIR-5 (FI CRR3 circular) | 11 | FI.se regulatory watch |
+
+## Re-run 2026-04-30: Updated Forward Indicators
+
+### New Trigger Events (from 2026-04-30 legislation)
+
+| Date | Indicator | Horizon | Source | Confidence |
+|------|-----------|---------|--------|-----------|
+| 2026-05-07 | HD03262 first committee hearing (JuU) | +1 week | HD03262 | MEDIUM |
+| 2026-05-14 | HD03254 military cooperation committee vote (FöU) | +2 weeks | HD03254 | MEDIUM |
+| 2026-05-20 | HD03262–65 immigration package second reading | +3 weeks | HD03262-65 | HIGH |
+| 2026-06-01 | EU Commission reaction to Swedish permanent-permit abolition | +1 month | HD03262 | MEDIUM |
+| 2026-06-15 | ECHR / UN CAT preliminary statements on HD03265 detention rules | +6 weeks | HD03265 | LOW |
+| 2026-09-13 | Swedish election — immigration package becomes centrepiece campaign debate | Election | riksdagen.se | VERY HIGH |
+| 2026-05-10 | HD03258 political transparency public hearing | +10 days | HD03258 | MEDIUM |
+| 2026-05-05 | Migrationsverket statement on operational impact of HD03262 | +5 days | HD03262 | MEDIUM |
+| 2026-05-28 | NATO Vilnius +2 yr implementation review — relates to HD03254 | +4 weeks | HD03254 | MEDIUM |
+| 2026-05-12 | HD03251 addiction care consultation period closes | +2 weeks | HD03251 | LOW |
+
+## Forward Indicators Timeline
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Forward Indicators — Month Ahead 2026-04-30
+    dateFormat YYYY-MM-DD
+    section Immigration
+    HD03262 Migrationsverket statement  :milestone, 2026-05-05, 1d
+    HD03265 Administrative review       :milestone, 2026-05-15, 1d
+    section Transport
+    HD03259 TU committee consideration  :active, 2026-05-01, 14d
+    section Security
+    HD03254 NATO Vilnius +2 review      :milestone, 2026-05-28, 1d
+    section Economy
+    IMF WEO Spring update               :milestone, 2026-05-07, 1d
+    section Election
+    Swedish Election 2026               :milestone, 2026-09-13, 1d
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    NOW["2026-04-30\n(Today)"] --> MAY1["May 2026\nHD03262-65\nKey votes"]
+    MAY1 --> JUN["June 2026\nSummer recess\nbegins"]
+    JUN --> SEP["Sep 2026\nElection\n2026-09-13"]
+    style NOW fill:#00d9ff,color:#0a0e27
+    style MAY1 fill:#ff006e,color:#fff
+    style JUN fill:#1a1e3d,color:#ffbe0b
+    style SEP fill:#ffbe0b,color:#0a0e27
+```
