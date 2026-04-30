@@ -145,7 +145,11 @@ jobs:
     name: Multi-Language Sanity Tests
     runs-on: ubuntu-latest
     needs: build-test
-    timeout-minutes: 5 # Max 5 minutes
+    # This job covers homepage + dashboard + news across all 14 languages
+    # (~3× the work of the per-page Cypress jobs), so it needs a larger budget
+    # than the 5-minute per-page jobs. The previous 5-minute timeout caused
+    # repeated cancellations on both PRs and main (see run 3064).
+    timeout-minutes: 15
     
     steps:
       - name: Harden Runner
