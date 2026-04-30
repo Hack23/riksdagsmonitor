@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "cycle": "realtime-pulse",
+  "date": "2026-04-30",
+  "subfolder": "realtime-pulse",
+  "generated_at": "2026-04-30T11:00:00Z",
+  "inherited_from": null,
+  "pirs": [
+    {
+      "pir_id": "PIR-1",
+      "statement": "Will Lagrådet approve HD03265 (migration detention) without requiring substantive ECHR-driven amendments?",
+      "trigger": "Lagrådet advisory opinion published on lagrådet.se",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "inherits_from": [],
+      "evidence_refs": ["HD03265"],
+      "horizon": "2026-06-15",
+      "admiralty_grade": "B2"
+    },
+    {
+      "pir_id": "PIR-2",
+      "statement": "Will L (Liberalerna) publicly support HD03265 without conditions, or will they distance from the detention provisions?",
+      "trigger": "Liberalerna press release or riksdagen.se committee statement within 14 days of HD03265 submission",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "inherits_from": [],
+      "evidence_refs": ["HD03265"],
+      "horizon": "2026-05-14",
+      "admiralty_grade": "B3"
+    },
+    {
+      "pir_id": "PIR-3",
+      "statement": "Will HD03263, HD03264, and HD03265 all receive chamber votes before the September 13, 2026 election?",
+      "trigger": "riksdagen.se kammaraktiviteter shows scheduled votes for all three bills",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "inherits_from": [],
+      "evidence_refs": ["HD03263", "HD03264", "HD03265"],
+      "horizon": "2026-09-01",
+      "admiralty_grade": "B2"
+    },
+    {
+      "pir_id": "PIR-4",
+      "statement": "Will HD03254 (military cooperation) pass with a supermajority (>300 Ja votes), confirming cross-party defence consensus?",
+      "trigger": "riksdagen.se voteringar record for HD03254 shows ≥300 Ja",
+      "status": "open",
+      "confidence": "HIGH",
+      "inherits_from": [],
+      "evidence_refs": ["HD03254"],
+      "horizon": "2026-08-01",
+      "admiralty_grade": "B1"
+    },
+    {
+      "pir_id": "PIR-5",
+      "statement": "Will Migrationsverket formally request phased implementation of HD03263-265 in SfU committee hearings?",
+      "trigger": "riksdagen.se dokument shows Migrationsverket submission to SfU requesting delay or phasing",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "inherits_from": [],
+      "evidence_refs": ["HD03263", "HD03264", "HD03265"],
+      "horizon": "2026-07-01",
+      "admiralty_grade": "B3"
+    }
+  ]
+}
