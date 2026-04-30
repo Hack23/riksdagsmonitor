@@ -132,7 +132,7 @@ flowchart LR
 | **Election-proximity multiplier (1.5×)** | applied when election ≤ 6 months | `applied: Y/N` · scope: `opposition motions / contested propositions` | 🟢 applied · 🟡 N/A (outside window) |
 | **Withdrawn documents** | listed not silently dropped | _N_ rows in `data-download-manifest.md §Withdrawn Documents` | 🟢 all listed · 🟡 N/A (none in batch) |
 | **PIR carry-forward** | prior-cycle PIRs read at pre-warm | _N_ open PIRs ingested · _N_ closed this run | 🟢 read at pre-warm · 🟡 read end-of-cycle · 🔴 not read |
-| **ICD 203 §9 (Collaboration / Review)** — three-component substitute | all 3 evidenced | Pass 2 ✅/❌ · Devil's Advocate ✅/❌ · Cross-folder/Prior-cycle citation ✅/❌ | 🟢 all 3 ✅ · 🟡 2/3 ✅ (Standard 9 = PARTIAL) · 🔴 ≤ 1/3 ✅ |
+| **Single-agent review substitute** — three-component non-ICD control | all 3 evidenced | Pass 2 ✅/❌ · Devil's Advocate ✅/❌ · Cross-folder/Prior-cycle citation ✅/❌ | 🟢 all 3 ✅ · 🟡 2/3 ✅ · 🔴 ≤ 1/3 ✅ |
 
 ---
 
@@ -186,7 +186,7 @@ flowchart LR
 | **8. Accurate judgments made** | ✅ | Quality gate score 8.01/10 |
 | **9. Visual information incorporated** | ✅ | 19 Mermaid diagrams across workflow |
 
-> **ICD 203 §9 single-agent substitute**: news workflows run as a single AI agent. Per [`04-analysis-pipeline.md §ICD 203 §9 — Collaboration / Review`](../../.github/prompts/04-analysis-pipeline.md), the collaboration substitute requires **all three** components evidenced — (a) Pass 2 read-back, (b) Devil's Advocate / ACH ≥ 3 hypotheses, (c) cross-folder peer citation (Tier-C) **or** prior-cycle citation (single-type) — for Standard 9 to score PASS rather than PARTIAL. State which components were satisfied; if any is missing, surface the gap as the top item in §What to Improve.
+> **Single-agent review substitute** (separate non-ICD internal control): news workflows run as a single AI agent. Per [`04-analysis-pipeline.md §Single-agent review substitute`](../../.github/prompts/04-analysis-pipeline.md), this control requires **all three** components evidenced — (a) Pass 2 read-back, (b) Devil's Advocate / ACH ≥ 3 hypotheses, (c) cross-folder peer citation (Tier-C) **or** prior-cycle citation (single-type). State which components were satisfied in the §Content Metrics row; if any is missing, surface the gap as the top item in §What to Improve. ICD 203 Standard 9 keeps its established repository meaning — assess it separately above using the existing terminology, not via this substitute control.
 
 **ICD 203 Compliance Status:** `[SELECT: ✅ COMPLIANT / ❌ NON-COMPLIANT]`
 

@@ -171,15 +171,15 @@ Single-source thematic inference of party is **not** acceptable evidence for P0 
 
 When the next general election is **≤ 6 months away** (Sweden's general election falls on the second Sunday of September of an election year — for 2026 the cutoff is **2026-03-13** through **2026-09-13**), apply a **1.5× multiplier** to the Detectability × Impact × Willingness DIW score for **opposition motions** and **government propositions in contested policy areas** (migration, defence, taxation, climate, criminal justice). Aggregate opposition motion bursts (≥ 5 motions filed the same day) receive an additional aggregation weight per `synthesis-methodology.md`. Record the multiplier explicitly in `significance-scoring.md` (e.g. `DIW = 4.2 × 1.5 (election ≤ 6 months) = 6.3`) and in `methodology-reflection.md §Content Metrics`.
 
-## ICD 203 §9 — Collaboration / Review (single-agent runs)
+## Single-agent review substitute (non-ICD control)
 
-ICD 203 Standard 9 (Collaboration / Coordination) is a recurring "PARTIAL" finding because riksdagsmonitor news workflows run as a single AI agent. The **collaboration substitute** for single-agent runs has three concrete components, all of which MUST be evidenced in `methodology-reflection.md §ICD 203 Audit` for Standard 9 to score as PASS rather than PARTIAL:
+ICD 203 Standard 9 keeps its established repository meaning (per `osint-tradecraft-standards.md` and existing `methodology-reflection.md §ICD 203 Audit` checklists — see [`analysis/templates/methodology-reflection.md`](../../analysis/templates/methodology-reflection.md)) and is evidenced through the artifacts already mapped to it. Because riksdagsmonitor news workflows run as a single AI agent, they additionally require a separate **single-agent review substitute** internal control to compensate for the absence of live peer collaboration. This control has three concrete components, all of which MUST be evidenced in `methodology-reflection.md §Content Metrics` (row "Single-agent review substitute"):
 
 1. **Pass 2 read-back** — every artifact (except `data-download-manifest.md`) is read back in full and improved (file mtime gate; `pass1/` snapshot in `$ANALYSIS_DIR/pass1/`).
 2. **Devil's Advocate / ACH** — `devils-advocate.md` carries ≥ 3 competing hypotheses, with at least one rejecting the synthesis-summary lede.
 3. **Cross-folder peer citation** — for aggregation workflows (Tier-C), at least one sibling-folder artifact is cited per `cross-reference-map.md` row; for single-type workflows, at least one **prior-cycle** artifact (same-subfolder previous run via `cross-run-diff.md`) is cited.
 
-When these three components are evidenced, Standard 9 is PASS. When any is missing, it remains PARTIAL and the gap must be the top item in `methodology-reflection.md §What to Improve`.
+When all three components are evidenced, the substitute control is complete. When any is missing, record the control as incomplete and surface the gap as the top item in `methodology-reflection.md §What to Improve`. This control is **not** a renumbered ICD standard — assess each ICD 203 standard separately under its established repository terminology.
 
 Full IMF integration reference: [`analysis/imf/README.md`](../../analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](../../analysis/imf/agentic-integration.md) (7-step playbook) · [`analysis/imf/data-dictionary.md`](../../analysis/imf/data-dictionary.md).
 

@@ -50,7 +50,7 @@ Rules:
 - **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) v3.0+.
 - **Firewall egress**: `data.imf.org`, `api.imf.org`, `www.imf.org` (already in every workflow's `network.allowed`).
 - **Statskontoret egress**: `www.statskontoret.se` / `statskontoret.se` are public non-MCP web sources used for agency capacity, state-governance evaluations, implementation feasibility, administrative burden and public-sector efficiency evidence.
-- **Lagrådet egress**: `www.lagradet.se` / `lagradet.se` are public non-MCP web sources for Council on Legislation referrals and yttranden on government propositions touching constitutional law, fundamental rights, criminal procedure, court organisation, surveillance, and taxation principles. Required input for major-bill `risk-assessment.md`, `threat-analysis.md` and `forward-indicators.md` per `03-data-download.md §Lagrådet enrichment`.
+- **Lagrådet egress**: `www.lagradet.se` / `lagradet.se` are public non-MCP web sources for Council on Legislation referrals and yttranden on government propositions touching constitutional law, fundamental rights, criminal procedure, court organisation, surveillance, and taxation principles. Allow-listed in every news workflow's `network.allowed`. Required input for major-bill `risk-assessment.md`, `threat-analysis.md` and `forward-indicators.md` per `03-data-download.md §Lagrådet enrichment`.
 
 ## Health gate (in-prompt)
 
