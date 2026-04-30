@@ -354,9 +354,9 @@ Exit code 0 = pass, non-zero = fail with per-check report. Precondition for chec
 - **Fail** → fix flagged files (never delete them), re-run the gate, then proceed.
 - **Unrecoverable fail after fixes** → stage whatever analysis exists, commit with label `analysis-only`, call `safeoutputs___create_pull_request` once (see `07-commit-and-pr.md`). Do **not** generate articles.
 
-## Deduplication note
+## Re-run / deduplication note
 
-If today's article HTML already exists under `news/` **and** `force_generation=false`, skip article generation but still run analysis and still commit. The PR label is `analysis-only`. There is still exactly one PR call.
+Same-day re-runs are **improvement runs**, not skip runs, when `03-data-download.md §Pre-flight` detects a reusable on-disk analysis baseline (all 23 required artifacts present, **or** at least `synthesis-summary.md` on disk) and sets `IMPROVEMENT_MODE=true`. Existing rendered HTML under `news/` can be a sign that a same-day article was already produced, but HTML presence alone does **not** establish improvement mode — the router keys off analysis baselines, not HTML. On improvement runs, the analysis pipeline runs in extend-and-improve mode (`04-analysis-pipeline.md §Execution order`), the gate runs normally against the improved artifacts, and the aggregator + renderer (`06-article-generation.md`) **always** regenerate `article.md` and `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv}.html` so the published article reflects the improved analysis. PR labels remain governed by `07-commit-and-pr.md`. There is still exactly one PR call. **Never** call `safeoutputs___noop` because today's HTML "already exists" — if pre-flight selected improvement mode, existing HTML is a reason to regenerate updated output, not to exit early.
 
 ## Supplementary checks
 

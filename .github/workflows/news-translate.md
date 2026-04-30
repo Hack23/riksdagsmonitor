@@ -264,7 +264,13 @@ Translation is a pure-derivative workflow:
 - No original analysis. Never produce files under `analysis/daily/`.
 - Validate every translation against the source with `scripts/validate-news-translations.ts` before commit.
 - Keep the PR under the safe-outputs 100-file cap. If more translations are pending than fit in one PR, translate the highest-priority batch and leave the rest for the next scheduled run.
-- Skip any language whose translation already exists and is non-empty unless `force` is explicitly requested.
+- **Per-language idempotency, not workflow-level no-op**:
+  - A target language is skipped *for that language only* when **all three** of the following hold:
+    1. its translation file already exists and is non-empty,
+    2. a **deterministic source-revision signal** shows the source has not changed since that translation was last produced (for example, the source file's latest git commit timestamp / commit SHA via `git log -1 --format=%ct -- <path>`, or a content hash / validator-produced source signature — **never** filesystem mtimes, which are unstable on CI runners after `actions/checkout`), and
+    3. `scripts/validate-news-translations.ts` passes for that language.
+  - When **all** target languages satisfy the three conditions above, the run does **not** exit. It enters **translation-improvement mode**: re-run the validator across every translation, use the same deterministic source-revision signal when deciding whether any language needs a refresh, fix any drift / regressions / SEO metadata gaps the validator flags, refresh stale `dateModified`, and commit the resulting changes.
+  - `safeoutputs___noop` is only allowed under the conditions in `07-commit-and-pr.md §No-op policy`. "All translations already exist and are valid" is **never** a noop trigger; it is an improvement trigger.
 
 ## Time budget
 
