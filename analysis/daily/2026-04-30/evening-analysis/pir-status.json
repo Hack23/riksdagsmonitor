@@ -1,0 +1,64 @@
+{
+  "date": "2026-04-30",
+  "subfolder": "evening-analysis",
+  "generated": "2026-04-30T21:00:00Z",
+  "pirs": [
+    {
+      "id": "PIR-EVE-01",
+      "title": "Will the migration mega-package (HD03262–265) pass Riksdag before the September 2026 election?",
+      "status": "OPEN",
+      "priority": "CRITICAL",
+      "confidence": "HIGH",
+      "probability": 0.83,
+      "activation_indicators": ["FI-05", "FI-09", "FI-16"]
+    },
+    {
+      "id": "PIR-EVE-02",
+      "title": "Will HD03254 military cooperation accelerate Saab/BAE procurement contracts?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "confidence": "MEDIUM",
+      "probability": 0.70,
+      "activation_indicators": ["FI-11"]
+    },
+    {
+      "id": "PIR-EVE-03",
+      "title": "Will SD maintain coalition discipline through HD03258 transparency disclosures?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "confidence": "MEDIUM",
+      "probability": 0.70,
+      "activation_indicators": ["FI-04", "FI-12"]
+    },
+    {
+      "id": "PIR-EVE-04",
+      "title": "Is parliament's legislative capacity sufficient to process HD03262–265 before summer recess?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "confidence": "MEDIUM",
+      "probability": 0.55,
+      "activation_indicators": ["FI-02", "FI-09"]
+    },
+    {
+      "id": "PIR-EVE-05",
+      "title": "Will international legal challenges (ECHR, EU) materially delay HD03262 implementation?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "confidence": "MEDIUM",
+      "probability": 0.35,
+      "activation_indicators": ["FI-07", "FI-10", "FI-13"]
+    }
+  ],
+  "carried_forward_from_sibling": [
+    {
+      "source": "propositions",
+      "pir_id": "PIR-PROP-01",
+      "summary": "Migration package legislative timeline — carried into PIR-EVE-01"
+    },
+    {
+      "source": "interpellations",
+      "pir_id": "PIR-INTERP-03",
+      "summary": "Parliamentary accountability capacity — carried into PIR-EVE-04"
+    }
+  ]
+}
