@@ -76,3 +76,24 @@ New documents retrieved on re-run:
 2026-04-30 represents a major legislative package day: four Justitiedepartementet immigration propositions (HD03262-65) constitute Sweden's largest single-day migration law submission in modern history.
 
 <full-text-fallback: metadata-only documents in this re-run batch>
+
+## Re-run 2026-04-30 14:13 UTC (Improvement Run 2)
+
+**run_id**: 25170080858  
+**Trigger**: Scheduled improvement run — third execution of news-month-ahead for 2026-04-30  
+**New API query**: riksdag-regering propositions rm=2025/26 — checked for documents since 13:03 UTC, none found  
+**Additional documents retrieved from 30-day window (2026-04-16 date)**:
+
+| dok_id | Title | Type | Dept | Filed | Full-text |
+|--------|-------|------|------|-------|-----------|
+| HD03231 | Sveriges anslutning till den utvidgade partiella överenskommelsen för den särskilda tribunalen för aggressionsbrottet mot Ukraina | prop | Utrikesdepartementet | 2026-04-16 | metadata-only |
+| HD03232 | Sveriges tillträde till konventionen om inrättande av en internationell skadeståndskommission för Ukraina | prop | Utrikesdepartementet | 2026-04-16 | metadata-only |
+| HD03246 | Skärpta regler för unga lagöverträdare | prop | Justitiedepartementet | 2026-04-16 | metadata-only |
+
+### Assessment
+
+These three documents were filed on 2026-04-16 and fall within the 30-day analysis window (2026-03-30 to 2026-04-30). They were not captured in the initial batch because the primary API query targeted today's date. The Ukraine accountability propositions (HD03231, HD03232) are diplomatically significant as companion propositions on the same date, establishing Sweden's dual-track contribution to Ukraine accountability (criminal tribunal + reparations commission). HD03246 completes the Tidöalliansen juvenile justice programme.
+
+**Total documents in analysis**: 34 (was 31)
+
+<full-text-fallback: metadata-only documents in this improvement run batch>

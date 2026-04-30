@@ -111,3 +111,25 @@ flowchart LR
     style JUN fill:#1a1e3d,color:#ffbe0b
     style SEP fill:#ffbe0b,color:#0a0e27
 ```
+
+## Improvement Run 2 — Additional Forward Indicators (2026-04-30 14:15 UTC)
+
+### Ukraine Accountability Triggers
+
+| Date | Indicator | Window | Source PIR | Confidence |
+|------|-----------|--------|------------|------------|
+| 2026-05-15 | HD03231 first reading — Riksdag debate on Ukraine Special Tribunal accession | +2 weeks | HD03231 | MEDIUM |
+| 2026-06-01 | UU committee rapporteur assigned for HD03231+HD03232 | +1 month | HD03231, HD03232 | MEDIUM |
+| 2026-06-30 | Riksdag vote on HD03231+HD03232 (Ukraine accountability package) | +2 months | HD03231 | MEDIUM |
+
+### Juvenile Justice Triggers
+
+| Date | Indicator | Window | Source PIR | Confidence |
+|------|-----------|--------|------------|------------|
+| 2026-05-07 | JuU committee hearing on HD03246 young offenders proposition | +1 week | HD03246 | HIGH |
+| 2026-05-20 | HD03246 betänkande deadline (committee report) | +3 weeks | HD03246 | HIGH |
+| 2026-06-05 | Riksdag vote on HD03246 — Tidöalliansen rule-of-law programme completion | +5 weeks | HD03246 | MEDIUM |
+| 2026-07-01 | HD03246 expected entry into force (if passed before summer recess) | +2 months | HD03246 | LOW |
+
+**Total dated indicators (improvement run 2 update)**: 18 original + 7 new = **25 dated indicators**  
+**Gate check compliance**: ≥10 dated indicators SATISFIED (25/10)
