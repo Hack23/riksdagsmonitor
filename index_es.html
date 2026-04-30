@@ -469,7 +469,11 @@ Elecciones suecas 2026
 
 <div class="cards">
 <!-- Coalition party cards dynamically loaded from CIA data -->
-<p class="loading-message"></p>
+<p class="loading-message" role="status" aria-label="Cargando datos de coalición...">
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+</p>
 </div>
 
 <div class="coalition-stability">
@@ -491,12 +495,15 @@ Elecciones suecas 2026
 <h2>🗳️ Inteligencia de ciclos electorales (1994-2034)</h2>
 <p>Análisis integral de 40 años de ciclos electorales del parlamento sueco, con evolución del rendimiento de los partidos, efectividad en la toma de decisiones, pronóstico de riesgo predictivo y patrones temporales de votación a lo largo de más de 9 ciclos electorales.</p>
 
-<div class="dashboard-loader">
-Cargando datos...
+<div class="dashboard-loader" role="status" aria-label="Cargando datos...">
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-text"></div>
 </div>
 
-<div class="dashboard-error">
-No se pudieron cargar los datos
+<div class="dashboard-error" role="alert">
+<span class="error-text">No se pudieron cargar los datos</span>
+<button type="button" class="retry-btn" onclick="location.reload()">&#8635; Reintentar</button>
 </div>
 
 <!-- Filters -->

@@ -469,7 +469,11 @@ Svensk valg 2026
 
 <div class="cards">
 <!-- Coalition party cards dynamically loaded from CIA data -->
-<p class="loading-message"></p>
+<p class="loading-message" role="status" aria-label="Indlæser koalitionsdata...">
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+</p>
 </div>
 
 <div class="coalition-stability">
@@ -491,12 +495,15 @@ Svensk valg 2026
 <h2>🗳️ Valgcyklusefterretning (1994-2034)</h2>
 <p>Omfattende analyse af 40 år med svenske riksdagsvalgcyklusser med partiydelsesudvikling, beslutningseffektivitet, forudsigelig risikoprognose og temporale afstemnings­mønstre over 9+ valgcyklusser.</p>
 
-<div class="dashboard-loader">
-Indlæser data...
+<div class="dashboard-loader" role="status" aria-label="Indlæser data...">
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-text"></div>
 </div>
 
-<div class="dashboard-error">
-Kunne ikke indlæse data
+<div class="dashboard-error" role="alert">
+<span class="error-text">Kunne ikke indlæse data</span>
+<button type="button" class="retry-btn" onclick="location.reload()">&#8635; Prøv igen</button>
 </div>
 
 <!-- Filtre -->

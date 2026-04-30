@@ -469,7 +469,11 @@
 
 <div class="cards">
 <!-- Coalition party cards dynamically loaded from CIA data -->
-<p class="loading-message"></p>
+<p class="loading-message" role="status" aria-label="جارٍ تحميل بيانات الائتلاف...">
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+</p>
 </div>
 
 <div class="coalition-stability">
@@ -491,12 +495,15 @@
 <h2>🗳️ استخبارات الدورات الانتخابية (1994-2034)</h2>
 <p>تحليل شامل لـ40 عاماً من دورات انتخابات البرلمان السويدي، يتضمن تطور أداء الأحزاب وفعالية صنع القرار والتنبؤ الاستباقي بالمخاطر وأنماط التصويت الزمنية عبر أكثر من 9 دورات انتخابية.</p>
 
-<div class="dashboard-loader">
-جارٍ تحميل البيانات...
+<div class="dashboard-loader" role="status" aria-label="جارٍ تحميل البيانات...">
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-text"></div>
 </div>
 
-<div class="dashboard-error">
-فشل تحميل البيانات
+<div class="dashboard-error" role="alert">
+<span class="error-text">فشل تحميل البيانات</span>
+<button type="button" class="retry-btn" onclick="location.reload()">&#8635; إعادة المحاولة</button>
 </div>
 
 <!-- عوامل التصفية -->

@@ -469,7 +469,11 @@ Riksdagsval 2026
 
 <div class="cards">
 <!-- Koalitionspartiets kort laddas dynamiskt från CIA-data -->
-<p class="loading-message">Laddar koalitionsdata...</p>
+<p class="loading-message" role="status" aria-label="Laddar koalitionsdata...">
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+</p>
 </div>
 
 <div class="coalition-stability">
@@ -491,12 +495,15 @@ Riksdagsval 2026
 <h2>🗳️ Valcykelunderrättelser (1994-2034)</h2>
 <p>Omfattande analys av 40 år av svenska riksdagsvalcykler med partiprestandautveckling, beslutsfattandeeffektivitet, prediktiv riskprognos och temporala röstmönster över 9+ valcykler.</p>
 
-<div class="dashboard-loader">
-Laddar data...
+<div class="dashboard-loader" role="status" aria-label="Laddar data...">
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-text"></div>
 </div>
 
-<div class="dashboard-error">
-Kunde inte ladda data
+<div class="dashboard-error" role="alert">
+<span class="error-text">Kunde inte ladda data</span>
+<button type="button" class="retry-btn" onclick="location.reload()">&#8635; Försök igen</button>
 </div>
 
 <!-- Filter -->

@@ -469,7 +469,11 @@ Zweedse verkiezingen 2026
 
 <div class="cards">
 <!-- Coalition party cards dynamically loaded from CIA data -->
-<p class="loading-message"></p>
+<p class="loading-message" role="status" aria-label="Coalitiegegevens laden...">
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+</p>
 </div>
 
 <div class="coalition-stability">
@@ -491,12 +495,15 @@ Zweedse verkiezingen 2026
 <h2>🗳️ Verkiezingscyclus-intelligence (1994-2034)</h2>
 <p>Uitgebreide analyse van 40 jaar verkiezingscycli van het Zweedse parlement met evolutie van partijprestaties, effectiviteit van besluitvorming, voorspellende risicovoorspelling en temporele stempatronen over meer dan 9 verkiezingscycli.</p>
 
-<div class="dashboard-loader">
-Gegevens laden...
+<div class="dashboard-loader" role="status" aria-label="Gegevens laden...">
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-text"></div>
 </div>
 
-<div class="dashboard-error">
-Laden van gegevens mislukt
+<div class="dashboard-error" role="alert">
+<span class="error-text">Laden van gegevens mislukt</span>
+<button type="button" class="retry-btn" onclick="location.reload()">&#8635; Opnieuw proberen</button>
 </div>
 
 <!-- Filters -->

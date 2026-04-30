@@ -517,7 +517,7 @@ export class ElectionCycleDashboard {
 
   private showLoading(): void {
     const dash = document.getElementById('election-cycle-dashboard');
-    if (dash) { dash.classList.add('loading'); const loader = dash.querySelector('.dashboard-loader') as HTMLElement | null; if (loader) { loader.textContent = this.translations.loading; loader.style.display = 'block'; } }
+    if (dash) { dash.classList.add('loading'); const loader = dash.querySelector('.dashboard-loader') as HTMLElement | null; if (loader) { loader.setAttribute('aria-label', this.translations.loading); loader.style.display = 'block'; } }
   }
 
   private hideLoading(): void {
@@ -527,7 +527,19 @@ export class ElectionCycleDashboard {
 
   private showError(message: string): void {
     const dash = document.getElementById('election-cycle-dashboard');
-    if (dash) { dash.classList.add('error'); const err = dash.querySelector('.dashboard-error') as HTMLElement | null; if (err) { err.textContent = `${this.translations.error}: ${message}`; err.style.display = 'block'; } }
+    if (dash) {
+      dash.classList.add('error');
+      const err = dash.querySelector('.dashboard-error') as HTMLElement | null;
+      if (err) {
+        const textEl = err.querySelector('.error-text') as HTMLElement | null;
+        if (textEl) {
+          textEl.textContent = `${this.translations.error}: ${message}`;
+        } else {
+          err.setAttribute('aria-label', `${this.translations.error}: ${message}`);
+        }
+        err.style.display = 'block';
+      }
+    }
   }
 }
 

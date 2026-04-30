@@ -7735,21 +7735,162 @@ html[data-theme="dark"] .alert-banner.low {
   border-color: #388e3c;
 }
 
+/* ── Skeleton Block Utility ─────────────────────────────────────────────── */
+.skeleton-block {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base,  rgba(0, 102, 51, 0.06)) 25%,
+    var(--skeleton-shine, rgba(0, 102, 51, 0.13)) 50%,
+    var(--skeleton-base,  rgba(0, 102, 51, 0.06)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--border-radius-sm, 4px);
+  color: transparent;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-block {
+    animation: none;
+    opacity: 0.6;
+  }
+}
+
 /* Dashboard Loader & Error States */
 .dashboard-loader {
   display: none;
-  text-align: center;
   padding: var(--spacing-xl);
-  color: var(--text-secondary);
-  font-size: var(--font-size-lg);
+  min-height: 320px;
+  flex-direction: column;
+  gap: var(--spacing-md, 1rem);
+}
+
+.dashboard-loader .skeleton-block.skeleton-card {
+  height: 140px;
+  border-radius: var(--border-radius-lg, 8px);
+  flex-shrink: 0;
+}
+
+.dashboard-loader .skeleton-block.skeleton-text {
+  height: 1rem;
+  border-radius: 3px;
+  width: 60%;
+  align-self: center;
+}
+
+/* When the loader is shown via JS (display: block), upgrade to flex */
+.dashboard-loader[style*="display: block"],
+.dashboard-loader[style*="display:block"] {
+  display: flex !important;
+  color: transparent;
+  font-size: 0;
 }
 
 .dashboard-error {
   display: none;
-  text-align: center;
   padding: var(--spacing-xl);
-  color: var(--danger-color, #DC3545);
-  font-size: var(--font-size-lg);
+  color: var(--primary-magenta, #ff006e);
+  font-size: var(--font-size-base, 1rem);
+  border: 1px solid color-mix(in srgb, var(--primary-magenta, #ff006e) 40%, transparent);
+  background: color-mix(in srgb, var(--primary-magenta, #ff006e) 8%, transparent);
+  border-radius: var(--border-radius-lg, 8px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sm, 0.5rem);
+}
+
+.dashboard-error::before {
+  content: "⚠";
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.dashboard-error .error-text {
+  flex: 1;
+}
+
+/* Retry button inside error state */
+.dashboard-error .retry-btn,
+.retry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.45em 1em;
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--dark-bg, #0a0e27);
+  background: var(--primary-cyan, #00d9ff);
+  border: none;
+  border-radius: var(--border-radius-sm, 4px);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.dashboard-error .retry-btn:hover,
+.retry-btn:hover {
+  opacity: 0.85;
+}
+
+.dashboard-error .retry-btn:focus-visible,
+.retry-btn:focus-visible {
+  outline: 3px solid var(--primary-cyan, #00d9ff);
+  outline-offset: 2px;
+}
+
+/* When the error block is shown via JS (display: block), upgrade to flex */
+.dashboard-error[style*="display: block"],
+.dashboard-error[style*="display:block"] {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-sm, 0.5rem);
+}
+
+/* Loading message — inline skeleton text bars */
+.loading-message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: var(--spacing-md, 1rem) 0;
+  min-height: 4rem;
+  color: transparent;
+  font-size: 0;
+}
+
+.loading-message .skeleton-block {
+  height: 1rem;
+  border-radius: 3px;
+}
+
+.loading-message .skeleton-block:nth-child(1) { width: 80%; }
+.loading-message .skeleton-block:nth-child(2) { width: 65%; }
+.loading-message .skeleton-block:nth-child(3) { width: 50%; }
+
+/* Loading spinner — chart-card skeleton */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm, 0.5rem);
+  padding: var(--spacing-md, 1rem);
+  min-height: 260px;
+  color: transparent;
+  font-size: 0;
+}
+
+.loading-spinner .skeleton-block.skeleton-card {
+  flex: 1;
+  border-radius: var(--border-radius-lg, 8px);
+}
+
+.loading-spinner .skeleton-block.skeleton-text {
+  height: 1rem;
+  border-radius: 3px;
+  width: 55%;
 }
 
 /* Filter Group (used in dashboard filters) */
@@ -9552,8 +9693,6 @@ body.news-page {
 #coalition-status .error-message {
   text-align: center;
   padding: 2rem;
-  color: var(--text-secondary);
-  font-size: 1rem;
 }
 
 #coalition-status .error-message {

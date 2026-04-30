@@ -469,7 +469,11 @@
 
 <div class="cards">
 <!-- Coalition party cards dynamically loaded from CIA data -->
-<p class="loading-message"></p>
+<p class="loading-message" role="status" aria-label="טוען נתוני קואליציה...">
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+</p>
 </div>
 
 <div class="coalition-stability">
@@ -491,12 +495,15 @@
 <h2>🗳️ מודיעין מחזורי בחירות (1994-2034)</h2>
 <p>ניתוח מקיף של 40 שנות מחזורי בחירות לפרלמנט השוודי, כולל התפתחות ביצועי מפלגות, אפקטיביות קבלת החלטות, חיזוי סיכונים ודפוסי הצבעה לאורך זמן ביותר מ-9 מחזורי בחירות.</p>
 
-<div class="dashboard-loader">
-טוען נתונים...
+<div class="dashboard-loader" role="status" aria-label="טוען נתונים...">
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-text"></div>
 </div>
 
-<div class="dashboard-error">
-טעינת הנתונים נכשלה
+<div class="dashboard-error" role="alert">
+<span class="error-text">טעינת הנתונים נכשלה</span>
+<button type="button" class="retry-btn" onclick="location.reload()">&#8635; נסה שוב</button>
 </div>
 
 <!-- מסננים -->

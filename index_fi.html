@@ -469,7 +469,11 @@ Ruotsin vaalit 2026
 
 <div class="cards">
 <!-- Coalition party cards dynamically loaded from CIA data -->
-<p class="loading-message"></p>
+<p class="loading-message" role="status" aria-label="Ladataan koalitiotietoja...">
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+</p>
 </div>
 
 <div class="coalition-stability">
@@ -491,12 +495,15 @@ Ruotsin vaalit 2026
 <h2>🗳️ Vaalikausitiedustelu (1994–2034)</h2>
 <p>Kattava analyysi 40 vuoden Ruotsin parlamentin vaalikausista, sisältäen puoluesuorituksen kehityksen, päätöksenteon vaikuttavuuden, ennakoivan riskiennusteen ja ajalliset äänestysmallit yli 9 vaalikaudella.</p>
 
-<div class="dashboard-loader">
-Ladataan dataa...
+<div class="dashboard-loader" role="status" aria-label="Ladataan dataa...">
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-text"></div>
 </div>
 
-<div class="dashboard-error">
-Datan lataus epäonnistui
+<div class="dashboard-error" role="alert">
+<span class="error-text">Datan lataus epäonnistui</span>
+<button type="button" class="retry-btn" onclick="location.reload()">&#8635; Yritä uudelleen</button>
 </div>
 
 <!-- Filters -->

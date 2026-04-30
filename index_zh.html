@@ -469,7 +469,11 @@
 
 <div class="cards">
 <!-- Coalition party cards dynamically loaded from CIA data -->
-<p class="loading-message"></p>
+<p class="loading-message" role="status" aria-label="正在加载联盟数据...">
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+</p>
 </div>
 
 <div class="coalition-stability">
@@ -491,12 +495,15 @@
 <h2>🗳️ 选举周期情报 (1994-2034)</h2>
 <p>全面分析 40 年瑞典议会选举周期，包括 9 个以上选举周期的政党表现演变、决策有效性、预测性风险预测和时间投票模式。</p>
 
-<div class="dashboard-loader">
-正在加载数据...
+<div class="dashboard-loader" role="status" aria-label="正在加载数据...">
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-text"></div>
 </div>
 
-<div class="dashboard-error">
-加载数据失败
+<div class="dashboard-error" role="alert">
+<span class="error-text">加载数据失败</span>
+<button type="button" class="retry-btn" onclick="location.reload()">&#8635; 重试</button>
 </div>
 
 <!-- 筛选器 -->

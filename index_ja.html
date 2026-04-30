@@ -469,7 +469,11 @@
 
 <div class="cards">
 <!-- Coalition party cards dynamically loaded from CIA data -->
-<p class="loading-message"></p>
+<p class="loading-message" role="status" aria-label="連立データを読み込んでいます...">
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+</p>
 </div>
 
 <div class="coalition-stability">
@@ -491,12 +495,15 @@
 <h2>🗳️ 選挙サイクル・インテリジェンス (1994-2034)</h2>
 <p>40 年にわたるスウェーデン議会の選挙サイクルを包括的に分析し、政党のパフォーマンスの進化、意思決定の有効性、予測リスク予測、9 回以上の選挙サイクルにわたる一時的な投票パターンを分析します。</p>
 
-<div class="dashboard-loader">
-データを読み込み中...
+<div class="dashboard-loader" role="status" aria-label="データを読み込み中...">
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-text"></div>
 </div>
 
-<div class="dashboard-error">
-データの読み込みに失敗しました
+<div class="dashboard-error" role="alert">
+<span class="error-text">データの読み込みに失敗しました</span>
+<button type="button" class="retry-btn" onclick="location.reload()">&#8635; 再試行</button>
 </div>
 
 <!-- フィルター -->

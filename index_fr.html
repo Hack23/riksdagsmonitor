@@ -469,7 +469,11 @@
 
 <div class="cards">
 <!-- Coalition party cards dynamically loaded from CIA data -->
-<p class="loading-message"></p>
+<p class="loading-message" role="status" aria-label="Chargement des données de coalition...">
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+</p>
 </div>
 
 <div class="coalition-stability">
@@ -491,12 +495,15 @@
 <h2>🗳️ Intelligence des cycles électoraux (1994-2034)</h2>
 <p>Analyse complète de 40 ans de cycles électoraux du Parlement suédois avec évolution des performances partisanes, efficacité décisionnelle, prévision des risques et schémas temporels de vote sur plus de 9 cycles électoraux.</p>
 
-<div class="dashboard-loader">
-Chargement des données...
+<div class="dashboard-loader" role="status" aria-label="Chargement des données...">
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-text"></div>
 </div>
 
-<div class="dashboard-error">
-Échec du chargement des données
+<div class="dashboard-error" role="alert">
+<span class="error-text">Échec du chargement des données</span>
+<button type="button" class="retry-btn" onclick="location.reload()">&#8635; Réessayer</button>
 </div>
 
 <!-- Filtres -->

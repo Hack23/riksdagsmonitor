@@ -469,7 +469,11 @@ Schwedische Wahl 2026
 
 <div class="cards">
 <!-- Coalition party cards dynamically loaded from CIA data -->
-<p class="loading-message"></p>
+<p class="loading-message" role="status" aria-label="Koalitionsdaten werden geladen...">
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+</p>
 </div>
 
 <div class="coalition-stability">
@@ -491,12 +495,15 @@ Schwedische Wahl 2026
 <h2>🗳️ Wahlzyklus-Intelligence (1994-2034)</h2>
 <p>Umfassende Analyse von 40 Jahren schwedischer Parlamentswahlzyklen mit Entwicklung der Parteileistung, Effektivität der Entscheidungsfindung, prädiktiver Risikoprognose und zeitlichen Abstimmungsmustern über 9+ Wahlzyklen hinweg.</p>
 
-<div class="dashboard-loader">
-Daten werden geladen...
+<div class="dashboard-loader" role="status" aria-label="Daten werden geladen...">
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-text"></div>
 </div>
 
-<div class="dashboard-error">
-Daten konnten nicht geladen werden
+<div class="dashboard-error" role="alert">
+<span class="error-text">Daten konnten nicht geladen werden</span>
+<button type="button" class="retry-btn" onclick="location.reload()">&#8635; Erneut versuchen</button>
 </div>
 
 <!-- Filters -->

@@ -469,7 +469,11 @@
 
 <div class="cards">
 <!-- Coalition party cards dynamically loaded from CIA data -->
-<p class="loading-message"></p>
+<p class="loading-message" role="status" aria-label="연립 데이터 로드 중...">
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+<span class="skeleton-block"></span>
+</p>
 </div>
 
 <div class="coalition-stability">
@@ -491,12 +495,15 @@
 <h2>🗳️ 선거 주기 인텔리전스 (1994-2034)</h2>
 <p>9개 이상의 선거 주기에 걸쳐 정당 성과 변화, 의사결정 효율성, 예측 위험 예측 및 임시 투표 패턴을 통해 40년간의 스웨덴 의회 선거 주기를 종합적으로 분석합니다.</p>
 
-<div class="dashboard-loader">
-데이터 로딩 중...
+<div class="dashboard-loader" role="status" aria-label="데이터 로딩 중...">
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-card"></div>
+<div class="skeleton-block skeleton-text"></div>
 </div>
 
-<div class="dashboard-error">
-데이터 로드 실패
+<div class="dashboard-error" role="alert">
+<span class="error-text">데이터 로드 실패</span>
+<button type="button" class="retry-btn" onclick="location.reload()">&#8635; 다시 시도</button>
 </div>
 
 <!-- 필터 -->
