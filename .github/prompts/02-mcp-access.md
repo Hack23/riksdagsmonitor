@@ -56,7 +56,9 @@ Rules:
 Run once at workflow start, then proceed — do not loop forever.
 
 1. Call `get_sync_status({})`. Retry up to **3 times**, 20 s apart. Server is pre-warmed by the CI `steps:` block.
-2. If the third attempt fails, apply the MCP-unreachable no-op policy from `07-commit-and-pr.md §No-op policy` (which only allows noop when **no prior analysis exists** for this date + subfolder; if prior analysis is on disk, route to improvement-mode in `04-analysis-pipeline.md` and continue without MCP) and exit.
+2. If the third attempt fails, branch on whether prior analysis exists for `$ARTICLE_DATE` + `$SUBFOLDER`:
+   - **Prior analysis on disk** (any of the 23 required artifacts present, or `$ANALYSIS_DIR/synthesis-summary.md` exists): do **not** exit. Route to improvement-mode in `04-analysis-pipeline.md` and continue without live MCP — extend artifacts using on-disk evidence, refresh `article.md` + rendered HTML, and commit one PR.
+   - **No prior analysis on disk**: apply the MCP-unreachable no-op policy from `07-commit-and-pr.md §No-op policy` and exit.
 3. Once `get_sync_status` succeeds, proceed. Do not spend more than **2 minutes** on warm-up.
 4. Pre-warm IMF with one throwaway `weo` call: `tsx scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH --years 1 >/dev/null 2>&1 || true ; sleep 1`.
 

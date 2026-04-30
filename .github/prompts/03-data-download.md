@@ -14,19 +14,24 @@ IMPROVEMENT_MODE=false
 ALL_PRESENT=true
 EXPECTED=23
 CHECKED=0
+PRESENT=0
 # 23 required artifacts (Families A+B+C+D) — every workflow, every run.
 # We feed them via a here-doc so the loop never builds an inline bash array
 # (the AWF sandbox flags `REQ=(...); for f in "${REQ[@]}"`; see
 # 01-bash-and-shell-safety.md §Banned expansion patterns).
-# The loop continues to the end so $CHECKED counts how many artifacts are
-# already on disk — useful telemetry for partial improvement re-runs. We
-# also record the first missing artifact (if any) so operators can see why
-# IMPROVEMENT_MODE stayed false.
+# The loop continues to the end so:
+#   - $CHECKED counts how many required artifacts were inspected (always ends at $EXPECTED).
+#   - $PRESENT counts how many of those artifacts are non-empty on disk (useful
+#     telemetry for partial improvement re-runs).
+#   - $FIRST_MISSING records the first missing artifact (if any) so operators
+#     can see why IMPROVEMENT_MODE stayed false when ALL_PRESENT is false.
 FIRST_MISSING=""
 while IFS= read -r f; do
   [ -z "$f" ] && continue
   CHECKED=$((CHECKED + 1))
-  if [ ! -s "$ANALYSIS_DIR/$f" ]; then
+  if [ -s "$ANALYSIS_DIR/$f" ]; then
+    PRESENT=$((PRESENT + 1))
+  else
     ALL_PRESENT=false
     [ -z "$FIRST_MISSING" ] && FIRST_MISSING="$f"
   fi
@@ -62,19 +67,27 @@ REQUIRED_ARTIFACTS
 
 [ "$ALL_PRESENT" = "true" ] && IMPROVEMENT_MODE=true
 
+# Broaden the router: a usable improvement baseline can also exist when only a
+# partial set of the 23 artifacts is present, as long as `synthesis-summary.md`
+# is non-empty on disk. This keeps the router consistent with `07-commit-and-pr.md
+# §No-op policy`, which forbids noop whenever an improvement baseline is viable.
+if [ "$IMPROVEMENT_MODE" = "false" ] && [ -s "$ANALYSIS_DIR/synthesis-summary.md" ]; then
+  IMPROVEMENT_MODE=true
+fi
+
 # Detect previously rendered article HTML for this date + subfolder.
 # Match the renderer's filename convention: news/$ARTICLE_DATE-$SUBFOLDER-{lang}.html
 # (subfolder may contain hyphens, e.g. `evening-analysis`, `weekly-review`).
 EXISTING_HTML_COUNT=$(ls -1 "$NEWS_DIR/$ARTICLE_DATE-$SUBFOLDER-"*.html 2>/dev/null | wc -l | tr -d ' ')
 [ -z "$EXISTING_HTML_COUNT" ] && EXISTING_HTML_COUNT=0
 
-echo "IMPROVEMENT_MODE=$IMPROVEMENT_MODE  (required artifacts present: $ALL_PRESENT, on-disk: $CHECKED of $EXPECTED, first missing: ${FIRST_MISSING:-none}, existing news/*.html: $EXISTING_HTML_COUNT)"
+echo "IMPROVEMENT_MODE=$IMPROVEMENT_MODE  (required artifacts: $PRESENT present of $EXPECTED checked, all-present: $ALL_PRESENT, first missing: ${FIRST_MISSING:-none}, existing news/*.html: $EXISTING_HTML_COUNT)"
 ```
 
 | `IMPROVEMENT_MODE` | Behaviour |
 |--------------------|-----------|
-| `false` | First generation for this `$ARTICLE_DATE` + `$SUBFOLDER` (or partial prior run with missing artifacts). Continue with the full pipeline below → `04-analysis-pipeline.md` (Pass 1 + Pass 2) → `05-analysis-gate.md` → `06-article-generation.md` (aggregate + render) → `07-commit-and-pr.md`. |
-| `true` | Prior analysis exists. **Do not skip and do not no-op.** Re-run the download script to pick up any new `dok_id`s, then enter **improvement mode** in `04-analysis-pipeline.md` — read every existing artifact back, extend it with new evidence / new documents / sharper judgments / closed gaps, run a mandatory Pass 2 read-back, then **always** re-aggregate and re-render `article.md` + `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv}.html`. The run still produces exactly one PR. |
+| `false` | First generation for this `$ARTICLE_DATE` + `$SUBFOLDER` (no required artifact present **and** no `synthesis-summary.md` baseline). Continue with the full pipeline below → `04-analysis-pipeline.md` (Pass 1 + Pass 2) → `05-analysis-gate.md` → `06-article-generation.md` (aggregate + render) → `07-commit-and-pr.md`. |
+| `true` | Prior analysis exists — either all 23 required artifacts are present, **or** at least `synthesis-summary.md` is on disk as a usable baseline from a partial prior run. **Do not skip and do not no-op.** Re-run the download script to pick up any new `dok_id`s, then enter **improvement mode** in `04-analysis-pipeline.md` — read every existing artifact back, fill any missing required artifacts, extend the rest with new evidence / new documents / sharper judgments / closed gaps, run a mandatory Pass 2 read-back, then **always** re-aggregate and re-render `article.md` + `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv}.html`. The run still produces exactly one PR. |
 
 > **Folder reuse rule**: the same `$ANALYSIS_DIR` is always reused across runs for the same `$ARTICLE_DATE` + `$SUBFOLDER` when `force_generation=false`. The legacy auto-suffix behaviour (`propositions-2`, `propositions-3`, …) is retained **only** as an explicit escape hatch when `force_generation=true`, so that a forced rerun on a merged day can produce a fresh parallel analysis without trampling the existing one.
 
