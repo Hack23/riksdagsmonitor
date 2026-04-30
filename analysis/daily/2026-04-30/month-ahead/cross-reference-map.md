@@ -112,3 +112,28 @@ graph TD
     style EU fill:#1a1e3d,color:#00d9ff
     style MV fill:#1a1e3d,color:#ffbe0b
 ```
+
+## Improvement Run 2 — Added Cross-References (2026-04-30 14:14 UTC)
+
+### Ukraine Accountability Package (HD03231 + HD03232)
+| Document | Relationship | Cross-Reference |
+|----------|-------------|-----------------|
+| HD03231 | Special Tribunal | HD03232 (companion reparations) |
+| HD03231 | Criminal jurisdiction | HD03254 (military cooperation — same Ukraine policy cluster) |
+| HD03232 | Reparations architecture | HD03231 (criminal accountability arm) |
+| HD03232 | Post-war planning | HD11772 (S/V Ukraine solidarity motion — opposition context) |
+
+**Cluster label**: Ukraine Accountability Package — criminal + reparations + military (HD03231+HD03232+HD03254)
+
+**Sibling folder additional citations**:
+- analysis/daily/2026-04-16/propositions/ — original HD03231/HD03232 filing date
+- analysis/daily/2026-04-30/propositions/ — same-day propositions for comparative policy density assessment
+
+### Juvenile Justice Programme (HD03246)
+| Document | Relationship | Cross-Reference |
+|----------|-------------|-----------------|
+| HD03246 | Young offenders | HD03252 (benefit restrictions for convicts — same programme) |
+| HD03246 | Justice delivery | HD01JuU9 (court efficiency — delivery mechanism) |
+| HD03246 | Kriminalvården capacity | HD03252 (shared implementation dependency) |
+
+**Cluster label**: Tidöalliansen Rule-of-Law Tripartite — HD03246+HD03252+HD01JuU9 (deterrence + accountability + efficiency)
