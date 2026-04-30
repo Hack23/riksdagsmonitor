@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "cycle": "2026-04-30",
+  "date": "2026-04-30",
+  "subfolder": "committeeReports",
+  "generated_at": "2026-04-30T05:10:00Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "statement": "What are the most significant threats to democratic accountability in AI-driven public services?",
+      "status": "answered",
+      "confidence": "MEDIUM",
+      "trigger": "KU36 chamber vote result (expected 2026-05-06)",
+      "primary_source": "HD01KU36",
+      "key_judgment": "KU36 sets Sweden's AI governance agenda for 2026-2030"
+    },
+    {
+      "id": "PIR-2",
+      "statement": "What is the likelihood of the 2025/26 judicial reform package being implemented on schedule?",
+      "status": "answered",
+      "confidence": "HIGH",
+      "trigger": "Post-election government programme (autumn 2026)",
+      "primary_source": "HD01JuU9",
+      "key_judgment": "JuU9 will pass but 2027 timeline carries post-election deprioritisation risk"
+    },
+    {
+      "id": "PIR-3",
+      "statement": "What is the political feasibility of Sweden's nuclear expansion agenda?",
+      "status": "answered",
+      "confidence": "MEDIUM",
+      "trigger": "NU19 vote outcome (2026-05-06)",
+      "primary_source": "HD01NU19",
+      "key_judgment": "Cross-bloc majority (325/349) confirmed; environmental opposition will be vocal"
+    },
+    {
+      "id": "PIR-4",
+      "statement": "What is the effectiveness of Sweden's competition enforcement under expanded Konkurrensverket powers?",
+      "status": "open",
+      "confidence": "LOW",
+      "trigger": "First Konkurrensverket action under new powers",
+      "primary_source": "HD01NU22",
+      "key_judgment": null
+    },
+    {
+      "id": "PIR-5",
+      "statement": "How prepared is Sweden for EU AI Act compliance by August 2026?",
+      "status": "open",
+      "confidence": "LOW",
+      "trigger": "Commission assessment report (Q3 2026)",
+      "primary_source": "HD01KU36",
+      "key_judgment": null
+    }
+  ]
+}
