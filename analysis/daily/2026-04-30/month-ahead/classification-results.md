@@ -42,3 +42,31 @@
 - GDPR Art. 9(2)(e)(g): Political opinions of named MPs in interpellation debates are publicly made statements
 - Retention: 5 years for analysis artifacts; source documents permanent (Riksdag archive)
 - Classification review: Quarterly
+
+## Classification Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Document Classification Distribution
+    "prop (Propositions)" : 11
+    "bet (Committee Reports)" : 10
+    "fr (Written Questions)" : 2
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart TD
+    DOCS["30 Documents\nClassified"] --> PROP["11 Propositions\nExec → Parliament"]
+    DOCS --> BET["10 Committee Reports\nChamber-ready"]
+    DOCS --> FR["2 Written Questions\nOpposition monitoring"]
+    PROP --> IM["Immigration\nCluster HD03262-65"]
+    PROP --> NTP["HD03259\n970bn SEK Transport"]
+    BET --> KU["HD01KU36\nDigital Integrity"]
+    style DOCS fill:#00d9ff,color:#0a0e27
+    style PROP fill:#1a1e3d,color:#ffbe0b
+    style BET fill:#1a1e3d,color:#ffbe0b
+    style FR fill:#1a1e3d,color:#00d9ff
+    style IM fill:#ff006e,color:#fff
+    style NTP fill:#1a1e3d,color:#ffbe0b
+    style KU fill:#1a1e3d,color:#00d9ff
+```

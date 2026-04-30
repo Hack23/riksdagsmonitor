@@ -63,3 +63,28 @@ S + M cooperation on key policy areas. High-uncertainty outcome; very rare in Sw
 1. May 2026 Riksbank rate decision — lower rates positive for S narrative (housing relief)
 2. TU committee vote on NTP — SD amendment signals coalition health
 3. Novus poll post-NTP vote (expected mid-May) — will show if NTP creates M bounce
+
+## Election Impact Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+xychart-beta
+    title "Estimated Voter Impact — Key Policy Clusters"
+    x-axis [Immigration, Transport, Security, Finance, Housing]
+    y-axis "Electoral Significance (1-10)" 0 --> 10
+    bar [9.4, 9.2, 7.5, 7.0, 6.0]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03262["HD03262\nEnd of Perm. Residence"] --> SD["SD +1.5pp\nProjected"]
+    HD03259["HD03259\nNTP 970bn SEK"] --> M["M/C/L\nDelivery Credit"]
+    HD03254["HD03254\nNATO Military"] --> KD["KD/M\nDefence Cred."]
+    style HD03262 fill:#ff006e,color:#fff
+    style HD03259 fill:#ffbe0b,color:#0a0e27
+    style HD03254 fill:#00d9ff,color:#0a0e27
+    style SD fill:#ff006e,color:#fff
+    style M fill:#1a1e3d,color:#ffbe0b
+    style KD fill:#1a1e3d,color:#00d9ff
+```

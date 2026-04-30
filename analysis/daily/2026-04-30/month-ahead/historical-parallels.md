@@ -55,3 +55,35 @@ Identifies the most instructive historical precedents within 40-year window (198
 ## Synthesis
 
 The four historical precedents converge on a consistent analytical picture: **Swedish legislative sprints in pre-election years have a strong track record of completing major initiatives on schedule, with junior coalition partners finding profile-building opportunities rather than blocking mechanisms.** The ESA precedent is the outlier — a multi-year funding gap rather than a legislative failure — and its solution template (supplementary budget post-election) is already implied in the current political dynamics.
+
+## Historical Pattern Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title Swedish Immigration Policy Timeline
+    2015 : Refugee Crisis Peak
+         : Temporary permits introduced
+    2016 : Permanent residency restricted
+         : Upper secondary rules
+    2022 : Tidöavtalet signed
+         : SD joins governing coalition
+    2023 : HD10460 Family reunification restricted
+    2026 : HD03262 Perm. residence abolished
+         : EU Asylum Pact transposed
+         : Largest single-day package
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    P2015["2015 Refugee\nCrisis"] --> P2016["2016 Temporary\nPermit Shift"]
+    P2016 --> P2022["2022 Tidöavtalet\nSD Entry"]
+    P2022 --> P2026["2026 Perm.\nResidence Abolished"]
+    P2015:::hist
+    P2016:::hist
+    P2022:::hist
+    P2026:::now
+    classDef hist fill:#1a1e3d,color:#00d9ff
+    classDef now fill:#ff006e,color:#fff
+```

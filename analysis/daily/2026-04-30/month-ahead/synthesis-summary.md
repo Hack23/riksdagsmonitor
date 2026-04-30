@@ -74,3 +74,30 @@ mindmap
 - **PIR-1**: Will SD support NTP final vote without extracting concessions on road investment in southern Sweden? (from propositions cycle)
 - **PIR-2**: What is the Riksbank's May 2026 policy rate decision? (IMF MFS_IR data unavailable; rate at 2.0% per March 2026 meeting)
 - **PIR-3**: How will KU36 digital privacy findings affect post-election AI Act transposition sequencing?
+
+## Re-run Update: 2026-04-30 — Major Immigration Legislative Package
+
+**Critical development**: The Government submitted the most significant immigration legislative package in Swedish modern history on 2026-04-30, comprising four simultaneous Justitiedepartementet propositions:
+
+- **HD03262** (DIW 9.0): Abolishes permanent residence permits entirely + adapts Swedish law to EU Migration and Asylum Pact — structural reform to the immigration system
+- **HD03263** (DIW 8.0): Strengthens return operations — enforcement companion to HD03262  
+- **HD03264** (DIW 7.5): Tightens character requirements for residence permits
+- **HD03265** (DIW 7.5): Extends detention and surveillance powers
+
+Additionally:
+- **HD03254** (DIW 8.3): Operational military cooperation proposition — NATO integration deepening
+- **HD03258** (DIW 7.2): Political transparency proposition — pre-election disclosure reform
+- **HD03251** (DIW 6.8): Integrated addiction/psychiatric care reform
+
+### Revised DIW Ranking Update
+
+The immigration package (HD03262 at 9.0) now ranks **second only to HD03259** (National Transport Plan, 9.2) in the month-ahead significance hierarchy. When treated as a cluster, HD03262-HD03265 collectively represent a significance level of **9.4** — surpassing even the Transport Plan in systemic electoral and legal impact.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+xychart-beta
+    title "Revised DIW Significance — May 2026 with April 30 Package"
+    x-axis ["HD03259","HD03262-65\nCluster","HD03254","HD01KU36","HD03253","HD01JuU9","HD03252","HD03258"]
+    y-axis "DIW Score" 0 --> 10
+    bar [9.2, 9.4, 8.3, 8.1, 7.8, 7.5, 7.4, 7.2]
+```

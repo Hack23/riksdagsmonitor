@@ -83,3 +83,22 @@ Media framing analysis for the May 2026 legislative cycle, covering: (1) party c
 **Predicted dominant frame by election day**: Economic competence vs. social care. NTP gives M/SD the economic competence frame they need; HD11774/11775 give S the social care frame. The election will be decided by which frame dominates the undecided suburban family segment (Segment 3 from voter-segmentation.md).
 
 **Confidence**: MEDIUM [C2] — media framing prediction is 150 days before election; many intervening events can shift the dominant frame
+
+## Media Framing Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03262["HD03262\nPerm. Residence\nAbolished"] --> DN["DN/SvD:\nRule-of-Law\nAngle"]
+    HD03262 --> SVT["SVT/SR:\nHuman Impact\nAngle"]
+    HD03262 --> SD_MEDIA["Nyheter Idag:\nPolicy Success"]
+    HD03259["HD03259\nNTP 970bn SEK"] --> REG["Regional Press:\nLocal Investment"]
+    HD03259 --> ECON["DI/Finanstidningen:\nFiscal Analysis"]
+    style HD03262 fill:#ff006e,color:#fff
+    style HD03259 fill:#ffbe0b,color:#0a0e27
+    style DN fill:#1a1e3d,color:#00d9ff
+    style SVT fill:#1a1e3d,color:#00d9ff
+    style SD_MEDIA fill:#1a1e3d,color:#ff006e
+    style REG fill:#1a1e3d,color:#ffbe0b
+    style ECON fill:#1a1e3d,color:#ffbe0b
+```
