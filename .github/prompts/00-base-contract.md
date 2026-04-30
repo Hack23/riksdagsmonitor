@@ -71,7 +71,8 @@ Do not add per-phase checkpoint PRs or repo-memory push steps.
 
 - Commit real files on disk under `analysis/daily/` and/or `news/`.
 - End the run with exactly one safe output call (see `07-commit-and-pr.md` for the single-PR / no-op policy).
-- Never fabricate data. If MCP is unreachable and nothing was produced, the no-op exit rule in `07-commit-and-pr.md` applies.
+- **Never no-op because prior analysis or HTML already exists** — that is the trigger for improvement-mode in `03-data-download.md §Pre-flight`, not for exit. Re-runs always extend prior artifacts, re-aggregate `article.md`, and re-render `news/*.html`.
+- Never fabricate data. If MCP is unreachable from the start **and** there is no prior analysis on disk to improve, the narrow no-op exit rule in `07-commit-and-pr.md` applies.
 
 ## Language & formatting
 

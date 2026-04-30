@@ -3,8 +3,8 @@
 ## Core rule
 
 > Every run ends with **exactly one** safe-output call:
-> - `safeoutputs___create_pull_request` — when any file on disk was created or modified.
-> - `safeoutputs___noop` — only when zero files were produced (e.g. MCP unreachable from the start).
+> - `safeoutputs___create_pull_request` — the **default and overwhelmingly common** outcome. Always used when any file on disk was created **or** modified, including improvement-mode re-runs that extend prior analysis and re-render `article.md` + HTML.
+> - `safeoutputs___noop` — **last-resort only**. See §No-op policy below for the narrow conditions. **Never** call noop because prior analysis or rendered HTML already exists for this date — that is the trigger for improvement-mode (see `03-data-download.md §Pre-flight`), not for exit.
 >
 > Do not open checkpoint, heartbeat, or keep-alive PRs. Content committed after the first `create_pull_request` call is lost.
 
@@ -168,12 +168,17 @@ In addition, the **Sandbox commit handoff** in step 4 above is the *third* (and 
 
 ## No-op policy
 
-Call `safeoutputs___noop({"message": "<reason>"})` **only** if:
+> 🔴 **No-op is forbidden as a "nothing to do" exit.** Detecting prior analysis, prior `article.md`, or prior rendered HTML for `$ARTICLE_DATE` + `$SUBFOLDER` is **never** grounds for noop — it is the trigger for **improvement-mode** in `03-data-download.md §Pre-flight` and `04-analysis-pipeline.md §Execution order`. The agent must always extend prior artifacts, regenerate `article.md`, regenerate `news/*.html`, and end the run with `safeoutputs___create_pull_request`.
 
-- MCP unreachable from start **and** no files were created, or
-- Hard input error (e.g. invalid `article_date`) **and** no files were created.
+`safeoutputs___noop({"message": "<reason>"})` is reserved for **catastrophic input failures** where no useful work is possible **and** zero files were produced. Allowed conditions (and only these):
 
-In every other case, commit whatever exists and call `create_pull_request` once.
+1. **MCP unreachable from start** — all three MCP attempts in `02-mcp-access.md §Three-attempt connect protocol` failed, no document data was downloaded, and `$ANALYSIS_DIR` does **not** contain prior analysis from another run that could be improved instead.
+2. **Hard input error** — invalid `article_date` (e.g. unparseable, future-dated beyond +30 days, or pre-2014), invalid `$SUBFOLDER`, or other structural input failure that prevents any analysis from running, **and** zero files were produced.
+3. **Empty data window with no fallback content** — every lookback day in `03-data-download.md §Lookback fallback` (`DAYS_BACK = 1..7`) returned zero documents **and** there is no prior analysis on disk for `$ARTICLE_DATE` + `$SUBFOLDER` to improve. Zero-document weekend or holiday days when prior analysis exists must run improvement-mode instead.
+
+In **every other case** — including "today's HTML already exists", "all 23 artifacts already exist", "no new dok_ids since last run", or "prior run was the same day" — commit whatever was extended or re-rendered and call `create_pull_request` once. There is **always** something to extend on a re-run: newer voting outcomes, fresher economic vintage, sharpened uncertainty disclosure, closed `[unconfirmed]` flags, new media frames, or a freshly-rendered HTML that picks up template/chrome improvements. The aggregator + renderer always run on improvement-mode re-runs, so the PR diff is never empty.
+
+The noop message **must** include which condition above applies and why improvement-mode was not viable — e.g. `"MCP unreachable from start; no prior analysis on disk for 2026-04-30/propositions"`.
 
 ## Deadline enforcement
 

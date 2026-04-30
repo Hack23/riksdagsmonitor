@@ -99,12 +99,22 @@ Produced in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. The output set is **stab
 
 ## Execution order
 
-> **Fast-path**: If `SKIP_ANALYSIS=true` (set by `03-data-download.md §Pre-flight`), skip all steps 1–5 below and proceed directly to `06-article-generation.md`. The full analysis already exists on disk from a prior run — do not re-run downloads, Pass 1, Pass 2, or the gate. The aggregate+render step in module 06 is always executed.
+> **Improvement-mode path** (when `IMPROVEMENT_MODE=true` from `03-data-download.md §Pre-flight`): **do not skip**, **do not no-op**. The 23 artifacts already exist on disk — your job is to **extend and improve** them, not regenerate them from scratch. Replace step 3 (Pass 1 — Create) with step 3′ below; steps 1, 2, 4, 5 still run normally. The aggregate+render step in module 06 is **always executed** — `article.md` and `news/*.html` are regenerated on every run.
+>
+> **3′ — Improvement Pass (replaces Pass 1 — Create)**:
+>
+> 1. **Read every existing artifact in full** (one tool call per file, including `documents/*-analysis.md`).
+> 2. **Re-run the download** to discover new `dok_id`s, fresher `get_voteringar` results, new committee schedule entries, or updated regering.se / SCB / IMF / Statskontoret context. Append (do not overwrite) any new entries to `data-download-manifest.md` under a new `## Re-run YYYY-MM-DD HH:MM UTC` heading and create `documents/{dok_id}-analysis.md` for each new document.
+> 3. **Extend each existing artifact**: add the new evidence rows, refresh time-sensitive sections (forward indicators, scenario probabilities, coalition mathematics, election-2026 deltas), close any `[unconfirmed]` flags from the previous run that now have ≥ 3 sources, sharpen Key Judgments where new evidence has tilted likelihood/impact, and append a `## Re-run delta` subsection to `methodology-reflection.md` documenting what changed and why.
+> 4. **Never delete** prior analysis content unless it is factually wrong; correct in place and note the correction.
+> 5. **Floor**: at least 8 minutes of real read-and-extend work across the artifact set on a `standard` improvement re-run, 12 minutes on `deep`, 15 minutes on `comprehensive`. Improvement-mode runs that produce zero artifact changes are a quality failure — there is **always** something to extend (newer voting outcomes, new dok_ids, sharper uncertainty disclosure, fresher economic vintage, new media frames).
+>
+> Pass 2 (step 5 below) is still mandatory in improvement-mode and applies to every artifact, including the unchanged ones (read them, decide whether last run's improvement still holds).
 
 1. **Read all relevant methodologies first** (the primary methodology guide plus every supporting framework listed above, including `osint-tradecraft-standards.md`; one tool call per file; skipping fails the gate via `methodology-reflection.md §evidence` audit).
 2. **Read all 23 templates first** — at minimum open each Family A/B/C/D template before writing its artifact.
-3. **Pass 1 — Create** all 23 always-on artifacts + every per-document file. Minimum 20 minutes of real work.
-4. **Snapshot Pass-1** — copy every Pass-1 file into `$ANALYSIS_DIR/pass1/` before starting Pass 2: `mkdir -p "$ANALYSIS_DIR/pass1" && cp "$ANALYSIS_DIR"/*.md "$ANALYSIS_DIR/pass1/"`. The `pass1/` directory is the fallback evidence the gate uses when mtime windows are too tight. Do **not** stage `pass1/` in the PR (see `07-commit-and-pr.md`).
+3. **Pass 1 — Create** all 23 always-on artifacts + every per-document file. Minimum 20 minutes of real work. *(Improvement-mode replaces this with step 3′ above.)*
+4. **Snapshot Pass-1** — copy every Pass-1 file into `$ANALYSIS_DIR/pass1/` before starting Pass 2: `mkdir -p "$ANALYSIS_DIR/pass1" && cp "$ANALYSIS_DIR"/*.md "$ANALYSIS_DIR/pass1/"`. The `pass1/` directory is the fallback evidence the gate uses when mtime windows are too tight. Do **not** stage `pass1/` in the PR (see `07-commit-and-pr.md`). *(Improvement-mode: snapshot the pre-improvement state instead — `mkdir -p "$ANALYSIS_DIR/pass1" && cp "$ANALYSIS_DIR"/*.md "$ANALYSIS_DIR/pass1/" 2>/dev/null || true` — overwriting any earlier snapshot is fine; the gate only needs the most recent baseline.)*
 5. **Pass 2 — Improve**: read every Pass-1 file back in full and strengthen evidence, diagrams, cross-references, stakeholder coverage, uncertainty disclosure, Admiralty annotations, WEP language, PIR/EEI tags. Minimum 10 minutes.
 
 Pass 2 is mandatory. Completing earlier is a quality failure. `methodology-reflection.md` is the self-audit of Pass 2 — skipping it breaks the self-correction loop.

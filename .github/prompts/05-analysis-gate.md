@@ -354,9 +354,9 @@ Exit code 0 = pass, non-zero = fail with per-check report. Precondition for chec
 - **Fail** → fix flagged files (never delete them), re-run the gate, then proceed.
 - **Unrecoverable fail after fixes** → stage whatever analysis exists, commit with label `analysis-only`, call `safeoutputs___create_pull_request` once (see `07-commit-and-pr.md`). Do **not** generate articles.
 
-## Deduplication note
+## Re-run / deduplication note
 
-If today's article HTML already exists under `news/` **and** `force_generation=false`, skip article generation but still run analysis and still commit. The PR label is `analysis-only`. There is still exactly one PR call.
+Same-day re-runs are **improvement runs**, not skip runs. If today's article HTML already exists under `news/` (and `force_generation=false`), the workflow is in `IMPROVEMENT_MODE=true` per `03-data-download.md §Pre-flight`: the analysis pipeline runs in extend-and-improve mode (`04-analysis-pipeline.md §Execution order`), the gate runs normally against the improved artifacts, and the aggregator + renderer (`06-article-generation.md`) **always** regenerate `article.md` and `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv}.html` so the published article reflects the improved analysis. The PR label is `analysis-improvement` instead of `agentic-news`. There is still exactly one PR call. **Never** call `safeoutputs___noop` because today's HTML "already exists" — that is the trigger for improvement, not for exit.
 
 ## Supplementary checks
 
