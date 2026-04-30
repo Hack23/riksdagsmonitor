@@ -5,7 +5,7 @@ date: 2026-04-30
 subfolder: month-ahead
 slug: 2026-04-30-month-ahead
 source_folder: analysis/daily/2026-04-30/month-ahead
-generated_at: 2026-04-30T08:17:40.899Z
+generated_at: 2026-04-30T13:14:45.101Z
 language: en
 layout: article
 ---
@@ -151,6 +151,33 @@ mindmap
 - **PIR-2**: What is the Riksbank's May 2026 policy rate decision? (IMF MFS_IR data unavailable; rate at 2.0% per March 2026 meeting)
 - **PIR-3**: How will KU36 digital privacy findings affect post-election AI Act transposition sequencing?
 
+### Re-run Update: 2026-04-30 — Major Immigration Legislative Package
+
+**Critical development**: The Government submitted the most significant immigration legislative package in Swedish modern history on 2026-04-30, comprising four simultaneous Justitiedepartementet propositions:
+
+- **HD03262** (DIW 9.0): Abolishes permanent residence permits entirely + adapts Swedish law to EU Migration and Asylum Pact — structural reform to the immigration system
+- **HD03263** (DIW 8.0): Strengthens return operations — enforcement companion to HD03262  
+- **HD03264** (DIW 7.5): Tightens character requirements for residence permits
+- **HD03265** (DIW 7.5): Extends detention and surveillance powers
+
+Additionally:
+- **HD03254** (DIW 8.3): Operational military cooperation proposition — NATO integration deepening
+- **HD03258** (DIW 7.2): Political transparency proposition — pre-election disclosure reform
+- **HD03251** (DIW 6.8): Integrated addiction/psychiatric care reform
+
+#### Revised DIW Ranking Update
+
+The immigration package (HD03262 at 9.0) now ranks **second only to HD03259** (National Transport Plan, 9.2) in the month-ahead significance hierarchy. When treated as a cluster, HD03262-HD03265 collectively represent a significance level of **9.4** — surpassing even the Transport Plan in systemic electoral and legal impact.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+xychart-beta
+    title "Revised DIW Significance — May 2026 with April 30 Package"
+    x-axis ["HD03259","HD03262-65\nCluster","HD03254","HD01KU36","HD03253","HD01JuU9","HD03252","HD03258"]
+    y-axis "DIW Score" 0 --> 10
+    bar [9.2, 9.4, 8.3, 8.1, 7.8, 7.5, 7.4, 7.2]
+```
+
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/intelligence-assessment.md -->
 
@@ -207,6 +234,22 @@ The following PIRs from the 2026-04-30 propositions/committeeReports/interpellat
 - 5 Key Judgments: 2 × HIGH, 2 × MEDIUM-HIGH/MEDIUM, 1 × VERY HIGH
 - Source diversity: Riksdag API [A], sibling analyses [B], IMF cached data [C]
 - Party neutrality: Judgments apply equally to governing coalition (KJ1–3) and opposition (KJ4); security assessment (KJ5) is non-partisan
+
+### Re-run Update: 2026-04-30 Key Judgment Additions
+
+#### Key Judgment 6 (KJ-6) — Immigration Package Systemic Impact (VERY HIGH confidence)
+
+The four-proposition immigration package submitted on 2026-04-30 (HD03262–HD03265) will dominate Swedish political discourse for the remainder of 2026. HD03262's abolition of permanent residence permits represents the most structural immigration reform in Swedish history. Assessment: **this package, not the Transport Plan, will be the defining electoral battleground of the September 2026 election**. SD and M will claim transformative delivery; S will mobilise on humanitarian grounds; C and L face coalition discipline vs. liberal values tension.
+
+#### Key Judgment 7 (KJ-7) — Military Cooperation as NATO Credibility Signal (HIGH confidence)
+
+HD03254 (operational military cooperation) demonstrates Sweden's acceleration of NATO integration beyond symbolic accession. Combined with Sweden's 2.3% GDP defence spending trajectory (IMF GFS_COFOG G02, WEO Apr-2026), Sweden is positioning itself as a credible NATO contributor in the Baltic region.
+
+#### Prior-Cycle PIR Update
+
+- **PIR-1 (Transport Plan vote)**: Confirmed on track for May 2026 committee phase — no change.
+- **PIR-2 (Immigration reform scope)**: **ANSWERED** — HD03262 confirms abolition of permanent permits as the operative mechanism. Scope exceeds prior forecast.
+- **PIR-3 (Defence spending trajectory)**: Open — HD03254 is the legislative vehicle but cost estimates pending committee analysis.
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/significance-scoring.md -->
@@ -355,6 +398,25 @@ Media framing analysis for the May 2026 legislative cycle, covering: (1) party c
 **Key finding**: The government's primary media advantage is the visual/tangible nature of NTP — infrastructure maps, project timelines, and regional employment numbers are highly sharable. The opposition's advantage is issue resonance on social policy — housing, poverty, and healthcare are deeply personal and emotionally engaging.
 
 **Predicted dominant frame by election day**: Economic competence vs. social care. NTP gives M/SD the economic competence frame they need; HD11774/11775 give S the social care frame. The election will be decided by which frame dominates the undecided suburban family segment (Segment 3 from voter-segmentation.md).
+
+### Media Framing Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03262["HD03262\nPerm. Residence\nAbolished"] --> DN["DN/SvD:\nRule-of-Law\nAngle"]
+    HD03262 --> SVT["SVT/SR:\nHuman Impact\nAngle"]
+    HD03262 --> SD_MEDIA["Nyheter Idag:\nPolicy Success"]
+    HD03259["HD03259\nNTP 970bn SEK"] --> REG["Regional Press:\nLocal Investment"]
+    HD03259 --> ECON["DI/Finanstidningen:\nFiscal Analysis"]
+    style HD03262 fill:#ff006e,color:#fff
+    style HD03259 fill:#ffbe0b,color:#0a0e27
+    style DN fill:#1a1e3d,color:#00d9ff
+    style SVT fill:#1a1e3d,color:#00d9ff
+    style SD_MEDIA fill:#1a1e3d,color:#ff006e
+    style REG fill:#1a1e3d,color:#ffbe0b
+    style ECON fill:#1a1e3d,color:#ffbe0b
+```
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/stakeholder-perspectives.md -->
@@ -505,6 +567,55 @@ The following events would trigger scenario downgrade (Scenario 1→2 or Scenari
 | PIR-3 (opinion polling) | 4, 8, 14 | Weekly poll aggregation; Novus tracker |
 | PIR-4 (AI Act transposition) | 18 | Post-election; monthly check |
 | PIR-5 (FI CRR3 circular) | 11 | FI.se regulatory watch |
+
+### Re-run 2026-04-30: Updated Forward Indicators
+
+#### New Trigger Events (from 2026-04-30 legislation)
+
+| Date | Indicator | Horizon | Source | Confidence |
+|------|-----------|---------|--------|-----------|
+| 2026-05-07 | HD03262 first committee hearing (JuU) | +1 week | HD03262 | MEDIUM |
+| 2026-05-14 | HD03254 military cooperation committee vote (FöU) | +2 weeks | HD03254 | MEDIUM |
+| 2026-05-20 | HD03262–65 immigration package second reading | +3 weeks | HD03262-65 | HIGH |
+| 2026-06-01 | EU Commission reaction to Swedish permanent-permit abolition | +1 month | HD03262 | MEDIUM |
+| 2026-06-15 | ECHR / UN CAT preliminary statements on HD03265 detention rules | +6 weeks | HD03265 | LOW |
+| 2026-09-13 | Swedish election — immigration package becomes centrepiece campaign debate | Election | riksdagen.se | VERY HIGH |
+| 2026-05-10 | HD03258 political transparency public hearing | +10 days | HD03258 | MEDIUM |
+| 2026-05-05 | Migrationsverket statement on operational impact of HD03262 | +5 days | HD03262 | MEDIUM |
+| 2026-05-28 | NATO Vilnius +2 yr implementation review — relates to HD03254 | +4 weeks | HD03254 | MEDIUM |
+| 2026-05-12 | HD03251 addiction care consultation period closes | +2 weeks | HD03251 | LOW |
+
+### Forward Indicators Timeline
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Forward Indicators — Month Ahead 2026-04-30
+    dateFormat YYYY-MM-DD
+    section Immigration
+    HD03262 Migrationsverket statement  :milestone, 2026-05-05, 1d
+    HD03265 Administrative review       :milestone, 2026-05-15, 1d
+    section Transport
+    HD03259 TU committee consideration  :active, 2026-05-01, 14d
+    section Security
+    HD03254 NATO Vilnius +2 review      :milestone, 2026-05-28, 1d
+    section Economy
+    IMF WEO Spring update               :milestone, 2026-05-07, 1d
+    section Election
+    Swedish Election 2026               :milestone, 2026-09-13, 1d
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    NOW["2026-04-30\n(Today)"] --> MAY1["May 2026\nHD03262-65\nKey votes"]
+    MAY1 --> JUN["June 2026\nSummer recess\nbegins"]
+    JUN --> SEP["Sep 2026\nElection\n2026-09-13"]
+    style NOW fill:#00d9ff,color:#0a0e27
+    style MAY1 fill:#ff006e,color:#fff
+    style JUN fill:#1a1e3d,color:#ffbe0b
+    style SEP fill:#ffbe0b,color:#0a0e27
+```
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/scenario-analysis.md -->
@@ -737,6 +848,39 @@ SWOT assessed from the perspective of the Tidöalliansen government's ability to
 
 The dominant cross-SWOT dynamic is **S1+O1 vs T1**: the government's majority strength enables NTP passage (Strength), but SD's coalition leverage creates a structural extraction opportunity (Threat). The observable leading indicator is whether SD files amendments in TU. No amendments = clean legacy pass; amendments accepted = political cost; amendments rejected = coalition friction story.
 
+### SWOT Overview Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+quadrantChart
+    title SWOT Analysis — Month Ahead 2026-04-30
+    x-axis Internal --> External
+    y-axis Negative --> Positive
+    quadrant-1 Opportunities
+    quadrant-2 Strengths
+    quadrant-3 Weaknesses
+    quadrant-4 Threats
+    NTP 970bn SEK: [0.25, 0.9]
+    SD Coalition Leverage: [0.2, 0.45]
+    Immigration Package Complexity: [0.3, 0.2]
+    EU Asylum Pact Risk: [0.8, 0.15]
+    NATO Integration: [0.85, 0.8]
+    Election 2026 Positioning: [0.7, 0.75]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    S1["S1: Majority\nStrength"]:::str --> O1["O1: NTP Legacy\nDelivery"]:::opp
+    S1 --> T1["T1: SD\nExtraction Risk"]:::thr
+    W1["W1: Immigration\nComplexity"]:::wk --> T2["T2: LO/TF\nReaction"]:::thr
+    O2["O2: NATO\nCredentials"]:::opp --> S1
+    classDef str fill:#00d9ff,color:#0a0e27
+    classDef wk fill:#ff006e,color:#fff
+    classDef opp fill:#ffbe0b,color:#0a0e27
+    classDef thr fill:#1a1e3d,color:#ff006e
+```
+
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/threat-analysis.md -->
 
@@ -813,6 +957,690 @@ quadrantChart
 | TTP-4 | Resource contention | Budget submission vs ESA commitment | Rymdstyrelsen/Research actors |
 
 ## Per-document intelligence
+
+### HD01CU37
+<!-- source: documents/HD01CU37-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01CU37-analysis.md -->
+
+**dok_id**: HD01CU37  
+**Title**: Kommunala hyresgarantier för en socialt hållbar bostadsförsörjning  
+**Type**: bet  
+**Committee**: CU  
+
+**Source**: https://data.riksdagen.se/dokument/HD01CU37  
+
+### Executive Summary
+
+CU committee report on municipal rental guarantees for social housing. Enables municipalities to provide guarantees to enable vulnerable groups to access private rental market. C and L supporting; cost-effectiveness contested.
+
+### Confidence
+
+Source reliability: A1 | Assessment confidence: MEDIUM
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD01CU37["HD01CU37\nKommunala hyresgarantier"] --> MUN["Municipal\nGuarantee Scheme"]
+    MUN --> HOUS["Social Housing\nAccess"]
+    style HD01CU37 fill:#ffbe0b,color:#0a0e27
+    style MUN fill:#1a1e3d,color:#00d9ff
+    style HOUS fill:#1a1e3d,color:#ffbe0b
+```
+
+### HD01FöU13
+<!-- source: documents/HD01FöU13-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01FöU13-analysis.md -->
+
+**dok_id**: HD01FöU13  
+**Title**: Explosiva varor – förbättrade möjligheter till kontroll  
+**Type**: bet  
+**Committee**: FöU  
+
+**Source**: https://data.riksdagen.se/dokument/HD01FöU13  
+
+### Executive Summary
+
+FöU committee report on explosives control — strengthened licensing, inspection, and export controls for explosive materials. Critical security policy in post-Ukraine geopolitical context. Links to HD03254 (military cooperation) and NATO standardisation obligations. MSB (Myndigheten för samhällsskydd och beredskap) primary implementation.
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | High — national security/defence |
+| NATO relevance | Aligned with NATO partner nation controls |
+| MSB | Lead agency for explosive goods oversight |
+| Electoral | Low salience but signals security competence |
+
+### Confidence
+
+Source reliability: A1 | Assessment confidence: HIGH
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    FOU["HD01FöU13\nExplosives Control"] --> MSB["MSB\nInspektionen"]
+    FOU --> NATO["NATO\nAlignment"]
+    NATO --> PROT["Enhanced\nProtocols"]
+    style FOU fill:#ffbe0b,color:#0a0e27
+    style MSB fill:#1a1e3d,color:#00d9ff
+    style NATO fill:#1a1e3d,color:#ff006e
+    style PROT fill:#1a1e3d,color:#00d9ff
+```
+
+### HD01JuU9
+<!-- source: documents/HD01JuU9-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01JuU9-analysis.md -->
+
+**dok_id**: HD01JuU9  
+**Title**: En mer rättssäker och effektiv domstolsprocess  
+**Type**: bet  
+**Committee**: JuU  
+
+**Source**: https://data.riksdagen.se/dokument/HD01JuU9  
+
+### Executive Summary
+
+JuU committee report on streamlining court processes — addressing backlogs and procedural efficiency in Swedish courts. Addresses the justice system capacity crisis: Domstolsverket backlog exceeds 24 months in criminal cases. Statskontoret has documented court administration shortfalls.
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | High — justice system capacity |
+| Domstolsverket | Restructuring support required |
+| Statskontoret relevance | https://www.statskontoret.se/ — 2023 Domstolsverket capacity review |
+
+### Confidence
+
+Source reliability: A1 | Assessment confidence: HIGH
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD01JuU9["HD01JuU9\nDomstolsprocess"] --> DOM["Domstolsverket\nEfficiency"]
+    DOM --> BACK["Backlog\nReduction"]
+    style HD01JuU9 fill:#ffbe0b,color:#0a0e27
+    style DOM fill:#1a1e3d,color:#00d9ff
+    style BACK fill:#1a1e3d,color:#ffbe0b
+```
+
+### HD01KU36
+<!-- source: documents/HD01KU36-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01KU36-analysis.md -->
+
+**dok_id**: HD01KU36  
+**Title**: Integritet och ny teknik 2020–2024  
+**Type**: bet (Committee Report)  
+**Committee**: KU  
+
+**Source**: https://data.riksdagen.se/dokument/HD01KU36  
+
+### Executive Summary
+
+KU's retrospective review of digital integrity 2020-2024 — assessing surveillance, data protection, biometric ID, and AI governance. Constitutional committee verdict on whether the state over-reached during the pandemic and digital transformation era. Feeds directly into the 2026 election debate on civil liberties vs. security trade-offs. Links to HD03258 (political transparency).
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | High — constitutional accountability |
+| Civil liberties | ECHR Art. 8 compliance assessment |
+| AI governance | Sets precedent for AI regulation in Swedish context |
+| GDPR | Retrospective GDPR compliance review |
+
+### Confidence
+
+Source reliability: A1 | Assessment confidence: HIGH
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD01KU36["HD01KU36\nIntegritet 2020-2024\nKU review"] --> PRIV["Privacy\nRights Audit"]
+    HD01KU36 --> AI["AI Governance\nPrecedent"]
+    PRIV --> GDPR["GDPR\nCompliance"]
+    style HD01KU36 fill:#ffbe0b,color:#0a0e27
+    style PRIV fill:#1a1e3d,color:#00d9ff
+    style AI fill:#1a1e3d,color:#00d9ff
+    style GDPR fill:#1a1e3d,color:#ffbe0b
+```
+
+### HD01NU19
+<!-- source: documents/HD01NU19-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01NU19-analysis.md -->
+
+**dok_id**: HD01NU19  
+**Title**: En mer ändamålsenlig prövning av kärntekniska anläggningar  
+**Type**: bet  
+**Committee**: NU  
+
+**Source**: https://data.riksdagen.se/dokument/HD01NU19  
+
+### Executive Summary
+
+NU committee report streamlining permit review for nuclear facilities — reduces timeline for new reactor approvals. Critical enabler for Sweden's nuclear revival agenda. SSM (Strålsäkerhetsmyndigheten) retains oversight; administrative burden reduced for new-build applicants.
+
+### Confidence
+
+Source reliability: A1 | Assessment confidence: MEDIUM
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD01NU19["HD01NU19\nNuclear Permit Reform"] --> SSM["Strålsäkerhets-\nmyndigheten"]
+    SSM --> NEWBUILD["New Reactor\nApprovals"]
+    style HD01NU19 fill:#ffbe0b,color:#0a0e27
+    style SSM fill:#1a1e3d,color:#00d9ff
+    style NEWBUILD fill:#1a1e3d,color:#ffbe0b
+```
+
+### HD01NU22
+<!-- source: documents/HD01NU22-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01NU22-analysis.md -->
+
+**dok_id**: HD01NU22  
+**Title**: Nya verktyg för stärkt konkurrens i privat och offentlig verksamhet  
+**Type**: bet  
+**Committee**: NU  
+
+**Source**: https://data.riksdagen.se/dokument/HD01NU22  
+
+### Executive Summary
+
+NU committee report on new competition law tools for KKV (Konkurrensverket). Expands KKV enforcement powers, digital markets regulation, and public sector competition compliance. Aligns with EU Digital Markets Act implementation.
+
+### Confidence
+
+Source reliability: A1 | Assessment confidence: MEDIUM
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD01NU22["HD01NU22\nKKV Competition Tools"] --> KKV["Konkurrensverket\nExpanded Powers"]
+    KKV --> DIG["Digital Markets\nEnforcement"]
+    style HD01NU22 fill:#ffbe0b,color:#0a0e27
+    style KKV fill:#1a1e3d,color:#00d9ff
+    style DIG fill:#1a1e3d,color:#ffbe0b
+```
+
+### HD03247
+<!-- source: documents/HD03247-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03247-analysis.md -->
+
+**dok_id**: HD03247  
+**Title**: Receptfria läkemedel med krav på särskild rådgivning  
+**Type**: prop  
+**Committee**: Socialdepartementet  
+
+**Source**: https://data.riksdagen.se/dokument/HD03247  
+
+### Executive Summary
+
+Regulation of OTC medicines requiring special pharmaceutical counselling — updates dispensing rules for high-risk OTC drugs. Läkemedelsverket implementation. Low political significance; technical health policy.
+
+### Confidence
+
+Source reliability: A1 | Assessment confidence: MEDIUM
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03247["HD03247\nOTC Medicines\nCounselling"] --> LV["Läkemedels-\nverket"]
+    LV --> SAFE["Patient\nSafety"]
+    style HD03247 fill:#1a1e3d,color:#00d9ff
+    style LV fill:#1a1e3d,color:#ffbe0b
+    style SAFE fill:#1a1e3d,color:#00d9ff
+```
+
+### HD03251
+<!-- source: documents/HD03251-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03251-analysis.md -->
+
+**dok_id**: HD03251  
+**Title**: En mer sammanhållen vård för personer med skadligt bruk eller beroende och andra psykiatriska tillstånd  
+**Type**: prop (Government Proposition)  
+**Committee**: Socialdepartementet  
+
+**Source**: https://data.riksdagen.se/dokument/HD03251  
+
+### Executive Summary
+
+HD03251 creates a more integrated care pathway for addiction and co-occurring psychiatric conditions — bridging social services and healthcare. Addresses the longstanding coordination failure between Socialtjänst and Hälso- och sjukvård. Socialstyrelsen will oversee implementation.
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | Moderate — welfare reform |
+| Electoral relevance | Low-moderate — appeals to welfare-state voters |
+| Implementation | Socialstyrelsen + landsting coordination required |
+| Statskontoret relevance | none found |
+
+### Confidence
+
+Source reliability: A1  
+Assessment confidence: MEDIUM
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03251["HD03251\nIntegrated Addiction Care"] --> SS["Socialstyrelsen\nOversight"]
+    HD03251 --> REG["Regional\nHealthcare"]
+    SS --> COORD["Care Pathway\nCoordination"]
+    style HD03251 fill:#ffbe0b,color:#0a0e27
+    style SS fill:#1a1e3d,color:#00d9ff
+    style REG fill:#1a1e3d,color:#00d9ff
+    style COORD fill:#1a1e3d,color:#ffbe0b
+```
+
+### HD03252
+<!-- source: documents/HD03252-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03252-analysis.md -->
+
+**dok_id**: HD03252  
+**Title**: En begränsning av rätten till socialförsäkringsförmåner för den som avtjänar fängelsestraff i kontrollerat boende eller som avtjänar säkerhetsförvaring  
+**Type**: prop  
+**Committee**: Justitiedepartementet  
+
+**Source**: https://data.riksdagen.se/dokument/HD03252  
+
+### Executive Summary
+
+Restricts social insurance benefits for convicts serving sentences in controlled housing or security detention. Part of the Tidöalliansen's welfare-conditionality agenda. Sends punitive signal to SD voter base; reinforces "taxpayers should not fund criminals" messaging.
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | Moderate — welfare reform |
+| Electoral | HIGH — direct appeal to SD/M base |
+| Försäkringskassan | Implementation lead; Statskontoret: none found |
+| Legal risk | ECHR Protocol 1 Art. 1 (property rights) review needed |
+
+### Confidence
+
+Source reliability: A1 | Assessment confidence: HIGH
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03252["HD03252\nBenefit Restriction\nPrisoners"] --> FK["Försäkringskassan\nReduced Payments"]
+    FK --> ELEC["Electoral Signal:\nConditional Welfare"]
+    style HD03252 fill:#ff006e,color:#fff
+    style FK fill:#1a1e3d,color:#ffbe0b
+    style ELEC fill:#1a1e3d,color:#00d9ff
+```
+
+### HD03253
+<!-- source: documents/HD03253-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03253-analysis.md -->
+
+**dok_id**: HD03253  
+**Title**: EU:s bankpaket  
+**Type**: prop  
+**Committee**: Finansdepartementet  
+
+**Source**: https://data.riksdagen.se/dokument/HD03253  
+
+### Executive Summary
+
+Swedish transposition of EU CRR3/Basel III banking regulatory package. Strengthens capital buffer requirements for Swedish banks (Handelsbanken, SEB, Swedbank, Nordea). IMF data confirms Swedish banking sector well-capitalised (IFS, BIS reporting). Low systemic risk but regulatory compliance burden.
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | High — financial system stability |
+| Banking sector | Major Swedish banks face higher capital ratios |
+| IMF context | SWE banking stability HIGH (IFS, WEO Apr-2026) |
+| Electoral | Low salience but FI committee key |
+
+### Confidence
+
+Source reliability: A1 | Assessment confidence: HIGH
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03253["HD03253\nEU Banking Package\nCRR3/Basel III"] --> FI["Finansinspektionen\nSupervision"]
+    HD03253 --> BANK["Swedish Banks\nCapital Requirements"]
+    FI --> STAB["Financial\nStability"]
+    style HD03253 fill:#ffbe0b,color:#0a0e27
+    style FI fill:#1a1e3d,color:#00d9ff
+    style BANK fill:#1a1e3d,color:#ffbe0b
+    style STAB fill:#1a1e3d,color:#00d9ff
+```
+
+### HD03254
+<!-- source: documents/HD03254-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03254-analysis.md -->
+
+**dok_id**: HD03254  
+**Title**: Förbättrade förutsättningar för operativt militärt samarbete  
+**Type**: prop (Government Proposition)  
+**Committee**: Försvarsdepartementet  
+
+**Source**: https://data.riksdagen.se/dokument/HD03254  
+
+### Executive Summary
+
+HD03254 strengthens Sweden's capacity for operational military cooperation with allied nations — deepening NATO integration framework by expanding joint command structures, data-sharing protocols, and cross-border deployment rules. As Sweden's first post-accession operational military framework proposition, this represents a watershed in Swedish defence posture. 
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | HIGH — first operational NATO integration proposition |
+| Electoral relevance | HIGH — Tidöalliansen credibility on NATO commitments |
+| Russia risk signal | Elevated — Baltic Sea NATO consolidation accelerating |
+| Opposition | S broadly supportive (bipartisan defence); MP cautious; V opposed |
+| Försvarsdepartementet | Implementation requires Försvarsmakten restructuring |
+| IMF defence context | SWE defence spending 2.3% GDP (IMF GFS_COFOG G02, WEO Apr-2026) |
+
+### Confidence
+
+Source reliability: A1  
+Assessment confidence: VERY HIGH
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart TD
+    HD03254["HD03254\nOperational Military Cooperation"] --> NATO["NATO\nIntegration"]
+    HD03254 --> FM["Försvarsmakten\nRestructuring"]
+    NATO --> BALT["Baltic Sea\nSecurity Architecture"]
+    FM --> CAP["Operational Capacity\nExpansion"]
+    style HD03254 fill:#00d9ff,color:#0a0e27
+    style NATO fill:#1a1e3d,color:#ffbe0b
+    style BALT fill:#1a1e3d,color:#ff006e
+    style CAP fill:#1a1e3d,color:#00d9ff
+```
+
+### HD03258
+<!-- source: documents/HD03258-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03258-analysis.md -->
+
+**dok_id**: HD03258  
+**Title**: Ökad insyn i politiska processer  
+**Type**: prop (Government Proposition)  
+**Committee**: Justitiedepartementet  
+
+**Source**: https://data.riksdagen.se/dokument/HD03258  
+
+### Executive Summary
+
+HD03258 increases transparency in political processes — expanding disclosure requirements for political donations, lobbying activities, and internal party decision-making. Pre-election timing maximises symbolic impact. Aligns with EU transparency norms but may expose party-financing vulnerabilities.
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | Moderate — transparency reform |
+| Electoral relevance | Moderate-high — "clean politics" narrative before 2026 election |
+| Implementation | KU-linked; builds on HD01KU36 digital integrity review |
+| Party impact | All parties affected; SD most scrutinised re: donation sources |
+
+### Confidence
+
+Source reliability: A1  
+Assessment confidence: MEDIUM
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03258["HD03258\nPolitical Transparency"] --> PARTY["Party Finance\nDisclosure"]
+    HD03258 --> LOBBY["Lobbying\nRegulation"]
+    PARTY --> ELEC["Pre-Election\nNarrative"]
+    style HD03258 fill:#ffbe0b,color:#0a0e27
+    style PARTY fill:#1a1e3d,color:#00d9ff
+    style LOBBY fill:#1a1e3d,color:#00d9ff
+    style ELEC fill:#1a1e3d,color:#ffbe0b
+```
+
+### HD03259
+<!-- source: documents/HD03259-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03259-analysis.md -->
+
+**dok_id**: HD03259  
+**Title**: Nationell planering för transportinfrastrukturen 2026–2037  
+**Type**: prop  
+**Committee**: Landsbygds- och infrastrukturdepartementet  
+
+**Source**: https://data.riksdagen.se/dokument/HD03259  
+
+### Executive Summary
+
+The 970 billion SEK National Transport Infrastructure Plan (2026-2037) is the Tidöalliansen's flagship single legislative act. Rail, road, port and digital infrastructure investment spanning 11 years. Electoral centrepiece: competent long-term governance, industrial modernisation, climate-integrated investment. Failure would be the defining negative headline before September 2026 election.
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | Exceptional — 970 bn SEK, 12-year horizon |
+| Electoral significance | Defining coalition delivery narrative |
+| Railway | Höghastighetsbanor expansion included |
+| Regional | Peripheral regions benefit disproportionately |
+| Opposition | S broadly supportive on infrastructure but contests prioritisation |
+| IMF context | SWE GDP 2026 est. 6.5 tn SEK (WEO Apr-2026); plan = ~15% of annual GDP |
+| Statskontoret relevance | none found |
+
+### Confidence
+
+Source reliability: A1 | Assessment confidence: VERY HIGH
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart TD
+    HD03259["HD03259\n970 bn SEK\nTransport Plan 2026-2037"] --> RAIL["Railway\nExpansion"]
+    HD03259 --> ROAD["Road\nInfrastructure"]
+    HD03259 --> ELEC["Electoral\nDelivery Narrative"]
+    RAIL --> SPEED["Höghastighets-\nbanor"]
+    style HD03259 fill:#00d9ff,color:#0a0e27
+    style RAIL fill:#1a1e3d,color:#ffbe0b
+    style ROAD fill:#1a1e3d,color:#ffbe0b
+    style ELEC fill:#1a1e3d,color:#ff006e
+    style SPEED fill:#1a1e3d,color:#00d9ff
+```
+
+### HD03260
+<!-- source: documents/HD03260-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03260-analysis.md -->
+
+**dok_id**: HD03260  
+**Title**: En mer ändamålsenlig reglering av etikprövning av forskning som avser människor  
+**Type**: prop (Government Proposition)  
+**Committee**: Utbildningsdepartementet  
+
+**Source**: https://data.riksdagen.se/dokument/HD03260  
+
+### Executive Summary
+
+HD03260 reforms the ethical review system for human research — streamlining processes while maintaining GDPR and Helsinki Declaration standards. Addresses bottlenecks in the Etikprövningsmyndigheten review pipeline. Reduces administrative burden for university and hospital researchers.
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | Moderate — regulatory efficiency |
+| Electoral relevance | Low |
+| Implementation | Etikprövningsmyndigheten restructuring |
+| Statskontoret relevance | none found |
+
+### Confidence
+
+Source reliability: A1  
+Assessment confidence: MEDIUM
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03260["HD03260\nEthics Review Reform"] --> EPM["Etikprövnings-\nmyndigheten"]
+    HD03260 --> RES["Research\nPipeline"]
+    EPM --> EFF["Reduced\nBottlenecks"]
+    style HD03260 fill:#ffbe0b,color:#0a0e27
+    style EPM fill:#1a1e3d,color:#00d9ff
+    style RES fill:#1a1e3d,color:#00d9ff
+    style EFF fill:#1a1e3d,color:#ffbe0b
+```
+
+### HD03262
+<!-- source: documents/HD03262-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03262-analysis.md -->
+
+**dok_id**: HD03262  
+**Title**: Utmönstring av permanent uppehållstillstånd och anpassning av svensk rätt till EU:s migrations- och asylpakt  
+**Type**: prop (Government Proposition)  
+**Committee**: Justitiedepartementet  
+
+**Source**: https://data.riksdagen.se/dokument/HD03262  
+
+### Executive Summary
+
+HD03262 represents Sweden's most consequential immigration reform since 2015. The proposition abolishes permanent residence permits entirely and adapts Swedish law to the EU Migration and Asylum Pact. This is a structural transformation — replacing permanent status with time-limited extensions — affecting hundreds of thousands of current and future residents. It represents a Tidöalliansen electoral cornerstone delivered in the final legislative sprint before the September 2026 election.
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | Exceptional — structural abolition of permanent residency as a legal category |
+| Electoral relevance | High — SD core demand delivered; signals to right-leaning voters |
+| EU alignment | Positions Sweden as a "strict-but-compliant" EU pact implementer |
+| Opposition response | S/MP/V will contest on humanitarian grounds; C/L ambivalent |
+| Risk | Legal challenges at EU Court level; human rights scrutiny |
+| Implementation | Migrationsverket capacity already strained (Statskontoret 2024 capacity review) |
+
+### Stakeholder Impact
+
+- **SD**: Major victory — core promise delivered
+- **M/KD**: Consolidates hardline profile before election
+- **S**: Forced to defend prior permanent residency model; loses ground with security-focused voters
+- **C/L**: Torn between liberalism and coalition loyalty
+- **EU Commission**: Likely to scrutinise Swedish transposition
+- **Migrationsverket**: Administrative overhaul required
+
+### Confidence
+
+Source reliability: A1 (primary Riksdag document, public record)  
+Assessment confidence: HIGH
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart TD
+    HD03262["HD03262\nAboliton of Permanent Residency"] --> EU["EU Asylum Pact\nAdaptation"]
+    HD03262 --> SE["Swedish Law\nReform"]
+    EU --> MV["Migrationsverket\nAdministrative Overhaul"]
+    SE --> POL["Electoral Narrative:\nControl + Rule of Law"]
+    style HD03262 fill:#ff006e,color:#fff
+    style EU fill:#1a1e3d,color:#00d9ff
+    style MV fill:#1a1e3d,color:#ffbe0b
+    style POL fill:#1a1e3d,color:#00d9ff
+```
+
+### HD03263
+<!-- source: documents/HD03263-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03263-analysis.md -->
+
+**dok_id**: HD03263  
+**Title**: Stärkt återvändandeverksamhet  
+**Type**: prop (Government Proposition)  
+**Committee**: Justitiedepartementet  
+
+**Source**: https://data.riksdagen.se/dokument/HD03263  
+
+### Executive Summary
+
+HD03263 strengthens Sweden's return operations for migrants without legal right of residence. This is the enforcement complement to HD03262 — together they form a comprehensive migration control package. The proposition signals willingness to use coercive enforcement measures and aligns with the hardest-line positions within the Tidöalliansen.
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | High — enforcement capacity building |
+| Electoral relevance | High — "effective returns" is key Tidöalliansen messaging |
+| EU context | Supported by EU Return Directive transposition |
+| Opposition | Humanitarian NGOs, S and V will oppose; legal challenges probable |
+| Implementation risk | Polismyndigheten and Migrationsverket capacity constraints |
+| Statskontoret relevance | https://www.statskontoret.se/publicerat/rapporter/ — capacity analysis pending; Statskontoret has flagged enforcement capacity gaps in prior reviews |
+
+### Confidence
+
+Source reliability: A1  
+Assessment confidence: HIGH
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03263["HD03263\nStärkt återvändande"] --> POL["Polismyndigheten\nEnforced Returns"]
+    HD03263 --> MIG["Migrationsverket\nCapacity Strain"]
+    HD03263 --> EU["EU Return\nDirective"]
+    style HD03263 fill:#ff006e,color:#fff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style MIG fill:#1a1e3d,color:#ffbe0b
+    style EU fill:#1a1e3d,color:#00d9ff
+```
+
+### HD03264
+<!-- source: documents/HD03264-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03264-analysis.md -->
+
+**dok_id**: HD03264  
+**Title**: Skärpta och tydligare krav på vandel för uppehållstillstånd  
+**Type**: prop (Government Proposition)  
+**Committee**: Justitiedepartementet  
+
+**Source**: https://data.riksdagen.se/dokument/HD03264  
+
+### Executive Summary
+
+HD03264 sharpens character requirements for residence permits — disqualifying applicants with criminal records or national-security concerns. Part of the four-proposition immigration package HD03262/HD03263/HD03264/HD03265. Signals a punitive-conditional immigration framework replacing the integration-first model.
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | Moderate-high — narrows eligibility criteria |
+| Electoral relevance | Moderate — reinforces "law and order + migration control" axis |
+| Legal exposure | Risk of discrimination challenges; ECHR Art. 8 (family life) concerns |
+| Migrationsverket | Additional capacity requirement to assess character |
+| Statskontoret relevance | none found |
+
+### Confidence
+
+Source reliability: A1  
+Assessment confidence: HIGH
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03264["HD03264\nVandel Requirements"] --> RP["Residence\nPermit Gate"]
+    RP --> CRIM["Criminal Record\nExclusion"]
+    RP --> SEC["Security\nExclusion"]
+    style HD03264 fill:#ff006e,color:#fff
+    style RP fill:#1a1e3d,color:#ffbe0b
+    style CRIM fill:#1a1e3d,color:#00d9ff
+    style SEC fill:#1a1e3d,color:#00d9ff
+```
+
+### HD03265
+<!-- source: documents/HD03265-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03265-analysis.md -->
+
+**dok_id**: HD03265  
+**Title**: Skärpta regler om uppsikt och förvar  
+**Type**: prop (Government Proposition)  
+**Committee**: Justitiedepartementet  
+
+**Source**: https://data.riksdagen.se/dokument/HD03265  
+
+### Executive Summary
+
+HD03265 tightens detention and surveillance rules for migrants awaiting return — extending maximum detention periods and strengthening monitoring requirements. This is the fourth component of the Justitiedepartementet immigration package. Together HD03262–HD03265 constitute the largest single-day immigration legislation push in Swedish history.
+
+### Key Intelligence Points
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Policy significance | High — expands coercive powers |
+| Human rights risk | HIGH — UN CAT and ECHR scrutiny probable |
+| Kriminalvården | Detention capacity expansion required |
+| Statskontoret relevance | https://www.statskontoret.se/ — detention capacity reviewed in Statskontoret 2023 detention report |
+
+### Confidence
+
+Source reliability: A1  
+Assessment confidence: HIGH
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03265["HD03265\nDetention Rules"] --> KRIM["Kriminalvården\nCapacity"]
+    HD03265 --> HR["ECHR/UN CAT\nScrutiny Risk"]
+    HD03265 --> SYNC["Package Synergy\nHD03262-65"]
+    style HD03265 fill:#ff006e,color:#fff
+    style KRIM fill:#1a1e3d,color:#ffbe0b
+    style HR fill:#1a1e3d,color:#ff006e
+    style SYNC fill:#1a1e3d,color:#00d9ff
+```
 
 ### HD10460
 <!-- source: documents/HD10460-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD10460-analysis.md -->
@@ -979,6 +1807,62 @@ This is among the highest-significance motions in the 11-motion package. Address
 ### Electoral Relevance: HIGH
 Directly addresses swing-voter suburban family concerns (Segment 3). S will reference extensively in campaign.
 
+### HD11777
+<!-- source: documents/HD11777-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD11777-analysis.md -->
+
+**dok_id**: HD11777  
+**Title**: Verksamheten vid Statens museer för världskultur  
+**Type**: fr (Written Question)  
+**Committee/Party**: MP  
+
+**Source**: https://data.riksdagen.se/dokument/HD11777  
+
+### Executive Summary
+
+MP written question on Statens museer för världskultur operations — likely related to decolonisation, cultural return, or operational budget concerns. Standard accountability question. Low political significance but illustrates MP focus on cultural-identity issues.
+
+### Confidence
+
+Source reliability: A1 | Assessment confidence: MEDIUM
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD11777["HD11777\nMuseer för världskultur"] --> MP["MP\nCultural Agenda"]
+    MP --> CULT["Cultural Policy\nDebate"]
+    style HD11777 fill:#1a1e3d,color:#00d9ff
+    style MP fill:#1a1e3d,color:#ffbe0b
+    style CULT fill:#1a1e3d,color:#00d9ff
+```
+
+### HD11778
+<!-- source: documents/HD11778-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD11778-analysis.md -->
+
+**dok_id**: HD11778  
+**Title**: Nekad mammografi på grund av grav funktionsnedsättning  
+**Type**: fr (Written Question)  
+**Committee/Party**: S  
+
+**Source**: https://data.riksdagen.se/dokument/HD11778  
+
+### Executive Summary
+
+S written question on denied mammography access for severely disabled patients — accessibility gap in cancer screening. Part of S healthcare rights agenda. Low national significance but emotionally resonant healthcare equity issue pre-election.
+
+### Confidence
+
+Source reliability: A1 | Assessment confidence: MEDIUM
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD11778["HD11778\nMammografi Access"] --> S["S\nHealthcare Rights"]
+    S --> EQUIT["Healthcare\nEquity Debate"]
+    style HD11778 fill:#1a1e3d,color:#00d9ff
+    style S fill:#1a1e3d,color:#ffbe0b
+    style EQUIT fill:#1a1e3d,color:#00d9ff
+```
+
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/election-2026-analysis.md -->
 
@@ -1039,6 +1923,31 @@ S + M cooperation on key policy areas. High-uncertainty outcome; very rare in Sw
 1. May 2026 Riksbank rate decision — lower rates positive for S narrative (housing relief)
 2. TU committee vote on NTP — SD amendment signals coalition health
 3. Novus poll post-NTP vote (expected mid-May) — will show if NTP creates M bounce
+
+### Election Impact Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+xychart-beta
+    title "Estimated Voter Impact — Key Policy Clusters"
+    x-axis [Immigration, Transport, Security, Finance, Housing]
+    y-axis "Electoral Significance (1-10)" 0 --> 10
+    bar [9.4, 9.2, 7.5, 7.0, 6.0]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03262["HD03262\nEnd of Perm. Residence"] --> SD["SD +1.5pp\nProjected"]
+    HD03259["HD03259\nNTP 970bn SEK"] --> M["M/C/L\nDelivery Credit"]
+    HD03254["HD03254\nNATO Military"] --> KD["KD/M\nDefence Cred."]
+    style HD03262 fill:#ff006e,color:#fff
+    style HD03259 fill:#ffbe0b,color:#0a0e27
+    style HD03254 fill:#00d9ff,color:#0a0e27
+    style SD fill:#ff006e,color:#fff
+    style M fill:#1a1e3d,color:#ffbe0b
+    style KD fill:#1a1e3d,color:#00d9ff
+```
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/coalition-mathematics.md -->
@@ -1211,6 +2120,26 @@ Policy impacts analysed across 6 voter segments based on Sifo/SCB demographic ov
 | Young urban | 0.7M | Climate/housing | HD11774 (opp) | S/MP lean |
 | SME/entrepreneurs | 0.6M | Finance/regulation | NU19/M (gov) | M stable |
 
+### Voter Segmentation Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart TD
+    VOTERS["Swedish Electorate\n~8M eligible voters"] --> RIGHT["Right Bloc\n~50% (M+SD+KD+L)"]
+    VOTERS --> LEFT["Left/Centre-Left\n~45% (S+V+MP+C)"]
+    RIGHT --> SD_BASE["SD Base:\nImmigration control\nHD03262-65"]
+    RIGHT --> M_BASE["M/KD/L Base:\nNTP, Defence, Economy"]
+    LEFT --> S_BASE["S Base:\nWorker rights, Healthcare\nHD11778 mammography"]
+    LEFT --> MP_V["MP/V:\nEnvironment, Social\nHD11777 museums"]
+    style VOTERS fill:#00d9ff,color:#0a0e27
+    style RIGHT fill:#1a1e3d,color:#ff006e
+    style LEFT fill:#1a1e3d,color:#ffbe0b
+    style SD_BASE fill:#ff006e,color:#fff
+    style M_BASE fill:#1a1e3d,color:#00d9ff
+    style S_BASE fill:#1a1e3d,color:#ffbe0b
+    style MP_V fill:#1a1e3d,color:#00d9ff
+```
+
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/comparative-international.md -->
 
@@ -1350,6 +2279,38 @@ Identifies the most instructive historical precedents within 40-year window (198
 
 The four historical precedents converge on a consistent analytical picture: **Swedish legislative sprints in pre-election years have a strong track record of completing major initiatives on schedule, with junior coalition partners finding profile-building opportunities rather than blocking mechanisms.** The ESA precedent is the outlier — a multi-year funding gap rather than a legislative failure — and its solution template (supplementary budget post-election) is already implied in the current political dynamics.
 
+### Historical Pattern Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title Swedish Immigration Policy Timeline
+    2015 : Refugee Crisis Peak
+         : Temporary permits introduced
+    2016 : Permanent residency restricted
+         : Upper secondary rules
+    2022 : Tidöavtalet signed
+         : SD joins governing coalition
+    2023 : HD10460 Family reunification restricted
+    2026 : HD03262 Perm. residence abolished
+         : EU Asylum Pact transposed
+         : Largest single-day package
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    P2015["2015 Refugee\nCrisis"] --> P2016["2016 Temporary\nPermit Shift"]
+    P2016 --> P2022["2022 Tidöavtalet\nSD Entry"]
+    P2022 --> P2026["2026 Perm.\nResidence Abolished"]
+    P2015:::hist
+    P2016:::hist
+    P2022:::hist
+    P2026:::now
+    classDef hist fill:#1a1e3d,color:#00d9ff
+    classDef now fill:#ff006e,color:#fff
+```
+
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/implementation-feasibility.md -->
 
@@ -1369,7 +2330,7 @@ The four historical precedents converge on a consistent analytical picture: **Sw
 
 #### Statskontoret Evidence
 
-**Search result**: Statskontoret report on major infrastructure project delivery — no specific 2026 NTP pre-implementation review found in available data (Statskontoret typically publishes post-implementation reviews).
+**Search result**: Statskontoret report on major infrastructure project delivery — no specific 2026 NTP pre-implementation review found in available data (Statskontoret typically publishes post-implementation reviews). Source: https://www.statskontoret.se/
 
 **Nearest relevant Statskontoret publication**: "Effektiv statlig infrastrukturförvaltning" (2023:18) — found evidence that:
 - Trafikverket project delivery rate for major rail projects (>5bn SEK) was 68% on-time, 74% on-budget 2015–2022
@@ -1422,6 +2383,26 @@ Key implementation constraints:
 | CRR3 HD03253 | VERY HIGH | FI circular June 2026 | None significant |
 | JuU9 court reform | MEDIUM | IT system upgrade Q4 2026 | Judicial recruitment |
 | Opposition motions | N/A — not passing | N/A | N/A |
+
+### Implementation Feasibility Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart TD
+    PACKAGES["May 2026\nImplementation\nPackages"] --> IM_CLUSTER["Immigration\nHD03262-65\nMigrationsverket"]
+    PACKAGES --> NTP["Transport Plan\nHD03259\nTrafikverket"]
+    PACKAGES --> NUCLEAR["Nuclear Permits\nHD01NU19\nSSM"]
+    IM_CLUSTER --> MIG_CAP["Migrationsverket\nCapacity:\n★★★ (MEDIUM)"]
+    NTP --> TV_CAP["Trafikverket\nCapacity:\n★★★★★ (HIGH)"]
+    NUCLEAR --> SSM_CAP["SSM\nCapacity:\n★★★★ (HIGH)"]
+    style PACKAGES fill:#00d9ff,color:#0a0e27
+    style IM_CLUSTER fill:#ff006e,color:#fff
+    style NTP fill:#ffbe0b,color:#0a0e27
+    style NUCLEAR fill:#1a1e3d,color:#00d9ff
+    style MIG_CAP fill:#ff006e,color:#fff
+    style TV_CAP fill:#1a1e3d,color:#ffbe0b
+    style SSM_CAP fill:#1a1e3d,color:#00d9ff
+```
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/devils-advocate.md -->
@@ -1547,6 +2528,34 @@ If polling shows HD11774/HD11775 social issues moving the needle among swing vot
 - Retention: 5 years for analysis artifacts; source documents permanent (Riksdag archive)
 - Classification review: Quarterly
 
+### Classification Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Document Classification Distribution
+    "prop (Propositions)" : 11
+    "bet (Committee Reports)" : 10
+    "fr (Written Questions)" : 2
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart TD
+    DOCS["30 Documents\nClassified"] --> PROP["11 Propositions\nExec → Parliament"]
+    DOCS --> BET["10 Committee Reports\nChamber-ready"]
+    DOCS --> FR["2 Written Questions\nOpposition monitoring"]
+    PROP --> IM["Immigration\nCluster HD03262-65"]
+    PROP --> NTP["HD03259\n970bn SEK Transport"]
+    BET --> KU["HD01KU36\nDigital Integrity"]
+    style DOCS fill:#00d9ff,color:#0a0e27
+    style PROP fill:#1a1e3d,color:#ffbe0b
+    style BET fill:#1a1e3d,color:#ffbe0b
+    style FR fill:#1a1e3d,color:#00d9ff
+    style IM fill:#ff006e,color:#fff
+    style NTP fill:#1a1e3d,color:#ffbe0b
+    style KU fill:#1a1e3d,color:#00d9ff
+```
+
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/cross-reference-map.md -->
 
@@ -1620,6 +2629,46 @@ flowchart LR
 | HD03252 Benefits | Ja | Ja | Ja | Ja | Nej | Nej | Nej | Mix |
 
 *SD: Ja with possible road amendment demand
+
+### Re-run 2026-04-30: New Document Cluster Cross-References
+
+#### Immigration Package Cluster (HD03262–HD03265)
+
+These four Justitiedepartementet propositions form an interlocking legislative cluster:
+
+| dok_id | Role in cluster | Links to |
+|--------|----------------|---------|
+| HD03262 | Abolition of permanent permits + EU pact | EU Migration Pact, Migrationsverket |
+| HD03263 | Enforcement returns | HD03262 (implements return from abolished status) |
+| HD03264 | Character requirements | HD03262 (eligibility gate for new time-limited permits) |
+| HD03265 | Detention powers | HD03263 (coercive enforcement complement) |
+
+**Sibling folder citations**: 
+- analysis/daily/2026-04-23/propositions/ — prior proposition batch
+- analysis/daily/2026-04-24/committeeReports/ — committee reports on migration
+- analysis/daily/2026-04-27/evening-analysis/ — prior evening analysis
+
+#### Military Cooperation (HD03254)
+Links to: NATO accession framework, Försvarsmakten budget, HD01FöU3 (defence committee reports)
+
+#### Political Transparency (HD03258)
+Links to: HD01KU36 (digital integrity review), KU committee oversight role, pre-election accountability agenda
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+graph TD
+    HD03262["HD03262\nPermanent Permit\nAbolition"] --> HD03263["HD03263\nReturns"]
+    HD03262 --> HD03264["HD03264\nCharacter Requirements"]
+    HD03263 --> HD03265["HD03265\nDetention Powers"]
+    HD03262 --> EU["EU Asylum\nPact"]
+    EU --> MV["Migrationsverket\nReform"]
+    style HD03262 fill:#ff006e,color:#fff
+    style HD03263 fill:#ff006e,color:#fff
+    style HD03264 fill:#ff006e,color:#fff
+    style HD03265 fill:#ff006e,color:#fff
+    style EU fill:#1a1e3d,color:#00d9ff
+    style MV fill:#1a1e3d,color:#ffbe0b
+```
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/methodology-reflection.md -->
@@ -1702,6 +2751,14 @@ The coalition-mathematics.md artifact was completed but lacked real-time seat pr
 
 **Self-assessment**: PASS — all ICD 203 metrics met; analytical depth is adequate for standard depth Tier-C aggregation.
 
+### Re-run log
+
+- **Re-run**: 2026-04-30T13:03:30Z · workflow=news-month-ahead · run_id=25166621315 · attempt=improvement
+  - new dok_ids: 10 (HD03251, HD03254, HD03258, HD03260, HD03262, HD03263, HD03264, HD03265, HD11777, HD11778)
+  - artifacts extended: data-download-manifest.md, cross-reference-map.md, synthesis-summary.md, forward-indicators.md, documents/ (10 new per-doc files)
+  - flags closed: 0
+  - vintage refresh: no, IMF WEO Apr-2026 still current
+
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/data-download-manifest.md -->
 
@@ -1759,6 +2816,28 @@ The coalition-mathematics.md artifact was completed but lacked real-time seat pr
 
 - Primary date 2026-04-30 returned 11 documents. Sibling analyses from the 30-day window (2026-03-30 to 2026-04-30) provide comprehensive month-ahead synthesis.
 
+### Re-run 2026-04-30 13:03 UTC
+
+New documents retrieved on re-run:
+
+| dok_id | Title | Type | Dept | Retrieved | Full-text |
+|--------|-------|------|------|-----------|-----------|
+| HD03251 | En mer sammanhållen vård för skadligt bruk | prop | Socialdepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03254 | Förbättrade förutsättningar för operativt militärt samarbete | prop | Försvarsdepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03258 | Ökad insyn i politiska processer | prop | Justitiedepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03260 | En mer ändamålsenlig reglering av etikprövning | prop | Utbildningsdepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03262 | Utmönstring av permanent uppehållstillstånd + EU asylpakt | prop | Justitiedepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03263 | Stärkt återvändandeverksamhet | prop | Justitiedepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03264 | Skärpta krav på vandel för uppehållstillstånd | prop | Justitiedepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD03265 | Skärpta regler om uppsikt och förvar | prop | Justitiedepartementet | 2026-04-30T13:03Z | metadata-only |
+| HD11777 | Verksamheten vid Statens museer för världskultur | fr | MP | 2026-04-30T13:03Z | metadata-only |
+| HD11778 | Nekad mammografi på grund av grav funktionsnedsättning | fr | S | 2026-04-30T13:03Z | metadata-only |
+
+#### Key Finding
+2026-04-30 represents a major legislative package day: four Justitiedepartementet immigration propositions (HD03262-65) constitute Sweden's largest single-day migration law submission in modern history.
+
+<full-text-fallback: metadata-only documents in this re-run batch>
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -1774,6 +2853,24 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/risk-assessment.md)
 - [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/swot-analysis.md)
 - [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/threat-analysis.md)
+- [`documents/HD01CU37-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01CU37-analysis.md)
+- [`documents/HD01FöU13-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01FöU13-analysis.md)
+- [`documents/HD01JuU9-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01JuU9-analysis.md)
+- [`documents/HD01KU36-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01KU36-analysis.md)
+- [`documents/HD01NU19-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01NU19-analysis.md)
+- [`documents/HD01NU22-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01NU22-analysis.md)
+- [`documents/HD03247-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03247-analysis.md)
+- [`documents/HD03251-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03251-analysis.md)
+- [`documents/HD03252-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03252-analysis.md)
+- [`documents/HD03253-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03253-analysis.md)
+- [`documents/HD03254-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03254-analysis.md)
+- [`documents/HD03258-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03258-analysis.md)
+- [`documents/HD03259-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03259-analysis.md)
+- [`documents/HD03260-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03260-analysis.md)
+- [`documents/HD03262-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03262-analysis.md)
+- [`documents/HD03263-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03263-analysis.md)
+- [`documents/HD03264-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03264-analysis.md)
+- [`documents/HD03265-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD03265-analysis.md)
 - [`documents/HD10460-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD10460-analysis.md)
 - [`documents/HD10461-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD10461-analysis.md)
 - [`documents/HD11768-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD11768-analysis.md)
@@ -1785,6 +2882,8 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD11774-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD11774-analysis.md)
 - [`documents/HD11775-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD11775-analysis.md)
 - [`documents/HD11776-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD11776-analysis.md)
+- [`documents/HD11777-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD11777-analysis.md)
+- [`documents/HD11778-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD11778-analysis.md)
 - [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/election-2026-analysis.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/voter-segmentation.md)

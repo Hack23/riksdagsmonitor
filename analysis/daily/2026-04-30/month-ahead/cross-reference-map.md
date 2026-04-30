@@ -72,3 +72,43 @@ flowchart LR
 | HD03252 Benefits | Ja | Ja | Ja | Ja | Nej | Nej | Nej | Mix |
 
 *SD: Ja with possible road amendment demand
+
+## Re-run 2026-04-30: New Document Cluster Cross-References
+
+### Immigration Package Cluster (HD03262–HD03265)
+
+These four Justitiedepartementet propositions form an interlocking legislative cluster:
+
+| dok_id | Role in cluster | Links to |
+|--------|----------------|---------|
+| HD03262 | Abolition of permanent permits + EU pact | EU Migration Pact, Migrationsverket |
+| HD03263 | Enforcement returns | HD03262 (implements return from abolished status) |
+| HD03264 | Character requirements | HD03262 (eligibility gate for new time-limited permits) |
+| HD03265 | Detention powers | HD03263 (coercive enforcement complement) |
+
+**Sibling folder citations**: 
+- analysis/daily/2026-04-23/propositions/ — prior proposition batch
+- analysis/daily/2026-04-24/committeeReports/ — committee reports on migration
+- analysis/daily/2026-04-27/evening-analysis/ — prior evening analysis
+
+### Military Cooperation (HD03254)
+Links to: NATO accession framework, Försvarsmakten budget, HD01FöU3 (defence committee reports)
+
+### Political Transparency (HD03258)
+Links to: HD01KU36 (digital integrity review), KU committee oversight role, pre-election accountability agenda
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+graph TD
+    HD03262["HD03262\nPermanent Permit\nAbolition"] --> HD03263["HD03263\nReturns"]
+    HD03262 --> HD03264["HD03264\nCharacter Requirements"]
+    HD03263 --> HD03265["HD03265\nDetention Powers"]
+    HD03262 --> EU["EU Asylum\nPact"]
+    EU --> MV["Migrationsverket\nReform"]
+    style HD03262 fill:#ff006e,color:#fff
+    style HD03263 fill:#ff006e,color:#fff
+    style HD03264 fill:#ff006e,color:#fff
+    style HD03265 fill:#ff006e,color:#fff
+    style EU fill:#1a1e3d,color:#00d9ff
+    style MV fill:#1a1e3d,color:#ffbe0b
+```

@@ -60,3 +60,19 @@ The following PIRs from the 2026-04-30 propositions/committeeReports/interpellat
 - 5 Key Judgments: 2 × HIGH, 2 × MEDIUM-HIGH/MEDIUM, 1 × VERY HIGH
 - Source diversity: Riksdag API [A], sibling analyses [B], IMF cached data [C]
 - Party neutrality: Judgments apply equally to governing coalition (KJ1–3) and opposition (KJ4); security assessment (KJ5) is non-partisan
+
+## Re-run Update: 2026-04-30 Key Judgment Additions
+
+### Key Judgment 6 (KJ-6) — Immigration Package Systemic Impact (VERY HIGH confidence)
+
+The four-proposition immigration package submitted on 2026-04-30 (HD03262–HD03265) will dominate Swedish political discourse for the remainder of 2026. HD03262's abolition of permanent residence permits represents the most structural immigration reform in Swedish history. Assessment: **this package, not the Transport Plan, will be the defining electoral battleground of the September 2026 election**. SD and M will claim transformative delivery; S will mobilise on humanitarian grounds; C and L face coalition discipline vs. liberal values tension.
+
+### Key Judgment 7 (KJ-7) — Military Cooperation as NATO Credibility Signal (HIGH confidence)
+
+HD03254 (operational military cooperation) demonstrates Sweden's acceleration of NATO integration beyond symbolic accession. Combined with Sweden's 2.3% GDP defence spending trajectory (IMF GFS_COFOG G02, WEO Apr-2026), Sweden is positioning itself as a credible NATO contributor in the Baltic region.
+
+### Prior-Cycle PIR Update
+
+- **PIR-1 (Transport Plan vote)**: Confirmed on track for May 2026 committee phase — no change.
+- **PIR-2 (Immigration reform scope)**: **ANSWERED** — HD03262 confirms abolition of permanent permits as the operative mechanism. Scope exceeds prior forecast.
+- **PIR-3 (Defence spending trajectory)**: Open — HD03254 is the legislative vehicle but cost estimates pending committee analysis.
