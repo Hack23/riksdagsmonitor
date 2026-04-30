@@ -160,8 +160,8 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
         extractFromFilename(fileName),
       ),
       type: classifyArticleType(content, fileName),
-      topics: extractTopics(content),
-      tags: decodeHtmlEntities(extractTags(content).join('|||')).split('|||'),
+      topics: extractTopics(content, fileName),
+      tags: decodeHtmlEntities(extractTags(content, fileName).join('|||')).split('|||').filter(Boolean),
     };
 
     return metadata;
@@ -347,7 +347,7 @@ export function classifyArticleType(content: string, fileName: string): ArticleT
  * Extract topics from article tags.
  * Supports topic detection keywords in all 14 languages.
  */
-export function extractTopics(content: string): string[] {
+export function extractTopics(content: string, fileName: string = ''): string[] {
   const topics: string[] = [];
   const tagPattern = /<meta\s+property=["']article:tag["']\s+content=["']([^"']+)["']/gi;
   let match: RegExpExecArray | null;
@@ -363,13 +363,22 @@ export function extractTopics(content: string): string[] {
     if (tag.includes('legislation') || tag.includes('lagstiftning') || tag.includes('lovgivning') || tag.includes('lainsäädäntö') || tag.includes('gesetzgebung') || tag.includes('législation') || tag.includes('legislación') || tag.includes('wetgeving') || tag.includes('التشريعات') || tag.includes('חקיקה') || tag.includes('立法') || tag.includes('입법')) topics.push('legislation');
   }
 
+  const lowerSource = `${fileName} ${content.slice(0, 12000)}`.toLowerCase();
+  if (/(committee|committeereports|utskott|betänkande|committee reports|rapport de commission|ausschuss|위원회|委员会|委員会)/i.test(lowerSource)) topics.push('committees');
+  if (/(proposition|motion|bill|legislative|lagstift|lovgiv|lainsäädäntö|gesetz|législation|legislación|立法|입법)/i.test(lowerSource)) topics.push('legislation');
+  if (/(interpellation|riksdag|parliament|riksdagen|parlament|val\b|election|voting|vote|议会|의회|議会)/i.test(lowerSource)) topics.push('parliament');
+  if (/(government|regering|regerings|minister|ministry|kristersson|gouvernement|gobierno|regierung|الحكومة|ממשלה|政府)/i.test(lowerSource)) topics.push('government');
+  if (/(defen[cs]e|försvar|forsvar|puolustus|verteidigung|défense|defensa|defensie|国防|防衛|국방)/i.test(lowerSource)) topics.push('defense');
+  if (/(environment|climate|miljö|miljø|ympäristö|umwelt|environnement|medio ambiente|milieu|环境|環境|환경)/i.test(lowerSource)) topics.push('environment');
+  if (/(eu|european union|europeiska unionen|union européenne|europäische union)/i.test(lowerSource)) topics.push('eu');
+
   return [...new Set(topics)].slice(0, 5); // Unique, max 5
 }
 
 /**
  * Extract tags from article:tag meta tags.
  */
-export function extractTags(content: string): string[] {
+export function extractTags(content: string, fileName: string = ''): string[] {
   const tags: string[] = [];
   const tagPattern = /<meta\s+property=["']article:tag["']\s+content=["']([^"']+)["']/gi;
   let match: RegExpExecArray | null;
@@ -378,7 +387,13 @@ export function extractTags(content: string): string[] {
     tags.push(match[1]!);
   }
 
-  return tags.slice(0, 4); // Max 4 tags for display
+  if (tags.length === 0) {
+    const inferredTopics = extractTopics(content, fileName);
+    const inferredType = classifyArticleType(content, fileName);
+    tags.push(inferredType, ...inferredTopics);
+  }
+
+  return [...new Set(tags.filter((tag) => tag.trim().length > 0))].slice(0, 4); // Max 4 tags for display
 }
 
 /**
