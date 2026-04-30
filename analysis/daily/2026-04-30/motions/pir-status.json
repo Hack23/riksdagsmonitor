@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "cycle": "motions",
+  "subfolder": "motions",
+  "article_date": "2026-04-30",
+  "effective_date": "2026-04-29",
+  "generated_at": "2026-04-30T07:50:00Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "MJU Governance Amendment",
+      "question": "Will the Riksdag adopt an oversight mechanism for Miljöprövningsmyndigheten in response to opposition motions HD024124/131/134/139?",
+      "status": "OPEN",
+      "probability": 0.35,
+      "indicators": [
+        "MJU committee report due 2026-05-20",
+        "Riksdag chamber vote due 2026-05-28",
+        "Government response to HD024124 yrkanden"
+      ],
+      "last_updated": "2026-04-30T07:50:00Z"
+    },
+    {
+      "id": "PIR-2",
+      "title": "Wind/Electricity Opposition Success",
+      "question": "Will any of HD024126/129/130/137/138 wind or electricity motions succeed in securing committee concessions?",
+      "status": "OPEN",
+      "probability": 0.25,
+      "indicators": [
+        "NU wind committee report due 2026-05-22",
+        "NU electricity committee report due 2026-05-22",
+        "Riksdag votes on wind/electricity due 2026-05-29",
+        "SVT/DN polling on energy costs due 2026-05-15"
+      ],
+      "last_updated": "2026-04-30T07:50:00Z"
+    },
+    {
+      "id": "PIR-3",
+      "title": "Election 2026 Framing Advantage",
+      "question": "Which party bloc (government or opposition) gains electoral framing advantage from the spring 2026 motions debate?",
+      "status": "OPEN",
+      "probability": 0.45,
+      "note": "Probability of opposition gaining advantage; 0.55 for government",
+      "indicators": [
+        "Spring recess framing — before 2026-06-20",
+        "Opinion polling (Novus/SIFO) due 2026-05-01",
+        "S campaign advertising on miljörättvisa before 2026-06-01",
+        "SD congress energy resolution due 2026-06-01"
+      ],
+      "last_updated": "2026-04-30T07:50:00Z"
+    }
+  ]
+}
