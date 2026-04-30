@@ -1,12 +1,18 @@
 {
-  "name": "Riksdagsmonitor - Swedish Parliament Intelligence",
+  "id": "/",
+  "name": "Riksdagsmonitor — Swedish Parliament Intelligence",
   "short_name": "Riksdagsmonitor",
-  "description": "Real-time monitoring and intelligence platform for Swedish Parliament (Riksdag). Track 349 MPs, coalition predictions, and legislative activity.",
-  "start_url": "/",
+  "description": "Live intelligence platform monitoring Swedish Parliament. Track 349 MPs across 8 parties, coalition predictions, 45 risk rules, and 50+ years of parliamentary data.",
+  "start_url": "/?utm_source=pwa",
+  "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "minimal-ui", "standalone"],
   "background_color": "#0a0e27",
   "theme_color": "#0a0e27",
-  "orientation": "portrait-primary",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["news", "politics", "government", "education"],
   "icons": [
     {
       "src": "/images/favicon-16x16.png",
@@ -53,10 +59,53 @@
       "purpose": "maskable"
     }
   ],
-  "categories": ["news", "politics", "government"],
-  "lang": "en",
-  "dir": "ltr",
-  "scope": "/",
+  "screenshots": [
+    {
+      "src": "/images/og-image.webp",
+      "sizes": "1200x630",
+      "type": "image/webp",
+      "label": "Riksdagsmonitor dashboard preview",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "Main intelligence dashboard with live MP and party metrics",
+      "url": "/index.html",
+      "icons": [
+        { "src": "/images/favicon-96x96.png", "sizes": "96x96", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "News",
+      "short_name": "News",
+      "description": "Latest political intelligence articles and analyses",
+      "url": "/news/index.html",
+      "icons": [
+        { "src": "/images/favicon-96x96.png", "sizes": "96x96", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Political Intelligence",
+      "short_name": "Intel",
+      "description": "Coalition predictions, risk indicators, electoral forecasts",
+      "url": "/political-intelligence.html",
+      "icons": [
+        { "src": "/images/favicon-96x96.png", "sizes": "96x96", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Politician Dashboard",
+      "short_name": "MPs",
+      "description": "Voting records and behavioural metrics for 349 MPs",
+      "url": "/politician-dashboard.html",
+      "icons": [
+        { "src": "/images/favicon-96x96.png", "sizes": "96x96", "type": "image/png" }
+      ]
+    }
+  ],
   "related_applications": [],
   "prefer_related_applications": false
 }

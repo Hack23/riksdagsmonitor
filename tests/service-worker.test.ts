@@ -2,9 +2,14 @@
  * Service Worker tests.
  *
  * Loads `public/sw.js` into a Node `vm` sandbox with mocked `self`, `caches`,
- * and `fetch` globals so we can exercise the install/activate/fetch handlers
- * and the stale-while-revalidate / cache-first helpers without a real
- * ServiceWorker runtime.
+ * `setTimeout`/`clearTimeout`, and `fetch` globals so we can exercise the
+ * install/activate/fetch/message handlers and the network-first /
+ * stale-while-revalidate helpers without a real ServiceWorker runtime.
+ *
+ * Important: `public/sw.js` ships with a `__BUILD_ID__` placeholder that
+ * `scripts/vite-plugin-sw-build-id.js` substitutes during `vite build`.
+ * The tests substitute their own deterministic BUILD_ID per load so we
+ * can assert per-build cache rotation independently of the build pipeline.
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -18,7 +23,19 @@ import vm from 'node:vm';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SW_PATH = resolve(__dirname, '..', 'public', 'sw.js');
-const SW_SOURCE = readFileSync(SW_PATH, 'utf8');
+const SW_SOURCE_RAW = readFileSync(SW_PATH, 'utf8');
+
+const DEFAULT_BUILD_ID = 'test-build-aaaaaa';
+
+function withBuildId(buildId: string): string {
+  if (!SW_SOURCE_RAW.includes('__BUILD_ID__')) {
+    throw new Error(
+      'public/sw.js is missing the __BUILD_ID__ placeholder. ' +
+        'scripts/vite-plugin-sw-build-id.js depends on this literal.',
+    );
+  }
+  return SW_SOURCE_RAW.split('__BUILD_ID__').join(buildId);
+}
 
 /* ------------------------------------------------------------------ */
 /*  Minimal in-memory CacheStorage / Cache mock                       */
@@ -96,6 +113,7 @@ interface SWHandlers {
     request: Request;
     respondWith: (p: Response | Promise<Response>) => void;
   }) => void;
+  message?: (event: { data: unknown }) => void;
 }
 
 interface SWSandbox {
@@ -106,15 +124,20 @@ interface SWSandbox {
   };
   caches: FakeCacheStorage;
   fetch: ReturnType<typeof vi.fn>;
+  buildId: string;
+  htmlCacheName: string;
 }
 
-function loadServiceWorker(fetchImpl: typeof fetch): SWSandbox {
+function loadServiceWorker(
+  fetchImpl: typeof fetch,
+  buildId: string = DEFAULT_BUILD_ID,
+): SWSandbox {
   const handlers: SWHandlers = {};
   const fetchMock = vi.fn(fetchImpl);
   const cacheStorage = new FakeCacheStorage(fetchMock as unknown as typeof fetch);
 
   const selfMock = {
-    skipWaiting: vi.fn(),
+    skipWaiting: vi.fn().mockResolvedValue(undefined),
     clients: { claim: vi.fn().mockResolvedValue(undefined) },
     addEventListener: (type: keyof SWHandlers, handler: SWHandlers[keyof SWHandlers]) => {
       handlers[type] = handler as never;
@@ -130,17 +153,23 @@ function loadServiceWorker(fetchImpl: typeof fetch): SWSandbox {
     Headers,
     URL,
     Promise,
+    Error,
+    TypeError,
+    setTimeout,
+    clearTimeout,
     console,
   };
 
   vm.createContext(sandbox);
-  vm.runInContext(SW_SOURCE, sandbox, { filename: 'sw.js' });
+  vm.runInContext(withBuildId(buildId), sandbox, { filename: 'sw.js' });
 
   return {
     handlers,
     self: selfMock,
     caches: cacheStorage,
     fetch: fetchMock,
+    buildId,
+    htmlCacheName: `riksdagsmonitor-html-${buildId}`,
   };
 }
 
@@ -161,180 +190,351 @@ describe('service worker (public/sw.js)', () => {
     );
   });
 
-  it('registers install, activate, and fetch handlers', () => {
-    expect(typeof sw.handlers.install).toBe('function');
-    expect(typeof sw.handlers.activate).toBe('function');
-    expect(typeof sw.handlers.fetch).toBe('function');
+  describe('source integrity', () => {
+    it('public/sw.js retains the __BUILD_ID__ placeholder for the build plugin', () => {
+      expect(SW_SOURCE_RAW).toContain('__BUILD_ID__');
+    });
   });
 
-  it('install handler calls skipWaiting and pre-caches static assets', async () => {
-    let installPromise: Promise<unknown> = Promise.resolve();
-    sw.handlers.install?.({ waitUntil: (p) => { installPromise = p; } });
-    await installPromise;
-
-    expect(sw.self.skipWaiting).toHaveBeenCalledTimes(1);
-    // pre-cache should have run for at least the entry HTML
-    const cache = await sw.caches.open('riksdagsmonitor-v1');
-    expect(cache.keys().length).toBeGreaterThan(0);
-  });
-
-  it('install tolerates 404s on optional pre-cache entries', async () => {
-    const fetchMock = vi.fn(async () =>
-      makeResponse('not found', { status: 404 }),
-    ) as unknown as typeof fetch;
-    sw = loadServiceWorker(fetchMock);
-
-    let installPromise: Promise<unknown> = Promise.resolve();
-    sw.handlers.install?.({ waitUntil: (p) => { installPromise = p; } });
-
-    // Must resolve without throwing even if every asset 404s.
-    await expect(installPromise).resolves.toBeDefined();
-  });
-
-  it('activate handler deletes outdated caches and claims clients', async () => {
-    // Seed an old cache version that should be deleted.
-    await sw.caches.open('riksdagsmonitor-v0');
-    await sw.caches.open('riksdagsmonitor-v1'); // current — must survive
-    await sw.caches.open('cia-data-v1');        // current — must survive
-
-    let activatePromise: Promise<unknown> = Promise.resolve();
-    sw.handlers.activate?.({ waitUntil: (p) => { activatePromise = p; } });
-    await activatePromise;
-
-    const remaining = await sw.caches.keys();
-    expect(remaining).toContain('riksdagsmonitor-v1');
-    expect(remaining).toContain('cia-data-v1');
-    expect(remaining).not.toContain('riksdagsmonitor-v0');
-    expect(sw.self.clients.claim).toHaveBeenCalledTimes(1);
-  });
-
-  it('stale-while-revalidate populates the cache on first CIA-data fetch', async () => {
-    const fetchMock = vi.fn(async () =>
-      makeResponse('Year,Value\n2024,42', { status: 200 }),
-    ) as unknown as typeof fetch;
-    sw = loadServiceWorker(fetchMock);
-
-    const url = 'https://riksdagsmonitor.com/cia-data/example.csv';
-    let response: Response | undefined;
-    sw.handlers.fetch?.({
-      request: new Request(url),
-      respondWith: (p) => { void Promise.resolve(p).then((r) => { response = r; }); },
+  describe('handler registration', () => {
+    it('registers install, activate, fetch, and message handlers', () => {
+      expect(typeof sw.handlers.install).toBe('function');
+      expect(typeof sw.handlers.activate).toBe('function');
+      expect(typeof sw.handlers.fetch).toBe('function');
+      expect(typeof sw.handlers.message).toBe('function');
     });
 
-    // Allow any pending microtasks to flush the network promise.
-    await new Promise((r) => setTimeout(r, 0));
-    await new Promise((r) => setTimeout(r, 0));
-
-    expect(response?.status).toBe(200);
-    expect(fetchMock).toHaveBeenCalledTimes(1);
-
-    // Cache should now contain the fetched CSV.
-    const cache = await sw.caches.open('cia-data-v1');
-    const cached = await cache.match(url);
-    expect(cached).toBeDefined();
-    expect(await cached!.text()).toContain('2024,42');
-  });
-
-  it('stale-while-revalidate returns cached response immediately on second fetch', async () => {
-    const fetchMock = vi.fn(async () =>
-      makeResponse('fresh', { status: 200 }),
-    ) as unknown as typeof fetch;
-    sw = loadServiceWorker(fetchMock);
-
-    const url = 'https://riksdagsmonitor.com/cia-data/example.json';
-
-    // Pre-populate the cache to simulate a previous visit.
-    const cache = await sw.caches.open('cia-data-v1');
-    await cache.put(url, makeResponse('cached', { status: 200 }));
-
-    let resolved: Response | undefined;
-    sw.handlers.fetch?.({
-      request: new Request(url),
-      respondWith: (p) => { void Promise.resolve(p).then((r) => { resolved = r; }); },
+    it('install handler calls skipWaiting (no synchronous pre-cache work)', async () => {
+      let installPromise: Promise<unknown> = Promise.resolve();
+      sw.handlers.install?.({ waitUntil: (p) => { installPromise = p; } });
+      await installPromise;
+      expect(sw.self.skipWaiting).toHaveBeenCalledTimes(1);
     });
 
-    await new Promise((r) => setTimeout(r, 0));
-
-    expect(resolved).toBeDefined();
-    expect(await resolved!.text()).toBe('cached');
-  });
-
-  it('stale-while-revalidate falls back to cache when network fails (offline)', async () => {
-    const fetchMock = vi.fn(async () => {
-      throw new TypeError('Failed to fetch');
-    }) as unknown as typeof fetch;
-    sw = loadServiceWorker(fetchMock);
-
-    const url = 'https://riksdagsmonitor.com/cia-data/example.csv';
-    const cache = await sw.caches.open('cia-data-v1');
-    await cache.put(url, makeResponse('offline-data', { status: 200 }));
-
-    let resolved: Response | undefined;
-    sw.handlers.fetch?.({
-      request: new Request(url),
-      respondWith: (p) => { void Promise.resolve(p).then((r) => { resolved = r; }); },
+    it('message handler calls skipWaiting on { type: "SKIP_WAITING" }', () => {
+      sw.self.skipWaiting.mockClear();
+      sw.handlers.message?.({ data: { type: 'SKIP_WAITING' } });
+      expect(sw.self.skipWaiting).toHaveBeenCalledTimes(1);
     });
 
-    await new Promise((r) => setTimeout(r, 0));
-    expect(await resolved!.text()).toBe('offline-data');
+    it('message handler ignores unrelated messages', () => {
+      sw.self.skipWaiting.mockClear();
+      sw.handlers.message?.({ data: { type: 'OTHER' } });
+      sw.handlers.message?.({ data: 'random' });
+      sw.handlers.message?.({ data: null });
+      expect(sw.self.skipWaiting).not.toHaveBeenCalled();
+    });
   });
 
-  it('non-GET requests are not intercepted', () => {
-    let respondCalled = false;
-    sw.handlers.fetch?.({
-      request: new Request('https://riksdagsmonitor.com/cia-data/x.csv', { method: 'POST' }),
-      respondWith: () => { respondCalled = true; },
+  describe('activate: per-build HTML cache rotation', () => {
+    it('keeps current build HTML cache and cia-data; evicts every other cache', async () => {
+      // Seed previous-build HTML cache + a totally unrelated cache.
+      await sw.caches.open('riksdagsmonitor-html-old-build');
+      await sw.caches.open('riksdagsmonitor-html-older-build');
+      await sw.caches.open('cia-data-v1');         // current — must survive
+      await sw.caches.open(sw.htmlCacheName);      // current — must survive
+      await sw.caches.open('legacy-foo-cache');    // must evict
+
+      let activatePromise: Promise<unknown> = Promise.resolve();
+      sw.handlers.activate?.({ waitUntil: (p) => { activatePromise = p; } });
+      await activatePromise;
+
+      const remaining = await sw.caches.keys();
+      expect(remaining).toContain(sw.htmlCacheName);
+      expect(remaining).toContain('cia-data-v1');
+      expect(remaining).not.toContain('riksdagsmonitor-html-old-build');
+      expect(remaining).not.toContain('riksdagsmonitor-html-older-build');
+      expect(remaining).not.toContain('legacy-foo-cache');
+      expect(sw.self.clients.claim).toHaveBeenCalledTimes(1);
     });
-    expect(respondCalled).toBe(false);
+
+    it('different BUILD_ID yields different HTML cache name', () => {
+      const swA = loadServiceWorker(
+        vi.fn(async () => makeResponse('x')) as unknown as typeof fetch,
+        'build-AAA',
+      );
+      const swB = loadServiceWorker(
+        vi.fn(async () => makeResponse('x')) as unknown as typeof fetch,
+        'build-BBB',
+      );
+      expect(swA.htmlCacheName).not.toBe(swB.htmlCacheName);
+      expect(swA.htmlCacheName).toContain('build-AAA');
+      expect(swB.htmlCacheName).toContain('build-BBB');
+    });
+
+    it('build N activate evicts build N-1 HTML cache', async () => {
+      const oldSw = loadServiceWorker(
+        vi.fn(async () => makeResponse('x')) as unknown as typeof fetch,
+        'build-N-minus-1',
+      );
+
+      // Seed both old and new HTML caches in the SAME storage by simulating
+      // the new build taking over: the new SW sees the storage that already
+      // contains the old cache name.
+      const newSw = loadServiceWorker(
+        vi.fn(async () => makeResponse('x')) as unknown as typeof fetch,
+        'build-N',
+      );
+      await newSw.caches.open(oldSw.htmlCacheName);
+      await newSw.caches.open(newSw.htmlCacheName);
+      await newSw.caches.open('cia-data-v1');
+
+      let activatePromise: Promise<unknown> = Promise.resolve();
+      newSw.handlers.activate?.({ waitUntil: (p) => { activatePromise = p; } });
+      await activatePromise;
+
+      const remaining = await newSw.caches.keys();
+      expect(remaining).not.toContain(oldSw.htmlCacheName);
+      expect(remaining).toContain(newSw.htmlCacheName);
+      expect(remaining).toContain('cia-data-v1');
+    });
   });
 
-  it('non-CIA, non-document, non-style requests bypass the SW', () => {
-    let respondCalled = false;
-    const req = new Request('https://riksdagsmonitor.com/assets/js/main-abc.js');
-    // Force destination since Request in jsdom may not infer it.
-    Object.defineProperty(req, 'destination', { value: 'script', configurable: true });
-    sw.handlers.fetch?.({
-      request: req,
-      respondWith: () => { respondCalled = true; },
+  describe('fetch routing', () => {
+    it('non-GET requests are not intercepted', () => {
+      let respondCalled = false;
+      sw.handlers.fetch?.({
+        request: new Request('https://riksdagsmonitor.com/cia-data/x.csv', { method: 'POST' }),
+        respondWith: () => { respondCalled = true; },
+      });
+      expect(respondCalled).toBe(false);
     });
-    expect(respondCalled).toBe(false);
+
+    it('CSS requests are NOT intercepted (HTTP cache + must-revalidate handle them)', () => {
+      let respondCalled = false;
+      const req = new Request('https://riksdagsmonitor.com/styles.css');
+      Object.defineProperty(req, 'destination', { value: 'style', configurable: true });
+      sw.handlers.fetch?.({
+        request: req,
+        respondWith: () => { respondCalled = true; },
+      });
+      expect(respondCalled).toBe(false);
+    });
+
+    it('script/image/font requests bypass the SW', () => {
+      let respondCalled = false;
+      for (const dest of ['script', 'image', 'font'] as const) {
+        const req = new Request(`https://riksdagsmonitor.com/assets/${dest}-abc.bin`);
+        Object.defineProperty(req, 'destination', { value: dest, configurable: true });
+        sw.handlers.fetch?.({
+          request: req,
+          respondWith: () => { respondCalled = true; },
+        });
+      }
+      expect(respondCalled).toBe(false);
+    });
+
+    it('navigation requests with mode="navigate" are handled even without destination=document', () => {
+      let respondCalled = false;
+      const req = new Request('https://riksdagsmonitor.com/news/index.html');
+      Object.defineProperty(req, 'mode', { value: 'navigate', configurable: true });
+      Object.defineProperty(req, 'destination', { value: '', configurable: true });
+      sw.handlers.fetch?.({
+        request: req,
+        respondWith: () => { respondCalled = true; },
+      });
+      expect(respondCalled).toBe(true);
+    });
   });
 
-  it('cache-first reads only from the named cache (not other caches)', async () => {
-    const url = 'https://riksdagsmonitor.com/index.html';
+  describe('CIA data: stale-while-revalidate', () => {
+    it('populates the cache on first fetch', async () => {
+      const fetchMock = vi.fn(async () =>
+        makeResponse('Year,Value\n2024,42', { status: 200 }),
+      ) as unknown as typeof fetch;
+      sw = loadServiceWorker(fetchMock);
 
-    // Plant a response in the *wrong* cache (cia-data-v1) — cacheFirst
-    // for an HTML document should NOT find it; it should miss and fall
-    // through to the network instead, since HTML belongs in
-    // riksdagsmonitor-v1.
-    const wrongCache = await sw.caches.open('cia-data-v1');
-    await wrongCache.put(url, makeResponse('WRONG-CACHE', { status: 200 }));
+      const url = 'https://riksdagsmonitor.com/cia-data/example.csv';
+      let response: Response | undefined;
+      sw.handlers.fetch?.({
+        request: new Request(url),
+        respondWith: (p) => { void Promise.resolve(p).then((r) => { response = r; }); },
+      });
 
-    sw.fetch.mockImplementationOnce(async () =>
-      makeResponse('FROM-NETWORK', { status: 200 }),
-    );
+      await new Promise((r) => setTimeout(r, 0));
+      await new Promise((r) => setTimeout(r, 0));
 
-    const req = new Request(url);
-    Object.defineProperty(req, 'destination', { value: 'document', configurable: true });
+      expect(response?.status).toBe(200);
+      expect(sw.fetch).toHaveBeenCalledTimes(1);
 
-    let resolved: Response | undefined;
-    sw.handlers.fetch?.({
-      request: req,
-      respondWith: (p) => { void Promise.resolve(p).then((r) => { resolved = r; }); },
+      const cache = await sw.caches.open('cia-data-v1');
+      const cached = await cache.match(url);
+      expect(cached).toBeDefined();
+      expect(await cached!.text()).toContain('2024,42');
     });
 
-    await new Promise((r) => setTimeout(r, 0));
-    await new Promise((r) => setTimeout(r, 0));
+    it('returns cached response immediately on second fetch', async () => {
+      const fetchMock = vi.fn(async () =>
+        makeResponse('fresh', { status: 200 }),
+      ) as unknown as typeof fetch;
+      sw = loadServiceWorker(fetchMock);
 
-    expect(resolved).toBeDefined();
-    expect(await resolved!.text()).toBe('FROM-NETWORK');
-    expect(sw.fetch).toHaveBeenCalledTimes(1);
+      const url = 'https://riksdagsmonitor.com/cia-data/example.json';
+      const cache = await sw.caches.open('cia-data-v1');
+      await cache.put(url, makeResponse('cached', { status: 200 }));
 
-    // After the network fetch, the response should be stored in the
-    // correct named cache (riksdagsmonitor-v1), not cia-data-v1.
-    const correctCache = await sw.caches.open('riksdagsmonitor-v1');
-    const stored = await correctCache.match(url);
-    expect(stored).toBeDefined();
-    expect(await stored!.text()).toBe('FROM-NETWORK');
+      let resolved: Response | undefined;
+      sw.handlers.fetch?.({
+        request: new Request(url),
+        respondWith: (p) => { void Promise.resolve(p).then((r) => { resolved = r; }); },
+      });
+
+      await new Promise((r) => setTimeout(r, 0));
+      expect(await resolved!.text()).toBe('cached');
+    });
+
+    it('falls back to cache when network fails', async () => {
+      const fetchMock = vi.fn(async () => {
+        throw new TypeError('Failed to fetch');
+      }) as unknown as typeof fetch;
+      sw = loadServiceWorker(fetchMock);
+
+      const url = 'https://riksdagsmonitor.com/cia-data/example.csv';
+      const cache = await sw.caches.open('cia-data-v1');
+      await cache.put(url, makeResponse('offline-data', { status: 200 }));
+
+      let resolved: Response | undefined;
+      sw.handlers.fetch?.({
+        request: new Request(url),
+        respondWith: (p) => { void Promise.resolve(p).then((r) => { resolved = r; }); },
+      });
+
+      await new Promise((r) => setTimeout(r, 0));
+      expect(await resolved!.text()).toBe('offline-data');
+    });
+  });
+
+  describe('HTML: network-first with offline fallback', () => {
+    function makeDocumentRequest(url: string): Request {
+      const req = new Request(url);
+      Object.defineProperty(req, 'destination', { value: 'document', configurable: true });
+      return req;
+    }
+
+    it('serves the network response when available and populates the cache', async () => {
+      const fetchMock = vi.fn(async () =>
+        makeResponse('<!DOCTYPE html><title>FRESH</title>', { status: 200 }),
+      ) as unknown as typeof fetch;
+      sw = loadServiceWorker(fetchMock);
+
+      const url = 'https://riksdagsmonitor.com/news/index.html';
+      let resolved: Response | undefined;
+      sw.handlers.fetch?.({
+        request: makeDocumentRequest(url),
+        respondWith: (p) => { void Promise.resolve(p).then((r) => { resolved = r; }); },
+      });
+
+      // Allow the network promise + cache.put to flush.
+      for (let i = 0; i < 4; i++) await new Promise((r) => setTimeout(r, 0));
+
+      expect(resolved?.status).toBe(200);
+      expect(await resolved!.text()).toContain('FRESH');
+
+      const cache = await sw.caches.open(sw.htmlCacheName);
+      const cached = await cache.match(url);
+      expect(cached).toBeDefined();
+      expect(await cached!.text()).toContain('FRESH');
+    });
+
+    it('returns latest network response even when a cached copy exists (network-first)', async () => {
+      const fetchMock = vi.fn(async () =>
+        makeResponse('<!DOCTYPE html><title>LATEST</title>', { status: 200 }),
+      ) as unknown as typeof fetch;
+      sw = loadServiceWorker(fetchMock);
+
+      const url = 'https://riksdagsmonitor.com/news/index.html';
+      const cache = await sw.caches.open(sw.htmlCacheName);
+      await cache.put(url, makeResponse('<!DOCTYPE html><title>STALE</title>', { status: 200 }));
+
+      let resolved: Response | undefined;
+      sw.handlers.fetch?.({
+        request: makeDocumentRequest(url),
+        respondWith: (p) => { void Promise.resolve(p).then((r) => { resolved = r; }); },
+      });
+
+      for (let i = 0; i < 4; i++) await new Promise((r) => setTimeout(r, 0));
+
+      expect(await resolved!.text()).toContain('LATEST');
+      expect(sw.fetch).toHaveBeenCalledTimes(1);
+    });
+
+    it('falls back to the cached response when the network throws (offline)', async () => {
+      const fetchMock = vi.fn(async () => {
+        throw new TypeError('Failed to fetch');
+      }) as unknown as typeof fetch;
+      sw = loadServiceWorker(fetchMock);
+
+      const url = 'https://riksdagsmonitor.com/index.html';
+      const cache = await sw.caches.open(sw.htmlCacheName);
+      await cache.put(url, makeResponse('<!DOCTYPE html><title>OFFLINE-CACHE</title>', { status: 200 }));
+
+      let resolved: Response | undefined;
+      sw.handlers.fetch?.({
+        request: makeDocumentRequest(url),
+        respondWith: (p) => { void Promise.resolve(p).then((r) => { resolved = r; }); },
+      });
+
+      for (let i = 0; i < 4; i++) await new Promise((r) => setTimeout(r, 0));
+
+      expect(await resolved!.text()).toContain('OFFLINE-CACHE');
+    });
+
+    it('returns an inline 503 offline page when both network and cache fail', async () => {
+      const fetchMock = vi.fn(async () => {
+        throw new TypeError('Failed to fetch');
+      }) as unknown as typeof fetch;
+      sw = loadServiceWorker(fetchMock);
+
+      const url = 'https://riksdagsmonitor.com/never-visited.html';
+      let resolved: Response | undefined;
+      sw.handlers.fetch?.({
+        request: makeDocumentRequest(url),
+        respondWith: (p) => { void Promise.resolve(p).then((r) => { resolved = r; }); },
+      });
+
+      for (let i = 0; i < 4; i++) await new Promise((r) => setTimeout(r, 0));
+
+      expect(resolved).toBeDefined();
+      expect(resolved!.status).toBe(503);
+      const body = await resolved!.text();
+      expect(body).toContain('You appear to be offline');
+      expect(resolved!.headers.get('content-type')).toMatch(/text\/html/);
+    });
+
+    it('falls back to cache when the network hangs longer than the timeout', async () => {
+      vi.useFakeTimers();
+      try {
+        // fetch never resolves — must trip the timeout path.
+        const fetchMock = vi.fn(
+          () => new Promise<Response>(() => { /* hangs forever */ }),
+        ) as unknown as typeof fetch;
+        sw = loadServiceWorker(fetchMock);
+
+        const url = 'https://riksdagsmonitor.com/index.html';
+        const cache = await sw.caches.open(sw.htmlCacheName);
+        await cache.put(
+          url,
+          makeResponse('<!DOCTYPE html><title>FROM-CACHE-TIMEOUT</title>', { status: 200 }),
+        );
+
+        let resolved: Response | undefined;
+        sw.handlers.fetch?.({
+          request: makeDocumentRequest(url),
+          respondWith: (p) => { void Promise.resolve(p).then((r) => { resolved = r; }); },
+        });
+
+        // Advance past the SW's NETWORK_TIMEOUT_MS (3000).
+        await vi.advanceTimersByTimeAsync(3500);
+        // Flush microtasks that resolve from the cache lookup.
+        for (let i = 0; i < 4; i++) {
+          await Promise.resolve();
+        }
+
+        expect(resolved).toBeDefined();
+        expect(await resolved!.text()).toContain('FROM-CACHE-TIMEOUT');
+      } finally {
+        vi.useRealTimers();
+      }
+    });
   });
 });

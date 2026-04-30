@@ -24,6 +24,56 @@ const APP_VERSION_FALLBACK = '0.0.0';
 
 const BASE_URL = 'https://riksdagsmonitor.com';
 
+/**
+ * Localised "Clear filters" label per language. Kept here (not in
+ * `constants.ts`) so we don't need a synchronised migration of the
+ * `LanguageConfig.i18n` interface and every entry. Falls back to the
+ * English label if a language is missing.
+ */
+const CLEAR_FILTERS_LABELS: Readonly<Record<string, string>> = {
+  en: 'Clear filters',
+  sv: 'Rensa filter',
+  da: 'Ryd filtre',
+  no: 'Tøm filtre',
+  fi: 'Tyhjennä suodattimet',
+  de: 'Filter zurücksetzen',
+  fr: 'Effacer les filtres',
+  es: 'Borrar filtros',
+  nl: 'Filters wissen',
+  ar: 'مسح الفلاتر',
+  he: 'נקה מסננים',
+  ja: 'フィルタをクリア',
+  ko: '필터 지우기',
+  zh: '清除筛选',
+};
+
+/** Localised recency-badge labels (today / this-week / this-month). */
+const RECENCY_LABELS: Readonly<Record<string, Readonly<Record<'today' | 'this-week' | 'this-month', string>>>> = {
+  en: { 'today': 'Today', 'this-week': 'This week', 'this-month': 'This month' },
+  sv: { 'today': 'Idag', 'this-week': 'Denna vecka', 'this-month': 'Denna månad' },
+  da: { 'today': 'I dag', 'this-week': 'Denne uge', 'this-month': 'Denne måned' },
+  no: { 'today': 'I dag', 'this-week': 'Denne uken', 'this-month': 'Denne måneden' },
+  fi: { 'today': 'Tänään', 'this-week': 'Tällä viikolla', 'this-month': 'Tässä kuussa' },
+  de: { 'today': 'Heute', 'this-week': 'Diese Woche', 'this-month': 'Diesen Monat' },
+  fr: { 'today': "Aujourd'hui", 'this-week': 'Cette semaine', 'this-month': 'Ce mois-ci' },
+  es: { 'today': 'Hoy', 'this-week': 'Esta semana', 'this-month': 'Este mes' },
+  nl: { 'today': 'Vandaag', 'this-week': 'Deze week', 'this-month': 'Deze maand' },
+  ar: { 'today': 'اليوم', 'this-week': 'هذا الأسبوع', 'this-month': 'هذا الشهر' },
+  he: { 'today': 'היום', 'this-week': 'השבוע', 'this-month': 'החודש' },
+  ja: { 'today': '今日', 'this-week': '今週', 'this-month': '今月' },
+  ko: { 'today': '오늘', 'this-week': '이번 주', 'this-month': '이번 달' },
+  zh: { 'today': '今天', 'this-week': '本周', 'this-month': '本月' },
+};
+
+function localizeClearFilters(langKey: string): string {
+  return CLEAR_FILTERS_LABELS[langKey] ?? CLEAR_FILTERS_LABELS.en!;
+}
+
+function buildRecencyLabels(langKey: string): Record<string, string> {
+  const map = RECENCY_LABELS[langKey] ?? RECENCY_LABELS.en!;
+  return { 'today': map['today'], 'this-week': map['this-week'], 'this-month': map['this-month'] };
+}
+
 /** Map a news-index `langKey` to a `Language` accepted by `buildChrome`. */
 function toChromeLang(langKey: string): Language {
   // The render-lib `Language` union currently uses the legacy `'no'` code
@@ -196,8 +246,14 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       <p class="news-page-subtitle">${escapeHtml(lang.subtitle)}</p>
     </header>
 
-    <!-- Filter Bar -->
-    <div class="filter-bar">
+    <!-- Filter Bar (sticky on scroll, collapsible on mobile via <details>) -->
+    <details class="filter-bar-wrapper" open>
+      <summary class="filter-bar-toggle" aria-label="${escapeHtml(f.type).replace(/:$/, '')}">
+        <span aria-hidden="true">⚙️</span>
+        <span class="filter-bar-toggle-label">${escapeHtml(f.type).replace(/:$/, '') + ' / ' + escapeHtml(f.topic).replace(/:$/, '')}</span>
+        <span class="filter-bar-active-count" id="filter-active-count" aria-live="polite"></span>
+      </summary>
+      <div class="filter-bar">
       <div class="filter-group">
         <label for="filter-type">${f.type}</label>
         <select id="filter-type">
@@ -236,10 +292,43 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
         <label for="search-input">${escapeHtml(lang.i18n.search)}</label>
         <input type="search" id="search-input" placeholder="${escapeHtml(lang.i18n.searchPlaceholder)}" aria-label="${escapeHtml(lang.i18n.search)}" autocomplete="off">
       </div>
-    </div>
 
-    <!-- Articles Grid -->
-    <div class="articles-grid" id="articles-grid"></div>
+      <div class="filter-group filter-actions-group">
+        <button type="button" id="clear-filters-btn" class="clear-filters-btn" hidden>
+          <span aria-hidden="true">✕</span>
+          <span class="clear-filters-label">${escapeHtml(localizeClearFilters(langKey))}</span>
+        </button>
+      </div>
+    </div>
+    </details>
+
+    <!-- Articles Grid (skeleton state until client JS hydrates) -->
+    <div class="articles-grid" id="articles-grid" aria-busy="true">
+      <div class="article-card-skeleton" aria-hidden="true">
+        <div class="skeleton-line skeleton-meta"></div>
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line skeleton-title-2"></div>
+        <div class="skeleton-line skeleton-excerpt"></div>
+        <div class="skeleton-line skeleton-excerpt-2"></div>
+        <div class="skeleton-line skeleton-tags"></div>
+      </div>
+      <div class="article-card-skeleton" aria-hidden="true">
+        <div class="skeleton-line skeleton-meta"></div>
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line skeleton-title-2"></div>
+        <div class="skeleton-line skeleton-excerpt"></div>
+        <div class="skeleton-line skeleton-excerpt-2"></div>
+        <div class="skeleton-line skeleton-tags"></div>
+      </div>
+      <div class="article-card-skeleton" aria-hidden="true">
+        <div class="skeleton-line skeleton-meta"></div>
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line skeleton-title-2"></div>
+        <div class="skeleton-line skeleton-excerpt"></div>
+        <div class="skeleton-line skeleton-excerpt-2"></div>
+        <div class="skeleton-line skeleton-tags"></div>
+      </div>
+    </div>
 
     <div id="no-articles" style="text-align: center; padding: 3rem; color: #888;" hidden>
       ${escapeHtml(lang.i18n.noArticles)}
@@ -333,12 +422,16 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       }
 
       const primaryTopic = (article.topics && article.topics.length > 0) ? article.topics[0] : '';
+      const recency = computeRecency(article.date);
+      const recencyAttr = recency ? \` data-date-recent="\${recency}"\` : '';
+      const recencyBadge = recency ? \`<span class="recency-badge" data-recency="\${recency}">\${esc(localizeRecency(recency))}</span>\` : '';
 
       return \`
-      <article class="article-card" data-type="\${esc(article.type)}" data-topic="\${esc(primaryTopic)}">
+      <article class="article-card" data-type="\${esc(article.type)}" data-topic="\${esc(primaryTopic)}"\${recencyAttr}>
         <div class="article-meta">
           <time class="article-date" datetime="\${esc(article.date)}">\${formatDate(article.date)}</time>
           <span class="article-type" data-type="\${esc(article.type)}">\${typeIcon(article.type)} \${localizeType(article.type)}</span>
+          \${recencyBadge}
           \${langBadge}
         </div>
         <h2 class="article-title">
@@ -351,6 +444,29 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
         </div>
       </article>
     \`;
+    }
+
+    // Compute coarse recency bucket so CSS can surface a "today" / "this-week"
+    // / "this-month" badge without re-running JS per scroll. Uses the
+    // article date in the user's timezone, not UTC, so "today" feels right.
+    function computeRecency(dateStr) {
+      try {
+        const d = new Date(dateStr);
+        if (isNaN(d.getTime())) return null;
+        const now = new Date();
+        const dayMs = 24 * 60 * 60 * 1000;
+        const diff = (now.getTime() - d.getTime()) / dayMs;
+        if (diff < 0) return null;             // future-dated, leave plain
+        if (diff < 1.0) return 'today';
+        if (diff < 7.0) return 'this-week';
+        if (diff < 31.0) return 'this-month';
+        return null;
+      } catch (e) { return null; }
+    }
+
+    const RECENCY_LABELS = ${JSON.stringify(buildRecencyLabels(langKey))};
+    function localizeRecency(bucket) {
+      return RECENCY_LABELS[bucket] || bucket;
     }
 
     // Emoji icon per article type — keeps the visual language consistent with
@@ -374,19 +490,23 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
 
       if (articles.length === 0) {
         grid.innerHTML = '';
+        grid.removeAttribute('aria-busy');
         if (noArticles) noArticles.hidden = false;
         noResults.hidden = true;
         if (counter) counter.textContent = '';
         if (btn) btn.hidden = true;
+        updateFilterChrome();
         return;
       }
 
       if (filteredArticles.length === 0) {
         grid.innerHTML = '';
+        grid.removeAttribute('aria-busy');
         noResults.hidden = false;
         if (noArticles) noArticles.hidden = true;
         if (counter) counter.textContent = '';
         if (btn) btn.hidden = true;
+        updateFilterChrome();
         return;
       }
 
@@ -395,6 +515,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
 
       const visible = filteredArticles.slice(0, visibleCount);
       grid.innerHTML = visible.map(buildArticleCard).join('');
+      grid.removeAttribute('aria-busy');
 
       const shown = visible.length;
       const total = filteredArticles.length;
@@ -408,6 +529,48 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
           btn.hidden = true;
         }
       }
+
+      updateFilterChrome();
+    }
+
+    // Show/hide the "Clear filters" button + active-count badge based on
+    // whether any filter is set away from its default. Keeps the filter
+    // bar honest: empty state shows zero affordances, active state shows
+    // exactly how many filters are biting.
+    function updateFilterChrome() {
+      const typeFilter = document.getElementById('filter-type').value;
+      const topicFilter = document.getElementById('filter-topic').value;
+      const sortFilter = document.getElementById('filter-sort').value;
+      const searchInput = document.getElementById('search-input').value.trim();
+
+      let activeCount = 0;
+      if (typeFilter !== 'all') activeCount++;
+      if (topicFilter !== 'all') activeCount++;
+      if (sortFilter !== 'date-desc') activeCount++;
+      if (searchInput) activeCount++;
+
+      const clearBtn = document.getElementById('clear-filters-btn');
+      if (clearBtn) {
+        clearBtn.hidden = activeCount === 0;
+      }
+      const countBadge = document.getElementById('filter-active-count');
+      if (countBadge) {
+        countBadge.textContent = activeCount > 0 ? '(' + activeCount + ')' : '';
+        countBadge.hidden = activeCount === 0;
+      }
+    }
+
+    function clearAllFilters() {
+      const typeEl = document.getElementById('filter-type');
+      const topicEl = document.getElementById('filter-topic');
+      const sortEl = document.getElementById('filter-sort');
+      const searchEl = document.getElementById('search-input');
+      if (typeEl) typeEl.value = 'all';
+      if (topicEl) topicEl.value = 'all';
+      if (sortEl) sortEl.value = 'date-desc';
+      if (searchEl) searchEl.value = '';
+      filterArticles();
+      if (searchEl) searchEl.focus();
     }
 
     function loadMore() {
@@ -531,6 +694,8 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     document.getElementById('filter-topic').addEventListener('change', filterArticles);
     document.getElementById('filter-sort').addEventListener('change', filterArticles);
     document.getElementById('load-more-btn').addEventListener('click', loadMore);
+    var __clearBtn = document.getElementById('clear-filters-btn');
+    if (__clearBtn) __clearBtn.addEventListener('click', clearAllFilters);
 
     let searchTimer;
     document.getElementById('search-input').addEventListener('input', function() {

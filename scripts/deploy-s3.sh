@@ -317,4 +317,45 @@ aws s3 sync "$SRC" "$BUCKET" \
 aws s3 sync "$SRC" "$BUCKET" --delete --size-only \
   "${SKIP[@]}"
 
+# ── Cache-busting overrides for files that MUST update on every push ──
+# These run last so they overwrite the long-cache `--cache-control` set by
+# the per-extension `cp --recursive` passes above (which match by
+# extension and would otherwise pin these files for a year).
+#
+# WHY THIS MATTERS:
+#   - `sw.js` carries a per-build BUILD_ID (see
+#     scripts/vite-plugin-sw-build-id.js) and is the trigger the browser
+#     uses to detect a service-worker update. If CloudFront serves a
+#     stale `sw.js` with `immutable, 1y`, the browser never sees the
+#     new BUILD_ID and the in-cache HTML stays pinned to whatever
+#     build first installed.
+#   - PWA manifests are refetched during install/update; a stale
+#     manifest blocks PWA-shortcut and screenshot rotation.
+#   - Root `styles.css` is a non-hashed unbundled fallback emitted by
+#     the static-pages plugin chain and is referenced verbatim by some
+#     legacy pages — it must revalidate so CSS edits take effect.
+
+if aws s3 ls "$BUCKET/sw.js" >/dev/null 2>&1; then
+  aws s3 cp "$BUCKET/sw.js" "$BUCKET/sw.js" \
+    --no-guess-mime-type --content-type 'application/javascript' \
+    --cache-control 'no-cache, no-store, must-revalidate' \
+    --metadata-directive REPLACE
+fi
+
+for MANIFEST in site.webmanifest manifest.json; do
+  if aws s3 ls "$BUCKET/$MANIFEST" >/dev/null 2>&1; then
+    aws s3 cp "$BUCKET/$MANIFEST" "$BUCKET/$MANIFEST" \
+      --no-guess-mime-type --content-type 'application/manifest+json' \
+      --cache-control 'public, max-age=300, must-revalidate' \
+      --metadata-directive REPLACE
+  fi
+done
+
+if aws s3 ls "$BUCKET/styles.css" >/dev/null 2>&1; then
+  aws s3 cp "$BUCKET/styles.css" "$BUCKET/styles.css" \
+    --no-guess-mime-type --content-type 'text/css' \
+    --cache-control 'public, max-age=3600, must-revalidate' \
+    --metadata-directive REPLACE
+fi
+
 echo "✅ S3 deployment completed"

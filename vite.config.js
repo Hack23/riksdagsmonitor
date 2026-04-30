@@ -12,6 +12,7 @@ import { createLogger, defineConfig } from 'vite';
 import sri from 'vite-plugin-sri-gen';
 import { fileURLToPath } from 'node:url';
 import staticPagesPlugin from './scripts/vite-plugin-static-pages.js';
+import swBuildIdPlugin from './scripts/vite-plugin-sw-build-id.js';
 
 const projectRoot = fileURLToPath(new URL('.', import.meta.url));
 
@@ -279,7 +280,13 @@ export default defineConfig({
           ],
         },
       ],
-    })
+    }),
+
+    // Substitute `__BUILD_ID__` in `public/sw.js` with a per-build
+    // unique identifier (commit SHA → git rev-parse → timestamp) and
+    // emit `dist/sw.js`. See scripts/vite-plugin-sw-build-id.js.
+    // Runs after staticPagesPlugin so dist/ exists.
+    swBuildIdPlugin({ projectRoot, outDir: 'dist' })
   ],
   
   // Optimizations

@@ -13773,3 +13773,278 @@ html[data-theme="light"] .rm-footer-trust-badges a:focus-visible {
     height: 18px;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   News Index UI/UX enhancements
+   ----------------------------------------------------------------------------
+   Sticky filter bar, mobile collapse via <details>, "Today / This week /
+   This month" recency badges, skeleton loading state, clear-filters button,
+   tablet two-column breakpoint, improved focus rings, RTL-friendly logical
+   properties.
+
+   Authority: keep the cyberpunk theme tokens (--primary-cyan / -magenta /
+   -yellow / --dark-bg / --mid-bg) as the visual contract. Do not introduce
+   new theme primitives — extend.
+   ════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Sticky, collapsible filter-bar wrapper ─────────────────────────────── */
+.news-page .filter-bar-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  margin-bottom: 1.5rem;
+  background: color-mix(in srgb, var(--card-bg, #1a1e3d) 92%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  /* Subtle cyan glow when stuck so the user notices the bar without it
+     fighting hero content for attention. */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* The <details>/<summary> on desktop hides the toggle: filters are always
+   visible. On <=768px we surface the toggle as a tap target. */
+.news-page .filter-bar-toggle {
+  display: none;
+  cursor: pointer;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  list-style: none;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 8px;
+}
+.news-page .filter-bar-toggle::-webkit-details-marker { display: none; }
+.news-page .filter-bar-toggle::after {
+  content: '▾';
+  margin-inline-start: auto;
+  transition: transform 0.2s ease;
+  color: var(--primary-cyan, var(--primary-color, #00d9ff));
+}
+.news-page .filter-bar-wrapper[open] .filter-bar-toggle::after {
+  transform: rotate(180deg);
+}
+.news-page .filter-bar-active-count {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  background: linear-gradient(135deg, #00d9ff, #ff006e);
+  color: #0a0e27;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.news-page .filter-bar-active-count[hidden] { display: none; }
+
+/* The wrapped filter bar inherits its existing layout but loses its own
+   border so the wrapper's border is the single visual frame. */
+.news-page .filter-bar-wrapper > .filter-bar {
+  border: 0;
+  background: transparent;
+  margin-bottom: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+/* When the wrapper is open AND has a toggle visible (mobile), the inner
+   bar gets a small inner padding tweak for touch targets. */
+.news-page .filter-actions-group {
+  flex: 0 0 auto;
+  align-self: flex-end;
+  min-width: auto;
+}
+
+/* ── Clear-filters button ────────────────────────────────────────────────── */
+.news-page .clear-filters-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.9rem;
+  background: transparent;
+  color: var(--primary-magenta, #ff006e);
+  border: 1px solid color-mix(in srgb, #ff006e 50%, transparent);
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+  /* 44×44 touch target on mobile */
+  min-height: 2.5rem;
+}
+.news-page .clear-filters-btn:hover {
+  background: color-mix(in srgb, #ff006e 12%, transparent);
+  border-color: #ff006e;
+}
+.news-page .clear-filters-btn:active {
+  transform: scale(0.97);
+}
+.news-page .clear-filters-btn:focus-visible {
+  outline: 2px solid var(--primary-yellow, #ffbe0b);
+  outline-offset: 2px;
+}
+.news-page .clear-filters-btn[hidden] { display: none; }
+
+/* ── Recency badge (Today / This week / This month) ──────────────────────── */
+.news-page .article-card .recency-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.news-page .article-card .recency-badge[data-recency="today"] {
+  color: #0a0e27;
+  background: linear-gradient(135deg, #00d9ff, #ffbe0b);
+  box-shadow: 0 0 12px rgba(0, 217, 255, 0.45);
+  animation: rm-recency-pulse 2.4s ease-in-out infinite;
+}
+.news-page .article-card .recency-badge[data-recency="this-week"] {
+  color: #ffbe0b;
+  background: color-mix(in srgb, #ffbe0b 18%, transparent);
+  border: 1px solid color-mix(in srgb, #ffbe0b 50%, transparent);
+}
+.news-page .article-card .recency-badge[data-recency="this-month"] {
+  color: var(--text-secondary);
+  background: color-mix(in srgb, var(--text-secondary, #b0b8c8) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--text-secondary, #b0b8c8) 25%, transparent);
+}
+
+/* Top accent on cards published today — extra emphasis without DOM cost. */
+.news-page .article-card[data-date-recent="today"] {
+  border-top-width: 3px;
+  box-shadow: 0 0 0 1px rgba(0, 217, 255, 0.18), 0 4px 16px rgba(0, 217, 255, 0.10);
+}
+
+@keyframes rm-recency-pulse {
+  0%, 100% { box-shadow: 0 0 12px rgba(0, 217, 255, 0.45); }
+  50%      { box-shadow: 0 0 20px rgba(0, 217, 255, 0.75); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-page .article-card .recency-badge[data-recency="today"] { animation: none; }
+}
+
+/* ── Skeleton loading state ──────────────────────────────────────────────── */
+.news-page .article-card-skeleton {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.news-page .article-card-skeleton .skeleton-line {
+  display: block;
+  height: 12px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--text-secondary, #b0b8c8) 6%, transparent) 0%,
+    color-mix(in srgb, var(--primary-cyan, #00d9ff) 12%, transparent) 50%,
+    color-mix(in srgb, var(--text-secondary, #b0b8c8) 6%, transparent) 100%
+  );
+  background-size: 200% 100%;
+  animation: rm-skeleton-shimmer 1.6s ease-in-out infinite;
+}
+.news-page .article-card-skeleton .skeleton-meta { width: 60%; height: 10px; }
+.news-page .article-card-skeleton .skeleton-title { width: 92%; height: 18px; }
+.news-page .article-card-skeleton .skeleton-title-2 { width: 70%; height: 18px; }
+.news-page .article-card-skeleton .skeleton-excerpt { width: 100%; height: 11px; }
+.news-page .article-card-skeleton .skeleton-excerpt-2 { width: 88%; height: 11px; }
+.news-page .article-card-skeleton .skeleton-tags { width: 45%; height: 12px; margin-top: 0.5rem; }
+
+@keyframes rm-skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-page .article-card-skeleton .skeleton-line { animation: none; }
+}
+
+/* Hide skeletons once the grid has hydrated. The client JS clears
+   `aria-busy` after first render, so we use that as the hydration
+   signal. */
+.news-page .articles-grid:not([aria-busy="true"]) .article-card-skeleton {
+  display: none;
+}
+
+/* ── Tablet 2-column breakpoint ──────────────────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .news-page .articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* ── Improved focus rings (a11y) ─────────────────────────────────────────── */
+.news-page .article-card:focus-within {
+  outline: 2px solid var(--primary-cyan, #00d9ff);
+  outline-offset: 3px;
+}
+.news-page .article-title a:focus-visible {
+  outline: 2px solid var(--primary-yellow, #ffbe0b);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.news-page .filter-group select:focus-visible,
+.news-page .filter-group input[type="search"]:focus-visible {
+  outline: 2px solid var(--primary-cyan, #00d9ff);
+  outline-offset: 2px;
+}
+
+/* ── RTL: swap directional decorations to logical properties ─────────────── */
+[dir="rtl"] .news-page .article-card[data-topic] {
+  /* `border-left` set in the topic-stripe block above is physical; mirror
+     it to `border-right` for RTL pages (Arabic, Hebrew). */
+  border-left: 0;
+}
+[dir="rtl"] .news-page .article-card[data-topic="parliament"]  { border-right: 3px solid color-mix(in srgb, #4caf50 70%, transparent); }
+[dir="rtl"] .news-page .article-card[data-topic="government"]  { border-right: 3px solid color-mix(in srgb, #ff9800 70%, transparent); }
+[dir="rtl"] .news-page .article-card[data-topic="eu"]          { border-right: 3px solid color-mix(in srgb, #2962ff 70%, transparent); }
+[dir="rtl"] .news-page .article-card[data-topic="defense"]     { border-right: 3px solid color-mix(in srgb, #b71c1c 70%, transparent); }
+[dir="rtl"] .news-page .article-card[data-topic="environment"] { border-right: 3px solid color-mix(in srgb, #2e7d32 70%, transparent); }
+[dir="rtl"] .news-page .article-card[data-topic="committees"]  { border-right: 3px solid color-mix(in srgb, #6a1b9a 70%, transparent); }
+[dir="rtl"] .news-page .article-card[data-topic="legislation"] { border-right: 3px solid color-mix(in srgb, #00838f 70%, transparent); }
+
+/* ── Mobile filter-bar collapse ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .news-page .filter-bar-toggle {
+    display: flex;
+  }
+  /* On mobile the filter bar is hidden behind the <details> toggle by default. */
+  .news-page .filter-bar-wrapper:not([open]) > .filter-bar {
+    display: none;
+  }
+  .news-page .filter-bar-wrapper > .filter-bar {
+    padding-top: 0.25rem;
+  }
+  /* Stickiness adds safe-area padding for notched devices. */
+  .news-page .filter-bar-wrapper {
+    top: env(safe-area-inset-top, 0);
+  }
+  .news-page .clear-filters-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* On wider screens the toggle is irrelevant; force the wrapper open and
+   hide the summary so legacy <details closed> state can't trap us. */
+@media (min-width: 769px) {
+  .news-page .filter-bar-wrapper > .filter-bar {
+    display: flex;
+  }
+  .news-page .filter-bar-toggle {
+    display: none;
+  }
+}
