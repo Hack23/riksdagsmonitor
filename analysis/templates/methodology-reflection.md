@@ -122,6 +122,17 @@ flowchart LR
 | Forward indicators with dates | ≥ 8 | 11 | 🟢 |
 | 🟢 Low-confidence claims flagged | all | 6 of 6 flagged | 🟢 |
 | 🔴 Unresolved TODOs / placeholders | 0 | 0 | 🟢 |
+| **Full-text fetched (top-N by DIW)** | ≥ 3 (≥ 5 Tier-C) | _N of N_ | 🟢 ≥ floor · 🟡 1 below · 🔴 > 1 below |
+| **L2+ docs without full text** | 0 | _N_ | 🟢 = 0 · 🟡 1–2 · 🔴 ≥ 3 |
+| **Prior-voteringar enrichment** | ≥ 1 entry per committee touched | _N_ rows in `data-download-manifest.md §Prior-Voteringar Enrichment` | 🟢 all committees covered · 🟡 ≥ 50% covered · 🔴 < 50% covered |
+| **Statskontoret pre-warm** | trigger-checked + recorded | `triggered: Y/N` · `result: source URL / "no source found" / "no trigger matched"` | 🟢 trigger evaluated + result recorded · 🟡 evaluated, source not found despite trigger · 🔴 trigger not evaluated |
+| **IMF pre-warm** | always (vintage + indicator) | `WEO {Apr-2026 / current vintage}` · `{indicators used}` | 🟢 current vintage (≤ 6 months) · 🟡 stale vintage with annotation · 🔴 not pre-warmed |
+| **Lagrådet tracking** (major bills only) | referral status recorded | `not applicable / referral pending / yttrande {URL + date}` | 🟢 status recorded · 🟡 referral pending tagged · 🔴 applicable but not checked |
+| **Party `[unconfirmed]` flags** | every empty-`parti` row tagged | _N_ flags · _N_ closed via `search_ledamoter` | 🟢 all flagged or closed · 🟡 ≥ 80% flagged · 🔴 inferred without flag |
+| **Election-proximity multiplier (1.5×)** | applied when election ≤ 6 months | `applied: Y/N` · scope: `opposition motions / contested propositions` | 🟢 applied · 🟡 N/A (outside window) |
+| **Withdrawn documents** | listed not silently dropped | _N_ rows in `data-download-manifest.md §Withdrawn Documents` | 🟢 all listed · 🟡 N/A (none in batch) |
+| **PIR carry-forward** | prior-cycle PIRs read at pre-warm | _N_ open PIRs ingested · _N_ closed this run | 🟢 read at pre-warm · 🟡 read end-of-cycle · 🔴 not read |
+| **Single-agent review substitute** — three-component non-ICD control | all 3 evidenced | Pass 2 ✅/❌ · Devil's Advocate ✅/❌ · Cross-folder/Prior-cycle citation ✅/❌ | 🟢 all 3 ✅ · 🟡 2/3 ✅ · 🔴 ≤ 1/3 ✅ |
 
 ---
 
@@ -174,6 +185,8 @@ flowchart LR
 | **7. Consistency explained** | ✅ | Changelog in document control blocks |
 | **8. Accurate judgments made** | ✅ | Quality gate score 8.01/10 |
 | **9. Visual information incorporated** | ✅ | 19 Mermaid diagrams across workflow |
+
+> **Single-agent review substitute** (separate non-ICD internal control): news workflows run as a single AI agent. Per [`04-analysis-pipeline.md §Single-agent review substitute`](../../.github/prompts/04-analysis-pipeline.md), this control requires **all three** components evidenced — (a) Pass 2 read-back, (b) Devil's Advocate / ACH ≥ 3 hypotheses, (c) cross-folder peer citation (Tier-C) **or** prior-cycle citation (single-type). State which components were satisfied in the §Content Metrics row; if any is missing, surface the gap as the top item in §What to Improve. ICD 203 Standard 9 keeps its established repository meaning — assess it separately above using the existing terminology, not via this substitute control.
 
 **ICD 203 Compliance Status:** `[SELECT: ✅ COMPLIANT / ❌ NON-COMPLIANT]`
 

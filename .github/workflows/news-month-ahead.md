@@ -82,6 +82,8 @@ network:
     - www.scb.se
     - www.statskontoret.se
     - statskontoret.se
+    - www.lagradet.se
+    - lagradet.se
     - regeringen.se
     - hack23.com
     - www.hack23.com
@@ -137,6 +139,8 @@ safe-outputs:
     - www.scb.se
     - www.statskontoret.se
     - statskontoret.se
+    - www.lagradet.se
+    - lagradet.se
     - hack23.com
     - www.hack23.com
     - riksdagsmonitor.com

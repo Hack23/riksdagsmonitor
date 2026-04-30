@@ -50,6 +50,7 @@ Rules:
 - **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) v3.0+.
 - **Firewall egress**: `data.imf.org`, `api.imf.org`, `www.imf.org` (already in every workflow's `network.allowed`).
 - **Statskontoret egress**: `www.statskontoret.se` / `statskontoret.se` are public non-MCP web sources used for agency capacity, state-governance evaluations, implementation feasibility, administrative burden and public-sector efficiency evidence.
+- **Lagrådet egress**: `www.lagradet.se` / `lagradet.se` are public non-MCP web sources for Council on Legislation referrals and yttranden on government propositions touching constitutional law, fundamental rights, criminal procedure, court organisation, surveillance, and taxation principles. Allow-listed in every news workflow's `network.allowed`. Required input for major-bill `risk-assessment.md`, `threat-analysis.md` and `forward-indicators.md` per `03-data-download.md §Lagrådet enrichment`.
 
 ## Health gate (in-prompt)
 
@@ -69,6 +70,8 @@ Run once at workflow start, then proceed — do not loop forever.
 | Riksdag tool arguments are documented under [`.github/skills/riksdag-regering-mcp/`](../skills/riksdag-regering-mcp/). |
 | **Economic data is IMF-first**. Only use `get-economic-data` (world-bank MCP) for articles written pre-2026-04-20 or as an explicit legacy fallback — **never** as a primary source in new articles. |
 | **Statskontoret is a public non-MCP source** for Swedish agency governance, administrative capacity, implementation feasibility and public-sector efficiency. Use `web_fetch` / primary URLs where available, cite report title + URL, and record retrieval in `data-download-manifest.md`. |
+| **Lagrådet is a public non-MCP source** for Council on Legislation referrals and yttranden. Required for major-bill propositions per `03-data-download.md §Lagrådet enrichment`. Cite referral URL + yttrande publication date; tag `referral pending` when no yttrande yet exists. |
+| **Prior-voteringar enrichment** is a standard call: `search_voteringar` (riksdag-regering MCP) keyed by committee `bet` prefix and the last 4 `rm` (riksmöten) for every committee-report, motion, or interpellation cycle. Feeds `historical-parallels.md`, `coalition-mathematics.md`, and `swot-analysis.md` evidence rows (see `03-data-download.md §Prior-voteringar enrichment`). |
 | Treat MCP failure mid-run as partial data: continue with what you have, document gaps in `data-download-manifest.md`, never silently drop documents. |
 | Source authority and no-fabrication rule: see `00-base-contract.md` rules 1 + 3. |
 
