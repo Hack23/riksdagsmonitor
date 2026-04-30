@@ -254,7 +254,10 @@
             <span class="rm-logo-tagline">Swedish parliamentary intelligence · Open-source · Apache-2.0</span>
           </span>
         </a>
-        <nav class="rm-site-nav" aria-label="Hovedplatform">
+        <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+  <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="rm-site-nav" aria-label="Hovedplatform">
           <a href="index_da.html">Hjem</a>
           <a href="news/index_da.html">Nyheder</a>
           <a href="dashboard/index_da.html">Dashboard</a>
@@ -9307,6 +9310,7 @@
         inject('/js/lib/mermaid-init.mjs', true);
         inject('/js/back-to-top.js', true);
         inject('/js/theme-toggle.js', false);
+        inject('/js/mobile-nav.js', false);
       })();
     </script>
   </body>

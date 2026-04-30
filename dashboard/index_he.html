@@ -137,7 +137,10 @@
 <a href="../index_he.html">← ראשי</a>
 <a href="../news/index_he.html">חדשות →</a>
 </nav>
-<nav class="site-header-nav" aria-label="פלטפורמה ראשית" data-rm-static-primary-nav="true">
+<button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+  <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="site-header-nav" aria-label="פלטפורמה ראשית" data-rm-static-primary-nav="true">
   <a href="../index_he.html">דף הבית</a>
   <a href="../news/index_he.html">חדשות</a>
   <a href="../dashboard/index_he.html">לוח מחוונים</a>
@@ -147,6 +150,8 @@
   <a class="rm-header-cta rm-header-cta-transparency" href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" title="מחויבות Hack23 לשקיפות ואבטחה" aria-label="מחויבות Hack23 לשקיפות ואבטחה"><span aria-hidden="true">🔐</span> שקיפות ואבטחה</a>
   <a class="rm-header-cta rm-header-cta-sponsor" href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer" title="הפכו לתומכים של Hack23 ב-GitHub" aria-label="הפכו לתומכים של Hack23 ב-GitHub"><span aria-hidden="true">💖</span> תמכו ב-Hack23</a>
 </nav>
+<details class="lang-dropdown">
+<summary class="lang-dropdown-summary" aria-label="Switch language"><span aria-hidden="true">🇮🇱</span> HE <span aria-hidden="true" class="lang-caret">▾</span></summary>
 <nav class="language-switcher site-language-switcher" aria-label="דף זה בשפות אחרות" data-rm-static-language-switcher="true">
         <a href="../dashboard/index.html" lang="en" hreflang="en" title="English" aria-label="החלפת שפה: English"><span aria-hidden="true">🇬🇧</span> EN</a>
         <a href="../dashboard/index_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="החלפת שפה: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
@@ -163,6 +168,7 @@
         <a href="../dashboard/index_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="החלפת שפה: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
         <a href="../dashboard/index_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="החלפת שפה: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
 </nav>
+</details>
 </header>
 
 
@@ -435,6 +441,7 @@
         inject('/js/lib/mermaid-init.mjs', true);
         inject('/js/back-to-top.js', true);
         inject('/js/theme-toggle.js', false);
+        inject('/js/mobile-nav.js', false);
       })();
     </script>
   </body>

@@ -136,7 +136,10 @@ Instrumentpanel
 <a href="../index_sv.html">← Hem</a>
 <a href="../news/index_sv.html">Nyheter →</a>
 </nav>
-<nav class="site-header-nav" aria-label="Huvudplattform" data-rm-static-primary-nav="true">
+<button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+  <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="site-header-nav" aria-label="Huvudplattform" data-rm-static-primary-nav="true">
   <a href="../index_sv.html">Hem</a>
   <a href="../news/index_sv.html">Nyheter</a>
   <a href="../dashboard/index_sv.html">Instrumentpanel</a>
@@ -146,6 +149,8 @@ Instrumentpanel
   <a class="rm-header-cta rm-header-cta-transparency" href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" title="Hack23:s åtagande för transparens och säkerhet" aria-label="Hack23:s åtagande för transparens och säkerhet"><span aria-hidden="true">🔐</span> Transparens &amp; Säkerhet</a>
   <a class="rm-header-cta rm-header-cta-sponsor" href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer" title="Bli sponsor för Hack23 på GitHub" aria-label="Bli sponsor för Hack23 på GitHub"><span aria-hidden="true">💖</span> Sponsra Hack23</a>
 </nav>
+<details class="lang-dropdown">
+<summary class="lang-dropdown-summary" aria-label="Switch language"><span aria-hidden="true">🇸🇪</span> SV <span aria-hidden="true" class="lang-caret">▾</span></summary>
 <nav class="language-switcher site-language-switcher" aria-label="Denna sida på andra språk" data-rm-static-language-switcher="true">
         <a href="../dashboard/index.html" lang="en" hreflang="en" title="English" aria-label="Byt språk: English"><span aria-hidden="true">🇬🇧</span> EN</a>
         <a href="../dashboard/index_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="Byt språk: Swedish" aria-current="page" class="active"><span aria-hidden="true">🇸🇪</span> SV</a>
@@ -162,6 +167,7 @@ Instrumentpanel
         <a href="../dashboard/index_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="Byt språk: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
         <a href="../dashboard/index_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="Byt språk: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
 </nav>
+</details>
 </header>
 
 
@@ -434,6 +440,7 @@ Instrumentpanel
         inject('/js/lib/mermaid-init.mjs', true);
         inject('/js/back-to-top.js', true);
         inject('/js/theme-toggle.js', false);
+        inject('/js/mobile-nav.js', false);
       })();
     </script>
   </body>

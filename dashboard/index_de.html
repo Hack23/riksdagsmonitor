@@ -136,7 +136,10 @@ Dashboard
 <a href="../index_de.html">← Startseite</a>
 <a href="../news/index_de.html">Nachrichten →</a>
 </nav>
-<nav class="site-header-nav" aria-label="Hauptplattform" data-rm-static-primary-nav="true">
+<button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+  <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="site-header-nav" aria-label="Hauptplattform" data-rm-static-primary-nav="true">
   <a href="../index_de.html">Startseite</a>
   <a href="../news/index_de.html">Nachrichten</a>
   <a href="../dashboard/index_de.html">Dashboard</a>
@@ -146,6 +149,8 @@ Dashboard
   <a class="rm-header-cta rm-header-cta-transparency" href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" title="Hack23s Engagement für Transparenz und Sicherheit" aria-label="Hack23s Engagement für Transparenz und Sicherheit"><span aria-hidden="true">🔐</span> Transparenz &amp; Sicherheit</a>
   <a class="rm-header-cta rm-header-cta-sponsor" href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer" title="Werden Sie Sponsor von Hack23 auf GitHub" aria-label="Werden Sie Sponsor von Hack23 auf GitHub"><span aria-hidden="true">💖</span> Hack23 unterstützen</a>
 </nav>
+<details class="lang-dropdown">
+<summary class="lang-dropdown-summary" aria-label="Switch language"><span aria-hidden="true">🇩🇪</span> DE <span aria-hidden="true" class="lang-caret">▾</span></summary>
 <nav class="language-switcher site-language-switcher" aria-label="Diese Seite in anderen Sprachen" data-rm-static-language-switcher="true">
         <a href="../dashboard/index.html" lang="en" hreflang="en" title="English" aria-label="Sprache wechseln: English"><span aria-hidden="true">🇬🇧</span> EN</a>
         <a href="../dashboard/index_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="Sprache wechseln: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
@@ -162,6 +167,7 @@ Dashboard
         <a href="../dashboard/index_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="Sprache wechseln: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
         <a href="../dashboard/index_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="Sprache wechseln: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
 </nav>
+</details>
 </header>
 
 
@@ -434,6 +440,7 @@ Dashboard
         inject('/js/lib/mermaid-init.mjs', true);
         inject('/js/back-to-top.js', true);
         inject('/js/theme-toggle.js', false);
+        inject('/js/mobile-nav.js', false);
       })();
     </script>
   </body>

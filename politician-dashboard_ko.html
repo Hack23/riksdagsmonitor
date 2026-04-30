@@ -226,7 +226,10 @@
 <li><a href="index_ko.html#about">소개</a></li>
 </ul>
 </nav>
-<nav class="site-header-nav" aria-label="메인 플랫폼" data-rm-static-primary-nav="true">
+<button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+  <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="site-header-nav" aria-label="메인 플랫폼" data-rm-static-primary-nav="true">
   <a href="index_ko.html">홈</a>
   <a href="news/index_ko.html">뉴스</a>
   <a href="dashboard/index_ko.html">대시보드</a>
@@ -236,6 +239,8 @@
   <a class="rm-header-cta rm-header-cta-transparency" href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" title="투명성과 보안에 대한 Hack23의 약속" aria-label="투명성과 보안에 대한 Hack23의 약속"><span aria-hidden="true">🔐</span> 투명성 및 보안</a>
   <a class="rm-header-cta rm-header-cta-sponsor" href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer" title="GitHub에서 Hack23 후원자가 되기" aria-label="GitHub에서 Hack23 후원자가 되기"><span aria-hidden="true">💖</span> Hack23 후원</a>
 </nav>
+<details class="lang-dropdown">
+<summary class="lang-dropdown-summary" aria-label="Switch language"><span aria-hidden="true">🇰🇷</span> KO <span aria-hidden="true" class="lang-caret">▾</span></summary>
 <nav class="language-switcher site-language-switcher" aria-label="이 페이지의 다른 언어 버전" data-rm-static-language-switcher="true">
         <a href="politician-dashboard.html" lang="en" hreflang="en" title="English" aria-label="언어 변경: English"><span aria-hidden="true">🇬🇧</span> EN</a>
         <a href="politician-dashboard_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="언어 변경: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
@@ -252,6 +257,7 @@
         <a href="politician-dashboard_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="언어 변경: Korean" aria-current="page" class="active"><span aria-hidden="true">🇰🇷</span> KO</a>
         <a href="politician-dashboard_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="언어 변경: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
 </nav>
+</details>
 </header>
 
 
@@ -450,6 +456,7 @@
         inject('/js/lib/mermaid-init.mjs', true);
         inject('/js/back-to-top.js', true);
         inject('/js/theme-toggle.js', false);
+        inject('/js/mobile-nav.js', false);
       })();
     </script>
   </body>

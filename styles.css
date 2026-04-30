@@ -14048,3 +14048,236 @@ html[data-theme="light"] .rm-footer-trust-badges a:focus-visible {
     display: none;
   }
 }
+
+/* ============================================================
+   MOBILE NAVIGATION: Hamburger Button & Collapsible Language Switcher
+   WCAG 2.1 AA: 44×44px touch targets, 4.5:1 contrast, aria attrs
+   RTL-aware (Arabic, Hebrew). Cyberpunk design system colours.
+   ============================================================ */
+
+/* --- Hamburger toggle button --- */
+.mobile-menu-toggle {
+  display: none; /* hidden on desktop; shown via media query below */
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  background: var(--card-bg, #fff);
+  border: 2px solid var(--primary-color, #006633);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-color, #1a1a1a);
+  z-index: 101;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle:focus-visible {
+  background: var(--primary-color, #006633);
+  color: #fff;
+}
+
+.mobile-menu-toggle:focus-visible {
+  outline: 2px solid var(--primary-color, #006633);
+  outline-offset: 2px;
+}
+
+.mobile-menu-toggle:active {
+  transform: scale(0.97);
+}
+
+/* Dark theme hamburger */
+html[data-theme="dark"] .mobile-menu-toggle {
+  background: var(--dark-bg, #0a0e27);
+  border-color: var(--primary-cyan, #00d9ff);
+  color: var(--light-text, #e0e0e0);
+}
+
+html[data-theme="dark"] .mobile-menu-toggle:hover,
+html[data-theme="dark"] .mobile-menu-toggle:focus-visible {
+  background: var(--primary-cyan, #00d9ff);
+  color: var(--dark-bg, #0a0e27);
+  border-color: var(--primary-cyan, #00d9ff);
+}
+
+/* RTL: mirror to right side (ar, he pages have dir="rtl") */
+[dir="rtl"] .mobile-menu-toggle {
+  left: auto;
+  right: 1rem;
+}
+
+/* --- Language-switcher collapsible <details> wrapper --- */
+/* Desktop: transparent wrapper — summary hidden, nav always visible */
+.lang-dropdown {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.lang-dropdown > summary {
+  display: none; /* hidden on desktop */
+  list-style: none;
+  -webkit-appearance: none;
+}
+
+.lang-dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Force the nav visible on desktop regardless of details[open] state */
+.lang-dropdown > nav.language-switcher {
+  display: flex !important;
+}
+
+/* --- Mobile breakpoint ≤768px --- */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+
+  /* Collapse main nav when not toggled open */
+  .mobile-menu-toggle[aria-expanded="false"] ~ .site-header-nav {
+    display: none;
+  }
+
+  /* Expand main nav when toggled open */
+  .mobile-menu-toggle[aria-expanded="true"] ~ .site-header-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.35rem;
+    padding: var(--spacing-sm, 0.75rem) var(--spacing-md, 1rem);
+    background: var(--card-bg, #fff);
+    border-top: 1px solid var(--border-color, rgba(0,0,0,0.15));
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] ~ .site-header-nav a {
+    flex: 1 1 100% !important;
+    justify-content: flex-start !important;
+    text-align: left;
+  }
+
+  /* RTL: align left-to-right text to start for rtl pages */
+  [dir="rtl"] .mobile-menu-toggle[aria-expanded="true"] ~ .site-header-nav a {
+    justify-content: flex-end !important;
+    text-align: right;
+  }
+
+  /* Language switcher: show collapsible summary on mobile */
+  .lang-dropdown > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.9rem;
+    min-height: 44px;
+    min-width: 44px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 600;
+    background: var(--card-bg, #fff);
+    border: 2px solid var(--primary-color, #006633);
+    border-radius: 6px;
+    color: var(--text-color, #1a1a1a);
+    margin: var(--spacing-xs, 0.5rem) auto 0;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .lang-dropdown > summary:focus-visible {
+    outline: 2px solid var(--primary-color, #006633);
+    outline-offset: 2px;
+  }
+
+  .lang-dropdown[open] > summary {
+    background: var(--primary-color, #006633);
+    color: #fff;
+  }
+
+  /* Dark theme: lang-dropdown summary on mobile */
+  html[data-theme="dark"] .lang-dropdown > summary {
+    background: var(--dark-bg, #0a0e27);
+    border-color: var(--primary-cyan, #00d9ff);
+    color: var(--light-text, #e0e0e0);
+  }
+
+  html[data-theme="dark"] .lang-dropdown[open] > summary {
+    background: var(--primary-cyan, #00d9ff);
+    color: var(--dark-bg, #0a0e27);
+  }
+
+  /* Collapsed lang nav: hidden by default (browser handles via details) */
+  .lang-dropdown > nav.language-switcher {
+    display: none !important; /* collapse when details closed */
+  }
+
+  /* Open lang nav: show when details[open] */
+  .lang-dropdown[open] > nav.language-switcher {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5rem 0.5rem 0;
+  }
+
+  /* rm-site-nav hamburger collapse for political-intelligence pages */
+  .mobile-menu-toggle[aria-expanded="false"] ~ .rm-site-nav {
+    display: none;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] ~ .rm-site-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.35rem;
+    padding: var(--spacing-sm, 0.75rem) var(--spacing-md, 1rem);
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] ~ .rm-site-nav a {
+    flex: 1 1 100% !important;
+    justify-content: flex-start !important;
+    text-align: left;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  [dir="rtl"] .mobile-menu-toggle[aria-expanded="true"] ~ .rm-site-nav a {
+    justify-content: flex-end !important;
+    text-align: right;
+  }
+}
+
+/* --- Desktop ≥769px: always show nav, hide hamburger, flatten lang dropdown --- */
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+
+  /* Always show main nav on desktop regardless of aria-expanded state */
+  .site-header-nav {
+    display: flex !important;
+  }
+
+  .rm-site-nav {
+    display: flex !important;
+  }
+
+  /* Force show lang nav regardless of details open state */
+  .lang-dropdown > nav.language-switcher {
+    display: flex !important;
+  }
+
+  /* Ensure lang-dropdown behaves as transparent wrapper */
+  .lang-dropdown > summary {
+    display: none !important;
+  }
+}

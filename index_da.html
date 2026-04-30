@@ -397,7 +397,10 @@ Svensk valg 2026
 <span class="label">Udvalgsbeslutninger</span>
 </div>
 </div>
-<nav class="site-header-nav" aria-label="Hovedplatform" data-rm-static-primary-nav="true">
+<button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+  <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="site-header-nav" aria-label="Hovedplatform" data-rm-static-primary-nav="true">
   <a href="index_da.html">Hjem</a>
   <a href="news/index_da.html">Nyheder</a>
   <a href="dashboard/index_da.html">Dashboard</a>
@@ -407,6 +410,8 @@ Svensk valg 2026
   <a class="rm-header-cta rm-header-cta-transparency" href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" title="Hack23s engagement for transparens og sikkerhed" aria-label="Hack23s engagement for transparens og sikkerhed"><span aria-hidden="true">🔐</span> Transparens &amp; Sikkerhed</a>
   <a class="rm-header-cta rm-header-cta-sponsor" href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer" title="Bliv sponsor af Hack23 på GitHub" aria-label="Bliv sponsor af Hack23 på GitHub"><span aria-hidden="true">💖</span> Sponsorér Hack23</a>
 </nav>
+<details class="lang-dropdown">
+<summary class="lang-dropdown-summary" aria-label="Switch language"><span aria-hidden="true">🇩🇰</span> DA <span aria-hidden="true" class="lang-caret">▾</span></summary>
 <nav class="language-switcher site-language-switcher" aria-label="Denne side på andre sprog" data-rm-static-language-switcher="true">
         <a href="index.html" lang="en" hreflang="en" title="English" aria-label="Skift sprog: English"><span aria-hidden="true">🇬🇧</span> EN</a>
         <a href="index_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="Skift sprog: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
@@ -423,6 +428,7 @@ Svensk valg 2026
         <a href="index_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="Skift sprog: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
         <a href="index_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="Skift sprog: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
 </nav>
+</details>
 </header>
 
 
@@ -1352,6 +1358,7 @@ Ydelsesniveauer (ntile_party_tier: 1-4)
         inject('/js/lib/mermaid-init.mjs', true);
         inject('/js/back-to-top.js', true);
         inject('/js/theme-toggle.js', false);
+        inject('/js/mobile-nav.js', false);
       })();
     </script>
   </body>

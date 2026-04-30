@@ -397,7 +397,10 @@
 <span class="label">Décisions de commission</span>
 </div>
 </div>
-<nav class="site-header-nav" aria-label="Plateforme principale" data-rm-static-primary-nav="true">
+<button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+  <span aria-hidden="true">☰</span>
+</button>
+<nav id="main-nav" class="site-header-nav" aria-label="Plateforme principale" data-rm-static-primary-nav="true">
   <a href="index_fr.html">Accueil</a>
   <a href="news/index_fr.html">Actualités</a>
   <a href="dashboard/index_fr.html">Tableau de bord</a>
@@ -407,6 +410,8 @@
   <a class="rm-header-cta rm-header-cta-transparency" href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" title="Engagement de Hack23 pour la transparence et la sécurité" aria-label="Engagement de Hack23 pour la transparence et la sécurité"><span aria-hidden="true">🔐</span> Transparence &amp; Sécurité</a>
   <a class="rm-header-cta rm-header-cta-sponsor" href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer" title="Devenez sponsor de Hack23 sur GitHub" aria-label="Devenez sponsor de Hack23 sur GitHub"><span aria-hidden="true">💖</span> Sponsoriser Hack23</a>
 </nav>
+<details class="lang-dropdown">
+<summary class="lang-dropdown-summary" aria-label="Switch language"><span aria-hidden="true">🇫🇷</span> FR <span aria-hidden="true" class="lang-caret">▾</span></summary>
 <nav class="language-switcher site-language-switcher" aria-label="Cette page dans d'autres langues" data-rm-static-language-switcher="true">
         <a href="index.html" lang="en" hreflang="en" title="English" aria-label="Changer de langue: English"><span aria-hidden="true">🇬🇧</span> EN</a>
         <a href="index_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="Changer de langue: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
@@ -423,6 +428,7 @@
         <a href="index_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="Changer de langue: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
         <a href="index_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="Changer de langue: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
 </nav>
+</details>
 </header>
 
 
@@ -1352,6 +1358,7 @@ Niveaux de performance (ntile_party_tier : 1-4)
         inject('/js/lib/mermaid-init.mjs', true);
         inject('/js/back-to-top.js', true);
         inject('/js/theme-toggle.js', false);
+        inject('/js/mobile-nav.js', false);
       })();
     </script>
   </body>
