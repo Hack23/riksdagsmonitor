@@ -194,6 +194,51 @@ if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
  * Click → posts `SKIP_WAITING` to the waiting worker, which calls
  * `self.skipWaiting()` → fires `controllerchange` → page reloads.
  */
+
+/** Labels used by the SW update toast, localized per `<html lang>`. */
+interface UpdateToastLabels {
+  readonly lang: string;
+  readonly message: string;
+  readonly reload: string;
+  readonly dismiss: string;
+}
+
+/**
+ * Toast strings localized for the 14 site languages. Keys match the
+ * `<html lang>` attribute emitted by the static-page renderers (the
+ * legacy `no` code is honoured even though `LANGUAGE_META.no` emits
+ * BCP-47 hreflang `nb`, because `lang="no"` is still on the served HTML).
+ *
+ * Exported for unit testing only.
+ */
+export const SW_UPDATE_TOAST_LABELS: Readonly<Record<string, UpdateToastLabels>> = {
+  en: { lang: 'en', message: 'New content available', reload: 'Reload', dismiss: 'Dismiss' },
+  sv: { lang: 'sv', message: 'Nytt innehåll tillgängligt', reload: 'Ladda om', dismiss: 'Stäng' },
+  da: { lang: 'da', message: 'Nyt indhold tilgængeligt', reload: 'Genindlæs', dismiss: 'Luk' },
+  no: { lang: 'no', message: 'Nytt innhold tilgjengelig', reload: 'Last på nytt', dismiss: 'Lukk' },
+  nb: { lang: 'nb', message: 'Nytt innhold tilgjengelig', reload: 'Last på nytt', dismiss: 'Lukk' },
+  fi: { lang: 'fi', message: 'Uutta sisältöä saatavilla', reload: 'Lataa uudelleen', dismiss: 'Sulje' },
+  de: { lang: 'de', message: 'Neue Inhalte verfügbar', reload: 'Neu laden', dismiss: 'Schließen' },
+  fr: { lang: 'fr', message: 'Nouveau contenu disponible', reload: 'Recharger', dismiss: 'Fermer' },
+  es: { lang: 'es', message: 'Nuevo contenido disponible', reload: 'Recargar', dismiss: 'Cerrar' },
+  nl: { lang: 'nl', message: 'Nieuwe inhoud beschikbaar', reload: 'Opnieuw laden', dismiss: 'Sluiten' },
+  ar: { lang: 'ar', message: 'محتوى جديد متاح', reload: 'إعادة التحميل', dismiss: 'إغلاق' },
+  he: { lang: 'he', message: 'תוכן חדש זמין', reload: 'טען מחדש', dismiss: 'סגור' },
+  ja: { lang: 'ja', message: '新しいコンテンツがあります', reload: '再読み込み', dismiss: '閉じる' },
+  ko: { lang: 'ko', message: '새 콘텐츠를 사용할 수 있습니다', reload: '새로고침', dismiss: '닫기' },
+  zh: { lang: 'zh', message: '有新内容可用', reload: '重新加载', dismiss: '关闭' },
+};
+
+/**
+ * Resolve the toast labels for a given `<html lang>` value. Accepts BCP-47
+ * subtags (e.g. `en-GB`, `zh-Hans`) and matches on the primary subtag,
+ * falling back to English for any unsupported language.
+ */
+export function getUpdateToastLabels(lang: string): UpdateToastLabels {
+  const primary = (lang || 'en').toLowerCase().split(/[-_]/)[0] ?? 'en';
+  return SW_UPDATE_TOAST_LABELS[primary] ?? SW_UPDATE_TOAST_LABELS.en!;
+}
+
 function showUpdateToast(reg: ServiceWorkerRegistration): void {
   if (document.getElementById('sw-update-toast')) return;
 
@@ -201,6 +246,13 @@ function showUpdateToast(reg: ServiceWorkerRegistration): void {
   toast.id = 'sw-update-toast';
   toast.setAttribute('role', 'status');
   toast.setAttribute('aria-live', 'polite');
+  // Localize toast labels by `<html lang>` so screen readers pronounce them
+  // correctly on non-English index pages. Falls back to English for any
+  // language not in the map.
+  const labels = getUpdateToastLabels(
+    (typeof document !== 'undefined' && document.documentElement.lang) || 'en',
+  );
+  toast.setAttribute('lang', labels.lang);
   toast.style.cssText = [
     'position:fixed',
     'inset-inline-end:1rem',
@@ -222,12 +274,12 @@ function showUpdateToast(reg: ServiceWorkerRegistration): void {
   ].join(';');
 
   const msg = document.createElement('span');
-  msg.textContent = 'New content available';
+  msg.textContent = labels.message;
   msg.style.cssText = 'flex:1';
 
   const reloadBtn = document.createElement('button');
   reloadBtn.type = 'button';
-  reloadBtn.textContent = 'Reload';
+  reloadBtn.textContent = labels.reload;
   reloadBtn.style.cssText = [
     'padding:0.4rem 0.85rem',
     'background:linear-gradient(135deg,#00d9ff,#ff006e)',
@@ -250,7 +302,7 @@ function showUpdateToast(reg: ServiceWorkerRegistration): void {
   const dismissBtn = document.createElement('button');
   dismissBtn.type = 'button';
   dismissBtn.textContent = '×';
-  dismissBtn.setAttribute('aria-label', 'Dismiss');
+  dismissBtn.setAttribute('aria-label', labels.dismiss);
   dismissBtn.style.cssText = [
     'background:transparent',
     'color:inherit',

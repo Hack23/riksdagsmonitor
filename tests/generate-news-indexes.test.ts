@@ -548,8 +548,11 @@ describe('Generate News Indexes', () => {
     it('should include skeleton cards with aria-hidden for accessibility', () => {
       module.generateAllIndexes();
       const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
-      // Skeletons are decorative — must be hidden from AT
-      expect(enContent).toContain('class="article-card-skeleton" aria-hidden="true"');
+      // Skeletons are decorative — must be hidden from AT.
+      // Use a regex that tolerates attribute reordering / whitespace so the
+      // assertion is not coupled to the generator's output formatting.
+      const skeletonWithAriaHidden = /<div\b[^>]*\bclass="[^"]*\barticle-card-skeleton\b[^"]*"[^>]*\baria-hidden="true"[^>]*>|<div\b[^>]*\baria-hidden="true"[^>]*\bclass="[^"]*\barticle-card-skeleton\b[^"]*"[^>]*>/;
+      expect(enContent).toMatch(skeletonWithAriaHidden);
     });
 
     it('should include computeRecency function in client script', () => {
