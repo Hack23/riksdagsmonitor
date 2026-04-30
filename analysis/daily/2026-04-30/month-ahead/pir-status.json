@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "analysis_date": "2026-04-30",
+  "subfolder": "month-ahead",
+  "generated_at": "2026-04-30T08:20:00Z",
+  "cycle_id": "2026-04-30-month-ahead",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "question": "Will SD file a substantive TU amendment to NTP HD03259 by 2026-05-12?",
+      "status": "open",
+      "priority": "high",
+      "opened": "2026-04-30",
+      "closed": null,
+      "answer": null,
+      "confirms": "Scenario 1 vs Scenario 2",
+      "monitoring_source": "Riksdag API doktyp=mot organ=TU",
+      "due": "2026-05-12"
+    },
+    {
+      "id": "PIR-2",
+      "question": "What is the Riksbank May 2026 interest rate decision?",
+      "status": "open",
+      "priority": "high",
+      "opened": "2026-04-30",
+      "closed": null,
+      "answer": null,
+      "confirms": "Housing credit context for coalition-mathematics assessment",
+      "monitoring_source": "riksbank.se press release",
+      "due": "2026-05-08"
+    },
+    {
+      "id": "PIR-3",
+      "question": "Will post-April 2026 opinion polling show movement on infrastructure salience among undecided voters?",
+      "status": "open",
+      "priority": "medium",
+      "opened": "2026-04-30",
+      "closed": null,
+      "answer": null,
+      "confirms": "Electoral scenario A/B/C probability revision",
+      "monitoring_source": "Novus.se, Sifo weekly tracker",
+      "due": "2026-05-31"
+    },
+    {
+      "id": "PIR-4",
+      "question": "Will KU36 digital privacy framework produce a dedicated AI Act transposition bill before the September 2026 election?",
+      "status": "open",
+      "priority": "medium",
+      "opened": "2026-04-30",
+      "closed": null,
+      "answer": null,
+      "confirms": "Post-election regulatory gap severity",
+      "monitoring_source": "Riksdag API prop search, KU committee calendar",
+      "due": "2026-08-31"
+    },
+    {
+      "id": "PIR-5",
+      "question": "What is Finansinspektionen's timeline for CRR3 implementation circulars?",
+      "status": "open",
+      "priority": "low",
+      "opened": "2026-04-30",
+      "closed": null,
+      "answer": null,
+      "confirms": "CRR3 HD03253 on-schedule assessment",
+      "monitoring_source": "fi.se regulatory announcements",
+      "due": "2026-06-30"
+    },
+    {
+      "id": "PIR-PRIOR-1",
+      "question": "Did SD extract NTP concessions in committee (prior propositions cycle)?",
+      "status": "carried_forward",
+      "priority": "high",
+      "opened": "2026-04-28",
+      "closed": null,
+      "answer": null,
+      "confirms": "Carried forward to PIR-1 (this cycle)",
+      "monitoring_source": "Riksdag API TU committee records",
+      "due": "2026-05-12",
+      "carried_forward_to": "PIR-1"
+    },
+    {
+      "id": "PIR-PRIOR-2",
+      "question": "What is the scope of opposition social policy differentiation before election?",
+      "status": "closed",
+      "priority": "high",
+      "opened": "2026-04-28",
+      "closed": "2026-04-30",
+      "answer": "ANSWERED: 11 motions (HD11768-HD11776) confirm comprehensive differentiation agenda across housing, poverty, health, animal welfare, foreign policy",
+      "confirms": "Opposition electoral positioning analysis",
+      "monitoring_source": "Riksdag API motioner 2026-04-30",
+      "due": "2026-04-30"
+    }
+  ],
+  "summary": {
+    "total_pirs": 7,
+    "open": 5,
+    "closed": 1,
+    "carried_forward": 1,
+    "high_priority_open": 2,
+    "next_due": "2026-05-08"
+  }
+}
