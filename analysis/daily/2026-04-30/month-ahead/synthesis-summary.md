@@ -101,3 +101,55 @@ xychart-beta
     y-axis "DIW Score" 0 --> 10
     bar [9.2, 9.4, 8.3, 8.1, 7.8, 7.5, 7.4, 7.2]
 ```
+
+## Improvement Run Update: 2026-04-30 — Ukraine Accountability Package + Juvenile Justice
+
+**Three additional propositions identified** from the 30-day window (2026-04-16) that were not captured in the initial download batch:
+
+### Ukraine Accountability Cluster (HD03231 + HD03232)
+
+Sweden filed two companion propositions on 2026-04-16 acceding to the international legal architecture for Ukraine accountability:
+
+- **HD03231** (DIW 7.8 [B2]): Accession to the Extended Partial Agreement establishing the **Special Tribunal for the Crime of Aggression against Ukraine** (Council of Europe instrument)
+- **HD03232** (DIW 7.6 [B2]): Accession to the Convention establishing the **International Damages Commission for Ukraine** (reparations architecture)
+
+**Intelligence assessment**: These two propositions extend Sweden's Ukraine commitment beyond HD03254 (military cooperation) and HD11772 (aid motion) into the **international justice and accountability domain**. They confirm a three-pillar Ukraine policy:
+
+1. **Military**: HD03254 (operational cooperation)
+2. **Justice**: HD03231 (criminal accountability) + HD03232 (reparations)
+3. **Opposition pressure**: HD11772 (S/V solidarity motion)
+
+Combined with HD03254, Sweden's comprehensive Ukraine posture is now the most developed in the Nordic cohort. This reinforces the September 2026 election narrative of Sweden as a "reliable, engaged NATO ally" across all dimensions — not just defence spending.
+
+**Electoral framing**: The governing coalition can campaign on "Sweden built the full Ukraine accountability architecture — military, criminal, reparations — in one legislative session." Opposition cannot credibly contest this on substance; any differentiation must be on pace or resourcing.
+
+### Juvenile Justice Addition (HD03246)
+
+- **HD03246** (DIW 7.2 [B2]): Tougher sentences for young offenders (Justitiedepartementet, April 16)
+
+This extends the Tidöalliansen's rule-of-law cluster to a **tripartite programme**:
+
+| Plank | dok_id | Focus |
+|-------|--------|-------|
+| Deterrence | HD03246 | Tougher custodial sentences for 15–21 |
+| Accountability | HD03252 | Social benefit restrictions for convicts |
+| Efficiency | HD01JuU9 | Faster court processing |
+
+The tripartite structure lifts the rule-of-law cluster's collective DIW from 7.5 (individual) to **8.2** (programme coherence bonus). Kriminalvården capacity risk is the key implementation vulnerability.
+
+### Revised Full DIW Ranking (Improvement Run 2)
+
+| Rank | dok_id(s) | Cluster / Title | DIW Score | Tier |
+|------|-----------|-----------------|-----------|------|
+| 1 | HD03262-65 | Immigration package cluster | 9.4 | L3 Intelligence-grade |
+| 2 | HD03259 | NTP 970bn SEK | 9.2 | L3 Intelligence-grade |
+| 3 | HD03254 | Military cooperation | 8.3 | L2+ Priority |
+| 4 | HD01KU36 | Digital privacy review | 8.1 | L2+ Priority |
+| 5 | HD03246+HD03252+HD01JuU9 | Rule-of-law programme | 8.2 | L2+ Priority |
+| 6 | HD03231+HD03232 | Ukraine accountability | 7.7 | L2+ Priority |
+| 7 | HD03253 | EU banking package (CRR3) | 7.8 | L2+ Priority |
+| 8 | HD03258 | Political transparency | 7.2 | L2 Strategic |
+| 9 | HD10461 | Space/ESA gap | 7.1 | L2 Strategic |
+| 10 | HD03251 | Addiction/psychiatric care | 6.8 | L2 Strategic |
+
+**Key analytical shift**: The combined rule-of-law programme (HD03246+HD03252+HD01JuU9, score 8.2) now outranks the CRR3 banking package (7.8) and the Ukraine accountability cluster (7.7) as a governance narrative. The immigration cluster (9.4) remains the dominant electoral battleground.
