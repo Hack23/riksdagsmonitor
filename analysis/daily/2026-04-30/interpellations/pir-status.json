@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "cycle": "interpellations",
+  "date": "2026-04-30",
+  "subfolder": "interpellations",
+  "generated_at": "2026-04-30T07:22:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-ESA-1",
+      "statement": "Will Minister Edholm commit to a supplementary ESA budget before autumn 2026 budget negotiations?",
+      "status": "open",
+      "confidence": "LOW"
+    },
+    {
+      "pir_id": "PIR-Heritage-1",
+      "statement": "Will Minister Liljestrand commission a formal SFV maintenance survey in response to HD10460?",
+      "status": "open",
+      "confidence": "LOW"
+    },
+    {
+      "pir_id": "PIR-ESA-2",
+      "statement": "How will ESA partners react to Sweden continuing low programme share?",
+      "status": "open",
+      "confidence": "LOW"
+    },
+    {
+      "pir_id": "PIR-Industry-1",
+      "statement": "Will Rymdstyrelsen publicly restate its funding needs before the May 2026 interpellation debate?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    }
+  ]
+}
