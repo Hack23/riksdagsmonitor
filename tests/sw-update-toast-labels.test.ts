@@ -4,10 +4,13 @@
  * (primary subtag, fallback to English) that drive the
  * `New content available` toast on non-English index pages.
  *
- * Importing `src/browser/main.ts` triggers its top-level service-worker
- * registration on Node, but every branch is gated on
- * `typeof navigator !== 'undefined' && 'serviceWorker' in navigator`,
- * so the import is side-effect-free in vitest's Node environment.
+ * `src/browser/main.ts` performs DOM access at module top-level
+ * (`document.readyState`, `DOMContentLoaded` listener) and registers a
+ * service worker on `window.load`. Importing it here is safe because the
+ * vitest config uses a happy-dom environment (`vitest.config.js` →
+ * `test.environment: 'happy-dom'`), which provides both `document` and
+ * `window`. The service-worker branch is also gated on
+ * `'serviceWorker' in navigator`, so it no-ops under happy-dom.
  */
 
 import { describe, it, expect } from 'vitest';
