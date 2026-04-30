@@ -33,8 +33,13 @@ declare global {
     clear(): void;
   };
 
-   
-  var d3: Record<string, unknown>;
+  // NOTE: We deliberately do NOT redeclare `var d3` here. `@types/d3` (pulled
+  // in transitively via `import type ... from 'd3'` in
+  // `scripts/{coalition,committees}-dashboard/types.ts`) already declares a
+  // global `d3`, and a second declaration here triggers TS2300
+  // "Duplicate identifier 'd3'" under `tsconfig.scripts.json`. The mock
+  // assignment below uses an indexed cast on `globalThis` to bypass the
+  // narrower upstream type.
 }
 
 // Global test utilities
@@ -61,8 +66,10 @@ globalThis.Chart = class MockChart {
   clear(): void { /* noop */ }
 };
 
-// Mock D3 globally
-globalThis.d3 = {
+// Mock D3 globally — assigned through an indexed cast on `globalThis` because
+// `@types/d3` declares `var d3` with a strict module type that our minimal
+// mock object doesn't satisfy.
+(globalThis as Record<string, unknown>).d3 = {
   select: vi.fn(() => ({
     selectAll: vi.fn(() => ({
       data: vi.fn(() => ({
