@@ -138,6 +138,12 @@ export interface ChromeOptions {
    * already render their own visualization above the fold).
    */
   readonly heroBanner?: boolean;
+  /**
+   * Optional site-root-relative banner image used when `heroBanner` is enabled.
+   * Defaults to the platform-wide banner; section renderers can supply a
+   * dedicated asset while preserving the shared chrome structure.
+   */
+  readonly heroBannerImage?: string;
 }
 
 export interface SiteChrome {
@@ -457,7 +463,7 @@ ${breadcrumbLis}
       </div>
     </header>${(opts.heroBanner ?? true) ? `
     <div class="hero-banner" aria-hidden="true">
-      <img src="${prefix}images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async">
+      <img src="${prefix}${opts.heroBannerImage ?? 'images/riksdagsmonitor-banner.webp'}" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async">
     </div>` : ''}${(opts.languageBar ?? true) ? `
     <nav class="language-switcher rm-lang-bar" role="navigation" aria-label="${escapeHtml(cs.thisPageInOtherLanguages)}">
 ${horizontalLangBar}

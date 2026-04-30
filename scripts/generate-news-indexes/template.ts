@@ -65,6 +65,23 @@ const RECENCY_LABELS: Readonly<Record<string, Readonly<Record<'today' | 'this-we
   zh: { 'today': '今天', 'this-week': '本周', 'this-month': '本月' },
 };
 
+const HERO_METRIC_LABELS: Readonly<Record<string, Readonly<Record<'articles' | 'languages' | 'latest' | 'pipeline', string>>>> = {
+  en: { articles: 'Articles indexed', languages: 'Languages', latest: 'Latest update', pipeline: 'Agentic newsroom' },
+  sv: { articles: 'Indexerade artiklar', languages: 'Språk', latest: 'Senaste uppdatering', pipeline: 'Agentbaserad redaktion' },
+  da: { articles: 'Indekserede artikler', languages: 'Sprog', latest: 'Seneste opdatering', pipeline: 'Agentisk redaktion' },
+  no: { articles: 'Indekserte artikler', languages: 'Språk', latest: 'Siste oppdatering', pipeline: 'Agentbasert redaksjon' },
+  fi: { articles: 'Indeksoidut artikkelit', languages: 'Kielet', latest: 'Viimeisin päivitys', pipeline: 'Agenttipohjainen toimitus' },
+  de: { articles: 'Indexierte Artikel', languages: 'Sprachen', latest: 'Letzte Aktualisierung', pipeline: 'Agentische Redaktion' },
+  fr: { articles: 'Articles indexés', languages: 'Langues', latest: 'Dernière mise à jour', pipeline: 'Rédaction agentique' },
+  es: { articles: 'Artículos indexados', languages: 'Idiomas', latest: 'Última actualización', pipeline: 'Redacción agéntica' },
+  nl: { articles: 'Geïndexeerde artikelen', languages: 'Talen', latest: 'Laatste update', pipeline: 'Agentische redactie' },
+  ar: { articles: 'مقالات مفهرسة', languages: 'لغات', latest: 'آخر تحديث', pipeline: 'غرفة أخبار وكيلة' },
+  he: { articles: 'מאמרים באינדקס', languages: 'שפות', latest: 'עדכון אחרון', pipeline: 'מערכת סוכנים' },
+  ja: { articles: '索引済み記事', languages: '言語', latest: '最新更新', pipeline: 'エージェント newsroom' },
+  ko: { articles: '색인된 기사', languages: '언어', latest: '최신 업데이트', pipeline: '에이전트 뉴스룸' },
+  zh: { articles: '已索引文章', languages: '语言', latest: '最新更新', pipeline: '代理新闻室' },
+};
+
 function localizeClearFilters(langKey: string): string {
   return CLEAR_FILTERS_LABELS[langKey] ?? CLEAR_FILTERS_LABELS.en!;
 }
@@ -106,6 +123,10 @@ export function generateIndexHTML(
     topics: a.topics,
     tags: a.tags,
   }));
+  const latestDate = displayArticles.length > 0
+    ? displayArticles.map((a) => a.date).sort((a, b) => b.localeCompare(a))[0]!
+    : new Date().toISOString().slice(0, 10);
+  const heroMetricLabels = HERO_METRIC_LABELS[langKey] ?? HERO_METRIC_LABELS.en!;
 
   // ── Build hreflang alternates map for the chrome —————————————————
   const hreflangAlternates: Partial<Record<Language, string>> = {};
@@ -227,6 +248,7 @@ export function generateIndexHTML(
     // class the `rm-article-body` chrome bypassed the news-index visual
     // language entirely (see issue #2012-regression).
     bodyClass: 'news-page',
+    heroBannerImage: 'images/riksdagsmonitornews-banner.webp',
   });
 
   // News-index body — preserves the rich filter bar, articles grid, JS,
@@ -242,8 +264,23 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
          news-index page itself owns the document <h1> for a11y heading
          hierarchy and SEO, matching sitemap.html and political-intelligence.html). -->
     <header class="news-page-heading">
+      <p class="news-kicker">${escapeHtml(heroMetricLabels.pipeline)}</p>
       <h1>${escapeHtml(lang.title)}</h1>
       <p class="news-page-subtitle">${escapeHtml(lang.subtitle)}</p>
+      <dl class="news-hero-metrics" aria-label="${escapeHtml(lang.title)} statistics">
+        <div>
+          <dt>${escapeHtml(heroMetricLabels.articles)}</dt>
+          <dd>${displayArticles.length.toLocaleString(lang.code)}</dd>
+        </div>
+        <div>
+          <dt>${escapeHtml(heroMetricLabels.languages)}</dt>
+          <dd>${Object.keys(LANGUAGES).length}</dd>
+        </div>
+        <div>
+          <dt>${escapeHtml(heroMetricLabels.latest)}</dt>
+          <dd><time datetime="${latestDate}">${latestDate}</time></dd>
+        </div>
+      </dl>
     </header>
 
     <!-- Filter Bar (sticky on scroll, collapsible on mobile via <details>) -->
@@ -440,7 +477,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
         <p class="article-excerpt">\${esc(article.excerpt)}</p>
         \${availableDisplay}
         <div class="article-tags">
-          \${article.tags.map(tag => \`<span class="tag">\${esc(tag)}</span>\`).join('')}
+          \${article.tags.filter(Boolean).map(tag => \`<span class="tag">\${esc(tag)}</span>\`).join('')}
         </div>
       </article>
     \`;
