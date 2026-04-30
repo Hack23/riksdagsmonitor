@@ -24,6 +24,16 @@ const __dirname = path.dirname(__filename);
 /** Root news directory */
 export const NEWS_DIR: string = path.join(__dirname, '..', '..', 'news');
 
+const TOPIC_INFERENCE_PATTERNS: ReadonlyArray<readonly [string, RegExp]> = [
+  ['committees', /(committee|committeereports|utskott|betänkande|committee reports|rapport de commission|ausschuss|위원회|委员会|委員会)/i],
+  ['legislation', /(proposition|motion|bill|legislative|lagstift|lovgiv|lainsäädäntö|gesetz|législation|legislación|立法|입법)/i],
+  ['parliament', /(interpellation|riksdag|parliament|riksdagen|parlament|val\b|election|voting|vote|议会|의회|議会)/i],
+  ['government', /(government|regering|regerings|minister|ministry|kristersson|gouvernement|gobierno|regierung|الحكومة|ממשלה|政府)/i],
+  ['defense', /(defen[cs]e|försvar|forsvar|puolustus|verteidigung|défense|defensa|defensie|国防|防衛|국방)/i],
+  ['environment', /(environment|climate|miljö|miljø|ympäristö|umwelt|environnement|medio ambiente|milieu|环境|環境|환경)/i],
+  ['eu', /(eu|european union|europeiska unionen|union européenne|europäische union)/i],
+] as const;
+
 /**
  * Generate language badge HTML for an article.
  */
@@ -148,6 +158,7 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
       extractMetaContent(content, 'description'),
       extractDescriptionFromJSONLD(content),
     );
+    const topics = extractTopics(content, fileName);
     const metadata: NewsArticleMetadata = {
       slug: fileName,
       lang,
@@ -160,8 +171,8 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
         extractFromFilename(fileName),
       ),
       type: classifyArticleType(content, fileName),
-      topics: extractTopics(content, fileName),
-      tags: decodeHtmlEntities(extractTags(content, fileName).join('|||')).split('|||').filter(Boolean),
+      topics,
+      tags: decodeHtmlEntities(extractTags(content, fileName, topics).join('|||')).split('|||').filter(Boolean),
     };
 
     return metadata;
@@ -363,14 +374,10 @@ export function extractTopics(content: string, fileName: string = ''): string[] 
     if (tag.includes('legislation') || tag.includes('lagstiftning') || tag.includes('lovgivning') || tag.includes('lainsäädäntö') || tag.includes('gesetzgebung') || tag.includes('législation') || tag.includes('legislación') || tag.includes('wetgeving') || tag.includes('التشريعات') || tag.includes('חקיקה') || tag.includes('立法') || tag.includes('입법')) topics.push('legislation');
   }
 
-  const lowerSource = `${fileName} ${content.slice(0, 12000)}`.toLowerCase();
-  if (/(committee|committeereports|utskott|betänkande|committee reports|rapport de commission|ausschuss|위원회|委员会|委員会)/i.test(lowerSource)) topics.push('committees');
-  if (/(proposition|motion|bill|legislative|lagstift|lovgiv|lainsäädäntö|gesetz|législation|legislación|立法|입법)/i.test(lowerSource)) topics.push('legislation');
-  if (/(interpellation|riksdag|parliament|riksdagen|parlament|val\b|election|voting|vote|议会|의회|議会)/i.test(lowerSource)) topics.push('parliament');
-  if (/(government|regering|regerings|minister|ministry|kristersson|gouvernement|gobierno|regierung|الحكومة|ממשלה|政府)/i.test(lowerSource)) topics.push('government');
-  if (/(defen[cs]e|försvar|forsvar|puolustus|verteidigung|défense|defensa|defensie|国防|防衛|국방)/i.test(lowerSource)) topics.push('defense');
-  if (/(environment|climate|miljö|miljø|ympäristö|umwelt|environnement|medio ambiente|milieu|环境|環境|환경)/i.test(lowerSource)) topics.push('environment');
-  if (/(eu|european union|europeiska unionen|union européenne|europäische union)/i.test(lowerSource)) topics.push('eu');
+  const sourceSample = `${fileName} ${content.slice(0, 2500)}`;
+  for (const [topic, pattern] of TOPIC_INFERENCE_PATTERNS) {
+    if (pattern.test(sourceSample)) topics.push(topic);
+  }
 
   return [...new Set(topics)].slice(0, 5); // Unique, max 5
 }
@@ -378,7 +385,7 @@ export function extractTopics(content: string, fileName: string = ''): string[] 
 /**
  * Extract tags from article:tag meta tags.
  */
-export function extractTags(content: string, fileName: string = ''): string[] {
+export function extractTags(content: string, fileName: string = '', inferredTopics?: string[]): string[] {
   const tags: string[] = [];
   const tagPattern = /<meta\s+property=["']article:tag["']\s+content=["']([^"']+)["']/gi;
   let match: RegExpExecArray | null;
@@ -388,7 +395,7 @@ export function extractTags(content: string, fileName: string = ''): string[] {
   }
 
   if (tags.length === 0) {
-    const inferredTopics = extractTopics(content, fileName);
+    inferredTopics ??= extractTopics(content, fileName);
     const inferredType = classifyArticleType(content, fileName);
     tags.push(inferredType, ...inferredTopics);
   }
