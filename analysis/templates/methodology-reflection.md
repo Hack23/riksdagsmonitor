@@ -122,6 +122,17 @@ flowchart LR
 | Forward indicators with dates | ≥ 8 | 11 | 🟢 |
 | 🟢 Low-confidence claims flagged | all | 6 of 6 flagged | 🟢 |
 | 🔴 Unresolved TODOs / placeholders | 0 | 0 | 🟢 |
+| **Full-text fetched (top-N by DIW)** | ≥ 3 (≥ 5 Tier-C) | _N of N_ | 🟢/🟡/🔴 |
+| **L2+ docs without full text** | 0 | _N_ | 🟢/🟡/🔴 |
+| **Prior-voteringar enrichment** | ≥ 1 entry per committee touched | _N_ rows in `data-download-manifest.md §Prior-Voteringar Enrichment` | 🟢/🟡/🔴 |
+| **Statskontoret pre-warm** | trigger-checked + recorded | `triggered: Y/N` · `result: source URL / "no source found" / "no trigger matched"` | 🟢/🟡/🔴 |
+| **IMF pre-warm** | always (vintage + indicator) | `WEO {Apr-2026 / current vintage}` · `{indicators used}` | 🟢/🟡/🔴 |
+| **Lagrådet tracking** (major bills only) | referral status recorded | `not applicable / referral pending / yttrande {URL + date}` | 🟢/🟡/🔴 |
+| **Party `[unconfirmed]` flags** | every empty-`parti` row tagged | _N_ flags · _N_ closed via `search_ledamoter` | 🟢/🟡/🔴 |
+| **Election-proximity multiplier (1.5×)** | applied when election ≤ 6 months | `applied: Y/N` · scope: `opposition motions / contested propositions` | 🟢/🟡 |
+| **Withdrawn documents** | listed not silently dropped | _N_ rows in `data-download-manifest.md §Withdrawn Documents` | 🟢/🟡 |
+| **PIR carry-forward** | prior-cycle PIRs read at pre-warm | _N_ open PIRs ingested · _N_ closed this run | 🟢/🟡/🔴 |
+| **ICD 203 §9 (Collaboration / Review)** — three-component substitute | all 3 evidenced | Pass 2 ✅/❌ · Devil's Advocate ✅/❌ · Cross-folder/Prior-cycle citation ✅/❌ | 🟢/🟡/🔴 |
 
 ---
 
@@ -174,6 +185,8 @@ flowchart LR
 | **7. Consistency explained** | ✅ | Changelog in document control blocks |
 | **8. Accurate judgments made** | ✅ | Quality gate score 8.01/10 |
 | **9. Visual information incorporated** | ✅ | 19 Mermaid diagrams across workflow |
+
+> **ICD 203 §9 single-agent substitute**: news workflows run as a single AI agent. Per [`04-analysis-pipeline.md §ICD 203 §9 — Collaboration / Review`](../../.github/prompts/04-analysis-pipeline.md), the collaboration substitute requires **all three** components evidenced — (a) Pass 2 read-back, (b) Devil's Advocate / ACH ≥ 3 hypotheses, (c) cross-folder peer citation (Tier-C) **or** prior-cycle citation (single-type) — for Standard 9 to score PASS rather than PARTIAL. State which components were satisfied; if any is missing, surface the gap as the top item in §What to Improve.
 
 **ICD 203 Compliance Status:** `[SELECT: ✅ COMPLIANT / ❌ NON-COMPLIANT]`
 

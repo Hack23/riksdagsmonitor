@@ -138,7 +138,9 @@ Every analytical claim must cite at least one of: a real `dok_id` (e.g. `H901FiU
 
 ## Economic context
 
-All economic / fiscal / monetary / external-sector / trade / COFOG / commodity / exchange-rate context is **IMF-first**. When the article type touches these topics:
+All economic / fiscal / monetary / external-sector / trade / COFOG / commodity / exchange-rate context is **IMF-first**. **IMF pre-warm is mandatory for every article type** — including accountability docs (interpellations, frågor) and committee reports. Even when the immediate document is procedural, fiscal/agency context anchors `implementation-feasibility.md`, `risk-assessment.md` (Economic dimension), `comparative-international.md` and `historical-parallels.md`. Skipping IMF on the assumption "this article is not economic" is a recurring methodology gap and is flagged in `methodology-reflection.md §Content Metrics`.
+
+When the article type touches these topics:
 
 1. **Discover** — look up the committee's required IMF indicators in [`analysis/imf/indicators-inventory.json → committeeMatrix`](../../analysis/imf/indicators-inventory.json) or call `findImfIndicatorsForCommittee(code)` from [`scripts/imf-context.ts`](../../scripts/imf-context.ts).
 2. **Pre-warm** — one throwaway IMF call at workflow start.
@@ -154,6 +156,30 @@ Chart.js specs live in the [Economic Data Contract](../aw/ECONOMIC_DATA_CONTRACT
 ## Statskontoret governance / implementation overlay
 
 Statskontoret is the Swedish public-management source for agency capacity, administrative burden, governance effectiveness, inter-agency coordination, implementation backlogs and public-sector efficiency. When a document assigns work to an authority or depends on administrative delivery, integrate Statskontoret evidence into `implementation-feasibility.md`, `stakeholder-perspectives.md`, `risk-assessment.md`, `comparative-international.md` and `methodology-reflection.md`. Record source URL, report/page title, publication date, retrieval time and Admiralty grade in `data-download-manifest.md`; cite it as a public URL in analysis rows.
+
+## Party-attribution discipline
+
+When the source JSON for a document or speaker has an **empty or missing `parti` field** (a recurring data-quality issue with the Riksdag MCP for fresh motions and per-author dokument metadata), do **not** silently infer party from committee routing or thematic content alone. Apply this procedure:
+
+1. **Verify** — issue a second MCP call (`search_ledamoter` keyed by author name + committee, or `get_ledamot` by `intressent_id` from the document JSON) to confirm the party. Record the verification call in `data-download-manifest.md`.
+2. **If verification confirms** — use the confirmed party in analysis prose; no flag required.
+3. **If verification fails or is ambiguous** — every party-specific claim derived from that document MUST be tagged `[unconfirmed]` in artifact prose (e.g. "*proposed by an SD-aligned author* `[unconfirmed]`"). Count the `[unconfirmed]` tags in `methodology-reflection.md §Content Metrics`.
+
+Single-source thematic inference of party is **not** acceptable evidence for P0 / P1 claims; it must be flagged `[unconfirmed]` and is a Pass-2 closure target.
+
+## Election-proximity significance multiplier
+
+When the next general election is **≤ 6 months away** (Sweden's general election falls on the second Sunday of September of an election year — for 2026 the cutoff is **2026-03-13** through **2026-09-13**), apply a **1.5× multiplier** to the Detectability × Impact × Willingness DIW score for **opposition motions** and **government propositions in contested policy areas** (migration, defence, taxation, climate, criminal justice). Aggregate opposition motion bursts (≥ 5 motions filed the same day) receive an additional aggregation weight per `synthesis-methodology.md`. Record the multiplier explicitly in `significance-scoring.md` (e.g. `DIW = 4.2 × 1.5 (election ≤ 6 months) = 6.3`) and in `methodology-reflection.md §Content Metrics`.
+
+## ICD 203 §9 — Collaboration / Review (single-agent runs)
+
+ICD 203 Standard 9 (Collaboration / Coordination) is a recurring "PARTIAL" finding because riksdagsmonitor news workflows run as a single AI agent. The **collaboration substitute** for single-agent runs has three concrete components, all of which MUST be evidenced in `methodology-reflection.md §ICD 203 Audit` for Standard 9 to score as PASS rather than PARTIAL:
+
+1. **Pass 2 read-back** — every artifact (except `data-download-manifest.md`) is read back in full and improved (file mtime gate; `pass1/` snapshot in `$ANALYSIS_DIR/pass1/`).
+2. **Devil's Advocate / ACH** — `devils-advocate.md` carries ≥ 3 competing hypotheses, with at least one rejecting the synthesis-summary lede.
+3. **Cross-folder peer citation** — for aggregation workflows (Tier-C), at least one sibling-folder artifact is cited per `cross-reference-map.md` row; for single-type workflows, at least one **prior-cycle** artifact (same-subfolder previous run via `cross-run-diff.md`) is cited.
+
+When these three components are evidenced, Standard 9 is PASS. When any is missing, it remains PARTIAL and the gap must be the top item in `methodology-reflection.md §What to Improve`.
 
 Full IMF integration reference: [`analysis/imf/README.md`](../../analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](../../analysis/imf/agentic-integration.md) (7-step playbook) · [`analysis/imf/data-dictionary.md`](../../analysis/imf/data-dictionary.md).
 

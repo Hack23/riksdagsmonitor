@@ -137,9 +137,43 @@ Then `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to produce the 
 
 For every downloaded document reference, fetch full text when available (`get_dokument_innehall` with `include_full_text: true` on riksdag-regering). Documents without full text are allowed but must be tagged `metadata-only` in the manifest.
 
+**Top-N floor (DIW-driven)**: Always full-text-fetch the **top 3 documents by provisional DIW score** (or all documents if the batch has < 3). For `comprehensive` / Tier-C runs the floor is **top 5**. Any L2+ Priority or L3 Intelligence-grade document MUST have full text fetched — `metadata-only` is an automatic Pass-2 improvement target for L2+ docs and is reported in `methodology-reflection.md §Content Metrics`. Use `download-parliamentary-data.ts --auto-full-text-top-n=3` (or `5` for Tier-C) where supported; the gate's check 10 enforces ≥ 2 successful retrievals when the manifest writes a `## Full-Text Fetch Outcomes` table.
+
+## Prior-voteringar enrichment
+
+For every committee-report, motion, or interpellation cycle, enrich the manifest with **prior-vote context** for the same committee + topic cluster. Call `search_voteringar` (riksdag-regering MCP) with the committee `bet` prefix (e.g. `KU`, `JuU`, `FöU`, `SoU`, `SfU`, `UbU`, `FiU`) and / or the proposition number a motion responds to, scoped to the **last 4 riksmöten** (`rm` filter). Record the most relevant 3–5 prior votes (Ja/Nej/Avstår tally + party split) under a `## Prior-Voteringar Enrichment` section in `data-download-manifest.md`. This is required input for `historical-parallels.md`, `coalition-mathematics.md` and `swot-analysis.md`'s evidence rows. If no prior votes exist on the topic, state `Prior voteringar: no directly comparable vote found in last 4 riksmöten` — do not fabricate.
+
 ## Statskontoret enrichment
 
-When a document affects an implementing authority, administrative capacity, regulatory burden, governance quality, public-sector efficiency, inspection/audit capacity, or inter-agency coordination, collect at least one relevant public Statskontoret source if available. Use `web_fetch` against `https://www.statskontoret.se/` or `https://statskontoret.se/`, cite the report/page URL, and record it in `data-download-manifest.md` under Cross-Source Enrichment. If no relevant Statskontoret source exists, state `Statskontoret: no directly relevant source found` rather than fabricating agency-capacity evidence.
+Statskontoret pre-warm is a **mandatory checklist item** for every cycle, not "if relevant". For each downloaded document, judge against this trigger list — if **any** trigger fires, perform a Statskontoret search:
+
+| Trigger | Examples |
+|---------|----------|
+| Names a recognised agency | Kriminalvården, Polismyndigheten, Försäkringskassan, Skatteverket, Migrationsverket, Arbetsförmedlingen, Socialstyrelsen, Transportstyrelsen, Trafikverket, Naturvårdsverket, Energimyndigheten, SFV, Rymdstyrelsen, Statens institutionsstyrelse, etc. |
+| Administrative-capacity / regulatory-burden / inter-agency-coordination claim | New mandate, expanded inspection, IT system, case backlog, procurement |
+| Governance / public-sector-efficiency dimension | Government propositions touching authority structure, oversight, audit |
+| Implementation feasibility risk | Any bill assigning timeline/budget to one or more agencies |
+
+Use `web_fetch` against `https://www.statskontoret.se/` or `https://statskontoret.se/`, cite the report/page URL, and record it in `data-download-manifest.md` under `## Statskontoret Cross-Source Enrichment`. When **no** trigger fires, state `Statskontoret pre-warm: no trigger matched (no agency named, no administrative dimension)` so downstream artifacts know the absence is examined, not skipped. When a trigger fires but no relevant report exists, state `Statskontoret: no directly relevant source found for {trigger}` rather than fabricating agency-capacity evidence.
+
+## Lagrådet enrichment
+
+When a downloaded document is a **government proposition** that touches constitutional law, fundamental rights (RF / ECHR), criminal procedure, court organisation, secrecy / surveillance, taxation principles, or any matter where Lagrådet (Council on Legislation) review is statutorily required or politically expected, attempt one `web_fetch` against `https://www.lagradet.se/` for the proposition's referral and any published yttrande (advisory opinion). Record the referral status (referred / yttrande published / not referred) under `## Lagrådet Tracking` in `data-download-manifest.md`. The advisory text feeds `risk-assessment.md` (Institutional dimension), `threat-analysis.md` (procedural-legitimacy attack surface) and `forward-indicators.md`. If no Lagrådet record exists yet, state `Lagrådet: referral pending / no yttrande published as of {retrieval timestamp}` and add a forward indicator dated to the expected referral window.
+
+## Withdrawn-document handling
+
+If a downloaded document has been **withdrawn**, **återtagen** or **avskrivet** before analysis, do **not** silently drop it. Add the document to `## Withdrawn Documents` in `data-download-manifest.md` with: `dok_id`, original title, original sponsor / committee, withdrawal date, withdrawal reason (if stated). Withdrawal itself is an analytic signal (internal coordination failure, strategic repositioning, lost majority) and must be examined in `synthesis-summary.md` and `devils-advocate.md` — never assume withdrawal is administrative noise.
+
+## PIR carry-forward (pre-warm)
+
+Read prior-cycle PIRs **before** the download proper, not at the end:
+
+```bash
+PRIOR_PIR="$(find analysis/daily -maxdepth 4 -name pir-status.json -path "*/$SUBFOLDER/*" -newermt "$ARTICLE_DATE - 14 days" -print 2>/dev/null | sort | tail -n 5)"
+[ -n "$PRIOR_PIR" ] && cat $PRIOR_PIR
+```
+
+Surface every `status: open` PIR into the analysis plan so the run actively tries to close it (drives `forward-indicators.md`, `intelligence-assessment.md §PIR section`, and `methodology-reflection.md §Backlog`). Document carried-forward PIRs under `## PIR Carry-Forward` in `data-download-manifest.md`. PIRs that this cycle answers are flipped to `answered` (with `answer_summary`) in the new `pir-status.json`; PIRs still open are propagated forward.
 
 ## Lookback fallback
 
@@ -157,9 +191,10 @@ Always produce `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/data-download-manifest.m
 
 - Workflow name, run ID, UTC timestamp.
 - Requested date, effective date (after lookback), window used.
-- Per-document table: `dok_id`, title, type, `hangar_id`, committee, retrieval timestamp, full-text status.
+- Per-document table: `dok_id`, title, type, `hangar_id`, committee, retrieval timestamp, full-text status, parti (or `[unconfirmed]` if missing in source — see `04-analysis-pipeline.md §Party-attribution discipline`), withdrawal status.
 - MCP server availability notes (any retries, partial failures).
-- Non-MCP public sources used for enrichment, especially Statskontoret report/page URLs for implementation and agency-capacity evidence.
+- Non-MCP public sources used for enrichment: Statskontoret report/page URLs for implementation and agency-capacity evidence; Lagrådet referrals/yttrande for major bills; lagrådet.se forward indicators when applicable.
+- Sections (use these literal headings when the section applies): `## Full-Text Fetch Outcomes`, `## Prior-Voteringar Enrichment`, `## Statskontoret Cross-Source Enrichment`, `## Lagrådet Tracking`, `## Withdrawn Documents`, `## PIR Carry-Forward`.
 
 ## Next step
 
