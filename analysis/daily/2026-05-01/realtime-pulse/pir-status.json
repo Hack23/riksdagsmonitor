@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "cycle": "realtime-pulse",
+  "date": "2026-05-01",
+  "generated_at": "2026-05-01T10:50:00Z",
+  "pirs": [
+    {
+      "id": "PIR-RT-001",
+      "question": "When will Lagrådet publish yttranden on HD03262 and HD03265?",
+      "status": "open",
+      "priority": "critical",
+      "source_cycle": "realtime-pulse",
+      "carry_forward_from": "PIR-WA-001",
+      "expected_date": "2026-05-28 to 2026-06-26",
+      "intelligence_value": "HIGH — gates entire migration legislative timeline",
+      "closure_condition": "Lagrådet publishes yttrande on HD03262 or HD03265",
+      "forward_indicator": "FI-005"
+    },
+    {
+      "id": "PIR-RT-002",
+      "question": "Will JuU/SfU committee schedule HD03258 (transparency) hearings before summer recess?",
+      "status": "open",
+      "priority": "medium",
+      "source_cycle": "realtime-pulse",
+      "carry_forward_from": "PIR-WA-002",
+      "expected_date": "2026-05-15 to 2026-06-15",
+      "intelligence_value": "MEDIUM — SD intra-coalition friction proxy",
+      "closure_condition": "Committee hearing schedule published for HD03258",
+      "forward_indicator": "FI-008"
+    },
+    {
+      "id": "PIR-RT-003",
+      "question": "What are latest Demoskop/Novus polling trends post-migration package announcement?",
+      "status": "open",
+      "priority": "high",
+      "source_cycle": "realtime-pulse",
+      "carry_forward_from": "PIR-MA-001",
+      "expected_date": "2026-05-12 to 2026-05-18",
+      "intelligence_value": "HIGH — first empirical electoral impact signal",
+      "closure_condition": "First post-announcement poll published (Novus or Demoskop)",
+      "forward_indicator": "FI-006"
+    },
+    {
+      "id": "PIR-RT-004",
+      "question": "IMF IFS monthly SWE unemployment/inflation update and SEK exchange rate trajectory",
+      "status": "open",
+      "priority": "medium",
+      "source_cycle": "realtime-pulse",
+      "carry_forward_from": "PIR-MA-002",
+      "expected_date": "2026-05-15 (IMF IFS monthly cycle)",
+      "intelligence_value": "MEDIUM — confirms or undermines economic risk threat chain",
+      "closure_condition": "IMF IFS May 2026 PCPI_IX and LUR SWE data retrieved",
+      "forward_indicator": "FI-007"
+    }
+  ],
+  "closed_pirs": [],
+  "cycle_metadata": {
+    "total_open": 4,
+    "total_closed": 0,
+    "highest_priority": "PIR-RT-001",
+    "next_review_cycle": "evening-analysis"
+  }
+}
