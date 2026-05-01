@@ -65,7 +65,7 @@ graph LR
     STORY["📰 Lead story (e.g., HD03262)"] --> F1["🟢 Frame A<br/>government-aligned"]
     STORY --> F2["🔴 Frame B<br/>opposition-aligned"]
     STORY --> F3["🟡 Frame C<br/>establishment / centrist-consensus<br/>(NOT 'neutral' — Bonnier/Schibsted owner ideology,<br/>expert-establishment recruitment, centrist-urban audience)"]
-    STORY --> F4["🟣 Frame D<br/>coalition-inside / proceduralist<br/>(public-broadcaster framing — politically-appointed boards,<br/>institutional editorial culture)"]
+    STORY --> F4["🟣 Frame D<br/>public-broadcaster proceduralist<br/>(public-broadcaster framing — politically-appointed boards,<br/>institutional editorial culture)"]
     STORY --> F5["⚫ Frame E<br/>foreign / state-affiliated overlay"]
 
     F1 --> OUT1["Outlets: SvD, TV4, regional press, M/SD/KD/L press offices"]
@@ -109,7 +109,7 @@ graph LR
 | 🟢 A | Loss aversion + status-quo bias | Framing reform as protection of existing entitlements | Reframe loss-language as opportunity-language; cite distributional data |
 | 🔴 B | In-group / out-group + scapegoating | Personifying harm onto a single actor or class | Counter-stereotype exemplars; structural-cause data |
 | 🟡 C | Authority bias | "Experts say…" without expert disclosure / "centrist-consensus" presented as objective | Expert-credential + funding-source transparency; competing-expert panel; ownership disclosure of the outlet running the "experts say" frame |
-| 🟣 D | Availability heuristic + recency + **proceduralist-illusion bias** | Coalition rumour amplified by recent procedural event; public-broadcaster procedural framing read as "what really happened" when it is itself an editorial choice | Base-rate data on coalition stability; remind readers that public-broadcaster framing reflects an institutional editorial culture, not absence of one |
+| 🟣 D | Availability heuristic + recency + authority bias | Coalition rumour amplified by recent procedural event; public-broadcaster procedural framing read as "what really happened" when it is itself an editorial choice | Base-rate data on coalition stability; remind readers that public-broadcaster framing reflects an institutional editorial culture, not absence of one |
 | ⚫ E | Repetition / illusory truth + reactance | Identical phrasing across coordinated nodes | Prebunking of frame-template; show coordination evidence |
 
 > **Source:** Cialdini (2001) *Influence*; Kahneman (2011) *Thinking, Fast and Slow*; Roozenbeek & van der Linden (2019) "Fake news game confers psychological resistance against online misinformation." *Palgrave Communications.* Every row must cite a documented bias with primary literature, not folk-psychology claims.
@@ -409,7 +409,7 @@ Public media coverage and public social-media posts only. Representative sample 
 - [ ] **Outlet Bias Audit table is populated for every cited outlet** — ownership group, funding mix, board-appointment authority, documented editorial lean, Reuters Institute Trust score, PO/PON complaint history, foreign-actor link. No bias audit row = no citation.
 - [ ] **Public-service broadcaster caveat present** — every reliance on SVT / SR / UR / BBC / ARD / NRK / DR / YLE is accompanied by the licence-fee + politically-appointed-board + institutional-editorial-culture caveat, not treated as ground truth.
 - [ ] **Algorithmic-asymmetry rows declare optimisation target** — every platform row names the objective function (engagement / watch-time / retention / ad-yield) and cites a documented partisan/emotional asymmetry; "the algorithm" without optimisation-target attribution is rejected.
-- [ ] **Frame C / D label discipline** — Frame C is labelled "establishment / centrist-consensus" (NOT "neutral / analytical / institutional"); Frame D is labelled "coalition-inside / proceduralist" with public-broadcaster caveat where used (NOT "objective reporting" / "what really happened").
+- [ ] **Frame C / D label discipline** — Frame C is labelled "establishment / centrist-consensus" (NOT "neutral / analytical / institutional"); Frame D is labelled "public-broadcaster proceduralist" with politically-appointed-board + institutional-editorial-culture caveat (NOT "neutral / impartial / objective reporting" / "what really happened" / "coalition-inside").
 - [ ] **Procedural neutrality only** — any reference to platform "neutrality" is qualified as procedural (equal analytical depth across all 8 Riksdag parties; equal evidentiary discipline across all outlets; full ownership/funding/lean disclosure) and never as a claim of "neutral truth" or "neutral source".
 
 ### Tradecraft (carry-over from v1.x)

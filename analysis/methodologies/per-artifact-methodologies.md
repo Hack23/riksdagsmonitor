@@ -240,7 +240,7 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 - **Sibling artifacts** — `synthesis-summary.md` (today's lead story), `voter-segmentation.md` (audiences), `intelligence-assessment.md` (Key Judgments to align frames against), `comparative-international.md` (jurisdictional cognates), `forward-indicators.md` (frame-shift triggers).
 
 **Analytic moves (in order)**
-1. **Frame package inventory** — name ≥ 3 frame packages (A government / B opposition / C analytical / D coalition-inside; add **Frame E** ONLY if a foreign-amplification signal is observed in window — otherwise document its absence explicitly).
+1. **Frame package inventory** — name ≥ 3 frame packages (A government / B opposition / C establishment / centrist-consensus / D public-broadcaster proceduralist; add **Frame E** ONLY if a foreign-amplification signal is observed in window — otherwise document its absence explicitly).
 2. **Entman functions per frame** — problem definition, causal attribution, moral evaluation, treatment recommendation. Cite dated quote / `dok_id` / anförande for every cell.
 3. **Cognitive vulnerability map** — link each frame to ≥ 1 documented bias (Cialdini / Kahneman / Roozenbeek-van der Linden), with the inoculation lever.
 4. **DISARM TTP map** — match observed manipulation indicators to verbatim DISARM `T####` codes; the absence of signal is itself a documented finding (`No coordinated manipulation signal in window`).

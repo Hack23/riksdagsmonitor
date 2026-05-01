@@ -325,9 +325,9 @@ Document the **frames** being used by each actor and major media outlet, **and t
 - Public CIB / disinformation dossiers: EUvsDisinfo, EU DisinfoLab, Meta CIB removal reports, NATO StratCom COE, GLOBSEC Vulnerability Index, Reuters Institute Digital News Report, Freedom House Nations in Transit, SÄPO/MUST/FRA/EU-EEAS public statements.
 - Ownership / funding data: Nordicom Media Ownership Database (gu.se), Allmänhetens Pressombudsman public registry.
 
-### Output — required structure (v2.0)
+### Output — required structure (v2.1)
 
-1. **Frame package inventory** — ≥ 3 frames (A government / B opposition / C analytical / D coalition-inside; **Frame E foreign-overlay** ONLY when a state-affiliated or coordinated foreign-amplification signal is observed in window). Per frame: name · carrier (actor / outlet) · keyword markers · first-use date · approximate share of coverage.
+1. **Frame package inventory** — ≥ 3 frames (A government / B opposition / C establishment / centrist-consensus / D public-broadcaster proceduralist; **Frame E foreign-overlay** ONLY when a state-affiliated or coordinated foreign-amplification signal is observed in window). Per frame: name · carrier (actor / outlet) · keyword markers · first-use date · approximate share of coverage.
 2. **Entman functions per frame** — problem definition · causal attribution · moral evaluation · treatment recommendation; every cell traces to a dated quote / `dok_id` / anförande.
 3. **Cognitive vulnerability map** — bias exploited (Cialdini / Kahneman / Roozenbeek-van der Linden) · mechanism · inoculation lever; primary-literature citation per row.
 4. **Manipulation indicators (DISARM)** — verbatim `T####` codes (Flooding T0049, Astroturfing T0086, Distort facts T0023, Amplify existing narrative T0118, Prepare assets impersonating legitimate entities T0099, Develop AI-generated text T0085, Develop AI-generated images / deepfakes T0088, etc.); `[unconfirmed]` flag for any indicator without ≥ 2 corroborations; explicit no-signal finding when nothing observed.
