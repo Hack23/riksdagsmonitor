@@ -35,6 +35,7 @@
 #     - ../prompts/06-article-generation.md
 #     - ../prompts/07-commit-and-pr.md
 #     - ../prompts/ext/tier-c-aggregation.md
+#     - ../prompts/ext/long-horizon-forecasting.md
 #
 # Secrets used:
 #   - COPILOT_GITHUB_TOKEN
@@ -270,6 +271,7 @@ jobs:
           {{#runtime-import .github/prompts/06-article-generation.md}}
           {{#runtime-import .github/prompts/07-commit-and-pr.md}}
           {{#runtime-import .github/prompts/ext/tier-c-aggregation.md}}
+          {{#runtime-import .github/prompts/ext/long-horizon-forecasting.md}}
           {{#runtime-import .github/workflows/news-month-ahead.md}}
           GH_AW_PROMPT_2e8971910f62add2_EOF
           } > "$GH_AW_PROMPT"
