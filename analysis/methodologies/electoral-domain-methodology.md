@@ -37,16 +37,21 @@
 
 ## 🔀 Multi-cycle electoral lens
 
-This methodology is **cycle-parameterised**. Every analysis file that references the election cycle is driven by a `cycleAnchor` value resolved at run time from `analysis/article-types.json → electionCycles` via [`scripts/horizon-context.ts`](../../scripts/horizon-context.ts) (the canonical helper — call `horizonContext(typeId, articleDate).cycleAnchor` to obtain the anchor for any run).
+This methodology is **cycle-parameterised**. Two separate fields govern cycle-anchor semantics — they must not be conflated:
+
+- **`electionCycleAnchor`** (`analysis/article-types.json → types[*].electionCycleAnchor`) — the article-type registry field; one of `current | next | both | none`. Set per article type and consumed by workflows to decide which anchor(s) to generate.
+- **`cycleAnchor`** (`scripts/horizon-context.ts → horizonContext(typeId, articleDate).cycleAnchor`) — the *date-derived* active cycle; **only** `current | next`. Resolved at run time from `analysis/article-types.json → electionCycles` by `activeCycleAnchor(articleDate)` — returns `next` when `articleDate` falls inside the next cycle's start..end window, `current` otherwise.
 
 ### Anchor enum
 
-| `cycleAnchor` value | Meaning |
-|---------------------|---------|
-| `current` | Analysis is anchored to the in-progress mandate cycle (Tidö 2022–2026 until the registry is flipped) |
-| `next` | Analysis is anchored to the upcoming mandate cycle (post-2026, once `ARTICLE_DATE ≥ 2026-09-13`) |
-| `both` | Dual-anchor run — used only during the ±30-day rollover window; produces artifacts for both cycles simultaneously |
-| `none` | Article type does not use an election-cycle lens (e.g., realtime-monitor on a non-electoral event) |
+| Field | Value | Meaning |
+|-------|-------|---------|
+| `electionCycleAnchor` (article-type registry) | `current` | Article type is anchored to the in-progress mandate cycle |
+| `electionCycleAnchor` (article-type registry) | `next` | Article type is anchored to the upcoming mandate cycle |
+| `electionCycleAnchor` (article-type registry) | `both` | Dual-anchor run — produces artifacts for both cycles simultaneously; used during the ±30-day rollover window |
+| `electionCycleAnchor` (article-type registry) | `none` | Article type does not use an election-cycle lens (e.g., realtime-monitor on a non-electoral event) |
+| `cycleAnchor` (HorizonContext, date-derived) | `current` | `articleDate` falls before the next election anchor; in-progress cycle is authoritative |
+| `cycleAnchor` (HorizonContext, date-derived) | `next` | `articleDate` falls on or after the next election anchor; upcoming cycle is authoritative |
 
 ### Swedish election-cycle anchor dates
 
@@ -66,7 +71,7 @@ The cycle rolls over programmatically when `ARTICLE_DATE` is within **±30 days*
 cycleRolloverActive = Math.abs(daysToElection(ARTICLE_DATE)) <= 30
 ```
 
-When `cycleRolloverActive === true`, the ext module [`.github/prompts/ext/cycle-rollover.md`](../../.github/prompts/ext/cycle-rollover.md) activates and the workflow switches to a `both`-anchor dual run (see §Cycle-rollover playbook below).
+When `cycleRolloverActive === true`, the ext module [`.github/prompts/ext/cycle-rollover.md`](../../.github/prompts/ext/cycle-rollover.md) activates and the article type's `electionCycleAnchor` is treated as `both` for that run (see §Cycle-rollover playbook below).
 
 ---
 
@@ -81,7 +86,7 @@ Full procedure: [`.github/prompts/ext/cycle-rollover.md`](../../.github/prompts/
 | **T+0 (election day)** | Emergency single-run via `news-realtime-monitor`; no cycle flip until results are locked |
 | **T+1 → T+30** | Both anchors generated; `current/` artifacts gain `# 📜 Mandate retrospective` H1; `next/` upgraded from provisional |
 | **T+31 → T+45** | Only `next/` regenerated; `current/` frozen as historical record |
-| **Filename rename rule** | `election-2026-analysis.md` → `election-2030-analysis.md` (both valid for 90 days post-flip; aggregator accepts either) |
+| **Filename rename rule** | Post-rollover the cycle-agnostic alias `election-cycle-analysis.md` becomes the canonical name; `election-2026-analysis.md` remains valid indefinitely via `FILENAME_ALIASES` in `scripts/render-lib/aggregator/order.ts` (de-duplicated at render time — only the first-encountered name in the alias set is emitted) |
 | **Carry-forward rule** | Mandate-fulfilment scorecard, KU reprimands ledger, coalition cohesion trajectory archived to `analysis/cycles/<cycle-range>/`; PIRs with `inheritsCycle: true` carry forward verbatim |
 | **PIR archival rule** | Cycle-scoped PIRs receive `status: "archived"`, `archivedReason: "cycle-rollover-<election-date>"`, and a `successor` where applicable; see ext module §4 |
 | **Operator flip** | Registry flip (`electionCycleAnchor` in `analysis/article-types.json`) is a **CEO-approved Normal change** under `Change_Management.md`; typically T+45 to T+60 post-election once government formation is complete |
@@ -112,7 +117,7 @@ These products are **core — every run produces all 7**. The output set is stab
 
 | Template | Behaviour on a light-event day | Behaviour on a P0-dense day |
 |----------|-------------------------------|-----------------------------|
-| `election-2026-analysis.md` (current-cycle) / `election-2030-analysis.md` (next-cycle) | Seat-projection delta vs. last poll + which parties crossed the 4 % threshold; for the current cycle it tracks the campaign; for the next cycle it tracks post-election government-formation context | Full seat projection + coalition viability + campaign-phase alignment of every P0 to the active cycle; `cycleAnchor` from `horizonContext()` determines which cycle label appears in the artifact |
+| `election-2026-analysis.md` (alias: `election-cycle-analysis.md`) | Seat-projection delta vs. last poll + which parties crossed the 4 % threshold; for the current cycle it tracks the campaign; for the next cycle it tracks post-election government-formation context | Full seat projection + coalition viability + campaign-phase alignment of every P0 to the active cycle; `electionCycleAnchor` (article-type registry) determines which cycle lens is applied |
 | `voter-segmentation.md` | Baseline segment positions (5 axes: age, geography, education, income, incumbency) | Per-document segment impact table with ≥5 cohorts and quantified swing estimates |
 | `coalition-mathematics.md` | Current seat map + pivotal-vote reference + confidence-vote arithmetic | Scenario branching: each contested vote run through Sainte-Laguë, pivotal-actor detection, SD-Tidöbloc-opposition matrix |
 | `historical-parallels.md` (variant: `historical-baseline.md`) | Closest baseline precedent ≤ 40 years with similarity score, or explicit "no-precedent" finding | Full parallel with outcome, stakeholder behaviour, and Bayesian base-rate update |
@@ -131,7 +136,7 @@ flowchart LR
 
     T[Family A/B complete<br/>→ Family D core run]:::core
 
-    D1[election-analysis.md<br/>(current-cycle / next-cycle)]:::electoral
+    D1[election-2026-analysis.md<br/>alias: election-cycle-analysis.md]:::electoral
     D2[voter-segmentation.md]:::electoral
     D3[coalition-mathematics.md]:::electoral
     D4[historical-parallels.md]:::historical
@@ -152,7 +157,7 @@ flowchart LR
 
 ## 🗳️ Part 1 — Current-cycle Election Analysis (`election-2026-analysis.md`)
 
-**Filename variant:** `election-2026-implications.md` — identical structure. After the 2026-09-13 rollover, the canonical filename becomes `election-2030-analysis.md`; both names remain valid for 90 days post-flip. "Both names remain valid" means **consumers** (the aggregator in `scripts/render-lib/aggregator/order.ts`) accept either filename as input — see `analysis/methodologies/artifact-catalog.md → filename-variants` table for the resolver rule, and ext module §3.1 for the authoritative rename procedure.
+**Filename variants:** `election-2026-implications.md` — identical structure. The cycle-agnostic alias `election-cycle-analysis.md` maps to the same canonical artifact via `FILENAME_ALIASES` in [`scripts/render-lib/aggregator/order.ts`](../../scripts/render-lib/aggregator/order.ts); when both filenames exist in a folder the aggregator de-duplicates and emits only the first-encountered name. Post-2026-rollover, workflows may write `election-cycle-analysis.md` as the generalized name; `election-2026-analysis.md` remains a permanently valid alias.
 
 ### Purpose
 Translate today's policy activity into **electoral consequences** for the active-cycle Riksdag election: seat trajectories, bloc viability, mandate strength, and pre-election narrative positioning. The active cycle is determined by `cycleAnchor` from `scripts/horizon-context.ts → horizonContext()`. During the ±30-day rollover window, both current-cycle and next-cycle sections are produced (see §Cycle-rollover playbook).
@@ -558,7 +563,7 @@ flowchart TD
 
     TC[Family A + B complete<br/>→ produce all 7 Family D files]:::core
 
-    E1[election-analysis<br/>(current / next cycle)]:::step
+    E1[election-2026-analysis<br/>(alias: election-cycle-analysis)]:::step
     E2[voter-segmentation]:::step
     E3[coalition-mathematics]:::step
     H[historical-parallels]:::step
@@ -608,7 +613,7 @@ flowchart TD
 
 | Template | Methodology section | Cycle anchor |
 |----------|--------------------|--------------|
-| `analysis/templates/election-2026-analysis.md` — one template file; outputs as `election-2026-analysis.md` (current cycle) or `election-2030-analysis.md` (next cycle), determined by `cycleAnchor` from `horizonContext()` | Part 1 above | `cycleAnchor` from `horizonContext()` |
+| `analysis/templates/election-2026-analysis.md` — one template; canonical output filename is `election-2026-analysis.md`; cycle-agnostic alias `election-cycle-analysis.md` maps to it via `FILENAME_ALIASES` in `scripts/render-lib/aggregator/order.ts` | Part 1 above | `electionCycleAnchor` (article-type registry) |
 | `analysis/templates/voter-segmentation.md` | Part 2 above | any |
 | `analysis/templates/coalition-mathematics.md` | Part 3 above | any |
 | `analysis/templates/historical-parallels.md` | Part 4 above | any |
