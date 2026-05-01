@@ -36,8 +36,10 @@
 
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
-import { join, relative, resolve } from 'node:path';
+import { join, relative, resolve, basename, dirname } from 'node:path';
 import process from 'node:process';
+
+import { getBySubfolder } from './render-lib/article-types.js';
 
 const REPO_ROOT = resolve(process.cwd());
 
@@ -266,6 +268,31 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
         code: 'per-doc-missing-dok_id',
         message: `Per-document section "${section.id}" cites zero dok_id-style codes — minimum is ${MIN_PER_DOC_DOK_ID_HITS}. Every per-document subsection must trace back to at least one primary-source identifier (e.g. HD12345, FiU17).`,
       });
+    }
+  }
+
+  // 6. Registry-driven required artifacts check: ensure per-type
+  //    `extraArtifacts` are present in the analysis subfolder.
+  const parentDir = dirname(absPath);
+  const subfolderName = basename(parentDir);
+  const typeEntry = getBySubfolder(subfolderName);
+  const extraArtifacts = typeEntry?.extraArtifacts ?? [];
+  if (extraArtifacts.length > 0) {
+    let filesOnDisk: Set<string>;
+    try {
+      const entries = await readdir(parentDir);
+      filesOnDisk = new Set(entries);
+    } catch {
+      filesOnDisk = new Set<string>();
+    }
+    for (const required of extraArtifacts) {
+      if (!filesOnDisk.has(required)) {
+        violations.push({
+          file: rel,
+          code: 'missing-required-artifact',
+          message: `Article type "${typeEntry!.id}" requires artifact "${required}" but it is missing from ${relative(REPO_ROOT, parentDir)}/. Add the artifact or update the registry.`,
+        });
+      }
     }
   }
 

@@ -24,6 +24,7 @@ import {
   DAILY_DIR,
   ROOT_DIR,
 } from './render-lib/index.js';
+import { getBySubfolder } from './render-lib/article-types.js';
 
 const __filename = fileURLToPath(import.meta.url);
 void __filename;
@@ -81,6 +82,20 @@ function aggregateOne(date: string, subfolder: string, quiet: boolean): boolean 
       date,
       subfolder,
     });
+
+    // Enforce per-type articleWordFloor from the registry.
+    const typeEntry = getBySubfolder(subfolder);
+    if (typeEntry) {
+      const wordCount = result.markdown.split(/\s+/).filter(Boolean).length;
+      if (wordCount < typeEntry.articleWordFloor) {
+        if (!quiet) {
+          console.warn(
+            `⚠️  ${subRepoRel} — word count ${wordCount} below floor ${typeEntry.articleWordFloor} for type "${typeEntry.id}".`,
+          );
+        }
+      }
+    }
+
     const outPath = newsOutputPath(date, subfolder);
     ensureDir(path.dirname(outPath));
     fs.writeFileSync(outPath, result.markdown, 'utf8');

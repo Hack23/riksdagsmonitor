@@ -19,8 +19,18 @@
 import { getRssArticles } from '../scanner.js';
 import { escapeXml } from '../escape.js';
 import { hreflangCode } from '../hreflang.js';
+import { getBySubfolder } from '../../render-lib/article-types.js';
 
 const BASE_URL = 'https://riksdagsmonitor.com';
+
+/**
+ * Derive the article-type subfolder slug from a baseSlug like
+ * `2026-04-23-propositions` → `propositions`.
+ */
+function subfolderFromBaseSlug(baseSlug: string): string | null {
+  const m = baseSlug.match(/^\d{4}-\d{2}-\d{2}-(.+)$/);
+  return m ? m[1]! : null;
+}
 
 /**
  * Generate RSS 2.0 XML feed.
@@ -76,6 +86,13 @@ export function generateRss(): string {
 
   // Add items
   for (const article of articles) {
+    // Derive type-tagged category from the registry
+    const subfolder = subfolderFromBaseSlug(article.baseSlug);
+    const typeEntry = subfolder ? getBySubfolder(subfolder) : undefined;
+    const categoryLabel = typeEntry
+      ? `${typeEntry.icon} ${typeEntry.label}`
+      : article.category;
+
     xml += `
     <item>
       <title>${escapeXml(article.title)}</title>
@@ -84,7 +101,7 @@ export function generateRss(): string {
       <pubDate>${new Date(article.pubDate).toUTCString()}</pubDate>
       <guid isPermaLink="true">${escapeXml(article.link)}</guid>
       <dc:creator>${escapeXml(article.author)}</dc:creator>
-      <category>${escapeXml(article.category)}</category>
+      <category>${escapeXml(categoryLabel)}</category>
       <atom:link href="${escapeXml(article.link)}" rel="alternate" type="text/html" hreflang="en"/>`;
 
     // Add multi-language alternate links
