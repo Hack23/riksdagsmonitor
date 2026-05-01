@@ -27,7 +27,6 @@ import os from 'node:os';
 import { join } from 'node:path';
 
 import {
-  type CycleType,
   type PirStatusFile,
   addDays,
   emitRollforwardMd,
