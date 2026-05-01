@@ -141,9 +141,9 @@ Family B is scaffolded by scripts (no analytical prose) — agents only annotate
 | 22 | `media-framing-analysis.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#-part-5--media-framing--influence-operations-analysis-media-framing-analysismd) | [`media-framing-analysis.md`](../templates/media-framing-analysis.md) | 200 | frame graph + laundering chain + lifecycle xychart + Outlet Bias Audit | external press (OSINT) + Outlet Bias Audit (Nordicom / Reuters Institute / Förvaltningsstiftelsen / PO-PON / EUvsDisinfo / DISARM TTPs) |
 | 23 | `implementation-feasibility.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#delivery) | [`implementation-feasibility.md`](../templates/implementation-feasibility.md) | 140 | flowchart risk | `search_dokument` (myndigheter) |
 | 24 | `forward-indicators.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#indicators) | [`forward-indicators.md`](../templates/forward-indicators.md) | 150 | gantt 4-horizon | mixed. Horizon-band column required when `horizonDays >= 90` |
-| 25 🗳️ | `cycle-trajectory.md` | [`per-artifact-methodologies.md#cycle-trajectory`](per-artifact-methodologies.md#cycle-trajectory) | [`cycle-trajectory.md`](../templates/cycle-trajectory.md) | 180 | bar + timeline | SCB, IMF, `search_voteringar`. `news-election-cycle` only; blocking for cycle workflows |
+| 25 🗳️ | `cycle-trajectory.md` | [`per-artifact-methodologies.md#cycle-trajectory`](per-artifact-methodologies.md#cycle-trajectory) | [`cycle-trajectory.md`](../templates/cycle-trajectory.md) | 180 | bar + timeline | SCB, IMF, `search_voteringar`. `election-cycle` only; blocking for cycle workflows |
 
-**Filename variants** — `historical-parallels.md` ↔ `historical-baseline.md`; `comparative-international.md` ↔ `international-comparative.md`; `election-2026-analysis.md` ↔ `election-2026-implications.md`. All map to a single template + methodology section per [`ai-driven-analysis-guide.md` §Filename variants](ai-driven-analysis-guide.md#-filename-variants-all-map-to-one-template--one-methodology-section). `cycle-trajectory.md` is produced **only** by `news-election-cycle` workflows.
+**Filename variants** — `historical-parallels.md` ↔ `historical-baseline.md`; `comparative-international.md` ↔ `international-comparative.md`; `election-2026-analysis.md` ↔ `election-2026-implications.md`. All map to a single template + methodology section per [`ai-driven-analysis-guide.md` §Filename variants](ai-driven-analysis-guide.md#-filename-variants-all-map-to-one-template--one-methodology-section). Artifact filenames are the canonical identifiers; ordinal numbers in this catalog are catalog-local only and must not be hardcoded in template or prose text. Refer to `cycle-trajectory.md` by filename rather than by phrases such as "24th artifact." `cycle-trajectory.md` is produced **only** by `election-cycle` workflows.
 
 ---
 
@@ -208,20 +208,23 @@ See [`.github/copilot-mcp.json`](../../.github/copilot-mcp.json) for the canonic
 
 ---
 
-## 🚦 Gate-Check Mapping (to `05-analysis-gate.md`)
+## 🚦 Gate-Check Mapping (conceptual — see `05-analysis-gate.md` for canonical numbering)
 
-| Gate check | Artifacts audited |
-|------------|-------------------|
-| Check 1 — 24-artifact presence (25 for cycle) | 1–24 (+ 25 for `news-election-cycle`) |
-| Check 2 — Family-E per-`dok_id` coverage | E files |
-| Check 3 — Depth floor per tier | 1–24 (+ 25 for `news-election-cycle`) + E (via `reference-quality-thresholds.json`) |
-| Check 4 — Evidence citations (dok_id, vote counts, named actors, Admiralty grade) | All prose |
-| Check 5 — Mermaid diagram presence (color-coded) | 1–24 (+ 25 for `news-election-cycle`) where row specifies Mermaid |
-| Check 6 — WEP probability + time horizon | 2, 7, 8, 12, 15, S5, S6 |
-| Check 7 — Party-neutrality arithmetic | 2, 6, 7, 9, 18–25 |
-| Check 8 — `methodology-reflection.md` ICD 203 audit | 16 (⭐) |
-| Check 9 — Supplementary (Tier-C only) | S1–S8 |
-| Check 10 — Analytical Supplementary (never blocking) | AS1–AS4 when present: cell-evidence, Mermaid, ≥ N rows per rubric |
+> **Note:** The table below is a conceptual mapping of gate concerns to artifact scope. The authoritative check numbering and semantics live in [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md); the numbers here are illustrative groupings, not 1:1 references to the script's `# Check N` labels.
+
+| Gate concern | Artifacts audited |
+|--------------|-------------------|
+| Artifact presence | 1–24 (+ 25 for `election-cycle`) |
+| Family-E per-`dok_id` coverage | E files |
+| No-stub / depth floor per tier | 1–24 (+ 25 for `election-cycle`) + E (via `reference-quality-thresholds.json`) |
+| Evidence citations (dok_id, vote counts, named actors, Admiralty grade) | All prose |
+| Mermaid diagram presence (color-coded) | 1–24 (+ 25 for `election-cycle`) where row specifies Mermaid |
+| Pass-2 evidence (mtime / diff) | Core prose files |
+| Family C structure | 12–16 (KJ count, comparator rows, etc.) |
+| Family D structure | 18–25 where applicable |
+| PIR status sidecar | `pir-status.json` |
+| Supplementary (Tier-C only) | S1–S8 |
+| Long-horizon additive (quarter/year/cycle) | LH checks per `ext/long-horizon-forecasting.md` |
 
 ---
 
@@ -233,6 +236,6 @@ See [`.github/copilot-mcp.json`](../../.github/copilot-mcp.json) for the canonic
 
 ## 📜 Changelog
 
-- **v1.3 (2026-05-01)** — Added `cycle-trajectory.md` (Family D #25, `news-election-cycle` only, blocking), `parliamentary-season.md` (Family C #17, quarter/year/cycle), `horizon-pir-rollforward.md` (S8, never blocking). Appended horizon-band notes to `forward-indicators.md` and `scenario-analysis.md` rows. Renumbered Family D artifacts 17→18 through 23→24. Updated core count 23→24 (25 for cycle workflows).
+- **v1.3 (2026-05-01)** — Added `cycle-trajectory.md` (Family D #25, `election-cycle` only, blocking), `parliamentary-season.md` (Family C #17, quarter/year/cycle), `horizon-pir-rollforward.md` (S8, never blocking). Appended horizon-band notes to `forward-indicators.md` and `scenario-analysis.md` rows. Renumbered Family D artifacts 17→18 through 23→24. Updated core count 23→24 (25 for cycle workflows).
 - **v1.1 (2026-04-23)** — Added Analytical Supplementary Artifacts (4): `pestle-analysis.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `quantitative-swot.md`. Linked to new [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md). Non-blocking.
 - **v1.0 (2026-04-23)** — Initial Riksdagsmonitor catalog extracted and adapted from EU Parliament Monitor `artifact-catalog.md` v1.0. 23 core artifacts + 7 supplementary + N per-document; aligned with [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md) v4.2.

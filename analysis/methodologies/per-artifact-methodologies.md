@@ -297,9 +297,9 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 ### forward-indicators
 
 **Inputs** — political calendar, bill pipeline, poll cadence, economic releases.  
-**Analytic moves** — (1) ≥ 10 dated indicators across 4 horizons (72 h / week / month / election); (2) leading / coincident / lagging tag; (3) threshold that would move the KJ. When `horizonDays >= 90`: (4) horizon-band column required — each indicator tagged with its applicable band (`72h` / week / month / quarter / year / cycle / election), and the selected band must be one of the current article type's active `forwardIndicatorHorizons` in `article-types.json`; (5) WEP-degradation ladder enforced per band (no indicator may carry a probability above its band's WEP ceiling).  
-**Evidence rules** — each indicator dated + sourced; per-band WEP language degradation enforced (quarter ≤ "roughly even", year ≤ "roughly even" unless ≥ 3 corroborated sources, cycle never "likely"/"very likely"); minimum indicator counts: 4 (`72h`) / 6 (week) / 8 (month) / 10 (quarter) / 12 (year) / 15 (cycle).  
-**Anti-patterns** — indicators without thresholds; all indicators lagging; missing horizon-band column when `horizonDays >= 90`; assigning "likely" WEP to a year-band indicator without ≥ 3 corroborated sources.
+**Analytic moves** — (1) build a dated indicator set that covers the current article type's active `forwardIndicatorHorizons` from `analysis/article-types.json`, meeting that article type's minimum-count expectations per active band; (2) leading / coincident / lagging tag; (3) threshold that would move the KJ. When `horizonDays >= 90`: (4) horizon-band column required — each indicator tagged with its applicable band (`72h` / week / month / quarter / year / cycle / election), and the selected band must be one of the current article type's active `forwardIndicatorHorizons` in `article-types.json`; (5) WEP-degradation ladder enforced per band (no indicator may carry a probability above its band's WEP ceiling).  
+**Evidence rules** — each indicator dated + sourced; per-band WEP language degradation enforced according to the active bands for the article type and the forward-indicators template; minimum indicator counts are band-specific and article-type-dependent (for example: 4 (`72h`) / 6 (week) / 8 (month) / 10 (quarter) / 12 (year) / 15 (cycle) where those bands are active). Quarter-band indicators must stay at or below "roughly even"; year-band indicators must stay at or below "roughly even" unless supported by ≥ 3 corroborated sources; cycle-band indicators should normally stay below "likely"/"very likely", but `likely` / `very likely` is allowed when supported by ≥ 3 corroborated cycle-aged sources.  
+**Anti-patterns** — indicators without thresholds; all indicators lagging; missing horizon-band column when `horizonDays >= 90`; assigning above-ceiling WEP to a year- or cycle-band indicator without the required corroboration.
 
 ### cycle-trajectory
 
@@ -310,7 +310,7 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 
 ---
 
-## Family E — Per-Document (separate template; not part of the 23 core set)
+## Family E — Per-Document (separate template; not part of the 24 core set)
 
 ### per-file-analysis
 
