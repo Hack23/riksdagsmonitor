@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "cycle": "week-ahead",
+  "date": "2026-05-01",
+  "subfolder": "week-ahead",
+  "generated_at": "2026-05-01T00:00:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-WA-01",
+      "statement": "What is the SfU committee's exact hearing schedule for HD03262 (permanent permit abolition) during the week of 4 May — which stakeholders are invited, and when is the committee report deadline?",
+      "status": "open",
+      "confidence": "HIGH",
+      "source": "riksdagen.se committee calendar",
+      "resolution_target": "2026-05-08",
+      "notes": "Most important immediate PIR — SfU calendar expected by 5 May 2026"
+    },
+    {
+      "pir_id": "PIR-WA-02",
+      "statement": "Has Lagrådet received referral on HD03262 and HD03265, and what is the expected opinion publication date?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "source": "lagradet.se referral register",
+      "resolution_target": "2026-05-07",
+      "notes": "CRITICAL gap — Lagrådet ECHR opinion determines Scenario A vs B outcome"
+    },
+    {
+      "pir_id": "PIR-WA-03",
+      "statement": "Will Socialdemokraterna file formal counter-motions (yrkanden) on the migration package before the SfU committee deadline?",
+      "status": "open",
+      "confidence": "HIGH",
+      "source": "riksdagen.se motioner filing",
+      "resolution_target": "2026-05-08",
+      "notes": "S will file something — form (technical vs rhetorical) is the critical variable"
+    },
+    {
+      "pir_id": "PIR-WA-04",
+      "statement": "What is Migrationsverket's implementation readiness assessment for HD03263 (enhanced deportation) — has the agency been consulted?",
+      "status": "open",
+      "confidence": "LOW",
+      "source": "Migrationsverket press releases",
+      "resolution_target": "2026-05-15",
+      "notes": "Implementation capacity gap (Statskontoret 2023:4) — no confirmed agency consultation"
+    },
+    {
+      "pir_id": "PIR-WA-05",
+      "statement": "Will the May 2026 Novus/IPSOS polling show a shift in migration policy approval ratings following the package announcement?",
+      "status": "open",
+      "confidence": "LOW",
+      "source": "novus.se / ipsos.se press releases",
+      "resolution_target": "2026-05-09",
+      "notes": "Polling firms may not have published by 10 May — check 7-9 May"
+    },
+    {
+      "pir_id": "PIR-WA-06",
+      "statement": "What will be the parliamentary budget for defence cooperation implementation under HD03254 — Försvarsmakten supplementary estimate?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "source": "FöU committee hearings",
+      "resolution_target": "2026-05-20",
+      "notes": "Budget not specified in HD03254 — supplementary estimate expected in May"
+    },
+    {
+      "pir_id": "PIR-WA-07",
+      "statement": "Will the government's response to interpellations HD10451/HD10458 provide measurable milestones for criminal economy reduction?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "source": "Riksdag plenary records",
+      "resolution_target": "2026-05-07",
+      "notes": "Strömmer interpellation response expected 6-7 May — milestones presence/absence is diagnostic"
+    },
+    {
+      "pir_id": "PIR-EVE-01",
+      "statement": "SfU hearing schedule for HD03262 (carried from 2026-04-30/evening-analysis)",
+      "status": "open",
+      "confidence": "HIGH",
+      "source": "riksdagen.se",
+      "carried_from": "2026-04-30/evening-analysis",
+      "resolution_target": "2026-05-08",
+      "notes": "Same as PIR-WA-01 — convergent PIR from prior cycle"
+    },
+    {
+      "pir_id": "PIR-EVE-02",
+      "statement": "FöU committee timeline for HD03254 (carried from 2026-04-30/evening-analysis)",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "source": "riksdagen.se FöU calendar",
+      "carried_from": "2026-04-30/evening-analysis",
+      "resolution_target": "2026-05-15",
+      "notes": "Convergent with PIR-WA-06"
+    },
+    {
+      "pir_id": "PIR-EVE-03",
+      "statement": "S counter-proposal on migration (carried from 2026-04-30/evening-analysis)",
+      "status": "open",
+      "confidence": "HIGH",
+      "source": "riksdagen.se motioner",
+      "carried_from": "2026-04-30/evening-analysis",
+      "resolution_target": "2026-05-08",
+      "notes": "Convergent with PIR-WA-03"
+    },
+    {
+      "pir_id": "PIR-EVE-04",
+      "statement": "Lagrådet ECHR consultation status for HD03262/HD03265 (carried from 2026-04-30/evening-analysis — CRITICAL)",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "source": "lagradet.se",
+      "carried_from": "2026-04-30/evening-analysis",
+      "resolution_target": "2026-05-07",
+      "notes": "CRITICAL — convergent with PIR-WA-02"
+    },
+    {
+      "pir_id": "PIR-EVE-05",
+      "statement": "Migrationsverket implementation capacity for HD03263 (carried from 2026-04-30/evening-analysis)",
+      "status": "open",
+      "confidence": "LOW",
+      "source": "migrationsverket.se",
+      "carried_from": "2026-04-30/evening-analysis",
+      "resolution_target": "2026-05-15",
+      "notes": "Convergent with PIR-WA-04"
+    }
+  ]
+}
