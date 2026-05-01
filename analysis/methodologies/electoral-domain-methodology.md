@@ -29,7 +29,7 @@
 | **F3EAD Stage** | **ANALYZE → DISSEMINATE** | This methodology applies domain lenses (electoral, historical, media, implementation, forward-watch) to enrich intelligence products |
 | **PIRs Served** | `election-2026-analysis.md` (current-cycle) serves PIR-6 (Election Integrity); coalition-mathematics.md serves PIR-1 (Coalition Stability); implementation-feasibility.md serves PIR-5 (Fiscal Trajectory), PIR-7 (Democratic Norms) | See [`political-style-guide.md` §PIR/EEI Catalog](political-style-guide.md#-priority-intelligence-requirements-pir--essential-elements-of-information-eei) |
 | **Admiralty Floor** | Polling data requires ≥[B2] (named pollster, date, sample); historical parallels require ≥[A1] (official records from Riksdag archive) | See [`political-style-guide.md` §Admiralty Code](political-style-guide.md#-admiralty-source-reliability-code-nato-stanag-2022) |
-| **WEP Requirement** | election-2026.md seat projections with WEP probability; forward-indicators.md triggers with WEP likelihood; scenario probabilities must sum to 100% | See [`political-style-guide.md` §WEP + ODNI](political-style-guide.md#-words-of-estimative-probability-wep--odni-confidence-overlay) |
+| **WEP Requirement** | `election-2026-analysis.md` (alias: `election-cycle-analysis.md`) seat projections with WEP probability; forward-indicators.md triggers with WEP likelihood; scenario probabilities must sum to 100% | See [`political-style-guide.md` §WEP + ODNI](political-style-guide.md#-words-of-estimative-probability-wep--odni-confidence-overlay) |
 | **ICD 203 Gate** | Standard 5 (customer relevance — forward indicators), 6 (logical argumentation — coalition mathematics), 9 (visual information — all files) | See [`political-style-guide.md` §ICD 203](political-style-guide.md#-icd-203-analytic-tradecraft-standards-mapping) |
 | **SAT(s)** | Morphological (election-2026, coalition-mathematics); Outside-In Thinking (historical-parallels, voter-segmentation, media-framing); Premortem Analysis (implementation-feasibility); Indicators and Signposts (forward-indicators) | See [`political-style-guide.md` §SATs](political-style-guide.md#-structured-analytic-techniques-sats-catalog) |
 
@@ -59,19 +59,21 @@ This methodology is **cycle-parameterised**. Two separate fields govern cycle-an
 |----------|-------|-------|-----|
 | `tido-2022` | Tidö Mandate (2022–2026) | 2022-09-11 | 2026-09-13 |
 | `post-2026` | Post-2026 Mandate (2026–2030) | 2026-09-13 | 2030-09-08 |
-| *(future)* | Post-2030 Mandate (2030–2034) | 2030-09-08 | *(TBD)* |
+| *(future — not yet in registry)* | Post-2030 Mandate (2030–2034) | 2030-09-08 | *(TBD)* |
 
 The authoritative cycle registry lives in `analysis/article-types.json → electionCycles`. These dates are consumed by `scripts/horizon-context.ts → activeCycleAnchor()` and must not be hardcoded in any analysis template.
 
 ### Rollover trigger
 
-The cycle rolls over programmatically when `ARTICLE_DATE` is within **±30 days** of the next election anchor:
+The cycle rolls over when `ARTICLE_DATE` is within **±30 days** of the next election anchor. Activation is determined by the ext module's own shell predicate (comparing `$ARTICLE_DATE` against `analysis/article-types.json → electionCycles.next.start`), **not** by `horizonContext()` — workflows do not currently call `tsx scripts/horizon-context.ts`. The pseudo-code below illustrates the logic; the authoritative implementation is in [`.github/prompts/ext/cycle-rollover.md` §1](../../.github/prompts/ext/cycle-rollover.md):
 
 ```
-cycleRolloverActive = Math.abs(daysToElection(ARTICLE_DATE)) <= 30
+# Ext-module shell predicate (simplified)
+DAYS_DELTA=$(( ($(date -d "$ARTICLE_DATE" +%s) - $(date -d "$ELECTION_DATE" +%s)) / 86400 ))
+cycleRolloverActive = abs(DAYS_DELTA) <= 30
 ```
 
-When `cycleRolloverActive === true`, the ext module [`.github/prompts/ext/cycle-rollover.md`](../../.github/prompts/ext/cycle-rollover.md) becomes active for `news-election-cycle` runs and applies the phased dual-anchor behaviour defined in §Cycle-rollover playbook below. The ext module does **not** mutate `analysis/article-types.json`; `electionCycleAnchor` in the registry stays whatever the operator has set and is flipped separately (T+45 to T+60 via a CEO-approved Normal change).
+When active, the ext module applies the phased dual-anchor behaviour defined in §Cycle-rollover playbook below. It does **not** mutate `analysis/article-types.json`; `electionCycleAnchor` in the registry stays whatever the operator has set and is flipped separately (T+45 to T+60 via a CEO-approved Normal change).
 
 ---
 
@@ -117,7 +119,7 @@ These products are **core — every run produces all 7**. The output set is stab
 
 | Template | Behaviour on a light-event day | Behaviour on a P0-dense day |
 |----------|-------------------------------|-----------------------------|
-| `election-2026-analysis.md` (alias: `election-cycle-analysis.md`) | Seat-projection delta vs. last poll + which parties crossed the 4 % threshold; for the current cycle it tracks the campaign; for the next cycle it tracks post-election government-formation context | Full seat projection + coalition viability + campaign-phase alignment of every P0 to the active cycle; `electionCycleAnchor` (article-type registry) determines which cycle lens is applied |
+| `election-2026-analysis.md` (alias: `election-cycle-analysis.md`) — **Note:** the alias is filename-only; the underlying template `analysis/templates/election-2026-analysis.md` remains 2026-scoped (pre-election window 2025-10 → 2026-09) until a cycle-parameterised template lands. Post-rollover, workflows write `election-cycle-analysis.md` but the content is generated from the same template with the cycle context injected at runtime via `electionCycleAnchor`. | Seat-projection delta vs. last poll + which parties crossed the 4 % threshold; for the current cycle it tracks the campaign; for the next cycle it tracks post-election government-formation context | Full seat projection + coalition viability + campaign-phase alignment of every P0 to the active cycle; `electionCycleAnchor` (article-type registry) determines which cycle lens is applied |
 | `voter-segmentation.md` | Baseline segment positions (5 axes: age, geography, education, income, incumbency) | Per-document segment impact table with ≥5 cohorts and quantified swing estimates |
 | `coalition-mathematics.md` | Current seat map + pivotal-vote reference + confidence-vote arithmetic | Scenario branching: each contested vote run through Sainte-Laguë, pivotal-actor detection, SD-Tidöbloc-opposition matrix |
 | `historical-parallels.md` (variant: `historical-baseline.md`) | Closest baseline precedent ≤ 40 years with similarity score, or explicit "no-precedent" finding | Full parallel with outcome, stakeholder behaviour, and Bayesian base-rate update |
