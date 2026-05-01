@@ -143,7 +143,7 @@ export function activeCycleAnchor(articleDate: string): 'current' | 'next' {
   const date = new Date(articleDate).getTime();
   const nextStart = new Date(reg.electionCycles.next.start).getTime();
   const nextEnd = new Date(reg.electionCycles.next.end).getTime();
-  return date >= nextStart && date <= nextEnd ? 'next' : 'current';
+  return date >= nextStart && date < nextEnd ? 'next' : 'current';
 }
 
 /**

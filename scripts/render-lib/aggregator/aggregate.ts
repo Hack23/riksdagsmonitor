@@ -177,7 +177,7 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     // already been rendered in this folder, skip — only one member of an
     // alias group is emitted per folder. See order.ts → FILENAME_ALIASES.
     const aliases = aliasGroupFor(fileName);
-    if (aliases && used.some((u) => aliases.has(u))) continue;
+    if (aliases && used.some((usedFile) => aliases.has(usedFile))) continue;
     readSection(fileName, true);
     if (fileName === 'threat-analysis.md') {
       const docExpansion = expandPerDocumentAnalyses(subfolderAbsPath, subfolderRepoRelPath);
