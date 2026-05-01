@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "cycle": "committeeReports",
+  "date": "2026-05-01",
+  "subfolder": "committeeReports",
+  "generated_at": "2026-05-01T05:10:00Z",
+  "inherited_from": null,
+  "pirs": [
+    {
+      "pir_id": "PIR-01",
+      "statement": "Will SD maintain budget support for M-KD-L-C government through the 2026 election cycle?",
+      "trigger": "SD-Government joint statement cancellation; SD parliamentary motion against government budget; SD leadership press conference announcing withdrawal",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "evidence_refs": [
+        "HC01SfU22",
+        "HC01FiU20",
+        "analysis/daily/2026-05-01/committeeReports/coalition-mathematics.md"
+      ],
+      "horizon": "2026-03-01",
+      "admiralty_grade": "B2"
+    },
+    {
+      "pir_id": "PIR-02",
+      "statement": "Will ECtHR or Swedish courts issue interim orders or adverse rulings on HC01SfU22 detention coercive powers (glass partitions, room search)?",
+      "trigger": "ECtHR admissibility decision; JO formal inquiry opening; HFD referral or ruling on SfU22-related case",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "evidence_refs": [
+        "HC01SfU22",
+        "analysis/daily/2026-05-01/committeeReports/threat-analysis.md",
+        "analysis/daily/2026-05-01/committeeReports/risk-assessment.md"
+      ],
+      "horizon": "2026-09-01",
+      "admiralty_grade": "B3"
+    },
+    {
+      "pir_id": "PIR-03",
+      "statement": "Will US tariff policy cause Swedish GDP to fall below 0% in any quarter of 2025?",
+      "trigger": "SCB flash GDP estimate Q3 2025; Riksdag emergency budget revision announcement",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "evidence_refs": [
+        "HC01FiU20",
+        "HC01FiU24",
+        "analysis/daily/2026-05-01/committeeReports/scenario-analysis.md"
+      ],
+      "horizon": "2025-11-01",
+      "admiralty_grade": "A2"
+    },
+    {
+      "pir_id": "PIR-04",
+      "statement": "Will the EU Commission open a formal state-aid investigation into the HC01FiU33 APL 700 MSEK capital injection?",
+      "trigger": "EU state-aid register formal opening notice; European Commission press release",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "evidence_refs": [
+        "HC01FiU33",
+        "analysis/daily/2026-05-01/committeeReports/devils-advocate.md"
+      ],
+      "horizon": "2026-06-01",
+      "admiralty_grade": "C3"
+    },
+    {
+      "pir_id": "PIR-05",
+      "statement": "Will the Riksbank implement the HC01FiU24 evaluation recommendations on reducing FX over-reliance and improving rate-path communication?",
+      "trigger": "Riksbank communication strategy document release; Riksbank policy framework revision announcement",
+      "status": "open",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "HC01FiU24",
+        "analysis/daily/2026-05-01/committeeReports/intelligence-assessment.md"
+      ],
+      "horizon": "2026-01-01",
+      "admiralty_grade": "A2"
+    }
+  ]
+}
