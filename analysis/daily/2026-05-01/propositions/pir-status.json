@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "article_date": "2026-05-01",
+  "subfolder": "propositions",
+  "generated_at": "2026-05-01T07:00:00.000Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "question": "Will the government pre-position emergency funding for Migrationsverket and Polismyndigheten capacity expansion in the Spring Supplementary Budget (Vårpropositionen 2026)?",
+      "status": "partially_answered",
+      "priority": "HIGH",
+      "domain": "migration-enforcement",
+      "source_cycle": "2026-04-30",
+      "carry_forward": true,
+      "answer_summary": "Vårpropositionen 2026 submitted April 2026 but detailed agency appropriation tables for Migrationsverket/Polismyndigheten returns operations not yet retrieved. This PIR REMAINS OPEN. Resolution requires reading proposition budget tables for Migrationsverket (anslag 1:2 Migration) and Polismyndigheten (anslag 1:1 Polisorganisationen).",
+      "resolution_indicator": "FI-4 Vårpropositionen 2026 detailed agency tables"
+    },
+    {
+      "id": "PIR-2",
+      "question": "What will Lagrådet's yttrande on HD03265 (detention rules) conclude regarding ECHR Article 5 compatibility?",
+      "status": "open",
+      "priority": "HIGH",
+      "domain": "constitutional-legal",
+      "source_cycle": "2026-05-01",
+      "carry_forward": false,
+      "answer_summary": null,
+      "resolution_indicator": "FI-2 Lagrådet yttrande published May-June 2026"
+    },
+    {
+      "id": "PIR-3",
+      "question": "Will any Swedish administrative court immediately refer HD03262 (permanent permit abolition) to CJEU upon first application?",
+      "status": "open",
+      "priority": "HIGH",
+      "domain": "eu-legal",
+      "source_cycle": "2026-05-01",
+      "carry_forward": false,
+      "answer_summary": null,
+      "resolution_indicator": "FI-12 Migrationsöverdomstolen case list post-enactment"
+    },
+    {
+      "id": "PIR-4",
+      "question": "Will S adopt a partial position supporting HD03263 (deportation operations) while opposing HD03262, creating internal coalition fracture?",
+      "status": "open",
+      "priority": "MEDIUM",
+      "domain": "political-dynamics",
+      "source_cycle": "2026-05-01",
+      "carry_forward": false,
+      "answer_summary": null,
+      "resolution_indicator": "FI-8 S party position shift August 2026"
+    }
+  ],
+  "closed_pirs": [
+    {
+      "id": "PIR-2-legacy",
+      "question": "Has Sweden adopted a comprehensive justice sector reform addressing gang crime (CRR3/CRD6 alignment)?",
+      "status": "answered",
+      "source_cycle": "2026-04-30",
+      "answer_summary": "HD03263 addresses return operations; distinct from gang crime focus. PIR answered and closed."
+    },
+    {
+      "id": "PIR-3-legacy",
+      "question": "Are there pending banking regulatory changes (CRR3/CRD6)?",
+      "status": "answered",
+      "source_cycle": "2026-04-30",
+      "answer_summary": "CRR3/CRD6 banking regulation answered in 2026-04-30 cycle. Closed."
+    },
+    {
+      "id": "PIR-4-legacy",
+      "question": "OTC medicines regulation — self-medication access reform?",
+      "status": "answered",
+      "source_cycle": "2026-04-30",
+      "answer_summary": "OTC medicines reform answered in 2026-04-30 cycle. Closed."
+    }
+  ]
+}
