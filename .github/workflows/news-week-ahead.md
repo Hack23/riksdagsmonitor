@@ -12,6 +12,7 @@ imports:
   - ../prompts/06-article-generation.md
   - ../prompts/07-commit-and-pr.md
   - ../prompts/ext/tier-c-aggregation.md
+  - ../prompts/ext/long-horizon-forecasting.md
 on:
   schedule: weekly on friday around 7:00
   workflow_dispatch:
