@@ -171,6 +171,20 @@ It declares:
 | **Safe outputs** | One PR max, labels `agentic-news`, `analysis-data`, one translation dispatch max |
 | **Core output** | `analysis/daily/$ARTICLE_DATE/interpellations/article.md` and `news/$ARTICLE_DATE-interpellations-{en,sv}.html` |
 
+### Forward-look horizons
+
+Riksdagsmonitor produces forward-looking analysis at five distinct horizons, each one tier deeper than the last in time-window, scenario-tree depth and IMF projection-year stamps. The single source of truth for all five is [`analysis/article-types.json`](analysis/article-types.json) (validated by [`schemas/article-types.schema.json`](schemas/article-types.schema.json)).
+
+| Horizon | Workflow | Window | Cron | Multiplier | Word floor | Long-horizon ext |
+|---------|----------|--------|------|------------|------------|-------------------|
+| Week-ahead | [`news-week-ahead.md`](.github/workflows/news-week-ahead.md) | 7 days | Fri 07:00 UTC | 1.2× | 1 500 | recommended |
+| Month-ahead | [`news-month-ahead.md`](.github/workflows/news-month-ahead.md) | 30 days | 1st 08:00 UTC | 1.5× | 1 500 | recommended |
+| **Quarter-ahead** | [`news-quarter-ahead.md`](.github/workflows/news-quarter-ahead.md) | 90 days | 1st + 15th 09:00 UTC | 1.7× | 2 000 | required |
+| **Year-ahead** | [`news-year-ahead.md`](.github/workflows/news-year-ahead.md) | 365 days | 5 Jan + 5 Jul 09:00 UTC | 2.0× | 2 500 | required + PESTLE blocking |
+| **Election-cycle** | [`news-election-cycle.md`](.github/workflows/news-election-cycle.md) | ~1 460 days (full mandate) | dispatch-only initially | 2.5× | 3 500 | required + 24th artifact `cycle-trajectory.md` + cycle-rollover ext |
+
+Long-horizon workflows additionally import [`ext/long-horizon-forecasting.md`](.github/prompts/ext/long-horizon-forecasting.md) (horizon stratification, scenario-tree depth, counterfactual mandate, IMF projection-year stamps, PESTLE blocking thresholds, cross-horizon citation). The election-cycle workflow further imports [`ext/cycle-rollover.md`](.github/prompts/ext/cycle-rollover.md), which is active only within ± 30 days of a Swedish election anchor (the next being 2026-09-13).
+
 ### Imported prompt modules
 
 Every content workflow imports the bounded-context prompt library:

@@ -48,22 +48,27 @@ This directory is the **single source of truth** for how GitHub Agentic Workflow
 | [`07-commit-and-pr.md`](07-commit-and-pr.md) | Stage → commit → exactly one `create_pull_request` | All news workflows + translate |
 | [`seo-metadata-contract.md`](seo-metadata-contract.md) | Reference contract for `<title>` + `<meta description>` per language (used at render time, not imported) | Reference document — referenced by `06-article-generation.md` and the renderer |
 | [`ext/tier-c-aggregation.md`](ext/tier-c-aggregation.md) | Tier-C additive rules: period multipliers, cross-type sibling synthesis, prior-cycle PIR ingestion, article floor | Aggregation & reference-grade workflows |
+| [`ext/long-horizon-forecasting.md`](ext/long-horizon-forecasting.md) | Long-horizon additive rules on top of Tier-C: horizon stratification, scenario-tree depth, counterfactual mandate, IMF projection-year stamps, PESTLE blocking thresholds, cross-horizon citation | `news-week-ahead`, `news-month-ahead`, `news-quarter-ahead`, `news-year-ahead`, `news-election-cycle` |
+| [`ext/cycle-rollover.md`](ext/cycle-rollover.md) | Election cycle file-rename + carry-forward + PIR archival procedure (active only within ± 30 days of a Swedish election anchor) | `news-election-cycle` (no-op outside ± 30-day window) |
 
 ## Dependency matrix
 
-| Workflow | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | ext |
-|----------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:---:|
-| `news-propositions` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| `news-motions` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| `news-committee-reports` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| `news-interpellations` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| `news-evening-analysis` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| `news-week-ahead` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| `news-month-ahead` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| `news-weekly-review` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| `news-monthly-review` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| `news-realtime-monitor` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| `news-translate` | ✅ | ✅ | ✅ | | | | | ✅ | |
+| Workflow | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | tier-c | long-horizon | cycle-rollover |
+|----------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:------:|:------------:|:--------------:|
+| `news-propositions` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | | |
+| `news-motions` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | | |
+| `news-committee-reports` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | | |
+| `news-interpellations` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | | |
+| `news-evening-analysis` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | |
+| `news-week-ahead` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | (recommended) | |
+| `news-month-ahead` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | (recommended) | |
+| `news-quarter-ahead` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | |
+| `news-year-ahead` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | |
+| `news-election-cycle` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `news-weekly-review` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | |
+| `news-monthly-review` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | |
+| `news-realtime-monitor` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | |
+| `news-translate` | ✅ | ✅ | ✅ | | | | | ✅ | | | |
 
 ## Phase sequence (single-run workflow)
 
