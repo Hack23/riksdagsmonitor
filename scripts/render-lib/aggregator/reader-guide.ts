@@ -61,8 +61,9 @@ export const READER_GUIDE_ENTRIES: readonly ReaderGuideEntry[] = [
   },
   {
     file: 'media-framing-analysis.md',
-    label: 'Media framing',
-    readerValue: 'likely narrative frames, amplifiers, counter-frames, and manipulation risks',
+    label: 'Media framing & influence operations',
+    readerValue:
+      'frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder',
   },
   {
     file: 'forward-indicators.md',

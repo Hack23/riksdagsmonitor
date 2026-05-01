@@ -88,7 +88,7 @@
       "voter-segmentation.md": 140,
       "coalition-mathematics.md": 135,
       "historical-parallels.md": 130,
-      "media-framing-analysis.md": 140,
+      "media-framing-analysis.md": 200,
       "implementation-feasibility.md": 140,
       "forward-indicators.md": 150,
       "analysis-index.md": 120,
@@ -105,6 +105,7 @@
       "threat-analysis.md": 200,
       "stakeholder-impact.md": 240,
       "forward-indicators.md": 170,
+      "media-framing-analysis.md": 220,
       "methodology-reflection.md": 210,
       "executive-brief.md": 150
     },
@@ -114,6 +115,7 @@
       "threat-analysis.md": 150,
       "stakeholder-impact.md": 190,
       "forward-indicators.md": 140,
+      "media-framing-analysis.md": 170,
       "methodology-reflection.md": 180,
       "executive-brief.md": 100
     },
@@ -124,6 +126,7 @@
       "risk-assessment.md": 210,
       "implementation-feasibility.md": 170,
       "stakeholder-impact.md": 250,
+      "media-framing-analysis.md": 210,
       "methodology-reflection.md": 215,
       "executive-brief.md": 130
     },
@@ -134,6 +137,7 @@
       "swot-analysis.md": 175,
       "stakeholder-impact.md": 240,
       "comparative-international.md": 160,
+      "media-framing-analysis.md": 210,
       "methodology-reflection.md": 210,
       "executive-brief.md": 130
     },
@@ -143,6 +147,7 @@
       "risk-assessment.md": 195,
       "implementation-feasibility.md": 165,
       "stakeholder-impact.md": 235,
+      "media-framing-analysis.md": 200,
       "methodology-reflection.md": 205,
       "executive-brief.md": 130
     },
@@ -151,13 +156,14 @@
       "swot-analysis.md": 160,
       "threat-analysis.md": 180,
       "stakeholder-impact.md": 220,
-      "media-framing-analysis.md": 160,
+      "media-framing-analysis.md": 220,
       "methodology-reflection.md": 200,
       "executive-brief.md": 110
     },
     "week-ahead": {
       "synthesis-summary.md": 200,
       "forward-indicators.md": 170,
+      "media-framing-analysis.md": 200,
       "methodology-reflection.md": 195,
       "executive-brief.md": 130
     },
@@ -165,6 +171,7 @@
       "synthesis-summary.md": 230,
       "forward-indicators.md": 200,
       "scenario-analysis.md": 200,
+      "media-framing-analysis.md": 240,
       "methodology-reflection.md": 215,
       "executive-brief.md": 150
     },
@@ -219,6 +226,7 @@
       "cross-session-intelligence.md": 180,
       "session-baseline.md": 170,
       "cross-run-diff.md": 160,
+      "media-framing-analysis.md": 220,
       "methodology-reflection.md": 220,
       "executive-brief.md": 180
     },
@@ -228,6 +236,7 @@
       "session-baseline.md": 200,
       "cross-run-diff.md": 180,
       "comparative-international.md": 180,
+      "media-framing-analysis.md": 240,
       "methodology-reflection.md": 235,
       "executive-brief.md": 200
     },
