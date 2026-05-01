@@ -1,0 +1,160 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://riksdagsmonitor.com/schemas/article-types.schema.json",
+  "title": "Riksdagsmonitor article-types registry",
+  "description": "Schema for analysis/article-types.json — the single source of truth for every Riksdagsmonitor agentic news article type. Validated by tests/article-types.test.ts on every CI run.",
+  "type": "object",
+  "required": ["version", "effectiveDate", "owner", "classification", "types", "electionCycles", "horizonBands"],
+  "additionalProperties": true,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+(\\.\\d+)?$" },
+    "effectiveDate": { "type": "string", "format": "date" },
+    "description": { "type": "string", "minLength": 20 },
+    "owner": { "type": "string" },
+    "classification": { "type": "string", "enum": ["Public", "Internal", "Restricted"] },
+    "license": { "type": "string" },
+    "types": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/articleType" }
+    },
+    "electionCycles": {
+      "type": "object",
+      "required": ["current", "next"],
+      "properties": {
+        "current": { "$ref": "#/definitions/electionCycle" },
+        "next": { "$ref": "#/definitions/electionCycle" }
+      }
+    },
+    "horizonBands": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["days", "wepFloor"],
+        "properties": {
+          "days": { "type": "number", "minimum": 1 },
+          "wepFloor": { "type": "string", "minLength": 5 }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "articleType": {
+      "type": "object",
+      "required": [
+        "id",
+        "family",
+        "horizonDays",
+        "lookbackDays",
+        "subfolder",
+        "tierCMultiplier",
+        "articleWordFloor",
+        "scenarioHorizonYears",
+        "forwardIndicatorHorizons",
+        "electionCycleAnchor",
+        "imfPolicy",
+        "icon",
+        "label",
+        "workflow",
+        "coreLanguages",
+        "extraArtifacts"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$",
+          "minLength": 2,
+          "maxLength": 50
+        },
+        "family": {
+          "type": "string",
+          "enum": ["single-type", "tier-c-aggregation", "long-horizon-forecast"]
+        },
+        "horizonDays": { "type": "integer", "minimum": 0, "maximum": 3650 },
+        "lookbackDays": { "type": "integer", "minimum": 0, "maximum": 3650 },
+        "subfolder": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$",
+          "minLength": 2
+        },
+        "tierCMultiplier": { "type": "number", "minimum": 0.5, "maximum": 5.0 },
+        "articleWordFloor": { "type": "integer", "minimum": 500, "maximum": 10000 },
+        "scenarioHorizonYears": { "type": "integer", "minimum": 0, "maximum": 10 },
+        "forwardIndicatorHorizons": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": ["72h", "week", "month", "quarter", "year", "cycle", "election"]
+          }
+        },
+        "electionCycleAnchor": {
+          "type": "string",
+          "enum": ["current", "next", "both", "none"]
+        },
+        "imfPolicy": { "type": "string", "minLength": 4 },
+        "icon": { "type": "string", "minLength": 1, "maxLength": 4 },
+        "label": { "type": "string", "minLength": 2 },
+        "workflow": {
+          "type": "string",
+          "pattern": "^news-[a-z0-9-]+\\.md$"
+        },
+        "cronExpression": {
+          "type": ["string", "null"],
+          "pattern": "^([0-9*,/-]+\\s+){4}[0-9*,/-]+$"
+        },
+        "dispatchOnly": { "type": "boolean" },
+        "coreLanguages": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 2, "maxLength": 5 }
+        },
+        "extraArtifacts": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z0-9-]+\\.md$" }
+        },
+        "longHorizonRules": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "scenarioCount": { "type": "integer", "minimum": 2 },
+            "scenarioBranchesPerScenario": { "type": "integer", "minimum": 1 },
+            "wildcardCount": { "type": "integer", "minimum": 0 },
+            "counterfactualParagraphs": { "type": "integer", "minimum": 0 },
+            "pestleMandatory": { "type": "boolean" },
+            "crossHorizonCitations": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "minDokIdReferences": { "type": "integer", "minimum": 0 },
+            "minCharts": { "type": "integer", "minimum": 0 }
+          }
+        }
+      }
+    },
+    "electionCycle": {
+      "type": "object",
+      "required": ["id", "label", "start", "end"],
+      "properties": {
+        "id": { "type": "string" },
+        "label": { "type": "string" },
+        "start": { "type": "string", "format": "date" },
+        "end": { "type": "string", "format": "date" },
+        "governingCoalition": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "confidenceSupport": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "opposition": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

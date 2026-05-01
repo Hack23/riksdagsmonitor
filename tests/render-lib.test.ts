@@ -308,10 +308,11 @@ describe('render-lib — AGGREGATION_ORDER', () => {
   });
 
   it('still keeps the appendix group at the very end', () => {
-    const tail = AGGREGATION_ORDER.slice(-4);
+    const tail = AGGREGATION_ORDER.slice(-5);
     expect(tail).toEqual([
       'classification-results.md',
       'cross-reference-map.md',
+      'horizon-pir-rollforward.md',
       'methodology-reflection.md',
       'data-download-manifest.md',
     ]);
@@ -587,8 +588,9 @@ describe('render-lib — titleForArtifact', () => {
   });
 
   it('falls back to prettified title for unknown supplementary artifacts', () => {
-    expect(titleForArtifact('pestle-analysis.md')).toBe('Pestle Analysis');
-    expect(titleForArtifact('wildcards_blackswans.md')).toBe('Wildcards Blackswans');
+    // pestle-analysis.md, wildcards-blackswans.md, etc. are now curated; use truly-unknown artifacts.
+    expect(titleForArtifact('budget-bill-tracker.md')).toBe('Budget Bill Tracker');
+    expect(titleForArtifact('eu_presidency_pivot.md')).toBe('Eu Presidency Pivot');
     expect(titleForArtifact('ext/foo-bar.md')).toBe('Foo Bar');
     expect(prettifyFallbackTitle('a-b_c.md')).toBe('A B C');
   });

@@ -1,0 +1,224 @@
+---
+name: "News: Quarter Ahead"
+description: Generates quarter-ahead strategic outlook articles in core languages (EN, SV). Long-horizon-forecast workflow with 90-day window — covers next-quarter parliamentary calendar, committee schedules, government propositions tabling deadlines, Riksbank rate decisions, and SCB quarterly NA release. Tier-C aggregation × 1.7 depth multiplier. Translations handled by news-translate workflow. Runs 1st and 15th of each month.
+strict: false
+imports:
+  - ../prompts/00-base-contract.md
+  - ../prompts/01-bash-and-shell-safety.md
+  - ../prompts/02-mcp-access.md
+  - ../prompts/03-data-download.md
+  - ../prompts/04-analysis-pipeline.md
+  - ../prompts/05-analysis-gate.md
+  - ../prompts/06-article-generation.md
+  - ../prompts/07-commit-and-pr.md
+  - ../prompts/ext/tier-c-aggregation.md
+  - ../prompts/ext/long-horizon-forecasting.md
+on:
+  schedule:
+    - cron: "0 9 1,15 * *"
+  workflow_dispatch:
+    inputs:
+      article_date:
+        description: 'Article date (YYYY-MM-DD) for manual backfills. Defaults to today when omitted or scheduled.'
+        required: false
+      force_generation:
+        description: Force generation even if recent articles exist
+        type: boolean
+        required: false
+        default: false
+      languages:
+        description: 'Core languages for content generation (en,sv | nordic | eu-core | all). Translations for remaining languages are handled by the dedicated news-translate workflow.'
+        required: false
+        default: en,sv
+      analysis_depth:
+        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, scenario tree depth, and dashboard charts.'
+        required: false
+        default: deep
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+  actions: read
+  discussions: read
+  security-events: read
+
+timeout-minutes: 45
+
+concurrency:
+  group: gh-aw-news-quarter-ahead-${{ inputs.article_date || 'today' }}
+  cancel-in-progress: false
+
+features:
+  mcp-gateway: true
+
+sandbox:
+  mcp:
+    keepalive-interval: 300
+
+runtimes:
+  node:
+    version: "25"
+
+network:
+  allowed:
+    - node
+    - docker.io
+    - registry-1.docker.io
+    - auth.docker.io
+    - production.cloudflare.docker.com
+    - github
+    - riksdag-regering-ai.onrender.com
+    - api.scb.se
+    - api.worldbank.org
+    - api.imf.org
+    - data.imf.org
+    - www.imf.org
+    - data.riksdagen.se
+    - www.riksdagen.se
+    - riksdagen.se
+    - www.regeringen.se
+    - www.scb.se
+    - www.statskontoret.se
+    - statskontoret.se
+    - www.lagradet.se
+    - lagradet.se
+    - regeringen.se
+    - hack23.com
+    - www.hack23.com
+    - riksdagsmonitor.com
+    - www.riksdagsmonitor.com
+    - raw.githubusercontent.com
+    - hack23.github.io
+    - defaults
+
+mcp-servers:
+  riksdag-regering:
+    url: https://riksdag-regering-ai.onrender.com/mcp
+    allowed: ["*"]
+  scb:
+    container: "node:25-alpine"
+    entrypoint: "npx"
+    entrypointArgs: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
+    allowed: ["*"]
+  world-bank:
+    container: "node:25-alpine"
+    entrypoint: "npx"
+    entrypointArgs: ["-y", "worldbank-mcp@1.0.1"]
+    allowed: ["*"]
+
+tools:
+  startup-timeout: 180
+  timeout: 120
+  github:
+    toolsets:
+      - all
+  agentic-workflows: true
+  bash: true
+  edit:
+  web-fetch:
+  cache-memory:
+    key: news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}
+    retention-days: 14
+
+safe-outputs:
+  threat-detection:
+    continue-on-error: true
+  allowed-domains:
+    - riksdag-regering-ai.onrender.com
+    - api.scb.se
+    - api.worldbank.org
+    - api.imf.org
+    - data.imf.org
+    - www.imf.org
+    - data.riksdagen.se
+    - www.riksdagen.se
+    - riksdagen.se
+    - www.regeringen.se
+    - www.scb.se
+    - www.statskontoret.se
+    - statskontoret.se
+    - www.lagradet.se
+    - lagradet.se
+    - hack23.com
+    - www.hack23.com
+    - riksdagsmonitor.com
+    - www.riksdagsmonitor.com
+    - raw.githubusercontent.com
+    - hack23.github.io
+  max-patch-size: 4096
+  create-pull-request:
+    labels: [agentic-news, analysis-data, long-horizon, forward-look]
+    draft: false
+    expires: 14d
+    max: 1
+    if-no-changes: warn
+    fallback-as-issue: true
+  add-comment: {}
+  dispatch-workflow:
+    workflows: [news-translate]
+    max: 1
+
+steps:
+  - name: News pre-warm & pre-flight (composite)
+    uses: ./.github/actions/news-prewarm
+engine:
+  id: copilot
+  model: claude-opus-4.7
+---
+
+# 🧭 Quarter Ahead
+
+Generates deep political intelligence analysis **and** the rendered HTML article for forward-looking quarterly political intelligence (Tier-C aggregation × 1.7 depth multiplier — see `ext/tier-c-aggregation.md` and `ext/long-horizon-forecasting.md`) in one single agentic run. The 90-day window covers the next-quarter parliamentary calendar (committee schedules, chamber votes, government propositions tabling deadlines, Lagrådet referrals, Riksbank rate decisions, SCB quarterly NA release).
+
+Core languages are `en` + `sv`; translations to the remaining twelve languages are produced by the separate `news-translate` workflow.
+
+## What this workflow does
+
+- **Article type**: `quarter-ahead` (registry id; see `analysis/article-types.json`)
+- **Analysis subfolder**: `analysis/daily/$ARTICLE_DATE/quarter-ahead/`
+- **Aggregated markdown**: `analysis/daily/$ARTICLE_DATE/quarter-ahead/article.md`
+- **Rendered HTML**: `news/$ARTICLE_DATE-quarter-ahead-{en,sv}.html`
+- **Horizon**: 90 days; lookback 90 days (sibling per-type folders + most-recent week-ahead + month-ahead).
+- **Single-run model**: download → analysis Pass 1 + 2 → gate → aggregate → render → ONE PR.
+
+## Long-horizon mandate (from `ext/long-horizon-forecasting.md`)
+
+- **Scenario count**: ≥ 4 distinct scenarios in `scenario-analysis.md`, probabilities sum to 100 %.
+- **Counterfactuals**: ≥ 2 explicit counterfactual paragraphs in `devils-advocate.md`.
+- **Cross-horizon citations**: cite the most recent `week-ahead` AND `month-ahead` analyses in `cross-reference-map.md`. Missing citations fail the gate.
+- **IMF policy**: pinned WEO + FM vintage at run start; emit `economic-data.json` v2.0 with quarterly trajectory series for SWE + Nordic peers (DNK, NOR, FIN).
+- **Forward indicators**: ≥ 12 dated indicators across the bands `week / month / quarter / year / election`.
+- **Word floor**: ≥ 2 000 words (versus 1 500 for week-ahead / month-ahead).
+
+## Time budget
+
+> 🔴 **CRITICAL — safeoutputs MCP idle timeout (~30 min)**: Your first and only `safeoutputs___*` call MUST happen by minute 28 at the latest. See `00-base-contract.md §Session keepalive requirement` and `07-commit-and-pr.md §Deadline enforcement`.
+
+| Minutes | Phase | Module |
+|---------|-------|--------|
+| 0–2 | MCP pre-warm + pre-flight | 02 / 03 |
+| 2–5 | Download data + catalogue + IMF pinned vintage | 03 |
+| 5–17 | Analysis Pass 1 (all 23 artifacts at 1.7× depth, scenario tree depth 4, ≥ 12 forward indicators) | 04 + ext/long-horizon-forecasting |
+| 17–22 | Analysis Pass 2 (read-back + improvements; ≥ 2 counterfactuals) | 04 |
+| 22–23 | Analysis Gate (checks 1–11 + Tier-C additive + long-horizon checks) | 05 |
+| 23–25 | Aggregate + render (`article.md` + EN/SV HTML) | 06 |
+| 25–28 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE minute 28** | 07 |
+
+Trim scope before quality. Never open a second PR within a run.
+
+## Inputs
+
+- `article_date` — override date (defaults to today)
+- `force_generation` — regenerate even if today's content exists
+- `languages` — core content languages (default `en,sv`)
+- `analysis_depth` — `standard` | `deep` (default) | `comprehensive`
+
+## Run-mode selection
+
+At the start of every run, the pre-flight check in `03-data-download.md` detects whether `analysis/daily/$ARTICLE_DATE/quarter-ahead/` already contains all 23 required artifacts:
+
+- **No analysis found** → run the full pipeline.
+- **Analysis found** → enter improvement-mode (see `04-analysis-pipeline.md §Improvement-mode path`); add fresh evidence on top of the snapshotted baseline.
+
+All other rules live in the imported modules.

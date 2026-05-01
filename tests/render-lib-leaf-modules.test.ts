@@ -104,9 +104,10 @@ describe('aggregator/order — canonical narrative order', () => {
   });
 
   it('titleForArtifact falls back to prettifyFallbackTitle for unknown files', () => {
-    expect(titleForArtifact('pestle-analysis.md')).toBe('Pestle Analysis');
-    expect(titleForArtifact('wildcards-blackswans.md')).toBe(
-      'Wildcards Blackswans',
+    // pestle-analysis.md, wildcards-blackswans.md, etc. are now curated; use truly-unknown artifacts.
+    expect(titleForArtifact('budget-bill-tracker.md')).toBe('Budget Bill Tracker');
+    expect(titleForArtifact('eu-presidency-pivot.md')).toBe(
+      'Eu Presidency Pivot',
     );
   });
 

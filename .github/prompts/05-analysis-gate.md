@@ -406,3 +406,105 @@ fi
 Depth floors for S1–S7 are configured under `thresholds.breaking.*` / per-type sections in [`reference-quality-thresholds.json`](../../analysis/methodologies/reference-quality-thresholds.json); when a floor is absent the `defaults.supplementaryFloor` (120 lines) applies.
 
 **Pass-2 quality audit — recommendation, not enforced in the bash probe** — the bash check above does **not** parse `reference-analysis-quality.md §5`. When the artifact is produced, agents SHOULD re-read its `§5 Overall Benchmark Judgement` total and trigger another Pass-2 iteration if the score is below **7.0/10** before invoking this gate. This is a non-enforced self-discipline rule (no blocking logic); an enforced numeric-floor check would require adding a YAML/JSON score block to the template and a dedicated parser, which is deferred to a follow-up change.
+
+---
+
+## Long-horizon additive gate (`news-quarter-ahead`, `news-year-ahead`, `news-election-cycle`, also recommended for `news-week-ahead` + `news-month-ahead`)
+
+When `ext/long-horizon-forecasting.md` is imported, run this **additive** check block **after** the Tier-C additive block. All checks are non-blocking when the workflow is week/month-ahead (warnings only); blocking for quarter/year/cycle.
+
+```bash
+set -Eeuo pipefail
+ANALYSIS_DIR="${ANALYSIS_DIR:-}"
+ARTICLE_TYPE="${ARTICLE_TYPE:-}"  # one of: week-ahead, month-ahead, quarter-ahead, year-ahead, election-cycle
+[ -n "$ANALYSIS_DIR" ] || { echo "❌ ANALYSIS_DIR is not set"; exit 1; }
+[ -n "$ARTICLE_TYPE" ] || { echo "ℹ️ ARTICLE_TYPE not set; long-horizon gate skipped"; exit 0; }
+case "$ARTICLE_TYPE" in
+  quarter-ahead|year-ahead|election-cycle) BLOCKING=1 ;;
+  *) BLOCKING=0 ;;
+esac
+FAIL=0
+
+# LH-1 — every WEP term in long-horizon Family-C/D artifacts carries [horizon:<band>] tag
+for f in synthesis-summary.md scenario-analysis.md risk-assessment.md \
+         intelligence-assessment.md forward-indicators.md cross-reference-map.md; do
+  [ -s "$ANALYSIS_DIR/$f" ] || continue
+  WEP_LINES=$(grep -nE '\b(very likely|likely|roughly even|about even|unlikely|very unlikely)\b' "$ANALYSIS_DIR/$f" || true)
+  while IFS= read -r line; do
+    [ -z "$line" ] && continue
+    echo "$line" | grep -qE '\[horizon:(72h|week|month|quarter|year|cycle|election)\]' \
+      || { echo "⚠️ long-horizon: $f line missing [horizon:...] tag near WEP term: ${line:0:120}"; FAIL=1; }
+  done <<< "$WEP_LINES"
+done
+
+# LH-2 — IMF citations carry projection-year stamp (T+N)
+for f in synthesis-summary.md scenario-analysis.md risk-assessment.md \
+         intelligence-assessment.md cross-reference-map.md; do
+  [ -s "$ANALYSIS_DIR/$f" ] || continue
+  if grep -qE '\bIMF (WEO|FM|GFS_COFOG)\b' "$ANALYSIS_DIR/$f"; then
+    grep -qE '\bIMF (WEO|FM|GFS_COFOG)\b.*\bT\+[0-9]+\b' "$ANALYSIS_DIR/$f" \
+      || { echo "❌ long-horizon: $f cites IMF without T+N projection-year stamp"; FAIL=1; }
+  fi
+done
+
+# LH-3 — counterfactuals in devils-advocate.md
+case "$ARTICLE_TYPE" in
+  week-ahead|month-ahead) MIN_COUNTER=1 ;;
+  quarter-ahead|year-ahead) MIN_COUNTER=2 ;;
+  election-cycle) MIN_COUNTER=3 ;;
+  *) MIN_COUNTER=0 ;;
+esac
+if [ "$MIN_COUNTER" -gt 0 ] && [ -s "$ANALYSIS_DIR/devils-advocate.md" ]; then
+  COUNT=$(grep -cE '^\*\*Counterfactual [0-9]+ — ' "$ANALYSIS_DIR/devils-advocate.md" || true)
+  [ "${COUNT:-0}" -ge "$MIN_COUNTER" ] \
+    || { echo "❌ long-horizon: devils-advocate.md needs ≥ $MIN_COUNTER counterfactual paragraphs (found ${COUNT:-0})"; FAIL=1; }
+fi
+
+# LH-4 — PESTLE blocking for year-ahead and election-cycle
+case "$ARTICLE_TYPE" in
+  year-ahead|election-cycle)
+    [ -s "$ANALYSIS_DIR/pestle-analysis.md" ] \
+      || { echo "❌ long-horizon: pestle-analysis.md is BLOCKING for $ARTICLE_TYPE"; FAIL=1; }
+    ;;
+esac
+
+# LH-5 — election-cycle 24th artifact (cycle-trajectory.md)
+if [ "$ARTICLE_TYPE" = "election-cycle" ]; then
+  [ -s "$ANALYSIS_DIR/cycle-trajectory.md" ] \
+    || { echo "❌ long-horizon: cycle-trajectory.md (24th artifact) is BLOCKING for election-cycle"; FAIL=1; }
+  [ -s "$ANALYSIS_DIR/wildcards-blackswans.md" ] \
+    || { echo "❌ long-horizon: wildcards-blackswans.md is BLOCKING for election-cycle"; FAIL=1; }
+  [ -s "$ANALYSIS_DIR/quantitative-swot.md" ] \
+    || { echo "❌ long-horizon: quantitative-swot.md is BLOCKING for election-cycle"; FAIL=1; }
+  [ -s "$ANALYSIS_DIR/political-stride-assessment.md" ] \
+    || { echo "❌ long-horizon: political-stride-assessment.md is BLOCKING for election-cycle"; FAIL=1; }
+fi
+
+# LH-6 — cross-horizon citation in cross-reference-map.md
+if [ -s "$ANALYSIS_DIR/cross-reference-map.md" ]; then
+  case "$ARTICLE_TYPE" in
+    quarter-ahead)
+      grep -qE 'analysis/daily/[0-9-]+/week-ahead/' "$ANALYSIS_DIR/cross-reference-map.md" \
+        || { echo "❌ long-horizon: quarter-ahead must cite at least one week-ahead predecessor"; FAIL=1; }
+      grep -qE 'analysis/daily/[0-9-]+/month-ahead/' "$ANALYSIS_DIR/cross-reference-map.md" \
+        || { echo "❌ long-horizon: quarter-ahead must cite at least one month-ahead predecessor"; FAIL=1; }
+      ;;
+    year-ahead)
+      grep -qE 'analysis/daily/[0-9-]+/quarter-ahead/' "$ANALYSIS_DIR/cross-reference-map.md" \
+        || { echo "❌ long-horizon: year-ahead must cite at least one quarter-ahead predecessor"; FAIL=1; }
+      ;;
+    election-cycle)
+      grep -qE 'analysis/daily/[0-9-]+/year-ahead/' "$ANALYSIS_DIR/cross-reference-map.md" \
+        || { echo "❌ long-horizon: election-cycle must cite at least one year-ahead predecessor"; FAIL=1; }
+      ;;
+  esac
+fi
+
+if [ "$BLOCKING" = "1" ] && [ "$FAIL" = "1" ]; then
+  echo "❌ long-horizon gate FAILED for $ARTICLE_TYPE"
+  exit 1
+elif [ "$FAIL" = "1" ]; then
+  echo "⚠️ long-horizon gate produced warnings for $ARTICLE_TYPE (non-blocking at this article type)"
+fi
+echo "✅ long-horizon gate complete for $ARTICLE_TYPE"
+```

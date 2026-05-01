@@ -7,6 +7,9 @@ Import this **in addition to** the 8 core modules for aggregation / reference-gr
 - `news-monthly-review`
 - `news-week-ahead`
 - `news-month-ahead`
+- `news-quarter-ahead` (long-horizon — also imports `ext/long-horizon-forecasting.md`)
+- `news-year-ahead` (long-horizon — also imports `ext/long-horizon-forecasting.md`)
+- `news-election-cycle` (long-horizon — also imports `ext/long-horizon-forecasting.md` and `ext/cycle-rollover.md`)
 - `news-realtime-monitor`
 
 These are the flagship editorial surfaces of Riksdagsmonitor. Tier-C rules are **additive**, not replacements — all 23 Family A/B/C/D artifacts from `04-analysis-pipeline.md` are already mandatory for every workflow. Tier-C adds depth multipliers, cross-type synthesis, sibling-citation requirements and a higher article-output floor.
@@ -29,6 +32,9 @@ Aggregation depth scales with the period covered. Multiply the `comprehensive` m
 | `news-evening-analysis` | 1.0× | Standard day-in-review. |
 | `news-week-ahead` / `news-weekly-review` | 1.2× | 5–7 day window synthesis. |
 | `news-month-ahead` / `news-monthly-review` | 1.5× | 30-day window; longitudinal patterns required. |
+| `news-quarter-ahead` | 1.7× | 90-day window; parliamentary-season lens; long-horizon-forecasting rules apply. |
+| `news-year-ahead` | 2.0× | 365-day window; PESTLE blocking; full Nordic-peer IMF compare. |
+| `news-election-cycle` | 2.5× | 4-year mandate; 24th artifact (`cycle-trajectory.md`); PESTLE + STRIDE + wildcards blocking. |
 
 All 23 artifacts remain mandatory regardless of multiplier. The multiplier extends per-item body length and framework richness (e.g. month-ahead `coalition-mathematics.md` carries five party-coalition Sainte-Laguë variants vs one for realtime).
 
@@ -41,6 +47,9 @@ Aggregation workflows **must** read sibling article-type analyses produced for t
 | `news-evening-analysis` | Today's `propositions/`, `motions/`, `committeeReports/`, `interpellations/`, any `realtime-*/` |
 | `news-week-ahead` / `news-weekly-review` | Last 7 days of per-type folders |
 | `news-month-ahead` / `news-monthly-review` | Last 30 days of per-type folders |
+| `news-quarter-ahead` | Last 90 days of per-type folders + most recent `week-ahead` + `month-ahead` |
+| `news-year-ahead` | Last 180 days of per-type folders + ≥ 2 `quarter-ahead` + ≥ 4 `monthly-review` |
+| `news-election-cycle` | Last 365 days of per-type folders + ≥ 2 `year-ahead` + ≥ 12 `monthly-review` |
 | `news-realtime-monitor` | Prior 7 days' `realtime-*/` for continuity chain |
 
 Cross-references go into `cross-reference-map.md` with one entry per sibling folder read. Missing cross-type citations fail the gate.

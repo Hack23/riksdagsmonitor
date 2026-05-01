@@ -40,17 +40,54 @@ export const AGGREGATION_ORDER: readonly string[] = [
   'threat-analysis.md',
   // documents/* expanded inline here
   'election-2026-analysis.md',
+  'election-cycle-analysis.md', // generalised alias for election-2026-analysis.md (filename-variant; canonical name as cycles roll over). De-duplicated at render time via FILENAME_ALIASES below — if both files exist in a folder, only the one encountered first in this order is emitted.
+  'cycle-trajectory.md', // 24th artifact — election-cycle workflow ONLY
+  'parliamentary-season.md', // long-horizon workflows (quarter / year / cycle)
   'coalition-mathematics.md',
   'voter-segmentation.md',
   'comparative-international.md',
   'historical-parallels.md',
   'implementation-feasibility.md',
+  'pestle-analysis.md', // year-ahead + cycle blocking; supplementary elsewhere
+  'wildcards-blackswans.md', // year-ahead + cycle blocking
+  'quantitative-swot.md', // year-ahead + cycle blocking
+  'political-stride-assessment.md', // cycle blocking
   'devils-advocate.md',
   'classification-results.md',
   'cross-reference-map.md',
+  'horizon-pir-rollforward.md', // long-horizon supplementary
   'methodology-reflection.md',
   'data-download-manifest.md',
 ];
+
+/**
+ * Filename-variant aliases. Each key maps to a set of equivalent filenames
+ * that represent the same logical artifact. The aggregator emits at most
+ * **one** member of each alias group per folder — if two aliased filenames
+ * are present on disk (e.g. both `election-2026-analysis.md` and
+ * `election-cycle-analysis.md`), only the first one encountered in
+ * {@link AGGREGATION_ORDER} is rendered; the others are skipped.
+ *
+ * This guarantees backwards compatibility with ~50 existing run folders that
+ * use the legacy `election-2026-analysis.md` name while the cycle-agnostic
+ * `election-cycle-analysis.md` becomes the canonical name post-2026 rollover.
+ */
+export const FILENAME_ALIASES: ReadonlyArray<ReadonlySet<string>> = [
+  new Set(['election-2026-analysis.md', 'election-cycle-analysis.md']),
+];
+
+/**
+ * Resolve the alias group (if any) that a filename belongs to. Returns the
+ * set of equivalent filenames including `file` itself, or `null` if `file`
+ * has no aliases.
+ */
+export function aliasGroupFor(file: string): ReadonlySet<string> | null {
+  for (const group of FILENAME_ALIASES) {
+    if (group.has(file)) return group;
+  }
+  return null;
+}
+
 
 /**
  * Human-readable English section titles for each artifact. The aggregator
@@ -68,6 +105,14 @@ const SECTION_TITLES: Record<string, string> = {
   'risk-assessment.md': 'Risk Assessment',
   'threat-analysis.md': 'Threat Analysis',
   'election-2026-analysis.md': 'Election 2026 Analysis',
+  'election-cycle-analysis.md': 'Election Cycle Analysis',
+  'cycle-trajectory.md': 'Cycle Trajectory',
+  'parliamentary-season.md': 'Parliamentary Season Outlook',
+  'pestle-analysis.md': 'PESTLE Analysis',
+  'wildcards-blackswans.md': 'Wildcards & Black Swans',
+  'quantitative-swot.md': 'Quantitative SWOT',
+  'political-stride-assessment.md': 'Political STRIDE Assessment',
+  'horizon-pir-rollforward.md': 'Horizon PIR Roll-Forward',
   'coalition-mathematics.md': 'Coalition Mathematics',
   'voter-segmentation.md': 'Voter Segmentation',
   'scenario-analysis.md': 'Scenario Analysis',
