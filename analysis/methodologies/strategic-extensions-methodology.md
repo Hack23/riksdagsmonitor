@@ -369,7 +369,7 @@ Produce a table of parties × claims-about-them × depth-score (words + citation
 
 ## 🌐 Long-horizon extensions (`horizonDays ≥ 90`)
 
-> **DRY policy.** This section references — and never duplicates — the bounded-context authority:
+> **DRY policy.** This section summarizes operational floors; canonical values live in the bounded-context authority:
 >
 > - **Authoritative source** for horizon stratification, scenario-tree depth, counterfactual minima, IMF projection-year stamps, PESTLE-mandatory thresholds, cross-horizon citation rules and forward-indicator bands → [`.github/prompts/ext/long-horizon-forecasting.md`](../../.github/prompts/ext/long-horizon-forecasting.md).
 > - **Aggregation multipliers** (1.7 / 2.0 / 2.5) and sibling-folder ingestion → [`.github/prompts/ext/tier-c-aggregation.md`](../../.github/prompts/ext/tier-c-aggregation.md).
@@ -377,12 +377,12 @@ Produce a table of parties × claims-about-them × depth-score (words + citation
 
 ### Long-horizon scenario-tree composition
 
-When the run resolves to `quarter-ahead`, `year-ahead` or `election-cycle`, `scenario-analysis.md` MUST branch deeper than the baseline ≥ 3 scenarios. Tree shape comes from `analysis/article-types.json → longHorizonRules.scenarioCount` (× branches):
+When the run resolves to `quarter-ahead`, `year-ahead` or `election-cycle`, `scenario-analysis.md` MUST branch deeper than the baseline ≥ 3 scenarios. Tree shape comes from `analysis/article-types.json → longHorizonRules`, using `scenarioCount` for base scenarios plus `wildcardCount` (`year-ahead`) and `scenarioBranchesPerScenario` (`election-cycle`) where applicable:
 
 | Article type | Tree shape (minimum) | Leaves |
 |--------------|----------------------|--------|
 | `quarter-ahead` | 4 base scenarios | 4 |
-| `year-ahead` | 4 base scenarios + ≥ 3 wildcards (registry default 5; recorded in `wildcards-blackswans.md`) | 4 + ≥ 3 |
+| `year-ahead` | 4 base scenarios + 5 wildcard cards by default (recorded in `wildcards-blackswans.md`) | **≥ 9** |
 | `election-cycle` | 4 base scenarios × 3 governing-coalition branches | **12** |
 
 Probabilities sum to 100 % at every level (base set; per-scenario branch set). See the canonical scenario summary table and per-scenario branching Mermaid in [`analysis/templates/scenario-analysis.md`](../templates/scenario-analysis.md). Wildcard cards for `year-ahead` are authored in [`analysis/templates/wildcards-blackswans.md`](../templates/wildcards-blackswans.md).
@@ -395,8 +395,8 @@ Probabilities sum to 100 % at every level (base set; per-scenario branch set). S
 |--------------|------------------------------------|
 | `week-ahead` / `month-ahead` | 1 |
 | `quarter-ahead` | 2 |
-| `year-ahead` | **≥ 1 mandatory** (registry default 2 — never below 1) |
-| `election-cycle` | **≥ 2 mandatory** (registry default 3 — never below 2) |
+| `year-ahead` | **≥ 2 mandatory** |
+| `election-cycle` | **≥ 3 mandatory** |
 
 Paragraph structure (4–8 sentences): (a) restate the assumption being challenged, (b) construct the alternative world referencing the linked scenario ID, (c) declare the falsification trigger that would update the analysis.
 
@@ -409,8 +409,9 @@ WEP terms (`very likely`, `likely`, `roughly even`, `unlikely`, `very unlikely`)
 Affected artifacts:
 
 - `scenario-analysis.md`, `devils-advocate.md`, `intelligence-assessment.md` (Family C)
-- `forward-indicators.md`, `risk-assessment.md`, `threat-analysis.md`, `cross-reference-map.md` (Family C/D)
-- `pestle-analysis.md` (Family D — blocking for year/cycle), `wildcards-blackswans.md` (Family D)
+- `risk-assessment.md`, `threat-analysis.md` (Family A)
+- `cross-reference-map.md` (Family B)
+- `forward-indicators.md`, `pestle-analysis.md` (Family D — `pestle-analysis.md` blocking for year/cycle), `wildcards-blackswans.md` (Family D)
 
 Single-horizon (`horizonDays < 90`) Family-C/D artifacts retain their existing column structure — **no regression**.
 
