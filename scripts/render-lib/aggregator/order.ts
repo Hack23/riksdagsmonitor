@@ -41,6 +41,7 @@ export const AGGREGATION_ORDER: readonly string[] = [
   // documents/* expanded inline here
   'election-2026-analysis.md',
   'election-cycle-analysis.md', // generalised alias for election-2026-analysis.md (filename-variant; canonical name as cycles roll over). De-duplicated at render time via FILENAME_ALIASES below — if both files exist in a folder, only the one encountered first in this order is emitted.
+  'election-2026-implications.md', // legacy filename variant — same alias group; listed here so it participates in AGGREGATION_ORDER de-dupe rather than being appended as a supplementary file.
   'cycle-trajectory.md', // 24th artifact — election-cycle workflow ONLY
   'parliamentary-season.md', // long-horizon workflows (quarter / year / cycle)
   'coalition-mathematics.md',
@@ -106,6 +107,7 @@ const SECTION_TITLES: Record<string, string> = {
   'threat-analysis.md': 'Threat Analysis',
   'election-2026-analysis.md': 'Election 2026 Analysis',
   'election-cycle-analysis.md': 'Election Cycle Analysis',
+  'election-2026-implications.md': 'Election 2026 Analysis',
   'cycle-trajectory.md': 'Cycle Trajectory',
   'parliamentary-season.md': 'Parliamentary Season Outlook',
   'pestle-analysis.md': 'PESTLE Analysis',

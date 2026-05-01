@@ -36,8 +36,8 @@
 | **`cycleEnd`** | `electionCycles[cycleAnchor].end` | e.g. `2026-09-13` (current) or `2030-09-08` (next) |
 | **`cycleLabel`** | `electionCycles[cycleAnchor].label` | e.g. `Tidö 2022–2026` (current) or `Post-2026 Mandate` (next) |
 | **`governingCoalition`** | `electionCycles[cycleAnchor].governingCoalition` | party array or `null` (next) |
-| **`daysSinceCycleStart`** | `today − cycleStart` (days) | computed at runtime |
-| **`daysToCycleEnd`** | `cycleEnd − today` (days) | computed at runtime |
+| **`daysSinceCycleStart`** | `articleDate − cycleStart` (days) | computed at runtime |
+| **`daysToCycleEnd`** | `cycleEnd − articleDate` (days) | computed at runtime |
 | **`daysToElection`** | `daysToElection(articleDate)` | signed integer (negative = past) |
 
 **Cycle-anchor footnote:** The Swedish general elections anchoring this template are **2026-09-13** (next election from the current cycle) and **2030-09-08** (projected next election from the post-2026 cycle). See `analysis/article-types.json → electionCycles` for the authoritative dates.

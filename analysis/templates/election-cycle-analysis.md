@@ -7,6 +7,6 @@ Both filenames resolve to the same cycle-parameterised template. The `election-2
 **Aliasing is handled by:**
 - `scripts/render-lib/aggregator/order.ts` → `FILENAME_ALIASES` (de-duplicates at render time)
 - `.github/prompts/04-analysis-pipeline.md` → §Filename variants
-- `analysis/methodologies/artifact-catalog.md` → Family D filename variants
+- Documentation note: `analysis/methodologies/artifact-catalog.md` may lag filename-alias updates and is not the authoritative source for this alias
 
 **Cycle-anchor resolution:** `scripts/horizon-context.ts` → `activeCycleAnchor(articleDate)` determines whether the template renders with `cycleAnchor=current` (pre-election / incumbent mandate) or `cycleAnchor=next` (post-election / formation phase).
