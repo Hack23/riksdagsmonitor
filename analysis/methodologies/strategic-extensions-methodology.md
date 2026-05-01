@@ -369,7 +369,11 @@ Produce a table of parties × claims-about-them × depth-score (words + citation
 
 ## 🌐 Long-horizon extensions (`horizonDays ≥ 90`)
 
-> **DRY policy.** The authoritative source for horizon stratification, scenario-tree depth, counterfactual minima, IMF projection-year stamps, PESTLE-mandatory thresholds, cross-horizon citation rules and forward-indicator bands is [`.github/prompts/ext/long-horizon-forecasting.md`](../../.github/prompts/ext/long-horizon-forecasting.md). The numbers below reference that bounded-context module — they are **not duplicated** here. Aggregation multipliers (1.7 / 2.0 / 2.5) live in [`.github/prompts/ext/tier-c-aggregation.md`](../../.github/prompts/ext/tier-c-aggregation.md). Gate enforcement happens in [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) (check **LH-3** = counterfactual paragraph minima).
+> **DRY policy.** This section references — and never duplicates — the bounded-context authority:
+>
+> - **Authoritative source** for horizon stratification, scenario-tree depth, counterfactual minima, IMF projection-year stamps, PESTLE-mandatory thresholds, cross-horizon citation rules and forward-indicator bands → [`.github/prompts/ext/long-horizon-forecasting.md`](../../.github/prompts/ext/long-horizon-forecasting.md).
+> - **Aggregation multipliers** (1.7 / 2.0 / 2.5) and sibling-folder ingestion → [`.github/prompts/ext/tier-c-aggregation.md`](../../.github/prompts/ext/tier-c-aggregation.md).
+> - **Gate enforcement** → [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md), check **LH-3** = counterfactual paragraph minima.
 
 ### Long-horizon scenario-tree composition
 
@@ -398,7 +402,15 @@ Paragraph structure (4–8 sentences): (a) restate the assumption being challeng
 
 ### Horizon stratification of strategic extensions
 
-When `horizonDays ≥ 90`, every Family-C/D artifact in this methodology gains a **horizon-class column** (`72h | week | month | quarter | year | cycle | election`) on its probabilistic tables. WEP terms (`very likely`, `likely`, `roughly even`, `unlikely`, `very unlikely`) carry an inline `[horizon:<band>]` tag within ± 80 characters of the term. WEP-band degradation rules (no `very likely`/`very unlikely` at `year`/`cycle` without ≥ 3 corroborated cycle-aged sources) are enforced at Pass-2 review per `ext/long-horizon-forecasting.md` §1. Affected artifacts: `scenario-analysis.md`, `devils-advocate.md`, `intelligence-assessment.md`, `forward-indicators.md`, `risk-assessment.md`, `threat-analysis.md`, `cross-reference-map.md`, `pestle-analysis.md` (blocking for year/cycle), `wildcards-blackswans.md`.
+When `horizonDays ≥ 90`, every Family-C/D artifact in this methodology gains a **horizon-class column** (`72h | week | month | quarter | year | cycle | election`) on its probabilistic tables.
+
+WEP terms (`very likely`, `likely`, `roughly even`, `unlikely`, `very unlikely`) carry an inline `[horizon:<band>]` tag within ± 80 characters of the term. WEP-band degradation rules — no `very likely` / `very unlikely` at `year` / `cycle` without ≥ 3 corroborated cycle-aged sources — are enforced at Pass-2 review per `ext/long-horizon-forecasting.md` §1.
+
+Affected artifacts:
+
+- `scenario-analysis.md`, `devils-advocate.md`, `intelligence-assessment.md` (Family C)
+- `forward-indicators.md`, `risk-assessment.md`, `threat-analysis.md`, `cross-reference-map.md` (Family C/D)
+- `pestle-analysis.md` (Family D — blocking for year/cycle), `wildcards-blackswans.md` (Family D)
 
 Single-horizon (`horizonDays < 90`) Family-C/D artifacts retain their existing column structure — **no regression**.
 
