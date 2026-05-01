@@ -6,17 +6,17 @@
 
 <p align="center">
   <strong>📊 Family D — Lens-Specific Analytical Depth</strong><br>
-  <em>🎯 Election 2026 · Voter Segmentation · Coalition Mathematics · Historical Parallels · Media Framing · Implementation Feasibility · Forward Indicators</em>
+  <em>🎯 Current-cycle election · Next-cycle election · Voter Segmentation · Coalition Mathematics · Historical Parallels · Media Framing · Implementation Feasibility · Forward Indicators</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-04-25 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.4 | **📅 Last Updated:** 2026-05-01 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -27,11 +27,85 @@
 | Element | Value | Reference |
 |---------|-------|-----------|
 | **F3EAD Stage** | **ANALYZE → DISSEMINATE** | This methodology applies domain lenses (electoral, historical, media, implementation, forward-watch) to enrich intelligence products |
-| **PIRs Served** | election-2026.md serves PIR-6 (Election Integrity); coalition-mathematics.md serves PIR-1 (Coalition Stability); implementation-feasibility.md serves PIR-5 (Fiscal Trajectory), PIR-7 (Democratic Norms) | See [`political-style-guide.md` §PIR/EEI Catalog](political-style-guide.md#-priority-intelligence-requirements-pir--essential-elements-of-information-eei) |
+| **PIRs Served** | `election-2026-analysis.md` (current-cycle) serves PIR-6 (Election Integrity); coalition-mathematics.md serves PIR-1 (Coalition Stability); implementation-feasibility.md serves PIR-5 (Fiscal Trajectory), PIR-7 (Democratic Norms) | See [`political-style-guide.md` §PIR/EEI Catalog](political-style-guide.md#-priority-intelligence-requirements-pir--essential-elements-of-information-eei) |
 | **Admiralty Floor** | Polling data requires ≥[B2] (named pollster, date, sample); historical parallels require ≥[A1] (official records from Riksdag archive) | See [`political-style-guide.md` §Admiralty Code](political-style-guide.md#-admiralty-source-reliability-code-nato-stanag-2022) |
-| **WEP Requirement** | election-2026.md seat projections with WEP probability; forward-indicators.md triggers with WEP likelihood; scenario probabilities must sum to 100% | See [`political-style-guide.md` §WEP + ODNI](political-style-guide.md#-words-of-estimative-probability-wep--odni-confidence-overlay) |
+| **WEP Requirement** | `election-2026-analysis.md` (alias: `election-cycle-analysis.md`) seat projections with WEP probability; forward-indicators.md triggers with WEP likelihood; scenario probabilities must sum to 100% | See [`political-style-guide.md` §WEP + ODNI](political-style-guide.md#-words-of-estimative-probability-wep--odni-confidence-overlay) |
 | **ICD 203 Gate** | Standard 5 (customer relevance — forward indicators), 6 (logical argumentation — coalition mathematics), 9 (visual information — all files) | See [`political-style-guide.md` §ICD 203](political-style-guide.md#-icd-203-analytic-tradecraft-standards-mapping) |
 | **SAT(s)** | Morphological (election-2026, coalition-mathematics); Outside-In Thinking (historical-parallels, voter-segmentation, media-framing); Premortem Analysis (implementation-feasibility); Indicators and Signposts (forward-indicators) | See [`political-style-guide.md` §SATs](political-style-guide.md#-structured-analytic-techniques-sats-catalog) |
+
+---
+
+## 🔀 Multi-cycle electoral lens
+
+This methodology is **cycle-parameterised**. Two separate fields govern cycle-anchor semantics — they must not be conflated:
+
+- **`electionCycleAnchor`** (`analysis/article-types.json → types[*].electionCycleAnchor`) — the article-type registry field; one of `current | next | both | none`. Set per article type and consumed by workflows to decide which anchor(s) to generate.
+- **`cycleAnchor`** (`scripts/horizon-context.ts → horizonContext(typeId, articleDate).cycleAnchor`) — the *date-derived* active cycle; **only** `current | next`. Resolved at run time from `analysis/article-types.json → electionCycles` by `activeCycleAnchor(articleDate)` — returns `next` when `articleDate` falls inside the next cycle's start..end window, `current` otherwise.
+
+### Anchor enum
+
+| Field | Value | Meaning |
+|-------|-------|---------|
+| `electionCycleAnchor` (article-type registry) | `current` | Article type is anchored to the in-progress mandate cycle |
+| `electionCycleAnchor` (article-type registry) | `next` | Article type is anchored to the upcoming mandate cycle |
+| `electionCycleAnchor` (article-type registry) | `both` | Dual-anchor run — produces artifacts for both cycles simultaneously; used during the ±30-day rollover window |
+| `electionCycleAnchor` (article-type registry) | `none` | Article type does not use an election-cycle lens (e.g., realtime-monitor on a non-electoral event) |
+| `cycleAnchor` (HorizonContext, date-derived) | `current` | `articleDate` falls before the next election anchor; in-progress cycle is authoritative |
+| `cycleAnchor` (HorizonContext, date-derived) | `next` | `articleDate` falls on or after the next election anchor; upcoming cycle is authoritative |
+
+### Swedish election-cycle anchor dates
+
+| Cycle ID | Label | Start | End |
+|----------|-------|-------|-----|
+| `tido-2022` | Tidö Mandate (2022–2026) | 2022-09-11 | 2026-09-13 |
+| `post-2026` | Post-2026 Mandate (2026–2030) | 2026-09-13 | 2030-09-08 |
+| *(future — not yet in registry)* | Post-2030 Mandate (2030–2034) | 2030-09-08 | *(TBD)* |
+
+The authoritative cycle registry lives in `analysis/article-types.json → electionCycles`. These dates are consumed by `scripts/horizon-context.ts → activeCycleAnchor()` and must not be hardcoded in any analysis template.
+
+### Rollover trigger
+
+The cycle rolls over when `ARTICLE_DATE` is within **±30 days** of the next election anchor. Activation is determined by the ext module's own shell predicate (comparing `$ARTICLE_DATE` against `analysis/article-types.json → electionCycles.next.start`), **not** by `horizonContext()` — workflows do not currently call `tsx scripts/horizon-context.ts`. The pseudo-code below illustrates the logic; the authoritative implementation is in [`.github/prompts/ext/cycle-rollover.md` §1](../../.github/prompts/ext/cycle-rollover.md):
+
+```
+# Ext-module shell predicate (simplified)
+DAYS_DELTA=$(( ($(date -d "$ARTICLE_DATE" +%s) - $(date -d "$ELECTION_DATE" +%s)) / 86400 ))
+cycleRolloverActive = abs(DAYS_DELTA) <= 30
+```
+
+When active, the ext module applies the phased dual-anchor behaviour defined in §Cycle-rollover playbook below. It does **not** mutate `analysis/article-types.json`; `electionCycleAnchor` in the registry stays whatever the operator has set and is flipped separately (T+45 to T+60 via a CEO-approved Normal change).
+
+---
+
+## 📋 Cycle-rollover playbook (date-triggered)
+
+Full procedure: [`.github/prompts/ext/cycle-rollover.md`](../../.github/prompts/ext/cycle-rollover.md). The table below is an inline summary; always defer to the ext module for the authoritative runbook.
+
+| Rule | Detail |
+|------|--------|
+| **Activation window** | `ARTICLE_DATE` within ±30 days of `analysis/article-types.json → electionCycles.next.start` |
+| **T-30 → T-1** | Both anchors generated; `next/` artifacts marked `[provisional pre-election]` |
+| **T+0 (election day)** | Emergency single-run via `news-realtime-monitor`; no cycle flip until results are locked |
+| **T+1 → T+30** | Both anchors generated; `current/` artifacts gain `# 📜 Mandate retrospective` H1; `next/` upgraded from provisional |
+| **T+31 → T+45** | Only `next/` regenerated; `current/` frozen as historical record |
+| **Filename rename rule** | Post-rollover, workflows write `election-cycle-analysis.md` (the cycle-agnostic name); `election-2026-analysis.md` remains a valid alias indefinitely via `FILENAME_ALIASES` in `scripts/render-lib/aggregator/order.ts`. When **both** files exist in the same folder the aggregator de-duplicates by `AGGREGATION_ORDER` — `election-2026-analysis.md` appears first in that list, so the legacy filename is preferred at render time; write only one name per run to avoid the ambiguity |
+| **Carry-forward rule** | Mandate-fulfilment scorecard, KU reprimands ledger, coalition cohesion trajectory archived to `analysis/cycles/<cycle-range>/`; PIRs with `inheritsCycle: true` carry forward verbatim |
+| **PIR archival rule** | Cycle-scoped PIRs receive `status: "archived"`, `archivedReason: "cycle-rollover-<election-date>"`, and a `successor` where applicable; see ext module §4 |
+| **Operator flip** | Registry flip (`electionCycleAnchor` in `analysis/article-types.json`) is a **CEO-approved Normal change** under `Change_Management.md`; typically T+45 to T+60 post-election once government formation is complete |
+| **Audit trail** | Every activation appends a row to `analysis/cycles/rollover-log.md`. **Note:** `analysis/cycles/` does not exist in the repo yet — operators must `mkdir -p analysis/cycles/` as part of the manual runbook (see ext module §5); automated creation is deferred to the planned `scripts/cycle-rollover.ts` |
+
+---
+
+## 📈 Cycle-trajectory artefact
+
+The **24th artifact** for the `news-election-cycle` workflow is `cycle-trajectory.md`. It provides a multi-year trend assessment of Swedish political-economic trajectory across the full 4-year mandate.
+
+- **Template:** [`analysis/templates/cycle-trajectory.md`](../../analysis/templates/cycle-trajectory.md)
+- **Produced by:** `news-election-cycle` **only** — all other workflows must not write this file
+- **Save path:** `analysis/daily/${ARTICLE_DATE}/election-cycle/${CYCLE_ANCHOR}/cycle-trajectory.md`
+- **Blocking gate:** required by `.github/prompts/05-analysis-gate.md` § long-horizon checks
+- **Content:** ICD 203 BLUF + WEP per year + horizon bands T+1y / T+2y / T+5y, combining SCB national-accounts trajectory, IMF WEO multi-vintage projections, and Riksdag throughput metrics (vote counts, committee productivity, KU reprimands)
+- **Cycle-rollover rewind:** on registry flip, this file's content rewinds to a T+0 baseline (empty trajectory for the opening cycle); subsequent runs accrete evidence organically — see ext module §3.3
 
 ---
 
@@ -45,7 +119,7 @@ These products are **core — every run produces all 7**. The output set is stab
 
 | Template | Behaviour on a light-event day | Behaviour on a P0-dense day |
 |----------|-------------------------------|-----------------------------|
-| `election-2026-analysis.md` | Seat-projection delta vs. last poll + which parties crossed the 4 % threshold; until 2026-09 it tracks the campaign; post-2026 it tracks the new government-formation context | Full seat projection + coalition viability + campaign-phase alignment of every P0 to the election cycle |
+| `election-2026-analysis.md` (alias: `election-cycle-analysis.md`) — **Note:** the alias is filename-only; the underlying template `analysis/templates/election-2026-analysis.md` remains 2026-scoped (pre-election window 2025-10 → 2026-09) until a cycle-parameterised template lands. Post-rollover, workflows write `election-cycle-analysis.md` but the content is generated from the same template with the cycle context injected at runtime via `electionCycleAnchor`. | Seat-projection delta vs. last poll + which parties crossed the 4 % threshold; for the current cycle it tracks the campaign; for the next cycle it tracks post-election government-formation context | Full seat projection + coalition viability + campaign-phase alignment of every P0 to the active cycle; `electionCycleAnchor` (article-type registry) determines which cycle lens is applied |
 | `voter-segmentation.md` | Baseline segment positions (5 axes: age, geography, education, income, incumbency) | Per-document segment impact table with ≥5 cohorts and quantified swing estimates |
 | `coalition-mathematics.md` | Current seat map + pivotal-vote reference + confidence-vote arithmetic | Scenario branching: each contested vote run through Sainte-Laguë, pivotal-actor detection, SD-Tidöbloc-opposition matrix |
 | `historical-parallels.md` (variant: `historical-baseline.md`) | Closest baseline precedent ≤ 40 years with similarity score, or explicit "no-precedent" finding | Full parallel with outcome, stakeholder behaviour, and Bayesian base-rate update |
@@ -64,7 +138,7 @@ flowchart LR
 
     T[Family A/B complete<br/>→ Family D core run]:::core
 
-    D1[election-2026-analysis.md]:::electoral
+    D1[election-2026-analysis.md<br/>alias: election-cycle-analysis.md]:::electoral
     D2[voter-segmentation.md]:::electoral
     D3[coalition-mathematics.md]:::electoral
     D4[historical-parallels.md]:::historical
@@ -83,17 +157,17 @@ flowchart LR
 
 ---
 
-## 🗳️ Part 1 — Election 2026 Analysis (`election-2026-analysis.md`)
+## 🗳️ Part 1 — Current-cycle Election Analysis (`election-2026-analysis.md`)
 
-**Filename variant:** `election-2026-implications.md` — identical structure.
+**Filename variants:** `election-2026-implications.md` — identical structure. The cycle-agnostic alias `election-cycle-analysis.md` maps to the same canonical artifact via `FILENAME_ALIASES` in [`scripts/render-lib/aggregator/order.ts`](../../scripts/render-lib/aggregator/order.ts); when both filenames exist in a folder the aggregator de-duplicates and emits only the first-encountered name. Post-2026-rollover, workflows may write `election-cycle-analysis.md` as the generalized name; `election-2026-analysis.md` remains a permanently valid alias.
 
 ### Purpose
-Translate today's policy activity into **electoral consequences** for the September 2026 Riksdag vote: seat trajectories, bloc viability, mandate strength, and pre-election narrative positioning.
+Translate today's policy activity into **electoral consequences** for the active-cycle Riksdag election: seat trajectories, bloc viability, mandate strength, and pre-election narrative positioning. The active cycle is determined by `cycleAnchor` from `scripts/horizon-context.ts → horizonContext()`. During the ±30-day rollover window, both current-cycle and next-cycle sections are produced (see §Cycle-rollover playbook).
 
 ### Input
 - synthesis-summary.md (current events)
 - Opinion polling (SIFO, Novus, Demoskop, Sentio) — use only published, dated figures
-- 2018 + 2022 election results (for baseline trajectory)
+- 2018 + 2022 election results (for baseline trajectory); 2026 results once available for next-cycle analysis
 - Seat-allocation rules (Sainte-Laguë modified + 4 % threshold + 12 % regional)
 
 ### Output — required structure
@@ -491,7 +565,7 @@ flowchart TD
 
     TC[Family A + B complete<br/>→ produce all 7 Family D files]:::core
 
-    E1[election-2026-analysis]:::step
+    E1[election-2026-analysis<br/>(alias: election-cycle-analysis)]:::step
     E2[voter-segmentation]:::step
     E3[coalition-mathematics]:::step
     H[historical-parallels]:::step
@@ -539,15 +613,16 @@ flowchart TD
 
 ## 🔗 Template bindings
 
-| Template | Methodology section |
-|----------|--------------------|
-| `analysis/templates/election-2026-analysis.md` | Part 1 above |
-| `analysis/templates/voter-segmentation.md` | Part 2 above |
-| `analysis/templates/coalition-mathematics.md` | Part 3 above |
-| `analysis/templates/historical-parallels.md` | Part 4 above |
-| `analysis/templates/media-framing-analysis.md` | Part 5 above |
-| `analysis/templates/implementation-feasibility.md` | Part 6 above |
-| `analysis/templates/forward-indicators.md` | Part 7 above |
+| Template | Methodology section | Cycle anchor |
+|----------|--------------------|--------------|
+| `analysis/templates/election-2026-analysis.md` — one template. **Pre-rollover** workflows write `election-2026-analysis.md`; **post-rollover** workflows write `election-cycle-analysis.md`. Both map to the same artifact via `FILENAME_ALIASES` in `scripts/render-lib/aggregator/order.ts`; when both exist the aggregator prefers `election-2026-analysis.md` (first in `AGGREGATION_ORDER`) — write only one name per run. | Part 1 above | `electionCycleAnchor` (article-type registry) |
+| `analysis/templates/voter-segmentation.md` | Part 2 above | any |
+| `analysis/templates/coalition-mathematics.md` | Part 3 above | any |
+| `analysis/templates/historical-parallels.md` | Part 4 above | any |
+| `analysis/templates/media-framing-analysis.md` | Part 5 above | any |
+| `analysis/templates/implementation-feasibility.md` | Part 6 above | any |
+| `analysis/templates/forward-indicators.md` | Part 7 above | any |
+| `analysis/templates/cycle-trajectory.md` | §Cycle-trajectory artefact above | `current` or `next` |
 
 ---
 
@@ -558,6 +633,9 @@ flowchart TD
 - **Frameworks:** [political-swot-framework.md](./political-swot-framework.md) · [political-risk-methodology.md](./political-risk-methodology.md)
 - **Style:** [political-style-guide.md](./political-style-guide.md)
 - **Master protocol:** [ai-driven-analysis-guide.md](./ai-driven-analysis-guide.md)
+- **Cycle rollover:** [`.github/prompts/ext/cycle-rollover.md`](../../.github/prompts/ext/cycle-rollover.md) — activation predicate, rename procedure, carry-forward rules, PIR archival
+- **Cycle-trajectory template:** [`analysis/templates/cycle-trajectory.md`](../../analysis/templates/cycle-trajectory.md) — 24th artifact for `news-election-cycle`
+- **Cycle anchor runtime:** [`scripts/horizon-context.ts`](../../scripts/horizon-context.ts) — `horizonContext()`, `activeCycleAnchor()`, `cycleRolloverActive`
 
 ---
 
@@ -582,4 +660,4 @@ flowchart TD
 
 ---
 
-*Generated following Riksdagsmonitor Electoral & Domain Methodology v1.0 — Family D Lens-Specific Layer.*
+*Generated following Riksdagsmonitor Electoral & Domain Methodology v1.4 — Family D Lens-Specific Layer.*
