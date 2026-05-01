@@ -40,14 +40,22 @@ export const AGGREGATION_ORDER: readonly string[] = [
   'threat-analysis.md',
   // documents/* expanded inline here
   'election-2026-analysis.md',
+  'election-cycle-analysis.md', // generalised alias for election-2026-analysis.md (filename-variant; canonical name as cycles roll over)
+  'cycle-trajectory.md', // 24th artifact — election-cycle workflow ONLY
+  'parliamentary-season.md', // long-horizon workflows (quarter / year / cycle)
   'coalition-mathematics.md',
   'voter-segmentation.md',
   'comparative-international.md',
   'historical-parallels.md',
   'implementation-feasibility.md',
+  'pestle-analysis.md', // year-ahead + cycle blocking; supplementary elsewhere
+  'wildcards-blackswans.md', // year-ahead + cycle blocking
+  'quantitative-swot.md', // year-ahead + cycle blocking
+  'political-stride-assessment.md', // cycle blocking
   'devils-advocate.md',
   'classification-results.md',
   'cross-reference-map.md',
+  'horizon-pir-rollforward.md', // long-horizon supplementary
   'methodology-reflection.md',
   'data-download-manifest.md',
 ];
@@ -68,6 +76,14 @@ const SECTION_TITLES: Record<string, string> = {
   'risk-assessment.md': 'Risk Assessment',
   'threat-analysis.md': 'Threat Analysis',
   'election-2026-analysis.md': 'Election 2026 Analysis',
+  'election-cycle-analysis.md': 'Election Cycle Analysis',
+  'cycle-trajectory.md': 'Cycle Trajectory',
+  'parliamentary-season.md': 'Parliamentary Season Outlook',
+  'pestle-analysis.md': 'PESTLE Analysis',
+  'wildcards-blackswans.md': 'Wildcards & Black Swans',
+  'quantitative-swot.md': 'Quantitative SWOT',
+  'political-stride-assessment.md': 'Political STRIDE Assessment',
+  'horizon-pir-rollforward.md': 'Horizon PIR Roll-Forward',
   'coalition-mathematics.md': 'Coalition Mathematics',
   'voter-segmentation.md': 'Voter Segmentation',
   'scenario-analysis.md': 'Scenario Analysis',
