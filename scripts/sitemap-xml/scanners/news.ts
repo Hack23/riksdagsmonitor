@@ -22,6 +22,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import { getFileModTime } from '../git-timestamps.js';
+import { getBySubfolder } from '../../render-lib/article-types.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -91,5 +92,19 @@ export function getNewsArticles(): ArticleGroup[] {
 
   console.log(`  Found ${articles.size} news article groups`);
 
-  return Array.from(articles.values()).sort((a, b) => a.baseSlug.localeCompare(b.baseSlug));
+  // Type-aware sorting: sort by date descending (most recent first),
+  // then by registry-driven horizonDays descending as tiebreaker.
+  return Array.from(articles.values()).sort((a, b) => {
+    // Primary: lastmod descending (most recent first)
+    const dateCmp = b.lastmod.localeCompare(a.lastmod);
+    if (dateCmp !== 0) return dateCmp;
+    // Tiebreaker: registry horizonDays descending (long-horizon articles first)
+    const subA = a.baseSlug.match(/\d{4}-\d{2}-\d{2}-(.+)/)?.[1] ?? '';
+    const subB = b.baseSlug.match(/\d{4}-\d{2}-\d{2}-(.+)/)?.[1] ?? '';
+    const entryA = getBySubfolder(subA);
+    const entryB = getBySubfolder(subB);
+    const horizonA = entryA?.horizonDays ?? 0;
+    const horizonB = entryB?.horizonDays ?? 0;
+    return horizonB - horizonA;
+  });
 }

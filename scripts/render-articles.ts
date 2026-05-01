@@ -39,6 +39,8 @@ import {
   aggregateAnalysis,
   DAILY_DIR,
 } from './render-lib/index.js';
+// Registry is consumed inside render-lib/article.ts (called by renderArticleHtml)
+// — no direct usage needed here but the import documents the dependency chain.
 
 const __filename = fileURLToPath(import.meta.url);
 void __filename;

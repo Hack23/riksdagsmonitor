@@ -38,6 +38,8 @@ import { buildGithubBlobUrl } from './url-helpers.js';
 import { renderMarkdownToHtml } from './markdown/index.js';
 import { buildChrome } from './chrome.js';
 
+import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
+
 export interface RenderArticleInput {
   /** Aggregated markdown (front-matter + body) produced by aggregateAnalysis. */
   readonly markdown: string;
@@ -53,23 +55,28 @@ export interface RenderArticleInput {
   readonly artifactsUsed?: readonly string[];
 }
 
-const ARTICLE_TYPE_LABELS: Record<string, string> = {
-  propositions: 'Government propositions',
-  'committee-reports': 'Committee reports',
-  committeeReports: 'Committee reports',
-  motions: 'Opposition motions',
-  interpellations: 'Interpellations',
-  'evening-analysis': 'Evening analysis',
-  'week-ahead': 'Week ahead',
-  'month-ahead': 'Month ahead',
-  'weekly-review': 'Weekly review',
-  'monthly-review': 'Monthly review',
+/**
+ * Hard-coded fallback labels — kept only for legacy article types not yet
+ * in the registry. New types should ONLY add a registry entry.
+ */
+const ARTICLE_TYPE_LABELS_FALLBACK: Record<string, string> = {
   'deep-inspection': 'Deep inspection',
   realtime: 'Realtime pulse',
   'realtime-pulse': 'Realtime pulse',
   breaking: 'Breaking intelligence',
   'parliament-agenda': 'Parliament agenda',
 };
+
+/**
+ * Build a label lookup from the registry + legacy fallbacks.
+ */
+function getArticleTypeLabel(type: string): string {
+  // Try registry first
+  const entry = getById(type) ?? getBySubfolder(type);
+  if (entry) return entry.label;
+  // Fallback for types not in registry
+  return ARTICLE_TYPE_LABELS_FALLBACK[type] ?? 'Political intelligence';
+}
 
 function normalizeArticleType(value: string): string {
   return value
@@ -82,28 +89,29 @@ function normalizeArticleType(value: string): string {
 
 function inferArticleType(canonicalPath: string, title: string): { type: string; label: string } {
   const source = `${canonicalPath} ${title}`.toLowerCase();
-  const candidates = [
-    'propositions',
-    'committee-reports',
+
+  // Try all registered types from the registry first
+  const registry = loadArticleTypesRegistry();
+  for (const entry of registry.types) {
+    if (source.includes(entry.subfolder.toLowerCase()) || source.includes(entry.id.toLowerCase())) {
+      return { type: normalizeArticleType(entry.id), label: entry.label };
+    }
+  }
+
+  // Fallback: legacy candidates not (yet) in the registry
+  const legacyCandidates = [
     'committeeReports',
-    'motions',
-    'interpellations',
-    'evening-analysis',
-    'week-ahead',
-    'month-ahead',
-    'weekly-review',
-    'monthly-review',
     'deep-inspection',
     'realtime-pulse',
     'realtime',
     'breaking',
     'parliament-agenda',
   ];
-  const match = candidates.find((candidate) => source.includes(candidate.toLowerCase()));
+  const match = legacyCandidates.find((candidate) => source.includes(candidate.toLowerCase()));
   const type = normalizeArticleType(match ?? 'political-intelligence');
   return {
     type,
-    label: ARTICLE_TYPE_LABELS[match ?? type] ?? 'Political intelligence',
+    label: getArticleTypeLabel(match ?? type),
   };
 }
 

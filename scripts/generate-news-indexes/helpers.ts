@@ -17,6 +17,7 @@ import type {
 } from './types.js';
 import { LANGUAGES, LANGUAGE_FLAGS, AVAILABLE_IN_TRANSLATIONS } from './constants.js';
 import { decodeHtmlEntities } from '../html-utils.js';
+import { getBySubfolder } from '../render-lib/article-types.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -278,9 +279,22 @@ export function extractFromFilename(fileName: string): string {
 
 /**
  * Classify article type based on content and filename.
- * Supports detection keywords in all 14 languages.
+ * Uses the article-types registry first, then falls back to keyword detection
+ * for legacy articles. Supports detection keywords in all 14 languages.
  */
 export function classifyArticleType(content: string, fileName: string): ArticleTypeValue {
+  // Try registry-driven classification first: extract subfolder slug from filename
+  const slugMatch = fileName.match(/^\d{4}-\d{2}-\d{2}-(.+?)-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
+  if (slugMatch) {
+    const slug = slugMatch[1]!;
+    const entry = getBySubfolder(slug);
+    if (entry) {
+      if (entry.family === 'long-horizon-forecast') return 'prospective';
+      if (entry.family === 'single-type') return 'analysis';
+      if (entry.family === 'tier-c-aggregation') return 'retrospective';
+    }
+  }
+
   const lowerContent: string = content.toLowerCase();
 
   // Prospective: week-ahead / upcoming previews
