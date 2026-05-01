@@ -25,6 +25,9 @@ const __dirname = path.dirname(__filename);
 /** Root news directory */
 export const NEWS_DIR: string = path.join(__dirname, '..', '..', 'news');
 
+/** Language codes derived from LANGUAGES constant — single source of truth. */
+const LANG_CODES = Object.keys(LANGUAGES).join('|');
+
 const TOPIC_INFERENCE_PATTERNS: ReadonlyArray<readonly [string, RegExp]> = [
   ['committees', /(committee|committeereports|utskott|betänkande|committee reports|rapport de commission|ausschuss|위원회|委员会|委員会)/i],
   ['legislation', /(proposition|motion|bill|legislative|lagstift|lovgiv|lainsäädäntö|gesetz|législation|legislación|立法|입법)/i],
@@ -284,7 +287,7 @@ export function extractFromFilename(fileName: string): string {
  */
 export function classifyArticleType(content: string, fileName: string): ArticleTypeValue {
   // Try registry-driven classification first: extract subfolder slug from filename
-  const slugMatch = fileName.match(/^\d{4}-\d{2}-\d{2}-(.+?)-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
+  const slugMatch = fileName.match(new RegExp(`^\\d{4}-\\d{2}-\\d{2}-(.+?)-(${LANG_CODES})\\.html$`));
   if (slugMatch) {
     const slug = slugMatch[1]!;
     const entry = getBySubfolder(slug);

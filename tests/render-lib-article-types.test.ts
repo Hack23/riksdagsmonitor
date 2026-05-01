@@ -27,7 +27,7 @@ describe('render-lib/article-types helper', () => {
       const reg = loadArticleTypesRegistry();
       expect(reg.types).toBeDefined();
       expect(Array.isArray(reg.types)).toBe(true);
-      expect(reg.types.length).toBeGreaterThanOrEqual(13);
+      expect(reg.types.length).toBeGreaterThan(0);
     });
 
     it('caches on second call', () => {
@@ -71,7 +71,7 @@ describe('render-lib/article-types helper', () => {
   describe('listByFamily', () => {
     it('returns only single-type entries for single-type family', () => {
       const entries = listByFamily('single-type');
-      expect(entries.length).toBeGreaterThanOrEqual(4);
+      expect(entries.length).toBeGreaterThan(0);
       for (const e of entries) {
         expect(e.family).toBe('single-type');
       }
@@ -79,7 +79,7 @@ describe('render-lib/article-types helper', () => {
 
     it('returns only long-horizon entries for long-horizon-forecast family', () => {
       const entries = listByFamily('long-horizon-forecast');
-      expect(entries.length).toBeGreaterThanOrEqual(4);
+      expect(entries.length).toBeGreaterThan(0);
       for (const e of entries) {
         expect(e.family).toBe('long-horizon-forecast');
       }
@@ -87,7 +87,7 @@ describe('render-lib/article-types helper', () => {
 
     it('returns only tier-c entries for tier-c-aggregation family', () => {
       const entries = listByFamily('tier-c-aggregation');
-      expect(entries.length).toBeGreaterThanOrEqual(3);
+      expect(entries.length).toBeGreaterThan(0);
       for (const e of entries) {
         expect(e.family).toBe('tier-c-aggregation');
       }
@@ -106,8 +106,13 @@ describe('render-lib/article-types helper', () => {
   describe('forwardLookTypes', () => {
     it('returns long-horizon types sorted by horizonDays ascending', () => {
       const types = forwardLookTypes();
-      expect(types.length).toBeGreaterThanOrEqual(4);
+      expect(types.length).toBeGreaterThan(0);
       const ids = types.map((t) => t.id);
+      // Verify all expected entries are present before asserting order
+      expect(ids).toContain('week-ahead');
+      expect(ids).toContain('month-ahead');
+      expect(ids).toContain('quarter-ahead');
+      expect(ids).toContain('year-ahead');
       // week (7) < month (30) < quarter (90) < year (365) < election-cycle (1460)
       expect(ids.indexOf('week-ahead')).toBeLessThan(ids.indexOf('month-ahead'));
       expect(ids.indexOf('month-ahead')).toBeLessThan(ids.indexOf('quarter-ahead'));

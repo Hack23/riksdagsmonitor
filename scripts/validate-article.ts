@@ -35,7 +35,7 @@
  */
 
 import { readFile, readdir, stat } from 'node:fs/promises';
-import { existsSync, readdirSync } from 'node:fs';
+import { existsSync } from 'node:fs';
 import { join, relative, resolve, basename, dirname } from 'node:path';
 import process from 'node:process';
 
@@ -276,16 +276,21 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
   const parentDir = dirname(absPath);
   const subfolderName = basename(parentDir);
   const typeEntry = getBySubfolder(subfolderName);
-  if (typeEntry && typeEntry.extraArtifacts.length > 0) {
-    const filesOnDisk = existsSync(parentDir)
-      ? new Set(readdirSync(parentDir))
-      : new Set<string>();
-    for (const required of typeEntry.extraArtifacts) {
+  const extraArtifacts = typeEntry?.extraArtifacts ?? [];
+  if (extraArtifacts.length > 0) {
+    let filesOnDisk: Set<string>;
+    try {
+      const entries = await readdir(parentDir);
+      filesOnDisk = new Set(entries);
+    } catch {
+      filesOnDisk = new Set<string>();
+    }
+    for (const required of extraArtifacts) {
       if (!filesOnDisk.has(required)) {
         violations.push({
           file: rel,
           code: 'missing-required-artifact',
-          message: `Article type "${typeEntry.id}" requires artifact "${required}" but it is missing from ${relative(REPO_ROOT, parentDir)}/. Add the artifact or update the registry.`,
+          message: `Article type "${typeEntry!.id}" requires artifact "${required}" but it is missing from ${relative(REPO_ROOT, parentDir)}/. Add the artifact or update the registry.`,
         });
       }
     }
