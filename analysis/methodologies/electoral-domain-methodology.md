@@ -312,27 +312,38 @@ timeline
 
 ---
 
-## 📢 Part 5 — Media Framing Analysis (`media-framing-analysis.md`)
+## 📢 Part 5 — Media Framing & Influence-Operations Analysis (`media-framing-analysis.md`)
 
 ### Purpose
-Document the **frames** being used by each actor and major media outlet so readers can separate substantive content from strategic communication.
+Document the **frames** being used by each actor and major media outlet, **and the manipulation / influence-operations layer riding on top of them**, so readers can separate substantive content from strategic communication and from coordinated inauthentic behaviour. v2.0 (2026-05-01) extends the v1.x frame inventory with psyops, comparative-international lineage, frame lifecycle / longevity, RRPA impact conversion, and an L1–L5 counter-resilience ladder.
 
 ### Input
-- Official press releases from Regeringskansliet, Statskontoret where public-management evidence shapes the frame, party press offices
-- Major outlet coverage (DN, SvD, Aftonbladet, Expressen, SR/SVT) — use public coverage only
-- Actor-statement corpus from `search_anforanden`
+- Riksdag MCP: `search_anforanden`, `search_dokument`, `get_dokument` (named-MP frame language; longitudinal frame record).
+- Swedish public press: DN, SvD, Aftonbladet, Expressen, SVT, SR, TV4, Dagens ETC, Kvartal, Nyheter Idag, Samhällsnytt, Riks, regional press sample.
+- International quality press for frame lineage: Reuters / AP / DPA / AFP / Politico EU / FT / NYT / Le Monde / Der Spiegel / Helsingin Sanomat / Aftenposten / Berlingske.
+- State-affiliated outlets — RT/Sputnik/RIA/TASS/CGTN/PressTV — used **only** as amplification fingerprint, never as factual source.
+- Public CIB / disinformation dossiers: EUvsDisinfo, EU DisinfoLab, Meta CIB removal reports, NATO StratCom COE, GLOBSEC Vulnerability Index, Reuters Institute Digital News Report, Freedom House Nations in Transit, SÄPO/MUST/FRA/EU-EEAS public statements.
+- Ownership / funding data: Nordicom Media Ownership Database (gu.se), Allmänhetens Pressombudsman public registry.
 
-### Output — required structure
+### Output — required structure (v2.0)
 
-1. **Frame inventory** — the 3–7 frames currently dominant; per frame:
-   - Frame name · Carrier (which actor / outlet) · Keyword markers · Strategic function · First-use date
-2. **Frame-actor matrix** — who uses which frame and with what intensity
-3. **Narrative shift detection** — any frame that has gained/lost prominence in last 7 / 30 days
-4. **Counter-frames** — opposition frames with their evidentiary basis
-5. **Citizen-clarity score** — qualitative assessment of whether the public dialogue is tractable or obscured
-6. **Frame-competition Mermaid** — color-coded by frame dominance
+1. **Frame package inventory** — ≥ 3 frames (A government / B opposition / C analytical / D coalition-inside; **Frame E foreign-overlay** ONLY when a state-affiliated or coordinated foreign-amplification signal is observed in window). Per frame: name · carrier (actor / outlet) · keyword markers · first-use date · approximate share of coverage.
+2. **Entman functions per frame** — problem definition · causal attribution · moral evaluation · treatment recommendation; every cell traces to a dated quote / `dok_id` / anförande.
+3. **Cognitive vulnerability map** — bias exploited (Cialdini / Kahneman / Roozenbeek-van der Linden) · mechanism · inoculation lever; primary-literature citation per row.
+4. **Manipulation indicators (DISARM)** — verbatim `T####` codes (Flooding T0049, Astroturfing T0086, Distort facts T0023, Amplify existing narrative T0118, Prepare assets impersonating legitimate entities T0099, Develop AI-generated text T0085, Develop AI-generated images / deepfakes T0088, etc.); `[unconfirmed]` flag for any indicator without ≥ 2 corroborations; explicit no-signal finding when nothing observed.
+5. **Narrative-laundering chain** — fringe → alt-media → politician amplification → mainstream → international, with first-observed UTC timestamps and reach estimates from public metrics; missing nodes labelled, never invented.
+6. **Source ecology table** — outlet · ownership / funding · editorial line · foreign-actor link (only from public registries: Nordicom, EUvsDisinfo, SÄPO).
+7. **CIB ABCDE block** — Actor · Behaviour · Content · Degree · Effect (Camille François 2020) populated for any state-attribution claim. Observation ≠ attribution; state-attribution requires ≥ 3 ABCDE indicators + published SÄPO/MUST/FRA/EU-EEAS/EUvsDisinfo reference.
+8. **Algorithmic-amplification asymmetry** — per-platform reach asymmetry with academic / transparency-report citation (Huszár et al. 2022 PNAS for X; Meta DSA report for Facebook; TikTok transparency report; Ribeiro et al. 2020 for YouTube). Uncited "platform X favours party Y" rejected at Pass 2.
+9. **Comparative-international frame lineage** — ≥ 2 cognates traced to prior jurisdictions (FR 2011 Camus replacement frame, HU 2010 Fidesz elite-vs-people, RU 2014 firehose, PL 2015 PiS courts-vs-democracy, IT 2018 Lega/M5S, US 2017 alt-right, IL 2023 judicial reform, MAGA 2016/2020/2024). "No international cognate" for a major story is suspicious and triggers re-do.
+10. **Strategic-doctrine detection** — match to public-doctrine catalogue (firehose-of-falsehood RAND PE-198 · doppelganger EU DisinfoLab 2022 · gish gallop · reflexive control · active-measures spillover NATO StratCom · interest-group capture · MAGA cognate populism). Detection ≠ attribution; ≥ MODERATE confidence floor for any 🟧/🟥 verdict.
+11. **Frame lifecycle / longevity** — phase (rising / peak / decay / sleeper / zombie) · half-life days · zombie probability · reactivation trigger; xychart-beta horizon block over 8+ points (T-7d / T-3d / Today / T+3d / T+7d / T+14d / T+30d / T+90d).
+12. **RRPA impact conversion** — Reach × Resonance × Persistence × Action with ≥ 1 dated action indicator per frame (poll move, petition signatures, donation flows, demonstration permit) or `[no action signal yet]`.
+13. **Counter-resilience plan (L1–L5)** — prebunking · just-in-time inoculation · lateral-reading prompt · debunking truth-sandwich · algorithmic-friction / DSA Art. 40 escalation; per-frame layer assignment with rationale. Platform reports the ladder, never executes counter-framing.
+14. **Forward watchlist** — ≥ 5 dated triggers with WEP band + Admiralty grade.
+15. **Longitudinal frame record** — append today's snapshot so future runs can detect zombie reactivations.
 
-### Required Mermaid — frame competition
+### Required Mermaid — frame competition (with foreign-overlay tier when applicable)
 
 ```mermaid
 graph LR
@@ -340,24 +351,38 @@ graph LR
     classDef opp fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
     classDef indep fill:#FFC107,stroke:#F57F17,color:#3E2723
     classDef niche fill:#7B1FA2,stroke:#4A148C,color:#FFFFFF
+    classDef foreign fill:#212121,stroke:#000000,color:#FFFFFF
 
     F1[Government frame<br/>'fiscal responsibility'<br/>dominant]:::gov
     F2[Opposition frame<br/>'welfare erosion']:::opp
     F3[Independent-media frame<br/>'neutral fiscal'<br/>moderate]:::indep
-    F4[Niche frame<br/>'constitutional concern'<br/>low prevalence]:::niche
+    F4[Niche frame<br/>'constitutional concern']:::niche
+    F5[Foreign-overlay frame<br/>'NATO trap'<br/>state-affiliated amplification<br/>⚠️ only if observed]:::foreign
 
     F1 -.contests.- F2
     F3 -.synthesises.- F1
     F3 -.synthesises.- F2
     F4 -.emergent.- F1
+    F5 -.amplifies.- F2
 ```
 
-### Quality gate
-- [ ] ≥3 frames identified with keyword markers
-- [ ] Every frame has ≥1 carrier citation (URL, `dok_id`, anförande)
-- [ ] Narrative-shift section compares 7-day and 30-day windows
-- [ ] Counter-frames represented with equal analytical depth
-- [ ] Neutrality: government and opposition frames receive equal coverage
+### Quality gate (v2.0)
+
+- [ ] ≥ 3 frames identified with keyword markers AND Entman 4-function decomposition.
+- [ ] Cognitive-vulnerability map cites primary literature per row.
+- [ ] DISARM TTP map populated with verbatim `T####` codes OR explicit no-signal finding.
+- [ ] Narrative-laundering chain produced or absence justified by node-by-node inspection.
+- [ ] Source-ecology table sourced exclusively from public registries (Nordicom / EUvsDisinfo / SÄPO).
+- [ ] CIB ABCDE block produced for any state-attribution claim; observation ≠ attribution discipline applied.
+- [ ] Algorithmic-asymmetry rows carry academic / transparency-report citations.
+- [ ] Comparative-international frame lineage lists ≥ 2 cognates with year, jurisdiction, and source.
+- [ ] Strategic-doctrine detection table executed (Yes/No per row).
+- [ ] Frame Lifecycle / Longevity table + xychart-beta with ≥ 8 horizon points.
+- [ ] RRPA composite per frame with ≥ 1 dated action indicator or honest `[no action signal yet]`.
+- [ ] Counter-resilience layer mapping (L1–L5) per frame with rationale.
+- [ ] Forward watchlist ≥ 5 dated triggers with WEP and Admiralty grades.
+- [ ] Neutrality preserved: government, opposition, and any foreign-overlay frames receive equal analytical depth.
+- [ ] Frame E discipline: included only with observed signal; otherwise marked absent explicitly.
 
 ---
 

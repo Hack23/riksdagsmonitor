@@ -35,7 +35,7 @@ export const TEMPLATE_META: Record<string, { icon: string; description: string }
   'implementation-feasibility.md': { icon: '🛠️', description: 'Implementation-feasibility template assessing whether proposed policies can realistically be delivered.' },
   'intelligence-assessment.md': { icon: '🎯', description: 'Full intelligence-assessment template covering judgements, confidence, gaps, and dissenting views.' },
   'mcp-reliability-audit.md': { icon: '🔒', description: 'MCP reliability audit template documenting every MCP tool invocation and its verification status.' },
-  'media-framing-analysis.md': { icon: '📺', description: 'Media-framing analysis template mapping how narratives spread across outlets and languages.' },
+  'media-framing-analysis.md': { icon: '📺', description: 'Media-framing & influence-operations template — frame packages with Entman functions, DISARM manipulation indicators, CIB ABCDE block, narrative-laundering chain, comparative-international cognates, frame lifecycle, RRPA impact, and L1–L5 counter-resilience ladder.' },
   'methodology-reflection.md': { icon: '🪞', description: 'Methodology-reflection template capturing lessons learned for continuous improvement.' },
   'per-file-political-intelligence.md': { icon: '🧾', description: 'Per-file political-intelligence template used to annotate individual parliamentary documents.' },
   'pestle-analysis.md': { icon: '🌳', description: 'PESTLE analysis template: Political, Economic, Social, Technological, Legal, Environmental factors.' },
