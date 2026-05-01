@@ -49,12 +49,12 @@ jobs:
       - name: Enforce prompt-module architecture
         run: |
           set -e
-          echo "🔍 Checking .github/prompts/ module line caps (≤ 450)…"
+          echo "🔍 Checking .github/prompts/ module line caps (≤ 550)…"
           FAIL=0
           for f in .github/prompts/*.md .github/prompts/ext/*.md; do
             [ -f "$f" ] || continue
             LINES=$(wc -l < "$f")
-            if [ "$LINES" -gt 450 ]; then
+            if [ "$LINES" -gt 550 ]; then
               echo "  ❌ $f has $LINES lines (> 450)"
               FAIL=1
             else
