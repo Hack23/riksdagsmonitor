@@ -17,7 +17,7 @@
 </p>
 
 **📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-05-01 (UTC)
-**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+**🏢 Owner:** Hack23 AB (Org.nr 559534-7807) | **🏷️ Classification:** Public
 
 > **📌 Template instructions:** Produce on every run as a required deliverable, with at least the minimum indicator count for the article type's horizon band (see §Horizon Bands below). Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/forward-indicators.md` or, for review cycles, at `analysis/weekly/${ISO_WEEK}/forward-indicators.md`.
 
@@ -31,12 +31,16 @@
 
 ### Band Schema (conditional on `horizonDays`)
 
+The `forwardIndicatorHorizons` array in `article-types.json` defines the exact band set per article type. The `election` band is always present as the terminal anchor. The pattern below shows how bands accumulate as the forecast horizon extends:
+
 | Condition | Active bands |
 |-----------|-------------|
-| `horizonDays < 90` (morning, evening, weekly) | 72 h · week · month |
-| `horizonDays = 90` (quarter-ahead) | 72 h · week · month · **quarter** |
-| `horizonDays = 365` (year-ahead) | 72 h · week · month · quarter · **year** |
-| `horizonDays >= 1460` (election-cycle) | 72 h · week · month · quarter · year · **cycle** |
+| `horizonDays = 0` (single-type, tier-c) | 72h · week · month · election |
+| `horizonDays = 7` (week-ahead) | 72h · week · month · quarter · election |
+| `horizonDays = 30` (month-ahead) | 72h · week · month · quarter · year · election |
+| `horizonDays = 90` (quarter-ahead) | week · month · quarter · year · election |
+| `horizonDays = 365` (year-ahead) | month · quarter · year · cycle · election |
+| `horizonDays >= 1460` (election-cycle) | quarter · year · cycle · election |
 
 ### WEP-Degradation Ladder (per-band ceiling)
 
@@ -61,7 +65,7 @@ As the forecast horizon extends, epistemic certainty decreases. The Words of Est
 | Year-ahead (`horizonDays=365`) | **12** | month, quarter, year, cycle, election |
 | Election-cycle (`horizonDays>=1460`) | **15** | quarter, year, cycle, election |
 
-> **Note:** Single-type and tier-c-aggregation articles (morning runs, evening analysis) use the legacy 4-band schema (72h / week / month / election) with a floor of 6 indicators.
+> **Note:** Single-type and tier-c-aggregation articles (morning runs, evening analysis) use the 4-band schema (72h / week / month / election) with a floor of 6 indicators. The `election` band is always present as the terminal anchor across all article types.
 
 ---
 
