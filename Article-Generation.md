@@ -171,9 +171,9 @@ It declares:
 | **Safe outputs** | One PR max, labels `agentic-news`, `analysis-data`, one translation dispatch max |
 | **Core output** | `analysis/daily/$ARTICLE_DATE/interpellations/article.md` and `news/$ARTICLE_DATE-interpellations-{en,sv}.html` |
 
-### Forward-look horizons
+### Registered article types
 
-Riksdagsmonitor produces forward-looking analysis at five distinct horizons, each one tier deeper than the last in time-window, scenario-tree depth and IMF projection-year stamps. The single source of truth for all five is [`analysis/article-types.json`](analysis/article-types.json), with the corresponding schema defined in [`schemas/article-types.schema.json`](schemas/article-types.schema.json). CI parity is currently enforced by [`tests/article-types.test.ts`](tests/article-types.test.ts) (ad-hoc structural checks); full Ajv-based JSON Schema validation is planned follow-up.
+Riksdagsmonitor produces articles across three families — **single-type** (daily coverage), **tier-c-aggregation** (multi-source synthesis), and **long-horizon-forecast** (forward-looking analysis at increasing time-windows). The single source of truth for all registered types is [`analysis/article-types.json`](analysis/article-types.json), with the corresponding schema defined in [`schemas/article-types.schema.json`](schemas/article-types.schema.json). CI parity is enforced by [`tests/article-types.test.ts`](tests/article-types.test.ts) and the `check:docs` script; full Ajv-based JSON Schema validation is planned follow-up.
 
 <!-- ARTICLE-TYPES:BEGIN -->
 <!-- ⚠️ AUTO-GENERATED from analysis/article-types.json — do NOT edit manually -->

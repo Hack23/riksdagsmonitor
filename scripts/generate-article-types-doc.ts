@@ -43,6 +43,15 @@ export function loadAndValidateRegistry(registryPath: string): ArticleTypesRegis
     if (!t.id || !t.family || t.horizonDays == null || t.tierCMultiplier == null) {
       throw new Error(`Invalid registry entry: missing required fields in type "${t.id ?? '(unknown)'}"`);
     }
+    if (t.articleWordFloor == null || typeof t.articleWordFloor !== 'number') {
+      throw new Error(`Invalid registry entry "${t.id}": articleWordFloor must be a number`);
+    }
+    if (!t.electionCycleAnchor) {
+      throw new Error(`Invalid registry entry "${t.id}": electionCycleAnchor is required`);
+    }
+    if (!t.dispatchOnly && !t.cronExpression) {
+      throw new Error(`Invalid registry entry "${t.id}": cronExpression required when dispatchOnly is not true`);
+    }
   }
   return registry;
 }
