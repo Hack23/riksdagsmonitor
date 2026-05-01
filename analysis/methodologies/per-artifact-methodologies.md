@@ -8,18 +8,18 @@
 <h1 align="center">📘 Per-Artifact Methodologies — Riksdagsmonitor</h1>
 
 <p align="center">
-  <strong>🔬 How the AI Agent Writes Each of the 23 Core + 7 Supplementary Artifacts</strong><br>
+  <strong>🔬 How the AI Agent Writes Each of the 24 Core + 8 Supplementary Artifacts</strong><br>
   <em>🎯 One §section per artifact · Inputs · Analytic moves · Evidence rules · Anti-patterns</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-25 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-05-01 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-31  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -64,6 +64,7 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 - [§ devils-advocate](#devils-advocate)
 - [§ intelligence-assessment](#intelligence-assessment)
 - [§ methodology-reflection](#methodology-reflection) ⭐
+- [§ parliamentary-season](#parliamentary-season)
 
 ### Family D — Electoral & Domain
 - [§ election-2026-analysis](#election-2026-analysis)
@@ -73,6 +74,7 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 - [§ media-framing-analysis](#media-framing-analysis)
 - [§ implementation-feasibility](#implementation-feasibility)
 - [§ forward-indicators](#forward-indicators)
+- [§ cycle-trajectory](#cycle-trajectory)
 
 ### Operational Supplementary
 - [§ analysis-index](#analysis-index)
@@ -82,6 +84,7 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 - [§ cross-run-diff](#cross-run-diff)
 - [§ cross-session-intelligence](#cross-session-intelligence)
 - [§ session-baseline](#session-baseline)
+- [§ horizon-pir-rollforward](#horizon-pir-rollforward)
 
 ---
 
@@ -161,9 +164,9 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 ### scenario-analysis
 
 **Inputs** — all Family A; political calendar; `get_calendar_events`.  
-**Analytic moves** — (1) ≥ 3 distinct scenarios (status-quo, shock, opportunity); (2) probabilities summing 100%; (3) leading indicator per scenario (what to watch); (4) decision tree from trigger → scenario.  
-**Evidence rules** — WEP band + horizon on each scenario; historical precedent citation on each.  
-**Anti-patterns** — probabilities summing to 120% or 70%; scenarios that are re-phrasings of each other.
+**Analytic moves** — (1) ≥ 3 distinct scenarios (status-quo, shock, opportunity); (2) probabilities summing 100%; (3) leading indicator per scenario (what to watch); (4) decision tree from trigger → scenario. When `horizonDays >= 90`: (5) horizon-stratified branches — each scenario subdivided by time band (quarter / year / cycle) with per-band probability and WEP ceiling applied.  
+**Evidence rules** — WEP band + horizon on each scenario; historical precedent citation on each. Horizon-stratified branches (when present) respect the WEP-degradation ladder: quarter ≤ "roughly even", year ≤ "roughly even" (unless ≥ 3 corroborated sources), cycle never exceeds "roughly even".  
+**Anti-patterns** — probabilities summing to 120% or 70%; scenarios that are re-phrasings of each other; horizon-stratified branches with identical probabilities across bands (indicates no genuine degradation modelling).
 
 ### comparative-international
 
@@ -192,6 +195,13 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 **Analytic moves** — (1) Evidence sufficiency audit (min source count per claim); (2) confidence distribution histogram; (3) source diversity ratio; (4) **party-neutrality arithmetic** (word count per party ± 15% of expected share); (5) **ICD 203 compliance audit** (BLUF, WEP, confidence labels, KAC); (6) ≥ 10 SATs documented; (7) ≥ 3 concrete methodology improvements for next run.  
 **Evidence rules** — every audit row quantitative; improvements must be actionable in next run.  
 **Anti-patterns** — "went well" with no numbers; improvements that require code changes outside the agent's scope.
+
+### parliamentary-season
+
+**Inputs** — `get_calendar_events` (Riksdagen published calendar), `get_propositioner` (government proposition pipeline), `search_dokument` (tabling status), Riksbank monetary-policy calendar, SCB release calendar, Lagrådet announcements.  
+**Analytic moves** — (1) Identify current Riksmöte phase + days to next boundary; (2) committee-schedule overlay for horizon window (quarter / year / cycle); (3) government propositions schedule (BP/VP tabling dates); (4) Lagrådet referral tracker; (5) interpellation & frågestund window mapping; (6) Riksbank/SCB/KI release integration (year/cycle only); (7) cross-horizon carry-forward from predecessor runs.  
+**Evidence rules** — every committee row carries a `riksdagen.se` calendar URL or `dok_id` for the ärende; every proposition row cites `regeringen.se`; minimum row counts: ≥ 5 propositions (quarter), ≥ 12 (year), ≥ 20 (cycle); watchlist items ≥ 5 (quarter), ≥ 8 (year), ≥ 12 (cycle).  
+**Anti-patterns** — committee schedule without dates; propositions without department attribution; missing carry-forward from predecessor horizon runs.
 
 ---
 
@@ -287,9 +297,16 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 ### forward-indicators
 
 **Inputs** — political calendar, bill pipeline, poll cadence, economic releases.  
-**Analytic moves** — (1) ≥ 10 dated indicators across 4 horizons (72 h / week / month / election); (2) leading / coincident / lagging tag; (3) threshold that would move the KJ.  
-**Evidence rules** — each indicator dated + sourced.  
-**Anti-patterns** — indicators without thresholds; all indicators lagging.
+**Analytic moves** — (1) ≥ 10 dated indicators across 4 horizons (72 h / week / month / election); (2) leading / coincident / lagging tag; (3) threshold that would move the KJ. When `horizonDays >= 90`: (4) horizon-band column required — each indicator tagged with its applicable band (week / month / quarter / year / cycle / election) per `article-types.json` `forwardIndicatorHorizons`; (5) WEP-degradation ladder enforced per band (no indicator may carry a probability above its band's WEP ceiling).  
+**Evidence rules** — each indicator dated + sourced; per-band WEP language degradation enforced (quarter ≤ "roughly even", year ≤ "roughly even" unless ≥ 3 corroborated sources, cycle never "likely"/"very likely"); minimum indicator counts: 6 (week) / 8 (month) / 10 (quarter) / 12 (year) / 15 (cycle).  
+**Anti-patterns** — indicators without thresholds; all indicators lagging; missing horizon-band column when `horizonDays >= 90`; assigning "likely" WEP to a year-band indicator without ≥ 3 corroborated sources.
+
+### cycle-trajectory
+
+**Inputs** — multi-year SCB national accounts (NR0103), IMF WEO multi-vintage projections (at least Apr + Oct across the cycle), Riksdag voteringar bulk export (chamber vote counts, coalition cohesion), KU årsredogörelse (reprimand counts), Lagrådet critique rate.  
+**Analytic moves** — (1) ICD 203 BLUF at the `cycle` horizon band with mandatory WEP + falsification trigger; (2) year-by-year dimension tables (T+1, T+2, T+3, T+5) covering macro, fiscal, coalition cohesion, legislative throughput, KU reprimands — each with WEP at appropriate band ceiling; (3) multi-vintage IMF compare (≥ 4 indicators × ≥ 4 countries: SWE + 3 Nordic peers); (4) cumulative Riksdag throughput metrics (cycle-to-date vs prev-cycle); (5) cycle-anchor-specific block: `current` → Tidö mandate scorecard (≥ 10 rows), `next` → 4×3 coalition-formation scenario table (12 leaves, sum 100%); (6) ≥ 5 falsification triggers with thresholds + horizons + sources.  
+**Evidence rules** — ≥ 5 charts/tables with IMF vintage stamps (projection-year T+1/T+2/T+5); every WEP term carries `[horizon:<band>]` tag; WEP at the `cycle` band cannot exceed `likely` without ≥ 3 cycle-aged corroborated sources; delta > 0.3 pp between IMF vintages triggers editorial review note in `methodology-reflection.md`.  
+**Anti-patterns** — omitting any year table even when "no change" (deliberate emptiness encodes WEP correctly); mixing IMF vintages without annotation; cycle-anchor block missing; fewer than 5 falsification triggers.
 
 ---
 
@@ -297,7 +314,7 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 
 ### per-file-analysis
 
-Per-document analyses are produced under `documents/{dok_id}-analysis.md`, one file per downloaded Riksdag document. They are validated separately by gate Check 2 (Family-E per-document check) and are **not** counted in the 23-row core inventory.
+Per-document analyses are produced under `documents/{dok_id}-analysis.md`, one file per downloaded Riksdag document. They are validated separately by gate Check 2 (Family-E per-document check) and are **not** counted in the 24-row core inventory.
 
 **Inputs** — `get_dokument`, `search_dokument`; paired `dok_id` entry in `data-download-manifest.md`; DIW tier from `significance-scoring.md` Pass 1.  
 **Analytic moves** — (1) Read full document text; (2) classify along 7 dimensions per [`political-classification-guide.md`](political-classification-guide.md); (3) extract 3–7 named actors, ≥ 2 stakeholder lenses; (4) tag PIR/EEI; (5) apply depth per tier (L1 / L2 / L2+ / L3).  
@@ -357,6 +374,13 @@ Per-document analyses are produced under `documents/{dok_id}-analysis.md`, one f
 **Evidence rules** — every row has source; no estimates.  
 **Anti-patterns** — missing sessions; approximate counts ("about 15 bills").
 
+### horizon-pir-rollforward
+
+**Inputs** — predecessor `pir-status.json` (most recent same-type folder within `lookbackDays`), current run's `pir-status.json`, sibling PIR artifacts (`intelligence-assessment.md`, `forward-indicators.md`, `risk-assessment.md`).  
+**Analytic moves** — (1) predecessor manifest (folder path, SHA-256 hash, days-since); (2) PIR genealogy table (every PIR: first-seen, status, origin, successor); (3) PIR coverage map (which artifacts in this run engage each PIR); (4) newly-created PIRs with all 7 fields (created, owner, question, confidence-to-retire, inherits-cycle, obsolescence-date, first-evidence); (5) archived PIRs with reason + final WEP; (6) cycle-rollover manifest when within ± 30 days of election anchor.  
+**Evidence rules** — ≥ 1 explicit obsolescence date per PIR (or "indefinite — cycle-spanning" with justification); every newly-created PIR links to a `dok_id` or primary-source URL as first evidence; every archived PIR carries final WEP + resolution reason.  
+**Anti-patterns** — PIR table out of sync with `pir-status.json`; PIRs without obsolescence dates; coverage map showing a PIR engaged by zero artifacts (should be archived or addressed).
+
 ---
 
 ## Analytical Supplementary
@@ -405,5 +429,6 @@ Optional deep-dive templates. Full production rules in [`analytical-supplementar
 
 ## 📜 Changelog
 
+- **v1.3 (2026-05-01)** — Added §`cycle-trajectory` (Family D), §`parliamentary-season` (Family C), §`horizon-pir-rollforward` (Supplementary S8). Extended §`forward-indicators` with horizon-band evidence rule (per-band WEP degradation, min indicator counts). Extended §`scenario-analysis` with horizon-stratified branches rule. Updated core count 23→24.
 - **v1.1 (2026-04-23)** — Added Analytical Supplementary section (pestle-analysis · political-stride-assessment · wildcards--black-swans · quantitative-swot) aligned with [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md).
 - **v1.0 (2026-04-23)** — Initial Riksdagsmonitor per-artifact methodology reference; adapted from EU Parliament Monitor `per-artifact-methodologies.md` v1.0 to the Riksdag 23-artifact catalog.
