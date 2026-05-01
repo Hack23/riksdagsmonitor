@@ -190,7 +190,7 @@ Every run produces **all five Family C files and all seven Family D files**. The
 | `devils-advocate.md` | Red-team challenge with ≥3 competing hypotheses via ACH; when evidence is strong, the file documents which hypotheses were rejected and why | [`devils-advocate.md`](../templates/devils-advocate.md) | ACH, Red Team, Devil's Advocacy |
 | `intelligence-assessment.md` | 3–7 Key Judgments with confidence + PIRs for next cycle; operates on every run because every day has a priority-intelligence requirement | [`intelligence-assessment.md`](../templates/intelligence-assessment.md) | Key Assumptions Check |
 | ⭐ `methodology-reflection.md` | **VITAL run-audit gate.** Evidence sufficiency, confidence distribution, source diversity, party-neutrality arithmetic, **ICD 203 compliance audit**, three concrete methodology improvements for the next cycle. Skipping it breaks the self-correction loop. | [`methodology-reflection.md`](../templates/methodology-reflection.md) | Key Assumptions Check, Quality of Information Check |
-| `election-cycle-analysis.md` | Seat-projection deltas + coalition viability for every run during the active pre-election window; after the election it converts to a permanent "post-election government-formation context" file (see [Multi-cycle election lens](#-multi-cycle-election-lens)) | [`election-2026-analysis.md`](../templates/election-2026-analysis.md) | Morphological |
+| `election-cycle-analysis.md` | Seat-projection deltas + coalition viability for every run during the active pre-election window; after the election it converts to a permanent "post-election government-formation context" file (see [Multi-cycle election lens](#multi-cycle-election-lens)) | [`election-cycle-analysis.md`](../templates/election-cycle-analysis.md) | Morphological |
 | `voter-segmentation.md` | Demographic / regional / ideological segment impact; when the day's docs are procedural, documents baseline segment positions | [`voter-segmentation.md`](../templates/voter-segmentation.md) | Outside-In Thinking |
 | `coalition-mathematics.md` | Current seat map + pivotal votes + Sainte-Laguë scenarios; stable structure regardless of daily contentiousness. **MUST** include a voting-record table sourced from `fetch-voting-records` output (`data/voteringar/{date}/{bet}.json`) for every betänkande cited, or one of the explicit annotations: `<!-- vote-not-found: {bet} -->` when `status: "not_found"` (MCP returned successfully with zero data — referral or procedural vote), `<!-- vote-fetch-error: {bet} -->` when `status: "error"` (transient MCP/network failure; rerun once the service is back), or — set manually by editorial tooling that knows a vote is upcoming — `<!-- vote-pending: {bet} -->`. | [`coalition-mathematics.md`](../templates/coalition-mathematics.md) | Morphological |
 | `historical-parallels.md` | Named precedent(s) ≤ 40 years with similarity score; when no obvious parallel exists, documents the "no-precedent" finding with reasoning | [`historical-parallels.md`](../templates/historical-parallels.md) | Outside-In Thinking |
@@ -211,7 +211,10 @@ Long-horizon workflows (quarter-ahead, year-ahead, election-cycle) follow additi
 | `month` | 30 | Budget cycle, committee reports |
 | `quarter` | 90 | Session-level outlook |
 | `year` | 365 | Cross-session strategic forecast |
-| `cycle` / `election` | 1 460 | Full mandate-period projection |
+| `cycle` | 1 460 | Full mandate-period projection across the whole parliamentary cycle |
+| `election` | 1 460 | Election-centred forecast: campaign dynamics, result space, coalition formation |
+
+Use `cycle` when the judgement spans the full mandate period as a governing horizon. Use `election` when the analysis is specifically anchored to an election event or its immediate government-formation consequences. For band-specific floor and calibration rules, follow the authoritative definitions in [`.github/prompts/ext/long-horizon-forecasting.md`](../../.github/prompts/ext/long-horizon-forecasting.md).
 
 **Scenario-tree depth per horizon class:**
 
@@ -233,7 +236,7 @@ Long-horizon workflows (quarter-ahead, year-ahead, election-cycle) follow additi
 | year | ≥ 2 quarter-ahead + ≥ 4 month-ahead |
 | cycle | ≥ 2 year-ahead + ≥ 12 month-ahead |
 
-These citations appear in `cross-reference-map.md` and are audited by the gate at `.github/prompts/05-analysis-gate.md`.
+These citations appear in `cross-reference-map.md`. The gate at `.github/prompts/05-analysis-gate.md` currently verifies the presence of the required predecessor path types; the numeric minima in this table remain a Pass-2/review requirement until the gate is expanded to enforce counts.
 
 #### Multi-cycle election lens
 
@@ -250,7 +253,7 @@ The election lens is active whenever the registry's `electionCycleAnchor` field 
 | `next` | Analysing the upcoming election and its coalition scenarios | Post-rollover flip |
 | `both` | Simultaneous analysis of outgoing + incoming mandates | ± 30-day rollover window around election day |
 
-**Cycle-rollover trigger window.** Within ± 30 days of a Swedish election day, the `both` anchor activates and the module in [`.github/prompts/ext/cycle-rollover.md`](../../.github/prompts/ext/cycle-rollover.md) governs the file-rename + content-carry-forward procedure. Election dates are parameterised in `analysis/article-types.json → electionCycles` — they are never hard-coded in analysis guides.
+**Cycle-rollover trigger window.** Within ± 30 days of a Swedish election day, the rollover window predicate (`cycleRolloverActive` in `horizon-context.ts`) drives simultaneous outgoing + incoming mandate analysis, and the module in [`.github/prompts/ext/cycle-rollover.md`](../../.github/prompts/ext/cycle-rollover.md) governs the file-rename + content-carry-forward procedure. The registry's `electionCycleAnchor` is **not** auto-rotated by that window; it is flipped later via an operator PR. Election dates are parameterised in `analysis/article-types.json → electionCycles` — they are never hard-coded in analysis guides.
 
 #### Horizon helper API (`scripts/horizon-context.ts`)
 
@@ -309,7 +312,7 @@ Read every file you produced in Steps 3–5. For each one, **improve every secti
 - Re-rank the significance scoring if the rewrite reveals a stronger lead.
 - Rewrite the lede of `synthesis-summary.md` so it leads with the #1 DIW-ranked finding — not the document count.
 - **Complete the ICD 203 compliance checklist** in `methodology-reflection.md`.
-- **Run the Pass-2 Self-Audit Checklist** present in every template (10 items: tradecraft anchors / source diversity / evidence specificity / named-actor discipline / counter-narrative / election-cycle lens / no illustrative content as fact / cross-references resolve / Mermaid renders / line-floor check). Any unchecked ❌ at the end of Pass 2 forces a Pass-3 rewrite of the affected section.
+- **Run the Pass-2 Self-Audit Checklist** present in every template (10 items: tradecraft anchors / source diversity / evidence specificity / named-actor discipline / counter-narrative / Election 2026 lens applied (election-cycle lens) / no illustrative content as fact / cross-references resolve / Mermaid renders / line-floor check). Any unchecked ❌ at the end of Pass 2 forces a Pass-3 rewrite of the affected section.
 - **Score the Narrative subsection** in `executive-brief.md`, `synthesis-summary.md`, and any L2+ per-file artifact against the 6-axis narrative rubric in [`political-style-guide.md` §"Narrative-Voice Standards"](political-style-guide.md#-narrative-voice-standards-v32--new) (lede / scene density / character density / surprise quotient / takeaway sharpness / counter-narrative). **Hard floor: 18 / 30 total to publish; any single axis < 3 fails the gate.**
 
 **Time budget rule**: Pass 1 uses ≤ 60 % of workflow time; Pass 2 uses ≥ 25 %; Quality gate the remainder. Workflows completing in < 45 minutes of a 60-minute allocation indicate the pass-2 rewrite was skipped.
@@ -497,7 +500,7 @@ Every `significance-scoring.md` ranks documents against these six dimensions.
 
 ## 🗳️ Multi-cycle election lens
 
-The election lens activates whenever `electionCycleAnchor` in `analysis/article-types.json` is not `none`. All workflows within the active window include an **Election Cycle** block in `synthesis-summary.md` and produce `election-cycle-analysis.md` as part of Family D. The block assesses five dimensions:
+The election lens activates whenever `electionCycleAnchor` in `analysis/article-types.json` is not `none`. All workflows within the active window include an **Election Cycle** block in `synthesis-summary.md` and produce `election-cycle-analysis.md` as part of Family D. **Compatibility note:** in the current `synthesis-summary.md` template, this same required block may still appear under the heading `## 🗳️ Election 2026 Implications`; operators should treat that heading as the canonical Election Cycle section until template terminology is fully aligned. The block assesses five dimensions:
 
 | Dimension | Question |
 |-----------|----------|
