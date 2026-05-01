@@ -14,12 +14,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-25 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-05-01 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-31
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -49,10 +49,10 @@ flowchart LR
     subgraph INPUT["📥 Run Root"]
         R["analysis/daily/$ARTICLE_DATE/$SUBFOLDER/"]
     end
-    subgraph CORE["🧠 Core Always-On — 23 artifacts"]
+    subgraph CORE["🧠 Core Always-On — 24 artifacts"]
         A["Family A — Synthesis (9)"]
         B["Family B — Structural (2)"]
-        C["Family C — Strategic (5)"]
+        C["Family C — Strategic (6)"]
         D["Family D — Electoral/Domain (7)"]
     end
     subgraph E["📑 Family E — Per-document (N)"]
@@ -66,6 +66,7 @@ flowchart LR
         S5["cross-run-diff.md"]
         S6["cross-session-intelligence.md"]
         S7["session-baseline.md"]
+        S8["horizon-pir-rollforward.md"]
     end
     R --> CORE
     R --> E
@@ -79,9 +80,9 @@ flowchart LR
     style GATE fill:#D32F2F,color:#ffffff
 ```
 
-- **Core always-on (23)** — every run produces all 23, depth varies by tier (L1 / L2 / L2+ / L3) per the DIW Output Matrix. Missing any core artifact fails the gate.
+- **Core always-on (24)** — every run produces all 24, depth varies by tier (L1 / L2 / L2+ / L3) per the DIW Output Matrix. Missing any core artifact fails the gate.
 - **Family E** — one per `dok_id` in the manifest; count is `N = |manifest|`. Low-weight items may be clustered.
-- **Operational supplementary (7)** — enrichment artifacts that strengthen the AI-FIRST loop. They are **recommended** for `deep` and **mandatory** for `comprehensive` (Tier-C aggregation). They are not counted in the 23-artifact mandatory set but feed the self-correction, cross-run memory, and MCP health audit.
+- **Operational supplementary (8)** — enrichment artifacts that strengthen the AI-FIRST loop. They are **recommended** for `deep` and **mandatory** for `comprehensive` (Tier-C aggregation). They are not counted in the 24-artifact mandatory set but feed the self-correction, cross-run memory, and MCP health audit.
 
 ---
 
@@ -114,33 +115,35 @@ Family B is scaffolded by scripts (no analytical prose) — agents only annotate
 
 ---
 
-## 📙 Family C — Strategic Extensions (5 artifacts · F3EAD: ANALYZE continued)
+## 📙 Family C — Strategic Extensions (6 artifacts · F3EAD: ANALYZE continued)
 
 | # | Canonical filename | Methodology §link | Template | Line floor | Mermaid | Primary MCP tool |
 |:-:|--------------------|-------------------|----------|:---------:|---------|------------------|
-| 12 | `scenario-analysis.md` | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md#scenarios) | [`scenario-analysis.md`](../templates/scenario-analysis.md) | 180 | flowchart + prob | `search_voteringar`, `search_dokument` |
+| 12 | `scenario-analysis.md` | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md#scenarios) | [`scenario-analysis.md`](../templates/scenario-analysis.md) | 180 | flowchart + prob | `search_voteringar`, `search_dokument`. Horizon-stratified branches required when `horizonDays >= 90` |
 | 13 | `comparative-international.md` | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md#comparative) | [`comparative-international.md`](../templates/comparative-international.md) | 150 | graph LR Nordic/EU | world-bank, scb, IMF |
 | 14 | `devils-advocate.md` | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md#ach) | [`devils-advocate.md`](../templates/devils-advocate.md) | 160 | matrix (ACH) | cross-MCP |
 | 15 | `intelligence-assessment.md` | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md#key-judgments) | [`intelligence-assessment.md`](../templates/intelligence-assessment.md) | 160 | flowchart KJs | synthesis layer |
 | 16 ⭐ | `methodology-reflection.md` | [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md#self-audit) | [`methodology-reflection.md`](../templates/methodology-reflection.md) | 200 | flowchart audit | run-internal |
+| 17 | `parliamentary-season.md` | [`per-artifact-methodologies.md#parliamentary-season`](per-artifact-methodologies.md#parliamentary-season) | [`parliamentary-season.md`](../templates/parliamentary-season.md) | 160 | gantt calendar | `get_calendar_events`, `get_propositioner`. Quarter-ahead + year-ahead + election-cycle only |
 
 ⭐ `methodology-reflection.md` is the **self-audit gate**: evidence sufficiency, confidence distribution, source diversity, party-neutrality arithmetic, ICD 203 compliance, ≥ 3 concrete improvements for next run.
 
 ---
 
-## 📕 Family D — Electoral & Domain Lenses (7 artifacts)
+## 📕 Family D — Electoral & Domain Lenses (7 artifacts + 1 cycle-only)
 
 | # | Canonical filename | Methodology §link | Template | Line floor | Mermaid | Primary MCP tool |
 |:-:|--------------------|-------------------|----------|:---------:|---------|------------------|
-| 17 | `election-2026-analysis.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#election-2026) | [`election-2026-analysis.md`](../templates/election-2026-analysis.md) | 150 | bar + coalition | `search_voteringar`, SCB polls |
-| 18 | `voter-segmentation.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#segmentation) | [`voter-segmentation.md`](../templates/voter-segmentation.md) | 140 | graph TB segments | SCB demographics |
-| 19 | `coalition-mathematics.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#sainte-lague) | [`coalition-mathematics.md`](../templates/coalition-mathematics.md) | 135 | flowchart seats | `search_voteringar` |
-| 20 | `historical-parallels.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#precedents) | [`historical-parallels.md`](../templates/historical-parallels.md) | 130 | timeline | historical archive |
-| 21 | `media-framing-analysis.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#-part-5--media-framing--influence-operations-analysis-media-framing-analysismd) | [`media-framing-analysis.md`](../templates/media-framing-analysis.md) | 200 | frame graph + laundering chain + lifecycle xychart + Outlet Bias Audit | external press (OSINT) + Outlet Bias Audit (Nordicom / Reuters Institute / Förvaltningsstiftelsen / PO-PON / EUvsDisinfo / DISARM TTPs) |
-| 22 | `implementation-feasibility.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#delivery) | [`implementation-feasibility.md`](../templates/implementation-feasibility.md) | 140 | flowchart risk | `search_dokument` (myndigheter) |
-| 23 | `forward-indicators.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#indicators) | [`forward-indicators.md`](../templates/forward-indicators.md) | 150 | gantt 4-horizon | mixed |
+| 18 | `election-2026-analysis.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#election-2026) | [`election-2026-analysis.md`](../templates/election-2026-analysis.md) | 150 | bar + coalition | `search_voteringar`, SCB polls |
+| 19 | `voter-segmentation.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#segmentation) | [`voter-segmentation.md`](../templates/voter-segmentation.md) | 140 | graph TB segments | SCB demographics |
+| 20 | `coalition-mathematics.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#sainte-lague) | [`coalition-mathematics.md`](../templates/coalition-mathematics.md) | 135 | flowchart seats | `search_voteringar` |
+| 21 | `historical-parallels.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#precedents) | [`historical-parallels.md`](../templates/historical-parallels.md) | 130 | timeline | historical archive |
+| 22 | `media-framing-analysis.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#-part-5--media-framing--influence-operations-analysis-media-framing-analysismd) | [`media-framing-analysis.md`](../templates/media-framing-analysis.md) | 200 | frame graph + laundering chain + lifecycle xychart + Outlet Bias Audit | external press (OSINT) + Outlet Bias Audit (Nordicom / Reuters Institute / Förvaltningsstiftelsen / PO-PON / EUvsDisinfo / DISARM TTPs) |
+| 23 | `implementation-feasibility.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#delivery) | [`implementation-feasibility.md`](../templates/implementation-feasibility.md) | 140 | flowchart risk | `search_dokument` (myndigheter) |
+| 24 | `forward-indicators.md` | [`electoral-domain-methodology.md`](electoral-domain-methodology.md#indicators) | [`forward-indicators.md`](../templates/forward-indicators.md) | 150 | gantt 4-horizon | mixed. Horizon-band column required when `horizonDays >= 90` |
+| 25 🗳️ | `cycle-trajectory.md` | [`per-artifact-methodologies.md#cycle-trajectory`](per-artifact-methodologies.md#cycle-trajectory) | [`cycle-trajectory.md`](../templates/cycle-trajectory.md) | 180 | bar + timeline | SCB, IMF, `search_voteringar`. `election-cycle` only; blocking for cycle workflows |
 
-**Filename variants** — `historical-parallels.md` ↔ `historical-baseline.md`; `comparative-international.md` ↔ `international-comparative.md`; `election-2026-analysis.md` ↔ `election-2026-implications.md`. All map to a single template + methodology section per [`ai-driven-analysis-guide.md` §Filename variants](ai-driven-analysis-guide.md#-filename-variants-all-map-to-one-template--one-methodology-section).
+**Filename variants** — `historical-parallels.md` ↔ `historical-baseline.md`; `comparative-international.md` ↔ `international-comparative.md`; `election-2026-analysis.md` ↔ `election-2026-implications.md`. All map to a single template + methodology section per [`ai-driven-analysis-guide.md` §Filename variants](ai-driven-analysis-guide.md#-filename-variants-all-map-to-one-template--one-methodology-section). Artifact filenames are the canonical identifiers; ordinal numbers in this catalog are catalog-local only and must not be hardcoded in template or prose text. Refer to `cycle-trajectory.md` by filename rather than by phrases such as "24th artifact." `cycle-trajectory.md` is produced **only** by `election-cycle` workflows.
 
 ---
 
@@ -154,9 +157,9 @@ One file per `dok_id` in `data-download-manifest.md`, written under `documents/{
 
 ---
 
-## 🛰️ Operational Supplementary Artifacts (7)
+## 🛰️ Operational Supplementary Artifacts (8)
 
-These artifacts **are not counted in the 23-artifact mandatory set** but strengthen quality, cross-run memory, MCP health and workflow-self-audit. They are:
+These artifacts **are not counted in the 24-artifact mandatory set** but strengthen quality, cross-run memory, MCP health and workflow-self-audit. They are:
 
 - **Recommended** for every `deep` run.
 - **Mandatory** for every `comprehensive` (Tier-C aggregation) run.
@@ -172,6 +175,7 @@ These artifacts **are not counted in the 23-artifact mandatory set** but strengt
 | S5 | `cross-run-diff.md` | [`per-artifact-methodologies.md#cross-run-diff`](per-artifact-methodologies.md#cross-run-diff) | [`cross-run-diff.md`](../templates/cross-run-diff.md) | 130 | Bayesian delta vs previous run of **same** article type |
 | S6 | `cross-session-intelligence.md` | [`per-artifact-methodologies.md#cross-session-intelligence`](per-artifact-methodologies.md#cross-session-intelligence) | [`cross-session-intelligence.md`](../templates/cross-session-intelligence.md) | 140 | Session-over-session progression (week / month / quarter aggregation) |
 | S7 | `session-baseline.md` | [`per-artifact-methodologies.md#session-baseline`](per-artifact-methodologies.md#session-baseline) | [`session-baseline.md`](../templates/session-baseline.md) | 140 | Calendar + adopted-texts + votering roster for the period |
+| S8 | `horizon-pir-rollforward.md` | [`per-artifact-methodologies.md#horizon-pir-rollforward`](per-artifact-methodologies.md#horizon-pir-rollforward) | [`horizon-pir-rollforward.md`](../templates/horizon-pir-rollforward.md) | 100 | PIR genealogy across long-horizon runs. Never blocking; recommended when predecessor exists |
 
 ---
 
@@ -192,11 +196,11 @@ Optional deep-dive templates mapped to analytical frameworks explicitly listed i
 
 | Server | Transport | Key tools | Feeds artifacts |
 |--------|-----------|-----------|-----------------|
-| `riksdag-regering` | HTTP | `search_ledamoter`, `get_ledamot`, `search_dokument`, `get_dokument`, `search_anforanden`, `search_voteringar`, `get_voteringar`, `get_calendar_events`, `get_betankanden`, `get_propositioner`, `get_motioner`, `get_fragor`, `get_interpellationer` | 1–11, 14, 17–23, E-files |
-| `scb` | local PxWeb v2 | table-search + query | 13, 17–19, 22, S7 |
-| `world-bank` | local | get-social/health/education/environment | 13, 22, S7 |
+| `riksdag-regering` | HTTP | `search_ledamoter`, `get_ledamot`, `search_dokument`, `get_dokument`, `search_anforanden`, `search_voteringar`, `get_voteringar`, `get_calendar_events`, `get_betankanden`, `get_propositioner`, `get_motioner`, `get_fragor`, `get_interpellationer` | 1–11, 14, 17–25, E-files |
+| `scb` | local PxWeb v2 | table-search + query | 13, 18–20, 23, 25, S7 |
+| `world-bank` | local | get-social/health/education/environment | 13, 23, S7 |
 | Statskontoret (`web_fetch`) | public web | agency-capacity reports, public-management evaluations, administrative burden evidence | 7, 9, 13, 22, S1/S3/S7 |
-| IMF (`tsx scripts/imf-fetch.ts`) | CLI | WEO + SDMX 3.0 passthrough | 13, 17, 22, S7 |
+| IMF (`tsx scripts/imf-fetch.ts`) | CLI | WEO + SDMX 3.0 passthrough | 13, 18, 23, 25, S7 |
 | `github` | HTTP Insiders | full toolset | PR creation (module 07) |
 | `filesystem` / `memory` / `sequential-thinking` / `playwright` | local | helpers | cross-cutting |
 
@@ -204,20 +208,23 @@ See [`.github/copilot-mcp.json`](../../.github/copilot-mcp.json) for the canonic
 
 ---
 
-## 🚦 Gate-Check Mapping (to `05-analysis-gate.md`)
+## 🚦 Gate-Check Mapping (conceptual — see `05-analysis-gate.md` for canonical numbering)
 
-| Gate check | Artifacts audited |
-|------------|-------------------|
-| Check 1 — 23-artifact presence | 1–23 |
-| Check 2 — Family-E per-`dok_id` coverage | E files |
-| Check 3 — Depth floor per tier | 1–23 + E (via `reference-quality-thresholds.json`) |
-| Check 4 — Evidence citations (dok_id, vote counts, named actors, Admiralty grade) | All prose |
-| Check 5 — Mermaid diagram presence (color-coded) | 1–23 where row specifies Mermaid |
-| Check 6 — WEP probability + time horizon | 2, 7, 8, 12, 15, S5, S6 |
-| Check 7 — Party-neutrality arithmetic | 2, 6, 7, 9, 17–23 |
-| Check 8 — `methodology-reflection.md` ICD 203 audit | 16 (⭐) |
-| Check 9 — Supplementary (Tier-C only) | S1–S7 |
-| Check 10 — Analytical Supplementary (never blocking) | AS1–AS4 when present: cell-evidence, Mermaid, ≥ N rows per rubric |
+> **Note:** The table below is a conceptual mapping of gate concerns to artifact scope. The authoritative check numbering and semantics live in [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md); the numbers here are illustrative groupings, not 1:1 references to the script's `# Check N` labels.
+
+| Gate concern | Artifacts audited |
+|--------------|-------------------|
+| Artifact presence | 1–24 (+ 25 for `election-cycle`) |
+| Family-E per-`dok_id` coverage | E files |
+| No-stub / depth floor per tier | 1–24 (+ 25 for `election-cycle`) + E (via `reference-quality-thresholds.json`) |
+| Evidence citations (dok_id, vote counts, named actors, Admiralty grade) | All prose |
+| Mermaid diagram presence (color-coded) | 1–24 (+ 25 for `election-cycle`) where row specifies Mermaid |
+| Pass-2 evidence (mtime / diff) | Core prose files |
+| Family C structure | 12–16 (KJ count, comparator rows, etc.) |
+| Family D structure | 18–25 where applicable |
+| PIR status sidecar | `pir-status.json` |
+| Supplementary (Tier-C only) | S1–S8 |
+| Long-horizon additive (quarter/year/cycle) | LH checks per `ext/long-horizon-forecasting.md` |
 
 ---
 
@@ -229,5 +236,6 @@ See [`.github/copilot-mcp.json`](../../.github/copilot-mcp.json) for the canonic
 
 ## 📜 Changelog
 
+- **v1.3 (2026-05-01)** — Added `cycle-trajectory.md` (Family D #25, `election-cycle` only, blocking), `parliamentary-season.md` (Family C #17, quarter/year/cycle), `horizon-pir-rollforward.md` (S8, never blocking). Appended horizon-band notes to `forward-indicators.md` and `scenario-analysis.md` rows. Renumbered Family D artifacts 17→18 through 23→24. Updated core count 23→24 (25 for cycle workflows).
 - **v1.1 (2026-04-23)** — Added Analytical Supplementary Artifacts (4): `pestle-analysis.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `quantitative-swot.md`. Linked to new [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md). Non-blocking.
 - **v1.0 (2026-04-23)** — Initial Riksdagsmonitor catalog extracted and adapted from EU Parliament Monitor `artifact-catalog.md` v1.0. 23 core artifacts + 7 supplementary + N per-document; aligned with [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md) v4.2.
