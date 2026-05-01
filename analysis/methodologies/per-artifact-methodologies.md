@@ -165,7 +165,7 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 
 **Inputs** — all Family A; political calendar; `get_calendar_events`.  
 **Analytic moves** — (1) ≥ 3 distinct scenarios (status-quo, shock, opportunity); (2) probabilities summing 100%; (3) leading indicator per scenario (what to watch); (4) decision tree from trigger → scenario. When `horizonDays >= 90`: (5) horizon-stratified branches — each scenario subdivided by time band (quarter / year / cycle) with per-band probability and WEP ceiling applied.  
-**Evidence rules** — WEP band + horizon on each scenario; historical precedent citation on each. Horizon-stratified branches (when present) respect the WEP-degradation ladder: quarter ≤ "roughly even", year ≤ "roughly even" (unless ≥ 3 corroborated sources), cycle never exceeds "roughly even".  
+**Evidence rules** — WEP band + horizon on each scenario; historical precedent citation on each. Horizon-stratified branches (when present) respect the WEP-degradation ladder: quarter ≤ "roughly even", year ≤ "roughly even" (unless ≥ 3 corroborated sources), cycle ≤ "roughly even" / "unlikely" / "very unlikely"; "likely" / "very likely" only with ≥ 3 cycle-aged corroborated sources.  
 **Anti-patterns** — probabilities summing to 120% or 70%; scenarios that are re-phrasings of each other; horizon-stratified branches with identical probabilities across bands (indicates no genuine degradation modelling).
 
 ### comparative-international
@@ -297,15 +297,15 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 ### forward-indicators
 
 **Inputs** — political calendar, bill pipeline, poll cadence, economic releases.  
-**Analytic moves** — (1) ≥ 10 dated indicators across 4 horizons (72 h / week / month / election); (2) leading / coincident / lagging tag; (3) threshold that would move the KJ. When `horizonDays >= 90`: (4) horizon-band column required — each indicator tagged with its applicable band (week / month / quarter / year / cycle / election) per `article-types.json` `forwardIndicatorHorizons`; (5) WEP-degradation ladder enforced per band (no indicator may carry a probability above its band's WEP ceiling).  
-**Evidence rules** — each indicator dated + sourced; per-band WEP language degradation enforced (quarter ≤ "roughly even", year ≤ "roughly even" unless ≥ 3 corroborated sources, cycle never "likely"/"very likely"); minimum indicator counts: 6 (week) / 8 (month) / 10 (quarter) / 12 (year) / 15 (cycle).  
+**Analytic moves** — (1) ≥ 10 dated indicators across 4 horizons (72 h / week / month / election); (2) leading / coincident / lagging tag; (3) threshold that would move the KJ. When `horizonDays >= 90`: (4) horizon-band column required — each indicator tagged with its applicable band (`72h` / week / month / quarter / year / cycle / election), and the selected band must be one of the current article type's active `forwardIndicatorHorizons` in `article-types.json`; (5) WEP-degradation ladder enforced per band (no indicator may carry a probability above its band's WEP ceiling).  
+**Evidence rules** — each indicator dated + sourced; per-band WEP language degradation enforced (quarter ≤ "roughly even", year ≤ "roughly even" unless ≥ 3 corroborated sources, cycle never "likely"/"very likely"); minimum indicator counts: 4 (`72h`) / 6 (week) / 8 (month) / 10 (quarter) / 12 (year) / 15 (cycle).  
 **Anti-patterns** — indicators without thresholds; all indicators lagging; missing horizon-band column when `horizonDays >= 90`; assigning "likely" WEP to a year-band indicator without ≥ 3 corroborated sources.
 
 ### cycle-trajectory
 
 **Inputs** — multi-year SCB national accounts (NR0103), IMF WEO multi-vintage projections (at least Apr + Oct across the cycle), Riksdag voteringar bulk export (chamber vote counts, coalition cohesion), KU årsredogörelse (reprimand counts), Lagrådet critique rate.  
 **Analytic moves** — (1) ICD 203 BLUF at the `cycle` horizon band with mandatory WEP + falsification trigger; (2) year-by-year dimension tables (T+1, T+2, T+3, T+5) covering macro, fiscal, coalition cohesion, legislative throughput, KU reprimands — each with WEP at appropriate band ceiling; (3) multi-vintage IMF compare (≥ 4 indicators × ≥ 4 countries: SWE + 3 Nordic peers); (4) cumulative Riksdag throughput metrics (cycle-to-date vs prev-cycle); (5) cycle-anchor-specific block: `current` → Tidö mandate scorecard (≥ 10 rows), `next` → 4×3 coalition-formation scenario table (12 leaves, sum 100%); (6) ≥ 5 falsification triggers with thresholds + horizons + sources.  
-**Evidence rules** — ≥ 5 charts/tables with IMF vintage stamps (projection-year T+1/T+2/T+5); every WEP term carries `[horizon:<band>]` tag; WEP at the `cycle` band cannot exceed `likely` without ≥ 3 cycle-aged corroborated sources; delta > 0.3 pp between IMF vintages triggers editorial review note in `methodology-reflection.md`.  
+**Evidence rules** — ≥ 5 charts/tables with IMF vintage stamps (projection-year T+1/T+2/T+5); every WEP term carries `[horizon:<band>]` tag; WEP at the `cycle` band must not use `likely` or `very likely` unless supported by ≥ 3 cycle-aged corroborated sources; delta > 0.3 pp between IMF vintages triggers editorial review note in `methodology-reflection.md`.  
 **Anti-patterns** — omitting any year table even when "no change" (deliberate emptiness encodes WEP correctly); mixing IMF vintages without annotation; cycle-anchor block missing; fewer than 5 falsification triggers.
 
 ---

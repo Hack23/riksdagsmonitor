@@ -66,6 +66,7 @@ flowchart LR
         S5["cross-run-diff.md"]
         S6["cross-session-intelligence.md"]
         S7["session-baseline.md"]
+        S8["horizon-pir-rollforward.md"]
     end
     R --> CORE
     R --> E
@@ -118,7 +119,7 @@ Family B is scaffolded by scripts (no analytical prose) — agents only annotate
 
 | # | Canonical filename | Methodology §link | Template | Line floor | Mermaid | Primary MCP tool |
 |:-:|--------------------|-------------------|----------|:---------:|---------|------------------|
-| 12 | `scenario-analysis.md` | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md#scenarios) | [`scenario-analysis.md`](../templates/scenario-analysis.md) | 180 | flowchart + prob | `search_voteringar`, `search_dokument`. Horizon-stratified branches optional when `horizonDays >= 90` |
+| 12 | `scenario-analysis.md` | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md#scenarios) | [`scenario-analysis.md`](../templates/scenario-analysis.md) | 180 | flowchart + prob | `search_voteringar`, `search_dokument`. Horizon-stratified branches required when `horizonDays >= 90` |
 | 13 | `comparative-international.md` | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md#comparative) | [`comparative-international.md`](../templates/comparative-international.md) | 150 | graph LR Nordic/EU | world-bank, scb, IMF |
 | 14 | `devils-advocate.md` | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md#ach) | [`devils-advocate.md`](../templates/devils-advocate.md) | 160 | matrix (ACH) | cross-MCP |
 | 15 | `intelligence-assessment.md` | [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md#key-judgments) | [`intelligence-assessment.md`](../templates/intelligence-assessment.md) | 160 | flowchart KJs | synthesis layer |
@@ -213,9 +214,9 @@ See [`.github/copilot-mcp.json`](../../.github/copilot-mcp.json) for the canonic
 |------------|-------------------|
 | Check 1 — 24-artifact presence (25 for cycle) | 1–24 (+ 25 for `news-election-cycle`) |
 | Check 2 — Family-E per-`dok_id` coverage | E files |
-| Check 3 — Depth floor per tier | 1–25 + E (via `reference-quality-thresholds.json`) |
+| Check 3 — Depth floor per tier | 1–24 (+ 25 for `news-election-cycle`) + E (via `reference-quality-thresholds.json`) |
 | Check 4 — Evidence citations (dok_id, vote counts, named actors, Admiralty grade) | All prose |
-| Check 5 — Mermaid diagram presence (color-coded) | 1–25 where row specifies Mermaid |
+| Check 5 — Mermaid diagram presence (color-coded) | 1–24 (+ 25 for `news-election-cycle`) where row specifies Mermaid |
 | Check 6 — WEP probability + time horizon | 2, 7, 8, 12, 15, S5, S6 |
 | Check 7 — Party-neutrality arithmetic | 2, 6, 7, 9, 18–25 |
 | Check 8 — `methodology-reflection.md` ICD 203 audit | 16 (⭐) |
