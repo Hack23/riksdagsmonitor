@@ -34,7 +34,7 @@ What the aggregator does:
 2. `synthesis-summary.md`
 3. `intelligence-assessment.md` ← Key Judgments + PIRs (ICD-203 — placed immediately after the synthesis so readers meet the thesis before the evidence stack)
 4. `significance-scoring.md`
-5. `media-framing-analysis.md` ← reader-facing narrative contestation, manipulation surface (DISARM TTPs · CIB ABCDE · narrative-laundering chain), comparative-international frame lineage, frame lifecycle / longevity, RRPA impact, L1–L5 counter-resilience ladder
+5. `media-framing-analysis.md` ← reader-facing narrative contestation, manipulation surface (DISARM TTPs · CIB ABCDE · narrative-laundering chain), Outlet Bias Audit (no outlet is neutral — ownership / funding / board / lean / Reuters Institute Trust / PO-PON complaints / foreign-actor link), comparative-international frame lineage, frame lifecycle / longevity, RRPA impact, L1–L5 counter-resilience ladder
 6. `stakeholder-perspectives.md`
 7. `forward-indicators.md`
 8. `scenario-analysis.md`

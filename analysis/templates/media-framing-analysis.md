@@ -11,17 +11,19 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-0A66C2?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-0A66C2?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-05-01 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-05-01 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template instructions:** Produce on every run and save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/media-framing-analysis.md` to maintain a longitudinal record of media narratives **and the manipulation/influence-operations layer riding on top of them**. On low-salience days, provide a lighter baseline update covering the dominant frame and any active influence-operation signals; on high-salience days, expand to the full template. Uses **public** media coverage and **public** social-media posts only — no scraping behind paywalls, no private-account content, no leaked or hacked material.
 
-> **✨ What to produce — non-negotiable minimum (v2.0):** (1) ≥ 3 named frame packages with **Entman functions** (problem definition / causal attribution / moral evaluation / treatment); (2) **cognitive-vulnerability map** linking each frame to ≥ 1 documented bias; (3) **manipulation indicators** mapped to **DISARM TTPs** with `[unconfirmed]` flag where corroboration is missing; (4) **narrative-laundering chain** (fringe → alt → MSM) for any frame that touches it; (5) **comparative-international frame lineage** — where the cognate frame appeared elsewhere first; (6) **frame lifecycle / longevity** — peak, half-life estimate, sleeper/zombie probability; (7) **impact conversion (RRPA)** — Reach × Resonance × Persistence × Action; (8) **counter-resilience plan** — prebunking, inoculation, debunking ladder; (9) **forward watchlist** with WEP bands; (10) Admiralty grade on every external citation.
+> **🚫 Founding doctrine — there is NO neutral outlet, NO neutral algorithm, NO neutral broadcaster.** Every outlet has ownership structure, funding mix, board-appointment authority, audience demographic, editorial culture and documented bias. "Public-service" is **publicly funded**, not bias-free — boards are appointed by political bodies (in Sweden: Förvaltningsstiftelsen for SVT/SR/UR, with parliamentary input), funding is set by government appropriation, and editorial line is shaped by recruitment, training and institutional culture (cf. Reuters Institute Digital News Report 2024; Nordicom Media Ownership Database). "Mainstream" / "quality" press carries owner ideology (Bonnier / Schibsted / NWT Media / Stampen-now-Bonnier-regional / Mittmedia-now-Bonnier — Sweden's national press is heavily concentrated). Every algorithm optimises an objective function (engagement, watch-time, retention) that has documented partisan asymmetries. **The platform's only neutrality is procedural: equal analytical depth across all 8 Riksdag parties; equal evidentiary discipline across all outlets; explicit ownership/funding/lean disclosure for every cited outlet.** Claiming an outlet is "neutral" or "balanced" without evidence is rejected at Pass 2.
+
+> **✨ What to produce — non-negotiable minimum (v2.1):** (1) ≥ 3 named frame packages with **Entman functions** (problem definition / causal attribution / moral evaluation / treatment); (2) **cognitive-vulnerability map** linking each frame to ≥ 1 documented bias; (3) **manipulation indicators** mapped to **DISARM TTPs** with `[unconfirmed]` flag where corroboration is missing; (4) **narrative-laundering chain** (fringe → alt → MSM) for any frame that touches it; (5) **comparative-international frame lineage** — where the cognate frame appeared elsewhere first; (6) **frame lifecycle / longevity** — peak, half-life estimate, sleeper/zombie probability; (7) **impact conversion (RRPA)** — Reach × Resonance × Persistence × Action; (8) **counter-resilience plan** — prebunking, inoculation, debunking ladder; (9) **forward watchlist** with WEP bands; (10) Admiralty grade on every external citation; (11) **outlet bias audit** for every outlet cited — ownership, funding mix, board-appointment authority, documented editorial lean, Reuters Institute Trust score, Pressombudsman complaints, foreign-actor link.
 
 ---
 
@@ -31,7 +33,7 @@
 |---------|-------|
 | **F3EAD Stage** | **ANALYZE → DISSEMINATE** — media environment, manipulation surface, and counter-resilience guidance |
 | **PIRs Served** | **PIR-6** (Election Integrity — narrative manipulation detection), **PIR-7** (Democratic Norms — media pluralism), **PIR-8** (Foreign Influence — coordinated inauthentic behaviour & state-actor amplification), **PIR-9** (Cognitive Security — bias-exploitation surface) |
-| **Admiralty Floor** | Public-service / quality press (DN, SvD, SVT, SR, BBC, Reuters, AP) **[B2/B3]**; news wires **[B2]**; tabloids (Aftonbladet, Expressen, Bild, The Sun) **[C3]**; alt/partisan outlets (Nyheter Idag, Samhällsnytt, Breitbart-cognates) **[D3]**; anonymous social posts **[E5]** with `[unconfirmed]`; named public-figure social posts **[D2]**; foreign-state-affiliated outlets (RT, Sputnik, CGTN, PressTV, RIA, TASS) **[F-flag — actor-attributed propaganda]** with `[state-affiliated]` annotation |
+| **Admiralty Floor** | **No outlet is "neutral"** — Admiralty grade reflects **process discipline** (corrections policy, source attribution, separation of news/opinion), not ideological neutrality. Every cited outlet must carry an ownership / funding / lean tag from the Source Ecology table. Public-service broadcasters with editorial-board independence + corrections policy + ombudsman (SVT, SR, BBC, ARD, NRK, DR, YLE) **[B2]** ⚠️ *publicly funded; politically appointed boards; audience-demographic skew documented*; international news wires with multi-source verification (Reuters, AP, AFP, DPA) **[B2]**; commercial quality press with corrections policy (DN [Bonnier], SvD [Schibsted], FT, Le Monde, NYT) **[B3]** ⚠️ *owner ideology + audience-demographic skew documented*; tabloids (Aftonbladet [Schibsted/LO-aligned], Expressen [Bonnier], Bild, The Sun) **[C3]**; alt/partisan outlets (Nyheter Idag, Samhällsnytt, Riks, Breitbart-cognates) **[D3]** with `[partisan-aligned]` tag; named-figure social posts **[D2]**; anonymous social posts **[E5]** with `[unconfirmed]`; foreign-state-affiliated outlets (RT, Sputnik, CGTN, PressTV, RIA, TASS) **[F-flag — actor-attributed propaganda]** with `[state-affiliated]` annotation. **An outlet's grade can never be promoted to imply "neutral truth source" — it only constrains how the artifact must caveat its reliance on that outlet.** |
 | **WEP + ODNI** | Frame-momentum claims use **WEP** (gaining traction / fading / dormant); influence-operation attributions require **MODERATE** confidence floor; foreign-state attribution requires **HIGH** confidence + ≥ 3 independent indicators |
 | **Source Diversity Floor** | P2 (frame-dominance): ≥ 2 outlets from distinct categories; P1 (laundering chain): ≥ 1 source per node (fringe + alt + MSM); P0 (foreign-state attribution): ≥ 3 independent indicators across actor / behaviour / content / degree / effect (ABCDE) |
 | **SAT(s) Applied** | Outside-In Thinking, Indicators & Signposts, Red Cell (adversary frame planner), ACH (≥ 3 competing hypotheses for any state-attribution claim), Premortem on counter-resilience plan |
@@ -62,8 +64,8 @@
 graph LR
     STORY["📰 Lead story (e.g., HD03262)"] --> F1["🟢 Frame A<br/>government-aligned"]
     STORY --> F2["🔴 Frame B<br/>opposition-aligned"]
-    STORY --> F3["🟡 Frame C<br/>analytical / institutional"]
-    STORY --> F4["🟣 Frame D<br/>political-inside / coalition"]
+    STORY --> F3["🟡 Frame C<br/>establishment / centrist-consensus<br/>(NOT 'neutral' — Bonnier/Schibsted owner ideology,<br/>expert-establishment recruitment, centrist-urban audience)"]
+    STORY --> F4["🟣 Frame D<br/>coalition-inside / proceduralist<br/>(public-broadcaster framing — politically-appointed boards,<br/>institutional editorial culture)"]
     STORY --> F5["⚫ Frame E<br/>foreign / state-affiliated overlay"]
 
     F1 --> OUT1["Outlets: SvD, TV4, regional press, M/SD/KD/L press offices"]
@@ -81,6 +83,8 @@ graph LR
 ```
 
 > **Frame E inclusion rule:** include ONLY when ≥ 1 state-affiliated or coordinated foreign-amplification signal is observed in the coverage window. Otherwise omit Frame E and document the absence explicitly: `Frame E: [no foreign-amplification signal observed in window]`.
+
+> **Frame C / D labelling discipline:** Frame C is the **establishment / centrist-consensus** frame — never written as "neutral" or "balanced" because it carries the ideology of concentrated commercial owners (Bonnier ≈ 50 % of Swedish national daily-press circulation; Schibsted controls Aftonbladet + SvD), expert-establishment recruitment networks (Stockholm-school-of-economics / Uppsala / Lund alumni clusters), and a centrist-urban audience demographic. Frame D is the **public-broadcaster proceduralist** frame — never written as "impartial" because SVT/SR/UR boards are appointed via Förvaltningsstiftelsen with parliamentary input, funding is set by government appropriation, and editorial culture is shaped by public-service remit (`opartiskhet och saklighet`) interpretation that itself is contested. Both frames are positions, not absences of position.
 
 ---
 
@@ -104,8 +108,8 @@ graph LR
 |-------|----------------|-----------|--------------------|
 | 🟢 A | Loss aversion + status-quo bias | Framing reform as protection of existing entitlements | Reframe loss-language as opportunity-language; cite distributional data |
 | 🔴 B | In-group / out-group + scapegoating | Personifying harm onto a single actor or class | Counter-stereotype exemplars; structural-cause data |
-| 🟡 C | Authority bias | "Experts say…" without expert disclosure | Expert-credential transparency; competing-expert panel |
-| 🟣 D | Availability heuristic + recency | Coalition rumour amplified by recent procedural event | Base-rate data on coalition stability |
+| 🟡 C | Authority bias | "Experts say…" without expert disclosure / "centrist-consensus" presented as objective | Expert-credential + funding-source transparency; competing-expert panel; ownership disclosure of the outlet running the "experts say" frame |
+| 🟣 D | Availability heuristic + recency + **proceduralist-illusion bias** | Coalition rumour amplified by recent procedural event; public-broadcaster procedural framing read as "what really happened" when it is itself an editorial choice | Base-rate data on coalition stability; remind readers that public-broadcaster framing reflects an institutional editorial culture, not absence of one |
 | ⚫ E | Repetition / illusory truth + reactance | Identical phrasing across coordinated nodes | Prebunking of frame-template; show coordination evidence |
 
 > **Source:** Cialdini (2001) *Influence*; Kahneman (2011) *Thinking, Fast and Slow*; Roozenbeek & van der Linden (2019) "Fake news game confers psychological resistance against online misinformation." *Palgrave Communications.* Every row must cite a documented bias with primary literature, not folk-psychology claims.
@@ -165,13 +169,27 @@ flowchart LR
 
 ---
 
-## 🌐 Source Ecology — ownership, funding, foreign-actor links
+## 🌐 Source Ecology — Outlet Bias Audit (no outlet is neutral)
 
-| Outlet / channel | Ownership / funding (public record) | Editorial line (last election cycle) | Foreign-actor link? | Reuters / AFP / BBC / RFI / DW comparable? |
-|------------------|-------------------------------------|--------------------------------------|---------------------|-----|
-| `[outlet]` | `[ownership group + state if foreign]` | `[centre / centre-right / right / left / partisan]` | `[none / cf. SÄPO public report / cf. EUvsDisinfo dossier]` | `[match / no match]` |
+> **Doctrine:** every outlet appearing anywhere in this artifact MUST appear in this table. No bias audit = no citation. The columns capture the *structural* bias drivers (ownership, funding, board, audience), not journalist personalities. Source: Nordicom Media Ownership Database (gu.se), Reuters Institute Digital News Report 2024 (trust scores), Allmänhetens Pressombudsman / Pressens Opinionsnämnd (PO/PON) complaint registry, Förvaltningsstiftelsen (SVT/SR/UR board appointments), EUvsDisinfo case dossiers, EU DSA transparency reports, public SÄPO/MUST/FRA/EU-EEAS statements.
 
-> **Sources for ownership data:** Nordicom Media Ownership Database (gu.se), Sveriges Radio editorial guidelines, Allmänhetens Pressombudsman/PO public registry, EUvsDisinfo case dossiers, MeMo94 Slovak fact-check transparency model. Foreign-actor attribution requires **published** SÄPO/MUST/FRA/EU-EEAS/EUvsDisinfo records — never speculation.
+| Outlet | Ownership group | Funding mix (% commercial / % licence-fee / % subscriber / % state / % foreign) | Board-appointment authority | Documented editorial lean (last election cycle) | Reuters Institute Trust score (2024) | PO/PON complaints (last 12 mo) | Foreign-actor link |
+|--------|------------------|-----|-----------|-----|:---:|:---:|---|
+| `DN` | Bonnier News (private — Bonnier family) | ~95 % commercial / ~5 % subscriber-mix | Bonnier-appointed | Centre / liberal — Stockholm-urban | `XX %` | `N` | `[none / cf. dossier]` |
+| `SvD` | Schibsted Media (Norwegian-owned) | ~95 % commercial | Schibsted-appointed | Centre-right / liberal-conservative | `XX %` | `N` | `[none]` |
+| `Aftonbladet` | Schibsted (88 %) + LO (9 %) | ~98 % commercial + LO-stake | Schibsted-appointed; LO observer | Social-democratic editorial line (independent) | `XX %` | `N` | `[none]` |
+| `Expressen` | Bonnier News | ~98 % commercial | Bonnier-appointed | Liberal — populist registers | `XX %` | `N` | `[none]` |
+| `SVT` | Public-service foundation | ~95 % licence-fee (radio-och-tv-avgift / now public-service-avgift) | Förvaltningsstiftelsen (board appointed by Riksdag-influenced process) | Public-service remit `opartiskhet och saklighet` — interpretation contested; centrist-establishment audience demographic | `XX %` | `N` | `[none]` |
+| `SR` | Public-service foundation | ~95 % licence-fee | Förvaltningsstiftelsen | Public-service remit; Ekot as flagship — centrist-establishment | `XX %` | `N` | `[none]` |
+| `TV4` | Telia / Allente (Telenor + Norwegian state) | ~98 % commercial | Telia/Allente-appointed | Commercial centrist | `XX %` | `N` | `[Norwegian-state minority via Telenor — public]` |
+| `Dagens ETC` | Co-operative + reader-owned | ~50 % subscriber / ~50 % commercial | Co-operative members | Left / green editorial line | `XX %` | `N` | `[none]` |
+| `Kvartal` | Reader-owned + private | ~70 % subscriber / ~30 % donor | Founder-controlled | Centre-right intellectual / contrarian-establishment | `XX %` | `N` | `[none]` |
+| `Nyheter Idag / Samhällsnytt / Riks` | Private — partisan-aligned ownership | Donor / advertising | Founder-controlled | Right-populist / SD-aligned (documented EUvsDisinfo / Nordicom) | `XX %` | `N` | `[document any cross-link]` |
+| `Reuters / AP / AFP / DPA` | Wire services — Thomson Reuters Foundation / non-profit cooperative / private / DPA-Tochtergesellschaft | Subscription-licensing | Independent boards | Process-disciplined wire reporting; centrist-internationalist | `XX %` | `N` | `[none]` |
+| `RT / Sputnik / RIA / TASS / CGTN / PressTV` | RU / CN / IR state-controlled | 100 % state | State-appointed | Foreign-state propaganda — `[state-affiliated]` | n/a (excluded from trust survey or scored ≤ 10 %) | n/a | **YES** — actor-attributed by EUvsDisinfo / EU-EEAS |
+| `[other cited outlet]` | … | … | … | … | … | … | … |
+
+> **No-claim-of-neutrality rule:** any cell that reads "neutral", "impartial", "balanced", "objective" is rejected at Pass 2. Use the documented lean (centre / centre-right / centre-left / liberal / conservative / social-democratic / green / right-populist / left-populist / proceduralist / contrarian-establishment / state-propaganda) with the Nordicom or Reuters Institute citation.
 
 ---
 
@@ -195,15 +213,18 @@ flowchart LR
 
 ## 📡 Algorithmic-Amplification Asymmetry
 
-| Platform | Frame A reach | Frame B reach | Asymmetry ratio | Documented algorithmic note |
-|----------|--------------:|--------------:|:----------------:|------------------------------|
-| X / Twitter | … | … | A/B | Post-2022 documented right-amplification asymmetry (Huszár et al., 2022, PNAS); algorithmic-feed default |
-| Facebook | … | … | … | News-in-feed deprecation (Meta 2024); group-amplification still active |
-| TikTok | … | … | … | "For You" algorithm — opaque; emotional-content amplification documented (TikTok transparency report) |
-| YouTube | … | … | … | Recommendation rabbit-hole research (Ribeiro et al. 2020) |
-| Telegram | … | … | … | Channel-broadcast model — no neutral algorithm but high-velocity in-group amplification |
+> **Doctrine:** there is no neutral algorithm. Every recommender / feed / "For You" optimises an objective function (engagement, watch-time, retention, ad-yield) and that function has documented partisan asymmetries. Citing "the algorithm shows X" without naming the optimisation target and the academic/transparency-report measurement is rejected at Pass 2.
 
-> Cite the academic / transparency-report source on every algorithmic claim. "TikTok favours the left/right" without citation is rejected at Pass 2.
+| Platform | Frame A reach | Frame B reach | Asymmetry ratio | Optimisation target & documented partisan/emotional asymmetry (cite source) |
+|----------|--------------:|--------------:|:----------------:|------------------------------------------------------------------------------|
+| X / Twitter | … | … | A/B | Engagement-maximising algorithmic feed; **documented right-amplification asymmetry** (Huszár et al. 2022, *PNAS* 119/1) — no neutral baseline |
+| Facebook | … | … | … | Engagement + group-affinity; News-in-Feed deprecation (Meta DSA 2024); group-amplification still active and **documented to amplify outrage and out-group hostility** (Rathje, Van Bavel & van der Linden 2021, *PNAS* 118/26) |
+| TikTok | … | … | … | "For You" — opaque retention-maximising; **emotional-content amplification documented** (TikTok DSA transparency report 2024; Faddoul et al. 2023 audit) — opacity ≠ neutrality |
+| YouTube | … | … | … | Watch-time-maximising recommendation; **rabbit-hole asymmetry documented** for political content (Ribeiro et al. 2020, *FAccT*; Hosseinmardi et al. 2024 PNAS Nexus) |
+| Telegram | … | … | … | Channel-broadcast model — no recommender, but **high-velocity in-group amplification with no friction**; documented as primary vector for narrative-laundering (NATO StratCom COE 2023) |
+| Instagram / Threads / Reddit | … | … | … | Each has a documented engagement-curve asymmetry — fill in with platform-specific transparency-report citation |
+
+> Cite the academic / transparency-report source on every algorithmic claim. "Platform X favours left/right" without citation is rejected at Pass 2.
 
 ---
 
@@ -280,11 +301,11 @@ xychart-beta
 
 ## 🛡️ Counter-Resilience Plan — prebunking · inoculation · debunking ladder
 
-> Riksdagsmonitor itself **does not push counter-frames** — neutrality is non-negotiable. This section gives readers (journalists, policymakers, civic educators) a documented ladder so they can operate themselves. The platform's only voice is methodological transparency.
+> Riksdagsmonitor itself **does not push counter-frames** — its only neutrality is **procedural** (equal analytical depth across all 8 Riksdag parties; equal evidentiary discipline across all outlets; full ownership/funding/lean disclosure for every cited outlet). This is **not** a claim that the platform produces "neutral truth" or that any media source is neutral — both claims are explicitly rejected by the founding doctrine at the top of this template. This section gives readers (journalists, policymakers, civic educators) a documented ladder so they can operate themselves.
 
 | Layer | Audience | Tactic | Reference |
 |-------|----------|--------|-----------|
-| **L1 — Prebunking (proactive)** | General public, civic educators | Publish neutral frame-anatomy explainer 7+ days before predicted peak; show the *technique*, not the political content (Roozenbeek & van der Linden 2022, *Sci Adv*) | https://prebunkingmovement.com/ ; Cambridge Social Decision-Making Lab |
+| **L1 — Prebunking (proactive)** | General public, civic educators | Publish technique-focused frame-anatomy explainer 7+ days before predicted peak; show the *manipulation technique* (not a counter-political-position) (Roozenbeek & van der Linden 2022, *Sci Adv*) | https://prebunkingmovement.com/ ; Cambridge Social Decision-Making Lab |
 | **L2 — Inoculation (just-in-time)** | Newsroom editors, fact-checkers | Distribute frame-fingerprint card before press conferences | UNESCO 2023 *Journalism, fake news & disinformation* handbook |
 | **L3 — Lateral-reading prompt** | Readers | Provide outlet-ownership table (above) so readers can do source-triangulation themselves | Wineburg & McGrew (2019) Stanford HEG |
 | **L4 — Debunking (post-spread)** | Journalists | Truth-sandwich format: truth → falsehood (briefly) → truth again | Lewandowsky et al. (2020) *Debunking Handbook 2020* |
@@ -364,22 +385,32 @@ flowchart LR
 
 ## 📎 Sources
 
-Public media coverage and public social-media posts only. Representative sample across Swedish national, regional, and commentary outlets, plus international quality press for comparative frame lineage. State-affiliated outlets monitored only as amplification signal — never cited as factual sources. No paywall bypass. No private-account social-media content. No leaked or hacked material. Frame-ownership and funding data sourced from Nordicom Media Ownership Database (gu.se), EUvsDisinfo case dossiers, EU DSA transparency reports, and public SÄPO/MUST/FRA/EU-EEAS publications.
+Public media coverage and public social-media posts only. Representative sample across Swedish national, regional, and commentary outlets, plus international quality press for comparative frame lineage. **No outlet is treated as neutral** — every cited outlet appears in the §"Source Ecology — Outlet Bias Audit" table with ownership, funding mix, board-appointment authority, documented editorial lean, Reuters Institute Trust score, and PO/PON complaint history. Public-service broadcasters (SVT/SR/UR) are publicly funded with politically-appointed boards (Förvaltningsstiftelsen) and an institutional editorial culture — process-disciplined but not bias-free. State-affiliated outlets (RT/Sputnik/CGTN/PressTV/RIA/TASS) monitored only as amplification signal — never cited as factual sources. No paywall bypass. No private-account social-media content. No leaked or hacked material. Frame-ownership and funding data sourced from Nordicom Media Ownership Database (gu.se), Reuters Institute Digital News Report 2024, EUvsDisinfo case dossiers, EU DSA transparency reports, and public SÄPO/MUST/FRA/EU-EEAS publications.
 
 ---
 
 **Document Control**
 - **Template path:** `/analysis/templates/media-framing-analysis.md`
-- **Version:** 2.0 (psyops + global + longevity + RRPA + counter-resilience expansion, 2026-05-01)
-- **Referenced by:** [`ai-driven-analysis-guide.md` § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued), [`per-artifact-methodologies.md` § media-framing-analysis](../methodologies/per-artifact-methodologies.md#media-framing-analysis), [`electoral-domain-methodology.md` § Part 5](../methodologies/electoral-domain-methodology.md#-part-5--media-framing-analysis-media-framing-analysismd)
+- **Version:** 2.1 (no-neutral-media doctrine; outlet bias audit; algorithmic-asymmetry doctrine — 2026-05-01)
+- **Previous version:** 2.0 (psyops + global + longevity + RRPA + counter-resilience expansion, 2026-05-01)
+- **Referenced by:** [`ai-driven-analysis-guide.md` § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued), [`per-artifact-methodologies.md` § media-framing-analysis](../methodologies/per-artifact-methodologies.md#media-framing-analysis), [`electoral-domain-methodology.md` § Part 5](../methodologies/electoral-domain-methodology.md#-part-5--media-framing--influence-operations-analysis-media-framing-analysismd)
 - **Classification:** Public
 - **Next Review:** 2026-08-01
 
 ---
 
-## ✅ Pass-2 Self-Audit Checklist (v2.0 — required)
+## ✅ Pass-2 Self-Audit Checklist (v2.1 — required)
 
 > **Purpose:** AI-FIRST principle requires a Pass-2 read-back-and-improve. After producing this artifact in Pass 1, re-read it end-to-end and verify each item below. Document any remediation in [`methodology-reflection.md`](methodology-reflection.md) §"Pass-2 audit log". Any unchecked ❌ box at the end of Pass 2 forces a Pass-3 rewrite of the affected section.
+
+### No-Neutral-Media Doctrine (NEW in v2.1 — non-negotiable, top priority)
+
+- [ ] **No "neutral / impartial / unbiased / balanced / objective" label applied to any outlet, algorithm, or broadcaster** in the artifact body without ≥ 1 documented-bias citation in the same paragraph. Free-text occurrences of these words in any analytical sentence trigger Pass-2 rewrite.
+- [ ] **Outlet Bias Audit table is populated for every cited outlet** — ownership group, funding mix, board-appointment authority, documented editorial lean, Reuters Institute Trust score, PO/PON complaint history, foreign-actor link. No bias audit row = no citation.
+- [ ] **Public-service broadcaster caveat present** — every reliance on SVT / SR / UR / BBC / ARD / NRK / DR / YLE is accompanied by the licence-fee + politically-appointed-board + institutional-editorial-culture caveat, not treated as ground truth.
+- [ ] **Algorithmic-asymmetry rows declare optimisation target** — every platform row names the objective function (engagement / watch-time / retention / ad-yield) and cites a documented partisan/emotional asymmetry; "the algorithm" without optimisation-target attribution is rejected.
+- [ ] **Frame C / D label discipline** — Frame C is labelled "establishment / centrist-consensus" (NOT "neutral / analytical / institutional"); Frame D is labelled "coalition-inside / proceduralist" with public-broadcaster caveat where used (NOT "objective reporting" / "what really happened").
+- [ ] **Procedural neutrality only** — any reference to platform "neutrality" is qualified as procedural (equal analytical depth across all 8 Riksdag parties; equal evidentiary discipline across all outlets; full ownership/funding/lean disclosure) and never as a claim of "neutral truth" or "neutral source".
 
 ### Tradecraft (carry-over from v1.x)
 
@@ -394,13 +425,13 @@ Public media coverage and public social-media posts only. Representative sample 
 - [ ] **Mermaid renders** — every fenced block parses; no >40-node graphs.
 - [ ] **Line-floor check** — artifact length ≥ floor in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json); shorter triggers Pass-2 rewrite, never `[truncated]`.
 
-### Framing-deep-dive items (NEW in v2.0 — non-negotiable)
+### Framing-deep-dive items (NEW in v2.0 / carried into v2.1 — non-negotiable)
 
 - [ ] **Entman functions present per frame** — problem definition + causal attribution + moral evaluation + treatment in the Frame Package Table; vague summaries rejected.
 - [ ] **Cognitive Vulnerability Map cites primary literature** — every bias row cites Cialdini / Kahneman / Roozenbeek-van der Linden / equivalent peer-reviewed source.
 - [ ] **DISARM TTPs used verbatim** — any manipulation indicator carries a `T####` code; "no signal" is documented explicitly, not implied by silence.
 - [ ] **Narrative-laundering chain produced or absence justified** — fringe → alt → politician → mainstream → international, with first-observed timestamps; missing nodes labelled, not invented.
-- [ ] **Source ecology table** lists ownership / funding / foreign-actor link from public registries (Nordicom, EUvsDisinfo, SÄPO public statements) — never speculation.
+- [ ] **Source ecology table** populated for every cited outlet with ownership group · funding mix percentages · board-appointment authority · documented editorial lean · Reuters Institute Trust score · PO/PON complaint history · foreign-actor link from public registries (Nordicom, Reuters Institute, PO/PON, Förvaltningsstiftelsen, EUvsDisinfo, EU-EEAS / SÄPO public statements) — never speculation; "neutral / impartial / balanced / objective" labels rejected.
 - [ ] **CIB ABCDE block** — Actor / Behaviour / Content / Degree / Effect populated for every state-attribution claim; observation ≠ attribution discipline applied.
 - [ ] **Algorithmic asymmetry rows cite academic / transparency-report sources** — Huszár et al. 2022 PNAS, TikTok transparency reports, Ribeiro et al. 2020, etc.; "platform X favours party Y" without citation rejected.
 - [ ] **Comparative-international frame lineage** — ≥ 2 cognates traced to prior jurisdictions; "no international cognate" is suspicious for any major story and triggers re-do.
