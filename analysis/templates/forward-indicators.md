@@ -11,17 +11,61 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-0A66C2?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-0A66C2?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-25 (UTC)
-**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-05-01 (UTC)
+**🏢 Owner:** Hack23 AB (Org.nr 559534-7807) | **🏷️ Classification:** Public
 
-> **📌 Template instructions:** Produce on every run as a required deliverable, with at least 10 forward indicators spanning near-, medium-, and longer-horizon triggers. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/forward-indicators.md` or, for review cycles, at `analysis/weekly/${ISO_WEEK}/forward-indicators.md`.
+> **📌 Template instructions:** Produce on every run as a required deliverable, with at least the minimum indicator count for the article type's horizon band (see §Horizon Bands below). Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/forward-indicators.md` or, for review cycles, at `analysis/weekly/${ISO_WEEK}/forward-indicators.md`.
 
 > **✨ What to produce:** A single, authoritative watchlist — each indicator named, dated, threshold-defined, and tied to the downstream analysis it will update. Every indicator must be measurable from public MCP data.
+
+---
+
+## 🧭 Horizon Bands
+
+> **Registry-driven rendering:** This template is a single file. The `forwardIndicatorHorizons` array in [`article-types.json`](../article-types.json) drives which bands render for a given article type. Existing morning runs (week-ahead and shorter) produce the same output structure as before — back-compat is preserved.
+
+### Band Schema (conditional on `horizonDays`)
+
+The `forwardIndicatorHorizons` array in `article-types.json` defines the exact band set per article type. The `election` band is always present as the terminal anchor. The pattern below shows how bands accumulate as the forecast horizon extends:
+
+| Condition | Active bands |
+|-----------|-------------|
+| `horizonDays = 0` (single-type, tier-c) | 72h · week · month · election |
+| `horizonDays = 7` (week-ahead) | 72h · week · month · quarter · election |
+| `horizonDays = 30` (month-ahead) | 72h · week · month · quarter · year · election |
+| `horizonDays = 90` (quarter-ahead) | week · month · quarter · year · election |
+| `horizonDays = 365` (year-ahead) | month · quarter · year · cycle · election |
+| `horizonDays >= 1460` (election-cycle) | quarter · year · cycle · election |
+
+### WEP-Degradation Ladder (per-band ceiling)
+
+As the forecast horizon extends, epistemic certainty decreases. The Words of Estimative Probability (WEP) ceiling degrades accordingly:
+
+| Band | Label | WEP ceiling | Rationale |
+|------|-------|-------------|-----------|
+| T+72h | 72 hours | **very likely / very unlikely** | Near-term; high confidence from scheduled events |
+| T+7d | week | **likely / unlikely** | Short-term; most parliamentary triggers known |
+| T+30d | month | **likely / unlikely** | Medium-term; some uncertainty in scheduling |
+| T+90d | quarter | **roughly even / about even** | Extended; multiple intervening variables |
+| T+365d | year | **roughly even** (mandatory unless ≥3 corroborated sources) | Long-range; structural uncertainty dominates |
+| T+1460d | cycle | **roughly even / unlikely / very unlikely; never likely/very likely** without ≥3 cycle-aged sources | Ultra-long; scenario-driven only |
+
+### Minimum Indicator Counts (per article type)
+
+| Article type | Min indicators | Bands |
+|--------------|:--------------:|-------|
+| Week-ahead (`horizonDays=7`) | **6** | 72h, week, month, quarter, election |
+| Month-ahead (`horizonDays=30`) | **8** | 72h, week, month, quarter, year, election |
+| Quarter-ahead (`horizonDays=90`) | **10** | week, month, quarter, year, election |
+| Year-ahead (`horizonDays=365`) | **12** | month, quarter, year, cycle, election |
+| Election-cycle (`horizonDays>=1460`) | **15** | quarter, year, cycle, election |
+
+> **Note:** Single-type and tier-c-aggregation articles (morning runs, evening analysis) use the 4-band schema (72h / week / month / election) with a floor of 6 indicators. The `election` band is always present as the terminal anchor across all article types.
 
 ---
 
@@ -190,5 +234,6 @@ graph LR
 - [ ] **No illustrative content shipped as fact** — every `[REQUIRED]` placeholder is filled OR removed; every `Example:` block is clearly fenced or removed; no fabricated `dok_id`, vote count, or quote leaks into the final artifact.
 - [ ] **Cross-references resolve** — every `[link](file.md)` in this artifact points to a file that exists in the run folder (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) or to a methodology / template under `analysis/`.
 - [ ] **Mermaid renders** — every fenced ` ```mermaid ` block parses (no missing class definitions, no orphan nodes, no >40-node graphs that overflow viewport on mobile).
+- [ ] **Indicator-count floor** — total indicators ≥ minimum for the article type's horizon band (6 week / 8 month / 10 quarter / 12 year / 15 cycle); WEP ceiling respected per band; no indicator assigned a probability above its band's WEP ceiling.
 - [ ] **Line-floor check** — artifact length ≥ the per-artifact floor in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json); shorter artifacts trigger Pass-2 rewrite, never a `[truncated]` note.
 
