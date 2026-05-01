@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-0A66C2?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.3-0A66C2?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
@@ -180,9 +180,9 @@ graph TD
 
 > **📌 When to render this block.** Triggered by the run's `horizonDays` value resolved from [`analysis/article-types.json`](../article-types.json) via [`scripts/horizon-context.ts`](../../scripts/horizon-context.ts):
 > - `horizonDays < 90` (today / week-ahead / month-ahead) → **omit this block entirely**; the default §"Scenario Set" above stands alone.
-> - `horizonDays >= 90` (`quarter-ahead`) → render the **4 base scenarios** sub-tree (Optimistic / Base / Pessimistic / Disruptive).
-> - `horizonDays >= 365` (`year-ahead`) → also render the **3 wildcard scenarios** sub-tree (each linked to a wildcard in [`wildcards-blackswans.md`](wildcards-blackswans.md)).
-> - `horizonDays >= 1460` (`election-cycle`) → also render **3 governing-coalition branches per base scenario** (12 leaves total).
+> - `horizonDays >= 90` (`quarter-ahead`) → render the **4 base scenarios** sub-tree (Optimistic / Base / Pessimistic / Disruptive — these are the long-horizon canonical names and map to §"Scenario Set" Scenario A–D as **Base ⇄ A**, **Upside ⇄ Optimistic ⇄ B**, **Downside ⇄ Pessimistic ⇄ C**, **Wildcard ⇄ Disruptive ⇄ D**).
+> - `horizonDays >= 365` (`year-ahead`) → also render the **wildcard sub-tree** with `longHorizonRules.wildcardCount` entries from [`analysis/article-types.json`](../article-types.json) (currently **5** for `year-ahead` / `election-cycle`), each linked to a wildcard in [`wildcards-blackswans.md`](wildcards-blackswans.md).
+> - `horizonDays >= 1460` (`election-cycle`) → also render `longHorizonRules.scenarioBranchesPerScenario` governing-coalition branches per base scenario (currently **3** → 12 leaves total).
 >
 > Naming convention — every node carries:
 > - `horizonClass` — one of `T+90` / `T+365` / `T+1460`
@@ -198,13 +198,19 @@ graph TD
 
 | Scenario ID | Parent | `horizonClass` | Branch | Probability | WEP (band-degraded) | Confidence | `forward-indicators.md` band | Counterfactual flag |
 |-------------|--------|:--------------:|--------|:-----------:|---------------------|:----------:|------------------------------|:-------------------:|
-| `SCN-Q-OPT` | — | `T+90` | Optimistic — coalition consolidates | 25 % | likely [horizon:quarter] | 🟩 HIGH | `quarter` | ⬜ optional |
-| `SCN-Q-BASE` | — | `T+90` | Base — status-quo continuity | 40 % | likely [horizon:quarter] | 🟩 HIGH | `quarter` | ⬜ optional |
-| `SCN-Q-PESS` | — | `T+90` | Pessimistic — coalition stress | 25 % | roughly even [horizon:quarter] | 🟧 MEDIUM | `quarter` | ⬜ optional |
-| `SCN-Q-DISRUPT` | — | `T+90` | Disruptive — exogenous shock | 10 % | unlikely [horizon:quarter] | 🟥 LOW | `quarter` | ⬜ optional |
-| `SCN-Y-WILD-1` | — | `T+365` | Wildcard 1 — KU/scandal cascade | 40 % *(of wildcard set)* | roughly even [horizon:year] | 🟧 MEDIUM | `year` | ⬜ optional |
-| `SCN-Y-WILD-2` | — | `T+365` | Wildcard 2 — external security shock | 35 % *(of wildcard set)* | unlikely [horizon:year] | 🟧 MEDIUM | `year` | ⬜ optional |
-| `SCN-Y-WILD-3` | — | `T+365` | Wildcard 3 — economic dislocation | 25 % *(of wildcard set)* | unlikely [horizon:year] | 🟥 LOW | `year` | ⬜ optional |
+| `SCN-Q-OPT` | — | `T+90` | Optimistic — coalition consolidates (≡ §Scenario Set "B / Upside") | 25 % | likely [horizon:quarter] | 🟩 HIGH | `quarter` | ⬜ optional |
+| `SCN-Q-BASE` | — | `T+90` | Base — status-quo continuity (≡ §Scenario Set "A / Base") | 40 % | likely [horizon:quarter] | 🟩 HIGH | `quarter` | ⬜ optional |
+| `SCN-Q-PESS` | — | `T+90` | Pessimistic — coalition stress (≡ §Scenario Set "C / Downside") | 25 % | roughly even [horizon:quarter] | 🟧 MEDIUM | `quarter` | ⬜ optional |
+| `SCN-Q-DISRUPT` | — | `T+90` | Disruptive — exogenous shock (≡ §Scenario Set "D / Wildcard") | 10 % | unlikely [horizon:quarter] | 🟥 LOW | `quarter` | ⬜ optional |
+| `SCN-Y-WILD-1` | — | `T+365` | Wildcard 1 — KU/scandal cascade | 30 % *(of wildcard set)* | roughly even [horizon:year] | 🟧 MEDIUM | `year` | ⬜ optional |
+| `SCN-Y-WILD-2` | — | `T+365` | Wildcard 2 — external security shock | 25 % *(of wildcard set)* | unlikely [horizon:year] | 🟧 MEDIUM | `year` | ⬜ optional |
+| `SCN-Y-WILD-3` | — | `T+365` | Wildcard 3 — economic dislocation | 20 % *(of wildcard set)* | unlikely [horizon:year] | 🟥 LOW | `year` | ⬜ optional |
+| `SCN-Y-WILD-4` | — | `T+365` | Wildcard 4 — leadership / health event | 15 % *(of wildcard set)* | unlikely [horizon:year] | 🟥 LOW | `year` | ⬜ optional |
+| `SCN-Y-WILD-5` | — | `T+365` | Wildcard 5 — institutional / KU constitutional shock | 10 % *(of wildcard set)* | very unlikely [horizon:year] | 🟥 LOW | `year` | ⬜ optional |
+| `SCN-C-OPT` | — | `T+1460` | Cycle base — Optimistic (≡ §Scenario Set B / Upside, cycle-aged) | 25 % *(of base set)* | roughly even [horizon:cycle] | 🟧 MEDIUM | `cycle` | ✅ mandatory |
+| `SCN-C-BASE` | — | `T+1460` | Cycle base — Base (≡ §Scenario Set A / Base, cycle-aged) | 40 % *(of base set)* | roughly even [horizon:cycle] | 🟧 MEDIUM | `cycle` | ✅ mandatory |
+| `SCN-C-PESS` | — | `T+1460` | Cycle base — Pessimistic (≡ §Scenario Set C / Downside, cycle-aged) | 25 % *(of base set)* | unlikely [horizon:cycle] | 🟥 LOW | `cycle` | ✅ mandatory |
+| `SCN-C-DISRUPT` | — | `T+1460` | Cycle base — Disruptive (≡ §Scenario Set D / Wildcard, cycle-aged) | 10 % *(of base set)* | very unlikely [horizon:cycle] | 🟥 LOW | `cycle` | ✅ mandatory |
 | `SCN-C-OPT-A` | `SCN-C-OPT` | `T+1460` | Coalition A — same-bloc continuity | 50 % *(of OPT branches)* | roughly even [horizon:cycle] | 🟧 MEDIUM | `cycle` | ✅ mandatory |
 | `SCN-C-OPT-B` | `SCN-C-OPT` | `T+1460` | Coalition B — narrowed bloc + SD | 35 % *(of OPT branches)* | unlikely [horizon:cycle] | 🟥 LOW | `cycle` | ✅ mandatory |
 | `SCN-C-OPT-C` | `SCN-C-OPT` | `T+1460` | Coalition C — minority + supply | 15 % *(of OPT branches)* | very unlikely [horizon:cycle] | 🟥 LOW | `cycle` | ✅ mandatory |
@@ -236,6 +242,8 @@ graph LR
     Y --> YW1["🔮 Wildcard 1<br/>→ wildcards-blackswans.md"]
     Y --> YW2["🔮 Wildcard 2<br/>→ wildcards-blackswans.md"]
     Y --> YW3["🔮 Wildcard 3<br/>→ wildcards-blackswans.md"]
+    Y --> YW4["🔮 Wildcard 4<br/>→ wildcards-blackswans.md"]
+    Y --> YW5["🔮 Wildcard 5<br/>→ wildcards-blackswans.md"]
     C --> CB1["🟢 Base × {A,B,C} coalitions"]
     C --> CB2["🟢 Optimistic × {A,B,C} coalitions"]
     C --> CB3["🟠 Pessimistic × {A,B,C} coalitions"]
@@ -256,7 +264,7 @@ graph LR
 | `T+365` (year) | `roughly even` (corroboration unlocks `likely`) | ⬜ optional | `year` |
 | `T+1460` (cycle / coalition leaf) | `roughly even` floor; never `likely` / `very likely` without ≥ 3 cycle-aged sources | ✅ mandatory | `cycle` / `election` |
 
-Every WEP term in this block carries a `[horizon:<band>]` inline tag (gate-checked by [`05-analysis-gate.md` §LH-2](../../.github/prompts/05-analysis-gate.md)); every coalition leaf at `T+1460` references at least one paragraph in [`devils-advocate.md`](devils-advocate.md) by `**Counterfactual N — <name>:**` heading.
+Every WEP term in this block carries a `[horizon:<band>]` inline tag (gate-checked by [`05-analysis-gate.md` §LH-1](../../.github/prompts/05-analysis-gate.md)); every coalition leaf at `T+1460` references at least one paragraph in [`devils-advocate.md`](devils-advocate.md) by `**Counterfactual N — <name>:**` heading.
 
 ---
 
