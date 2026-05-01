@@ -176,7 +176,7 @@
       "executive-brief.md": 150
     },
     "quarter-ahead": {
-      "_comment": "Quarter-ahead floors = month-ahead × 1.13 (proportional to multiplier 1.7 / 1.5), rounded down to nearest 5. Mandates 4 scenarios + 2 counterfactuals; cross-horizon citation of week-ahead + month-ahead required.",
+      "_comment": "Quarter-ahead floors = month-ahead × 1.13 (proportional to multiplier 1.7 / 1.5), rounded down to nearest 5. Mandates 4 scenarios + 2 counterfactuals; cross-horizon citation of week-ahead + month-ahead required. Note: election-2026-analysis.md and election-cycle-analysis.md are filename-variant aliases (see scripts/render-lib/aggregator/order.ts → FILENAME_ALIASES); the depth floor below applies to whichever filename is present in a given run folder.",
       "synthesis-summary.md": 260,
       "forward-indicators.md": 225,
       "scenario-analysis.md": 245,
@@ -185,10 +185,11 @@
       "executive-brief.md": 170,
       "intelligence-assessment.md": 200,
       "devils-advocate.md": 165,
-      "election-2026-analysis.md": 180
+      "election-2026-analysis.md": 180,
+      "election-cycle-analysis.md": 180
     },
     "year-ahead": {
-      "_comment": "Year-ahead floors = month-ahead × 1.33 (proportional to multiplier 2.0 / 1.5), rounded down to nearest 5. Mandates 4 scenarios + 5 wildcards + PESTLE; cross-horizon citation of quarter-ahead × 2 + monthly-review × 4.",
+      "_comment": "Year-ahead floors = month-ahead × 1.33 (proportional to multiplier 2.0 / 1.5), rounded down to nearest 5. Mandates 4 scenarios + 5 wildcards + PESTLE; cross-horizon citation of quarter-ahead × 2 + monthly-review × 4. Note: election-2026-analysis.md and election-cycle-analysis.md are filename-variant aliases.",
       "synthesis-summary.md": 305,
       "forward-indicators.md": 265,
       "scenario-analysis.md": 290,
@@ -200,10 +201,11 @@
       "devils-advocate.md": 195,
       "methodology-reflection.md": 285,
       "executive-brief.md": 200,
-      "election-2026-analysis.md": 225
+      "election-2026-analysis.md": 225,
+      "election-cycle-analysis.md": 225
     },
     "election-cycle": {
-      "_comment": "Election-cycle floors = month-ahead × 1.66 (proportional to multiplier 2.5 / 1.5), rounded down to nearest 5. Mandates 4 scenarios × 3 governing-coalition branches + 5 wildcards + 3 counterfactuals + PESTLE + STRIDE; cross-horizon citation of year-ahead × 2 + monthly-review × 12. Also blocks on cycle-trajectory.md (24th artifact for this type only).",
+      "_comment": "Election-cycle floors = month-ahead × 1.66 (proportional to multiplier 2.5 / 1.5), rounded down to nearest 5. Mandates 4 scenarios × 3 governing-coalition branches + 5 wildcards + 3 counterfactuals + PESTLE + STRIDE; cross-horizon citation of year-ahead × 2 + monthly-review × 12. Also blocks on cycle-trajectory.md (24th artifact for this type only). Note: election-2026-analysis.md and election-cycle-analysis.md are filename-variant aliases.",
       "synthesis-summary.md": 380,
       "forward-indicators.md": 330,
       "scenario-analysis.md": 360,
@@ -218,6 +220,7 @@
       "methodology-reflection.md": 350,
       "executive-brief.md": 250,
       "election-2026-analysis.md": 275,
+      "election-cycle-analysis.md": 275,
       "coalition-mathematics.md": 230,
       "historical-parallels.md": 215
     },

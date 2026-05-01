@@ -110,7 +110,7 @@ Long-horizon analyses MUST cite shorter-horizon analyses to prevent narrative dr
 | `year-ahead` | ≥ 2 most recent `quarter-ahead` + ≥ 4 most recent `monthly-review` |
 | `election-cycle` | ≥ 2 most recent `year-ahead` + ≥ 12 most recent `monthly-review` |
 
-Citation format in `cross-reference-map.md`: each cited predecessor appears in a row with its `analysis/daily/YYYY-MM-DD/<subfolder>/synthesis-summary.md` GitHub blob URL plus the **delta finding** that has emerged since (one-sentence note on what changed). The gate counts rows by predecessor type.
+Citation format in `cross-reference-map.md`: each cited predecessor appears in a row with its `analysis/daily/YYYY-MM-DD/<subfolder>/synthesis-summary.md` GitHub blob URL plus the **delta finding** that has emerged since (one-sentence note on what changed). The current automated gate verifies presence of at least one configured predecessor path; it does **not** currently count rows by predecessor type or enforce the numeric `monthly-review` minima above. Treat the table as the required analysis standard, with per-type counts confirmed during review until the gate is expanded.
 
 ---
 

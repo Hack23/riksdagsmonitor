@@ -104,15 +104,16 @@ PIRs marked `inheritsCycle: true` (the small set that survive the cycle boundary
 
 ## 5 — Operator runbook
 
-The flip from `current` to `next` is a **CEO-approved Normal change** under `Change_Management.md`. The exact PR is constrained:
+The flip from `current` to `next` is a **CEO-approved Normal change** under `Change_Management.md`. `scripts/cycle-rollover.ts` is **not yet implemented**, so the rollover is currently performed manually in the PR:
 
 1. Bump `analysis/article-types.json` `electionCycles.current` to the closed-out cycle and `next` to the new "next" placeholder.
-2. Run `scripts/cycle-rollover.ts --dry-run` and inspect output.
-3. Run `scripts/cycle-rollover.ts --apply` to perform the archival writes.
+2. Perform a manual dry-run review in the PR description: list every `analysis/election-cycle/current/` artifact that will be carried forward into `analysis/election-cycle/next/`, every cycle-scoped artifact that will be archived, and every PIR successor that will be seeded for entries marked `inheritsCycle: true`.
+3. Apply the rollover manually: archive cycle-scoped PIRs with `status: "archived"`, `archivedReason: "cycle-rollover-<election-date>"`, and `successor` where applicable; seed successor PIRs with `parent` linkage; and carry forward the `next/` baseline files into the new cycle state described in this module.
 4. Update `analysis/methodologies/electoral-domain-methodology.md` cycle table.
-5. Open the PR; `tests/article-types.test.ts > election cycle coherence` MUST pass.
+5. Append the activation row to `analysis/cycles/rollover-log.md` using the format in §7 (operator must `mkdir -p analysis/cycles/` if the directory does not yet exist — see §3 implementation-status note).
+6. Open the PR; `tests/article-types.test.ts > election cycle coherence` MUST pass.
 
-The whole sequence is idempotent — re-running it on already-rotated state is a no-op.
+The whole sequence is intended to be idempotent — re-applying the same manual rollover on already-rotated state should result in no further content changes. Once `scripts/cycle-rollover.ts` ships, steps 2–3 are expected to collapse into `--dry-run` / `--apply` invocations.
 
 ---
 

@@ -14,9 +14,10 @@
  *   - `sessionPhase`  — autumn | xmas-recess | spring | summer-recess
  *   - `articleType`   — full registry entry for the calling workflow
  *
- * Used by:
+ * Intended/planned workflow consumers (not yet wired):
  *   - `news-quarter-ahead.md` / `news-year-ahead.md` / `news-election-cycle.md`
- *     (consumed via `bash` in the workflow body)
+ *     do not currently invoke `tsx scripts/horizon-context.ts` or import
+ *     this module; the wiring is planned follow-up work.
  *
  * Additional script consumers (`scripts/aggregate-analysis.ts`,
  * `scripts/render-articles.ts`, `scripts/validate-article.ts`,

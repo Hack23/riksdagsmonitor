@@ -173,7 +173,7 @@ It declares:
 
 ### Forward-look horizons
 
-Riksdagsmonitor produces forward-looking analysis at five distinct horizons, each one tier deeper than the last in time-window, scenario-tree depth and IMF projection-year stamps. The single source of truth for all five is [`analysis/article-types.json`](analysis/article-types.json) (validated by [`schemas/article-types.schema.json`](schemas/article-types.schema.json)).
+Riksdagsmonitor produces forward-looking analysis at five distinct horizons, each one tier deeper than the last in time-window, scenario-tree depth and IMF projection-year stamps. The single source of truth for all five is [`analysis/article-types.json`](analysis/article-types.json), with the corresponding schema defined in [`schemas/article-types.schema.json`](schemas/article-types.schema.json). CI parity is currently enforced by [`tests/article-types.test.ts`](tests/article-types.test.ts) (ad-hoc structural checks); full Ajv-based JSON Schema validation is planned follow-up.
 
 | Horizon | Workflow | Window | Cron | Multiplier | Word floor | Long-horizon ext |
 |---------|----------|--------|------|------------|------------|-------------------|
