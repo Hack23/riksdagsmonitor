@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-6.5-0A66C2?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-6.8-0A66C2?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
@@ -190,7 +190,7 @@ Every run produces **all five Family C files and all seven Family D files**. The
 | `devils-advocate.md` | Red-team challenge with ≥3 competing hypotheses via ACH; when evidence is strong, the file documents which hypotheses were rejected and why | [`devils-advocate.md`](../templates/devils-advocate.md) | ACH, Red Team, Devil's Advocacy |
 | `intelligence-assessment.md` | 3–7 Key Judgments with confidence + PIRs for next cycle; operates on every run because every day has a priority-intelligence requirement | [`intelligence-assessment.md`](../templates/intelligence-assessment.md) | Key Assumptions Check |
 | ⭐ `methodology-reflection.md` | **VITAL run-audit gate.** Evidence sufficiency, confidence distribution, source diversity, party-neutrality arithmetic, **ICD 203 compliance audit**, three concrete methodology improvements for the next cycle. Skipping it breaks the self-correction loop. | [`methodology-reflection.md`](../templates/methodology-reflection.md) | Key Assumptions Check, Quality of Information Check |
-| `election-cycle-analysis.md` | Seat-projection deltas + coalition viability for every run during the active pre-election window; after the election it converts to a permanent "post-election government-formation context" file (see [Multi-cycle election lens](#multi-cycle-election-lens)) | [`election-cycle-analysis.md`](../templates/election-cycle-analysis.md) | Morphological |
+| `election-cycle-analysis.md` | Seat-projection deltas + coalition viability for every run during the active pre-election window; after the election it converts to a permanent "post-election government-formation context" file (see [Election lens — cycle anchors and rollover](#election-lens--cycle-anchors-and-rollover)) | [`election-cycle-analysis.md`](../templates/election-cycle-analysis.md) | Morphological |
 | `voter-segmentation.md` | Demographic / regional / ideological segment impact; when the day's docs are procedural, documents baseline segment positions | [`voter-segmentation.md`](../templates/voter-segmentation.md) | Outside-In Thinking |
 | `coalition-mathematics.md` | Current seat map + pivotal votes + Sainte-Laguë scenarios; stable structure regardless of daily contentiousness. **MUST** include a voting-record table sourced from `fetch-voting-records` output (`data/voteringar/{date}/{bet}.json`) for every betänkande cited, or one of the explicit annotations: `<!-- vote-not-found: {bet} -->` when `status: "not_found"` (MCP returned successfully with zero data — referral or procedural vote), `<!-- vote-fetch-error: {bet} -->` when `status: "error"` (transient MCP/network failure; rerun once the service is back), or — set manually by editorial tooling that knows a vote is upcoming — `<!-- vote-pending: {bet} -->`. | [`coalition-mathematics.md`](../templates/coalition-mathematics.md) | Morphological |
 | `historical-parallels.md` | Named precedent(s) ≤ 40 years with similarity score; when no obvious parallel exists, documents the "no-precedent" finding with reasoning | [`historical-parallels.md`](../templates/historical-parallels.md) | Outside-In Thinking |
@@ -216,15 +216,15 @@ Long-horizon workflows (quarter-ahead, year-ahead, election-cycle) follow additi
 
 Use `cycle` when the judgement spans the full mandate period as a governing horizon. Use `election` when the analysis is specifically anchored to an election event or its immediate government-formation consequences. For band-specific floor and calibration rules, follow the authoritative definitions in [`.github/prompts/ext/long-horizon-forecasting.md`](../../.github/prompts/ext/long-horizon-forecasting.md).
 
-**Scenario-tree depth per horizon class:**
+**Scenario-tree depth per article type:**
 
-| Horizon | Scenarios | Wildcards | Branches per scenario |
-|---------|:---------:|:---------:|:---------------------:|
+| Article type | Scenarios | Wildcards | Branches per scenario |
+|--------------|:---------:|:---------:|:---------------------:|
 | quarter | 4 | 0 | 1 |
 | year | 4 | 5 | 1 |
-| cycle | 4 | 5 | 3 (coalition branches → 12 leaves) |
+| election-cycle | 4 | 5 | 3 (coalition branches → 12 leaves) |
 
-**PESTLE mandatory threshold.** `year` and `cycle` article types require a PESTLE artifact (`pestle-analysis.md`) — enforced via the `pestleMandatory` flag in `analysis/article-types.json`.
+**PESTLE mandatory threshold.** `year` and `election-cycle` article types require a PESTLE artifact (`pestle-analysis.md`) — enforced via the `pestleMandatory` flag in `analysis/article-types.json`.
 
 **PIR roll-forward.** Open PIRs from the predecessor cycle are carried forward by `scripts/roll-forward-pirs.ts`, degrading confidence one level per cycle. The full procedure is documented in [Step 7](#step-7--pass-2-rewrite-f3ead-disseminate) and the PIR status sidecar section.
 
@@ -233,12 +233,12 @@ Use `cycle` when the judgement spans the full mandate period as a governing hori
 | Horizon | Must cite |
 |---------|-----------|
 | quarter | ≥ 1 week-ahead + ≥ 1 month-ahead |
-| year | ≥ 2 quarter-ahead + ≥ 4 month-ahead |
-| cycle | ≥ 2 year-ahead + ≥ 12 month-ahead |
+| year | ≥ 2 quarter-ahead + ≥ 4 monthly-review |
+| cycle | ≥ 2 year-ahead + ≥ 12 monthly-review |
 
 These citations appear in `cross-reference-map.md`. The gate at `.github/prompts/05-analysis-gate.md` currently verifies the presence of the required predecessor path types; the numeric minima in this table remain a Pass-2/review requirement until the gate is expanded to enforce counts.
 
-#### Multi-cycle election lens
+#### Election lens — cycle anchors and rollover
 
 > Replaces static "election-specific-year" framing with a parameterised, registry-driven cycle model.
 
@@ -498,7 +498,7 @@ Every `significance-scoring.md` ranks documents against these six dimensions.
 
 ---
 
-## 🗳️ Multi-cycle election lens
+## 🗳️ Election lens requirements
 
 The election lens activates whenever `electionCycleAnchor` in `analysis/article-types.json` is not `none`. All workflows within the active window include an **Election Cycle** block in `synthesis-summary.md` and produce `election-cycle-analysis.md` as part of Family D. **Compatibility note:** in the current `synthesis-summary.md` template, this same required block may still appear under the heading `## 🗳️ Election 2026 Implications`; operators should treat that heading as the canonical Election Cycle section until template terminology is fully aligned. The block assesses five dimensions:
 
@@ -512,7 +512,7 @@ The election lens activates whenever `electionCycleAnchor` in `analysis/article-
 
 Classify electoral significance as 🔴 CRITICAL · 🟠 HIGH · 🟡 MODERATE · 🟢 LOW · ⚪ NEGLIGIBLE.
 
-The cycle anchor, rollover window, and file-carry-forward rules are documented in [Step 5 §Multi-cycle election lens](#multi-cycle-election-lens) and [`.github/prompts/ext/cycle-rollover.md`](../../.github/prompts/ext/cycle-rollover.md).
+The cycle anchor, rollover window, and file-carry-forward rules are documented in [Step 5 §Election lens](#election-lens--cycle-anchors-and-rollover) and [`.github/prompts/ext/cycle-rollover.md`](../../.github/prompts/ext/cycle-rollover.md).
 
 ---
 
