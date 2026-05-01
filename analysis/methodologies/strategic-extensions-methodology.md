@@ -367,6 +367,43 @@ Produce a table of parties × claims-about-them × depth-score (words + citation
 
 ---
 
+## 🌐 Long-horizon extensions (`horizonDays ≥ 90`)
+
+> **DRY policy.** The authoritative source for horizon stratification, scenario-tree depth, counterfactual minima, IMF projection-year stamps, PESTLE-mandatory thresholds, cross-horizon citation rules and forward-indicator bands is [`.github/prompts/ext/long-horizon-forecasting.md`](../../.github/prompts/ext/long-horizon-forecasting.md). The numbers below reference that bounded-context module — they are **not duplicated** here. Aggregation multipliers (1.7 / 2.0 / 2.5) live in [`.github/prompts/ext/tier-c-aggregation.md`](../../.github/prompts/ext/tier-c-aggregation.md). Gate enforcement happens in [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) (check **LH-3** = counterfactual paragraph minima).
+
+### Long-horizon scenario-tree composition
+
+When the run resolves to `quarter-ahead`, `year-ahead` or `election-cycle`, `scenario-analysis.md` MUST branch deeper than the baseline ≥ 3 scenarios. Tree shape comes from `analysis/article-types.json → longHorizonRules.scenarioCount` (× branches):
+
+| Article type | Tree shape (minimum) | Leaves |
+|--------------|----------------------|--------|
+| `quarter-ahead` | 4 base scenarios | 4 |
+| `year-ahead` | 4 base scenarios + ≥ 3 wildcards (registry default 5; recorded in `wildcards-blackswans.md`) | 4 + ≥ 3 |
+| `election-cycle` | 4 base scenarios × 3 governing-coalition branches | **12** |
+
+Probabilities sum to 100 % at every level (base set; per-scenario branch set). See the canonical scenario summary table and per-scenario branching Mermaid in [`analysis/templates/scenario-analysis.md`](../templates/scenario-analysis.md). Wildcard cards for `year-ahead` are authored in [`analysis/templates/wildcards-blackswans.md`](../templates/wildcards-blackswans.md).
+
+### Counterfactual reasoning (mandatory at year/cycle)
+
+`devils-advocate.md` MUST contain explicit `**Counterfactual N — <name>**` paragraphs at the minima below. Each counterfactual references at least one **scenario ID** from the sibling `scenario-analysis.md` (e.g. `S2-Coalition-Collapse`) and is anchored on a primary-source `dok_id` or URL. Gate **LH-3** in `05-analysis-gate.md` enforces the paragraph-count floor via grep.
+
+| Article type | Minimum counterfactual paragraphs |
+|--------------|------------------------------------|
+| `week-ahead` / `month-ahead` | 1 |
+| `quarter-ahead` | 2 |
+| `year-ahead` | **≥ 1 mandatory** (registry default 2 — never below 1) |
+| `election-cycle` | **≥ 2 mandatory** (registry default 3 — never below 2) |
+
+Paragraph structure (4–8 sentences): (a) restate the assumption being challenged, (b) construct the alternative world referencing the linked scenario ID, (c) declare the falsification trigger that would update the analysis.
+
+### Horizon stratification of strategic extensions
+
+When `horizonDays ≥ 90`, every Family-C/D artifact in this methodology gains a **horizon-class column** (`72h | week | month | quarter | year | cycle | election`) on its probabilistic tables. WEP terms (`very likely`, `likely`, `roughly even`, `unlikely`, `very unlikely`) carry an inline `[horizon:<band>]` tag within ± 80 characters of the term. WEP-band degradation rules (no `very likely`/`very unlikely` at `year`/`cycle` without ≥ 3 corroborated cycle-aged sources) are enforced at Pass-2 review per `ext/long-horizon-forecasting.md` §1. Affected artifacts: `scenario-analysis.md`, `devils-advocate.md`, `intelligence-assessment.md`, `forward-indicators.md`, `risk-assessment.md`, `threat-analysis.md`, `cross-reference-map.md`, `pestle-analysis.md` (blocking for year/cycle), `wildcards-blackswans.md`.
+
+Single-horizon (`horizonDays < 90`) Family-C/D artifacts retain their existing column structure — **no regression**.
+
+---
+
 ## 🛠️ Production Workflow — step-by-step
 
 ```mermaid
@@ -431,6 +468,8 @@ flowchart TD
 
 - **Upstream:** [synthesis-methodology.md](./synthesis-methodology.md) (Family A) · [structural-metadata-methodology.md](./structural-metadata-methodology.md) (Family B)
 - **Downstream / parallel:** [electoral-domain-methodology.md](./electoral-domain-methodology.md) (Family D — lens-specific extensions)
+- **Long-horizon authority (DRY):** [`.github/prompts/ext/long-horizon-forecasting.md`](../../.github/prompts/ext/long-horizon-forecasting.md) — scenario-tree depth, counterfactual minima, horizon stratification, IMF `T+N` stamps, cross-horizon citation
+- **Tier-C aggregation:** [`.github/prompts/ext/tier-c-aggregation.md`](../../.github/prompts/ext/tier-c-aggregation.md) — multiplier table (1.7 / 2.0 / 2.5) and sibling-folder ingestion
 - **Frameworks:** [political-swot-framework.md](./political-swot-framework.md) · [political-risk-methodology.md](./political-risk-methodology.md) · [political-threat-framework.md](./political-threat-framework.md)
 - **Master protocol:** [ai-driven-analysis-guide.md](./ai-driven-analysis-guide.md)
 
