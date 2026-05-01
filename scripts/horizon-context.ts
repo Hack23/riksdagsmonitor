@@ -147,16 +147,19 @@ export function activeCycleAnchor(articleDate: string): 'current' | 'next' {
 /**
  * Determine the most-recent IMF WEO vintage that should be pinned at
  * run time. WEO is published twice yearly, in April and October.
+ *
+ * Coverage matrix (UTC month numbering):
+ *   Jan–Apr (1–4)   → previous year's Oct vintage (Apr not yet released)
+ *   May–Oct (5–10)  → current year's Apr vintage
+ *   Nov–Dec (11–12) → current year's Oct vintage
  */
 export function weoVintage(articleDate: string): string {
   const d = new Date(articleDate);
   const year = d.getUTCFullYear();
-  const month = d.getUTCMonth() + 1; // 1-12
-  // Apr vintage available from late April; Oct vintage from late October.
+  const month = d.getUTCMonth() + 1; // 1-12, always covered by the branches below.
   if (month >= 11) return `Oct-${year}`;
   if (month >= 5) return `Apr-${year}`;
-  if (month >= 1 && month < 5) return `Oct-${year - 1}`;
-  return `Apr-${year - 1}`;
+  return `Oct-${year - 1}`;
 }
 
 /**

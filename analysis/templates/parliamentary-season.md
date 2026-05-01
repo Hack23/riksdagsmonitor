@@ -47,7 +47,7 @@
 | **Vårsession (Spring)** | mid-Jan → mid-Jun | Spring fiscal policy bill (VP) by 15 Apr; key votes on EU presidency files; partiledardebatt cycle |
 | **Sommaruppehåll (Summer recess)** | mid-Jun → late Aug | No chamber sittings; KU summer report; Almedalsveckan (early July) shapes agenda for Höstsession |
 
-**Operational rule.** Every quarter-ahead / year-ahead / cycle artifact MUST identify the **current phase** at the top of this section and the **next phase boundary** in days.
+**Operational rule.** Every quarter-ahead / year-ahead / election-cycle artifact MUST identify the **current phase** at the top of this section and the **next phase boundary** in days.
 
 ---
 
