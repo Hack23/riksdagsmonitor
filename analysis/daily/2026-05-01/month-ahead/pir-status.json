@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "cycle": "month-ahead",
+  "date": "2026-05-01",
+  "subfolder": "month-ahead",
+  "generated_at": "2026-05-01T09:00:00Z",
+  "pirs": [
+    {
+      "id": "PIR-MA-01",
+      "question": "Will Lagrådet issue negative yttrande on HD03265?",
+      "priority": "CRITICAL",
+      "status": "OPEN",
+      "indicator": "FI-01",
+      "expected_resolution": "2026-05-12 to 2026-05-19",
+      "confidence": "HIGH — RF 8:20 statutory requirement"
+    },
+    {
+      "id": "PIR-MA-02",
+      "question": "Will Centerpartiet formally request labour migration carve-out for HD03262?",
+      "priority": "HIGH",
+      "status": "OPEN",
+      "indicator": "FI-03",
+      "expected_resolution": "2026-05-01 to 2026-05-15",
+      "confidence": "MEDIUM — LRF signals confirmed, C statement pending"
+    },
+    {
+      "id": "PIR-MA-03",
+      "question": "Will HD03262–HD03264 reach Riksdagen vote before summer recess?",
+      "priority": "HIGH",
+      "status": "OPEN",
+      "indicator": "FI-07",
+      "expected_resolution": "2026-06-03 to 2026-06-15",
+      "confidence": "MEDIUM — depends on SfU calendar"
+    },
+    {
+      "id": "PIR-MA-04",
+      "question": "Will EU Commission formally contact Sweden on Pact compliance?",
+      "priority": "MEDIUM",
+      "status": "OPEN",
+      "indicator": "FI-06",
+      "expected_resolution": "2026-05-15 to 2026-06-15",
+      "confidence": "LOW-MEDIUM — no formal mechanism yet"
+    },
+    {
+      "id": "PIR-MA-05",
+      "question": "Will S poll advantage hold above 30% through June 2026?",
+      "priority": "MEDIUM",
+      "status": "OPEN",
+      "indicator": "FI-04",
+      "expected_resolution": "2026-05-15 and 2026-06-12",
+      "confidence": "MEDIUM — current trend favorable to S"
+    },
+    {
+      "id": "PIR-MA-06",
+      "question": "Will Migrationsverket publish formal capacity assessment for HD03263?",
+      "priority": "MEDIUM",
+      "status": "OPEN",
+      "indicator": "FI-08",
+      "expected_resolution": "2026-05-15 to 2026-06-30",
+      "confidence": "MEDIUM — remiss process expected"
+    }
+  ]
+}
