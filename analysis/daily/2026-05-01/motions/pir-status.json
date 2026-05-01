@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "cycle": "2026-05-01",
+  "date": "2026-05-01",
+  "subfolder": "motions",
+  "pirs": [
+    {
+      "id": "PIR-001",
+      "title": "Full text retrieval for 14 of 17 documents",
+      "status": "open",
+      "priority": "medium",
+      "description": "HD024125,128,130,131,132,133,134,135,136,137,138,139,140 — metadata only; full text not retrieved",
+      "collection_requirement": "riksdagen.se full-text HTML pages for each doc ID"
+    },
+    {
+      "id": "PIR-002",
+      "title": "Party attribution for 13 documents missing in MCP metadata",
+      "status": "open",
+      "priority": "low",
+      "description": "partibet field empty for 13 of 17 docs; S attribution inferred from pattern",
+      "collection_requirement": "Manual check of riksdagen.se dokintressent pages"
+    },
+    {
+      "id": "PIR-003",
+      "title": "Statskontoret assessment of new environmental authority not retrieved",
+      "status": "open",
+      "priority": "medium",
+      "description": "Relevant for HD024124 institutional risk analysis",
+      "collection_requirement": "scripts/fetch-statskontoret.ts — statskontoret.se reports on administrative reform"
+    },
+    {
+      "id": "PIR-004",
+      "title": "Committee hearing schedule for MJU/NU not confirmed",
+      "status": "open",
+      "priority": "medium",
+      "description": "Forward indicator FI-001 and FI-006 require committee calendar data",
+      "collection_requirement": "riksdagen.se/sv/utskotten committee calendar"
+    }
+  ],
+  "generated_at": "2026-05-01T08:00:00Z"
+}

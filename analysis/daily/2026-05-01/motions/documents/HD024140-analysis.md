@@ -1,0 +1,32 @@
+# HD024140 — Document Analysis
+
+**Doc ID**: HD024140 | **Committee**: AU | **Priority**: L2 Cluster | **Cluster**: Gender-2
+
+## Document Metadata
+
+- **Datum**: 2026-04-29
+- **Organ**: AU
+- **Typ**: Betänkandemotion
+- **Proposition**: skr. 2025/26:245
+- **Status**: Active
+- **Full text**: Not retrieved (metadata only)
+
+## Cluster Analysis
+
+This document is part of the Gender-2 cluster. Analysis is provided at the cluster level in cross-reference-map.md and significance-scoring.md. The document targets skr. 2025/26:245 from committee AU.
+
+**Estimated yrkanden**: 2–4 yrkanden on specific provisions of skr. 2025/26:245, complementary to the cluster anchor motion.
+
+**Collection gap**: Full text not retrieved. Title and yrkanden analysis pending full-text retrieval in next intelligence cycle.
+
+## Intelligence Assessment
+
+**Tier**: L2 — cluster/surface treatment
+**Legislative success probability**: 5–10% (same committee majority applies)
+**Election relevance**: MEDIUM — contributes to voting record; lower individual salience than anchor motions
+
+## Cross-References
+
+- Cluster: Gender-2
+- Anchor: See cross-reference-map.md for anchor document
+- Proposition: skr. 2025/26:245
