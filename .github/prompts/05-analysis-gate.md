@@ -484,8 +484,10 @@ fi
 if [ -s "$ANALYSIS_DIR/cross-reference-map.md" ]; then
   case "$ARTICLE_TYPE" in
     quarter-ahead)
-      grep -qE 'analysis/daily/[0-9-]+/(week-ahead|month-ahead)/' "$ANALYSIS_DIR/cross-reference-map.md" \
-        || { echo "❌ long-horizon: quarter-ahead must cite at least one week-ahead and one month-ahead predecessor"; FAIL=1; }
+      grep -qE 'analysis/daily/[0-9-]+/week-ahead/' "$ANALYSIS_DIR/cross-reference-map.md" \
+        || { echo "❌ long-horizon: quarter-ahead must cite at least one week-ahead predecessor"; FAIL=1; }
+      grep -qE 'analysis/daily/[0-9-]+/month-ahead/' "$ANALYSIS_DIR/cross-reference-map.md" \
+        || { echo "❌ long-horizon: quarter-ahead must cite at least one month-ahead predecessor"; FAIL=1; }
       ;;
     year-ahead)
       grep -qE 'analysis/daily/[0-9-]+/quarter-ahead/' "$ANALYSIS_DIR/cross-reference-map.md" \

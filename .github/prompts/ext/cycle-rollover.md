@@ -41,7 +41,9 @@ The `electionCycleAnchor` field in the registry is **not** automatically rotated
 
 ## 3 — File-rename + content-carry-forward procedure
 
-When the operator flips `electionCycleAnchor` from `current` to `next` in `analysis/article-types.json`, the rollover script (`scripts/cycle-rollover.ts`, invoked by this module) performs the following idempotent operations against the **most recent** `election-cycle/current/synthesis-summary.md` predecessor:
+When the operator flips `electionCycleAnchor` from `current` to `next` in `analysis/article-types.json`, the rollover procedure defined in this module performs the following idempotent operations against the **most recent** `election-cycle/current/synthesis-summary.md` predecessor.
+
+> **Implementation status.** `scripts/cycle-rollover.ts` is **planned future work** and is **not yet implemented in this repository**. Until that script lands, the steps below are operator-run/manual workflow instructions; election-window runs MUST NOT invoke `scripts/cycle-rollover.ts` and MUST NOT auto-create `analysis/cycles/` directories. The `analysis/cycles/` archival paths referenced in §3.2 are the **target layout** for the future script; operators performing manual rollover should `mkdir -p analysis/cycles/<cycle-range>/` before copying files.
 
 ### 3.1 Filename aliases
 

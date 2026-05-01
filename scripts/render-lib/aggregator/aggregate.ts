@@ -35,7 +35,7 @@ import {
   rewriteRelativeLinks,
 } from './cleaning/structural.js';
 import { buildFrontMatter } from './frontmatter.js';
-import { AGGREGATION_ORDER, prettifyFallbackTitle, titleForArtifact } from './order.js';
+import { aliasGroupFor, AGGREGATION_ORDER, prettifyFallbackTitle, titleForArtifact } from './order.js';
 import { expandPerDocumentAnalyses, hasPerDocumentAnalyses } from './per-document.js';
 import { buildReaderGuide } from './reader-guide.js';
 import { readBlufParagraph, readFirstParagraph, truncateToSentenceBoundary } from './seo/description.js';
@@ -173,6 +173,11 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   //    Guide above filters its rows on `available.has(entry.file)`.
   for (const fileName of AGGREGATION_ORDER) {
     if (fileName === 'executive-brief.md') continue; // already emitted in Round 0
+    // Filename-variant alias dedup: if a sibling alias of this file has
+    // already been rendered in this folder, skip — only one member of an
+    // alias group is emitted per folder. See order.ts → FILENAME_ALIASES.
+    const aliases = aliasGroupFor(fileName);
+    if (aliases && used.some((u) => aliases.has(u))) continue;
     readSection(fileName, true);
     if (fileName === 'threat-analysis.md') {
       const docExpansion = expandPerDocumentAnalyses(subfolderAbsPath, subfolderRepoRelPath);

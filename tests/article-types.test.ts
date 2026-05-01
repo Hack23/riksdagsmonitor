@@ -3,12 +3,16 @@
  * truth for every Riksdagsmonitor agentic news article type.
  *
  * Asserts:
- *   - JSON Schema (schemas/article-types.schema.json) compliance
+ *   - JSON parseability and repository-specific structural invariants
  *   - Each type has a matching .github/workflows/news-*.md source file
  *   - Each news-*.md workflow source has a matching registry entry (no drift)
  *   - Each type has a matching reference-quality-thresholds.json block
  *   - Election cycle dates are coherent (current.end == next.start, etc.)
  *   - Long-horizon types declare longHorizonRules
+ *
+ * Note: Full JSON Schema (schemas/article-types.schema.json) validation via
+ * Ajv is planned follow-up work; this file currently performs ad-hoc
+ * structural checks only.
  *
  * If this file fails after a workflow / registry / thresholds change, the
  * single-source-of-truth invariant has been broken and must be repaired

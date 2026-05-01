@@ -18,19 +18,19 @@ The single source of truth for which workflows trigger which rules is **`analysi
 
 Every probabilistic judgement in `synthesis-summary.md`, `intelligence-assessment.md`, `scenario-analysis.md`, `risk-assessment.md`, `threat-analysis.md`, `forward-indicators.md`, and `cross-reference-map.md` MUST be tagged with one of the canonical horizon bands declared in `analysis/article-types.json → horizonBands`:
 
-| Band | Days | WEP floor (this module enforces) |
-|------|------|----------------------------------|
+| Band | Days | WEP floor / review expectation |
+|------|------|--------------------------------|
 | `72h` | 3 | very likely / very unlikely permitted |
 | `week` | 7 | likely / unlikely permitted |
 | `month` | 30 | likely / unlikely permitted |
 | `quarter` | 90 | roughly even / about even permitted |
-| `year` | 365 | roughly even / about even mandatory unless ≥ 3 corroborated sources |
-| `cycle` | 1460 | roughly even / unlikely / very unlikely; never likely / very likely without ≥ 3 cycle-aged sources |
+| `year` | 365 | roughly even / about even expected; stronger confidence requires explicit corroboration in analysis (≥ 3 cycle-aged sources) |
+| `cycle` | 1460 | roughly even / unlikely / very unlikely expected; avoid likely / very likely unless explicitly corroborated by ≥ 3 cycle-aged sources |
 | `election` | 1460 | scenario-driven; coalition-formation outcomes never above "likely" |
 
-**Operational rule.** A judgement at the `year` band that uses "very likely" without three corroborated cycle-aged sources triggers a **Pass-2 rewrite**. The gate at `05-analysis-gate.md` audits this via grep on the WEP terms and a horizon-band tag.
+**Operational rule.** A judgement at the `year` band that uses "very likely" without three corroborated cycle-aged sources should trigger a **Pass-2 rewrite** during author review. The gate at `05-analysis-gate.md` does **not** currently verify corroboration counts; it only checks that WEP terms carry a horizon-band tag.
 
-**Tag format (machine-grep-able).** Inline marker `[horizon:<band>]` immediately after the WEP term, e.g.: `… is **likely** [horizon:quarter] to pass before recess …`. The gate uses `grep -n -E '\b(very likely|likely|roughly even|about even|unlikely|very unlikely)\b' artifact.md` and asserts every match line carries a `[horizon:` token within ± 80 characters.
+**Tag format (machine-grep-able).** Inline marker `[horizon:<band>]` immediately after the WEP term, e.g.: `… is **likely** [horizon:quarter] to pass before recess …`. The gate uses `grep -n -E '\b(very likely|likely|roughly even|about even|unlikely|very unlikely)\b' artifact.md` and asserts every match line carries a `[horizon:` token within ± 80 characters; this validates horizon tagging proximity only, not source-count corroboration.
 
 ---
 
@@ -44,7 +44,7 @@ Every long-horizon `scenario-analysis.md` MUST declare scenarios at the depth sp
 | `year-ahead` | 4 | 5 | 1 |
 | `election-cycle` | 4 | 5 | **3 governing-coalition branches per scenario** = 12 leaves |
 
-Scenario probabilities at every level sum to 100 %. Branch probabilities under each scenario also sum to 100 %. The gate audits the count of `## Scenario` headers + `### Branch` headers and the sum of probability rows in the canonical scenario summary table.
+Scenario probabilities at every level MUST sum to 100 %. Branch probabilities under each scenario MUST also sum to 100 %. These are authoring and review requirements for the canonical scenario summary table. **Current long-horizon gate enforcement does not yet automatically audit `## Scenario` / `### Branch` header counts or probability-sum arithmetic** — those checks are planned follow-up work; until they land, scenario depth and probability-sum compliance are validated only at Pass-2 review. The gate currently enforces the surrounding long-horizon checks that are implemented in `05-analysis-gate.md` (horizon-band tags on WEP terms, IMF `T+N` projection-year stamps, counterfactual paragraph minimums via grep, PESTLE artifact presence for year/cycle, the 24th-artifact requirement for election-cycle, and predecessor-horizon citation in `cross-reference-map.md`).
 
 ---
 

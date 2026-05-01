@@ -2,7 +2,7 @@
   "$schema": "../schemas/article-types.schema.json",
   "version": "1.0",
   "effectiveDate": "2026-05-01",
-  "description": "Single source of truth for every Riksdagsmonitor agentic news article type. Consumed by scripts/render-lib/aggregator/order.ts (section ordering), scripts/aggregate-analysis.ts (word-floor enforcement), scripts/render-articles.ts (SEO labels), scripts/generate-news-indexes.ts (homepage cards), scripts/validate-article.ts (required-artifact check), .github/prompts/ext/tier-c-aggregation.md (multiplier table), and Article-Generation.md (auto-generated horizon table). When adding a new article type: (1) append an entry here, (2) add the matching news-*.md workflow in .github/workflows/, (3) re-run `npm test` — tests/article-types.test.ts validates parity.",
+  "description": "Single source of truth for every Riksdagsmonitor agentic news article type. Currently consumed by scripts/horizon-context.ts (runtime context for long-horizon workflows), scripts/render-lib/aggregator/order.ts (section ordering — already aligned with this registry), .github/prompts/ext/tier-c-aggregation.md (multiplier table — manually mirrored), and Article-Generation.md (horizon table — manually mirrored). Wiring this registry into scripts/aggregate-analysis.ts, scripts/render-articles.ts, scripts/generate-news-indexes.ts, and scripts/validate-article.ts is planned follow-up work (tracked in separate issues). When adding a new article type: (1) append an entry here, (2) add the matching news-*.md workflow in .github/workflows/, (3) re-run `npm test` — tests/article-types.test.ts validates parity.",
   "owner": "CEO",
   "classification": "Public",
   "license": "Apache-2.0",

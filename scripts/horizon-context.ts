@@ -17,13 +17,14 @@
  * Used by:
  *   - `news-quarter-ahead.md` / `news-year-ahead.md` / `news-election-cycle.md`
  *     (consumed via `bash` in the workflow body)
- *   - `scripts/aggregate-analysis.ts` (per-type word floor enforcement)
- *   - `scripts/render-articles.ts` (SEO labels)
- *   - `scripts/validate-article.ts` (required-artifact list per type)
- *   - `scripts/roll-forward-pirs.ts` (predecessor manifest)
  *
- * No filesystem mutations. Reads `analysis/article-types.json` once,
- * caches result, returns immutable views.
+ * Additional script consumers (`scripts/aggregate-analysis.ts`,
+ * `scripts/render-articles.ts`, `scripts/validate-article.ts`,
+ * `scripts/roll-forward-pirs.ts`) are planned follow-up work tracked in
+ * separate issues; they do not yet import this module.
+ *
+ * No filesystem mutations. Reads `analysis/article-types.json` once
+ * and caches the result for subsequent lookups.
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -141,7 +142,8 @@ export function activeCycleAnchor(articleDate: string): 'current' | 'next' {
   const reg = loadRegistry();
   const date = new Date(articleDate).getTime();
   const nextStart = new Date(reg.electionCycles.next.start).getTime();
-  return date >= nextStart ? 'next' : 'current';
+  const nextEnd = new Date(reg.electionCycles.next.end).getTime();
+  return date >= nextStart && date <= nextEnd ? 'next' : 'current';
 }
 
 /**
