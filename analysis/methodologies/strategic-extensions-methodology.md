@@ -382,10 +382,10 @@ When the run resolves to `quarter-ahead`, `year-ahead` or `election-cycle`, `sce
 | Article type | Tree shape (minimum) | Leaves |
 |--------------|----------------------|--------|
 | `quarter-ahead` | 4 base scenarios | 4 |
-| `year-ahead` | 4 base scenarios + 5 wildcard cards by default (recorded in `wildcards-blackswans.md`) | **≥ 9** |
+| `year-ahead` | 4 base scenarios + 5 wildcards by default (recorded in `wildcards-blackswans.md`) | **≥ 9** |
 | `election-cycle` | 4 base scenarios × 3 governing-coalition branches | **12** |
 
-Probabilities sum to 100 % at every level (base set; per-scenario branch set). See the canonical scenario summary table and per-scenario branching Mermaid in [`analysis/templates/scenario-analysis.md`](../templates/scenario-analysis.md). Wildcard cards for `year-ahead` are authored in [`analysis/templates/wildcards-blackswans.md`](../templates/wildcards-blackswans.md).
+Probabilities sum to 100 % at every level (base set; per-scenario branch set). See the canonical scenario summary table and per-scenario branching Mermaid in [`analysis/templates/scenario-analysis.md`](../templates/scenario-analysis.md). Year-ahead wildcards are authored in [`analysis/templates/wildcards-blackswans.md`](../templates/wildcards-blackswans.md).
 
 ### Counterfactual reasoning (mandatory at year/cycle)
 
