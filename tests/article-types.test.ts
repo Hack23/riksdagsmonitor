@@ -233,3 +233,68 @@ describe('article-types registry — reference-quality-thresholds parity', () =>
     }
   });
 });
+
+describe('article-types registry — forward-indicator horizon band counts', () => {
+  const fixturePath = resolve(repoRoot, 'tests/fixtures/forward-indicators-horizon-bands.json');
+  const fixture = JSON.parse(readFileSync(fixturePath, 'utf8')) as {
+    scenarios: Array<{
+      name: string;
+      articleTypeId: string;
+      horizonDays: number;
+      expectedBands: string[];
+      expectedBandCount: number;
+      minIndicators: number;
+      wepCeilings: Record<string, string>;
+    }>;
+  };
+
+  for (const scenario of fixture.scenarios) {
+    it(`${scenario.articleTypeId}: forwardIndicatorHorizons matches fixture (${scenario.expectedBandCount} bands)`, () => {
+      const type = registry.types.find((t) => t.id === scenario.articleTypeId)!;
+      expect(type, `article type ${scenario.articleTypeId} not found`).toBeDefined();
+      expect(type.horizonDays).toBe(scenario.horizonDays);
+      expect(type.forwardIndicatorHorizons).toEqual(scenario.expectedBands);
+      expect(type.forwardIndicatorHorizons.length).toBe(scenario.expectedBandCount);
+    });
+
+    it(`${scenario.articleTypeId}: every declared band exists in horizonBands registry`, () => {
+      const type = registry.types.find((t) => t.id === scenario.articleTypeId)!;
+      for (const band of type.forwardIndicatorHorizons) {
+        expect(
+          registry.horizonBands[band],
+          `band "${band}" in ${scenario.articleTypeId}.forwardIndicatorHorizons not found in horizonBands`,
+        ).toBeDefined();
+      }
+    });
+
+    it(`${scenario.articleTypeId}: WEP ceilings in fixture match horizonBands registry`, () => {
+      for (const [band, expectedWep] of Object.entries(scenario.wepCeilings)) {
+        expect(
+          registry.horizonBands[band]?.wepFloor,
+          `WEP mismatch for band "${band}"`,
+        ).toBe(expectedWep);
+      }
+    });
+  }
+
+  it('six-band coverage: month-ahead declares all 6 bands (72h, week, month, quarter, year, election)', () => {
+    const monthAhead = registry.types.find((t) => t.id === 'month-ahead')!;
+    expect(monthAhead.forwardIndicatorHorizons.length).toBe(6);
+    expect(monthAhead.forwardIndicatorHorizons).toContain('72h');
+    expect(monthAhead.forwardIndicatorHorizons).toContain('week');
+    expect(monthAhead.forwardIndicatorHorizons).toContain('month');
+    expect(monthAhead.forwardIndicatorHorizons).toContain('quarter');
+    expect(monthAhead.forwardIndicatorHorizons).toContain('year');
+    expect(monthAhead.forwardIndicatorHorizons).toContain('election');
+  });
+
+  it('back-compat: single-type articles retain 4-band legacy schema', () => {
+    const singleTypes = registry.types.filter((t) => t.family === 'single-type');
+    for (const t of singleTypes) {
+      expect(
+        t.forwardIndicatorHorizons,
+        `${t.id} should have legacy 4-band schema`,
+      ).toEqual(['72h', 'week', 'month', 'election']);
+    }
+  });
+});

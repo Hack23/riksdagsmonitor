@@ -1,0 +1,81 @@
+{
+  "$schema": "../../schemas/article-types.schema.json",
+  "description": "Synthetic fixture exercising forward-indicator horizon band counts for year-ahead and election-cycle article types. Used by tests/article-types.test.ts to validate the six-band schema.",
+  "scenarios": [
+    {
+      "name": "year-ahead (horizonDays=365) — expects ≥12 indicators across 5 bands",
+      "articleTypeId": "year-ahead",
+      "horizonDays": 365,
+      "expectedBands": ["month", "quarter", "year", "cycle", "election"],
+      "expectedBandCount": 5,
+      "minIndicators": 12,
+      "wepCeilings": {
+        "month": "likely / unlikely permitted",
+        "quarter": "roughly even / about even permitted",
+        "year": "roughly even / about even mandatory unless ≥3 corroborated sources",
+        "cycle": "roughly even / unlikely / very unlikely; never likely/very likely without ≥3 cycle-aged sources",
+        "election": "scenario-driven; coalition-formation outcomes never above 'likely'"
+      }
+    },
+    {
+      "name": "election-cycle (horizonDays=1460) — expects ≥15 indicators across 4 bands",
+      "articleTypeId": "election-cycle",
+      "horizonDays": 1460,
+      "expectedBands": ["quarter", "year", "cycle", "election"],
+      "expectedBandCount": 4,
+      "minIndicators": 15,
+      "wepCeilings": {
+        "quarter": "roughly even / about even permitted",
+        "year": "roughly even / about even mandatory unless ≥3 corroborated sources",
+        "cycle": "roughly even / unlikely / very unlikely; never likely/very likely without ≥3 cycle-aged sources",
+        "election": "scenario-driven; coalition-formation outcomes never above 'likely'"
+      }
+    },
+    {
+      "name": "week-ahead (horizonDays=7) — back-compat, expects ≥6 indicators across 5 bands",
+      "articleTypeId": "week-ahead",
+      "horizonDays": 7,
+      "expectedBands": ["72h", "week", "month", "quarter", "election"],
+      "expectedBandCount": 5,
+      "minIndicators": 6,
+      "wepCeilings": {
+        "72h": "very likely / very unlikely permitted",
+        "week": "likely / unlikely permitted",
+        "month": "likely / unlikely permitted",
+        "quarter": "roughly even / about even permitted",
+        "election": "scenario-driven; coalition-formation outcomes never above 'likely'"
+      }
+    },
+    {
+      "name": "month-ahead (horizonDays=30) — expects ≥8 indicators across 6 bands",
+      "articleTypeId": "month-ahead",
+      "horizonDays": 30,
+      "expectedBands": ["72h", "week", "month", "quarter", "year", "election"],
+      "expectedBandCount": 6,
+      "minIndicators": 8,
+      "wepCeilings": {
+        "72h": "very likely / very unlikely permitted",
+        "week": "likely / unlikely permitted",
+        "month": "likely / unlikely permitted",
+        "quarter": "roughly even / about even permitted",
+        "year": "roughly even / about even mandatory unless ≥3 corroborated sources",
+        "election": "scenario-driven; coalition-formation outcomes never above 'likely'"
+      }
+    },
+    {
+      "name": "quarter-ahead (horizonDays=90) — expects ≥10 indicators across 5 bands",
+      "articleTypeId": "quarter-ahead",
+      "horizonDays": 90,
+      "expectedBands": ["week", "month", "quarter", "year", "election"],
+      "expectedBandCount": 5,
+      "minIndicators": 10,
+      "wepCeilings": {
+        "week": "likely / unlikely permitted",
+        "month": "likely / unlikely permitted",
+        "quarter": "roughly even / about even permitted",
+        "year": "roughly even / about even mandatory unless ≥3 corroborated sources",
+        "election": "scenario-driven; coalition-formation outcomes never above 'likely'"
+      }
+    }
+  ]
+}
