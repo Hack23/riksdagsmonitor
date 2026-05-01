@@ -175,13 +175,26 @@ It declares:
 
 Riksdagsmonitor produces forward-looking analysis at five distinct horizons, each one tier deeper than the last in time-window, scenario-tree depth and IMF projection-year stamps. The single source of truth for all five is [`analysis/article-types.json`](analysis/article-types.json), with the corresponding schema defined in [`schemas/article-types.schema.json`](schemas/article-types.schema.json). CI parity is currently enforced by [`tests/article-types.test.ts`](tests/article-types.test.ts) (ad-hoc structural checks); full Ajv-based JSON Schema validation is planned follow-up.
 
-| Horizon | Workflow | Window | Cron | Multiplier | Word floor | Long-horizon ext |
-|---------|----------|--------|------|------------|------------|-------------------|
-| Week-ahead | [`news-week-ahead.md`](.github/workflows/news-week-ahead.md) | 7 days | Fri 07:00 UTC | 1.2× | 1 500 | recommended |
-| Month-ahead | [`news-month-ahead.md`](.github/workflows/news-month-ahead.md) | 30 days | 1st 08:00 UTC | 1.5× | 1 500 | recommended |
-| **Quarter-ahead** | [`news-quarter-ahead.md`](.github/workflows/news-quarter-ahead.md) | 90 days | 1st + 15th 09:00 UTC | 1.7× | 2 000 | required |
-| **Year-ahead** | [`news-year-ahead.md`](.github/workflows/news-year-ahead.md) | 365 days | 5 Jan + 5 Jul 09:00 UTC | 2.0× | 2 500 | required + PESTLE blocking |
-| **Election-cycle** | [`news-election-cycle.md`](.github/workflows/news-election-cycle.md) | ~1 460 days (full mandate) | dispatch-only initially | 2.5× | 3 500 | required + 24th artifact `cycle-trajectory.md` + cycle-rollover ext |
+<!-- ARTICLE-TYPES:BEGIN -->
+<!-- ⚠️ AUTO-GENERATED from analysis/article-types.json — do NOT edit manually -->
+
+| id | family | horizonDays | tierCMultiplier | articleWordFloor | electionCycleAnchor | cronExpression |
+|---|---|---|---|---|---|---|
+| propositions | single-type | 0 | 1 | 1000 | current | `0 5 * * 1-5` |
+| motions | single-type | 0 | 1 | 1000 | current | `0 6 * * 1-5` |
+| committee-reports | single-type | 0 | 1 | 1000 | current | `0 4 * * 1-5` |
+| interpellations | single-type | 0 | 1 | 1000 | current | `0 7 * * 1-5` |
+| realtime-monitor | tier-c-aggregation | 0 | 0.8 | 1500 | current | `0 10,14 * * 1-5` |
+| evening-analysis | tier-c-aggregation | 0 | 1 | 1500 | current | `0 18 * * 1-5` |
+| week-ahead | long-horizon-forecast | 7 | 1.2 | 1500 | current | `0 7 * * 5` |
+| month-ahead | long-horizon-forecast | 30 | 1.5 | 1500 | current | `0 8 1 * *` |
+| quarter-ahead | long-horizon-forecast | 90 | 1.7 | 2000 | current | `0 9 1,15 * *` |
+| year-ahead | long-horizon-forecast | 365 | 2 | 2500 | current | `0 9 5 1,7 *` |
+| election-cycle | long-horizon-forecast | 1460 | 2.5 | 3500 | both | _dispatch-only_ |
+| weekly-review | tier-c-aggregation | 0 | 1.2 | 1500 | current | `0 9 * * 6` |
+| monthly-review | tier-c-aggregation | 0 | 1.5 | 1500 | current | `0 10 28 * *` |
+
+<!-- ARTICLE-TYPES:END -->
 
 Long-horizon workflows additionally import [`ext/long-horizon-forecasting.md`](.github/prompts/ext/long-horizon-forecasting.md) (horizon stratification, scenario-tree depth, counterfactual mandate, IMF projection-year stamps, PESTLE blocking thresholds, cross-horizon citation). The election-cycle workflow further imports [`ext/cycle-rollover.md`](.github/prompts/ext/cycle-rollover.md), which is active only within ± 30 days of a Swedish election anchor (the next being 2026-09-13).
 
