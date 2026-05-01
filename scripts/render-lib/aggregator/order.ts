@@ -73,7 +73,7 @@ export const AGGREGATION_ORDER: readonly string[] = [
  * `election-cycle-analysis.md` becomes the canonical name post-2026 rollover.
  */
 export const FILENAME_ALIASES: ReadonlyArray<ReadonlySet<string>> = [
-  new Set(['election-2026-analysis.md', 'election-cycle-analysis.md']),
+  new Set(['election-2026-analysis.md', 'election-cycle-analysis.md', 'election-2026-implications.md']),
 ];
 
 /**

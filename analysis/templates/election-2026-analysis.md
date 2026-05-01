@@ -2,10 +2,10 @@
   <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
 </p>
 
-<h1 align="center">🗳️ Election 2026 Analysis Template</h1>
+<h1 align="center">🗳️ Election Cycle Analysis Template</h1>
 
 <p align="center">
-  <strong>📊 Electoral Lens for Every Run in the Pre-Election Window (2025-10 → 2026-09)</strong><br>
+  <strong>📊 Electoral Lens — Parameterised by Cycle Anchor (current / next)</strong><br>
   <em>🎯 Coalition Scenarios · Voter Salience · Campaign Vulnerability · Policy Legacy</em>
 </p>
 
@@ -16,12 +16,31 @@
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-25 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-05-01 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template instructions:** Produce for every workflow in the pre-election window (2025-10-01 → 2026-09-30). Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/election-2026-analysis.md`. Integrates with `voter-segmentation.md`, `coalition-mathematics.md`, and `synthesis-summary.md`.
+> **📌 Template instructions:** Produce for every workflow that declares `electionCycleAnchor ∈ {current, next, both}` in `analysis/article-types.json`. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/election-2026-analysis.md` (stable filename) or `election-cycle-analysis.md` (post-rollover alias). Integrates with `voter-segmentation.md`, `coalition-mathematics.md`, and `synthesis-summary.md`.
 
-> **✨ What to produce:** A focused electoral assessment of the day's documents against the September 2026 general election, classified CRITICAL → NEGLIGIBLE, with coalition-scenario consequences and a dated watchlist.
+> **✨ What to produce:** A focused electoral assessment of the day's documents against the active election cycle (resolved at runtime), classified CRITICAL → NEGLIGIBLE, with coalition-scenario consequences and a dated watchlist.
+
+---
+
+## 🔧 Cycle-Anchor Parameter Resolution
+
+> **Resolution source:** `scripts/horizon-context.ts` → `activeCycleAnchor(articleDate)` + `analysis/article-types.json → electionCycles`.
+
+| Parameter | Source | Value |
+|-----------|--------|-------|
+| **`cycleAnchor`** | `activeCycleAnchor(articleDate)` | `current` \| `next` |
+| **`cycleStart`** | `electionCycles[cycleAnchor].start` | e.g. `2022-09-11` (current) or `2026-09-13` (next) |
+| **`cycleEnd`** | `electionCycles[cycleAnchor].end` | e.g. `2026-09-13` (current) or `2030-09-08` (next) |
+| **`cycleLabel`** | `electionCycles[cycleAnchor].label` | e.g. `Tidö 2022–2026` (current) or `Post-2026 Mandate` (next) |
+| **`governingCoalition`** | `electionCycles[cycleAnchor].governingCoalition` | party array or `null` (next) |
+| **`daysSinceCycleStart`** | `today − cycleStart` (days) | computed at runtime |
+| **`daysToCycleEnd`** | `cycleEnd − today` (days) | computed at runtime |
+| **`daysToElection`** | `daysToElection(articleDate)` | signed integer (negative = past) |
+
+**Cycle-anchor footnote:** The Swedish general elections anchoring this template are **2026-09-13** (next election from the current cycle) and **2030-09-08** (projected next election from the post-2026 cycle). See `analysis/article-types.json → electionCycles` for the authoritative dates.
 
 ---
 
@@ -45,7 +64,12 @@
 |-------|-------|
 | **Analysis ID** | `ELC-YYYY-MM-DD-NNN` |
 | **Generated** | `YYYY-MM-DD HH:MM UTC` |
-| **Days to election** | `Date(2026-09-13) − today` |
+| **Cycle anchor** | `${cycleAnchor}` (`current` or `next`) |
+| **Cycle label** | `${cycleLabel}` |
+| **Cycle window** | `${cycleStart}` → `${cycleEnd}` |
+| **Days since cycle start** | `${daysSinceCycleStart}` |
+| **Days to cycle end** | `${daysToCycleEnd}` |
+| **Days to election** | `${daysToElection}` |
 | **Phase** | `Pre-campaign · Campaign (Aug-Sep) · Final week · Post-election` |
 | **Latest SIFO (government block)** | `XX%` |
 | **Latest SIFO (opposition block)** | `XX%` |
@@ -124,9 +148,9 @@ flowchart LR
 
 | Horizon | Legacy question | Verdict |
 |---------|-----------------|:-------:|
-| Sep 2026 (campaign) | Asset or liability? | 🟢 Asset for rural districts; 🟠 Liability for urban renters |
-| 2027 (post-election) | Reversible? | 🟡 Reversible but costly |
-| 2030 (legacy) | Institutional change? | 🟢 No lasting institutional effect |
+| `${cycleEnd}` (campaign / formation) | Asset or liability? | 🟢 Asset for rural districts; 🟠 Liability for urban renters |
+| +1 year post-cycle | Reversible? | 🟡 Reversible but costly |
+| +4 years (legacy) | Institutional change? | 🟢 No lasting institutional effect |
 
 ---
 
@@ -151,30 +175,85 @@ Cross-reference `coalition-mathematics.md` for full seat-projection arithmetic.
 
 ---
 
-## 🗓️ Pre-Election Watchlist
+## 🗓️ Cycle Watchlist
+
+> Populate with the key upcoming events within the active cycle window (`${cycleStart}` → `${cycleEnd}`).
 
 | Date | Event | Why it matters |
 |------|-------|----------------|
-| 2026-04-24 | FiU48 chamber vote | Confirms or breaks coalition unity signal |
-| 2026-06-30 | Q2 2026 SIFO / Novus | First post-fiscal-package polling |
-| 2026-07-15 | Pump-price peak effect | Voter-segment feedback |
-| 2026-08-31 | Final-push polling window opens | Locks positional narrative |
-| 2026-09-13 | **General election** | Outcome |
+| `YYYY-MM-DD` | Key event within cycle | Impact on cycle outcome |
+| `YYYY-MM-DD` | Polling milestone | Locks positional narrative |
+| `${cycleEnd}` | **Cycle end (election / mandate expiry)** | Outcome |
 
 ---
 
 ## 🧠 Electoral-Strategy Read-Through
 
-| Party | Most likely April 2026 move | Signal detected today |
+| Party | Most likely current move | Signal detected today |
 |:-----:|------------------------------|----------------------|
-| M | Hold fiscal-credibility line | HD03100 spring-bill framing |
-| S | Target urban renters + climate voters | Interpellation pattern on fuel-tax regressivity |
-| SD | Claim co-authorship on HD03236 | Party-group statement |
-| C | Position as rural alternative to SD | Motion on regional development |
-| MP | Climate-policy contrast | Planned interpellation on Green Deal tension |
-| V | Attack regressive incidence | Interpellation HD11680 pattern |
-| L | Maintain conditional support | Reservation noted in committee |
-| KD | Back government fiscal line | Spokesperson statement |
+| M | … | … |
+| S | … | … |
+| SD | … | … |
+| C | … | … |
+| MP | … | … |
+| V | … | … |
+| L | … | … |
+| KD | … | … |
+
+---
+
+## 📊 Mandate-Fulfilment Scorecard (cycleAnchor=current ONLY)
+
+> **Condition:** Include this section ONLY when `cycleAnchor=current`. Omit entirely when `cycleAnchor=next`.
+
+Tracks the incumbent governing coalition's delivery against their mandate agreement (e.g., Tidö agreement for the 2022–2026 cycle).
+
+| Domain | Agreement commitment | Status | Evidence |
+|--------|---------------------|:------:|----------|
+| Migration | Paradigm shift (reduced asylum) | 🟩 Delivered / 🟨 Partial / 🟥 Undelivered | `dok_id` or named act |
+| Crime | Extended sentences, gang prevention | … | … |
+| Energy | Nuclear planning, grid investment | … | … |
+| Economy | Tax reform, fiscal consolidation | … | … |
+| Healthcare | Care guarantee improvement | … | … |
+
+| Accountability metric | Count / Status | Source |
+|----------------------|:--------------:|--------|
+| KU reprimands this cycle | `N` | KU årsredogörelse |
+| Budget proposals delivered (BP) | `N of expected` | Riksdagen |
+| Spring-bill (VP) delivery | `N of expected` | Riksdagen |
+| Confidence votes survived | `N` | Voteringar |
+
+---
+
+## 🔮 Coalition-Formation Forecast (cycleAnchor=next ONLY)
+
+> **Condition:** Include this section ONLY when `cycleAnchor=next`. Omit entirely when `cycleAnchor=current`.
+
+Post-election scenario tree — assesses the most likely government-formation pathways for the upcoming mandate.
+
+| Scenario | Parties | Projected seats | Probability (WEP) | Key assumption |
+|----------|---------|:--------------:|:------------------:|----------------|
+| Continuation (incumbent re-elected) | … | … | … | … |
+| Centre-grand coalition | … | … | … | … |
+| Left-green bloc | … | … | … | … |
+| Minority government | … | … | … | … |
+
+### Opposition trajectory
+
+| Opposition actor | Strategic posture | Signal strength | Evidence |
+|-----------------|-------------------|:--------------:|----------|
+| Largest opposition party | … | … | … |
+| Potential kingmaker | … | … | … |
+| Threshold-risk party (< 4%) | … | … | … |
+
+### Formation timeline
+
+| Phase | Expected date range | Key actor | Trigger |
+|-------|--------------------:|-----------|---------|
+| Election day | `${cycleStart}` | Electorate | Vote |
+| Exploratory talks | +1–14 days | Talman | Convention |
+| Government declaration | +14–45 days | PM candidate | Riksdag vote |
+| First budget (BP) | +60–120 days | New government | Fiscal calendar |
 
 ---
 
@@ -201,8 +280,9 @@ Cross-reference `coalition-mathematics.md` for full seat-projection arithmetic.
 
 **Document Control**
 - **Template path:** `/analysis/templates/election-2026-analysis.md`
-- **Also known as:** `election-2026-implications.md` (filename variant — content identical)
+- **Also known as:** `election-cycle-analysis.md` (canonical post-rollover alias), `election-2026-implications.md` (legacy filename variant)
 - **Referenced by:** [ai-driven-analysis-guide.md § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued)
+- **Parameter source:** `scripts/horizon-context.ts` → `activeCycleAnchor()`, `daysToElection()`; `analysis/article-types.json → electionCycles`
 - **Classification:** Public
 - **Next Review:** 2026-07-21
 
@@ -217,7 +297,7 @@ Cross-reference `coalition-mathematics.md` for full seat-projection arithmetic.
 - [ ] **Evidence specificity** — every quantified claim cites a `dok_id` (Riksdag), an SCB / IMF dataflow code, or a named external source with date; no "according to data" / "studies show" hand-waves.
 - [ ] **Named-actor discipline** — every political claim names ≥ 1 person (party + role + dated act/quote) or labels the absence (`[diffuse — no named actor]`).
 - [ ] **Counter-narrative present** — at least one explicit competing hypothesis, dissent quote, or framed objection appears in the body; "no opposition recorded" is itself a finding to label, not silence.
-- [ ] **Election 2026 lens applied** — the §"Election 2026 Implications" subsection (or equivalent) addresses electoral salience, coalition pressure, and forward indicators; not boilerplate.
+- [ ] **Election cycle lens applied** — the §"Cycle Watchlist" subsection addresses electoral salience, coalition pressure, and forward indicators for the active `${cycleAnchor}` cycle; not boilerplate. If `cycleAnchor=current`, §"Mandate-Fulfilment Scorecard" is present and populated. If `cycleAnchor=next`, §"Coalition-Formation Forecast" is present and populated.
 - [ ] **No illustrative content shipped as fact** — every `[REQUIRED]` placeholder is filled OR removed; every `Example:` block is clearly fenced or removed; no fabricated `dok_id`, vote count, or quote leaks into the final artifact.
 - [ ] **Cross-references resolve** — every `[link](file.md)` in this artifact points to a file that exists in the run folder (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) or to a methodology / template under `analysis/`.
 - [ ] **Mermaid renders** — every fenced ` ```mermaid ` block parses (no missing class definitions, no orphan nodes, no >40-node graphs that overflow viewport on mobile).
