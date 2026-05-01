@@ -71,7 +71,7 @@ The cycle rolls over programmatically when `ARTICLE_DATE` is within **±30 days*
 cycleRolloverActive = Math.abs(daysToElection(ARTICLE_DATE)) <= 30
 ```
 
-When `cycleRolloverActive === true`, the ext module [`.github/prompts/ext/cycle-rollover.md`](../../.github/prompts/ext/cycle-rollover.md) activates and the article type's `electionCycleAnchor` is treated as `both` for that run (see §Cycle-rollover playbook below).
+When `cycleRolloverActive === true`, the ext module [`.github/prompts/ext/cycle-rollover.md`](../../.github/prompts/ext/cycle-rollover.md) becomes active for `news-election-cycle` runs and applies the phased dual-anchor behaviour defined in §Cycle-rollover playbook below. The ext module does **not** mutate `analysis/article-types.json`; `electionCycleAnchor` in the registry stays whatever the operator has set and is flipped separately (T+45 to T+60 via a CEO-approved Normal change).
 
 ---
 
@@ -86,11 +86,11 @@ Full procedure: [`.github/prompts/ext/cycle-rollover.md`](../../.github/prompts/
 | **T+0 (election day)** | Emergency single-run via `news-realtime-monitor`; no cycle flip until results are locked |
 | **T+1 → T+30** | Both anchors generated; `current/` artifacts gain `# 📜 Mandate retrospective` H1; `next/` upgraded from provisional |
 | **T+31 → T+45** | Only `next/` regenerated; `current/` frozen as historical record |
-| **Filename rename rule** | Post-rollover the cycle-agnostic alias `election-cycle-analysis.md` becomes the canonical name; `election-2026-analysis.md` remains valid indefinitely via `FILENAME_ALIASES` in `scripts/render-lib/aggregator/order.ts` (de-duplicated at render time — only the first-encountered name in the alias set is emitted) |
+| **Filename rename rule** | Post-rollover, workflows write `election-cycle-analysis.md` (the cycle-agnostic name); `election-2026-analysis.md` remains a valid alias indefinitely via `FILENAME_ALIASES` in `scripts/render-lib/aggregator/order.ts`. When **both** files exist in the same folder the aggregator de-duplicates by `AGGREGATION_ORDER` — `election-2026-analysis.md` appears first in that list, so the legacy filename is preferred at render time; write only one name per run to avoid the ambiguity |
 | **Carry-forward rule** | Mandate-fulfilment scorecard, KU reprimands ledger, coalition cohesion trajectory archived to `analysis/cycles/<cycle-range>/`; PIRs with `inheritsCycle: true` carry forward verbatim |
 | **PIR archival rule** | Cycle-scoped PIRs receive `status: "archived"`, `archivedReason: "cycle-rollover-<election-date>"`, and a `successor` where applicable; see ext module §4 |
 | **Operator flip** | Registry flip (`electionCycleAnchor` in `analysis/article-types.json`) is a **CEO-approved Normal change** under `Change_Management.md`; typically T+45 to T+60 post-election once government formation is complete |
-| **Audit trail** | Every activation appends a row to `analysis/cycles/rollover-log.md` |
+| **Audit trail** | Every activation appends a row to `analysis/cycles/rollover-log.md`. **Note:** `analysis/cycles/` does not exist in the repo yet — operators must `mkdir -p analysis/cycles/` as part of the manual runbook (see ext module §5); automated creation is deferred to the planned `scripts/cycle-rollover.ts` |
 
 ---
 
@@ -613,7 +613,7 @@ flowchart TD
 
 | Template | Methodology section | Cycle anchor |
 |----------|--------------------|--------------|
-| `analysis/templates/election-2026-analysis.md` — one template; canonical output filename is `election-2026-analysis.md`; cycle-agnostic alias `election-cycle-analysis.md` maps to it via `FILENAME_ALIASES` in `scripts/render-lib/aggregator/order.ts` | Part 1 above | `electionCycleAnchor` (article-type registry) |
+| `analysis/templates/election-2026-analysis.md` — one template. **Pre-rollover** workflows write `election-2026-analysis.md`; **post-rollover** workflows write `election-cycle-analysis.md`. Both map to the same artifact via `FILENAME_ALIASES` in `scripts/render-lib/aggregator/order.ts`; when both exist the aggregator prefers `election-2026-analysis.md` (first in `AGGREGATION_ORDER`) — write only one name per run. | Part 1 above | `electionCycleAnchor` (article-type registry) |
 | `analysis/templates/voter-segmentation.md` | Part 2 above | any |
 | `analysis/templates/coalition-mathematics.md` | Part 3 above | any |
 | `analysis/templates/historical-parallels.md` | Part 4 above | any |

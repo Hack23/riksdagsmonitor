@@ -51,7 +51,7 @@ The rollover preserves the canonical-filename pattern already used elsewhere in 
 
 | Pre-rollover filename | Post-rollover filename | Behaviour |
 |-----------------------|------------------------|-----------|
-| `election-2026-analysis.md` | `election-2030-analysis.md` | **Aliased**; both filenames remain valid for 90 days post-flip; the aggregator accepts either via `analysis/methodologies/artifact-catalog.md → filename-variants` table. |
+| `election-2026-analysis.md` | `election-cycle-analysis.md` | **Aliased**; both names map to the same artifact via `FILENAME_ALIASES` in `scripts/render-lib/aggregator/order.ts`. When both exist the aggregator prefers `election-2026-analysis.md` (first in `AGGREGATION_ORDER`). Post-rollover, workflows write `election-cycle-analysis.md` as the cycle-agnostic canonical name; write only one name per run to avoid the dedup ambiguity. |
 | `cycle-trajectory.md` | `cycle-trajectory.md` | Unchanged filename; **content** rewinds to T+0 baseline (see §3.3). |
 | `intelligence-assessment.md` | `intelligence-assessment.md` | PIRs prefixed by `[CYCLE-2022-2026]` are **archived** (see §4); new PIRs prefixed `[CYCLE-2026-2030]` are seeded. |
 
