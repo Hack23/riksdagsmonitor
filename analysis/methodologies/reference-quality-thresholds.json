@@ -1,7 +1,7 @@
 {
-  "version": "1.3",
-  "effectiveDate": "2026-04-25",
-  "description": "Per-artifact minimum line-count floors used to enforce Rule 22 (Per-Artifact Depth Floors) of analysis/methodologies/ai-driven-analysis-guide.md for Riksdagsmonitor agentic news workflows. Values are calibrated to the DIW Output Matrix and the Riksdag 23-artifact catalog (see artifact-catalog.md). A file below its threshold MUST trigger a Pass-2 rewrite; it MUST NOT be shipped with a '[truncated]' or 'AI_MUST_REPLACE' note. When an articleType entry is absent the gate falls back to the default floor. When a per-artifact entry is present the effective floor is max(perArtifact, default), so the default can only raise, never lower, a configured floor.",
+  "version": "1.4",
+  "effectiveDate": "2026-05-01",
+  "description": "Per-artifact minimum line-count floors used to enforce Rule 22 (Per-Artifact Depth Floors) of analysis/methodologies/ai-driven-analysis-guide.md for Riksdagsmonitor agentic news workflows. Values are calibrated to the DIW Output Matrix and the Riksdag 23-artifact catalog (see artifact-catalog.md). v1.4 (2026-05-01) adds quarter-ahead / year-ahead / election-cycle blocks for the long-horizon-forecast workflows; values derived proportionally from month-ahead × the tier-C multiplier (1.7×, 2.0×, 2.5×) defined in analysis/article-types.json. A file below its threshold MUST trigger a Pass-2 rewrite; it MUST NOT be shipped with a '[truncated]' or 'AI_MUST_REPLACE' note. When an articleType entry is absent the gate falls back to the default floor. When a per-artifact entry is present the effective floor is max(perArtifact, default), so the default can only raise, never lower, a configured floor.",
   "tradecraftQualitySignals": {
     "note": "ADDITIVE quality signals — NOT enforced by the line-count validator. They represent content-quality expectations that the Pass-2 self-audit in methodology-reflection.md must check. Every probabilistic artifact MUST also comply with osint-tradecraft-standards.md: (1) WEP band + time horizon on every headline judgement, (2) Admiralty grade on every external source, (3) confidence-in-evidence tracked separately from WEP probability, (4) >= 10 SATs applied per run (attested in methodology-reflection.md §Evidence audit). Non-compliant artifacts trigger a Pass-2 rewrite even if the line-count floor is met.",
     "wepBandRequired": [
@@ -167,6 +167,52 @@
       "scenario-analysis.md": 200,
       "methodology-reflection.md": 215,
       "executive-brief.md": 150
+    },
+    "quarter-ahead": {
+      "_comment": "Quarter-ahead floors = month-ahead × 1.13 (proportional to multiplier 1.7 / 1.5), rounded down to nearest 5. Mandates 4 scenarios + 2 counterfactuals; cross-horizon citation of week-ahead + month-ahead required.",
+      "synthesis-summary.md": 260,
+      "forward-indicators.md": 225,
+      "scenario-analysis.md": 245,
+      "comparative-international.md": 165,
+      "methodology-reflection.md": 240,
+      "executive-brief.md": 170,
+      "intelligence-assessment.md": 200,
+      "devils-advocate.md": 165,
+      "election-2026-analysis.md": 180
+    },
+    "year-ahead": {
+      "_comment": "Year-ahead floors = month-ahead × 1.33 (proportional to multiplier 2.0 / 1.5), rounded down to nearest 5. Mandates 4 scenarios + 5 wildcards + PESTLE; cross-horizon citation of quarter-ahead × 2 + monthly-review × 4.",
+      "synthesis-summary.md": 305,
+      "forward-indicators.md": 265,
+      "scenario-analysis.md": 290,
+      "comparative-international.md": 195,
+      "pestle-analysis.md": 200,
+      "wildcards-blackswans.md": 200,
+      "quantitative-swot.md": 180,
+      "intelligence-assessment.md": 240,
+      "devils-advocate.md": 195,
+      "methodology-reflection.md": 285,
+      "executive-brief.md": 200,
+      "election-2026-analysis.md": 225
+    },
+    "election-cycle": {
+      "_comment": "Election-cycle floors = month-ahead × 1.66 (proportional to multiplier 2.5 / 1.5), rounded down to nearest 5. Mandates 4 scenarios × 3 governing-coalition branches + 5 wildcards + 3 counterfactuals + PESTLE + STRIDE; cross-horizon citation of year-ahead × 2 + monthly-review × 12. Also blocks on cycle-trajectory.md (24th artifact for this type only).",
+      "synthesis-summary.md": 380,
+      "forward-indicators.md": 330,
+      "scenario-analysis.md": 360,
+      "comparative-international.md": 245,
+      "pestle-analysis.md": 250,
+      "wildcards-blackswans.md": 250,
+      "quantitative-swot.md": 225,
+      "political-stride-assessment.md": 250,
+      "cycle-trajectory.md": 280,
+      "intelligence-assessment.md": 295,
+      "devils-advocate.md": 240,
+      "methodology-reflection.md": 350,
+      "executive-brief.md": 250,
+      "election-2026-analysis.md": 275,
+      "coalition-mathematics.md": 230,
+      "historical-parallels.md": 215
     },
     "weekly-review": {
       "synthesis-summary.md": 240,
