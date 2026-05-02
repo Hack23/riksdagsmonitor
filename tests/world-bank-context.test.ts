@@ -325,3 +325,53 @@ describe('world-bank-context', () => {
     });
   });
 });
+
+// ---------------------------------------------------------------------------
+// Helper function coverage — getSwedishIndicatorQueries / findRelevantIndicators
+// / getEconomicHeading (additional branch coverage for utility functions)
+// ---------------------------------------------------------------------------
+
+describe('world-bank-context — utility function coverage', () => {
+  it('WORLD_BANK_INDICATORS is a non-empty array (inventory loaded successfully)', () => {
+    // Verifies that the happy-path load returns a real, populated array
+    expect(Array.isArray(WORLD_BANK_INDICATORS)).toBe(true);
+    expect(WORLD_BANK_INDICATORS.length).toBeGreaterThan(0);
+  });
+
+  it('getSwedishIndicatorQueries returns a non-empty array with countryCode and indicatorId', () => {
+    const queries = getSwedishIndicatorQueries();
+    expect(queries.length).toBeGreaterThan(0);
+    for (const q of queries) {
+      expect(q.countryCode).toBeDefined();
+      expect(q.indicatorId).toBeDefined();
+      expect(q.name).toBeDefined();
+    }
+  });
+
+  it('findRelevantIndicators matches by committee abbreviation (case-insensitive)', () => {
+    // MJU is a known committee in the environment/energy domain
+    const results = findRelevantIndicators('MJU');
+    expect(results.length).toBeGreaterThan(0);
+    for (const r of results) {
+      expect(r.committees.map((c) => c.toLowerCase())).toContain('mju');
+    }
+  });
+
+  it('getEconomicHeading returns undefined for an unknown section key', () => {
+    const heading = getEconomicHeading('en', 'nonExistentSection' as never);
+    expect(heading).toBeUndefined();
+  });
+
+  it('getEconomicHeading returns all 5 sections for every supported language', () => {
+    const languages: Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+    const sections: Array<keyof typeof import('../scripts/world-bank-context.js').ECONOMIC_SECTION_HEADINGS['en']> =
+      ['economicContext', 'nordicComparison', 'policyImplications', 'country', 'unit'];
+    for (const lang of languages) {
+      for (const section of sections) {
+        const heading = getEconomicHeading(lang, section);
+        expect(typeof heading).toBe('string');
+        expect(heading.length).toBeGreaterThan(0);
+      }
+    }
+  });
+});

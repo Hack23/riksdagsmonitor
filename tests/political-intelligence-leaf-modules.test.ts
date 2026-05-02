@@ -7,7 +7,7 @@
  * is exercised end-to-end by `generate-political-intelligence.test.ts`
  * via the shim's barrel re-export.
  */
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 
 import { PI_TRANSLATIONS } from '../scripts/political-intelligence/i18n/page-translations.js';
 import {
@@ -221,5 +221,118 @@ describe('political-intelligence/render/daily-day.ts — artifactBaseName / arti
   it('artifactIcon uses the curated TEMPLATE_META icon when the slug is catalogued', () => {
     const [slug, meta] = Object.entries(TEMPLATE_META)[0]!;
     expect(artifactIcon(slug)).toBe(meta.icon);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// daily-streams.ts — countArtifactsRecursive / collectStreamArtifacts /
+//                     collectDailyDays (branch coverage)
+// ---------------------------------------------------------------------------
+
+import {
+  countArtifactsRecursive,
+  collectStreamArtifacts,
+  collectDailyDays,
+} from '../scripts/political-intelligence/daily-streams.js';
+import nodeFs from 'node:fs';
+import nodeOs from 'node:os';
+import nodePath from 'node:path';
+describe('political-intelligence/daily-streams.ts — countArtifactsRecursive', () => {
+  it('returns 0 for an empty directory', () => {
+    const tmp = nodeFs.mkdtempSync(nodePath.join(nodeOs.tmpdir(), 'daily-streams-'));
+    try {
+      expect(countArtifactsRecursive(tmp)).toBe(0);
+    } finally {
+      nodeFs.rmSync(tmp, { recursive: true, force: true });
+    }
+  });
+
+  it('counts .md and .json files and ignores other extensions', () => {
+    const tmp = nodeFs.mkdtempSync(nodePath.join(nodeOs.tmpdir(), 'daily-streams-'));
+    try {
+      nodeFs.writeFileSync(nodePath.join(tmp, 'a.md'), '# A');
+      nodeFs.writeFileSync(nodePath.join(tmp, 'b.json'), '{}');
+      nodeFs.writeFileSync(nodePath.join(tmp, 'c.html'), '<html/>'); // ignored
+      expect(countArtifactsRecursive(tmp)).toBe(2);
+    } finally {
+      nodeFs.rmSync(tmp, { recursive: true, force: true });
+    }
+  });
+
+  it('recursively counts artifacts in subdirectories', () => {
+    const tmp = nodeFs.mkdtempSync(nodePath.join(nodeOs.tmpdir(), 'daily-streams-'));
+    const sub = nodePath.join(tmp, 'sub');
+    nodeFs.mkdirSync(sub, { recursive: true });
+    try {
+      nodeFs.writeFileSync(nodePath.join(tmp, 'top.md'), '# Top');
+      nodeFs.writeFileSync(nodePath.join(sub, 'nested.json'), '{}');
+      nodeFs.writeFileSync(nodePath.join(sub, 'nested.md'), '# Nested');
+      expect(countArtifactsRecursive(tmp)).toBe(3);
+    } finally {
+      nodeFs.rmSync(tmp, { recursive: true, force: true });
+    }
+  });
+});
+
+describe('political-intelligence/daily-streams.ts — collectStreamArtifacts', () => {
+  it('returns empty array when stream directory does not exist', () => {
+    expect(collectStreamArtifacts('/definitely/not/there', 'somebase')).toEqual([]);
+  });
+
+  it('collects .md and .json files sorted by relative path', () => {
+    const tmp = nodeFs.mkdtempSync(nodePath.join(nodeOs.tmpdir(), 'stream-arts-'));
+    try {
+      nodeFs.writeFileSync(nodePath.join(tmp, 'zebra.md'), '# Z');
+      nodeFs.writeFileSync(nodePath.join(tmp, 'alpha.json'), '{}');
+      const arts = collectStreamArtifacts(tmp, '2026-05-01/propositions');
+      expect(arts.map((a) => a.file)).toEqual(['alpha.json', 'zebra.md']);
+    } finally {
+      nodeFs.rmSync(tmp, { recursive: true, force: true });
+    }
+  });
+
+  it('collects artifacts from nested subdirectories', () => {
+    const tmp = nodeFs.mkdtempSync(nodePath.join(nodeOs.tmpdir(), 'stream-arts-sub-'));
+    const sub = nodePath.join(tmp, 'analysis');
+    nodeFs.mkdirSync(sub, { recursive: true });
+    try {
+      nodeFs.writeFileSync(nodePath.join(tmp, 'root.md'), '# Root');
+      nodeFs.writeFileSync(nodePath.join(sub, 'detail.json'), '{}');
+      const arts = collectStreamArtifacts(tmp, '2026-05-01/committees');
+      expect(arts.length).toBe(2);
+      // relative paths include the subdirectory prefix
+      const relPaths = arts.map((a) => a.relative);
+      expect(relPaths.some((r) => r.includes('analysis'))).toBe(true);
+    } finally {
+      nodeFs.rmSync(tmp, { recursive: true, force: true });
+    }
+  });
+
+  it('ignores files with unsupported extensions', () => {
+    const tmp = nodeFs.mkdtempSync(nodePath.join(nodeOs.tmpdir(), 'stream-arts-ext-'));
+    try {
+      nodeFs.writeFileSync(nodePath.join(tmp, 'keep.md'), '# Keep');
+      nodeFs.writeFileSync(nodePath.join(tmp, 'ignore.html'), '<html/>');
+      nodeFs.writeFileSync(nodePath.join(tmp, 'ignore.txt'), 'plain');
+      const arts = collectStreamArtifacts(tmp, 'base');
+      expect(arts.length).toBe(1);
+      expect(arts[0]!.file).toBe('keep.md');
+    } finally {
+      nodeFs.rmSync(tmp, { recursive: true, force: true });
+    }
+  });
+});
+
+describe('political-intelligence/daily-streams.ts — collectDailyDays', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('returns empty array when analysis/daily directory does not exist', () => {
+    // Mock existsSync so the test is deterministic — does not depend on whether
+    // the real `analysis/daily/` is present on the runner.
+    vi.spyOn(nodeFs, 'existsSync').mockReturnValue(false);
+    const result = collectDailyDays();
+    expect(result).toEqual([]);
   });
 });
