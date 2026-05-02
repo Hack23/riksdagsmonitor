@@ -144,4 +144,116 @@ describe('generate-article-types-doc', () => {
     const before = doc.slice(0, beginIdx);
     expect(before).toContain('### Registered article types');
   });
+
+  it('throws on registry missing version field', async () => {
+    const { writeFileSync, mkdtempSync, rmSync } = await import('node:fs');
+    const { tmpdir } = await import('node:os');
+    const { join } = await import('node:path');
+    const dir = mkdtempSync(join(tmpdir(), 'article-types-test-'));
+    const tmpPath = join(dir, 'no-version-registry.json');
+    try {
+      writeFileSync(tmpPath, JSON.stringify({ types: [{ id: 'x' }] }), 'utf8');
+      expect(() => loadAndValidateRegistry(tmpPath)).toThrow(/Invalid registry/);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it('throws on registry entry missing id/family/horizonDays/tierCMultiplier', async () => {
+    const { writeFileSync, mkdtempSync, rmSync } = await import('node:fs');
+    const { tmpdir } = await import('node:os');
+    const { join } = await import('node:path');
+    const dir = mkdtempSync(join(tmpdir(), 'article-types-test-'));
+    const tmpPath = join(dir, 'missing-fields-registry.json');
+    try {
+      const bad = {
+        version: '1.0',
+        types: [{ id: 'test', family: 'single-type', articleWordFloor: 100, electionCycleAnchor: '2026-09-13', cronExpression: '0 6 * * *' }],
+        // horizonDays and tierCMultiplier intentionally omitted
+      };
+      writeFileSync(tmpPath, JSON.stringify(bad), 'utf8');
+      expect(() => loadAndValidateRegistry(tmpPath)).toThrow(/missing required fields/);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it('throws on registry entry missing electionCycleAnchor', async () => {
+    const { writeFileSync, mkdtempSync, rmSync } = await import('node:fs');
+    const { tmpdir } = await import('node:os');
+    const { join } = await import('node:path');
+    const dir = mkdtempSync(join(tmpdir(), 'article-types-test-'));
+    const tmpPath = join(dir, 'missing-anchor-registry.json');
+    try {
+      const bad = {
+        version: '1.0',
+        types: [{ id: 'test', family: 'single-type', horizonDays: 7, tierCMultiplier: 1.0, articleWordFloor: 100, cronExpression: '0 6 * * *' }],
+        // electionCycleAnchor intentionally omitted
+      };
+      writeFileSync(tmpPath, JSON.stringify(bad), 'utf8');
+      expect(() => loadAndValidateRegistry(tmpPath)).toThrow(/electionCycleAnchor/);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it('throws on registry entry missing cronExpression when not dispatchOnly', async () => {
+    const { writeFileSync, mkdtempSync, rmSync } = await import('node:fs');
+    const { tmpdir } = await import('node:os');
+    const { join } = await import('node:path');
+    const dir = mkdtempSync(join(tmpdir(), 'article-types-test-'));
+    const tmpPath = join(dir, 'missing-cron-registry.json');
+    try {
+      const bad = {
+        version: '1.0',
+        types: [{ id: 'test', family: 'single-type', horizonDays: 7, tierCMultiplier: 1.0, articleWordFloor: 100, electionCycleAnchor: '2026-09-13' }],
+        // cronExpression omitted and dispatchOnly not set
+      };
+      writeFileSync(tmpPath, JSON.stringify(bad), 'utf8');
+      expect(() => loadAndValidateRegistry(tmpPath)).toThrow(/cronExpression/);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it('throws when END sentinel appears before BEGIN sentinel', () => {
+    const reversed = [
+      '# Title',
+      '',
+      '<!-- ARTICLE-TYPES:END -->',
+      'content',
+      '<!-- ARTICLE-TYPES:BEGIN -->',
+    ].join('\n');
+    expect(() => replaceBetweenSentinels(reversed, 'table')).toThrow(/END.*before.*BEGIN|BEGIN.*before.*END/i);
+  });
+
+  it('generate() writes updated content to a temp doc', async () => {
+    const { writeFileSync, readFileSync: rfs, mkdtempSync, rmSync } = await import('node:fs');
+    const { tmpdir } = await import('node:os');
+    const { join } = await import('node:path');
+    const { generate } = await import('../scripts/generate-article-types-doc.js');
+    const dir = mkdtempSync(join(tmpdir(), 'article-types-generate-test-'));
+    const tmpDoc = join(dir, 'Article-Generation.md');
+    try {
+      const docContent = [
+        '# Test',
+        '',
+        '### Registered article types',
+        '',
+        '<!-- ARTICLE-TYPES:BEGIN -->',
+        'old content',
+        '<!-- ARTICLE-TYPES:END -->',
+        '',
+        '## Footer',
+      ].join('\n');
+      writeFileSync(tmpDoc, docContent, 'utf8');
+      generate(registryPath, tmpDoc);
+      const updated = rfs(tmpDoc, 'utf8');
+      expect(updated).toContain('AUTO-GENERATED');
+      expect(updated).not.toContain('old content');
+      expect(updated).toContain('| id |');
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
 });

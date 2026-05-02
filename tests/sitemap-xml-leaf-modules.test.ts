@@ -13,7 +13,8 @@
  * re-export; these tests pin the unit-level invariants of the new
  * leaves so future refactors stay safe.
  */
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
+import fs from 'node:fs';
 
 import { hreflangCode } from '../scripts/sitemap-xml/hreflang.js';
 import {
@@ -70,6 +71,67 @@ describe('sitemap-xml/render/url-entry.ts — generateUrlEntry', () => {
     const xml = generateUrlEntry('rss.xml', '2026-04-01', 'daily', '0.5');
     expect(xml).toContain('<loc>https://riksdagsmonitor.com/rss.xml</loc>');
   });
+});
+
+describe('sitemap-xml/scanners/api.ts — getApiDocs', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('returns an empty array when the API directory does not exist', async () => {
+    const { getApiDocs } = await import('../scripts/sitemap-xml/scanners/api.js');
+    // Explicitly mock existsSync so the test is deterministic regardless of
+    // whether a real `api/` directory is present on the runner.
+    vi.spyOn(fs, 'existsSync').mockReturnValue(false);
+    const docs = getApiDocs();
+    expect(docs).toEqual([]);
+  });
+
+  it('scans a mocked directory tree and returns ApiDoc entries', async () => {
+    const { getApiDocs } = await import('../scripts/sitemap-xml/scanners/api.js');
+
+    // Spy on fs.existsSync to make API_DIR appear to exist
+    const existsSpy = vi.spyOn(fs, 'existsSync').mockImplementation(() => true);
+
+    // Mock readdirSync to return a fake directory structure:
+    //   root/: [index.html, modules/, assets/]
+    //   root/modules/: [foo.html]
+    //   root/assets/: [style.css]
+    const readdirSpy = vi.spyOn(fs, 'readdirSync').mockImplementation((dir: unknown) => {
+      const dirStr = String(dir);
+      if (dirStr.endsWith('assets')) {
+        // assets/ contains only a CSS file (no .html)
+        return [
+          { name: 'style.css', isDirectory: () => false, isFile: () => true },
+        ] as unknown as ReturnType<typeof fs.readdirSync>;
+      }
+      if (dirStr.endsWith('modules')) {
+        return [
+          { name: 'foo.html', isDirectory: () => false, isFile: () => true },
+        ] as unknown as ReturnType<typeof fs.readdirSync>;
+      }
+      // Root api/ dir
+      return [
+        { name: 'index.html', isDirectory: () => false, isFile: () => true },
+        { name: 'modules', isDirectory: () => true, isFile: () => false },
+        { name: 'assets', isDirectory: () => true, isFile: () => false },
+      ] as unknown as ReturnType<typeof fs.readdirSync>;
+    });
+
+    try {
+      const docs = getApiDocs();
+      // Should find index.html and modules/foo.html, but not assets/style.css
+      expect(Array.isArray(docs)).toBe(true);
+      expect(docs.length).toBe(2);
+      const paths = docs.map((d) => d.file);
+      expect(paths.some((p) => p.includes('index.html'))).toBe(true);
+      expect(paths.some((p) => p.includes('foo.html'))).toBe(true);
+    } finally {
+      existsSpy.mockRestore();
+      readdirSpy.mockRestore();
+    }
+  });
+
 });
 
 describe('sitemap-xml/validator.ts — validateSitemap', () => {
