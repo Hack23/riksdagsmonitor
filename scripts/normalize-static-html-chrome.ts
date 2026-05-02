@@ -111,7 +111,7 @@ function footer(prefix: string, family: PageFamily, current: Language): string {
       <a href="${prefix}${indexFile}" aria-label="Riksdagsmonitor ${t.home}">
         <img src="${prefix}images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
       </a>
-      <h3>${cs.legacyAboutHeading}</h3>
+      <h3><span aria-hidden="true">📖</span> ${cs.legacyAboutHeading}</h3>
       <p>${cs.legacyAboutBody}</p>
       <p>${cs.footerCybersecurityTagline}</p>
       <ul class="footer-stats">
@@ -122,7 +122,7 @@ function footer(prefix: string, family: PageFamily, current: Language): string {
       </ul>
     </div>
     <div class="footer-section">
-      <h3>${cs.legacyQuickLinksHeading}</h3>
+      <h3><span aria-hidden="true">🔗</span> ${cs.legacyQuickLinksHeading}</h3>
       <ul>
         <li><a href="${prefix}${indexFile}">${t.home}</a></li>
         <li><a href="${prefix}${newsFile}">${cs.news}</a></li>
@@ -136,7 +136,7 @@ function footer(prefix: string, family: PageFamily, current: Language): string {
       </ul>
     </div>
     <div class="footer-section">
-      <h3>${cs.footerBuiltByHeading}</h3>
+      <h3><span aria-hidden="true">🏢</span> ${cs.footerBuiltByHeading}</h3>
       <p>${cs.footerCybersecurityTagline}</p>
       <ul>
         <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">${cs.linkHack23Home}</a></li>
@@ -170,7 +170,7 @@ function footer(prefix: string, family: PageFamily, current: Language): string {
       </ul>
     </div>
     <div class="footer-section">
-      <h3>${cs.legacyLanguagesHeading}</h3>
+      <h3><span aria-hidden="true">🌍</span> ${cs.legacyLanguagesHeading}</h3>
       <div class="language-grid">
 ${languageGrid(prefix, family, current)}
       </div>
@@ -284,23 +284,25 @@ function replaceHero(html: string, lang: Language): string {
 </div>`,
   );
 
-  // 5. Hero-stats labels by `data-stat-id`. We only rewrite the visible
-  //    `.label` text — numbers stay sourced from CIA stats, classes are
-  //    untouched so visual regression is localized to copy.
-  const STAT_LABELS: Record<string, string> = {
-    'stat-historical-persons': cs.heroStatPoliticians,
-    'stat-against-proposals': cs.heroStatBallots,
-    'stat-total-documents': cs.heroStatDocuments,
-    'stat-government-proposals': cs.heroStatBills,
-    'stat-committee-decisions': cs.heroStatDecisions,
+  // 5. Hero-stats labels by `data-stat-id`. We rewrite the visible
+  //    `.label` text with localized copy *and* prefix the matching icon
+  //    glyph (👥 🗳️ 📄 📜 🏛️) so the stats row reads as iconography
+  //    + number + label across all 14 languages without per-page edits.
+  //    Numbers stay sourced from CIA stats.
+  const STAT_LABELS: Record<string, { label: string; icon: string }> = {
+    'stat-historical-persons':    { label: cs.heroStatPoliticians, icon: '👥' },
+    'stat-against-proposals':     { label: cs.heroStatBallots,     icon: '🗳️' },
+    'stat-total-documents':       { label: cs.heroStatDocuments,   icon: '📄' },
+    'stat-government-proposals':  { label: cs.heroStatBills,       icon: '📜' },
+    'stat-committee-decisions':   { label: cs.heroStatDecisions,   icon: '🏛️' },
   };
-  for (const [statId, label] of Object.entries(STAT_LABELS)) {
+  for (const [statId, { label, icon }] of Object.entries(STAT_LABELS)) {
     const escaped = statId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const re = new RegExp(
       `(<span\\s+class="number"\\s+data-stat-id="${escaped}">[\\s\\S]*?<\\/span>\\s*<span\\s+class="label">)[\\s\\S]*?(<\\/span>)`,
       'i',
     );
-    next = next.replace(re, `$1${label}$2`);
+    next = next.replace(re, `$1<span aria-hidden="true">${icon}</span> ${label}$2`);
   }
 
   return next;
