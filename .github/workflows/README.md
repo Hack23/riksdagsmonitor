@@ -104,17 +104,20 @@ Each agentic workflow is a **pair**: an authored `.md` source + a compiled `.loc
 
 ### Common tool surface (every `news-*.md`)
 
-Every news workflow declares the **same** tool & runtime surface for parity, resilience, and full gh-aw v0.69.3 capability coverage:
+Every news workflow declares the **same** tool & runtime surface for parity, resilience, and full gh-aw v0.71.3 capability coverage:
 
 | Field | Value | Purpose |
 |-------|-------|---------|
 | `runtimes.node.version` | `"25"` | Pinned Node 25 for IMF CLI + render scripts |
+| `engine.id` / `engine.model` | `copilot` / `claude-sonnet-4.6` | Faster Sonnet model (replaced `claude-opus-4.7` in the v0.71.3 refactor for throughput within the 60-min budget) |
+| `engine.mcp.session-timeout` | `1h` | gh-aw v0.71.3 frontmatter field ([#29353](https://github.com/github/gh-aw/issues/29353)) — caps MCP gateway session lifetime at 1 h, covering the full 60-min job and freeing gateway resources sooner than the 6 h default. Closes the legacy ~25–30 min "safeoutputs idle drop" window. |
 | `tools.github.toolsets` | `[all]` | Full GitHub MCP surface (issues, PRs, repos, code-search, actions, releases, discussions, …); see [`github-tools.md`](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/github-tools.md) |
 | `tools.bash` / `tools.edit` / `tools.web-fetch` / `tools.agentic-workflows` | enabled | Full local tool surface; `web-fetch` reaches non-MCP public sources (`statskontoret.se`, `riksdagsmonitor.com`) through the AWF firewall |
 | `tools.cache-memory` | keyed by `news-${workflow}-${article_date}`; best-effort cache persistence aligned with a 14-day recovery window | **Resilience knob** — analysis artifacts persisted at `/tmp/gh-aw/cache-memory/`; may be restored on the next run if the previous PR failed and the cache entry is still available (see [`07-commit-and-pr.md` §Cache-memory recovery](../prompts/07-commit-and-pr.md)) |
 | `tools.playwright` | enabled in `news-evening-analysis` + `news-realtime-monitor` only | Live HTML validation for tier-C aggregation runs |
 | `features.mcp-gateway` | `true` | Routes all MCP traffic through the gh-aw mcp-gateway (single audit point) |
-| `sandbox.mcp.keepalive-interval` | `300` (5 min) | Compiles to gateway `keepaliveInterval`; overrides upstream default `1500 s (25 min)` so HTTP MCPs (`riksdag-regering`) stay warm for the full 45-minute job budget (see [`02-mcp-access.md` §MCP gateway keepalive](../prompts/02-mcp-access.md)) |
+| `sandbox.mcp.keepalive-interval` | `300` (5 min) | Compiles to gateway `keepaliveInterval`; overrides upstream default `1500 s (25 min)` to keep HTTP MCPs warm. With `engine.mcp.session-timeout: 1h` set, this is now belt-and-braces resilience rather than load-bearing for the 60-min job (see [`02-mcp-access.md` §MCP gateway keepalive](../prompts/02-mcp-access.md)) |
+| `timeout-minutes` | `60` | Job ceiling measured from job start; agent phases target completion by agent minute 40, PR by agent minute 42 (hard 45) to reserve setup/safe-output headroom |
 | `safe-outputs.create-pull-request.fallback-as-issue` | `true` (explicit) | If org disables Actions PR creation, fall back to an issue + branch link instead of failing |
 | `safe-outputs.create-pull-request.if-no-changes` | `warn` | Empty patches emit a warning instead of failing the run (e.g. duplicate-date dispatches) |
 | `network.allowed` | `node`, `github`, `defaults` + explicit Docker Hub hosts (`docker.io`, `registry-1.docker.io`, `auth.docker.io`, `production.cloudflare.docker.com`) + IMF/SCB/Riksdag/Statskontoret/site domains | Ecosystem identifiers preferred per upstream `network.md`. The broad `containers` ecosystem (which would also permit `ghcr.io`, `quay.io`, `gcr.io`, `mcr.microsoft.com`, `pkgs.k8s.io`, …) is **deliberately omitted** to keep least-privilege egress; only the minimal Docker Hub hosts actually required to resolve `node:25-alpine` for the SCB and World Bank MCP servers are enumerated. Any future switch to `ghcr.io`, `quay.io`, or other registries must add the specific hosts and be reviewed against the egress allowlist policy before merge. |
