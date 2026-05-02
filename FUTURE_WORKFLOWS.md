@@ -11,20 +11,20 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-5.0-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Updated-2026--03--27-success?style=for-the-badge" alt="Last Updated"/>
+  <img src="https://img.shields.io/badge/Version-4.0-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Updated-2026--05--02-success?style=for-the-badge" alt="Last Updated"/>
   <img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-03-27 (UTC)
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-03-27
+**📋 Document Owner:** CEO | **📄 Version:** 4.0 | **📅 Last Updated:** 2026-05-02 (UTC)
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-02
 **🔮 Horizon:** 2026–2037
 
 ---
 
 ## 🎯 Purpose & Scope
 
-This document projects the evolution of Riksdagsmonitor's CI/CD and automation workflows over the next eleven years (2026–2037). Building on the current foundation of 47 workflow files / 35 distinct workflows, the vision encompasses AI-native pipelines, real-time political intelligence, predictive analytics, and fully autonomous content generation — all while maintaining ISO 27001/NIST CSF/CIS Controls compliance.
+This document projects the evolution of Riksdagsmonitor's CI/CD and automation workflows over the next eleven years (2026–2037). Building on the current foundation of 50 workflow files / 36 distinct workflows (including 14 agentic news pipelines), the vision encompasses AI-native pipelines, real-time political intelligence, predictive analytics, and fully autonomous content generation — all while maintaining ISO 27001/NIST CSF/CIS Controls compliance.
 
 **Strategic Alignment:**
 - **ISO 27001 (A.5.1)**: Information security policy evolution
@@ -184,17 +184,50 @@ flowchart TB
     class F1,F2,F3,F4 agi
 ```
 
-### Current State (2026 Q1)
+### Current State (2026 Q2)
 
 | Metric | Value |
 | --- | --- |
-| Total Workflow Files | 43 (21 YAML + 11 agentic `.md` + 11 `.lock.yml`) = **32 distinct workflows** |
+| Total Workflow Files | 50 (22 YAML + 14 agentic `.md` + 14 `.lock.yml`) = **36 distinct workflows** |
 | TypeScript Modules | 31 (in `src/browser/`) |
 | Unit Tests | 2890 (Vitest) |
 | Language Support | 14 languages (incl. RTL) |
 | Deployment | Dual: AWS S3/CloudFront + GitHub Pages |
-| AI Content | 11 agentic workflows (Claude Opus 4.7) |
+| AI Content | 14 agentic workflows (Claude Opus 4.7) |
 | Security Compliance | ISO 27001, NIST CSF 2.0, CIS Controls v8.1 |
+
+---
+
+## ✅ Delivered (2026 Q2): Long-Horizon Forward-Look Pipelines
+
+> **Status:** Delivered via foundation PR + sub-issues [Hack23/riksdagsmonitor#2153](https://github.com/Hack23/riksdagsmonitor/issues/2153)–[#2168](https://github.com/Hack23/riksdagsmonitor/issues/2168).
+
+The long-horizon forward-look system extends the forward-look family (`news-week-ahead`, `news-month-ahead`) with three additional horizons:
+
+| Workflow | Horizon | Depth × | Cron | Status |
+|---|---|---|---|---|
+| `news-quarter-ahead` | 90 days | × 1.7 | `0 9 1,15 * *` | ✅ Delivered |
+| `news-year-ahead` | 365 days | × 2.0 | `0 9 5 1,7 *` | ✅ Delivered |
+| `news-election-cycle` | 1 460 days | × 2.5 | dispatch-only (cron declared, disabled) | ✅ Delivered |
+
+**Key design decisions:**
+- All three share the Tier-C aggregation contract but with progressively higher depth multipliers
+- Additional prompt module: `ext/long-horizon-forecasting.md` (horizon stratification, scenario-tree depth, IMF projection stamps, PESTLE blocking)
+- Election-cycle further imports `ext/cycle-rollover.md` (active ±30 days of election anchor)
+- Full pipeline diagrams and ISMS mapping documented in [WORKFLOWS.md § Stage 6.2](WORKFLOWS.md#-stage-62-long-horizon-forward-look-pipelines-quarter--year--election-cycle)
+- Article-type registry metadata: [`analysis/article-types.json`](analysis/article-types.json)
+- Editorial parameters: [Article-Generation.md § Forward-Look Horizons](Article-Generation.md)
+
+### 🔮 Aspirational Long-Horizon Extensions (Future — No Script Edits Required)
+
+The registry-driven architecture means the following article types can be added by simply registering them in `analysis/article-types.json` and creating a new workflow `.md` source — no script changes to `aggregate-analysis.ts` or `render-articles.ts`:
+
+| Future Workflow | Horizon | Use Case | Dependency |
+|---|---|---|---|
+| `news-budget-bill-ahead` | 90–180 days | BP (Budgetproposition) + VP (Vårproposition) deep-dive | Budget committee schedule feed |
+| `news-eu-presidency-ahead` | 180 days | Swedish EU Council presidency rotation impact | European Parliament MCP integration |
+| `news-defence-pivot-ahead` | 365 days | Defence spending reallocation (NATO 2% target) | IMF GFS_COFOG G02 + FöU committee data |
+| `news-climate-policy-ahead` | 365 days | Environmental policy trajectory + EU Green Deal | SCB environment data + EU ETS pricing |
 
 ---
 

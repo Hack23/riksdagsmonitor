@@ -11,15 +11,20 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-7.2-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Updated-2026--04--20-success?style=for-the-badge" alt="Last Updated"/>
+  <img src="https://img.shields.io/badge/Version-7.3-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Updated-2026--05--02-success?style=for-the-badge" alt="Last Updated"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 7.2 | **📅 Last Updated:** 2026-04-20 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20
+**📋 Document Owner:** CEO | **📄 Version:** 7.3 | **📅 Last Updated:** 2026-05-02 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-02
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v7.2 → v7.3, 2026-05-02):**
+> - 🔮 **Long-horizon forward-look pipelines** added: `news-quarter-ahead` (90d, × 1.7), `news-year-ahead` (365d, × 2.0), and `news-election-cycle` (1460d, × 2.5). Workflow count is now **14 agentic** (was 11) bringing total workflow files to **50** (22 `.yml` + 14 `.md` + 14 `.lock.yml`).
+> - Added §6.2 "Long-Horizon Forward-Look Pipelines" with Mermaid flowchart + sequence diagrams for each new horizon, ISMS control mapping table, and KPI definitions.
+> - Updated all inventory tables, counts, and diagram labels to reflect 14 agentic workflows.
+>
 > **🆕 What changed since last review (v7.1 → v7.2, 2026-04-20):**
 > - 📈 **IMF** added as a third primary economic-data source for agentic news workflows (alongside SCB MCP and World Bank MCP) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). IMF is consumed via the **pure-TypeScript client `scripts/imf-client.ts`** invoked by workflows through the `bash` tool — **intentionally not an MCP server** (no Python/uvx, SBOM-covered via npm). Egress allowlist extended with `data.imf.org`, `api.imf.org`, `www.imf.org` (Squid + iptables). The count of **MCP servers is unchanged**. Forward-looking workflows (`news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`) now use IMF WEO/Fiscal Monitor projections as the primary source for look-ahead framing.
 >
@@ -70,7 +75,7 @@ This document provides comprehensive documentation of the CI/CD workflows implem
 
 The project has been migrated from JavaScript to **TypeScript** (31 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 25's native type-stripping for scripts.
 
-**Total Workflow Files: 43** (21 standard YAML + 11 agentic `.md` sources + 11 compiled `.lock.yml`). Each agentic workflow consists of a source `.md` file and its compiled `.lock.yml` counterpart, yielding **32 distinct workflows** (21 standard + 11 agentic).
+**Total Workflow Files: 50** (22 standard YAML + 14 agentic `.md` sources + 14 compiled `.lock.yml`). Each agentic workflow consists of a source `.md` file and its compiled `.lock.yml` counterpart, yielding **36 distinct workflows** (22 standard + 14 agentic).
 **Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
 
 ## 🔐 ISMS Policy Alignment
@@ -205,15 +210,18 @@ flowchart TD
 |-----|-----------------|---------------------|
 | **Saturday** | Weekly Review (09:00) · Realtime Monitor (12:00) · Evening/Weekly Wrap-up (16:00) · Translation (14:00) | Reduced frequency; weekly synthesis |
 | **Sunday** | Realtime Monitor (12:00) · Translation (14:00) | Minimal coverage |
-| **1st of Month** | Month Ahead (08:00) | Monthly strategic outlook |
+| **1st of Month** | Month Ahead (08:00) · Quarter Ahead (09:00) | Monthly + quarterly strategic outlook |
+| **15th of Month** | Quarter Ahead (09:00) | Mid-month quarterly refresh |
 | **28th of Month** | Monthly Review (10:00) | Monthly retrospective |
 | **Friday** | Week Ahead (07:00) | Weekly prospective outlook |
+| **5 Jan / 5 Jul** | Year Ahead (09:00) | Semi-annual strategic outlook anchored in IMF WEO vintage |
+| **13 Mar / 13 Sep** | Election Cycle (dispatch-only) | Future: semi-annual election-cycle deep intelligence |
 
 ---
 
 ## 🔄 Workflow Overview
 
-The Riksdagsmonitor project uses **43 workflow files** (21 standard `.yml` + 11 agentic `.lock.yml` + 11 agentic `.md` sources) organized into 5 functional categories:
+The Riksdagsmonitor project uses **50 workflow files** (22 standard `.yml` + 14 agentic `.lock.yml` + 14 agentic `.md` sources) organized into 5 functional categories:
 
 ```mermaid
 graph TB
@@ -242,7 +250,7 @@ graph TB
         DATA1["📊 Update CIA CSV Data<br/><i>Nightly 03:30 UTC + manual</i>"]
     end
 
-    subgraph "📰 Agentic News (12 workflows)"
+    subgraph "📰 Agentic News (14 workflows)"
         NEWS1["📋 Committee Reports<br/><i>Mon-Fri 04:00</i>"]
         NEWS2["📜 Propositions<br/><i>Mon-Fri 05:00</i>"]
         NEWS3["✊ Motions<br/><i>Mon-Fri 06:00</i>"]
@@ -254,7 +262,9 @@ graph TB
         NEWS9["📅 Month Ahead<br/><i>1st 08:00</i>"]
         NEWS10["📊 Monthly Review<br/><i>28th 10:00</i>"]
         NEWS11["🌐 Translate<br/><i>2-3× daily</i>"]
-        NEWS12["✍️ Article Generator<br/><i>Manual only</i>"]
+        NEWS12["📐 Quarter Ahead<br/><i>1st+15th 09:00</i>"]
+        NEWS13["📆 Year Ahead<br/><i>5 Jan+Jul 09:00</i>"]
+        NEWS14["🗳️ Election Cycle<br/><i>Dispatch only</i>"]
     end
 
     NEWS1 & NEWS2 & NEWS3 & NEWS4 & NEWS5 & NEWS6 -->|"dispatch"| NEWS11
@@ -326,7 +336,7 @@ graph TB
 18. **🔧 Compile Agentic Workflows** (`.github/workflows/compile-agentic-workflows.yml`) — Compile .md → .lock.yml
 19. **🤖 Copilot Setup Steps** (`.github/workflows/copilot-setup-steps.yml`) — GitHub Copilot environment
 
-### 🤖 Agentic News Workflows (12 workflows: each has a `.md` source + `.lock.yml` compiled output)
+### 🤖 Agentic News Workflows (14 workflows: each has a `.md` source + `.lock.yml` compiled output)
 
 20. **📰 News Article Generator** — Daily news generation
 21. **🌅 News Evening Analysis** — Evening analysis reports
@@ -980,12 +990,12 @@ flowchart TB
 | Contract | Applies to | Required artifacts | Source |
 |----------|-----------|-------------------:|--------|
 | **Single-type** (9 artifacts) | `news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations` | **9** | [`prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) |
-| **Tier-C aggregation** (14 artifacts) | `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review` | **14** | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) |
+| **Tier-C aggregation** (14 artifacts) | `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`, `news-quarter-ahead`, `news-year-ahead`, `news-election-cycle` | **14** | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) |
 | **Translation** (N/A) | `news-translate` | N/A (post-hoc) | Direct text pipeline |
 
 All artifacts are written under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` — see [`analysis/README.md`](analysis/README.md) for the on-disk layout and [`analysis/templates/README.md`](analysis/templates/README.md) for the 23 canonical templates.
 
-#### MCP server wiring (identical across all 11 agentic workflows)
+#### MCP server wiring (identical across all 14 agentic workflows)
 
 ```yaml
 mcp-servers:
@@ -1042,6 +1052,232 @@ Any outbound connection not matching this allow-list is dropped at the Squid pro
 
 ---
 
+### 🔮 Stage 6.2: Long-Horizon Forward-Look Pipelines (quarter / year / election-cycle)
+
+The three **long-horizon** workflows extend the forward-look family beyond week-ahead and month-ahead. They share the Tier-C aggregation contract but apply progressively higher depth multipliers and require additional prompt modules (`ext/long-horizon-forecasting.md`; `ext/cycle-rollover.md` for election-cycle only). Full horizon metadata is defined in [`analysis/article-types.json`](analysis/article-types.json); editorial parameters are documented in [Article-Generation.md § Forward-Look Horizons](Article-Generation.md).
+
+#### 📐 6.2.1 News Quarter Ahead (`news-quarter-ahead`)
+
+**Schedule:** `0 9 1,15 * *` (1st + 15th of month, 09:00 UTC)
+**Horizon:** 90 days | **Depth multiplier:** × 1.7 | **Word floor:** 2 000 | **Timeout:** 45 min
+
+```mermaid
+flowchart TD
+    subgraph Imports["Prompt-module imports"]
+        P00["00-base-contract"]
+        P01["01-bash-and-shell-safety"]
+        P02["02-mcp-access"]
+        P03["03-data-download"]
+        P04["04-analysis-pipeline"]
+        P05["05-analysis-gate ⛔"]
+        P06["06-article-generation"]
+        P07["07-commit-and-pr"]
+        EXT1["ext/tier-c-aggregation"]
+        EXT2["ext/long-horizon-forecasting"]
+    end
+
+    subgraph MCP["MCP-server access"]
+        RR["riksdag-regering<br/>(Riksdag calendar, committee schedules)"]
+        SCB["SCB PxWeb<br/>(quarterly NA, Riksbank rates)"]
+        WB["world-bank<br/>(governance residue)"]
+        IMF["IMF WEO/FM via bash<br/>(macro projections)"]
+    end
+
+    subgraph Pipeline["Pipeline stages"]
+        A1["📥 Data download<br/>(committee schedule, prop tabling)"]
+        A2["🔬 Analysis (14 artifacts)<br/>Tier-C × 1.7 depth"]
+        A3["⛔ Analysis gate<br/>(blocks until 14 artifacts)"]
+        A4["📝 Article generation<br/>(≥ 2000 words)"]
+        A5["🔒 Safe-outputs envelope<br/>(sanitise → validate → PR)"]
+    end
+
+    Imports --> Pipeline
+    MCP --> A1
+    A1 --> A2 --> A3 --> A4 --> A5
+```
+
+```mermaid
+sequenceDiagram
+    participant Cron as ⏰ Cron (1st/15th 09:00)
+    participant Runner as 🖥️ gh-aw Runner
+    participant MCP as 📡 MCP Servers
+    participant Gate as ⛔ Analysis Gate
+    participant SO as 🔒 Safe-Outputs
+
+    Cron->>Runner: trigger news-quarter-ahead
+    Runner->>MCP: fetch committee schedule + propositions calendar (90d)
+    MCP-->>Runner: structured data
+    Runner->>Runner: analysis pipeline (14 artifacts, × 1.7)
+    Runner->>Gate: verify 14 artifacts present
+    Gate-->>Runner: PASS
+    Runner->>Runner: render article (≥ 2000 words EN+SV)
+    Runner->>SO: submit PR via safe-outputs
+    SO-->>Runner: PR created (human review)
+    Note over Runner,SO: Hard deadline: 45 min timeout
+```
+
+#### 📆 6.2.2 News Year Ahead (`news-year-ahead`)
+
+**Schedule:** `0 9 5 1,7 *` (5th of January + 5th of July, 09:00 UTC)
+**Horizon:** 365 days | **Depth multiplier:** × 2.0 | **Word floor:** 2 500 | **Timeout:** 45 min
+
+```mermaid
+flowchart TD
+    subgraph Imports["Prompt-module imports"]
+        P00["00-base-contract"]
+        P01["01-bash-and-shell-safety"]
+        P02["02-mcp-access"]
+        P03["03-data-download"]
+        P04["04-analysis-pipeline"]
+        P05["05-analysis-gate ⛔"]
+        P06["06-article-generation"]
+        P07["07-commit-and-pr"]
+        EXT1["ext/tier-c-aggregation"]
+        EXT2["ext/long-horizon-forecasting"]
+    end
+
+    subgraph MCP["MCP-server access"]
+        RR["riksdag-regering<br/>(Riksmöte calendar, VPs + BPs)"]
+        SCB["SCB PxWeb<br/>(annual NA, demographic)"]
+        WB["world-bank<br/>(WGI governance)"]
+        IMF["IMF WEO Apr/Oct vintage<br/>(GDP, growth, fiscal)"]
+    end
+
+    subgraph Pipeline["Pipeline stages"]
+        A1["📥 Data download<br/>(budget rhythm: BP autumn + VP spring)"]
+        A2["🔬 Analysis (14 artifacts)<br/>Tier-C × 2.0 depth + PESTLE mandatory"]
+        A3["⛔ Analysis gate<br/>(blocks until 14 artifacts + PESTLE)"]
+        A4["📝 Article generation<br/>(≥ 2500 words, wildcards-blackswans)"]
+        A5["🔒 Safe-outputs envelope<br/>(sanitise → validate → PR)"]
+    end
+
+    Imports --> Pipeline
+    MCP --> A1
+    A1 --> A2 --> A3 --> A4 --> A5
+```
+
+```mermaid
+sequenceDiagram
+    participant Cron as ⏰ Cron (5 Jan/Jul 09:00)
+    participant Runner as 🖥️ gh-aw Runner
+    participant MCP as 📡 MCP Servers
+    participant IMF as 💹 IMF WEO/FM
+    participant Gate as ⛔ Analysis Gate
+    participant SO as 🔒 Safe-Outputs
+
+    Cron->>Runner: trigger news-year-ahead
+    Runner->>MCP: fetch Riksmöte + budget calendar (365d)
+    Runner->>IMF: fetch WEO Apr/Oct vintage projections
+    MCP-->>Runner: parliamentary data
+    IMF-->>Runner: macro projections (GDP, inflation, fiscal)
+    Runner->>Runner: analysis pipeline (14 artifacts, × 2.0)
+    Runner->>Runner: PESTLE + wildcards-blackswans mandatory
+    Runner->>Gate: verify 14 artifacts + PESTLE present
+    Gate-->>Runner: PASS
+    Runner->>Runner: render article (≥ 2500 words EN+SV)
+    Runner->>SO: submit PR via safe-outputs
+    SO-->>Runner: PR created (human review)
+    Note over Runner,SO: Hard deadline: 45 min timeout
+```
+
+#### 🗳️ 6.2.3 News Election Cycle (`news-election-cycle`)
+
+**Schedule:** `workflow_dispatch` only (cron `0 9 13 3,9 *` declared but disabled until runtime measured)
+**Horizon:** 1 460 days (4-year mandate) | **Depth multiplier:** × 2.5 | **Word floor:** 3 500 | **Timeout:** 45 min
+**Extra imports:** `ext/cycle-rollover.md` (active ±30 days of election anchor 2026-09-13)
+
+```mermaid
+flowchart TD
+    subgraph Imports["Prompt-module imports (11 modules)"]
+        P00["00-base-contract"]
+        P01["01-bash-and-shell-safety"]
+        P02["02-mcp-access"]
+        P03["03-data-download"]
+        P04["04-analysis-pipeline"]
+        P05["05-analysis-gate ⛔"]
+        P06["06-article-generation"]
+        P07["07-commit-and-pr"]
+        EXT1["ext/tier-c-aggregation"]
+        EXT2["ext/long-horizon-forecasting"]
+        EXT3["ext/cycle-rollover"]
+    end
+
+    subgraph MCP["MCP-server access"]
+        RR["riksdag-regering<br/>(full mandate voting record)"]
+        SCB["SCB PxWeb<br/>(demographic, economic)"]
+        WB["world-bank<br/>(WGI governance 4-year)"]
+        IMF["IMF WEO multi-year<br/>(T+5 projections)"]
+    end
+
+    subgraph Pipeline["Pipeline stages"]
+        A1["📥 Data download<br/>(Tidö scorecard + next-cycle coalition)"]
+        A2["🔬 Analysis (24 artifacts)<br/>Tier-C × 2.5 depth + cycle-trajectory"]
+        A3["⛔ Analysis gate<br/>(blocks until 24 artifacts)"]
+        A4["📝 Article generation<br/>(≥ 3500 words, STRIDE assessment)"]
+        A5["🔒 Safe-outputs envelope<br/>(sanitise → validate → PR)"]
+    end
+
+    Imports --> Pipeline
+    MCP --> A1
+    A1 --> A2 --> A3 --> A4 --> A5
+```
+
+```mermaid
+sequenceDiagram
+    participant Op as 👤 Operator (dispatch)
+    participant Runner as 🖥️ gh-aw Runner
+    participant MCP as 📡 MCP Servers
+    participant IMF as 💹 IMF WEO T+5
+    participant Gate as ⛔ Analysis Gate
+    participant SO as 🔒 Safe-Outputs
+
+    Op->>Runner: workflow_dispatch (cycle_anchor=both)
+    Runner->>MCP: fetch full mandate voting record + coalition data
+    Runner->>IMF: fetch multi-year WEO projections
+    MCP-->>Runner: 4-year parliamentary data
+    IMF-->>Runner: T+5 macro projections
+    Runner->>Runner: analysis pipeline (24 artifacts, × 2.5)
+    Runner->>Runner: PESTLE + wildcards + STRIDE + cycle-trajectory
+    Runner->>Gate: verify 24 artifacts present
+    Gate-->>Runner: PASS
+    Runner->>Runner: render article (≥ 3500 words EN+SV)
+    Runner->>SO: submit PR via safe-outputs
+    SO-->>Runner: PR created (human review)
+    Note over Runner,SO: Hard deadline: 45 min timeout
+```
+
+#### 📊 Long-Horizon ISMS Control Mapping
+
+The three long-horizon workflows touch additional ISMS controls beyond the standard agentic security model:
+
+| **Control** | **Standard** | **How Applied** |
+|---|---|---|
+| A.5.1 (Policies for information security) | ISO 27001:2022 | Long-horizon forecasts classified PUBLIC; no PII processed; GDPR DPIA short-circuit |
+| A.5.30 (ICT readiness for business continuity) | ISO 27001:2022 | Graceful fallback if MCP/IMF unavailable — uses cached vintage with annotation |
+| A.8.8 (Management of technical vulnerabilities) | ISO 27001:2022 | IMF/SCB egress pins in Squid allowlist; SHA-256 payload integrity |
+| A.8.28 (Secure coding) | ISO 27001:2022 | Prompt injection detection in safe-outputs layer; no user input reaches shell |
+| A.8.30 (Outsourced development) | ISO 27001:2022 | gh-aw compiler generates hardened `.lock.yml`; human review mandatory |
+| GV.SC (Supply chain risk management) | NIST CSF 2.0 | MCP server versions pinned; egress firewall restricts external calls |
+| PR.DS (Data security) | NIST CSF 2.0 | Analysis artifacts written to branch-protected path; no secrets in output |
+| DE.CM (Continuous monitoring) | NIST CSF 2.0 | Workflow timeout enforcement (45 min); runtime alerts if >80% budget |
+| RS.AN (Incident analysis) | NIST CSF 2.0 | Failed analysis-gate produces structured error artifact for post-mortem |
+| #4 (Secure configuration) | CIS Controls v8.1 | Harden-runner enforced; read-only permissions; concurrency guards |
+| #16 (Application software security) | CIS Controls v8.1 | Five-layer safe-outputs validator; AI output sanitisation |
+
+#### 📈 Long-Horizon KPIs
+
+| **KPI** | **Definition** | **Target** | **Measurement** |
+|---|---|---|---|
+| Legislative calendar coverage (quarter) | % of committee schedule + chamber sittings + proposition tabling deadlines forecast for the 90-day window | ≥ 85% | Cross-reference generated quarter-ahead against `data.riksdagen.se` calendar API |
+| Legislative calendar coverage (year) | % of Riksmöte + budget rhythm events forecast for 365-day window | ≥ 70% | Compare year-ahead output against known BP/VP/session dates |
+| Legislative calendar coverage (cycle) | % of mandate-level milestones (elections, coalition formations, government reshuffles) forecast | ≥ 60% | Retrospective scoring after events occur |
+| PIR roll-forward continuity | % of Priority Intelligence Requirements from prior horizon article with explicit obsolescence date or roll-forward in next article | ≥ 90% | Automated diff of PIR sections between consecutive articles |
+| Vintage discipline rate | % of IMF WEO/FM citations that include projection-year stamp (e.g. "WEO Apr-2026 est.") | 100% | Regex validation in safe-outputs layer |
+| Analysis gate pass rate | % of workflow runs that pass the analysis gate on first attempt | ≥ 80% | GitHub Actions run outcome data |
+| Safe-outputs rejection rate | % of PRs rejected by safe-outputs validator | < 5% | PR merge/close statistics |
+
+---
+
 ### 📡 Stage 7: Monitoring & Infrastructure
 
 ```mermaid
@@ -1084,9 +1320,9 @@ flowchart LR
 
 ---
 
-## 🔧 Complete Workflow Inventory (43 Files — 21 standard `.yml` + 11 agentic `.md` + 11 compiled `.lock.yml`)
+## 🔧 Complete Workflow Inventory (50 Files — 22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`)
 
-> **Verification:** `ls .github/workflows/` yields 43 workflow files (44 entries including the directory README.md). This matches 21 standard workflow files + 11 agentic Markdown sources + 12 corresponding compiled lock files. Badges and PR checks are driven by the 21 standard `.yml` plus the 11 compiled `.lock.yml` (GitHub Actions only executes the compiled artifacts).
+> **Verification:** `ls .github/workflows/` yields 50 workflow files (51 entries including the directory README.md). This matches 22 standard workflow files + 14 agentic Markdown sources + 14 corresponding compiled lock files. Badges and PR checks are driven by the 22 standard `.yml` plus the 14 compiled `.lock.yml` (GitHub Actions only executes the compiled artifacts).
 
 ### 🔐 Security & Compliance (5 workflows)
 
@@ -1125,7 +1361,7 @@ flowchart LR
 | 4.2 | ☁️ Deploy to S3 | `deploy-s3.yml` | Push to main | AWS S3/CloudFront |
 | 4.3 | 🔆 Lighthouse CI | `lighthouse-ci.yml` | Push/PR, weekly | Performance audit |
 
-### 🤖 Agentic Workflows (11 workflows × 2 files each = 22 files)
+### 🤖 Agentic Workflows (14 workflows × 2 files each = 28 files)
 
 > Each agentic workflow is authored as a Markdown source (`.md`) and **compiled** to a hardened GitHub Actions workflow (`.lock.yml`) via `compile-agentic-workflows.yml`. Only the `.lock.yml` executes on the runner; the `.md` is the source of truth, reviewed in PRs. Both files are SHA-pinned, run behind the Squid/iptables egress firewall, and route all write-side effects through the five-layer **safe-outputs** validator (sanitisation → schema-validate → policy-check → human-review → merge).
 >
@@ -1144,6 +1380,9 @@ flowchart LR
 | 5.9 | 🏛️ News Propositions | `news-propositions.md` | `news-propositions.lock.yml` | Single-type: government proposition coverage |
 | 5.10 | ❓ News Interpellations | `news-interpellations.md` | `news-interpellations.lock.yml` | Single-type: interpellation debate tracking |
 | 5.11 | 🌍 News Translate | `news-translate.md` | `news-translate.lock.yml` | Out-of-band translation: rendered EN+SV → 12 other languages |
+| 5.12 | 📐 News Quarter Ahead | `news-quarter-ahead.md` | `news-quarter-ahead.lock.yml` | Tier-C aggregation × 1.7: 90-day parliamentary-season + Riksbank/SCB calendar |
+| 5.13 | 📆 News Year Ahead | `news-year-ahead.md` | `news-year-ahead.lock.yml` | Tier-C aggregation × 2.0: 365-day annual outlook anchored in IMF WEO Apr/Oct vintage |
+| 5.14 | 🗳️ News Election Cycle | `news-election-cycle.md` | `news-election-cycle.lock.yml` | Tier-C aggregation × 2.5: full 4-year mandate; dispatch-only until runtime measured |
 
 ### 🛠️ Automation & Tooling (2 workflows)
 
@@ -1289,7 +1528,7 @@ flowchart TB
 | Action SHA Pinning | 100% | **100%** | ✅ |
 | Harden Runner | All workflows | **All** | ✅ |
 | Language Coverage | 14 | **14** | ✅ |
-| Agentic Workflows | 12 | **12** | ✅ |
+| Agentic Workflows | 14 | **14** | ✅ |
 
 ---
 
@@ -1330,8 +1569,8 @@ flowchart TB
 
 ---
 
-**📋 Document Owner:** CEO | **📄 Version:** 7.2 | **📅 Last Updated:** 2026-04-20 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20
+**📋 Document Owner:** CEO | **📄 Version:** 7.3 | **📅 Last Updated:** 2026-05-02 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-02
 **🏢 Classification:** Public | **🏛️ Owner:** Hack23 AB (Org.nr 5595347807)
 
 ---
