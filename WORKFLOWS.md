@@ -215,7 +215,7 @@ flowchart TD
 | **28th of Month** | Monthly Review (10:00) | Monthly retrospective |
 | **Friday** | Week Ahead (07:00) | Weekly prospective outlook |
 | **5 Jan / 5 Jul** | Year Ahead (09:00) | Semi-annual strategic outlook anchored in IMF WEO vintage |
-| **13 Mar / 13 Sep** | Election Cycle (dispatch-only) | Future: semi-annual election-cycle deep intelligence |
+| **13 Mar / 13 Sep** | Election Cycle (dispatch-only) | Delivered: semi-annual election-cycle deep intelligence (cron declared but disabled) |
 
 ---
 
@@ -1148,8 +1148,8 @@ flowchart TD
 
     subgraph Pipeline["Pipeline stages"]
         A1["📥 Data download<br/>(budget rhythm: BP autumn + VP spring)"]
-        A2["🔬 Analysis (23 artifacts)<br/>Tier-C × 2.0 depth + PESTLE blocking"]
-        A3["⛔ Analysis gate<br/>(blocks until 23 artifacts + PESTLE)"]
+        A2["🔬 Analysis (23 artifacts)<br/>Tier-C × 2.0 depth; pestle-analysis.md is one of 23"]
+        A3["⛔ Analysis gate<br/>(blocks until 23 artifacts; LH-4 requires pestle-analysis.md)"]
         A4["📝 Article generation<br/>(≥ 2500 words, wildcards-blackswans)"]
         A5["🔒 Safe-outputs envelope<br/>(sanitise → validate → PR)"]
     end
@@ -1174,8 +1174,8 @@ sequenceDiagram
     MCP-->>Runner: parliamentary data
     IMF-->>Runner: macro projections (GDP, inflation, fiscal)
     Runner->>Runner: analysis pipeline (23 artifacts, × 2.0)
-    Runner->>Runner: PESTLE + wildcards-blackswans blocking
-    Runner->>Gate: verify 23 artifacts + PESTLE present
+    Runner->>Runner: LH-4: pestle-analysis.md blocking; wildcards-blackswans
+    Runner->>Gate: verify 23 artifacts present (incl. pestle-analysis.md via LH-4)
     Gate-->>Runner: PASS
     Runner->>Runner: render article (≥ 2500 words EN+SV)
     Runner->>SO: submit PR via safe-outputs
@@ -1241,7 +1241,7 @@ sequenceDiagram
     IMF-->>Runner: T+5 macro projections
     Runner->>Runner: analysis pipeline (23 + cycle-trajectory, × 2.5)
     Runner->>Runner: PESTLE + wildcards + STRIDE + cycle-trajectory blocking
-    Runner->>Gate: verify 24 artifacts present (23 baseline + LH-5)
+    Runner->>Gate: verify 24 artifacts present (23 baseline + cycle-trajectory.md)
     Gate-->>Runner: PASS
     Runner->>Runner: render article (≥ 3500 words EN+SV)
     Runner->>SO: submit PR via safe-outputs

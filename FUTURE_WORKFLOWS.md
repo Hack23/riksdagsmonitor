@@ -11,12 +11,12 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-4.0-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Version-6.0-555?style=for-the-badge" alt="Version"/>
   <img src="https://img.shields.io/badge/Updated-2026--05--02-success?style=for-the-badge" alt="Last Updated"/>
   <img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.0 | **📅 Last Updated:** 2026-05-02 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 6.0 | **📅 Last Updated:** 2026-05-02 (UTC)
 **🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-02
 **🔮 Horizon:** 2026–2037
 
@@ -214,7 +214,7 @@ The long-horizon forward-look system extends the forward-look family (`news-week
 - All three share the Tier-C aggregation contract but with progressively higher depth multipliers
 - Additional prompt module: `ext/long-horizon-forecasting.md` (horizon stratification, scenario-tree depth, IMF projection stamps, PESTLE blocking)
 - Election-cycle further imports `ext/cycle-rollover.md` (active ±30 days of election anchor)
-- Full pipeline diagrams and ISMS mapping documented in [WORKFLOWS.md § Stage 6.2](WORKFLOWS.md#-stage-62-long-horizon-forward-look-pipelines-quarter--year--election-cycle)
+- Full pipeline diagrams and ISMS mapping documented in [WORKFLOWS.md § Stage 6.2](WORKFLOWS.md#stage-62-long-horizon-forward-look-pipelines-quarter--year--election-cycle)
 - Article-type registry metadata: [`analysis/article-types.json`](analysis/article-types.json)
 - Editorial parameters: [Article-Generation.md § Forward-Look Horizons](Article-Generation.md)
 
