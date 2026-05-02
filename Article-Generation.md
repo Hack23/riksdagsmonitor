@@ -748,6 +748,41 @@ The repository uses CSS custom properties for light and dark color palettes:
 - `html[data-theme="light"]` overrides generated article chrome to keep article pages readable in explicit light mode.
 - `html[data-theme="dark"]` is supported by the site-wide theme bootstrap and dashboard pages.
 
+**Theme toggle button (every static landing page and chromed article page)** — rendered with two glyphs (☀️ and 🌙) so the button shows *what theme will activate on the next press* rather than *what theme is currently active*. CSS hides the inactive glyph based on `html[data-theme]`:
+
+```css
+html[data-theme="light"] .theme-toggle-btn .theme-icon-sun,
+html[data-theme="dark"]  .theme-toggle-btn .theme-icon-moon {
+  display: none;
+}
+```
+
+The icon transition respects `prefers-reduced-motion`. Aria-label, title, and `data-label-{dark,light}` are localized through `chromeStrings(lang)` (`themeAria`, `themeToLight`, `themeToDark`, `themeLabel`).
+
+### Static-page hero block contract (14-language landing pages)
+
+The 14 `index_*.html` landing pages share a single hero block whose content is regenerated on every prebuild by [`scripts/normalize-static-html-chrome.ts`](scripts/normalize-static-html-chrome.ts). The script's `replaceHero()` step rewrites:
+
+| Hero element | Source of truth | Notes |
+|---|---|---|
+| Theme toggle button | `chromeStrings(lang)` keys `themeAria`, `themeLabel`, `themeToLight`, `themeToDark` | Dual-icon morphing button (`.theme-icon-sun` + `.theme-icon-moon`) |
+| `<span class="h1-subtitle">` | `chromeStrings(lang).heroSubtitle` | Renders under `<h1>Riksdagsmonitor` |
+| `<p class="tagline">` | `chromeStrings(lang).heroTagline` | Editorial summary line |
+| `.election-countdown` block | `chromeStrings(lang)` keys `electionCountdownLabel`, `electionDateLong` | `id="countdown"` preserved for runtime JS |
+| `.hero-stats .label` (5 stats) | `chromeStrings(lang)` keys `heroStatPoliticians`, `heroStatBallots`, `heroStatDocuments`, `heroStatBills`, `heroStatDecisions` | Matched by `data-stat-id`; numbers stay sourced from CIA stats |
+
+Editing any hero copy means editing `scripts/render-lib/chrome-i18n.ts` once (per language), not 14 HTML files. The next build (or `npx tsx scripts/normalize-static-html-chrome.ts`) propagates the change to every variant.
+
+### Chrome i18n source of truth
+
+[`scripts/render-lib/chrome-i18n.ts`](scripts/render-lib/chrome-i18n.ts) exports `CHROME_I18N: Record<Language, ChromeStrings>` and `chromeStrings(lang)`. Every chrome string used by [`scripts/render-lib/chrome.ts`](scripts/render-lib/chrome.ts) and [`scripts/normalize-static-html-chrome.ts`](scripts/normalize-static-html-chrome.ts) flows through this table — including the header tagline (`headerTagline`), hero copy (`heroSubtitle`, `heroTagline`, `electionCountdownLabel`, `electionDateLong`, `heroStat*`), theme toggle labels (`themeAria`, `themeToLight`, `themeToDark`, `themeLabel`), navigation aria-labels (`mainNav`, `breadcrumb`, `switchLanguage`, `thisPageInOtherLanguages`), CTA copy (`transparency*`, `sponsor*`), and footer headings.
+
+The contract is enforced by [`tests/chrome-i18n-hero.test.ts`](tests/chrome-i18n-hero.test.ts) and [`tests/render-lib.test.ts`](tests/render-lib.test.ts):
+
+- **Completeness**: every language defines every key with a non-empty value.
+- **Translation discipline**: non-English values must differ from English (no copy-paste leaks).
+- **Render parity**: `buildChrome({ lang: 'sv' })` emits the Swedish tagline and never the English one.
+
 Article chrome uses cyberpunk tokens such as:
 
 | Token | Typical purpose |

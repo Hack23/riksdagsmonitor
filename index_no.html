@@ -351,11 +351,14 @@ Svensk valg 2026
 <header>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
-        aria-label="Bytt til mørkt tema"
-        title="Bytt til mørkt tema"
+        aria-label="Bytt tema"
+        title="Bytt tema"
         data-label-dark="Bytt til lyst tema"
-        data-label-light="Bytt til mørkt tema">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
+        data-label-light="Bytt til mørkt tema"
+        data-rm-static-theme-toggle="true">
+  <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-toggle-label">Tema</span>
 </button>
 
 <!-- Hero Banner -->
@@ -366,35 +369,35 @@ Svensk valg 2026
 <!-- Hero Title -->
 <div class="hero-header-text">
   <h1> Riksdagsmonitor<br><span class="h1-subtitle">Svensk valgetterretningsplattform 2026</span></h1>
-  <p class="tagline">Parlamentsovervåking i sanntid · Koalisjonsprognoser · 45 risikoregler · 50+ år med data</p>
+  <p class="tagline">Parlamentsovervåking i sanntid · Koalisjonsforutsigelser · 45 risikoregler · 50+ års data</p>
 </div>
 
 
 <div class="election-countdown">
-<h2>Valg om: <span id="countdown">13. september 2026</span></h2>
-<p>13. september 2026 (andre søndag i september)</p>
+<h2>Valg om: <span id="countdown">13. september 2026 (Andre søndag i september)</span></h2>
+<p>13. september 2026 (Andre søndag i september)</p>
 </div>
 
 <div class="hero-stats">
 <div class="stat">
 <span class="number" data-stat-id="stat-historical-persons">2,494</span>
-<span class="label">Politikere fulgt</span>
+<span class="label"><span aria-hidden="true">👥</span> Politikere overvåket</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-against-proposals">6M+</span>
-<span class="label">Parlamentariske avstemninger</span>
+<span class="label"><span aria-hidden="true">🗳️</span> Riksdagsavstemninger</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-total-documents">500K+</span>
-<span class="label">Dokumenter behandlet</span>
+<span class="label"><span aria-hidden="true">📄</span> Dokumenter behandlet</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-government-proposals">10K+</span>
-<span class="label">Regjeringsforslag</span>
+<span class="label"><span aria-hidden="true">📜</span> Regjeringsforslag</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-committee-decisions">20K+</span>
-<span class="label">Utvalgsbeslutninger</span>
+<span class="label"><span aria-hidden="true">🏛️</span> Komitévedtak</span>
 </div>
 </div>
 <nav class="site-header-nav" aria-label="Hovedplattform" data-rm-static-primary-nav="true">
@@ -1232,7 +1235,7 @@ Ytelsesnivåer (ntile_party_tier: 1-4)
       <a href="index_no.html" aria-label="Riksdagsmonitor Hjem">
         <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
       </a>
-      <h3>Om Riksdagsmonitor</h3>
+      <h3><span aria-hidden="true">📖</span> Om Riksdagsmonitor</h3>
       <p>Live etterretningsplattform for overvåking av Sveriges riksdag med CIA OSINT-funksjoner. Løpende forbedringer — rapporter gjerne problemer på GitHub.</p>
       <p>Svensk cybersikkerhetskonsulent spesialisert på politisk transparens og åpen kildekode-etterretning.</p>
       <ul class="footer-stats">
@@ -1243,7 +1246,7 @@ Ytelsesnivåer (ntile_party_tier: 1-4)
       </ul>
     </div>
     <div class="footer-section">
-      <h3>Hurtiglenker</h3>
+      <h3><span aria-hidden="true">🔗</span> Hurtiglenker</h3>
       <ul>
         <li><a href="index_no.html">Hjem</a></li>
         <li><a href="news/index_no.html">Nyheter</a></li>
@@ -1257,7 +1260,7 @@ Ytelsesnivåer (ntile_party_tier: 1-4)
       </ul>
     </div>
     <div class="footer-section">
-      <h3>Bygget av Hack23 AB</h3>
+      <h3><span aria-hidden="true">🏢</span> Bygget av Hack23 AB</h3>
       <p>Svensk cybersikkerhetskonsulent spesialisert på politisk transparens og åpen kildekode-etterretning.</p>
       <ul>
         <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
@@ -1291,7 +1294,7 @@ Ytelsesnivåer (ntile_party_tier: 1-4)
       </ul>
     </div>
     <div class="footer-section">
-      <h3>Språk</h3>
+      <h3><span aria-hidden="true">🌍</span> Språk</h3>
       <div class="language-grid">
         <a href="index.html" lang="en" hreflang="en" title="English" aria-label="Bytt språk: English"><span aria-hidden="true">🇬🇧</span> EN</a>
         <a href="index_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="Bytt språk: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>

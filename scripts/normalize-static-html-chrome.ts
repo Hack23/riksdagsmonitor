@@ -111,7 +111,7 @@ function footer(prefix: string, family: PageFamily, current: Language): string {
       <a href="${prefix}${indexFile}" aria-label="Riksdagsmonitor ${t.home}">
         <img src="${prefix}images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
       </a>
-      <h3>${cs.legacyAboutHeading}</h3>
+      <h3><span aria-hidden="true">📖</span> ${cs.legacyAboutHeading}</h3>
       <p>${cs.legacyAboutBody}</p>
       <p>${cs.footerCybersecurityTagline}</p>
       <ul class="footer-stats">
@@ -122,7 +122,7 @@ function footer(prefix: string, family: PageFamily, current: Language): string {
       </ul>
     </div>
     <div class="footer-section">
-      <h3>${cs.legacyQuickLinksHeading}</h3>
+      <h3><span aria-hidden="true">🔗</span> ${cs.legacyQuickLinksHeading}</h3>
       <ul>
         <li><a href="${prefix}${indexFile}">${t.home}</a></li>
         <li><a href="${prefix}${newsFile}">${cs.news}</a></li>
@@ -136,7 +136,7 @@ function footer(prefix: string, family: PageFamily, current: Language): string {
       </ul>
     </div>
     <div class="footer-section">
-      <h3>${cs.footerBuiltByHeading}</h3>
+      <h3><span aria-hidden="true">🏢</span> ${cs.footerBuiltByHeading}</h3>
       <p>${cs.footerCybersecurityTagline}</p>
       <ul>
         <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">${cs.linkHack23Home}</a></li>
@@ -170,7 +170,7 @@ function footer(prefix: string, family: PageFamily, current: Language): string {
       </ul>
     </div>
     <div class="footer-section">
-      <h3>${cs.legacyLanguagesHeading}</h3>
+      <h3><span aria-hidden="true">🌍</span> ${cs.legacyLanguagesHeading}</h3>
       <div class="language-grid">
 ${languageGrid(prefix, family, current)}
       </div>
@@ -225,6 +225,89 @@ function ensureLanguageSwitcher(html: string, prefix: string, family: PageFamily
   return cleaned.replace(/(<body[^>]*>)/i, `$1\n${nav}\n${bar}\n`);
 }
 
+/**
+ * Render the localized theme-toggle button used by all static landing
+ * pages. Houses both ☀️ and 🌙 glyphs so CSS can swap visibility based on
+ * `html[data-theme]`, giving the button a morphing icon without inline
+ * scripts. Aria-pressed is set by `js/theme-toggle.js` at runtime.
+ */
+function themeToggleButton(cs: ReturnType<typeof chromeStrings>): string {
+  return `<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="${cs.themeAria}"
+        title="${cs.themeAria}"
+        data-label-dark="${cs.themeToLight}"
+        data-label-light="${cs.themeToDark}"
+        data-rm-static-theme-toggle="true">
+  <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-toggle-label">${cs.themeLabel}</span>
+</button>`;
+}
+
+/**
+ * Inject the localized hero block into a static landing page. Only home
+ * pages (`index_*.html`) carry this block — dashboard and politician
+ * variants have their own hero structures left untouched.
+ */
+function replaceHero(html: string, lang: Language): string {
+  const cs = chromeStrings(lang);
+  let next = html;
+
+  // 1. Theme toggle button — replace whole element so aria/title/icons
+  //    stay in lock-step with chrome-i18n.ts. Existing pages may carry
+  //    either the legacy single-icon button or the new dual-icon button.
+  next = next.replace(
+    /<button\s+id="theme-toggle"[\s\S]*?<\/button>/i,
+    themeToggleButton(cs),
+  );
+
+  // 2. Hero h1 subtitle — regenerate from `cs.heroSubtitle`.
+  next = next.replace(
+    /(<span\s+class="h1-subtitle">)[\s\S]*?(<\/span>)/i,
+    `$1${cs.heroSubtitle}$2`,
+  );
+
+  // 3. Hero tagline.
+  next = next.replace(
+    /(<p\s+class="tagline">)[\s\S]*?(<\/p>)/i,
+    `$1${cs.heroTagline}$2`,
+  );
+
+  // 4. Election countdown block — preserve `id="countdown"` so the
+  //    countdown JS keeps wiring up.
+  next = next.replace(
+    /<div\s+class="election-countdown">[\s\S]*?<\/div>/i,
+    `<div class="election-countdown">
+<h2>${cs.electionCountdownLabel} <span id="countdown">${cs.electionDateLong}</span></h2>
+<p>${cs.electionDateLong}</p>
+</div>`,
+  );
+
+  // 5. Hero-stats labels by `data-stat-id`. We rewrite the visible
+  //    `.label` text with localized copy *and* prefix the matching icon
+  //    glyph (👥 🗳️ 📄 📜 🏛️) so the stats row reads as iconography
+  //    + number + label across all 14 languages without per-page edits.
+  //    Numbers stay sourced from CIA stats.
+  const STAT_LABELS: Record<string, { label: string; icon: string }> = {
+    'stat-historical-persons':    { label: cs.heroStatPoliticians, icon: '👥' },
+    'stat-against-proposals':     { label: cs.heroStatBallots,     icon: '🗳️' },
+    'stat-total-documents':       { label: cs.heroStatDocuments,   icon: '📄' },
+    'stat-government-proposals':  { label: cs.heroStatBills,       icon: '📜' },
+    'stat-committee-decisions':   { label: cs.heroStatDecisions,   icon: '🏛️' },
+  };
+  for (const [statId, { label, icon }] of Object.entries(STAT_LABELS)) {
+    const escaped = statId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(
+      `(<span\\s+class="number"\\s+data-stat-id="${escaped}">[\\s\\S]*?<\\/span>\\s*<span\\s+class="label">)[\\s\\S]*?(<\\/span>)`,
+      'i',
+    );
+    next = next.replace(re, `$1<span aria-hidden="true">${icon}</span> ${label}$2`);
+  }
+
+  return next;
+}
+
 let changed = 0;
 for (const target of targets()) {
   const absolute = path.join(ROOT_DIR, target.file);
@@ -235,6 +318,9 @@ for (const target of targets()) {
   after = normalizeApiLinks(after);
   after = replaceFooter(after, prefix, target.family, target.lang);
   after = ensureLanguageSwitcher(after, prefix, target.family, target.lang);
+  if (target.family === 'home') {
+    after = replaceHero(after, target.lang);
+  }
   if (after !== before) {
     fs.writeFileSync(absolute, after, 'utf8');
     changed++;
