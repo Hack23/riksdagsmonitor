@@ -159,7 +159,7 @@ For year-ahead and cycle workflows ONLY (quarter-ahead optional):
 ### Watchlist heat-map
 
 ```mermaid
-%%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","lineColor":"#FFBE0B","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
+%%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","lineColor":"#FFBE0B","secondaryColor":"#7B1FA2","tertiaryColor":"#2E7D32","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
 flowchart TB
     subgraph QUARTER["⏱️ Quarter horizon (≤ 90 d)"]
         Q1["BP tabling delay<br/>> 7d from 20 Sep"]:::high

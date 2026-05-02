@@ -116,7 +116,7 @@ flowchart LR
     classDef archived fill:#616161,color:#ffffff
 ```
 
-Colour coding: 🟦 predecessor run · 🟣 this run · 🟢 active inherited PIR · 🟦-dashed cycle-spanning PIR (`inheritsCycle: true`) · 🟡 newly-created PIR · ⚫ archived PIR. Solid edges encode PIR provenance; dotted edges encode supersession (`PIR-X → PIR-X+1`). The graph must contain at least one node per row of the genealogy table above.
+Colour coding: 🟦 predecessor run · 🟣 this run · 🟢 active inherited PIR · 🟢-dashed cycle-spanning PIR (`inheritsCycle: true`, teal `#00897B`) · 🟡 newly-created PIR · ⚫ archived PIR. Solid edges encode PIR provenance; dotted edges encode supersession (`PIR-X → PIR-X+1`). The graph must contain at least one node per row of the genealogy table above.
 
 ---
 

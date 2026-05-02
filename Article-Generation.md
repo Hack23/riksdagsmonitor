@@ -406,15 +406,15 @@ The mapping below is exhaustive and ordered to match `scripts/render-lib/aggrega
 | 27 | PIR roll-forward | [`horizon-pir-rollforward.md`](analysis/templates/horizon-pir-rollforward.md) | PIR genealogy graph for long-horizon runs (supplementary). |
 | 28 | Methodology | [`methodology-reflection.md`](analysis/templates/methodology-reflection.md) | ICD 203 audit, ≥ 10 SATs, DIW reconciliation, PIR retirement log, Pass-2 audit log. |
 | 29 | Manifest | [`data-download-manifest.md`](analysis/templates/data-download-manifest.md) | Collection transparency / source inventory (appendix). |
-| op | Run navigator | [`analysis-index.md`](analysis/templates/analysis-index.md) | Read-me-first run index; not aggregated into the article body but linked from the Reader Intelligence Guide. |
-| op | Same-type baseline | [`session-baseline.md`](analysis/templates/session-baseline.md) | 30-day baseline for pattern recognition (operational supplementary). |
-| op | Day-over-day | [`cross-run-diff.md`](analysis/templates/cross-run-diff.md) | Same-type delta (gate-required when `ANALYSIS_RUN_COUNT ≥ 2`). |
-| op | Cross-session | [`cross-session-intelligence.md`](analysis/templates/cross-session-intelligence.md) | Week / month / quarter aggregation across Riksdag sessions. |
-| op | MCP health | [`mcp-reliability-audit.md`](analysis/templates/mcp-reliability-audit.md) | MCP tool reliability snapshot (operational supplementary). |
-| op | Threshold audit | [`reference-analysis-quality.md`](analysis/templates/reference-analysis-quality.md) | Threshold audit against `reference-quality-thresholds.json`. |
-| op | Workflow audit | [`workflow-audit.md`](analysis/templates/workflow-audit.md) | End-to-end run audit: timing, cost, gate outcomes. |
+| op | Run navigator | [`analysis-index.md`](analysis/templates/analysis-index.md) | Read-me-first run index (aggregated alphabetically after core slots). |
+| op | Same-type baseline | [`session-baseline.md`](analysis/templates/session-baseline.md) | 30-day baseline for pattern recognition (aggregated alphabetically after core slots). |
+| op | Day-over-day | [`cross-run-diff.md`](analysis/templates/cross-run-diff.md) | Same-type delta; gate-required when `ANALYSIS_RUN_COUNT ≥ 2` (aggregated alphabetically after core slots). |
+| op | Cross-session | [`cross-session-intelligence.md`](analysis/templates/cross-session-intelligence.md) | Week / month / quarter aggregation across Riksdag sessions (aggregated alphabetically after core slots). |
+| op | MCP health | [`mcp-reliability-audit.md`](analysis/templates/mcp-reliability-audit.md) | MCP tool reliability snapshot (aggregated alphabetically after core slots). |
+| op | Threshold audit | [`reference-analysis-quality.md`](analysis/templates/reference-analysis-quality.md) | Threshold audit against `reference-quality-thresholds.json` (aggregated alphabetically after core slots). |
+| op | Workflow audit | [`workflow-audit.md`](analysis/templates/workflow-audit.md) | End-to-end run audit: timing, cost, gate outcomes (aggregated alphabetically after core slots). |
 
-Templates **not** mapped to a slot — `analysis/templates/README.md` is the templates-directory index; `election-cycle-analysis.md` is a filename alias of `election-2026-analysis.md` (de-duplicated at render time by `FILENAME_ALIASES`). Anything else not in `AGGREGATION_ORDER` is appended after the core sections in alphabetical order.
+> **Aggregation behavior for "op" templates:** The aggregator (step 4 in `aggregate.ts`) appends *any* remaining `*.md` file — excluding `README.md` and `article*.md` — in alphabetical order after the 29 core `AGGREGATION_ORDER` slots. This means operational templates listed above **will appear** in the rendered article if they exist in the analysis folder. They sit after the core narrative but before the Sources appendix. `analysis/templates/README.md` is the templates-directory index and is excluded by the `README.md` filter; `election-cycle-analysis.md` is a filename alias of `election-2026-analysis.md` (de-duplicated at render time by `FILENAME_ALIASES`).
 
 ---
 
