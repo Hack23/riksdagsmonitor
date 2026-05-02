@@ -49,6 +49,23 @@
 
 **Operational rule.** Every quarter-ahead / year-ahead / election-cycle artifact MUST identify the **current phase** at the top of this section and the **next phase boundary** in days.
 
+### Riksmöte phase ribbon
+
+```mermaid
+%%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","lineColor":"#FFBE0B","secondaryColor":"#7B1FA2","tertiaryColor":"#2E7D32","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
+flowchart LR
+    H["🍂 Höstsession<br/>Sep → mid-Dec<br/>BP tabling · budget vote"]:::active
+    JR["🎄 Juluppehåll<br/>mid-Dec → mid-Jan<br/>KU filings only"]:::recess
+    V["🌱 Vårsession<br/>mid-Jan → mid-Jun<br/>VP · partiledardebatt"]:::active
+    SR["☀️ Sommaruppehåll<br/>mid-Jun → late-Aug<br/>Almedalen · KU report"]:::recess
+    H --> JR --> V --> SR --> H
+
+    classDef active fill:#1565C0,color:#ffffff,stroke:#FFBE0B,stroke-width:2px
+    classDef recess fill:#7B1FA2,color:#ffffff,stroke:#FFBE0B,stroke-dasharray:4 3
+```
+
+The ribbon distinguishes **session** phases (solid borders — active chamber business) from **recess** phases (dashed borders — chamber suspended, but KU filings and government-tabling deadlines still tick). At runtime the analyst marks the *current* phase by adding a `:::current` override (e.g. `V["…"]:::current`) — the diagram above shows the structural alternation pattern only.
+
 ---
 
 ## 2 — Committee Schedule (next horizon)
@@ -138,6 +155,35 @@ For year-ahead and cycle workflows ONLY (quarter-ahead optional):
 | (others) | … | … | … | … |
 
 **Quarter-ahead:** ≥ 5 watchlist items. **Year-ahead:** ≥ 8. **Cycle:** ≥ 12.
+
+### Watchlist heat-map
+
+```mermaid
+%%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","lineColor":"#FFBE0B","secondaryColor":"#7B1FA2","tertiaryColor":"#2E7D32","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
+flowchart TB
+    subgraph QUARTER["⏱️ Quarter horizon (≤ 90 d)"]
+        Q1["BP tabling delay<br/>> 7d from 20 Sep"]:::high
+        Q2["KU reprimands<br/>≥ 2 this period"]:::med
+        Q3["Coalition cohesion<br/>below 95 %"]:::high
+    end
+    subgraph YEAR["📅 Year horizon (≤ 365 d)"]
+        Y1["Lagrådet kritik rate<br/>> 35 %"]:::med
+        Y2["IMF WEO vintage drift<br/>> 0.3 pp"]:::low
+    end
+    subgraph CYCLE["🗳️ Cycle horizon (≤ 1460 d)"]
+        C1["Mandate fulfilment<br/>below 60 %"]:::high
+        C2["Demographic drift<br/>SCB BE0101"]:::low
+    end
+
+    Q1 -.escalates to.-> C1
+    Q3 -.escalates to.-> Y1
+
+    classDef high fill:#D32F2F,color:#ffffff,stroke:#FFBE0B,stroke-width:2px
+    classDef med fill:#FF9800,color:#000000,stroke:#FFBE0B
+    classDef low fill:#2E7D32,color:#ffffff,stroke:#FFBE0B
+```
+
+Colour coding: 🔴 red = blocking watchlist item that triggers a same-day editorial review; 🟠 orange = elevated concern that requires Pass-2 evidence refresh; 🟢 green = baseline indicator monitored at the lower cadence. Dotted edges show how shorter-horizon breaches typically escalate into longer-horizon PIRs.
 
 ---
 

@@ -81,6 +81,43 @@ For each PIR carried forward, indicate which artifacts in this run engage with i
 
 A PIR not engaged in any artifact is a Pass-2 rewrite trigger (it should either be archived or actively addressed).
 
+### PIR genealogy graph
+
+```mermaid
+%%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","lineColor":"#FFBE0B","secondaryColor":"#7B1FA2","tertiaryColor":"#2E7D32","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
+flowchart LR
+    PRED["📂 Predecessor run<br/>pir-status.json"]:::pred
+    THIS["📂 This run<br/>pir-status.json"]:::this
+
+    subgraph ACTIVE["🟢 Active (carried forward)"]
+        A1["PIR-1 · Coalition stability<br/>inherited"]:::active
+        A2["PIR-7 · Democratic norms<br/>inherited (cycle-spanning)"]:::cycle
+    end
+    subgraph NEW["🟡 New (this run)"]
+        N1["PIR-23 · Pension reform<br/>created"]:::new
+    end
+    subgraph ARCHIVED["⚫ Archived"]
+        Z1["PIR-15 · Energy policy<br/>resolved → PIR-15b"]:::archived
+    end
+
+    PRED --> A1
+    PRED --> A2
+    PRED --> Z1
+    THIS --> A1
+    THIS --> A2
+    THIS --> N1
+    Z1 -.superseded-by.-> N1
+
+    classDef pred fill:#1565C0,color:#ffffff
+    classDef this fill:#7B1FA2,color:#ffffff
+    classDef active fill:#2E7D32,color:#ffffff,stroke:#FFBE0B,stroke-width:2px
+    classDef cycle fill:#00897B,color:#ffffff,stroke:#FFBE0B,stroke-dasharray:4 3
+    classDef new fill:#FFBE0B,color:#000000,stroke:#FF006E,stroke-width:2px
+    classDef archived fill:#616161,color:#ffffff
+```
+
+Colour coding: 🟦 predecessor run · 🟣 this run · 🟢 active inherited PIR · 🟢-dashed cycle-spanning PIR (`inheritsCycle: true`, teal `#00897B`) · 🟡 newly-created PIR · ⚫ archived PIR. Solid edges encode PIR provenance; dotted edges encode supersession (`PIR-X → PIR-X+1`). The graph must contain at least one node per row of the genealogy table above.
+
 ---
 
 ## 4 — Newly Created PIRs

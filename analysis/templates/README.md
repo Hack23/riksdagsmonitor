@@ -949,6 +949,54 @@ Every template enforces the following mandatory requirements:
 | 5 | **Anti-Pattern Warnings** | Each template begins with common anti-patterns to AVOID |
 | 6 | **Frontmatter** | Standard metadata: Generated, Data Sources, Documents Analyzed, Confidence |
 
+### 🎨 Mermaid colour-coding standard (canonical)
+
+The analysis gate ([`05-analysis-gate.md` Check 5](../../.github/prompts/05-analysis-gate.md)) iterates the `GATE_SYNTH_LIST` (16 core synthesis files including `executive-brief.md`, `swot-analysis.md`, `threat-analysis.md`, `election-2026-analysis.md`, etc.) and blocks any file that (a) has no ` ```mermaid ` block **or** (b) lacks either a `style …` directive or a `themeVariables` / `%%{init …}` block anywhere in the file. The check runs once per file, not per Mermaid block. To keep colour semantics consistent across the 35+ templates that already render Mermaid (and the 3 long-horizon templates that just received their first diagram — `cycle-trajectory.md`, `horizon-pir-rollforward.md`, `parliamentary-season.md`) every diagram MUST follow the palette below — derived from the cyberpunk article-chrome tokens documented in [`Article-Generation.md` §"Light and dark mode"](../../Article-Generation.md#light-and-dark-mode).
+
+| Hex | Semantic role | Colour use |
+|---|---|---|
+| `#1565C0` | Primary blue | Structural / process / data-source nodes (BLUF anchor, ingest, predecessor run) |
+| `#2E7D32` | Success green | Strengths · opportunities · "active" · low-risk indicators |
+| `#FF9800` | Warning orange | Watch items · medium severity · mid-mandate years |
+| `#D32F2F` | Danger red | Threats · weaknesses · falsification triggers · high severity |
+| `#7B1FA2` | Strategic purple | Synthesis · scenarios · long-horizon projections |
+| `#00897B` | Data teal | Data products · cycle-spanning PIRs · IMF / SCB feeds |
+| `#FFBE0B` | Accent yellow (`--primary-yellow`) | Edges, accents, stroke highlights, "this run" anchor |
+| `#FF006E` | Emphasis magenta (`--primary-magenta`) | New PIRs, emphasis, election-anchor pivots |
+| `#616161` | Neutral grey | Archived / deprecated / pending nodes |
+
+Every Mermaid block MUST start with the canonical init prologue so the diagram inherits the dark-mode chrome on `riksdagsmonitor.com`:
+
+```text
+%%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","lineColor":"#FFBE0B","secondaryColor":"#7B1FA2","tertiaryColor":"#2E7D32","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
+```
+
+For multi-state diagrams (flowchart / state / sequence), prefer `classDef` blocks over per-node `style` directives so colour semantics stay consistent across the diagram. Note: `classDef` lines alone do **not** satisfy the gate's `^[[:space:]]*style[[:space:]]+` regex — the gate's colour-config check passes via the `themeVariables` / `%%{init …}` prologue above (which every block already includes):
+
+```text
+classDef bluf      fill:#1565C0,color:#ffffff,stroke:#FFBE0B,stroke-width:2px
+classDef opp       fill:#2E7D32,color:#ffffff
+classDef watch     fill:#FF9800,color:#000000
+classDef threat    fill:#D32F2F,color:#ffffff,stroke:#FFBE0B,stroke-width:2px
+classDef strategic fill:#7B1FA2,color:#ffffff
+classDef data      fill:#00897B,color:#ffffff
+classDef archive   fill:#616161,color:#ffffff
+```
+
+Diagram-class guidance:
+
+| Diagram class | Use it for | Reference templates |
+|---|---|---|
+| `flowchart TB / LR` | Process maps, evidence chains, attack trees, escalation paths | `executive-brief.md`, `threat-analysis.md`, `parliamentary-season.md` |
+| `quadrantChart` | SWOT, risk-vs-impact, decision matrices | `swot-analysis.md` |
+| `gantt` | Forward-indicator timelines, calendar windows | `forward-indicators.md` |
+| `xychart-beta` | DIW scoring, quantitative SWOT, reliability trends | `significance-scoring.md`, `quantitative-swot.md`, `mcp-reliability-audit.md` |
+| `graph LR` | Lightweight evidence-to-conclusion arcs | `executive-brief.md` (lead visual) |
+| `sequenceDiagram` | Coalition negotiations, KU referral cycles | `political-stride-assessment.md` |
+| `mindmap` | PESTLE / stakeholder fan-outs | `pestle-analysis.md`, `stakeholder-impact.md` |
+
+Mermaid renders **client-side** in the article HTML — the aggregator passes ` ```mermaid ` fences through untouched and [`scripts/render-lib/markdown/mermaid-preprocess.ts`](../../scripts/render-lib/markdown/mermaid-preprocess.ts) rewrites them to `<pre class="mermaid">` before the unified pipeline ([`scripts/render-lib/markdown/pipeline.ts`](../../scripts/render-lib/markdown/pipeline.ts)) runs. `js/lib/mermaid-init.mjs` then upgrades each block to SVG after page load against the same-origin vendored runtime under `js/lib/mermaid/`. The full HTML rendering chain is documented in [`Article-Generation.md` §"Mermaid support"](../../Article-Generation.md#mermaid-support).
+
 ---
 
 ## 📄 Template Selection by Data Category
