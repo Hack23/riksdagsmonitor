@@ -953,17 +953,17 @@ Every template enforces the following mandatory requirements:
 
 The analysis gate ([`05-analysis-gate.md` Check 5](../../.github/prompts/05-analysis-gate.md)) blocks any Family A or Family D synthesis file whose Mermaid blocks lack a `style` directive **or** a `themeVariables` / `%%{init …}` block. To keep colour semantics consistent across the 35 templates that already render Mermaid (and the 3 long-horizon templates that just received their first diagram — `cycle-trajectory.md`, `horizon-pir-rollforward.md`, `parliamentary-season.md`) every diagram MUST follow the palette below — derived from the cyberpunk article-chrome tokens documented in [`Article-Generation.md` §"Light and dark mode"](../../Article-Generation.md#light-and-dark-mode).
 
-| Hex | Token / role | Colour use |
+| Hex | Semantic role | Colour use |
 |---|---|---|
-| `#1565C0` | `--primary-blue` | Structural / process / data-source nodes (BLUF anchor, ingest, predecessor run) |
-| `#2E7D32` | `--success-green` | Strengths · opportunities · "active" · low-risk indicators |
-| `#FF9800` | `--warning-orange` | Watch items · medium severity · mid-mandate years |
-| `#D32F2F` | `--danger-red` | Threats · weaknesses · falsification triggers · high severity |
-| `#7B1FA2` | `--strategic-purple` | Synthesis · scenarios · long-horizon projections |
-| `#00897B` | `--data-teal` | Data products · cycle-spanning PIRs · IMF / SCB feeds |
-| `#FFBE0B` | `--primary-yellow` | Edges, accents, stroke highlights, "this run" anchor |
-| `#FF006E` | `--primary-magenta` | New PIRs, emphasis, election-anchor pivots |
-| `#616161` | `--neutral-grey` | Archived / deprecated / pending nodes |
+| `#1565C0` | Primary blue | Structural / process / data-source nodes (BLUF anchor, ingest, predecessor run) |
+| `#2E7D32` | Success green | Strengths · opportunities · "active" · low-risk indicators |
+| `#FF9800` | Warning orange | Watch items · medium severity · mid-mandate years |
+| `#D32F2F` | Danger red | Threats · weaknesses · falsification triggers · high severity |
+| `#7B1FA2` | Strategic purple | Synthesis · scenarios · long-horizon projections |
+| `#00897B` | Data teal | Data products · cycle-spanning PIRs · IMF / SCB feeds |
+| `#FFBE0B` | Accent yellow (`--primary-yellow`) | Edges, accents, stroke highlights, "this run" anchor |
+| `#FF006E` | Emphasis magenta (`--primary-magenta`) | New PIRs, emphasis, election-anchor pivots |
+| `#616161` | Neutral grey | Archived / deprecated / pending nodes |
 
 Every Mermaid block MUST start with the canonical init prologue so the diagram inherits the dark-mode chrome on `riksdagsmonitor.com`:
 
@@ -995,7 +995,7 @@ Diagram-class guidance:
 | `sequenceDiagram` | Coalition negotiations, KU referral cycles | `political-stride-assessment.md` |
 | `mindmap` | PESTLE / stakeholder fan-outs | `pestle-analysis.md`, `stakeholder-impact.md` |
 
-Mermaid renders **client-side** in the article HTML — the aggregator passes ` ```mermaid ` fences through untouched and `scripts/render-lib/markdown.ts` rewrites them to `<pre class="mermaid">` before the unified pipeline runs. `js/lib/mermaid-init.mjs` then upgrades each block to SVG after page load against the same-origin vendored runtime under `js/lib/mermaid/`. The full HTML rendering chain is documented in [`Article-Generation.md` §"Mermaid support"](../../Article-Generation.md#mermaid-support).
+Mermaid renders **client-side** in the article HTML — the aggregator passes ` ```mermaid ` fences through untouched and [`scripts/render-lib/markdown/mermaid-preprocess.ts`](../../scripts/render-lib/markdown/mermaid-preprocess.ts) rewrites them to `<pre class="mermaid">` before the unified pipeline ([`scripts/render-lib/markdown/pipeline.ts`](../../scripts/render-lib/markdown/pipeline.ts)) runs. `js/lib/mermaid-init.mjs` then upgrades each block to SVG after page load against the same-origin vendored runtime under `js/lib/mermaid/`. The full HTML rendering chain is documented in [`Article-Generation.md` §"Mermaid support"](../../Article-Generation.md#mermaid-support).
 
 ---
 

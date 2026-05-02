@@ -388,7 +388,7 @@ The mapping below is exhaustive and ordered to match `scripts/render-lib/aggrega
 | 10 | Strategic | [`swot-analysis.md`](analysis/templates/swot-analysis.md) | Evidence-bound SWOT quadrant + TOWS moves (Mermaid quadrantChart). |
 | 11 | Threat | [`threat-analysis.md`](analysis/templates/threat-analysis.md) | Political Threat Taxonomy + attack-tree Mermaid diagrams. |
 | — | Per-document | [`per-file-political-intelligence.md`](analysis/templates/per-file-political-intelligence.md) → `documents/{dok_id}-analysis.md` | One subsection per primary-source document; required to cite the dok_id. |
-| 12 | Election | [`election-2026-analysis.md`](analysis/templates/election-2026-analysis.md) / [`election-cycle-analysis.md`](analysis/templates/election-cycle-analysis.md) | Seat deltas, campaign implications; alias-deduplicated by `FILENAME_ALIASES`. |
+| 12 | Election | [`election-2026-analysis.md`](analysis/templates/election-2026-analysis.md) / [`election-cycle-analysis.md`](analysis/templates/election-cycle-analysis.md) / `election-2026-implications.md` | Seat deltas, campaign implications; alias-deduplicated by `FILENAME_ALIASES` (all three map to the same aggregator slot). |
 | 13 | Cycle | [`cycle-trajectory.md`](analysis/templates/cycle-trajectory.md) | 24th artifact for `news-election-cycle` only — multi-year trajectory bands T+1y → T+5y with colour-coded Mermaid. |
 | 14 | Calendar | [`parliamentary-season.md`](analysis/templates/parliamentary-season.md) | Riksmöte phase ribbon, committee schedule, Lagrådet referrals, watchlist heat-map (long-horizon workflows). |
 | 15 | Coalitions | [`coalition-mathematics.md`](analysis/templates/coalition-mathematics.md) | Sainte-Laguë seat table + coalition graphs. |

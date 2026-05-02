@@ -159,19 +159,19 @@ For year-ahead and cycle workflows ONLY (quarter-ahead optional):
 ### Watchlist heat-map
 
 ```mermaid
-%%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","lineColor":"#90CAF9","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
+%%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","lineColor":"#FFBE0B","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
 flowchart TB
     subgraph QUARTER["⏱️ Quarter horizon (≤ 90 d)"]
         Q1["BP tabling delay<br/>> 7d from 20 Sep"]:::high
         Q2["KU reprimands<br/>≥ 2 this period"]:::med
-        Q3["Coalition cohesion<br/>< 95 %"]:::high
+        Q3["Coalition cohesion<br/>below 95 %"]:::high
     end
     subgraph YEAR["📅 Year horizon (≤ 365 d)"]
         Y1["Lagrådet kritik rate<br/>> 35 %"]:::med
         Y2["IMF WEO vintage drift<br/>> 0.3 pp"]:::low
     end
     subgraph CYCLE["🗳️ Cycle horizon (≤ 1460 d)"]
-        C1["Mandate fulfilment<br/>< 60 %"]:::high
+        C1["Mandate fulfilment<br/>below 60 %"]:::high
         C2["Demographic drift<br/>SCB BE0101"]:::low
     end
 
@@ -180,7 +180,7 @@ flowchart TB
 
     classDef high fill:#D32F2F,color:#ffffff,stroke:#FFBE0B,stroke-width:2px
     classDef med fill:#FF9800,color:#000000,stroke:#FFBE0B
-    classDef low fill:#2E7D32,color:#ffffff,stroke:#90CAF9
+    classDef low fill:#2E7D32,color:#ffffff,stroke:#FFBE0B
 ```
 
 Colour coding: 🔴 red = blocking watchlist item that triggers a same-day editorial review; 🟠 orange = elevated concern that requires Pass-2 evidence refresh; 🟢 green = baseline indicator monitored at the lower cadence. Dotted edges show how shorter-horizon breaches typically escalate into longer-horizon PIRs.
