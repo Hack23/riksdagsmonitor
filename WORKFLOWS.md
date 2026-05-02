@@ -914,7 +914,7 @@ Every `news-*.md` source in `.github/workflows/` is a **gh-aw workflow** — a M
 
 #### Import order is a contract
 
-The import order is **not arbitrary** — each module builds on the previous one, and [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) is a single blocking gate that refuses to let the agent draft a single article sentence until **9 of 9 core artifacts** (single-type) or **14 of 14 artifacts** (Tier-C aggregation) are on disk in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` for both Pass 1 and Pass 2.
+The import order is **not arbitrary** — each module builds on the previous one, and [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) is a single blocking gate that refuses to let the agent draft a single article sentence until all **23 required artifacts** are on disk in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` for both Pass 1 and Pass 2 (election-cycle requires a 24th: `cycle-trajectory.md`).
 
 | Import # | Module | Responsibility | What fails fast if missing |
 |---------:|--------|----------------|----------------------------|
@@ -987,11 +987,14 @@ flowchart TB
 
 #### Single-type vs. Tier-C artifact contract
 
-| Contract | Applies to | Required artifacts | Source |
-|----------|-----------|-------------------:|--------|
-| **Single-type** (9 artifacts) | `news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations` | **9** | [`prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) |
-| **Tier-C aggregation** (14 artifacts) | `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`, `news-quarter-ahead`, `news-year-ahead`, `news-election-cycle` | **14** | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) |
-| **Translation** (N/A) | `news-translate` | N/A (post-hoc) | Direct text pipeline |
+All workflows produce the same **23 always-on artifacts** (Family A 9 + Family B 2 + Family C 5 + Family D 7) defined in [`prompts/04-analysis-pipeline.md`](.github/prompts/04-analysis-pipeline.md). Tier-C adds depth multipliers and higher article-output floors but does not add extra files. The election-cycle workflow adds a 24th blocking artifact (`cycle-trajectory.md`).
+
+| Contract | Applies to | Required artifacts | Depth | Source |
+|----------|-----------|-------------------:|-------|--------|
+| **Single-type** | `news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations` | **23** | standard/deep | [`prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) |
+| **Tier-C aggregation** | `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`, `news-quarter-ahead`, `news-year-ahead` | **23** | × 1.0–2.0 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) |
+| **Tier-C + election-cycle** | `news-election-cycle` | **24** (23 + `cycle-trajectory.md`) | × 2.5 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) + LH-5 |
+| **Translation** (N/A) | `news-translate` | N/A (post-hoc) | — | Direct text pipeline |
 
 All artifacts are written under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` — see [`analysis/README.md`](analysis/README.md) for the on-disk layout and [`analysis/templates/README.md`](analysis/templates/README.md) for the 23 canonical templates.
 
@@ -1085,8 +1088,8 @@ flowchart TD
 
     subgraph Pipeline["Pipeline stages"]
         A1["📥 Data download<br/>(committee schedule, prop tabling)"]
-        A2["🔬 Analysis (14 artifacts)<br/>Tier-C × 1.7 depth"]
-        A3["⛔ Analysis gate<br/>(blocks until 14 artifacts)"]
+        A2["🔬 Analysis (23 artifacts)<br/>Tier-C × 1.7 depth"]
+        A3["⛔ Analysis gate<br/>(blocks until 23 artifacts)"]
         A4["📝 Article generation<br/>(≥ 2000 words)"]
         A5["🔒 Safe-outputs envelope<br/>(sanitise → validate → PR)"]
     end
@@ -1107,8 +1110,8 @@ sequenceDiagram
     Cron->>Runner: trigger news-quarter-ahead
     Runner->>MCP: fetch committee schedule + propositions calendar (90d)
     MCP-->>Runner: structured data
-    Runner->>Runner: analysis pipeline (14 artifacts, × 1.7)
-    Runner->>Gate: verify 14 artifacts present
+    Runner->>Runner: analysis pipeline (23 artifacts, × 1.7)
+    Runner->>Gate: verify 23 artifacts present
     Gate-->>Runner: PASS
     Runner->>Runner: render article (≥ 2000 words EN+SV)
     Runner->>SO: submit PR via safe-outputs
@@ -1145,8 +1148,8 @@ flowchart TD
 
     subgraph Pipeline["Pipeline stages"]
         A1["📥 Data download<br/>(budget rhythm: BP autumn + VP spring)"]
-        A2["🔬 Analysis (14 artifacts)<br/>Tier-C × 2.0 depth + PESTLE mandatory"]
-        A3["⛔ Analysis gate<br/>(blocks until 14 artifacts + PESTLE)"]
+        A2["🔬 Analysis (23 artifacts)<br/>Tier-C × 2.0 depth + PESTLE blocking"]
+        A3["⛔ Analysis gate<br/>(blocks until 23 artifacts + PESTLE)"]
         A4["📝 Article generation<br/>(≥ 2500 words, wildcards-blackswans)"]
         A5["🔒 Safe-outputs envelope<br/>(sanitise → validate → PR)"]
     end
@@ -1170,9 +1173,9 @@ sequenceDiagram
     Runner->>IMF: fetch WEO Apr/Oct vintage projections
     MCP-->>Runner: parliamentary data
     IMF-->>Runner: macro projections (GDP, inflation, fiscal)
-    Runner->>Runner: analysis pipeline (14 artifacts, × 2.0)
-    Runner->>Runner: PESTLE + wildcards-blackswans mandatory
-    Runner->>Gate: verify 14 artifacts + PESTLE present
+    Runner->>Runner: analysis pipeline (23 artifacts, × 2.0)
+    Runner->>Runner: PESTLE + wildcards-blackswans blocking
+    Runner->>Gate: verify 23 artifacts + PESTLE present
     Gate-->>Runner: PASS
     Runner->>Runner: render article (≥ 2500 words EN+SV)
     Runner->>SO: submit PR via safe-outputs
@@ -1211,8 +1214,8 @@ flowchart TD
 
     subgraph Pipeline["Pipeline stages"]
         A1["📥 Data download<br/>(Tidö scorecard + next-cycle coalition)"]
-        A2["🔬 Analysis (24 artifacts)<br/>Tier-C × 2.5 depth + cycle-trajectory"]
-        A3["⛔ Analysis gate<br/>(blocks until 24 artifacts)"]
+        A2["🔬 Analysis (23 + 1 artifacts)<br/>Tier-C × 2.5 depth + cycle-trajectory"]
+        A3["⛔ Analysis gate<br/>(blocks until 23 + cycle-trajectory = 24)"]
         A4["📝 Article generation<br/>(≥ 3500 words, STRIDE assessment)"]
         A5["🔒 Safe-outputs envelope<br/>(sanitise → validate → PR)"]
     end
@@ -1236,9 +1239,9 @@ sequenceDiagram
     Runner->>IMF: fetch multi-year WEO projections
     MCP-->>Runner: 4-year parliamentary data
     IMF-->>Runner: T+5 macro projections
-    Runner->>Runner: analysis pipeline (24 artifacts, × 2.5)
-    Runner->>Runner: PESTLE + wildcards + STRIDE + cycle-trajectory
-    Runner->>Gate: verify 24 artifacts present
+    Runner->>Runner: analysis pipeline (23 + cycle-trajectory, × 2.5)
+    Runner->>Runner: PESTLE + wildcards + STRIDE + cycle-trajectory blocking
+    Runner->>Gate: verify 24 artifacts present (23 baseline + LH-5)
     Gate-->>Runner: PASS
     Runner->>Runner: render article (≥ 3500 words EN+SV)
     Runner->>SO: submit PR via safe-outputs
@@ -1254,13 +1257,13 @@ The three long-horizon workflows touch additional ISMS controls beyond the stand
 |---|---|---|
 | A.5.1 (Policies for information security) | ISO 27001:2022 | Long-horizon forecasts classified PUBLIC; no PII processed; GDPR DPIA short-circuit |
 | A.5.30 (ICT readiness for business continuity) | ISO 27001:2022 | Graceful fallback if MCP/IMF unavailable — uses cached vintage with annotation |
-| A.8.8 (Management of technical vulnerabilities) | ISO 27001:2022 | IMF/SCB egress pins in Squid allowlist; SHA-256 payload integrity |
+| A.8.8 (Management of technical vulnerabilities) | ISO 27001:2022 | IMF/SCB egress pins in Squid allowlist; `.meta.json` provenance sidecars for fetched data |
 | A.8.28 (Secure coding) | ISO 27001:2022 | Prompt injection detection in safe-outputs layer; no user input reaches shell |
 | A.8.30 (Outsourced development) | ISO 27001:2022 | gh-aw compiler generates hardened `.lock.yml`; human review mandatory |
 | GV.SC (Supply chain risk management) | NIST CSF 2.0 | MCP server versions pinned; egress firewall restricts external calls |
 | PR.DS (Data security) | NIST CSF 2.0 | Analysis artifacts written to branch-protected path; no secrets in output |
-| DE.CM (Continuous monitoring) | NIST CSF 2.0 | Workflow timeout enforcement (45 min); runtime alerts if >80% budget |
-| RS.AN (Incident analysis) | NIST CSF 2.0 | Failed analysis-gate produces structured error artifact for post-mortem |
+| DE.CM (Continuous monitoring) | NIST CSF 2.0 | Workflow timeout enforcement (45 min); GitHub Actions run-duration visible in dashboard |
+| RS.AN (Incident analysis) | NIST CSF 2.0 | Failed analysis-gate logs structured error messages; workflow conclusion captured in Actions history |
 | #4 (Secure configuration) | CIS Controls v8.1 | Harden-runner enforced; read-only permissions; concurrency guards |
 | #16 (Application software security) | CIS Controls v8.1 | Five-layer safe-outputs validator; AI output sanitisation |
 
