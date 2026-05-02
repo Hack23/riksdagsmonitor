@@ -54,7 +54,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300 # 5-min HTTP MCP ping; pairs with `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3) for the full 60-min job. PR deadline ~minute 50 (hard 55).
+    keepalive-interval: 300 # 5-min HTTP MCP ping; pairs with `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3) for the full 60-min job. PR deadline ~agent minute 42 (hard 45).
 
 runtimes:
   node:
@@ -195,19 +195,19 @@ Core languages are `en` + `sv`; translations to the remaining twelve languages a
 
 ## Time budget
 
-> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: `engine.mcp.session-timeout: 1h` keeps MCP sessions alive for the full 60-min job. Plan to call `safeoutputs___create_pull_request` by minute 50 (hard 55). See `00-base-contract.md §Session keepalive requirement` and `07-commit-and-pr.md §Deadline enforcement`.
+> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: `engine.mcp.session-timeout: 1h` keeps MCP sessions alive for the full 60-min job. Because the 60-min job clock includes host-side setup before Copilot starts, plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard 45). See `00-base-contract.md §Session keepalive requirement` and `07-commit-and-pr.md §Deadline enforcement`.
 
 | Minutes | Phase | Module |
 |---------|-------|--------|
 | 0–3 | MCP pre-warm + pre-flight | 02 / 03 |
-| 3–8 | Download data + catalogue + IMF pinned vintage | 03 |
-| 8–28 | Analysis Pass 1 (all 23 artifacts at 1.7× depth, scenario tree depth 4, ≥ 12 forward indicators) | 04 + ext/long-horizon-forecasting |
-| 28–38 | Analysis Pass 2 (read-back + improvements; ≥ 2 counterfactuals) | 04 |
-| 38–40 | Analysis Gate (checks 1–11 + Tier-C additive + long-horizon checks) | 05 |
-| 40–43 | Aggregate + render (`article.md` + EN/SV HTML) | 06 |
-| 43–50 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE minute 55** | 07 |
+| 3–7 | Download data + catalogue + IMF pinned vintage | 03 |
+| 7–25 | Analysis Pass 1 (all 23 artifacts at 1.7× depth, scenario tree depth 4, ≥ 12 forward indicators) | 04 + ext/long-horizon-forecasting |
+| 25–34 | Analysis Pass 2 (read-back + improvements; ≥ 2 counterfactuals) | 04 |
+| 34–36 | Analysis Gate (checks 1–11 + Tier-C additive + long-horizon checks) | 05 |
+| 36–39 | Aggregate + render (`article.md` + EN/SV HTML) | 06 |
+| 39–42 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** | 07 |
 
-Use the full 60-min budget for AI-FIRST iteration; trim scope before quality. Never open a second PR within a run.
+Use the setup-aware agent budget for AI-FIRST iteration; trim scope before quality and open the PR by agent minute 42 (hard 45). Never open a second PR within a run.
 
 ## Inputs
 

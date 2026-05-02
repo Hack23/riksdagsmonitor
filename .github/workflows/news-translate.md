@@ -55,7 +55,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — 5-min HTTP MCP ping (overrides upstream default `1500s`) to keep `riksdag-regering` (HTTP) and other HTTP-backed MCPs warm for the full 60-min job. Pairs with `engine.mcp.session-timeout: 1h` below, which now governs MCP gateway session lifetime (gh-aw v0.71.3, default 6h). The PR deadline is now ~minute 50 (hard 55) — see prompts/07-commit-and-pr.md §Deadline enforcement.
+    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — 5-min HTTP MCP ping (overrides upstream default `1500s`) to keep `riksdag-regering` (HTTP) and other HTTP-backed MCPs warm for the full 60-min job. Pairs with `engine.mcp.session-timeout: 1h` below, which now governs MCP gateway session lifetime (gh-aw v0.71.3, default 6h). The PR deadline is now ~agent minute 42 (hard 45) — see prompts/07-commit-and-pr.md §Deadline enforcement.
 
 runtimes:
   node:
@@ -280,17 +280,17 @@ Translation is a pure-derivative workflow:
 
 ## Time budget
 
-> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: The workflow declares `engine.mcp.session-timeout: 1h`, which keeps MCP gateway sessions (including `safeoutputs`) alive for the full 60-min job. **Plan to call `safeoutputs___create_pull_request` by minute 50 (hard deadline 55)** to leave 5 min of margin for the safe-outputs runner to publish the PR. The operative constraint is now Timer A (job `timeout-minutes: 60`) and Timer B (~60-min Copilot API session) — not the legacy ~30-min idle drop.
+> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: The workflow declares `engine.mcp.session-timeout: 1h`, which keeps MCP gateway sessions (including `safeoutputs`) alive for the full 60-min job. Timer A starts before the agent while host-side setup/sandbox/MCP initialization is still running, so **plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. The operative constraint is Timer A (job `timeout-minutes: 60`) and Timer B (~60-min Copilot API session) — not the legacy ~30-min idle drop.
 
-**Single run** (target ~45 min in a 60-min job, hard deadline 55 min for the PR call):
+**Single run** (target ~40 agent minutes in a 60-min job, hard deadline 45 agent minutes for the PR call):
 
 | Minutes | Phase |
 |---------|-------|
 | 0–3 | MCP pre-warm + date resolution |
 | 3–6 | Scan untranslated articles; build prioritised work list, cap at safe-outputs 100-file budget |
-| 6–38 | Translate + validate in priority order (highest-value types first); trim batch size before quality |
-| 38–45 | Final validation with `scripts/validate-news-translations.ts`, stage scoped files, commit |
-| 45–50 | **One** `safeoutputs___create_pull_request` call — **HARD DEADLINE minute 55** |
+| 6–34 | Translate + validate in priority order (highest-value types first); trim batch size before quality |
+| 34–40 | Final validation with `scripts/validate-news-translations.ts`, stage scoped files, commit |
+| 40–42 | **One** `safeoutputs___create_pull_request` call — **HARD DEADLINE agent minute 45** |
 
 If a batch cannot finish under this budget, commit the translations completed so far and call `safeoutputs___create_pull_request` with label `partial`; the next scheduled run picks up the remaining languages. A partial PR is always better than losing the whole batch to Timer A.
 

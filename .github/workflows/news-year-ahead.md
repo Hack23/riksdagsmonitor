@@ -54,7 +54,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300 # 5-min HTTP MCP ping; pairs with `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3) for the full 60-min job. PR deadline ~minute 50 (hard 55).
+    keepalive-interval: 300 # 5-min HTTP MCP ping; pairs with `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3) for the full 60-min job. PR deadline ~agent minute 42 (hard 45).
 
 runtimes:
   node:
@@ -196,19 +196,19 @@ Generates the deepest scheduled forward-look at Swedish politics — a 365-day a
 
 ## Time budget
 
-> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: `engine.mcp.session-timeout: 1h` keeps MCP sessions alive for the full 60-min job. Plan to call `safeoutputs___create_pull_request` by minute 50 (hard 55).
+> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: `engine.mcp.session-timeout: 1h` keeps MCP sessions alive for the full 60-min job. Because the 60-min job clock includes host-side setup before Copilot starts, plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard 45).
 
 | Minutes | Phase |
 |---------|-------|
 | 0–3 | MCP pre-warm + IMF vintage pin |
-| 3–8 | Download data (Riksdag + SCB + IMF Nordic-peer compare) |
-| 8–30 | Analysis Pass 1 (all 23 artifacts + PESTLE + wildcards + quantitative-SWOT at 2.0× depth) |
-| 30–40 | Analysis Pass 2 (read-back; counterfactuals; horizon-band stratification) |
-| 40–42 | Analysis Gate (long-horizon checks) |
-| 42–45 | Aggregate + render |
-| 45–50 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE minute 55** |
+| 3–7 | Download data (Riksdag + SCB + IMF Nordic-peer compare) |
+| 7–27 | Analysis Pass 1 (all 23 artifacts + PESTLE + wildcards + quantitative-SWOT at 2.0× depth) |
+| 27–35 | Analysis Pass 2 (read-back; counterfactuals; horizon-band stratification) |
+| 35–37 | Analysis Gate (long-horizon checks) |
+| 37–40 | Aggregate + render |
+| 40–42 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** |
 
-> 🟡 **Scope-compression rule**: if you reach minute 40 without Pass 2 complete, halt Pass 2 deepening and run the gate against whatever you have — `if-no-changes: warn` will not silently fail the run, but a missing PR will. Always trim depth before iterating.
+> 🟡 **Scope-compression rule**: if you reach agent minute 35 without Pass 2 complete, halt Pass 2 deepening and run the gate against whatever you have — `if-no-changes: warn` will not silently fail the run, but a missing PR will. Always trim depth before iterating.
 
 ## Inputs
 

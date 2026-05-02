@@ -61,7 +61,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300 # 5-min HTTP MCP ping; pairs with `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3) for the full 60-min job. PR deadline ~minute 50 (hard 55).
+    keepalive-interval: 300 # 5-min HTTP MCP ping; pairs with `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3) for the full 60-min job. PR deadline ~agent minute 42 (hard 45).
 
 runtimes:
   node:
@@ -220,19 +220,19 @@ Generates the **deepest** Riksdagsmonitor intelligence product — a full 4-year
 
 ## Time budget
 
-> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: `engine.mcp.session-timeout: 1h` keeps MCP sessions alive for the full 60-min job. Plan to call `safeoutputs___create_pull_request` by minute 50 (hard 55).
+> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: `engine.mcp.session-timeout: 1h` keeps MCP sessions alive for the full 60-min job. Because the 60-min job clock includes host-side setup before Copilot starts, plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard 45).
 
 This workflow runs at the **upper limit** of the 60-minute job envelope. Initially gated `workflow_dispatch`-only until runtime is measured over 4–6 manual runs.
 
 | Minutes | Phase |
 |---------|-------|
 | 0–3 | MCP pre-warm + IMF multi-vintage pin |
-| 3–8 | Download data (Riksdag full-mandate corpus, SCB multi-year, IMF Nordic compare + multi-vintage) |
-| 8–32 | Analysis Pass 1 (24 artifacts at 2.5× depth, 12-leaf scenario tree, full mandate scorecard or coalition forecast) |
-| 32–42 | Analysis Pass 2 (read-back; counterfactuals × 3; horizon-band stratification across all five bands) |
-| 42–44 | Analysis Gate (long-horizon checks + 24th-artifact check + cycle-rollover check if within ± 30 days) |
-| 44–47 | Aggregate + render (per-anchor sub-subfolders) |
-| 47–52 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE minute 55** |
+| 3–7 | Download data (Riksdag full-mandate corpus, SCB multi-year, IMF Nordic compare + multi-vintage) |
+| 7–29 | Analysis Pass 1 (24 artifacts at 2.5× depth, 12-leaf scenario tree, full mandate scorecard or coalition forecast) |
+| 29–37 | Analysis Pass 2 (read-back; counterfactuals × 3; horizon-band stratification across all five bands) |
+| 37–39 | Analysis Gate (long-horizon checks + 24th-artifact check + cycle-rollover check if within ± 30 days) |
+| 39–41 | Aggregate + render (per-anchor sub-subfolders) |
+| 41–43 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** |
 
 > 🟡 **Scope-compression rule**: depth multiplier 2.5× is aspirational — under the 60-min envelope, prefer reducing per-document Family-E coverage (drop dok_ids ranked < 6 in significance-scoring) rather than skipping any of the 24 artifacts. The 24-artifact contract is hard.
 

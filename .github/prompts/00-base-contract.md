@@ -57,12 +57,12 @@ Stage analysis + article.md + news/*.html → Commit → ONE create_pull_request
 
 > ⚠️ **Critical — two operative timers** (gh-aw v0.71.3 onwards): Plan every run for the **shortest** of the two.
 >
-> 1. **Job timeout (60 min)** — every news workflow declares `timeout-minutes: 60`. After 60 min the GitHub Actions runner kills the agent unconditionally. Target completing all phases by **minute 45** (AI-FIRST iteration), call `safeoutputs___create_pull_request` by **minute 50** (hard deadline **55**) to leave 5 min of margin for the safe-outputs runner to publish the PR.
+> 1. **Job timeout (60 min)** — every news workflow declares `timeout-minutes: 60`. After 60 min from **job start** the GitHub Actions runner kills the job unconditionally; this clock includes host-side setup before Copilot begins. Target completing all agent-phase work by **agent minute 40** (AI-FIRST iteration), call `safeoutputs___create_pull_request` by **agent minute 42** (hard deadline **45**) to reserve job-level headroom for setup variance and the safe-outputs runner.
 > 2. **Copilot API session (~60 min)** — bound to the `github.token` baked in at step start; never refreshed mid-run (gh-aw issue #24920). After expiry every tool call and inference fails silently. The 60-min job budget is intentionally aligned with this window.
 >
 > **MCP gateway sessions are no longer the operative deadline.** Workflows declare `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3, [#29353](https://github.com/github/gh-aw/issues/29353)) which keeps **all** MCP gateway sessions — including upstream HTTP MCPs (`riksdag-regering`, `scb`, `world-bank`) and the local `safeoutputs` Streamable-HTTP server — alive for the full 60-min job. The `sandbox.mcp.keepalive-interval: 300` (5-minute ping) belt-and-braces resilience knob remains in place but is no longer load-bearing.
 
-**The reliable mitigation is now Timer-1 alignment, not idle keepalive.** Plan the run so the PR is created **within 40–50 minutes** (hard deadline **55 minutes**) of agent start. Use the budget for AI-FIRST iteration (minimum 2 complete passes per `.github/copilot-instructions.md §AI FIRST Quality Principle`); do **not** finish early with shallow output. See `07-commit-and-pr.md §Deadline enforcement` for the authoritative PR-timing procedure.
+**The reliable mitigation is now Timer-1 alignment, not idle keepalive.** Plan the run so the PR is created **within 35–42 minutes** (hard deadline **45 minutes**) of agent start, while also leaving margin before the 60-minute job timeout that began during setup. Use the budget for AI-FIRST iteration (minimum 2 complete passes per `.github/copilot-instructions.md §AI FIRST Quality Principle`); do **not** finish early with shallow output. See `07-commit-and-pr.md §Deadline enforcement` for the authoritative PR-timing procedure.
 
 Do not add per-phase checkpoint PRs or repo-memory push steps.
 

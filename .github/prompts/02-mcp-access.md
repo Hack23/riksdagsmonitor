@@ -89,7 +89,7 @@ Every news workflow declares `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3, fr
 | **`1h`** *(our setting)* | Cap MCP gateway session lifetime at 1 h — covers the full 60-min job with margin and frees gateway resources sooner than the 6 h default. Applies to **all** MCP sessions: upstream HTTP MCPs (`riksdag-regering`, `scb`, `world-bank`) and the local `safeoutputs` Streamable-HTTP server. |
 | `>= 5m`, `<= 12h` | Other valid Go duration strings; bounds enforced by the compiler |
 
-This **replaces** the legacy "Timer C — safeoutputs idle drop" pattern: the 25–30 min idle drop was an artefact of the previous gateway default; with `session-timeout: 1h` set explicitly, all MCP sessions are guaranteed to outlive the 60-min job. The PR deadline is now governed by Timer A (job `timeout-minutes: 60`) and Timer B (Copilot API session ~60 min), not by gateway session expiry.
+This **replaces** the legacy "Timer C — safeoutputs idle drop" pattern: the 25–30 min idle drop was an artefact of the previous gateway default; with `session-timeout: 1h` set explicitly, all MCP sessions are guaranteed to outlive the 60-min job. The PR deadline is now governed by Timer A (job `timeout-minutes: 60`, measured from job start including host-side setup) and Timer B (Copilot API session ~60 min), not by gateway session expiry; call the PR safe-output by agent minute 42 (hard 45).
 
 ## MCP gateway keepalive (`sandbox.mcp.keepalive-interval`)
 

@@ -134,7 +134,7 @@ The full workflow contract is split into bounded-context prompt modules under [`
 - **Midday**: Month-ahead, week-ahead forecasting
 - **Evening**: Evening analysis, realtime monitoring
 - **Weekly/Monthly**: Reviews, translations across 14 languages
-- **Job budget**: All news workflows declare `timeout-minutes: 60`. Target completing all phases by **minute 45** (AI-FIRST iteration), call `safeoutputs___create_pull_request` by **minute 50** (hard deadline **55**).
+- **Job budget**: All news workflows declare `timeout-minutes: 60`. Target completing all agent-phase work by **agent minute 40** (AI-FIRST iteration), call `safeoutputs___create_pull_request` by **agent minute 42** (hard deadline **45**) to reserve job-level headroom for setup and safe outputs.
 
 ### Runtime Configuration (All Workflows)
 All agentic workflows MUST include the `runtimes:` field to enforce Node.js 25:
