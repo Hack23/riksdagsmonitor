@@ -11,9 +11,9 @@
  * `inherits_from` history) so analysts can see the full chain.
  *
  * Module exports (for unit testing): `degrade`, `validateSource`, `rollForward`,
- * `findLatestSource`, `parseArgs`, `subtractDays`, `runMain`. The CLI entry
- * point only fires when this file is invoked directly (see isMainModule guard
- * at the bottom of the file).
+ * `findLatestSource`, `parseArgs`, `subtractDays`, `addDays`, `isLongHorizon`,
+ * `emitRollforwardMd`, `runMain`. The CLI entry point only fires when this
+ * file is invoked directly (see isMainModule guard at the bottom of the file).
  *
  * Usage:
  *   npx tsx scripts/roll-forward-pirs.ts \
@@ -58,7 +58,10 @@ export type CycleType =
   | 'week-ahead'
   | 'month-ahead'
   | 'weekly-review'
-  | 'monthly-review';
+  | 'monthly-review'
+  | 'quarter-ahead'
+  | 'year-ahead'
+  | 'election-cycle';
 
 export interface PirEntry {
   pir_id: string;
@@ -103,6 +106,9 @@ const VALID_CYCLES = new Set<CycleType>([
   'month-ahead',
   'weekly-review',
   'monthly-review',
+  'quarter-ahead',
+  'year-ahead',
+  'election-cycle',
 ]);
 
 const VALID_STATUSES = new Set<PirStatus>([
@@ -131,6 +137,13 @@ const PIR_ID_PATTERN = /^PIR-[A-Za-z0-9]+(-[A-Za-z0-9]+)*$/;
 export function subtractDays(isoDate: string, n: number): string {
   const d = new Date(`${isoDate}T12:00:00Z`);
   d.setUTCDate(d.getUTCDate() - n);
+  return d.toISOString().slice(0, 10);
+}
+
+/** Add N calendar days to an ISO date string, returning YYYY-MM-DD. */
+export function addDays(isoDate: string, n: number): string {
+  const d = new Date(`${isoDate}T12:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + n);
   return d.toISOString().slice(0, 10);
 }
 
@@ -322,6 +335,194 @@ export function rollForward(
 }
 
 // ---------------------------------------------------------------------------
+// Horizon PIR roll-forward Markdown emission
+// ---------------------------------------------------------------------------
+
+/**
+ * Horizon days for each cycle type. Values sourced from
+ * `analysis/article-types.json` → `horizonBands`. All cycles are explicitly
+ * listed so there is no silent fallback.
+ */
+const CYCLE_HORIZON_DAYS: Record<CycleType, number> = {
+  committeeReports: 7,
+  propositions: 7,
+  motions: 7,
+  interpellations: 7,
+  'evening-analysis': 3,
+  'realtime-pulse': 3,
+  'week-ahead': 7,
+  'month-ahead': 30,
+  'weekly-review': 7,
+  'monthly-review': 30,
+  'quarter-ahead': 90,
+  'year-ahead': 365,
+  'election-cycle': 1460,
+};
+
+/**
+ * Determine whether a cycle qualifies for automatic roll-forward Markdown
+ * emission. Returns true when the cycle has `horizonDays >= 90`.
+ */
+export function isLongHorizon(cycle: CycleType): boolean {
+  return CYCLE_HORIZON_DAYS[cycle] >= 90;
+}
+
+/**
+ * Determine whether a PIR was inherited from the source or created in this run.
+ * Uses `sourcePirIds` (authoritative) when available, otherwise falls back to
+ * `output.inherited_from` presence or the PIR's own `inherits_from` chain.
+ */
+function determineOrigin(
+  pir: PirEntry,
+  sourcePirIds: Set<string> | undefined,
+  output: PirStatusFile,
+): 'inherited' | 'this run' {
+  if (sourcePirIds) {
+    return sourcePirIds.has(pir.pir_id) ? 'inherited' : 'this run';
+  }
+  // Fallback: if the file was rolled forward (inherited_from is set),
+  // all PIRs are inherited; otherwise use inherits_from chain length.
+  if (output.inherited_from) {
+    return 'inherited';
+  }
+  return pir.inherits_from && pir.inherits_from.length > 0 ? 'inherited' : 'this run';
+}
+
+/**
+ * Render a `horizon-pir-rollforward.md` Markdown document from a rolled-forward
+ * PIR status file. Groups PIRs by status and stamps each open PIR with an
+ * obsolescence date calculated as `targetDate + horizonDays`.
+ *
+ * @param sourcePirIds - Set of PIR IDs that existed in the source file. Used to
+ *   determine whether a PIR was inherited vs. newly created in this run.
+ */
+export function emitRollforwardMd(
+  output: PirStatusFile,
+  sourcePath: string,
+  targetDate: string,
+  options: { repoRoot?: string; sourcePirIds?: Set<string> } = {},
+): string {
+  const repoRoot = options.repoRoot ?? REPO_ROOT;
+  const horizonDays = CYCLE_HORIZON_DAYS[output.cycle];
+
+  // Use output.inherited_from (already normalized by rollForward()) when
+  // available; only fall back to path.relative for direct invocations where
+  // rollForward wasn't used.
+  let predecessorFolder: string;
+  if (output.inherited_from) {
+    predecessorFolder = output.inherited_from.replace(/\/pir-status\.json$/, '');
+    if (predecessorFolder.endsWith('/')) {
+      predecessorFolder = predecessorFolder.slice(0, -1);
+    }
+  } else {
+    const relSource = path.relative(repoRoot, sourcePath).split(path.sep).join('/');
+    predecessorFolder = path.dirname(relSource);
+  }
+
+  // Compute days since predecessor from the date fields
+  const sourceDate = output.inherited_from
+    ? (() => {
+        const match = /(\d{4}-\d{2}-\d{2})/.exec(predecessorFolder);
+        return match ? match[1] : 'unknown';
+      })()
+    : 'unknown';
+  const daysSince =
+    sourceDate !== 'unknown'
+      ? Math.round(
+          (new Date(`${targetDate}T12:00:00Z`).getTime() -
+            new Date(`${sourceDate}T12:00:00Z`).getTime()) /
+            86_400_000,
+        )
+      : 0;
+
+  const lines: string[] = [];
+
+  // Header
+  lines.push(`# 🔁 Horizon PIR Roll-Forward`);
+  lines.push('');
+  lines.push(`> Auto-generated by \`scripts/roll-forward-pirs.ts --emit-rollforward-md\``);
+  lines.push(`> Cycle: **${output.cycle}** | Date: **${targetDate}**`);
+  lines.push('');
+  lines.push('---');
+  lines.push('');
+
+  // Section 1 — Predecessor Manifest
+  lines.push('## 1 — Predecessor Manifest');
+  lines.push('');
+  lines.push('```');
+  lines.push(`Predecessor folder: ${predecessorFolder}/`);
+  lines.push(`Days since predecessor: ${daysSince}`);
+  lines.push('```');
+  lines.push('');
+  lines.push('---');
+  lines.push('');
+
+  // Section 2 — PIR Genealogy Table
+  lines.push('## 2 — PIR Genealogy Table');
+  lines.push('');
+  lines.push('| PIR ID | Status | Origin | Confidence | Obsolescence Date | Notes |');
+  lines.push('|--------|--------|--------|------------|-------------------|-------|');
+
+  for (const pir of output.pirs) {
+    const origin = determineOrigin(pir, options.sourcePirIds, output);
+    const obsolescenceDate =
+      pir.status === 'open' ? addDays(targetDate, horizonDays) : '—';
+    const notes =
+      pir.status === 'open'
+        ? `Confidence degraded on roll-forward`
+        : `Status: ${pir.status}`;
+    lines.push(
+      `| ${pir.pir_id} | ${pir.status} | ${origin} | ${pir.confidence} | ${obsolescenceDate} | ${notes} |`,
+    );
+  }
+  lines.push('');
+  lines.push('---');
+  lines.push('');
+
+  // Section 3 — Open PIRs with obsolescence dates
+  const openPirs = output.pirs.filter((p) => p.status === 'open');
+  lines.push('## 3 — Active PIRs (with obsolescence dates)');
+  lines.push('');
+  if (openPirs.length === 0) {
+    lines.push('_No open PIRs carried forward._');
+  } else {
+    for (const pir of openPirs) {
+      lines.push(`### ${pir.pir_id}`);
+      lines.push(`- **Statement:** ${pir.statement}`);
+      lines.push(`- **Confidence:** ${pir.confidence}`);
+      lines.push(`- **Obsolescence date:** ${addDays(targetDate, horizonDays)}`);
+      if (pir.inherits_from && pir.inherits_from.length > 0) {
+        lines.push(`- **Inherits from:** ${pir.inherits_from.join(' → ')}`);
+      }
+      if (pir.evidence_refs && pir.evidence_refs.length > 0) {
+        lines.push(`- **Evidence:** ${pir.evidence_refs.join(', ')}`);
+      }
+      lines.push('');
+    }
+  }
+  lines.push('---');
+  lines.push('');
+
+  // Section 4 — Archived PIRs
+  const archivedPirs = output.pirs.filter((p) => p.status !== 'open');
+  lines.push('## 4 — Archived / Resolved PIRs');
+  lines.push('');
+  if (archivedPirs.length === 0) {
+    lines.push('_No archived PIRs in this roll-forward._');
+  } else {
+    lines.push('| PIR ID | Status | Confidence | Notes |');
+    lines.push('|--------|--------|------------|-------|');
+    for (const pir of archivedPirs) {
+      const notes = pir.answer_summary ? pir.answer_summary : '—';
+      lines.push(`| ${pir.pir_id} | ${pir.status} | ${pir.confidence} | ${notes} |`);
+    }
+  }
+  lines.push('');
+
+  return lines.join('\n');
+}
+
+// ---------------------------------------------------------------------------
 // CLI argument parsing
 // ---------------------------------------------------------------------------
 
@@ -332,10 +533,11 @@ export interface CliArgs {
   cycle?: CycleType;
   dryRun: boolean;
   maxLookback: number;
+  emitRollforwardMd: boolean;
 }
 
 export function parseArgs(argv: string[]): CliArgs {
-  const args: CliArgs = { dryRun: false, maxLookback: 14 };
+  const args: CliArgs = { dryRun: false, maxLookback: 14, emitRollforwardMd: false };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     if (arg === '--from') args.from = argv[++i];
@@ -343,6 +545,7 @@ export function parseArgs(argv: string[]): CliArgs {
     else if (arg === '--date') args.date = argv[++i];
     else if (arg === '--cycle') args.cycle = argv[++i] as CycleType;
     else if (arg === '--dry-run') args.dryRun = true;
+    else if (arg === '--emit-rollforward-md') args.emitRollforwardMd = true;
     else if (arg === '--max-lookback') {
       const raw = argv[++i];
       if (!raw || raw.startsWith('--')) {
@@ -477,6 +680,18 @@ export function runMain(argv: string[], io: RunIO = {}): void {
     `✅ Rolled forward ${source.pirs.filter((p) => p.status === 'open').length} open PIR(s) ` +
       `from ${sourcePath.replace(REPO_ROOT + path.sep, '')} → ${targetPath.replace(REPO_ROOT + path.sep, '')}\n`,
   );
+
+  // Emit horizon-pir-rollforward.md when explicitly requested or when the
+  // cycle qualifies as long-horizon (horizonDays >= 90).
+  if (args.emitRollforwardMd || isLongHorizon(targetCycle)) {
+    const sourcePirIds = new Set(source.pirs.map((p) => p.pir_id));
+    const md = emitRollforwardMd(output, sourcePath, targetDate, { sourcePirIds });
+    const mdPath = path.join(targetDir, 'horizon-pir-rollforward.md');
+    fs.writeFileSync(mdPath, md, 'utf-8');
+    out.write(
+      `📄 Emitted ${mdPath.replace(REPO_ROOT + path.sep, '')}\n`,
+    );
+  }
 }
 
 // ---------------------------------------------------------------------------
