@@ -174,6 +174,13 @@ assign_copilot_to_issue({
 - GDPR-compliant political data processing
 - Multi-language political content (14 languages)
 
+**Long-horizon expertise**:
+- Horizon stratification (T+72h / T+7d / T+30d / T+90d / T+365d / T+1460d / election) with per-band WEP language ladder
+- Scenario-tree depth scaling (quarter = 4 scenarios, year = 4+5 wildcards, election-cycle = 4 scenarios × 3 coalition branches + 5 wildcards = 12 leaves)
+- PIR roll-forward rules for long-horizon Priority Intelligence Requirements
+- Cycle-rollover playbook (±30 days of election anchor) — see [`.github/prompts/ext/cycle-rollover.md`](.github/prompts/ext/cycle-rollover.md)
+- Runtime context via [`scripts/horizon-context.ts`](scripts/horizon-context.ts) and [`analysis/article-types.json`](analysis/article-types.json)
+
 **Data Sources via riksdag-regering-mcp**:
 - **32 specialized tools** for accessing Swedish political data
 - **Ledamöter (MPs)**: Information, activities, assignments
@@ -361,6 +368,11 @@ assign_copilot_to_issue({
 - **Automation**: GitHub Actions scheduled workflows (daily 02:00 CET)
 - **Quality**: Content validation, tone consistency, factual accuracy checks
 
+**Long-horizon expertise**:
+- Horizon stratification (T+72h → T+1460d) with per-band WEP confidence language
+- Registry-driven article types via [`scripts/horizon-context.ts`](scripts/horizon-context.ts) and [`analysis/article-types.json`](analysis/article-types.json)
+- Cycle-rollover–aware content generation — see [`.github/prompts/ext/cycle-rollover.md`](.github/prompts/ext/cycle-rollover.md)
+
 **Addresses**: Issue #17 (nightly news generation)
 
 **Example invocation**:
@@ -441,6 +453,12 @@ assign_copilot_to_issue({
 - **Multi-Language**: Full translation workflow for 14 languages with RTL support
 - **Quality**: Schema.org NewsArticle, FAQPage, speakable structured data
 - **SEO**: Meta tags, Open Graph, Twitter Cards, hreflang tags
+
+**Long-horizon expertise**:
+- Horizon stratification (T+72h → T+1460d) with per-band WEP confidence ladder
+- Scenario-tree branching for quarter / year / election-cycle articles
+- PIR roll-forward integration for forward-look coverage
+- Runtime context via [`scripts/horizon-context.ts`](scripts/horizon-context.ts) and [`analysis/article-types.json`](analysis/article-types.json)
 
 **Example invocation**:
 ```javascript

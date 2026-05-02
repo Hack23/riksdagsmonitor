@@ -55,6 +55,9 @@ Skills are:
 9. **documentation-portfolio** ✨ **NEW** (2026-02-20) - Required architecture docs (current/future state)
 
 ### Political Intelligence (11 skills)
+
+> **Cross-cutting — Horizon stratification:** Skills 12, 14, 17, 18 and 82 (`intelligence-analysis-techniques`, `electoral-analysis`, `legislative-monitoring`, `risk-assessment-frameworks`, `prospective-news-coverage`) each include a "Horizon stratification" subsection mapping the canonical bands (72h / week / month / quarter / year / cycle / election) to per-band WEP language. The `election` band is scenario-driven (coalition outcomes never above "likely"). Authoritative source: [`.github/prompts/ext/long-horizon-forecasting.md`](.github/prompts/ext/long-horizon-forecasting.md). Runtime helper: [`scripts/horizon-context.ts`](scripts/horizon-context.ts).
+
 10. political-science-analysis
 11. osint-methodologies
 12. intelligence-analysis-techniques

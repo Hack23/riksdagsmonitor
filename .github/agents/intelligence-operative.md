@@ -207,3 +207,33 @@ Map all security-relevant work to **ISO 27001:2022**, **NIST CSF 2.0**, **CIS Co
 - **gh-aw v0.69.3** — [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
 
 - **IMF integration depth** — use IMF WEO + FM + GFS_COFOG for committee-aligned scenario analysis (FöU/SoU/UbU/SfU); cross-validate IMF SWE vs SCB national-accounts (>0.3pp delta → editorial review). IMF projections feed look-ahead workflows (T+5). Hub: [`analysis/imf/agentic-integration.md`](../../analysis/imf/agentic-integration.md).
+
+---
+
+## 🔭 Long-horizon playbook
+
+> **Authoritative source:** [`.github/prompts/ext/long-horizon-forecasting.md`](../prompts/ext/long-horizon-forecasting.md). Registry: [`analysis/article-types.json`](../../analysis/article-types.json). Runtime: [`scripts/horizon-context.ts`](../../scripts/horizon-context.ts).
+
+| Band | Days | WEP ceiling | Scenario-tree depth |
+|------|------|-------------|---------------------|
+| `72h` | 3 | very likely / very unlikely | — |
+| `week` | 7 | likely / unlikely | — |
+| `month` | 30 | likely / unlikely | — |
+| `quarter` | 90 | roughly even / about even | 4 scenarios, 0 wildcards |
+| `year` | 365 | roughly even; stronger requires ≥ 3 cycle-aged sources | 4 scenarios + 5 wildcards |
+| `cycle` | 1460 | roughly even / unlikely; never likely without ≥ 3 cycle-aged sources | 4 scenarios + 5 wildcards |
+| `election` | 1460 | scenario-driven; coalition outcomes never above "likely" | 4 × 3 coalition branches = 12 leaves |
+
+**PIR roll-forward:** Priority Intelligence Requirements from shorter horizons carry forward into longer-horizon analysis unless explicitly retired. See [`scripts/roll-forward-pirs.ts`](../../scripts/roll-forward-pirs.ts).
+
+### Cycle-rollover playbook (±30 days of election anchor)
+
+> **Authoritative source:** [`.github/prompts/ext/cycle-rollover.md`](../prompts/ext/cycle-rollover.md).
+
+| Step | Trigger | Action |
+|------|---------|--------|
+| 1 | `cycleRolloverActive == true` | Load `election-cycle/current/` artifact set as carry-forward baseline |
+| 2 | Post-Pass-2 | Rename + carry-forward artifacts to `election-cycle/next/` |
+| 3 | Pre-aggregate | Emit `cycle-rollover-report.md` summarising conversion |
+
+Next election anchor: **2026-09-13**. Window activates 2026-08-14 → 2026-10-13.
