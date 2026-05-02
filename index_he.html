@@ -351,11 +351,14 @@
 <header>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
-        aria-label="עבור לנושא כהה"
-        title="עבור לנושא כהה"
-        data-label-dark="עבור לנושא בהיר"
-        data-label-light="עבור לנושא כהה">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
+        aria-label="החלפת ערכת נושא"
+        title="החלפת ערכת נושא"
+        data-label-dark="החלף לערכת נושא בהירה"
+        data-label-light="החלף לערכת נושא כהה"
+        data-rm-static-theme-toggle="true">
+  <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-toggle-label">ערכת נושא</span>
 </button>
 
 <!-- Hero Banner -->
@@ -366,35 +369,35 @@
 <!-- Hero Title -->
 <div class="hero-header-text">
   <h1> Riksdagsmonitor<br><span class="h1-subtitle">פלטפורמת מודיעין לבחירות שוודיה 2026</span></h1>
-  <p class="tagline">ניטור פרלמנטרי בזמן אמת · תחזיות קואליציה · 45 כללי סיכון · יותר מ-50 שנות נתונים</p>
+  <p class="tagline">ניטור פרלמנטרי בזמן אמת · תחזיות קואליציה · 45 כללי סיכון · נתונים של 50+ שנים</p>
 </div>
 
 
 <div class="election-countdown">
-<h2>הבחירות בעוד: <span id="countdown">13 בספטמבר 2026</span></h2>
+<h2>הבחירות בעוד: <span id="countdown">13 בספטמבר 2026 (יום ראשון השני בספטמבר)</span></h2>
 <p>13 בספטמבר 2026 (יום ראשון השני בספטמבר)</p>
 </div>
 
 <div class="hero-stats">
 <div class="stat">
 <span class="number" data-stat-id="stat-historical-persons">2,494</span>
-<span class="label">פוליטיקאים במעקב</span>
+<span class="label"><span aria-hidden="true">👥</span> פוליטיקאים בניטור</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-against-proposals">6M+</span>
-<span class="label">הצבעות פרלמנטריות</span>
+<span class="label"><span aria-hidden="true">🗳️</span> הצבעות הריקסדאג</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-total-documents">500K+</span>
-<span class="label">מסמכים שעובדו</span>
+<span class="label"><span aria-hidden="true">📄</span> מסמכים שעובדו</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-government-proposals">10K+</span>
-<span class="label">הצעות חוק ממשלתיות</span>
+<span class="label"><span aria-hidden="true">📜</span> הצעות חוק ממשלתיות</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-committee-decisions">20K+</span>
-<span class="label">החלטות ועדה</span>
+<span class="label"><span aria-hidden="true">🏛️</span> החלטות ועדות</span>
 </div>
 </div>
 <nav class="site-header-nav" aria-label="פלטפורמה ראשית" data-rm-static-primary-nav="true">
@@ -1232,7 +1235,7 @@
       <a href="index_he.html" aria-label="Riksdagsmonitor דף הבית">
         <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
       </a>
-      <h3>אודות Riksdagsmonitor</h3>
+      <h3><span aria-hidden="true">📖</span> אודות Riksdagsmonitor</h3>
       <p>פלטפורמת מודיעין חיה לניטור הפרלמנט השוודי בעזרת יכולות CIA OSINT. שיפורים מתמשכים — אנא דווחו על בעיות ב-GitHub.</p>
       <p>ייעוץ סייבר שוודי המתמחה בשקיפות פוליטית ומודיעין קוד פתוח.</p>
       <ul class="footer-stats">
@@ -1243,7 +1246,7 @@
       </ul>
     </div>
     <div class="footer-section">
-      <h3>קישורים מהירים</h3>
+      <h3><span aria-hidden="true">🔗</span> קישורים מהירים</h3>
       <ul>
         <li><a href="index_he.html">דף הבית</a></li>
         <li><a href="news/index_he.html">חדשות</a></li>
@@ -1257,7 +1260,7 @@
       </ul>
     </div>
     <div class="footer-section">
-      <h3>נבנה על ידי Hack23 AB</h3>
+      <h3><span aria-hidden="true">🏢</span> נבנה על ידי Hack23 AB</h3>
       <p>ייעוץ סייבר שוודי המתמחה בשקיפות פוליטית ומודיעין קוד פתוח.</p>
       <ul>
         <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
@@ -1291,7 +1294,7 @@
       </ul>
     </div>
     <div class="footer-section">
-      <h3>שפות</h3>
+      <h3><span aria-hidden="true">🌍</span> שפות</h3>
       <div class="language-grid">
         <a href="index.html" lang="en" hreflang="en" title="English" aria-label="החלפת שפה: English"><span aria-hidden="true">🇬🇧</span> EN</a>
         <a href="index_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="החלפת שפה: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>

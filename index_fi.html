@@ -351,11 +351,14 @@ Ruotsin vaalit 2026
 <header>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
-        aria-label="Vaihda tummaan teemaan"
-        title="Vaihda tummaan teemaan"
+        aria-label="Vaihda teema"
+        title="Vaihda teema"
         data-label-dark="Vaihda vaaleaan teemaan"
-        data-label-light="Vaihda tummaan teemaan">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
+        data-label-light="Vaihda tummaan teemaan"
+        data-rm-static-theme-toggle="true">
+  <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-toggle-label">Teema</span>
 </button>
 
 <!-- Hero Banner -->
@@ -366,35 +369,35 @@ Ruotsin vaalit 2026
 <!-- Hero Title -->
 <div class="hero-header-text">
   <h1> Riksdagsmonitor<br><span class="h1-subtitle">Ruotsin vaalien 2026 tiedustelualusta</span></h1>
-  <p class="tagline">Reaaliaikainen parlamenttiseuranta · Koalitioennusteet · 45 riskisääntöä · Yli 50 vuoden data</p>
+  <p class="tagline">Reaaliaikainen parlamenttiseuranta · Hallituskoalitioennusteet · 45 riskisääntöä · 50+ vuoden data</p>
 </div>
 
 
 <div class="election-countdown">
-<h2>Vaaleihin: <span id="countdown">13. syyskuuta 2026</span></h2>
-<p>13. syyskuuta 2026 (syyskuun toinen sunnuntai)</p>
+<h2>Vaaleihin: <span id="countdown">13. syyskuuta 2026 (Syyskuun toinen sunnuntai)</span></h2>
+<p>13. syyskuuta 2026 (Syyskuun toinen sunnuntai)</p>
 </div>
 
 <div class="hero-stats">
 <div class="stat">
 <span class="number" data-stat-id="stat-historical-persons">2,494</span>
-<span class="label">Seuratut poliitikot</span>
+<span class="label"><span aria-hidden="true">👥</span> Poliitikkoja seurattu</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-against-proposals">6M+</span>
-<span class="label">Parlamentaariset äänestykset</span>
+<span class="label"><span aria-hidden="true">🗳️</span> Valtiopäiväänestyksiä</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-total-documents">500K+</span>
-<span class="label">Käsitellyt asiakirjat</span>
+<span class="label"><span aria-hidden="true">📄</span> Asiakirjoja käsitelty</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-government-proposals">10K+</span>
-<span class="label">Hallituksen esitykset</span>
+<span class="label"><span aria-hidden="true">📜</span> Hallituksen esityksiä</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-committee-decisions">20K+</span>
-<span class="label">Valiokuntapäätökset</span>
+<span class="label"><span aria-hidden="true">🏛️</span> Valiokuntapäätöksiä</span>
 </div>
 </div>
 <nav class="site-header-nav" aria-label="Pääalusta" data-rm-static-primary-nav="true">
@@ -1232,7 +1235,7 @@ Suorituskykyluokat (ntile_party_tier: 1-4)
       <a href="index_fi.html" aria-label="Riksdagsmonitor Etusivu">
         <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
       </a>
-      <h3>Tietoja Riksdagsmonitorista</h3>
+      <h3><span aria-hidden="true">📖</span> Tietoja Riksdagsmonitorista</h3>
       <p>Live-tiedustelualusta Ruotsin valtiopäivien seurantaan CIA OSINT-kykyjen avulla. Jatkuvaa kehitystä — ilmoitathan ongelmista GitHubissa.</p>
       <p>Ruotsalainen kyberturvallisuuskonsulttiyritys, joka on erikoistunut poliittiseen avoimuuteen ja avoimen lähdekoodin tiedusteluun.</p>
       <ul class="footer-stats">
@@ -1243,7 +1246,7 @@ Suorituskykyluokat (ntile_party_tier: 1-4)
       </ul>
     </div>
     <div class="footer-section">
-      <h3>Pikalinkit</h3>
+      <h3><span aria-hidden="true">🔗</span> Pikalinkit</h3>
       <ul>
         <li><a href="index_fi.html">Etusivu</a></li>
         <li><a href="news/index_fi.html">Uutiset</a></li>
@@ -1257,7 +1260,7 @@ Suorituskykyluokat (ntile_party_tier: 1-4)
       </ul>
     </div>
     <div class="footer-section">
-      <h3>Rakentaja: Hack23 AB</h3>
+      <h3><span aria-hidden="true">🏢</span> Rakentaja: Hack23 AB</h3>
       <p>Ruotsalainen kyberturvallisuuskonsulttiyritys, joka on erikoistunut poliittiseen avoimuuteen ja avoimen lähdekoodin tiedusteluun.</p>
       <ul>
         <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
@@ -1291,7 +1294,7 @@ Suorituskykyluokat (ntile_party_tier: 1-4)
       </ul>
     </div>
     <div class="footer-section">
-      <h3>Kielet</h3>
+      <h3><span aria-hidden="true">🌍</span> Kielet</h3>
       <div class="language-grid">
         <a href="index.html" lang="en" hreflang="en" title="English" aria-label="Vaihda kieli: English"><span aria-hidden="true">🇬🇧</span> EN</a>
         <a href="index_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="Vaihda kieli: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
