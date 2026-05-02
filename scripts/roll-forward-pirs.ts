@@ -368,6 +368,27 @@ export function isLongHorizon(cycle: CycleType): boolean {
 }
 
 /**
+ * Determine whether a PIR was inherited from the source or created in this run.
+ * Uses `sourcePirIds` (authoritative) when available, otherwise falls back to
+ * `output.inherited_from` presence or the PIR's own `inherits_from` chain.
+ */
+function determineOrigin(
+  pir: PirEntry,
+  sourcePirIds: Set<string> | undefined,
+  output: PirStatusFile,
+): 'inherited' | 'this run' {
+  if (sourcePirIds) {
+    return sourcePirIds.has(pir.pir_id) ? 'inherited' : 'this run';
+  }
+  // Fallback: if the file was rolled forward (inherited_from is set),
+  // all PIRs are inherited; otherwise use inherits_from chain length.
+  if (output.inherited_from) {
+    return 'inherited';
+  }
+  return pir.inherits_from && pir.inherits_from.length > 0 ? 'inherited' : 'this run';
+}
+
+/**
  * Render a `horizon-pir-rollforward.md` Markdown document from a rolled-forward
  * PIR status file. Groups PIRs by status and stamps each open PIR with an
  * obsolescence date calculated as `targetDate + horizonDays`.
@@ -390,9 +411,9 @@ export function emitRollforwardMd(
   let predecessorFolder: string;
   if (output.inherited_from) {
     predecessorFolder = output.inherited_from.replace(/\/pir-status\.json$/, '');
-    // Strip trailing filename if inherited_from points to the folder directly
-    const dir = predecessorFolder.includes('/') ? predecessorFolder : predecessorFolder;
-    predecessorFolder = dir.endsWith('/') ? dir.slice(0, -1) : dir;
+    if (predecessorFolder.endsWith('/')) {
+      predecessorFolder = predecessorFolder.slice(0, -1);
+    }
   } else {
     const relSource = path.relative(repoRoot, sourcePath).split(path.sep).join('/');
     predecessorFolder = path.dirname(relSource);
@@ -443,20 +464,7 @@ export function emitRollforwardMd(
   lines.push('|--------|--------|--------|------------|-------------------|-------|');
 
   for (const pir of output.pirs) {
-    // Derive origin from whether the PIR existed in the source file (inherited)
-    // vs. being newly created in this run.
-    const sourcePirIds = options.sourcePirIds;
-    const origin = sourcePirIds
-      ? sourcePirIds.has(pir.pir_id)
-        ? 'inherited'
-        : 'this run'
-      : // Fallback: if the file was rolled forward (inherited_from is set),
-        // all PIRs are inherited; otherwise use inherits_from chain length.
-        output.inherited_from
-        ? 'inherited'
-        : pir.inherits_from && pir.inherits_from.length > 0
-          ? 'inherited'
-          : 'this run';
+    const origin = determineOrigin(pir, options.sourcePirIds, output);
     const obsolescenceDate =
       pir.status === 'open' ? addDays(targetDate, horizonDays) : '—';
     const notes =
