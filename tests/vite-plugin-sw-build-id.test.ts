@@ -13,23 +13,10 @@
  * @license Apache-2.0
  */
 
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import { describe, it, expect, afterEach } from 'vitest';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-
-// We import the default export after env manipulation so we must reset
-// the module cache between cases that mutate process.env.
-let swBuildIdPlugin: (options: { projectRoot: string; outDir?: string }) => {
-  name: string;
-  apply: string;
-  enforce: string;
-  closeBundle: { order: string; sequential: boolean; handler: () => void };
-};
-
-function loadPlugin() {
-  return import('../scripts/vite-plugin-sw-build-id.js?t=' + Date.now());
-}
 
 // ---------------------------------------------------------------------------
 // Helper: build a minimal project-root with public/sw.js

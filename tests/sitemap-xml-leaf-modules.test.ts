@@ -80,13 +80,11 @@ describe('sitemap-xml/scanners/api.ts — getApiDocs', () => {
 
   it('returns an empty array when the API directory does not exist', async () => {
     const { getApiDocs } = await import('../scripts/sitemap-xml/scanners/api.js');
-    // The `api/` directory is not present in the test sandbox, so the call
-    // exercises the `!fs.existsSync(API_DIR)` branch and returns [].
+    // Explicitly mock existsSync so the test is deterministic regardless of
+    // whether a real `api/` directory is present on the runner.
+    vi.spyOn(fs, 'existsSync').mockReturnValue(false);
     const docs = getApiDocs();
-    expect(Array.isArray(docs)).toBe(true);
-    // When the API dir is absent we expect an empty list.
-    // (If someone adds a real `api/` dir in the future the test still passes.)
-    expect(docs.length).toBeGreaterThanOrEqual(0);
+    expect(docs).toEqual([]);
   });
 
   it('scans a mocked directory tree and returns ApiDoc entries', async () => {

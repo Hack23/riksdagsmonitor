@@ -7,7 +7,7 @@
  * is exercised end-to-end by `generate-political-intelligence.test.ts`
  * via the shim's barrel re-export.
  */
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 
 import { PI_TRANSLATIONS } from '../scripts/political-intelligence/i18n/page-translations.js';
 import {
@@ -237,7 +237,6 @@ import {
 import nodeFs from 'node:fs';
 import nodeOs from 'node:os';
 import nodePath from 'node:path';
-
 describe('political-intelligence/daily-streams.ts — countArtifactsRecursive', () => {
   it('returns 0 for an empty directory', () => {
     const tmp = nodeFs.mkdtempSync(nodePath.join(nodeOs.tmpdir(), 'daily-streams-'));
@@ -325,12 +324,15 @@ describe('political-intelligence/daily-streams.ts — collectStreamArtifacts', (
 });
 
 describe('political-intelligence/daily-streams.ts — collectDailyDays', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
   it('returns empty array when analysis/daily directory does not exist', () => {
-    // The real directory may or may not exist; the function handles missing dirs gracefully.
-    // We can test the real function — if the dir is missing it returns [].
-    // Since we cannot easily mock the module-level DAILY_DIR, we instead verify
-    // that the return value is always a valid array.
+    // Mock existsSync so the test is deterministic — does not depend on whether
+    // the real `analysis/daily/` is present on the runner.
+    vi.spyOn(nodeFs, 'existsSync').mockReturnValue(false);
     const result = collectDailyDays();
-    expect(Array.isArray(result)).toBe(true);
+    expect(result).toEqual([]);
   });
 });
