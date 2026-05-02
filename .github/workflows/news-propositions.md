@@ -51,7 +51,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — 5-min HTTP MCP ping (overrides upstream default `1500s`) to keep `riksdag-regering` (HTTP) and other HTTP-backed MCPs warm for the full 60-min job. Pairs with `engine.mcp.session-timeout: 1h` below, which now governs MCP gateway session lifetime (gh-aw v0.71.3, default 6h). The PR deadline is now ~agent minute 42 (hard 45) — see prompts/07-commit-and-pr.md §Deadline enforcement.
+    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — 5-min HTTP MCP ping (overrides upstream default `1500s`) to keep `riksdag-regering` (HTTP) and other HTTP-backed MCPs warm for the full 60-min job. PR deadline ~agent minute 42 (hard 45) — see prompts/07-commit-and-pr.md §Deadline enforcement.
 
 runtimes:
   node:
@@ -164,8 +164,6 @@ steps:
 engine:
   id: copilot
   model: claude-sonnet-4.6
-  mcp:
-    session-timeout: 1h # gh-aw v0.71.3 — keeps MCP gateway sessions alive for the full 60-min job (default would be 6h; we cap at 1h to free gateway resources sooner). See https://github.com/github/gh-aw/issues/29353.
 ---
 
 # 📜 Government Propositions
@@ -182,7 +180,7 @@ Generates deep political intelligence analysis **and** the rendered HTML article
 
 ## Time budget
 
-> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: The workflow declares `engine.mcp.session-timeout: 1h`, which keeps MCP gateway sessions (including `safeoutputs`) alive for the full 60-min job. The PR deadline is governed by the Copilot API session (~60 min, Timer B) and the job `timeout-minutes: 60` (Timer A), but Timer A starts before the agent while host-side setup/sandbox/MCP initialization is still running. **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. See `00-base-contract.md §Session keepalive requirement` and `07-commit-and-pr.md §Deadline enforcement`.
+> 🟡 **MCP gateway session keepalive**: `sandbox.mcp.keepalive-interval: 300` sends a 5-min HTTP ping to keep HTTP-backed MCPs warm. **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. See `00-base-contract.md §Session keepalive requirement` and `07-commit-and-pr.md §Deadline enforcement`.
 >
 > **AI-FIRST within the setup-aware 40-minute agent target**: Pass 2 is still mandatory. Target completing all agent-phase analysis/rendering work by agent minute 40 so the PR can be opened before the hard agent-minute-45 cutoff. Prefer **scope compression over iteration skipping** when needed — reduce the **download/manifest scope** (for example, fewer `dok_id` entries in `data-download-manifest.md`), but maintain **1:1 per-document coverage** for every `dok_id` that remains in the manifest (required by `05-analysis-gate.md` check 2) and always perform a full read-back-and-improve Pass 2 on whatever artifacts exist. For scheduled runs treat `analysis_depth` as `deep` (default); reserve `comprehensive` for manual `workflow_dispatch` backfills.
 

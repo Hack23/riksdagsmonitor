@@ -61,7 +61,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300 # 5-min HTTP MCP ping; pairs with `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3) for the full 60-min job. PR deadline ~agent minute 42 (hard 45).
+    keepalive-interval: 300 # 5-min HTTP MCP ping to keep HTTP-backed MCPs warm for the full 60-min job. PR deadline ~agent minute 42 (hard 45).
 
 runtimes:
   node:
@@ -172,8 +172,6 @@ steps:
 engine:
   id: copilot
   model: claude-sonnet-4.6
-  mcp:
-    session-timeout: 1h # gh-aw v0.71.3 — keeps MCP gateway sessions alive for the full 60-min job (default would be 6h; we cap at 1h to free gateway resources sooner). See https://github.com/github/gh-aw/issues/29353.
 ---
 
 # 🗳️ Election Cycle
@@ -220,7 +218,7 @@ Generates the **deepest** Riksdagsmonitor intelligence product — a full 4-year
 
 ## Time budget
 
-> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: `engine.mcp.session-timeout: 1h` keeps MCP sessions alive for the full 60-min job. Because the 60-min job clock includes host-side setup before Copilot starts, plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard 45).
+> 🟡 **MCP gateway session keepalive**: `sandbox.mcp.keepalive-interval: 300` sends a 5-min HTTP ping to keep HTTP-backed MCPs warm. Because the 60-min job clock includes host-side setup before Copilot starts, plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard 45).
 
 This workflow runs at the **upper limit** of the 60-minute job envelope. Initially gated `workflow_dispatch`-only until runtime is measured over 4–6 manual runs.
 
