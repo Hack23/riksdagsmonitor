@@ -55,7 +55,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — 5-min HTTP MCP ping (overrides upstream default `1500s`) to keep `riksdag-regering` (HTTP) and other HTTP-backed MCPs warm for the full 60-min job. Pairs with `engine.mcp.session-timeout: 1h` below, which now governs MCP gateway session lifetime (gh-aw v0.71.3, default 6h). The PR deadline is now ~agent minute 42 (hard 45) — see prompts/07-commit-and-pr.md §Deadline enforcement.
+    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — 5-min HTTP MCP ping (overrides upstream default `1500s`) to keep `riksdag-regering` (HTTP) and other HTTP-backed MCPs warm for the full 60-min job. PR deadline ~agent minute 42 (hard 45) — see prompts/07-commit-and-pr.md §Deadline enforcement.
 
 runtimes:
   node:
@@ -240,8 +240,6 @@ steps:
 engine:
   id: copilot
   model: claude-sonnet-4.6
-  mcp:
-    session-timeout: 1h # gh-aw v0.71.3 — keeps MCP gateway sessions alive for the full 60-min job (default would be 6h; we cap at 1h to free gateway resources sooner). See https://github.com/github/gh-aw/issues/29353.
 ---
 
 # 🌐 News Translate
@@ -280,7 +278,7 @@ Translation is a pure-derivative workflow:
 
 ## Time budget
 
-> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: The workflow declares `engine.mcp.session-timeout: 1h`, which keeps MCP gateway sessions (including `safeoutputs`) alive for the full 60-min job. Timer A starts before the agent while host-side setup/sandbox/MCP initialization is still running, so **plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. The operative constraint is Timer A (job `timeout-minutes: 60`) and Timer B (~60-min Copilot API session) — not the legacy ~30-min idle drop.
+> 🟡 **MCP gateway session keepalive**: `sandbox.mcp.keepalive-interval: 300` sends a 5-min HTTP ping to keep HTTP-backed MCPs warm. **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. The operative constraint is Timer A (job `timeout-minutes: 60`) and Timer B (~60-min Copilot API session).
 
 **Single run** (target ~40 agent minutes in a 60-min job, hard deadline 45 agent minutes for the PR call):
 

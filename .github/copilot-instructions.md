@@ -145,13 +145,12 @@ runtimes:
 ```
 
 ### Engine Configuration (All Workflows)
-All agentic workflows declare a Sonnet-class model and the v0.71.3 MCP gateway session timeout:
+All agentic workflows declare a Sonnet-class model:
 ```yaml
 engine:
   id: copilot
   model: claude-sonnet-4.6        # Faster than opus 4.7 — replaced in the v0.71.3 refactor for throughput within the 60-min budget
-  mcp:
-    session-timeout: 1h           # gh-aw v0.71.3 (#29353) — keeps MCP gateway sessions alive for the full 60-min job; closes the legacy ~25–30 min "safeoutputs idle drop" window
+  # Note: engine.mcp.session-timeout was removed — MCP Gateway v0.3.1 rejects it as an unsupported additional property
 ```
 
 ### Tool Configuration (All Workflows)
@@ -301,4 +300,4 @@ tsx scripts/imf-fetch.ts list-indicators
 ---
 
 **Last Updated**: 2026-05-02
-**Version**: 3.5 — gh-aw v0.71.3 refactor: 60-min job budget, `claude-sonnet-4.6` model, `engine.mcp.session-timeout: 1h`
+**Version**: 3.6 — removed `engine.mcp.session-timeout: 1h` from all agentic workflows (MCP Gateway v0.3.1 schema rejects this field); keepalive via `sandbox.mcp.keepalive-interval: 300`

@@ -904,8 +904,7 @@ jobs:
               "domain": "${MCP_GATEWAY_DOMAIN}",
               "apiKey": "${MCP_GATEWAY_API_KEY}",
               "payloadDir": "${MCP_GATEWAY_PAYLOAD_DIR}",
-              "keepaliveInterval": 300,
-              "sessionTimeout": "1h"
+              "keepaliveInterval": 300
             }
           }
           GH_AW_MCP_CONFIG_a9a3592a966840e1_EOF
