@@ -916,7 +916,7 @@ Every `news-*.md` source in `.github/workflows/` is a **gh-aw workflow** — a M
 
 #### Import order is a contract
 
-The import order is **not arbitrary** — each module builds on the previous one, and [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) is a single blocking gate that refuses to let the agent draft a single article sentence until all **23 required artifacts** are on disk in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` for both Pass 1 and Pass 2 (election-cycle requires a 24th: `cycle-trajectory.md`).
+The import order is **not arbitrary** — each module builds on the previous one, and [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) is a single blocking gate that refuses to let the agent draft a single article sentence until all required artifacts are on disk in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` for both Pass 1 and Pass 2. The baseline is **23 artifacts**; year-ahead requires **24** (23 + `pestle-analysis.md` via LH-4); election-cycle requires **28** (23 + 5 blocking supplementary via LH-4 + LH-5: `pestle-analysis.md`, `cycle-trajectory.md`, `wildcards-blackswans.md`, `quantitative-swot.md`, `political-stride-assessment.md`).
 
 | Import # | Module | Responsibility | What fails fast if missing |
 |---------:|--------|----------------|----------------------------|
@@ -989,17 +989,22 @@ flowchart TB
 
 #### Single-type vs. Tier-C artifact contract
 
-All workflows produce the same **23 always-on artifacts** (Family A 9 + Family B 2 + Family C 5 + Family D 7) defined in [`prompts/04-analysis-pipeline.md`](.github/prompts/04-analysis-pipeline.md). Tier-C adds depth multipliers and higher article-output floors but does not add extra files. Long-horizon gates (LH-4, LH-5) additionally require **analytical supplementary artifacts** that are normally optional but become **blocking** for specific workflows:
+All workflows produce the same **23 always-on artifacts** (Family A 9 + Family B 2 + Family C 5 + Family D 7) defined in [`prompts/04-analysis-pipeline.md`](.github/prompts/04-analysis-pipeline.md). The counts below are *baseline* blocking artifacts from the main gate checks and long-horizon checks (LH-4, LH-5). In addition, the gate's **supplementary checks** (S1–S7 in [`05-analysis-gate.md`](.github/prompts/05-analysis-gate.md)) can block runs depending on tier and article type:
 
-- **Year-ahead (LH-4)**: `pestle-analysis.md` — total **24** blocking artifacts
-- **Election-cycle (LH-4 + LH-5)**: `pestle-analysis.md` + `cycle-trajectory.md` + `wildcards-blackswans.md` + `quantitative-swot.md` + `political-stride-assessment.md` — total **28** blocking artifacts
+- **`comprehensive` tier** and **aggregation types** (`weekly-review`, `monthly-review`): `analysis-index.md`, `reference-analysis-quality.md`, `mcp-reliability-audit.md`, `workflow-audit.md` become blocking; aggregation types also require `cross-session-intelligence.md` and `session-baseline.md`
+- **Multi-run** (≥ 2 production runs of the same article type): `cross-run-diff.md` becomes blocking
 
-| Contract | Applies to | Required artifacts | Depth | Source |
+**Long-horizon gates** (LH-4, LH-5) additionally require **analytical supplementary artifacts** that are normally optional but become blocking for specific workflows:
+
+- **Year-ahead (LH-4)**: `pestle-analysis.md` — total **24** baseline blocking artifacts
+- **Election-cycle (LH-4 + LH-5)**: `pestle-analysis.md` + `cycle-trajectory.md` + `wildcards-blackswans.md` + `quantitative-swot.md` + `political-stride-assessment.md` — total **28** baseline blocking artifacts
+
+| Contract | Applies to | Baseline blocking | Depth | Source |
 |----------|-----------|-------------------:|-------|--------|
 | **Single-type** | `news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations` | **23** | standard/deep | [`prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) |
-| **Tier-C aggregation** | `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`, `news-quarter-ahead` | **23** | × 1.0–1.7 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) |
-| **Tier-C + year-ahead** | `news-year-ahead` | **24** (23 + `pestle-analysis.md` via LH-4) | × 2.0 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) + LH-4 |
-| **Tier-C + election-cycle** | `news-election-cycle` | **28** (23 + 5 blocking supplementary via LH-4 + LH-5) | × 2.5 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) + LH-4 + LH-5 |
+| **Tier-C aggregation** | `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`, `news-quarter-ahead` | **23** (+ S1–S7 per tier/type) | × 1.0–1.7 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) |
+| **Tier-C + year-ahead** | `news-year-ahead` | **24** (23 + `pestle-analysis.md` via LH-4; + S1–S7 per tier) | × 2.0 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) + LH-4 |
+| **Tier-C + election-cycle** | `news-election-cycle` | **28** (23 + 5 via LH-4 + LH-5; + S1–S7 per tier) | × 2.5 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) + LH-4 + LH-5 |
 | **Translation** (N/A) | `news-translate` | N/A (post-hoc) | — | Direct text pipeline |
 
 All artifacts are written under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` — see [`analysis/README.md`](analysis/README.md) for the on-disk layout and [`analysis/templates/README.md`](analysis/templates/README.md) for the 23 canonical templates.
