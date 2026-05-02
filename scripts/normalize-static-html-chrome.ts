@@ -298,11 +298,14 @@ function replaceHero(html: string, lang: Language): string {
   };
   for (const [statId, { label, icon }] of Object.entries(STAT_LABELS)) {
     const escaped = statId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    // Locate the number span, then replace the entire label span that follows.
+    // We match from `<span class="label">` through `</div>` and rebuild the
+    // label cleanly, which avoids fragile nested-span regex gymnastics.
     const re = new RegExp(
-      `(<span\\s+class="number"\\s+data-stat-id="${escaped}">[\\s\\S]*?<\\/span>\\s*<span\\s+class="label">)[\\s\\S]*?(<\\/span>)`,
+      `(<span\\s+class="number"\\s+data-stat-id="${escaped}">[\\s\\S]*?<\\/span>\\s*)[\\s\\S]*?(<\\/div>)`,
       'i',
     );
-    next = next.replace(re, `$1<span aria-hidden="true">${icon}</span> ${label}$2`);
+    next = next.replace(re, `$1<span class="label"><span aria-hidden="true">${icon}</span> ${label}</span>\n$2`);
   }
 
   return next;
