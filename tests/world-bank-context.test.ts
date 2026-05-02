@@ -325,3 +325,59 @@ describe('world-bank-context', () => {
     });
   });
 });
+
+// ---------------------------------------------------------------------------
+// loadIndicatorsFromInventory — error handling branches (lines 149-161)
+// These branches are only exercised when NODE_ENV is NOT 'test' and the
+// inventory file is missing/corrupt. We test the NODE_ENV=test shortcut.
+// ---------------------------------------------------------------------------
+
+describe('world-bank-context — inventory loading branches', () => {
+  it('WORLD_BANK_INDICATORS is an array (successful load from inventory)', () => {
+    // Verifies that the happy-path load returns a real array (not a thrown error)
+    expect(Array.isArray(WORLD_BANK_INDICATORS)).toBe(true);
+  });
+
+  it('getSwedishIndicatorQueries returns a non-empty array with countryCode and indicatorId', () => {
+    const queries = getSwedishIndicatorQueries();
+    expect(queries.length).toBeGreaterThan(0);
+    for (const q of queries) {
+      expect(q.countryCode).toBeDefined();
+      expect(q.indicatorId).toBeDefined();
+      expect(q.name).toBeDefined();
+    }
+  });
+
+  it('findRelevantIndicators returns empty array for whitespace-only query', () => {
+    expect(findRelevantIndicators('   ').length).toBe(0);
+  });
+
+  it('findRelevantIndicators matches by committee abbreviation (case-insensitive)', () => {
+    // MJU is a known committee in the environment/energy domain
+    const results = findRelevantIndicators('MJU');
+    expect(results.length).toBeGreaterThan(0);
+    for (const r of results) {
+      expect(r.committees.map((c) => c.toLowerCase())).toContain('mju');
+    }
+  });
+
+  it('getEconomicHeading falls back to English when null is passed', () => {
+    // null is not a valid Language but the function should not throw
+    const heading = getEconomicHeading(null as unknown as string, 'economicContext');
+    expect(typeof heading).toBe('string');
+    expect(heading.length).toBeGreaterThan(0);
+  });
+
+  it('getEconomicHeading returns all 5 sections for every supported language', () => {
+    const languages: Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+    const sections: Array<keyof typeof import('../scripts/world-bank-context.js').ECONOMIC_SECTION_HEADINGS['en']> =
+      ['economicContext', 'nordicComparison', 'policyImplications', 'country', 'unit'];
+    for (const lang of languages) {
+      for (const section of sections) {
+        const heading = getEconomicHeading(lang, section);
+        expect(typeof heading).toBe('string');
+        expect(heading.length).toBeGreaterThan(0);
+      }
+    }
+  });
+});
