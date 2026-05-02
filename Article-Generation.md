@@ -381,7 +381,7 @@ The mapping below is exhaustive and ordered to match `scripts/render-lib/aggrega
 | 3 | Key Judgments | [`intelligence-assessment.md`](analysis/templates/intelligence-assessment.md) | Provides ≥ 3 Key Judgments + PIRs + confidence labels (ICD 203). |
 | 4 | Ranking | [`significance-scoring.md`](analysis/templates/significance-scoring.md) | DIW scoring + sensitivity analysis with evidence-tagged rows and ranked Mermaid bar chart. |
 | 5 | Narrative contestation | [`media-framing-analysis.md`](analysis/templates/media-framing-analysis.md) | DISARM TTPs · CIB ABCDE · narrative-laundering chain · Outlet Bias Audit · L1–L5 counter-resilience ladder. |
-| 6 | Stakeholders | [`stakeholder-impact.md`](analysis/templates/stakeholder-impact.md) → `stakeholder-perspectives.md` | Power × interest × position lens, named actors and influence network. |
+| 6 | Stakeholders | [`stakeholder-impact.md`](analysis/templates/stakeholder-impact.md) → `stakeholder-perspectives.md` | Power × interest × position lens, named actors and influence network. **Note:** the template instructs saving as `stakeholder-impact.md` but the aggregator + gate require the canonical output filename `stakeholder-perspectives.md`. |
 | 7 | Forward look | [`forward-indicators.md`](analysis/templates/forward-indicators.md) | ≥ 10 dated watch items across 4 horizons (Mermaid Gantt). |
 | 8 | Futures | [`scenario-analysis.md`](analysis/templates/scenario-analysis.md) | ≥ 3 scenarios with priors, posteriors, indicators and falsifiers. |
 | 9 | Risk | [`risk-assessment.md`](analysis/templates/risk-assessment.md) | Top 5 risks with L × I + cascading + Mermaid heat-map. |
@@ -414,7 +414,7 @@ The mapping below is exhaustive and ordered to match `scripts/render-lib/aggrega
 | op | Threshold audit | [`reference-analysis-quality.md`](analysis/templates/reference-analysis-quality.md) | Threshold audit against `reference-quality-thresholds.json` (aggregated alphabetically after core slots). |
 | op | Workflow audit | [`workflow-audit.md`](analysis/templates/workflow-audit.md) | End-to-end run audit: timing, cost, gate outcomes (aggregated alphabetically after core slots). |
 
-> **Aggregation behavior for "op" templates:** The aggregator (step 4 in `aggregate.ts`) appends *any* remaining `*.md` file — excluding `README.md` and `article*.md` — in alphabetical order after the 29 core `AGGREGATION_ORDER` slots. This means operational templates listed above **will appear** in the rendered article if they exist in the analysis folder. They sit after the core narrative but before the Sources appendix. `analysis/templates/README.md` is the templates-directory index and is excluded by the `README.md` filter; `election-cycle-analysis.md` is a filename alias of `election-2026-analysis.md` (de-duplicated at render time by `FILENAME_ALIASES`).
+> **Aggregation behavior for "op" templates:** The aggregator (step 4 in `aggregate.ts`) appends *any* remaining `*.md` file — excluding `README.md` and `article*.md` — in alphabetical order after the `AGGREGATION_ORDER` pass (31 entries including alias variants that collapse to 29 logical sections). This means operational templates listed above **will appear** in the rendered article if they exist in the analysis folder. They sit after the core narrative but before the Sources appendix. `analysis/templates/README.md` is the templates-directory index and is excluded by the `README.md` filter; `election-cycle-analysis.md` is a filename alias of `election-2026-analysis.md` (de-duplicated at render time by `FILENAME_ALIASES`).
 
 ---
 

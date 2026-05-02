@@ -64,7 +64,7 @@ flowchart LR
     classDef recess fill:#7B1FA2,color:#ffffff,stroke:#FFBE0B,stroke-dasharray:4 3
 ```
 
-The ribbon highlights which phase we are in and the **next two boundaries** the analyst must plan around. Recess phases are dashed because chamber business is suspended even though committee referrals (KU) and government-tabling deadlines still tick.
+The ribbon distinguishes **session** phases (solid borders — active chamber business) from **recess** phases (dashed borders — chamber suspended, but KU filings and government-tabling deadlines still tick). At runtime the analyst marks the *current* phase by adding a `:::current` override (e.g. `V["…"]:::current`) — the diagram above shows the structural alternation pattern only.
 
 ---
 

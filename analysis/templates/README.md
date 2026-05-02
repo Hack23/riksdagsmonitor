@@ -971,7 +971,7 @@ Every Mermaid block MUST start with the canonical init prologue so the diagram i
 %%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","lineColor":"#FFBE0B","secondaryColor":"#7B1FA2","tertiaryColor":"#2E7D32","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
 ```
 
-For multi-state diagrams (flowchart / state / sequence), prefer `classDef` blocks over per-node `style` directives so colour semantics stay consistent across the diagram and the validator's `style …` regex still matches:
+For multi-state diagrams (flowchart / state / sequence), prefer `classDef` blocks over per-node `style` directives so colour semantics stay consistent across the diagram. Note: `classDef` lines alone do **not** satisfy the gate's `^[[:space:]]*style[[:space:]]+` regex — the gate's colour-config check passes via the `themeVariables` / `%%{init …}` prologue above (which every block already includes):
 
 ```text
 classDef bluf      fill:#1565C0,color:#ffffff,stroke:#FFBE0B,stroke-width:2px
