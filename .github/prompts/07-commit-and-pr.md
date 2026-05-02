@@ -201,7 +201,7 @@ The noop message **must** include which condition above applies and why improvem
 
 Two independent timers can kill a run silently (gh-aw v0.71.3 onwards). Plan for the **shorter** of the two.
 
-> **Timer A — Job `timeout-minutes` (60 min)**: every news workflow declares `timeout-minutes: 60`. After 60 minutes GitHub Actions kills the runner unconditionally — no retry, no save, no PR.
+> **Timer A — Job `timeout-minutes` (60 min)**: every news workflow declares `timeout-minutes: 60`. The clock starts at **job start**, before Copilot begins, and includes host-side setup/sandbox/MCP initialization. After 60 minutes GitHub Actions kills the runner unconditionally — no retry, no save, no PR.
 >
 > **Timer B — Copilot API session (~60 min)**: The Copilot API session is bound to the `github.token` baked in at step start. That token expires at approximately **60 minutes** and is never refreshed mid-run (gh-aw issue #24920). Every tool call and inference request fails silently after that point — the agent appears to run but makes no progress and the PR is never created.
 
@@ -213,9 +213,9 @@ The two timers are intentionally aligned. The PR must be issued before either fi
 
 | Phase | Target PR window | Hard deadline | Floor for Pass 2 |
 |-------|------------------|---------------|------------------|
-| Analysis + aggregate + render | **40–50 min** after agent start | **55 min** | 7 min, skip beyond 50 min |
+| Analysis + aggregate + render | **35–42 min** after agent start | **45 min** | 7 min, skip beyond 42 min |
 
-The 55-min hard deadline leaves ~5 minutes of margin for staging, `git commit`, and the safeoutputs round-trip before Timer A and Timer B fire. Do **not** schedule any analysis or article work after the PR call — the agent's only remaining job is to exit cleanly while the safe-outputs runner publishes the PR. Equally, do **not** finish early with shallow output: AI-FIRST iteration (minimum 2 complete passes) is mandatory — see `.github/copilot-instructions.md §AI FIRST Quality Principle`.
+The agent-minute-45 hard deadline reserves job-level headroom for host-side setup variance plus staging, `git commit`, and the safeoutputs round-trip before Timer A and Timer B fire. Do **not** schedule any analysis or article work after the PR call — the agent's only remaining job is to exit cleanly while the safe-outputs runner publishes the PR. Equally, do **not** finish early with shallow output: AI-FIRST iteration (minimum 2 complete passes) is mandatory — see `.github/copilot-instructions.md §AI FIRST Quality Principle`.
 
 ### If the run exceeds its hard deadline with no safe-output call yet
 
@@ -229,7 +229,7 @@ Do not attempt to "save" work via a second PR — there is no second PR. Creatin
 
 ### Emergency deadline order of operations
 
-If you are approaching 25 min with Pass 2 in progress, **stop Pass 2 immediately** and run the following in a single bash session:
+If you are approaching agent minute 42 with Pass 2 or later work still in progress, **stop analysis/article work immediately** and run the following in a single bash session:
 
 ```bash
 cd "$GITHUB_WORKSPACE"
