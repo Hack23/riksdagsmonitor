@@ -1255,6 +1255,7 @@ Risk assessments use horizon bands to calibrate threat-likelihood language:
 | `month` | 30 | likely / unlikely | Budget-cycle risk, regulatory deadline exposure |
 | `quarter` | 90 | roughly even / about even | Session-level institutional stability |
 | `year` | 365 | roughly even; stronger requires ≥ 3 cycle-aged sources | Fiscal sustainability (IMF WEO/FM T+1–T+5), structural reform risk |
-| `cycle` | 1460 | scenario-driven; never above "likely" without ≥ 3 cycle-aged sources | Election-cycle political risk, democratic-backsliding indicators |
+| `cycle` | 1460 | roughly even / unlikely; never likely without ≥ 3 cycle-aged sources | Long-range political-risk trajectory, democratic-backsliding indicators |
+| `election` | 1460 | scenario-driven; coalition outcomes never above "likely" | Election-cycle regime-change risk, coalition-formation scenarios |
 
 Cycle-rollover rules (±30 days of election anchor) are defined in [`.github/prompts/ext/cycle-rollover.md`](../../prompts/ext/cycle-rollover.md).

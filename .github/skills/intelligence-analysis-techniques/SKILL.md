@@ -824,8 +824,9 @@ Structured analytic techniques must tag every probabilistic judgement with a hor
 | `72h` | 3 | very likely / very unlikely | Imminent event outcome (ACH with strong diagnostic evidence) |
 | `week` | 7 | likely / unlikely | Near-term scenario node (scheduled votes, ministerial actions) |
 | `month` | 30 | likely / unlikely | Mid-range scenario branches (budget cycle, consultation outcomes) |
-| `quarter` | 90 | roughly even / about even | Session-level outlook (4 main branches + 5 wildcards) |
-| `year` | 365 | roughly even; stronger requires ≥ 3 cycle-aged sources | Strategic forecast (IMF T+1 projections feed scenario trees) |
-| `cycle` | 1460 | scenario-driven; coalition outcomes never above "likely" | Election-cycle intelligence (4×3 scenario leaves, IMF T+5) |
+| `quarter` | 90 | roughly even / about even | Session-level outlook (4 scenarios, 0 wildcards) |
+| `year` | 365 | roughly even; stronger requires ≥ 3 cycle-aged sources | Strategic forecast (4 scenarios + 5 wildcards, IMF T+1 projections) |
+| `cycle` | 1460 | roughly even / unlikely; never likely without ≥ 3 cycle-aged sources | Long-range intelligence forecast (4 scenarios + 5 wildcards, IMF T+5) |
+| `election` | 1460 | scenario-driven; coalition outcomes never above "likely" | Coalition-formation intelligence (4 × 3 branches = 12 leaves) |
 
 Cycle-rollover rules (±30 days of election anchor) are defined in [`.github/prompts/ext/cycle-rollover.md`](../../prompts/ext/cycle-rollover.md).

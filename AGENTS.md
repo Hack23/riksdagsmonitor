@@ -175,8 +175,8 @@ assign_copilot_to_issue({
 - Multi-language political content (14 languages)
 
 **Long-horizon expertise**:
-- Horizon stratification (T+72h / T+7d / T+30d / T+90d / T+365d / T+1460d) with per-band WEP language ladder
-- Scenario-tree depth scaling (quarter = 4 branches, year = 4+5 wildcards, cycle = 4×3 leaves)
+- Horizon stratification (T+72h / T+7d / T+30d / T+90d / T+365d / T+1460d / election) with per-band WEP language ladder
+- Scenario-tree depth scaling (quarter = 4 scenarios, year = 4+5 wildcards, election-cycle = 4 scenarios × 3 coalition branches + 5 wildcards = 12 leaves)
 - PIR roll-forward rules for long-horizon Priority Intelligence Requirements
 - Cycle-rollover playbook (±30 days of election anchor) — see [`.github/prompts/ext/cycle-rollover.md`](.github/prompts/ext/cycle-rollover.md)
 - Runtime context via [`scripts/horizon-context.ts`](scripts/horizon-context.ts) and [`analysis/article-types.json`](analysis/article-types.json)

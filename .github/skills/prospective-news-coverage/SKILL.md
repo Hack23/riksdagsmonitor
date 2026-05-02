@@ -304,6 +304,7 @@ Prospective news coverage maps directly to the canonical horizon bands for forwa
 | `month` | 30 | likely / unlikely | "Month Ahead" outlook — budget cycle, consultation deadlines |
 | `quarter` | 90 | roughly even / about even | Quarterly outlook — session-level legislative forecast |
 | `year` | 365 | roughly even; stronger requires ≥ 3 cycle-aged sources | Annual outlook — cross-session strategic forecast (IMF T+1) |
-| `cycle` | 1460 | scenario-driven; coalition outcomes never above "likely" | Election-cycle preview — multi-scenario coalition forecasts (IMF T+5) |
+| `cycle` | 1460 | roughly even / unlikely; never likely without ≥ 3 cycle-aged sources | Cycle-level preview — long-range political trajectory |
+| `election` | 1460 | scenario-driven; coalition outcomes never above "likely" | Election-cycle preview — multi-scenario coalition forecasts (IMF T+5) |
 
 Cycle-rollover rules (±30 days of election anchor) are defined in [`.github/prompts/ext/cycle-rollover.md`](../../prompts/ext/cycle-rollover.md).

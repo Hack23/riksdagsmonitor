@@ -218,10 +218,11 @@ Map all security-relevant work to **ISO 27001:2022**, **NIST CSF 2.0**, **CIS Co
 |------|------|-------------|---------------------|
 | `72h` | 3 | very likely / very unlikely | — |
 | `week` | 7 | likely / unlikely | — |
-| `month` | 30 | likely / unlikely | 2 branches |
-| `quarter` | 90 | roughly even | 4 branches + 5 wildcards |
-| `year` | 365 | roughly even (≥ 3 sources for stronger) | 4 + 5 wildcards |
-| `cycle` | 1460 | scenario-driven; coalition ≤ "likely" | 4 × 3 = 12 leaves |
+| `month` | 30 | likely / unlikely | — |
+| `quarter` | 90 | roughly even / about even | 4 scenarios, 0 wildcards |
+| `year` | 365 | roughly even; stronger requires ≥ 3 cycle-aged sources | 4 scenarios + 5 wildcards |
+| `cycle` | 1460 | roughly even / unlikely; never likely without ≥ 3 cycle-aged sources | 4 scenarios + 5 wildcards |
+| `election` | 1460 | scenario-driven; coalition outcomes never above "likely" | 4 × 3 coalition branches = 12 leaves |
 
 **PIR roll-forward:** Priority Intelligence Requirements from shorter horizons carry forward into longer-horizon analysis unless explicitly retired. See [`scripts/roll-forward-pirs.ts`](../../scripts/roll-forward-pirs.ts).
 

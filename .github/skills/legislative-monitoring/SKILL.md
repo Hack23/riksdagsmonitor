@@ -1284,6 +1284,7 @@ Legislative monitoring uses horizon bands for bill-tracking and committee outloo
 | `month` | 30 | likely / unlikely | Bill pipeline progress, budget amendment deadlines |
 | `quarter` | 90 | roughly even / about even | Session-level legislative productivity outlook |
 | `year` | 365 | roughly even; stronger requires ≥ 3 cycle-aged sources | Cross-session oversight effectiveness, GFS_COFOG spending trends |
-| `cycle` | 1460 | scenario-driven | Full mandate-period legislative agenda forecast |
+| `cycle` | 1460 | roughly even / unlikely; never likely without ≥ 3 cycle-aged sources | Full mandate-period legislative agenda forecast |
+| `election` | 1460 | scenario-driven; coalition outcomes never above "likely" | Post-election legislative programme scenarios |
 
 Cycle-rollover rules (±30 days of election anchor) are defined in [`.github/prompts/ext/cycle-rollover.md`](../../prompts/ext/cycle-rollover.md).

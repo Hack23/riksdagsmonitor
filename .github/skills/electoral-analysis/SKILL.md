@@ -784,6 +784,7 @@ Electoral analysis uses horizon bands to calibrate forecast confidence:
 | `month` | 30 | likely / unlikely | Budget cycle impact, campaign events |
 | `quarter` | 90 | roughly even / about even | Session-level coalition outlook |
 | `year` | 365 | roughly even; stronger requires ≥ 3 cycle-aged sources | Cross-session seat projection, economic conditions (IMF T+1) |
-| `cycle` | 1460 | scenario-driven; coalition outcomes never above "likely" | Full election-cycle forecast, coalition formation scenarios (IMF T+5) |
+| `cycle` | 1460 | roughly even / unlikely; never likely without ≥ 3 cycle-aged sources | Full election-cycle forecast, long-range economic trends (IMF T+5) |
+| `election` | 1460 | scenario-driven; coalition outcomes never above "likely" | Coalition-formation scenarios, government-formation modelling |
 
 Cycle-rollover rules (±30 days of election anchor) are defined in [`.github/prompts/ext/cycle-rollover.md`](../../prompts/ext/cycle-rollover.md).
