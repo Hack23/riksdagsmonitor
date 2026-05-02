@@ -949,6 +949,54 @@ Every template enforces the following mandatory requirements:
 | 5 | **Anti-Pattern Warnings** | Each template begins with common anti-patterns to AVOID |
 | 6 | **Frontmatter** | Standard metadata: Generated, Data Sources, Documents Analyzed, Confidence |
 
+### 🎨 Mermaid colour-coding standard (canonical)
+
+The analysis gate ([`05-analysis-gate.md` Check 5](../../.github/prompts/05-analysis-gate.md)) blocks any Family A or Family D synthesis file whose Mermaid blocks lack a `style` directive **or** a `themeVariables` / `%%{init …}` block. To keep colour semantics consistent across the 35 templates that already render Mermaid (and the 3 long-horizon templates that just received their first diagram — `cycle-trajectory.md`, `horizon-pir-rollforward.md`, `parliamentary-season.md`) every diagram MUST follow the palette below — derived from the cyberpunk article-chrome tokens documented in [`Article-Generation.md` §"Light and dark mode"](../../Article-Generation.md#light-and-dark-mode).
+
+| Hex | Token / role | Colour use |
+|---|---|---|
+| `#1565C0` | `--primary-blue` | Structural / process / data-source nodes (BLUF anchor, ingest, predecessor run) |
+| `#2E7D32` | `--success-green` | Strengths · opportunities · "active" · low-risk indicators |
+| `#FF9800` | `--warning-orange` | Watch items · medium severity · mid-mandate years |
+| `#D32F2F` | `--danger-red` | Threats · weaknesses · falsification triggers · high severity |
+| `#7B1FA2` | `--strategic-purple` | Synthesis · scenarios · long-horizon projections |
+| `#00897B` | `--data-teal` | Data products · cycle-spanning PIRs · IMF / SCB feeds |
+| `#FFBE0B` | `--primary-yellow` | Edges, accents, stroke highlights, "this run" anchor |
+| `#FF006E` | `--primary-magenta` | New PIRs, emphasis, election-anchor pivots |
+| `#616161` | `--neutral-grey` | Archived / deprecated / pending nodes |
+
+Every Mermaid block MUST start with the canonical init prologue so the diagram inherits the dark-mode chrome on `riksdagsmonitor.com`:
+
+```text
+%%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","lineColor":"#FFBE0B","secondaryColor":"#7B1FA2","tertiaryColor":"#2E7D32","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
+```
+
+For multi-state diagrams (flowchart / state / sequence), prefer `classDef` blocks over per-node `style` directives so colour semantics stay consistent across the diagram and the validator's `style …` regex still matches:
+
+```text
+classDef bluf      fill:#1565C0,color:#ffffff,stroke:#FFBE0B,stroke-width:2px
+classDef opp       fill:#2E7D32,color:#ffffff
+classDef watch     fill:#FF9800,color:#000000
+classDef threat    fill:#D32F2F,color:#ffffff,stroke:#FFBE0B,stroke-width:2px
+classDef strategic fill:#7B1FA2,color:#ffffff
+classDef data      fill:#00897B,color:#ffffff
+classDef archive   fill:#616161,color:#ffffff
+```
+
+Diagram-class guidance:
+
+| Diagram class | Use it for | Reference templates |
+|---|---|---|
+| `flowchart TB / LR` | Process maps, evidence chains, attack trees, escalation paths | `executive-brief.md`, `threat-analysis.md`, `parliamentary-season.md` |
+| `quadrantChart` | SWOT, risk-vs-impact, decision matrices | `swot-analysis.md` |
+| `gantt` | Forward-indicator timelines, calendar windows | `forward-indicators.md` |
+| `xychart-beta` | DIW scoring, quantitative SWOT, reliability trends | `significance-scoring.md`, `quantitative-swot.md`, `mcp-reliability-audit.md` |
+| `graph LR` | Lightweight evidence-to-conclusion arcs | `executive-brief.md` (lead visual) |
+| `sequenceDiagram` | Coalition negotiations, KU referral cycles | `political-stride-assessment.md` |
+| `mindmap` | PESTLE / stakeholder fan-outs | `pestle-analysis.md`, `stakeholder-impact.md` |
+
+Mermaid renders **client-side** in the article HTML — the aggregator passes ` ```mermaid ` fences through untouched and `scripts/render-lib/markdown.ts` rewrites them to `<pre class="mermaid">` before the unified pipeline runs. `js/lib/mermaid-init.mjs` then upgrades each block to SVG after page load against the same-origin vendored runtime under `js/lib/mermaid/`. The full HTML rendering chain is documented in [`Article-Generation.md` §"Mermaid support"](../../Article-Generation.md#mermaid-support).
+
 ---
 
 ## 📄 Template Selection by Data Category

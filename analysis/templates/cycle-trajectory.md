@@ -50,6 +50,34 @@ TRAJECTORY-BLUF — <CYCLE_ID>:
 
 Every word matters. WEP language at the `cycle` band cannot exceed `likely` without ≥ 3 cycle-aged corroborated sources.
 
+### Trajectory band visual (T+1y → T+5y)
+
+```mermaid
+%%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","lineColor":"#FFBE0B","secondaryColor":"#7B1FA2","tertiaryColor":"#2E7D32","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
+flowchart LR
+    BLUF["🎯 BLUF<br/>WEP @ cycle band<br/>≤ likely (default)"]:::bluf
+    Y1["Year T+1<br/>NGDP_RPCH · GGXWDG_NGDP<br/>Coalition cohesion · KU"]:::near
+    Y2["Year T+2<br/>Mid-mandate inflection"]:::mid
+    Y3["Year T+3<br/>Pre-election framing"]:::mid
+    Y5["Year T+5<br/>Post-mandate projection<br/>IMF WEO multi-vintage"]:::far
+    FALSIFY["🛑 Falsification triggers<br/>≥ 5 dated thresholds"]:::falsify
+
+    BLUF --> Y1 --> Y2 --> Y3 --> Y5
+    Y1 -.cycle-anchor=current.-> SCORE["📋 Mandate scorecard<br/>≥ 10 Tidö rows"]:::current
+    Y3 -.cycle-anchor=next.-> FORECAST["🗳️ 12-leaf coalition forecast<br/>4 base × 3 governing branches"]:::next
+    Y5 --> FALSIFY
+
+    classDef bluf fill:#1565C0,color:#ffffff,stroke:#FFBE0B,stroke-width:2px
+    classDef near fill:#2E7D32,color:#ffffff
+    classDef mid fill:#FF9800,color:#000000
+    classDef far fill:#7B1FA2,color:#ffffff
+    classDef falsify fill:#D32F2F,color:#ffffff,stroke:#FFBE0B,stroke-width:2px
+    classDef current fill:#00897B,color:#ffffff
+    classDef next fill:#FF006E,color:#ffffff
+```
+
+Colour coding: 🟦 BLUF anchor → 🟢 near year → 🟠 mid years → 🟣 far / projection → 🔴 falsification. The dotted branches activate based on `activeCycleAnchor(articleDate)` — `current` enters the Tidö mandate scorecard; `next` enters the 12-leaf coalition-formation forecast.
+
 ---
 
 ## 2 — Horizon-Stratified Year-by-Year Outlook
