@@ -388,7 +388,7 @@ Public media coverage and public social-media posts only. No paywall bypass. No 
 
 **Document Control**
 - **Analysis path:** `analysis/daily/2026-05-02/year-ahead/media-framing-analysis.md`
-- **Template version:** v2.1 (no-neutral-media doctrine; outlet bias audit; algorithmic-asymmetry doctrine — 2026-05-01)
+- **Template version:** v2.2 (global audience orientation; multi-dimensional alignment — 2026-05-02)
 - **Classification:** Public
 - **PIRs served:** PIR-6, PIR-7, PIR-8, PIR-9
 - **Pass-2 audit status:** ✅ Completed — all no-neutral-media doctrine checks cleared; Frame C/D labelling discipline applied; outlet bias audit populated for all cited outlets; DISARM TTPs mapped with explicit no-signal findings; international cognates for all 5 frames confirmed ≥ 2; algorithmic asymmetry rows cite academic sources
