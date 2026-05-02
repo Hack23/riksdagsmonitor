@@ -43,7 +43,7 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 45
+timeout-minutes: 60
 
 concurrency:
   group: gh-aw-news-year-ahead-${{ inputs.article_date || 'today' }}
@@ -54,7 +54,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300
+    keepalive-interval: 300 # 5-min HTTP MCP ping; pairs with `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3) for the full 60-min job. PR deadline ~agent minute 42 (hard 45).
 
 runtimes:
   node:
@@ -164,7 +164,9 @@ steps:
     uses: ./.github/actions/news-prewarm
 engine:
   id: copilot
-  model: claude-opus-4.7
+  model: claude-sonnet-4.6
+  mcp:
+    session-timeout: 1h # gh-aw v0.71.3 — keeps MCP gateway sessions alive for the full 60-min job (default would be 6h; we cap at 1h to free gateway resources sooner). See https://github.com/github/gh-aw/issues/29353.
 ---
 
 # 🛰️ Year Ahead
@@ -194,19 +196,19 @@ Generates the deepest scheduled forward-look at Swedish politics — a 365-day a
 
 ## Time budget
 
-> 🔴 **CRITICAL — safeoutputs MCP idle timeout (~30 min)**: Your first and only `safeoutputs___*` call MUST happen by minute 28 at the latest.
+> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: `engine.mcp.session-timeout: 1h` keeps MCP sessions alive for the full 60-min job. Because the 60-min job clock includes host-side setup before Copilot starts, plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard 45).
 
 | Minutes | Phase |
 |---------|-------|
-| 0–2 | MCP pre-warm + IMF vintage pin |
-| 2–5 | Download data (Riksdag + SCB + IMF Nordic-peer compare) |
-| 5–18 | Analysis Pass 1 (all 23 artifacts + PESTLE + wildcards + quantitative-SWOT at 2.0× depth) |
-| 18–23 | Analysis Pass 2 (read-back; counterfactuals; horizon-band stratification) |
-| 23–24 | Analysis Gate (long-horizon checks) |
-| 24–26 | Aggregate + render |
-| 26–28 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE minute 28** |
+| 0–3 | MCP pre-warm + IMF vintage pin |
+| 3–7 | Download data (Riksdag + SCB + IMF Nordic-peer compare) |
+| 7–27 | Analysis Pass 1 (all 23 artifacts + PESTLE + wildcards + quantitative-SWOT at 2.0× depth) |
+| 27–35 | Analysis Pass 2 (read-back; counterfactuals; horizon-band stratification) |
+| 35–37 | Analysis Gate (long-horizon checks) |
+| 37–40 | Aggregate + render |
+| 40–42 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** |
 
-> 🟡 **Scope-compression rule**: if you reach minute 23 without Pass 2 complete, halt Pass 2 deepening and run the gate against whatever you have — `if-no-changes: warn` will not silently fail the run, but a missing PR will. Always trim depth before iterating.
+> 🟡 **Scope-compression rule**: if you reach agent minute 35 without Pass 2 complete, halt Pass 2 deepening and run the gate against whatever you have — `if-no-changes: warn` will not silently fail the run, but a missing PR will. Always trim depth before iterating.
 
 ## Inputs
 

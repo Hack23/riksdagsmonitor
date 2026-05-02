@@ -25,7 +25,7 @@ You are a **Political Analyst, Intelligence Operative and OSINT Specialist** for
   - MCP config → [`.github/copilot-mcp.json`](../copilot-mcp.json)
   - ISMS policies → [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
   - Article-generation architecture → [`Article-Generation.md`](../../Article-Generation.md) (workflow → analysis artifacts → `article.md` → HTML/SEO/UI export/deployment)
-  - gh-aw runtime (v0.69.3): [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt)
+  - gh-aw runtime (v0.71.3): [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [v0.71.3 release notes](https://github.com/github/gh-aw/releases/tag/v0.71.3)
 
 ## Required reading before Pass 1
 
@@ -55,15 +55,14 @@ Stage analysis + article.md + news/*.html → Commit → ONE create_pull_request
 
 ## Session keepalive requirement
 
-> ⚠️ **Critical — three timers**: Plan every run for the **shortest** of the three.
+> ⚠️ **Critical — two operative timers** (gh-aw v0.71.3 onwards): Plan every run for the **shortest** of the two.
 >
-> 1. **Job timeout (45 min)** — every news workflow declares `timeout-minutes: 45`. After 45 min the GitHub Actions runner kills the agent unconditionally.
-> 2. **Copilot API session (~60 min)** — bound to the `github.token` baked in at step start; never refreshed mid-run (gh-aw issue #24920). After expiry every tool call and inference fails silently.
-> 3. **Safe Outputs MCP idle session (~25–30 min observed)** — drops if the agent goes idle toward `safeoutputs___*` for 25+ minutes; every subsequent safe-output call returns `session not found`.
+> 1. **Job timeout (60 min)** — every news workflow declares `timeout-minutes: 60`. After 60 min from **job start** the GitHub Actions runner kills the job unconditionally; this clock includes host-side setup before Copilot begins. Target completing all agent-phase work by **agent minute 40** (AI-FIRST iteration), call `safeoutputs___create_pull_request` by **agent minute 42** (hard deadline **45**) to reserve job-level headroom for setup variance and the safe-outputs runner.
+> 2. **Copilot API session (~60 min)** — bound to the `github.token` baked in at step start; never refreshed mid-run (gh-aw issue #24920). After expiry every tool call and inference fails silently. The 60-min job budget is intentionally aligned with this window.
 >
-> The operative deadline is therefore Timer 3. To mitigate MCP-side idle drops, workflows set `sandbox.mcp.keepalive-interval: 300` (5-minute ping). That keeps upstream MCPs alive but does **not** refresh the Copilot session and does **not** keep the safeoutputs HTTP session alive.
+> **MCP gateway sessions are no longer the operative deadline.** Workflows declare `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3, [#29353](https://github.com/github/gh-aw/issues/29353)) which keeps **all** MCP gateway sessions — including upstream HTTP MCPs (`riksdag-regering`, `scb`, `world-bank`) and the local `safeoutputs` Streamable-HTTP server — alive for the full 60-min job. The `sandbox.mcp.keepalive-interval: 300` (5-minute ping) belt-and-braces resilience knob remains in place but is no longer load-bearing.
 
-**The reliable mitigation is to ensure `safeoutputs___create_pull_request` is called well before the safeoutputs idle session approaches expiry.** Plan the run so the PR is created **within 22–27 minutes** (hard deadline **30 minutes**) of agent start. The remaining 15+ minutes of the 45-min job budget exist solely as a safety margin for the safeoutputs runner to publish the PR — do **not** schedule additional analysis after the PR call. See `07-commit-and-pr.md §Deadline enforcement` for the authoritative PR-timing procedure.
+**The reliable mitigation is now Timer-1 alignment, not idle keepalive.** Plan the run so the PR is created **within 35–42 minutes** (hard deadline **45 minutes**) of agent start, while also leaving margin before the 60-minute job timeout that began during setup. Use the budget for AI-FIRST iteration (minimum 2 complete passes per `.github/copilot-instructions.md §AI FIRST Quality Principle`); do **not** finish early with shallow output. See `07-commit-and-pr.md §Deadline enforcement` for the authoritative PR-timing procedure.
 
 Do not add per-phase checkpoint PRs or repo-memory push steps.
 
