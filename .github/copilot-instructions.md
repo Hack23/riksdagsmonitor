@@ -13,7 +13,7 @@
 **Version**: 0.8.56
 **Agents**: 24 agent files (14 persona + 9 workflow-specialist + 1 developer-instructions) in `.github/agents/`
 **Skills**: 91 skills in `.github/skills/` (including 13 gh-aw skills)
-**Workflows**: 43 workflow files (21 standard `.yml` + 11 agentic `.md` sources + 11 compiled `.lock.yml`)
+**Workflows**: 50 workflow files (22 standard `.yml` + 14 agentic `.md` sources + 14 compiled `.lock.yml`)
 **MCP Servers**: 8 configured (riksdag-regering, scb, world-bank, github, filesystem, memory, sequential-thinking, playwright)
 
 ## 🎯 Core Rules
@@ -112,7 +112,7 @@ Map every security-relevant control to **ISO 27001:2022 Annex A**, **NIST CSF 2.
 
 ## 🤖 GitHub Agentic Workflows
 
-This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw **v0.71.3**, pinned via `gh-aw-actions/setup-cli@v0.71.3`) for AI-powered news generation. 14 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
+This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw **v0.71.3**, pinned via `github/gh-aw-actions/setup@v0.71.3`) for AI-powered news generation. 14 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
 
 1. **Read-only tokens** — Agent gets only read permissions
 2. **Zero secrets in agent** — Write tokens isolated in separate jobs
