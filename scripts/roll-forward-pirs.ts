@@ -338,8 +338,22 @@ export function rollForward(
 // Horizon PIR roll-forward Markdown emission
 // ---------------------------------------------------------------------------
 
-/** Default horizon days for each long-horizon cycle type. */
-const CYCLE_HORIZON_DAYS: Partial<Record<CycleType, number>> = {
+/**
+ * Horizon days for each cycle type. Values sourced from
+ * `analysis/article-types.json` → `horizonBands`. All cycles are explicitly
+ * listed so there is no silent fallback.
+ */
+const CYCLE_HORIZON_DAYS: Record<CycleType, number> = {
+  committeeReports: 7,
+  propositions: 7,
+  motions: 7,
+  interpellations: 7,
+  'evening-analysis': 3,
+  'realtime-pulse': 3,
+  'week-ahead': 7,
+  'month-ahead': 30,
+  'weekly-review': 7,
+  'monthly-review': 30,
   'quarter-ahead': 90,
   'year-ahead': 365,
   'election-cycle': 1460,
@@ -350,26 +364,39 @@ const CYCLE_HORIZON_DAYS: Partial<Record<CycleType, number>> = {
  * emission. Returns true when the cycle has `horizonDays >= 90`.
  */
 export function isLongHorizon(cycle: CycleType): boolean {
-  return (CYCLE_HORIZON_DAYS[cycle] ?? 0) >= 90;
+  return CYCLE_HORIZON_DAYS[cycle] >= 90;
 }
 
 /**
  * Render a `horizon-pir-rollforward.md` Markdown document from a rolled-forward
  * PIR status file. Groups PIRs by status and stamps each open PIR with an
  * obsolescence date calculated as `targetDate + horizonDays`.
+ *
+ * @param sourcePirIds - Set of PIR IDs that existed in the source file. Used to
+ *   determine whether a PIR was inherited vs. newly created in this run.
  */
 export function emitRollforwardMd(
   output: PirStatusFile,
   sourcePath: string,
   targetDate: string,
-  options: { repoRoot?: string } = {},
+  options: { repoRoot?: string; sourcePirIds?: Set<string> } = {},
 ): string {
   const repoRoot = options.repoRoot ?? REPO_ROOT;
-  const horizonDays = CYCLE_HORIZON_DAYS[output.cycle] ?? 90;
+  const horizonDays = CYCLE_HORIZON_DAYS[output.cycle];
 
-  // Relativise source path for display
-  const relSource = path.relative(repoRoot, sourcePath).split(path.sep).join('/');
-  const predecessorFolder = path.dirname(relSource);
+  // Use output.inherited_from (already normalized by rollForward()) when
+  // available; only fall back to path.relative for direct invocations where
+  // rollForward wasn't used.
+  let predecessorFolder: string;
+  if (output.inherited_from) {
+    predecessorFolder = output.inherited_from.replace(/\/pir-status\.json$/, '');
+    // Strip trailing filename if inherited_from points to the folder directly
+    const dir = predecessorFolder.includes('/') ? predecessorFolder : predecessorFolder;
+    predecessorFolder = dir.endsWith('/') ? dir.slice(0, -1) : dir;
+  } else {
+    const relSource = path.relative(repoRoot, sourcePath).split(path.sep).join('/');
+    predecessorFolder = path.dirname(relSource);
+  }
 
   // Compute days since predecessor from the date fields
   const sourceDate = output.inherited_from
@@ -416,8 +443,20 @@ export function emitRollforwardMd(
   lines.push('|--------|--------|--------|------------|-------------------|-------|');
 
   for (const pir of output.pirs) {
-    const origin =
-      pir.inherits_from && pir.inherits_from.length > 0 ? 'inherited' : 'this run';
+    // Derive origin from whether the PIR existed in the source file (inherited)
+    // vs. being newly created in this run.
+    const sourcePirIds = options.sourcePirIds;
+    const origin = sourcePirIds
+      ? sourcePirIds.has(pir.pir_id)
+        ? 'inherited'
+        : 'this run'
+      : // Fallback: if the file was rolled forward (inherited_from is set),
+        // all PIRs are inherited; otherwise use inherits_from chain length.
+        output.inherited_from
+        ? 'inherited'
+        : pir.inherits_from && pir.inherits_from.length > 0
+          ? 'inherited'
+          : 'this run';
     const obsolescenceDate =
       pir.status === 'open' ? addDays(targetDate, horizonDays) : '—';
     const notes =
@@ -637,7 +676,8 @@ export function runMain(argv: string[], io: RunIO = {}): void {
   // Emit horizon-pir-rollforward.md when explicitly requested or when the
   // cycle qualifies as long-horizon (horizonDays >= 90).
   if (args.emitRollforwardMd || isLongHorizon(targetCycle)) {
-    const md = emitRollforwardMd(output, sourcePath, targetDate);
+    const sourcePirIds = new Set(source.pirs.map((p) => p.pir_id));
+    const md = emitRollforwardMd(output, sourcePath, targetDate, { sourcePirIds });
     const mdPath = path.join(targetDir, 'horizon-pir-rollforward.md');
     fs.writeFileSync(mdPath, md, 'utf-8');
     out.write(

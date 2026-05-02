@@ -257,6 +257,68 @@ describe('emitRollforwardMd', () => {
     // year-ahead horizonDays = 365; 2026-05-01 + 365 = 2027-05-01
     expect(md).toContain('2027-05-01');
   });
+
+  it('derives predecessor from output.inherited_from (not path.relative)', () => {
+    const fixture = validFixture();
+    const output = rollForward(fixture, sourcePath, targetDate, 'quarter-ahead', {
+      now: () => new Date('2026-05-01T10:00:00Z'),
+      repoRoot: '/tmp/repo',
+    });
+    // Even if sourcePath is outside repoRoot, output.inherited_from is used
+    const md = emitRollforwardMd(output, '/some/other/path/pir-status.json', targetDate, {
+      repoRoot: '/different/root',
+    });
+    // Should still use output.inherited_from, not the mismatched path
+    expect(md).toContain('analysis/daily/2026-04-01/quarter-ahead');
+    expect(md).not.toContain('..');
+  });
+
+  it('marks all PIRs as inherited when sourcePirIds contains them', () => {
+    const fixture = validFixture();
+    const output = rollForward(fixture, sourcePath, targetDate, 'quarter-ahead', {
+      now: () => new Date('2026-05-01T10:00:00Z'),
+      repoRoot: '/tmp/repo',
+    });
+    const sourcePirIds = new Set(fixture.pirs.map((p) => p.pir_id));
+    const md = emitRollforwardMd(output, sourcePath, targetDate, {
+      repoRoot: '/tmp/repo',
+      sourcePirIds,
+    });
+    // Only check lines in the genealogy table (Section 2) which has Origin column
+    const allLines = md.split('\n');
+    const genealogyStart = allLines.findIndex((l) => l.includes('## 2 — PIR Genealogy Table'));
+    const genealogyEnd = allLines.findIndex((l, i) => i > genealogyStart && l.startsWith('---'));
+    const genealogyLines = allLines
+      .slice(genealogyStart, genealogyEnd)
+      .filter((l) => l.startsWith('| PIR-'));
+    for (const line of genealogyLines) {
+      expect(line).toContain('inherited');
+    }
+  });
+
+  it('marks new PIRs as "this run" when not in sourcePirIds', () => {
+    const fixture = validFixture();
+    const output = rollForward(fixture, sourcePath, targetDate, 'quarter-ahead', {
+      now: () => new Date('2026-05-01T10:00:00Z'),
+      repoRoot: '/tmp/repo',
+    });
+    // Add a new PIR to the output that wasn't in the source
+    output.pirs.push({
+      pir_id: 'PIR-NEW-test',
+      statement: 'Newly created PIR',
+      status: 'open',
+      confidence: 'HIGH',
+      inherits_from: [],
+      evidence_refs: [],
+    });
+    const sourcePirIds = new Set(fixture.pirs.map((p) => p.pir_id));
+    const md = emitRollforwardMd(output, sourcePath, targetDate, {
+      repoRoot: '/tmp/repo',
+      sourcePirIds,
+    });
+    const newLine = md.split('\n').find((l) => l.includes('PIR-NEW-test'));
+    expect(newLine).toContain('this run');
+  });
 });
 
 describe('runMain — rollforward-md integration', () => {
