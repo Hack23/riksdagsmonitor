@@ -892,11 +892,11 @@ Every `news-*.md` source in `.github/workflows/` is a **gh-aw workflow** — a M
 │  │    ├── prompts/01-bash-and-shell-safety.md                           │
 │  │    ├── prompts/02-mcp-access.md         ← MCP inventory + health     │
 │  │    ├── prompts/03-data-download.md      ← download pipeline          │
-│  │    ├── prompts/04-analysis-pipeline.md  ← 9 core artifacts, Pass 1+2 │
+│  │    ├── prompts/04-analysis-pipeline.md  ← 23 artifacts (4 families), Pass 1+2 │
 │  │    ├── prompts/05-analysis-gate.md      ← BLOCKING artifact gate     │
 │  │    ├── prompts/06-article-generation.md ← sections, banned patterns  │
 │  │    └── prompts/07-commit-and-pr.md      ← stage → commit → PR        │
-│  ├── (Tier-C only) imports: prompts/ext/tier-c-aggregation.md ← 14 artifacts │
+│  ├── (Tier-C only) imports: prompts/ext/tier-c-aggregation.md ← depth multipliers │
 │  └── Body = per-type instructions (e.g. "generate propositions article")│
 └─────────────────────────────────────────────────────────────────────────┘
                                 │
@@ -922,11 +922,11 @@ The import order is **not arbitrary** — each module builds on the previous one
 | 2 | `01-bash-and-shell-safety.md` | UTF-8 shell patterns, no `eval`, no shell-expansion exploits | Command injection, encoding corruption |
 | 3 | `02-mcp-access.md` | MCP server inventory + health probe | Wrong tool called, missing data source |
 | 4 | `03-data-download.md` | Download manifest, source attribution, caching | Unsourced claims |
-| 5 | `04-analysis-pipeline.md` | 9 core artifacts, methodology → template bindings, Pass 1 + Pass 2 | Shallow analysis, template mismatch |
+| 5 | `04-analysis-pipeline.md` | 23 required artifacts (Family A–D), methodology → template bindings, Pass 1 + Pass 2 | Shallow analysis, template mismatch |
 | 6 | **`05-analysis-gate.md`** | **Blocks article generation until artifacts are complete** | *Any article written before gate passes → workflow failure* |
 | 7 | `06-article-generation.md` | Article sections, banned hype patterns, visualisation, translations | Boilerplate content, missing charts |
 | 8 | `07-commit-and-pr.md` | Stage → commit → exactly one `create_pull_request` call | Orphan commits, duplicate PRs |
-| 9 (Tier-C only) | `ext/tier-c-aggregation.md` | 14-artifact aggregation gate, period multipliers | Aggregation without base artifacts |
+| 9 (Tier-C only) | `ext/tier-c-aggregation.md` | Depth multipliers, cross-type synthesis, higher article floor (same 23 artifacts) | Aggregation without base artifacts |
 
 #### Dependency graph
 
