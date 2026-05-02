@@ -350,7 +350,7 @@ export function buildChrome(opts: ChromeOptions): SiteChrome {
     })
     .join('\n');
 
-  const tagline = 'Swedish parliamentary intelligence · Open-source · Apache-2.0';
+  const tagline = cs.headerTagline;
   const apiDocsHref = 'https://riksdagsmonitor.com/docs/api/index.html';
   const issueHref = 'https://github.com/Hack23/riksdagsmonitor/issues/new/choose';
   const lastUpdatedIso = opts.modifiedIso ?? new Date().toISOString();

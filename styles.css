@@ -11684,6 +11684,45 @@ html[data-theme="light"] footer {
   display: block;
 }
 
+/* Morphing sun/moon icon: only one is visible at a time so the button
+   communicates *which theme will activate* on next press. The visible
+   glyph rotates 180° when crossing the click event — see the
+   `.theme-transition` class toggled by `js/theme-toggle.js`. */
+.theme-toggle-btn .theme-icon-sun,
+.theme-toggle-btn .theme-icon-moon {
+  transition: opacity 0.25s ease, transform 0.4s cubic-bezier(0.5, 0, 0.5, 1);
+}
+html[data-theme="light"] .theme-toggle-btn .theme-icon-sun,
+html[data-theme="dark"]  .theme-toggle-btn .theme-icon-moon {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle-btn .theme-icon-sun,
+  .theme-toggle-btn .theme-icon-moon {
+    transition: none;
+  }
+}
+
+/* Optional inline label — hidden visually below 480px to keep the
+   button compact on phones, retained for screen readers. */
+.theme-toggle-btn .theme-toggle-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+@media (max-width: 480px) {
+  .theme-toggle-btn .theme-toggle-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
 /* RTL: flip button to left side */
 [dir="rtl"] .theme-toggle-btn {
   right: auto;

@@ -351,11 +351,14 @@
 <header>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
-        aria-label="다크 테마로 전환"
-        title="다크 테마로 전환"
+        aria-label="테마 전환"
+        title="테마 전환"
         data-label-dark="라이트 테마로 전환"
-        data-label-light="다크 테마로 전환">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
+        data-label-light="다크 테마로 전환"
+        data-rm-static-theme-toggle="true">
+  <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-toggle-label">테마</span>
 </button>
 
 <!-- Hero Banner -->
@@ -365,24 +368,24 @@
 
 <!-- Hero Title -->
 <div class="hero-header-text">
-  <h1> Riksdagsmonitor<br><span class="h1-subtitle">2026 스웨덴 총선 인텔리전스 플랫폼</span></h1>
-  <p class="tagline">실시간 의회 모니터링 · 연정 예측 · 45개 위험 규칙 · 50년+ 데이터</p>
+  <h1> Riksdagsmonitor<br><span class="h1-subtitle">스웨덴 선거 인텔리전스 플랫폼 2026</span></h1>
+  <p class="tagline">실시간 의회 모니터링 · 연정 예측 · 45개 위험 규칙 · 50년 이상의 데이터</p>
 </div>
 
 
 <div class="election-countdown">
-<h2>선거까지: <span id="countdown">2026년 9월 13일</span></h2>
+<h2>선거까지: <span id="countdown">2026년 9월 13일 (9월 둘째 일요일)</span></h2>
 <p>2026년 9월 13일 (9월 둘째 일요일)</p>
 </div>
 
 <div class="hero-stats">
 <div class="stat">
 <span class="number" data-stat-id="stat-historical-persons">2,494</span>
-<span class="label">추적 중인 정치인</span>
+<span class="label">모니터링 중인 정치인</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-against-proposals">6M+</span>
-<span class="label">의회 표결</span>
+<span class="label">릭스다그 투표</span>
 </div>
 <div class="stat">
 <span class="number" data-stat-id="stat-total-documents">500K+</span>
