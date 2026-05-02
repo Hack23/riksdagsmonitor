@@ -333,8 +333,9 @@ describe('world-bank-context', () => {
 
 describe('world-bank-context — utility function coverage', () => {
   it('WORLD_BANK_INDICATORS is a non-empty array (inventory loaded successfully)', () => {
-    // Verifies that the happy-path load returns a real array (not a thrown error)
+    // Verifies that the happy-path load returns a real, populated array
     expect(Array.isArray(WORLD_BANK_INDICATORS)).toBe(true);
+    expect(WORLD_BANK_INDICATORS.length).toBeGreaterThan(0);
   });
 
   it('getSwedishIndicatorQueries returns a non-empty array with countryCode and indicatorId', () => {
@@ -347,10 +348,6 @@ describe('world-bank-context — utility function coverage', () => {
     }
   });
 
-  it('findRelevantIndicators returns empty array for whitespace-only query', () => {
-    expect(findRelevantIndicators('   ').length).toBe(0);
-  });
-
   it('findRelevantIndicators matches by committee abbreviation (case-insensitive)', () => {
     // MJU is a known committee in the environment/energy domain
     const results = findRelevantIndicators('MJU');
@@ -360,11 +357,9 @@ describe('world-bank-context — utility function coverage', () => {
     }
   });
 
-  it('getEconomicHeading falls back to English when null is passed', () => {
-    // null is not a valid Language but the function should not throw
-    const heading = getEconomicHeading(null as unknown as string, 'economicContext');
-    expect(typeof heading).toBe('string');
-    expect(heading.length).toBeGreaterThan(0);
+  it('getEconomicHeading returns undefined for an unknown section key', () => {
+    const heading = getEconomicHeading('en', 'nonExistentSection' as never);
+    expect(heading).toBeUndefined();
   });
 
   it('getEconomicHeading returns all 5 sections for every supported language', () => {

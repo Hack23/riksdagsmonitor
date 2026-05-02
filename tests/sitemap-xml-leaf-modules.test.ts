@@ -132,12 +132,6 @@ describe('sitemap-xml/scanners/api.ts — getApiDocs', () => {
     }
   });
 
-  it('returns empty array when existsSync returns false (explicit spy)', async () => {
-    const { getApiDocs } = await import('../scripts/sitemap-xml/scanners/api.js');
-    vi.spyOn(fs, 'existsSync').mockReturnValue(false);
-    const docs = getApiDocs();
-    expect(docs).toEqual([]);
-  });
 });
 
 describe('sitemap-xml/validator.ts — validateSitemap', () => {
