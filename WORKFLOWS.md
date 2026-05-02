@@ -338,18 +338,20 @@ graph TB
 
 ### 🤖 Agentic News Workflows (14 workflows: each has a `.md` source + `.lock.yml` compiled output)
 
-20. **📰 News Article Generator** — Daily news generation
-21. **🌅 News Evening Analysis** — Evening analysis reports
-22. **📡 News Realtime Monitor** — Real-time political monitoring
-23. **📋 News Motions** — Parliamentary motion tracking
-24. **📊 News Committee Reports** — Committee report coverage
-25. **📰 News Weekly Review** — Weekly political summary
-26. **📆 News Monthly Review** — Monthly political review
-27. **🔮 News Week Ahead** — Upcoming week preview
-28. **📅 News Month Ahead** — Upcoming month preview
-29. **🏛️ News Propositions** — Government proposition coverage
-30. **❓ News Interpellations** — Interpellation debate tracking
-31. **🌍 News Translate** — Multi-language article translation
+20. **📰 News Committee Reports** — Committee report coverage
+21. **📰 News Propositions** — Government proposition coverage
+22. **📋 News Motions** — Parliamentary motion tracking
+23. **❓ News Interpellations** — Interpellation debate tracking
+24. **🌅 News Evening Analysis** — Evening analysis reports
+25. **📡 News Realtime Monitor** — Real-time political monitoring
+26. **🔮 News Week Ahead** — Upcoming week preview
+27. **📅 News Month Ahead** — Upcoming month preview
+28. **📊 News Quarter Ahead** — 90-day parliamentary-season forecast
+29. **📈 News Year Ahead** — 365-day annual outlook (PESTLE blocking)
+30. **🗳️ News Election Cycle** — Full 4-year mandate analysis (dispatch-only)
+31. **📊 News Weekly Review** — Weekly political summary
+32. **📆 News Monthly Review** — Monthly political review
+33. **🌍 News Translate** — Multi-language article translation
 
 ### Workflow Relationships
 
@@ -987,13 +989,17 @@ flowchart TB
 
 #### Single-type vs. Tier-C artifact contract
 
-All workflows produce the same **23 always-on artifacts** (Family A 9 + Family B 2 + Family C 5 + Family D 7) defined in [`prompts/04-analysis-pipeline.md`](.github/prompts/04-analysis-pipeline.md). Tier-C adds depth multipliers and higher article-output floors but does not add extra files. The election-cycle workflow adds a 24th blocking artifact (`cycle-trajectory.md`).
+All workflows produce the same **23 always-on artifacts** (Family A 9 + Family B 2 + Family C 5 + Family D 7) defined in [`prompts/04-analysis-pipeline.md`](.github/prompts/04-analysis-pipeline.md). Tier-C adds depth multipliers and higher article-output floors but does not add extra files. Long-horizon gates (LH-4, LH-5) additionally require **analytical supplementary artifacts** that are normally optional but become **blocking** for specific workflows:
+
+- **Year-ahead (LH-4)**: `pestle-analysis.md` — total **24** blocking artifacts
+- **Election-cycle (LH-4 + LH-5)**: `pestle-analysis.md` + `cycle-trajectory.md` + `wildcards-blackswans.md` + `quantitative-swot.md` + `political-stride-assessment.md` — total **28** blocking artifacts
 
 | Contract | Applies to | Required artifacts | Depth | Source |
 |----------|-----------|-------------------:|-------|--------|
 | **Single-type** | `news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations` | **23** | standard/deep | [`prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) |
-| **Tier-C aggregation** | `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`, `news-quarter-ahead`, `news-year-ahead` | **23** | × 1.0–2.0 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) |
-| **Tier-C + election-cycle** | `news-election-cycle` | **24** (23 + `cycle-trajectory.md`) | × 2.5 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) + LH-5 |
+| **Tier-C aggregation** | `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`, `news-quarter-ahead` | **23** | × 1.0–1.7 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) |
+| **Tier-C + year-ahead** | `news-year-ahead` | **24** (23 + `pestle-analysis.md` via LH-4) | × 2.0 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) + LH-4 |
+| **Tier-C + election-cycle** | `news-election-cycle` | **28** (23 + 5 blocking supplementary via LH-4 + LH-5) | × 2.5 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) + LH-4 + LH-5 |
 | **Translation** (N/A) | `news-translate` | N/A (post-hoc) | — | Direct text pipeline |
 
 All artifacts are written under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` — see [`analysis/README.md`](analysis/README.md) for the on-disk layout and [`analysis/templates/README.md`](analysis/templates/README.md) for the 23 canonical templates.
@@ -1148,8 +1154,8 @@ flowchart TD
 
     subgraph Pipeline["Pipeline stages"]
         A1["📥 Data download<br/>(budget rhythm: BP autumn + VP spring)"]
-        A2["🔬 Analysis (23 artifacts)<br/>Tier-C × 2.0 depth; pestle-analysis.md is one of 23"]
-        A3["⛔ Analysis gate<br/>(blocks until 23 artifacts; LH-4 requires pestle-analysis.md)"]
+        A2["🔬 Analysis (23 + 1 artifacts)<br/>Tier-C × 2.0 depth + pestle-analysis.md (LH-4)"]
+        A3["⛔ Analysis gate<br/>(blocks until 24 artifacts: 23 baseline + pestle-analysis.md)"]
         A4["📝 Article generation<br/>(≥ 2500 words, wildcards-blackswans)"]
         A5["🔒 Safe-outputs envelope<br/>(sanitise → validate → PR)"]
     end
@@ -1173,9 +1179,9 @@ sequenceDiagram
     Runner->>IMF: fetch WEO Apr/Oct vintage projections
     MCP-->>Runner: parliamentary data
     IMF-->>Runner: macro projections (GDP, inflation, fiscal)
-    Runner->>Runner: analysis pipeline (23 artifacts, × 2.0)
+    Runner->>Runner: analysis pipeline (24 artifacts: 23 + pestle-analysis.md, × 2.0)
     Runner->>Runner: LH-4: pestle-analysis.md blocking; wildcards-blackswans
-    Runner->>Gate: verify 23 artifacts present (incl. pestle-analysis.md via LH-4)
+    Runner->>Gate: verify 24 artifacts present (23 baseline + pestle-analysis.md via LH-4)
     Gate-->>Runner: PASS
     Runner->>Runner: render article (≥ 2500 words EN+SV)
     Runner->>SO: submit PR via safe-outputs
@@ -1214,8 +1220,8 @@ flowchart TD
 
     subgraph Pipeline["Pipeline stages"]
         A1["📥 Data download<br/>(Tidö scorecard + next-cycle coalition)"]
-        A2["🔬 Analysis (23 + 1 artifacts)<br/>Tier-C × 2.5 depth + cycle-trajectory"]
-        A3["⛔ Analysis gate<br/>(blocks until 23 + cycle-trajectory = 24)"]
+        A2["🔬 Analysis (23 + 5 artifacts)<br/>Tier-C × 2.5 depth + 5 blocking supplementary"]
+        A3["⛔ Analysis gate<br/>(blocks until 28: 23 baseline + pestle + cycle-trajectory + wildcards + SWOT + STRIDE)"]
         A4["📝 Article generation<br/>(≥ 3500 words, STRIDE assessment)"]
         A5["🔒 Safe-outputs envelope<br/>(sanitise → validate → PR)"]
     end
@@ -1239,9 +1245,9 @@ sequenceDiagram
     Runner->>IMF: fetch multi-year WEO projections
     MCP-->>Runner: 4-year parliamentary data
     IMF-->>Runner: T+5 macro projections
-    Runner->>Runner: analysis pipeline (23 + cycle-trajectory, × 2.5)
-    Runner->>Runner: PESTLE + wildcards + STRIDE + cycle-trajectory blocking
-    Runner->>Gate: verify 24 artifacts present (23 baseline + cycle-trajectory.md)
+    Runner->>Runner: analysis pipeline (28 artifacts: 23 + 5 blocking supplementary, × 2.5)
+    Runner->>Runner: LH-4: pestle-analysis.md; LH-5: cycle-trajectory + wildcards + SWOT + STRIDE
+    Runner->>Gate: verify 28 artifacts (23 baseline + pestle + cycle-trajectory + wildcards-blackswans + quantitative-swot + political-stride-assessment)
     Gate-->>Runner: PASS
     Runner->>Runner: render article (≥ 3500 words EN+SV)
     Runner->>SO: submit PR via safe-outputs
