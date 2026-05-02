@@ -1159,8 +1159,8 @@ flowchart TD
 
     subgraph Pipeline["Pipeline stages"]
         A1["📥 Data download<br/>(budget rhythm: BP autumn + VP spring)"]
-        A2["🔬 Analysis (23 + 1 artifacts)<br/>Tier-C × 2.0 depth + pestle-analysis.md (LH-4)"]
-        A3["⛔ Analysis gate<br/>(blocks until 24 artifacts: 23 baseline + pestle-analysis.md)"]
+        A2["🔬 Analysis (23 + 1 gate-blocking + 2 mandated)<br/>Tier-C × 2.0 depth + pestle-analysis.md (LH-4)<br/>+ wildcards-blackswans.md + quantitative-swot.md"]
+        A3["⛔ Analysis gate<br/>(blocks until 24: 23 baseline + pestle-analysis.md)<br/>wildcards + SWOT mandated by registry, not gate-blocking"]
         A4["📝 Article generation<br/>(≥ 2500 words, wildcards-blackswans)"]
         A5["🔒 Safe-outputs envelope<br/>(sanitise → validate → PR)"]
     end
@@ -1184,9 +1184,9 @@ sequenceDiagram
     Runner->>IMF: fetch WEO Apr/Oct vintage projections
     MCP-->>Runner: parliamentary data
     IMF-->>Runner: macro projections (GDP, inflation, fiscal)
-    Runner->>Runner: analysis pipeline (24 artifacts: 23 + pestle-analysis.md, × 2.0)
-    Runner->>Runner: LH-4: pestle-analysis.md blocking; wildcards-blackswans
-    Runner->>Gate: verify 24 artifacts present (23 baseline + pestle-analysis.md via LH-4)
+    Runner->>Runner: analysis pipeline (24 gate-blocking + 2 mandated: pestle + wildcards + SWOT, × 2.0)
+    Runner->>Runner: LH-4: pestle-analysis.md blocking; wildcards + SWOT mandated by registry
+    Runner->>Gate: verify 24 gate-blocking artifacts (23 baseline + pestle-analysis.md via LH-4)
     Gate-->>Runner: PASS
     Runner->>Runner: render article (≥ 2500 words EN+SV)
     Runner->>SO: submit PR via safe-outputs
