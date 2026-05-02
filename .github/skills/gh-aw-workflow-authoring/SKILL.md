@@ -870,7 +870,9 @@ Specify the engine in frontmatter or let `gh aw compile` choose the default:
 ---
 engine:
   id: copilot                      # Repo convention: use Copilot engine, select model via `model`
-  model: claude-3-5-sonnet         # Engine-specific model identifier (e.g. claude-opus-4.7)
+  model: claude-3-5-sonnet         # Engine-specific model identifier (e.g. claude-sonnet-4.6, claude-opus-4.5)
+  mcp:                             # gh-aw v0.71.3+ — engine-level MCP gateway settings
+    session-timeout: 1h            # MCP gateway session lifetime (Go duration; min 5m, default gateway 6h). Set per-workflow to free gateway resources sooner or extend for multi-hour migrations.
 timeout-minutes: 5
 ---
 ```

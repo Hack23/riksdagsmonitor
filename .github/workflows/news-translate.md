@@ -43,7 +43,7 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 45
+timeout-minutes: 60
 
 concurrency:
   group: gh-aw-news-translate-${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}
@@ -55,7 +55,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — overrides the upstream default 1500s (25 min) with a 5-min HTTP MCP ping to reduce idle disconnects for `riksdag-regering` (HTTP) and other HTTP-backed MCPs during this 45-min job. It does NOT extend the workflow `timeout-minutes` budget and does NOT keep the local `safeoutputs` Streamable-HTTP idle session alive (Timer C ~25-30 min) — call `safeoutputs___create_pull_request` by minute 28 (hard 30). See prompts/07-commit-and-pr.md §Deadline enforcement and reference: https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/mcp-gateway.md
+    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — 5-min HTTP MCP ping (overrides upstream default `1500s`) to keep `riksdag-regering` (HTTP) and other HTTP-backed MCPs warm for the full 60-min job. Pairs with `engine.mcp.session-timeout: 1h` below, which now governs MCP gateway session lifetime (gh-aw v0.71.3, default 6h). The PR deadline is now ~minute 50 (hard 55) — see prompts/07-commit-and-pr.md §Deadline enforcement.
 
 runtimes:
   node:
@@ -239,7 +239,9 @@ steps:
 
 engine:
   id: copilot
-  model: claude-opus-4.7
+  model: claude-sonnet-4.6
+  mcp:
+    session-timeout: 1h # gh-aw v0.71.3 — keeps MCP gateway sessions alive for the full 60-min job (default would be 6h; we cap at 1h to free gateway resources sooner). See https://github.com/github/gh-aw/issues/29353.
 ---
 
 # 🌐 News Translate
@@ -278,18 +280,18 @@ Translation is a pure-derivative workflow:
 
 ## Time budget
 
-> 🔴 **CRITICAL — safeoutputs MCP idle timeout (~30 min)**: The `safeoutputs` MCP server's Streamable-HTTP session expires after **~30 minutes of idle time**. **Your single `safeoutputs___create_pull_request` call MUST happen by minute 28 at the latest** (hard deadline 30 min). The 45-min `timeout-minutes` job budget exists only as a safety margin; never plan a translate run beyond 28 min before the PR call.
+> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: The workflow declares `engine.mcp.session-timeout: 1h`, which keeps MCP gateway sessions (including `safeoutputs`) alive for the full 60-min job. **Plan to call `safeoutputs___create_pull_request` by minute 50 (hard deadline 55)** to leave 5 min of margin for the safe-outputs runner to publish the PR. The operative constraint is now Timer A (job `timeout-minutes: 60`) and Timer B (~60-min Copilot API session) — not the legacy ~30-min idle drop.
 
-**Single run** (target ~26 min, hard deadline 28 min for the PR call):
+**Single run** (target ~45 min in a 60-min job, hard deadline 55 min for the PR call):
 
 | Minutes | Phase |
 |---------|-------|
-| 0–2 | MCP pre-warm + date resolution |
-| 2–4 | Scan untranslated articles; build prioritised work list, cap at safe-outputs 100-file budget |
-| 4–22 | Translate + validate in priority order (highest-value types first); trim batch size before quality |
-| 22–25 | Final validation with `scripts/validate-news-translations.ts`, stage scoped files, commit |
-| 25–28 | **One** `safeoutputs___create_pull_request` call — **HARD DEADLINE minute 28** |
+| 0–3 | MCP pre-warm + date resolution |
+| 3–6 | Scan untranslated articles; build prioritised work list, cap at safe-outputs 100-file budget |
+| 6–38 | Translate + validate in priority order (highest-value types first); trim batch size before quality |
+| 38–45 | Final validation with `scripts/validate-news-translations.ts`, stage scoped files, commit |
+| 45–50 | **One** `safeoutputs___create_pull_request` call — **HARD DEADLINE minute 55** |
 
-If a batch cannot finish under this budget, commit the translations completed so far and call `safeoutputs___create_pull_request` with label `partial`; the next scheduled run picks up the remaining languages. A partial PR is always better than losing the whole batch to a `session not found` error.
+If a batch cannot finish under this budget, commit the translations completed so far and call `safeoutputs___create_pull_request` with label `partial`; the next scheduled run picks up the remaining languages. A partial PR is always better than losing the whole batch to Timer A.
 
 All non-workflow-specific rules are in the imported modules — do not restate them here.

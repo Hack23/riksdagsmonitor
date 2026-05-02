@@ -44,7 +44,7 @@ Translations for the remaining twelve languages are produced by the dedicated **
 
 3. **Commit** once with a descriptive message, e.g. `news(${article_type}): $ARTICLE_DATE — analysis + article`.
 
-4. **🛟 Sandbox commit handoff (mandatory)** — *immediately after `git commit` and **before** any `safeoutputs___*` call*, write a portable bundle + manifest so the host-side PAT PR fallback can recover the commit if `safeoutputs___create_pull_request` later fails (e.g. `session not found` after Timer C fires). The bundle goes to `/tmp/gh-aw/aw-fallback.bundle` (matched by the gh-aw artifact upload glob `/tmp/gh-aw/aw-*.bundle`); the JSON manifest goes to `/tmp/gh-aw/agent/aw-fallback.json` because the upload glob does **not** match `aw-*.json` — but it does upload the entire `/tmp/gh-aw/agent/` directory, so writing inside it guarantees the manifest reaches the host job. Run this in the same bash session as the commit:
+4. **🛟 Sandbox commit handoff (mandatory)** — *immediately after `git commit` and **before** any `safeoutputs___*` call*, write a portable bundle + manifest so the host-side PAT PR fallback can recover the commit if `safeoutputs___create_pull_request` later fails (e.g. transient MCP/network failure or Timer A/B firing). With `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3) the legacy "Timer C session not found" pathway is largely closed, but the handoff remains the defence-in-depth recovery for any transient safeoutputs failure. The bundle goes to `/tmp/gh-aw/aw-fallback.bundle` (matched by the gh-aw artifact upload glob `/tmp/gh-aw/aw-*.bundle`); the JSON manifest goes to `/tmp/gh-aw/agent/aw-fallback.json` because the upload glob does **not** match `aw-*.json` — but it does upload the entire `/tmp/gh-aw/agent/` directory, so writing inside it guarantees the manifest reaches the host job. Run this in the same bash session as the commit:
 
    ```bash
    set -euo pipefail
@@ -87,7 +87,7 @@ Translations for the remaining twelve languages are produced by the dedicated **
    echo "✅ Sandbox commit handoff written: /tmp/gh-aw/aw-fallback.bundle + /tmp/gh-aw/agent/aw-fallback.json"
    ```
 
-   This step is non-negotiable. Skipping it leaves the run with **no recovery path** if Timer C fires before `safeoutputs___create_pull_request` returns. See `.github/aw/SANDBOX_COMMIT_HANDOFF.md` for the full contract and `.github/workflows/news-pat-pr-fallback.yml` for the host-side recovery job.
+   This step is non-negotiable. Skipping it leaves the run with **no recovery path** if `safeoutputs___create_pull_request` fails to publish (transient MCP/network error, or Timer A/B firing before the PR is materialised). See `.github/aw/SANDBOX_COMMIT_HANDOFF.md` for the full contract and `.github/workflows/news-pat-pr-fallback.yml` for the host-side recovery job.
 
 5. **Call** `safeoutputs___create_pull_request` exactly once:
    - Title: `📰 ${Article Type} — $ARTICLE_DATE`.
@@ -120,7 +120,7 @@ Every news workflow's `safe-outputs.create-pull-request:` block sets two explici
 
 Neither flag changes the agent's behaviour — both are runner-side resilience knobs. The agent still calls `safeoutputs___create_pull_request` exactly once. See [upstream `create-pull-request` reference](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/safe-outputs-pull-requests.md) for the full schema.
 
-In addition, the **Sandbox commit handoff** in step 4 above is the *third* (and most important) resilience layer: when `safeoutputs___create_pull_request` itself fails — e.g. `Error POSTing to endpoint: session not found` after Timer C fires, or any transient MCP outage — the standalone host-side workflow `.github/workflows/news-pat-pr-fallback.yml` is triggered by `workflow_run` on completion of every news-* workflow. It downloads the agent artifact, fetches the bundle into the host checkout, force-with-leases the recovered branch to origin under the repo PAT, and opens (or refreshes) the PR. The job is **green only when the PR is actually created** — silent green-exits are eliminated.
+In addition, the **Sandbox commit handoff** in step 4 above is the *third* (and most important) resilience layer: when `safeoutputs___create_pull_request` itself fails — e.g. transient MCP outage, network blip, or Timer A/B firing before the PR is materialised — the standalone host-side workflow `.github/workflows/news-pat-pr-fallback.yml` is triggered by `workflow_run` on completion of every news-* workflow. It downloads the agent artifact, fetches the bundle into the host checkout, force-with-leases the recovered branch to origin under the repo PAT, and opens (or refreshes) the PR. The job is **green only when the PR is actually created** — silent green-exits are eliminated.
 
 ## Canonical PR body template
 
@@ -199,27 +199,23 @@ The noop message **must** include which condition above applies and why improvem
 
 ## Deadline enforcement
 
-Three independent timers can kill a run silently. Plan for the **shortest** of the three.
+Two independent timers can kill a run silently (gh-aw v0.71.3 onwards). Plan for the **shorter** of the two.
 
-> **Timer A — Job `timeout-minutes` (45 min)**: every news workflow declares `timeout-minutes: 45`. After 45 minutes GitHub Actions kills the runner unconditionally — no retry, no save, no PR.
+> **Timer A — Job `timeout-minutes` (60 min)**: every news workflow declares `timeout-minutes: 60`. After 60 minutes GitHub Actions kills the runner unconditionally — no retry, no save, no PR.
 >
 > **Timer B — Copilot API session (~60 min)**: The Copilot API session is bound to the `github.token` baked in at step start. That token expires at approximately **60 minutes** and is never refreshed mid-run (gh-aw issue #24920). Every tool call and inference request fails silently after that point — the agent appears to run but makes no progress and the PR is never created.
->
-> **Timer C — Safe Outputs MCP idle session (~25–30 min, observed)**: The local Safe Outputs HTTP MCP tracks a per-agent Streamable HTTP session. If the agent goes **idle toward safeoutputs** for 25+ minutes (e.g. a long Pass 1 that only uses `edit` + `bash`), the session is dropped and every subsequent `safeoutputs___*` call returns `Error POSTing to endpoint: session not found` — including the final `safeoutputs___create_pull_request`, `safeoutputs___noop`, and `safeoutputs___report_incomplete`. The `sandbox.mcp.keepalive-interval: 300` setting does **not** prevent this; that knob keeps the `mcp-gateway` upstream MCPs alive, not the safeoutputs HTTP server.
 
-Timer C fires first and is therefore the operative deadline. The 45-min job budget (Timer A) leaves ~15 minutes of safety margin after the PR call for the safe-outputs runner to publish the PR.
+The two timers are intentionally aligned. The PR must be issued before either fires.
 
-### Keeping the Safe Outputs MCP session warm
-
-Do **not** use safe outputs as a keepalive strategy. In this workflow, `safeoutputs___create_pull_request` is limited to a single successful end-of-run call, and `safeoutputs___noop` is likewise reserved for the final "no files produced" outcome, so neither can be safely spent to keep the Safe Outputs MCP session alive. Some other `safeoutputs___*` tools (e.g. `report_incomplete`, `missing_tool`, `missing_data`) may allow more than one call in compiled workflows, but they are not a documented or reliable heartbeat path for this prompt. **The only reliable mitigation is to reach `safeoutputs___create_pull_request` before Timer C fires.** Plan Pass 1 + gate + commit to finish well inside the 30-minute hard deadline below. If a future gh-aw release publishes a safe touch path for the local safeoutputs HTTP server (for example, an explicitly supported status or `tools/list` endpoint with verified keepalive behaviour), update this section with the concrete command and its observed effect.
+> 🟢 **The legacy "Timer C — Safe Outputs MCP idle session ~25–30 min" no longer applies.** With `engine.mcp.session-timeout: 1h` set in workflow frontmatter (gh-aw v0.71.3, [#29353](https://github.com/github/gh-aw/issues/29353)), all MCP gateway sessions — including the local `safeoutputs` Streamable-HTTP server — survive the full 60-min job. The PR-creation deadline is now governed by Timer A and Timer B alone.
 
 ### PR-creation windows
 
 | Phase | Target PR window | Hard deadline | Floor for Pass 2 |
 |-------|------------------|---------------|------------------|
-| Analysis + aggregate + render | **22–27 min** after agent start | **30 min** | 5 min, skip beyond 25 min |
+| Analysis + aggregate + render | **40–50 min** after agent start | **55 min** | 7 min, skip beyond 50 min |
 
-The 30-min hard deadline leaves ~5 minutes of margin for staging, `git commit`, and the safeoutputs round-trip before Timer C fires; ~30 minutes of margin before Timer B; and ~15 minutes of margin before Timer A. Do **not** schedule any analysis or article work after the PR call — the agent's only remaining job is to exit cleanly while the safe-outputs runner publishes the PR.
+The 55-min hard deadline leaves ~5 minutes of margin for staging, `git commit`, and the safeoutputs round-trip before Timer A and Timer B fire. Do **not** schedule any analysis or article work after the PR call — the agent's only remaining job is to exit cleanly while the safe-outputs runner publishes the PR. Equally, do **not** finish early with shallow output: AI-FIRST iteration (minimum 2 complete passes) is mandatory — see `.github/copilot-instructions.md §AI FIRST Quality Principle`.
 
 ### If the run exceeds its hard deadline with no safe-output call yet
 
@@ -227,9 +223,9 @@ The 30-min hard deadline leaves ~5 minutes of margin for staging, `git commit`, 
 2. **Stage** whatever exists on disk (analysis artifacts and any rendered `news/*.html`). Do not stage `pass1/`.
 3. **Commit** with message prefixed `[early-pr]` to signal partial content.
 4. **Call** `safeoutputs___create_pull_request` once with label `partial`. A partial analysis is always better than zero output.
-5. If `safeoutputs___create_pull_request` returns `session not found`, do **not** retry — the MCP session is gone. The work is lost for this run; the commit on disk is not persisted because the safe-outputs runner never saw it. Document the incident in the next run's methodology-reflection.
+5. If `safeoutputs___create_pull_request` returns an error, do **not** retry — Timer A or Timer B is firing. Document the incident in the next run's methodology-reflection.
 
-Do not attempt to "save" work via a second PR — there is no second PR. Creating the PR early is always better than losing all work to a session expiry.
+Do not attempt to "save" work via a second PR — there is no second PR. Creating the PR early is always better than losing all work to a timer expiry.
 
 ### Emergency deadline order of operations
 

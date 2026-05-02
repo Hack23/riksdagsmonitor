@@ -50,7 +50,7 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 45
+timeout-minutes: 60
 
 concurrency:
   group: gh-aw-news-election-cycle-${{ inputs.article_date || 'today' }}-${{ inputs.cycle_anchor || 'both' }}
@@ -61,7 +61,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300
+    keepalive-interval: 300 # 5-min HTTP MCP ping; pairs with `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3) for the full 60-min job. PR deadline ~minute 50 (hard 55).
 
 runtimes:
   node:
@@ -171,7 +171,9 @@ steps:
     uses: ./.github/actions/news-prewarm
 engine:
   id: copilot
-  model: claude-opus-4.7
+  model: claude-sonnet-4.6
+  mcp:
+    session-timeout: 1h # gh-aw v0.71.3 — keeps MCP gateway sessions alive for the full 60-min job (default would be 6h; we cap at 1h to free gateway resources sooner). See https://github.com/github/gh-aw/issues/29353.
 ---
 
 # 🗳️ Election Cycle
@@ -218,21 +220,21 @@ Generates the **deepest** Riksdagsmonitor intelligence product — a full 4-year
 
 ## Time budget
 
-> 🔴 **CRITICAL — safeoutputs MCP idle timeout (~30 min)**: Your first and only `safeoutputs___*` call MUST happen by minute 28 at the latest.
+> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: `engine.mcp.session-timeout: 1h` keeps MCP sessions alive for the full 60-min job. Plan to call `safeoutputs___create_pull_request` by minute 50 (hard 55).
 
-This workflow runs at the **upper limit** of the 28-minute safe-outputs envelope. Initially gated `workflow_dispatch`-only until runtime is measured over 4–6 manual runs.
+This workflow runs at the **upper limit** of the 60-minute job envelope. Initially gated `workflow_dispatch`-only until runtime is measured over 4–6 manual runs.
 
 | Minutes | Phase |
 |---------|-------|
-| 0–2 | MCP pre-warm + IMF multi-vintage pin |
-| 2–5 | Download data (Riksdag full-mandate corpus, SCB multi-year, IMF Nordic compare + multi-vintage) |
-| 5–19 | Analysis Pass 1 (24 artifacts at 2.5× depth, 12-leaf scenario tree, full mandate scorecard or coalition forecast) |
-| 19–24 | Analysis Pass 2 (read-back; counterfactuals × 3; horizon-band stratification across all five bands) |
-| 24–25 | Analysis Gate (long-horizon checks + 24th-artifact check + cycle-rollover check if within ± 30 days) |
-| 25–27 | Aggregate + render (per-anchor sub-subfolders) |
-| 27–28 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE minute 28** |
+| 0–3 | MCP pre-warm + IMF multi-vintage pin |
+| 3–8 | Download data (Riksdag full-mandate corpus, SCB multi-year, IMF Nordic compare + multi-vintage) |
+| 8–32 | Analysis Pass 1 (24 artifacts at 2.5× depth, 12-leaf scenario tree, full mandate scorecard or coalition forecast) |
+| 32–42 | Analysis Pass 2 (read-back; counterfactuals × 3; horizon-band stratification across all five bands) |
+| 42–44 | Analysis Gate (long-horizon checks + 24th-artifact check + cycle-rollover check if within ± 30 days) |
+| 44–47 | Aggregate + render (per-anchor sub-subfolders) |
+| 47–52 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE minute 55** |
 
-> 🟡 **Scope-compression rule**: depth multiplier 2.5× is aspirational — under the 28-min envelope, prefer reducing per-document Family-E coverage (drop dok_ids ranked < 6 in significance-scoring) rather than skipping any of the 24 artifacts. The 24-artifact contract is hard.
+> 🟡 **Scope-compression rule**: depth multiplier 2.5× is aspirational — under the 60-min envelope, prefer reducing per-document Family-E coverage (drop dok_ids ranked < 6 in significance-scoring) rather than skipping any of the 24 artifacts. The 24-artifact contract is hard.
 
 ## Inputs
 

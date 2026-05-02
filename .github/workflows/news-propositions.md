@@ -40,7 +40,7 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 45
+timeout-minutes: 60
 
 concurrency:
   group: gh-aw-news-propositions-${{ inputs.article_date || 'today' }}
@@ -51,7 +51,7 @@ features:
 
 sandbox:
   mcp:
-    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — overrides the upstream default 1500s (25 min) with a 5-min HTTP MCP ping to reduce idle disconnects for `riksdag-regering` (HTTP) and other HTTP-backed MCPs during this 45-min job. It does NOT extend the workflow `timeout-minutes` budget and does NOT keep the local `safeoutputs` Streamable-HTTP idle session alive (Timer C ~25-30 min) — call `safeoutputs___create_pull_request` by minute 28 (hard 30). See prompts/07-commit-and-pr.md §Deadline enforcement and reference: https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/mcp-gateway.md
+    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — 5-min HTTP MCP ping (overrides upstream default `1500s`) to keep `riksdag-regering` (HTTP) and other HTTP-backed MCPs warm for the full 60-min job. Pairs with `engine.mcp.session-timeout: 1h` below, which now governs MCP gateway session lifetime (gh-aw v0.71.3, default 6h). The PR deadline is now ~minute 50 (hard 55) — see prompts/07-commit-and-pr.md §Deadline enforcement.
 
 runtimes:
   node:
@@ -163,7 +163,9 @@ steps:
     uses: ./.github/actions/news-prewarm
 engine:
   id: copilot
-  model: claude-opus-4.7
+  model: claude-sonnet-4.6
+  mcp:
+    session-timeout: 1h # gh-aw v0.71.3 — keeps MCP gateway sessions alive for the full 60-min job (default would be 6h; we cap at 1h to free gateway resources sooner). See https://github.com/github/gh-aw/issues/29353.
 ---
 
 # 📜 Government Propositions
@@ -180,23 +182,23 @@ Generates deep political intelligence analysis **and** the rendered HTML article
 
 ## Time budget
 
-> 🔴 **CRITICAL — safeoutputs MCP idle timeout (~30 min)**: The `safeoutputs` MCP server's Streamable-HTTP session expires after **~30 minutes of idle time**. **Your first and only `safeoutputs___*` call MUST happen by minute 28 at the latest.** This is a harder deadline than the ~60-minute Copilot-API token window and the 45-minute job `timeout-minutes` budget described in `00-base-contract.md §Session keepalive requirement`.
+> 🟢 **MCP gateway session timeout — gh-aw v0.71.3**: The workflow declares `engine.mcp.session-timeout: 1h`, which keeps MCP gateway sessions (including `safeoutputs`) alive for the full 60-min job. The PR deadline is now governed by the Copilot API session (~60 min, Timer B) and the job `timeout-minutes: 60` (Timer A). **Plan to call `safeoutputs___create_pull_request` by minute 50 (hard deadline 55)** to leave 5 min of margin for the safe-outputs runner to publish the PR. See `00-base-contract.md §Session keepalive requirement` and `07-commit-and-pr.md §Deadline enforcement`.
 >
-> **AI-FIRST within the compressed budget**: Pass 2 is still mandatory. Under the tightened ~28-min budget, prefer **scope compression over iteration skipping** — reduce the **download/manifest scope** if needed (for example, fewer `dok_id` entries in `data-download-manifest.md`), but maintain **1:1 per-document coverage** for every `dok_id` that remains in the manifest (required by `05-analysis-gate.md` check 2) and always perform a full read-back-and-improve Pass 2 on whatever artifacts exist. For scheduled runs treat `analysis_depth` as `standard` in practice even if the input defaults to `deep`; reserve `deep`/`comprehensive` for manual `workflow_dispatch` backfills.
+> **AI-FIRST within the 45-min target**: Pass 2 is still mandatory. Target completing all phases by minute 45 in the 60-min job. Prefer **scope compression over iteration skipping** when needed — reduce the **download/manifest scope** (for example, fewer `dok_id` entries in `data-download-manifest.md`), but maintain **1:1 per-document coverage** for every `dok_id` that remains in the manifest (required by `05-analysis-gate.md` check 2) and always perform a full read-back-and-improve Pass 2 on whatever artifacts exist. For scheduled runs treat `analysis_depth` as `deep` (default); reserve `comprehensive` for manual `workflow_dispatch` backfills.
 
-**Single run** (produces all 23 analysis artifacts + aggregated `article.md` + EN/SV HTML, target ~28 min):
+**Single run** (produces all 23 analysis artifacts + aggregated `article.md` + EN/SV HTML, target ~45 min in a 60-min job):
 
 | Minutes | Phase | Module |
 |---------|-------|--------|
-| 0–2 | MCP pre-warm + pre-flight check | 02 / 03 |
-| 2–5 | Download data + catalogue | 03 |
-| 5–15 | Analysis Pass 1 (methodology read + per-doc analyses + **all 23 artifacts**: Family A 9 + B 2 + C 5 + D 7) | 04 |
-| 15–21 | Analysis Pass 2 (read-back + improvements on all 22 text files) | 04 |
-| 21–22 | Analysis Gate (checks 1–8) | 05 |
-| 22–24 | `scripts/aggregate-analysis.ts` (concat → `article.md`) + `scripts/render-articles.ts --lang en,sv` (render HTML) | 06 |
-| 24–28 | Stage analysis + `article.md` + `news/*.html`, commit, **ONE** `safeoutputs___create_pull_request` — **HARD DEADLINE minute 28** | 07 |
+| 0–3 | MCP pre-warm + pre-flight check | 02 / 03 |
+| 3–8 | Download data + catalogue | 03 |
+| 8–25 | Analysis Pass 1 (methodology read + per-doc analyses + **all 23 artifacts**: Family A 9 + B 2 + C 5 + D 7) | 04 |
+| 25–38 | Analysis Pass 2 (read-back + improvements on all 22 text files) | 04 |
+| 38–40 | Analysis Gate (checks 1–8) | 05 |
+| 40–43 | `scripts/aggregate-analysis.ts` (concat → `article.md`) + `scripts/render-articles.ts --lang en,sv` (render HTML) | 06 |
+| 43–50 | Stage analysis + `article.md` + `news/*.html`, commit, **ONE** `safeoutputs___create_pull_request` — **HARD DEADLINE minute 55** | 07 |
 
-Trim scope before quality. Never open a second PR within a run — there is no second PR. **If you reach minute 25 without staging, stop all remaining analysis work, run the aggregator + renderer on whatever artifacts exist, commit, and call `safeoutputs___create_pull_request` immediately** — a partial-but-delivered PR is infinitely better than losing all work to a `session not found` error.
+Use the full budget for AI-FIRST iteration; do **not** finish early with shallow output (see `.github/copilot-instructions.md §AI FIRST Quality Principle`). Never open a second PR within a run — there is no second PR. **If you reach minute 50 without staging, stop all remaining analysis work, run the aggregator + renderer on whatever artifacts exist, commit, and call `safeoutputs___create_pull_request` immediately** — a partial-but-delivered PR is infinitely better than losing the run to Timer A.
 
 ## Inputs
 

@@ -55,15 +55,14 @@ Stage analysis + article.md + news/*.html → Commit → ONE create_pull_request
 
 ## Session keepalive requirement
 
-> ⚠️ **Critical — three timers**: Plan every run for the **shortest** of the three.
+> ⚠️ **Critical — two operative timers** (gh-aw v0.71.3 onwards): Plan every run for the **shortest** of the two.
 >
-> 1. **Job timeout (45 min)** — every news workflow declares `timeout-minutes: 45`. After 45 min the GitHub Actions runner kills the agent unconditionally.
-> 2. **Copilot API session (~60 min)** — bound to the `github.token` baked in at step start; never refreshed mid-run (gh-aw issue #24920). After expiry every tool call and inference fails silently.
-> 3. **Safe Outputs MCP idle session (~25–30 min observed)** — drops if the agent goes idle toward `safeoutputs___*` for 25+ minutes; every subsequent safe-output call returns `session not found`.
+> 1. **Job timeout (60 min)** — every news workflow declares `timeout-minutes: 60`. After 60 min the GitHub Actions runner kills the agent unconditionally. Target completing all phases by **minute 45** (AI-FIRST iteration), call `safeoutputs___create_pull_request` by **minute 50** (hard deadline **55**) to leave 5 min of margin for the safe-outputs runner to publish the PR.
+> 2. **Copilot API session (~60 min)** — bound to the `github.token` baked in at step start; never refreshed mid-run (gh-aw issue #24920). After expiry every tool call and inference fails silently. The 60-min job budget is intentionally aligned with this window.
 >
-> The operative deadline is therefore Timer 3. To mitigate MCP-side idle drops, workflows set `sandbox.mcp.keepalive-interval: 300` (5-minute ping). That keeps upstream MCPs alive but does **not** refresh the Copilot session and does **not** keep the safeoutputs HTTP session alive.
+> **MCP gateway sessions are no longer the operative deadline.** Workflows declare `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3, [#29353](https://github.com/github/gh-aw/issues/29353)) which keeps **all** MCP gateway sessions — including upstream HTTP MCPs (`riksdag-regering`, `scb`, `world-bank`) and the local `safeoutputs` Streamable-HTTP server — alive for the full 60-min job. The `sandbox.mcp.keepalive-interval: 300` (5-minute ping) belt-and-braces resilience knob remains in place but is no longer load-bearing.
 
-**The reliable mitigation is to ensure `safeoutputs___create_pull_request` is called well before the safeoutputs idle session approaches expiry.** Plan the run so the PR is created **within 22–27 minutes** (hard deadline **30 minutes**) of agent start. The remaining 15+ minutes of the 45-min job budget exist solely as a safety margin for the safeoutputs runner to publish the PR — do **not** schedule additional analysis after the PR call. See `07-commit-and-pr.md §Deadline enforcement` for the authoritative PR-timing procedure.
+**The reliable mitigation is now Timer-1 alignment, not idle keepalive.** Plan the run so the PR is created **within 40–50 minutes** (hard deadline **55 minutes**) of agent start. Use the budget for AI-FIRST iteration (minimum 2 complete passes per `.github/copilot-instructions.md §AI FIRST Quality Principle`); do **not** finish early with shallow output. See `07-commit-and-pr.md §Deadline enforcement` for the authoritative PR-timing procedure.
 
 Do not add per-phase checkpoint PRs or repo-memory push steps.
 

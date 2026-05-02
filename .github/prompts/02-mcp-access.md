@@ -79,14 +79,26 @@ Run once at workflow start, then proceed — do not loop forever.
 
 Every news workflow declares a **single** `curl`-based pre-warm step with ≤ 6 retries, ≤ 20 s apart. With `curl --max-time 30`, the worst-case runtime can exceed 4 minutes, so this is a best-effort pre-warm rather than a hard ≤ 2 minute guarantee. If a strict 2 minute cap is required, the workflow's `curl` timeout and/or retry policy must be reduced accordingly. No background pingers.
 
+## MCP gateway session timeout (`engine.mcp.session-timeout`)
+
+Every news workflow declares `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3, frontmatter field added by [#29353](https://github.com/github/gh-aw/issues/29353)). Semantics:
+
+| Value | Meaning |
+|-------|---------|
+| Omitted / empty | Effective gateway default (env `MCP_GATEWAY_SESSION_TIMEOUT`, currently 6 h) |
+| **`1h`** *(our setting)* | Cap MCP gateway session lifetime at 1 h — covers the full 60-min job with margin and frees gateway resources sooner than the 6 h default. Applies to **all** MCP sessions: upstream HTTP MCPs (`riksdag-regering`, `scb`, `world-bank`) and the local `safeoutputs` Streamable-HTTP server. |
+| `>= 5m`, `<= 12h` | Other valid Go duration strings; bounds enforced by the compiler |
+
+This **replaces** the legacy "Timer C — safeoutputs idle drop" pattern: the 25–30 min idle drop was an artefact of the previous gateway default; with `session-timeout: 1h` set explicitly, all MCP sessions are guaranteed to outlive the 60-min job. The PR deadline is now governed by Timer A (job `timeout-minutes: 60`) and Timer B (Copilot API session ~60 min), not by gateway session expiry.
+
 ## MCP gateway keepalive (`sandbox.mcp.keepalive-interval`)
 
 Every news workflow sets `sandbox.mcp.keepalive-interval: 300`, which compiles to the gh-aw mcp-gateway's `keepaliveInterval` field. Semantics ([upstream spec](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/mcp-gateway.md)):
 
 | Value | Meaning |
 |-------|---------|
-| `0` or unset | Gateway default = **1500 s (25 min)** — too slow for 45-min news jobs; the `riksdag-regering` HTTP MCP would idle out before Pass 2 finishes |
+| `0` or unset | Gateway default = **1500 s (25 min)** — slower than ideal for the 60-min job |
 | `-1` | Disable keepalive entirely (do not use) |
-| **`300`** *(our setting)* | Ping every 5 minutes — keeps `riksdag-regering` (HTTP) and any other HTTP-backed MCPs warm for the full 45-minute job budget. **This is the resilience knob that lets us run the full 45-minute sessions reliably.** |
+| **`300`** *(our setting)* | Ping every 5 minutes — belt-and-braces resilience to keep idle HTTP MCPs warm. With `engine.mcp.session-timeout: 1h` set, this is no longer load-bearing for session survival but reduces tail latency on first-call-after-idle. |
 
-The keepalive pings the **upstream HTTP MCPs through the gateway**. It does **not** keep the local `safeoutputs` Streamable-HTTP idle session alive — that session has its own ~25–30 min idle timeout (Timer C in `00-base-contract.md` and `07-commit-and-pr.md`). Reach `safeoutputs___create_pull_request` by minute 28 (hard 30) regardless of keepalive.
+The keepalive pings the **upstream HTTP MCPs through the gateway**. Combined with `engine.mcp.session-timeout: 1h`, all MCP sessions remain alive for the full 60-min job.

@@ -112,7 +112,7 @@ Map every security-relevant control to **ISO 27001:2022 Annex A**, **NIST CSF 2.
 
 ## 🤖 GitHub Agentic Workflows
 
-This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw v0.69.3, pinned via `gh-aw-actions/setup-cli@v0.69.3`) for AI-powered news generation. 11 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
+This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw **v0.71.3**, pinned via `gh-aw-actions/setup-cli@v0.71.3`) for AI-powered news generation. 14 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
 
 1. **Read-only tokens** — Agent gets only read permissions
 2. **Zero secrets in agent** — Write tokens isolated in separate jobs
@@ -127,13 +127,14 @@ The full workflow contract is split into bounded-context prompt modules under [`
 - **Analysis product** (the "deep political analysis" that must precede every article): authored per [`analysis/methodologies/ai-driven-analysis-guide.md`](../analysis/methodologies/ai-driven-analysis-guide.md) using the templates in [`analysis/templates/`](../analysis/templates/).
 - **Hard rule**: every news workflow MUST produce all **9 core artifacts** (single-type) or **14 artifacts** (Tier-C aggregation) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` before any article sentence is written. [`.github/prompts/05-analysis-gate.md`](prompts/05-analysis-gate.md) is the single blocking gate.
 - **AI-FIRST**: minimum 2 complete iterations (Pass 1 creates, Pass 2 reads back and improves) — see §"5. 🔴 AI FIRST Quality Principle" above.
-- **Upstream gh-aw documentation**: [abridged (llms-small.txt)](https://github.github.com/gh-aw/llms-small.txt) · [complete (llms-full.txt)](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [source repo](https://github.com/github/gh-aw) · [GitHub CLI manual](https://cli.github.com/manual/).
+- **Upstream gh-aw documentation**: [abridged (llms-small.txt)](https://github.github.com/gh-aw/llms-small.txt) · [complete (llms-full.txt)](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [source repo](https://github.com/github/gh-aw) · [v0.71.3 release notes](https://github.com/github/gh-aw/releases/tag/v0.71.3) · [GitHub CLI manual](https://cli.github.com/manual/).
 
 ### Agentic Workflow Schedule
 - **Morning**: Propositions, committee reports, motions, interpellations
 - **Midday**: Month-ahead, week-ahead forecasting
 - **Evening**: Evening analysis, realtime monitoring
 - **Weekly/Monthly**: Reviews, translations across 14 languages
+- **Job budget**: All news workflows declare `timeout-minutes: 60`. Target completing all phases by **minute 45** (AI-FIRST iteration), call `safeoutputs___create_pull_request` by **minute 50** (hard deadline **55**).
 
 ### Runtime Configuration (All Workflows)
 All agentic workflows MUST include the `runtimes:` field to enforce Node.js 25:
@@ -141,6 +142,16 @@ All agentic workflows MUST include the `runtimes:` field to enforce Node.js 25:
 runtimes:
   node:
     version: "25"
+```
+
+### Engine Configuration (All Workflows)
+All agentic workflows declare a Sonnet-class model and the v0.71.3 MCP gateway session timeout:
+```yaml
+engine:
+  id: copilot
+  model: claude-sonnet-4.6        # Faster than opus 4.7 — replaced in the v0.71.3 refactor for throughput within the 60-min budget
+  mcp:
+    session-timeout: 1h           # gh-aw v0.71.3 (#29353) — keeps MCP gateway sessions alive for the full 60-min job; closes the legacy ~25–30 min "safeoutputs idle drop" window
 ```
 
 ### Tool Configuration (All Workflows)
@@ -289,5 +300,5 @@ tsx scripts/imf-fetch.ts list-indicators
 
 ---
 
-**Last Updated**: 2026-04-26
-**Version**: 3.4
+**Last Updated**: 2026-05-02
+**Version**: 3.5 — gh-aw v0.71.3 refactor: 60-min job budget, `claude-sonnet-4.6` model, `engine.mcp.session-timeout: 1h`
