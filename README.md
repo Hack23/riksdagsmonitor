@@ -183,6 +183,7 @@ Traditional AI-generated news is shallow — it rewrites press releases. Riksdag
 - 📊 **Quantitative rigor** — voting cohesion metrics, attendance scoring, legislative productivity indices, ICD-203 Key Judgments, 45-rule transparency scoring
 - 🌐 **14-language reach** — culturally adapted political analysis with RTL support (Arabic / Hebrew), not machine translation
 - 🛡️ **GDPR-compliant OSINT** — only public parliamentary data; political opinions are processed under GDPR Art. 9(2)(e) (manifestly made public) / 9(2)(g) (substantial public interest)
+- 🔭 **Forward-look coverage** — week / month / quarter / year / election-cycle horizons with registry-driven horizon stratification (see [`analysis/article-types.json`](analysis/article-types.json))
 - 🚦 **Hard analysis gate** — every news workflow MUST produce 9 (single-type) or 14 (Tier-C) analysis artifacts on disk before article generation; the gate at [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) is non-negotiable
 - 🧪 **Quality gates** — HTMLHint validation, link checking, accessibility (WCAG 2.1 AA) and translation parity in CI before publication
 

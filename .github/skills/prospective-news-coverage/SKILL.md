@@ -287,3 +287,23 @@ This skill is consumed by the 11 agentic news workflows in `.github/workflows/ne
 - **Analysis product** → [`ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + every template in [`analysis/templates/`](../../../analysis/templates/).
 - **Required before any article**: 9 core artifacts (14 for Tier-C) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`; [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) is the single blocking gate.
 - **gh-aw v0.69.3** docs: [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
+
+
+---
+
+## 🔭 Horizon stratification
+
+> **Authoritative source:** [`.github/prompts/ext/long-horizon-forecasting.md`](../../prompts/ext/long-horizon-forecasting.md). Runtime helper: [`scripts/horizon-context.ts`](../../../scripts/horizon-context.ts).
+
+Prospective news coverage maps directly to the canonical horizon bands for forward-look articles:
+
+| Band | Days | WEP language ceiling | Prospective-coverage application |
+|------|------|----------------------|----------------------------------|
+| `72h` | 3 | very likely / very unlikely | Next-day event previews (confirmed agenda items) |
+| `week` | 7 | likely / unlikely | "Week Ahead" articles — committee meetings, plenary schedule |
+| `month` | 30 | likely / unlikely | "Month Ahead" outlook — budget cycle, consultation deadlines |
+| `quarter` | 90 | roughly even / about even | Quarterly outlook — session-level legislative forecast |
+| `year` | 365 | roughly even; stronger requires ≥ 3 cycle-aged sources | Annual outlook — cross-session strategic forecast (IMF T+1) |
+| `cycle` | 1460 | scenario-driven; coalition outcomes never above "likely" | Election-cycle preview — multi-scenario coalition forecasts (IMF T+5) |
+
+Cycle-rollover rules (±30 days of election anchor) are defined in [`.github/prompts/ext/cycle-rollover.md`](../../prompts/ext/cycle-rollover.md).

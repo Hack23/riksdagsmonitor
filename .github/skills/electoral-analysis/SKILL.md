@@ -767,3 +767,23 @@ This skill is consumed by the 11 agentic news workflows in `.github/workflows/ne
 | Currency strength | IMF ER (SEK exchange rates) | Daily series; standard cross-country |
 
 **Canonical electoral rule:** Every electoral-conditions analysis in Riksdagsmonitor uses IMF projections (T+5) to forecast economic conditions in the election year. World Bank WGI supplements for governance perception. SCB provides Swedish-specific monthly ground truth. See [`analysis/imf/`](../../../analysis/imf/) and [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1.
+
+
+---
+
+## 🔭 Horizon stratification
+
+> **Authoritative source:** [`.github/prompts/ext/long-horizon-forecasting.md`](../../prompts/ext/long-horizon-forecasting.md). Runtime helper: [`scripts/horizon-context.ts`](../../../scripts/horizon-context.ts).
+
+Electoral analysis uses horizon bands to calibrate forecast confidence:
+
+| Band | Days | WEP language ceiling | Electoral application |
+|------|------|----------------------|-----------------------|
+| `72h` | 3 | very likely / very unlikely | Imminent vote outcome (plenary scheduled) |
+| `week` | 7 | likely / unlikely | Near-term committee votes, polling shifts |
+| `month` | 30 | likely / unlikely | Budget cycle impact, campaign events |
+| `quarter` | 90 | roughly even / about even | Session-level coalition outlook |
+| `year` | 365 | roughly even; stronger requires ≥ 3 cycle-aged sources | Cross-session seat projection, economic conditions (IMF T+1) |
+| `cycle` | 1460 | scenario-driven; coalition outcomes never above "likely" | Full election-cycle forecast, coalition formation scenarios (IMF T+5) |
+
+Cycle-rollover rules (±30 days of election anchor) are defined in [`.github/prompts/ext/cycle-rollover.md`](../../prompts/ext/cycle-rollover.md).

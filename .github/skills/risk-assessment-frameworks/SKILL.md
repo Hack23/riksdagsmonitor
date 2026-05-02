@@ -1238,3 +1238,23 @@ This skill is consumed by the 11 agentic news workflows in `.github/workflows/ne
 | Commodity-price exposure | IMF PCPS | Energy/food index volatility | rolling stdev >threshold |
 
 **Canonical risk rule:** Every economic-risk assessment in Riksdagsmonitor uses IMF as the primary source for the risk indicator and IMF projections (T+5) for the forward-looking risk horizon. World Bank governance indicators (WGI) supplement for political-risk dimension. See [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1 and [`analysis/imf/agentic-integration.md`](../../../analysis/imf/agentic-integration.md).
+
+
+---
+
+## 🔭 Horizon stratification
+
+> **Authoritative source:** [`.github/prompts/ext/long-horizon-forecasting.md`](../../prompts/ext/long-horizon-forecasting.md). Runtime helper: [`scripts/horizon-context.ts`](../../../scripts/horizon-context.ts).
+
+Risk assessments use horizon bands to calibrate threat-likelihood language:
+
+| Band | Days | WEP language ceiling | Risk-assessment application |
+|------|------|----------------------|-----------------------------|
+| `72h` | 3 | very likely / very unlikely | Imminent threat (e.g. no-confidence motion filed) |
+| `week` | 7 | likely / unlikely | Near-term policy risk, scheduled government decisions |
+| `month` | 30 | likely / unlikely | Budget-cycle risk, regulatory deadline exposure |
+| `quarter` | 90 | roughly even / about even | Session-level institutional stability |
+| `year` | 365 | roughly even; stronger requires ≥ 3 cycle-aged sources | Fiscal sustainability (IMF WEO/FM T+1–T+5), structural reform risk |
+| `cycle` | 1460 | scenario-driven; never above "likely" without ≥ 3 cycle-aged sources | Election-cycle political risk, democratic-backsliding indicators |
+
+Cycle-rollover rules (±30 days of election anchor) are defined in [`.github/prompts/ext/cycle-rollover.md`](../../prompts/ext/cycle-rollover.md).

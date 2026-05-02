@@ -809,3 +809,23 @@ This skill is consumed by the 11 agentic news workflows in `.github/workflows/ne
 - **Analysis product** → [`ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + every template in [`analysis/templates/`](../../../analysis/templates/).
 - **Required before any article**: 9 core artifacts (14 for Tier-C) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`; [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) is the single blocking gate.
 - **gh-aw v0.69.3** docs: [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
+
+
+---
+
+## 🔭 Horizon stratification
+
+> **Authoritative source:** [`.github/prompts/ext/long-horizon-forecasting.md`](../../prompts/ext/long-horizon-forecasting.md). Runtime helper: [`scripts/horizon-context.ts`](../../../scripts/horizon-context.ts).
+
+Structured analytic techniques must tag every probabilistic judgement with a horizon band and respect the WEP language ceiling:
+
+| Band | Days | WEP language ceiling | Intelligence application |
+|------|------|----------------------|--------------------------|
+| `72h` | 3 | very likely / very unlikely | Imminent event outcome (ACH with strong diagnostic evidence) |
+| `week` | 7 | likely / unlikely | Near-term scenario node (scheduled votes, ministerial actions) |
+| `month` | 30 | likely / unlikely | Mid-range scenario branches (budget cycle, consultation outcomes) |
+| `quarter` | 90 | roughly even / about even | Session-level outlook (4 main branches + 5 wildcards) |
+| `year` | 365 | roughly even; stronger requires ≥ 3 cycle-aged sources | Strategic forecast (IMF T+1 projections feed scenario trees) |
+| `cycle` | 1460 | scenario-driven; coalition outcomes never above "likely" | Election-cycle intelligence (4×3 scenario leaves, IMF T+5) |
+
+Cycle-rollover rules (±30 days of election anchor) are defined in [`.github/prompts/ext/cycle-rollover.md`](../../prompts/ext/cycle-rollover.md).
