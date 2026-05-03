@@ -346,7 +346,7 @@ describe('Sitemap HTML Generation', () => {
       html = module.generateSitemapHtml('en', articlesByLang);
     });
 
-    it('emits a meta description between 100 and 200 chars', () => {
+    it('emits a meta description between 100 and 200 chars (EN / LTR non-CJK budget)', () => {
       const match = html.match(/name="description" content="([^"]+)"/);
       expect(match).not.toBeNull();
       const desc = match![1]!;

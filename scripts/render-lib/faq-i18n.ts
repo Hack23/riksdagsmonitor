@@ -45,7 +45,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: 'What is Riksdagsmonitor?', answer: 'Riksdagsmonitor is an open-source Swedish Parliament intelligence platform that monitors votes, motions, propositions, committee reports and government actions in real time across 14 languages.' },
       { question: 'How often is the sitemap updated?', answer: 'This HTML sitemap is regenerated on every deploy (multiple times per day). The machine-readable XML sitemap is published at /sitemap.xml and refreshes on the same cadence.' },
-      { question: 'How do I switch languages?', answer: 'Use the language switcher in the header or the flag links at the bottom of every section. Each of the 14 supported languages has its own dedicated sitemap page (e.g. sitemap_sv.html) with `hreflang` annotations.' },
+      { question: 'How do I switch languages?', answer: 'Use the language switcher in the header or the flag links at the bottom of every section. Each of the 14 supported languages has its own sitemap (sitemap_sv.html etc.) with `hreflang` annotations.' },
       { question: 'Where do I find the XML sitemap?', answer: 'The machine-readable XML sitemap is at /sitemap.xml and the search-engine crawler instructions live in /robots.txt. Both are linked from the "Additional Resources" section above.' },
       { question: 'Are the article sources auditable?', answer: 'Yes. Every article links to the underlying analysis artifacts on GitHub (analysis/daily/YYYY-MM-DD/stream/) so any reader can audit the OSINT chain end-to-end.' },
     ],
@@ -69,7 +69,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: 'Vad är Riksdagsmonitor?', answer: 'Riksdagsmonitor är en öppen källkods-plattform för svensk politisk underrättelse som bevakar voteringar, motioner, propositioner, utskottsbetänkanden och regeringsbeslut i realtid på 14 språk.' },
       { question: 'Hur ofta uppdateras webbplatskartan?', answer: 'Denna HTML-webbplatskarta genereras om vid varje driftsättning (flera gånger per dygn). Den maskinläsbara XML-versionen finns på /sitemap.xml och uppdateras i samma takt.' },
-      { question: 'Hur byter jag språk?', answer: 'Använd språkväljaren i sidhuvudet eller flagglänkarna längst ned i varje sektion. Var och en av de 14 språken har en egen dedicated sitemap page (e.g. sitemap_sv.html) med hreflang-attribut.' },
+      { question: 'Hur byter jag språk?', answer: 'Använd språkväljaren i sidhuvudet eller flagglänkarna längst ned i varje sektion. Var och en av de 14 språken har en egen sitemap (sitemap_sv.html etc.) med hreflang-attribut.' },
       { question: 'Var hittar jag XML-webbplatskartan?', answer: 'Den maskinläsbara XML-webbplatskartan finns på /sitemap.xml och sökmotorinstruktionerna i /robots.txt. Båda länkas från sektionen "Ytterligare resurser" ovan.' },
       { question: 'Går artiklarnas källor att granska?', answer: 'Ja. Varje artikel länkar till de underliggande analys-artefakterna på GitHub (analysis/daily/YYYY-MM-DD/stream/) så vem som helst kan granska OSINT-kedjan från början till slut.' },
     ],
@@ -93,7 +93,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: 'Hvad er Riksdagsmonitor?', answer: 'Riksdagsmonitor er en open source-platform for politisk efterretning om Sveriges Rigsdag — overvåger afstemninger, motioner, lovforslag, udvalgsbetænkninger og regeringsbeslutninger på 14 sprog.' },
       { question: 'Hvor ofte opdateres sitemappet?', answer: 'Dette HTML-sitemap regenereres ved hver implementering (flere gange dagligt). Det maskinlæsbare XML-sitemap findes på /sitemap.xml og opdateres samme takt.' },
-      { question: 'Hvordan skifter jeg sprog?', answer: 'Brug sprogvælgeren i sidehovedet eller flaglinkene nederst i hver sektion. Hvert af de 14 understøttede sprog har sin egen dedicated sitemap page (e.g. sitemap_sv.html) med hreflang-annoteringer.' },
+      { question: 'Hvordan skifter jeg sprog?', answer: 'Brug sprogvælgeren i sidehovedet eller flaglinkene nederst i hver sektion. Hvert af de 14 understøttede sprog har sin egen sitemap (sitemap_sv.html etc.) med hreflang-annoteringer.' },
       { question: 'Hvor finder jeg XML-sitemappet?', answer: 'Det maskinlæsbare XML-sitemap er på /sitemap.xml, og crawler-instruktioner ligger i /robots.txt. Begge er linket fra sektionen "Yderligere ressourcer" ovenfor.' },
       { question: 'Kan artiklernes kilder kontrolleres?', answer: 'Ja. Hver artikel linker til de underliggende analyseartefakter på GitHub (analysis/daily/YYYY-MM-DD/stream/) så enhver læser kan revidere OSINT-kæden ende-til-ende.' },
     ],
@@ -117,7 +117,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: 'Hva er Riksdagsmonitor?', answer: 'Riksdagsmonitor er en åpen kildekode-plattform for politisk etterretning om Sveriges Riksdag — overvåker voteringer, forslag, proposisjoner, komitéinnstillinger og regjeringsvedtak på 14 språk.' },
       { question: 'Hvor ofte oppdateres nettstedskartet?', answer: 'Dette HTML-nettstedskartet regenereres ved hver utrulling (flere ganger per døgn). Den maskinlesbare XML-versjonen finnes på /sitemap.xml og oppdateres i samme takt.' },
-      { question: 'Hvordan bytter jeg språk?', answer: 'Bruk språkvelgeren i toppen eller flaggene nederst i hver seksjon. Hvert av de 14 støttede språkene har sin egen dedicated sitemap page (e.g. sitemap_sv.html) med hreflang-attributt.' },
+      { question: 'Hvordan bytter jeg språk?', answer: 'Bruk språkvelgeren i toppen eller flaggene nederst i hver seksjon. Hvert av de 14 støttede språkene har sin egen sitemap (sitemap_sv.html etc.) med hreflang-attributt.' },
       { question: 'Hvor finner jeg XML-nettstedskartet?', answer: 'Det maskinlesbare XML-nettstedskartet ligger på /sitemap.xml, og crawler-instruksjoner i /robots.txt. Begge er lenket fra "Ytterligere ressurser"-seksjonen ovenfor.' },
       { question: 'Kan artikkelkildene revideres?', answer: 'Ja. Hver artikkel lenker til de underliggende analyseartefaktene på GitHub (analysis/daily/YYYY-MM-DD/stream/) slik at enhver leser kan revidere OSINT-kjeden ende-til-ende.' },
     ],
@@ -141,7 +141,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: 'Mikä on Riksdagsmonitor?', answer: 'Riksdagsmonitor on avoimen lähdekoodin alusta Ruotsin valtiopäivien poliittiseen tiedusteluun — seuraa äänestyksiä, aloitteita, hallituksen esityksiä, valiokuntamietintöjä ja hallituksen päätöksiä 14 kielellä.' },
       { question: 'Kuinka usein sivukartta päivittyy?', answer: 'Tämä HTML-sivukartta uudelleengeneroidaan jokaisen julkaisun yhteydessä (useita kertoja päivässä). Koneluettava XML-versio löytyy osoitteesta /sitemap.xml.' },
-      { question: 'Kuinka vaihdan kieltä?', answer: 'Käytä otsikon kielenvalitsinta tai kunkin osion alalaidan lippulinkkejä. Jokaisella 14 tuetusta kielestä on oma dedicated sitemap page (e.g. sitemap_sv.html)-sivu hreflang-merkinnöin.' },
+      { question: 'Kuinka vaihdan kieltä?', answer: 'Käytä otsikon kielenvalitsinta tai kunkin osion alalaidan lippulinkkejä. Jokaisella 14 tuetusta kielestä on oma sitemap (sitemap_sv.html etc.)-sivu hreflang-merkinnöin.' },
       { question: 'Mistä löydän XML-sivukartan?', answer: 'Koneluettava XML-sivukartta on osoitteessa /sitemap.xml ja indeksointiohjeet osoitteessa /robots.txt. Molemmat on linkitetty yllä olevasta "Lisäresurssit"-osiosta.' },
       { question: 'Voiko artikkelien lähteet tarkistaa?', answer: 'Kyllä. Jokainen artikkeli linkittää taustalla oleviin analyysiartefakteihin GitHubissa (analysis/daily/YYYY-MM-DD/stream/), joten kuka tahansa lukija voi tarkistaa OSINT-ketjun.' },
     ],
@@ -165,7 +165,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: 'Was ist Riksdagsmonitor?', answer: 'Riksdagsmonitor ist eine Open-Source-Plattform für politische Aufklärung des schwedischen Reichstags — überwacht Abstimmungen, Anträge, Regierungsvorlagen, Ausschussberichte und Regierungsbeschlüsse in 14 Sprachen.' },
       { question: 'Wie oft wird die Sitemap aktualisiert?', answer: 'Diese HTML-Sitemap wird bei jedem Deployment neu generiert (mehrmals täglich). Die maschinenlesbare XML-Sitemap liegt unter /sitemap.xml und folgt demselben Rhythmus.' },
-      { question: 'Wie wechsle ich die Sprache?', answer: 'Nutzen Sie den Sprachwechsler im Header oder die Flaggen-Links am Ende jeder Sektion. Jede der 14 unterstützten Sprachen hat ihre eigene dedicated sitemap page (e.g. sitemap_sv.html) mit hreflang-Annotationen.' },
+      { question: 'Wie wechsle ich die Sprache?', answer: 'Nutzen Sie den Sprachwechsler im Header oder die Flaggen-Links am Ende jeder Sektion. Jede der 14 unterstützten Sprachen hat ihre eigene sitemap (sitemap_sv.html etc.) mit hreflang-Annotationen.' },
       { question: 'Wo finde ich die XML-Sitemap?', answer: 'Die maschinenlesbare XML-Sitemap finden Sie unter /sitemap.xml, Crawler-Anweisungen unter /robots.txt. Beide sind im Abschnitt "Weitere Ressourcen" verlinkt.' },
       { question: 'Sind die Artikelquellen prüfbar?', answer: 'Ja. Jeder Artikel verlinkt auf die zugrundeliegenden Analyse-Artefakte auf GitHub (analysis/daily/YYYY-MM-DD/stream/), sodass jeder Leser die OSINT-Kette nachvollziehen kann.' },
     ],
@@ -189,7 +189,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: 'Qu\'est-ce que Riksdagsmonitor ?', answer: 'Riksdagsmonitor est une plateforme open source de renseignement politique sur le Parlement suédois — surveille votes, motions, projets de loi, rapports de commission et décisions gouvernementales en 14 langues.' },
       { question: 'À quelle fréquence le plan du site est-il mis à jour ?', answer: 'Ce plan HTML est régénéré à chaque déploiement (plusieurs fois par jour). Le plan XML lisible par les machines est publié sur /sitemap.xml et suit le même rythme.' },
-      { question: 'Comment changer de langue ?', answer: 'Utilisez le sélecteur de langue dans l\'en-tête ou les liens drapeaux au bas de chaque section. Chacune des 14 langues prises en charge possède son propre dedicated sitemap page (e.g. sitemap_sv.html) avec annotations hreflang.' },
+      { question: 'Comment changer de langue ?', answer: 'Utilisez le sélecteur de langue dans l\'en-tête ou les liens drapeaux au bas de chaque section. Chacune des 14 langues prises en charge possède son propre sitemap (sitemap_sv.html etc.) avec annotations hreflang.' },
       { question: 'Où trouver le plan du site XML ?', answer: 'Le plan XML lisible par les machines est sur /sitemap.xml et les instructions de crawl sur /robots.txt. Les deux sont liés depuis la section "Ressources supplémentaires" ci-dessus.' },
       { question: 'Les sources des articles sont-elles vérifiables ?', answer: 'Oui. Chaque article renvoie aux artefacts d\'analyse sous-jacents sur GitHub (analysis/daily/YYYY-MM-DD/stream/), permettant à tout lecteur d\'auditer la chaîne OSINT de bout en bout.' },
     ],
@@ -213,7 +213,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: '¿Qué es Riksdagsmonitor?', answer: 'Riksdagsmonitor es una plataforma de código abierto de inteligencia política sobre el Parlamento sueco — monitoriza votaciones, mociones, propuestas, informes de comisión y decisiones gubernamentales en 14 idiomas.' },
       { question: '¿Con qué frecuencia se actualiza el mapa del sitio?', answer: 'Este mapa HTML se regenera en cada despliegue (varias veces al día). El mapa XML legible por máquinas se publica en /sitemap.xml con la misma cadencia.' },
-      { question: '¿Cómo cambio de idioma?', answer: 'Use el selector de idioma de la cabecera o los enlaces con bandera al pie de cada sección. Cada uno de los 14 idiomas soportados tiene su propio dedicated sitemap page (e.g. sitemap_sv.html) con anotaciones hreflang.' },
+      { question: '¿Cómo cambio de idioma?', answer: 'Use el selector de idioma de la cabecera o los enlaces con bandera al pie de cada sección. Cada uno de los 14 idiomas soportados tiene su propio sitemap (sitemap_sv.html etc.) con anotaciones hreflang.' },
       { question: '¿Dónde encuentro el mapa XML?', answer: 'El mapa XML legible por máquinas está en /sitemap.xml y las instrucciones de rastreo en /robots.txt. Ambos están enlazados desde la sección "Recursos adicionales" arriba.' },
       { question: '¿Son auditables las fuentes de los artículos?', answer: 'Sí. Cada artículo enlaza a los artefactos de análisis subyacentes en GitHub (analysis/daily/YYYY-MM-DD/stream/), permitiendo a cualquier lector auditar la cadena OSINT de extremo a extremo.' },
     ],
@@ -237,7 +237,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: 'Wat is Riksdagsmonitor?', answer: 'Riksdagsmonitor is een open source-platform voor politieke inlichtingen over het Zweedse parlement — monitort stemmingen, moties, voorstellen, commissieverslagen en regeringsbesluiten in 14 talen.' },
       { question: 'Hoe vaak wordt de sitemap bijgewerkt?', answer: 'Deze HTML-sitemap wordt bij elke deploy opnieuw gegenereerd (meerdere keren per dag). De machine-leesbare XML-versie staat op /sitemap.xml en volgt hetzelfde ritme.' },
-      { question: 'Hoe wissel ik van taal?', answer: 'Gebruik de taalkiezer in de header of de vlaglinks onderaan elke sectie. Elk van de 14 ondersteunde talen heeft zijn eigen dedicated sitemap page (e.g. sitemap_sv.html) met hreflang-annotaties.' },
+      { question: 'Hoe wissel ik van taal?', answer: 'Gebruik de taalkiezer in de header of de vlaglinks onderaan elke sectie. Elk van de 14 ondersteunde talen heeft zijn eigen sitemap (sitemap_sv.html etc.) met hreflang-annotaties.' },
       { question: 'Waar vind ik de XML-sitemap?', answer: 'De machine-leesbare XML-sitemap is te vinden op /sitemap.xml en crawler-instructies op /robots.txt. Beide zijn gelinkt vanuit de sectie "Aanvullende bronnen" hierboven.' },
       { question: 'Zijn de bronnen van artikelen controleerbaar?', answer: 'Ja. Elk artikel linkt naar de onderliggende analyse-artefacten op GitHub (analysis/daily/YYYY-MM-DD/stream/), zodat elke lezer de OSINT-keten kan controleren.' },
     ],
@@ -261,7 +261,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: 'ما هو Riksdagsmonitor؟', answer: 'Riksdagsmonitor منصة مفتوحة المصدر للاستخبارات السياسية حول البرلمان السويدي — ترصد التصويتات والاقتراحات والمشاريع وتقارير اللجان والقرارات الحكومية بـ14 لغة.' },
       { question: 'كم مرة يتم تحديث خريطة الموقع؟', answer: 'يتم إعادة إنشاء خريطة HTML هذه عند كل نشر (عدة مرات يوميًا). تُنشر النسخة XML القابلة للقراءة آليًا على /sitemap.xml بنفس الوتيرة.' },
-      { question: 'كيف أغير اللغة؟', answer: 'استخدم محدد اللغة في الرأس أو روابط الأعلام في أسفل كل قسم. كل من اللغات الـ14 المدعومة لها dedicated sitemap page (e.g. sitemap_sv.html) خاص بها مع تعليقات hreflang.' },
+      { question: 'كيف أغير اللغة؟', answer: 'استخدم محدد اللغة في الرأس أو روابط الأعلام في أسفل كل قسم. كل من اللغات الـ14 المدعومة لها sitemap (sitemap_sv.html etc.) خاص بها مع تعليقات hreflang.' },
       { question: 'أين أجد خريطة XML؟', answer: 'خريطة XML القابلة للقراءة آليًا على /sitemap.xml، وتعليمات الزواحف على /robots.txt. كلاهما مرتبط من قسم "الموارد الإضافية" أعلاه.' },
       { question: 'هل مصادر المقالات قابلة للتدقيق؟', answer: 'نعم. كل مقال يرتبط بمصنوعات التحليل الأساسية على GitHub (analysis/daily/YYYY-MM-DD/stream/) مما يسمح لأي قارئ بتدقيق سلسلة OSINT.' },
     ],
@@ -285,7 +285,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: 'מהו Riksdagsmonitor?', answer: 'Riksdagsmonitor היא פלטפורמת קוד פתוח למודיעין פוליטי על הפרלמנט השוודי — עוקבת אחר הצבעות, הצעות חוק, דוחות ועדה והחלטות ממשלה ב-14 שפות.' },
       { question: 'באיזו תדירות מתעדכנת מפת האתר?', answer: 'מפת ה-HTML הזו נוצרת מחדש בכל פריסה (מספר פעמים ביום). גרסת ה-XML הקריאה למכונה מתפרסמת ב-/sitemap.xml באותו קצב.' },
-      { question: 'כיצד אחליף שפה?', answer: 'השתמשו בבורר השפה בכותרת או בקישורי הדגלים בתחתית כל מקטע. לכל אחת מ-14 השפות הנתמכות יש dedicated sitemap page (e.g. sitemap_sv.html) משלה עם אנוטציות hreflang.' },
+      { question: 'כיצד אחליף שפה?', answer: 'השתמשו בבורר השפה בכותרת או בקישורי הדגלים בתחתית כל מקטע. לכל אחת מ-14 השפות הנתמכות יש sitemap (sitemap_sv.html etc.) משלה עם אנוטציות hreflang.' },
       { question: 'היכן אמצא את מפת XML?', answer: 'מפת ה-XML הקריאה למכונה נמצאת ב-/sitemap.xml, והוראות סורקים ב-/robots.txt. שניהם מקושרים מסעיף "משאבים נוספים" למעלה.' },
       { question: 'האם מקורות המאמרים ניתנים לאימות?', answer: 'כן. כל מאמר מקשר למוצרי הניתוח הבסיסיים ב-GitHub (analysis/daily/YYYY-MM-DD/stream/) כך שכל קורא יכול לבדוק את שרשרת OSINT.' },
     ],
@@ -309,7 +309,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: 'Riksdagsmonitorとは？', answer: 'Riksdagsmonitorはスウェーデン議会の政治インテリジェンス向けオープンソースプラットフォームです。投票、動議、法案、委員会報告、政府決定を14言語でリアルタイム監視します。' },
       { question: 'サイトマップはどのくらいの頻度で更新されますか？', answer: 'このHTMLサイトマップは各デプロイ時に再生成されます（1日に複数回）。機械可読のXML版は/sitemap.xmlで同じ頻度で公開されます。' },
-      { question: '言語の切り替え方は？', answer: 'ヘッダーの言語切替または各セクション下部の国旗リンクを使用してください。サポートされている14言語それぞれに、hreflang注釈付きのdedicated sitemap page (e.g. sitemap_sv.html)があります。' },
+      { question: '言語の切り替え方は？', answer: 'ヘッダーの言語切替または各セクション下部の国旗リンクを使用してください。サポートされている14言語それぞれに、hreflang注釈付きのsitemap (sitemap_sv.html etc.)があります。' },
       { question: 'XMLサイトマップはどこにありますか？', answer: '機械可読のXMLサイトマップは/sitemap.xmlにあり、クローラー指示は/robots.txtにあります。両方とも上の「追加リソース」セクションからリンクされています。' },
       { question: '記事の出典は監査可能ですか？', answer: 'はい。各記事はGitHub上の基となる分析アーティファクト（analysis/daily/YYYY-MM-DD/stream/）にリンクしており、誰でもOSINTチェーンを最初から最後まで監査できます。' },
     ],
@@ -333,7 +333,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: 'Riksdagsmonitor란?', answer: 'Riksdagsmonitor는 스웨덴 의회 정치 정보를 위한 오픈소스 플랫폼입니다. 투표, 발의안, 법안, 위원회 보고서, 정부 결정을 14개 언어로 실시간 모니터링합니다.' },
       { question: '사이트맵은 얼마나 자주 업데이트되나요?', answer: '이 HTML 사이트맵은 매 배포 시 재생성됩니다(하루에 여러 번). 기계 판독 가능한 XML 버전은 /sitemap.xml에서 동일한 주기로 게시됩니다.' },
-      { question: '언어를 어떻게 변경하나요?', answer: '헤더의 언어 선택기 또는 각 섹션 하단의 국기 링크를 사용하세요. 지원되는 14개 언어 각각에 hreflang 주석이 포함된 dedicated sitemap page (e.g. sitemap_sv.html)이 있습니다.' },
+      { question: '언어를 어떻게 변경하나요?', answer: '헤더의 언어 선택기 또는 각 섹션 하단의 국기 링크를 사용하세요. 지원되는 14개 언어 각각에 hreflang 주석이 포함된 sitemap (sitemap_sv.html etc.)이 있습니다.' },
       { question: 'XML 사이트맵은 어디에 있나요?', answer: '기계 판독 가능한 XML 사이트맵은 /sitemap.xml에 있고 크롤러 지침은 /robots.txt에 있습니다. 둘 다 위의 "추가 리소스" 섹션에서 연결되어 있습니다.' },
       { question: '기사의 출처는 감사 가능한가요?', answer: '예. 각 기사는 GitHub의 기본 분석 아티팩트(analysis/daily/YYYY-MM-DD/stream/)에 연결되어 있어 모든 독자가 OSINT 체인을 처음부터 끝까지 감사할 수 있습니다.' },
     ],
@@ -357,7 +357,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
     sitemap: [
       { question: '什么是 Riksdagsmonitor？', answer: 'Riksdagsmonitor 是一个面向瑞典议会政治情报的开源平台 — 以14种语言实时监控投票、动议、法案、委员会报告和政府决策。' },
       { question: '站点地图多久更新一次？', answer: '此 HTML 站点地图在每次部署时重新生成（每天多次）。机器可读的 XML 版本发布在 /sitemap.xml 上，遵循相同的节奏。' },
-      { question: '如何切换语言？', answer: '使用头部的语言选择器或每个部分底部的国旗链接。支持的14种语言中每一种都有自己的 dedicated sitemap page (e.g. sitemap_sv.html)，带有 hreflang 注释。' },
+      { question: '如何切换语言？', answer: '使用头部的语言选择器或每个部分底部的国旗链接。支持的14种语言中每一种都有自己的 sitemap (sitemap_sv.html etc.)，带有 hreflang 注释。' },
       { question: '在哪里可以找到 XML 站点地图？', answer: '机器可读的 XML 站点地图位于 /sitemap.xml，爬虫指令位于 /robots.txt。两者都从上方"附加资源"部分链接。' },
       { question: '文章来源可审计吗？', answer: '是的。每篇文章都链接到 GitHub 上的底层分析产物（analysis/daily/YYYY-MM-DD/stream/），使任何读者都能端到端审计 OSINT 链。' },
     ],
