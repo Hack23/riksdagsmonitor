@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "cycle": "monthly-review",
+  "date": "2026-05-03",
+  "subfolder": "monthly-review",
+  "generated_at": "2026-05-03T22:30:00Z",
+  "pirs": [
+    {
+      "id": "PIR-A",
+      "title": "Liberalerna Electoral Threshold Status",
+      "status": "open",
+      "priority": "critical",
+      "current_reading": "4.2%",
+      "threshold": "4.0%",
+      "margin": "0.2pp",
+      "last_updated": "2026-05-03",
+      "carry_forward": true,
+      "note": "No new poll data this cycle. L leadership statement on HD03265 detention provisions expected June 2026 (FI-13)."
+    },
+    {
+      "id": "PIR-B",
+      "title": "Police Reform Accountability (9 Riksrevisionen Recommendations)",
+      "status": "open",
+      "priority": "medium",
+      "outstanding_items": 9,
+      "ju_u_hearing_date": "unconfirmed",
+      "last_updated": "2026-05-03",
+      "carry_forward": true,
+      "note": "No JuU closure vote scheduled. Riksrevisionen 2026/27 audit plan due June 2026 — monitor for migration audit overlap."
+    },
+    {
+      "id": "PIR-C",
+      "title": "SD Congress Energy Platform Resolution",
+      "status": "partially_closed",
+      "priority": "medium",
+      "resolution": "SD adopted teknologineutral kärnenergisatsning + wind moratorium",
+      "residual_question": "Offshore wind moratorium incompatible with KD and EU 2030 renewable targets",
+      "last_updated": "2026-05-03",
+      "carry_forward": true,
+      "note": "Main question answered. Wind moratorium = post-election coalition-design problem."
+    },
+    {
+      "id": "PIR-D",
+      "title": "SD-KD Energy Coalition Fault-Line",
+      "status": "partially_closed",
+      "priority": "medium",
+      "resolution": "SD congress managed ambiguity; no immediate coalition rupture",
+      "residual_question": "Post-election coalition formation: SD wind moratorium vs KD diversification incompatible",
+      "last_updated": "2026-05-03",
+      "carry_forward": true,
+      "note": "Pre-election risk reduced. Post-election coalition design risk maintained."
+    },
+    {
+      "id": "PIR-E",
+      "title": "CRR3/CRD6 SIB Capital Adequacy",
+      "status": "open",
+      "priority": "medium",
+      "fi_remissvar_expected": "2026-06-30",
+      "affected_banks": ["Nordea", "SEB", "Handelsbanken", "Swedbank"],
+      "last_updated": "2026-05-03",
+      "carry_forward": true,
+      "note": "FI consultation response expected May-June. 18-month capital adjustment window still unquantified."
+    },
+    {
+      "id": "PIR-F",
+      "title": "ECHR Application Registry (Sweden, Post-HD03265)",
+      "status": "new",
+      "priority": "high",
+      "trigger": "New ECHR asylum applications citing Sweden within 60 days of HD03265 enactment",
+      "collection": "hudoc.echr.coe.int; UNHCR Sweden",
+      "last_updated": "2026-05-03",
+      "carry_forward": true,
+      "note": "New PIR opened this cycle. Directly triggers Scenario 2 (Legal Fracture) if Rule 39 issued."
+    },
+    {
+      "id": "PIR-G",
+      "title": "SfU/JuU Committee Scheduling for HD03262-HD03265",
+      "status": "new",
+      "priority": "high",
+      "trigger": "Confirmed hearing/betänkande dates published",
+      "collection": "riksdag.se/sv/kalender; get_calendar_events",
+      "last_updated": "2026-05-03",
+      "carry_forward": true,
+      "note": "New PIR opened this cycle. Pre-election passage or post-election determination is critical electoral intelligence."
+    }
+  ]
+}
