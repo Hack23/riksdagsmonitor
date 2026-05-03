@@ -22,6 +22,11 @@
  */
 
 export { preprocessMermaidFences } from './mermaid-preprocess.js';
+export {
+  CANONICAL_MERMAID_INIT,
+  ensureMermaidTheme,
+  hasMermaidTheme,
+} from './mermaid-canonical-theme.js';
 export { rehypeSlugWithPrefix } from './rehype-slug-prefixed.js';
 export { rehypeWrapTables } from './rehype-wrap-tables.js';
 export { HEADING_ID_PREFIX, sanitizeSchema } from './sanitize-schema.js';

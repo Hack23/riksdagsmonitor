@@ -17,6 +17,7 @@
  */
 
 import { escapeHtml } from '../../generate-sitemap-html.js';
+import { ensureMermaidTheme } from './mermaid-canonical-theme.js';
 
 /**
  * Swap ``` ```mermaid ``` fences for `<pre class="mermaid">` blocks
@@ -27,12 +28,25 @@ import { escapeHtml } from '../../generate-sitemap-html.js';
  * Diagram bodies are HTML-escaped so any literal `<` / `>` inside the
  * diagram source survives the rendered HTML without being mistaken for
  * tags by the rehype-raw stage.
+ *
+ * **Defence-in-depth themed-Mermaid contract** — if the diagram body
+ * does not already declare its own theme (no `%%{init …}%%`, no
+ * `themeVariables`, no `style …` / `classDef …` / `linkStyle …`
+ * directive), the renderer prepends the canonical Riksdagsmonitor
+ * `%%{init …}%%` prologue (see `mermaid-canonical-theme.ts`). This
+ * guarantees user-facing HTML never renders an unthemed diagram even
+ * if the AI agent or a template regression ships one — the
+ * complementary upstream gate (Check 5 of
+ * `.github/prompts/05-analysis-gate.md`) still fails CI on the
+ * artifact source so the regression surfaces, but readers never see
+ * the broken visual.
  */
 export function preprocessMermaidFences(markdownBody: string): string {
   return markdownBody.replace(
     /```mermaid\n([\s\S]*?)```/g,
     (_m, diagram: string) => {
-      const escaped = escapeHtml(diagram.trimEnd());
+      const themed = ensureMermaidTheme(diagram.trimEnd());
+      const escaped = escapeHtml(themed);
       return `\n<pre class="mermaid" data-mermaid-source="true">${escaped}</pre>\n`;
     },
   );
