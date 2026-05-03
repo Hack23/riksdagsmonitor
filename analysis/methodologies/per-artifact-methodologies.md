@@ -238,27 +238,28 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 
 ### media-framing-analysis
 
-> **v2.1 (2026-05-01) — no-neutral-media doctrine.** Replaces v2.0's source-ecology framing with a stricter Outlet Bias Audit and an explicit "no neutral outlet, no neutral algorithm, no neutral broadcaster" doctrine inherited from the template. Every cited outlet must appear in the bias-audit table; "neutral / impartial / balanced / objective" labels are rejected at Pass 2. Frame C is **establishment / centrist-consensus**; Frame D is **public-broadcaster proceduralist**. The platform's only neutrality is procedural (equal analytical depth across all 8 Riksdag parties; equal evidentiary discipline across all outlets; full ownership/funding/lean disclosure). The template at [`analysis/templates/media-framing-analysis.md`](../templates/media-framing-analysis.md) is the contract; this section gives the agent the "why" behind each block.
+> **v2.3 (2026-05-03) — preamble notices removed; analytics-first structure.** The three blockquote notices (Production contract / Founding doctrine / What to produce) have been removed from the template header. Their content is now embedded in the appropriate structural sections: production-mode info lives in the Framing Context metadata table (Salience tier + Save path rows); the no-neutral-media doctrine lives in the Tradecraft Context Admiralty Floor row; the non-negotiable minimum list lives in the Pass-2 Self-Audit Checklist. This makes every instance of the artifact a clean analytics product, not an instruction-manual printout. All v2.2 requirements (global audience orientation; multi-dimensional alignment; 5-axis outlet bias audit; regional notes) are unchanged.
 
 **Inputs**
 - **Riksdag MCP** — `search_anforanden` (named-MP framing language), `get_dokument` (motion / proposition language as the source frame), `search_dokument` (longitudinal frame record across cycles).
 - **Swedish public press** — DN, SvD, Aftonbladet, Expressen, SVT, SR, TV4, Dagens ETC, Kvartal, Nyheter Idag, Samhällsnytt, Riks, regional press sample.
-- **International quality press for frame lineage** — Reuters / AP / DPA / AFP / Politico EU / FT / NYT / Le Monde / Der Spiegel / Helsingin Sanomat / Aftenposten / Berlingske.
+- **International quality press for frame lineage** — Reuters / AP / DPA / AFP / Politico EU / FT / NYT / Le Monde / Der Spiegel / Helsingin Sanomat / Aftenposten / Berlingske / South China Morning Post / NHK World / Al Jazeera English.
 - **State-affiliated outlets (amplification fingerprinting only, never as factual source)** — RT, Sputnik, RIA, TASS, CGTN, Global Times, PressTV.
 - **Public CIB / influence-ops dossiers** — EUvsDisinfo case database, EU DisinfoLab reports (e.g. Doppelganger 2022), Meta CIB removal reports, NATO StratCom COE briefings, GLOBSEC Vulnerability Index, Reuters Institute Digital News Report, Freedom House Nations in Transit, SÄPO/MUST/FRA/EU-EEAS public statements.
 - **Ownership / funding registries** — Nordicom Media Ownership Database (gu.se), Allmänhetens Pressombudsman public registry.
 - **Sibling artifacts** — `synthesis-summary.md` (today's lead story), `voter-segmentation.md` (audiences), `intelligence-assessment.md` (Key Judgments to align frames against), `comparative-international.md` (jurisdictional cognates), `forward-indicators.md` (frame-shift triggers).
 
 **Analytic moves (in order)**
+0. **Global Audience Orientation** — produce the context block for international readers (Riksdag structure, coalition, election date, NATO/EU/SEK context) plus the 5-axis Multi-Dimensional Alignment Key. This block MUST appear before all frame analysis.
 1. **Frame package inventory** — name ≥ 3 frame packages (A government / B opposition / C establishment / centrist-consensus / D public-broadcaster proceduralist; add **Frame E** ONLY if a foreign-amplification signal is observed in window — otherwise document its absence explicitly).
 2. **Entman functions per frame** — problem definition, causal attribution, moral evaluation, treatment recommendation. Cite dated quote / `dok_id` / anförande for every cell.
 3. **Cognitive vulnerability map** — link each frame to ≥ 1 documented bias (Cialdini / Kahneman / Roozenbeek-van der Linden), with the inoculation lever.
 4. **DISARM TTP map** — match observed manipulation indicators to verbatim DISARM `T####` codes; the absence of signal is itself a documented finding (`No coordinated manipulation signal in window`).
 5. **Narrative-laundering chain** — fringe → alt-media → politician amplification → mainstream → international. Timestamp first-observed per node. Missing nodes are labelled, never invented.
-6. **Outlet Bias Audit / source ecology table** — every cited outlet listed with ownership group · funding mix percentages · board-appointment authority · documented editorial lean · Reuters Institute Trust score · PO/PON complaint history · foreign-actor link. **No bias audit row = no citation.** "Neutral / impartial / balanced / objective" labels rejected. Sources: Nordicom Media Ownership Database, Reuters Institute Digital News Report, Allmänhetens Pressombudsman/PO public registry, Förvaltningsstiftelsen (SVT/SR/UR boards), EUvsDisinfo, EU-EEAS / SÄPO.
+6. **Outlet Bias Audit / source ecology table** — every cited outlet listed with ownership group · funding mix percentages · board-appointment authority · **multi-dimensional editorial lean (5 axes: economic / social-identity / EU / security / media-ownership)** · Reuters Institute Trust score · PO/PON complaint history · foreign-actor link. **No bias audit row = no citation.** "Neutral / impartial / balanced / objective" labels rejected. Single left/right scores rejected. Sources: Nordicom Media Ownership Database, Reuters Institute Digital News Report, Allmänhetens Pressombudsman/PO public registry, Förvaltningsstiftelsen (SVT/SR/UR boards), EUvsDisinfo, EU-EEAS / SÄPO.
 7. **CIB ABCDE block** — Actor-Behaviour-Content-Degree-Effect (Camille François 2020) populated for any state-attribution claim. Observation ≠ attribution.
 8. **Algorithmic asymmetry table** — per-platform reach asymmetry; **every row declares the platform's optimisation target** (engagement / watch-time / retention / ad-yield) and cites a documented partisan/emotional asymmetry (Huszár et al. 2022 PNAS for X; Rathje et al. 2021 PNAS for Facebook outrage-amplification; TikTok DSA transparency report; Ribeiro et al. 2020 + Hosseinmardi et al. 2024 for YouTube; NATO StratCom COE 2023 for Telegram). **There is no neutral algorithm.**
-9. **Comparative-international frame lineage** — ≥ 2 cognates traced to prior jurisdictions (HU 2010 Fidesz binary, FR 2011 Camus replacement frame, US 2017 alt-right, RU 2014 firehose, PL 2015 PiS courts-vs-democracy, IT 2018 Lega/M5S, IL 2023 judicial-reform, MAGA 2016/2020/2024). "No international cognate" is suspicious for any major Swedish story and triggers re-do.
+9. **Comparative-international frame lineage with global notes** — ≥ 2 cognates traced to prior jurisdictions; PLUS regional notes for **Asia** (East + South/Southeast), **Americas** (North + South/Central), and **Europe** (EU + Nordic). "No international cognate" is suspicious for any major Swedish story and triggers re-do. Regional notes explain why the frame matters to readers from those regions.
 10. **Strategic-doctrine detection** — pattern-match against the public-doctrine catalogue (firehose-of-falsehood / doppelganger / gish gallop / reflexive control / active-measures spillover / interest-group capture / MAGA cognate populism). Detection ≠ attribution; ≥ MODERATE confidence floor for any 🟧/🟥 verdict.
 11. **Frame lifecycle / longevity** — phase (rising / peak / decay / sleeper / zombie), half-life in days, zombie probability, reactivation trigger. Use the xychart-beta horizon block (≥ 8 points: T-7d / T-3d / Today / T+3d / T+7d / T+14d / T+30d / T+90d).
 12. **RRPA impact conversion** — Reach × Resonance × Persistence × Action with ≥ 1 dated action indicator per frame (poll move, petition signatures, donation flows, demonstration permit) or `[no action signal yet]`.
@@ -273,6 +274,8 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 - Source-diversity floors: P2 (frame dominance) ≥ 2 outlets; P1 (laundering chain) ≥ 1 source per node; P0 (state-attribution) ≥ 3 ABCDE indicators.
 
 **Anti-patterns (auto-fail at Pass 2)**
+- **Global Audience Orientation section missing** — international readers require political-system context and multi-dimensional alignment key.
+- **Single left/right score for any outlet** without 5-axis qualification — rejected.
 - **Any "neutral / impartial / unbiased / balanced / objective" label applied to an outlet, algorithm, or broadcaster** without ≥ 1 documented-bias citation in the same paragraph.
 - Public-service broadcasters (SVT/SR/UR) cited without the licence-fee + politically-appointed-board + institutional-editorial-culture caveat.
 - Frame C labelled "neutral / analytical / institutional" instead of "establishment / centrist-consensus".
@@ -283,6 +286,7 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 - Any frame without Entman 4-function decomposition.
 - Any cognitive-vulnerability claim without primary-literature citation.
 - Comparative-international section with "no international cognate" for a major story — re-do required.
+- Comparative-international section with no regional notes (Asia / Americas / Europe) — add notes or explain why not applicable.
 - Frame-attribution to a foreign state without ≥ 3 ABCDE indicators and a published EUvsDisinfo / SÄPO / EU-EEAS reference — drop the claim.
 - Counter-resilience layer that imports partisan framing — procedural neutrality is non-negotiable; the platform reports the ladder, never executes it.
 - No longitudinal-record entry, so zombie frames cannot be detected next cycle.
