@@ -102,7 +102,37 @@ import {
   computeCitationDensity,
   scanStaleProvenance,
   countArticleEvidenceAnchors,
+  loadBannedPhrases,
+  resetBannedPhrasesCache,
 } from '../scripts/validate-article.js';
+
+describe('validate-article — loadBannedPhrases', () => {
+  afterEach(() => {
+    resetBannedPhrasesCache();
+  });
+
+  it('returns null for a non-existent directory', () => {
+    const result = loadBannedPhrases('/tmp/nonexistent-dir-test-12345');
+    expect(result).toBeNull();
+  });
+
+  it('returns valid phrases from the real JSON', () => {
+    const result = loadBannedPhrases();
+    expect(result).not.toBeNull();
+    expect(result!.length).toBeGreaterThan(0);
+    // Verify no empty strings
+    for (const p of result!) {
+      expect(p.trim().length).toBeGreaterThan(0);
+    }
+  });
+
+  it('returns de-duplicated phrases', () => {
+    const result = loadBannedPhrases();
+    expect(result).not.toBeNull();
+    const lowerSet = new Set(result!.map((p) => p.toLowerCase()));
+    expect(lowerSet.size).toBe(result!.length);
+  });
+});
 
 describe('validate-article — countArticleEvidenceAnchors', () => {
   it('counts dok_id and URL anchors', () => {
@@ -142,6 +172,14 @@ describe('validate-article — scanBannedPhrases', () => {
     const hits = scanBannedPhrases(text, banned);
     expect(hits.length).toBe(1);
     expect(hits[0]!.phrase).toBe('Obviously,');
+  });
+
+  it('skips empty and whitespace-only phrases without hanging', () => {
+    const text = 'Some article text here.';
+    // Should not hang or throw — empty strings are safely skipped
+    const hits = scanBannedPhrases(text, ['', '  ', 'article']);
+    expect(hits.length).toBe(1);
+    expect(hits[0]!.phrase).toBe('article');
   });
 });
 

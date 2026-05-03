@@ -289,8 +289,24 @@ export function loadBannedPhrases(repoRoot: string = REPO_ROOT): string[] | null
     return null;
   }
   try {
-    const data = JSON.parse(readFileSync(jsonPath, 'utf8')) as { allPhrases?: string[] };
-    _bannedPhrasesCache = data.allPhrases ?? [];
+    const data = JSON.parse(readFileSync(jsonPath, 'utf8')) as { allPhrases?: unknown };
+    if (!Array.isArray(data.allPhrases) || data.allPhrases.length === 0) {
+      _bannedPhrasesCache = null;
+    } else {
+      // Validate elements, filter to non-empty strings, de-duplicate
+      const seen = new Set<string>();
+      const phrases: string[] = [];
+      for (const item of data.allPhrases) {
+        if (typeof item !== 'string') continue;
+        const trimmed = item.trim();
+        if (trimmed.length === 0) continue;
+        const key = trimmed.toLowerCase();
+        if (seen.has(key)) continue;
+        seen.add(key);
+        phrases.push(trimmed);
+      }
+      _bannedPhrasesCache = phrases.length > 0 ? phrases : null;
+    }
   } catch {
     _bannedPhrasesCache = null;
   }
@@ -315,14 +331,16 @@ export function scanBannedPhrases(
   const hits: Array<{ phrase: string; context: string }> = [];
   const lower = text.toLowerCase();
   for (const phrase of bannedPhrases) {
-    const needle = phrase.toLowerCase();
+    const trimmed = phrase.trim();
+    if (trimmed.length === 0) continue; // skip empty/whitespace phrases
+    const needle = trimmed.toLowerCase();
     let idx = lower.indexOf(needle);
     while (idx !== -1) {
       const start = Math.max(0, idx - 20);
-      const end = Math.min(text.length, idx + phrase.length + 20);
+      const end = Math.min(text.length, idx + trimmed.length + 20);
       const context = text.slice(start, end).replace(/\n/g, ' ');
-      hits.push({ phrase, context });
-      idx = lower.indexOf(needle, idx + 1);
+      hits.push({ phrase: trimmed, context });
+      idx = lower.indexOf(needle, idx + needle.length);
     }
   }
   return hits;
@@ -644,7 +662,7 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
       code: 'low-citation-density',
       message: `Article has ${wordCount} words but zero verifiable evidence anchors. Add dok_id references, vote IDs, or primary-source URLs.`,
     });
-  } else if (wordCount > 200) {
+  } else if (anchors > 0) {
     const density = wordCount / anchors;
     // Load per-article-type threshold from reference-quality-thresholds.json
     let threshold = 200; // fallback default
