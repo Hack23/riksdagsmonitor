@@ -13,7 +13,7 @@ This directory holds the **bounded-context prompt modules** imported by every ne
 
 This directory is the **single source of truth** for how GitHub Agentic Workflows (gh-aw) produce news articles in this repo. Agents, skills, and copilot instructions MUST link back here rather than restate the rules.
 
-- **gh-aw runtime**: `gh-aw-actions/setup-cli@v0.69.3` (see any `news-*.lock.yml` for the pinned action).
+- **gh-aw runtime**: `github/gh-aw-actions/setup@v0.71.3` (SHA-pinned in every `news-*.lock.yml`; `setup-cli` variant used only by `agentics-maintenance.yml`).
 - **Upstream documentation** — link-out only, never copy content:
   - Abridged: <https://github.github.com/gh-aw/llms-small.txt>
   - Complete: <https://github.github.com/gh-aw/llms-full.txt>
@@ -130,7 +130,7 @@ The monolithic `.github/aw/SHARED_PROMPT_PATTERNS.md` was deleted when these mod
 
 - [`.github/agents/README.md`](../agents/README.md) — 24 agent files (14 persona + 9 workflow-specialist + 1 developer-instructions)
 - [`.github/skills/README.md`](../skills/README.md) — 91 skills by functional category
-- [`.github/workflows/README.md`](../workflows/README.md) — 43 workflow files (21 `.yml` + 11 `.md` + 11 `.lock.yml`)
+- [`.github/workflows/README.md`](../workflows/README.md) — 50 workflow files (22 standard `.yml` + 14 agentic `.md` sources + 14 compiled `.lock.yml`)
 - [`Article-Generation.md`](../../Article-Generation.md) — article-generation architecture, business value, UI/UX export, SEO, deployment and source index
 - [`analysis/README.md`](../../analysis/README.md) — on-disk artifact layout (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`)
 - [`analysis/methodologies/README.md`](../../analysis/methodologies/README.md) — 12 methodology modules (AI guide · 4 domain frameworks · 5 Family production methodologies · style guide · **OSINT / INTOP tradecraft standards** canon)

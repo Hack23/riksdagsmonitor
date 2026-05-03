@@ -125,7 +125,7 @@ This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-
 The full workflow contract is split into bounded-context prompt modules under [`.github/prompts/`](prompts/) — see [`.github/prompts/README.md`](prompts/README.md) for the module catalogue. Every agent, skill, and workflow author must treat that directory as the **single source of truth** for how news workflows run.
 
 - **Analysis product** (the "deep political analysis" that must precede every article): authored per [`analysis/methodologies/ai-driven-analysis-guide.md`](../analysis/methodologies/ai-driven-analysis-guide.md) using the templates in [`analysis/templates/`](../analysis/templates/).
-- **Hard rule**: every news workflow MUST produce all **9 core artifacts** (single-type) or **14 artifacts** (Tier-C aggregation) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` before any article sentence is written. [`.github/prompts/05-analysis-gate.md`](prompts/05-analysis-gate.md) is the single blocking gate.
+- **Hard rule**: every news workflow MUST produce all **23 always-on artifacts** (Family A Core Synthesis 9 + Family B Structural Metadata 2 + Family C Strategic Extensions 5 + Family D Electoral & Domain Lenses 7) plus Family E per-document `documents/{dok_id}-analysis.md`, in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`, before any article sentence is written. Tier-C aggregation workflows produce the **same 23 artifacts** with period-scope multipliers and cross-type sibling-folder citations — no extra files (see [`ext/tier-c-aggregation.md`](prompts/ext/tier-c-aggregation.md)). [`.github/prompts/05-analysis-gate.md`](prompts/05-analysis-gate.md) is the single blocking gate; see [`.github/prompts/04-analysis-pipeline.md`](prompts/04-analysis-pipeline.md) for the full artifact catalogue.
 - **AI-FIRST**: minimum 2 complete iterations (Pass 1 creates, Pass 2 reads back and improves) — see §"5. 🔴 AI FIRST Quality Principle" above.
 - **Upstream gh-aw documentation**: [abridged (llms-small.txt)](https://github.github.com/gh-aw/llms-small.txt) · [complete (llms-full.txt)](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [source repo](https://github.com/github/gh-aw) · [v0.71.3 release notes](https://github.com/github/gh-aw/releases/tag/v0.71.3) · [GitHub CLI manual](https://cli.github.com/manual/).
 
@@ -299,5 +299,5 @@ tsx scripts/imf-fetch.ts list-indicators
 
 ---
 
-**Last Updated**: 2026-05-02
-**Version**: 3.6 — removed `engine.mcp.session-timeout: 1h` from all agentic workflows (MCP Gateway v0.3.1 schema rejects this field); keepalive via `sandbox.mcp.keepalive-interval: 300`
+**Last Updated**: 2026-05-03
+**Version**: 3.7 — reconciled artifact count to 23 always-on artifacts (Family A 9 + B 2 + C 5 + D 7) across all workflows, including Tier-C; previous "9 core / 14 Tier-C" wording was stale. `engine.mcp.session-timeout: 1h` remains removed (MCP Gateway v0.3.1 schema rejects it); Timer C (~25–30 min safeoutputs idle) is back as an operative deadline alongside Timers A/B; keepalive via `sandbox.mcp.keepalive-interval: 300` (upstream MCPs only).
