@@ -115,12 +115,12 @@ describe('chrome-i18n — Political Intelligence CTA & ecosystem keys', () => {
       for (const key of NEW_CTA_KEYS) {
         const value = cs[key];
         expect(value, `${lang}.${key} should be a non-empty string`).toBeTypeOf('string');
-        expect(value.trim().length, `${lang}.${key} must not be empty`).toBeGreaterThan(0);
+        expect(value, `${lang}.${key} must not be empty`).toMatch(/\S/);
       }
     }
   });
 
-  it('translates non-English CTA/ecosystem values', () => {
+  it('translates non-English CTA/ecosystem values (differ from English)', () => {
     const en = chromeStrings('en');
     for (const lang of LANGUAGES.filter((l) => l !== 'en')) {
       const cs = chromeStrings(lang);
@@ -134,6 +134,7 @@ describe('chrome-i18n — Political Intelligence CTA & ecosystem keys', () => {
   });
 
   it('renders Political Intelligence CTA in header', () => {
+    const en = chromeStrings('en');
     const chrome = buildChrome({
       lang: 'en',
       title: 'T',
@@ -141,10 +142,11 @@ describe('chrome-i18n — Political Intelligence CTA & ecosystem keys', () => {
       canonicalPath: 'index.html',
     });
     expect(chrome.headerHtml).toContain('rm-header-cta-pi');
-    expect(chrome.headerHtml).toContain('Political Intelligence');
+    expect(chrome.headerHtml).toContain(en.politicalIntelligenceLabel);
   });
 
   it('renders EU Parliament Monitor link in footer', () => {
+    const en = chromeStrings('en');
     const chrome = buildChrome({
       lang: 'en',
       title: 'T',
@@ -152,21 +154,23 @@ describe('chrome-i18n — Political Intelligence CTA & ecosystem keys', () => {
       canonicalPath: 'index.html',
     });
     expect(chrome.footerHtml).toContain('euparliamentmonitor.com');
-    expect(chrome.footerHtml).toContain('EU Parliament Monitor');
+    expect(chrome.footerHtml).toContain(en.linkEuParliamentMonitor);
   });
 
   it('renders Hack23 Blog link in footer', () => {
+    const en = chromeStrings('en');
     const chrome = buildChrome({
       lang: 'en',
       title: 'T',
       description: 'd',
       canonicalPath: 'index.html',
     });
-    expect(chrome.footerHtml).toContain('hack23.com/blog.html');
-    expect(chrome.footerHtml).toContain('Hack23 Blog');
+    expect(chrome.footerHtml).toContain('www.hack23.com/blog.html');
+    expect(chrome.footerHtml).toContain(en.linkHack23Blog);
   });
 
   it('renders translated Political Intelligence CTA for Swedish', () => {
+    const sv = chromeStrings('sv');
     const chrome = buildChrome({
       lang: 'sv',
       title: 'T',
@@ -174,6 +178,6 @@ describe('chrome-i18n — Political Intelligence CTA & ecosystem keys', () => {
       canonicalPath: 'index_sv.html',
     });
     expect(chrome.headerHtml).toContain('rm-header-cta-pi');
-    expect(chrome.headerHtml).toContain('Politisk underrättelse');
+    expect(chrome.headerHtml).toContain(sv.politicalIntelligenceLabel);
   });
 });

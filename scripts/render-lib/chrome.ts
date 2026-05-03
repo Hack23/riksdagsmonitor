@@ -621,7 +621,7 @@ ${opts.breadcrumbHtml ?? ''}
             <li><a href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💖</span> ${escapeHtml(cs.linkSponsorHack23)}</a></li>
             <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkLinkedin)}</a></li>
             <li><a href="https://www.euparliamentmonitor.com" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkEuParliamentMonitor)}</a></li>
-            <li><a href="https://hack23.com/blog.html" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkHack23Blog)}</a></li>
+            <li><a href="https://www.hack23.com/blog.html" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkHack23Blog)}</a></li>
             <li><a href="https://github.com/Hack23" target="_blank" rel="noopener noreferrer">${escapeHtml(cs.linkHack23Org)}</a></li>
             <li><a href="mailto:info@hack23.com">${escapeHtml(cs.linkContactUs)}</a></li>
           </ul>
