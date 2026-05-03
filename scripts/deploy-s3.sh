@@ -17,7 +17,9 @@
 #   3. Cache-busting overrides for sw.js / manifests / styles.css run last.
 #
 # Existing objects already on S3 are assumed to have correct MIME types and
-# cache headers (fixed by the one-time fix-s3-mimetypes.sh run).
+# cache headers (fixed by the one-time fix-s3-mimetypes.sh run).  If this
+# assumption is ever invalidated, run: workflow_dispatch → fix_mimetypes=true
+# to re-apply correct metadata to all existing objects.
 #
 # Usage: scripts/deploy-s3.sh <source-dir> <s3-bucket-url>
 #   source-dir:    local directory containing the built site (e.g. "dist" or ".")
@@ -61,22 +63,29 @@ aws s3 sync "$SRC" "$BUCKET" \
   "${SKIP[@]}"
 
 # CSS files - long cache, immutable (hashed Vite bundles)
+# Excludes root styles.css which gets cache-busting override below.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' --include '*.css' \
+  --exclude 'styles.css' \
   --no-guess-mime-type --content-type 'text/css' \
   --cache-control 'public, max-age=31536000, immutable' \
   --size-only \
   "${SKIP[@]}"
 
 # JS/MJS files - long cache, immutable (hashed Vite bundles)
+# Excludes sw.js which gets cache-busting override below.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' --include '*.js' --include '*.mjs' \
+  --exclude 'sw.js' \
   --no-guess-mime-type --content-type 'application/javascript' \
   --cache-control 'public, max-age=31536000, immutable' \
   --size-only \
   "${SKIP[@]}"
 
 # Image files - long cache, immutable
+# AWS CLI correctly guesses common image types; we omit --no-guess-mime-type
+# here intentionally to let it auto-detect per-extension (webp, png, jpg, gif,
+# svg+xml, x-icon) since a single --content-type can't cover all formats.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' \
   --include '*.webp' --include '*.png' --include '*.jpg' --include '*.jpeg' \
@@ -86,6 +95,8 @@ aws s3 sync "$SRC" "$BUCKET" \
   "${SKIP[@]}"
 
 # Font files - long cache, immutable
+# AWS CLI correctly guesses woff/woff2/ttf/otf; eot may need explicit type
+# but is extremely rare in practice.  Letting CLI guess is acceptable.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' \
   --include '*.woff2' --include '*.woff' --include '*.ttf' \
@@ -95,13 +106,18 @@ aws s3 sync "$SRC" "$BUCKET" \
   "${SKIP[@]}"
 
 # Source maps + WebAssembly - long cache, immutable
+# AWS CLI correctly guesses application/wasm; .map files get application/json
+# via the CLI's built-in mimetypes database.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' --include '*.map' --include '*.wasm' \
   --cache-control 'public, max-age=31536000, immutable' \
   --size-only \
   "${SKIP[@]}"
 
-# Metadata files - medium cache (1 day): XML, JSON, TXT, CSV, PDF, MD, webmanifest
+# Metadata files - medium cache (1 day)
+# Multiple formats grouped by cache policy.  AWS CLI correctly guesses MIME
+# types for xml, json, txt, csv, pdf.  For .md and .webmanifest the CLI may
+# not guess perfectly but these are low-traffic auxiliary files.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' \
   --include '*.xml' --include '*.json' --include '*.txt' --include '*.csv' \
