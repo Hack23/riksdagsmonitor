@@ -41,6 +41,17 @@ import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd } fr
 
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
 
+/**
+ * CSS selectors identifying the voice-assistant TTS-readable regions of
+ * an article. Must match the class names in the article HTML template
+ * rendered at the bottom of `renderArticleHtml`.
+ */
+const ARTICLE_SPEAKABLE_SELECTORS: readonly string[] = [
+  '.rm-article-header h1',
+  '.rm-article-dek',
+  '.rm-article-body',
+];
+
 export interface RenderArticleInput {
   /** Aggregated markdown (front-matter + body) produced by aggregateAnalysis. */
   readonly markdown: string;
@@ -156,17 +167,19 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
   });
 
   // BreadcrumbList JSON-LD for hierarchical navigation
+  const breadcrumbName = title.length > 50 ? title.substring(0, 47) + '…' : title;
   const breadcrumbLd = buildBreadcrumbListLd([
     { name: langMeta.translations.home, item: `${BASE_URL}/` },
     { name: langMeta.translations.newsAnalysis, item: `${BASE_URL}/news/` },
-    { name: title.substring(0, 50) },
+    { name: breadcrumbName },
   ]);
 
-  // SpeakableSpecification — voice-assistant TTS regions
+  // SpeakableSpecification — voice-assistant TTS regions. Selectors must
+  // match the class names used in the article HTML template below.
   const speakableLd = buildSpeakableWebPageLd(
     articleUrl,
     langMeta.hreflang,
-    ['.rm-article-header h1', '.rm-article-dek', '.rm-article-body'],
+    ARTICLE_SPEAKABLE_SELECTORS,
   );
 
   const chrome = buildChrome({
