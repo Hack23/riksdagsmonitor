@@ -16,7 +16,7 @@
 
 ## 🌍 Global Audience Orientation
 
-> **For readers outside Sweden**: Sweden has a proportional-representation parliament (Riksdag, 349 seats) with an 8-party system and a 4 % electoral threshold. The current government — the **Tidöalliansen** — is a four-party centre-right and nationalist coalition (M+SD+KD+L), formed after the 2022 election. It governs with a razor-thin majority (176 seats, margin: ≤ 5). The next general election falls **13 September 2026** — 134 days from the date of this analysis. Three parties (L, MP, possibly C) hover near the 4 % threshold; their survival or elimination reshapes the post-election coalition space. Sweden is a founding EU member but retains the Swedish krona (SEK). It joined NATO in 2024. Sweden ranks 1st in the EU Press Freedom Index (RSF 2025) and has the EU's highest media-literacy score (Eurobarometer 2025), yet is not immune to frame contestation or influence operations.
+> **For readers outside Sweden**: Sweden has a proportional-representation parliament (Riksdag, 349 seats) with an 8-party system and a 4 % electoral threshold. The current government — the **Tidöalliansen** — is a four-party centre-right and nationalist coalition (M+SD+KD+L), formed after the 2022 election. It governs with a razor-thin majority (176 seats, margin: ≤ 5). The next general election falls **13 September 2026** — 134 days from the date of this analysis. Three parties (L, MP, possibly C) hover near the 4 % threshold; their survival or elimination reshapes the post-election coalition space. Sweden is a founding EU member but retains the Swedish krona (SEK). It joined NATO in 2024. Sweden ranks among the top EU countries in press-freedom surveys (RSF World Press Freedom Index 2025: https://rsf.org/en/index — see Sources) and scores highly on media literacy in EU surveys (European Commission *Media Literacy Index* — Eurobarometer; https://digital-strategy.ec.europa.eu/en/policies/media-literacy), yet is not immune to frame contestation or influence operations.
 
 **Multi-Dimensional Alignment Key** — Swedish outlets are not simply "left" or "right". Each outlet occupies positions across five independent axes:
 
@@ -365,6 +365,8 @@ flowchart LR
 ## 📎 Sources
 
 Public media coverage and public social-media posts only. No paywall bypass. No private-account social-media content. No leaked or hacked material. Representative sample across Swedish national, regional, and commentary outlets, plus international quality press for comparative frame lineage.
+
+**Global audience context sources**: RSF World Press Freedom Index 2025 (rsf.org/en/index); European Commission Media Literacy — Eurobarometer data (digital-strategy.ec.europa.eu/en/policies/media-literacy); Reuters Institute Digital News Report 2024 Sweden chapter (reutersinstitute.politics.ox.ac.uk/digital-news-report/2024).
 
 **Outlet bias data sources**: Nordicom Media Ownership Database (nordicom.gu.se) 2024; Reuters Institute Digital News Report 2024 (Sweden chapter, risj.ox.ac.uk); Allmänhetens Pressombudsman complaint registry (po.se); Förvaltningsstiftelsen för SVT, SR och UR annual report 2024 (forvaltningsstiftelsen.se); EUvsDisinfo case dossiers (euvsdisinfo.eu); SÄPO Årsredovisning 2023 (sakerhetspolisen.se).
 

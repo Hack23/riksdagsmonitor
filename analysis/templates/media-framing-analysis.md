@@ -2,7 +2,7 @@
   <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
 </p>
 
-<h1 align="center">📰 Media Framing & Influence-Operations Analysis</h1>
+<h1 align="center">📰 Media Framing & Influence-Operations Analysis Template</h1>
 
 <p align="center">
   <strong>📊 Narratives · Manipulation Vectors · Frame Lifecycles · Global Audience Orientation</strong><br>
@@ -63,7 +63,7 @@
 - **Americas (North)**: US MAGA frame as comparative prototype for right-populist frames; US tariff shock directly impacts Swedish manufacturing (Volvo, SSAB, Ericsson, SKF); Canadian immigration debate parallel
 - **Americas (South/Central)**: Sweden as Nordic-model reference for left-progressive parties; migration narrative contrasts with Latin American emigration framing
 - **Europe (EU)**: Migration policy critical to EU Pact on Migration and Asylum (EUAA 2024); ECHR compliance watched by Council of Europe; Nordic neighbours (DK, NO, FI) use Sweden as comparative baseline
-- **Middle East / Africa**: Swedish migration decisions directly affect asylum-seeker flows; ECHR compliance is stake-holder-relevant for source countries
+- **Middle East / Africa**: Swedish migration decisions directly affect asylum-seeker flows; ECHR compliance is stakeholder-relevant for source countries
 
 ---
 
