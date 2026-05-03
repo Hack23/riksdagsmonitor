@@ -37,7 +37,7 @@ import { BASE_URL } from './constants.js';
 import { buildGithubBlobUrl } from './url-helpers.js';
 import { renderMarkdownToHtml } from './markdown/index.js';
 import { buildChrome } from './chrome.js';
-import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd } from './jsonld.js';
+import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BREADCRUMB_TITLE_MAX_LENGTH, BREADCRUMB_ELLIPSIS_OVERHEAD } from './jsonld.js';
 
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
 
@@ -167,7 +167,9 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
   });
 
   // BreadcrumbList JSON-LD for hierarchical navigation
-  const breadcrumbName = title.length > 50 ? title.substring(0, 47) + '…' : title;
+  const breadcrumbName = title.length > BREADCRUMB_TITLE_MAX_LENGTH
+    ? title.substring(0, BREADCRUMB_TITLE_MAX_LENGTH - BREADCRUMB_ELLIPSIS_OVERHEAD) + '…'
+    : title;
   const breadcrumbLd = buildBreadcrumbListLd([
     { name: langMeta.translations.home, item: `${BASE_URL}/` },
     { name: langMeta.translations.newsAnalysis, item: `${BASE_URL}/news/` },

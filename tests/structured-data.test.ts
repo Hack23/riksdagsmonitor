@@ -19,7 +19,31 @@ import {
   buildSpeakableWebPageLd,
   renderArticleHtml,
   BASE_URL,
+  BREADCRUMB_TITLE_MAX_LENGTH,
+  BREADCRUMB_ELLIPSIS_OVERHEAD,
 } from '../scripts/render-lib/index.js';
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+
+/** Extract all JSON-LD objects from rendered HTML. */
+function extractJsonLdBlocks(html: string): unknown[] {
+  const re = /<script type="application\/ld\+json">([^<]+)<\/script>/g;
+  const blocks: unknown[] = [];
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(html)) !== null) {
+    blocks.push(JSON.parse(m[1]));
+  }
+  return blocks;
+}
+
+/** Find first JSON-LD block of a given `@type`. */
+function findLdBlock<T = Record<string, unknown>>(html: string, type: string): T | undefined {
+  return extractJsonLdBlocks(html).find(
+    (b) => (b as Record<string, unknown>)['@type'] === type,
+  ) as T | undefined;
+}
 
 // ---------------------------------------------------------------------------
 // JSON-LD builder unit tests
@@ -74,6 +98,10 @@ describe('jsonld — buildBreadcrumbListLd', () => {
       ]),
     ).toThrow(/position 1 must have an `item` URL/);
   });
+
+  it('throws when entries array is empty', () => {
+    expect(() => buildBreadcrumbListLd([])).toThrow(/at least one entry/);
+  });
 });
 
 describe('jsonld — buildNewsArticleLd', () => {
@@ -112,6 +140,10 @@ describe('jsonld — buildNewsArticleLd', () => {
     expect(ld.isBasedOn).toHaveLength(1);
     expect(ld.isBasedOn![0]['@type']).toBe('CreativeWork');
     expect(ld.isBasedOn![0].name).toBe('exec.md');
+
+    // isPartOf uses @id for graph consistency with WebPage node
+    expect(ld.isPartOf['@id']).toBe(`${BASE_URL}/#website`);
+    expect(ld.isPartOf.name).toBe('Riksdagsmonitor');
   });
 
   it('omits isBasedOn when no artifacts are provided', () => {
@@ -148,6 +180,23 @@ describe('jsonld — buildSpeakableWebPageLd', () => {
       '@id': `${BASE_URL}/#website`,
     });
   });
+
+  it('throws when cssSelectors is empty', () => {
+    expect(() => buildSpeakableWebPageLd(`${BASE_URL}/news/t.html`, 'en', [])).toThrow(
+      /at least one non-empty CSS selector/,
+    );
+  });
+
+  it('throws when all selectors are blank', () => {
+    expect(() => buildSpeakableWebPageLd(`${BASE_URL}/news/t.html`, 'en', ['', '  '])).toThrow(
+      /at least one non-empty CSS selector/,
+    );
+  });
+
+  it('filters out blank selectors while keeping valid ones', () => {
+    const ld = buildSpeakableWebPageLd(`${BASE_URL}/news/t.html`, 'en', ['.valid', '', '  ', '.also-valid']);
+    expect(ld.speakable.cssSelector).toEqual(['.valid', '.also-valid']);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -175,9 +224,14 @@ describe('structured-data — renderArticleHtml integration', () => {
       subfolderRepoRelPath: 'analysis/daily/2099-01-01/propositions',
       artifactsUsed: ['executive-brief.md'],
     });
-    expect(html).toContain('"@type":"NewsArticle"');
-    expect(html).toContain('"headline":"Test Propositions Article"');
-    expect(html).toContain('"isBasedOn"');
+    const ld = findLdBlock<Record<string, unknown>>(html, 'NewsArticle');
+    expect(ld).toBeDefined();
+    expect(ld!.headline).toBe('Test Propositions Article');
+    expect(ld!.isBasedOn).toBeDefined();
+    expect((ld!.isBasedOn as unknown[]).length).toBeGreaterThan(0);
+    // WebSite node uses @id for graph consistency
+    const site = ld!.isPartOf as Record<string, unknown>;
+    expect(site['@id']).toBe(`${BASE_URL}/#website`);
   });
 
   it('emits BreadcrumbList JSON-LD', async () => {
@@ -188,11 +242,16 @@ describe('structured-data — renderArticleHtml integration', () => {
       subfolderRepoRelPath: 'analysis/daily/2099-01-01/propositions',
       artifactsUsed: [],
     });
-    expect(html).toContain('"@type":"BreadcrumbList"');
-    expect(html).toContain('"@type":"ListItem"');
-    expect(html).toContain('"position":1');
-    expect(html).toContain('"position":2');
-    expect(html).toContain('"position":3');
+    const ld = findLdBlock<Record<string, unknown>>(html, 'BreadcrumbList');
+    expect(ld).toBeDefined();
+    const items = ld!.itemListElement as { position: number; name: string; item?: string }[];
+    expect(items).toHaveLength(3);
+    expect(items[0].position).toBe(1);
+    expect(items[0].item).toBeDefined();
+    expect(items[1].position).toBe(2);
+    expect(items[1].item).toBeDefined();
+    expect(items[2].position).toBe(3);
+    expect(items[2]).not.toHaveProperty('item');
   });
 
   it('emits SpeakableSpecification JSON-LD via WebPage', async () => {
@@ -203,10 +262,14 @@ describe('structured-data — renderArticleHtml integration', () => {
       subfolderRepoRelPath: 'analysis/daily/2099-01-01/propositions',
       artifactsUsed: [],
     });
-    expect(html).toContain('"@type":"WebPage"');
-    expect(html).toContain('"@type":"SpeakableSpecification"');
-    expect(html).toContain('.rm-article-header h1');
-    expect(html).toContain('.rm-article-dek');
+    const ld = findLdBlock<Record<string, unknown>>(html, 'WebPage');
+    expect(ld).toBeDefined();
+    const speakable = ld!.speakable as Record<string, unknown>;
+    expect(speakable['@type']).toBe('SpeakableSpecification');
+    const selectors = speakable.cssSelector as string[];
+    expect(selectors.length).toBeGreaterThan(0);
+    expect(selectors).toContain('.rm-article-header h1');
+    expect(selectors).toContain('.rm-article-dek');
   });
 
   it('emits correct hreflang set including x-default', async () => {
@@ -274,7 +337,7 @@ describe('structured-data — renderArticleHtml integration', () => {
     expect(html).toContain('<html lang="nb"');
   });
 
-  it('truncates BreadcrumbList title with ellipsis when longer than 50 characters', async () => {
+  it('truncates BreadcrumbList title with ellipsis when longer than limit', async () => {
     const longTitle = 'A Very Long Article Title That Exceeds Fifty Characters Limit Easily';
     const longMd = [
       '---',
@@ -294,15 +357,12 @@ describe('structured-data — renderArticleHtml integration', () => {
       subfolderRepoRelPath: 'analysis/daily/2099-01-01/long',
       artifactsUsed: [],
     });
-    // The breadcrumb should truncate at 47 chars + ellipsis
-    const truncated = longTitle.substring(0, 47) + '…';
-    expect(html).toContain(truncated);
-    // Full title should NOT appear in the BreadcrumbList JSON-LD position-3 name
-    // (but it DOES appear in the headline of the NewsArticle block and <h1>)
-    const jsonLdBlocks = html.match(/<script type="application\/ld\+json">[^<]+<\/script>/g) ?? [];
-    const breadcrumbBlock = jsonLdBlocks.find((b) => b.includes('"BreadcrumbList"'));
-    expect(breadcrumbBlock).toBeDefined();
-    expect(breadcrumbBlock).toContain(truncated);
-    expect(breadcrumbBlock).not.toContain(longTitle);
+    const truncated = longTitle.substring(0, BREADCRUMB_TITLE_MAX_LENGTH - BREADCRUMB_ELLIPSIS_OVERHEAD) + '…';
+    const ld = findLdBlock<Record<string, unknown>>(html, 'BreadcrumbList');
+    expect(ld).toBeDefined();
+    const items = ld!.itemListElement as { name: string }[];
+    const lastItem = items[items.length - 1];
+    expect(lastItem.name).toBe(truncated);
+    expect(lastItem.name).not.toBe(longTitle);
   });
 });

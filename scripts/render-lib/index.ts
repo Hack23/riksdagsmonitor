@@ -82,7 +82,7 @@ export { renderChromeHead, buildChrome } from './chrome.js';
 export type { ChromeOptions, SiteChrome, BreadcrumbItem } from './chrome.js';
 
 // --- JSON-LD builders -------------------------------------------------------
-export { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd } from './jsonld.js';
+export { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BREADCRUMB_TITLE_MAX_LENGTH, BREADCRUMB_ELLIPSIS_OVERHEAD } from './jsonld.js';
 export type { BreadcrumbEntry, BreadcrumbEntryWithItem, BreadcrumbEntryCurrentPage, NewsArticleLdInput, BreadcrumbListLd, NewsArticleLd, SpeakableWebPageLd, JsonLdListItem } from './jsonld.js';
 
 // --- Article (orchestrator) -------------------------------------------------

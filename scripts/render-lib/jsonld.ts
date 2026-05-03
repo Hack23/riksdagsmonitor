@@ -82,7 +82,7 @@ export interface NewsArticleLd {
   readonly author: { readonly '@type': 'Organization'; readonly name: string; readonly url: string };
   readonly publisher: { readonly '@type': 'Organization'; readonly name: string; readonly url: string; readonly logo: { readonly '@type': 'ImageObject'; readonly url: string } };
   readonly isAccessibleForFree: true;
-  readonly isPartOf: { readonly '@type': 'WebSite'; readonly name: string; readonly url: string };
+  readonly isPartOf: { readonly '@type': 'WebSite'; readonly '@id': string; readonly name: string; readonly url: string };
   readonly isBasedOn?: readonly { readonly '@type': 'CreativeWork'; readonly url: string; readonly name: string }[];
 }
 
@@ -96,6 +96,16 @@ export interface SpeakableWebPageLd {
 }
 
 // ---------------------------------------------------------------------------
+// Constants
+// ---------------------------------------------------------------------------
+
+/** Maximum display length for a breadcrumb label before truncation. */
+export const BREADCRUMB_TITLE_MAX_LENGTH = 50;
+
+/** Characters reserved for the trailing ellipsis when truncating a breadcrumb. */
+export const BREADCRUMB_ELLIPSIS_OVERHEAD = 3;
+
+// ---------------------------------------------------------------------------
 // Builders
 // ---------------------------------------------------------------------------
 
@@ -106,8 +116,13 @@ export interface SpeakableWebPageLd {
  * `item` URL. The final entry represents the current page and omits
  * `item` (Google tolerates this). A runtime assertion enforces this
  * contract so malformed breadcrumbs are caught early.
+ *
+ * @throws {Error} if `entries` is empty or an intermediate entry is missing `item`.
  */
 export function buildBreadcrumbListLd(entries: readonly BreadcrumbEntry[]): BreadcrumbListLd {
+  if (entries.length === 0) {
+    throw new Error('BreadcrumbList requires at least one entry.');
+  }
   // Validate: all entries except the last must have `item`
   for (let i = 0; i < entries.length - 1; i++) {
     if (!('item' in entries[i]) || !(entries[i] as BreadcrumbEntryWithItem).item) {
@@ -158,7 +173,7 @@ export function buildNewsArticleLd(input: NewsArticleLdInput): NewsArticleLd {
       logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/logo.png` },
     },
     isAccessibleForFree: true,
-    isPartOf: { '@type': 'WebSite', name: 'Riksdagsmonitor', url: BASE_URL },
+    isPartOf: { '@type': 'WebSite', '@id': `${BASE_URL}/#website`, name: 'Riksdagsmonitor', url: BASE_URL },
     ...(input.isBasedOn && input.isBasedOn.length > 0
       ? {
           isBasedOn: input.isBasedOn.map((a) => ({
@@ -178,12 +193,18 @@ export function buildNewsArticleLd(input: NewsArticleLdInput): NewsArticleLd {
  *
  * CSS selectors identify the TTS-readable regions of the page for
  * voice-assistant surfacing (Google Assistant / Actions for News).
+ *
+ * @throws {Error} if `cssSelectors` is empty or contains blank entries.
  */
 export function buildSpeakableWebPageLd(
   url: string,
   inLanguage: string,
   cssSelectors: readonly string[],
 ): SpeakableWebPageLd {
+  const valid = cssSelectors.filter((s) => s.trim().length > 0);
+  if (valid.length === 0) {
+    throw new Error('SpeakableSpecification requires at least one non-empty CSS selector.');
+  }
   return {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -191,7 +212,7 @@ export function buildSpeakableWebPageLd(
     inLanguage,
     speakable: {
       '@type': 'SpeakableSpecification',
-      cssSelector: [...cssSelectors],
+      cssSelector: [...valid],
     },
     isPartOf: { '@type': 'WebSite', '@id': `${BASE_URL}/#website` },
   };
