@@ -24,25 +24,27 @@ describe('validate-article — countBlufEvidenceAnchors', () => {
     // Riksdag committee reports include lowercase letters in the suffix
     // (e.g. `HC01SoU29`). The validator is case-insensitive after the
     // leading `H`.
-    expect(countBlufEvidenceAnchors('Approved HC01SoU29 yesterday.')).toBeGreaterThanOrEqual(1);
+    expect(countBlufEvidenceAnchors('Approved HC01SoU29 yesterday.')).toBe(1);
   });
 
   it('counts parliamentary doc references', () => {
     expect(
       countBlufEvidenceAnchors('Skr. 2025/26:259 introduces the plan.'),
-    ).toBeGreaterThanOrEqual(1);
+    ).toBe(1);
   });
 
   it('counts Riksrevisionen audit references', () => {
     expect(
       countBlufEvidenceAnchors('Audit RiR 2025:30 documents the gap.'),
-    ).toBeGreaterThanOrEqual(1);
+    ).toBe(1);
   });
 
   it('counts primary-source URLs', () => {
     expect(
       countBlufEvidenceAnchors('See https://data.riksdagen.se/dokument/HD12345.html'),
     ).toBeGreaterThanOrEqual(1);
+    // Note: URL also embeds `HD12345`, so total ≥ 1; we assert the URL
+    // family contributes at least once via a stand-alone case below.
   });
 
   it('returns zero for narrative prose without anchors', () => {
@@ -58,6 +60,6 @@ describe('validate-article — countBlufEvidenceAnchors', () => {
       'HD03259 (Skr. 2025/26:259) referenced by RiR 2025:30 and ' +
       'https://regeringen.se/proposition/2025/26/259';
     // dok_id (1) + Skr. ref (1) + RiR (1) + URL (1) = 4
-    expect(countBlufEvidenceAnchors(bluf)).toBeGreaterThanOrEqual(4);
+    expect(countBlufEvidenceAnchors(bluf)).toBe(4);
   });
 });
