@@ -128,12 +128,24 @@ const MIN_BLUF_EVIDENCE_ANCHORS = 1;
  * aggregated article. Catches the same family of repeated blocks the
  * cleaning pipeline guards against in {@link
  * scripts/render-lib/aggregator/cleaning/structural.ts}.
+ *
+ * Each pattern anchors to the start of a line (`^`) and matches the
+ * **full line** content so that two distinct footer lines like
+ * `**ISMS classification**: PUBLIC, no PII.` and
+ * `**ISMS classification**: INTERNAL, restricted.` produce different
+ * match strings and are therefore NOT flagged as duplicates. Only
+ * truly identical footer lines (same text) are counted.
+ *
+ * Patterns are case-insensitive to catch `**isms …**` emitted by
+ * some AI templates.
  */
 const FOOTER_MARKER_PATTERNS: ReadonlyArray<{ pattern: RegExp; label: string }> = [
-  { pattern: /\*\*ISMS\b[^*\n]*\*\*/g, label: '**ISMS …**' },
-  { pattern: /\*\*Classified under\b[^*\n]*\*\*/g, label: '**Classified under …**' },
-  { pattern: /\*\*Hack23 ISMS\b[^*\n]*\*\*/g, label: '**Hack23 ISMS …**' },
-  { pattern: /\*\*Article-Generation contract\b[^*\n]*\*\*/g, label: '**Article-Generation contract …**' },
+  { pattern: /^[^\S\n]*\*\*ISMS\b[^\n]*/gim, label: '**ISMS …**' },
+  { pattern: /^[^\S\n]*\*\*Classified under\b[^\n]*/gim, label: '**Classified under …**' },
+  { pattern: /^[^\S\n]*\*\*Hack23 ISMS\b[^\n]*/gim, label: '**Hack23 ISMS …**' },
+  { pattern: /^[^\S\n]*\*\*Article-Generation contract\b[^\n]*/gim, label: '**Article-Generation contract …**' },
+  { pattern: /^[^\S\n]*\*\*Provenance\b[^\n]*/gim, label: '**Provenance …**' },
+  { pattern: /^[^\S\n]*\*\*GDPR\b[^\n]*/gim, label: '**GDPR …**' },
 ];
 
 async function walk(dir: string, name: string): Promise<string[]> {
@@ -220,17 +232,31 @@ function extractPerDocumentSections(article: string): Array<{ id: string; body: 
  */
 export function countBlufEvidenceAnchors(bluf: string): number {
   const patterns: RegExp[] = [
-    // dok_id-shaped codes (case-insensitive — committee reports like
-    // `HC01SoU29` mix case).
-    /\b(?:H[A-Za-z0-9]{6,10}|[A-ZÅÄÖ]{1,4}\d{4,8})\b/g,
+    // Riksdag dok_ids and committee betänkande codes — merged into one
+    // alternation so the engine counts each token exactly once:
+    //
+    //   Branch 1 (H-series): `H` + lookahead requiring ≥1 digit + 6–10
+    //   alphanumeric chars. Matches `HD03259`, `HC01SoU29`, `HD024100`.
+    //   The lookahead prevents ordinary words like "Hardened" (no digits)
+    //   or "Helsinki" (no digits) from matching.
+    //
+    //   Branch 2 (committee codes): two uppercase Riksdag-alphabet letters
+    //   + 1–8 digits. Matches `KU23`, `AU10`, `TU5`. Does NOT re-match
+    //   H-series tokens — the regex engine tries branch 1 first at any H;
+    //   if branch 1 succeeds (e.g. `HD03259`) it consumes the whole token
+    //   before the `g` flag advances, so branch 2 is never attempted there.
+    /\b(?:H(?=[A-Za-z0-9]*[0-9])[A-Za-z0-9]{6,10}|[A-ZÅÄÖ]{2}\d{1,8})\b/g,
     // Parliamentary doc references.
     /\b(?:Prop|Skr|Mot|Bet|Ds|SOU|Dir)\.\s*\d{4}\/\d{2}:\d+/gi,
     // Riksrevisionen audit references — "RiR 2025:30".
     /\bRiR\s+\d{4}:\d+/gi,
     // Vote IDs.
     /\bvotering(?:_id)?\b[^\n]*?\d/gi,
-    // Primary-source URLs.
-    /https?:\/\/(?:[^\s)]*\.)?(?:data\.riksdagen\.se|riksdagen\.se|regeringen\.se|scb\.se|imf\.org)\b[^\s)]*/gi,
+    // Primary-source URLs (matches the full URL token so that each URL
+    // contributes exactly one anchor regardless of any embedded dok_id in
+    // the path segment — dok_id double-counting is acceptable because the
+    // URL is independently verifiable).
+    /https?:\/\/(?:www\.)?(?:data\.riksdagen\.se|riksdagen\.se|regeringen\.se|scb\.se|imf\.org)[^\s)]*/gi,
     // Markdown anchors to per-document / aggregator sections.
     /#rm-[a-z0-9-]+/g,
   ];

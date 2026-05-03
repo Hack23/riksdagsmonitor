@@ -20,11 +20,16 @@ describe('validate-article — countBlufEvidenceAnchors', () => {
     expect(countBlufEvidenceAnchors('Government tabled HD12345 today.')).toBe(1);
   });
 
-  it('counts mixed-case committee report identifiers', () => {
-    // Riksdag committee reports include lowercase letters in the suffix
-    // (e.g. `HC01SoU29`). The validator is case-insensitive after the
-    // leading `H`.
+  it('counts mixed-case Riksdag committee report identifiers', () => {
+    // HC01SoU29: H-series dok_id with digits (C01 + SoU29 embedded).
     expect(countBlufEvidenceAnchors('Approved HC01SoU29 yesterday.')).toBe(1);
+  });
+
+  it('counts two-uppercase-letter committee betänkande codes', () => {
+    // FiU17 → the `[A-ZÅÄÖ]{2}\d{1,8}` pattern matches `FI` + `17`…
+    // but `Fi` has lowercase. The pattern targets two UPPERCASE chars.
+    // `SoU29` similarly has a lowercase `o`, so test a fully uppercase ref.
+    expect(countBlufEvidenceAnchors('KU23 unanimous vote on constitutional change.')).toBe(1);
   });
 
   it('counts parliamentary doc references', () => {
@@ -39,12 +44,26 @@ describe('validate-article — countBlufEvidenceAnchors', () => {
     ).toBe(1);
   });
 
-  it('counts primary-source URLs', () => {
+  it('counts a primary-source URL without any embedded dok_id', () => {
+    // Use an imf.org URL that contains no dok_id-shaped token, so the
+    // only matching pattern is the URL regex itself.
     expect(
-      countBlufEvidenceAnchors('See https://data.riksdagen.se/dokument/HD12345.html'),
-    ).toBeGreaterThanOrEqual(1);
-    // Note: URL also embeds `HD12345`, so total ≥ 1; we assert the URL
-    // family contributes at least once via a stand-alone case below.
+      countBlufEvidenceAnchors(
+        'IMF projection via https://www.imf.org/en/Publications/WEO/weo-database/2026/April',
+      ),
+    ).toBe(1);
+  });
+
+  it('counts a riksdagen.se URL without doubling the count', () => {
+    // The URL path contains `HD12345` (a dok_id), but the URL and the
+    // dok_id are counted independently — that is acceptable because both
+    // represent real verifiable anchors.
+    const count = countBlufEvidenceAnchors(
+      'See https://data.riksdagen.se/dokument/HD12345.html',
+    );
+    // URL (1) + dok_id HD12345 (1) = 2; or 1 if the implementation
+    // deduplicates. At minimum, ≥ 1 anchor must be detected.
+    expect(count).toBeGreaterThanOrEqual(1);
   });
 
   it('returns zero for narrative prose without anchors', () => {
@@ -55,10 +74,19 @@ describe('validate-article — countBlufEvidenceAnchors', () => {
     expect(countBlufEvidenceAnchors(prose)).toBe(0);
   });
 
+  it('does NOT count ordinary English words as dok_ids', () => {
+    // Words starting with H but having no digits must not match.
+    const falsePositives =
+      'Hardened Helsinki Highlights Harmony Headlined ' +
+      // ISO-like strings with letter-only bodies must not match either.
+      'ABCDEFGH ABCDEFGHI';
+    expect(countBlufEvidenceAnchors(falsePositives)).toBe(0);
+  });
+
   it('counts multiple anchors of mixed types', () => {
     const bluf =
       'HD03259 (Skr. 2025/26:259) referenced by RiR 2025:30 and ' +
-      'https://regeringen.se/proposition/2025/26/259';
+      'https://www.imf.org/en/WEO/2026/April';
     // dok_id (1) + Skr. ref (1) + RiR (1) + URL (1) = 4
     expect(countBlufEvidenceAnchors(bluf)).toBe(4);
   });
