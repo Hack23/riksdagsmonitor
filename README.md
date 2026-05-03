@@ -20,7 +20,7 @@
     <td>
       <p><strong>🕵️ Political intelligence · 🔍 Democratic transparency · 🤖 AI-generated news · 📊 50+ years of evidence</strong></p>
       <p>Riksdagsmonitor monitors Sweden's Riksdag (Parliament), the Government (Regeringskansliet) and public agencies (Myndigheter) with structured intelligence techniques — ACH, SWOT, PESTLE, STRIDE, political-risk scoring and OSINT/INTOP tradecraft — applied to <strong>349 current MPs</strong>, <strong>2,494 historical politicians (1971–2024)</strong>, <strong>3.5M+ votes</strong> and <strong>109,000+ parliamentary documents</strong>.</p>
-      <p>An autonomous AI newsroom — 14 agentic workflows, Claude Opus, zero human editors — turns this evidence into <strong>publication-ready intelligence articles in 14 languages, every day</strong>.</p>
+      <p>An autonomous AI newsroom — 14 agentic workflows, Claude Sonnet, zero human editors — turns this evidence into <strong>publication-ready intelligence articles in 14 languages, every day</strong>.</p>
       <div>
         <a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor">
           <img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard">

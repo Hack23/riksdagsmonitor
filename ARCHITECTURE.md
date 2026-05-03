@@ -81,10 +81,10 @@ Authority for each row flows from the master [Information_Security_Policy](https
 | 2 | [`DATA_MODEL.md`](DATA_MODEL.md) | CEO | 1.2 | 2026-04-20 | Quarterly | 2026-07-20 | [CLASSIFICATION](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
 | 3 | [`FLOWCHART.md`](FLOWCHART.md) | CEO | 1.2 | 2026-04-20 | Quarterly | 2026-07-20 | [Secure_Development_Policy §6](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
 | 4 | [`STATEDIAGRAM.md`](STATEDIAGRAM.md) | CEO | 1.1 | 2026-04-20 | Quarterly | 2026-07-20 | [Change_Management §5](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) |
-| 5 | [`MINDMAP.md`](MINDMAP.md) | CEO | 1.3 | 2026-05-03 | Quarterly | 2026-08-03 | [Information_Security_Policy §5.5](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
-| 6 | [`SWOT.md`](SWOT.md) | CEO | 1.2 | 2026-05-03 | Quarterly | 2026-08-03 | [Information_Security_Policy §3](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
+| 5 | [`MINDMAP.md`](MINDMAP.md) | CEO | 1.4 | 2026-05-03 | Quarterly | 2026-08-03 | [Information_Security_Policy §5.5](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
+| 6 | [`SWOT.md`](SWOT.md) | CEO | 1.3 | 2026-05-03 | Quarterly | 2026-08-03 | [Information_Security_Policy §3](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
 | 7 | [`THREAT_MODEL.md`](THREAT_MODEL.md) | CEO/CISO | 1.2 | 2026-04-20 | Quarterly | 2026-07-20 | [Threat_Modeling](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) |
-| 8 | [`SECURITY_ARCHITECTURE.md`](SECURITY_ARCHITECTURE.md) | CEO/CISO | 2.3 | 2026-05-03 | Quarterly | 2026-08-03 | [Secure_Development_Policy §10](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
+| 8 | [`SECURITY_ARCHITECTURE.md`](SECURITY_ARCHITECTURE.md) | CEO/CISO | 2.3 | 2026-05-03 | Annual | 2027-05-03 | [Secure_Development_Policy §10](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
 | 9 | [`WORKFLOWS.md`](WORKFLOWS.md) | CEO | 7.3 | 2026-05-02 | Quarterly | 2026-08-02 | [Secure_Development_Policy §10.1](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
 
 ### Future-state architecture docs

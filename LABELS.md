@@ -41,11 +41,13 @@ The riksdagsmonitor repository uses an automated labeling system powered by GitH
 
 ### Key Features
 - ✅ **Automatic labeling** based on file paths, PR titles, and descriptions
-- ✅ **159 labels** covering content, agentic workflows, components, priorities, sizes, ISMS, language, and horizon tracks
+- ✅ **159 labels total** — 46 base labels managed by [`setup-labels.yml`](.github/workflows/setup-labels.yml) + 113 labels created dynamically by agentic workflows, GitHub Actions labeler, and manual additions
 - ✅ **Size labels** automatically calculated from PR diff
 - ✅ **Security hardened** workflows with SHA pinning
 - ✅ **Status tracking** with priority and progress labels
 - ✅ **Agentic-newsroom taxonomy**: `agent:*` (per-Copilot-agent owner), `component:*` (subsystem), `priority:*` / `priority-*`, `agentic-workflows`, `news-generation`, `needs-editorial-review`, `auto-generated`, `ai-generated`, horizon tags (`week-ahead`, `month-ahead`, `quarter-ahead`, `year-ahead`, `long-horizon`, `forward-look`, `realtime-monitor`, `realtime-pulse`)
+
+> **Note:** The `setup-labels.yml` workflow verifies exactly **46** base labels (the core taxonomy defined in the workflow itself). The remaining 113 labels are created on-the-fly by the agentic news workflows, the GitHub Actions labeler (`.github/labeler.yml`), and manual issue triage. The full live label set can be queried with `gh label list --repo Hack23/riksdagsmonitor --limit 300`.
 
 ---
 

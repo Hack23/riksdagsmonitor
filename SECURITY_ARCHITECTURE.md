@@ -22,7 +22,7 @@
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **🆕 What changed since last review (v2.2 → v2.3, 2026-05-03):**
-> - 🔄 **Drift reconciliation** with `.github/workflows/README.md`: agentic-workload count updated to **14 agentic news workflows** (was 11) wrapped in the same five-layer safe-outputs validator and Squid + iptables egress firewall. Total GitHub Actions surface is now **50 files** (22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`).
+> - 🔄 **Drift reconciliation** with `.github/workflows/README.md`: agentic workflow count updated to **14 agentic news workflows** (was 11) wrapped in the same five-layer safe-outputs validator and Squid + iptables egress firewall. Total GitHub Actions surface is now **50 files** (22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`).
 > - 🛡️ Reaffirmed **MCP Gateway v0.3.1** schema constraint: workflow frontmatter MUST NOT include `engine.mcp.session-timeout` (rejected as unknown additional property by the gateway) — this is a hard control surface item.
 > - 📋 See [`analysis/audits/documentation-portfolio-audit-2026-05-03.md`](analysis/audits/documentation-portfolio-audit-2026-05-03.md) for the full inventory pass and follow-up backlog (full STRIDE coverage of the agentic-workflow attack surface remains a backlog item).
 >
