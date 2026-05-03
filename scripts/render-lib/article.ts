@@ -37,8 +37,20 @@ import { BASE_URL } from './constants.js';
 import { buildGithubBlobUrl } from './url-helpers.js';
 import { renderMarkdownToHtml } from './markdown/index.js';
 import { buildChrome } from './chrome.js';
+import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BREADCRUMB_TITLE_MAX_LENGTH, BREADCRUMB_ELLIPSIS_OVERHEAD } from './jsonld.js';
 
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
+
+/**
+ * CSS selectors identifying the voice-assistant TTS-readable regions of
+ * an article. Must match the class names in the article HTML template
+ * rendered at the bottom of `renderArticleHtml`.
+ */
+const ARTICLE_SPEAKABLE_SELECTORS: readonly string[] = [
+  '.rm-article-header h1',
+  '.rm-article-dek',
+  '.rm-article-body',
+];
 
 export interface RenderArticleInput {
   /** Aggregated markdown (front-matter + body) produced by aggregateAnalysis. */
@@ -135,35 +147,42 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
 
   const bodyHtml = await renderMarkdownToHtml(parsed.content);
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'NewsArticle',
+  const articleUrl = `${BASE_URL}/${input.canonicalPath}`;
+  const langMeta = LANGUAGE_META[input.lang];
+
+  // NewsArticle JSON-LD with isBasedOn provenance
+  const newsArticleLd = buildNewsArticleLd({
     headline: title,
     description,
     datePublished: publishedIso,
     dateModified: modifiedIso,
-    inLanguage: LANGUAGE_META[input.lang].hreflang,
-    url: `${BASE_URL}/${input.canonicalPath}`,
-    mainEntityOfPage: `${BASE_URL}/${input.canonicalPath}`,
-    author: {
-      '@type': 'Organization',
-      name: 'Riksdagsmonitor (Hack23 AB)',
-      url: 'https://www.hack23.com',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Hack23 AB',
-      url: 'https://www.hack23.com',
-      logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/logo.png` },
-    },
+    inLanguage: langMeta.hreflang,
+    url: articleUrl,
     isBasedOn: (input.artifactsUsed ?? []).map((a) => ({
-      '@type': 'CreativeWork',
       url: input.subfolderRepoRelPath
         ? buildGithubBlobUrl(`${input.subfolderRepoRelPath}/${a}`)
         : a,
       name: a,
     })),
-  };
+  });
+
+  // BreadcrumbList JSON-LD for hierarchical navigation
+  const breadcrumbName = title.length > BREADCRUMB_TITLE_MAX_LENGTH
+    ? title.substring(0, BREADCRUMB_TITLE_MAX_LENGTH - BREADCRUMB_ELLIPSIS_OVERHEAD) + '…'
+    : title;
+  const breadcrumbLd = buildBreadcrumbListLd([
+    { name: langMeta.translations.home, item: `${BASE_URL}/` },
+    { name: langMeta.translations.newsAnalysis, item: `${BASE_URL}/news/` },
+    { name: breadcrumbName },
+  ]);
+
+  // SpeakableSpecification — voice-assistant TTS regions. Selectors must
+  // match the class names used in the article HTML template below.
+  const speakableLd = buildSpeakableWebPageLd(
+    articleUrl,
+    langMeta.hreflang,
+    ARTICLE_SPEAKABLE_SELECTORS,
+  );
 
   const chrome = buildChrome({
     lang: input.lang,
@@ -173,7 +192,7 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     hreflangAlternates: input.hreflangAlternates,
     publishedIso,
     modifiedIso,
-    jsonLd: [jsonLd],
+    jsonLd: [newsArticleLd, breadcrumbLd, speakableLd],
     section: 'Political Intelligence',
   });
 
