@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/15</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.92% </span>
+                <span class="strong">84.61% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/13</span>
+                <span class='fraction'>11/13</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.85% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -314,20 +314,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">61092x</span>
+<span class="cline-any cline-yes">69854x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">118520x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">70491x</span>
+<span class="cline-any cline-yes">135560x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">80571x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -340,16 +336,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">812x</span>
-<span class="cline-any cline-yes">812x</span>
-<span class="cline-any cline-yes">812x</span>
-<span class="cline-any cline-yes">476x</span>
-<span class="cline-any cline-yes">476x</span>
-<span class="cline-any cline-yes">476x</span>
-<span class="cline-any cline-yes">476x</span>
-<span class="cline-any cline-yes">476x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">944x</span>
+<span class="cline-any cline-yes">944x</span>
+<span class="cline-any cline-yes">944x</span>
+<span class="cline-any cline-yes">560x</span>
+<span class="cline-any cline-yes">544x</span>
+<span class="cline-any cline-yes">544x</span>
+<span class="cline-any cline-yes">544x</span>
+<span class="cline-any cline-yes">544x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @module Infrastructure/PoliticalIntelligence/I18n/ArtifactI18n
@@ -487,13 +487,13 @@ export function localisedCatalogDescription(
   const map = library === 'methodologies' ? METHODOLOGY_DESC_I18N : TEMPLATE_DESC_I18N;
   const hit = map[file]?.[lang];
   if (hit) return hit;
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (library === 'templates') {
+  if (library === 'templates') {
     const pattern = TEMPLATE_GENERIC_DESC_I18N[lang] ?? <span class="branch-1 cbranch-no" title="branch not covered" >TEMPLATE_GENERIC_DESC_I18N.en;</span>
     const title = artifactTitle(file, lang);
     const libName = LIBRARY_NAME_I18N.templates[lang] ?? <span class="branch-1 cbranch-no" title="branch not covered" >LIBRARY_NAME_I18N.templates.en;</span>
     return pattern.replace('%t', title).replace('%l', libName);
   }
-<span class="cstat-no" title="statement not covered" >  return englishFallback;</span>
+  return englishFallback;
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -502,7 +502,7 @@ export function localisedCatalogDescription(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-02T20:39:51.513Z
+                at 2026-05-03T20:19:31.544Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
