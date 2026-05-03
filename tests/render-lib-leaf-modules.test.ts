@@ -41,6 +41,7 @@ import {
   cleanArtifactBody,
   demoteHeadings,
   rewriteRelativeLinks,
+  stripInlineReaderGuide,
   stripSourcePreamble,
 } from '../scripts/render-lib/aggregator/cleaning/structural.js';
 import {
@@ -56,6 +57,7 @@ import {
 import {
   anchorForTitle,
   buildReaderGuide,
+  READER_GUIDE_ENTRIES,
 } from '../scripts/render-lib/aggregator/reader-guide.js';
 import {
   SENTENCE_END_RE,
@@ -471,5 +473,147 @@ describe('barrel parity — leaf identity matches barrel re-export', () => {
   it('markdown barrel re-exports the same `sanitizeSchema` identity', () => {
     expect(markdownBarrel.sanitizeSchema).toBe(sanitizeSchema);
     expect(markdownBarrel.HEADING_ID_PREFIX).toBe(HEADING_ID_PREFIX);
+  });
+});
+
+// ── Reader Intelligence Guide — i18n, dedup, completeness ─────────────────
+
+import { READER_GUIDE_I18N, readerGuideI18n } from '../scripts/render-lib/aggregator/reader-guide-i18n.js';
+import { LANGUAGES } from '../scripts/render-lib/constants.js';
+
+describe('aggregator/reader-guide-i18n — 14-language coverage', () => {
+  it('READER_GUIDE_I18N has an entry for all 14 supported languages', () => {
+    for (const lang of LANGUAGES) {
+      expect(READER_GUIDE_I18N[lang]).toBeDefined();
+      expect(READER_GUIDE_I18N[lang].chrome.heading).toBeTruthy();
+      expect(READER_GUIDE_I18N[lang].chrome.preamble.length).toBeGreaterThan(20);
+    }
+  });
+
+  it('non-English languages have localised (non-English) heading', () => {
+    const enHeading = READER_GUIDE_I18N.en.chrome.heading;
+    for (const lang of LANGUAGES) {
+      if (lang === 'en') continue;
+      expect(READER_GUIDE_I18N[lang].chrome.heading).not.toBe(enHeading);
+    }
+  });
+
+  it('every language bundle has entries for all READER_GUIDE_ENTRIES files', () => {
+    for (const lang of LANGUAGES) {
+      const bundle = READER_GUIDE_I18N[lang];
+      for (const entry of READER_GUIDE_ENTRIES) {
+        expect(bundle.entries[entry.file]).toBeDefined();
+        expect(bundle.entries[entry.file]!.label).toBeTruthy();
+        expect(bundle.entries[entry.file]!.readerValue).toBeTruthy();
+      }
+    }
+  });
+
+  it('readerGuideI18n() returns English for unknown language', () => {
+    // @ts-expect-error — intentionally passing invalid language
+    const bundle = readerGuideI18n('xx');
+    expect(bundle.chrome.heading).toBe('Reader Intelligence Guide');
+  });
+});
+
+describe('aggregator/reader-guide — i18n integration', () => {
+  it('buildReaderGuide with lang=sv produces Swedish heading', () => {
+    const guide = buildReaderGuide(
+      new Set(['executive-brief.md', 'risk-assessment.md']),
+      false,
+      'sv',
+    );
+    expect(guide).toContain('## Läsarens underrättelseguide');
+    expect(guide).not.toContain('Reader Intelligence Guide');
+  });
+
+  it('buildReaderGuide with lang=ja produces Japanese heading', () => {
+    const guide = buildReaderGuide(
+      new Set(['executive-brief.md']),
+      false,
+      'ja',
+    );
+    expect(guide).toContain('## 読者向けインテリジェンスガイド');
+  });
+
+  it('buildReaderGuide without lang defaults to English', () => {
+    const guide = buildReaderGuide(
+      new Set(['executive-brief.md']),
+      false,
+    );
+    expect(guide).toContain('## Reader Intelligence Guide');
+  });
+
+  it('buildReaderGuide slug-parity: every anchor starts with HEADING_ID_PREFIX', () => {
+    const allFiles = new Set(READER_GUIDE_ENTRIES.map((e) => e.file));
+    const guide = buildReaderGuide(allFiles, true, 'en');
+    const anchors = [...guide.matchAll(/#(rm-[a-z0-9-]+)/g)].map((m) => m[1]);
+    expect(anchors.length).toBeGreaterThan(0);
+    for (const a of anchors) {
+      expect(a).toMatch(/^rm-/);
+      expect(a).not.toMatch(/^rm--/); // no double-dash after prefix
+    }
+  });
+
+  it('buildReaderGuide completeness: row count matches available artifact count + special rows', () => {
+    const available = new Set(['executive-brief.md', 'risk-assessment.md', 'scenario-analysis.md']);
+    const guide = buildReaderGuide(available, true, 'en');
+    // 3 artifact rows + 1 per-document + 1 audit = 5 data rows
+    const dataRows = guide.split('\n').filter((l) => l.startsWith('| ['));
+    expect(dataRows.length).toBe(5);
+  });
+});
+
+describe('aggregator/cleaning/structural — stripInlineReaderGuide', () => {
+  it('strips an inline Reader Intelligence Guide block from artifact body', () => {
+    const body = [
+      'Some real content here.',
+      '',
+      '## Reader Intelligence Guide',
+      '',
+      'Use this guide.',
+      '',
+      '| Reader need | What you\'ll get | Source artifact |',
+      '|---|---|---|',
+      '| [BLUF](#rm-bluf) | fast answer | `executive-brief.md` |',
+      '',
+      '## Next Section',
+      '',
+      'More content.',
+    ].join('\n');
+
+    const result = stripInlineReaderGuide(body);
+    expect(result).not.toContain('Reader Intelligence Guide');
+    expect(result).toContain('Some real content here.');
+    expect(result).toContain('## Next Section');
+    expect(result).toContain('More content.');
+  });
+
+  it('returns body unchanged when no Reader Intelligence Guide is present', () => {
+    const body = '## Summary\n\nSome text here.\n';
+    expect(stripInlineReaderGuide(body)).toBe(body);
+  });
+
+  it('cleanArtifactBody invokes stripInlineReaderGuide (integration)', () => {
+    const raw = [
+      '---',
+      'title: Test',
+      '---',
+      '# Test Artifact',
+      '',
+      '## Reader Intelligence Guide',
+      '',
+      '| Reader need | What | Source |',
+      '|---|---|---|',
+      '| [BLUF](#rm-bluf) | answer | `brief.md` |',
+      '',
+      '## Real Content',
+      '',
+      'Actual analysis here.',
+    ].join('\n');
+
+    const cleaned = cleanArtifactBody(raw);
+    expect(cleaned).not.toContain('Reader Intelligence Guide');
+    expect(cleaned).toContain('Actual analysis here.');
   });
 });
