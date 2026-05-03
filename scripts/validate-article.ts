@@ -275,20 +275,33 @@ export function countBlufEvidenceAnchors(bluf: string): number {
 /**
  * Load banned phrases from the canonical JSON file. Returns the flat
  * array of literal substrings. Caches after first load.
+ * Returns `null` when the canonical file is missing or malformed so
+ * callers can emit an explicit violation rather than silently skipping.
  */
 let _bannedPhrasesCache: string[] | null = null;
-export function loadBannedPhrases(repoRoot: string = REPO_ROOT): string[] {
-  if (_bannedPhrasesCache) return _bannedPhrasesCache;
+let _bannedPhrasesCacheLoaded = false;
+export function loadBannedPhrases(repoRoot: string = REPO_ROOT): string[] | null {
+  if (_bannedPhrasesCacheLoaded) return _bannedPhrasesCache;
   const jsonPath = join(repoRoot, 'analysis', 'methodologies', 'political-style-guide.json');
-  if (!existsSync(jsonPath)) return [];
-  const data = JSON.parse(readFileSync(jsonPath, 'utf8')) as { allPhrases?: string[] };
-  _bannedPhrasesCache = data.allPhrases ?? [];
+  if (!existsSync(jsonPath)) {
+    _bannedPhrasesCacheLoaded = true;
+    _bannedPhrasesCache = null;
+    return null;
+  }
+  try {
+    const data = JSON.parse(readFileSync(jsonPath, 'utf8')) as { allPhrases?: string[] };
+    _bannedPhrasesCache = data.allPhrases ?? [];
+  } catch {
+    _bannedPhrasesCache = null;
+  }
+  _bannedPhrasesCacheLoaded = true;
   return _bannedPhrasesCache;
 }
 
 /** Reset cache (for testing). */
 export function resetBannedPhrasesCache(): void {
   _bannedPhrasesCache = null;
+  _bannedPhrasesCacheLoaded = false;
 }
 
 /**
@@ -316,25 +329,53 @@ export function scanBannedPhrases(
 }
 
 /**
- * Count evidence anchors in the entire article body (same patterns as
- * `countBlufEvidenceAnchors` but applied to the full text).
+ * Count verifiable evidence anchors in text, EXCLUDING internal `#rm-`
+ * section links (which are navigation aids, not primary-source citations).
+ * Used for citation-density enforcement.
  */
 export function countArticleEvidenceAnchors(text: string): number {
-  return countBlufEvidenceAnchors(text);
+  const patterns: RegExp[] = [
+    /\b(?:H(?=[A-Za-z0-9]*[0-9])[A-Za-z0-9]{6,10}|[A-ZÅÄÖ]{2}\d{1,8})\b/g,
+    /\b(?:Prop|Skr|Mot|Bet|Ds|SOU|Dir)\.\s*\d{4}\/\d{2}:\d+/gi,
+    /\bRiR\s+\d{4}:\d+/gi,
+    /\bvotering(?:_id)?\b[^\n]*?\d/gi,
+    /https?:\/\/(?:www\.)?(?:data\.riksdagen\.se|riksdagen\.se|regeringen\.se|scb\.se|imf\.org)[^\s)]*/gi,
+    // NOTE: #rm- internal links are intentionally excluded for density checks.
+  ];
+  let total = 0;
+  for (const p of patterns) {
+    const matches = text.match(p);
+    if (matches) total += matches.length;
+  }
+  return total;
 }
 
 /**
  * Count words in text (splits on whitespace, excludes markdown syntax tokens).
  */
 export function countWords(text: string): number {
-  // Strip markdown links, images, HTML tags, and fenced code blocks
-  const cleaned = text
-    .replace(/```[\s\S]*?```/g, '') // fenced code
-    .replace(/`[^`]+`/g, '') // inline code
-    .replace(/!\[[^\]]*\]\([^)]*\)/g, '') // images
-    .replace(/<[^>]+>/g, '') // HTML tags
-    .replace(/^\s*[|>#+*-]\s*/gm, '') // list/table/quote markers
-    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1'); // links → text only
+  // Strip markdown links, images, HTML tags, fenced code blocks, and tables
+  let cleaned = text;
+  // Remove fenced code blocks (with optional language tag)
+  cleaned = cleaned.replace(/```[^\n]*\n[\s\S]*?```/g, '');
+  // Remove inline code
+  cleaned = cleaned.replace(/`[^`]+`/g, '');
+  // Remove images
+  cleaned = cleaned.replace(/!\[[^\]]*\]\([^)]*\)/g, '');
+  // Remove HTML tags (iterate to handle nested)
+  let prev = '';
+  while (prev !== cleaned) {
+    prev = cleaned;
+    cleaned = cleaned.replace(/<[^>]+>/g, '');
+  }
+  // Remove markdown table alignment rows (e.g. |---|:---:|---:|)
+  cleaned = cleaned.replace(/^\s*\|[\s:|-]+\|\s*$/gm, '');
+  // Remove pipe characters used as table column separators
+  cleaned = cleaned.replace(/\|/g, ' ');
+  // Remove list/quote/heading markers at line start
+  cleaned = cleaned.replace(/^\s*[>#+*-]\s*/gm, '');
+  // Convert markdown links to just their text
+  cleaned = cleaned.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1');
   const words = cleaned.split(/\s+/).filter((w) => w.length > 0);
   return words.length;
 }
@@ -377,10 +418,14 @@ export function scanStaleProvenance(
     const diffMs = referenceDate.getTime() - retrieved.getTime();
     const diffMonths = diffMs / (1000 * 60 * 60 * 24 * 30.44);
     if (diffMonths > 6) {
-      // Check if it's wrapped in an annotation block (<!-- stale-vintage … -->)
+      // Check the immediately preceding line for the annotation comment.
+      // Contract: annotation must be on the line directly before the
+      // retrieved_at line: `<!-- stale-vintage: reason -->`
       const lineStart = text.lastIndexOf('\n', m.index) + 1;
-      const contextBefore = text.slice(Math.max(0, lineStart - 200), lineStart);
-      if (!contextBefore.includes('stale-vintage')) {
+      const prevLineEnd = lineStart > 0 ? lineStart - 1 : 0;
+      const prevLineStart = text.lastIndexOf('\n', prevLineEnd - 1) + 1;
+      const prevLine = text.slice(prevLineStart, prevLineEnd).trim();
+      if (!prevLine.includes('<!-- stale-vintage')) {
         stale.push({ retrievedAt: dateStr, ageMonths: Math.round(diffMonths * 10) / 10 });
       }
     }
@@ -572,28 +617,61 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
 
   // 7. Editorial QA: banned-phrase scan.
   const bannedPhrases = loadBannedPhrases();
-  if (bannedPhrases.length > 0) {
+  if (bannedPhrases === null) {
+    violations.push({
+      file: rel,
+      code: 'missing-banned-phrase-list',
+      message: `Canonical banned-phrase file (analysis/methodologies/political-style-guide.json) is missing or malformed — editorial QA check cannot run. Ensure the file exists and contains a valid "allPhrases" array.`,
+    });
+  } else if (bannedPhrases.length > 0) {
     const hits = scanBannedPhrases(text, bannedPhrases);
     if (hits.length > 0) {
       const sample = hits.slice(0, 3).map((h) => `"${h.phrase}"`).join(', ');
       violations.push({
         file: rel,
         code: 'banned-phrase-detected',
-        message: `Article contains ${hits.length} banned phrase(s) (${sample}${hits.length > 3 ? ', …' : ''}). Rewrite using evidence-anchored alternatives per political-style-guide.md.`,
+        message: `Article contains ${hits.length} banned phrase(s) (${sample}${hits.length > 3 ? ', …' : ''}). Rewrite using evidence-anchored alternatives per political-style-guide.json (human-readable companion: political-style-guide.md).`,
       });
     }
   }
 
   // 8. Editorial QA: citation density.
   const wordCount = countWords(text);
-  if (wordCount > 200) {
-    const density = computeCitationDensity(text);
-    const threshold = 200; // words-per-anchor — generous default for full articles
+  const anchors = countArticleEvidenceAnchors(text);
+  if (wordCount > 0 && anchors === 0) {
+    violations.push({
+      file: rel,
+      code: 'low-citation-density',
+      message: `Article has ${wordCount} words but zero verifiable evidence anchors. Add dok_id references, vote IDs, or primary-source URLs.`,
+    });
+  } else if (wordCount > 200) {
+    const density = wordCount / anchors;
+    // Load per-article-type threshold from reference-quality-thresholds.json
+    let threshold = 200; // fallback default
+    if (subfolderName) {
+      try {
+        const thresholdsPath = join(REPO_ROOT, 'analysis', 'methodologies', 'reference-quality-thresholds.json');
+        if (existsSync(thresholdsPath)) {
+          const thresholds = JSON.parse(readFileSync(thresholdsPath, 'utf8')) as {
+            aiFirst?: { citationDensity?: { perArticle?: Record<string, number | string> } };
+          };
+          const perArticle = thresholds.aiFirst?.citationDensity?.perArticle;
+          if (perArticle) {
+            const typeThreshold = perArticle[subfolderName];
+            if (typeof typeThreshold === 'number') {
+              threshold = typeThreshold;
+            }
+          }
+        }
+      } catch {
+        // Fall back to default threshold on parse error
+      }
+    }
     if (density > threshold) {
       violations.push({
         file: rel,
         code: 'low-citation-density',
-        message: `Citation density is ${Math.round(density)} words/anchor — maximum allowed is ${threshold}. Add more evidence anchors (dok_id, vote IDs, primary-source URLs) to meet the editorial floor.`,
+        message: `Citation density is ${Math.round(density)} words/anchor — maximum allowed is ${threshold} (for article type "${subfolderName}"). Add more evidence anchors (dok_id, vote IDs, primary-source URLs) to meet the editorial floor.`,
       });
     }
   }

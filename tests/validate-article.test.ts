@@ -101,7 +101,20 @@ import {
   countWords,
   computeCitationDensity,
   scanStaleProvenance,
+  countArticleEvidenceAnchors,
 } from '../scripts/validate-article.js';
+
+describe('validate-article — countArticleEvidenceAnchors', () => {
+  it('counts dok_id and URL anchors', () => {
+    const text = 'HD12345 cited via https://data.riksdagen.se/dokument/HD12345.html';
+    expect(countArticleEvidenceAnchors(text)).toBeGreaterThanOrEqual(1);
+  });
+
+  it('does NOT count #rm- internal links', () => {
+    const text = 'See [overview](#rm-synthesis-summary) and [details](#rm-risk-assessment).';
+    expect(countArticleEvidenceAnchors(text)).toBe(0);
+  });
+});
 
 describe('validate-article — scanBannedPhrases', () => {
   const banned = ['Sources say', 'significant development', 'Obviously,'];
@@ -142,10 +155,29 @@ describe('validate-article — countWords', () => {
     expect(countWords(text)).toBe(3);
   });
 
+  it('excludes fenced code blocks with language tag', () => {
+    const text = 'word1\n```typescript\nconst x = 1;\n```\nword2';
+    expect(countWords(text)).toBe(2);
+  });
+
   it('strips markdown links but keeps link text', () => {
     const text = 'See [the report](https://example.com) for details.';
     // "See the report for details." = 5 words
     expect(countWords(text)).toBe(5);
+  });
+
+  it('strips markdown table pipes and alignment rows', () => {
+    const text = '| Header | Data |\n|---|---|\n| cell1 | cell2 |';
+    // Should count: Header, Data, cell1, cell2 — NOT pipes or alignment row
+    const count = countWords(text);
+    expect(count).toBe(4);
+  });
+
+  it('handles table-heavy content without inflated counts', () => {
+    const text = '| Party | Seats | Change |\n|:---:|:---:|:---:|\n| S | 107 | +2 |\n| M | 68 | -3 |';
+    // Words: Party, Seats, Change, S, 107, +2, M, 68, -3 = 9
+    const count = countWords(text);
+    expect(count).toBe(9);
   });
 });
 
@@ -161,6 +193,14 @@ describe('validate-article — computeCitationDensity', () => {
     const density = computeCitationDensity(text);
     expect(density).toBeLessThan(20);
     expect(density).toBeGreaterThan(0);
+  });
+
+  it('does not count #rm- internal links as evidence anchors', () => {
+    // Text has only #rm- links and no real evidence anchors
+    const text = 'See [synthesis](#rm-synthesis-summary) and [risk](#rm-risk-assessment) for details on this policy proposal that matters.';
+    const density = computeCitationDensity(text);
+    // Should be Infinity since #rm- links are not verifiable evidence
+    expect(density).toBe(Infinity);
   });
 });
 
@@ -180,9 +220,17 @@ describe('validate-article — scanStaleProvenance', () => {
     expect(scanStaleProvenance(text, ref)).toHaveLength(0);
   });
 
-  it('ignores entries wrapped in stale-vintage annotation', () => {
+  it('ignores entries with stale-vintage annotation on immediately preceding line', () => {
     const text = `<!-- stale-vintage: IMF data not yet refreshed -->\nretrieved_at: 2025-01-15\n`;
     const ref = new Date('2026-05-03');
     expect(scanStaleProvenance(text, ref)).toHaveLength(0);
+  });
+
+  it('does NOT exempt entries when annotation is too far away', () => {
+    // Annotation is separated by several lines — should NOT exempt
+    const text = `<!-- stale-vintage: old note -->\nsome other content\nmore content\nretrieved_at: 2025-01-15\n`;
+    const ref = new Date('2026-05-03');
+    const stale = scanStaleProvenance(text, ref);
+    expect(stale.length).toBe(1);
   });
 });
