@@ -42,7 +42,7 @@
 ### ✅ Pass-1 checklist (creation — minimal viable artifact)
 
 - [ ] Surface vs Strategic vs Forecast vs Intelligence-grade depth tiers all defined
-- [ ] Banned-phrase list machine-readable in a fenced block the gate can `grep`
+- [ ] Banned-phrase list machine-readable in a fenced block (consumed by Pass-2 self-audit via `grep -F -f`)
 - [ ] Produce every required sub-section listed in the owning template
 - [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
 - [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
