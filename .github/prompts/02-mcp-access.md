@@ -79,17 +79,20 @@ Run once at workflow start, then proceed — do not loop forever.
 
 Every news workflow declares a **single** `curl`-based pre-warm step with ≤ 6 retries, ≤ 20 s apart. With `curl --max-time 30`, the worst-case runtime can exceed 4 minutes, so this is a best-effort pre-warm rather than a hard ≤ 2 minute guarantee. If a strict 2 minute cap is required, the workflow's `curl` timeout and/or retry policy must be reduced accordingly. No background pingers.
 
-## MCP gateway session timeout (`engine.mcp.session-timeout`)
+## MCP gateway session timeout (`engine.mcp.session-timeout`) — **DO NOT SET**
 
-Every news workflow declares `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3, frontmatter field added by [#29353](https://github.com/github/gh-aw/issues/29353)). Semantics:
+> 🚫 **Removed from every workflow.** MCP Gateway v0.3.1 (`ghcr.io/github/gh-aw-mcpg:v0.3.1`) rejects the gh-aw v0.71.3 compiled `sessionTimeout` field as `additionalProperties 'sessionTimeout' not allowed` ([gh-aw #29353](https://github.com/github/gh-aw/issues/29353)). The field is therefore **removed from all 14 `news-*.md` workflows** until a compatible MCP Gateway version ships.
 
-| Value | Meaning |
-|-------|---------|
-| Omitted / empty | Effective gateway default (env `MCP_GATEWAY_SESSION_TIMEOUT`, currently 6 h) |
-| **`1h`** *(our setting)* | Cap MCP gateway session lifetime at 1 h — covers the full 60-min job with margin and frees gateway resources sooner than the 6 h default. Applies to **all** MCP sessions: upstream HTTP MCPs (`riksdag-regering`, `scb`, `world-bank`) and the local `safeoutputs` Streamable-HTTP server. |
-| `>= 5m`, `<= 12h` | Other valid Go duration strings; bounds enforced by the compiler |
+Operational consequence:
 
-This **replaces** the legacy "Timer C — safeoutputs idle drop" pattern: the 25–30 min idle drop was an artefact of the previous gateway default; with `session-timeout: 1h` set explicitly, all MCP sessions are guaranteed to outlive the 60-min job. The PR deadline is now governed by Timer A (job `timeout-minutes: 60`, measured from job start including host-side setup) and Timer B (Copilot API session ~60 min), not by gateway session expiry; call the PR safe-output by agent minute 42 (hard 45).
+| Aspect | Reality (current) |
+|--------|-------------------|
+| Frontmatter field `engine.mcp.session-timeout` | **Must not be set.** Compilation will succeed but the job will fail at MCP gateway start with the `additionalProperties` error above. |
+| MCP gateway session lifetime | Effective gateway default — **~25–30 min idle drop** on the local `safeoutputs` Streamable-HTTP server (legacy "Timer C" pattern). |
+| Upstream HTTP MCPs (`riksdag-regering`, `scb`, `world-bank`) | Kept warm by the keepalive ping (next section); their idle survival is bounded by upstream timeouts, not by gh-aw config. |
+| Recovery after Timer C fires | None mid-run. The `create_pull_request` call returns a session-not-found error and the host-side PAT fallback in `07-commit-and-pr.md §Sandbox commit handoff` becomes the only path to land the commit. |
+
+The PR deadline is therefore governed by the shorter of Timer A (job `timeout-minutes: 60`, measured from job start), Timer B (Copilot API session ~60 min), and Timer C (safeoutputs idle ~25–30 min). Call the PR safe-output by agent minute 42 (hard 45) and avoid >20 min idle gaps without a safeoutputs tool call.
 
 ## MCP gateway keepalive (`sandbox.mcp.keepalive-interval`)
 
@@ -99,6 +102,6 @@ Every news workflow sets `sandbox.mcp.keepalive-interval: 300`, which compiles t
 |-------|---------|
 | `0` or unset | Gateway default = **1500 s (25 min)** — slower than ideal for the 60-min job |
 | `-1` | Disable keepalive entirely (do not use) |
-| **`300`** *(our setting)* | Ping every 5 minutes — belt-and-braces resilience to keep idle HTTP MCPs warm. With `engine.mcp.session-timeout: 1h` set, this is no longer load-bearing for session survival but reduces tail latency on first-call-after-idle. |
+| **`300`** *(our setting)* | Ping every 5 minutes — keeps idle **upstream HTTP MCPs** (`riksdag-regering`, `scb`, `world-bank`) warm through the gateway. Reduces tail latency on first-call-after-idle. **Does not extend the safeoutputs idle window** — the local Streamable-HTTP server still drops at the gateway default of ~25–30 min once `engine.mcp.session-timeout` is unavailable. |
 
-The keepalive pings the **upstream HTTP MCPs through the gateway**. Combined with `engine.mcp.session-timeout: 1h`, all MCP sessions remain alive for the full 60-min job.
+This is the **only load-bearing mitigation** for upstream MCP idle drops while MCP Gateway v0.3.1 rejects `engine.mcp.session-timeout`. For the safeoutputs server, the only mitigation is Timer-A alignment: keep PR-creation under 25 min of continuous idle and under the 45 min hard deadline.

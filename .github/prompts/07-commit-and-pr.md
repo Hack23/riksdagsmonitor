@@ -44,7 +44,7 @@ Translations for the remaining twelve languages are produced by the dedicated **
 
 3. **Commit** once with a descriptive message, e.g. `news(${article_type}): $ARTICLE_DATE — analysis + article`.
 
-4. **🛟 Sandbox commit handoff (mandatory)** — *immediately after `git commit` and **before** any `safeoutputs___*` call*, write a portable bundle + manifest so the host-side PAT PR fallback can recover the commit if `safeoutputs___create_pull_request` later fails (e.g. transient MCP/network failure or Timer A/B firing). With `engine.mcp.session-timeout: 1h` (gh-aw v0.71.3) the legacy "Timer C session not found" pathway is largely closed, but the handoff remains the defence-in-depth recovery for any transient safeoutputs failure. The bundle goes to `/tmp/gh-aw/aw-fallback.bundle` (matched by the gh-aw artifact upload glob `/tmp/gh-aw/aw-*.bundle`); the JSON manifest goes to `/tmp/gh-aw/agent/aw-fallback.json` because the upload glob does **not** match `aw-*.json` — but it does upload the entire `/tmp/gh-aw/agent/` directory, so writing inside it guarantees the manifest reaches the host job. Run this in the same bash session as the commit:
+4. **🛟 Sandbox commit handoff (mandatory)** — *immediately after `git commit` and **before** any `safeoutputs___*` call*, write a portable bundle + manifest so the host-side PAT PR fallback can recover the commit if `safeoutputs___create_pull_request` later fails (e.g. transient MCP/network failure, Timer A/B firing, or the **Timer C "session not found"** failure that is back in force because MCP Gateway v0.3.1 rejects `engine.mcp.session-timeout` — see `02-mcp-access.md §MCP gateway session timeout`). The handoff is the defence-in-depth recovery for any of those failures. The bundle goes to `/tmp/gh-aw/aw-fallback.bundle` (matched by the gh-aw artifact upload glob `/tmp/gh-aw/aw-*.bundle`); the JSON manifest goes to `/tmp/gh-aw/agent/aw-fallback.json` because the upload glob does **not** match `aw-*.json` — but it does upload the entire `/tmp/gh-aw/agent/` directory, so writing inside it guarantees the manifest reaches the host job. Run this in the same bash session as the commit:
 
    ```bash
    set -euo pipefail
@@ -199,15 +199,15 @@ The noop message **must** include which condition above applies and why improvem
 
 ## Deadline enforcement
 
-Two independent timers can kill a run silently (gh-aw v0.71.3 onwards). Plan for the **shorter** of the two.
+Three independent timers can kill a run silently (gh-aw v0.71.3 + MCP Gateway v0.3.1). Plan for the **shortest** of the three.
 
 > **Timer A — Job `timeout-minutes` (60 min)**: every news workflow declares `timeout-minutes: 60`. The clock starts at **job start**, before Copilot begins, and includes host-side setup/sandbox/MCP initialization. After 60 minutes GitHub Actions kills the runner unconditionally — no retry, no save, no PR.
 >
 > **Timer B — Copilot API session (~60 min)**: The Copilot API session is bound to the `github.token` baked in at step start. That token expires at approximately **60 minutes** and is never refreshed mid-run (gh-aw issue #24920). Every tool call and inference request fails silently after that point — the agent appears to run but makes no progress and the PR is never created.
+>
+> **Timer C — Safe-outputs / MCP gateway idle session (~25–30 min)**: The local `safeoutputs` Streamable-HTTP server drops idle sessions at the gateway default (~25–30 min) because **MCP Gateway v0.3.1 rejects** the gh-aw v0.71.3 frontmatter field `engine.mcp.session-timeout` ([gh-aw #29353](https://github.com/github/gh-aw/issues/29353)) as `additionalProperties 'sessionTimeout' not allowed`. The field is therefore **removed from every workflow**, and the legacy "Timer C session not found" failure on `create_pull_request` is back in force. `sandbox.mcp.keepalive-interval: 300` keeps **upstream** MCPs warm but does **not** extend the safeoutputs idle window — the only mitigation is to avoid >20 min idle gaps without a safeoutputs tool call and to issue the PR before agent minute 25 of the **last** safeoutputs activity. See `02-mcp-access.md §MCP gateway session timeout` for the full contract.
 
-The two timers are intentionally aligned. The PR must be issued before either fires.
-
-> 🟢 **The legacy "Timer C — Safe Outputs MCP idle session ~25–30 min" no longer applies.** With `engine.mcp.session-timeout: 1h` set in workflow frontmatter (gh-aw v0.71.3, [#29353](https://github.com/github/gh-aw/issues/29353)), all MCP gateway sessions — including the local `safeoutputs` Streamable-HTTP server — survive the full 60-min job. The PR-creation deadline is now governed by Timer A and Timer B alone.
+Timers A and B are intentionally aligned at ~60 min; Timer C is the new short pole. The PR must be issued before any of the three fires.
 
 ### PR-creation windows
 
