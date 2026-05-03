@@ -100,3 +100,84 @@ describe('chrome.ts — header tagline reflects language', () => {
     expect(chrome.headerHtml).toMatch(/Swedish parliamentary intelligence/);
   });
 });
+
+const NEW_CTA_KEYS = [
+  'politicalIntelligenceLabel',
+  'politicalIntelligenceTitle',
+  'linkEuParliamentMonitor',
+  'linkHack23Blog',
+] as const;
+
+describe('chrome-i18n — Political Intelligence CTA & ecosystem keys', () => {
+  it('defines every new CTA/ecosystem key for every supported language', () => {
+    for (const lang of LANGUAGES) {
+      const cs = chromeStrings(lang);
+      for (const key of NEW_CTA_KEYS) {
+        const value = cs[key];
+        expect(value, `${lang}.${key} should be a non-empty string`).toBeTypeOf('string');
+        expect(value, `${lang}.${key} must not be empty`).toMatch(/\S/);
+      }
+    }
+  });
+
+  it('translates non-English CTA/ecosystem values (differ from English)', () => {
+    const en = chromeStrings('en');
+    for (const lang of LANGUAGES.filter((l) => l !== 'en')) {
+      const cs = chromeStrings(lang);
+      for (const key of NEW_CTA_KEYS) {
+        expect(
+          cs[key],
+          `${lang}.${key} should differ from English ("${en[key]}")`,
+        ).not.toEqual(en[key]);
+      }
+    }
+  });
+
+  it('renders Political Intelligence CTA in header', () => {
+    const en = chromeStrings('en');
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'index.html',
+    });
+    expect(chrome.headerHtml).toContain('rm-header-cta-pi');
+    expect(chrome.headerHtml).toContain(en.politicalIntelligenceLabel);
+  });
+
+  it('renders EU Parliament Monitor link in footer', () => {
+    const en = chromeStrings('en');
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'index.html',
+    });
+    expect(chrome.footerHtml).toContain('euparliamentmonitor.com');
+    expect(chrome.footerHtml).toContain(en.linkEuParliamentMonitor);
+  });
+
+  it('renders Hack23 Blog link in footer', () => {
+    const en = chromeStrings('en');
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'index.html',
+    });
+    expect(chrome.footerHtml).toContain('www.hack23.com/blog.html');
+    expect(chrome.footerHtml).toContain(en.linkHack23Blog);
+  });
+
+  it('renders translated Political Intelligence CTA for Swedish', () => {
+    const sv = chromeStrings('sv');
+    const chrome = buildChrome({
+      lang: 'sv',
+      title: 'T',
+      description: 'd',
+      canonicalPath: 'index_sv.html',
+    });
+    expect(chrome.headerHtml).toContain('rm-header-cta-pi');
+    expect(chrome.headerHtml).toContain(sv.politicalIntelligenceLabel);
+  });
+});
