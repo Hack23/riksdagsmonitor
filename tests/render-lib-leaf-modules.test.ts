@@ -424,6 +424,7 @@ describe('markdown/* — leaf module isolation', () => {
     const out = preprocessMermaidFences('```mermaid\ngraph LR; A-->B\n```');
     expect(out).toContain('<pre class="mermaid"');
     expect(out).toContain('data-mermaid-source="true"');
+    expect(out).toContain('tabindex="0"');
   });
 
   it('preprocessMermaidFences escapes HTML inside diagram source', () => {
