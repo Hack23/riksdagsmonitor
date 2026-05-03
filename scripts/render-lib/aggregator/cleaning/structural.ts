@@ -62,6 +62,40 @@ export function stripSourcePreamble(body: string): string {
 }
 
 /**
+ * Strip inline "Reader Intelligence Guide" blocks that may appear inside
+ * individual artifact bodies. The canonical guide is emitted exactly once
+ * by the aggregator immediately after the executive brief; any duplicates
+ * baked into artifact markdown must be removed to guarantee the
+ * single-occurrence invariant.
+ *
+ * Matches the **English** heading `## Reader Intelligence Guide` only.
+ * Source artifacts are always authored in English; localised articles are
+ * produced post-aggregation and never re-enter the cleaning pipeline, so
+ * matching English alone is sufficient.
+ *
+ * Strips the heading, any preamble paragraph immediately below it, and the
+ * contiguous markdown table that follows (header row + separator + data rows).
+ * Content that appears after the table (e.g. subsequent paragraphs or
+ * subheadings) is preserved.
+ */
+export function stripInlineReaderGuide(body: string): string {
+  // Step 1: strip the `## Reader Intelligence Guide` heading line.
+  // Step 2: strip the optional preamble paragraph (non-blank, non-table lines
+  //         immediately after the heading, separated by optional blank lines).
+  // Step 3: strip the contiguous markdown table block (lines that start with `|`
+  //         or are the blank-line separators between the heading and the table).
+  //
+  // We do this in two passes for clarity:
+  // Pass A – heading + preamble + table (all as one contiguous block).
+  //   A table row starts with `|`; the separator row also starts with `|`.
+  //   Blank lines between heading, preamble, and table header are included.
+  return body.replace(
+    /^##\s+Reader Intelligence Guide[^\n]*\n(?:\n|(?!\|)[^\n]*\n)*(?:\|[^\n]*\n)*/gim,
+    '',
+  );
+}
+
+/**
  * Demote ATX headings by one level inside an artifact body — `##` → `###`,
  * `###` → `####`, …, capped at `######`. The aggregator wraps each
  * artifact under its own injected `## <title>`, so without this the
@@ -155,6 +189,9 @@ export function cleanArtifactBody(raw: string): string {
   // preamble — sources are now surfaced in the Reader Intelligence
   // Guide and the `## Article Sources` appendix instead).
   body = stripSourcePreamble(body);
+  // Strip any inline Reader Intelligence Guide blocks from artifact
+  // bodies — the canonical guide is emitted once by the aggregator.
+  body = stripInlineReaderGuide(body);
   // Demote inner headings by one level — the aggregator wraps each body
   // in its own `## <Section title>` so the artifact's own `##` becomes a
   // sibling, not a child. Cap at H6.

@@ -222,6 +222,16 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     }
   }
 
+  // 2b. Reader Intelligence Guide single-occurrence invariant.
+  const guideMatches = text.match(/^##\s+Reader Intelligence Guide\s*$/gm);
+  if (guideMatches && guideMatches.length > 1) {
+    violations.push({
+      file: rel,
+      code: 'duplicate-reader-guide',
+      message: `Reader Intelligence Guide heading appears ${guideMatches.length} times — must be exactly once. The cleaning pipeline should strip inline duplicates before the aggregator emits the canonical instance.`,
+    });
+  }
+
   // 3. BLUF must be a real prose paragraph, not a stub.
   const bluf = extractBluf(text);
   if (bluf !== null) {

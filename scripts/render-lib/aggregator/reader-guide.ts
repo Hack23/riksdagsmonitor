@@ -23,8 +23,10 @@
 
 import GithubSlugger from 'github-slugger';
 
+import type { Language } from '../../types/language.js';
 import { HEADING_ID_PREFIX } from '../markdown/sanitize-schema.js';
 import { titleForArtifact } from './order.js';
+import { readerGuideI18n } from './reader-guide-i18n.js';
 
 /**
  * Reader Intelligence Guide row shape. Each entry maps an analysis
@@ -114,31 +116,41 @@ export function anchorForTitle(title: string): string {
  * artifacts that exist in `available`, appends a "Per-document
  * intelligence" row when document-level analyses exist, and always
  * closes with the "Audit appendix" pointer row.
+ *
+ * When `lang` is supplied, all user-visible strings (heading, preamble,
+ * column headers, entry labels and reader-value lenses) are sourced
+ * from the {@link READER_GUIDE_I18N} map for that language.
  */
-export function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: boolean): string {
+export function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: boolean, lang?: Language): string {
+  const i18n = readerGuideI18n(lang ?? 'en');
+  const { chrome } = i18n;
+
   const entries = READER_GUIDE_ENTRIES
     .filter((entry) => available.has(entry.file))
     .map((entry) => {
       const title = titleForArtifact(entry.file);
-      return `| [${entry.label}](#${anchorForTitle(title)}) | ${entry.readerValue} | \`${entry.file}\` |`;
+      const localised = i18n.entries[entry.file];
+      const label = localised?.label ?? entry.label;
+      const readerValue = localised?.readerValue ?? entry.readerValue;
+      return `| [${label}](#${anchorForTitle(title)}) | ${readerValue} | \`${entry.file}\` |`;
     });
 
   if (hasDocuments) {
     entries.push(
-      `| [Per-document intelligence](#${HEADING_ID_PREFIX}per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | \`documents/*-analysis.md\` |`,
+      `| [${chrome.perDocLabel}](#${HEADING_ID_PREFIX}per-document-intelligence) | ${chrome.perDocValue} | \`documents/*-analysis.md\` |`,
     );
   }
 
   entries.push(
-    `| [Audit appendix](#${HEADING_ID_PREFIX}classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |`,
+    `| [${chrome.auditLabel}](#${HEADING_ID_PREFIX}classification-results) | ${chrome.auditValue} | appendix artifacts |`,
   );
 
   return [
-    '## Reader Intelligence Guide',
+    `## ${chrome.heading}`,
     '',
-    'Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.',
+    chrome.preamble,
     '',
-    '| Reader need | What you\'ll get | Source artifact |',
+    `| ${chrome.colReaderNeed} | ${chrome.colWhatYouGet} | ${chrome.colSourceArtifact} |`,
     '|---|---|---|',
     ...entries,
   ].join('\n');
