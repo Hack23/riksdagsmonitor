@@ -21,9 +21,19 @@
 
 ## 1. Purpose &amp; Scope
 
-This audit is the **inventory pass** required by acceptance criterion #1 of the documentation-refresh issue. It enumerates every Hack23-ISMS–required Markdown deliverable at the repository root, captures the document's current header metadata (owner, version, last review date), classifies observed drift against the **current** state of the codebase (50 workflow files = 22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`; 8 MCP servers; MCP Gateway v0.3.1; gh-aw v0.71.3; IMF-as-primary economic data canon; 23-artifact analysis contract; chrome refactor; Reader Intelligence Guide), and traces each document to the authoritative ISMS-PUBLIC policy that mandates it.
+This audit is the **inventory pass** required by acceptance criterion #1 of the documentation-refresh issue. It enumerates every Hack23-ISMS–required Markdown deliverable at the repository root and captures each document's current header metadata (owner, version, last review date).
 
-The matrix is the **single source of truth** for what was found, what was fixed in this PR, and what remains as a backlog item for follow-up issues.
+The audit classifies observed drift against the **current** state of the codebase, namely:
+
+- **50 workflow files** = 22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`
+- 8 MCP servers
+- MCP Gateway **v0.3.1**
+- gh-aw **v0.71.3**
+- IMF-as-primary economic data canon
+- 23-artifact analysis contract
+- Chrome refactor and Reader Intelligence Guide pipeline
+
+Each row is traced to the authoritative ISMS-PUBLIC policy that mandates the document. The matrix is the **single source of truth** for what was found, what was fixed in this PR, and what remains as a backlog item for follow-up issues.
 
 ---
 
