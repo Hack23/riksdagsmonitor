@@ -917,7 +917,7 @@ describe('generate-news-indexes/template — generateLanguageNotice', () => {
 });
 
 // ---------------------------------------------------------------------------
-// SEO uplift: news-index template generates FAQ + rel=next + sr-only list
+// SEO uplift: news-index template generates FAQ + collapsible archive list
 // ---------------------------------------------------------------------------
 
 import { generateIndexHTML } from '../scripts/generate-news-indexes/template.js';
@@ -952,13 +952,14 @@ describe('generate-news-indexes/template — SEO features', () => {
     expect(html).toContain('Vanliga frågor');
   });
 
-  it('emits a crawler-visible article list with .sr-only class', () => {
+  it('emits a crawler-visible article list as a collapsible <details> block', () => {
     const html = generateIndexHTML('en', mockArticles, { en: mockArticles });
-    expect(html).toContain('class="seo-article-list sr-only"');
+    expect(html).toContain('class="seo-article-list"');
     expect(html).toContain('id="seo-article-list-heading"');
+    expect(html).toContain('<details class="seo-article-list"');
   });
 
-  it('does NOT use inline positioning styles on the sr-only list', () => {
+  it('does NOT use inline positioning styles on the article list', () => {
     const html = generateIndexHTML('en', mockArticles, { en: mockArticles });
     // Ensure no inline absolute positioning on the seo list section
     expect(html).not.toMatch(/class="seo-article-list[^"]*"[^>]*style="/);

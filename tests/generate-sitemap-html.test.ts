@@ -346,11 +346,11 @@ describe('Sitemap HTML Generation', () => {
       html = module.generateSitemapHtml('en', articlesByLang);
     });
 
-    it('emits a meta description between 140 and 200 chars', () => {
+    it('emits a meta description between 100 and 200 chars', () => {
       const match = html.match(/name="description" content="([^"]+)"/);
       expect(match).not.toBeNull();
       const desc = match![1]!;
-      expect(desc.length).toBeGreaterThanOrEqual(50); // After escaping may be shorter
+      expect(desc.length).toBeGreaterThanOrEqual(100);
       expect(desc.length).toBeLessThanOrEqual(200);
     });
 

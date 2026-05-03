@@ -159,25 +159,32 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
     hreflangAlternates[l] = l === 'en' ? 'sitemap.html' : `sitemap_${l}.html`;
   }
 
-  // SEO uplift (round-7): build a localised, 140–200-char meta description
-  // that cites the article count + native language name, plus a localised
-  // keyword list pulled from the existing translation dictionary so every
-  // sitemap_${lang}.html exposes language-appropriate terminology
-  // (English-only keyword stuffing was previously flagged by Bing
-  // Webmaster). The description floor matches `seo-metadata-contract.md` §3.1.
+  // SEO uplift (round-7): build a localised meta description that cites
+  // the article count + native language name. Per-language char budgets
+  // follow `seo-metadata-contract.md` §4:
+  //   ja/ko/zh: 70–120; ar/he: 120–170; others: 140–200.
+  const CJK_LANGS: ReadonlySet<Language> = new Set(['ja', 'ko', 'zh']);
+  const RTL_LANGS: ReadonlySet<Language> = new Set(['ar', 'he']);
+  const descMin = CJK_LANGS.has(lang) ? 70 : RTL_LANGS.has(lang) ? 120 : 140;
+  const descMax = CJK_LANGS.has(lang) ? 120 : RTL_LANGS.has(lang) ? 170 : 200;
+
   const articleCount = recentArticles.length;
   const baseDescription = t.completeNavigation;
   // `${baseDescription}` is typically 30–80 chars — extend with article
-  // count + native lang + brand to land in the 140–200 band.
+  // count + native lang + brand to land in the target band.
   const rawDescription = `${baseDescription} — ${articleCount} ${t.recentArticles} · ${meta.nativeName} · Riksdagsmonitor (${t.mainPlatform}, ${t.dashboards}, ${t.newsAnalysis}, ${t.documentation}).`;
-  // Clamp to 140–200 chars: truncate at ~197 with ellipsis if too long,
-  // or pad with site context if under 140 (CJK may naturally be shorter).
+  // Clamp to per-language min/max: truncate with ellipsis if too long,
+  // or pad with site context if under minimum.
   let seoDescription = rawDescription;
-  if (seoDescription.length > 200) {
-    seoDescription = seoDescription.slice(0, 197).trimEnd() + '…';
-  } else if (seoDescription.length < 140) {
+  if (seoDescription.length > descMax) {
+    seoDescription = seoDescription.slice(0, descMax - 3).trimEnd() + '…';
+  } else if (seoDescription.length < descMin) {
     const pad = ` ${t.resources} — ${meta.nativeName} · Riksdagsmonitor.`;
-    seoDescription = (seoDescription + pad).slice(0, 200);
+    seoDescription = (seoDescription + pad);
+    // Re-clamp after padding
+    if (seoDescription.length > descMax) {
+      seoDescription = seoDescription.slice(0, descMax - 3).trimEnd() + '…';
+    }
   }
   const seoKeywords = [
     'Riksdagsmonitor',
@@ -261,14 +268,15 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
   // article inventory (title + URL + position) so crawlers see the
   // archive even if the visual UI paginates client-side.
   if (recentArticles.length > 0) {
+    const cappedArticles = recentArticles.slice(0, 200);
     jsonLd.push({
       '@context': 'https://schema.org',
       '@type': 'ItemList',
       '@id': `${BASE_URL}/${sitemapFile}#articles-itemlist`,
       name: t.recentArticles,
-      numberOfItems: recentArticles.length,
+      numberOfItems: cappedArticles.length,
       itemListOrder: 'https://schema.org/ItemListOrderDescending',
-      itemListElement: recentArticles.slice(0, 200).map((article, i) => ({
+      itemListElement: cappedArticles.map((article, i) => ({
         '@type': 'ListItem',
         position: i + 1,
         name: article.title,

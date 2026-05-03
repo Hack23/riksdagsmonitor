@@ -227,15 +227,6 @@ export function generateIndexHTML(
   // before the AI-newsroom block (crawlable progressive disclosure).
   const faqItems = getFaqItems('newsIndex', toChromeLang(langKey));
 
-  // Pagination link relations — the visible UI paginates client-side
-  // in chunks of 20, but crawlers will not execute JS. When the article
-  // count exceeds the first page we expose a static `?page=2` URL via
-  // `<link rel="next">` so search engines can discover the archive
-  // structure. The first page has no `prev`.
-  const PAGE_SIZE = 20;
-  const totalPages = Math.max(1, Math.ceil(displayArticles.length / PAGE_SIZE));
-  const relNext = totalPages > 1 ? `${BASE_URL}/news/${filename}?page=2` : undefined;
-
   const jsonLd: unknown[] = [organizationLd, websiteLd, itemListLd, breadcrumbLd];
 
   // News-index needs a Google Fonts preconnect (Inter + Orbitron) plus a
@@ -280,7 +271,6 @@ export function generateIndexHTML(
     heroBannerImage: 'images/riksdagsmonitornews-banner.webp',
     faqItems,
     speakableSelectors: ['header.news-page-heading h1', 'header.news-page-heading .news-page-subtitle'],
-    relNext,
   });
 
   // News-index body — preserves the rich filter bar, articles grid, JS,
@@ -786,17 +776,17 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
   <!-- SEO: crawler-visible article list. The .articles-grid above is
        hydrated client-side from JSON, leaving search-engine crawlers
        with only a skeleton + the truncated 10-item ItemList JSON-LD.
-       This noscript-style fallback exposes every article URL +
-       title + date in the initial HTML so the entire archive is
-       discoverable from the index page even without JS. The list is
-       visually hidden but available to assistive technology that
-       prefers semantic markup. -->
-  <section class="seo-article-list sr-only" aria-labelledby="seo-article-list-heading">
-    <h2 id="seo-article-list-heading">${escapeHtml(lang.title)} — ${displayArticles.length}</h2>
+       This collapsible fallback exposes every article URL + title + date
+       in the initial HTML so the entire archive is discoverable from
+       the index page even without JS. Using <details> keeps the list
+       out of the default keyboard tab order and avoids overwhelming
+       screen readers while remaining fully crawlable. -->
+  <details class="seo-article-list" aria-labelledby="seo-article-list-heading">
+    <summary id="seo-article-list-heading">${escapeHtml(lang.title)} — ${displayArticles.length}</summary>
     <ul>
 ${displayArticles.map((a) => `      <li><a href="${escapeHtml(a.slug)}"><time datetime="${escapeHtml(a.date)}">${escapeHtml(a.date)}</time> — ${escapeHtml(a.title)}</a></li>`).join('\n')}
     </ul>
-  </section>
+  </details>
 
   <section class="news-faq-section" aria-labelledby="news-faq-heading">
     <div class="container">
