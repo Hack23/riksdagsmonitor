@@ -31,12 +31,12 @@ describe('jsonld — buildBreadcrumbListLd', () => {
       { name: 'Home', item: 'https://riksdagsmonitor.com/' },
       { name: 'News', item: 'https://riksdagsmonitor.com/news/' },
       { name: 'Article Title' },
-    ]) as Record<string, unknown>;
+    ]);
 
     expect(ld['@context']).toBe('https://schema.org');
     expect(ld['@type']).toBe('BreadcrumbList');
 
-    const items = ld.itemListElement as Record<string, unknown>[];
+    const items = ld.itemListElement;
     expect(items).toHaveLength(3);
     expect(items[0]).toMatchObject({
       '@type': 'ListItem',
@@ -60,10 +60,19 @@ describe('jsonld — buildBreadcrumbListLd', () => {
   });
 
   it('handles a single entry', () => {
-    const ld = buildBreadcrumbListLd([{ name: 'Home' }]) as Record<string, unknown>;
-    const items = ld.itemListElement as Record<string, unknown>[];
-    expect(items).toHaveLength(1);
-    expect(items[0].position).toBe(1);
+    const ld = buildBreadcrumbListLd([{ name: 'Home' }]);
+    expect(ld.itemListElement).toHaveLength(1);
+    expect(ld.itemListElement[0].position).toBe(1);
+  });
+
+  it('throws when an intermediate entry is missing `item`', () => {
+    expect(() =>
+      buildBreadcrumbListLd([
+        { name: 'Home' },  // missing item — not last
+        { name: 'News', item: 'https://riksdagsmonitor.com/news/' },
+        { name: 'Article' },
+      ]),
+    ).toThrow(/position 1 must have an `item` URL/);
   });
 });
 
@@ -79,7 +88,7 @@ describe('jsonld — buildNewsArticleLd', () => {
       isBasedOn: [
         { url: 'https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-01-01/test/exec.md', name: 'exec.md' },
       ],
-    }) as Record<string, unknown>;
+    });
 
     expect(ld['@context']).toBe('https://schema.org');
     expect(ld['@type']).toBe('NewsArticle');
@@ -93,19 +102,16 @@ describe('jsonld — buildNewsArticleLd', () => {
     expect(ld.isAccessibleForFree).toBe(true);
 
     // Publisher
-    const publisher = ld.publisher as Record<string, unknown>;
-    expect(publisher['@type']).toBe('Organization');
-    expect(publisher.name).toBe('Hack23 AB');
+    expect(ld.publisher['@type']).toBe('Organization');
+    expect(ld.publisher.name).toBe('Hack23 AB');
 
     // Author
-    const author = ld.author as Record<string, unknown>;
-    expect(author['@type']).toBe('Organization');
+    expect(ld.author['@type']).toBe('Organization');
 
     // isBasedOn
-    const basedOn = ld.isBasedOn as Record<string, unknown>[];
-    expect(basedOn).toHaveLength(1);
-    expect(basedOn[0]['@type']).toBe('CreativeWork');
-    expect(basedOn[0].name).toBe('exec.md');
+    expect(ld.isBasedOn).toHaveLength(1);
+    expect(ld.isBasedOn![0]['@type']).toBe('CreativeWork');
+    expect(ld.isBasedOn![0].name).toBe('exec.md');
   });
 
   it('omits isBasedOn when no artifacts are provided', () => {
@@ -116,7 +122,7 @@ describe('jsonld — buildNewsArticleLd', () => {
       dateModified: '2026-01-01T00:00:00Z',
       inLanguage: 'sv',
       url: `${BASE_URL}/news/simple-sv.html`,
-    }) as Record<string, unknown>;
+    });
 
     expect(ld).not.toHaveProperty('isBasedOn');
   });
@@ -128,16 +134,14 @@ describe('jsonld — buildSpeakableWebPageLd', () => {
       `${BASE_URL}/news/test-en.html`,
       'en',
       ['.rm-article-header h1', '.rm-article-dek'],
-    ) as Record<string, unknown>;
+    );
 
     expect(ld['@context']).toBe('https://schema.org');
     expect(ld['@type']).toBe('WebPage');
     expect(ld.url).toContain('/news/test-en.html');
     expect(ld.inLanguage).toBe('en');
-
-    const speakable = ld.speakable as Record<string, unknown>;
-    expect(speakable['@type']).toBe('SpeakableSpecification');
-    expect(speakable.cssSelector).toEqual(['.rm-article-header h1', '.rm-article-dek']);
+    expect(ld.speakable['@type']).toBe('SpeakableSpecification');
+    expect(ld.speakable.cssSelector).toEqual(['.rm-article-header h1', '.rm-article-dek']);
 
     expect(ld.isPartOf).toMatchObject({
       '@type': 'WebSite',
@@ -268,5 +272,37 @@ describe('structured-data — renderArticleHtml integration', () => {
     // Norwegian uses 'nb' in hreflang (BCP-47) not 'no'
     expect(html).toContain('hreflang="nb"');
     expect(html).toContain('<html lang="nb"');
+  });
+
+  it('truncates BreadcrumbList title with ellipsis when longer than 50 characters', async () => {
+    const longTitle = 'A Very Long Article Title That Exceeds Fifty Characters Limit Easily';
+    const longMd = [
+      '---',
+      `title: "${longTitle}"`,
+      'description: "Test description."',
+      'date: 2099-01-01',
+      '---',
+      '',
+      '## Brief',
+      '',
+      'Content.',
+    ].join('\n');
+    const html = await renderArticleHtml({
+      markdown: longMd,
+      lang: 'en',
+      canonicalPath: 'news/2099-01-01-long-en.html',
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/long',
+      artifactsUsed: [],
+    });
+    // The breadcrumb should truncate at 47 chars + ellipsis
+    const truncated = longTitle.substring(0, 47) + '…';
+    expect(html).toContain(truncated);
+    // Full title should NOT appear in the BreadcrumbList JSON-LD position-3 name
+    // (but it DOES appear in the headline of the NewsArticle block and <h1>)
+    const jsonLdBlocks = html.match(/<script type="application\/ld\+json">[^<]+<\/script>/g) ?? [];
+    const breadcrumbBlock = jsonLdBlocks.find((b) => b.includes('"BreadcrumbList"'));
+    expect(breadcrumbBlock).toBeDefined();
+    expect(breadcrumbBlock).toContain(truncated);
+    expect(breadcrumbBlock).not.toContain(longTitle);
   });
 });

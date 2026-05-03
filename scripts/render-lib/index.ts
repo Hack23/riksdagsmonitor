@@ -83,7 +83,7 @@ export type { ChromeOptions, SiteChrome, BreadcrumbItem } from './chrome.js';
 
 // --- JSON-LD builders -------------------------------------------------------
 export { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd } from './jsonld.js';
-export type { BreadcrumbEntry, NewsArticleLdInput } from './jsonld.js';
+export type { BreadcrumbEntry, BreadcrumbEntryWithItem, BreadcrumbEntryCurrentPage, NewsArticleLdInput, BreadcrumbListLd, NewsArticleLd, SpeakableWebPageLd, JsonLdListItem } from './jsonld.js';
 
 // --- Article (orchestrator) -------------------------------------------------
 export { renderArticleHtml } from './article.js';
