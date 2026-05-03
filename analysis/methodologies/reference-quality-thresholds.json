@@ -352,7 +352,7 @@
       "horizon-year": "roughly even (likely allowed only with ≥ 3 cycle-aged sources)",
       "horizon-cycle": "roughly even (likely allowed only with ≥ 3 cycle-aged sources)",
       "horizon-election": "scenario-driven; coalition outcomes never above 'likely'",
-      "_source": ".github/prompts/ext/long-horizon-forecasting.md and .github/copilot-instructions.md §Long-horizon playbook"
+      "_source": ".github/prompts/ext/long-horizon-forecasting.md"
     },
     "exemplarPolicy": {
       "rule": "Every methodology file in analysis/methodologies/ MUST carry an Exemplar (good — pattern-match this) and an Anti-exemplar (failure mode — never ship this) snippet ≤ 25 lines each, inside the AI-FIRST Methodology Card.",

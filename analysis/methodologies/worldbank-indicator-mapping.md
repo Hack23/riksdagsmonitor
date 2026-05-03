@@ -29,7 +29,7 @@
 | **Inputs** | `scripts/world-bank-client.ts` `INDICATOR_IDS`; `analysis/worldbank/indicators-inventory.json` v4.0; world-bank MCP server |
 | **Outputs** | `comparative-international.md` non-economic rows; `voter-segmentation.md`; `implementation-feasibility.md`; `session-baseline.md` non-economic rows |
 | **Owning artifact(s)** | Every artifact making a non-economic comparator claim |
-| **Owning gate check** | Provider-precedence enforcement: economic codes are FORBIDDEN here — cross-check against `imf-indicator-mapping.md` and `analysis/imf/indicators-inventory.json#deprecationPolicy` |
+| **Owning gate check** | Provider-precedence enforcement: economic codes are FORBIDDEN here — cross-check against `imf-indicator-mapping.md` and `analysis/imf/indicators-inventory.json (scope boundary)` |
 | **Citation density target** | Every non-economic indicator row carries `provider=worldbank, indicator-code, retrieved_at` |
 | **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
 | **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
@@ -47,7 +47,7 @@
 
 ### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
 
-- [ ] Detect & remove any deprecated economic codes from `analysis/worldbank/indicators-inventory.json#deprecationPolicy`
+- [ ] Detect & remove any deprecated economic codes from `analysis/worldbank/indicators-inventory.json (indicator list)`
 - [ ] Reconcile WB freshness vs IMF/SCB: WB usually annual lag → flag if > 18 mo old
 - [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
 - [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative

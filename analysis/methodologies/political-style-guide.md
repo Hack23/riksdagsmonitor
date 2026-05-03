@@ -739,9 +739,9 @@ The following writing patterns are prohibited in all Riksdagsmonitor content:
 
 ## 🤖 Machine-readable banned-phrase list
 
-> **Why this section is parseable.** The analysis gate (`.github/prompts/05-analysis-gate.md`) and any Pass-2 self-audit can `grep -F -f` the literal phrases below to detect banned content **without parsing a markdown table**. The fenced `text` block is the single source of truth; each line is one banned literal phrase, optionally followed by a `# comment` (ignored by the gate). The `BEGIN/END BANNED-PHRASES` markers exist so tooling can extract the block deterministically.
+> **Why this section is parseable.** The Pass-2 self-audit loop can `grep -F -f` the literal phrases below to detect banned content **without parsing a markdown table**. The fenced `text` block is the single source of truth; each line is one banned literal phrase (trailing `# comment` suffixes are **not** supported — place comments on their own line starting with `#`). The `BEGIN/END BANNED-PHRASES` markers exist so tooling can extract the block deterministically.
 
-> ⚠️ **Do not edit individual lines without updating `.github/prompts/05-analysis-gate.md` Check 4 enforcement** — the regex / fixed-string list this gate consumes lives in this block.
+> ℹ️ **Gate integration status:** Gate Check 4 (`05-analysis-gate.md`) currently enforces evidence anchors only and does **not** consume this block. Banned-phrase elimination is enforced by the agent's Pass-2 read-back loop. Future gate integration is planned but not yet implemented.
 
 <!-- BEGIN BANNED-PHRASES v1.0 (2026-05-03) -->
 ```text
