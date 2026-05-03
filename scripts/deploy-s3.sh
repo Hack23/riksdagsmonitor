@@ -10,8 +10,10 @@
 # unconditionally uploaded every file on every deploy.
 #
 # Strategy:
-#   1. Per-type `sync --size-only` passes upload only changed files with
-#      correct Content-Type and Cache-Control from the start.
+#   1. Per-type `sync` passes upload only changed files with correct
+#      Content-Type and Cache-Control from the start.
+#      - Immutable hashed assets use --size-only (safe: content hash in filename)
+#      - Mutable assets (HTML, metadata) use default size+mtime comparison
 #   2. A final `sync --delete --size-only` pass removes orphaned S3 objects
 #      without re-uploading anything (all files already handled above).
 #   3. Cache-busting overrides for sw.js / manifests / styles.css run last.
@@ -52,17 +54,26 @@ SKIP=(
 echo "🚀 Deploying $SRC → $BUCKET"
 
 # ── Per-type sync passes: upload only changed files with correct headers ──
-# Each pass uses --size-only so unchanged files generate ZERO API calls.
+#
+# Comparison strategy:
+#   - Hashed assets (CSS/JS/images/fonts/maps/wasm): use --size-only.
+#     Vite includes a content hash in the filename, so any content change
+#     produces a new S3 key.  Same-size-different-content is impossible.
+#   - Non-hashed assets (HTML, XML, JSON, TXT, etc.): use default comparison
+#     (size + last-modified).  This ensures same-size content changes are
+#     detected.  Fresh builds will re-upload these files, but correctness
+#     trumps efficiency for mutable content.
 
 # HTML files - short cache, must-revalidate
+# No --size-only: ensures same-size HTML edits are always uploaded.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' --include '*.html' \
   --no-guess-mime-type --content-type 'text/html; charset=utf-8' \
   --cache-control 'public, max-age=3600, must-revalidate' \
-  --size-only \
   "${SKIP[@]}"
 
 # CSS files - long cache, immutable (hashed Vite bundles)
+# --size-only is safe: Vite content-hashes filenames; any change → new key.
 # Excludes root styles.css which gets cache-busting override below.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' --include '*.css' \
@@ -73,6 +84,7 @@ aws s3 sync "$SRC" "$BUCKET" \
   "${SKIP[@]}"
 
 # JS/MJS files - long cache, immutable (hashed Vite bundles)
+# --size-only is safe: Vite content-hashes filenames; any change → new key.
 # Excludes sw.js which gets cache-busting override below.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' --include '*.js' --include '*.mjs' \
@@ -83,9 +95,8 @@ aws s3 sync "$SRC" "$BUCKET" \
   "${SKIP[@]}"
 
 # Image files - long cache, immutable
-# AWS CLI correctly guesses common image types; we omit --no-guess-mime-type
-# here intentionally to let it auto-detect per-extension (webp, png, jpg, gif,
-# svg+xml, x-icon) since a single --content-type can't cover all formats.
+# --size-only is safe: images are either content-hashed or never change.
+# AWS CLI auto-detects per-extension MIME (webp, png, jpg, gif, svg+xml, x-icon).
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' \
   --include '*.webp' --include '*.png' --include '*.jpg' --include '*.jpeg' \
@@ -95,8 +106,7 @@ aws s3 sync "$SRC" "$BUCKET" \
   "${SKIP[@]}"
 
 # Font files - long cache, immutable
-# AWS CLI correctly guesses woff/woff2/ttf/otf; eot may need explicit type
-# but is extremely rare in practice.  Letting CLI guess is acceptable.
+# --size-only is safe: fonts are static vendored assets.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' \
   --include '*.woff2' --include '*.woff' --include '*.ttf' \
@@ -106,8 +116,7 @@ aws s3 sync "$SRC" "$BUCKET" \
   "${SKIP[@]}"
 
 # Source maps + WebAssembly - long cache, immutable
-# AWS CLI correctly guesses application/wasm; .map files get application/json
-# via the CLI's built-in mimetypes database.
+# --size-only is safe: these are Vite content-hashed.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' --include '*.map' --include '*.wasm' \
   --cache-control 'public, max-age=31536000, immutable' \
@@ -115,15 +124,13 @@ aws s3 sync "$SRC" "$BUCKET" \
   "${SKIP[@]}"
 
 # Metadata files - medium cache (1 day)
-# Multiple formats grouped by cache policy.  AWS CLI correctly guesses MIME
-# types for xml, json, txt, csv, pdf.  For .md and .webmanifest the CLI may
-# not guess perfectly but these are low-traffic auxiliary files.
+# No --size-only: mutable files (sitemaps, RSS, JSON-LD) must always reflect
+# latest content even if byte size happens to stay the same.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' \
   --include '*.xml' --include '*.json' --include '*.txt' --include '*.csv' \
   --include '*.pdf' --include '*.md' --include '*.webmanifest' \
   --cache-control 'public, max-age=86400' \
-  --size-only \
   "${SKIP[@]}"
 
 echo "✅ Per-type sync complete (only changed files uploaded)"
