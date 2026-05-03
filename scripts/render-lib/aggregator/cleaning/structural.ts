@@ -96,6 +96,110 @@ export function stripInlineReaderGuide(body: string): string {
 }
 
 /**
+ * Collapse identical adjacent non-blank lines that appear two-or-more
+ * times in a row. Defensive cleaning for the common AI-authored failure
+ * mode where a classification row, ISMS footer or metadata sentinel is
+ * pasted twice into the same artifact body.
+ *
+ * Lines inside fenced code blocks are preserved verbatim — duplication
+ * inside a code block may be intentional (e.g. config snippets). Blank
+ * lines are not deduplicated; they participate as paragraph separators
+ * and are handled later by the `\n{3,}` collapse step.
+ *
+ * Stable on already-deduped inputs: the function is idempotent —
+ * applying it twice yields the same result.
+ */
+export function dedupeAdjacentDuplicateLines(body: string): string {
+  const lines = body.split('\n');
+  const out: string[] = [];
+  let inFence = false;
+  let prevNonBlank: string | null = null;
+  for (const line of lines) {
+    if (/^\s{0,3}(?:```|~~~)/.test(line)) {
+      inFence = !inFence;
+      out.push(line);
+      prevNonBlank = null;
+      continue;
+    }
+    if (inFence) {
+      out.push(line);
+      prevNonBlank = null;
+      continue;
+    }
+    if (line.trim() === '') {
+      out.push(line);
+      // Blank lines reset the adjacency window — duplicates separated
+      // by blank lines are a different concern (handled by
+      // `collapseRepeatedFooterBlocks`).
+      prevNonBlank = null;
+      continue;
+    }
+    if (prevNonBlank !== null && line === prevNonBlank) {
+      // Skip the duplicate.
+      continue;
+    }
+    out.push(line);
+    prevNonBlank = line;
+  }
+  return out.join('\n');
+}
+
+/**
+ * Footer-block markers that templates and AI agents have historically
+ * emitted at the end of every artifact (sometimes twice). The aggregator
+ * already strips a curated set of trailing administrative blocks (see
+ * {@link cleanArtifactBody}); this function catches the *intra-body*
+ * duplicates — when an ISMS / classification / GDPR provenance line
+ * appears two-or-more times in the same artifact body, only the first
+ * occurrence is kept.
+ *
+ * A "footer block" is a single line (post-trim) that:
+ *   - starts with the bold marker `**ISMS …`, `**Classified under …`,
+ *     `**GDPR …`, `**Article-Generation contract**`, `**Hack23 ISMS**`,
+ *     `**Provenance**`, or
+ *   - starts with the italic marker `_Classified under …` or
+ *     `*Classified under …`.
+ *
+ * Lines inside fenced code blocks are preserved verbatim. Subsequent
+ * occurrences of the *exact same* footer line are removed (along with a
+ * single trailing blank line so the surrounding paragraph spacing is
+ * preserved).
+ */
+export function collapseRepeatedFooterBlocks(body: string): string {
+  const FOOTER_LINE = /^\s*(?:\*\*|[*_])\s*(?:ISMS\b|Classified\s+under\b|GDPR\b|Hack23\s+ISMS\b|Article-Generation\s+contract\b|Provenance\b)/i;
+  const lines = body.split('\n');
+  const seen = new Set<string>();
+  const out: string[] = [];
+  let inFence = false;
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i]!;
+    if (/^\s{0,3}(?:```|~~~)/.test(line)) {
+      inFence = !inFence;
+      out.push(line);
+      continue;
+    }
+    if (inFence) {
+      out.push(line);
+      continue;
+    }
+    const trimmed = line.trim();
+    if (FOOTER_LINE.test(trimmed)) {
+      if (seen.has(trimmed)) {
+        // Skip this duplicated footer line. Also swallow a single
+        // trailing blank line so we don't leave a stranded gap.
+        if (i + 1 < lines.length && lines[i + 1]!.trim() === '') {
+          i += 1;
+        }
+        continue;
+      }
+      seen.add(trimmed);
+    }
+    out.push(line);
+  }
+  return out.join('\n');
+}
+
+/**
  * Demote ATX headings by one level inside an artifact body — `##` → `###`,
  * `###` → `####`, …, capped at `######`. The aggregator wraps each
  * artifact under its own injected `## <title>`, so without this the
@@ -192,6 +296,14 @@ export function cleanArtifactBody(raw: string): string {
   // Strip any inline Reader Intelligence Guide blocks from artifact
   // bodies — the canonical guide is emitted once by the aggregator.
   body = stripInlineReaderGuide(body);
+  // Collapse repeated ISMS / classification / provenance footer lines
+  // emitted twice by AI agents or by template merge. Runs *before*
+  // demoteHeadings so the dedupe operates on author-level lines.
+  body = collapseRepeatedFooterBlocks(body);
+  // Dedupe adjacent identical lines (defensive against AI agents that
+  // paste a classification row, BLUF marker or evidence line twice in
+  // a row). Idempotent and fence-aware.
+  body = dedupeAdjacentDuplicateLines(body);
   // Demote inner headings by one level — the aggregator wraps each body
   // in its own `## <Section title>` so the artifact's own `##` becomes a
   // sibling, not a child. Cap at H6.
