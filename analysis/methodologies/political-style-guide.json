@@ -1,0 +1,142 @@
+{
+  "version": "1.0",
+  "effectiveDate": "2026-05-03",
+  "description": "Machine-readable banned-phrase list extracted from political-style-guide.md §Machine-readable banned-phrase list. Canonical source — consumers MUST use this JSON file for automated enforcement. The markdown remains the human-readable reference.",
+  "matchMode": "literal-substring-case-insensitive",
+  "categories": {
+    "lede-scene-setter": [
+      "In a significant development",
+      "Recent activity in the Riksdag suggests",
+      "Several stakeholders have raised concerns",
+      "It is important to note that",
+      "significant activity in",
+      "significant development"
+    ],
+    "vague-attribution": [
+      "Sources say",
+      "Sources indicate",
+      "Sources suggest",
+      "Experts believe",
+      "Experts say",
+      "Many believe",
+      "It is believed that",
+      "The public is concerned"
+    ],
+    "editorialising-hyperbole": [
+      "This is a disaster for",
+      "Obviously,",
+      "Surprisingly,",
+      "The political situation is complex",
+      "Various risks",
+      "various stakeholders",
+      "various ways",
+      "various parties",
+      "in various ways"
+    ],
+    "forecast-laundering": [
+      "will result in",
+      "will cause",
+      "will lead to",
+      "will trigger",
+      "expected to be modest",
+      "likely to be modest"
+    ],
+    "generic-significance": [
+      "This is an important development",
+      "important matters",
+      "This is significant because",
+      "significant implications",
+      "could have significant implications",
+      "matters for Swedish politics"
+    ],
+    "anonymous-unsourced": [
+      "Unnamed party members",
+      "Unnamed Tidö source",
+      "Anonymous government source",
+      "Insiders say"
+    ],
+    "generic-swot": [
+      "Strong leadership",
+      "Various strengths",
+      "Various weaknesses",
+      "Various opportunities",
+      "Various threats"
+    ],
+    "process-circular": [
+      "because it matters",
+      "because it is important",
+      "in some way",
+      "in various ways",
+      "to a certain extent",
+      "to some degree"
+    ],
+    "banned-title-patterns": [
+      "in Focus",
+      ": A Closer Look",
+      ": An Analysis",
+      ": A Deep Dive"
+    ]
+  },
+  "allPhrases": [
+    "In a significant development",
+    "Recent activity in the Riksdag suggests",
+    "Several stakeholders have raised concerns",
+    "It is important to note that",
+    "significant activity in",
+    "significant development",
+    "Sources say",
+    "Sources indicate",
+    "Sources suggest",
+    "Experts believe",
+    "Experts say",
+    "Many believe",
+    "It is believed that",
+    "The public is concerned",
+    "This is a disaster for",
+    "Obviously,",
+    "Surprisingly,",
+    "The political situation is complex",
+    "Various risks",
+    "various stakeholders",
+    "various ways",
+    "various parties",
+    "in various ways",
+    "will result in",
+    "will cause",
+    "will lead to",
+    "will trigger",
+    "expected to be modest",
+    "likely to be modest",
+    "This is an important development",
+    "important matters",
+    "This is significant because",
+    "significant implications",
+    "could have significant implications",
+    "matters for Swedish politics",
+    "Unnamed party members",
+    "Unnamed Tidö source",
+    "Anonymous government source",
+    "Insiders say",
+    "Strong leadership",
+    "Various strengths",
+    "Various weaknesses",
+    "Various opportunities",
+    "Various threats",
+    "because it matters",
+    "because it is important",
+    "in some way",
+    "in various ways",
+    "to a certain extent",
+    "to some degree",
+    "in Focus",
+    ": A Closer Look",
+    ": An Analysis",
+    ": A Deep Dive"
+  ],
+  "meta": {
+    "sourceFile": "analysis/methodologies/political-style-guide.md",
+    "sourceSection": "Machine-readable banned-phrase list",
+    "extractionContract": "BEGIN BANNED-PHRASES … END BANNED-PHRASES markers",
+    "removalPolicy": "Append-only between major versions. Removals require major-version bump."
+  }
+}

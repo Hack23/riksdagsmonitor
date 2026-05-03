@@ -91,3 +91,98 @@ describe('validate-article — countBlufEvidenceAnchors', () => {
     expect(countBlufEvidenceAnchors(bluf)).toBe(4);
   });
 });
+
+// ---------------------------------------------------------------------------
+// Editorial QA scanners (issue #245)
+// ---------------------------------------------------------------------------
+
+import {
+  scanBannedPhrases,
+  countWords,
+  computeCitationDensity,
+  scanStaleProvenance,
+} from '../scripts/validate-article.js';
+
+describe('validate-article — scanBannedPhrases', () => {
+  const banned = ['Sources say', 'significant development', 'Obviously,'];
+
+  it('detects a banned phrase (case-insensitive)', () => {
+    const text = 'In this article, sources say the policy is contested.';
+    const hits = scanBannedPhrases(text, banned);
+    expect(hits.length).toBe(1);
+    expect(hits[0]!.phrase).toBe('Sources say');
+  });
+
+  it('detects multiple occurrences of the same phrase', () => {
+    const text = 'Sources say A and sources say B.';
+    const hits = scanBannedPhrases(text, banned);
+    expect(hits.length).toBe(2);
+  });
+
+  it('returns empty array for clean text', () => {
+    const text = 'HD12345 shows the vote was 173-176 on 2026-04-22.';
+    expect(scanBannedPhrases(text, banned)).toHaveLength(0);
+  });
+
+  it('matches case-insensitively', () => {
+    const text = 'OBVIOUSLY, the result is clear.';
+    const hits = scanBannedPhrases(text, banned);
+    expect(hits.length).toBe(1);
+    expect(hits[0]!.phrase).toBe('Obviously,');
+  });
+});
+
+describe('validate-article — countWords', () => {
+  it('counts words in plain text', () => {
+    expect(countWords('one two three four five')).toBe(5);
+  });
+
+  it('excludes fenced code blocks', () => {
+    const text = 'word1 word2\n```\ncode here ignored\n```\nword3';
+    expect(countWords(text)).toBe(3);
+  });
+
+  it('strips markdown links but keeps link text', () => {
+    const text = 'See [the report](https://example.com) for details.';
+    // "See the report for details." = 5 words
+    expect(countWords(text)).toBe(5);
+  });
+});
+
+describe('validate-article — computeCitationDensity', () => {
+  it('returns Infinity for text with no anchors', () => {
+    const text = 'This is plain text without any evidence anchors at all.';
+    expect(computeCitationDensity(text)).toBe(Infinity);
+  });
+
+  it('computes density for text with anchors', () => {
+    // ~20 words with 2 anchors → density ~10
+    const text = 'The vote on HD12345 passed 173-176. Prop. 2025/26:259 introduces the plan for next year.';
+    const density = computeCitationDensity(text);
+    expect(density).toBeLessThan(20);
+    expect(density).toBeGreaterThan(0);
+  });
+});
+
+describe('validate-article — scanStaleProvenance', () => {
+  it('flags entries older than 6 months', () => {
+    const text = `economicProvenance:\n  provider: imf\n  retrieved_at: 2025-01-15\n`;
+    const ref = new Date('2026-05-03');
+    const stale = scanStaleProvenance(text, ref);
+    expect(stale.length).toBe(1);
+    expect(stale[0]!.retrievedAt).toBe('2025-01-15');
+    expect(stale[0]!.ageMonths).toBeGreaterThan(6);
+  });
+
+  it('ignores entries within 6 months', () => {
+    const text = `retrieved_at: 2026-03-01\n`;
+    const ref = new Date('2026-05-03');
+    expect(scanStaleProvenance(text, ref)).toHaveLength(0);
+  });
+
+  it('ignores entries wrapped in stale-vintage annotation', () => {
+    const text = `<!-- stale-vintage: IMF data not yet refreshed -->\nretrieved_at: 2025-01-15\n`;
+    const ref = new Date('2026-05-03');
+    expect(scanStaleProvenance(text, ref)).toHaveLength(0);
+  });
+});

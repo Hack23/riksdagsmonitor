@@ -741,7 +741,7 @@ The following writing patterns are prohibited in all Riksdagsmonitor content:
 
 > **Why this section is parseable.** The Pass-2 self-audit loop can `grep -F -f` the literal phrases below to detect banned content **without parsing a markdown table**. The fenced `text` block is the single source of truth; each line is one banned literal phrase (trailing `# comment` suffixes are **not** supported — place comments on their own line starting with `#`). The `BEGIN/END BANNED-PHRASES` markers exist so tooling can extract the block deterministically.
 
-> ℹ️ **Gate integration status:** Gate Check 4 (`05-analysis-gate.md`) currently enforces evidence anchors only and does **not** consume this block. Banned-phrase elimination is enforced by the agent's Pass-2 read-back loop. Future gate integration is planned but not yet implemented.
+> ℹ️ **Gate integration status:** `validate-article.ts` (Check 7) now consumes [`political-style-guide.json`](political-style-guide.json) — the canonical machine-readable extraction of this block — and **fails CI** on any banned-phrase hit. The JSON file is the single source of truth for automated enforcement; this markdown block remains the human-readable reference.
 
 <!-- BEGIN BANNED-PHRASES v1.0 (2026-05-03) -->
 ```text
