@@ -57,7 +57,7 @@ export const sanitizeSchema: typeof defaultSchema = {
   clobberPrefix: HEADING_ID_PREFIX,
   attributes: {
     ...defaultSchema.attributes,
-    pre: [...(defaultSchema.attributes?.pre ?? []), ['className', 'mermaid']],
+    pre: [...(defaultSchema.attributes?.pre ?? []), ['className', 'mermaid'], 'tabIndex', ['data-mermaid-source', 'true']],
     code: [...(defaultSchema.attributes?.code ?? []), ['className', /^language-/], ['className', 'mermaid']],
     a: [...(defaultSchema.attributes?.a ?? []), ['className', 'anchor', 'heading-anchor'], 'ariaHidden', 'tabIndex'],
     span: [...(defaultSchema.attributes?.span ?? []), ['className', 'icon', 'icon-link']],

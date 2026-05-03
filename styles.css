@@ -12821,7 +12821,31 @@ html[data-theme="light"] .footer-disclaimer a {
   color: color-mix(in srgb, var(--light-text, #e0e0e0) 70%, transparent);
   min-height: 4rem;
   border-color: color-mix(in srgb, var(--primary-magenta, #ff006e) 35%, transparent);
+  /* Long-form diagrams must scroll horizontally on narrow viewports
+   * (mobile-first) instead of overflowing the article column. */
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
+
+/* Keyboard-focus ring for the diagram container so keyboard users can
+ * see when a horizontally-scrollable diagram has focus (WCAG 2.4.7). */
+.rm-article-body pre.mermaid:focus,
+.rm-article-body pre.mermaid:focus-visible {
+  outline: 2px solid var(--primary-cyan, #00d9ff);
+  outline-offset: 2px;
+}
+
+/* RTL guard — Mermaid diagrams are intrinsically left-to-right
+ * (flowchart `LR`, sequence diagrams, gantt). Force LTR on the
+ * container so RTL pages (Arabic, Hebrew) do not visually mirror the
+ * diagram and break arrow semantics. The surrounding article retains
+ * its `dir="rtl"` attribute on the `<html>` element. */
+[dir="rtl"] .rm-article-body pre.mermaid {
+  direction: ltr;
+  text-align: center;
+}
+
 
 /* Light-mode mitigation for Mermaid diagrams.
  *

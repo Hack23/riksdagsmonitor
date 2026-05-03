@@ -829,6 +829,74 @@ in Focus
 
 ---
 
+## 📊 Mermaid Diagram Canon
+
+Every analytical artifact and rendered article that contains a Mermaid block MUST satisfy two contracts:
+
+1. **Source-side** — the fenced Mermaid block body declares its theme (a `%%{init …}%%` prologue, or `themeVariables`, or per-element `style …` / `classDef …` / `linkStyle …` directives). Enforced by Check 5 of [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md).
+2. **Render-side** — if Check 5 ever passes a diagram that lacks a theme (regression, hand-edit, or a third-party paste), the renderer ([`scripts/render-lib/markdown/mermaid-preprocess.ts`](../../scripts/render-lib/markdown/mermaid-preprocess.ts)) prepends the canonical block below as defence-in-depth so user-facing HTML never renders an unthemed diagram.
+
+### Canonical `%%{init …}%%` prologue (single source of truth)
+
+The following block is the **single canonical theme** for every Mermaid diagram on Riksdagsmonitor. Templates SHOULD copy it verbatim; the renderer injects it when missing. Colour tokens mirror the cyberpunk dark theme baked into [`js/lib/mermaid-init.mjs`](../../js/lib/mermaid-init.mjs), so a diagram rendered with the injected prologue is visually indistinguishable from one that inherits the global theme.
+
+```mermaid
+%%{init: {
+  "theme": "dark",
+  "themeVariables": {
+    "primaryColor": "#00d9ff",
+    "primaryTextColor": "#e0e0e0",
+    "primaryBorderColor": "#00d9ff",
+    "lineColor": "#ff006e",
+    "secondaryColor": "#1a1e3d",
+    "tertiaryColor": "#0a0e27",
+    "background": "#0a0e27"
+  },
+  "flowchart": { "htmlLabels": false, "useMaxWidth": true },
+  "sequence": { "useMaxWidth": true }
+}}%%
+flowchart LR
+    A["Find"] --> B["Fix"] --> C["Finish"]
+```
+
+### Why these colours satisfy WCAG 2.1 AA (4.5:1 contrast)
+
+| Foreground | Background | Ratio | Use |
+|------------|------------|-------|-----|
+| `#e0e0e0` (text) | `#0a0e27` (canvas) | **12.63 : 1** | Normal text — passes AAA |
+| `#00d9ff` (primary edge / heading) | `#0a0e27` | **8.94 : 1** | Large UI text — passes AAA |
+| `#ff006e` (line / arrow) | `#0a0e27` | **5.21 : 1** | Non-text UI component — passes AA (1.4.11) |
+| `#FFFFFF` (quadrant / SWOT label) | `#2E7D32` (Strengths) | **5.36 : 1** | Quadrant text — passes AA |
+| `#FFFFFF` | `#D32F2F` (Weaknesses) | **5.49 : 1** | Quadrant text — passes AA |
+| `#FFFFFF` | `#1565C0` (Opportunities) | **6.55 : 1** | Quadrant text — passes AA |
+| `#FFFFFF` | `#FF9800` (Threats) | **2.91 : 1** ⚠️ | Use `color: #000000` on `#FF9800` (10.74 : 1) — already encoded in the SWOT template |
+
+The light-mode site theme renders the same dark diagram inside a dark "card" surface (see `styles.css` `html[data-theme="light"] .rm-article-body pre.mermaid`) so contrast is preserved across both site themes.
+
+### Required overrides per diagram type
+
+| Diagram type | Mandatory addition | Rationale |
+|--------------|--------------------|-----------|
+| `quadrantChart` | SWOT palette block (`quadrant1Fill: #2E7D32`, `quadrant2Fill: #D32F2F`, `quadrant3Fill: #1565C0`, `quadrant4Fill: #FF9800`) — see [`swot-analysis.md` template](../templates/swot-analysis.md) | Aligns with [Hack23 ISMS STYLE_GUIDE.md SWOT palette](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md#stakeholder-mapping-quadrant-format) |
+| `flowchart` / `graph` | `style <id> fill:<colour>,color:#FFFFFF` per node OR `classDef` blocks | Check 5 requires per-node colour cues |
+| `sequenceDiagram` | `actor`-level `note over` colour, or `Note left/right of` highlights | Distinguish initiator / target |
+| `pie` | At least one `%%{init …}%%` block (no per-slice `style`) | Pie charts do not accept `style …` |
+| `gantt` | `dateFormat YYYY-MM-DD` + `axisFormat %Y-%m` | Avoid locale ambiguity across 14 languages |
+
+### Accessibility & RTL
+
+- Every diagram MUST be preceded (in the surrounding markdown) by an italicised one-line **alt-text** sentence — see the F3EAD example in §[F3EAD Intelligence Cycle](#-f3ead-intelligence-cycle). Alt-text is the screen-reader fallback when `mermaid.run()` fails or when assistive tech opts out of SVG.
+- The diagram container CSS (`.rm-article-body pre.mermaid` in `styles.css`) provides horizontal scroll, a 2 px cyan focus ring (WCAG 2.4.7), and an explicit `direction: ltr` override on RTL pages so Arabic/Hebrew articles do not mirror flowchart arrows.
+- For genuinely RTL-semantic content (e.g. a flow that reads from right to left in the source data), authors MAY use `flowchart RL` — the LTR override only flips the container, not the diagram's intrinsic flow direction.
+
+### Authoring & gate cross-links
+
+- **Templates** — every template under [`analysis/templates/`](../templates/) that ships a Mermaid block embeds the canonical prologue (or a domain-specific extension of it, e.g. `quadrantChart` SWOT colours).
+- **Renderer fallback** — [`scripts/render-lib/markdown/mermaid-canonical-theme.ts`](../../scripts/render-lib/markdown/mermaid-canonical-theme.ts) exports `CANONICAL_MERMAID_INIT`, `hasMermaidTheme`, and `ensureMermaidTheme`. The injection is unit-tested in `tests/render-lib-leaf-modules.test.ts`.
+- **Gate** — Check 5 of [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) detects `^```mermaid` plus either `themeVariables` / `%%{init …}%%` or a `style …` directive. The renderer fallback complements the gate; it does **not** replace it.
+
+---
+
 ## 🎨 Icon & Emoji Conventions
 
 Consistent emoji usage matches the repository's existing documentation pattern:

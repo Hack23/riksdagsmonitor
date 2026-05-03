@@ -78,6 +78,11 @@ import { aggregateAnalysis } from '../scripts/render-lib/aggregator/aggregate.js
 
 // Markdown leaf modules
 import { preprocessMermaidFences } from '../scripts/render-lib/markdown/mermaid-preprocess.js';
+import {
+  CANONICAL_MERMAID_INIT,
+  ensureMermaidTheme,
+  hasMermaidTheme,
+} from '../scripts/render-lib/markdown/mermaid-canonical-theme.js';
 import { rehypeSlugWithPrefix } from '../scripts/render-lib/markdown/rehype-slug-prefixed.js';
 import { rehypeWrapTables } from '../scripts/render-lib/markdown/rehype-wrap-tables.js';
 import {
@@ -419,12 +424,72 @@ describe('markdown/* — leaf module isolation', () => {
     const out = preprocessMermaidFences('```mermaid\ngraph LR; A-->B\n```');
     expect(out).toContain('<pre class="mermaid"');
     expect(out).toContain('data-mermaid-source="true"');
+    expect(out).toContain('tabindex="0"');
   });
 
   it('preprocessMermaidFences escapes HTML inside diagram source', () => {
     const out = preprocessMermaidFences('```mermaid\nA --> "B<C>"\n```');
     expect(out).toContain('&lt;C&gt;');
     expect(out).not.toContain('B<C>');
+  });
+
+  it('preprocessMermaidFences injects the canonical %%{init …}%% block when the diagram is unthemed', () => {
+    const out = preprocessMermaidFences('```mermaid\nflowchart LR\nA --> B\n```');
+    // Renderer escapes `"` → `&quot;`, so we match the escaped fingerprint.
+    expect(out).toContain('%%{init');
+    expect(out).toContain('&quot;theme&quot;: &quot;dark&quot;');
+    expect(out).toContain('&quot;primaryColor&quot;: &quot;#00d9ff&quot;');
+    expect(out).toContain('flowchart LR');
+  });
+
+  it('preprocessMermaidFences leaves an already-themed diagram untouched (no double prologue)', () => {
+    const themed =
+      '```mermaid\n%%{init: {"theme": "neutral"}}%%\nflowchart LR\nA --> B\n```';
+    const out = preprocessMermaidFences(themed);
+    // Exactly one `%%{init` — i.e. the renderer did not stack a second
+    // canonical prologue on top of the artifact's own theme.
+    const initCount = (out.match(/%%\{init/g) ?? []).length;
+    expect(initCount).toBe(1);
+    expect(out).toContain('&quot;theme&quot;: &quot;neutral&quot;');
+    expect(out).not.toContain('&quot;theme&quot;: &quot;dark&quot;');
+  });
+
+  it('hasMermaidTheme detects every Check-5 theme signal', () => {
+    expect(hasMermaidTheme('flowchart LR\nA --> B')).toBe(false);
+    expect(hasMermaidTheme('%%{init: {"theme":"dark"}}%%\nflowchart LR')).toBe(true);
+    expect(hasMermaidTheme('flowchart LR\nA --> B\nstyle A fill:#000')).toBe(true);
+    expect(hasMermaidTheme('flowchart LR\nclassDef red fill:#f00\nclass A red')).toBe(true);
+    expect(hasMermaidTheme('flowchart LR\nA --> B\nlinkStyle 0 stroke:#0f0')).toBe(true);
+    expect(hasMermaidTheme('themeVariables:\n  primary: red')).toBe(true);
+  });
+
+  it('ensureMermaidTheme is a pure function and idempotent', () => {
+    const unthemed = 'flowchart LR\nA --> B';
+    const once = ensureMermaidTheme(unthemed);
+    const twice = ensureMermaidTheme(once);
+    expect(once).toBe(twice); // injection happens at most once
+    expect(once.startsWith(CANONICAL_MERMAID_INIT)).toBe(true);
+  });
+
+  it('CANONICAL_MERMAID_INIT mirrors the cyberpunk dark theme baked into mermaid-init.mjs', () => {
+    // Cross-check against the irreducible colour tokens consumed by the
+    // client-side loader (`js/lib/mermaid-init.mjs`). If the loader
+    // changes, this test fails and forces an update of the canon.
+    expect(CANONICAL_MERMAID_INIT).toContain('"primaryColor": "#00d9ff"');
+    expect(CANONICAL_MERMAID_INIT).toContain('"primaryTextColor": "#e0e0e0"');
+    expect(CANONICAL_MERMAID_INIT).toContain('"lineColor": "#ff006e"');
+    expect(CANONICAL_MERMAID_INIT).toContain('"background": "#0a0e27"');
+    expect(CANONICAL_MERMAID_INIT.endsWith('\n')).toBe(true);
+  });
+
+  it('CANONICAL_MERMAID_INIT satisfies Check 5 of .github/prompts/05-analysis-gate.md', () => {
+    // The gate's Check 5 fails any GATE_SYNTH_LIST file whose Mermaid
+    // block lacks BOTH a `style …` directive AND a
+    // `themeVariables` / `%%{init …}` config. The canonical block must
+    // satisfy the second branch — this regex is the JS equivalent of the
+    // gate's grep pattern (`grep -qE 'themeVariables|%%\{[[:space:]]*init'`).
+    const gateCheck5Re = /themeVariables|%%\{\s*init/;
+    expect(gateCheck5Re.test(CANONICAL_MERMAID_INIT)).toBe(true);
   });
 
   it('rehypeSlugWithPrefix exports a plugin function', () => {
