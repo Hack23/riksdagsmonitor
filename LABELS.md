@@ -11,12 +11,16 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--02--15-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--03-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📅 Last Updated:** 2026-02-15 (UTC) | **🏢 Owner:** Hack23 AB (Org.nr 559534-7807) | **🏷️ Classification:** 🟢 Public
+**📋 Document Owner:** CEO | **📅 Last Updated:** 2026-05-03 (UTC) | **🏢 Owner:** Hack23 AB (Org.nr 559534-7807) | **🏷️ Classification:** 🟢 Public
+
+> **🆕 What changed since last review (v1.0 → v1.1, 2026-05-03):**
+> - 🔄 **Drift reconciliation** with the live label set (`gh label list --repo Hack23/riksdagsmonitor --limit 300`): the repository now carries **159 labels** (was 46 in v1.0). The categories below cover the original 46 plus the agentic-newsroom additions (`agent:*`, `component:*`, `priority:*`, `agentic-workflows`, `agentic-news`, `news-*`, `lang:*`, `article:*`, `committee-reports`, `motions`, `propositions`, `interpellations`, `evening-analysis`, `realtime-monitor`, `realtime-pulse`, `monthly-review`, `weekly-review`, `month-ahead`, `week-ahead`, `year-ahead`, `long-horizon`, `forward-look`, `analysis-data`, `analysis-only`, `auto-generated`, `ai-generated`, `multi-language`, `economic-context`, `cia-intelligence`, `automated-pipeline`, `data-update`, `heartbeat`, `npm`, `github-actions`, `code-quality`, `frontend`, `refactoring`, `typescript`, `validation`, `maintenance`, `news-content`, `news/content`, `news-generation`, `needs-editorial-review`, `interpellation-debates`, `type:*` variants).
+> - 📋 The taxonomy is documented categorically below; for the canonical machine-readable taxonomy see [`.github/labeler.yml`](.github/labeler.yml) and the setup workflow [`.github/workflows/setup-labels.yml`](.github/workflows/setup-labels.yml).
 
 This document describes the automatic labeling system for the riksdagsmonitor repository. Labels are automatically applied to pull requests based on file changes, PR titles, and PR body content.
 
@@ -28,10 +32,11 @@ The riksdagsmonitor repository uses an automated labeling system powered by GitH
 
 ### Key Features
 - ✅ **Automatic labeling** based on file paths, PR titles, and descriptions
-- ✅ **46 labels** covering all aspects of the project
+- ✅ **159 labels** covering content, agentic workflows, components, priorities, sizes, ISMS, language, and horizon tracks
 - ✅ **Size labels** automatically calculated from PR diff
 - ✅ **Security hardened** workflows with SHA pinning
 - ✅ **Status tracking** with priority and progress labels
+- ✅ **Agentic-newsroom taxonomy**: `agent:*` (per-Copilot-agent owner), `component:*` (subsystem), `priority:*` / `priority-*`, `agentic-workflows`, `news-generation`, `needs-editorial-review`, `auto-generated`, `ai-generated`, horizon tags (`week-ahead`, `month-ahead`, `quarter-ahead`, `year-ahead`, `long-horizon`, `forward-look`, `realtime-monitor`, `realtime-pulse`)
 
 ---
 

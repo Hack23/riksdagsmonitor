@@ -11,16 +11,21 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--03-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/>
   <a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-04-20  
+**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-05-03 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-03  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v2.2 → v2.3, 2026-05-03):**
+> - 🔄 **Drift reconciliation** with `.github/workflows/README.md`: agentic-workload count updated to **14 agentic news workflows** (was 11) wrapped in the same five-layer safe-outputs validator and Squid + iptables egress firewall. Total GitHub Actions surface is now **50 files** (22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`).
+> - 🛡️ Reaffirmed **MCP Gateway v0.3.1** schema constraint: workflow frontmatter MUST NOT include `engine.mcp.session-timeout` (rejected as unknown additional property by the gateway) — this is a hard control surface item.
+> - 📋 See [`analysis/audits/documentation-portfolio-audit-2026-05-03.md`](analysis/audits/documentation-portfolio-audit-2026-05-03.md) for the full inventory pass and follow-up backlog (full STRIDE coverage of the agentic-workflow attack surface remains a backlog item).
+>
 > **🆕 What changed since last review (v2.1 → v2.2, 2026-04-20):**
 > - 📈 **IMF added as a third primary external economic data provider** (alongside SCB MCP and World Bank MCP) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md) — see the **External Data Providers** table and **Egress Allowlist** section below. IMF is consumed via the **pure-TypeScript client `scripts/imf-client.ts`** (Datamapper JSON + SDMX 3.0) — *not* an MCP server; **8 MCP servers** count is unchanged. Allowlisted egress hosts extended with `data.imf.org`, `api.imf.org`, `www.imf.org`. Upstream-integrity controls: `DatamapperResponse` schema validation (shape + finite-numeric + year parse-guard), `.meta.json` tamper-evident sidecars under `analysis/data/imf/{indicator}/{country}.json` (recording `mcpTool: imf-ts-client`, `projectionVintage`, fetch timestamp). Cross-reference: [THREAT_MODEL.md TB-6a](THREAT_MODEL.md).
 >
@@ -31,7 +36,7 @@
 >   - **Code:** CodeQL (javascript-typescript), ESLint 10.2.1, htmlhint 1.9.2, TypeScript 6.0.3 strict mode, secret scanning, knip 6.5.0 dead-code detection.
 >   - **Supply chain:** Dependabot, `actions/dependency-review-action`, OpenSSF Scorecard, **npm publish with `--provenance` (SLSA attestations)**, SHA-pinning on every `uses:` reference.
 >   - **Pipeline:** `step-security/harden-runner` with egress audit, AWS OIDC (no long-lived keys), least-privilege `permissions:` per workflow, SLSA Build L3 via GitHub-hosted runners.
->   - **Agentic workloads (new category):** 11 agentic news workflows wrapped in the **five-layer safe-outputs** validator (sanitisation → schema-validate → policy-check → human-review → merge) behind a **Squid proxy + iptables egress firewall** (allow-list only to riksdagen.se, regeringen.se, scb.se, worldbank.org, **data.imf.org, api.imf.org, www.imf.org**, github.com, MCP endpoints).
+>   - **Agentic workloads (new category):** 14 agentic news workflows wrapped in the **five-layer safe-outputs** validator (sanitisation → schema-validate → policy-check → human-review → merge) behind a **Squid proxy + iptables egress firewall** (allow-list only to riksdagen.se, regeringen.se, scb.se, worldbank.org, **data.imf.org, api.imf.org, www.imf.org**, github.com, MCP endpoints). _(Updated in v2.3 from the 11-agentic figure originally published with v2.1; see `.github/workflows/README.md` for the live inventory.)_
 > - Added **MCP security posture**: 8 MCP servers defined in `.github/copilot-mcp.json` — `riksdag-regering` (HTTPS `riksdag-regering-ai.onrender.com/mcp`), `scb` (local `@jarib/pxweb-mcp@2.0.0` → `api.scb.se/OV0104/v2beta`), `world-bank` (local `worldbank-mcp@1.0.1`), `github` (HTTPS `api.githubcopilot.com/mcp/insiders`), `filesystem`, `memory`, `sequential-thinking`, `playwright` (headless).
 > - Added **24 Copilot agents** (`.github/agents/`) and **91 skills** (`.github/skills/`) under security review; each agent's tool allow-list is explicit and audited.
 > - OpenSSF Best Practices project #12069 confirmed active; Scorecard badge present.

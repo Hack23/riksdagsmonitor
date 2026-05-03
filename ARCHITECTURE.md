@@ -11,15 +11,21 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--03-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
+**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-05-03 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-03  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v2.2 → v2.3, 2026-05-03):**
+> - 🔄 **Drift reconciliation** with `.github/workflows/README.md` and live label set: GitHub Actions surface is now **50 files** total (**22 standard `.yml` + 14 agentic `.md` sources + 14 compiled `.lock.yml`** siblings); **14 agentic news workflows** orchestrated via the five-layer safe-output security model and Squid + iptables egress firewall (was 43 / 21 / 11 / 11 in v2.2).
+> - 📚 Added the **Documentation Portfolio Matrix** section (acceptance criterion #2 of the documentation-refresh issue) cross-linking every top-level architecture / ISMS / operational document to its ISMS-PUBLIC authority root and current owner / version / next-review date.
+> - 🛡️ Reaffirmed **MCP Gateway v0.3.1** schema constraint: workflow frontmatter MUST NOT include `engine.mcp.session-timeout` (rejected as unknown additional property by the gateway) — see `.github/copilot-instructions.md`.
+> - 📋 Inventory-pass evidence committed under [`analysis/audits/documentation-portfolio-audit-2026-05-03.md`](analysis/audits/documentation-portfolio-audit-2026-05-03.md).
+>
 > **🆕 What changed since last review (v2.1 → v2.2, 2026-04-20):**
 > - 📈 **IMF added as third primary economic-data source** (alongside SCB and World Bank) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md) (accepted 2026-04-20) and **Economic Data Contract v2.0**. IMF is consumed via the **pure-TypeScript** client `scripts/imf-client.ts` (Datamapper JSON + SDMX 3.0 transports); it is **intentionally not an MCP server** — no Python/uvx, fully covered by the npm SBOM, so the **8 MCP servers** count is unchanged. Allowlisted hosts: `data.imf.org`, `api.imf.org`, `www.imf.org`. Cache under `analysis/data/imf/{indicator}/{country}.json` with `.meta.json` sidecars.
 >
@@ -28,7 +34,7 @@
 > - 🧠 Runtime baseline tightened to **Node.js ≥25**; toolchain bumped to TypeScript 6.0.3, Vite 8.0.9, Vitest 4.1.4, ESLint 10.2.1, Cypress 15.14.0 (optional), Playwright 1.59.1, typedoc 0.28.19, happy-dom 20.9.0, knip 6.5.0, ajv 8.18.0.
 > - 🗂️ CIA data now spans **15 subsystems** under `cia-data/` (anomaly, coalition, committee, distribution, election, election-cycle, ministry, parties, party, percentile, politician, pre-election, risk, seasonal, voting). Prior "19 products" framing has been retired in favour of subsystem count.
 > - 🌍 Content footprint: **14 languages** (EN, SV, DA, NB (`_no`), DE, ES, FI, FR, HE RTL, AR RTL, JA, KO, NL, ZH) • **2,669 files** under `news/`.
-> - 🤖 GitHub Actions surface: **43 files** total (21 standard `.yml`, 11 agentic `.md` sources, 11 compiled `.lock.yml` siblings). Eleven agentic news workflows orchestrated via the five-layer safe-output security model and egress firewall (Squid + iptables).
+> - 🤖 GitHub Actions surface: **50 files** total (22 standard `.yml`, 14 agentic `.md` sources, 14 compiled `.lock.yml` siblings). Fourteen agentic news workflows orchestrated via the five-layer safe-output security model and egress firewall (Squid + iptables). _(Updated in v2.3 from the 43 / 11-agentic figure originally published with v2.2; see `.github/workflows/README.md` for the live inventory.)_
 > - 🧩 Copilot ecosystem: **24 custom agents** under `.github/agents/`, **91 skills** under `.github/skills/`, **8 MCP servers** (`riksdag-regering`, `scb`, `world-bank`, `github` insiders, `filesystem`, `memory`, `sequential-thinking`, `playwright`) wired via `.github/copilot-mcp.json`.
 > - ☁️ Production distribution: AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) via OIDC-only deploy; GitHub Pages (`hack23.github.io`) as DR fallback.
 > - 🛡️ Integrity: SRI enabled via `vite-plugin-sri-gen@1.3.2`; all Actions SHA-pinned; `step-security/harden-runner` across workflows; CodeQL, Dependabot, dependency-review, Scorecards, Secret Scanning, OpenSSF Best Practices #12069 active.
@@ -58,6 +64,61 @@
 | [THREAT_MODEL.md](THREAT_MODEL.md) | 🎯 Threats | STRIDE analysis and risk assessment |
 | [WORKFLOWS.md](WORKFLOWS.md) | 🔧 DevOps | CI/CD automation and pipelines |
 | [CRA-ASSESSMENT.md](CRA-ASSESSMENT.md) | ⚖️ Compliance | EU Cyber Resilience Act conformity |
+
+---
+
+## 📋 Documentation Portfolio Matrix (ISMS continuous-improvement)
+
+This matrix is the canonical index of every Hack23-ISMS deliverable maintained at the repository root. It is the at-a-glance complement to the long-form **drift inventory** in [`analysis/audits/documentation-portfolio-audit-2026-05-03.md`](analysis/audits/documentation-portfolio-audit-2026-05-03.md), which records observed drift, remediation in this PR, and follow-up backlog.
+
+Authority for each row flows from the master [Information_Security_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) in [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC); per-row `ISMS authority` cells link to the specific policy that mandates the document.
+
+### Current-state architecture &amp; ISMS docs
+
+| # | Document | Owner | Version | Last reviewed | Review cycle | Next review | ISMS authority |
+|---|---|---|---|---|---|---|---|
+| 1 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | CEO | 2.3 | 2026-05-03 | Quarterly | 2026-08-03 | [Secure_Development_Policy §4](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
+| 2 | [`DATA_MODEL.md`](DATA_MODEL.md) | CEO | 1.2 | 2026-04-20 | Quarterly | 2026-07-20 | [CLASSIFICATION](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+| 3 | [`FLOWCHART.md`](FLOWCHART.md) | CEO | 1.2 | 2026-04-20 | Quarterly | 2026-07-20 | [Secure_Development_Policy §6](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
+| 4 | [`STATEDIAGRAM.md`](STATEDIAGRAM.md) | CEO | 1.1 | 2026-04-20 | Quarterly | 2026-07-20 | [Change_Management §5](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) |
+| 5 | [`MINDMAP.md`](MINDMAP.md) | CEO | 1.3 | 2026-05-03 | Quarterly | 2026-08-03 | [Information_Security_Policy §5.5](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
+| 6 | [`SWOT.md`](SWOT.md) | CEO | 1.2 | 2026-05-03 | Quarterly | 2026-08-03 | [Information_Security_Policy §3](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
+| 7 | [`THREAT_MODEL.md`](THREAT_MODEL.md) | CEO/CISO | 1.2 | 2026-04-20 | Quarterly | 2026-07-20 | [Threat_Modeling](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) |
+| 8 | [`SECURITY_ARCHITECTURE.md`](SECURITY_ARCHITECTURE.md) | CEO/CISO | 2.3 | 2026-05-03 | Quarterly | 2026-08-03 | [Secure_Development_Policy §10](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
+| 9 | [`WORKFLOWS.md`](WORKFLOWS.md) | CEO | 7.3 | 2026-05-02 | Quarterly | 2026-08-02 | [Secure_Development_Policy §10.1](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
+
+### Future-state architecture docs
+
+| # | Document | Owner | Version | Last reviewed | Review cycle | Next review | ISMS authority |
+|---|---|---|---|---|---|---|---|
+| 10 | [`FUTURE_ARCHITECTURE.md`](FUTURE_ARCHITECTURE.md) | CEO | 2.0 | 2026-02-24 | Quarterly | 2026-05-24 | [Information_Security_Policy §5.5](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
+| 11 | [`FUTURE_DATA_MODEL.md`](FUTURE_DATA_MODEL.md) | CEO | 2.0 | 2026-02-24 | Quarterly | 2026-05-24 | [CLASSIFICATION](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+| 12 | [`FUTURE_FLOWCHART.md`](FUTURE_FLOWCHART.md) | CEO | 2.0 | 2026-02-24 | Quarterly | 2026-05-24 | [Secure_Development_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
+| 13 | [`FUTURE_STATEDIAGRAM.md`](FUTURE_STATEDIAGRAM.md) | CEO | 2.0 | 2026-02-24 | Quarterly | 2026-05-24 | [Change_Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) |
+| 14 | [`FUTURE_MINDMAP.md`](FUTURE_MINDMAP.md) | CEO | 2.0 | 2026-02-24 | Quarterly | 2026-05-24 | [Information_Security_Policy §5.5](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
+| 15 | [`FUTURE_SWOT.md`](FUTURE_SWOT.md) | CEO | 2.0 | 2026-02-24 | Quarterly | 2026-05-24 | [Information_Security_Policy §5.5](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
+| 16 | [`FUTURE_THREAT_MODEL.md`](FUTURE_THREAT_MODEL.md) | CEO/CISO | 1.0 | 2026-02-26 | Quarterly | 2026-05-26 | [Threat_Modeling](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) |
+| 17 | [`FUTURE_SECURITY_ARCHITECTURE.md`](FUTURE_SECURITY_ARCHITECTURE.md) | CEO/CISO | 2.0 | 2026-02-24 | Quarterly | 2026-05-24 | [Secure_Development_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
+| 18 | [`FUTURE_WORKFLOWS.md`](FUTURE_WORKFLOWS.md) | CEO | 6.0 | 2026-05-02 | Quarterly | 2026-08-02 | [Secure_Development_Policy §10](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
+
+### Operational ISMS deliverables
+
+| # | Document | Owner | Version | Last reviewed | Review cycle | Next review | ISMS authority |
+|---|---|---|---|---|---|---|---|
+| 19 | [`BCPPlan.md`](BCPPlan.md) | CEO | 1.2 | 2026-04-20 | Annual | 2027-04-20 | [Incident_Response_Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md) |
+| 20 | [`CRA-ASSESSMENT.md`](CRA-ASSESSMENT.md) | CEO/CISO | 1.3 | 2026-04-20 | Annual | 2027-04-20 | [Open_Source_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md), [Vulnerability_Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) |
+| 21 | [`End-of-Life-Strategy.md`](End-of-Life-Strategy.md) | CEO | 1.4 | 2026-04-20 | Annual | 2027-04-20 | [Information_Security_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
+| 22 | [`FinancialSecurityPlan.md`](FinancialSecurityPlan.md) | CEO | 1.2 | 2026-04-20 | Annual | 2027-04-20 | [Information_Security_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
+| 23 | [`RELEASE_PROCESS.md`](RELEASE_PROCESS.md) | CEO | 1.0 | 2026-02-18 | Quarterly | 2026-05-18 | [Change_Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md), [Secure_Development_Policy §10](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
+| 24 | [`TESTING.md`](TESTING.md) | CEO | 1.0 | 2026-02 (header only) | Quarterly | 2026-05 | [Secure_Development_Policy §7](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
+| 25 | [`TRANSLATION_GUIDE.md`](TRANSLATION_GUIDE.md) | CEO | 1.0 | 2026-02-10 | Quarterly | 2026-05-10 | [Information_Security_Policy §3](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
+| 26 | [`SECURITY.md`](SECURITY.md) | CEO/CISO | 1.0 | 2026-02-20 | Annual | 2027-02-20 | [Vulnerability_Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) |
+| 27 | [`LABELS.md`](LABELS.md) | CEO | 1.1 | 2026-05-03 | Annual | 2027-05-03 | [Information_Security_Policy §3](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
+| 28 | [`SKILLS.md`](SKILLS.md) | CEO | (auto) | 2026-04-22 | Continuous | n/a | [Secure_Development_Policy §4](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
+| 29 | [`AGENTS.md`](AGENTS.md) | CEO | (auto) | continuous | Continuous | n/a | [AI_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) |
+| 30 | [`Article-Generation.md`](Article-Generation.md) | CEO | (auto) | continuous | Continuous | n/a | [AI_Policy §4](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) |
+
+> **ISMS continuous-improvement evidence:** This matrix + the drift-reconciliation changes in v2.3 satisfy the continuous-improvement clause of [Information_Security_Policy §5.5](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md). Observed drift is documented in the audit file, high-signal stale facts are corrected immediately, and a backlog is queued for the wholesale rewrites of long documents. Per-document footers can be added in a follow-up housekeeping PR; the canonical "last reviewed" stamp for every row above is the **header badge block** of the linked document.
 
 ---
 

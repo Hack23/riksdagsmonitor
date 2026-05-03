@@ -20,7 +20,7 @@
     <td>
       <p><strong>🕵️ Political intelligence · 🔍 Democratic transparency · 🤖 AI-generated news · 📊 50+ years of evidence</strong></p>
       <p>Riksdagsmonitor monitors Sweden's Riksdag (Parliament), the Government (Regeringskansliet) and public agencies (Myndigheter) with structured intelligence techniques — ACH, SWOT, PESTLE, STRIDE, political-risk scoring and OSINT/INTOP tradecraft — applied to <strong>349 current MPs</strong>, <strong>2,494 historical politicians (1971–2024)</strong>, <strong>3.5M+ votes</strong> and <strong>109,000+ parliamentary documents</strong>.</p>
-      <p>An autonomous AI newsroom — 11 agentic workflows, Claude Opus, zero human editors — turns this evidence into <strong>publication-ready intelligence articles in 14 languages, every day</strong>.</p>
+      <p>An autonomous AI newsroom — 14 agentic workflows, Claude Opus, zero human editors — turns this evidence into <strong>publication-ready intelligence articles in 14 languages, every day</strong>.</p>
       <div>
         <a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor">
           <img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard">
@@ -172,7 +172,7 @@ Local-first data loading with 1-hour cache, keyboard navigable, CSP-compliant.
 
 ## 🤖 AI-Generated Political Intelligence News
 
-> *"While traditional newsrooms debate whether AI will replace journalists, Riksdagsmonitor already runs a fully autonomous political-intelligence newsroom — 11 agentic workflows, 14 languages, zero human editors, and a publication schedule that would bankrupt any legacy outlet trying to keep up."*
+> *"While traditional newsrooms debate whether AI will replace journalists, Riksdagsmonitor already runs a fully autonomous political-intelligence newsroom — 14 agentic workflows, 14 languages, zero human editors, and a publication schedule that would bankrupt any legacy outlet trying to keep up."*
 
 ### What makes it different
 
@@ -322,7 +322,7 @@ Riksdagsmonitor uses a **provider-tiered** data architecture, with each provider
 - **Visualisation** — Chart.js 4 + D3.js 7, hosted locally on CloudFront
 - **Testing** — Vitest 4 (2,890 unit tests, 100 % pass rate, 70 % line coverage) + Cypress 15 (E2E)
 - **Hosting** — AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) via OIDC; GitHub Pages as DR fallback
-- **CI/CD** — 43 GitHub Actions workflows (21 standard `.yml` + 11 agentic `.md` sources + 11 compiled `.lock.yml`); SHA-pinned, `step-security/harden-runner` everywhere
+- **CI/CD** — 50 GitHub Actions workflow files (22 standard `.yml` + 14 agentic `.md` sources + 14 compiled `.lock.yml`); SHA-pinned, `step-security/harden-runner` everywhere
 - **Data Platform** — Citizen Intelligence Agency (CIA) Java/Spring Boot backend + 15 CIA subsystems
 - **Runtime** — Node.js 25.x
 
@@ -448,7 +448,7 @@ Riksdagsmonitor uses **GitHub Copilot personas, skills and agentic workflows** a
 | 🤖 **Custom agents** | [`.github/agents/README.md`](.github/agents/README.md) | **24** files (14 personas + 9 workflow-specialists + 1 shared developer-instructions) |
 | 🧠 **Skills** | [`.github/skills/README.md`](.github/skills/README.md) | **91** skills across 12 functional categories |
 | 📜 **Prompt modules** | [`.github/prompts/README.md`](.github/prompts/README.md) | 8 bounded-context modules + Tier-C extension |
-| ⚙️ **Workflows** | [`.github/workflows/README.md`](.github/workflows/README.md) | **43** files (21 standard + 11 agentic sources + 11 compiled) |
+| ⚙️ **Workflows** | [`.github/workflows/README.md`](.github/workflows/README.md) | **50** files (22 standard + 14 agentic sources + 14 compiled) |
 | 🔌 **MCP servers** | [`.github/copilot-mcp.json`](.github/copilot-mcp.json) | **8** — `riksdag-regering`, `scb`, `world-bank`, `github` (insiders), `filesystem`, `memory`, `sequential-thinking`, `playwright` |
 
 **14 persona agents** (assignable via `assign_copilot_to_issue`):
@@ -490,7 +490,7 @@ Riksdagsmonitor uses **GitHub Copilot personas, skills and agentic workflows** a
 timeline
     title Riksdagsmonitor Evolution — 2026 → 2037
     section Phase 3 — Foundation (2026)
-        Q1-Q2 : ✅ TypeScript migration · 11 agentic news workflows
+        Q1-Q2 : ✅ TypeScript migration · 14 agentic news workflows
               : ✅ 14 languages · S3 + GitHub Pages dual deploy
         Q3-Q4 : 🔄 CIA pipeline integration · predictive dashboards
     section Phase 4 — Predictive Intelligence (2027–2029)
