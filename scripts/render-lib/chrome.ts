@@ -146,11 +146,12 @@ export interface ChromeOptions {
    */
   readonly heroBannerImage?: string;
   /**
-   * Optional FAQ entries. When non-empty, chrome auto-emits a Schema.org
-   * `FAQPage` JSON-LD block (Google + Bing rich-result eligible) plus a
-   * `Question`/`Answer` graph. The visible HTML rendering remains the
-   * caller's responsibility (use `<details>`/`<summary>` for crawlable
-   * progressive disclosure).
+   * Optional FAQ entries. When ≥2 well-formed entries are provided, chrome
+   * auto-emits a Schema.org `FAQPage` JSON-LD block (Google + Bing
+   * rich-result eligible) plus a `Question`/`Answer` graph. Arrays with
+   * fewer than 2 items are ignored (Google requires ≥2 for eligibility).
+   * The visible HTML rendering remains the caller's responsibility (use
+   * `<details>`/`<summary>` for crawlable progressive disclosure).
    */
   readonly faqItems?: readonly FAQItem[];
   /**
@@ -285,7 +286,14 @@ export function renderChromeHead(opts: ChromeOptions): string {
   }
   const allJsonLd = [...mergedJsonLd, ...autoJsonLd];
   const jsonLdBlocks = allJsonLd
-    .map((b) => `    <script type="application/ld+json">${JSON.stringify(b)}</script>`)
+    .map((b) => {
+      // Escape sequences that could break out of the <script> tag.
+      // JSON.stringify alone cannot guarantee the output won't contain
+      // a literal "</script>" or "<!--" sequence inside string values.
+      const raw = JSON.stringify(b);
+      const safe = raw.replace(/</g, '\\u003c');
+      return `    <script type="application/ld+json">${safe}</script>`;
+    })
     .join('\n');
 
   // Pagination link relations (rel="prev"/rel="next") give crawlers the

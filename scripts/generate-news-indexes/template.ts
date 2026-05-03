@@ -773,19 +773,20 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     </div>
   </section>
 
-  <!-- SEO: crawler-visible article list. The .articles-grid above is
+  <!-- SEO: crawler-visible article list (capped at 200 most-recent to
+       keep HTML size / parse time reasonable). The .articles-grid above is
        hydrated client-side from JSON, leaving search-engine crawlers
        with only a skeleton + the truncated 10-item ItemList JSON-LD.
-       This collapsible fallback exposes every article URL + title + date
-       in the initial HTML so the entire archive is discoverable from
-       the index page even without JS. Using <details> keeps the list
-       out of the default keyboard tab order and avoids overwhelming
-       screen readers while remaining fully crawlable. -->
+       This collapsible fallback exposes article URLs + titles + dates
+       in the initial HTML so the archive is discoverable from the index
+       page even without JS. Using <details> keeps the list out of the
+       default keyboard tab order and avoids overwhelming screen readers
+       while remaining fully crawlable. -->
   <details class="seo-article-list" aria-labelledby="seo-article-list-heading">
-    <summary id="seo-article-list-heading">${escapeHtml(lang.title)} — ${displayArticles.length}</summary>
+    <summary id="seo-article-list-heading">${escapeHtml(lang.title)} — ${Math.min(displayArticles.length, 200)} / ${displayArticles.length}</summary>
     <ul>
-${displayArticles.map((a) => `      <li><a href="${escapeHtml(a.slug)}"><time datetime="${escapeHtml(a.date)}">${escapeHtml(a.date)}</time> — ${escapeHtml(a.title)}</a></li>`).join('\n')}
-    </ul>
+${displayArticles.slice(0, 200).map((a) => `      <li><a href="${escapeHtml(a.slug)}"><time datetime="${escapeHtml(a.date)}">${escapeHtml(a.date)}</time> — ${escapeHtml(a.title)}</a></li>`).join('\n')}
+    </ul>${displayArticles.length > 200 ? `\n    <p><a href="/sitemap_${langKey === 'en' ? '' : langKey + '_'}html">→ Full archive (${displayArticles.length} articles)</a></p>` : ''}
   </details>
 
   <section class="news-faq-section" aria-labelledby="news-faq-heading">
