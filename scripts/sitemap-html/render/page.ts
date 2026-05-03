@@ -22,6 +22,7 @@ import { fileURLToPath } from 'url';
 
 import type { Language } from '../../types/language.js';
 import { buildChrome } from '../../render-lib/chrome.js';
+import { getFaqItems } from '../../render-lib/faq-i18n.js';
 
 import type { ArticleInfo } from '../articles/scanner.js';
 import { getDocsSections } from '../articles/docs-sections.js';
@@ -158,6 +159,34 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
     hreflangAlternates[l] = l === 'en' ? 'sitemap.html' : `sitemap_${l}.html`;
   }
 
+  // SEO uplift (round-7): build a localised, 140–200-char meta description
+  // that cites the article count + native language name, plus a localised
+  // keyword list pulled from the existing translation dictionary so every
+  // sitemap_${lang}.html exposes language-appropriate terminology
+  // (English-only keyword stuffing was previously flagged by Bing
+  // Webmaster). The description floor matches `seo-metadata-contract.md` §3.1.
+  const articleCount = recentArticles.length;
+  const baseDescription = t.completeNavigation;
+  // `${baseDescription}` is typically 30–80 chars — extend with article
+  // count + native lang + brand to land in the 140–200 band.
+  const seoDescription = `${baseDescription} — ${articleCount} ${t.recentArticles} · ${meta.nativeName} · Riksdagsmonitor (${t.mainPlatform}, ${t.dashboards}, ${t.newsAnalysis}, ${t.documentation}).`;
+  const seoKeywords = [
+    'Riksdagsmonitor',
+    t.siteMap,
+    t.mainPlatform,
+    t.dashboards,
+    t.newsAnalysis,
+    t.documentation,
+    t.resources,
+    t.recentArticles,
+    'OSINT',
+    meta.nativeName,
+  ].join(', ');
+  const seoTitle = `${t.siteMap} — ${meta.nativeName}`;
+
+  // FAQ entries for this language (round-7 SEO uplift).
+  const faqItems = getFaqItems('sitemap', lang);
+
   // JSON-LD: Organization + WebSite (always) + SiteNavigationElement +
   // BreadcrumbList. The article renderer emits the same Organization +
   // WebSite shape so the three top-level navigable pages are now
@@ -173,6 +202,7 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
+      '@id': `${BASE_URL}/#website`,
       name: 'Riksdagsmonitor',
       url: BASE_URL,
       description: 'Swedish Parliament Intelligence Platform - Real-time monitoring, coalition predictions, and comprehensive political analysis',
@@ -188,17 +218,55 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
       '@type': 'SiteNavigationElement',
       name: t.siteMap,
       url: `${BASE_URL}/${sitemapFile}`,
-      inLanguage: lang,
+      inLanguage: meta.hreflang,
     },
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
+      '@id': `${BASE_URL}/${sitemapFile}#breadcrumb`,
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: t.home, item: `${BASE_URL}/${indexFile}` },
         { '@type': 'ListItem', position: 2, name: t.siteMap, item: `${BASE_URL}/${sitemapFile}` },
       ],
     },
   ];
+
+  // WebPage self-node — provides `mainEntity` pointing at the catalogued
+  // article ItemList plus `dateModified` for freshness signalling.
+  const buildIso = new Date().toISOString();
+  jsonLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${BASE_URL}/${sitemapFile}#webpage`,
+    name: seoTitle,
+    url: `${BASE_URL}/${sitemapFile}`,
+    description: seoDescription,
+    inLanguage: meta.hreflang,
+    isPartOf: { '@type': 'WebSite', '@id': `${BASE_URL}/#website` },
+    dateModified: buildIso,
+    mainEntity: { '@id': `${BASE_URL}/${sitemapFile}#articles-itemlist` },
+    breadcrumb: { '@id': `${BASE_URL}/${sitemapFile}#breadcrumb` },
+  });
+
+  // ItemList of every catalogued article — exposes the full sitemap's
+  // article inventory (title + URL + position) so crawlers see the
+  // entire archive even if the visual UI paginates client-side.
+  if (recentArticles.length > 0) {
+    jsonLd.push({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      '@id': `${BASE_URL}/${sitemapFile}#articles-itemlist`,
+      name: t.recentArticles,
+      numberOfItems: recentArticles.length,
+      itemListOrder: 'https://schema.org/ItemListOrderDescending',
+      itemListElement: recentArticles.slice(0, 200).map((article, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: article.title,
+        url: `${BASE_URL}/news/${article.file}`,
+      })),
+    });
+  }
 
   // Inline page-specific stylesheet for the sitemap body. Chrome owns
   // header + footer + theme bootstrap; the styles below scope only to
@@ -348,9 +416,9 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
 
   const chrome = buildChrome({
     lang,
-    title: t.siteMap,
-    description: t.completeNavigation,
-    keywords: 'sitemap, site navigation, riksdagsmonitor pages, Swedish parliament monitoring',
+    title: seoTitle,
+    description: seoDescription,
+    keywords: seoKeywords,
     canonicalPath: sitemapFile,
     hreflangAlternates,
     defaultAlternateBase: 'sitemap.html',
@@ -362,6 +430,9 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
     ],
     jsonLd,
     extraStyle,
+    faqItems,
+    speakableSelectors: ['.sitemap-page-hero h1', '.sitemap-page-hero p'],
+    modifiedIso: buildIso,
   });
 
   // Body content — keeps the rich sitemap sections from the legacy
@@ -461,6 +532,17 @@ ${multiLangLinks}
             <ul class="sitemap-list language-grid">
 ${otherLanguageLinks}
             </ul>
+        </section>
+
+        <!-- FAQ section (round-7 SEO uplift) — crawler-visible
+             progressive disclosure so Google's FAQ rich-result panel
+             can pick up the answers from the same DOM as the JSON-LD. -->
+        <section class="sitemap-section sitemap-faq" id="faq" aria-labelledby="sitemap-faq-heading">
+            <h2 id="sitemap-faq-heading">FAQ</h2>
+${faqItems.map((f) => `            <details class="sitemap-faq-item">
+                <summary>${escapeHtml(f.question)}</summary>
+                <p>${escapeHtml(f.answer)}</p>
+            </details>`).join('\n')}
         </section>
     </div>`;
 

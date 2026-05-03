@@ -18,6 +18,7 @@ import type {
 } from './types.js';
 import { LANGUAGES, AVAILABLE_IN_TRANSLATIONS, LANGUAGE_FLAGS } from './constants.js';
 import { buildChrome } from '../render-lib/chrome.js';
+import { getFaqItems } from '../render-lib/faq-i18n.js';
 import type { Language } from '../types/language.js';
 
 const APP_VERSION_FALLBACK = '0.0.0';
@@ -135,6 +136,16 @@ export function generateIndexHTML(
     hreflangAlternates[toChromeLang(k)] = `news/${fName}`;
   }
 
+  // BCP-47 normalisation: Norwegian articles ship with the legacy
+  // `'no'` language code in their slug + frontmatter, but
+  // {@link https://datatracker.ietf.org/doc/html/rfc5646 RFC 5646}
+  // (and consequently Google / Bing) require `'nb'`. Normalise here so
+  // every emitted JSON-LD `inLanguage` field is a valid BCP-47 tag.
+  const toBcp47 = (code: string | undefined): string => {
+    if (!code) return lang.code;
+    return code === 'no' ? 'nb' : code;
+  };
+
   // ── JSON-LD: Organization + WebSite (always) + ItemList + BreadcrumbList ──
   const itemListLd: unknown = {
     '@context': 'https://schema.org',
@@ -149,11 +160,14 @@ export function generateIndexHTML(
         '@type': 'NewsArticle',
         headline: article.title,
         url: `${BASE_URL}/news/${article.slug}`,
+        mainEntityOfPage: `${BASE_URL}/news/${article.slug}`,
         datePublished: article.date,
+        dateModified: article.date,
+        image: `${BASE_URL}/images/og-image.webp`,
         description: article.description.length > 150
           ? article.description.substring(0, 150).replace(/\s+\S*$/, '') + '...'
           : article.description,
-        inLanguage: article.lang || lang.code,
+        inLanguage: toBcp47(article.lang || lang.code),
         author: { '@type': 'Organization', name: 'Riksdagsmonitor' },
         publisher: {
           '@type': 'Organization',
@@ -191,10 +205,11 @@ export function generateIndexHTML(
   const websiteLd: unknown = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${BASE_URL}/#website`,
     name: 'Riksdagsmonitor',
     url: BASE_URL,
     description: lang.schemaDescription || 'Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency',
-    inLanguage: lang.code,
+    inLanguage: toBcp47(lang.code),
     publisher: {
       '@type': 'Organization',
       name: 'Hack23 AB',
@@ -206,6 +221,20 @@ export function generateIndexHTML(
       'query-input': 'required name=search_term_string',
     },
   };
+
+  // FAQ entries for this language — emitted as `FAQPage` JSON-LD via
+  // chrome auto-graph + rendered as a visible `<details>` section
+  // before the AI-newsroom block (crawlable progressive disclosure).
+  const faqItems = getFaqItems('newsIndex', toChromeLang(langKey));
+
+  // Pagination link relations — the visible UI paginates client-side
+  // in chunks of 20, but crawlers will not execute JS. When the article
+  // count exceeds the first page we expose a static `?page=2` URL via
+  // `<link rel="next">` so search engines can discover the archive
+  // structure. The first page has no `prev`.
+  const PAGE_SIZE = 20;
+  const totalPages = Math.max(1, Math.ceil(displayArticles.length / PAGE_SIZE));
+  const relNext = totalPages > 1 ? `${BASE_URL}/news/${filename}?page=2` : undefined;
 
   const jsonLd: unknown[] = [organizationLd, websiteLd, itemListLd, breadcrumbLd];
 
@@ -249,6 +278,9 @@ export function generateIndexHTML(
     // language entirely (see issue #2012-regression).
     bodyClass: 'news-page',
     heroBannerImage: 'images/riksdagsmonitornews-banner.webp',
+    faqItems,
+    speakableSelectors: ['header.news-page-heading h1', 'header.news-page-heading .news-page-subtitle'],
+    relNext,
   });
 
   // News-index body — preserves the rich filter bar, articles grid, JS,
@@ -748,6 +780,31 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     <div class="container">
       <h2 id="ai-newsroom-heading"><span aria-hidden="true">🤖</span> ${escapeHtml(lang.aiNewsroomTitle)}</h2>
       <p>${escapeHtml(lang.aiNewsroomText)}</p>
+    </div>
+  </section>
+
+  <!-- SEO: crawler-visible article list. The .articles-grid above is
+       hydrated client-side from JSON, leaving search-engine crawlers
+       with only a skeleton + the truncated 10-item ItemList JSON-LD.
+       This noscript-style fallback exposes every article URL +
+       title + date in the initial HTML so the entire archive is
+       discoverable from the index page even without JS. The list is
+       visually hidden but available to assistive technology that
+       prefers semantic markup. -->
+  <section class="seo-article-list" aria-labelledby="seo-article-list-heading" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
+    <h2 id="seo-article-list-heading">${escapeHtml(lang.title)} — ${displayArticles.length}</h2>
+    <ul>
+${displayArticles.map((a) => `      <li><a href="${escapeHtml(a.slug)}"><time datetime="${escapeHtml(a.date)}">${escapeHtml(a.date)}</time> — ${escapeHtml(a.title)}</a></li>`).join('\n')}
+    </ul>
+  </section>
+
+  <section class="news-faq-section" aria-labelledby="news-faq-heading">
+    <div class="container">
+      <h2 id="news-faq-heading"><span aria-hidden="true">❓</span> FAQ</h2>
+${faqItems.map((f) => `      <details class="news-faq-item">
+        <summary>${escapeHtml(f.question)}</summary>
+        <p>${escapeHtml(f.answer)}</p>
+      </details>`).join('\n')}
     </div>
   </section>
   ${APP_VERSION_MARKER}`;

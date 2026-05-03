@@ -39,6 +39,7 @@
  */
 
 import type { Language } from '../types/language.js';
+import type { FAQItem } from '../types/editorial.js';
 import { LANGUAGE_META, escapeHtml } from '../generate-sitemap-html.js';
 import {
   BASE_URL,
@@ -144,6 +145,31 @@ export interface ChromeOptions {
    * dedicated asset while preserving the shared chrome structure.
    */
   readonly heroBannerImage?: string;
+  /**
+   * Optional FAQ entries. When non-empty, chrome auto-emits a Schema.org
+   * `FAQPage` JSON-LD block (Google + Bing rich-result eligible) plus a
+   * `Question`/`Answer` graph. The visible HTML rendering remains the
+   * caller's responsibility (use `<details>`/`<summary>` for crawlable
+   * progressive disclosure).
+   */
+  readonly faqItems?: readonly FAQItem[];
+  /**
+   * CSS selectors for {@link https://schema.org/SpeakableSpecification SpeakableSpecification}.
+   * When provided, chrome emits a `WebPage` JSON-LD self-node with a
+   * `speakable` selector list. Targets voice-assistant surfacing
+   * (Google Assistant Actions on Google for News).
+   */
+  readonly speakableSelectors?: readonly string[];
+  /**
+   * Optional `<link rel="prev">` href for paginated listing pages
+   * (relative to the canonical path). Crawlers use this to discover
+   * paginated archives that are otherwise gated behind client JS.
+   */
+  readonly relPrev?: string;
+  /**
+   * Optional `<link rel="next">` href for paginated listing pages.
+   */
+  readonly relNext?: string;
 }
 
 export interface SiteChrome {
@@ -200,9 +226,52 @@ export function renderChromeHead(opts: ChromeOptions): string {
   const keywords = opts.keywords ?? 'Riksdagsmonitor, Swedish Parliament, political intelligence, OSINT, Riksdagen';
   const published = opts.publishedIso ?? new Date().toISOString();
   const modified = opts.modifiedIso ?? published;
-  const jsonLdBlocks = (opts.jsonLd ?? [])
+
+  // Auto-emit FAQPage JSON-LD when caller supplies faqItems. Each
+  // Question / Answer is a Schema.org node — eligible for Google / Bing
+  // FAQ rich-result rendering when ≥2 well-formed entries exist.
+  const autoJsonLd: unknown[] = [];
+  if (opts.faqItems && opts.faqItems.length > 0) {
+    autoJsonLd.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: opts.faqItems.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: f.answer,
+        },
+      })),
+    });
+  }
+  // Auto-emit a WebPage self-node with SpeakableSpecification when the
+  // caller supplies CSS selectors. Google's voice surfaces use this to
+  // identify the most relevant TTS-readable region of a listing page.
+  if (opts.speakableSelectors && opts.speakableSelectors.length > 0) {
+    autoJsonLd.push({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      url: `${BASE_URL}/${opts.canonicalPath}`,
+      inLanguage: meta.hreflang,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: [...opts.speakableSelectors],
+      },
+      isPartOf: { '@type': 'WebSite', name: 'Riksdagsmonitor', url: BASE_URL },
+    });
+  }
+  const allJsonLd = [...(opts.jsonLd ?? []), ...autoJsonLd];
+  const jsonLdBlocks = allJsonLd
     .map((b) => `    <script type="application/ld+json">${JSON.stringify(b)}</script>`)
     .join('\n');
+
+  // Pagination link relations (rel="prev"/rel="next") give crawlers the
+  // archive structure that JS-side pagination would otherwise hide.
+  const pagerLinks: string[] = [];
+  if (opts.relPrev) pagerLinks.push(`    <link rel="prev" href="${opts.relPrev}">`);
+  if (opts.relNext) pagerLinks.push(`    <link rel="next" href="${opts.relNext}">`);
+  const pagerLinksHtml = pagerLinks.length > 0 ? pagerLinks.join('\n') + '\n' : '';
 
   // Title brand discipline (per `seo-metadata-contract.md` §2): append
   // ` — Riksdagsmonitor` only when the title does not already contain
@@ -241,12 +310,14 @@ export function renderChromeHead(opts: ChromeOptions): string {
     <meta name="news_keywords" content="${escapeHtml(keywords)}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="James Pether Sörling, CISSP, CISM">
     <meta name="publisher" content="Hack23 AB">
     <meta name="theme-color" content="#0a0e27">
     <meta name="color-scheme" content="dark light">
     <meta name="generator" content="riksdagsmonitor:scripts/render-lib">
     <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="format-detection" content="telephone=no">
     <meta http-equiv="Content-Language" content="${meta.hreflang}">
 
     <link rel="preconnect" href="https://github.com" crossorigin>
@@ -259,7 +330,7 @@ ${hreflangHtml}
 
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="alternate" type="application/rss+xml" title="Riksdagsmonitor news (${escapeHtml(meta.nativeName)})" href="${opts.rssHref ?? '/rss.xml'}">
-
+${pagerLinksHtml}
     <meta property="og:type" content="${ogType}">
     <meta property="og:site_name" content="Riksdagsmonitor">
     <meta property="og:title" content="${escapedBrandedTitle}">
