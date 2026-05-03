@@ -36,6 +36,7 @@ import {
   cleanArtifactBody,
   demoteHeadings,
   rewriteRelativeLinks,
+  stripInlineReaderGuide,
   stripSourcePreamble,
 } from './cleaning/structural.js';
 import {
@@ -74,6 +75,20 @@ export type {
   AggregationInput,
   AggregationResult,
 } from './aggregate.js';
+export {
+  buildReaderGuide,
+  anchorForTitle,
+  READER_GUIDE_ENTRIES,
+} from './reader-guide.js';
+export {
+  READER_GUIDE_I18N,
+  readerGuideI18n,
+} from './reader-guide-i18n.js';
+export type {
+  ReaderGuideI18nBundle,
+  ReaderGuideChrome,
+  ReaderGuideEntryI18n,
+} from './reader-guide-i18n.js';
 
 /**
  * Strict shape of the test-only escape hatch. Frozen so accidental
@@ -91,6 +106,7 @@ export interface AggregatorTestApi {
   readonly stripLeadingAdminBylines: (body: string) => string;
   readonly stripProcessMetaLines: (body: string) => string;
   readonly stripSourcePreamble: (body: string) => string;
+  readonly stripInlineReaderGuide: (body: string) => string;
   readonly demoteHeadings: (body: string) => string;
   readonly cleanArtifactBody: (raw: string) => string;
   readonly rewriteRelativeLinks: (body: string, repoRelPath: string) => string;
@@ -123,6 +139,7 @@ export const __test__: AggregatorTestApi = Object.freeze({
   stripLeadingAdminBylines,
   stripProcessMetaLines,
   stripSourcePreamble,
+  stripInlineReaderGuide,
   demoteHeadings,
   cleanArtifactBody,
   rewriteRelativeLinks,
