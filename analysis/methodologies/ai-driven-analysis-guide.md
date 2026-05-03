@@ -38,7 +38,7 @@
 | **Owning artifact(s)** | _(orchestration index — every artifact in the catalog)_ |
 | **Owning gate check** | All checks 1–11 in `05-analysis-gate.md` |
 | **Citation density target** | ≥ 1 cross-link per linked methodology; this file is a router, not an evidence file |
-| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
 | **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
 
 ### ✅ Pass-1 checklist (creation — minimal viable artifact)
@@ -56,7 +56,7 @@
 - [ ] Audit every methodology summary paragraph for ≤ 4 sentences and concrete artifact names
 - [ ] Verify the Family A–E output matrix totals 23 always-on artifacts (9+2+5+7) per current contract
 - [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
-- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
 - [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
 - [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
 - [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one

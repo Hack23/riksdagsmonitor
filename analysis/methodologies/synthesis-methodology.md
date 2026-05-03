@@ -36,7 +36,7 @@
 | **Owning artifact(s)** | All 9 Family A artifacts |
 | **Owning gate check** | Checks 1, 3, 4 (evidence in SWOT + significance), 5 (Mermaid), 6 (Pass-2 done), 7 (Family C structure passed-through) |
 | **Citation density target** | ≥ 1 evidence anchor per ~120 words of analytical claim (synthesis-summary, stakeholder); SWOT ≥ 2 anchors per quadrant; significance-scoring ≥ 1 anchor per ranked item |
-| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
 | **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
 
 ### ✅ Pass-1 checklist (creation — minimal viable artifact)
@@ -54,7 +54,7 @@
 - [ ] Cross-check SWOT quadrant counts ≥ 2 evidence-anchored entries each (Check 4)
 - [ ] Confirm party arithmetic in coalition references is neutral and reflects Tidö support, not active coalition (see `per-artifact-methodologies.md`)
 - [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
-- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
 - [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
 - [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
 - [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one

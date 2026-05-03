@@ -36,7 +36,7 @@
 | **Owning artifact(s)** | Both Family B artifacts |
 | **Owning gate check** | Check 1 (existence), Check 10 (top-2 full-text availability), and the SLA freshness rule in this methodology |
 | **Citation density target** | Every fetched document = 1 manifest row with `dok_id`, source, freshness timestamp, fetch outcome, full-text status |
-| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
 | **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
 
 ### ✅ Pass-1 checklist (creation — minimal viable artifact)
@@ -54,7 +54,7 @@
 - [ ] Run the gate's Check 10 mentally: is `## Full-Text Fetch Outcomes` present and ≥ 2 with `full_text_available=true`?
 - [ ] Detect coordinated activity (≥ 3 same-day cross-party motions on same theme) and flag it
 - [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
-- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
 - [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
 - [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
 - [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one

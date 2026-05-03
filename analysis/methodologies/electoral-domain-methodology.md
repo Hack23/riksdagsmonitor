@@ -36,7 +36,7 @@
 | **Owning artifact(s)** | All 7 Family D artifacts |
 | **Owning gate check** | Check 8 (Family D structure: ≥ 10 dated forward indicators, seat-count table in coalition-mathematics, Statskontoret citation in implementation-feasibility when an agency is named) |
 | **Citation density target** | ≥ 1 evidence anchor per coalition row; ≥ 1 dated source per forward indicator; ≥ 1 SCB segment cut per voter-segmentation cohort |
-| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
 | **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
 
 ### ✅ Pass-1 checklist (creation — minimal viable artifact)
@@ -56,7 +56,7 @@
 - [ ] Add ≥ 1 historical parallel with date + outcome to `historical-parallels.md`
 - [ ] Verify media-framing reflects ≥ 3 outlets across the political spectrum
 - [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
-- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
 - [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
 - [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
 - [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one

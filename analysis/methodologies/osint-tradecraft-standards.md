@@ -40,7 +40,7 @@
 | **Owning artifact(s)** | _(applies to every artifact carrying confidence / source-grading / SAT attestation)_ |
 | **Owning gate check** | WEP-band, Admiralty-grade, ICD 203 BLUF, SAT-documentation requirements in `reference-quality-thresholds.json#tradecraftQualitySignals` |
 | **Citation density target** | Tradecraft canon — every external citation in any artifact MUST carry an Admiralty grade; every probabilistic claim MUST carry a WEP band |
-| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
 | **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
 
 ### ✅ Pass-1 checklist (creation — minimal viable artifact)
@@ -59,7 +59,7 @@
 - [ ] Verify GDPR Art. 9 ethical-scope statement explicitly forbids hacked / leaked / non-public political data
 - [ ] Verify cross-cycle PIR handoff steps reconcile with `scripts/roll-forward-pirs.ts`
 - [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
-- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
 - [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
 - [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
 - [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one

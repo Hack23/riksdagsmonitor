@@ -243,7 +243,7 @@ graph LR
 
 ## 🔀 Methodology → Template → Gate-Check Matrix (v4.6 — 2026-05-03)
 
-> **🎯 Why this matrix exists.** Issue #N (sharpen `analysis/methodologies/`) requires a single machine-readable cross-walk so the AI can route from "I am writing artifact X" → "the methodology canon for X is Y" → "the gate checks for X are Z." Use this table as the first stop when a Pass-2 audit asks _"which methodology owns this file and which gate check would fail without it?"_
+> **🎯 Why this matrix exists.** The goal (sharpen `analysis/methodologies/`) requires a single machine-readable cross-walk so the AI can route from "I am writing artifact X" → "the methodology canon for X is Y" → "the gate checks for X are Z." Use this table as the first stop when a Pass-2 audit asks _"which methodology owns this file and which gate check would fail without it?"_
 
 | Methodology file | Family / Scope | Owning artifact(s) (in `analysis/daily/.../`) | Owning template(s) (in `analysis/templates/`) | Gate check(s) (in `.github/prompts/05-analysis-gate.md`) |
 |------------------|----------------|------------------------------------------------|-----------------------------------------------|---------------------------------------------------------|

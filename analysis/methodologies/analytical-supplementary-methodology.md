@@ -26,7 +26,7 @@
 | **Owning artifact(s)** | Family-S supplementary (S1–S7) |
 | **Owning gate check** | Check 11 (supplementary) — non-blocking for short horizons; blocking for `year`/`cycle` per `reference-quality-thresholds.json#analyticalSupplementary` |
 | **Citation density target** | Per-dimension table: ≥ 1 evidence anchor per row (PESTLE 4 dimensions, STRIDE 6 categories, wildcards ≥ 8 entries, qSWOT ≥ 3 per quadrant) |
-| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
 | **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
 
 ### ✅ Pass-1 checklist (creation — minimal viable artifact)
@@ -46,7 +46,7 @@
 - [ ] Verify each supplementary artifact's row floor in `reference-quality-thresholds.json#analyticalSupplementary.*.rowFloor`
 - [ ] For `year`/`cycle`: confirm wildcards include ≥ 1 climate / ≥ 1 geopolitical / ≥ 1 technological / ≥ 1 economic / ≥ 1 social tag
 - [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
-- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
 - [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
 - [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
 - [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one

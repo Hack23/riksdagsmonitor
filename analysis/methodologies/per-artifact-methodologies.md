@@ -39,7 +39,7 @@
 | **Owning artifact(s)** | All Family A (9), B (2), C (5), D (7), and Family S supplementary artifacts (S1–S7) |
 | **Owning gate check** | Checks 1, 4, 5, 6, 7, 8, 11 in `05-analysis-gate.md` |
 | **Citation density target** | Per-artifact density target documented in each artifact section; default ≥ 1 evidence anchor per ~120 words of analytical claim |
-| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
 | **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
 
 ### ✅ Pass-1 checklist (creation — minimal viable artifact)
@@ -57,7 +57,7 @@
 - [ ] Re-check the artifact-specific anti-patterns list before commit
 - [ ] Confirm cross-link to `per-document-methodology.md` is respected: per-document analyses live in `documents/`, not in core synthesis files
 - [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
-- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
 - [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
 - [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
 - [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
@@ -86,7 +86,7 @@
 
 ## 🎯 Purpose
 
-> **🚧 Scope contract (v1.4 — 2026-05-03).** This file covers **every artifact in Families A (Core Synthesis), B (Structural Metadata), C (Strategic Extensions), D (Electoral & Domain Lenses), and S (Analytical Supplementary)**. It does **NOT** cover **Family E (per-document analysis)** — that is owned exclusively by [`per-document-methodology.md`](per-document-methodology.md). If you find yourself writing per-document evidence here, stop and move it to `per-document-methodology.md` to keep the two files disjoint. The reverse split also holds: Family A–D synthesis guidance never lives in `per-document-methodology.md`. The methodology → template → gate-check matrix in [`README.md`](README.md#-methodology--template--gate-check-matrix-v46--2026-05-03) is the single cross-walk.
+> **🚧 Scope contract (v1.4 — 2026-05-03).** This file covers **every artifact in Families A (Core Synthesis), B (Structural Metadata), C (Strategic Extensions), D (Electoral & Domain Lenses), and S (Analytical Supplementary)**. It does **NOT** cover **Family E (per-document analysis)** — that is owned exclusively by [`per-document-methodology.md`](per-document-methodology.md). If you find yourself writing per-document evidence here, stop and move it to `per-document-methodology.md` to keep the two files disjoint. The reverse split also holds: Family A–D synthesis guidance never lives in `per-document-methodology.md`. The methodology → template → gate-check matrix in [`README.md`](README.md#methodology--template--gate-check-matrix-v46--2026-05-03) is the single cross-walk.
 
 For every artifact listed in [`artifact-catalog.md`](artifact-catalog.md), this document answers **four questions** the AI agent must answer before writing a single paragraph:
 

@@ -34,9 +34,9 @@
 | **Inputs** | [Hack23 ISMS STYLE_GUIDE.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md); editorial standards skill; OSINT tradecraft standards |
 | **Outputs** | _(style canon — referenced by every other methodology and the gate)_ |
 | **Owning artifact(s)** | _(applies to every artifact)_ |
-| **Owning gate check** | Banned-phrase enforcement (gate reads the §Machine-readable banned-phrase list block) + Check 4 evidence patterns + Check 5 Mermaid theming |
+| **Owning gate check** | Pass-2 self-audit enforces banned-phrase elimination (reads the §Machine-readable banned-phrase list block) + Check 4 evidence patterns + Check 5 Mermaid theming |
 | **Citation density target** | Style guide is the canon; minimum density per analysis type is documented in the §Minimum Evidence Density Requirements table |
-| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
 | **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
 
 ### ✅ Pass-1 checklist (creation — minimal viable artifact)
@@ -54,7 +54,7 @@
 - [ ] Every banned phrase has at least one `Bad → Good` worked example
 - [ ] Lede patterns + WEP language ladder reconciled with `osint-tradecraft-standards.md`
 - [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
-- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
 - [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
 - [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
 - [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
@@ -66,7 +66,7 @@
 
 ### 🔴 Anti-exemplar (failure mode — never ship this)
 
-> _(failure mode)_ Banned phrases shipped without rewrite ("experts believe", "various stakeholders", "significant development") — gate Check 4 fails on style-guide banned-phrase regex.
+> _(failure mode)_ Banned phrases shipped without rewrite ("experts believe", "various stakeholders", "significant development") — Pass-2 self-audit should have caught and replaced these with evidence-anchored alternatives.
 
 ### 🔗 Cross-links
 
@@ -825,7 +825,7 @@ in Focus
 - Comments (`# …` lines) and blank lines MUST be ignored by consumers.
 - Phrases are case-sensitive **literal substrings**. To match case-insensitively, consumers MUST `grep -i -F`.
 - Equivalents in Swedish are documented in `political-style-guide.md` §[Swedish Parliamentary Terms in Analytical Context](#rule-6-swedish-parliamentary-terms-in-analytical-context); they are NOT duplicated in this list to keep it deterministic.
-- Worked rewrites for every banned phrase live in §[Bad→Good Rewrite Examples (v2.1)](#-badgood-rewrite-examples-v21) — every removal of a banned phrase MUST be supported by an evidence-anchored alternative, not a softened restatement.
+- Worked rewrites for every banned phrase live in §[Bad→Good Rewrite Examples (v2.1)](#badgood-rewrite-examples-v21) — every removal of a banned phrase MUST be supported by an evidence-anchored alternative, not a softened restatement.
 
 ---
 

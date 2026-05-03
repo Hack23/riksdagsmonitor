@@ -36,7 +36,7 @@
 | **Owning artifact(s)** | `swot-analysis.md` |
 | **Owning gate check** | Check 4 (evidence per quadrant) + Check 5 (Mermaid) + party-neutrality arithmetic in `reference-quality-thresholds.json#tradecraftQualitySignals.partyNeutralityArithmeticRequired` |
 | **Citation density target** | ≥ 2 evidence anchors per quadrant; cross-SWOT interference rows ≥ 1 anchor per pairing |
-| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
 | **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
 
 ### ✅ Pass-1 checklist (creation — minimal viable artifact)
@@ -55,7 +55,7 @@
 - [ ] Add a cross-SWOT interference table where ≥ 2 quadrants amplify each other
 - [ ] Add ≥ 1 scenario per SWOT combination with WEP probability
 - [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
-- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
 - [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
 - [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
 - [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one

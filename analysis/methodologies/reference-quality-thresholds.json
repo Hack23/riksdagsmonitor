@@ -335,9 +335,9 @@
     "bannedPhrases": {
       "source": "analysis/methodologies/political-style-guide.md",
       "block": "BEGIN BANNED-PHRASES … END BANNED-PHRASES",
-      "matchMode": "literal-substring-case-insensitive",
-      "extractionRule": "Consumers MUST extract everything between the literal markers `<!-- BEGIN BANNED-PHRASES` and `<!-- END BANNED-PHRASES`, strip blank lines and lines starting with `#`, and treat each remaining line as a literal banned substring.",
-      "enforcement": "Pass-2 self-audit (methodology-reflection.md §Style audit). Gate Check 4 in 05-analysis-gate.md may grep this block to surface remaining occurrences in published artifacts.",
+      "matchMode": "literal-substring-case-sensitive",
+      "extractionRule": "Consumers MUST extract everything between the literal markers `<!-- BEGIN BANNED-PHRASES` and `<!-- END BANNED-PHRASES`, strip HTML comment lines (`<!-- … -->`), fenced-block delimiters (lines starting with triple-backtick), blank lines, and lines starting with `#` (comments). Each remaining non-empty line is one literal banned substring. For case-insensitive matching, the consumer must explicitly pass `-i` to grep.",
+      "enforcement": "Pass-2 self-audit (methodology-reflection.md §Style audit). The banned-phrase block is consumed by the agent's own Pass-2 read-back loop; it is NOT currently enforced by gate Check 4 (which covers evidence anchors only). Future gate integration is planned but not yet implemented.",
       "removalPolicy": "Append-only between major versions. Removals require a major-version bump and a justification entry in methodology-reflection.md."
     },
     "pass2Attestation": {

@@ -36,7 +36,7 @@
 | **Owning artifact(s)** | All 5 Family C artifacts |
 | **Owning gate check** | Check 7 (Family C structure: ≥ 3 scenarios, ≥ 3 KJs with confidence, ≥ 3 ACH hypotheses, ICD 203 audit marker) |
 | **Citation density target** | ≥ 1 evidence anchor per scenario/hypothesis/KJ; ≥ 2 cycle-aged sources per `year`/`cycle` horizon claim |
-| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
 | **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
 
 ### ✅ Pass-1 checklist (creation — minimal viable artifact)
@@ -57,7 +57,7 @@
 - [ ] Verify comparator set covers ≥ 2 peer countries with named indicators (IMF / SCB / WB)
 - [ ] Read back devils-advocate: each hypothesis must survive at least one elimination test
 - [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
-- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
 - [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
 - [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
 - [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one

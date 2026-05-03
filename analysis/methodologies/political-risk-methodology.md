@@ -36,7 +36,7 @@
 | **Owning artifact(s)** | `risk-assessment.md` |
 | **Owning gate check** | Checks 1, 4, 5 (Mermaid), and the WEP / Admiralty signals listed in `reference-quality-thresholds.json#tradecraftQualitySignals` |
 | **Citation density target** | ≥ 1 evidence anchor per risk row; cascading-risk paths cite ≥ 1 anchor per node; Bayesian priors cite ≥ 1 [A1] historical source |
-| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
 | **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
 
 ### ✅ Pass-1 checklist (creation — minimal viable artifact)
@@ -55,7 +55,7 @@
 - [ ] Bayesian update: cite the prior + likelihood ratio + posterior for ≥ 1 high-stakes risk
 - [ ] Verify wildcard / high-impact-low-probability entries are flagged with WEP `unlikely` or below
 - [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
-- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
 - [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
 - [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
 - [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
