@@ -589,6 +589,26 @@ describe('aggregator/cleaning/structural — stripInlineReaderGuide', () => {
     expect(result).toContain('More content.');
   });
 
+  it('preserves a paragraph that follows the table without intervening heading', () => {
+    // Regression: the old regex ate all non-`##` content after the table.
+    const body = [
+      '## Reader Intelligence Guide',
+      '',
+      '| Reader need | What | Source |',
+      '|---|---|---|',
+      '| [BLUF](#rm-bluf) | answer | `brief.md` |',
+      '',
+      'This paragraph comes after the table and must survive.',
+      '',
+      '### Subheading still present',
+    ].join('\n');
+
+    const result = stripInlineReaderGuide(body);
+    expect(result).not.toContain('Reader Intelligence Guide');
+    expect(result).toContain('This paragraph comes after the table and must survive.');
+    expect(result).toContain('### Subheading still present');
+  });
+
   it('returns body unchanged when no Reader Intelligence Guide is present', () => {
     const body = '## Summary\n\nSome text here.\n';
     expect(stripInlineReaderGuide(body)).toBe(body);

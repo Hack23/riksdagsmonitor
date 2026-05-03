@@ -68,15 +68,29 @@ export function stripSourcePreamble(body: string): string {
  * baked into artifact markdown must be removed to guarantee the
  * single-occurrence invariant.
  *
- * Detects the heading `## Reader Intelligence Guide` (or its localised
- * equivalents) and strips from that heading through the end of the
- * markdown table that follows it.
+ * Matches the **English** heading `## Reader Intelligence Guide` only.
+ * Source artifacts are always authored in English; localised articles are
+ * produced post-aggregation and never re-enter the cleaning pipeline, so
+ * matching English alone is sufficient.
+ *
+ * Strips the heading, any preamble paragraph immediately below it, and the
+ * contiguous markdown table that follows (header row + separator + data rows).
+ * Content that appears after the table (e.g. subsequent paragraphs or
+ * subheadings) is preserved.
  */
 export function stripInlineReaderGuide(body: string): string {
-  // Match the heading + optional blank line + optional preamble paragraph +
-  // the table header + separator + all table rows, until the next heading or EOF.
+  // Step 1: strip the `## Reader Intelligence Guide` heading line.
+  // Step 2: strip the optional preamble paragraph (non-blank, non-table lines
+  //         immediately after the heading, separated by optional blank lines).
+  // Step 3: strip the contiguous markdown table block (lines that start with `|`
+  //         or are the blank-line separators between the heading and the table).
+  //
+  // We do this in two passes for clarity:
+  // Pass A – heading + preamble + table (all as one contiguous block).
+  //   A table row starts with `|`; the separator row also starts with `|`.
+  //   Blank lines between heading, preamble, and table header are included.
   return body.replace(
-    /^##\s+Reader Intelligence Guide[^\n]*\n(?:(?!^##\s)[^\n]*\n)*/gim,
+    /^##\s+Reader Intelligence Guide[^\n]*\n(?:\n|(?!\|)[^\n]*\n)*(?:\|[^\n]*\n)*/gim,
     '',
   );
 }
