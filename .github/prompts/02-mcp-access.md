@@ -83,26 +83,4 @@ Every news workflow declares a **single** `curl`-based pre-warm step with ≤ 6 
 
 > 🚫 **Removed from every workflow.** MCP Gateway v0.3.1 (`ghcr.io/github/gh-aw-mcpg:v0.3.1`) rejects the gh-aw v0.71.3 compiled `sessionTimeout` field as `additionalProperties 'sessionTimeout' not allowed` ([gh-aw #29353](https://github.com/github/gh-aw/issues/29353)). The field is therefore **removed from all 14 `news-*.md` workflows** until a compatible MCP Gateway version ships.
 
-Operational consequence:
-
-| Aspect | Reality (current) |
-|--------|-------------------|
-| Frontmatter field `engine.mcp.session-timeout` | **Must not be set.** Compilation will succeed but the job will fail at MCP gateway start with the `additionalProperties` error above. |
-| MCP gateway session lifetime (without keepalive) | Effective gateway default — **~25–30 min idle drop** on all gateway-managed sessions including the local `safeoutputs` Streamable-HTTP server. |
-| Mitigation | `sandbox.mcp.keepalive-interval: 300` (next section) pings **all** gateway-managed sessions every 5 min, preventing the idle timeout under normal operation. Timer C only fires if the keepalive mechanism itself fails. |
-| Upstream HTTP MCPs (`riksdag-regering`, `scb`, `world-bank`) | Kept warm by the same keepalive; their idle survival is bounded by upstream server timeouts, not by gh-aw config. |
-| Recovery if Timer C fires despite keepalive | None mid-run. The `create_pull_request` call returns a session-not-found error and the host-side PAT fallback in `07-commit-and-pr.md §Sandbox commit handoff` becomes the only path to land the commit. |
-
-The PR deadline is governed by Timer A (job `timeout-minutes: 60`, measured from job start) and Timer B (Copilot API session ~60 min). Timer C is mitigated by the 5-min keepalive under normal operation — the 35–42 min PR window (hard 45) is compatible with all three timers. Call the PR safe-output by agent minute 42.
-
-## MCP gateway keepalive (`sandbox.mcp.keepalive-interval`)
-
-Every news workflow sets `sandbox.mcp.keepalive-interval: 300`, which compiles to the gh-aw mcp-gateway's `keepaliveInterval` field. This is the **primary Timer C mitigation**: it pings all gateway-managed sessions (including safeoutputs) every 5 minutes, preventing the ~25–30 min idle timeout from firing. Semantics ([upstream spec](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/mcp-gateway.md)):
-
-| Value | Meaning |
-|-------|---------|
-| `0` or unset | Gateway default = **1500 s (25 min)** — insufficient for the 60-min job; Timer C would fire before PR creation |
-| `-1` | Disable keepalive entirely (do not use) |
-| **`300`** *(our setting)* | Ping every 5 minutes — keeps **all** gateway-managed sessions alive (upstream MCPs + local safeoutputs). Prevents Timer C idle timeout under normal operation. Also reduces tail latency on first-call-after-idle for upstream MCPs. |
-
-**Timer C mitigation contract:** With `keepaliveInterval: 300`, the gateway pings safeoutputs every 5 min, resetting its idle timer before the ~25 min default can expire. The 35–42 min PR window is safe because the keepalive keeps the session active throughout. Timer C only fires if: (a) the MCP gateway itself restarts/crashes, (b) a network partition prevents the ping, or (c) a gh-aw bug skips the keepalive. The sandbox commit handoff in `07-commit-and-pr.md` is the defence-in-depth recovery for those edge cases.
+The `sandbox.mcp.keepalive-interval` setting has also been **removed** — the MCP gateway default keepalive is now sufficient for the 60-min job window. The PR deadline is governed by Timer A (job `timeout-minutes: 60`, measured from job start) and Timer B (Copilot API session ~60 min). Call the PR safe-output by agent minute 42.

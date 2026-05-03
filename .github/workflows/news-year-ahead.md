@@ -52,10 +52,6 @@ concurrency:
 features:
   mcp-gateway: true
 
-sandbox:
-  mcp:
-    keepalive-interval: 300 # 5-min HTTP MCP ping to keep HTTP-backed MCPs warm for the full 60-min job. PR deadline ~agent minute 42 (hard 45).
-
 runtimes:
   node:
     version: "25"
@@ -194,7 +190,7 @@ Generates the deepest scheduled forward-look at Swedish politics — a 365-day a
 
 ## Time budget
 
-> 🟡 **MCP gateway session keepalive**: `sandbox.mcp.keepalive-interval: 300` sends a 5-min HTTP ping to keep HTTP-backed MCPs warm. Because the 60-min job clock includes host-side setup before Copilot starts, plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard 45).
+> 🟡 **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. See `00-base-contract.md §Session timing` and `07-commit-and-pr.md §Deadline enforcement`.
 
 | Minutes | Phase |
 |---------|-------|
