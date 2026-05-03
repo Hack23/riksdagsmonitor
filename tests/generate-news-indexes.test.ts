@@ -915,3 +915,52 @@ describe('generate-news-indexes/template — generateLanguageNotice', () => {
     },
   );
 });
+
+// ---------------------------------------------------------------------------
+// SEO uplift: news-index template generates FAQ + rel=next + sr-only list
+// ---------------------------------------------------------------------------
+
+import { generateIndexHTML } from '../scripts/generate-news-indexes/template.js';
+
+describe('generate-news-indexes/template — SEO features', () => {
+  const mockArticles = Array.from({ length: 15 }, (_, i) => ({
+    slug: `2026-05-${String(i + 1).padStart(2, '0')}-test-en.html`,
+    lang: 'en',
+    title: `Test Article ${i + 1}`,
+    description: `Description ${i + 1}`,
+    date: `2026-05-${String(15 - i).padStart(2, '0')}`,
+    type: 'analysis' as const,
+    topics: ['parliament'],
+    tags: ['test'],
+  }));
+
+  it('emits FAQPage JSON-LD', () => {
+    const html = generateIndexHTML('en', mockArticles, { en: mockArticles });
+    expect(html).toContain('"@type":"FAQPage"');
+  });
+
+  it('emits a visible FAQ section with localised heading', () => {
+    const html = generateIndexHTML('en', mockArticles, { en: mockArticles });
+    expect(html).toContain('id="news-faq-heading"');
+    expect(html).toContain('Frequently Asked Questions');
+    expect(html).toContain('<details class="news-faq-item">');
+  });
+
+  it('localises the FAQ heading for Swedish', () => {
+    const svArticles = mockArticles.map((a) => ({ ...a, lang: 'sv', slug: a.slug.replace('-en.', '-sv.') }));
+    const html = generateIndexHTML('sv', svArticles, { sv: svArticles });
+    expect(html).toContain('Vanliga frågor');
+  });
+
+  it('emits a crawler-visible article list with .sr-only class', () => {
+    const html = generateIndexHTML('en', mockArticles, { en: mockArticles });
+    expect(html).toContain('class="seo-article-list sr-only"');
+    expect(html).toContain('id="seo-article-list-heading"');
+  });
+
+  it('does NOT use inline positioning styles on the sr-only list', () => {
+    const html = generateIndexHTML('en', mockArticles, { en: mockArticles });
+    // Ensure no inline absolute positioning on the seo list section
+    expect(html).not.toMatch(/class="seo-article-list[^"]*"[^>]*style="/);
+  });
+});

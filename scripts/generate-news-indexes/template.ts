@@ -18,7 +18,7 @@ import type {
 } from './types.js';
 import { LANGUAGES, AVAILABLE_IN_TRANSLATIONS, LANGUAGE_FLAGS } from './constants.js';
 import { buildChrome } from '../render-lib/chrome.js';
-import { getFaqItems } from '../render-lib/faq-i18n.js';
+import { getFaqItems, FAQ_HEADING } from '../render-lib/faq-i18n.js';
 import type { Language } from '../types/language.js';
 
 const APP_VERSION_FALLBACK = '0.0.0';
@@ -800,7 +800,7 @@ ${displayArticles.map((a) => `      <li><a href="${escapeHtml(a.slug)}"><time da
 
   <section class="news-faq-section" aria-labelledby="news-faq-heading">
     <div class="container">
-      <h2 id="news-faq-heading"><span aria-hidden="true">❓</span> FAQ</h2>
+      <h2 id="news-faq-heading"><span aria-hidden="true">❓</span> ${escapeHtml(FAQ_HEADING[toChromeLang(langKey)])}</h2>
 ${faqItems.map((f) => `      <details class="news-faq-item">
         <summary>${escapeHtml(f.question)}</summary>
         <p>${escapeHtml(f.answer)}</p>

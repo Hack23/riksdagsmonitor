@@ -161,13 +161,15 @@ export interface ChromeOptions {
    */
   readonly speakableSelectors?: readonly string[];
   /**
-   * Optional `<link rel="prev">` href for paginated listing pages
-   * (relative to the canonical path). Crawlers use this to discover
-   * paginated archives that are otherwise gated behind client JS.
+   * Optional `<link rel="prev">` absolute URL for paginated listing pages.
+   * Crawlers use this to discover paginated archives that are otherwise
+   * gated behind client JS. Must be a full absolute URL (e.g.
+   * `https://riksdagsmonitor.com/news/index.html?page=1`).
    */
   readonly relPrev?: string;
   /**
-   * Optional `<link rel="next">` href for paginated listing pages.
+   * Optional `<link rel="next">` absolute URL for paginated listing pages.
+   * Must be a full absolute URL.
    */
   readonly relNext?: string;
 }
@@ -227,11 +229,12 @@ export function renderChromeHead(opts: ChromeOptions): string {
   const published = opts.publishedIso ?? new Date().toISOString();
   const modified = opts.modifiedIso ?? published;
 
-  // Auto-emit FAQPage JSON-LD when caller supplies faqItems. Each
-  // Question / Answer is a Schema.org node — eligible for Google / Bing
-  // FAQ rich-result rendering when ≥2 well-formed entries exist.
+  // Auto-emit FAQPage JSON-LD when caller supplies ≥2 faqItems.
+  // Google / Bing FAQ rich-result panels require at least 2 well-formed
+  // Question / Answer pairs; single-item arrays are valid Schema.org but
+  // will not trigger the rich result, so we skip emission below that.
   const autoJsonLd: unknown[] = [];
-  if (opts.faqItems && opts.faqItems.length > 0) {
+  if (opts.faqItems && opts.faqItems.length >= 2) {
     autoJsonLd.push({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
@@ -248,23 +251,27 @@ export function renderChromeHead(opts: ChromeOptions): string {
   // Auto-emit a WebPage self-node with SpeakableSpecification when the
   // caller supplies CSS selectors. Google's voice surfaces use this to
   // identify the most relevant TTS-readable region of a listing page.
-  // If the caller already pushed a WebPage node in `opts.jsonLd`, merge
-  // the `speakable` property into that existing node instead of emitting
-  // a duplicate (which would confuse crawlers with two WebPage entities
-  // for the same URL).
+  // If the caller already pushed a WebPage node in `opts.jsonLd`, we
+  // produce a merged clone with `speakable` added — the original
+  // caller-provided array is never mutated (pure, stateless contract).
+  let mergedJsonLd = opts.jsonLd ?? [];
   if (opts.speakableSelectors && opts.speakableSelectors.length > 0) {
     const speakableSpec = {
       '@type': 'SpeakableSpecification' as const,
       cssSelector: [...opts.speakableSelectors],
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const existingWebPage = (opts.jsonLd ?? []).find((node: any) => node?.['@type'] === 'WebPage') as Record<string, unknown> | undefined;
-    if (existingWebPage) {
-      // Merge speakable + isPartOf into the caller's existing WebPage node
-      existingWebPage['speakable'] = speakableSpec;
-      if (!existingWebPage['isPartOf']) {
-        existingWebPage['isPartOf'] = { '@type': 'WebSite', '@id': `${BASE_URL}/#website` };
+    const existingIdx = mergedJsonLd.findIndex((node: any) => node?.['@type'] === 'WebPage');
+    if (existingIdx >= 0) {
+      // Clone the array + WebPage node, inject speakable + isPartOf
+      const cloned = [...mergedJsonLd];
+      const clonedNode = { ...(cloned[existingIdx] as Record<string, unknown>) };
+      clonedNode['speakable'] = speakableSpec;
+      if (!clonedNode['isPartOf']) {
+        clonedNode['isPartOf'] = { '@type': 'WebSite', '@id': `${BASE_URL}/#website` };
       }
+      cloned[existingIdx] = clonedNode;
+      mergedJsonLd = cloned;
     } else {
       autoJsonLd.push({
         '@context': 'https://schema.org',
@@ -276,7 +283,7 @@ export function renderChromeHead(opts: ChromeOptions): string {
       });
     }
   }
-  const allJsonLd = [...(opts.jsonLd ?? []), ...autoJsonLd];
+  const allJsonLd = [...mergedJsonLd, ...autoJsonLd];
   const jsonLdBlocks = allJsonLd
     .map((b) => `    <script type="application/ld+json">${JSON.stringify(b)}</script>`)
     .join('\n');

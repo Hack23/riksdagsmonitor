@@ -22,7 +22,7 @@ import { fileURLToPath } from 'url';
 import type { Language } from '../../types/language.js';
 import { LANGUAGE_META, escapeHtml } from '../../sitemap-html/index.js';
 import { buildChrome } from '../../render-lib/chrome.js';
-import { getFaqItems } from '../../render-lib/faq-i18n.js';
+import { getFaqItems, FAQ_HEADING } from '../../render-lib/faq-i18n.js';
 
 import { collectCatalog } from '../catalog.js';
 import { collectDailyDays } from '../daily-streams.js';
@@ -299,7 +299,7 @@ ${olderDaysHtml}
              so progressive disclosure stays crawlable without JS. -->
         <section id="faq" class="pi-section pi-faq" aria-labelledby="pi-faq-heading">
             <div class="pi-section-header">
-              <h2 id="pi-faq-heading"><span aria-hidden="true">❓</span> FAQ</h2>
+              <h2 id="pi-faq-heading"><span aria-hidden="true">❓</span> ${escapeHtml(FAQ_HEADING[lang])}</h2>
             </div>
 ${faqItems.map((f) => `            <details class="pi-faq-item">
               <summary>${escapeHtml(f.question)}</summary>

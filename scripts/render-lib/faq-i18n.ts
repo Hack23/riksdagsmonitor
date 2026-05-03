@@ -115,7 +115,7 @@ export const FAQ_I18N: Record<Language, FAQCatalogues> = {
 
   no: {
     sitemap: [
-      { question: 'Hva er Riksdagsmonitor?', answer: 'Riksdagsmonitor er en åpen kildekode-plattform for politisk etterretning om Sveriges Riksdag — overvåker voteringer, forslag, propossisjoner, komitéinnstillinger og regjeringsvedtak på 14 språk.' },
+      { question: 'Hva er Riksdagsmonitor?', answer: 'Riksdagsmonitor er en åpen kildekode-plattform for politisk etterretning om Sveriges Riksdag — overvåker voteringer, forslag, proposisjoner, komitéinnstillinger og regjeringsvedtak på 14 språk.' },
       { question: 'Hvor ofte oppdateres nettstedskartet?', answer: 'Dette HTML-nettstedskartet regenereres ved hver utrulling (flere ganger per døgn). Den maskinlesbare XML-versjonen finnes på /sitemap.xml og oppdateres i samme takt.' },
       { question: 'Hvordan bytter jeg språk?', answer: 'Bruk språkvelgeren i toppen eller flaggene nederst i hver seksjon. Hvert av de 14 støttede språkene har sin egen sitemap_${lang}.html med hreflang-attributt.' },
       { question: 'Hvor finner jeg XML-nettstedskartet?', answer: 'Det maskinlesbare XML-nettstedskartet ligger på /sitemap.xml, og crawler-instruksjoner i /robots.txt. Begge er lenket fra "Ytterligere ressurser"-seksjonen ovenfor.' },
@@ -389,3 +389,24 @@ export function getFaqItems(
 ): readonly FAQItem[] {
   return FAQ_I18N[lang]?.[catalogue] ?? FAQ_I18N.en[catalogue];
 }
+
+/**
+ * Localised FAQ section heading. Used by sitemap, political-intelligence
+ * and news-index page renderers so the `<h2>` matches the page language.
+ */
+export const FAQ_HEADING: Record<Language, string> = {
+  en: 'Frequently Asked Questions',
+  sv: 'Vanliga frågor',
+  da: 'Ofte stillede spørgsmål',
+  no: 'Ofte stilte spørsmål',
+  fi: 'Usein kysytyt kysymykset',
+  de: 'Häufig gestellte Fragen',
+  fr: 'Questions fréquentes',
+  es: 'Preguntas frecuentes',
+  nl: 'Veelgestelde vragen',
+  ar: 'الأسئلة الشائعة',
+  he: 'שאלות נפוצות',
+  ja: 'よくある質問',
+  ko: '자주 묻는 질문',
+  zh: '常见问题',
+};

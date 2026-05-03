@@ -22,7 +22,7 @@ import { fileURLToPath } from 'url';
 
 import type { Language } from '../../types/language.js';
 import { buildChrome } from '../../render-lib/chrome.js';
-import { getFaqItems } from '../../render-lib/faq-i18n.js';
+import { getFaqItems, FAQ_HEADING } from '../../render-lib/faq-i18n.js';
 
 import type { ArticleInfo } from '../articles/scanner.js';
 import { getDocsSections } from '../articles/docs-sections.js';
@@ -257,9 +257,9 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
     breadcrumb: { '@id': `${BASE_URL}/${sitemapFile}#breadcrumb` },
   });
 
-  // ItemList of every catalogued article — exposes the full sitemap's
+  // ItemList of catalogued articles (up to 200) — exposes the sitemap's
   // article inventory (title + URL + position) so crawlers see the
-  // entire archive even if the visual UI paginates client-side.
+  // archive even if the visual UI paginates client-side.
   if (recentArticles.length > 0) {
     jsonLd.push({
       '@context': 'https://schema.org',
@@ -547,7 +547,7 @@ ${otherLanguageLinks}
              progressive disclosure so Google's FAQ rich-result panel
              can pick up the answers from the same DOM as the JSON-LD. -->
         <section class="sitemap-section sitemap-faq" id="faq" aria-labelledby="sitemap-faq-heading">
-            <h2 id="sitemap-faq-heading">FAQ</h2>
+            <h2 id="sitemap-faq-heading">${escapeHtml(FAQ_HEADING[lang])}</h2>
 ${faqItems.map((f) => `            <details class="sitemap-faq-item">
                 <summary>${escapeHtml(f.question)}</summary>
                 <p>${escapeHtml(f.answer)}</p>
