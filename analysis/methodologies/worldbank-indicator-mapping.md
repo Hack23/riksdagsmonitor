@@ -17,6 +17,66 @@
 
 ---
 
+<!-- BEGIN AI-FIRST METHODOLOGY CARD -->
+
+## 🎯 AI-FIRST Methodology Card
+
+> **🚦 Read this card before writing a single paragraph.** It names the artifact this methodology owns, the gate check it satisfies, the evidence-density target it must hit, and the Pass-1 / Pass-2 discipline required by `.github/copilot-instructions.md` §5 (AI-FIRST Quality Principle).
+
+| Field | Value |
+|-------|-------|
+| **Purpose** | World Bank indicator catalogue for **non-economic context only** — governance (WGI `source=75`), environment, social/demographics, health, education, defence historicals, agriculture, innovation, crime/justice. |
+| **Inputs** | `scripts/world-bank-client.ts` `INDICATOR_IDS`; `analysis/worldbank/indicators-inventory.json` v4.0; world-bank MCP server |
+| **Outputs** | `comparative-international.md` non-economic rows; `voter-segmentation.md`; `implementation-feasibility.md`; `session-baseline.md` non-economic rows |
+| **Owning artifact(s)** | Every artifact making a non-economic comparator claim |
+| **Owning gate check** | Provider-precedence enforcement: economic codes are FORBIDDEN here — cross-check against `imf-indicator-mapping.md` and `analysis/imf/indicators-inventory.json (scope boundary)` |
+| **Citation density target** | Every non-economic indicator row carries `provider=worldbank, indicator-code, retrieved_at` |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
+| **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
+
+### ✅ Pass-1 checklist (creation — minimal viable artifact)
+
+- [ ] Confirm every indicator used is on the documented non-economic list
+- [ ] Use IMF (not WB) for any macro / fiscal / monetary / external / trade / commodity / FX claim
+- [ ] Tag governance rows with `source=75` (WGI)
+- [ ] Produce every required sub-section listed in the owning template
+- [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
+- [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
+- [ ] Include ≥ 1 themed Mermaid diagram with `style …` or `themeVariables` config (where structurally meaningful)
+- [ ] Cross-link the relevant template under `analysis/templates/` and the gate check it satisfies
+
+### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
+
+- [ ] Detect & remove any deprecated economic codes from `analysis/worldbank/indicators-inventory.json (indicator list)`
+- [ ] Reconcile WB freshness vs IMF/SCB: WB usually annual lag → flag if > 18 mo old
+- [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
+- [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
+- [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
+- [ ] Verify citation density meets the per-file target below and the gate's evidence-density rules
+
+### 🟢 Exemplar (good — pattern-match this)
+
+> _(WB row)_ "WGI Control of Corruption (`CC.EST`, source=75): Sweden 2.13 (2024); Denmark 2.17; Norway 2.04; Finland 2.16. Source: api.worldbank.org, retrieved 2026-04-25 ([A1])."
+
+### 🔴 Anti-exemplar (failure mode — never ship this)
+
+> _(failure mode)_ "WB GDP per capita SWE 2024 = USD 56,302." — provider violation: GDP is IMF-canonical, not WB.
+
+### 🔗 Cross-links
+
+- **Template(s)**: `analysis/templates/comparative-international.md`, `analysis/templates/session-baseline.md`
+- **Gate check**: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md#checks-all-must-pass)
+- **AI-FIRST canon**: [`.github/copilot-instructions.md` §5](../../.github/copilot-instructions.md) · [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md)
+- **Style canon**: [`political-style-guide.md`](political-style-guide.md) · [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md)
+- **Catalog row**: [`artifact-catalog.md`](artifact-catalog.md)
+
+<!-- END AI-FIRST METHODOLOGY CARD -->
+
+---
+
+
 **Purpose** — canonical reference that maps Riksdagsmonitor news workflow article types to the most-relevant **non-economic** World Bank Open Data indicators used in `comparative-international.md`, `voter-segmentation.md`, `implementation-feasibility.md` and the `session-baseline.md` domain tables.
 
 **Data access** — via the `world-bank` MCP server (local container, `worldbank-mcp@1.0.1`) using `get-social-data`, `get-health-data`, `get-education-data`, and the raw-REST passthrough for environment / defence / agriculture / innovation / governance codes. See [`.github/copilot-mcp.json`](../../.github/copilot-mcp.json) and [`.github/prompts/02-mcp-access.md`](../../.github/prompts/02-mcp-access.md).

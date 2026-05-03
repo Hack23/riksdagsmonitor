@@ -241,6 +241,39 @@ graph LR
 
 ---
 
+## 🔀 Methodology → Template → Gate-Check Matrix (v4.6 — 2026-05-03)
+
+> **🎯 Why this matrix exists.** The goal (sharpen `analysis/methodologies/`) requires a single machine-readable cross-walk so the AI can route from "I am writing artifact X" → "the methodology canon for X is Y" → "the gate checks for X are Z." Use this table as the first stop when a Pass-2 audit asks _"which methodology owns this file and which gate check would fail without it?"_
+
+| Methodology file | Family / Scope | Owning artifact(s) (in `analysis/daily/.../`) | Owning template(s) (in `analysis/templates/`) | Gate check(s) (in `.github/prompts/05-analysis-gate.md`) |
+|------------------|----------------|------------------------------------------------|-----------------------------------------------|---------------------------------------------------------|
+| [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md) | All families — orchestration index | _(routes to all 23 always-on artifacts)_ | _(all templates)_ | All checks 1–11 |
+| [`artifact-catalog.md`](artifact-catalog.md) | All families — catalog | _(documents every artifact, depth floor, Mermaid type, MCP source)_ | _(every template)_ | Check 1 (existence) + Check 11 (supplementary) |
+| [`synthesis-methodology.md`](synthesis-methodology.md) | Family A | `executive-brief.md`, `synthesis-summary.md`, `significance-scoring.md`, `classification-results.md`, `swot-analysis.md`, `risk-assessment.md`, `threat-analysis.md`, `stakeholder-perspectives.md`, folder `README.md` | `intelligence-assessment.md`, `executive-brief.md`, `swot-analysis.md`, `risk-assessment.md`, `political-classification.md`, `political-stride-assessment.md` | Checks 1, 3, 4, 5, 6, 7 |
+| [`structural-metadata-methodology.md`](structural-metadata-methodology.md) | Family B | `data-download-manifest.md`, `cross-reference-map.md` | `data-download-manifest.md`, `cross-reference-map.md` | Checks 1, 10 |
+| [`strategic-extensions-methodology.md`](strategic-extensions-methodology.md) | Family C | `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, `methodology-reflection.md` | `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, `methodology-reflection.md` | Check 7 (Family C structure) |
+| [`electoral-domain-methodology.md`](electoral-domain-methodology.md) | Family D | `election-2026-analysis.md`, `voter-segmentation.md`, `coalition-mathematics.md`, `historical-parallels.md`, `media-framing-analysis.md`, `implementation-feasibility.md`, `forward-indicators.md` | All 7 corresponding Family D templates | Check 8 (Family D structure) |
+| [`per-document-methodology.md`](per-document-methodology.md) | Family E (atomic evidence) | `documents/{dok_id}-analysis.md`, `documents/{theme}-cluster-analysis.md` | `per-file-political-intelligence.md` | Check 2 (per-document coverage) |
+| [`per-artifact-methodologies.md`](per-artifact-methodologies.md) | Families A + B + C + D + S (NOT Family E) | _(reference — analytic moves per artifact)_ | _(all templates except `per-file-political-intelligence.md`)_ | Checks 1, 4, 5, 6, 7, 8, 11 |
+| [`analytical-supplementary-methodology.md`](analytical-supplementary-methodology.md) | Family S (supplementary) | `pestle-analysis.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `quantitative-swot.md` | `pestle-analysis.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `quantitative-swot.md` | Check 11 (supplementary, blocking for `year`/`cycle`) |
+| [`political-classification-guide.md`](political-classification-guide.md) | Step 3 — pre-analysis classification | `classification-results.md` (Family A) + classification headers in Family E | `political-classification.md` | Check 1 + cross-feed into Check 4 |
+| [`political-risk-methodology.md`](political-risk-methodology.md) | Step 3–4 — risk overlay | `risk-assessment.md` | `risk-assessment.md` | Checks 1, 4, 5, plus `tradecraftQualitySignals.wepBandRequired` |
+| [`political-swot-framework.md`](political-swot-framework.md) | Step 4 — SWOT synthesis | `swot-analysis.md` | `swot-analysis.md` | Check 4 (evidence per quadrant), Check 5, `tradecraftQualitySignals.partyNeutralityArithmeticRequired` |
+| [`political-threat-framework.md`](political-threat-framework.md) | Step 4 — threat synthesis | `threat-analysis.md` | `political-stride-assessment.md` (supplementary) | Checks 1, 4, 5, plus `tradecraftQualitySignals.wepBandRequired` |
+| [`political-style-guide.md`](political-style-guide.md) | All artifacts — style canon | _(every artifact)_ | _(every template)_ | Check 4 evidence patterns + parseable banned-phrase block consumed by Pass-2 self-audit |
+| [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md) | All artifacts — tradecraft canon | _(every artifact carrying confidence / source-grading / SAT attestation)_ | _(every template)_ | `tradecraftQualitySignals.{wepBandRequired, admiraltyGradeRequired, icd203BlufRequired, satDocumentationRequired}` |
+| [`imf-indicator-mapping.md`](imf-indicator-mapping.md) | Economic data canon (PRIMARY) | Every artifact making an economic claim; `session-baseline.md` IMF tables | `session-baseline.md`, `comparative-international.md` | Economic-data contract enforcement (`.github/aw/ECONOMIC_DATA_CONTRACT.md` v3.0) |
+| [`worldbank-indicator-mapping.md`](worldbank-indicator-mapping.md) | Non-economic data canon (governance, environment, social, defence historicals) | `comparative-international.md` non-economic rows; `voter-segmentation.md`; `implementation-feasibility.md` | `comparative-international.md`, `session-baseline.md` | Provider-precedence enforcement (no economic codes) |
+| [`reference-quality-thresholds.json`](reference-quality-thresholds.json) | All artifacts — depth floors + AI-FIRST signals | _(consumed by Pass-2 audit and gate Check 3 / Check 11)_ | _(every template)_ | Check 3 (no stub tokens) + `aiFirst.{citationDensity, bannedPhrases, pass2Attestation, wepLanguageCeiling, exemplarPolicy}` |
+
+> **🪜 How to use this matrix during Pass-1 / Pass-2.**
+> 1. Identify the artifact you are writing in column 3.
+> 2. Open the methodology in column 1 and read the **AI-FIRST Methodology Card** at the top.
+> 3. Cross-check the template in column 4 for required sub-sections.
+> 4. Run the gate check(s) in column 5 mentally before commit; surface any failure to `methodology-reflection.md §Pass-2 audit summary`.
+
+---
+
 ## 📐 Methodology Architecture
 
 ```mermaid

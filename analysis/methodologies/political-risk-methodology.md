@@ -22,6 +22,66 @@
 
 ---
 
+<!-- BEGIN AI-FIRST METHODOLOGY CARD -->
+
+## 🎯 AI-FIRST Methodology Card
+
+> **🚦 Read this card before writing a single paragraph.** It names the artifact this methodology owns, the gate check it satisfies, the evidence-density target it must hit, and the Pass-1 / Pass-2 discipline required by `.github/copilot-instructions.md` §5 (AI-FIRST Quality Principle).
+
+| Field | Value |
+|-------|-------|
+| **Purpose** | Multi-dimensional 5×5 Likelihood × Impact risk scoring with cascading-risk and Bayesian-update overlays — Step 3–4 of the AI-driven pipeline. |
+| **Inputs** | Family A synthesis; classification outputs; OSINT tradecraft (Admiralty, WEP, ICD 203); historical-parallels for prior probabilities |
+| **Outputs** | `risk-assessment.md` |
+| **Owning artifact(s)** | `risk-assessment.md` |
+| **Owning gate check** | Checks 1, 4, 5 (Mermaid), and the WEP / Admiralty signals listed in `reference-quality-thresholds.json#tradecraftQualitySignals` |
+| **Citation density target** | ≥ 1 evidence anchor per risk row; cascading-risk paths cite ≥ 1 anchor per node; Bayesian priors cite ≥ 1 [A1] historical source |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
+| **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
+
+### ✅ Pass-1 checklist (creation — minimal viable artifact)
+
+- [ ] Score every risk on Likelihood × Impact 5×5 with WEP mapping (L=1 remote → L=5 very likely)
+- [ ] Cover all 8 categories: policy / legislative / economic / social / security / diplomatic / coalition / constitutional
+- [ ] ≥ 1 cascading-risk path showing 2nd-order consequences
+- [ ] Produce every required sub-section listed in the owning template
+- [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
+- [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
+- [ ] Include ≥ 1 themed Mermaid diagram with `style …` or `themeVariables` config (where structurally meaningful)
+- [ ] Cross-link the relevant template under `analysis/templates/` and the gate check it satisfies
+
+### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
+
+- [ ] Bayesian update: cite the prior + likelihood ratio + posterior for ≥ 1 high-stakes risk
+- [ ] Verify wildcard / high-impact-low-probability entries are flagged with WEP `unlikely` or below
+- [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
+- [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
+- [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
+- [ ] Verify citation density meets the per-file target below and the gate's evidence-density rules
+
+### 🟢 Exemplar (good — pattern-match this)
+
+> _(risk row)_ "**R-04 Coalition fracture (L=3 unlikely / I=4 high)** — Tidö stress on `H902FiU1`; cascading: budget defeat → confidence vote → snap-election. Prior: 2024 H801FiU1 vote 175–174 ([A1]). Mitigation: SD-bench whipping. WEP=unlikely."
+
+### 🔴 Anti-exemplar (failure mode — never ship this)
+
+> _(failure mode)_ "Coalition risks are elevated." — no L/I score, no `dok_id`, no cascading path, no WEP mapping.
+
+### 🔗 Cross-links
+
+- **Template(s)**: `analysis/templates/risk-assessment.md`
+- **Gate check**: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md#checks-all-must-pass)
+- **AI-FIRST canon**: [`.github/copilot-instructions.md` §5](../../.github/copilot-instructions.md) · [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md)
+- **Style canon**: [`political-style-guide.md`](political-style-guide.md) · [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md)
+- **Catalog row**: [`artifact-catalog.md`](artifact-catalog.md)
+
+<!-- END AI-FIRST METHODOLOGY CARD -->
+
+---
+
+
 ## 🔄 Tradecraft Anchors
 
 | Element | Value | Reference |

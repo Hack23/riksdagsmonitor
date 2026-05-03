@@ -22,6 +22,65 @@
 
 ---
 
+<!-- BEGIN AI-FIRST METHODOLOGY CARD -->
+
+## 🎯 AI-FIRST Methodology Card
+
+> **🚦 Read this card before writing a single paragraph.** It names the artifact this methodology owns, the gate check it satisfies, the evidence-density target it must hit, and the Pass-1 / Pass-2 discipline required by `.github/copilot-instructions.md` §5 (AI-FIRST Quality Principle).
+
+| Field | Value |
+|-------|-------|
+| **Purpose** | Family B — step-by-step production of `data-download-manifest.md` and `cross-reference-map.md` (provenance + relationship topology for every run). |
+| **Inputs** | MCP tool output logs; document fetch manifests; full-text fetch outcomes |
+| **Outputs** | `data-download-manifest.md`, `cross-reference-map.md` |
+| **Owning artifact(s)** | Both Family B artifacts |
+| **Owning gate check** | Check 1 (existence), Check 10 (top-2 full-text availability), and the SLA freshness rule in this methodology |
+| **Citation density target** | Every fetched document = 1 manifest row with `dok_id`, source, freshness timestamp, fetch outcome, full-text status |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
+| **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
+
+### ✅ Pass-1 checklist (creation — minimal viable artifact)
+
+- [ ] Manifest covers every `dok_id` referenced in any other artifact
+- [ ] Cross-reference map declares ≥ 1 relationship type from the 7-edge taxonomy per linked-document pair
+- [ ] Produce every required sub-section listed in the owning template
+- [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
+- [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
+- [ ] Include ≥ 1 themed Mermaid diagram with `style …` or `themeVariables` config (where structurally meaningful)
+- [ ] Cross-link the relevant template under `analysis/templates/` and the gate check it satisfies
+
+### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
+
+- [ ] Run the gate's Check 10 mentally: is `## Full-Text Fetch Outcomes` present and ≥ 2 with `full_text_available=true`?
+- [ ] Detect coordinated activity (≥ 3 same-day cross-party motions on same theme) and flag it
+- [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
+- [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
+- [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
+- [ ] Verify citation density meets the per-file target below and the gate's evidence-density rules
+
+### 🟢 Exemplar (good — pattern-match this)
+
+> _(manifest row)_ `H902FiU8 | riksdag-regering MCP / search_dokument | 2026-04-25T08:14Z | full_text_available=true | Admiralty=[A1] | refs: H902FiU1, H902UbU22`
+
+### 🔴 Anti-exemplar (failure mode — never ship this)
+
+> _(failure mode)_ `Several documents were downloaded.` — no row, no `dok_id`, no timestamp, no fetch outcome.
+
+### 🔗 Cross-links
+
+- **Template(s)**: `analysis/templates/data-download-manifest.md`, `analysis/templates/cross-reference-map.md`
+- **Gate check**: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md#checks-all-must-pass)
+- **AI-FIRST canon**: [`.github/copilot-instructions.md` §5](../../.github/copilot-instructions.md) · [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md)
+- **Style canon**: [`political-style-guide.md`](political-style-guide.md) · [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md)
+- **Catalog row**: [`artifact-catalog.md`](artifact-catalog.md)
+
+<!-- END AI-FIRST METHODOLOGY CARD -->
+
+---
+
+
 ## 🔄 Tradecraft Anchors
 
 | Element | Value | Reference |

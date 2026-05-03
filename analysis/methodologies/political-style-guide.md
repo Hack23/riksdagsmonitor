@@ -22,6 +22,65 @@
 
 ---
 
+<!-- BEGIN AI-FIRST METHODOLOGY CARD -->
+
+## 🎯 AI-FIRST Methodology Card
+
+> **🚦 Read this card before writing a single paragraph.** It names the artifact this methodology owns, the gate check it satisfies, the evidence-density target it must hit, and the Pass-1 / Pass-2 discipline required by `.github/copilot-instructions.md` §5 (AI-FIRST Quality Principle).
+
+| Field | Value |
+|-------|-------|
+| **Purpose** | Intelligence-grade writing standards — depth tiers, evidence density, banned-phrase list, lede patterns, Mermaid theming, F3EAD/Admiralty/WEP/ICD 203/SAT canon. |
+| **Inputs** | [Hack23 ISMS STYLE_GUIDE.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md); editorial standards skill; OSINT tradecraft standards |
+| **Outputs** | _(style canon — referenced by every other methodology and the gate)_ |
+| **Owning artifact(s)** | _(applies to every artifact)_ |
+| **Owning gate check** | Pass-2 self-audit enforces banned-phrase elimination (reads the §Machine-readable banned-phrase list block) + Check 4 evidence patterns + Check 5 Mermaid theming |
+| **Citation density target** | Style guide is the canon; minimum density per analysis type is documented in the §Minimum Evidence Density Requirements table |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
+| **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
+
+### ✅ Pass-1 checklist (creation — minimal viable artifact)
+
+- [ ] Surface vs Strategic vs Forecast vs Intelligence-grade depth tiers all defined
+- [ ] Banned-phrase list machine-readable in a fenced block (consumed by Pass-2 self-audit via `grep -F -f`)
+- [ ] Produce every required sub-section listed in the owning template
+- [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
+- [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
+- [ ] Include ≥ 1 themed Mermaid diagram with `style …` or `themeVariables` config (where structurally meaningful)
+- [ ] Cross-link the relevant template under `analysis/templates/` and the gate check it satisfies
+
+### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
+
+- [ ] Every banned phrase has at least one `Bad → Good` worked example
+- [ ] Lede patterns + WEP language ladder reconciled with `osint-tradecraft-standards.md`
+- [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
+- [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
+- [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
+- [ ] Verify citation density meets the per-file target below and the gate's evidence-density rules
+
+### 🟢 Exemplar (good — pattern-match this)
+
+> _(rewrite)_ Banned: "Recent activity in the Riksdag suggests…" → Good: "`H902FiU1` (FiU committee, 2026-04-22, 17 sponsors led by Edin (S)) reroutes SEK 6.1 bn from defence to climate; vote 173–176, [A1] riksdagen.se."
+
+### 🔴 Anti-exemplar (failure mode — never ship this)
+
+> _(failure mode)_ Banned phrases shipped without rewrite ("experts believe", "various stakeholders", "significant development") — Pass-2 self-audit should have caught and replaced these with evidence-anchored alternatives.
+
+### 🔗 Cross-links
+
+- **Template(s)**: _(style canon — applies to every template)_
+- **Gate check**: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md#checks-all-must-pass)
+- **AI-FIRST canon**: [`.github/copilot-instructions.md` §5](../../.github/copilot-instructions.md) · [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md)
+- **Style canon**: [`political-style-guide.md`](political-style-guide.md) · [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md)
+- **Catalog row**: [`artifact-catalog.md`](artifact-catalog.md)
+
+<!-- END AI-FIRST METHODOLOGY CARD -->
+
+---
+
+
 ## 🎯 Purpose
 
 This style guide establishes **intelligence-grade writing standards** for all political analysis produced by Riksdagsmonitor's agentic workflows. Every piece of analysis must demonstrate genuine analytical depth — not surface-level summaries or script-generated content. The quality standard is [SWOT.md](../../SWOT.md) and [THREAT_MODEL.md](../../THREAT_MODEL.md).
@@ -675,6 +734,98 @@ The following writing patterns are prohibited in all Riksdagsmonitor content:
 | Unnamed party members | Always name or use "anonymous source" with explicit LOW confidence |
 | Future certainty ("will") without evidence | "is likely to" + confidence level |
 | Hyperbolic adjectives | Specific measurable descriptions |
+
+---
+
+## 🤖 Machine-readable banned-phrase list
+
+> **Why this section is parseable.** The Pass-2 self-audit loop can `grep -F -f` the literal phrases below to detect banned content **without parsing a markdown table**. The fenced `text` block is the single source of truth; each line is one banned literal phrase (trailing `# comment` suffixes are **not** supported — place comments on their own line starting with `#`). The `BEGIN/END BANNED-PHRASES` markers exist so tooling can extract the block deterministically.
+
+> ℹ️ **Gate integration status:** Gate Check 4 (`05-analysis-gate.md`) currently enforces evidence anchors only and does **not** consume this block. Banned-phrase elimination is enforced by the agent's Pass-2 read-back loop. Future gate integration is planned but not yet implemented.
+
+<!-- BEGIN BANNED-PHRASES v1.0 (2026-05-03) -->
+```text
+# Lede / scene-setter banned phrases
+In a significant development
+Recent activity in the Riksdag suggests
+Several stakeholders have raised concerns
+It is important to note that
+significant activity in
+significant development
+
+# Vague attribution
+Sources say
+Sources indicate
+Sources suggest
+Experts believe
+Experts say
+Many believe
+It is believed that
+The public is concerned
+
+# Editorialising / hyperbole
+This is a disaster for
+Obviously,
+Surprisingly,
+The political situation is complex
+Various risks
+various stakeholders
+various ways
+various parties
+in various ways
+
+# Forecast laundering (assertion-without-WEP)
+will result in
+will cause
+will lead to
+will trigger
+expected to be modest
+likely to be modest
+
+# Generic significance dodges
+This is an important development
+important matters
+This is significant because
+significant implications
+could have significant implications
+matters for Swedish politics
+
+# Anonymous / unsourced quotes
+Unnamed party members
+Unnamed Tidö source
+Anonymous government source
+Insiders say
+
+# Generic SWOT entries
+Strong leadership
+Various strengths
+Various weaknesses
+Various opportunities
+Various threats
+
+# Process / circular language
+because it matters
+because it is important
+in some way
+in various ways
+to a certain extent
+to some degree
+
+# Banned title patterns (article SEO contract)
+in Focus
+: A Closer Look
+: An Analysis
+: A Deep Dive
+```
+<!-- END BANNED-PHRASES v1.0 -->
+
+**Enforcement contract.**
+
+- The list is **append-only between major versions** (so PR diffs are signal). Removals must increment the major version and be justified in `methodology-reflection.md` of the next run.
+- Comments (`# …` lines) and blank lines MUST be ignored by consumers.
+- Phrases are case-sensitive **literal substrings**. To match case-insensitively, consumers MUST `grep -i -F`.
+- Equivalents in Swedish are documented in `political-style-guide.md` §[Swedish Parliamentary Terms in Analytical Context](#rule-6-swedish-parliamentary-terms-in-analytical-context); they are NOT duplicated in this list to keep it deterministic.
+- Worked rewrites for every banned phrase live in §[Bad→Good Rewrite Examples (v2.1)](#badgood-rewrite-examples-v21) — every removal of a banned phrase MUST be supported by an evidence-anchored alternative, not a softened restatement.
 
 ---
 

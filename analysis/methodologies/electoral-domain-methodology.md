@@ -22,6 +22,67 @@
 
 ---
 
+<!-- BEGIN AI-FIRST METHODOLOGY CARD -->
+
+## 🎯 AI-FIRST Methodology Card
+
+> **🚦 Read this card before writing a single paragraph.** It names the artifact this methodology owns, the gate check it satisfies, the evidence-density target it must hit, and the Pass-1 / Pass-2 discipline required by `.github/copilot-instructions.md` §5 (AI-FIRST Quality Principle).
+
+| Field | Value |
+|-------|-------|
+| **Purpose** | Family D — step-by-step production of the 7 electoral & domain-lens artifacts (election-2026, voter-segmentation, coalition-mathematics, historical-parallels, media-framing, implementation-feasibility, forward-indicators). |
+| **Inputs** | Family A synthesis; Riksdagen voting records; SCB segment cuts; Sainte-Laguë seat math; Statskontoret reports |
+| **Outputs** | All 7 Family D artifacts |
+| **Owning artifact(s)** | All 7 Family D artifacts |
+| **Owning gate check** | Check 8 (Family D structure: ≥ 10 dated forward indicators, seat-count table in coalition-mathematics, Statskontoret citation in implementation-feasibility when an agency is named) |
+| **Citation density target** | ≥ 1 evidence anchor per coalition row; ≥ 1 dated source per forward indicator; ≥ 1 SCB segment cut per voter-segmentation cohort |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
+| **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
+
+### ✅ Pass-1 checklist (creation — minimal viable artifact)
+
+- [ ] `coalition-mathematics.md` has a seat-count table with `Ja`/`Nej`/`Avstår` or party-to-seats mapping
+- [ ] `forward-indicators.md` has ≥ 10 dated indicators across the 4 horizon sections
+- [ ] `implementation-feasibility.md` cites `statskontoret.se` (or `none found`) when a recognised agency is named
+- [ ] Produce every required sub-section listed in the owning template
+- [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
+- [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
+- [ ] Include ≥ 1 themed Mermaid diagram with `style …` or `themeVariables` config (where structurally meaningful)
+- [ ] Cross-link the relevant template under `analysis/templates/` and the gate check it satisfies
+
+### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
+
+- [ ] Re-run Sainte-Laguë for any new poll vintage; show working in coalition-mathematics
+- [ ] Add ≥ 1 historical parallel with date + outcome to `historical-parallels.md`
+- [ ] Verify media-framing reflects ≥ 3 outlets across the political spectrum
+- [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
+- [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
+- [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
+- [ ] Verify citation density meets the per-file target below and the gate's evidence-density rules
+
+### 🟢 Exemplar (good — pattern-match this)
+
+> _(forward indicator)_ "**T+30 — `H902FiU1` budget final vote (2026-05-22)**: lead indicator = Ja votes from L bench; expected baseline 16/16. Disconfirming evidence: ≥ 2 L abstentions → coalition stress. Source: kammarens kalender (riksdagen.se)."
+
+### 🔴 Anti-exemplar (failure mode — never ship this)
+
+> _(failure mode)_ "Future events may shift the political landscape. The coalition's stability remains uncertain." — no dates, no indicators, no `dok_id`, banned phrases.
+
+### 🔗 Cross-links
+
+- **Template(s)**: `analysis/templates/election-2026-analysis.md`, `analysis/templates/voter-segmentation.md`, `analysis/templates/coalition-mathematics.md`, `analysis/templates/historical-parallels.md`, `analysis/templates/media-framing-analysis.md`, `analysis/templates/implementation-feasibility.md`, `analysis/templates/forward-indicators.md`
+- **Gate check**: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md#checks-all-must-pass)
+- **AI-FIRST canon**: [`.github/copilot-instructions.md` §5](../../.github/copilot-instructions.md) · [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md)
+- **Style canon**: [`political-style-guide.md`](political-style-guide.md) · [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md)
+- **Catalog row**: [`artifact-catalog.md`](artifact-catalog.md)
+
+<!-- END AI-FIRST METHODOLOGY CARD -->
+
+---
+
+
 ## 🔄 Tradecraft Anchors
 
 | Element | Value | Reference |

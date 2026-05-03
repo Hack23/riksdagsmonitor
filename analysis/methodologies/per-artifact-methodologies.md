@@ -25,7 +25,68 @@
 
 ---
 
+<!-- BEGIN AI-FIRST METHODOLOGY CARD -->
+
+## 🎯 AI-FIRST Methodology Card
+
+> **🚦 Read this card before writing a single paragraph.** It names the artifact this methodology owns, the gate check it satisfies, the evidence-density target it must hit, and the Pass-1 / Pass-2 discipline required by `.github/copilot-instructions.md` §5 (AI-FIRST Quality Principle).
+
+| Field | Value |
+|-------|-------|
+| **Purpose** | Per-artifact analytic moves, evidence rules and anti-patterns for **every Family A–D core artifact** and Family-S supplementary artifacts. **Disjoint from `per-document-methodology.md`** (which covers Family E only). |
+| **Inputs** | Every Family A–D / S template; OSINT tradecraft standards; political style guide; political-risk + SWOT + threat methodologies |
+| **Outputs** | _(reference — no daily artifact)_ |
+| **Owning artifact(s)** | All Family A (9), B (2), C (5), D (7), and Family S supplementary artifacts (S1–S7) |
+| **Owning gate check** | Checks 1, 4, 5, 6, 7, 8, 11 in `05-analysis-gate.md` |
+| **Citation density target** | Per-artifact density target documented in each artifact section; default ≥ 1 evidence anchor per ~120 words of analytical claim |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
+| **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
+
+### ✅ Pass-1 checklist (creation — minimal viable artifact)
+
+- [ ] Open only the artifact section(s) needed for the current run (file is large by design)
+- [ ] Apply the artifact-specific SAT(s) and Admiralty floor noted in its section header
+- [ ] Produce every required sub-section listed in the owning template
+- [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
+- [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
+- [ ] Include ≥ 1 themed Mermaid diagram with `style …` or `themeVariables` config (where structurally meaningful)
+- [ ] Cross-link the relevant template under `analysis/templates/` and the gate check it satisfies
+
+### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
+
+- [ ] Re-check the artifact-specific anti-patterns list before commit
+- [ ] Confirm cross-link to `per-document-methodology.md` is respected: per-document analyses live in `documents/`, not in core synthesis files
+- [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
+- [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
+- [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
+- [ ] Verify citation density meets the per-file target below and the gate's evidence-density rules
+
+### 🟢 Exemplar (good — pattern-match this)
+
+> _(per-artifact section header)_ "### `swot-analysis.md` — Inputs: Family A synthesis + cross-reference-map; SAT: Brainstorming + Key Assumptions Check; Admiralty floor: ≥[B2] per quadrant; Anti-pattern: opinion-only quadrants without `dok_id`."
+
+### 🔴 Anti-exemplar (failure mode — never ship this)
+
+> _(failure mode)_ duplicating Family E per-document guidance inside this file. Family E lives exclusively in `per-document-methodology.md`.
+
+### 🔗 Cross-links
+
+- **Template(s)**: Every template under `analysis/templates/` except `per-file-political-intelligence.md` (which is owned by `per-document-methodology.md`)
+- **Gate check**: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md#checks-all-must-pass)
+- **AI-FIRST canon**: [`.github/copilot-instructions.md` §5](../../.github/copilot-instructions.md) · [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md)
+- **Style canon**: [`political-style-guide.md`](political-style-guide.md) · [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md)
+- **Catalog row**: [`artifact-catalog.md`](artifact-catalog.md)
+
+<!-- END AI-FIRST METHODOLOGY CARD -->
+
+---
+
+
 ## 🎯 Purpose
+
+> **🚧 Scope contract (v1.4 — 2026-05-03).** This file covers **every artifact in Families A (Core Synthesis), B (Structural Metadata), C (Strategic Extensions), D (Electoral & Domain Lenses), and S (Analytical Supplementary)**. It does **NOT** cover **Family E (per-document analysis)** — that is owned exclusively by [`per-document-methodology.md`](per-document-methodology.md). If you find yourself writing per-document evidence here, stop and move it to `per-document-methodology.md` to keep the two files disjoint. The reverse split also holds: Family A–D synthesis guidance never lives in `per-document-methodology.md`. The methodology → template → gate-check matrix in [`README.md`](README.md#methodology--template--gate-check-matrix-v46--2026-05-03) is the single cross-walk.
 
 For every artifact listed in [`artifact-catalog.md`](artifact-catalog.md), this document answers **four questions** the AI agent must answer before writing a single paragraph:
 
