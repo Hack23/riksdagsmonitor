@@ -24,6 +24,65 @@
 
 ---
 
+<!-- BEGIN AI-FIRST METHODOLOGY CARD -->
+
+## 🎯 AI-FIRST Methodology Card
+
+> **🚦 Read this card before writing a single paragraph.** It names the artifact this methodology owns, the gate check it satisfies, the evidence-density target it must hit, and the Pass-1 / Pass-2 discipline required by `.github/copilot-instructions.md` §5 (AI-FIRST Quality Principle).
+
+| Field | Value |
+|-------|-------|
+| **Purpose** | Single AI-FIRST orchestration index — names the 7-step protocol and points to every other methodology with a one-paragraph summary. |
+| **Inputs** | All other methodologies in this folder; `.github/prompts/04-analysis-pipeline.md`; `analysis/article-types.json` |
+| **Outputs** | Workflow orchestration only — no artifact written directly; downstream artifacts: every Family A–E file |
+| **Owning artifact(s)** | _(orchestration index — every artifact in the catalog)_ |
+| **Owning gate check** | All checks 1–11 in `05-analysis-gate.md` |
+| **Citation density target** | ≥ 1 cross-link per linked methodology; this file is a router, not an evidence file |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
+
+### ✅ Pass-1 checklist (creation — minimal viable artifact)
+
+- [ ] Confirm every linked methodology resolves to an existing file in `analysis/methodologies/`
+- [ ] Re-check the 7-step protocol order matches `04-analysis-pipeline.md` step IDs
+- [ ] Produce every required sub-section listed in the owning template
+- [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
+- [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
+- [ ] Include ≥ 1 themed Mermaid diagram with `style …` or `themeVariables` config (where structurally meaningful)
+- [ ] Cross-link the relevant template under `analysis/templates/` and the gate check it satisfies
+
+### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
+
+- [ ] Audit every methodology summary paragraph for ≤ 4 sentences and concrete artifact names
+- [ ] Verify the Family A–E output matrix totals 23 always-on artifacts (9+2+5+7) per current contract
+- [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
+- [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
+- [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
+- [ ] Verify citation density meets the per-file target below and the gate's evidence-density rules
+
+### 🟢 Exemplar (good — pattern-match this)
+
+> _(routing snippet)_ "Family C — Strategic Extensions: produces `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md` (ACH ≥ 3 hypotheses), `intelligence-assessment.md` (≥ 3 KJs + PIRs), `methodology-reflection.md`. Methodology canon: `strategic-extensions-methodology.md`. Gate: Check 7."
+
+### 🔴 Anti-exemplar (failure mode — never ship this)
+
+> _(failure mode)_ "Family C extensions are produced when relevant." — vague, no artifact names, no gate reference, no methodology link, no evidence the agent can pattern-match against.
+
+### 🔗 Cross-links
+
+- **Template(s)**: _(this file does not drive a single template — it routes to all)_
+- **Gate check**: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md#checks-all-must-pass)
+- **AI-FIRST canon**: [`.github/copilot-instructions.md` §5](../../.github/copilot-instructions.md) · [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md)
+- **Style canon**: [`political-style-guide.md`](political-style-guide.md) · [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md)
+- **Catalog row**: [`artifact-catalog.md`](artifact-catalog.md)
+
+<!-- END AI-FIRST METHODOLOGY CARD -->
+
+---
+
+
 ## 🎯 What This Guide Is For
 
 Every Riksdagsmonitor agentic workflow (morning, midday, evening, realtime, weekly, monthly) runs the same protocol and produces the same output families. This guide defines that protocol once, so every workflow produces **deep, consistent, publication-quality political intelligence** from Swedish Riksdag and Regeringen data.

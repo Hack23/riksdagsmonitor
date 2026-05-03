@@ -12,6 +12,67 @@
 
 ---
 
+<!-- BEGIN AI-FIRST METHODOLOGY CARD -->
+
+## 🎯 AI-FIRST Methodology Card
+
+> **🚦 Read this card before writing a single paragraph.** It names the artifact this methodology owns, the gate check it satisfies, the evidence-density target it must hit, and the Pass-1 / Pass-2 discipline required by `.github/copilot-instructions.md` §5 (AI-FIRST Quality Principle).
+
+| Field | Value |
+|-------|-------|
+| **Purpose** | Family-S supplementary methodologies — PESTLE, political-STRIDE, wildcards/black-swans, quantitative SWOT — produced for long-horizon (`year` / `cycle`) and high-impact runs. |
+| **Inputs** | Family A synthesis; Family C strategic extensions; long-horizon scenario sets |
+| **Outputs** | `pestle-analysis.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `quantitative-swot.md` |
+| **Owning artifact(s)** | Family-S supplementary (S1–S7) |
+| **Owning gate check** | Check 11 (supplementary) — non-blocking for short horizons; blocking for `year`/`cycle` per `reference-quality-thresholds.json#analyticalSupplementary` |
+| **Citation density target** | Per-dimension table: ≥ 1 evidence anchor per row (PESTLE 4 dimensions, STRIDE 6 categories, wildcards ≥ 8 entries, qSWOT ≥ 3 per quadrant) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
+
+### ✅ Pass-1 checklist (creation — minimal viable artifact)
+
+- [ ] PESTLE: ≥ 4 dimension tables and ≥ 3 cross-dimension interactions
+- [ ] STRIDE: ≥ 3 entries per dimension, ≥ 2 attack trees, ≥ 5 TTP rows
+- [ ] Wildcards/black-swans: ≥ 8 wildcards + ≥ 3 black-swans + ≥ 2 consequence trees
+- [ ] Quantitative SWOT: ≥ 3 entries per quadrant + ≥ 3 sensitivity runs + ≥ 1 TOWS action per quadrant
+- [ ] Produce every required sub-section listed in the owning template
+- [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
+- [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
+- [ ] Include ≥ 1 themed Mermaid diagram with `style …` or `themeVariables` config (where structurally meaningful)
+- [ ] Cross-link the relevant template under `analysis/templates/` and the gate check it satisfies
+
+### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
+
+- [ ] Verify each supplementary artifact's row floor in `reference-quality-thresholds.json#analyticalSupplementary.*.rowFloor`
+- [ ] For `year`/`cycle`: confirm wildcards include ≥ 1 climate / ≥ 1 geopolitical / ≥ 1 technological / ≥ 1 economic / ≥ 1 social tag
+- [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
+- [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
+- [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
+- [ ] Verify citation density meets the per-file target below and the gate's evidence-density rules
+
+### 🟢 Exemplar (good — pattern-match this)
+
+> _(STRIDE row)_ "**Tampering — Legislative integrity**: actor=foreign IO; vector=disinformation amplification; evidence=`H902KU14` 2026-04-19 motion citing X-platform integrity logs ([B2]); mitigation=Statskontoret oversight."
+
+### 🔴 Anti-exemplar (failure mode — never ship this)
+
+> _(failure mode)_ "Wildcards include various scenarios that might affect Swedish politics." — < 8 entries, no tags, no evidence, banned phrases.
+
+### 🔗 Cross-links
+
+- **Template(s)**: `analysis/templates/pestle-analysis.md`, `analysis/templates/political-stride-assessment.md`, `analysis/templates/wildcards-blackswans.md` (when present), `analysis/templates/quantitative-swot.md`
+- **Gate check**: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md#checks-all-must-pass)
+- **AI-FIRST canon**: [`.github/copilot-instructions.md` §5](../../.github/copilot-instructions.md) · [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md)
+- **Style canon**: [`political-style-guide.md`](political-style-guide.md) · [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md)
+- **Catalog row**: [`artifact-catalog.md`](artifact-catalog.md)
+
+<!-- END AI-FIRST METHODOLOGY CARD -->
+
+---
+
+
 ## 🎯 Purpose
 
 Provide Riksdagsmonitor analysts with rigorously defined optional deep-dive templates that map 1-to-1 to analytical frameworks explicitly listed in the intelligence-operative agent's "Core Expertise" and "Analytical Frameworks" sections but that were not previously templated:

@@ -1,7 +1,7 @@
 {
-  "version": "1.4",
-  "effectiveDate": "2026-05-01",
-  "description": "Per-artifact minimum line-count floors used to enforce Rule 22 (Per-Artifact Depth Floors) of analysis/methodologies/ai-driven-analysis-guide.md for Riksdagsmonitor agentic news workflows. Values are calibrated to the DIW Output Matrix and the Riksdag 23-artifact catalog (see artifact-catalog.md). v1.4 (2026-05-01) adds quarter-ahead / year-ahead / election-cycle blocks for the long-horizon-forecast workflows; values derived proportionally from month-ahead × the tier-C multiplier (1.7×, 2.0×, 2.5×) defined in analysis/article-types.json. A file below its threshold MUST trigger a Pass-2 rewrite; it MUST NOT be shipped with a '[truncated]' or 'AI_MUST_REPLACE' note. When an articleType entry is absent the gate falls back to the default floor. When a per-artifact entry is present the effective floor is max(perArtifact, default), so the default can only raise, never lower, a configured floor.",
+  "version": "1.5",
+  "effectiveDate": "2026-05-03",
+  "description": "Per-artifact minimum line-count floors used to enforce Rule 22 (Per-Artifact Depth Floors) of analysis/methodologies/ai-driven-analysis-guide.md for Riksdagsmonitor agentic news workflows. Values are calibrated to the DIW Output Matrix and the Riksdag 23-artifact catalog (see artifact-catalog.md). v1.5 (2026-05-03) adds the aiFirst block (citationDensity, bannedPhrases pointer, pass2Attestation, wepLanguageCeiling, exemplarPolicy) consumed by the AI-FIRST Methodology Card in every analysis/methodologies/*.md and by the Pass-2 self-audit in methodology-reflection.md. v1.4 (2026-05-01) adds quarter-ahead / year-ahead / election-cycle blocks for the long-horizon-forecast workflows; values derived proportionally from month-ahead × the tier-C multiplier (1.7×, 2.0×, 2.5×) defined in analysis/article-types.json. A file below its threshold MUST trigger a Pass-2 rewrite; it MUST NOT be shipped with a '[truncated]' or 'AI_MUST_REPLACE' note. When an articleType entry is absent the gate falls back to the default floor. When a per-artifact entry is present the effective floor is max(perArtifact, default), so the default can only raise, never lower, a configured floor.",
   "tradecraftQualitySignals": {
     "note": "ADDITIVE quality signals — NOT enforced by the line-count validator. They represent content-quality expectations that the Pass-2 self-audit in methodology-reflection.md must check. Every probabilistic artifact MUST also comply with osint-tradecraft-standards.md: (1) WEP band + time horizon on every headline judgement, (2) Admiralty grade on every external source, (3) confidence-in-evidence tracked separately from WEP probability, (4) >= 10 SATs applied per run (attested in methodology-reflection.md §Evidence audit). Non-compliant artifacts trigger a Pass-2 rewrite even if the line-count floor is met.",
     "wepBandRequired": [
@@ -302,10 +302,69 @@
     ],
     "waivers": "Thresholds may be waived only by the CEO (document owner) via a merged PR updating this file. Ad-hoc waivers in commit messages are rejected."
   },
+  "aiFirst": {
+    "description": "AI-FIRST quality thresholds (per .github/copilot-instructions.md §5 and per-file AI-FIRST Methodology Cards in analysis/methodologies/*.md). These are ADDITIVE quality signals; the gate's blocking checks are 1–11 in 05-analysis-gate.md. The thresholds in this block are consumed by the Pass-2 self-audit documented in methodology-reflection.md.",
+    "minimumIterations": 2,
+    "passDiscipline": {
+      "pass1": "Creation pass — produce minimal viable artifact; satisfy template structure + at least one evidence anchor per claim.",
+      "pass2": "Read-back & improve pass — eliminate banned phrases, add second-order effects / cui-bono / counterfactuals, tighten WEP, strengthen Mermaid theming, raise citation density."
+    },
+    "citationDensity": {
+      "default": {
+        "anchorsPerWords": 120,
+        "rule": "≥ 1 evidence anchor (dok_id, vote id, named MP, primary-source URL host) per ~120 words of analytical claim."
+      },
+      "perArtifact": {
+        "synthesis-summary.md": 100,
+        "swot-analysis.md": 80,
+        "risk-assessment.md": 100,
+        "threat-analysis.md": 100,
+        "intelligence-assessment.md": 110,
+        "scenario-analysis.md": 110,
+        "devils-advocate.md": 110,
+        "executive-brief.md": 90,
+        "documents/{dok_id}-analysis.md": 80,
+        "comparative-international.md": 130,
+        "media-framing-analysis.md": 130,
+        "forward-indicators.md": 90,
+        "coalition-mathematics.md": 90,
+        "implementation-feasibility.md": 110
+      },
+      "_note": "Values are 'words per anchor' — lower = denser citation. SWOT and per-document files have the densest target because every quadrant entry / bullet must be evidence-backed. Comparator and framing artifacts can run thinner because their structure is table-driven."
+    },
+    "bannedPhrases": {
+      "source": "analysis/methodologies/political-style-guide.md",
+      "block": "BEGIN BANNED-PHRASES … END BANNED-PHRASES",
+      "matchMode": "literal-substring-case-insensitive",
+      "extractionRule": "Consumers MUST extract everything between the literal markers `<!-- BEGIN BANNED-PHRASES` and `<!-- END BANNED-PHRASES`, strip blank lines and lines starting with `#`, and treat each remaining line as a literal banned substring.",
+      "enforcement": "Pass-2 self-audit (methodology-reflection.md §Style audit). Gate Check 4 in 05-analysis-gate.md may grep this block to surface remaining occurrences in published artifacts.",
+      "removalPolicy": "Append-only between major versions. Removals require a major-version bump and a justification entry in methodology-reflection.md."
+    },
+    "pass2Attestation": {
+      "rule": "Every Family A / B / C / D artifact (except data-download-manifest.md) MUST be re-read after creation and improved. The gate enforces this via mtime diff (final mtime > creation + 3 min) per Check 6 in 05-analysis-gate.md.",
+      "attestationLocation": "methodology-reflection.md §Pass-2 audit summary"
+    },
+    "wepLanguageCeiling": {
+      "horizon-72h": "very likely / very unlikely",
+      "horizon-week": "likely / unlikely",
+      "horizon-month": "likely / unlikely",
+      "horizon-quarter": "roughly even / about even",
+      "horizon-year": "roughly even (likely allowed only with ≥ 3 cycle-aged sources)",
+      "horizon-cycle": "roughly even (likely allowed only with ≥ 3 cycle-aged sources)",
+      "horizon-election": "scenario-driven; coalition outcomes never above 'likely'",
+      "_source": ".github/prompts/ext/long-horizon-forecasting.md and .github/copilot-instructions.md §Long-horizon playbook"
+    },
+    "exemplarPolicy": {
+      "rule": "Every methodology file in analysis/methodologies/ MUST carry an Exemplar (good — pattern-match this) and an Anti-exemplar (failure mode — never ship this) snippet ≤ 25 lines each, inside the AI-FIRST Methodology Card.",
+      "validatedBy": "methodology-reflection.md §Style audit and (optionally) a markdown-lint sanity script."
+    }
+  },
   "meta": {
-    "version": "1.2",
-    "lastUpdated": "2026-04-23",
+    "version": "1.5",
+    "lastUpdated": "2026-05-03",
     "changelog": [
+      "v1.5 (2026-05-03) — Added aiFirst block (citationDensity, bannedPhrases pointer to political-style-guide.md, pass2Attestation rule, wepLanguageCeiling per horizon, exemplarPolicy). Pairs with the AI-FIRST Methodology Card inserted into every analysis/methodologies/*.md file.",
+      "v1.4 (2026-05-01) — Added quarter-ahead / year-ahead / election-cycle blocks for the long-horizon-forecast workflows.",
       "v1.1 (2026-04-23) — Added analyticalSupplementary section (pestle-analysis · political-stride-assessment · wildcards-blackswans · quantitative-swot); non-blocking."
     ]
   }

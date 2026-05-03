@@ -22,6 +22,66 @@
 
 ---
 
+<!-- BEGIN AI-FIRST METHODOLOGY CARD -->
+
+## 🎯 AI-FIRST Methodology Card
+
+> **🚦 Read this card before writing a single paragraph.** It names the artifact this methodology owns, the gate check it satisfies, the evidence-density target it must hit, and the Pass-1 / Pass-2 discipline required by `.github/copilot-instructions.md` §5 (AI-FIRST Quality Principle).
+
+| Field | Value |
+|-------|-------|
+| **Purpose** | Family E — atomic evidence layer; step-by-step production of `documents/{dok_id}-analysis.md` (one per document) and `{theme}-cluster-analysis.md` (when ≥ 4 near-duplicates merit merged treatment). |
+| **Inputs** | Riksdag/Government MCP document fetch (full text); `political-classification-guide.md`; DIW 6-dimension scoring |
+| **Outputs** | `documents/{dok_id}-analysis.md`; `documents/{theme}-cluster-analysis.md` |
+| **Owning artifact(s)** | Family E only — disjoint from `per-artifact-methodologies.md` (which covers Families A–D + supplementary) |
+| **Owning gate check** | Check 2 (per-document coverage — one `.md` per `dok_id` in manifest, metadata-only documents tagged not skipped) |
+| **Citation density target** | ≥ 3 evidence anchors per document analysis; ≥ 2 named MPs/parties; cluster files ≥ 1 anchor per merged document |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
+
+### ✅ Pass-1 checklist (creation — minimal viable artifact)
+
+- [ ] DIW 6-dimension score with weighted total in [0, 100]
+- [ ] Citation in canonical format `dok_id (chamber, date, sponsors)` per claim
+- [ ] Cluster decision rule (4 conditions) explicitly evaluated when output is a cluster file
+- [ ] Produce every required sub-section listed in the owning template
+- [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
+- [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
+- [ ] Include ≥ 1 themed Mermaid diagram with `style …` or `themeVariables` config (where structurally meaningful)
+- [ ] Cross-link the relevant template under `analysis/templates/` and the gate check it satisfies
+
+### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
+
+- [ ] Tag Family E tier (`L1_surface` / `L2_strategic` / `L2_plus_priority` / `L3_intelligence_grade`) in significance-scoring
+- [ ] Confirm metadata-only documents are tagged, not silently dropped
+- [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
+- [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
+- [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
+- [ ] Verify citation density meets the per-file target below and the gate's evidence-density rules
+
+### 🟢 Exemplar (good — pattern-match this)
+
+> _(per-doc lede)_ "**`H902UbU22` — Motion (UbU)**: M (Acketoft) + KD (Larsson) co-sign 2026-04-22, 14 sponsors. DIW=64/100 (priority L2_plus). Cui bono: M consolidates education narrative ahead of T+30 vote. Citation: riksdagen.se/dok/H902UbU22 ([A1])."
+
+### 🔴 Anti-exemplar (failure mode — never ship this)
+
+> _(failure mode)_ "This document discusses education policy. Various parties have positions on education." — no `dok_id`, no DIW, no sponsors, no date.
+
+### 🔗 Cross-links
+
+- **Template(s)**: `analysis/templates/per-file-political-intelligence.md`
+- **Gate check**: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md#checks-all-must-pass)
+- **AI-FIRST canon**: [`.github/copilot-instructions.md` §5](../../.github/copilot-instructions.md) · [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md)
+- **Style canon**: [`political-style-guide.md`](political-style-guide.md) · [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md)
+- **Catalog row**: [`artifact-catalog.md`](artifact-catalog.md)
+
+<!-- END AI-FIRST METHODOLOGY CARD -->
+
+---
+
+
 ## 🔄 Tradecraft Anchors
 
 | Element | Value | Reference |
@@ -36,6 +96,8 @@
 ---
 
 ## 🎯 Purpose
+
+> **🚧 Scope contract (v1.4 — 2026-05-03).** This file is the **sole canonical home for Family E (per-document and per-cluster atomic evidence)**. It is **disjoint from** [`per-artifact-methodologies.md`](per-artifact-methodologies.md), which covers Families A, B, C, D and S only. If you find yourself documenting Family A synthesis, B manifests, C extensions or D domain lenses here, stop and move that material to `per-artifact-methodologies.md` (or its dedicated family methodology — `synthesis-methodology.md`, `structural-metadata-methodology.md`, `strategic-extensions-methodology.md`, `electoral-domain-methodology.md`). The methodology → template → gate-check matrix in [`README.md`](README.md#-methodology--template--gate-check-matrix-v46--2026-05-03) is the single cross-walk.
 
 Family E produces the **atomic evidence unit** of the Riksdagsmonitor platform — one analysis file per Riksdag or Government document encountered (or one file per cluster when near-duplicate documents warrant merged treatment).
 

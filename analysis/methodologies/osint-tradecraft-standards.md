@@ -26,6 +26,66 @@
 
 ---
 
+<!-- BEGIN AI-FIRST METHODOLOGY CARD -->
+
+## 🎯 AI-FIRST Methodology Card
+
+> **🚦 Read this card before writing a single paragraph.** It names the artifact this methodology owns, the gate check it satisfies, the evidence-density target it must hit, and the Pass-1 / Pass-2 discipline required by `.github/copilot-instructions.md` §5 (AI-FIRST Quality Principle).
+
+| Field | Value |
+|-------|-------|
+| **Purpose** | Canonical OSINT / INTOP tradecraft — ICD 203 (9 standards), Admiralty Code (6×6 → 5-level confidence), WEP / Kent Scale (7 bands), SAT catalog (10 core + 5 supporting), GDPR Art. 9 ethics, DIW–Admiralty reconciliation, PIR handoff. |
+| **Inputs** | `Hack23 ISMS-PUBLIC` (AI_Policy, Information_Security_Policy); ICD 203; STANAG 2022; Kent Scale |
+| **Outputs** | _(tradecraft canon — referenced by every other methodology and `methodology-reflection.md §ICD 203 audit`)_ |
+| **Owning artifact(s)** | _(applies to every artifact carrying confidence / source-grading / SAT attestation)_ |
+| **Owning gate check** | WEP-band, Admiralty-grade, ICD 203 BLUF, SAT-documentation requirements in `reference-quality-thresholds.json#tradecraftQualitySignals` |
+| **Citation density target** | Tradecraft canon — every external citation in any artifact MUST carry an Admiralty grade; every probabilistic claim MUST carry a WEP band |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
+
+### ✅ Pass-1 checklist (creation — minimal viable artifact)
+
+- [ ] ICD 203 9-standard table is present and reconciled with `methodology-reflection.md` audit marker
+- [ ] Admiralty 6×6 matrix maps to the 5-level confidence scale used in the platform
+- [ ] ≥ 10 SATs documented with applicability rules
+- [ ] Produce every required sub-section listed in the owning template
+- [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
+- [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
+- [ ] Include ≥ 1 themed Mermaid diagram with `style …` or `themeVariables` config (where structurally meaningful)
+- [ ] Cross-link the relevant template under `analysis/templates/` and the gate check it satisfies
+
+### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
+
+- [ ] Verify GDPR Art. 9 ethical-scope statement explicitly forbids hacked / leaked / non-public political data
+- [ ] Verify cross-cycle PIR handoff steps reconcile with `scripts/roll-forward-pirs.ts`
+- [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
+- [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
+- [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
+- [ ] Verify citation density meets the per-file target below and the gate's evidence-density rules
+
+### 🟢 Exemplar (good — pattern-match this)
+
+> _(tradecraft attestation)_ "**KJ-1** Tidö coalition holds H902FiU1 vote (HIGH confidence, WEP=highly likely, Admiralty=[A1]/[B2] consensus, SATs applied: ACH, KAC, QIC). PIR-1 served. ICD 203 Standards 1, 6, 8 satisfied."
+
+### 🔴 Anti-exemplar (failure mode — never ship this)
+
+> _(failure mode)_ "Sources indicate this is likely." — no Admiralty, no WEP, no SAT, no ICD 203, no PIR.
+
+### 🔗 Cross-links
+
+- **Template(s)**: _(canon — applies to every artifact)_
+- **Gate check**: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md#checks-all-must-pass)
+- **AI-FIRST canon**: [`.github/copilot-instructions.md` §5](../../.github/copilot-instructions.md) · [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md)
+- **Style canon**: [`political-style-guide.md`](political-style-guide.md) · [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md)
+- **Catalog row**: [`artifact-catalog.md`](artifact-catalog.md)
+
+<!-- END AI-FIRST METHODOLOGY CARD -->
+
+---
+
+
 ## 🎯 Purpose
 
 This document is the **single canonical source** for professional intelligence-tradecraft standards applied across the Riksdagsmonitor analysis library. It complements the domain frameworks ([classification](political-classification-guide.md) · [risk](political-risk-methodology.md) · [threat](political-threat-framework.md) · [SWOT](political-swot-framework.md) · [style](political-style-guide.md) · [AI guide](ai-driven-analysis-guide.md)) and the Family A–E production methodologies ([synthesis](synthesis-methodology.md) · [structural-metadata](structural-metadata-methodology.md) · [strategic-extensions](strategic-extensions-methodology.md) · [electoral-domain](electoral-domain-methodology.md) · [per-document](per-document-methodology.md)) with **cross-cutting analytic discipline** used by professional open-source intelligence (OSINT) and intelligence-operations (INTOP) organisations.

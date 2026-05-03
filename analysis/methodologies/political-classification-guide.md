@@ -22,6 +22,65 @@
 
 ---
 
+<!-- BEGIN AI-FIRST METHODOLOGY CARD -->
+
+## 🎯 AI-FIRST Methodology Card
+
+> **🚦 Read this card before writing a single paragraph.** It names the artifact this methodology owns, the gate check it satisfies, the evidence-density target it must hit, and the Pass-1 / Pass-2 discipline required by `.github/copilot-instructions.md` §5 (AI-FIRST Quality Principle).
+
+| Field | Value |
+|-------|-------|
+| **Purpose** | 7-dimension event classification (sensitivity, democratic integrity, policy urgency, economic impact, governance impact, political capital, legislative impact) — Step 3 of the AI-driven pipeline. |
+| **Inputs** | Per-document analyses (Family E); incoming Riksdag/Government documents; sensitivity policy in [`Hack23 ISMS CLASSIFICATION.md`](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+| **Outputs** | `classification-results.md` (Family A) and per-document classification headers (Family E) |
+| **Owning artifact(s)** | `classification-results.md` |
+| **Owning gate check** | Check 1 (existence) + Check 4 cross-reference when classification feeds SWOT/significance |
+| **Citation density target** | Every classification row cites ≥ 1 `dok_id` and the dimension-specific evidence (e.g. KU document + named MP for Democratic Integrity) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
+
+### ✅ Pass-1 checklist (creation — minimal viable artifact)
+
+- [ ] Score every document on all 7 dimensions; do not omit dimensions even when low-impact
+- [ ] Tag sensitivity using the 4-level ladder (`Public / Internal / Confidential / Restricted`)
+- [ ] Produce every required sub-section listed in the owning template
+- [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
+- [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
+- [ ] Include ≥ 1 themed Mermaid diagram with `style …` or `themeVariables` config (where structurally meaningful)
+- [ ] Cross-link the relevant template under `analysis/templates/` and the gate check it satisfies
+
+### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
+
+- [ ] Cross-check sensitivity tag against `Hack23 ISMS CLASSIFICATION.md` for parity
+- [ ] For high-urgency events (Urgency=4-5) confirm forward-indicator coverage in Family D
+- [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
+- [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
+- [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
+- [ ] Verify citation density meets the per-file target below and the gate's evidence-density rules
+
+### 🟢 Exemplar (good — pattern-match this)
+
+> _(classification row)_ "`H902KU14` — Sensitivity=Public; Democratic Integrity=4 (KU oversight petition, Bergstrand (V) 2026-04-19); Policy Urgency=3; Legislative Impact=2 (committee referral pending). Evidence: riksdagen.se/dok/H902KU14 ([A1])."
+
+### 🔴 Anti-exemplar (failure mode — never ship this)
+
+> _(failure mode)_ "This is an important matter for democratic process." — no dimensions scored, no `dok_id`, no MP, no sensitivity tag.
+
+### 🔗 Cross-links
+
+- **Template(s)**: `analysis/templates/political-classification.md`
+- **Gate check**: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md#checks-all-must-pass)
+- **AI-FIRST canon**: [`.github/copilot-instructions.md` §5](../../.github/copilot-instructions.md) · [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md)
+- **Style canon**: [`political-style-guide.md`](political-style-guide.md) · [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md)
+- **Catalog row**: [`artifact-catalog.md`](artifact-catalog.md)
+
+<!-- END AI-FIRST METHODOLOGY CARD -->
+
+---
+
+
 ## 🔄 Tradecraft Anchors
 
 | Element | Value | Reference |

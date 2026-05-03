@@ -22,6 +22,68 @@
 
 ---
 
+<!-- BEGIN AI-FIRST METHODOLOGY CARD -->
+
+## 🎯 AI-FIRST Methodology Card
+
+> **🚦 Read this card before writing a single paragraph.** It names the artifact this methodology owns, the gate check it satisfies, the evidence-density target it must hit, and the Pass-1 / Pass-2 discipline required by `.github/copilot-instructions.md` §5 (AI-FIRST Quality Principle).
+
+| Field | Value |
+|-------|-------|
+| **Purpose** | Family C — step-by-step production of the 5 strategic-extension artifacts (scenarios, comparative international, ACH devil's advocate, intelligence assessment, methodology reflection). |
+| **Inputs** | Family A synthesis + SWOT + risk + threat; OSINT tradecraft standards; reference-quality-thresholds for the article type |
+| **Outputs** | `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, `methodology-reflection.md` |
+| **Owning artifact(s)** | All 5 Family C artifacts |
+| **Owning gate check** | Check 7 (Family C structure: ≥ 3 scenarios, ≥ 3 KJs with confidence, ≥ 3 ACH hypotheses, ICD 203 audit marker) |
+| **Citation density target** | ≥ 1 evidence anchor per scenario/hypothesis/KJ; ≥ 2 cycle-aged sources per `year`/`cycle` horizon claim |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
+
+### ✅ Pass-1 checklist (creation — minimal viable artifact)
+
+- [ ] ≥ 3 distinct scenarios with WEP probability and total ≤ 100%
+- [ ] ≥ 3 ACH competing hypotheses with explicit consistent/inconsistent/N-A scoring per evidence row
+- [ ] ≥ 3 Key Judgments each with VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW confidence and ≥ 1 PIR reference
+- [ ] `methodology-reflection.md` contains an ICD 203 audit marker or ≥ 3 named methodology improvements
+- [ ] Produce every required sub-section listed in the owning template
+- [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
+- [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
+- [ ] Include ≥ 1 themed Mermaid diagram with `style …` or `themeVariables` config (where structurally meaningful)
+- [ ] Cross-link the relevant template under `analysis/templates/` and the gate check it satisfies
+
+### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
+
+- [ ] Add ≥ 1 wildcard / black-swan to scenario-analysis where horizon ≥ `year`
+- [ ] Verify comparator set covers ≥ 2 peer countries with named indicators (IMF / SCB / WB)
+- [ ] Read back devils-advocate: each hypothesis must survive at least one elimination test
+- [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
+- [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
+- [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
+- [ ] Verify citation density meets the per-file target below and the gate's evidence-density rules
+
+### 🟢 Exemplar (good — pattern-match this)
+
+> _(scenario row)_ "**Scenario B — Tidö coalition holds (likely, ~70 %)**: M+KD+L+SD pass H902FiU1 budget; precedent: 2024 budget vote (cf. H801FiU1, 175–174). Wildcard: SD walkout if migration deal slips (~10 %). Sources: `dok_id` H902FiU1, statskontoret.se freshness 2026-04-22."
+
+### 🔴 Anti-exemplar (failure mode — never ship this)
+
+> _(failure mode)_ "Several scenarios are possible. The coalition might hold or might not. Experts believe the situation is fluid." — < 3 scenarios, no probabilities, banned phrases, no `dok_id`.
+
+### 🔗 Cross-links
+
+- **Template(s)**: `analysis/templates/scenario-analysis.md`, `analysis/templates/comparative-international.md`, `analysis/templates/devils-advocate.md`, `analysis/templates/intelligence-assessment.md`, `analysis/templates/methodology-reflection.md`
+- **Gate check**: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md#checks-all-must-pass)
+- **AI-FIRST canon**: [`.github/copilot-instructions.md` §5](../../.github/copilot-instructions.md) · [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md)
+- **Style canon**: [`political-style-guide.md`](political-style-guide.md) · [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md)
+- **Catalog row**: [`artifact-catalog.md`](artifact-catalog.md)
+
+<!-- END AI-FIRST METHODOLOGY CARD -->
+
+---
+
+
 ## 🔄 Tradecraft Anchors
 
 | Element | Value | Reference |

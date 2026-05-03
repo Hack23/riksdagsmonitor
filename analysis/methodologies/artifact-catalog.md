@@ -25,6 +25,65 @@
 
 ---
 
+<!-- BEGIN AI-FIRST METHODOLOGY CARD -->
+
+## 🎯 AI-FIRST Methodology Card
+
+> **🚦 Read this card before writing a single paragraph.** It names the artifact this methodology owns, the gate check it satisfies, the evidence-density target it must hit, and the Pass-1 / Pass-2 discipline required by `.github/copilot-instructions.md` §5 (AI-FIRST Quality Principle).
+
+| Field | Value |
+|-------|-------|
+| **Purpose** | Authoritative row-per-artifact catalog — every markdown artifact an agentic workflow can produce, with its family, methodology, template, depth floor, Mermaid type, and MCP data sources. |
+| **Inputs** | `reference-quality-thresholds.json`; every Family methodology file; `analysis/templates/`; `.github/prompts/04-analysis-pipeline.md` |
+| **Outputs** | _(reference catalog — no daily artifact)_ |
+| **Owning artifact(s)** | _(documents all 23 always-on + Family E + supplementary)_ |
+| **Owning gate check** | Check 1 (artifact existence) and Check 11 (supplementary) in `05-analysis-gate.md` |
+| **Citation density target** | Every catalog row cites the methodology + template file path (no narrative density target) |
+| **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) |
+| **Threshold source** | [`reference-quality-thresholds.json`](reference-quality-thresholds.json) → `thresholds[articleType][artifact]` (fallback `defaults.coreArtifactFloor`) |
+
+### ✅ Pass-1 checklist (creation — minimal viable artifact)
+
+- [ ] Confirm every artifact filename in the catalog exists in `analysis/templates/` (or is documented as agent-generated)
+- [ ] Confirm every depth floor matches `reference-quality-thresholds.json`
+- [ ] Produce every required sub-section listed in the owning template
+- [ ] Add ≥ 1 evidence anchor (`dok_id`, vote id, named MP, or primary-source URL) per analytical claim
+- [ ] Apply the correct WEP confidence band for the run's horizon (`72h / week / month / quarter / year / cycle`)
+- [ ] Include ≥ 1 themed Mermaid diagram with `style …` or `themeVariables` config (where structurally meaningful)
+- [ ] Cross-link the relevant template under `analysis/templates/` and the gate check it satisfies
+
+### 🔁 Pass-2 checklist (read-back & improve — AI-FIRST mandatory)
+
+- [ ] Cross-walk: every catalog row → existing methodology section → existing template file → gate-check coverage
+- [ ] Reject any row where methodology, template, or threshold is missing or stale
+- [ ] Re-read the file end-to-end; flag every claim that lacks an evidence anchor and add one
+- [ ] Replace every banned phrase listed in [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#-machine-readable-banned-phrase-list) with an evidence-anchored alternative
+- [ ] Tighten WEP language: never above **likely** without ≥ 3 cycle-aged sources for `year`/`cycle` horizons
+- [ ] Strengthen Mermaid (color-coded `style …` directives, `themeVariables`, ≥ 5 nodes where the structure admits it)
+- [ ] Add ≥ 1 second-order effect, cui-bono note, or counterfactual where the artifact admits one
+- [ ] Verify citation density meets the per-file target below and the gate's evidence-density rules
+
+### 🟢 Exemplar (good — pattern-match this)
+
+> _(catalog row)_ `synthesis-summary.md | Family A core | synthesis-methodology.md §3 | analysis/templates/intelligence-assessment.md | floor=205 (breaking) | Mermaid: flowchart | MCP: riksdag-regering, scb`
+
+### 🔴 Anti-exemplar (failure mode — never ship this)
+
+> _(failure mode)_ `synthesis | core | uses several methodologies | varies` — no filename, no methodology link, no threshold reference, no Mermaid type, no MCP source.
+
+### 🔗 Cross-links
+
+- **Template(s)**: Catalog rows reference every template under `analysis/templates/`
+- **Gate check**: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md#checks-all-must-pass)
+- **AI-FIRST canon**: [`.github/copilot-instructions.md` §5](../../.github/copilot-instructions.md) · [`ai-driven-analysis-guide.md`](ai-driven-analysis-guide.md)
+- **Style canon**: [`political-style-guide.md`](political-style-guide.md) · [`osint-tradecraft-standards.md`](osint-tradecraft-standards.md)
+- **Catalog row**: [`artifact-catalog.md`](artifact-catalog.md)
+
+<!-- END AI-FIRST METHODOLOGY CARD -->
+
+---
+
+
 ## 🎯 Purpose
 
 This catalog is the **authoritative index** into every markdown artifact an agentic news workflow produces under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. For every artifact it names:
