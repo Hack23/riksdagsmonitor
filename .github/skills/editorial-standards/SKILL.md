@@ -239,3 +239,20 @@ This skill is consumed by the 11 agentic news workflows in `.github/workflows/ne
 - **Analysis product** → [`ai-driven-analysis-guide.md`](../../../analysis/methodologies/ai-driven-analysis-guide.md) + every template in [`analysis/templates/`](../../../analysis/templates/).
 - **Required before any article**: 9 core artifacts (14 for Tier-C) in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`; [`05-analysis-gate.md`](../../prompts/05-analysis-gate.md) is the single blocking gate.
 - **gh-aw v0.69.3** docs: [abridged](https://github.github.com/gh-aw/llms-small.txt) · [complete](https://github.github.com/gh-aw/llms-full.txt) · [blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt).
+
+## 📏 Measurable Editorial Quality Bar (CI-enforced)
+
+The following metrics are enforced by `scripts/validate-article.ts` (Checks 7–9) as blocking CI checks:
+
+| Metric | Threshold | Code | Source |
+|--------|-----------|------|--------|
+| **Banned phrases** | 0 hits | `banned-phrase-detected` | [`political-style-guide.json`](../../../analysis/methodologies/political-style-guide.json) |
+| **Citation density** | ≤ 200 words/anchor (default) | `low-citation-density` | [`reference-quality-thresholds.json`](../../../analysis/methodologies/reference-quality-thresholds.json) → `aiFirst.citationDensity.perArticle` |
+| **economicProvenance vintage** | ≤ 6 months or annotated | `stale-economic-provenance` | [ECONOMIC_DATA_CONTRACT.md](../../aw/ECONOMIC_DATA_CONTRACT.md) |
+| **Pass-2 attestation** | mtime > birth + 180s | Check 6 in gate | `05-analysis-gate.md` |
+
+### Pass-2 improvement metrics (tracked in `methodology-reflection.md`)
+
+- Net word-count change: ≥ 5% between Pass-1 and Pass-2 artifacts
+- Citation count delta: must increase
+- Banned-phrase count: must reach 0 by Pass-2 end

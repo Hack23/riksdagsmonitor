@@ -35,7 +35,7 @@
  */
 
 import { readFile, readdir, stat } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join, relative, resolve, basename, dirname } from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
@@ -268,6 +268,189 @@ export function countBlufEvidenceAnchors(bluf: string): number {
   return total;
 }
 
+// ---------------------------------------------------------------------------
+// Editorial QA scanners (issue #245 — provenance / citation-density / banned-phrase)
+// ---------------------------------------------------------------------------
+
+/**
+ * Load banned phrases from the canonical JSON file. Returns the flat
+ * array of literal substrings. Caches after first load.
+ * Returns `null` when the canonical file is missing or malformed so
+ * callers can emit an explicit violation rather than silently skipping.
+ */
+let _bannedPhrasesCache: string[] | null = null;
+let _bannedPhrasesCacheLoaded = false;
+export function loadBannedPhrases(repoRoot: string = REPO_ROOT): string[] | null {
+  if (_bannedPhrasesCacheLoaded) return _bannedPhrasesCache;
+  const jsonPath = join(repoRoot, 'analysis', 'methodologies', 'political-style-guide.json');
+  if (!existsSync(jsonPath)) {
+    _bannedPhrasesCacheLoaded = true;
+    _bannedPhrasesCache = null;
+    return null;
+  }
+  try {
+    const data = JSON.parse(readFileSync(jsonPath, 'utf8')) as { allPhrases?: unknown };
+    if (!Array.isArray(data.allPhrases) || data.allPhrases.length === 0) {
+      _bannedPhrasesCache = null;
+    } else {
+      // Validate elements, filter to non-empty strings, de-duplicate
+      const seen = new Set<string>();
+      const phrases: string[] = [];
+      for (const item of data.allPhrases) {
+        if (typeof item !== 'string') continue;
+        const trimmed = item.trim();
+        if (trimmed.length === 0) continue;
+        const key = trimmed.toLowerCase();
+        if (seen.has(key)) continue;
+        seen.add(key);
+        phrases.push(trimmed);
+      }
+      _bannedPhrasesCache = phrases.length > 0 ? phrases : null;
+    }
+  } catch {
+    _bannedPhrasesCache = null;
+  }
+  _bannedPhrasesCacheLoaded = true;
+  return _bannedPhrasesCache;
+}
+
+/** Reset cache (for testing). */
+export function resetBannedPhrasesCache(): void {
+  _bannedPhrasesCache = null;
+  _bannedPhrasesCacheLoaded = false;
+}
+
+/**
+ * Scan text for banned phrases (case-insensitive literal substring match).
+ * Returns the list of hits with the matched phrase and a short context snippet.
+ */
+export function scanBannedPhrases(
+  text: string,
+  bannedPhrases: string[],
+): Array<{ phrase: string; context: string }> {
+  const hits: Array<{ phrase: string; context: string }> = [];
+  const lower = text.toLowerCase();
+  for (const phrase of bannedPhrases) {
+    const trimmed = phrase.trim();
+    if (trimmed.length === 0) continue; // skip empty/whitespace phrases
+    const needle = trimmed.toLowerCase();
+    let idx = lower.indexOf(needle);
+    while (idx !== -1) {
+      const start = Math.max(0, idx - 20);
+      const end = Math.min(text.length, idx + trimmed.length + 20);
+      const context = text.slice(start, end).replace(/\n/g, ' ');
+      hits.push({ phrase: trimmed, context });
+      idx = lower.indexOf(needle, idx + needle.length);
+    }
+  }
+  return hits;
+}
+
+/**
+ * Count verifiable evidence anchors in text, EXCLUDING internal `#rm-`
+ * section links (which are navigation aids, not primary-source citations).
+ * Used for citation-density enforcement.
+ */
+export function countArticleEvidenceAnchors(text: string): number {
+  const patterns: RegExp[] = [
+    /\b(?:H(?=[A-Za-z0-9]*[0-9])[A-Za-z0-9]{6,10}|[A-ZÅÄÖ]{2}\d{1,8})\b/g,
+    /\b(?:Prop|Skr|Mot|Bet|Ds|SOU|Dir)\.\s*\d{4}\/\d{2}:\d+/gi,
+    /\bRiR\s+\d{4}:\d+/gi,
+    /\bvotering(?:_id)?\b[^\n]*?\d/gi,
+    /https?:\/\/(?:www\.)?(?:data\.riksdagen\.se|riksdagen\.se|regeringen\.se|scb\.se|imf\.org)[^\s)]*/gi,
+    // NOTE: #rm- internal links are intentionally excluded for density checks.
+  ];
+  let total = 0;
+  for (const p of patterns) {
+    const matches = text.match(p);
+    if (matches) total += matches.length;
+  }
+  return total;
+}
+
+/**
+ * Count words in text (splits on whitespace, excludes markdown syntax tokens).
+ */
+export function countWords(text: string): number {
+  // Strip markdown links, images, HTML tags, fenced code blocks, and tables
+  let cleaned = text;
+  // Remove fenced code blocks (with optional language tag)
+  cleaned = cleaned.replace(/```[^\n]*\n[\s\S]*?```/g, '');
+  // Remove inline code
+  cleaned = cleaned.replace(/`[^`]+`/g, '');
+  // Remove images
+  cleaned = cleaned.replace(/!\[[^\]]*\]\([^)]*\)/g, '');
+  // Remove HTML tags (iterate to handle nested)
+  let prev = '';
+  while (prev !== cleaned) {
+    prev = cleaned;
+    cleaned = cleaned.replace(/<[^>]+>/g, '');
+  }
+  // Remove markdown table alignment rows (e.g. |---|:---:|---:|)
+  cleaned = cleaned.replace(/^\s*\|[\s:|-]+\|\s*$/gm, '');
+  // Remove pipe characters used as table column separators
+  cleaned = cleaned.replace(/\|/g, ' ');
+  // Remove list/quote/heading markers at line start
+  cleaned = cleaned.replace(/^\s*[>#+*-]\s*/gm, '');
+  // Convert markdown links to just their text
+  cleaned = cleaned.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1');
+  const words = cleaned.split(/\s+/).filter((w) => w.length > 0);
+  return words.length;
+}
+
+/**
+ * Compute citation density: words per evidence anchor. Lower = denser.
+ * Returns Infinity if zero anchors found.
+ */
+export function computeCitationDensity(text: string): number {
+  const anchors = countArticleEvidenceAnchors(text);
+  if (anchors === 0) return Infinity;
+  const words = countWords(text);
+  return words / anchors;
+}
+
+/**
+ * Scan `economicProvenance` blocks for stale vintage (>6 months without
+ * annotation). Returns stale entries.
+ *
+ * Provenance blocks look like:
+ * ```
+ * economicProvenance:
+ *   provider: imf
+ *   ...
+ *   retrieved_at: 2026-01-15
+ * ```
+ * or inline: `retrieved_at: 2026-01-15`
+ */
+export function scanStaleProvenance(
+  text: string,
+  referenceDate: Date = new Date(),
+): Array<{ retrievedAt: string; ageMonths: number }> {
+  const stale: Array<{ retrievedAt: string; ageMonths: number }> = [];
+  // Match retrieved_at dates in YAML-like blocks
+  const dateRe = /retrieved_at:\s*(\d{4}-\d{2}-\d{2})/g;
+  let m: RegExpExecArray | null;
+  while ((m = dateRe.exec(text)) !== null) {
+    const dateStr = m[1]!;
+    const retrieved = new Date(dateStr);
+    const diffMs = referenceDate.getTime() - retrieved.getTime();
+    const diffMonths = diffMs / (1000 * 60 * 60 * 24 * 30.44);
+    if (diffMonths > 6) {
+      // Check the immediately preceding line for the annotation comment.
+      // Contract: annotation must be on the line directly before the
+      // retrieved_at line: `<!-- stale-vintage: reason -->`
+      const lineStart = text.lastIndexOf('\n', m.index) + 1;
+      const prevLineEnd = lineStart > 0 ? lineStart - 1 : 0;
+      const prevLineStart = text.lastIndexOf('\n', prevLineEnd - 1) + 1;
+      const prevLine = text.slice(prevLineStart, prevLineEnd).trim();
+      if (!prevLine.includes('<!-- stale-vintage')) {
+        stale.push({ retrievedAt: dateStr, ageMonths: Math.round(diffMonths * 10) / 10 });
+      }
+    }
+  }
+  return stale;
+}
+
 /**
  * Slug a heading the way the renderer (and the aggregator's Reader
  * Intelligence Guide) does: lowercase, replace non-word with `-`,
@@ -447,6 +630,80 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
           message: `Article type "${typeEntry!.id}" requires artifact "${required}" but it is missing from ${relative(REPO_ROOT, parentDir)}/. Add the artifact or update the registry.`,
         });
       }
+    }
+  }
+
+  // 7. Editorial QA: banned-phrase scan.
+  const bannedPhrases = loadBannedPhrases();
+  if (bannedPhrases === null) {
+    violations.push({
+      file: rel,
+      code: 'missing-banned-phrase-list',
+      message: `Canonical banned-phrase file (analysis/methodologies/political-style-guide.json) is missing or malformed — editorial QA check cannot run. Ensure the file exists and contains a valid "allPhrases" array.`,
+    });
+  } else if (bannedPhrases.length > 0) {
+    const hits = scanBannedPhrases(text, bannedPhrases);
+    if (hits.length > 0) {
+      const sample = hits.slice(0, 3).map((h) => `"${h.phrase}"`).join(', ');
+      violations.push({
+        file: rel,
+        code: 'banned-phrase-detected',
+        message: `Article contains ${hits.length} banned phrase(s) (${sample}${hits.length > 3 ? ', …' : ''}). Rewrite using evidence-anchored alternatives per political-style-guide.json (human-readable companion: political-style-guide.md).`,
+      });
+    }
+  }
+
+  // 8. Editorial QA: citation density.
+  const wordCount = countWords(text);
+  const anchors = countArticleEvidenceAnchors(text);
+  if (wordCount > 0 && anchors === 0) {
+    violations.push({
+      file: rel,
+      code: 'low-citation-density',
+      message: `Article has ${wordCount} words but zero verifiable evidence anchors. Add dok_id references, vote IDs, or primary-source URLs.`,
+    });
+  } else if (anchors > 0) {
+    const density = wordCount / anchors;
+    // Load per-article-type threshold from reference-quality-thresholds.json
+    let threshold = 200; // fallback default
+    if (subfolderName) {
+      try {
+        const thresholdsPath = join(REPO_ROOT, 'analysis', 'methodologies', 'reference-quality-thresholds.json');
+        if (existsSync(thresholdsPath)) {
+          const thresholds = JSON.parse(readFileSync(thresholdsPath, 'utf8')) as {
+            aiFirst?: { citationDensity?: { perArticle?: Record<string, number | string> } };
+          };
+          const perArticle = thresholds.aiFirst?.citationDensity?.perArticle;
+          if (perArticle) {
+            const typeThreshold = perArticle[subfolderName];
+            if (typeof typeThreshold === 'number') {
+              threshold = typeThreshold;
+            }
+          }
+        }
+      } catch {
+        // Fall back to default threshold on parse error
+      }
+    }
+    if (density > threshold) {
+      violations.push({
+        file: rel,
+        code: 'low-citation-density',
+        message: `Citation density is ${Math.round(density)} words/anchor — maximum allowed is ${threshold} (for article type "${subfolderName}"). Add more evidence anchors (dok_id, vote IDs, primary-source URLs) to meet the editorial floor.`,
+      });
+    }
+  }
+
+  // 9. Editorial QA: economicProvenance vintage check.
+  if (text.includes('retrieved_at:')) {
+    const staleEntries = scanStaleProvenance(text);
+    if (staleEntries.length > 0) {
+      const sample = staleEntries.slice(0, 2).map((e) => `${e.retrievedAt} (${e.ageMonths}mo)`).join(', ');
+      violations.push({
+        file: rel,
+        code: 'stale-economic-provenance',
+        message: `${staleEntries.length} economicProvenance block(s) have vintage >6 months without annotation: ${sample}. Wrap in <!-- stale-vintage: reason --> or refresh data per ECONOMIC_DATA_CONTRACT.md.`,
+      });
     }
   }
 

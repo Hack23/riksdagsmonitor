@@ -314,6 +314,23 @@
         "anchorsPerWords": 120,
         "rule": "≥ 1 evidence anchor (dok_id, vote id, named MP, primary-source URL host) per ~120 words of analytical claim."
       },
+      "perArticle": {
+        "_note": "Per-article-type density thresholds for the aggregated article.md (words-per-anchor maximum). These are less strict than per-artifact thresholds because articles contain structural text (Reader Intelligence Guide tables, headings) that dilute density.",
+        "breaking": 180,
+        "evening-analysis": 180,
+        "realtime-monitor": 200,
+        "propositions": 160,
+        "motions": 170,
+        "committee-reports": 170,
+        "interpellations": 180,
+        "week-ahead": 200,
+        "month-ahead": 180,
+        "quarter-ahead": 180,
+        "year-ahead": 180,
+        "election-cycle": 170,
+        "weekly-review": 200,
+        "monthly-review": 190
+      },
       "perArtifact": {
         "synthesis-summary.md": 100,
         "swot-analysis.md": 80,
@@ -333,11 +350,12 @@
       "_note": "Values are 'words per anchor' — lower = denser citation. SWOT and per-document files have the densest target because every quadrant entry / bullet must be evidence-backed. Comparator and framing artifacts can run thinner because their structure is table-driven."
     },
     "bannedPhrases": {
-      "source": "analysis/methodologies/political-style-guide.md",
+      "source": "analysis/methodologies/political-style-guide.json",
+      "sourceMarkdown": "analysis/methodologies/political-style-guide.md",
       "block": "BEGIN BANNED-PHRASES … END BANNED-PHRASES",
-      "matchMode": "literal-substring-case-sensitive",
-      "extractionRule": "Consumers MUST extract everything between the literal markers `<!-- BEGIN BANNED-PHRASES` and `<!-- END BANNED-PHRASES`, strip HTML comment lines (`<!-- … -->`), fenced-block delimiters (lines starting with triple-backtick), blank lines, and lines starting with `#` (comments). Each remaining non-empty line is one literal banned substring. For case-insensitive matching, the consumer must explicitly pass `-i` to grep.",
-      "enforcement": "Pass-2 self-audit (methodology-reflection.md §Style audit). The banned-phrase block is consumed by the agent's own Pass-2 read-back loop; it is NOT currently enforced by gate Check 4 (which covers evidence anchors only). Future gate integration is planned but not yet implemented.",
+      "matchMode": "literal-substring-case-insensitive",
+      "extractionRule": "Consumers MUST use the canonical JSON file (political-style-guide.json) for automated enforcement. The JSON `allPhrases` array contains the flat list of literal banned substrings. Case-insensitive matching is the default.",
+      "enforcement": "validate-article.ts Check 7 (banned-phrase-detected) enforces this as a blocking CI check. The agent's Pass-2 self-audit also enforces it at authoring time.",
       "removalPolicy": "Append-only between major versions. Removals require a major-version bump and a justification entry in methodology-reflection.md."
     },
     "pass2Attestation": {

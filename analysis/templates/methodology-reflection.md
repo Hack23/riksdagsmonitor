@@ -161,6 +161,10 @@ flowchart LR
 | Forward indicators with dates | ≥ 8 | 11 | 🟢 |
 | 🟢 Low-confidence claims flagged | all | 6 of 6 flagged | 🟢 |
 | 🔴 Unresolved TODOs / placeholders | 0 | 0 | 🟢 |
+| **Banned phrases detected** | 0 | _N_ | 🟢 = 0 · 🔴 > 0 (see `political-style-guide.json`) |
+| **Citation density (article)** | ≤ 200 words/anchor | _N_ | 🟢 ≤ threshold · 🟡 ≤ 1.5× · 🔴 > 1.5× |
+| **Stale economicProvenance (>6mo)** | 0 unannotated | _N_ | 🟢 = 0 · 🟡 annotated · 🔴 unannotated stale |
+| **Pass-2 net change** | ≥ 5% (word count + citations) | _N%_ | 🟢 ≥ 5% · 🟡 3–5% · 🔴 < 3% (cosmetic-only) |
 | **Full-text fetched (top-N by DIW)** | ≥ 3 (≥ 5 Tier-C) | _N of N_ | 🟢 ≥ floor · 🟡 1 below · 🔴 > 1 below |
 | **L2+ docs without full text** | 0 | _N_ | 🟢 = 0 · 🟡 1–2 · 🔴 ≥ 3 |
 | **Prior-voteringar enrichment** | ≥ 1 entry per committee touched | _N_ rows in `data-download-manifest.md §Prior-Voteringar Enrichment` | 🟢 all committees covered · 🟡 ≥ 50% covered · 🔴 < 50% covered |

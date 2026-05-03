@@ -34,6 +34,11 @@ This is the **only** gate separating analysis from article generation. If it fai
 9. **PIR status sidecar** — `pir-status.json` is present and valid so open PIRs can roll forward to the next cycle.
 10. **Top-2 full-text availability** — when `data-download-manifest.md` contains a `## Full-Text Fetch Outcomes` table (written by `download-parliamentary-data.ts --auto-full-text-top-n`), at least 2 top documents must have `full_text_available=true`. Add `<!-- full-text-fallback: <reason> -->` to the manifest to bypass (e.g. when full text is genuinely unavailable from the MCP server or the flag was not used).
 11. **Supplementary artifacts** — see §Supplementary checks below (blocking for aggregation/Tier-C/multi-run).
+12. **Editorial QA gate** — after aggregation produces `article.md`, run `npx tsx scripts/validate-article.ts $ANALYSIS_DIR/article.md` which enforces:
+    - **Banned-phrase scan** (code: `banned-phrase-detected`) — no literal substring from `political-style-guide.json` may survive in the article.
+    - **Citation density** (code: `low-citation-density`) — evidence anchors per ~200 words maximum (per-article-type thresholds in `reference-quality-thresholds.json` → `aiFirst.citationDensity.perArticle`).
+    - **economicProvenance vintage** (code: `stale-economic-provenance`) — `retrieved_at` dates must be within 6 months or wrapped in `<!-- stale-vintage: reason -->` annotation.
+    - See `validate-article.ts` checks 7–9 for full implementation.
 
 ## Implementation
 
