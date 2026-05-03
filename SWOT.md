@@ -11,13 +11,13 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--03-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-05-03 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-03  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
@@ -27,7 +27,7 @@
 > - 📚 Upstream data-source list updated to **(Riksdagen, Regeringen, SCB, World Bank, IMF)**.
 >
 > **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
-> - **Strengths (expanded):** `v0.8.48` shipped to npm with SLSA provenance; dual-distribution model (static site + public npm package); **2,669 files** across 14 languages including RTL (HE, AR); **15 CIA data subsystems**; **11 agentic news workflows** under five-layer safe-output control; OpenSSF Best Practices badge #12069; OpenSSF Scorecard transparency; AI FIRST quality process (minimum-2-iteration rule); full OIDC CI/CD with zero long-lived AWS credentials; 24 Copilot agents + 91 skills driving automation leverage.
+> - **Strengths (expanded):** `v0.8.48` shipped to npm with SLSA provenance; dual-distribution model (static site + public npm package); **2,669 files** across 14 languages including RTL (HE, AR); **15 CIA data subsystems**; **14 agentic news workflows** under five-layer safe-output control; OpenSSF Best Practices badge #12069; OpenSSF Scorecard transparency; AI FIRST quality process (minimum-2-iteration rule); full OIDC CI/CD with zero long-lived AWS credentials; 24 Copilot agents + 91 skills driving automation leverage.
 > - **Weaknesses (expanded):** single-person company (CEO is sole owner of `Hack23/riksdagsmonitor` — key-person risk); dependency on a narrow set of upstream data sources (Riksdagen, Regeringen, SCB, World Bank, IMF); Swedish-first editorial posture requires translation quality gates for 13 non-Swedish locales; agentic news generation depends on LLM availability and prompt hygiene.
 > - **Opportunities (expanded):** positioning as the reference open-transparency platform for EU member-state parliaments (NIS2 tailwind); `riksdagsmonitor` npm package creates a developer-ecosystem moat for third-party dashboards and research; cross-referenced publication with Citizen Intelligence Agency (CIA) platform; multi-language reach into global journalist and research markets; EU CRA and AI Act compliance as competitive differentiation.
 > - **Threats (expanded):** disinformation / counter-narrative campaigns targeting article integrity; upstream data-source schema changes or de-platforming; Swedish legal landscape around political speech; supply-chain attacks on MCP servers or npm dependencies; prompt-injection attacks on agentic workflows (mitigated by the five-layer safe-outputs model and egress firewall); LLM provider outages or policy shifts affecting news generation cadence.
