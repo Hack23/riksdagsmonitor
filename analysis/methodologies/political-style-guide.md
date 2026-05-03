@@ -829,13 +829,11 @@ in Focus
 
 ---
 
----
-
 ## 📊 Mermaid Diagram Canon
 
 Every analytical artifact and rendered article that contains a Mermaid block MUST satisfy two contracts:
 
-1. **Source-side** — the `````mermaid ` body declares its theme (a `%%{init …}%%` prologue, or `themeVariables`, or per-element `style …` / `classDef …` / `linkStyle …` directives). Enforced by Check 5 of [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md).
+1. **Source-side** — the fenced Mermaid block body declares its theme (a `%%{init …}%%` prologue, or `themeVariables`, or per-element `style …` / `classDef …` / `linkStyle …` directives). Enforced by Check 5 of [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md).
 2. **Render-side** — if Check 5 ever passes a diagram that lacks a theme (regression, hand-edit, or a third-party paste), the renderer ([`scripts/render-lib/markdown/mermaid-preprocess.ts`](../../scripts/render-lib/markdown/mermaid-preprocess.ts)) prepends the canonical block below as defence-in-depth so user-facing HTML never renders an unthemed diagram.
 
 ### Canonical `%%{init …}%%` prologue (single source of truth)

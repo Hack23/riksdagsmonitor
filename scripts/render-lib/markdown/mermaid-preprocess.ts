@@ -47,7 +47,7 @@ export function preprocessMermaidFences(markdownBody: string): string {
     (_m, diagram: string) => {
       const themed = ensureMermaidTheme(diagram.trimEnd());
       const escaped = escapeHtml(themed);
-      return `\n<pre class="mermaid" data-mermaid-source="true">${escaped}</pre>\n`;
+      return `\n<pre class="mermaid" data-mermaid-source="true" tabindex="0">${escaped}</pre>\n`;
     },
   );
 }

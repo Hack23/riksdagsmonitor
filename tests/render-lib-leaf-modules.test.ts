@@ -485,9 +485,9 @@ describe('markdown/* — leaf module isolation', () => {
     // The gate's Check 5 fails any GATE_SYNTH_LIST file whose Mermaid
     // block lacks BOTH a `style …` directive AND a
     // `themeVariables` / `%%{init …}` config. The canonical block must
-    // satisfy the second branch — this regex is the literal grep
-    // pattern used by the gate (`grep -qE 'themeVariables|%%\{[[:space:]]*init'`).
-    const gateCheck5Re = /themeVariables|%%\{[[:space:]]*init/;
+    // satisfy the second branch — this regex is the JS equivalent of the
+    // gate's grep pattern (`grep -qE 'themeVariables|%%\{[[:space:]]*init'`).
+    const gateCheck5Re = /themeVariables|%%\{\s*init/;
     expect(gateCheck5Re.test(CANONICAL_MERMAID_INIT)).toBe(true);
   });
 

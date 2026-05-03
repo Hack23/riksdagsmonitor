@@ -79,8 +79,8 @@ export function hasMermaidTheme(diagramBody: string): boolean {
  */
 export function ensureMermaidTheme(diagramBody: string): string {
   if (hasMermaidTheme(diagramBody)) return diagramBody;
-  // Strip leading newlines so the canonical block is the very first line
-  // of the diagram source — Mermaid requires `%%{init}%%` before the
-  // diagram-type keyword (`flowchart`, `graph`, `sequenceDiagram`, …).
-  return CANONICAL_MERMAID_INIT + diagramBody.replace(/^\n+/, '');
+  // Strip leading blank lines (LF or CRLF) so the canonical block is the
+  // very first line of the diagram source — Mermaid requires `%%{init}%%`
+  // before the diagram-type keyword (`flowchart`, `graph`, `sequenceDiagram`, …).
+  return CANONICAL_MERMAID_INIT + diagramBody.replace(/^(\r?\n)+/, '');
 }
