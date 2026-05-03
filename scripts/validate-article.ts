@@ -333,7 +333,7 @@ export function countWords(text: string): number {
     .replace(/`[^`]+`/g, '') // inline code
     .replace(/!\[[^\]]*\]\([^)]*\)/g, '') // images
     .replace(/<[^>]+>/g, '') // HTML tags
-    .replace(/^\s*[-|>#+*]\s*/gm, '') // list/table/quote markers
+    .replace(/^\s*[|>#+*-]\s*/gm, '') // list/table/quote markers
     .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1'); // links → text only
   const words = cleaned.split(/\s+/).filter((w) => w.length > 0);
   return words.length;
@@ -380,7 +380,7 @@ export function scanStaleProvenance(
       // Check if it's wrapped in an annotation block (<!-- stale-vintage … -->)
       const lineStart = text.lastIndexOf('\n', m.index) + 1;
       const contextBefore = text.slice(Math.max(0, lineStart - 200), lineStart);
-      if (!contextBefore.includes('stale-vintage') && !contextBefore.includes('vintage-annotation')) {
+      if (!contextBefore.includes('stale-vintage')) {
         stale.push({ retrievedAt: dateStr, ageMonths: Math.round(diffMonths * 10) / 10 });
       }
     }
