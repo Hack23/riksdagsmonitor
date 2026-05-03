@@ -37,6 +37,7 @@ import { BASE_URL } from './constants.js';
 import { buildGithubBlobUrl } from './url-helpers.js';
 import { renderMarkdownToHtml } from './markdown/index.js';
 import { buildChrome } from './chrome.js';
+import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd } from './jsonld.js';
 
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
 
@@ -135,35 +136,38 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
 
   const bodyHtml = await renderMarkdownToHtml(parsed.content);
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'NewsArticle',
+  const articleUrl = `${BASE_URL}/${input.canonicalPath}`;
+  const langMeta = LANGUAGE_META[input.lang];
+
+  // NewsArticle JSON-LD with isBasedOn provenance
+  const newsArticleLd = buildNewsArticleLd({
     headline: title,
     description,
     datePublished: publishedIso,
     dateModified: modifiedIso,
-    inLanguage: LANGUAGE_META[input.lang].hreflang,
-    url: `${BASE_URL}/${input.canonicalPath}`,
-    mainEntityOfPage: `${BASE_URL}/${input.canonicalPath}`,
-    author: {
-      '@type': 'Organization',
-      name: 'Riksdagsmonitor (Hack23 AB)',
-      url: 'https://www.hack23.com',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Hack23 AB',
-      url: 'https://www.hack23.com',
-      logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/logo.png` },
-    },
+    inLanguage: langMeta.hreflang,
+    url: articleUrl,
     isBasedOn: (input.artifactsUsed ?? []).map((a) => ({
-      '@type': 'CreativeWork',
       url: input.subfolderRepoRelPath
         ? buildGithubBlobUrl(`${input.subfolderRepoRelPath}/${a}`)
         : a,
       name: a,
     })),
-  };
+  });
+
+  // BreadcrumbList JSON-LD for hierarchical navigation
+  const breadcrumbLd = buildBreadcrumbListLd([
+    { name: langMeta.translations.home, item: `${BASE_URL}/` },
+    { name: langMeta.translations.newsAnalysis, item: `${BASE_URL}/news/` },
+    { name: title.substring(0, 50) },
+  ]);
+
+  // SpeakableSpecification — voice-assistant TTS regions
+  const speakableLd = buildSpeakableWebPageLd(
+    articleUrl,
+    langMeta.hreflang,
+    ['.rm-article-header h1', '.rm-article-dek', '.rm-article-body'],
+  );
 
   const chrome = buildChrome({
     lang: input.lang,
@@ -173,7 +177,7 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     hreflangAlternates: input.hreflangAlternates,
     publishedIso,
     modifiedIso,
-    jsonLd: [jsonLd],
+    jsonLd: [newsArticleLd, breadcrumbLd, speakableLd],
     section: 'Political Intelligence',
   });
 

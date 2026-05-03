@@ -81,6 +81,10 @@ export { sanitizeSchema, renderMarkdownToHtml } from './markdown/index.js';
 export { renderChromeHead, buildChrome } from './chrome.js';
 export type { ChromeOptions, SiteChrome, BreadcrumbItem } from './chrome.js';
 
+// --- JSON-LD builders -------------------------------------------------------
+export { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd } from './jsonld.js';
+export type { BreadcrumbEntry, NewsArticleLdInput } from './jsonld.js';
+
 // --- Article (orchestrator) -------------------------------------------------
 export { renderArticleHtml } from './article.js';
 export type { RenderArticleInput } from './article.js';
