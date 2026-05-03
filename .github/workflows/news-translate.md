@@ -53,10 +53,6 @@ concurrency:
 features:
   mcp-gateway: true
 
-sandbox:
-  mcp:
-    keepalive-interval: 300 # gh-aw mcp-gateway `keepaliveInterval` — 5-min HTTP MCP ping (overrides upstream default `1500s`) to keep `riksdag-regering` (HTTP) and other HTTP-backed MCPs warm for the full 60-min job. PR deadline ~agent minute 42 (hard 45) — see prompts/07-commit-and-pr.md §Deadline enforcement.
-
 runtimes:
   node:
     version: "25"
@@ -278,7 +274,7 @@ Translation is a pure-derivative workflow:
 
 ## Time budget
 
-> 🟡 **MCP gateway session keepalive**: `sandbox.mcp.keepalive-interval: 300` sends a 5-min HTTP ping to keep HTTP-backed MCPs warm. **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. The operative constraint is Timer A (job `timeout-minutes: 60`) and Timer B (~60-min Copilot API session).
+> 🟡 **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. The operative constraint is Timer A (job `timeout-minutes: 60`) and Timer B (~60-min Copilot API session). See `00-base-contract.md §Session timing` and `07-commit-and-pr.md §Deadline enforcement`.
 
 **Single run** (target ~40 agent minutes in a 60-min job, hard deadline 45 agent minutes for the PR call):
 

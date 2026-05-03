@@ -116,7 +116,6 @@ Every news workflow declares the **same** tool & runtime surface for parity, res
 | `tools.cache-memory` | keyed by `news-${workflow}-${article_date}`; best-effort cache persistence aligned with a 14-day recovery window | **Resilience knob** — analysis artifacts persisted at `/tmp/gh-aw/cache-memory/`; may be restored on the next run if the previous PR failed and the cache entry is still available (see [`07-commit-and-pr.md` §Cache-memory recovery](../prompts/07-commit-and-pr.md)) |
 | `tools.playwright` | enabled in `news-evening-analysis` + `news-realtime-monitor` only | Live HTML validation for tier-C aggregation runs |
 | `features.mcp-gateway` | `true` | Routes all MCP traffic through the gh-aw mcp-gateway (single audit point) |
-| `sandbox.mcp.keepalive-interval` | `300` (5 min) | Compiles to gateway `keepaliveInterval`; overrides upstream default `1500 s (25 min)` to keep HTTP MCPs warm for the full 60-min job (see [`02-mcp-access.md` §MCP gateway keepalive](../prompts/02-mcp-access.md)) |
 | `timeout-minutes` | `60` | Job ceiling measured from job start; agent phases target completion by agent minute 40, PR by agent minute 42 (hard 45) to reserve setup/safe-output headroom |
 | `safe-outputs.create-pull-request.fallback-as-issue` | `true` (explicit) | If org disables Actions PR creation, fall back to an issue + branch link instead of failing |
 | `safe-outputs.create-pull-request.if-no-changes` | `warn` | Empty patches emit a warning instead of failing the run (e.g. duplicate-date dispatches) |

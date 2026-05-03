@@ -44,7 +44,7 @@ Translations for the remaining twelve languages are produced by the dedicated **
 
 3. **Commit** once with a descriptive message, e.g. `news(${article_type}): $ARTICLE_DATE — analysis + article`.
 
-4. **🛟 Sandbox commit handoff (mandatory)** — *immediately after `git commit` and **before** any `safeoutputs___*` call*, write a portable bundle + manifest so the host-side PAT PR fallback can recover the commit if `safeoutputs___create_pull_request` later fails (e.g. transient MCP/network failure, Timer A/B firing, or a Timer C "session not found" edge case if the gateway keepalive fails — see `02-mcp-access.md §MCP gateway keepalive`). The handoff is the defence-in-depth recovery for any of those failures. The bundle goes to `/tmp/gh-aw/aw-fallback.bundle` (matched by the gh-aw artifact upload glob `/tmp/gh-aw/aw-*.bundle`); the JSON manifest goes to `/tmp/gh-aw/agent/aw-fallback.json` because the upload glob does **not** match `aw-*.json` — but it does upload the entire `/tmp/gh-aw/agent/` directory, so writing inside it guarantees the manifest reaches the host job. Run this in the same bash session as the commit:
+4. **🛟 Sandbox commit handoff (mandatory)** — *immediately after `git commit` and **before** any `safeoutputs___*` call*, write a portable bundle + manifest so the host-side PAT PR fallback can recover the commit if `safeoutputs___create_pull_request` later fails (e.g. transient MCP/network failure or Timer A/B firing). The handoff is the defence-in-depth recovery for any of those failures. The bundle goes to `/tmp/gh-aw/aw-fallback.bundle` (matched by the gh-aw artifact upload glob `/tmp/gh-aw/aw-*.bundle`); the JSON manifest goes to `/tmp/gh-aw/agent/aw-fallback.json` because the upload glob does **not** match `aw-*.json` — but it does upload the entire `/tmp/gh-aw/agent/` directory, so writing inside it guarantees the manifest reaches the host job. Run this in the same bash session as the commit:
 
    ```bash
    set -euo pipefail
@@ -199,15 +199,13 @@ The noop message **must** include which condition above applies and why improvem
 
 ## Deadline enforcement
 
-Three independent timers can kill a run silently (gh-aw v0.71.3 + MCP Gateway v0.3.1). Plan for the **shortest** of the three.
+Two independent timers can kill a run silently (gh-aw v0.71.3). Plan for the **shortest** of the two.
 
 > **Timer A — Job `timeout-minutes` (60 min)**: every news workflow declares `timeout-minutes: 60`. The clock starts at **job start**, before Copilot begins, and includes host-side setup/sandbox/MCP initialization. After 60 minutes GitHub Actions kills the runner unconditionally — no retry, no save, no PR.
 >
 > **Timer B — Copilot API session (~60 min)**: The Copilot API session is bound to the `github.token` baked in at step start. That token expires at approximately **60 minutes** and is never refreshed mid-run (gh-aw issue #24920). Every tool call and inference request fails silently after that point — the agent appears to run but makes no progress and the PR is never created.
->
-> **Timer C — Safe-outputs / MCP gateway idle session (~25–30 min baseline, mitigated by keepalive)**: Without explicit `engine.mcp.session-timeout` (removed — MCP Gateway v0.3.1 rejects it, [gh-aw #29353](https://github.com/github/gh-aw/issues/29353)), the gateway would drop idle sessions at its default (~25–30 min). **Mitigation:** `sandbox.mcp.keepalive-interval: 300` compiles to the gateway's `keepaliveInterval`, which pings **all** gateway-managed sessions — including safeoutputs — every 5 minutes, preventing the idle timeout under normal operation. Timer C only fires if the keepalive mechanism itself fails (gateway restart, network partition, gh-aw bug). The sandbox commit handoff (§ below) is the defence-in-depth recovery for that edge case.
 
-Timers A and B are intentionally aligned at ~60 min. Timer C is mitigated by the 5-min keepalive and does not constrain the PR window under normal operation. The PR must be issued before Timer A/B fires.
+Timers A and B are intentionally aligned at ~60 min. The PR must be issued before either fires.
 
 ### PR-creation windows
 

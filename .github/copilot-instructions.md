@@ -300,4 +300,4 @@ tsx scripts/imf-fetch.ts list-indicators
 ---
 
 **Last Updated**: 2026-05-03
-**Version**: 3.7 — reconciled artifact count to 23 always-on artifacts (Family A 9 + B 2 + C 5 + D 7) across all workflows, including Tier-C; previous "9 core / 14 Tier-C" wording was stale. `engine.mcp.session-timeout: 1h` remains removed (MCP Gateway v0.3.1 schema rejects it); Timer C (~25–30 min safeoutputs idle) is back as an operative deadline alongside Timers A/B; keepalive via `sandbox.mcp.keepalive-interval: 300` (upstream MCPs only).
+**Version**: 3.8 — removed `sandbox.mcp.keepalive-interval` from all workflows (default value is now sufficient); simplified timer model to Timer A + Timer B only. `engine.mcp.session-timeout` remains removed (MCP Gateway v0.3.1 schema rejects it).

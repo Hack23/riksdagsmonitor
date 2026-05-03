@@ -53,15 +53,14 @@ Stage analysis + article.md + news/*.html → Commit → ONE create_pull_request
 - Translations to the remaining twelve languages are produced by the dedicated **`news-translate`** workflow, which consumes published en/sv articles and runs independently. Per-type workflows only render `en,sv`.
 - Same-day re-runs always use the same `$ANALYSIS_DIR` folder — never create a parallel folder for the same date + type combination unless `force_generation=true`.
 
-## Session keepalive requirement
+## Session timing
 
-> ⚠️ **Critical — three operative timers** (gh-aw v0.71.3 + MCP Gateway v0.3.1): Plan every run for the **shortest** of the three.
+> ⚠️ **Critical — two operative timers** (gh-aw v0.71.3): Plan every run for the **shortest** of the two.
 >
 > 1. **Timer A — Job timeout (60 min)** — every news workflow declares `timeout-minutes: 60`. After 60 min from **job start** the GitHub Actions runner kills the job unconditionally; this clock includes host-side setup before Copilot begins. Target completing all agent-phase work by **agent minute 40** (AI-FIRST iteration), call `safeoutputs___create_pull_request` by **agent minute 42** (hard deadline **45**) to reserve job-level headroom for setup variance and the safe-outputs runner.
 > 2. **Timer B — Copilot API session (~60 min)** — bound to the `github.token` baked in at step start; never refreshed mid-run (gh-aw issue #24920). After expiry every tool call and inference fails silently. The 60-min job budget is intentionally aligned with this window.
-> 3. **Timer C — Safe-outputs / MCP gateway idle session (~25–30 min baseline, mitigated by keepalive)** — MCP Gateway v0.3.1 rejects the gh-aw v0.71.3 frontmatter field `engine.mcp.session-timeout` ([gh-aw #29353](https://github.com/github/gh-aw/issues/29353)) as `additionalProperties 'sessionTimeout' not allowed`, so the field is **removed from every workflow**. Without explicit session-timeout, the gateway would drop idle sessions at its default (~25–30 min). **Mitigation:** `sandbox.mcp.keepalive-interval: 300` compiles to the gateway's `keepaliveInterval` field, which pings **all** gateway-managed MCP sessions — including the local `safeoutputs` Streamable-HTTP server — every 5 minutes. This prevents the idle timeout from firing under normal operation. Timer C therefore only fires if the keepalive mechanism itself fails (gateway restart, network partition, or gh-aw bug). The sandbox commit handoff (`07-commit-and-pr.md §Sandbox commit handoff`) is the defence-in-depth recovery for that scenario.
 
-**The reliable mitigation is the 5-minute keepalive ping + Timer-A alignment.** Plan the run so the PR is created **within 35–42 minutes** (hard deadline **45 minutes**) of agent start, while also leaving margin before the 60-minute job timeout that began during setup. Use the budget for AI-FIRST iteration (minimum 2 complete passes per `.github/copilot-instructions.md §AI FIRST Quality Principle`); do **not** finish early with shallow output. See `07-commit-and-pr.md §Deadline enforcement` for the authoritative PR-timing procedure and `02-mcp-access.md §MCP gateway keepalive` for the keepalive contract.
+**Plan the run so the PR is created within 35–42 minutes (hard deadline 45 minutes) of agent start**, while also leaving margin before the 60-minute job timeout that began during setup. Use the budget for AI-FIRST iteration (minimum 2 complete passes per `.github/copilot-instructions.md §AI FIRST Quality Principle`); do **not** finish early with shallow output. See `07-commit-and-pr.md §Deadline enforcement` for the authoritative PR-timing procedure.
 
 Do not add per-phase checkpoint PRs or repo-memory push steps.
 

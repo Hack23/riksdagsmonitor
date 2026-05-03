@@ -73,22 +73,9 @@ This gateway is used with [GitHub Agentic Workflows](https://github.com/github/g
 
 #### Session timeout (gh-aw v0.71.3+)
 
-Workflows can declare `engine.mcp.session-timeout` in frontmatter to control how long MCP gateway sessions stay alive ([#29353](https://github.com/github/gh-aw/issues/29353)):
+> ⚠️ **DO NOT SET `engine.mcp.session-timeout`** — MCP Gateway v0.3.1 rejects this field with `additionalProperties 'sessionTimeout' not allowed` ([#29353](https://github.com/github/gh-aw/issues/29353)). The field was added in gh-aw v0.71.3 but is incompatible with the current gateway version. The `sandbox.mcp.keepalive-interval` setting is also no longer needed — the gateway default keepalive is sufficient for 60-min jobs.
 
-```yaml
-engine:
-  id: copilot
-  mcp:
-    session-timeout: 1h        # Go duration string; min 5m, default gateway 6h
-```
-
-| Value | Use case |
-|-------|----------|
-| `30m` | Short-lived workflows that should free gateway resources quickly |
-| `1h` | Standard ~60-min news/analysis jobs (recommended for the riksdagsmonitor news pipeline) |
-| `4h` / `6h` | Long-running migrations or large-scale refactoring |
-
-Precedence: frontmatter field > `MCP_GATEWAY_SESSION_TIMEOUT` env var > built-in default. The setting applies to **all** MCP gateway sessions including the local `safeoutputs` Streamable-HTTP server, so it is the canonical knob for closing the legacy ~25–30 min "safeoutputs idle drop" window.
+The gateway manages session lifetimes internally. The PR deadline for news workflows is governed by Timer A (job `timeout-minutes: 60`) and Timer B (Copilot API session ~60 min).
 
 #### Features
 
