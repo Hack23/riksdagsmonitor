@@ -169,7 +169,16 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
   const baseDescription = t.completeNavigation;
   // `${baseDescription}` is typically 30–80 chars — extend with article
   // count + native lang + brand to land in the 140–200 band.
-  const seoDescription = `${baseDescription} — ${articleCount} ${t.recentArticles} · ${meta.nativeName} · Riksdagsmonitor (${t.mainPlatform}, ${t.dashboards}, ${t.newsAnalysis}, ${t.documentation}).`;
+  const rawDescription = `${baseDescription} — ${articleCount} ${t.recentArticles} · ${meta.nativeName} · Riksdagsmonitor (${t.mainPlatform}, ${t.dashboards}, ${t.newsAnalysis}, ${t.documentation}).`;
+  // Clamp to 140–200 chars: truncate at ~197 with ellipsis if too long,
+  // or pad with site context if under 140 (CJK may naturally be shorter).
+  let seoDescription = rawDescription;
+  if (seoDescription.length > 200) {
+    seoDescription = seoDescription.slice(0, 197).trimEnd() + '…';
+  } else if (seoDescription.length < 140) {
+    const pad = ` ${t.resources} — ${meta.nativeName} · Riksdagsmonitor.`;
+    seoDescription = (seoDescription + pad).slice(0, 200);
+  }
   const seoKeywords = [
     'Riksdagsmonitor',
     t.siteMap,

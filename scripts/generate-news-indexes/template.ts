@@ -791,7 +791,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
        discoverable from the index page even without JS. The list is
        visually hidden but available to assistive technology that
        prefers semantic markup. -->
-  <section class="seo-article-list" aria-labelledby="seo-article-list-heading" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
+  <section class="seo-article-list sr-only" aria-labelledby="seo-article-list-heading">
     <h2 id="seo-article-list-heading">${escapeHtml(lang.title)} — ${displayArticles.length}</h2>
     <ul>
 ${displayArticles.map((a) => `      <li><a href="${escapeHtml(a.slug)}"><time datetime="${escapeHtml(a.date)}">${escapeHtml(a.date)}</time> — ${escapeHtml(a.title)}</a></li>`).join('\n')}

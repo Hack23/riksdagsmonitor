@@ -248,18 +248,33 @@ export function renderChromeHead(opts: ChromeOptions): string {
   // Auto-emit a WebPage self-node with SpeakableSpecification when the
   // caller supplies CSS selectors. Google's voice surfaces use this to
   // identify the most relevant TTS-readable region of a listing page.
+  // If the caller already pushed a WebPage node in `opts.jsonLd`, merge
+  // the `speakable` property into that existing node instead of emitting
+  // a duplicate (which would confuse crawlers with two WebPage entities
+  // for the same URL).
   if (opts.speakableSelectors && opts.speakableSelectors.length > 0) {
-    autoJsonLd.push({
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      url: `${BASE_URL}/${opts.canonicalPath}`,
-      inLanguage: meta.hreflang,
-      speakable: {
-        '@type': 'SpeakableSpecification',
-        cssSelector: [...opts.speakableSelectors],
-      },
-      isPartOf: { '@type': 'WebSite', name: 'Riksdagsmonitor', url: BASE_URL },
-    });
+    const speakableSpec = {
+      '@type': 'SpeakableSpecification' as const,
+      cssSelector: [...opts.speakableSelectors],
+    };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const existingWebPage = (opts.jsonLd ?? []).find((node: any) => node?.['@type'] === 'WebPage') as Record<string, unknown> | undefined;
+    if (existingWebPage) {
+      // Merge speakable + isPartOf into the caller's existing WebPage node
+      existingWebPage['speakable'] = speakableSpec;
+      if (!existingWebPage['isPartOf']) {
+        existingWebPage['isPartOf'] = { '@type': 'WebSite', '@id': `${BASE_URL}/#website` };
+      }
+    } else {
+      autoJsonLd.push({
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        url: `${BASE_URL}/${opts.canonicalPath}`,
+        inLanguage: meta.hreflang,
+        speakable: speakableSpec,
+        isPartOf: { '@type': 'WebSite', '@id': `${BASE_URL}/#website` },
+      });
+    }
   }
   const allJsonLd = [...(opts.jsonLd ?? []), ...autoJsonLd];
   const jsonLdBlocks = allJsonLd
@@ -268,9 +283,12 @@ export function renderChromeHead(opts: ChromeOptions): string {
 
   // Pagination link relations (rel="prev"/rel="next") give crawlers the
   // archive structure that JS-side pagination would otherwise hide.
+  // Values are HTML-escaped for safety even though current callers pass
+  // trusted absolute URLs — prevents injection if future callers pass
+  // user-influenced strings.
   const pagerLinks: string[] = [];
-  if (opts.relPrev) pagerLinks.push(`    <link rel="prev" href="${opts.relPrev}">`);
-  if (opts.relNext) pagerLinks.push(`    <link rel="next" href="${opts.relNext}">`);
+  if (opts.relPrev) pagerLinks.push(`    <link rel="prev" href="${escapeHtml(opts.relPrev)}">`);
+  if (opts.relNext) pagerLinks.push(`    <link rel="next" href="${escapeHtml(opts.relNext)}">`);
   const pagerLinksHtml = pagerLinks.length > 0 ? pagerLinks.join('\n') + '\n' : '';
 
   // Title brand discipline (per `seo-metadata-contract.md` §2): append
