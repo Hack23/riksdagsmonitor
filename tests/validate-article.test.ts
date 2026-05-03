@@ -11,7 +11,7 @@
  * @license Apache-2.0
  */
 
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it } from 'vitest';
 
 import { countBlufEvidenceAnchors } from '../scripts/validate-article.js';
 
