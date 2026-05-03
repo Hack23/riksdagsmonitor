@@ -97,7 +97,7 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
     mainEntityOfPage: `${BASE_URL}/${selfFile}`,
     dateModified: latestDate,
     dateCreated: '2026-04-01',
-    isPartOf: { '@type': 'WebSite', name: 'Riksdagsmonitor', url: BASE_URL },
+    isPartOf: { '@id': `${BASE_URL}/#website` },
     publisher: {
       '@type': 'Organization', name: 'Hack23 AB', url: 'https://www.hack23.com',
       logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/logo.png` },
@@ -169,6 +169,7 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
   const websiteLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${BASE_URL}/#website`,
     name: 'Riksdagsmonitor',
     url: BASE_URL,
     description: 'Swedish Parliament Intelligence Platform - Real-time monitoring, coalition predictions, and comprehensive political analysis',
