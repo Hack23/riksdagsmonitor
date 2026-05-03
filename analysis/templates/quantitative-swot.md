@@ -65,6 +65,45 @@ score_item = I × C × L × T × (w_D·dRel + w_I·iNov + w_W·wMom + w_S·sReac
 
 ---
 
+<!-- TEMPLATE_CONTRACT_V1 -->
+> **📐 Template Contract** — every fill of this template MUST satisfy this row.
+>
+> | Slot | Value |
+> |------|-------|
+> | **Owning methodology** | [`per-artifact-methodologies.md`](../methodologies/per-artifact-methodologies.md#quantitative-swot) |
+> | **Owning gate check** | Supplementary (year-ahead/cycle blocking) — see [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) |
+> | **Required inputs** | `swot-analysis.md`, DIW weight vector |
+> | **Horizon band** | mixed (year/cycle) (per [`scripts/horizon-context.ts`](../../scripts/horizon-context.ts)) |
+> | **Output family** | Analytical Supplementary |
+> | **Aggregation order** | 23 of 30 in canonical order (see [`scripts/render-lib/aggregator/order.ts`](../../scripts/render-lib/aggregator/order.ts)) |
+> | **Reader Intelligence Guide** | row generated from `quantitative-swot.md` (see [`scripts/render-lib/aggregator/reader-guide.ts`](../../scripts/render-lib/aggregator/reader-guide.ts)) |
+> | **Canonical evidence anchor** | `\| claim \| evidence (dok_id / vote / MP intressent_id / primary-source URL) \| retrieved_at \| confidence \|` — every analytical claim row uses this schema. |
+>
+> Cross-reference: [`README.md §Template ↔ Methodology ↔ Gate-Check Matrix`](README.md#-template--methodology--gate-check-matrix).
+
+<!--
+AI-FIRST Pass-1 / Pass-2 self-check (HTML comment — invisible in rendered articles; not stripped by aggregator unless under a "## Pass 2 …" heading).
+
+PASS 1 (creation, minimal viable artifact):
+  • Fill every REQUIRED slot above; cite ≥ 1 dok_id / vote / MP / primary-source URL per major claim.
+  • Use the canonical evidence anchor schema for every analytical claim row.
+  • Mermaid blocks use the cyberpunk %%{init: theme/themeVariables}%% prologue and at least one `style …` or `classDef …` directive (Check 5 of 05-analysis-gate.md).
+
+PASS 2 (read-back & improve — AI-FIRST mandatory, ≥ 180 s after Pass 1):
+  • Re-read the file end-to-end; for each section verify (a) ≥ 1 evidence anchor row, (b) WEP language tightened (no "may/might/could" hedges), (c) named actors with intressent_id where applicable, (d) Mermaid colour theming present.
+  • Banned-phrase scan: "intelligence theatre", "sources say", "reportedly", "it is widely believed", "experts agree", "AI_MUST_REPLACE".
+  • Citation density target: ≥ 1 evidence anchor row per 100 words of analytical prose.
+  • Neutrality arithmetic: equal analytical depth across the 8 Riksdag parties (S, M, SD, V, MP, C, L, KD); flag and correct any bias in the Pass-2 Self-Audit section.
+
+ANTI-TEMPLATE — DO NOT:
+  • Ship plain prose without evidence anchor tables.
+  • Leave AI_MUST_REPLACE / [REQUIRED: …] placeholders in the rendered output.
+  • Cite a non-primary URL when a `dok_id` or vote record is available.
+  • Treat co-occurrence of keywords as coordination; uni-directional chains as bi-directional.
+  • Use a Mermaid block without colour theming (Check 5 will block aggregation).
+  • Skip the Pass-2 read-back (Check 6 verifies mtime ≥ birth + 180 s OR a differing pass1/ snapshot).
+-->
+
 ## 💪 Strengths (scored)
 
 > Every item must cite a `dok_id`, primary URL host, or named source. Minimum 3 items; target 4–5 for comprehensive runs.

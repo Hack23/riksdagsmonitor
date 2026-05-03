@@ -219,6 +219,70 @@ The aggregator's structural projections (heading demotion, source-preamble strip
 
 ---
 
+## 🧭 Template ↔ Methodology ↔ Gate-Check Matrix
+
+> **Single source of truth** — synced with the `<!-- TEMPLATE_CONTRACT_V1 -->` header block now embedded in every template (38 files). Use this matrix to look up which methodology owns a template, which gate check enforces it, and where it lives in the canonical [`AGGREGATION_ORDER`](../../scripts/render-lib/aggregator/order.ts). The 30-entry aggregation order plus 8 supplementary templates total 38 entries.
+
+### 📎 Canonical evidence-anchor schema (used by every template)
+
+```
+| claim | evidence (dok_id / vote / MP intressent_id / primary-source URL) | retrieved_at | confidence |
+```
+
+- **claim** — single analytic statement, no compound assertions.
+- **evidence** — primary reference: Riksdag `dok_id`, vote tally `(JA / NEJ / AVSTÅR)`, MP `intressent_id`, or a primary-source URL on the network allowlist.
+- **retrieved_at** — ISO-8601 timestamp the data was fetched (`YYYY-MM-DDTHH:MM:SSZ`); flags vintage > 6 months for editorial review.
+- **confidence** — 5-level WEP × Admiralty composite: 🟦 VERY HIGH / 🟩 HIGH / 🟨 MODERATE / 🟧 LOW / ⬛ VERY LOW.
+
+### 🔎 Matrix (38 templates)
+
+| Template | Owning methodology (anchor) | Owning gate check | Family | Aggregation position | Horizon |
+|----------|------------------------------|-------------------|--------|----------------------|---------|
+| [`analysis-index.md`](analysis-index.md) | [`per-artifact-methodologies.md#analysis-index`](../methodologies/per-artifact-methodologies.md#analysis-index) | Check 1 + supplementary | Operational Supplementary | appended | per-run |
+| [`coalition-mathematics.md`](coalition-mathematics.md) | [`per-artifact-methodologies.md#coalition-mathematics`](../methodologies/per-artifact-methodologies.md#coalition-mathematics) | Check 8 (seat-count table) | Family D | 16 | mixed (T+30…T+1460) |
+| [`comparative-international.md`](comparative-international.md) | [`per-artifact-methodologies.md#comparative-international`](../methodologies/per-artifact-methodologies.md#comparative-international) | Check 7 (≥ 2 peer-country rows) | Family C | 18 | mixed |
+| [`cross-reference-map.md`](cross-reference-map.md) | [`per-artifact-methodologies.md#cross-reference-map`](../methodologies/per-artifact-methodologies.md#cross-reference-map) | Check 1 + sibling-folder coverage | Family B | 27 | per-run |
+| [`cross-run-diff.md`](cross-run-diff.md) | [`per-artifact-methodologies.md#cross-run-diff`](../methodologies/per-artifact-methodologies.md#cross-run-diff) | Supplementary Check 11 (gate-required when `ANALYSIS_RUN_COUNT ≥ 2`) | Operational Supplementary | appended | per-run |
+| [`cross-session-intelligence.md`](cross-session-intelligence.md) | [`per-artifact-methodologies.md#cross-session-intelligence`](../methodologies/per-artifact-methodologies.md#cross-session-intelligence) | Supplementary Check 11 (Tier-C aggregation) | Operational Supplementary | appended | mixed (week/month/quarter) |
+| [`cycle-trajectory.md`](cycle-trajectory.md) | [`per-artifact-methodologies.md#cycle-trajectory`](../methodologies/per-artifact-methodologies.md#cycle-trajectory) | Long-horizon Check (election-cycle blocking) | Family D (cycle only) | 14 | cycle (T+1y/T+2y/T+5y) |
+| [`data-download-manifest.md`](data-download-manifest.md) | [`per-artifact-methodologies.md#data-download-manifest`](../methodologies/per-artifact-methodologies.md#data-download-manifest) | Check 1 + Check 2 (per-doc coverage) | Family B | 30 | per-run |
+| [`devils-advocate.md`](devils-advocate.md) | [`per-artifact-methodologies.md#devils-advocate`](../methodologies/per-artifact-methodologies.md#devils-advocate) | Check 7 (≥ 3 ACH hypotheses) | Family C | 25 | per-run |
+| [`election-2026-analysis.md`](election-2026-analysis.md) | [`per-artifact-methodologies.md#election-2026-analysis`](../methodologies/per-artifact-methodologies.md#election-2026-analysis) | Check 8 (seat deltas) | Family D | 12 | cycle (T+1460) |
+| [`election-cycle-analysis.md`](election-cycle-analysis.md) | [`per-artifact-methodologies.md#election-2026-analysis`](../methodologies/per-artifact-methodologies.md#election-2026-analysis) | Check 8 (alias of election-2026-analysis.md) | Family D | 13 (alias) | cycle |
+| [`executive-brief.md`](executive-brief.md) | [`per-artifact-methodologies.md#executive-brief`](../methodologies/per-artifact-methodologies.md#executive-brief) | Check 1 + Check 7 (BLUF / Decisions, 400–600 words) | Family A | 1 | per-run |
+| [`forward-indicators.md`](forward-indicators.md) | [`per-artifact-methodologies.md#forward-indicators`](../methodologies/per-artifact-methodologies.md#forward-indicators) | Check 8 (≥ 10 dated indicators) | Family D | 7 | mixed (T+72h…T+90d) |
+| [`historical-parallels.md`](historical-parallels.md) | [`per-artifact-methodologies.md#historical-parallels`](../methodologies/per-artifact-methodologies.md#historical-parallels) | Check 8 (≥ 2 historical episodes) | Family D | 19 | mixed |
+| [`horizon-pir-rollforward.md`](horizon-pir-rollforward.md) | [`per-artifact-methodologies.md#horizon-pir-rollforward`](../methodologies/per-artifact-methodologies.md#horizon-pir-rollforward) | Supplementary (long-horizon) | Operational Supplementary | 28 | mixed (quarter/year/cycle) |
+| [`implementation-feasibility.md`](implementation-feasibility.md) | [`per-artifact-methodologies.md#implementation-feasibility`](../methodologies/per-artifact-methodologies.md#implementation-feasibility) | Check 8 + Check 9b (Statskontoret evidence) | Family D | 20 | mixed (T+30…T+365) |
+| [`intelligence-assessment.md`](intelligence-assessment.md) | [`per-artifact-methodologies.md#intelligence-assessment`](../methodologies/per-artifact-methodologies.md#intelligence-assessment) | Check 7 (≥ 3 KJ + PIRs) | Family C | 3 | per-run |
+| [`mcp-reliability-audit.md`](mcp-reliability-audit.md) | [`per-artifact-methodologies.md#mcp-reliability-audit`](../methodologies/per-artifact-methodologies.md#mcp-reliability-audit) | Supplementary (Tier-C mandatory) | Operational Supplementary | appended | per-run |
+| [`media-framing-analysis.md`](media-framing-analysis.md) | [`per-artifact-methodologies.md#media-framing-analysis`](../methodologies/per-artifact-methodologies.md#media-framing-analysis) | Check 5 (Mermaid) + Check 8 | Family D | 5 | per-run |
+| [`methodology-reflection.md`](methodology-reflection.md) | [`per-artifact-methodologies.md#methodology-reflection`](../methodologies/per-artifact-methodologies.md#methodology-reflection) | Check 7 (ICD 203 audit) + Check 6 (Pass-2 mtime) | Family C | 29 | per-run |
+| [`parliamentary-season.md`](parliamentary-season.md) | [`per-artifact-methodologies.md#parliamentary-season`](../methodologies/per-artifact-methodologies.md#parliamentary-season) | Long-horizon Check (quarter/year/cycle blocking) | Family D (long-horizon) | 15 | mixed (quarter/year/cycle) |
+| [`per-file-political-intelligence.md`](per-file-political-intelligence.md) | [`per-document-methodology.md`](../methodologies/per-document-methodology.md) | Check 2 (per-doc coverage) | Family E | per `dok_id` | per-doc |
+| [`pestle-analysis.md`](pestle-analysis.md) | [`per-artifact-methodologies.md#pestle-analysis`](../methodologies/per-artifact-methodologies.md#pestle-analysis) | Supplementary (year-ahead/cycle blocking) | Analytical Supplementary | 21 | mixed (year/cycle) |
+| [`political-classification.md`](political-classification.md) | [`per-artifact-methodologies.md#classification-results`](../methodologies/per-artifact-methodologies.md#classification-results) | Check 1 (Family A — classification-results.md) | Family A | 26 | per-run |
+| [`political-stride-assessment.md`](political-stride-assessment.md) | [`per-artifact-methodologies.md#political-stride-assessment`](../methodologies/per-artifact-methodologies.md#political-stride-assessment) | Supplementary (cycle blocking; integrity events) | Analytical Supplementary | 24 | per-run |
+| [`quantitative-swot.md`](quantitative-swot.md) | [`per-artifact-methodologies.md#quantitative-swot`](../methodologies/per-artifact-methodologies.md#quantitative-swot) | Supplementary (year-ahead/cycle blocking) | Analytical Supplementary | 23 | mixed (year/cycle) |
+| [`reference-analysis-quality.md`](reference-analysis-quality.md) | [`per-artifact-methodologies.md#reference-analysis-quality`](../methodologies/per-artifact-methodologies.md#reference-analysis-quality) | Supplementary (Tier-C mandatory) + thresholds.json | Operational Supplementary | appended | per-run |
+| [`risk-assessment.md`](risk-assessment.md) | [`per-artifact-methodologies.md#risk-assessment`](../methodologies/per-artifact-methodologies.md#risk-assessment) | Check 1 (top-5 risks, L × I, cascading) | Family A | 9 | per-run |
+| [`scenario-analysis.md`](scenario-analysis.md) | [`per-artifact-methodologies.md#scenario-analysis`](../methodologies/per-artifact-methodologies.md#scenario-analysis) | Check 7 (≥ 3 scenarios + posteriors) | Family C | 8 | per-run |
+| [`session-baseline.md`](session-baseline.md) | [`per-artifact-methodologies.md#session-baseline`](../methodologies/per-artifact-methodologies.md#session-baseline) | Supplementary (Tier-C aggregation) | Operational Supplementary | appended | per-run |
+| [`significance-scoring.md`](significance-scoring.md) | [`per-artifact-methodologies.md#significance-scoring`](../methodologies/per-artifact-methodologies.md#significance-scoring) | Check 1 + Check 4 (evidence per ranked item) | Family A | 4 | per-run |
+| [`stakeholder-impact.md`](stakeholder-impact.md) | [`per-artifact-methodologies.md#stakeholder-perspectives`](../methodologies/per-artifact-methodologies.md#stakeholder-perspectives) | Check 1 (named actors + influence network) | Family A | 6 | per-run |
+| [`swot-analysis.md`](swot-analysis.md) | [`per-artifact-methodologies.md#swot-analysis`](../methodologies/per-artifact-methodologies.md#swot-analysis) | Check 1 + Check 4 (evidence) + Check 5 (Mermaid) | Family A | 10 | per-run |
+| [`synthesis-summary.md`](synthesis-summary.md) | [`per-artifact-methodologies.md#synthesis-summary`](../methodologies/per-artifact-methodologies.md#synthesis-summary) | Check 1 + Check 5 (Mermaid) | Family A | 2 | per-run |
+| [`threat-analysis.md`](threat-analysis.md) | [`per-artifact-methodologies.md#threat-analysis`](../methodologies/per-artifact-methodologies.md#threat-analysis) | Check 1 (Threat Taxonomy + attack tree) | Family A | 11 | per-run |
+| [`voter-segmentation.md`](voter-segmentation.md) | [`per-artifact-methodologies.md#voter-segmentation`](../methodologies/per-artifact-methodologies.md#voter-segmentation) | Check 8 (SCB segment cuts) | Family D | 17 | per-run |
+| [`wildcards-blackswans.md`](wildcards-blackswans.md) | [`per-artifact-methodologies.md#wildcards--black-swans`](../methodologies/per-artifact-methodologies.md#wildcards--black-swans) | Supplementary (year-ahead/cycle blocking) | Analytical Supplementary | 22 | mixed (year/cycle) |
+| [`workflow-audit.md`](workflow-audit.md) | [`per-artifact-methodologies.md#workflow-audit`](../methodologies/per-artifact-methodologies.md#workflow-audit) | Supplementary (Tier-C mandatory) | Operational Supplementary | appended | per-run |
+
+> **AGGREGATION_ORDER positions** are 1-based offsets into the canonical narrative order in [`scripts/render-lib/aggregator/order.ts`](../../scripts/render-lib/aggregator/order.ts). Templates marked "appended" are not in `AGGREGATION_ORDER` and are appended alphabetically after the 30 canonical sections (see [`aggregate.ts §189-202`](../../scripts/render-lib/aggregator/aggregate.ts#L189)).
+>
+> **Reader Intelligence Guide** rows are emitted by [`scripts/render-lib/aggregator/reader-guide.ts`](../../scripts/render-lib/aggregator/reader-guide.ts) for every produced artifact in the run folder; the rendered article shows them once, immediately after the executive brief.
+
+---
+
 ## 🤖 Artifact → workflow → gate check mapping
 
 The 11 agentic news workflows in `.github/workflows/news-*.md` render these templates into concrete artifacts under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. Authoring contract: [`.github/prompts/README.md`](../../.github/prompts/README.md). Tradecraft canon: [`../methodologies/osint-tradecraft-standards.md`](../methodologies/osint-tradecraft-standards.md).
