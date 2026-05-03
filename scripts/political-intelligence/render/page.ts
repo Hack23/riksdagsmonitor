@@ -22,6 +22,7 @@ import { fileURLToPath } from 'url';
 import type { Language } from '../../types/language.js';
 import { LANGUAGE_META, escapeHtml } from '../../sitemap-html/index.js';
 import { buildChrome } from '../../render-lib/chrome.js';
+import { getFaqItems, FAQ_HEADING } from '../../render-lib/faq-i18n.js';
 
 import { collectCatalog } from '../catalog.js';
 import { collectDailyDays } from '../daily-streams.js';
@@ -96,7 +97,7 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
     mainEntityOfPage: `${BASE_URL}/${selfFile}`,
     dateModified: latestDate,
     dateCreated: '2026-04-01',
-    isPartOf: { '@type': 'WebSite', name: 'Riksdagsmonitor', url: BASE_URL },
+    isPartOf: { '@id': `${BASE_URL}/#website` },
     publisher: {
       '@type': 'Organization', name: 'Hack23 AB', url: 'https://www.hack23.com',
       logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/logo.png` },
@@ -124,6 +125,31 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
     })),
   } : null;
 
+  // Methodology + template ItemLists — round-7 SEO uplift. The
+  // `CollectionPage.hasPart` already references the directories, but
+  // crawlers reward an explicit `ItemList` of the individual catalogued
+  // entries (one ListItem per methodology / template).
+  const methodologiesItemList = methodologies.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': `${BASE_URL}/${selfFile}#methodologies-itemlist`,
+    name: t.methodologies,
+    numberOfItems: methodologies.length,
+    itemListElement: methodologies.map((m, i) => ({
+      '@type': 'ListItem', position: i + 1, name: m.title, url: m.githubUrl,
+    })),
+  } : null;
+  const templatesItemList = templates.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': `${BASE_URL}/${selfFile}#templates-itemlist`,
+    name: t.templates,
+    numberOfItems: templates.length,
+    itemListElement: templates.map((tpl, i) => ({
+      '@type': 'ListItem', position: i + 1, name: tpl.title, url: tpl.githubUrl,
+    })),
+  } : null;
+
   const breadcrumbLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -143,6 +169,7 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
   const websiteLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${BASE_URL}/#website`,
     name: 'Riksdagsmonitor',
     url: BASE_URL,
     description: 'Swedish Parliament Intelligence Platform - Real-time monitoring, coalition predictions, and comprehensive political analysis',
@@ -157,6 +184,23 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
     breadcrumbLd,
   ];
   if (recentDaysItemList) jsonLd.push(recentDaysItemList);
+  if (methodologiesItemList) jsonLd.push(methodologiesItemList);
+  if (templatesItemList) jsonLd.push(templatesItemList);
+
+  // Localised keyword aggregation (round-7 SEO) — extends the
+  // `t.metaKeywords` baseline with deduplicated methodology + template
+  // titles so each per-language page exposes section-specific
+  // long-tail vocabulary instead of an English-leaning fallback.
+  const keywordSet = new Set<string>(
+    t.metaKeywords.split(',').map((s) => s.trim()).filter(Boolean),
+  );
+  for (const m of methodologies) keywordSet.add(m.title);
+  for (const tpl of templates) keywordSet.add(tpl.title);
+  // Cap aggregated keywords to ~30 unique entries (Bing flags >50 as
+  // stuffing); preserve insertion order for stable test snapshots.
+  const aggregatedKeywords = Array.from(keywordSet).slice(0, 30).join(', ');
+
+  const faqItems = getFaqItems('politicalIntelligence', lang);
 
   const hreflangAlternates: Partial<Record<Language, string>> = {};
   for (const l of LANGUAGES) {
@@ -167,7 +211,7 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
     lang,
     title: t.title,
     description: t.metaDescription,
-    keywords: t.metaKeywords,
+    keywords: aggregatedKeywords,
     canonicalPath: selfFile,
     hreflangAlternates,
     defaultAlternateBase: 'political-intelligence.html',
@@ -182,6 +226,8 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
     ],
     jsonLd,
     extraStyle: PI_EXTRA_STYLE,
+    faqItems,
+    speakableSelectors: ['.pi-page-hero h1', '.pi-page-hero .pi-subtitle'],
   });
 
   const body = `    <div class="pi-container">
@@ -239,12 +285,27 @@ ${templateCardsHtml}
             <h3 style="font-family: var(--font-heading, 'Orbitron', sans-serif); color: var(--primary-yellow, #ffbe0b); font-size: 1.1rem; margin-top: 1.5rem;">${escapeHtml(t.recentDays)}</h3>
 ${recentDaysHtml}
 ${olderDays.length > 0 ? `
-            <button type="button" class="pi-older-toggle" aria-expanded="false" aria-controls="pi-older-days" onclick="(function(b){var el=document.getElementById('pi-older-days');var exp=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',(!exp).toString());if(exp){el.setAttribute('hidden','');}else{el.removeAttribute('hidden');}})(this)">
+            <details class="pi-older-details" id="pi-older-days-wrapper">
+              <summary class="pi-older-toggle">
                 <span aria-hidden="true">🕰️</span> ${escapeHtml(t.olderDays)} (${olderDays.length}) — ${escapeHtml(t.showMore)}
-            </button>
-            <div id="pi-older-days" class="pi-older-content" hidden>
+              </summary>
+              <div id="pi-older-days" class="pi-older-content">
 ${olderDaysHtml}
-            </div>` : ''}
+              </div>
+            </details>` : ''}
+        </section>
+
+        <!-- FAQ section (round-7 SEO uplift) — visible companion to the
+             auto-emitted FAQPage JSON-LD; uses native <details>/<summary>
+             so progressive disclosure stays crawlable without JS. -->
+        <section id="faq" class="pi-section pi-faq" aria-labelledby="pi-faq-heading">
+            <div class="pi-section-header">
+              <h2 id="pi-faq-heading"><span aria-hidden="true">❓</span> ${escapeHtml(FAQ_HEADING[lang])}</h2>
+            </div>
+${faqItems.map((f) => `            <details class="pi-faq-item">
+              <summary>${escapeHtml(f.question)}</summary>
+              <p>${escapeHtml(f.answer)}</p>
+            </details>`).join('\n')}
         </section>
     </div>`;
 

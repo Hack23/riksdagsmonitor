@@ -196,4 +196,41 @@ describe('Political Intelligence HTML Generation', () => {
       });
     }
   });
+
+  describe('SEO uplift: keywords + FAQ', () => {
+    let html: string;
+    beforeAll(() => {
+      html = mod.generatePoliticalIntelligenceHtml('en');
+    });
+
+    it('aggregates keywords from methodology + template titles (capped at 30)', () => {
+      const match = html.match(/name="keywords" content="([^"]+)"/);
+      expect(match).not.toBeNull();
+      const keywords = match![1]!.split(',').map((k) => k.trim());
+      expect(keywords.length).toBeLessThanOrEqual(30);
+      expect(keywords.length).toBeGreaterThan(5);
+    });
+
+    it('deduplicates keyword entries', () => {
+      const match = html.match(/name="keywords" content="([^"]+)"/);
+      const keywords = match![1]!.split(',').map((k) => k.trim());
+      const unique = new Set(keywords);
+      expect(unique.size).toBe(keywords.length);
+    });
+
+    it('emits a FAQPage JSON-LD block', () => {
+      expect(html).toContain('"@type":"FAQPage"');
+    });
+
+    it('emits a visible FAQ section with localised heading', () => {
+      expect(html).toContain('id="pi-faq-heading"');
+      expect(html).toContain('Frequently Asked Questions');
+      expect(html).toContain('<details class="pi-faq-item">');
+    });
+
+    it('localises the FAQ heading for non-English pages', () => {
+      const svHtml = mod.generatePoliticalIntelligenceHtml('sv');
+      expect(svHtml).toContain('Vanliga frågor');
+    });
+  });
 });

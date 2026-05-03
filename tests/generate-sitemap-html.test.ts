@@ -339,6 +339,49 @@ describe('Sitemap HTML Generation', () => {
     });
   });
 
+  describe('SEO uplift: meta description + FAQ', () => {
+    let html: string;
+    beforeAll(() => {
+      const articlesByLang = module.getArticlesByLanguage();
+      html = module.generateSitemapHtml('en', articlesByLang);
+    });
+
+    it('emits a meta description between 140 and 200 chars (EN budget per seo-metadata-contract.md §4)', () => {
+      const match = html.match(/name="description" content="([^"]+)"/);
+      expect(match).not.toBeNull();
+      const desc = match![1]!;
+      expect(desc.length).toBeGreaterThanOrEqual(140);
+      expect(desc.length).toBeLessThanOrEqual(200);
+    });
+
+    it('emits a FAQPage JSON-LD block', () => {
+      expect(html).toContain('"@type":"FAQPage"');
+      expect(html).toContain('"@type":"Question"');
+    });
+
+    it('emits a visible FAQ section with localised heading', () => {
+      expect(html).toContain('id="sitemap-faq-heading"');
+      expect(html).toContain('Frequently Asked Questions');
+      expect(html).toContain('<details class="sitemap-faq-item">');
+    });
+
+    it('localises the FAQ heading for non-English pages', () => {
+      const articlesByLang = module.getArticlesByLanguage();
+      const svHtml = module.generateSitemapHtml('sv', articlesByLang);
+      expect(svHtml).toContain('Vanliga frågor');
+    });
+
+    it('emits a WebPage JSON-LD node with @id', () => {
+      expect(html).toContain('"@type":"WebPage"');
+      expect(html).toContain('#webpage');
+    });
+
+    it('emits an ItemList JSON-LD of catalogued articles (up to 200)', () => {
+      expect(html).toContain('"@type":"ItemList"');
+      expect(html).toContain('#articles-itemlist');
+    });
+  });
+
   describe('Generated Files Validation', () => {
     const sitemapFiles = [
       'sitemap_sv.html', 'sitemap_da.html', 'sitemap_no.html',
