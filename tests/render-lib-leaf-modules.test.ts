@@ -39,6 +39,8 @@ import {
 } from '../scripts/render-lib/aggregator/cleaning/process-meta.js';
 import {
   cleanArtifactBody,
+  collapseRepeatedFooterBlocks,
+  dedupeAdjacentDuplicateLines,
   demoteHeadings,
   rewriteRelativeLinks,
   stripInlineReaderGuide,
@@ -635,5 +637,99 @@ describe('aggregator/cleaning/structural — stripInlineReaderGuide', () => {
     const cleaned = cleanArtifactBody(raw);
     expect(cleaned).not.toContain('Reader Intelligence Guide');
     expect(cleaned).toContain('Actual analysis here.');
+  });
+});
+
+describe('aggregator/cleaning/structural — dedupeAdjacentDuplicateLines', () => {
+  it('collapses two identical adjacent classification rows', () => {
+    const body = [
+      '| Dimension | Classification | Rationale |',
+      '|-----------|---------------|-----------|',
+      '| Policy domain | Infrastructure | foo [HD123] |',
+      '| Policy domain | Infrastructure | foo [HD123] |',
+      '| Urgency | HIGH | bar |',
+    ].join('\n');
+    const out = dedupeAdjacentDuplicateLines(body);
+    const occurrences = out.match(/Policy domain \| Infrastructure/g) ?? [];
+    expect(occurrences.length).toBe(1);
+    expect(out).toContain('| Urgency | HIGH | bar |');
+  });
+
+  it('keeps non-adjacent duplicate lines intact', () => {
+    const body = ['Line A.', 'Line B.', 'Line A.'].join('\n');
+    expect(dedupeAdjacentDuplicateLines(body)).toBe(body);
+  });
+
+  it('preserves duplicates inside a fenced code block', () => {
+    const body = ['```', 'foo', 'foo', '```', 'foo', 'foo'].join('\n');
+    const out = dedupeAdjacentDuplicateLines(body);
+    // Inside the fence both `foo` lines remain; outside the fence one
+    // is collapsed.
+    expect(out).toBe(['```', 'foo', 'foo', '```', 'foo'].join('\n'));
+  });
+
+  it('is idempotent (applying twice equals applying once)', () => {
+    const body = ['x', 'x', 'x', '', 'y', 'y'].join('\n');
+    const once = dedupeAdjacentDuplicateLines(body);
+    expect(dedupeAdjacentDuplicateLines(once)).toBe(once);
+  });
+});
+
+describe('aggregator/cleaning/structural — collapseRepeatedFooterBlocks', () => {
+  it('collapses repeated **ISMS** footer lines to the first occurrence', () => {
+    const body = [
+      'Body content.',
+      '',
+      '**ISMS classification**: PUBLIC, no PII.',
+      '',
+      'More content.',
+      '',
+      '**ISMS classification**: PUBLIC, no PII.',
+    ].join('\n');
+    const out = collapseRepeatedFooterBlocks(body);
+    const matches = out.match(/\*\*ISMS classification\*\*/g) ?? [];
+    expect(matches.length).toBe(1);
+    expect(out).toContain('More content.');
+  });
+
+  it('collapses repeated `**Classified under …**` markers', () => {
+    const body = [
+      '**Classified under ISO 27001:A.5.10**',
+      'Body.',
+      '**Classified under ISO 27001:A.5.10**',
+    ].join('\n');
+    const out = collapseRepeatedFooterBlocks(body);
+    expect(out.match(/Classified under/g)?.length ?? 0).toBe(1);
+  });
+
+  it('leaves a single occurrence untouched', () => {
+    const body = '**ISMS**: PUBLIC.\n\nBody.';
+    expect(collapseRepeatedFooterBlocks(body)).toBe(body);
+  });
+
+  it('does not strip legitimate content that mentions ISMS in prose', () => {
+    const body = 'The ISMS framework requires this.\n\nThe ISMS framework requires this.';
+    // These lines do not start with the bold/italic footer marker so
+    // they are not treated as repeated footer blocks.
+    expect(collapseRepeatedFooterBlocks(body)).toBe(body);
+  });
+
+  it('cleanArtifactBody invokes the new cleaning steps (integration)', () => {
+    const raw = [
+      '---',
+      'title: Test',
+      '---',
+      '# Test Artifact',
+      '',
+      '**ISMS classification**: PUBLIC.',
+      '',
+      'Body line.',
+      'Body line.',
+      '',
+      '**ISMS classification**: PUBLIC.',
+    ].join('\n');
+    const cleaned = cleanArtifactBody(raw);
+    expect(cleaned.match(/\*\*ISMS classification\*\*/g)?.length ?? 0).toBe(1);
+    expect(cleaned.match(/Body line\./g)?.length ?? 0).toBe(1);
   });
 });

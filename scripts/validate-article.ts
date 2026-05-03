@@ -38,6 +38,7 @@ import { readFile, readdir, stat } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join, relative, resolve, basename, dirname } from 'node:path';
 import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 
 import { getBySubfolder } from './render-lib/article-types.js';
 
@@ -105,6 +106,47 @@ const REQUIRED_LANDMARKS: ReadonlyArray<{ pattern: RegExp; label: string; code: 
 const MIN_BLUF_PROSE_CHARS = 80;
 const MAX_BLUF_PROSE_CHARS = 1200; // generous — long BLUFs are fine; we just guard against empty/stub or runaway dumps
 const MIN_PER_DOC_DOK_ID_HITS = 1;
+
+/**
+ * Minimum number of evidence anchors required inside the BLUF prose
+ * paragraph. An anchor is any of:
+ *   - a `dok_id`-shaped token (e.g. `HD12345`, `FiU17`, `Prop. 2025/26:259`)
+ *   - a vote ID (`votering_id` or `Votering`)
+ *   - a primary-source URL on `data.riksdagen.se` / `riksdagen.se` /
+ *     `regeringen.se` / `scb.se` / `imf.org`
+ *   - a markdown link to a per-document section (`#rm-`)
+ *
+ * One anchor is a soft floor — the issue calls for "every BLUF claim
+ * carries an evidence anchor", but enforcing a per-claim count is
+ * brittle without natural-language parsing. The floor here guarantees
+ * that at least one verifiable anchor reaches the BLUF.
+ */
+const MIN_BLUF_EVIDENCE_ANCHORS = 1;
+
+/**
+ * Footer-style markers that must not appear more than once in the
+ * aggregated article. Catches the same family of repeated blocks the
+ * cleaning pipeline guards against in {@link
+ * scripts/render-lib/aggregator/cleaning/structural.ts}.
+ *
+ * Each pattern anchors to the start of a line (`^`) and matches the
+ * **full line** content so that two distinct footer lines like
+ * `**ISMS classification**: PUBLIC, no PII.` and
+ * `**ISMS classification**: INTERNAL, restricted.` produce different
+ * match strings and are therefore NOT flagged as duplicates. Only
+ * truly identical footer lines (same text) are counted.
+ *
+ * Patterns are case-insensitive to catch `**isms …**` emitted by
+ * some AI templates.
+ */
+const FOOTER_MARKER_PATTERNS: ReadonlyArray<{ pattern: RegExp; label: string }> = [
+  { pattern: /^[^\S\n]*\*\*ISMS\b[^\n]*/gim, label: '**ISMS …**' },
+  { pattern: /^[^\S\n]*\*\*Classified under\b[^\n]*/gim, label: '**Classified under …**' },
+  { pattern: /^[^\S\n]*\*\*Hack23 ISMS\b[^\n]*/gim, label: '**Hack23 ISMS …**' },
+  { pattern: /^[^\S\n]*\*\*Article-Generation contract\b[^\n]*/gim, label: '**Article-Generation contract …**' },
+  { pattern: /^[^\S\n]*\*\*Provenance\b[^\n]*/gim, label: '**Provenance …**' },
+  { pattern: /^[^\S\n]*\*\*GDPR\b[^\n]*/gim, label: '**GDPR …**' },
+];
 
 async function walk(dir: string, name: string): Promise<string[]> {
   if (!existsSync(dir)) return [];
@@ -174,6 +216,56 @@ function extractPerDocumentSections(article: string): Array<{ id: string; body: 
     m = cursor.match(DOK_ID_HEADING);
   }
   return sections;
+}
+
+/**
+ * Count evidence anchors inside a BLUF prose paragraph. Anchors are the
+ * traceable tokens that lift a claim from rhetoric to verifiable
+ * intelligence:
+ *
+ *   - dok_id-shaped codes (`HD12345`, `FiU17`)
+ *   - parliamentary doc references (`Prop. 2025/26:247`, `Skr. 2025/26:259`)
+ *   - vote IDs (`votering_id=…`, `Votering(\s+\d|:\s+\w)`)
+ *   - primary-source URLs on `data.riksdagen.se` / `riksdagen.se` /
+ *     `regeringen.se` / `scb.se` / `imf.org`
+ *   - markdown anchors to per-document sections (`#rm-`)
+ */
+export function countBlufEvidenceAnchors(bluf: string): number {
+  const patterns: RegExp[] = [
+    // Riksdag dok_ids and committee betänkande codes — merged into one
+    // alternation so the engine counts each token exactly once:
+    //
+    //   Branch 1 (H-series): `H` + lookahead requiring ≥1 digit + 6–10
+    //   alphanumeric chars. Matches `HD03259`, `HC01SoU29`, `HD024100`.
+    //   The lookahead prevents ordinary words like "Hardened" (no digits)
+    //   or "Helsinki" (no digits) from matching.
+    //
+    //   Branch 2 (committee codes): two uppercase Riksdag-alphabet letters
+    //   + 1–8 digits. Matches `KU23`, `AU10`, `TU5`. Does NOT re-match
+    //   H-series tokens — the regex engine tries branch 1 first at any H;
+    //   if branch 1 succeeds (e.g. `HD03259`) it consumes the whole token
+    //   before the `g` flag advances, so branch 2 is never attempted there.
+    /\b(?:H(?=[A-Za-z0-9]*[0-9])[A-Za-z0-9]{6,10}|[A-ZÅÄÖ]{2}\d{1,8})\b/g,
+    // Parliamentary doc references.
+    /\b(?:Prop|Skr|Mot|Bet|Ds|SOU|Dir)\.\s*\d{4}\/\d{2}:\d+/gi,
+    // Riksrevisionen audit references — "RiR 2025:30".
+    /\bRiR\s+\d{4}:\d+/gi,
+    // Vote IDs.
+    /\bvotering(?:_id)?\b[^\n]*?\d/gi,
+    // Primary-source URLs (matches the full URL token so that each URL
+    // contributes exactly one anchor regardless of any embedded dok_id in
+    // the path segment — dok_id double-counting is acceptable because the
+    // URL is independently verifiable).
+    /https?:\/\/(?:www\.)?(?:data\.riksdagen\.se|riksdagen\.se|regeringen\.se|scb\.se|imf\.org)[^\s)]*/gi,
+    // Markdown anchors to per-document / aggregator sections.
+    /#rm-[a-z0-9-]+/g,
+  ];
+  let total = 0;
+  for (const p of patterns) {
+    const matches = bluf.match(p);
+    if (matches) total += matches.length;
+  }
+  return total;
 }
 
 /**
@@ -248,6 +340,58 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
         code: 'bluf-too-long',
         message: `BLUF prose is ${bluf.length} chars — maximum is ${MAX_BLUF_PROSE_CHARS}. Move the long-form analysis to the Synthesis Summary or Intelligence Assessment section.`,
       });
+    }
+    // 3b. BLUF must carry at least one evidence anchor — every claim
+    //     should be reachable from a primary source.
+    const anchors = countBlufEvidenceAnchors(bluf);
+    if (anchors < MIN_BLUF_EVIDENCE_ANCHORS) {
+      violations.push({
+        file: rel,
+        code: 'bluf-missing-evidence-anchor',
+        message: `BLUF carries ${anchors} evidence anchor(s) — minimum is ${MIN_BLUF_EVIDENCE_ANCHORS}. Add a dok_id (e.g. HD12345), parliamentary reference (Prop. 2025/26:259), vote ID, or primary-source URL (data.riksdagen.se / regeringen.se / scb.se / imf.org).`,
+      });
+    }
+  }
+
+  // 3c. Reader Intelligence Guide must contain at least one data row,
+  //     not just the heading. The aggregator emits the table; missing
+  //     rows means the artifact set is empty or the renderer regressed.
+  const guideHeadingMatch = text.match(/^##\s+Reader Intelligence Guide\s*$/m);
+  if (guideHeadingMatch && guideHeadingMatch.index !== undefined) {
+    const after = text.slice(guideHeadingMatch.index + guideHeadingMatch[0].length);
+    const stop = after.search(/^##\s+\S/m);
+    const region = stop === -1 ? after : after.slice(0, stop);
+    // A data row in the RIG table starts with `| [` (the markdown link
+    // wrapping the reader-need cell). Heuristic, but exactly matches
+    // {@link buildReaderGuide}'s output.
+    const dataRows = region.match(/^\|\s*\[/gm) ?? [];
+    if (dataRows.length === 0) {
+      violations.push({
+        file: rel,
+        code: 'reader-guide-empty-table',
+        message: `Reader Intelligence Guide table has zero data rows — the aggregator should emit at least one row per available artifact lens. Verify the artifact set is non-empty and re-aggregate.`,
+      });
+    }
+  }
+
+  // 3d. Footer-style markers must not appear more than once in the
+  //     aggregated article. The cleaning pipeline collapses duplicates
+  //     before aggregation; a duplicate here means cleaning regressed
+  //     or the AI agent emitted the same footer in two artifact bodies.
+  for (const marker of FOOTER_MARKER_PATTERNS) {
+    const matches = text.match(marker.pattern) ?? [];
+    if (matches.length > 1) {
+      // Count *unique* occurrences — a footer that legitimately recurs
+      // (e.g. distinct ISMS classifications per per-document section)
+      // produces different strings; only true duplicates are flagged.
+      const unique = new Set(matches);
+      if (unique.size < matches.length) {
+        violations.push({
+          file: rel,
+          code: 'duplicate-footer-marker',
+          message: `Footer marker ${marker.label} appears ${matches.length} times with ${matches.length - unique.size} duplicate(s) — collapse via the cleaning pipeline (scripts/render-lib/aggregator/cleaning/structural.ts → collapseRepeatedFooterBlocks).`,
+        });
+      }
     }
   }
 
@@ -351,8 +495,17 @@ async function main(): Promise<void> {
   process.exit(1);
 }
 
-main().catch((err: unknown) => {
-  console.error('💥 validate-article: unhandled error');
-  console.error(err);
-  process.exit(2);
-});
+// Only execute the CLI entry point when this module is invoked
+// directly (e.g. `npx tsx scripts/validate-article.ts`); importing the
+// module from unit tests must not trigger an analysis-tree walk.
+const isCliEntry =
+  process.argv[1] !== undefined &&
+  resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1]);
+
+if (isCliEntry) {
+  main().catch((err: unknown) => {
+    console.error('💥 validate-article: unhandled error');
+    console.error(err);
+    process.exit(2);
+  });
+}
