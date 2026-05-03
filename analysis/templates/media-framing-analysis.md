@@ -2,28 +2,22 @@
   <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
 </p>
 
-<h1 align="center">📰 Media Framing & Influence-Operations Analysis Template</h1>
+<h1 align="center">📰 Media Framing & Influence-Operations Analysis</h1>
 
 <p align="center">
-  <strong>📊 Mapping Narratives, Manipulation Vectors & Frame Lifecycles Across Press, Broadcast and Platform Ecosystems</strong><br>
-  <em>🎯 Frame Packages · Entman Functions · Cognitive Vulnerabilities · DISARM TTPs · Coordinated-Inauthentic-Behaviour Signals · Half-Life · Counter-Resilience · Global Audience Orientation · Multi-Dimensional Alignment</em>
+  <strong>📊 Narratives · Manipulation Vectors · Frame Lifecycles · Global Audience Orientation</strong><br>
+  <em>🎯 Entman Functions · Cognitive Vulnerabilities · DISARM TTPs · CIB Signals · RRPA · Counter-Resilience</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-0A66C2?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-0A66C2?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--03-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-05-02 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-05-03 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 559534-7807) | **🏷️ Classification:** Public
-
-> **📌 Production contract:** Produce on every run and save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/media-framing-analysis.md` to maintain a longitudinal record of media narratives **and the manipulation/influence-operations layer riding on top of them**. On low-salience days, provide a lighter baseline update covering the dominant frame and any active influence-operation signals; on high-salience days, expand to the full template. Uses **public** media coverage and **public** social-media posts only — no scraping behind paywalls, no private-account content, no leaked or hacked material.
-
-> **🚫 Founding doctrine — there is NO neutral outlet, NO neutral algorithm, NO neutral broadcaster.** Every outlet has ownership structure, funding mix, board-appointment authority, audience demographic, editorial culture and documented bias. "Public-service" is **publicly funded**, not bias-free — boards are appointed by political bodies (in Sweden: Förvaltningsstiftelsen for SVT/SR/UR, with parliamentary input), funding is set by government appropriation, and editorial line is shaped by recruitment, training and institutional culture (cf. Reuters Institute Digital News Report 2024; Nordicom Media Ownership Database). "Mainstream" / "quality" press carries owner ideology (Bonnier / Schibsted / NWT Media / Stampen-now-Bonnier-regional / Mittmedia-now-Bonnier — Sweden's national press is heavily concentrated). Every algorithm optimises an objective function (engagement, watch-time, retention) that has documented partisan asymmetries. **The platform's only neutrality is procedural: equal analytical depth across all 8 Riksdag parties; equal evidentiary discipline across all outlets; explicit ownership/funding/lean disclosure for every cited outlet.** Claiming an outlet is "neutral" or "balanced" without evidence is rejected at Pass 2.
-
-> **✨ What to produce — non-negotiable minimum (v2.2):** (1) **🌍 Global Audience Orientation** with political-system context and multi-dimensional alignment key for international readers; (2) ≥ 3 named frame packages with **Entman functions** (problem definition / causal attribution / moral evaluation / treatment); (3) **cognitive-vulnerability map** linking each frame to ≥ 1 documented bias; (4) **manipulation indicators** mapped to **DISARM TTPs** with `[unconfirmed]` flag where corroboration is missing; (5) **narrative-laundering chain** (fringe → alt → MSM) for any frame that touches it; (6) **comparative-international frame lineage with global notes** (Asia / Americas / Europe perspective per major frame); (7) **frame lifecycle / longevity** — peak, half-life estimate, sleeper/zombie probability; (8) **impact conversion (RRPA)** — Reach × Resonance × Persistence × Action; (9) **counter-resilience plan** — prebunking, inoculation, debunking ladder; (10) **forward watchlist** with WEP bands; (11) Admiralty grade on every external citation; (12) **outlet bias audit** for every outlet cited — ownership, funding mix, board-appointment authority, **multi-dimensional editorial lean** (not just left/right), Reuters Institute Trust score, Pressombudsman complaints, foreign-actor link.
 
 ---
 
@@ -81,9 +75,13 @@
 | **Generated** | `YYYY-MM-DD HH:MM UTC` |
 | **Subject** | `e.g., HD03262 permanent-residence reform package` |
 | **Coverage window** | `2026-04-28 to 2026-05-01` |
+| **Horizon band** | `[72h / week / month / quarter / year / cycle / election]` |
+| **Salience tier** | `High (full template) / Low (baseline update — dominant frame + active influence-operation signals only)` |
+| **Save path** | `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/media-framing-analysis.md` |
+| **Source scope** | Public media + public social-media posts only — no paywalled scraping, no private-account content, no leaked or hacked material |
 | **Outlets reviewed (Sweden)** | `DN, SvD, Aftonbladet, Expressen, SVT, SR, TV4, Dagens ETC, Kvartal, Nyheter Idag, Samhällsnytt, Riks, regional press sample` |
 | **International outlets reviewed** | `Reuters / AP / DPA / AFP / Politico EU / FT / NYT / Le Monde / Der Spiegel / Helsingin Sanomat / Aftenposten / Berlingske / South China Morning Post / NHK World / Al Jazeera English` |
-| **State-affiliated outlets monitored** | `RT, Sputnik, RIA, TASS, CGTN, Global Times, PressTV` (for amplification fingerprinting only — not as factual sources) |
+| **State-affiliated outlets monitored** | `RT, Sputnik, RIA, TASS, CGTN, Global Times, PressTV` (amplification fingerprinting only — never cited as factual sources) |
 | **Counts** | `N articles / N broadcast segments / N editorials / N social posts (public)` |
 | **Overall Confidence** | `🟧 MEDIUM [B2]` |
 
@@ -422,15 +420,15 @@ Public media coverage and public social-media posts only. Representative sample 
 
 **Document Control**
 - **Template path:** `/analysis/templates/media-framing-analysis.md`
-- **Version:** 2.2 (global audience orientation; multi-dimensional alignment framework — 2026-05-02)
-- **Previous version:** 2.1 (no-neutral-media doctrine; outlet bias audit; algorithmic-asymmetry doctrine — 2026-05-01)
+- **Version:** 2.3 (preamble notices removed; production-mode info moved to Framing Context; version badge corrected — 2026-05-03)
+- **Previous version:** 2.2 (global audience orientation; multi-dimensional alignment framework — 2026-05-02)
 - **Referenced by:** [`ai-driven-analysis-guide.md` § Step 5](../methodologies/ai-driven-analysis-guide.md#step-5--extensions-f3ead-analyze-continued), [`per-artifact-methodologies.md` § media-framing-analysis](../methodologies/per-artifact-methodologies.md#media-framing-analysis), [`electoral-domain-methodology.md` § Part 5](../methodologies/electoral-domain-methodology.md#-part-5--media-framing--influence-operations-analysis-media-framing-analysismd)
 - **Classification:** Public
 - **Next Review:** 2026-08-01
 
 ---
 
-## ✅ Pass-2 Self-Audit Checklist (v2.2 — required)
+## ✅ Pass-2 Self-Audit Checklist (v2.3 — required)
 
 > **Purpose:** AI-FIRST principle requires a Pass-2 read-back-and-improve. After producing this artifact in Pass 1, re-read it end-to-end and verify each item below. Document any remediation in [`methodology-reflection.md`](methodology-reflection.md) §"Pass-2 audit log". Any unchecked ❌ box at the end of Pass 2 forces a Pass-3 rewrite of the affected section.
 
