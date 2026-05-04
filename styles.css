@@ -15221,28 +15221,37 @@ html[data-theme="light"] body.rm-article-body .pi-stream-count {
 }
 
 /* ── Improved Article Readability ──────────────────────────────────────── */
+/* Narrow the reading column by updating the token used by the existing
+   container rule (`body.rm-article-body .rm-article-body > :where(…)`).
+   72ch is the sweet-spot for sustained long-form reading. */
+body.rm-article-body {
+  --rm-container-reading: min(72ch, 100%);
+}
+
 .rm-article-body p,
 .rm-article-body li {
   font-size: 1.0625rem;
   line-height: 1.8;
   letter-spacing: -0.003em;
-  max-width: 72ch;
 }
 
+/* Use logical properties to stay consistent with the existing h2 block
+   (body.rm-article-body .rm-article-body h2 uses margin-block / padding-block)
+   and to support RTL languages (Arabic, Hebrew) correctly. */
 .rm-article-body h2 {
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 15%, transparent);
+  margin-block-start: 2.5rem;
+  padding-block-start: 1.5rem;
+  border-block-start: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 15%, transparent);
 }
 
 .rm-article-body h2:first-child {
-  border-top: none;
-  margin-top: 0;
-  padding-top: 0;
+  border-block-start: none;
+  margin-block-start: 0;
+  padding-block-start: 0;
 }
 
 .rm-article-body h3 {
-  margin-top: 2rem;
+  margin-block-start: 2rem;
 }
 
 .rm-article-body blockquote {

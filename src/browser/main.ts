@@ -152,15 +152,18 @@ if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
         // Fire one update check immediately after registration.
         reg.update().catch(() => { /* ignore offline */ });
 
-        // Silently activate new service worker without user interaction.
-        // The network-first strategy ensures users always get fresh content
-        // on next navigation without needing a popup or forced reload.
+        // public/sw.js calls self.skipWaiting() in its install event, so
+        // a newly downloaded worker skips the waiting phase and activates
+        // immediately. No additional logic is needed here; the handler below
+        // is retained only as a defensive fallback for any future SW variant
+        // that may not call skipWaiting() during install.
         reg.addEventListener('updatefound', () => {
           const installing = reg.installing;
           if (!installing) return;
           installing.addEventListener('statechange', () => {
+            // Post SKIP_WAITING in case a waiting worker exists (e.g. if a
+            // future SW build no longer calls skipWaiting() in install).
             if (installing.state === 'installed' && reg.waiting) {
-              // Skip waiting silently — new SW activates on next navigation
               reg.waiting.postMessage({ type: 'SKIP_WAITING' });
             }
           });
@@ -171,11 +174,11 @@ if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
 }
 
 /**
- * Render a non-blocking toast offering the user a one-click reload to
- * pick up the latest deployed content. Pure DOM, no framework.
- *
- * @deprecated No longer shown — the SW silently activates new versions.
- * Retained as dead code for backward compatibility with unit tests.
+ * Deprecated localization helpers retained for backward compatibility with
+ * `tests/sw-update-toast-labels.test.ts`. The SW update toast and the
+ * auto-reload behavior they supported have been removed; the network-first
+ * caching strategy in `public/sw.js` ensures fresh content on every
+ * navigation without user intervention.
  */
 
 /** Labels used by the SW update toast, localized per `<html lang>`. */
