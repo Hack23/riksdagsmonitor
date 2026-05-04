@@ -181,7 +181,7 @@ if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
  * navigation without user intervention.
  */
 
-/** Labels used by the SW update toast, localized per `<html lang>`. */
+/** @deprecated Labels previously used by the SW update toast. Retained for test backward compat. */
 interface UpdateToastLabels {
   readonly lang: string;
   readonly message: string;

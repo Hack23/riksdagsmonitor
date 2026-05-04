@@ -15228,29 +15228,32 @@ body.rm-article-body {
   --rm-container-reading: min(72ch, 100%);
 }
 
-.rm-article-body p,
-.rm-article-body li {
+/* Match the specificity of the existing generated-page rule so that
+   font-size/line-height overrides actually cascade correctly. */
+body.rm-article-body .rm-article-body p,
+body.rm-article-body .rm-article-body li {
   font-size: 1.0625rem;
   line-height: 1.8;
   letter-spacing: -0.003em;
 }
 
-/* Use logical properties to stay consistent with the existing h2 block
-   (body.rm-article-body .rm-article-body h2 uses margin-block / padding-block)
-   and to support RTL languages (Arabic, Hebrew) correctly. */
-.rm-article-body h2 {
+/* Use logical properties + matching specificity so spacing overrides apply
+   on generated pages (body.rm-article-body .rm-article-body h2 wins otherwise).
+   border-block-start adds a visual section divider between h2 headings; the
+   :first-child reset suppresses it for the first heading. */
+body.rm-article-body .rm-article-body h2 {
   margin-block-start: 2.5rem;
   padding-block-start: 1.5rem;
   border-block-start: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 15%, transparent);
 }
 
-.rm-article-body h2:first-child {
+body.rm-article-body .rm-article-body h2:first-child {
   border-block-start: none;
   margin-block-start: 0;
   padding-block-start: 0;
 }
 
-.rm-article-body h3 {
+body.rm-article-body .rm-article-body h3 {
   margin-block-start: 2rem;
 }
 
@@ -15300,6 +15303,11 @@ body.rm-article-body {
 .rm-footer-navigate ul,
 .rm-footer-trust ul,
 .rm-footer-isms ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
   gap: 0.25rem;
 }
 
