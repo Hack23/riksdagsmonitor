@@ -106,7 +106,10 @@ function locateArticleMd(date: string, subfolder: string): string | null {
 }
 
 function canonicalPathFor(_date: string, subfolder: string, lang: Language, date: string): string {
-  return `news/${date}-${subfolder}-${lang}.html`;
+  // Flatten nested subfolders (e.g. "election-cycle/current") into dashes
+  // so the output is always a flat file: news/2026-05-04-election-cycle-current-en.html
+  const flatSubfolder = subfolder.replace(/\//g, '-');
+  return `news/${date}-${flatSubfolder}-${lang}.html`;
 }
 
 function allCaseDates(): RenderCase[] {
@@ -117,16 +120,24 @@ function allCaseDates(): RenderCase[] {
     .map((e) => e.name)
     .sort();
   for (const date of dateDirs) {
-    const subs = fs.readdirSync(path.join(DAILY_DIR, date), { withFileTypes: true })
-      .filter((e) => e.isDirectory())
-      .map((e) => e.name);
-    for (const subfolder of subs) {
-      const subRepoRel = `analysis/daily/${date}/${subfolder}`;
-      const md = locateArticleMd(date, subfolder);
-      if (md) {
-        out.push({ date, subfolder, articleMdPath: md, subfolderRepoRelPath: subRepoRel });
+    // Recursively discover all subfolders (including nested ones like
+    // "election-cycle/current") that contain an article.md
+    const dateDir = path.join(DAILY_DIR, date);
+    const discoverSubfolders = (dir: string, prefix: string): void => {
+      const entries = fs.readdirSync(dir, { withFileTypes: true })
+        .filter((e) => e.isDirectory());
+      for (const entry of entries) {
+        const subfolder = prefix ? `${prefix}/${entry.name}` : entry.name;
+        const subRepoRel = `analysis/daily/${date}/${subfolder}`;
+        const md = locateArticleMd(date, subfolder);
+        if (md) {
+          out.push({ date, subfolder, articleMdPath: md, subfolderRepoRelPath: subRepoRel });
+        }
+        // Recurse into subdirectories (e.g. election-cycle/current, election-cycle/next)
+        discoverSubfolders(path.join(dir, entry.name), subfolder);
       }
-    }
+    };
+    discoverSubfolders(dateDir, '');
   }
   return out;
 }
