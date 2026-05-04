@@ -14914,6 +14914,10 @@ body.rm-article-body .pi-page-hero .pi-subtitle {
   letter-spacing: 0.04em;
 }
 
+html[data-theme="light"] body.rm-article-body .pi-page-hero .pi-subtitle {
+  color: var(--rm-warning-badge-text-light);
+}
+
 body.rm-article-body .pi-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
@@ -15009,6 +15013,15 @@ body.rm-article-body .pi-day-github,
 body.rm-article-body .pi-stream-link,
 body.rm-article-body .pi-artifact a {
   min-height: 44px;
+}
+
+body.rm-article-body .pi-card-title a,
+body.rm-article-body .pi-card-link a {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  padding-block: 0.2rem;
+  line-height: 1.35;
 }
 
 body.rm-article-body .pi-stream-link {
