@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-05-04T19:30:00Z",
+  "article_date": "2026-05-04",
+  "subfolder": "evening-analysis",
+  "cycle": "evening-analysis",
+  "pirs": [
+    {
+      "id": "PIR-001",
+      "title": "Gang crime eradication promise vs reality",
+      "source_document": "HD10458",
+      "status": "OPEN",
+      "priority": "P1",
+      "next_trigger": "HD10458 interpellation debate (T+7 to T+21)",
+      "carry_forward_to": "realtime-monitor"
+    },
+    {
+      "id": "PIR-002",
+      "title": "ESA/space sector investment announcement",
+      "source_document": "HD10461",
+      "status": "OPEN",
+      "priority": "P2",
+      "next_trigger": "HD10461 interpellation debate",
+      "carry_forward_to": "weekly-review"
+    },
+    {
+      "id": "PIR-003",
+      "title": "Agency activism constitutional framing",
+      "source_document": "HD10459",
+      "status": "OPEN",
+      "priority": "P2",
+      "next_trigger": "HD10459 interpellation debate; KU possible formal review",
+      "carry_forward_to": "weekly-review"
+    },
+    {
+      "id": "PIR-004",
+      "title": "Migration permanent permit elimination — S party trajectory",
+      "source_document": "HD03262-HD03265",
+      "status": "OPEN",
+      "priority": "P1",
+      "next_trigger": "S party follow-up motions; Migrationsverket implementation status",
+      "carry_forward_to": "monthly-review"
+    },
+    {
+      "id": "PIR-005",
+      "title": "Coalition durability post-election — C party preference",
+      "source_document": "evening-analysis-coalition-mathematics",
+      "status": "OPEN",
+      "priority": "P1",
+      "next_trigger": "C party congress declaration (T+60 to T+90)",
+      "carry_forward_to": "monthly-review"
+    },
+    {
+      "id": "PIR-006",
+      "title": "Nuclear EIA legal challenge filing",
+      "source_document": "HD01NU19",
+      "status": "OPEN",
+      "priority": "P2",
+      "next_trigger": "Environmental organizations filing (T+30 to T+60 post June 17)",
+      "carry_forward_to": "weekly-review"
+    },
+    {
+      "id": "PIR-007",
+      "title": "Ostlänken route change — Östergötland impact",
+      "source_document": "HD10463",
+      "status": "OPEN",
+      "priority": "P3",
+      "next_trigger": "HD10463 ministerial response",
+      "carry_forward_to": "weekly-review"
+    }
+  ]
+}
