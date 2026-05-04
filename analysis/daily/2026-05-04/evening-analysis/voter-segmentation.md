@@ -1,110 +1,102 @@
-# Voter Segmentation — Evening Analysis 2026-05-04
+# Voter Segmentation — Evening Analysis, 4 May 2026
 
-**Date**: 2026-05-04  
-**Framework**: Swedish voter typology applied to today's legislative output
-
----
-
-## Voter Segment Analysis
-
-### Segment 1: Migration Restriction Primary Voters (SD Core + KD Periphery)
-**Size**: ~28% of electorate  
-**Demographics**: Native-born Swedish, age 35–65, non-metropolitan, lower-middle income  
-**Today's legislation**: HD03262–65 = maximum activation signal  
-**Voting intention**: SD (primary), KD (secondary), M (tertiary)  
-**Electoral movement today**: Reinforced; no defection risk  
-**Message received**: "We delivered. Immigration under control."
+**Author**: James Pether Sörling | **Date**: 2026-05-04
 
 ---
 
-### Segment 2: Economic Competence Primary Voters (M Core)
-**Size**: ~22% of electorate  
-**Demographics**: University-educated, professional, 35–60, metropolitan and suburban  
-**Today's legislation**: HD01NU22 (competition), HD01FiU49 (debt evaluation), HD01NU19 (nuclear/energy cost)  
-**Voting intention**: M (primary), C (secondary)  
-**Electoral movement today**: Stable; M delivers on business-friendly reform  
-**Message received**: "M reformed competition rules and secured energy supply."  
-**Risk**: C as a competitor for this segment; C's reservations signal "M moderated by C" to M-leaning voters
+## Segmentation Framework
+
+Six voter segments are tracked. For each, today's parliamentary documents are assessed for relevance and mobilization potential.
 
 ---
 
-### Segment 3: Crime/Security Primary Voters (SD + M Swing)
-**Size**: ~20% of electorate  
-**Demographics**: Urban periphery, age 30–55, first and second generation immigrant backgrounds (counter-intuitively often SD-adjacent on crime)  
-**Today's legislation**: HD01JuU9 (court), HD01FöU13 (explosives), HD10458 (gang crime accountability)  
-**Voting intention**: SD (primary), M (secondary), potential S swing  
-**Electoral movement today**: Complex — JuU9 + FöU13 are positive government signals; HD10458 creates accountability risk  
-**Message received**: "Government is fighting crime seriously but hasn't eradicated it"  
-**Risk**: Gang crime spectacular event activates this segment against the government
+## Segment 1: Law-and-Order Prioritizers (~400,000 voters)
+
+**Profile**: 35–65, urban fringe and commuter belt, crime as top-1 issue, previous SD or M voters
+**Current alignment**: 60% Tidö-leaning, 40% S-leaning (crime-punitive S voters)
+**Key document**: HD024142 (V rejection of 13yr criminal age), Prop 246 (government's 13yr proposal)
+
+**Impact**: This segment is THE pivotal audience for the criminal age legislation. They voted for the Tidö coalition in 2022 because of the promise to get tough on youth gangs. If the 13-year threshold passes intact, the government solidifies this segment. If it fails or is diluted to 14 years, the narrative risks:
+- SD mobilizing this segment against M/KD ("they abandoned us again")
+- S potentially capturing the punitive-leaning fraction with a "14-year compromise is reasonable"
+
+**Mobilization delta**: HIGH if threshold passes (±25,000 net votes); MEDIUM-HIGH if diluted to 14 years.
 
 ---
 
-### Segment 4: Integration and Migration Liberalism Primary Voters (S + V Core)
-**Size**: ~18% of electorate  
-**Demographics**: Urban, educated, higher income, engaged with immigration as human rights issue  
-**Today's legislation**: HD03262–65 and HD01SfU28 = maximum negative activation  
-**Voting intention**: S (primary), V (secondary), MP (tertiary)  
-**Electoral movement today**: Strongly motivated to vote; negative motivation reinforcement  
-**Message received**: "Sweden has become cold and exclusionary. We must reverse this."  
-**Electoral effect**: S/V/MP base solidification; some C-leaning voters may shift left
+## Segment 2: Regional Infrastructure Voters (~200,000 voters)
+
+**Profile**: 40–70, Östergötland + southern commuter belt, local economic development as priority
+**Current alignment**: Historically swing; split 50/50 in 2022
+**Key document**: HD10463 (Ostlänken interpellation, Linköping station cancellation)
+
+**Impact**: The 500,000-person labour market impact of the Linköping station cancellation is specifically salient to this segment. This is the segment where S's "regional betrayal" narrative has the highest resonance. Carlson's May 25 answer is the critical decision point.
+
+**Geographic targeting**: 4 Riksdag constituencies affected (Östergötland 1–3, Södermanland rural)
+
+**Mobilization delta**: Up to 12,000 net votes if S succeeds in localizing the narrative; ±3 Riksdag seats.
 
 ---
 
-### Segment 5: Environmental/Green Primary Voters (MP + V Periphery)
-**Size**: ~8% of electorate  
-**Demographics**: Urban, young (18–35), university, environmentally engaged  
-**Today's legislation**: HD01NU19 (nuclear bypass) = maximum negative activation  
-**Voting intention**: MP (primary), V (secondary)  
-**Electoral movement today**: Strong negative motivation; potential mobilization effect  
-**Message received**: "Nuclear energy without environmental review is irresponsible."  
-**Electoral threshold risk**: MP currently ~5.5% — HD01NU19 may provide the mobilization push to cross 4% threshold safely
+## Segment 3: Energy Security Voters (~250,000 voters)
+
+**Profile**: Rural + small-town Sweden, energy cost as top-3 concern, farmers and small business
+**Current alignment**: 65% Tidö-leaning (M/C/KD), 20% SD, 15% S
+**Key document**: Nuclear NU19 (effective June 17), SD gas bridge interpellation (from realtime-pulse)
+
+**Impact**: This segment strongly supports nuclear energy. NU19's June 17 implementation is a direct policy delivery to this segment. The government should amplify the nuclear delivery narrative. SD's gas bridge demand is a secondary signal to this segment (gas bridge = faster, cheaper energy = resonates).
+
+**Mobilization delta**: POSITIVE for government (net +15,000 votes if nuclear message lands effectively).
 
 ---
 
-### Segment 6: Liberal Governance Primary Voters (C + L Core)
-**Size**: ~12% of electorate  
-**Demographics**: Educated, 25–50, professional, urban/small town, value rule of law and market liberalism  
-**Today's legislation**: HD01KU39 + HD03258 (transparency) = positive; HD03264 reservations = C differentiation signal; HD01JuU9 = L positive  
-**Voting intention**: C (primary), L (secondary), M (tertiary)  
-**Electoral movement today**: Nuanced — positive on transparency/rule of law; C's accommodated reservations reinforce "C as moderating force" narrative  
-**Message received**: "C moderated the most aggressive measures while delivering on governance."  
-**Risk**: If this segment reads C's reservations as ineffective, they may shift to S as a cleaner governance alternative
+## Segment 4: Migration-Concerned Voters (~500,000 voters)
+
+**Profile**: National-conservative, migration as top issue, 2022 SD + KD voters primarily
+**Current alignment**: 70% Tidö, 30% wavering (concerned about backsliding)
+**Key documents**: HD03262/265 migration capstone (propositions), PIR-RT-003 (post-passage polling)
+
+**Impact**: This is the largest single segment. Once migration passes, there are two contrasting dynamics:
+1. **Satisfaction effect**: Segment rewards government for delivering on core promise → consolidates Tidö vote
+2. **Normalization effect**: With migration no longer a crisis topic, the segment may defocus and shift attention to other issues (economy, crime) where other parties are competitive
+
+**Mobilization delta**: Net slightly positive for government if satisfaction effect > normalization effect; risk if SD loses ability to activate this segment.
 
 ---
 
-### Segment 7: Welfare/Social Policy Primary Voters (S Periphery + Labor)
-**Size**: ~15% of electorate  
-**Demographics**: Public sector workers, LO members, age 25–55, non-metropolitan  
-**Today's legislation**: HD01CU37 (housing guarantees) = small positive; citizenship language test = concern  
-**Voting intention**: S (primary)  
-**Electoral movement today**: Marginal; housing guarantee is a small positive signal; language test concern for immigrant-heritage LO members  
-**Message received**: "Government provides some housing protection but makes integration harder."  
-**Electoral effect**: S base stability; no significant swing potential
+## Segment 5: Progressive/Urban Cosmopolitan (~350,000 voters)
+
+**Profile**: Under-45, university-educated, cities (Stockholm, Gothenburg, Malmö), environmental + social issues
+**Current alignment**: S (45%), MP (20%), V (25%), other (10%)
+**Key document**: None from today's parliamentary documents directly mobilize this segment
+
+**Impact**: Forest management (HD024141) may have marginal relevance (environment concern), but this segment is largely determined by MP's survival above 4%. If MP falls below 4%, these votes disperse primarily to V and S, maintaining S-bloc aggregate but losing parliamentary representation.
+
+**Mobilization delta**: LOW from today's documents. Monitor MP polling.
 
 ---
 
-## Cross-Segment Electoral Math
+## Segment 6: Healthcare and Public Sector Workers (~300,000 voters)
 
-Today's combined legislative output creates the following voter activation profile:
+**Profile**: 30–60, primarily S and V voters, public services as priority
+**Current alignment**: 70% S-bloc
+**Key document**: HD10462 (pesticide/disinfectant tax, healthcare sector impact)
 
-| Direction | Segments Activated | Estimated Reach |
-|-----------|-------------------|----------------|
-| Positive for Tidö (reinforced/mobilized) | 1, 2, 3 (partial) | ~50% of electorate |
-| Negative for Tidö (opposition mobilized) | 4, 5, 6 (partial) | ~38% of electorate |
-| Ambiguous/Neutral | 3 (partial), 6 (partial), 7 | ~12% of electorate |
+**Impact**: The pesticide tax anomaly (HD10462) is a minor but symbolically potent issue for this segment. It demonstrates that the government's fiscal decisions have real-world impacts on healthcare workers. S's interpellation (Svantesson accountability question) activates this grievance for healthcare union members.
+
+**Mobilization delta**: LOW in isolation (~5,000 votes), but amplifies S's "competence and healthcare" narrative.
 
 ---
 
-## Swing Voter Focus: The Migration-Concerned Liberal
+## Segment Summary Table
 
-**Profile**: Age 35–50, university-educated, suburban, employed professional, supports Sweden taking in some refugees but concerned about integration failure and welfare costs. Currently polling split between M, C, and considering S.
+| Segment | Size | Tidö alignment | Today's documents | Mobilization delta |
+|---------|------|--------------|------------------|--------------------|
+| Law-and-order | 400K | HIGH | HD024142, Prop 246 | ±25,000 (depends on outcome) |
+| Regional infrastructure | 200K | SWING | HD10463 | ±12,000 / ±3 seats |
+| Energy security | 250K | TIDÖ-LEANING | NU19, gas bridge | +15,000 for govt |
+| Migration-concerned | 500K | TIDÖ-LEANING | Migration capstone | +10,000 to −15,000 |
+| Progressive/urban | 350K | S-BLOC | None | FLAT |
+| Healthcare workers | 300K | S-BLOC | HD10462 | ±5,000 |
 
-**Today's legislation impact on this voter**:
-- HD03262–65: Sees merit in controlled migration but is uncomfortable with "eliminate permanent residence" framing
-- HD01SfU28: Supports language tests and higher bar for citizenship
-- HD10458: Concerned that gang crime is not managed; attribution to migration policy complex
-- HD01NU19: Supports nuclear energy for climate reasons
-
-**Assessment**: This voter is likely to stay in the Tidö orbit if the migration framing is "normalization to EU standards" and if the gang crime accountability response is competent. If migration framing becomes "harshest in Nordics" and gang crime spectacular occurs, this voter may abstain or shift to C or S.
-
-**Electoral weight**: ~4–6% of electorate is in genuine flux in this segment. This is the decisive election battleground.
+**Net electoral impact of today's parliamentary intelligence**: Slightly negative for government (Ostlänken +criminal age risk > nuclear energy benefit). Requires monitoring through May 25.

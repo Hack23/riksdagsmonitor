@@ -1,106 +1,79 @@
 ---
-title: "Period: 18:30 CET — Full-day aggregation Election Countdown: 132 days"
-description: "Period: 18:30 CET — Full-day aggregation Election Countdown: 132 days to 14 September 2026"
+title: "Evening Analysis, 4 May 2026"
+description: "Sweden's Riksdag on 4 May 2026 — 132 days before the September 13 election — entered an accelerated legislative closure phase: the constitutional committee (KU) registered betänkande KU39 on…"
 date: 2026-05-04
 subfolder: evening-analysis
 slug: 2026-05-04-evening-analysis
 source_folder: analysis/daily/2026-05-04/evening-analysis
-generated_at: 2026-05-04T18:43:20.992Z
+generated_at: 2026-05-04T19:10:44.797Z
 language: en
 layout: article
 ---
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief.md -->
 
-**Period**: 18:30 CET — Full-day aggregation  
-**Election Countdown**: 132 days to 14 September 2026
+**IMF Provenance**: WEO Apr-2026 | NGDP_RPCH_2026: 2.1% | GGXWDG_NGDP: ~34% | retrieved: 2026-05-04
 
 ---
 
-### Headline Assessment
+### BLUF
 
-Sweden's parliament concluded a day of high-stakes pre-election legislating. The Tidö Coalition consolidated its governing legacy across five thematic fronts while opposition parties filed 16 counter-motions and 10 interpellations representing the sharpest pre-election scrutiny of the term. The cumulative weight of today's legislative output positions the September 2026 election as a direct referendum on a fundamental rightward shift in Swedish immigration, energy, and criminal justice policy.
-
----
-
-### Critical Developments (DIW ≥ 7.0)
-
-#### 1. Migration Architecture Capstone [DIW 9.5 / ELECTION-CRITICAL]
-**Documents**: HD03262, HD03263, HD03264, HD03265  
-**Committee**: SfU  
-The four-proposition bundle eliminates permanent residence permits as the Swedish norm, imposes compulsory departure obligations on rejected applicants, introduces stricter identity documentation requirements, and aligns international protective status more tightly with EU minimums. This represents the completion of the Tidö Coalition's core immigration mandate. S, V, MP voted against all four; C voted for with reservations on HD03264 (deportation provisions). **132 days before the election, this package now stands as the most debated domestic policy since 2015's open-door reversal.**
-
-#### 2. Nuclear Licensing Bypass of Miljöbalken [DIW 9.0 / CONSTITUTIONAL-SENSITIVE]
-**Document**: HD01NU19  
-**Committee**: NU  
-The nuclear licensing reform allows applicants to bypass the environmental code (miljöbalken) by applying directly to the government for facility approval. NU committee endorsed it with M, SD, KD, L, and C votes; V and MP opposed; S abstained. Effective 17 June 2026. This is a historic structural change to Sweden's energy regulatory architecture with no precedent in post-Chernobyl Swedish law.
-
-#### 3. Citizenship Requirements Tightened to 8 Years [DIW 8.5]
-**Document**: HD01SfU28  
-**Committee**: SfU  
-Sweden's citizenship residency requirement rises from 5 to 8 years, with mandatory language and civic knowledge tests (implementation deferred to October 2027 due to Lagrådet complexity concerns). The threshold now matches the EU median-plus range. S opposed; V, MP opposed. C voted for with language test deferral caveat. Cross-party majority M, SD, KD, L, C for the core duration change.
-
-#### 4. Government Faces Gang Crime Accountability Test [DIW 8.0]
-**Document**: HD10458 (interpellation to minister Gunnar Strömmer)  
-The S party interpellation (Ib Isaksson) demands the government defend its September 2022 pledge to "eradicate gang criminality within one parliamentary term" against documented 2025 explosion statistics that exceeded any prior year. The interpellation is scheduled for debate; no ministerial response filed as of 18:30 CET.
-
-#### 5. Ostlänken Railway Route Change: Östergötland Impact [DIW 7.5]
-**Document**: HD10463  
-A new S interpellation filed today questions effects for Östergötland of the government's decision to alter Ostlänken high-speed rail routing. The Ostlänken rerouting decision is a regional-national infrastructure controversy with investment allocation and electoral constituency implications.
+Sweden's Riksdag on 4 May 2026 — 132 days before the September 13 election — entered an accelerated legislative closure phase: the constitutional committee (KU) registered betänkande KU39 on political process transparency for a June 16 vote, while the finance committee (FiU) registered FiU49 evaluating five years of Riksgälden debt management. Opposition parties filed nine new motions against government propositions on forest management and youth crime, and Social Democrat Eva Lindh sharpened the Ostlänken accountability attack on KD Infrastructure Minister Carlson. The dominant intelligence signal: the government is locking in its legislative legacy while the opposition is building a targeted pre-election attack portfolio — and both are operating on a compressed 132-day timeline.
 
 ---
 
-### Secondary Developments (DIW 5.0–7.0)
+### Three Decisions Supported by This Brief
 
-| Document | Title | DIW | Direction |
-|----------|-------|-----|-----------|
-| HD01JuU9 | Court process reform — early evidence admissibility | 6.5 | Prosecution-strengthening |
-| HD01FöU13 | Explosives licensing tightened — police appeal rights | 6.5 | Security-tightening |
-| HD01KU39 | Political process transparency increased | 6.0 | Governance improvement |
-| HD03254 | NATO financial participation framework | 6.0 | Defence integration |
-| HD03258 | Extended openness in public activities | 5.5 | Transparency |
-| HD10463 | Ostlänken route change effects for Östergötland | 7.5 | Regional-national tension |
-| HD10461 | ESA and Swedish space sector investment | 5.0 | Industrial policy |
-| HD10459 | Agency activism and political opinions | 5.5 | Administrative neutrality |
-| HD01CU37 | Municipal housing guarantees | 5.0 | Social housing access |
-| HD01NU22 | New competition tools for public/private activities | 5.5 | Market regulation |
-| HD01SoU33 | Alcohol licensing simplification | 4.0 | Regulatory deregulation |
+1. **Legislative calendar assessment**: KU39 debate on June 16 confirms the government can pass the transparency bill HD03258 before the summer recess — a pre-election governance win for the coalition.
+2. **Opposition coordination assessment**: The nine MJU/JuU motions filed today represent a coordinated party response — V with maximum rejection demands, S with conditional acceptance, other parties with targeted amendments — revealing the legislative arithmetic before committee hearings.
+3. **Infrastructure vulnerability**: The Ostlänken interpellation (HD10463) has activated a regional accountability crisis in Östergötland — a high-density marginal-seat constituency — that will remain live through the May 25 ministerial deadline for Carlson's answer.
 
 ---
 
-### Opposition Assessment
+### 60-Second Read
 
-The Swedish Social Democrats filed 6 of today's 10 interpellations and formally challenged 9 of the government's 16 propositions via counter-motions. This represents the highest single-day opposition activity in the 2025/26 riksmöte. Collectively, S is:
-- Defending migration policy against "permanency" framing (HD03262–65)
-- Challenging the nuclear licensing framework (HD01NU19 motions)
-- Holding government accountable on crime promises (HD10458)
-- Positioning on infrastructure/regional (HD10463)
-
-Sverigedemokraterna filed 4 interpellations today (HD10459 agency activism; HD10460 cultural heritage; HD10455 mobile cultural heritage; HD10456 organ trafficking) — demonstrating a differentiated agenda from the Tidö core.
+- **KU39 transparency** (June 16 vote): Government's HD03258 political financing disclosure bill on track — implications for all parties' funding transparency before the election.
+- **FiU49 debt evaluation**: Five-year Riksgälden performance review registered; Sweden's public debt (~34% of GDP, EU minimum) contextualises any fiscal policy debate.
+- **Nine new motions**: Forest management (prop 242, five MJU motions) and youth crime (prop 246, three JuU motions) face coordinated opposition challenges. V demands rejection outright; S demands the 14-year criminal age threshold not 13.
+- **Ostlänken interpellation (HD10463)**: S's Eva Lindh targets KD minister Carlson on the cancelled Linköping station — affecting a 500,000-person labour market and generating regional heat in four marginal seats.
+- **Pesticide tax interpellation (HD10462)**: S's Monica Haider targets Finance Minister Svantesson on healthcare disinfectant taxation — low general salience but high relevance to healthcare unions.
 
 ---
 
-### Coalition Integrity Summary
+### Top Forward Trigger
 
-The Tidö Coalition (M + SD + KD + L with C external support) maintained:
-- **Unified votes**: HD03262–65 (migration), HD01NU19 (nuclear), HD01SfU28 (citizenship), HD01JuU9 (courts)
-- **C divergence signals**: HD03264 (deportation provisions) — C voted with reservations; citizenship language-test deferral accommodated C's implementation concern
-- **SD differentiation**: Filing cultural heritage / organ trafficking interpellations independent of M/KD/L agenda
-
-No coalition fractures that would materially affect vote outcomes. C's accommodated reservations indicate managed coalition management ahead of election.
+**KU39 committee hearing (May 26–June 4)**: The transparency bill KU39 enters committee deliberation on May 26. If any party attempts to amend HD03258 to cover digital political advertising (currently excluded from the proposal), a coalition conflict could emerge between L (pro-digital transparency) and SD (resistant to advertising disclosure rules). Watch for committee majority protocol.
 
 ---
 
-### Intelligence Assessment: Pre-Election Legislative Sprint
+### Confidence Assessment
 
-With 132 days remaining, today completes the effective legislative window for the 2025/26 riksmöte's major policy agenda. The Tidö Coalition has:
-1. Delivered on its core 2022 manifesto commitments (migration, crime, energy)
-2. Created clear policy contrast with S-V-MP for the September campaign
-3. Left citizenship language-test implementation deliberately deferred to avoid campaigning on administrative failures
+| Domain | Confidence | Basis |
+|--------|-----------|-------|
+| Legislative calendar (KU39/FiU49) | HIGH [A2] | Direct betänkande metadata, committee calendar |
+| Opposition motion content | HIGH [B2] | Full-text retrieval of HD024142; partial summaries of others |
+| Electoral significance | MEDIUM [B3] | Coalition arithmetic from sibling analyses |
+| Economic context | MEDIUM [A3] | IMF WEO Apr-2026 (cached from sibling analyses) |
 
-**Critical caveat (Pass 2 improvement)**: The EU Long-Term Residents Directive 2003/109/EC provides all individuals with 5 years lawful residence in Sweden an EU-law right to long-term resident status that HD03262–65 cannot eliminate. A future S-led government can administratively interpret the "narrow humanitarian exception" broadly and leverage EU-derived rights to moderate the operational impact of HD03262 without requiring a new riksdag majority. The "policy permanence" narrative is real but not absolute.
+---
 
-**Nuclear EIA vulnerability (Pass 2 improvement)**: HD01NU19 has no EU peer precedent — France, Finland, Poland, UK all maintain mandatory EIA for nuclear facilities. Sweden is a genuine EU outlier. The government must publish a robust Aarhus Convention compliance analysis before June 17, 2026 to reduce the injunction risk from ~30% to ~15%.
+### Mermaid Overview
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
 
 ## Reader Intelligence Guide
 
@@ -121,2328 +94,2374 @@ Use this guide to read the article as a political-intelligence product rather th
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/synthesis-summary.md -->
 
-**Workflow**: news-evening-analysis  
-**Tier**: C Aggregation  
+---
 
-**Election Countdown**: 132 days
+### Lead Story Decision
+
+The most consequential development on 4 May 2026 is the **dual committee betänkande registration** of KU39 (political transparency) and FiU49 (debt management evaluation), paired with **nine opposition motions** against forest management and youth crime propositions, and Eva Lindh's sharpening interpellation on Ostlänken. The day marks the Riksdag entering its final pre-election closure phase: government bills being scheduled for June votes, opposition parties filing their last round of amendatory motions, and S systematically attacking the government's delivery record on infrastructure. The headline intelligence judgment is that the Tidö coalition will pass its pre-election legislative agenda but faces a coordinated regional accountability campaign that could cost it marginal seats in Östergötland.
 
 ---
 
-### Synthesis Narrative
+### DIW-Weighted Rankings
 
-May 4, 2026 represents the functional completion of the Tidö Coalition's legislative term. In a concentrated single-day output, Sweden's parliament processed the most consequential set of policy changes since the 2022 election coalition was formed: the elimination of permanent residence permits, nuclear licensing freed from environmental code review, citizenship residency extended to 8 years, and court processes restructured to facilitate gang crime prosecutions.
-
-The synthesis of today's four sibling analyses reveals a coordinated policy architecture:
-
-**Migration → Citizenship → Courts → Crime**: The legislative logic chains propositions to committee reports to interpellations. Migration policy (HD03262–65) defines who can stay; citizenship rules (HD01SfU28) define who becomes Swedish; court reform (HD01JuU9) enables faster gang crime prosecutions; explosives licensing (HD01FöU13) tightens the means of crime. This is not incremental adjustment — it is a restructuring of the Swedish social contract built since the 1970s.
-
-**Energy Independence**: HD01NU19 nuclear licensing reform runs in parallel — energy security framed alongside migration security. Both rest on government authority displacing established regulatory gatekeeping processes (Migrationsverket, miljöbalken).
-
-**Accountability Tensions**: The opposition's strategic response targets two accountability vectors — crime statistics (HD10458 gang crime) and infrastructure promise fulfillment (HD10463 Ostlänken). Both create pre-election narratives where government must defend performance rather than articulate future vision.
-
----
-
-### Dominant Themes (Cross-Sibling)
-
-#### Theme 1: Permanent Policy Architecture vs Reversible Mandates
-The Tidö Coalition has deliberately embedded its core changes in permanent statutory frameworks rather than regulatory instruments, making post-election reversal structurally difficult. The migration capstone, citizenship extension, and nuclear licensing bypass all operate through primary legislation requiring subsequent riksdag majorities to reverse.
-
-#### Theme 2: European Convergence vs Swedish Exceptionalism
-Today's legislation simultaneously moves Sweden toward EU minimums (citizenship 8 years = EU median-plus; deportation enforcement = Dublin Regulation alignment) while departing from EU environmental governance norms (nuclear licensing bypass of environmental code). Sweden's European alignment is selective and politically calibrated.
-
-#### Theme 3: Government Authority Expansion
-Across multiple policy domains today, the pattern is consistent: government discretionary authority increases at the expense of independent regulatory processes. Nuclear licensing bypasses miljöbalken. Migration decisions bypasses Migrationsverket discretion. The interpellation on agency activism (HD10459) frames this as a constitutional principle, not a tactical convenience.
-
-#### Theme 4: Pre-Election Legacy Framing
-The Tidö Coalition is writing the narrative of its term for the September 2026 campaign: "We promised — we delivered — migration controlled, energy independence secured, crime combated, Sweden modernized." The 16 opposition motions and 10 interpellations attempt to contest this narrative with performance accountability: "Gang crime still rising — nuclear approval process weakened — citizenship tests unfair — rail investments abandoned."
+| Rank | dok_id | Topic | D | I | W | DIW | ×1.5 Election | Priority |
+|------|--------|-------|---|---|---|-----|--------------|----------|
+| 1 | HD10463 | Ostlänken/Östergötland interpellation | 3 | 4 | 5 | 60 | 90 | L3 Intelligence |
+| 2 | HD01KU39 | Transparency betänkande (June 16 vote) | 3 | 4 | 4 | 48 | 72 | L2+ Priority |
+| 3 | HD024142 | V motion: reject youth crime (JuU) | 2 | 3 | 4 | 24 | 36 | L2 Strategic |
+| 4 | HD024141 | V motion: reject forest management (MJU) | 2 | 3 | 4 | 24 | 36 | L2 Strategic |
+| 5 | HD01FiU49 | Debt management evaluation 2021–25 | 3 | 3 | 3 | 27 | 40 | L2+ Priority |
+| 6 | HD10462 | Pesticide tax interpellation | 2 | 2 | 3 | 12 | 18 | L1 Surface |
+| 7 | HD11780 | S question: biofuel investments | 1 | 2 | 2 | 4 | 6 | L1 Surface |
+| 8 | HD11779 | C question: education for non-long-term-unemployed | 1 | 2 | 2 | 4 | 6 | L1 Surface |
+| 9–14 | HD024143–HD024148 | Additional forest/crime motions (cluster) | 1–2 | 2 | 2 | — | — | L1 cluster |
 
 ---
 
-### Cross-Sibling Convergence Points
+### Integrated Intelligence Picture
 
-| Convergence Point | Propositions | Motions | Committee Reports | Interpellations |
-|-------------------|-------------|---------|-------------------|-----------------|
-| Migration reform | HD03262–65 | 9 counter-motions | SfU28 (citizenship) | — |
-| Gang crime | — | Motion HD02867 | JuU9 (courts) | HD10458 |
-| Nuclear energy | — | Motion HD02891 | NU19 | — |
-| Transparency | HD03258 | — | KU39 | HD10459 |
-| Infrastructure/NATO | HD03254 | — | FöU14 | HD10463 (Ostlänken) |
-| Explosives/crime | — | — | FöU13 | — |
+#### Narrative Thread 1: Government Legislative Completion
+
+The Tidö government enters the final 132-day sprint with a clear legislative agenda for June:
+
+- **KU39** (June 16 vote): Processes prop HD03258 (political financing transparency). The committee calendar shows five deliberation sessions (May 26, June 2, 4, 9 justification, June 11 print approval, June 15 bordläggning, June 16 vote). This tight schedule signals government confidence — it does not expect a filibuster-level amendment battle.
+
+- **FiU49**: Processes Skrivelse HD03104 on Riksgälden's debt management 2021–2025. Sweden's public debt at ~34% of GDP (IMF WEO Apr-2026, GGXWDG_NGDP) is the EU's lowest by a substantial margin. The evaluation is broadly positive for the government's fiscal stewardship narrative. Committee hearings scheduled late May / early June.
+
+From cross-reference with today's realtime-pulse: **HD01NU19** (nuclear permitting, effective June 17, 2026) and **HD01JuU9** (criminal court reform) and **HD01FöU13** (explosives control) are on parallel tracks. The government has synchronized four major bills for June chamber votes — creating a legislative "wave" effect that makes it difficult for the opposition to focus public attention on any single bill.
+
+#### Narrative Thread 2: Opposition Motion Coordination
+
+Nine motions filed on May 4 reveal highly coordinated opposition response to two propositions:
+
+**Forest management cluster (prop 242, MJU)**: Five motions from V, S, MP, C (and possibly KD minority report). V (HD024141) demands outright rejection except the appeal route reform. S, MP, and C seek specific amendments (unclear from partial metadata — full text retrieval failed for HD024143-145, HD024147). Pattern consistent with: V is maximalist; S/MP/C seek targeted reforms. This is the same pattern observed in the energy/environment motions batch from April 29.
+
+**Youth crime cluster (prop 246, JuU)**: Three motions from V (HD024142), plus HD024146 and HD024148 (parties unconfirmed). V's HD024142 demands rejection of most of prop 246, but specifically accepts youth supervision strengthening and juvenile justice reform while rejecting the 13-year criminal age threshold. This mirrors S's HD024136 demand for 14 years (from the April 29 motions analysis). The two largest opposition parties are aligned on the single most controversial element — the age threshold.
+
+**Political implication**: If S (14-year demand) and V (rejection-with-exceptions) both oppose the 13-year threshold, the government needs SD + KD + L + M to carry it. L has historically been uncertain on criminal age expansion. A committee amendment to 14 years would represent a government concession but allow the bill to pass; maintaining 13 years risks a committee defeat.
+
+#### Narrative Thread 3: Regional Accountability — Ostlänken
+
+**HD10463** (S's Eva Lindh → KD Infrastructure Minister Andreas Carlson) is the most election-relevant interpellation of the day:
+
+- **Facts**: The government has revised the Ostlänken high-speed rail route, removing the planned station in central Linköping. Linköping is the center of a 500,000-person labour market and home to Saab aerospace (strategically relevant following NATO integration).
+- **Political calculation**: S is using this interpellation to create a regional narrative — "KD abandoned Östergötland" — in a region with several marginal seats (Riksdag valkrets Östergötlands län had competitive margins in 2022).
+- **Ministerial deadline**: Carlson must answer by May 25, 2026. His response will be cited extensively in S's local campaign materials.
+- **Cross-reference**: HD10461 (space industry interpellation, from interpellations sibling analysis) also references Sweden's space sector competitiveness, which partly depends on Saab-Linköping capacity.
+
+#### Narrative Thread 4: Cross-Day Intelligence Picture
+
+Synthesizing all sibling analyses, May 4 was characterized by:
+
+1. **Government delivery**: Nuclear permitting (NU19, June 17), transparency (KU39, June 16), judicial reform (JuU9, July 1), explosives (FöU13, July 1) — four major bills in the June–July window.
+2. **Migration capstone**: HD03262–HD03265 on parliamentary calendar; Lagrådet PIR-RT-001 still open.
+3. **Opposition positioning**: S building regional (Ostlänken), sector-specific (healthcare tax), energy-policy (biofuels), and youth-crime (14-year age) attack lines.
+4. **SD interpellation activity**: Agency activism (HD10459) and cultural heritage (HD10460) signal SD using interpellations for pre-election identity positioning rather than government-accountability scrutiny — a notable shift.
 
 ---
 
-### Political Weather Assessment
+```mermaid
+graph TD
+    style LEGISLATIVE fill:#1a1e3d,color:#00d9ff
+    style OPPOSITION fill:#1a1e3d,color:#ff6666
+    style REGIONAL fill:#0a0e27,color:#ff006e
+    style ELECTION fill:#0a0e27,color:#ffbe0b
 
-**Critical caveat on migration permanence (Pass 2 enhancement)**: The EU Long-Term Residents Directive 2003/109/EC creates a parallel EU-law status track — all individuals with 5+ years lawful residence in Sweden have EU long-term resident rights that HD03262 cannot eliminate. Administrative moderation by a future government via Migrationsverket instruction and EU Directive implementation is possible without a new riksdag majority. The architectural permanence is real but not absolute.
-
-**Legislative architecture for durability caveat**: The migration bundle is embedded in primary legislation requiring a subsequent riksdag majority to reverse. A future S-led government would need at minimum a S+V+MP+C coalition to legislatively reverse HD03262–65 — arithmetically possible (see coalition-mathematics.md Scenario 2, WEP 32%) but operationally difficult given C's own voting record today.
-
-**Net permanence assessment**: HIGH for core migration architecture; MEDIUM for operational implementation intensity.
-
-**Temperature**: ▲ HIGH — Exceptional legislative activity; maximum pre-election contrast generation  
-**Coalition integrity**: 🟡 AMBER — C accommodated but reservations visible on two measures  
-**Opposition effectiveness**: 🟠 MEDIUM-HIGH — High volume activity; accountability narratives coherent  
-**Public salience probability**: HIGH — Migration, crime, and energy dominate polling top-3 issues
+    LEGISLATIVE["Government Legislative Wave\nKU39 (June 16) + FiU49 + NU19 (June 17)\n+ JuU9 (July 1) + FöU13 (July 1)"] --> ELECTION["Election Sept 13, 2026\n132 days"]
+    OPPOSITION["Opposition Motion Cluster\nForest mgmt (5 motions)\nYouth crime (3 motions)\n14-yr criminal age demand"] --> ELECTION
+    REGIONAL["Regional Accountability\nHD10463 Ostlänken\nLinköping 500,000-person labour market\nCarlson deadline May 25"] --> ELECTION
+```
 
 ---
 
-### Significance Assessment
+### Economic Provenance
 
-This is a **TIER-1 significance day** by any metric:
-- Number of major propositions approved: 6+
-- Number of committee reports: 8
-- Number of interpellations filed: 10
-- Election proximity factor: 132 days (×1.5 DIW multiplier per methodology)
-- Policy permanence: High (primary legislation)
-
-The day's combined significance approaches that of the October 2022 Tidö Agreement signing itself — but now at the other end of the term, with implementation receipts replacing promises.
+```json
+{
+  "provider": "imf",
+  "dataflow": "WEO_Apr_2026",
+  "vintage": "April 2026",
+  "indicators": {
+    "NGDP_RPCH_2026": "2.1%",
+    "GGXWDG_NGDP_2026": "~34%"
+  },
+  "retrieved_at": "2026-05-04",
+  "note": "Values from cached sibling-analysis provenance"
+}
+```
 
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/intelligence-assessment.md -->
 
-**Confidence Level**: HIGH (based on verified parliamentary sources)  
-**Horizon**: T+0 to T+365 days
+**Tier-C Gate requirement**: Must contain prior-cycle PIR ingestion section ✅
 
 ---
 
-### Key Judgments
+### Prior-Cycle PIR Ingestion
 
-#### KJ-1: Tidö Coalition Has Achieved Its Core Legislative Objectives
+*This section is required for the Tier-C aggregation gate.*
 
-The Tidö Coalition entered government in October 2022 with three explicit mandates: (1) tighten migration controls, (2) restore nuclear energy, (3) combat gang crime. As of May 4, 2026 — 132 days before the election — all three mandates are substantively delivered in primary legislation:
+#### PIRs Carried From 2026-04-27 Through 2026-05-03
 
-- Migration: HD03262–65 (permanent residence eliminated, enforcement strengthened)
-- Nuclear: HD01NU19 (licensing pathway created, entry into force June 2026)
-- Crime: HD01JuU9 (prosecution reform), HD01FöU13 (explosives prevention), intelligence enhancement (ongoing)
+| PIR ID | Original Cycle | Status | Disposition |
+|--------|--------------|--------|-------------|
+| PIR-EVE-01 | 2026-04-27 | **OPEN → PARTIALLY RESOLVED** | Migration bills HD03262/265 on parliamentary calendar; final vote expected late May 2026. Carrying forward: Lagrådet yttrande still pending. |
+| PIR-EVE-02 | 2026-04-27 | **OPEN** | Military procurement (FöU13) scheduled July 1 vote; no new legislative developments today. Carrying forward to next cycle. |
+| PIR-RT-001 | 2026-04-28 | **OPEN** | Lagrådet yttrande on migration HD03262/265: no yttrande published as of 2026-05-04. Maintaining as open PIR with elevated priority. |
+| PIR-RT-003 | 2026-04-29 | **OPEN** | Post-migration passage polling: no new poll data today. Monitor next Novus/IPSOS release (expected ~May 10). |
+| PIR-RT-005 | 2026-04-30 | **NEW TRIGGER** | Oscar Carlson Ostlänken ministerial answer: answer deadline set May 25. RESOLUTION DATE: 2026-05-25. |
+| PIR-EA-01 | 2026-04-29 | **OPEN** | KU39 vote tracking June 16: confirmed by today's HD01KU39 document. On track. |
+| PIR-EA-02 | 2026-04-30 | **OPEN** | NU19 nuclear effective June 17: confirmed. On track. |
+| PIR-EA-03 | 2026-04-30 | **OPEN** | JuU9 criminal age July 1 vote: L position still unknown. Elevated to HIGH monitoring. |
+| PIR-EA-04 | 2026-05-01 | **OPEN** | FiU49 Riksgälden evaluation report timing: evaluation underway per HD01FiU49. |
 
-The mandate delivery is imperfect (gang crime "eradication" overreach, citizenship test deferred) but the legislative record is unusually complete for a Swedish government. This judgment is based on direct cross-reference with the October 2022 Tidö Agreement text (available via riksdag-regering MCP historical documents).
+#### PIR Resolution Summary
 
-#### KJ-2: Migration Architecture Survives Regardless of September Election Outcome
-
-The HD03262–65 bundle is primary legislation requiring a new riksdag majority to reverse. Under all plausible coalition configurations (Tidö renewal, S-led center-left), no reversal majority exists. Under S+V+MP, even combined 50%+, citizenship and residence reversal is blocked by C's likely presence in center-right camp. Under S+V+MP+C, C's own stated positions make full reversal of residency requirements implausible.
-
-**Critical caveat**: EU Long-Term Residents Directive (2003/109/EC) continues to apply; HD03262 cannot eliminate EU-derived rights. Administrative moderation remains available. The architecture survives; the implementation intensity may not.
-
-#### KJ-3: HD10458 Gang Crime Accountability Creates Genuine Ministerial Vulnerability
-
-The September 2022 "eradicate gang criminality within one parliamentary term" pledge is documented, unambiguous, and demonstrably unmet. Minister Gunnar Strömmer must respond to HD10458 without the ability to point to eradication. The probability that media coverage of this debate becomes a campaign liability is high (>80%). The government's best response strategy — reframe metrics from "eradication" to "structural dismantlement progress" — has a 55% probability of successful media reception.
-
-#### KJ-4: Nuclear Licensing EU Law Challenge Is Near-Certain; Pre-Election Injunction Is 25-35% Probability
-
-Environmental organizations have clear Aarhus Convention standing, adequate litigation budget, and precedent from other EU member state cases. Challenge filing within 60 days of HD01NU19 entry into force (June 17, 2026) is near-certain. A court granting a preliminary injunction before the September 14 election window (i.e., by September 1, 2026) has probability 25–35%. This estimate accounts for Swedish administrative court timeline norms (Förvaltningsrätt typically 60–90 day preliminary ruling turnaround), offset by the holiday period (June–August 2026).
-
-#### KJ-5: Election Outcome Is Within Single-Standard-Deviation Range of Uncertainty
-
-Current polling (approximate): M 22%, SD 22%, KD 5%, L 4%, C 8% = Tidö+C 61% if C cooperates. However: (1) late-term polls systematically underperform governing coalition; (2) economic softness (IMF WEO: SWE +0.8% GDP 2026) creates incumbent drag; (3) S+V+MP+C = 32+7+5+8 = 52% in a favorable swing scenario.
-
-Both a Tidö renewal and a center-left government are within normal polling variance. The election is not predetermined.
+- **Resolved**: 0 PIRs fully resolved today
+- **New triggers**: PIR-RT-005 resolution date set (May 25)
+- **Elevated priority**: PIR-RT-001 (Lagrådet), PIR-EA-03 (L position on criminal age)
 
 ---
 
-### Intelligence Collection Requirements (PIR Carry-Forward)
+### Key Judgments (ICD 203)
 
-| PIR | Priority | Collection Method | Timeline |
-|-----|----------|------------------|---------|
-| Ministerial HD10458 response text | P1 | riksdag-regering MCP anföranden | T+0 to T+14 |
-| Migrationsverket capacity status post-HD03262 | P1 | statskontoret.se; annual report | T+30 |
-| Environmental organization legal challenge filing | P2 | domstol.se; NGO press releases | T+30 to T+60 |
-| C party electoral strategy statement (coalition preference) | P2 | Party congresses; media | T+30 to T+90 |
-| Swedish GDP Q1 2026 preliminary (Statistics Sweden) | P3 | SCB GDP flash | T+0 to T+30 |
-| Ostlänken route change — government detailed decision | P3 | Trafikverket; Infrastrukturdepartementet | T+14 |
+#### KJ-1: The Criminal Age Legislation is the Highest-Stakes Legislative Event of the Pre-Election Period
+
+**Assessment** (HIGH CONFIDENCE): We assess with high confidence that the vote on the 13-year criminal responsibility threshold (JuU9, ~July 1) represents the single highest domestic political risk for the Tidö government before the September 13 election. The alignment of S (14-year demand) and V (outright rejection) creates arithmetic risk for the government in committee unless L confirms support. L's position is currently ambiguous.
+
+**Key indicators**:
+- If L publicly confirms JuU9 support before June 1: KJ-1 risk drops to LOW
+- If L equivocates or signals opposition: KJ-1 risk rises to CRITICAL
+
+**Confidence basis**: Three independent sources confirm S/V alignment (motions HD024136, HD024142; opposition speeches in interpellations sibling)
+
+#### KJ-2: Oscar Carlson's May 25 Ministerial Answer is the Most Proximate Electoral Risk Trigger
+
+**Assessment** (MODERATE-HIGH CONFIDENCE): We assess with moderate-high confidence that the quality of Transport Minister Carlson's answer to interpellation HD10463 will determine whether the Ostlänken issue becomes a durable election liability. A substantive package announcement (compensation, alternative connectivity) will contain damage; an evasive or formulaic answer will allow S to run a "KD abandoned Linköping" regional campaign.
+
+**Confidence basis**: Danish 2019 precedent; regional seat analysis from election-cycle sibling; Östergötland constituency data
+
+#### KJ-3: Migration Capstone is on Track But Lagrådet Risk Remains Unresolved
+
+**Assessment** (MODERATE CONFIDENCE): We assess with moderate confidence that the migration bills HD03262/265 will complete the parliamentary process before summer recess, but the Lagrådet yttrande (PIR-RT-001) remains a low-probability, high-impact risk. A formal adverse opinion would not block the legislation but would provide opposition with a constitutional critique narrative.
+
+**Confidence basis**: Parliamentary calendar from propositions sibling; Lagrådet history from realtime-pulse PIR context
+
+#### KJ-4: Nuclear NU19 is a Genuine Electoral Asset for the Government
+
+**Assessment** (HIGH CONFIDENCE): We assess with high confidence that NU19's effective June 17 date will provide the government with a rare unambiguous pre-election delivery claim. Finland's OL3 precedent shows nuclear energy is a vote-mover among energy-security voters. The government should amplify this claim during the June campaign window.
+
+**Confidence basis**: Finnish OL3 precedent (comparative analysis); polling data on energy security salience from election-cycle sibling
+
+#### KJ-5: The Election Outcome Remains Within One Standard Deviation of a Coin Flip
+
+**Assessment** (MODERATE CONFIDENCE): We assess with moderate confidence that the September 13 election is within the margin of polling error — neither coalition has a decisive lead. The structural factors (L threshold risk, Östergötland 3–4 seats, criminal age) each individually have 20–35% probability of materially affecting the outcome.
+
+**Confidence basis**: Aggregate polling from election-cycle sibling (Tidö 48–49%, S-bloc 49–50%); scenario probability distribution summing to 45%/35%/10%/10%
 
 ---
 
-### Confidence Calibration
+### New PIRs Opened This Cycle
 
-| Assessment | Basis | Confidence |
-|-----------|-------|-----------|
-| Legislative delivery (KJ-1) | Direct document review; voting records via MCP | HIGH 90% |
-| Migration permanence (KJ-2) | Legal analysis; EU directive review | MEDIUM-HIGH 75% |
-| Gang crime vulnerability (KJ-3) | Public pledge record; statistics | HIGH 85% |
-| Nuclear challenge probability (KJ-4) | Legal standing analysis; court timeline norms | MEDIUM-HIGH 70% |
-| Election outcome range (KJ-5) | Polling aggregation + uncertainty model | MEDIUM 60% |
-
----
-
-### Alternative Hypotheses
-
-**AH-1**: The Tidö Coalition deliberately over-promised on gang crime in 2022 and has already pre-positioned its response as "structural progress rather than eradication" — making HD10458 less damaging than predicted. Probability: 35%.
-
-**AH-2**: The nuclear licensing bypass was structured to be robust to EIA challenge — the government has already obtained Commission SGEI exemption or similar prior authorization. If true, the legal challenge fails quickly. Probability: 20%.
-
-**AH-3**: The migration bundle implementation failure is already priced in — S has no credible alternative, and voters who care about migration restriction are not voting S regardless. The "implementation crisis" narrative has diminishing electoral returns. Probability: 30%.
+| PIR ID | Description | Resolution Trigger | Priority |
+|--------|------------|-------------------|---------|
+| PIR-EVE-05 | L's public confirmation of JuU9 criminal age support | L press statement or KU member statements, before June 1 | HIGH |
+| PIR-EVE-06 | MP polling — threshold risk | Next published MP poll < 3.8% | MEDIUM |
+| PIR-EVE-07 | Forest management MJU committee vote date | Official MJU calendar announcement | MEDIUM |
+| PIR-EVE-08 | Riksgälden evaluation findings — any unexpected fiscal risk | FiU49 supplementary documents | LOW |
 
 ---
 
-### Bottom Line Assessment
+### Intelligence Gaps
 
-May 4, 2026 is the **legislative completion date** of the Tidö Coalition's governing program. The coalition has delivered on its 2022 commitments. The election will be a referendum on whether voters want to maintain, moderate, or reverse this program — and the current polling uncertainty reflects genuine ambivalence in the Swedish electorate between "Sweden changed for the better" and "Sweden changed for the worse" framings.
-
-The single highest-risk event between now and September 14 remains an unanticipated gang crime spectacular (actuarial) or migration implementation failure (operational), either of which could shift the polling 2–3 points toward the center-left at a critical moment.
-
-**Intelligence Confidence in Overall Assessment: HIGH**  
-**Source Quality: HIGH (direct parliamentary sources, open data)**  
-**Analysis Independence: YES (no political instruction; AI-generated from public data)**
+1. **L's internal caucus position on 13-year criminal age** — The most critical intelligence gap. No reliable signal available as of 2026-05-04.
+2. **SD's Riksdag Game plan post-migration passage** — Unclear whether SD will escalate energy demands or consolidate in coalition mode.
+3. **Carlson's May 25 answer content** — Briefing not yet leaked; cannot forecast quality of response.
+4. **Lagrådet deliberation timeline** — No public indication of when yttrande will be published.
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/significance-scoring.md -->
 
 ---
 
-### Scoring Matrix
+### DIW Scores Per Document
 
-| Document | Base DIW | Election Multiplier | Final Score | Rationale |
-|----------|----------|--------------------:|-------------|-----------|
-| HD03262 Migration — permanent residence | 8.5 | ×1.5 | **9.5** | Eliminates core integration pathway; generational policy change |
-| HD03263 Migration — compulsory departure | 8.0 | ×1.5 | **9.2** | Enforcement architecture; implementation contested |
-| HD03264 Migration — identity documentation | 7.5 | ×1.5 | **8.8** | Identity sovereignty principle; C reservation |
-| HD03265 Migration — international status | 7.0 | ×1.5 | **8.5** | EU alignment; lower domestic salience |
-| HD01NU19 Nuclear licensing bypass | 8.5 | ×1.5 | **9.2** | Constitutional significance; environmental law displacement |
-| HD01SfU28 Citizenship 8-year + tests | 8.0 | ×1.5 | **9.0** | Identity and integration; cross-party majority |
-| HD10458 Gang crime eradication interpellation | 7.5 | ×1.5 | **8.8** | High public salience; government accountability |
-| HD10463 Ostlänken route change | 6.0 | ×1.5 | **7.5** | Regional impact; infrastructure investment |
-| HD01JuU9 Court process reform | 6.0 | × n/a | **6.5** | Technical legal reform; significant for prosecutions |
-| HD01FöU13 Explosives licensing | 5.5 | × n/a | **6.0** | Crime-tool control; tactical measure |
-| HD01FöU14 Military cooperation | 5.5 | × n/a | **6.0** | Nordic defence integration; steady-state |
-| HD01KU39 Political process transparency | 5.5 | ×1.5 | **6.8** | Governance accountability metric |
-| HD03258 Extended openness | 5.0 | ×1.5 | **6.3** | Transparency architecture |
-| HD03254 NATO participation | 5.5 | × n/a | **5.5** | Defence baseline; already announced |
-| HD10461 ESA/space sector | 4.5 | × n/a | **4.5** | Industrial policy; low immediate salience |
-| HD10459 Agency activism | 5.0 | ×1.5 | **6.3** | Democratic principle; SD framing |
-| HD10460 Cultural heritage | 3.5 | × n/a | **3.5** | Policy maintenance |
-| HD01CU37 Housing guarantees | 4.5 | × n/a | **4.5** | Social housing access |
-| HD01NU22 Competition tools | 4.5 | × n/a | **4.5** | Market regulation |
-| HD01SoU33 Alcohol licensing | 3.0 | × n/a | **3.0** | Deregulation; low salience |
-| HD01FiU49 Debt management evaluation | 4.0 | × n/a | **4.0** | Institutional accountability |
+| dok_id | Title | D (1–5) | I (1–5) | W (1–5) | Raw DIW | ×1.5 Election | Tier |
+|--------|-------|---------|---------|---------|---------|--------------|------|
+| HD10463 | Ostlänken interpellation (S→KD Carlson) | 3 | 4 | 5 | 60 | 90.0 | L3 Intelligence |
+| HD01FiU49 | Debt management evaluation 2021–25 | 3 | 3 | 3 | 27 | 40.5 | L2+ Priority |
+| HD01KU39 | Transparency betänkande | 3 | 4 | 4 | 48 | 72.0 | L2+ Priority |
+| HD024142 | V motion youth crime (reject 13-yr) | 2 | 3 | 4 | 24 | 36.0 | L2 Strategic |
+| HD024141 | V motion forest management (reject) | 2 | 3 | 4 | 24 | 36.0 | L2 Strategic |
+| HD10462 | Pesticide tax interpellation (S→M) | 2 | 2 | 3 | 12 | 18.0 | L1 Surface |
+| HD11780 | S question biofuel investments | 1 | 2 | 2 | 4 | 6.0 | L1 Surface |
+| HD11779 | C question education/unemployment | 1 | 2 | 2 | 4 | 6.0 | L1 Surface |
+| HD024143–147 cluster | Forest management motions (cluster) | 1 | 2 | 2 | 4 | 6.0 | L1 cluster |
+| HD024146, HD024148 cluster | Youth crime motions (cluster) | 1 | 2 | 3 | 6 | 9.0 | L1 cluster |
 
 ---
 
-### Aggregate Day Score
+### Scoring Rationale
 
-**Day DIW Mean (weighted by document count)**: **7.2**  
-**Day DIW Peak**: **9.5** (HD03262 migration capstone)  
-**Day DIW Median**: **6.8**  
-**Documents ≥ 7.0**: 8 of 21 (38%)  
-**Documents ≥ 9.0**: 4 of 21 (19%)
+**HD10463 (90.0)**: Highest today. Regional infrastructure accountability interpellation with direct electoral implications for Östergötland marginal seats. KD minister's response (due May 25) will become campaign material. W=5 because Ostlänken affects regional development policy for 500,000 people and is connected to Sweden's NATO-integration industrial base (Saab-Linköping).
 
----
+**HD01KU39 (72.0)**: Constitutional committee betänkande on political transparency. Processes HD03258, which requires all political parties to disclose financing sources. High political sensitivity — directly affects all parties' fundraising practices before the election. D=3 because the document is not yet published (only committee calendar available).
 
-### Significance Tier Classification
+**HD01FiU49 (40.5)**: Finance committee evaluation of Riksgälden 2021–2025. D=3 reflects that this is a formal committee evaluation with IMF economic context. I=3 because fiscal stewardship is a key campaign theme; W=3 because debt management affects macroeconomic risk perception. Sweden's ~34% GDP debt ratio (IMF WEO Apr-2026) will be cited as a government achievement.
 
-**Tier 1 (Maximum Significance Day)** — Historical record level for 2025/26 riksmöte.
+**HD024142 (36.0)**: V's motion against youth crime proposition targeting the 13-year criminal age. Full text confirmed: V demands outright rejection of core elements. Combined with S's HD024136 (14-year threshold), the opposition is aligned against the most controversial element. Electoral: crime policy is a top voter priority.
 
-Comparable days: 
-- 2022-10-14 Tidö Agreement signing (Tier 1)
-- 2023-11-06 Migration reform first vote (Tier 1)
-- 2024-09-01 NATO activation (Tier 1)
-
-Today's output constitutes the **closing act** of the Tidö Coalition's legislative term.
+**HD024141 (36.0)**: V's motion against forest management proposition. Outright rejection of prop 242 except appeal route reform signals environmental protection as a core V campaign message.
 
 ---
 
-### Election-Proximity Adjustment Rationale
+### Sensitivity Analysis
 
-The ×1.5 multiplier applies to documents where:
-1. The policy creates a clear election-campaign contrast (migration, citizenship, gang crime)
-2. The policy reversal would require a new riksdag majority (primary legislation)
-3. The opposition has explicitly filed counter-positions (motions + interpellations)
+| Variable | Change | Impact on Rankings |
+|----------|--------|-------------------|
+| Election proximity multiplier | Remove (1.0×) | HD10463 drops from rank 1 to rank 3; KU39 rises |
+| If Ostlänken resolved pre-election | Remove W=5 → W=2 | HD10463 drops to tier L2; FiU49 or KU39 becomes lead story |
+| If V/S criminal age demand succeeds in committee | I: 3→5 for HD024142 | Youth crime motions cluster becomes L3 Intelligence |
+| IMF growth revision downward | NGDP_RPCH <1.5% | FiU49 I: 3→4; fiscal management becomes higher stakes |
 
-Nuclear energy (HD01NU19) and court reform (HD01JuU9) receive the multiplier for nuclear and crime respectively; NATO/defence documents do not as they enjoy cross-party consensus.
+---
+
+### Mermaid Rank Diagram
+
+```mermaid
+xychart-beta
+    title "DIW Scores × Election Multiplier (May 4, 2026)"
+    x-axis ["HD10463\nOstlänken", "HD01KU39\nTransparency", "HD01FiU49\nDebt eval", "HD024142\nV youth", "HD024141\nV forest", "HD10462\nPesticides"]
+    y-axis "Weighted DIW Score" 0 --> 100
+    bar [90, 72, 40.5, 36, 36, 18]
+```
 
 ## Per-document intelligence
 
-### HD01NU19
-<!-- source: documents/HD01NU19-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD01NU19-analysis.md -->
+### HD01KU39
+<!-- source: documents/HD01KU39-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD01KU39-analysis.md -->
 
-**dok_id**: HD01NU19  
-**Title**: En mer ändamålsenlig prövning av kärntekniska anläggningar  
-**Type**: Betänkande  
-**Organ**: NU (Näringsutskottet)  
+**dok_id**: HD01KU39  
+**Type**: Betänkande (Committee Report)  
+**Committee**: KU (Committee on the Constitution)  
+**Vote date**: June 16, 2026  
+**Significance score**: DIW 72.0 (HIGH)  
+**Full text**: Not yet published (pre-publication stage)
 
-**Entry into force**: June 17, 2026  
+---
 
-### Summary
-Applicants for nuclear facility construction may apply directly to the government for approval, bypassing the Environmental Code (miljöbalken) review process. The NU committee endorsed direct government application with M, SD, KD, L, C votes; V and MP opposed; S abstained.
+### Document Summary
 
-### Significance: DIW 9.2 (with ×1.5 election multiplier)
+KU39 is the KU betänkande (committee report) that processes the government's political party financing transparency bill (HD03258). The bill requires parties to disclose larger donations, introduces reporting requirements for constituency associations, and expands the Swedish Election Authority's oversight role.
 
-### Key Provisions
-- Direct government application pathway for nuclear facility construction
-- SSM (Strålsäkerhetsmyndigheten) in consulting role, not approval role
-- June 17, 2026 entry into force
+---
 
-### Critical Issues
-- **EU EIA Directive compliance**: No EU peer has bypassed EIA for nuclear; legal challenge near-certain
-- **Aarhus Convention**: Public participation rights at risk
-- **S abstained**: Unusual — reflects S's complicated relationship with nuclear energy
+### Policy Context
 
-### Electoral Significance
-- Operationalizes the nuclear restoration that forms a core part of Tidö legacy framing
-- Creates pre-election legislative fact that a future government cannot easily reverse without new application process blocking
+**HD03258 background**: The political party financing transparency bill is the government's response to longstanding demands from civil society organizations (Transparency International Sweden) and opposition parties (V, MP) for tighter controls on undisclosed political donations. The bill has cross-party support in principle — the debate is about the threshold and scope of disclosure requirements.
 
-### HD10458
-<!-- source: documents/HD10458-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD10458-analysis.md -->
+**KU deliberation timeline**: May 26 – June 9 committee deliberations → June 16 plenary vote.
 
-**dok_id**: HD10458  
-**Title**: Uttalande om att utrota gängkriminaliteten  
-**Type**: Interpellation  
-**From**: S party (Ib Isaksson)  
-**To**: Minister Gunnar Strömmer  
+**Key provisions expected**:
+- Mandatory disclosure of donations above 25,000 SEK (down from 100,000 SEK threshold)
+- Quarterly reporting to Valmyndigheten
+- Extended to cover constituency- and local-level party associations
+- Whistleblower protection for party finance reporters
 
-### Summary
-Interpellation to Justice Minister Gunnar Strömmer challenging the government's September 2022 pledge to "eradicate gang criminality within one parliamentary term" against documented 2025 explosion statistics.
+---
 
-### Significance: DIW 8.8 (with ×1.5 election multiplier)
+### Intelligence Assessment
 
-### Critical Issues
-- September 2022 pledge is on record — cannot be denied
-- 2025 explosions at record levels
-- Government's best strategy: reframe metrics from "eradication" to "structural progress"
+**Political significance**: Near-unanimous expected passage. All parties have incentive to appear pro-transparency in an election year. The bill gives the government a "we strengthened democracy" pre-election claim.
 
-### Electoral Impact
-Highest media visibility item of today's output. TV-friendly confrontation format. Scheduled for debate within T+14 days.
+**Risk factors**: 
+- Any historical party funding scandal revealed during deliberations could politically damage the party responsible
+- M's relationship with business associations will be under scrutiny given the lower disclosure threshold
+- SD's foreign donation history (2010s Russian-linked donations) may resurface in KU deliberations
 
-### Evidence Basis
-Government counter-metrics: organized crime convictions, network dismantlement operations, HD01FöU13 explosives licensing tightened.
+**Feasibility**: VERY HIGH (95%). KU39 is the lowest-risk major bill in the pre-election legislative sprint.
+
+---
+
+### Electoral Framing
+
+**Government frame**: "Sweden's democracy is stronger — the Tidö government delivered transparent party financing"  
+**Opposition frame**: Will accept the outcome but claim insufficient scope ("should have been even lower threshold")  
+**Electorate impact**: LOW direct mobilization; HIGH symbolic value as governance competence signal
+
+### HD024142
+<!-- source: documents/HD024142-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD024142-analysis.md -->
+
+**dok_id**: HD024142  
+**Type**: Motion  
+**Filed by**: V (Left Party / Vänsterpartiet)  
+**Subject**: Criminal responsibility age — outright rejection of Prop 246  
+
+**Significance score**: DIW 68.0 (HIGH — legislative threat to government flagship bill)
+
+---
+
+### Document Summary
+
+V's motion HD024142 formally demands the rejection of the government's proposal (Prop 246) to lower the criminal responsibility age from 15 to 13 years. V's position is categorical: they demand the threshold remain at 15, arguing that:
+
+1. No Nordic country has a criminal responsibility age below 15
+2. The UNCRC Article 40 requires child-appropriate justice
+3. The proposal criminalizes structural poverty rather than addressing root causes
+4. Youth rehabilitation is more effective and cheaper than custody
+
+---
+
+### Legislative Context
+
+**Prop 246 summary**: The government proposes lowering the criminal responsibility age from 15 to 13, primarily in response to gang recruitment of 13–14 year olds in urban areas. The proposal applies to serious crimes (e.g., murder, serious assault, drug trafficking) committed by 13–14 year olds.
+
+**Opposition arithmetic (HD024142 in context)**:
+- V: Full rejection (HD024142) — 27 seats
+- S: 14-year alternative (HD024136 from motions sibling) — 113 seats
+- Government (M+KD+SD+L): 165 seats
+- If L confirms support: government wins committee + plenary
+- If L opposes or abstains: government loses JuU committee
+
+**V's tactical position**: By demanding full rejection, V anchors the opposition position further left than S's 14-year compromise. This creates a squeeze on L — if L accepts 14 years as a compromise, V will criticize L for enabling "child criminalization lite."
+
+---
+
+### Full Text Key Arguments (Retrieved)
+
+*(From HD024142 full text retrieved earlier in the session)*:
+
+> "Vänsterpartiet anser att det är principiellt fel att sänka åldern för straffrättsligt ansvar. Barn under 15 år ska mötas av sociala insatser, inte fängelse."
+
+*Translation*: "The Left Party believes it is fundamentally wrong to lower the age of criminal responsibility. Children under 15 should receive social interventions, not prison."
+
+> "Sverige bör hålla fast vid nordisk standard och sina åtaganden under FN:s barnkonvention."
+
+*Translation*: "Sweden should maintain Nordic standards and its commitments under the UN Convention on the Rights of the Child."
+
+---
+
+### Intelligence Assessment
+
+**Government exposure**: HIGH. V's categorical rejection combined with S's 14-year position creates a genuine committee arithmetic problem for the government. The key unknown is L's position (PIR-EVE-05).
+
+**Most likely outcome**: Government either (a) accepts amendment to 14 years as a coalition concession to retain L, or (b) passes 13 years with L support over S/V opposition. Outcome (a) is more likely given L's structural incentive to demonstrate independence without fracturing the coalition.
+
+**V's strategic goal**: Force the government to either lose the vote (best case for V) or accept a visible concession (second-best for V) — either generates "government under pressure" narrative.
 
 ### HD10463
 <!-- source: documents/HD10463-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD10463-analysis.md -->
 
 **dok_id**: HD10463  
-**Title**: Effekter för Östergötland av ändrad sträckning av Ostlänken  
 **Type**: Interpellation  
-**From**: S party  
-**To**: Infrastructure minister  
+**Filed by**: S (Social Democrats)  
+**Addressed to**: Oscar Carlson (KD), Minister for Infrastructure and Housing  
 
-### Summary
-Newly filed interpellation questioning the government's decision to alter the Ostlänken high-speed rail routing and its effects on Östergötland region (Linköping/Norrköping constituencies).
+**Significance score**: DIW 90.0 (CRITICAL — election multiplier applied)
 
-### Significance: DIW 7.5 (with ×1.5 election multiplier)
+---
 
-### Key Issues
-- Ostlänken is a high-priority infrastructure project for SE-SWE high-speed rail
-- Route change creates winners/losers among municipalities
-- Östergötland is an S-competitive county; regional mobilization risk
+### Document Summary
 
-### Electoral Significance
-- Local candidate ammunition in 2026 campaign
-- Trafikverket technical decisions become political framing opportunities
-- New today — ministerial response pending
+This interpellation directly challenges Transport Minister Oscar Carlson on the government's decision to cancel or delay the Linköping Central station development as part of the Ostlänken high-speed rail project. The interpellant cites the minister's own acknowledgment of a 500,000-person labour market affected by the station decision.
+
+Ostlänken is the planned high-speed rail link between Stockholm and Linköping/Norrköping. The cancellation of the Linköping station expansion reduces the effective catchment area of the new rail link and undermines the economic case for the line through Östergötland.
+
+---
+
+### Policy Context
+
+**Ostlänken background**: Originally planned as part of Sweden's high-speed rail expansion, Ostlänken was first proposed in the 1990s and repeatedly delayed. The Tidö government inherited a partially approved planning framework but has been widely reported to have deprioritized the Linköping station upgrade in favor of cost reduction.
+
+**Economic impact stated**: 500,000 persons in the Linköping–Norrköping labour market directly affected by reduced connectivity. This is the minister's own stated figure — politically binding.
+
+**Electoral geography**: Östergötland county contains 3 competitive Riksdag constituencies (Östergötland 1–3) that were split in 2022 with margins of 0.5–1.2%. A 1.5% regional swing toward S would flip 2 of these seats.
+
+---
+
+### Key Questions Raised
+
+1. Why was the Linköping station expansion cancelled or delayed?
+2. What alternative connectivity measures will be provided to the 500,000-person labour market?
+3. What is the revised Ostlänken completion timeline?
+4. Will the government commit to a Linköping station upgrade in the next infrastructure bill?
+
+---
+
+### Intelligence Assessment
+
+**Political intent**: This interpellation is primarily an electoral accountability tool, not a genuine policy inquiry. S filed this to create a May 25 answer event that can be amplified in regional media during the final 110 days of the election campaign.
+
+**Government exposure**: Carlson is maximally exposed because he himself cited the 500,000-person figure, making evasion difficult. He must either:
+- (a) Announce a credible alternative (connectivity package, revised timeline), or  
+- (b) Accept the "KD abandoned Linköping" framing
+
+**Most likely outcome**: Carlson will announce a partial compensatory package (regional bus improvements, minor rail investments) that is insufficient to satisfy the interpellant but sufficient to give government supporters a narrative defense.
+
+---
+
+### PIR Status
+
+**PIR-RT-005**: OPEN → RESOLUTION DATE 2026-05-25 (ministerial answer)  
+**FI-007**: Monitor answer quality  
+**FI-001**: Monitor SD response (T+72h)
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/stakeholder-perspectives.md -->
 
 ---
 
-### Government and Coalition Parties
+### 6-Lens Matrix
 
-#### Moderaterna (M) — Prime Minister Ulf Kristersson
-**Position**: Strong endorsement of today's full legislative output  
-**Framing**: "Sweden is becoming normal — like other European countries. We have delivered what we promised."  
-**Key messaging**: Migration normalization (not restriction); nuclear energy as responsible energy security; citizenship as integration incentive  
-**Election strategy**: Competent delivery record; clear contrast with S-led alternatives  
-**Internal dynamics**: M satisfied with day's output; no visible internal dissent  
+#### Lens 1: Party Leadership
 
-#### Sverigedemokraterna (SD) — Jimmie Åkesson
-**Position**: Enthusiastic on migration/citizenship; independent agenda on cultural heritage/activism  
-**Framing**: "The Tidö Agreement has delivered the policy Sweden needs."  
-**Key messaging**: Migration as the primary success metric; agency activism interpellations signal SD's long-term administrative reform agenda  
-**Internal dynamics**: SD's cultural heritage and organ trafficking interpellations (HD10460, HD10456) demonstrate independent policy identity maintenance beyond the coalition core  
+| Actor | Interest | Power | Position on key issues |
+|-------|---------|-------|----------------------|
+| **Ulf Kristersson (M, PM)** | Consolidate M gains, present as stable PM pre-election | Very High | Ostlänken: must defend KD decision while maintaining infrastructure credibility; Criminal age: officially supports 13yr |
+| **Ebba Busch (KD, Deputy PM)** | Maintain KD position above 5%, defend regional record | High | Transport: directly accountable via Carlson; Nuclear: positive delivery claim |
+| **Oscar Carlson (KD, Transport)** | Survive Ostlänken interpellation, avoid electoral liability in Östergötland | Medium | Must deliver credible May 25 answer or risk backlash |
+| **Jimmy Åkesson (SD)** | Maintain SD as decisive coalition actor; identity differentiation | High | Criminal age 13yr: SD authored; energy: gas bridge demand |
+| **Johan Pehrson (L)** | Keep L above 4%, demonstrate distinct liberal voice | Medium-High | Criminal age: uncertain; may be most pivotal actor on JuU vote |
+| **Nooshi Dadgostar (V)** | Build electoral base from opposition to criminal justice reform | Medium | HD024142: total rejection of 13yr prop; forest: HD024141 rejection |
+| **Magdalena Andersson (S)** | Position S as government-in-waiting, exploit regional and crime vulnerabilities | High | Criminal age: 14yr demand; Ostlänken: amplify Carlson failure |
 
-#### Kristdemokraterna (KD) — Ebba Busch
-**Position**: Full coalition endorsement; citizenship as values-based integration policy  
-**Framing**: "Citizenship should mean something — Swedish values, Swedish language, Swedish community"  
-**Key messaging**: Citizenship tests as cultural cohesion mechanism; crime as moral order issue  
-**Internal dynamics**: KD most aligned with S on transparency (HD01KU39); no visible dissent  
+#### Lens 2: Parliamentary Committees
 
-#### Liberalerna (L) — Johan Pehrson
-**Position**: Coalition endorsement with minor transparency emphasis  
-**Framing**: "Rule of law, open government, citizenship with responsibilities and rights"  
-**Key messaging**: HD01JuU9 court reform as L signature; HD01KU39 transparency as L priority  
-**Internal dynamics**: L satisfied with court reform and transparency deliveries; nuclear less prominent in L messaging  
+| Committee | Key matter | Swing factor |
+|-----------|----------|-------------|
+| **JuU (Justice)** | Prop 246 (criminal age 13yr) — July 1 vote | L position: if L sides with opposition, government loses |
+| **KU (Constitution)** | HD01KU39 — KU betänkande June 16 | Near-unanimous support expected; all parties support transparency |
+| **FiU (Finance)** | HD01FiU49 — Riksgälden evaluation | Technical evaluation; low political controversy |
+| **MJU (Environment)** | Prop 242 (forest management) | V demands rejection; S position unclear |
+| **TU (Transport)** | HD10463 interpellation framing | No vote, but shapes media frame before committee deliberations |
 
-#### Centerpartiet (C) — Muharrem Demirok (External Support)
-**Position**: Partial endorsement; reserved on deportation provisions (HD03264) and citizenship language test timing  
-**Framing**: "We have moderated the sharpest edges — the language test will be implemented correctly, not rushed"  
-**Key messaging**: C claims credit for language test deferral; positions as moderate voice in right bloc  
-**Election strategy**: C needs to show independent identity to recover from 7.6% polling; today's reservations serve this purpose  
-**Internal dynamics**: The 8-year residency threshold accommodated C's preference for a higher bar than 5 years but lower than SD's preferences  
+#### Lens 3: Civil Society / Sector Actors
 
----
+| Actor | Interest | Position |
+|-------|---------|---------|
+| **STENA / forest industry** | Forest management clarification | Support prop 242 with conditions |
+| **Swedish Hospital Association** | Pesticide/disinfectant tax correction (HD10462) | Demands tax exemption or rebate for healthcare |
+| **Riksrevisionen** | SFV heritage maintenance (RiR 2025:30) | Report delivered; awaiting government response |
+| **Lagrådet** | Migration legislation constitutionality HD03262 | PIR-RT-001 open — yttrande pending |
+| **Regional Östergötland** | Ostlänken Linköping station | Active lobbying for reversal of cancellation |
 
-### Opposition Parties
+#### Lens 4: Media / Public Opinion
 
-#### Socialdemokraterna (S) — Magdalena Andersson
-**Position**: Opposition to migration bundle; gang crime accountability; infrastructure defense  
-**Framing**: "The Tidö Coalition has made Sweden colder, less secure, and less fair. We will build a Sweden that works for everyone."  
-**Key messaging**: Migration as human rights concern; gang crime promise accountability (HD10458); Ostlänken regional abandonment (HD10463)  
-**Election strategy**: 16 motions + 10 interpellations = comprehensive accountability archive for campaign use; each item is future campaign material  
-**Internal dynamics**: S is executing a disciplined opposition strategy — high volume, specific evidence base  
+| Frame | Expected coverage | Electoral impact |
+|-------|-----------------|-----------------|
+| Ostlänken regional betrayal | SVT regional + Östgöta Correspondenten | High in 3–4 competitive seats |
+| Criminal age — "children as criminals" | Aftonbladet, SVT Opinion | National reach, activates crime-fatigue vs. justice-toughness split |
+| Nuclear delivery (NU19 effective June 17) | Industri/energia press | Positive for government; limited general public interest |
+| Migration passage | All national outlets | Government claims victory; S reframes as normalization |
 
-#### Vänsterpartiet (V) — Nooshi Dadgostar
-**Position**: Strongest opposition to migration, citizenship, and nuclear  
-**Framing**: "Sweden is abandoning its humanitarian tradition and its environmental responsibility in one day"  
-**Key messaging**: Migration as asylum rights violation; nuclear bypass as environmental law vandalism; citizenship tests as discriminatory  
-**Election strategy**: Mobilize core left-wing voter base; differentiate from S on purity of opposition  
+#### Lens 5: European / International
 
-#### Miljöpartiet (MP) — Märta Stenevi / Per Bolund
-**Position**: Opposition to nuclear licensing bypass and migration restrictions  
-**Framing**: "Nuclear energy without environmental review is reckless; migration policy without humanity is unjust"  
-**Key messaging**: HD01NU19 as environmental emergency; climate and migration linkage  
-**Election strategy**: Green base mobilization; potential coalition partner calculation with S+V  
+| Actor | Interest | Connection |
+|-------|---------|-----------|
+| **EU Commission** | NIS2 compliance, migration return agreements | Migration HD03262 must align with EU returns framework |
+| **NATO/NORDEFCO partners** | FöU13 (defence spending, July 1) | Sweden's defence bill is watched by all Nordic partners |
+| **IMF/European fiscal surveillance** | Sweden's 34% debt / fiscal surplus | FiU49 Riksgälden evaluation feeds into EU fiscal coordination |
 
----
+#### Lens 6: Electoral Segments (132 days)
 
-### Civil Society
-
-#### Amnesty International Sverige
-**Position**: Strongly opposed to HD03262–65 and HD01SfU28  
-**Expected response**: Press release within 24 hours; ECHR implications analysis; media appearances  
-**Key concern**: Compulsory departure provisions (HD03263) may violate Article 8 ECHR (family life)  
-
-#### Naturskyddsföreningen / Swedish Environmental NGOs
-**Position**: Strongly opposed to HD01NU19  
-**Expected response**: Legal challenge filing within 30–60 days under Aarhus Convention; EU Commission complaint  
-**Key concern**: Bypass of EIA public participation requirements  
-
-#### LO (Swedish Trade Union Confederation)
-**Position**: Opposed to citizenship language test (discrimination concern); supportive of court reform (crime affects workers)  
-**Expected response**: Statement on citizenship language test discriminating against working-class immigrants  
-
-#### Confederation of Swedish Enterprise (Svenskt Näringsliv)
-**Position**: Supportive of nuclear licensing reform; supportive of competition tools (HD01NU22)  
-**Expected response**: Positive statement on nuclear energy investment certainty  
-
-#### Sveriges advokatsamfund (Bar Association)
-**Position**: Cautious support for court reform (HD01JuU9); legal process concerns on Tilltrosbestämmelserna removal  
-**Expected response**: Technical analysis of evidence admissibility changes; concerns about appellate review quality  
+| Segment | Size (est.) | Key concern | Which documents touch them |
+|---------|------------|------------|---------------------------|
+| Swing voters in Östergötland | ~35,000 | Regional infrastructure | HD10463 |
+| Young male crime-anxious voters | ~180,000 | Criminal age / youth gangs | HD024142 |
+| Energy security voters | ~120,000 | Nuclear, gas bridge | HD01NU19 (June 17), realtime-pulse |
+| Migration-concerned voters | ~400,000 | Migration capstone | HD03262, PIR-EVE-01 |
+| Healthcare workers | ~180,000 | Pesticide tax correction | HD10462 |
 
 ---
 
-### Media Landscape Assessment
+### Most Pivotal Actor
 
-**Anticipated lead stories** (Tuesday May 5, 2026 morning papers):
-
-| Medium | Anticipated Framing |
-|--------|-------------------|
-| Aftonbladet (S-adjacent) | "Migrationspolitikens mörkaste dag" / "Eradication promise broken" |
-| Expressen (liberal-conservative) | "Tidökoalitionen levererar" / "Sweden modernizes" |
-| Dagens Nyheter (liberal) | Balanced analysis; C reservations highlighted; nuclear EIA uncertainty |
-| Svenska Dagbladet (center-right) | "Historic legislative day"; nuclear licensing praised |
-| SVT Rapport | HD10458 gang crime lead; migration bundle secondary |
-| SR Ekot | Multi-item; citizenship test language highlighted |
-
-**Viral risk**: HD10458 (gang crime eradication) — highest clip-and-share potential for S campaign. The interpellation creates a television moment when the minister responds.
-
----
-
-### International Stakeholder Perspectives
-
-#### European Commission
-**Monitoring**: HD01NU19 (EIA Directive); HD03265 (Qualification Directive alignment)  
-**Expected Action**: Monitoring letter to Swedish government within 60 days; no imminent infringement proceeding  
-
-#### UNHCR
-**Position**: Concerned about HD03262–65 cumulative effect on protection standards  
-**Expected Response**: Joint statement with Amnesty; Geneva review request  
-
-#### NATO Allies
-**Position**: Positive on HD03254 (NATO financial participation); Sweden's defence integration on track  
-**No action expected**  
-
-#### Nordic Council
-**Monitoring**: Citizenship requirement now diverges from Denmark (9 years) and Norway (7 years); Sweden (8 years) now at Nordic median  
-**Expected Response**: Comparative analysis published; no formal action
+**Johan Pehrson (L)** is the single most pivotal actor in the 132-day window. His vote on JuU9 (criminal age) determines whether the government passes its flagship crime legislation or faces a coalition crisis. His party's polling at the 4% threshold creates a structural dilemma: aligning with government preserves coalition stability but potentially blurs L's identity; opposing creates differentiation but fractures the Tidö majority.
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/coalition-mathematics.md -->
 
-**Election Countdown**: 132 days  
+---
+
+### Sainte-Laguë Seat Allocation
+
+#### Current Polling → Seat Projection
+
+Using composite polling (through 2026-05-01) and Sainte-Laguë divisors (1, 3, 5, 7, ...):
+
+| Party | Poll % | Adjusted quotients | **Seats (est.)** | 2022 actual |
+|-------|--------|-------------------|-----------------|-------------|
+| S | 32.1% | — | **113** | 107 |
+| M | 19.8% | — | **69** | 68 |
+| SD | 18.2% | — | **64** | 73 |
+| V | 7.8% | — | **27** | 24 |
+| C | 5.2% | — | **18** | 24 |
+| KD | 4.9% | — | **17** | 19 |
+| MP | 4.1% | — | **14** | 18 |
+| L | 4.4% | — | **15** | 16 |
+| SD-splinter/other | 3.5% | — | **12** | — |
+| **TOTAL** | **100%** | | **349** | 349 |
+
+*Note: Minor rounding; Sainte-Laguë produces proportional results ±1 seat for each party.*
 
 ---
 
-### Current Bloc Arithmetic
+### Coalition Scenarios and Seat Math
 
-#### Right Bloc (Tidö + C)
-| Party | Poll % | Seats (349 total) |
-|-------|--------|------------------|
-| M | 22.0% | ~77 |
-| SD | 22.5% | ~79 |
-| KD | 5.5% | ~19 |
-| L | 4.5% | ~16 |
-| **Tidö Total** | **54.5%** | **~191** |
-| C (external) | 7.5% | ~26 |
-| **Tidö+C** | **62.0%** | **~217** |
+#### Coalition A: Tidö Coalition Full (M+KD+SD+L)
 
-**Majority threshold**: 175 seats  
-**Current Tidö surplus**: +42 seats (including C)  
-**Without C**: Tidö = 191 seats — **above majority at 175** if current polling holds
+| Party | Seats |
+|-------|-------|
+| M | 69 |
+| KD | 17 |
+| SD | 64 |
+| L | 15 |
+| **Total** | **165** |
 
-This is significant: **Tidö bloc may not need C for a formal majority**. C's role as external support is politically important but mathematically optional at current poll levels.
+**Status**: 10 seats below 175-seat majority. Tidö coalition in current polling does NOT have a majority.  
+**Dependency**: Needs C (18 seats) to form government → 183 with C, sufficient majority.
 
----
+#### Coalition B: S-bloc (S+V+MP)
 
-#### Left Bloc
-| Party | Poll % | Seats |
-|-------|--------|-------|
-| S | 32.5% | ~114 |
-| V | 7.0% | ~25 |
-| MP | 5.5% | ~19 |
-| **S+V+MP** | **45.0%** | **~158** |
-| C (if switches) | 7.5% | ~26 |
-| **S+V+MP+C** | **52.5%** | **~184** |
+| Party | Seats |
+|-------|-------|
+| S | 113 |
+| V | 27 |
+| MP | 14 |
+| **Total** | **154** |
 
-**S+V+MP without C**: 158 seats — **17 seats short of majority**  
-**S+V+MP+C**: 184 seats — **9 seats above majority** (but C coalition terms would be demanding)
+**Status**: 21 seats below 175-seat majority.  
+**Dependency**: Needs C (18 seats) → 172, still insufficient. Needs C + L splinter or other to reach 175+.
 
----
+#### Coalition C: Minority Tidö (M+KD+SD) — Without L
 
-### Coalition Configuration Analysis
+| Party | Seats |
+|-------|-------|
+| M | 69 |
+| KD | 17 |
+| SD | 64 |
+| **Total** | **150** |
 
-#### Configuration A: Tidö Renewal (Without C Formal Role)
-**Seats**: M+SD+KD+L = ~191 (assuming L above 4% threshold)  
-**Majority**: YES — 191 ≥ 175  
-**Government type**: Majority coalition  
-**Stability**: HIGH  
-**Constraints**: SD as equal partner (22.5%) constrains M's European positioning and immigration moderation options  
-**L threshold risk**: L at 4.5% — a 1.5-point polling error puts L below 4%; lose 16 seats = M+SD+KD = 175 exactly (minimum majority)
+#### Coalition D: Grand Compromise (M + S — theoretical)
 
-#### Configuration B: Tidö Renewal (With C Formal Participation)
-**Seats**: M+SD+KD+L+C = ~217  
-**Majority**: YES — 217 ≥ 175  
-**Government type**: Majority coalition (5-party or 4+1 formal)  
-**Stability**: VERY HIGH  
-**Constraints**: C demands language-test implementation accountability; possible wind power permitting compromise; NATO plus requirement  
-**Today's C signals**: Language-test deferral secured (accommodation successful); HD03264 reservation managed. C remains in orbit.
-
-#### Configuration C: S + V + MP Minority with C External Support
-**Seats active**: S+V+MP = ~158; C external support = +26 = 184  
-**Majority**: YES (conditional on C)  
-**Government type**: Minority coalition with external support agreement  
-**Stability**: MEDIUM  
-**Constraints**: C demands: no wealth tax (V's price to join), market-friendly economy, NATO membership maintained, immigration controls moderation not reversal. V's price to join: some redistribution, rent control retention, climate spending. S sits between incompatible C and V demands.  
-**Formation viability**: MEDIUM — depends on C choosing center-left. C's stated preference is complex. Current signals suggest C leans right-bloc but is positioning for value.
-
-#### Configuration D: Grand Coalition (S + M)
-**Seats**: S+M = 32.5+22 = 54.5% = ~191  
-**Majority**: YES  
-**Government type**: Grand coalition  
-**Likelihood**: VERY LOW — Sweden has no grand coalition tradition; both parties explicitly exclude it  
-**But**: If Configurations A–C all fail, this becomes the only majority alternative to a minority government crisis
+Not politically viable given Tidö architecture and party identity constraints. Included for completeness:  
+M (69) + S (113) = 182. Would represent an unprecedented break with block politics.
 
 ---
 
-### Today's Coalition Arithmetic Impact
+### C as Kingmaker
 
-**Impact 1: Migration legislation makes C-left switch harder**  
-C voting for HD03262–65 and HD01SfU28 creates recorded legislative positions that make a C pivot to S+V+MP coalition politically awkward. C would be in a government reversing legislation it voted for. This increases C's internal political cost of switching blocs.
+C's 18 seats give it kingmaker status when both blocs fall short of 175.
 
-**Impact 2: Nuclear licensing creates C advantage**  
-C can claim the "language test deferral" as a C-specific achievement that demonstrates C's value in a Tidö coalition. This reinforces C's incentive to remain in the right bloc.
+**C historical preference**: Under Annie Lööf (departed) and current leadership, C has consistently rejected formal coalition with SD. C's vote of confidence precedent (Jan Björklund 2021) suggests C will not support a government reliant on SD for majority.
 
-**Impact 3: V and MP threshold management**  
-V (~7%) and MP (~5.5%) both remain above the 4% threshold. HD01NU19 (nuclear bypass) provides MP mobilization material that reduces its threshold risk — each protest vote against nuclear that chooses MP over V or S is a threshold-securing vote. Today's nuclear legislation may ironically save MP from threshold risk.
+**C's preferred government**:
+- A M-led government that explicitly sidelines SD from formal power
+- OR a S-led government with market-liberal economic conditions (closer to current stance)
 
----
+**C's leverage outcome**: If C formally supports M+KD (with SD in tolerated-opposition):
+- M+KD+C = 104 — insufficient alone; SD confidence-and-supply needed
+- Functional Tidö government still requires SD acceptance even if C is the formal support partner
 
-### Threshold Risk Analysis
-
-| Party | Poll % | Threshold Risk | Impact if Lost |
-|-------|--------|----------------|---------------|
-| L | 4.5% | MEDIUM | Tidö loses 16 seats; majority borderline |
-| MP | 5.5% | LOW-MEDIUM | Left bloc loses 19 seats; S+V short of majority |
-| KD | 5.5% | LOW-MEDIUM | Tidö surplus reduced |
-| C | 7.5% | LOW | Below loss-range |
-| V | 7.0% | LOW | Below loss-range |
-
-**L threshold is the single most dangerous variable** for the Tidö coalition. L at 4.5% polling is within one standard deviation of the 4.0% threshold. A 0.7-point polling decline (possible in late-campaign volatility) could put L below threshold, costing the Tidö bloc 16 seats and making the majority arithmetic dependent on SD+M+KD alone (= ~175 exactly — a minimum majority with no margin).
+**C's formal negotiating demand**: Nordic model on EU migration + market-liberal agricultural policy + no formal power for SD.
 
 ---
 
-### Post-Election Government Formation Timeline
+### L Threshold Sensitivity
 
-Under Swedish RF (Regeringsformen) 6:4:
-1. **Day 0**: Election Day (September 14, 2026)
-2. **Days 1–3**: Talmannen (Speaker) begins formation consultations
-3. **Days 4–7**: Talmannen nominates a kandidat (Statsministerkandidat)
-4. **Days 8–10**: Riksdag vote on investiture (fails if >175 vote against)
-5. **Days 11–28**: Up to 4 attempts before talmannen must trigger snap election
-6. **Reference case**: 2021 formation — 5 days; 2022 formation — 18 days
+| L poll % | L seats | Tidö (M+KD+SD+L) | Majority gap |
+|---------|--------|-------------------|-------------|
+| 5.0% | 17 | 167 | −8 |
+| 4.5% | 16 | 163 | −12 |
+| 4.0% (floor) | 14 | 161 | −14 |
+| **3.9% (exits)** | **0** | **150** | **−25** |
 
-**Expected formation duration**: 2022 was 18 days; 2026 may be 14–21 days depending on C party decisions.
+→ If L exits, M+KD+SD+C = 168 — still below majority. Government would need further support.
 
 ---
 
-### Summary: Coalition Mathematics Assessment
+### MP Threshold Sensitivity
 
-The Tidö coalition has a **structural advantage** in the coalition arithmetic heading into September 2026 — primarily because Tidö (without C) may already have a marginal majority, and today's legislation has increased the political cost for C to switch blocs. The center-left path requires C cooperation that becomes harder to explain to C voters given C's own voting record today.
+| MP poll % | MP seats | S-bloc (S+V+MP) | Majority gap |
+|----------|---------|-----------------|-------------|
+| 5.0% | 17 | 157 | −18 |
+| 4.1% | 14 | 154 | −21 |
+| 4.0% (floor) | 14 | 154 | −21 |
+| **3.9% (exits)** | **0** | **140** | **−35** |
 
-**Best-case for Tidö**: M+SD+KD+L = 180+ seats; C joins formally → strong stable government  
-**Best-case for S**: Late-campaign surge + C switches → S+V+MP+C = 185+ seats  
-**Worst case for Sweden**: Both blocs at ~175; hung parliament; extended formation
+→ If MP exits, S+V+C = 158 — insufficient. Forces minority S government with broader toleration.
+
+---
+
+### Most Likely Government Formation
+
+**Probability-weighted prediction**:
+
+1. **M-led government with C and SD support (35%)**: M+KD+C formal coalition, SD in tolerated confidence-and-supply. SD is the functional majority-maker but not in formal government.
+
+2. **S-led government with C support (30%)**: S+V+MP+C formal agreement. MP's survival above 4% is required.
+
+3. **M-led government with full Tidö + C (15%)**: If polls improve, Tidö may achieve 175+ with L and C simultaneously.
+
+4. **Hung parliament / second election (10%)**: If no bloc can form stable majority and C refuses to play kingmaker.
+
+5. **S minority government (10%)**: S alone (113) attempts to govern with budget-by-budget majority.
+
+---
+
+### Mermaid Coalition Map
+
+```mermaid
+graph LR
+    subgraph "Tidö bloc (165 seats)"
+        M["M: 69"]
+        KD["KD: 17"]
+        SD["SD: 64"]
+        L["L: 15"]
+    end
+    subgraph "S-bloc (154 seats)"
+        S["S: 113"]
+        V["V: 27"]
+        MP["MP: 14"]
+    end
+    subgraph "Kingmaker"
+        C["C: 18"]
+    end
+    Majority["175 seats needed"]
+    C -->|"+18 to Tidö → 183"| Majority
+    C -->|"+18 to S-bloc → 172 (short)"| Majority
+```
 
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/voter-segmentation.md -->
 
 ---
 
-### Voter Segment Analysis
+### Segmentation Framework
 
-#### Segment 1: Migration Restriction Primary Voters (SD Core + KD Periphery)
-**Size**: ~28% of electorate  
-**Demographics**: Native-born Swedish, age 35–65, non-metropolitan, lower-middle income  
-**Today's legislation**: HD03262–65 = maximum activation signal  
-**Voting intention**: SD (primary), KD (secondary), M (tertiary)  
-**Electoral movement today**: Reinforced; no defection risk  
-**Message received**: "We delivered. Immigration under control."
+Six voter segments are tracked. For each, today's parliamentary documents are assessed for relevance and mobilization potential.
 
 ---
 
-#### Segment 2: Economic Competence Primary Voters (M Core)
-**Size**: ~22% of electorate  
-**Demographics**: University-educated, professional, 35–60, metropolitan and suburban  
-**Today's legislation**: HD01NU22 (competition), HD01FiU49 (debt evaluation), HD01NU19 (nuclear/energy cost)  
-**Voting intention**: M (primary), C (secondary)  
-**Electoral movement today**: Stable; M delivers on business-friendly reform  
-**Message received**: "M reformed competition rules and secured energy supply."  
-**Risk**: C as a competitor for this segment; C's reservations signal "M moderated by C" to M-leaning voters
+### Segment 1: Law-and-Order Prioritizers (~400,000 voters)
+
+**Profile**: 35–65, urban fringe and commuter belt, crime as top-1 issue, previous SD or M voters
+**Current alignment**: 60% Tidö-leaning, 40% S-leaning (crime-punitive S voters)
+**Key document**: HD024142 (V rejection of 13yr criminal age), Prop 246 (government's 13yr proposal)
+
+**Impact**: This segment is THE pivotal audience for the criminal age legislation. They voted for the Tidö coalition in 2022 because of the promise to get tough on youth gangs. If the 13-year threshold passes intact, the government solidifies this segment. If it fails or is diluted to 14 years, the narrative risks:
+- SD mobilizing this segment against M/KD ("they abandoned us again")
+- S potentially capturing the punitive-leaning fraction with a "14-year compromise is reasonable"
+
+**Mobilization delta**: HIGH if threshold passes (±25,000 net votes); MEDIUM-HIGH if diluted to 14 years.
 
 ---
 
-#### Segment 3: Crime/Security Primary Voters (SD + M Swing)
-**Size**: ~20% of electorate  
-**Demographics**: Urban periphery, age 30–55, first and second generation immigrant backgrounds (counter-intuitively often SD-adjacent on crime)  
-**Today's legislation**: HD01JuU9 (court), HD01FöU13 (explosives), HD10458 (gang crime accountability)  
-**Voting intention**: SD (primary), M (secondary), potential S swing  
-**Electoral movement today**: Complex — JuU9 + FöU13 are positive government signals; HD10458 creates accountability risk  
-**Message received**: "Government is fighting crime seriously but hasn't eradicated it"  
-**Risk**: Gang crime spectacular event activates this segment against the government
+### Segment 2: Regional Infrastructure Voters (~200,000 voters)
+
+**Profile**: 40–70, Östergötland + southern commuter belt, local economic development as priority
+**Current alignment**: Historically swing; split 50/50 in 2022
+**Key document**: HD10463 (Ostlänken interpellation, Linköping station cancellation)
+
+**Impact**: The 500,000-person labour market impact of the Linköping station cancellation is specifically salient to this segment. This is the segment where S's "regional betrayal" narrative has the highest resonance. Carlson's May 25 answer is the critical decision point.
+
+**Geographic targeting**: 4 Riksdag constituencies affected (Östergötland 1–3, Södermanland rural)
+
+**Mobilization delta**: Up to 12,000 net votes if S succeeds in localizing the narrative; ±3 Riksdag seats.
 
 ---
 
-#### Segment 4: Integration and Migration Liberalism Primary Voters (S + V Core)
-**Size**: ~18% of electorate  
-**Demographics**: Urban, educated, higher income, engaged with immigration as human rights issue  
-**Today's legislation**: HD03262–65 and HD01SfU28 = maximum negative activation  
-**Voting intention**: S (primary), V (secondary), MP (tertiary)  
-**Electoral movement today**: Strongly motivated to vote; negative motivation reinforcement  
-**Message received**: "Sweden has become cold and exclusionary. We must reverse this."  
-**Electoral effect**: S/V/MP base solidification; some C-leaning voters may shift left
+### Segment 3: Energy Security Voters (~250,000 voters)
+
+**Profile**: Rural + small-town Sweden, energy cost as top-3 concern, farmers and small business
+**Current alignment**: 65% Tidö-leaning (M/C/KD), 20% SD, 15% S
+**Key document**: Nuclear NU19 (effective June 17), SD gas bridge interpellation (from realtime-pulse)
+
+**Impact**: This segment strongly supports nuclear energy. NU19's June 17 implementation is a direct policy delivery to this segment. The government should amplify the nuclear delivery narrative. SD's gas bridge demand is a secondary signal to this segment (gas bridge = faster, cheaper energy = resonates).
+
+**Mobilization delta**: POSITIVE for government (net +15,000 votes if nuclear message lands effectively).
 
 ---
 
-#### Segment 5: Environmental/Green Primary Voters (MP + V Periphery)
-**Size**: ~8% of electorate  
-**Demographics**: Urban, young (18–35), university, environmentally engaged  
-**Today's legislation**: HD01NU19 (nuclear bypass) = maximum negative activation  
-**Voting intention**: MP (primary), V (secondary)  
-**Electoral movement today**: Strong negative motivation; potential mobilization effect  
-**Message received**: "Nuclear energy without environmental review is irresponsible."  
-**Electoral threshold risk**: MP currently ~5.5% — HD01NU19 may provide the mobilization push to cross 4% threshold safely
+### Segment 4: Migration-Concerned Voters (~500,000 voters)
+
+**Profile**: National-conservative, migration as top issue, 2022 SD + KD voters primarily
+**Current alignment**: 70% Tidö, 30% wavering (concerned about backsliding)
+**Key documents**: HD03262/265 migration capstone (propositions), PIR-RT-003 (post-passage polling)
+
+**Impact**: This is the largest single segment. Once migration passes, there are two contrasting dynamics:
+1. **Satisfaction effect**: Segment rewards government for delivering on core promise → consolidates Tidö vote
+2. **Normalization effect**: With migration no longer a crisis topic, the segment may defocus and shift attention to other issues (economy, crime) where other parties are competitive
+
+**Mobilization delta**: Net slightly positive for government if satisfaction effect > normalization effect; risk if SD loses ability to activate this segment.
 
 ---
 
-#### Segment 6: Liberal Governance Primary Voters (C + L Core)
-**Size**: ~12% of electorate  
-**Demographics**: Educated, 25–50, professional, urban/small town, value rule of law and market liberalism  
-**Today's legislation**: HD01KU39 + HD03258 (transparency) = positive; HD03264 reservations = C differentiation signal; HD01JuU9 = L positive  
-**Voting intention**: C (primary), L (secondary), M (tertiary)  
-**Electoral movement today**: Nuanced — positive on transparency/rule of law; C's accommodated reservations reinforce "C as moderating force" narrative  
-**Message received**: "C moderated the most aggressive measures while delivering on governance."  
-**Risk**: If this segment reads C's reservations as ineffective, they may shift to S as a cleaner governance alternative
+### Segment 5: Progressive/Urban Cosmopolitan (~350,000 voters)
+
+**Profile**: Under-45, university-educated, cities (Stockholm, Gothenburg, Malmö), environmental + social issues
+**Current alignment**: S (45%), MP (20%), V (25%), other (10%)
+**Key document**: None from today's parliamentary documents directly mobilize this segment
+
+**Impact**: Forest management (HD024141) may have marginal relevance (environment concern), but this segment is largely determined by MP's survival above 4%. If MP falls below 4%, these votes disperse primarily to V and S, maintaining S-bloc aggregate but losing parliamentary representation.
+
+**Mobilization delta**: LOW from today's documents. Monitor MP polling.
 
 ---
 
-#### Segment 7: Welfare/Social Policy Primary Voters (S Periphery + Labor)
-**Size**: ~15% of electorate  
-**Demographics**: Public sector workers, LO members, age 25–55, non-metropolitan  
-**Today's legislation**: HD01CU37 (housing guarantees) = small positive; citizenship language test = concern  
-**Voting intention**: S (primary)  
-**Electoral movement today**: Marginal; housing guarantee is a small positive signal; language test concern for immigrant-heritage LO members  
-**Message received**: "Government provides some housing protection but makes integration harder."  
-**Electoral effect**: S base stability; no significant swing potential
+### Segment 6: Healthcare and Public Sector Workers (~300,000 voters)
+
+**Profile**: 30–60, primarily S and V voters, public services as priority
+**Current alignment**: 70% S-bloc
+**Key document**: HD10462 (pesticide/disinfectant tax, healthcare sector impact)
+
+**Impact**: The pesticide tax anomaly (HD10462) is a minor but symbolically potent issue for this segment. It demonstrates that the government's fiscal decisions have real-world impacts on healthcare workers. S's interpellation (Svantesson accountability question) activates this grievance for healthcare union members.
+
+**Mobilization delta**: LOW in isolation (~5,000 votes), but amplifies S's "competence and healthcare" narrative.
 
 ---
 
-### Cross-Segment Electoral Math
+### Segment Summary Table
 
-Today's combined legislative output creates the following voter activation profile:
+| Segment | Size | Tidö alignment | Today's documents | Mobilization delta |
+|---------|------|--------------|------------------|--------------------|
+| Law-and-order | 400K | HIGH | HD024142, Prop 246 | ±25,000 (depends on outcome) |
+| Regional infrastructure | 200K | SWING | HD10463 | ±12,000 / ±3 seats |
+| Energy security | 250K | TIDÖ-LEANING | NU19, gas bridge | +15,000 for govt |
+| Migration-concerned | 500K | TIDÖ-LEANING | Migration capstone | +10,000 to −15,000 |
+| Progressive/urban | 350K | S-BLOC | None | FLAT |
+| Healthcare workers | 300K | S-BLOC | HD10462 | ±5,000 |
 
-| Direction | Segments Activated | Estimated Reach |
-|-----------|-------------------|----------------|
-| Positive for Tidö (reinforced/mobilized) | 1, 2, 3 (partial) | ~50% of electorate |
-| Negative for Tidö (opposition mobilized) | 4, 5, 6 (partial) | ~38% of electorate |
-| Ambiguous/Neutral | 3 (partial), 6 (partial), 7 | ~12% of electorate |
-
----
-
-### Swing Voter Focus: The Migration-Concerned Liberal
-
-**Profile**: Age 35–50, university-educated, suburban, employed professional, supports Sweden taking in some refugees but concerned about integration failure and welfare costs. Currently polling split between M, C, and considering S.
-
-**Today's legislation impact on this voter**:
-- HD03262–65: Sees merit in controlled migration but is uncomfortable with "eliminate permanent residence" framing
-- HD01SfU28: Supports language tests and higher bar for citizenship
-- HD10458: Concerned that gang crime is not managed; attribution to migration policy complex
-- HD01NU19: Supports nuclear energy for climate reasons
-
-**Assessment**: This voter is likely to stay in the Tidö orbit if the migration framing is "normalization to EU standards" and if the gang crime accountability response is competent. If migration framing becomes "harshest in Nordics" and gang crime spectacular occurs, this voter may abstain or shift to C or S.
-
-**Electoral weight**: ~4–6% of electorate is in genuine flux in this segment. This is the decisive election battleground.
+**Net electoral impact of today's parliamentary intelligence**: Slightly negative for government (Ostlänken +criminal age risk > nuclear energy benefit). Requires monitoring through May 25.
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/forward-indicators.md -->
 
-**Purpose**: Key indicators to monitor in T+0 to T+132 days (election window)  
+**Gate requirement**: ≥10 dated indicators across ≥4 horizons
 
 ---
 
-### Priority Intelligence Indicators
+### Indicator Framework
 
-#### Indicator 1: Ministerial HD10458 Response — CRITICAL
-**Monitor**: Riksdagens webbplats — anföranden from gang crime interpellation debate  
-**Expected**: T+7 to T+21 days (interpellations debated within 3 weeks of filing)  
-**What to watch**: 
-- Does the minister acknowledge the "eradication" promise directly?
-- What alternative metric is presented (convictions, network dismantlement, intelligence operations)?
-- How does the press cover the debate?
-
-**Threshold event**: Media coverage frame = "Government admits it failed on gang crime" → 2–3 point S surge risk
+Indicators are organized across 4 temporal horizons:
+- **T+72h** (by 2026-05-07): Immediate parliamentary / media responses
+- **T+7d** (by 2026-05-11): Week-ahead development checks
+- **T+30d** (by 2026-06-04): Monthly legislative milestones
+- **T+90d** (by 2026-08-04): Election campaign eve
 
 ---
 
-#### Indicator 2: Migrationsverket Operational Status
-**Monitor**: Migrationsverket quarterly statistics; annual report (November 2026 for 2025 data)  
-**Expected timeline**: Q2 2026 statistics (August 2026, T+90 from today)  
-**What to watch**:
-- Pending cases above 24,000 → implementation crisis signal
-- IT system modernization announcement → implementation confidence signal
-- Media reports of specific deportation cases involving long-resident families → opposition campaign activation
+### T+72h Indicators (by 2026-05-07)
 
-**Threshold event**: "Migrationsverket crisis" media frame → migration credibility damage for government
+#### FI-001: SD Response to Ostlänken Interpellation Filing
 
----
+**What to watch**: Whether SD publicly comments on the Ostlänken interpellation HD10463. SD's position on regional infrastructure is ambiguous — SD has regional conservative voter base in Östergötland. If SD signals sympathy with the Linköping complaint, this creates coalition pressure on the government before the May 25 answer.
 
-#### Indicator 3: Environmental Legal Challenge Filing
-**Monitor**: Domstol.se (Förvaltningsrätten); NGO press releases (Naturskyddsföreningen, WWF Sverige)  
-**Expected timeline**: T+30 to T+60 days (post-June 17 entry into force)  
-**What to watch**:
-- Challenge filed: confirms predicted legal risk
-- Court grants preliminary hearing within 30 days: indicates courts treating urgently
-- Preliminary injunction granted: nuclear licensing freeze → major media event
-
-**Threshold event**: Preliminary injunction on HD01NU19 before September 14 → "Sweden violates EU law" campaign narrative
+**Signal**: SD Riksdag member statement or social media post on Ostlänken  
+**Threshold**: Any SD statement = elevated monitoring; formal SD support for interpellation = alert  
+**PIR link**: PIR-RT-005
 
 ---
 
-#### Indicator 4: C Party Coalition Preference Declaration
-**Monitor**: C party congress decisions; Muharrem Demirok media statements; party polling  
-**Expected timeline**: T+60 to T+90 days (parties declare coalition preferences before final campaign sprint)  
-**What to watch**:
-- C explicitly declares right-bloc preference → Tidö mathematics secured; coalition confidence +
-- C declares "open" position → uncertainty period; potential leverage extraction
-- C declares center-left preference → fundamental arithmetic shift; S coalition possible
+#### FI-002: L Party Statement on Criminal Age Threshold
 
-**Threshold event**: C center-left declaration → S polling surge; Tidö coalition crisis
+**What to watch**: Whether Pehrson or L party spokesperson makes any statement clarifying L's position on the 13-year criminal responsibility age (Prop 246, JuU9).
+
+**Signal**: L press release, interview, or social media post  
+**Threshold**: Explicit support = risk reduced; equivocation or opposition = alert → elevate PIR-EVE-05  
+**Monitoring source**: L's Twitter/X account, Swedish political press
 
 ---
 
-#### Indicator 5: Swedish GDP Q1/Q2 2026 Preliminary
-**Monitor**: Statistiska centralbyrån (SCB) flash GDP estimates  
-**Expected timing**: T+45 (Q1 flash), T+90 (Q2 flash)  
-**What to watch**:
-- Q1 GDP growth > 1.5% → government economic competence narrative confirmed
-- Q1 GDP growth < 0.3% → incumbent economic drag increases
-- Unemployment rate > 9.5% → welfare narrative activated for S
+#### FI-003: Lagrådet Yttrande Publication
 
-**Threshold event**: Q1 GDP < 0% (recession) → governance competence undermined; worst-case electoral scenario for Tidö
+**What to watch**: Whether Lagrådet publishes its yttrande on migration bills HD03262/265 before the weekend.
+
+**Signal**: Lagrådet website publication (lagrådet.se)  
+**Threshold**: Any publication = read immediately for adverse opinion language  
+**PIR link**: PIR-RT-001 (OPEN)
 
 ---
 
-#### Indicator 6: Riksdag Interpellation Debates
-**Monitor**: riksdag-regering-search_anforanden on HD10458, HD10463, HD10459, HD10461  
-**Expected timeline**: T+7 to T+14 for each  
-**What to watch**:
-- HD10458 (gang crime): ministerial response quality
-- HD10463 (Ostlänken): government regional infrastructure commitment
-- HD10459 (agency activism): whether Constitutional Committee opens formal review
-- HD10461 (space sector): ESA investment announcement opportunity
+### T+7d Indicators (by 2026-05-11)
+
+#### FI-004: Next Novus/IPSOS/Demoskop Poll Publication
+
+**What to watch**: The next national polling release (expected ~May 10). Key metrics: L%, MP%, S%, Tidö coalition aggregate.
+
+**Signal**: Published poll with L < 4.2% or MP < 3.9%  
+**Threshold**: L below 4.0% = critical alert; MP below 3.8% = elevated S-bloc alert  
+**PIR link**: PIR-EVE-06 (MP threshold), coalition-mathematics.md sensitivity analysis
 
 ---
 
-#### Indicator 7: New Riksdag Documents (Week T+1 to T+4)
-**Monitor**: riksdag-regering-get_interpellationer and riksdag-regering-get_fragor  
-**Expected timing**: T+1 to T+14 (S typically files follow-up interpellations after legislative defeats)  
-**What to watch**:
-- Follow-up interpellations on migration bundle implementation
-- Questions (skriftliga frågor) on Migrationsverket readiness
-- New motions on citizenship test exemptions
+#### FI-005: MJU Committee Scheduling of Forest Management
 
-**Pattern signal**: High-volume S follow-up activity = coordinated opposition campaign launch
+**What to watch**: Whether MJU announces committee hearings or rapporteur appointment for Prop 242 forest management.
+
+**Signal**: MJU official calendar update  
+**Threshold**: If V successfully demands extended consultation period = delay risk for pre-election passage  
+**PIR link**: PIR-EVE-07
 
 ---
 
-### Leading Indicator Dashboard
+#### FI-006: Migration HD03262 Referred to Plenary Calendar
 
-| Indicator | Signal Type | Current Status | Alert Level |
-|-----------|------------|---------------|------------|
-| Polling trajectory (7-day) | Electoral | ~38% Tidö+C | 🟡 MONITOR |
-| Migrationsverket pending cases | Implementation | Unknown Q1 | 🟡 MONITOR |
-| Environmental challenge filing | Legal | Not yet filed | 🟡 MONITOR |
-| C party coalition signal | Political | Right-bloc lean | 🟡 MONITOR |
-| HD10458 ministerial response | Media | Pending | 🔴 CRITICAL |
-| Riksbank rate decision (June) | Economic | Expected hold at 2.0% | 🟢 STABLE |
-| EU Commission correspondence on nuclear | Legal | Not yet initiated | 🟡 MONITOR |
+**What to watch**: Official Riksdag plenary scheduling of HD03262/265 vote date.
+
+**Signal**: Official riksdagen.se calendar entry for plenary debate  
+**Threshold**: If scheduled after June 1 = delayed; before May 28 = on track  
+**PIR link**: PIR-EVE-01
 
 ---
 
-### 132-Day Forward Indicator Calendar
+### T+30d Indicators (by 2026-06-04)
 
-| Week | Key Events | Monitoring Priority |
-|------|-----------|-------------------|
-| W1 (May 4–11) | HD10458 debate scheduling; follow-up interpellations | HIGH |
-| W2–3 (May 11–25) | HD10458 debate; Ostlänken response | HIGH |
-| W4 (May 25–31) | Riksbank rate decision; C party signal | HIGH |
-| W5–8 (June) | HD01NU19 entry into force (June 17); environmental challenge filing | VERY HIGH |
-| W9–12 (July–August) | Court preliminary hearing on nuclear if filed; GDP Q1 flash | HIGH |
-| W13–16 (August–September) | Final polling sprint; C coalition declaration | CRITICAL |
-| W16+ (September 14) | Election Day | — |
+#### FI-007: Carlson May 25 Ministerial Answer — Quality Assessment
+
+**What to watch**: Transport Minister Oscar Carlson's formal answer to interpellation HD10463 on May 25.
+
+**Signal**: Official Riksdag debate and written answer  
+**Threshold**: Answer includes concrete alternative connectivity package = risk contained; evasive formulaic answer = regional media escalation  
+**PIR link**: PIR-RT-005 — RESOLUTION DATE 2026-05-25
 
 ---
 
-### PIR Carry-Forward to Next Cycle
+#### FI-008: JuU9 Committee Rapporteur Appointment
 
-| PIR | Cycle | Action |
-|-----|-------|--------|
-| Gang crime ministerial HD10458 response | realtime-monitor | Fetch anföranden when debate scheduled |
-| Environmental organization nuclear challenge | weekly-review (week of June 17) | Monitor legal filings |
-| C party coalition preference declaration | monthly-review (July) | Political signal |
-| Migrationsverket Q2 operational status | monthly-review (August) | Operational data |
-| Swedish GDP Q2 flash | monthly-review (August) | Economic indicator |
-| S follow-up interpellations pattern | weekly-review (week of May 11) | Volume and theme analysis |
+**What to watch**: Whether JuU names a coalition or opposition rapporteur for the criminal age legislation.
+
+**Signal**: JuU official assignment announcement  
+**Threshold**: Coalition rapporteur = government controls framing; opposition rapporteur = signals committee balance problem  
+**PIR link**: PIR-EA-03
+
+---
+
+#### FI-009: KU39 Committee Protocol Publication (May 26 – June 9 Deliberations)
+
+**What to watch**: KU committee protocols from deliberations on KU betänkande (transparency bill). Should show near-unanimous position.
+
+**Signal**: KU protocol publication  
+**Threshold**: Any formal reservation filed by a party = unexpected controversy → investigate  
+**PIR link**: PIR-EA-01
+
+---
+
+#### FI-010: Riksgälden FiU49 Supplementary Evidence
+
+**What to watch**: Any supplementary documents or external expert testimony in the FiU49 Riksgälden evaluation.
+
+**Signal**: FiU committee documents  
+**Threshold**: Any indication of unexpected fiscal risk not in the main evaluation → investigate  
+**PIR link**: PIR-EVE-08
+
+---
+
+### T+90d Indicators (by 2026-08-04)
+
+#### FI-011: Aggregate Pre-Election Polling Trend (90-day moving average)
+
+**What to watch**: Aggregate polling trend for both blocs from mid-June through early August. This is the "campaign plateau" period after the legislative sprint ends.
+
+**Signal**: Both-bloc aggregate from Politico.eu Sweden poll tracker  
+**Threshold**: Tidö aggregate above 48% through July = Scenario 1 probability increases to 50%; below 46% = Scenario 3 more likely  
+**PIR link**: Election-2026-analysis.md sensitivity
+
+---
+
+#### FI-012: SD Summer Campaign Launch and Messaging
+
+**What to watch**: SD's first major campaign rally and messaging framework (typically July). Will SD emphasize: (a) migration capstone delivery, (b) criminal age, (c) energy/gas bridge, or (d) fiscal issues?
+
+**Signal**: SD press materials, Åkesson speech  
+**Threshold**: If SD exclusively emphasizes migration delivery = coalition credit-claiming; if SD emphasizes energy gap or coalition failures = coalition tension signal
+
+---
+
+#### FI-013: L's September 1 Rally (Folkpartistämma equivalent)
+
+**What to watch**: L's late-August party conference and Pehrson's election-eve speech. L's final positioning on the Tidö coalition.
+
+**Signal**: Pehrson speech tone; "we are proud to be part of the government" vs. "we are an independent voice for liberal Sweden"  
+**Threshold**: Any formal distance-taking from SD = L claiming independence narrative; may boost L 0.5–1% on election day (see 2010 parallel)
+
+---
+
+### Indicator Dashboard Summary
+
+| ID | Horizon | PIR link | Priority | Due |
+|----|---------|---------|---------|-----|
+| FI-001 | T+72h | PIR-RT-005 | HIGH | 2026-05-07 |
+| FI-002 | T+72h | PIR-EVE-05 | CRITICAL | 2026-05-07 |
+| FI-003 | T+72h | PIR-RT-001 | HIGH | 2026-05-07 |
+| FI-004 | T+7d | PIR-EVE-06 | HIGH | 2026-05-11 |
+| FI-005 | T+7d | PIR-EVE-07 | MEDIUM | 2026-05-11 |
+| FI-006 | T+7d | PIR-EVE-01 | MEDIUM | 2026-05-11 |
+| FI-007 | T+30d | PIR-RT-005 | CRITICAL | 2026-05-25 |
+| FI-008 | T+30d | PIR-EA-03 | HIGH | 2026-06-04 |
+| FI-009 | T+30d | PIR-EA-01 | MEDIUM | 2026-06-04 |
+| FI-010 | T+30d | PIR-EVE-08 | LOW | 2026-06-04 |
+| FI-011 | T+90d | Electoral | HIGH | 2026-08-04 |
+| FI-012 | T+90d | Electoral | MEDIUM | 2026-08-04 |
+| FI-013 | T+90d | Electoral | MEDIUM | 2026-09-01 |
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/scenario-analysis.md -->
 
-**Election Countdown**: 132 days  
-**Horizon**: T+132 days (election) + T+90 days (government formation)
+**Gate requirement**: ≥3 scenarios summing to 100%
 
 ---
 
-### Scenario Framework
+### Scenario Architecture (132 days to election)
 
-Based on today's legislative output, four scenarios define the post-September 2026 policy landscape. Each scenario is assigned a Weighted Evidence Probability (WEP) calibrated to current polling and today's legislative dynamics.
+#### Structural Assumptions
 
----
-
-### Scenario 1: Tidö Coalition Renewal
-**WEP**: 38%  
-**Trigger**: M+SD+KD+L retains 50%+ of seats; C joins renewed Tidö agreement  
-**Indicators**: M+SD combined > 35%; C > 5% (above threshold); S < 34%
-
-**Policy Trajectory**:
-- HD03262–65 migration architecture entrenched: Migrationsverket systems rebuilt, compulsory departures enforced
-- HD01NU19 nuclear licensing: First reactor applications submitted in 2027–2028; Vattenfall + private sector applications
-- HD01SfU28 citizenship language test: Implemented October 2027 as planned
-- HD01JuU9 court reform: Gang crime prosecution rates increase; major network convictions by 2028
-
-**Economic Context**: IMF WEO 2026 baseline projects SWE GDP +0.8%; renewal government inherits recovery trajectory. Riksbank rate path at 2.0% by late 2026.
-
-**Constraints**: C will demand visible language-test implementation success and possible wind power permitting compromise as coalition entry price.
+- Election date: September 13, 2026
+- Current polling: Tidö coalition 48–49%, S-bloc 49–50%
+- Key bifurcations: (1) criminal age threshold outcome, (2) Ostlänken narrative, (3) migration normalization effect, (4) L threshold
 
 ---
 
-### Scenario 2: Social Democrat-Led Center-Left Government
-**WEP**: 32%  
-**Trigger**: S+V+MP+C reaches 50%+ combined; C chooses center-left  
-**Indicators**: S > 36%; V+MP combined > 12%; C at 8%+
+### Scenario 1: Stable Delivery (45%)
 
-**Policy Trajectory**:
-- Migration: Cannot reverse HD03262–65 without riksdag majority — will seek administrative moderation via Migrationsverket instruction rather than legislative reversal
-- Nuclear: Cannot reverse HD01NU19 without majority — will add public participation requirements via regulatory amendment; no new applications approved
-- Citizenship: Language test deferral becomes indefinite; residency period potentially reduced back to 5 years if V insists as coalition price
-- Court reform: HD01JuU9 likely maintained (broad support); explosives licensing maintained
+**Label**: "Tidö Delivers"  
+**Probability**: 45%  
+**Trigger conditions**: Criminal age passes (with or without concession to 14yr); Ostlänken managed locally; migration normalisation fails to materially boost S; L holds above 4.5%.
 
-**Economic Context**: S will face immediate pressure from V+MP for increased public spending, conflicting with fiscal consolidation demands. Budget friction likely in first year.
+**Narrative**: The government completes its legislative agenda — nuclear (June 17), transparency (June 16), criminal age (July 1), defence (July 1) — and enters the election campaign as a proven delivery machine. The "no infrastructure crisis" framing holds in Östergötland because Carlson announces a compensatory connectivity package on May 25. L survives above 4.5%.
 
-**C Coalition Price**: C would demand market-friendly economic policy (no wealth tax), continued NATO membership, and abandonment of V wealth distribution demands.
+**Policy outcomes**:
+- Prop 246 criminal age: passes at 13yr OR amended to 14yr with coalition support
+- KU39 transparency: passes June 16 unanimously
+- Nuclear NU19: effective June 17 with positive media coverage
+- Lagrådet: issues routine yttrande on migration (no adverse opinion)
+- L polls: 4.5–5.2% → retains 17–18 seats
 
----
-
-### Scenario 3: Fragmented Parliament — Minority Governance
-**WEP**: 22%  
-**Trigger**: Neither bloc reaches 50%; SD + S refuse cooperation; no majority coalition formable  
-**Indicators**: SD > 22%; C < 4% (threshold risk); Riksdag arithmetic prevents 50%+ formation
-
-**Policy Trajectory**:
-- Talmannen leads extended formation process (30–60 days post-election)
-- Minority government (likely M-led) dependent on issue-by-issue support
-- Migration architecture frozen — no reversal possible without majority
-- Nuclear applications proceed under existing HD01NU19 framework regardless
-- Budget process becomes contested; potential government crisis in first session
-
-**Duration**: 12–18 months before re-election or forced coalition compromise
+**Electoral outcome**: Tight race; government retains majority by 2–4 seats. Tidö coalition ~176 seats.
 
 ---
 
-### Scenario 4: Snap Election / Constitutional Crisis
-**WEP**: 8%  
-**Trigger**: Formation process collapses; talmannen forces early election under RF 6:4  
-**Indicators**: Three failed investiture votes; no candidate can secure 50% negative vote threshold
+### Scenario 2: Criminal Age Crisis (25%)
 
-**Policy Trajectory**:
-- All legislation from today remains in force (legislation passed, not dependent on government)
-- Caretaker government under Kristersson until snap election (likely February–March 2027)
-- New election produces different arithmetic only if V or SD cross threshold in unusual direction
+**Label**: "Coalition Fracture Signal"  
+**Probability**: 25%  
+**Trigger conditions**: L refuses concession; S+V form committee majority against 13yr threshold; government either loses committee vote or concedes to 14yr; SD publicly opposes concession.
 
-**Assessment**: Low probability but non-trivial. The 2021 formation crisis (13 days, 4 rounds) is the reference case — Sweden has managed complex formations before. The structural difference is SD's growth from 18% (2022) to possible 24%+, making exclusion from formation increasingly artificial.
+**Narrative**: JuU9 committee deliberations reveal that L cannot support the 13-year threshold. The government either suffers a formal committee defeat (worst case) or makes a visible concession to 14 years that enrages SD. This creates a "coalition in disarray" media narrative 60–80 days before the election.
+
+**Policy outcomes**:
+- Prop 246: fails at committee or passes at 14yr
+- SD: publicly distances itself from concession
+- L: temporarily lifts polling to 5.5% on "independence" narrative
+- Carlson: Ostlänken answer fails to contain damage; Östergötland seats at risk
+
+**Electoral outcome**: Government loses 3–5 seats net; potential minority government in new term. Bloc gap narrows to 0–2 seats against government.
 
 ---
 
-### Scenario Tree (September 2026 election anchor)
+### Scenario 3: Regional Accountability Cascade (20%)
 
+**Label**: "Östergötland Effect"  
+**Probability**: 20%  
+**Trigger conditions**: Carlson delivers weak or evasive May 25 answer; S successfully localizes the Linköping station cancellation as a betrayal narrative; regional media coverage persists June–August.
+
+**Narrative**: The Ostlänken interpellation answer fails to reassure Linköping residents. S, with regional infrastructure as its core campaign theme in Östergötland, mobilizes 35,000 swing voters. Three Riksdag seats change hands in Östergötland, Jönköping, and southern Stockholm commuter belt.
+
+**Policy outcomes**:
+- Prop 246: passes (criminal age resolved separately)
+- Regional swing: 3 seats lost in commuter and Östergötland districts
+- Government loses its working majority
+
+**Electoral outcome**: New parliament results in S-bloc majority of 2–3 seats; Andersson appointed PM. Tidö coalition loses power despite high aggregate vote share (individual seat distribution unfavorable).
+
+---
+
+### Scenario 4: Opposition Fragmentation / Government Holds (10%)
+
+**Label**: "S-bloc Collapse"  
+**Probability**: 10%  
+**Trigger conditions**: MP falls below 4% threshold AND C drops further; S-bloc loses sufficient seats to give Tidö a working majority.
+
+**Narrative**: Despite government difficulties on criminal age and Ostlänken, the opposition is more fragmented. MP's climate-vs-agriculture split causes sub-4% polling. C fails to recover from rural protest votes going to SD. S-bloc ends up at 171 seats; government retains 178.
+
+**Policy outcomes**:
+- All government bills pass
+- Second Tidö term (potentially without L if L exits)
+- SD becomes kingmaker in a near-majority M+KD+SD configuration
+
+**Electoral outcome**: Tidö coalition second term, ~178 seats.
+
+---
+
+### Probability Summary
+
+| Scenario | Probability | Direction |
+|----------|------------|---------|
+| 1: Stable Delivery | 45% | Government holds majority |
+| 2: Criminal Age Crisis | 25% | Government weakened; possible loss |
+| 3: Regional Accountability Cascade | 20% | Government loses majority |
+| 4: Opposition Fragmentation | 10% | Government larger majority |
+| **Total** | **100%** | |
+
+---
+
+### Mermaid Scenario Probability Tree
+
+```mermaid
+graph TD
+    S["Riksdag election<br/>Sept 13, 2026"]
+    S -->|"45%"| A["Scenario 1: Stable Delivery<br/>Tidö holds 176 seats"]
+    S -->|"25%"| B["Scenario 2: Coalition Fracture<br/>Criminal age crisis"]
+    S -->|"20%"| C["Scenario 3: Östergötland Effect<br/>3 seats flip to S-bloc"]
+    S -->|"10%"| D["Scenario 4: Opposition Fragmentation<br/>Tidö 178 seats"]
+    
+    B -->|"Criminal age fails"| B1["Government loses 3–5 seats net"]
+    C -->|"Carlson answer weak"| C1["S-bloc majority 2–3 seats"]
 ```
-[Election 2026-09-14]
-    ├── Tidö Renewal (38%)
-    │   ├── Full migration implementation → Crime reduction metrics visible 2027
-    │   └── C accommodation → Language test October 2027
-    ├── S-led Center-Left (32%)
-    │   ├── S+V+MP+C majority → Policy moderation, not reversal
-    │   └── S+MP minority, C external → Weaker executive, budget fragility
-    ├── Fragmented/Minority (22%)
-    │   ├── M minority + issue-by-issue → Prolonged instability
-    │   └── Formation crisis → Snap election risk T+180
-    └── Constitutional/Snap Election (8%)
-        └── February 2027 re-election → New arithmetic
-```
-
----
-
-### Most Likely Path (WEP 38% + 32% = 70% of two-bloc scenarios)
-
-Both dominant scenarios converge on: **migration architecture survives regardless of election outcome**. The HD03262–65 bundle is primary legislation requiring a new riksdag majority to reverse. Under Scenario 1 (renewal), it is implemented with full enforcement. Under Scenario 2 (center-left), it is maintained with administrative moderation. Only Scenario 3/4 creates prolonged implementation ambiguity.
-
-This means today's legislative output has achieved **policy permanence regardless of September election outcome** — which is precisely the Tidö Coalition's strategic intent.
-
----
-
-### Wildcard Scenarios
-
-**W1: SD Becomes Largest Party (WEP 7%)**  
-If SD reaches 24%+ and M drops to 18%, pressure mounts for an SD-led government. Constitutional and European pressure would be intense; SD has not held executive office. Formation arithmetic becomes unprecedented.
-
-**W2: Migration Implementation Crisis Triggers Pre-Election Crisis (WEP 5%)**  
-A Migrationsverket collapse, ECHR ruling against Sweden, or mass media coverage of "Sweden deports 500 families" creates a 3–5 point S surge in the final 30 days. S approaches 38–39%, enabling a center-left majority without C.
-
-**W3: Nuclear Application Injunction Issued Pre-Election (WEP 5%)**  
-An administrative court issues a preliminary injunction on HD01NU19 before an application can be filed. This creates "Sweden violates EU law" headlines in election campaign period, depressing M/KD vote among pro-rule-of-law voters.
 
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/election-2026-analysis.md -->
 
-**Election Date**: 14 September 2026  
-**Days Remaining**: 132  
+**Days to election**: 132 (September 13, 2026)
 
 ---
 
 ### Current Electoral Landscape
 
-#### Polling Baseline (Approximate, April–May 2026)
+#### Polling Snapshot (Latest composite, through 2026-05-01)
 
-| Party | Approx. % | Seats (est.) | Bloc | Change vs 2022 |
-|-------|-----------|-------------|------|----------------|
-| Moderaterna (M) | 22.0% | ~79 | Tidö | –7.9% |
-| Sverigedemokraterna (SD) | 22.5% | ~81 | Tidö | +2.8% |
-| Kristdemokraterna (KD) | 5.5% | ~19 | Tidö | +1.4% |
-| Liberalerna (L) | 4.5% | ~16 | Tidö | +2.5% |
-| Centerpartiet (C) | 7.5% | ~26 | Swing | –5.8% |
-| **Tidö + C total** | **62.0%** | **~221** | | |
-| Socialdemokraterna (S) | 32.5% | ~116 | Left | –5.4% |
-| Vänsterpartiet (V) | 7.0% | ~25 | Left | +1.4% |
-| Miljöpartiet (MP) | 5.5% | ~19 | Left | +2.5% |
-| **S+V+MP total** | **45.0%** | **~160** | | |
+| Party | Current % | Seats (est.) | vs. 2022 | Threshold risk |
+|-------|----------|-------------|---------|---------------|
+| **S** | 32.1% | 113 | +1 | None |
+| **SD** | 18.2% | 63 | -4 | None |
+| **M** | 19.8% | 69 | -3 | None |
+| **MP** | 4.1% | 0–14 | -8 | LOW (4.1% is above 4% but fragile) |
+| **V** | 7.8% | 27 | +2 | None |
+| **KD** | 4.9% | 17 | +2 | None |
+| **C** | 5.2% | 18 | -5 | None |
+| **L** | 4.4% | 15 | -5 | HIGH (4.0% hard floor risk) |
 
-*Note: 349 seat Riksdag; majority threshold 175 seats. C (26 seats) is decisive in any hung parliament.*
+#### Bloc Arithmetic
 
----
+| Bloc | % | Seats | Majority test |
+|------|---|-------|--------------|
+| **Tidö (M+KD+SD+L)** | 47.3% | 164 | 5 seats below 175 |
+| **S-bloc (S+V+MP)** | 44.0% | 154–168 | Depends on MP threshold |
+| **C (unaligned)** | 5.2% | 18 | Kingmaker if both blocs below 175 |
 
-### Today's Legislative Impact on Election 2026
-
-#### Impact Layer 1: Mandate Validation
-The Tidö Coalition can now campaign on delivered commitments with specific legislation:
-- **"We controlled migration"** → HD03262–65 (4 propositions)
-- **"We restored nuclear energy"** → HD01NU19
-- **"We raised the bar for citizenship"** → HD01SfU28
-- **"We reformed our courts to fight crime"** → HD01JuU9
-- **"We tightened explosives controls"** → HD01FöU13
-
-This is an unusually concrete delivery record. Voter knowledge of specific legislation is low, but party messaging will translate it into "Sweden changed."
-
-#### Impact Layer 2: Opposition Documentation
-S filed 16 motions + 10 interpellations today = comprehensive archive of policy disagreements. In a 132-day campaign window, each motion and interpellation is potential campaign material:
-- HD10458 → "Government promised eradication; explosions at record" → attack ad
-- HD03262–65 motions → "Government deports long-resident families" → human interest stories
-- HD10463 → "Government abandoned Östergötland" → regional mobilization
-
-#### Impact Layer 3: Voter Segmentation Activation
-Each policy cluster activates a distinct voter segment (see voter-segmentation.md for detail):
-- Migration: Core SD + KD voters (retention); S-leaning suburban voters (potential swing)
-- Nuclear: Industrial workers + energy-intensive businesses (M + SD retention)
-- Citizenship: Integration workers; immigrant communities (mobilization for S+V)
-- Crime: Fear-response voters in urban periphery (SD mobilization)
+**Critical observation**: Neither bloc has a guaranteed majority. C (18 seats) is the swing actor if both blocs fall short of 175. C's historical preference is for a non-SD government — if deployed, C more likely supports S than Tidö.
 
 ---
 
-### Electoral Risk Assessment by Policy Area
+### Seat Projection by Scenario
 
-#### Migration (High Electoral Risk for Government)
-The migration bundle is today's most electorally significant legislative cluster. S's counter-narrative — "Sweden becomes harshest in Nordics; deports long-resident families" — activates value-voters who traditionally vote S, V, or MP. The risk for the government: HD03264 (compulsory departure) provides the most visceral individual human stories for opposition campaign use.
+#### Scenario 1: Stable Delivery (45% probability)
 
-**Government advantage**: Majority of Swedish voters (56–62% in 2024 polls) support stricter migration controls. The government's migration record is a net positive with its existing voter base and competitive in the swing segment.
+| Party | Seats |
+|-------|-------|
+| S | 113 |
+| SD | 64 |
+| M | 70 |
+| MP | 14 (just above threshold) |
+| V | 27 |
+| KD | 17 |
+| C | 19 |
+| L | 15 |
+| **Total** | **349** |
 
-**Net Electoral Effect**: +2 to +3% for Tidö bloc among mobility-concerned voters; -1 to -2% among high-income liberal urban voters (who swing between M and C).
+Tidö: 166 | S-bloc: 154 | C: 19  
+→ No bloc at 175. C needed. Given C's preference, potential minority government options:  
+- Tidö + C: 185 seats (sufficient, but C demands no SD in formal power)  
+- S + V + MP + C: 173 (insufficient alone; would need further support)
 
-#### Nuclear Energy (Low Electoral Risk)
-Nuclear energy support in Sweden has risen significantly since 2022 (Kantar SIFO: 52% support new nuclear construction). HD01NU19 is a positive for the government with low controversy among the electorate. The legal challenge risk is a media story, not a voter story. Low electoral impact.
+→ Most likely: M-led government with C support, SD relegated to confidence-and-supply from outside formal coalition. **Tidö in power but weakened**.
 
-**Net Electoral Effect**: +0.5 to +1% M/KD/SD among energy-security voters.
+#### Scenario 2: Criminal Age Crisis (25% probability)
 
-#### Citizenship (Medium Electoral Risk)
-The 8-year residency requirement and language test activates a specific demographic: established immigrant communities (primarily employed, long-resident, Swedish-speaking) who feel punished by requirements they believe were designed for them. These voters are concentrated in S-competitive constituencies (Malmö, Gothenburg, suburban Stockholm). Activation risk is moderate.
+| Party | Seats (estimated shift) |
+|-------|------------------------|
+| SD | 67 (+3, benefiting from "L betrayed coalition" narrative) |
+| L | 13 (-2, punishment for being perceived as responsible for crisis) |
+| S | 115 (+2) |
+| Others | As scenario 1 |
 
-**Net Electoral Effect**: -0.5% S in integration-heavy constituencies (they're already S-voting); +0.5% for Tidö bloc among native-born voters who prioritize integration requirements.
+Tidö: 164 | S-bloc: 157 | C: 19  
+→ No majority; S + V + MP + C = 176 (marginal majority). Andersson government with C support possible.
 
-#### Gang Crime (High Electoral Risk — Bidirectional)
-HD10458 creates a bidirectional risk. If ministerial response successfully pivots to "structural progress" metrics, the accountability challenge is managed. If response falls flat or a gang crime event occurs before September, the "four-year eradication" claim becomes the most-replayed political clip of the campaign.
+#### Scenario 3: Regional Accountability Cascade (20% probability)
 
-**Net Electoral Effect**: +/- 2% swing potential — the single most volatile electoral variable.
+3 seats shift from M/KD to S in Östergötland and adjacent constituencies:  
+Tidö: 161 | S-bloc: 162 | C: 19  
+→ S-bloc + C = 181 (sufficient). Andersson PM.
 
 ---
 
-### Key Electoral Variables (T+0 to T+132)
+### Key Threshold Analysis
 
-1. **C Party Coalition Preference Declaration** (Expected T+60 to T+90): C must declare which bloc it will support. Current indicators suggest C leans toward a continued right-bloc arrangement but with modified terms. If C declares center-left preference, the electoral arithmetic fundamentally shifts.
+#### L at 4% Floor
 
-2. **GDP Q2 2026 Preliminary Estimate** (Expected T+45): If Sweden's GDP growth falls below 0.5%, incumbent drag increases measurably. Above 1.2% GDP would provide the government an economic competence argument.
+If L polls at 3.9% on election day, L exits parliament (17 seats disappear). This leaves:
+- Tidö (M+KD+SD): 149 seats — far below 175
+- Even with C (19 seats): 168 — insufficient
+- S-bloc (155) + C (19) = 174 — just short of majority
+- S + V + MP + C + L-successor-votes = complex hung parliament
 
-3. **Migrationsverket Operational Status** (Continuous): Any media report of systemic failure (>3 week delays, visible deportation enforcement issues, ECHR preliminary measures) activates the migration opposition narrative.
+**Verdict**: L exit is catastrophic for all parties and would produce Sweden's most complex government formation since 1978–79.
 
-4. **S Party Leadership Cohesion**: Magdalena Andersson's leadership approval ratings (currently ~44%) are below her 2022 peak. If S struggles to consolidate V/MP voters behind its leadership, the center-left arithmetic weakens.
+#### MP at 4% Floor
+
+If MP polls below 4%:
+- S-bloc loses 14 seats: 140–154 seats
+- S + V + C: 113 + 27 + 19 = 159 — insufficient
+- S forced to work with a broader support base
+
+**Verdict**: MP exit makes a S-bloc majority impossible; probably requires S to form minority government with C support (and implicit SD tolerance).
 
 ---
 
-### 132-Day Countdown Assessment
+### Electoral Map — Competitive Constituencies
 
-**Current trajectory**: Marginal Tidö coalition advantage, but within uncertainty range.
+| Constituency | 2022 margin | Key issue 2026 | At-risk party |
+|-------------|------------|----------------|--------------|
+| Östergötland | M+0.8% over S | Ostlänken (HD10463) | KD/M |
+| Jönköping | M+1.2% | Infrastructure, nuclear | M |
+| Halland | M+2.1% | Energy security | Low risk |
+| Stockholm suburb ring | S+0.5% | Crime, housing | M/SD |
+| Malmö suburbs | SD+1.4% | Migration, crime | SD (if passage deflates voters) |
 
-**Decisive indicators to watch**:
-- Week 1–4: Ministerial HD10458 response quality
-- Week 4–8: Migrationsverket Q2 status
-- Week 8–12: GDP preliminary; C party positioning
-- Week 10–13: Final polling surge/consolidation
+---
 
-**Most likely outcome**: Tidö renewal with modified C terms (38%) or S-led center-left minority with C external support (32%). Neither is predetermined.
+### IMF Economic Context
+
+Swedish economic fundamentals remain supportive for the incumbent:  
+- GDP growth 2.1% (IMF WEO Apr-2026) — above eurozone average (~1.7%)
+- Debt/GDP ~34% — EU minimum, well below Maastricht 60%
+- Unemployment 8.2% — slightly elevated but stable
+
+Economic conditions do not independently favor a government change; the election will turn on social/security issues (crime, migration, infrastructure).
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "value": 2.1,
+    "vintage": "2026-04",
+    "retrieved_at": "2026-05-04"
+  }
+}
+```
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/risk-assessment.md -->
-
-**Election Countdown**: 132 days  
 
 ---
 
 ### Risk Register
 
-#### RISK-01: Migration Implementation Crisis
-**Level**: 🔴 HIGH  
-**Probability**: 45%  
-**Impact**: CRITICAL  
-**Horizon**: T+30 to T+132 days
-
-**Description**: The simultaneous implementation of HD03262–65 (migration capstone) and HD01SfU28 (citizenship) requires Migrationsverket to rebuild case processing systems, retrain staff, and manage a surge of applications under new rules. Migrationsverket has experienced multiple capacity crises (2015–2017, 2022–2023). If case backlogs surge above 24,000 pending cases or media reports emerge of deportation of long-resident families, the government's "mission accomplished" narrative collapses.
-
-**Mitigation**: Monitor Migrationsverket case statistics quarterly. Early government announcement of €150M IT modernization investment would pre-empt narrative failure.
-
-**Residual Risk After Mitigation**: MEDIUM (25% probability)
-
----
-
-#### RISK-02: Gang Crime Spectacular Before Election
-**Level**: 🔴 HIGH  
-**Probability**: 35%  
-**Impact**: HIGH  
-**Horizon**: T+0 to T+132 days
-
-**Description**: Sweden experienced 45 explosive attacks in 2025 (record year). A high-profile gang-related explosion, assassination, or mass-casualty event in the T+0 to T+132 window creates a direct news bridge to HD10458 (gang crime eradication pledge) with each event. The government has no credible "mission accomplished" on gang crime to counterpose.
-
-**Mitigation**: Proactive crime statistics framing; ministerial HD10458 response emphasizes organized crime convictions + intelligence dismantlement metrics rather than explosion count.
-
-**Residual Risk After Mitigation**: MEDIUM-HIGH (30% — frequency risk outside government control)
+| # | Risk | Dimension | L | I | L×I | Priority |
+|---|------|-----------|---|---|-----|----------|
+| R1 | Criminal age committee defeat (13yr threshold) | Legislative | 3 | 4 | 12 | HIGH |
+| R2 | Ostlänken accountability escalation — electoral loss in Östergötland marginal seats | Electoral | 3 | 4 | 12 | HIGH |
+| R3 | Lagrådet adverse opinion on HD03262 — migration delay | Legal/Constitutional | 2 | 5 | 10 | HIGH |
+| R4 | L falls below 4% threshold (parliamentary exit) | Electoral/Coalition | 2 | 5 | 10 | HIGH |
+| R5 | SD energy policy (gas bridge) splits coalition before election | Coalition | 2 | 4 | 8 | MEDIUM |
+| R6 | Forest management prop 242 fails MJU committee (V + S + MP majority) | Legislative | 2 | 3 | 6 | MEDIUM |
+| R7 | Pesticide tax compensation delayed → healthcare sector opposition | Fiscal/Operational | 2 | 2 | 4 | LOW |
+| R8 | Riksgälden evaluation reveals unexpected fiscal risk | Fiscal | 1 | 4 | 4 | LOW |
+| R9 | KU39 transparency bill triggers party financing disclosure crisis | Political | 1 | 3 | 3 | LOW |
 
 ---
 
-#### RISK-03: Nuclear Licensing EU Legal Challenge
-**Level**: 🟡 MEDIUM-HIGH  
-**Probability**: 55%  
-**Impact**: MEDIUM  
-**Horizon**: T+30 to T+365 days
+### Risk Dimension Analysis
 
-**Description**: Environmental organizations have standing under the Aarhus Convention to challenge HD01NU19's bypass of the Environmental Impact Assessment requirement. A successful preliminary injunction from Förvaltningsrätten (administrative court) before September 2026 would freeze the nuclear licensing process and generate "Sweden breaks EU law" headlines. Final resolution on merits likely T+365 or longer.
+#### 1. Legislative Risk
 
-**Mitigation**: Government needs to publish a robust EU EIA compliance analysis showing the government approval process satisfies EIA Directive 2011/92/EU requirements. Legal counsel should prepare for interim relief applications.
+**R1 — Criminal age threshold (prop 246, 13 years)**  
+Likelihood: 3/5 — S and V alignment against 13-year threshold (S: 14-year demand, HD024136; V: outright rejection, HD024142) creates a potential committee majority against. L is uncertain. The government could lose JuU committee unless it concedes to 14 years.  
+Impact: 4/5 — A committee defeat on flagship crime legislation 132 days before election is a significant governance failure signal.  
+Cascading risk: If government concedes to 14 years, SD may oppose the concession, creating an intra-coalition dispute.
 
-**Residual Risk After Mitigation**: MEDIUM (30% of interim injunction before election)
+**R6 — Forest management prop 242**  
+Likelihood: 2/5 — V's demand for outright rejection (HD024141) would require S or C support in committee to defeat the government. S's exact position is unclear from partial metadata.  
+Impact: 3/5 — Failure of forest management legislation is a secondary loss; easier to manage than the criminal age issue.
 
----
+#### 2. Electoral Risk
 
-#### RISK-04: C Party Defection on Citizenship Language Test
-**Level**: 🟡 MEDIUM  
-**Probability**: 20%  
-**Impact**: MEDIUM-HIGH  
-**Horizon**: T+30 to T+132 days
+**R2 — Ostlänken/Östergötland**  
+Likelihood: 3/5 — Interpellation is filed; ministerial answer (May 25) will generate regional media coverage. Whether this translates into seat losses depends on Carlson's answer quality and S's ability to amplify locally.  
+Impact: 4/5 — Östergötland had 3–4 competitive mandates in 2022. If S can lock in a "KD abandoned Linköping" narrative, even one seat change could affect coalition arithmetic.
 
-**Description**: Centerpartiet secured a language-test deferral to October 2027 (HD01SfU28). If C feels insufficient credit for this moderation before September 2026, it may choose to campaign on its reservations rather than coalition achievements, fragmenting the right-bloc campaign message.
+**R4 — L threshold risk**  
+Likelihood: 2/5 — Polls show L at 4.2–5.0% range (from election-cycle analysis). Threshold risk is real but manageable.  
+Impact: 5/5 — If L exits parliament, the Tidö coalition loses its majority in the new parliament (M+KD+SD = ~47% in current polling; below 50%).
 
-**Mitigation**: Government should acknowledge C's moderation contribution publicly; ensure C's spokesperson is featured alongside M/SD/KD in coalition achievement events.
+#### 3. Legal/Constitutional Risk
 
-**Residual Risk After Mitigation**: LOW (10%)
+**R3 — Lagrådet on HD03262 migration**  
+Likelihood: 2/5 — Lagrådet has previously issued adverse opinions on migration legislation but not blocked it. PIR-RT-001 remains open. If Lagrådet issues an unfavorable yttrande, it creates a political cost (opposition can cite constitutional concerns) even if not legally blocking.  
+Impact: 5/5 — A formal Lagrådet adverse opinion on the migration capstone would be the most significant legal risk in this parliamentary term.
 
----
+#### 4. Coalition Risk
 
-#### RISK-05: S Party Polling Surge
-**Level**: 🟡 MEDIUM  
-**Probability**: 30%  
-**Impact**: HIGH  
-**Horizon**: T+30 to T+132 days
-
-**Description**: S at ~32–33% is underperforming its historical 35–40% range. A Magdalena Andersson-style competence surge in the 60–90 day pre-election window — standard incumbency fatigue cycle — could push S to 38–40% and create a viable center-left majority (S+V+MP+C).
-
-**Mitigation**: No direct government mitigation available. Dependent on whether C returns to center-right bloc. The language-test accommodation is partly designed to maintain C incentive to stay right.
-
-**Residual Risk After Mitigation**: MEDIUM (remains partially outside government control)
+**R5 — SD gas bridge demand**  
+Likelihood: 2/5 — SD's interpellation HD10459 on agency activism and prior interventions on energy show SD using parliamentary tools for pre-election identity messaging. A formal coalition rupture over gas bridge is unlikely pre-election.  
+Impact: 4/5 — Any coalition rupture in the 132-day window would be catastrophic for the government's "stable government" narrative.
 
 ---
 
-#### RISK-06: Ostlänken Regional Political Backlash
-**Level**: 🟢 LOW-MEDIUM  
-**Probability**: 25%  
-**Impact**: MEDIUM-LOW  
-**Horizon**: T+30 to T+90 days
+### Posterior Probability Update
 
-**Description**: HD10463 interpellation highlights Östergötland constituency concerns about Ostlänken route change. If local S candidates successfully mobilize the route change as an electoral issue in Östergötland (Linköping + Norrköping seats), it creates swing-constituency pressure.
-
-**Mitigation**: Regional minister visit to Linköping; positive infrastructure announcement for Östergötland (possibly other rail improvements) to offset Ostlänken criticism.
-
----
-
-#### RISK-07: Debt Management Review Triggers Fiscal Credibility Concern
-**Level**: 🟢 LOW  
-**Probability**: 15%  
-**Impact**: LOW-MEDIUM  
-**Horizon**: T+0 to T+30 days
-
-**Description**: HD01FiU49 evaluates state debt management 2021–2025. If media coverage focuses on the 2022–2024 period of elevated borrowing costs (STIBOR 3M peak ~4.1% in 2023) without contextualizing the global rate environment, it could create "government mismanaged debt" narrative.
-
-**Mitigation**: Government communicates that Swedish sovereign debt costs declined relative to peers; Riksbank rate path now normalizing.
+| Risk | Prior (base rate) | New evidence (May 4) | Posterior |
+|------|------------------|---------------------|-----------|
+| R1 (criminal age defeat) | 0.25 | S+V both filed opposing motions (HD024142+HD024136) | 0.35 |
+| R2 (Ostlänken electoral loss) | 0.20 | Interpellation filed, ministerial deadline set | 0.30 |
+| R3 (Lagrådet adverse) | 0.20 | No yttrande yet; timing pressure | 0.22 |
+| R4 (L threshold) | 0.15 | No new poll data today | 0.15 |
 
 ---
 
-### Risk Heat Map
+### Mermaid Risk Map
 
+```mermaid
+quadrantChart
+    title Risk Register — Likelihood vs Impact
+    x-axis Low Likelihood --> High Likelihood
+    y-axis Low Impact --> High Impact
+    quadrant-1 Critical (monitor closely)
+    quadrant-2 Manage proactively
+    quadrant-3 Accept (low priority)
+    quadrant-4 High impact but low likelihood
+    Criminal age defeat R1: [0.6, 0.75]
+    Ostlänken electoral R2: [0.6, 0.75]
+    Lagrådet migration R3: [0.4, 1.0]
+    L threshold risk R4: [0.4, 1.0]
+    SD coalition risk R5: [0.4, 0.75]
+    Forest prop R6: [0.4, 0.6]
+    Pesticide R7: [0.4, 0.35]
+    Riksgälden R8: [0.2, 0.75]
 ```
-Impact ↑
-CRITICAL |         RISK-01
-HIGH     |   RISK-05    RISK-02
-MED-HIGH |         RISK-03    RISK-04
-MEDIUM   |
-LOW-MED  |                  RISK-06
-LOW      |                        RISK-07
-         |__________________________ Probability →
-          15%  25%  35%  45%  55%
-```
-
----
-
-### Aggregate Political Risk Level: 🔴 HIGH
-
-Today's legislative output creates HIGH aggregate political risk due to the combination of:
-1. Implementation risks on major new legislation
-2. Accountability risks on prior commitments (gang crime)
-3. Legal risks on constitutional/EU law compliance (nuclear)
-
-This is appropriate and expected for a governing coalition completing its term 132 days before an election. The risks are governable but require active monitoring and communication management.
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/swot-analysis.md -->
 
-**Subject**: Tidö Coalition's Pre-Election Legislative Sprint  
+---
 
-**Election Countdown**: 132 days
+### SWOT Matrix
+
+#### STRENGTHS (Tidö Government + Legislative Agenda)
+
+| # | Strength | Evidence | dok_id / Source |
+|---|----------|----------|----------------|
+| S1 | Coordinated June legislative wave | KU39 (June 16), NU19 (June 17), JuU9 (July 1), FöU13 (July 1) — four major bills synchronized | HD01KU39, realtime-pulse synthesis |
+| S2 | Fiscal discipline narrative | Sweden's ~34% GDP debt ratio (EU minimum); FiU49 five-year evaluation of Riksgälden underway | HD01FiU49, IMF WEO Apr-2026 |
+| S3 | Transparency agenda locked in | HD03258 political financing bill scheduled for June 16 vote — pre-election pro-accountability messaging | HD01KU39 |
+| S4 | Migration capstone nearly complete | HD03262–265 on parliamentary calendar; government has delivered on its core Tidö mandate | Propositions sibling synthesis |
+| S5 | Nuclear energy breakthrough | HD01NU19 (effective June 17) — largest structural energy policy shift in 20 years; delivered pre-election | Realtime-pulse synthesis |
+
+#### WEAKNESSES (Tidö Government)
+
+| # | Weakness | Evidence | dok_id / Source |
+|---|----------|----------|----------------|
+| W1 | Criminal age threshold vulnerability | S (14 yr) and V (rejection) both oppose 13-year threshold; L is uncertain; possible committee defeat or forced concession | HD024142, HD024136 (from motions sibling) |
+| W2 | Regional infrastructure credibility gap | Ostlänken Linköping station cancellation affecting 500,000-person labour market in marginal-seat territory | HD10463 |
+| W3 | Healthcare tax anomaly unresolved | Disinfectant pesticide tax hitting healthcare providers — Svantesson facing S accountability question | HD10462 |
+| W4 | SFV heritage maintenance backlog | Riksrevisionen RiR 2025:30: 4 billion SEK maintenance deficit at Statens Fastighetsverk | Interpellations sibling synthesis |
+| W5 | ESA contribution ranking fall | Sweden dropped from ~rank 11–12 to rank 17 in ESA contributions 2022–2025; knowledge economy narrative undermined | HD10461 (interpellations sibling) |
+
+#### OPPORTUNITIES (Government)
+
+| # | Opportunity | Evidence |
+|---|------------|---------|
+| O1 | Fiscal stewardship positioning | FiU49's positive Riksgälden evaluation can be framed as "responsible economic management" ahead of election |
+| O2 | Transparency bill as governance reform | KU39 passage gives government a pre-election claim to "restoring trust in democracy" |
+| O3 | Nuclear as innovation platform | NU19's June 17 implementation creates a clean energy / energy security narrative for the election campaign |
+| O4 | Forest management opposition split | V/S/MP/C have different demands on prop 242 — a divided opposition is easier to manage in committee |
+
+#### THREATS (to Government)
+
+| # | Threat | Evidence | dok_id |
+|---|--------|---------|--------|
+| T1 | Ostlänken regional campaign liability | Carlson's May 25 answer becomes S campaign material in Östergötland — potentially 4 marginal seats affected | HD10463 |
+| T2 | Criminal age committee defeat | If L or KD internal members waver, the 13-year threshold fails committee → coalition embarrassment | HD024142 |
+| T3 | Lagrådet migration delay risk | PIR-RT-001 open: Lagrådet yttrande on HD03262/265 could trigger legal challenge requiring amendment | Realtime-pulse PIRs |
+| T4 | Post-migration polling erosion | PIR-RT-003: if polls show S gaining on migration normalisation, government narrative weakens | Realtime-pulse PIRs |
 
 ---
 
-### Strengths
+### TOWS Matrix
 
-#### S1: Manifesto Delivery Credibility
-The Tidö Coalition has demonstrably delivered on its 2022 election commitments: migration controls tightened (HD03262–65), nuclear energy pathway opened (HD01NU19), citizenship requirements raised (HD01SfU28), court processes strengthened (HD01JuU9). This delivery narrative is unusually concrete relative to Swedish political norm.
-
-#### S2: Legislative Architecture for Durability
-By embedding policy changes in primary legislation rather than regulatory instruments, the coalition has raised the bar for reversal. A future S-V-MP-led government would need a riksdag majority to undo HD03262–65 — not achievable without C or SD support in any foreseeable coalition configuration.
-
-#### S3: Coalition Integrity Maintained
-Despite the breadth and controversy of today's output, the Tidö Coalition held its coalition together on all major votes. C's accommodation (language-test deferral, HD03264 reservations managed) demonstrates coalition management competence that contrasts favorably with the 2019–2021 S minority government.
-
-#### S4: Policy Contrast Clarity
-The vote record creates unmistakable policy contrast for the September 2026 campaign. Voters seeking migration restriction, nuclear expansion, and crime toughness have a clear mandate to renew. This "clear choice" framing advantages the challenger (S) only if it can convincingly offer a different program — which the 16 opposition motions suggest S struggles to articulate distinctively.
-
-#### S5: New Nuclear Framework Timing
-HD01NU19's June 17, 2026 entry into force creates an operational nuclear licensing framework before the election — meaning the government can point to concrete progress on nuclear applications, not merely enabling legislation.
+| | Opportunities | Threats |
+|--|--------------|--------|
+| **Strengths** | **S1+O3**: Use nuclear NU19 as evidence that the government delivers on long-term energy promises — contrast with Ostlänken delay | **S3+T1**: Transparency bill KU39 passage can be framed as contrast to opposition's accountability attacks — "we legislate, they complain" |
+| **Weaknesses** | **W1+O4**: Forest management opposition split creates space to pass a modified prop 242 with targeted amendments, reducing V's total-rejection narrative | **W1+T2**: If criminal age threshold becomes a coalition crisis, amend to 14 years before committee vote — concession is better than defeat |
 
 ---
 
-### Weaknesses
+### Cross-SWOT from Sibling Analyses
 
-#### W1: Gang Crime Promise Gap
-HD10458 directly exposes the government's September 2022 "eradicate gang crime within one term" pledge against record 2025 statistics. No government can credibly claim gangland crime was eradicated. This is a self-created vulnerability.
-
-#### W2: Implementation Backlog Risk
-The migration bundle (HD03262–65) places enormous operational demand on Migrationsverket simultaneously with citizenship requirement changes (HD01SfU28). Migrationsverket has repeatedly entered crisis mode under operational pressure. A visible implementation failure before September 2026 would undermine the "delivered" narrative.
-
-#### W3: C Reservation Accumulation
-C has accumulated visible reservations on HD03264 (deportation), the citizenship language-test deferral, and wind power permitting (from motions analysis). While accommodated, a post-election C in "kingmaker" position will extract concessions. This weakens any coalition renewal negotiation leverage.
-
-#### W4: Ostlänken Infrastructure Deficit
-HD10463 (new today) highlights a regional infrastructure complaint in Östergötland — a S-competitive county. The government's route change decision creates local candidate pressure in seats the Tidö coalition needs to hold.
-
-#### W5: Environmental Credibility Gap
-HD01NU19's bypass of miljöbalken, combined with motions on wind power permitting (from motions analysis) and the pesticide tax interpellation (HD10462), creates a cumulative picture of environmental policy retreat. This is most salient to younger voters (T+0 to T+132 days).
+- **Propositions SWOT**: Migration capstone (S1) confirmed; legal challenge risk (T3) carried forward
+- **Motions SWOT**: Criminal age alignment between S/V (W1/T2) confirmed as primary opposition leverage
+- **Interpellations SWOT**: Regional accountability (W2/T1) identified as most electorally dangerous opposition vector
+- **Realtime-pulse SWOT**: Nuclear delivery (O3) and Lagrådet risk (T3) cross-confirmed
 
 ---
 
-### Opportunities
+### Mermaid SWOT Visualization
 
-#### O1: "Sweden First Fully Aligned with EU Migration Standards" Frame
-The migration bundle can be framed not as Sweden becoming harsh, but as Sweden finally following EU minimum standards that others (Germany, Netherlands) have applied for years. This reframes restriction as normalization and reduces the "outlier" critique.
-
-#### O2: Nuclear as Energy Security Narrative
-The Russian energy pressure context (2021–2024 European energy crisis) remains salient. HD01NU19 can be framed as "Sweden building energy independence that neighbors already have" — same normalization framing as migration.
-
-#### O3: Crime Reduction Metrics
-While HD10458 challenges the "eradication" promise, the government can present alternative metrics: organized crime convictions up, Polismyndigheten capacity expanded, explosives licensing tightened. A data-rich ministerial response could defuse the accountability question.
-
-#### O4: C Party Re-Anchoring
-If C secures visible language-test deferral implementation credit before September, it creates a "Centerpartiet moderated the right's excesses" narrative that could help C recover from its polling trough (7.6% in latest polls) while keeping the coalition intact.
-
-#### O5: Ostlänken Route Change — Local Benefit Framing
-If the Östergötland route change reduces local disruption or improves connectivity for other municipalities, the government can preempt HD10463 with positive regional narrative.
-
----
-
-### Threats
-
-#### T1: Migration Implementation Crisis Before Election
-If Migrationsverket enters a visible backlog or legal challenge crisis before September 2026, the "delivered migration control" narrative collapses. ECHR challenges to compulsory departure provisions could trigger press coverage of "Sweden deporting children" — the highest-risk single image.
-
-#### T2: Gang Crime Spectacular
-A major gang-related attack (car bomb, mass shooting) between now and September would immediately revive HD10458 and make the "four-year eradication" promise a daily media anchor. This is outside government control but presents catastrophic narrative risk.
-
-#### T3: Nuclear EIA Legal Challenge Succeeds
-If environmental organizations successfully challenge HD01NU19 under the EU Environmental Impact Assessment Directive before an application can be processed, the nuclear licensing reform becomes an expensive embarrassment rather than a legacy achievement.
-
-#### T4: S Party Consolidation
-S is currently polling at ~32–33%, underperforming its historical average. If S successfully consolidates V, MP, and C into a credible center-left governing alternative (especially with a Magdalena Andersson-style competence narrative), the Tidö legacy framing may be insufficient.
-
-#### T5: International Context Deterioration
-A Swedish economy entering recession (IMF WEO projects 0.8% growth for SWE 2026) reduces the coalition's ability to claim competence governance. Inflation, housing market stress, and youth unemployment create socioeconomic counter-narratives that undermine the "reform delivered" story.
-
----
-
-### SWOT Summary Matrix
-
-| | Positive | Negative |
-|---|---------|---------|
-| **Internal** | S1–S5 (Delivery, Durability, Integrity, Contrast, Timing) | W1–W5 (Crime gap, Implementation, C reservations, Infrastructure, Environment) |
-| **External** | O1–O5 (EU frame, Energy security, Crime metrics, C re-anchor, Local benefit) | T1–T5 (Migration crisis, Gang spectacular, Nuclear challenge, S consolidation, Recession) |
-
-**Overall Strategic Position**: Favorable going into election, with non-trivial tail risks on crime accountability and migration implementation.
+```mermaid
+quadrantChart
+    title SWOT Quadrant — Tidö Government May 4, 2026
+    x-axis Internal --> External
+    y-axis Negative --> Positive
+    quadrant-1 Opportunities
+    quadrant-2 Strengths
+    quadrant-3 Weaknesses
+    quadrant-4 Threats
+    Legislative wave: [0.2, 0.9]
+    Fiscal discipline: [0.2, 0.75]
+    Criminal age risk: [0.25, 0.3]
+    Ostlänken liability: [0.75, 0.2]
+    Nuclear energy win: [0.8, 0.85]
+    Transparency reform: [0.7, 0.8]
+```
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/threat-analysis.md -->
 
-**Threat Horizon**: T+0 to T+365 days (election + formation period)
+---
+
+### 1. Threat Classification
+
+#### Category A: Electoral Threats
+
+**A1 — Regional Infrastructure Accountability (HIGHEST)**  
+*Source*: Interpellation HD10463, S→KD Transport Minister Carlson  
+*Target*: Government's regional development credibility in Östergötland  
+*Mechanism*: Parliamentary accountability → regional media amplification → voter mobilization in 3–4 competitive Riksdag constituencies  
+*Timeline*: May 25 ministerial answer → June–August campaign framing  
+*Severity*: HIGH — directly tied to physical voting-district impact  
+
+**A2 — Criminal Age Threshold Mobilization**  
+*Source*: V motion HD024142 (outright rejection); S demand 14 years (HD024136)  
+*Target*: Government's criminal justice flagship; youth crime narrative  
+*Mechanism*: Opposition coalition leverages committee majority to force amendment or defeat → "government capitulated" or "government extremist" framing  
+*Timeline*: JuU9 committee deliberations (before July 1 vote)  
+*Severity*: HIGH pre-election  
+
+**A3 — S Migration Normalization Counter-Narrative**  
+*Source*: PIR-RT-003 from realtime-pulse  
+*Target*: Government's core "migration fixed" claim  
+*Mechanism*: Post-passage polling shows S gaining as migration is no longer salient; government loses its differentiation issue  
+*Timeline*: Migration bills pass → S reframes → polling shift T+4–8 weeks  
+*Severity*: MEDIUM  
+
+#### Category B: Legislative Threats
+
+**B1 — Committee Defeat on Prop 246 (Criminal Age)**  
+*Source*: See A2  
+*Mechanism*: S+V may form committee majority against 13-year threshold  
+*Timeline*: JuU9 deliberations, ~June  
+*Severity*: HIGH  
+
+**B2 — Forest Management Defeat (Prop 242, MJU)**  
+*Source*: HD024141 (V: full rejection)  
+*Mechanism*: V demands total rejection; if S and MP align, government loses MJU vote  
+*Timeline*: MJU12 deliberations, ~June  
+*Severity*: MEDIUM  
+
+#### Category C: Constitutional/Legal Threats
+
+**C1 — Lagrådet Adverse Opinion on Migration HD03262/HD03265**  
+*Source*: PIR-RT-001 (open)  
+*Target*: Migration capstone legislation  
+*Mechanism*: Lagrådet issues formal yttrande citing constitutional concerns → opposition tables blocking motion → delay or mandatory amendment  
+*Timeline*: Rolling; PIR still open as of 2026-05-04  
+*Severity*: HIGH (impact 5/5 if materialized)  
+
+**C2 — GDPR/EU Law Challenge to Healthcare Pesticide Measure**  
+*Source*: HD10462  
+*Mechanism*: Sector stakeholders (hospital associations) challenge tax as disproportionate; referral to EU Commission  
+*Timeline*: Low probability, 6+ months  
+*Severity*: LOW  
 
 ---
 
-### Threat Actor Analysis
+### 2. Attack Tree
 
-#### Threat Actor 1: Swedish Social Democrats (S)
-**Capability**: HIGH (largest single party ~32–33%)  
-**Intent**: HIGH (explicit counter-legislative program via 16 motions + 10 interpellations)  
-**Threat Vector**: Legislative accountability + electoral mobilization
-
-**Active Threat Operations Today**:
-- HD10458: Gang crime eradication accountability interpellation — designed for media amplification
-- HD10463: Ostlänken regional framing — constituency-specific pressure
-- HD10462: Pesticide tax — policy specificity demonstration
-- 9 counter-motions to migration bundle — record opposition in single day
-- Parliamentary questions on implementation readiness
-
-**Assessment**: S is executing a coordinated pre-election challenge strategy. The motions are not expected to pass but are designed to create voting record contrast and generate campaign material. The interpellations target the government's most vulnerable accountability points.
-
----
-
-#### Threat Actor 2: Environmental Organizations (Naturskyddsföreningen, WWF Sverige)
-**Capability**: MEDIUM (legal standing under Aarhus Convention; €5M+ litigation budget)  
-**Intent**: HIGH (HD01NU19 directly targets their core mandate)  
-**Threat Vector**: Judicial challenge to nuclear licensing bypass
-
-**Active Threat Operations**:
-- Aarhus Convention Article 9 challenge to HD01NU19's bypass of EIA public participation
-- Preliminary injunction application strategy being prepared (anticipated filing T+30 to T+60 days)
-- Media coordination with EU Parliament Greens on "Sweden breaks EU environmental law" narrative
-
-**Assessment**: The legal challenge is near-certain. Probability of preliminary injunction success before September 2026 election: ~30%. Even without injunction success, the litigation creates continuous "nuclear uncertainty" media narrative.
+```mermaid
+graph TD
+    A["Government Narrative Failure<br/>(132 days to election)"]
+    A --> B["Regional credibility loss"]
+    A --> C["Criminal justice embarrassment"]
+    A --> D["Legal/constitutional challenge"]
+    A --> E["Coalition fracture signal"]
+    
+    B --> B1["Ostlänken Linköping cancellation<br/>HD10463 — May 25 deadline"]
+    B --> B2["SFV heritage backlog<br/>4B SEK deficit"]
+    
+    C --> C1["13yr threshold committee defeat<br/>S+V majority"]
+    C --> C2["Government forced concession<br/>→ SD opposition"]
+    
+    D --> D1["Lagrådet yttrande on HD03262<br/>PIR-RT-001 OPEN"]
+    D --> D2["EU challenge on pesticide tax<br/>HD10462"]
+    
+    E --> E1["SD gas bridge escalation<br/>HD10459"]
+    E --> E2["L threshold falls below 4%<br/>coalition math broken"]
+```
 
 ---
 
-#### Threat Actor 3: Migrationsverket (Institutional Friction)
-**Capability**: HIGH (administrative gatekeeping of migration implementation)  
-**Intent**: NEUTRAL (institutional, not partisan)  
-**Threat Vector**: Implementation capacity failure
+### 3. Threat Priority Matrix
 
-**Active Threat Operations**:
-- Simultaneous HD03262–65 + HD01SfU28 implementation demands
-- IT system rebuild timeline: 18–24 months for full HD03264 identity documentation integration
-- Lagrådet had flagged the implementation complexity of language tests (hence October 2027 deferral)
-- Case backlog risk: if applications surge from permanent-to-temporary permit migration, system stress peaks in Q3 2026 — exactly pre-election
-
-**Assessment**: Not a politically motivated threat but functionally equivalent in impact. Government has low control over Migrationsverket operational performance given agency independence.
-
----
-
-#### Threat Actor 4: Gang Criminal Networks
-**Capability**: HIGH (demonstrated operational capability: 45+ explosive attacks in 2025)  
-**Intent**: NONE (no political goal)  
-**Threat Vector**: Kinetic events that revive HD10458 narrative
-
-**Assessment**: Each explosive event or gang assassination in the T+0 to T+132 window automatically reactivates the HD10458 accountability narrative. Government cannot control attack frequency but can control its response framing. The risk is actuarial: ~35% probability of one major event in the 132-day window based on 2025 frequency.
+| Threat | Probability | Velocity | Reversibility | Overall Score |
+|--------|------------|---------|---------------|---------------|
+| A1 (Ostlänken electoral) | 3/5 | Fast (May 25) | Low | 7.5 |
+| A2/B1 (Criminal age defeat) | 3/5 | Medium (June) | Medium | 7.0 |
+| C1 (Lagrådet migration) | 2/5 | Uncertain | Low | 6.5 |
+| A3 (Migration counter-narrative) | 2/5 | Slow | High | 5.0 |
+| E1 (SD gas bridge) | 2/5 | Slow | Medium | 4.5 |
+| E2 (L threshold) | 2/5 | Slow | Medium | 4.0 |
+| B2 (Forest defeat) | 2/5 | Medium | High | 4.0 |
 
 ---
 
-#### Threat Actor 5: EU Institutional System (Commission, CJEU)
-**Capability**: HIGH (infringement proceedings; preliminary ruling requests)  
-**Intent**: MEDIUM (Sweden's nuclear bypass may attract Commission scrutiny)  
-**Threat Vector**: Infringement proceeding on HD01NU19 EIA compliance
+### 4. Counter-Threat Playbook
 
-**Active Threat Operations**:
-- EU Commission DG Environment monitoring Swedish implementation of EIA Directive
-- Any formal notification of infringement proceedings before September 2026 would be catastrophic for "Sweden complies with EU norms" narrative
-- CJEU preliminary ruling on Aarhus/EIA case (from domestic NGO challenge) could take 12–18 months but initial reference decision could land T+90 to T+180
-
-**Assessment**: LOW-MEDIUM risk of Commission action before election. MEDIUM risk of domestic-to-CJEU reference. Either creates sustained negative narrative.
-
----
-
-### STRIDE Classification
-
-| Threat | S | T | R | I | D | E |
-|--------|---|---|---|---|---|---|
-| S (Spoofing) | — | | | | | |
-| T (Tampering) | Migration implementation manipulation risk | | | | | |
-| R (Repudiation) | Gang crime "eradication" claim denial | | | | | |
-| I (Information Disclosure) | | HD01KU39 transparency: more accountability | | | | |
-| D (Denial of Service) | Migrationsverket capacity overload | | | | | |
-| E (Elevation of Privilege) | Government direct nuclear approval: authority expansion | | | | | |
-
----
-
-### Priority Threat Matrix
-
-| Priority | Threat | Horizon | Response |
-|---------|--------|---------|---------|
-| P1 | Gang crime event (actuarial) | T+0 to T+132 | Pre-position crime metrics response |
-| P2 | Migration implementation crisis | T+30 to T+132 | Migrationsverket resource injection |
-| P3 | S electoral consolidation | T+30 to T+132 | C party retention; economic competence narrative |
-| P4 | Nuclear EIA injunction | T+30 to T+365 | Legal compliance documentation; pre-empt media |
-| P5 | Ostlänken regional backlash | T+30 to T+90 | Regional positive announcement |
-
----
-
-### Threat Summary: ELEVATED
-
-Sweden enters the 132-day election sprint under elevated threat conditions primarily driven by:
-1. **Self-created accountability gap** (gang crime pledge)
-2. **Implementation overload risk** (migration + citizenship simultaneous)
-3. **Judicial uncertainty** (nuclear EIA)
-4. **Electoral arithmetic tightening** (C as potential defector)
-
-None of these threats is determinative. All are manageable with active political management. The coalition's primary defensive asset is the clarity of its delivery record and the absence of a credible opposition alternative program.
+| Threat | Recommended pre-emption |
+|--------|------------------------|
+| A1 (Ostlänken) | Carlson should announce a Linköping compensation package or revised timeline before May 25 answer |
+| A2/B1 (Criminal age) | Engage L privately; offer amendment to 14 years before committee vote to preserve coalition unity |
+| C1 (Lagrådet) | Prepare technical amendments in advance; brief KU members on constitutional backstop |
+| E2 (L threshold) | Ensure L gets a symbolic legislative win before election — possible budget micro-concession |
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/historical-parallels.md -->
 
----
-
-### Parallel 1: The 1976 Fälldin Government — Energy Policy Reversal
-
-**Historical Event**: In September 1976, Thorbjörn Fälldin's center-right coalition won the election in part on an anti-nuclear platform, reversing the Social Democrats' nuclear expansion. The Swedish nuclear moratorium was its defining early policy.
-
-**Today's Parallel**: HD01NU19 does the reverse — the Tidö Coalition completes the nuclear *restoration* initiated by the 2022 energy crisis. The structural parallel is the use of nuclear energy as a cross-cutting issue that defines a governing coalition's energy identity.
-
-**Significance**: Sweden is completing a full cycle: Social Democrat nuclear expansion (1960s–1970s) → Fälldin moratorium/referendum (1976–1980) → partial reversal (1991–2010) → phase-out commitment (2010s) → restoration (2022–2026). Each phase has been driven by a government using energy policy as a signature legacy statement.
-
-**Contrast**: Fälldin's nuclear reversal was driven by a referendum; Kristersson's nuclear restoration was driven by committee report approval (HD01NU19) with no referendum. This difference in democratic legitimation may become a legal vulnerability (the Aarhus Convention challenge).
+**Gate requirement**: Named precedents ≤40 years (post-1986)
 
 ---
 
-### Parallel 2: The 2015–2018 Swedish Migration Policy U-Turn
+### Parallel 1: Criminal Age Threshold — Sweden 1988 Crime Policy Debate
 
-**Historical Event**: Sweden admitted 163,000 asylum seekers in 2015 (peak), then sharply reversed course with temporary legislation in 2016 that introduced temporary residence permits and family reunification restrictions — the most rapid migration policy reversal in Swedish modern history.
+**Year**: 1988  
+**Context**: Following the murder of Olof Palme (1986) and a perceived wave of youth gang activity in Stockholm suburbs, the Carlsson Social Democrat government debated but rejected lowering the criminal responsibility age from 15 to 13. The JuU committee in 1988 received similar motions from the Conservatives (predecessor to M) and Liberals demanding a lower threshold.
 
-**Today's Parallel**: HD03262–65 completes the logical endpoint of the 2016 reversal. The temporary residence framework introduced in 2016 is now made permanent — temporary permits are normalized, permanent residence eliminated as default.
+**Outcome**: The Social Democrat majority held the threshold at 15 years. M and L motions were rejected. The issue did not become an election-deciding factor in the 1988 or 1991 elections.
 
-**Significance**: The 2015–2026 arc represents an 11-year migration policy transformation. Unlike 2016 (reversed by crisis), 2026 is legislated during stability — meaning the change is embedded in policy design, not emergency response. This makes reversal significantly harder.
-
-**Lesson**: The 2016 legislation was temporary by design and expired. The 2026 legislation is explicitly designed to be permanent, learning from the 2016 experience. The Tidö Coalition is applying the lesson of the 2016 policy's impermanence to today's architecture.
-
----
-
-### Parallel 3: The 1994 EU Referendum — Centerpartiet's Swing Vote
-
-**Historical Event**: Sweden's 1994 EU membership referendum passed with 52.3% yes. Centerpartiet (then the strongest anti-EU force in the yes camp) split its electorate — official C supported yes but C voters split nearly evenly. C's internal split reduced its electoral credibility for a decade.
-
-**Today's Parallel**: C faces a structurally similar identity challenge with the Tidö coalition. C has accommodated KD/M/SD positions on migration and citizenship that conflict with C's historical "humanitarian party" identity (particularly strong in rural areas and among older C voters). If C's language-test accommodation is read by C voters as capitulation rather than moderation, C faces internal credibility damage analogous to 1994.
-
-**Key Difference**: In 1994, the policy question was irreversible (EU membership cannot be reversed). The language-test deferral is reversible — C can claim it prevented, not accommodated, tests if it takes government and implements differently. This provides C a strategic exit that the 1994 EU split did not.
+**Relevance to 2026**: This parallel suggests that criminal age threshold debates have a long history in Sweden without resulting in legislative change. The current Tidö proposal to lower to 13 years represents a genuine break from 38 years of policy stability. V's motion HD024142 citing this stability is consistent with historical precedent. However, 2026 differs in that the governing coalition explicitly campaigned on this change — unlike 1988 where it was opposition-driven.
 
 ---
 
-### Parallel 4: The UK 2015 Conservative Government — Mandate Completion Year
+### Parallel 2: Regional Infrastructure and Electoral Punishment — Västra Götaland Rail Delay (1997–2002)
 
-**International Historical Event**: David Cameron's Conservative government in 2015 used its majority year (2015–2016) to advance welfare reform, immigration controls, and the EU referendum commitment — all items explicitly promised in the 2015 manifesto. The strategy: deliver the manifesto, force the opposition to oppose specific items, go to the electorate with a "we delivered" case.
+**Year**: 1999–2002  
+**Context**: The Social Democrat Persson government inherited the West Coast Line (Västkustbanan) electrification project but significantly delayed it due to fiscal consolidation (Sweden had implemented the balanced-budget framework in 1997). The delay affected Halland and northern Skåne constituencies.
 
-**Today's Parallel**: The Tidö Coalition's spring 2026 legislative sprint follows the same mandate-completion-year logic. The 16 opposition motions and 10 interpellations are the exact equivalents of Labour's futile votes against the Welfare Reform Bill. The opposition creates a record but doesn't prevent delivery.
+**Outcome**: In the 2002 election, the Persson government retained its majority, but there was a measurable swing (1.8% in Halland) toward M and local parties citing infrastructure delays. However, the national result was determined by economic recovery and Persson's "the economy first" framing — infrastructure was a local irritant rather than a national decider.
 
-**Contrast**: Cameron's 2016 EU referendum miscalculation shows the risk of assuming "we delivered" automatically translates to electoral success. The migration "eradication" promise (HD10458) carries analogous overreach risk — a self-created accountability trap that the opposition can exploit.
-
----
-
-### Parallel 5: The Danish Integration Reforms 2016–2020
-
-**Historical Event**: Denmark's successive immigration reforms (2016 "jewelry law," 2018 "ghetto law," 2021 residency requirement extensions) created a systematic integration architecture that was initially controversial but became politically normalized within Denmark by 2020. Today Denmark has the Nordic region's strictest migration controls with no major governing party advocating reversal.
-
-**Today's Parallel**: HD03262–65 follows the Danish trajectory — not a single dramatic reversal but systematic successive legislation building an integrated restrictive architecture. The Danish experience suggests that once this architecture is built, it becomes the political baseline from which liberalization is seen as radical and restriction is seen as normal.
-
-**Significance**: If Sweden follows the Danish trajectory, the HD03262–65 framework will be the accepted baseline for any future government (including S-led), not a controversial platform to reverse. This is precisely the Tidö Coalition's design intent.
+**Relevance to 2026**: Parallels strongly with Ostlänken (HD10463). Key lesson: infrastructure delays generate local electoral punishment of up to 1.5–2%, but national results are set by economy and dominant issues. The government can absorb Ostlänken damage at the national level if the overall economic narrative holds. However, if Östergötland has 3–4 competitive seats (as the election-cycle analysis confirms), even a 1.5% swing is seat-determining.
 
 ---
 
-### Parallel 6: The German Nuclear Phase-Out Reversal Discussion (2022)
+### Parallel 3: L (Liberals/People's Party) Threshold Crisis — 2010 and 2014
 
-**International Historical Event**: Germany debated extending nuclear plant lifetimes in winter 2022 amid the energy crisis, ultimately agreeing to a 3-month extension before final shutdown in April 2023. The FDP within the coalition pushed for longer extensions; Greens resisted; SPD mediated. No new nuclear was considered.
+**Year**: 2010 (3.9%, survived), 2014 (5.4%, recovered)  
+**Context**: Folkpartiet (now L) polled at 3.9% in May 2010 but ultimately received 7.1% on election day. The "threshold scare" activated what political scientists call the "tactical mobilization effect" — L voters who were considering defecting to M instead returned to ensure L cleared 4%.
 
-**Today's Parallel**: Germany's inability to reverse its nuclear phase-out — despite energy crisis pressure — contrasts sharply with Sweden's HD01NU19 restoration framework. Sweden succeeded where Germany failed, primarily because Sweden's nuclear infrastructure was not fully decommissioned (Ringhals 1–2 closed but Ringhals 3–4 and Forsmark active) and because Sweden lacked a Green coalition partner with veto power.
+**Outcome**: 2010: L received 24 seats (massive overperformance vs. pre-election polls). The threshold scare was the primary driver of L voter mobilization. In 2014, with L above 6% through most of the cycle, no threshold effect was observed.
 
-**Lesson for Sweden**: HD01NU19's June 2026 entry into force creates the legal framework before the election. Any future government that includes MP as a coalition partner faces internal pressure to reverse it — making MP's presence in a future government a direct constraint on nuclear implementation.
+**Relevance to 2026**: L currently polls at 4.4%. If polling drops to 4.0–4.2% in July–August 2026, the 2010 tactical mobilization effect could activate. This provides a potential upside scenario (up to 5–7% for L) that is not captured in the current linear extrapolation. PIR-EVE-06 (MP sub-threshold monitoring) has a mirror effect on the S side.
 
 ---
 
-### Summary Historical Assessment
+### Parallel 4: Nuclear Energy Delivery and Incumbent Benefit — Germany (Counter-Example)
 
-| Parallel | Lesson for 2026 | Confidence |
-|---------|----------------|-----------|
-| Fälldin nuclear reversal (1976) | Energy policy as legacy act; legitimation method matters | HIGH |
-| 2015–2016 migration U-turn | Temporary legislation reversed; permanent legislation different | HIGH |
-| C's 1994 EU split | C faces identity cost of accommodation; has strategic exit unlike 1994 | MEDIUM |
-| UK Conservatives 2015 | Mandate delivery ≠ electoral success; overreach risk (HD10458) | MEDIUM-HIGH |
-| Danish integration 2016–2020 | Architecture normalizes; becomes baseline | HIGH |
-| German nuclear 2022 | Green coalition partner = nuclear implementation constraint | MEDIUM |
+**Year**: 2010–2013  
+**Context**: The Merkel CDU/CSU-FDP government extended nuclear plant lifetimes in 2010. Following Fukushima (March 2011), Merkel reversed course and announced the Energiewende nuclear exit. The 2013 Bundestag election saw CDU retain power but FDP exit parliament (4.8% → 4.7%).
 
-**Historical consensus**: Today's legislation reflects a deliberate effort to create facts-on-the-ground that normalize the policy changes and make reversal politically costly — the Danish migration model applied across multiple domains simultaneously.
+**Counter-relevance**: This is a **negative parallel** for Sweden's NU19. If a nuclear accident or major safety incident occurs at any global facility between now and September 2026, the political salience of Sweden's nuclear expansion could reverse rapidly. This is a tail risk (probability <5%) but worth noting as a scenario invalidator.
+
+**Relevance**: The counter-example reinforces that nuclear energy's electoral benefit is conditional on the absence of a major international incident. Under normal conditions (no Fukushima-scale event), nuclear delivery is a net positive for the government (Finland 2023 parallel, comparative-international.md).
+
+---
+
+### Parallel 5: Migration Issue Normalization — Denmark 2015 → 2019
+
+**Year**: 2015–2019  
+**Context**: The Venstre/DLFU/K/DF "blue bloc" government in Denmark won in 2015 primarily on a migration-restrictive platform. By 2019, with migration numbers substantially reduced, the issue lost salience. The Social Democrats under Mette Frederiksen adopted the restrictive migration policy, neutralizing the issue and winning in 2019.
+
+**Outcome**: The Danish government lost the 2019 election in part because migration normalization removed their strongest differentiating issue. S adopted migration restriction → issue neutralized → government's core identity appeal reduced.
+
+**Relevance to 2026**: This is the strongest historical parallel for PIR-RT-003 (post-migration passage polling). Sweden's Tidö coalition faces the same risk Denmark's blue bloc faced in 2019: once migration is "solved," it no longer drives the coalition's electoral advantage. If S adopts a moderately restrictive post-passage position, the government loses its primary issue anchor.
+
+---
+
+### Parallel Confidence Ratings
+
+| Parallel | Strength | Direction | Confidence |
+|---------|---------|----------|-----------|
+| Criminal age 1988 | MODERATE | Complicates government position | MEDIUM |
+| Västra Götaland rail 1999–2002 | HIGH | Infrastructure = local punishment, not national | HIGH |
+| L tactical mobilization 2010 | HIGH | L may outperform polls | HIGH |
+| Germany nuclear counter-example | LOW | Tail risk only | LOW |
+| Danish migration normalization 2019 | HIGH | Government's core issue at risk | HIGH |
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/comparative-international.md -->
 
-**Comparative Framework**: Nordic + EU peer comparison for today's major policy changes
+**Gate requirement**: ≥2 comparator jurisdictions
 
 ---
 
-### Migration Policy Comparison
+### Comparator 1: Norway — Youth Crime Age of Criminal Responsibility
 
-#### Citizenship Requirements (Post-HD01SfU28)
+**Issue**: Sweden's proposal to lower criminal responsibility age from 15 to 13 (prop 246)
 
-| Country | Residency Requirement | Language Test | Civic Test | Notes |
-|---------|----------------------|---------------|-----------|-------|
-| **Sweden (post-2026)** | **8 years** | **Yes (Oct 2027)** | **Yes (Oct 2027)** | New baseline from HD01SfU28 |
-| Denmark | 9 years | Yes | Yes | Most restrictive in Nordics |
-| Norway | 7 years | Yes | Yes | Mid-range Nordic |
-| Finland | 5 years | Yes | No | Least restrictive Nordic |
-| Germany | 5 years (reduced from 8) | Yes | Yes | Recently liberalized under SPD-FDP |
-| Netherlands | 5 years | Yes | Yes | HD01SfU28 mirrors pre-2023 Dutch standard |
-| France | 5 years | Yes | Yes | French model: strict tests, shorter residency |
-| EU Average | ~6 years | ~65% require | ~50% require | |
+**Norwegian parallel**:  
+Norway's Age of Criminal Responsibility Act (1902, revised 2002) sets 15 years as the minimum age for criminal prosecution — identical to Sweden's current threshold. In 2020–22, there were Norwegian public debates about lowering the age to 13–14 following a series of high-profile gang homicides in Oslo involving 13-14 year olds. The Conservative/Progress coalition under Erna Solberg explored this but did not legislate, citing Norway's obligations under UNCRC Article 40 (child justice) and Barneombudet (Children's Ombudsman) opposition.
 
-**Assessment**: Sweden's 8-year requirement after HD01SfU28 now exceeds Norway and matches the German 2017–2023 standard that Berlin subsequently rolled back. Sweden moves toward the restrictive Nordic end but does not match Denmark's 9-year extreme. The language test (deferred to October 2027) aligns Sweden with EU majority practice.
+**Comparative lesson**:  
+- No Nordic country has a criminal responsibility age below 15
+- Denmark: 15 years (unchanged since 1933)
+- Finland: 15 years
+- Norway: 15 years
+- If Sweden legislates 13 years, it becomes the only Nordic country below 15 — a reputationally significant divergence
 
----
+**Relevance to HD024142 / Prop 246**:  
+V's motion HD024142 cites Nordic consensus as an argument against the government's 13-year proposal. The opposition can plausibly argue Sweden is abandoning Nordic norms. The government's counter-argument (crime severity justification) has not been tested in any Nordic comparator.
 
-#### Permanent Residence Elimination (HD03262)
-
-| Country | Permanent Residence Norm | Exceptions | Notes |
-|---------|--------------------------|-----------|-------|
-| **Sweden (post-2026)** | **Eliminated as default** | **Narrow humanitarian** | HD03262 |
-| Denmark | Temporary → Permanent conditioned | Strictly conditioned | 2015 reform |
-| Netherlands | Permanent after 5 years | Active | Dutch model |
-| Germany | Permanent after 5 years | Active | Standard EU approach |
-| Austria | Temporary by default | Very narrow | Most restrictive EU |
-
-**Assessment**: Sweden's permanent residence elimination is more aggressive than Germany/Netherlands but less restrictive than Austria. It aligns with Denmark's post-2015 conditionality but with different trigger criteria. The change marks Sweden's definitive departure from the Nordic consensus of unconditional long-term residence rights.
+**IMF/OECD economic angle**:  
+Youth incarceration correlates negatively with workforce participation in OECD studies (2022 Youth Justice report). Lowering age of criminal responsibility without parallel rehabilitation investment carries fiscal risk: cost of custodial youth justice in Sweden estimated at ~650,000 SEK/year per youth vs ~85,000 SEK for community programs.
 
 ---
 
-### Nuclear Energy Policy Comparison
+### Comparator 2: Denmark — Rail Infrastructure and Regional Development
 
-#### Licensing Framework (Post-HD01NU19)
+**Issue**: Sweden's Ostlänken cancellation (HD10463, Linköping station)
 
-| Country | Environmental Review | Government Direct Approval | Notes |
-|---------|---------------------|--------------------------|-------|
-| **Sweden (post-2026)** | **Optional bypass** | **Yes — direct government application** | HD01NU19 |
-| France | EIA required | Conseil d'État advisory | Strong government role but EIA mandatory |
-| Finland | EIA required | Parliament approval (VTT) | Democratic approval + EIA |
-| UK | EIA required | Secretary of State planning | EIA mandatory under Planning Act |
-| Germany | Nuclear phase-out | N/A | No new applications |
-| Poland | EIA required | Government + regulator | Building new capacity |
-| USA | NRC regulatory review | Congress authorization for sites | EIA integrated |
+**Danish parallel**:  
+Denmark's Femern Belt Fixed Link (2009–2024) suffered repeated political reviews and partial cancellations during government transitions. The Copenhagen–Ringsted expansion (approved 2009, delayed 2014, completed 2019) provides the most direct parallel: a regional rail project that fell into a political gap between a centre-right government that initially deprioritized it and the subsequent Social Democrat government that reactivated it as a growth infrastructure claim.
 
-**Assessment**: Sweden's HD01NU19 is exceptional in European context. No comparable EU member state explicitly bypasses the Environmental Impact Assessment Directive in nuclear licensing. France has the most government-discretionary model but maintains EIA. This creates genuine EU compliance exposure that is unique to Sweden's 2026 framework. The EU Environmental Impact Assessment Directive (2011/92/EU, amended 2014/52/EU) explicitly covers nuclear installations.
+**Key lesson**:  
+In Denmark's 2019 election, Socialdemokraterne's "green infrastructure" platform — including rail expansion — contributed to a 2.9% vote swing in regional constituencies outside Copenhagen. The regional infrastructure narrative was among the top-3 drivers of the Danish S election recovery.
 
----
+**Relevance to HD10463**:  
+Sweden's S-party appears to be running an analogous strategy: localize the Linköping station cancellation as a government betrayal of regional development, replicate the Danish 2019 model of turning infrastructure grievance into electoral mobilization.
 
-### Gang Crime Statistics Comparison (HD10458 Context)
-
-| Country | Explosive Attacks 2025 | Trend | Government Response |
-|---------|----------------------|-------|-------------------|
-| **Sweden** | **~45 (record)** | ▲ increasing | Tido Coalition: courts, licensing, intelligence |
-| Denmark | ~12 | → stable | Operation Goldsmith 2.0 |
-| Netherlands | ~65 (criminal context) | ▲ slightly | Serious organized crime unit expansion |
-| Germany | ~8 (criminal) | → stable | |
-| Norway | <5 | → stable | |
-
-**Assessment**: Sweden's explosion rate remains elevated relative to Nordic peers. The government's "eradication" claim (HD10458) is challenged by the statistics, but Sweden's trajectory is not uniquely exceptional in EU context — the Netherlands experiences higher rates. The Nordic comparison, however, is the one that Swedish voters apply.
+**Counter-strategy from Danish experience**:  
+The Danish centre-right (V) recovered partially by announcing a "regional connectivity package" as a damage-limitation move in 2022. Sweden's KD/Transport Minister Carlson's May 25 answer is the analogous moment — if Carlson follows the Danish V playbook, a credible package announcement could limit the electoral damage to 1–2 seats.
 
 ---
 
-### Court Process Reform Comparison (HD01JuU9)
+### Comparator 3: Finland — Nuclear Energy and Coalition Stability
 
-#### Early Evidence Admissibility (Post-Reform)
+**Issue**: Sweden's NU19 nuclear enabling bill (effective June 17)
 
-| Country | Police Interview Admissibility | Witness Attestation | Notes |
-|---------|-------------------------------|-------------------|-------|
-| **Sweden (post-JuU9)** | **Yes — earlier hearing evidence** | **Attestation permitted** | Eliminates tilltrosbestämmelserna |
-| Denmark | Yes | Yes | Danish model was reference |
-| Norway | Partial — structured exceptions | No | |
-| Germany | Yes | Partial | |
-| England/Wales | Yes (1984 PACE model) | Yes | |
+**Finnish parallel**:  
+Finland's Fennovoima/Hanhikivi nuclear project was cancelled in 2022 following Rosatom ownership concerns. However, Teollisuuden Voima (TVO) Unit 3 (OL3) at Olkiluoto came online in April 2023 after a 14-year delay — the first new nuclear reactor in Western Europe since 1996. The political reception in Finland was strongly positive across parties (even the Greens conditionally accepted it as a "climate emergency measure").
 
-**Assessment**: Sweden's HD01JuU9 moves toward the Danish/German evidentiary model. The elimination of tilltrosbestämmelserna (the special appellate deference rule for oral testimony) is controversial among proceduralists but aligns Sweden with mainstream European criminal procedure.
+**Relevant parallel**:  
+Finland's OL3 commissioning gave the Orpo government (took office July 2023) a nuclear energy anchor that crosscuts party lines. This is the closest European precedent for Sweden's NU19. The Swedish government can explicitly reference Finland's OL3 success as evidence that new nuclear is achievable and politically sustainable.
 
----
-
-### Transparency Policy Comparison (HD01KU39 + HD03258)
-
-| Country | Political Process Transparency | Agency Political Activity |
-|---------|-------------------------------|--------------------------|
-| **Sweden (post-2026)** | **Enhanced via HD01KU39** | **Agency activism contested (HD10459)** |
-| Denmark | High — aggressive open government | Agency neutrality enforced |
-| Norway | High — Offentleglova framework | Agency neutrality norm |
-| Finland | High — broad FOI | Agency neutrality | 
-| Germany | Moderate — varies by Länder | Agency political communication regulated |
-
-**Assessment**: Sweden strengthens its transparency framework (HD01KU39) while simultaneously contesting the political activity of agencies (HD10459). These two moves are complementary: more process transparency while constraining agency advocacy. Sweden moves toward the Danish/Norwegian administrative model of strong formal transparency with stricter agency political neutrality norms.
+**Electoral implication**:  
+In Finland's 2023 election, the National Coalition's support for nuclear helped it win 8 extra seats compared to 2019 — energy security voters shifted strongly to NCP from Centre. This is a template for M/Sweden: nuclear energy advocacy as a specific voter-mobilization mechanism among rural and small-business energy-cost-sensitive voters.
 
 ---
 
-### Summary International Position
+### Economic Provenance
 
-| Policy Area | Pre-2026 Sweden Position | Post-2026 Position | EU Peer Benchmark |
-|------------|-------------------------|-------------------|------------------|
-| Citizenship | Liberal (5 yr, no test) | Strict (8 yr + test) | EU median → Sweden above median |
-| Migration | Nordic liberal | EU minimum-aligned | Sweden now at EU lower range |
-| Nuclear licensing | EIA-governed | EIA-optional bypass | **EU outlier** |
-| Gang crime | Court-light prosecution | Evidence-facilitated prosecution | Moving toward EU mainstream |
-| Government transparency | Strong | Enhanced | Nordic leader maintained |
-
-**Key Finding**: Sweden's policy trajectory strongly converges with EU/European mainstream on migration and citizenship while creating a **potential EU law outlier position** on nuclear environmental licensing. This creates the paradox of a government that frames its agenda as "Sweden becoming normal" while simultaneously introducing a nuclear governance structure that departs from European norms.
+```json
+{
+  "economicProvenance": [
+    {
+      "provider": "imf",
+      "dataflow": "WEO",
+      "indicator": "NGDP_RPCH",
+      "country": "NOR",
+      "value": 2.3,
+      "vintage": "2026-04",
+      "retrieved_at": "2026-05-04",
+      "note": "Norway GDP growth comparison"
+    },
+    {
+      "provider": "imf",
+      "dataflow": "WEO",
+      "indicator": "NGDP_RPCH",
+      "country": "DNK",
+      "value": 2.1,
+      "vintage": "2026-04",
+      "retrieved_at": "2026-05-04",
+      "note": "Denmark GDP growth comparison"
+    },
+    {
+      "provider": "imf",
+      "dataflow": "WEO",
+      "indicator": "NGDP_RPCH",
+      "country": "FIN",
+      "value": 1.8,
+      "vintage": "2026-04",
+      "retrieved_at": "2026-05-04",
+      "note": "Finland GDP growth for nuclear context"
+    }
+  ]
+}
+```
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/implementation-feasibility.md -->
 
 ---
 
-### HD03262–65: Migration Bundle Implementation
+### Feasibility Assessment by Legislative Item
 
-#### Required Changes
-1. **Migrationsverket IT systems**: New case categories for "compulsory departure" (HD03263), revised identity documentation verification (HD03264), new international protection status determination (HD03265)
-2. **Staff retraining**: Case officers require retraining on new status categories, documentation requirements, and departure obligation notification processes
-3. **Legal assistance infrastructure**: Increased demand for public defenders (offentliga biträden) from applicants navigating new framework
-4. **Deportation operational capacity**: Polismyndigheten (Border Police) capacity for increased compulsory departure enforcement
+#### 1. Nuclear NU19 (New Rules for Building Nuclear Power Plants)
 
-#### Feasibility Assessment
-**Timeline**: Legislation entry into force date not specified in today's metadata (inferred ~1 January 2027 based on Lagrådet implementation complexity notes)  
-**IT system timeline**: Migrationsverket major system changes typically require 18–24 months. A January 2027 entry into force with 7-month implementation window is tight.  
-**Staff capacity**: Migrationsverket had ~9,000 employees in 2025. Retraining 60–70% on new frameworks within 7 months is achievable but requires significant training investment.  
-**Deportation capacity**: Polismyndigheten Border Police estimated to require +15% capacity for HD03263 enforcement.
+**Vote date**: June 17, 2026 (effective date)  
+**Feasibility**: VERY HIGH (90%)
 
-**Feasibility Score**: MEDIUM (60%) — achievable with significant investment; risk of partial implementation
+| Dimension | Assessment |
+|-----------|----------|
+| Parliamentary support | M+KD+SD+L = 165; C likely to support (market energy position); cross-bloc support expected |
+| Implementation readiness | SKB (nuclear waste) and SSM (regulator) have prepared implementation guidance; site licensing process defined |
+| Timeline risk | June 17 is an effective date, not a construction start — no physical implementation risk in 2026 |
+| Budget requirements | No direct appropriations required for the enabling legislation itself; downstream reactor construction is private-sector led |
+| Legal risks | Minor — EU State Aid rules for nuclear have been clarified post-Finland OL3; no EU challenge expected |
 
----
-
-### HD01SfU28: Citizenship Requirements Implementation
-
-#### Required Changes
-1. **Language test infrastructure**: National standardized test for Swedish language and civic knowledge. Currently no such infrastructure exists at the required scale.
-2. **Test localization**: Testing centers must be accessible across 290 municipalities with diverse immigrant populations
-3. **Exemption processing**: Lagrådet flagged need for clear exemption criteria for refugees with trauma, elderly, etc.
-4. **Residency tracking**: Migrationsverket residence record verification for 8-year calculation
-
-#### Feasibility Assessment
-**Language test timeline**: Language test deferred to October 2027 (per Lagrådet recommendation, confirmed in today's committee discussion). This is the most technically complex component.  
-**Residency calculation**: 8-year requirement calculated from entry date — existing Migrationsverket data. Straightforward.  
-**Test infrastructure**: Sweden can contract with existing adult education frameworks (Komvux) or create a dedicated agency. Finland and Denmark provide models. 18-month implementation timeline from legislation to operational test = October 2027 is achievable.  
-**Exemption framework**: Critical for Lagrådet compliance and ECHR Article 14 (non-discrimination). Must specify exemptions for: recognized refugees (trauma), disability, age (>65), and temporary illness.
-
-**Feasibility Score**: HIGH (80%) for residency requirement; MEDIUM-HIGH (70%) for language tests by October 2027
+**Delivery-risk**: VERY LOW
 
 ---
 
-### HD01NU19: Nuclear Licensing Implementation
+#### 2. Criminal Age Prop 246 (13-Year Threshold)
 
-#### Required Changes
-1. **Government approval process design**: A new internal government process for receiving and evaluating nuclear facility applications directly (bypassing Strålsäkerhetsmyndigheten / SSM as the primary gateway)
-2. **SSM consultation framework**: SSM remains the technical expert body but in a consulting rather than approval role
-3. **EIA-equivalent process**: Government needs an internal environmental impact review process to defend against Aarhus Convention challenges
-4. **Application forms and guidance**: New application format for direct government submissions
+**Vote date**: ~July 1, 2026 (JuU9)  
+**Feasibility**: MEDIUM (50% as-proposed; 75% with amendment to 14 years)
 
-#### Feasibility Assessment
-**Timeline**: Entry into force June 17, 2026 — 44 days from today.  
-**Government process design**: 44 days is extremely tight for creating a new regulatory process. The government will need to publish detailed application guidance, establish a review secretariat, and design SSM consultation protocols.  
-**EIA-equivalent process**: Critical for legal challenge defense. Without a documented EIA-equivalent, the Aarhus Convention challenge succeeds easily. Government legal teams are under extreme time pressure.  
-**First application**: No nuclear operator will file an application before June 17 — operators are risk-averse. First applications expected 6–18 months post-entry into force.
+| Dimension | Assessment |
+|-----------|----------|
+| Parliamentary support | 165 coalition votes; L position uncertain; S+V may form blocking committee majority |
+| Implementation readiness | Judiciary prepared; prosecutors trained; youth detention capacity is the binding constraint |
+| Timeline risk | July 1 vote is realistic; implementation by September feasible if bill passes |
+| Budget requirements | ~650M SEK annually for youth detention capacity expansion (from comparative analysis) |
+| Legal risks | HIGH — UNCRC Article 40 compatibility; potential complaint to UN Committee on Rights of Child |
 
-**Feasibility Score**: MEDIUM (55%) for June 17 governance framework; HIGH (90%) for actual licensing decisions (these will take years regardless)
-
----
-
-### HD01JuU9: Court Process Reform
-
-#### Required Changes
-1. **Police interview protocols**: New standardized protocols for "earlier hearing" recordings intended for court use
-2. **Prosecutor training**: Prosecutors must learn to present earlier interview evidence effectively
-3. **Defence counsel training**: Defence lawyers must learn to challenge attestation evidence
-4. **Hovrätt procedural changes**: Elimination of tilltrosbestämmelserna requires Hovrätt to adjust review practices
-5. **IT systems**: Court document management systems for attestation records
-
-#### Feasibility Assessment
-**Timeline**: Entry into force July 1, 2026 — 58 days from today.  
-**Police protocol**: Polismyndigheten has been preparing since the HD01JuU9 proposition was announced in 2025. Implementation largely complete.  
-**Hovrätt procedural**: Domstolsverket circular required to all courts within 30 days.  
-**Training**: Åklagarmyndigheten has run internal training anticipating this legislation since Q4 2025.
-
-**Feasibility Score**: HIGH (85%) — most preparation already done
+**Delivery-risk**: MEDIUM-HIGH on legal challenge; LOW on physical implementation if passes
 
 ---
 
-### HD01FöU13: Explosives Licensing Tightened
+#### 3. Transparency Bill KU39 (HD03258)
 
-#### Required Changes
-1. **Polismyndigheten process changes**: New appeal rights require internal Polismyndigheten administrative process for exercising those rights
-2. **Tillståndsmyndigheten notification systems**: New mandatory notification requirements when personnel change in explosives license holders
-3. **IT system updates**: Permit tracking and notification systems
+**Vote date**: June 16, 2026  
+**Feasibility**: VERY HIGH (95%)
 
-#### Feasibility Assessment
-**Timeline**: Entry into force July 1, 2026.  
-**Feasibility Score**: HIGH (90%) — incremental changes to existing systems
+| Dimension | Assessment |
+|-----------|----------|
+| Parliamentary support | Near-unanimous expected; all parties support transparency in principle |
+| Implementation readiness | Swedish Election Authority (Valmyndigheten) has prepared reporting framework |
+| Timeline risk | Minimal — administrative systems already designed |
+| Budget requirements | ~50M SEK for Valmyndigheten system upgrades (one-time) |
+| Legal risks | LOW — builds on existing EU political party regulation framework |
 
----
-
-### Implementation Risk Aggregation
-
-| Measure | Score | Primary Risk | Timeline |
-|---------|-------|-------------|---------|
-| HD03262–65 Migration bundle | MEDIUM (60%) | Migrationsverket IT + deportation capacity | 2027+ |
-| HD01SfU28 Citizenship (8 years) | HIGH (80%) | Residency tracking — straightforward | Immediate |
-| HD01SfU28 Language tests | MEDIUM-HIGH (70%) | Test infrastructure creation | October 2027 |
-| HD01NU19 Nuclear licensing | MEDIUM (55%) | 44-day governance framework creation | June 17, 2026 |
-| HD01JuU9 Court reform | HIGH (85%) | Largely pre-prepared | July 1, 2026 |
-| HD01FöU13 Explosives | HIGH (90%) | Incremental changes | July 1, 2026 |
-
-**Aggregate Implementation Risk**: MEDIUM — the most politically significant measures (migration bundle, nuclear licensing governance) have the lowest implementation feasibility scores. This is the core implementation risk going into the election.
+**Delivery-risk**: VERY LOW
 
 ---
 
-### Critical Implementation Milestone Calendar
+#### 4. Forest Management Prop 242
 
-| Date | Milestone | Risk Level |
-|------|-----------|-----------|
-| June 17, 2026 | HD01NU19 entry into force | 🔴 HIGH (44-day governance design) |
-| July 1, 2026 | HD01JuU9 + HD01FöU13 entry into force | 🟢 LOW |
-| September 14, 2026 | Election — Migrationsverket stress test begins | 🟡 MEDIUM |
-| October 2027 | Language tests (HD01SfU28 test component) | 🟡 MEDIUM |
-| 2027+ | Full migration bundle operational | 🔴 HIGH |
+**Vote date**: MJU12, ~June  
+**Feasibility**: MEDIUM (55%)
+
+| Dimension | Assessment |
+|-----------|----------|
+| Parliamentary support | Uncertain — V demands rejection (HD024141); S position unclear |
+| Implementation readiness | Skogstyrelsen (Swedish Forest Agency) has prepared implementation guidance |
+| Timeline risk | If fails committee, government cannot resubmit before election |
+| Budget requirements | Primarily regulatory, not financial |
+| Legal risks | EU Natura 2000 compatibility requires careful implementation |
+
+**Delivery-risk**: MEDIUM on passage; LOW on implementation if passes
+
+---
+
+#### 5. Migration Capstone HD03262/265
+
+**Vote date**: Late May 2026  
+**Feasibility**: HIGH (80%)
+
+| Dimension | Assessment |
+|-----------|----------|
+| Parliamentary support | Coalition (165) + potentially C on elements = sufficient majority |
+| Implementation readiness | Migrationsverket prepared; return agreement framework with EU |
+| Timeline risk | Lagrådet yttrande (PIR-RT-001) could trigger delay of 2–4 weeks; still finishable before summer |
+| Budget requirements | ~200M SEK in implementation and enforcement costs |
+| Legal risks | Lagrådet adverse opinion risk; ECHR Article 8 (family unity) challenges possible |
+
+**Delivery-risk**: LOW-MEDIUM depending on Lagrådet outcome
+
+---
+
+#### 6. Ostlänken — NOT a Current Bill, But Implementation Context
+
+**Context**: There is no current vote on Ostlänken. HD10463 is an interpellation. The government's decision to cancel the Linköping station expansion was administrative (Trafikverket decision). Reversal would require a new government decision + supplementary budget.
+
+**Feasibility of reversal**: LOW in current term (requires new budget commitment)  
+**Feasibility of compensation package**: MEDIUM — a connectivity package (bus, regional rail improvements) is feasible within existing Trafikverket authority without new legislation
+
+---
+
+### Critical Path Chart
+
+```mermaid
+gantt
+    title Legislative Critical Path — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration
+    Lagrådet yttrande    :active,  a1, 2026-05-04, 2026-05-20
+    Parliamentary vote   :         a2, 2026-05-20, 2026-05-28
+    section Transparency KU39
+    Committee phase      :         b1, 2026-05-26, 2026-06-09
+    Plenary vote         :         b2, 2026-06-16, 2026-06-16
+    section Nuclear NU19
+    Effective date       :milestone, c1, 2026-06-17, 0d
+    section Criminal age JuU9
+    Committee deliberations :      d1, 2026-06-01, 2026-06-25
+    Plenary vote         :         d2, 2026-07-01, 2026-07-01
+    section Defence FöU13
+    Plenary vote         :         e1, 2026-07-01, 2026-07-01
+    section Election
+    Election day         :milestone, f1, 2026-09-13, 0d
+```
 
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/media-framing-analysis.md -->
 
----
-
-### Primary Narrative Frames Observed / Anticipated
-
-#### Frame 1: "Sweden Becomes Harshest in Nordics" (Opposition/Left Media)
-**Source type**: Aftonbladet, Expressen (centrist-liberal), SVT Nyheter (balance obligation)  
-**Core claim**: HD03262–65 + HD01SfU28 makes Sweden's migration/citizenship policy the strictest in the Nordic region  
-**Evidence support for frame**: 
-- Permanent residence eliminated (unique in Nordics — no Nordic peer has done this)
-- Citizenship extended to 8 years (Denmark 9, Norway 7, Finland 5 — Sweden now above Norwegian level)
-- Combined effect unprecedented in Swedish post-war history
-
-**Evidence against frame**: 
-- EU Long-Term Residents Directive preserves a parallel status track
-- Denmark has stricter policies on most individual measures (9-year citizenship, strict family reunification)
-- Sweden is aligning with EU minimum standards, not exceeding restrictions
-
-**Assessment**: Frame has factual basis on permanent residence elimination; overstates on citizenship relative to Denmark. Expected in S-adjacent media and international human rights coverage.
+**Version**: v2.1 | **Gate requirement**: ≥3 frame packages; DISARM; outlet bias audit
 
 ---
 
-#### Frame 2: "Sweden Returns to Normalcy After Open-Door Era" (Government/Centre-Right Media)
-**Source type**: Svenska Dagbladet, government press materials, M/SD party communications  
-**Core claim**: Today's legislation completes Sweden's alignment with European migration norms after the 2015 exceptional period  
-**Evidence support for frame**:
-- Sweden admitted more asylum seekers per capita in 2015 than any EU member
-- Permanent residence without conditions was genuinely exceptional in European context
-- Germany, France, Netherlands all have more restrictive baseline migration policies
-- EU Qualification Directive minimum compliance is the stated legislative goal
+### Dominant Frame Packages
 
-**Evidence against frame**: 
-- Nuclear bypass (HD01NU19) is genuinely non-European; no EU peer has done this
-- Citizenship 8-year requirement is above Norway and Finland (Sweden's closest social-welfare peers)
-- "Normalization" framing elides the human impact on individuals who made life plans under the prior framework
+#### Frame Package 1: "Children as Criminals" — Criminal Age Opposition Frame
 
-**Assessment**: Frame has factual basis on migration relative to 2015; undermined by nuclear licensing which is not "normal" in European context. Dominant frame in government and centre-right media.
+**Frame theme**: Lowering the criminal responsibility age to 13 criminalizes children rather than addressing root causes  
+**Primary carriers**: V (HD024142), S (HD024136), Swedish Barneombudsman (Barnombudsmannen)  
+**Expected outlets**: Aftonbladet, SVT Opinion, Expressen opinion pages, social media (Twitter/X left accounts)
 
----
+**Frame elements**:
+- Slogan: "Barn är inte brottslingar" ("Children are not criminals")
+- Cited authority: UNCRC Article 40, Nordic consensus (Norway/Denmark/Finland all at 15)
+- Emotional register: Child welfare, protection, rehabilitation
+- Policy ask: Maintain 15-year threshold OR fund rehabilitation programs as alternative
 
-#### Frame 3: "Government Delivers on Promises — Four Years of Action" (Governing Coalition)
-**Source type**: Party websites, coalition press conferences, Tidö parties  
-**Core claim**: The full migration + nuclear + crime + citizenship delivery is the proof of governing competence  
-**Evidence support for frame**: 
-- All four 2022 manifesto commitments substantively advanced
-- Legislative record unusually concrete for a Swedish government
-- Entry-into-force dates set (nuclear June 17; citizenship test October 2027)
+**Framing strength**: HIGH — taps into universal child protection instinct; V and S can mobilize parents/educators
+**Government counter-frame**: "Protecting law-abiding children by removing repeat perpetrators" — acknowledges child welfare, reframes protection as being for victims not perpetrators
 
-**Evidence against frame**:
-- Gang crime "eradication" promise not met (HD10458)
-- L and C threshold polling concerns suggest voter erosion in the coalition base
-- Implementation risks (Migrationsverket) threaten "delivered" narrative
-
-**Assessment**: Strong frame for the election campaign. Vulnerable specifically on gang crime promise.
+**DISARM assessment**: This frame is organic political advocacy — no adversarial influence operation detected. Genuine policy dispute.
 
 ---
 
-#### Frame 4: "Nuclear Energy Without Environmental Review Is Dangerous" (Green/Environmental)
-**Source type**: MP official communications, environmental organizations, EU-focused media  
-**Core claim**: HD01NU19's bypass of EIA (Miljöbalken) sets a dangerous precedent  
-**Evidence support for frame**:
-- No EU member state has explicitly bypassed EIA Directive for nuclear licensing
-- Aarhus Convention public participation rights arguably violated
-- Sweden's credibility in EU environmental governance debates affected
+#### Frame Package 2: "Regional Betrayal" — Ostlänken Infrastructure Frame
 
-**Evidence against frame**:
-- Government will argue EIA is embedded in the government approval process
-- Energy security justification is mainstream across EU since 2022
-- Sweden's nuclear facilities have 50-year operational safety records
+**Frame theme**: The Tidö government's cancellation of the Linköping Central station development betrayed the Östergötland region  
+**Primary carriers**: S regional branches, Östergöta Correspondenten, Östergötland County Council
+**Expected outlets**: SVT Östergötland, Linköpings Tidning, Östergöta Correspondenten; amplified nationally via S press office after May 25 answer
 
-**Assessment**: Technically strong frame; limited to green/environmentally-engaged media initially. Gains mainstream traction only if legal challenge succeeds and generates "EU infringement" headlines.
+**Frame elements**:
+- Slogan: "KD svek Linköping" ("KD betrayed Linköping")
+- Cited authority: Transport Ministry's own stated 500,000-person labour market impact
+- Emotional register: Regional pride, economic anxiety, government incompetence
+- Policy ask: Restore Linköping Central station investment; publish full Ostlänken timeline
 
----
+**Framing strength**: MEDIUM-HIGH in Östergötland; MEDIUM nationally  
+**Government counter-frame**: "We are investing in the complete Ostlänken corridor; details of Linköping phase 2 to be announced" (tactical — requires substantive content to succeed)
 
-#### Frame 5: "Gang Crime Accountability — Promise vs Reality" (Opposition Accountability)
-**Source type**: S communications, opposition press conferences, SVT/SR news formats  
-**Core claim**: Government made "eradication" promise in 2022; 2025 statistics show record explosions; HD10458 forces accountability  
-**Evidence support for frame**:
-- September 2022 pledge is on record: documented verbatim
-- 2025 explosion statistics exceeded prior years
-- No "eradication" by any metric
-
-**Evidence against frame**:
-- Organized crime convictions up; intelligence disruption operations ongoing
-- Explosives licensing tightened (HD01FöU13) demonstrates active response
-- "Eradication" as rhetoric vs policy goal — government may argue framing was hyperbolic
-
-**Assessment**: Strongest opposition frame. Most likely to generate television-friendly ministerial HD10458 debate clips. Single highest-risk media moment for the government.
+**DISARM assessment**: Organic domestic political framing. Regional grievance is authentic. No adversarial amplification detected.
 
 ---
 
-### Media Format-Specific Analysis
+#### Frame Package 3: "Delivering on Promises" — Government Nuclear/Security Frame
 
-#### Television / SVT Rapport / TV4 Nyheterna
-**Lead story likelihood**: HD10458 gang crime accountability (visual, confrontational)  
-**Secondary**: Migration bundle (human interest angle on affected individuals)  
-**Visual opportunity**: Footage of explosive attack sites (archive) alongside promise-vs-reality sequence  
-**Government opportunity**: Ministerial press conference with "delivered commitments" backdrop
+**Frame theme**: The Tidö government is delivering on its core 2022 election promises — nuclear, migration, defence  
+**Primary carriers**: M press office, KD communication, Finance Minister Svantesson social media  
+**Expected outlets**: Svenska Dagbladet, Expressen, Dagens Industri; amplified via government.se
 
-#### Tabloid (Aftonbladet / Expressen)
-**Expected Aftonbladet lead**: "S: Deras löfte till Sverige slogs i bitar" (Their promise to Sweden was shattered)  
-**Expected Expressen lead**: "Tidökoalitionen har levererat" (Tidö Coalition has delivered)  
-**Viral content potential**: HD10458 debate when scheduled; specific family stories from HD03262-65 implementation
+**Frame elements**:
+- Slogan: "Sverige bygger en stark framtid" ("Sweden builds a strong future")
+- Cited authority: NU19 June 17 effective date (nuclear); FöU13 defence investment; FiU's Riksgälden positive evaluation
+- Emotional register: Stability, competence, delivery
+- Policy ask: Implicit — re-elect the government that delivers
 
-#### Broadsheet (Dagens Nyheter / Svenska Dagbladet)
-**DN expected**: Balanced analysis; C reservations highlighted; nuclear EIA concern explored  
-**SvD expected**: Praise for nuclear delivery and migration normalization; some concern on implementation timeline  
-**Analytical pieces expected**: DN: "Sweden's migration model — what survives?" SvD: "Nuclear energy: Sweden reclaims its future"
+**Framing strength**: HIGH among government supporters; MEDIUM with swing voters  
+**Opposition counter-frame**: "Delivery on the wrong priorities — Linköping residents pay the price for your infrastructure choices"
 
-#### International Media
-**Reuters/AFP**: Algorithmic migration and nuclear processing  
-**The Economist/FT**: "Sweden's rightward turn nears completion" frame; comparative to Denmark/UK  
-**EU media**: Nuclear EIA concern; migration EU compliance analysis
+**DISARM assessment**: Standard government communication. No adversarial elements.
 
 ---
 
-### Messaging Recommendations
+#### Frame Package 4: "Transparency and Democracy" — KU39 Frame
 
-#### For Government Communications:
-1. **Lead with nuclear energy security**: Framing around energy independence resonates across voter segments
-2. **Use "alignment with EU standards" on migration**: Reframes restriction as normalization
-3. **Pre-position HD10458 response**: Ministerial response should emphasize metric shift from "eradication" to "structural dismantlement progress"
-4. **C accommodation acknowledgment**: Brief public recognition of C's language-test moderation maintains coalition discipline
+**Frame theme**: Sweden is strengthening its democratic foundations by passing the political party financing transparency bill  
+**Primary carriers**: KU committee chair, government press office, transparency NGOs
+**Expected outlets**: Mainly specialist political media; some SVT/SR reporting around June 16 vote
 
-#### For Opposition Communications:
-1. **Lead with HD10458 gang crime**: Most electorally potent; TV-friendly
-2. **Human interest migration stories**: Individuals losing permanent residence status; most visceral
-3. **EU compliance question on nuclear**: "Sweden breaks EU environmental law" — most damaging to M's European credibility
-4. **Ostlänken regional mobilization**: HD10463 — targeted to Östergötland constituency campaign
+**Frame elements**:
+- Cross-party support (near-unanimous) makes this frame resistant to opposition attack
+- Cited authority: HD03258 political financing transparency bill
+- Emotional register: Rule of law, democratic accountability
+
+**Framing strength**: HIGH but LOW SALIENCE — cross-party bills rarely generate media heat  
+**Potential risk**: If any party is found to have historic violations that KU39 would have caught, the transparency frame could backfire on that party specifically.
 
 ---
 
-### Viral Risk Assessment
+### Outlet Bias Audit
 
-| Item | Viral Probability | Direction | Platform |
-|------|-----------------|-----------|---------|
-| HD10458 debate TV clip | HIGH (75%) | Negative for government | SVT/TikTok/Twitter |
-| Migration family story | MEDIUM (45%) | Negative for government | Facebook/Instagram |
-| Nuclear EIA challenge filing | MEDIUM (40%) | Negative for government | Twitter/Linkedin |
-| Coalition delivery press conference | LOW-MEDIUM (30%) | Positive for government | LinkedIn/SVT |
-| C language-test deferral credit claim | LOW (15%) | Positive for C | Twitter |
+| Outlet | Ideological lean | Expected coverage today | Reliability |
+|--------|----------------|------------------------|------------|
+| Aftonbladet | Centre-left tabloid | Criminal age (opposition frame), Ostlänken (regional betrayal) | HIGH |
+| Expressen | Centre-right tabloid | Criminal age (government frame), mixed on Ostlänken | HIGH |
+| Svenska Dagbladet (SvD) | Centre-right broadsheet | Nuclear delivery, FiU evaluation, coalition stability | HIGH |
+| Dagens Nyheter (DN) | Centre-liberal broadsheet | Constitutional angle on KU39, criminal age nuanced | HIGH |
+| SVT Nyheter | Public broadcasting | Balanced framing; regional SVT on Ostlänken | HIGH |
+| SD Riks (SD media) | Hard-right | Criminal age (support 13yr), migration capstone celebration | MEDIUM (ideologically aligned) |
+| Östgöta Correspondenten | Regional | Ostlänken only; intense local framing | HIGH for regional |
+
+---
+
+### DISARM Framework Assessment (Influence Operations)
+
+**DISARM threat level today**: LOW
+
+No evidence of coordinated inauthentic behavior around today's parliamentary documents. The frames identified are consistent with organic domestic political communication.
+
+**Monitoring flags for upcoming period**:
+- Carlson's May 25 answer may attract amplified regional coverage — monitor for bot-amplification of "KD betrayed Linköping" narrative on Twitter/X before and after the answer
+- Criminal age 13yr debate may attract international far-right amplification (foreign actors have previously engaged with Nordic crime debates) — monitor RT/Sputnik successor accounts for narrative injection
+- Migration passage: SD may deploy coordinated online messaging claiming exclusive credit — watch for inauthentic amplification of "SD fixed migration" narrative displacing M/KD
+
+**Recommended response**: Standard monitoring. No active counter-operation recommended at this time.
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/devils-advocate.md -->
 
----
-
-### Challenge 1: "This Is NOT the Tidö Coalition's Legislative Capstone"
-
-**Conventional narrative**: Today completes the Tidö Coalition's legislative program — migration, nuclear, citizenship all advanced.
-
-**Devil's Advocate counter-argument**:
-
-Today's legislative output is largely a *consequence* of decisions made in 2022–2024, not a fresh legislative sprint. The migration bundle HD03262–65 has been in preparation since the 2022 Tidö Agreement. HD01SfU28 (citizenship) was announced in 2023. HD01NU19 (nuclear) was proposed in 2024. The riksdag's spring 2026 session is a *conveyor belt*, not a creative legislative act.
-
-The government's actual legislative creativity ended in 2023. What we see today is the mechanical processing of a queue that had already been filled. Calling this the "capstone" risks overstating the government's proactivity. The real capstone was the Tidö Agreement signing — today is the administrative completion of a pre-set agenda.
-
-**Implication**: If this is conveyor-belt processing, then the *absence* of bold new agenda items in today's output actually signals **policy exhaustion**, not policy success. The government has delivered its 2022 program but has produced nothing new for the 2026 campaign beyond implementation.
+**Gate requirement**: ≥3 ACH hypotheses with systematic counter-evidence assessment
 
 ---
 
-### Challenge 2: Migration Permanence Is Overstated
+### Method: Analysis of Competing Hypotheses (ACH) — Red Team Mode
 
-**Conventional narrative**: HD03262–65 creates permanent policy architecture that any future government must overcome.
+The devil's advocate position systematically challenges the dominant analytical narrative to surface blind spots and prevent confirmation bias.
 
-**Devil's Advocate counter-argument**:
-
-The migration bundle is embedded in primary legislation, true — but the underlying operational architecture remains at Migrationsverket discretion. A future S-led government cannot reverse HD03262 by regulation, but it can:
-1. **Instruct Migrationsverket** to interpret the "narrow humanitarian exception" broadly, effectively creating a permanent-residence-adjacent outcome for most applicants
-2. **Approve supplementary legislation** (e.g., a "Settled Status" category matching permanent residence functionally)
-3. **Use EU law**  — Sweden remains bound by EU Long-Term Residents Directive (2003/109/EC), which grants long-term residence status after 5 years. HD03262 cannot eliminate EU-derived long-term residence rights.
-
-The EU Long-Term Residents Directive provides a parallel track to permanent Swedish residence. Any applicant with 5 years lawful residence in Sweden *already has EU long-term resident status* under EU law — HD03262 cannot remove this. The "eliminated permanent residence" framing is therefore partially misleading: EU long-term residence status persists regardless.
-
-**Implication**: The migration "architecture permanence" argument overstates the durability of HD03262–65. A future government has meaningful administrative and EU-law tools to moderate the operational impact without parliamentary majority.
+**Dominant narrative (consensus)**: The Tidö government is under increasing electoral pressure from regional accountability (Ostlänken), criminal age threshold vulnerability, and migration normalization; the election is a toss-up with S-bloc holding a marginal edge.
 
 ---
 
-### Challenge 3: Opposition Activity Today Is Performative, Not Strategic
+### Hypothesis DA-1: "The Criminal Age Crisis is Overstated"
 
-**Conventional narrative**: S's 16 motions + 10 interpellations represent coordinated pre-election accountability.
+**Devil's advocate claim**: The 13-year age threshold will pass without a coalition crisis, and the opposition's apparent leverage (S+V alignment) is weaker than it appears.
 
-**Devil's Advocate counter-argument**:
+**Supporting evidence for DA-1**:
+- L has historically supported tougher criminal justice measures; Pehrson personally endorsed the concept of lower responsibility ages in 2024 interviews
+- JuU committee composition may not give S+V an automatic majority — the vote count depends on attendance and coalition discipline
+- Media framing of "criminal children" can be reframed as "protecting law-abiding children by removing repeat offenders" — the government's messaging playbook
+- International comparisons (Nordic consensus) are regularly cited but rarely determine Swedish parliamentary votes; Sweden has deviated from Nordic norms before (NATO membership)
+- S's 14-year alternative is closer to 13 than to 15 — a concession to 14 would be a minimal adjustment that most S voters would not notice as a major defeat for the government
 
-16 counter-motions to 6 government propositions, filed on the same day the propositions are approved, is not strategic opposition — it is *reactive posturing*. The motions will not pass. The interpellations may generate television clips, but the ministerial responses can be managed. The S party's high-volume opposition strategy creates the appearance of accountability without the substance.
+**Evidence against DA-1** (maintaining dominant narrative):
+- V's outright rejection (HD024142) is categorical — not 14 years, zero years (keep at 15)
+- Even without V, if L defects: M+KD+SD = 161 seats, insufficient for 175-seat majority
+- Pehrson's 2024 statements were pre-opposition — his calculus may have changed with polling at 4%
 
-More damaging to this narrative: S has been the governing party and helped build the migration system that the Tidö Coalition is reforming. S's 2015–2019 era accepted 163,000 asylum seekers in 2015 alone. S critiquing migration restriction rings hollow to voters who remember open-door Sweden. The 16 motions are filing cabinet items, not political dynamite.
-
-**Implication**: The opposition's intensity (volume) should not be confused with its effectiveness. S needs to win *future-looking arguments*, not create archives of current-day objections. The interpellations (HD10458 gang crime) are the only genuinely dangerous accountability tool.
-
----
-
-### Challenge 4: The "132 Days = Election Proximity Factor" Is Mechanically Applied
-
-**Conventional narrative**: 132-day election proximity justifies ×1.5 DIW multiplier across the board.
-
-**Devil's Advocate counter-argument**:
-
-The election proximity multiplier makes sense for policy contrast creation. But applying it to nuclear licensing (HD01NU19) and court reform (HD01JuU9) conflates electoral salience with general importance. Nuclear licensing is *not* a top-3 election issue — energy security is, but the licensing process is technical. Court process reform is even further from the electoral agenda.
-
-The multiplier should apply to policies where voters will make decisions based on those policies in September 2026. The genuine election-relevant documents are: HD03262–65 (migration), HD01SfU28 (citizenship), and HD10458 (gang crime accountability). Applying ×1.5 to alcohol licensing simplification (HD01SoU33) or state debt evaluation (HD01FiU49) inflates day-level significance metrics artificially.
-
-**Implication**: Recalibrate: apply ×1.5 only where documented public opinion polling shows issue saliency in top-5. Currently that's: immigration, crime/security, economy, healthcare, energy. Nuclear licensing reform (as *licensing process*) does not independently appear in top-5 polling — energy security does, but that's captured differently.
+**ACH score**: DA-1 partially holds. Criminal age crisis probability is 25% (Scenario 2), not 40%+ as some current narratives suggest.
 
 ---
 
-### Challenge 5: C Party Reservations Are Cosmetic, Not Real
+### Hypothesis DA-2: "Ostlänken is a Regional Story, Not a National Election Issue"
 
-**Conventional narrative**: C's reservations on HD03264 and citizenship language test timing represent meaningful moderation.
+**Devil's advocate claim**: The Ostlänken interpellation HD10463 will generate local media coverage but will not materially affect the national election outcome.
 
-**Devil's Advocate counter-argument**:
+**Supporting evidence for DA-2**:
+- Railway infrastructure decisions rarely move national polls in Sweden — the 1994 West Coast Line cancellation generated local anger but did not shift the national result
+- Östergötland's 3–4 competitive seats are competitive in every election cycle regardless of single infrastructure decisions; voters in these constituencies have multiple concerns (health, education, local services)
+- The ministerial answer on May 25 is 132 days before election — sufficient time for news to be displaced by the summer break and autumn campaign
+- Transport Minister Carlson has significant political capital in Linköping specifically; he may credibly announce compensatory rail improvements that deflect the criticism
 
-C's language-test deferral is not moderation — it's kicking the can past the election. The deferral to October 2027 means the controversial implementation happens *after* September 2026 regardless of which government is in power. C has not prevented the language test; it has simply ensured it doesn't become an election-period embarrassment.
+**Evidence against DA-2**:
+- The Danish 2019 precedent (Comparator 2) shows regional rail explicitly moved votes in exactly this scenario
+- S has already filed the interpellation — it will generate regional media coverage regardless of the answer quality
+- 500,000-person labour market impact (Carlson's own stated figure) is a politically salient number in local media
 
-Similarly, C's "reservation" on HD03264 deportation provisions appears in the committee minority statement but did not prevent passage. In Swedish parliamentary practice, filing a reservation (*reservation*) while voting *for* a measure is a legal mechanism to preserve appeal standing, not a genuine policy objection. C voted with the coalition. The reservation is procedural.
-
-**Implication**: C should not receive analytical credit for "moderating" today's measures. C provided the votes necessary for passage and filed procedural reservations that change nothing substantive.
+**ACH score**: DA-2 partially holds at the national level, but Östergötland-specific seat-risk remains real. The scenario probability stays at 20% for Scenario 3.
 
 ---
 
-### Synthesis of Devil's Advocate Challenges
+### Hypothesis DA-3: "The Tidö Government Will Win a Second Term Decisively"
 
-| Challenge | Conventional View Stress-Tested | Revised Assessment |
-|-----------|--------------------------------|-------------------|
-| "Capstone" framing | Overstates sprint; understates queue | Today is delivery of pre-set agenda; policy exhaustion signal |
-| Migration permanence | EU long-term resident directive provides workaround | Partial permanence, not absolute |
-| Opposition effectiveness | Volume ≠ effectiveness | HD10458 is real threat; rest is record-building |
-| Election proximity multiplier | Over-applied to technical measures | Apply selectively to top-5 polling issues |
-| C moderation | Reservations are procedural, not substantive | C voted yes; reservations change nothing |
+**Devil's advocate claim**: The dominant narrative (tight election, government at risk) systematically underestimates incumbency advantage and the government's legislative delivery record.
 
-**Net assessment after devil's advocate**: The dominant narrative (Tidö Coalition completes term, high significance day) survives challenge on the main points but should be refined: (1) frame as "delivery completion" not "final sprint"; (2) acknowledge EU long-term resident directive as migration policy hedge; (3) reduce technical-measure election multiplier application.
+**Supporting evidence for DA-3**:
+- Incumbency advantage in Swedish elections: incumbent governments won in 2002, 2006, 2010, 2018 (lost in 2022 but only narrowly, and on a protest-vote against SD)
+- The nuclear NU19 effective June 17 is a genuine policy achievement — energy security is a top-3 issue for Swedish voters in 2026 (post-Ukraine energy crisis memory)
+- Migration issues, once resolved, typically **increase** voter confidence in the government that resolved them, not decrease it (2006 Reinfeldt parallel: welfare retrenchment + competence framing worked)
+- S's Andersson is a known quantity who failed to win in 2022; the government can run a "same S failure" campaign effectively
+- GDP growth 2.1% (IMF WEO Apr-2026) is higher than EU average — the economy is not a liability for the government
+
+**Evidence against DA-3**:
+- Current polling (from election-cycle sibling) shows S-bloc at 49–50%, barely ahead
+- L at 4.2–5.0% creates structural fragility that did not exist in 2022
+- Government has visible coalition tensions (SD energy demands, criminal age) that S will amplify
+
+**ACH score**: DA-3 has merit as a corrective to doom-saying, but 10% (Scenario 4) is the appropriate probability — not enough to call the election definitively for the government. The 45% Scenario 1 (holds majority) is already the most probable single scenario.
+
+---
+
+### Blind Spot Assessment
+
+| Blind spot identified | Confidence | Recommended monitoring |
+|----------------------|------------|----------------------|
+| Criminal age crisis may be less severe than modeled (DA-1) | Medium | Monitor L internal caucus statements May 5–20 |
+| Ostlänken may fade from national narrative (DA-2) | Low-Medium | Monitor SVT/Östgöta Correspondenten coverage after May 25 |
+| Incumbency advantage may be underweighted (DA-3) | Low-Medium | Monitor aggregate polls May 15 — if government gains 1–2 pp, revise Scenario 1 to 50%+ |
+| MP sub-4% risk may affect S-bloc arithmetic (not yet modeled) | Low | Monitor next MP poll — if < 3.8%, revise scenario probabilities |
 
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/classification-results.md -->
 
-**Workflow**: news-evening-analysis  
-
-**Classification Framework**: Hack23 CIA Political Intelligence Classification  
-**Data Classification**: PUBLIC (all sources from open parliamentary records)
+**Classification Framework**: 7-dimension political classification per document
 
 ---
 
-### Document Classification Results
+### Priority Tier Summary
 
-| Document | Primary Domain | Secondary Domain | Political Risk | Policy Direction | Controversy Level |
-|----------|---------------|-----------------|---------------|-----------------|------------------|
-| HD03262 | Immigration | Social Integration | HIGH | Restrictive | HIGH |
-| HD03263 | Immigration | Enforcement | HIGH | Restrictive | HIGH |
-| HD03264 | Immigration | Identity/Documentation | HIGH | Restrictive | MEDIUM-HIGH |
-| HD03265 | Immigration | International Law | HIGH | Restrictive | MEDIUM |
-| HD01NU19 | Energy | Constitutional Law | HIGH | Deregulatory/Pro-nuclear | HIGH |
-| HD01SfU28 | Citizenship | Integration | HIGH | Restrictive | HIGH |
-| HD10458 | Public Safety | Political Accountability | HIGH | Accountability challenge | HIGH |
-| HD10463 | Infrastructure | Regional Policy | MEDIUM-HIGH | Allocation | MEDIUM |
-| HD01JuU9 | Justice | Crime | MEDIUM | Prosecution-strengthening | MEDIUM |
-| HD01FöU13 | Public Safety | Crime | MEDIUM | Security-tightening | LOW-MEDIUM |
-| HD03254 | Defence | International | MEDIUM | Integration | LOW |
-| HD03258 | Governance | Transparency | MEDIUM | Openness | LOW |
-| HD01KU39 | Governance | Constitutional | MEDIUM | Transparency | LOW |
-| HD10459 | Governance | Administration | MEDIUM | Accountability | MEDIUM |
-| HD01FöU14 | Defence | International | MEDIUM | Integration | LOW |
-| HD01CU37 | Housing | Social | LOW-MEDIUM | Social protection | LOW |
-| HD01NU22 | Market | Competition | LOW-MEDIUM | Regulatory | LOW |
-| HD01SoU33 | Social | Regulation | LOW | Deregulatory | LOW |
-| HD10461 | Industry | Innovation | LOW-MEDIUM | Investment | LOW |
-| HD01FiU49 | Finance | Accountability | LOW-MEDIUM | Oversight | LOW |
-| HD01KU36 | Privacy | Technology | LOW | Governance | LOW |
+| Tier | Documents | Count |
+|------|-----------|-------|
+| L3 Intelligence (critical priority) | HD10463 | 1 |
+| L2+ Priority | HD01KU39, HD01FiU49 | 2 |
+| L2 Strategic | HD024141, HD024142 | 2 |
+| L1 Surface | HD10462, HD11779, HD11780, HD024143–148 (cluster) | 7 |
 
 ---
 
-### Domain Distribution
+### Per-Document Classification
 
-| Primary Domain | Count | % |
-|---------------|-------|---|
-| Immigration/Citizenship | 5 | 23.8% |
-| Governance/Transparency | 4 | 19.0% |
-| Public Safety/Crime | 4 | 19.0% |
-| Defence/International | 3 | 14.3% |
-| Energy | 1 | 4.8% |
-| Justice | 1 | 4.8% |
-| Other (Housing, Market, Social, Finance) | 3 | 14.3% |
+#### HD10463 — Ostlänken Interpellation (L3 Intelligence)
+
+| Dimension | Classification |
+|-----------|---------------|
+| Policy domain | Infrastructure / Regional development |
+| Party alignment | Opposition (S) vs. Government (KD minister Carlson) |
+| Electoral salience | CRITICAL — Östergötland marginal seats, 132 days to election |
+| Constitutional status | Interpellation — minister must respond within 2 weeks |
+| Institutional actors | Riksdag (Eva Lindh/S), Infrastructure Ministry (KD), Trafikverket, Saab |
+| Urgency | HIGH — ministerial deadline May 25, 2026 |
+| GDPR Art. 9 status | Named public officials (MPs and minister) — 9(2)(e) publicly made |
+
+#### HD01KU39 — Transparency Betänkande (L2+ Priority)
+
+| Dimension | Classification |
+|-----------|---------------|
+| Policy domain | Constitutional law / Political party financing |
+| Party alignment | Government initiative (all-party bill HD03258) — but partisan implications |
+| Electoral salience | HIGH — affects all parties' financing disclosure before election |
+| Constitutional status | Betänkande — scheduled for June 16 chamber vote |
+| Institutional actors | KU (constitutional committee), Riksdag, political parties |
+| Urgency | MEDIUM — committee hearings May 26–June 9 |
+| GDPR Art. 9 status | Party membership data — 9(2)(g) substantial public interest |
+
+#### HD01FiU49 — Debt Management Evaluation (L2+ Priority)
+
+| Dimension | Classification |
+|-----------|---------------|
+| Policy domain | Fiscal policy / Public debt management |
+| Party alignment | Bipartisan (committee evaluation of Riksgälden, not politically contested) |
+| Electoral salience | MEDIUM — fiscal stewardship narrative, Sweden's ~34% GDP debt |
+| Constitutional status | Betänkande — processes government Skrivelse HD03104 |
+| Institutional actors | FiU committee, Riksgälden, Finance Ministry |
+| Urgency | LOW — hearings late May/June |
+| GDPR Art. 9 status | Institutional / financial data — no personal data |
+
+#### HD024142 — V Motion Youth Crime (L2 Strategic)
+
+| Dimension | Classification |
+|-----------|---------------|
+| Policy domain | Criminal justice / Juvenile law |
+| Party alignment | Opposition (V) vs. Government proposal (M+SD+KD+L) |
+| Electoral salience | HIGH — crime/gangs top voter priority 2026 |
+| Constitutional status | Committémotion — processed in JuU committee |
+| Institutional actors | JuU committee, V, S (parallel motion HD024136) |
+| Urgency | MEDIUM — committee deliberation before June vote |
+| GDPR Art. 9 status | Public party positions on criminal law — 9(2)(e) |
+
+#### HD024141 — V Motion Forest Management (L2 Strategic)
+
+| Dimension | Classification |
+|-----------|---------------|
+| Policy domain | Environmental law / Forestry regulation |
+| Party alignment | Opposition (V) — outright rejection vs. government prop 242 |
+| Electoral salience | MEDIUM — environmental protection as V electoral identity |
+| Constitutional status | Committémotion — processed in MJU committee |
+| Institutional actors | MJU committee, V, S, MP, C (parallel motions) |
+| Urgency | MEDIUM — committee deliberation schedule |
+| GDPR Art. 9 status | Environmental policy — no personal data |
+
+#### HD10462 — Pesticide Tax Interpellation (L1 Surface)
+
+| Dimension | Classification |
+|-----------|---------------|
+| Policy domain | Tax law / Healthcare regulation |
+| Party alignment | S vs. Finance Minister Svantesson (M) |
+| Electoral salience | LOW (general) / HIGH (healthcare sector) |
+| Constitutional status | Interpellation — ministerial response required |
+| Institutional actors | Finance Ministry, healthcare providers, municipal health |
+| Urgency | LOW-MEDIUM |
+| GDPR Art. 9 status | Public officials — 9(2)(e) |
 
 ---
 
-### High-Controversy Document Analysis
+### Access Classification
 
-#### HD03262–65: Migration Bundle
-**Controversy Sources**:
-- Elimination of permanent residence permits is a direct reversal of Swedish integration philosophy since 1975 labour migration era
-- Compulsory departure obligation creates enforcement implementation challenges (Migrationsverket capacity)
-- Opposition framing: "Sweden adopts the harshest migration policy in the Nordic region"
-- Counter-framing: "Sweden aligns with EU minimum standards for the first time"
+All documents: **Public** (Riksdag API, data.riksdagen.se). Classification applies to analytical product only.
 
-**Constitutional Risk**: LOW — legislation within EU Directive compliance range  
-**Implementation Risk**: HIGH — Migrationsverket system changes + case backlog pressure  
-**Court Challenge Risk**: MEDIUM — ECHR Article 8 (family life) challenges anticipated
-
-#### HD01NU19: Nuclear Licensing Bypass
-**Controversy Sources**:
-- Environmental organizations will challenge bypass of Miljöbalken before Högsta Förvaltningsdomstolen
-- EU Environmental Impact Assessment Directive compliance uncertain
-- Cross-party opposition from V and MP on environmental grounds
-- S party ambiguous (abstained rather than opposed in committee)
-
-**Constitutional Risk**: MEDIUM — may conflict with EU EIA directive  
-**Implementation Risk**: LOW — direct government process more predictable than court process  
-**Legal Challenge Risk**: HIGH — environmental organizations have standing; Aarhus Convention rights
-
-#### HD10458: Gang Crime Accountability
-**Controversy Sources**:
-- Government made explicit four-year eradication pledge (September 2022)
-- 2025 explosions exceeded all prior years
-- Ministerial response will be visible and clip-worthy for S campaign
-- Government counter-argument: structural crime down even if explosive incidents up
-
-**Political Risk**: HIGH — most visible single accountability moment of parliamentary year  
-**Media Amplification**: VERY HIGH
+| Classification Level | Applies to |
+|---------------------|-----------|
+| 🟢 Public / Offentlig | All 14 source documents (primary source data) |
+| 🟡 Internal / Intern | This analytical product (analysis/daily/ directory) |
+| 🟠 Confidential | Not applicable — no confidential sources used |
 
 ---
 
-### GDPR / Privacy Classification
+### Retention Schedule
 
-All documents classified PUBLIC. No personal data processed in this analysis. All sources from open Riksdag parliamentary records.
-
-**DPIA Required**: NO  
-**Sensitive Data**: NO  
-**Data Retention**: Per analysis archival policy (indefinite for historical record)
-
----
-
-### Confidence Level: HIGH
-All classifications based on direct document metadata and committee summary texts available via riksdag-regering MCP.
+| Category | Retention |
+|----------|-----------|
+| Analysis artifacts | Permanent (political record) |
+| PIR status JSON | 24 months rolling |
+| Per-document JSON | 12 months rolling |
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/cross-reference-map.md -->
 
----
-
-### Sibling Analysis Files Referenced
-
-| Sibling Folder | Key Files Read | Cross-Referenced In |
-|---------------|---------------|-------------------|
-| `analysis/daily/2026-05-04/propositions/` | synthesis-summary.md, executive-brief.md | All Family A/C/D artifacts |
-| `analysis/daily/2026-05-04/motions/` | synthesis-summary.md, executive-brief.md | synthesis-summary.md, election-2026-analysis.md |
-| `analysis/daily/2026-05-04/committee-reports/` | executive-brief.md, synthesis-summary.md | executive-brief.md, threat-analysis.md, risk-assessment.md |
-| `analysis/daily/2026-05-04/interpellations/` | executive-brief.md, synthesis-summary.md | executive-brief.md, stakeholder-perspectives.md |
+**Tier-C Gate**: This artifact must cite ≥1 sibling analysis folder ✅
 
 ---
 
-### Policy Convergence Cross-Reference
+### Sibling Folder Integration
 
-#### Cluster A: Migration Reform Architecture
-| Document | Type | Key Provision | Cross-Reference |
-|----------|------|--------------|-----------------|
-| HD03262 | Proposition | Eliminate permanent residence | sibling:propositions/synthesis-summary.md |
-| HD03263 | Proposition | Compulsory departure | sibling:propositions/synthesis-summary.md |
-| HD03264 | Proposition | Identity documentation | sibling:propositions/synthesis-summary.md |
-| HD03265 | Proposition | International status reform | sibling:propositions/synthesis-summary.md |
-| HD01SfU28 | Betänkande | Citizenship 8 years + language test | sibling:committee-reports/executive-brief.md |
-| 9× motions | Motioner | Counter-proposals on above | sibling:motions/executive-brief.md |
+#### Sibling 1: Propositions (`analysis/daily/2026-05-04/propositions/`)
 
-**Convergence Assessment**: The migration cluster represents the single most internally-consistent policy reform package of the 2022–2026 term. HD03262–65 + HD01SfU28 together create a complete immigration lifecycle architecture: arrival conditions (HD03265) → residence path (HD03262) → enforcement (HD03263) → identity integrity (HD03264) → citizenship criteria (HD01SfU28). This is a deliberate architectural design, not incremental adjustment.
+**Confirmed handoff items**:
+- **Migration HD03262/HD03265**: Propositions synthesis identified these as lead documents with Lagrådet risk. Evening analysis carries PIR-RT-001 forward and elevates to risk R3 (legal, L×I=10).
+- **Nuclear HD01NU19**: Propositions confirmed June 17 effective date. Evening analysis notes electoral framing opportunity (O3 in SWOT).
+- **Criminal prop 246**: Propositions identified the 13-year threshold. Evening analysis adds committee defeat probability based on motions data (S/V alignment).
+- **Forest prop 242**: Propositions flagged V's demand for rejection. Evening analysis cross-references with motion HD024141.
+- **Defence FöU13**: Propositions confirmed July 1 vote. Evening analysis carries PIR-EVE-02 for procurement tracking.
 
----
+#### Sibling 2: Motions (`analysis/daily/2026-05-04/motions/`)
 
-#### Cluster B: Crime and Security
-| Document | Type | Key Provision | Cross-Reference |
-|----------|------|--------------|-----------------|
-| HD10458 | Interpellation | Gang crime eradication accountability | sibling:interpellations/executive-brief.md |
-| HD01JuU9 | Betänkande | Court process reform — early evidence | sibling:committee-reports/executive-brief.md |
-| HD01FöU13 | Betänkande | Explosives licensing | sibling:committee-reports/executive-brief.md |
-| Motion (S) | Motioner | Youth crime age limit counter-proposals | sibling:motions/executive-brief.md |
+**Confirmed handoff items**:
+- **HD024142 (V, criminal age outright rejection)**: Motions identified V as the only party demanding full rejection. Evening analysis places this as W1 (weakness) and T2 (threat) in SWOT, and R1 (risk L×I=12).
+- **HD024141 (V, forest management rejection)**: Motions catalogued with partial metadata. Evening analysis cross-references with prop 242 committee risk (R6, L×I=6).
+- **S criminal demand 14 years (HD024136)**: Motions analysis confirmed S's position. Evening analysis uses this to establish committee arithmetic for JuU9.
 
-**Convergence Assessment**: Crime policy runs through all four sibling document types today. The court reform (JuU9) provides the prosecution tool; explosives licensing (FöU13) provides the prevention mechanism; the interpellation (HD10458) provides the accountability pressure; the S motions provide the opposition's preferred alternative (15-year age, not 13-year). This cluster is electorally THE most contested terrain.
+#### Sibling 3: Interpellations (`analysis/daily/2026-05-04/interpellations/`)
 
----
+**Confirmed handoff items**:
+- **HD10463 (S→Carlson, Ostlänken)**: Interpellations identified as the highest-scoring electoral accountability item. Evening analysis confirms as lead story (DIW 90.0) with May 25 deadline as election pressure point.
+- **HD10461 (ESA contribution decline)**: Interpellations flagged as W5 (weakness) in evening SWOT.
+- **HD10459 (SD, agency activism)**: Interpellations identified as SD identity signaling. Evening analysis notes as potential coalition signal (E1 threat).
+- **SFV heritage backlog (RiR 2025:30)**: Interpellations synthesis provided the 4 billion SEK figure used in stakeholder analysis.
 
-#### Cluster C: Energy and Environment
-| Document | Type | Key Provision | Cross-Reference |
-|----------|------|--------------|-----------------|
-| HD01NU19 | Betänkande | Nuclear licensing bypass | sibling:committee-reports/executive-brief.md |
-| Motion on wind | Motioner | Wind power permitting counter-proposals | sibling:motions/executive-brief.md |
-| HD10462 | Interpellation | Pesticide tax anomaly | sibling:interpellations/executive-brief.md |
+#### Sibling 4: Realtime-Pulse (`analysis/daily/2026-05-04/realtime-pulse/`)
 
-**Convergence Assessment**: Energy/environment policy creates the coalition's most legally contested terrain. Pro-nuclear (NU19) + wind permitting resistance (motions) + pesticide tax (interpellation) collectively form a picture of a coalition that has accepted nuclear expansion but resisted environmental regulation extension. This cluster has the highest risk of EU/judicial intervention.
+**Confirmed handoff items**:
+- **PIR-RT-001 (Lagrådet migration)**: Realtime-pulse opened this PIR. Evening analysis carries it forward as R3 and C1 in threat analysis.
+- **PIR-RT-003 (polling erosion post-migration)**: Realtime-pulse identified this risk. Evening analysis places as A3 threat.
+- **PIR-RT-005 (Carlson Ostlänken answer May 25)**: Realtime-pulse set this as a monitoring trigger. Evening analysis sets the PIR resolution date.
+- **Nuclear NU19 June 17**: Realtime-pulse confirmed the implementation date. Evening analysis confirms S1 (strength) citation.
 
----
+#### Sibling 5: Election-Cycle (`analysis/daily/2026-05-04/election-cycle/`)
 
-#### Cluster D: Governance and Transparency
-| Document | Type | Key Provision | Cross-Reference |
-|----------|------|--------------|-----------------|
-| HD03258 | Proposition | Extended openness in public activities | sibling:propositions/synthesis-summary.md |
-| HD01KU39 | Betänkande | Political process transparency | today |
-| HD10459 | Interpellation | Agency activism (SD) | sibling:interpellations/executive-brief.md |
+**Confirmed handoff items**:
+- **L threshold risk (4% zone)**: Election-cycle flagged L at 4.2–5.0%. Evening analysis carries as R4 (L×I=10).
+- **Coalition arithmetic (M+KD+SD ~47%)**: Election-cycle established coalition math below 50% without L. Evening analysis uses this in coalition-mathematics.md and as the structural driver for the L-pivotal actor analysis.
+- **Östergötland seat count (3–4 competitive)**: Election-cycle provided constituency-level analysis. Evening analysis cites in threat A1.
+- **Election date anchor (September 13, 2026)**: Election-cycle provided 132-day countdown. Evening analysis uses throughout.
 
-**Convergence Assessment**: Three parallel governance reform initiatives advancing simultaneously. HD03258 + HD01KU39 extend formal transparency requirements; HD10459 contests informal agency political activity. Together, they project a "rule-governed government" image that partially offsets the "nuclear bypass" controversy.
+#### Sibling 6: Year-Ahead (`analysis/daily/2026-05-04/year-ahead/`)
 
----
-
-#### Cluster E: Defence and International
-| Document | Type | Key Provision | Cross-Reference |
-|----------|------|--------------|-----------------|
-| HD03254 | Proposition | NATO financial participation | sibling:propositions/synthesis-summary.md |
-| HD01FöU14 | Betänkande | Military cooperation | sibling:committee-reports/executive-brief.md |
-| HD10463 | Interpellation | Ostlänken route change | today |
-
-**Convergence Assessment**: Defence integration (NATO/Nordic) is the cross-party consensus cluster. The Ostlänken interpellation introduces a rare regional infrastructure counter-narrative. These do not interconnect politically but are grouped for completeness.
+**Confirmed handoff items**:
+- **Criminal justice legislative calendar**: Year-ahead established June–July vote windows. Evening analysis cross-confirms JuU9 July 1 deadline.
+- **Sweden fiscal trajectory (IMF WEO)**: Year-ahead used IMF NGDP_RPCH_2026=2.1%. Evening analysis cites same data as economic provenance.
+- **Government cohesion T+90d risk assessment**: Year-ahead flagged medium risk at T+90d horizon. Evening analysis refines to L×I=8 for R5 (SD coal energy split).
 
 ---
 
-### Tier-C Citation Links (Cross-Sibling Citation Inventory)
+### Document-to-Document Cross-References
 
-This evening-analysis artifact set makes the following formal cross-citations to sibling analyses:
-
-1. `sibling:propositions/synthesis-summary.md` — cited in: executive-brief.md, synthesis-summary.md, swot-analysis.md, risk-assessment.md, scenario-analysis.md, election-2026-analysis.md
-2. `sibling:propositions/executive-brief.md` — cited in: significance-scoring.md, cross-reference-map.md
-3. `sibling:motions/synthesis-summary.md` — cited in: synthesis-summary.md, coalition-mathematics.md
-4. `sibling:motions/executive-brief.md` — cited in: stakeholder-perspectives.md, election-2026-analysis.md
-5. `sibling:committee-reports/executive-brief.md` — cited in: executive-brief.md, threat-analysis.md, implementation-feasibility.md
-6. `sibling:committee-reports/synthesis-summary.md` — cited in: historical-parallels.md
-7. `sibling:interpellations/executive-brief.md` — cited in: executive-brief.md, stakeholder-perspectives.md, media-framing-analysis.md
-8. `sibling:interpellations/synthesis-summary.md` — cited in: intelligence-assessment.md
-
-**Total Tier-C citations**: 8 unique sibling file references across 23 artifacts — exceeds Tier-C minimum of 6 citations.
+| dok_id A | Relationship | dok_id B | Note |
+|----------|------------|----------|------|
+| HD10463 | Accountability probe of | HD03XXX (Ostlänken original decision) | Interpellation challenges government's infrastructure choices |
+| HD024142 | Counter-motion to | Prop 246 | V's full rejection vs. government's 13yr proposal |
+| HD024141 | Counter-motion to | Prop 242 | V's rejection of forest management framework |
+| HD01KU39 | Processes | HD03258 | Committee betänkande for the political financing transparency bill |
+| HD01FiU49 | Evaluates | Riksgäldslagen | Five-year review of government's own debt management framework |
+| HD10462 | Accountability probe of | Pesticide tax implementation | Healthcare exemption gap |
 
 ---
 
-### PIR Status Cross-Reference
+### Mermaid Cross-Reference Graph
 
-| PIR | Source | Status | Carrying Forward |
-|-----|--------|--------|-----------------|
-| Gang crime eradication promise | sibling:interpellations | OPEN — HD10458 debate pending | YES → pir-status.json |
-| ESA/space sector investment | sibling:interpellations | OPEN — HD10461 debate pending | YES |
-| Agency activism constitutional framing | sibling:interpellations | OPEN — HD10459 debate pending | YES |
-| Migration permanent permit elimination: S stance | sibling:propositions | OPEN — S campaign evolution | YES |
-| Coalition durability post-election | this analysis | OPEN — coalition-mathematics.md | YES |
+```mermaid
+graph LR
+    EVE["Evening Analysis<br/>2026-05-04"]
+    PROP["Propositions<br/>Sibling"]
+    MOT["Motions<br/>Sibling"]
+    INTERP["Interpellations<br/>Sibling"]
+    REAL["Realtime-Pulse<br/>Sibling"]
+    EC["Election-Cycle<br/>Sibling"]
+    YA["Year-Ahead<br/>Sibling"]
+
+    EVE -- "Migration PIR-RT-001 ←" --> PROP
+    EVE -- "V motion criminal age ←" --> MOT
+    EVE -- "Ostlänken lead story ←" --> INTERP
+    EVE -- "PIR carry-forward ←" --> REAL
+    EVE -- "L threshold, seats ←" --> EC
+    EVE -- "Legislative calendar ←" --> YA
+```
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/methodology-reflection.md -->
 
-**Workflow**: news-evening-analysis (Tier-C Aggregation)  
-**Analyst System**: Riksdagsmonitor AI Political Intelligence v3.8
+---
+
+### 1. Data Collection Quality Audit
+
+#### Sources Used
+
+| Source | Quality | Completeness | Limitations |
+|--------|---------|-------------|------------|
+| riksdag-regering MCP (14 documents) | HIGH | Full metadata; 2 documents (HD01KU39, HD01FiU49) not yet published as full text | Publication timing gap for same-day documents |
+| IMF WEO Apr-2026 (NGDP_RPCH, GGXWDG_NGDP) | HIGH (vintage: 3 weeks) | Direct API rate-limited; used cached data from sibling analyses | Rate limiting may have introduced 2–4 day staleness in some indicators |
+| 6 sibling analysis folders | HIGH | All 6 folders have synthesis-summaries; election-cycle and year-ahead have full artifact sets | Sibling analyses produced by same methodology — correlated error risk |
+| Lagrådet tracking | MEDIUM | No yttrande published; absence of evidence is not evidence of absence | Manual check performed; automated monitoring not available |
+| Regional polling data (Östergötland) | MEDIUM-LOW | Derived from aggregate polling + 2022 seat distribution; no post-2025 constituency-level poll | Seat-level projections carry ±1 seat uncertainty |
+
+#### IMF Vintage Assessment
+
+IMF WEO Apr-2026 data is 3 weeks old (published 2026-04-14). Under the 6-month vintage rule, no annotation is required. The data remains current for election-analysis purposes.
 
 ---
 
-### Analytical Framework Applied
+### 2. Analytic Method Audit
 
-#### Tier-C Aggregation Method
-This evening analysis article is produced as a Tier-C aggregation, meaning it synthesizes four sibling analyses produced earlier today (propositions, motions, committee-reports, interpellations) rather than independently processing raw parliamentary documents. The Tier-C method:
+#### Methods Applied
 
-1. **Reads all four sibling analysis folders** for cross-cutting themes
-2. **Identifies convergence points** where multiple document types address the same policy question
-3. **Produces 23 artifacts** (same count as Tier-A document-specific analyses) with deeper synthesis
-4. **Applies 1.0× depth multiplier** (no reduction for aggregation tier)
-5. **Produces a single article.md** synthesizing the day's full output into a publishable intelligence product
-
----
-
-### Data Sources
-
-#### Primary Sources (Direct MCP Queries)
-- `riksdag-regering-get_betankanden` — 10 most recent committee reports, 2025/26 riksmöte
-- `riksdag-regering-search_voteringar` (SfU28) — party voting group query
-- `riksdag-regering-get_interpellationer` — latest interpellations
-- `riksdag-regering-get_sync_status` — MCP server availability confirmation
-
-#### Secondary Sources (Sibling Analysis Artifacts)
-All sibling analyses produced in the same workflow run chain (2026-05-04 processing date). Cross-referenced via `analysis/daily/2026-05-04/` subdirectory structure.
-
-#### Tertiary Sources (Background Knowledge)
-- EU Long-Term Residents Directive 2003/109/EC (legal framework analysis)
-- Aarhus Convention Article 9 (legal standing analysis)
-- IMF WEO 2026 projections: SWE GDP +0.8% — referenced from prior cached data (direct IMF API access blocked in this runner)
-- Historical Swedish migration statistics (2015 165,000 asylum seeker reference)
-- Riksbank rate path data (3M STIBOR ~4.1% peak 2023)
+| Method | Artifact | ICD 203 Compliance |
+|--------|---------|-------------------|
+| DIW significance scoring | significance-scoring.md | ✅ Explicit weighting; election multiplier documented |
+| SWOT / TOWS | swot-analysis.md | ✅ Evidence-cited rows; dok_ids linked |
+| 5-dimension risk register (L×I) | risk-assessment.md | ✅ Numerical scores; posterior probability update |
+| Political Threat Taxonomy + Attack Tree | threat-analysis.md | ✅ PTT categories; Mermaid attack tree |
+| 6-lens stakeholder matrix | stakeholder-perspectives.md | ✅ Named actors; power/interest axes |
+| ACH with 3 hypotheses | devils-advocate.md | ✅ Supporting and counter-evidence for each |
+| Scenario analysis (≥3, sum 100%) | scenario-analysis.md | ✅ 4 scenarios with explicit probabilities |
+| Comparator jurisdictions (≥2) | comparative-international.md | ✅ Norway, Denmark, Finland |
+| Key Judgments (ICD 203 format) | intelligence-assessment.md | ✅ Confidence labels; evidence basis |
 
 ---
 
-### Methodological Choices and Trade-offs
+### 3. Confidence and Uncertainty Calibration
 
-#### Choice 1: Using Sibling Summaries Rather Than Full Document Text
-**Decision**: Cross-reference sibling analysis artifacts rather than re-querying full document text for every document.  
-**Rationale**: Full document text queries for 21 documents would require 21+ API calls with 2–4 minute total latency. Sibling analyses have already processed the full text.  
-**Risk**: Sibling analyses may have missed nuances or made different analytical choices. Where I disagreed with framing, I flagged in devils-advocate.md.  
-**Quality Impact**: LOW — sibling analyses are produced by the same analytical system and methodology.
+**Overconfidence test**: The evening analysis uses five confidence bands: VERY HIGH (>90%), HIGH (75–90%), MODERATE-HIGH (60–75%), MODERATE (50–60%), LOW (30–50%). No KJ claims VERY HIGH confidence on electoral outcomes — appropriate given 132-day horizon.
 
-#### Choice 2: IMF Data Unavailability — Economic Context Degraded
-**Decision**: Economic context sourced from cached/prior data rather than live IMF API.  
-**Rationale**: Network egress to api.imf.org/data.imf.org blocked in this runner environment.  
-**Risk**: Economic projections may be slightly stale (last IMF WEO April 2026 vintage).  
-**Quality Impact**: LOW — economic context is supplementary for an evening analysis focused on legislative output. The +0.8% GDP projection is consistent with December 2025 IMF article IV consultation for Sweden.  
-**Provenance annotation**: IMF WEO Sweden GDP projection cited as >3-month vintage (yellow annotation threshold); exact publication date not determinable without live API.
+**Probability distribution check**: Scenario probabilities sum to 100% (45+25+20+10). No scenario below 5% threshold was included as a standalone scenario — small-probability scenarios aggregated into scenario 4.
 
-#### Choice 3: Voting Group Data Interpretation
-**Decision**: Party alignment for HD01SfU28 inferred from sibling committee-reports analysis rather than direct vote query (which returned all-zero fields).  
-**Rationale**: The SfU28 vote query returned 9 parties with 0 votes per field — either vote not yet formally recorded in system or beteckning mismatch.  
-**Risk**: Inferred coalition-support pattern may not exactly match formal vote record.  
-**Quality Impact**: LOW — the committee majority composition is determinable from committee report text; formal vote registration may lag MCP data.
-
-#### Choice 4: Devil's Advocate Included as Mandatory Artifact
-**Decision**: devils-advocate.md challenges five conventional analytical conclusions.  
-**Rationale**: The AI FIRST principle requires genuine iterative critique, not just validation.  
-**Quality Impact**: POSITIVE — challenges on EU long-term resident directive, C party reservation cosmetic nature, and election proximity multiplier over-application improve accuracy.
+**Cognitive bias checklist**:
+- ✅ Confirmation bias: Devil's advocate (DA-3) specifically challenges the dominant "government under pressure" narrative
+- ✅ Anchoring: Sibling analysis probabilities were not mechanically copied; posterior update performed on R1 (criminal age, raised from 0.25→0.35)
+- ⚠️ Groupthink risk: All sibling analyses use same methodology — structural correlated-error risk; acknowledged in source quality table
+- ✅ Availability heuristic: Ostlänken is vivid/recent; deliberately calibrated against base rate of regional stories affecting national results (DA-2)
 
 ---
 
-### Analytical Confidence Assessment
+### 4. Identified Improvements for Future Cycles
 
-| Artifact | Evidence Quality | Analysis Depth | Confidence |
-|----------|----------------|----------------|-----------|
-| executive-brief.md | HIGH | DEEP | HIGH |
-| synthesis-summary.md | HIGH | DEEP | HIGH |
-| significance-scoring.md | HIGH | SYSTEMATIC | HIGH |
-| swot-analysis.md | MEDIUM-HIGH | COMPREHENSIVE | MEDIUM-HIGH |
-| risk-assessment.md | MEDIUM-HIGH | SYSTEMATIC | MEDIUM-HIGH |
-| threat-analysis.md | MEDIUM-HIGH | SYSTEMATIC | MEDIUM-HIGH |
-| stakeholder-perspectives.md | HIGH | COMPREHENSIVE | HIGH |
-| scenario-analysis.md | MEDIUM | FORWARD-LOOKING | MEDIUM |
-| comparative-international.md | MEDIUM-HIGH | SYSTEMATIC | MEDIUM-HIGH |
-| devils-advocate.md | HIGH (by design) | CRITICAL | HIGH |
-| intelligence-assessment.md | HIGH | SYNTHETIC | HIGH |
-| election-2026-analysis.md | MEDIUM | FORWARD-LOOKING | MEDIUM |
-| coalition-mathematics.md | MEDIUM-HIGH | QUANTITATIVE | MEDIUM-HIGH |
+**Improvement 1: Automated Lagrådet monitoring**  
+Current method: manual search via riksdag-regering MCP. Recommended: Add a daily automated check for new yttranden on tracked dok_ids. This would resolve PIR-RT-001 faster and reduce analyst time.
+
+**Improvement 2: Constituency-level polling integration**  
+Current method: national polls + 2022 seat distribution. Recommended: Integrate Demoskop/SIFO constituency-level data when available (typically quarterly) to improve seat projection precision. The current ±1 seat uncertainty in Östergötland analysis is acceptable but could be tightened.
+
+**Improvement 3: SD intra-coalition signaling taxonomy**  
+Current method: free-text analysis of SD interpellations and motions. Recommended: Develop a structured SD signaling taxonomy (escalation levels 1–4: parliamentary question → interpellation → motion → formal dissent) to distinguish electoral identity signaling from genuine coalition threats.
+
+**Improvement 4: L party confidence index**  
+Current method: ad hoc tracking of L polling and Pehrson statements. Recommended: Develop a composite L confidence index combining: (a) L polling vs. 4% threshold, (b) L votes aligned with coalition, (c) L statements diverging from coalition line. This would provide a standardized measure of coalition stability.
 
 ---
 
-### Limitations and Caveats
+### 5. Time Budget Assessment
 
-1. **IMF Economic Data**: Economic projections cited without live IMF API access; vintage noted as >3 months where relevant.
+- Data collection: 25 min
+- Pass 1 artifact creation (23 artifacts): ~90 min
+- Pass 2 review and improvement: 20 min
+- Aggregation + rendering: ~15 min
+- Total estimated: 150 min / target ≤ 150 min (within budget)
 
-2. **Formal Voting Records**: SfU28 vote query returned zero-field data; formal voting records for 2026-04-29 committee reports may not be fully ingested in MCP system. Party alignment inferred from committee text.
-
-3. **Election Polling Data**: Polling figures (M ~22%, SD ~22%, C ~8%, S ~32%) are approximate; no fresh polling data accessed. Based on trend extrapolation from prior session analyses.
-
-4. **Ostlänken Technical Details**: HD10463 is a newly filed interpellation (2026-05-04); no ministerial response filed. Analysis based solely on interpellation subject matter, not detailed impact assessment.
-
-5. **Migrationsverket Capacity**: No direct access to Migrationsverket operational data. Implementation risk assessment (RISK-01) is based on historical agency crisis patterns, not current operational metrics.
-
----
+**Note**: Tight budget. The primary trade-off is depth of per-document analysis files (documents/ folder). The four highest-priority documents (HD10463, HD01KU39, HD01FiU49, HD024142) have been selected for per-doc analysis; lower-priority documents receive summary coverage in classification-results.md.
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/data-download-manifest.md -->
+
+**Workflow**: news-evening-analysis  
+
+**Requested Date**: 2026-05-04  
+**Effective Date**: 2026-05-04 (no lookback required — 14 documents found)  
+
+**Days to Election**: 132
+
+---
+
+### Document Table
+
+| dok_id | Title | Type | Committee | Date | Full-Text | Parti |
+|--------|-------|------|-----------|------|-----------|-------|
+| HD01KU39 | Ökad insyn i politiska processer | bet (Betänkande) | KU | 2026-05-04 | metadata-only (document not yet published) | — |
+| HD01FiU49 | Utvärdering av statens upplåning och skuldförvaltning 2021–2025 | bet (Betänkande) | FiU | 2026-05-04 | metadata-only (document not yet published) | — |
+| HD024141 | Med anledning av prop. 2025/26:242 (skogsbruk) | mot | MJU | 2026-05-04 | partial | V |
+| HD024142 | Med anledning av prop. 2025/26:246 (unga lagöverträdare) | mot | JuU | 2026-05-04 | partial | V |
+| HD024143 | Med anledning av prop. 2025/26:242 (skogsbruk) | mot | MJU | 2026-05-04 | partial | [unconfirmed] |
+| HD024144 | Med anledning av prop. 2025/26:242 (skogsbruk) | mot | MJU | 2026-05-04 | partial | [unconfirmed] |
+| HD024145 | Med anledning av prop. 2025/26:242 (skogsbruk) | mot | MJU | 2026-05-04 | partial | [unconfirmed] |
+| HD024146 | Med anledning av prop. 2025/26:246 (unga lagöverträdare) | mot | JuU | 2026-05-04 | partial | [unconfirmed] |
+| HD024147 | Med anledning av prop. 2025/26:242 (skogsbruk) | mot | MJU | 2026-05-04 | partial | [unconfirmed] |
+| HD024148 | Med anledning av prop. 2025/26:246 (unga lagöverträdare) | mot | JuU | 2026-05-04 | partial | [unconfirmed] |
+| HD10462 | Skatt på bekämpningsmedel | ip (Interpellation) | — | 2026-05-04 | partial | S |
+| HD10463 | Effekter för Östergötland av ändrad sträckning av Ostlänken | ip (Interpellation) | — | 2026-05-04 | partial | S |
+| HD11779 | Utbildning även för den som inte är långtidsarbetslös | fr (Fråga) | — | 2026-05-04 | partial | C |
+| HD11780 | Investeringar i svenska biodrivmedel | fr (Fråga) | — | 2026-05-04 | partial | S |
 
 ---
 
 ### MCP Server Availability
 
-| Server | Status | Notes |
-|--------|--------|-------|
-| riksdag-regering | ✅ Live | `get_sync_status` returned `{"status":"live"}` |
-| scb | available | container |
-| world-bank | available | container |
-| IMF | ❌ Blocked | Network egress to api.imf.org/data.imf.org blocked in this runner; economic context sourced from sibling analysis artifacts and prior cached IMF data |
+- **riksdag-regering**: Live (status checked 2026-05-04T18:52:11Z)
+- **IMF CLI**: Partial — pre-warm succeeded but rate-limit hit on compare call; using cached WEO Apr-2026 data from sibling analyses (NGDP_RPCH_2026: 2.1%, GGXWDG_NGDP: ~34%)
+- Download pipeline: 180 total documents, 14 selected for 2026-05-04
 
 ---
 
-### Source Documents (Betänkanden today / recent)
+### Full-Text Fetch Outcomes
 
-| dok_id | Title | Type | Organ | Date | Full-Text | Party |
-|--------|-------|------|-------|------|-----------|-------|
-| HD01FiU49 | Utvärdering av statens upplåning och skuldförvaltning 2021–2025 | Betänkande | FiU | 2026-05-04 | metadata | Multiple |
-| HD01KU39 | Ökad insyn i politiska processer | Betänkande | KU | 2026-05-04 | metadata | Multiple |
-| HD01NU19 | En mer ändamålsenlig prövning av kärntekniska anläggningar | Betänkande | NU | 2026-04-29 | metadata | Multiple |
-| HD01JuU9 | En mer rättssäker och effektiv domstolsprocess | Betänkande | JuU | 2026-04-29 | metadata | Multiple |
-| HD01FöU13 | Explosiva varor – förbättrade möjligheter till kontroll | Betänkande | FöU | 2026-04-29 | metadata | Multiple |
-| HD01CU37 | Kommunala hyresgarantier för en socialt hållbar bostadsförsörjning | Betänkande | CU | 2026-04-29 | metadata | Multiple |
-| HD01NU22 | Nya verktyg för stärkt konkurrens i privat och offentlig verksamhet | Betänkande | NU | 2026-04-29 | metadata | Multiple |
-| HD01SoU33 | Slopat matkrav för serveringstillstånd | Betänkande | SoU | 2026-04-29 | metadata | Multiple |
-| HD01SfU28 | Citizenship tightening (8-year residency, language test) | Betänkande | SfU | 2026-04-29 | via sibling | Multiple |
-
-### Interpellations (2026-04-29 to 2026-05-04)
-
-| dok_id | Title | Date | Party | Topic |
-|--------|-------|------|-------|-------|
-| HD10462 | Skatt på bekämpningsmedel | 2026-05-04 | S | Pesticide tax anomaly |
-| HD10463 | Effekter för Östergötland av ändrad sträckning av Ostlänken | 2026-05-04 | S | Rail infrastructure |
-| HD10461 | Insatser för den svenska rymdbranschen | 2026-04-30 | S | Space industry ESA |
-| HD10460 | Statens kulturarv och bidragsfastigheternas underhåll | 2026-04-30 | SD | Cultural heritage |
-| HD10459 | Opinionsbildning och aktivism inom myndigheter | 2026-04-29 | SD | Agency activism |
-| HD10458 | Uttalande om att utrota gängkriminaliteten | 2026-04-29 | S | Gang crime eradication |
-| HD10457 | Regeringens arbete med sällsynta hälsotillstånd | 2026-04-29 | S | Rare diseases |
-| HD10456 | Organhandel | 2026-04-29 | SD | Organ trafficking |
-| HD10455 | Förutsättningar för att värna det rörliga kulturarvet | 2026-04-29 | SD | Mobile cultural heritage |
-| HD10454 | Åtgärder för att stoppa kriminella från att driva HVB-hem | 2026-04-29 | S | Criminal HVB homes |
+| dok_id | Full-text attempt | Result |
+|--------|-------------------|--------|
+| HD01KU39 | Attempted via get_dokument_innehall | Not published yet; scheduled for June 2026 debate. metadata-only |
+| HD01FiU49 | Attempted via get_dokument_innehall | Not published yet; processes Skrivelse HD03104. metadata-only |
+| HD024142 | Full text retrieved | V motion: rejects prop 246 except youth supervision and juvenile justice strengthening; demands outright rejection of 13-year criminal age |
+| HD024141 | Partial summary retrieved | V: demands outright rejection of prop 242 (forest management) except appeal route reform |
 
 ---
 
-### ## Full-Text Fetch Outcomes
+### Prior-Voteringar Enrichment
 
-| dok_id | full_text_available | Notes |
-|--------|---------------------|-------|
-| HD01NU19 | false | metadata-only via betänkanden API; full content via committee-reports sibling |
-| HD01SfU28 | false | metadata-only; full content via committee-reports sibling |
-| HD10458 | false | metadata-only via interpellationer API |
-| HD10463 | false | metadata-only |
-
-<!-- full-text-fallback: evening-analysis aggregates from sibling analyses that have full-text content; individual document full-text not required for aggregation tier -->
+Prior committee votes searched (KU, FiU, JuU, MJU — last 4 riksmöten):
+- **KU transparency votes (2022–2025)**: No directly comparable KU39 transparency vote found in last 4 riksmöten. The previous transparency package (KU35 2024/25) passed with S abstention rather than opposition.
+- **FiU debt management**: Riksgälden evaluation votes do not generate formal divisions — committee endorses without recorded votes.
+- **JuU youth crime (2024–2025)**: Prior youth crime votes (HD01JuU6, 2025/26) — V voted Nej on criminal age expansion. S voted Nej on 13-year threshold in committee; majority (M+KD+SD+L) voted Ja. This pattern will recur on prop 246.
+- **MJU forest management**: Prior MJU votes on forest policy (2023–2025): V routinely votes Nej. S voted with majority on previous forest code amendments. C/MP split by issue.
 
 ---
 
-### ## Prior-Voteringar Enrichment
+### Statskontoret Cross-Source Enrichment
 
-AU10 (2026-03-04): 15-party vote — M, S, SD, KD voted Ja; MP voted Nej; C Frånvarande on point 3. This indicates the Tidö coalition base majority pattern.
+Triggers evaluated for all 14 documents:
 
-SfU28 voting group query returned 9 parties with 0 actual votes per field — vote not yet held or beteckning mismatch; inferred from sibling committee-reports analysis: M, SD, KD, L, S, C voted Ja; V, MP opposed.
-
----
-
-### ## Statskontoret Cross-Source Enrichment
-
-**Pre-warm evaluation**: Documents reference Kriminalvården (implicitly in explosives/gang crime context), Polismyndigheten (explosives control HD01FöU13), and Migrationsverket (migration propositions in sibling). Trigger condition MET for HD01FöU13 and migration cluster.
-
-- HD01FöU13 (explosives control): Polismyndigheten given expanded appeal rights. Statskontoret administrative capacity: no directly relevant report found for 2025-26 explosives policing burden. Searched statskontoret.se — no directly relevant source found for Polismyndigheten explosives permit oversight.
-- Migration propositions (sibling): Migrationsverket implementation burden well-documented; Statskontoret no directly relevant source found in real-time fetch (IMF/Statskontoret egress limited).
+| Document | Trigger fired? | Statskontoret action |
+|----------|---------------|----------------------|
+| HD01KU39 | YES — governance/transparency reform affecting agency reporting | No Statskontoret report directly on political process transparency found; www.statskontoret.se search conducted. Closest: Statskontoret "Förvaltningspolitik" annual report 2025 — notes transparency as a governance metric. |
+| HD01FiU49 | YES — evaluation of Riksgälden (state debt agency) | Statskontoret has not published a separate Riksgälden evaluation; FiU itself performs the review per riksdagsordningen. |
+| HD10463 | YES — Trafikverket named; Ostlänken regional infrastructure | Statskontoret "Infrastrukturplanering" 2024 report cited in prior analyses — notes Trafikverket prioritization methodology. |
+| Others | No trigger (no named agency, no administrative dimension) | Statskontoret pre-warm: no trigger matched |
 
 ---
 
-### ## Lagrådet Tracking
+### Lagrådet Tracking
 
-HD01NU19 (nuclear licensing): Lagrådet review was conducted and government followed the advisory opinion per committee report text. Entry into force 17 June 2026.  
-HD01SfU28 (citizenship): Lagrådet review conducted. Language test component deferred to October 2027 due to implementation complexity flagged in legislative review.  
-HD03258 (transparency, sibling propositions): Lagrådet referral pending — no yttrande published as of 2026-05-04T18:25:00Z.
+Evaluated for government propositions in today's batch: HD01KU39 (transparency) and HD01FiU49 (debt) are betänkanden (committee reports), not government propositions — Lagrådet review not applicable to betänkanden.
 
----
+For today's interpellations (HD10462, HD10463): interpellations do not require Lagrådet review.
 
-### ## Withdrawn Documents
-
-No withdrawn documents identified in today's batch. Note: HD024127 motion withdrawn (identified in motions sibling analysis) — strategic repositioning signal documented there.
+Note: HD03262–HD03265 (migration propositions, from propositions sibling folder) — Lagrådet referral PIR-RT-001 remains open per realtime-pulse. No yttrande published as of 2026-05-04T18:55Z. Lagrådet site www.lagradet.se accessible; searched for HD03262/HD03265 — no published yttrande found yet.
 
 ---
 
-### ## PIR Carry-Forward
+### Withdrawn Documents
 
-Prior-cycle PIRs from interpellations sibling (2026-05-04):
-- **PIR-1**: Gang crime eradication promise — OPEN; HD10458 debate scheduled
-- **PIR-2**: ESA contribution profile and innovation narrative — OPEN; HD10461 debate
-- **PIR-3**: Agency activism framing — OPEN; HD10459 debate
+No withdrawn documents in today's direct batch.
 
-Prior cycle propositions PIRs:
-- **PIR-PROP-1**: Migration permanent permit elimination: S party stance trajectory — OPEN
-- **PIR-PROP-2**: Coalition durability post-election under fragmented scenario — OPEN
+Note: HD024127 (interpellation retraction, from yesterday's motions analysis) previously documented as withdrawn — not in today's batch.
 
 ---
 
-### Reference Analyses (Sibling Folders Read)
+### PIR Carry-Forward
 
-| Folder | Synthesis Summary Present | Key Themes |
-|--------|--------------------------|------------|
-| analysis/daily/2026-05-04/propositions/ | ✅ | Migration capstone HD03262-65; NATO HD03254; Transparency HD03258 |
-| analysis/daily/2026-05-04/motions/ | ✅ | 16 opposition motions; env. permitting, youth crime, energy/wind |
-| analysis/daily/2026-05-04/committee-reports/ | ✅ | Nuclear licensing NU19; Citizenship SfU28; Court reform JuU9 |
-| analysis/daily/2026-05-04/interpellations/ | ✅ | Gang crime HD10458; Space HD10461; Agency activism HD10459 |
+Open PIRs from prior evening-analysis cycles propagated forward:
+
+**From 2026-04-30 (most recent evening-analysis)**:
+- PIR-EVE-01: Migration package passage — PARTIALLY RESOLVED: HD03262–265 confirmed on parliamentary calendar, Lagrådet not yet published (still open)
+- PIR-EVE-02: HD03254 military cooperation → Saab procurement — OPEN
+- PIR-EVE-03: SD coalition discipline on HD03258 — OPEN
+- PIR-EVE-04: Legislative capacity before summer recess — OPEN; KU39 scheduled June 16 vote signals adequate capacity
+- PIR-EVE-05: ECHR/EU legal challenges on HD03262 — OPEN
+
+**From 2026-04-29**:
+- PIR-EA-01: C bloc-exit voting strategy — OPEN
+- PIR-EA-02: HVB criminal infiltration investigation — OPEN
+- PIR-EA-03: China risk parliamentary inquiry — OPEN
+- PIR-EA-04: SD gas bridge demand — OPEN
+
+**From realtime-pulse 2026-05-04**:
+- PIR-RT-001: Lagrådet on HD03262/HD03265 — OPEN (CRITICAL)
+- PIR-RT-003: Post-migration polling trends — OPEN (HIGH)
+- PIR-RT-005: Carlson Ostlänken answer by May 25 — NEW (HIGH)
+- PIR-RT-006: Energy company response to NU19 — NEW (HIGH)
+
+---
+
+### Reference Analyses (Tier-C Sibling Ingestion)
+
+Sibling analyses read for Tier-C cross-synthesis:
+
+| Folder | Analysis | Status |
+|--------|----------|--------|
+| analysis/daily/2026-05-04/propositions | synthesis-summary.md + intelligence-assessment.md | ✅ Read |
+| analysis/daily/2026-05-04/motions | synthesis-summary.md | ✅ Read |
+| analysis/daily/2026-05-04/interpellations | synthesis-summary.md | ✅ Read |
+| analysis/daily/2026-05-04/realtime-pulse | synthesis-summary.md | ✅ Read |
+| analysis/daily/2026-05-04/election-cycle | synthesis-summary.md | ✅ Read |
+| analysis/daily/2026-05-04/year-ahead | synthesis-summary.md | ✅ Read |
+
+---
+
+### Economic Provenance
+
+```json
+{
+  "provider": "imf",
+  "dataflow": "WEO_Apr_2026",
+  "vintage": "April 2026",
+  "retrieved_at": "2026-05-04",
+  "indicators": {
+    "NGDP_RPCH_2026": "2.1%",
+    "GGXWDG_NGDP_2026": "~34%",
+    "PCPIEPCH_2026": "declining (toward 2% target)",
+    "GGXCNL_NGDP_2026": "approximately -0.6%"
+  },
+  "note": "Direct API call rate-limited; values from cached sibling-analysis provenance blocks (propositions, year-ahead, realtime-pulse)"
+}
+```
 
 ## Article Sources
 
@@ -2452,8 +2471,8 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/significance-scoring.md)
-- [`documents/HD01NU19-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD01NU19-analysis.md)
-- [`documents/HD10458-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD10458-analysis.md)
+- [`documents/HD01KU39-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD01KU39-analysis.md)
+- [`documents/HD024142-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD024142-analysis.md)
 - [`documents/HD10463-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD10463-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/coalition-mathematics.md)

@@ -1,117 +1,124 @@
-# Implementation Feasibility — Evening Analysis 2026-05-04
+# Implementation Feasibility — Evening Analysis, 4 May 2026
 
-**Date**: 2026-05-04  
-**Framework**: Implementation feasibility assessment for today's major legislative changes
-
----
-
-## HD03262–65: Migration Bundle Implementation
-
-### Required Changes
-1. **Migrationsverket IT systems**: New case categories for "compulsory departure" (HD03263), revised identity documentation verification (HD03264), new international protection status determination (HD03265)
-2. **Staff retraining**: Case officers require retraining on new status categories, documentation requirements, and departure obligation notification processes
-3. **Legal assistance infrastructure**: Increased demand for public defenders (offentliga biträden) from applicants navigating new framework
-4. **Deportation operational capacity**: Polismyndigheten (Border Police) capacity for increased compulsory departure enforcement
-
-### Feasibility Assessment
-**Timeline**: Legislation entry into force date not specified in today's metadata (inferred ~1 January 2027 based on Lagrådet implementation complexity notes)  
-**IT system timeline**: Migrationsverket major system changes typically require 18–24 months. A January 2027 entry into force with 7-month implementation window is tight.  
-**Staff capacity**: Migrationsverket had ~9,000 employees in 2025. Retraining 60–70% on new frameworks within 7 months is achievable but requires significant training investment.  
-**Deportation capacity**: Polismyndigheten Border Police estimated to require +15% capacity for HD03263 enforcement.
-
-**Feasibility Score**: MEDIUM (60%) — achievable with significant investment; risk of partial implementation
+**Author**: James Pether Sörling | **Date**: 2026-05-04
 
 ---
 
-## HD01SfU28: Citizenship Requirements Implementation
+## Feasibility Assessment by Legislative Item
 
-### Required Changes
-1. **Language test infrastructure**: National standardized test for Swedish language and civic knowledge. Currently no such infrastructure exists at the required scale.
-2. **Test localization**: Testing centers must be accessible across 290 municipalities with diverse immigrant populations
-3. **Exemption processing**: Lagrådet flagged need for clear exemption criteria for refugees with trauma, elderly, etc.
-4. **Residency tracking**: Migrationsverket residence record verification for 8-year calculation
+### 1. Nuclear NU19 (New Rules for Building Nuclear Power Plants)
 
-### Feasibility Assessment
-**Language test timeline**: Language test deferred to October 2027 (per Lagrådet recommendation, confirmed in today's committee discussion). This is the most technically complex component.  
-**Residency calculation**: 8-year requirement calculated from entry date — existing Migrationsverket data. Straightforward.  
-**Test infrastructure**: Sweden can contract with existing adult education frameworks (Komvux) or create a dedicated agency. Finland and Denmark provide models. 18-month implementation timeline from legislation to operational test = October 2027 is achievable.  
-**Exemption framework**: Critical for Lagrådet compliance and ECHR Article 14 (non-discrimination). Must specify exemptions for: recognized refugees (trauma), disability, age (>65), and temporary illness.
+**Vote date**: June 17, 2026 (effective date)  
+**Feasibility**: VERY HIGH (90%)
 
-**Feasibility Score**: HIGH (80%) for residency requirement; MEDIUM-HIGH (70%) for language tests by October 2027
+| Dimension | Assessment |
+|-----------|----------|
+| Parliamentary support | M+KD+SD+L = 165; C likely to support (market energy position); cross-bloc support expected |
+| Implementation readiness | SKB (nuclear waste) and SSM (regulator) have prepared implementation guidance; site licensing process defined |
+| Timeline risk | June 17 is an effective date, not a construction start — no physical implementation risk in 2026 |
+| Budget requirements | No direct appropriations required for the enabling legislation itself; downstream reactor construction is private-sector led |
+| Legal risks | Minor — EU State Aid rules for nuclear have been clarified post-Finland OL3; no EU challenge expected |
 
----
-
-## HD01NU19: Nuclear Licensing Implementation
-
-### Required Changes
-1. **Government approval process design**: A new internal government process for receiving and evaluating nuclear facility applications directly (bypassing Strålsäkerhetsmyndigheten / SSM as the primary gateway)
-2. **SSM consultation framework**: SSM remains the technical expert body but in a consulting rather than approval role
-3. **EIA-equivalent process**: Government needs an internal environmental impact review process to defend against Aarhus Convention challenges
-4. **Application forms and guidance**: New application format for direct government submissions
-
-### Feasibility Assessment
-**Timeline**: Entry into force June 17, 2026 — 44 days from today.  
-**Government process design**: 44 days is extremely tight for creating a new regulatory process. The government will need to publish detailed application guidance, establish a review secretariat, and design SSM consultation protocols.  
-**EIA-equivalent process**: Critical for legal challenge defense. Without a documented EIA-equivalent, the Aarhus Convention challenge succeeds easily. Government legal teams are under extreme time pressure.  
-**First application**: No nuclear operator will file an application before June 17 — operators are risk-averse. First applications expected 6–18 months post-entry into force.
-
-**Feasibility Score**: MEDIUM (55%) for June 17 governance framework; HIGH (90%) for actual licensing decisions (these will take years regardless)
+**Delivery-risk**: VERY LOW
 
 ---
 
-## HD01JuU9: Court Process Reform
+### 2. Criminal Age Prop 246 (13-Year Threshold)
 
-### Required Changes
-1. **Police interview protocols**: New standardized protocols for "earlier hearing" recordings intended for court use
-2. **Prosecutor training**: Prosecutors must learn to present earlier interview evidence effectively
-3. **Defence counsel training**: Defence lawyers must learn to challenge attestation evidence
-4. **Hovrätt procedural changes**: Elimination of tilltrosbestämmelserna requires Hovrätt to adjust review practices
-5. **IT systems**: Court document management systems for attestation records
+**Vote date**: ~July 1, 2026 (JuU9)  
+**Feasibility**: MEDIUM (50% as-proposed; 75% with amendment to 14 years)
 
-### Feasibility Assessment
-**Timeline**: Entry into force July 1, 2026 — 58 days from today.  
-**Police protocol**: Polismyndigheten has been preparing since the HD01JuU9 proposition was announced in 2025. Implementation largely complete.  
-**Hovrätt procedural**: Domstolsverket circular required to all courts within 30 days.  
-**Training**: Åklagarmyndigheten has run internal training anticipating this legislation since Q4 2025.
+| Dimension | Assessment |
+|-----------|----------|
+| Parliamentary support | 165 coalition votes; L position uncertain; S+V may form blocking committee majority |
+| Implementation readiness | Judiciary prepared; prosecutors trained; youth detention capacity is the binding constraint |
+| Timeline risk | July 1 vote is realistic; implementation by September feasible if bill passes |
+| Budget requirements | ~650M SEK annually for youth detention capacity expansion (from comparative analysis) |
+| Legal risks | HIGH — UNCRC Article 40 compatibility; potential complaint to UN Committee on Rights of Child |
 
-**Feasibility Score**: HIGH (85%) — most preparation already done
+**Delivery-risk**: MEDIUM-HIGH on legal challenge; LOW on physical implementation if passes
 
 ---
 
-## HD01FöU13: Explosives Licensing Tightened
+### 3. Transparency Bill KU39 (HD03258)
 
-### Required Changes
-1. **Polismyndigheten process changes**: New appeal rights require internal Polismyndigheten administrative process for exercising those rights
-2. **Tillståndsmyndigheten notification systems**: New mandatory notification requirements when personnel change in explosives license holders
-3. **IT system updates**: Permit tracking and notification systems
+**Vote date**: June 16, 2026  
+**Feasibility**: VERY HIGH (95%)
 
-### Feasibility Assessment
-**Timeline**: Entry into force July 1, 2026.  
-**Feasibility Score**: HIGH (90%) — incremental changes to existing systems
+| Dimension | Assessment |
+|-----------|----------|
+| Parliamentary support | Near-unanimous expected; all parties support transparency in principle |
+| Implementation readiness | Swedish Election Authority (Valmyndigheten) has prepared reporting framework |
+| Timeline risk | Minimal — administrative systems already designed |
+| Budget requirements | ~50M SEK for Valmyndigheten system upgrades (one-time) |
+| Legal risks | LOW — builds on existing EU political party regulation framework |
 
----
-
-## Implementation Risk Aggregation
-
-| Measure | Score | Primary Risk | Timeline |
-|---------|-------|-------------|---------|
-| HD03262–65 Migration bundle | MEDIUM (60%) | Migrationsverket IT + deportation capacity | 2027+ |
-| HD01SfU28 Citizenship (8 years) | HIGH (80%) | Residency tracking — straightforward | Immediate |
-| HD01SfU28 Language tests | MEDIUM-HIGH (70%) | Test infrastructure creation | October 2027 |
-| HD01NU19 Nuclear licensing | MEDIUM (55%) | 44-day governance framework creation | June 17, 2026 |
-| HD01JuU9 Court reform | HIGH (85%) | Largely pre-prepared | July 1, 2026 |
-| HD01FöU13 Explosives | HIGH (90%) | Incremental changes | July 1, 2026 |
-
-**Aggregate Implementation Risk**: MEDIUM — the most politically significant measures (migration bundle, nuclear licensing governance) have the lowest implementation feasibility scores. This is the core implementation risk going into the election.
+**Delivery-risk**: VERY LOW
 
 ---
 
-## Critical Implementation Milestone Calendar
+### 4. Forest Management Prop 242
 
-| Date | Milestone | Risk Level |
-|------|-----------|-----------|
-| June 17, 2026 | HD01NU19 entry into force | 🔴 HIGH (44-day governance design) |
-| July 1, 2026 | HD01JuU9 + HD01FöU13 entry into force | 🟢 LOW |
-| September 14, 2026 | Election — Migrationsverket stress test begins | 🟡 MEDIUM |
-| October 2027 | Language tests (HD01SfU28 test component) | 🟡 MEDIUM |
-| 2027+ | Full migration bundle operational | 🔴 HIGH |
+**Vote date**: MJU12, ~June  
+**Feasibility**: MEDIUM (55%)
+
+| Dimension | Assessment |
+|-----------|----------|
+| Parliamentary support | Uncertain — V demands rejection (HD024141); S position unclear |
+| Implementation readiness | Skogstyrelsen (Swedish Forest Agency) has prepared implementation guidance |
+| Timeline risk | If fails committee, government cannot resubmit before election |
+| Budget requirements | Primarily regulatory, not financial |
+| Legal risks | EU Natura 2000 compatibility requires careful implementation |
+
+**Delivery-risk**: MEDIUM on passage; LOW on implementation if passes
+
+---
+
+### 5. Migration Capstone HD03262/265
+
+**Vote date**: Late May 2026  
+**Feasibility**: HIGH (80%)
+
+| Dimension | Assessment |
+|-----------|----------|
+| Parliamentary support | Coalition (165) + potentially C on elements = sufficient majority |
+| Implementation readiness | Migrationsverket prepared; return agreement framework with EU |
+| Timeline risk | Lagrådet yttrande (PIR-RT-001) could trigger delay of 2–4 weeks; still finishable before summer |
+| Budget requirements | ~200M SEK in implementation and enforcement costs |
+| Legal risks | Lagrådet adverse opinion risk; ECHR Article 8 (family unity) challenges possible |
+
+**Delivery-risk**: LOW-MEDIUM depending on Lagrådet outcome
+
+---
+
+### 6. Ostlänken — NOT a Current Bill, But Implementation Context
+
+**Context**: There is no current vote on Ostlänken. HD10463 is an interpellation. The government's decision to cancel the Linköping station expansion was administrative (Trafikverket decision). Reversal would require a new government decision + supplementary budget.
+
+**Feasibility of reversal**: LOW in current term (requires new budget commitment)  
+**Feasibility of compensation package**: MEDIUM — a connectivity package (bus, regional rail improvements) is feasible within existing Trafikverket authority without new legislation
+
+---
+
+## Critical Path Chart
+
+```mermaid
+gantt
+    title Legislative Critical Path — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration
+    Lagrådet yttrande    :active,  a1, 2026-05-04, 2026-05-20
+    Parliamentary vote   :         a2, 2026-05-20, 2026-05-28
+    section Transparency KU39
+    Committee phase      :         b1, 2026-05-26, 2026-06-09
+    Plenary vote         :         b2, 2026-06-16, 2026-06-16
+    section Nuclear NU19
+    Effective date       :milestone, c1, 2026-06-17, 0d
+    section Criminal age JuU9
+    Committee deliberations :      d1, 2026-06-01, 2026-06-25
+    Plenary vote         :         d2, 2026-07-01, 2026-07-01
+    section Defence FöU13
+    Plenary vote         :         e1, 2026-07-01, 2026-07-01
+    section Election
+    Election day         :milestone, f1, 2026-09-13, 0d
+```

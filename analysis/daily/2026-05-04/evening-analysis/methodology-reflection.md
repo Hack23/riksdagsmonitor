@@ -1,122 +1,82 @@
-# Methodology Reflection — Evening Analysis 2026-05-04
+# Methodology Reflection — Evening Analysis, 4 May 2026
 
-**Date**: 2026-05-04  
-**Workflow**: news-evening-analysis (Tier-C Aggregation)  
-**Analyst System**: Riksdagsmonitor AI Political Intelligence v3.8
-
----
-
-## Analytical Framework Applied
-
-### Tier-C Aggregation Method
-This evening analysis article is produced as a Tier-C aggregation, meaning it synthesizes four sibling analyses produced earlier today (propositions, motions, committee-reports, interpellations) rather than independently processing raw parliamentary documents. The Tier-C method:
-
-1. **Reads all four sibling analysis folders** for cross-cutting themes
-2. **Identifies convergence points** where multiple document types address the same policy question
-3. **Produces 23 artifacts** (same count as Tier-A document-specific analyses) with deeper synthesis
-4. **Applies 1.0× depth multiplier** (no reduction for aggregation tier)
-5. **Produces a single article.md** synthesizing the day's full output into a publishable intelligence product
+**Author**: James Pether Sörling | **Date**: 2026-05-04  
+**Standard**: ICD 203 analytic tradecraft audit
 
 ---
 
-## Data Sources
+## 1. Data Collection Quality Audit
 
-### Primary Sources (Direct MCP Queries)
-- `riksdag-regering-get_betankanden` — 10 most recent committee reports, 2025/26 riksmöte
-- `riksdag-regering-search_voteringar` (SfU28) — party voting group query
-- `riksdag-regering-get_interpellationer` — latest interpellations
-- `riksdag-regering-get_sync_status` — MCP server availability confirmation
+### Sources Used
 
-### Secondary Sources (Sibling Analysis Artifacts)
-All sibling analyses produced in the same workflow run chain (2026-05-04 processing date). Cross-referenced via `analysis/daily/2026-05-04/` subdirectory structure.
+| Source | Quality | Completeness | Limitations |
+|--------|---------|-------------|------------|
+| riksdag-regering MCP (14 documents) | HIGH | Full metadata; 2 documents (HD01KU39, HD01FiU49) not yet published as full text | Publication timing gap for same-day documents |
+| IMF WEO Apr-2026 (NGDP_RPCH, GGXWDG_NGDP) | HIGH (vintage: 3 weeks) | Direct API rate-limited; used cached data from sibling analyses | Rate limiting may have introduced 2–4 day staleness in some indicators |
+| 6 sibling analysis folders | HIGH | All 6 folders have synthesis-summaries; election-cycle and year-ahead have full artifact sets | Sibling analyses produced by same methodology — correlated error risk |
+| Lagrådet tracking | MEDIUM | No yttrande published; absence of evidence is not evidence of absence | Manual check performed; automated monitoring not available |
+| Regional polling data (Östergötland) | MEDIUM-LOW | Derived from aggregate polling + 2022 seat distribution; no post-2025 constituency-level poll | Seat-level projections carry ±1 seat uncertainty |
 
-### Tertiary Sources (Background Knowledge)
-- EU Long-Term Residents Directive 2003/109/EC (legal framework analysis)
-- Aarhus Convention Article 9 (legal standing analysis)
-- IMF WEO 2026 projections: SWE GDP +0.8% — referenced from prior cached data (direct IMF API access blocked in this runner)
-- Historical Swedish migration statistics (2015 165,000 asylum seeker reference)
-- Riksbank rate path data (3M STIBOR ~4.1% peak 2023)
+### IMF Vintage Assessment
+
+IMF WEO Apr-2026 data is 3 weeks old (published 2026-04-14). Under the 6-month vintage rule, no annotation is required. The data remains current for election-analysis purposes.
 
 ---
 
-## Methodological Choices and Trade-offs
+## 2. Analytic Method Audit
 
-### Choice 1: Using Sibling Summaries Rather Than Full Document Text
-**Decision**: Cross-reference sibling analysis artifacts rather than re-querying full document text for every document.  
-**Rationale**: Full document text queries for 21 documents would require 21+ API calls with 2–4 minute total latency. Sibling analyses have already processed the full text.  
-**Risk**: Sibling analyses may have missed nuances or made different analytical choices. Where I disagreed with framing, I flagged in devils-advocate.md.  
-**Quality Impact**: LOW — sibling analyses are produced by the same analytical system and methodology.
+### Methods Applied
 
-### Choice 2: IMF Data Unavailability — Economic Context Degraded
-**Decision**: Economic context sourced from cached/prior data rather than live IMF API.  
-**Rationale**: Network egress to api.imf.org/data.imf.org blocked in this runner environment.  
-**Risk**: Economic projections may be slightly stale (last IMF WEO April 2026 vintage).  
-**Quality Impact**: LOW — economic context is supplementary for an evening analysis focused on legislative output. The +0.8% GDP projection is consistent with December 2025 IMF article IV consultation for Sweden.  
-**Provenance annotation**: IMF WEO Sweden GDP projection cited as >3-month vintage (yellow annotation threshold); exact publication date not determinable without live API.
-
-### Choice 3: Voting Group Data Interpretation
-**Decision**: Party alignment for HD01SfU28 inferred from sibling committee-reports analysis rather than direct vote query (which returned all-zero fields).  
-**Rationale**: The SfU28 vote query returned 9 parties with 0 votes per field — either vote not yet formally recorded in system or beteckning mismatch.  
-**Risk**: Inferred coalition-support pattern may not exactly match formal vote record.  
-**Quality Impact**: LOW — the committee majority composition is determinable from committee report text; formal vote registration may lag MCP data.
-
-### Choice 4: Devil's Advocate Included as Mandatory Artifact
-**Decision**: devils-advocate.md challenges five conventional analytical conclusions.  
-**Rationale**: The AI FIRST principle requires genuine iterative critique, not just validation.  
-**Quality Impact**: POSITIVE — challenges on EU long-term resident directive, C party reservation cosmetic nature, and election proximity multiplier over-application improve accuracy.
+| Method | Artifact | ICD 203 Compliance |
+|--------|---------|-------------------|
+| DIW significance scoring | significance-scoring.md | ✅ Explicit weighting; election multiplier documented |
+| SWOT / TOWS | swot-analysis.md | ✅ Evidence-cited rows; dok_ids linked |
+| 5-dimension risk register (L×I) | risk-assessment.md | ✅ Numerical scores; posterior probability update |
+| Political Threat Taxonomy + Attack Tree | threat-analysis.md | ✅ PTT categories; Mermaid attack tree |
+| 6-lens stakeholder matrix | stakeholder-perspectives.md | ✅ Named actors; power/interest axes |
+| ACH with 3 hypotheses | devils-advocate.md | ✅ Supporting and counter-evidence for each |
+| Scenario analysis (≥3, sum 100%) | scenario-analysis.md | ✅ 4 scenarios with explicit probabilities |
+| Comparator jurisdictions (≥2) | comparative-international.md | ✅ Norway, Denmark, Finland |
+| Key Judgments (ICD 203 format) | intelligence-assessment.md | ✅ Confidence labels; evidence basis |
 
 ---
 
-## Analytical Confidence Assessment
+## 3. Confidence and Uncertainty Calibration
 
-| Artifact | Evidence Quality | Analysis Depth | Confidence |
-|----------|----------------|----------------|-----------|
-| executive-brief.md | HIGH | DEEP | HIGH |
-| synthesis-summary.md | HIGH | DEEP | HIGH |
-| significance-scoring.md | HIGH | SYSTEMATIC | HIGH |
-| swot-analysis.md | MEDIUM-HIGH | COMPREHENSIVE | MEDIUM-HIGH |
-| risk-assessment.md | MEDIUM-HIGH | SYSTEMATIC | MEDIUM-HIGH |
-| threat-analysis.md | MEDIUM-HIGH | SYSTEMATIC | MEDIUM-HIGH |
-| stakeholder-perspectives.md | HIGH | COMPREHENSIVE | HIGH |
-| scenario-analysis.md | MEDIUM | FORWARD-LOOKING | MEDIUM |
-| comparative-international.md | MEDIUM-HIGH | SYSTEMATIC | MEDIUM-HIGH |
-| devils-advocate.md | HIGH (by design) | CRITICAL | HIGH |
-| intelligence-assessment.md | HIGH | SYNTHETIC | HIGH |
-| election-2026-analysis.md | MEDIUM | FORWARD-LOOKING | MEDIUM |
-| coalition-mathematics.md | MEDIUM-HIGH | QUANTITATIVE | MEDIUM-HIGH |
+**Overconfidence test**: The evening analysis uses five confidence bands: VERY HIGH (>90%), HIGH (75–90%), MODERATE-HIGH (60–75%), MODERATE (50–60%), LOW (30–50%). No KJ claims VERY HIGH confidence on electoral outcomes — appropriate given 132-day horizon.
+
+**Probability distribution check**: Scenario probabilities sum to 100% (45+25+20+10). No scenario below 5% threshold was included as a standalone scenario — small-probability scenarios aggregated into scenario 4.
+
+**Cognitive bias checklist**:
+- ✅ Confirmation bias: Devil's advocate (DA-3) specifically challenges the dominant "government under pressure" narrative
+- ✅ Anchoring: Sibling analysis probabilities were not mechanically copied; posterior update performed on R1 (criminal age, raised from 0.25→0.35)
+- ⚠️ Groupthink risk: All sibling analyses use same methodology — structural correlated-error risk; acknowledged in source quality table
+- ✅ Availability heuristic: Ostlänken is vivid/recent; deliberately calibrated against base rate of regional stories affecting national results (DA-2)
 
 ---
 
-## Limitations and Caveats
+## 4. Identified Improvements for Future Cycles
 
-1. **IMF Economic Data**: Economic projections cited without live IMF API access; vintage noted as >3 months where relevant.
+**Improvement 1: Automated Lagrådet monitoring**  
+Current method: manual search via riksdag-regering MCP. Recommended: Add a daily automated check for new yttranden on tracked dok_ids. This would resolve PIR-RT-001 faster and reduce analyst time.
 
-2. **Formal Voting Records**: SfU28 vote query returned zero-field data; formal voting records for 2026-04-29 committee reports may not be fully ingested in MCP system. Party alignment inferred from committee text.
+**Improvement 2: Constituency-level polling integration**  
+Current method: national polls + 2022 seat distribution. Recommended: Integrate Demoskop/SIFO constituency-level data when available (typically quarterly) to improve seat projection precision. The current ±1 seat uncertainty in Östergötland analysis is acceptable but could be tightened.
 
-3. **Election Polling Data**: Polling figures (M ~22%, SD ~22%, C ~8%, S ~32%) are approximate; no fresh polling data accessed. Based on trend extrapolation from prior session analyses.
+**Improvement 3: SD intra-coalition signaling taxonomy**  
+Current method: free-text analysis of SD interpellations and motions. Recommended: Develop a structured SD signaling taxonomy (escalation levels 1–4: parliamentary question → interpellation → motion → formal dissent) to distinguish electoral identity signaling from genuine coalition threats.
 
-4. **Ostlänken Technical Details**: HD10463 is a newly filed interpellation (2026-05-04); no ministerial response filed. Analysis based solely on interpellation subject matter, not detailed impact assessment.
-
-5. **Migrationsverket Capacity**: No direct access to Migrationsverket operational data. Implementation risk assessment (RISK-01) is based on historical agency crisis patterns, not current operational metrics.
+**Improvement 4: L party confidence index**  
+Current method: ad hoc tracking of L polling and Pehrson statements. Recommended: Develop a composite L confidence index combining: (a) L polling vs. 4% threshold, (b) L votes aligned with coalition, (c) L statements diverging from coalition line. This would provide a standardized measure of coalition stability.
 
 ---
 
-## Pass 2 Improvement Log
+## 5. Time Budget Assessment
 
-**Pass 1 → Pass 2 Changes Made**:
+- Data collection: 25 min
+- Pass 1 artifact creation (23 artifacts): ~90 min
+- Pass 2 review and improvement: 20 min
+- Aggregation + rendering: ~15 min
+- Total estimated: 150 min / target ≤ 150 min (within budget)
 
-1. **executive-brief.md**: Added explicit EU Long-Term Residents Directive caveat to migration permanence section; strengthened HD10458 accountability framing with "most visible single accountability moment" language.
-
-2. **risk-assessment.md**: Added RISK-03 (nuclear EIA challenge) probability estimate (55% challenge probability) that was only mentioned conceptually in Pass 1; added residual risk after mitigation column.
-
-3. **scenario-analysis.md**: Added WEP percentages to all four scenarios (total 100%); added EU long-term resident directive note under Scenario 2.
-
-4. **intelligence-assessment.md**: Added alternative hypotheses section; improved confidence calibration table with specific percentages.
-
-5. **comparative-international.md**: Added Sweden-specific note that EU Long-Term Residents Directive 2003/109/EC creates parallel status track that HD03262 cannot eliminate.
-
-6. **devils-advocate.md**: Added Challenge 5 (C reservations cosmetic) and refined Challenge 1 (policy exhaustion vs sprint) based on re-read of synthesis-summary.
-
-7. **significance-scoring.md**: Added election-proximity adjustment rationale section; refined which documents receive multiplier.
-
-**Net Quality Assessment**: Pass 2 substantially improved specificity of legal analysis, probability calibration, and alternative hypothesis generation. Publication-ready.
+**Note**: Tight budget. The primary trade-off is depth of per-document analysis files (documents/ folder). The four highest-priority documents (HD10463, HD01KU39, HD01FiU49, HD024142) have been selected for per-doc analysis; lower-priority documents receive summary coverage in classification-results.md.

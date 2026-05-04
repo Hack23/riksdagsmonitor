@@ -1,112 +1,110 @@
-# Threat Analysis — Evening Analysis 2026-05-04
+# Threat Analysis — Evening Analysis, 4 May 2026
 
-**Framework**: STRIDE Political Threat Analysis  
-**Date**: 2026-05-04  
-**Threat Horizon**: T+0 to T+365 days (election + formation period)
-
----
-
-## Threat Actor Analysis
-
-### Threat Actor 1: Swedish Social Democrats (S)
-**Capability**: HIGH (largest single party ~32–33%)  
-**Intent**: HIGH (explicit counter-legislative program via 16 motions + 10 interpellations)  
-**Threat Vector**: Legislative accountability + electoral mobilization
-
-**Active Threat Operations Today**:
-- HD10458: Gang crime eradication accountability interpellation — designed for media amplification
-- HD10463: Ostlänken regional framing — constituency-specific pressure
-- HD10462: Pesticide tax — policy specificity demonstration
-- 9 counter-motions to migration bundle — record opposition in single day
-- Parliamentary questions on implementation readiness
-
-**Assessment**: S is executing a coordinated pre-election challenge strategy. The motions are not expected to pass but are designed to create voting record contrast and generate campaign material. The interpellations target the government's most vulnerable accountability points.
+**Author**: James Pether Sörling | **Date**: 2026-05-04  
+**Framework**: Political Threat Taxonomy (PTT v2) + Attack Tree
 
 ---
 
-### Threat Actor 2: Environmental Organizations (Naturskyddsföreningen, WWF Sverige)
-**Capability**: MEDIUM (legal standing under Aarhus Convention; €5M+ litigation budget)  
-**Intent**: HIGH (HD01NU19 directly targets their core mandate)  
-**Threat Vector**: Judicial challenge to nuclear licensing bypass
+## 1. Threat Classification
 
-**Active Threat Operations**:
-- Aarhus Convention Article 9 challenge to HD01NU19's bypass of EIA public participation
-- Preliminary injunction application strategy being prepared (anticipated filing T+30 to T+60 days)
-- Media coordination with EU Parliament Greens on "Sweden breaks EU environmental law" narrative
+### Category A: Electoral Threats
 
-**Assessment**: The legal challenge is near-certain. Probability of preliminary injunction success before September 2026 election: ~30%. Even without injunction success, the litigation creates continuous "nuclear uncertainty" media narrative.
+**A1 — Regional Infrastructure Accountability (HIGHEST)**  
+*Source*: Interpellation HD10463, S→KD Transport Minister Carlson  
+*Target*: Government's regional development credibility in Östergötland  
+*Mechanism*: Parliamentary accountability → regional media amplification → voter mobilization in 3–4 competitive Riksdag constituencies  
+*Timeline*: May 25 ministerial answer → June–August campaign framing  
+*Severity*: HIGH — directly tied to physical voting-district impact  
 
----
+**A2 — Criminal Age Threshold Mobilization**  
+*Source*: V motion HD024142 (outright rejection); S demand 14 years (HD024136)  
+*Target*: Government's criminal justice flagship; youth crime narrative  
+*Mechanism*: Opposition coalition leverages committee majority to force amendment or defeat → "government capitulated" or "government extremist" framing  
+*Timeline*: JuU9 committee deliberations (before July 1 vote)  
+*Severity*: HIGH pre-election  
 
-### Threat Actor 3: Migrationsverket (Institutional Friction)
-**Capability**: HIGH (administrative gatekeeping of migration implementation)  
-**Intent**: NEUTRAL (institutional, not partisan)  
-**Threat Vector**: Implementation capacity failure
+**A3 — S Migration Normalization Counter-Narrative**  
+*Source*: PIR-RT-003 from realtime-pulse  
+*Target*: Government's core "migration fixed" claim  
+*Mechanism*: Post-passage polling shows S gaining as migration is no longer salient; government loses its differentiation issue  
+*Timeline*: Migration bills pass → S reframes → polling shift T+4–8 weeks  
+*Severity*: MEDIUM  
 
-**Active Threat Operations**:
-- Simultaneous HD03262–65 + HD01SfU28 implementation demands
-- IT system rebuild timeline: 18–24 months for full HD03264 identity documentation integration
-- Lagrådet had flagged the implementation complexity of language tests (hence October 2027 deferral)
-- Case backlog risk: if applications surge from permanent-to-temporary permit migration, system stress peaks in Q3 2026 — exactly pre-election
+### Category B: Legislative Threats
 
-**Assessment**: Not a politically motivated threat but functionally equivalent in impact. Government has low control over Migrationsverket operational performance given agency independence.
+**B1 — Committee Defeat on Prop 246 (Criminal Age)**  
+*Source*: See A2  
+*Mechanism*: S+V may form committee majority against 13-year threshold  
+*Timeline*: JuU9 deliberations, ~June  
+*Severity*: HIGH  
 
----
+**B2 — Forest Management Defeat (Prop 242, MJU)**  
+*Source*: HD024141 (V: full rejection)  
+*Mechanism*: V demands total rejection; if S and MP align, government loses MJU vote  
+*Timeline*: MJU12 deliberations, ~June  
+*Severity*: MEDIUM  
 
-### Threat Actor 4: Gang Criminal Networks
-**Capability**: HIGH (demonstrated operational capability: 45+ explosive attacks in 2025)  
-**Intent**: NONE (no political goal)  
-**Threat Vector**: Kinetic events that revive HD10458 narrative
+### Category C: Constitutional/Legal Threats
 
-**Assessment**: Each explosive event or gang assassination in the T+0 to T+132 window automatically reactivates the HD10458 accountability narrative. Government cannot control attack frequency but can control its response framing. The risk is actuarial: ~35% probability of one major event in the 132-day window based on 2025 frequency.
+**C1 — Lagrådet Adverse Opinion on Migration HD03262/HD03265**  
+*Source*: PIR-RT-001 (open)  
+*Target*: Migration capstone legislation  
+*Mechanism*: Lagrådet issues formal yttrande citing constitutional concerns → opposition tables blocking motion → delay or mandatory amendment  
+*Timeline*: Rolling; PIR still open as of 2026-05-04  
+*Severity*: HIGH (impact 5/5 if materialized)  
 
----
-
-### Threat Actor 5: EU Institutional System (Commission, CJEU)
-**Capability**: HIGH (infringement proceedings; preliminary ruling requests)  
-**Intent**: MEDIUM (Sweden's nuclear bypass may attract Commission scrutiny)  
-**Threat Vector**: Infringement proceeding on HD01NU19 EIA compliance
-
-**Active Threat Operations**:
-- EU Commission DG Environment monitoring Swedish implementation of EIA Directive
-- Any formal notification of infringement proceedings before September 2026 would be catastrophic for "Sweden complies with EU norms" narrative
-- CJEU preliminary ruling on Aarhus/EIA case (from domestic NGO challenge) could take 12–18 months but initial reference decision could land T+90 to T+180
-
-**Assessment**: LOW-MEDIUM risk of Commission action before election. MEDIUM risk of domestic-to-CJEU reference. Either creates sustained negative narrative.
-
----
-
-## STRIDE Classification
-
-| Threat | S | T | R | I | D | E |
-|--------|---|---|---|---|---|---|
-| S (Spoofing) | — | | | | | |
-| T (Tampering) | Migration implementation manipulation risk | | | | | |
-| R (Repudiation) | Gang crime "eradication" claim denial | | | | | |
-| I (Information Disclosure) | | HD01KU39 transparency: more accountability | | | | |
-| D (Denial of Service) | Migrationsverket capacity overload | | | | | |
-| E (Elevation of Privilege) | Government direct nuclear approval: authority expansion | | | | | |
+**C2 — GDPR/EU Law Challenge to Healthcare Pesticide Measure**  
+*Source*: HD10462  
+*Mechanism*: Sector stakeholders (hospital associations) challenge tax as disproportionate; referral to EU Commission  
+*Timeline*: Low probability, 6+ months  
+*Severity*: LOW  
 
 ---
 
-## Priority Threat Matrix
+## 2. Attack Tree
 
-| Priority | Threat | Horizon | Response |
-|---------|--------|---------|---------|
-| P1 | Gang crime event (actuarial) | T+0 to T+132 | Pre-position crime metrics response |
-| P2 | Migration implementation crisis | T+30 to T+132 | Migrationsverket resource injection |
-| P3 | S electoral consolidation | T+30 to T+132 | C party retention; economic competence narrative |
-| P4 | Nuclear EIA injunction | T+30 to T+365 | Legal compliance documentation; pre-empt media |
-| P5 | Ostlänken regional backlash | T+30 to T+90 | Regional positive announcement |
+```mermaid
+graph TD
+    A["Government Narrative Failure<br/>(132 days to election)"]
+    A --> B["Regional credibility loss"]
+    A --> C["Criminal justice embarrassment"]
+    A --> D["Legal/constitutional challenge"]
+    A --> E["Coalition fracture signal"]
+    
+    B --> B1["Ostlänken Linköping cancellation<br/>HD10463 — May 25 deadline"]
+    B --> B2["SFV heritage backlog<br/>4B SEK deficit"]
+    
+    C --> C1["13yr threshold committee defeat<br/>S+V majority"]
+    C --> C2["Government forced concession<br/>→ SD opposition"]
+    
+    D --> D1["Lagrådet yttrande on HD03262<br/>PIR-RT-001 OPEN"]
+    D --> D2["EU challenge on pesticide tax<br/>HD10462"]
+    
+    E --> E1["SD gas bridge escalation<br/>HD10459"]
+    E --> E2["L threshold falls below 4%<br/>coalition math broken"]
+```
 
 ---
 
-## Threat Summary: ELEVATED
+## 3. Threat Priority Matrix
 
-Sweden enters the 132-day election sprint under elevated threat conditions primarily driven by:
-1. **Self-created accountability gap** (gang crime pledge)
-2. **Implementation overload risk** (migration + citizenship simultaneous)
-3. **Judicial uncertainty** (nuclear EIA)
-4. **Electoral arithmetic tightening** (C as potential defector)
+| Threat | Probability | Velocity | Reversibility | Overall Score |
+|--------|------------|---------|---------------|---------------|
+| A1 (Ostlänken electoral) | 3/5 | Fast (May 25) | Low | 7.5 |
+| A2/B1 (Criminal age defeat) | 3/5 | Medium (June) | Medium | 7.0 |
+| C1 (Lagrådet migration) | 2/5 | Uncertain | Low | 6.5 |
+| A3 (Migration counter-narrative) | 2/5 | Slow | High | 5.0 |
+| E1 (SD gas bridge) | 2/5 | Slow | Medium | 4.5 |
+| E2 (L threshold) | 2/5 | Slow | Medium | 4.0 |
+| B2 (Forest defeat) | 2/5 | Medium | High | 4.0 |
 
-None of these threats is determinative. All are manageable with active political management. The coalition's primary defensive asset is the clarity of its delivery record and the absence of a credible opposition alternative program.
+---
+
+## 4. Counter-Threat Playbook
+
+| Threat | Recommended pre-emption |
+|--------|------------------------|
+| A1 (Ostlänken) | Carlson should announce a Linköping compensation package or revised timeline before May 25 answer |
+| A2/B1 (Criminal age) | Engage L privately; offer amendment to 14 years before committee vote to preserve coalition unity |
+| C1 (Lagrådet) | Prepare technical amendments in advance; brief KU members on constitutional backstop |
+| E2 (L threshold) | Ensure L gets a symbolic legislative win before election — possible budget micro-concession |

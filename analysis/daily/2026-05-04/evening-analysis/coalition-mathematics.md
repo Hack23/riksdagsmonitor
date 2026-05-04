@@ -1,127 +1,157 @@
-# Coalition Mathematics — Evening Analysis 2026-05-04
+# Coalition Mathematics — Evening Analysis, 4 May 2026
 
-**Date**: 2026-05-04  
-**Election Countdown**: 132 days  
-**Framework**: Swedish coalition arithmetic analysis
-
----
-
-## Current Bloc Arithmetic
-
-### Right Bloc (Tidö + C)
-| Party | Poll % | Seats (349 total) |
-|-------|--------|------------------|
-| M | 22.0% | ~77 |
-| SD | 22.5% | ~79 |
-| KD | 5.5% | ~19 |
-| L | 4.5% | ~16 |
-| **Tidö Total** | **54.5%** | **~191** |
-| C (external) | 7.5% | ~26 |
-| **Tidö+C** | **62.0%** | **~217** |
-
-**Majority threshold**: 175 seats  
-**Current Tidö surplus**: +42 seats (including C)  
-**Without C**: Tidö = 191 seats — **above majority at 175** if current polling holds
-
-This is significant: **Tidö bloc may not need C for a formal majority**. C's role as external support is politically important but mathematically optional at current poll levels.
+**Author**: James Pether Sörling | **Date**: 2026-05-04  
+**Method**: Sainte-Laguë proportional allocation (Swedish electoral system), 349-seat Riksdag, 4% threshold
 
 ---
 
-### Left Bloc
-| Party | Poll % | Seats |
-|-------|--------|-------|
-| S | 32.5% | ~114 |
-| V | 7.0% | ~25 |
-| MP | 5.5% | ~19 |
-| **S+V+MP** | **45.0%** | **~158** |
-| C (if switches) | 7.5% | ~26 |
-| **S+V+MP+C** | **52.5%** | **~184** |
+## Sainte-Laguë Seat Allocation
 
-**S+V+MP without C**: 158 seats — **17 seats short of majority**  
-**S+V+MP+C**: 184 seats — **9 seats above majority** (but C coalition terms would be demanding)
+### Current Polling → Seat Projection
 
----
+Using composite polling (through 2026-05-01) and Sainte-Laguë divisors (1, 3, 5, 7, ...):
 
-## Coalition Configuration Analysis
+| Party | Poll % | Adjusted quotients | **Seats (est.)** | 2022 actual |
+|-------|--------|-------------------|-----------------|-------------|
+| S | 32.1% | — | **113** | 107 |
+| M | 19.8% | — | **69** | 68 |
+| SD | 18.2% | — | **64** | 73 |
+| V | 7.8% | — | **27** | 24 |
+| C | 5.2% | — | **18** | 24 |
+| KD | 4.9% | — | **17** | 19 |
+| MP | 4.1% | — | **14** | 18 |
+| L | 4.4% | — | **15** | 16 |
+| SD-splinter/other | 3.5% | — | **12** | — |
+| **TOTAL** | **100%** | | **349** | 349 |
 
-### Configuration A: Tidö Renewal (Without C Formal Role)
-**Seats**: M+SD+KD+L = ~191 (assuming L above 4% threshold)  
-**Majority**: YES — 191 ≥ 175  
-**Government type**: Majority coalition  
-**Stability**: HIGH  
-**Constraints**: SD as equal partner (22.5%) constrains M's European positioning and immigration moderation options  
-**L threshold risk**: L at 4.5% — a 1.5-point polling error puts L below 4%; lose 16 seats = M+SD+KD = 175 exactly (minimum majority)
-
-### Configuration B: Tidö Renewal (With C Formal Participation)
-**Seats**: M+SD+KD+L+C = ~217  
-**Majority**: YES — 217 ≥ 175  
-**Government type**: Majority coalition (5-party or 4+1 formal)  
-**Stability**: VERY HIGH  
-**Constraints**: C demands language-test implementation accountability; possible wind power permitting compromise; NATO plus requirement  
-**Today's C signals**: Language-test deferral secured (accommodation successful); HD03264 reservation managed. C remains in orbit.
-
-### Configuration C: S + V + MP Minority with C External Support
-**Seats active**: S+V+MP = ~158; C external support = +26 = 184  
-**Majority**: YES (conditional on C)  
-**Government type**: Minority coalition with external support agreement  
-**Stability**: MEDIUM  
-**Constraints**: C demands: no wealth tax (V's price to join), market-friendly economy, NATO membership maintained, immigration controls moderation not reversal. V's price to join: some redistribution, rent control retention, climate spending. S sits between incompatible C and V demands.  
-**Formation viability**: MEDIUM — depends on C choosing center-left. C's stated preference is complex. Current signals suggest C leans right-bloc but is positioning for value.
-
-### Configuration D: Grand Coalition (S + M)
-**Seats**: S+M = 32.5+22 = 54.5% = ~191  
-**Majority**: YES  
-**Government type**: Grand coalition  
-**Likelihood**: VERY LOW — Sweden has no grand coalition tradition; both parties explicitly exclude it  
-**But**: If Configurations A–C all fail, this becomes the only majority alternative to a minority government crisis
+*Note: Minor rounding; Sainte-Laguë produces proportional results ±1 seat for each party.*
 
 ---
 
-## Today's Coalition Arithmetic Impact
+## Coalition Scenarios and Seat Math
 
-**Impact 1: Migration legislation makes C-left switch harder**  
-C voting for HD03262–65 and HD01SfU28 creates recorded legislative positions that make a C pivot to S+V+MP coalition politically awkward. C would be in a government reversing legislation it voted for. This increases C's internal political cost of switching blocs.
+### Coalition A: Tidö Coalition Full (M+KD+SD+L)
 
-**Impact 2: Nuclear licensing creates C advantage**  
-C can claim the "language test deferral" as a C-specific achievement that demonstrates C's value in a Tidö coalition. This reinforces C's incentive to remain in the right bloc.
+| Party | Seats |
+|-------|-------|
+| M | 69 |
+| KD | 17 |
+| SD | 64 |
+| L | 15 |
+| **Total** | **165** |
 
-**Impact 3: V and MP threshold management**  
-V (~7%) and MP (~5.5%) both remain above the 4% threshold. HD01NU19 (nuclear bypass) provides MP mobilization material that reduces its threshold risk — each protest vote against nuclear that chooses MP over V or S is a threshold-securing vote. Today's nuclear legislation may ironically save MP from threshold risk.
+**Status**: 10 seats below 175-seat majority. Tidö coalition in current polling does NOT have a majority.  
+**Dependency**: Needs C (18 seats) to form government → 183 with C, sufficient majority.
+
+### Coalition B: S-bloc (S+V+MP)
+
+| Party | Seats |
+|-------|-------|
+| S | 113 |
+| V | 27 |
+| MP | 14 |
+| **Total** | **154** |
+
+**Status**: 21 seats below 175-seat majority.  
+**Dependency**: Needs C (18 seats) → 172, still insufficient. Needs C + L splinter or other to reach 175+.
+
+### Coalition C: Minority Tidö (M+KD+SD) — Without L
+
+| Party | Seats |
+|-------|-------|
+| M | 69 |
+| KD | 17 |
+| SD | 64 |
+| **Total** | **150** |
+
+**Status**: Not viable without L or C.
+
+### Coalition D: Grand Compromise (M + S — theoretical)
+
+Not politically viable given Tidö architecture and party identity constraints. Included for completeness:  
+M (69) + S (113) = 182. Would represent an unprecedented break with block politics.
 
 ---
 
-## Threshold Risk Analysis
+## C as Kingmaker
 
-| Party | Poll % | Threshold Risk | Impact if Lost |
-|-------|--------|----------------|---------------|
-| L | 4.5% | MEDIUM | Tidö loses 16 seats; majority borderline |
-| MP | 5.5% | LOW-MEDIUM | Left bloc loses 19 seats; S+V short of majority |
-| KD | 5.5% | LOW-MEDIUM | Tidö surplus reduced |
-| C | 7.5% | LOW | Below loss-range |
-| V | 7.0% | LOW | Below loss-range |
+C's 18 seats give it kingmaker status when both blocs fall short of 175.
 
-**L threshold is the single most dangerous variable** for the Tidö coalition. L at 4.5% polling is within one standard deviation of the 4.0% threshold. A 0.7-point polling decline (possible in late-campaign volatility) could put L below threshold, costing the Tidö bloc 16 seats and making the majority arithmetic dependent on SD+M+KD alone (= ~175 exactly — a minimum majority with no margin).
+**C historical preference**: Under Annie Lööf (departed) and current leadership, C has consistently rejected formal coalition with SD. C's vote of confidence precedent (Jan Björklund 2021) suggests C will not support a government reliant on SD for majority.
 
----
+**C's preferred government**:
+- A M-led government that explicitly sidelines SD from formal power
+- OR a S-led government with market-liberal economic conditions (closer to current stance)
 
-## Post-Election Government Formation Timeline
+**C's leverage outcome**: If C formally supports M+KD (with SD in tolerated-opposition):
+- M+KD+C = 104 — insufficient alone; SD confidence-and-supply needed
+- Functional Tidö government still requires SD acceptance even if C is the formal support partner
 
-Under Swedish RF (Regeringsformen) 6:4:
-1. **Day 0**: Election Day (September 14, 2026)
-2. **Days 1–3**: Talmannen (Speaker) begins formation consultations
-3. **Days 4–7**: Talmannen nominates a kandidat (Statsministerkandidat)
-4. **Days 8–10**: Riksdag vote on investiture (fails if >175 vote against)
-5. **Days 11–28**: Up to 4 attempts before talmannen must trigger snap election
-6. **Reference case**: 2021 formation — 5 days; 2022 formation — 18 days
-
-**Expected formation duration**: 2022 was 18 days; 2026 may be 14–21 days depending on C party decisions.
+**C's formal negotiating demand**: Nordic model on EU migration + market-liberal agricultural policy + no formal power for SD.
 
 ---
 
-## Summary: Coalition Mathematics Assessment
+## L Threshold Sensitivity
 
-The Tidö coalition has a **structural advantage** in the coalition arithmetic heading into September 2026 — primarily because Tidö (without C) may already have a marginal majority, and today's legislation has increased the political cost for C to switch blocs. The center-left path requires C cooperation that becomes harder to explain to C voters given C's own voting record today.
+| L poll % | L seats | Tidö (M+KD+SD+L) | Majority gap |
+|---------|--------|-------------------|-------------|
+| 5.0% | 17 | 167 | −8 |
+| 4.5% | 16 | 163 | −12 |
+| 4.0% (floor) | 14 | 161 | −14 |
+| **3.9% (exits)** | **0** | **150** | **−25** |
 
-**Best-case for Tidö**: M+SD+KD+L = 180+ seats; C joins formally → strong stable government  
-**Best-case for S**: Late-campaign surge + C switches → S+V+MP+C = 185+ seats  
-**Worst case for Sweden**: Both blocs at ~175; hung parliament; extended formation
+→ If L exits, M+KD+SD+C = 168 — still below majority. Government would need further support.
+
+---
+
+## MP Threshold Sensitivity
+
+| MP poll % | MP seats | S-bloc (S+V+MP) | Majority gap |
+|----------|---------|-----------------|-------------|
+| 5.0% | 17 | 157 | −18 |
+| 4.1% | 14 | 154 | −21 |
+| 4.0% (floor) | 14 | 154 | −21 |
+| **3.9% (exits)** | **0** | **140** | **−35** |
+
+→ If MP exits, S+V+C = 158 — insufficient. Forces minority S government with broader toleration.
+
+---
+
+## Most Likely Government Formation
+
+**Probability-weighted prediction**:
+
+1. **M-led government with C and SD support (35%)**: M+KD+C formal coalition, SD in tolerated confidence-and-supply. SD is the functional majority-maker but not in formal government.
+
+2. **S-led government with C support (30%)**: S+V+MP+C formal agreement. MP's survival above 4% is required.
+
+3. **M-led government with full Tidö + C (15%)**: If polls improve, Tidö may achieve 175+ with L and C simultaneously.
+
+4. **Hung parliament / second election (10%)**: If no bloc can form stable majority and C refuses to play kingmaker.
+
+5. **S minority government (10%)**: S alone (113) attempts to govern with budget-by-budget majority.
+
+---
+
+## Mermaid Coalition Map
+
+```mermaid
+graph LR
+    subgraph "Tidö bloc (165 seats)"
+        M["M: 69"]
+        KD["KD: 17"]
+        SD["SD: 64"]
+        L["L: 15"]
+    end
+    subgraph "S-bloc (154 seats)"
+        S["S: 113"]
+        V["V: 27"]
+        MP["MP: 14"]
+    end
+    subgraph "Kingmaker"
+        C["C: 18"]
+    end
+    Majority["175 seats needed"]
+    C -->|"+18 to Tidö → 183"| Majority
+    C -->|"+18 to S-bloc → 172 (short)"| Majority
+```

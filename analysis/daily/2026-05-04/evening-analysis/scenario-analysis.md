@@ -1,115 +1,113 @@
-# Scenario Analysis — Evening Analysis 2026-05-04
+# Scenario Analysis — Evening Analysis, 4 May 2026
 
-**Date**: 2026-05-04  
-**Election Countdown**: 132 days  
-**Horizon**: T+132 days (election) + T+90 days (government formation)
-
----
-
-## Scenario Framework
-
-Based on today's legislative output, four scenarios define the post-September 2026 policy landscape. Each scenario is assigned a Weighted Evidence Probability (WEP) calibrated to current polling and today's legislative dynamics.
+**Author**: James Pether Sörling | **Date**: 2026-05-04  
+**Gate requirement**: ≥3 scenarios summing to 100%
 
 ---
 
-## Scenario 1: Tidö Coalition Renewal
-**WEP**: 38%  
-**Trigger**: M+SD+KD+L retains 50%+ of seats; C joins renewed Tidö agreement  
-**Indicators**: M+SD combined > 35%; C > 5% (above threshold); S < 34%
+## Scenario Architecture (132 days to election)
 
-**Policy Trajectory**:
-- HD03262–65 migration architecture entrenched: Migrationsverket systems rebuilt, compulsory departures enforced
-- HD01NU19 nuclear licensing: First reactor applications submitted in 2027–2028; Vattenfall + private sector applications
-- HD01SfU28 citizenship language test: Implemented October 2027 as planned
-- HD01JuU9 court reform: Gang crime prosecution rates increase; major network convictions by 2028
+### Structural Assumptions
 
-**Economic Context**: IMF WEO 2026 baseline projects SWE GDP +0.8%; renewal government inherits recovery trajectory. Riksbank rate path at 2.0% by late 2026.
-
-**Constraints**: C will demand visible language-test implementation success and possible wind power permitting compromise as coalition entry price.
+- Election date: September 13, 2026
+- Current polling: Tidö coalition 48–49%, S-bloc 49–50%
+- Key bifurcations: (1) criminal age threshold outcome, (2) Ostlänken narrative, (3) migration normalization effect, (4) L threshold
 
 ---
 
-## Scenario 2: Social Democrat-Led Center-Left Government
-**WEP**: 32%  
-**Trigger**: S+V+MP+C reaches 50%+ combined; C chooses center-left  
-**Indicators**: S > 36%; V+MP combined > 12%; C at 8%+
+## Scenario 1: Stable Delivery (45%)
 
-**Policy Trajectory**:
-- Migration: Cannot reverse HD03262–65 without riksdag majority — will seek administrative moderation via Migrationsverket instruction rather than legislative reversal
-- Nuclear: Cannot reverse HD01NU19 without majority — will add public participation requirements via regulatory amendment; no new applications approved
-- Citizenship: Language test deferral becomes indefinite; residency period potentially reduced back to 5 years if V insists as coalition price
-- Court reform: HD01JuU9 likely maintained (broad support); explosives licensing maintained
+**Label**: "Tidö Delivers"  
+**Probability**: 45%  
+**Trigger conditions**: Criminal age passes (with or without concession to 14yr); Ostlänken managed locally; migration normalisation fails to materially boost S; L holds above 4.5%.
 
-**Economic Context**: S will face immediate pressure from V+MP for increased public spending, conflicting with fiscal consolidation demands. Budget friction likely in first year.
+**Narrative**: The government completes its legislative agenda — nuclear (June 17), transparency (June 16), criminal age (July 1), defence (July 1) — and enters the election campaign as a proven delivery machine. The "no infrastructure crisis" framing holds in Östergötland because Carlson announces a compensatory connectivity package on May 25. L survives above 4.5%.
 
-**C Coalition Price**: C would demand market-friendly economic policy (no wealth tax), continued NATO membership, and abandonment of V wealth distribution demands.
+**Policy outcomes**:
+- Prop 246 criminal age: passes at 13yr OR amended to 14yr with coalition support
+- KU39 transparency: passes June 16 unanimously
+- Nuclear NU19: effective June 17 with positive media coverage
+- Lagrådet: issues routine yttrande on migration (no adverse opinion)
+- L polls: 4.5–5.2% → retains 17–18 seats
 
----
-
-## Scenario 3: Fragmented Parliament — Minority Governance
-**WEP**: 22%  
-**Trigger**: Neither bloc reaches 50%; SD + S refuse cooperation; no majority coalition formable  
-**Indicators**: SD > 22%; C < 4% (threshold risk); Riksdag arithmetic prevents 50%+ formation
-
-**Policy Trajectory**:
-- Talmannen leads extended formation process (30–60 days post-election)
-- Minority government (likely M-led) dependent on issue-by-issue support
-- Migration architecture frozen — no reversal possible without majority
-- Nuclear applications proceed under existing HD01NU19 framework regardless
-- Budget process becomes contested; potential government crisis in first session
-
-**Duration**: 12–18 months before re-election or forced coalition compromise
+**Electoral outcome**: Tight race; government retains majority by 2–4 seats. Tidö coalition ~176 seats.
 
 ---
 
-## Scenario 4: Snap Election / Constitutional Crisis
-**WEP**: 8%  
-**Trigger**: Formation process collapses; talmannen forces early election under RF 6:4  
-**Indicators**: Three failed investiture votes; no candidate can secure 50% negative vote threshold
+## Scenario 2: Criminal Age Crisis (25%)
 
-**Policy Trajectory**:
-- All legislation from today remains in force (legislation passed, not dependent on government)
-- Caretaker government under Kristersson until snap election (likely February–March 2027)
-- New election produces different arithmetic only if V or SD cross threshold in unusual direction
+**Label**: "Coalition Fracture Signal"  
+**Probability**: 25%  
+**Trigger conditions**: L refuses concession; S+V form committee majority against 13yr threshold; government either loses committee vote or concedes to 14yr; SD publicly opposes concession.
 
-**Assessment**: Low probability but non-trivial. The 2021 formation crisis (13 days, 4 rounds) is the reference case — Sweden has managed complex formations before. The structural difference is SD's growth from 18% (2022) to possible 24%+, making exclusion from formation increasingly artificial.
+**Narrative**: JuU9 committee deliberations reveal that L cannot support the 13-year threshold. The government either suffers a formal committee defeat (worst case) or makes a visible concession to 14 years that enrages SD. This creates a "coalition in disarray" media narrative 60–80 days before the election.
+
+**Policy outcomes**:
+- Prop 246: fails at committee or passes at 14yr
+- SD: publicly distances itself from concession
+- L: temporarily lifts polling to 5.5% on "independence" narrative
+- Carlson: Ostlänken answer fails to contain damage; Östergötland seats at risk
+
+**Electoral outcome**: Government loses 3–5 seats net; potential minority government in new term. Bloc gap narrows to 0–2 seats against government.
 
 ---
 
-## Scenario Tree (September 2026 election anchor)
+## Scenario 3: Regional Accountability Cascade (20%)
 
+**Label**: "Östergötland Effect"  
+**Probability**: 20%  
+**Trigger conditions**: Carlson delivers weak or evasive May 25 answer; S successfully localizes the Linköping station cancellation as a betrayal narrative; regional media coverage persists June–August.
+
+**Narrative**: The Ostlänken interpellation answer fails to reassure Linköping residents. S, with regional infrastructure as its core campaign theme in Östergötland, mobilizes 35,000 swing voters. Three Riksdag seats change hands in Östergötland, Jönköping, and southern Stockholm commuter belt.
+
+**Policy outcomes**:
+- Prop 246: passes (criminal age resolved separately)
+- Regional swing: 3 seats lost in commuter and Östergötland districts
+- Government loses its working majority
+
+**Electoral outcome**: New parliament results in S-bloc majority of 2–3 seats; Andersson appointed PM. Tidö coalition loses power despite high aggregate vote share (individual seat distribution unfavorable).
+
+---
+
+## Scenario 4: Opposition Fragmentation / Government Holds (10%)
+
+**Label**: "S-bloc Collapse"  
+**Probability**: 10%  
+**Trigger conditions**: MP falls below 4% threshold AND C drops further; S-bloc loses sufficient seats to give Tidö a working majority.
+
+**Narrative**: Despite government difficulties on criminal age and Ostlänken, the opposition is more fragmented. MP's climate-vs-agriculture split causes sub-4% polling. C fails to recover from rural protest votes going to SD. S-bloc ends up at 171 seats; government retains 178.
+
+**Policy outcomes**:
+- All government bills pass
+- Second Tidö term (potentially without L if L exits)
+- SD becomes kingmaker in a near-majority M+KD+SD configuration
+
+**Electoral outcome**: Tidö coalition second term, ~178 seats.
+
+---
+
+## Probability Summary
+
+| Scenario | Probability | Direction |
+|----------|------------|---------|
+| 1: Stable Delivery | 45% | Government holds majority |
+| 2: Criminal Age Crisis | 25% | Government weakened; possible loss |
+| 3: Regional Accountability Cascade | 20% | Government loses majority |
+| 4: Opposition Fragmentation | 10% | Government larger majority |
+| **Total** | **100%** | |
+
+---
+
+## Mermaid Scenario Probability Tree
+
+```mermaid
+graph TD
+    S["Riksdag election<br/>Sept 13, 2026"]
+    S -->|"45%"| A["Scenario 1: Stable Delivery<br/>Tidö holds 176 seats"]
+    S -->|"25%"| B["Scenario 2: Coalition Fracture<br/>Criminal age crisis"]
+    S -->|"20%"| C["Scenario 3: Östergötland Effect<br/>3 seats flip to S-bloc"]
+    S -->|"10%"| D["Scenario 4: Opposition Fragmentation<br/>Tidö 178 seats"]
+    
+    B -->|"Criminal age fails"| B1["Government loses 3–5 seats net"]
+    C -->|"Carlson answer weak"| C1["S-bloc majority 2–3 seats"]
 ```
-[Election 2026-09-14]
-    ├── Tidö Renewal (38%)
-    │   ├── Full migration implementation → Crime reduction metrics visible 2027
-    │   └── C accommodation → Language test October 2027
-    ├── S-led Center-Left (32%)
-    │   ├── S+V+MP+C majority → Policy moderation, not reversal
-    │   └── S+MP minority, C external → Weaker executive, budget fragility
-    ├── Fragmented/Minority (22%)
-    │   ├── M minority + issue-by-issue → Prolonged instability
-    │   └── Formation crisis → Snap election risk T+180
-    └── Constitutional/Snap Election (8%)
-        └── February 2027 re-election → New arithmetic
-```
-
----
-
-## Most Likely Path (WEP 38% + 32% = 70% of two-bloc scenarios)
-
-Both dominant scenarios converge on: **migration architecture survives regardless of election outcome**. The HD03262–65 bundle is primary legislation requiring a new riksdag majority to reverse. Under Scenario 1 (renewal), it is implemented with full enforcement. Under Scenario 2 (center-left), it is maintained with administrative moderation. Only Scenario 3/4 creates prolonged implementation ambiguity.
-
-This means today's legislative output has achieved **policy permanence regardless of September election outcome** — which is precisely the Tidö Coalition's strategic intent.
-
----
-
-## Wildcard Scenarios
-
-**W1: SD Becomes Largest Party (WEP 7%)**  
-If SD reaches 24%+ and M drops to 18%, pressure mounts for an SD-led government. Constitutional and European pressure would be intense; SD has not held executive office. Formation arithmetic becomes unprecedented.
-
-**W2: Migration Implementation Crisis Triggers Pre-Election Crisis (WEP 5%)**  
-A Migrationsverket collapse, ECHR ruling against Sweden, or mass media coverage of "Sweden deports 500 families" creates a 3–5 point S surge in the final 30 days. S approaches 38–39%, enabling a center-left majority without C.
-
-**W3: Nuclear Application Injunction Issued Pre-Election (WEP 5%)**  
-An administrative court issues a preliminary injunction on HD01NU19 before an application can be filed. This creates "Sweden violates EU law" headlines in election campaign period, depressing M/KD vote among pro-rule-of-law voters.

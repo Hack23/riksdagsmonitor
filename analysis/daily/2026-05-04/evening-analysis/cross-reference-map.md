@@ -1,106 +1,90 @@
-# Cross-Reference Map — Evening Analysis 2026-05-04
+# Cross-Reference Map — Evening Analysis, 4 May 2026
 
-**Tier**: C Aggregation  
-**Date**: 2026-05-04  
-**Purpose**: Document all cross-sibling links and intra-day policy convergence points
-
----
-
-## Sibling Analysis Files Referenced
-
-| Sibling Folder | Key Files Read | Cross-Referenced In |
-|---------------|---------------|-------------------|
-| `analysis/daily/2026-05-04/propositions/` | synthesis-summary.md, executive-brief.md | All Family A/C/D artifacts |
-| `analysis/daily/2026-05-04/motions/` | synthesis-summary.md, executive-brief.md | synthesis-summary.md, election-2026-analysis.md |
-| `analysis/daily/2026-05-04/committee-reports/` | executive-brief.md, synthesis-summary.md | executive-brief.md, threat-analysis.md, risk-assessment.md |
-| `analysis/daily/2026-05-04/interpellations/` | executive-brief.md, synthesis-summary.md | executive-brief.md, stakeholder-perspectives.md |
+**Author**: James Pether Sörling | **Date**: 2026-05-04  
+**Tier-C Gate**: This artifact must cite ≥1 sibling analysis folder ✅
 
 ---
 
-## Policy Convergence Cross-Reference
+## Sibling Folder Integration
 
-### Cluster A: Migration Reform Architecture
-| Document | Type | Key Provision | Cross-Reference |
-|----------|------|--------------|-----------------|
-| HD03262 | Proposition | Eliminate permanent residence | sibling:propositions/synthesis-summary.md |
-| HD03263 | Proposition | Compulsory departure | sibling:propositions/synthesis-summary.md |
-| HD03264 | Proposition | Identity documentation | sibling:propositions/synthesis-summary.md |
-| HD03265 | Proposition | International status reform | sibling:propositions/synthesis-summary.md |
-| HD01SfU28 | Betänkande | Citizenship 8 years + language test | sibling:committee-reports/executive-brief.md |
-| 9× motions | Motioner | Counter-proposals on above | sibling:motions/executive-brief.md |
+### Sibling 1: Propositions (`analysis/daily/2026-05-04/propositions/`)
 
-**Convergence Assessment**: The migration cluster represents the single most internally-consistent policy reform package of the 2022–2026 term. HD03262–65 + HD01SfU28 together create a complete immigration lifecycle architecture: arrival conditions (HD03265) → residence path (HD03262) → enforcement (HD03263) → identity integrity (HD03264) → citizenship criteria (HD01SfU28). This is a deliberate architectural design, not incremental adjustment.
+**Confirmed handoff items**:
+- **Migration HD03262/HD03265**: Propositions synthesis identified these as lead documents with Lagrådet risk. Evening analysis carries PIR-RT-001 forward and elevates to risk R3 (legal, L×I=10).
+- **Nuclear HD01NU19**: Propositions confirmed June 17 effective date. Evening analysis notes electoral framing opportunity (O3 in SWOT).
+- **Criminal prop 246**: Propositions identified the 13-year threshold. Evening analysis adds committee defeat probability based on motions data (S/V alignment).
+- **Forest prop 242**: Propositions flagged V's demand for rejection. Evening analysis cross-references with motion HD024141.
+- **Defence FöU13**: Propositions confirmed July 1 vote. Evening analysis carries PIR-EVE-02 for procurement tracking.
 
----
+### Sibling 2: Motions (`analysis/daily/2026-05-04/motions/`)
 
-### Cluster B: Crime and Security
-| Document | Type | Key Provision | Cross-Reference |
-|----------|------|--------------|-----------------|
-| HD10458 | Interpellation | Gang crime eradication accountability | sibling:interpellations/executive-brief.md |
-| HD01JuU9 | Betänkande | Court process reform — early evidence | sibling:committee-reports/executive-brief.md |
-| HD01FöU13 | Betänkande | Explosives licensing | sibling:committee-reports/executive-brief.md |
-| Motion (S) | Motioner | Youth crime age limit counter-proposals | sibling:motions/executive-brief.md |
+**Confirmed handoff items**:
+- **HD024142 (V, criminal age outright rejection)**: Motions identified V as the only party demanding full rejection. Evening analysis places this as W1 (weakness) and T2 (threat) in SWOT, and R1 (risk L×I=12).
+- **HD024141 (V, forest management rejection)**: Motions catalogued with partial metadata. Evening analysis cross-references with prop 242 committee risk (R6, L×I=6).
+- **S criminal demand 14 years (HD024136)**: Motions analysis confirmed S's position. Evening analysis uses this to establish committee arithmetic for JuU9.
 
-**Convergence Assessment**: Crime policy runs through all four sibling document types today. The court reform (JuU9) provides the prosecution tool; explosives licensing (FöU13) provides the prevention mechanism; the interpellation (HD10458) provides the accountability pressure; the S motions provide the opposition's preferred alternative (15-year age, not 13-year). This cluster is electorally THE most contested terrain.
+### Sibling 3: Interpellations (`analysis/daily/2026-05-04/interpellations/`)
 
----
+**Confirmed handoff items**:
+- **HD10463 (S→Carlson, Ostlänken)**: Interpellations identified as the highest-scoring electoral accountability item. Evening analysis confirms as lead story (DIW 90.0) with May 25 deadline as election pressure point.
+- **HD10461 (ESA contribution decline)**: Interpellations flagged as W5 (weakness) in evening SWOT.
+- **HD10459 (SD, agency activism)**: Interpellations identified as SD identity signaling. Evening analysis notes as potential coalition signal (E1 threat).
+- **SFV heritage backlog (RiR 2025:30)**: Interpellations synthesis provided the 4 billion SEK figure used in stakeholder analysis.
 
-### Cluster C: Energy and Environment
-| Document | Type | Key Provision | Cross-Reference |
-|----------|------|--------------|-----------------|
-| HD01NU19 | Betänkande | Nuclear licensing bypass | sibling:committee-reports/executive-brief.md |
-| Motion on wind | Motioner | Wind power permitting counter-proposals | sibling:motions/executive-brief.md |
-| HD10462 | Interpellation | Pesticide tax anomaly | sibling:interpellations/executive-brief.md |
+### Sibling 4: Realtime-Pulse (`analysis/daily/2026-05-04/realtime-pulse/`)
 
-**Convergence Assessment**: Energy/environment policy creates the coalition's most legally contested terrain. Pro-nuclear (NU19) + wind permitting resistance (motions) + pesticide tax (interpellation) collectively form a picture of a coalition that has accepted nuclear expansion but resisted environmental regulation extension. This cluster has the highest risk of EU/judicial intervention.
+**Confirmed handoff items**:
+- **PIR-RT-001 (Lagrådet migration)**: Realtime-pulse opened this PIR. Evening analysis carries it forward as R3 and C1 in threat analysis.
+- **PIR-RT-003 (polling erosion post-migration)**: Realtime-pulse identified this risk. Evening analysis places as A3 threat.
+- **PIR-RT-005 (Carlson Ostlänken answer May 25)**: Realtime-pulse set this as a monitoring trigger. Evening analysis sets the PIR resolution date.
+- **Nuclear NU19 June 17**: Realtime-pulse confirmed the implementation date. Evening analysis confirms S1 (strength) citation.
 
----
+### Sibling 5: Election-Cycle (`analysis/daily/2026-05-04/election-cycle/`)
 
-### Cluster D: Governance and Transparency
-| Document | Type | Key Provision | Cross-Reference |
-|----------|------|--------------|-----------------|
-| HD03258 | Proposition | Extended openness in public activities | sibling:propositions/synthesis-summary.md |
-| HD01KU39 | Betänkande | Political process transparency | today |
-| HD10459 | Interpellation | Agency activism (SD) | sibling:interpellations/executive-brief.md |
+**Confirmed handoff items**:
+- **L threshold risk (4% zone)**: Election-cycle flagged L at 4.2–5.0%. Evening analysis carries as R4 (L×I=10).
+- **Coalition arithmetic (M+KD+SD ~47%)**: Election-cycle established coalition math below 50% without L. Evening analysis uses this in coalition-mathematics.md and as the structural driver for the L-pivotal actor analysis.
+- **Östergötland seat count (3–4 competitive)**: Election-cycle provided constituency-level analysis. Evening analysis cites in threat A1.
+- **Election date anchor (September 13, 2026)**: Election-cycle provided 132-day countdown. Evening analysis uses throughout.
 
-**Convergence Assessment**: Three parallel governance reform initiatives advancing simultaneously. HD03258 + HD01KU39 extend formal transparency requirements; HD10459 contests informal agency political activity. Together, they project a "rule-governed government" image that partially offsets the "nuclear bypass" controversy.
+### Sibling 6: Year-Ahead (`analysis/daily/2026-05-04/year-ahead/`)
 
----
-
-### Cluster E: Defence and International
-| Document | Type | Key Provision | Cross-Reference |
-|----------|------|--------------|-----------------|
-| HD03254 | Proposition | NATO financial participation | sibling:propositions/synthesis-summary.md |
-| HD01FöU14 | Betänkande | Military cooperation | sibling:committee-reports/executive-brief.md |
-| HD10463 | Interpellation | Ostlänken route change | today |
-
-**Convergence Assessment**: Defence integration (NATO/Nordic) is the cross-party consensus cluster. The Ostlänken interpellation introduces a rare regional infrastructure counter-narrative. These do not interconnect politically but are grouped for completeness.
+**Confirmed handoff items**:
+- **Criminal justice legislative calendar**: Year-ahead established June–July vote windows. Evening analysis cross-confirms JuU9 July 1 deadline.
+- **Sweden fiscal trajectory (IMF WEO)**: Year-ahead used IMF NGDP_RPCH_2026=2.1%. Evening analysis cites same data as economic provenance.
+- **Government cohesion T+90d risk assessment**: Year-ahead flagged medium risk at T+90d horizon. Evening analysis refines to L×I=8 for R5 (SD coal energy split).
 
 ---
 
-## Tier-C Citation Links (Cross-Sibling Citation Inventory)
+## Document-to-Document Cross-References
 
-This evening-analysis artifact set makes the following formal cross-citations to sibling analyses:
-
-1. `sibling:propositions/synthesis-summary.md` — cited in: executive-brief.md, synthesis-summary.md, swot-analysis.md, risk-assessment.md, scenario-analysis.md, election-2026-analysis.md
-2. `sibling:propositions/executive-brief.md` — cited in: significance-scoring.md, cross-reference-map.md
-3. `sibling:motions/synthesis-summary.md` — cited in: synthesis-summary.md, coalition-mathematics.md
-4. `sibling:motions/executive-brief.md` — cited in: stakeholder-perspectives.md, election-2026-analysis.md
-5. `sibling:committee-reports/executive-brief.md` — cited in: executive-brief.md, threat-analysis.md, implementation-feasibility.md
-6. `sibling:committee-reports/synthesis-summary.md` — cited in: historical-parallels.md
-7. `sibling:interpellations/executive-brief.md` — cited in: executive-brief.md, stakeholder-perspectives.md, media-framing-analysis.md
-8. `sibling:interpellations/synthesis-summary.md` — cited in: intelligence-assessment.md
-
-**Total Tier-C citations**: 8 unique sibling file references across 23 artifacts — exceeds Tier-C minimum of 6 citations.
+| dok_id A | Relationship | dok_id B | Note |
+|----------|------------|----------|------|
+| HD10463 | Accountability probe of | HD03XXX (Ostlänken original decision) | Interpellation challenges government's infrastructure choices |
+| HD024142 | Counter-motion to | Prop 246 | V's full rejection vs. government's 13yr proposal |
+| HD024141 | Counter-motion to | Prop 242 | V's rejection of forest management framework |
+| HD01KU39 | Processes | HD03258 | Committee betänkande for the political financing transparency bill |
+| HD01FiU49 | Evaluates | Riksgäldslagen | Five-year review of government's own debt management framework |
+| HD10462 | Accountability probe of | Pesticide tax implementation | Healthcare exemption gap |
 
 ---
 
-## PIR Status Cross-Reference
+## Mermaid Cross-Reference Graph
 
-| PIR | Source | Status | Carrying Forward |
-|-----|--------|--------|-----------------|
-| Gang crime eradication promise | sibling:interpellations | OPEN — HD10458 debate pending | YES → pir-status.json |
-| ESA/space sector investment | sibling:interpellations | OPEN — HD10461 debate pending | YES |
-| Agency activism constitutional framing | sibling:interpellations | OPEN — HD10459 debate pending | YES |
-| Migration permanent permit elimination: S stance | sibling:propositions | OPEN — S campaign evolution | YES |
-| Coalition durability post-election | this analysis | OPEN — coalition-mathematics.md | YES |
+```mermaid
+graph LR
+    EVE["Evening Analysis<br/>2026-05-04"]
+    PROP["Propositions<br/>Sibling"]
+    MOT["Motions<br/>Sibling"]
+    INTERP["Interpellations<br/>Sibling"]
+    REAL["Realtime-Pulse<br/>Sibling"]
+    EC["Election-Cycle<br/>Sibling"]
+    YA["Year-Ahead<br/>Sibling"]
+
+    EVE -- "Migration PIR-RT-001 ←" --> PROP
+    EVE -- "V motion criminal age ←" --> MOT
+    EVE -- "Ostlänken lead story ←" --> INTERP
+    EVE -- "PIR carry-forward ←" --> REAL
+    EVE -- "L threshold, seats ←" --> EC
+    EVE -- "Legislative calendar ←" --> YA
+```

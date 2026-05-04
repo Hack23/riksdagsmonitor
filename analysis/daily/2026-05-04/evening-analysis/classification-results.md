@@ -1,99 +1,113 @@
-# Classification Results — Evening Analysis 2026-05-04
+# Classification Results — Evening Analysis, 4 May 2026
 
-**Workflow**: news-evening-analysis  
-**Date**: 2026-05-04  
-**Classification Framework**: Hack23 CIA Political Intelligence Classification  
-**Data Classification**: PUBLIC (all sources from open parliamentary records)
+**Author**: James Pether Sörling | **Date**: 2026-05-04  
+**Classification Framework**: 7-dimension political classification per document
 
 ---
 
-## Document Classification Results
+## Priority Tier Summary
 
-| Document | Primary Domain | Secondary Domain | Political Risk | Policy Direction | Controversy Level |
-|----------|---------------|-----------------|---------------|-----------------|------------------|
-| HD03262 | Immigration | Social Integration | HIGH | Restrictive | HIGH |
-| HD03263 | Immigration | Enforcement | HIGH | Restrictive | HIGH |
-| HD03264 | Immigration | Identity/Documentation | HIGH | Restrictive | MEDIUM-HIGH |
-| HD03265 | Immigration | International Law | HIGH | Restrictive | MEDIUM |
-| HD01NU19 | Energy | Constitutional Law | HIGH | Deregulatory/Pro-nuclear | HIGH |
-| HD01SfU28 | Citizenship | Integration | HIGH | Restrictive | HIGH |
-| HD10458 | Public Safety | Political Accountability | HIGH | Accountability challenge | HIGH |
-| HD10463 | Infrastructure | Regional Policy | MEDIUM-HIGH | Allocation | MEDIUM |
-| HD01JuU9 | Justice | Crime | MEDIUM | Prosecution-strengthening | MEDIUM |
-| HD01FöU13 | Public Safety | Crime | MEDIUM | Security-tightening | LOW-MEDIUM |
-| HD03254 | Defence | International | MEDIUM | Integration | LOW |
-| HD03258 | Governance | Transparency | MEDIUM | Openness | LOW |
-| HD01KU39 | Governance | Constitutional | MEDIUM | Transparency | LOW |
-| HD10459 | Governance | Administration | MEDIUM | Accountability | MEDIUM |
-| HD01FöU14 | Defence | International | MEDIUM | Integration | LOW |
-| HD01CU37 | Housing | Social | LOW-MEDIUM | Social protection | LOW |
-| HD01NU22 | Market | Competition | LOW-MEDIUM | Regulatory | LOW |
-| HD01SoU33 | Social | Regulation | LOW | Deregulatory | LOW |
-| HD10461 | Industry | Innovation | LOW-MEDIUM | Investment | LOW |
-| HD01FiU49 | Finance | Accountability | LOW-MEDIUM | Oversight | LOW |
-| HD01KU36 | Privacy | Technology | LOW | Governance | LOW |
+| Tier | Documents | Count |
+|------|-----------|-------|
+| L3 Intelligence (critical priority) | HD10463 | 1 |
+| L2+ Priority | HD01KU39, HD01FiU49 | 2 |
+| L2 Strategic | HD024141, HD024142 | 2 |
+| L1 Surface | HD10462, HD11779, HD11780, HD024143–148 (cluster) | 7 |
 
 ---
 
-## Domain Distribution
+## Per-Document Classification
 
-| Primary Domain | Count | % |
-|---------------|-------|---|
-| Immigration/Citizenship | 5 | 23.8% |
-| Governance/Transparency | 4 | 19.0% |
-| Public Safety/Crime | 4 | 19.0% |
-| Defence/International | 3 | 14.3% |
-| Energy | 1 | 4.8% |
-| Justice | 1 | 4.8% |
-| Other (Housing, Market, Social, Finance) | 3 | 14.3% |
+### HD10463 — Ostlänken Interpellation (L3 Intelligence)
+
+| Dimension | Classification |
+|-----------|---------------|
+| Policy domain | Infrastructure / Regional development |
+| Party alignment | Opposition (S) vs. Government (KD minister Carlson) |
+| Electoral salience | CRITICAL — Östergötland marginal seats, 132 days to election |
+| Constitutional status | Interpellation — minister must respond within 2 weeks |
+| Institutional actors | Riksdag (Eva Lindh/S), Infrastructure Ministry (KD), Trafikverket, Saab |
+| Urgency | HIGH — ministerial deadline May 25, 2026 |
+| GDPR Art. 9 status | Named public officials (MPs and minister) — 9(2)(e) publicly made |
+
+### HD01KU39 — Transparency Betänkande (L2+ Priority)
+
+| Dimension | Classification |
+|-----------|---------------|
+| Policy domain | Constitutional law / Political party financing |
+| Party alignment | Government initiative (all-party bill HD03258) — but partisan implications |
+| Electoral salience | HIGH — affects all parties' financing disclosure before election |
+| Constitutional status | Betänkande — scheduled for June 16 chamber vote |
+| Institutional actors | KU (constitutional committee), Riksdag, political parties |
+| Urgency | MEDIUM — committee hearings May 26–June 9 |
+| GDPR Art. 9 status | Party membership data — 9(2)(g) substantial public interest |
+
+### HD01FiU49 — Debt Management Evaluation (L2+ Priority)
+
+| Dimension | Classification |
+|-----------|---------------|
+| Policy domain | Fiscal policy / Public debt management |
+| Party alignment | Bipartisan (committee evaluation of Riksgälden, not politically contested) |
+| Electoral salience | MEDIUM — fiscal stewardship narrative, Sweden's ~34% GDP debt |
+| Constitutional status | Betänkande — processes government Skrivelse HD03104 |
+| Institutional actors | FiU committee, Riksgälden, Finance Ministry |
+| Urgency | LOW — hearings late May/June |
+| GDPR Art. 9 status | Institutional / financial data — no personal data |
+
+### HD024142 — V Motion Youth Crime (L2 Strategic)
+
+| Dimension | Classification |
+|-----------|---------------|
+| Policy domain | Criminal justice / Juvenile law |
+| Party alignment | Opposition (V) vs. Government proposal (M+SD+KD+L) |
+| Electoral salience | HIGH — crime/gangs top voter priority 2026 |
+| Constitutional status | Committémotion — processed in JuU committee |
+| Institutional actors | JuU committee, V, S (parallel motion HD024136) |
+| Urgency | MEDIUM — committee deliberation before June vote |
+| GDPR Art. 9 status | Public party positions on criminal law — 9(2)(e) |
+
+### HD024141 — V Motion Forest Management (L2 Strategic)
+
+| Dimension | Classification |
+|-----------|---------------|
+| Policy domain | Environmental law / Forestry regulation |
+| Party alignment | Opposition (V) — outright rejection vs. government prop 242 |
+| Electoral salience | MEDIUM — environmental protection as V electoral identity |
+| Constitutional status | Committémotion — processed in MJU committee |
+| Institutional actors | MJU committee, V, S, MP, C (parallel motions) |
+| Urgency | MEDIUM — committee deliberation schedule |
+| GDPR Art. 9 status | Environmental policy — no personal data |
+
+### HD10462 — Pesticide Tax Interpellation (L1 Surface)
+
+| Dimension | Classification |
+|-----------|---------------|
+| Policy domain | Tax law / Healthcare regulation |
+| Party alignment | S vs. Finance Minister Svantesson (M) |
+| Electoral salience | LOW (general) / HIGH (healthcare sector) |
+| Constitutional status | Interpellation — ministerial response required |
+| Institutional actors | Finance Ministry, healthcare providers, municipal health |
+| Urgency | LOW-MEDIUM |
+| GDPR Art. 9 status | Public officials — 9(2)(e) |
 
 ---
 
-## High-Controversy Document Analysis
+## Access Classification
 
-### HD03262–65: Migration Bundle
-**Controversy Sources**:
-- Elimination of permanent residence permits is a direct reversal of Swedish integration philosophy since 1975 labour migration era
-- Compulsory departure obligation creates enforcement implementation challenges (Migrationsverket capacity)
-- Opposition framing: "Sweden adopts the harshest migration policy in the Nordic region"
-- Counter-framing: "Sweden aligns with EU minimum standards for the first time"
+All documents: **Public** (Riksdag API, data.riksdagen.se). Classification applies to analytical product only.
 
-**Constitutional Risk**: LOW — legislation within EU Directive compliance range  
-**Implementation Risk**: HIGH — Migrationsverket system changes + case backlog pressure  
-**Court Challenge Risk**: MEDIUM — ECHR Article 8 (family life) challenges anticipated
-
-### HD01NU19: Nuclear Licensing Bypass
-**Controversy Sources**:
-- Environmental organizations will challenge bypass of Miljöbalken before Högsta Förvaltningsdomstolen
-- EU Environmental Impact Assessment Directive compliance uncertain
-- Cross-party opposition from V and MP on environmental grounds
-- S party ambiguous (abstained rather than opposed in committee)
-
-**Constitutional Risk**: MEDIUM — may conflict with EU EIA directive  
-**Implementation Risk**: LOW — direct government process more predictable than court process  
-**Legal Challenge Risk**: HIGH — environmental organizations have standing; Aarhus Convention rights
-
-### HD10458: Gang Crime Accountability
-**Controversy Sources**:
-- Government made explicit four-year eradication pledge (September 2022)
-- 2025 explosions exceeded all prior years
-- Ministerial response will be visible and clip-worthy for S campaign
-- Government counter-argument: structural crime down even if explosive incidents up
-
-**Political Risk**: HIGH — most visible single accountability moment of parliamentary year  
-**Media Amplification**: VERY HIGH
+| Classification Level | Applies to |
+|---------------------|-----------|
+| 🟢 Public / Offentlig | All 14 source documents (primary source data) |
+| 🟡 Internal / Intern | This analytical product (analysis/daily/ directory) |
+| 🟠 Confidential | Not applicable — no confidential sources used |
 
 ---
 
-## GDPR / Privacy Classification
+## Retention Schedule
 
-All documents classified PUBLIC. No personal data processed in this analysis. All sources from open Riksdag parliamentary records.
-
-**DPIA Required**: NO  
-**Sensitive Data**: NO  
-**Data Retention**: Per analysis archival policy (indefinite for historical record)
-
----
-
-## Confidence Level: HIGH
-All classifications based on direct document metadata and committee summary texts available via riksdag-regering MCP.
+| Category | Retention |
+|----------|-----------|
+| Analysis artifacts | Permanent (political record) |
+| PIR status JSON | 24 months rolling |
+| Per-document JSON | 12 months rolling |

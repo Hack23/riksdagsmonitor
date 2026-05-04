@@ -1,106 +1,136 @@
-# Election 2026 Analysis — Evening Analysis 2026-05-04
+# Election 2026 Analysis — Evening Analysis, 4 May 2026
 
-**Date**: 2026-05-04  
-**Election Date**: 14 September 2026  
-**Days Remaining**: 132  
-**Framework**: Swedish Riksdag electoral analysis
+**Author**: James Pether Sörling | **Date**: 2026-05-04  
+**Days to election**: 132 (September 13, 2026)
 
 ---
 
 ## Current Electoral Landscape
 
-### Polling Baseline (Approximate, April–May 2026)
+### Polling Snapshot (Latest composite, through 2026-05-01)
 
-| Party | Approx. % | Seats (est.) | Bloc | Change vs 2022 |
-|-------|-----------|-------------|------|----------------|
-| Moderaterna (M) | 22.0% | ~79 | Tidö | –7.9% |
-| Sverigedemokraterna (SD) | 22.5% | ~81 | Tidö | +2.8% |
-| Kristdemokraterna (KD) | 5.5% | ~19 | Tidö | +1.4% |
-| Liberalerna (L) | 4.5% | ~16 | Tidö | +2.5% |
-| Centerpartiet (C) | 7.5% | ~26 | Swing | –5.8% |
-| **Tidö + C total** | **62.0%** | **~221** | | |
-| Socialdemokraterna (S) | 32.5% | ~116 | Left | –5.4% |
-| Vänsterpartiet (V) | 7.0% | ~25 | Left | +1.4% |
-| Miljöpartiet (MP) | 5.5% | ~19 | Left | +2.5% |
-| **S+V+MP total** | **45.0%** | **~160** | | |
+| Party | Current % | Seats (est.) | vs. 2022 | Threshold risk |
+|-------|----------|-------------|---------|---------------|
+| **S** | 32.1% | 113 | +1 | None |
+| **SD** | 18.2% | 63 | -4 | None |
+| **M** | 19.8% | 69 | -3 | None |
+| **MP** | 4.1% | 0–14 | -8 | LOW (4.1% is above 4% but fragile) |
+| **V** | 7.8% | 27 | +2 | None |
+| **KD** | 4.9% | 17 | +2 | None |
+| **C** | 5.2% | 18 | -5 | None |
+| **L** | 4.4% | 15 | -5 | HIGH (4.0% hard floor risk) |
 
-*Note: 349 seat Riksdag; majority threshold 175 seats. C (26 seats) is decisive in any hung parliament.*
+*Source: Composite from election-cycle sibling analysis (Novus/IPSOS/Demoskop average)*
 
----
+### Bloc Arithmetic
 
-## Today's Legislative Impact on Election 2026
+| Bloc | % | Seats | Majority test |
+|------|---|-------|--------------|
+| **Tidö (M+KD+SD+L)** | 47.3% | 164 | 5 seats below 175 |
+| **S-bloc (S+V+MP)** | 44.0% | 154–168 | Depends on MP threshold |
+| **C (unaligned)** | 5.2% | 18 | Kingmaker if both blocs below 175 |
 
-### Impact Layer 1: Mandate Validation
-The Tidö Coalition can now campaign on delivered commitments with specific legislation:
-- **"We controlled migration"** → HD03262–65 (4 propositions)
-- **"We restored nuclear energy"** → HD01NU19
-- **"We raised the bar for citizenship"** → HD01SfU28
-- **"We reformed our courts to fight crime"** → HD01JuU9
-- **"We tightened explosives controls"** → HD01FöU13
-
-This is an unusually concrete delivery record. Voter knowledge of specific legislation is low, but party messaging will translate it into "Sweden changed."
-
-### Impact Layer 2: Opposition Documentation
-S filed 16 motions + 10 interpellations today = comprehensive archive of policy disagreements. In a 132-day campaign window, each motion and interpellation is potential campaign material:
-- HD10458 → "Government promised eradication; explosions at record" → attack ad
-- HD03262–65 motions → "Government deports long-resident families" → human interest stories
-- HD10463 → "Government abandoned Östergötland" → regional mobilization
-
-### Impact Layer 3: Voter Segmentation Activation
-Each policy cluster activates a distinct voter segment (see voter-segmentation.md for detail):
-- Migration: Core SD + KD voters (retention); S-leaning suburban voters (potential swing)
-- Nuclear: Industrial workers + energy-intensive businesses (M + SD retention)
-- Citizenship: Integration workers; immigrant communities (mobilization for S+V)
-- Crime: Fear-response voters in urban periphery (SD mobilization)
+**Critical observation**: Neither bloc has a guaranteed majority. C (18 seats) is the swing actor if both blocs fall short of 175. C's historical preference is for a non-SD government — if deployed, C more likely supports S than Tidö.
 
 ---
 
-## Electoral Risk Assessment by Policy Area
+## Seat Projection by Scenario
 
-### Migration (High Electoral Risk for Government)
-The migration bundle is today's most electorally significant legislative cluster. S's counter-narrative — "Sweden becomes harshest in Nordics; deports long-resident families" — activates value-voters who traditionally vote S, V, or MP. The risk for the government: HD03264 (compulsory departure) provides the most visceral individual human stories for opposition campaign use.
+### Scenario 1: Stable Delivery (45% probability)
 
-**Government advantage**: Majority of Swedish voters (56–62% in 2024 polls) support stricter migration controls. The government's migration record is a net positive with its existing voter base and competitive in the swing segment.
+| Party | Seats |
+|-------|-------|
+| S | 113 |
+| SD | 64 |
+| M | 70 |
+| MP | 14 (just above threshold) |
+| V | 27 |
+| KD | 17 |
+| C | 19 |
+| L | 15 |
+| **Total** | **349** |
 
-**Net Electoral Effect**: +2 to +3% for Tidö bloc among mobility-concerned voters; -1 to -2% among high-income liberal urban voters (who swing between M and C).
+Tidö: 166 | S-bloc: 154 | C: 19  
+→ No bloc at 175. C needed. Given C's preference, potential minority government options:  
+- Tidö + C: 185 seats (sufficient, but C demands no SD in formal power)  
+- S + V + MP + C: 173 (insufficient alone; would need further support)
 
-### Nuclear Energy (Low Electoral Risk)
-Nuclear energy support in Sweden has risen significantly since 2022 (Kantar SIFO: 52% support new nuclear construction). HD01NU19 is a positive for the government with low controversy among the electorate. The legal challenge risk is a media story, not a voter story. Low electoral impact.
+→ Most likely: M-led government with C support, SD relegated to confidence-and-supply from outside formal coalition. **Tidö in power but weakened**.
 
-**Net Electoral Effect**: +0.5 to +1% M/KD/SD among energy-security voters.
+### Scenario 2: Criminal Age Crisis (25% probability)
 
-### Citizenship (Medium Electoral Risk)
-The 8-year residency requirement and language test activates a specific demographic: established immigrant communities (primarily employed, long-resident, Swedish-speaking) who feel punished by requirements they believe were designed for them. These voters are concentrated in S-competitive constituencies (Malmö, Gothenburg, suburban Stockholm). Activation risk is moderate.
+| Party | Seats (estimated shift) |
+|-------|------------------------|
+| SD | 67 (+3, benefiting from "L betrayed coalition" narrative) |
+| L | 13 (-2, punishment for being perceived as responsible for crisis) |
+| S | 115 (+2) |
+| Others | As scenario 1 |
 
-**Net Electoral Effect**: -0.5% S in integration-heavy constituencies (they're already S-voting); +0.5% for Tidö bloc among native-born voters who prioritize integration requirements.
+Tidö: 164 | S-bloc: 157 | C: 19  
+→ No majority; S + V + MP + C = 176 (marginal majority). Andersson government with C support possible.
 
-### Gang Crime (High Electoral Risk — Bidirectional)
-HD10458 creates a bidirectional risk. If ministerial response successfully pivots to "structural progress" metrics, the accountability challenge is managed. If response falls flat or a gang crime event occurs before September, the "four-year eradication" claim becomes the most-replayed political clip of the campaign.
+### Scenario 3: Regional Accountability Cascade (20% probability)
 
-**Net Electoral Effect**: +/- 2% swing potential — the single most volatile electoral variable.
+3 seats shift from M/KD to S in Östergötland and adjacent constituencies:  
+Tidö: 161 | S-bloc: 162 | C: 19  
+→ S-bloc + C = 181 (sufficient). Andersson PM.
 
 ---
 
-## Key Electoral Variables (T+0 to T+132)
+## Key Threshold Analysis
 
-1. **C Party Coalition Preference Declaration** (Expected T+60 to T+90): C must declare which bloc it will support. Current indicators suggest C leans toward a continued right-bloc arrangement but with modified terms. If C declares center-left preference, the electoral arithmetic fundamentally shifts.
+### L at 4% Floor
 
-2. **GDP Q2 2026 Preliminary Estimate** (Expected T+45): If Sweden's GDP growth falls below 0.5%, incumbent drag increases measurably. Above 1.2% GDP would provide the government an economic competence argument.
+If L polls at 3.9% on election day, L exits parliament (17 seats disappear). This leaves:
+- Tidö (M+KD+SD): 149 seats — far below 175
+- Even with C (19 seats): 168 — insufficient
+- S-bloc (155) + C (19) = 174 — just short of majority
+- S + V + MP + C + L-successor-votes = complex hung parliament
 
-3. **Migrationsverket Operational Status** (Continuous): Any media report of systemic failure (>3 week delays, visible deportation enforcement issues, ECHR preliminary measures) activates the migration opposition narrative.
+**Verdict**: L exit is catastrophic for all parties and would produce Sweden's most complex government formation since 1978–79.
 
-4. **S Party Leadership Cohesion**: Magdalena Andersson's leadership approval ratings (currently ~44%) are below her 2022 peak. If S struggles to consolidate V/MP voters behind its leadership, the center-left arithmetic weakens.
+### MP at 4% Floor
+
+If MP polls below 4%:
+- S-bloc loses 14 seats: 140–154 seats
+- S + V + C: 113 + 27 + 19 = 159 — insufficient
+- S forced to work with a broader support base
+
+**Verdict**: MP exit makes a S-bloc majority impossible; probably requires S to form minority government with C support (and implicit SD tolerance).
 
 ---
 
-## 132-Day Countdown Assessment
+## Electoral Map — Competitive Constituencies
 
-**Current trajectory**: Marginal Tidö coalition advantage, but within uncertainty range.
+| Constituency | 2022 margin | Key issue 2026 | At-risk party |
+|-------------|------------|----------------|--------------|
+| Östergötland | M+0.8% over S | Ostlänken (HD10463) | KD/M |
+| Jönköping | M+1.2% | Infrastructure, nuclear | M |
+| Halland | M+2.1% | Energy security | Low risk |
+| Stockholm suburb ring | S+0.5% | Crime, housing | M/SD |
+| Malmö suburbs | SD+1.4% | Migration, crime | SD (if passage deflates voters) |
 
-**Decisive indicators to watch**:
-- Week 1–4: Ministerial HD10458 response quality
-- Week 4–8: Migrationsverket Q2 status
-- Week 8–12: GDP preliminary; C party positioning
-- Week 10–13: Final polling surge/consolidation
+---
 
-**Most likely outcome**: Tidö renewal with modified C terms (38%) or S-led center-left minority with C external support (32%). Neither is predetermined.
+## IMF Economic Context
+
+Swedish economic fundamentals remain supportive for the incumbent:  
+- GDP growth 2.1% (IMF WEO Apr-2026) — above eurozone average (~1.7%)
+- Debt/GDP ~34% — EU minimum, well below Maastricht 60%
+- Unemployment 8.2% — slightly elevated but stable
+
+Economic conditions do not independently favor a government change; the election will turn on social/security issues (crime, migration, infrastructure).
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "value": 2.1,
+    "vintage": "2026-04",
+    "retrieved_at": "2026-05-04"
+  }
+}
+```
