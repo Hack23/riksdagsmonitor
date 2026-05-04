@@ -1,0 +1,64 @@
+{
+  "generated": "2026-05-04T08:30:00Z",
+  "article_date": "2026-05-04",
+  "subfolder": "motions",
+  "workflow": "news-motions",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "TidöPakten legislative cohesion under election pressure",
+      "status": "ACTIVE",
+      "last_updated": "2026-05-04",
+      "findings": "6 simultaneous committee battles test coalition cohesion. JuU criminal age vote is highest-risk fracture point (SD discipline uncertain). MJU permitting authority likely to be accommodated with S. NU energy bills face S+MP+C alignment.",
+      "forward_indicators": ["JuU hearing calendar", "SD whip statement on criminal age", "L signals on age 13"]
+    },
+    {
+      "id": "PIR-2",
+      "title": "S coalition-building and opposition bloc formation",
+      "status": "ACTIVE",
+      "last_updated": "2026-05-04",
+      "findings": "S+MP+C energy alignment is strongest cross-party pattern in 2026 Riksdag session. S filed motions on all 6 clusters demonstrating breadth. No formal joint motions — strategic fragmentation preserved.",
+      "forward_indicators": ["S-MP-C joint statements", "coalition formation signals in party communications"]
+    },
+    {
+      "id": "PIR-3",
+      "title": "Sweden energy transition policy trajectory",
+      "status": "ACTIVE",
+      "last_updated": "2026-05-04",
+      "findings": "Municipal veto reform demanded by S/MP/C; government's prop. 239 seen as insufficient. SD blocking dynamic from 2021/22 historically documented. If post-election S-led govt forms, faster wind reform highly probable.",
+      "forward_indicators": ["NU committee statement", "energy sector investment decisions", "REPowerEU alignment signals"]
+    },
+    {
+      "id": "PIR-4",
+      "title": "Criminal justice reform and gang crime response",
+      "status": "ACTIVE",
+      "last_updated": "2026-05-04",
+      "findings": "S draws firm line at age 14 vs government's 13. ECHR risk real. JuU vote is decisive test of governing majority on flagship crime policy.",
+      "forward_indicators": ["JuU hearing list", "minister reframing signals", "SD whip communications"]
+    },
+    {
+      "id": "PIR-5",
+      "title": "Environmental governance and permitting",
+      "status": "ACTIVE",
+      "last_updated": "2026-05-04",
+      "findings": "Prop. 238 new permitting authority contested by all 4 opposition parties on different grounds. V demands rejection; S demands modifications; MP demands broader mandate; C demands municipality-friendliness.",
+      "forward_indicators": ["MJU committee negotiations", "government engagement with S on transition terms"]
+    },
+    {
+      "id": "PIR-6",
+      "title": "Election 2026 campaign positioning",
+      "status": "ACTIVE",
+      "last_updated": "2026-05-04",
+      "findings": "All 16 active motions carry EP1.5 electoral proximity multiplier (132 days to election). S, MP, C, V all positioning through this motion wave. Criminal age is highest-salience electoral issue.",
+      "forward_indicators": ["polling shifts on crime competence", "party leader statements on key motion themes"]
+    },
+    {
+      "id": "PIR-7",
+      "title": "Nordic and EU comparative alignment",
+      "status": "ACTIVE",
+      "last_updated": "2026-05-04",
+      "findings": "Denmark 2010 criminal age reform (14 years) = closest Nordic parallel to current debate. Sweden's proposed 13 would be below Denmark's controversial 2010 level. Energy: Sweden is outlier in maintaining full municipal wind veto vs EU peers.",
+      "forward_indicators": ["Council of Europe statements", "Nordic PM forum communications", "REPowerEU progress reports"]
+    }
+  ]
+}
